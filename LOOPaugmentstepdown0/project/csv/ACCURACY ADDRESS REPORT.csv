@@ -1,0 +1,13 @@
+ACCURACY ADDRESS REPORT,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8
+,,,,,,,,
+Addresses,,,,,,,,
+Description,Name,TMB,Bank,Bits,Location,POR,User,path
+Lowside_Blanking,lowsideblank,0x0A,0,8,7:0,0x00,,"XLOOP,XDRIVER,XBOTDRIVER,drm_hex0xa"
+Lowside_Blanking,lowsideblank,0x0A,1,8,7:0,0x00,,"XLOOP,XDRIVER,XBOTDRIVER,drm_hex0xa"
+Highside_Current_limigt_Blank,topswipeakblank,0x10,0,8,7:0,0x00,,"XLOOP,XDRIVER,XTOPDRIVER,drm_hex0x10"
+text,Regulator_Loop_Offset,0x16,0,7,6:0,0x00,,"XLOOP,XREGULATION,XU2,drm_hex0x16"
+text,Regulator_Loop_Offset,0x16,1,7,6:0,0x00,,"XLOOP,XREGULATION,XU2,drm_hex0x16"
+Feedback_Output_Accuracy,fbaccuracy,0x16,2,7,6:0,0x00,,"XLOOP,XREGULATION,XU2,drm_hex0x16"
+Feedback_Output_Accuracy,fbaccuracy,0x16,3,7,6:0,0x00,,"XLOOP,XREGULATION,XU2,drm_hex0x16"
+Voltage_Control_Node_Clamp_Trim,trimVC,0x16,4,8,7:0,0x00,,"XLOOP,XREGULATION,XU2,drm_hex0x16"
+Trim_Slope_Comp_Amplitude,refsctrim,0x16,5,4,3:0,0x00,,"XLOOP,XREGULATION,XU2,drm_hex0x16"
