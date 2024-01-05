@@ -18,7 +18,7 @@
 //Celera:currentgenerator_currentlimitfet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWCURRENT_Xcg
 //Celera Confidential Symbol Generator
 //Number of outputs: 1, Max Vout: 6V, Accuracy: no%, Temperature Coefficient: zero, Temperature Gain: 3, DFT: no
-//POLARITY0:source, OUTPUT0:2.83
+//POLARITY0:source, OUTPUT0:8.75
 module currentgenerator_currentlimitfet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWCURRENT_Xcg (SIMPV,CELSUB,enable_currentgenerator,global_currentgenerator,IP,ok_currentgenerator,
 I0,
 CELG);
