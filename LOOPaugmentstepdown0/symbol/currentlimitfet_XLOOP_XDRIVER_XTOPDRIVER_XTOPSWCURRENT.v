@@ -1,6 +1,6 @@
 //Celera:currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT
 //Celera Confidential Symbol Generator
-//Sense element: fet, Fet connection: nmos_drain, Usage: highside, Max sense voltage: 12V, Reference current: external
+//Sense element: fet, Fet connection: nmos_drain, Usage: highside, Max sense voltage: 36V, Reference current: external
 //Latch blanking: factory, Latch blanking POR value: 10ns, DFT: yes, Trim: yes, Levelshift: yes
 module currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT (SIMPV,SUB,measure_currentlimit,VSENSE,IREPLICA,currentlimit,enable_currentlimit,
 trim_currentlimit,
