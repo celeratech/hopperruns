@@ -87,7 +87,7 @@ user,currentgenerator_vout,6
 description,Maximum Output Voltage
 user,currentgenerator_polarity0,source
 description,Generator Polarity
-user,currentgenerator_output0,2.83
+user,currentgenerator_output0,8.75
 description,Generator Output
 user,NESTO,0.4.1
 description,NESTO generate revision
@@ -365,15 +365,14 @@ GARNETlspowerLV,NMOSiso6,XU3,LX
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
 sub_area,STONEcurrentgeneratormain,5000
+sub_area,CASCODEpmos5u,3800
+sub_area,CASCODEpmos1u,14000
 sub_area,CASCODEpmos1u,14000
 sub_area,CASCODEpmos1u,14000
 sub_area,CASCODEpmos500n,3800
 sub_area,CASCODEpmos100n,14000
 sub_area,CASCODEpmos100n,14000
-sub_area,CASCODEpmos100n,14000
-sub_area,CASCODEpmos10n,14000
-sub_area,CASCODEpmos10n,14000
-sub_area,CASCODEpmos10n,14000
+sub_area,CASCODEpmos50n,14000
 sub_area,CASCODEpmos500nref,3800
 sub_area,CASCODEnmos500n,3800
 sub_area,CASCODEpmos500n10x,14000
@@ -382,7 +381,7 @@ sub_area,CASCODEpmos5uref,3800
 sub_area,CASCODEnmos5u,3800
 sub_area,CASCODEpmos50nref,14000
 sub_area,CASCODEnmos500n,3800
-generate_area,currentgenerator_currentlimitfet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWCURRENT_Xcg,171600
+generate_area,currentgenerator_currentlimitfet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWCURRENT_Xcg,147400
 // *********************************************
 //Calculator Parameters
 #define,SIMPVminimum,2.1

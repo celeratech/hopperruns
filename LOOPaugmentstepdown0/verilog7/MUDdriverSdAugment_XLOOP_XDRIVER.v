@@ -30,10 +30,11 @@ module MUDbbmAugment_XLOOP_XDRIVER_XBBMDRIVER (tmi,botswon,topswon,botstate,tops
   input  topswstatus;
 endmodule
 
-module MUDbotswnmosSdIlimAugment_XLOOP_XDRIVER_XBOTDRIVER (SW,tmi,MUDV,PMUDG,PMUDV,TAEXT,botswon,CELG59462,CELV96848,botswipeak,CELSUB40948,botswstatus,botswzcross,enable_driver,IP_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWZERO,IP_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWCURRENT);
+module MUDbotswnmosSdIlimAugment_XLOOP_XDRIVER_XBOTDRIVER (SW,tmi,MUDV,CBOOT,PMUDG,PMUDV,TAEXT,botswon,CELG59462,CELV96848,botswipeak,CELSUB40948,botswstatus,botswzcross,enable_driver,IP_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWZERO,IP_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWCURRENT);
   inout  SW;
   inout [4:0] tmi;
   input  MUDV;
+  input  CBOOT;
   inout  PMUDG;
   input  PMUDV;
   input  TAEXT;
@@ -135,6 +136,7 @@ MUDbotswnmosSdIlimAugment_XLOOP_XDRIVER_XBOTDRIVER XBOTDRIVER (
 .SW(SW),
 .tmi(tmi[4:0]),
 .MUDV(MUDV),
+.CBOOT(CBOOT),
 .PMUDG(PMUDG),
 .PMUDV(PMUDV),
 .TAEXT(TAEXT),

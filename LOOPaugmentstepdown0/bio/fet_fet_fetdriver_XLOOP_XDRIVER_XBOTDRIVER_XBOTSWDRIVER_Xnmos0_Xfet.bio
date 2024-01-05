@@ -58,7 +58,7 @@ limit,fet_calculator,choose1,maximum
 //USER Parameters
 user,Type,n
 description,FET type
-user,Ron,3354163 x3354163 Ohm
+user,Ron,670833 x3354163 Ohm
 user,Ron_Design,0 x3354163 Ohm
 description,FET on resistance
 user,Vds,6V
@@ -152,7 +152,7 @@ trim,description7,empty
 // *********************************************
 //Layout Parameters
 powerfet,layout instruction
-placeFET 0 0 49.410 133.180 1 0 fullmetal
+placeFET 0 0 148.410 206.380 1 0 fullmetal
 //fetpower.bio
 revision,layout,0p1
 layout,fet_fetpower
@@ -334,8 +334,8 @@ GARNETlspowerLV,NMOSiso6,XU3,LX
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,an5g6dw1_124p8x0p2x28p0x1p0,66778
-generate_area,fet_fet_fetdriver_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWDRIVER_Xnmos0_Xfet,66778
+sub_area,an5g6dw1_198p0x0p2x88p0x1p0,86604
+generate_area,fet_fet_fetdriver_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWDRIVER_Xnmos0_Xfet,86604
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.3
