@@ -3,7 +3,7 @@
 //NAME:fet_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xnmos0
 //GENERATOR REVISION:0.3.7
 //FET TYPE:n
-//ON RESISTANCE:0.500 Ohms
+//ON RESISTANCE:2.000 Ohms
 //VDS RATING:6V
 //VGS RATING:6V
 //BODY DIODE:yes
@@ -16,7 +16,7 @@
 //Celera Confidential Do Not Copy fet_fet_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xnmos0_Xfet.v
 //Celera:fet_fet_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xnmos0_Xfet
 //Celera Confidential Symbol Generator
-//power NMOS:Ron:0.500 Ohm
+//power NMOS:Ron:2.000 Ohm
 //Vgs 6V Vds 6V
 //Kelvin:no
 
@@ -31,7 +31,7 @@ endmodule
 
 //Celera Confidential Do Not Copy fet_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xnmos0
 //Celera Confidential Symbol Generator
-//power NMOS:Ron:0.500 Ohm
+//power NMOS:Ron:2.000 Ohm
 //Vgs 6V Vds 6V
 //Kelvin:no
 
