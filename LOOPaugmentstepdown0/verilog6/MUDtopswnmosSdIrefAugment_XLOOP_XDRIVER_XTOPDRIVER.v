@@ -185,12 +185,11 @@ module STONEnoconn ( noconn );
 endmodule
 
 
-module fet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSW (GATE,SOURCE,DRAIN,NMOSiso6,SUB);
+module fet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSW (GATE,SOURCE,DRAIN,SUB);
   input  SUB;
   input  GATE;
   inout  DRAIN;
   inout  SOURCE;
-  input  NMOSiso6;
 endmodule
 
 //Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
@@ -205,7 +204,7 @@ module PEBBLEtielo ( q, G, SUB, V );
 endmodule
 
 
-module fet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWREP (GATE,SOURCE,DRAIN,NMOSiso6,SOURCEk,DRAINk,IREPLICA,SUB);
+module fet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWREP (GATE,SOURCE,DRAIN,SOURCEk,DRAINk,IREPLICA,SUB);
   input  SUB;
   input  GATE;
   inout  DRAIN;
@@ -213,7 +212,6 @@ module fet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWREP (GATE,SOURCE,DRAIN,NMOSiso6,SOURCE
   inout  SOURCE;
   inout  SOURCEk;
   inout  IREPLICA;
-  input  NMOSiso6;
 endmodule
 
 //Verilog HDL for "DRM", "drm24" "functional"
@@ -522,8 +520,7 @@ fet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSW XTOPSW (
 .SUB(CELSUB40948),
 .GATE(net_62),
 .DRAIN(PMUDHV),
-.SOURCE(SW),
-.NMOSiso6(CBOOT)
+.SOURCE(SW)
 );
 
 PEBBLEtielo XtieLo (
@@ -540,8 +537,7 @@ fet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWREP XTOPSWREP (
 .DRAINk(net_94),
 .SOURCE(SW),
 .SOURCEk(SW),
-.IREPLICA(net_96),
-.NMOSiso6(CBOOT)
+.IREPLICA(net_96)
 );
 
 drm24 drm_hex0x10 (
