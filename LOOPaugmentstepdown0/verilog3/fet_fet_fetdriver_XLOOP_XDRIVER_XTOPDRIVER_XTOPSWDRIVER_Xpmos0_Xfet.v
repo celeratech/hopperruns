@@ -3,7 +3,7 @@
 //NAME:fet_fet_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xpmos0_Xfet
 //GENERATOR REVISION:0.4.0
 //FET TYPE:p
-//ON RESISTANCE:4.000 Ohms
+//ON RESISTANCE:1.000 Ohms
 //VDS RATING:6V
 //VGS RATING:6V
 //BODY DIODE:yes
@@ -14,7 +14,7 @@
 //DFT:no
 
 //Celera Confidential Do Not Copy PMOS
-module ap5g6dw1_5t_134p4x0p2x32p0x1p0 (DRAIN,GATE,SOURCE,BULK,SUB);
+module ap5g6dw1_5t_199p1x0p2x84x1p0 (DRAIN,GATE,SOURCE,BULK,SUB);
   input GATE;
   input BULK;
   input SUB;
@@ -24,7 +24,7 @@ endmodule
 
 //Celera Confidential Do Not Copy fet_fet_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xpmos0_Xfet
 //Celera Confidential Symbol Generator
-//power PMOS:Ron:4.000 Ohm
+//power PMOS:Ron:1.000 Ohm
 //Vgs 6V Vds 6V
 //Kelvin:no
 
@@ -35,15 +35,15 @@ inout DRAIN;
 input SUB;
 input PMOSiso6;
 
-//Celera Confidential Do Not Copy ap5g6dw1_5t_134p4x0p2x32p0x1p0
-ap5g6dw1_5t_134p4x0p2x32p0x1p0 Xsinglep0(
+//Celera Confidential Do Not Copy ap5g6dw1_5t_199p1x0p2x84x1p0
+ap5g6dw1_5t_199p1x0p2x84x1p0 Xsinglep0(
 .DRAIN (DRAIN),
 .GATE (GATE),
 .SOURCE (SOURCE),
 .BULK (PMOSiso6),
 .SUB (SUB)
 );
-//,diesize,ap5g6dw1_5t_134p4x0p2x32p0x1p0
+//,diesize,ap5g6dw1_5t_199p1x0p2x84x1p0
 
 //Celera Confidential Do Not Copy Module End
 //Celera Schematic Generator
