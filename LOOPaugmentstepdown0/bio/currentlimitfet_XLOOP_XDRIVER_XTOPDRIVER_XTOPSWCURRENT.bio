@@ -75,7 +75,7 @@ user,currentlimit_fetterm,nmos_drain
 description,Fet connection
 user,currentlimit_usage,highside
 description,Usage
-user,currentlimit_vsensemax,36V
+user,currentlimit_vsensemax,12V
 description,Max sense voltage
 user,currentlimit_iref,external
 description,Reference current
@@ -89,9 +89,9 @@ user,currentlimit_accuracy,yes
 description,Trim added
 user,currentlimit_levelshift,yes
 description,Levelshift enabled
-user,currentlimit_limit,0.75
+user,currentlimit_limit,3.0
 description,Current Limit Value
-user,currentlimit_fetratio,15K
+user,currentlimit_fetratio,30K
 description,Current Limit Fet Ratio
 user,currentlimit_maxiref,100
 description,Current Limit Max IREF
@@ -300,20 +300,189 @@ endlayoutbio
 
 //**********************************************
 //Project Parameters
+//Celera:LOOPaugmentstepdown0 Project Bio
+//////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'    //////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+//Simplis Project Parameters ///////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,TBD
+#define,CELV,2.3
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+//Porcess  Parameters ///////////////////////////////////////////////////////
+//#define,PROJECTbg,1.221
+#define,PROJECTbg,1.198
+#define,REFERENCEccpcode,3
+#define,REFERENCEccncode,5
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+
+
+/////////////////////////////////////////////////////////////////////////////
+//DFT Netlister Parameters /////////////////////////////////
+#define,TMAstartAddress,80
+#define,global_ten,module
+//#define,global_ten_option,single
+/////////////////////////////////////////////////////////////////////////////
+//Product Parameters /////////////////////////////////
+#define,chipid_insert,yes
+//#define,chipid_location,stacked
+#define,chipid_location,fixed
+#define,chipid_address,FE
+#define,chipid_productrevision,0
+//#define,production,no
+#define,production,yes
+////////////////////////////////////////////////////////////////////////////
+////SERDES Netlister Parameters ////////////////////////
+//serdes Selector
+//#define,serdes_define_option,random
+#define,serdes_define,project
+//serdes address
+//#define,serdes_address_option,0,54
+//#define,serdes_address_option,1,55
+//#define,serdes_address_option,2,56
+#define,serdes_address,3,57
+//serdes password
+#define,serdes_password,0,91
+//#define,serdes_password_option,1,3A
+//#define,serdes_password_option,2,1E
+//#define,serdes_password_option,3,93
+//serdes unlock
+#define,serdes_hardwarelock,no
+//#define,serdes_hardwarelock_option,yes
+//serdes defaults
+#define,serdes_vmax,6
+#define,serdes_pad,dedicated
+//#define,serdes_pad_option,assign
+#define,serdes_clock,3100
+//#define,serdes_dft_option,no
+#define,serdes_dft,yes
+//#define,serdes_dft_option,tbd
+#define,SERDESotpid,25
+/////////////////////////////////////////////////////////////////////////
+//Regoister Map parameters ////////////////////////////
+//#define,STATUSlevel_option,live
+#define,STATUSlevel,latch
+//#define,STATUSedge_option,edge
+#define,STATUSedge,level
+//RegisterMap Default Configuration
+#define,register_user,TBD
+#define,register_address,TBD
+#define,register_startaddress,TBD
+#define,register_architecture,TBD
+#define,register_security,TBD
+#define,register_securityaddress,TBD
+#define,register_hardwareunlock,TBD
+#define,register_regpwd0,TBD
+#define,register_regpwd1,TBD
+#define,register_regpwd2,TBD
+#define,register_regpwd3,TBD
+#define,register_sequence,TBD
+#define,register_id,TBD
+#define,register_chipid0,TBD
+#define,register_chipid1,TBD
+#define,register_revid,TBD
+#define,register_factoryid,TBD
+#define,register_dft,TBD
+/////////////////////////////////////////////////////////////////////////
+//DRM Netlister parameters ////////////////////////////
+#define,TMBstartAddress,01
+#define,DRMinsertlevel, -10
+
+//////////////////////////////////////////////////////////////////////////
+//IBIASMIRROR Netlister Parameters/////////////////////
+//Define how "ok" is connected 
+#define,ibiasmirror_ok,parallel
+//#define,ibiasmirror_ok_option,serial
+//Define if IBIASMIRROR is inserted
+//#define,ibiasmirror_insert_option,yes
+#define,ibiasmirror_insert,no
+
+//////////////////////////////////////////////////////////////////////////
+//PAD Netlister Parameters //////////////////////////////
+//#define,taoout_option,nolimit
+#define,taoout,1
+//#define,tdoout_option,nolimit
+#define,tdoout,1
+//#define,TAEXT_option,nolimit
+#define,TAEXT,1
+//#define,tdext_option,nolimit
+#define,tdext,1
+
+////////////////////////////////////////////////////////////////////
+//Package Details ///////////////////////////////////////
+#define,PackageName,TQFN3255
+////////////////////////////////////////////////////////////////////
+//Soft Connections
+#define,CELPOS,PAVDD
+#define,PMID,VIN
+
+///////////////////////////////////////////////////////////////////////////
+//Modesto1 ISO COnnection List
+MODESTOoutputSWITCH0,NMOSiso12,all,net_9
+MODESTOoutputDISCHARGE0,NMOSiso12,all,PAVDDsense
+MODESTOfeedback0,NMOSiso6,all,CELV
+MODESTOoutputCHARGE0,NMOSiso12,XU5,PAVDDsense
+MODESTOoutputCHARGE0,NMOSiso12,XU6,VIN
+MODESTOpmos0,NMOSiso12,XU12,net_15
+MODESTOlspower0,NMOSiso12,XU2,LX
+MODESTOoutputPVOUT,NMOSiso12,XU5,PAVDD
+MODESTOoutputPVOUT,NMOSiso12,XU25,PAVDD
+MODESTOoutputPVOUT,NMOSiso12,XU31,PVIN
+MODESTOoutputPVOUT,NMOSiso12,XU44,PVIN
+////////////////////////////////////////////////////////////////////////////
+//Garnet ISO COnnection List
+GARNETdacswitch,NMOSiso6,all,CELV
+GARNETlspowerLV,NMOSiso6,XU3,LX
+//////////////////////////////////////////////////////////////////////////////////
+
+//Ring Defaults
+#define,RINGDFTaddress,FF
+///////////////////////////////////////////////////////////////////
+//Garnet DFT Pad 
+#define,dftpad,input,POLARITY,low
+
+
+
+
+
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
 sub_area,STONEnoconn,0
 sub_area,STONEadjdelay2ns5bits,2000
 sub_area,STONEcurrentlimitcompinp,800
-sub_area,STONEcurrentlimithighsidenmos45v_en,888999
-sub_area,STONEcurrentlimitdft45v,888999
-sub_area,STONEbitshifter455bits,888999
-sub_area,levelshifter0H2L_currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT_Xls,11600
+sub_area,STONEcurrentlimithighsidenmos12v_en,888999
+sub_area,STONEcurrentlimitdft12v,888999
+sub_area,STONEbitshifter305bits,327680
+sub_area,levelshifter0H2L_currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT_Xls,8500
 sub_area,STONEnoconn,0
 sub_area,STONEnoconn,0
 sub_area,STONEcurrentlimitreftrim100u,888999
-generate_area,currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT,3570396
+generate_area,currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT,3005977
 // *********************************************
 //Calculator Parameters
 #define SIMPVminimum,2.2
@@ -346,12 +515,12 @@ trim,por,0
 trim,pinname,trim_currentlimit
 trim,testname,topswipeakacc
 trim,description,Highside Current Limit Trim
-trim,target,0.75
+trim,target,3.0
 trim,units,A
-trim,pretrim_low_limit,0.375
-trim,pretrim_high_limit,1.125
-trim,posttrim_low_limit,0.728
-trim,posttrim_high_limit,0.772
+trim,pretrim_low_limit,1.500
+trim,pretrim_high_limit,4.500
+trim,posttrim_low_limit,2.910
+trim,posttrim_high_limit,3.090
 trim,codeunits,A
 trim,description0,code 0x01.+1.0
 trim,description1,code 0x02.+2.0
@@ -379,9 +548,8 @@ esd,SIMPV,TBD
 pinname,CELG
 definition,CELG,power ground
 iq,CELG,SIMULATION
-absmax,CELG,rentlimit,SIMPV,CELPOS,CELNEG
-
-absmin,CELG,
+absmax,CELG,0.3
+absmin,CELG,-0.3
 io,CELG,input
 mode,CELG,power
 router,CELG,TBD
@@ -391,8 +559,8 @@ esd,CELG,TBD
 pinname,SUB
 definition,SUB,power ground
 iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
+absmax,SUB,0.3
+absmin,SUB,-0.3
 io,SUB,input
 mode,SUB,power
 router,SUB,TBD
@@ -402,8 +570,8 @@ esd,SUB,TBD
 pinname,measure_currentlimit
 definition,measure_currentlimit,Measure Current limit Pin
 iq,measure_currentlimit,SIMULATION
-absmax,measure_currentlimit,36
-absmin,measure_currentlimit,
+absmax,measure_currentlimit,12
+absmin,measure_currentlimit,-0.3
 io,measure_currentlimit,input
 mode,measure_currentlimit,digital
 router,measure_currentlimit,TBD
@@ -413,8 +581,8 @@ esd,measure_currentlimit,TBD
 pinname,VSENSE
 definition,VSENSE,Comparator Reference Node
 iq,VSENSE,SIMULATION
-absmax,VSENSE,36
-absmin,VSENSE,
+absmax,VSENSE,12
+absmin,VSENSE,-0.3
 io,VSENSE,input
 mode,VSENSE,analog
 router,VSENSE,TBD
@@ -424,8 +592,8 @@ esd,VSENSE,TBD
 pinname,IREPLICA
 definition,IREPLICA,Comparator Measure Node
 iq,IREPLICA,SIMULATION
-absmax,IREPLICA,36
-absmin,IREPLICA,
+absmax,IREPLICA,12
+absmin,IREPLICA,-0.3
 io,IREPLICA,input
 mode,IREPLICA,analog
 router,IREPLICA,TBD
@@ -435,8 +603,8 @@ esd,IREPLICA,TBD
 pinname,currentlimit
 definition,currentlimit,Current Limit Output Signal
 iq,currentlimit,SIMULATION
-absmax,currentlimit,36
-absmin,currentlimit,
+absmax,currentlimit,12
+absmin,currentlimit,-0.3
 io,currentlimit,output
 mode,currentlimit,digital
 router,currentlimit,TBD
@@ -447,7 +615,7 @@ pinname,trim_currentlimit
 definition,trim_currentlimit,Current Limit Trim
 iq,trim_currentlimit,SIMULATION
 absmax,trim_currentlimit,6
-absmin,trim_currentlimit,
+absmin,trim_currentlimit,-0.3
 io,trim_currentlimit,input
 mode,trim_currentlimit,digital
 router,trim_currentlimit,TBD
@@ -459,7 +627,7 @@ pinname,factory_currentlimit_blanking
 definition,factory_currentlimit_blanking,Factory Current Limit Trim Blanking
 iq,factory_currentlimit_blanking,SIMULATION
 absmax,factory_currentlimit_blanking,6
-absmin,factory_currentlimit_blanking,
+absmin,factory_currentlimit_blanking,-0.3
 io,factory_currentlimit_blanking,input
 mode,factory_currentlimit_blanking,digital
 router,factory_currentlimit_blanking,TBD
@@ -470,8 +638,8 @@ esd,factory_currentlimit_blanking,TBD
 pinname,enable_currentlimit
 definition,enable_currentlimit,Enable Pin
 iq,enable_currentlimit,SIMULATION
-absmax,enable_currentlimit,36
-absmin,enable_currentlimit,
+absmax,enable_currentlimit,12
+absmin,enable_currentlimit,-0.3
 io,enable_currentlimit,input
 mode,enable_currentlimit,digital
 router,enable_currentlimit,TBD
@@ -483,7 +651,7 @@ pinname,IREF
 definition,IREF,External Current Reference
 iq,IREF,SIMULATION
 absmax,IREF,6
-absmin,IREF,
+absmin,IREF,-0.3
 io,IREF,input
 mode,IREF,analog
 router,IREF,TBD
@@ -493,7 +661,7 @@ esd,IREF,TBD
 pinname,CELPOS
 definition,CELPOS,High Voltage power supply
 iq,CELPOS,SIMULATION
-absmax,CELPOS,36
+absmax,CELPOS,12
 absmin,CELPOS,2.2
 io,CELPOS,input
 mode,CELPOS,power
@@ -504,7 +672,7 @@ esd,CELPOS,TBD
 pinname,CELNEG
 definition,CELNEG,High Voltage power supply
 iq,CELNEG,SIMULATION
-absmax,CELNEG,36
+absmax,CELNEG,12
 absmin,CELNEG,2.2
 io,CELNEG,input
 mode,CELNEG,power
@@ -515,7 +683,7 @@ esd,CELNEG,TBD
 pinname,HVREF
 definition,HVREF,High Voltage DC Reference
 iq,HVREF,SIMULATION
-absmax,HVREF,36
+absmax,HVREF,12
 absmin,HVREF,2.2
 io,HVREF,input
 mode,HVREF,power
@@ -527,7 +695,7 @@ pinname,currentlimit_lv
 definition,currentlimit_lv,Level Shifted Current Limit Output Signal
 iq,currentlimit_lv,SIMULATION
 absmax,currentlimit_lv,6
-absmin,currentlimit_lv,
+absmin,currentlimit_lv,-0.3
 io,currentlimit_lv,output
 mode,currentlimit_lv,digital
 router,currentlimit_lv,TBD
@@ -538,7 +706,7 @@ pinname,ten_currentlimit
 definition,ten_currentlimit,Test Enable
 iq,ten_currentlimit,SIMULATION
 absmax,ten_currentlimit,6
-absmin,ten_currentlimit,
+absmin,ten_currentlimit,-0.3
 io,ten_currentlimit,input
 mode,ten_currentlimit,digital
 router,ten_currentlimit,TBD
@@ -549,7 +717,7 @@ pinname,ten_taext_currentlimit
 definition,ten_taext_currentlimit,Test External IREF Enable
 iq,ten_taext_currentlimit,SIMULATION
 absmax,ten_taext_currentlimit,6
-absmin,ten_taext_currentlimit,
+absmin,ten_taext_currentlimit,-0.3
 io,ten_taext_currentlimit,input
 mode,ten_taext_currentlimit,digital
 router,ten_taext_currentlimit,TBD
@@ -560,7 +728,7 @@ pinname,ten_measure_currentlimit
 definition,ten_measure_currentlimit,Test Enable Measure
 iq,ten_measure_currentlimit,SIMULATION
 absmax,ten_measure_currentlimit,6
-absmin,ten_measure_currentlimit,
+absmin,ten_measure_currentlimit,-0.3
 io,ten_measure_currentlimit,input
 mode,ten_measure_currentlimit,digital
 router,ten_measure_currentlimit,TBD
@@ -571,7 +739,7 @@ pinname,TAEXT_CURRENTLIMIT
 definition,TAEXT_CURRENTLIMIT,Test IREF Current
 iq,TAEXT_CURRENTLIMIT,SIMULATION
 absmax,TAEXT_CURRENTLIMIT,6
-absmin,TAEXT_CURRENTLIMIT,
+absmin,TAEXT_CURRENTLIMIT,-0.3
 io,TAEXT_CURRENTLIMIT,input
 mode,TAEXT_CURRENTLIMIT,analog
 router,TAEXT_CURRENTLIMIT,TBD
@@ -582,7 +750,7 @@ pinname,tdi_currentlimit
 definition,tdi_currentlimit,Current Limit Output Signal
 iq,tdi_currentlimit,SIMULATION
 absmax,tdi_currentlimit,6
-absmin,tdi_currentlimit,
+absmin,tdi_currentlimit,-0.3
 io,tdi_currentlimit,output
 mode,tdi_currentlimit,digital
 router,tdi_currentlimit,TBD
@@ -593,7 +761,7 @@ pinname,tdi_currentlimitlive
 definition,tdi_currentlimitlive,Current Limit Live Output Signal
 iq,tdi_currentlimitlive,SIMULATION
 absmax,tdi_currentlimitlive,6
-absmin,tdi_currentlimitlive,
+absmin,tdi_currentlimitlive,-0.3
 io,tdi_currentlimitlive,output
 mode,tdi_currentlimitlive,digital
 router,tdi_currentlimitlive,TBD
@@ -604,7 +772,7 @@ pinname,ten_currentlimit_delay
 definition,ten_currentlimit_delay,Adjust Current Limit Delay
 iq,ten_currentlimit_delay,SIMULATION
 absmax,ten_currentlimit_delay,6
-absmin,ten_currentlimit_delay,
+absmin,ten_currentlimit_delay,-0.3
 io,ten_currentlimit_delay,input
 mode,ten_currentlimit_delay,digital
 router,ten_currentlimit_delay,TBD

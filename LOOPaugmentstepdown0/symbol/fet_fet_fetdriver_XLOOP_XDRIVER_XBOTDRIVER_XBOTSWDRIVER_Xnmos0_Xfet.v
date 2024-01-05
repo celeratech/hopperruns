@@ -1,6 +1,6 @@
 //Celera:fet_fet_fetdriver_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWDRIVER_Xnmos0_Xfet
 //Celera Confidential Symbol Generator
-//power NMOS:Ron:1.000 Ohm
+//power NMOS:Ron:0.200 Ohm
 //Vgs 6V Vds 6V
 //Kelvin:no
 
