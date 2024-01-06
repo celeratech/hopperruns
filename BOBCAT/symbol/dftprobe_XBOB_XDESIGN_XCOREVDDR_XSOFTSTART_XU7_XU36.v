@@ -1,0 +1,9 @@
+module dftprobe_XBOB_XDESIGN_XCOREVDDR_XSOFTSTART_XU7_XU36 (i,tdi_SOFTSTARTinternalNOFAULT_STARTUP,ten_SOFTSTARTinternalNOFAULT_STARTUP,CELG,CELSUB,CELV);
+input  i;
+output  tdi_SOFTSTARTinternalNOFAULT_STARTUP;
+input  ten_SOFTSTARTinternalNOFAULT_STARTUP;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+

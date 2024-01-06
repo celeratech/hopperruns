@@ -1,0 +1,9 @@
+module dftprobe_XBOB_XDESIGN_XCOREVLEDGB_XCONVERTER_XU66 (i,tdi_CONVERTERcoreDPSGRD_Rev3_POWERUP,ten_CONVERTERcoreDPSGRD_Rev3_POWERUP,CELG,CELSUB,CELV);
+input  i;
+output  tdi_CONVERTERcoreDPSGRD_Rev3_POWERUP;
+input  ten_CONVERTERcoreDPSGRD_Rev3_POWERUP;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+

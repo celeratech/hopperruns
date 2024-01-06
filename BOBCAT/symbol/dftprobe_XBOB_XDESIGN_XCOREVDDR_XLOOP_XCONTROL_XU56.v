@@ -1,0 +1,9 @@
+module dftprobe_XBOB_XDESIGN_XCOREVDDR_XLOOP_XCONTROL_XU56 (i,tdi_STEPDOWNalgorithmCONTROL3p1_POWERUP,ten_STEPDOWNalgorithmCONTROL3p1_POWERUP,CELG,CELSUB,CELV);
+input  i;
+output  tdi_STEPDOWNalgorithmCONTROL3p1_POWERUP;
+input  ten_STEPDOWNalgorithmCONTROL3p1_POWERUP;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+

@@ -1,0 +1,9 @@
+module dftprobe_XBOB_XDESIGN_XCOREVLEDGB_XCONVERTER_XU65 (i,tdi_CONVERTERcoreDPSGRD_Rev3_FAULT,ten_CONVERTERcoreDPSGRD_Rev3_FAULT,CELG,CELSUB,CELV);
+input  i;
+output  tdi_CONVERTERcoreDPSGRD_Rev3_FAULT;
+input  ten_CONVERTERcoreDPSGRD_Rev3_FAULT;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+

@@ -1,0 +1,11 @@
+//Celera:dbuf_XBOB_XSEQUENCER_XU40
+//Celera Confidential Symbol Generator
+//Digital Buffer
+module dbuf_XBOB_XSEQUENCER_XU40 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
+endmodule
+

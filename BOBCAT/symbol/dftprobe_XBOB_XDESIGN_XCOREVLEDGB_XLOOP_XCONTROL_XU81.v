@@ -1,0 +1,9 @@
+module dftprobe_XBOB_XDESIGN_XCOREVLEDGB_XLOOP_XCONTROL_XU81 (i,tdi_STEPDOWNalgorithmCONTROL1p3_FAULT,ten_STEPDOWNalgorithmCONTROL1p3_FAULT,CELG,CELSUB,CELV);
+input  i;
+output  tdi_STEPDOWNalgorithmCONTROL1p3_FAULT;
+input  ten_STEPDOWNalgorithmCONTROL1p3_FAULT;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+

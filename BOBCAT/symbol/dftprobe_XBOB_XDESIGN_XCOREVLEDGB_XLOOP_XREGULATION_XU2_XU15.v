@@ -1,0 +1,9 @@
+module dftprobe_XBOB_XDESIGN_XCOREVLEDGB_XLOOP_XREGULATION_XU2_XU15 (i,TAI_REGULATIONvc,ten_REGULATIONvc,CELG,CELSUB,CELV);
+input  i;
+output  TAI_REGULATIONvc;
+input  ten_REGULATIONvc;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+

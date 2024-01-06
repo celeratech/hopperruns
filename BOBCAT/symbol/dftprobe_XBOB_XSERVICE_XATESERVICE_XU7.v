@@ -1,0 +1,9 @@
+module dftprobe_XBOB_XSERVICE_XATESERVICE_XU7 (i,tdi_ok_ref,ten_ok_ref,CELG,CELSUB,CELV);
+input  i;
+output  tdi_ok_ref;
+input  ten_ok_ref;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+

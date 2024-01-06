@@ -1,0 +1,9 @@
+module dftprobe_XBOB_XDESIGN_XCOREVDDR_XLOOP_XDRIVER_XU8_XU9 (i,tdi_topswipeak,ten_topswipeak,CELG,CELSUB,CELV);
+input  i;
+output  tdi_topswipeak;
+input  ten_topswipeak;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+

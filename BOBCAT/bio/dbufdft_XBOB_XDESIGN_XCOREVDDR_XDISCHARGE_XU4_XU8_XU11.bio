@@ -1,0 +1,153 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Celera Confidential BIO Data Generator
+//Cell Name
+cell,dbufdft
+//**********************************************
+//Generator Revision
+revision,generator,0.4.1
+//**********************************************
+//Simplis Limits
+revision,limit,0p1
+//dbufdft
+
+limit,logicgate_vmax,choose0,2
+limit,logicgate_vmax,choose1,6
+limit,logicgate_type,choose0,dbuf
+//**********************************************
+//PAD Parameters
+//**********************************************
+//USER Parameters
+//**********************************************
+//POR Parameters
+//**********************************************
+//REGISTER Parameters
+//**********************************************
+//FACTORY Parameters
+//**********************************************
+//CELL DFT Parameters
+// *********************************************
+//Layout Parameters
+revision,layout,0p1
+layout,dbufdft
+place PEBBLES PEBBLEdbufdft 0 0 R0
+movePINS
+endlayoutbio
+
+// *********************************************
+//Die Size Estimate
+revision,vis15cbdiesize,0p1
+generate_area,dbufdft,105
+// *********************************************
+//Calculator Parameters
+#define,CELVminimum,1.4
+//**********************************************
+//Pinorder Parameters
+*******************************************
+** Celera Library Pin Order Generator    **
+*******************************************
+//dbuf
+revision,pinorder,0.2.0
+pinorder,o,i
+
+endpinorder
+//**********************************************
+//TRIM Parameters
+//**********************************************
+//Cell Pin Descriptions
+//**********************************************
+//Cell Pin Descriptions
+pinname,CELV
+definition,CELV,power supply
+iq,CELV,SIMULATION
+absmax,CELV,UPDATE
+absmin,CELV,UPDATE
+io,CELV,input
+mode,CELV,power
+router,CELV,TBD
+dftpriority,CELV,1
+esd,CELV,TBD
+
+pinname,CELG
+definition,CELG,power ground
+iq,CELG,SIMULATION
+absmax,CELG,UPDATE
+absmin,CELG,UPDATE
+io,CELG,input
+mode,CELG,power
+router,CELG,TBD
+dftpriority,CELG,1
+esd,CELG,TBD
+
+pinname,i
+definition,i,digital buffer input 
+iq,i,SIMULATION
+absmax,i,UPDATE
+absmin,i,UPDAT
+io,i,input
+mode,i,digital
+router,i,TBD
+dftpriority,i,1
+esd,i,TBD
+
+pinname,ten_dbuf0
+definition,ten_dbuf0,DFT enable bit0
+iq,ten_dbuf0,SIMULATION
+absmax,ten_dbuf0,UPDATE
+absmin,ten_dbuf0,UPDATE
+io,ten_dbuf0,input
+mode,ten_dbuf0,digital
+router,ten_dbuf0,TBD
+dftpriority,ten_dbuf0,1
+esd,ten_dbuf0,TBD
+
+pinname,ten_dbuf1
+definition,ten_dbuf1,DFT enable bit1
+iq,ten_dbuf1,SIMULATION
+absmax,ten_dbuf1,UPDATE
+absmin,ten_dbuf1,UPDATE
+io,ten_dbuf1,input
+mode,ten_dbuf1,digital
+router,ten_dbuf1,TBD
+dftpriority,ten_dbuf1,1
+esd,ten_dbuf1,TBD
+
+pinname,o
+definition,o,digital buffer output 
+iq,o,SIMULATION
+absmax,o,UPDATE
+absmin,o,UPDATE
+io,o,output
+mode,o,digital
+router,o,TBD
+dftpriority,o,1
+esd,o,TBD
+
+pinname,tdi_dbuf
+definition,tdi_dbuf,DFT probe output
+iq,tdi_dbuf,SIMULATION
+absmax,tdi_dbuf,UPDATE
+absmin,tdi_dbuf,UPDATE
+io,tdi_dbuf,output
+mode,tdi_dbuf,digital
+router,tdi_dbuf,TBD
+dftpriority,tdi_dbuf,1
+esd,tdi_dbuf,TBD
+
+pinname,CELSUB
+definition,CELSUB,substrate
+iq,CELSUB,SIMULATION
+absmax,CELSUB,UPDATE
+absmin,CELSUB,UPDATE
+io,CELSUB,input
+mode,CELSUB,power
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
+//**********************************************
+
+// *********************************************
+endbio
