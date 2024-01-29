@@ -1,0 +1,349 @@
+// ------------------------ Module Definitions -----------
+module STEPDOWNalgorithmCORE0p0_DYES_XU1_XSTEPDOWN_XCORESTATE (tdo,tmi,porb,ok_fault,CELG59462,CELV96848,ok_driver,fault_core,ok_service,CELSUB40948,ok_feedback,short_fault,enable_fault,ok_powergood,enable_driver,ok_regulation,done_discharge,done_softstart,enable_feedback,enable_discharge,enable_powergood,enable_softstart,enable_regulation);
+  inout  tdo;
+  inout [4:0] tmi;
+  input  porb;
+  input  ok_fault;
+  input  CELG59462;
+  input  CELV96848;
+  input  ok_driver;
+  output  fault_core;
+  input  ok_service;
+  input  CELSUB40948;
+  input  ok_feedback;
+  input  short_fault;
+  output  enable_fault;
+  input  ok_powergood;
+  output  enable_driver;
+  input  ok_regulation;
+  input  done_discharge;
+  input  done_softstart;
+  output  enable_feedback;
+  output  enable_discharge;
+  output  enable_powergood;
+  output  enable_softstart;
+  output  enable_regulation;
+endmodule
+
+module DISCHARGEaugmentstepdown_XU1_XSTEPDOWN_XDISCHARGE (OUT,tdo,tmi,MUDV,CELG59462,CELV96848,sense_OUT,CELSUB40948,done_discharge,senseCELG38473,enable_discharge,IP_XU1_XSTEPDOWN_XDISCHARGE_XU2_XU3_XU2);
+  inout  OUT;
+  inout  tdo;
+  input [4:0] tmi;
+  input  MUDV;
+  input  CELG59462;
+  input  CELV96848;
+  input  sense_OUT;
+  input  CELSUB40948;
+  output  done_discharge;
+  input  senseCELG38473;
+  input  enable_discharge;
+  input  IP_XU1_XSTEPDOWN_XDISCHARGE_XU2_XU3_XU2;
+endmodule
+
+module FAULTaugmentstepdown_XU1_XSTEPDOWN_XFAULT (tdo,tmi,MUDV,ok_fault,sense_FB,CELG59462,CELV96848,PORB97836,REF_FAULT,CELSUB40948,fault_short,kelvin_MUDG,enable_fault,ilimit_fault,IP_XU1_XSTEPDOWN_XFAULT_XU2_XU4,IP_XU1_XSTEPDOWN_XFAULT_XU2_XU9);
+  inout  tdo;
+  input [4:0] tmi;
+  input  MUDV;
+  output  ok_fault;
+  input  sense_FB;
+  input  CELG59462;
+  input  CELV96848;
+  input  PORB97836;
+  input  REF_FAULT;
+  input  CELSUB40948;
+  output  fault_short;
+  input  kelvin_MUDG;
+  input  enable_fault;
+  input  ilimit_fault;
+  input  IP_XU1_XSTEPDOWN_XFAULT_XU2_XU4;
+  input  IP_XU1_XSTEPDOWN_XFAULT_XU2_XU9;
+endmodule
+
+module LOOPaugmentstepdown_XU1_XSTEPDOWN_XLOOP (SW,TAO,tdo,tmi,MUDV,porb,CBOOT,PMUDG,PMUDV,TAEXT,clock,PMUDHV,CELG59462,CELV96848,ok_driver,sense_OUT,CELREF84329,CELSUB40948,kelvin_MUDG,ok_feedback,ilimit_fault,FB_REGULATION,enable_driver,ok_regulation,REF_REGULATION,VSS_REGULATION,IREF_REGULATION,enable_feedback,enable_regulation,IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU1,IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU3,IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU9,IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU21,IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU36,IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU42,IP_XU1_XSTEPDOWN_XLOOP_XDRIVER_XU2_XBOTSWZERO,IP_XU1_XSTEPDOWN_XLOOP_XDRIVER_XU2_XBOTSWCURRENT);
+  inout  SW;
+  inout  TAO;
+  inout  tdo;
+  input [4:0] tmi;
+  input  MUDV;
+  input  porb;
+  input  CBOOT;
+  inout  PMUDG;
+  input  PMUDV;
+  input  TAEXT;
+  input  clock;
+  inout  PMUDHV;
+  input  CELG59462;
+  input  CELV96848;
+  output  ok_driver;
+  inout  sense_OUT;
+  input  CELREF84329;
+  input  CELSUB40948;
+  inout  kelvin_MUDG;
+  output  ok_feedback;
+  output  ilimit_fault;
+  inout  FB_REGULATION;
+  input  enable_driver;
+  output  ok_regulation;
+  input  REF_REGULATION;
+  input  VSS_REGULATION;
+  input  IREF_REGULATION;
+  input  enable_feedback;
+  input  enable_regulation;
+  input  IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU1;
+  input  IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU3;
+  input  IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU9;
+  input  IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU21;
+  input  IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU36;
+  input  IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU42;
+  input  IP_XU1_XSTEPDOWN_XLOOP_XDRIVER_XU2_XBOTSWZERO;
+  input  IP_XU1_XSTEPDOWN_XLOOP_XDRIVER_XU2_XBOTSWCURRENT;
+endmodule
+
+module POWERGOODstepdown_XU1_XSTEPDOWN_XPOWERGOOD (POK,tdo,tmi,MUDV,CELG59462,CELV96848,CELSUB40948,POWERGOODfb,kelvin_MUDG,POWERGOODref,ok_powergood,enable_powergood,IP_XU1_XSTEPDOWN_XPOWERGOOD_XU3_XU8,IP_XU1_XSTEPDOWN_XPOWERGOOD_XU7_XU3,IP_XU1_XSTEPDOWN_XPOWERGOOD_XU7_XU4);
+  inout  POK;
+  inout  tdo;
+  input [4:0] tmi;
+  input  MUDV;
+  input  CELG59462;
+  input  CELV96848;
+  input  CELSUB40948;
+  input  POWERGOODfb;
+  inout  kelvin_MUDG;
+  input  POWERGOODref;
+  output  ok_powergood;
+  input  enable_powergood;
+  input  IP_XU1_XSTEPDOWN_XPOWERGOOD_XU3_XU8;
+  input  IP_XU1_XSTEPDOWN_XPOWERGOOD_XU7_XU3;
+  input  IP_XU1_XSTEPDOWN_XPOWERGOOD_XU7_XU4;
+endmodule
+
+module SOFTSTARTaugmentstepdown_XU1_XSTEPDOWN_XSOFTSTART (TAO,tdo,tmi,MUDV,porb,CELG59462,CELV96848,CELSUB40948,kelvin_MUDG,REF_SOFTSTART,VSS_REGULATION,done_softstart,enable_softstart,IP_XU1_XSTEPDOWN_XSOFTSTART_XU9_XU5,IP_XU1_XSTEPDOWN_XSOFTSTART_XU9_XU9,IP_XU1_XSTEPDOWN_XSOFTSTART_XU3_XU18,IP_XU1_XSTEPDOWN_XSOFTSTART_XU8_XU19,IP_XU1_XSTEPDOWN_XSOFTSTART_XU8_XU23,SENSE_G_XU1_XSTEPDOWN_XSOFTSTART_XU9_XU9);
+  inout  TAO;
+  inout  tdo;
+  inout [4:0] tmi;
+  input  MUDV;
+  input  porb;
+  input  CELG59462;
+  input  CELV96848;
+  input  CELSUB40948;
+  input  kelvin_MUDG;
+  input  REF_SOFTSTART;
+  inout  VSS_REGULATION;
+  output  done_softstart;
+  input  enable_softstart;
+  input  IP_XU1_XSTEPDOWN_XSOFTSTART_XU9_XU5;
+  input  IP_XU1_XSTEPDOWN_XSOFTSTART_XU9_XU9;
+  input  IP_XU1_XSTEPDOWN_XSOFTSTART_XU3_XU18;
+  input  IP_XU1_XSTEPDOWN_XSOFTSTART_XU8_XU19;
+  input  IP_XU1_XSTEPDOWN_XSOFTSTART_XU8_XU23;
+  input  SENSE_G_XU1_XSTEPDOWN_XSOFTSTART_XU9_XU9;
+endmodule
+
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
+// ------------------------ Module Verilog ---------------
+module COREstepdownAugment_XU1_XSTEPDOWN (SW, OUT, POK, TAO, tdo, tmi, MUDV, porb, CBOOT, PMUDG, PMUDV, TAEXT, clock, PMUDHV, CELG59462, CELV96848, PORB97836, sense_OUT, ok_service, CELSUB40948, enable_core, kelvin_MUDG, REF_REGULATION, senseCELG38473, IREF_REGULATION, IP_XU1_XSTEPDOWN_XFAULT_XU2_XU4, IP_XU1_XSTEPDOWN_XFAULT_XU2_XU9, IP_XU1_XSTEPDOWN_XPOWERGOOD_XU3_XU8, IP_XU1_XSTEPDOWN_XPOWERGOOD_XU7_XU3, IP_XU1_XSTEPDOWN_XPOWERGOOD_XU7_XU4, IP_XU1_XSTEPDOWN_XSOFTSTART_XU9_XU5, IP_XU1_XSTEPDOWN_XSOFTSTART_XU9_XU9, IP_XU1_XSTEPDOWN_XSOFTSTART_XU3_XU18, IP_XU1_XSTEPDOWN_XSOFTSTART_XU8_XU19, IP_XU1_XSTEPDOWN_XSOFTSTART_XU8_XU23, IP_XU1_XSTEPDOWN_XDISCHARGE_XU2_XU3_XU2, SENSE_G_XU1_XSTEPDOWN_XSOFTSTART_XU9_XU9, IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU1, IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU3, IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU9, IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU21, IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU36, IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU42, IP_XU1_XSTEPDOWN_XLOOP_XDRIVER_XU2_XBOTSWZERO, IP_XU1_XSTEPDOWN_XLOOP_XDRIVER_XU2_XBOTSWCURRENT);
+inout  SW;
+inout  OUT;
+inout  POK;
+inout  TAO;
+inout  tdo;
+inout [4:0] tmi;
+input  MUDV;
+input  porb;
+input  CBOOT;
+inout  PMUDG;
+input  PMUDV;
+input  TAEXT;
+input  clock;
+inout  PMUDHV;
+input  CELG59462;
+input  CELV96848;
+input  PORB97836;
+input  sense_OUT;
+  input  ok_service;
+input  CELSUB40948;
+input  enable_core;
+inout  kelvin_MUDG;
+input  REF_REGULATION;
+input  senseCELG38473;
+input  IREF_REGULATION;
+input  IP_XU1_XSTEPDOWN_XFAULT_XU2_XU4;
+input  IP_XU1_XSTEPDOWN_XFAULT_XU2_XU9;
+input  IP_XU1_XSTEPDOWN_XPOWERGOOD_XU3_XU8;
+input  IP_XU1_XSTEPDOWN_XPOWERGOOD_XU7_XU3;
+input  IP_XU1_XSTEPDOWN_XPOWERGOOD_XU7_XU4;
+input  IP_XU1_XSTEPDOWN_XSOFTSTART_XU9_XU5;
+input  IP_XU1_XSTEPDOWN_XSOFTSTART_XU9_XU9;
+input  IP_XU1_XSTEPDOWN_XSOFTSTART_XU3_XU18;
+input  IP_XU1_XSTEPDOWN_XSOFTSTART_XU8_XU19;
+input  IP_XU1_XSTEPDOWN_XSOFTSTART_XU8_XU23;
+input  IP_XU1_XSTEPDOWN_XDISCHARGE_XU2_XU3_XU2;
+input  SENSE_G_XU1_XSTEPDOWN_XSOFTSTART_XU9_XU9;
+input  IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU1;
+input  IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU3;
+input  IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU9;
+input  IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU21;
+input  IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU36;
+input  IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU42;
+input  IP_XU1_XSTEPDOWN_XLOOP_XDRIVER_XU2_XBOTSWZERO;
+input  IP_XU1_XSTEPDOWN_XLOOP_XDRIVER_XU2_XBOTSWCURRENT;
+
+
+// ------------------------ Wires ------------------------
+wire [4:0] tmi;
+
+// ------------------------ Networks ---------------------
+STEPDOWNalgorithmCORE0p0_DYES_XU1_XSTEPDOWN_XCORESTATE XCORESTATE (
+.tdo(tdo),
+.tmi(tmi[4:0]),
+.porb(porb),
+.ok_fault(net_106),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.ok_driver(net_127),
+.fault_core(net_98),
+.ok_service(enable_core),
+.CELSUB40948(CELSUB40948),
+.ok_feedback(net_131),
+.short_fault(net_104),
+.enable_fault(net_105),
+.ok_powergood(net_122),
+.enable_driver(net_128),
+.ok_regulation(net_129),
+.done_discharge(net_115),
+.done_softstart(net_125),
+.enable_feedback(net_132),
+.enable_discharge(net_116),
+.enable_powergood(net_121),
+.enable_softstart(net_126),
+.enable_regulation(net_130)
+);
+
+DISCHARGEaugmentstepdown_XU1_XSTEPDOWN_XDISCHARGE XDISCHARGE (
+.OUT(OUT),
+.tdo(tdo),
+.tmi(tmi[4:0]),
+.MUDV(MUDV),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.sense_OUT(sense_OUT),
+.CELSUB40948(CELSUB40948),
+.done_discharge(net_115),
+.senseCELG38473(senseCELG38473),
+.enable_discharge(net_116),
+.IP_XU1_XSTEPDOWN_XDISCHARGE_XU2_XU3_XU2(IP_XU1_XSTEPDOWN_XDISCHARGE_XU2_XU3_XU2)
+);
+
+FAULTaugmentstepdown_XU1_XSTEPDOWN_XFAULT XFAULT (
+.tdo(tdo),
+.tmi(tmi[4:0]),
+.MUDV(MUDV),
+.ok_fault(net_106),
+.sense_FB(net_109),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.PORB97836(PORB97836),
+.REF_FAULT(REF_REGULATION),
+.CELSUB40948(CELSUB40948),
+.fault_short(net_104),
+.kelvin_MUDG(kelvin_MUDG),
+.enable_fault(net_105),
+.ilimit_fault(net_112),
+.IP_XU1_XSTEPDOWN_XFAULT_XU2_XU4(IP_XU1_XSTEPDOWN_XFAULT_XU2_XU4),
+.IP_XU1_XSTEPDOWN_XFAULT_XU2_XU9(IP_XU1_XSTEPDOWN_XFAULT_XU2_XU9)
+);
+
+LOOPaugmentstepdown_XU1_XSTEPDOWN_XLOOP XLOOP (
+.SW(SW),
+.TAO(TAO),
+.tdo(tdo),
+.tmi(tmi[4:0]),
+.MUDV(MUDV),
+.porb(porb),
+.CBOOT(CBOOT),
+.PMUDG(PMUDG),
+.PMUDV(PMUDV),
+.TAEXT(TAEXT),
+.clock(clock),
+.PMUDHV(PMUDHV),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.ok_driver(net_127),
+.sense_OUT(OUT),
+.CELREF84329(CELREF84329),
+.CELSUB40948(CELSUB40948),
+.kelvin_MUDG(kelvin_MUDG),
+.ok_feedback(net_131),
+.ilimit_fault(net_112),
+.FB_REGULATION(net_109),
+.enable_driver(net_128),
+.ok_regulation(net_129),
+.REF_REGULATION(REF_REGULATION),
+.VSS_REGULATION(net_124),
+.IREF_REGULATION(IREF_REGULATION),
+.enable_feedback(net_132),
+.enable_regulation(net_130),
+.IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU1(IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU1),
+.IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU3(IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU3),
+.IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU9(IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU9),
+.IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU21(IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU21),
+.IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU36(IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU36),
+.IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU42(IP_XU1_XSTEPDOWN_XLOOP_XREGULATION_XU2_XU42),
+.IP_XU1_XSTEPDOWN_XLOOP_XDRIVER_XU2_XBOTSWZERO(IP_XU1_XSTEPDOWN_XLOOP_XDRIVER_XU2_XBOTSWZERO),
+.IP_XU1_XSTEPDOWN_XLOOP_XDRIVER_XU2_XBOTSWCURRENT(IP_XU1_XSTEPDOWN_XLOOP_XDRIVER_XU2_XBOTSWCURRENT)
+);
+
+POWERGOODstepdown_XU1_XSTEPDOWN_XPOWERGOOD XPOWERGOOD (
+.POK(POK),
+.tdo(tdo),
+.tmi(tmi[4:0]),
+.MUDV(MUDV),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948),
+.POWERGOODfb(net_109),
+.kelvin_MUDG(kelvin_MUDG),
+.POWERGOODref(REF_REGULATION),
+.ok_powergood(net_122),
+.enable_powergood(net_121),
+.IP_XU1_XSTEPDOWN_XPOWERGOOD_XU3_XU8(IP_XU1_XSTEPDOWN_XPOWERGOOD_XU3_XU8),
+.IP_XU1_XSTEPDOWN_XPOWERGOOD_XU7_XU3(IP_XU1_XSTEPDOWN_XPOWERGOOD_XU7_XU3),
+.IP_XU1_XSTEPDOWN_XPOWERGOOD_XU7_XU4(IP_XU1_XSTEPDOWN_XPOWERGOOD_XU7_XU4)
+);
+
+SOFTSTARTaugmentstepdown_XU1_XSTEPDOWN_XSOFTSTART XSOFTSTART (
+.TAO(TAO),
+.tdo(tdo),
+.tmi(tmi[4:0]),
+.MUDV(MUDV),
+.porb(porb),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948),
+.kelvin_MUDG(kelvin_MUDG),
+.REF_SOFTSTART(REF_REGULATION),
+.VSS_REGULATION(net_124),
+.done_softstart(net_125),
+.enable_softstart(net_126),
+.IP_XU1_XSTEPDOWN_XSOFTSTART_XU9_XU5(IP_XU1_XSTEPDOWN_XSOFTSTART_XU9_XU5),
+.IP_XU1_XSTEPDOWN_XSOFTSTART_XU9_XU9(IP_XU1_XSTEPDOWN_XSOFTSTART_XU9_XU9),
+.IP_XU1_XSTEPDOWN_XSOFTSTART_XU3_XU18(IP_XU1_XSTEPDOWN_XSOFTSTART_XU3_XU18),
+.IP_XU1_XSTEPDOWN_XSOFTSTART_XU8_XU19(IP_XU1_XSTEPDOWN_XSOFTSTART_XU8_XU19),
+.IP_XU1_XSTEPDOWN_XSOFTSTART_XU8_XU23(IP_XU1_XSTEPDOWN_XSOFTSTART_XU8_XU23),
+.SENSE_G_XU1_XSTEPDOWN_XSOFTSTART_XU9_XU9(SENSE_G_XU1_XSTEPDOWN_XSOFTSTART_XU9_XU9)
+);
+
+STONEnoconn XNC98 (
+.noconn(net_98)
+);
+
+endmodule
+
