@@ -1,35 +1,29 @@
+//Celera:AUGMENTstepdown0 Project Bio
 //////////////////////////////////////////////////////////////////////////////////////
-//Simplis Project Parameters ///////////////////////////////////////////
-#define,Project,AUGMENTstepdown
-////////////////////////////////////////////////////////////////////////////////////////
-
-///Project Global  Parameters /////////////////////////////////////////
+////////////   default.bio'    //////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+//Simplis Project Parameters ///////////////////////////////////////
+#define,Project,TBD
 #define,PROJECTreference,1#define,CELV,2.3
-#define,SIMPV,2.3
-#define CELVminimum,2.0
-#define SIMPVminimum,2.0
-////////////////////////////////////////////////////////////////////////////////////////
-
-///Porcess  Parameters ///////////////////////////////////////////////////
-#define,leveloffset,8
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+//Porcess  Parameters ///////////////////////////////////////////////////////
+//#define,PROJECTbg,1.221
 #define,PROJECTbg,1.198
 #define,REFERENCEccpcode,3
 #define,REFERENCEccncode,5
 #define,HVNPN2A_5vbe,0.55
 #define,HVNPN2A_5vbetc,-2.1
 #define,VTNnch5i,0.72
-/////////////////////////////////////////////////////////////////////////////////////////
-
-// FET calculators ////////////////////////////////////////////////////////////
-//#define,FETNcalculator,typical
+//#define,FETNcalculator_option,typical
 #define,FETNcalculator,maximum
-//#define,FETPcalculator,typical
+//#define,FETPcalculator_option,typical
 #define,FETPcalculator,maximum
 ////////////////////////////////////////////////////////////////////////////////////////
-
 //Global Parameters ///////////////////////////////////////////////////////
-#define,TaRoom,25
-#define,ground,0.0
+#define,CELVminimum,2.0
 #define,CELGabsmax,0.3
 #define,CELGabsmin,-0.3
 #define,SUBabsmax,0.3
@@ -37,56 +31,138 @@
 #define,CELSUBabsmax,0.3
 #define,CELSUBabsmin,-0.3
 /////////////////////////////////////////////////////////////////////////////////////////
-
 //layout Parameters //////////////////////////////////////////////////////////
 #define MODULEdiesizefill 10
 //Percentage of area added to module for routing
-//////////////////////////////////////////////////////////////////////////////////////////
 
-//DFT Netlister Parameters ///////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////
+//DFT Netlister Parameters /////////////////////////////////
+#define,TMAstartAddress,80
 #define,global_ten,module
-//#define,global_ten,single
-//#define,taoout,nolimit
-#define,taoout,1
-//#define,tdoout,nolimit
-#define,tdoout,1
-//#define,TAEXT,nolimit
-#define,TAEXT,1
-//#define,tdext,nolimit
-#define,tdext,1
-#define,measure,no
-#define,measureaddress,FD
-///////////////////////////////////////////////////////////////////////////////////////////
+//#define,global_ten_option,single
+/////////////////////////////////////////////////////////////////////////////
+//Product Parameters /////////////////////////////////
+#define,chipid_insert,yes
+//#define,chipid_location,stacked
+#define,chipid_location,fixed
+#define,chipid_address,FE
+#define,chipid_productrevision,0
+//#define,production,no
+#define,production,yes
+////////////////////////////////////////////////////////////////////////////
+////SERDES Netlister Parameters ////////////////////////
+//serdes Selector
+//#define,serdes_define_option,random
+#define,serdes_define,project
+//serdes address
+//#define,serdes_address_option,0,54
+//#define,serdes_address_option,1,55
+//#define,serdes_address_option,2,56
+#define,serdes_address,3,57
+//serdes password
+#define,serdes_password,0,91
+//#define,serdes_password_option,1,3A
+//#define,serdes_password_option,2,1E
+//#define,serdes_password_option,3,93
+//serdes unlock
+#define,serdes_hardwarelock,no
+//#define,serdes_hardwarelock_option,yes
+//serdes defaults
+#define,serdes_vmax,6
+#define,serdes_pad,dedicated
+//#define,serdes_pad_option,assign
+#define,serdes_clock,3100
+//#define,serdes_dft_option,no
+#define,serdes_dft,yes
+//#define,serdes_dft_option,tbd
+#define,SERDESotpid,25
+/////////////////////////////////////////////////////////////////////////
+//Regoister Map parameters ////////////////////////////
+//#define,STATUSlevel_option,live
+#define,STATUSlevel,latch
+//#define,STATUSedge_option,edge
+#define,STATUSedge,level
+//RegisterMap Default Configuration
+#define,register_user,TBD
+#define,register_address,TBD
+#define,register_startaddress,TBD
+#define,register_architecture,TBD
+#define,register_security,TBD
+#define,register_securityaddress,TBD
+#define,register_hardwareunlock,TBD
+#define,register_regpwd0,TBD
+#define,register_regpwd1,TBD
+#define,register_regpwd2,TBD
+#define,register_regpwd3,TBD
+#define,register_sequence,TBD
+#define,register_id,TBD
+#define,register_chipid0,TBD
+#define,register_chipid1,TBD
+#define,register_revid,TBD
+#define,register_factoryid,TBD
+#define,register_dft,TBD
+/////////////////////////////////////////////////////////////////////////
+//DRM Netlister parameters ////////////////////////////
+#define,TMBstartAddress,01
+#define,DRMinsertlevel, -10
 
-//IBIASMIRROR  Parameters /////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//IBIASMIRROR Netlister Parameters/////////////////////
 //Define how "ok" is connected 
 #define,ibiasmirror_ok,parallel
-//#define,ibiasmirror_ok,serial
+//#define,ibiasmirror_ok_option,serial
 //Define if IBIASMIRROR is inserted
-//#define,ibiasmirror_insert,yes
+//#define,ibiasmirror_insert_option,yes
 #define,ibiasmirror_insert,no
-//////////////////////////////////////////////////////////////////////////////////////////
 
-//Package Details /////////////////////////////////////////////////////////////
-#define,PackageName,TQFN1644
-#define,DFTinputPAD0,na
-//#define,DFTinputPAD0state,low
-#define,DFTinputPAD0state,high
-//#define,DFTinputPAD0state,dft
-#define,DownBond,no
-///////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//PAD Netlister Parameters //////////////////////////////
+//#define,taoout_option,nolimit
+#define,taoout,1
+//#define,tdoout_option,nolimit
+#define,tdoout,1
+//#define,TAEXT_option,nolimit
+#define,TAEXT,1
+//#define,tdext_option,nolimit
+#define,tdext,1
 
-//ESD Design ///////////////////////////////////////////////////////////////////
-#define,ESDcombine,standalone
-//#define,ESDcombine,diode
-////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+//Package Details ///////////////////////////////////////
+#define,PackageName,TQFN3255
+////////////////////////////////////////////////////////////////////
+//Soft Connections
+#define,CELPOS,PAVDD
+#define,PMID,VIN
 
-// ISO Connection List ////////////////////////////////////////////////////
-<<<module>><<pin>><<instance>><net>>
+///////////////////////////////////////////////////////////////////////////
+//Modesto1 ISO COnnection List
+MODESTOoutputSWITCH0,NMOSiso12,all,net_9
+MODESTOoutputDISCHARGE0,NMOSiso12,all,PAVDDsense
+MODESTOfeedback0,NMOSiso6,all,CELV
+MODESTOoutputCHARGE0,NMOSiso12,XU5,PAVDDsense
+MODESTOoutputCHARGE0,NMOSiso12,XU6,VIN
+MODESTOpmos0,NMOSiso12,XU12,net_15
+MODESTOlspower0,NMOSiso12,XU2,LX
+MODESTOoutputPVOUT,NMOSiso12,XU5,PAVDD
+MODESTOoutputPVOUT,NMOSiso12,XU25,PAVDD
+MODESTOoutputPVOUT,NMOSiso12,XU31,PVIN
+MODESTOoutputPVOUT,NMOSiso12,XU44,PVIN
+////////////////////////////////////////////////////////////////////////////
+//Garnet ISO COnnection List
+GARNETdacswitch,NMOSiso6,all,CELV
+GARNETlspowerLV,NMOSiso6,XU3,LX
+//////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////////////
+//Ring Defaults
+#define,RINGDFTaddress,FF
+///////////////////////////////////////////////////////////////////
+//Garnet DFT Pad 
+#define,dftpad,input,POLARITY,low
 
-//Global ENABLE connection //////////////////////////////////////////
-<<module>><input connection>><<enable connection>>
-////////////////////////////////////////////////////////////////////////////////////////
-//endbio
+
+
+
+
+
+
