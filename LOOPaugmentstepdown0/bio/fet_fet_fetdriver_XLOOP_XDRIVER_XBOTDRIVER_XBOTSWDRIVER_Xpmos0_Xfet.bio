@@ -58,8 +58,8 @@ limit,fet_calculator,choose1,maximum
 //USER Parameters
 user,Type,p
 description,FET type
-user,Ron,500mOhm
-user,Ron_Design,192.0mOhm
+user,Ron,2 Ohm
+user,Ron_Design,0.769 Ohm
 description,FET on resistance
 user,Vds,6V
 description,FET Maximum Vds rating
@@ -153,7 +153,7 @@ trim,description7,empty
 // *********************************************
 //Layout Parameters
 powerfet,layout instruction
-placeFET 0 0 115.280 84.380 3 3 fullmetal
+placeFET 0 0 91.520 205.680 1 0 fullmetal
 //fetpower.bio
 revision,layout,0p1
 layout,fet_fetpower
@@ -335,16 +335,8 @@ GARNETlspowerLV,NMOSiso6,XU3,LX
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,ap5g6dw1_5t_76p0x0p2x56x1,2019645
-sub_area,ap5g6dw1_5t_76p0x0p2x56x1,2019645
-sub_area,ap5g6dw1_5t_76p0x0p2x56x1,2019645
-sub_area,ap5g6dw1_5t_76p0x0p2x56x1,2019645
-sub_area,ap5g6dw1_5t_76p0x0p2x56x1,2019645
-sub_area,ap5g6dw1_5t_76p0x0p2x56x1,2019645
-sub_area,ap5g6dw1_5t_76p0x0p2x56x1,2019645
-sub_area,ap5g6dw1_5t_76p0x0p2x56x1,2019645
-sub_area,ap5g6dw1_5t_76p0x0p2x56x1,2019645
-generate_area,fet_fet_fetdriver_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWDRIVER_Xpmos0_Xfet,18176805
+sub_area,ap5g6dw1_5t_197p3x0p2x44p0x1p0,204644176
+generate_area,fet_fet_fetdriver_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWDRIVER_Xpmos0_Xfet,204644176
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.3
