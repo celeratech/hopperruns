@@ -78,7 +78,7 @@ user,currentmirror_maxvout,6
 description,Current Mirror Maximum Output Voltage
 user,currentmirror_supply,lowvoltage
 description,Minimum Operating Voltage
-user,currentmirror_gain0,2.5_source
+user,currentmirror_gain0,5_source
 description,Current Mirror Output0
 user,NESTO,0.4.3
 description,Nesto generate Revision
@@ -348,9 +348,11 @@ sub_area,CASCODEnmos50uref,3800
 sub_area,CASCODEpmos50u,3800
 sub_area,CASCODEpmos50u,3800
 sub_area,CASCODEpmos50u,3800
+sub_area,CASCODEpmos50u,3800
+sub_area,CASCODEpmos50u,3800
 sub_area,CASCODEpmos50uref,3800
 sub_area,CASCODEnmos50u,3800
-generate_area,currentmirror1_XLOOP_XREGULATION_XU2_XGMCURRENT,22900
+generate_area,currentmirror1_XLOOP_XREGULATION_XU2_XGMCURRENT,30500
 // *********************************************
 //Operating Range
 #define,STONEminimum,2.1
