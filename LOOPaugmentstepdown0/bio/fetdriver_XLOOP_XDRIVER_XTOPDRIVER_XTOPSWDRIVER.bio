@@ -85,9 +85,9 @@ limit,fetdriver_design,choose2,fast
 //USER Parameters
 user,fetdriver_type,n
 description,FET Driver Type
-user,fetdriver_on_ron,4 Ohm
+user,fetdriver_on_ron,1 Ohm
 description,FET Driver Turn On Resistance
-user,fetdriver_off_ron,2 Ohm
+user,fetdriver_off_ron,0.500 Ohm
 description,FET Driver Turn Off Resistance
 user,fetdriver_vmaxlevelshift,36V
 description,FET Driver Highside Voltage Rating
@@ -454,14 +454,14 @@ sub_area,logicshifter0L2H_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xenabl
 sub_area,levelshifter0L2H_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xfetin,13399
 sub_area,logicshifter0L2H_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xglobal,1000
 sub_area,delay0_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xstatus,1320
-sub_area,fet_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xnmos0,59030
-sub_area,STONEfetdriverndrive2,320
-sub_area,fet_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xpmos0,203417184
+sub_area,fet_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xnmos0,78748
+sub_area,STONEfetdriverndrive3,640
+sub_area,fet_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xpmos0,200279680
 sub_area,STONEfetdriverpdrive2,40
 sub_area,resistor_resistor_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xpassive,65
 sub_area,STONEfetdrivermain,10
 sub_area,STONEfetdriverENABLEnome,9999
-generate_area,fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER,203503367
+generate_area,fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER,200385901
 // *********************************************
 //Calculator Parameters
 #define,RONdrivehigh,5.0
