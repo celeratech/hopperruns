@@ -7,7 +7,7 @@
 //NUMBER OF OUTPUTS:1
 //DFT:no
 //MAX VOUT:6V 
-//GAIN0:5, TYPE0:source
+//GAIN0:2.5, TYPE0:source
 
 //Celera Confidential Do Not Copy STONEcurrentmirrormain
 //Verilog HDL for "Generate", "STONEcurrentmirrormain" "functional"
@@ -103,7 +103,7 @@ endmodule
 //Celera Confidential Do Not Copy currentmirror1_XLOOP_XREGULATION_XU2_XGMCURRENT
 //Celera Confidential Symbol Generator
 //Polarity: source, Maximum Current: 20, Number of outputs: 1, DFT: no, Max Vout: 6
-//GAIN0:5, TYPE0:source
+//GAIN0:2.5, TYPE0:source
 module currentmirror1_XLOOP_XREGULATION_XU2_XGMCURRENT (SIMPV,CELSUB,enable_currentmirror,ISET,ok_currentmirror,ten,
 I0,
 CELG);
@@ -176,24 +176,6 @@ CASCODEpmos50u XcurrentmirrorPMOS50U01(
 //,diesize,CASCODEpmos50u
 //Celera Confidential Do Not Copy CASCODEpmos50u
 CASCODEpmos50u XcurrentmirrorPMOS50U02(
-.CELV (SIMPV),
-.PCAS (PCAS50U),
-.PMIR (PMIR50U),
-.SUB (CELSUB),
-.O (I0)
-);
-//,diesize,CASCODEpmos50u
-//Celera Confidential Do Not Copy CASCODEpmos50u
-CASCODEpmos50u XcurrentmirrorPMOS50U03(
-.CELV (SIMPV),
-.PCAS (PCAS50U),
-.PMIR (PMIR50U),
-.SUB (CELSUB),
-.O (I0)
-);
-//,diesize,CASCODEpmos50u
-//Celera Confidential Do Not Copy CASCODEpmos50u
-CASCODEpmos50u XcurrentmirrorPMOS50U04(
 .CELV (SIMPV),
 .PCAS (PCAS50U),
 .PMIR (PMIR50U),
