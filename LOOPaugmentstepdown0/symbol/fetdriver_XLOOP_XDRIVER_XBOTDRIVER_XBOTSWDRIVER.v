@@ -1,6 +1,6 @@
 //Celera:fetdriver_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWDRIVER
 //Celera Confidential Symbol Generator
-//FET DRIVER 'n' Type 0.500 Ron 0.200 Roff 
+//FET DRIVER 'n' Type 2 Ron 1 Roff 
 //Input No Levelshifter
 //Gate Sense None
 //DFT no
