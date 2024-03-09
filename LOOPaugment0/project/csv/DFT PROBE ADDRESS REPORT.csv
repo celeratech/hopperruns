@@ -1,0 +1,36 @@
+DFT PROBE ADDRESS REPORT,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7
+,,,,,,,
+Pad Number,,,,,,,
+PADs,,,,,,,
+NO PADS,,,,,,,
+"XLOOP,XCONTROL",,,,,,,
+Name,Function,Type,Slave,ten_tma,ten_bit,TxI_tma,TxI_bit
+STEPDOWNalgorithmCONTROL1p3_OFF,STEPDOWNalgorithmCONTROL1p3_OFF_state0_status_output,tdi,0,0x02,0,0x02,0
+STEPDOWNalgorithmCONTROL1p3_POWERUP,STEPDOWNalgorithmCONTROL1p3_POWERUP_state1_status_output,tdi,0,0x02,1,0x02,1
+STEPDOWNalgorithmCONTROL1p3_FAULT,STEPDOWNalgorithmCONTROL1p3_FAULT_state2_status_output,tdi,0,0x02,2,0x02,2
+STEPDOWNalgorithmCONTROL1p3_READY,STEPDOWNalgorithmCONTROL1p3_READY_state3_status_output,tdi,0,0x02,3,0x02,3
+STEPDOWNalgorithmCONTROL1p3_IDLE,STEPDOWNalgorithmCONTROL1p3_IDLE_state4_status_output,tdi,0,0x02,4,0x02,4
+STEPDOWNalgorithmCONTROL1p3_UNDEF5,STEPDOWNalgorithmCONTROL1p3_UNDEF5_state5_status_output,tdi,0,0x02,5,0x02,5
+STEPDOWNalgorithmCONTROL1p3_BOTTOM,STEPDOWNalgorithmCONTROL1p3_BOTTOM_state6_status_output,tdi,0,0x02,6,0x02,6
+STEPDOWNalgorithmCONTROL1p3_TOP,STEPDOWNalgorithmCONTROL1p3_TOP_state7_status_output,tdi,0,0x02,7,0x02,7
+STEPDOWNalgorithmCONTROL1p3_topstate,STEPDOWNalgorithmCONTROL1p3_topstate_Turn_top_switch_on,tdi,0,0x03,0,0x03,0
+STEPDOWNalgorithmCONTROL1p3_botstate,STEPDOWNalgorithmCONTROL1p3_botstate_Turn_bottom_switch_on,tdi,0,0x03,1,0x03,1
+STEPDOWNalgorithmCONTROL1p3_fault_controller,STEPDOWNalgorithmCONTROL1p3_fault_controller_Control_Algorithm_fault_flag,tdi,0,0x03,2,0x03,2
+"XLOOP,XDRIVER,XDEBUG",,,,,,,
+Name,Function,Type,Slave,ten_tma,ten_bit,TxI_tma,TxI_bit
+DRVtopswstatus,Top_Switch_Status,tdi,0,0x07,1,0x07,1
+DRVstartup,Driver_Startup_Time,tdi,0,0x07,2,0x07,2
+DRVbotswipeak,Bottom_Switch_Current_Limit,tdi,0,0x07,3,0x07,3
+DRVbotswstatus,Bottom_Switch_Status,tdi,0,0x07,4,0x07,4
+DRVbotswzcross,Bottom_Switch_Zero_Cross,tdi,0,0x07,5,0x07,5
+DRVSLOPETRIM,Top_Switch_Current_Limit,tdi,0,0x07,6,0x07,6
+"XLOOP,XFEEDBACK,XDEBUG",,,,,,,
+Name,Function,Type,Slave,ten_tma,ten_bit,TxI_tma,TxI_bit
+FEEDBACKtime,Feedback_Setup_time,tdi,0,0x0C,0,0x0C,0
+"XLOOP,XREG,XDEBUG",,,,,,,
+Name,Function,Type,Slave,ten_tma,ten_bit,TxI_tma,TxI_bit
+REGstartup,Regulation_Startup_Time,tdi,0,0x0E,1,0x0E,0
+REGvc,Regulation_VC_Voltage,TAI,0,0x0E,4,0x0E,1
+REGgo,Regulation_Go_Driver_Switching_Flag,tdi,0,0x0E,5,0x0E,1
+REGref,Regulation_Reference_Voltage,TAI,0,0x0E,6,0x0E,2
+REGiref,Regulation_Current_Limit_Reference_Current,TAI,0,0x0E,0,0x0E,0

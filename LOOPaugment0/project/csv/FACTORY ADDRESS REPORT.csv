@@ -1,0 +1,18 @@
+FACTORY ADDRESS REPORT,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8
+,,,,,,,,
+Addresses,,,,,,,,
+Description,Name,TMB,Bank,Bits,Location,POR,User,path
+BOT_Switch_on_delay,botswbbmdel,0x00,0,5,4:0,0x03,,"XLOOP,XDRIVER,XBBM,drm_hex0x0"
+BBM_Status_Enabled,BBMSTAT,0x00,0,2,6:5,0x03,,"XLOOP,XDRIVER,XBBM,drm_hex0x0"
+TOP_Switch_on_delay,topswsbbmdel,0x00,1,5,4:0,0x03,,"XLOOP,XDRIVER,XBBM,drm_hex0x0"
+BOTTOM_switch_zerocross_blank_time,BOTTOMzeroBLANK,0x02,0,4,3:0,0x01,,"XLOOP,XDRIVER,XBOTSW,drm_hex0x2"
+Bottom_Switch_Gate_Status_Delay,botswitchstatdel,0x02,1,5,4:0,0x00,,"XLOOP,XDRIVER,XBOTSW,drm_hex0x2"
+Lowside_Blanking,BOTTOMipeakBLANK,0x02,2,5,4:0,0x02,,"XLOOP,XDRIVER,XBOTSW,drm_hex0x2"
+Top_Switch_Gate_Status_Delay,TOPstatusDELAY,0x08,0,5,4:0,0x00,,"XLOOP,XDRIVER,XTOPSW,drm_hex0x8"
+Disable_Slope_Compensation,SLOPE,0x08,0,1,5:5,0x00,,"XLOOP,XDRIVER,XTOPSW,drm_hex0x8"
+Top_Switch_Current_Limit_Blank,TOPipeakBLANK,0x08,1,5,4:0,0x10,,"XLOOP,XDRIVER,XTOPSW,drm_hex0x8"
+Feedback_Divider_Feedforward_Capacitor,FEEDFORWARD,0x0C,0,3,2:0,0x00,,"XLOOP,XFEEDBACK,XFB,drm_hex0xc"
+Connect_VC_to_FBI,REGUALTIONvcATE,0x0E,0,1,0:0,0x00,,"XLOOP,XREG,XDEBUG,drm_hex0xe"
+VC_Switching_Threshold_Hysteresis,vchyst,0x10,0,2,1:0,0x01,,"XLOOP,XREG,XFREQ,drm_hex0x10"
+Compensation_Resistor,RZCOMP,0x10,0,3,4:2,0x01,,"XLOOP,XREG,XFREQ,drm_hex0x10"
+Compensation_Capacitor,CZCOMP,0x10,0,3,7:5,0x03,,"XLOOP,XREG,XFREQ,drm_hex0x10"

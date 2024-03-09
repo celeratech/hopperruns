@@ -1,0 +1,20 @@
+DFT HIJACK ADDRESS REPORT,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6
+,,,,,,
+"XLOOP,XATE,XU3",,,,,,
+Name,Function,Slave,enable_tma,enable_bit,status_tma,status_bit
+HJendriver,Hijack_Enable_Driver,0,0x00,0,0x00,1
+"XLOOP,XDRIVER,XDEBUG,XU5",,,,,,
+Name,Function,Slave,enable_tma,enable_bit,status_tma,status_bit
+HJdrvts,Hijack_topstate_driver,0,0x08,1,0x08,2
+"XLOOP,XATE,XU7",,,,,,
+Name,Function,Slave,enable_tma,enable_bit,status_tma,status_bit
+HJgodriver,Hijack_Go_Driver,0,0x00,4,0x00,5
+"XLOOP,XDRIVER,XDEBUG,XU6",,,,,,
+Name,Function,Slave,enable_tma,enable_bit,status_tma,status_bit
+HJdrvbs,Hijack_botstate_driver,0,0x08,3,0x08,4
+"XLOOP,XDRIVER,XDEBUG,XU21",,,,,,
+Name,Function,Slave,enable_tma,enable_bit,status_tma,status_bit
+HJdrven,Hijack_Enable_Driver,0,0x07,7,0x08,0
+"XLOOP,XREG,XDEBUG,XU4",,,,,,
+Name,Function,Slave,enable_tma,enable_bit,status_tma,status_bit
+HJregen,Hijack_Regulation_Enable,0,0x0E,2,0x0E,3

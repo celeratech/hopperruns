@@ -1,0 +1,33 @@
+//Verilog HDL for "DFT", "DFTtdi" "functional"
+
+
+module DFTtdi ( o, CELV, SUB, i, ten, CELG );
+
+  input CELV;
+  input ten;
+  input i;
+  output o;
+  input CELG;
+  input SUB;
+endmodule
+
+
+module dftprobe_XLOOP_XDRIVER_XDEBUG_XU15 (i,tdi_DRVbotswipeak,ten_DRVbotswipeak,CELG,CELSUB,CELV);
+input  i;
+output  tdi_DRVbotswipeak;
+input  ten_DRVbotswipeak;
+input  CELG;
+input  CELSUB;
+input  CELV;
+
+DFTtdi XDFTtdi(
+  .i (i),
+  .o (tdi_DRVbotswipeak),
+  .ten (ten_DRVbotswipeak),
+  .CELG (CELG),
+  .SUB (CELSUB),
+  .CELV (CELV)
+);
+
+endmodule
+
