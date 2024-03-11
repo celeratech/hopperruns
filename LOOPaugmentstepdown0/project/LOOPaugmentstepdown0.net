@@ -1,59 +1,59 @@
 * Z:\celera\projects\Simplis\playdemo\Stepdown\Stepdown0\298\stepdown0\sim_LOOPstepdown0.sxsch
 *#SIMETRIX
-.node_map PMUDV 61
-.node_map porb 65
-.node_map OUT 58
-.node_map PMUDHV 60
-.node_map VSS_REGULATION 70
-.node_map REF_REGULATION 69
-.node_map clock 64
-.node_map IREF_REGULATION 68
-.node_map CBOOT 59
+.node_map PMUDV 63
+.node_map porb 68
+.node_map OUT 60
+.node_map PMUDHV 61
+.node_map VSS_REGULATION 71
+.node_map REF_REGULATION 70
+.node_map clock 67
+.node_map IREF_REGULATION 69
+.node_map CBOOT 58
 .node_map MUDV 62
-.node_map enable 63
-.node_map PMUDG 66
-.node_map kelvin_MUDG 67
-.node_map SW 57
+.node_map enable 66
+.node_map PMUDG 64
+.node_map kelvin_MUDG 65
+.node_map SW 59
 .options
 + PSP_NPT=10001
 + POP_ITRMAX=20
 + POP_OUTPUT_CYCLES=5
-+ POP_SHOWDATA
 + SNAPSHOT_INTVL=0
 + SNAPSHOT_NPT=11
 + MIN_AVG_TOPOLOGY_DUR=1a
 + AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
-*.pop TRIG_GATE={TRIG_GATE} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
 .tran 300u 0
 
 .globalvar REF=1.0
 .globalvar VIN=5.0
 .globalvar tdext_khz=1000
 
-CBOOT 59 57 100n IC=0
-X$CLOCK 64 0 PUL_SOURCE vars: _V1=0 _V2=5 _FREQ=1Meg _DELAY=30u _DRATIOx100=90 _T_RISE=1n _T_FALL=1n _DAMP_COEF=0 _PWIDTH=899n _OFF_UNTIL_DELAY=1 _IDLE_IN_POP=0 _USEPHASE=0 _PHASE=30u
-COUT 58 0 100u IC=0
-V$enable_REF 63 0 PWL NSEG=2 X0=0 Y0=0 X1=10u Y1=5 X2=10.001u Y2=5 
-ILOAD 58 0 PWL NSEG=4 X0=0 Y0=0 X1=225u Y1=0 X2=250u Y2=1 X3=260u Y3=1 X4=280u Y4=0
-IREF_REGULATION 0 68 PWL NSEG=2 X0=0 Y0=0 X1=10u Y1=0 X2=11u Y2=0 
-V$kelvin_PMUDG 67 0 0
-X$LOOP 61 57 63 60 62 59 64 66 65 55 68 52 63 63 54 53 69 70 58 56 67 LOOPaugmentstepdown0
+CBOOT 58 59 100n IC=0
+X$CLOCK 67 0 PUL_SOURCE vars: _V1=0 _V2=5 _FREQ=1Meg _DELAY=30u _DRATIOx100=90 _T_RISE=1n _T_FALL=1n _DAMP_COEF=0 _PWIDTH=899n _OFF_UNTIL_DELAY=1 _IDLE_IN_POP=0 _USEPHASE=0 _PHASE=30u
+COUT 60 0 100u IC=0
+V$enable_REF 66 0 PWL NSEG=2 X0=0 Y0=0 X1=10u Y1=5 X2=10.001u Y2=5 
+ILOAD 60 0 PWL NSEG=4 X0=0 Y0=0 X1=225u Y1=0 X2=250u Y2=3 X3=260u Y3=3 X4=280u Y4=0
+IREF_REGULATION 0 69 PWL NSEG=2 X0=0 Y0=0 X1=10u Y1=0 X2=11u Y2=10u 
+V$kelvin_PMUDG 65 0 0
+X$LOOP 63 59 66 61 62 58 67 64 68 56 69 52 66 66 54 53 70 71 60 57 65 LOOPaugmentstepdown0
 V$MUDV 62 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=5 X2=20u Y2=5 
-V$PMUDG 66 0 0
-V$PMUDHV 60 0 PWL NSEG=3 X0=0 Y0=0 X1=1u Y1=0 X2=10u Y2=25 X3=300u Y3=25
-V$PMUDV 61 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=5 X2=20u Y2=5 
-V$porb 65 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=5 X2=20u Y2=5 
-.PRINT V(#PMUDHV)
-.GRAPH :#PMUDHV axisType="auto" persistence=-1 curveLabel="IN" analysis="tran|pop" xLog="auto" yLog="auto"  nowarn=true disabled=false PROBEREF=Probe1  
+V$PMUDG 64 0 0
+V$PMUDHV 61 0 PWL NSEG=3 X0=0 Y0=0 X1=1u Y1=0 X2=10u Y2=5 X3=300u Y3=5
+V$PMUDV 63 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=5 X2=20u Y2=5 
+V$porb 68 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=5 X2=20u Y2=5 
+.PRINT V(#CBOOT)
+.GRAPH :#CBOOT curveLabel= CBOOT nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe1  
 .PRINT I(ILOAD#P)
 .GRAPH ILOAD#P axisType="auto" persistence=-1 curveLabel="Iout" analysis="tran|pop" xLog="auto" yLog="lin"  nowarn=true disabled=false 
+.PRINT V(#SW)
+.GRAPH :#SW curveLabel= SW nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe3  
 .PRINT V(#OUT)
 .GRAPH :#OUT curveLabel= OUT nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe4  
-V$REF_REGULATION 69 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=1 X2=20u Y2=1 
-RLOAD 58 0 33
-X$U1 51 celera vars: layout='no' status='dev' simulation='typical'
-X$U2 57 58 inductor6p8u8Ap vars: Package='11.5mmx10.9mm' Partnumber='BMMA001010406R8MV1' CurrentProbe='yes'
-VSS_REGULATION 70 0 PWL NSEG=3 X0=0 Y0=0 X1=50u Y1=0 X2=200u Y2=1.1 X3=201u Y3=5 
+V$REF_REGULATION 70 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=1 X2=20u Y2=1 
+RLOAD 60 0 33
+X$U1 55 celera vars: layout='no' status='dev' simulation='typical'
+X$U2 59 60 inductor6p8u4Ap vars: Package='4.0mmx4.0mm' Partnumber='SRN4026-6R9M' CurrentProbe='yes'
+VSS_REGULATION 71 0 PWL NSEG=3 X0=0 Y0=0 X1=50u Y1=0 X2=200u Y2=1.1 X3=201u Y3=5 
 ** From Z:\celera\projects\Simplis\playdemo\Stepdown\Stepdown0\298\design\LOOPaugmentstepdown0.sxcmp
 .subckt LOOPaugmentstepdown0 98 99 96 94 104 95 102 112 106 105 117 109 110 118 115 113 114 116 119 107 108
 *#hierarchy
@@ -1145,7 +1145,7 @@ X$U11 33 pinprobe vars: pinprobe_description='Output_sense'
 X$U2 33 34 23 35 24 25 26 27 37 feedbackdivider vars: feedbackdivider_type='control' feedbackdivider_globalref='yes' feedbackdivider_shutdown='pin' feedbackdivider_datasheet_shutdown_name='text' feedbackdivider_datasheet_shutdown_description='Feedback_Divider_Shutdown_Pin' feedbackdivider_datasheet_output_name='text' feedbackdivider_datasheet_output_description='text' feedbackdivider_control='pin' feedbackdivider_dft='no' feedbackdivider_fb=1 feedbackdivider_shutdownpor=1 feedbackdivider_p_offset=0 feedbackdivider_n_offset=0 feedbackdivider_voutfixed=1.5 feedbackdivider_settings=8 feedbackdivider_registerpor=7 feedbackdivider_vout0=1.2 feedbackdivider_vout1=1.5 feedbackdivider_vout2=2 feedbackdivider_vout3=2.5 feedbackdivider_vout4=2.8 feedbackdivider_vout5=3 feedbackdivider_vout6=3.3 feedbackdivider_vout7=5 feedbackdivider_0=0 feedbackdivider_iq=5 feedbackdivider_vmax=6
 X$U3 34 pinprobe vars: pinprobe_description='FEEDBACK_enable_input'
 X$U4 34 36 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=10 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
-X$U5 25 26 27 28 29 30 31 32 datamap0 vars: datamap_function='code' datamap_text0='0' datamap_name='FEEDBACK' datamap_description='StepDown_Output_volatge_configuration' datamap_io='input' datamap_status_mode='live' datamap_status_level='level' datamap_status_enable='no' datamap_type='factory' datamap_por='6' datamap_mode='readonly' datamap_timeenable='yes' datamap_text1='0' datamap_function_0='text' datamap_function_0_on='text' datamap_function_0_off='text' datamap_function_1='text' datamap_function_1_on='text' datamap_function_1_off='text' datamap_function_2='text' datamap_function_2_on='text' datamap_function_2_off='text' datamap_function_3='text' datamap_function_3_on='text' datamap_function_3_off='text' datamap_function_4='text' datamap_function_4_on='text' datamap_function_4_off='text' datamap_function_5='text' datamap_function_5_on='text' datamap_function_5_off='text' datamap_function_6='text' datamap_function_6_on='text' datamap_function_6_off='text' datamap_function_7='text' datamap_function_7_on='text' datamap_function_7_off='text' datamap_code_0='1.2V' datamap_code_1='1.5V' datamap_code_2='2.0V' datamap_code_3='2.3V' datamap_code_4='2.5V' datamap_code_5='2.7V' datamap_code_6='3.0V' datamap_code_7='3.3V' datamap_range_units='text' datamap_startcode='0' datamap_enabletimeunits1='n' datamap_newcode1='0' datamap_enabletimeunits2='us' datamap_newcode2='1' datamap_enabletimeunits3='us' datamap_newcode3='1' datamap_enabletimeunits4='us' datamap_newcode4='1' datamap_enabletimeunits5='us' datamap_newcode5='1' datamap_enabletimeunits6='us' datamap_newcode6='1' datamap_enabletimeunits7='us' datamap_newcode7='1' datamap_enabletimeunits8='us' datamap_newcode8='1' datamap_bits=3 datamap_vmax=6 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1u datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1
+X$U5 25 26 27 28 29 30 31 32 datamap0 vars: datamap_function='code' datamap_text0='0' datamap_name='FEEDBACK' datamap_description='StepDown_Output_volatge_configuration' datamap_io='input' datamap_status_mode='live' datamap_status_level='level' datamap_status_enable='no' datamap_type='factory' datamap_por='6' datamap_mode='readonly' datamap_timeenable='yes' datamap_text1='0' datamap_function_0='text' datamap_function_0_on='text' datamap_function_0_off='text' datamap_function_1='text' datamap_function_1_on='text' datamap_function_1_off='text' datamap_function_2='text' datamap_function_2_on='text' datamap_function_2_off='text' datamap_function_3='text' datamap_function_3_on='text' datamap_function_3_off='text' datamap_function_4='text' datamap_function_4_on='text' datamap_function_4_off='text' datamap_function_5='text' datamap_function_5_on='text' datamap_function_5_off='text' datamap_function_6='text' datamap_function_6_on='text' datamap_function_6_off='text' datamap_function_7='text' datamap_function_7_on='text' datamap_function_7_off='text' datamap_code_0='1.2V' datamap_code_1='1.5V' datamap_code_2='2.0V' datamap_code_3='2.3V' datamap_code_4='2.5V' datamap_code_5='2.7V' datamap_code_6='3.0V' datamap_code_7='3.3V' datamap_range_units='text' datamap_startcode='0' datamap_enabletimeunits1='n' datamap_newcode1='6' datamap_enabletimeunits2='us' datamap_newcode2='1' datamap_enabletimeunits3='us' datamap_newcode3='1' datamap_enabletimeunits4='us' datamap_newcode4='1' datamap_enabletimeunits5='us' datamap_newcode5='1' datamap_enabletimeunits6='us' datamap_newcode6='1' datamap_enabletimeunits7='us' datamap_newcode7='1' datamap_enabletimeunits8='us' datamap_newcode8='1' datamap_bits=3 datamap_vmax=6 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1u datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1
 X$U6 36 pinprobe vars: pinprobe_description='Feedback_ready_flag'
 X$U9 37 pinprobe vars: pinprobe_description='FEEDBACK_Ground_kelvin'
 .ends FEEDBACKstepdownSELECT
