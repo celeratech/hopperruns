@@ -3,7 +3,7 @@
 //NAME:levelshifter0H2L_currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT_Xls
 //GENERATOR REVISION:0.4.2
 //DIRECTION:high2low
-//MAXIMUM HIGH VOLTAGE:12V
+//MAXIMUM HIGH VOLTAGE:36V
 //ENABLE PIN:yes
 //BITs:1
 
@@ -27,11 +27,11 @@ offb, offgate, onb, ongate );
   input CELG;
 endmodule
 
-//Celera Confidential Do Not Copy STONEhv2lv12NOME
-//Verilog HDL for "Generate", "STONEhv2lv12NOME" "functional"
+//Celera Confidential Do Not Copy STONEhv2lv45NOME
+//Verilog HDL for "Generate", "STONEhv2lv45NOME" "functional"
 
 
-module STONEhv2lv12NOME ( offb, offgate, onb, ongate, CELG, HVNEG, HVPOS, SUB,
+module STONEhv2lv45NOME ( offb, offgate, onb, ongate, CELG, HVNEG, HVPOS, SUB,
 in, offblatch, onblatch );
 
   output ongate;
@@ -49,7 +49,7 @@ endmodule
 
 //Celera Confidential Do Not Copy levelshifter0H2L_currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT_Xls
 //Celera Confidential Symbol Generator
-//Direction: high2low, Maximum high voltage:12V 
+//Direction: high2low, Maximum high voltage:36V 
 //Enable pin:yes
 module levelshifter0H2L_currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT_Xls (SIMPV,CELSUB,HVPOS,HVNEG,in,out,
 enable_levelshifter,
@@ -78,8 +78,8 @@ STONEhv2lvmainNOME Xhigh2lowMAIN(
 .CELG (CELG)
 );
 //,diesize,STONEhv2lvmainNOME
-//Celera Confidential Do Not Copy STONEhv2lv12NOME
-STONEhv2lv12NOME Xhigh2low12(
+//Celera Confidential Do Not Copy STONEhv2lv45NOME
+STONEhv2lv45NOME Xhigh2low45(
 .ongate (ongate),
 .onb (onb),
 .offgate (offgate),
@@ -92,7 +92,7 @@ STONEhv2lv12NOME Xhigh2low12(
 .SUB (CELSUB),
 .CELG (CELG)
 );
-//,diesize,STONEhv2lv12NOME
+//,diesize,STONEhv2lv45NOME
 //Celera Confidential Do Not Copy Module End
 //Celera Schematic Generator
 endmodule
