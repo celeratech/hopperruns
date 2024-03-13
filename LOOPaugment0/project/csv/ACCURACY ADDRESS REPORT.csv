@@ -1,0 +1,13 @@
+ACCURACY ADDRESS REPORT,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8
+,,,,,,,,
+Addresses,,,,,,,,
+Description,Name,TMB,Bank,Bits,Location,POR,User,path
+Lowside_Blanking,BOTTOMzeroBLANK,0x06,0,8,7:0,0x00,,"XLOOP,XDRIVER,XBOTSW,drm_hex0x6"
+Lowside_Blanking,BOTTOMipeakBLANK,0x06,1,8,7:0,0x00,,"XLOOP,XDRIVER,XBOTSW,drm_hex0x6"
+Top_Switch_Current_Limit_Blank,TOPipeakBLANK,0x0A,0,8,7:0,0x00,,"XLOOP,XDRIVER,XTOPSW,drm_hex0xa"
+Trim_Slope_Comp_Amplitude,SLOPEACC,0x0A,1,4,3:0,0x00,,"XLOOP,XDRIVER,XTOPSW,drm_hex0xa"
+text,gmacc,0x12,0,7,6:0,0x00,,"XLOOP,XREG,XFREQ,drm_hex0x12"
+text,gmacc,0x12,1,7,6:0,0x00,,"XLOOP,XREG,XFREQ,drm_hex0x12"
+Feedback_Output_Accuracy,fbacc,0x12,2,7,6:0,0x00,,"XLOOP,XREG,XFREQ,drm_hex0x12"
+Feedback_Output_Accuracy,fbacc,0x12,3,7,6:0,0x00,,"XLOOP,XREG,XFREQ,drm_hex0x12"
+Voltage_Control_Node_Clamp_Trim,vcclampacc,0x12,4,8,7:0,0x00,,"XLOOP,XREG,XFREQ,drm_hex0x12"
