@@ -58,10 +58,10 @@ limit,fet_calculator,choose1,maximum
 //USER Parameters
 user,Type,n
 description,FET type
-user,Ron,100.00mOhm
+user,Ron,50.00mOhm
 user,Ron_Design,0.00mOhm
 description,FET on resistance
-user,Vds,30V
+user,Vds,6V
 description,FET Maximum Vds rating
 user,VgsMax,6V
 description,FET Maximum Vgs rating
@@ -69,7 +69,7 @@ user,Kelvin,yes
 description,FET Kelvin sense enabled
 user,Replica,source
 description,FET Replica current enabled
-user,Replica Gain,30K
+user,Replica Gain,40K
 description,FET Replica gain
 user,NESTO,0.3.7
 description,NESTO generate revision
@@ -392,12 +392,13 @@ GARNETlspowerLV,NMOSiso6,XU3,LX
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,fet_fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWIREP_Xfet,867240
-sub_area,an5g30dw2_2p2x0p2x2p0x1p0,40520
-sub_area,an5g30dw2_2p2x0p2x2p0x1p0,40520
+sub_area,fet_fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWIREP_Xfet,328168
+sub_area,an5g6dw1_2p6x0p2x2p0x1p0,40601
+sub_area,an5g6dw1_2p6x0p2x2p0x1p0,40601
+sub_area,an5g6dw1_2p6x0p2x2p0x1p0,40601
 sub_area,PEBBLElink,0
 sub_area,PEBBLElink,0
-generate_area,fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWIREP,948280
+generate_area,fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWIREP,449971
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.3
@@ -555,8 +556,8 @@ endpinorder
 pinname,GATE
 definition,GATE,FET gate 	
 iq,GATE,SIMULATION
-absmax,GATE,30
-absmin,GATE,24.0
+absmax,GATE,6
+absmin,GATE,0.0
 io,GATE,input
 mode,GATE,analog
 router,GATE,TBD
@@ -566,7 +567,7 @@ esd,GATE,TBD
 pinname,SOURCE
 definition,SOURCE,FET source
 iq,SOURCE,SIMULATION
-absmax,SOURCE,30
+absmax,SOURCE,6
 absmin,SOURCE,-0.3
 io,SOURCE,inout
 mode,SOURCE,analog
@@ -577,7 +578,7 @@ esd,SOURCE,TBD
 pinname,DRAIN
 definition,DRAIN,FET drain 
 iq,DRAIN,SIMULATION
-absmax,DRAIN,30
+absmax,DRAIN,6
 absmin,DRAIN,-0.3
 io,DRAIN,inout
 mode,DRAIN,analog
@@ -588,7 +589,7 @@ esd,DRAIN,TBD
 pinname,SOURCEk
 definition,SOURCEk,FET source kelvin
 iq,SOURCEk,SIMULATION
-absmax,SOURCEk,30
+absmax,SOURCEk,6
 absmin,SOURCEk,-0.3
 io,SOURCEk,inout
 mode,SOURCEk,analog
@@ -599,7 +600,7 @@ esd,SOURCEk,TBD
 pinname,DRAINk
 definition,DRAINk,FET drain kelvin
 iq,DRAINk,SIMULATION
-absmax,DRAINk,30
+absmax,DRAINk,6
 absmin,DRAINk,-0.3
 io,DRAINk,inout
 mode,DRAINk,analog
@@ -608,6 +609,16 @@ dftpriority,DRAINk,1
 esd,DRAINk,TBD
 
 
+pinname,NMOSiso6
+definition,NMOSiso6,6V NMOS ISO Connection 
+iq,NMOSiso6,SIMULATION
+absmax,NMOSiso6,6
+absmin,NMOSiso6,-0.3
+io,NMOSiso6,input
+mode,NMOSiso6,analog
+router,NMOSiso6,TBD
+dftpriority,NMOSiso6,1
+esd,NMOSiso6,TBD
 
 
 
@@ -629,7 +640,7 @@ esd,SUB,TBD
 pinname,IREPLICA
 definition,IREPLICA,FET replica current 
 iq,IREPLICA,SIMULATION
-absmax,IREPLICA,30
+absmax,IREPLICA,6
 absmin,IREPLICA,-0.3
 io,IREPLICA,inout
 mode,IREPLICA,analog

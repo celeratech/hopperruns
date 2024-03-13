@@ -3,8 +3,8 @@
 //NAME:fetdriver_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWDRIVER
 //GENERATOR REVISION:0.5.4
 //TYPE:n
-//ON Resistance:2 ohms
-//OFF Resistance:1 ohms
+//ON Resistance:0.500 ohms
+//OFF Resistance:0.200 ohms
 //Application:na
 //VMAX:6V
 //DFT:no
@@ -36,7 +36,7 @@ endmodule
 //Celera Confidential Do Not Copy fet_fetdriver_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWDRIVER_Xnmos0.v
 //Celera:fet_fetdriver_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWDRIVER_Xnmos0
 //Celera Confidential Symbol Generator
-//power NMOS:Ron:1.000 Ohm
+//power NMOS:Ron:0.200 Ohm
 //Vgs 6V Vds 6V
 //Kelvin:no
 
@@ -52,7 +52,7 @@ endmodule
 //Celera Confidential Do Not Copy fet_fetdriver_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWDRIVER_Xpmos0.v
 //Celera:fet_fetdriver_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWDRIVER_Xpmos0
 //Celera Confidential Symbol Generator
-//power PMOS:Ron:2.000 Ohm
+//power PMOS:Ron:0.500 Ohm
 //Vgs 6V Vds 6V
 //Kelvin:no
 
@@ -107,11 +107,11 @@ input CELG;
 endmodule
 
 
-//Celera Confidential Do Not Copy STONEfetdriverndrive2
-//Verilog HDL for "Generate", "STONEfetdriverndrive2" "functional"
+//Celera Confidential Do Not Copy STONEfetdriverndrive3
+//Verilog HDL for "Generate", "STONEfetdriverndrive3" "functional"
 
 
-module STONEfetdriverndrive2 ( ndrive, CELNEG, CELPOS, SUB, ndriveen, ndriveon
+module STONEfetdriverndrive3 ( ndrive, CELNEG, CELPOS, SUB, ndriveen, ndriveon
 );
 
   input CELNEG;
@@ -122,11 +122,11 @@ module STONEfetdriverndrive2 ( ndrive, CELNEG, CELPOS, SUB, ndriveen, ndriveon
   input CELPOS;
 endmodule
 
-//Celera Confidential Do Not Copy STONEfetdriverpdrive2
-//Verilog HDL for "Generate", "STONEfetdriverpdrive2" "functional"
+//Celera Confidential Do Not Copy STONEfetdriverpdrive3
+//Verilog HDL for "Generate", "STONEfetdriverpdrive3" "functional"
 
 
-module STONEfetdriverpdrive2 ( pdrive, CELNEG, CELPOS, SUB, pdriveen, pdriveon
+module STONEfetdriverpdrive3 ( pdrive, CELNEG, CELPOS, SUB, pdriveen, pdriveon
 );
 
   input CELNEG;
@@ -176,7 +176,7 @@ endmodule
 
 //Celera Confidential Do Not Copy fetdriver_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWDRIVER
 //Celera Confidential Symbol Generator
-//FET DRIVER 'n' Type 2 Ron 1 Roff 
+//FET DRIVER 'n' Type 0.500 Ron 0.200 Roff 
 //Input No Levelshifter
 //Gate Sense None
 //DFT no
@@ -227,8 +227,8 @@ fet_fetdriver_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWDRIVER_Xnmos0 Xpowernmos0(
 );
 //,diesize,fet_fetdriver_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWDRIVER_Xnmos0
 
-//Celera Confidential Do Not Copy STONEfetdriverndrive2
-STONEfetdriverndrive2 Xndriver0(
+//Celera Confidential Do Not Copy STONEfetdriverndrive3
+STONEfetdriverndrive3 Xndriver0(
 .CELPOS (HVPOS),
 .ndriveon (ndriveon),
 .ndriveen (enable_fetdrivermain),
@@ -236,7 +236,7 @@ STONEfetdriverndrive2 Xndriver0(
 .CELNEG (HVNEG),
 .SUB (CELSUB)
 );
-//,diesize,STONEfetdriverndrive2
+//,diesize,STONEfetdriverndrive3
 
 //Celera Confidential Do Not Copy fet_fetdriver_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWDRIVER_Xpmos0
 fet_fetdriver_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWDRIVER_Xpmos0 Xpowerpmos0(
@@ -248,8 +248,8 @@ fet_fetdriver_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWDRIVER_Xpmos0 Xpowerpmos0(
 );
 //,diesize,fet_fetdriver_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWDRIVER_Xpmos0
 
-//Celera Confidential Do Not Copy STONEfetdriverpdrive2
-STONEfetdriverpdrive2 Xpdriver0(
+//Celera Confidential Do Not Copy STONEfetdriverpdrive3
+STONEfetdriverpdrive3 Xpdriver0(
 .CELPOS (HVPOS),
 .pdriveen (enable_fetdrivermain),
 .pdriveon (pdriveon),
@@ -257,7 +257,7 @@ STONEfetdriverpdrive2 Xpdriver0(
 .CELNEG (HVNEG),
 .SUB (CELSUB)
 );
-//,diesize,STONEfetdriverpdrive2
+//,diesize,STONEfetdriverpdrive3
 
 //Celera Confidential Do Not Copy resistor_resistor_fetdriver_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWDRIVER_Xpassive
 resistor_resistor_fetdriver_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWDRIVER_Xpassive Xpassive(
