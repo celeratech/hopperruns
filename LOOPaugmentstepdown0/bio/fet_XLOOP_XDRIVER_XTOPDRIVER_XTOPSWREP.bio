@@ -73,10 +73,54 @@ user,Replica Gain,15K
 description,FET Replica gain
 user,NESTO,0.3.7
 description,NESTO generate revision
+user,Type,n
+description,FET type
+user,Ron,400.00mOhm
+user,Ron_Design,0.00mOhm
+description,FET on resistance
+user,Vds,30V
+description,FET Maximum Vds rating
+user,VgsMax,6V
+description,FET Maximum Vgs rating
+user,Kelvin,yes
+description,FET Kelvin sense enabled
+user,Replica,drain
+description,FET Replica current enabled
+user,Replica Gain,15K
+description,FET Replica gain
+user,NESTO,0.3.7
+description,NESTO generate revision
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
+//Celera Map Generator
+registermap,fet
+register,instance,fet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWREP
+register,source,cell
+
+//No register Map Required
+register,name,na
+register,enable,no
+register,bits,0
+register,mode,readwrite
+register,por,0
+register,userdescription,na
+register,description0,description0,not used
+register,description1,description1,not used
+register,description2,description2,not used
+register,description3,description3,not used
+register,description4,description4,not used
+register,description5,description5,not used
+register,description6,description6,not used
+register,description7,description7,not used
+register,description8,empty
+register,description9,empty
+register,description10,empty
+register,description11,empty
+register,description12,empty
+//Netlister Information
+register,busname,na
 //Celera Map Generator
 registermap,fet
 register,instance,fet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWREP
@@ -128,8 +172,55 @@ factory,description6,description6,not used
 factory,description7,description7,not used
 //Netlister Information
 factory,busname,na
+//Celera Map Generator
+factorymap,fet
+factory,instance,fet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWREP
+factory,source,cell
+
+//No factory Map Required
+factory,name,na
+factory,enable,no
+factory,bits,0
+factory,mode,readonly
+factory,por,0
+factory,userdescription,na
+factory,description0,description0,not used
+factory,description1,description1,not used
+factory,description2,description2,not used
+factory,description3,description3,not used
+factory,description4,description4,not used
+factory,description5,description5,not used
+factory,description6,description6,not used
+factory,description7,description7,not used
+//Netlister Information
+factory,busname,na
 //**********************************************
 //TRIM Parameters
+cell,fet
+trim,instance,fet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWREP
+
+trim,name,na
+trim,enable,no
+trim,bits,TBD
+trim,por,0
+trim,pinname,TBD
+trim,testname,TBD
+trim,description,TBD
+trim,target,na
+trim,units,TBD
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,TBD
+trim,description0,empty
+trim,description1,empty
+trim,description2,empty
+trim,description3,empty
+trim,description4,empty
+trim,description5,empty
+trim,description6,empty
+trim,description7,empty
 cell,fet
 trim,instance,fet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWREP
 
@@ -391,6 +482,21 @@ GARNETlspowerLV,NMOSiso6,XU3,LX
 
 // *********************************************
 //Die Size Estimate
+revision,vis15cbdiesize,0p1
+sub_area,fet_fet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWREP_Xfet,1545864
+sub_area,an5g30dw2_2p4x0p2x2p0x1p0,40560
+sub_area,an5g30dw2_2p4x0p2x2p0x1p0,40560
+sub_area,an5g30dw2_2p4x0p2x2p0x1p0,40560
+sub_area,an5g30dw2_2p4x0p2x2p0x1p0,40560
+sub_area,PEBBLElink,0
+sub_area,PEBBLElink,0
+sub_area,fet_fet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWREP_Xfet,1545864
+sub_area,an5g6dw1_2p0x0p2x2p0x1p0,40480
+sub_area,an5g6dw1_2p0x0p2x2p0x1p0,40480
+sub_area,an5g6dw1_2p0x0p2x2p0x1p0,40480
+sub_area,PEBBLElink,0
+sub_area,PEBBLElink,0
+generate_area,fet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWREP,3375408
 revision,vis15cbdiesize,0p1
 sub_area,fet_fet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWREP_Xfet,1545864
 sub_area,an5g30dw2_2p4x0p2x2p0x1p0,40560
