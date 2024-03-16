@@ -58,19 +58,13 @@ limit,fet_calculator,choose1,maximum
 //USER Parameters
 user,Type,n
 description,FET type
-user,Ron,167708 x3354166 Ohm
+user,Ron,335417 x3354166 Ohm
 user,Ron_Design,0 x3354166 Ohm
 description,FET on resistance
-user,Vds,6V
+user,Vds,30V
 description,FET Maximum Vds rating
 user,VgsMax,6V
 description,FET Maximum Vgs rating
-user,Kelvin,yes
-description,FET Kelvin sense enabled
-user,Replica,source
-description,FET Replica current enabled
-user,Replica Gain,40K
-description,FET Replica gain
 //**********************************************
 //POR Parameters
 //**********************************************
@@ -168,6 +162,7 @@ endlayoutbio
 
 //**********************************************
 //Project Parameters
+//Celera:LOOPaugmentstepdown0 Project Bio
 //////////////////////////////////////////////////////////////////////////////////////
 ////////////   default.bio'    //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
@@ -329,6 +324,7 @@ GARNETlspowerLV,NMOSiso6,XU3,LX
 ///////////////////////////////////////////////////////////////////
 //Garnet DFT Pad 
 #define,dftpad,input,POLARITY,low
+
 
 
 
@@ -499,7 +495,7 @@ generate_area,fet_fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWIREP_Xfet,867240
 *******************************************
 //fet
 revision,pinorder,0.2.0
-pinorder,SOURCE,DRAIN,GATE,DRAINk,SOURCEk,IREPLICA
+pinorder,SOURCE,DRAIN,GATE,net_skip,net_skip,net_skip
 
 endpinorder
 //**********************************************
@@ -538,39 +534,9 @@ router,DRAIN,TBD
 dftpriority,DRAIN,1
 esd,DRAIN,TBD
 
-pinname,SOURCEk
-definition,SOURCEk,FET source kelvin
-iq,SOURCEk,SIMULATION
-absmax,SOURCEk,30
-absmin,SOURCEk,-0.3
-io,SOURCEk,inout
-mode,SOURCEk,analog
-router,SOURCEk,TBD
-dftpriority,SOURCEk,1
-esd,SOURCEk,TBD
-
-pinname,DRAINk
-definition,DRAINk,FET drain kelvin
-iq,DRAINk,SIMULATION
-absmax,DRAINk,30
-absmin,DRAINk,-0.3
-io,DRAINk,inout
-mode,DRAINk,analog
-router,DRAINk,TBD
-dftpriority,DRAINk,1
-esd,DRAINk,TBD
 
 
-pinname,NMOSiso6
-definition,NMOSiso6,6V NMOS ISO Connection 
-iq,NMOSiso6,SIMULATION
-absmax,NMOSiso6,6
-absmin,NMOSiso6,-0.3
-io,NMOSiso6,input
-mode,NMOSiso6,analog
-router,NMOSiso6,TBD
-dftpriority,NMOSiso6,1
-esd,NMOSiso6,TBD
+
 
 
 
@@ -589,16 +555,6 @@ router,SUB,TBD
 dftpriority,SUB,1
 esd,SUB,TBD
 
-pinname,IREPLICA
-definition,IREPLICA,FET replica current 
-iq,IREPLICA,SIMULATION
-absmax,IREPLICA,30
-absmin,IREPLICA,-0.3
-io,IREPLICA,inout
-mode,IREPLICA,analog
-router,IREPLICA,TBD
-dftpriority,IREPLICA,1
-esd,IREPLICA,TBD
 
 
 
