@@ -58,10 +58,10 @@ limit,fet_calculator,choose1,maximum
 //USER Parameters
 user,Type,n
 description,FET type
-user,Ron,167708 x3354163 Ohm
-user,Ron_Design,0 x3354163 Ohm
+user,Ron,335417 x3354166 Ohm
+user,Ron_Design,0 x3354166 Ohm
 description,FET on resistance
-user,Vds,6V
+user,Vds,30V
 description,FET Maximum Vds rating
 user,VgsMax,6V
 description,FET Maximum Vgs rating
@@ -152,7 +152,7 @@ trim,description7,empty
 // *********************************************
 //Layout Parameters
 powerfet,layout instruction
-placeFET 0 0 164.910 181.980 2 2 fullmetal
+placeFET 0 0 154.410 153.180 4 3 fullmetal
 //fetpower.bio
 revision,layout,0p1
 layout,fet_fetpower
@@ -334,11 +334,19 @@ GARNETlspowerLV,NMOSiso6,XU3,LX
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,an5g6dw1_173p6x0p2x98p0x1p0,82042
-sub_area,an5g6dw1_173p6x0p2x98p0x1p0,82042
-sub_area,an5g6dw1_173p6x0p2x98p0x1p0,82042
-sub_area,an5g6dw1_173p6x0p2x98p0x1p0,82042
-generate_area,fet_fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWZREP_Xfet,328168
+sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
+sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
+sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
+sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
+sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
+sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
+sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
+sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
+sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
+sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
+sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
+sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
+generate_area,fet_fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWZREP_Xfet,867240
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.3
@@ -496,8 +504,8 @@ endpinorder
 pinname,GATE
 definition,GATE,FET gate 	
 iq,GATE,SIMULATION
-absmax,GATE,6
-absmin,GATE,0.0
+absmax,GATE,30
+absmin,GATE,24.0
 io,GATE,input
 mode,GATE,analog
 router,GATE,TBD
@@ -507,7 +515,7 @@ esd,GATE,TBD
 pinname,SOURCE
 definition,SOURCE,FET source
 iq,SOURCE,SIMULATION
-absmax,SOURCE,6
+absmax,SOURCE,30
 absmin,SOURCE,-0.3
 io,SOURCE,inout
 mode,SOURCE,analog
@@ -518,7 +526,7 @@ esd,SOURCE,TBD
 pinname,DRAIN
 definition,DRAIN,FET drain 
 iq,DRAIN,SIMULATION
-absmax,DRAIN,6
+absmax,DRAIN,30
 absmin,DRAIN,-0.3
 io,DRAIN,inout
 mode,DRAIN,analog
@@ -529,16 +537,6 @@ esd,DRAIN,TBD
 
 
 
-pinname,NMOSiso6
-definition,NMOSiso6,6V NMOS ISO Connection 
-iq,NMOSiso6,SIMULATION
-absmax,NMOSiso6,6
-absmin,NMOSiso6,-0.3
-io,NMOSiso6,input
-mode,NMOSiso6,analog
-router,NMOSiso6,TBD
-dftpriority,NMOSiso6,1
-esd,NMOSiso6,TBD
 
 
 
