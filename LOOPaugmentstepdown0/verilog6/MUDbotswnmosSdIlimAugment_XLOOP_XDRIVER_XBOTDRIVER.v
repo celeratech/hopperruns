@@ -284,7 +284,7 @@ module currentlimitfet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWZERO (SIMPV,SUB,measure_cu
   input [4:0] factory_currentlimit_blanking;
 endmodule
 
-module fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWZREP (GATE,SOURCE,DRAIN,SOURCEk,DRAINk,IREPLICA,SUB);
+module fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWZREP (GATE,SOURCE,DRAIN,NMOSiso6,SOURCEk,DRAINk,IREPLICA,SUB);
   input  SUB;
   input  GATE;
   inout  DRAIN;
@@ -292,6 +292,7 @@ module fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWZREP (GATE,SOURCE,DRAIN,SOURCEk,DRAINk
   inout  SOURCE;
   inout  SOURCEk;
   inout  IREPLICA;
+  input  NMOSiso6;
 endmodule
 
 //Verilog HDL for "DRM", "drm48" "functional"
@@ -379,10 +380,11 @@ module currentlimitfet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWCURRENT (SIMPV,SUB,measure
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module MUDbotswnmosSdIlimAugment_XLOOP_XDRIVER_XBOTDRIVER (SW, tmi, MUDV, PMUDG, PMUDV, TAEXT, botswon, CELG59462, CELV96848, botswipeak, CELSUB40948, botswstatus, botswzcross, enable_driver, IP_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWZERO, IP_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWCURRENT);
+module MUDbotswnmosSdIlimAugment_XLOOP_XDRIVER_XBOTDRIVER (SW, tmi, MUDV, CBOOT, PMUDG, PMUDV, TAEXT, botswon, CELG59462, CELV96848, botswipeak, CELSUB40948, botswstatus, botswzcross, enable_driver, IP_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWZERO, IP_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWCURRENT);
 inout  SW;
 inout [4:0] tmi;
 input  MUDV;
+input  CBOOT;
 inout  PMUDG;
 input  PMUDV;
 input  TAEXT;
@@ -713,7 +715,8 @@ fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWZREP XBOTSWZREP (
 .DRAINk(net_43),
 .SOURCE(PMUDG),
 .SOURCEk(net_109),
-.IREPLICA(net_111)
+.IREPLICA(net_111),
+.NMOSiso6(CBOOT)
 );
 
 drm48 drm_hex0x6 (

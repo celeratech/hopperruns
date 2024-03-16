@@ -58,7 +58,7 @@ limit,fet_calculator,choose1,maximum
 //USER Parameters
 user,Type,n
 description,FET type
-user,Ron,335417 x3354166 Ohm
+user,Ron,670833 x3354166 Ohm
 user,Ron_Design,0 x3354166 Ohm
 description,FET on resistance
 user,Vds,30V
@@ -152,7 +152,7 @@ trim,description7,empty
 // *********************************************
 //Layout Parameters
 powerfet,layout instruction
-placeFET 0 0 154.410 153.180 4 3 fullmetal
+placeFET 0 0 211.110 159.380 2 2 fullmetal
 //fetpower.bio
 revision,layout,0p1
 layout,fet_fetpower
@@ -334,19 +334,11 @@ GARNETlspowerLV,NMOSiso6,XU3,LX
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
-sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
-sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
-sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
-sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
-sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
-sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
-sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
-sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
-sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
-sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
-sub_area,an5g30dw2_144p8x0p2x48p0x1p0,72270
-generate_area,fet_fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWIREP_Xfet,867240
+sub_area,an5g30dw2_151p0x0p2x66p0x1p0,74833
+sub_area,an5g30dw2_151p0x0p2x66p0x1p0,74833
+sub_area,an5g30dw2_151p0x0p2x66p0x1p0,74833
+sub_area,an5g30dw2_151p0x0p2x66p0x1p0,74833
+generate_area,fet_fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWIREP_Xfet,299332
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.3
