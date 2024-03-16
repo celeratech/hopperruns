@@ -58,7 +58,7 @@ limit,fet_calculator,choose1,maximum
 //USER Parameters
 user,Type,n
 description,FET type
-user,Ron,200.00mOhm
+user,Ron,100.00mOhm
 user,Ron_Design,0.00mOhm
 description,FET on resistance
 user,Vds,30V
@@ -392,14 +392,12 @@ GARNETlspowerLV,NMOSiso6,XU3,LX
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,fet_fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWIREP_Xfet,299332
-sub_area,an5g30dw2_2p1x0p2x2p0x1p0,40500
-sub_area,an5g30dw2_2p1x0p2x2p0x1p0,40500
-sub_area,an5g30dw2_2p1x0p2x2p0x1p0,40500
-sub_area,an5g30dw2_2p1x0p2x2p0x1p0,40500
+sub_area,fet_fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWIREP_Xfet,867240
+sub_area,an5g30dw2_2p2x0p2x2p0x1p0,40520
+sub_area,an5g30dw2_2p2x0p2x2p0x1p0,40520
 sub_area,PEBBLElink,0
 sub_area,PEBBLElink,0
-generate_area,fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWIREP,461332
+generate_area,fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWIREP,948280
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.3

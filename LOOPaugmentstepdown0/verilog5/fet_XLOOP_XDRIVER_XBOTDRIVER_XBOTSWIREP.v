@@ -3,7 +3,7 @@
 //NAME:fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWIREP
 //GENERATOR REVISION:0.3.7
 //FET TYPE:n
-//ON RESISTANCE:0.200 Ohms
+//ON RESISTANCE:0.100 Ohms
 //VDS RATING:30V
 //VGS RATING:6V
 //BODY DIODE:yes
@@ -16,7 +16,7 @@
 //Celera Confidential Do Not Copy fet_fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWIREP_Xfet.v
 //Celera:fet_fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWIREP_Xfet
 //Celera Confidential Symbol Generator
-//power NMOS:Ron:0.200 Ohm
+//power NMOS:Ron:0.100 Ohm
 //Vgs 6V Vds 30V
 //Kelvin:no
 
@@ -29,7 +29,7 @@ endmodule
 
 
 //Celera Confidential Do Not Copy NMOS_REPLICA
-module an5g30dw2_2p1x0p2x2p0x1p0 (DRAIN,GATE,SOURCE,SUB);
+module an5g30dw2_2p2x0p2x2p0x1p0 (DRAIN,GATE,SOURCE,SUB);
 input GATE;
 input SUB;
 inout SOURCE;
@@ -48,7 +48,7 @@ endmodule
 
 //Celera Confidential Do Not Copy fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWIREP
 //Celera Confidential Symbol Generator
-//power NMOS:Ron:0.200 Ohm
+//power NMOS:Ron:0.100 Ohm
 //Vgs 6V Vds 30V
 //Kelvin:yes
 
@@ -70,41 +70,23 @@ fet_fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWIREP_Xfet XnmosPower0(
 );
 //,diesize,fet_fet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWIREP_Xfet
 
-//Celera Confidential Do Not Copy an5g30dw2_2p1x0p2x2p0x1p0
-an5g30dw2_2p1x0p2x2p0x1p0 XnmosreplicaS_0(
+//Celera Confidential Do Not Copy an5g30dw2_2p2x0p2x2p0x1p0
+an5g30dw2_2p2x0p2x2p0x1p0 XnmosreplicaS_0(
 .DRAIN (DRAIN),
 .GATE (GATE),
 .SOURCE (conn_0),
 .SUB (SUB)
 );
-//,diesize,an5g30dw2_2p1x0p2x2p0x1p0
+//,diesize,an5g30dw2_2p2x0p2x2p0x1p0
 
-//Celera Confidential Do Not Copy an5g30dw2_2p1x0p2x2p0x1p0
-an5g30dw2_2p1x0p2x2p0x1p0 XnmosreplicaS_1(
+//Celera Confidential Do Not Copy an5g30dw2_2p2x0p2x2p0x1p0
+an5g30dw2_2p2x0p2x2p0x1p0 XnmosreplicaS_1(
+.GATE (GATE),
 .DRAIN (conn_0),
-.GATE (GATE),
-.SOURCE (conn_1),
-.SUB (SUB)
-);
-//,diesize,an5g30dw2_2p1x0p2x2p0x1p0
-
-//Celera Confidential Do Not Copy an5g30dw2_2p1x0p2x2p0x1p0
-an5g30dw2_2p1x0p2x2p0x1p0 XnmosreplicaS_2(
-.DRAIN (conn_1),
-.GATE (GATE),
-.SOURCE (conn_2),
-.SUB (SUB)
-);
-//,diesize,an5g30dw2_2p1x0p2x2p0x1p0
-
-//Celera Confidential Do Not Copy an5g30dw2_2p1x0p2x2p0x1p0
-an5g30dw2_2p1x0p2x2p0x1p0 XnmosreplicaS_3(
-.GATE (GATE),
-.DRAIN (conn_2),
 .SOURCE (IREPLICA),
 .SUB (SUB)
 );
-//,diesize,an5g30dw2_2p1x0p2x2p0x1p0
+//,diesize,an5g30dw2_2p2x0p2x2p0x1p0
 
 //Celera Confidential Do Not Copy PEBBLElink
 PEBBLElink XlinkD(
