@@ -89,9 +89,9 @@ user,currentlimit_dft,yes
 description,Currentlimit DFT enabled
 user,currentlimit_accuracy,yes
 description,Trim added
-user,currentlimit_limit,0.85
+user,currentlimit_limit,3.5
 description,Current Limit Value
-user,currentlimit_fetratio,30K
+user,currentlimit_fetratio,40K
 description,Current Limit Fet Ratio
 user,currentlimit_maxiref,50
 description,Current Limit Max IREF
@@ -478,10 +478,10 @@ sub_area,STONEadjdelay2ns5bits,2000
 sub_area,STONEcurrentlimitcompinp,800
 sub_area,STONEcurrentlimitlowsidesource_en,200
 sub_area,STONEnoconn,0
-sub_area,currentgenerator_currentlimitfet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWCURRENT_Xcg,171600
+sub_area,currentgenerator_currentlimitfet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWCURRENT_Xcg,147400
 sub_area,STONEnoconn,0
 sub_area,STONEcurrentlimitreftrim10u,888999
-generate_area,currentlimitfet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWCURRENT,1063599
+generate_area,currentlimitfet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWCURRENT,1039399
 // *********************************************
 //Calculator Parameters
 #define SIMPVminimum,2.2
@@ -514,12 +514,12 @@ trim,por,0
 trim,pinname,trim_currentlimit
 trim,testname,botswipeakacc
 trim,description,Lowside Zero Cross Accuracy
-trim,target,0.85
+trim,target,3.5
 trim,units,A
-trim,pretrim_low_limit,0.425
-trim,pretrim_high_limit,1.275
-trim,posttrim_low_limit,0.825
-trim,posttrim_high_limit,0.876
+trim,pretrim_low_limit,1.750
+trim,pretrim_high_limit,5.250
+trim,posttrim_low_limit,3.395
+trim,posttrim_high_limit,3.605
 trim,codeunits,A
 trim,description0,code 0x01.+1.0
 trim,description1,code 0x02.+2.0
