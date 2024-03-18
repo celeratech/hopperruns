@@ -77,7 +77,7 @@ user,currentlimit_fetterm,nmos_drain
 description,Fet connection
 user,currentlimit_usage,highside
 description,Usage
-user,currentlimit_vsensemax,12V
+user,currentlimit_vsensemax,36V
 description,Max sense voltage
 user,currentlimit_iref,external
 description,Reference current
@@ -91,9 +91,9 @@ user,currentlimit_accuracy,yes
 description,Trim added
 user,currentlimit_levelshift,yes
 description,Levelshift enabled
-user,currentlimit_limit,3.0
+user,currentlimit_limit,0.75
 description,Current Limit Value
-user,currentlimit_fetratio,30K
+user,currentlimit_fetratio,15K
 description,Current Limit Fet Ratio
 user,currentlimit_maxiref,100
 description,Current Limit Max IREF
@@ -477,14 +477,14 @@ revision,vis15cbdiesize,0p1
 sub_area,STONEnoconn,0
 sub_area,STONEadjdelay2ns5bits,2000
 sub_area,STONEcurrentlimitcompinp,800
-sub_area,STONEcurrentlimithighsidenmos12v_en,888999
-sub_area,STONEcurrentlimitdft12v,888999
-sub_area,STONEbitshifter305bits,327680
-sub_area,levelshifter0H2L_currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT_Xls,8500
+sub_area,STONEcurrentlimithighsidenmos45v_en,888999
+sub_area,STONEcurrentlimitdft45v,888999
+sub_area,STONEbitshifter455bits,888999
+sub_area,levelshifter0H2L_currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT_Xls,11600
 sub_area,STONEnoconn,0
 sub_area,STONEnoconn,0
 sub_area,STONEcurrentlimitreftrim100u,888999
-generate_area,currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT,3005977
+generate_area,currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT,3570396
 // *********************************************
 //Calculator Parameters
 #define SIMPVminimum,2.2
@@ -517,12 +517,12 @@ trim,por,0
 trim,pinname,trim_currentlimit
 trim,testname,topswipeakacc
 trim,description,Highside Current Limit Trim
-trim,target,3.0
+trim,target,0.75
 trim,units,A
-trim,pretrim_low_limit,1.500
-trim,pretrim_high_limit,4.500
-trim,posttrim_low_limit,2.910
-trim,posttrim_high_limit,3.090
+trim,pretrim_low_limit,0.375
+trim,pretrim_high_limit,1.125
+trim,posttrim_low_limit,0.728
+trim,posttrim_high_limit,0.772
 trim,codeunits,A
 trim,description0,code 0x01.+1.0
 trim,description1,code 0x02.+2.0
@@ -572,7 +572,7 @@ esd,SUB,TBD
 pinname,measure_currentlimit
 definition,measure_currentlimit,Measure Current limit Pin
 iq,measure_currentlimit,SIMULATION
-absmax,measure_currentlimit,12
+absmax,measure_currentlimit,36
 absmin,measure_currentlimit,-0.3
 io,measure_currentlimit,input
 mode,measure_currentlimit,digital
@@ -583,7 +583,7 @@ esd,measure_currentlimit,TBD
 pinname,VSENSE
 definition,VSENSE,Comparator Reference Node
 iq,VSENSE,SIMULATION
-absmax,VSENSE,12
+absmax,VSENSE,36
 absmin,VSENSE,-0.3
 io,VSENSE,input
 mode,VSENSE,analog
@@ -594,7 +594,7 @@ esd,VSENSE,TBD
 pinname,IREPLICA
 definition,IREPLICA,Comparator Measure Node
 iq,IREPLICA,SIMULATION
-absmax,IREPLICA,12
+absmax,IREPLICA,36
 absmin,IREPLICA,-0.3
 io,IREPLICA,input
 mode,IREPLICA,analog
@@ -605,7 +605,7 @@ esd,IREPLICA,TBD
 pinname,currentlimit
 definition,currentlimit,Current Limit Output Signal
 iq,currentlimit,SIMULATION
-absmax,currentlimit,12
+absmax,currentlimit,36
 absmin,currentlimit,-0.3
 io,currentlimit,output
 mode,currentlimit,digital
@@ -640,7 +640,7 @@ esd,factory_currentlimit_blanking,TBD
 pinname,enable_currentlimit
 definition,enable_currentlimit,Enable Pin
 iq,enable_currentlimit,SIMULATION
-absmax,enable_currentlimit,12
+absmax,enable_currentlimit,36
 absmin,enable_currentlimit,-0.3
 io,enable_currentlimit,input
 mode,enable_currentlimit,digital
@@ -664,7 +664,7 @@ esd,IREF,TBD
 pinname,CELPOS
 definition,CELPOS,High Voltage power supply
 iq,CELPOS,SIMULATION
-absmax,CELPOS,12
+absmax,CELPOS,36
 absmin,CELPOS,2.2
 io,CELPOS,input
 mode,CELPOS,power
@@ -675,7 +675,7 @@ esd,CELPOS,TBD
 pinname,CELNEG
 definition,CELNEG,High Voltage power supply
 iq,CELNEG,SIMULATION
-absmax,CELNEG,12
+absmax,CELNEG,36
 absmin,CELNEG,2.2
 io,CELNEG,input
 mode,CELNEG,power
@@ -686,7 +686,7 @@ esd,CELNEG,TBD
 pinname,HVREF
 definition,HVREF,High Voltage DC Reference
 iq,HVREF,SIMULATION
-absmax,HVREF,12
+absmax,HVREF,36
 absmin,HVREF,2.2
 io,HVREF,input
 mode,HVREF,power
