@@ -7,7 +7,7 @@
 //ACCURACY:no
 //TEMPERATURE COEFFICIENT:zero, TEMPERATURE GAIN:3
 //DFT:no
-//POLARITY0:source, OUTPUT0:8.75
+//POLARITY0:source, OUTPUT0:2.83
 
 //Celera Confidential Do Not Copy STONEcurrentgeneratormain
 //Verilog HDL for "Generate", "STONEcurrentgeneratormain" "functional"
@@ -150,11 +150,11 @@ module CASCODEpmos50nref ( SUB, CELV, PMIR, PCAS, en, P50N );
   input SUB;
 endmodule
 
-//Celera Confidential Do Not Copy CASCODEpmos50n
-//Verilog HDL for "CASCODES", "CASCODEpmos50n" "functional"
+//Celera Confidential Do Not Copy CASCODEpmos10n
+//Verilog HDL for "CASCODES", "CASCODEpmos10n" "functional"
 
 
-module CASCODEpmos50n ( SUB, CELV, PMIR, PCAS, O );
+module CASCODEpmos10n ( SUB, CELV, PMIR, PCAS, O );
 
   input CELV;
   inout PCAS;
@@ -174,19 +174,6 @@ module CASCODEpmos5uref ( SUB, CELV, PMIR, PCAS, en, P5U );
   inout PCAS;
   input en;
   inout PMIR;
-  input SUB;
-endmodule
-
-//Celera Confidential Do Not Copy CASCODEpmos5u
-//Verilog HDL for "CASCODES", "CASCODEpmos5u" "functional"
-
-
-module CASCODEpmos5u ( SUB, CELV, PMIR, PCAS, O );
-
-  input CELV;
-  inout PCAS;
-  inout PMIR;
-  inout O;
   input SUB;
 endmodule
 
@@ -215,7 +202,7 @@ endmodule
 //Celera Confidential Do Not Copy currentgenerator_currentlimitfet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWCURRENT_Xcg
 //Celera Confidential Symbol Generator
 //Number of outputs: 1, Max Vout: 6V, Accuracy: no%, Temperature Coefficient: zero, Temperature Gain: 3, DFT: no
-//POLARITY0:source, OUTPUT0:8.75
+//POLARITY0:source, OUTPUT0:2.83
 module currentgenerator_currentlimitfet_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWCURRENT_Xcg (SIMPV,CELSUB,enable_currentgenerator,global_currentgenerator,IP,ok_currentgenerator,
 I0,
 CELG);
@@ -259,15 +246,6 @@ STONEcurrentgeneratormain XcurrentgeneratorMAIN(
 .NMIR500N (NMIR500N)
 );
 //,diesize,STONEcurrentgeneratormain
-//Celera Confidential Do Not Copy CASCODEpmos5u
-CASCODEpmos5u XcascodePMOS5U020(
-.CELV (SIMPV),
-.PCAS (PCAS5U),
-.PMIR (PMIR5U),
-.SUB (CELSUB),
-.O (I0)
-);
-//,diesize,CASCODEpmos5u
 //Celera Confidential Do Not Copy CASCODEpmos1u
 CASCODEpmos1u XcascodePMOS1U030(
 .CELV (SIMPV),
@@ -279,15 +257,6 @@ CASCODEpmos1u XcascodePMOS1U030(
 //,diesize,CASCODEpmos1u
 //Celera Confidential Do Not Copy CASCODEpmos1u
 CASCODEpmos1u XcascodePMOS1U031(
-.CELV (SIMPV),
-.PCAS (PCAS5U),
-.PMIR (PMIR5U),
-.SUB (CELSUB),
-.O (I0)
-);
-//,diesize,CASCODEpmos1u
-//Celera Confidential Do Not Copy CASCODEpmos1u
-CASCODEpmos1u XcascodePMOS1U032(
 .CELV (SIMPV),
 .PCAS (PCAS5U),
 .PMIR (PMIR5U),
@@ -322,15 +291,42 @@ CASCODEpmos100n XcascodePMOS100N051(
 .O (I0)
 );
 //,diesize,CASCODEpmos100n
-//Celera Confidential Do Not Copy CASCODEpmos50n
-CASCODEpmos50n XcascodePMOS50N060(
+//Celera Confidential Do Not Copy CASCODEpmos100n
+CASCODEpmos100n XcascodePMOS100N052(
+.CELV (SIMPV),
+.PCAS (PCAS500N),
+.PMIR (PMIR500N),
+.SUB (CELSUB),
+.O (I0)
+);
+//,diesize,CASCODEpmos100n
+//Celera Confidential Do Not Copy CASCODEpmos10n
+CASCODEpmos10n XcascodePMOS10N070(
 .CELV (SIMPV),
 .PCAS (PCAS50N),
 .PMIR (PMIR50N),
 .SUB (CELSUB),
 .O (I0)
 );
-//,diesize,CASCODEpmos50n
+//,diesize,CASCODEpmos10n
+//Celera Confidential Do Not Copy CASCODEpmos10n
+CASCODEpmos10n XcascodePMOS10N071(
+.CELV (SIMPV),
+.PCAS (PCAS50N),
+.PMIR (PMIR50N),
+.SUB (CELSUB),
+.O (I0)
+);
+//,diesize,CASCODEpmos10n
+//Celera Confidential Do Not Copy CASCODEpmos10n
+CASCODEpmos10n XcascodePMOS10N072(
+.CELV (SIMPV),
+.PCAS (PCAS50N),
+.PMIR (PMIR50N),
+.SUB (CELSUB),
+.O (I0)
+);
+//,diesize,CASCODEpmos10n
 //Celera Confidential Do Not Copy CASCODEpmos500nref
 CASCODEpmos500nref XcascodePMOS500NREF(
 .CELV (SIMPV),
