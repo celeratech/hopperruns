@@ -3,8 +3,8 @@
 //NAME:fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER
 //GENERATOR REVISION:0.5.4
 //TYPE:n
-//ON Resistance:4 ohms
-//OFF Resistance:2 ohms
+//ON Resistance:1 ohms
+//OFF Resistance:0.500 ohms
 //Application:na
 //VMAX:6V
 //DFT:no
@@ -113,7 +113,7 @@ endmodule
 //Celera Confidential Do Not Copy fet_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xnmos0.v
 //Celera:fet_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xnmos0
 //Celera Confidential Symbol Generator
-//power NMOS:Ron:2.000 Ohm
+//power NMOS:Ron:0.500 Ohm
 //Vgs 6V Vds 6V
 //Kelvin:no
 
@@ -129,7 +129,7 @@ endmodule
 //Celera Confidential Do Not Copy fet_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xpmos0.v
 //Celera:fet_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xpmos0
 //Celera Confidential Symbol Generator
-//power PMOS:Ron:4.000 Ohm
+//power PMOS:Ron:1.000 Ohm
 //Vgs 6V Vds 6V
 //Kelvin:no
 
@@ -184,11 +184,11 @@ input CELG;
 endmodule
 
 
-//Celera Confidential Do Not Copy STONEfetdriverndrive2
-//Verilog HDL for "Generate", "STONEfetdriverndrive2" "functional"
+//Celera Confidential Do Not Copy STONEfetdriverndrive3
+//Verilog HDL for "Generate", "STONEfetdriverndrive3" "functional"
 
 
-module STONEfetdriverndrive2 ( ndrive, CELNEG, CELPOS, SUB, ndriveen, ndriveon
+module STONEfetdriverndrive3 ( ndrive, CELNEG, CELPOS, SUB, ndriveen, ndriveon
 );
 
   input CELNEG;
@@ -253,7 +253,7 @@ endmodule
 
 //Celera Confidential Do Not Copy fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER
 //Celera Confidential Symbol Generator
-//FET DRIVER 'n' Type 4 Ron 2 Roff 
+//FET DRIVER 'n' Type 1 Ron 0.500 Roff 
 //Input 36V Levelshifter
 //Gate Sense None
 //DFT no
@@ -339,8 +339,8 @@ fet_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xnmos0 Xpowernmos0(
 );
 //,diesize,fet_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xnmos0
 
-//Celera Confidential Do Not Copy STONEfetdriverndrive2
-STONEfetdriverndrive2 Xndriver0(
+//Celera Confidential Do Not Copy STONEfetdriverndrive3
+STONEfetdriverndrive3 Xndriver0(
 .CELPOS (HVPOS),
 .ndriveon (ndriveon),
 .ndriveen (enable_fetdrivermain),
@@ -348,7 +348,7 @@ STONEfetdriverndrive2 Xndriver0(
 .CELNEG (HVNEG),
 .SUB (CELSUB)
 );
-//,diesize,STONEfetdriverndrive2
+//,diesize,STONEfetdriverndrive3
 
 //Celera Confidential Do Not Copy fet_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xpmos0
 fet_fetdriver_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWDRIVER_Xpmos0 Xpowerpmos0(
