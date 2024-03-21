@@ -5,7 +5,7 @@
 //SENSE ELEMENT:fet
 //FET CONNECTION:nmos_drain
 //USAGE:highside
-//MAX SENSE VOLTAGE:12V
+//MAX SENSE VOLTAGE:36V
 //REFERENCE CURRENT:external
 //LATCH BLANKING:factory
 //LATCH BLANKING TIME:10ns
@@ -17,7 +17,7 @@
 //Celera Confidential Do Not Copy levelshifter0H2L_currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT_Xls.v
 //Celera:levelshifter0H2L_currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT_Xls
 //Celera Confidential Symbol Generator
-//Direction: high2low, Maximum high voltage:12V 
+//Direction: high2low, Maximum high voltage:36V 
 //Enable pin:yes
 module levelshifter0H2L_currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT_Xls (SIMPV,CELSUB,HVPOS,HVNEG,in,out,
 enable_levelshifter,
@@ -83,18 +83,18 @@ module STONEnoconn ( noconn );
   input noconn;
 endmodule
 
-//Celera Confidential Do Not Copy STONEbitshifter305bits
-//Verilog HDL for "Generate", "STONEbitshifter305bits" "functional"
+//Celera Confidential Do Not Copy STONEbitshifter455bits
+//Verilog HDL for "Generate", "STONEbitshifter455bits" "functional"
 
 
-module STONEbitshifter305bits ( o, CELG, CELV, HVNEG, HVPOS, SUB, i );
+module STONEbitshifter455bits ( o, CELG, CELSUB, CELV, HVNEG, HVPOS, i );
 
   input CELV;
   input HVPOS;
+  input CELSUB;
   input HVNEG;
   input  [4:0] i;
   output  [4:0] o;
-  input SUB;
   input CELG;
 endmodule
 
@@ -117,11 +117,11 @@ SUB, VREFS, VREPS, measure_currentlimit, measure_delay, usage );
   input CELPOS;
 endmodule
 
-//Celera Confidential Do Not Copy STONEcurrentlimithighsidenmos12v_en
-//Verilog HDL for "Generate", "STONEcurrentlimithighsidenmos12v_en" "functional"
+//Celera Confidential Do Not Copy STONEcurrentlimithighsidenmos45v_en
+//Verilog HDL for "Generate", "STONEcurrentlimithighsidenmos45v_en" "functional"
 
 
-module STONEcurrentlimithighsidenmos12v_en ( en, VREFS, VREPS, CELG, CELNEG,
+module STONEcurrentlimithighsidenmos45v_en ( en, VREFS, VREPS, CELG, CELNEG,
 CELPOS, CELV, HVREF, IREFTRIM, IREPLICA, SUB, VSENSE, currentlimit, enable_currentlimit,
 measure_currentlimit );
 
@@ -142,11 +142,11 @@ measure_currentlimit );
   input CELG;
 endmodule
 
-//Celera Confidential Do Not Copy STONEcurrentlimitdft12v
-//Verilog HDL for "Generate", "STONEcurrentlimitdft12v" "functional"
+//Celera Confidential Do Not Copy STONEcurrentlimitdft45v
+//Verilog HDL for "Generate", "STONEcurrentlimitdft45v" "functional"
 
 
-module STONEcurrentlimitdft12v ( DFT_IREF, dft_measure_currentlimit, dft_s,
+module STONEcurrentlimitdft45v ( DFT_IREF, dft_measure_currentlimit, dft_s,
 tdi_currentlimit, tdi_currentlimitlive, CELG, CELNEG, CELPOS, CELV, IREF, SUB,
 TAEXT_CURRENTLIMIT, currentlimit, currentlimitlive, measure_currentlimit, s,
 ten_currentlimit, ten_currentlimit_delay, ten_measure_currentlimit, ten_taext_currentlimit
@@ -176,7 +176,7 @@ endmodule
 
 //Celera Confidential Do Not Copy currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT
 //Celera Confidential Symbol Generator
-//Sense element: fet, Fet connection: nmos_drain, Usage: highside, Max sense voltage: 12V, Reference current: external
+//Sense element: fet, Fet connection: nmos_drain, Usage: highside, Max sense voltage: 36V, Reference current: external
 //Latch blanking: factory, Latch blanking POR value: 10ns, DFT: yes, Trim: yes, Levelshift: yes
 module currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT (SIMPV,SUB,measure_currentlimit,VSENSE,IREPLICA,currentlimit,enable_currentlimit,
 trim_currentlimit,
@@ -265,8 +265,8 @@ STONEcurrentlimitcompinp Xclcompinp(
 .CELPOS (CELPOS)
 );
 //,diesize,STONEcurrentlimitcompinp
-//Celera Confidential Do Not Copy STONEcurrentlimithighsidenmos12v_en
-STONEcurrentlimithighsidenmos12v_en high_nmos_en(
+//Celera Confidential Do Not Copy STONEcurrentlimithighsidenmos45v_en
+STONEcurrentlimithighsidenmos45v_en high_nmos_en(
 .CELV (SIMPV),
 .VSENSE (VSENSE),
 .CELNEG (CELNEG),
@@ -283,9 +283,9 @@ STONEcurrentlimithighsidenmos12v_en high_nmos_en(
 .CELPOS (CELPOS),
 .CELG (CELG)
 );
-//,diesize,STONEcurrentlimithighsidenmos12v_en
-//Celera Confidential Do Not Copy STONEcurrentlimitdft12v
-STONEcurrentlimitdft12v XcldftHV(
+//,diesize,STONEcurrentlimithighsidenmos45v_en
+//Celera Confidential Do Not Copy STONEcurrentlimitdft45v
+STONEcurrentlimitdft45v XcldftHV(
 .CELV (SIMPV),
 .tdi_currentlimitlive (tdi_currentlimitlive),
 .s ({factory_currentlimit_blanking[4],factory_currentlimit_blanking[3],factory_currentlimit_blanking[2],factory_currentlimit_blanking[1],factory_currentlimit_blanking[0]}),
@@ -307,18 +307,18 @@ STONEcurrentlimitdft12v XcldftHV(
 .CELG (CELG),
 .dft_measure_currentlimit (dft_measure_currentlimit)
 );
-//,diesize,STONEcurrentlimitdft12v
-//Celera Confidential Do Not Copy STONEbitshifter305bits
-STONEbitshifter305bits Xbitshfiter(
+//,diesize,STONEcurrentlimitdft45v
+//Celera Confidential Do Not Copy STONEbitshifter455bits
+STONEbitshifter455bits Xbitshfiter(
 .CELV (SIMPV),
 .HVPOS (CELPOS),
 .HVNEG (CELNEG),
 .i ({dft_s4,dft_s3,dft_s2,dft_s1,dft_s0}),
 .o ({o4,o3,o2,o1,o0}),
-.SUB (SUB),
+.CELSUB (SUB),
 .CELG (CELG)
 );
-//,diesize,STONEbitshifter305bits
+//,diesize,STONEbitshifter455bits
 //Celera Confidential Do Not Copy levelshifter0H2L_currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT_Xls
 levelshifter0H2L_currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT_Xls Xls(
 .SIMPV (SIMPV),
