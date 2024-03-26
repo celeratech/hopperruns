@@ -1,19 +1,19 @@
 * Z:\celera\projects\Simplis\playdemo\Stepdown\Stepdown0\298\stepdown0\sim_LOOPstepdown0.sxsch
 *#SIMETRIX
-.node_map PMUDV 62
+.node_map PMUDV 60
 .node_map porb 67
-.node_map OUT 58
+.node_map OUT 66
 .node_map PMUDHV 57
 .node_map VSS_REGULATION 70
 .node_map REF_REGULATION 69
-.node_map clock 66
+.node_map clock 65
 .node_map IREF_REGULATION 68
-.node_map CBOOT 60
-.node_map MUDV 61
-.node_map enable 65
-.node_map PMUDG 63
-.node_map kelvin_MUDG 64
-.node_map SW 59
+.node_map CBOOT 58
+.node_map MUDV 59
+.node_map enable 64
+.node_map PMUDG 61
+.node_map kelvin_MUDG 62
+.node_map SW 63
 .options
 + PSP_NPT=10001
 + POP_ITRMAX=20
@@ -28,18 +28,18 @@
 .globalvar VIN=5.0
 .globalvar tdext_khz=1000
 
-CBOOT 60 59 100n IC=0
-X$CLOCK 66 0 PUL_SOURCE vars: _V1=0 _V2=5 _FREQ=1Meg _DELAY=30u _DRATIOx100=90 _T_RISE=1n _T_FALL=1n _DAMP_COEF=0 _PWIDTH=899n _OFF_UNTIL_DELAY=1 _IDLE_IN_POP=0 _USEPHASE=0 _PHASE=30u
-COUT 58 0 10u IC=0
-V$enable_REF 65 0 PWL NSEG=2 X0=0 Y0=0 X1=10u Y1=5 X2=10.001u Y2=5 
-ILOAD 58 0 PWL NSEG=4 X0=0 Y0=0 X1=225u Y1=0 X2=250u Y2=1 X3=260u Y3=1 X4=280u Y4=0
+CBOOT 58 63 100n IC=0
+X$CLOCK 65 0 PUL_SOURCE vars: _V1=0 _V2=5 _FREQ=1Meg _DELAY=30u _DRATIOx100=90 _T_RISE=1n _T_FALL=1n _DAMP_COEF=0 _PWIDTH=899n _OFF_UNTIL_DELAY=1 _IDLE_IN_POP=0 _USEPHASE=0 _PHASE=30u
+COUT 66 0 10u IC=0
+V$enable_REF 64 0 PWL NSEG=2 X0=0 Y0=0 X1=10u Y1=5 X2=10.001u Y2=5 
+ILOAD 66 0 PWL NSEG=4 X0=0 Y0=0 X1=225u Y1=0 X2=250u Y2=1 X3=260u Y3=1 X4=280u Y4=0
 IREF_REGULATION 0 68 PWL NSEG=2 X0=0 Y0=0 X1=10u Y1=0 X2=11u Y2=10u 
-V$kelvin_PMUDG 64 0 0
-X$LOOP 62 59 65 57 61 60 66 63 67 55 68 51 65 65 53 52 69 70 58 56 64 LOOPaugmentstepdown0
-V$MUDV 61 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=5 X2=20u Y2=5 
-V$PMUDG 63 0 0
+V$kelvin_PMUDG 62 0 0
+X$LOOP 60 63 64 57 59 58 65 61 67 55 68 51 64 64 53 52 69 70 66 56 62 LOOPaugmentstepdown0
+V$MUDV 59 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=5 X2=20u Y2=5 
+V$PMUDG 61 0 0
 V$PMUDHV 57 0 PWL NSEG=3 X0=0 Y0=0 X1=1u Y1=0 X2=10u Y2=25 X3=300u Y3=25
-V$PMUDV 62 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=5 X2=20u Y2=5 
+V$PMUDV 60 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=5 X2=20u Y2=5 
 V$porb 67 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=5 X2=20u Y2=5 
 .PRINT V(#PMUDHV)
 .GRAPH :#PMUDHV axisType="auto" persistence=-1 curveLabel="PMUDHV" analysis="tran|pop" xLog="auto" yLog="auto"  nowarn=true disabled=false PROBEREF=Probe1  
@@ -48,9 +48,9 @@ V$porb 67 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=5 X2=20u Y2=5
 .PRINT V(#OUT)
 .GRAPH :#OUT curveLabel= OUT nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe4  
 V$REF_REGULATION 69 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=1 X2=20u Y2=1 
-RLOAD 58 0 33
+RLOAD 66 0 33
 X$U1 54 celera vars: layout='no' status='dev' simulation='typical'
-X$U2 59 58 inductor6p8u4Ap vars: Package='4.0mmx4.0mm' Partnumber='SRN4026-6R9M' CurrentProbe='yes'
+X$U2 63 66 inductor6p8u4Ap vars: Package='4.0mmx4.0mm' Partnumber='SRN4026-6R9M' CurrentProbe='yes'
 VSS_REGULATION 70 0 PWL NSEG=3 X0=0 Y0=0 X1=50u Y1=0 X2=200u Y2=1.1 X3=201u Y3=5 
 ** From Z:\celera\projects\Simplis\playdemo\Stepdown\Stepdown0\298\design\LOOPaugmentstepdown0.sxcmp
 .subckt LOOPaugmentstepdown0 98 99 96 94 104 95 102 112 106 105 117 109 110 118 115 113 114 116 119 107 108
