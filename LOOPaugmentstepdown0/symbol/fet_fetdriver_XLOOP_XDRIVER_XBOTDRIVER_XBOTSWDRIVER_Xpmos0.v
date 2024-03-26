@@ -1,6 +1,6 @@
 //Celera:fet_fetdriver_XLOOP_XDRIVER_XBOTDRIVER_XBOTSWDRIVER_Xpmos0
 //Celera Confidential Symbol Generator
-//power PMOS:Ron:2.000 Ohm
+//power PMOS:Ron:0.500 Ohm
 //Vgs 6V Vds 6V
 //Kelvin:no
 
