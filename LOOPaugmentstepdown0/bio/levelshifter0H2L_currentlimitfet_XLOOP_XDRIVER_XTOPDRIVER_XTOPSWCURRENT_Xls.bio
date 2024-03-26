@@ -39,7 +39,7 @@ limit,levelshifter_bits,maximum,16
 //USER Parameters
 user,levelshifter_direction,high2low
 description,Direction of level shift
-user,levelshifter_vhigh,12
+user,levelshifter_vhigh,45
 description,Maximum high voltage
 user,levelshifter_enable,yes
 description,Enable pin
@@ -300,8 +300,8 @@ GARNETlspowerLV,NMOSiso6,XU3,LX
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
 sub_area,STONEhv2lvmainNOME,3600
-sub_area,STONEhv2lv12NOME,4900
-generate_area,levelshifter0H2L_currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT_Xls,8500
+sub_area,STONEhv2lv45NOME,8000
+generate_area,levelshifter0H2L_currentlimitfet_XLOOP_XDRIVER_XTOPDRIVER_XTOPSWCURRENT_Xls,11600
 // *********************************************
 //Pinorder Parameters
 *******************************************
@@ -382,7 +382,7 @@ esd,CELSUB,TBD
 pinname,HVPOS
 definition,HVPOS,high voltage power supply		
 iq,HVPOS,SIMULATION
-absmax,HVPOS,12
+absmax,HVPOS,45
 absmin,HVPOS,-0.3
 io,HVPOS,input
 mode,HVPOS,analog
@@ -393,7 +393,7 @@ esd,HVPOS,TBD
 pinname,HVNEG
 definition,HVNEG,high voltage power supply	
 iq,HVNEG,SIMULATION
-absmax,HVNEG,6.0
+absmax,HVNEG,39.0
 absmin,HVNEG,-0.3
 io,HVNEG,input
 mode,HVNEG,analog
