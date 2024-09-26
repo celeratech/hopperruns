@@ -1,0 +1,1050 @@
+//Celera Brick Generator Confidential
+//CORE:feedbackdivider
+//NAME:feedbackdivider_3f7d1786
+//GENERATOR REVISION:0.4.4
+//TYPE:control
+//FEEDBACK VOLTAGE:1V
+//DISCONNECT PIN:pin
+//P OFFSET:0% 
+//N OFFSET:0% 
+//BIAS CURRENT:5uA
+//DFT:no
+//VOUT0:1.2V
+//VOUT1:1.5V
+//VOUT2:2V
+//VOUT3:2.5V
+//VOUT4:2.8V
+//VOUT5:3V
+//VOUT6:3.3V
+//VOUT7:5V
+
+//Celera Confidential Do Not Copy STONEfeedbackdividerMAIN
+//Verilog HDL for "Generate", "STONEfeedbackdividerMAIN" "functional"
+
+
+module STONEfeedbackdividerMAIN ( a0, a1, enable, CELG, CELV, SUB, enable_feedbackdivider,
+ten, ten_feedbackdivider );
+
+  input CELV;
+  output a1;
+  input ten_feedbackdivider;
+  output enable;
+  output a0;
+  input ten;
+  input enable_feedbackdivider;
+  input SUB;
+  input CELG;
+endmodule
+
+//Celera Confidential Do Not Copy ESDminiClamp6
+//Verilog HDL for "Esd", "ESDminiClamp6" "functional"
+
+
+module ESDminiClamp6 ( O, G, I, SUB, V );
+
+  input V;
+  input I;
+  input G;
+  input SUB;
+  output O;
+endmodule
+
+//Celera Confidential Do Not Copy STONEfeedbackdivideradjust8
+//Verilog HDL for "Generate", "STONEfeedbackdivideradjust8" "functional"
+
+
+module STONEfeedbackdivideradjust8 ( adj, CELG, CELV, SUB, en, register_feedbackdivider
+);
+
+  input CELV;
+  input  [2:0] register_feedbackdivider;
+  output  [7:0] adj;
+  input en;
+  input SUB;
+  input CELG;
+endmodule
+
+//Celera Confidential Do Not Copy WRAPPER3
+//Verilog HDL for "Generate", "WRAPPER3" "functional"
+
+
+module WRAPPER3 ( i, o0, o1, o2 );
+
+  inout o1;
+  inout o0;
+  inout  [2:0] i;
+  inout o2;
+endmodule
+
+//Celera Confidential Do Not Copy STONEfeedbackdividersw5v10u
+//Verilog HDL for "Generate", "STONEfeedbackdividersw5v10u" "functional"
+
+
+module STONEfeedbackdividersw5v10u ( O, G, VMAX, adj, COMM, SUB );
+
+  inout COMM;
+  input adj;
+  input G;
+  input SUB;
+  input VMAX;
+  inout O;
+endmodule
+
+//Celera Confidential Do Not Copy Feedback Divider
+module rlpp3000rpo3p7u1p0u (ISO,RP,RN);
+input ISO;
+inout RP;
+inout RN;
+endmodule
+
+//Celera Confidential Do Not Copy STONEnoconn
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+//Celera Confidential Do Not Copy feedbackdivider_3f7d1786
+//Celera Confidential Symbol Generator
+//Type: control,Feedback: 1V, Disconnect: pin, P Offset: 0%, N Offset: 0%, Bias Current: 5uA, DFT: no
+//VOUT0:1.2V, VOUT1: 1.5V, VOUT2: 2V, VOUT3: 2.5V, VOUT4: 2.8V, VOUT5: 3V, VOUT6: 3.3V, VOUT7: 5V
+module feedbackdivider_3f7d1786 (SIMPV,CELSUB,kelvin_FEEDBACKDIVIDER,FEEDBACKDIVIDER_FB,global_feedbackdivider,RTN,
+pin1,pin2,pin3,
+enable_feedbackdivider,
+CELG);
+input SIMPV;
+input CELSUB;
+input kelvin_FEEDBACKDIVIDER;
+output FEEDBACKDIVIDER_FB;
+input global_feedbackdivider;
+inout RTN;
+input pin1;
+input pin2;
+input pin3;
+input enable_feedbackdivider;
+input CELG;
+
+//Celera Confidential Do Not Copy Pin register_feedbackdivider
+wire[2:0] register_feedbackdivider;
+
+//Celera Confidential Do Not Copy Pin adj
+wire[7:0] adj;
+
+//Celera Confidential Do Not Copy Pin i
+wire[2:0] i;
+
+//Celera Confidential Do Not Copy ESDminiClamp6
+ESDminiClamp6 Xclamp(
+.V (SIMPV),
+.I (I),
+.G (CELG),
+.SUB (CELSUB),
+.O (FEEDBACKDIVIDER_FB)
+);
+//,diesize,ESDminiClamp6
+//Celera Confidential Do Not Copy STONEfeedbackdividersw5v10u
+STONEfeedbackdividersw5v10u Xswitch_shut(
+.COMM (I),
+.adj (enable),
+.G (CELG),
+.SUB (CELSUB),
+.VMAX (kelvin_FEEDBACKDIVIDER),
+.O (RSHUTtop)
+);
+//,diesize,STONEfeedbackdividersw5v10u
+//Celera Confidential Do Not Copy STONEnoconn
+STONEnoconn Xnoconn0(
+.noconn (
+noconn_adj7)
+);
+//,diesize,STONEnoconn
+//Celera Confidential Do Not Copy STONEfeedbackdivideradjust8
+STONEfeedbackdivideradjust8 XfeedbackdividerADJUST8(
+.CELV (SIMPV),
+.register_feedbackdivider ({pin2,pin1,pin0}),
+.adj ({noconn_adj7,adj6,adj5,adj4,adj3,adj2,adj1,adj0}),
+.en (enable),
+.SUB (CELSUB),
+.CELG (CELG)
+);
+//,diesize,STONEfeedbackdivideradjust8
+//Celera Confidential Do Not Copy STONEfeedbackdividersw5v10u
+STONEfeedbackdividersw5v10u Xswitch_0(
+.COMM (ROUT0),
+.adj (adj0),
+.G (CELG),
+.SUB (CELSUB),
+.VMAX (kelvin_FEEDBACKDIVIDER),
+.O (kelvin_FEEDBACKDIVIDER)
+);
+//,diesize,STONEfeedbackdividersw5v10u
+//Celera Confidential Do Not Copy STONEfeedbackdividersw5v10u
+STONEfeedbackdividersw5v10u Xswitch_1(
+.COMM (ROUT1),
+.adj (adj1),
+.G (CELG),
+.SUB (CELSUB),
+.VMAX (kelvin_FEEDBACKDIVIDER),
+.O (kelvin_FEEDBACKDIVIDER)
+);
+//,diesize,STONEfeedbackdividersw5v10u
+//Celera Confidential Do Not Copy STONEfeedbackdividersw5v10u
+STONEfeedbackdividersw5v10u Xswitch_2(
+.COMM (ROUT2),
+.adj (adj2),
+.G (CELG),
+.SUB (CELSUB),
+.VMAX (kelvin_FEEDBACKDIVIDER),
+.O (kelvin_FEEDBACKDIVIDER)
+);
+//,diesize,STONEfeedbackdividersw5v10u
+//Celera Confidential Do Not Copy STONEfeedbackdividersw5v10u
+STONEfeedbackdividersw5v10u Xswitch_3(
+.COMM (ROUT3),
+.adj (adj3),
+.G (CELG),
+.SUB (CELSUB),
+.VMAX (kelvin_FEEDBACKDIVIDER),
+.O (kelvin_FEEDBACKDIVIDER)
+);
+//,diesize,STONEfeedbackdividersw5v10u
+//Celera Confidential Do Not Copy STONEfeedbackdividersw5v10u
+STONEfeedbackdividersw5v10u Xswitch_4(
+.COMM (ROUT4),
+.adj (adj4),
+.G (CELG),
+.SUB (CELSUB),
+.VMAX (kelvin_FEEDBACKDIVIDER),
+.O (kelvin_FEEDBACKDIVIDER)
+);
+//,diesize,STONEfeedbackdividersw5v10u
+//Celera Confidential Do Not Copy STONEfeedbackdividersw5v10u
+STONEfeedbackdividersw5v10u Xswitch_5(
+.COMM (ROUT5),
+.adj (adj5),
+.G (CELG),
+.SUB (CELSUB),
+.VMAX (kelvin_FEEDBACKDIVIDER),
+.O (kelvin_FEEDBACKDIVIDER)
+);
+//,diesize,STONEfeedbackdividersw5v10u
+//Celera Confidential Do Not Copy STONEfeedbackdividersw5v10u
+STONEfeedbackdividersw5v10u Xswitch_6(
+.COMM (ROUT6),
+.adj (adj6),
+.G (CELG),
+.SUB (CELSUB),
+.VMAX (kelvin_FEEDBACKDIVIDER),
+.O (kelvin_FEEDBACKDIVIDER)
+);
+//,diesize,STONEfeedbackdividersw5v10u
+//Celera Confidential Do Not Copy STONEnoconn
+STONEnoconn Xnoconn1(
+.noconn (
+noconnect_a0)
+);
+//,diesize,STONEnoconn
+//Celera Confidential Do Not Copy STONEnoconn
+STONEnoconn Xnoconn2(
+.noconn (
+noconnect_a1)
+);
+//,diesize,STONEnoconn
+//Celera Confidential Do Not Copy STONEfeedbackdividerMAIN
+STONEfeedbackdividerMAIN XfeedbackdividerMAIN(
+.CELV (SIMPV),
+.a1 (noconnect_a1),
+.ten_feedbackdivider (CELG),
+.enable (enable),
+.a0 (noconnect_a0),
+.ten (global_feedbackdivider),
+.enable_feedbackdivider (enable_feedbackdivider),
+.SUB (CELSUB),
+.CELG (CELG)
+);
+//,diesize,STONEfeedbackdividerMAIN
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XRFBs_0(
+.ISO (CELG),
+.RP (I),
+.RN (RFBs_0)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XRFBs_1(
+.ISO (CELG),
+.RP (RFBs_1),
+.RN (RFBs_0)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XRFBs_2(
+.ISO (CELG),
+.RP (RFBs_2),
+.RN (RFBs_1)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XRFBs_3(
+.ISO (CELG),
+.RP (RFBs_3),
+.RN (RFBs_2)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XRFBs_4(
+.ISO (CELG),
+.RP (RFBs_4),
+.RN (RFBs_3)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XRFBs_5(
+.ISO (CELG),
+.RP (RFBs_5),
+.RN (RFBs_4)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XRFBs_6(
+.ISO (CELG),
+.RP (RFBs_6),
+.RN (RFBs_5)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XRFBs_7(
+.ISO (CELG),
+.RP (RFBs_7),
+.RN (RFBs_6)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XRFBs_8(
+.ISO (CELG),
+.RP (RFBs_8),
+.RN (RFBs_7)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XRFBs_9(
+.ISO (CELG),
+.RP (RFBs_9),
+.RN (RFBs_8)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XRFBs_10(
+.ISO (CELG),
+.RP (RFBs_10),
+.RN (RFBs_9)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XRFBs_11(
+.ISO (CELG),
+.RP (RFBs_11),
+.RN (RFBs_10)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XRFBs_12(
+.ISO (CELG),
+.RP (RFBs_12),
+.RN (RFBs_11)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XRFBs_13(
+.ISO (CELG),
+.RP (RFBs_13),
+.RN (RFBs_12)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XRFBs_14(
+.ISO (CELG),
+.RP (RFBs_14),
+.RN (RFBs_13)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XRFBs_15(
+.ISO (CELG),
+.RP (RTN),
+.RN (RFBs_14)
+);
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo3p7u1p0u
+
+//Die Size Calculator rlpp3000rpo3p7u1p0u
+//,diesize,rlpp3000rpo3p7u1p0u,16
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,3
+//,diesize,rlpp3000rpo3p7u1p0u,5
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT0s_0(
+.ISO (CELG),
+.RP (kelvin_FEEDBACKDIVIDER),
+.RN (ROUT0middle)
+);
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo3p7u1p0u
+
+//Die Size Calculator rlpp3000rpo3p7u1p0u
+//,diesize,rlpp3000rpo3p7u1p0u,1
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT0p_0(
+.ISO (CELG),
+.RP (ROUT0middle),
+.RN (ROUT0)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT0p_1(
+.ISO (CELG),
+.RP (ROUT0middle),
+.RN (ROUT0)
+);
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo3p7u1p0u
+
+//Die Size Calculator rlpp3000rpo3p7u1p0u
+//,diesize,rlpp3000rpo3p7u1p0u,2
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT1s_0(
+.ISO (CELG),
+.RP (ROUT0),
+.RN (ROUT1_0)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT1s_1(
+.ISO (CELG),
+.RP (ROUT1_1),
+.RN (ROUT1_0)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT1s_2(
+.ISO (CELG),
+.RP (ROUT1_2),
+.RN (ROUT1_1)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT1s_3(
+.ISO (CELG),
+.RP (ROUT1middle),
+.RN (ROUT1_2)
+);
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo3p7u1p0u
+
+//Die Size Calculator rlpp3000rpo3p7u1p0u
+//,diesize,rlpp3000rpo3p7u1p0u,4
+//,diesize,rlpp3000rpo3p7u1p0u,3
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT1p_0(
+.ISO (CELG),
+.RP (ROUT1middle),
+.RN (ROUT1)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT1p_1(
+.ISO (CELG),
+.RP (ROUT1middle),
+.RN (ROUT1)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT1p_2(
+.ISO (CELG),
+.RP (ROUT1middle),
+.RN (ROUT1)
+);
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo3p7u1p0u
+
+//Die Size Calculator rlpp3000rpo3p7u1p0u
+//,diesize,rlpp3000rpo3p7u1p0u,3
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT2s_0(
+.ISO (CELG),
+.RP (ROUT1),
+.RN (ROUT2_0)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT2s_1(
+.ISO (CELG),
+.RP (ROUT2_1),
+.RN (ROUT2_0)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT2s_2(
+.ISO (CELG),
+.RP (ROUT2_2),
+.RN (ROUT2_1)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT2s_3(
+.ISO (CELG),
+.RP (ROUT2_3),
+.RN (ROUT2_2)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT2s_4(
+.ISO (CELG),
+.RP (ROUT2_4),
+.RN (ROUT2_3)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT2s_5(
+.ISO (CELG),
+.RP (ROUT2_5),
+.RN (ROUT2_4)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT2s_6(
+.ISO (CELG),
+.RP (ROUT2middle),
+.RN (ROUT2_5)
+);
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo3p7u1p0u
+
+//Die Size Calculator rlpp3000rpo3p7u1p0u
+//,diesize,rlpp3000rpo3p7u1p0u,7
+//,diesize,rlpp3000rpo3p7u1p0u,4
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,0
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT2p_0(
+.ISO (CELG),
+.RP (ROUT2middle),
+.RN (ROUT2)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT2p_1(
+.ISO (CELG),
+.RP (ROUT2middle),
+.RN (ROUT2)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT2p_2(
+.ISO (CELG),
+.RP (ROUT2middle),
+.RN (ROUT2)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT2p_3(
+.ISO (CELG),
+.RP (ROUT2middle),
+.RN (ROUT2)
+);
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo3p7u1p0u
+
+//Die Size Calculator rlpp3000rpo3p7u1p0u
+//,diesize,rlpp3000rpo3p7u1p0u,4
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT3s_0(
+.ISO (CELG),
+.RP (ROUT2),
+.RN (ROUT3_0)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT3s_1(
+.ISO (CELG),
+.RP (ROUT3_1),
+.RN (ROUT3_0)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT3s_2(
+.ISO (CELG),
+.RP (ROUT3_2),
+.RN (ROUT3_1)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT3s_3(
+.ISO (CELG),
+.RP (ROUT3_3),
+.RN (ROUT3_2)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT3s_4(
+.ISO (CELG),
+.RP (ROUT3_4),
+.RN (ROUT3_3)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT3s_5(
+.ISO (CELG),
+.RP (ROUT3_5),
+.RN (ROUT3_4)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT3s_6(
+.ISO (CELG),
+.RP (ROUT3middle),
+.RN (ROUT3_5)
+);
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo3p7u1p0u
+
+//Die Size Calculator rlpp3000rpo3p7u1p0u
+//,diesize,rlpp3000rpo3p7u1p0u,7
+//,diesize,rlpp3000rpo3p7u1p0u,4
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,0
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT3p_0(
+.ISO (CELG),
+.RP (ROUT3middle),
+.RN (ROUT3)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT3p_1(
+.ISO (CELG),
+.RP (ROUT3middle),
+.RN (ROUT3)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT3p_2(
+.ISO (CELG),
+.RP (ROUT3middle),
+.RN (ROUT3)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT3p_3(
+.ISO (CELG),
+.RP (ROUT3middle),
+.RN (ROUT3)
+);
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo3p7u1p0u
+
+//Die Size Calculator rlpp3000rpo3p7u1p0u
+//,diesize,rlpp3000rpo3p7u1p0u,4
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT4s_0(
+.ISO (CELG),
+.RP (ROUT3),
+.RN (ROUT4_0)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT4s_1(
+.ISO (CELG),
+.RP (ROUT4_1),
+.RN (ROUT4_0)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT4s_2(
+.ISO (CELG),
+.RP (ROUT4_2),
+.RN (ROUT4_1)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT4s_3(
+.ISO (CELG),
+.RP (ROUT4middle),
+.RN (ROUT4_2)
+);
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo3p7u1p0u
+
+//Die Size Calculator rlpp3000rpo3p7u1p0u
+//,diesize,rlpp3000rpo3p7u1p0u,4
+//,diesize,rlpp3000rpo3p7u1p0u,3
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT4p_0(
+.ISO (CELG),
+.RP (ROUT4middle),
+.RN (ROUT4)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT4p_1(
+.ISO (CELG),
+.RP (ROUT4middle),
+.RN (ROUT4)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT4p_2(
+.ISO (CELG),
+.RP (ROUT4middle),
+.RN (ROUT4)
+);
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo3p7u1p0u
+
+//Die Size Calculator rlpp3000rpo3p7u1p0u
+//,diesize,rlpp3000rpo3p7u1p0u,3
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT5s_0(
+.ISO (CELG),
+.RP (ROUT4),
+.RN (ROUT5_0)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT5s_1(
+.ISO (CELG),
+.RP (ROUT5_1),
+.RN (ROUT5_0)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT5s_2(
+.ISO (CELG),
+.RP (ROUT5),
+.RN (ROUT5_1)
+);
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo3p7u1p0u
+
+//Die Size Calculator rlpp3000rpo3p7u1p0u
+//,diesize,rlpp3000rpo3p7u1p0u,3
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT6s_0(
+.ISO (CELG),
+.RP (ROUT5),
+.RN (ROUT6_0)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT6s_1(
+.ISO (CELG),
+.RP (ROUT6_1),
+.RN (ROUT6_0)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT6s_2(
+.ISO (CELG),
+.RP (ROUT6_2),
+.RN (ROUT6_1)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT6s_3(
+.ISO (CELG),
+.RP (ROUT6middle),
+.RN (ROUT6_2)
+);
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo3p7u1p0u
+
+//Die Size Calculator rlpp3000rpo3p7u1p0u
+//,diesize,rlpp3000rpo3p7u1p0u,4
+//,diesize,rlpp3000rpo3p7u1p0u,3
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT6p_0(
+.ISO (CELG),
+.RP (ROUT6middle),
+.RN (ROUT6)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT6p_1(
+.ISO (CELG),
+.RP (ROUT6middle),
+.RN (ROUT6)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT6p_2(
+.ISO (CELG),
+.RP (ROUT6middle),
+.RN (ROUT6)
+);
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo3p7u1p0u
+
+//Die Size Calculator rlpp3000rpo3p7u1p0u
+//,diesize,rlpp3000rpo3p7u1p0u,3
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_0(
+.ISO (CELG),
+.RP (ROUT6),
+.RN (ROUT7_0)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_1(
+.ISO (CELG),
+.RP (ROUT7_1),
+.RN (ROUT7_0)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_2(
+.ISO (CELG),
+.RP (ROUT7_2),
+.RN (ROUT7_1)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_3(
+.ISO (CELG),
+.RP (ROUT7_3),
+.RN (ROUT7_2)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_4(
+.ISO (CELG),
+.RP (ROUT7_4),
+.RN (ROUT7_3)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_5(
+.ISO (CELG),
+.RP (ROUT7_5),
+.RN (ROUT7_4)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_6(
+.ISO (CELG),
+.RP (ROUT7_6),
+.RN (ROUT7_5)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_7(
+.ISO (CELG),
+.RP (ROUT7_7),
+.RN (ROUT7_6)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_8(
+.ISO (CELG),
+.RP (ROUT7_8),
+.RN (ROUT7_7)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_9(
+.ISO (CELG),
+.RP (ROUT7_9),
+.RN (ROUT7_8)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_10(
+.ISO (CELG),
+.RP (ROUT7_10),
+.RN (ROUT7_9)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_11(
+.ISO (CELG),
+.RP (ROUT7_11),
+.RN (ROUT7_10)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_12(
+.ISO (CELG),
+.RP (ROUT7_12),
+.RN (ROUT7_11)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_13(
+.ISO (CELG),
+.RP (ROUT7_13),
+.RN (ROUT7_12)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_14(
+.ISO (CELG),
+.RP (ROUT7_14),
+.RN (ROUT7_13)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_15(
+.ISO (CELG),
+.RP (ROUT7_15),
+.RN (ROUT7_14)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_16(
+.ISO (CELG),
+.RP (ROUT7_16),
+.RN (ROUT7_15)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_17(
+.ISO (CELG),
+.RP (ROUT7_17),
+.RN (ROUT7_16)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_18(
+.ISO (CELG),
+.RP (ROUT7_18),
+.RN (ROUT7_17)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_19(
+.ISO (CELG),
+.RP (ROUT7_19),
+.RN (ROUT7_18)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_20(
+.ISO (CELG),
+.RP (ROUT7_20),
+.RN (ROUT7_19)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_21(
+.ISO (CELG),
+.RP (ROUT7_21),
+.RN (ROUT7_20)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_22(
+.ISO (CELG),
+.RP (ROUT7_22),
+.RN (ROUT7_21)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_23(
+.ISO (CELG),
+.RP (ROUT7_23),
+.RN (ROUT7_22)
+);
+
+//Celera Confidential Do Not Copy rlpp3000rpo3p7u1p0u
+rlpp3000rpo3p7u1p0u XROUT7s_24(
+.ISO (CELG),
+.RP (RSHUTtop),
+.RN (ROUT7_23)
+);
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo3p7u1p0u
+
+//Die Size Calculator rlpp3000rpo3p7u1p0u
+//,diesize,rlpp3000rpo3p7u1p0u,25
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,3
+//,diesize,rlpp3000rpo3p7u1p0u,5
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,0
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,-1
+//,diesize,rlpp3000rpo3p7u1p0u,0
+
+//Celera Confidential Do Not Copy Module End
+//Celera Schematic Generator
+endmodule
