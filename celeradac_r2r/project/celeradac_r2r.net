@@ -1,0 +1,90 @@
+* Z:\celera\projects\Simplis\playbrian\verif301\dac_r2r\verification\sim_celeradac_r2r.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map SIMPV 39
+.node_map GNDSENSE 40
+.node_map enable_dac 43
+.node_map DAC 57
+.node_map ok_dac 56
+.node_map i10 45
+.node_map i11 44
+.node_map i0 55
+.node_map DACREF 41
+.node_map i1 54
+.node_map i2 53
+.node_map i3 52
+.node_map i4 51
+.node_map i5 50
+.node_map i6 49
+.node_map i7 48
+.node_map i8 47
+.node_map i9 46
+.node_map strobe_dac 42
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 300u 0
+.globalvar REF=1.0
+.globalvar VIN=5
+.globalvar tdext_khz=1000
+
+X$celeradac_r2r 41 55 54 53 52 51 50 49 48 47 46 45 44 43 42 40 39 57 56 celeradac_r2r
+
+** From Z:\celera\projects\Simplis\playbrian\verif301\dac_r2r\design\celeradac_r2r.sxcmp
+.subckt celeradac_r2r 75 73 72 71 70 69 68 67 66 65 64 63 62 61 60 59 58 76 74
+*#hierarchy
+.node_map SIMPV 58
+.node_map GNDSENSE 59
+.node_map enable_dac 61
+.node_map DAC 76
+.node_map ok_dac 74
+.node_map i10 63
+.node_map i11 62
+.node_map DACREF 75
+.node_map i0 73
+.node_map i1 72
+.node_map i2 71
+.node_map i3 70
+.node_map i4 69
+.node_map i5 68
+.node_map i6 67
+.node_map i7 66
+.node_map i8 65
+.node_map i9 64
+.node_map strobe_dac 60
+X$DAC 76 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DAC' dftprobe_description='DAC_Output' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$DACok 74 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DACok' dftprobe_description='DAC_ok' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$IXceleradacr2r 58 75 59 73 72 71 70 69 68 67 66 65 64 63 62 76 61 74 60 celeradacr2r vars: dac_type='r2r' dac_flash_fullscale='input' dac_tracking_fullscale='input' dac_dualslope_fullscale='input' dac_sigmadelta_fullscale='input' dac_control='pin' dac_control_por2='0' dac_control_por1='0' dac_control_por0='0' dac_name='text' dac_description='text' dac_units='text' dac_enable_control='pin' dac_strobe_control='pin' dac_buffer='no' dac_mode='unsigned' dac_lowpower='no' dac_ref='local' dac_fullscale='input' dac_gndsense='yes' dac_accuracy='no' dac_trim_name='text' dac_trim_description='text' dac_dft='no' dac_ladder_impedance=200 dac_r2r_impedance=500 dac_flash_impedance=200 dac_tracking_impedance=200 dac_dualslope_frequency=1 dac_sigmadelta_impedance=200 dac_bits=8 dac_2=0 dac_offset=0 dac_lsb=0 dac_enable_por=0 dac_strobe_por=0 dac_filter=10 dac_1=0 dac_vmax=6
+X$U22 75 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
+X$U26 73 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='datamap' pinprobe_output='tbd'
+X$U30 72 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='datamap' pinprobe_output='tbd'
+X$U34 71 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='datamap' pinprobe_output='tbd'
+X$U38 70 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='datamap' pinprobe_output='tbd'
+X$U42 69 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='datamap' pinprobe_output='tbd'
+X$U46 68 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='datamap' pinprobe_output='tbd'
+X$U50 67 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='datamap' pinprobe_output='tbd'
+X$U54 66 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='datamap' pinprobe_output='tbd'
+X$U58 65 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='datamap' pinprobe_output='tbd'
+X$U62 64 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='datamap' pinprobe_output='tbd'
+X$U66 63 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='datamap' pinprobe_output='tbd'
+X$U70 62 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='datamap' pinprobe_output='tbd'
+X$U74 61 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='datamap' pinprobe_output='tbd'
+X$U78 60 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
+X$U82 59 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
+X$U86 58 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U90 76 pinprobe vars: pinprobe_description='tbd pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U95 74 pinprobe vars: pinprobe_description='tbd pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+.ends celeradac_r2r
+
+** From Z:\celera\projects\Simplis\playbrian\verif301\dac_r2r\verification\FORCE_celeradac_r2r.sxcmp
+
+
+.end

@@ -1,0 +1,64 @@
+* Z:\celera\projects\Simplis\playbrian\verif301\celera_amp\verification\sim_celera_amp.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map SIMPV 39
+.node_map BUS1$10 34
+.node_map BUS1$11 35
+.node_map BUS1$0 24
+.node_map ok_amplifier 41
+.node_map BUS1$1 25
+.node_map INN 37
+.node_map OUT 36
+.node_map BUS1$2 26
+.node_map BUS1$3 27
+.node_map INP 38
+.node_map BUS1$4 28
+.node_map BUS1$5 29
+.node_map BUS1$6 30
+.node_map BUS1$7 31
+.node_map BUS1$8 32
+.node_map BUS1$9 33
+.node_map enable_amplifier 40
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 100.0u  0
+.globalvar REF=1.0
+.globalvar VIN=5
+.globalvar tdext_khz=1000
+
+X$celera_amp 40 39 38 37 41 36 celera_amp
+X$dac1 15 17 16 24 25 26 27 28 29 30 31 32 33 34 35 18 19 20 21 celeradacr2r vars: dac_type='r2r' dac_flash_fullscale='input' dac_tracking_fullscale='input' dac_dualslope_fullscale='input' dac_sigmadelta_fullscale='input' dac_control='pin' dac_control_por2='0' dac_control_por1='0' dac_control_por0='0' dac_name='text' dac_description='text' dac_units='text' dac_enable_control='pin' dac_strobe_control='pin' dac_buffer='no' dac_mode='unsigned' dac_lowpower='no' dac_ref='global' dac_fullscale='input' dac_gndsense='no' dac_accuracy='no' dac_trim_name='text' dac_trim_description='text' dac_dft='no' dac_ladder_impedance=200 dac_r2r_impedance=500 dac_flash_impedance=200 dac_tracking_impedance=200 dac_dualslope_frequency=1 dac_sigmadelta_impedance=200 dac_bits=6 dac_2=0 dac_offset=0 dac_lsb=0 dac_enable_por=0 dac_strobe_por=0 dac_filter=0 dac_1=0 dac_vmax=6
+X$delay1 22 23 delayfixed vars: delay_type='fixed' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1k
+
+** From Z:\celera\projects\Simplis\playbrian\verif301\celera_amp\design\celera_amp.sxcmp
+.subckt celera_amp 27 25 24 23 28 26
+*#hierarchy
+.node_map SIMPV 25
+.node_map ok_amplifier 28
+.node_map OUT 26
+.node_map INN 23
+.node_map INP 24
+.node_map enable_amplifier 27
+X$AMPok 28 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='AMPok' dftprobe_description='AMP_ok' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$IXamp 25 23 26 24 27 28 19 20 21 22 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=100 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=3.3 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$U13 25 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U17 24 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U21 23 pinprobe vars: pinprobe_description='Ground pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U25 28 pinprobe vars: pinprobe_description='tbd pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='datamap'
+X$U30 26 pinprobe vars: pinprobe_description='tbd pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U9 27 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
+.ends celera_amp
+
+** From Z:\celera\projects\Simplis\playbrian\verif301\celera_amp\verification\FORCE_celera_amp.sxcmp
+
+
+.end
