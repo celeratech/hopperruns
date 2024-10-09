@@ -1,14 +1,11 @@
 // ------------------------ Module Definitions -----------
-module celera_amp (INN,INP,OUT,SIMPV,CELG59462,CELSUB40948,ok_amplifier,enable_amplifier,IP_128e5ee8_XIXamp);
+module celera_amp (INN,INP,OUT,SIMPV,ok_amplifier,enable_amplifier);
   input  INN;
   input  INP;
-  output  OUT;
+  input  OUT;
   input  SIMPV;
-  input  CELG59462;
-  input  CELSUB40948;
-  output  ok_amplifier;
+  input  ok_amplifier;
   input  enable_amplifier;
-  input  IP_128e5ee8_XIXamp;
 endmodule
 
 module FORCE_celera_amp (GND,INN,INP,OUT,SIMPV,ok_amplifier,enable_amplifier,register_ok_amplifier_8de7f9e7_Xd_ok_amplifier,register_enable_amplifier_e456c5d3_Xd_enable_amplifier);
@@ -24,10 +21,8 @@ module FORCE_celera_amp (GND,INN,INP,OUT,SIMPV,ok_amplifier,enable_amplifier,reg
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module root (CELG59462, SIMPV96848, CELSUB40948, register_ok_amplifier_8de7f9e7_Xd_ok_amplifier, register_enable_amplifier_e456c5d3_Xd_enable_amplifier);
-input  CELG59462;
+module root (SIMPV96848, register_ok_amplifier_8de7f9e7_Xd_ok_amplifier, register_enable_amplifier_e456c5d3_Xd_enable_amplifier);
   input  SIMPV96848;
-input  CELSUB40948;
 input  register_ok_amplifier_8de7f9e7_Xd_ok_amplifier;
 input  register_enable_amplifier_e456c5d3_Xd_enable_amplifier;
 
@@ -36,25 +31,22 @@ input  register_enable_amplifier_e456c5d3_Xd_enable_amplifier;
 
 // ------------------------ Networks ---------------------
 celera_amp Xcelera_amp1 (
-.INN(net_37),
-.INP(net_38),
-.OUT(net_36),
-.SIMPV(net_39),
-.CELG59462(CELG59462),
-.CELSUB40948(CELSUB40948),
-.ok_amplifier(net_41),
-.enable_amplifier(net_40),
-.IP_128e5ee8_XIXamp(IP_128e5ee8_XIXamp)
+.INN(net_16),
+.INP(net_17),
+.OUT(net_15),
+.SIMPV(net_18),
+.ok_amplifier(net_20),
+.enable_amplifier(net_19)
 );
 
 FORCE_celera_amp XFORCE_celera_amp1 (
 .GND(net_0),
-.INN(net_37),
-.INP(net_38),
-.OUT(net_36),
-.SIMPV(net_39),
-.ok_amplifier(net_41),
-.enable_amplifier(net_40),
+.INN(net_16),
+.INP(net_17),
+.OUT(net_15),
+.SIMPV(net_18),
+.ok_amplifier(net_20),
+.enable_amplifier(net_19),
 .register_ok_amplifier_8de7f9e7_Xd_ok_amplifier(register_ok_amplifier_8de7f9e7_Xd_ok_amplifier),
 .register_enable_amplifier_e456c5d3_Xd_enable_amplifier(register_enable_amplifier_e456c5d3_Xd_enable_amplifier)
 );
