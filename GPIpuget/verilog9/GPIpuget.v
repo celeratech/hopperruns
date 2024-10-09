@@ -107,7 +107,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module GPIpuget (GPI, GPO, TAO, tdo, tmi, SIMPV, ok_gpi, CELG59462, CELV96848, SIMPV96848, enable_gpi, CELSUB40948, IP_4cb4e1e0_XU6, enable_gpibuffer);
+module GPIpuget (GPI, GPO, TAO, tdo, tmi, SIMPV, ok_gpi, CELG59462, CELV96848, SIMPV96848, enable_gpi, CELSUB40948, enable_gpibuffer);
 input  GPI;
 output  GPO;
 inout  TAO;
@@ -120,7 +120,6 @@ input  CELV96848;
 input  SIMPV96848;
 input  enable_gpi;
 input  CELSUB40948;
-input  IP_4cb4e1e0_XU6;
 input  enable_gpibuffer;
 
 
