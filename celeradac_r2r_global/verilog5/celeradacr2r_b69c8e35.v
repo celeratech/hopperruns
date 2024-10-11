@@ -142,7 +142,7 @@ vbuffer_celeradacr2r_b69c8e35_Xbufi Xbufferin(
 .IN (CELREF),
 .IP (IP),
 .enable_vbuffer (en),
-.OUT (DACref),
+.OUT (CELREFBUFFER),
 .ok_vbuffer (ok_vbufferi),
 .global_vbuffer (global_dac),
 .CELG (CELG),
@@ -152,9 +152,9 @@ vbuffer_celeradacr2r_b69c8e35_Xbufi Xbufferin(
 
 //Celera Confidential Do Not Copy STONEdacbufferINPUT2
 STONEdacbufferINPUT2 Xdacin(
-.CELV (CELV),
+.CELV (SIMPV),
 .enable_dac (enable_dac),
-.ten (globbal_dac),
+.ten (a0),
 .a0 (a0),
 .ten_dac (a0),
 .ok (ok),
@@ -408,7 +408,7 @@ noconn_msbbar)
 //,diesize,STONEnoconn
 //Celera Confidential Do Not Copy STONEladderENABLE
 STONEladderENABLE Xenable(
-.CELV (CELV),
+.CELV (SIMPV),
 .en (en),
 .msb (a0),
 .ok_buffer0 (ok_vbufferi),
@@ -425,7 +425,7 @@ STONEladderENABLE Xenable(
 
 //Celera Confidential Do Not Copy STONEr2rBBMstrong
 STONEr2rBBMstrong Xbbm0(
-.CELV (CELV),
+.CELV (SIMPV),
 .DACREF (CELREFBUFFER),
 .SENSE_G (GNDSENSE),
 .ROUT (ROUT0),
@@ -437,7 +437,7 @@ STONEr2rBBMstrong Xbbm0(
 
 //Celera Confidential Do Not Copy STONEr2rBBMstrong
 STONEr2rBBMstrong Xbbm1(
-.CELV (CELV),
+.CELV (SIMPV),
 .DACREF (CELREFBUFFER),
 .SENSE_G (GNDSENSE),
 .ROUT (ROUT1),
@@ -449,7 +449,7 @@ STONEr2rBBMstrong Xbbm1(
 
 //Celera Confidential Do Not Copy STONEr2rBBMstrong
 STONEr2rBBMstrong Xbbm2(
-.CELV (CELV),
+.CELV (SIMPV),
 .DACREF (CELREFBUFFER),
 .SENSE_G (GNDSENSE),
 .ROUT (ROUT2),
@@ -461,7 +461,7 @@ STONEr2rBBMstrong Xbbm2(
 
 //Celera Confidential Do Not Copy STONEr2rBBMstrong
 STONEr2rBBMstrong Xbbm3(
-.CELV (CELV),
+.CELV (SIMPV),
 .DACREF (CELREFBUFFER),
 .SENSE_G (GNDSENSE),
 .ROUT (ROUT3),
@@ -473,7 +473,7 @@ STONEr2rBBMstrong Xbbm3(
 
 //Celera Confidential Do Not Copy STONEr2rBBMstrong
 STONEr2rBBMstrong Xbbm4(
-.CELV (CELV),
+.CELV (SIMPV),
 .DACREF (CELREFBUFFER),
 .SENSE_G (GNDSENSE),
 .ROUT (ROUT4),
@@ -485,7 +485,7 @@ STONEr2rBBMstrong Xbbm4(
 
 //Celera Confidential Do Not Copy STONEr2rBBMstrong
 STONEr2rBBMstrong Xbbm5(
-.CELV (CELV),
+.CELV (SIMPV),
 .DACREF (CELREFBUFFER),
 .SENSE_G (GNDSENSE),
 .ROUT (ROUT5),
@@ -497,7 +497,7 @@ STONEr2rBBMstrong Xbbm5(
 
 //Celera Confidential Do Not Copy STONEr2rBBMstrong
 STONEr2rBBMstrong Xbbm6(
-.CELV (CELV),
+.CELV (SIMPV),
 .DACREF (CELREFBUFFER),
 .SENSE_G (GNDSENSE),
 .ROUT (ROUT6),
@@ -509,7 +509,7 @@ STONEr2rBBMstrong Xbbm6(
 
 //Celera Confidential Do Not Copy STONEr2rBBMstrong
 STONEr2rBBMstrong Xbbm7(
-.CELV (CELV),
+.CELV (SIMPV),
 .DACREF (CELREFBUFFER),
 .SENSE_G (GNDSENSE),
 .ROUT (ROUT7),
