@@ -1,0 +1,65 @@
+* Z:\celera\projects\Simplis\playbrian\verif301\buffer\verification\sim_buffer_2p0.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map SIMPV 14
+.node_map ok_vbuffer 16
+.node_map OUT 12
+.node_map enable_vbuffer 15
+.node_map IN 13
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 300u 0
+.globalvar REF=1.0
+.globalvar VIN=5
+.globalvar tdext_khz=1000
+
+X$buffer_2p0 15 14 13 16 12 buffer_2p0
+
+** From Z:\celera\projects\Simplis\playbrian\verif301\buffer\design\buffer_2p0.sxcmp
+.subckt buffer_2p0 23 25 24 21 26
+*#hierarchy
+.node_map SIMPV 25
+.node_map ok_vbuffer 21
+.node_map OUT 26
+.node_map enable_vbuffer 23
+.node_map ok_vbuffer_delay 22
+.node_map IN 24
+X$BUFok 21 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='BUFok' dftprobe_description='BUF_ok_Delay' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$BUFok_delay 22 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='BUFok_delay' dftprobe_description='OSC_ok_Delay' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$get_ok_driver_delay 23 21 22 VESPAdftpulse
+X$IXbuf 25 21 24 26 23 20 vbuffer vars: vbuffer_accuracy='no' vbuffer_datasheet_name='text' vbuffer_datasheet_description='text' vbuffer_type='p' vbuffer_inputbuffer='no' vbuffer_drive='internal' vbuffer_gndsense='no' vbuffer_dft='no' vbuffer_gain=2 vbuffer_feedbackimpedance=1k vbuffer_vmax=6
+X$U11 23 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
+X$U15 25 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U19 24 pinprobe vars: pinprobe_description='tbd pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U23 21 pinprobe vars: pinprobe_description='tbd pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U28 26 pinprobe vars: pinprobe_description='tbd pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+.ends buffer_2p0
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAdftpulse.sxcmp
+.subckt VESPAdftpulse 7 8 9
+*#hierarchy
+.node_map start 7
+.node_map stop 8
+.node_map pulse 9
+X$U11 7 pinprobe vars: pinprobe_description='DFT_timer_start_input'
+X$U15 8 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U17 8 pinprobe vars: pinprobe_description='DFT_timer_stop_input'
+X$U52 7 4 6 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U53 4 5 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U55 9 5 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U8 9 pinprobe vars: pinprobe_description='DFT_Timer_pulse'
+.ends VESPAdftpulse
+
+** From Z:\celera\projects\Simplis\playbrian\verif301\buffer\verification\FORCE_buffer_2p0.sxcmp
+
+
+.end
