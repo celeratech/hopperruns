@@ -1,0 +1,76 @@
+* Z:\celera\projects\Simplis\playbrian\verif301\resistor\verification\sim_resistor_polytype.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map RP45V 30
+.node_map RN 28
+.node_map RP6V 37
+.node_map RP2V 38
+.node_map RP12V 36
+.node_map RP24V 34
+.node_map RP20V 35
+.node_map RP36V 32
+.node_map RP30V 33
+.node_map RP40V 31
+.node_map RP60V 29
+.node_map RTN 27
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 300u 0
+.globalvar REF=1.0
+.globalvar VIN=5
+.globalvar tdext_khz=1000
+
+
+X$resistor_polytype 38 37 36 35 34 33 32 31 30 29 28 27 resistor_polytype
+** From Z:\celera\projects\Simplis\playbrian\verif301\resistor\verification\FORCE_resistor_polytype.sxcmp
+
+
+** From Z:\celera\projects\Simplis\playbrian\verif301\resistor\design\resistor_polytype.sxcmp
+.subckt resistor_polytype 116 115 114 113 112 111 110 109 108 107 106 105
+*#hierarchy
+.node_map RP45V 108
+.node_map RN 106
+.node_map RP6V 115
+.node_map RP2V 116
+.node_map RP12V 114
+.node_map RP24V 112
+.node_map RP20V 113
+.node_map RP36V 110
+.node_map RP30V 111
+.node_map RP40V 109
+.node_map RP60V 107
+.node_map RTN 105
+X$IXR12V 106 114 55 64 105 75 84 93 resistor vars: resistor_control='resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='text' resistor_datasheet_adjust_description='text' resistor_kelvin='no' resistor_type='poly' resistor_dft='no' resistor_value=100 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=0 resistor_adjust1=0 resistor_adjust2=0 resistor_adjust3=0 resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=12 resistor_imax=1m
+X$IXR20V 106 113 56 65 105 76 85 94 resistor vars: resistor_control='resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='text' resistor_datasheet_adjust_description='text' resistor_kelvin='no' resistor_type='poly' resistor_dft='no' resistor_value=100 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=0 resistor_adjust1=0 resistor_adjust2=0 resistor_adjust3=0 resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=20 resistor_imax=1m
+X$IXR24V 106 112 57 66 105 77 86 95 resistor vars: resistor_control='resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='text' resistor_datasheet_adjust_description='text' resistor_kelvin='no' resistor_type='poly' resistor_dft='no' resistor_value=100 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=0 resistor_adjust1=0 resistor_adjust2=0 resistor_adjust3=0 resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=24 resistor_imax=1m
+X$IXR2V 106 116 53 62 71 73 82 91 resistor vars: resistor_control='resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='text' resistor_datasheet_adjust_description='text' resistor_kelvin='no' resistor_type='poly' resistor_dft='no' resistor_value=100 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=0 resistor_adjust1=0 resistor_adjust2=0 resistor_adjust3=0 resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=2 resistor_imax=1m
+X$IXR30V 106 111 58 67 105 78 87 96 resistor vars: resistor_control='resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='text' resistor_datasheet_adjust_description='text' resistor_kelvin='no' resistor_type='poly' resistor_dft='no' resistor_value=100 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=0 resistor_adjust1=0 resistor_adjust2=0 resistor_adjust3=0 resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=30 resistor_imax=1m
+X$IXR36V 106 110 59 68 105 79 88 97 resistor vars: resistor_control='resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='text' resistor_datasheet_adjust_description='text' resistor_kelvin='no' resistor_type='poly' resistor_dft='no' resistor_value=100 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=0 resistor_adjust1=0 resistor_adjust2=0 resistor_adjust3=0 resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=36 resistor_imax=1m
+X$IXR40V 106 109 60 69 105 80 89 98 resistor vars: resistor_control='resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='text' resistor_datasheet_adjust_description='text' resistor_kelvin='no' resistor_type='poly' resistor_dft='no' resistor_value=100 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=0 resistor_adjust1=0 resistor_adjust2=0 resistor_adjust3=0 resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=40 resistor_imax=1m
+X$IXR45V 106 108 61 70 105 81 90 99 resistor vars: resistor_control='resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='text' resistor_datasheet_adjust_description='text' resistor_kelvin='no' resistor_type='poly' resistor_dft='no' resistor_value=100 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=0 resistor_adjust1=0 resistor_adjust2=0 resistor_adjust3=0 resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=45 resistor_imax=1m
+X$IXR60V 106 107 100 101 105 102 103 104 resistor vars: resistor_control='resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='text' resistor_datasheet_adjust_description='text' resistor_kelvin='no' resistor_type='poly' resistor_dft='no' resistor_value=100 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=0 resistor_adjust1=0 resistor_adjust2=0 resistor_adjust3=0 resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=60 resistor_imax=1m
+X$IXR6V 106 115 54 63 72 74 83 92 resistor vars: resistor_control='resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='text' resistor_datasheet_adjust_description='text' resistor_kelvin='no' resistor_type='poly' resistor_dft='no' resistor_value=100 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=0 resistor_adjust1=0 resistor_adjust2=0 resistor_adjust3=0 resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=6 resistor_imax=1m
+X$U31 116 pinprobe vars: pinprobe_description='R_pos_term_2V pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U35 115 pinprobe vars: pinprobe_description='R_pos_term_6V pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U39 114 pinprobe vars: pinprobe_description='R_pos_term_12V pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U43 113 pinprobe vars: pinprobe_description='R_pos_term_20V pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U47 112 pinprobe vars: pinprobe_description='R_pos_term_24V pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U51 111 pinprobe vars: pinprobe_description='R_pos_term_30V pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U55 110 pinprobe vars: pinprobe_description='R_pos_term_36V pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U59 109 pinprobe vars: pinprobe_description='R_pos_term_40V pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U63 108 pinprobe vars: pinprobe_description='R_pos_term_45V pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U67 107 pinprobe vars: pinprobe_description='R_pos_term_60V pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U71 106 pinprobe vars: pinprobe_description='Connect_to_0V pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U75 105 pinprobe vars: pinprobe_description='Connect_to_0V pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+.ends resistor_polytype
+
+.end
