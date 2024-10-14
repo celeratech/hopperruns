@@ -1,0 +1,55 @@
+* Z:\celera\projects\Simplis\playrelease\Release\play301\Verification\sim_clockrequest301.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map out0 20
+.node_map out1 22
+.node_map en0 19
+.node_map en1 21
+.node_map stby 18
+.node_map ck 17
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+.tran 30u 0
+
+.globalvar tdext_khz=200
+.globalvar VIN=5
+.globalvar REF=0.9
+
+
+.PRINT V(#ck)
+.GRAPH :#ck curveLabel= ck nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe1  
+.PRINT V(#en0)
+.GRAPH :#en0 curveLabel= en0 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe2  
+.PRINT V(#en1)
+.GRAPH :#en1 curveLabel= en1 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe3  
+.PRINT V(#stby)
+.GRAPH :#stby curveLabel= stby nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe4  
+.PRINT V(#out0)
+.GRAPH :#out0 curveLabel= out0 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe5  
+.PRINT V(#out1)
+.GRAPH :#out1 curveLabel= out1 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe6  
+X$U1 17 18 19 20 21 22 clockrequest301
+X$U3 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Verification\FORCEclockrequest301.sxcmp
+
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Verification\clockrequest301.sxcmp
+.subckt clockrequest301 33 34 35 36 37 38
+*#hierarchy
+.node_map out0 36
+.node_map out1 38
+.node_map en0 35
+.node_map en1 37
+.node_map stby 34
+.node_map ck 33
+X$clockrequest1 33 35 37 13 11 10 9 8 7 19 20 21 22 23 24 25 36 38 12 14 15 16 17 18 26 27 28 29 30 31 32 34 clockrequest vars: clockrequest_outputs=2 clockrequest_divide0=4 clockrequest_divide1=9 clockrequest_divide2=1 clockrequest_divide3=1 clockrequest_divide4=1 clockrequest_divide5=1 clockrequest_divide6=1 clockrequest_divide7=1 clockrequest_divide8=1 clockrequest_divide9=1 clockrequest_divide10=1 clockrequest_divide11=1 clockrequest_divide12=1 clockrequest_divide13=1 clockrequest_divide14=1 clockrequest_vmax=6 clockrequest_enable0='pin' clockrequest_enable1='pin' clockrequest_enable2='pin' clockrequest_enable3='pin' clockrequest_enable4='pin' clockrequest_enable5='pin' clockrequest_enable6='pin' clockrequest_enable7='pin' clockrequest_enable8='pin' clockrequest_enable9='pin' clockrequest_enable10='pin' clockrequest_enable11='pin' clockrequest_enable12='pin' clockrequest_enable13='pin' clockrequest_enable14='pin' clockrequest_dft='no' clockrequest_srambist='no'
+.ends clockrequest301
+
+.end
