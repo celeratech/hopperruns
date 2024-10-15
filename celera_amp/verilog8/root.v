@@ -1,11 +1,14 @@
 // ------------------------ Module Definitions -----------
-module celera_amp (INN,INP,OUT,SIMPV,ok_amplifier,enable_amplifier);
+module celera_amp (INN,INP,OUT,SIMPV,CELG59462,CELSUB40948,ok_amplifier,enable_amplifier,IP_128e5ee8_XIXamp);
   input  INN;
   input  INP;
-  input  OUT;
+  output  OUT;
   input  SIMPV;
-  input  ok_amplifier;
+  input  CELG59462;
+  input  CELSUB40948;
+  output  ok_amplifier;
   input  enable_amplifier;
+  input  IP_128e5ee8_XIXamp;
 endmodule
 
 module FORCE_celera_amp (GND,INN,INP,OUT,SIMPV,ok_amplifier,enable_amplifier,register_ok_amplifier_8de7f9e7_Xd_ok_amplifier,register_enable_amplifier_e456c5d3_Xd_enable_amplifier);
@@ -21,8 +24,10 @@ module FORCE_celera_amp (GND,INN,INP,OUT,SIMPV,ok_amplifier,enable_amplifier,reg
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module root (SIMPV96848, register_ok_amplifier_8de7f9e7_Xd_ok_amplifier, register_enable_amplifier_e456c5d3_Xd_enable_amplifier);
+module root (CELG59462, SIMPV96848, CELSUB40948, register_ok_amplifier_8de7f9e7_Xd_ok_amplifier, register_enable_amplifier_e456c5d3_Xd_enable_amplifier);
+input  CELG59462;
   input  SIMPV96848;
+input  CELSUB40948;
 input  register_ok_amplifier_8de7f9e7_Xd_ok_amplifier;
 input  register_enable_amplifier_e456c5d3_Xd_enable_amplifier;
 
@@ -35,8 +40,11 @@ celera_amp Xcelera_amp1 (
 .INP(net_17),
 .OUT(net_15),
 .SIMPV(net_18),
+.CELG59462(CELG59462),
+.CELSUB40948(CELSUB40948),
 .ok_amplifier(net_20),
-.enable_amplifier(net_19)
+.enable_amplifier(net_19),
+.IP_128e5ee8_XIXamp(IP_128e5ee8_XIXamp)
 );
 
 FORCE_celera_amp XFORCE_celera_amp1 (
