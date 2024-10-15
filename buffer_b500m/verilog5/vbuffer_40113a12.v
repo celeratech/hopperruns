@@ -73,6 +73,22 @@ endmodule
 
 //Celera Confidential Do Not Copy ibiasmirror_vbuffer_40113a12_IBIASMIRROR.v
 
+//Celera Confidential Do Not Copy STONEvbufferOK
+//Verilog HDL for "Generate", "STONEvbufferOK" "functional"
+
+
+module STONEvbufferOK ( ok_vbuffer, CELG, CELSUB, SIMPV, ok_ibiasmirror, ok_vbuffer0,
+ok_vbuffer1 );
+
+  input ok_vbuffer1;
+  input SIMPV;
+  input CELSUB;
+  input ok_ibiasmirror;
+  output ok_vbuffer;
+  input ok_vbuffer0;
+  input CELG;
+endmodule
+
 //Celera Confidential Do Not Copy STONEnoconn
 //Verilog HDL for "Generate", "STONEnoconn" "functional"
 
@@ -155,26 +171,26 @@ vbuffer_vbuffer_40113a12_input Xinput(
 .OUT (INbuffer),
 .enable_vbuffer (enable_vbuffer),
 .ok_vbuffer (ok_vbuffer1),
-.ten (global_vbuffer),
+.global_vbuffer (global_vbuffer),
 .CELG (CELG),
 .CELSUB (CELSUB)
 );
 //,diesize,vbuffer_vbuffer_40113a12_input
 //Celera Confidential Do Not Copy ibiasmirror_vbuffer_40113a12_IBIASMIRROR
 ibiasmirror_vbuffer_40113a12_IBIASMIRROR Xibiasmirror(
-.CELV (SIMPV),
+.SIMPV (SIMPV),
 .IP (IP),
 .enable_ibiasmirror (enable_vbuffer),
 .ok_ibiasmirror (ok_ibiasmirror),
-.ten (global_vbuffer),
+.global_ibiasmirror (global_vbuffer),
 .IPO ({IPO1,IPO0}),
 .CELG (CELG),
-.SUB (CELSUB)
+.CELSUB (CELSUB)
 );
 //,diesize,ibiasmirror_vbuffer_40113a12_IBIASMIRROR
 //Celera Confidential Do Not Copy STONEvbufferOK
 STONEvbufferOK Xok(
-.CELV (SIMPV),
+.SIMPV (SIMPV),
 .ok_vbuffer0 (ok_vbuffer0),
 .ok_vbuffer1 (ok_vbuffer1),
 .ok_ibiasmirror (ok_ibiasmirror),
