@@ -1,10 +1,10 @@
 //Celera Brick Generator Confidential
 //CORE:vbuffer
 //NAME:vbuffer_vbuffer_40113a12_input
-//GENERATOR REVISION:0.3.6
+//GENERATOR REVISION:0.3.7
 //GAIN:1.0
-//INPUT ACCURACY:nomV
-//INPUT:p
+//INPUT ACCURACY:no
+//INPUT:p Input Buffer no
 //DRIVE:internal
 //VMAX:6V
 //RFB:1000KOhm
