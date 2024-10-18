@@ -1,0 +1,67 @@
+* Z:\celera\projects\Simplis\playrelease\Release\play301\Verification\sim_amplifierGenerate301.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map SIMPV 16
+.node_map IN 18
+.node_map en 17
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+.tran 200u 0
+
+.globalvar tdext_khz=200
+.globalvar VIN=5
+.globalvar REF=0.9
+
+
+.PRINT V(#en)
+.GRAPH :#en curveLabel= en nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe1  
+.PRINT V(12)
+.GRAPH :12 curveLabel= U1-ok1p5 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe2  
+.PRINT V(13)
+.GRAPH :13 curveLabel= U1-OUT1p5 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe3  
+.PRINT V(#IN)
+.GRAPH :#IN curveLabel= IN nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe4  
+.PRINT V(14)
+.GRAPH :14 curveLabel= U1-ok1p0 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe5  
+.PRINT V(15)
+.GRAPH :15 curveLabel= U1-OUT1p0 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe6  
+.PRINT V(#SIMPV)
+.GRAPH :#SIMPV curveLabel= SIMPV nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe7  
+X$U1 12 16 13 17 18 0 14 15 amplifier301
+X$U3 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Design\FORCEamplifier301.sxcmp
+
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Design\amplifier301.sxcmp
+.subckt amplifier301 27 25 29 28 26 30 31 32
+*#hierarchy
+.node_map SIMPV 25
+.node_map ok1p0 31
+.node_map ok1p5 27
+.node_map BUS1$0 19
+.node_map BUS1$1 20
+.node_map BUS1$2 21
+.node_map BUS2$0 22
+.node_map BUS2$1 23
+.node_map BUS2$2 24
+.node_map RTN 30
+.node_map OUT1p0 32
+.node_map IN 26
+.node_map en 28
+.node_map OUT1p5 29
+X$amplifier1 25 30 29 26 28 27 19 20 21 16 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='medium' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=1.5 amplifier_1=0 amplifier_fixedr1=500 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier2 25 18 32 26 28 31 22 23 24 17 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=1 amplifier_1=0 amplifier_fixedr1=300 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+.PRINT I(X$amplifier2#SIMPV)
+.GRAPH amplifier2#SIMPV curveLabel="I(amplifier2-SIMPV)" nowarn=true complete=true analysis=tran|pop disabled=false 
+.PRINT I(X$amplifier1#SIMPV)
+.GRAPH amplifier1#SIMPV curveLabel="I(amplifier1-SIMPV)" nowarn=true complete=true analysis=tran|pop disabled=false 
+.ends amplifier301
+
+.end
