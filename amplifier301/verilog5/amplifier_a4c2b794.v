@@ -136,24 +136,11 @@ STONEampinplow Xin(
 .IDNP (noconn_IDNP),
 .IDPP (noconn_IDPP),
 .OUT (OUT),
-.INN (FB),
+.INN (OUT),
 .CELG (CELG),
 .SUB (CELSUB)
 );
 //,diesize,STONEampinplow
-//Celera Confidential Do Not Copy resistor_amplifier_a4c2b794_XresR1
-resistor_amplifier_a4c2b794_XresR1 XresR1(
-.CELG (CELG),
-.RP (FB),
-.RN (INN)
-);
-//,diesize,resistor_amplifier_a4c2b794_XresR1
-//Celera Confidential Do Not Copy WRAPPER1
-WRAPPER1 Xwrap0(
-.i (OUT),
-.o (FB)
-);
-//,diesize,WRAPPER1
 //Celera Confidential Do Not Copy STONEdelay10usRise
 STONEdelay10usRise Xokdelay(
 .CELV (SIMPV),
