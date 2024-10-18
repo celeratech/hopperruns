@@ -1,0 +1,69 @@
+* Z:\celera\projects\Simplis\playrelease\Release\play301\Verification\sim_vbuffer301.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map SIMPV 19
+.node_map OUT1 20
+.node_map OUT2 22
+.node_map OUT3 24
+.node_map OUT4 25
+.node_map IN 23
+.node_map en 21
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+.tran 200u 0
+
+.globalvar tdext_khz=200
+.globalvar VIN=5
+.globalvar REF=0.9
+
+
+.PRINT V(#OUT4)
+.GRAPH :#OUT4 axisType="auto" persistence=-1 curveLabel="OUT4" analysis="tran|pop" xLog="auto" yLog="auto"  nowarn=true disabled=false PROBEREF=Probe1  
+.PRINT V(#OUT1)
+.GRAPH :#OUT1 curveLabel= OUT1 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe2  
+.PRINT V(#OUT2)
+.GRAPH :#OUT2 curveLabel= OUT2 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe3  
+.PRINT V(#IN)
+.GRAPH :#IN curveLabel= IN nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe4  
+.PRINT V(#OUT3)
+.GRAPH :#OUT3 axisType="auto" persistence=-1 curveLabel="OUT3" analysis="tran|pop" xLog="auto" yLog="auto"  nowarn=true disabled=false PROBEREF=Probe5  
+.PRINT V(#SIMPV)
+.GRAPH :#SIMPV curveLabel= SIMPV nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe7  
+X$U3 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+X$U4 19 20 21 23 0 22 24 25 vbuffer301
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Design\FORCEvbuffer301.sxcmp
+
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Design\vbuffer301.sxcmp
+.subckt vbuffer301 29 32 31 30 33 34 35 36
+*#hierarchy
+.node_map SIMPV 29
+.node_map OUT1 32
+.node_map OUT2 34
+.node_map OUT3 35
+.node_map OUT4 36
+.node_map RTN 33
+.node_map IN 30
+.node_map en 31
+.PRINT I(X$vbuffer3#IN)
+.GRAPH vbuffer3#IN curveLabel="I(vbuffer3-IN)" nowarn=true complete=true analysis=tran|pop disabled=false 
+.PRINT I(X$vbuffer4#IN)
+.GRAPH vbuffer4#IN curveLabel="I(vbuffer4-IN)" nowarn=true complete=true analysis=tran|pop disabled=false 
+X$U1 24 celeranoconn vars: ='%'
+X$U2 26 celeranoconn vars: ='%'
+X$U3 27 celeranoconn vars: ='%'
+X$U4 28 celeranoconn vars: ='%'
+X$vbuffer1 29 24 30 32 31 23 vbuffer vars: vbuffer_accuracy='no' vbuffer_datasheet_name='im' vbuffer_datasheet_description='text' vbuffer_type='p' vbuffer_inputbuffer='no' vbuffer_drive='internal' vbuffer_gndsense='no' vbuffer_dft='no' vbuffer_gain=1 vbuffer_feedbackimpedance=1000 vbuffer_vmax=6
+X$vbuffer2 29 26 30 34 31 25 vbuffer vars: vbuffer_accuracy='no' vbuffer_datasheet_name='ddd' vbuffer_datasheet_description='text' vbuffer_type='p' vbuffer_inputbuffer='no' vbuffer_drive='internal' vbuffer_gndsense='no' vbuffer_dft='no' vbuffer_gain=1.5 vbuffer_feedbackimpedance=1000 vbuffer_vmax=6
+X$vbuffer3 29 27 30 35 31 33 vbuffer vars: vbuffer_accuracy='no' vbuffer_datasheet_name='aaa' vbuffer_datasheet_description='text' vbuffer_type='p' vbuffer_inputbuffer='no' vbuffer_drive='internal' vbuffer_gndsense='yes' vbuffer_dft='no' vbuffer_gain=500m vbuffer_feedbackimpedance=2000 vbuffer_vmax=6
+X$vbuffer4 29 28 30 36 31 33 vbuffer vars: vbuffer_accuracy='no' vbuffer_datasheet_name='lll' vbuffer_datasheet_description='text' vbuffer_type='p' vbuffer_inputbuffer='yes' vbuffer_drive='internal' vbuffer_gndsense='yes' vbuffer_dft='no' vbuffer_gain=500m vbuffer_feedbackimpedance=2000 vbuffer_vmax=6
+.ends vbuffer301
+
+.end
