@@ -8,7 +8,7 @@ module FORCE_oscillator_crude32k_3p3v (GND,SIMPV,standby_clock,enable_oscillator
   input  register_enable_oscillator_3096e83c_Xd_enable_oscillator;
 endmodule
 
-module oscillator_crude32k_3p3v (osc,SIMPV,CELG59462,CELV96848,CELSUB40948,ok_oscillator,standby_clock,SENSE_G_364e6b08,enable_oscillator);
+module oscillator_crude32k_3p3v (osc,SIMPV,CELG59462,CELV96848,CELSUB40948,ok_oscillator,standby_clock,SENSE_G_364e6b08,enable_oscillator,IP_364e6b08_XIXosccrude);
   output  osc;
   input  SIMPV;
   input  CELG59462;
@@ -18,6 +18,7 @@ module oscillator_crude32k_3p3v (osc,SIMPV,CELG59462,CELV96848,CELSUB40948,ok_os
   input  standby_clock;
   input  SENSE_G_364e6b08;
   input  enable_oscillator;
+  input  IP_364e6b08_XIXosccrude;
 endmodule
 
 // ------------------------ Module Verilog ---------------
@@ -52,7 +53,8 @@ oscillator_crude32k_3p3v Xoscillator_crude32k_3p3v1 (
 .ok_oscillator(net_15),
 .standby_clock(net_14),
 .SENSE_G_364e6b08(SENSE_G_364e6b08),
-.enable_oscillator(net_12)
+.enable_oscillator(net_12),
+.IP_364e6b08_XIXosccrude(IP_364e6b08_XIXosccrude)
 );
 
 endmodule

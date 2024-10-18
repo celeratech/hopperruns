@@ -20,7 +20,8 @@ module PEBBLEtielo ( q, G, SUB, V );
 endmodule
 
 
-module oscillatorcrude_53927bd1 (SIMPV,ok_oscillator,osc,global_oscillator,enable_oscillator,CELG,SENSE_G,CELSUB);
+module oscillatorcrude_c74643e1 (SIMPV,ok_oscillator,osc,global_oscillator,enable_oscillator,IP,CELG,SENSE_G,CELSUB);
+  input  IP;
   output  osc;
   input  CELG;
   input  SIMPV;
@@ -41,7 +42,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module oscillator_crude32k_3p3v (osc, SIMPV, CELG59462, CELV96848, CELSUB40948, ok_oscillator, standby_clock, SENSE_G_364e6b08, enable_oscillator);
+module oscillator_crude32k_3p3v (osc, SIMPV, CELG59462, CELV96848, CELSUB40948, ok_oscillator, standby_clock, SENSE_G_364e6b08, enable_oscillator, IP_364e6b08_XIXosccrude);
 output  osc;
 input  SIMPV;
 input  CELG59462;
@@ -51,6 +52,7 @@ output  ok_oscillator;
   input  standby_clock;
 input  SENSE_G_364e6b08;
 input  enable_oscillator;
+input  IP_364e6b08_XIXosccrude;
 
 
 // ------------------------ Wires ------------------------
@@ -72,7 +74,8 @@ PEBBLEtielo XtieLo (
 .SUB(CELSUB40948)
 );
 
-oscillatorcrude_53927bd1 XIXosccrude (
+oscillatorcrude_c74643e1 XIXosccrude (
+.IP(IP_364e6b08_XIXosccrude),
 .osc(osc),
 .CELG(CELG59462),
 .SIMPV(SIMPV),
