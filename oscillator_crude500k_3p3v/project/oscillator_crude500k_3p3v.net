@@ -1,0 +1,66 @@
+* Z:\celera\projects\Simplis\playbrian\verif301\oscillator\verification\sim_oscillator_crude500k_3p3v.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map osc 13
+.node_map SIMPV 11
+.node_map ok_oscillator 15
+.node_map enable_oscillator 12
+.node_map standby_clock 14
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 300u 0
+.globalvar REF=1.0
+.globalvar VIN=5
+.globalvar tdext_khz=1000
+
+
+X$oscillator_crude500k_3p3v 15 14 11 12 13 oscillator_crude500k_3p3v
+** From Z:\celera\projects\Simplis\playbrian\verif301\oscillator\verification\FORCE_oscillator_crude500k_3p3v.sxcmp
+
+
+** From Z:\celera\projects\Simplis\playbrian\verif301\oscillator\design\oscillator_crude500k_3p3v.sxcmp
+.subckt oscillator_crude500k_3p3v 24 29 27 26 28
+*#hierarchy
+.node_map ok_oscillator_delay 25
+.node_map osc 28
+.node_map SIMPV 27
+.node_map ok_oscillator 24
+.node_map enable_oscillator 26
+.node_map standby_clock 29
+X$get_ok_driver_delay 26 24 25 VESPAdftpulse
+X$IXosccrude 24 27 28 20 21 22 26 23 29 oscillatorcrude vars: osc_type='crude' osc_accuracy='no' osc_datasheet_accuracy_name='item1' osc_datasheet_accuracy_description='item1' osc_enable='pin' osc_enable_por='disable' osc_datasheet_enable_name='item2' osc_datasheet_enable_description='item2' osc_ss='no' osc_standbyclock='no' osc_standbyclockpor='disable' osc_ext_freq_default='no' osc_crystalbias='1' osc_crystalglobalref='yes' osc_ss_configuration='fixed' osc_ss_enable_control='fixed' osc_ss_mode_por='sweep' osc_ss_enable_por='enable' osc_ss_clock_sync='synchronized' osc_ss_datasheetname='item4' osc_dft='no' osc_ibias='global' osc_int_freq=1K osc_int_duty=50 osc_int_ireplica_gain=10 osc_int_1=0 osc_ext_freq=1K osc_ext_resistor=50 osc_ext_duty=50 osc_ext_replicagain=0 osc_ext_comment=0 osc_crude_freq=500 osc_crude_generatesupply=3.3 osc_crude_duty=50 osc_crystalfreq=1 osc_crystalreflocal=1 osc_crystalcleancountpor=32 osc_ringfreq=20 osc_ss_range_por=5 osc_ss_clock_independent=50 osc_ss_clock_divide=64 osc_vmax=6 osc_crude_supply=3.3 osc_ss_datasheet_name='item3' osc_cleancountpor=
+X$OSC 28 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='OSC' dftprobe_description='OSC_output' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$OSCok 24 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='OSCok' dftprobe_description='OSC_ok' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$OSCok_delay 25 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='OSCok_delay' dftprobe_description='OSC_ok_Delay' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$U11 24 pinprobe vars: pinprobe_description='Osc_output pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U16 29 pinprobe vars: pinprobe_description=' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
+X$U20 27 pinprobe vars: pinprobe_description=' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U24 26 pinprobe vars: pinprobe_description=' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U28 28 pinprobe vars: pinprobe_description=' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+.ends oscillator_crude500k_3p3v
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAdftpulse.sxcmp
+.subckt VESPAdftpulse 7 8 9
+*#hierarchy
+.node_map start 7
+.node_map stop 8
+.node_map pulse 9
+X$U11 7 pinprobe vars: pinprobe_description='DFT_timer_start_input'
+X$U15 8 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U17 8 pinprobe vars: pinprobe_description='DFT_timer_stop_input'
+X$U52 7 4 6 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U53 4 5 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U55 9 5 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U8 9 pinprobe vars: pinprobe_description='DFT_Timer_pulse'
+.ends VESPAdftpulse
+
+.end
