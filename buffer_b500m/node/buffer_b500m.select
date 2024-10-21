@@ -3,6 +3,23 @@ revision,0.2.1
 
 
 GenerateLevel,7
+generate,vbuffer
+path,Xbuffer_b500m1,X1
+instance,X1
+parameter,vbuffer_dft,no
+parameter,vbuffer_gain,0.5
+parameter,vbuffer_type,p
+parameter,vbuffer_vmax,6
+parameter,vbuffer_drive,internal
+parameter,vbuffer_accuracy,no
+parameter,vbuffer_gndsense,no
+parameter,vbuffer_inputbuffer,yes
+parameter,vbuffer_datasheet_name,text
+parameter,vbuffer_feedbackimpedance,1k
+parameter,vbuffer_datasheet_description,text
+
+
+GenerateLevel,7
 generate,pinprobe
 path,Xbuffer_b500m1,XU11
 instance,XU11
@@ -68,23 +85,6 @@ parameter,dftprobe_highvoltage,6
 
 
 GenerateLevel,7
-generate,vbuffer
-path,Xbuffer_b500m1,XIXbuf
-instance,XIXbuf
-parameter,vbuffer_dft,no
-parameter,vbuffer_gain,0.5
-parameter,vbuffer_type,p
-parameter,vbuffer_vmax,6
-parameter,vbuffer_drive,internal
-parameter,vbuffer_accuracy,no
-parameter,vbuffer_gndsense,no
-parameter,vbuffer_inputbuffer,yes
-parameter,vbuffer_datasheet_name,text
-parameter,vbuffer_feedbackimpedance,1k
-parameter,vbuffer_datasheet_description,text
-
-
-GenerateLevel,7
 generate,dftprobeModel1
 path,Xbuffer_b500m1,XBUFok_delay
 instance,XBUFok_delay
@@ -101,21 +101,21 @@ parameter,dftprobe_highvoltage,6
 
 GenerateLevel,5
 generate,pinprobe
-path,Xbuffer_b500m1,Xget_ok_driver_delay,XU8
+path,Xbuffer_b500m1,X2,XU8
 instance,XU8
 parameter,pinprobe_description,DFT_Timer_pulse
 
 
 GenerateLevel,5
 generate,pinprobe
-path,Xbuffer_b500m1,Xget_ok_driver_delay,XU11
+path,Xbuffer_b500m1,X2,XU11
 instance,XU11
 parameter,pinprobe_description,DFT_timer_start_input
 
 
 GenerateLevel,5
 generate,inv
-path,Xbuffer_b500m1,Xget_ok_driver_delay,XU15
+path,Xbuffer_b500m1,X2,XU15
 instance,XU15
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -123,14 +123,14 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,Xbuffer_b500m1,Xget_ok_driver_delay,XU17
+path,Xbuffer_b500m1,X2,XU17
 instance,XU17
 parameter,pinprobe_description,DFT_timer_stop_input
 
 
 GenerateLevel,5
 generate,nand2
-path,Xbuffer_b500m1,Xget_ok_driver_delay,XU52
+path,Xbuffer_b500m1,X2,XU52
 instance,XU52
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -138,7 +138,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,Xbuffer_b500m1,Xget_ok_driver_delay,XU53
+path,Xbuffer_b500m1,X2,XU53
 instance,XU53
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -146,7 +146,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,dbuf
-path,Xbuffer_b500m1,Xget_ok_driver_delay,XU55
+path,Xbuffer_b500m1,X2,XU55
 instance,XU55
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -266,6 +266,7 @@ parameter,datamap_function4_on,text
 parameter,datamap_function5_on,text
 parameter,datamap_function6_on,text
 parameter,datamap_function7_on,text
+parameter,datamap_status_level,edge
 parameter,datamap_function0_off,text
 parameter,datamap_function1_off,text
 parameter,datamap_function2_off,text

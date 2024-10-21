@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module buffer_b500m (IN,OUT,SIMPV,CELG59462,CELV96848,ok_vbuffer,CELSUB40948,enable_vbuffer,IP_0288a7da_XIXbuf);
+module buffer_b500m (IN,OUT,SIMPV,CELG59462,CELV96848,ok_vbuffer,CELSUB40948,IP_c523086b_X1,enable_vbuffer);
   input  IN;
   output  OUT;
   input  SIMPV;
@@ -7,8 +7,8 @@ module buffer_b500m (IN,OUT,SIMPV,CELG59462,CELV96848,ok_vbuffer,CELSUB40948,ena
   input  CELV96848;
   output  ok_vbuffer;
   input  CELSUB40948;
+  input  IP_c523086b_X1;
   input  enable_vbuffer;
-  input  IP_0288a7da_XIXbuf;
 endmodule
 
 module FORCE_buffer_b500m (IN,GND,OUT,SIMPV,enable_vbuffer,register_enable_vbuffer_cbcae452_Xd_enable_vbuffer);
@@ -40,8 +40,8 @@ buffer_b500m Xbuffer_b500m1 (
 .CELV96848(CELV96848),
 .ok_vbuffer(net_16),
 .CELSUB40948(CELSUB40948),
-.enable_vbuffer(net_15),
-.IP_0288a7da_XIXbuf(IP_0288a7da_XIXbuf)
+.IP_c523086b_X1(IP_c523086b_X1),
+.enable_vbuffer(net_15)
 );
 
 FORCE_buffer_b500m XFORCE_buffer_b500m1 (

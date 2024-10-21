@@ -42,7 +42,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module buffer_b500m (IN, OUT, SIMPV, CELG59462, CELV96848, ok_vbuffer, CELSUB40948, enable_vbuffer, IP_0288a7da_XIXbuf);
+module buffer_b500m (IN, OUT, SIMPV, CELG59462, CELV96848, ok_vbuffer, CELSUB40948, IP_c523086b_X1, enable_vbuffer);
 input  IN;
 output  OUT;
 input  SIMPV;
@@ -50,14 +50,14 @@ input  CELG59462;
 input  CELV96848;
 output  ok_vbuffer;
 input  CELSUB40948;
+input  IP_c523086b_X1;
 input  enable_vbuffer;
-input  IP_0288a7da_XIXbuf;
 
 
 // ------------------------ Wires ------------------------
 
 // ------------------------ Networks ---------------------
-VESPAdftpulse Xget_ok_driver_delay (
+VESPAdftpulse X2 (
 .stop(ok_vbuffer),
 .pulse(noconn_22),
 .start(enable_vbuffer),
@@ -66,9 +66,9 @@ VESPAdftpulse Xget_ok_driver_delay (
 .CELSUB40948(CELSUB40948)
 );
 
-vbuffer_40113a12 XIXbuf (
+vbuffer_40113a12 X1 (
 .IN(IN),
-.IP(IP_0288a7da_XIXbuf),
+.IP(IP_c523086b_X1),
 .OUT(OUT),
 .CELG(CELG59462),
 .SIMPV(SIMPV),
