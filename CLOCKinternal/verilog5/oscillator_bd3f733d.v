@@ -1,7 +1,7 @@
 //Celera Brick Generator Confidential
 //CORE:oscillator
 //NAME:oscillator_bd3f733d
-//GENERATOR REVISION:0.5.6
+//GENERATOR REVISION:0.5.7
 //TYPE:external
 //EXT FREQ:400KHz@50KOhm
 //INT FREQ OPTION:yes
@@ -476,7 +476,7 @@ STONEoscillatorRFic Xic(
 //Celera Confidential Do Not Copy comparatornoctlpins_oscillator_bd3f733d_Xcomparator
 comparatornoctlpins_oscillator_bd3f733d_Xcomparator Xcomparator(
 .SIMPV (SIMPV),
-.INN_COMPARATOR (CELSENSE_RF),
+.INN_COMPARATOR (CELREF),
 .INP_COMPARATOR (COSC),
 .IP (IPO2),
 .enable_comparator (en),
