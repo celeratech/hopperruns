@@ -1,0 +1,69 @@
+* Z:\celera\projects\Simplis\playcalum\Caprice\caprice0\300\verification\sim_CAPRICE.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map SNS 24
+.node_map BIAS 28
+.node_map PGND 25
+.node_map VCC 27
+.node_map DRN 29
+.node_map GATE 30
+.node_map GND 26
+.options
++ PSP_NPT=50001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+.tran 2m 0
+.globalvar TEMP=25
+
+*celera
+.globalvar VIN = 5.0
+.globalvar REF = 1.0
+.globalvar tdext_khz=10
+
+*Externals
+.globalvar Cvcc=0.1u
+.globalvar Cvcc_initial=0
+.globalvar Cbias=1u
+.globalvar Cbias_initial=0
+.globalvar Rdrn_pullup=100K
+
+*Force
+.globalvar Fsns=10k
+.globalvar Tsns_start=200u
+.globalvar SNSinitial=6
+.globalvar SNSpulse=6
+
+.globalvar Tsnsdc0=10u
+.globalvar SNSdc0=12
+.globalvar SNSdc1=12
+
+.globalvar ENABLEsnsDC 5
+.globalvar ENABLEsnsAC 0
+
+X$CAPRICE 27 24 28 29 30 26 25 CAPRICE0
+
+
+.PRINT V(#SNS)
+.GRAPH :#SNS curveLabel= SNS nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe1  
+.PRINT V(#BIAS)
+.GRAPH :#BIAS curveLabel= BIAS nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe10  
+.PRINT V(#DRN)
+.GRAPH :#DRN curveLabel= DRN nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe11  
+.PRINT V(#GATE)
+.GRAPH :#GATE curveLabel= GATE nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe12  
+.PRINT V(#PGND)
+.GRAPH :#PGND curveLabel= PGND nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe4  
+.PRINT V(#GND)
+.GRAPH :#GND curveLabel= GND nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe8  
+.PRINT V(#VCC)
+.GRAPH :#VCC curveLabel= VCC nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe9  
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+** From Z:\celera\projects\Simplis\playcalum\Caprice\caprice0\300\design\CAPRICE0.sxcmp
+.ends CAPRICEforce
+
+.end
