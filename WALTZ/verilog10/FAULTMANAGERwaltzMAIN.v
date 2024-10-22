@@ -124,20 +124,8 @@ module nand2_9125fe87 (CELV,CELG,i0,i1,o,SUB);
   input  CELV;
 endmodule
 
-//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
-
-
-module PEBBLEtielo ( q, G, SUB, V );
-
-  input V;
-  output q;
-  input G;
-  input SUB;
-endmodule
-
-
 // ------------------------ Module Verilog ---------------
-module FAULTMANAGERwaltzMAIN (MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELBG83021, CELSUB40948, blank_fault, fault_short, mode_hiccup, enable_fault, fault_freeze, hijack_delay, blank_thermal, dft_delaySHORT, IP_7939b03c_XU7, hijack_short_status, hijack_thermal_status, hijack_faultmanager_status, trim_thermal_accuracy_7939b03c);
+module FAULTMANAGERwaltzMAIN (MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELBG83021, CELSUB40948, blank_fault, fault_short, mode_hiccup, enable_fault, fault_freeze, hijack_delay, blank_thermal, dft_delaySHORT, IP_7939b03c_XU7, ten_7939b03c_XU7, hijack_short_status, hijack_thermal_status, hijack_faultmanager_status, trim_thermal_accuracy_7939b03c);
 input  MUDV;
 input  clock;
 input  CELG59462;
@@ -155,6 +143,7 @@ input  hijack_delay;
 input  blank_thermal;
 output  dft_delaySHORT;
 input  IP_7939b03c_XU7;
+input  ten_7939b03c_XU7;
 input  hijack_short_status;
 input  hijack_thermal_status;
 input  hijack_faultmanager_status;
@@ -257,7 +246,7 @@ inv_12e192f5 XU5 (
 
 thermal_46af0fda XU7 (
 .IP(IP_7939b03c_XU7),
-.ten(tl0),
+.ten(ten_7939b03c_XU7),
 .CELG(CELG59462),
 .CELBG(CELBG83021),
 .SIMPV(MUDV),
@@ -363,13 +352,6 @@ dbuf_e926e395 XU44 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
-);
-
-PEBBLEtielo XtieLo (
-.G(CELG59462),
-.V(CELV96848),
-.q(tl0),
-.SUB(CELSUB40948)
 );
 
 endmodule

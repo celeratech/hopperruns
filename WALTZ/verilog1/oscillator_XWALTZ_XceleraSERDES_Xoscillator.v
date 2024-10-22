@@ -5,7 +5,7 @@
 //TYPE:Crude High Frequency
 //ACCURACY:no%
 //FREQ:3200KHz
-//VMAX:noV
+//VMAX:yesV
 //DFT:pin
 
 //Celera Confidential Do Not Copy Cap
@@ -43,6 +43,29 @@ dft_on, enable_oscillator, ten );
   input CELG;
 endmodule
 
+//Celera Confidential Do Not Copy STONEotpOSCdft
+//Verilog HDL for "Generate", "STONEotpOSCdft" "functional"
+
+
+module STONEotpOSCdft ( dft_off, dft_on, osc, tdi_oscillator, CELG, CELV, SUB,
+osci, tdext, ten_osc_external, ten_oscillator_div8, ten_oscillator_off, ten_oscillator_on
+);
+
+  input ten_oscillator_on;
+  input CELV;
+  input ten_osc_external;
+  input osci;
+  output tdi_oscillator;
+  input ten_oscillator_div8;
+  output dft_on;
+  input tdext;
+  input ten_oscillator_off;
+  output osc;
+  output dft_off;
+  input SUB;
+  input CELG;
+endmodule
+
 //Celera Confidential Do Not Copy STONEnoconn
 //Verilog HDL for "Generate", "STONEnoconn" "functional"
 
@@ -56,6 +79,7 @@ endmodule
 //Celera Confidential Symbol Generator
 //VMAX:6Crude:3200KHz
 module oscillator_XWALTZ_XceleraSERDES_Xoscillator (SIMPV,ok_oscillator,oscillator,ten,
+tdext,ten_oscillator_on,ten_oscillator_off,ten_oscillator_div8,ten_oscillator_external,tdi_oscillator,
 enable_oscillator,
 CELG,CELSUB);
 input SIMPV;
@@ -63,9 +87,21 @@ output oscillator;
 output ok_oscillator;
 input enable_oscillator;
 input ten;
+input tdext;
+input ten_oscillator_on;
+input ten_oscillator_off;
+input ten_oscillator_div8;
+input ten_oscillator_external;
+output tdi_oscillator;
 input CELG;
 input CELSUB;
 
+//Celera Confidential Do Not Copy STONEnoconn
+STONEnoconn Xnoconn0(
+.noconn (
+noconn_a0)
+);
+//,diesize,STONEnoconn
 //Celera Confidential Do Not Copy STONEotpOSC8
 STONEotpOSC8 Xcore(
 .CELV (SIMPV),
@@ -75,10 +111,10 @@ STONEotpOSC8 Xcore(
 .enable_oscillator (enable_oscillator),
 .ten (ten),
 .CL (CL),
-.dft_on (a0),
-.dft_off (a0),
-.osc (oscillator),
-.a0 (a0),
+.dft_on (dft_on),
+.dft_off (dft_off),
+.osc (oscdft),
+.a0 (noconn_a0),
 .CELG (CELG),
 .SUB (CELSUB)
 );
@@ -120,6 +156,23 @@ rlpp3000rpo18p6u2p0u XRcrude_6(
 .ISO (CELG)
 );
 
+//Celera Confidential Do Not Copy STONEotpOSCdft
+STONEotpOSCdft Xdft(
+.CELV (SIMPV),
+.dft_off (dft_off),
+.osci (oscdft),
+.tdext (tdext),
+.ten_oscillator_on (ten_oscillator_on),
+.ten_oscillator_off (ten_oscillator_off),
+.ten_oscillator_div8 (ten_oscillator_div8),
+.ten_osc_external (ten_oscillator_external),
+.osc (oscillator),
+.tdi_oscillator (tdi_oscillator),
+.dft_on (dft_on),
+.CELG (CELG),
+.SUB (CELSUB)
+);
+//,diesize,STONEotpOSCdft
 //Celera Confidential Do Not Copy CAPhf_
 mim34_2f25p4x20p2 XCAPhf_0(
 .CP (CL),
