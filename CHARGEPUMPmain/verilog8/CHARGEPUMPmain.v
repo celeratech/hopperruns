@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module CHARGEPUMPpowerHighside (,OUT,PGND,CHIGH,SIMPV,mode1,mode2,mode3,phase0,phase1,CELG59462,CELV96848,CELSUB40948,enable_power,IP_0d205759_XU10,IP_8d6cedf7_XU23);
+module CHARGEPUMPpowerHighside (OUT,PGND,CHIGH,SIMPV,mode1,mode2,mode3,phase0,phase1,CELG59462,CELV96848,CELSUB40948,enable_power,IP_0d205759_XU10,IP_8d6cedf7_XU23);
   inout  OUT;
   input  PGND;
   inout  CHIGH;
@@ -17,8 +17,9 @@ module CHARGEPUMPpowerHighside (,OUT,PGND,CHIGH,SIMPV,mode1,mode2,mode3,phase0,p
   input  IP_8d6cedf7_XU23;
 endmodule
 
-module CHARGEPUMPpowerLowside (,HV,CLOW,PGND,SIMPV,mode1,mode2,mode3,phase0,phase1,CELG59462,CELV96848,CELSUB40948,enable_power,IP_47ca9e38_XU23);
+module CHARGEPUMPpowerLowside (HV,OUT,CLOW,PGND,SIMPV,mode1,mode2,mode3,phase0,phase1,CELG59462,CELV96848,CELSUB40948,enable_power,IP_47ca9e38_XU23);
   inout  HV;
+  input  OUT;
   inout  CLOW;
   inout  PGND;
   input  SIMPV;
@@ -45,8 +46,7 @@ module CHARGEPUMPctrl (p1,p2,clk,CELG59462,CELV96848,CELSUB40948,register_timing
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module CHARGEPUMPmain (, HV, OUT, CLOW, PGND, CHIGH, SIMPV, CELG59462, CELV96848, SIMPV96848, CELSUB40948, IP_0d205759_XU10, IP_47ca9e38_XU23, IP_8d6cedf7_XU23, clock_chargepump, enable_chargepump, register_timingskew);
-input  ;
+module CHARGEPUMPmain (HV, OUT, CLOW, PGND, CHIGH, SIMPV, CELG59462, CELV96848, SIMPV96848, CELSUB40948, IP_0d205759_XU10, IP_47ca9e38_XU23, IP_8d6cedf7_XU23, clock_chargepump, enable_chargepump, register_timingskew);
 inout  HV;
 inout  OUT;
 inout  CLOW;
@@ -89,6 +89,7 @@ CHARGEPUMPpowerHighside XU1 (
 
 CHARGEPUMPpowerLowside XU2 (
 .HV(HV),
+.OUT(OUT),
 .CLOW(CLOW),
 .PGND(PGND),
 .SIMPV(SIMPV),

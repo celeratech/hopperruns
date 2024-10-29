@@ -99,9 +99,9 @@ module fetdriver_c14e7e11 (HVPOS,global_fetdriver,fetin,GATE,gate_status,CELV,CE
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module CHARGEPUMPpowerLowside (, HV, CLOW, PGND, SIMPV, mode1, mode2, mode3, phase0, phase1, CELG59462, CELV96848, CELSUB40948, enable_power, IP_47ca9e38_XU23);
-input  ;
+module CHARGEPUMPpowerLowside (HV, OUT, CLOW, PGND, SIMPV, mode1, mode2, mode3, phase0, phase1, CELG59462, CELV96848, CELSUB40948, enable_power, IP_47ca9e38_XU23);
 inout  HV;
+input  OUT;
 inout  CLOW;
 inout  PGND;
 input  SIMPV;
@@ -124,21 +124,24 @@ fetdn_9698de72 XU7 (
 .SUB(CELSUB40948),
 .GATE(net_114),
 .DRAIN(CLOW),
-.SOURCE(PGND)
+.SOURCE(PGND),
+.NMOSiso24(OUT)
 );
 
 fetdn_9698de72 XU8 (
 .SUB(CELSUB40948),
 .GATE(net_96),
 .DRAIN(CLOW),
-.SOURCE(PGND)
+.SOURCE(PGND),
+.NMOSiso24(OUT)
 );
 
 fetdn_9698de72 XU10 (
 .SUB(CELSUB40948),
 .GATE(net_105),
 .DRAIN(CLOW),
-.SOURCE(PGND)
+.SOURCE(PGND),
+.NMOSiso24(OUT)
 );
 
 capacitorfixed_13963963 XU12 (
@@ -155,7 +158,8 @@ fet_f65a1a4c XU15 (
 .SUB(CELSUB40948),
 .GATE(net_63),
 .DRAIN(CLOW),
-.SOURCE(HV)
+.SOURCE(HV),
+.PMOSiso30(OUT)
 );
 
 capacitorfixed_642c8630 XU16 (
@@ -167,7 +171,8 @@ fet_f65a1a4c XU17 (
 .SUB(CELSUB40948),
 .GATE(net_81),
 .DRAIN(CLOW),
-.SOURCE(HV)
+.SOURCE(HV),
+.PMOSiso30(OUT)
 );
 
 nand2_9125fe87 XU19 (

@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module CHARGEPUMPmain (,HV,OUT,CLOW,PGND,CHIGH,SIMPV,CELG59462,CELV96848,SIMPV96848,CELSUB40948,IP_0d205759_XU10,IP_47ca9e38_XU23,IP_8d6cedf7_XU23,clock_chargepump,enable_chargepump,register_timingskew);
+module CHARGEPUMPmain (HV,OUT,CLOW,PGND,CHIGH,SIMPV,CELG59462,CELV96848,SIMPV96848,CELSUB40948,IP_0d205759_XU10,IP_47ca9e38_XU23,IP_8d6cedf7_XU23,clock_chargepump,enable_chargepump,register_timingskew);
   inout  HV;
   inout  OUT;
   inout  CLOW;
@@ -33,8 +33,7 @@ module FORCE_CHARGEPUMPmain (HV,GND,OUT,CLOW,PGND,CHIGH,SIMPV,clock_chargepump,e
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module root (, CELG59462, CELV96848, SIMPV96848, CELSUB40948, register_timingskew, register_clock_chargepump_5594a7bb_Xd_clock_chargepump, register_enable_chargepump_c6d5effb_Xd_enable_chargepump);
-input  ;
+module root (CELG59462, CELV96848, SIMPV96848, CELSUB40948, register_timingskew, register_clock_chargepump_5594a7bb_Xd_clock_chargepump, register_enable_chargepump_c6d5effb_Xd_enable_chargepump);
 input  CELG59462;
 input  CELV96848;
   input  SIMPV96848;
