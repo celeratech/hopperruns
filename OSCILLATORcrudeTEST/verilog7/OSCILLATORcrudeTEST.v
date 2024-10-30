@@ -60,10 +60,39 @@ module oscillatorcrude_57db1d3d (SIMPV,ok_oscillator,osc,global_oscillator,tdext
   input  ten_oscillator_external;
 endmodule
 
-module oscillatorcrude_325aeb97 ();
+module oscillatorcrude_27f1efc2 (SIMPV,ok_oscillator,osc,global_oscillator,tdext,ten_oscillator,ten_oscillator_disable,ten_oscillator_div8,ten_oscillator_external,tdi_oscillator,enable_oscillator,CELG,SENSE_G,CELSUB);
+  output  osc;
+  input  CELG;
+  input  SIMPV;
+  input  tdext;
+  input  CELSUB;
+  input  SENSE_G;
+  output  ok_oscillator;
+  output  tdi_oscillator;
+  input  ten_oscillator;
+  input  enable_oscillator;
+  input  global_oscillator;
+  input  ten_oscillator_div8;
+  input  ten_oscillator_disable;
+  input  ten_oscillator_external;
 endmodule
 
-module oscillatorcrude_7710b393 ();
+module oscillatorcrude_475607f7 (SIMPV,ok_oscillator,osc,global_oscillator,tdext,ten_oscillator,ten_oscillator_disable,ten_oscillator_div8,ten_oscillator_external,tdi_oscillator,enable_oscillator,trim_oscillator,CELG,SENSE_G,CELSUB);
+  output  osc;
+  input  CELG;
+  input  SIMPV;
+  input  tdext;
+  input  CELSUB;
+  input  SENSE_G;
+  output  ok_oscillator;
+  output  tdi_oscillator;
+  input  ten_oscillator;
+  input [2:0] trim_oscillator;
+  input  enable_oscillator;
+  input  global_oscillator;
+  input  ten_oscillator_div8;
+  input  ten_oscillator_disable;
+  input  ten_oscillator_external;
 endmodule
 
 module oscillatorcrude_b0bd45c4 (SIMPV,ok_oscillator,osc,global_oscillator,ten_oscillator,tdi_oscillator,enable_oscillator,trim_oscillator,CELG,SENSE_G,CELSUB);
@@ -147,7 +176,7 @@ module oscillatorcrude_0194feb0 ();
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module OSCILLATORcrudeTEST (tmi, SIMPV, tdext, en_osc, CELG59462, CELV96848, CELSUB40948, SENSE_G_1be92920, SENSE_G_84860294, SENSE_G_8e787ae4, SENSE_G_928ac297, SENSE_G_d1788db9, SENSE_G_dd1841be, IP_1be92920_Xoscillator8, IP_84860294_Xoscillator7, IP_d1788db9_Xoscillator1, IP_dd1841be_Xoscillator2);
+module OSCILLATORcrudeTEST (tmi, SIMPV, tdext, en_osc, CELG59462, CELV96848, CELSUB40948, SENSE_G_1be92920, SENSE_G_1c52f44f, SENSE_G_84860294, SENSE_G_8e787ae4, SENSE_G_928ac297, SENSE_G_d1788db9, SENSE_G_dd1841be, SENSE_G_ed8e640a, IP_1be92920_Xoscillator8, IP_84860294_Xoscillator7, IP_d1788db9_Xoscillator1, IP_dd1841be_Xoscillator2);
 inout [4:0] tmi;
 input  SIMPV;
 input  tdext;
@@ -156,11 +185,13 @@ input  CELG59462;
 input  CELV96848;
 input  CELSUB40948;
 input  SENSE_G_1be92920;
+input  SENSE_G_1c52f44f;
 input  SENSE_G_84860294;
 input  SENSE_G_8e787ae4;
 input  SENSE_G_928ac297;
 input  SENSE_G_d1788db9;
 input  SENSE_G_dd1841be;
+input  SENSE_G_ed8e640a;
 input  IP_1be92920_Xoscillator8;
 input  IP_84860294_Xoscillator7;
 input  IP_d1788db9_Xoscillator1;
@@ -190,8 +221,8 @@ drm16L drm_hex0x01 (
 .id({a0,a0,a0,a0,a0,a0,a0,a1}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm16L_drm0_7,noconn_drm16L_drm0_6,trim_oscillator_84860294_2,trim_oscillator_84860294_1,trim_oscillator_84860294_0,trim_oscillator_928ac297_2,trim_oscillator_928ac297_1,trim_oscillator_928ac297_0}),
-.drm1({noconn_drm16L_drm1_7,noconn_drm16L_drm1_6,noconn_drm16L_drm1_5,noconn_drm16L_drm1_4,noconn_drm16L_drm1_3,trim_oscillator_1be92920_2,trim_oscillator_1be92920_1,trim_oscillator_1be92920_0}),
+.drm0({noconn_drm16L_drm0_7,noconn_drm16L_drm0_6,trim_oscillator_928ac297_2,trim_oscillator_928ac297_1,trim_oscillator_928ac297_0,trim_oscillator_ed8e640a_2,trim_oscillator_ed8e640a_1,trim_oscillator_ed8e640a_0}),
+.drm1({noconn_drm16L_drm1_7,noconn_drm16L_drm1_6,trim_oscillator_1be92920_2,trim_oscillator_1be92920_1,trim_oscillator_1be92920_0,trim_oscillator_84860294_2,trim_oscillator_84860294_1,trim_oscillator_84860294_0}),
 .bypload(a0),
 .lastdrm(a0)
 );
@@ -226,12 +257,39 @@ oscillatorcrude_57db1d3d Xoscillator2 (
 .ten_oscillator_external(tl0)
 );
 
-oscillatorcrude_325aeb97 Xoscillator3 (
-
+oscillatorcrude_27f1efc2 Xoscillator3 (
+.osc(noconn_140),
+.CELG(CELG59462),
+.SIMPV(SIMPV),
+.tdext(tdext),
+.CELSUB(CELSUB40948),
+.SENSE_G(SENSE_G_1c52f44f),
+.ok_oscillator(noconn_146),
+.tdi_oscillator(noconn_tdi_oscillator2),
+.ten_oscillator(tl0),
+.enable_oscillator(en_osc),
+.global_oscillator(tl0),
+.ten_oscillator_div8(tl0),
+.ten_oscillator_disable(tl0),
+.ten_oscillator_external(tl0)
 );
 
-oscillatorcrude_7710b393 Xoscillator4 (
-
+oscillatorcrude_475607f7 Xoscillator4 (
+.osc(noconn_152),
+.CELG(CELG59462),
+.SIMPV(SIMPV),
+.tdext(tdext),
+.CELSUB(CELSUB40948),
+.SENSE_G(SENSE_G_ed8e640a),
+.ok_oscillator(noconn_158),
+.tdi_oscillator(noconn_tdi_oscillator3),
+.ten_oscillator(tl0),
+.trim_oscillator({trim_oscillator_ed8e640a_2,trim_oscillator_ed8e640a_1,trim_oscillator_ed8e640a_0}),
+.enable_oscillator(en_osc),
+.global_oscillator(tl0),
+.ten_oscillator_div8(tl0),
+.ten_oscillator_disable(tl0),
+.ten_oscillator_external(tl0)
 );
 
 oscillatorcrude_b0bd45c4 Xoscillator5 (
@@ -241,7 +299,7 @@ oscillatorcrude_b0bd45c4 Xoscillator5 (
 .CELSUB(CELSUB40948),
 .SENSE_G(SENSE_G_928ac297),
 .ok_oscillator(noconn_159),
-.tdi_oscillator(noconn_tdi_oscillator2),
+.tdi_oscillator(noconn_tdi_oscillator4),
 .ten_oscillator(tl0),
 .trim_oscillator({trim_oscillator_928ac297_2,trim_oscillator_928ac297_1,trim_oscillator_928ac297_0}),
 .enable_oscillator(en_osc),
@@ -268,7 +326,7 @@ oscillatorcrude_05716b66 Xoscillator7 (
 .CELSUB(CELSUB40948),
 .SENSE_G(SENSE_G_84860294),
 .ok_oscillator(noconn_160),
-.tdi_oscillator(noconn_tdi_oscillator3),
+.tdi_oscillator(noconn_tdi_oscillator5),
 .ten_oscillator(tl0),
 .trim_oscillator({trim_oscillator_84860294_2,trim_oscillator_84860294_1,trim_oscillator_84860294_0}),
 .enable_oscillator(en_osc),
@@ -286,7 +344,7 @@ oscillatorcrude_05ba9649 Xoscillator8 (
 .CELSUB(CELSUB40948),
 .SENSE_G(SENSE_G_1be92920),
 .ok_oscillator(noconn_148),
-.tdi_oscillator(noconn_tdi_oscillator4),
+.tdi_oscillator(noconn_tdi_oscillator6),
 .ten_oscillator(tl0),
 .trim_oscillator({trim_oscillator_1be92920_2,trim_oscillator_1be92920_1,trim_oscillator_1be92920_0}),
 .enable_oscillator(en_osc),
@@ -301,6 +359,10 @@ STONEnoconn XNCnoconn_139 (
 .noconn(noconn_139)
 );
 
+STONEnoconn XNCnoconn_140 (
+.noconn(noconn_140)
+);
+
 STONEnoconn XNCnoconn_141 (
 .noconn(noconn_141)
 );
@@ -311,6 +373,10 @@ STONEnoconn XNCnoconn_142 (
 
 STONEnoconn XNCnoconn_145 (
 .noconn(noconn_145)
+);
+
+STONEnoconn XNCnoconn_146 (
+.noconn(noconn_146)
 );
 
 STONEnoconn XNCnoconn_147 (
@@ -325,6 +391,10 @@ STONEnoconn XNCnoconn_151 (
 .noconn(noconn_151)
 );
 
+STONEnoconn XNCnoconn_152 (
+.noconn(noconn_152)
+);
+
 STONEnoconn XNCnoconn_153 (
 .noconn(noconn_153)
 );
@@ -335,6 +405,10 @@ STONEnoconn XNCnoconn_154 (
 
 STONEnoconn XNCnoconn_157 (
 .noconn(noconn_157)
+);
+
+STONEnoconn XNCnoconn_158 (
+.noconn(noconn_158)
 );
 
 STONEnoconn XNCnoconn_159 (
@@ -365,18 +439,6 @@ STONEnoconn XNCnoconn_drm16L_drm0_7 (
 .noconn(noconn_drm16L_drm0_7)
 );
 
-STONEnoconn XNCnoconn_drm16L_drm1_3 (
-.noconn(noconn_drm16L_drm1_3)
-);
-
-STONEnoconn XNCnoconn_drm16L_drm1_4 (
-.noconn(noconn_drm16L_drm1_4)
-);
-
-STONEnoconn XNCnoconn_drm16L_drm1_5 (
-.noconn(noconn_drm16L_drm1_5)
-);
-
 STONEnoconn XNCnoconn_drm16L_drm1_6 (
 .noconn(noconn_drm16L_drm1_6)
 );
@@ -399,6 +461,14 @@ STONEnoconn XNCnoconn_tdi_oscillator3 (
 
 STONEnoconn XNCnoconn_tdi_oscillator4 (
 .noconn(noconn_tdi_oscillator4)
+);
+
+STONEnoconn XNCnoconn_tdi_oscillator5 (
+.noconn(noconn_tdi_oscillator5)
+);
+
+STONEnoconn XNCnoconn_tdi_oscillator6 (
+.noconn(noconn_tdi_oscillator6)
 );
 
 endmodule
