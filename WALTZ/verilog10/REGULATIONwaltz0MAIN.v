@@ -111,6 +111,18 @@ module resistor_c2797d46 (RP,CELG,RN);
   input  CELG;
 endmodule
 
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 //Verilog HDL for "Esd", "ESDminiClamp6" "functional"
 
 
@@ -125,7 +137,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltz0MAIN (VC, MUDG, MUDV, REFINT, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, CZCOMP_624d9aae, IP_4215aede_XU3, IP_866ca25c_XU9, IP_9015e2a4_XU1, IP_b8eb1a18_XU7, RZCOMP_a9ca9a88, IP_5c7dff44_XU10, GAINCOMP_62ae95e3, enable_regulation, trim_clamp_b8eb1a18, global_gm_9015e2a4_XU1, global_clamp_b8eb1a18_XU7, trim_gm_negative_9015e2a4, trim_gm_positive_9015e2a4, global_vbuffer_866ca25c_XU9, trim_vbuffer_negative_866ca25c, trim_vbuffer_positive_866ca25c, global_comparator_5c7dff44_XU10, factory_hyst_comparator_5c7dff44, global_voltage2current_4215aede_XU3);
+module REGULATIONwaltz0MAIN (VC, MUDG, MUDV, REFINT, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, CZCOMP_624d9aae, IP_4215aede_XU3, IP_866ca25c_XU9, IP_9015e2a4_XU1, IP_b8eb1a18_XU7, RZCOMP_a9ca9a88, IP_5c7dff44_XU10, GAINCOMP_62ae95e3, enable_regulation, trim_clamp_b8eb1a18, trim_gm_negative_9015e2a4, trim_gm_positive_9015e2a4, trim_vbuffer_negative_866ca25c, trim_vbuffer_positive_866ca25c, factory_hyst_comparator_5c7dff44);
 inout  VC;
 inout  MUDG;
 input  MUDV;
@@ -151,16 +163,11 @@ input  IP_5c7dff44_XU10;
 input [1:0] GAINCOMP_62ae95e3;
 input  enable_regulation;
 input [7:0] trim_clamp_b8eb1a18;
-input  global_gm_9015e2a4_XU1;
-input  global_clamp_b8eb1a18_XU7;
 input [6:0] trim_gm_negative_9015e2a4;
 input [6:0] trim_gm_positive_9015e2a4;
-input  global_vbuffer_866ca25c_XU9;
 input [6:0] trim_vbuffer_negative_866ca25c;
 input [6:0] trim_vbuffer_positive_866ca25c;
-input  global_comparator_5c7dff44_XU10;
 input [1:0] factory_hyst_comparator_5c7dff44;
-input  global_voltage2current_4215aede_XU3;
 
 
 // ------------------------ Wires ------------------------
@@ -214,7 +221,7 @@ gm_90b5b3ea XU1 (
 .ok_gm(net_105),
 .CELSUB(CELSUB40948),
 .enable_gm(enable_regulation),
-.global_gm(global_gm_9015e2a4_XU1),
+.global_gm(tl0),
 .trim_gm_negative({trim_gm_negative_9015e2a4[6],trim_gm_negative_9015e2a4[5],trim_gm_negative_9015e2a4[4],trim_gm_negative_9015e2a4[3],trim_gm_negative_9015e2a4[2],trim_gm_negative_9015e2a4[1],trim_gm_negative_9015e2a4[0]}),
 .trim_gm_positive({trim_gm_positive_9015e2a4[6],trim_gm_positive_9015e2a4[5],trim_gm_positive_9015e2a4[4],trim_gm_positive_9015e2a4[3],trim_gm_positive_9015e2a4[2],trim_gm_positive_9015e2a4[1],trim_gm_positive_9015e2a4[0]})
 );
@@ -228,7 +235,7 @@ voltage2current_17279485 XU3 (
 .CELSUB(CELSUB40948),
 .ok_voltage2current(net_104),
 .enable_voltage2current(enable_regulation),
-.global_voltage2current(global_voltage2current_4215aede_XU3)
+.global_voltage2current(tl0)
 );
 
 clamp_57e24cde XU7 (
@@ -241,7 +248,7 @@ clamp_57e24cde XU7 (
 .CELSUB(CELSUB40948),
 .trim_clamp({trim_clamp_b8eb1a18[7],trim_clamp_b8eb1a18[6],trim_clamp_b8eb1a18[5],trim_clamp_b8eb1a18[4],trim_clamp_b8eb1a18[3],trim_clamp_b8eb1a18[2],trim_clamp_b8eb1a18[1],trim_clamp_b8eb1a18[0]}),
 .enable_clamp(enable_regulation),
-.global_clamp(global_clamp_b8eb1a18_XU7)
+.global_clamp(tl0)
 );
 
 vbuffer_602daa59 XU9 (
@@ -253,7 +260,7 @@ vbuffer_602daa59 XU9 (
 .CELSUB(CELSUB40948),
 .ok_vbuffer(net_94),
 .enable_vbuffer(enable_regulation),
-.global_vbuffer(global_vbuffer_866ca25c_XU9),
+.global_vbuffer(tl0),
 .trim_vbuffer_negative({trim_vbuffer_negative_866ca25c[6],trim_vbuffer_negative_866ca25c[5],trim_vbuffer_negative_866ca25c[4],trim_vbuffer_negative_866ca25c[3],trim_vbuffer_negative_866ca25c[2],trim_vbuffer_negative_866ca25c[1],trim_vbuffer_negative_866ca25c[0]}),
 .trim_vbuffer_positive({trim_vbuffer_positive_866ca25c[6],trim_vbuffer_positive_866ca25c[5],trim_vbuffer_positive_866ca25c[4],trim_vbuffer_positive_866ca25c[3],trim_vbuffer_positive_866ca25c[2],trim_vbuffer_positive_866ca25c[1],trim_vbuffer_positive_866ca25c[0]})
 );
@@ -268,7 +275,7 @@ comparatornoctlpins_1b4420c5 XU10 (
 .INP_COMPARATOR(VC),
 .out_comparator(go_driver),
 .enable_comparator(net_94),
-.global_comparator(global_comparator_5c7dff44_XU10),
+.global_comparator(tl0),
 .factory_hyst_comparator({factory_hyst_comparator_5c7dff44[1],factory_hyst_comparator_5c7dff44[0]})
 );
 
@@ -291,6 +298,13 @@ resistor_c2797d46 XU34 (
 .RN(kelvin_MUDG),
 .RP(IREF_DRIVER),
 .CELG(CELG59462)
+);
+
+PEBBLEtielo XtieLo (
+.G(CELG59462),
+.V(CELV96848),
+.q(tl0),
+.SUB(CELSUB40948)
 );
 
 ESDminiClamp6 XCLAMP_XU1_INN (

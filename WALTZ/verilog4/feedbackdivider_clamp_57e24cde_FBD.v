@@ -11,24 +11,6 @@
 //DFT:no
 //VOUT:3.000V
 
-//Celera Confidential Do Not Copy STONEfeedbackdividerMAIN
-//Verilog HDL for "Generate", "STONEfeedbackdividerMAIN" "functional"
-
-
-module STONEfeedbackdividerMAIN ( a0, a1, enable, CELG, CELV, SUB, enable_feedbackdivider,
-ten, ten_feedbackdivider );
-
-  input CELV;
-  output a1;
-  input ten_feedbackdivider;
-  output enable;
-  output a0;
-  input ten;
-  input enable_feedbackdivider;
-  input SUB;
-  input CELG;
-endmodule
-
 //Celera Confidential Do Not Copy ESDminiClamp6
 //Verilog HDL for "Esd", "ESDminiClamp6" "functional"
 

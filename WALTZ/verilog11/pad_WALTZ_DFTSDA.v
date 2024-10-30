@@ -18,38 +18,22 @@ module ESDcore6 ( GESD, PAD );
 endmodule
 
 
-//Verilog HDL for "Generate", "WRAPPER1" "functional"
-
-
-module WRAPPER1 ( o, i );
-
-  input i;
-  output o;
-endmodule
-
-
 // ------------------------ Module Verilog ---------------
-module pad_WALTZ_FSET (FSET, GESD, CELSENSE_RF);
-inout  FSET;
+module pad_WALTZ_DFTSDA (GESD, DFTSDA);
 input  GESD;
-output  CELSENSE_RF;
+inout  DFTSDA;
 
 
 // ------------------------ Wires ------------------------
 
 // ------------------------ Networks ---------------------
 STONEpad1 XPAD1 (
-.PAD(FSET)
+.PAD(DFTSDA)
 );
 
-ESDcore6 XESDcore6_4 (
-.PAD(FSET),
+ESDcore6 XESDcore6_11 (
+.PAD(DFTSDA),
 .GESD(GESD)
-);
-
-WRAPPER1 XWRAP_CELSENSE_RF (
-.i(FSET),
-.o(CELSENSE_RF)
 );
 
 endmodule

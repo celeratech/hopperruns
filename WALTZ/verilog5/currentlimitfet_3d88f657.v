@@ -1,7 +1,7 @@
 //Celera Brick Generator Confidential
 //CORE:currentlimitfet
 //NAME:currentlimitfet_3d88f657
-//GENERATOR REVISION:0.5.6
+//GENERATOR REVISION:0.5.7
 //SENSE ELEMENT:fet
 //FET CONNECTION:nmos_source
 //USAGE:lowside
@@ -89,11 +89,11 @@ input enable_levelshifter;
 endmodule
 
 
-//Celera Confidential Do Not Copy STONEadjdelay2ns5bits
-//Verilog HDL for "Generate", "STONEadjdelay2ns5bits" "functional"
+//Celera Confidential Do Not Copy STONEadjdelay1ns5bits
+//Verilog HDL for "Generate", "STONEadjdelay1ns5bits" "functional"
 
 
-module STONEadjdelay2ns5bits ( a, o, CELG, CELV, SUB, adj_delay, i );
+module STONEadjdelay1ns5bits ( a, o, CELG, CELV, SUB, adj_delay, i );
 
   input CELV;
   input  [4:0] adj_delay;
@@ -275,26 +275,25 @@ wire[4:0] dft_s;
 //Celera Confidential Do Not Copy STONEnoconn
 STONEnoconn Xnoconn0(
 .noconn (
-noconn_adjdelay2ns5bits0)
+noconn_adjdelay0)
 );
 //,diesize,STONEnoconn
 //Celera Confidential Do Not Copy STONEnoconn
 STONEnoconn Xnoconn1(
 .noconn (
-noconn_adjdelay2ns5bits1)
+noconn_adjdelay1)
 );
 //,diesize,STONEnoconn
-//Celera Confidential Do Not Copy STONEadjdelay2ns5bits
-STONEadjdelay2ns5bits Xadjdelay2ns5bits(
+//Celera Confidential Do Not Copy STONEadjdelay1ns5bits
+STONEadjdelay1ns5bits Xadjdelay(
 .CELV (CELPOS),
-.adj_delay({a1,a0,a1,a0,a0}),
-.a ({noconn_adjdelay2ns5bits1,noconn_adjdelay2ns5bits0}),
+.adj_delay ({a1,a0,a1,a0,a0}),
 .i (enmeasure_currentlimit),
 .o (measure_delay),
 .SUB (CELSUB),
 .CELG (CELG)
 );
-//,diesize,STONEadjdelay2ns5bits
+//,diesize,STONEadjdelay1ns5bits
 //Celera Confidential Do Not Copy STONEcurrentlimitcompinp
 STONEcurrentlimitcompinp Xclcompinp(
 .CELNEG (CELG),

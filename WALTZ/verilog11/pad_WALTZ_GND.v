@@ -29,7 +29,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_WALTZ_GND (GND, GESD, GOTP, CELG59462, CELSUB40948, SENSE_G_2f5a8499, kelvin_GNDservice, kelvin_GNDpowergood, kelvin_GNDsoftstart, kelvin_GNDregulation, celkelvin_GND_73ebd82d, celkelvin_GND_bb7e77f4, celkelvin_GND_d75c3f7f, celkelvin_GND_db749c23);
+module pad_WALTZ_GND (GND, GESD, GOTP, CELG59462, CELSUB40948, SENSE_G_2f5a8499, kelvin_GNDservice, kelvin_GNDpowergood, kelvin_GNDsoftstart, kelvin_GNDregulation, celkelvin_GND_73ebd82d, celkelvin_GND_bb7e77f4, celkelvin_GND_d75c3f7f);
 inout  GND;
 output  GESD;
 output  GOTP;
@@ -43,7 +43,6 @@ inout  kelvin_GNDregulation;
 output  celkelvin_GND_73ebd82d;
 output  celkelvin_GND_bb7e77f4;
 output  celkelvin_GND_d75c3f7f;
-output  celkelvin_GND_db749c23;
 
 
 // ------------------------ Wires ------------------------
@@ -111,11 +110,6 @@ WRAPPER1 XWRAP_celkelvin_GND_bb7e77f4 (
 WRAPPER1 XWRAP_celkelvin_GND_d75c3f7f (
 .i(GND),
 .o(celkelvin_GND_d75c3f7f)
-);
-
-WRAPPER1 XWRAP_celkelvin_GND_db749c23 (
-.i(GND),
-.o(celkelvin_GND_db749c23)
 );
 
 endmodule

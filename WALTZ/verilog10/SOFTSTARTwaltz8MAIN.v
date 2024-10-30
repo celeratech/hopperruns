@@ -138,8 +138,20 @@ module PEBBLEdbuf ( o, G, SUB, V, i );
 endmodule
 
 
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module SOFTSTARTwaltz8MAIN (SS, REF, MUDV, halfway, CELG59462, CELV96848, dft_clock, CELSUB40948, enable_brick, softstart_1ms, done_softstart, IP_2f5a8499_XU9, SENSE_G_2f5a8499, enable_softstart, kelvin_MUDGsoftstart, global_dac_0cc08401_XU5, global_oscillator_2f5a8499_XU9);
+module SOFTSTARTwaltz8MAIN (SS, REF, MUDV, halfway, CELG59462, CELV96848, dft_clock, CELSUB40948, enable_brick, softstart_1ms, done_softstart, IP_2f5a8499_XU9, SENSE_G_2f5a8499, enable_softstart, kelvin_MUDGsoftstart);
 output  SS;
 input  REF;
 input  MUDV;
@@ -155,8 +167,6 @@ input  IP_2f5a8499_XU9;
 input  SENSE_G_2f5a8499;
 input  enable_softstart;
 input  kelvin_MUDGsoftstart;
-input  global_dac_0cc08401_XU5;
-input  global_oscillator_2f5a8499_XU9;
 
 
 // ------------------------ Wires ------------------------
@@ -241,7 +251,7 @@ celeradacr2r_d4e46535 XU5 (
 .ok_dac(net_128),
 .GNDSENSE(kelvin_MUDGsoftstart),
 .enable_dac(enable_softstart),
-.global_dac(global_dac_0cc08401_XU5),
+.global_dac(tl0),
 .strobe_dac(net_124)
 );
 
@@ -254,7 +264,7 @@ oscillatorcrude_ff6cda0b XU9 (
 .SENSE_G(SENSE_G_2f5a8499),
 .ok_oscillator(net_123),
 .enable_oscillator(enable_softstart),
-.global_oscillator(global_oscillator_2f5a8499_XU9)
+.global_oscillator(tl0)
 );
 
 inv_12e192f5 XU10 (
@@ -376,6 +386,13 @@ PEBBLEdbuf XDBUF1 (
 .V(CELV96848),
 .i(net_122),
 .o(XDBUF1_o),
+.SUB(CELSUB40948)
+);
+
+PEBBLEtielo XtieLo (
+.G(CELG59462),
+.V(CELV96848),
+.q(tl0),
 .SUB(CELSUB40948)
 );
 
