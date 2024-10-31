@@ -1,0 +1,141 @@
+* Z:\celera\projects\Simplis\playbrian\nesto301\verification\sim_AMPLIFIERtest.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map SIMPV 10
+.node_map en_osc 11
+.node_map IN 12
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 300u 0
+.globalvar REF=1.0
+.globalvar VIN=5
+.globalvar tdext_khz=1000
+
+X$AMPLIFIERtest 10 11 12 0 AMPLIFIERtest
+
+** From Z:\celera\projects\Simplis\playbrian\nesto301\design\AMPLIFIERtest.sxcmp
+.subckt AMPLIFIERtest 213 214 215 216
+*#hierarchy
+.node_map SIMPV 213
+.node_map BUS16$0 198
+.node_map BUS16$1 199
+.node_map BUS16$2 200
+.node_map BUS17$0 201
+.node_map BUS17$1 202
+.node_map BUS17$2 203
+.node_map BUS1$0 153
+.node_map BUS1$1 154
+.node_map BUS1$2 155
+.node_map BUS18$0 204
+.node_map BUS18$1 205
+.node_map BUS18$2 206
+.node_map BUS2$0 156
+.node_map BUS2$1 157
+.node_map BUS2$2 158
+.node_map BUS19$0 207
+.node_map BUS19$1 208
+.node_map BUS19$2 209
+.node_map BUS3$0 159
+.node_map BUS3$1 160
+.node_map BUS3$2 161
+.node_map en_osc 214
+.node_map BUS4$0 162
+.node_map BUS4$1 163
+.node_map BUS4$2 164
+.node_map BUS5$0 165
+.node_map BUS5$1 166
+.node_map BUS5$2 167
+.node_map BUS6$0 168
+.node_map BUS6$1 169
+.node_map BUS10$0 180
+.node_map BUS6$2 170
+.node_map BUS10$1 181
+.node_map BUS10$2 182
+.node_map BUS7$0 171
+.node_map BUS7$1 172
+.node_map BUS11$0 183
+.node_map BUS7$2 173
+.node_map BUS11$1 184
+.node_map BUS11$2 185
+.node_map BUS20$0 210
+.node_map BUS20$1 211
+.node_map BUS8$0 174
+.node_map BUS20$2 212
+.node_map BUS8$1 175
+.node_map BUS12$0 186
+.node_map BUS8$2 176
+.node_map BUS12$1 187
+.node_map BUS12$2 188
+.node_map BUS9$0 177
+.node_map BUS9$1 178
+.node_map BUS13$0 189
+.node_map BUS9$2 179
+.node_map BUS13$1 190
+.node_map BUS13$2 191
+.node_map BUS14$0 192
+.node_map BUS14$1 193
+.node_map BUS14$2 194
+.node_map GND 216
+.node_map IN 215
+.node_map BUS15$0 195
+.node_map BUS15$1 196
+.node_map BUS15$2 197
+X$amplifier1 213 216 106 215 214 98 153 154 155 89 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier10 213 216 150 215 214 144 204 205 206 139 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='np' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='low' amplifier_dft='yes' amplifier_fixedpolarity='negative' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier11 213 142 151 215 214 145 207 208 209 140 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='np' amplifier_accuracy='cell' amplifier_accuracyname='accu_amp11' amplifier_accuracydescription='accu_amp11' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='negative' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=1 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier12 213 216 152 215 214 146 210 211 212 141 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='np' amplifier_accuracy='cell' amplifier_accuracyname='accu_amp12' amplifier_accuracydescription='accu_amp12' amplifier_bandwidth='low' amplifier_dft='yes' amplifier_fixedpolarity='negative' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=100 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier13 213 216 110 215 214 102 165 166 167 93 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='medium' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier14 213 216 111 215 214 103 168 169 170 94 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='medium' amplifier_dft='yes' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier15 213 216 128 215 214 116 177 178 179 114 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='n' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='medium' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier16 213 216 129 215 214 117 180 181 182 115 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='n' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='medium' amplifier_dft='yes' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier17 213 216 147 215 214 136 195 196 197 134 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='np' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier18 213 216 148 215 214 137 198 199 200 135 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='np' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='low' amplifier_dft='yes' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier19 213 216 112 215 214 104 171 172 173 95 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='high' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier2 213 97 107 215 214 99 156 157 158 90 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='low' amplifier_dft='yes' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=1 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier20 213 216 113 215 214 105 174 175 176 96 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='high' amplifier_dft='yes' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier3 213 216 108 215 214 100 159 160 161 91 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='p' amplifier_accuracy='cell' amplifier_accuracyname='accu_amp3' amplifier_accuracydescription='accu_amp3' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=100 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier4 213 216 109 215 214 101 162 163 164 92 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='p' amplifier_accuracy='cell' amplifier_accuracyname='accu_amp4' amplifier_accuracydescription='accu_amp4' amplifier_bandwidth='low' amplifier_dft='yes' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=10 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier5 213 122 130 215 214 124 183 184 185 118 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='n' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=1 amplifier_1=0 amplifier_fixedr1=10 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier6 213 216 131 215 214 125 186 187 188 119 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='n' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='low' amplifier_dft='yes' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=100 amplifier_1=0 amplifier_fixedr1=10 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier7 213 216 132 215 214 126 189 190 191 120 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='n' amplifier_accuracy='cell' amplifier_accuracyname='accu_amp7' amplifier_accuracydescription='accu_amp7' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=1000 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier8 213 123 133 215 214 127 192 193 194 121 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='n' amplifier_accuracy='cell' amplifier_accuracyname='accu_amp8' amplifier_accuracydescription='accu_amp8' amplifier_bandwidth='low' amplifier_dft='yes' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=1 amplifier_1=0 amplifier_fixedr1=1000 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier9 213 216 149 215 214 143 201 202 203 138 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='np' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=100 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$U1 214 pinprobe vars: pinprobe_description='amplifier_enable' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U2 213 pinprobe vars: pinprobe_description='5V_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U3 215 pinprobe vars: pinprobe_description='amplifier_input' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U4 216 pinprobe vars: pinprobe_description='GND' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$UDFTamp_out1 106 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DFTamp_out1' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UDFTamp_out10 150 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DFTamp_out10' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UDFTamp_out11 151 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DFTamp_out11' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UDFTamp_out12 152 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DFTamp_out12' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UDFTamp_out13 110 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DFTamp_out13' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UDFTamp_out14 111 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DFTamp_out14' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UDFTamp_out15 128 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DFTamp_out15' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UDFTamp_out16 129 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DFTamp_out16' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UDFTamp_out17 147 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DFTamp_out17' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UDFTamp_out18 148 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DFTamp_out18' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UDFTamp_out19 112 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DFTamp_out19' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UDFTamp_out2 107 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DFTamp_out2' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UDFTamp_out20 113 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DFTamp_out20' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UDFTamp_out3 108 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DFTamp_out3' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UDFTamp_out4 109 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DFTamp_out4' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UDFTamp_out5 130 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DFTamp_out5' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UDFTamp_out6 131 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DFTamp_out6' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UDFTamp_out7 132 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DFTamp_out7' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UDFTamp_out8 133 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DFTamp_out8' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UDFTamp_out9 149 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='DFTamp_out9' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+.ends AMPLIFIERtest
+
+** From Z:\celera\projects\Simplis\playbrian\nesto301\verification\FORCE_AMPLIFIERtest.sxcmp
+
+
+.end
