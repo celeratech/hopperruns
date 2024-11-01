@@ -1,0 +1,102 @@
+* Z:\celera\projects\Simplis\playbrian\nesto301\verification\sim_PADDIGITALOUTtest.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map SIMPV 10
+.node_map en_out 11
+.node_map GND 13
+.node_map IN 12
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 300u 0
+.globalvar REF=1.0
+.globalvar VIN=5
+.globalvar tdext_khz=1000
+
+
+X$PADDIGITALOUTtest 10 11 12 13 PADDIGITALOUTtest
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+** From Z:\celera\projects\Simplis\playbrian\nesto301\verification\FORCE_PADDIGITALOUTtest.sxcmp
+
+
+** From Z:\celera\projects\Simplis\playbrian\nesto301\design\PADDIGITALOUTtest.sxcmp
+.subckt PADDIGITALOUTtest 129 130 131 132
+*#hierarchy
+.node_map SIMPV 129
+.node_map FAULT2 141
+.node_map FAULT3 142
+.node_map FAULT6 143
+.node_map FAULT7 144
+.node_map OUT0 133
+.node_map OUT1 134
+.node_map OUT2 135
+.node_map OUT3 136
+.node_map FAULT21 167
+.node_map OUT4 137
+.node_map FAULT22 166
+.node_map OUT5 138
+.node_map OUT6 139
+.node_map OUT7 140
+.node_map OUT8 145
+.node_map OUT9 146
+.node_map OUT10 147
+.node_map OUT11 148
+.node_map OUT12 149
+.node_map OUT13 150
+.node_map OUT14 151
+.node_map OUT15 152
+.node_map OUT16 157
+.node_map OUT17 158
+.node_map OUT18 159
+.node_map OUT19 160
+.node_map en_out 130
+.node_map FAULT10 153
+.node_map FAULT11 154
+.node_map FAULT14 155
+.node_map FAULT15 156
+.node_map FAULT18 164
+.node_map FAULT19 165
+.node_map OUT20 161
+.node_map GND 132
+.node_map IN 131
+.node_map OUT21 162
+.node_map OUT22 163
+X$U1 130 pinprobe vars: pinprobe_description='amplifier_enable' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U10 131 138 130 129 112 paddigitaloutput vars: paddigitaloutput_buffer=500 paddigitaloutput_tristate='yes' paddigitaloutput_faultflag='no' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='yes' paddigitaloutput_testmode='no'
+X$U11 131 139 108 129 143 paddigitaloutput vars: paddigitaloutput_buffer=500 paddigitaloutput_tristate='no' paddigitaloutput_faultflag='yes' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='yes' paddigitaloutput_testmode='no'
+X$U12 131 140 130 129 144 paddigitaloutput vars: paddigitaloutput_buffer=10 paddigitaloutput_tristate='yes' paddigitaloutput_faultflag='yes' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='yes' paddigitaloutput_testmode='no'
+X$U13 131 145 113 129 117 paddigitaloutput vars: paddigitaloutput_buffer=10 paddigitaloutput_tristate='no' paddigitaloutput_faultflag='no' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='no' paddigitaloutput_testmode='input'
+X$U14 131 146 130 129 118 paddigitaloutput vars: paddigitaloutput_buffer=500 paddigitaloutput_tristate='yes' paddigitaloutput_faultflag='no' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='no' paddigitaloutput_testmode='input'
+X$U15 131 147 114 129 153 paddigitaloutput vars: paddigitaloutput_buffer=500 paddigitaloutput_tristate='no' paddigitaloutput_faultflag='yes' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='no' paddigitaloutput_testmode='input'
+X$U16 131 148 130 129 154 paddigitaloutput vars: paddigitaloutput_buffer=10 paddigitaloutput_tristate='yes' paddigitaloutput_faultflag='yes' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='no' paddigitaloutput_testmode='input'
+X$U17 131 149 115 129 119 paddigitaloutput vars: paddigitaloutput_buffer=10 paddigitaloutput_tristate='no' paddigitaloutput_faultflag='no' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='yes' paddigitaloutput_testmode='input'
+X$U18 131 150 130 129 120 paddigitaloutput vars: paddigitaloutput_buffer=500 paddigitaloutput_tristate='yes' paddigitaloutput_faultflag='no' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='yes' paddigitaloutput_testmode='input'
+X$U19 131 151 116 129 155 paddigitaloutput vars: paddigitaloutput_buffer=500 paddigitaloutput_tristate='no' paddigitaloutput_faultflag='yes' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='yes' paddigitaloutput_testmode='input'
+X$U2 129 pinprobe vars: pinprobe_description='5V_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U20 131 152 130 129 156 paddigitaloutput vars: paddigitaloutput_buffer=10 paddigitaloutput_tristate='yes' paddigitaloutput_faultflag='yes' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='yes' paddigitaloutput_testmode='input'
+X$U21 131 157 121 129 125 paddigitaloutput vars: paddigitaloutput_buffer=10 paddigitaloutput_tristate='no' paddigitaloutput_faultflag='no' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='no' paddigitaloutput_testmode='output'
+X$U22 131 158 130 129 126 paddigitaloutput vars: paddigitaloutput_buffer=500 paddigitaloutput_tristate='yes' paddigitaloutput_faultflag='no' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='no' paddigitaloutput_testmode='output'
+X$U23 131 159 122 129 164 paddigitaloutput vars: paddigitaloutput_buffer=500 paddigitaloutput_tristate='no' paddigitaloutput_faultflag='yes' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='no' paddigitaloutput_testmode='output'
+X$U24 131 160 130 129 165 paddigitaloutput vars: paddigitaloutput_buffer=10 paddigitaloutput_tristate='yes' paddigitaloutput_faultflag='yes' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='no' paddigitaloutput_testmode='output'
+X$U25 131 161 123 129 127 paddigitaloutput vars: paddigitaloutput_buffer=10 paddigitaloutput_tristate='no' paddigitaloutput_faultflag='no' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='yes' paddigitaloutput_testmode='output'
+X$U26 131 162 130 129 128 paddigitaloutput vars: paddigitaloutput_buffer=500 paddigitaloutput_tristate='yes' paddigitaloutput_faultflag='no' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='yes' paddigitaloutput_testmode='output'
+X$U27 131 163 124 129 166 paddigitaloutput vars: paddigitaloutput_buffer=500 paddigitaloutput_tristate='no' paddigitaloutput_faultflag='yes' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='yes' paddigitaloutput_testmode='output'
+X$U28 131 162 130 129 167 paddigitaloutput vars: paddigitaloutput_buffer=10 paddigitaloutput_tristate='yes' paddigitaloutput_faultflag='yes' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='yes' paddigitaloutput_testmode='output'
+X$U3 131 pinprobe vars: pinprobe_description='amplifier_input' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U4 132 pinprobe vars: pinprobe_description='GND' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U5 131 133 105 129 109 paddigitaloutput vars: paddigitaloutput_buffer=10 paddigitaloutput_tristate='no' paddigitaloutput_faultflag='no' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='no' paddigitaloutput_testmode='no'
+X$U6 131 134 130 129 110 paddigitaloutput vars: paddigitaloutput_buffer=500 paddigitaloutput_tristate='yes' paddigitaloutput_faultflag='no' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='no' paddigitaloutput_testmode='no'
+X$U7 131 135 106 129 141 paddigitaloutput vars: paddigitaloutput_buffer=500 paddigitaloutput_tristate='no' paddigitaloutput_faultflag='yes' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='no' paddigitaloutput_testmode='no'
+X$U8 131 136 130 129 142 paddigitaloutput vars: paddigitaloutput_buffer=10 paddigitaloutput_tristate='yes' paddigitaloutput_faultflag='yes' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='no' paddigitaloutput_testmode='no'
+X$U9 131 137 107 129 111 paddigitaloutput vars: paddigitaloutput_buffer=10 paddigitaloutput_tristate='no' paddigitaloutput_faultflag='no' paddigitaloutput_faultflag_filter=1 paddigitaloutput_vmax=6 paddigitaloutput_dft='yes' paddigitaloutput_testmode='no'
+.ends PADDIGITALOUTtest
+
+.end
