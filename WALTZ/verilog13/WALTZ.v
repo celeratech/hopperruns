@@ -211,10 +211,6 @@ WALTZceleraSERDES XceleraSERDES (
 .celkelvin_VCC_9893c918(celkelvin_VCC_9893c918)
 );
 
-STONEnoconn XNCunlock (
-.noconn(unlock)
-);
-
 STONEnoconn XNCotp_done (
 .noconn(otp_done)
 );
