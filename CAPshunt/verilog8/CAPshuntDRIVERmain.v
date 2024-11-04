@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module VESPAclampGATE (,N,P,CELSUB40948);
+module VESPAclampGATE (N,P,CELSUB40948);
   inout  N;
   inout  P;
   input  CELSUB40948;
@@ -140,8 +140,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CAPshuntDRIVERmain (, IN, CAP1, CAP2, CAP3, CAP4, SIMPV, CAPRTN, CELG59462, CELV96848, PORB97836, dft_gate1, CELSUB40948, clock_shunt, dft_startup, enable_shunt, shunt_active, IP_7854e25e_XU7, IP_254d312a_XU12, IP_82a8351a_XU11, IP_ecd399a0_XU13, maximum_channel_0, maximum_channel_1);
-input  ;
+module CAPshuntDRIVERmain (IN, CAP1, CAP2, CAP3, CAP4, SIMPV, CAPRTN, CELG59462, CELV96848, PORB97836, dft_gate1, CELSUB40948, clock_shunt, dft_startup, enable_shunt, shunt_active, IP_7854e25e_XU7, IP_254d312a_XU12, IP_82a8351a_XU11, IP_ecd399a0_XU13, maximum_channel_0, maximum_channel_1);
 input  IN;
 inout  CAP1;
 inout  CAP2;
@@ -226,7 +225,8 @@ fet_720958c2 XU3 (
 .SUB(CELSUB40948),
 .GATE(net_168),
 .DRAIN(CAP4),
-.SOURCE(CAP3)
+.SOURCE(CAP3),
+.NMOSiso24(CAP4)
 );
 
 currentgenerator_42bd1eaf XU7 (
@@ -245,21 +245,24 @@ fet_73cc8265 XU8 (
 .SUB(CELSUB40948),
 .GATE(net_176),
 .DRAIN(CAP3),
-.SOURCE(CAP2)
+.SOURCE(CAP2),
+.NMOSiso20(CAP3)
 );
 
 fet_a449c519 XU9 (
 .SUB(CELSUB40948),
 .GATE(net_178),
 .DRAIN(CAP2),
-.SOURCE(CAP1)
+.SOURCE(CAP1),
+.NMOSiso12(CAP2)
 );
 
 fet_2e311eb4 XU10 (
 .SUB(CELSUB40948),
 .GATE(net_179),
 .DRAIN(CAP1),
-.SOURCE(CAPRTN)
+.SOURCE(CAPRTN),
+.NMOSiso6(CAP1)
 );
 
 currentgenerator_42bd1eaf XU11 (

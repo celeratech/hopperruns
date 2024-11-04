@@ -10,7 +10,7 @@ module CAPshuntDRIVERdebug (dft_gate1,dft_startup,enable_shunt,maximum_channel_0
   output  hijack_maximum_channel_1;
 endmodule
 
-module CAPshuntDRIVERmain (,IN,CAP1,CAP2,CAP3,CAP4,SIMPV,CAPRTN,CELG59462,CELV96848,PORB97836,dft_gate1,CELSUB40948,clock_shunt,dft_startup,enable_shunt,shunt_active,IP_7854e25e_XU7,IP_254d312a_XU12,IP_82a8351a_XU11,IP_ecd399a0_XU13,maximum_channel_0,maximum_channel_1);
+module CAPshuntDRIVERmain (IN,CAP1,CAP2,CAP3,CAP4,SIMPV,CAPRTN,CELG59462,CELV96848,PORB97836,dft_gate1,CELSUB40948,clock_shunt,dft_startup,enable_shunt,shunt_active,IP_7854e25e_XU7,IP_254d312a_XU12,IP_82a8351a_XU11,IP_ecd399a0_XU13,maximum_channel_0,maximum_channel_1);
   input  IN;
   inout  CAP1;
   inout  CAP2;
@@ -36,8 +36,7 @@ module CAPshuntDRIVERmain (,IN,CAP1,CAP2,CAP3,CAP4,SIMPV,CAPRTN,CELG59462,CELV96
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module CAPshunt (, IN, CAP1, CAP2, CAP3, CAP4, SIMPV, CAPRTN, CELG59462, CELV96848, PORB97836, SIMPV96848, CELSUB40948, clock_shunt, enable_shunt, shunt_active, maximum_channel_0, maximum_channel_1);
-input  ;
+module CAPshunt (IN, CAP1, CAP2, CAP3, CAP4, SIMPV, CAPRTN, CELG59462, CELV96848, PORB97836, SIMPV96848, CELSUB40948, clock_shunt, enable_shunt, shunt_active, maximum_channel_0, maximum_channel_1);
 input  IN;
 inout  CAP1;
 inout  CAP2;
