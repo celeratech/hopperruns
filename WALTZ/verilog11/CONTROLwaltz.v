@@ -1,6 +1,8 @@
 // ------------------------ Module Definitions -----------
-module Algorithm5p9_DYES (fcm,porb,CELG59462,CELV96848,bbm_topon,go_driver,ipeak_top,ok_driver,top_switch,CELSUB40948,bbm_bottomon,blank_bottom,ipeak_bottom,blank_refresh,bottom_switch,clock_control,fault_control,zcross_bottom,done_softstart,enable_control,freeze_control,switch_control,inegative_bottom,Algorithm5p9_statecontrol_57e26337);
+module Algorithm5p9_DYES (fcm,tdo,tmi,porb,CELG59462,CELV96848,bbm_topon,go_driver,ipeak_top,ok_driver,top_switch,CELSUB40948,bbm_bottomon,blank_bottom,ipeak_bottom,blank_refresh,bottom_switch,clock_control,fault_control,zcross_bottom,done_softstart,enable_control,freeze_control,switch_control,inegative_bottom,Algorithm5p9_statecontrol_57e26337);
   input  fcm;
+  inout  tdo;
+  input [4:0] tmi;
   input  porb;
   input  CELG59462;
   input  CELV96848;
@@ -46,7 +48,8 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CONTROLwaltz (tmi, porb, clock, botstate, topstate, CELG59462, CELV96848, bbm_topon, botswineg, go_driver, ok_driver, botswipeak, topswipeak, CELSUB40948, botswzcross, bbm_bottomon, fault_control, done_softstart, enable_control, freeze_control, switch_control);
+module CONTROLwaltz (tdo, tmi, porb, clock, botstate, topstate, CELG59462, CELV96848, bbm_topon, botswineg, go_driver, ok_driver, botswipeak, topswipeak, CELSUB40948, botswzcross, bbm_bottomon, fault_control, done_softstart, enable_control, freeze_control, switch_control);
+inout  tdo;
 inout [4:0] tmi;
 input  porb;
 input  clock;
@@ -80,6 +83,8 @@ wire [7:0] por0;
 // ------------------------ Networks ---------------------
 Algorithm5p9_DYES XCONTROL (
 .fcm(CONTROLconfiguration_fab4a68f_0),
+.tdo(tdo),
+.tmi(tmi[4:0]),
 .porb(porb),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),

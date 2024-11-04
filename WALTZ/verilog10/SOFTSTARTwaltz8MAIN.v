@@ -138,22 +138,35 @@ module PEBBLEdbuf ( o, G, SUB, V, i );
 endmodule
 
 
-//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+//Verilog HDL for "DFT", "DFTtm8t" "functional"
 
 
-module PEBBLEtielo ( q, G, SUB, V );
+module DFTtm8t ( a, ten, tmi, G, SUB, V, tma );
 
   input V;
-  output q;
+  input  [7:0] tma;
+  output  [7:0] ten;
+  output  [1:0] a;
   input G;
   input SUB;
+  inout  [4:0] tmi;
+endmodule
+
+
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
 endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SOFTSTARTwaltz8MAIN (SS, REF, MUDV, halfway, CELG59462, CELV96848, dft_clock, CELSUB40948, enable_brick, softstart_1ms, done_softstart, IP_2f5a8499_XU9, SENSE_G_2f5a8499, enable_softstart, kelvin_MUDGsoftstart);
+module SOFTSTARTwaltz8MAIN (SS, REF, tmi, MUDV, halfway, CELG59462, CELV96848, dft_clock, CELSUB40948, enable_brick, softstart_1ms, done_softstart, IP_2f5a8499_XU9, SENSE_G_2f5a8499, enable_softstart, kelvin_MUDGsoftstart);
 output  SS;
 input  REF;
+input [4:0] tmi;
 input  MUDV;
 input  halfway;
 input  CELG59462;
@@ -170,7 +183,11 @@ input  kelvin_MUDGsoftstart;
 
 
 // ------------------------ Wires ------------------------
+wire [4:0] tmi;
 wire [7:0] i;
+wire [1:0] a;
+wire [7:0] ten;
+wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
 SOFTSTARTwaltzMAINcount XCOUNT (
@@ -251,7 +268,7 @@ celeradacr2r_d4e46535 XU5 (
 .ok_dac(net_128),
 .GNDSENSE(kelvin_MUDGsoftstart),
 .enable_dac(enable_softstart),
-.global_dac(tl0),
+.global_dac(global_dac_0cc08401_XU5),
 .strobe_dac(net_124)
 );
 
@@ -264,7 +281,7 @@ oscillatorcrude_ff6cda0b XU9 (
 .SENSE_G(SENSE_G_2f5a8499),
 .ok_oscillator(net_123),
 .enable_oscillator(enable_softstart),
-.global_oscillator(tl0)
+.global_oscillator(global_oscillator_2f5a8499_XU9)
 );
 
 inv_12e192f5 XU10 (
@@ -389,11 +406,38 @@ PEBBLEdbuf XDBUF1 (
 .SUB(CELSUB40948)
 );
 
-PEBBLEtielo XtieLo (
+DFTtm8t dft_hex0x19 (
 .G(CELG59462),
 .V(CELV96848),
-.q(tl0),
-.SUB(CELSUB40948)
+.a({a1,a0}),
+.SUB(CELSUB40948),
+.ten({noconn_dft_hex0x19_ten_7,noconn_dft_hex0x19_ten_6,noconn_dft_hex0x19_ten_5,noconn_dft_hex0x19_ten_4,noconn_dft_hex0x19_ten_3,noconn_dft_hex0x19_ten_2,global_oscillator_2f5a8499_XU9,global_dac_0cc08401_XU5}),
+.tma({a0,a0,a0,a1,a1,a0,a0,a1}),
+.tmi(tmi[4:0])
+);
+
+STONEnoconn XNCnoconn_dft_hex0x19_ten_2 (
+.noconn(noconn_dft_hex0x19_ten_2)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x19_ten_3 (
+.noconn(noconn_dft_hex0x19_ten_3)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x19_ten_4 (
+.noconn(noconn_dft_hex0x19_ten_4)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x19_ten_5 (
+.noconn(noconn_dft_hex0x19_ten_5)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x19_ten_6 (
+.noconn(noconn_dft_hex0x19_ten_6)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x19_ten_7 (
+.noconn(noconn_dft_hex0x19_ten_7)
 );
 
 endmodule

@@ -250,6 +250,48 @@ endlayoutbio
 
 //**********************************************
 //Project Parameters
+//Celera:WALTZ Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
@@ -332,9 +374,8 @@ trim,description7,code 0x80,+128.0
 pinname,CELG
 definition,CELG,power ground
 iq,CELG,SIMULATION
-absmax,CELG,rrentlimit,CELPOS,CELNEG,ISLOPECOMP,enable_currentlimit_vin,measure_currentlimit_vin
-
-absmin,CELG,
+absmax,CELG,0.3
+absmin,CELG,-0.3
 io,CELG,input
 mode,CELG,power
 router,CELG,TBD
@@ -344,8 +385,8 @@ esd,CELG,TBD
 pinname,CELSUB
 definition,CELSUB,power ground
 iq,CELSUB,SIMULATION
-absmax,CELSUB,
-absmin,CELSUB,
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
 io,CELSUB,input
 mode,CELSUB,power
 router,CELSUB,TBD
@@ -356,7 +397,7 @@ pinname,measure_currentlimit
 definition,measure_currentlimit,Measure Current limit Pin
 iq,measure_currentlimit,SIMULATION
 absmax,measure_currentlimit,6
-absmin,measure_currentlimit,
+absmin,measure_currentlimit,-0.3
 io,measure_currentlimit,input
 mode,measure_currentlimit,digital
 router,measure_currentlimit,TBD
@@ -367,7 +408,7 @@ pinname,VSENSE
 definition,VSENSE,Comparator Reference Node
 iq,VSENSE,SIMULATION
 absmax,VSENSE,6
-absmin,VSENSE,
+absmin,VSENSE,-0.3
 io,VSENSE,input
 mode,VSENSE,analog
 router,VSENSE,TBD
@@ -378,7 +419,7 @@ pinname,IREPLICA
 definition,IREPLICA,Comparator Measure Node
 iq,IREPLICA,SIMULATION
 absmax,IREPLICA,6
-absmin,IREPLICA,
+absmin,IREPLICA,-0.3
 io,IREPLICA,input
 mode,IREPLICA,analog
 router,IREPLICA,TBD
@@ -390,7 +431,7 @@ pinname,trim_currentlimit
 definition,trim_currentlimit,Current Limit Trim
 iq,trim_currentlimit,SIMULATION
 absmax,trim_currentlimit,6
-absmin,trim_currentlimit,
+absmin,trim_currentlimit,-0.3
 io,trim_currentlimit,input
 mode,trim_currentlimit,digital
 router,trim_currentlimit,TBD
@@ -403,7 +444,7 @@ pinname,global_currentlimit
 definition,global_currentlimit,Global Test Enable
 iq,global_currentlimit,SIMULATION
 absmax,global_currentlimit,6
-absmin,global_currentlimit,
+absmin,global_currentlimit,-0.3
 io,global_currentlimit,input
 mode,global_currentlimit,digital
 router,global_currentlimit,TBD
@@ -414,7 +455,7 @@ pinname,enable_currentlimit
 definition,enable_currentlimit,Enable Pin
 iq,enable_currentlimit,SIMULATION
 absmax,enable_currentlimit,6
-absmin,enable_currentlimit,
+absmin,enable_currentlimit,-0.3
 io,enable_currentlimit,input
 mode,enable_currentlimit,digital
 router,enable_currentlimit,TBD
@@ -425,7 +466,7 @@ pinname,IP
 definition,IP,500na Current Reference
 iq,IP,SIMULATION
 absmax,IP,6
-absmin,IP,
+absmin,IP,-0.3
 io,IP,input
 mode,IP,analog
 router,IP,TBD
@@ -451,7 +492,7 @@ pinname,currentlimit_lv
 definition,currentlimit_lv,Level Shifted Current Limit Output Signal
 iq,currentlimit_lv,SIMULATION
 absmax,currentlimit_lv,6
-absmin,currentlimit_lv,
+absmin,currentlimit_lv,-0.3
 io,currentlimit_lv,output
 mode,currentlimit_lv,digital
 router,currentlimit_lv,TBD
@@ -464,7 +505,7 @@ pinname,ten_measure_currentlimit
 definition,ten_measure_currentlimit,Test Enable Measure
 iq,ten_measure_currentlimit,SIMULATION
 absmax,ten_measure_currentlimit,6
-absmin,ten_measure_currentlimit,
+absmin,ten_measure_currentlimit,-0.3
 io,ten_measure_currentlimit,input
 mode,ten_measure_currentlimit,digital
 router,ten_measure_currentlimit,TBD
@@ -477,7 +518,7 @@ pinname,tdi_currentlimitlive
 definition,tdi_currentlimitlive,Current Limit Live Output Signal
 iq,tdi_currentlimitlive,SIMULATION
 absmax,tdi_currentlimitlive,6
-absmin,tdi_currentlimitlive,
+absmin,tdi_currentlimitlive,-0.3
 io,tdi_currentlimitlive,output
 mode,tdi_currentlimitlive,digital
 router,tdi_currentlimitlive,TBD

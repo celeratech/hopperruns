@@ -169,6 +169,8 @@ user,osc_crude_freq,3200KHz
 description,Oscillator Frequency
 user,osc_vmax,6
 description,Oscillator Absolute Maxium Voltage Rating
+user,osc_dft,yes
+description,Oscillator DFT enabled
 //**********************************************
 //POR Parameters
 //**********************************************
@@ -263,6 +265,47 @@ factory,busname,na
 /////////////////////////////////////////////////////////////////
 //**********************************************
 //CELL DFT Parameters
+//Cell DFT Generator oscillator crude HF
+celldft,oscillatorcrudehf
+celldft,path,oscillator_XWALTZ_XceleraSERDES_Xoscillator
+celldft,instance,Xoscillator
+celldft,source,cell
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+celldft,ten_oscillator_on
+celldft,ten_oscillator_on,testname,tenOSCILLATORCRUDEHFon
+celldft,ten_oscillator_on,definition,Enable Crude High Frequency Oscillator
+celldft,ten_oscillator_on,input,ten
+celldft,ten_oscillator_on,output,na
+celldft,ten_oscillator_on,end
+
+celldft,ten_oscillator_off
+celldft,ten_oscillator_off,testname,tenOSCILLATORCRUDEHFoff
+celldft,ten_oscillator_off,definition,Disable Crude High Frequency Oscillator
+celldft,ten_oscillator_off,input,ten
+celldft,ten_oscillator_off,output,na
+celldft,ten_oscillator_off,end
+
+celldft,ten_oscillator_div8
+celldft,ten_oscillator_div8,testname,tenOSCILLATORCRUDEHFDIV8
+celldft,ten_oscillator_div8,definition,Measure OSC divided by eight
+celldft,ten_oscillator_div8,input,ten
+celldft,ten_oscillator_div8,output,tdi_oscillator
+celldft,ten_oscillator_div8,end
+
+celldft,ten_oscillator_external
+celldft,ten_oscillator_external,testname,tenOSCILLATORCRUDEHFexternal
+celldft,ten_oscillator_external,definition,Enable External Oscillator
+celldft,ten_oscillator_external,input,ten
+celldft,ten_oscillator_external,output,na
+celldft,ten_oscillator_external,end
+
+celldft,tdi_oscillator
+celldft,tdi_oscillator,testname,measureOSCILLATORCRUDEHF
+celldft,tdi_oscillator,definition,Measure output OSC
+celldft,tdi_oscillator,input,na
+celldft,tdi_oscillator,output,tdi
+celldft,tdi_oscillator,end
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // *********************************************
 //Layout Parameters
 revision,layout,0p1
@@ -331,8 +374,10 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
+sub_area,STONEnoconn,0
 sub_area,STONEotpOSC8,900
-generate_area,oscillator_XWALTZ_XceleraSERDES_Xoscillator,900
+sub_area,STONEotpOSCdft,300
+generate_area,oscillator_XWALTZ_XceleraSERDES_Xoscillator,1200
 // *********************************************
 //Calculator Parameters
 #define,OSCILLATORresistoriso,CELG
@@ -447,6 +492,17 @@ router,oscillator,TBD
 dftpriority,oscillator,1
 esd,oscillator,TBD
 
+pinname,ten_oscillator_on
+definition,ten_oscillator_on,Testmode Input:Enable Crude High Frequency Oscillator
+iq,ten_oscillator_on,SIMULATION
+absmax,ten_oscillator_on,6
+absmin,ten_oscillator_on,-0.3
+io,ten_oscillator_on,input
+mode,ten_oscillator_on,digital
+router,ten_oscillator_on,TBD
+dftpriority,ten_oscillator_on,1
+esd,ten_oscillator_on,TBD
+
 pinname,ten
 definition,ten,Global Testmode enable
 iq,ten,SIMULATION
@@ -457,6 +513,62 @@ mode,ten,digital
 router,ten,TBD
 dftpriority,ten,1
 esd,ten,TBD
+
+pinname,ten_oscillator_off
+definition,ten_oscillator_off,Testmode Input:Disable Oscillator
+iq,ten_oscillator_off,SIMULATION
+absmax,ten_oscillator_off,6
+absmin,ten_oscillator_off,-0.3
+io,ten_oscillator_off,input
+mode,ten_oscillator_off,digital
+router,ten_oscillator_off,TBD
+dftpriority,ten_oscillator_off,1
+esd,ten_oscillator_off,TBD
+
+pinname,ten_oscillator_div8
+definition,,ten_oscillator_div8,Testmode Input:Measure OSC/8
+iq,ten_oscillator_div8,SIMULATION
+absmax,ten_oscillator_div8,6
+absmin,ten_oscillator_div8,-0.3
+io,ten_oscillator_div8,input
+mode,ten_oscillator_div8,digital
+router,ten_oscillator_div8,TBD
+dftpriority,ten_oscillator_div8,1
+esd,ten_oscillator_div8,TBD
+
+pinname,ten_oscillator_external
+definition,ten_oscillator_external,Testmode Input:Enable External oscillator
+iq,ten_oscillator_external,SIMULATION
+absmax,ten_oscillator_external,6
+absmin,ten_oscillator_external,-0.3
+io,ten_oscillator_external,input
+mode,ten_oscillator_external,digital
+router,ten_oscillator_external,TBD
+dftpriority,ten_oscillator_external,1
+esd,ten_oscillator_external,TBD
+
+pinname,tdext
+definition,tdext,Testmode Input:External Digitial control
+iq,tdext,SIMULATION
+absmax,tdext,6
+absmin,tdext,-0.3
+io,tdext,input
+mode,tdext,digital
+router,tdext,TBD
+dftpriority,tdext,1
+esd,tdext,TBD
+
+pinname,tdi_oscillator
+definition,tdi_oscillator,Testmode Output:Measure OSC
+vq,tdi_oscillator,SIMULATION
+iq,tdi_oscillator,SIMULATION
+absmax,tdi_oscillator,6
+absmin,tdi_oscillator,-0.3
+io,tdi_oscillator,output
+mode,tdi_oscillator,digital
+routertdi_oscillator,TBD
+dftpriority,tdi_oscillator,1
+esd,tdi_oscillator,TBD
 
 pinname,CELSUB
 definition,CELSUB,substrate
