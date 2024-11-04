@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module delayfixed_cf78160c (CELV,i,o,CELG,CELSUB);
+module delayfixed_cf78160c (i,o,CELG,CELV,CELSUB);
   input  i;
   output  o;
   input  CELG;
@@ -7,7 +7,7 @@ module delayfixed_cf78160c (CELV,i,o,CELG,CELSUB);
   input  CELSUB;
 endmodule
 
-module dbuf_e926e395 (CELV,CELG,i,o,SUB);
+module dbuf_e926e395 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
   input  SUB;

@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module inv_12e192f5 (CELV,CELG,i,o,SUB);
+module inv_12e192f5 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
   input  SUB;
@@ -7,18 +7,16 @@ module inv_12e192f5 (CELV,CELG,i,o,SUB);
   input  CELV;
 endmodule
 
-module dff_fc5ad7bd (CELV,CELG,d,rb,ck,q,qb,SUB);
+module dff_fc5ad7bd (d,ck,rb,CELG,CELV,CELSUB);
   input  d;
-  output  q;
   input  ck;
-  output  qb;
   input  rb;
-  input  SUB;
   input  CELG;
   input  CELV;
+  input  CELSUB;
 endmodule
 
-module dbuf_e926e395 (CELV,CELG,i,o,SUB);
+module dbuf_e926e395 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
   input  SUB;
@@ -26,7 +24,7 @@ module dbuf_e926e395 (CELV,CELG,i,o,SUB);
   input  CELV;
 endmodule
 
-module nand2_9125fe87 (CELV,CELG,i0,i1,o,SUB);
+module nand2_9125fe87 (o,i0,i1,SUB,CELG,CELV);
   output  o;
   input  i0;
   input  i1;
@@ -44,7 +42,7 @@ module STONEnoconn ( noconn );
 endmodule
 
 
-module delayfixed_ddaa773b (CELV,i,o,CELG,CELSUB);
+module delayfixed_ddaa773b (i,o,CELG,CELV,CELSUB);
   input  i;
   output  o;
   input  CELG;
@@ -55,7 +53,7 @@ endmodule
 // ------------------------ Module Verilog ---------------
 module VESPAclockSYNC (din, out, clock, state, CELG59462, CELV96848, CELSUB40948);
 input  din;
-output  out;
+  input  out;
 input  clock;
 input  state;
 input  CELG59462;
@@ -76,13 +74,11 @@ inv_12e192f5 XU1 (
 
 dff_fc5ad7bd XU2 (
 .d(net_5),
-.q(out),
 .ck(net_6),
-.qb(net_7),
 .rb(net_8),
-.SUB(CELSUB40948),
 .CELG(CELG59462),
-.CELV(CELV96848)
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 dbuf_e926e395 XU3 (

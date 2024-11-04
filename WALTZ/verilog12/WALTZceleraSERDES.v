@@ -1,4 +1,16 @@
 // ------------------------ Module Definitions -----------
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 //Verilog HDL for "Generate", "STONEnoconn" "functional"
 
 
@@ -23,52 +35,15 @@ module fusebank ( VOTP, GOTP, strobe, pgenb, we, nr, q );
 endmodule
 
 
-module oscillator_XWALTZ_XceleraSERDES_Xoscillator (SIMPV,ok_oscillator,oscillator,ten,tdext,ten_oscillator_on,ten_oscillator_off,ten_oscillator_div8,ten_oscillator_external,tdi_oscillator,enable_oscillator,CELG,CELSUB);
+module oscillator_XWALTZ_XceleraSERDES_Xoscillator (ten,CELG,SIMPV,CELSUB,oscillator,ok_oscillator,enable_oscillator);
   input  ten;
   input  CELG;
   input  SIMPV;
-  input  tdext;
   input  CELSUB;
   output  oscillator;
   output  ok_oscillator;
-  output  tdi_oscillator;
   input  enable_oscillator;
-  input  ten_oscillator_on;
-  input  ten_oscillator_off;
-  input  ten_oscillator_div8;
-  input  ten_oscillator_external;
 endmodule
-
-//Verilog HDL for "DFT", "SERDESdftYesNo" "functional"
-
-
-module SERDESdftYesNo ( tdext, tdo, ten_oscillator_div8, ten_oscillator_external,
-ten_oscillator_off, ten_oscillator_on, ten_serdes, tmi, CELG, CELSUB, CELV,
-enable_hardware, otp_clock, otp_clock_enable, otp_loadok, otp_nr, otpdone, tdi_clock,
-tma, unlock );
-
-  input CELV;
-  output ten_oscillator_on;
-  input  [7:0] tma;
-  input tdi_clock;
-  input otp_clock_enable;
-  output ten_oscillator_external;
-  input otpdone;
-  input CELSUB;
-  output ten_oscillator_div8;
-  input otp_nr;
-  input otp_loadok;
-  input otp_clock;
-  output ten_serdes;
-  input unlock;
-  output tdo;
-  output tdext;
-  input enable_hardware;
-  output ten_oscillator_off;
-  input CELG;
-  inout  [4:0] tmi;
-endmodule
-
 
 //Verilog HDL for "DFT", "SERDEScontrolDRMautoNo" "functional"
 
@@ -127,8 +102,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module WALTZceleraSERDES (tdo, tmi, GOTP, VOTP, DFTSCL, DFTSDA, unlock, otp_done, CELG59462, CELV96848, PORB97836, CELSUB40948, celkelvin_VCC_9893c918);
-inout  tdo;
+module WALTZceleraSERDES (tmi, GOTP, VOTP, DFTSCL, DFTSDA, unlock, otp_done, CELG59462, CELV96848, PORB97836, CELSUB40948, celkelvin_VCC_9893c918);
 inout [5:0] tmi;
 input  GOTP;
 input  VOTP;
@@ -148,7 +122,6 @@ wire [5:0] tmi;
 wire [7:0] q;
 wire [63:0] we;
 wire [7:0] strobe;
-wire [7:0] tma;
 wire [7:0] pd;
 wire [7:0] otp_q;
 wire [7:0] otp_id;
@@ -158,6 +131,13 @@ wire [7:0] otp_strobe;
 wire [1:0] i2cpassword;
 
 // ------------------------ Networks ---------------------
+PEBBLEtielo XtieLo (
+.G(CELG59462),
+.V(CELV96848),
+.q(net_0),
+.SUB(CELSUB40948)
+);
+
 STONEnoconn XNCnoconn (
 .noconn(noconn)
 );
@@ -173,42 +153,21 @@ fusebank Xfusebank (
 );
 
 oscillator_XWALTZ_XceleraSERDES_Xoscillator Xoscillator (
-.ten(ten_serdes),
+.ten(net_0),
 .CELG(CELG59462),
 .SIMPV(CELV96848),
-.tdext(tdext),
 .CELSUB(CELSUB40948),
 .oscillator(otp_clock),
 .ok_oscillator(noconn),
-.tdi_oscillator(tdi_clock),
-.enable_oscillator(otp_clock_enable),
-.ten_oscillator_on(ten_oscillator_on),
-.ten_oscillator_off(ten_oscillator_off),
-.ten_oscillator_div8(ten_oscillator_div8),
-.ten_oscillator_external(ten_oscillator_external)
+.enable_oscillator(otp_clock_enable)
 );
 
-SERDESdftYesNo XSERDESdftYesNo (
-.tdo(tdo),
-.tma({a1,a1,a1,a1,a1,a1,a0,a0}),
-.tmi(tmi[4:0]),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.tdext(tdext),
-.CELSUB(CELSUB40948),
-.otp_nr(otp_nr),
-.unlock(unlock),
-.otpdone(otp_program_done),
-.otp_clock(otp_clock),
-.tdi_clock(tdi_clock),
-.otp_loadok(otp_loadok),
-.ten_serdes(ten_serdes),
-.enable_hardware(a1),
-.otp_clock_enable(otp_clock_enable),
-.ten_oscillator_on(ten_oscillator_on),
-.ten_oscillator_off(ten_oscillator_off),
-.ten_oscillator_div8(ten_oscillator_div8),
-.ten_oscillator_external(ten_oscillator_external)
+STONEnoconn XNCotp_loadok (
+.noconn(otp_loadok)
+);
+
+STONEnoconn XNCotp_program_done (
+.noconn(otp_program_done)
 );
 
 SERDEScontrolDRMautoNo XSERDEScontrolDRMautoNo (

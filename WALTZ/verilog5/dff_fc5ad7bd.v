@@ -1,7 +1,7 @@
 // Celera Stone Generator Confidential
 //CORE:dff
 //NAME:dff_fc5ad7bd
-//GENERATOR REVISION:0.3.0
+//GENERATOR REVISION:0.5.0
 //Clock Edge:rise
 
 //Celera Confidential Do Not Copy PEBBLEdffR
@@ -20,18 +20,25 @@ module PEBBLEdffR ( q, qb, G, SUB, V, ck, d, rb );
   output qb;
 endmodule
 
+//Celera Confidential Do Not Copy STONEnoconn
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
 //Celera Confidential Do Not Copy dff_fc5ad7bd
 //Celera Confidential Symbol Generator
 //DFF latch
-module dff_fc5ad7bd (CELV,CELG,d,rb,ck,q,qb,SUB );
+module dff_fc5ad7bd (CELV,d,rb,ck,CELG,CELSUB);
 input CELV;
-input CELG;
 input d;
 input rb;
 input ck;
-input SUB;
-output q;
-output qb;
+input CELG;
+input CELSUB;
 
 //Celera Confidential Do Not Copy dff
 PEBBLEdffR Xdff(
@@ -41,8 +48,8 @@ PEBBLEdffR Xdff(
 .ck (ck),
 .q (q),
 .qb (qb),
-.SUB (SUB),
-.G (CELG)
+.G (CELG),
+.SUB (CELSUB)
 );
 //,diesize,PEBBLEdffR
 

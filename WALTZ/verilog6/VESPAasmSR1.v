@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module dbuf_e926e395 (CELV,CELG,i,o,SUB);
+module dbuf_e926e395 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
   input  SUB;

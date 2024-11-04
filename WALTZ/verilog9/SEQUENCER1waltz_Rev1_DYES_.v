@@ -197,7 +197,7 @@ module VESPAasmOUTPUT2_0 (o,tstate0,tstate1,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module inv_12e192f5 (CELV,CELG,i,o,SUB);
+module inv_12e192f5 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
   input  SUB;
@@ -205,7 +205,7 @@ module inv_12e192f5 (CELV,CELG,i,o,SUB);
   input  CELV;
 endmodule
 
-module delayfixed_2f9b06c1 (CELV,i,o,CELG,CELSUB);
+module delayfixed_2f9b06c1 (i,o,CELG,CELV,CELSUB);
   input  i;
   output  o;
   input  CELG;
@@ -213,7 +213,7 @@ module delayfixed_2f9b06c1 (CELV,i,o,CELG,CELSUB);
   input  CELSUB;
 endmodule
 
-module delayfixed_4c9b837a (CELV,i,o,CELG,CELSUB);
+module delayfixed_4c9b837a (i,o,CELG,CELV,CELSUB);
   input  i;
   output  o;
   input  CELG;
@@ -221,7 +221,7 @@ module delayfixed_4c9b837a (CELV,i,o,CELG,CELSUB);
   input  CELSUB;
 endmodule
 
-module delayfixed_285c0416 (CELV,i,o,CELG,CELSUB);
+module delayfixed_285c0416 (i,o,CELG,CELV,CELSUB);
   input  i;
   output  o;
   input  CELG;

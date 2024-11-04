@@ -15,7 +15,7 @@ module VESPAasmHIJACK3 (qi0,qi1,qi2,hj_0,hj_1,hj_2,hj_3,qo_0,qo_1,qo_2,CELG59462
   input  CELSUB40948;
 endmodule
 
-module delayfixed_3d22e6ee (CELV,i,o,CELG,CELSUB);
+module delayfixed_3d22e6ee (i,o,CELG,CELV,CELSUB);
   input  i;
   output  o;
   input  CELG;
@@ -23,7 +23,7 @@ module delayfixed_3d22e6ee (CELV,i,o,CELG,CELSUB);
   input  CELSUB;
 endmodule
 
-module srlatch_39d292e9 (CELV,CELG,s,r,rb,q,qb,SUB);
+module srlatch_39d292e9 (q,r,s,qb,rb,SUB,CELG,CELV);
   output  q;
   input  r;
   input  s;
@@ -34,7 +34,7 @@ module srlatch_39d292e9 (CELV,CELG,s,r,rb,q,qb,SUB);
   input  CELV;
 endmodule
 
-module decoder3_0389bc20 (CELV,i,o,CELG,SUB);
+module decoder3_0389bc20 (i,o,SUB,CELG,CELV);
   input [2:0] i;
   output [7:0] o;
   input  SUB;

@@ -1,14 +1,8 @@
 // ------------------------ Module Definitions -----------
-module CLOCKwaltzDEBUG (TAO,tdo,tmi,dft_sync,CELG59462,CELV96848,dft_clock,ISLOPECOMP,CELSUB40948,dft_synclow,fault_clock,dft_synchigh,enable_clock,dft_clocksync,dft_clockstartup,dft_clockinternal,hijack_enable_clock);
-  inout  TAO;
-  inout  tdo;
-  input [4:0] tmi;
+module CLOCKwaltzDEBUG (dft_sync,dft_clock,ISLOPECOMP,dft_synclow,fault_clock,dft_synchigh,enable_clock,dft_clocksync,dft_clockstartup,dft_clockinternal,hijack_enable_clock);
   input  dft_sync;
-  input  CELG59462;
-  input  CELV96848;
   input  dft_clock;
   input  ISLOPECOMP;
-  input  CELSUB40948;
   input  dft_synclow;
   input  fault_clock;
   input  dft_synchigh;
@@ -19,9 +13,7 @@ module CLOCKwaltzDEBUG (TAO,tdo,tmi,dft_sync,CELG59462,CELV96848,dft_clock,ISLOP
   output  hijack_enable_clock;
 endmodule
 
-module CLOCKwaltzMAIN (tdo,tmi,FSET,MUDV,SYNC,clock,dft_sync,ok_clock,CELG59462,CELV96848,dft_clock,ISLOPECOMP,CELREF84329,CELSENSE_RF,CELSUB40948,dft_synclow,fault_clock,dft_synchigh,enable_clock,dft_clocksync,CLOCKofftime_0,CLOCKofftime_1,CLOCKofftime_2,CLOCKofftime_3,dft_clockstartup,dft_clockinternal,IP_90c263a6_XOSCEXT,celkelvin_GND_bb7e77f4,trim_oscillator_ext_fine_90c263a6,trim_oscillator_int_fine_90c263a6,trim_oscillator_ext_coarse_90c263a6,trim_oscillator_int_coarse_90c263a6);
-  inout  tdo;
-  input [4:0] tmi;
+module CLOCKwaltzMAIN (FSET,MUDV,SYNC,clock,dft_sync,ok_clock,CELG59462,CELV96848,dft_clock,ISLOPECOMP,CELREF84329,CELSENSE_RF,CELSUB40948,dft_synclow,fault_clock,dft_synchigh,enable_clock,dft_clocksync,CLOCKofftime_0,CLOCKofftime_1,CLOCKofftime_2,CLOCKofftime_3,dft_clockstartup,dft_clockinternal,IP_90c263a6_XOSCEXT,celkelvin_GND_bb7e77f4,trim_oscillator_ext_fine_90c263a6,trim_oscillator_int_fine_90c263a6,trim_oscillator_ext_coarse_90c263a6,trim_oscillator_int_coarse_90c263a6);
   output  FSET;
   input  MUDV;
   input  SYNC;
@@ -88,9 +80,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CLOCKwaltz (TAO, tdo, tmi, FSET, MUDV, SYNC, clock, ok_clock, CELG59462, CELV96848, ISLOPECOMP, CELREF84329, CELSENSE_RF, CELSUB40948, fault_clock, enable_clock, IP_90c263a6_XOSCEXT, celkelvin_GND_bb7e77f4);
-inout  TAO;
-inout  tdo;
+module CLOCKwaltz (tmi, FSET, MUDV, SYNC, clock, ok_clock, CELG59462, CELV96848, ISLOPECOMP, CELREF84329, CELSENSE_RF, CELSUB40948, fault_clock, enable_clock, IP_90c263a6_XOSCEXT, celkelvin_GND_bb7e77f4);
 inout [4:0] tmi;
 output  FSET;
 input  MUDV;
@@ -125,15 +115,9 @@ wire [7:0] por2;
 
 // ------------------------ Networks ---------------------
 CLOCKwaltzDEBUG XDEBUG (
-.TAO(TAO),
-.tdo(tdo),
-.tmi(tmi[4:0]),
 .dft_sync(net_67),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
 .dft_clock(net_61),
 .ISLOPECOMP(ISLOPECOMP),
-.CELSUB40948(CELSUB40948),
 .dft_synclow(net_62),
 .fault_clock(fault_clock),
 .dft_synchigh(net_63),
@@ -145,8 +129,6 @@ CLOCKwaltzDEBUG XDEBUG (
 );
 
 CLOCKwaltzMAIN XMAIN (
-.tdo(tdo),
-.tmi(tmi[4:0]),
 .FSET(FSET),
 .MUDV(MUDV),
 .SYNC(SYNC),

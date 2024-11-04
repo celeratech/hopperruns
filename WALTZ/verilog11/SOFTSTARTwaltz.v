@@ -1,9 +1,6 @@
 // ------------------------ Module Definitions -----------
-module SOFTSTARTwaltzDEBUG (SS,TAO,tdo,tmi,CELG59462,CELV96848,dft_clock,CELSUB40948,enable_brick,done_softstart,enable_softstart,hijack_enable_brick,hijack_enable_softstart);
+module SOFTSTARTwaltzDEBUG (SS,CELG59462,CELV96848,dft_clock,CELSUB40948,enable_brick,done_softstart,enable_softstart,hijack_enable_brick,hijack_enable_softstart);
   input  SS;
-  inout  TAO;
-  inout  tdo;
-  input [4:0] tmi;
   input  CELG59462;
   input  CELV96848;
   input  dft_clock;
@@ -15,10 +12,9 @@ module SOFTSTARTwaltzDEBUG (SS,TAO,tdo,tmi,CELG59462,CELV96848,dft_clock,CELSUB4
   output  hijack_enable_softstart;
 endmodule
 
-module SOFTSTARTwaltz8MAIN (SS,REF,tmi,MUDV,halfway,CELG59462,CELV96848,dft_clock,CELSUB40948,enable_brick,softstart_1ms,done_softstart,IP_2f5a8499_XU9,SENSE_G_2f5a8499,enable_softstart,kelvin_MUDGsoftstart);
+module SOFTSTARTwaltz8MAIN (SS,REF,MUDV,halfway,CELG59462,CELV96848,dft_clock,CELSUB40948,enable_brick,softstart_1ms,done_softstart,IP_2f5a8499_XU9,SENSE_G_2f5a8499,enable_softstart,kelvin_MUDGsoftstart);
   output  SS;
   input  REF;
-  input [4:0] tmi;
   input  MUDV;
   input  halfway;
   input  CELG59462;
@@ -63,11 +59,9 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SOFTSTARTwaltz (SS, REF, TAO, tdo, tmi, MUDV, CELG59462, CELV96848, CELSUB40948, enable_brick, done_softstart, IP_2f5a8499_XU9, SENSE_G_2f5a8499, enable_softstart, kelvin_MUDGsoftstart);
+module SOFTSTARTwaltz (SS, REF, tmi, MUDV, CELG59462, CELV96848, CELSUB40948, enable_brick, done_softstart, IP_2f5a8499_XU9, SENSE_G_2f5a8499, enable_softstart, kelvin_MUDGsoftstart);
 output  SS;
 input  REF;
-inout  TAO;
-inout  tdo;
 inout [4:0] tmi;
 input  MUDV;
 input  CELG59462;
@@ -90,9 +84,6 @@ wire [7:0] por0;
 // ------------------------ Networks ---------------------
 SOFTSTARTwaltzDEBUG XDEBUG (
 .SS(SS),
-.TAO(TAO),
-.tdo(tdo),
-.tmi(tmi[4:0]),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .dft_clock(net_52),
@@ -107,7 +98,6 @@ SOFTSTARTwaltzDEBUG XDEBUG (
 SOFTSTARTwaltz8MAIN XMAIN8 (
 .SS(SS),
 .REF(REF),
-.tmi(tmi[4:0]),
 .MUDV(MUDV),
 .halfway(SOFTSTARTconfiguration_5abeb710_1),
 .CELG59462(CELG59462),

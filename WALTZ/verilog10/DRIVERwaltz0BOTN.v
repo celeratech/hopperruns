@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module fetdn_d04087c0 (GATE,SOURCE,DRAIN,SOURCEk,DRAINk,IREPLICA,SUB);
+module fetdn_d04087c0 (SUB,GATE,DRAIN,DRAINk,SOURCE,SOURCEk,IREPLICA);
   input  SUB;
   input  GATE;
   inout  DRAIN;
@@ -9,7 +9,7 @@ module fetdn_d04087c0 (GATE,SOURCE,DRAIN,SOURCEk,DRAINk,IREPLICA,SUB);
   inout  IREPLICA;
 endmodule
 
-module currentlimitfet_3d88f657 (CELPOS,CELSUB,measure_currentlimit,VSENSE,IREPLICA,enable_currentlimit,trim_currentlimit,IP,global_currentlimit,currentlimit_lv,ten_measure_currentlimit,tdi_currentlimitlive,CELG);
+module currentlimitfet_3d88f657 (IP,CELG,CELPOS,CELSUB,VSENSE,IREPLICA,currentlimit_lv,trim_currentlimit,enable_currentlimit,global_currentlimit,measure_currentlimit,tdi_currentlimitlive,ten_measure_currentlimit);
   input  IP;
   input  CELG;
   input  CELPOS;
@@ -25,7 +25,7 @@ module currentlimitfet_3d88f657 (CELPOS,CELSUB,measure_currentlimit,VSENSE,IREPL
   input  ten_measure_currentlimit;
 endmodule
 
-module currentlimitfet_2899e616 (CELPOS,CELSUB,measure_currentlimit,VSENSE,IREPLICA,enable_currentlimit,trim_currentlimit,IP,global_currentlimit,currentlimit_lv,ten_measure_currentlimit,tdi_currentlimitlive,CELG);
+module currentlimitfet_2899e616 (IP,CELG,CELPOS,CELSUB,VSENSE,IREPLICA,currentlimit_lv,trim_currentlimit,enable_currentlimit,global_currentlimit,measure_currentlimit,tdi_currentlimitlive,ten_measure_currentlimit);
   input  IP;
   input  CELG;
   input  CELPOS;
@@ -41,7 +41,7 @@ module currentlimitfet_2899e616 (CELPOS,CELSUB,measure_currentlimit,VSENSE,IREPL
   input  ten_measure_currentlimit;
 endmodule
 
-module fetdn_359003a8 (GATE,SOURCE,DRAIN,SOURCEk,DRAINk,IREPLICA,SUB);
+module fetdn_359003a8 (SUB,GATE,DRAIN,DRAINk,SOURCE,SOURCEk,IREPLICA);
   input  SUB;
   input  GATE;
   inout  DRAIN;
@@ -51,7 +51,7 @@ module fetdn_359003a8 (GATE,SOURCE,DRAIN,SOURCEk,DRAINk,IREPLICA,SUB);
   inout  IREPLICA;
 endmodule
 
-module fetdn_9694dc46 (GATE,SOURCE,DRAIN,SOURCEk,DRAINk,IREPLICA,SUB);
+module fetdn_9694dc46 (SUB,GATE,DRAIN,DRAINk,SOURCE,SOURCEk,IREPLICA);
   input  SUB;
   input  GATE;
   inout  DRAIN;
@@ -61,7 +61,7 @@ module fetdn_9694dc46 (GATE,SOURCE,DRAIN,SOURCEk,DRAINk,IREPLICA,SUB);
   inout  IREPLICA;
 endmodule
 
-module currentlimitfet_282c42a8 (CELPOS,CELSUB,measure_currentlimit,VSENSE,IREPLICA,enable_currentlimit,trim_currentlimit,IP,global_currentlimit,currentlimit_lv,ten_measure_currentlimit,tdi_currentlimitlive,CELG);
+module currentlimitfet_282c42a8 (IP,CELG,CELPOS,CELSUB,VSENSE,IREPLICA,currentlimit_lv,trim_currentlimit,enable_currentlimit,global_currentlimit,measure_currentlimit,tdi_currentlimitlive,ten_measure_currentlimit);
   input  IP;
   input  CELG;
   input  CELPOS;
@@ -86,7 +86,19 @@ module STONEnoconn ( noconn );
 endmodule
 
 
-module fetdriver_19ad8600 (HVPOS,global_fetdriver,fetin,GATE,gate_status,gate_status_vin,CELV,CELG,enable_fetdriver,HVNEG,CELSUB);
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
+module fetdriver_19ad8600 (CELG,CELV,GATE,HVNEG,HVPOS,fetin,CELSUB,gate_status,gate_status_vin,enable_fetdriver,global_fetdriver);
   input  CELG;
   input  CELV;
   output  GATE;
@@ -100,38 +112,19 @@ module fetdriver_19ad8600 (HVPOS,global_fetdriver,fetin,GATE,gate_status,gate_st
   input  global_fetdriver;
 endmodule
 
-//Verilog HDL for "DFT", "DFTtm8d" "functional"
-
-
-module DFTtm8d ( a, ten, tdo, tmi, G, SUB, V, tdi, tma );
-
-  input V;
-  input  [7:0] tma;
-  output  [7:0] ten;
-  output  [1:0] a;
-  inout tdo;
-  input  [7:0] tdi;
-  input G;
-  input SUB;
-  inout  [4:0] tmi;
-endmodule
-
-
 // ------------------------ Module Verilog ---------------
-module DRIVERwaltz0BOTN (SW, tdo, tmi, MUDV, PMUDG, PMUDV, botswon, CELG59462, CELV96848, botswineg, botswipeak, CELSUB40948, botswstatus, botswzcross, enable_driver, IP_945fe712_XU8, IP_a0afb596_XU9, IP_2d447a5c_XU17, trim_currentlimit_2d447a5c, trim_currentlimit_945fe712, trim_currentlimit_a0afb596);
+module DRIVERwaltz0BOTN (SW, MUDV, PMUDG, PMUDV, botswon, CELG59462, CELV96848, botswineg, botswipeak, CELSUB40948, botswstatus, botswzcross, enable_driver, IP_945fe712_XU8, IP_a0afb596_XU9, IP_2d447a5c_XU17, trim_currentlimit_2d447a5c, trim_currentlimit_945fe712, trim_currentlimit_a0afb596);
 inout  SW;
-inout  tdo;
-input [4:0] tmi;
 input  MUDV;
 inout  PMUDG;
-input  PMUDV;
-input  botswon;
+  input  PMUDV;
+  input  botswon;
 input  CELG59462;
 input  CELV96848;
 output  botswineg;
 output  botswipeak;
 input  CELSUB40948;
-output  botswstatus;
+  input  botswstatus;
 output  botswzcross;
 input  enable_driver;
 input  IP_945fe712_XU8;
@@ -143,15 +136,10 @@ input [7:0] trim_currentlimit_a0afb596;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
 wire [7:0] trim_currentlimit_2d447a5c;
 wire [7:0] trim_currentlimit_945fe712;
 wire [7:0] trim_currentlimit_a0afb596;
 wire [7:0] trim_currentlimit;
-wire [1:0] a;
-wire [7:0] tdi;
-wire [7:0] ten;
-wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
 fetdn_d04087c0 XU5 (
@@ -174,10 +162,10 @@ currentlimitfet_3d88f657 XU8 (
 .currentlimit_lv(botswzcross),
 .trim_currentlimit({trim_currentlimit_945fe712[7],trim_currentlimit_945fe712[6],trim_currentlimit_945fe712[5],trim_currentlimit_945fe712[4],trim_currentlimit_945fe712[3],trim_currentlimit_945fe712[2],trim_currentlimit_945fe712[1],trim_currentlimit_945fe712[0]}),
 .enable_currentlimit(enable_driver),
-.global_currentlimit(global_currentlimit_945fe712_XU8),
-.measure_currentlimit(botswstatus),
-.tdi_currentlimitlive(tdi_currentlimitlive_945fe712_XU8),
-.ten_measure_currentlimit(ten_measure_currentlimit_945fe712_XU8)
+.global_currentlimit(tl0),
+.measure_currentlimit(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_XU8_measure_currentlimit),
+.tdi_currentlimitlive(noconn_no_dft_tdi_currentlimitlive2),
+.ten_measure_currentlimit(tl0)
 );
 
 currentlimitfet_2899e616 XU9 (
@@ -190,10 +178,10 @@ currentlimitfet_2899e616 XU9 (
 .currentlimit_lv(botswipeak),
 .trim_currentlimit({trim_currentlimit_a0afb596[7],trim_currentlimit_a0afb596[6],trim_currentlimit_a0afb596[5],trim_currentlimit_a0afb596[4],trim_currentlimit_a0afb596[3],trim_currentlimit_a0afb596[2],trim_currentlimit_a0afb596[1],trim_currentlimit_a0afb596[0]}),
 .enable_currentlimit(enable_driver),
-.global_currentlimit(global_currentlimit_a0afb596_XU9),
-.measure_currentlimit(botswstatus),
-.tdi_currentlimitlive(tdi_currentlimitlive_a0afb596_XU9),
-.ten_measure_currentlimit(ten_measure_currentlimit_a0afb596_XU9)
+.global_currentlimit(tl0),
+.measure_currentlimit(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_XU9_measure_currentlimit),
+.tdi_currentlimitlive(noconn_no_dft_tdi_currentlimitlive3),
+.ten_measure_currentlimit(tl0)
 );
 
 fetdn_359003a8 XU14 (
@@ -226,10 +214,10 @@ currentlimitfet_282c42a8 XU17 (
 .currentlimit_lv(botswineg),
 .trim_currentlimit({trim_currentlimit_2d447a5c[7],trim_currentlimit_2d447a5c[6],trim_currentlimit_2d447a5c[5],trim_currentlimit_2d447a5c[4],trim_currentlimit_2d447a5c[3],trim_currentlimit_2d447a5c[2],trim_currentlimit_2d447a5c[1],trim_currentlimit_2d447a5c[0]}),
 .enable_currentlimit(enable_driver),
-.global_currentlimit(global_currentlimit_2d447a5c_XU17),
-.measure_currentlimit(botswstatus),
-.tdi_currentlimitlive(tdi_currentlimitlive_2d447a5c_XU17),
-.ten_measure_currentlimit(ten_measure_currentlimit_2d447a5c_XU17)
+.global_currentlimit(tl0),
+.measure_currentlimit(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_XU17_measure_currentlimit),
+.tdi_currentlimitlive(noconn_no_dft_tdi_currentlimitlive4),
+.ten_measure_currentlimit(tl0)
 );
 
 STONEnoconn XNC66 (
@@ -248,34 +236,37 @@ STONEnoconn XNC72 (
 .noconn(net_72)
 );
 
+PEBBLEtielo XtieLo (
+.G(CELG59462),
+.V(CELV96848),
+.q(tl0),
+.SUB(CELSUB40948)
+);
+
 fetdriver_19ad8600 Xfetdriver1 (
 .CELG(CELG59462),
 .CELV(CELV96848),
-.GATE(net_114),
-.HVNEG(PMUDG),
-.HVPOS(PMUDV),
-.fetin(botswon),
+.GATE(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_Xfetdriver1_GATE),
+.HVNEG(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_Xfetdriver1_HVNEG),
+.HVPOS(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_Xfetdriver1_HVPOS),
+.fetin(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_Xfetdriver1_fetin),
 .CELSUB(CELSUB40948),
-.gate_status(net_71),
-.gate_status_vin(botswstatus),
-.enable_fetdriver(enable_driver),
-.global_fetdriver(global_fetdriver_bd0adf3c_Xfetdriver1)
+.gate_status(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_Xfetdriver1_gate_status),
+.gate_status_vin(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_Xfetdriver1_gate_status_vin),
+.enable_fetdriver(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_Xfetdriver1_enable_fetdriver),
+.global_fetdriver(tl0)
 );
 
-DFTtm8d dft_hex0x06 (
-.G(CELG59462),
-.V(CELV96848),
-.a({a1,a0}),
-.SUB(CELSUB40948),
-.tdi({a0,a0,a0,a0,a0,tdi_currentlimitlive_a0afb596_XU9,tdi_currentlimitlive_945fe712_XU8,tdi_currentlimitlive_2d447a5c_XU17}),
-.tdo(tdo),
-.ten({noconn_dft_hex0x06_ten_7,global_fetdriver_bd0adf3c_Xfetdriver1,ten_measure_currentlimit_a0afb596_XU9,global_currentlimit_a0afb596_XU9,ten_measure_currentlimit_945fe712_XU8,global_currentlimit_945fe712_XU8,ten_measure_currentlimit_2d447a5c_XU17,global_currentlimit_2d447a5c_XU17}),
-.tma({a0,a0,a0,a0,a0,a1,a1,a0}),
-.tmi(tmi[4:0])
+STONEnoconn XNCnoconn_no_dft_tdi_currentlimitlive2 (
+.noconn(noconn_no_dft_tdi_currentlimitlive2)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x06_ten_7 (
-.noconn(noconn_dft_hex0x06_ten_7)
+STONEnoconn XNCnoconn_no_dft_tdi_currentlimitlive3 (
+.noconn(noconn_no_dft_tdi_currentlimitlive3)
+);
+
+STONEnoconn XNCnoconn_no_dft_tdi_currentlimitlive4 (
+.noconn(noconn_no_dft_tdi_currentlimitlive4)
 );
 
 endmodule

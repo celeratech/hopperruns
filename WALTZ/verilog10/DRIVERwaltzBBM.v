@@ -8,7 +8,7 @@ module VESPAasmINPUT1 (o,i0,Tstate,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module inv_12e192f5 (CELV,CELG,i,o,SUB);
+module inv_12e192f5 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
   input  SUB;
@@ -16,7 +16,7 @@ module inv_12e192f5 (CELV,CELG,i,o,SUB);
   input  CELV;
 endmodule
 
-module dbuf_e926e395 (CELV,CELG,i,o,SUB);
+module dbuf_e926e395 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
   input  SUB;
@@ -24,7 +24,7 @@ module dbuf_e926e395 (CELV,CELG,i,o,SUB);
   input  CELV;
 endmodule
 
-module nor2_ee112582 (CELV,CELG,i0,i1,o,SUB);
+module nor2_ee112582 (o,i0,i1,SUB,CELG,CELV);
   output  o;
   input  i0;
   input  i1;
@@ -33,7 +33,7 @@ module nor2_ee112582 (CELV,CELG,i0,i1,o,SUB);
   input  CELV;
 endmodule
 
-module timingskew_0bb48130 (CELV,in,out,factory_timingskew,CELG,CELSUB);
+module timingskew_0bb48130 (in,out,CELG,CELV,CELSUB,factory_timingskew);
   input  in;
   output  out;
   input  CELG;
@@ -42,7 +42,7 @@ module timingskew_0bb48130 (CELV,in,out,factory_timingskew,CELG,CELSUB);
   input [4:0] factory_timingskew;
 endmodule
 
-module timingskew_afbafd68 (CELV,in,out,factory_timingskew,CELG,CELSUB);
+module timingskew_afbafd68 (in,out,CELG,CELV,CELSUB,factory_timingskew);
   input  in;
   output  out;
   input  CELG;

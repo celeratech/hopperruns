@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module nand3_3e9b0d1d (CELV,CELG,i0,i1,i2,o,SUB);
+module nand3_3e9b0d1d (o,i0,i1,i2,SUB,CELG,CELV);
   output  o;
   input  i0;
   input  i1;
@@ -9,7 +9,7 @@ module nand3_3e9b0d1d (CELV,CELG,i0,i1,i2,o,SUB);
   input  CELV;
 endmodule
 
-module inv_12e192f5 (CELV,CELG,i,o,SUB);
+module inv_12e192f5 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
   input  SUB;

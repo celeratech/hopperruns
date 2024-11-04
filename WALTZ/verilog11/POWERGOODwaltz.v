@@ -1,8 +1,5 @@
 // ------------------------ Module Definitions -----------
-module POWERGOODwaltDEBUG (TAO,tdo,tmi,CELG59462,CELV96848,dft_pgout,CELSUB40948,dft_pgDELAY,fault_short,dft_REFBUFFER,dft_pgSTARTUP,dft_pgDEGLITCH,dft_shortdelay,enable_powergood,hijack_risedelay,hijack_enable_powergood);
-  inout  TAO;
-  inout  tdo;
-  input [4:0] tmi;
+module POWERGOODwaltDEBUG (CELG59462,CELV96848,dft_pgout,CELSUB40948,dft_pgDELAY,fault_short,dft_REFBUFFER,dft_pgSTARTUP,dft_pgDEGLITCH,dft_shortdelay,enable_powergood,hijack_risedelay,hijack_enable_powergood);
   input  CELG59462;
   input  CELV96848;
   input  dft_pgout;
@@ -18,10 +15,8 @@ module POWERGOODwaltDEBUG (TAO,tdo,tmi,CELG59462,CELV96848,dft_pgout,CELSUB40948
   output  hijack_enable_powergood;
 endmodule
 
-module POWERGOODwaltzMAIN (POK,tdo,tmi,MUDV,clock,sense_FB,CELG59462,CELV96848,PORB97836,dft_pgout,CELSUB40948,dft_pgDELAY,fault_short,REF_POWERGOOD,dft_REFBUFFER,dft_pgSTARTUP,dft_pgDEGLITCH,dft_shortdelay,IP_70e67769_XU3,IP_e96a4067_XU8,IP_ddbf938d_XU22,enable_powergood,hijack_risedelay,kelvin_MUDGpowergood);
+module POWERGOODwaltzMAIN (POK,MUDV,clock,sense_FB,CELG59462,CELV96848,PORB97836,dft_pgout,CELSUB40948,dft_pgDELAY,fault_short,REF_POWERGOOD,dft_REFBUFFER,dft_pgSTARTUP,dft_pgDEGLITCH,dft_shortdelay,IP_70e67769_XU3,IP_e96a4067_XU8,IP_ddbf938d_XU22,enable_powergood,hijack_risedelay,kelvin_MUDGpowergood);
   inout  POK;
-  inout  tdo;
-  input [4:0] tmi;
   input  MUDV;
   input  clock;
   input  sense_FB;
@@ -46,11 +41,8 @@ module POWERGOODwaltzMAIN (POK,tdo,tmi,MUDV,clock,sense_FB,CELG59462,CELV96848,P
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module POWERGOODwaltz (POK, TAO, tdo, tmi, MUDV, clock, sense_FB, CELG59462, CELV96848, PORB97836, CELSUB40948, fault_short, REF_POWERGOOD, IP_70e67769_XU3, IP_e96a4067_XU8, IP_ddbf938d_XU22, enable_powergood, kelvin_MUDGpowergood);
+module POWERGOODwaltz (POK, MUDV, clock, sense_FB, CELG59462, CELV96848, PORB97836, CELSUB40948, fault_short, REF_POWERGOOD, IP_70e67769_XU3, IP_e96a4067_XU8, IP_ddbf938d_XU22, enable_powergood, kelvin_MUDGpowergood);
 inout  POK;
-inout  TAO;
-inout  tdo;
-input [4:0] tmi;
 input  MUDV;
 input  clock;
 input  sense_FB;
@@ -68,13 +60,9 @@ inout  kelvin_MUDGpowergood;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
 
 // ------------------------ Networks ---------------------
 POWERGOODwaltDEBUG XDEBUG (
-.TAO(TAO),
-.tdo(tdo),
-.tmi(tmi[4:0]),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .dft_pgout(net_54),
@@ -92,8 +80,6 @@ POWERGOODwaltDEBUG XDEBUG (
 
 POWERGOODwaltzMAIN XMAIN (
 .POK(POK),
-.tdo(tdo),
-.tmi(tmi[4:0]),
 .MUDV(MUDV),
 .clock(clock),
 .sense_FB(sense_FB),

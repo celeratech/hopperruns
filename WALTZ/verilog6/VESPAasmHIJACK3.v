@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module inv_12e192f5 (CELV,CELG,i,o,SUB);
+module inv_12e192f5 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
   input  SUB;
@@ -7,7 +7,7 @@ module inv_12e192f5 (CELV,CELG,i,o,SUB);
   input  CELV;
 endmodule
 
-module nand2_9125fe87 (CELV,CELG,i0,i1,o,SUB);
+module nand2_9125fe87 (o,i0,i1,SUB,CELG,CELV);
   output  o;
   input  i0;
   input  i1;
@@ -16,7 +16,7 @@ module nand2_9125fe87 (CELV,CELG,i0,i1,o,SUB);
   input  CELV;
 endmodule
 
-module dbuf_e926e395 (CELV,CELG,i,o,SUB);
+module dbuf_e926e395 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
   input  SUB;

@@ -1,7 +1,5 @@
 // ------------------------ Module Definitions -----------
-module FAULTMANAGERwaltzDEBUG (tdo,tmi,CELG59462,CELV96848,fault_run,CELSUB40948,blank_fault,fault_short,enable_fault,fault_freeze,hijack_delay,dft_delaySHORT,hijack_blank_fault,hijack_fault_short,hijack_enable_fault,hijack_short_status,hijack_thermal_status,hijack_faultmanager_status);
-  inout  tdo;
-  input [4:0] tmi;
+module FAULTMANAGERwaltzDEBUG (CELG59462,CELV96848,fault_run,CELSUB40948,blank_fault,fault_short,enable_fault,fault_freeze,hijack_delay,dft_delaySHORT,hijack_blank_fault,hijack_fault_short,hijack_enable_fault,hijack_short_status,hijack_thermal_status,hijack_faultmanager_status);
   input  CELG59462;
   input  CELV96848;
   input  fault_run;
@@ -20,8 +18,7 @@ module FAULTMANAGERwaltzDEBUG (tdo,tmi,CELG59462,CELV96848,fault_run,CELSUB40948
   output  hijack_faultmanager_status;
 endmodule
 
-module FAULTMANAGERwaltzMAIN (tmi,MUDV,clock,CELG59462,CELV96848,PORB97836,fault_run,CELBG83021,CELSUB40948,blank_fault,fault_short,mode_hiccup,enable_fault,fault_freeze,hijack_delay,blank_thermal,dft_delaySHORT,IP_7939b03c_XU7,hijack_short_status,hijack_thermal_status,hijack_faultmanager_status,trim_thermal_accuracy_7939b03c);
-  input [4:0] tmi;
+module FAULTMANAGERwaltzMAIN (MUDV,clock,CELG59462,CELV96848,PORB97836,fault_run,CELBG83021,CELSUB40948,blank_fault,fault_short,mode_hiccup,enable_fault,fault_freeze,hijack_delay,blank_thermal,dft_delaySHORT,IP_7939b03c_XU7,hijack_short_status,hijack_thermal_status,hijack_faultmanager_status,trim_thermal_accuracy_7939b03c);
   input  MUDV;
   input  clock;
   input  CELG59462;
@@ -74,8 +71,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module FAULTMANAGERwaltz (tdo, tmi, MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELBG83021, CELSUB40948, blank_fault, fault_short, fault_freeze, IP_7939b03c_XU7, enable_faultmanager);
-inout  tdo;
+module FAULTMANAGERwaltz (tmi, MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELBG83021, CELSUB40948, blank_fault, fault_short, fault_freeze, IP_7939b03c_XU7, enable_faultmanager);
 inout [4:0] tmi;
 input  MUDV;
 input  clock;
@@ -101,8 +97,6 @@ wire [7:0] por0;
 
 // ------------------------ Networks ---------------------
 FAULTMANAGERwaltzDEBUG XDEBUG (
-.tdo(tdo),
-.tmi(tmi[4:0]),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .fault_run(fault_run),
@@ -122,7 +116,6 @@ FAULTMANAGERwaltzDEBUG XDEBUG (
 );
 
 FAULTMANAGERwaltzMAIN XMAIN (
-.tmi(tmi[4:0]),
 .MUDV(MUDV),
 .clock(clock),
 .CELG59462(CELG59462),

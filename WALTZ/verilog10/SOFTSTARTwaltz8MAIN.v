@@ -1,19 +1,19 @@
 // ------------------------ Module Definitions -----------
 module SOFTSTARTwaltzMAINcount (clock,count_0,count_1,count_2,count_3,count_4,count_5,count_6,count_7,halfway,CELG59462,CELV96848,done_count,half_count,CELSUB40948,enable_count);
   input  clock;
-  output  count_0;
-  output  count_1;
-  output  count_2;
-  output  count_3;
-  output  count_4;
-  output  count_5;
-  output  count_6;
-  output  count_7;
+  input  count_0;
+  input  count_1;
+  input  count_2;
+  input  count_3;
+  input  count_4;
+  input  count_5;
+  input  count_6;
+  input  count_7;
   input  halfway;
   input  CELG59462;
   input  CELV96848;
   output  done_count;
-  output  half_count;
+  input  half_count;
   input  CELSUB40948;
   input  enable_count;
 endmodule
@@ -37,7 +37,7 @@ module VESPAasmINPUT2 (o,i0,i1,Tstate,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module amux2_a0dc83ed (CELV,SUB,O,I0,I1,amux,CELG);
+module amux2_a0dc83ed (O,I0,I1,SUB,CELG,CELV,amux);
   output  O;
   input  I0;
   input  I1;
@@ -47,18 +47,16 @@ module amux2_a0dc83ed (CELV,SUB,O,I0,I1,amux,CELG);
   input  amux;
 endmodule
 
-module dff_fc5ad7bd (CELV,CELG,d,rb,ck,q,qb,SUB);
+module dff_fc5ad7bd (d,ck,rb,CELG,CELV,CELSUB);
   input  d;
-  output  q;
   input  ck;
-  output  qb;
   input  rb;
-  input  SUB;
   input  CELG;
   input  CELV;
+  input  CELSUB;
 endmodule
 
-module celeradacr2r_d4e46535 (CELV,global_dac,DAC,ok_dac,i,enable_dac,strobe_dac,DACREF,GNDSENSE,CELG,CELSUB);
+module celeradacr2r_d4e46535 (i,DAC,CELG,CELV,CELSUB,DACREF,ok_dac,GNDSENSE,enable_dac,global_dac,strobe_dac);
   input [7:0] i;
   output  DAC;
   input  CELG;
@@ -72,7 +70,7 @@ module celeradacr2r_d4e46535 (CELV,global_dac,DAC,ok_dac,i,enable_dac,strobe_dac
   input  strobe_dac;
 endmodule
 
-module oscillatorcrude_ff6cda0b (SIMPV,ok_oscillator,osc,global_oscillator,enable_oscillator,IP,CELG,SENSE_G,CELSUB);
+module oscillatorcrude_ff6cda0b (IP,osc,CELG,SIMPV,CELSUB,SENSE_G,ok_oscillator,enable_oscillator,global_oscillator);
   input  IP;
   output  osc;
   input  CELG;
@@ -84,7 +82,7 @@ module oscillatorcrude_ff6cda0b (SIMPV,ok_oscillator,osc,global_oscillator,enabl
   input  global_oscillator;
 endmodule
 
-module inv_12e192f5 (CELV,CELG,i,o,SUB);
+module inv_12e192f5 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
   input  SUB;
@@ -92,7 +90,7 @@ module inv_12e192f5 (CELV,CELG,i,o,SUB);
   input  CELV;
 endmodule
 
-module dbuf_e926e395 (CELV,CELG,i,o,SUB);
+module dbuf_e926e395 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
   input  SUB;
@@ -100,7 +98,7 @@ module dbuf_e926e395 (CELV,CELG,i,o,SUB);
   input  CELV;
 endmodule
 
-module oneshot_9251da09 (CELV,CELG,i,o,SUB);
+module oneshot_9251da09 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
   input  SUB;
@@ -108,7 +106,7 @@ module oneshot_9251da09 (CELV,CELG,i,o,SUB);
   input  CELV;
 endmodule
 
-module switchpullup_a01cd9ef (CELV,O,enable_switch,CELG,CELSUB);
+module switchpullup_a01cd9ef (O,CELG,CELV,CELSUB,enable_switch);
   inout  O;
   input  CELG;
   input  CELV;
@@ -116,7 +114,7 @@ module switchpullup_a01cd9ef (CELV,O,enable_switch,CELG,CELSUB);
   input  enable_switch;
 endmodule
 
-module nor2_ee112582 (CELV,CELG,i0,i1,o,SUB);
+module nor2_ee112582 (o,i0,i1,SUB,CELG,CELV);
   output  o;
   input  i0;
   input  i1;
@@ -138,35 +136,22 @@ module PEBBLEdbuf ( o, G, SUB, V, i );
 endmodule
 
 
-//Verilog HDL for "DFT", "DFTtm8t" "functional"
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
 
 
-module DFTtm8t ( a, ten, tmi, G, SUB, V, tma );
+module PEBBLEtielo ( q, G, SUB, V );
 
   input V;
-  input  [7:0] tma;
-  output  [7:0] ten;
-  output  [1:0] a;
+  output q;
   input G;
   input SUB;
-  inout  [4:0] tmi;
-endmodule
-
-
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
 endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SOFTSTARTwaltz8MAIN (SS, REF, tmi, MUDV, halfway, CELG59462, CELV96848, dft_clock, CELSUB40948, enable_brick, softstart_1ms, done_softstart, IP_2f5a8499_XU9, SENSE_G_2f5a8499, enable_softstart, kelvin_MUDGsoftstart);
+module SOFTSTARTwaltz8MAIN (SS, REF, MUDV, halfway, CELG59462, CELV96848, dft_clock, CELSUB40948, enable_brick, softstart_1ms, done_softstart, IP_2f5a8499_XU9, SENSE_G_2f5a8499, enable_softstart, kelvin_MUDGsoftstart);
 output  SS;
 input  REF;
-input [4:0] tmi;
 input  MUDV;
 input  halfway;
 input  CELG59462;
@@ -183,11 +168,7 @@ input  kelvin_MUDGsoftstart;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
 wire [7:0] i;
-wire [1:0] a;
-wire [7:0] ten;
-wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
 SOFTSTARTwaltzMAINcount XCOUNT (
@@ -249,13 +230,11 @@ amux2_a0dc83ed XU3 (
 
 dff_fc5ad7bd XU4 (
 .d(net_137),
-.q(net_138),
 .ck(net_135),
-.qb(net_137),
 .rb(net_123),
-.SUB(CELSUB40948),
 .CELG(CELG59462),
-.CELV(CELV96848)
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 celeradacr2r_d4e46535 XU5 (
@@ -268,7 +247,7 @@ celeradacr2r_d4e46535 XU5 (
 .ok_dac(net_128),
 .GNDSENSE(kelvin_MUDGsoftstart),
 .enable_dac(enable_softstart),
-.global_dac(global_dac_0cc08401_XU5),
+.global_dac(tl0),
 .strobe_dac(net_124)
 );
 
@@ -281,7 +260,7 @@ oscillatorcrude_ff6cda0b XU9 (
 .SENSE_G(SENSE_G_2f5a8499),
 .ok_oscillator(net_123),
 .enable_oscillator(enable_softstart),
-.global_oscillator(global_oscillator_2f5a8499_XU9)
+.global_oscillator(tl0)
 );
 
 inv_12e192f5 XU10 (
@@ -302,13 +281,11 @@ inv_12e192f5 XU12 (
 
 dff_fc5ad7bd XU13 (
 .d(net_139),
-.q(net_133),
 .ck(net_138),
-.qb(net_139),
 .rb(net_123),
-.SUB(CELSUB40948),
 .CELG(CELG59462),
-.CELV(CELV96848)
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 amux2_a0dc83ed XU14 (
@@ -364,13 +341,11 @@ nor2_ee112582 XU25 (
 
 dff_fc5ad7bd XU26 (
 .d(enable_softstart),
-.q(net_130),
 .ck(net_125),
-.qb(net_131),
 .rb(net_132),
-.SUB(CELSUB40948),
 .CELG(CELG59462),
-.CELV(CELV96848)
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 dbuf_e926e395 XU27 (
@@ -406,38 +381,11 @@ PEBBLEdbuf XDBUF1 (
 .SUB(CELSUB40948)
 );
 
-DFTtm8t dft_hex0x19 (
+PEBBLEtielo XtieLo (
 .G(CELG59462),
 .V(CELV96848),
-.a({a1,a0}),
-.SUB(CELSUB40948),
-.ten({noconn_dft_hex0x19_ten_7,noconn_dft_hex0x19_ten_6,noconn_dft_hex0x19_ten_5,noconn_dft_hex0x19_ten_4,noconn_dft_hex0x19_ten_3,noconn_dft_hex0x19_ten_2,global_oscillator_2f5a8499_XU9,global_dac_0cc08401_XU5}),
-.tma({a0,a0,a0,a1,a1,a0,a0,a1}),
-.tmi(tmi[4:0])
-);
-
-STONEnoconn XNCnoconn_dft_hex0x19_ten_2 (
-.noconn(noconn_dft_hex0x19_ten_2)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x19_ten_3 (
-.noconn(noconn_dft_hex0x19_ten_3)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x19_ten_4 (
-.noconn(noconn_dft_hex0x19_ten_4)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x19_ten_5 (
-.noconn(noconn_dft_hex0x19_ten_5)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x19_ten_6 (
-.noconn(noconn_dft_hex0x19_ten_6)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x19_ten_7 (
-.noconn(noconn_dft_hex0x19_ten_7)
+.q(tl0),
+.SUB(CELSUB40948)
 );
 
 endmodule

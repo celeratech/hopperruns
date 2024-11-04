@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module inv_12e192f5 (CELV,CELG,i,o,SUB);
+module inv_12e192f5 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
   input  SUB;
@@ -7,7 +7,7 @@ module inv_12e192f5 (CELV,CELG,i,o,SUB);
   input  CELV;
 endmodule
 
-module nor2_ee112582 (CELV,CELG,i0,i1,o,SUB);
+module nor2_ee112582 (o,i0,i1,SUB,CELG,CELV);
   output  o;
   input  i0;
   input  i1;
@@ -16,7 +16,7 @@ module nor2_ee112582 (CELV,CELG,i0,i1,o,SUB);
   input  CELV;
 endmodule
 
-module delayfixed_cf78160c (CELV,i,o,CELG,CELSUB);
+module delayfixed_cf78160c (i,o,CELG,CELV,CELSUB);
   input  i;
   output  o;
   input  CELG;
@@ -24,7 +24,7 @@ module delayfixed_cf78160c (CELV,i,o,CELG,CELSUB);
   input  CELSUB;
 endmodule
 
-module dbuf_e926e395 (CELV,CELG,i,o,SUB);
+module dbuf_e926e395 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
   input  SUB;

@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module srlatch_39d292e9 (CELV,CELG,s,r,rb,q,qb,SUB);
+module srlatch_39d292e9 (q,r,s,qb,rb,SUB,CELG,CELV);
   output  q;
   input  r;
   input  s;
@@ -10,7 +10,7 @@ module srlatch_39d292e9 (CELV,CELG,s,r,rb,q,qb,SUB);
   input  CELV;
 endmodule
 
-module inv_12e192f5 (CELV,CELG,i,o,SUB);
+module inv_12e192f5 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
   input  SUB;
@@ -18,7 +18,7 @@ module inv_12e192f5 (CELV,CELG,i,o,SUB);
   input  CELV;
 endmodule
 
-module nand2_9125fe87 (CELV,CELG,i0,i1,o,SUB);
+module nand2_9125fe87 (o,i0,i1,SUB,CELG,CELV);
   output  o;
   input  i0;
   input  i1;
@@ -27,7 +27,7 @@ module nand2_9125fe87 (CELV,CELG,i0,i1,o,SUB);
   input  CELV;
 endmodule
 
-module tie_9e2c0894 (CELV,CELG,a0,SUB);
+module tie_9e2c0894 (a0,SUB,CELG,CELV);
   output  a0;
   input  SUB;
   input  CELG;

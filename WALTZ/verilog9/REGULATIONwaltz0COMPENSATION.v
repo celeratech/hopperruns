@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module resistor_ffe18c73 (RP,CELV,CELG,CELSUB,adjust_resistor,RN);
+module resistor_ffe18c73 (RN,RP,CELG,CELV,CELSUB,adjust_resistor);
   inout  RN;
   inout  RP;
   input  CELG;
@@ -8,7 +8,7 @@ module resistor_ffe18c73 (RP,CELV,CELG,CELSUB,adjust_resistor,RN);
   input [2:0] adjust_resistor;
 endmodule
 
-module resistor_5ba04093 (RP,CELV,CELG,CELSUB,adjust_resistor,RN);
+module resistor_5ba04093 (RN,RP,CELG,CELV,CELSUB,adjust_resistor);
   inout  RN;
   inout  RP;
   input  CELG;
@@ -17,7 +17,7 @@ module resistor_5ba04093 (RP,CELV,CELG,CELSUB,adjust_resistor,RN);
   input [1:0] adjust_resistor;
 endmodule
 
-module switchpulldown_00288888 (CELV,O,enable_switchb,CELG,CELSUB);
+module switchpulldown_00288888 (O,CELG,CELV,CELSUB,enable_switchb);
   inout  O;
   input  CELG;
   input  CELV;
@@ -25,12 +25,12 @@ module switchpulldown_00288888 (CELV,O,enable_switchb,CELG,CELSUB);
   input  enable_switchb;
 endmodule
 
-module capacitorfixed_cbed1b77 (CP,CN);
+module capacitorfixed_cbed1b77 (CN,CP);
   inout  CN;
   inout  CP;
 endmodule
 
-module capacitoradj_739bba44 (CP,CELV,CELG,CELSUB,capacitoradjust,CN);
+module capacitoradj_739bba44 (CN,CP,CELG,CELV,CELSUB,capacitoradjust);
   inout  CN;
   inout  CP;
   input  CELG;

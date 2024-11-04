@@ -15,7 +15,7 @@ module VESPAasmBLANK8 (o,i0,i1,i2,i3,i4,i5,i6,i7,Tstate,CELG59462,CELV96848,CELS
   input  CELSUB40948;
 endmodule
 
-module srlatch_39d292e9 (CELV,CELG,s,r,rb,q,qb,SUB);
+module srlatch_39d292e9 (q,r,s,qb,rb,SUB,CELG,CELV);
   output  q;
   input  r;
   input  s;
@@ -26,7 +26,7 @@ module srlatch_39d292e9 (CELV,CELG,s,r,rb,q,qb,SUB);
   input  CELV;
 endmodule
 
-module tie_9e2c0894 (CELV,CELG,a0,SUB);
+module tie_9e2c0894 (a0,SUB,CELG,CELV);
   output  a0;
   input  SUB;
   input  CELG;

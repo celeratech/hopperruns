@@ -12,7 +12,7 @@ endmodule
 
 module VESPAclockSYNC (din,out,clock,state,CELG59462,CELV96848,CELSUB40948);
   input  din;
-  output  out;
+  input  out;
   input  clock;
   input  state;
   input  CELG59462;
@@ -294,7 +294,7 @@ module VESPAasmOUTPUT3_0 (o,tstate0,tstate1,tstate2,CELG59462,CELV96848,CELSUB40
   input  CELSUB40948;
 endmodule
 
-module inv_12e192f5 (CELV,CELG,i,o,SUB);
+module inv_12e192f5 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
   input  SUB;
@@ -302,7 +302,7 @@ module inv_12e192f5 (CELV,CELG,i,o,SUB);
   input  CELV;
 endmodule
 
-module delayfixed_a1102ff4 (CELV,i,o,CELG,CELSUB);
+module delayfixed_a1102ff4 (i,o,CELG,CELV,CELSUB);
   input  i;
   output  o;
   input  CELG;
@@ -310,7 +310,7 @@ module delayfixed_a1102ff4 (CELV,i,o,CELG,CELSUB);
   input  CELSUB;
 endmodule
 
-module delayfixed_4c9b837a (CELV,i,o,CELG,CELSUB);
+module delayfixed_4c9b837a (i,o,CELG,CELV,CELSUB);
   input  i;
   output  o;
   input  CELG;
@@ -318,7 +318,7 @@ module delayfixed_4c9b837a (CELV,i,o,CELG,CELSUB);
   input  CELSUB;
 endmodule
 
-module delayfixed_2f9b06c1 (CELV,i,o,CELG,CELSUB);
+module delayfixed_2f9b06c1 (i,o,CELG,CELV,CELSUB);
   input  i;
   output  o;
   input  CELG;
@@ -326,7 +326,7 @@ module delayfixed_2f9b06c1 (CELV,i,o,CELG,CELSUB);
   input  CELSUB;
 endmodule
 
-module delayfixed_a42d648b (CELV,i,o,CELG,CELSUB);
+module delayfixed_a42d648b (i,o,CELG,CELV,CELSUB);
   input  i;
   output  o;
   input  CELG;
@@ -334,7 +334,7 @@ module delayfixed_a42d648b (CELV,i,o,CELG,CELSUB);
   input  CELSUB;
 endmodule
 
-module delayfixed_db2ae1c9 (CELV,i,o,CELG,CELSUB);
+module delayfixed_db2ae1c9 (i,o,CELG,CELV,CELSUB);
   input  i;
   output  o;
   input  CELG;
@@ -354,8 +354,8 @@ output  READY;
 output  BOTTOM;
 output  POWERUP;
 output  REFRESH;
-output  top3SYNC;
-output  top4SYNC;
+input  top3SYNC;
+input  top4SYNC;
 input  CELG59462;
 input  CELV96848;
 output  TOPdelayi;
@@ -363,8 +363,8 @@ input  bbm_topon;
 input  go_driver;
 input  ipeak_top;
 input  ok_driver;
-output  top6aSYNC;
-output  top6bSYNC;
+input  top6aSYNC;
+input  top6bSYNC;
 output  top_switch;
 input  CELSUB40948;
 input  enableFAULT;

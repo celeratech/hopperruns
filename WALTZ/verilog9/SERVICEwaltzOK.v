@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module inv_12e192f5 (CELV,CELG,i,o,SUB);
+module inv_12e192f5 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
   input  SUB;
@@ -7,7 +7,7 @@ module inv_12e192f5 (CELV,CELG,i,o,SUB);
   input  CELV;
 endmodule
 
-module nor2_ee112582 (CELV,CELG,i0,i1,o,SUB);
+module nor2_ee112582 (o,i0,i1,SUB,CELG,CELV);
   output  o;
   input  i0;
   input  i1;
@@ -16,7 +16,7 @@ module nor2_ee112582 (CELV,CELG,i0,i1,o,SUB);
   input  CELV;
 endmodule
 
-module nand2_9125fe87 (CELV,CELG,i0,i1,o,SUB);
+module nand2_9125fe87 (o,i0,i1,SUB,CELG,CELV);
   output  o;
   input  i0;
   input  i1;
@@ -25,7 +25,7 @@ module nand2_9125fe87 (CELV,CELG,i0,i1,o,SUB);
   input  CELV;
 endmodule
 
-module delayfixed_29084986 (CELV,i,o,CELG,CELSUB);
+module delayfixed_29084986 (i,o,CELG,CELV,CELSUB);
   input  i;
   output  o;
   input  CELG;
@@ -33,7 +33,7 @@ module delayfixed_29084986 (CELV,i,o,CELG,CELSUB);
   input  CELSUB;
 endmodule
 
-module delayfixed_43e73311 (CELV,i,o,CELG,CELSUB);
+module delayfixed_43e73311 (i,o,CELG,CELV,CELSUB);
   input  i;
   output  o;
   input  CELG;
@@ -41,7 +41,7 @@ module delayfixed_43e73311 (CELV,i,o,CELG,CELSUB);
   input  CELSUB;
 endmodule
 
-module srlatch_39d292e9 (CELV,CELG,s,r,rb,q,qb,SUB);
+module srlatch_39d292e9 (q,r,s,qb,rb,SUB,CELG,CELV);
   output  q;
   input  r;
   input  s;
