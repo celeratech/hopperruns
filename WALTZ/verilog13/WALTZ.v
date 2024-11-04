@@ -212,7 +212,7 @@ WALTZceleraSERDES XceleraSERDES (
 );
 
 STONEnoconn XNCunlock (
-.noconn(unlock)
+.noconn(unlock_XNCunlock)
 );
 
 STONEnoconn XNCotp_done (
