@@ -7,7 +7,7 @@ module FORCE_PADDIGITALOUTtest (IN,GND,SIMPV,en_out,register_en_out_6cef8440_Xd_
   input  register_en_out_6cef8440_Xd_en_out;
 endmodule
 
-module PADDIGITALOUTtest (IN,GND,tmi,SIMPV,TAEXT,tdext,en_out,CELG59462,CELV96848,SIMPV96848,CELSUB40948);
+module PADDIGITALOUTtest (IN,GND,tmi,SIMPV,TAEXT,tdext,en_out,CELG59462,CELV96848,CELSUB40948);
   input  IN;
   input  GND;
   input [4:0] tmi;
@@ -17,7 +17,6 @@ module PADDIGITALOUTtest (IN,GND,tmi,SIMPV,TAEXT,tdext,en_out,CELG59462,CELV9684
   input  en_out;
   input  CELG59462;
   input  CELV96848;
-  input  SIMPV96848;
   input  CELSUB40948;
 endmodule
 
@@ -55,7 +54,6 @@ PADDIGITALOUTtest XPADDIGITALOUTtest1 (
 .en_out(net_11),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.SIMPV96848(SIMPV96848),
 .CELSUB40948(CELSUB40948)
 );
 
