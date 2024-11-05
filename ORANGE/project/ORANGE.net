@@ -1,0 +1,1103 @@
+* Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\verification\sim_ORANGE.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map LED00 88
+.node_map LED01 87
+.node_map LED02 86
+.node_map POS0 96
+.node_map POS1 97
+.node_map POS2 98
+.node_map POS3 99
+.node_map POS4 94
+.node_map POS5 93
+.node_map POS6 92
+.node_map POS7 90
+.node_map SGND 95
+.node_map LED10 85
+.node_map LED11 84
+.node_map LED12 83
+.node_map VCC 89
+.node_map NEG0 100
+.node_map NEG1 101
+.node_map NEG2 102
+.node_map NEG3 103
+.node_map OUTp0 79
+.node_map OUTp1 81
+.node_map OUTn0 80
+.node_map OUTn1 82
+.node_map GND 91
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+.tran 300u 0
+
+.globalvar VIN = 5.0
+.globalvar REF = 1.0
+.globalvar tdext_khz=10
+
+X$ORANGE 88 87 86 79 80 81 82 85 89 84 91 83 90 92 93 94 95 96 100 97 101 98 102 99 103 ORANGE
+E$Probe1$TP_DIFFPRB 104 0 79 80 1 
+.PRINT V(104)
+.graph :104 axisType="auto" persistence=-1 curveLabel="OUT0" analysis="tran|pop" xLog="auto" yLog="auto"  nowarn=true disabled=false 
+E$Probe2$TP_DIFFPRB 105 0 81 82 1 
+.PRINT V(105)
+.graph :105 axisType="auto" persistence=-1 curveLabel="OUT1" analysis="tran|pop" xLog="auto" yLog="auto"  nowarn=true disabled=false 
+.PRINT V(#LED12)
+.GRAPH :#LED12 curveLabel= LED12 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe3  
+.PRINT V(#LED11)
+.GRAPH :#LED11 curveLabel= LED11 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe4  
+.PRINT V(#LED10)
+.GRAPH :#LED10 curveLabel= LED10 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe5  
+.PRINT V(#LED02)
+.GRAPH :#LED02 curveLabel= LED02 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe6  
+.PRINT V(#LED01)
+.GRAPH :#LED01 curveLabel= LED01 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe7  
+.PRINT V(#LED00)
+.GRAPH :#LED00 curveLabel= LED00 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe8  
+X$U1 78 celera vars: simulation_module='name' status='dev' simulation='typical'
+X$U10 88 0 RWLSMCW vars: Package='0803' Partnumber='150080RS75000'
+X$U2 86 0 RWLSMCW vars: Package='0803' Partnumber='150080RS75000'
+X$U3 85 0 RWLSMCW vars: Package='0803' Partnumber='150080RS75000'
+X$U4 84 0 RWLSMCW vars: Package='0803' Partnumber='150080RS75000'
+X$U5 83 0 RWLSMCW vars: Package='0803' Partnumber='150080RS75000'
+X$U9 87 0 RWLSMCW vars: Package='0803' Partnumber='150080RS75000'
+V1 89 0 PWL NSEG=2 X0=0 Y0=0 X1=10u Y1=0 X2=20u Y2={VIN} 
+V10 90 0 PWL NSEG=2 X0=0 Y0=0 X1=5u Y1=0 X2=10u Y2=2 
+V11 91 0 PWL NSEG=2 X0=0 Y0=0 X1=10u Y1=0 X2=20u Y2=0 
+V12 96 0 PWL NSEG=2 X0=0 Y0=0 X1=5u Y1=0 X2=10u Y2=0.25 
+V16 98 0 PWL NSEG=2 X0=0 Y0=0 X1=5u Y1=0 X2=10u Y2=0.75 
+V17 102 0 PWL NSEG=2 X0=0 Y0=0 X1=5u Y1=0 X2=10u Y2=0 
+V18 101 0 PWL NSEG=2 X0=0 Y0=0 X1=5u Y1=0 X2=10u Y2=0 
+X$V19 97 0 SQU_SOURCE vars: _V1=0 _V2=500m _FREQ=500k _DELAY=200u _DRATIOx100=50 _T_RISE=0 _T_FALL=0 _DAMP_COEF=0 _PWIDTH=1u _OFF_UNTIL_DELAY=1 _IDLE_IN_POP=0 _USEPHASE=0 _PHASE=200u
+V2 94 0 PWL NSEG=2 X0=0 Y0=0 X1=5u Y1=0 X2=10u Y2=1.25 
+V20 100 0 PWL NSEG=2 X0=0 Y0=0 X1=5u Y1=0 X2=10u Y2=0 
+V21 103 0 PWL NSEG=2 X0=0 Y0=0 X1=5u Y1=0 X2=10u Y2=0 
+V22 99 0 PWL NSEG=2 X0=0 Y0=0 X1=5u Y1=0 X2=10u Y2=1 
+V3 95 0 PWL NSEG=2 X0=0 Y0=0 X1=5u Y1=0 X2=10u Y2=0 
+V4 93 0 PWL NSEG=2 X0=0 Y0=0 X1=5u Y1=0 X2=10u Y2=1.5 
+V5 92 0 PWL NSEG=2 X0=0 Y0=0 X1=5u Y1=0 X2=10u Y2=1.75 
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\ORANGE.sxcmp
+.subckt ORANGE 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138
+*#hierarchy
+.node_map LED00 114
+.node_map LED01 115
+.node_map LED02 116
+.node_map PVCC 139
+.node_map kelvin_GNDservice 141
+.node_map sense_SGNDpositive4 143
+.node_map sense_SGNDpositive5 144
+.node_map sense_SGNDpositive6 145
+.node_map POS0 131
+.node_map POS1 133
+.node_map POS2 135
+.node_map POS3 137
+.node_map POS4 126
+.node_map POS5 127
+.node_map POS6 128
+.node_map POS7 129
+.node_map SGND 130
+.node_map LED10 121
+.node_map LED11 123
+.node_map LED12 125
+.node_map VCC 122
+.node_map kelvin_VCCservice 140
+.node_map NEG0 132
+.node_map NEG1 134
+.node_map NEG2 136
+.node_map NEG3 138
+.node_map OUTp0 117
+.node_map OUTp1 119
+.node_map OUTn0 118
+.node_map OUTn1 120
+.node_map GND 124
+.node_map kelvin_GNDthermometer 142
+X$MAIN 122 139 114 140 115 116 131 132 117 133 118 134 119 135 120 136 121 137 123 138 125 126 127 128 129 143 144 145 145 141 142 MAINorange
+X$RING 114 116 118 120 115 117 119 121 123 139 122 125 140 129 124 128 141 127 126 130 132 134 136 138 135 137 131 133 142 143 144 145 RINGorange
+X$U1 122 pinprobe vars: pinprobe_description='Input_Supply' pinprobe_mode='tbd' pinprobe_input='pad' pinprobe_output='tbd'
+X$U10 121 pinprobe vars: pinprobe_description='Channel1_LED0_indicator' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='pad'
+X$U11 123 pinprobe vars: pinprobe_description='Channel1_LED1_indicator' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='pad'
+X$U12 125 pinprobe vars: pinprobe_description='Channel1_LED2_indicator' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='pad'
+X$U13 126 pinprobe vars: pinprobe_description='Channel4_positive_input' pinprobe_mode='tbd' pinprobe_input='pad' pinprobe_output='pad'
+X$U14 127 pinprobe vars: pinprobe_description='Channel5_positive_input' pinprobe_mode='tbd' pinprobe_input='pad' pinprobe_output='tbd'
+X$U15 128 pinprobe vars: pinprobe_description='Channel6_positive_input' pinprobe_mode='tbd' pinprobe_input='pad' pinprobe_output='tbd'
+X$U16 129 pinprobe vars: pinprobe_description='Channel7_positive_input' pinprobe_mode='tbd' pinprobe_input='pad' pinprobe_output='tbd'
+X$U17 130 pinprobe vars: pinprobe_description='Channel_reference_ground' pinprobe_mode='tbd' pinprobe_input='pad' pinprobe_output='tbd'
+X$U18 131 pinprobe vars: pinprobe_description='Channel0_Positive_input' pinprobe_mode='tbd' pinprobe_input='pad' pinprobe_output='tbd'
+X$U19 132 pinprobe vars: pinprobe_description='Channel0_Negative_input' pinprobe_mode='tbd' pinprobe_input='pad' pinprobe_output='tbd'
+X$U2 124 pinprobe vars: pinprobe_description='Analog_ground' pinprobe_mode='tbd' pinprobe_input='pad' pinprobe_output='tbd'
+X$U20 133 pinprobe vars: pinprobe_description='Channel1_Positive_input' pinprobe_mode='tbd' pinprobe_input='pad' pinprobe_output='tbd'
+X$U21 134 pinprobe vars: pinprobe_description='Channel1_negative_input' pinprobe_mode='tbd' pinprobe_input='pad' pinprobe_output='tbd'
+X$U22 135 pinprobe vars: pinprobe_description='Channel2_Positive_input' pinprobe_mode='tbd' pinprobe_input='pad' pinprobe_output='tbd'
+X$U23 136 pinprobe vars: pinprobe_description='Channel2_Negative_input' pinprobe_mode='tbd' pinprobe_input='pad' pinprobe_output='tbd'
+X$U24 137 pinprobe vars: pinprobe_description='Channel3_positive_input' pinprobe_mode='tbd' pinprobe_input='pad' pinprobe_output='tbd'
+X$U25 138 pinprobe vars: pinprobe_description='Channel3_Negative_input' pinprobe_mode='tbd' pinprobe_input='pad' pinprobe_output='tbd'
+X$U3 114 pinprobe vars: pinprobe_description='Channel0_LED0_indicator' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='pad'
+X$U4 115 pinprobe vars: pinprobe_description='Channel0_LED1_indicator' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='pad'
+X$U5 116 pinprobe vars: pinprobe_description='Channel0_LED2_indicator' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='pad'
+X$U6 117 pinprobe vars: pinprobe_description='Channel0_Output_positive' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='pad'
+X$U7 118 pinprobe vars: pinprobe_description='Channel_Output_negative' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='pad'
+X$U8 119 pinprobe vars: pinprobe_description='Channel1_output_positive' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='pad'
+X$U9 120 pinprobe vars: pinprobe_description='Channel1_Output_negative' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='pad'
+.ends ORANGE
+
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\MAINorange.sxcmp
+.subckt MAINorange 128 130 129 133 131 132 135 137 134 139 136 141 138 142 140 144 143 146 145 148 147 149 150 151 152 153 154 155 156 157 158
+*#hierarchy
+.node_map LED00 129
+.node_map LED01 131
+.node_map LED02 132
+.node_map enable_service 160
+.node_map PVCC 130
+.node_map kelvin_GNDservice 157
+.node_map REF 161
+.node_map POS0 135
+.node_map POS1 139
+.node_map POS2 142
+.node_map CHANNEL0configuration$0 120
+.node_map POS3 146
+.node_map CHANNEL0configuration$1 121
+.node_map POS4 149
+.node_map CHANNEL0configuration$2 122
+.node_map POS5 150
+.node_map CHANNEL0configuration$3 123
+.node_map POS6 151
+.node_map POS7 152
+.node_map LED10 143
+.node_map LED11 145
+.node_map LED12 147
+.node_map VCC 128
+.node_map kelvin_VCCservice 133
+.node_map ok_service 159
+.node_map NEG0 137
+.node_map NEG1 141
+.node_map NEG2 144
+.node_map NEG3 148
+.node_map OUTp0 134
+.node_map OUTp1 138
+.node_map OUTn0 136
+.node_map OUTn1 140
+.node_map sense_SGNDpos4 153
+.node_map sense_SGNDpos5 154
+.node_map sense_SGNDpos6 155
+.node_map kelvin_GNDthermometer 158
+.node_map sense_SGNDpos7 156
+.node_map THERMOMETERconfiguration$0 118
+.node_map THERMOMETERconfiguration$1 119
+.node_map CHANNEL1configuration$0 124
+.node_map CHANNEL1configuration$1 125
+.node_map CHANNEL1configuration$2 126
+.node_map CHANNEL1configuration$3 127
+X$ENABLE 159 118 119 120 121 122 123 124 125 126 127 160 ENABLEorange
+X$LED0 130 129 120 121 122 123 131 132 LEDorange
+X$LED1 130 143 124 125 126 127 145 147 LEDorange
+X$SELECT0 135 134 137 136 139 141 142 144 146 148 149 153 150 154 151 155 152 156 120 121 122 123 SELECTorange
+X$SELECT1 135 138 137 140 139 141 142 144 146 148 149 153 150 154 151 155 152 156 124 125 126 127 SELECTorange
+X$SERVICE 128 161 133 159 160 157 SERVICEorange
+X$THERMOMETER 128 161 118 119 158 THERMOMETERorange
+X$U1 133 pinprobe vars: pinprobe_description='Input_Supply_kelvin_input_SERVICE'
+X$U2 158 pinprobe vars: pinprobe_description='Grpund_kelvin_input_THERMOMETER'
+X$U3 157 pinprobe vars: pinprobe_description='Grpund_kelvin_input_SERVICE'
+X$U4 153 pinprobe vars: pinprobe_description='Ground_sense_input_POS4'
+X$U5 154 pinprobe vars: pinprobe_description='Ground_sense_input_POS5'
+X$U58 151 pinprobe vars: pinprobe_description='Channel6_positive_input'
+X$U59 128 pinprobe vars: pinprobe_description='Input_Supply'
+X$U6 155 pinprobe vars: pinprobe_description='Ground_sense_input_POS6'
+X$U61 143 pinprobe vars: pinprobe_description='Channel1_LED0_indicator'
+X$U63 141 pinprobe vars: pinprobe_description='Channel1_negative_input'
+X$U68 146 pinprobe vars: pinprobe_description='Channel3_positive_input'
+X$U69 134 pinprobe vars: pinprobe_description='Channel0_Output_positive'
+X$U7 156 pinprobe vars: pinprobe_description='Ground_sense_input_POS7'
+X$U71 149 pinprobe vars: pinprobe_description='Channel4_positive_input'
+X$U72 145 pinprobe vars: pinprobe_description='Channel1_LED1_indicator'
+X$U74 139 pinprobe vars: pinprobe_description='Channel1_Positive_input'
+X$U79 131 pinprobe vars: pinprobe_description='Channel0_LED1_indicator'
+X$U8 130 pinprobe vars: pinprobe_description='Input_Supply_power_input' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U80 144 pinprobe vars: pinprobe_description='Channel2_Negative_input'
+X$U81 147 pinprobe vars: pinprobe_description='Channel1_LED2_indicator'
+X$U82 135 pinprobe vars: pinprobe_description='Channel0_Positive_input'
+X$U83 142 pinprobe vars: pinprobe_description='Channel2_Positive_input'
+X$U86 132 pinprobe vars: pinprobe_description='Channel0_LED2_indicator'
+X$U88 137 pinprobe vars: pinprobe_description='Channel0_Negative_input'
+X$U90 136 pinprobe vars: pinprobe_description='Channel_Output_negative'
+X$U93 148 pinprobe vars: pinprobe_description='Channel3_Negative_input'
+X$U94 138 pinprobe vars: pinprobe_description='Channel1_output_positive'
+X$U95 140 pinprobe vars: pinprobe_description='Channel1_Output_negative'
+X$U96 150 pinprobe vars: pinprobe_description='Channel5_positive_input'
+X$U97 129 pinprobe vars: pinprobe_description='Channel0_LED0_indicator'
+X$U99 152 pinprobe vars: pinprobe_description='Channel7_positive_input'
+.ends MAINorange
+
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\ENABLEorange.sxcmp
+.subckt ENABLEorange 36 26 27 28 29 30 31 32 33 34 35 37
+*#hierarchy
+.node_map hijack_ok_service 38
+.node_map enable_service 37
+.node_map dft_enable_channel0 39
+.node_map dft_enable_thermometer 41
+.node_map dft_enable_channel1 40
+.node_map CHANNEL0configuration$0 28
+.node_map CHANNEL0configuration$1 29
+.node_map CHANNEL0configuration$2 30
+.node_map CHANNEL0configuration$3 31
+.node_map ok_service 36
+.node_map THERMOMETERconfiguration$0 26
+.node_map THERMOMETERconfiguration$1 27
+.node_map CHANNEL1configuration$0 32
+.node_map CHANNEL1configuration$1 33
+.node_map dft_measure_thermometer 42
+.node_map CHANNEL1configuration$2 34
+.node_map CHANNEL1configuration$3 35
+X$DEBUG 36 39 40 41 42 38 ENABLEorangeDEBUG
+X$MAIN 38 26 27 28 29 30 31 32 33 34 35 39 40 41 42 37 ENABLEorangeMAIN
+X$U1 36 pinprobe vars: pinprobe_description='SERVICE_Module_enabled_ready' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U2 37 pinprobe vars: pinprobe_description='Enable_SERVICE_module' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 26 pinprobe vars: pinprobe_description='Thermometer_control' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 28 pinprobe vars: pinprobe_description='Channel0_control' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 32 pinprobe vars: pinprobe_description='Channel1_control' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+.ends ENABLEorange
+
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\ENABLEorangeDEBUG.sxcmp
+.subckt ENABLEorangeDEBUG 19 21 22 23 24 20
+*#hierarchy
+.node_map hijack_ok_service 20
+.node_map enable_channel0 21
+.node_map enable_thermometer 23
+.node_map enable_channel1 22
+.node_map measure_thermometer 24
+.node_map ok_service 19
+X$U1 19 20 dfthijack vars: dfthijack_name='HIJACKokmeasure' dfthijack_description='Hijack_OKmeasure' dfthijack_enable='no' dfthijack_output='low' dfthijack_state='logic' dfthijack_vmax=6 dfthijack_comment=1
+X$U16 24 pinprobe vars: pinprobe_description='Measure_thermometer'
+X$U17 23 pinprobe vars: pinprobe_description='Enable_Thermometer_brick'
+X$U18 21 pinprobe vars: pinprobe_description='Enable_Channel0_Brick'
+X$U19 22 pinprobe vars: pinprobe_description='Enable_channel1_Brick'
+X$U2 21 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='ENABLEchannel0' dftprobe_description='Enable_Channel0' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U3 22 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='ENABLEchannel1' dftprobe_description='Enable_Channel1' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U4 23 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='ENABLEthermometer' dftprobe_description='Enable_Thermometer' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U5 24 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='MEASUREthermometer' dftprobe_description='Measure_Thermometer' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U6 19 pinprobe vars: pinprobe_description='SERVICE_Module_enabled_ready'
+X$U7 20 pinprobe vars: pinprobe_description='Hijack_ok_service'
+.ends ENABLEorangeDEBUG
+
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\ENABLEorangeMAIN.sxcmp
+.subckt ENABLEorangeMAIN 95 106 107 79 80 81 102 87 88 89 104 97 98 99 100 96
+*#hierarchy
+.node_map enablet 74
+.node_map ec0 101
+.node_map ec1 103
+.node_map enable_service 96
+.node_map enable$5 76
+.node_map dft_enable_channel0 97
+.node_map enable$6 77
+.node_map dft_enable_thermometer 99
+.node_map dft_enable_channel1 98
+.node_map enable$7 78
+.node_map CHANNEL0configuration$0 79
+.node_map CHANNEL0configuration$1 80
+.node_map CHANNEL0configuration$2 81
+.node_map CHANNEL0configuration$3 102
+.node_map CHANNEL0select$3 82
+.node_map CHANNEL0select$4 83
+.node_map CHANNEL0select$5 84
+.node_map CHANNEL0select$6 85
+.node_map CHANNEL0select$7 86
+.node_map CHANNEL1select$3 90
+.node_map CHANNEL1select$4 91
+.node_map CHANNEL1select$5 92
+.node_map CHANNEL1select$6 93
+.node_map CHANNEL1select$7 94
+.node_map ok_service 95
+.node_map enable0 72
+.node_map enable1 73
+.node_map measuret 75
+.node_map enable 71
+.node_map THERMOMETERconfiguration$0 106
+.node_map THERMOMETERconfiguration$1 107
+.node_map mt 108
+.node_map CHANNEL1configuration$0 87
+.node_map CHANNEL1configuration$1 88
+.node_map dft_measure_thermometer 100
+.node_map CHANNEL1configuration$2 89
+.node_map CHANNEL1configuration$3 104
+.node_map et 105
+X$U1 97 pinprobe vars: pinprobe_description='DFT_Enable_Channel0_Brick'
+X$U11 72 101 71 95 VESPAasmINPUT2
+X$U13 74 105 71 95 VESPAasmINPUT2
+X$U14 75 108 71 95 VESPAasmINPUT2
+X$U16 97 pinprobe vars: pinprobe_description='DFT_Measure_thermometer'
+X$U17 97 pinprobe vars: pinprobe_description='DFT_Enable_channel1_Brick'
+X$U18 96 pinprobe vars: pinprobe_description='Enable_SERVICE_module'
+X$U19 106 105 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U2 97 pinprobe vars: pinprobe_description='DFT_Enable_Thermometer_brick'
+X$U20 107 108 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U21 102 101 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U22 104 103 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U23 99 105 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U24 97 101 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U25 100 108 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U26 98 103 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U3 71 72 73 74 75 76 77 78 datamap0 vars: datamap_function='function' datamap_name='ENABLE' datamap_description='Enable_control' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='register' datamap_por='0' datamap_mode='readwrite' datamap_timeenable='yes' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='7' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=5 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=100 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U4 79 80 81 82 83 84 85 86 datamap0 vars: datamap_function='code' datamap_name='CHANNELselect0' datamap_description='Channel0_select' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='register' datamap_por='0' datamap_mode='readwrite' datamap_timeenable='yes' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='2' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_text1=1 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=100 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U5 87 88 89 90 91 92 93 94 datamap0 vars: datamap_function='code' datamap_name='CHANNELselect1' datamap_description='Channel1_select' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='register' datamap_por='0' datamap_mode='readwrite' datamap_timeenable='yes' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='Select_Channel_POS0' datamap_code1='Select_Channell_POS1' datamap_code2='Select_Channell_POS2' datamap_code3='Select_Channel_POS3' datamap_code4='Select_Channell_POS4' datamap_code5='Select_Channell_POS5' datamap_code6='Select_Channell_POS6' datamap_code7='Select_Channell_POS7' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='7' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=100 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U6 95 pinprobe vars: pinprobe_description='SERVICE_Module_enabled_ready'
+X$U8 96 71 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U9 73 103 71 95 VESPAasmINPUT2
+.ends ENABLEorangeMAIN
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT2.sxcmp
+.subckt VESPAasmINPUT2 7 8 9 6
+*#hierarchy
+.node_map Tstate 6
+.node_map i0 7
+.node_map i1 9
+.node_map o 8
+X$U1 6 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 9 pinprobe vars: pinprobe_description='input1'
+X$U3 8 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 6 9 5 7 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U5 5 8 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U6 7 pinprobe vars: pinprobe_description='input0'
+.ends VESPAasmINPUT2
+
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\LEDorange.sxcmp
+.subckt LEDorange 30 31 27 28 29 36 32 33
+*#hierarchy
+.node_map PVCC 30
+.node_map hijack_enable_led 35
+.node_map CHANNELconfiguration$0 27
+.node_map CHANNELconfiguration$1 28
+.node_map CHANNELconfiguration$2 29
+.node_map CHANNELconfiguration$3 36
+.node_map dft_clock 34
+.node_map CHLED0 31
+.node_map CHLED1 32
+.node_map CHLED2 33
+X$DEBUG 34 36 35 LEDorangeDEBUG
+X$MAIN 30 31 35 32 27 28 29 33 34 LEDorangeMAIN
+X$U1 33 pinprobe vars: pinprobe_description='LED_indicator_output_current' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U2 31 pinprobe vars: pinprobe_description='LED_indicator_output_current' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U3 32 pinprobe vars: pinprobe_description='LED_indicator_output_current' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U4 30 pinprobe vars: pinprobe_description='Input_supply_Power_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U5 27 pinprobe vars: pinprobe_description='Channel_configuration_and_enable' pinprobe_mode='input' pinprobe_input='datamap' pinprobe_output='tbd'
+.ends LEDorange
+
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\LEDorangeDEBUG.sxcmp
+.subckt LEDorangeDEBUG 10 11 12
+*#hierarchy
+.node_map hijack_enable_led 12
+.node_map dft_clock 10
+.node_map enable_led 11
+X$U1 10 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='LEDclock' dftprobe_description='LED_source_clock' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U10 10 pinprobe vars: pinprobe_description='DFT_Source_clock_for_Channel0'
+X$U2 11 12 dfthijack vars: dfthijack_name='LEDenable' dfthijack_description='hijack_LED_Enable' dfthijack_enable='no' dfthijack_output='low' dfthijack_state='logic' dfthijack_vmax=6 dfthijack_comment=1
+X$U3 12 pinprobe vars: pinprobe_description='Hijack_enable_led'
+X$U7 11 pinprobe vars: pinprobe_description='Enable_channel_LED_indicator'
+.ends LEDorangeDEBUG
+
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\LEDorangeMAIN.sxcmp
+.subckt LEDorangeMAIN 51 52 53 54 48 49 50 55 56
+*#hierarchy
+.node_map enable_led2 65
+.node_map PVCC 51
+.node_map CHANNELselect$0 48
+.node_map CHANNELselect$1 49
+.node_map CHANNELselect$2 50
+.node_map ok_generator 57
+.node_map I0 58
+.node_map I1 59
+.node_map I2 62
+.node_map enable_flash 61
+.node_map dft_clock 56
+.node_map enable0 63
+.node_map enable 60
+.node_map enable_led 53
+.node_map CHLED0 52
+.node_map CHLED1 54
+.node_map enable_led0 66
+.node_map CHLED2 55
+.node_map enable_led1 64
+X$DECODE 60 61 63 48 49 50 64 65 LEDorangeDECODER
+X$OUTPUT 58 52 59 54 62 55 66 64 65 LEDorangeOUTPUT
+X$PULSE 51 66 61 63 56 LEDorangePULSE
+X$U1 55 pinprobe vars: pinprobe_description='LED_indicator_output_current'
+X$U10 56 pinprobe vars: pinprobe_description='DFT_Source_clock_for_Channel0'
+X$U11 53 60 57 VESPAasmINPUT1
+X$U2 52 pinprobe vars: pinprobe_description='LED_indicator_output_current'
+X$U3 54 pinprobe vars: pinprobe_description='LED_indicator_output_current'
+X$U4 51 pinprobe vars: pinprobe_description='Input_supply_Power_input'
+X$U6 58 59 62 43 44 45 46 47 51 53 57 42 currentgenerator vars: currentgenerator_polarity0='source' currentgenerator_polarity1='source' currentgenerator_polarity2='source' currentgenerator_polarity3='source' currentgenerator_polarity4='source' currentgenerator_polarity5='source' currentgenerator_polarity6='source' currentgenerator_polarity7='source' currentgenerator_accuracy='no' currentgenerator_datasheet_accuracy_name='text' currentgenerator_datasheet_accuracy_description='text' currentgenerator_tempco='zero' currentgenerator_dft='no' currentgenerator_output0=1k currentgenerator_output1=1k currentgenerator_output2=1k currentgenerator_output3=1k currentgenerator_output4=1k currentgenerator_output5=1k currentgenerator_output6=1k currentgenerator_output7=1k currentgenerator_number=3 currentgenerator_tempco_gain=3 currentgenerator_vmax=6 currentgenerator_vout=6
+X$U7 53 pinprobe vars: pinprobe_description='Enable_channel_LED_indicator'
+.ends LEDorangeMAIN
+
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\LEDorangeDECODER.sxcmp
+.subckt LEDorangeDECODER 55 56 57 44 45 46 58 59
+*#hierarchy
+.node_map enable_led2 59
+.node_map CHANNELselect$0 44
+.node_map CHANNELselect$1 45
+.node_map CHANNELselect$2 46
+.node_map s0 47
+.node_map s1 48
+.node_map s2 49
+.node_map s3 50
+.node_map s4 51
+.node_map s5 52
+.node_map s6 53
+.node_map s7 54
+.node_map enable_flash 56
+.node_map enable0 57
+.node_map enable_decoder 55
+.node_map enable_led1 58
+X$U1 57 pinprobe vars: pinprobe_description='Enable_LED0_for_other_channels'
+X$U10 59 pinprobe vars: pinprobe_description='Enable_LED2'
+X$U12 48 50 52 38 54 nor4 vars: logicgate_type='nor4' logicgate_vmax=6
+X$U13 38 39 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U14 57 39 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U20 58 41 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U23 49 50 53 40 54 nor4 vars: logicgate_type='nor4' logicgate_vmax=6
+X$U24 40 41 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U25 42 43 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U26 59 43 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U27 51 52 53 42 54 nor4 vars: logicgate_type='nor4' logicgate_vmax=6
+X$U4 55 pinprobe vars: pinprobe_description='Channel_enable_input'
+X$U5 56 pinprobe vars: pinprobe_description='enable_flash_for_channel0'
+X$U6 47 48 49 50 51 52 53 54 44 45 46 55 decoder3 vars: decoder_type='pin' decoder_datasheet_name='text' decoder_datasheet_description='text' decoder_type_por='0' decoder_enable_pin='pin' decoder_timing='no' decoder_bits=3 decoder_enable_por=0 decoder_vmax=6
+X$U7 56 47 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U9 58 pinprobe vars: pinprobe_description='Enable_LED1'
+.ends LEDorangeDECODER
+
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\LEDorangeOUTPUT.sxcmp
+.subckt LEDorangeOUTPUT 37 38 39 40 41 42 43 44 45
+*#hierarchy
+.node_map enable_led2 45
+.node_map I0 37
+.node_map I1 39
+.node_map I2 41
+.node_map CHLED0 38
+.node_map CHLED1 40
+.node_map enable_led0 43
+.node_map CHLED2 42
+.node_map enable_led1 44
+X$U1 42 pinprobe vars: pinprobe_description='LED_indicator_output_current'
+X$U10 39 40 44 switchideal vars: switch_type='gnd' switch_polarity='noninvert' switch_model='ideal' switch_ron=500 switch_vmax=6
+X$U11 36 41 45 switchideal vars: switch_type='pulldown' switch_polarity='invert' switch_model='ideal' switch_ron=500 switch_pulldownvmax=6 switch_vmax=6
+X$U12 43 pinprobe vars: pinprobe_description='Enable_LED0'
+X$U13 44 pinprobe vars: pinprobe_description='Enable_LED1'
+X$U14 45 pinprobe vars: pinprobe_description='Enable_LED2'
+X$U15 41 42 45 switchideal vars: switch_type='gnd' switch_polarity='noninvert' switch_model='ideal' switch_ron=500 switch_vmax=6
+X$U2 38 pinprobe vars: pinprobe_description='LED_indicator_output_current'
+X$U3 40 pinprobe vars: pinprobe_description='LED_indicator_output_current'
+X$U4 37 pinprobe vars: pinprobe_description='LED0_1mA_output_source'
+X$U5 39 pinprobe vars: pinprobe_description='LED1_1mA_output_source'
+X$U6 34 37 43 switchideal vars: switch_type='pulldown' switch_polarity='invert' switch_model='ideal' switch_ron=500 switch_pulldownvmax=6 switch_vmax=6
+X$U7 41 pinprobe vars: pinprobe_description='LED1_1mA_output_source'
+X$U8 35 39 44 switchideal vars: switch_type='pulldown' switch_polarity='invert' switch_model='ideal' switch_ron=500 switch_pulldownvmax=6 switch_vmax=6
+X$U9 37 38 43 switchideal vars: switch_type='gnd' switch_polarity='noninvert' switch_model='ideal' switch_ron=500 switch_vmax=6
+.ends LEDorangeOUTPUT
+
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\LEDorangePULSE.sxcmp
+.subckt LEDorangePULSE 83 84 85 87 86
+*#hierarchy
+.node_map ck32 88
+.node_map ck128 91
+.node_map t32 79
+.node_map t256 82
+.node_map VCC 83
+.node_map enable_flash 85
+.node_map dft_clock 86
+.node_map enable0 87
+.node_map ledck 92
+.node_map ck64 90
+.node_map LEDchannel0flash$0 71
+.node_map ok_clock 89
+.node_map LEDchannel0flash$1 72
+.node_map LEDchannel0flash$2 73
+.node_map LEDchannel0flash$3 74
+.node_map LEDchannel0flash$4 75
+.node_map LEDchannel0flash$5 76
+.node_map LEDchannel0flash$6 77
+.node_map LEDchannel0flash$7 78
+.node_map t128 81
+.node_map t64 80
+.node_map ck 94
+.node_map ck256 93
+.node_map enable_led0 84
+X$U1 89 94 86 VESPAasmINPUT1
+X$U10 86 pinprobe vars: pinprobe_description='DFT_Source_clock_for_Channel0'
+X$U11 89 83 86 43 41 40 85 42 44 oscillatorcrude vars: osc_type='crude' osc_accuracy='yes' osc_datasheet_accuracy_name='FLASHclock' osc_datasheet_accuracy_description='Core_Flash_clock_frequency_1p024KHz' osc_enable='pin' osc_enable_por='disable' osc_datasheet_enable_name='text' osc_datasheet_enable_description='text' osc_ss='no' osc_standbyclock='no' osc_standbyclockpor='disable' osc_ext_freq_default='no' osc_ext_comment='0' osc_crystalbias='2.7' osc_crystalglobalref='yes' osc_crystalcleancountpor='32' osc_ss_configuration='fixed' osc_ss_enable_control='fixed' osc_ss_mode_por='sweep' osc_ss_enable_por='enable' osc_ss_clock_sync='synchronized' osc_ss_datasheetname='text' osc_dft='no' osc_ibias='global' osc_int_freq=1k osc_int_duty=50 osc_int_ireplica_gain=10 osc_int_1=0 osc_ext_freq=1k osc_ext_resistor=50 osc_ext_duty=50 osc_ext_replicagain=0 osc_crude_freq=1.024 osc_crude_duty=50 osc_crystalfreq=1 osc_crystalreflocal=1 osc_ringfreq=20 osc_ss_range_por=10 osc_ss_clock_independent=50 osc_ss_clock_divide=64 osc_vmax=6
+X$U12 84 pinprobe vars: pinprobe_description='Enable_LED0_indicator'
+X$U13 70 92 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U15 87 57 92 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U2 87 pinprobe vars: pinprobe_description='Enable_LED_for_other_output_indicators'
+X$U21 57 58 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U25 86 79 80 81 82 49 48 47 46 54 55 56 59 60 61 62 88 90 91 93 50 51 52 53 63 64 65 66 67 68 69 45 clockrequest vars: clockrequest_outputs=4 clockrequest_divide0=16 clockrequest_divide1=32 clockrequest_divide2=64 clockrequest_divide3=128 clockrequest_divide4=1 clockrequest_divide5=1 clockrequest_divide6=1 clockrequest_divide7=1 clockrequest_divide8=1 clockrequest_divide9=1 clockrequest_divide10=1 clockrequest_divide11=1 clockrequest_divide12=1 clockrequest_divide13=1 clockrequest_divide14=1 clockrequest_vmax=6 clockrequest_enable0='pin' clockrequest_enable1='pin' clockrequest_enable2='pin' clockrequest_enable3='pin' clockrequest_enable4='pin' clockrequest_enable5='pin' clockrequest_enable6='pin' clockrequest_enable7='pin' clockrequest_enable8='pin' clockrequest_enable9='pin' clockrequest_enable10='pin' clockrequest_enable11='pin' clockrequest_enable12='pin' clockrequest_enable13='pin' clockrequest_enable14='pin' clockrequest_dft='no' clockrequest_srambist='no'
+X$U3 88 90 91 70 93 nor4 vars: logicgate_type='nor4' logicgate_vmax=6
+X$U4 45 celeranoconn vars: ='%'
+X$U5 71 72 73 74 75 76 77 78 datamap0 vars: datamap_function='code' datamap_name='LEDchannelflash' datamap_description='LED_flash_frequency' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='register' datamap_por='0' datamap_mode='readwrite' datamap_timeenable='no' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='32Hz' datamap_code1='16Hz' datamap_code2='8Hz' datamap_code3='4Hz' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U6 83 pinprobe vars: pinprobe_description='Input_supply'
+X$U7 85 pinprobe vars: pinprobe_description='Enable_flash_LED_for_channel0'
+X$U8 79 80 81 82 71 72 85 decoder2 vars: decoder_type='pin' decoder_datasheet_name='text' decoder_datasheet_description='text' decoder_type_por='0' decoder_enable_pin='pin' decoder_timing='no' decoder_bits=2 decoder_enable_por=0 decoder_vmax=6
+X$U9 84 58 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+.ends LEDorangePULSE
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT1.sxcmp
+.subckt VESPAasmINPUT1 5 6 7
+*#hierarchy
+.node_map Tstate 5
+.node_map i0 7
+.node_map o 6
+X$U1 5 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 7 pinprobe vars: pinprobe_description='input1'
+X$U3 6 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 5 4 7 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U5 4 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+.ends VESPAasmINPUT1
+
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\SELECTorange.sxcmp
+.subckt SELECTorange 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 74 75 76 77
+*#hierarchy
+.node_map bbm0 96
+.node_map bbm1 97
+.node_map bbm2 98
+.node_map bbm3 99
+.node_map bbm4 100
+.node_map bbm5 101
+.node_map bbm6 102
+.node_map bbm7 103
+.node_map POS0 78
+.node_map POS1 82
+.node_map POS2 84
+.node_map POS3 86
+.node_map POS4 88
+.node_map POS5 90
+.node_map POS6 92
+.node_map POS7 94
+.node_map OUTN 81
+.node_map OUTP 79
+.node_map CHANNELconfiguration$0 74
+.node_map CHANNELconfiguration$1 75
+.node_map CHANNELconfiguration$2 76
+.node_map CHANNELconfiguration$3 77
+.node_map NEG0 80
+.node_map NEG1 83
+.node_map NEG2 85
+.node_map NEG3 87
+.node_map NEG4 89
+.node_map NEG5 91
+.node_map NEG6 93
+.node_map NEG7 95
+X$DEBUG 96 97 98 99 100 101 102 103 SELECTorangeDEBUG
+X$MAIN 78 79 80 81 82 96 83 97 84 98 85 99 86 100 87 101 88 102 89 103 90 91 92 93 94 95 74 75 76 77 SELECTorangeMAIN
+X$U1 78 pinprobe vars: pinprobe_description='Channel_Positive0' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U10 89 pinprobe vars: pinprobe_description='Channel_Negative4' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U11 90 pinprobe vars: pinprobe_description='Channel_Positive5' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U12 91 pinprobe vars: pinprobe_description='Channel_Negative5' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U13 92 pinprobe vars: pinprobe_description='Channel_Positive6' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U14 93 pinprobe vars: pinprobe_description='Channel_Negative6' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U15 94 pinprobe vars: pinprobe_description='Channel_Positive7' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U16 81 pinprobe vars: pinprobe_description='Output_negative' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd'
+X$U17 95 pinprobe vars: pinprobe_description='Channel_Negative7' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U18 79 pinprobe vars: pinprobe_description='Output_positive' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd'
+X$U19 74 pinprobe vars: pinprobe_description='Channel_configuration_and_enable' pinprobe_mode='input' pinprobe_input='datamap' pinprobe_output='tbd'
+X$U2 80 pinprobe vars: pinprobe_description='Channel_Negative0' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U3 82 pinprobe vars: pinprobe_description='Channel_Positive1' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U4 83 pinprobe vars: pinprobe_description='Channel_Negative1' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U5 84 pinprobe vars: pinprobe_description='Channel_Positive2' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U6 85 pinprobe vars: pinprobe_description='Channel_Negative2' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U7 86 pinprobe vars: pinprobe_description='Channel_Positive3' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U8 87 pinprobe vars: pinprobe_description='Channel_Negative3' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U9 88 pinprobe vars: pinprobe_description='Channel_Positive4' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+.ends SELECTorange
+
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\SELECTorangeDEBUG.sxcmp
+.subckt SELECTorangeDEBUG 25 26 27 28 29 30 31 32
+*#hierarchy
+.node_map dft_bbm0 25
+.node_map dft_bbm1 26
+.node_map dft_bbm2 27
+.node_map dft_bbm3 28
+.node_map dft_bbm4 29
+.node_map dft_bbm5 30
+.node_map dft_bbm6 31
+.node_map dft_bbm7 32
+X$U1 25 pinprobe vars: pinprobe_description='DFT_Channel0_bbm_time'
+X$U10 32 pinprobe vars: pinprobe_description='DFT_Channel7_bbm_time'
+X$U11 27 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SELECTbbm2' dftprobe_description='Dead_time_for_Channel2' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U12 28 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SELECTbbm3' dftprobe_description='Dead_time_for_Channel3' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U13 29 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SELECTbbm4' dftprobe_description='Dead_time_for_Channel4' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U14 30 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SELECTbbm5' dftprobe_description='Dead_time_for_Channel5' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U15 31 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SELECTbbm6' dftprobe_description='Dead_time_for_Channel6' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U16 32 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SELECTbbm7' dftprobe_description='Dead_time_for_Channel7' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U2 26 pinprobe vars: pinprobe_description='DFT_Channel1_bbm_time'
+X$U3 25 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SELECTbbm0' dftprobe_description='Dead_time_for_Channel0' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U4 27 pinprobe vars: pinprobe_description='DFT_Channel2_bbm_time'
+X$U5 28 pinprobe vars: pinprobe_description='DFT_Channel3_bbm_time'
+X$U6 29 pinprobe vars: pinprobe_description='DFT_Channel4_bbm_time'
+X$U7 30 pinprobe vars: pinprobe_description='DFT_Channel5_bbm_time'
+X$U8 31 pinprobe vars: pinprobe_description='DFT_Channel6_bbm_time'
+X$U9 26 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SELECTbbm1' dftprobe_description='Dead_time_for_Channel1' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+.ends SELECTorangeDEBUG
+
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\SELECTorangeMAIN.sxcmp
+.subckt SELECTorangeMAIN 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 117 118 119 154
+*#hierarchy
+.node_map POS0 128
+.node_map POS1 132
+.node_map POS2 136
+.node_map POS3 140
+.node_map POS4 144
+.node_map POS5 148
+.node_map POS6 150
+.node_map POS7 152
+.node_map OUTN 131
+.node_map OUTP 129
+.node_map dft_bbm0 133
+.node_map dft_bbm1 135
+.node_map dft_bbm2 137
+.node_map CHANNELconfiguration$0 117
+.node_map dft_bbm3 139
+.node_map CHANNELconfiguration$1 118
+.node_map dft_bbm4 141
+.node_map CHANNELconfiguration$2 119
+.node_map CHANNELconfiguration$3 154
+.node_map dft_bbm5 143
+.node_map dft_bbm6 145
+.node_map dft_bbm7 147
+.node_map NEG0 130
+.node_map enable0 120
+.node_map NEG1 134
+.node_map enable1 121
+.node_map NEG2 138
+.node_map enable2 122
+.node_map NEG3 142
+.node_map enable3 123
+.node_map NEG4 146
+.node_map enable4 124
+.node_map NEG5 149
+.node_map enable5 125
+.node_map NEG6 151
+.node_map enable6 126
+.node_map NEG7 153
+.node_map enable7 127
+X$CHANNEL0 128 129 130 131 120 133 SELECTorangeCHANNEL
+X$CHANNEL1 132 129 134 131 121 135 SELECTorangeCHANNEL
+X$CHANNEL2 136 129 138 131 122 137 SELECTorangeCHANNEL
+X$CHANNEL3 140 129 142 131 123 139 SELECTorangeCHANNEL
+X$CHANNEL4 144 129 146 131 124 141 SELECTorangeCHANNEL
+X$CHANNEL5 148 129 149 131 125 143 SELECTorangeCHANNEL
+X$CHANNEL6 150 129 151 131 126 145 SELECTorangeCHANNEL
+X$CHANNEL7 152 129 153 131 127 147 SELECTorangeCHANNEL
+X$U1 133 pinprobe vars: pinprobe_description='DFT_Channel0_bbm_time'
+X$U10 147 pinprobe vars: pinprobe_description='DFT_Channel7_bbm_time'
+X$U2 135 pinprobe vars: pinprobe_description='DFT_Channel1_bbm_time'
+X$U3 129 pinprobe vars: pinprobe_description='Output_positive'
+X$U30 120 121 122 123 124 125 126 127 117 118 119 154 decoder3 vars: decoder_type='pin' decoder_datasheet_name='text' decoder_datasheet_description='text' decoder_type_por='0' decoder_enable_pin='pin' decoder_timing='no' decoder_bits=3 decoder_enable_por=0 decoder_vmax=6
+X$U31 132 pinprobe vars: pinprobe_description='Channel_Positive1'
+X$U32 136 pinprobe vars: pinprobe_description='Channel_Positive2'
+X$U33 149 pinprobe vars: pinprobe_description='Channel_Negative5'
+X$U34 151 pinprobe vars: pinprobe_description='Channel_Negative6'
+X$U35 144 pinprobe vars: pinprobe_description='Channel_Positive4'
+X$U36 134 pinprobe vars: pinprobe_description='Channel_Negative1'
+X$U37 148 pinprobe vars: pinprobe_description='Channel_Positive5'
+X$U38 152 pinprobe vars: pinprobe_description='Channel_Positive7'
+X$U39 150 pinprobe vars: pinprobe_description='Channel_Positive6'
+X$U4 137 pinprobe vars: pinprobe_description='DFT_Channel2_bbm_time'
+X$U40 140 pinprobe vars: pinprobe_description='Channel_Positive3'
+X$U41 128 pinprobe vars: pinprobe_description='Channel_Positive0'
+X$U42 146 pinprobe vars: pinprobe_description='Channel_Negative4'
+X$U43 138 pinprobe vars: pinprobe_description='Channel_Negative2'
+X$U44 142 pinprobe vars: pinprobe_description='Channel_Negative3'
+X$U45 153 pinprobe vars: pinprobe_description='Channel_Negative7'
+X$U46 130 pinprobe vars: pinprobe_description='Channel_Negative0'
+X$U5 139 pinprobe vars: pinprobe_description='DFT_Channel3_bbm_time'
+X$U6 141 pinprobe vars: pinprobe_description='DFT_Channel4_bbm_time'
+X$U7 143 pinprobe vars: pinprobe_description='DFT_Channel5_bbm_time'
+X$U8 145 pinprobe vars: pinprobe_description='DFT_Channel6_bbm_time'
+X$U9 131 pinprobe vars: pinprobe_description='Output_negative'
+.ends SELECTorangeMAIN
+
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\SELECTorangeCHANNEL.sxcmp
+.subckt SELECTorangeCHANNEL 24 25 26 27 28 29
+*#hierarchy
+.node_map enable_channel 28
+.node_map NEG 26
+.node_map POS 24
+.node_map dft_bbm 29
+.node_map SENSEN 27
+.node_map SENSEP 25
+.node_map enable_channelDELAY 30
+X$U1 24 25 30 switchideal vars: switch_type='tswitch' switch_polarity='noninvert' switch_model='ideal' switch_ron=10 switch_pulldownvmax=6 switch_vmax=6
+X$U10 29 pinprobe vars: pinprobe_description='DFT_on_time_delay'
+X$U2 24 pinprobe vars: pinprobe_description='Channel_Positive'
+X$U3 26 27 30 switchideal vars: switch_type='tswitch' switch_polarity='noninvert' switch_model='ideal' switch_ron=10 switch_pulldownvmax=6 switch_vmax=6
+X$U4 25 pinprobe vars: pinprobe_description='Sense_input_positive'
+X$U5 26 pinprobe vars: pinprobe_description='Channel_Negative'
+X$U6 28 30 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=100 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U7 27 pinprobe vars: pinprobe_description='Sense_input_negative'
+X$U8 28 30 29 VESPAdftpulse
+X$U9 28 pinprobe vars: pinprobe_description='Enable_channel_input_signal'
+.ends SELECTorangeCHANNEL
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAdftpulse.sxcmp
+.subckt VESPAdftpulse 7 8 9
+*#hierarchy
+.node_map start 7
+.node_map stop 8
+.node_map pulse 9
+X$U11 7 pinprobe vars: pinprobe_description='DFT_timer_start_input'
+X$U15 8 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U17 8 pinprobe vars: pinprobe_description='DFT_timer_stop_input'
+X$U52 7 4 6 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U53 4 5 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U55 9 5 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U8 9 pinprobe vars: pinprobe_description='DFT_Timer_pulse'
+.ends VESPAdftpulse
+
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\SERVICEorange.sxcmp
+.subckt SERVICEorange 23 24 25 26 27 28
+*#hierarchy
+.node_map enable_service 27
+.node_map kelvin_GNDservice 28
+.node_map REF 24
+.node_map VCC 23
+.node_map kelvin_VCCservice 25
+.node_map ok_service 26
+.node_map hijack_enable_service 29
+X$DEBUG 24 26 27 29 SERVICEorangeDEBUG
+X$MAIN 23 25 24 29 26 28 SERVICEorangeMAIN
+X$U1 23 pinprobe vars: pinprobe_description='Input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U2 24 pinprobe vars: pinprobe_description='Reference_voltage_1p0' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 28 pinprobe vars: pinprobe_description='Ground_Kelvin_sense' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd'
+X$U4 26 pinprobe vars: pinprobe_description='SERVICE_brick_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 27 pinprobe vars: pinprobe_description='Enable_SERVICE_brick' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 25 pinprobe vars: pinprobe_description='VCC_kelvin_sense_input' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd'
+.ends SERVICEorange
+
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\SERVICEorangeDEBUG.sxcmp
+.subckt SERVICEorangeDEBUG 16 18 19 17
+*#hierarchy
+.node_map enable_service 19
+.node_map REF 16
+.node_map ok_service 18
+.node_map hijack_enable_service 17
+X$U1 16 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REFERENCE' dftprobe_description='Reference_1V' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U2 18 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SERVICEok' dftprobe_description='SERVICE_enabled-and_ready' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U21 17 18 15 VESPAdftpulse
+X$U22 15 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SERVICEstartup' dftprobe_description='SERVICE_startup_pulse' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U23 18 pinprobe vars: pinprobe_description='SERVICE_ok_output_flag'
+X$U3 19 17 dfthijack vars: dfthijack_name='HIAJCKserviceENABLE' dfthijack_description='Hijack_SERVICE_enable' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$U4 17 pinprobe vars: pinprobe_description='Hijack_Enable_SERVICE_input' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 19 pinprobe vars: pinprobe_description='Enable_SERVICE_input' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 16 pinprobe vars: pinprobe_description='1V_Reference' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
+.ends SERVICEorangeDEBUG
+
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\SERVICEorangeMAIN.sxcmp
+.subckt SERVICEorangeMAIN 49 51 50 53 52 54
+*#hierarchy
+.node_map porb 55
+.node_map enable_service 53
+.node_map kelvin_GNDservice 54
+.node_map REF 50
+.node_map okref 57
+.node_map VCC 49
+.node_map kelvin_VCCservice 51
+.node_map ok_service 52
+.node_map uvlo_comp 58
+.node_map UVLO 56
+.node_map ok_comp 59
+X$U1 49 51 55 53 porb vars: porb_enable='yes' porb_vmax=6 porb_dft='no'
+X$U18 50 pinprobe vars: pinprobe_description='1V_Reference'
+X$U2 51 pinprobe vars: pinprobe_description='Low_voltage_supply_kelvin_input'
+X$U23 52 pinprobe vars: pinprobe_description='SERVICE_ok_output_flag'
+X$U24 52 48 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U3 57 50 55 43 49 reference  vars: reference_accuracy='no' reference_trim_name='REFERENCEaccuarcy' reference_trim_description='REF_Accurate_to_2_percent' reference_lowiq='na' reference_lowiq_name='text' reference_lowiq_description='text' reference_cc_trim='no' reference_factory_name='text' reference_factory_description='text' reference_bgout='no' reference_buffer='yes' reference_dft='no' reference_ref=1 reference_lowiq_por=0 reference_ccn_por=15 reference_ccp_por=15 reference_ifb=1 reference_vmax=6
+X$U32 49 pinprobe vars: pinprobe_description='Low_voltage_supply'
+X$U4 56 41 40 39 38 37 36 35 51 54 42 resistordivider vars: resistordivider_disconnect='no' resistordivider_disconnect_tap='top' resistordivider_dft='no' resistordivider_rtotal=500 resistordivider_vresistortop=6 resistordivider_vmax=6 resistordivider_outputs=1 resistordivider_tap0=25 resistordivider_tap1=20 resistordivider_tap2=30 resistordivider_tap3=40 resistordivider_tap4=50 resistordivider_tap5=60 resistordivider_tap6=70 resistordivider_tap7=80
+X$U5 53 pinprobe vars: pinprobe_description='Enable_SREVICE_module'
+X$U6 59 49 55 58 56 45 50 46 47 44 comparatornoctlpins vars: comparator_model='comparator' comparator_hysteresismode='fixed' comparator_edge='rising' comparator_speed='slow' comparator_type='p' comparator_deglitch='no' comparator_lowiq='no' comparator_datasheet_name='text' comparator_datasheet_description='text' bgcomp_accuracy='no' bgcomp_logicshift='no' bgcomp_trim_name='text' bgcomp_trim_description='text' bgcomp_enable='yes' comparatorgnd_threshold='50' comparatorgnd_edge='falling' comparator_dft='no' comparator_hysteresis=20 comparator_lowiqpor=0 bgcomp_threshold=1.2 bgcomp_maxcelpos=6 bgcomp_maxvin=6 comparator_vmax=6
+X$U7 58 59 48 57 53 VESPAasmINPUT3
+X$U9 54 pinprobe vars: pinprobe_description='Ground_kelvin_input'
+.ends SERVICEorangeMAIN
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT3.sxcmp
+.subckt VESPAasmINPUT3 9 10 11 12 13
+*#hierarchy
+.node_map Tstate 13
+.node_map i0 9
+.node_map i1 10
+.node_map i2 12
+.node_map o 11
+X$U1 13 pinprobe vars: pinprobe_description='state_blank_time'
+X$U19 11 7 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U2 10 pinprobe vars: pinprobe_description='input1'
+X$U3 11 pinprobe vars: pinprobe_description='INPUT2_output'
+X$U4 9 12 6 10 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U5 13 8 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U6 6 7 8 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U7 9 pinprobe vars: pinprobe_description='input0'
+X$U8 12 pinprobe vars: pinprobe_description='input2'
+.ends VESPAasmINPUT3
+
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\THERMOMETERorange.sxcmp
+.subckt THERMOMETERorange 29 30 27 28 35
+*#hierarchy
+.node_map dft_measurestatus 34
+.node_map dft_conversiontime 33
+.node_map REF 30
+.node_map dft_OVERREFERENCE 38
+.node_map dft_startup 31
+.node_map VCC 29
+.node_map dft_ADCREFERENCE 37
+.node_map dft_THERMOMETER 36
+.node_map kelvin_GNDthermometer 35
+.node_map THERMOMETERconfiguration$0 27
+.node_map THERMOMETERconfiguration$1 28
+.node_map dft_overtemperature 32
+X$DEBUG 31 32 33 34 36 37 38 THERMOMETERorangeDEBUG
+X$MAIN 29 31 30 32 27 28 33 34 35 36 37 38 THERMOMETERorangeMAIN
+X$U1 29 pinprobe vars: pinprobe_description='Low_voltage_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U2 30 pinprobe vars: pinprobe_description='Reference_Voltage_1V_input' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
+X$U3 27 pinprobe vars: pinprobe_description='Reference_Voltage_1V_input' pinprobe_mode='input' pinprobe_input='datamap' pinprobe_output='tbd'
+X$U4 35 pinprobe vars: pinprobe_description='Ground_kelvin_input_THERMOMETER' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd'
+.ends THERMOMETERorange
+
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\THERMOMETERorangeDEBUG.sxcmp
+.subckt THERMOMETERorangeDEBUG 22 23 24 25 26 27 28
+*#hierarchy
+.node_map dft_measurestatus 25
+.node_map dft_conversiontime 24
+.node_map dft_OVERREFERENCE 28
+.node_map dft_startup 22
+.node_map dft_ADCREFERENCE 27
+.node_map dft_THERMOMETER 26
+.node_map dft_overtemperature 23
+X$U1 22 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='THERMOMETERstartup' dftprobe_description='Measure_THERMOMETER_brick_startup_time' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U17 22 pinprobe vars: pinprobe_description='DFT_THERMOMETER_startup_time'
+X$U18 26 pinprobe vars: pinprobe_description='DFT_Thermometer_analog_voltage'
+X$U2 23 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='THERMOMETERovertemperature' dftprobe_description='Over_temperature_flag' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U20 23 pinprobe vars: pinprobe_description='DFT_over_temperature_flag'
+X$U21 27 pinprobe vars: pinprobe_description='DFT_ADC_Reference_input'
+X$U22 28 pinprobe vars: pinprobe_description='DFT_Over_Temperature_Reference'
+X$U3 24 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='THERMOMETERconversiontime' dftprobe_description='Thermometer-ADC_convserion_time' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U30 25 pinprobe vars: pinprobe_description='DFT_ADC_measurement_status_flag'
+X$U4 25 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='THERMOMETERmeasuresttus' dftprobe_description='Thermometer_ADC_measure_status' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U5 26 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='THERMOMETERthermometer' dftprobe_description='Thermometer_output_voltage' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U6 27 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='THERMOMETERadcreference' dftprobe_description='Thermometer_ADC_input_reference_3V' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U7 28 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='THERMOMETERoverreference' dftprobe_description='Thermometer_Over_temperature_reference' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U9 24 pinprobe vars: pinprobe_description='DFT_ADC_conversion_time'
+.ends THERMOMETERorangeDEBUG
+
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\THERMOMETERorangeMAIN.sxcmp
+.subckt THERMOMETERorangeMAIN 122 123 124 125 138 139 127 128 126 129 130 133
+*#hierarchy
+.node_map readyDELAY 131
+.node_map adc_doneBAR 147
+.node_map THERMOMETERadc$0 110
+.node_map THERMOMETERadc$1 111
+.node_map THERMOMETERadc$2 112
+.node_map THERMOMETERadc$3 113
+.node_map dft_measurestatus 128
+.node_map THERMOMETERadc$4 114
+.node_map THERMOMETERadc$10 120
+.node_map THERMOMETERadc$5 115
+.node_map ok_comparator 142
+.node_map THERMOMETERadc$11 121
+.node_map THERMOMETERadc$6 116
+.node_map ok_amplifer 145
+.node_map THERMOMETERadc$7 117
+.node_map THERMOMETERadc$8 118
+.node_map THERMOMETERadc$9 119
+.node_map ok_amplifier 148
+.node_map over 143
+.node_map strobe 135
+.node_map ok_thermometer 140
+.node_map dft_conversiontime 127
+.node_map REF 124
+.node_map adc_done 134
+.node_map dft_OVERREFERENCE 133
+.node_map dft_startup 123
+.node_map ready 141
+.node_map OVERaccuracy$0 102
+.node_map OVERaccuracy$1 103
+.node_map OVERaccuracy$2 104
+.node_map OVERaccuracy$3 105
+.node_map ok_buffer 144
+.node_map VCC 122
+.node_map OVERaccuracy$4 106
+.node_map OVERaccuracy$5 107
+.node_map OVERaccuracy$6 108
+.node_map over_temperature 136
+.node_map OVERaccuracy$7 109
+.node_map dft_ADCREFERENCE 130
+.node_map enable 132
+.node_map measure_status 137
+.node_map dft_THERMOMETER 129
+.node_map STARTUPdelay$0 94
+.node_map STARTUPdelay$1 95
+.node_map STARTUPdelay$2 96
+.node_map STARTUPdelay$3 97
+.node_map THERMOMETERconfiguration$0 138
+.node_map kelvin_GNDthermometer 126
+.node_map STARTUPdelay$4 98
+.node_map THERMOMETERconfiguration$1 139
+.node_map STARTUPdelay$5 99
+.node_map STARTUPdelay$6 100
+.node_map STARTUPdelay$7 101
+.node_map measure_thermometerBAR 146
+.node_map dft_overtemperature 125
+X$ADC 129 132 122 130 110 111 112 113 114 115 116 117 118 119 120 121 134 135 89 celeraadc vars: celeraadc_type='sar' celeraadc_strobe_control='pin' celeraadc_strobe_por='0' celeraadc_enable_control='pin' celeraadc_enable_por='0' celeraadc_lowerpower='no' celeraadc_output='pin' celeraadc_mode='unsigned' celeraadc_reference='local' celeraadc_clock='internal' celeraadc_datasheet_name='text' celeraadc_datasheet_description='text' celeraadc_datasheet_lsb='text' celeraadc_datasheet_units='text' celeraadc_dft='no' celeraadc_accuracy='no' celeraadc_accuracydatasheetname='text' celeraadc_accuracydatasheetdescription='text' celera_sandh='yes' celeraadc_sar_calibration='no' celeraadc_sar_waittime_calculated='no' celeraadc_1=0 celeraadc_resolution=8 celeraadc_vmax=6 celeraadc_sar_clockfrequency=2 celeraadc_sar_waittime=1
+X$U1 122 132 129 140 thermometer vars: thermometer_enable='pin' thermometer_datasheet_name='text' thermometer_datasheet_description='text' thermometer_output_buffer='yes' thermometer_accuracy='yes' thermometer_trim_name='THERMOMETERaccuracy' thermometer_trim_description='Thermometer_accuracy_at_25C' thermometer_dft='no' thermometer_enable_por=0 thermometer_output_buffer_gain=1 thermometer_0C_outputvoltage=0 thermometer_vmax=6
+X$U10 94 95 96 97 98 99 100 101 datamap0 vars: datamap_function='function' datamap_name='THERMOMETERdelay' datamap_description='Thermometer_delay_before_sample' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='register' datamap_por='0' datamap_mode='readwrite' datamap_timeenable='no' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='10ns' datamap_code1='20us' datamap_code2='40us' datamap_code3='80us' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='3' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=10 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U11 136 datamap1s vars: datamap_function='function' datamap_name='OVERtemperature' datamap_description='Thermometer_Fault_flag' datamap_io='status' datamap_status_mode='level' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='register' datamap_por='0' datamap_mode='readonly' datamap_timeenable='no' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=1 datamap_status_resettime=10 datamap_bits=1 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U12 139 135 131 VESPAasmINPUT1
+X$U13 141 131 94 95 delaypin2 vars: delay_type='control' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='pin' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='us' delaycontrol_units2='us' delaycontrol_units3='us' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=10 delay_0=0 delay_vmax=6 delaycontrol_outputs=4 delaycontrol_por=1 delaycontrol_time0=10 delaycontrol_time1=20 delaycontrol_time2=40 delaycontrol_time3=80 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U14 137 datamap1s vars: datamap_function='function' datamap_name='MEASUREstatus' datamap_description='text' datamap_io='status' datamap_status_mode='edge' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='register' datamap_por='0' datamap_mode='readonly' datamap_timeenable='no' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=1 datamap_status_resettime=10 datamap_bits=1 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U15 134 147 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U16 102 103 104 105 106 107 108 109 datamap0 vars: datamap_function='function' datamap_name='OVERaccuracy' datamap_description='text' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='register' datamap_por='0' datamap_mode='readwrite' datamap_timeenable='yes' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='3' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=10 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U17 123 pinprobe vars: pinprobe_description='DFT_THERMOMETER_startup_time'
+X$U18 129 pinprobe vars: pinprobe_description='DFT_Thermometer_analog_voltage'
+X$U19 122 126 133 124 132 148 102 103 104 93 amplifier vars: amplifier_gainadjust='control' amplifier_input_type='p' amplifier_accuracy='system' amplifier_accuracyname='OVERreference' amplifier_accuracydescription='Over_themperaure_fault_reference' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=100 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=500 amplifier_controloptions=8 amplifier_2=0 amplifier_controlgain0=1.1 amplifier_controlgain1=1.2 amplifier_controlgain2=1.3 amplifier_controlgain3=1.4 amplifier_controlgain4=1.5 amplifier_controlgain5=1.6 amplifier_controlgain6=1.7 amplifier_controlgain7=1.8
+X$U2 124 pinprobe vars: pinprobe_description='Reference_Voltage_1V_input'
+X$U20 125 pinprobe vars: pinprobe_description='DFT_over_temperature_flag'
+X$U21 130 pinprobe vars: pinprobe_description='DFT_ADC_Reference_input'
+X$U22 133 pinprobe vars: pinprobe_description='DFT_Over_Temperature_Reference'
+X$U23 122 144 124 130 132 126 vbuffer vars: vbuffer_accuracy='system' vbuffer_datasheet_name='THERMOMETERadcREFERENCE' vbuffer_datasheet_description='ADCREF_3V' vbuffer_type='p' vbuffer_inputbuffer='no' vbuffer_drive='internal' vbuffer_gndsense='yes' vbuffer_dft='no' vbuffer_gain=3 vbuffer_feedbackimpedance=1000 vbuffer_vmax=6
+X$U25 132 131 123 VESPAdftpulse
+X$U26 135 134 127 VESPAdftpulse
+X$U27 147 92 135 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U28 136 91 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U29 137 92 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U3 139 146 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U30 128 pinprobe vars: pinprobe_description='DFT_ADC_measurement_status_flag'
+X$U32 122 pinprobe vars: pinprobe_description='Low_voltage_supply'
+X$U4 140 142 141 144 145 132 VESPAasmINPUT4
+X$U41 126 pinprobe vars: pinprobe_description='Ground_kelvin_input_THERMOMETER'
+X$U43 138 132 139 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U5 110 111 112 113 114 115 116 117 datamap0s vars: datamap_function='code' datamap_name='THERMOMETERreadout' datamap_description='Thermometer_digital_readback_code' datamap_io='status' datamap_status_mode='edge' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='register' datamap_por='0' datamap_mode='readonly' datamap_timeenable='no' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='0p25C' datamap_code1='0p5C' datamap_code2='1C' datamap_code3='3C' datamap_code4='6C' datamap_code5='12C' datamap_code6='25C' datamap_code7='50C' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=1 datamap_status_resettime=10 datamap_bits=8 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U6 142 122 132 143 129 86 133 87 88 85 comparatornoctlpins vars: comparator_model='comparator' comparator_hysteresismode='factory' comparator_edge='rising' comparator_speed='slow' comparator_type='p' comparator_deglitch='yes' comparator_lowiq='no' comparator_datasheet_name='OVERtemperatureHystersis' comparator_datasheet_description='Over_temperature_hystersis' bgcomp_accuracy='no' bgcomp_outputanalog='supply' bgcomp_note1='Usage' bgcomp_outputdigital='no' bgcomp_trim_name='text' bgcomp_trim_description='text' bgcomp_enable='yes' comparator_dft='no' comparatorsupply_reference='ground' comparatorsupply_threshold='50' comparatorsupply_edge='falling' comparatorsupply_output='analog' comparatorsupply_enable='analog' comparator_hysteresis=20 comparator_lowiqpor=0 bgcomp_threshold=1.2 bgcomp_maxcelpos=6 bgcomp_maxvin=6 comparator_vmax=6
+X$U7 90 91 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U8 143 90 131 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U9 127 pinprobe vars: pinprobe_description='DFT_ADC_conversion_time'
+.ends THERMOMETERorangeMAIN
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT4.sxcmp
+.subckt VESPAasmINPUT4 10 11 12 13 14 15
+*#hierarchy
+.node_map Tstate 15
+.node_map i0 10
+.node_map i1 11
+.node_map i2 13
+.node_map i3 14
+.node_map o 12
+X$U1 15 pinprobe vars: pinprobe_description='state_blank_time'
+X$U19 12 8 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U2 11 pinprobe vars: pinprobe_description='input1'
+X$U3 12 pinprobe vars: pinprobe_description='INPUT3_output'
+X$U4 10 13 7 11 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U5 14 9 15 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U6 7 8 9 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U7 10 pinprobe vars: pinprobe_description='input0'
+X$U8 13 pinprobe vars: pinprobe_description='input2'
+X$U9 14 pinprobe vars: pinprobe_description='input3'
+.ends VESPAasmINPUT4
+
+** From Z:\celera\projects\Simplis\playcalum\Orange\Orange2\300\design\RINGorange.sxcmp
+.subckt RINGorange 490 491 492 493 494 495 496 497 498 499 500 501 502 503 504 505 506 508 509 510 511 512 513 514 519 520 517 518 507 515 516 521
+*#hierarchy
+.node_map LED00 490
+.node_map LED01 494
+.node_map LED02 491
+.node_map PVCC 499
+.node_map kelvin_GNDservice 506
+.node_map sense_SGNDpositive4 515
+.node_map sense_SGNDpositive5 516
+.node_map sense_SGNDpositive6 521
+.node_map POS0 517
+.node_map POS1 518
+.node_map POS2 519
+.node_map POS3 520
+.node_map POS4 509
+.node_map POS5 508
+.node_map POS6 505
+.node_map POS7 503
+.node_map SGND 510
+.node_map LED10 497
+.node_map LED11 498
+.node_map LED12 501
+.node_map VCC 500
+.node_map kelvin_VCCservice 502
+.node_map NEG0 511
+.node_map NEG1 512
+.node_map NEG2 513
+.node_map NEG3 514
+.node_map OUTp0 495
+.node_map OUTp1 496
+.node_map OUTn0 492
+.node_map OUTn1 493
+.node_map GND 504
+.node_map kelvin_GNDthermometer 507
+X$U1 500 502 499 240 241 242 243 244 245 246 247 248 249 250 251 252 253 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='vcc' pad_sense1='1' pad_sense2='no' pad_description='Supply' pad_combine='yes' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=1
+X$U10 501 pinprobe vars: pinprobe_description='Channel1_LED2_indicator'
+X$U11 498 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='Channel1_LED1_indicator' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=24
+X$U12 498 pinprobe vars: pinprobe_description='Channel1_LED1_indicator'
+X$U13 497 pinprobe vars: pinprobe_description='Channel1_LED0_indicator'
+X$U14 497 103 111 119 127 135 143 151 159 167 175 183 191 199 207 215 223 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='description' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=25
+X$U15 496 pinprobe vars: pinprobe_description='Channel1_output_positive'
+X$U16 495 99 107 115 123 131 139 147 155 163 171 179 187 195 203 211 219 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='Channel0_Ouptut_positive' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=29
+X$U17 493 pinprobe vars: pinprobe_description='Channel1_Output_negative'
+X$U18 492 100 108 116 124 132 140 148 156 164 172 180 188 196 204 212 220 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='Channel0_Output_negative' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=28
+X$U19 491 98 106 114 122 130 138 146 154 162 170 178 186 194 202 210 218 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='Channel0_LED2_indicator' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=30
+X$U2 500 pinprobe vars: pinprobe_description='Input_Supply'
+X$U20 494 97 105 113 121 129 137 145 153 161 169 177 185 193 201 209 217 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='Channel0_LED1_indicator' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=31
+X$U21 494 pinprobe vars: pinprobe_description='Channel0_LED1_indicator'
+X$U22 506 pinprobe vars: pinprobe_description='SERVICE_ground_kelvin'
+X$U23 502 pinprobe vars: pinprobe_description='SERVICE_ground_kelvin'
+X$U24 492 pinprobe vars: pinprobe_description='Channel_Output_negative'
+X$U25 495 pinprobe vars: pinprobe_description='Channel0_Output_positive'
+X$U26 490 pinprobe vars: pinprobe_description='Channel0_LED0_indicator'
+X$U27 499 pinprobe vars: pinprobe_description='Input_Supply_power_input'
+X$U28 491 pinprobe vars: pinprobe_description='Channel0_LED2_indicator'
+X$U29 517 362 370 378 386 394 402 410 418 426 434 442 450 458 466 474 482 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='Channel0_positive_input' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=9
+X$U3 496 101 109 117 125 133 141 149 157 165 173 181 189 197 205 213 221 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='Channel1_Output_positive' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=27
+X$U30 504 pinprobe vars: pinprobe_description='Ground'
+X$U31 517 pinprobe vars: pinprobe_description='Channel0_Positive_input'
+X$U32 511 363 371 379 387 395 403 411 419 427 435 443 451 459 467 475 483 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='Channel0_negative_input' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=10
+X$U33 511 pinprobe vars: pinprobe_description='Channel0_Negative_input'
+X$U34 518 364 372 380 388 396 404 412 420 428 436 444 452 460 468 476 484 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='Channel1_positive_input' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=11
+X$U35 512 365 373 381 389 397 405 413 421 429 437 445 453 461 469 477 485 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='Channel1_negative_input' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=12
+X$U36 518 pinprobe vars: pinprobe_description='Channel1_Positive_input'
+X$U37 519 366 374 382 390 398 406 414 422 430 438 446 454 462 470 478 486 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='Channel2_positive_input' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=13
+X$U38 512 pinprobe vars: pinprobe_description='Channel1_negative_input'
+X$U39 513 367 375 383 391 399 407 415 423 431 439 447 455 463 471 479 487 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='Channel2_negative_input' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=14
+X$U4 490 96 104 112 120 128 136 144 152 160 168 176 184 192 200 208 216 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='Channel0_LED0_indicator' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=32
+X$U40 519 pinprobe vars: pinprobe_description='Channel2_Positive_input'
+X$U41 520 368 376 384 392 400 408 416 424 432 440 448 456 464 472 480 488 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='Channel3_positive_input' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=15
+X$U42 513 pinprobe vars: pinprobe_description='Channel2_Negative_input'
+X$U43 514 369 377 385 393 401 409 417 425 433 441 449 457 465 473 481 489 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='Channel3_negative_input' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=16
+X$U44 514 pinprobe vars: pinprobe_description='Channel3_Negative_input'
+X$U45 509 333 334 335 336 337 338 339 340 341 342 343 344 345 346 347 348 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='Channel4_positive_input' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=18
+X$U46 510 515 349 350 516 521 351 352 353 354 355 356 357 358 359 360 361 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='4' pad_sense2='no' pad_description='POS4_7_Ground_reference' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=17
+X$U47 510 pinprobe vars: pinprobe_description='POS4_7_Ground_Reference'
+X$U48 508 317 318 319 320 321 322 323 324 325 326 327 328 329 330 331 332 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='Channel5_positive_input' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=19
+X$U49 509 pinprobe vars: pinprobe_description='Channel4_positive_input'
+X$U5 504 506 286 287 288 289 290 291 292 293 294 295 296 297 298 299 300 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='ground' pad_sense1='1' pad_sense2='no' pad_description='Ground' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=5
+X$U50 505 301 302 303 304 305 306 307 308 309 310 311 312 313 314 315 316 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='Channel6_positive_input' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=20
+X$U51 508 pinprobe vars: pinprobe_description='Channel5_positive_input'
+X$U52 505 pinprobe vars: pinprobe_description='Channel6_positive_input'
+X$U53 507 pinprobe vars: pinprobe_description='THERMOMETER_ground_kelvin'
+X$U54 503 pinprobe vars: pinprobe_description='Channel7_positive_input'
+X$U55 515 pinprobe vars: pinprobe_description='SGND_sense4'
+X$U56 516 pinprobe vars: pinprobe_description='SGND_sense5'
+X$U57 521 pinprobe vars: pinprobe_description='SGND_sense6'
+X$U6 493 102 110 118 126 134 142 150 158 166 174 182 190 198 206 214 222 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='Channel1_output_negative' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=26
+X$U7 503 270 271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='Channel7_positive_input' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=21
+X$U8 520 pinprobe vars: pinprobe_description='Channel3_positive_input'
+X$U9 501 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='Channel1_LED2_indicator' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=23
+.ends RINGorange
+
+.end
