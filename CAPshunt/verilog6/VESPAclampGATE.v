@@ -8,8 +8,7 @@ module fet_05be0e59 (SUB,GATE,DRAIN,SOURCE,NMOSiso6);
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module VESPAclampGATE (, N, P, CELSUB40948);
-input  ;
+module VESPAclampGATE (N, P, CELSUB40948);
 inout  N;
 inout  P;
 input  CELSUB40948;
