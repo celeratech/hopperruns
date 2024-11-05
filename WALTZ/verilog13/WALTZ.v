@@ -202,7 +202,7 @@ WALTZceleraSERDES XceleraSERDES (
 .VOTP(VOTP),
 .DFTSCL(DFTSCL),
 .DFTSDA(DFTSDA),
-.unlock(unlock),
+.unlock(unlock_noconn),
 .otp_done(otp_done),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
