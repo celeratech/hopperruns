@@ -1,95 +1,154 @@
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Celera BIO Generator...Updated BIO Pin List
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
 //Celera Confidential BIO Data Generator
 //Cell Name
-cell,dbuf
+cell,dmux
 //**********************************************
 //Generator Revision
 revision,generator,0.3.0
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-//dbuf
 
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
-limit,logicgate_type,choose0,dbuf
+limit,dmux_inputs,choose0,2
+limit,dmux_inputs,choose1,4
+limit,dmux_inputs,choose2,8
+limit,dmux_vmax,choose0,2
+limit,dmux_vmax,choose1,6
+limit,dmux_type,choose0,pin
+limit,dmux_type,choose1,register
+limit,dmux_type,choose2,factory
+limit,dmux_reg_por,minimum,0
+limit,dmux_reg_por,maximum,7
+
+limit,dmux_datasheet_name,text
+limit,dmux_datasheet_description,text
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,VMAX,6V
-user,Type,dbuf
-
+user,dmux_inputs,4
+user,dmux_type,pin
+user,dmux_vmax,6V
+user,NESTO,0.3.0
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,dbuf
-register,instance,dbuf_e926e395
+registermap,dmux
+register,instance,dmux4_789e2497
 register,source,cell
 
-//Logic dbuf
+//Logic dmux
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,na
+register,mode,readwrite
 register,por,0
 register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
 //Netlister Information
 register,busname,na
 
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,dbuf
-factory,instance,dbuf_e926e395
+factorymap,dmux
+factory,instance,dmux4_789e2497
 factory,source,cell
 
-//LOGIC CELLS dbuf
+//LOGIC CELLS dmux
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,na
+factory,mode,readwrite
 factory,por,0
 factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
 //Netlister Information
 factory,busname,na
+
 //**********************************************
 //Layout Parameters
 revision,layout,0p1
-laout,dbuf
-place PEBBLES PEBBLEdbuf 0 0 R0
+layout,dmux4
+
+place PEBBLES PEBBLEdmux4 0 0 R0
 movePINS
 endlayoutbio
 
+
+
+
 //**********************************************
 //Project Parameters
+//Celera:CHARGEPUMPmain Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,1.2
+#define,PROJECTsupply,5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEdbuf,80
-generate_area,dbuf_e926e395,80
+sub_area,PEBBLEdmux4,850
+generate_area,dmux4_789e2497,850
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.4
@@ -98,15 +157,15 @@ generate_area,dbuf_e926e395,80
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//dbuf
+//dmux4
 revision,pinorder,0.2.0
-pinorder,o,i
+pinorder,o,i0,i1,i2,i3,s0,s1
 
 endpinorder
 //**********************************************
 //TRIM Parameters
-cell,dbuf
-trim,instance,dbuf_e926e395
+cell,dmux
+trim,instance,dmux4_789e2497
 
 trim,name,na
 trim,enable,no
@@ -116,7 +175,7 @@ trim,pinname,TBD
 trim,testname,TBD
 trim,description,TBD
 trim,target,na
-trim,units,TBD
+trim,units,KHz
 trim,pretrim_low_limit,TBD
 trim,pretrim_high_limit,TBD
 trim,posttrim_low_limit,TBD
@@ -130,17 +189,15 @@ trim,description4,empty
 trim,description5,empty
 trim,description6,empty
 trim,description7,empty
-
 //**********************************************
 //Cell Pin Descriptions
 //**********************************************
-//Cell Pin Descriptions
 pinname,CELV
-definition,CELV,power supply
+definition,CELV,power
 iq,CELV,SIMULATION
 absmax,CELV,6
-absmin,CELV,1.4
-io,CELV,input
+absmin,CELV,2.0
+io,CELV,power
 mode,CELV,power
 router,CELV,TBD
 dftpriority,CELV,1
@@ -149,19 +206,19 @@ esd,CELV,TBD
 pinname,CELG
 definition,CELG,power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-absmin,CELG,
-io,CELG,input
+absmax,CELG,0.3
+absmin,CELG,-0.3
+io,CELG,power
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
 pinname,i
-definition,i,digital buffer input 
+definition,i,dmux pin input bus
 iq,i,SIMULATION
 absmax,i,6
-absmin,i,
+absmin,i,-0.3
 io,i,input
 mode,i,digital
 router,i,TBD
@@ -169,26 +226,38 @@ dftpriority,i,1
 esd,i,TBD
 
 pinname,o
-definition,o,digital buffer output 
+definition,o,dmux output bus
 iq,o,SIMULATION
 absmax,o,6
-absmin,o,
+absmin,o,-0.3
 io,o,output
 mode,o,digital
 router,o,TBD
 dftpriority,o,1
 esd,o,TBD
 
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
+pinname,s
+definition,s,dmux select bus
+iq,s,SIMULATION
+absmax,s,6
+absmin,s,-0.3
+io,s,input
+mode,s,digital
+router,s,TBD
+dftpriority,s,1
+esd,s,TBD
+
+pinname,CELSUB
+definition,CELSUB,substrate
+iq,CELSUB,SIMULATION
+absmax,CELSUB,6
+absmin,CELSUB,-0.3
+io,CELSUB,input
+mode,CELSUB,power
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
+endbio
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -867,3 +936,4 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+

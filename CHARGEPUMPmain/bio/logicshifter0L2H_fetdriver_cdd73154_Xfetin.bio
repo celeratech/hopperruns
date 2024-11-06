@@ -1,3 +1,4 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
@@ -5,39 +6,55 @@
 
 //Celera Confidential BIO Data Generator
 //Cell Name
-cell,dbuf
-//**********************************************
+cell,logicshifter
+///**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.4.1
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-//dbuf
+limit,logicshifter_enable,choose0,no
+limit,logicshifter_enable,choose1,yes
+limit,logicshifter_vmax,choose0,2
+limit,logicshifter_vmax,choose0,6
+limit,logicshifter_vhigh,choose0,2
+limit,logicshifter_vhigh,choose1,6
+limit,logicshifter_vhigh,choose2,12
+limit,logicshifter_vhigh,choose3,20
+limit,logicshifter_vhigh,choose4,24
+limit,logicshifter_vhigh,choose5,30
+limit,logicshifter_vhigh,choose6,36
+limit,logicshifter_vhigh,choose7,40
+limit,logicshifter_vhigh,choose8,45
+limit,logicshifter_vhigh,choose9,60
+limit,logicshifter_direction,choose0,low2high
+limit,logicshifter_direction,choose1,high2low
+limit,logicshifter_direction,choose2,na
+limit,logicshifter_bits,minimum,1
+limit,logicshifter_bits,maximum,16
 
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
-limit,logicgate_type,choose0,dbuf
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,VMAX,6V
-user,Type,dbuf
-
+user,VIN,6V
+user,VOUT,30V
+user,DIRECTION,Low_to_high
+user,NESTO,0.4.1
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,dbuf
-register,instance,dbuf_e926e395
+registermap,logicshifter
+register,instance,logicshifter0L2H_fetdriver_cdd73154_Xfetin
 register,source,cell
 
-//Logic dbuf
+//logicshifter
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,na
+register,mode,readonly
 register,por,0
 register,userdescription,na
 register,description0,description0,not used
@@ -50,19 +67,18 @@ register,description6,description6,not used
 register,description7,description7,not used
 //Netlister Information
 register,busname,na
-
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,dbuf
-factory,instance,dbuf_e926e395
+factorymap,logicshifter
+factory,instance,logicshifter0L2H_fetdriver_cdd73154_Xfetin
 factory,source,cell
 
-//LOGIC CELLS dbuf
+//logicshifter
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,na
+factory,mode,readonly
 factory,por,0
 factory,userdescription,na
 factory,description0,description0,not used
@@ -76,37 +92,91 @@ factory,description7,description7,not used
 //Netlister Information
 factory,busname,na
 //**********************************************
+//CELL DFT Parameters
+// *********************************************
 //Layout Parameters
 revision,layout,0p1
-laout,dbuf
-place PEBBLES PEBBLEdbuf 0 0 R0
-movePINS
-endlayoutbio
+layout,logicshifter
 
+placeSTEParray Generate STONElogicshifter_6NOME 0 0 8.58 74 n y R0
+placeSTEParray Generate STONElogicshifter_hl12NOME 0 0 71.55 57.42 y y R0
+placeSTEParray Generate STONElogicshifter_hl30NOME 0 0 88.33 62.67 y y R0
+placeSTEParray Generate STONElogicshifter_hl45NOME 0 0 88.33 62.67 y y R0
+placeSTEParray Generate STONElogicshifter_lh6NOME 0 0 84.66 61.42 y y R0
+placeSTEParray Generate STONElogicshifter_lh12NOME 0 0 84.66 61.42 y y R0
+placeSTEParray Generate STONElogicshifter_lh30NOME 0 0 101.06 70.89 y y R0
+placeSTEParray Generate STONElogicshifter_lh45NOME 0 0 101.06 70.89 y y R0
+placeSTEParray PEBBLES PEBBLElogicshifterEN 0 0 43.11 8.37 y y R0
+placeSTEParray Generate STONElogicshifter_6NOME 0 0 43.11 8.37 y y R0
+movePINS
+placeROUTEnopins
+endlayoutbio
 //**********************************************
 //Project Parameters
+//Celera:CHARGEPUMPmain Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,1.2
+#define,PROJECTsupply,5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEdbuf,80
-generate_area,dbuf_e926e395,80
+sub_area,STONElogicshifter_lh30NOME,1000
+generate_area,logicshifter0L2H_fetdriver_cdd73154_Xfetin,1000
 // *********************************************
-//Calculator Parameters
-#define,CELVminimum,1.4
-//**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//dbuf
+//logicshifter0L2H
 revision,pinorder,0.2.0
-pinorder,o,i
+pinorder,HVPOS,out,SIMPV,in,enable_logicshifter,HVNEG
 
 endpinorder
-//**********************************************
+// *********************************************
+//Calculator Parameters
+#define,CELVminimum,1.5
+//**********************************************	
 //TRIM Parameters
-cell,dbuf
-trim,instance,dbuf_e926e395
+cell,logicshifter
+trim,instance,logicshifter0L2H_fetdriver_cdd73154_Xfetin
 
 trim,name,na
 trim,enable,no
@@ -116,7 +186,7 @@ trim,pinname,TBD
 trim,testname,TBD
 trim,description,TBD
 trim,target,na
-trim,units,TBD
+trim,units,KHz
 trim,pretrim_low_limit,TBD
 trim,pretrim_high_limit,TBD
 trim,posttrim_low_limit,TBD
@@ -130,65 +200,103 @@ trim,description4,empty
 trim,description5,empty
 trim,description6,empty
 trim,description7,empty
+//**********************************************
+//Cell Pin Descriptions
+// *********************************************
 
-//**********************************************
-//Cell Pin Descriptions
-//**********************************************
-//Cell Pin Descriptions
-pinname,CELV
-definition,CELV,power supply
-iq,CELV,SIMULATION
-absmax,CELV,6
-absmin,CELV,1.4
-io,CELV,input
-mode,CELV,power
-router,CELV,TBD
-dftpriority,CELV,1
-esd,CELV,TBD
+
+pinname,SIMPV
+definition,SIMPV,Level Shifter Supply
+iq,SIMPV,SIMULATION
+absmax,SIMPV,6
+absmin,SIMPV,2.0
+io,SIMPV,input
+mode,SIMPV,power
+router,SIMPV,TBD
+dftpriority,SIMPV,1
+esd,SIMPV,TBD
+
+pinname,HVPOS
+definition,HVPOS,Level Shifter High voltage supply
+iq,HVPOS,SIMULATION
+absmax,HVPOS,30
+absmin,HVPOS,-0.3
+io,HVPOS,input
+mode,HVPOS,power
+router,HVPOS,TBD
+dftpriority,HVPOS,1
+esd,HVPOS,TBD
 
 pinname,CELG
-definition,CELG,power ground
+definition,CELG,Reference power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-absmin,CELG,
+absmax,CELG,0.3
+absmin,CELG,-0.3
 io,CELG,input
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i
-definition,i,digital buffer input 
-iq,i,SIMULATION
-absmax,i,6
-absmin,i,
-io,i,input
-mode,i,digital
-router,i,TBD
-dftpriority,i,1
-esd,i,TBD
+pinname,HVNEG
+definition,HVNEG,Level Shifter High voltage return supply
+iq,HVNEG,SIMULATION
+absmax,HVNEG,30
+absmin,HVNEG,-0.3
+io,HVNEG,input
+mode,HVNEG,power
+router,HVNEG,TBD
+dftpriority,HVNEG,1
+esd,HVNEG,TBD
 
-pinname,o
-definition,o,digital buffer output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
+pinname,enable_logicshifter
+definition,enable_logicshifter,Logicshifter enable
+iq,enable_logicshifter,SIMULATION
+absmax,enable_logicshifter,6
+absmin,enable_logicshifter,-0.3
+io,enable_logicshifter,input
+mode,enable_logicshifter,digital
+router,enable_logicshifter,TBD
+dftpriority,enable_logicshifter,1
+esd,enable_logicshifter,TBD
 
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
+pinname,in
+definition,in,logicshifter input
+iq,in,SIMULATION
+absmax,in,6
+absmin,in,-0.3
+io,in,input
+mode,in,digital
+router,in,TBD
+dftpriority,in,1
+esd,in,TBD
+
+
+
+pinname,out
+definition,out,logicshifter output
+iq,out,SIMULATION
+absmax,out,6
+absmin,out,-0.3
+io,out,output
+mode,out,digital
+router,out,TBD
+dftpriority,out,1
+esd,out,TBD
+
+
+
+pinname,CELSUB
+definition,CELSUB,Substrate
+iq,CELSUB,SIMULATION
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
+io,CELSUB,input
+mode,CELSUB,power
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
+
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -866,4 +974,6 @@ revision,vis15cb,0p1
 #define,AP5G60DC1minmult,1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
-endbio
+
+endbio// *********************************************
+

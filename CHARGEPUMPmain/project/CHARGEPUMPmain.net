@@ -1,0 +1,321 @@
+* Z:\celera\projects\Simplis\playbrian\trials\verification\sim_CHARGEPUMPmain.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map SIMPV 24
+.node_map porb 34
+.node_map OUT 25
+.node_map PGND 26
+.node_map HV 31
+.node_map enable_chargepump 30
+.node_map CLOW 27
+.node_map clock_chargepump 28
+.node_map ok_chargepump 33
+.node_map CHIGH 29
+.node_map kelvin_GNDchargepump 32
+.node_map GND 35
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 300u 0
+.globalvar REF=1.0
+.globalvar VIN=5
+.globalvar tdext_khz=1000
+
+X$CHARGEPUMPmain 24 25 26 27 28 29 30 31 33 32 34 CHARGEPUMPmain
+
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+** From Z:\celera\projects\Simplis\playbrian\trials\design\CHARGEPUMPmain.sxcmp
+.subckt CHARGEPUMPmain 69 70 71 72 73 74 75 77 76 78 79
+*#hierarchy
+.node_map SIMPV 69
+.node_map porb 79
+.node_map dft_clk_500k 83
+.node_map p1 81
+.node_map p2 82
+.node_map OUT 70
+.node_map VCAPFB 88
+.node_map dft_clk_250k 84
+.node_map PGND 71
+.node_map HV 77
+.node_map enable_chargepump 75
+.node_map dft_clk_125k 85
+.node_map CLOW 72
+.node_map dft_startup 86
+.node_map hijack_p1 89
+.node_map hijack_p2 90
+.node_map clock_chargepump 73
+.node_map ok_chargepump 76
+.node_map CHIGH 74
+.node_map hijack_enable_chargepump 80
+.node_map kelvin_GNDchargepump 78
+.node_map OUTFB 87
+X$CONTROL 80 81 82 73 79 84 85 83 CHARGEPUMPctrl
+X$DEBUG 86 80 75 83 84 85 87 88 81 82 89 90 CHARGEPUMPdebug
+X$HIGHSIDE 69 74 81 70 82 71 80 72 77 CHARGEPUMPpowerHighside
+X$LOWSIDE 69 89 90 72 71 77 80 74 CHARGEPUMPpowerLowside
+X$MONITOR 77 76 70 69 80 78 86 88 87 CHARGEPUMPmonitor
+X$U10 72 pinprobe vars: pinprobe_description='CHARGEPUMP_fly_cap_bottom' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U11 74 pinprobe vars: pinprobe_description='CHARGEPUMP_fly_cap_top' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U13 78 pinprobe vars: pinprobe_description='ground_sense_chargepump' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U14 76 pinprobe vars: pinprobe_description='chargepup_ok_signal' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U15 79 pinprobe vars: pinprobe_description='porb_chargepump' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U4 69 pinprobe vars: pinprobe_description='CHARGEPUMP_analog_supply' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U5 71 pinprobe vars: pinprobe_description='CHARGEPUMP_power_ground' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U6 73 pinprobe vars: pinprobe_description='CHARGEPUMP_clock' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U7 75 pinprobe vars: pinprobe_description='CHARGEPUMP_enable' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U8 77 pinprobe vars: pinprobe_description='CHARGEPUMP_high_voltage_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U9 70 pinprobe vars: pinprobe_description='CHARGEPUMP_output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+.ends CHARGEPUMPmain
+
+** From Z:\celera\projects\Simplis\playbrian\trials\design\CHARGEPUMPctrl.sxcmp
+.subckt CHARGEPUMPctrl 92 91 93 90 94 96 97 95
+*#hierarchy
+.node_map porb 94
+.node_map clk_500k 77
+.node_map dft_clk_500k 95
+.node_map p1 91
+.node_map p2 93
+.node_map chargepump_freq$0 69
+.node_map chargepump_freq$1 70
+.node_map chargepump_freq$2 71
+.node_map chargepump_freq$3 72
+.node_map chargepump_freq$4 73
+.node_map chargepump_freq$5 74
+.node_map chargepump_freq$6 75
+.node_map BUS2$0 80
+.node_map chargepump_freq$7 76
+.node_map BUS2$1 81
+.node_map BUS2$2 82
+.node_map BUS2$3 83
+.node_map BUS2$4 84
+.node_map BUS3$0 85
+.node_map BUS3$1 86
+.node_map BUS3$2 87
+.node_map BUS3$3 88
+.node_map BUS3$4 89
+.node_map clk_250k 78
+.node_map dft_clk_250k 96
+.node_map enable_chargepump 92
+.node_map dft_clk_125k 97
+.node_map clk 98
+.node_map clock_chargepump 90
+.node_map clk_125k 79
+X$clockrequest1 40 92 92 92 45 44 43 42 41 51 52 53 54 55 56 57 77 78 79 46 47 48 49 50 58 59 60 61 62 63 64 65 clockrequest vars: clockrequest_enable0='pin' clockrequest_invert0='no' clockrequest_enable1='pin' clockrequest_invert1='no' clockrequest_enable2='pin' clockrequest_invert2='no' clockrequest_enable3='pin' clockrequest_invert3='no' clockrequest_enable4='pin' clockrequest_invert4='no' clockrequest_enable5='pin' clockrequest_invert5='no' clockrequest_enable6='pin' clockrequest_invert6='no' clockrequest_enable7='pin' clockrequest_invert7='no' clockrequest_enable8='pin' clockrequest_invert8='no' clockrequest_enable9='pin' clockrequest_invert9='no' clockrequest_enable10='pin' clockrequest_invert10='no' clockrequest_enable11='pin' clockrequest_invert11='no' clockrequest_enable12='pin' clockrequest_invert12='no' clockrequest_enable13='pin' clockrequest_invert13='no' clockrequest_enable14='pin' clockrequest_invert14='no' clockrequest_standby='no' clockrequest_dft='no' clockrequest_srambist='no' clockrequest_outputs=3 clockrequest_divide0=1 clockrequest_divide1=2 clockrequest_divide2=4 clockrequest_divide3=5 clockrequest_divide4=1 clockrequest_divide5=1 clockrequest_divide6=1 clockrequest_divide7=1 clockrequest_divide8=1 clockrequest_divide9=1 clockrequest_divide10=1 clockrequest_divide11=1 clockrequest_divide12=1 clockrequest_divide13=1 clockrequest_divide14=1 clockrequest_vmax=6
+X$U1 90 pinprobe vars: pinprobe_description='charge_pump_1MHz_input_clock' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U10 67 68 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U11 92 91 68 VESPAasmINPUT1
+X$U12 94 pinprobe vars: pinprobe_description='reset_signal' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U13 96 78 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U14 40 90 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U15 97 79 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U16 95 pinprobe vars: pinprobe_description='measure_CHARGEPUMP_clock_500k' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U17 96 pinprobe vars: pinprobe_description='measure_CHARGEPUMP_clock_250k' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U18 97 pinprobe vars: pinprobe_description='measure_CHARGEPUMP_clock_125k' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U19 92 93 66 VESPAasmINPUT1
+X$U2 91 pinprobe vars: pinprobe_description='input_phase' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 98 85 86 87 88 89 67 timingskew vars: timingskew_type='fall' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='CHARGEPUMPfallSKEW' timingskew_datasheet_description='charge_pump_falling_edge_skew' timingskew_bits=5 timingskew_por=7 timingskew_lsb=8 timingskew_vmax=6
+X$U4 69 70 71 72 73 74 75 76 datamap0 vars: datamap_function='code' datamap_name='CHARGEPUMPfreq' datamap_description='frequency_select_chargepump' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='register' datamap_por='0' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='chargepump_freq_500kHz' datamap_code1='chargepump_freq_500kHz' datamap_code2='chargepump_freq_250kHz' datamap_code3='chargepump_freq_125kHz' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_location=0 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U5 92 pinprobe vars: pinprobe_description='chargepump_enable_input' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U6 93 pinprobe vars: pinprobe_description='output_phase' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U7 98 80 81 82 83 84 66 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='CHARGEPUMPriseSKEW' timingskew_datasheet_description='Charge_pump_rising_edge_delay' timingskew_bits=5 timingskew_por=7 timingskew_lsb=8 timingskew_vmax=6
+X$U8 95 77 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U9 98 77 77 78 79 69 70 dmux4 vars: dmux_type='pin' dmux_datasheet_name='text' dmux_datasheet_description='text' dmux_inputs=4 dmux_reg_por=1 dmux_vmax=6
+.ends CHARGEPUMPctrl
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT1.sxcmp
+.subckt VESPAasmINPUT1 5 6 7
+*#hierarchy
+.node_map Tstate 5
+.node_map i0 7
+.node_map o 6
+X$U1 5 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 7 pinprobe vars: pinprobe_description='input1'
+X$U3 6 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 5 4 7 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U5 4 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+.ends VESPAasmINPUT1
+
+** From Z:\celera\projects\Simplis\playbrian\trials\design\CHARGEPUMPdebug.sxcmp
+.subckt CHARGEPUMPdebug 39 38 37 41 43 44 45 46 47 48 40 42
+*#hierarchy
+.node_map dft_clk_500k 41
+.node_map p1 47
+.node_map p2 48
+.node_map VCAPFB 46
+.node_map dft_clk_250k 43
+.node_map enable_chargepump 37
+.node_map dft_clk_125k 44
+.node_map dft_startup 39
+.node_map hijack_p1 40
+.node_map hijack_p2 42
+.node_map hijack_enable_chargepump 38
+.node_map OUTFB 45
+X$dfthijack1 37 38 dfthijack vars: dfthijack_name='CHARGEPUMPenable' dfthijack_description='Hijack_CHARGEPUMP_enable_input' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack2 47 40 dfthijack vars: dfthijack_name='CHARGEPUMPp1' dfthijack_description='Hijack_CHARGEPUMP_enable_input' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack3 48 42 dfthijack vars: dfthijack_name='CHARGEPUMPp2' dfthijack_description='Hijack_CHARGEPUMP_enable_input' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$U1 38 pinprobe vars: pinprobe_description='hijack_Enable_CHARGEPUMP_brick' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U10 48 pinprobe vars: pinprobe_description='CHARGEPUMP_phase2' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U11 40 pinprobe vars: pinprobe_description='hijack_p1_CHARGEPUMP_brick' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U12 42 pinprobe vars: pinprobe_description='hijack_p2_CHARGEPUMP_brick' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U2 37 pinprobe vars: pinprobe_description='enable_CHARGEPUMP_brick' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U3 39 pinprobe vars: pinprobe_description='measure_CHARGEPUMP_startup_time' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 41 pinprobe vars: pinprobe_description='measure_CHARGEPUMP_500k_clock' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 43 pinprobe vars: pinprobe_description='measure_CHARGEPUMP_500k_clock' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 45 pinprobe vars: pinprobe_description='measure_CHARGEPUMP_out_rdiv' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U7 46 pinprobe vars: pinprobe_description='measure_CHARGEPUMP_vcap_rdiv' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U8 44 pinprobe vars: pinprobe_description='measure_CHARGEPUMP_500k_clock' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 47 pinprobe vars: pinprobe_description='CHARGEPUMP_phase1' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$UCHARGEPUMP125k 44 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CHARGEPUMP125k' dftprobe_description='chargepump_125kHz_clock' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UCHARGEPUMP250k 43 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CHARGEPUMP250k' dftprobe_description='chargepump_250kHz_clock' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UCHARGEPUMP500k 41 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CHARGEPUMP500k' dftprobe_description='chargepump_500kHz_clock' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UCHARGEPUMPok 39 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CHARGEPUMPok' dftprobe_description='chargepump_Startup_time' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UCHARGEPUMPoutfb 45 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CHARGEPUMPoutfb' dftprobe_description='chargepump_output_rdiv' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UCHARGEPUMPvcapfb 46 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CHARGEPUMPvcapfb' dftprobe_description='chargepump_vcap_rdiv' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+.ends CHARGEPUMPdebug
+
+** From Z:\celera\projects\Simplis\playbrian\trials\design\CHARGEPUMPpowerHighside.sxcmp
+.subckt CHARGEPUMPpowerHighside 57 58 59 60 61 65 63 62 64
+*#hierarchy
+.node_map SIMPV 57
+.node_map BUS1$0 49
+.node_map BUS1$1 50
+.node_map OUT 60
+.node_map BUS2$0 51
+.node_map BUS2$1 52
+.node_map BUS3$0 53
+.node_map BUS3$1 54
+.node_map phase0 59
+.node_map phase1 61
+.node_map enable_power 63
+.node_map BUS4$0 55
+.node_map BUS4$1 56
+.node_map PGND 65
+.node_map HV 64
+.node_map CLOW 62
+.node_map CHIGH 58
+X$fetdriver1 58 31 32 62 39 33 34 35 49 50 51 52 63 59 fetdriver vars: fetdriver_type='p' fetdriver_on_adjust='no' fetdriver_on_adjust_por='0' fetdriver_on_adjust_name='text' fetdriver_on_adjust_description='text' fetdriver_off_adjust='no' fetdriver_off_adjust_por='0' fetdriver_off_adjust_name='text' fetdriver_off_adjust_description='text' fetdriver_faultdisable='no' fetdriver_levelshiftenable='yes' fetdriver_levelshiftinput='yes' fetdriver_status_levelshifter='no' fetdriver_status_delay_adjust='no' fetdriver_statusdelay_name='text' fetdriver_statusdelay_description='text' fetdriver_passive='2000' fetdriver_dft='no' fetdriver_design='consumer' fetdriver_on_ron=40 fetdriver_off_ron=40 fetdriver_vmaxlevelshift=30 fetdriver_status_delay=5 fetdriver_vmax=6
+X$fetdriver3 60 40 41 64 48 42 43 44 53 54 55 56 63 61 fetdriver vars: fetdriver_type='p' fetdriver_on_adjust='no' fetdriver_on_adjust_por='0' fetdriver_on_adjust_name='text' fetdriver_on_adjust_description='text' fetdriver_off_adjust='no' fetdriver_off_adjust_por='0' fetdriver_off_adjust_name='text' fetdriver_off_adjust_description='text' fetdriver_faultdisable='no' fetdriver_levelshiftenable='yes' fetdriver_levelshiftinput='yes' fetdriver_status_levelshifter='no' fetdriver_status_delay_adjust='no' fetdriver_statusdelay_name='text' fetdriver_statusdelay_description='text' fetdriver_passive='2000' fetdriver_dft='no' fetdriver_design='consumer' fetdriver_on_ron=40 fetdriver_off_ron=40 fetdriver_vmaxlevelshift=30 fetdriver_status_delay=5 fetdriver_vmax=6
+X$U1 59 pinprobe vars: pinprobe_description='phase0' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U2 61 pinprobe vars: pinprobe_description='phase1' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U28 62 pinprobe vars: pinprobe_description='CLOW' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U29 64 pinprobe vars: pinprobe_description='HV' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 58 pinprobe vars: pinprobe_description='CHIGH' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U30 63 pinprobe vars: pinprobe_description='Enable_DOUBLE_precharge' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 60 pinprobe vars: pinprobe_description='OUT' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 65 pinprobe vars: pinprobe_description='PGND' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 58 57 31 38 37 36 fet vars: fet_usage='power' fet_replica='no' fet_type='p' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=1k fet_ron_power=77 fet_replica_gain=10 fet_maximumvds=30 count_1=0 fet_vmax=6
+X$U7 60 58 40 47 46 45 fet vars: fet_usage='power' fet_replica='no' fet_type='p' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=1k fet_ron_power=77 fet_replica_gain=10 fet_maximumvds=30 count_1=0 fet_vmax=6
+X$U9 57 pinprobe vars: pinprobe_description='Input_Voltage_Supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+.ends CHARGEPUMPpowerHighside
+
+** From Z:\celera\projects\Simplis\playbrian\trials\design\CHARGEPUMPpowerLowside.sxcmp
+.subckt CHARGEPUMPpowerLowside 56 57 59 60 62 55 61 58
+*#hierarchy
+.node_map SIMPV 56
+.node_map BUS1$0 47
+.node_map BUS1$1 48
+.node_map BUS2$0 49
+.node_map BUS2$1 50
+.node_map BUS3$0 51
+.node_map BUS3$1 52
+.node_map phase0 57
+.node_map phase1 59
+.node_map enable_power 61
+.node_map BUS4$0 53
+.node_map BUS4$1 54
+.node_map PGND 62
+.node_map HV 55
+.node_map CLOW 60
+.node_map CHIGH 58
+X$fetdriver2 56 38 57 62 46 39 40 61 51 52 53 54 41 42 fetdriver vars: fetdriver_type='n' fetdriver_on_adjust='no' fetdriver_on_adjust_por='1' fetdriver_on_adjust_name='text' fetdriver_on_adjust_description='text' fetdriver_off_adjust='no' fetdriver_off_adjust_por='0' fetdriver_off_adjust_name='text' fetdriver_off_adjust_description='text' fetdriver_faultdisable='no' fetdriver_levelshiftenable='no' fetdriver_levelshiftinput='no' fetdriver_status_levelshifter='no' fetdriver_status_delay_adjust='no' fetdriver_statusdelay_name='text' fetdriver_statusdelay_description='text' fetdriver_passive='2000' fetdriver_dft='no' fetdriver_design='consumer' fetdriver_on_ron=40 fetdriver_off_ron=40 fetdriver_vmaxlevelshift=6 fetdriver_status_delay=0 fetdriver_vmax=6
+X$fetdriver3 58 29 30 60 37 31 32 33 47 48 49 50 61 59 fetdriver vars: fetdriver_type='n' fetdriver_on_adjust='no' fetdriver_on_adjust_por='0' fetdriver_on_adjust_name='text' fetdriver_on_adjust_description='text' fetdriver_off_adjust='no' fetdriver_off_adjust_por='0' fetdriver_off_adjust_name='text' fetdriver_off_adjust_description='text' fetdriver_faultdisable='no' fetdriver_levelshiftenable='yes' fetdriver_levelshiftinput='yes' fetdriver_status_levelshifter='no' fetdriver_status_delay_adjust='no' fetdriver_statusdelay_name='text' fetdriver_statusdelay_description='text' fetdriver_passive='2000' fetdriver_dft='no' fetdriver_design='consumer' fetdriver_on_ron=40 fetdriver_off_ron=40 fetdriver_vmaxlevelshift=30 fetdriver_status_delay=5 fetdriver_vmax=6
+X$U1 57 pinprobe vars: pinprobe_description='phase0' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U11 55 pinprobe vars: pinprobe_description='HV' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U17 58 pinprobe vars: pinprobe_description='CHIGH' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U2 59 pinprobe vars: pinprobe_description='phase1' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 60 55 29 36 35 34 fet vars: fet_usage='power' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=1k fet_ron_power=23 fet_replica_gain=10 fet_maximumvds=24 count_1=0 fet_vmax=6
+X$U30 61 pinprobe vars: pinprobe_description='Enable_DOUBLE_precharge' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 62 60 38 45 44 43 fet vars: fet_usage='power' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=1k fet_ron_power=23 fet_replica_gain=10 fet_maximumvds=24 count_1=0 fet_vmax=6
+X$U5 62 pinprobe vars: pinprobe_description='PGND' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 60 pinprobe vars: pinprobe_description='CLOW' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 56 pinprobe vars: pinprobe_description='Input_Voltage_Supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+.ends CHARGEPUMPpowerLowside
+
+** From Z:\celera\projects\Simplis\playbrian\trials\design\CHARGEPUMPmonitor.sxcmp
+.subckt CHARGEPUMPmonitor 71 72 73 75 77 79 74 78 76
+*#hierarchy
+.node_map SIMPV 75
+.node_map ok_comparator 81
+.node_map OUT 73
+.node_map VCAPFB 78
+.node_map ok_chargepump_raw 82
+.node_map ok_offset_current 80
+.node_map enable_chargepump 77
+.node_map dft_startup 74
+.node_map ok_chargepump 72
+.node_map kelvin_GNDchargepump 79
+.node_map VCAP 71
+.node_map OUTFB 76
+X$comparator1 81 75 77 82 76 68 78 69 70 67 comparatornoctlpins vars: comparator_model='comparator' comparator_hysteresismode='fixed' comparator_edge='rising' comparator_speed='slow' comparator_type='p' comparator_deglitch='yes' comparator_lowiq='no' comparator_datasheet_name='text' comparator_datasheet_description='text' bgcomp_accuracy='no' bgcomp_outputanalog='supply' bgcomp_note1='Usage' bgcomp_outputdigital='no' bgcomp_trim_name='text' bgcomp_trim_description='text' bgcomp_enable='yes' comparator_dft='no' comparatorsupply_reference='ground' comparatorsupply_threshold='50' comparatorsupply_edge='falling' comparatorsupply_output='analog' comparatorsupply_enable='analog' comparator_hysteresis=100 comparator_lowiqpor=0 bgcomp_threshold=1.2 bgcomp_maxcelpos=6 bgcomp_maxvin=6 comparator_vmax=6
+X$currentgenerator1 78 53 54 55 56 57 58 59 75 77 80 52 currentgenerator vars: currentgenerator_polarity0='source' currentgenerator_polarity1='sink' currentgenerator_polarity2='sink' currentgenerator_polarity3='sink' currentgenerator_polarity4='sink' currentgenerator_polarity5='sink' currentgenerator_polarity6='sink' currentgenerator_polarity7='sink' currentgenerator_accuracy='no' currentgenerator_datasheet_accuracy_name='text' currentgenerator_datasheet_accuracy_description='text' currentgenerator_tempco='zero' currentgenerator_dft='no' currentgenerator_output0=2 currentgenerator_output1=1 currentgenerator_output2=1 currentgenerator_output3=1 currentgenerator_output4=1 currentgenerator_output5=1 currentgenerator_output6=1 currentgenerator_output7=1 currentgenerator_number=1 currentgenerator_tempco_gain=3 currentgenerator_vmax=6 currentgenerator_vout=6
+X$resistordivider1 76 51 50 49 48 47 46 45 73 79 77 resistordivider vars: resistordivider_disconnect='yes' resistordivider_disconnect_tap='bottom' resistordivider_dft='no' resistordivider_rtotal=2.5k resistordivider_vresistortop=30 resistordivider_vmax=6 resistordivider_outputs=1 resistordivider_tap0=10 resistordivider_tap1=20 resistordivider_tap2=30 resistordivider_tap3=40 resistordivider_tap4=50 resistordivider_tap5=60 resistordivider_tap6=70 resistordivider_tap7=80
+X$resistordivider2 78 66 65 64 63 62 61 60 71 79 77 resistordivider vars: resistordivider_disconnect='yes' resistordivider_disconnect_tap='bottom' resistordivider_dft='no' resistordivider_rtotal=2.5k resistordivider_vresistortop=30 resistordivider_vmax=6 resistordivider_outputs=1 resistordivider_tap0=10 resistordivider_tap1=20 resistordivider_tap2=30 resistordivider_tap3=40 resistordivider_tap4=50 resistordivider_tap5=60 resistordivider_tap6=70 resistordivider_tap7=80
+X$U1 77 pinprobe vars: pinprobe_description='chargepump_enable_input' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U10 78 pinprobe vars: pinprobe_description='measure_CHARGEPUMP_vcap_rdiv' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U17 77 72 74 VESPAdftpulse
+X$U2 75 pinprobe vars: pinprobe_description='5V_analog_supply' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 79 pinprobe vars: pinprobe_description='chargepump_kelvin_gnd' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 73 pinprobe vars: pinprobe_description='chargepump_output' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 71 pinprobe vars: pinprobe_description='chargepump_hv_input' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 80 81 72 82 77 VESPAasmINPUT3
+X$U7 72 pinprobe vars: pinprobe_description='chargepump_ok' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U8 74 pinprobe vars: pinprobe_description='chargepump_startup_pulse' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 76 pinprobe vars: pinprobe_description='measure_CHARGEPUMP_output_rdiv' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+.ends CHARGEPUMPmonitor
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAdftpulse.sxcmp
+.subckt VESPAdftpulse 7 8 9
+*#hierarchy
+.node_map start 7
+.node_map stop 8
+.node_map pulse 9
+X$U11 7 pinprobe vars: pinprobe_description='DFT_timer_start_input'
+X$U15 8 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U17 8 pinprobe vars: pinprobe_description='DFT_timer_stop_input'
+X$U52 7 4 6 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U53 4 5 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U55 9 5 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U8 9 pinprobe vars: pinprobe_description='DFT_Timer_pulse'
+.ends VESPAdftpulse
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT3.sxcmp
+.subckt VESPAasmINPUT3 9 10 11 12 13
+*#hierarchy
+.node_map Tstate 13
+.node_map i0 9
+.node_map i1 10
+.node_map i2 12
+.node_map o 11
+X$U1 13 pinprobe vars: pinprobe_description='state_blank_time'
+X$U19 11 7 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U2 10 pinprobe vars: pinprobe_description='input1'
+X$U3 11 pinprobe vars: pinprobe_description='INPUT2_output'
+X$U4 9 12 6 10 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U5 13 8 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U6 6 7 8 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U7 9 pinprobe vars: pinprobe_description='input0'
+X$U8 12 pinprobe vars: pinprobe_description='input2'
+.ends VESPAasmINPUT3
+
+** From Z:\celera\projects\Simplis\playbrian\trials\verification\FORCE_CHARGEPUMPmain.sxcmp
+
+
+.end

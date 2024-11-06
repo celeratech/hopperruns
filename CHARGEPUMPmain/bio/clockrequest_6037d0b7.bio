@@ -1,43 +1,149 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Celera Confidential BIO Data Generator
+
 //Cell Name
-cell,dbuf
+cell,clockrequest
 //**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.4.3
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-//dbuf
 
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
-limit,logicgate_type,choose0,dbuf
+limit,clockrequest_outputs,minimum,1
+limit,clockrequest_outputs,maximum,14
+limit,clockrequest_enable0,choose0,pin
+limit,clockrequest_enable0,choose1,always
+limit,clockrequest_enable1,choose0,pin
+limit,clockrequest_enable1,choose1,always
+limit,clockrequest_enable2,choose0,pin
+limit,clockrequest_enable2,choose1,always
+limit,clockrequest_enable3,choose0,pin
+limit,clockrequest_enable3,choose1,always
+limit,clockrequest_enable4,choose0,pin
+limit,clockrequest_enable4,choose1,always
+limit,clockrequest_enable5,choose0,pin
+limit,clockrequest_enable5,choose1,always
+limit,clockrequest_enable6,choose0,pin
+limit,clockrequest_enable6,choose1,always
+limit,clockrequest_enable7,choose0,pin
+limit,clockrequest_enable7,choose1,always
+limit,clockrequest_enable8,choose0,pin
+limit,clockrequest_enable8,choose1,always
+limit,clockrequest_enable9,choose0,pin
+limit,clockrequest_enable9,choose1,always
+limit,clockrequest_enable10,choose0,pin
+limit,clockrequest_enable10,choose1,always
+limit,clockrequest_enable11,choose0,pin
+limit,clockrequest_enable11,choose1,always
+limit,clockrequest_enable12,choose0,pin
+limit,clockrequest_enable12,choose1,always
+limit,clockrequest_enable13,choose0,pin
+limit,clockrequest_enable13,choose1,always
+limit,clockrequest_enable14,choose0,pin
+limit,clockrequest_enable14,choose1,always
+
+limit,clockrequest_divide0,minimum,0
+limit,clockrequest_divide0,maximum,255
+limit,clockrequest_divide1,minimum,0
+limit,clockrequest_divide1,maximum,255
+limit,clockrequest_divide2,minimum,0
+limit,clockrequest_divide2,maximum,255
+limit,clockrequest_divide3,minimum,0
+limit,clockrequest_divide3,maximum,255
+limit,clockrequest_divide4,minimum,0
+limit,clockrequest_divide4,maximum,255
+limit,clockrequest_divide5,minimum,0
+limit,clockrequest_divide5,maximum,255
+limit,clockrequest_divide6,minimum,0
+limit,clockrequest_divide6,maximum,255
+limit,clockrequest_divide7,minimum,0
+limit,clockrequest_divide7,maximum,255
+limit,clockrequest_divide8,minimum,0
+limit,clockrequest_divide8,maximum,255
+limit,clockrequest_divide9,minimum,0
+limit,clockrequest_divide9,maximum,255
+limit,clockrequest_divide10,minimum,0
+limit,clockrequest_divide10,maximum,255
+limit,clockrequest_divide11,minimum,0
+limit,clockrequest_divide11,maximum,255
+limit,clockrequest_divide12,minimum,0
+limit,clockrequest_divide12,maximum,255
+limit,clockrequest_divide13,minimum,0
+limit,clockrequest_divide13,maximum,255
+limit,clockrequest_divide14,minimum,0
+limit,clockrequest_divide14,maximum,255
+
+limit,clockrequest_invert0,choose0,no
+limit,clockrequest_invert0,choose1,yes
+limit,clockrequest_invert1,choose0,no
+limit,clockrequest_invert1,choose1,yes
+limit,clockrequest_invert2,choose0,no
+limit,clockrequest_invert2,choose1,yes
+limit,clockrequest_invert3,choose0,no
+limit,clockrequest_invert3,choose1,yes
+limit,clockrequest_invert4,choose0,no
+limit,clockrequest_invert4,choose1,yes
+limit,clockrequest_invert5,choose0,no
+limit,clockrequest_invert5,choose1,yes
+limit,clockrequest_invert6,choose0,no
+limit,clockrequest_invert6,choose1,yes
+limit,clockrequest_invert7,choose0,no
+limit,clockrequest_invert7,choose1,yes
+limit,clockrequest_invert8,choose0,no
+limit,clockrequest_invert8,choose1,yes
+limit,clockrequest_invert9,choose0,no
+limit,clockrequest_invert9,choose1,yes
+limit,clockrequest_invert10,choose0,no
+limit,clockrequest_invert10,choose1,yes
+limit,clockrequest_invert11,choose0,no
+limit,clockrequest_invert11,choose1,yes
+limit,clockrequest_invert12,choose0,no
+limit,clockrequest_invert12,choose1,yes
+limit,clockrequest_invert13,choose0,no
+limit,clockrequest_invert13,choose1,yes
+limit,clockrequest_invert14,choose0,no
+limit,clockrequest_invert14,choose1,yes
+
+limit,clockrequest_dft,choose0,no
+limit,clockrequest_dft,choose1,yes
+limit,clockrequest_srambist,choose0,no
+limit,clockrequest_srambist,choose1,yes
+limit,clockrequest_vmax,choose0,2
+limit,clockrequest_vmax,choose1,6
+limit,clockrequest_standby,choose0,yes
+limit,clockrequest_standby,choose1,no
+
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,VMAX,6V
-user,Type,dbuf
-
+user,clockrequest_outputs,3
+description,ClockReport Requests
+user,Channel0,pin_DIV2
+description,Channel0 Request
+user,Channel1,pin_DIV4
+description,Channel1 Request
+user,Channel2,pin_DIV8
+description,Channel2 Request
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,dbuf
-register,instance,dbuf_e926e395
+registermap,clockrequest
+register,instance,clockrequest_6037d0b7
 register,source,cell
 
-//Logic dbuf
+//delay time 
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,na
+register,mode,readonly
 register,por,0
 register,userdescription,na
 register,description0,description0,not used
@@ -54,15 +160,15 @@ register,busname,na
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,dbuf
-factory,instance,dbuf_e926e395
+factorymap,clockrequest
+factory,instance,clockrequest_6037d0b7
 factory,source,cell
 
-//LOGIC CELLS dbuf
+//clocksync
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,na
+factory,mode,readonly
 factory,por,0
 factory,userdescription,na
 factory,description0,description0,not used
@@ -75,48 +181,100 @@ factory,description6,description6,not used
 factory,description7,description7,not used
 //Netlister Information
 factory,busname,na
-//**********************************************
+// *********************************************
+//CELL DFT Parameters
+// *********************************************
 //Layout Parameters
 revision,layout,0p1
-laout,dbuf
-place PEBBLES PEBBLEdbuf 0 0 R0
-movePINS
+
+layout,clockrequest
+
+
+//New NESTO for Simplis294
+
+
 endlayoutbio
 
 //**********************************************
 //Project Parameters
+//Celera:CHARGEPUMPmain Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,1.2
+#define,PROJECTsupply,5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEdbuf,80
-generate_area,dbuf_e926e395,80
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,clkgen4_div4,999999
+generate_area,clockrequest_6037d0b7,999999
 // *********************************************
 //Calculator Parameters
-#define,CELVminimum,1.4
+
+#define,CELVminimum,2.0
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//dbuf
+//clockrequest
 revision,pinorder,0.2.0
-pinorder,o,i
+pinorder,clock,enable_clock0,enable_clock1,enable_clock2,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,clock0,clock1,clock2,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip
 
 endpinorder
 //**********************************************
 //TRIM Parameters
-cell,dbuf
-trim,instance,dbuf_e926e395
+cell,clockrequest
+trim,instance,clockrequest_6037d0b7
 
 trim,name,na
 trim,enable,no
 trim,bits,TBD
 trim,por,0
-trim,pinname,TBD
+trim,pinname,trim_delay
 trim,testname,TBD
 trim,description,TBD
 trim,target,na
-trim,units,TBD
+trim,units,mV
 trim,pretrim_low_limit,TBD
 trim,pretrim_high_limit,TBD
 trim,posttrim_low_limit,TBD
@@ -130,16 +288,18 @@ trim,description4,empty
 trim,description5,empty
 trim,description6,empty
 trim,description7,empty
+trim,description8,empty
+
+
+
 
 //**********************************************
 //Cell Pin Descriptions
-//**********************************************
-//Cell Pin Descriptions
 pinname,CELV
-definition,CELV,power supply
+definition,CELV,cell power
 iq,CELV,SIMULATION
 absmax,CELV,6
-absmin,CELV,1.4
+absmin,CELV,2.0
 io,CELV,input
 mode,CELV,power
 router,CELV,TBD
@@ -147,48 +307,116 @@ dftpriority,CELV,1
 esd,CELV,TBD
 
 pinname,CELG
-definition,CELG,power ground
+definition,CELG,cell power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-absmin,CELG,
+absmax,CELG,0.3
+absmin,CELG,-0.3
 io,CELG,input
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i
-definition,i,digital buffer input 
-iq,i,SIMULATION
-absmax,i,6
-absmin,i,
-io,i,input
-mode,i,digital
-router,i,TBD
-dftpriority,i,1
-esd,i,TBD
+pinname,celeraporb
+definition,celeraporb,Power on reset input
+iq,celeraporb,SIMULATION
+absmax,celeraporb,6
+absmin,celeraporb,-0.3
+io,celeraporb,input
+mode,celeraporb,digital
+router,celeraporb,TBD
+dftpriority,celeraporb,1
+esd,celeraporb,TBD
 
-pinname,o
-definition,o,digital buffer output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
+pinname,clock
+definition,clock,Master clock input
+iq,clock,SIMULATION
+absmax,clock,6
+absmin,clock,-0.3
+io,clock,input
+mode,clock,digital
+router,clock,TBD
+dftpriority,clock,1
+esd,clock,TBD
 
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
+pinname,enable_clock0
+definition,enable_clock0,Channel0 enable request
+iq,enable_clock0,SIMULATION
+absmax,enable_clock0,6
+absmin,enable_clock0,-0.3
+io,enable_clock0,input
+mode,enable_clock0,digital
+router,enable_clock0,TBD
+dftpriority,enable_clock0,1
+esd,enable_clock0,TBD
+
+pinname,enable_clock1
+definition,enable_clock1,Channel1 enable request
+iq,enable_clock1,SIMULATION
+absmax,enable_clock1,6
+absmin,enable_clock1,-0.3
+io,enable_clock1,input
+mode,enable_clock1,digital
+router,enable_clock1,TBD
+dftpriority,enable_clock1,1
+esd,enable_clock1,TBD
+
+pinname,enable_clock2
+definition,enable_clock2,Channel2 enable request
+iq,enable_clock2,SIMULATION
+absmax,enable_clock2,6
+absmin,enable_clock2,-0.3
+io,enable_clock2,input
+mode,enable_clock2,digital
+router,enable_clock2,TBD
+dftpriority,enable_clock2,1
+esd,enable_clock2,TBD
+
+pinname,clock0
+definition,clock0,Output clock0
+iq,clock0,SIMULATION
+absmax,clock0,6
+absmin,clock0,-0.3
+io,clock0,output
+mode,clock0,digital
+router,clock0,TBD
+dftpriority,clock0,1
+esd,clock0,TBD
+
+pinname,clock1
+definition,clock1,Output clock1
+iq,clock1,SIMULATION
+absmax,clock1,6
+absmin,clock1,-0.3
+io,clock1,output
+mode,clock1,digital
+router,clock1,TBD
+dftpriority,clock1,1
+esd,clock1,TBD
+
+pinname,clock2
+definition,clock2,Output clock2
+iq,clock2,SIMULATION
+absmax,clock2,6
+absmin,clock2,-0.3
+io,clock2,output
+mode,clock2,digital
+router,clock2,TBD
+dftpriority,clock2,1
+esd,clock2,TBD
+
+pinname,CELSUB
+definition,CELSUB,substrate
+iq,CELSUB,SIMULATION
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
+io,CELSUB,input
+mode,CELSUB,analog
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
+
+endbio
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -867,3 +1095,4 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+

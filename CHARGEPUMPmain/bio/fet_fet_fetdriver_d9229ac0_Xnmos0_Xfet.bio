@@ -1,3 +1,4 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
@@ -5,65 +6,108 @@
 
 //Celera Confidential BIO Data Generator
 //Cell Name
-cell,dbuf
+cell,fet
 //**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.3.9
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-//dbuf
+limit,fet_usage,choose0,signal,
+limit,fet_usage,choose1,power,
+limit,fet_ron_power,minimum,0.001,
+limit,fet_ron_power,maximum,60000,
+limit,fet_ron_signal,minimum,10,
+limit,fet_ron_signal,maximum,60000,
+limit,fet_type,choose0,n,
+limit,fet_type,choose1,p,
+limit,fet_vmax,choose0,2
+limit,fet_vmax,choose1,6
+limit,fet_maximumvds,choose0,2
+limit,fet_maximumvds,choose1,6
+limit,fet_maximumvds,choose2,12
+limit,fet_maximumvds,choose3,20
+limit,fet_maximumvds,choose4,24
+limit,fet_maximumvds,choose5,30
+limit,fet_maximumvds,choose6,36
+limit,fet_maximumvds,choose7,40
+limit,fet_maximumvds,choose8,45
+limit,fet_maximumvds,choose9,60
+limit,fet_diode,choose0,yes
+limit,fet_diode,choose1,no
+limit,fet_diodedrive,choose0,diode
+limit,fet_diodedrive,choose1,active
+limit,fet_replica,choose0,no
+limit,fet_replica,choose1,drain
+limit,fet_replica,choose2,source
+limit,fet_replica_gain,minimum,1,
+limit,fet_replica_gain,maximum,40,
+limit,fet_kelvin,choose0,no
+limit,fet_kelvin,choose1,yes
+limit,fet_layoutrotate,choose0,no
+limit,fet_layoutrotate,choose1,yes
+limit,fet_dft,choose0,no
+limit,fet_dft,choose1,yes
+limit,fet_calculator,choose0,typical
+limit,fet_calculator,choose1,maximum
 
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
-limit,logicgate_type,choose0,dbuf
+
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,VMAX,6V
-user,Type,dbuf
-
+user,Type,n
+description,FET type
+user,Ron,134166520 x3354163 Ohm
+user,Ron_Design,0 x3354163 Ohm
+description,FET on resistance
+user,Vds,6V
+description,FET Maximum Vds rating
+user,VgsMax,6V
+description,FET Maximum Vgs rating
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,dbuf
-register,instance,dbuf_e926e395
+registermap,singlepowerfetN
+register,instance,fet_fet_fetdriver_d9229ac0_Xnmos0_Xfet
 register,source,cell
 
-//Logic dbuf
+//No register Map Required
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,na
+register,mode,readwrite
 register,por,0
 register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
+register,description8,empty
+register,description9,empty
+register,description10,empty
+register,description11,empty
+register,description12,empty
 //Netlister Information
 register,busname,na
-
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,dbuf
-factory,instance,dbuf_e926e395
+factorymap,singlepowerfetN
+factory,instance,fet_fet_fetdriver_d9229ac0_Xnmos0_Xfet
 factory,source,cell
 
-//LOGIC CELLS dbuf
+//No factory Map Required
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,na
-factory,por,0
+factory,mode,readonlyfactory,por,0
 factory,userdescription,na
 factory,description0,description0,not used
 factory,description1,description1,not used
@@ -75,38 +119,11 @@ factory,description6,description6,not used
 factory,description7,description7,not used
 //Netlister Information
 factory,busname,na
-//**********************************************
-//Layout Parameters
-revision,layout,0p1
-laout,dbuf
-place PEBBLES PEBBLEdbuf 0 0 R0
-movePINS
-endlayoutbio
 
-//**********************************************
-//Project Parameters
-// *********************************************
-//Die Size Estimate
-revision,vis15cbdiesize,0p1
-sub_area,PEBBLEdbuf,80
-generate_area,dbuf_e926e395,80
-// *********************************************
-//Calculator Parameters
-#define,CELVminimum,1.4
-//**********************************************
-//Pinorder Parameters
-*******************************************
-** Celera Library Pin Order Generator    **
-*******************************************
-//dbuf
-revision,pinorder,0.2.0
-pinorder,o,i
-
-endpinorder
 //**********************************************
 //TRIM Parameters
-cell,dbuf
-trim,instance,dbuf_e926e395
+cell,singlepowerfetN
+trim,instance,fet_fet_fetdriver_d9229ac0_Xnmos0_Xfet
 
 trim,name,na
 trim,enable,no
@@ -121,7 +138,7 @@ trim,pretrim_low_limit,TBD
 trim,pretrim_high_limit,TBD
 trim,posttrim_low_limit,TBD
 trim,posttrim_high_limit,TBD
-trim,codeunits,%
+trim,codeunits,TBD
 trim,description0,empty
 trim,description1,empty
 trim,description2,empty
@@ -130,65 +147,295 @@ trim,description4,empty
 trim,description5,empty
 trim,description6,empty
 trim,description7,empty
+//**********************************************
+//CELL DFT Parameters
+// *********************************************
+//Layout Parameters
+powerfet,layout instruction
+placeFET 0 0 9.810 33.480 1 0 fullmetal
+//fetpower.bio
+revision,layout,0p1
+layout,fet_fetpower
+
+
+endlayoutbio
 
 //**********************************************
-//Cell Pin Descriptions
+//Project Parameters
+//Celera:CHARGEPUMPmain Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,1.2
+#define,PROJECTsupply,5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
+// *********************************************
+//Die Size Estimate
+revision,vis15cbdiesize,0p1
+sub_area,an5g6dw1_25p1x0p2x4p0x1p0,45200
+generate_area,fet_fet_fetdriver_d9229ac0_Xnmos0_Xfet,45200
+// *********************************************
+//Calculator Parameters
+#define,CELVminimum,1.3
+#define,NMOSaccuracy,5.0
+#define,NMOSPOWERaccuracy,2.0
+#define,NMOSsignalmetalAdder,2
+#define,NMOSpowermetalAdder,20
+#define,NMOSprocessAdder,100
+#define,NMOSsinglestep6,3.3
+#define,NMOSsinglestep12,4.1
+#define,NMOSsinglestep20,4.9
+#define,NMOSsinglestep24,5.9
+#define,NMOSsinglestep30,6.3
+#define,NMOSsinglestep40,8.0
+#define,NMOSsingleratio,0.75
+
+//293 updates
+#define,NMOSsinglestep36,10.0
+#define,NMOSsinglestep45,10.0
+#define,NMOSsinglestep60,10.0
+
+#define,PMOSaccuracy,1.0
+#define,PMOSPOWERaccuracy,2.0
+#define,PMOSpowermetalAdder,30
+#define,PMOSsignalmetalAdder,2
+#define,PMOSprocessAdder,100
+#define,PMOSsinglestep6,3.96
+#define,PMOSsinglestep12,4.76
+#define,PMOSsinglestep20,5.96
+#define,PMOSsinglestep24,6.56
+#define,PMOSsinglestep30,7.96
+#define,PMOSsinglestep40,9.0
+#define,PMOSsingleratio,0.75
+
+//293 updates
+#define,PMOSsinglestep36,10.0
+#define,PMOSsinglestep45,10.0
+#define,PMOSsinglestep60,10.0
+
+//Define default calculators
+#define,CELV_TEMP,3.3
+#define,TEMPERATURE_TEMP,125
+//#define,VGS_TEMP,2.3
+#define,VGS_TEMP,5.0
+
+//Ddefine Signal Layout Guidelines
+#define,SIGNALmaximumwidth,200
+//Error Winodow of SIGNAL Ron Calculation
+#define,SIGNALaccuracy,10.0
+#define,POWERaccuracy,5.0
+//Define Power Layout Rules
+#define,POWERmaximumwidth,400
+//Limit the size of device X
+#define,POWERxlimit,100000
+
+//Power fet Calculations
+//RevA Mode1 - Power
+//#define,POWERx,2.33
+//#define,POWERy,8.38
+//#define,POWERk6,3.3
+//#define,POWERk12,4.1
+//#define,POWERk20,4.9
+//#define,POWERk24,5.3
+//#define,POWERk30,6.3
+//#define,POWERk40,7.9
+
+//RevB Model - Power
+#define,POWERxN,3.21
+#define,POWERxP,4.4
+#define,POWERy,8.38
+#define,POWERk6N,3.3
+#define,POWERk12N,4.1
+#define,POWERk20N,4.9
+#define,POWERk24N,5.3
+#define,POWERk30N,6.3
+#define,POWERk40N,7.9
+#define,POWERk6P,3.96
+#define,POWERk12P,4.76
+#define,POWERk20P,5.96
+#define,POWERk24P,6.56
+#define,POWERk30P,7.76
+#define,POWERk40P,7.86
+//293 Updates
+#define,POWERk40N,10.0
+#define,POWERk45N,10.0
+#define,POWERk60N,10.0
+
+#define,POWERk36P,10.0
+#define,POWERk45P,10.0
+#define,POWERk60P,10.0
+
+
+//Layout Rules
+#define,NMOSlayoutratio,0.75
+#define,PMOSlayoutratio,0.75
+
+//Limit how many columns/row are allowed
+#define,POWERcolumnstart,2
+//Limt the number of X  Fets placed
+#define,POWERFETmaximumX,2750
+//How accuracy the FTE ratio has to be with respect to 'layoutratio' <%>
+#define,POWERFETratioACCURACY,10.0
+//DeltaW sstep when search for final Width
+#define,POWERFETwidthSTEP,0.1
+
+//RevA Model - Signal
+#define,SIGNALk6N,0.44
+#define,SIGNALk12N,7.43
+#define,SIGNALk20N,7.63
+#define,SIGNALk24N,8.03
+#define,SIGNALk30N,9.63
+//293 updates
+#define,SIGNALk40N,10.0
+#define,SIGNALk45N,10.0
+#define,SIGNALk60N,10.0
+
+#define,SIGNALk6P,0.44
+#define,SIGNALk12P,5.86
+#define,SIGNALk20P,6.96
+#define,SIGNALk24P,7.76
+#define,SIGNALk30P,7.96
+//293 updates
+#define,SIGNALk40P,10.0
+#define,SIGNALk45P,10.0
+#define,SIGNALk60P,10.0
+
+#define,NMOSsignallayoutratio,0.75
+#define,PMOSsignallayoutratio,0.75
+
+//Replica
+#define,REPLICAserialmaximum,40
+#define,REPLICAaccuracyAREA,2.0
+#define,REPLICAaccuracyRON,20.0
+#define,nmos2fudge,100
+#define,nmos6fudge,100
+#define,nmos12fudge,100
+#define,nmos20fudge,100
+#define,nmos24fudge,100
+#define,nmos30fudge,80
+#define,nmos40fudge,100
+#define,nmos45fudge,100
+#define,nmos60fudge,100
+
 //**********************************************
-//Cell Pin Descriptions
-pinname,CELV
-definition,CELV,power supply
-iq,CELV,SIMULATION
-absmax,CELV,6
-absmin,CELV,1.4
-io,CELV,input
-mode,CELV,power
-router,CELV,TBD
-dftpriority,CELV,1
-esd,CELV,TBD
+//Pinorder Parameters
+*******************************************
+** Celera Library Pin Order Generator    **
+*******************************************
+//fet
+revision,pinorder,0.2.0
+pinorder,SOURCE,DRAIN,GATE,net_skip,net_skip,net_skip
 
-pinname,CELG
-definition,CELG,power ground
-iq,CELG,SIMULATION
-absmax,CELG,
-absmin,CELG,
-io,CELG,input
-mode,CELG,power
-router,CELG,TBD
-dftpriority,CELG,1
-esd,CELG,TBD
+endpinorder
+//**********************************************
+//Cell Pin Descriptions	
+//**********************************************	
+pinname,GATE
+definition,GATE,FET gate 	
+iq,GATE,SIMULATION
+absmax,GATE,6
+absmin,GATE,0.0
+io,GATE,input
+mode,GATE,analog
+router,GATE,TBD
+dftpriority,GATE,1
+esd,GATE,TBD
 
-pinname,i
-definition,i,digital buffer input 
-iq,i,SIMULATION
-absmax,i,6
-absmin,i,
-io,i,input
-mode,i,digital
-router,i,TBD
-dftpriority,i,1
-esd,i,TBD
+pinname,SOURCE
+definition,SOURCE,FET source
+iq,SOURCE,SIMULATION
+absmax,SOURCE,6
+absmin,SOURCE,-0.3
+io,SOURCE,inout
+mode,SOURCE,analog
+router,SOURCE,TBD
+dftpriority,SOURCE,1
+esd,SOURCE,TBD
 
-pinname,o
-definition,o,digital buffer output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
+pinname,DRAIN
+definition,DRAIN,FET drain 
+iq,DRAIN,SIMULATION
+absmax,DRAIN,6
+absmin,DRAIN,-0.3
+io,DRAIN,inout
+mode,DRAIN,analog
+router,DRAIN,TBD
+dftpriority,DRAIN,1
+esd,DRAIN,TBD
+
+
+
+
+pinname,NMOSiso6
+definition,NMOSiso6,6V NMOS ISO Connection 
+iq,NMOSiso6,SIMULATION
+absmax,NMOSiso6,6
+absmin,NMOSiso6,-0.3
+io,NMOSiso6,input
+mode,NMOSiso6,analog
+router,NMOSiso6,TBD
+dftpriority,NMOSiso6,1
+esd,NMOSiso6,TBD
+
+
+
+
+
+
 
 pinname,SUB
-definition,SUB,substrate
+definition,SUB,FET substrate 
 iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
+absmax,SUB,0.3
+absmin,SUB,-0.3
 io,SUB,input
-mode,SUB,power
+mode,SUB,analog
 router,SUB,TBD
 dftpriority,SUB,1
 esd,SUB,TBD
+
+
+
+
+
+
+
+
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -867,3 +1114,4 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+

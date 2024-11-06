@@ -1,112 +1,392 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Celera Confidential BIO Data Generator
+///Celera Confidential BIO Data Generator
 //Cell Name
-cell,dbuf
+cell,fetdriver
 //**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.6.1
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-//dbuf
 
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
-limit,logicgate_type,choose0,dbuf
+limit,fetdriver_type,choose0,n
+limit,fetdriver_type,choose1,p
+limit,fetdriver_on_ron,minimum,0.1
+limit,fetdriver_on_ron,maximum,40.0
+limit,fetdriver_off_ron,minimum,0.1
+limit,fetdriver_off_ron,maximum,40.0
+limit,fetdriver_status_delay,minimum,0
+limit,fetdriver_status_delay,maximum,31
+limit,fetdriver_status_delay_adjust,choose0,no
+limit,fetdriver_status_delay_adjust,choose1,register
+limit,fetdriver_status_delay_adjust,choose2,factory
+limit,fetdriver_faultdisable,choose0,no
+limit,fetdriver_faultdisable,choose1,yes
+limit,fetdriver_status_levelshifter,choose0,no
+limit,fetdriver_status_levelshifter,choose1,yes
+limit,fetdriver_levelshifter,choose0,no
+limit,fetdriver_levelshifter,choose1,yes
+limit,fetdriver_vmaxlevelshift,choose0,2
+limit,fetdriver_vmaxlevelshift,choose1,6
+limit,fetdriver_vmaxlevelshift,choose2,12
+limit,fetdriver_vmaxlevelshift,choose3,20
+limit,fetdriver_vmaxlevelshift,choose4,24
+limit,fetdriver_vmaxlevelshift,choose5,30
+limit,fetdriver_vmaxlevelshift,choose6,36
+limit,fetdriver_vmaxlevelshift,choose7,40
+limit,fetdriver_vmaxlevelshift,choose8,45
+limit,fetdriver_vmaxlevelshift,choose9,60
+limit,fetdriver_vmax,choose0,2
+limit,fetdriver_vmax,choose1,6
+limit,fetdriver_dft,choose0,no
+limit,fetdriver_dft,choose1,yes
+
+
+limit,fetdriver_passive,choose0,no
+limit,fetdriver_passive,choose5,10
+limit,fetdriver_passive,choose1,100
+limit,fetdriver_passive,choose2,500
+limit,fetdriver_passive,choose3,1000
+limit,fetdriver_passive,choose4,2000
+
+limit,fetdriver_on_adjust,choose0,no
+limit,fetdriver_on_adjust,choose1,pin
+limit,fetdriver_on_adjust,choose2,factory
+limit,fetdriver_on_adjust,choose3,register
+limit,fetdriver_off_adjust,choose0,no
+limit,fetdriver_off_adjust,choose1,pin
+limit,fetdriver_off_adjust,choose2,factory
+limit,fetdriver_off_adjust,choose3,register
+limit,fetdriver_on_adjust_por,minimum,0
+limit,fetdriver_on_adjust_por,maximum,3
+limit,fetdriver_off_adjust_por,minimum,0
+limit,fetdriver_off_adjust_por,maximum,3
+limit,fetdriver_on_adjust_name,text
+limit,fetdriver_on_adjust_description,text
+limit,fetdriver_off_adjust_name,text
+limit,fetdriver_off_adjust_description,text
+limit,fetdriver_statusdelay_name,text
+limit,fetdriver_statusdelay_description,text
+
+limit,fetdriver_design,choose0,industrial
+limit,fetdriver_design,choose1,consumer
+limit,fetdriver_design,choose2,fast
+
+limit,fetdriver_levelshiftinsert,choose0,no
+limit,fetdriver_levelshiftinsert,choose1,yes
+limit,fetdriver_levelshiftenable,choose0,no
+limit,fetdriver_levelshiftenable,choose1,yes
+limit,fetdriver_levelshiftinput,choose0,no
+limit,fetdriver_levelshiftinput,choose1,yes
+limit,fetdriver_levelshiftdisable,choose0,no
+limit,fetdriver_levelshiftdisable,choose1,yes
+//end of limits
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,VMAX,6V
-user,Type,dbuf
-
+user,fetdriver_type,n
+description,FET Driver Type
+user,fetdriver_on_ron,40 Ohm
+description,FET Driver Turn On Resistance
+user,fetdriver_off_ron,40 Ohm
+description,FET Driver Turn Off Resistance
+user,fetdriver_vmaxlevelshift,30V
+description,FET Driver Highside Voltage Rating
+user,fetdriver_passive,2000KOhm
+description,FET Driver passive resistor pull off
+user,NESTO,0.6.1
+description,NESTO Cell Revision
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,dbuf
-register,instance,dbuf_e926e395
+registermap,fetdriver
+register,instance,fetdriver_5fc9b27a
 register,source,cell
 
-//Logic dbuf
+//Register Fet Driver On Resistance
 register,name,na
 register,enable,no
 register,bits,0
 register,mode,na
 register,por,0
 register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
+//Netlister Information
+register,busname,na
+
+//Register Fet Driver Off Resistance
+register,name,na
+register,enable,no
+register,bits,0
+register,mode,na
+register,por,0
+register,userdescription,na
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
+//Netlister Information
+register,busname,na
+
+//Register Fet Driver Status delay 
+register,name,na
+register,enable,no
+register,bits,0
+register,mode,na
+register,por,0
+register,userdescription,na
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
 //Netlister Information
 register,busname,na
 
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,dbuf
-factory,instance,dbuf_e926e395
+factorymap,fetdriver
+factory,instance,fetdriver_5fc9b27a
 factory,source,cell
 
-//LOGIC CELLS dbuf
+//Factory Fet Driver On Resistance
 factory,name,na
 factory,enable,no
 factory,bits,0
 factory,mode,na
 factory,por,0
 factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
 //Netlister Information
 factory,busname,na
-//**********************************************
-//Layout Parameters
-revision,layout,0p1
-laout,dbuf
-place PEBBLES PEBBLEdbuf 0 0 R0
-movePINS
-endlayoutbio
+
+//Factory Fet Driver Off Resistance
+factory,name,na
+factory,enable,no
+factory,bits,0
+factory,mode,na
+factory,por,0
+factory,userdescription,na
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
+//Netlister Information
+factory,busname,na
+
+//Factory Fet Driver Status delay 
+factory,name,na
+factory,enable,no
+factory,bits,0
+factory,mode,na
+factory,por,0
+factory,userdescription,na
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
+//Netlister Information
+factory,busname,na
+
+
+
 
 //**********************************************
+//CELL DFT Parameters
+//*********************************************
+//Layout Parameters
+revision,layout,0p1
+layout,fetdriver
+
+placeINST Xpowerpmos0 0 0 R90
+moveORIGIN -x
+placeINST Xpowernmos0 0 0 MXR90
+moveORIGIN x
+moveORIGIN y
+place Generate STONEfetdrivermain 65.885 -30.94 R180
+placeSTEP Generate STONEfetdriverpdrive1 9.275 -29.74 x 13.74 R0
+placeSTEPcontinue Generate STONEfetdriverndrive1 x 11.25 R0
+placeSTEPcontinue Generate STONEfetdriverpdrive2 x 78.99 R0
+placeSTEPcontinue Generate STONEfetdriverndrive2 x 36.21 R0
+placeINST Xstatusdelay 9.275 -50 MX
+place Generate STONEfetdriverENABLEnome 94.325 -50 MX
+
+placeIFELSE cellNameContains pdrive3&&ndrive3
+place Generate STONEfetdriverpdrive3 10.28 -47.68 R0
+placeSTEP Generate STONEfetdriverndrive3 10.28 -64.42 x 114.03 R0
+place Generate STONEadjdelay1ns5bits 124.31 -64.42 R0
+placeELSE
+placeSTEP Generate STONEfetdriverndrive3 10.28 -47.68 x 114.03 R0
+placeSTEPcontinue Generate STONEfetdriverpdrive3 x 277.4 R0
+placeTAPuntil
+placeTAP 20 -24.8
+place Generate STONEadjdelay1ns5bits 10.28 -29.74 R0
+placeTAP 20 -36
+place Generate STONEadjdelay1ns5bits 10.28 -47.68 R0
+placeTAP 20 -55
+place Generate STONEadjdelay1ns5bits 10.28 -64.48 R0
+placeTAPEND
+placeEND
+//
+moveORIGIN y
+//
+placeINST Xfetin 279.145 12.01 R0
+placeINST Xenable 444.62 148.03 R0
+placeINST Xpassive 61 22 R270
+placeIFELSE instNameContains Xfetin
+placeINST Xglobal 272 148.03 R0
+placeHVRING rect
+placeELSE
+placeINST Xglobal 118.87 -21.365 R0
+placeINST Xenablelv 65.885 27.43 MX
+placeDBLHVRING 120 -20 155 12
+placeEND
+//moveORIGIN x
+//moveORIGIN y
+//placeROUTE
+endlayoutbio
+//**********************************************
 //Project Parameters
+//Celera:CHARGEPUMPmain Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,1.2
+#define,PROJECTsupply,5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEdbuf,80
-generate_area,dbuf_e926e395,80
+sub_area,logicshifter0L2H_fetdriver_5fc9b27a_Xenable,1000
+sub_area,PEBBLEtiehi,30
+sub_area,logicshifter0L2H_fetdriver_5fc9b27a_Xfetin,1000
+sub_area,logicshifter0L2H_fetdriver_5fc9b27a_Xglobal,1000
+sub_area,delay0_fetdriver_5fc9b27a_Xstatus,530
+sub_area,fet_fetdriver_5fc9b27a_Xnmos0,45200
+sub_area,STONEfetdriverndrive1,160
+sub_area,fet_fetdriver_5fc9b27a_Xpmos0,20234202
+sub_area,STONEfetdriverpdrive1,20
+sub_area,resistor_resistor_fetdriver_5fc9b27a_Xpassive,124
+sub_area,STONEfetdrivermain,10
+sub_area,STONEfetdriverENABLEnome,9999
+generate_area,fetdriver_5fc9b27a,20293275
 // *********************************************
 //Calculator Parameters
-#define,CELVminimum,1.4
+#define,RONdrivehigh,5.0
+#define,RONdrivelow,0.5
+#define,FETswitch,10000
+#define,CELVminimum,1.5
+#define CELVminimum,1.5
+#define,FETDRIVERresistorlength,20.0
+#define,FETDRIVERresistorwidth,0.5
+#define,FETDRIVERresistoriso,HVNEG
+//Ron Adjustments
+#define,FETDRIVERronLSB,10.0
+#define,FETDRIVERronMSB,20.0
+//Roff Adjustments
+#define,FETDRIVERroffLSB,10.0
+#define,FETDRIVERroffMSB,20.0
+//Status Flag Delay
+#define,FETDRIVERstatusdelayLSB,1.0
+//Layout
+#define,FETDRIVERlayoutrotaglobal_fetdriver,no
+//#define,FETDRIVERlayoutrotaglobal_fetdriver,yes
+#define,FETDRIVERlayoutrotateP,no
+//#define,FETDRIVERlayoutrotateP,yes
+#define,FETDRIVERlayoutrotateN,no
+//#define,FETDRIVERlayoutrotateN,yes
+
+//Rev0.4.0  Add level shifters  'logic' all logicshifter  mix=enables logic, in=level level=All levelshifter
+//#define,fetdriver_design,logic
+//#define,fetdriver_design,mix
+#define,fetdriver_design,level
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//dbuf
+//fetdriver
 revision,pinorder,0.2.0
-pinorder,o,i
+pinorder,HVPOS,GATE,net_skip,HVNEG,gate_status,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,enable_fetdriver,fetin
 
 endpinorder
 //**********************************************
 //TRIM Parameters
-cell,dbuf
-trim,instance,dbuf_e926e395
+cell,fetdriver
+trim,instance,fetdriver_5fc9b27a
 
 trim,name,na
 trim,enable,no
@@ -134,61 +414,117 @@ trim,description7,empty
 //**********************************************
 //Cell Pin Descriptions
 //**********************************************
-//Cell Pin Descriptions
+//Pin Descriptions
+//**********************************************
 pinname,CELV
-definition,CELV,power supply
+definition,CELV,cell power
 iq,CELV,SIMULATION
 absmax,CELV,6
-absmin,CELV,1.4
+absmin,CELV,2.0
 io,CELV,input
 mode,CELV,power
 router,CELV,TBD
 dftpriority,CELV,1
 esd,CELV,TBD
 
+pinname,HVPOS
+definition,HVPOS,FET Driver power supply
+iq,HVPOS,SIMULATION
+absmax,HVPOS,30
+absmin,HVPOS,24.0
+io,HVPOS,input
+mode,HVPOS,power
+router,HVPOS,TBD
+dftpriority,HVPOS,1
+esd,HVPOS,TBD
+
 pinname,CELG
-definition,CELG,power ground
+definition,CELG,cell power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-absmin,CELG,
+absmax,CELG,0.3
+absmin,CELG,-0.3
 io,CELG,input
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i
-definition,i,digital buffer input 
-iq,i,SIMULATION
-absmax,i,6
-absmin,i,
-io,i,input
-mode,i,digital
-router,i,TBD
-dftpriority,i,1
-esd,i,TBD
+pinname,HVNEG
+definition,HVNEG,FET Driver power gound
+iq,HVNEG,SIMULATION
+absmax,HVNEG,30
+absmin,HVNEG,24.0
+io,HVNEG,input
+mode,HVNEG,power
+router,HVNEG,TBD
+dftpriority,HVNEG,1
+esd,HVNEG,TBD
 
-pinname,o
-definition,o,digital buffer output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
+pinname,GATE
+definition,GATE,FET Driver output
+iq,GATE,SIMULATION
+absmax,GATE,30
+absmin,GATE,24.0
+io,GATE,output
+mode,GATE,analog
+router,GATE,TBD
+dftpriority,GATE,1
+esd,GATE,TBD
 
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
+pinname,fetin
+definition,fetin,FET Driver logic input
+iq,fetin,SIMULATION
+absmax,fetin,6
+absmin,fetin,0.3
+io,fetin,input
+mode,fetin,digital
+router,fetin,TBD
+dftpriority,fetin,1
+esd,fetin,TBD
+
+pinname,gate_status
+definition,gate_status,FET Driver gate status flag
+iq,gate_status,SIMULATION
+absmax,gate_status,30
+absmin,gate_status,24.0
+io,gate_status,output
+mode,gate_status,digital
+router,gate_status,TBD
+dftpriority,gate_status,1
+esd,gate_status,TBD
+
+pinname,global_fetdriver
+definition,global_fetdriver,Enable,FET Driver Global DFT enable
+iq,global_fetdriver,SIMULATION
+absmax,global_fetdriver,6
+absmin,global_fetdriver,0.3
+io,global_fetdriver,input
+mode,global_fetdriver,digital
+router,global_fetdriver,TBD
+dftpriority,global_fetdriver,1
+esd,global_fetdriver,TBD
+
+pinname,enable_fetdriver
+definition,enable_fetdriver,FET Driver Enable wwith respect to CELV
+iq,enable_fetdriver,SIMULATION
+absmax,enable_fetdriver,6
+absmin,enable_fetdriver,0.3
+io,enable_fetdriver,input
+mode,enable_fetdriver,digital
+router,enable_fetdriver,TBD
+dftpriority,enable_fetdriver,1
+esd,enable_fetdriver,TBD
+
+pinname,CELSUB
+definition,CELSUB,substrate
+iq,CELSUB,SIMULATION
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
+io,CELSUB,power
+mode,CELSUB,analog
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -866,4 +1202,5 @@ revision,vis15cb,0p1
 #define,AP5G60DC1minmult,1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
-endbio
+endbio
+
