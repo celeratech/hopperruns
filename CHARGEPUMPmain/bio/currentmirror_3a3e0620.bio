@@ -9,7 +9,7 @@
 cell,currentmirror
 ///**********************************************
 //Generator Revision
-revision,generator,0.4.4
+revision,generator,0.5.0
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
@@ -84,7 +84,7 @@ user,currentmirror_gain0,1_source
 description,Current Mirror Output0
 user,currentmirror_gain1,1_source
 description,Current Mirror Output1
-user,NESTO,0.4.4
+user,NESTO,0.5.0
 description,Nesto generate Revision
 //**********************************************
 //POR Parameters
@@ -180,7 +180,7 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,1.2
+#define,PROJECTreference,0.9
 #define,PROJECTsupply,5
 #define,TaRoom,25
 #define,ground,0.0
@@ -231,7 +231,7 @@ generate_area,currentmirror_3a3e0620,19100
 //Operating Range
 #define,STONEminimum,2.1
 #define,STONELVminimum,1.0
-#define,SIMPVminimum,2.1
+#define,CELVminimum,2.1
 #define,HVPOSminimum,2.1
 // *********************************************
 //Calculator Parameters
@@ -246,9 +246,11 @@ generate_area,currentmirror_3a3e0620,19100
 *******************************************
 //currentmirror2
 revision,pinorder,0.2.0
-pinorder,I0,I1,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,ISET,SIMPV,enable_currentmirror,ok_currentmirror,net_skip
+pinorder,I0,I1,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,ISET,CELV,enable_currentmirror,ok_currentmirror,net_skip
 
 endpinorder
+//**********************************************
+
 //**********************************************
 //TRIM Parameters
 cell,currentmirror
@@ -281,16 +283,16 @@ trim,description7,empty
 //**********************************************
 //Cell Pin Descriptions
 //**********************************************
-pinname,SIMPV
-definition,SIMPV,power supply
-iq,SIMPV,SIMULATION
-absmax,SIMPV,6
-absmin,SIMPV,-0.3
-io,SIMPV,input
-mode,SIMPV,power
-router,SIMPV,TBD
-dftpriority,SIMPV,1
-esd,SIMPV,TBD
+pinname,CELV
+definition,CELV,power supply
+iq,CELV,SIMULATION
+absmax,CELV,6
+absmin,CELV,2.0
+io,CELV,input
+mode,CELV,power
+router,CELV,TBD
+dftpriority,CELV,1
+esd,CELV,TBD
 
 pinname,CELG
 definition,CELG,power ground
@@ -306,7 +308,7 @@ esd,CELG,TBD
 pinname,CELSUB
 definition,CELSUB,power ground
 iq,CELSUB,SIMULATION
-absmax,CELSUB,6
+absmax,CELSUB,0.3
 absmin,CELSUB,-0.3
 io,CELSUB,input
 mode,CELSUB,power

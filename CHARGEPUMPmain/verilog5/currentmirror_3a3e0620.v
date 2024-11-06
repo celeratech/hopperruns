@@ -1,7 +1,7 @@
 //Celera Brick Generator Confidential
 //CORE:currentmirror
 //NAME:currentmirror_3a3e0620
-//GENERATOR REVISION:0.4.4
+//GENERATOR REVISION:0.5.0
 //INPUT POLARITY:source
 //MAX CURRENT:10
 //NUMBER OF OUTPUTS:2
@@ -106,10 +106,10 @@ endmodule
 //Polarity: source, Maximum Current: 10, Number of outputs: 2, DFT: no, Max Vout: 6
 //GAIN0:1, TYPE0:source
 //GAIN1:1, TYPE1:source
-module currentmirror_3a3e0620 (SIMPV,CELSUB,enable_currentmirror,ISET,ok_currentmirror,
+module currentmirror_3a3e0620 (CELV,CELSUB,enable_currentmirror,ISET,ok_currentmirror,
 I0,I1,
 CELG);
-input SIMPV;
+input CELV;
 input CELG;
 input CELSUB;
 input enable_currentmirror;
@@ -131,7 +131,7 @@ noconnect_a1)
 STONEcurrentmirrormain XcurrentmirrorMAIN(
 .ten_currentmirror (a0),
 .ISET (ISET),
-.CELV (SIMPV),
+.CELV (CELV),
 .disnok (a0),
 .ten (a0),
 .POK (POK),
@@ -149,7 +149,7 @@ STONEcurrentmirrormain XcurrentmirrorMAIN(
 //,diesize,STONEcurrentmirrormain
 //Celera Confidential Do Not Copy CASCODEnmos5uref
 CASCODEnmos5uref XcurrentmirrorNMOS5UREF(
-.CELV (SIMPV),
+.CELV (CELV),
 .NCAS (NCAS5U),
 .NMIR (NMIR5U),
 .N5U (NOK),
@@ -160,7 +160,7 @@ CASCODEnmos5uref XcurrentmirrorNMOS5UREF(
 //,diesize,CASCODEnmos5uref
 //Celera Confidential Do Not Copy CASCODEpmos5u
 CASCODEpmos5u XcurrentmirrorPMOS5U00(
-.CELV (SIMPV),
+.CELV (CELV),
 .PCAS (PCAS5U),
 .PMIR (PMIR5U),
 .SUB (CELSUB),
@@ -169,7 +169,7 @@ CASCODEpmos5u XcurrentmirrorPMOS5U00(
 //,diesize,CASCODEpmos5u
 //Celera Confidential Do Not Copy CASCODEpmos5uref
 CASCODEpmos5uref XcurrentmirrorPMOS5UREF(
-.CELV (SIMPV),
+.CELV (CELV),
 .P5U (POK),
 .PCAS (PCAS5U),
 .en (en),
@@ -179,7 +179,7 @@ CASCODEpmos5uref XcurrentmirrorPMOS5UREF(
 //,diesize,CASCODEpmos5uref
 //Celera Confidential Do Not Copy CASCODEnmos5u
 CASCODEnmos5u XcurrentmirrorNMOS5UPREF(
-.CELV (SIMPV),
+.CELV (CELV),
 .NCAS (NCAS5U),
 .NMIR (NMIR5U),
 .SUB (CELSUB),
@@ -189,7 +189,7 @@ CASCODEnmos5u XcurrentmirrorNMOS5UPREF(
 //,diesize,CASCODEnmos5u
 //Celera Confidential Do Not Copy CASCODEpmos5u
 CASCODEpmos5u XcurrentmirrorPMOS5U10(
-.CELV (SIMPV),
+.CELV (CELV),
 .PCAS (PCAS5U),
 .PMIR (PMIR5U),
 .SUB (CELSUB),
