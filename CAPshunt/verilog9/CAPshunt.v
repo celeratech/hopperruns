@@ -59,7 +59,7 @@ module currentmirror_f5b9334a (I0,I1,I2,I3,CELG,ISET,SIMPV,CELSUB,ok_currentmirr
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module CAPshunt (IN, CAP1, CAP2, CAP3, CAP4, SIMPV, CAPRTN, CELG59462, CELV96848, PORB97836, CELSUB40948, clock_shunt, active_shunt, enable_shunt, maximum_channel_0, maximum_channel_1);
+module CAPshunt (IN, CAP1, CAP2, CAP3, CAP4, SIMPV, CAPRTN, CELG59462, CELV96848, PORB97836, CELSUB40948, clock_shunt, IP_CAPshunt1, active_shunt, enable_shunt, maximum_channel_0, maximum_channel_1);
 input  IN;
 inout  CAP1;
 inout  CAP2;
@@ -72,6 +72,7 @@ input  CELV96848;
 input  PORB97836;
 input  CELSUB40948;
 input  clock_shunt;
+input  IP_CAPshunt1;
 output  active_shunt;
 input  enable_shunt;
 input  maximum_channel_0;
