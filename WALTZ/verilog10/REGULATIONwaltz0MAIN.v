@@ -21,7 +21,7 @@ module VESPAasmINPUT2 (o,i0,i1,Tstate,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module gm_90b5b3ea (IP,GMO,INN,INP,CELG,INOR,SIMPV,ok_gm,CELSUB,enable_gm,global_gm,trim_gm_negative,trim_gm_positive);
+module gm_5b96c7b4 (IP,GMO,INN,INP,CELG,INOR,SIMPV,ok_gm,CELSUB,enable_gm,global_gm,trim_gm_negative,trim_gm_positive);
   input  IP;
   inout  GMO;
   input  INN;
@@ -37,7 +37,7 @@ module gm_90b5b3ea (IP,GMO,INN,INP,CELG,INOR,SIMPV,ok_gm,CELSUB,enable_gm,global
   input [6:0] trim_gm_positive;
 endmodule
 
-module voltage2current_17279485 (IP,VIN,CELG,IOUT,SIMPV,CELSUB,ok_voltage2current,enable_voltage2current,global_voltage2current);
+module voltage2current_49e12b65 (IP,VIN,CELG,IOUT,SIMPV,CELSUB,ok_voltage2current,enable_voltage2current,global_voltage2current);
   input  IP;
   input  VIN;
   input  CELG;
@@ -49,7 +49,7 @@ module voltage2current_17279485 (IP,VIN,CELG,IOUT,SIMPV,CELSUB,ok_voltage2curren
   input  global_voltage2current;
 endmodule
 
-module clamp_57e24cde (IN,IP,CELG,SHUNT,SIMPV,CELREF,CELSUB,trim_clamp,enable_clamp,global_clamp);
+module clamp_3ae32438 (IN,IP,CELG,SHUNT,SIMPV,CELREF,CELSUB,trim_clamp,enable_clamp,global_clamp);
   inout  IN;
   input  IP;
   input  CELG;
@@ -210,7 +210,7 @@ VESPAasmINPUT2 XU12 (
 .CELSUB40948(CELSUB40948)
 );
 
-gm_90b5b3ea XU1 (
+gm_5b96c7b4 XU1 (
 .IP(IP_9015e2a4_XU1),
 .GMO(VC),
 .INN(clamp_XU1_99),
@@ -226,7 +226,7 @@ gm_90b5b3ea XU1 (
 .trim_gm_positive({trim_gm_positive_9015e2a4[6],trim_gm_positive_9015e2a4[5],trim_gm_positive_9015e2a4[4],trim_gm_positive_9015e2a4[3],trim_gm_positive_9015e2a4[2],trim_gm_positive_9015e2a4[1],trim_gm_positive_9015e2a4[0]})
 );
 
-voltage2current_17279485 XU3 (
+voltage2current_49e12b65 XU3 (
 .IP(IP_4215aede_XU3),
 .VIN(VC),
 .CELG(CELG59462),
@@ -238,7 +238,7 @@ voltage2current_17279485 XU3 (
 .global_voltage2current(tl0)
 );
 
-clamp_57e24cde XU7 (
+clamp_3ae32438 XU7 (
 .IN(VC),
 .IP(IP_b8eb1a18_XU7),
 .CELG(CELG59462),

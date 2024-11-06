@@ -27,7 +27,7 @@ module DRIVERwaltz0BOTN (SW,MUDV,PMUDG,PMUDV,botswon,CELG59462,CELV96848,botswin
   output  botswineg;
   output  botswipeak;
   input  CELSUB40948;
-  input  botswstatus;
+  output  botswstatus;
   output  botswzcross;
   input  enable_driver;
   input  IP_945fe712_XU8;
@@ -73,7 +73,7 @@ module DRIVERwaltz0TOPN (SW,BSTV,MUDV,MUDHV,PMUDV,PMUDHV,enable,topswon,CELG5946
   input  CELSUB40948;
   input  IREF_DRIVER;
   input  botswstatus;
-  input  topswstatus;
+  output  topswstatus;
   input  ISLOPE_DRIVER;
   input  IP_f4252e65_XU22;
   input  DISABLEslope_07db7e9a;

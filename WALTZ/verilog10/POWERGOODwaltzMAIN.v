@@ -92,7 +92,7 @@ module inv_12e192f5 (i,o,SUB,CELG,CELV);
   input  CELV;
 endmodule
 
-module amux2_a6effade (O,I0,I1,SUB,CELG,CELV,amux);
+module amux2_cb0e5ecf (O,I0,I1,SUB,CELG,CELV,amux);
   output  O;
   input  I0;
   input  I1;
@@ -115,7 +115,7 @@ module resistordivider_b8083128 (TOP,CELG,CELV,TAP0,TAP1,TAP2,BOTTOM,CELSUB,enab
   input  global_resistordivider;
 endmodule
 
-module capacitorfixed_3f66c9af (CN,CP);
+module capacitorfixed_1d2fd0e3 (CN,CP);
   inout  CN;
   inout  CP;
 endmodule
@@ -349,7 +349,7 @@ inv_12e192f5 XU14 (
 .CELV(CELV96848)
 );
 
-amux2_a6effade XU15 (
+amux2_cb0e5ecf XU15 (
 .O(net_154),
 .I0(net_156),
 .I1(net_157),
@@ -372,7 +372,7 @@ resistordivider_b8083128 XU17 (
 .global_resistordivider(tl0)
 );
 
-capacitorfixed_3f66c9af XU19 (
+capacitorfixed_1d2fd0e3 XU19 (
 .CN(kelvin_MUDGpowergood),
 .CP(net_154)
 );

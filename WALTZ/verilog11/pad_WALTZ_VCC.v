@@ -39,15 +39,15 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_WALTZ_VCC (VCC, GESD, PVCC, VOTP, CELV96848, kelvin_VCC, celkelvin_VCC_9893c918, celkelvin_VCC_bc3b7675);
+module pad_WALTZ_VCC (VCC, GESD, PVCC, VOTP, CELV96848, kelvin_VCC, celkelvin_VCC_bc3b7675, celkelvin_VCC_fc9a589a);
 inout  VCC;
 input  GESD;
 inout  PVCC;
 output  VOTP;
 output  CELV96848;
 inout  kelvin_VCC;
-output  celkelvin_VCC_9893c918;
 output  celkelvin_VCC_bc3b7675;
+output  celkelvin_VCC_fc9a589a;
 
 
 // ------------------------ Wires ------------------------
@@ -86,14 +86,14 @@ WRAPPER1 Xwrap_PAD1_SENSE0 (
 .o(kelvin_VCC)
 );
 
-WRAPPER1 XWRAP_celkelvin_VCC_9893c918 (
-.i(VCC),
-.o(celkelvin_VCC_9893c918)
-);
-
 WRAPPER1 XWRAP_celkelvin_VCC_bc3b7675 (
 .i(VCC),
 .o(celkelvin_VCC_bc3b7675)
+);
+
+WRAPPER1 XWRAP_celkelvin_VCC_fc9a589a (
+.i(VCC),
+.o(celkelvin_VCC_fc9a589a)
 );
 
 endmodule

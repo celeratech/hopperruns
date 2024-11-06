@@ -37,7 +37,7 @@ module VESPAasmINPUT2 (o,i0,i1,Tstate,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module amux2_a0dc83ed (O,I0,I1,SUB,CELG,CELV,amux);
+module amux2_2a6e42d8 (O,I0,I1,SUB,CELG,CELV,amux);
   output  O;
   input  I0;
   input  I1;
@@ -218,7 +218,7 @@ VESPAasmINPUT2 XU8 (
 .CELSUB40948(CELSUB40948)
 );
 
-amux2_a0dc83ed XU3 (
+amux2_2a6e42d8 XU3 (
 .O(SS),
 .I0(net_111),
 .I1(net_129),
@@ -288,7 +288,7 @@ dff_fc5ad7bd XU13 (
 .CELSUB(CELSUB40948)
 );
 
-amux2_a0dc83ed XU14 (
+amux2_2a6e42d8 XU14 (
 .O(net_136),
 .I0(net_133),
 .I1(XDBUF1_o),

@@ -61,7 +61,7 @@ module cboot_7dc01c49 (CELG,CELV,CBOOT,CELNEG,CELPOS,CELSUB,ok_cboot,on_charge,o
   input  global_cboot;
 endmodule
 
-module slopecomp_00a4cb3c (IP,CELG,IOSC,SIMPV,clock,CELSUB,ISLOPECOMP,ok_slopecomp,TAI_ISLOPECOMP,trim_slopecomp,enable_slopecomp,global_slopecomp,ten_taiislopecomp);
+module slopecomp_315a9290 (IP,CELG,IOSC,SIMPV,clock,CELSUB,ISLOPECOMP,ok_slopecomp,TAI_ISLOPECOMP,trim_slopecomp,enable_slopecomp,global_slopecomp,ten_taiislopecomp);
   input  IP;
   input  CELG;
   input  IOSC;
@@ -129,7 +129,7 @@ output  topswipeak;
 input  CELSUB40948;
 input  IREF_DRIVER;
 input  botswstatus;
-  input  topswstatus;
+output  topswstatus;
 input  ISLOPE_DRIVER;
 input  IP_f4252e65_XU22;
 input  DISABLEslope_07db7e9a;
@@ -209,7 +209,7 @@ cboot_7dc01c49 XU17 (
 .global_cboot(tl0)
 );
 
-slopecomp_00a4cb3c XU22 (
+slopecomp_315a9290 XU22 (
 .IP(IP_f4252e65_XU22),
 .CELG(CELG59462),
 .IOSC(ISLOPE_DRIVER),
@@ -239,14 +239,14 @@ PEBBLEtielo XtieLo (
 fetdriver_f3635860 Xfetdriver (
 .CELG(CELG59462),
 .CELV(CELV96848),
-.GATE(TBD_XWALTZ_XceleraCORE_XDRIVER_XTOPSW_Xfetdriver_GATE),
-.HVNEG(TBD_XWALTZ_XceleraCORE_XDRIVER_XTOPSW_Xfetdriver_HVNEG),
-.HVPOS(TBD_XWALTZ_XceleraCORE_XDRIVER_XTOPSW_Xfetdriver_HVPOS),
-.fetin(TBD_XWALTZ_XceleraCORE_XDRIVER_XTOPSW_Xfetdriver_fetin),
+.GATE(net_103),
+.HVNEG(SW),
+.HVPOS(BSTV),
+.fetin(topswon),
 .CELSUB(CELSUB40948),
-.gate_status(TBD_XWALTZ_XceleraCORE_XDRIVER_XTOPSW_Xfetdriver_gate_status),
-.gate_status_vin(TBD_XWALTZ_XceleraCORE_XDRIVER_XTOPSW_Xfetdriver_gate_status_vin),
-.enable_fetdriver(TBD_XWALTZ_XceleraCORE_XDRIVER_XTOPSW_Xfetdriver_enable_fetdriver),
+.gate_status(net_104),
+.gate_status_vin(topswstatus),
+.enable_fetdriver(enable),
 .global_fetdriver(tl0)
 );
 
