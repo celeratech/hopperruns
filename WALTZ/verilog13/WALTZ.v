@@ -203,7 +203,7 @@ WALTZceleraSERDES XceleraSERDES (
 .DFTSCL(DFTSCL),
 .DFTSDA(DFTSDA),
 .unlock(unlock_noconn),
-.otp_done(otp_done),
+.otp_done(otp_done_noconn),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
@@ -211,12 +211,12 @@ WALTZceleraSERDES XceleraSERDES (
 .celkelvin_VCC_9893c918(celkelvin_VCC_9893c918)
 );
 
-STONEnoconn XNCotp_done (
-.noconn(otp_done)
-);
-
 STONEnoconn XNCunlock_noconn (
 .noconn(unlock_noconn)
+);
+
+STONEnoconn XNCotp_done_noconn (
+.noconn(otp_done_noconn)
 );
 
 endmodule
