@@ -35,7 +35,7 @@ module WALTZceleraCORE (EN,FB,IN,SW,BST,GND,PIN,POK,VCC,tmi,BIAS,FSET,PGND,PVCC,
   input  celkelvin_BIAS_bc3b7675;
 endmodule
 
-module WALTZceleraRING (EN,FB,IN,SW,BST,GND,PIN,POK,VCC,tmi,BIAS,FSET,GOTP,PGND,PVCC,SYNC,VOTP,DFTSCL,DFTSDA,sense_FB,CELG59462,CELV96848,kelvin_VCC,CELSENSE_RF,CELSUB40948,SENSE_G_2f5a8499,kelvin_GNDservice,kelvin_GNDpowergood,kelvin_GNDsoftstart,kelvin_GNDregulation,celkelvin_IN_bc3b7675,celkelvin_GND_73ebd82d,celkelvin_GND_bb7e77f4,celkelvin_GND_d75c3f7f,celkelvin_VCC_9893c918,celkelvin_VCC_bc3b7675,celkelvin_BIAS_bc3b7675);
+module WALTZceleraRING (EN,FB,IN,SW,BST,GND,PIN,POK,VCC,tmi,BIAS,FSET,GOTP,PGND,PVCC,SYNC,VOTP,CELIND,DFTSCL,DFTSDA,sense_FB,CELG59462,CELV96848,kelvin_VCC,CELSENSE_RF,CELSUB40948,SENSE_G_2f5a8499,kelvin_GNDservice,kelvin_GNDpowergood,kelvin_GNDsoftstart,kelvin_GNDregulation,celkelvin_IN_bc3b7675,celkelvin_GND_73ebd82d,celkelvin_GND_bb7e77f4,celkelvin_GND_d75c3f7f,celkelvin_VCC_bc3b7675,celkelvin_VCC_fc9a589a,celkelvin_BIAS_bc3b7675);
   inout  EN;
   inout  FB;
   inout  IN;
@@ -53,6 +53,7 @@ module WALTZceleraRING (EN,FB,IN,SW,BST,GND,PIN,POK,VCC,tmi,BIAS,FSET,GOTP,PGND,
   inout  PVCC;
   inout  SYNC;
   output  VOTP;
+  input  CELIND;
   input  DFTSCL;
   inout  DFTSDA;
   inout  sense_FB;
@@ -70,12 +71,12 @@ module WALTZceleraRING (EN,FB,IN,SW,BST,GND,PIN,POK,VCC,tmi,BIAS,FSET,GOTP,PGND,
   output  celkelvin_GND_73ebd82d;
   output  celkelvin_GND_bb7e77f4;
   output  celkelvin_GND_d75c3f7f;
-  output  celkelvin_VCC_9893c918;
   output  celkelvin_VCC_bc3b7675;
+  output  celkelvin_VCC_fc9a589a;
   output  celkelvin_BIAS_bc3b7675;
 endmodule
 
-module WALTZceleraSERDES (tmi,GOTP,VOTP,DFTSCL,DFTSDA,unlock,otp_done,CELG59462,CELV96848,PORB97836,CELSUB40948,celkelvin_VCC_9893c918);
+module WALTZceleraSERDES (tmi,GOTP,VOTP,DFTSCL,DFTSDA,unlock,otp_done,CELG59462,CELV96848,PORB97836,CELSUB40948,celkelvin_VCC_fc9a589a);
   inout [5:0] tmi;
   input  GOTP;
   input  VOTP;
@@ -87,7 +88,7 @@ module WALTZceleraSERDES (tmi,GOTP,VOTP,DFTSCL,DFTSDA,unlock,otp_done,CELG59462,
   input  CELV96848;
   output  PORB97836;
   input  CELSUB40948;
-  input  celkelvin_VCC_9893c918;
+  input  celkelvin_VCC_fc9a589a;
 endmodule
 
 //Verilog HDL for "Generate", "STONEnoconn" "functional"
@@ -100,7 +101,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module WALTZ (EN, FB, IN, SW, BST, GND, POK, VCC, BIAS, FSET, PGND, PVCC, SYNC);
+module WALTZ (EN, FB, IN, SW, BST, GND, POK, VCC, BIAS, FSET, PGND, PVCC, SYNC, CELIND);
 inout  EN;
 inout  FB;
 inout  IN;
@@ -114,6 +115,7 @@ inout  FSET;
 inout  PGND;
 inout  PVCC;
 inout  SYNC;
+input  CELIND;
 
 
 // ------------------------ Wires ------------------------
@@ -174,6 +176,7 @@ WALTZceleraRING XceleraRING (
 .PVCC(PVCC),
 .SYNC(SYNC),
 .VOTP(VOTP),
+.CELIND(CELIND),
 .DFTSCL(DFTSCL),
 .DFTSDA(DFTSDA),
 .sense_FB(sense_FB),
@@ -191,8 +194,8 @@ WALTZceleraRING XceleraRING (
 .celkelvin_GND_73ebd82d(celkelvin_GND_73ebd82d),
 .celkelvin_GND_bb7e77f4(celkelvin_GND_bb7e77f4),
 .celkelvin_GND_d75c3f7f(celkelvin_GND_d75c3f7f),
-.celkelvin_VCC_9893c918(celkelvin_VCC_9893c918),
 .celkelvin_VCC_bc3b7675(celkelvin_VCC_bc3b7675),
+.celkelvin_VCC_fc9a589a(celkelvin_VCC_fc9a589a),
 .celkelvin_BIAS_bc3b7675(celkelvin_BIAS_bc3b7675)
 );
 
@@ -202,21 +205,21 @@ WALTZceleraSERDES XceleraSERDES (
 .VOTP(VOTP),
 .DFTSCL(DFTSCL),
 .DFTSDA(DFTSDA),
-.unlock(unlock_noconn),
-.otp_done(otp_done_noconn),
+.unlock(unlock),
+.otp_done(otp_done),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
 .CELSUB40948(CELSUB40948),
-.celkelvin_VCC_9893c918(celkelvin_VCC_9893c918)
+.celkelvin_VCC_fc9a589a(celkelvin_VCC_fc9a589a)
 );
 
-STONEnoconn XNCunlock_noconn (
-.noconn(unlock_noconn)
+STONEnoconn XNCunlock (
+.noconn(unlock)
 );
 
-STONEnoconn XNCotp_done_noconn (
-.noconn(otp_done_noconn)
+STONEnoconn XNCotp_done (
+.noconn(otp_done)
 );
 
 endmodule

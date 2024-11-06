@@ -25,12 +25,12 @@ module switchpulldown_00288888 (O,CELG,CELV,CELSUB,enable_switchb);
   input  enable_switchb;
 endmodule
 
-module capacitorfixed_cbed1b77 (CN,CP);
+module capacitorfixed_48821777 (CN,CP);
   inout  CN;
   inout  CP;
 endmodule
 
-module capacitoradj_739bba44 (CN,CP,CELG,CELV,CELSUB,capacitoradjust);
+module capacitoradj_fb89518a (CN,CP,CELG,CELV,CELSUB,capacitoradjust);
   inout  CN;
   inout  CP;
   input  CELG;
@@ -94,12 +94,12 @@ switchpulldown_00288888 XU8 (
 .enable_switchb(enable_regulation)
 );
 
-capacitorfixed_cbed1b77 XU27 (
+capacitorfixed_48821777 XU27 (
 .CN(kelvin_MUDG),
 .CP(net_63)
 );
 
-capacitoradj_739bba44 XCZCOMP (
+capacitoradj_fb89518a XCZCOMP (
 .CN(kelvin_MUDG),
 .CP(net_63),
 .CELG(CELG59462),

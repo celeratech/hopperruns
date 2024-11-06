@@ -117,14 +117,14 @@ module DRIVERwaltz0BOTN (SW, MUDV, PMUDG, PMUDV, botswon, CELG59462, CELV96848, 
 inout  SW;
 input  MUDV;
 inout  PMUDG;
-  input  PMUDV;
-  input  botswon;
+input  PMUDV;
+input  botswon;
 input  CELG59462;
 input  CELV96848;
 output  botswineg;
 output  botswipeak;
 input  CELSUB40948;
-  input  botswstatus;
+output  botswstatus;
 output  botswzcross;
 input  enable_driver;
 input  IP_945fe712_XU8;
@@ -246,14 +246,14 @@ PEBBLEtielo XtieLo (
 fetdriver_19ad8600 Xfetdriver1 (
 .CELG(CELG59462),
 .CELV(CELV96848),
-.GATE(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_Xfetdriver1_GATE),
-.HVNEG(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_Xfetdriver1_HVNEG),
-.HVPOS(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_Xfetdriver1_HVPOS),
-.fetin(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_Xfetdriver1_fetin),
+.GATE(net_114),
+.HVNEG(PMUDG),
+.HVPOS(PMUDV),
+.fetin(botswon),
 .CELSUB(CELSUB40948),
-.gate_status(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_Xfetdriver1_gate_status),
-.gate_status_vin(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_Xfetdriver1_gate_status_vin),
-.enable_fetdriver(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_Xfetdriver1_enable_fetdriver),
+.gate_status(net_71),
+.gate_status_vin(botswstatus),
+.enable_fetdriver(enable_driver),
 .global_fetdriver(tl0)
 );
 
