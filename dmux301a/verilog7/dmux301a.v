@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module dmux8b_a56252a0 (CELV,CELG,o,a,b,c,d,e,f,g,h,s,CELSUB);
+module dmux8b_a56252a0 (a,b,c,d,e,f,g,h,o,s,CELG,CELV,CELSUB);
   input [1:0] a;
   input [1:0] b;
   input [1:0] c;
@@ -15,7 +15,7 @@ module dmux8b_a56252a0 (CELV,CELG,o,a,b,c,d,e,f,g,h,s,CELSUB);
   input  CELSUB;
 endmodule
 
-module dmux2b_982e245a (CELV,CELG,o,a,b,s,CELSUB);
+module dmux2b_982e245a (a,b,o,s,CELG,CELV,CELSUB);
   input [1:0] a;
   input [1:0] b;
   output [1:0] o;
@@ -25,7 +25,7 @@ module dmux2b_982e245a (CELV,CELG,o,a,b,s,CELSUB);
   input  CELSUB;
 endmodule
 
-module dmux2b_ca21294d (CELV,CELG,o,a,b,s,CELSUB);
+module dmux2b_ca21294d (a,b,o,s,CELG,CELV,CELSUB);
   input [7:0] a;
   input [7:0] b;
   output [7:0] o;
@@ -35,7 +35,7 @@ module dmux2b_ca21294d (CELV,CELG,o,a,b,s,CELSUB);
   input  CELSUB;
 endmodule
 
-module dmux2b_bdbf6db5 (CELV,CELG,o,a,b,s,CELSUB);
+module dmux2b_bdbf6db5 (a,b,o,s,CELG,CELV,CELSUB);
   input [15:0] a;
   input [15:0] b;
   output [15:0] o;
@@ -45,7 +45,7 @@ module dmux2b_bdbf6db5 (CELV,CELG,o,a,b,s,CELSUB);
   input  CELSUB;
 endmodule
 
-module dmux4b_1e2aca6a (CELV,CELG,o,a,b,c,d,s,CELSUB);
+module dmux4b_1e2aca6a (a,b,c,d,o,s,CELG,CELV,CELSUB);
   input [15:0] a;
   input [15:0] b;
   input [15:0] c;
@@ -57,7 +57,7 @@ module dmux4b_1e2aca6a (CELV,CELG,o,a,b,c,d,s,CELSUB);
   input  CELSUB;
 endmodule
 
-module dmux4b_f86cf56c (CELV,CELG,o,a,b,c,d,s,CELSUB);
+module dmux4b_f86cf56c (a,b,c,d,o,s,CELG,CELV,CELSUB);
   input [1:0] a;
   input [1:0] b;
   input [1:0] c;
@@ -69,7 +69,7 @@ module dmux4b_f86cf56c (CELV,CELG,o,a,b,c,d,s,CELSUB);
   input  CELSUB;
 endmodule
 
-module dmux4b_bf28de32 (CELV,CELG,o,a,b,c,d,s,CELSUB);
+module dmux4b_bf28de32 (a,b,c,d,o,s,CELG,CELV,CELSUB);
   input [7:0] a;
   input [7:0] b;
   input [7:0] c;
@@ -81,7 +81,7 @@ module dmux4b_bf28de32 (CELV,CELG,o,a,b,c,d,s,CELSUB);
   input  CELSUB;
 endmodule
 
-module dmux8b_9784ec21 (CELV,CELG,o,a,b,c,d,e,f,g,h,s,CELSUB);
+module dmux8b_9784ec21 (a,b,c,d,e,f,g,h,o,s,CELG,CELV,CELSUB);
   input [7:0] a;
   input [7:0] b;
   input [7:0] c;
@@ -97,7 +97,7 @@ module dmux8b_9784ec21 (CELV,CELG,o,a,b,c,d,e,f,g,h,s,CELSUB);
   input  CELSUB;
 endmodule
 
-module dmux8b_d77f443e (CELV,CELG,o,a,b,c,d,e,f,g,h,s,CELSUB);
+module dmux8b_d77f443e (a,b,c,d,e,f,g,h,o,s,CELG,CELV,CELSUB);
   input [15:0] a;
   input [15:0] b;
   input [15:0] c;

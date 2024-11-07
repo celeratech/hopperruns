@@ -1,4 +1,4 @@
-/celera-code/projects/Sunnyvale/software/dmux301a/verilog0
+/celera/projects/Sunnyvale/software/dmux301a/verilog0
 {
     "target": "module",
     "gen_celera": true,
@@ -25,7 +25,7 @@
         "drm_ignore_bricks": "N"
     },
     "DFT": {
-        "add_dft": "Y",
+        "add_dft": "N",
         "add_dbufdft": "N",
         "dft_ignore_bricks": "N",
         "dft_measure": "N",
@@ -64,7 +64,7 @@
         "registermap_chipid_lsb": "0x00",
         "registermap_chipid_msb": "0x00",
         "registermap_factoryid": "0x00",
-        "registermap_revision": "1",
+        "registermap_revision": "0",
         "register_software_reset": "N",
         "register_vmax": "6"
     },
@@ -72,24 +72,24 @@
         "serdes_soft_security": "N",
         "serdes_hard_security": "N",
         "serdes_memory_program": "Auto",
-        "serdes_memory_bist": "N",
+        "serdes_memory_bist": "Y",
         "serdes_address": "0x00",
-        "serdes_password": "0x03",
+        "serdes_password": "0x00",
         "serdes_pad": "dedicated",
         "serdes_vmax": "6",
         "serdes_clock": "3200",
-        "serdes_supply": "Single",
+        "serdes_supply": "Split",
         "serdes_split_vi2c_pad": "",
         "serdes_hardwarelock": "N",
-        "serdes_revision": "2",
+        "serdes_revision": "0",
         "otp_reset": "0x00",
         "DRMreset": "0x00",
         "serdes_unlock_address": "0x00",
         "serdes_productaddress": "0xFF"
     },
     "Package": {
-        "package_name": "TDFN1232",
-        "package_size": "12",
+        "package_name": "TQFN3255",
+        "package_size": "32",
         "downbond": "N"
     },
     "Project": {
