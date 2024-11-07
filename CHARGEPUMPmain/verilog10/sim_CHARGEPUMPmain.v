@@ -38,7 +38,7 @@ module FORCE_CHARGEPUMPmain (HV,GND,OUT,CLOW,PGND,porb,CHIGH,SIMPV,clock_chargep
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module root (CELG59462, CELV96848, PORB97836, CELSUB40948);
+module sim_CHARGEPUMPmain (CELG59462, CELV96848, PORB97836, CELSUB40948);
 input  CELG59462;
 input  CELV96848;
 input  PORB97836;
