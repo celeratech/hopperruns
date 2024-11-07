@@ -1,0 +1,43 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x55983c5edf60 .scope module, "delayfixed_0b8ed1af" "delayfixed_0b8ed1af" 2 27;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "CELV";
+    .port_info 1 /INPUT 1 "i";
+    .port_info 2 /OUTPUT 1 "o";
+    .port_info 3 /INPUT 1 "CELG";
+    .port_info 4 /INPUT 1 "CELSUB";
+o0x7f875c79e018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55983c633990_0 .net "CELG", 0 0, o0x7f875c79e018;  0 drivers
+o0x7f875c79e048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55983c633a50_0 .net "CELSUB", 0 0, o0x7f875c79e048;  0 drivers
+o0x7f875c79e078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55983c633b20_0 .net "CELV", 0 0, o0x7f875c79e078;  0 drivers
+o0x7f875c79e0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55983c633c20_0 .net "i", 0 0, o0x7f875c79e0a8;  0 drivers
+o0x7f875c79e0d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55983c633cf0_0 .net "o", 0 0, o0x7f875c79e0d8;  0 drivers
+S_0x55983c624250 .scope module, "Xdelay0" "delay0_delayfixed_0b8ed1af_delay0" 2 36, 2 14 0, S_0x55983c5edf60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "i";
+    .port_info 1 /INPUT 1 "CELV";
+    .port_info 2 /OUTPUT 1 "o";
+    .port_info 3 /INPUT 1 "CELG";
+    .port_info 4 /INPUT 1 "CELSUB";
+v0x55983c5ed4b0_0 .net "CELG", 0 0, o0x7f875c79e018;  alias, 0 drivers
+v0x55983c5ee0f0_0 .net "CELSUB", 0 0, o0x7f875c79e048;  alias, 0 drivers
+v0x55983c5edec0_0 .net "CELV", 0 0, o0x7f875c79e078;  alias, 0 drivers
+v0x55983c633720_0 .net "i", 0 0, o0x7f875c79e0a8;  alias, 0 drivers
+v0x55983c6337e0_0 .net "o", 0 0, o0x7f875c79e0d8;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/./celera//projects//Sunnyvale//software//GPIpuget//verilog5//delayfixed_0b8ed1af.v";

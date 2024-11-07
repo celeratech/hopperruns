@@ -1,7 +1,5 @@
-* Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\verification\sim_WALTZ.sxsch
+* Z:\celera\projects\Waltz2\simplis\301\verification\sim_WALTZ.sxsch
 *#SIMETRIX
-X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
-
 X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
 
 .node_map BST 24
@@ -85,85 +83,85 @@ V$IN 20 0 PWL NSEG=3 X0=0 Y0=0 X1={Tin0} Y1={ENABLEin} X2={Tin1} Y2={ENABLEin} X
 V$PGND 27 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=0 X2=20u Y2=0 
 X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
 X$WALTZ 20 21 20 22 23 24 25 26 25 26 26 26 WALTZ
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\WALTZ.sxcmp
-.subckt WALTZ 145 146 147 148 149 150 151 152 153 154 155 156
+** From Z:\celera\projects\Waltz2\simplis\301\design\WALTZ.sxcmp
+.subckt WALTZ 146 147 148 149 150 151 152 153 154 155 156 157
 *#hierarchy
-.node_map porb 158
-.node_map fault_clock 187
-.node_map topstate 159
-.node_map topswipeak 165
-.node_map BST 150
-.node_map FSET 151
-.node_map PVCC 176
-.node_map kelvin_GNDservice 173
-.node_map POK 149
-.node_map BIAS 152
-.node_map bbm_bottomon 181
-.node_map ok_driver 174
-.node_map PIN 157
-.node_map kelvin_GNDsoftstart 169
-.node_map REF0V9 182
-.node_map FB 156
-.node_map enable_softstart 190
-.node_map botswzcross 172
-.node_map PGND 146
-.node_map IREF_DRIVER 184
-.node_map clock 162
-.node_map fault_short 194
-.node_map enable_regulation 188
-.node_map VCC 153
-.node_map switch_control 177
-.node_map ok_service 183
-.node_map ISLOPECOMP 185
-.node_map freeze_control 175
-.node_map botswineg 170
-.node_map enable_waltz 160
-.node_map ok_clock 186
-.node_map fault_control 163
-.node_map botswipeak 168
-.node_map botstate 161
-.node_map ok_regulation 189
-.node_map bbm_topon 180
-.node_map done_softstart 179
-.node_map SS 191
-.node_map SYNC 155
-.node_map GND 154
-.node_map IN 145
-.node_map fault_run 193
-.node_map blank_fault 192
-.node_map kelvin_GNDregulation 166
-.node_map EN 147
-.node_map sense_FB 178
-.node_map kelvin_GNDpowergood 171
-.node_map SW 148
-.node_map go_driver 164
-.node_map kelvin_VCC 167
-X$CLOCK 153 162 160 155 186 151 185 187 CLOCKwaltz
-X$CONTROL 158 159 160 161 162 163 164 165 168 170 172 174 175 177 179 180 181 CONTROLwaltz2
-X$DRIVER 157 150 153 148 176 165 145 168 184 172 185 174 160 170 159 180 161 181 146 DRIVERwaltz2
-X$FAULTMANAGER 153 175 160 193 192 162 194 FAULTMANAGERwaltz
-X$POWERGOOD 153 149 160 182 178 162 171 194 POWERGOODwaltz
-X$REGULATION 153 164 184 156 188 191 182 166 189 154 REGULATIONwaltz0
-X$RING 157 145 146 147 148 150 149 152 151 154 166 169 171 173 153 176 167 156 178 155 RINGwaltz2
-X$SEQUENCER 158 160 183 190 174 192 189 177 186 187 163 193 179 188 SEQUENCERwaltz
-X$SERVICE 145 153 152 182 147 183 158 167 173 SERVICEwaltz0
-X$SOFTSTART 153 191 190 179 182 169 160 SOFTSTARTwaltz
-X$U1 145 pinprobe vars: pinprobe_description='Supply_Input_up_to_60V' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U10 155 pinprobe vars: pinprobe_description='Synchronization_Clock' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U11 144 brick vars: ibias=0 drm=0 dft=0 global=0 revision=2 description='WALTZ_High_Voltage_Stepdown_Converter' description1='Bias_5V_with_Reference' description2='Feedback_External' description3='Regulation_500mA_Peak_current_mode_internal_compensation' description4='PowerGood_Under_Indicator' description5='Fault_Manager_Thermal_Output_short' description6='Integrated_softstart_4ms' description7='Package_TDFN1233' description8='text' description9='text' description10='text'
-X$U12 149 pinprobe vars: pinprobe_description='Power_Good_Open_Drain' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U13 151 pinprobe vars: pinprobe_description='External_Frequency_Set_Resistor' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U2 150 pinprobe vars: pinprobe_description='Boost_Capacitor' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U3 152 pinprobe vars: pinprobe_description='External_Bias_Supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U4 148 pinprobe vars: pinprobe_description='Inductor_switch_inout' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U5 146 pinprobe vars: pinprobe_description='Power_ground_input'
-X$U6 153 pinprobe vars: pinprobe_description='Internal_Core_Supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U7 147 pinprobe vars: pinprobe_description='Chip_Enable' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U8 156 pinprobe vars: pinprobe_description='Feedback_Input' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U9 154 pinprobe vars: pinprobe_description='Ground_input' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+.node_map porb 159
+.node_map fault_clock 188
+.node_map topstate 160
+.node_map topswipeak 166
+.node_map BST 151
+.node_map FSET 152
+.node_map PVCC 177
+.node_map kelvin_GNDservice 174
+.node_map POK 150
+.node_map BIAS 153
+.node_map bbm_bottomon 182
+.node_map ok_driver 175
+.node_map PIN 158
+.node_map kelvin_GNDsoftstart 170
+.node_map REF0V9 183
+.node_map FB 157
+.node_map enable_softstart 191
+.node_map botswzcross 173
+.node_map PGND 147
+.node_map IREF_DRIVER 185
+.node_map clock 163
+.node_map fault_short 195
+.node_map enable_regulation 189
+.node_map VCC 154
+.node_map switch_control 178
+.node_map ok_service 184
+.node_map ISLOPECOMP 186
+.node_map freeze_control 176
+.node_map botswineg 171
+.node_map enable_waltz 161
+.node_map ok_clock 187
+.node_map fault_control 164
+.node_map botswipeak 169
+.node_map botstate 162
+.node_map ok_regulation 190
+.node_map bbm_topon 181
+.node_map done_softstart 180
+.node_map SS 192
+.node_map SYNC 156
+.node_map GND 155
+.node_map IN 146
+.node_map fault_run 194
+.node_map blank_fault 193
+.node_map kelvin_GNDregulation 167
+.node_map EN 148
+.node_map sense_FB 179
+.node_map kelvin_GNDpowergood 172
+.node_map SW 149
+.node_map go_driver 165
+.node_map kelvin_VCC 168
+X$CLOCK 154 163 161 156 187 152 186 188 CLOCKwaltz
+X$CONTROL 159 160 161 162 163 164 165 166 169 171 173 175 176 178 180 181 182 CONTROLwaltz2
+X$DRIVER 158 151 154 149 177 166 146 169 185 173 186 175 161 171 160 181 162 182 147 DRIVERwaltz2
+X$FAULTMANAGER 154 176 161 194 193 163 195 FAULTMANAGERwaltz
+X$POWERGOOD 154 150 161 183 179 163 172 195 POWERGOODwaltz
+X$REGULATION 154 165 185 157 189 192 183 167 190 155 REGULATIONwaltz0
+X$RING 158 146 147 148 149 151 150 153 152 155 167 170 172 174 154 177 168 157 179 156 RINGwaltz2
+X$SEQUENCER 159 161 184 191 175 193 190 178 187 188 164 194 180 189 SEQUENCERwaltz
+X$SERVICE 146 154 153 183 148 184 159 168 174 SERVICEwaltz0
+X$SOFTSTART 154 192 191 180 183 170 161 SOFTSTARTwaltz
+X$U1 146 pinprobe vars: pinprobe_description='Supply_Input_up_to_60V' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U10 156 pinprobe vars: pinprobe_description='Synchronization_Clock' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U11 144 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=2 description='WALTZ_High_Voltage_Stepdown_Converter' description1='Bias_5V_with_Reference' description2='Feedback_External' description3='Regulation_500mA_Peak_current_mode_internal_compensation' description4='PowerGood_Under_Indicator' description5='Fault_Manager_Thermal_Output_short' description6='Integrated_softstart_4ms' description7='Package_TDFN1233' description8='text' description9='text' description10='text'
+X$U12 150 pinprobe vars: pinprobe_description='Power_Good_Open_Drain' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U13 152 pinprobe vars: pinprobe_description='External_Frequency_Set_Resistor' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U2 151 pinprobe vars: pinprobe_description='Boost_Capacitor' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 153 pinprobe vars: pinprobe_description='External_Bias_Supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 149 pinprobe vars: pinprobe_description='Inductor_switch_inout' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 147 pinprobe vars: pinprobe_description='Power_ground_input'
+X$U6 154 pinprobe vars: pinprobe_description='Internal_Core_Supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U7 148 pinprobe vars: pinprobe_description='Chip_Enable' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U8 157 pinprobe vars: pinprobe_description='Feedback_Input' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 155 pinprobe vars: pinprobe_description='Ground_input' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 .ends WALTZ
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\CLOCKwaltz.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\CLOCKwaltz.sxcmp
 .subckt CLOCKwaltz 52 53 54 56 55 58 59 57
 *#hierarchy
 .node_map fault_clock 57
@@ -193,18 +191,18 @@ X$U9 154 pinprobe vars: pinprobe_description='Ground_input' pinprobe_mode='tbd' 
 X$DEBUG 54 61 57 59 62 63 64 60 65 66 67 CLOCKwaltzDEBUG
 X$MAIN 52 53 60 57 56 55 58 59 44 45 46 47 61 62 63 64 65 66 67 CLOCKwaltzMAIN
 X$U1 53 pinprobe vars: pinprobe_description='Internal_clock' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U10 43 brick vars: ibias=0 drm=1 dft=1 global=0 revision=0 description='CLOCK_Brick' description1='External_clock_setup_through_FSET_resistor' description2='50_400KHz' description3='Fault_flag_if_FSET_grounded_or_floating' description4='Set_FSET_to_VCC_for_default_400KHz' description5='Override_clock_with_SYNC_input' description6='Factory_option_for_minimum_off_time' description7='Debug_enabled' description8='text' description9='text' description10='text'
+X$U10 43 brick vars: ibias=0 drm=1 dft=1 global=0 brick=0 revision=0 description='CLOCK_Brick' description1='External_clock_setup_through_FSET_resistor' description2='50_400KHz' description3='Fault_flag_if_FSET_grounded_or_floating' description4='Set_FSET_to_VCC_for_default_400KHz' description5='Override_clock_with_SYNC_input' description6='Factory_option_for_minimum_off_time' description7='Debug_enabled' description8='text' description9='text' description10='text'
 X$U2 54 pinprobe vars: pinprobe_description='Enable_clock_brick' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U3 56 pinprobe vars: pinprobe_description='External_SyNC_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
 X$U4 58 pinprobe vars: pinprobe_description='External_Resistor_to_set_frequency' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
 X$U5 57 pinprobe vars: pinprobe_description='Clock_faulted_at_startup' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U6 52 pinprobe vars: pinprobe_description='MUD_low_voltage_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
 X$U7 55 pinprobe vars: pinprobe_description='Clock_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U8 44 45 46 47 48 49 50 51 datamap0 vars: datamap_function='range' datamap_name='CLOCKofftime' datamap_description='Adjust_Minimum_off_time' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='9' datamap_mode='readwrite' datamap_timeenable='no' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='ns' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=4 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=8 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U8 44 45 46 47 48 49 50 51 datamap0 vars: datamap_function='range' datamap_name='CLOCKofftime' datamap_description='Adjust_Minimum_off_time' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='9' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='ns' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=4 datamap_location=0 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=8 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
 X$U9 59 pinprobe vars: pinprobe_description='Slope_Compensation_reference_current' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
 .ends CLOCKwaltz
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\CLOCKwaltzDEBUG.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\CLOCKwaltzDEBUG.sxcmp
 .subckt CLOCKwaltzDEBUG 34 38 36 37 39 40 41 35 42 43 44
 *#hierarchy
 .node_map fault_clock 36
@@ -241,7 +239,7 @@ X$U8 41 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_D
 X$U9 37 pinprobe vars: pinprobe_description='Slope_Compensation_reference_current' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 .ends CLOCKwaltzDEBUG
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\CLOCKwaltzMAIN.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\CLOCKwaltzMAIN.sxcmp
 .subckt CLOCKwaltzMAIN 86 87 88 89 90 91 92 93 81 82 83 84 94 95 96 97 98 99 100
 *#hierarchy
 .node_map fault_clock 89
@@ -271,6 +269,7 @@ X$U9 37 pinprobe vars: pinprobe_description='Slope_Compensation_reference_curren
 .node_map clock_timer 103
 .node_map SYNC 90
 .node_map dft_sync 100
+X$clocksync1 95 101 105 102 96 88 clocksync  vars: clocksync_statusoutput='both' clocksync_dft='no' clocksync_accuracy='no' clocksync_trim_name='text' clocksync_trim_description='text' clocksync_frequency=375 clocksync_dutycyclemin=30 clocksync_dutycyclemax=70 clocksync_vmax=6
 X$OSCEXT 106 86 105 89 93 92 88 76 77 oscillator vars: osc_type='external' osc_accuracy='yes' osc_datasheet_accuracy_name='CLOCKaccuracy' osc_datasheet_accuracy_description='CLOCK_accuracy_at_400KHz_50K' osc_enable='pin' osc_enable_por='disable' osc_datasheet_enable_name='text' osc_datasheet_enable_description='text' osc_ss='no' osc_standbyclock='no' osc_standbyclockpor='disable' osc_ext_freq_default='yes' osc_ext_comment='0' osc_crystalbias='3.3' osc_crystalglobalref='yes' osc_crystalcleancountpor='32' osc_ss_configuration='fixed' osc_ss_enable_control='fixed' osc_ss_mode_por='sweep' osc_ss_enable_por='enable' osc_ss_clock_sync='synchronized' osc_ss_datasheetname='text' osc_dft='no' osc_ibias='global' osc_int_freq=1k osc_int_duty=50 osc_int_ireplica_gain=10 osc_int_1=0 osc_ext_freq=400 osc_ext_resistor=50 osc_ext_duty=50 osc_ext_replicagain=1 osc_crude_freq=1 osc_crude_duty=50 osc_crystalfreq=1 osc_crystalreflocal=1 osc_ringfreq=20 osc_ss_range_por=5 osc_ss_clock_independent=50 osc_ss_clock_divide=64 osc_vmax=6
 X$U1 87 pinprobe vars: pinprobe_description='Internal_clock' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
 X$U10 99 102 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
@@ -295,7 +294,6 @@ X$U27 98 pinprobe vars: pinprobe_description='DFT_CLOCK_Measure_internal_clock' 
 X$U28 99 pinprobe vars: pinprobe_description='DFT_CLOCK_Measure_SYNC_clock' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U29 100 pinprobe vars: pinprobe_description='DFT_CLOCK_Measure_SYNC_mode_detected' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U3 90 pinprobe vars: pinprobe_description='External_SyNC_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
-X$U30 95 101 105 102 96 88 clocksync  vars: clocksync_statusoutput='both' clocksync_dft='no' clocksync_accuracy='no' clocksync_trim_name='text' clocksync_trim_description='text' clocksync_frequency=375 clocksync_dutycycle=50 clocksync_vmax=6 clocksync_offset=60
 X$U31 100 80 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
 X$U4 92 pinprobe vars: pinprobe_description='External_Resistor_to_set_frequency' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
 X$U5 89 pinprobe vars: pinprobe_description='Clock_faulted_at_startup' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
@@ -348,7 +346,7 @@ X$U4 5 4 7 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
 X$U5 4 6 inv vars: logicgate_type='inv' logicgate_vmax=6
 .ends VESPAasmINPUT1
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\CONTROLwaltz2.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\CONTROLwaltz2.sxcmp
 .subckt CONTROLwaltz2 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 83 84
 *#hierarchy
 .node_map porb 67
@@ -378,8 +376,8 @@ X$U5 4 6 inv vars: logicgate_type='inv' logicgate_vmax=6
 .node_map done_softstart 81
 .node_map go_driver 73
 X$CONTROL 67 68 69 70 71 72 78 73 79 80 59 74 75 77 76 81 60 61 83 84 Algorithm5p9_DYES
-X$U1 59 60 61 62 63 64 65 66 datamap0 vars: datamap_function='function' datamap_name='CONTROLconfiguration' datamap_description='CONTROL_configuration' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='0' datamap_mode='readwrite' datamap_timeenable='no' datamap_function0='Operating_Mode' datamap_function0_off='Discontinous' datamap_function0_on='Continous' datamap_function1='Blank_bottom' datamap_function1_off='Maximum_on_time_fault' datamap_function1_on='Blank_maximum_on_time' datamap_function2='Blank_refresh' datamap_function2_off='Refresh_with_ok_driver' datamap_function2_on='Blank_refresh' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='0' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=420 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
-X$U2 58 brick vars: ibias=0 drm=1 dft=1 global=0 revision=9 description='CONTROL_Statemachine' description1='StepDown_Control_algorithm_5p9pA' description2='Factory_option_for_Forced_continous_mode' description3='Factory_option_for_blank_bottom_maximum_on_time' description4='Debug_enabled' description5='Rev9_Added_BBM_overide_to_STATE' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U1 59 60 61 62 63 64 65 66 datamap0 vars: datamap_function='function' datamap_name='CONTROLconfiguration' datamap_description='CONTROL_configuration' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='3' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_function0='Operating_Mode' datamap_function0_off='Discontinous' datamap_function0_on='Continous' datamap_function1='Blank_bottom' datamap_function1_off='Maximum_on_time_fault' datamap_function1_on='Blank_maximum_on_time' datamap_function2='Blank_refresh' datamap_function2_off='Refresh_with_ok_driver' datamap_function2_on='Blank_refresh' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='0' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_location=0 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=420 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U2 58 brick vars: ibias=0 drm=1 dft=1 global=0 brick=0 revision=9 description='CONTROL_Statemachine' description1='StepDown_Control_algorithm_5p9pA' description2='Factory_option_for_Forced_continous_mode' description3='Factory_option_for_blank_bottom_maximum_on_time' description4='Debug_enabled' description5='Rev9_Added_BBM_overide_to_STATE' description6='text' description7='text' description8='text' description9='text' description10='text'
 X$U3 82 pinprobe vars: pinprobe_description='SoftStart_complete_flag' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U4 84 pinprobe vars: pinprobe_description='BBM_bottom_switch_control' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U5 83 pinprobe vars: pinprobe_description='BBM_top_on_switch_control' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
@@ -399,7 +397,7 @@ X$Utopstate 68 pinprobe vars: pinprobe_description='Turn_top_switch_on'
 X$Utopswipeak 74 pinprobe vars: pinprobe_description='Top_swotch_peak_current_detect		'
 .ends CONTROLwaltz2
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\Algorithm5p9_DYES.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\Algorithm5p9_DYES.sxcmp
 .subckt Algorithm5p9_DYES 125 126 127 128 129 130 132 133 135 137 139 141 143 145 147 149 153 155 157 158
 *#hierarchy
 .node_map POWERUPmaxdelayo 152
@@ -495,7 +493,7 @@ X$Utop_switch 126 pinprobe vars: pinprobe_description='Turn_top_switch_on'
 X$Uzcross_bottom 145 pinprobe vars: pinprobe_description='Zero_current_bottom_switch	'
 .ends Algorithm5p9_DYES
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\Algorithm5p9_DYES_0.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\Algorithm5p9_DYES_0.sxcmp
 .subckt Algorithm5p9_DYES_0 452 460 454 491 503 492 508 512 517 518 522 526 531 535 519 542 545 448 449 450 451 555 506 547 549 559 568 453 471 484 457 498 507 510 458 466 476 474 486 489 495 464 500 546 550 552
 *#hierarchy
 .node_map POWERUPmaxdelayo 506
@@ -1392,7 +1390,7 @@ X$U25 5 3 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
 X$U3 4 3 delayfixed vars: delay_type='fixed' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='both' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delay_time=1 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999
 .ends VESPAasmOUTPUT1_0
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\DRIVERwaltz2.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\DRIVERwaltz2.sxcmp
 .subckt DRIVERwaltz2 85 86 91 88 89 90 87 92 93 94 95 96 97 98 99 100 101 102 103
 *#hierarchy
 .node_map PMUDV 89
@@ -1434,7 +1432,7 @@ X$U14 86 pinprobe vars: pinprobe_description='Top_switch_driver_Supply' pinprobe
 X$U15 92 pinprobe vars: pinprobe_description='Bottom_Current_Limit' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U16 94 pinprobe vars: pinprobe_description='Bottom_Current_Zero_Cross' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U17 98 pinprobe vars: pinprobe_description='Bottom_Negative_Current_Limit' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U18 84 brick vars: ibias=0 drm=1 dft=1 global=0 revision=2 description='DRIVER_Brick' description1='Half_bridge_driver_with_BBM' description2='Top_side_Peak_current_detect' description3='Bottom_side_Peak_Zero_Negative_current_detect' description4='Factory_option_for_BBM' description5='Debug_enabled' description6='Rev2_Add_BBM_for_statemachine_control' description7='text' description8='text' description9='text' description10='text'
+X$U18 84 brick vars: ibias=0 drm=1 dft=1 global=0 brick=0 revision=2 description='DRIVER_Brick' description1='Half_bridge_driver_with_BBM' description2='Top_side_Peak_current_detect' description3='Bottom_side_Peak_Zero_Negative_current_detect' description4='Factory_option_for_BBM' description5='Debug_enabled' description6='Rev2_Add_BBM_for_statemachine_control' description7='text' description8='text' description9='text' description10='text'
 X$U19 100 pinprobe vars: pinprobe_description='Top_switch_BBM_on_request' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U2 85 pinprobe vars: pinprobe_description='High_Voltage_High_Current_Supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
 X$U20 102 pinprobe vars: pinprobe_description='Bottom_Switch_BBM_on_request' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
@@ -1447,7 +1445,7 @@ X$U8 87 pinprobe vars: pinprobe_description='High_Voltage_High_Current_Supply' p
 X$U9 93 pinprobe vars: pinprobe_description='Current_Limit_Reference_Current' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
 .ends DRIVERwaltz2
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\DRIVERwaltzBBM2.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\DRIVERwaltzBBM2.sxcmp
 .subckt DRIVERwaltzBBM2 67 68 69 70 71 72 73 74
 *#hierarchy
 .node_map bottomstateDELAY 82
@@ -1502,14 +1500,14 @@ X$U3 70 pinprobe vars: pinprobe_description='Bottom_Switch_turn_on_flag' pinprob
 X$U4 67 pinprobe vars: pinprobe_description='TOP_Switch_State'
 X$U5 71 pinprobe vars: pinprobe_description='BOTTOM_Switch_Gate_Status'
 X$U6 69 pinprobe vars: pinprobe_description='TOP_Switch_Gate_Status'
-X$U7 49 50 51 52 53 54 55 56 datamap0 vars: datamap_function='function' datamap_name='BBMstatus' datamap_description='BBM_Status_Enabled' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='3' datamap_mode='readwrite' datamap_timeenable='no' datamap_function0='Botom_status' datamap_function0_off='Enable' datamap_function0_on='Disable' datamap_function1='Top_status' datamap_function1_off='Enable' datamap_function1_on='Disable' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='TOP_BOT_Status_Enabled' datamap_code1='TOP_Status_Bypassed_BOT_Status_Enabled' datamap_code2='BOT_Status_Bypassed_TOP_Status_Enabled' datamap_code3='TOP_BOT_Status_Bypassed' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='3' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=100 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U7 49 50 51 52 53 54 55 56 datamap0 vars: datamap_function='function' datamap_name='BBMstatus' datamap_description='BBM_Status_Enabled' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='3' datamap_mode='readwrite' datamap_timeenable='no' datamap_function0='Bottom_status' datamap_function0_off='Enable' datamap_function0_on='Disable' datamap_function1='Top_status' datamap_function1_off='Enable' datamap_function1_on='Disable' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='TOP_BOT_Status_Enabled' datamap_code1='TOP_Status_Bypassed_BOT_Status_Enabled' datamap_code2='BOT_Status_Bypassed_TOP_Status_Enabled' datamap_code3='TOP_BOT_Status_Bypassed' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='3' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=100 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
 X$U8 71 75 inv vars: logicgate_type='inv' logicgate_vmax=6
 X$U9 69 79 inv vars: logicgate_type='inv' logicgate_vmax=6
 X$UBOTTOMDELAY 67 57 58 59 60 61 78 timingskew vars: timingskew_type='rise' timingskew_control='factory' timingskew_dft='no' timingskew_datasheet_name='TOPSWITCHstatusDELAY' timingskew_datasheet_description='TOP_Switch_on_delay' timingskew_bits=5 timingskew_por=18 timingskew_lsb=1 timingskew_vmax=6
 X$UTOPDELAY 73 62 63 64 65 66 82 timingskew vars: timingskew_type='rise' timingskew_control='factory' timingskew_dft='no' timingskew_datasheet_name='BOTTOMSWITCHstatusDELAY' timingskew_datasheet_description='BOT_Switch_on_delay' timingskew_bits=5 timingskew_por=18 timingskew_lsb=1 timingskew_vmax=6
 .ends DRIVERwaltzBBM2
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\DRIVERwaltz0BOTN0.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\DRIVERwaltz0BOTN0.sxcmp
 .subckt DRIVERwaltz0BOTN0 98 99 110 108 112 109 104 103 111 113
 *#hierarchy
 .node_map PMUDV 98
@@ -1536,7 +1534,7 @@ X$UTOPDELAY 73 62 63 64 65 66 82 timingskew vars: timingskew_type='rise' timings
 C1 101 106 1p IC=0
 C2 102 107 1p IC=0
 C4 100 105 1p IC=0
-X$fetdriver1 98 114 68 112 71 69 111 70 94 95 96 97 110 108 fetdriver vars: fetdriver_type='n' fetdriver_on_adjust='no' fetdriver_on_adjust_por='0' fetdriver_on_adjust_name='text' fetdriver_on_adjust_description='text' fetdriver_off_adjust='no' fetdriver_off_adjust_por='0' fetdriver_off_adjust_name='text' fetdriver_off_adjust_description='text' fetdriver_faultdisable='no' fetdriver_levelshiftenable='yes' fetdriver_levelshiftinput='yes' fetdriver_status_levelshifter='yes' fetdriver_status_delay_adjust='no' fetdriver_statusdelay_name='botswitchstatdel' fetdriver_statusdelay_description='Bottom_Switch_Gate_Status_Delay' fetdriver_passive='no' fetdriver_dft='no' fetdriver_design='fast' fetdriver_on_ron=8 fetdriver_off_ron=4 fetdriver_vmaxlevelshift=6 fetdriver_status_delay=0 fetdriver_vmax=6
+X$fetdriver1 98 114 68 112 71 69 111 70 94 95 96 97 110 108 fetdriver vars: fetdriver_type='n' fetdriver_on_adjust='no' fetdriver_on_adjust_por='0' fetdriver_on_adjust_name='text' fetdriver_on_adjust_description='text' fetdriver_off_adjust='no' fetdriver_off_adjust_por='0' fetdriver_off_adjust_name='text' fetdriver_off_adjust_description='text' fetdriver_faultdisable='no' fetdriver_levelshiftenable='yes' fetdriver_levelshiftinput='yes' fetdriver_status_levelshifter='yes' fetdriver_status_delay_adjust='no' fetdriver_statusdelay_name='botswitchstatdel' fetdriver_statusdelay_description='Bottom_Switch_Gate_Status_Delay' fetdriver_passive='1000' fetdriver_dft='no' fetdriver_design='fast' fetdriver_on_ron=8 fetdriver_off_ron=4 fetdriver_vmaxlevelshift=6 fetdriver_status_delay=0 fetdriver_vmax=6
 X$U1 99 pinprobe vars: pinprobe_description='NMOS_Drain'
 X$U10 66 celeranoconn vars: ='%'
 X$U11 67 celeranoconn vars: ='%'
@@ -1549,17 +1547,17 @@ X$U17 75 78 113 81 84 107 102 87 103 90 93 110 111 currentlimitfet vars: current
 X$U18 113 pinprobe vars: pinprobe_description='Lowside_Negative_Current_Limit' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U2 108 pinprobe vars: pinprobe_description='Bottom_Switch_On'
 X$U23 103 pinprobe vars: pinprobe_description='Core_Supply'
+X$U3 73 76 109 79 82 105 100 85 103 88 91 110 111 currentlimitfet vars: currentlimit_sense='fet' currentlimit_limit='10m' currentlimit_fetterm='nmos_source' currentlimit_3='nmos_source' currentlimit_4='nmos_drain' currentlimit_5='pmos_drain' currentlimit_6='nmos_drain' currentlimit_7='pmos_source' currentlimit_7N='nmos_source' currentlimit_limitout='live' currentlimit_usage='lowside' currentlimit_iref='internal' currentlimit_output_polarity='low' currentlimit_levelshiftoutput='yes' currentlimit_levelshiftenable='yes' currentlimit_levelshiftmeasure='yes' currentlimit_blanking_adjust='no' currentlimit_datasheet_blanking_name='botswzeroblank' currentlimit_datasheet_blanking_description='Lowside_Blanking' currentlimit_dft='no' currentlimit_accuracy='yes' currentlimit_datasheet_accuracy_name='botswzcrossacc' currentlimit_datasheet_accuracy_description='BottomSW_Zcross' currentlimit_slopecomp='no' currentlimit_fetratio=1 currentlimit_2=0 currentlimit_8=0 currentlimit_vsense=100 currentlimit_restc=0 currentlimit_vsensemax=6 currentlimit_maxiref=10 currentlimit_blanking=20 currentlimit_1=0 currentlimit_vmax=6 currentlimit_9=0
 X$U31 104 pinprobe vars: pinprobe_description='Lowside_Current_Limit'
 X$U4 110 pinprobe vars: pinprobe_description='Enable'
 X$U42 111 pinprobe vars: pinprobe_description='Lowside_Gate_Status'
 X$U5 112 99 114 67 106 101 fetdn vars: fet_usage='power' fet_replica='source' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='yes' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='yes' fet_ron_signal=1k fet_ron_power=820m fet_replica_gain=25 fet_maximumvds=60 count_1=1 fet_vmax=6
 X$U6 98 pinprobe vars: pinprobe_description='Gate_Supply'
 X$U7 112 pinprobe vars: pinprobe_description='Lowside_Power_Ground'
-X$U8 73 76 109 79 82 105 100 85 103 88 91 110 111 currentlimitfet vars: currentlimit_sense='fet' currentlimit_limit='10m' currentlimit_fetterm='nmos_source' currentlimit_3='nmos_source' currentlimit_4='nmos_drain' currentlimit_5='pmos_drain' currentlimit_6='nmos_drain' currentlimit_7='pmos_source' currentlimit_7N='nmos_source' currentlimit_limitout='live' currentlimit_usage='lowside' currentlimit_iref='internal' currentlimit_output_polarity='low' currentlimit_levelshiftoutput='yes' currentlimit_levelshiftenable='yes' currentlimit_levelshiftmeasure='yes' currentlimit_blanking_adjust='no' currentlimit_datasheet_blanking_name='botswzeroblank' currentlimit_datasheet_blanking_description='Lowside_Blanking' currentlimit_dft='no' currentlimit_accuracy='yes' currentlimit_datasheet_accuracy_name='botswzcrossacc' currentlimit_datasheet_accuracy_description='Lowside_Zero_Cross_Accuracy' currentlimit_slopecomp='no' currentlimit_fetratio=1 currentlimit_2=0 currentlimit_8=0 currentlimit_vsense=100 currentlimit_restc=0 currentlimit_vsensemax=6 currentlimit_maxiref=10 currentlimit_blanking=20 currentlimit_1=0 currentlimit_vmax=6 currentlimit_9=0
 X$U9 74 77 104 80 83 106 101 86 103 89 92 110 111 currentlimitfet vars: currentlimit_sense='fet' currentlimit_limit='650m' currentlimit_fetterm='nmos_source' currentlimit_3='nmos_source' currentlimit_4='nmos_drain' currentlimit_5='pmos_drain' currentlimit_6='nmos_drain' currentlimit_7='pmos_source' currentlimit_7N='nmos_source' currentlimit_limitout='live' currentlimit_usage='lowside' currentlimit_iref='internal' currentlimit_output_polarity='high' currentlimit_levelshiftoutput='yes' currentlimit_levelshiftenable='yes' currentlimit_levelshiftmeasure='yes' currentlimit_blanking_adjust='no' currentlimit_datasheet_blanking_name='botswipeakblank' currentlimit_datasheet_blanking_description='Lowside_Blanking' currentlimit_dft='no' currentlimit_accuracy='yes' currentlimit_datasheet_accuracy_name='botswipeakacc' currentlimit_datasheet_accuracy_description='Lowside_Zero_Cross_Accuracy' currentlimit_slopecomp='no' currentlimit_fetratio=25 currentlimit_2=0 currentlimit_8=0 currentlimit_vsense=100 currentlimit_restc=0 currentlimit_vsensemax=6 currentlimit_maxiref=50 currentlimit_blanking=60 currentlimit_1=0 currentlimit_vmax=6 currentlimit_9=0
 .ends DRIVERwaltz0BOTN0
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\DRIVERwaltz0DEBUG0.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\DRIVERwaltz0DEBUG0.sxcmp
 .subckt DRIVERwaltz0DEBUG0 46 45 47 48 44 42 49 50 51 52 53 43 54
 *#hierarchy
 .node_map topstate 46
@@ -1601,7 +1599,7 @@ X$U8 49 pinprobe vars: pinprobe_description='TOP_Switch_Current_Limit_Flag' pinp
 X$U9 48 47 dfthijack vars: dfthijack_name='HJDRIVERbotstate' dfthijack_description='Highjack_Bot_State' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=20 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
 .ends DRIVERwaltz0DEBUG0
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\DRIVERwaltz0TOPN0.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\DRIVERwaltz0TOPN0.sxcmp
 .subckt DRIVERwaltz0TOPN0 89 96 98 94 86 91 99 93 97 100 87 88 101 90
 *#hierarchy
 .node_map PMUDV 90
@@ -1657,7 +1655,7 @@ X$U8 94 pinprobe vars: pinprobe_description='Highside_Gate_Status' pinprobe_mode
 X$U9 91 pinprobe vars: pinprobe_description='Highside_Current_Limit' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 .ends DRIVERwaltz0TOPN0
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\FAULTMANAGERwaltz.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\FAULTMANAGERwaltz.sxcmp
 .subckt FAULTMANAGERwaltz 53 54 55 56 57 58 59
 *#hierarchy
 .node_map hijack_faultmanager_status 61
@@ -1685,9 +1683,9 @@ X$U9 91 pinprobe vars: pinprobe_description='Highside_Current_Limit' pinprobe_mo
 .node_map blank_fault 57
 X$DEBUG 55 60 54 61 56 62 65 63 66 57 64 59 67 FAULTMANAGERwaltzDEBUG
 X$MAIN 53 54 60 56 64 58 65 67 61 62 63 66 45 46 FAULTMANAGERwaltzMAIN
-X$U1 45 46 47 48 49 50 51 52 datamap0 vars: datamap_function='function' datamap_name='FAULTMANAGERconfiguration' datamap_description='FAULTMANAGER_configuration' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='0' datamap_mode='readwrite' datamap_timeenable='no' datamap_function0='HICCUPmode' datamap_function0_off='Disable' datamap_function0_on='Enable' datamap_function1='BLANKthermal' datamap_function1_off='Disable' datamap_function1_on='Enable' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U1 45 46 47 48 49 50 51 52 datamap0 vars: datamap_function='function' datamap_name='FAULTMANAGERconfiguration' datamap_description='FAULTMANAGER_configuration' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='1' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_function0='HICCUPmode' datamap_function0_off='Disable' datamap_function0_on='Enable' datamap_function1='BLANKthermal' datamap_function1_off='Disable' datamap_function1_on='Enable' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_location=0 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
 X$U12 57 pinprobe vars: pinprobe_description='blank_fault_input' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U2 44 brick vars: ibias=0 drm=1 dft=1 global=0 revision=0 description='FAULTMANAGER_Brick' description1='Temperature_fault' description2='SHORT_fault' description3='Factory_option_for_HiCup' description4='Factory_option_for_burnIn' description5='Debug_enabled' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U2 44 brick vars: ibias=0 drm=1 dft=1 global=0 brick=0 revision=0 description='FAULTMANAGER_Brick' description1='Temperature_fault' description2='SHORT_fault' description3='Factory_option_for_HiCup' description4='Factory_option_for_burnIn' description5='Debug_enabled' description6='text' description7='text' description8='text' description9='text' description10='text'
 X$U3 54 pinprobe vars: pinprobe_description='Freeze_converter_switching' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U4 55 pinprobe vars: pinprobe_description='Enable_fault_module' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U5 58 pinprobe vars: pinprobe_description='Reference-clock_for_delays' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
@@ -1696,7 +1694,7 @@ X$U8 53 pinprobe vars: pinprobe_description='Fault_Module_Input_supply' pinprobe
 X$U9 59 pinprobe vars: pinprobe_description='OUTPUT_less_than_60percent' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 .ends FAULTMANAGERwaltz
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\FAULTMANAGERwaltzDEBUG.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\FAULTMANAGERwaltzDEBUG.sxcmp
 .subckt FAULTMANAGERwaltzDEBUG 45 46 49 48 51 50 55 52 56 53 54 47 57
 *#hierarchy
 .node_map hijack_faultmanager_status 48
@@ -1713,6 +1711,7 @@ X$U9 59 pinprobe vars: pinprobe_description='OUTPUT_less_than_60percent' pinprob
 .node_map hijack_short_status 52
 .node_map fault_run 51
 .node_map blank_fault 53
+X$dfthijack1 58 56 dfthijack vars: dfthijack_name='HIJACKfaultmanagerDFTdelay' dfthijack_description='Hijack_FAULTMANAGER_DFT_delay' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
 X$U1 49 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='FAULTMANAGERfreeze' dftprobe_description='Fault_freeze_flag' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
 X$U10 51 pinprobe vars: pinprobe_description='Genertate_fault_in_run_mode' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U13 47 pinprobe vars: pinprobe_description='Faultmanage_Output_short' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
@@ -1726,7 +1725,6 @@ X$U22 50 pinprobe vars: pinprobe_description='Hijack_thermal_status' pinprobe_mo
 X$U23 58 tie vars: tie_mode='low' tie_vmax=6
 X$U25 57 pinprobe vars: pinprobe_description='Hijack_fault_short_input' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U27 58 52 dfthijack vars: dfthijack_name='HIJACKfaultmanagerDFTshort' dfthijack_description='Hijack_FAULTMANAGER_DFT_short' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
-X$U28 58 56 dfthijack vars: dfthijack_name='HIJACKfaultmanagerDFTdelay' dfthijack_description='Hijack_FAULTMANAGER_DFT_delay' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='1' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
 X$U29 58 48 dfthijack vars: dfthijack_name='HIJACKfaultmanagerDFTstatus' dfthijack_description='Hijack_FAULTMANAGER_DFT_status' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
 X$U3 49 pinprobe vars: pinprobe_description='Freeze_converter_switching' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U31 55 pinprobe vars: pinprobe_description='SHORT_fault_falling_delay' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
@@ -1739,7 +1737,7 @@ X$U8 46 pinprobe vars: pinprobe_description='Hijack_Enable_fault_module' pinprob
 X$U9 54 pinprobe vars: pinprobe_description='Hijack_blank_fault' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
 .ends FAULTMANAGERwaltzDEBUG
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\FAULTMANAGERwaltzMAIN.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\FAULTMANAGERwaltzMAIN.sxcmp
 .subckt FAULTMANAGERwaltzMAIN 90 91 92 93 96 103 97 106 99 100 109 115 116 102
 *#hierarchy
 .node_map hijack_faultmanager_status 99
@@ -1772,6 +1770,7 @@ X$U9 54 pinprobe vars: pinprobe_description='Hijack_blank_fault' pinprobe_mode='
 .node_map ck 108
 .node_map fault_run 93
 .node_map blank_fault 96
+X$thermal1 94 98 80 81 90 thermal  vars: thermal_temperature_name='THERMALaccuracy' thermal_temperature_description='Thermal_shutdowen' thermal_accuracy='yes' thermal_trim_name='THERMALaccuracy' thermal_trim_description='Thermal_at_165C' thermal_verification='no' thermal_selections='1' thermal_control_type='register' thermal_enabletimeunits1='us' thermal_enabletimeunits2='us' thermal_enabletimeunits3='us' thermal_enabletimeunits4='us' thermal_dft='no' thermal_disable='no' thermal_note0=0 thermal_rise0=180 thermal_fall0=170 thermal_register_por=0 thermal_rise1=165 thermal_fall1=145 thermal_rise2=0 thermal_fall2=0 thermal_rise3=0 thermal_fall3=0 thermal_timeenablecodes=1 thermal_startcode=0 thermal_newcode1=1 thermal_enabletime1=1 thermal_newcode2=1 thermal_enabletime2=1 thermal_newcode3=1 thermal_enabletime3=1 thermal_newcode4=1 thermal_enabletime4=1 thermal_vmax=6
 X$U1 114 112 108 88 89 115 delayclock vars: delay_type='clock' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=65536 delayclock_count1=100 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=400
 X$U10 93 pinprobe vars: pinprobe_description='Genertate_fault_in_run_mode' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U11 103 pinprobe vars: pinprobe_description='Reference-clock_for_delays' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
@@ -1805,7 +1804,6 @@ X$U41 110 87 106 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
 X$U43 84 105 oneshot vars: oneshot_time=1000 oneshot_vmax=6
 X$U44 93 86 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
 X$U5 95 84 inv vars: logicgate_type='inv' logicgate_vmax=6
-X$U7 94 98 80 81 90 thermal  vars: thermal_type='fixed' thermal_dft='no' thermal_disable='no' thermal_control_type='register' thermal_accuracy='yes' thermal_trim_name='THERMALaccuracy' thermal_trim_description='Thermal_at_165C' thermal_temperature_name='THERMALaccuracy' thermal_temperature_description='Thermal_shutdowen' thermal_rise=165 thermal_fall=145 thermal_0=0 thermal_vmax=6 thermal_selections=2 thermal_register_por=0 thermal_rise0=180 thermal_fall0=170 thermal_rise1=0 thermal_fall1=0 thermal_rise2=0 thermal_fall2=0 thermal_rise3=0 thermal_fall3=0
 X$U8 90 pinprobe vars: pinprobe_description='Fault_Module_Input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
 X$U9 106 pinprobe vars: pinprobe_description='OUTPUT_less_than_60percent' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 .ends FAULTMANAGERwaltzMAIN
@@ -1865,7 +1863,7 @@ X$U45 33 pinprobe vars: pinprobe_description='fault_output-after_blanking'
 X$U58 38 pinprobe vars: pinprobe_description='enable_fault_timer'
 .ends VESPAfaultmanagerDELAYdebug
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\POWERGOODwaltz.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\POWERGOODwaltz.sxcmp
 .subckt POWERGOODwaltz 43 44 45 47 48 49 50 46
 *#hierarchy
 .node_map dft_pgout 54
@@ -1891,13 +1889,13 @@ X$U10 47 pinprobe vars: pinprobe_description='Reference_input_0p9V' pinprobe_mod
 X$U11 48 pinprobe vars: pinprobe_description='POWERGOOD_Feedback_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
 X$U2 45 pinprobe vars: pinprobe_description='Enable_power_good' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U3 46 pinprobe vars: pinprobe_description='Output_short_at_60percent_of_expected_target' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U4 42 brick vars: ibias=0 drm=1 dft=1 global=0 revision=0 description='POWERGOOD_Brick' description1='Powergood_detect_on_Feedback_Rising_at_95percent' description2='Powergood_Blank_delay_for_1204_clocks_after_detection' description3='SHORT_delay_for_1204_clocks_atfer_enable' description4='Output_short_detect' description5='short_blank_delay_1us' description6='Debug_enabled' description7='text' description8='text' description9='text' description10='text'
+X$U4 42 brick vars: ibias=0 drm=1 dft=1 global=0 brick=0 revision=2 description='POWERGOOD_Brick' description1='Powergood_detect_on_Feedback_Rising_at_95percent' description2='Powergood_Blank_delay_for_1204_clocks_after_detection' description3='SHORT_delay_for_1204_clocks_atfer_enable' description4='Output_short_detect' description5='short_blank_delay_1us' description6='Debug_enabled' description7='POK_RON+50_to_compensate_for_layout' description8='text' description9='text' description10='text'
 X$U5 50 pinprobe vars: pinprobe_description='kelvin_Powergood_ground' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd'
 X$U6 49 pinprobe vars: pinprobe_description='Reference_clock_input' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
 X$U7 44 pinprobe vars: pinprobe_description='Powergood_open_drain_output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
 .ends POWERGOODwaltz
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\POWERGOODwaltDEBUG.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\POWERGOODwaltDEBUG.sxcmp
 .subckt POWERGOODwaltDEBUG 33 37 34 38 39 35 40 41 36 42
 *#hierarchy
 .node_map dft_pgout 38
@@ -1933,7 +1931,7 @@ X$U9 39 pinprobe vars: pinprobe_description='Measure_POWERGOOD_blanking_time' pi
 X$UPOWERGOODshortdelay 42 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='POWERGOODshortdelay' dftprobe_description='Measure_POWERGOOD_short_blank_time' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
 .ends POWERGOODwaltDEBUG
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\POWERGOODwaltzMAIN.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\POWERGOODwaltzMAIN.sxcmp
 .subckt POWERGOODwaltzMAIN 131 132 133 135 137 139 143 136 134 138 140 142 144 141 145
 *#hierarchy
 .node_map dft_pgout 138
@@ -2005,7 +2003,7 @@ X$U33 144 pinprobe vars: pinprobe_description='Measure_POWERGOOD_startup_time' p
 X$U34 159 134 147 160 VESPAasmINPUT2
 X$U35 133 160 145 VESPAdftpulse
 X$U36 145 pinprobe vars: pinprobe_description='Measure_POWERGOOD_short_startup_delay' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U4 150 132 107 padopendrain vars: padopendrain_polarity='invert' padopendrain_return='no' padopendrain_filter='no' padopendrain_edge='on' padopendrain_testmode='no' padopendrain_dft='yes' padopendrain_ron=100 padopendrain_voutmax=6 padopendrain_filter_time=50 padopendrain_vmax=6
+X$U4 150 132 107 padopendrain vars: padopendrain_polarity='invert' padopendrain_return='no' padopendrain_filter='no' padopendrain_edge='on' padopendrain_testmode='no' padopendrain_dft='yes' padopendrain_ron=50 padopendrain_voutmax=6 padopendrain_filter_time=50 padopendrain_vmax=6
 X$U5 149 150 155 VESPAasmINPUT1
 X$U6 139 pinprobe vars: pinprobe_description='Reference_clock_input' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U7 148 149 139 124 125 141 delayclock vars: delay_type='clock' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=10 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2048 delayclock_count1=2 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=400
@@ -2013,7 +2011,7 @@ X$U8 131 151 135 136 133 106 vbuffer vars: vbuffer_accuracy='no' vbuffer_datashe
 X$U9 132 pinprobe vars: pinprobe_description='Powergood_open_drain_output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
 .ends POWERGOODwaltzMAIN
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\REGULATIONwaltz0.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\REGULATIONwaltz0.sxcmp
 .subckt REGULATIONwaltz0 44 47 45 52 50 53 51 48 49 46
 *#hierarchy
 .node_map HIJACK_VSS_REGULATION 57
@@ -2034,7 +2032,7 @@ X$DEBUG 50 54 49 47 55 45 52 56 53 57 REGULATIONwaltz0DEBUG0
 X$MAIN 54 52 51 47 49 44 45 46 57 55 56 48 REGULATIONwaltz0MAIN0
 X$U1 47 pinprobe vars: pinprobe_description='Pulse_Skip_Active_Signal' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U10 46 pinprobe vars: pinprobe_description='Regulation_Ground' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
-X$U11 43 brick vars: ibias=0 drm=1 dft=1 global=0 revision=0 description='REGULATION_Brick' description1='Current_Mode_control_Regulation' description2='Slope_compensation_enabled' description3='Factory_option_for_Compensation' description4='Debug_enabled' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U12 43 brick vars: ibias=0 drm=1 dft=1 global=0 brick=0 revision=0 description='REGULATION_Brick' description1='Current_Mode_control_Regulation' description2='Slope_compensation_enabled' description3='Factory_option_for_Compensation' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
 X$U2 44 pinprobe vars: pinprobe_description='CORE_Supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
 X$U3 51 pinprobe vars: pinprobe_description='1V_Reference' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
 X$U4 50 pinprobe vars: pinprobe_description='Enable' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
@@ -2045,7 +2043,7 @@ X$U8 49 pinprobe vars: pinprobe_description='REGULATION_brick_enabled_and_Ready'
 X$U9 45 pinprobe vars: pinprobe_description='Current_Limit_Reference_Current' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
 .ends REGULATIONwaltz0
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\REGULATIONwaltz0DEBUG0.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\REGULATIONwaltz0DEBUG0.sxcmp
 .subckt REGULATIONwaltz0DEBUG0 69 70 71 76 73 77 75 74 78 72
 *#hierarchy
 .node_map vss_high 82
@@ -2101,7 +2099,7 @@ X$U8 76 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_D
 X$U9 74 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONvc' dftprobe_description='Regulation_VC_Voltage' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
 .ends REGULATIONwaltz0DEBUG0
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\REGULATIONwaltz0MAIN0.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\REGULATIONwaltz0MAIN0.sxcmp
 .subckt REGULATIONwaltz0MAIN0 96 99 92 95 100 89 101 103 102 90 91 98
 *#hierarchy
 .node_map BUS1$0 86
@@ -2125,6 +2123,12 @@ X$U9 74 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Di
 .node_map kelvin_MUDG 98
 .node_map go_driver 95
 X$COMPENSATION 91 98 96 REGULATIONwaltz0COMPENSATION
+.PRINT V(#VC)
+.GRAPH :#VC curveLabel= VC nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe1  
+.PRINT V(#VSS_REGULATION)
+.GRAPH :#VSS_REGULATION curveLabel= VSS_REGULATION nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe2  
+.PRINT V(#FB_REGULATION)
+.GRAPH :#FB_REGULATION curveLabel= FB_REGULATION nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe3  
 X$U1 89 99 91 102 83 90 96 84 85 105 gm vars: gm_type='p' gm_clamp_high='no' gm_clamp_low='no' gm_lowiq='no' gm_lowiq_name='text' gm_lowiq_description='text' gm_override='inp' gm_ok='yes' gm_dft='no' gm_accuracy='system' gm_trim_name='GMaccuracy' gm_trim_description='Set_Regulation_Loop_Offset_Voltage' gm_gain=100m gm_lowiq_por=0 gm_vmax=6
 X$U10 97 89 94 95 91 76 93 77 78 75 comparatornoctlpins vars: comparator_model='comparator' comparator_hysteresismode='factory' comparator_edge='rising' comparator_speed='fast' comparator_type='p' comparator_deglitch='no' comparator_lowiq='no' comparator_datasheet_name='DCM_Output_Rripple' comparator_datasheet_description='Regulation_output_ripple_in_DCM_mode' bgcomp_accuracy='no' bgcomp_outputanalog='supply' bgcomp_note1='Usage' bgcomp_outputdigital='no' bgcomp_trim_name='text' bgcomp_trim_description='text' bgcomp_enable='yes' comparator_dft='no' comparatorsupply_reference='ground' comparatorsupply_threshold='50' comparatorsupply_edge='falling' comparatorsupply_output='analog' comparatorsupply_enable='analog' comparator_hysteresis=20 comparator_lowiqpor=0 bgcomp_threshold=1.2 bgcomp_maxcelpos=6 bgcomp_maxvin=6 comparator_vmax=6
 X$U11 79 101 96 switchideal vars: switch_type='pulldown' switch_polarity='invert' switch_model='ideal' switch_ron=10K switch_pulldownvmax=6 switch_vmax=6
@@ -2148,7 +2152,7 @@ X$U8 100 pinprobe vars: pinprobe_description='Regulation_OK' pinprobe_mode='tbd'
 X$U9 89 94 92 90 96 66 vbuffer vars: vbuffer_accuracy='system' vbuffer_datasheet_name='REFbufferACCURACY' vbuffer_datasheet_description='FB_Reference_buffer_Accuracy' vbuffer_type='p' vbuffer_inputbuffer='no' vbuffer_drive='internal' vbuffer_gndsense='no' vbuffer_dft='no' vbuffer_gain=1 vbuffer_feedbackimpedance=1000 vbuffer_vmax=6
 .ends REGULATIONwaltz0MAIN0
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\REGULATIONwaltz0COMPENSATION.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\REGULATIONwaltz0COMPENSATION.sxcmp
 .subckt REGULATIONwaltz0COMPENSATION 60 62 61
 *#hierarchy
 .node_map BUS1$0 33
@@ -2196,65 +2200,64 @@ X$U8 26 63 61 switchpulldown vars: switch_type='pulldown' switch_polarity='inver
 X$U9 60 pinprobe vars: pinprobe_description='Compensation_threshold' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 .ends REGULATIONwaltz0COMPENSATION
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\RINGwaltz2.sxcmp
-.subckt RINGwaltz2 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265
+** From Z:\celera\projects\Waltz2\simplis\301\design\RINGwaltz2.sxcmp
+.subckt RINGwaltz2 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264
 *#hierarchy
-.node_map BST 251
-.node_map FSET 254
-.node_map PVCC 261
-.node_map kelvin_GNDservice 259
-.node_map POK 252
-.node_map BIAS 253
-.node_map PIN 246
-.node_map kelvin_GNDsoftstart 257
-.node_map FB 263
-.node_map PGND 248
-.node_map VCC 260
-.node_map SYNC 265
-.node_map GND 255
-.node_map IN 247
-.node_map kelvin_GNDregulation 256
-.node_map EN 249
-.node_map sense_FB 264
-.node_map kelvin_GNDpowergood 258
-.node_map SW 250
-.node_map kelvin_VCC 262
-X$U1 247 pinprobe vars: pinprobe_description='Supply_Input_up_to_60V' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U10 251 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 pad vars: pad_absmax_wrt='none' pad_absmin_wrt='ground' pad_mode='supply' pad_sense1='no' pad_sense2='no' pad_description='HighSide_Driver_supply' pad_combine='no' pad_absmax_value=60 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=10
-X$U11 248 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='supply' pad_sense1='no' pad_sense2='no' pad_description='Power_Ground' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=3 pad_count2=2 pad_esd=2 pad_number=12
-X$U12 253 142 144 146 148 150 152 154 156 158 160 162 164 166 168 170 172 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='supply' pad_sense1='no' pad_sense2='no' pad_description='VBAIS_input_bootstrap_supply' pad_combine='no' pad_absmax_value=20 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=9
-X$U13 255 256 189 190 257 258 191 192 259 193 194 195 196 197 198 199 200 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='ground' pad_sense1='4' pad_sense2='no' pad_description='Analog_ground' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=1 pad_count2=2 pad_esd=2 pad_number=8
-X$U14 263 264 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='1' pad_sense2='no' pad_description='External_Feedback_input' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=7
-X$U15 261 pinprobe vars: pinprobe_description='Internal_Core_Supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U16 256 pinprobe vars: pinprobe_description='Regulation_Kelvin' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U17 257 pinprobe vars: pinprobe_description='Softstart_Kelvin' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U18 258 pinprobe vars: pinprobe_description='POWERGOOD_Kelvin' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U19 264 pinprobe vars: pinprobe_description='Feedback_Sense' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U2 247 78 246 79 80 81 82 83 84 85 86 87 88 89 90 91 92 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='supply' pad_sense1='no' pad_sense2='no' pad_description='Core_Supply' pad_combine='yes' pad_absmax_value=60 pad_absmin_value=-0.3 pad_count1=1 pad_count2=2 pad_esd=2 pad_number=1
-X$U20 262 pinprobe vars: pinprobe_description='VCC_kelvin_sense_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
-X$U21 259 pinprobe vars: pinprobe_description='SERVICE_Kelvin' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U22 61 brick vars: ibias=0 drm=1 dft=1 global=0 revision=2 description='RING_Brick' description1='Package_DFN1232' description2='DFT_Mode_selector_choice' description3='SCL_SYNC' description4='SDA_FSET' description5='CELOUT_POK' description6='text' description7='text' description8='text' description9='text' description10='text'
-X$U23 246 pinprobe vars: pinprobe_description='High_Current_Input_Voltage'
-X$U26 254 pinprobe vars: pinprobe_description='External_Frequency_Set_Resistor' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U27 252 pinprobe vars: pinprobe_description='Power_Good_Open_Drain' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U28 249 pinprobe vars: pinprobe_description='Chip_Enable' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U29 265 pinprobe vars: pinprobe_description='Synchronization_Clock' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U3 249 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='Chip_Enable' pad_combine='no' pad_absmax_value=60 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=2
-X$U30 263 pinprobe vars: pinprobe_description='Feedback_Input' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U31 255 pinprobe vars: pinprobe_description='Ground_input' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U32 253 pinprobe vars: pinprobe_description='External_Bias_Supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U33 251 pinprobe vars: pinprobe_description='Boost_Capacitor' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U34 250 pinprobe vars: pinprobe_description='Inductor_switch_inout' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U35 248 pinprobe vars: pinprobe_description='Power_ground_input'
-X$U4 254 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='Frequency_Set_Resistor_Connect_to_Ground' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=4
-X$U5 260 262 261 201 202 203 204 205 206 207 208 209 210 211 212 213 214 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='vcc' pad_sense1='1' pad_sense2='no' pad_description='VCC_Core_Supply' pad_combine='yes' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=5
-X$U6 260 pinprobe vars: pinprobe_description='Internal_Core_Supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U7 252 141 143 145 147 149 151 153 155 157 159 161 163 165 167 169 171 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='PopwerGood_Open_Drain_output' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=3
-X$U8 250 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 pad vars: pad_absmax_wrt='none' pad_absmin_wrt='none' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='Inductor_switching_node' pad_combine='no' pad_absmax_value=60 pad_absmin_value=-0.3 pad_count1=3 pad_count2=2 pad_esd=2 pad_number=11
-X$U9 265 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='Clock_Synchronization_Input' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=6
+.node_map BST 250
+.node_map FSET 253
+.node_map PVCC 260
+.node_map kelvin_GNDservice 258
+.node_map POK 251
+.node_map BIAS 252
+.node_map PIN 245
+.node_map kelvin_GNDsoftstart 256
+.node_map FB 262
+.node_map PGND 247
+.node_map VCC 259
+.node_map SYNC 264
+.node_map GND 254
+.node_map IN 246
+.node_map kelvin_GNDregulation 255
+.node_map EN 248
+.node_map sense_FB 263
+.node_map kelvin_GNDpowergood 257
+.node_map SW 249
+.node_map kelvin_VCC 261
+X$U1 246 pinprobe vars: pinprobe_description='Supply_Input_up_to_60V' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U10 250 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 pad vars: pad_absmax_wrt='none' pad_absmin_wrt='ground' pad_mode='supply' pad_sense1='no' pad_sense2='no' pad_description='HighSide_Driver_supply' pad_combine='no' pad_absmax_value=60 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=10
+X$U11 247 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='supply' pad_sense1='no' pad_sense2='no' pad_description='Power_Ground' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=3 pad_count2=2 pad_esd=2 pad_number=12
+X$U12 252 141 143 145 147 149 151 153 155 157 159 161 163 165 167 169 171 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='supply' pad_sense1='no' pad_sense2='no' pad_description='VBAIS_input_bootstrap_supply' pad_combine='no' pad_absmax_value=20 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=9
+X$U13 254 255 188 189 256 257 190 191 258 192 193 194 195 196 197 198 199 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='ground' pad_sense1='4' pad_sense2='no' pad_description='Analog_ground' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=1 pad_count2=2 pad_esd=2 pad_number=8
+X$U14 262 263 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='1' pad_sense2='no' pad_description='External_Feedback_input' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=7
+X$U15 260 pinprobe vars: pinprobe_description='Internal_Core_Supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U16 255 pinprobe vars: pinprobe_description='Regulation_Kelvin' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U17 256 pinprobe vars: pinprobe_description='Softstart_Kelvin' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U18 257 pinprobe vars: pinprobe_description='POWERGOOD_Kelvin' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U19 263 pinprobe vars: pinprobe_description='Feedback_Sense' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U2 246 77 245 78 79 80 81 82 83 84 85 86 87 88 89 90 91 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='supply' pad_sense1='no' pad_sense2='no' pad_description='Core_Supply' pad_combine='yes' pad_absmax_value=60 pad_absmin_value=-0.3 pad_count1=1 pad_count2=2 pad_esd=2 pad_number=1
+X$U20 261 pinprobe vars: pinprobe_description='VCC_kelvin_sense_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U21 258 pinprobe vars: pinprobe_description='SERVICE_Kelvin' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U23 245 pinprobe vars: pinprobe_description='High_Current_Input_Voltage'
+X$U26 253 pinprobe vars: pinprobe_description='External_Frequency_Set_Resistor' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U27 251 pinprobe vars: pinprobe_description='Power_Good_Open_Drain' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U28 248 pinprobe vars: pinprobe_description='Chip_Enable' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U29 264 pinprobe vars: pinprobe_description='Synchronization_Clock' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 248 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='Chip_Enable' pad_combine='no' pad_absmax_value=60 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=2
+X$U30 262 pinprobe vars: pinprobe_description='Feedback_Input' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U31 254 pinprobe vars: pinprobe_description='Ground_input' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U32 252 pinprobe vars: pinprobe_description='External_Bias_Supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U33 250 pinprobe vars: pinprobe_description='Boost_Capacitor' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U34 249 pinprobe vars: pinprobe_description='Inductor_switch_inout' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U35 247 pinprobe vars: pinprobe_description='Power_ground_input'
+X$U4 253 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='Frequency_Set_Resistor_Connect_to_Ground' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=4
+X$U5 259 261 260 200 201 202 203 204 205 206 207 208 209 210 211 212 213 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='vcc' pad_sense1='1' pad_sense2='no' pad_description='VCC_Core_Supply' pad_combine='yes' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=5
+X$U6 259 pinprobe vars: pinprobe_description='Internal_Core_Supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U7 251 140 142 144 146 148 150 152 154 156 158 160 162 164 166 168 170 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='PopwerGood_Open_Drain_output' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=3
+X$U8 249 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 pad vars: pad_absmax_wrt='none' pad_absmin_wrt='none' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='Inductor_switching_node' pad_combine='no' pad_absmax_value=60 pad_absmin_value=-0.3 pad_count1=3 pad_count2=2 pad_esd=2 pad_number=11
+X$U9 264 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='Clock_Synchronization_Input' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=6
 .ends RINGwaltz2
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\SEQUENCERwaltz.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\SEQUENCERwaltz.sxcmp
 .subckt SEQUENCERwaltz 44 45 46 47 48 51 50 53 52 54 55 56 57 49
 *#hierarchy
 .node_map porb 44
@@ -2273,7 +2276,7 @@ X$U9 265 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 pad var
 .node_map blank_fault 51
 X$SEQUENCER 44 45 46 47 48 49 50 51 52 53 54 55 56 57 SEQUENCER1waltz_Rev1_DYES
 X$U1 49 pinprobe vars: pinprobe_description='REGULATION_brick_enable' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U2 43 brick vars: ibias=0 drm=1 dft=1 global=0 revision=3 description='SEQUENCER_statemachine' description1='Single_Brick_Sequencer_Rev3p2V' description2='OFF_to_SOFTSTART_to_NORMAL' description3='Fault_if_SOFTSTART_times_out' description4='Debug_enabled' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U2 43 brick vars: ibias=0 drm=1 dft=1 global=0 brick=0 revision=3 description='SEQUENCER_statemachine' description1='Single_Brick_Sequencer_Rev3p2V' description2='OFF_to_SOFTSTART_to_NORMAL' description3='Fault_if_SOFTSTART_times_out' description4='Debug_enabled' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
 X$U3 45 pinprobe vars: pinprobe_description='STEPDOWN_Brick_enable' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$Ublank_fault 51 pinprobe vars: pinprobe_description='Blank_faults_during_softstart'
 X$Udone_softstart 57 pinprobe vars: pinprobe_description='SOFTSTART_ramp_complete'
@@ -2289,7 +2292,7 @@ X$Uporb 44 pinprobe vars: pinprobe_description='Power_on_reset_Input'
 X$Uswitch_control 53 pinprobe vars: pinprobe_description='Enable_controller_switching'
 .ends SEQUENCERwaltz
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\SEQUENCER1waltz_Rev1_DYES.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\SEQUENCER1waltz_Rev1_DYES.sxcmp
 .subckt SEQUENCER1waltz_Rev1_DYES 88 89 90 91 92 93 95 96 97 98 100 101 103 104
 *#hierarchy
 .node_map FAULT 102
@@ -2327,9 +2330,9 @@ X$Uswitch_control 53 pinprobe vars: pinprobe_description='Enable_controller_swit
 .node_map fault_run 103
 .node_map blank_fault 96
 X$MAIN 88 89 90 91 92 93 95 96 97 98 100 94 101 99 103 102 104 105 80 106 81 107 82 108 83 109 111 110 112 113 SEQUENCER1waltz_Rev1_DYES_0
+X$U1 80 81 82 83 84 85 86 87 datamap0 vars: datamap_function='code' datamap_name='SEQUENCER1waltz_Rev1_statecontrol' datamap_description='SEQUENCER1waltz_Rev1_STATE_control' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='0' datamap_mode='readonly' datamap_address='NA' datamap_timeenable='no' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='STATE_Code0_control' datamap_code1='STATE_Code1_control' datamap_code2='STATE_Code2_control' datamap_code3='STATE_Control_Enable' datamap_code4='tbd' datamap_code5='tbd' datamap_code6='tbd' datamap_code7='tbd' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=4 datamap_location=0 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
 X$U10 110 111 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='tbd' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=200 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
 X$U23 113 112 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='tbd' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=10 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
-X$U3 80 81 82 83 84 85 86 87 datamap0 vars: datamap_function='code' datamap_text0='0' datamap_name='SEQUENCER1waltz_Rev1_statecontrol' datamap_description='SEQUENCER1waltz_Rev1_STATE_control' datamap_io='input' datamap_status_mode='live' datamap_status_level='level' datamap_status_enable='no' datamap_type='factory' datamap_por='0' datamap_mode='readonly' datamap_timeenable='no' datamap_text1='0' datamap_function0='text' datamap_function0_on='text' datamap_function0_off='text' datamap_function1='text' datamap_function1_on='text' datamap_function1_off='text' datamap_function2='text' datamap_function2_on='text' datamap_function2_off='text' datamap_function3='text' datamap_function3_on='text' datamap_function3_off='text' datamap_function4='text' datamap_function4_on='text' datamap_function4_off='text' datamap_function5='text' datamap_function5_on='text' datamap_function5_off='text' datamap_function6='text' datamap_function6_on='text' datamap_function6_off='text' datamap_function7='text' datamap_function7_on='text' datamap_function7_off='text' datamap_code0='STATE_Code0_control' datamap_code1='STATE_Code1_control' datamap_code2='STATE_Code2_control' datamap_code3='STATE_Control_Enable' datamap_code4='tbd' datamap_code5='tbd' datamap_code6='tbd' datamap_code7='tbd' datamap_range_units='text' datamap_startcode='0' datamap_enabletimeunits1='us' datamap_newcode1='1' datamap_enabletimeunits2='us' datamap_newcode2='1' datamap_enabletimeunits3='us' datamap_newcode3='1' datamap_enabletimeunits4='us' datamap_newcode4='1' datamap_enabletimeunits5='us' datamap_newcode5='1' datamap_enabletimeunits6='us' datamap_newcode6='1' datamap_enabletimeunits7='us' datamap_newcode7='1' datamap_enabletimeunits8='us' datamap_newcode8='1' datamap_bits=4 datamap_vmax=6 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1
 X$U54 94 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='OFF_SEQUENCER1waltz_Rev1' dftprobe_description='SEQUENCER1waltz_Rev1_state0_OFF' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
 X$U55 99 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='ENABLE_SEQUENCER1waltz_Rev1' dftprobe_description='SEQUENCER1waltz_Rev1_state1_ENABLE' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
 X$U56 102 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='FAULT_SEQUENCER1waltz_Rev1' dftprobe_description='SEQUENCER1waltz_Rev1_state2_FAULT' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
@@ -2359,7 +2362,7 @@ X$Uporb 88 pinprobe vars: pinprobe_description='Power_on_reset_Input'
 X$Uswitch_control 98 pinprobe vars: pinprobe_description='Enable_controller_switching'
 .ends SEQUENCER1waltz_Rev1_DYES
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\SEQUENCER1waltz_Rev1_DYES_0.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\SEQUENCER1waltz_Rev1_DYES_0.sxcmp
 .subckt SEQUENCER1waltz_Rev1_DYES_0 257 258 261 271 283 284 292 293 300 301 304 259 305 265 307 274 310 270 253 286 254 290 255 279 256 282 303 297 323 324
 *#hierarchy
 .node_map FAULT 274
@@ -2623,7 +2626,7 @@ X$U5 5 6 delayfixed vars: delay_type='fixed' delay_units='ns' delay_accuracy='no
 X$U9 9 pinprobe vars: pinprobe_description='state1_blank_time'
 .ends VESPAasmOUTPUT2_0
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\SERVICEwaltz0.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\SERVICEwaltz0.sxcmp
 .subckt SERVICEwaltz0 38 39 40 41 42 43 45 44 46
 *#hierarchy
 .node_map porb 45
@@ -2646,13 +2649,13 @@ X$U12 40 pinprobe vars: pinprobe_description='External_Vbias_Supply' pinprobe_mo
 X$U13 38 pinprobe vars: pinprobe_description='Input_Supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
 X$U14 41 pinprobe vars: pinprobe_description='900mV_Reference_Voltage' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U15 45 pinprobe vars: pinprobe_description='Power_On_Reset_Bar' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U2 37 brick vars: ibias=0 drm=1 dft=1 global=0 revision=0 description='SERVICE_Brick' description1='Generate_Reference_VCC_5V_from_60V_input' description2='BIAS_enabled_at_3p8V' description3='VCC_ok_at_3p0V' description4='Accurate_reference_at_900mV' description5='OK_when_SERVICE_ready' description6='Debug_enabled' description7='text' description8='text' description9='text' description10='text'
+X$U2 37 brick vars: ibias=0 drm=1 dft=1 global=0 brick=0 revision=0 description='SERVICE_Brick' description1='Generate_Reference_VCC_5V_from_60V_input' description2='BIAS_enabled_at_3p8V' description3='VCC_ok_at_3p0V' description4='Accurate_reference_at_900mV' description5='OK_when_SERVICE_ready' description6='Debug_enabled' description7='text' description8='text' description9='text' description10='text'
 X$U3 46 pinprobe vars: pinprobe_description='Kelvin_Ground' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd'
 X$U4 39 pinprobe vars: pinprobe_description='5V_Supply_Voltage' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
 X$U9 42 pinprobe vars: pinprobe_description='Enable' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
 .ends SERVICEwaltz0
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\SERVICEwaltz0DEBUG0.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\SERVICEwaltz0DEBUG0.sxcmp
 .subckt SERVICEwaltz0DEBUG0 16 17 18 20 19
 *#hierarchy
 .node_map porb 20
@@ -2672,7 +2675,7 @@ X$U6 17 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_D
 X$U7 20 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SERVICEporb' dftprobe_description='VCC_power_on_reset' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
 .ends SERVICEwaltz0DEBUG0
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\SERVICEwaltz0MAIN0.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\SERVICEwaltz0MAIN0.sxcmp
 .subckt SERVICEwaltz0MAIN0 73 72 75 71 77 70 74 79 80 76 78
 *#hierarchy
 .node_map porb 79
@@ -2712,7 +2715,7 @@ X$U9 70 pinprobe vars: pinprobe_description='High_Voltage_Supply' pinprobe_mode=
 X$vbias1 71 74 70 83 72 54 vbias vars: vbias_voutaccuracy='yes' vbias_trim_name='VCCaccuracy' vbias_trim_description='VCC_5V_Accuracy' vbias_discharge='no' vbias_enable='yes' vbias_enablevoltage='highvoltage' vbias_latch='no' vbias_okflag='yes' vbias_dft='no' vbias_vout=4.5 vbias_iout=20 vbias_inputs=2 vbias_maxvin1=60 vbias_uvlo=3.8 vbias_maxvin2=20 vbias_switchover=4.55 vbias_vmax=6
 .ends SERVICEwaltz0MAIN0
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\SERVICEwaltzOK.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\SERVICEwaltzOK.sxcmp
 .subckt SERVICEwaltzOK 28 29 30 31
 *#hierarchy
 .node_map porb 31
@@ -2738,7 +2741,7 @@ X$U8 29 pinprobe vars: pinprobe_description='SERVICE_bias_ok_flag' pinprobe_mode
 X$U9 31 pinprobe vars: pinprobe_description='Power_on_reset' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 .ends SERVICEwaltzOK
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\SOFTSTARTwaltz.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\SOFTSTARTwaltz.sxcmp
 .subckt SOFTSTARTwaltz 43 44 47 46 48 49 45
 *#hierarchy
 .node_map BUS1$2 37
@@ -2765,14 +2768,14 @@ X$U1 49 pinprobe vars: pinprobe_description='SoftStart_' pinprobe_mode='input' p
 X$U14 46 pinprobe vars: pinprobe_description='Softstart_ramp_completed' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U2 47 pinprobe vars: pinprobe_description='Enable_softstart_brick' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U3 48 pinprobe vars: pinprobe_description='Reference_input_0p9V' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
-X$U4 35 36 37 38 39 40 41 42 datamap0 vars: datamap_function='function' datamap_name='SOFTSTARTconfiguration' datamap_description='Softstart_configuration' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='0' datamap_mode='readwrite' datamap_timeenable='no' datamap_function0='Softstart_time' datamap_function0_off='4ms' datamap_function0_on='1ms' datamap_function1='Halfway' datamap_function1_off='disable' datamap_function1_on='enable' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='2' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=10 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
-X$U5 34 brick vars: ibias=0 drm=1 dft=1 global=0 revision=0 description='SOFTSTART_Brick' description1='Internal_softstart_at_4ms' description2='DAC_design_option' description3='Factory_option_for_1ms' description4='Debug_enabled' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U4 35 36 37 38 39 40 41 42 datamap0 vars: datamap_function='function' datamap_name='SOFTSTARTconfiguration' datamap_description='Softstart_configuration' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='0' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_function0='Softstart_time' datamap_function0_off='4ms' datamap_function0_on='1ms' datamap_function1='Halfway' datamap_function1_off='disable' datamap_function1_on='enable' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_location=0 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U5 34 brick vars: ibias=0 drm=1 dft=1 global=0 brick=0 revision=0 description='SOFTSTART_Brick' description1='Internal_softstart_at_4ms' description2='DAC_design_option' description3='Factory_option_for_1ms' description4='Debug_enabled' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
 X$U6 43 pinprobe vars: pinprobe_description='MUD_low_voltage_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
 X$U7 44 pinprobe vars: pinprobe_description='Softstart_Internal_voltage_ramp' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U8 45 pinprobe vars: pinprobe_description='Enable_BRICK' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 .ends SOFTSTARTwaltz
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\SOFTSTARTwaltzDEBUG.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\SOFTSTARTwaltzDEBUG.sxcmp
 .subckt SOFTSTARTwaltzDEBUG 27 28 29 31 30 25 26
 *#hierarchy
 .node_map hijack_enable_softstart 28
@@ -2798,7 +2801,7 @@ X$U8 31 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Di
 X$U9 31 pinprobe vars: pinprobe_description='Softstart_ramp' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 .ends SOFTSTARTwaltzDEBUG
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\SOFTSTARTwaltz8MAIN.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\SOFTSTARTwaltz8MAIN.sxcmp
 .subckt SOFTSTARTwaltz8MAIN 112 113 116 115 118 117 119 120 121 114
 *#hierarchy
 .node_map half_count 127
@@ -2846,6 +2849,7 @@ X$U9 31 pinprobe vars: pinprobe_description='Softstart_ramp' pinprobe_mode='inpu
 .node_map done_softstartBAR 131
 C1 111 0 1p IC=0
 X$COUNT 124 125 126 127 120 99 100 101 102 103 104 105 106 SOFTSTARTwaltzMAINcount8
+X$oscillator1 123 112 122 92 90 89 116 91 93 oscillatorcrude vars: osc_type='crude' osc_accuracy='no' osc_datasheet_accuracy_name='text' osc_datasheet_accuracy_description='text' osc_enable='pin' osc_enable_por='disable' osc_datasheet_enable_name='text' osc_datasheet_enable_description='text' osc_ss='no' osc_standbyclock='no' osc_standbyclockpor='disable' osc_ext_freq_default='no' osc_crystalbias='3.3' osc_crystalglobalref='yes' osc_ss_configuration='fixed' osc_ss_enable_control='fixed' osc_ss_mode_por='sweep' osc_ss_enable_por='enable' osc_ss_clock_sync='synchronized' osc_ss_datasheetname='text' osc_dft='no' osc_ibias='global' osc_int_freq=1k osc_int_duty=50 osc_int_ireplica_gain=10 osc_int_1=0 osc_ext_freq=1k osc_ext_resistor=50 osc_ext_duty=50 osc_ext_replicagain=0 osc_ext_comment=0 osc_crude_freq=256 osc_crude_generatesupply=5 osc_crude_duty=50 osc_crystalfreq=1 osc_crystalreflocal=1 osc_crystalcleancountpor=32 osc_ringfreq=20 osc_ss_range_por=5 osc_ss_clock_independent=50 osc_ss_clock_divide=64 osc_vmax=6
 X$U1 115 pinprobe vars: pinprobe_description='SoftStart_counter_complete' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U10 114 98 inv vars: logicgate_type='inv' logicgate_vmax=6
 X$U11 114 pinprobe vars: pinprobe_description='enable_BRICK' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
@@ -2875,10 +2879,9 @@ X$U5 94 118 121 99 100 101 102 103 104 105 106 107 108 109 110 111 116 128 124 c
 X$U6 112 pinprobe vars: pinprobe_description='MUD_low_voltage_supply'
 X$U7 113 pinprobe vars: pinprobe_description='Softstart_voltage_ramp' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U8 128 124 123 116 VESPAasmINPUT2
-X$U9 123 112 122 92 90 89 116 91 93 oscillatorcrude vars: osc_type='crude' osc_accuracy='no' osc_datasheet_accuracy_name='text' osc_datasheet_accuracy_description='text' osc_enable='pin' osc_enable_por='disable' osc_datasheet_enable_name='text' osc_datasheet_enable_description='text' osc_ss='no' osc_standbyclock='no' osc_standbyclockpor='disable' osc_ext_freq_default='no' osc_ext_comment='0' osc_crystalbias='3.3' osc_crystalglobalref='yes' osc_crystalcleancountpor='32' osc_ss_configuration='fixed' osc_ss_enable_control='fixed' osc_ss_mode_por='sweep' osc_ss_enable_por='enable' osc_ss_clock_sync='synchronized' osc_ss_datasheetname='text' osc_dft='no' osc_ibias='global' osc_int_freq=1k osc_int_duty=50 osc_int_ireplica_gain=10 osc_int_1=0 osc_ext_freq=1k osc_ext_resistor=50 osc_ext_duty=50 osc_ext_replicagain=0 osc_crude_freq=256 osc_crude_duty=50 osc_crystalfreq=1 osc_crystalreflocal=1 osc_ringfreq=5 osc_ss_range_por=5 osc_ss_clock_independent=50 osc_ss_clock_divide=64 osc_vmax=6
 .ends SOFTSTARTwaltz8MAIN
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ\300\design\SOFTSTARTwaltzMAINcount8.sxcmp
+** From Z:\celera\projects\Waltz2\simplis\301\design\SOFTSTARTwaltzMAINcount8.sxcmp
 .subckt SOFTSTARTwaltzMAINcount8 98 99 100 101 102 103 104 105 106 107 108 109 110
 *#hierarchy
 .node_map half_count 101
