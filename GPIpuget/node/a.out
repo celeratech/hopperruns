@@ -7,37 +7,116 @@
 :vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
 :vpi_module "/usr/local/lib/ivl/va_math.vpi";
-S_0x55983c5edf60 .scope module, "delayfixed_0b8ed1af" "delayfixed_0b8ed1af" 2 27;
+S_0x561738f6ff60 .scope module, "GPIpuget" "GPIpuget" 2 48;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "CELV";
-    .port_info 1 /INPUT 1 "i";
-    .port_info 2 /OUTPUT 1 "o";
-    .port_info 3 /INPUT 1 "CELG";
-    .port_info 4 /INPUT 1 "CELSUB";
-o0x7f875c79e018 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55983c633990_0 .net "CELG", 0 0, o0x7f875c79e018;  0 drivers
-o0x7f875c79e048 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55983c633a50_0 .net "CELSUB", 0 0, o0x7f875c79e048;  0 drivers
-o0x7f875c79e078 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55983c633b20_0 .net "CELV", 0 0, o0x7f875c79e078;  0 drivers
-o0x7f875c79e0a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55983c633c20_0 .net "i", 0 0, o0x7f875c79e0a8;  0 drivers
-o0x7f875c79e0d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55983c633cf0_0 .net "o", 0 0, o0x7f875c79e0d8;  0 drivers
-S_0x55983c624250 .scope module, "Xdelay0" "delay0_delayfixed_0b8ed1af_delay0" 2 36, 2 14 0, S_0x55983c5edf60;
+    .port_info 0 /INPUT 1 "GPI";
+    .port_info 1 /OUTPUT 1 "GPO";
+    .port_info 2 /INPUT 1 "SIMPV";
+    .port_info 3 /OUTPUT 1 "ok_gpi";
+    .port_info 4 /INPUT 1 "CELG59462";
+    .port_info 5 /INPUT 1 "CELV96848";
+    .port_info 6 /INPUT 1 "enable_gpi";
+    .port_info 7 /INPUT 1 "CELSUB40948";
+    .port_info 8 /INPUT 1 "IP_GPIpuget1";
+    .port_info 9 /INPUT 1 "enable_gpibuffer";
+o0x7f2fe3d62018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561738fc1610_0 .net "CELG59462", 0 0, o0x7f2fe3d62018;  0 drivers
+o0x7f2fe3d62048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561738fc1700_0 .net "CELSUB40948", 0 0, o0x7f2fe3d62048;  0 drivers
+o0x7f2fe3d62078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561738fc1810_0 .net "CELV96848", 0 0, o0x7f2fe3d62078;  0 drivers
+o0x7f2fe3d62588 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561738fc1900_0 .net "GPI", 0 0, o0x7f2fe3d62588;  0 drivers
+o0x7f2fe3d622e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561738fc19a0_0 .net "GPO", 0 0, o0x7f2fe3d622e8;  0 drivers
+o0x7f2fe3d620a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561738fc1ae0_0 .net "IP_4cb4e1e0_XU6", 0 0, o0x7f2fe3d620a8;  0 drivers
+o0x7f2fe3d620d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561738fc1bd0_0 .net "IP_GPIpuget1", 0 0, o0x7f2fe3d620d8;  0 drivers
+o0x7f2fe3d625b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561738fc1c70_0 .net "SIMPV", 0 0, o0x7f2fe3d625b8;  0 drivers
+o0x7f2fe3d62108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561738fc1d10_0 .net "enable_gpi", 0 0, o0x7f2fe3d62108;  0 drivers
+o0x7f2fe3d62348 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561738fc1e40_0 .net "enable_gpibuffer", 0 0, o0x7f2fe3d62348;  0 drivers
+o0x7f2fe3d62378 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561738fc1ee0_0 .net "net_35", 0 0, o0x7f2fe3d62378;  0 drivers
+o0x7f2fe3d62318 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561738fc1fd0_0 .net "net_36", 0 0, o0x7f2fe3d62318;  0 drivers
+o0x7f2fe3d623a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561738fc20c0_0 .net "net_37", 0 0, o0x7f2fe3d623a8;  0 drivers
+o0x7f2fe3d622b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561738fc21b0_0 .net "net_38", 0 0, o0x7f2fe3d622b8;  0 drivers
+o0x7f2fe3d62138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561738fc22a0_0 .net "noconn", 0 0, o0x7f2fe3d62138;  0 drivers
+o0x7f2fe3d623d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561738fc2390_0 .net "ok_gpi", 0 0, o0x7f2fe3d623d8;  0 drivers
+S_0x561738f6de50 .scope module, "XCurrentMirror1" "currentmirror_369e5658" 2 94, 2 37 0, S_0x561738f6ff60;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "i";
-    .port_info 1 /INPUT 1 "CELV";
-    .port_info 2 /OUTPUT 1 "o";
-    .port_info 3 /INPUT 1 "CELG";
+    .port_info 0 /INOUT 1 "I0";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "ISET";
     .port_info 4 /INPUT 1 "CELSUB";
-v0x55983c5ed4b0_0 .net "CELG", 0 0, o0x7f875c79e018;  alias, 0 drivers
-v0x55983c5ee0f0_0 .net "CELSUB", 0 0, o0x7f875c79e048;  alias, 0 drivers
-v0x55983c5edec0_0 .net "CELV", 0 0, o0x7f875c79e078;  alias, 0 drivers
-v0x55983c633720_0 .net "i", 0 0, o0x7f875c79e0a8;  alias, 0 drivers
-v0x55983c6337e0_0 .net "o", 0 0, o0x7f875c79e0d8;  alias, 0 drivers
+    .port_info 5 /OUTPUT 1 "ok_currentmirror";
+    .port_info 6 /INPUT 1 "enable_currentmirror";
+v0x561738f6f4b0_0 .net "CELG", 0 0, o0x7f2fe3d62018;  alias, 0 drivers
+v0x561738f700f0_0 .net "CELSUB", 0 0, o0x7f2fe3d62048;  alias, 0 drivers
+v0x561738f6fec0_0 .net "CELV", 0 0, o0x7f2fe3d62078;  alias, 0 drivers
+v0x561738fbf710_0 .net "I0", 0 0, o0x7f2fe3d620a8;  alias, 0 drivers
+v0x561738fbf7d0_0 .net "ISET", 0 0, o0x7f2fe3d620d8;  alias, 0 drivers
+v0x561738fbf8e0_0 .net "enable_currentmirror", 0 0, o0x7f2fe3d62108;  alias, 0 drivers
+v0x561738fbf9a0_0 .net "ok_currentmirror", 0 0, o0x7f2fe3d62138;  alias, 0 drivers
+S_0x561738fbfb40 .scope module, "XDEBUG" "GPIpugetDEBUG" 2 64, 2 2 0, S_0x561738f6ff60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GPO";
+    .port_info 1 /INPUT 1 "GPBUF";
+    .port_info 2 /INPUT 1 "ok_gpi";
+    .port_info 3 /INPUT 1 "enable_gpi";
+    .port_info 4 /INPUT 1 "dft_startup";
+    .port_info 5 /INPUT 1 "enable_gpibuffer";
+    .port_info 6 /OUTPUT 1 "hijack_enable_gpi";
+    .port_info 7 /OUTPUT 1 "hijack_enable_gpibuffer";
+v0x561738fbfe60_0 .net "GPBUF", 0 0, o0x7f2fe3d622b8;  alias, 0 drivers
+v0x561738fbff20_0 .net "GPO", 0 0, o0x7f2fe3d622e8;  alias, 0 drivers
+v0x561738fbffe0_0 .net "dft_startup", 0 0, o0x7f2fe3d62318;  alias, 0 drivers
+v0x561738fc0080_0 .net "enable_gpi", 0 0, o0x7f2fe3d62108;  alias, 0 drivers
+v0x561738fc0150_0 .net "enable_gpibuffer", 0 0, o0x7f2fe3d62348;  alias, 0 drivers
+v0x561738fc0240_0 .net "hijack_enable_gpi", 0 0, o0x7f2fe3d62378;  alias, 0 drivers
+v0x561738fc0300_0 .net "hijack_enable_gpibuffer", 0 0, o0x7f2fe3d623a8;  alias, 0 drivers
+v0x561738fc03c0_0 .net "ok_gpi", 0 0, o0x7f2fe3d623d8;  alias, 0 drivers
+S_0x561738fc05d0 .scope module, "XMAIN" "GPIpugetMAIN" 2 75, 2 13 0, S_0x561738f6ff60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GPI";
+    .port_info 1 /OUTPUT 1 "GPO";
+    .port_info 2 /INOUT 1 "GPBUF";
+    .port_info 3 /INPUT 1 "SIMPV";
+    .port_info 4 /OUTPUT 1 "ok_gpi";
+    .port_info 5 /INPUT 1 "CELG59462";
+    .port_info 6 /INPUT 1 "CELV96848";
+    .port_info 7 /INPUT 1 "enable_gpi";
+    .port_info 8 /INPUT 1 "CELSUB40948";
+    .port_info 9 /OUTPUT 1 "dft_startup";
+    .port_info 10 /INPUT 1 "IP_4cb4e1e0_XU6";
+    .port_info 11 /INPUT 1 "enable_gpibuffer";
+v0x561738fc0890_0 .net "CELG59462", 0 0, o0x7f2fe3d62018;  alias, 0 drivers
+v0x561738fc0960_0 .net "CELSUB40948", 0 0, o0x7f2fe3d62048;  alias, 0 drivers
+v0x561738fc0a30_0 .net "CELV96848", 0 0, o0x7f2fe3d62078;  alias, 0 drivers
+v0x561738fc0b30_0 .net "GPBUF", 0 0, o0x7f2fe3d622b8;  alias, 0 drivers
+v0x561738fc0c00_0 .net "GPI", 0 0, o0x7f2fe3d62588;  alias, 0 drivers
+v0x561738fc0cf0_0 .net "GPO", 0 0, o0x7f2fe3d622e8;  alias, 0 drivers
+v0x561738fc0d90_0 .net "IP_4cb4e1e0_XU6", 0 0, o0x7f2fe3d620a8;  alias, 0 drivers
+v0x561738fc0e60_0 .net "SIMPV", 0 0, o0x7f2fe3d625b8;  alias, 0 drivers
+v0x561738fc0f00_0 .net "dft_startup", 0 0, o0x7f2fe3d62318;  alias, 0 drivers
+v0x561738fc1060_0 .net "enable_gpi", 0 0, o0x7f2fe3d62378;  alias, 0 drivers
+v0x561738fc1130_0 .net "enable_gpibuffer", 0 0, o0x7f2fe3d623a8;  alias, 0 drivers
+v0x561738fc1200_0 .net "ok_gpi", 0 0, o0x7f2fe3d623d8;  alias, 0 drivers
+S_0x561738fc1330 .scope module, "XNCnoconn" "STONEnoconn" 2 90, 2 31 0, S_0x561738f6ff60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x561738fc1500_0 .net "noconn", 0 0, o0x7f2fe3d62138;  alias, 0 drivers
 # The file index is used to find the file name in the following table.
 :file_names 3;
     "N/A";
     "<interactive>";
-    "/./celera//projects//Sunnyvale//software//GPIpuget//verilog5//delayfixed_0b8ed1af.v";
+    "/celera/projects/Sunnyvale/software/GPIpuget/verilog9/GPIpuget.v";

@@ -7,10 +7,10 @@
     "gen_test": true,
     "cad_build_type": "wire",
     "incremental": false,
-    "send_to_cda": false,
+    "send_to_cda": true,
     "ISO Connections": {},
     "General": {
-        "project_netlist_path": "/portal/web/api/utils/hopper/tests/GPIpuget.net",
+        "project_netlist_path": "/tmp/GPIpuget.net",
         "gen_reports": "Y",
         "pad_esd": "2",
         "find_isos": "Y",
@@ -21,13 +21,13 @@
         "enable_net": ""
     },
     "DRM": {
-        "add_drm": "Y",
-        "drm_ignore_bricks": "N"
+        "add_drm": "N",
+        "drm_ignore_bricks": "Y"
     },
     "DFT": {
-        "add_dft": "Y",
+        "add_dft": "N",
         "add_dbufdft": "N",
-        "dft_ignore_bricks": "N",
+        "dft_ignore_bricks": "Y",
         "dft_measure": "Y",
         "dft_measure_address": "0xCA",
         "tma_start_address": "0x00",
