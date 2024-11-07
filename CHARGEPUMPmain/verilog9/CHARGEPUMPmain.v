@@ -78,8 +78,28 @@ module CHARGEPUMPmonitor (OUT,VCAP,OUTFB,SIMPV,VCAPFB,CELG59462,CELV96848,CELSUB
   input  IP_115e3005_Xcurrentgenerator1;
 endmodule
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
+module currentmirror_3a3e0620 (I0,I1,CELG,CELV,ISET,CELSUB,ok_currentmirror,enable_currentmirror);
+  inout  I0;
+  inout  I1;
+  input  CELG;
+  input  CELV;
+  input  ISET;
+  input  CELSUB;
+  output  ok_currentmirror;
+  input  enable_currentmirror;
+endmodule
+
 // ------------------------ Module Verilog ---------------
-module CHARGEPUMPmain (HV, OUT, CLOW, PGND, porb, CHIGH, SIMPV, CELG59462, CELV96848, PORB97836, CELSUB40948, ok_chargepump, clock_chargepump, enable_chargepump, register_timingskew, kelvin_GNDchargepump, IP_8d6bf903_Xcomparator1, IP_115e3005_Xcurrentgenerator1, register_CHARGEPUMPfreq_3b1876d2_XU4);
+module CHARGEPUMPmain (HV, OUT, CLOW, PGND, porb, CHIGH, SIMPV, CELG59462, CELV96848, PORB97836, CELSUB40948, ok_chargepump, clock_chargepump, enable_chargepump, IP_CHARGEPUMPmain1, register_timingskew, kelvin_GNDchargepump, register_CHARGEPUMPfreq_3b1876d2_XU4);
 inout  HV;
 inout  OUT;
 inout  CLOW;
@@ -94,10 +114,9 @@ input  CELSUB40948;
 output  ok_chargepump;
 input  clock_chargepump;
 input  enable_chargepump;
+input  IP_CHARGEPUMPmain1;
 input [4:0] register_timingskew;
 inout  kelvin_GNDchargepump;
-input  IP_8d6bf903_Xcomparator1;
-input  IP_115e3005_Xcurrentgenerator1;
 input [1:0] register_CHARGEPUMPfreq_3b1876d2_XU4;
 
 
@@ -183,6 +202,21 @@ CHARGEPUMPmonitor XMONITOR (
 .kelvin_GNDchargepump(kelvin_GNDchargepump),
 .IP_8d6bf903_Xcomparator1(IP_8d6bf903_Xcomparator1),
 .IP_115e3005_Xcurrentgenerator1(IP_115e3005_Xcurrentgenerator1)
+);
+
+STONEnoconn XNCnoconn (
+.noconn(noconn)
+);
+
+currentmirror_3a3e0620 XCurrentMirror1 (
+.I0(IP_8d6bf903_Xcomparator1),
+.I1(IP_115e3005_Xcurrentgenerator1),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.ISET(IP_CHARGEPUMPmain1),
+.CELSUB(CELSUB40948),
+.ok_currentmirror(noconn),
+.enable_currentmirror(enable_chargepump)
 );
 
 endmodule
