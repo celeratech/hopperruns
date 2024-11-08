@@ -246,8 +246,8 @@ vbuffer_749dfb87 XU6 (
 .ok_vbuffer(net_111),
 .enable_vbuffer(net_110),
 .global_vbuffer(tl0),
-.trim_vbuffer_negative({a0,a0,a0,a0,a0,a0,a0}),
-.trim_vbuffer_positive({a0,a0,a0,a0,a0,a0,a0})
+.trim_vbuffer_negative(a0[6:0]),
+.trim_vbuffer_positive(a0[6:0])
 );
 
 switchgnd_d6772c2d XU8 (
@@ -359,17 +359,17 @@ PEBBLEtielo XtieLo (
 .SUB(CELSUB40948)
 );
 
-PEBBLEtielo XDRMNOT_trim_vbuffer_negative (
+PEBBLEtielo XDRMNOT_trim_vbuffer_negative_l (
 .G(CELG59462),
 .V(CELV96848),
-.q({a0,a0,a0,a0,a0,a0,a0}),
+.q(net_0),
 .SUB(CELSUB40948)
 );
 
-PEBBLEtielo XDRMNOT_trim_vbuffer_positive (
+PEBBLEtielo XDRMNOT_trim_vbuffer_positive_l (
 .G(CELG59462),
 .V(CELV96848),
-.q({a0,a0,a0,a0,a0,a0,a0}),
+.q(net_0),
 .SUB(CELSUB40948)
 );
 
