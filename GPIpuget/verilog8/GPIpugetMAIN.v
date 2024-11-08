@@ -123,6 +123,18 @@ module PEBBLEtielo ( q, G, SUB, V );
 endmodule
 
 
+//Verilog HDL for "PEBBLES", "PEBBLEtiehi" "functional"
+
+
+module PEBBLEtiehi ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
 module GPIpugetMAIN (GPI, GPO, GPBUF, SIMPV, ok_gpi, CELG59462, CELV96848, enable_gpi, CELSUB40948, dft_startup, IP_4cb4e1e0_XU6, enable_gpibuffer);
 input  GPI;
@@ -356,6 +368,20 @@ PEBBLEtielo XtieLo (
 .G(CELG59462),
 .V(CELV96848),
 .q(tl0),
+.SUB(CELSUB40948)
+);
+
+PEBBLEtiehi XDRMNOTH (
+.G(CELG59462),
+.V(CELV96848),
+.q(a1),
+.SUB(CELSUB40948)
+);
+
+PEBBLEtielo XDRMNOTL (
+.G(CELG59462),
+.V(CELV96848),
+.q(a1),
 .SUB(CELSUB40948)
 );
 
