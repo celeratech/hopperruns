@@ -359,17 +359,17 @@ PEBBLEtielo XtieLo (
 .SUB(CELSUB40948)
 );
 
-PEBBLEtielo XDRMNOTL_trim_vbuffer_negative (
+PEBBLEtielo XDRMNOT_trim_vbuffer_negative (
 .G(CELG59462),
 .V(CELV96848),
-.q(net_0),
+.q({a0,a0,a0,a0,a0,a0,a0}),
 .SUB(CELSUB40948)
 );
 
-PEBBLEtielo XDRMNOTL_trim_vbuffer_positive (
+PEBBLEtielo XDRMNOT_trim_vbuffer_positive (
 .G(CELG59462),
 .V(CELV96848),
-.q(net_0),
+.q({a0,a0,a0,a0,a0,a0,a0}),
 .SUB(CELSUB40948)
 );
 
