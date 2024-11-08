@@ -1,0 +1,255 @@
+* Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301\overlay\overlay_CAPbalancer.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map SIMPV 24
+.node_map CAPRTN 29
+.node_map enable_shunt 30
+.node_map maximum_channel$0 22
+.node_map maximum_channel$1 21
+.node_map clock 31
+.node_map CAP1 28
+.node_map CAP2 27
+.node_map CAP3 26
+.node_map CAP4 25
+.node_map IN 23
+.options
++ PSP_NPT=50001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+.tran 1m 0
+
+.globalvar TEMP=25
+.globalvar tdext_khz=10
+
+.globalvar IN = 12
+.globalvar VIN = 5.0
+.globalvar REF = 1.2
+.globalvar VCC2P5=2.4
+
+.globalvar CAP1=2.0
+.globalvar CAP2=2.0
+.globalvar CAP3=2.0
+.globalvar CAP4=2.0
+
+X$BALANCER 23 24 25 26 27 28 29 31 30 22 21 20 CAPbalancer
+.PRINT V(#IN)
+.GRAPH :#IN curveLabel= IN nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe1  
+.GRAPH "ComposeDigital('#maximum_channel', [0, 1],  '' , '%BUSNAME%$%WIRENUM%', [0.8, 0.9])*1.0+0" complete=true  axistype=digital   bus=bin curveLabel="maximum_channel" disabled=false 
+.PRINT ^maximum_channel$*
+.PRINT V(#SIMPV)
+.GRAPH :#SIMPV curveLabel= SIMPV nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe2  
+.PRINT V(#CAP4)
+.GRAPH :#CAP4 curveLabel= CAP4 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe3  
+.PRINT V(#CAP3)
+.GRAPH :#CAP3 curveLabel= CAP3 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe4  
+.PRINT V(#CAP2)
+.GRAPH :#CAP2 curveLabel= CAP2 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe5  
+.PRINT V(#CAP1)
+.GRAPH :#CAP1 curveLabel= CAP1 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe6  
+.PRINT V(#CAPRTN)
+.GRAPH :#CAPRTN curveLabel= cAPRTN nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe7  
+.PRINT V(#enable_shunt)
+.GRAPH :#enable_shunt curveLabel= enable_shunt nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe8  
+.PRINT V(#clock)
+.GRAPH :#clock curveLabel= clock nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe9  
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301\design\CAPbalancer.sxcmp
+.subckt CAPbalancer 43 45 46 47 48 49 50 51 52 41 42 44
+*#hierarchy
+.node_map SIMPV 45
+.node_map dft_gate1 54
+.node_map clock_balancer 51
+.node_map hijack_enable_balancer 55
+.node_map CAPRTN 50
+.node_map maximum_channel$0 41
+.node_map maximum_channel$1 42
+.node_map dft_startup 53
+.node_map hijack_maximum_channel$0 39
+.node_map CAP1 49
+.node_map hijack_maximum_channel$1 40
+.node_map CAP2 48
+.node_map active_balancer 44
+.node_map CAP3 47
+.node_map CAP4 46
+.node_map enable_balancer 52
+.node_map IN 43
+X$DEBUG 52 55 41 42 39 40 53 54 44 CAPbalancerDRIVERdebug
+X$MAIN 43 44 45 53 46 54 47 48 49 50 55 39 40 51 CAPbalancerDRIVERmain
+X$U1 47 pinprobe vars: pinprobe_description='CAP3_balancer_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U10 50 pinprobe vars: pinprobe_description='BALANCER_capacitor_ground_return' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U11 51 pinprobe vars: pinprobe_description='Master_clock' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U2 48 pinprobe vars: pinprobe_description='CAP2_balancer_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U3 44 pinprobe vars: pinprobe_description='BALANCER_is_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 52 pinprobe vars: pinprobe_description='Enable_balancer_brick' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 46 pinprobe vars: pinprobe_description='CAP4_balancer_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U6 49 pinprobe vars: pinprobe_description='CAP1_balancer_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='pad'
+X$U8 43 pinprobe vars: pinprobe_description='CAP4_balnacer_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U9 45 pinprobe vars: pinprobe_description='COre_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+.ends CAPbalancer
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301\design\CAPbalancerDRIVERdebug.sxcmp
+.subckt CAPbalancerDRIVERdebug 28 29 33 35 34 36 31 32 30
+*#hierarchy
+.node_map dft_gate1 32
+.node_map hijack_enable_balancer 29
+.node_map maximum_channel$0 33
+.node_map maximum_channel$1 35
+.node_map dft_startup 31
+.node_map hijack_maximum_channel$0 34
+.node_map hijack_maximum_channel$1 36
+.node_map active_balancer 30
+.node_map enable_balancer 28
+X$U1 28 29 dfthijack vars: dfthijack_name='CAPbalancerENABLE' dfthijack_description='Hijack_BALANCER_enable_inpiut' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$U2 29 pinprobe vars: pinprobe_description='Hijack_enable_Balancer_brick' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 33 34 dfthijack vars: dfthijack_name='CAPbalancerCONTROL0' dfthijack_description='Hijack_BALANCER_control_input0' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$U4 28 pinprobe vars: pinprobe_description='Enable_Balancer_brick' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 35 36 dfthijack vars: dfthijack_name='CAPbalancerCONTROL1' dfthijack_description='Hijack_BALANCER_control_input1' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$U6 31 pinprobe vars: pinprobe_description='Measure_SHUNT_startup_time' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U7 32 pinprobe vars: pinprobe_description='Measure_SHUNT_gate1' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U8 30 pinprobe vars: pinprobe_description='BALANCER_is_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$UCAPBALANCERactive 30 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CAPBALANCERactive' dftprobe_description='Measure_CAPbalancer_active_flag' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UCAPBALANCERgate1 32 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CAPBALANCERgate1' dftprobe_description='Measure_CAP_Balancer_gate1' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UCAPBALANCERstartup 31 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CAPBALANCERstartup' dftprobe_description='Measure_CAPbalancer_startup_time' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+.ends CAPbalancerDRIVERdebug
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301\design\CAPbalancerDRIVERmain.sxcmp
+.subckt CAPbalancerDRIVERmain 188 189 190 191 192 193 194 195 196 197 198 168 169 199
+*#hierarchy
+.node_map SIMPV 190
+.node_map dft_gate1 193
+.node_map R1 215
+.node_map R2 213
+.node_map R3 211
+.node_map R4 202
+.node_map clock_balancer 199
+.node_map CAPRTN 197
+.node_map BUS2$0 174
+.node_map BUS2$1 175
+.node_map BUS2$2 176
+.node_map BUS3$0 177
+.node_map BUS3$1 178
+.node_map BUS4$0 179
+.node_map BUS4$1 180
+.node_map BUS4$2 181
+.node_map maximum_channel$0 168
+.node_map BUS5$0 182
+.node_map maximum_channel$1 169
+.node_map BUS5$1 183
+.node_map BUS5$2 184
+.node_map clock 207
+.node_map BUS6$0 185
+.node_map BUS6$1 186
+.node_map dft_startup 191
+.node_map BUS6$2 187
+.node_map status_gt1 201
+.node_map gt1 214
+.node_map status_gt2 203
+.node_map gt2 212
+.node_map status_gt3 205
+.node_map gt3 209
+.node_map status_gt4 206
+.node_map enable1 170
+.node_map gt4 200
+.node_map enable2 171
+.node_map enable3 172
+.node_map okDELAY 210
+.node_map enable4 173
+.node_map CAP1 196
+.node_map CAP2 195
+.node_map active_balancer 189
+.node_map CAP3 194
+.node_map CAP4 192
+.node_map ok 208
+.node_map enable_balancer 198
+.node_map IN 188
+.node_map or 204
+X$CLAMP 200 194 VESPAclampGATE
+X$CLAMP1 209 195 VESPAclampGATE
+X$CLAMP2 212 196 VESPAclampGATE
+X$CLAMP3 214 197 VESPAclampGATE
+X$U1 194 202 200 121 120 119 fet vars: fet_usage='power' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=1k fet_ron_power=20 fet_replica_gain=10 fet_maximumvds=24 count_1=0 fet_vmax=6
+X$U10 189 pinprobe vars: pinprobe_description='BALANCER_enabled-and_active' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U11 209 122 123 124 125 126 127 128 190 172 205 188 currentgenerator vars: currentgenerator_polarity0='source' currentgenerator_polarity1='sink' currentgenerator_polarity2='sink' currentgenerator_polarity3='sink' currentgenerator_polarity4='sink' currentgenerator_polarity5='sink' currentgenerator_polarity6='sink' currentgenerator_polarity7='sink' currentgenerator_accuracy='no' currentgenerator_datasheet_accuracy_name='text' currentgenerator_datasheet_accuracy_description='text' currentgenerator_tempco='positive' currentgenerator_dft='no' currentgenerator_output0=20 currentgenerator_output1=1 currentgenerator_output2=1 currentgenerator_output3=1 currentgenerator_output4=1 currentgenerator_output5=1 currentgenerator_output6=1 currentgenerator_output7=1 currentgenerator_number=1 currentgenerator_tempco_gain=3 currentgenerator_vmax=6 currentgenerator_vout=24
+X$U12 212 136 137 138 139 140 141 142 190 171 203 188 currentgenerator vars: currentgenerator_polarity0='source' currentgenerator_polarity1='sink' currentgenerator_polarity2='sink' currentgenerator_polarity3='sink' currentgenerator_polarity4='sink' currentgenerator_polarity5='sink' currentgenerator_polarity6='sink' currentgenerator_polarity7='sink' currentgenerator_accuracy='no' currentgenerator_datasheet_accuracy_name='text' currentgenerator_datasheet_accuracy_description='text' currentgenerator_tempco='positive' currentgenerator_dft='no' currentgenerator_output0=20 currentgenerator_output1=1 currentgenerator_output2=1 currentgenerator_output3=1 currentgenerator_output4=1 currentgenerator_output5=1 currentgenerator_output6=1 currentgenerator_output7=1 currentgenerator_number=1 currentgenerator_tempco_gain=3 currentgenerator_vmax=6 currentgenerator_vout=24
+X$U13 214 143 144 145 146 147 148 149 190 170 201 188 currentgenerator vars: currentgenerator_polarity0='source' currentgenerator_polarity1='sink' currentgenerator_polarity2='sink' currentgenerator_polarity3='sink' currentgenerator_polarity4='sink' currentgenerator_polarity5='sink' currentgenerator_polarity6='sink' currentgenerator_polarity7='sink' currentgenerator_accuracy='no' currentgenerator_datasheet_accuracy_name='text' currentgenerator_datasheet_accuracy_description='text' currentgenerator_tempco='positive' currentgenerator_dft='no' currentgenerator_output0=20 currentgenerator_output1=1 currentgenerator_output2=1 currentgenerator_output3=1 currentgenerator_output4=1 currentgenerator_output5=1 currentgenerator_output6=1 currentgenerator_output7=1 currentgenerator_number=1 currentgenerator_tempco_gain=3 currentgenerator_vmax=6 currentgenerator_vout=24
+X$U14 191 pinprobe vars: pinprobe_description='Measure_BALANCER_startup_time' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U15 193 pinprobe vars: pinprobe_description='Measure_Balancer_GATE1' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U16 170 171 172 173 168 169 198 decoder2 vars: decoder_type='pin' decoder_datasheet_name='text' decoder_datasheet_description='text' decoder_type_por='0' decoder_enable_pin='pin' decoder_timing='no' decoder_bits=2 decoder_enable_por=0 decoder_vmax=6
+X$U17 200 209 212 214 214 159 161 163 194 195 196 197 193 160 162 164 resistorarray vars: resistor_array_type='poly' resistor_array_dummy='no' resistor_array_value=30 resistor_array_number=5 resistor_array_r1_series=5 resistor_array_r1_parallel=0 resistor_array_r2_series=5 resistor_array_r2_parallel=0 resistor_array_r3_series=5 resistor_array_r3_parallel=0 resistor_array_r4_series=5 resistor_array_r4_parallel=0 resistor_array_r5_series=1 resistor_array_r5_parallel=0 resistor_array_r6_series=1 resistor_array_r6_parallel=0 resistor_array_r7_series=1 resistor_array_r7_parallel=0 resistor_array_r8_series=1 resistor_array_r8_parallel=0 resistor_array_vmax=6 resistor_array_imax=100u
+X$U18 198 207 199 VESPAasmINPUT1
+X$U19 195 pinprobe vars: pinprobe_description='CAP2_balancer_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U2 195 211 209 135 134 133 fet vars: fet_usage='power' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=1k fet_ron_power=20 fet_replica_gain=10 fet_maximumvds=20 count_1=0 fet_vmax=6
+X$U20 201 203 205 108 206 nor4 vars: logicgate_type='nor4' logicgate_vmax=6
+X$U22 108 204 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U25 196 pinprobe vars: pinprobe_description='CAP1_balancer_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='pad'
+X$U27 199 pinprobe vars: pinprobe_description='master_clock_sorce' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U28 188 pinprobe vars: pinprobe_description='CAP4_balnacer_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U29 198 pinprobe vars: pinprobe_description='Enable_balancer_brick' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 196 213 212 155 154 153 fet vars: fet_usage='power' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=1k fet_ron_power=20 fet_replica_gain=10 fet_maximumvds=12 count_1=0 fet_vmax=6
+X$U30 190 pinprobe vars: pinprobe_description='COre_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U31 194 pinprobe vars: pinprobe_description='CAP3_balancer_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U32 197 pinprobe vars: pinprobe_description='BALANCER_capacitor_ground_return' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U33 192 pinprobe vars: pinprobe_description='CAP4_balancer_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U34 198 210 191 VESPAdftpulse
+X$U35 198 208 204 VESPAasmINPUT1
+X$U36 189 210 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U37 208 210 207 177 178 129 delayclock vars: delay_type='clock' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=10 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=21 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U4 197 215 214 167 166 165 fet vars: fet_usage='power' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=1k fet_ron_power=20 fet_replica_gain=10 fet_maximumvds=6 count_1=0 fet_vmax=6
+X$U5 202 192 109 110 111 174 175 176 resistor vars: resistor_control='resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='text' resistor_datasheet_adjust_description='text' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=180m resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=0 resistor_adjust1=0 resistor_adjust2=0 resistor_adjust3=0 resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=24 resistor_imax=20m
+X$U6 211 194 130 131 132 179 180 181 resistor vars: resistor_control='resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='text' resistor_datasheet_adjust_description='text' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=180m resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=0 resistor_adjust1=0 resistor_adjust2=0 resistor_adjust3=0 resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=20 resistor_imax=20m
+X$U7 200 112 113 114 115 116 117 118 190 173 206 188 currentgenerator vars: currentgenerator_polarity0='source' currentgenerator_polarity1='sink' currentgenerator_polarity2='sink' currentgenerator_polarity3='sink' currentgenerator_polarity4='sink' currentgenerator_polarity5='sink' currentgenerator_polarity6='sink' currentgenerator_polarity7='sink' currentgenerator_accuracy='no' currentgenerator_datasheet_accuracy_name='text' currentgenerator_datasheet_accuracy_description='text' currentgenerator_tempco='positive' currentgenerator_dft='no' currentgenerator_output0=20 currentgenerator_output1=1 currentgenerator_output2=1 currentgenerator_output3=1 currentgenerator_output4=1 currentgenerator_output5=1 currentgenerator_output6=1 currentgenerator_output7=1 currentgenerator_number=1 currentgenerator_tempco_gain=3 currentgenerator_vmax=6 currentgenerator_vout=24
+X$U8 213 195 150 151 152 182 183 184 resistor vars: resistor_control='resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='text' resistor_datasheet_adjust_description='text' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=180m resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=0 resistor_adjust1=0 resistor_adjust2=0 resistor_adjust3=0 resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=12 resistor_imax=20m
+X$U9 215 196 156 157 158 185 186 187 resistor vars: resistor_control='resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='text' resistor_datasheet_adjust_description='text' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=180m resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=0 resistor_adjust1=0 resistor_adjust2=0 resistor_adjust3=0 resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=6 resistor_imax=20m
+.ends CAPbalancerDRIVERmain
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAclampGATE.sxcmp
+.subckt VESPAclampGATE 29 32
+*#hierarchy
+.node_map S1 30
+.node_map S2 31
+.node_map N 32
+.node_map P 29
+C1 29 31 1f IC=0
+C2 30 31 1f IC=0
+C3 30 32 1f IC=0
+X$U19 31 29 29 26 23 20 fet vars: fet_usage='signal' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=1k fet_ron_power=1 fet_replica_gain=10 fet_maximumvds=6 count_1=0 fet_vmax=6
+X$U25 29 pinprobe vars: pinprobe_description='Positive_terminal_of_gate_clamp' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U28 32 pinprobe vars: pinprobe_description='Negative_terminal_of_gate_clamp' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U29 30 31 31 27 24 21 fet vars: fet_usage='signal' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=1k fet_ron_power=1 fet_replica_gain=10 fet_maximumvds=6 count_1=0 fet_vmax=6
+X$U30 32 30 30 28 25 22 fet vars: fet_usage='signal' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=1k fet_ron_power=1 fet_replica_gain=10 fet_maximumvds=6 count_1=0 fet_vmax=6
+.ends VESPAclampGATE
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAdftpulse.sxcmp
+.subckt VESPAdftpulse 7 8 9
+*#hierarchy
+.node_map start 7
+.node_map stop 8
+.node_map pulse 9
+X$U11 7 pinprobe vars: pinprobe_description='DFT_timer_start_input'
+X$U15 8 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U17 8 pinprobe vars: pinprobe_description='DFT_timer_stop_input'
+X$U52 7 4 6 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U53 4 5 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U55 9 5 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U8 9 pinprobe vars: pinprobe_description='DFT_Timer_pulse'
+.ends VESPAdftpulse
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT1.sxcmp
+.subckt VESPAasmINPUT1 5 6 7
+*#hierarchy
+.node_map Tstate 5
+.node_map i0 7
+.node_map o 6
+X$U1 5 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 7 pinprobe vars: pinprobe_description='input1'
+X$U3 6 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 5 4 7 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U5 4 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+.ends VESPAasmINPUT1
+
+.end
