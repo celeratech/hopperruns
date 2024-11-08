@@ -258,8 +258,8 @@ vbuffer_749dfb87 XU6 (
 .ok_vbuffer(net_111),
 .enable_vbuffer(net_110),
 .global_vbuffer(tl0),
-.trim_vbuffer_negative(a0[6:0]),
-.trim_vbuffer_positive(a0[6:0])
+.trim_vbuffer_negative({a0,a0,a0,a0,a0,a0,a0}),
+.trim_vbuffer_positive({a0,a0,a0,a0,a0,a0,a0})
 );
 
 switchgnd_d6772c2d XU8 (
@@ -379,14 +379,14 @@ PEBBLEtielo XtieLo (
 .SUB(CELSUB40948)
 );
 
-PEBBLEtiehi XDRMNOTH (
+PEBBLEtiehi XDRMNOTH_XtieLo (
 .G(CELG59462),
 .V(CELV96848),
 .q(a1),
 .SUB(CELSUB40948)
 );
 
-PEBBLEtielo XDRMNOTL (
+PEBBLEtielo XDRMNOTL_XtieLo (
 .G(CELG59462),
 .V(CELV96848),
 .q(net_0),
