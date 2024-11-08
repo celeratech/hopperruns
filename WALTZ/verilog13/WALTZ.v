@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module WALTZceleraCORE (EN,FB,IN,SW,BST,GND,PIN,POK,TAO,VCC,tdo,tmi,BIAS,FSET,PGND,PVCC,SYNC,sense_FB,CELG59462,CELV96848,PORB97836,kelvin_VCC,CELSENSE_RF,CELSUB40948,SENSE_G_4c0bef8e,register_thermal,kelvin_GNDservice,kelvin_GNDpowergood,kelvin_GNDsoftstart,kelvin_GNDregulation,celkelvin_IN_bc3b7675,celkelvin_GND_73ebd82d,celkelvin_GND_bb7e77f4,celkelvin_GND_d75c3f7f,celkelvin_VCC_bc3b7675,celkelvin_BIAS_bc3b7675);
+module WALTZceleraCORE (EN,FB,IN,SW,BST,GND,PIN,POK,TAO,VCC,tdo,tmi,BIAS,FSET,PGND,PVCC,SYNC,sense_FB,CELG59462,CELV96848,PORB97836,kelvin_VCC,CELSENSE_RF,CELSUB40948,SENSE_G_4c0bef8e,kelvin_GNDservice,kelvin_GNDpowergood,kelvin_GNDsoftstart,kelvin_GNDregulation,celkelvin_IN_bc3b7675,celkelvin_GND_73ebd82d,celkelvin_GND_bb7e77f4,celkelvin_GND_d75c3f7f,celkelvin_VCC_bc3b7675,celkelvin_BIAS_bc3b7675);
   input  EN;
   inout  FB;
   input  IN;
@@ -25,7 +25,6 @@ module WALTZceleraCORE (EN,FB,IN,SW,BST,GND,PIN,POK,TAO,VCC,tdo,tmi,BIAS,FSET,PG
   input  CELSENSE_RF;
   input  CELSUB40948;
   input  SENSE_G_4c0bef8e;
-  output  register_thermal;
   inout  kelvin_GNDservice;
   inout  kelvin_GNDpowergood;
   input  kelvin_GNDsoftstart;
@@ -38,18 +37,7 @@ module WALTZceleraCORE (EN,FB,IN,SW,BST,GND,PIN,POK,TAO,VCC,tdo,tmi,BIAS,FSET,PG
   input  celkelvin_BIAS_bc3b7675;
 endmodule
 
-module WALTZceleraREGISTER (scli,sdai,CELG59462,CELV96848,PORB97836,CELSUB40948,register_thermal,sdapd_registermap);
-  input  scli;
-  input  sdai;
-  input  CELG59462;
-  input  CELV96848;
-  input  PORB97836;
-  input  CELSUB40948;
-  output  register_thermal;
-  output  sdapd_registermap;
-endmodule
-
-module WALTZceleraRING (EN,FB,IN,SW,BST,GND,PIN,POK,SCL,SDA,TAO,VCC,tdo,tmi,BIAS,FSET,GOTP,PGND,PVCC,SYNC,VOTP,unlock,sense_FB,CELG59462,CELV96848,POK_inout,kelvin_VCC,CELSENSE_RF,CELSUB40948,SENSE_G_4c0bef8e,kelvin_GNDservice,kelvin_GNDpowergood,kelvin_GNDsoftstart,kelvin_GNDregulation,celkelvin_IN_bc3b7675,celkelvin_GND_73ebd82d,celkelvin_GND_bb7e77f4,celkelvin_GND_d75c3f7f,celkelvin_VCC_9893c918,celkelvin_VCC_bc3b7675,celkelvin_BIAS_bc3b7675);
+module WALTZceleraRING (EN,FB,IN,SW,BST,GND,PIN,POK,TAO,VCC,tdo,tmi,BIAS,FSET,GOTP,PGND,PVCC,SYNC,VOTP,DFTSCL,DFTSDA,unlock,sense_FB,CELG59462,CELV96848,POK_inout,FSET_inout,SYNC_inout,kelvin_VCC,CELSENSE_RF,CELSUB40948,SENSE_G_4c0bef8e,kelvin_GNDservice,kelvin_GNDpowergood,kelvin_GNDsoftstart,kelvin_GNDregulation,celkelvin_IN_bc3b7675,celkelvin_GND_73ebd82d,celkelvin_GND_bb7e77f4,celkelvin_GND_d75c3f7f,celkelvin_VCC_9893c918,celkelvin_VCC_bc3b7675,celkelvin_BIAS_bc3b7675);
   inout  EN;
   inout  FB;
   inout  IN;
@@ -58,8 +46,6 @@ module WALTZceleraRING (EN,FB,IN,SW,BST,GND,PIN,POK,SCL,SDA,TAO,VCC,tdo,tmi,BIAS
   inout  GND;
   inout  PIN;
   inout  POK;
-  input  SCL;
-  inout  SDA;
   inout  TAO;
   inout  VCC;
   inout  tdo;
@@ -71,11 +57,15 @@ module WALTZceleraRING (EN,FB,IN,SW,BST,GND,PIN,POK,SCL,SDA,TAO,VCC,tdo,tmi,BIAS
   inout  PVCC;
   inout  SYNC;
   output  VOTP;
+  output  DFTSCL;
+  inout  DFTSDA;
   input  unlock;
   inout  sense_FB;
   output  CELG59462;
   output  CELV96848;
   input  POK_inout;
+  output  FSET_inout;
+  output  SYNC_inout;
   inout  kelvin_VCC;
   output  CELSENSE_RF;
   output  CELSUB40948;
@@ -93,16 +83,13 @@ module WALTZceleraRING (EN,FB,IN,SW,BST,GND,PIN,POK,SCL,SDA,TAO,VCC,tdo,tmi,BIAS
   output  celkelvin_BIAS_bc3b7675;
 endmodule
 
-module WALTZceleraSERDES (SCL,SDA,pd0,tdo,tmi,GOTP,VOTP,scli,sdai,unlock,otp_done,CELG59462,CELV96848,PORB97836,CELSUB40948,celkelvin_VCC_9893c918);
-  inout  SCL;
-  inout  SDA;
-  input  pd0;
+module WALTZceleraSERDES (tdo,tmi,GOTP,VOTP,DFTSCL,DFTSDA,unlock,otp_done,CELG59462,CELV96848,PORB97836,CELSUB40948,celkelvin_VCC_9893c918);
   inout  tdo;
   inout [5:0] tmi;
   input  GOTP;
   input  VOTP;
-  output  scli;
-  inout  sdai;
+  inout  DFTSCL;
+  inout  DFTSDA;
   output  unlock;
   output  otp_done;
   input  CELG59462;
@@ -122,7 +109,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module WALTZ (EN, FB, IN, SW, BST, GND, POK, SCL, SDA, VCC, BIAS, FSET, PGND, PVCC, SYNC);
+module WALTZ (EN, FB, IN, SW, BST, GND, POK, VCC, BIAS, FSET, PGND, PVCC, SYNC);
 inout  EN;
 inout  FB;
 inout  IN;
@@ -130,8 +117,6 @@ inout  SW;
 inout  BST;
 inout  GND;
 inout  POK;
-inout  SCL;
-inout  SDA;
 inout  VCC;
 inout  BIAS;
 inout  FSET;
@@ -158,10 +143,10 @@ WALTZceleraCORE XceleraCORE (
 .tdo(tdo),
 .tmi(tmi[4:0]),
 .BIAS(BIAS),
-.FSET(FSET),
+.FSET(FSET_inout),
 .PGND(PGND),
 .PVCC(PVCC),
-.SYNC(SYNC),
+.SYNC(SYNC_inout),
 .sense_FB(sense_FB),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -170,7 +155,6 @@ WALTZceleraCORE XceleraCORE (
 .CELSENSE_RF(CELSENSE_RF),
 .CELSUB40948(CELSUB40948),
 .SENSE_G_4c0bef8e(SENSE_G_4c0bef8e),
-.register_thermal(register_thermal),
 .kelvin_GNDservice(kelvin_GNDservice),
 .kelvin_GNDpowergood(kelvin_GNDpowergood),
 .kelvin_GNDsoftstart(kelvin_GNDsoftstart),
@@ -183,17 +167,6 @@ WALTZceleraCORE XceleraCORE (
 .celkelvin_BIAS_bc3b7675(celkelvin_BIAS_bc3b7675)
 );
 
-WALTZceleraREGISTER XceleraREGISTER (
-.scli(scli),
-.sdai(sdai),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.PORB97836(PORB97836),
-.CELSUB40948(CELSUB40948),
-.register_thermal(register_thermal),
-.sdapd_registermap(pd0)
-);
-
 WALTZceleraRING XceleraRING (
 .EN(EN),
 .FB(FB),
@@ -203,8 +176,6 @@ WALTZceleraRING XceleraRING (
 .GND(GND),
 .PIN(PIN),
 .POK(POK),
-.SCL(SCL),
-.SDA(SDA),
 .TAO(TAO),
 .VCC(VCC),
 .tdo(tdo),
@@ -216,11 +187,15 @@ WALTZceleraRING XceleraRING (
 .PVCC(PVCC),
 .SYNC(SYNC),
 .VOTP(VOTP),
+.DFTSCL(DFTSCL),
+.DFTSDA(DFTSDA),
 .unlock(unlock),
 .sense_FB(sense_FB),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .POK_inout(POK_inout),
+.FSET_inout(FSET_inout),
+.SYNC_inout(SYNC_inout),
 .kelvin_VCC(kelvin_VCC),
 .CELSENSE_RF(CELSENSE_RF),
 .CELSUB40948(CELSUB40948),
@@ -239,15 +214,12 @@ WALTZceleraRING XceleraRING (
 );
 
 WALTZceleraSERDES XceleraSERDES (
-.SCL(SCL),
-.SDA(SDA),
-.pd0(pd0),
 .tdo(tdo),
 .tmi(tmi[5:0]),
 .GOTP(GOTP),
 .VOTP(VOTP),
-.scli(scli),
-.sdai(sdai),
+.DFTSCL(DFTSCL),
+.DFTSDA(DFTSDA),
 .unlock(unlock),
 .otp_done(otp_done),
 .CELG59462(CELG59462),

@@ -112,28 +112,26 @@ module nand2_9125fe87 (o,i0,i1,SUB,CELG,CELV);
   input  CELV;
 endmodule
 
-module thermal_5ba7a7de (IP,ten,CELG,CELBG,SIMPV,CELSUB,fault_thermal,enable_thermal,register_thermal,trim_thermal_accuracy);
-  input  IP;
-  input  ten;
-  input  CELG;
-  input  CELBG;
-  input  SIMPV;
-  input  CELSUB;
-  output  fault_thermal;
-  input  enable_thermal;
-  input  register_thermal;
-  input [2:0] trim_thermal_accuracy;
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
+module thermal_37802b8a ();
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module FAULTMANAGERwaltzMAIN (MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELBG83021, CELSUB40948, blank_fault, fault_short, mode_hiccup, enable_fault, fault_freeze, hijack_delay, blank_thermal, dft_delaySHORT, register_thermal, hijack_short_status, IP_201f84ba_Xthermal1, hijack_thermal_status, ten_201f84ba_Xthermal1, hijack_faultmanager_status, trim_thermal_accuracy_201f84ba);
-input  MUDV;
+module FAULTMANAGERwaltzMAIN (MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELSUB40948, blank_fault, fault_short, mode_hiccup, enable_fault, fault_freeze, hijack_delay, blank_thermal, dft_delaySHORT, hijack_short_status, hijack_thermal_status, hijack_faultmanager_status);
+  input  MUDV;
 input  clock;
 input  CELG59462;
 input  CELV96848;
 input  PORB97836;
 output  fault_run;
-input  CELBG83021;
 input  CELSUB40948;
 input  blank_fault;
 input  fault_short;
@@ -143,18 +141,12 @@ output  fault_freeze;
 input  hijack_delay;
 input  blank_thermal;
 output  dft_delaySHORT;
-input  register_thermal;
 input  hijack_short_status;
-input  IP_201f84ba_Xthermal1;
 input  hijack_thermal_status;
-input  ten_201f84ba_Xthermal1;
 input  hijack_faultmanager_status;
-input [2:0] trim_thermal_accuracy_201f84ba;
 
 
 // ------------------------ Wires ------------------------
-wire [2:0] trim_thermal_accuracy_201f84ba;
-wire [2:0] trim_thermal_accuracy;
 
 // ------------------------ Networks ---------------------
 VESPAfaultmanagerINTERNALdebug XU14 (
@@ -344,17 +336,12 @@ dbuf_e926e395 XU44 (
 .CELV(CELV96848)
 );
 
-thermal_5ba7a7de Xthermal1 (
-.IP(IP_201f84ba_Xthermal1),
-.ten(ten_201f84ba_Xthermal1),
-.CELG(CELG59462),
-.CELBG(CELBG83021),
-.SIMPV(MUDV),
-.CELSUB(CELSUB40948),
-.fault_thermal(net_94),
-.enable_thermal(net_98),
-.register_thermal(register_thermal),
-.trim_thermal_accuracy({trim_thermal_accuracy_201f84ba[2],trim_thermal_accuracy_201f84ba[1],trim_thermal_accuracy_201f84ba[0]})
+STONEnoconn XNC98 (
+.noconn(net_98)
+);
+
+thermal_37802b8a Xthermal1 (
+
 );
 
 endmodule

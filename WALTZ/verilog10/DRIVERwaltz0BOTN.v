@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module currentlimitfet_d1834b5a (IP,CELG,CELPOS,CELSUB,VSENSE,IREPLICA,currentlimit_lv,trim_currentlimit,enable_currentlimit,global_currentlimit,measure_currentlimit,tdi_currentlimitlive,ten_measure_currentlimit);
+module currentlimitfet_bdeab8a2 (IP,CELG,CELPOS,CELSUB,VSENSE,IREPLICA,currentlimit_lv,trim_currentlimit,enable_currentlimit,global_currentlimit,measure_currentlimit,tdi_currentlimitlive,ten_measure_currentlimit);
   input  IP;
   input  CELG;
   input  CELPOS;
@@ -140,7 +140,7 @@ wire [7:0] trim_currentlimit_a0afb596;
 wire [7:0] trim_currentlimit;
 
 // ------------------------ Networks ---------------------
-currentlimitfet_d1834b5a XU3 (
+currentlimitfet_bdeab8a2 XU3 (
 .IP(IP_14d08c8e_XU3),
 .CELG(CELG59462),
 .CELPOS(MUDV),

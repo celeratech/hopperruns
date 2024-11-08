@@ -84,81 +84,81 @@ V$PGND 27 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=0 X2=20u Y2=0
 X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
 X$WALTZ 20 21 20 22 23 24 25 26 25 26 26 26 WALTZ
 ** From Z:\celera\projects\Waltz2\simplis\301\design\WALTZ.sxcmp
-.subckt WALTZ 145 146 147 148 149 150 151 152 153 154 155 156
+.subckt WALTZ 146 147 148 149 150 151 152 153 154 155 156 157
 *#hierarchy
-.node_map porb 158
-.node_map fault_clock 187
-.node_map topstate 159
-.node_map topswipeak 165
-.node_map BST 150
-.node_map FSET 151
-.node_map PVCC 176
-.node_map kelvin_GNDservice 173
-.node_map POK 149
-.node_map BIAS 152
-.node_map bbm_bottomon 181
-.node_map ok_driver 174
-.node_map PIN 157
-.node_map kelvin_GNDsoftstart 169
-.node_map REF0V9 182
-.node_map FB 156
-.node_map enable_softstart 190
-.node_map botswzcross 172
-.node_map PGND 146
-.node_map IREF_DRIVER 184
-.node_map clock 162
-.node_map fault_short 194
-.node_map enable_regulation 188
-.node_map VCC 153
-.node_map switch_control 177
-.node_map ok_service 183
-.node_map ISLOPECOMP 185
-.node_map freeze_control 175
-.node_map botswineg 170
-.node_map enable_waltz 160
-.node_map ok_clock 186
-.node_map fault_control 163
-.node_map botswipeak 168
-.node_map botstate 161
-.node_map ok_regulation 189
-.node_map bbm_topon 180
-.node_map done_softstart 179
-.node_map SS 191
-.node_map SYNC 155
-.node_map GND 154
-.node_map IN 145
-.node_map fault_run 193
-.node_map blank_fault 192
-.node_map kelvin_GNDregulation 166
-.node_map EN 147
-.node_map sense_FB 178
-.node_map kelvin_GNDpowergood 171
-.node_map SW 148
-.node_map go_driver 164
-.node_map kelvin_VCC 167
-X$CLOCK 153 162 160 155 186 151 185 187 CLOCKwaltz
-X$CONTROL 158 159 160 161 162 163 164 165 168 170 172 174 175 177 179 180 181 CONTROLwaltz2
-X$DRIVER 157 150 153 148 176 165 145 168 184 172 185 174 160 170 159 180 161 181 146 DRIVERwaltz2
-X$FAULTMANAGER 153 175 160 193 192 162 194 FAULTMANAGERwaltz
-X$POWERGOOD 153 149 160 182 178 162 171 194 POWERGOODwaltz
-X$REGULATION 153 164 184 156 188 191 182 166 189 154 REGULATIONwaltz0
-X$RING 157 145 146 147 148 150 149 152 151 154 166 169 171 173 153 176 167 156 178 155 RINGwaltz2
-X$SEQUENCER 158 160 183 190 174 192 189 177 186 187 163 193 179 188 SEQUENCERwaltz
-X$SERVICE 145 153 152 182 147 183 158 167 173 SERVICEwaltz0
-X$SOFTSTART 153 191 190 179 182 169 160 SOFTSTARTwaltz
-X$U1 145 pinprobe vars: pinprobe_description='Supply_Input_up_to_60V' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U10 155 pinprobe vars: pinprobe_description='Synchronization_Clock' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+.node_map porb 159
+.node_map fault_clock 188
+.node_map topstate 160
+.node_map topswipeak 166
+.node_map BST 151
+.node_map FSET 152
+.node_map PVCC 177
+.node_map kelvin_GNDservice 174
+.node_map POK 150
+.node_map BIAS 153
+.node_map bbm_bottomon 182
+.node_map ok_driver 175
+.node_map PIN 158
+.node_map kelvin_GNDsoftstart 170
+.node_map REF0V9 183
+.node_map FB 157
+.node_map enable_softstart 191
+.node_map botswzcross 173
+.node_map PGND 147
+.node_map IREF_DRIVER 185
+.node_map clock 163
+.node_map fault_short 195
+.node_map enable_regulation 189
+.node_map VCC 154
+.node_map switch_control 178
+.node_map ok_service 184
+.node_map ISLOPECOMP 186
+.node_map freeze_control 176
+.node_map botswineg 171
+.node_map enable_waltz 161
+.node_map ok_clock 187
+.node_map fault_control 164
+.node_map botswipeak 169
+.node_map botstate 162
+.node_map ok_regulation 190
+.node_map bbm_topon 181
+.node_map done_softstart 180
+.node_map SS 192
+.node_map SYNC 156
+.node_map GND 155
+.node_map IN 146
+.node_map fault_run 194
+.node_map blank_fault 193
+.node_map kelvin_GNDregulation 167
+.node_map EN 148
+.node_map sense_FB 179
+.node_map kelvin_GNDpowergood 172
+.node_map SW 149
+.node_map go_driver 165
+.node_map kelvin_VCC 168
+X$CLOCK 154 163 161 156 187 152 186 188 CLOCKwaltz
+X$CONTROL 159 160 161 162 163 164 165 166 169 171 173 175 176 178 180 181 182 CONTROLwaltz2
+X$DRIVER 158 151 154 149 177 166 146 169 185 173 186 175 161 171 160 181 162 182 147 DRIVERwaltz2
+X$FAULTMANAGER 154 176 161 194 193 163 195 FAULTMANAGERwaltz
+X$POWERGOOD 154 150 161 183 179 163 172 195 POWERGOODwaltz
+X$REGULATION 154 165 185 157 189 192 183 167 190 155 REGULATIONwaltz0
+X$RING 158 146 147 148 149 151 150 153 152 155 167 170 172 174 154 177 168 157 179 156 RINGwaltz2
+X$SEQUENCER 159 161 184 191 175 193 190 178 187 188 164 194 180 189 SEQUENCERwaltz
+X$SERVICE 146 154 153 183 148 184 159 168 174 SERVICEwaltz0
+X$SOFTSTART 154 192 191 180 183 170 161 SOFTSTARTwaltz
+X$U1 146 pinprobe vars: pinprobe_description='Supply_Input_up_to_60V' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U10 156 pinprobe vars: pinprobe_description='Synchronization_Clock' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U11 144 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=2 description='WALTZ_High_Voltage_Stepdown_Converter' description1='Bias_5V_with_Reference' description2='Feedback_External' description3='Regulation_500mA_Peak_current_mode_internal_compensation' description4='PowerGood_Under_Indicator' description5='Fault_Manager_Thermal_Output_short' description6='Integrated_softstart_4ms' description7='Package_TDFN1233' description8='text' description9='text' description10='text'
-X$U12 149 pinprobe vars: pinprobe_description='Power_Good_Open_Drain' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U13 151 pinprobe vars: pinprobe_description='External_Frequency_Set_Resistor' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U2 150 pinprobe vars: pinprobe_description='Boost_Capacitor' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U3 152 pinprobe vars: pinprobe_description='External_Bias_Supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U4 148 pinprobe vars: pinprobe_description='Inductor_switch_inout' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U5 146 pinprobe vars: pinprobe_description='Power_ground_input'
-X$U6 153 pinprobe vars: pinprobe_description='Internal_Core_Supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U7 147 pinprobe vars: pinprobe_description='Chip_Enable' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U8 156 pinprobe vars: pinprobe_description='Feedback_Input' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U9 154 pinprobe vars: pinprobe_description='Ground_input' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U12 150 pinprobe vars: pinprobe_description='Power_Good_Open_Drain' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U13 152 pinprobe vars: pinprobe_description='External_Frequency_Set_Resistor' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U2 151 pinprobe vars: pinprobe_description='Boost_Capacitor' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 153 pinprobe vars: pinprobe_description='External_Bias_Supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 149 pinprobe vars: pinprobe_description='Inductor_switch_inout' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 147 pinprobe vars: pinprobe_description='Power_ground_input'
+X$U6 154 pinprobe vars: pinprobe_description='Internal_Core_Supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U7 148 pinprobe vars: pinprobe_description='Chip_Enable' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U8 157 pinprobe vars: pinprobe_description='Feedback_Input' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 155 pinprobe vars: pinprobe_description='Ground_input' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 .ends WALTZ
 
 ** From Z:\celera\projects\Waltz2\simplis\301\design\CLOCKwaltz.sxcmp
@@ -1547,7 +1547,7 @@ X$U17 75 78 113 81 84 107 102 87 103 90 93 110 111 currentlimitfet vars: current
 X$U18 113 pinprobe vars: pinprobe_description='Lowside_Negative_Current_Limit' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U2 108 pinprobe vars: pinprobe_description='Bottom_Switch_On'
 X$U23 103 pinprobe vars: pinprobe_description='Core_Supply'
-X$U3 73 76 109 79 82 105 100 85 103 88 91 110 111 currentlimitfet vars: currentlimit_sense='fet' currentlimit_limit='10m' currentlimit_fetterm='nmos_source' currentlimit_3='nmos_source' currentlimit_4='nmos_drain' currentlimit_5='pmos_drain' currentlimit_6='nmos_drain' currentlimit_7='pmos_source' currentlimit_7N='nmos_source' currentlimit_limitout='live' currentlimit_usage='lowside' currentlimit_iref='internal' currentlimit_output_polarity='low' currentlimit_levelshiftoutput='yes' currentlimit_levelshiftenable='yes' currentlimit_levelshiftmeasure='yes' currentlimit_blanking_adjust='no' currentlimit_datasheet_blanking_name='botswzeroblank' currentlimit_datasheet_blanking_description='Lowside_Blanking' currentlimit_dft='no' currentlimit_accuracy='yes' currentlimit_datasheet_accuracy_name='botswzcrossacc' currentlimit_datasheet_accuracy_description='hirsh_replace' currentlimit_slopecomp='no' currentlimit_fetratio=1 currentlimit_2=0 currentlimit_8=0 currentlimit_vsense=100 currentlimit_restc=0 currentlimit_vsensemax=6 currentlimit_maxiref=10 currentlimit_blanking=20 currentlimit_1=0 currentlimit_vmax=6 currentlimit_9=0
+X$U3 73 76 109 79 82 105 100 85 103 88 91 110 111 currentlimitfet vars: currentlimit_sense='fet' currentlimit_limit='10m' currentlimit_fetterm='nmos_source' currentlimit_3='nmos_source' currentlimit_4='nmos_drain' currentlimit_5='pmos_drain' currentlimit_6='nmos_drain' currentlimit_7='pmos_source' currentlimit_7N='nmos_source' currentlimit_limitout='live' currentlimit_usage='lowside' currentlimit_iref='internal' currentlimit_output_polarity='low' currentlimit_levelshiftoutput='yes' currentlimit_levelshiftenable='yes' currentlimit_levelshiftmeasure='yes' currentlimit_blanking_adjust='no' currentlimit_datasheet_blanking_name='botswzeroblank' currentlimit_datasheet_blanking_description='Lowside_Blanking' currentlimit_dft='no' currentlimit_accuracy='yes' currentlimit_datasheet_accuracy_name='botswzcrossacc' currentlimit_datasheet_accuracy_description='BottomSW_Zcross' currentlimit_slopecomp='no' currentlimit_fetratio=1 currentlimit_2=0 currentlimit_8=0 currentlimit_vsense=100 currentlimit_restc=0 currentlimit_vsensemax=6 currentlimit_maxiref=10 currentlimit_blanking=20 currentlimit_1=0 currentlimit_vmax=6 currentlimit_9=0
 X$U31 104 pinprobe vars: pinprobe_description='Lowside_Current_Limit'
 X$U4 110 pinprobe vars: pinprobe_description='Enable'
 X$U42 111 pinprobe vars: pinprobe_description='Lowside_Gate_Status'
@@ -1770,7 +1770,7 @@ X$U9 54 pinprobe vars: pinprobe_description='Hijack_blank_fault' pinprobe_mode='
 .node_map ck 108
 .node_map fault_run 93
 .node_map blank_fault 96
-X$thermal1 94 98 80 81 90 thermal  vars: thermal_temperature_name='THERMALaccuracy' thermal_temperature_description='Thermal_shutdowen' thermal_accuracy='yes' thermal_trim_name='THERMALaccuracy' thermal_trim_description='Thermal_at_165C' thermal_verification='no' thermal_selections='2' thermal_control_type='register' thermal_enabletimeunits1='us' thermal_enabletimeunits2='us' thermal_enabletimeunits3='us' thermal_enabletimeunits4='us' thermal_dft='no' thermal_disable='no' thermal_note0=0 thermal_rise0=180 thermal_fall0=170 thermal_register_por=0 thermal_rise1=165 thermal_fall1=145 thermal_rise2=0 thermal_fall2=0 thermal_rise3=0 thermal_fall3=0 thermal_timeenablecodes=1 thermal_startcode=0 thermal_newcode1=1 thermal_enabletime1=1 thermal_newcode2=1 thermal_enabletime2=1 thermal_newcode3=1 thermal_enabletime3=1 thermal_newcode4=1 thermal_enabletime4=1 thermal_vmax=6
+X$thermal1 94 98 80 81 90 thermal  vars: thermal_temperature_name='THERMALaccuracy' thermal_temperature_description='Thermal_shutdowen' thermal_accuracy='yes' thermal_trim_name='THERMALaccuracy' thermal_trim_description='Thermal_at_165C' thermal_verification='no' thermal_selections='1' thermal_control_type='register' thermal_enabletimeunits1='us' thermal_enabletimeunits2='us' thermal_enabletimeunits3='us' thermal_enabletimeunits4='us' thermal_dft='no' thermal_disable='no' thermal_note0=0 thermal_rise0=180 thermal_fall0=170 thermal_register_por=0 thermal_rise1=165 thermal_fall1=145 thermal_rise2=0 thermal_fall2=0 thermal_rise3=0 thermal_fall3=0 thermal_timeenablecodes=1 thermal_startcode=0 thermal_newcode1=1 thermal_enabletime1=1 thermal_newcode2=1 thermal_enabletime2=1 thermal_newcode3=1 thermal_enabletime3=1 thermal_newcode4=1 thermal_enabletime4=1 thermal_vmax=6
 X$U1 114 112 108 88 89 115 delayclock vars: delay_type='clock' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=65536 delayclock_count1=100 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=400
 X$U10 93 pinprobe vars: pinprobe_description='Genertate_fault_in_run_mode' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U11 103 pinprobe vars: pinprobe_description='Reference-clock_for_delays' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'

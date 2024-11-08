@@ -108,37 +108,32 @@ otp_clock, otp_id, otp_q, pd, scl_serdes, sda_serdes );
 endmodule
 
 
-//Verilog HDL for "DFT", "SERDESinputSINGLEserdesregister" "functional"
+//Verilog HDL for "DFT", "SERDESinputSINGLEserdes" "functional"
 
 
-module SERDESinputSINGLEserdesregister ( scl_register, scl_serdes, sda_register,
-sda_serdes, CELG, CELSUB, CELVIN, SCL, SDA, porb, sdao );
+module SERDESinputSINGLEserdes ( scl_serdes, sda_serdes, CELG, CELSUB, CELVIN,
+DFTSCL, DFTSDA, porb, sdao );
 
   input porb;
   input CELSUB;
-  output sda_register;
   output sda_serdes;
   output scl_serdes;
+  input DFTSDA;
+  input DFTSCL;
   input sdao;
-  output scl_register;
   input CELVIN;
-  input SDA;
-  input SCL;
   input CELG;
 endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module WALTZceleraSERDES (SCL, SDA, pd0, tdo, tmi, GOTP, VOTP, scli, sdai, unlock, otp_done, CELG59462, CELV96848, PORB97836, CELSUB40948, celkelvin_VCC_9893c918);
-inout  SCL;
-inout  SDA;
-input  pd0;
+module WALTZceleraSERDES (tdo, tmi, GOTP, VOTP, DFTSCL, DFTSDA, unlock, otp_done, CELG59462, CELV96848, PORB97836, CELSUB40948, celkelvin_VCC_9893c918);
 inout  tdo;
 inout [5:0] tmi;
 input  GOTP;
 input  VOTP;
-output  scli;
-inout  sdai;
+inout  DFTSCL;
+inout  DFTSDA;
 output  unlock;
 output  otp_done;
 input  CELG59462;
@@ -219,7 +214,7 @@ SERDESdftYesNo XSERDESdftYesNo (
 SERDEScontrolDRMautoNo XSERDEScontrolDRMautoNo (
 .a0(a0),
 .a1(a1),
-.pd({a0,a0,a0,a0,a0,a0,a0,pd0}),
+.pd({a0,a0,a0,a0,a0,a0,a0,a0}),
 .tmi(tmi[5:0]),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -246,18 +241,16 @@ SERDEScontrolDRMautoNo XSERDEScontrolDRMautoNo (
 .otp_program_done(otp_program_done)
 );
 
-SERDESinputSINGLEserdesregister XSERDESinputSINGLEserdesregister (
-.SCL(SCL),
-.SDA(SDA),
+SERDESinputSINGLEserdes XSERDESinputSINGLEserdes (
 .CELG(CELG59462),
 .porb(PORB97836),
 .sdao(sdao),
 .CELSUB(CELSUB40948),
 .CELVIN(CELV96848),
+.DFTSCL(DFTSCL),
+.DFTSDA(DFTSDA),
 .scl_serdes(scl_serdes),
-.sda_serdes(sda_serdes),
-.scl_register(scli),
-.sda_register(sdai)
+.sda_serdes(sda_serdes)
 );
 
 endmodule
