@@ -246,8 +246,8 @@ vbuffer_749dfb87 XU6 (
 .ok_vbuffer(net_111),
 .enable_vbuffer(net_110),
 .global_vbuffer(tl0),
-.trim_vbuffer_negative(a0[6:0]),
-.trim_vbuffer_positive(a0[6:0])
+.trim_vbuffer_negative({a0,a0,a0,a0,a0,a0,a0}),
+.trim_vbuffer_positive({b0,b0,b0,b0,b0,b0,b0})
 );
 
 switchgnd_d6772c2d XU8 (
