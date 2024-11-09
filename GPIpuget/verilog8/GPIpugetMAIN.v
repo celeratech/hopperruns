@@ -58,6 +58,15 @@ module switchgnd_d6772c2d (I,O,CELG,SIMPV,CELSUB,enable_switch);
   input  enable_switch;
 endmodule
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 module amux8_45e2573f (O,I0,I1,I2,SUB,CELG,CELV,amux);
   output  O;
   input  I0;
@@ -101,15 +110,6 @@ module dbuf_e926e395 (i,o,SUB,CELG,CELV);
   input  CELG;
   input  CELV;
 endmodule
-
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
 
 //Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
 
@@ -246,8 +246,8 @@ vbuffer_749dfb87 XU6 (
 .ok_vbuffer(net_111),
 .enable_vbuffer(net_110),
 .global_vbuffer(tl0),
-.trim_vbuffer_negative(TBD_XGPI_XMAIN_XU6_trim_vbuffer_negative[6:0]),
-.trim_vbuffer_positive(TBD_XGPI_XMAIN_XU6_trim_vbuffer_positive[6:0])
+.trim_vbuffer_negative({a0,a0,a0,a0,a0,a0,a0}),
+.trim_vbuffer_positive({a0,a0,a0,a0,a0,a0,a0})
 );
 
 switchgnd_d6772c2d XU8 (
@@ -257,6 +257,10 @@ switchgnd_d6772c2d XU8 (
 .SIMPV(TBD_XGPI_XMAIN_XU8_SIMPV),
 .CELSUB(CELSUB40948),
 .enable_switch(net_110)
+);
+
+STONEnoconn XNC0 (
+.noconn(net_0)
 );
 
 amux8_45e2573f XU13 (
@@ -359,14 +363,7 @@ PEBBLEtielo XtieLo (
 .SUB(CELSUB40948)
 );
 
-PEBBLEtielo XDRMNOT_trim_vbuffer_negative (
-.G(CELG59462),
-.V(CELV96848),
-.q(net_0),
-.SUB(CELSUB40948)
-);
-
-PEBBLEtielo XDRMNOT_trim_vbuffer_positive (
+PEBBLEtielo XDRMNOTL (
 .G(CELG59462),
 .V(CELV96848),
 .q(net_0),
