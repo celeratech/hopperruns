@@ -58,15 +58,6 @@ module switchgnd_d6772c2d (I,O,CELG,SIMPV,CELSUB,enable_switch);
   input  enable_switch;
 endmodule
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
 module amux8_45e2573f (O,I0,I1,I2,SUB,CELG,CELV,amux);
   output  O;
   input  I0;
@@ -110,6 +101,15 @@ module dbuf_e926e395 (i,o,SUB,CELG,CELV);
   input  CELG;
   input  CELV;
 endmodule
+
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
 
 //Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
 
@@ -259,10 +259,6 @@ switchgnd_d6772c2d XU8 (
 .enable_switch(net_110)
 );
 
-STONEnoconn XNC0 (
-.noconn(net_0)
-);
-
 amux8_45e2573f XU13 (
 .O(GPO),
 .I0(net_104),
@@ -366,7 +362,7 @@ PEBBLEtielo XtieLo (
 PEBBLEtielo XDRMNOTL (
 .G(CELG59462),
 .V(CELV96848),
-.q(net_0),
+.q(a0),
 .SUB(CELSUB40948)
 );
 
