@@ -66,18 +66,18 @@ module SERVICEgreenbank_30 (REF,TAO,tdo,tmi,MUDV,TAEXT,CELG59462,CELV96848,PORB9
   input [5:0] register_SERVICEconfiguration_b870327c_Xdatamap3;
 endmodule
 
-module AMPLIFIERgreenbank_30 (REF,tdo,tmi,LDO0,LDO1,LDO2,LDO3,LDO4,LDO5,LDO6,LDO7,MUDV,CELG59462,CELV96848,sense_LDO2,sense_LDO5,sense_LDO7,CELSUB40948,kelvin_MUDGamplifier,register_AMPCONTROLHIGHgain_580b306e_Xdatamap1,register_AMPCONTROLSLOWgain_df85c142_Xdatamap1,register_AMPCONTROLMEDIUMgain_f996687f_Xdatamap1,register_AMPLIFIERconfiguration_1a9aa3bb_Xdatamap1);
+module AMPLIFIERgreenbank_30 (REF,tdo,tmi,LDO0,LDO1,LDO2,LDO3,LDO4,LDO5,LDO6,LDO7,MUDV,CELG59462,CELV96848,sense_LDO2,sense_LDO5,sense_LDO7,CELSUB40948,kelvin_MUDGamplifier,IP_00732f90_Xamplifier1,IP_2a3e6cf6_Xamplifier1,IP_3efbbe3e_Xamplifier1,IP_6ae1f0df_Xamplifier1,IP_89f5ccd6_Xamplifier1,IP_8caf5cb1_Xamplifier1,IP_b6fc9dd2_Xamplifier1,IP_faec70c3_Xamplifier1,register_AMPCONTROLHIGHgain_580b306e_Xdatamap1,register_AMPCONTROLSLOWgain_df85c142_Xdatamap1,register_AMPCONTROLMEDIUMgain_f996687f_Xdatamap1,register_AMPLIFIERconfiguration_1a9aa3bb_Xdatamap1);
   input  REF;
   inout  tdo;
   input [4:0] tmi;
-  input  LDO0;
-  input  LDO1;
-  input  LDO2;
-  input  LDO3;
-  input  LDO4;
-  input  LDO5;
-  input  LDO6;
-  input  LDO7;
+  output  LDO0;
+  output  LDO1;
+  output  LDO2;
+  output  LDO3;
+  output  LDO4;
+  output  LDO5;
+  output  LDO6;
+  output  LDO7;
   input  MUDV;
   input  CELG59462;
   input  CELV96848;
@@ -86,6 +86,14 @@ module AMPLIFIERgreenbank_30 (REF,tdo,tmi,LDO0,LDO1,LDO2,LDO3,LDO4,LDO5,LDO6,LDO
   input  sense_LDO7;
   input  CELSUB40948;
   input  kelvin_MUDGamplifier;
+  input  IP_00732f90_Xamplifier1;
+  input  IP_2a3e6cf6_Xamplifier1;
+  input  IP_3efbbe3e_Xamplifier1;
+  input  IP_6ae1f0df_Xamplifier1;
+  input  IP_89f5ccd6_Xamplifier1;
+  input  IP_8caf5cb1_Xamplifier1;
+  input  IP_b6fc9dd2_Xamplifier1;
+  input  IP_faec70c3_Xamplifier1;
   input [2:0] register_AMPCONTROLHIGHgain_580b306e_Xdatamap1;
   input [2:0] register_AMPCONTROLSLOWgain_df85c142_Xdatamap1;
   input [2:0] register_AMPCONTROLMEDIUMgain_f996687f_Xdatamap1;
@@ -102,7 +110,7 @@ endmodule
 
 
 module CELERAservice (IPO,TAO,tmi,CELG,CELV,CELSUB,ok_ibias,enable_ibias,celkelvin_GNDservice);
-  output [2:0] IPO;
+  output [10:0] IPO;
   inout  TAO;
   inout [4:0] tmi;
   input  CELG;
@@ -118,14 +126,14 @@ module GREENBANK0_30celeraCORE (TAO, tdo, tmi, LDO0, LDO1, LDO2, LDO3, LDO4, LDO
 inout  TAO;
 inout  tdo;
 inout [4:0] tmi;
-  input  LDO0;
-  input  LDO1;
-  input  LDO2;
-  input  LDO3;
-  input  LDO4;
-  input  LDO5;
-  input  LDO6;
-  input  LDO7;
+output  LDO0;
+output  LDO1;
+output  LDO2;
+output  LDO3;
+output  LDO4;
+output  LDO5;
+output  LDO6;
+output  LDO7;
 output  LDO8;
 output  LDO9;
 input  MUDV;
@@ -139,14 +147,14 @@ input  TAEXT;
 input  CELG59462;
 input  CELV96848;
 input  PORB97836;
-  input  sense_LDO2;
-  input  sense_LDO5;
-  input  sense_LDO7;
+input  sense_LDO2;
+input  sense_LDO5;
+input  sense_LDO7;
 input  CELSUB40948;
 input  kelvin_MUDV;
 input  SENSE_G_30a24d84;
 inout  kelvin_MUDGservice;
-  input  kelvin_MUDGamplifier;
+input  kelvin_MUDGamplifier;
 input  CELPOWER_LDO_62423880;
 input  CELPOWER_LDO_af77ae17;
 input  CELPOWER_LDO_d8ea4418;
@@ -172,15 +180,15 @@ input  celkelvin_MUDG_e7f880295;
 input  celkelvin_MUDG_f3f8826312;
 input  celkelvin_MUDG_f5e9f88511;
 input  celkelvin_MUDG_fd1c792e10;
-input [2:0] register_REF2output_ec6b959e_Xdatamap2;
-input [2:0] register_REF3output_7dce033a_Xdatamap1;
-input [2:0] register_REFERENCEselect_caaadfae_Xdatamap4;
-input [7:0] register_LDOconfiguration_7675006f_Xdatamap1;
-input [2:0] register_AMPCONTROLHIGHgain_580b306e_Xdatamap1;
-input [2:0] register_AMPCONTROLSLOWgain_df85c142_Xdatamap1;
-input [2:0] register_AMPCONTROLMEDIUMgain_f996687f_Xdatamap1;
-input [5:0] register_SERVICEconfiguration_b870327c_Xdatamap3;
-input [7:0] register_AMPLIFIERconfiguration_1a9aa3bb_Xdatamap1;
+output [2:0] register_REF2output_ec6b959e_Xdatamap2;
+output [2:0] register_REF3output_7dce033a_Xdatamap1;
+output [2:0] register_REFERENCEselect_caaadfae_Xdatamap4;
+output [7:0] register_LDOconfiguration_7675006f_Xdatamap1;
+output [2:0] register_AMPCONTROLHIGHgain_580b306e_Xdatamap1;
+output [2:0] register_AMPCONTROLSLOWgain_df85c142_Xdatamap1;
+output [2:0] register_AMPCONTROLMEDIUMgain_f996687f_Xdatamap1;
+output [5:0] register_SERVICEconfiguration_b870327c_Xdatamap3;
+output [7:0] register_AMPLIFIERconfiguration_1a9aa3bb_Xdatamap1;
 
 
 // ------------------------ Wires ------------------------
@@ -194,7 +202,7 @@ wire [2:0] register_AMPCONTROLSLOWgain_df85c142_Xdatamap1;
 wire [2:0] register_AMPCONTROLMEDIUMgain_f996687f_Xdatamap1;
 wire [5:0] register_SERVICEconfiguration_b870327c_Xdatamap3;
 wire [7:0] register_AMPLIFIERconfiguration_1a9aa3bb_Xdatamap1;
-wire [2:0] IPO;
+wire [10:0] IPO;
 
 // ------------------------ Networks ---------------------
 LDOgreenbank_30 XLDO (
@@ -284,6 +292,14 @@ AMPLIFIERgreenbank_30 XU19 (
 .sense_LDO7(sense_LDO7),
 .CELSUB40948(CELSUB40948),
 .kelvin_MUDGamplifier(kelvin_MUDGamplifier),
+.IP_00732f90_Xamplifier1(IP_00732f90_Xamplifier1),
+.IP_2a3e6cf6_Xamplifier1(IP_2a3e6cf6_Xamplifier1),
+.IP_3efbbe3e_Xamplifier1(IP_3efbbe3e_Xamplifier1),
+.IP_6ae1f0df_Xamplifier1(IP_6ae1f0df_Xamplifier1),
+.IP_89f5ccd6_Xamplifier1(IP_89f5ccd6_Xamplifier1),
+.IP_8caf5cb1_Xamplifier1(IP_8caf5cb1_Xamplifier1),
+.IP_b6fc9dd2_Xamplifier1(IP_b6fc9dd2_Xamplifier1),
+.IP_faec70c3_Xamplifier1(IP_faec70c3_Xamplifier1),
 .register_AMPCONTROLHIGHgain_580b306e_Xdatamap1(register_AMPCONTROLHIGHgain_580b306e_Xdatamap1[2:0]),
 .register_AMPCONTROLSLOWgain_df85c142_Xdatamap1(register_AMPCONTROLSLOWgain_df85c142_Xdatamap1[2:0]),
 .register_AMPCONTROLMEDIUMgain_f996687f_Xdatamap1(register_AMPCONTROLMEDIUMgain_f996687f_Xdatamap1[2:0]),
@@ -295,7 +311,7 @@ STONEnoconn XNCnoconn (
 );
 
 CELERAservice XceleraSERVICE (
-.IPO({IP_30a24d84_Xoscillator1,IP_7ab895fc_XU27,IP_a6e93121_XU7}),
+.IPO({IP_00732f90_Xamplifier1,IP_2a3e6cf6_Xamplifier1,IP_30a24d84_Xoscillator1,IP_3efbbe3e_Xamplifier1,IP_6ae1f0df_Xamplifier1,IP_7ab895fc_XU27,IP_89f5ccd6_Xamplifier1,IP_8caf5cb1_Xamplifier1,IP_a6e93121_XU7,IP_b6fc9dd2_Xamplifier1,IP_faec70c3_Xamplifier1}),
 .TAO(TAO),
 .tmi(tmi[4:0]),
 .CELG(CELG59462),

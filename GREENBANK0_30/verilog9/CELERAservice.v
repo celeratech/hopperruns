@@ -2,7 +2,7 @@
 //CORE:CELERAservice
 //NAME:CELERAservice
 //GENERATOR REVISION:0.1.4
-//IP Outputs:3
+//IP Outputs:11
 //REFERENCE:no
 //DFT:yes
 //ACCURACY:no
@@ -10,7 +10,7 @@
 //Celera Confidential Do Not Copy ibias_CELERAservice_Xibias.v
 //Celera:ibias_CELERAservice_Xibias
 //Celera Confidential Symbol Generator
-//OUTPUTS:3 VMAX:6V DFT:yes ACCURACY:no
+//OUTPUTS:11 VMAX:6V DFT:yes ACCURACY:no
 module ibias_CELERAservice_Xibias (CELV,enable_ibias,global_celeraibias,SENSE_G,ok_ibias,IPO,
 ten_ibias,TAI_IBIAS,CELG,CELSUB);
 input CELV;
@@ -18,7 +18,7 @@ input enable_ibias;
 input global_celeraibias;
 output ok_ibias;
 input SENSE_G;
-output [2:0] IPO;
+output [10:0] IPO;
 input ten_ibias;
 output TAI_IBIAS;
 input CELG;
@@ -78,7 +78,7 @@ endmodule
 
 //Celera Confidential Do Not Copy CELERAservice
 //Celera Confidential Symbol Generator
-//IP: 3, REFERENCE: no
+//IP: 11, REFERENCE: no
 //Latch blanking: 
 module CELERAservice (celkelvin_GNDservice,enable_ibias,
 CELV,
@@ -91,14 +91,14 @@ input celkelvin_GNDservice;
 input enable_ibias;
 input CELV;
 output ok_ibias;
-output [2:0] IPO;
+output [10:0] IPO;
 inout TAO;
 inout [4:0] tmi;
 input CELG;
 input CELSUB;
 
 //Celera Confidential Do Not Copy Pin IPO
-wire[2:0] IPO;
+wire[10:0] IPO;
 
 //Celera Confidential Do Not Copy Pin tma
 wire[7:0] tma;
@@ -124,7 +124,7 @@ ibias_CELERAservice_Xibias Xibias(
 .SENSE_G (celkelvin_GNDservice),
 .ten_ibias (ten_ibias),
 .TAI_IBIAS (TAI_IBIAS),
-.IPO (IPO [2:0]),
+.IPO (IPO [10:0]),
 .CELG (CELG),
 .CELSUB (CELSUB)
 );

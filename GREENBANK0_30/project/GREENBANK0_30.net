@@ -447,82 +447,82 @@ X$U9 369 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 364 pad var
 .node_map SERVICEconfiguration$11 177
 .node_map ok_reference3 270
 .node_map REF5 260
-.node_map BUS4$10 219
 .node_map SERVICEconfiguration$12 178
 .node_map ok_reference4 272
-.node_map BUS4$11 220
 .node_map SERVICEconfiguration$13 179
 .node_map ok_reference5 273
-.node_map BUS4$12 221
 .node_map SERVICEconfiguration$14 180
 .node_map enable_service 166
-.node_map BUS4$13 222
 .node_map SERVICEconfiguration$15 181
-.node_map BUS4$14 223
-.node_map BUS4$15 224
-.node_map BUS3$0 206
-.node_map BUS3$1 207
-.node_map BUS3$2 208
+.node_map BUS7$10 238
+.node_map BUS7$11 239
+.node_map BUS7$12 240
+.node_map BUS7$13 241
+.node_map BUS7$14 242
+.node_map BUS7$15 243
+.node_map BUS5$10 219
+.node_map BUS5$11 220
+.node_map BUS5$12 221
+.node_map BUS5$13 222
+.node_map BUS5$14 223
+.node_map BUS5$15 224
 .node_map REF 245
 .node_map kelvin_MUDGservice 247
-.node_map BUS6$10 238
-.node_map BUS6$11 239
-.node_map BUS6$12 240
-.node_map BUS6$13 241
-.node_map BUS4$0 209
+.node_map BUS4$0 206
 .node_map REFERENCEselect$10 192
 .node_map REF3I 275
-.node_map BUS6$14 242
-.node_map BUS4$1 210
+.node_map BUS4$1 207
 .node_map REFERENCEselect$11 193
-.node_map BUS6$15 243
-.node_map BUS4$2 211
+.node_map BUS4$2 208
 .node_map REFERENCEselect$12 194
 .node_map REFERENCEselect$0 182
-.node_map BUS4$3 212
 .node_map REFERENCEselect$13 195
 .node_map REFERENCEselect$1 183
-.node_map BUS4$4 213
 .node_map REFERENCEselect$14 196
 .node_map REFERENCEselect$2 184
-.node_map BUS4$5 214
 .node_map REFERENCEselect$15 197
 .node_map REFERENCEselect$3 185
-.node_map BUS4$6 215
 .node_map REFERENCEselect$4 186
-.node_map BUS4$7 216
 .node_map REFERENCEselect$5 187
-.node_map BUS5$0 225
-.node_map BUS4$8 217
+.node_map BUS5$0 209
 .node_map REFERENCEselect$6 188
-.node_map BUS5$1 226
-.node_map BUS4$9 218
+.node_map BUS5$1 210
 .node_map REFERENCEselect$7 189
-.node_map BUS5$2 227
+.node_map BUS5$2 211
 .node_map REFERENCEselect$8 190
+.node_map BUS5$3 212
 .node_map REFERENCEselect$9 191
 .node_map bypass_filter 253
-.node_map BUS6$0 228
-.node_map BUS6$1 229
-.node_map BUS6$2 230
-.node_map BUS6$3 231
-.node_map BUS6$4 232
-.node_map BUS6$5 233
-.node_map BUS6$6 234
-.node_map BUS6$7 235
-.node_map BUS6$8 236
+.node_map BUS5$4 213
+.node_map BUS5$5 214
+.node_map BUS5$6 215
+.node_map BUS5$7 216
+.node_map BUS6$0 225
+.node_map BUS5$8 217
+.node_map BUS6$1 226
+.node_map BUS5$9 218
+.node_map BUS6$2 227
+.node_map BUS7$0 228
 .node_map enable567 271
-.node_map BUS6$9 237
-.node_map SERVICEconfiguration$2 168
-.node_map SERVICEconfiguration$3 169
-.node_map SERVICEconfiguration$4 170
+.node_map BUS7$1 229
+.node_map BUS7$2 230
+.node_map BUS7$3 231
+.node_map BUS7$4 232
+.node_map BUS7$5 233
 .node_map SERVICEconfiguration$6 172
+.node_map BUS7$6 234
 .node_map SERVICEconfiguration$7 173
+.node_map filter_resistor$0 168
 .node_map dft_clock 265
 .node_map ok_service 261
+.node_map BUS7$7 235
 .node_map SERVICEconfiguration$8 174
+.node_map filter_resistor$1 169
+.node_map BUS7$8 236
 .node_map enable0 198
 .node_map SERVICEconfiguration$9 175
+.node_map filter_resistor$2 170
+.node_map BUS7$9 237
 .node_map enable1 199
 .node_map enable2 200
 .node_map disable_bypass 167
@@ -833,8 +833,8 @@ X$U9 113 pinprobe vars: pinprobe_description='LDO_AMP_control_slow' pinprobe_mod
 .node_map ldo_gain$14 40
 .node_map MUDV 42
 .node_map ldo_gain$15 41
+X$amplifier1 42 49 43 45 48 46 26 27 28 25 amplifier vars: amplifier_gainadjust='control' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='high' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=100 amplifier_controloptions=8 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
 X$datamap1 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 datamap0 vars: datamap_function='code' datamap_name='AMPCONTROLHIGHgain' datamap_description='AMP_CONTROL_High_gain_adjustment' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='1' datamap_code1='2' datamap_code2='3' datamap_code3='4' datamap_code4='5' datamap_code5='6' datamap_code6='7' datamap_code7='8' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
-X$U1 42 49 43 45 48 46 26 27 28 25 amplifier vars: amplifier_gainadjust='control' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='high' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=100 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=5 amplifier_1=0 amplifier_fixedr1=100 amplifier_controlpor=0 amplifier_controlr1=100 amplifier_controloptions=8 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
 X$U2 47 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U24 49 pinprobe vars: pinprobe_description='Kelvin_Ground_input' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U3 42 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
@@ -872,8 +872,8 @@ X$U9 44 45 48 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' swit
 .node_map ldo_gain$14 40
 .node_map MUDV 42
 .node_map ldo_gain$15 41
+X$amplifier1 42 49 43 45 48 46 26 27 28 25 amplifier vars: amplifier_gainadjust='control' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=100 amplifier_controloptions=8 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=1.2 amplifier_controlgain2=1.4 amplifier_controlgain3=1.6 amplifier_controlgain4=1.8 amplifier_controlgain5=2 amplifier_controlgain6=2.2 amplifier_controlgain7=2.4
 X$datamap1 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 datamap0 vars: datamap_function='code' datamap_name='AMPCONTROLSLOWgain' datamap_description='AMP_CONTROL_Slow_gain_adjustment' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='0.8V' datamap_code1='0.96V' datamap_code2='1.12V' datamap_code3='1.28V' datamap_code4='1.44V' datamap_code5='1.60V' datamap_code6='1.76V' datamap_code7='1.92V' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
-X$U1 42 49 43 45 48 46 26 27 28 25 amplifier vars: amplifier_gainadjust='control' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='LDO1gain' amplifier_controldatasheetdescription='LDO1_gain_adjustment' amplifier_controlpolarity='positive' amplifier_ioutmax=100 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=5 amplifier_1=0 amplifier_fixedr1=100 amplifier_controlpor=0 amplifier_controlr1=100 amplifier_controloptions=8 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=1.2 amplifier_controlgain2=1.4 amplifier_controlgain3=1.6 amplifier_controlgain4=1.8 amplifier_controlgain5=2 amplifier_controlgain6=2.2 amplifier_controlgain7=2.4
 X$U2 47 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U24 49 pinprobe vars: pinprobe_description='Kelvin_Ground_input' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U3 42 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
@@ -911,8 +911,8 @@ X$U9 44 45 48 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' swit
 .node_map ldo_gain$14 40
 .node_map MUDV 42
 .node_map ldo_gain$15 41
+X$amplifier1 42 49 43 45 48 46 26 27 28 25 amplifier vars: amplifier_gainadjust='control' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='medium' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=100 amplifier_controloptions=8 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
 X$datamap1 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 datamap0 vars: datamap_function='code' datamap_name='AMPCONTROLMEDIUMgain' datamap_description='AMP_CONTROL_Medium_gain_adjustment' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='1' datamap_code1='2' datamap_code2='3' datamap_code3='4' datamap_code4='5' datamap_code5='6' datamap_code6='7' datamap_code7='8' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
-X$U1 42 49 43 45 48 46 26 27 28 25 amplifier vars: amplifier_gainadjust='control' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='medium' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=100 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=5 amplifier_1=0 amplifier_fixedr1=100 amplifier_controlpor=0 amplifier_controlr1=100 amplifier_controloptions=8 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
 X$U2 47 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U24 49 pinprobe vars: pinprobe_description='Kelvin_Ground_input' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U3 42 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
@@ -937,10 +937,10 @@ X$U9 44 45 48 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' swit
 .node_map kelvin_GNDldo 36
 .node_map ok_ldo 33
 .node_map MUDV 29
+X$amplifier1 29 36 30 32 35 33 26 27 28 25 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=4 amplifier_1=0 amplifier_fixedr1=300 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
 X$U1 31 32 35 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' switch_model='celera' switch_ron=100 switch_pulldownvmax=6 switch_vmax=6
 X$U2 34 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U24 36 pinprobe vars: pinprobe_description='Kelvin_Ground_input' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U25 29 36 30 32 35 33 26 27 28 25 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=100 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=4 amplifier_1=0 amplifier_fixedr1=100 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
 X$U3 29 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U4 31 pinprobe vars: pinprobe_description='REference_input_0p8V' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U5 35 pinprobe vars: pinprobe_description='enable_ldo' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
@@ -962,7 +962,7 @@ X$U8 30 pinprobe vars: pinprobe_description='Reference_output' pinprobe_mode='tb
 .node_map kelvin_GNDldo 36
 .node_map ok_ldo 33
 .node_map MUDV 29
-X$U1 29 36 30 32 35 33 26 27 28 25 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='medium' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=100 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=4 amplifier_1=0 amplifier_fixedr1=100 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier1 29 36 30 32 35 33 26 27 28 25 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='medium' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=4 amplifier_1=0 amplifier_fixedr1=100 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
 X$U2 34 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U24 36 pinprobe vars: pinprobe_description='Kelvin_Ground_input' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U3 29 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
@@ -987,7 +987,7 @@ X$U9 31 32 35 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' swit
 .node_map ok_ldo 33
 .node_map MUDV 29
 .node_map sense_LDO 36
-X$U1 29 36 30 32 35 33 26 27 28 25 amplifier vars: amplifier_gainadjust='openloop' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='high' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='LDO1gain' amplifier_controldatasheetdescription='LDO1_gain_adjustment' amplifier_controlpolarity='positive' amplifier_ioutmax=100 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=5 amplifier_1=0 amplifier_fixedr1=100 amplifier_controlpor=0 amplifier_controlr1=100 amplifier_controloptions=8 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier1 29 36 30 32 35 33 26 27 28 25 amplifier vars: amplifier_gainadjust='openloop' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='high' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
 X$U10 36 pinprobe vars: pinprobe_description='LDO_input_sense' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U2 34 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U3 29 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
@@ -1012,7 +1012,7 @@ X$U9 31 32 35 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' swit
 .node_map ok_ldo 33
 .node_map MUDV 29
 .node_map sense_LDO 36
-X$U1 29 36 30 32 35 33 26 27 28 25 amplifier vars: amplifier_gainadjust='openloop' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='LDO1gain' amplifier_controldatasheetdescription='LDO1_gain_adjustment' amplifier_controlpolarity='positive' amplifier_ioutmax=100 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=5 amplifier_1=0 amplifier_fixedr1=100 amplifier_controlpor=0 amplifier_controlr1=100 amplifier_controloptions=8 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier1 29 36 30 32 35 33 26 27 28 25 amplifier vars: amplifier_gainadjust='openloop' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
 X$U10 36 pinprobe vars: pinprobe_description='LDO_input_sense' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U2 34 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U3 29 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
@@ -1037,7 +1037,7 @@ X$U9 31 32 35 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' swit
 .node_map ok_ldo 33
 .node_map MUDV 29
 .node_map sense_LDO 36
-X$U1 29 36 30 32 35 33 26 27 28 25 amplifier vars: amplifier_gainadjust='openloop' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='medium' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='LDO1gain' amplifier_controldatasheetdescription='LDO1_gain_adjustment' amplifier_controlpolarity='positive' amplifier_ioutmax=100 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=5 amplifier_1=0 amplifier_fixedr1=100 amplifier_controlpor=0 amplifier_controlr1=100 amplifier_controloptions=8 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$amplifier1 29 36 30 32 35 33 26 27 28 25 amplifier vars: amplifier_gainadjust='openloop' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='medium' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
 X$U10 36 pinprobe vars: pinprobe_description='LDO_input_sense' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U2 34 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U3 29 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'

@@ -1,14 +1,4 @@
 // ------------------------ Module Definitions -----------
-module pad_GREENBANK0_30_DFTSCL (GESD,DFTSCL);
-  input  GESD;
-  inout  DFTSCL;
-endmodule
-
-module pad_GREENBANK0_30_DFTSDA (GESD,DFTSDA);
-  input  GESD;
-  inout  DFTSDA;
-endmodule
-
 module pad_GREENBANK0_30_LDO0 (GESD,LDO0,MUDV,celkelvin_MUDV_4be07aeb);
   input  GESD;
   inout  LDO0;
@@ -152,6 +142,16 @@ module pad_GREENBANK0_30_MUDV (GESD,MUDV,CELV96848,kelvin_MUDV,CELPOWER_LDO,CELP
   output  CELPOWER_LDO_fd4a89e4;
 endmodule
 
+module pad_GREENBANK0_30_SCL (SCL,GESD);
+  inout  SCL;
+  input  GESD;
+endmodule
+
+module pad_GREENBANK0_30_SDA (SDA,GESD);
+  inout  SDA;
+  input  GESD;
+endmodule
+
 module celerapaddft_CELINA (GESD,TAEXT,CELINA,CELG59462,CELV96848,ten_taext,CELSUB40948);
   inout  GESD;
   output  TAEXT;
@@ -215,7 +215,9 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module GREENBANK0_30celeraRING (TAO, tdo, tmi, LDO0, LDO1, LDO2, LDO3, LDO4, LDO5, LDO6, LDO7, LDO8, LDO9, MUDG, MUDV, LDO10, LDO11, LDO12, LDO13, LDO14, LDO15, TAEXT, CELINA, CELIND, DFTSCL, DFTSDA, unlock, CELOUTA, CELOUTD, CELG59462, CELV96848, sense_LDO2, sense_LDO5, sense_LDO7, CELSUB40948, kelvin_MUDV, CELPOWER_LDO, SENSE_G_30a24d84, kelvin_MUDGservice, kelvin_MUDGamplifier, CELPOWER_LDO_62423880, CELPOWER_LDO_af77ae17, CELPOWER_LDO_d8ea4418, CELPOWER_LDO_fd4a89e4, celkelvin_LDO8_37713079, celkelvin_LDO9_e7f88029, celkelvin_MUDV_4be07aeb, celkelvin_LDO10_9b1f0b60, celkelvin_LDO11_58ede99a, celkelvin_LDO12_dbb8d281, celkelvin_LDO13_e09c7b4a, celkelvin_LDO14_31b80673, celkelvin_LDO15_92a31bd7, celkelvin_MUDG_31b806732, celkelvin_MUDG_377130793, celkelvin_MUDG_386ec8909, celkelvin_MUDG_58ede99a7, celkelvin_MUDG_92a31bd70, celkelvin_MUDG_9b1f0b601, celkelvin_MUDG_d96f7d7d8, celkelvin_MUDG_dbb8d2814, celkelvin_MUDG_e09c7b4a6, celkelvin_MUDG_e7f880295, celkelvin_MUDG_f3f8826312, celkelvin_MUDG_f5e9f88511, celkelvin_MUDG_fd1c792e10);
+module GREENBANK0_30celeraRING (SCL, SDA, TAO, tdo, tmi, LDO0, LDO1, LDO2, LDO3, LDO4, LDO5, LDO6, LDO7, LDO8, LDO9, MUDG, MUDV, LDO10, LDO11, LDO12, LDO13, LDO14, LDO15, TAEXT, CELINA, CELIND, unlock, ADDRESS, CELOUTA, CELOUTD, CELG59462, CELV96848, sense_LDO2, sense_LDO5, sense_LDO7, CELSUB40948, kelvin_MUDV, CELPOWER_LDO, SENSE_G_30a24d84, KELVINsenseADDRESS, kelvin_MUDGservice, kelvin_MUDGamplifier, CELPOWER_LDO_62423880, CELPOWER_LDO_af77ae17, CELPOWER_LDO_d8ea4418, CELPOWER_LDO_fd4a89e4, celkelvin_LDO8_37713079, celkelvin_LDO9_e7f88029, celkelvin_MUDV_4be07aeb, celkelvin_LDO10_9b1f0b60, celkelvin_LDO11_58ede99a, celkelvin_LDO12_dbb8d281, celkelvin_LDO13_e09c7b4a, celkelvin_LDO14_31b80673, celkelvin_LDO15_92a31bd7, celkelvin_MUDG_31b806732, celkelvin_MUDG_377130793, celkelvin_MUDG_386ec8909, celkelvin_MUDG_58ede99a7, celkelvin_MUDG_92a31bd70, celkelvin_MUDG_9b1f0b601, celkelvin_MUDG_d96f7d7d8, celkelvin_MUDG_dbb8d2814, celkelvin_MUDG_e09c7b4a6, celkelvin_MUDG_e7f880295, celkelvin_MUDG_f3f8826312, celkelvin_MUDG_f5e9f88511, celkelvin_MUDG_fd1c792e10);
+input  SCL;
+inout  SDA;
 inout  TAO;
 inout  tdo;
 inout [5:0] tmi;
@@ -240,9 +242,8 @@ inout  LDO15;
 output  TAEXT;
 input  CELINA;
 input  CELIND;
-input  DFTSCL;
-inout  DFTSDA;
 input  unlock;
+inout  ADDRESS;
 output  CELOUTA;
 output  CELOUTD;
 output  CELG59462;
@@ -254,6 +255,7 @@ output  CELSUB40948;
 inout  kelvin_MUDV;
 inout  CELPOWER_LDO;
 output  SENSE_G_30a24d84;
+inout  KELVINsenseADDRESS;
 inout  kelvin_MUDGservice;
 inout  kelvin_MUDGamplifier;
 output  CELPOWER_LDO_62423880;
@@ -291,16 +293,6 @@ wire [7:0] chipidlsb;
 wire [7:0] chipidmsb;
 
 // ------------------------ Networks ---------------------
-pad_GREENBANK0_30_DFTSCL XDFTSCL (
-.GESD(GESD),
-.DFTSCL(DFTSCL)
-);
-
-pad_GREENBANK0_30_DFTSDA XDFTSDA (
-.GESD(GESD),
-.DFTSDA(DFTSDA)
-);
-
 pad_GREENBANK0_30_LDO0 XLDO0 (
 .GESD(GESD),
 .LDO0(LDO0),
@@ -442,6 +434,16 @@ pad_GREENBANK0_30_MUDV XMUDV (
 .CELPOWER_LDO_af77ae17(CELPOWER_LDO_af77ae17),
 .CELPOWER_LDO_d8ea4418(CELPOWER_LDO_d8ea4418),
 .CELPOWER_LDO_fd4a89e4(CELPOWER_LDO_fd4a89e4)
+);
+
+pad_GREENBANK0_30_SCL XSCL (
+.SCL(SCL),
+.GESD(GESD)
+);
+
+pad_GREENBANK0_30_SDA XSDA (
+.SDA(SDA),
+.GESD(GESD)
 );
 
 celerapaddft_CELINA XCELINA (

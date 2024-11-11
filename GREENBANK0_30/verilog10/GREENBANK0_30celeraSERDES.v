@@ -53,12 +53,33 @@ i2caddr, i2cpasswd, celkelvin_CELV, pd, scl_serdes, sda_serdes );
 endmodule
 
 
+//Verilog HDL for "DFT", "SERDESinputSINGLEregister" "functional"
+
+
+module SERDESinputSINGLEregister ( scl_register, sda_register, CELG, CELSUB,
+CELVIN, SCL, SDA, porb, sdao );
+
+  input porb;
+  input CELSUB;
+  output sda_register;
+  input sdao;
+  output scl_register;
+  input CELVIN;
+  input SDA;
+  input SCL;
+  input CELG;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module GREENBANK0_30celeraSERDES (tdo, tmi, DFTSCL, DFTSDA, unlock, CELG59462, CELV96848, PORB97836, CELSUB40948, celkelvin_MUDV_4be07aeb);
+module GREENBANK0_30celeraSERDES (SCL, SDA, pd0, tdo, tmi, scli, sdai, unlock, CELG59462, CELV96848, PORB97836, CELSUB40948, celkelvin_MUDV_4be07aeb);
+inout  SCL;
+inout  SDA;
+input  pd0;
 inout  tdo;
 inout [5:0] tmi;
-inout  DFTSCL;
-inout  DFTSDA;
+output  scli;
+inout  sdai;
 output  unlock;
 input  CELG59462;
 input  CELV96848;
@@ -99,7 +120,7 @@ SERDESdftYesYes XSERDESdftYesYes (
 );
 
 SERDEScontrolDFT XSERDEScontrolDFT (
-.pd({a0,a0,a0,a0,a0,a0,a0,a0}),
+.pd({a0,a0,a0,a0,a0,a0,a0,pd0}),
 .tmi(tmi[5:0]),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -113,6 +134,18 @@ SERDEScontrolDFT XSERDEScontrolDFT (
 .sda_serdes(sda_serdes),
 .celkelvin_CELV(celkelvin_MUDV_4be07aeb),
 .enable_hardware(enable_hardware)
+);
+
+SERDESinputSINGLEregister XSERDESinputSINGLEregister (
+.SCL(SCL),
+.SDA(SDA),
+.CELG(CELG59462),
+.porb(PORB97836),
+.sdao(sdao),
+.CELSUB(CELSUB40948),
+.CELVIN(CELV96848),
+.scl_register(scl_register),
+.sda_register(sda_register)
 );
 
 endmodule
