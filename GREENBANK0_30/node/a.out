@@ -1,0 +1,86 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x55cd75b6bf60 .scope module, "CELERAservice" "CELERAservice" 2 64;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "celkelvin_GNDservice";
+    .port_info 1 /INPUT 1 "enable_ibias";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /OUTPUT 11 "IPO";
+    .port_info 4 /OUTPUT 1 "ok_ibias";
+    .port_info 5 /INPUT 1 "CELG";
+    .port_info 6 /INPUT 1 "CELSUB";
+o0x7eff7955f018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55cd75bb7610_0 .net "CELG", 0 0, o0x7eff7955f018;  0 drivers
+o0x7eff7955f048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55cd75bb76d0_0 .net "CELSUB", 0 0, o0x7eff7955f048;  0 drivers
+o0x7eff7955f078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55cd75bb77e0_0 .net "CELV", 0 0, o0x7eff7955f078;  0 drivers
+o0x7eff7955f198 .functor BUFZ 11, C4<zzzzzzzzzzz>; HiZ drive
+v0x55cd75bb78d0_0 .net "IPO", 10 0, o0x7eff7955f198;  0 drivers
+o0x7eff7955f1c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55cd75bb7970_0 .net "celkelvin_GNDservice", 0 0, o0x7eff7955f1c8;  0 drivers
+o0x7eff7955f1f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55cd75bb7a60_0 .net "enable_ibias", 0 0, o0x7eff7955f1f8;  0 drivers
+o0x7eff7955f228 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55cd75bb7b00_0 .net "ok_ibias", 0 0, o0x7eff7955f228;  0 drivers
+o0x7eff7955f0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55cd75bb7bd0_0 .net "tielow", 0 0, o0x7eff7955f0a8;  0 drivers
+S_0x55cd75ba2af0 .scope module, "XPEBBLEtieloCELV" "PEBBLEtielo" 2 93, 2 31 0, S_0x55cd75b6bf60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "q";
+    .port_info 1 /INPUT 1 "G";
+    .port_info 2 /INPUT 1 "SUB";
+    .port_info 3 /INPUT 1 "V";
+v0x55cd75b6b4b0_0 .net "G", 0 0, o0x7eff7955f018;  alias, 0 drivers
+v0x55cd75b6c0f0_0 .net "SUB", 0 0, o0x7eff7955f048;  alias, 0 drivers
+v0x55cd75b6bec0_0 .net "V", 0 0, o0x7eff7955f078;  alias, 0 drivers
+v0x55cd75bb6a50_0 .net "q", 0 0, o0x7eff7955f0a8;  alias, 0 drivers
+S_0x55cd75bb6bc0 .scope module, "Xibias" "ibias_CELERAservice_Xibias" 2 81, 2 14 0, S_0x55cd75b6bf60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "CELV";
+    .port_info 1 /INPUT 1 "enable_ibias";
+    .port_info 2 /INPUT 1 "global_celeraibias";
+    .port_info 3 /INPUT 1 "SENSE_G";
+    .port_info 4 /OUTPUT 1 "ok_ibias";
+    .port_info 5 /OUTPUT 11 "IPO";
+    .port_info 6 /INPUT 1 "CELG";
+    .port_info 7 /INPUT 1 "CELSUB";
+v0x55cd75bb6ee0_0 .net "CELG", 0 0, o0x7eff7955f018;  alias, 0 drivers
+v0x55cd75bb6f80_0 .net "CELSUB", 0 0, o0x7eff7955f048;  alias, 0 drivers
+v0x55cd75bb7050_0 .net "CELV", 0 0, o0x7eff7955f078;  alias, 0 drivers
+v0x55cd75bb7150_0 .net "IPO", 10 0, o0x7eff7955f198;  alias, 0 drivers
+v0x55cd75bb71f0_0 .net "SENSE_G", 0 0, o0x7eff7955f1c8;  alias, 0 drivers
+v0x55cd75bb72e0_0 .net "enable_ibias", 0 0, o0x7eff7955f1f8;  alias, 0 drivers
+v0x55cd75bb7380_0 .net "global_celeraibias", 0 0, o0x7eff7955f0a8;  alias, 0 drivers
+v0x55cd75bb7420_0 .net "ok_ibias", 0 0, o0x7eff7955f228;  alias, 0 drivers
+S_0x55cd75ba39f0 .scope module, "PEBBLEtiehi" "PEBBLEtiehi" 2 43;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "q";
+    .port_info 1 /INPUT 1 "G";
+    .port_info 2 /INPUT 1 "SUB";
+    .port_info 3 /INPUT 1 "V";
+o0x7eff7955f528 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55cd75bb7d00_0 .net "G", 0 0, o0x7eff7955f528;  0 drivers
+o0x7eff7955f558 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55cd75bb7de0_0 .net "SUB", 0 0, o0x7eff7955f558;  0 drivers
+o0x7eff7955f588 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55cd75bb7ea0_0 .net "V", 0 0, o0x7eff7955f588;  0 drivers
+o0x7eff7955f5b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55cd75bb7f40_0 .net "q", 0 0, o0x7eff7955f5b8;  0 drivers
+S_0x55cd75ba3bf0 .scope module, "STONEnoconn" "STONEnoconn" 2 55;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+o0x7eff7955f6a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55cd75bb80b0_0 .net "noconn", 0 0, o0x7eff7955f6a8;  0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/celera/projects/Sunnyvale/software/GREENBANK0_30/verilog9/CELERAservice.v";
