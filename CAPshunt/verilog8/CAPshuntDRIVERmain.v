@@ -1,7 +1,9 @@
 // ------------------------ Module Definitions -----------
-module VESPAclampGATE (N,P,CELSUB40948);
+module VESPAclampGATE (N,P,S1,S2,CELSUB40948);
   inout  N;
   inout  P;
+  input  S1;
+  input  S2;
   input  CELSUB40948;
 endmodule
 
@@ -23,7 +25,7 @@ module VESPAasmINPUT1 (o,i0,Tstate,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module fet_720958c2 (GATE,SOURCE,DRAIN,NMOSiso24,SUB);
+module fet_720958c2 (SUB,GATE,DRAIN,SOURCE,NMOSiso24);
   input  SUB;
   input  GATE;
   inout  DRAIN;
@@ -31,7 +33,7 @@ module fet_720958c2 (GATE,SOURCE,DRAIN,NMOSiso24,SUB);
   input  NMOSiso24;
 endmodule
 
-module currentgenerator_42bd1eaf (SIMPV,CELSUB,enable_currentgenerator,global_currentgenerator,IP,ok_currentgenerator,I0,HVPOS,CELG);
+module currentgenerator_42bd1eaf (I0,IP,CELG,HVPOS,SIMPV,CELSUB,ok_currentgenerator,enable_currentgenerator,global_currentgenerator);
   inout  I0;
   input  IP;
   input  CELG;
@@ -43,7 +45,7 @@ module currentgenerator_42bd1eaf (SIMPV,CELSUB,enable_currentgenerator,global_cu
   input  global_currentgenerator;
 endmodule
 
-module fet_73cc8265 (GATE,SOURCE,DRAIN,NMOSiso20,SUB);
+module fet_73cc8265 (SUB,GATE,DRAIN,SOURCE,NMOSiso20);
   input  SUB;
   input  GATE;
   inout  DRAIN;
@@ -51,7 +53,7 @@ module fet_73cc8265 (GATE,SOURCE,DRAIN,NMOSiso20,SUB);
   input  NMOSiso20;
 endmodule
 
-module fet_a449c519 (GATE,SOURCE,DRAIN,NMOSiso12,SUB);
+module fet_a449c519 (SUB,GATE,DRAIN,SOURCE,NMOSiso12);
   input  SUB;
   input  GATE;
   inout  DRAIN;
@@ -59,7 +61,7 @@ module fet_a449c519 (GATE,SOURCE,DRAIN,NMOSiso12,SUB);
   input  NMOSiso12;
 endmodule
 
-module fet_2e311eb4 (GATE,SOURCE,DRAIN,NMOSiso6,SUB);
+module fet_2e311eb4 (SUB,GATE,DRAIN,SOURCE,NMOSiso6);
   input  SUB;
   input  GATE;
   inout  DRAIN;
@@ -67,7 +69,7 @@ module fet_2e311eb4 (GATE,SOURCE,DRAIN,NMOSiso6,SUB);
   input  NMOSiso6;
 endmodule
 
-module decoder2_779c1eb3 (CELV,i,o,enable_decoder,CELG,SUB);
+module decoder2_779c1eb3 (i,o,SUB,CELG,CELV,enable_decoder);
   input [1:0] i;
   output [3:0] o;
   input  SUB;
@@ -76,7 +78,7 @@ module decoder2_779c1eb3 (CELV,i,o,enable_decoder,CELG,SUB);
   input  enable_decoder;
 endmodule
 
-module resistorarray_f7db3316 (RP1,RP2,RN2,RP3,RN3,RP4,RN4,RP5,RN5,CELG,RN1);
+module resistorarray_f7db3316 (RN1,RN2,RN3,RN4,RN5,RP1,RP2,RP3,RP4,RP5,CELG);
   inout  RN1;
   inout  RN2;
   inout  RN3;
@@ -90,7 +92,7 @@ module resistorarray_f7db3316 (RP1,RP2,RN2,RP3,RN3,RP4,RN4,RP5,RN5,CELG,RN1);
   input  CELG;
 endmodule
 
-module nor4_ff041824 (CELV,CELG,i0,i1,i2,i3,o,SUB);
+module nor4_ff041824 (o,i0,i1,i2,i3,SUB,CELG,CELV);
   output  o;
   input  i0;
   input  i1;
@@ -101,7 +103,7 @@ module nor4_ff041824 (CELV,CELG,i0,i1,i2,i3,o,SUB);
   input  CELV;
 endmodule
 
-module delayclock_737c0be5 (in,CELV,out,clock,celeraporb,CELG,CELSUB);
+module delayclock_737c0be5 (in,out,CELG,CELV,clock,CELSUB,celeraporb);
   input  in;
   output  out;
   input  CELG;
@@ -111,7 +113,7 @@ module delayclock_737c0be5 (in,CELV,out,clock,celeraporb,CELG,CELSUB);
   input  celeraporb;
 endmodule
 
-module inv_12e192f5 (CELV,CELG,i,o,SUB);
+module inv_12e192f5 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
   input  SUB;
@@ -119,7 +121,7 @@ module inv_12e192f5 (CELV,CELG,i,o,SUB);
   input  CELV;
 endmodule
 
-module dbuf_e926e395 (CELV,CELG,i,o,SUB);
+module dbuf_e926e395 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
   input  SUB;
@@ -127,21 +129,36 @@ module dbuf_e926e395 (CELV,CELG,i,o,SUB);
   input  CELV;
 endmodule
 
-//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+//Verilog HDL for "DFT", "DFTtm8t" "functional"
 
 
-module PEBBLEtielo ( q, G, SUB, V );
+module DFTtm8t ( a, ten, tmi, G, SUB, V, tma );
 
   input V;
-  output q;
+  input  [7:0] tma;
+  output  [7:0] ten;
+  output  [1:0] a;
   input G;
   input SUB;
+  inout  [4:0] tmi;
+endmodule
+
+
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
 endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CAPshuntDRIVERmain (IN, CAP1, CAP2, CAP3, CAP4, SIMPV, CAPRTN, CELG59462, CELV96848, PORB97836, dft_gate1, CELSUB40948, clock_shunt, dft_startup, enable_shunt, shunt_active, IP_7854e25e_XU7, IP_254d312a_XU12, IP_82a8351a_XU11, IP_ecd399a0_XU13, maximum_channel_0, maximum_channel_1);
+module CAPshuntDRIVERmain (IN, S1, S2, tmi, CAP1, CAP2, CAP3, CAP4, SIMPV, CAPRTN, CELG59462, CELV96848, PORB97836, dft_gate1, CELSUB40948, clock_shunt, dft_startup, active_shunt, enable_shunt, IP_826311ba_XU7, IP_4e5fc1c8_XU11, IP_a3780e2e_XU13, IP_be96aef7_XU12, maximum_channel_0, maximum_channel_1);
 input  IN;
+input  S1;
+input  S2;
+input [4:0] tmi;
 inout  CAP1;
 inout  CAP2;
 inout  CAP3;
@@ -155,42 +172,54 @@ inout  dft_gate1;
 input  CELSUB40948;
 input  clock_shunt;
 output  dft_startup;
+output  active_shunt;
 input  enable_shunt;
-output  shunt_active;
-input  IP_7854e25e_XU7;
-input  IP_254d312a_XU12;
-input  IP_82a8351a_XU11;
-input  IP_ecd399a0_XU13;
+input  IP_826311ba_XU7;
+input  IP_4e5fc1c8_XU11;
+input  IP_a3780e2e_XU13;
+input  IP_be96aef7_XU12;
 input  maximum_channel_0;
 input  maximum_channel_1;
 
 
 // ------------------------ Wires ------------------------
+wire [4:0] tmi;
 wire [1:0] i;
 wire [3:0] o;
+wire [1:0] a;
+wire [7:0] ten;
+wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
 VESPAclampGATE XCLAMP1 (
 .N(CAP2),
 .P(net_176),
+.S1(S1),
+.S2(S2),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAclampGATE XCLAMP2 (
 .N(CAP1),
 .P(net_178),
+.S1(S1),
+.S2(S2),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAclampGATE XCLAMP3 (
 .N(CAPRTN),
 .P(net_179),
+.S1(S1),
+.S2(S2),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAclampGATE XCLAMP4 (
 .N(CAP3),
 .P(net_168),
+.S1(S1),
+.S2(S2),
 .CELSUB40948(CELSUB40948)
 );
 
@@ -226,19 +255,19 @@ fet_720958c2 XU3 (
 .GATE(net_168),
 .DRAIN(CAP4),
 .SOURCE(CAP3),
-.NMOSiso24(CAP4)
+.NMOSiso24(CAP3)
 );
 
 currentgenerator_42bd1eaf XU7 (
 .I0(net_168),
-.IP(IP_7854e25e_XU7),
+.IP(IP_826311ba_XU7),
 .CELG(CELG59462),
 .HVPOS(IN),
 .SIMPV(SIMPV),
 .CELSUB(CELSUB40948),
 .ok_currentgenerator(net_173),
 .enable_currentgenerator(net_153),
-.global_currentgenerator(tl0)
+.global_currentgenerator(global_currentgenerator_826311ba_XU7)
 );
 
 fet_73cc8265 XU8 (
@@ -246,7 +275,7 @@ fet_73cc8265 XU8 (
 .GATE(net_176),
 .DRAIN(CAP3),
 .SOURCE(CAP2),
-.NMOSiso20(CAP3)
+.NMOSiso20(CAP2)
 );
 
 fet_a449c519 XU9 (
@@ -254,7 +283,7 @@ fet_a449c519 XU9 (
 .GATE(net_178),
 .DRAIN(CAP2),
 .SOURCE(CAP1),
-.NMOSiso12(CAP2)
+.NMOSiso12(CAP1)
 );
 
 fet_2e311eb4 XU10 (
@@ -262,43 +291,43 @@ fet_2e311eb4 XU10 (
 .GATE(net_179),
 .DRAIN(CAP1),
 .SOURCE(CAPRTN),
-.NMOSiso6(CAP1)
+.NMOSiso6(CAPRTN)
 );
 
 currentgenerator_42bd1eaf XU11 (
 .I0(net_176),
-.IP(IP_82a8351a_XU11),
+.IP(IP_4e5fc1c8_XU11),
 .CELG(CELG59462),
 .HVPOS(IN),
 .SIMPV(SIMPV),
 .CELSUB(CELSUB40948),
 .ok_currentgenerator(net_172),
 .enable_currentgenerator(net_152),
-.global_currentgenerator(tl0)
+.global_currentgenerator(global_currentgenerator_4e5fc1c8_XU11)
 );
 
 currentgenerator_42bd1eaf XU12 (
 .I0(net_178),
-.IP(IP_254d312a_XU12),
+.IP(IP_be96aef7_XU12),
 .CELG(CELG59462),
 .HVPOS(IN),
 .SIMPV(SIMPV),
 .CELSUB(CELSUB40948),
 .ok_currentgenerator(net_170),
 .enable_currentgenerator(net_151),
-.global_currentgenerator(tl0)
+.global_currentgenerator(global_currentgenerator_be96aef7_XU12)
 );
 
 currentgenerator_42bd1eaf XU13 (
 .I0(net_179),
-.IP(IP_ecd399a0_XU13),
+.IP(IP_a3780e2e_XU13),
 .CELG(CELG59462),
 .HVPOS(IN),
 .SIMPV(SIMPV),
 .CELSUB(CELSUB40948),
 .ok_currentgenerator(net_169),
 .enable_currentgenerator(net_150),
-.global_currentgenerator(tl0)
+.global_currentgenerator(global_currentgenerator_a3780e2e_XU13)
 );
 
 decoder2_779c1eb3 XU16 (
@@ -355,17 +384,36 @@ inv_12e192f5 XU22 (
 
 dbuf_e926e395 XU24 (
 .i(net_177),
-.o(shunt_active),
+.o(active_shunt),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
-PEBBLEtielo XtieLo (
+DFTtm8t dft_hex0x03 (
 .G(CELG59462),
 .V(CELV96848),
-.q(tl0),
-.SUB(CELSUB40948)
+.a({a1,a0}),
+.SUB(CELSUB40948),
+.ten({noconn_dft_hex0x03_ten_7,noconn_dft_hex0x03_ten_6,noconn_dft_hex0x03_ten_5,noconn_dft_hex0x03_ten_4,global_currentgenerator_826311ba_XU7,global_currentgenerator_a3780e2e_XU13,global_currentgenerator_be96aef7_XU12,global_currentgenerator_4e5fc1c8_XU11}),
+.tma({a0,a0,a0,a0,a0,a0,a1,a1}),
+.tmi(tmi[4:0])
+);
+
+STONEnoconn XNCnoconn_dft_hex0x03_ten_4 (
+.noconn(noconn_dft_hex0x03_ten_4)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x03_ten_5 (
+.noconn(noconn_dft_hex0x03_ten_5)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x03_ten_6 (
+.noconn(noconn_dft_hex0x03_ten_6)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x03_ten_7 (
+.noconn(noconn_dft_hex0x03_ten_7)
 );
 
 endmodule

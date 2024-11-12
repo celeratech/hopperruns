@@ -1,120 +1,95 @@
-* Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301\overlay\overlay_CAPshunt.sxsch
+* Z:\celera\projects\Simplis\playjoseph\PUGET0\300d\verification\sim_CAPshunt.sxsch
 *#SIMETRIX
 X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
 
-.node_map SIMPV 25
-.node_map CAPRTN 30
-.node_map enable_shunt 31
-.node_map maximum_channel$0 23
-.node_map maximum_channel$1 22
-.node_map clock 32
-.node_map CAP1 29
-.node_map CAP2 28
-.node_map CAP3 27
-.node_map CAP4 26
+.node_map SIMPV 26
+.node_map clock_shunt 33
+.node_map CAPRTN 32
+.node_map active_shunt 25
+.node_map enable_shunt 28
+.node_map maximum_channel$0 22
+.node_map maximum_channel$1 23
+.node_map CAP1 30
+.node_map CAP2 31
+.node_map CAP3 29
+.node_map CAP4 27
+.node_map GND 34
 .node_map IN 24
-.node_map done_captest 33
 .options
-+ PSP_NPT=50001
++ PSP_NPT=10001
 + POP_ITRMAX=20
 + POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
 + SNAPSHOT_INTVL=0
 + SNAPSHOT_NPT=11
 + MIN_AVG_TOPOLOGY_DUR=1a
 + AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
-.tran 1m 0
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 300u 0
+.globalvar REF=1.0
+.globalvar VIN=5
+.globalvar tdext_khz=1000
 
-.globalvar TEMP=25
-.globalvar tdext_khz=10
+X$CAPshunt 24 25 26 27 29 31 30 32 33 28 22 23 CAPshunt
 
-.globalvar IN = 12
-.globalvar VIN = 5.0
-.globalvar REF = 1.2
-.globalvar VCC2P5=2.4
-
-.globalvar CAP1=2.0
-.globalvar CAP2=2.0
-.globalvar CAP3=2.0
-.globalvar CAP4=2.0
-
-.PRINT V(#IN)
-.GRAPH :#IN curveLabel= IN nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe1  
-.GRAPH "ComposeDigital('#maximum_channel', [0, 1],  '' , '%BUSNAME%$%WIRENUM%', [0.8, 0.9])*1.0+0" complete=true  axistype=digital   bus=bin curveLabel="maximum_channel" disabled=false 
-.PRINT ^maximum_channel$*
-.PRINT V(#done_captest)
-.GRAPH :#done_captest curveLabel= done_captest nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe14  
-.PRINT V(#SIMPV)
-.GRAPH :#SIMPV curveLabel= SIMPV nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe2  
-.PRINT V(#CAP4)
-.GRAPH :#CAP4 curveLabel= CAP4 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe3  
-.PRINT V(#CAP3)
-.GRAPH :#CAP3 curveLabel= CAP3 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe4  
-.PRINT V(#CAP2)
-.GRAPH :#CAP2 curveLabel= CAP2 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe5  
-.PRINT V(#CAP1)
-.GRAPH :#CAP1 curveLabel= CAP1 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe6  
-.PRINT V(#CAPRTN)
-.GRAPH :#CAPRTN curveLabel= cAPRTN nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe7  
-.PRINT V(#enable_shunt)
-.GRAPH :#enable_shunt curveLabel= enable_shunt nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe8  
-.PRINT V(#clock)
-.GRAPH :#clock curveLabel= clock nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe9  
-X$SHUNT 24 33 25 26 27 28 29 30 32 31 23 22 CAPshunt
 X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
 ** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301\design\CAPshunt.sxcmp
-.subckt CAPshunt 42 43 44 45 46 47 48 49 50 51 40 41
+.subckt CAPshunt 43 44 45 46 47 48 49 50 51 52 41 42
 *#hierarchy
-.node_map SIMPV 44
-.node_map dft_gate1 53
-.node_map clock_shunt 50
-.node_map CAPRTN 49
-.node_map enable_shunt 51
-.node_map maximum_channel$0 40
-.node_map maximum_channel$1 41
-.node_map shunt_active 43
-.node_map dft_startup 52
-.node_map hijack_enable_shunt 54
-.node_map hijack_maximum_channel$0 38
-.node_map CAP1 48
-.node_map hijack_maximum_channel$1 39
-.node_map CAP2 47
-.node_map CAP3 46
-.node_map CAP4 45
-.node_map IN 42
-X$DEBUG 51 54 40 41 38 39 52 53 CAPshuntDRIVERdebug
-X$MAIN 42 43 44 52 45 53 46 47 48 49 54 38 39 50 CAPshuntDRIVERmain
-X$U1 46 pinprobe vars: pinprobe_description='CAP3_shunt_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
-X$U10 43 pinprobe vars: pinprobe_description='SHUNT_is_enabled' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U14 49 pinprobe vars: pinprobe_description='SHUNT_capacitor_ground_return' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
-X$U2 47 pinprobe vars: pinprobe_description='CAP2_shunt_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
-X$U37 42 pinprobe vars: pinprobe_description='CAP4_shunt_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
-X$U38 44 pinprobe vars: pinprobe_description='CAP4_shunt_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
-X$U4 51 pinprobe vars: pinprobe_description='Enable_shunt_brick' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U5 45 pinprobe vars: pinprobe_description='CAP4_shunt_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
-X$U6 48 pinprobe vars: pinprobe_description='CAP1_shunt_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='pad'
-X$U9 50 pinprobe vars: pinprobe_description='Master_clock' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+.node_map SIMPV 45
+.node_map dft_gate1 54
+.node_map clock_shunt 51
+.node_map CAPRTN 50
+.node_map active_shunt 44
+.node_map enable_shunt 52
+.node_map maximum_channel$0 41
+.node_map maximum_channel$1 42
+.node_map dft_startup 53
+.node_map hijack_enable_shunt 55
+.node_map hijack_maximum_channel$0 39
+.node_map CAP1 49
+.node_map hijack_maximum_channel$1 40
+.node_map CAP2 48
+.node_map CAP3 47
+.node_map CAP4 46
+.node_map IN 43
+X$DEBUG 52 55 41 42 39 40 53 54 44 CAPshuntDRIVERdebug
+X$MAIN 43 44 45 53 46 54 47 48 49 50 55 39 40 51 CAPshuntDRIVERmain
+X$U1 47 pinprobe vars: pinprobe_description='CAP3_shunt_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U14 50 pinprobe vars: pinprobe_description='SHUNT_capacitor_ground_return' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U2 48 pinprobe vars: pinprobe_description='CAP2_shunt_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U3 44 pinprobe vars: pinprobe_description='SHUNT_is_enabled_and_active' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U37 43 pinprobe vars: pinprobe_description='CAP4_shunt_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U38 45 pinprobe vars: pinprobe_description='CAP4_shunt_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U4 52 pinprobe vars: pinprobe_description='Enable_shunt_brick' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 46 pinprobe vars: pinprobe_description='CAP4_shunt_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U6 49 pinprobe vars: pinprobe_description='CAP1_shunt_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='pad'
+X$U9 51 pinprobe vars: pinprobe_description='Master_clock' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
 .ends CAPshunt
 
 ** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301\design\CAPshuntDRIVERdebug.sxcmp
-.subckt CAPshuntDRIVERdebug 25 26 29 31 30 32 27 28
+.subckt CAPshuntDRIVERdebug 28 29 33 35 34 36 31 32 30
 *#hierarchy
-.node_map dft_gate1 28
-.node_map enable_shunt 25
-.node_map maximum_channel$0 29
-.node_map maximum_channel$1 31
-.node_map dft_startup 27
-.node_map hijack_enable_shunt 26
-.node_map hijack_maximum_channel$0 30
-.node_map hijack_maximum_channel$1 32
-X$U1 25 26 dfthijack vars: dfthijack_name='CAPshuntENABLE' dfthijack_description='Hijack_SHUNT_enable_inpiut' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
-X$U2 26 pinprobe vars: pinprobe_description='Hijack_enable_shunt_brick' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U3 29 32 dfthijack vars: dfthijack_name='CAPshuntSELECT0' dfthijack_description='Hijack_SHUNT_control_input0' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
-X$U4 25 pinprobe vars: pinprobe_description='Enable_shunt_brick' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U5 31 30 dfthijack vars: dfthijack_name='CAPshuntSELECT1' dfthijack_description='Hijack_SHUNT_control_input1' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
-X$U6 27 pinprobe vars: pinprobe_description='Measure_SHUNT_startup_time' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U7 28 pinprobe vars: pinprobe_description='Measure_SHUNT_gate1' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
-X$UCAPshuntGATE1 28 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CAPshuntGATE1' dftprobe_description='Measure_CAPshunt_gate1' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$UCAPshuntSTARTUP 27 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CAPshuntSTARTUP' dftprobe_description='Measure_CAPshunt_startup_time' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+.node_map dft_gate1 32
+.node_map active_shunt 30
+.node_map enable_shunt 28
+.node_map maximum_channel$0 33
+.node_map maximum_channel$1 35
+.node_map dft_startup 31
+.node_map hijack_enable_shunt 29
+.node_map hijack_maximum_channel$0 34
+.node_map hijack_maximum_channel$1 36
+X$U1 28 29 dfthijack vars: dfthijack_name='CAPshuntENABLE' dfthijack_description='Hijack_SHUNT_enable_inpiut' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$U2 29 pinprobe vars: pinprobe_description='Hijack_enable_shunt_brick' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 33 34 dfthijack vars: dfthijack_name='CAPshuntSELECT0' dfthijack_description='Hijack_SHUNT_control_input0' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$U4 28 pinprobe vars: pinprobe_description='Enable_shunt_brick' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 35 36 dfthijack vars: dfthijack_name='CAPshuntSELECT1' dfthijack_description='Hijack_SHUNT_control_input1' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$U6 31 pinprobe vars: pinprobe_description='Measure_SHUNT_startup_time' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U7 32 pinprobe vars: pinprobe_description='Measure_SHUNT_gate1' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U8 30 pinprobe vars: pinprobe_description='SHUNT_is_enabled_and_active' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$UCAPshuntACTIVE 30 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CAPshuntACTIVE' dftprobe_description='Measure_CAPshunt_active_flag' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UCAPshuntGATE1 32 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CAPshuntGATE1' dftprobe_description='Measure_CAPshunt_gate1' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UCAPshuntSTARTUP 31 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CAPshuntSTARTUP' dftprobe_description='Measure_CAPshunt_startup_time' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
 .ends CAPshuntDRIVERdebug
 
 ** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301\design\CAPshuntDRIVERmain.sxcmp
@@ -126,11 +101,11 @@ X$UCAPshuntSTARTUP 27 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='
 .node_map CAPRTN 165
 .node_map BUS2$0 154
 .node_map BUS2$1 155
+.node_map active_shunt 157
 .node_map enable_shunt 167
 .node_map maximum_channel$0 148
 .node_map maximum_channel$1 149
 .node_map clock 174
-.node_map shunt_active 157
 .node_map dft_startup 160
 .node_map status_gt1 169
 .node_map gt1 179
@@ -162,7 +137,7 @@ X$U11 176 111 112 113 114 115 116 117 158 152 172 156 currentgenerator vars: cur
 X$U12 178 122 123 124 125 126 127 128 158 151 170 156 currentgenerator vars: currentgenerator_polarity0='source' currentgenerator_polarity1='sink' currentgenerator_polarity2='sink' currentgenerator_polarity3='sink' currentgenerator_polarity4='sink' currentgenerator_polarity5='sink' currentgenerator_polarity6='sink' currentgenerator_polarity7='sink' currentgenerator_accuracy='no' currentgenerator_datasheet_accuracy_name='text' currentgenerator_datasheet_accuracy_description='text' currentgenerator_tempco='positive' currentgenerator_dft='no' currentgenerator_output0=20 currentgenerator_output1=1 currentgenerator_output2=1 currentgenerator_output3=1 currentgenerator_output4=1 currentgenerator_output5=1 currentgenerator_output6=1 currentgenerator_output7=1 currentgenerator_number=1 currentgenerator_tempco_gain=3 currentgenerator_vmax=6 currentgenerator_vout=24
 X$U13 179 129 130 131 132 133 134 135 158 150 169 156 currentgenerator vars: currentgenerator_polarity0='source' currentgenerator_polarity1='sink' currentgenerator_polarity2='sink' currentgenerator_polarity3='sink' currentgenerator_polarity4='sink' currentgenerator_polarity5='sink' currentgenerator_polarity6='sink' currentgenerator_polarity7='sink' currentgenerator_accuracy='no' currentgenerator_datasheet_accuracy_name='text' currentgenerator_datasheet_accuracy_description='text' currentgenerator_tempco='positive' currentgenerator_dft='no' currentgenerator_output0=20 currentgenerator_output1=1 currentgenerator_output2=1 currentgenerator_output3=1 currentgenerator_output4=1 currentgenerator_output5=1 currentgenerator_output6=1 currentgenerator_output7=1 currentgenerator_number=1 currentgenerator_tempco_gain=3 currentgenerator_vmax=6 currentgenerator_vout=24
 X$U14 165 pinprobe vars: pinprobe_description='SHUNT_capacitor_ground_return' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
-X$U15 157 pinprobe vars: pinprobe_description='SHUNT_enabled-and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U15 157 pinprobe vars: pinprobe_description='SHUNT_enabled-and_active' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U16 150 151 152 153 148 149 167 decoder2 vars: decoder_type='pin' decoder_datasheet_name='text' decoder_datasheet_description='text' decoder_type_por='0' decoder_enable_pin='pin' decoder_timing='no' decoder_bits=2 decoder_enable_por=0 decoder_vmax=6
 X$U17 168 176 178 179 179 139 141 143 161 163 164 165 162 140 142 144 resistorarray vars: resistor_array_type='poly' resistor_array_dummy='no' resistor_array_value=30 resistor_array_number=5 resistor_array_r1_series=5 resistor_array_r1_parallel=0 resistor_array_r2_series=5 resistor_array_r2_parallel=0 resistor_array_r3_series=5 resistor_array_r3_parallel=0 resistor_array_r4_series=5 resistor_array_r4_parallel=0 resistor_array_r5_series=1 resistor_array_r5_parallel=0 resistor_array_r6_series=1 resistor_array_r6_parallel=0 resistor_array_r7_series=1 resistor_array_r7_parallel=0 resistor_array_r8_series=1 resistor_array_r8_parallel=0 resistor_array_vmax=6 resistor_array_imax=100u
 X$U18 162 pinprobe vars: pinprobe_description='Measure_GATE1' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
@@ -231,5 +206,8 @@ X$U3 6 pinprobe vars: pinprobe_description='INPUT1_output'
 X$U4 5 4 7 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
 X$U5 4 6 inv vars: logicgate_type='inv' logicgate_vmax=6
 .ends VESPAasmINPUT1
+
+** From Z:\celera\projects\Simplis\playjoseph\PUGET0\300d\verification\FORCE_CAPshunt.sxcmp
+
 
 .end
