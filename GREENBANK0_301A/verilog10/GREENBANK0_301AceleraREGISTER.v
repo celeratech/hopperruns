@@ -150,7 +150,7 @@ STONEi2cREGISTER8_1 XU1 (
 .i2cbus(i2cbus[12:0]),
 .address({c0,c0,c0,c0,c0,c0,c0,c1}),
 .i2cmiso(i2cmiso),
-.register({c0,c0,c0,register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1[i],c0,c0,c0,c0})
+.register({c0,register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1[2],register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1[1],register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1[0],c0,c0,c0,c0})
 );
 
 STONEi2cREGISTER8_1 XU2 (
@@ -164,7 +164,7 @@ STONEi2cREGISTER8_1 XU2 (
 .i2cbus(i2cbus[12:0]),
 .address({d0,d0,d0,d0,d0,d0,d1,d0}),
 .i2cmiso(i2cmiso),
-.register({d0,d0,d0,register_AMPCONTROLMEDIUMgain_a341b3ad_Xdatamap1[i],d0,d0,d0,d0})
+.register({d0,register_AMPCONTROLMEDIUMgain_a341b3ad_Xdatamap1[2],register_AMPCONTROLMEDIUMgain_a341b3ad_Xdatamap1[1],register_AMPCONTROLMEDIUMgain_a341b3ad_Xdatamap1[0],d0,d0,d0,d0})
 );
 
 STONEi2cREGISTER8_1 XU3 (
@@ -178,7 +178,7 @@ STONEi2cREGISTER8_1 XU3 (
 .i2cbus(i2cbus[12:0]),
 .address({e0,e1,e0,e0,e0,e1,e0,e1}),
 .i2cmiso(i2cmiso),
-.register({e0,register_AMPCONTROLSLOWgain_8be083fe_Xdatamap1[i],e0,e0,e0,e0,e0,e0})
+.register({register_AMPCONTROLSLOWgain_8be083fe_Xdatamap1[1],register_AMPCONTROLSLOWgain_8be083fe_Xdatamap1[0],e0,e0,e0,e0,e0,register_AMPCONTROLSLOWgain_8be083fe_Xdatamap1[2]})
 );
 
 STONEi2cREGISTER8_1 XU4 (
@@ -192,7 +192,7 @@ STONEi2cREGISTER8_1 XU4 (
 .i2cbus(i2cbus[12:0]),
 .address({f1,f0,f1,f0,f0,f0,f1,f0}),
 .i2cmiso(i2cmiso),
-.register({f0,f0,f0,f0,f0,f0,f0,register_AMPLIFIERconfiguration_d770927e_Xdatamap1[i]})
+.register({register_AMPLIFIERconfiguration_d770927e_Xdatamap1[7],register_AMPLIFIERconfiguration_d770927e_Xdatamap1[6],register_AMPLIFIERconfiguration_d770927e_Xdatamap1[5],register_AMPLIFIERconfiguration_d770927e_Xdatamap1[4],register_AMPLIFIERconfiguration_d770927e_Xdatamap1[3],register_AMPLIFIERconfiguration_d770927e_Xdatamap1[2],register_AMPLIFIERconfiguration_d770927e_Xdatamap1[1],register_AMPLIFIERconfiguration_d770927e_Xdatamap1[0]})
 );
 
 STONEi2cREGISTER8_1 XU5 (
@@ -206,7 +206,7 @@ STONEi2cREGISTER8_1 XU5 (
 .i2cbus(i2cbus[12:0]),
 .address({g0,g0,g1,g0,g0,g0,g1,g0}),
 .i2cmiso(i2cmiso),
-.register({g0,g0,g0,register_LDOconfigurationA_775ec168_Xdatamap2[i],g0,g0,g0,g0})
+.register({register_LDOconfigurationA_775ec168_Xdatamap2[3],register_LDOconfigurationA_775ec168_Xdatamap2[2],register_LDOconfigurationA_775ec168_Xdatamap2[1],register_LDOconfigurationA_775ec168_Xdatamap2[0],g0,g0,g0,g0})
 );
 
 STONEi2cREGISTER8_1 XU6 (
@@ -220,7 +220,7 @@ STONEi2cREGISTER8_1 XU6 (
 .i2cbus(i2cbus[12:0]),
 .address({h0,h0,h1,h0,h0,h0,h0,h1}),
 .i2cmiso(i2cmiso),
-.register({h0,h0,h0,h0,h0,h0,h0,register_LDOconfigurationA_d0b55acf_Xdatamap1[i]})
+.register({h0,h0,h0,h0,register_LDOconfigurationA_d0b55acf_Xdatamap1[3],register_LDOconfigurationA_d0b55acf_Xdatamap1[2],register_LDOconfigurationA_d0b55acf_Xdatamap1[1],register_LDOconfigurationA_d0b55acf_Xdatamap1[0]})
 );
 
 STONEi2cREGISTER8_1 XU7 (
@@ -234,7 +234,7 @@ STONEi2cREGISTER8_1 XU7 (
 .i2cbus(i2cbus[12:0]),
 .address({i0,i0,i0,i0,i0,i0,i1,i1}),
 .i2cmiso(i2cmiso),
-.register({i0,i0,i0,register_REF2output_46e2454e_Xdatamap2[i],i0,i0,i0,i0})
+.register({i0,register_REF2output_46e2454e_Xdatamap2[2],register_REF2output_46e2454e_Xdatamap2[1],register_REF2output_46e2454e_Xdatamap2[0],i0,i0,i0,i0})
 );
 
 STONEi2cREGISTER8_1 XU8 (
@@ -248,7 +248,7 @@ STONEi2cREGISTER8_1 XU8 (
 .i2cbus(i2cbus[12:0]),
 .address({j0,j0,j0,j0,j0,j1,j0,j0}),
 .i2cmiso(i2cmiso),
-.register({j0,j0,j0,register_REF3output_00f9a76d_Xdatamap1[i],j0,j0,j0,j0})
+.register({j0,register_REF3output_00f9a76d_Xdatamap1[2],register_REF3output_00f9a76d_Xdatamap1[1],register_REF3output_00f9a76d_Xdatamap1[0],j0,j0,j0,j0})
 );
 
 STONEi2cREGISTER8_1 XU9 (
@@ -262,7 +262,7 @@ STONEi2cREGISTER8_1 XU9 (
 .i2cbus(i2cbus[12:0]),
 .address({k0,k0,k0,k0,k0,k1,k0,k1}),
 .i2cmiso(i2cmiso),
-.register({register_REFERENCEselect_b05f295d_Xdatamap4[i],k0,k0,k0,k0,k0,k0,k0})
+.register({register_REFERENCEselect_b05f295d_Xdatamap4[0],k0,k0,k0,k0,k0,register_REFERENCEselect_b05f295d_Xdatamap4[2],register_REFERENCEselect_b05f295d_Xdatamap4[1]})
 );
 
 STONEi2cREGISTER8_1 XU10 (
@@ -276,7 +276,7 @@ STONEi2cREGISTER8_1 XU10 (
 .i2cbus(i2cbus[12:0]),
 .address({l0,l0,l0,l0,l0,l1,l1,l0}),
 .i2cmiso(i2cmiso),
-.register({l0,l0,l0,register_SERVICEconfiguration_d530de71_Xdatamap3[i],l0,l0,l0,l0})
+.register({register_SERVICEconfiguration_d530de71_Xdatamap3[3],register_SERVICEconfiguration_d530de71_Xdatamap3[2],register_SERVICEconfiguration_d530de71_Xdatamap3[1],register_SERVICEconfiguration_d530de71_Xdatamap3[0],l0,l0,register_SERVICEconfiguration_d530de71_Xdatamap3[5],register_SERVICEconfiguration_d530de71_Xdatamap3[4]})
 );
 
 STONEnoconn XNCa0 (
