@@ -1,0 +1,176 @@
+* Z:\celera\projects\Simplis\playbrian\nesto301\verification\sim_PADDIGITALINtest.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map SIMPV 7
+.node_map GND 9
+.node_map IN 8
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 300u 0
+.globalvar REF=1.0
+.globalvar VIN=5
+.globalvar tdext_khz=1000
+
+
+X$PADDIGITALINtest 7 8 PADDIGITALINtest
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+** From Z:\celera\projects\Simplis\playbrian\nesto301\verification\FORCE_PADDIGITALINtest.sxcmp
+
+
+** From Z:\celera\projects\Simplis\playbrian\nesto301\design\PADDIGITALINtest.sxcmp
+.subckt PADDIGITALINtest 221 222
+*#hierarchy
+.node_map OUT29 255
+.node_map SIMPV 221
+.node_map OUT1 223
+.node_map OUT2 224
+.node_map OUT3 225
+.node_map OUT4 226
+.node_map OUT7 227
+.node_map OUT8 228
+.node_map OUT9 232
+.node_map OUT71 277
+.node_map OUT50 263
+.node_map OUT72 284
+.node_map OUT51 270
+.node_map OUT30 245
+.node_map OUT73 278
+.node_map OUT52 259
+.node_map OUT31 246
+.node_map OUT10 230
+.node_map OUT74 288
+.node_map OUT53 275
+.node_map OUT32 250
+.node_map OUT11 229
+.node_map OUT54 271
+.node_map OUT33 243
+.node_map OUT12 231
+.node_map OUT55 273
+.node_map OUT34 252
+.node_map OUT13 234
+.node_map OUT56 264
+.node_map OUT35 257
+.node_map OUT14 233
+.node_map OUT36 242
+.node_map OUT15 236
+.node_map OUT37 253
+.node_map OUT16 238
+.node_map OUT59 287
+.node_map OUT38 241
+.node_map OUT17 240
+.node_map OUT39 272
+.node_map OUT18 235
+.node_map OUT19 237
+.node_map OUT60 285
+.node_map OUT40 274
+.node_map OUT41 261
+.node_map OUT20 239
+.node_map IN 222
+.node_map OUT63 286
+.node_map OUT42 276
+.node_map OUT21 248
+.node_map OUT64 282
+.node_map OUT43 268
+.node_map OUT22 258
+.node_map OUT44 269
+.node_map OUT23 251
+.node_map OUT66 280
+.node_map OUT45 262
+.node_map OUT24 256
+.node_map OUT67 281
+.node_map OUT46 265
+.node_map OUT25 247
+.node_map OUT68 279
+.node_map OUT47 260
+.node_map OUT26 254
+.node_map OUT69 283
+.node_map OUT48 267
+.node_map OUT27 244
+.node_map OUT49 266
+.node_map OUT28 249
+X$U1 221 223 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='g+vth' paddigitalinput_dft='no' paddigitalinput_testmode='no' paddigitalinput_impedance=1 paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U10 221 230 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='g+vth' paddigitalinput_dft='yes' paddigitalinput_testmode='no' paddigitalinput_impedance=5k paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U11 221 229 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='g+vth' paddigitalinput_dft='no' paddigitalinput_testmode='no' paddigitalinput_impedance=5k paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U12 221 231 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='g+vth' paddigitalinput_dft='no' paddigitalinput_testmode='input' paddigitalinput_impedance=5k paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U13 221 234 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='g+vth' paddigitalinput_dft='yes' paddigitalinput_testmode='output' paddigitalinput_impedance=5k paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U14 221 233 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='g+vth' paddigitalinput_dft='no' paddigitalinput_testmode='output' paddigitalinput_impedance=5k paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U15 221 236 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='both' paddigitalinput_threshold='g+vth' paddigitalinput_dft='yes' paddigitalinput_testmode='no' paddigitalinput_impedance=1 paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U16 221 238 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='both' paddigitalinput_threshold='g+vth' paddigitalinput_dft='yes' paddigitalinput_testmode='input' paddigitalinput_impedance=1 paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U17 221 240 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='both' paddigitalinput_threshold='g+vth' paddigitalinput_dft='yes' paddigitalinput_testmode='output' paddigitalinput_impedance=1 paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U18 221 235 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='both' paddigitalinput_threshold='g+vth' paddigitalinput_dft='no' paddigitalinput_testmode='no' paddigitalinput_impedance=1 paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U19 221 237 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='both' paddigitalinput_threshold='g+vth' paddigitalinput_dft='no' paddigitalinput_testmode='input' paddigitalinput_impedance=1 paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U2 221 224 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='g+vth' paddigitalinput_dft='yes' paddigitalinput_testmode='no' paddigitalinput_impedance=1 paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U20 221 239 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='both' paddigitalinput_threshold='g+vth' paddigitalinput_dft='no' paddigitalinput_testmode='output' paddigitalinput_impedance=1 paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U21 221 248 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='v-vth' paddigitalinput_dft='yes' paddigitalinput_testmode='no' paddigitalinput_impedance=1 paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U22 221 258 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='both' paddigitalinput_threshold='v-vth' paddigitalinput_dft='yes' paddigitalinput_testmode='output' paddigitalinput_impedance=5k paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U23 221 251 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='v-vth' paddigitalinput_dft='no' paddigitalinput_testmode='output' paddigitalinput_impedance=1 paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U24 221 256 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='both' paddigitalinput_threshold='v-vth' paddigitalinput_dft='yes' paddigitalinput_testmode='input' paddigitalinput_impedance=5k paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U25 221 247 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='v-vth' paddigitalinput_dft='no' paddigitalinput_testmode='no' paddigitalinput_impedance=1 paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U26 221 254 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='both' paddigitalinput_threshold='v-vth' paddigitalinput_dft='yes' paddigitalinput_testmode='no' paddigitalinput_impedance=5k paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U27 221 244 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='v-vth' paddigitalinput_dft='yes' paddigitalinput_testmode='input' paddigitalinput_impedance=5k paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U28 221 249 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='v-vth' paddigitalinput_dft='no' paddigitalinput_testmode='input' paddigitalinput_impedance=1 paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U29 221 255 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='both' paddigitalinput_threshold='v-vth' paddigitalinput_dft='no' paddigitalinput_testmode='input' paddigitalinput_impedance=5k paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U3 221 225 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='g+vth' paddigitalinput_dft='no' paddigitalinput_testmode='input' paddigitalinput_impedance=1 paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U30 221 245 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='v-vth' paddigitalinput_dft='no' paddigitalinput_testmode='output' paddigitalinput_impedance=5k paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U31 221 246 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='v-vth' paddigitalinput_dft='yes' paddigitalinput_testmode='output' paddigitalinput_impedance=5k paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U32 221 250 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='v-vth' paddigitalinput_dft='yes' paddigitalinput_testmode='input' paddigitalinput_impedance=1 paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U33 221 243 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='v-vth' paddigitalinput_dft='no' paddigitalinput_testmode='input' paddigitalinput_impedance=5k paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U34 221 252 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='v-vth' paddigitalinput_dft='yes' paddigitalinput_testmode='output' paddigitalinput_impedance=1 paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U35 221 257 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='both' paddigitalinput_threshold='v-vth' paddigitalinput_dft='no' paddigitalinput_testmode='output' paddigitalinput_impedance=5k paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U36 221 242 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='v-vth' paddigitalinput_dft='yes' paddigitalinput_testmode='no' paddigitalinput_impedance=5k paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U37 221 253 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='both' paddigitalinput_threshold='v-vth' paddigitalinput_dft='no' paddigitalinput_testmode='no' paddigitalinput_impedance=5k paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U38 221 241 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='v-vth' paddigitalinput_dft='no' paddigitalinput_testmode='no' paddigitalinput_impedance=5k paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U39 221 272 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='both' paddigitalinput_threshold='60/40' paddigitalinput_dft='yes' paddigitalinput_testmode='no' paddigitalinput_impedance=1 paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U4 221 226 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='g+vth' paddigitalinput_dft='yes' paddigitalinput_testmode='input' paddigitalinput_impedance=1 paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U40 221 274 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='both' paddigitalinput_threshold='60/40' paddigitalinput_dft='yes' paddigitalinput_testmode='input' paddigitalinput_impedance=1 paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U41 221 261 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='60/40' paddigitalinput_dft='no' paddigitalinput_testmode='input' paddigitalinput_impedance=1 paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U42 221 276 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='both' paddigitalinput_threshold='60/40' paddigitalinput_dft='yes' paddigitalinput_testmode='output' paddigitalinput_impedance=1 paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U43 221 268 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='60/40' paddigitalinput_dft='yes' paddigitalinput_testmode='input' paddigitalinput_impedance=5k paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U44 221 269 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='60/40' paddigitalinput_dft='no' paddigitalinput_testmode='output' paddigitalinput_impedance=5k paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U45 221 262 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='60/40' paddigitalinput_dft='yes' paddigitalinput_testmode='input' paddigitalinput_impedance=1 paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U46 221 265 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='60/40' paddigitalinput_dft='no' paddigitalinput_testmode='no' paddigitalinput_impedance=5k paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U47 221 260 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='60/40' paddigitalinput_dft='yes' paddigitalinput_testmode='no' paddigitalinput_impedance=1 paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U48 221 267 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='60/40' paddigitalinput_dft='no' paddigitalinput_testmode='input' paddigitalinput_impedance=5k paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U49 221 266 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='60/40' paddigitalinput_dft='yes' paddigitalinput_testmode='no' paddigitalinput_impedance=5k paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U5 222 pinprobe vars: pinprobe_description='amplifier_input' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U50 221 263 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='60/40' paddigitalinput_dft='no' paddigitalinput_testmode='output' paddigitalinput_impedance=1 paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U51 221 270 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='60/40' paddigitalinput_dft='yes' paddigitalinput_testmode='output' paddigitalinput_impedance=5k paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U52 221 259 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='60/40' paddigitalinput_dft='no' paddigitalinput_testmode='no' paddigitalinput_impedance=1 paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U53 221 275 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='both' paddigitalinput_threshold='60/40' paddigitalinput_dft='no' paddigitalinput_testmode='output' paddigitalinput_impedance=1 paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U54 221 271 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='both' paddigitalinput_threshold='60/40' paddigitalinput_dft='no' paddigitalinput_testmode='no' paddigitalinput_impedance=1 paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U55 221 273 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='both' paddigitalinput_threshold='60/40' paddigitalinput_dft='no' paddigitalinput_testmode='input' paddigitalinput_impedance=1 paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U56 221 264 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='60/40' paddigitalinput_dft='yes' paddigitalinput_testmode='output' paddigitalinput_impedance=1 paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U57 221 224 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='both' paddigitalinput_threshold='70/30' paddigitalinput_dft='yes' paddigitalinput_testmode='output' paddigitalinput_impedance=5k paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U58 221 223 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='both' paddigitalinput_threshold='70/30' paddigitalinput_dft='no' paddigitalinput_testmode='output' paddigitalinput_impedance=5k paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U59 221 287 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='70/30' paddigitalinput_dft='no' paddigitalinput_testmode='output' paddigitalinput_impedance=1 paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U6 221 pinprobe vars: pinprobe_description='5V_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U60 221 285 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='70/30' paddigitalinput_dft='no' paddigitalinput_testmode='input' paddigitalinput_impedance=1 paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U61 221 224 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='both' paddigitalinput_threshold='70/30' paddigitalinput_dft='yes' paddigitalinput_testmode='input' paddigitalinput_impedance=5k paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U62 221 223 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='both' paddigitalinput_threshold='70/30' paddigitalinput_dft='no' paddigitalinput_testmode='no' paddigitalinput_impedance=5k paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U63 221 286 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='70/30' paddigitalinput_dft='yes' paddigitalinput_testmode='input' paddigitalinput_impedance=1 paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U64 221 282 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='70/30' paddigitalinput_dft='yes' paddigitalinput_testmode='output' paddigitalinput_impedance=5k paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U65 221 224 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='both' paddigitalinput_threshold='70/30' paddigitalinput_dft='yes' paddigitalinput_testmode='no' paddigitalinput_impedance=5k paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U66 221 280 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='70/30' paddigitalinput_dft='yes' paddigitalinput_testmode='input' paddigitalinput_impedance=5k paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U67 221 281 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='70/30' paddigitalinput_dft='no' paddigitalinput_testmode='output' paddigitalinput_impedance=5k paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U68 221 279 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='70/30' paddigitalinput_dft='no' paddigitalinput_testmode='input' paddigitalinput_impedance=5k paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U69 221 283 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='70/30' paddigitalinput_dft='no' paddigitalinput_testmode='no' paddigitalinput_impedance=1 paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U7 221 227 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='g+vth' paddigitalinput_dft='no' paddigitalinput_testmode='output' paddigitalinput_impedance=1 paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U70 221 223 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='both' paddigitalinput_threshold='70/30' paddigitalinput_dft='no' paddigitalinput_testmode='input' paddigitalinput_impedance=5k paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U71 221 277 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='70/30' paddigitalinput_dft='no' paddigitalinput_testmode='no' paddigitalinput_impedance=5k paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U72 221 284 222 paddigitalinput  vars: paddigitalinput_state='pulldown' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='70/30' paddigitalinput_dft='yes' paddigitalinput_testmode='no' paddigitalinput_impedance=1 paddigitalinput_filter=1k paddigitalinput_vmax=6
+X$U73 221 278 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='70/30' paddigitalinput_dft='yes' paddigitalinput_testmode='no' paddigitalinput_impedance=5k paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U74 221 288 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='70/30' paddigitalinput_dft='yes' paddigitalinput_testmode='output' paddigitalinput_impedance=1 paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U8 221 228 222 paddigitalinput  vars: paddigitalinput_state='pullup' paddigitalinput_filter_edge='rise' paddigitalinput_threshold='g+vth' paddigitalinput_dft='yes' paddigitalinput_testmode='output' paddigitalinput_impedance=1 paddigitalinput_filter=1m paddigitalinput_vmax=6
+X$U9 221 232 222 paddigitalinput  vars: paddigitalinput_state='float' paddigitalinput_filter_edge='fall' paddigitalinput_threshold='g+vth' paddigitalinput_dft='yes' paddigitalinput_testmode='input' paddigitalinput_impedance=5k paddigitalinput_filter=1k paddigitalinput_vmax=6
+.ends PADDIGITALINtest
+
+.end

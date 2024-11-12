@@ -1,0 +1,11 @@
+//Celera:delay0_paddigitalinput_3d67ff3a_Xglitch
+//TYPE:fixed 1ms EDGE:rise DFT:no ACC:no%
+module delay0_paddigitalinput_3d67ff3a_Xglitch (i,CELV,o,
+CELG,CELSUB);
+input CELV;
+input i;
+output o;
+input CELSUB;
+input CELG;
+endmodule
+

@@ -1,0 +1,81 @@
+* Z:\celera\projects\Simplis\playbrian\trials\verification\sim_FETcurrentSENSE.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map OUT 18
+.node_map SENSE 22
+.node_map REPLICA 20
+.node_map HV 17
+.node_map HVREF 19
+.node_map RTN 21
+.node_map GND 24
+.node_map EN 23
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 300u 0
+.globalvar REF=1.0
+.globalvar VIN=5
+.globalvar tdext_khz=1000
+
+X$FETcurrentSENSE 18 17 19 20 22 23 21 FETcurrentSENSE
+
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+** From Z:\celera\projects\Simplis\playbrian\trials\design\FETcurrentSENSE.sxcmp
+.subckt FETcurrentSENSE 26 27 28 29 30 31 32
+*#hierarchy
+.node_map OUT 26
+.node_map SENSE 30
+.node_map REPLICA 29
+.node_map HV 27
+.node_map HVREF 28
+.node_map RTN 32
+.node_map EN 31
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={TRIG_GATE} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=10f CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 500u 0
+
+.globalvar VIN = 5.0
+.globalvar HV=10
+.globalvar REF = 1.0
+.globalvar TEMP=25
+.globalvar tdext_khz=10
+.globalvar CAPREF=1.1
+
+.PRINT I(X$U1#HVREF)
+.GRAPH U1#HVREF curveLabel="I(U1-HVREF)" nowarn=true complete=true analysis=tran|pop disabled=false 
+.PRINT I(X$U1#SENSE)
+.GRAPH U1#SENSE curveLabel="I(U1-SENSE)" nowarn=true complete=true analysis=tran|pop disabled=false 
+.PRINT I(X$U1#REPLICA)
+.GRAPH U1#REPLICA curveLabel="I(U1-REPLICA)" nowarn=true complete=true analysis=tran|pop disabled=false 
+.PRINT I(X$U1#CELNEG)
+.GRAPH U1#CELNEG curveLabel="I(U1-CELNEG)" nowarn=true complete=true analysis=tran|pop disabled=false 
+X$U1 27 25 23 21 20 17 16 24 18 19 22 currentsense vars: currentsense_sense='resistor' currentsense_fettype='nmos_drain' currentsense_limit='no' currentsense_usage='highside' currentsense_limitblanking_adjust='fixed' currentsense_limitblanking_name='text' currentsense_limitblanking_description='text' currentsense_senseblanking_adjust='fixed' currentsense_senseblanking_name='text' currentsense_senseblanking_description='text' currentsense_replica_direction='sink' currentsense_dft='no' currentsense_accuracy='no' currentsense_trim_name='text' currentsense_trim_description='text' currentsense_resz=10m currentsense_restc=0 currentsense_replicavmax=30 currentsense_limitblanking=5 currentsense_senseblanking=5 currentsense_1=0 currentsense_replicaimax=200 currentsense_vmax=6
+X$U2 27 pinprobe vars: pinprobe_description='HV' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U3 28 pinprobe vars: pinprobe_description='HVREF' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U4 29 pinprobe vars: pinprobe_description='REPLICA' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U5 30 pinprobe vars: pinprobe_description='SENSE' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U6 31 pinprobe vars: pinprobe_description='EN' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U7 32 pinprobe vars: pinprobe_description='RTN' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U8 26 pinprobe vars: pinprobe_description='OUT' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+.ends FETcurrentSENSE
+
+** From Z:\celera\projects\Simplis\playbrian\trials\verification\FORCE_FETcurrentSENSE.sxcmp
+
+
+.end
