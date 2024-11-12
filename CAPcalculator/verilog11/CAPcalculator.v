@@ -64,9 +64,7 @@ module CAPcalculatorBALANCERalgorithm (porb,CELG59462,CELV96848,PORB97836,maximu
   input [7:0] register_A_c4858523_XU17;
 endmodule
 
-module CAPcalculate_Rev0_DYES (tdo,tmi,porb,on_shunt,CELG59462,CELV96848,CELSUB40948,mode_backup,on_balancer,enable_shunt,measure_shunt,enable_balancer,measure_balancer,done_capcalculate,ok_shuntalgorithm,clock_capcalculate,fault_capcalculate,enable_capcalculate,ok_balanceralgorithm,shunt_registeractive);
-  inout  tdo;
-  inout [4:0] tmi;
+module CAPcalculate_Rev0_DYES (porb,on_shunt,CELG59462,CELV96848,CELSUB40948,mode_backup,on_balancer,enable_shunt,measure_shunt,enable_balancer,measure_balancer,done_capcalculate,ok_shuntalgorithm,clock_capcalculate,fault_capcalculate,enable_capcalculate,ok_balanceralgorithm,shunt_registeractive);
   input  porb;
   input  on_shunt;
   input  CELG59462;
@@ -87,9 +85,7 @@ module CAPcalculate_Rev0_DYES (tdo,tmi,porb,on_shunt,CELG59462,CELV96848,CELSUB4
   input  shunt_registeractive;
 endmodule
 
-module CAPcalculatorDEBUG (tdo,tmi,CELG59462,CELV96848,CELSUB40948,mode_backup,enable_shunt,shunt_status,balancer_status,enable_balancer,done_capcalculate,maximum_channel_0,maximum_channel_1,hijack_mode_backup,enable_capcalculator,shunt_registeractive,hijack_enable_capcalculate);
-  inout  tdo;
-  input [4:0] tmi;
+module CAPcalculatorDEBUG (CELG59462,CELV96848,CELSUB40948,mode_backup,enable_shunt,shunt_status,balancer_status,enable_balancer,done_capcalculate,maximum_channel_0,maximum_channel_1,hijack_mode_backup,enable_capcalculator,shunt_registeractive,hijack_enable_capcalculate);
   input  CELG59462;
   input  CELV96848;
   input  CELSUB40948;
@@ -441,36 +437,8 @@ module CAPcalculatorSHUNTalgorithm (porb,on_shunt,vshunt_0,vshunt_1,vshunt_2,vsh
   input [7:0] register_SHUNThystersisMSB_4270591e_XU18;
 endmodule
 
-//Verilog HDL for "DRM", "drm32" "functional"
-
-
-module drm32 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, por1, por2, por3,
-drm0, drm1, drm2, drm3, d1, d0 );
-
-  input lastdrm;
-  input V;
-  output d1;
-  input  [7:0] por3;
-  output  [7:0] drm3;
-  input  [7:0] id;
-  output d0;
-  output  [7:0] drm2;
-  input  [7:0] por2;
-  input  [7:0] por1;
-  input bypload;
-  output  [7:0] drm0;
-  input  [7:0] por0;
-  input G;
-  output  [7:0] drm1;
-  inout  [4:0] tmi;
-  input SUB;
-endmodule
-
-
 // ------------------------ Module Verilog ---------------
-module CAPcalculator (tdo, tmi, porb, CELG59462, CELV96848, PORB97836, CELSUB40948, mode_backup, enable_shunt, meas_vcap1_0, meas_vcap1_1, meas_vcap1_2, meas_vcap1_3, meas_vcap1_4, meas_vcap1_5, meas_vcap1_6, meas_vcap1_7, meas_vcap1_8, meas_vcap1_9, meas_vcap2_0, meas_vcap2_1, meas_vcap2_2, meas_vcap2_3, meas_vcap2_4, meas_vcap2_5, meas_vcap2_6, meas_vcap2_7, meas_vcap2_8, meas_vcap2_9, meas_vcap3_0, meas_vcap3_1, meas_vcap3_2, meas_vcap3_3, meas_vcap3_4, meas_vcap3_5, meas_vcap3_6, meas_vcap3_7, meas_vcap3_8, meas_vcap3_9, meas_vcap4_0, meas_vcap4_1, meas_vcap4_2, meas_vcap4_3, meas_vcap4_4, meas_vcap4_5, meas_vcap4_6, meas_vcap4_7, meas_vcap4_8, meas_vcap4_9, meas_vcap1_10, meas_vcap1_11, meas_vcap1_12, meas_vcap1_13, meas_vcap1_14, meas_vcap1_15, meas_vcap2_10, meas_vcap2_11, meas_vcap2_12, meas_vcap2_13, meas_vcap2_14, meas_vcap2_15, meas_vcap3_10, meas_vcap3_11, meas_vcap3_12, meas_vcap3_13, meas_vcap3_14, meas_vcap3_15, meas_vcap4_10, meas_vcap4_11, meas_vcap4_12, meas_vcap4_13, meas_vcap4_14, meas_vcap4_15, enable_balancer, clock_calculator, done_capcalculate, maximum_channel_0, maximum_channel_1, fault_capcalculate, enable_capcalculator, shunt_registeractive, register_A_5aad4f3a_XU19, register_A_c4858523_XU17, register_text_81ac1a38_XU34, register_VSHUNTmsb_565e35e6_XU9, register_VSHUNTmsb_c559a478_XU8, register_SHUNThystersisMSB_4270591e_XU18);
-inout  tdo;
-inout [4:0] tmi;
+module CAPcalculator (porb, CELG59462, CELV96848, PORB97836, CELSUB40948, mode_backup, enable_shunt, meas_vcap1_0, meas_vcap1_1, meas_vcap1_2, meas_vcap1_3, meas_vcap1_4, meas_vcap1_5, meas_vcap1_6, meas_vcap1_7, meas_vcap1_8, meas_vcap1_9, meas_vcap2_0, meas_vcap2_1, meas_vcap2_2, meas_vcap2_3, meas_vcap2_4, meas_vcap2_5, meas_vcap2_6, meas_vcap2_7, meas_vcap2_8, meas_vcap2_9, meas_vcap3_0, meas_vcap3_1, meas_vcap3_2, meas_vcap3_3, meas_vcap3_4, meas_vcap3_5, meas_vcap3_6, meas_vcap3_7, meas_vcap3_8, meas_vcap3_9, meas_vcap4_0, meas_vcap4_1, meas_vcap4_2, meas_vcap4_3, meas_vcap4_4, meas_vcap4_5, meas_vcap4_6, meas_vcap4_7, meas_vcap4_8, meas_vcap4_9, meas_vcap1_10, meas_vcap1_11, meas_vcap1_12, meas_vcap1_13, meas_vcap1_14, meas_vcap1_15, meas_vcap2_10, meas_vcap2_11, meas_vcap2_12, meas_vcap2_13, meas_vcap2_14, meas_vcap2_15, meas_vcap3_10, meas_vcap3_11, meas_vcap3_12, meas_vcap3_13, meas_vcap3_14, meas_vcap3_15, meas_vcap4_10, meas_vcap4_11, meas_vcap4_12, meas_vcap4_13, meas_vcap4_14, meas_vcap4_15, enable_balancer, clock_calculator, done_capcalculate, maximum_channel_0, maximum_channel_1, fault_capcalculate, enable_capcalculator, shunt_registeractive, register_A_5aad4f3a_XU19, register_A_c4858523_XU17, register_text_81ac1a38_XU34, register_VSHUNTmsb_565e35e6_XU9, register_VSHUNTmsb_c559a478_XU8, register_SHUNThystersisMSB_4270591e_XU18);
 input  porb;
 input  CELG59462;
 input  CELV96848;
@@ -559,20 +527,10 @@ input [7:0] register_SHUNThystersisMSB_4270591e_XU18;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
 wire [7:0] register_A_c4858523_XU17;
 wire [7:0] register_VSHUNTmsb_565e35e6_XU9;
 wire [7:0] register_VSHUNTmsb_c559a478_XU8;
 wire [7:0] register_SHUNThystersisMSB_4270591e_XU18;
-wire [7:0] id;
-wire [7:0] drm0;
-wire [7:0] drm1;
-wire [7:0] drm2;
-wire [7:0] drm3;
-wire [7:0] por0;
-wire [7:0] por1;
-wire [7:0] por2;
-wire [7:0] por3;
 
 // ------------------------ Networks ---------------------
 CAPcalculatorBALANCERalgorithm XBALANCER (
@@ -616,23 +574,23 @@ CAPcalculatorBALANCERalgorithm XBALANCER (
 .ok_minimum(net_292),
 .CELSUB40948(CELSUB40948),
 .on_balancer(net_291),
-.vbalancer_0(VBALANCER_35ceff18_0),
-.vbalancer_1(VBALANCER_35ceff18_1),
-.vbalancer_2(VBALANCER_35ceff18_2),
-.vbalancer_3(VBALANCER_35ceff18_3),
-.vbalancer_4(VBALANCER_35ceff18_4),
-.vbalancer_5(VBALANCER_35ceff18_5),
-.vbalancer_6(VBALANCER_35ceff18_6),
-.vbalancer_7(VBALANCER_35ceff18_7),
+.vbalancer_0(net_238),
+.vbalancer_1(net_239),
+.vbalancer_2(net_240),
+.vbalancer_3(net_241),
+.vbalancer_4(net_242),
+.vbalancer_5(net_243),
+.vbalancer_6(net_244),
+.vbalancer_7(net_245),
 .clock_calculator(clock_calculator),
-.vbalancer_hyst_0(VBALANCER_HYST_70918602_0),
-.vbalancer_hyst_1(VBALANCER_HYST_70918602_1),
-.vbalancer_hyst_2(VBALANCER_HYST_70918602_2),
-.vbalancer_hyst_3(VBALANCER_HYST_70918602_3),
-.vbalancer_hyst_4(VBALANCER_HYST_70918602_4),
-.vbalancer_hyst_5(VBALANCER_HYST_70918602_5),
-.vbalancer_hyst_6(VBALANCER_HYST_70918602_6),
-.vbalancer_hyst_7(VBALANCER_HYST_70918602_7),
+.vbalancer_hyst_0(net_246),
+.vbalancer_hyst_1(net_247),
+.vbalancer_hyst_2(net_248),
+.vbalancer_hyst_3(net_249),
+.vbalancer_hyst_4(net_250),
+.vbalancer_hyst_5(net_251),
+.vbalancer_hyst_6(net_252),
+.vbalancer_hyst_7(net_253),
 .calculate_balancer(net_283),
 .ok_balanceralgorithm(net_289),
 .calculate_balancerminmax(net_281),
@@ -641,8 +599,6 @@ CAPcalculatorBALANCERalgorithm XBALANCER (
 );
 
 CAPcalculate_Rev0_DYES XCALCULATE (
-.tdo(tdo),
-.tmi(tmi[4:0]),
 .porb(porb),
 .on_shunt(net_290),
 .CELG59462(CELG59462),
@@ -664,8 +620,6 @@ CAPcalculate_Rev0_DYES XCALCULATE (
 );
 
 CAPcalculatorDEBUG XDEBUG (
-.tdo(tdo),
-.tmi(tmi[4:0]),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948),
@@ -997,14 +951,14 @@ CAPcalculatorSHUNTalgorithm XSHUNT (
 .meas_vcap4_13(meas_vcap4_13),
 .meas_vcap4_14(meas_vcap4_14),
 .meas_vcap4_15(meas_vcap4_15),
-.vshunt_hyst_0(VSHUNThystersis_9b979929_0),
-.vshunt_hyst_1(VSHUNThystersis_9b979929_1),
-.vshunt_hyst_2(VSHUNThystersis_9b979929_2),
-.vshunt_hyst_3(VSHUNThystersis_9b979929_3),
-.vshunt_hyst_4(VSHUNThystersis_9b979929_4),
-.vshunt_hyst_5(VSHUNThystersis_9b979929_5),
-.vshunt_hyst_6(VSHUNThystersis_9b979929_6),
-.vshunt_hyst_7(VSHUNThystersis_9b979929_7),
+.vshunt_hyst_0(net_190),
+.vshunt_hyst_1(net_191),
+.vshunt_hyst_2(net_192),
+.vshunt_hyst_3(net_193),
+.vshunt_hyst_4(net_194),
+.vshunt_hyst_5(net_195),
+.vshunt_hyst_6(net_196),
+.vshunt_hyst_7(net_197),
 .select_shunt_0(net_154),
 .select_shunt_1(net_155),
 .select_shunt_2(net_156),
@@ -1015,26 +969,6 @@ CAPcalculatorSHUNTalgorithm XSHUNT (
 .calculate_shuntmaximum(net_280),
 .register_text_81ac1a38_XU34(register_text_81ac1a38_XU34),
 .register_SHUNThystersisMSB_4270591e_XU18(register_SHUNThystersisMSB_4270591e_XU18[7:0])
-);
-
-drm32 drm_hex0x02 (
-.G(CELG59462),
-.V(CELV96848),
-.d0(a0),
-.d1(a1),
-.id({a0,a0,a0,a0,a0,a0,a1,a0}),
-.SUB(CELSUB40948),
-.tmi(tmi[4:0]),
-.drm0({VSHUNThystersis_9b979929_7,VSHUNThystersis_9b979929_6,VSHUNThystersis_9b979929_5,VSHUNThystersis_9b979929_4,VSHUNThystersis_9b979929_3,VSHUNThystersis_9b979929_2,VSHUNThystersis_9b979929_1,VSHUNThystersis_9b979929_0}),
-.drm1({VBALANCER_35ceff18_7,VBALANCER_35ceff18_6,VBALANCER_35ceff18_5,VBALANCER_35ceff18_4,VBALANCER_35ceff18_3,VBALANCER_35ceff18_2,VBALANCER_35ceff18_1,VBALANCER_35ceff18_0}),
-.drm2({VBALANCER_HYST_70918602_7,VBALANCER_HYST_70918602_6,VBALANCER_HYST_70918602_5,VBALANCER_HYST_70918602_4,VBALANCER_HYST_70918602_3,VBALANCER_HYST_70918602_2,VBALANCER_HYST_70918602_1,VBALANCER_HYST_70918602_0}),
-.drm3({VSHUNThystersis_6fd97486_7,VSHUNThystersis_6fd97486_6,VSHUNThystersis_6fd97486_5,VSHUNThystersis_6fd97486_4,VSHUNThystersis_6fd97486_3,VSHUNThystersis_6fd97486_2,VSHUNThystersis_6fd97486_1,VSHUNThystersis_6fd97486_0}),
-.por0({a0,a1,a1,a0,a1,a1,a0,a0}),
-.por1({a0,a0,a1,a1,a0,a1,a1,a0}),
-.por2({a0,a0,a1,a1,a0,a1,a1,a0}),
-.por3({a0,a0,a0,a0,a0,a0,a0,a0}),
-.bypload(a0),
-.lastdrm(a0)
 );
 
 endmodule

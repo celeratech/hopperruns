@@ -1,7 +1,5 @@
 // ------------------------ Module Definitions -----------
-module CAPcalculator (tdo,tmi,porb,CELG59462,CELV96848,PORB97836,CELSUB40948,mode_backup,enable_shunt,meas_vcap1_0,meas_vcap1_1,meas_vcap1_2,meas_vcap1_3,meas_vcap1_4,meas_vcap1_5,meas_vcap1_6,meas_vcap1_7,meas_vcap1_8,meas_vcap1_9,meas_vcap2_0,meas_vcap2_1,meas_vcap2_2,meas_vcap2_3,meas_vcap2_4,meas_vcap2_5,meas_vcap2_6,meas_vcap2_7,meas_vcap2_8,meas_vcap2_9,meas_vcap3_0,meas_vcap3_1,meas_vcap3_2,meas_vcap3_3,meas_vcap3_4,meas_vcap3_5,meas_vcap3_6,meas_vcap3_7,meas_vcap3_8,meas_vcap3_9,meas_vcap4_0,meas_vcap4_1,meas_vcap4_2,meas_vcap4_3,meas_vcap4_4,meas_vcap4_5,meas_vcap4_6,meas_vcap4_7,meas_vcap4_8,meas_vcap4_9,meas_vcap1_10,meas_vcap1_11,meas_vcap1_12,meas_vcap1_13,meas_vcap1_14,meas_vcap1_15,meas_vcap2_10,meas_vcap2_11,meas_vcap2_12,meas_vcap2_13,meas_vcap2_14,meas_vcap2_15,meas_vcap3_10,meas_vcap3_11,meas_vcap3_12,meas_vcap3_13,meas_vcap3_14,meas_vcap3_15,meas_vcap4_10,meas_vcap4_11,meas_vcap4_12,meas_vcap4_13,meas_vcap4_14,meas_vcap4_15,enable_balancer,clock_calculator,done_capcalculate,maximum_channel_0,maximum_channel_1,fault_capcalculate,enable_capcalculator,shunt_registeractive,register_A_5aad4f3a_XU19,register_A_c4858523_XU17,register_text_81ac1a38_XU34,register_VSHUNTmsb_565e35e6_XU9,register_VSHUNTmsb_c559a478_XU8,register_SHUNThystersisMSB_4270591e_XU18);
-  inout  tdo;
-  inout [4:0] tmi;
+module CAPcalculator (porb,CELG59462,CELV96848,PORB97836,CELSUB40948,mode_backup,enable_shunt,meas_vcap1_0,meas_vcap1_1,meas_vcap1_2,meas_vcap1_3,meas_vcap1_4,meas_vcap1_5,meas_vcap1_6,meas_vcap1_7,meas_vcap1_8,meas_vcap1_9,meas_vcap2_0,meas_vcap2_1,meas_vcap2_2,meas_vcap2_3,meas_vcap2_4,meas_vcap2_5,meas_vcap2_6,meas_vcap2_7,meas_vcap2_8,meas_vcap2_9,meas_vcap3_0,meas_vcap3_1,meas_vcap3_2,meas_vcap3_3,meas_vcap3_4,meas_vcap3_5,meas_vcap3_6,meas_vcap3_7,meas_vcap3_8,meas_vcap3_9,meas_vcap4_0,meas_vcap4_1,meas_vcap4_2,meas_vcap4_3,meas_vcap4_4,meas_vcap4_5,meas_vcap4_6,meas_vcap4_7,meas_vcap4_8,meas_vcap4_9,meas_vcap1_10,meas_vcap1_11,meas_vcap1_12,meas_vcap1_13,meas_vcap1_14,meas_vcap1_15,meas_vcap2_10,meas_vcap2_11,meas_vcap2_12,meas_vcap2_13,meas_vcap2_14,meas_vcap2_15,meas_vcap3_10,meas_vcap3_11,meas_vcap3_12,meas_vcap3_13,meas_vcap3_14,meas_vcap3_15,meas_vcap4_10,meas_vcap4_11,meas_vcap4_12,meas_vcap4_13,meas_vcap4_14,meas_vcap4_15,enable_balancer,clock_calculator,done_capcalculate,maximum_channel_0,maximum_channel_1,fault_capcalculate,enable_capcalculator,shunt_registeractive,register_A_5aad4f3a_XU19,register_A_c4858523_XU17,register_text_81ac1a38_XU34,register_VSHUNTmsb_565e35e6_XU9,register_VSHUNTmsb_c559a478_XU8,register_SHUNThystersisMSB_4270591e_XU18);
   input  porb;
   input  CELG59462;
   input  CELV96848;
@@ -89,8 +87,7 @@ module CAPcalculator (tdo,tmi,porb,CELG59462,CELV96848,PORB97836,CELSUB40948,mod
   input [7:0] register_SHUNThystersisMSB_4270591e_XU18;
 endmodule
 
-module CAPcalculateFORCE (tmi,porb,clock,CELG59462,CELV96848,CELSUB40948,meas_cap1_0,meas_cap1_1,meas_cap1_2,meas_cap1_3,meas_cap1_4,meas_cap1_5,meas_cap1_6,meas_cap1_7,meas_cap1_8,meas_cap1_9,meas_cap2_0,meas_cap2_1,meas_cap2_2,meas_cap2_3,meas_cap2_4,meas_cap2_5,meas_cap2_6,meas_cap2_7,meas_cap2_8,meas_cap2_9,meas_cap3_0,meas_cap3_1,meas_cap3_2,meas_cap3_3,meas_cap3_4,meas_cap3_5,meas_cap3_6,meas_cap3_7,meas_cap3_8,meas_cap3_9,meas_cap4_0,meas_cap4_1,meas_cap4_2,meas_cap4_3,meas_cap4_4,meas_cap4_5,meas_cap4_6,meas_cap4_7,meas_cap4_8,meas_cap4_9,mode_backup,meas_cap1_10,meas_cap1_11,meas_cap1_12,meas_cap1_13,meas_cap1_14,meas_cap1_15,meas_cap2_10,meas_cap2_11,meas_cap2_12,meas_cap2_13,meas_cap2_14,meas_cap2_15,meas_cap3_10,meas_cap3_11,meas_cap3_12,meas_cap3_13,meas_cap3_14,meas_cap3_15,meas_cap4_10,meas_cap4_11,meas_cap4_12,meas_cap4_13,meas_cap4_14,meas_cap4_15,enable_capcalculate,register_porb_988bd4f4_XU6,register_porb_dba5a29f_XU7,register_VSHUNTmsb_82f22f0f_XU8,register_VSHUNTmsb_fcf2a1a4_XU2,register_VSHUNTmsb_1d899b4e_XU10,register_VSHUNTmsb_5a83afdb_XU11,register_VSHUNTmsb_e010abd5_XU12,register_mode_backup_1f9ff28e_XU1,register_VSHUNThystersis_678e32d1_XU4);
-  inout [4:0] tmi;
+module CAPcalculateFORCE (porb,clock,CELG59462,CELV96848,CELSUB40948,meas_cap1_0,meas_cap1_1,meas_cap1_2,meas_cap1_3,meas_cap1_4,meas_cap1_5,meas_cap1_6,meas_cap1_7,meas_cap1_8,meas_cap1_9,meas_cap2_0,meas_cap2_1,meas_cap2_2,meas_cap2_3,meas_cap2_4,meas_cap2_5,meas_cap2_6,meas_cap2_7,meas_cap2_8,meas_cap2_9,meas_cap3_0,meas_cap3_1,meas_cap3_2,meas_cap3_3,meas_cap3_4,meas_cap3_5,meas_cap3_6,meas_cap3_7,meas_cap3_8,meas_cap3_9,meas_cap4_0,meas_cap4_1,meas_cap4_2,meas_cap4_3,meas_cap4_4,meas_cap4_5,meas_cap4_6,meas_cap4_7,meas_cap4_8,meas_cap4_9,mode_backup,meas_cap1_10,meas_cap1_11,meas_cap1_12,meas_cap1_13,meas_cap1_14,meas_cap1_15,meas_cap2_10,meas_cap2_11,meas_cap2_12,meas_cap2_13,meas_cap2_14,meas_cap2_15,meas_cap3_10,meas_cap3_11,meas_cap3_12,meas_cap3_13,meas_cap3_14,meas_cap3_15,meas_cap4_10,meas_cap4_11,meas_cap4_12,meas_cap4_13,meas_cap4_14,meas_cap4_15,enable_capcalculate,register_porb_988bd4f4_XU6,register_porb_dba5a29f_XU7,register_VSHUNTmsb_82f22f0f_XU8,register_VSHUNTmsb_fcf2a1a4_XU2,register_VSHUNTmsb_1d899b4e_XU10,register_VSHUNTmsb_5a83afdb_XU11,register_VSHUNTmsb_e010abd5_XU12,register_mode_backup_1f9ff28e_XU1,register_VSHUNThystersis_678e32d1_XU4);
   output  porb;
   output  clock;
   input  CELG59462;
@@ -174,9 +171,7 @@ module CAPcalculateFORCE (tmi,porb,clock,CELG59462,CELV96848,CELSUB40948,meas_ca
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module overlay_CAPcalculate (tdo, tmi, CELG59462, CELV96848, PORB97836, CELSUB40948);
-inout  tdo;
-inout [4:0] tmi;
+module overlay_CAPcalculate (CELG59462, CELV96848, PORB97836, CELSUB40948);
 input  CELG59462;
 input  CELV96848;
 input  PORB97836;
@@ -184,7 +179,6 @@ input  CELSUB40948;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
 wire [7:0] register_A_c4858523_XU17;
 wire [7:0] register_VSHUNTmsb_565e35e6_XU9;
 wire [7:0] register_VSHUNTmsb_c559a478_XU8;
@@ -198,8 +192,6 @@ wire [7:0] register_VSHUNThystersis_678e32d1_XU4;
 
 // ------------------------ Networks ---------------------
 CAPcalculator XCALCULATOR (
-.tdo(tdo),
-.tmi(tmi[4:0]),
 .porb(net_90),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -288,7 +280,6 @@ CAPcalculator XCALCULATOR (
 );
 
 CAPcalculateFORCE XU2 (
-.tmi(tmi[4:0]),
 .porb(net_90),
 .clock(net_92),
 .CELG59462(CELG59462),
