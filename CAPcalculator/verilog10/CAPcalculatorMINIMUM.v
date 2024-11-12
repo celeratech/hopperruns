@@ -217,15 +217,6 @@ module nor2_ee112582 (o,i0,i1,SUB,CELG,CELV);
   input  CELV;
 endmodule
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
 // ------------------------ Module Verilog ---------------
 module CAPcalculatorMINIMUM (porb, CELG59462, CELV96848, PORB97836, minimum_0, minimum_1, minimum_2, minimum_3, minimum_4, minimum_5, minimum_6, minimum_7, minimum_8, minimum_9, minimum_10, minimum_11, minimum_12, minimum_13, minimum_14, minimum_15, ok_minimum, CELSUB40948, meas_vcap1_0, meas_vcap1_1, meas_vcap1_2, meas_vcap1_3, meas_vcap1_4, meas_vcap1_5, meas_vcap1_6, meas_vcap1_7, meas_vcap1_8, meas_vcap1_9, meas_vcap2_0, meas_vcap2_1, meas_vcap2_2, meas_vcap2_3, meas_vcap2_4, meas_vcap2_5, meas_vcap2_6, meas_vcap2_7, meas_vcap2_8, meas_vcap2_9, meas_vcap3_0, meas_vcap3_1, meas_vcap3_2, meas_vcap3_3, meas_vcap3_4, meas_vcap3_5, meas_vcap3_6, meas_vcap3_7, meas_vcap3_8, meas_vcap3_9, meas_vcap4_0, meas_vcap4_1, meas_vcap4_2, meas_vcap4_3, meas_vcap4_4, meas_vcap4_5, meas_vcap4_6, meas_vcap4_7, meas_vcap4_8, meas_vcap4_9, clock_minimum, meas_vcap1_10, meas_vcap1_11, meas_vcap1_12, meas_vcap1_13, meas_vcap1_14, meas_vcap1_15, meas_vcap2_10, meas_vcap2_11, meas_vcap2_12, meas_vcap2_13, meas_vcap2_14, meas_vcap2_15, meas_vcap3_10, meas_vcap3_11, meas_vcap3_12, meas_vcap3_13, meas_vcap3_14, meas_vcap3_15, meas_vcap4_10, meas_vcap4_11, meas_vcap4_12, meas_vcap4_13, meas_vcap4_14, meas_vcap4_15, calculate_balancerminmax);
 input  porb;
@@ -324,7 +315,7 @@ wire [15:0] y;
 
 // ------------------------ Networks ---------------------
 VESPAdmux2_16 XDMUX2_1 (
-.s(net_207),
+.s(net_199),
 .A_0(meas_vcap2_0),
 .A_1(meas_vcap2_1),
 .A_2(meas_vcap2_2),
@@ -345,16 +336,16 @@ VESPAdmux2_16 XDMUX2_1 (
 .B_7(meas_vcap1_7),
 .B_8(meas_vcap1_8),
 .B_9(meas_vcap1_9),
-.Q_0(net_114),
-.Q_1(net_115),
-.Q_2(net_116),
-.Q_3(net_117),
-.Q_4(net_118),
-.Q_5(net_119),
-.Q_6(net_120),
-.Q_7(net_121),
-.Q_8(net_122),
-.Q_9(net_123),
+.Q_0(net_103),
+.Q_1(net_104),
+.Q_2(net_105),
+.Q_3(net_106),
+.Q_4(net_107),
+.Q_5(net_108),
+.Q_6(net_109),
+.Q_7(net_110),
+.Q_8(net_111),
+.Q_9(net_112),
 .A_10(meas_vcap2_10),
 .A_11(meas_vcap2_11),
 .A_12(meas_vcap2_12),
@@ -367,19 +358,19 @@ VESPAdmux2_16 XDMUX2_1 (
 .B_13(meas_vcap1_13),
 .B_14(meas_vcap1_14),
 .B_15(meas_vcap1_15),
-.Q_10(net_124),
-.Q_11(net_125),
-.Q_12(net_126),
-.Q_13(net_127),
-.Q_14(net_128),
-.Q_15(net_129),
+.Q_10(net_113),
+.Q_11(net_114),
+.Q_12(net_115),
+.Q_13(net_116),
+.Q_14(net_117),
+.Q_15(net_118),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAdmux2_16 XDMUX2_2 (
-.s(net_215),
+.s(net_203),
 .A_0(meas_vcap4_0),
 .A_1(meas_vcap4_1),
 .A_2(meas_vcap4_2),
@@ -400,16 +391,16 @@ VESPAdmux2_16 XDMUX2_2 (
 .B_7(meas_vcap3_7),
 .B_8(meas_vcap3_8),
 .B_9(meas_vcap3_9),
-.Q_0(net_166),
-.Q_1(net_167),
-.Q_2(net_168),
-.Q_3(net_169),
-.Q_4(net_170),
-.Q_5(net_171),
-.Q_6(net_172),
-.Q_7(net_173),
-.Q_8(net_174),
-.Q_9(net_175),
+.Q_0(net_155),
+.Q_1(net_156),
+.Q_2(net_157),
+.Q_3(net_158),
+.Q_4(net_159),
+.Q_5(net_160),
+.Q_6(net_161),
+.Q_7(net_162),
+.Q_8(net_163),
+.Q_9(net_164),
 .A_10(meas_vcap4_10),
 .A_11(meas_vcap4_11),
 .A_12(meas_vcap4_12),
@@ -422,12 +413,12 @@ VESPAdmux2_16 XDMUX2_2 (
 .B_13(meas_vcap3_13),
 .B_14(meas_vcap3_14),
 .B_15(meas_vcap3_15),
-.Q_10(net_176),
-.Q_11(net_177),
-.Q_12(net_178),
-.Q_13(net_179),
-.Q_14(net_180),
-.Q_15(net_181),
+.Q_10(net_165),
+.Q_11(net_166),
+.Q_12(net_167),
+.Q_13(net_168),
+.Q_14(net_169),
+.Q_15(net_170),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
@@ -484,8 +475,8 @@ VESPAdmux4_16 XDMUX4_1 (
 .Q_7(minimum_7),
 .Q_8(minimum_8),
 .Q_9(minimum_9),
-.s_0(net_132),
-.s_1(net_133),
+.s_0(net_121),
+.s_1(net_122),
 .A_10(meas_vcap1_10),
 .A_11(meas_vcap1_11),
 .A_12(meas_vcap1_12),
@@ -522,55 +513,46 @@ VESPAdmux4_16 XDMUX4_1 (
 );
 
 VESPAasmINPUT1 XU11 (
-.o(net_209),
-.i0(net_214),
-.Tstate(net_210),
+.o(net_197),
+.i0(net_196),
+.Tstate(net_198),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU12 (
-.o(net_213),
-.i0(net_215),
-.Tstate(net_216),
+.o(net_202),
+.i0(net_203),
+.Tstate(net_204),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU13 (
-.o(net_211),
-.i0(net_218),
-.Tstate(net_216),
+.o(net_200),
+.i0(net_205),
+.Tstate(net_204),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAdff2 XU14 (
-.ck(net_212),
+.ck(net_201),
 .rb(porb),
-.d_0(net_130),
-.d_1(net_131),
-.q_0(net_132),
-.q_1(net_133),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
-);
-
-VESPAasmINPUT1 XU15 (
-.o(net_208),
-.i0(net_207),
-.Tstate(net_210),
+.d_0(net_119),
+.d_1(net_120),
+.q_0(net_121),
+.q_1(net_122),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU22 (
-.o(net_220),
+.o(net_206),
 .i0(clock_minimum),
 .Tstate(calculate_balancerminmax),
 .CELG59462(CELG59462),
@@ -579,7 +561,7 @@ VESPAasmINPUT1 XU22 (
 );
 
 dbuf_e926e395 XU1 (
-.i(net_81),
+.i(net_70),
 .o(ok_minimum),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -588,20 +570,20 @@ dbuf_e926e395 XU1 (
 
 delayclock_feaaa0d6 XU2 (
 .in(calculate_balancerminmax),
-.out(net_81),
+.out(net_70),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.clock(net_220),
+.clock(net_206),
 .CELSUB(CELSUB40948),
 .celeraporb(PORB97836)
 );
 
 delayclock_0bc3ad28 XU3 (
 .in(calculate_balancerminmax),
-.out(net_212),
+.out(net_201),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.clock(net_220),
+.clock(net_206),
 .CELSUB(CELSUB40948),
 .celeraporb(PORB97836)
 );
@@ -612,7 +594,7 @@ digitalcomparator_6d42e8af XU5 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.xlteqy(net_207)
+.xlteqy(net_199)
 );
 
 digitalcomparator_6d42e8af XU6 (
@@ -621,122 +603,74 @@ digitalcomparator_6d42e8af XU6 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.xlteqy(net_215)
+.xlteqy(net_203)
 );
 
 digitalcomparator_6d42e8af XU7 (
-.x({net_129,net_128,net_127,net_126,net_125,net_124,net_123,net_122,net_121,net_120,net_119,net_118,net_117,net_116,net_115,net_114}),
-.y({net_181,net_180,net_179,net_178,net_177,net_176,net_175,net_174,net_173,net_172,net_171,net_170,net_169,net_168,net_167,net_166}),
+.x({net_118,net_117,net_116,net_115,net_114,net_113,net_112,net_111,net_110,net_109,net_108,net_107,net_106,net_105,net_104,net_103}),
+.y({net_170,net_169,net_168,net_167,net_166,net_165,net_164,net_163,net_162,net_161,net_160,net_159,net_158,net_157,net_156,net_155}),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.xlteqy(net_210)
+.xlteqy(net_198)
 );
 
 inv_12e192f5 XU8 (
-.i(net_215),
-.o(net_218),
+.i(net_203),
+.o(net_205),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 inv_12e192f5 XU9 (
-.i(net_207),
-.o(net_214),
+.i(net_199),
+.o(net_196),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 inv_12e192f5 XU10 (
-.i(net_210),
-.o(net_216),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-inv_12e192f5 XU18 (
-.i(net_213),
-.o(net_221),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-inv_12e192f5 XU19 (
-.i(net_208),
-.o(net_217),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-inv_12e192f5 XU20 (
-.i(net_209),
-.o(net_219),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-inv_12e192f5 XU21 (
-.i(net_211),
-.o(net_222),
+.i(net_198),
+.o(net_204),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 nor2_ee112582 XU28 (
-.o(net_69),
-.i0(net_209),
-.i1(net_211),
+.o(net_58),
+.i0(net_197),
+.i1(net_200),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 inv_12e192f5 XU29 (
-.i(net_69),
-.o(net_130),
+.i(net_58),
+.o(net_119),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 nor2_ee112582 XU30 (
-.o(net_70),
-.i0(net_213),
-.i1(net_211),
+.o(net_59),
+.i0(net_202),
+.i1(net_200),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 inv_12e192f5 XU31 (
-.i(net_70),
-.o(net_131),
+.i(net_59),
+.o(net_120),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
-);
-
-STONEnoconn XNC217 (
-.noconn(net_217)
-);
-
-STONEnoconn XNC219 (
-.noconn(net_219)
-);
-
-STONEnoconn XNC221 (
-.noconn(net_221)
-);
-
-STONEnoconn XNC222 (
-.noconn(net_222)
 );
 
 endmodule
