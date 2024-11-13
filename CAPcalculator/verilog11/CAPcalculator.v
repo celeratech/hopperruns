@@ -64,20 +64,21 @@ module CAPcalculatorBALANCERalgorithm (porb,CELG59462,CELV96848,PORB97836,maximu
   input [7:0] register_A_c4858523_XU17;
 endmodule
 
-module CAPcalculate_Rev0_DYES (porb,on_shunt,CELG59462,CELV96848,CELSUB40948,mode_backup,on_balancer,enable_shunt,measure_shunt,enable_balancer,measure_balancer,done_capcalculate,ok_shuntalgorithm,clock_capcalculate,fault_capcalculate,enable_capcalculate,ok_balanceralgorithm,shunt_registeractive);
+module CAPcalculate_Rev0_DYES (porb,on_shunt,CELG59462,CELV96848,PORB97836,CELSUB40948,mode_backup,on_balancer,shunt_status,balancer_status,calculate_shunt,done_capcalculate,ok_shuntalgorithm,calculate_balancer,clock_capcalculate,fault_capcalculate,enable_capcalculate,ok_balanceralgorithm,shunt_registeractive);
   input  porb;
   input  on_shunt;
   input  CELG59462;
   input  CELV96848;
+  input  PORB97836;
   input  CELSUB40948;
   input  mode_backup;
   input  on_balancer;
-  output  enable_shunt;
-  output  measure_shunt;
-  output  enable_balancer;
-  output  measure_balancer;
+  output  shunt_status;
+  output  balancer_status;
+  output  calculate_shunt;
   output  done_capcalculate;
   input  ok_shuntalgorithm;
+  output  calculate_balancer;
   input  clock_capcalculate;
   output  fault_capcalculate;
   input  enable_capcalculate;
@@ -603,15 +604,16 @@ CAPcalculate_Rev0_DYES XCALCULATE (
 .on_shunt(net_290),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
+.PORB97836(PORB97836),
 .CELSUB40948(CELSUB40948),
 .mode_backup(net_286),
 .on_balancer(net_291),
-.enable_shunt(net_285),
-.measure_shunt(net_282),
-.enable_balancer(net_287),
-.measure_balancer(net_283),
+.shunt_status(net_285),
+.balancer_status(net_287),
+.calculate_shunt(net_282),
 .done_capcalculate(done_capcalculate),
 .ok_shuntalgorithm(net_288),
+.calculate_balancer(net_283),
 .clock_capcalculate(clock_calculator),
 .fault_capcalculate(fault_capcalculate),
 .enable_capcalculate(net_284),

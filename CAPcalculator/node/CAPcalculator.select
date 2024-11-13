@@ -1273,6 +1273,96 @@ parameter,datamap_enabletimeunits8,us
 
 GenerateLevel,9
 generate,dftprobeModel0
+path,XCALCULATOR,XCALCULATE,XU59
+instance,XU59
+parameter,analoginfo,Only_use_for_global_VIN_or_below
+parameter,digitalinfo,Only_Use_For_Digital
+parameter,dftprobe_mode,digital
+parameter,dftprobe_name,OFF_CAPcalculate_Rev0
+parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
+parameter,dftprobe_vmax,6
+parameter,dftprobe_enable,0
+parameter,dftprobe_description,CAPcalculate_Rev0_state0_OFF
+parameter,dftprobe_highvoltage,6
+
+
+GenerateLevel,9
+generate,dftprobeModel0
+path,XCALCULATOR,XCALCULATE,XU60
+instance,XU60
+parameter,analoginfo,Only_use_for_global_VIN_or_below
+parameter,digitalinfo,Only_Use_For_Digital
+parameter,dftprobe_mode,digital
+parameter,dftprobe_name,SHUNT_CAPcalculate_Rev0
+parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
+parameter,dftprobe_vmax,6
+parameter,dftprobe_enable,0
+parameter,dftprobe_description,CAPcalculate_Rev0_state1_SHUNT
+parameter,dftprobe_highvoltage,6
+
+
+GenerateLevel,9
+generate,dftprobeModel0
+path,XCALCULATOR,XCALCULATE,XU61
+instance,XU61
+parameter,analoginfo,Only_use_for_global_VIN_or_below
+parameter,digitalinfo,Only_Use_For_Digital
+parameter,dftprobe_mode,digital
+parameter,dftprobe_name,BALANCER_CAPcalculate_Rev0
+parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
+parameter,dftprobe_vmax,6
+parameter,dftprobe_enable,0
+parameter,dftprobe_description,CAPcalculate_Rev0_state2_BALANCER
+parameter,dftprobe_highvoltage,6
+
+
+GenerateLevel,9
+generate,dftprobeModel0
+path,XCALCULATOR,XCALCULATE,XU62
+instance,XU62
+parameter,analoginfo,Only_use_for_global_VIN_or_below
+parameter,digitalinfo,Only_Use_For_Digital
+parameter,dftprobe_mode,digital
+parameter,dftprobe_name,BDONE_CAPcalculate_Rev0
+parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
+parameter,dftprobe_vmax,6
+parameter,dftprobe_enable,0
+parameter,dftprobe_description,CAPcalculate_Rev0_state3_BDONE
+parameter,dftprobe_highvoltage,6
+
+
+GenerateLevel,9
+generate,dftprobeModel0
+path,XCALCULATOR,XCALCULATE,XU63
+instance,XU63
+parameter,analoginfo,Only_use_for_global_VIN_or_below
+parameter,digitalinfo,Only_Use_For_Digital
+parameter,dftprobe_mode,digital
+parameter,dftprobe_name,FAULT_CAPcalculate_Rev0
+parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
+parameter,dftprobe_vmax,6
+parameter,dftprobe_enable,0
+parameter,dftprobe_description,CAPcalculate_Rev0_state4_FAULT
+parameter,dftprobe_highvoltage,6
+
+
+GenerateLevel,9
+generate,dftprobeModel0
+path,XCALCULATOR,XCALCULATE,XU64
+instance,XU64
+parameter,analoginfo,Only_use_for_global_VIN_or_below
+parameter,digitalinfo,Only_Use_For_Digital
+parameter,dftprobe_mode,digital
+parameter,dftprobe_name,SDONE_CAPcalculate_Rev0
+parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
+parameter,dftprobe_vmax,6
+parameter,dftprobe_enable,0
+parameter,dftprobe_description,CAPcalculate_Rev0_state5_SDONE
+parameter,dftprobe_highvoltage,6
+
+
+GenerateLevel,9
+generate,dftprobeModel0
 path,XCALCULATOR,XCALCULATE,XU65
 instance,XU65
 parameter,analoginfo,Only_use_for_global_VIN_or_below
@@ -1288,12 +1378,27 @@ parameter,dftprobe_highvoltage,6
 
 GenerateLevel,9
 generate,dftprobeModel0
+path,XCALCULATOR,XCALCULATE,XU66
+instance,XU66
+parameter,analoginfo,Only_use_for_global_VIN_or_below
+parameter,digitalinfo,Only_Use_For_Digital
+parameter,dftprobe_mode,digital
+parameter,dftprobe_name,OK_CAPcalculate_Rev0
+parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
+parameter,dftprobe_vmax,6
+parameter,dftprobe_enable,0
+parameter,dftprobe_description,CAPcalculate_Rev0_state7_OK
+parameter,dftprobe_highvoltage,6
+
+
+GenerateLevel,9
+generate,dftprobeModel0
 path,XCALCULATOR,XCALCULATE,XU67
 instance,XU67
 parameter,analoginfo,Only_use_for_global_VIN_or_below
 parameter,digitalinfo,Only_Use_For_Digital
 parameter,dftprobe_mode,digital
-parameter,dftprobe_name,measure_shunt_CAPcalculate_Rev0
+parameter,dftprobe_name,calculate_shunt_CAPcalculate_Rev0
 parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
 parameter,dftprobe_vmax,6
 parameter,dftprobe_enable,0
@@ -1308,7 +1413,7 @@ instance,XU68
 parameter,analoginfo,Only_use_for_global_VIN_or_below
 parameter,digitalinfo,Only_Use_For_Digital
 parameter,dftprobe_mode,digital
-parameter,dftprobe_name,measure_balancer_CAPcalculate_Rev0
+parameter,dftprobe_name,calculate_balancer_CAPcalculate_Rev0
 parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
 parameter,dftprobe_vmax,6
 parameter,dftprobe_enable,0
@@ -1338,11 +1443,11 @@ instance,XU70
 parameter,analoginfo,Only_use_for_global_VIN_or_below
 parameter,digitalinfo,Only_Use_For_Digital
 parameter,dftprobe_mode,digital
-parameter,dftprobe_name,enable_shunt_CAPcalculate_Rev0
+parameter,dftprobe_name,shunt_status_CAPcalculate_Rev0
 parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
 parameter,dftprobe_vmax,6
 parameter,dftprobe_enable,0
-parameter,dftprobe_description,Calculate_decided_to_enable_SHUNT
+parameter,dftprobe_description,Calculated_status_to_enable_SHUNT
 parameter,dftprobe_highvoltage,6
 
 
@@ -1353,11 +1458,11 @@ instance,XU71
 parameter,analoginfo,Only_use_for_global_VIN_or_below
 parameter,digitalinfo,Only_Use_For_Digital
 parameter,dftprobe_mode,digital
-parameter,dftprobe_name,enable_balancer_CAPcalculate_Rev0
+parameter,dftprobe_name,balancer_status_CAPcalculate_Rev0
 parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
 parameter,dftprobe_vmax,6
 parameter,dftprobe_enable,0
-parameter,dftprobe_description,Calculation_decided_to_enable_BALANCER
+parameter,dftprobe_description,Calculed_status_to_enable_BALANCER
 parameter,dftprobe_highvoltage,6
 
 
@@ -1401,35 +1506,28 @@ GenerateLevel,9
 generate,pinprobe
 path,XCALCULATOR,XCALCULATE,XUon_balancer
 instance,XUon_balancer
-parameter,pinprobe_description,BALANCER_calculation_valid_and_active
+parameter,pinprobe_description,BALANCE_calculation_valid_and_active
 
 
 GenerateLevel,9
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XUenable_shunt
-instance,XUenable_shunt
-parameter,pinprobe_description,Calculate_decided_to_enable_SHUNT
+path,XCALCULATOR,XCALCULATE,XUshunt_status
+instance,XUshunt_status
+parameter,pinprobe_description,Calculated_status_to_enable_SHUNT
 
 
 GenerateLevel,9
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XUmeasure_shunt
-instance,XUmeasure_shunt
+path,XCALCULATOR,XCALCULATE,XUbalancer_status
+instance,XUbalancer_status
+parameter,pinprobe_description,Calculed_status_to_enable_BALANCER
+
+
+GenerateLevel,9
+generate,pinprobe
+path,XCALCULATOR,XCALCULATE,XUcalculate_shunt
+instance,XUcalculate_shunt
 parameter,pinprobe_description,Calculate_SHUNT_maximum
-
-
-GenerateLevel,9
-generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XUenable_balancer
-instance,XUenable_balancer
-parameter,pinprobe_description,Calculation_decided_to_enable_BALANCER
-
-
-GenerateLevel,9
-generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XUmeasure_balancer
-instance,XUmeasure_balancer
-parameter,pinprobe_description,Calculate_BALANCER_maximum
 
 
 GenerateLevel,9
@@ -1444,6 +1542,13 @@ generate,pinprobe
 path,XCALCULATOR,XCALCULATE,XUok_shuntalgorithm
 instance,XUok_shuntalgorithm
 parameter,pinprobe_description,SHUNT_Algorithm_enabled_and_ready
+
+
+GenerateLevel,9
+generate,pinprobe
+path,XCALCULATOR,XCALCULATE,XUcalculate_balancer
+instance,XUcalculate_balancer
+parameter,pinprobe_description,Calculate_BALANCER_maximum
 
 
 GenerateLevel,9
@@ -1468,21 +1573,6 @@ parameter,pinprobe_description,Master_enable_for_CAP_calculate
 
 
 GenerateLevel,9
-generate,dftprobeModel0
-path,XCALCULATOR,XCALCULATE,XUOK_CAPcalculate_Rev0
-instance,XUOK_CAPcalculate_Rev0
-parameter,analoginfo,Only_use_for_global_VIN_or_below
-parameter,digitalinfo,Only_Use_For_Digital
-parameter,dftprobe_mode,digital
-parameter,dftprobe_name,OK_CAPcalculate_Rev0
-parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
-parameter,dftprobe_vmax,6
-parameter,dftprobe_enable,0
-parameter,dftprobe_description,text
-parameter,dftprobe_highvoltage,6
-
-
-GenerateLevel,9
 generate,pinprobe
 path,XCALCULATOR,XCALCULATE,XUok_balanceralgorithm
 instance,XUok_balanceralgorithm
@@ -1493,109 +1583,19 @@ GenerateLevel,9
 generate,pinprobe
 path,XCALCULATOR,XCALCULATE,XUshunt_registeractive
 instance,XUshunt_registeractive
-parameter,pinprobe_description,SHUNT_calcualtion_is_valid
-
-
-GenerateLevel,9
-generate,dftprobeModel0
-path,XCALCULATOR,XCALCULATE,XUOFF_CAPcalculate_Rev0
-instance,XUOFF_CAPcalculate_Rev0
-parameter,analoginfo,Only_use_for_Analog
-parameter,digitalinfo,Only_Use_For_Digital
-parameter,dftprobe_mode,digital
-parameter,dftprobe_name,OFF_CAPcalculate_Rev0
-parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
-parameter,dftprobe_vmax,6
-parameter,dftprobe_enable,0
-parameter,dftprobe_description,CAPcalculate_Rev0_state0_OFF
-parameter,dftprobe_highvoltage,6
-
-
-GenerateLevel,9
-generate,dftprobeModel0
-path,XCALCULATOR,XCALCULATE,XUBDONE_CAPcalculate_Rev0
-instance,XUBDONE_CAPcalculate_Rev0
-parameter,analoginfo,Only_use_for_Analog
-parameter,digitalinfo,Only_Use_For_Digital
-parameter,dftprobe_mode,digital
-parameter,dftprobe_name,BDONE_CAPcalculate_Rev0
-parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
-parameter,dftprobe_vmax,6
-parameter,dftprobe_enable,0
-parameter,dftprobe_description,CAPcalculate_Rev0_state3_BDONE
-parameter,dftprobe_highvoltage,6
-
-
-GenerateLevel,9
-generate,dftprobeModel0
-path,XCALCULATOR,XCALCULATE,XUFAULT_CAPcalculate_Rev0
-instance,XUFAULT_CAPcalculate_Rev0
-parameter,analoginfo,Only_use_for_Analog
-parameter,digitalinfo,Only_Use_For_Digital
-parameter,dftprobe_mode,digital
-parameter,dftprobe_name,FAULT_CAPcalculate_Rev0
-parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
-parameter,dftprobe_vmax,6
-parameter,dftprobe_enable,0
-parameter,dftprobe_description,CAPcalculate_Rev0_state4_FAULT
-parameter,dftprobe_highvoltage,6
-
-
-GenerateLevel,9
-generate,dftprobeModel0
-path,XCALCULATOR,XCALCULATE,XUSDONE_CAPcalculate_Rev0
-instance,XUSDONE_CAPcalculate_Rev0
-parameter,analoginfo,Only_use_for_Analog
-parameter,digitalinfo,Only_Use_For_Digital
-parameter,dftprobe_mode,digital
-parameter,dftprobe_name,SDONE_CAPcalculate_Rev0
-parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
-parameter,dftprobe_vmax,6
-parameter,dftprobe_enable,0
-parameter,dftprobe_description,CAPcalculate_Rev0_state5_SDONE
-parameter,dftprobe_highvoltage,6
-
-
-GenerateLevel,9
-generate,dftprobeModel0
-path,XCALCULATOR,XCALCULATE,XUSHUNT_CAPcalculate_Rev0
-instance,XUSHUNT_CAPcalculate_Rev0
-parameter,analoginfo,Only_use_for_Analog
-parameter,digitalinfo,Only_Use_For_Digital
-parameter,dftprobe_mode,digital
-parameter,dftprobe_name,SHUNT_CAPcalculate_Rev0
-parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
-parameter,dftprobe_vmax,6
-parameter,dftprobe_enable,0
-parameter,dftprobe_description,CAPcalculate_Rev0_state1_SHUNT
-parameter,dftprobe_highvoltage,6
-
-
-GenerateLevel,9
-generate,dftprobeModel0
-path,XCALCULATOR,XCALCULATE,XUBALANCER_CAPcalculate_Rev0
-instance,XUBALANCER_CAPcalculate_Rev0
-parameter,analoginfo,Only_use_for_Analog
-parameter,digitalinfo,Only_Use_For_Digital
-parameter,dftprobe_mode,digital
-parameter,dftprobe_name,BALANCER_CAPcalculate_Rev0
-parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
-parameter,dftprobe_vmax,6
-parameter,dftprobe_enable,0
-parameter,dftprobe_description,CAPcalculate_Rev0_state2_BALANCER
-parameter,dftprobe_highvoltage,6
+parameter,pinprobe_description,SHUNT_calculation_is_valid
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XOK
+path,XCALCULATOR,XCALCULATE,XU1,XOK
 instance,XOK
 parameter,pinprobe_description,OK_CAPcalculate_Rev0
 
 
 GenerateLevel,8
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU1
 instance,XU1
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -1603,7 +1603,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,8
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU2
 instance,XU2
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -1611,7 +1611,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,8
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU3
 instance,XU3
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -1619,7 +1619,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,8
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU4
 instance,XU4
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -1627,7 +1627,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,8
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU5
 instance,XU5
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -1635,14 +1635,14 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XOFF
+path,XCALCULATOR,XCALCULATE,XU1,XOFF
 instance,XOFF
 parameter,pinprobe_description,OFF_CAPcalculate_Rev0
 
 
 GenerateLevel,8
 generate,delayclock
-path,XCALCULATOR,XCALCULATE,XMAIN,XU11
+path,XCALCULATOR,XCALCULATE,XU1,XU11
 instance,XU11
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -1673,7 +1673,7 @@ parameter,delaycontrol_time5,250
 parameter,delaycontrol_time6,500
 parameter,delaycontrol_time7,999
 parameter,delay_accuracy_name,tbd
-parameter,delayclock_accuracy,tbd
+parameter,delayclock_accuracy,no
 parameter,delaycontrol_units0,ns
 parameter,delaycontrol_units1,ns
 parameter,delaycontrol_units2,ns
@@ -1693,7 +1693,7 @@ parameter,delayclock_datasheetdescription,tbd
 
 GenerateLevel,8
 generate,delayclock
-path,XCALCULATOR,XCALCULATE,XMAIN,XU13
+path,XCALCULATOR,XCALCULATE,XU1,XU13
 instance,XU13
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -1724,7 +1724,7 @@ parameter,delaycontrol_time5,250
 parameter,delaycontrol_time6,500
 parameter,delaycontrol_time7,999
 parameter,delay_accuracy_name,tbd
-parameter,delayclock_accuracy,tbd
+parameter,delayclock_accuracy,no
 parameter,delaycontrol_units0,ns
 parameter,delaycontrol_units1,ns
 parameter,delaycontrol_units2,ns
@@ -1744,7 +1744,7 @@ parameter,delayclock_datasheetdescription,tbd
 
 GenerateLevel,8
 generate,delayclock
-path,XCALCULATOR,XCALCULATE,XMAIN,XU14
+path,XCALCULATOR,XCALCULATE,XU1,XU14
 instance,XU14
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -1775,7 +1775,7 @@ parameter,delaycontrol_time5,250
 parameter,delaycontrol_time6,500
 parameter,delaycontrol_time7,999
 parameter,delay_accuracy_name,tbd
-parameter,delayclock_accuracy,tbd
+parameter,delayclock_accuracy,no
 parameter,delaycontrol_units0,ns
 parameter,delaycontrol_units1,ns
 parameter,delaycontrol_units2,ns
@@ -1795,7 +1795,7 @@ parameter,delayclock_datasheetdescription,tbd
 
 GenerateLevel,8
 generate,delayclock
-path,XCALCULATOR,XCALCULATE,XMAIN,XU16
+path,XCALCULATOR,XCALCULATE,XU1,XU16
 instance,XU16
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -1826,7 +1826,7 @@ parameter,delaycontrol_time5,250
 parameter,delaycontrol_time6,500
 parameter,delaycontrol_time7,999
 parameter,delay_accuracy_name,tbd
-parameter,delayclock_accuracy,tbd
+parameter,delayclock_accuracy,no
 parameter,delaycontrol_units0,ns
 parameter,delaycontrol_units1,ns
 parameter,delaycontrol_units2,ns
@@ -1846,7 +1846,7 @@ parameter,delayclock_datasheetdescription,tbd
 
 GenerateLevel,8
 generate,delayclock
-path,XCALCULATOR,XCALCULATE,XMAIN,XU17
+path,XCALCULATOR,XCALCULATE,XU1,XU17
 instance,XU17
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -1877,7 +1877,7 @@ parameter,delaycontrol_time5,250
 parameter,delaycontrol_time6,500
 parameter,delaycontrol_time7,999
 parameter,delay_accuracy_name,tbd
-parameter,delayclock_accuracy,tbd
+parameter,delayclock_accuracy,no
 parameter,delaycontrol_units0,ns
 parameter,delaycontrol_units1,ns
 parameter,delaycontrol_units2,ns
@@ -1897,7 +1897,7 @@ parameter,delayclock_datasheetdescription,tbd
 
 GenerateLevel,8
 generate,delayclock
-path,XCALCULATOR,XCALCULATE,XMAIN,XU19
+path,XCALCULATOR,XCALCULATE,XU1,XU19
 instance,XU19
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -1928,7 +1928,7 @@ parameter,delaycontrol_time5,250
 parameter,delaycontrol_time6,500
 parameter,delaycontrol_time7,999
 parameter,delay_accuracy_name,tbd
-parameter,delayclock_accuracy,tbd
+parameter,delayclock_accuracy,no
 parameter,delaycontrol_units0,ns
 parameter,delaycontrol_units1,ns
 parameter,delaycontrol_units2,ns
@@ -1948,7 +1948,7 @@ parameter,delayclock_datasheetdescription,tbd
 
 GenerateLevel,8
 generate,delayclock
-path,XCALCULATOR,XCALCULATE,XMAIN,XU21
+path,XCALCULATOR,XCALCULATE,XU1,XU21
 instance,XU21
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -1979,7 +1979,7 @@ parameter,delaycontrol_time5,250
 parameter,delaycontrol_time6,500
 parameter,delaycontrol_time7,999
 parameter,delay_accuracy_name,tbd
-parameter,delayclock_accuracy,tbd
+parameter,delayclock_accuracy,no
 parameter,delaycontrol_units0,ns
 parameter,delaycontrol_units1,ns
 parameter,delaycontrol_units2,ns
@@ -1999,7 +1999,7 @@ parameter,delayclock_datasheetdescription,tbd
 
 GenerateLevel,8
 generate,delayclock
-path,XCALCULATOR,XCALCULATE,XMAIN,XU23
+path,XCALCULATOR,XCALCULATE,XU1,XU23
 instance,XU23
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -2030,7 +2030,7 @@ parameter,delaycontrol_time5,250
 parameter,delaycontrol_time6,500
 parameter,delaycontrol_time7,999
 parameter,delay_accuracy_name,tbd
-parameter,delayclock_accuracy,tbd
+parameter,delayclock_accuracy,no
 parameter,delaycontrol_units0,ns
 parameter,delaycontrol_units1,ns
 parameter,delaycontrol_units2,ns
@@ -2050,7 +2050,7 @@ parameter,delayclock_datasheetdescription,tbd
 
 GenerateLevel,8
 generate,delayclock
-path,XCALCULATOR,XCALCULATE,XMAIN,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU25
 instance,XU25
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -2081,7 +2081,7 @@ parameter,delaycontrol_time5,250
 parameter,delaycontrol_time6,500
 parameter,delaycontrol_time7,999
 parameter,delay_accuracy_name,tbd
-parameter,delayclock_accuracy,tbd
+parameter,delayclock_accuracy,no
 parameter,delaycontrol_units0,ns
 parameter,delaycontrol_units1,ns
 parameter,delaycontrol_units2,ns
@@ -2101,7 +2101,7 @@ parameter,delayclock_datasheetdescription,tbd
 
 GenerateLevel,8
 generate,delayclock
-path,XCALCULATOR,XCALCULATE,XMAIN,XU26
+path,XCALCULATOR,XCALCULATE,XU1,XU26
 instance,XU26
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -2132,7 +2132,7 @@ parameter,delaycontrol_time5,250
 parameter,delaycontrol_time6,500
 parameter,delaycontrol_time7,999
 parameter,delay_accuracy_name,tbd
-parameter,delayclock_accuracy,tbd
+parameter,delayclock_accuracy,no
 parameter,delaycontrol_units0,ns
 parameter,delaycontrol_units1,ns
 parameter,delaycontrol_units2,ns
@@ -2152,7 +2152,7 @@ parameter,delayclock_datasheetdescription,tbd
 
 GenerateLevel,8
 generate,delayclock
-path,XCALCULATOR,XCALCULATE,XMAIN,XU28
+path,XCALCULATOR,XCALCULATE,XU1,XU28
 instance,XU28
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -2183,7 +2183,7 @@ parameter,delaycontrol_time5,250
 parameter,delaycontrol_time6,500
 parameter,delaycontrol_time7,999
 parameter,delay_accuracy_name,tbd
-parameter,delayclock_accuracy,tbd
+parameter,delayclock_accuracy,no
 parameter,delaycontrol_units0,ns
 parameter,delaycontrol_units1,ns
 parameter,delaycontrol_units2,ns
@@ -2203,203 +2203,203 @@ parameter,delayclock_datasheetdescription,tbd
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XBDONE
+path,XCALCULATOR,XCALCULATE,XU1,XBDONE
 instance,XBDONE
 parameter,pinprobe_description,BDONE_CAPcalculate_Rev0
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XFAULT
+path,XCALCULATOR,XCALCULATE,XU1,XFAULT
 instance,XFAULT
 parameter,pinprobe_description,FAULT_CAPcalculate_Rev0
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XSDONE
+path,XCALCULATOR,XCALCULATE,XU1,XSDONE
 instance,XSDONE
 parameter,pinprobe_description,SDONE_CAPcalculate_Rev0
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XSHUNT
+path,XCALCULATOR,XCALCULATE,XU1,XSHUNT
 instance,XSHUNT
 parameter,pinprobe_description,SHUNT_CAPcalculate_Rev0
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XUporb
+path,XCALCULATOR,XCALCULATE,XU1,XUporb
 instance,XUporb
 parameter,pinprobe_description,Power_on_reset_input	
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XUNDEF6
+path,XCALCULATOR,XCALCULATE,XU1,XUNDEF6
 instance,XUNDEF6
 parameter,pinprobe_description,UNDEF6_CAPcalculate_Rev0
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XBALANCER
+path,XCALCULATOR,XCALCULATE,XU1,XBALANCER
 instance,XBALANCER
 parameter,pinprobe_description,BALANCER_CAPcalculate_Rev0
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XUon_shunt
+path,XCALCULATOR,XCALCULATE,XU1,XUon_shunt
 instance,XUon_shunt
 parameter,pinprobe_description,SHUNT_calculation_valid_and_active
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XenableFAULT
+path,XCALCULATOR,XCALCULATE,XU1,XenableFAULT
 instance,XenableFAULT
 parameter,pinprobe_description,CAPcalculate_Rev0_statecontrol_4
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XUmode_backup
+path,XCALCULATOR,XCALCULATE,XU1,XUmode_backup
 instance,XUmode_backup
 parameter,pinprobe_description,BALANCER_calculation_is_disabled
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XUon_balancer
+path,XCALCULATOR,XCALCULATE,XU1,XUon_balancer
 instance,XUon_balancer
-parameter,pinprobe_description,BALANCER_calculation_valid_and_active
+parameter,pinprobe_description,BALANCE_calculation_valid_and_active
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XSTATEcontrol0
+path,XCALCULATOR,XCALCULATE,XU1,XSTATEcontrol0
 instance,XSTATEcontrol0
 parameter,pinprobe_description,CAPcalculate_Rev0_statecontrol_0
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XSTATEcontrol1
+path,XCALCULATOR,XCALCULATE,XU1,XSTATEcontrol1
 instance,XSTATEcontrol1
 parameter,pinprobe_description,CAPcalculate_Rev0_statecontrol_1
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XSTATEcontrol2
+path,XCALCULATOR,XCALCULATE,XU1,XSTATEcontrol2
 instance,XSTATEcontrol2
 parameter,pinprobe_description,CAPcalculate_Rev0_statecontrol_2
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XSTATEcontrol3
+path,XCALCULATOR,XCALCULATE,XU1,XSTATEcontrol3
 instance,XSTATEcontrol3
 parameter,pinprobe_description,CAPcalculate_Rev0_statecontrol_3
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XUenable_shunt
-instance,XUenable_shunt
-parameter,pinprobe_description,Calculate_decided_to_enable_SHUNT
+path,XCALCULATOR,XCALCULATE,XU1,XUshunt_status
+instance,XUshunt_status
+parameter,pinprobe_description,Calculated_status_to_enable_SHUNT
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XUmeasure_shunt
-instance,XUmeasure_shunt
+path,XCALCULATOR,XCALCULATE,XU1,XUbalancer_status
+instance,XUbalancer_status
+parameter,pinprobe_description,Calculed_status_to_enable_BALANCER
+
+
+GenerateLevel,8
+generate,pinprobe
+path,XCALCULATOR,XCALCULATE,XU1,XUcalculate_shunt
+instance,XUcalculate_shunt
 parameter,pinprobe_description,Calculate_SHUNT_maximum
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XUenable_balancer
-instance,XUenable_balancer
-parameter,pinprobe_description,Calculation_decided_to_enable_BALANCER
-
-
-GenerateLevel,8
-generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XUmeasure_balancer
-instance,XUmeasure_balancer
-parameter,pinprobe_description,Calculate_BALANCER_maximum
-
-
-GenerateLevel,8
-generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XUdone_capcalculate
+path,XCALCULATOR,XCALCULATE,XU1,XUdone_capcalculate
 instance,XUdone_capcalculate
 parameter,pinprobe_description,CAP_Calculate_measurements_complete
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XUok_shuntalgorithm
+path,XCALCULATOR,XCALCULATE,XU1,XUok_shuntalgorithm
 instance,XUok_shuntalgorithm
 parameter,pinprobe_description,SHUNT_Algorithm_enabled_and_ready
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XUclock_capcalculate
+path,XCALCULATOR,XCALCULATE,XU1,XUcalculate_balancer
+instance,XUcalculate_balancer
+parameter,pinprobe_description,Calculate_BALANCER_maximum
+
+
+GenerateLevel,8
+generate,pinprobe
+path,XCALCULATOR,XCALCULATE,XU1,XUclock_capcalculate
 instance,XUclock_capcalculate
 parameter,pinprobe_description,Master_sync_clock
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XUfault_capcalculate
+path,XCALCULATOR,XCALCULATE,XU1,XUfault_capcalculate
 instance,XUfault_capcalculate
 parameter,pinprobe_description,CAP_calculator_fault_status_flag
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XUenable_capcalculate
+path,XCALCULATOR,XCALCULATE,XU1,XUenable_capcalculate
 instance,XUenable_capcalculate
 parameter,pinprobe_description,Master_enable_for_CAP_calculate
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XUok_balanceralgorithm
+path,XCALCULATOR,XCALCULATE,XU1,XUok_balanceralgorithm
 instance,XUok_balanceralgorithm
 parameter,pinprobe_description,BALANCER_Algorithm_enabled_and_ready
 
 
 GenerateLevel,8
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XUshunt_registeractive
+path,XCALCULATOR,XCALCULATE,XU1,XUshunt_registeractive
 instance,XUshunt_registeractive
-parameter,pinprobe_description,SHUNT_calcualtion_is_valid
+parameter,pinprobe_description,SHUNT_calculation_is_valid
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU10,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU10,XU1
 instance,XU1
 parameter,pinprobe_description,State
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU10,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU10,XU2
 instance,XU2
 parameter,pinprobe_description,Input_to_state_minimum_delay
 
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU10,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU10,XU3
 instance,XU3
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -2407,21 +2407,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU10,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU10,XU4
 instance,XU4
 parameter,pinprobe_description,State_is_now_active
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU10,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU10,XU5
 instance,XU5
 parameter,pinprobe_description,State_Delay_output
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU10,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU10,XU6
 instance,XU6
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -2429,7 +2429,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU10,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU10,XU25
 instance,XU25
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -2437,7 +2437,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU10,XU42
+path,XCALCULATOR,XCALCULATE,XU1,XU10,XU42
 instance,XU42
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -2445,21 +2445,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU12,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU12,XU1
 instance,XU1
 parameter,pinprobe_description,State
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU12,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU12,XU2
 instance,XU2
 parameter,pinprobe_description,Input_to_state_delays
 
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU12,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU12,XU3
 instance,XU3
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -2467,21 +2467,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU12,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU12,XU4
 instance,XU4
 parameter,pinprobe_description,State_is_now_active
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU12,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU12,XU5
 instance,XU5
 parameter,pinprobe_description,State_Minimum_Delay_output
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU12,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU12,XU6
 instance,XU6
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -2489,14 +2489,14 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU12,XU7
+path,XCALCULATOR,XCALCULATE,XU1,XU12,XU7
 instance,XU7
 parameter,pinprobe_description,State_Maximum_state_output
 
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU12,XU8
+path,XCALCULATOR,XCALCULATE,XU1,XU12,XU8
 instance,XU8
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -2504,7 +2504,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU12,XU9
+path,XCALCULATOR,XCALCULATE,XU1,XU12,XU9
 instance,XU9
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -2512,14 +2512,14 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU12,XU10
+path,XCALCULATOR,XCALCULATE,XU1,XU12,XU10
 instance,XU10
 parameter,pinprobe_description,Maximum_state_timer
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU12,XU11
+path,XCALCULATOR,XCALCULATE,XU1,XU12,XU11
 instance,XU11
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -2527,7 +2527,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU12,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU12,XU25
 instance,XU25
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -2535,7 +2535,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU12,XU42
+path,XCALCULATOR,XCALCULATE,XU1,XU12,XU42
 instance,XU42
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -2543,21 +2543,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU15,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU15,XU1
 instance,XU1
 parameter,pinprobe_description,State
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU15,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU15,XU2
 instance,XU2
 parameter,pinprobe_description,Input_to_state_delays
 
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU15,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU15,XU3
 instance,XU3
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -2565,21 +2565,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU15,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU15,XU4
 instance,XU4
 parameter,pinprobe_description,State_is_now_active
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU15,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU15,XU5
 instance,XU5
 parameter,pinprobe_description,State_Minimum_Delay_output
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU15,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU15,XU6
 instance,XU6
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -2587,14 +2587,14 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU15,XU7
+path,XCALCULATOR,XCALCULATE,XU1,XU15,XU7
 instance,XU7
 parameter,pinprobe_description,State_Maximum_state_output
 
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU15,XU8
+path,XCALCULATOR,XCALCULATE,XU1,XU15,XU8
 instance,XU8
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -2602,7 +2602,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU15,XU9
+path,XCALCULATOR,XCALCULATE,XU1,XU15,XU9
 instance,XU9
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -2610,14 +2610,14 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU15,XU10
+path,XCALCULATOR,XCALCULATE,XU1,XU15,XU10
 instance,XU10
 parameter,pinprobe_description,Maximum_state_timer
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU15,XU11
+path,XCALCULATOR,XCALCULATE,XU1,XU15,XU11
 instance,XU11
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -2625,7 +2625,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU15,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU15,XU25
 instance,XU25
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -2633,7 +2633,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU15,XU42
+path,XCALCULATOR,XCALCULATE,XU1,XU15,XU42
 instance,XU42
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -2641,21 +2641,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU18,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU18,XU1
 instance,XU1
 parameter,pinprobe_description,State
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU18,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU18,XU2
 instance,XU2
 parameter,pinprobe_description,Input_to_state_minimum_delay
 
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU18,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU18,XU3
 instance,XU3
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -2663,21 +2663,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU18,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU18,XU4
 instance,XU4
 parameter,pinprobe_description,State_is_now_active
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU18,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU18,XU5
 instance,XU5
 parameter,pinprobe_description,State_Delay_output
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU18,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU18,XU6
 instance,XU6
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -2685,7 +2685,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU18,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU18,XU25
 instance,XU25
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -2693,7 +2693,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU18,XU42
+path,XCALCULATOR,XCALCULATE,XU1,XU18,XU42
 instance,XU42
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -2701,21 +2701,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU20,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU20,XU1
 instance,XU1
 parameter,pinprobe_description,State
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU20,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU20,XU2
 instance,XU2
 parameter,pinprobe_description,Input_to_state_minimum_delay
 
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU20,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU20,XU3
 instance,XU3
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -2723,21 +2723,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU20,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU20,XU4
 instance,XU4
 parameter,pinprobe_description,State_is_now_active
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU20,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU20,XU5
 instance,XU5
 parameter,pinprobe_description,State_Delay_output
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU20,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU20,XU6
 instance,XU6
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -2745,7 +2745,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU20,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU20,XU25
 instance,XU25
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -2753,7 +2753,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU20,XU42
+path,XCALCULATOR,XCALCULATE,XU1,XU20,XU42
 instance,XU42
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -2761,21 +2761,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU22,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU22,XU1
 instance,XU1
 parameter,pinprobe_description,State
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU22,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU22,XU2
 instance,XU2
 parameter,pinprobe_description,Input_to_state_minimum_delay
 
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU22,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU22,XU3
 instance,XU3
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -2783,21 +2783,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU22,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU22,XU4
 instance,XU4
 parameter,pinprobe_description,State_is_now_active
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU22,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU22,XU5
 instance,XU5
 parameter,pinprobe_description,State_Delay_output
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU22,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU22,XU6
 instance,XU6
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -2805,7 +2805,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU22,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU22,XU25
 instance,XU25
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -2813,7 +2813,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU22,XU42
+path,XCALCULATOR,XCALCULATE,XU1,XU22,XU42
 instance,XU42
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -2821,21 +2821,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU24,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU24,XU1
 instance,XU1
 parameter,pinprobe_description,State
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU24,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU24,XU2
 instance,XU2
 parameter,pinprobe_description,Input_to_state_delays
 
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU24,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU24,XU3
 instance,XU3
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -2843,21 +2843,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU24,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU24,XU4
 instance,XU4
 parameter,pinprobe_description,State_is_now_active
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU24,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU24,XU5
 instance,XU5
 parameter,pinprobe_description,State_Minimum_Delay_output
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU24,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU24,XU6
 instance,XU6
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -2865,14 +2865,14 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU24,XU7
+path,XCALCULATOR,XCALCULATE,XU1,XU24,XU7
 instance,XU7
 parameter,pinprobe_description,State_Maximum_state_output
 
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU24,XU8
+path,XCALCULATOR,XCALCULATE,XU1,XU24,XU8
 instance,XU8
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -2880,7 +2880,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU24,XU9
+path,XCALCULATOR,XCALCULATE,XU1,XU24,XU9
 instance,XU9
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -2888,14 +2888,14 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU24,XU10
+path,XCALCULATOR,XCALCULATE,XU1,XU24,XU10
 instance,XU10
 parameter,pinprobe_description,Maximum_state_timer
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU24,XU11
+path,XCALCULATOR,XCALCULATE,XU1,XU24,XU11
 instance,XU11
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -2903,7 +2903,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU24,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU24,XU25
 instance,XU25
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -2911,7 +2911,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU24,XU42
+path,XCALCULATOR,XCALCULATE,XU1,XU24,XU42
 instance,XU42
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -2919,21 +2919,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU27,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU27,XU1
 instance,XU1
 parameter,pinprobe_description,State
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU27,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU27,XU2
 instance,XU2
 parameter,pinprobe_description,Input_to_state_minimum_delay
 
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU27,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU27,XU3
 instance,XU3
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -2941,21 +2941,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU27,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU27,XU4
 instance,XU4
 parameter,pinprobe_description,State_is_now_active
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU27,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU27,XU5
 instance,XU5
 parameter,pinprobe_description,State_Delay_output
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU27,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU27,XU6
 instance,XU6
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -2963,7 +2963,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU27,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU27,XU25
 instance,XU25
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -2971,7 +2971,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU27,XU42
+path,XCALCULATOR,XCALCULATE,XU1,XU27,XU42
 instance,XU42
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -2979,28 +2979,28 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,srlatch
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU1
 instance,XU1
 parameter,srlatch_vmax,6
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU2
 instance,XU2
 parameter,pinprobe_description,input1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU3
 instance,XU3
 parameter,pinprobe_description,OUTPUT1_output
 
 
 GenerateLevel,5
 generate,nor2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU4
 instance,XU4
 parameter,logicgate_type,nor2
 parameter,logicgate_vmax,6
@@ -3008,7 +3008,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU5
 instance,XU5
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -3016,21 +3016,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU6
 instance,XU6
 parameter,pinprobe_description,input0
 
 
 GenerateLevel,5
 generate,srlatch
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU7
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU7
 instance,XU7
 parameter,srlatch_vmax,6
 
 
 GenerateLevel,5
 generate,tie
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU8
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU8
 instance,XU8
 parameter,tie_mode,low
 parameter,tie_vmax,6
@@ -3038,7 +3038,7 @@ parameter,tie_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU9
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU9
 instance,XU9
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -3046,7 +3046,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nor2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU10
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU10
 instance,XU10
 parameter,logicgate_type,nor2
 parameter,logicgate_vmax,6
@@ -3054,7 +3054,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nor2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU11
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU11
 instance,XU11
 parameter,logicgate_type,nor2
 parameter,logicgate_vmax,6
@@ -3062,42 +3062,42 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU12
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU12
 instance,XU12
 parameter,pinprobe_description,OUTPUT0_output
 
 
 GenerateLevel,5
 generate,srlatch
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU13
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU13
 instance,XU13
 parameter,srlatch_vmax,6
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU14
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU14
 instance,XU14
 parameter,pinprobe_description,state
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU15
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU15
 instance,XU15
 parameter,pinprobe_description,input2
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU16
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU16
 instance,XU16
 parameter,pinprobe_description,OUTPUT2_output
 
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU17
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU17
 instance,XU17
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -3105,25 +3105,25 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,celeranoconn
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU18
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU18
 instance,XU18
 
 
 GenerateLevel,5
 generate,celeranoconn
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU19
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU19
 instance,XU19
 
 
 GenerateLevel,5
 generate,celeranoconn
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU20
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU20
 instance,XU20
 
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU23
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU23
 instance,XU23
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -3131,7 +3131,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU25
 instance,XU25
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -3139,7 +3139,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU29,XU27
+path,XCALCULATOR,XCALCULATE,XU1,XU29,XU27
 instance,XU27
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -3147,28 +3147,28 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,srlatch
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU1
 instance,XU1
 parameter,srlatch_vmax,6
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU2
 instance,XU2
 parameter,pinprobe_description,input1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU3
 instance,XU3
 parameter,pinprobe_description,OUTPUT1_output
 
 
 GenerateLevel,5
 generate,nor3
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU4
 instance,XU4
 parameter,logicgate_type,nor3
 parameter,logicgate_vmax,6
@@ -3176,7 +3176,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU5
 instance,XU5
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -3184,21 +3184,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU6
 instance,XU6
 parameter,pinprobe_description,input0
 
 
 GenerateLevel,5
 generate,srlatch
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU7
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU7
 instance,XU7
 parameter,srlatch_vmax,6
 
 
 GenerateLevel,5
 generate,tie
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU8
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU8
 instance,XU8
 parameter,tie_mode,low
 parameter,tie_vmax,6
@@ -3206,7 +3206,7 @@ parameter,tie_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU9
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU9
 instance,XU9
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -3214,14 +3214,14 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,srlatch
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU10
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU10
 instance,XU10
 parameter,srlatch_vmax,6
 
 
 GenerateLevel,5
 generate,nor3
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU11
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU11
 instance,XU11
 parameter,logicgate_type,nor3
 parameter,logicgate_vmax,6
@@ -3229,42 +3229,42 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU12
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU12
 instance,XU12
 parameter,pinprobe_description,OUTPUT0_output
 
 
 GenerateLevel,5
 generate,srlatch
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU13
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU13
 instance,XU13
 parameter,srlatch_vmax,6
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU14
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU14
 instance,XU14
 parameter,pinprobe_description,state
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU15
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU15
 instance,XU15
 parameter,pinprobe_description,input2
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU16
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU16
 instance,XU16
 parameter,pinprobe_description,OUTPUT2_output
 
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU17
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU17
 instance,XU17
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -3272,7 +3272,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nor3
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU18
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU18
 instance,XU18
 parameter,logicgate_type,nor3
 parameter,logicgate_vmax,6
@@ -3280,7 +3280,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU19
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU19
 instance,XU19
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -3288,7 +3288,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU20
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU20
 instance,XU20
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -3296,14 +3296,14 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU21
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU21
 instance,XU21
 parameter,pinprobe_description,input3
 
 
 GenerateLevel,5
 generate,nor3
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU22
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU22
 instance,XU22
 parameter,logicgate_type,nor3
 parameter,logicgate_vmax,6
@@ -3311,7 +3311,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU23
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU23
 instance,XU23
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -3319,14 +3319,14 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU24
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU24
 instance,XU24
 parameter,pinprobe_description,OUTPUT3_output
 
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU25
 instance,XU25
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -3334,13 +3334,13 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,celeranoconn
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU26
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU26
 instance,XU26
 
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU27
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU27
 instance,XU27
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -3348,46 +3348,46 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,celeranoconn
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU28
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU28
 instance,XU28
 
 
 GenerateLevel,5
 generate,celeranoconn
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU29
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU29
 instance,XU29
 
 
 GenerateLevel,5
 generate,celeranoconn
-path,XCALCULATOR,XCALCULATE,XMAIN,XU30,XU30
+path,XCALCULATOR,XCALCULATE,XU1,XU30,XU30
 instance,XU30
 
 
 GenerateLevel,5
 generate,srlatch
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU1
 instance,XU1
 parameter,srlatch_vmax,6
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU2
 instance,XU2
 parameter,pinprobe_description,input1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU3
 instance,XU3
 parameter,pinprobe_description,OUTPUT1_output
 
 
 GenerateLevel,5
 generate,nor2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU4
 instance,XU4
 parameter,logicgate_type,nor2
 parameter,logicgate_vmax,6
@@ -3395,7 +3395,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU5
 instance,XU5
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -3403,21 +3403,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU6
 instance,XU6
 parameter,pinprobe_description,input0
 
 
 GenerateLevel,5
 generate,srlatch
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU7
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU7
 instance,XU7
 parameter,srlatch_vmax,6
 
 
 GenerateLevel,5
 generate,tie
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU8
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU8
 instance,XU8
 parameter,tie_mode,low
 parameter,tie_vmax,6
@@ -3425,7 +3425,7 @@ parameter,tie_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU9
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU9
 instance,XU9
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -3433,7 +3433,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nor2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU10
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU10
 instance,XU10
 parameter,logicgate_type,nor2
 parameter,logicgate_vmax,6
@@ -3441,7 +3441,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nor2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU11
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU11
 instance,XU11
 parameter,logicgate_type,nor2
 parameter,logicgate_vmax,6
@@ -3449,42 +3449,42 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU12
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU12
 instance,XU12
 parameter,pinprobe_description,OUTPUT0_output
 
 
 GenerateLevel,5
 generate,srlatch
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU13
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU13
 instance,XU13
 parameter,srlatch_vmax,6
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU14
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU14
 instance,XU14
 parameter,pinprobe_description,state
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU15
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU15
 instance,XU15
 parameter,pinprobe_description,input2
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU16
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU16
 instance,XU16
 parameter,pinprobe_description,OUTPUT2_output
 
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU17
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU17
 instance,XU17
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -3492,25 +3492,25 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,celeranoconn
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU18
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU18
 instance,XU18
 
 
 GenerateLevel,5
 generate,celeranoconn
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU19
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU19
 instance,XU19
 
 
 GenerateLevel,5
 generate,celeranoconn
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU20
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU20
 instance,XU20
 
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU23
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU23
 instance,XU23
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -3518,7 +3518,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU25
 instance,XU25
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -3526,7 +3526,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU31,XU27
+path,XCALCULATOR,XCALCULATE,XU1,XU31,XU27
 instance,XU27
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -3534,28 +3534,28 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU32,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU32,XU1
 instance,XU1
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU32,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU32,XU2
 instance,XU2
 parameter,pinprobe_description,input1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU32,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU32,XU3
 instance,XU3
 parameter,pinprobe_description,INPUT1_output
 
 
 GenerateLevel,5
 generate,nand3
-path,XCALCULATOR,XCALCULATE,XMAIN,XU32,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU32,XU4
 instance,XU4
 parameter,logicgate_type,nand3
 parameter,logicgate_vmax,6
@@ -3563,7 +3563,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU32,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU32,XU5
 instance,XU5
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -3571,35 +3571,35 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU32,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU32,XU6
 instance,XU6
 parameter,pinprobe_description,input0
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU33,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU33,XU1
 instance,XU1
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU33,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU33,XU2
 instance,XU2
 parameter,pinprobe_description,input1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU33,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU33,XU3
 instance,XU3
 parameter,pinprobe_description,INPUT2_output
 
 
 GenerateLevel,5
 generate,nand3
-path,XCALCULATOR,XCALCULATE,XMAIN,XU33,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU33,XU4
 instance,XU4
 parameter,logicgate_type,nand3
 parameter,logicgate_vmax,6
@@ -3607,7 +3607,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU33,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU33,XU5
 instance,XU5
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -3615,7 +3615,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nor2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU33,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU33,XU6
 instance,XU6
 parameter,logicgate_type,nor2
 parameter,logicgate_vmax,6
@@ -3623,21 +3623,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU33,XU7
+path,XCALCULATOR,XCALCULATE,XU1,XU33,XU7
 instance,XU7
 parameter,pinprobe_description,input0
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU33,XU8
+path,XCALCULATOR,XCALCULATE,XU1,XU33,XU8
 instance,XU8
 parameter,pinprobe_description,input2
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU33,XU19
+path,XCALCULATOR,XCALCULATE,XU1,XU33,XU19
 instance,XU19
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -3645,28 +3645,28 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU34,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU34,XU1
 instance,XU1
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU34,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU34,XU2
 instance,XU2
 parameter,pinprobe_description,input1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU34,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU34,XU3
 instance,XU3
 parameter,pinprobe_description,INPUT2_output
 
 
 GenerateLevel,5
 generate,nand3
-path,XCALCULATOR,XCALCULATE,XMAIN,XU34,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU34,XU4
 instance,XU4
 parameter,logicgate_type,nand3
 parameter,logicgate_vmax,6
@@ -3674,7 +3674,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU34,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU34,XU5
 instance,XU5
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -3682,7 +3682,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nor2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU34,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU34,XU6
 instance,XU6
 parameter,logicgate_type,nor2
 parameter,logicgate_vmax,6
@@ -3690,21 +3690,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU34,XU7
+path,XCALCULATOR,XCALCULATE,XU1,XU34,XU7
 instance,XU7
 parameter,pinprobe_description,input0
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU34,XU8
+path,XCALCULATOR,XCALCULATE,XU1,XU34,XU8
 instance,XU8
 parameter,pinprobe_description,input2
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU34,XU19
+path,XCALCULATOR,XCALCULATE,XU1,XU34,XU19
 instance,XU19
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -3712,28 +3712,28 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU35,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU35,XU1
 instance,XU1
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU35,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU35,XU2
 instance,XU2
 parameter,pinprobe_description,input1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU35,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU35,XU3
 instance,XU3
 parameter,pinprobe_description,INPUT2_output
 
 
 GenerateLevel,5
 generate,nand3
-path,XCALCULATOR,XCALCULATE,XMAIN,XU35,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU35,XU4
 instance,XU4
 parameter,logicgate_type,nand3
 parameter,logicgate_vmax,6
@@ -3741,7 +3741,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU35,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU35,XU5
 instance,XU5
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -3749,7 +3749,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nor2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU35,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU35,XU6
 instance,XU6
 parameter,logicgate_type,nor2
 parameter,logicgate_vmax,6
@@ -3757,21 +3757,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU35,XU7
+path,XCALCULATOR,XCALCULATE,XU1,XU35,XU7
 instance,XU7
 parameter,pinprobe_description,input0
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU35,XU8
+path,XCALCULATOR,XCALCULATE,XU1,XU35,XU8
 instance,XU8
 parameter,pinprobe_description,input2
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU35,XU19
+path,XCALCULATOR,XCALCULATE,XU1,XU35,XU19
 instance,XU19
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -3779,28 +3779,28 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU36,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU36,XU1
 instance,XU1
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU36,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU36,XU2
 instance,XU2
 parameter,pinprobe_description,input1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU36,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU36,XU3
 instance,XU3
 parameter,pinprobe_description,INPUT1_output
 
 
 GenerateLevel,5
 generate,nand3
-path,XCALCULATOR,XCALCULATE,XMAIN,XU36,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU36,XU4
 instance,XU4
 parameter,logicgate_type,nand3
 parameter,logicgate_vmax,6
@@ -3808,7 +3808,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU36,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU36,XU5
 instance,XU5
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -3816,35 +3816,35 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU36,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU36,XU6
 instance,XU6
 parameter,pinprobe_description,input0
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU37,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU37,XU1
 instance,XU1
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU37,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU37,XU2
 instance,XU2
 parameter,pinprobe_description,input1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU37,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU37,XU3
 instance,XU3
 parameter,pinprobe_description,INPUT2_output
 
 
 GenerateLevel,5
 generate,nand3
-path,XCALCULATOR,XCALCULATE,XMAIN,XU37,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU37,XU4
 instance,XU4
 parameter,logicgate_type,nand3
 parameter,logicgate_vmax,6
@@ -3852,7 +3852,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU37,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU37,XU5
 instance,XU5
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -3860,7 +3860,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nor2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU37,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU37,XU6
 instance,XU6
 parameter,logicgate_type,nor2
 parameter,logicgate_vmax,6
@@ -3868,21 +3868,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU37,XU7
+path,XCALCULATOR,XCALCULATE,XU1,XU37,XU7
 instance,XU7
 parameter,pinprobe_description,input0
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU37,XU8
+path,XCALCULATOR,XCALCULATE,XU1,XU37,XU8
 instance,XU8
 parameter,pinprobe_description,input2
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU37,XU19
+path,XCALCULATOR,XCALCULATE,XU1,XU37,XU19
 instance,XU19
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -3890,28 +3890,28 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU38,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU38,XU1
 instance,XU1
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU38,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU38,XU2
 instance,XU2
 parameter,pinprobe_description,input1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU38,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU38,XU3
 instance,XU3
 parameter,pinprobe_description,INPUT1_output
 
 
 GenerateLevel,5
 generate,nand3
-path,XCALCULATOR,XCALCULATE,XMAIN,XU38,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU38,XU4
 instance,XU4
 parameter,logicgate_type,nand3
 parameter,logicgate_vmax,6
@@ -3919,7 +3919,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU38,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU38,XU5
 instance,XU5
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -3927,35 +3927,35 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU38,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU38,XU6
 instance,XU6
 parameter,pinprobe_description,input0
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU39,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU39,XU1
 instance,XU1
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU39,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU39,XU2
 instance,XU2
 parameter,pinprobe_description,input1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU39,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU39,XU3
 instance,XU3
 parameter,pinprobe_description,INPUT1_output
 
 
 GenerateLevel,5
 generate,nand3
-path,XCALCULATOR,XCALCULATE,XMAIN,XU39,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU39,XU4
 instance,XU4
 parameter,logicgate_type,nand3
 parameter,logicgate_vmax,6
@@ -3963,7 +3963,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU39,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU39,XU5
 instance,XU5
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -3971,35 +3971,35 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU39,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU39,XU6
 instance,XU6
 parameter,pinprobe_description,input0
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU40,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU40,XU1
 instance,XU1
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU40,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU40,XU2
 instance,XU2
 parameter,pinprobe_description,input1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU40,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU40,XU3
 instance,XU3
 parameter,pinprobe_description,INPUT1_output
 
 
 GenerateLevel,5
 generate,nand3
-path,XCALCULATOR,XCALCULATE,XMAIN,XU40,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU40,XU4
 instance,XU4
 parameter,logicgate_type,nand3
 parameter,logicgate_vmax,6
@@ -4007,7 +4007,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU40,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU40,XU5
 instance,XU5
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -4015,35 +4015,35 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU40,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU40,XU6
 instance,XU6
 parameter,pinprobe_description,input0
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU41,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU41,XU1
 instance,XU1
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU41,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU41,XU2
 instance,XU2
 parameter,pinprobe_description,input1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU41,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU41,XU3
 instance,XU3
 parameter,pinprobe_description,INPUT1_output
 
 
 GenerateLevel,5
 generate,nand3
-path,XCALCULATOR,XCALCULATE,XMAIN,XU41,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU41,XU4
 instance,XU4
 parameter,logicgate_type,nand3
 parameter,logicgate_vmax,6
@@ -4051,7 +4051,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU41,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU41,XU5
 instance,XU5
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -4059,35 +4059,35 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU41,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU41,XU6
 instance,XU6
 parameter,pinprobe_description,input0
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU42,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU42,XU1
 instance,XU1
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU42,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU42,XU2
 instance,XU2
 parameter,pinprobe_description,input1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU42,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU42,XU3
 instance,XU3
 parameter,pinprobe_description,INPUT1_output
 
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU42,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU42,XU4
 instance,XU4
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -4095,7 +4095,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU42,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU42,XU5
 instance,XU5
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -4103,28 +4103,28 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU43,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU43,XU1
 instance,XU1
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU43,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU43,XU2
 instance,XU2
 parameter,pinprobe_description,input1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU43,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU43,XU3
 instance,XU3
 parameter,pinprobe_description,INPUT1_output
 
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU43,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU43,XU4
 instance,XU4
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -4132,7 +4132,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU43,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU43,XU5
 instance,XU5
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -4140,28 +4140,28 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU44,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU44,XU1
 instance,XU1
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU44,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU44,XU2
 instance,XU2
 parameter,pinprobe_description,input1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU44,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU44,XU3
 instance,XU3
 parameter,pinprobe_description,INPUT1_output
 
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU44,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU44,XU4
 instance,XU4
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -4169,7 +4169,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU44,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU44,XU5
 instance,XU5
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -4177,28 +4177,28 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU45,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU45,XU1
 instance,XU1
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU45,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU45,XU2
 instance,XU2
 parameter,pinprobe_description,input1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU45,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU45,XU3
 instance,XU3
 parameter,pinprobe_description,INPUT1_output
 
 
 GenerateLevel,5
 generate,nand3
-path,XCALCULATOR,XCALCULATE,XMAIN,XU45,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU45,XU4
 instance,XU4
 parameter,logicgate_type,nand3
 parameter,logicgate_vmax,6
@@ -4206,7 +4206,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU45,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU45,XU5
 instance,XU5
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -4214,35 +4214,35 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU45,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU45,XU6
 instance,XU6
 parameter,pinprobe_description,input0
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU46,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU46,XU1
 instance,XU1
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU46,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU46,XU2
 instance,XU2
 parameter,pinprobe_description,input1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU46,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU46,XU3
 instance,XU3
 parameter,pinprobe_description,INPUT1_output
 
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU46,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU46,XU4
 instance,XU4
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -4250,7 +4250,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU46,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU46,XU5
 instance,XU5
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -4258,7 +4258,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nor3
-path,XCALCULATOR,XCALCULATE,XMAIN,XU47,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU47,XU2
 instance,XU2
 parameter,logicgate_type,nor3
 parameter,logicgate_vmax,6
@@ -4266,28 +4266,28 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU47,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU47,XU3
 instance,XU3
 parameter,pinprobe_description,sr_input0
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU47,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU47,XU4
 instance,XU4
 parameter,pinprobe_description,sr_output5
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU47,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU47,XU5
 instance,XU5
 parameter,pinprobe_description,sr_input1
 
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU47,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU47,XU6
 instance,XU6
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -4295,28 +4295,28 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU47,XU7
+path,XCALCULATOR,XCALCULATE,XU1,XU47,XU7
 instance,XU7
 parameter,pinprobe_description,sr_input2
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU47,XU8
+path,XCALCULATOR,XCALCULATE,XU1,XU47,XU8
 instance,XU8
 parameter,pinprobe_description,sr_input3
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU47,XU9
+path,XCALCULATOR,XCALCULATE,XU1,XU47,XU9
 instance,XU9
 parameter,pinprobe_description,sr_input4
 
 
 GenerateLevel,5
 generate,nor2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU47,XU10
+path,XCALCULATOR,XCALCULATE,XU1,XU47,XU10
 instance,XU10
 parameter,logicgate_type,nor2
 parameter,logicgate_vmax,6
@@ -4324,7 +4324,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU47,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU47,XU25
 instance,XU25
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -4332,7 +4332,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nor4
-path,XCALCULATOR,XCALCULATE,XMAIN,XU48,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU48,XU2
 instance,XU2
 parameter,logicgate_type,nor4
 parameter,logicgate_vmax,6
@@ -4340,28 +4340,28 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU48,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU48,XU3
 instance,XU3
 parameter,pinprobe_description,sr_input0
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU48,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU48,XU4
 instance,XU4
 parameter,pinprobe_description,sr_output4
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU48,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU48,XU5
 instance,XU5
 parameter,pinprobe_description,sr_input1
 
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU48,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU48,XU6
 instance,XU6
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -4369,21 +4369,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU48,XU7
+path,XCALCULATOR,XCALCULATE,XU1,XU48,XU7
 instance,XU7
 parameter,pinprobe_description,sr_input2
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU48,XU8
+path,XCALCULATOR,XCALCULATE,XU1,XU48,XU8
 instance,XU8
 parameter,pinprobe_description,sr_input3
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU48,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU48,XU25
 instance,XU25
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -4391,7 +4391,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nor3
-path,XCALCULATOR,XCALCULATE,XMAIN,XU49,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU49,XU2
 instance,XU2
 parameter,logicgate_type,nor3
 parameter,logicgate_vmax,6
@@ -4399,28 +4399,28 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU49,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU49,XU3
 instance,XU3
 parameter,pinprobe_description,sr_input0
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU49,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU49,XU4
 instance,XU4
 parameter,pinprobe_description,sr_output3
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU49,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU49,XU5
 instance,XU5
 parameter,pinprobe_description,sr_input1
 
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU49,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU49,XU6
 instance,XU6
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -4428,14 +4428,14 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU49,XU7
+path,XCALCULATOR,XCALCULATE,XU1,XU49,XU7
 instance,XU7
 parameter,pinprobe_description,sr_input2
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU49,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU49,XU25
 instance,XU25
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -4443,7 +4443,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nor4
-path,XCALCULATOR,XCALCULATE,XMAIN,XU50,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU50,XU2
 instance,XU2
 parameter,logicgate_type,nor4
 parameter,logicgate_vmax,6
@@ -4451,28 +4451,28 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU50,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU50,XU3
 instance,XU3
 parameter,pinprobe_description,sr_input0
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU50,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU50,XU4
 instance,XU4
 parameter,pinprobe_description,sr_output4
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU50,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU50,XU5
 instance,XU5
 parameter,pinprobe_description,sr_input1
 
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU50,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU50,XU6
 instance,XU6
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -4480,21 +4480,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU50,XU7
+path,XCALCULATOR,XCALCULATE,XU1,XU50,XU7
 instance,XU7
 parameter,pinprobe_description,sr_input2
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU50,XU8
+path,XCALCULATOR,XCALCULATE,XU1,XU50,XU8
 instance,XU8
 parameter,pinprobe_description,sr_input3
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU50,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU50,XU25
 instance,XU25
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -4502,7 +4502,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nor4
-path,XCALCULATOR,XCALCULATE,XMAIN,XU51,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU51,XU2
 instance,XU2
 parameter,logicgate_type,nor4
 parameter,logicgate_vmax,6
@@ -4510,28 +4510,28 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU51,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU51,XU3
 instance,XU3
 parameter,pinprobe_description,sr_input0
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU51,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU51,XU4
 instance,XU4
 parameter,pinprobe_description,sr_output4
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU51,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU51,XU5
 instance,XU5
 parameter,pinprobe_description,sr_input1
 
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU51,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU51,XU6
 instance,XU6
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -4539,21 +4539,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU51,XU7
+path,XCALCULATOR,XCALCULATE,XU1,XU51,XU7
 instance,XU7
 parameter,pinprobe_description,sr_input2
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU51,XU8
+path,XCALCULATOR,XCALCULATE,XU1,XU51,XU8
 instance,XU8
 parameter,pinprobe_description,sr_input3
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU51,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU51,XU25
 instance,XU25
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -4561,7 +4561,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nor3
-path,XCALCULATOR,XCALCULATE,XMAIN,XU52,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU52,XU2
 instance,XU2
 parameter,logicgate_type,nor3
 parameter,logicgate_vmax,6
@@ -4569,28 +4569,28 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU52,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU52,XU3
 instance,XU3
 parameter,pinprobe_description,sr_input0
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU52,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU52,XU4
 instance,XU4
 parameter,pinprobe_description,sr_output6
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU52,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU52,XU5
 instance,XU5
 parameter,pinprobe_description,sr_input1
 
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU52,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU52,XU6
 instance,XU6
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -4598,21 +4598,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU52,XU7
+path,XCALCULATOR,XCALCULATE,XU1,XU52,XU7
 instance,XU7
 parameter,pinprobe_description,sr_input2
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU52,XU8
+path,XCALCULATOR,XCALCULATE,XU1,XU52,XU8
 instance,XU8
 parameter,pinprobe_description,sr_input3
 
 
 GenerateLevel,5
 generate,nor3
-path,XCALCULATOR,XCALCULATE,XMAIN,XU52,XU9
+path,XCALCULATOR,XCALCULATE,XU1,XU52,XU9
 instance,XU9
 parameter,logicgate_type,nor3
 parameter,logicgate_vmax,6
@@ -4620,21 +4620,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU52,XU10
+path,XCALCULATOR,XCALCULATE,XU1,XU52,XU10
 instance,XU10
 parameter,pinprobe_description,sr_input4
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU52,XU11
+path,XCALCULATOR,XCALCULATE,XU1,XU52,XU11
 instance,XU11
 parameter,pinprobe_description,sr_input5
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU52,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU52,XU25
 instance,XU25
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -4642,21 +4642,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU53,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU53,XU1
 instance,XU1
 parameter,pinprobe_description,state_output
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU53,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU53,XU2
 instance,XU2
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,delayfixed
-path,XCALCULATOR,XCALCULATE,XMAIN,XU53,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU53,XU3
 instance,XU3
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -4693,7 +4693,7 @@ parameter,delay_accuracy_description,text
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU53,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU53,XU25
 instance,XU25
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -4701,21 +4701,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU54,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU54,XU1
 instance,XU1
 parameter,pinprobe_description,state_output
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU54,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU54,XU2
 instance,XU2
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,delayfixed
-path,XCALCULATOR,XCALCULATE,XMAIN,XU54,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU54,XU3
 instance,XU3
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -4752,7 +4752,7 @@ parameter,delay_accuracy_description,text
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU54,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU54,XU25
 instance,XU25
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -4760,21 +4760,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU55,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU55,XU1
 instance,XU1
 parameter,pinprobe_description,state_output
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU55,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU55,XU2
 instance,XU2
 parameter,pinprobe_description,state0_blank_time
 
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU55,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU55,XU3
 instance,XU3
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -4782,7 +4782,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nor3
-path,XCALCULATOR,XCALCULATE,XMAIN,XU55,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU55,XU4
 instance,XU4
 parameter,logicgate_type,nor3
 parameter,logicgate_vmax,6
@@ -4790,14 +4790,14 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU55,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU55,XU5
 instance,XU5
 parameter,pinprobe_description,state2_blank_time
 
 
 GenerateLevel,5
 generate,delayfixed
-path,XCALCULATOR,XCALCULATE,XMAIN,XU55,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU55,XU6
 instance,XU6
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -4834,14 +4834,14 @@ parameter,delay_accuracy_description,text
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU55,XU9
+path,XCALCULATOR,XCALCULATE,XU1,XU55,XU9
 instance,XU9
 parameter,pinprobe_description,state1_blank_time
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU55,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU55,XU25
 instance,XU25
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -4849,21 +4849,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU56,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU56,XU1
 instance,XU1
 parameter,pinprobe_description,state_output
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU56,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU56,XU2
 instance,XU2
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,delayfixed
-path,XCALCULATOR,XCALCULATE,XMAIN,XU56,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU56,XU3
 instance,XU3
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -4900,7 +4900,7 @@ parameter,delay_accuracy_description,text
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU56,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU56,XU25
 instance,XU25
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -4908,21 +4908,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU57,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU57,XU1
 instance,XU1
 parameter,pinprobe_description,state_output
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU57,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU57,XU2
 instance,XU2
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,delayfixed
-path,XCALCULATOR,XCALCULATE,XMAIN,XU57,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU57,XU3
 instance,XU3
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -4959,7 +4959,7 @@ parameter,delay_accuracy_description,text
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU57,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU57,XU25
 instance,XU25
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -4967,21 +4967,21 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU58,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU58,XU1
 instance,XU1
 parameter,pinprobe_description,state_output
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU58,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU58,XU2
 instance,XU2
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,delayfixed
-path,XCALCULATOR,XCALCULATE,XMAIN,XU58,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU58,XU3
 instance,XU3
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -5018,7 +5018,7 @@ parameter,delay_accuracy_description,text
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU58,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU58,XU25
 instance,XU25
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -5026,26 +5026,26 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU1
 instance,XU1
 parameter,pinprobe_description,Enable_State_Machine
 
 
 GenerateLevel,5
 generate,celeranoconn
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU3
 instance,XU3
 
 
 GenerateLevel,5
 generate,celeranoconn
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU4
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU4
 instance,XU4
 
 
 GenerateLevel,5
 generate,delayfixed
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU5
 instance,XU5
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -5096,7 +5096,7 @@ parameter,delayclock_datasheetdescription,text
 
 GenerateLevel,5
 generate,delayfixed
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU6
 instance,XU6
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -5147,7 +5147,7 @@ parameter,delayclock_datasheetdescription,text
 
 GenerateLevel,5
 generate,delayfixed
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU7
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU7
 instance,XU7
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -5198,7 +5198,7 @@ parameter,delayclock_datasheetdescription,text
 
 GenerateLevel,5
 generate,delayfixed
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU8
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU8
 instance,XU8
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -5249,7 +5249,7 @@ parameter,delayclock_datasheetdescription,text
 
 GenerateLevel,5
 generate,delayfixed
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU9
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU9
 instance,XU9
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -5300,28 +5300,28 @@ parameter,delayclock_datasheetdescription,text
 
 GenerateLevel,5
 generate,srlatch
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU10
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU10
 instance,XU10
 parameter,srlatch_vmax,6
 
 
 GenerateLevel,5
 generate,srlatch
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU11
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU11
 instance,XU11
 parameter,srlatch_vmax,6
 
 
 GenerateLevel,5
 generate,srlatch
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU12
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU12
 instance,XU12
 parameter,srlatch_vmax,6
 
 
 GenerateLevel,5
 generate,decoder3
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU13
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU13
 instance,XU13
 parameter,decoder_bits,3
 parameter,decoder_type,pin
@@ -5336,7 +5336,7 @@ parameter,decoder_datasheet_description,State_Decoder
 
 GenerateLevel,5
 generate,delayfixed
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU14
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU14
 instance,XU14
 parameter,delay_0,0
 parameter,delay_dft,no
@@ -5387,118 +5387,118 @@ parameter,delayclock_datasheetdescription,text
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU24
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU24
 instance,XU24
 parameter,pinprobe_description,state0
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU26
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU26
 instance,XU26
 parameter,pinprobe_description,state1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU28
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU28
 instance,XU28
 parameter,pinprobe_description,state2
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU31
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU31
 instance,XU31
 parameter,pinprobe_description,state3
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU32
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU32
 instance,XU32
 parameter,pinprobe_description,state4
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU35
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU35
 instance,XU35
 parameter,pinprobe_description,state5
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU36
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU36
 instance,XU36
 parameter,pinprobe_description,state6
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU39
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU39
 instance,XU39
 parameter,pinprobe_description,state7
 
 
 GenerateLevel,5
 generate,celeranoconn
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU41
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU41
 instance,XU41
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU46
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU46
 instance,XU46
 parameter,pinprobe_description,set0
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU47
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU47
 instance,XU47
 parameter,pinprobe_description,set1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU48
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU48
 instance,XU48
 parameter,pinprobe_description,set2
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU49
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU49
 instance,XU49
 parameter,pinprobe_description,reset2
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU50
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU50
 instance,XU50
 parameter,pinprobe_description,reset1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU51
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU51
 instance,XU51
 parameter,pinprobe_description,reset0
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU2,XU1
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU2,XU1
 instance,XU1
 parameter,pinprobe_description,ASM_state0_input
 
 
 GenerateLevel,5
 generate,inv
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU2,XU2
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU2,XU2
 instance,XU2
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
@@ -5506,7 +5506,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU2,XU3
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU2,XU3
 instance,XU3
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -5514,7 +5514,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU2,XU5
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU2,XU5
 instance,XU5
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -5522,7 +5522,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU2,XU6
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU2,XU6
 instance,XU6
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -5530,7 +5530,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU2,XU7
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU2,XU7
 instance,XU7
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -5538,7 +5538,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU2,XU8
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU2,XU8
 instance,XU8
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -5546,7 +5546,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU2,XU9
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU2,XU9
 instance,XU9
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -5554,7 +5554,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU2,XU10
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU2,XU10
 instance,XU10
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -5562,14 +5562,14 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU2,XU11
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU2,XU11
 instance,XU11
 parameter,pinprobe_description,ASM_state1_input
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU2,XU12
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU2,XU12
 instance,XU12
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -5577,7 +5577,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU2,XU13
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU2,XU13
 instance,XU13
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -5585,7 +5585,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU2,XU14
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU2,XU14
 instance,XU14
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -5593,7 +5593,7 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,nand2
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU2,XU15
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU2,XU15
 instance,XU15
 parameter,logicgate_type,nand2
 parameter,logicgate_vmax,6
@@ -5601,14 +5601,14 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,pinprobe
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU2,XU16
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU2,XU16
 instance,XU16
 parameter,pinprobe_description,ASM_state2_input
 
 
 GenerateLevel,5
 generate,dbuf
-path,XCALCULATOR,XCALCULATE,XMAIN,XU6,XU2,XU25
+path,XCALCULATOR,XCALCULATE,XU1,XU6,XU2,XU25
 instance,XU25
 parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
@@ -11609,7 +11609,7 @@ parameter,datamap_description,VSHUNT_msb_code
 parameter,datamap_enabletime1,10
 parameter,datamap_enabletime2,90
 parameter,datamap_enabletime3,190
-parameter,datamap_enabletime4,450
+parameter,datamap_enabletime4,609
 parameter,datamap_enabletime5,1
 parameter,datamap_enabletime6,1
 parameter,datamap_enabletime7,1

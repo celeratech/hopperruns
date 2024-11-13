@@ -176,14 +176,28 @@ module inv_12e192f5 (i,o,SUB,CELG,CELV);
   input  CELV;
 endmodule
 
-module delayclock_2b581177 ();
+module delayclock_c1c78a78 (in,out,CELG,CELV,clock,CELSUB,celeraporb);
+  input  in;
+  output  out;
+  input  CELG;
+  input  CELV;
+  input  clock;
+  input  CELSUB;
+  input  celeraporb;
 endmodule
 
-module delayclock_f33afbc9 ();
+module delayclock_05a33b66 (in,out,CELG,CELV,clock,CELSUB,celeraporb);
+  input  in;
+  output  out;
+  input  CELG;
+  input  CELV;
+  input  clock;
+  input  CELSUB;
+  input  celeraporb;
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module CAPcalculate_Rev0_DYES_ (OK, OFF, porb, BDONE, FAULT, SDONE, SHUNT, UNDEF6, BALANCER, on_shunt, CELG59462, CELV96848, CELSUB40948, enableFAULT, mode_backup, on_balancer, enable_shunt, STATEcontrol0, STATEcontrol1, STATEcontrol2, STATEcontrol3, measure_shunt, enable_balancer, measure_balancer, done_capcalculate, ok_shuntalgorithm, clock_capcalculate, fault_capcalculate, enable_capcalculate, ok_balanceralgorithm, shunt_registeractive);
+module CAPcalculate_Rev0_DYES_ (OK, OFF, porb, BDONE, FAULT, SDONE, SHUNT, UNDEF6, BALANCER, on_shunt, CELG59462, CELV96848, PORB97836, CELSUB40948, enableFAULT, mode_backup, on_balancer, shunt_status, STATEcontrol0, STATEcontrol1, STATEcontrol2, STATEcontrol3, balancer_status, calculate_shunt, done_capcalculate, ok_shuntalgorithm, calculate_balancer, clock_capcalculate, fault_capcalculate, enable_capcalculate, ok_balanceralgorithm, shunt_registeractive);
 output  OK;
 output  OFF;
 input  porb;
@@ -196,21 +210,22 @@ output  BALANCER;
 input  on_shunt;
 input  CELG59462;
 input  CELV96848;
+input  PORB97836;
 input  CELSUB40948;
 input  enableFAULT;
 input  mode_backup;
 input  on_balancer;
-output  enable_shunt;
+output  shunt_status;
 input  STATEcontrol0;
 input  STATEcontrol1;
 input  STATEcontrol2;
 input  STATEcontrol3;
-output  measure_shunt;
-output  enable_balancer;
-output  measure_balancer;
+output  balancer_status;
+output  calculate_shunt;
 output  done_capcalculate;
 input  ok_shuntalgorithm;
-  input  clock_capcalculate;
+output  calculate_balancer;
+input  clock_capcalculate;
 output  fault_capcalculate;
 input  enable_capcalculate;
 input  ok_balanceralgorithm;
@@ -566,7 +581,7 @@ VESPAasmSR6 XU52 (
 );
 
 VESPAasmOUTPUT1_0 XU53 (
-.o(measure_shunt),
+.o(calculate_shunt),
 .tstate(SHUNT),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -574,7 +589,7 @@ VESPAasmOUTPUT1_0 XU53 (
 );
 
 VESPAasmOUTPUT1_0 XU54 (
-.o(measure_balancer),
+.o(calculate_balancer),
 .tstate(BALANCER),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -592,7 +607,7 @@ VESPAasmOUTPUT3_0 XU55 (
 );
 
 VESPAasmOUTPUT1_0 XU56 (
-.o(enable_shunt),
+.o(shunt_status),
 .tstate(SDONE),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -600,7 +615,7 @@ VESPAasmOUTPUT1_0 XU56 (
 );
 
 VESPAasmOUTPUT1_0 XU57 (
-.o(enable_balancer),
+.o(balancer_status),
 .tstate(BDONE),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -680,48 +695,114 @@ inv_12e192f5 XU5 (
 .CELV(CELV96848)
 );
 
-delayclock_2b581177 XU11 (
-
+delayclock_c1c78a78 XU11 (
+.in(net_341),
+.out(net_340),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.clock(clock_capcalculate),
+.CELSUB(CELSUB40948),
+.celeraporb(PORB97836)
 );
 
-delayclock_2b581177 XU13 (
-
+delayclock_c1c78a78 XU13 (
+.in(net_363),
+.out(net_364),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.clock(clock_capcalculate),
+.CELSUB(CELSUB40948),
+.celeraporb(PORB97836)
 );
 
-delayclock_f33afbc9 XU14 (
-
+delayclock_05a33b66 XU14 (
+.in(net_363),
+.out(net_367),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.clock(clock_capcalculate),
+.CELSUB(CELSUB40948),
+.celeraporb(PORB97836)
 );
 
-delayclock_2b581177 XU16 (
-
+delayclock_c1c78a78 XU16 (
+.in(net_379),
+.out(net_376),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.clock(clock_capcalculate),
+.CELSUB(CELSUB40948),
+.celeraporb(PORB97836)
 );
 
-delayclock_f33afbc9 XU17 (
-
+delayclock_05a33b66 XU17 (
+.in(net_379),
+.out(net_378),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.clock(clock_capcalculate),
+.CELSUB(CELSUB40948),
+.celeraporb(PORB97836)
 );
 
-delayclock_2b581177 XU19 (
-
+delayclock_c1c78a78 XU19 (
+.in(net_383),
+.out(net_382),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.clock(clock_capcalculate),
+.CELSUB(CELSUB40948),
+.celeraporb(PORB97836)
 );
 
-delayclock_2b581177 XU21 (
-
+delayclock_c1c78a78 XU21 (
+.in(net_395),
+.out(net_394),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.clock(clock_capcalculate),
+.CELSUB(CELSUB40948),
+.celeraporb(PORB97836)
 );
 
-delayclock_2b581177 XU23 (
-
+delayclock_c1c78a78 XU23 (
+.in(net_398),
+.out(net_397),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.clock(clock_capcalculate),
+.CELSUB(CELSUB40948),
+.celeraporb(PORB97836)
 );
 
-delayclock_2b581177 XU25 (
-
+delayclock_c1c78a78 XU25 (
+.in(net_403),
+.out(net_400),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.clock(clock_capcalculate),
+.CELSUB(CELSUB40948),
+.celeraporb(PORB97836)
 );
 
-delayclock_2b581177 XU26 (
-
+delayclock_c1c78a78 XU26 (
+.in(net_403),
+.out(net_402),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.clock(clock_capcalculate),
+.CELSUB(CELSUB40948),
+.celeraporb(PORB97836)
 );
 
-delayclock_2b581177 XU28 (
-
+delayclock_c1c78a78 XU28 (
+.in(net_408),
+.out(net_407),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.clock(clock_capcalculate),
+.CELSUB(CELSUB40948),
+.celeraporb(PORB97836)
 );
 
 endmodule
