@@ -542,37 +542,10 @@ module dmux301a (s2,s4_0,s4_1,s8_0,s8_1,s8_2,d2A_0,d2A_1,d2B_0,d2B_1,d2C_0,d2C_1
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module root (CELG59462, CELV96848, CELSUB40948, register_asdf_12883a1b_Xdatamap3, register_asdf_6085f81e_Xdatamap8, register_asdf_8723b1fb_Xdatamap1, register_asdf_8d26be7d_Xdatamap6, register_asdf_9399d91c_Xdatamap9, register_asdf_98934281_Xdatamap4, register_asdf_c08ae2d6_Xdatamap7, register_asdf_dfd05652_Xdatamap2, register_asdf_e21c4106_Xdatamap5, register_asdf_024eba52_Xdatamap26, register_asdf_0381486e_Xdatamap25, register_asdf_0a8a83f0_Xdatamap23, register_asdf_1bcd6530_Xdatamap24, register_asdf_1f1ae749_Xdatamap12, register_asdf_30dbbaaa_Xdatamap16, register_asdf_39ced353_Xdatamap11, register_asdf_5b9aad46_Xdatamap22, register_asdf_6c80eece_Xdatamap18, register_asdf_87845b20_Xdatamap10, register_asdf_8e177e57_Xdatamap27, register_asdf_9fc8f7cf_Xdatamap21, register_asdf_a9ace848_Xdatamap13, register_asdf_b29e1cca_Xdatamap14, register_asdf_b35623bc_Xdatamap19, register_asdf_cf1e2ab1_Xdatamap17, register_asdf_f5ace4b3_Xdatamap15, register_asdf_fb919787_Xdatamap20);
+module sim_dmux301a (CELG59462, CELV96848, CELSUB40948);
 input  CELG59462;
 input  CELV96848;
 input  CELSUB40948;
-input  register_asdf_12883a1b_Xdatamap3;
-input [1:0] register_asdf_6085f81e_Xdatamap8;
-input [1:0] register_asdf_8723b1fb_Xdatamap1;
-input [1:0] register_asdf_8d26be7d_Xdatamap6;
-input [1:0] register_asdf_9399d91c_Xdatamap9;
-input [1:0] register_asdf_98934281_Xdatamap4;
-input [1:0] register_asdf_c08ae2d6_Xdatamap7;
-input [2:0] register_asdf_dfd05652_Xdatamap2;
-input [1:0] register_asdf_e21c4106_Xdatamap5;
-input [15:0] register_asdf_024eba52_Xdatamap26;
-input [15:0] register_asdf_0381486e_Xdatamap25;
-input [15:0] register_asdf_0a8a83f0_Xdatamap23;
-input [15:0] register_asdf_1bcd6530_Xdatamap24;
-input [7:0] register_asdf_1f1ae749_Xdatamap12;
-input [7:0] register_asdf_30dbbaaa_Xdatamap16;
-input [1:0] register_asdf_39ced353_Xdatamap11;
-input [15:0] register_asdf_5b9aad46_Xdatamap22;
-input [7:0] register_asdf_6c80eece_Xdatamap18;
-input [1:0] register_asdf_87845b20_Xdatamap10;
-input [15:0] register_asdf_8e177e57_Xdatamap27;
-input [15:0] register_asdf_9fc8f7cf_Xdatamap21;
-input [7:0] register_asdf_a9ace848_Xdatamap13;
-input [7:0] register_asdf_b29e1cca_Xdatamap14;
-input [7:0] register_asdf_b35623bc_Xdatamap19;
-input [7:0] register_asdf_cf1e2ab1_Xdatamap17;
-input [7:0] register_asdf_f5ace4b3_Xdatamap15;
-input [15:0] register_asdf_fb919787_Xdatamap20;
 
 
 // ------------------------ Wires ------------------------
