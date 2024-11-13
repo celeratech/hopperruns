@@ -58,15 +58,15 @@ module switchgnd_d6772c2d (I,O,CELG,SIMPV,CELSUB,enable_switch);
   input  enable_switch;
 endmodule
 
-module amux8_45e2573f (O,I0,I1,I2,SUB,CELG,CELV,amux);
+module amux8_859885b0 (O,I0,I1,I2,CELG,amux,SIMPV,CELSUB);
   output  O;
   input  I0;
   input  I1;
   input  I2;
-  input  SUB;
   input  CELG;
-  input  CELV;
   input [1:0] amux;
+  input  SIMPV;
+  input  CELSUB;
 endmodule
 
 module inv_12e192f5 (i,o,SUB,CELG,CELV);
@@ -259,15 +259,15 @@ switchgnd_d6772c2d XU8 (
 .enable_switch(net_110)
 );
 
-amux8_45e2573f XU13 (
+amux8_859885b0 XU13 (
 .O(GPO),
 .I0(net_104),
 .I1(net_109),
 .I2(GPBUF),
-.SUB(CELSUB40948),
 .CELG(CELG59462),
-.CELV(SIMPV),
-.amux({net_92,net_91})
+.amux({net_92,net_91}),
+.SIMPV(SIMPV),
+.CELSUB(CELSUB40948)
 );
 
 switchgnd_d6772c2d XU15 (

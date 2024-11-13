@@ -1,0 +1,18 @@
+REGISTER ADDRESS REPORT,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7
+,,,,,,,
+0,,,,,,,
+Name,Description,Slave,Address,r/w,Bits,POR,Path
+CHIPIDLSB,ChipID LSB,0xFD,0xF0,ro,7:0,0x00,
+CHIPIDMSB,ChipID MSB,0xFD,0xF1,ro,7:0,0x00,
+REVISION,Revision,0xFD,0xF2,ro,7:0,0,
+FACTORY,Factory ID,0xFD,0xF3,ro,7:0,0x00,
+AMPCONTROLHIGHgain,AMP CONTROL High gain adjustment,0xFD,0x10,rw,2:0,0x00,"XU1,XU20,XAMPCONTROLhigh,Xdatamap1"
+AMPCONTROLMEDIUMgain,AMP CONTROL Medium gain adjustment,0xFD,0x11,rw,2:0,0x00,"XU1,XU20,XAMPCONTROLmedium,Xdatamap1"
+AMPCONTROLSLOWgain,AMP CONTROL Slow gain adjustment,0xFD,0x12,rw,2:0,0x00,"XU1,XU20,XAMPCONTROLlow,Xdatamap1"
+AMPLIFIERconfiguration,AMPLIFER configuration,0xFD,0x13,rw,7:0,0x00,"XU1,XU20,Xdatamap1"
+LDOconfigurationA,LDO configurationA,0xFD,0x14,rw,3:0,0x00,"XU1,XU19,Xdatamap2"
+LDOconfigurationA,LDO configurationA,0xFD,0x15,rw,3:0,0x00,"XU1,XU19,Xdatamap1"
+REF2output,Reference2 output,0xFD,0x16,rw,2:0,0x00,"XU1,XSERVICE,Xdatamap2"
+REF3output,Reference3 output,0xFD,0x17,rw,2:0,0x00,"XU1,XSERVICE,Xdatamap1"
+REFERENCEselect,REFERENCE selection for LDO,0xFD,0x20,rw,2:0,0x00,"XU1,XSERVICE,Xdatamap4"
+SERVICEconfiguration,SERVICE configuration,0xFD,0x21,rw,5:0,0x00,"XU1,XSERVICE,Xdatamap3"
