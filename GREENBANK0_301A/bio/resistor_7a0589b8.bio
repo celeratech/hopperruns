@@ -221,6 +221,48 @@ endlayoutbio
 
 //**********************************************
 //Project Parameters
+//Celera:GREENBANK0_301A Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.8
+#define,PROJECTsupply,5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
@@ -352,7 +394,7 @@ pinname,RP
 definition,RP,Positive Resistor connection
 iq,RP,SIMULATION
 absmax,RP,6
-absmin,RP,
+absmin,RP,-0.3
 io,RP,inout
 mode,RP,analog
 router,RP,TBD
@@ -364,7 +406,7 @@ pinname,RN
 definition,RN,Negative Resistor connection
 iq,RN,SIMULATION
 absmax,RN,6
-absmin,RN,
+absmin,RN,-0.3
 io,RN,inout
 mode,RN,analog
 router,RN,TBD
@@ -386,8 +428,8 @@ esd,CELV,TBD
 pinname,CELG
 definition,CELG,Resistor Trim Ground
 iq,CELG,SIMULATION
-absmax,CELG,
-absmin,CELG,
+absmax,CELG,0.3
+absmin,CELG,-0.3
 io,CELG,input
 mode,CELG,analog
 router,CELG,TBD
@@ -402,7 +444,7 @@ pinname,adjust_resistor
 definition,adjust_resistor,Resistor adjust control
 iq,adjust_resistor,SIMULATION
 absmax,adjust_resistor,6
-absmin,adjust_resistor,
+absmin,adjust_resistor,-0.3
 io,adjust_resistor,input
 mode,adjust_resistor,digital
 router,adjust_resistor,TBD
@@ -417,8 +459,8 @@ esd,adjust_resistor,TBD
 pinname,CELSUB
 definition,CELSUB,Substrate connection
 iq,CELSUB,SIMULATION
-absmax,CELSUB,@‹ß~þ
-absmin,CELSUB,
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
 io,CELSUB,input
 mode,CELSUB,power
 router,CELSUB,TBD
