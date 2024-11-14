@@ -3,84 +3,67 @@
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//Celera Confidential BIO Data Generator delayslow0
 //Cell Name
-cell,delayslow0
+cell,clocksync
 //**********************************************
 //Generator Revision
-revision,generator,0.3.2
+revision,generator,0.5.0
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
 
-limit,delay_type,choose0,control
-limit,delay_type,choose1,fixed
-limit,delay_control_type,choose0,pin
-limit,delay_control_type,choose1,register
-limit,delay_control_type,choose2,factory
-limit,delay_edge,choose0,rise
-limit,delay_edge,choose1,fall
-limit,delay_edge,choose2,both
-limit,delay_vmax,choose0,2
-limit,delay_vmax,choose1,6
-limit,delay_register_outputs,choose0,2
-limit,delay_register_outputs,choose1,3
-limit,delay_register_outputs,choose2,4
-limit,delay_register_outputs,choose3,5
-limit,delay_register_outputs,choose4,6
-limit,delay_register_outputs,choose5,7
-limit,delay_register_outputs,choose6,8
-limit,delay_time,minimum,1.0
-limit,delay_time,maximum,999.0
-limit,delay_register_time0,minimum,1.0
-limit,delay_register_time0,maximum,999.0
-limit,delay_register_time1,minimum,1.0
-limit,delay_register_time1,maximum,999.0
-limit,delay_register_time2,minimum,1.0
-limit,delay_register_time2,maximum,999.0
-limit,delay_register_time3,minimum,1.0
-limit,delay_register_time3,maximum,999.0
-limit,delay_register_time4,minimum,1.0
-limit,delay_register_time4,maximum,999.0
-limit,delay_register_time5,minimum,1.0
-limit,delay_register_time5,maximum,999.0
-limit,delay_register_time6,minimum,1.0
-limit,delay_register_time6,maximum,999.0
-limit,delay_register_time7,minimum,1.0
-limit,delay_register_time7,maximum,999.0
-limit,delay_register_por,minimum,0
-limit,delay_register_por,maximum,7
-limit,delay_units,choose0,ns
-limit,delay_units,choose1,us
-limit,delay_units,choose2,ms
-limit,delay_dft,choose0,no
-limit,delay_dft,choose1,yes
-limit,delay_accuracy,choose0,no
-limit,delay_accuracy,choose1,yes
-limit,delay_trim_name,text
-limit,delay_trim_description,text
+limit,clocksync_dutycyclemin,minimum,5
+limit,clocksync_dutycyclemin,maximum,95
+limit,clocksync_dutycyclemax,minimum,5
+limit,clocksync_dutycyclemax,maximum,95
+limit,clocksync_frequency,minimum,10.0
+limit,clocksync_frequency,maximum,5000.0
+//limit,clocksync_offset,minimum,0
+//limit,clocksync_offset,maximum,60
+limit,clocksync_accuracy,choose0,no
+limit,clocksync_accuracy,choose1,yes
+limit,clocksync_statusoutput,choose0,no
+limit,clocksync_statusoutput,choose1,high
+limit,clocksync_statusoutput,choose2,low
+limit,clocksync_statusoutput,choose3,both
+limit,clocksync_vmax,choose0,2
+limit,clocksync_vmax,choose1,6
+limit,clocksync_dft,choose0,no
+limit,clocksync_dft,choose1,yes
+
+limit,clocksync_trim_name,text
+limit,clocksync_trim_description,text
+
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,delay_time,2us
-user,delay_edge,fall
-user,delay_vmax,6V
+user,clocksync_frequency,1000KHz
+description,Clocksync Frequency
+user,clocksync_dutycyclemin,30%
+description,Clocksync Input Duty cycle
+user,clocksync_offset,0%
+description,Clocksync target offset
+user,Thigh,700ns
+description,Clocksync Calcualted 'High' Time
+user,Tlow,700ns
+description,Clocksync Calcualted 'Low' Time
+user,NESTO Revision,0.5.0
+description,NESTO Revision code
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,delayslow
-register,instance,delay0_clocksync_eb83e1b4_Xfall
+registermap,clocksync
+register,instance,clocksync_c11f126a
 register,source,cell
 
-//delay slow 
+//clocksync
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,na
+register,mode,readonly
 register,por,0
 register,userdescription,na
 register,description0,description0,not used
@@ -93,19 +76,18 @@ register,description6,description6,not used
 register,description7,description7,not used
 //Netlister Information
 register,busname,na
-
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,delayslow
-factory,instance,delay0_clocksync_eb83e1b4_Xfall
+factorymap,clocksync
+factory,instance,clocksync_c11f126a
 factory,source,cell
 
-//delay slow 
+//clocksync
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,na
+factory,mode,readonly
 factory,por,0
 factory,userdescription,na
 factory,description0,description0,not used
@@ -118,83 +100,28 @@ factory,description6,description6,not used
 factory,description7,description7,not used
 //Netlister Information
 factory,busname,na
-
-//**********************************************
+// *********************************************
 //CELL DFT Parameters
 // *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,delayslow 
 
-placeALTVIEW Generate STONEdelayslowCONTROL1 layoutM3 0 0 R0
-placeINST Xpulsestretch 60.25 0 R0
-place Generate STONEdelayslowCONTROL10 0 0 R0
-place Generate STONEdelayslowDFT 0 0 MX
-place Generate STONEdelayslowDFToutr 22.68 0 MX
-placeTAP 24 -2
-place Generate STONEdelayslowDFToutf 22.68 0 MX
-place Generate STONEdelayslowDFToutf 23.31 -16.74 R0
-place Generate STONEdelayslowTRIMr1 0 16.74 R0
-place Generate STONEdelayslowTRIMr10 0 16.74 R0
-//placeIF cellNameContains REGISTER
-//place Generate STONEdelayslowREGISTER2 0 16.74 R0
-//place Generate STONEdelayslowREGISTER3 0 16.74 R0
-//place Generate STONEdelayslowREGISTER4 0 16.74 R0
-//place Generate STONEdelayslowREGISTER5 0 16.74 R0
-//place Generate STONEdelayslowREGISTER6 0 16.74 R0
-//place Generate STONEdelayslowREGISTER7 0 16.74 R0
-//place Generate STONEdelayslowREGISTER8 0 16.74 R0
-//place Generate STONEdelayslowTRIMr1 0 33.48 R0
-//place Generate STONEdelayslowTRIMr10 0 33.48 R0
-//place PEBBLES PEBBLEdec2to4 0 33.48 MX
-//place PEBBLES PEBBLEdec3to8 0 33.48 MX
-//place PEBBLES PEBBLEinv1 18.21 16.74 R0
-//placeEND
-//placeIF cellNameContains REGISTER2
-//place Generate STONEdelayslowTRIMr1 0 26.31 R0
-//place Generate STONEdelayslowTRIMr10 0 26.31 R0
-//placeEND
-//placeIF cellNameContains REGISTER3
-//place PEBBLES PEBBLEdec2to4 35.28 25.11 MX
-//place Generate STONEdelayslowTRIMr10 0 34.68 R0
-//place Generate STONEdelayslowTRIMr1 0 34.68 R0
-//placeEND
-placeIFELSE cellNameNOTContains DFT&&REGIS&&TRIM
-placeRES 1.18 18.39 0.8 0.8 R0 x y 60
-placeCAP 0 16.7 3 R0 60
+layout,clocksync
+place Generate STONEclocksyncCORE 0 0 R0
+place Generate STONEclocksyncDFT 0 33.48 R0
+placeIFELSE cellNameContains DFT
+placeSTEP Generate STONEclocksyncFLAG 0 50.22 x 20.16 MX
 placeELSE
-placeTAP 3 -6
-placeRES 1.26 -19.22 0.8 0.8 R90 x y maxL
-placeRES 1.26 -28.4 0.8 0.8 R90 x y maxL
-placeTAPuntil
-placeTAP 2 18
-placeCAP 0 17 3 R0 80
-placeTAP 2 26.2
-placeCAP 0 23.1 3 R0 80
-placeTAP 2 33
-placeCAP 0 32 3 R0 80
-placeTAP 2 53
-placeCAP 0 48 3 R0 80
-placeTAP 2 59
-placeCAP 0 55.5 3 R0 80
-placeTAPEND
+placeSTEP Generate STONEclocksyncFLAG 0 33.48 x 20.16 R0
 placeEND
-placeRESRING
-placeINST Xdelay 0 0 MX
-moveORIGIN x
+placeINST Xrise 0 0 MX
 moveORIGIN y
-//fixes pulse stretch cells (ones we have had anyway)
-placeIf cellNameContains pulse
-placeCAP 0 16.7 3 R0 90
-place Generate STONEpulsestretchLATCHb 0.4 0 MX
-place PEBBLES PEBBLEdelay25nR 43.87 0 MX
-place PEBBLES PEBBLEdelay10nR 60.25 0 R0
-place PEBBLES PEBBLEdelay5nR 60.25 16.74 MX
-placeEND
-//placeHVRING rect
-movePINS
-placeROUTEnopins
+placeINST Xfall 0 -1.2 MX
+moveORIGIN y
+placeHVRING
+//placeROUTE
 endlayoutbio
+
 //**********************************************
 //Project Parameters
 //Celera:clocksync301 Project Bio
@@ -203,7 +130,7 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,TBD
+#define,PROJECTreference,1.2
 #define,PROJECTsupply,5
 #define,TaRoom,25
 #define,ground,0.0
@@ -242,72 +169,48 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,mim34_2f20p5x13p1,1481
-sub_area,rlpp3000rpo17p0u1p0u,43
+sub_area,delay0_clocksync_c11f126a_Xrise,2640
+sub_area,delay0_clocksync_c11f126a_Xfall,2700
 sub_area,STONEnoconn,0
-sub_area,STONEdelayslowCONTROL1,1080
-generate_area,delay0_clocksync_eb83e1b4_Xfall,2604
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEclocksyncCORE,100
+generate_area,clocksync_c11f126a,5440
 // *********************************************
 //Calculator Parameters
-#define,DELAYSLOWfudge,5
-//Reduce Calculated with Fudge factor
-#define,DELAYSLOWthreshold,15
-//us threshold between Controls
-#define,DELAYSLOW1,0.88
-#define,DELAYSLOW1t,1.02
-//Control=1pF/us
-#define,DELAYSLOW10,10.7
-#define,DELAYSLOW10t,8.32
-//Control=10pf/us
-#define DELAYSLOWcapmultmax 16
-//Limit the max number of parallel caps
-#define,DELAYSLOWlayoutlength,20.5
-//Initial Layout length target
-#define,DELAYSLOWratioMIM,0.75
-//Layout W/L Ideal ratio
-#define,DELAYSLOWerrorlimit,2
-//Maximum alloewd Calculation error(%)
+#define,CLOCKSYNCaccurateoffset,10.0
+#define,CLOCKSYNCpretrimmax,25.0
+#define,CLOCKSYNCpretrimmin,25.0
+#define,CLOCKSYNCposttrimlsb,2.0
 
-#define,LAYOUTresistorlengthfast,17.0
-#define,LAYOUTresistorwidthfast,1.0
-#define,LAYOUTresistormultfast,2.0
-#define,LAYOUTresistorlengthslow,16.0
-#define,LAYOUTresistorwidthslow,1.0
-#define,LAYOUTresistormultslow,20.0
-#define,CELVminimum,1.8
-#define,RESISTORiso,CELG
-//Trim
-#define,DELAYpretrimhigh,35.0
-#define,DELAYpretrimlow,35.0
-#define,DELAYposttrimlsb,1.0
-//Pulsestretch
-#define,DELAYpulsestretchRISE,45
-#define,DELAYpulsestretchFALL,40
-
+#define,CELVminimum,2.0
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//delayfixed
+//clocksync
 revision,pinorder,0.2.0
-pinorder,i,o
+pinorder,net_skip,clocksync_in,clk,clocksync_out,net_skip,enable_clocksync
 
 endpinorder
 //**********************************************
+
+//**********************************************
 //TRIM Parameters
-cell,delayslow
-trim,instance,delay0_clocksync_eb83e1b4_Xfall
+cell,clocksync
+trim,instance,clocksync_c11f126a
 
 trim,name,na
 trim,enable,no
 trim,bits,TBD
 trim,por,0
-trim,pinname,trim_delay
+trim,pinname,trim_clocksynchigh
 trim,testname,TBD
-trim,description,delay time accuracy
+trim,description,Trim clocksync high timer
 trim,target,na
-trim,units,mV
+trim,units,TBD
 trim,pretrim_low_limit,TBD
 trim,pretrim_high_limit,TBD
 trim,posttrim_low_limit,TBD
@@ -322,9 +225,33 @@ trim,description5,empty
 trim,description6,empty
 trim,description7,empty
 trim,description8,empty
+
+trim,name,na
+trim,enable,no
+trim,bits,TBD
+trim,por,0
+trim,pinname,trim_clocksynclow
+trim,testname,TBD
+trim,description,Trim clocksync low timer
+trim,target,na
+trim,units,TBD
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,%
+trim,description0,empty
+trim,description1,empty
+trim,description2,empty
+trim,description3,empty
+trim,description4,empty
+trim,description5,empty
+trim,description6,empty
+trim,description7,empty
+trim,description8,empty
+
 //**********************************************
-//Cell Pin Descriptions	
-//**********************************************
+//Cell Pin Descriptions
 pinname,CELV
 definition,CELV,cell power
 iq,CELV,SIMULATION
@@ -347,38 +274,79 @@ router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i
-definition,i,delay input
-iq,i,SIMULATION
-absmax,i,6
-absmin,i,-0.3
-io,i,input
-mode,i,digital
-router,i,TBD
-dftpriority,i,1
-esd,i,TBD
+pinname,clocksync_in
+definition,clocksync_in,clcoksync sync clock input
+iq,clocksync_in,SIMULATION
+absmax,clocksync_in,6
+absmin,clocksync_in,-0.3
+io,clocksync_in,input
+mode,clocksync_in,digital
+router,clocksync_in,TBD
+dftpriority,clocksync_in,1
+esd,clocksync_in,TBD
 
-pinname,o
-definition,o,delay output
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,-0.3
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
+pinname,clocksync_out
+definition,clocksync_out,clocksync output clock
+iq,clocksync_out,SIMULATION
+absmax,clocksync_out,6
+absmin,clocksync_out,-0.3
+io,clocksync_out,output
+mode,clocksync_out,digital
+router,clocksync_out,TBD
+dftpriority,clocksync_out,1
+esd,clocksync_out,TBD
+
+pinname,clk
+definition,clk,clcoksync master inout clock
+iq,clk,SIMULATION
+absmax,clk,6
+absmin,clk,-0.3
+io,clk,input
+mode,clk,digital
+router,clk,TBD
+dftpriority,clk,1
+esd,clk,TBD
+
+pinname,enable_clocksync
+definition,enable_clocksync,clocksync enable
+iq,enable_clocksync,SIMULATION
+absmax,enable_clocksync,6
+absmin,enable_clocksync,-0.3
+io,enable_clocksync,input
+mode,enable_clocksync,digital
+router,enable_clocksync,TBD
+dftpriority,enable_clocksync,1
+esd,enable_clocksync,TBD
+
+pinname,global_clocksync
+definition,global_clocksync,clocksync global enable
+iq,global_clocksync,SIMULATION
+absmax,global_clocksync,6
+absmin,global_clocksync,-0.3
+io,global_clocksync,input
+mode,global_clocksync,digital
+router,global_clocksync,TBD
+dftpriority,global_clocksync,1
+esd,global_clocksync,TBD
 
 pinname,CELSUB
 definition,CELSUB,substrate
 iq,CELSUB,SIMULATION
-absmax,CELSUB,6
+absmax,CELSUB,0.3
 absmin,CELSUB,-0.3
-io,CELSUB,power
+io,CELSUB,input
 mode,CELSUB,analog
-router,CELSUB,TBD
+routerSUB,TBD
 dftpriority,CELSUB,1
 esd,CELSUB,TBD
+
+//**********************************************
+//Constraints Parameters*******************
+constraint,clocksync,clocksync_in,shield
+constraint,clocksync,clocksync_out,shield
+constraint,clocksync,clk,shield
+//**********************************************
+endbio
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1

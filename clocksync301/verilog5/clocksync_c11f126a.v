@@ -1,19 +1,19 @@
 //Celera Brick Generator Confidential
 //CORE:clocksync
-//NAME:clocksync_eb83e1b4
+//NAME:clocksync_c11f126a
 //GENERATOR REVISION:0.5.0
-//FREQUENCY:375KHz
-//DUTY:20%80%-%
+//FREQUENCY:1000KHz
+//DUTY:30%70%-%
 //OUTPUTS:no
 //Vmax:6V
 //DFT:no
 //ACCURACY:no
 //OFFSET:0%
 
-//Celera Confidential Do Not Copy delay0_clocksync_eb83e1b4_Xrise.v
-//Celera:delay0_clocksync_eb83e1b4_Xrise
-//TYPE:fixed 2us EDGE:rise DFT:no ACC:no
-module delay0_clocksync_eb83e1b4_Xrise (i,CELV,o,
+//Celera Confidential Do Not Copy delay0_clocksync_c11f126a_Xrise.v
+//Celera:delay0_clocksync_c11f126a_Xrise
+//TYPE: fixed 700ns
+module delay0_clocksync_c11f126a_Xrise (i, CELV, o,
 CELG,CELSUB);
 input CELV;
 input i;
@@ -23,10 +23,10 @@ input CELG;
 endmodule
 
 
-//Celera Confidential Do Not Copy delay0_clocksync_eb83e1b4_Xfall.v
-//Celera:delay0_clocksync_eb83e1b4_Xfall
-//TYPE:fixed 2us EDGE:fall DFT:no ACC:no
-module delay0_clocksync_eb83e1b4_Xfall (i,CELV,o,
+//Celera Confidential Do Not Copy delay0_clocksync_c11f126a_Xfall.v
+//Celera:delay0_clocksync_c11f126a_Xfall
+//TYPE: fixed 700ns
+module delay0_clocksync_c11f126a_Xfall (i, CELV, o,
 CELG,CELSUB);
 input CELV;
 input i;
@@ -71,10 +71,10 @@ module STONEnoconn ( noconn );
   input noconn;
 endmodule
 
-//Celera Confidential Do Not Copy clocksync_eb83e1b4
+//Celera Confidential Do Not Copy clocksync_c11f126a
 //Celera Confidential Symbol Generator
-//VMAX:6FREQ:375KHz DUTY:20%-80%
-module clocksync_eb83e1b4 (CELV,clocksync_in,clk,enable_clocksync,global_clocksync,clocksync_out,
+//VMAX:6FREQ:1000KHz DUTY:30%-70%
+module clocksync_c11f126a (CELV,clocksync_in,clk,enable_clocksync,global_clocksync,clocksync_out,
 CELG,CELSUB);
 input CELV;
 input clocksync_in;
@@ -85,24 +85,24 @@ output clocksync_out;
 input CELG;
 input CELSUB;
 
-//Celera Confidential Do Not Copy delay0_clocksync_eb83e1b4_Xrise
-delay0_clocksync_eb83e1b4_Xrise Xrise(
+//Celera Confidential Do Not Copy delay0_clocksync_c11f126a_Xrise
+delay0_clocksync_c11f126a_Xrise Xrise(
 .CELV (CELV),
 .i (clocksync_in),
 .o (synchighi),
 .CELG (CELG),
 .CELSUB (CELSUB)
 );
-//,diesize,delay0_clocksync_eb83e1b4_Xrise
-//Celera Confidential Do Not Copy delay0_clocksync_eb83e1b4_Xfall
-delay0_clocksync_eb83e1b4_Xfall Xfall(
+//,diesize,delay0_clocksync_c11f126a_Xrise
+//Celera Confidential Do Not Copy delay0_clocksync_c11f126a_Xfall
+delay0_clocksync_c11f126a_Xfall Xfall(
 .CELV (CELV),
 .i (clocksync_in),
 .o (synclowi),
 .CELG (CELG),
 .CELSUB (CELSUB)
 );
-//,diesize,delay0_clocksync_eb83e1b4_Xfall
+//,diesize,delay0_clocksync_c11f126a_Xfall
 //Celera Confidential Do Not Copy STONEnoconn
 STONEnoconn Xnoconn0(
 .noconn (

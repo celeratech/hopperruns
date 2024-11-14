@@ -1,15 +1,10 @@
-* Z:\celera\projects\Simplis\playrelease\Release\play301a\Regression\sim_clocksyncRegression301a.sxsch
+* Z:\celera\projects\Simplis\playrelease\Release\play301a\Verification\sim_clocksync301a.sxsch
 *#SIMETRIX
 X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
 
-.node_map sync375_80 28
-.node_map sync375_81 29
-.node_map sync375_20 26
-.node_map sync232_50 24
-.node_map sync233_50 25
-.node_map sync375_19 27
-.node_map ck 31
-.node_map en 30
+.node_map ck 11
+.node_map in 9
+.node_map en 10
 .options
 + PSP_NPT=10001
 + POP_ITRMAX=20
@@ -18,65 +13,32 @@ X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
 + SNAPSHOT_NPT=11
 + MIN_AVG_TOPOLOGY_DUR=1a
 + AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
-.tran 100u 0
+.tran 50u 0
 
 .globalvar tdext_khz=200
 .globalvar VIN=5
 .globalvar REF=0.9
 
-.PRINT V(19)
-.GRAPH :19 curveLabel= U2-out233_50 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe1  
-.PRINT V(#sync233_50)
-.GRAPH :#sync233_50 curveLabel= sync233_50 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe10  
-.PRINT V(#sync232_50)
-.GRAPH :#sync232_50 curveLabel= sync232_50 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe11  
-.PRINT V(#sync375_80)
-.GRAPH :#sync375_80 curveLabel= sync375_80 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe16  
-.PRINT V(#en)
-.GRAPH :#en curveLabel= en nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe19  
-.PRINT V(18)
-.GRAPH :18 curveLabel= U2-out232_50 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe2  
+
+.PRINT V(8)
+.GRAPH :8 curveLabel= U5-out nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe1  
+.PRINT V(#in)
+.GRAPH :#in curveLabel= in nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe2  
 .PRINT V(#ck)
-.GRAPH :#ck curveLabel= ck nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe20  
-.PRINT V(20)
-.GRAPH :20 curveLabel= U2-out375_20 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe3  
-.PRINT V(#sync375_81)
-.GRAPH :#sync375_81 curveLabel= sync375_81 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe4  
-.PRINT V(21)
-.GRAPH :21 curveLabel= U2-out375_19 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe5  
-.PRINT V(#sync375_20)
-.GRAPH :#sync375_20 curveLabel= sync375_20 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe6  
-.PRINT V(22)
-.GRAPH :22 curveLabel= U2-out375_80 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe7  
-.PRINT V(23)
-.GRAPH :23 curveLabel= U2-out375_81 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe8  
-.PRINT V(#sync375_19)
-.GRAPH :#sync375_19 curveLabel= sync375_19 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe9  
-X$U2 18 19 24 25 20 26 27 28 29 21 30 31 22 23 clocksync301
+.GRAPH :#ck curveLabel= ck nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe3  
 X$U3 0 celera vars: simulation_module='name' status='dev' simulation='typical'
-** From Z:\celera\projects\Simplis\playrelease\Release\play301a\Regression\clocksync301.sxcmp
-.subckt clocksync301 47 54 45 50 57 52 46 53 56 48 49 51 55 58
+X$U5 9 8 10 11 clocksync301
+** From Z:\celera\projects\Simplis\playrelease\Release\play301a\Verification\FORCEclocksync301.sxcmp
+
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301a\Verification\clocksync301.sxcmp
+.subckt clocksync301 7 8 9 10
 *#hierarchy
-.node_map out375_19 48
-.node_map sync375_80 53
-.node_map sync375_81 56
-.node_map sync375_20 52
-.node_map out375_80 55
-.node_map out375_81 58
-.node_map out375_20 57
-.node_map sync232_50 45
-.node_map out232_50 47
-.node_map sync233_50 50
-.node_map out233_50 54
-.node_map sync375_19 46
-.node_map ck 51
-.node_map en 49
-X$clocksync1 37 50 51 54 39 49 clocksync  vars: clocksync_statusoutput='no' clocksync_dft='no' clocksync_accuracy='no' clocksync_trim_name='text' clocksync_trim_description='text' clocksync_frequency=375 clocksync_dutycyclemin=20 clocksync_dutycyclemax=80 clocksync_vmax=6
-X$clocksync2 41 52 51 57 43 49 clocksync  vars: clocksync_statusoutput='no' clocksync_dft='no' clocksync_accuracy='no' clocksync_trim_name='text' clocksync_trim_description='text' clocksync_frequency=375 clocksync_dutycyclemin=20 clocksync_dutycyclemax=80 clocksync_vmax=6
-X$clocksync3 33 45 51 47 35 49 clocksync  vars: clocksync_statusoutput='no' clocksync_dft='no' clocksync_accuracy='no' clocksync_trim_name='text' clocksync_trim_description='text' clocksync_frequency=375 clocksync_dutycyclemin=20 clocksync_dutycyclemax=80 clocksync_vmax=6
-X$clocksync4 34 46 51 48 36 49 clocksync  vars: clocksync_statusoutput='no' clocksync_dft='no' clocksync_accuracy='no' clocksync_trim_name='text' clocksync_trim_description='text' clocksync_frequency=375 clocksync_dutycyclemin=20 clocksync_dutycyclemax=80 clocksync_vmax=6
-X$clocksync5 38 53 51 55 40 49 clocksync  vars: clocksync_statusoutput='no' clocksync_dft='no' clocksync_accuracy='no' clocksync_trim_name='text' clocksync_trim_description='text' clocksync_frequency=375 clocksync_dutycyclemin=20 clocksync_dutycyclemax=80 clocksync_vmax=6
-X$clocksync6 42 56 51 58 44 49 clocksync  vars: clocksync_statusoutput='no' clocksync_dft='no' clocksync_accuracy='no' clocksync_trim_name='text' clocksync_trim_description='text' clocksync_frequency=375 clocksync_dutycyclemin=20 clocksync_dutycyclemax=80 clocksync_vmax=6
+.node_map out 8
+.node_map ck 10
+.node_map in 7
+.node_map en 9
+X$clocksync1 5 7 10 8 6 9 clocksync  vars: clocksync_statusoutput='no' clocksync_dft='no' clocksync_accuracy='no' clocksync_trim_name='text' clocksync_trim_description='text' clocksync_frequency=1k clocksync_dutycyclemin=30 clocksync_dutycyclemax=70 clocksync_vmax=6
 .ends clocksync301
 
 .end
