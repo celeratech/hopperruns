@@ -66,6 +66,8 @@ user,Vds,6V
 description,FET Maximum Vds rating
 user,VgsMax,6V
 description,FET Maximum Vgs rating
+user,NESTOrevison,0.3.5
+description,NESTO Generate code
 //**********************************************
 //POR Parameters
 //**********************************************
@@ -216,7 +218,8 @@ placeROUTEnopins
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-generate_area,fet_8973630f,0
+sub_area,pch5i2_5t_2p8x0p6x1p0x1p0,161361
+generate_area,fet_8973630f,161361
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.3
@@ -360,6 +363,8 @@ revision,pinorder,0.2.0
 pinorder,SOURCE,DRAIN,GATE,net_skip,net_skip,net_skip
 
 endpinorder
+//**********************************************
+
 //**********************************************
 //Cell Pin Descriptions	
 //**********************************************	
