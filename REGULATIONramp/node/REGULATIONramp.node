@@ -495,6 +495,27 @@ parameter,pinprobe_description,RAMP_kelvin_ground
 
 
 GenerateLevel,7
+generate,fet
+path,XRAMP,XMAIN,XU16
+instance,XU16
+parameter,count_1,0
+parameter,fet_dft,no
+parameter,fet_type,n
+parameter,fet_vmax,6
+parameter,fet_diode,yes
+parameter,fet_usage,signal
+parameter,fet_kelvin,no
+parameter,fet_replica,no
+parameter,fet_ron_power,1
+parameter,fet_diodedrive,diode
+parameter,fet_maximumvds,6
+parameter,fet_ron_signal,1k
+parameter,fet_powerswitch,no
+parameter,fet_layoutrotate,no
+parameter,fet_replica_gain,10
+
+
+GenerateLevel,7
 generate,pinprobe
 path,XRAMP,XMAIN,XU18
 instance,XU18
@@ -517,6 +538,14 @@ generate,nand4
 path,XRAMP,XMAIN,XU20
 instance,XU20
 parameter,logicgate_type,nand4
+parameter,logicgate_vmax,6
+
+
+GenerateLevel,7
+generate,dbuf
+path,XRAMP,XMAIN,XU21
+instance,XU21
+parameter,logicgate_type,dbuf
 parameter,logicgate_vmax,6
 
 
@@ -554,27 +583,6 @@ path,XRAMP,XMAIN,XU25
 instance,XU25
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
-
-
-GenerateLevel,7
-generate,fet
-path,XRAMP,XMAIN,XU29
-instance,XU29
-parameter,count_1,0
-parameter,fet_dft,no
-parameter,fet_type,n
-parameter,fet_vmax,6
-parameter,fet_diode,yes
-parameter,fet_usage,signal
-parameter,fet_kelvin,no
-parameter,fet_replica,no
-parameter,fet_ron_power,1
-parameter,fet_diodedrive,diode
-parameter,fet_maximumvds,6
-parameter,fet_ron_signal,1k
-parameter,fet_powerswitch,no
-parameter,fet_layoutrotate,no
-parameter,fet_replica_gain,10
 
 
 GenerateLevel,7
@@ -791,11 +799,35 @@ GenerateLevel,7
 generate,switchpulldown
 path,XRAMP,XMAIN,Xswitch1
 instance,Xswitch1
-parameter,switch_ron,500
+parameter,switch_ron,10K
 parameter,switch_type,pulldown
 parameter,switch_vmax,6
 parameter,switch_model,celera
 parameter,switch_polarity,invert
+parameter,switch_pulldownvmax,6
+
+
+GenerateLevel,7
+generate,switchpulldown
+path,XRAMP,XMAIN,Xswitch2
+instance,Xswitch2
+parameter,switch_ron,10K
+parameter,switch_type,pulldown
+parameter,switch_vmax,6
+parameter,switch_model,celera
+parameter,switch_polarity,invert
+parameter,switch_pulldownvmax,6
+
+
+GenerateLevel,7
+generate,switchpulldown
+path,XRAMP,XMAIN,Xswitch3
+instance,Xswitch3
+parameter,switch_ron,1K
+parameter,switch_type,pulldown
+parameter,switch_vmax,6
+parameter,switch_model,celera
+parameter,switch_polarity,noninvert
 parameter,switch_pulldownvmax,6
 
 
@@ -868,7 +900,7 @@ parameter,capacitor_1,0
 parameter,capacitor_dft,no
 parameter,capacitor_type,tbd
 parameter,capacitor_vmax,6
-parameter,capacitor_value,1
+parameter,capacitor_value,10
 parameter,capacitor_kelvin,yes
 parameter,capacitor_adjust0,1
 parameter,capacitor_adjust1,2
@@ -878,7 +910,7 @@ parameter,capacitor_adjust4,0
 parameter,capacitor_adjust5,0
 parameter,capacitor_adjust6,0
 parameter,capacitor_adjust7,0
-parameter,capacitor_control,accurate_capacitor
+parameter,capacitor_control,capacitor
 parameter,capacitor_vinitial,0
 parameter,capacitor_adjust_por,4
 parameter,capacitor_accurate_lsb,1
@@ -958,39 +990,46 @@ parameter,currentgenerator_datasheet_accuracy_description,text
 
 GenerateLevel,5
 generate,pinprobe
-path,XRAMP,XMAIN,XU21,XU1
+path,XRAMP,XMAIN,XU17,XU1
 instance,XU1
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XRAMP,XMAIN,XU21,XU2
+path,XRAMP,XMAIN,XU17,XU2
 instance,XU2
 parameter,pinprobe_description,input1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XRAMP,XMAIN,XU21,XU3
+path,XRAMP,XMAIN,XU17,XU3
 instance,XU3
 parameter,pinprobe_description,INPUT1_output
 
 
 GenerateLevel,5
-generate,nand2
-path,XRAMP,XMAIN,XU21,XU4
+generate,nand3
+path,XRAMP,XMAIN,XU17,XU4
 instance,XU4
-parameter,logicgate_type,nand2
+parameter,logicgate_type,nand3
 parameter,logicgate_vmax,6
 
 
 GenerateLevel,5
 generate,inv
-path,XRAMP,XMAIN,XU21,XU5
+path,XRAMP,XMAIN,XU17,XU5
 instance,XU5
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
+
+
+GenerateLevel,5
+generate,pinprobe
+path,XRAMP,XMAIN,XU17,XU6
+instance,XU6
+parameter,pinprobe_description,input0
 
 
 GenerateLevel,5

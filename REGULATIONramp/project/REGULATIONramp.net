@@ -13,7 +13,7 @@ X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
 .node_map fault_ramp 36
 .node_map GND 37
 .options
-+ PSP_NPT=50001
++ PSP_NPT=100001
 + POP_ITRMAX=20
 + POP_OUTPUT_CYCLES=5
 + SNAPSHOT_INTVL=0
@@ -49,7 +49,7 @@ X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
 .GRAPH :#clock_rt curveLabel= clock_rt nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe6  
 .PRINT V(#ok_ramp)
 .GRAPH :#ok_ramp curveLabel= ok_ramp nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe7  
-R1 32 0 30k
+R1 32 0 50k
 X$RAMP 38 32 33 39 34 40 35 41 36 32 37 REGULATIONramp
 X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
 V1 38 0 PWL NSEG=2 X0=0 Y0=0 X1=10u Y1=0 X2=20u Y2=5 
@@ -129,114 +129,133 @@ X$U8 9 pinprobe vars: pinprobe_description='DFT_Timer_pulse'
 .ends VESPAdftpulse
 
 ** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301\design\REGULATIONrampMAIN.sxcmp
-.subckt REGULATIONrampMAIN 180 181 182 183 184 185 186 187 188 189 190
+.subckt REGULATIONrampMAIN 189 192 190 194 191 196 193 195 198 197 199
 *#hierarchy
-.node_map FAULT 206
-.node_map SIMPV 180
-.node_map cntBAR 218
-.node_map ok_ramp 187
-.node_map goDELAY 217
-.node_map sense_RT 188
-.node_map fault_check 224
-.node_map ok_comparator 195
-.node_map BUS1$0 165
-.node_map cki 204
-.node_map BUS1$1 166
-.node_map BUS1$2 167
-.node_map IRT 191
-.node_map enableDELAY 219
-.node_map BUS2$0 168
-.node_map fault_rampBAR 222
-.node_map BUS2$1 169
-.node_map rb 209
-.node_map BUS2$2 170
-.node_map BUS2$3 171
-.node_map rb_ck 208
-.node_map BUS2$4 172
-.node_map BUS3$0 173
-.node_map ok_amp 194
-.node_map BUS3$1 174
-.node_map BUS3$2 175
-.node_map run 220
-.node_map REF 181
-.node_map BUS4$0 176
-.node_map BUS4$1 177
-.node_map resetDELAY 199
-.node_map clock_rt 186
-.node_map cnt1BAR 212
-.node_map good 210
-.node_map RT 182
-.node_map reset 198
-.node_map clockBUF 214
-.node_map BUS5$0 178
-.node_map BUS5$1 179
-.node_map ok_currentgenerator 192
-.node_map clock 185
-.node_map RAMP 184
-.node_map enable_ramp 183
-.node_map cnt2BAR 215
-.node_map fault_short 221
-.node_map goOSHT 211
-.node_map cnt0BAR 200
-.node_map compDELAY 203
-.node_map SENSE_RAMP 202
-.node_map comp 207
-.node_map cnt 205
-.node_map cnt0 201
-.node_map ok_currentmirror 197
-.node_map fault_ramp 189
-.node_map cnt1 213
-.node_map cnt2 216
-.node_map GATE 196
-.node_map go 193
-.node_map kelvin_GNDramp 190
-.node_map fault_open 223
-X$amplifier1 180 188 196 181 183 194 165 166 167 135 amplifier vars: amplifier_gainadjust='openloop' amplifier_input_type='p' amplifier_accuracy='system' amplifier_accuracyname='RTaccuracy' amplifier_accuracydescription='RT_curent_accuracy' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
-X$capacitor1 202 184 173 174 175 150 151 190 capacitorfixed vars: capacitor_control='accurate_capacitor' capacitor_datasheet_accurate_name='RTfrquency' capacitor_datasheet_accurate_description='RT_frequency_capacitor' capacitor_adjust_control='factory' capacitor_datasheet_adjust_name='text' capacitor_datasheet_adjust_description='text' capacitor_kelvin='yes' capacitor_type='tbd' capacitor_dft='no' capacitor_value=1 capacitor_accurate_value=10 capacitor_accurate_lsb=1 capacitor_adjust0=1 capacitor_adjust1=2 capacitor_adjust2=4 capacitor_adjust3=8 capacitor_adjust4=0 capacitor_adjust5=0 capacitor_adjust6=0 capacitor_adjust7=0 capacitor_adjust_por=4 capacitor_1=0 capacitor_vinitial=0 capacitor_0=0 capacitor_vmax=6 capacitor_maximumvoltage=6
-X$comparator1 195 180 183 207 202 147 181 148 149 146 comparatornoctlpins vars: comparator_model='comparator' comparator_hysteresismode='fixed' comparator_edge='falling' comparator_speed='fast' comparator_type='p' comparator_deglitch='no' comparator_lowiq='no' comparator_datasheet_name='text' comparator_datasheet_description='text' bgcomp_accuracy='no' bgcomp_outputanalog='supply' bgcomp_note1='Usage' bgcomp_outputdigital='no' bgcomp_trim_name='text' bgcomp_trim_description='text' bgcomp_enable='yes' comparator_dft='no' comparatorsupply_reference='ground' comparatorsupply_threshold='50' comparatorsupply_edge='falling' comparatorsupply_output='analog' comparatorsupply_enable='analog' comparator_hysteresis=0 comparator_lowiqpor=0 bgcomp_threshold=1.2 bgcomp_maxcelpos=6 bgcomp_maxvin=6 comparator_vmax=6
-X$currentgenerator1 206 157 158 159 160 161 162 163 180 183 192 156 currentgenerator vars: currentgenerator_polarity0='sink' currentgenerator_polarity1='sink' currentgenerator_polarity2='sink' currentgenerator_polarity3='sink' currentgenerator_polarity4='sink' currentgenerator_polarity5='sink' currentgenerator_polarity6='sink' currentgenerator_polarity7='sink' currentgenerator_accuracy='no' currentgenerator_datasheet_accuracy_name='text' currentgenerator_datasheet_accuracy_description='text' currentgenerator_tempco='zero' currentgenerator_dft='no' currentgenerator_output0=10 currentgenerator_output1=1 currentgenerator_output2=1 currentgenerator_output3=1 currentgenerator_output4=1 currentgenerator_output5=1 currentgenerator_output6=1 currentgenerator_output7=1 currentgenerator_number=1 currentgenerator_tempco_gain=3 currentgenerator_vmax=6 currentgenerator_vout=6
-X$delay1 183 219 214 178 179 153 delayclock vars: delay_type='clock' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=200 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
-X$delay2 193 217 185 176 177 152 delayclock vars: delay_type='clock' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=5 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=20 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
-X$delay3 207 203 delayfixed vars: delay_type='fixed' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=5 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
-X$dff1 183 203 198 204 208 dff vars: dff_edge='rise' dff_vmax=6
-X$dff2 200 205 201 200 209 dff vars: dff_edge='rise' dff_vmax=6
-X$dff3 212 201 213 212 209 dff vars: dff_edge='rise' dff_vmax=6
-X$dff4 215 213 216 215 209 dff vars: dff_edge='rise' dff_vmax=6
-X$switch1 164 206 183 switchpulldown vars: switch_type='pulldown' switch_polarity='invert' switch_model='celera' switch_ron=500 switch_pulldownvmax=6 switch_vmax=6
-X$switch4 155 184 198 switchpulldown vars: switch_type='pulldown' switch_polarity='noninvert' switch_model='celera' switch_ron=10 switch_pulldownvmax=6 switch_vmax=6
-X$switch5 154 184 217 switchpulldown vars: switch_type='pulldown' switch_polarity='invert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
-X$U1 180 pinprobe vars: pinprobe_description='Low_volatge_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
-X$U10 182 pinprobe vars: pinprobe_description='RT_output_source_current' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd'
-X$U11 198 168 169 170 171 172 199 timingskew vars: timingskew_type='rise' timingskew_control='factory' timingskew_dft='no' timingskew_datasheet_name='CLOCKofftime' timingskew_datasheet_description='Charger_Clock_off_time' timingskew_bits=5 timingskew_por=13 timingskew_lsb=4 timingskew_vmax=6
-X$U12 184 pinprobe vars: pinprobe_description='RT_frequency_based_ramp' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd'
-X$U13 186 pinprobe vars: pinprobe_description='Clock_based_on_RT_frequency' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd'
-X$U14 151 celeranoconn vars: ='%'
-X$U15 190 pinprobe vars: pinprobe_description='RAMP_kelvin_ground' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd'
-X$U18 187 pinprobe vars: pinprobe_description='RAMP_clock_is_enabled_and_ready' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd'
-X$U19 211 209 inv vars: logicgate_type='inv' logicgate_vmax=6
-X$U2 184 206 140 141 142 143 144 145 191 180 194 197 139 currentmirror2 vars: currentmirror_isetpolarity='sink' currentmirror_type0='source' currentmirror_type1='source' currentmirror_type2='sink' currentmirror_type3='sink' currentmirror_type4='sink' currentmirror_type5='sink' currentmirror_type6='sink' currentmirror_type7='sink' currentmirror_dft='no' currentmirror_number=2 currentmirror_maxiset=30 currentmirror_maxvout=6 currentmirror_gain0=1 currentmirror_gain1=250m currentmirror_gain2=1 currentmirror_gain3=1 currentmirror_gain4=1 currentmirror_gain5=1 currentmirror_gain6=1 currentmirror_gain7=1 currentmirror_vmax=6
-X$U20 218 201 220 212 215 nand4 vars: logicgate_type='nand4' logicgate_vmax=6
-X$U21 210 186 204 VESPAasmINPUT1
-X$U22 205 218 inv vars: logicgate_type='inv' logicgate_vmax=6
-X$U23 185 pinprobe vars: pinprobe_description='Master_sync_clock_1MHZ' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
-X$U24 189 pinprobe vars: pinprobe_description='RAMP_failed_to_start_up_in_100us' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd'
-X$U25 220 210 inv vars: logicgate_type='inv' logicgate_vmax=6
-X$U27 183 214 185 VESPAasmINPUT1
-X$U28 219 223 220 VESPAasmINPUT1
-X$U29 182 191 196 138 137 136 fet vars: fet_usage='signal' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=1k fet_ron_power=1 fet_replica_gain=10 fet_maximumvds=6 count_1=0 fet_vmax=6
-X$U3 211 208 199 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
-X$U30 210 187 222 VESPAasmINPUT1
-X$U31 217 221 224 VESPAasmINPUT1
-X$U32 206 224 180 schmitt vars: schmitt_threshold='60/40' schmitt_vmax=6 schmitt_dft='no'
-X$U33 221 222 223 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
-X$U34 222 189 inv vars: logicgate_type='inv' logicgate_vmax=6
-X$U4 193 211 oneshot vars: oneshot_time=100 oneshot_vmax=6
-X$U5 220 205 204 VESPAasmINPUT1
-X$U6 183 pinprobe vars: pinprobe_description='enable_charge_clock' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
-X$U7 188 pinprobe vars: pinprobe_description='RT_sence_input' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd'
-X$U8 181 pinprobe vars: pinprobe_description='Referecne_input_1.2V' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
-X$U9 192 195 193 197 194 183 VESPAasmINPUT4
+.node_map FAULT 215
+.node_map SIMPV 189
+.node_map framp 234
+.node_map cntBAR 232
+.node_map ok_ramp 195
+.node_map goDELAY 231
+.node_map sense_RT 198
+.node_map fault_check 226
+.node_map ok_comparator 216
+.node_map BUS1$0 174
+.node_map cki 208
+.node_map BUS1$1 175
+.node_map BUS1$2 176
+.node_map IRT 200
+.node_map enableDELAY 222
+.node_map BUS2$0 177
+.node_map fault_rampBAR 214
+.node_map BUS2$1 178
+.node_map rb 219
+.node_map BUS2$2 179
+.node_map BUS2$3 180
+.node_map rb_ck 218
+.node_map BUS2$4 181
+.node_map BUS3$0 182
+.node_map ok_amp 201
+.node_map BUS3$1 183
+.node_map run 233
+.node_map REF 192
+.node_map BUS4$0 184
+.node_map BUS4$1 185
+.node_map resetDELAY 205
+.node_map clock_rt 193
+.node_map BUS4$2 186
+.node_map cnt1BAR 223
+.node_map good 220
+.node_map RT 190
+.node_map reset 204
+.node_map clockBUF 225
+.node_map BUS5$0 187
+.node_map BUS5$1 188
+.node_map ok_currentgenerator 209
+.node_map clock 196
+.node_map RAMP 191
+.node_map enable_ramp 194
+.node_map cnt2BAR 228
+.node_map fault_short 227
+.node_map goOSHT 221
+.node_map cnt0BAR 206
+.node_map compDELAY 212
+.node_map SENSE_RAMP 211
+.node_map comp 217
+.node_map cnt 213
+.node_map cnt0 207
+.node_map ok_currentmirror 203
+.node_map fault_ramp 197
+.node_map cnt1 224
+.node_map cnt2 229
+.node_map GATE 202
+.node_map go 210
+.node_map kelvin_GNDramp 199
+.node_map fault_open 230
+X$amplifier1 189 198 202 192 194 201 174 175 176 142 amplifier vars: amplifier_gainadjust='openloop' amplifier_input_type='p' amplifier_accuracy='system' amplifier_accuracyname='RTaccuracy' amplifier_accuracydescription='RT_curent_accuracy' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$capacitor1 211 191 184 185 186 167 169 199 capacitorfixed vars: capacitor_control='capacitor' capacitor_datasheet_accurate_name='RTfrquency' capacitor_datasheet_accurate_description='RT_frequency_capacitor' capacitor_adjust_control='factory' capacitor_datasheet_adjust_name='text' capacitor_datasheet_adjust_description='text' capacitor_kelvin='yes' capacitor_type='tbd' capacitor_dft='no' capacitor_value=10 capacitor_accurate_value=10 capacitor_accurate_lsb=1 capacitor_adjust0=1 capacitor_adjust1=2 capacitor_adjust2=4 capacitor_adjust3=8 capacitor_adjust4=0 capacitor_adjust5=0 capacitor_adjust6=0 capacitor_adjust7=0 capacitor_adjust_por=4 capacitor_1=0 capacitor_vinitial=0 capacitor_0=0 capacitor_vmax=6 capacitor_maximumvoltage=6
+X$comparator1 216 189 194 217 211 155 192 163 164 154 comparatornoctlpins vars: comparator_model='comparator' comparator_hysteresismode='fixed' comparator_edge='falling' comparator_speed='fast' comparator_type='p' comparator_deglitch='no' comparator_lowiq='no' comparator_datasheet_name='text' comparator_datasheet_description='text' bgcomp_accuracy='no' bgcomp_outputanalog='supply' bgcomp_note1='Usage' bgcomp_outputdigital='no' bgcomp_trim_name='text' bgcomp_trim_description='text' bgcomp_enable='yes' comparator_dft='no' comparatorsupply_reference='ground' comparatorsupply_threshold='50' comparatorsupply_edge='falling' comparatorsupply_output='analog' comparatorsupply_enable='analog' comparator_hysteresis=0 comparator_lowiqpor=0 bgcomp_threshold=1.2 bgcomp_maxcelpos=6 bgcomp_maxvin=6 comparator_vmax=6
+X$currentgenerator1 215 156 157 158 159 160 161 162 189 194 209 153 currentgenerator vars: currentgenerator_polarity0='sink' currentgenerator_polarity1='sink' currentgenerator_polarity2='sink' currentgenerator_polarity3='sink' currentgenerator_polarity4='sink' currentgenerator_polarity5='sink' currentgenerator_polarity6='sink' currentgenerator_polarity7='sink' currentgenerator_accuracy='no' currentgenerator_datasheet_accuracy_name='text' currentgenerator_datasheet_accuracy_description='text' currentgenerator_tempco='zero' currentgenerator_dft='no' currentgenerator_output0=10 currentgenerator_output1=1 currentgenerator_output2=1 currentgenerator_output3=1 currentgenerator_output4=1 currentgenerator_output5=1 currentgenerator_output6=1 currentgenerator_output7=1 currentgenerator_number=1 currentgenerator_tempco_gain=3 currentgenerator_vmax=6 currentgenerator_vout=6
+X$delay1 194 222 225 182 183 165 delayclock vars: delay_type='clock' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=200 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$delay2 210 231 196 187 188 170 delayclock vars: delay_type='clock' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=5 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=20 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$delay3 217 212 delayfixed vars: delay_type='fixed' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=5 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$dff1 194 212 204 208 218 dff vars: dff_edge='rise' dff_vmax=6
+X$dff2 206 213 207 206 219 dff vars: dff_edge='rise' dff_vmax=6
+X$dff3 223 207 224 223 219 dff vars: dff_edge='rise' dff_vmax=6
+X$dff4 228 224 229 228 219 dff vars: dff_edge='rise' dff_vmax=6
+X$switch1 166 200 194 switchpulldown vars: switch_type='pulldown' switch_polarity='invert' switch_model='celera' switch_ron=10K switch_pulldownvmax=6 switch_vmax=6
+X$switch2 172 215 194 switchpulldown vars: switch_type='pulldown' switch_polarity='invert' switch_model='celera' switch_ron=10K switch_pulldownvmax=6 switch_vmax=6
+X$switch3 173 191 234 switchpulldown vars: switch_type='pulldown' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
+X$switch4 171 191 204 switchpulldown vars: switch_type='pulldown' switch_polarity='noninvert' switch_model='celera' switch_ron=10 switch_pulldownvmax=6 switch_vmax=6
+X$switch5 168 191 231 switchpulldown vars: switch_type='pulldown' switch_polarity='invert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
+X$U1 189 pinprobe vars: pinprobe_description='Low_volatge_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U10 190 pinprobe vars: pinprobe_description='RT_output_source_current' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd'
+X$U11 204 177 178 179 180 181 205 timingskew vars: timingskew_type='rise' timingskew_control='factory' timingskew_dft='no' timingskew_datasheet_name='CLOCKofftime' timingskew_datasheet_description='Charger_Clock_off_time' timingskew_bits=5 timingskew_por=13 timingskew_lsb=4 timingskew_vmax=6
+X$U12 191 pinprobe vars: pinprobe_description='RT_frequency_based_ramp' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd'
+X$U13 193 pinprobe vars: pinprobe_description='Clock_based_on_RT_frequency' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd'
+X$U14 169 celeranoconn vars: ='%'
+X$U15 199 pinprobe vars: pinprobe_description='RAMP_kelvin_ground' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd'
+X$U16 190 200 202 145 144 143 fet vars: fet_usage='signal' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=1k fet_ron_power=1 fet_replica_gain=10 fet_maximumvds=6 count_1=0 fet_vmax=6
+X$U17 208 193 214 220 VESPAasmINPUT2
+X$U18 195 pinprobe vars: pinprobe_description='RAMP_clock_is_enabled_and_ready' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd'
+X$U19 221 219 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U2 191 215 147 148 149 150 151 152 200 189 194 203 146 currentmirror2 vars: currentmirror_isetpolarity='sink' currentmirror_type0='source' currentmirror_type1='source' currentmirror_type2='sink' currentmirror_type3='sink' currentmirror_type4='sink' currentmirror_type5='sink' currentmirror_type6='sink' currentmirror_type7='sink' currentmirror_dft='no' currentmirror_number=2 currentmirror_maxiset=30 currentmirror_maxvout=6 currentmirror_gain0=1 currentmirror_gain1=250m currentmirror_gain2=1 currentmirror_gain3=1 currentmirror_gain4=1 currentmirror_gain5=1 currentmirror_gain6=1 currentmirror_gain7=1 currentmirror_vmax=6
+X$U20 232 207 233 223 228 nand4 vars: logicgate_type='nand4' logicgate_vmax=6
+X$U21 197 234 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U22 213 232 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U23 196 pinprobe vars: pinprobe_description='Master_sync_clock_1MHZ' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U24 197 pinprobe vars: pinprobe_description='RAMP_failed_to_start_up_in_100us' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd'
+X$U25 233 220 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U27 194 225 196 VESPAasmINPUT1
+X$U28 222 230 233 VESPAasmINPUT1
+X$U3 221 218 205 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U30 220 195 214 VESPAasmINPUT1
+X$U31 231 227 226 VESPAasmINPUT1
+X$U32 215 226 189 schmitt vars: schmitt_threshold='60/40' schmitt_vmax=6 schmitt_dft='no'
+X$U33 227 214 230 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U34 214 234 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U4 210 221 oneshot vars: oneshot_time=100 oneshot_vmax=6
+X$U5 233 213 208 VESPAasmINPUT1
+X$U6 194 pinprobe vars: pinprobe_description='enable_charge_clock' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U7 198 pinprobe vars: pinprobe_description='RT_sence_input' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd'
+X$U8 192 pinprobe vars: pinprobe_description='Referecne_input_1.2V' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U9 209 216 210 203 201 194 VESPAasmINPUT4
 .ends REGULATIONrampMAIN
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT2.sxcmp
+.subckt VESPAasmINPUT2 7 8 9 6
+*#hierarchy
+.node_map Tstate 6
+.node_map i0 7
+.node_map i1 9
+.node_map o 8
+X$U1 6 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 9 pinprobe vars: pinprobe_description='input1'
+X$U3 8 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 6 9 5 7 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U5 5 8 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U6 7 pinprobe vars: pinprobe_description='input0'
+.ends VESPAasmINPUT2
 
 ** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT1.sxcmp
 .subckt VESPAasmINPUT1 5 6 7
