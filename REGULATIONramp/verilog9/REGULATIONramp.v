@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module REGULATIONrampDEBUG (RAMP,ok_ramp,clock_rt,sense_RT,CELG59462,CELV96848,fault_ramp,CELSUB40948,enable_ramp,Hijack_enable_ramp);
+module REGULATIONrampDEBUG (RAMP,ok_ramp,clock_rt,sense_RT,CELG59462,CELV96848,fault_ramp,CELSUB40948,enable_ramp,hijack_enable_ramp);
   input  RAMP;
   input  ok_ramp;
   input  clock_rt;
@@ -9,14 +9,14 @@ module REGULATIONrampDEBUG (RAMP,ok_ramp,clock_rt,sense_RT,CELG59462,CELV96848,f
   input  fault_ramp;
   input  CELSUB40948;
   input  enable_ramp;
-  output  Hijack_enable_ramp;
+  output  hijack_enable_ramp;
 endmodule
 
 module REGULATIONrampMAIN (RT,REF,RAMP,SIMPV,clock,ok_ramp,clock_rt,sense_RT,CELG59462,CELV96848,PORB97836,fault_ramp,CELSUB40948,enable_ramp,kelvin_GNDramp,IP_81412710_Xamplifier1,IP_520c8b2a_Xcomparator1,IP_4268dafe_Xcurrentgenerator1);
   inout  RT;
   input  REF;
   inout  RAMP;
-  inout  SIMPV;
+  input  SIMPV;
   input  clock;
   output  ok_ramp;
   output  clock_rt;
@@ -59,7 +59,7 @@ module REGULATIONramp (RT, REF, RAMP, SIMPV, clock, ok_ramp, clock_rt, sense_RT,
 inout  RT;
 input  REF;
 inout  RAMP;
-inout  SIMPV;
+input  SIMPV;
 input  clock;
 output  ok_ramp;
 output  clock_rt;
@@ -87,7 +87,7 @@ REGULATIONrampDEBUG XDEBUG (
 .fault_ramp(fault_ramp),
 .CELSUB40948(CELSUB40948),
 .enable_ramp(enable_ramp),
-.Hijack_enable_ramp(net_52)
+.hijack_enable_ramp(net_52)
 );
 
 REGULATIONrampMAIN XMAIN (

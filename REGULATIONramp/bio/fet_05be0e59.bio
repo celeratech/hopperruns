@@ -6,98 +6,80 @@
 
 //Celera Confidential BIO Data Generator
 //Cell Name
-cell,currentmirror
-///**********************************************
+cell,fet
+//**********************************************
 //Generator Revision
-revision,generator,0.4.4
+revision,generator,0.3.5
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
+limit,fet_usage,choose0,signal,
+limit,fet_usage,choose1,power,
+limit,fet_ron_power,minimum,0.001,
+limit,fet_ron_power,maximum,60000,
+limit,fet_ron_signal,minimum,10,
+limit,fet_ron_signal,maximum,60000,
+limit,fet_type,choose0,n,
+limit,fet_type,choose1,p,
+limit,fet_vmax,choose0,2
+limit,fet_vmax,choose1,6
+limit,fet_maximumvds,choose0,2
+limit,fet_maximumvds,choose1,6
+limit,fet_maximumvds,choose2,12
+limit,fet_maximumvds,choose3,20
+limit,fet_maximumvds,choose4,24
+limit,fet_maximumvds,choose5,30
+limit,fet_maximumvds,choose6,36
+limit,fet_maximumvds,choose7,40
+limit,fet_maximumvds,choose8,45
+limit,fet_maximumvds,choose9,60
+limit,fet_diode,choose0,yes
+limit,fet_diode,choose1,no
+limit,fet_diodedrive,choose0,diode
+limit,fet_diodedrive,choose1,active
+limit,fet_replica,choose0,no
+limit,fet_replica,choose1,drain
+limit,fet_replica,choose2,source
+limit,fet_replica_gain,minimum,1,
+limit,fet_replica_gain,maximum,40,
+limit,fet_kelvin,choose0,no
+limit,fet_kelvin,choose1,yes
+limit,fet_layoutrotate,choose0,no
+limit,fet_layoutrotate,choose1,yes
+limit,fet_dft,choose0,no
+limit,fet_dft,choose1,yes
+limit,fet_calculator,choose0,typical
+limit,fet_calculator,choose1,maximum
 
-limit,currentmirror_isetpolarity,choose0,sink
-limit,currentmirror_isetpolarity,choose1,source
-limit,currentmirror_number,minimum,1
-limit,currentmirror_number,maximum,8
-limit,currentmirror_maxiset,minimum,0.01
-limit,currentmirror_maxiset,maximum,100.0
-limit,currentmirror_maxvout,choose0,6
-limit,currentmirror_maxvout,choose1,12
-limit,currentmirror_maxvout,choose2,20
-limit,currentmirror_maxvout,choose3,24
-limit,currentmirror_maxvout,choose4,30
-limit,currentmirror_maxvout,choose5,36
-limit,currentmirror_maxvout,choose6,40
-limit,currentmirror_maxvout,choose7,45
-limit,currentmirror_maxvout,choose8,60
-limit,currentmirror_gain0,minimum,0.1
-limit,currentmirror_gain0,maximum,20.0
-limit,currentmirror_gain1,minimum,0.1
-limit,currentmirror_gain1,maximum,20.0
-limit,currentmirror_gain2,minimum,0.1
-limit,currentmirror_gain2,maximum,20.0
-limit,currentmirror_gain3,minimum,0.1
-limit,currentmirror_gain3,maximum,20.0
-limit,currentmirror_gain4,minimum,0.1
-limit,currentmirror_gain4,maximum,20.0
-limit,currentmirror_gain5,minimum,0.1
-limit,currentmirror_gain5,maximum,20.0
-limit,currentmirror_gain6,minimum,0.1
-limit,currentmirror_gain6,maximum,20.0
-limit,currentmirror_gain7,minimum,0.1
-limit,currentmirror_gain7,maximum,20.0
-limit,currentmirror_type0,choose0,sink
-limit,currentmirror_type0,choose1,source
-limit,currentmirror_type1,choose0,sink
-limit,currentmirror_type1,choose1,source
-limit,currentmirror_type2,choose0,sink
-limit,currentmirror_type2,choose1,source
-limit,currentmirror_type3,choose0,sink
-limit,currentmirror_type3,choose1,source
-limit,currentmirror_type4,choose0,sink
-limit,currentmirror_type4,choose1,source
-limit,currentmirror_type5,choose0,sink
-limit,currentmirror_type5,choose1,source
-limit,currentmirror_type6,choose0,sink
-limit,currentmirror_type6,choose1,source
-limit,currentmirror_type7,choose0,sink
-limit,currentmirror_type7,choose1,source
-limit,currentmirror_vmax,choose0,2
-limit,currentmirror_vmax,choose1,6
-limit,currentmirror_dft,choose0,no
-limit,currentmirror_dft,choose1,yes
-limit,currentmirror_global,choose0,no
-limit,currentmirror_global,choose1,yes
 
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,currentmirror_isetpolarity,source
-description,Current Mirror Iset polarity
-user,currentmirror_maxiset,30
-description,Current Mirror Maximum Output current
-user,currentmirror_maxvout,6
-description,Current Mirror Maximum Output Voltage
-user,currentmirror_supply,lowvoltage
-description,Minimum Operating Voltage
-user,currentmirror_gain0,1_source
-description,Current Mirror Output0
-user,NESTO,0.4.4
-description,Nesto generate Revision
+user,Type,n
+description,FET type
+user,Usage,signal
+description,FET was as signal
+user,Ron,1.0 KOhm
+description,FET on resistance
+user,Vds,6V
+description,FET Maximum Vds rating
+user,VgsMax,6V
+description,FET Maximum Vgs rating
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,currentmirror
-register,instance,currentmirror1_99ee89f6
+registermap,fet
+register,instance,fet_05be0e59
 register,source,cell
 
 //No register Map Required
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readonly
+register,mode,na
 register,por,0
 register,userdescription,na
 register,description0,not used
@@ -118,57 +100,74 @@ register,busname,na
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,currentmirror
-factory,instance,currentmirror1_99ee89f6
+factorymap,fet
+factory,instance,fet_05be0e59
 factory,source,cell
 
-///No factory Map Required
+//No factory Map Required
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,readonly
+factory,mode,na
 factory,por,0
 factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
 //Netlister Information
 factory,busname,na
+//**********************************************
+//TRIM Parameters
+cell,fet
+trim,instance,fet_05be0e59
+
+trim,name,na
+trim,enable,no
+trim,bits,TBD
+trim,por,0
+trim,pinname,TBD
+trim,testname,TBD
+trim,description,TBD
+trim,target,0
+trim,units,TBD
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,TBD
+trim,description0,empty
+trim,description1,empty
+trim,description2,empty
+trim,description3,empty
+trim,description4,empty
+trim,description5,empty
+trim,description6,empty
+trim,description7,empty
 //**********************************************
 //CELL DFT Parameters
 // *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,currentmirror
-
-place Generate STONEcurrentmirrormain 0 0 R0
-place Generate STONEcurrentmirrorpmos50urefhv30 52.64 -37.62 R0
-place Generate STONEcurrentmirrorpmos5urefhv30 52.64 -37.62 R0
-place Generate STONEcurrentmirrorpmos500nrefhv30 52.64 -37.62 R0
-place Generate STONEcurrentmirrormaindft -0.54 -0.16 MX 
-placeSTEP Generate STONEcurrentmirrornmos50uhv30 -10.28 -79.2 x 29.7 R0
-placeSTEP Generate STONEcurrentmirrorpmos50uhv30 -10.79 -121.385 x 20.9 R0
-placeSTEP Generate STONEcurrentmirrornmos5uhv30 -10.28 -53.68 x 12.22 R0
-placeSTEP Generate STONEcurrentmirrorpmos5uhv30 -10.79 -77.55 x 20.9 R0
-placeSTEP Generate STONEcurrentmirrornmos500nhv30 -10.28 -71.66 x 29.7 R0
-placeSTEP Generate STONEcurrentmirrorpmos500nhv30 -10.79 -95.53 x 20.9 R0
-placeIFELSE cellNameContains dft
-placeSTEP PEBBLES PEBBLEswitchG10K 10.08 -27.97 x 4.41 R0
-placeELSE
-placeSTEP PEBBLES PEBBLEswitchG10K 44.1 0 x 4.41 R0
-placeEND
-placeTILE 0.66
-//place constraints module generator 
-//placeROUTE
-endlayoutbio
+//fetsignal
+placeFETsignal Xnmos0 10.0 0.0 R0
+placeFETsignal Xpmos0 10.0 0.0 R0
+placeFETsignal Xnmos3c 71.74 0.0 R0
+placeFETsignal XnmosB 40.87 0.0 R0
+placeFETsignal XnmosA 10.0 0.0 R0
+placeROUTEnopins
 
 
-
+//an5g6dw1 3.3 
+//an5g12dw2 4.1
+//an5g20dw2 4.9
+//an5g24dw2 5.3
+//an5g30dw2 6.3
+//an5g40dw1 7.9
 
 //**********************************************
 //Project Parameters
@@ -217,144 +216,227 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,STONEnoconn,0
-sub_area,STONEcurrentmirrormain,100
-sub_area,CASCODEnmos50uref,3800
-sub_area,CASCODEpmos50u,3800
-sub_area,CASCODEpmos50uref,3800
-sub_area,CASCODEnmos50u,3800
-generate_area,currentmirror1_99ee89f6,15300
-// *********************************************
-//Operating Range
-#define,STONEminimum,2.1
-#define,STONELVminimum,1.0
-#define,SIMPVminimum,2.1
-#define,HVPOSminimum,2.1
+sub_area,nch5i2_6t_1p8x0p6x1p0x1p0,40481
+generate_area,fet_05be0e59,40481
 // *********************************************
 //Calculator Parameters
-#define,CELVminimum,2.0
-#define,count_runitw,2.0
-#define,count_runitmaxl,50.0
-#define,count_runitminl,5.0
+#define,CELVminimum,1.3
+#define,NMOSaccuracy,5.0
+#define,NMOSPOWERaccuracy,2.0
+#define,NMOSsignalmetalAdder,2
+#define,NMOSpowermetalAdder,20
+#define,NMOSprocessAdder,100
+#define,NMOSsinglestep6,3.3
+#define,NMOSsinglestep12,4.1
+#define,NMOSsinglestep20,4.9
+#define,NMOSsinglestep24,5.9
+#define,NMOSsinglestep30,6.3
+#define,NMOSsinglestep40,8.0
+#define,NMOSsingleratio,0.75
+
+//293 updates
+#define,NMOSsinglestep36,10.0
+#define,NMOSsinglestep45,10.0
+#define,NMOSsinglestep60,10.0
+
+#define,PMOSaccuracy,1.0
+#define,PMOSPOWERaccuracy,2.0
+#define,PMOSpowermetalAdder,30
+#define,PMOSsignalmetalAdder,2
+#define,PMOSprocessAdder,100
+#define,PMOSsinglestep6,3.96
+#define,PMOSsinglestep12,4.76
+#define,PMOSsinglestep20,5.96
+#define,PMOSsinglestep24,6.56
+#define,PMOSsinglestep30,7.96
+#define,PMOSsinglestep40,9.0
+#define,PMOSsingleratio,0.75
+
+//293 updates
+#define,PMOSsinglestep36,10.0
+#define,PMOSsinglestep45,10.0
+#define,PMOSsinglestep60,10.0
+
+//Define default calculators
+#define,CELV_TEMP,3.3
+#define,TEMPERATURE_TEMP,125
+//#define,VGS_TEMP,2.3
+#define,VGS_TEMP,5.0
+
+//Ddefine Signal Layout Guidelines
+#define,SIGNALmaximumwidth,200
+//Error Winodow of SIGNAL Ron Calculation
+#define,SIGNALaccuracy,10.0
+#define,POWERaccuracy,5.0
+//Define Power Layout Rules
+#define,POWERmaximumwidth,400
+//Limit the size of device X
+#define,POWERxlimit,100000
+
+//Power fet Calculations
+//RevA Mode1 - Power
+//#define,POWERx,2.33
+//#define,POWERy,8.38
+//#define,POWERk6,3.3
+//#define,POWERk12,4.1
+//#define,POWERk20,4.9
+//#define,POWERk24,5.3
+//#define,POWERk30,6.3
+//#define,POWERk40,7.9
+
+//RevB Model - Power
+#define,POWERxN,3.21
+#define,POWERxP,4.4
+#define,POWERy,8.38
+#define,POWERk6N,3.3
+#define,POWERk12N,4.1
+#define,POWERk20N,4.9
+#define,POWERk24N,5.3
+#define,POWERk30N,6.3
+#define,POWERk40N,7.9
+#define,POWERk6P,3.96
+#define,POWERk12P,4.76
+#define,POWERk20P,5.96
+#define,POWERk24P,6.56
+#define,POWERk30P,7.76
+#define,POWERk40P,7.86
+//293 Updates
+#define,POWERk40N,10.0
+#define,POWERk45N,10.0
+#define,POWERk60N,10.0
+
+#define,POWERk36P,10.0
+#define,POWERk45P,10.0
+#define,POWERk60P,10.0
+
+
+//Layout Rules
+#define,NMOSlayoutratio,0.75
+#define,PMOSlayoutratio,0.75
+
+//Limit how many columns/row are allowed
+#define,POWERcolumnstart,2
+//Limt the number of X  Fets placed
+#define,POWERFETmaximumX,2750
+//How accuracy the FTE ratio has to be with respect to 'layoutratio' <%>
+#define,POWERFETratioACCURACY,10.0
+//DeltaW sstep when search for final Width
+#define,POWERFETwidthSTEP,0.1
+
+//RevA Model - Signal
+#define,SIGNALk6N,0.44
+#define,SIGNALk12N,7.43
+#define,SIGNALk20N,7.63
+#define,SIGNALk24N,8.03
+#define,SIGNALk30N,9.63
+//293 updates
+#define,SIGNALk40N,10.0
+#define,SIGNALk45N,10.0
+#define,SIGNALk60N,10.0
+
+#define,SIGNALk6P,0.44
+#define,SIGNALk12P,5.86
+#define,SIGNALk20P,6.96
+#define,SIGNALk24P,7.76
+#define,SIGNALk30P,7.96
+//293 updates
+#define,SIGNALk40P,10.0
+#define,SIGNALk45P,10.0
+#define,SIGNALk60P,10.0
+
+#define,NMOSsignallayoutratio,0.75
+#define,PMOSsignallayoutratio,0.75
+
+//Replica
+#define,REPLICAserialmaximum,40
+#define,REPLICAaccuracyAREA,2.0
+#define,REPLICAaccuracyRON,20.0
+#define,nmos2fudge,100
+#define,nmos6fudge,100
+#define,nmos12fudge,100
+#define,nmos20fudge,100
+#define,nmos24fudge,100
+#define,nmos30fudge,80
+#define,nmos40fudge,100
+#define,nmos45fudge,100
+#define,nmos60fudge,100
+
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//currentmirror1
+//fet
 revision,pinorder,0.2.0
-pinorder,I0,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,ISET,SIMPV,enable_currentmirror,ok_currentmirror,net_skip
+pinorder,SOURCE,DRAIN,GATE,net_skip,net_skip,net_skip
 
 endpinorder
 //**********************************************
-//TRIM Parameters
-cell,currentmirror
-trim,instance,currentmirror1_99ee89f6
+//Cell Pin Descriptions	
+//**********************************************	
+pinname,GATE
+definition,GATE,FET gate 	
+iq,GATE,SIMULATION
+absmax,GATE,6
+absmin,GATE,-0.3
+io,GATE,input
+mode,GATE,analog
+router,GATE,TBD
+dftpriority,GATE,1
+esd,GATE,TBD
 
-//currentmirror - no trim
-trim,name,na
-trim,enable,no
-trim,bits,TBD
-trim,por,0
-trim,pinname,TBD
-trim,testname,TBD
-trim,description,TBD
-trim,target,na
-trim,units,TBD
-trim,pretrim_low_limit,TBD
-trim,pretrim_high_limit,TBD
-trim,posttrim_low_limit,TBD
-trim,posttrim_high_limit,TBD
-trim,codeunits,TBD
-trim,description0,empty
-trim,description1,empty
-trim,description2,empty
-trim,description3,empty
-trim,description4,empty
-trim,description5,empty
-trim,description6,empty
-trim,description7,empty
+pinname,SOURCE
+definition,SOURCE,FET source
+iq,SOURCE,SIMULATION
+absmax,SOURCE,6
+absmin,SOURCE,-0.3
+io,SOURCE,inout
+mode,SOURCE,analog
+router,SOURCE,TBD
+dftpriority,SOURCE,1
+esd,SOURCE,TBD
 
-//**********************************************
-//Cell Pin Descriptions
-//**********************************************
-pinname,SIMPV
-definition,SIMPV,power supply
-iq,SIMPV,SIMULATION
-absmax,SIMPV,6
-absmin,SIMPV,-0.3
-io,SIMPV,input
-mode,SIMPV,power
-router,SIMPV,TBD
-dftpriority,SIMPV,1
-esd,SIMPV,TBD
-
-pinname,CELG
-definition,CELG,power ground
-iq,CELG,SIMULATION
-absmax,CELG,0.3
-absmin,CELG,-0.3
-io,CELG,input
-mode,CELG,power
-router,CELG,TBD
-dftpriority,CELG,1
-esd,CELG,TBD
-
-pinname,CELSUB
-definition,CELSUB,power ground
-iq,CELSUB,SIMULATION
-absmax,CELSUB,6
-absmin,CELSUB,-0.3
-io,CELSUB,input
-mode,CELSUB,power
-router,CELSUB,TBD
-dftpriority,CELSUB,1
-esd,CELSUB,TBD
+pinname,DRAIN
+definition,DRAIN,FET drain 
+iq,DRAIN,SIMULATION
+absmax,DRAIN,6
+absmin,DRAIN,-0.3
+io,DRAIN,inout
+mode,DRAIN,analog
+router,DRAIN,TBD
+dftpriority,DRAIN,1
+esd,DRAIN,TBD
 
 
-pinname,enable_currentmirror
-definition,enable_currentmirror,Enable Pin
-iq,enable_currentmirror,SIMULATION
-absmax,enable_currentmirror,6
-absmin,enable_currentmirror,-0.3
-io,enable_currentmirror,input
-mode,enable_currentmirror,digital
-router,enable_currentmirror,TBD
-dftpriority,enable_currentmirror,1
-esd,enable_currentmirror,TBD
 
-pinname,ISET
-definition,ISET,Mirror Current Reference
-iq,ISET,SIMULATION
-absmax,ISET,6
-absmin,ISET,-0.3
-io,ISET,input
-mode,ISET,analog
-router,ISET,TBD
-dftpriority,ISET,1
-esd,ISET,TBD
 
-pinname,ok_currentmirror
-definition,ok_currentmirror,Current Mirror OK
-iq,ok_currentmirror,SIMULATION
-absmax,ok_currentmirror,6
-absmin,ok_currentmirror,-0.3
-io,ok_currentmirror,output
-mode,ok_currentmirror,digital
-router,ok_currentmirror,TBD
-dftpriority,ok_currentmirror,1
-esd,ok_currentmirror,TBD
+pinname,NMOSiso6
+definition,NMOSiso6,6V NMOS ISO Connection 
+iq,NMOSiso6,SIMULATION
+absmax,NMOSiso6,6
+absmin,NMOSiso6,-0.3
+io,NMOSiso6,input
+mode,NMOSiso6,analog
+router,NMOSiso6,TBD
+dftpriority,NMOSiso6,1
+esd,NMOSiso6,TBD
 
-pinname,I0
-definition,I0,Output 0
-iq,I0,SIMULATION
-absmax,I0,6
-absmin,I0,-0.3
-io,I0,inout
-mode,I0,analog
-router,I0,TBD
-dftpriority,I0,1
-esd,I0,TBD
+
+
+
+
+
+
+pinname,SUB
+definition,SUB,FET substrate 
+iq,SUB,SIMULATION
+absmax,SUB,0.3
+absmin,SUB,-0.3
+io,SUB,input
+mode,SUB,analog
+router,SUB,TBD
+dftpriority,SUB,1
+esd,SUB,TBD
 
 
 
@@ -363,26 +445,6 @@ esd,I0,TBD
 
 
 
-pinname,global_currentmirror
-definition,global_currentmirror,Global Test Enable
-iq,global_currentmirror,SIMULATION
-absmax,global_currentmirror,6
-absmin,global_currentmirror,-0.3
-io,global_currentmirror,input
-mode,global_currentmirror,digital
-router,global_currentmirror,TBD
-dftpriority,global_currentmirror,1
-esd,global_currentmirror,TBD
-
-
-
-
-
-
-
-
-
-endbio
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -1061,17 +1123,4 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
-// *********************************************
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -360,13 +360,13 @@ parameter,pinprobe_description,Low_volatge_input_supply
 
 
 GenerateLevel,7
-generate,currentmirror1
+generate,currentmirror2
 path,XRAMP,XMAIN,XU2
 instance,XU2
 parameter,currentmirror_dft,no
 parameter,currentmirror_vmax,6
 parameter,currentmirror_gain0,1
-parameter,currentmirror_gain1,1
+parameter,currentmirror_gain1,250m
 parameter,currentmirror_gain2,1
 parameter,currentmirror_gain3,1
 parameter,currentmirror_gain4,1
@@ -381,10 +381,10 @@ parameter,currentmirror_type4,sink
 parameter,currentmirror_type5,sink
 parameter,currentmirror_type6,sink
 parameter,currentmirror_type7,sink
-parameter,currentmirror_number,1
+parameter,currentmirror_number,2
 parameter,currentmirror_maxiset,30
 parameter,currentmirror_maxvout,6
-parameter,currentmirror_isetpolarity,source
+parameter,currentmirror_isetpolarity,sink
 
 
 GenerateLevel,7
@@ -495,48 +495,6 @@ parameter,pinprobe_description,RAMP_kelvin_ground
 
 
 GenerateLevel,7
-generate,fet
-path,XRAMP,XMAIN,XU16
-instance,XU16
-parameter,count_1,0
-parameter,fet_dft,no
-parameter,fet_type,p
-parameter,fet_vmax,6
-parameter,fet_diode,yes
-parameter,fet_usage,signal
-parameter,fet_kelvin,no
-parameter,fet_replica,no
-parameter,fet_ron_power,1
-parameter,fet_diodedrive,diode
-parameter,fet_maximumvds,6
-parameter,fet_ron_signal,1k
-parameter,fet_powerswitch,no
-parameter,fet_layoutrotate,no
-parameter,fet_replica_gain,10
-
-
-GenerateLevel,7
-generate,fet
-path,XRAMP,XMAIN,XU17
-instance,XU17
-parameter,count_1,0
-parameter,fet_dft,no
-parameter,fet_type,p
-parameter,fet_vmax,6
-parameter,fet_diode,yes
-parameter,fet_usage,signal
-parameter,fet_kelvin,no
-parameter,fet_replica,no
-parameter,fet_ron_power,1
-parameter,fet_diodedrive,diode
-parameter,fet_maximumvds,6
-parameter,fet_ron_signal,1k
-parameter,fet_powerswitch,no
-parameter,fet_layoutrotate,no
-parameter,fet_replica_gain,10
-
-
-GenerateLevel,7
 generate,pinprobe
 path,XRAMP,XMAIN,XU18
 instance,XU18
@@ -600,11 +558,11 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,7
 generate,fet
-path,XRAMP,XMAIN,XU26
-instance,XU26
+path,XRAMP,XMAIN,XU29
+instance,XU29
 parameter,count_1,0
 parameter,fet_dft,no
-parameter,fet_type,p
+parameter,fet_type,n
 parameter,fet_vmax,6
 parameter,fet_diode,yes
 parameter,fet_usage,signal
@@ -613,7 +571,7 @@ parameter,fet_replica,no
 parameter,fet_ron_power,1
 parameter,fet_diodedrive,diode
 parameter,fet_maximumvds,6
-parameter,fet_ron_signal,4k
+parameter,fet_ron_signal,1k
 parameter,fet_powerswitch,no
 parameter,fet_layoutrotate,no
 parameter,fet_replica_gain,10
@@ -835,30 +793,6 @@ path,XRAMP,XMAIN,Xswitch1
 instance,Xswitch1
 parameter,switch_ron,500
 parameter,switch_type,pulldown
-parameter,switch_vmax,6
-parameter,switch_model,celera
-parameter,switch_polarity,invert
-parameter,switch_pulldownvmax,6
-
-
-GenerateLevel,7
-generate,switchtransmission
-path,XRAMP,XMAIN,Xswitch2
-instance,Xswitch2
-parameter,switch_ron,1K
-parameter,switch_type,transmission
-parameter,switch_vmax,6
-parameter,switch_model,celera
-parameter,switch_polarity,noninvert
-parameter,switch_pulldownvmax,6
-
-
-GenerateLevel,7
-generate,switchpullup
-path,XRAMP,XMAIN,Xswitch3
-instance,Xswitch3
-parameter,switch_ron,1K
-parameter,switch_type,pullup
 parameter,switch_vmax,6
 parameter,switch_model,celera
 parameter,switch_polarity,invert

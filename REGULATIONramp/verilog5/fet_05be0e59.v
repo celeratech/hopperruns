@@ -1,16 +1,16 @@
 // Celera Brick Generator Confidential
 //CORE:signalfetN
-//NAME:fet_switchpulldown_c10260b8_Xnmos0
+//NAME:fet_05be0e59
 //GENERATOR REVISION:0.3.5
 //FET TYPE:n
-//ON RESISTANCE:500 Ohms
+//ON RESISTANCE:1000 Ohms
 //VDS RATING:6V
 //VGS RATING:6V
 //BODY DIODE:yes
 //KEVLIN:no
 
 //Celera Confidential Do Not Copy NMOS
-module nch5i2_6t_3p6x0p6x1p0x1p0 (DRAIN,GATE,SOURCE,ISO,BULK,SUB);
+module nch5i2_6t_1p8x0p6x1p0x1p0 (DRAIN,GATE,SOURCE,ISO,BULK,SUB);
 input GATE;
 input ISO;
 input BULK;
@@ -19,20 +19,20 @@ inout SOURCE;
 inout DRAIN;
 endmodule
 
-//Celera Confidential Do Not Copy fet_switchpulldown_c10260b8_Xnmos0
+//Celera Confidential Do Not Copy fet_05be0e59
 //Celera Confidential Symbol Generator
-//signal NMOS:Ron:500 Ohm
+//signal NMOS:Ron:1000 Ohm
 //Vgs 6V Vds 6V
 //Kelvin:no
-module fet_switchpulldown_c10260b8_Xnmos0 (GATE,SOURCE,DRAIN,NMOSiso6,SUB);
+module fet_05be0e59 (GATE,SOURCE,DRAIN,NMOSiso6,SUB);
 input GATE;
 inout SOURCE;
 inout DRAIN;
 input SUB;
 input NMOSiso6;
 
-//Celera Confidential Do Not Copy nch5i2_6t_3p6x0p6x1p0x1p0
-nch5i2_6t_3p6x0p6x1p0x1p0 Xnmos0(
+//Celera Confidential Do Not Copy nch5i2_6t_1p8x0p6x1p0x1p0
+nch5i2_6t_1p8x0p6x1p0x1p0 Xnmos0(
 .DRAIN (DRAIN),
 .GATE (GATE),
 .SOURCE (SOURCE),
@@ -40,7 +40,7 @@ nch5i2_6t_3p6x0p6x1p0x1p0 Xnmos0(
 .BULK (SOURCE),
 .SUB (SUB)
 );
-//,diesize,nch5i2_6t_3p6x0p6x1p0x1p0
+//,diesize,nch5i2_6t_1p8x0p6x1p0x1p0
 
 //Celera Confidential Do Not Copy Module End
 //Celera Schematic Generator

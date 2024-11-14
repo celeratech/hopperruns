@@ -28,7 +28,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONrampDEBUG (RAMP, ok_ramp, clock_rt, sense_RT, CELG59462, CELV96848, fault_ramp, CELSUB40948, enable_ramp, Hijack_enable_ramp);
+module REGULATIONrampDEBUG (RAMP, ok_ramp, clock_rt, sense_RT, CELG59462, CELV96848, fault_ramp, CELSUB40948, enable_ramp, hijack_enable_ramp);
   input  RAMP;
 input  ok_ramp;
   input  clock_rt;
@@ -38,7 +38,7 @@ input  CELV96848;
   input  fault_ramp;
 input  CELSUB40948;
 input  enable_ramp;
-output  Hijack_enable_ramp;
+output  hijack_enable_ramp;
 
 
 // ------------------------ Wires ------------------------
@@ -47,7 +47,7 @@ output  Hijack_enable_ramp;
 VESPAdftpulse XU10 (
 .stop(ok_ramp),
 .pulse(XUREGULATIONrampSTSTARTUP_no_dft_noconn_pulse),
-.start(Hijack_enable_ramp),
+.start(hijack_enable_ramp),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
@@ -67,7 +67,7 @@ STONEnoconn XNCsense_RT (
 
 WRAPPER1 XWRAP_24_25 (
 .i(enable_ramp),
-.o(Hijack_enable_ramp)
+.o(hijack_enable_ramp)
 );
 
 STONEnoconn XNCfault_ramp (

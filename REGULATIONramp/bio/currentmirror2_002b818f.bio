@@ -72,7 +72,7 @@ limit,currentmirror_global,choose1,yes
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,currentmirror_isetpolarity,source
+user,currentmirror_isetpolarity,sink
 description,Current Mirror Iset polarity
 user,currentmirror_maxiset,30
 description,Current Mirror Maximum Output current
@@ -82,6 +82,8 @@ user,currentmirror_supply,lowvoltage
 description,Minimum Operating Voltage
 user,currentmirror_gain0,1_source
 description,Current Mirror Output0
+user,currentmirror_gain1,0.25_source
+description,Current Mirror Output1
 user,NESTO,0.4.4
 description,Nesto generate Revision
 //**********************************************
@@ -90,7 +92,7 @@ description,Nesto generate Revision
 //REGISTER Parameters
 //Celera Map Generator
 registermap,currentmirror
-register,instance,currentmirror1_99ee89f6
+register,instance,currentmirror2_002b818f
 register,source,cell
 
 //No register Map Required
@@ -119,7 +121,7 @@ register,busname,na
 //FACTORY Parameters
 //Celera Map Generator
 factorymap,currentmirror
-factory,instance,currentmirror1_99ee89f6
+factory,instance,currentmirror2_002b818f
 factory,source,cell
 
 ///No factory Map Required
@@ -219,11 +221,12 @@ endlayoutbio
 revision,vis15cbdiesize,0p1
 sub_area,STONEnoconn,0
 sub_area,STONEcurrentmirrormain,100
-sub_area,CASCODEnmos50uref,3800
-sub_area,CASCODEpmos50u,3800
 sub_area,CASCODEpmos50uref,3800
-sub_area,CASCODEnmos50u,3800
-generate_area,currentmirror1_99ee89f6,15300
+sub_area,CASCODEpmos50u,3800
+sub_area,CASCODEpmosp50u,3800
+sub_area,CASCODEpmosp50u,3800
+sub_area,CASCODEpmosp50u,3800
+generate_area,currentmirror2_002b818f,19100
 // *********************************************
 //Operating Range
 #define,STONEminimum,2.1
@@ -241,15 +244,15 @@ generate_area,currentmirror1_99ee89f6,15300
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//currentmirror1
+//currentmirror2
 revision,pinorder,0.2.0
-pinorder,I0,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,ISET,SIMPV,enable_currentmirror,ok_currentmirror,net_skip
+pinorder,I0,I1,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,ISET,SIMPV,enable_currentmirror,ok_currentmirror,net_skip
 
 endpinorder
 //**********************************************
 //TRIM Parameters
 cell,currentmirror
-trim,instance,currentmirror1_99ee89f6
+trim,instance,currentmirror2_002b818f
 
 //currentmirror - no trim
 trim,name,na
@@ -356,6 +359,16 @@ router,I0,TBD
 dftpriority,I0,1
 esd,I0,TBD
 
+pinname,I1
+definition,I1,Output 1
+iq,I1,SIMULATION
+absmax,I1,6
+absmin,I1,-0.3
+io,I1,inout
+mode,I1,analog
+router,I1,TBD
+dftpriority,I1,1
+esd,I1,TBD
 
 
 
