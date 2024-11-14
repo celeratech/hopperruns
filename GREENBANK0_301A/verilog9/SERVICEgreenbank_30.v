@@ -293,6 +293,18 @@ module PEBBLEtielo ( q, G, SUB, V );
 endmodule
 
 
+//Verilog HDL for "PEBBLES", "PEBBLEtiehi" "functional"
+
+
+module PEBBLEtiehi ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
 module SERVICEgreenbank_30 (REF, MUDV, TAEXT, CELG59462, CELV96848, PORB97836, CELBG83021, CELSUB40948, kelvin_MUDV, IP_b38e83c8_XU7, IP_c99e7035_XU27, SENSE_G_924d4d4f, kelvin_MUDGservice, IP_924d4d4f_Xoscillator1, celkelvin_MUDG_3f3140ae3, celkelvin_MUDG_5b4bc5a72, celkelvin_MUDG_614c8f411, celkelvin_MUDG_ec7b0f830, register_REF2output_46e2454e_Xdatamap2, register_REF3output_00f9a76d_Xdatamap1, register_REFERENCEselect_b05f295d_Xdatamap4, register_SERVICEconfiguration_d530de71_Xdatamap3);
 output  REF;
@@ -454,8 +466,8 @@ reference_c03501a6 XU2 (
 .ten_refbg(tl0),
 .trim_refbg({a0,a0,a0,a0,a0,a0,a0}),
 .ok_reference(net_264),
-.factory_refccn({a0,a0,a0,a0,a0}),
-.factory_refccp({a0,a0,a0,a0,a0}),
+.factory_refccn({a0,a1,a1,a1,a1}),
+.factory_refccp({a0,a1,a1,a1,a1}),
 .celkelvin_GNDref(celkelvin_MUDG_ec7b0f830),
 .enable_reference(net_256),
 .global_reference(tl0)
@@ -474,8 +486,8 @@ reference_425caed2 XU4 (
 .ten_refbg(tl0),
 .trim_refbg({a0,a0,a0,a0,a0,a0,a0}),
 .ok_reference(net_254),
-.factory_refccn({a0,a0,a0,a0,a0}),
-.factory_refccp({a0,a0,a0,a0,a0}),
+.factory_refccn({a0,a1,a1,a1,a1}),
+.factory_refccp({a0,a1,a1,a1,a1}),
 .celkelvin_GNDref(celkelvin_MUDG_614c8f411),
 .enable_reference(net_249),
 .global_reference(tl0)
@@ -538,8 +550,8 @@ reference_d628bb93 XU10 (
 .ten_refbg(tl0),
 .trim_refbg({a0,a0,a0,a0,a0,a0,a0}),
 .ok_reference(net_273),
-.factory_refccn({a0,a0,a0,a0,a0}),
-.factory_refccp({a0,a0,a0,a0,a0}),
+.factory_refccn({a0,a1,a1,a1,a1}),
+.factory_refccp({a0,a1,a1,a1,a1}),
 .celkelvin_GNDref(celkelvin_MUDG_5b4bc5a72),
 .enable_reference(net_268),
 .global_reference(tl0)
@@ -584,8 +596,8 @@ reference_0c0fda20 XU19 (
 .ten_refbg(tl0),
 .trim_refbg({a0,a0,a0,a0,a0,a0,a0}),
 .ok_reference(net_272),
-.factory_refccn({a0,a0,a0,a0,a0}),
-.factory_refccp({a0,a0,a0,a0,a0}),
+.factory_refccn({a0,a1,a1,a1,a1}),
+.factory_refccp({a0,a1,a1,a1,a1}),
 .celkelvin_GNDref(celkelvin_MUDG_3f3140ae3),
 .enable_reference(net_267),
 .global_reference(tl0)
@@ -672,6 +684,13 @@ PEBBLEtielo XtieLo (
 .G(CELG59462),
 .V(CELV96848),
 .q(tl0),
+.SUB(CELSUB40948)
+);
+
+PEBBLEtiehi XDRMNOTH (
+.G(CELG59462),
+.V(CELV96848),
+.q(a1),
 .SUB(CELSUB40948)
 );
 
