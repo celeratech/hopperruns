@@ -1,0 +1,71 @@
+* Z:\celera\projects\Simplis\playbrian\verif301a\verification\sim_vbuffer301a.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map SIMPV 23
+.node_map OUT1 24
+.node_map OUT2 26
+.node_map OUT3 29
+.node_map OUT4 27
+.node_map IN1 25
+.node_map IN2 28
+.node_map IN3 30
+.node_map GND 33
+.node_map IN4 31
+.node_map EN 32
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 300u 0
+.globalvar REF=1.0
+.globalvar TEMP=25
+.globalvar VIN=5
+.globalvar tdext_khz=1000
+
+
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+X$vbuffer301a 23 24 25 26 28 29 30 27 31 32 vbuffer301a
+** From Z:\celera\projects\Simplis\playbrian\verif301a\verification\FORCE_vbuffer301a.sxcmp
+
+
+** From Z:\celera\projects\Simplis\playbrian\verif301a\design\vbuffer301a.sxcmp
+.subckt vbuffer301a 45 46 47 48 49 50 51 52 53 54
+*#hierarchy
+.node_map SIMPV 45
+.node_map OUT1 46
+.node_map OUT2 48
+.node_map OUT3 50
+.node_map OUT4 52
+.node_map IN1 47
+.node_map IN2 49
+.node_map IN3 51
+.node_map IN4 53
+.node_map EN 54
+X$pinprobe1 46 pinprobe vars: pinprobe_description='Buffer_1_output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe10 54 pinprobe vars: pinprobe_description='Enable' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 48 pinprobe vars: pinprobe_description='Buffer_2_output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe3 50 pinprobe vars: pinprobe_description='Buffer_3_output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe4 52 pinprobe vars: pinprobe_description='Buffer_4_output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe5 45 pinprobe vars: pinprobe_description='Power_Supply_in' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 47 pinprobe vars: pinprobe_description='Buffer_1_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe7 49 pinprobe vars: pinprobe_description='Buffer_2_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe8 51 pinprobe vars: pinprobe_description='Buffer_3_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe9 53 pinprobe vars: pinprobe_description='Buffer_4_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$U1 39 celeranoconn vars: ='%'
+X$U2 42 celeranoconn vars: ='%'
+X$U3 40 celeranoconn vars: ='%'
+X$U4 44 celeranoconn vars: ='%'
+X$vbuffer1 45 39 47 46 54 37 vbuffer vars: vbuffer_accuracy='no' vbuffer_datasheet_name='text' vbuffer_datasheet_description='text' vbuffer_type='p' vbuffer_inputbuffer='no' vbuffer_drive='internal' vbuffer_gndsense='no' vbuffer_dft='no' vbuffer_gain=1 vbuffer_feedbackimpedance=1k vbuffer_vmax=6
+X$vbuffer2 45 42 49 48 54 41 vbuffer vars: vbuffer_accuracy='no' vbuffer_datasheet_name='text' vbuffer_datasheet_description='text' vbuffer_type='p' vbuffer_inputbuffer='no' vbuffer_drive='internal' vbuffer_gndsense='no' vbuffer_dft='no' vbuffer_gain=2 vbuffer_feedbackimpedance=1000 vbuffer_vmax=6
+X$vbuffer3 45 40 51 50 54 38 vbuffer vars: vbuffer_accuracy='no' vbuffer_datasheet_name='text' vbuffer_datasheet_description='text' vbuffer_type='p' vbuffer_inputbuffer='no' vbuffer_drive='internal' vbuffer_gndsense='no' vbuffer_dft='no' vbuffer_gain=500m vbuffer_feedbackimpedance=1000 vbuffer_vmax=6
+X$vbuffer4 45 44 53 52 54 43 vbuffer vars: vbuffer_accuracy='no' vbuffer_datasheet_name='text' vbuffer_datasheet_description='text' vbuffer_type='p' vbuffer_inputbuffer='yes' vbuffer_drive='internal' vbuffer_gndsense='no' vbuffer_dft='no' vbuffer_gain=500m vbuffer_feedbackimpedance=1000 vbuffer_vmax=6
+.ends vbuffer301a
+
+.end
