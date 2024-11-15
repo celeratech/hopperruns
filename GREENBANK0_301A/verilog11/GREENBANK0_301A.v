@@ -81,7 +81,7 @@ module GREENBANK0_301AceleraREGISTER (MUDV,scli,sdai,ADDRESS,CELG59462,CELV96848
   output  ADDRESS;
   input  CELG59462;
   input  CELV96848;
-  input  PORB97836;
+  output  PORB97836;
   input  CELSUB40948;
   output  sdapd_registermap;
   input  KELVINsenseADDRESS;
