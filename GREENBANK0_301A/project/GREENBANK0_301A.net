@@ -1,4 +1,4 @@
-* Z:\celera\projects\Simplis\playrelease\Release\play301a\Regression\sim_GREENBANK_301A.sxsch
+* Z:\celera\projects\Simplis\playrelease\Release\play301a\Regression\sim_GREENBANK_301A1.sxsch
 *#SIMETRIX
 X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
 
@@ -92,7 +92,7 @@ X$U17 110 pinprobe vars: pinprobe_description='LDO_LDO15' pinprobe_mode='tbd' pi
 X$U18 105 pinprobe vars: pinprobe_description='LDO_LDO10' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U19 96 113 102 103 105 106 108 112 111 110 LDOgreenbank_301A
 X$U2 90 pinprobe vars: pinprobe_description='Amplifier_LDO1' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U20 96 89 113 90 91 97 92 99 93 100 94 109 95 101 AMPLIFIERgreenbank_301A
+X$U21 96 89 113 90 91 97 92 99 93 100 94 109 95 101 AMPLIFIERgreenbank_301A1
 X$U3 96 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U4 91 pinprobe vars: pinprobe_description='Amplifier_LDO2' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U5 92 pinprobe vars: pinprobe_description='Amplifier_LDO3' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
@@ -753,79 +753,138 @@ X$U8 32 pinprobe vars: pinprobe_description='Reference_output' pinprobe_mode='tb
 X$U9 33 34 37 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' switch_model='celera' switch_ron=100 switch_pulldownvmax=6 switch_vmax=6
 .ends LDOgreenbankLDOunity
 
-** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\AMPLIFIERgreenbank_301A.sxcmp
-.subckt AMPLIFIERgreenbank_301A 110 111 112 113 116 118 121 123 125 127 129 119 130 131
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\AMPLIFIERgreenbank_301A1.sxcmp
+.subckt AMPLIFIERgreenbank_301A1 195 196 197 198 199 200 202 203 205 207 209 201 210 211
 *#hierarchy
-.node_map kelvin_MUDGamplifier 119
-.node_map REF 112
-.node_map enable_ldo0 94
-.node_map enable_ldo1 95
-.node_map enable_ldo2 96
-.node_map enable_ldo3 97
-.node_map enable_ldo4 98
-.node_map enable_ldo5 99
-.node_map enable_ldo6 100
-.node_map enable_ldo7 101
-.node_map sense_LDO2 118
-.node_map sense_LDO5 123
-.node_map sense_LDO7 127
-.node_map dft_startup0 114
-.node_map AMPLIFERconfiguration0$8 102
-.node_map dft_startup1 115
-.node_map AMPLIFERconfiguration0$10 104
-.node_map AMPLIFERconfiguration0$9 103
-.node_map dft_startup2 117
-.node_map AMPLIFERconfiguration0$11 105
-.node_map dft_startup3 120
-.node_map AMPLIFERconfiguration0$12 106
-.node_map dft_startup4 122
-.node_map AMPLIFERconfiguration0$13 107
-.node_map dft_startup5 124
-.node_map AMPLIFERconfiguration0$14 108
-.node_map dft_startup6 126
-.node_map AMPLIFERconfiguration0$15 109
-.node_map dft_startup7 128
-.node_map LDO0 111
-.node_map LDO1 113
-.node_map LDO2 116
-.node_map LDO3 121
-.node_map LDO4 125
-.node_map LDO5 129
-.node_map LDO6 130
-.node_map LDO7 131
-.node_map MUDV 110
-X$AMPCONTROLhigh 110 130 112 126 100 119 LDOgreenbankAMPcontrolHIGH
-X$AMPCONTROLlow 110 113 112 115 95 119 LDOgreenbankAMPcontrolLOW
-X$AMPCONTROLmedium 110 125 112 122 98 119 LDOgreenbankAMPcontrolMEDIUM
-X$AMPFIXEDlow 110 111 112 114 94 119 LDOgreenbankAMPfixedLOW
-X$AMPFIXEDmedium 110 121 112 120 97 119 LDOgreenbankAMPfixedMEDIUM
-X$AMPOPENhigh 110 131 112 128 101 127 LDOgreenbankAMPopenHIGH
-X$AMPOPENlow 110 116 112 117 96 118 LDOgreenbankAMPopenLOW
-X$AMPOPENmedium 110 129 112 124 99 123 LDOgreenbankAMPopenMEDIUM
-X$datamap1 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 datamap0 vars: datamap_function='function' datamap_name='AMPLIFIERconfiguration' datamap_description='AMPLIFER_configuration' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='A2' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='LDO0' datamap_function0_off='disable' datamap_function0_on='disable' datamap_function1='LDO1' datamap_function1_off='disable' datamap_function1_on='disable' datamap_function2='LDO2' datamap_function2_off='disable' datamap_function2_on='disable' datamap_function3='LDO3' datamap_function3_off='disable' datamap_function3_on='disable' datamap_function4='LDO4' datamap_function4_off='disable' datamap_function4_on='disable' datamap_function5='LDO5' datamap_function5_off='disable' datamap_function5_on='disable' datamap_function6='LDO6' datamap_function6_off='disable' datamap_function6_on='disable' datamap_function7='LDO7' datamap_function7_off='disable' datamap_function7_on='disable' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=8 datamap_info=0 datamap_location=7 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
-X$U1 114 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP0' dftprobe_description='Startup_LDO0' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U10 116 pinprobe vars: pinprobe_description='LDO_AMP_open_slow' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
-X$U11 129 pinprobe vars: pinprobe_description='LDO_AMP_open_medium' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
-X$U12 121 pinprobe vars: pinprobe_description='LDO_AMP_fixed_medium' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
-X$U13 125 pinprobe vars: pinprobe_description='LDO_AMP_fixed_medium' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
-X$U14 131 pinprobe vars: pinprobe_description='LDO_AMP_control_high' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
-X$U15 130 pinprobe vars: pinprobe_description='LDO_AMP_fixed_high' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
-X$U16 115 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP1' dftprobe_description='Startup_LDO1' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U17 117 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP2' dftprobe_description='Startup_LDO2' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U18 120 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP3' dftprobe_description='Startup_LDO3' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U19 122 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP4' dftprobe_description='Startup_LDO4' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U2 111 pinprobe vars: pinprobe_description='LDO_AMP_fixed_slow' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
-X$U20 124 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP5' dftprobe_description='Startup_LDO5' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U21 126 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP6' dftprobe_description='Startup_LDO6' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U22 128 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP7' dftprobe_description='Startup_LDO7' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U23 119 pinprobe vars: pinprobe_description='Kelvin_Ground_input' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd'
-X$U3 110 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
-X$U5 118 pinprobe vars: pinprobe_description='LDO2_sense_input' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd'
-X$U6 123 pinprobe vars: pinprobe_description='LDO5_sense_input' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd'
-X$U7 112 pinprobe vars: pinprobe_description='Reference_input' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
-X$U8 127 pinprobe vars: pinprobe_description='LDO5_sense_input' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd'
-X$U9 113 pinprobe vars: pinprobe_description='LDO_AMP_control_slow' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='pad'
-.ends AMPLIFIERgreenbank_301A
+.node_map BUS1$10 146
+.node_map BUS1$11 147
+.node_map BUS1$12 148
+.node_map BUS1$13 149
+.node_map BUS1$14 150
+.node_map BUS4$10 181
+.node_map BUS1$15 151
+.node_map BUS4$11 182
+.node_map BUS4$12 183
+.node_map BUS4$13 184
+.node_map BUS4$14 185
+.node_map BUS4$15 186
+.node_map kelvin_MUDGamplifier 201
+.node_map BUS1$2 138
+.node_map BUS2$10 162
+.node_map BUS1$3 139
+.node_map BUS2$11 163
+.node_map BUS1$4 140
+.node_map BUS2$12 164
+.node_map BUS1$5 141
+.node_map BUS2$13 165
+.node_map BUS1$6 142
+.node_map BUS2$14 166
+.node_map BUS1$7 143
+.node_map BUS5$10 189
+.node_map BUS2$15 167
+.node_map BUS1$8 144
+.node_map BUS5$11 190
+.node_map BUS1$9 145
+.node_map BUS5$12 191
+.node_map BUS5$13 192
+.node_map BUS2$3 155
+.node_map BUS5$14 193
+.node_map BUS2$4 156
+.node_map BUS5$15 194
+.node_map BUS2$5 157
+.node_map BUS2$6 158
+.node_map BUS2$7 159
+.node_map BUS3$10 172
+.node_map BUS2$8 160
+.node_map BUS3$11 173
+.node_map BUS2$9 161
+.node_map BUS3$12 174
+.node_map BUS3$13 175
+.node_map REF 197
+.node_map BUS3$14 176
+.node_map enable_ldo0 120
+.node_map BUS3$15 177
+.node_map enable_ldo1 121
+.node_map BUS3$6 168
+.node_map enable_ldo2 122
+.node_map BUS3$7 169
+.node_map enable_ldo3 123
+.node_map BUS3$8 170
+.node_map enable_ldo4 124
+.node_map BUS3$9 171
+.node_map enable_ldo5 125
+.node_map enable_ldo6 126
+.node_map enable_ldo7 127
+.node_map BUS4$7 178
+.node_map BUS4$8 179
+.node_map BUS4$9 180
+.node_map sense_LDO2 200
+.node_map sense_LDO5 203
+.node_map sense_LDO7 207
+.node_map BUS5$8 187
+.node_map dft_startup0 136
+.node_map AMPLIFERconfiguration0$8 128
+.node_map BUS5$9 188
+.node_map dft_startup1 137
+.node_map AMPLIFERconfiguration0$10 130
+.node_map AMPLIFERconfiguration0$9 129
+.node_map dft_startup2 152
+.node_map AMPLIFERconfiguration0$11 131
+.node_map dft_startup3 153
+.node_map AMPLIFERconfiguration0$12 132
+.node_map dft_startup4 154
+.node_map AMPLIFERconfiguration0$13 133
+.node_map dft_startup5 204
+.node_map AMPLIFERconfiguration0$14 134
+.node_map dft_startup6 206
+.node_map AMPLIFERconfiguration0$15 135
+.node_map dft_startup7 208
+.node_map LDO0 196
+.node_map LDO1 198
+.node_map LDO2 199
+.node_map LDO3 202
+.node_map LDO4 205
+.node_map LDO5 209
+.node_map LDO6 210
+.node_map LDO7 211
+.node_map MUDV 195
+X$AMPCONTROLhigh 195 210 197 206 126 201 LDOgreenbankAMPcontrolHIGH
+X$AMPCONTROLlow 195 198 197 137 121 201 LDOgreenbankAMPcontrolLOW
+X$AMPCONTROLmedium 195 205 197 154 124 201 LDOgreenbankAMPcontrolMEDIUM
+X$AMPFIXEDlow 195 196 197 136 120 201 LDOgreenbankAMPfixedLOW
+X$AMPFIXEDmedium 195 202 197 153 123 201 LDOgreenbankAMPfixedMEDIUM
+X$AMPOPENhigh 195 211 197 208 127 207 LDOgreenbankAMPopenHIGH
+X$AMPOPENlow 195 199 197 152 122 200 LDOgreenbankAMPopenLOW
+X$AMPOPENmedium 195 209 197 204 125 203 LDOgreenbankAMPopenMEDIUM
+X$datamap1 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 datamap0 vars: datamap_function='function' datamap_name='AMPLIFIERconfiguration' datamap_description='AMPLIFER_configuration' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='A2' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='LDO0' datamap_function0_off='disable' datamap_function0_on='disable' datamap_function1='LDO1' datamap_function1_off='disable' datamap_function1_on='disable' datamap_function2='LDO2' datamap_function2_off='disable' datamap_function2_on='disable' datamap_function3='LDO3' datamap_function3_off='disable' datamap_function3_on='disable' datamap_function4='LDO4' datamap_function4_off='disable' datamap_function4_on='disable' datamap_function5='LDO5' datamap_function5_off='disable' datamap_function5_on='disable' datamap_function6='LDO6' datamap_function6_off='disable' datamap_function6_on='disable' datamap_function7='LDO7' datamap_function7_off='disable' datamap_function7_on='disable' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=8 datamap_info=0 datamap_location=7 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$datamap2 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 datamap0s vars: datamap_function='function' datamap_name='AMPLIFIERstatus1' datamap_description='AMPLIFER_configuration' datamap_io='status' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='A2' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='LDO0' datamap_function0_off='disable' datamap_function0_on='disable' datamap_function1='LDO1' datamap_function1_off='disable' datamap_function1_on='disable' datamap_function2='LDO2' datamap_function2_off='disable' datamap_function2_on='disable' datamap_function3='LDO3' datamap_function3_off='disable' datamap_function3_on='disable' datamap_function4='LDO4' datamap_function4_off='disable' datamap_function4_on='disable' datamap_function5='LDO5' datamap_function5_off='disable' datamap_function5_on='disable' datamap_function6='LDO6' datamap_function6_off='disable' datamap_function6_on='disable' datamap_function7='LDO7' datamap_function7_off='disable' datamap_function7_on='disable' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_info=0 datamap_location=3 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$datamap3 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 datamap0s vars: datamap_function='function' datamap_name='AMPLIFIERstatus2' datamap_description='AMPLIFER_configuration' datamap_io='status' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='1F' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='LDO0' datamap_function0_off='disable' datamap_function0_on='disable' datamap_function1='LDO1' datamap_function1_off='disable' datamap_function1_on='disable' datamap_function2='LDO2' datamap_function2_off='disable' datamap_function2_on='disable' datamap_function3='LDO3' datamap_function3_off='disable' datamap_function3_on='disable' datamap_function4='LDO4' datamap_function4_off='disable' datamap_function4_on='disable' datamap_function5='LDO5' datamap_function5_off='disable' datamap_function5_on='disable' datamap_function6='LDO6' datamap_function6_off='disable' datamap_function6_on='disable' datamap_function7='LDO7' datamap_function7_off='disable' datamap_function7_on='disable' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_info=0 datamap_location=6 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$datamap4 152 153 154 152 153 154 168 169 170 171 172 173 174 175 176 177 datamap0s vars: datamap_function='function' datamap_name='AMPLIFIERstatus3' datamap_description='AMPLIFER_configuration' datamap_io='status' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='01' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='LDO0' datamap_function0_off='disable' datamap_function0_on='disable' datamap_function1='LDO1' datamap_function1_off='disable' datamap_function1_on='disable' datamap_function2='LDO2' datamap_function2_off='disable' datamap_function2_on='disable' datamap_function3='LDO3' datamap_function3_off='disable' datamap_function3_on='disable' datamap_function4='LDO4' datamap_function4_off='disable' datamap_function4_on='disable' datamap_function5='LDO5' datamap_function5_off='disable' datamap_function5_on='disable' datamap_function6='LDO6' datamap_function6_off='disable' datamap_function6_on='disable' datamap_function7='LDO7' datamap_function7_off='disable' datamap_function7_on='disable' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=6 datamap_info=0 datamap_location=7 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$datamap5 152 153 154 152 153 154 154 178 179 180 181 182 183 184 185 186 datamap0s vars: datamap_function='function' datamap_name='AMPLIFIERstatus4' datamap_description='AMPLIFER_configuration' datamap_io='status' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='na' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='LDO0' datamap_function0_off='disable' datamap_function0_on='disable' datamap_function1='LDO1' datamap_function1_off='disable' datamap_function1_on='disable' datamap_function2='LDO2' datamap_function2_off='disable' datamap_function2_on='disable' datamap_function3='LDO3' datamap_function3_off='disable' datamap_function3_on='disable' datamap_function4='LDO4' datamap_function4_off='disable' datamap_function4_on='disable' datamap_function5='LDO5' datamap_function5_off='disable' datamap_function5_on='disable' datamap_function6='LDO6' datamap_function6_off='disable' datamap_function6_on='disable' datamap_function7='LDO7' datamap_function7_off='disable' datamap_function7_on='disable' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=7 datamap_info=0 datamap_location=7 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$datamap6 152 153 154 152 153 154 154 152 187 188 189 190 191 192 193 194 datamap0s vars: datamap_function='function' datamap_name='AMPLIFIERstatus5' datamap_description='AMPLIFER_configuration' datamap_io='status' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='44' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='LDO0' datamap_function0_off='disable' datamap_function0_on='disable' datamap_function1='LDO1' datamap_function1_off='disable' datamap_function1_on='disable' datamap_function2='LDO2' datamap_function2_off='disable' datamap_function2_on='disable' datamap_function3='LDO3' datamap_function3_off='disable' datamap_function3_on='disable' datamap_function4='LDO4' datamap_function4_off='disable' datamap_function4_on='disable' datamap_function5='LDO5' datamap_function5_off='disable' datamap_function5_on='disable' datamap_function6='LDO6' datamap_function6_off='disable' datamap_function6_on='disable' datamap_function7='LDO7' datamap_function7_off='disable' datamap_function7_on='disable' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=8 datamap_info=0 datamap_location=7 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U1 136 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP0' dftprobe_description='Startup_LDO0' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U10 199 pinprobe vars: pinprobe_description='LDO_AMP_open_slow' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U11 209 pinprobe vars: pinprobe_description='LDO_AMP_open_medium' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U12 202 pinprobe vars: pinprobe_description='LDO_AMP_fixed_medium' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U13 205 pinprobe vars: pinprobe_description='LDO_AMP_fixed_medium' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U14 211 pinprobe vars: pinprobe_description='LDO_AMP_control_high' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U15 210 pinprobe vars: pinprobe_description='LDO_AMP_fixed_high' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U16 137 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP1' dftprobe_description='Startup_LDO1' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U17 152 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP2' dftprobe_description='Startup_LDO2' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U18 153 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP3' dftprobe_description='Startup_LDO3' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U19 154 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP4' dftprobe_description='Startup_LDO4' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U2 196 pinprobe vars: pinprobe_description='LDO_AMP_fixed_slow' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U20 204 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP5' dftprobe_description='Startup_LDO5' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U21 206 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP6' dftprobe_description='Startup_LDO6' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U22 208 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP7' dftprobe_description='Startup_LDO7' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U23 201 pinprobe vars: pinprobe_description='Kelvin_Ground_input' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd'
+X$U3 195 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U5 200 pinprobe vars: pinprobe_description='LDO2_sense_input' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd'
+X$U6 203 pinprobe vars: pinprobe_description='LDO5_sense_input' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd'
+X$U7 197 pinprobe vars: pinprobe_description='Reference_input' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
+X$U8 207 pinprobe vars: pinprobe_description='LDO5_sense_input' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd'
+X$U9 198 pinprobe vars: pinprobe_description='LDO_AMP_control_slow' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='pad'
+.ends AMPLIFIERgreenbank_301A1
 
 ** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\LDOgreenbankAMPcontrolHIGH.sxcmp
 .subckt LDOgreenbankAMPcontrolHIGH 42 43 44 47 48 49

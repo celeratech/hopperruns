@@ -56,7 +56,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module LDOgreenbankAMPcontrolHIGH (LDO, REF, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, kelvin_GNDldo, IP_f43ac5fa_Xamplifier1, register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1);
+module LDOgreenbankAMPcontrolHIGH (LDO, REF, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, kelvin_GNDldo, IP_c87274ce_Xamplifier1, register_AMPCONTROLHIGHgain_e8e23518_Xdatamap1);
 output  LDO;
 input  REF;
 input [4:0] tmi;
@@ -67,13 +67,13 @@ input  enable_ldo;
 input  CELSUB40948;
 output  dft_startup;
 input  kelvin_GNDldo;
-input  IP_f43ac5fa_Xamplifier1;
-input [2:0] register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1;
+input  IP_c87274ce_Xamplifier1;
+input [2:0] register_AMPCONTROLHIGHgain_e8e23518_Xdatamap1;
 
 
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
-wire [2:0] register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1;
+wire [2:0] register_AMPCONTROLHIGHgain_e8e23518_Xdatamap1;
 wire [2:0] amplifiercontrol;
 wire [1:0] a;
 wire [7:0] ten;
@@ -93,13 +93,13 @@ switchgnd_321bf2ca XU9 (
 .I(REF),
 .O(net_45),
 .CELG(CELG59462),
-.SIMPV(TBD_XU1_XceleraCORE_XU20_XAMPCONTROLhigh_XU9_SIMPV),
+.SIMPV(TBD_XU1_XceleraCORE_XU21_XAMPCONTROLhigh_XU9_SIMPV),
 .CELSUB(CELSUB40948),
 .enable_switch(enable_ldo)
 );
 
 amplifier_a91f9ff9 Xamplifier1 (
-.IP(IP_f43ac5fa_Xamplifier1),
+.IP(IP_c87274ce_Xamplifier1),
 .INN(kelvin_GNDldo),
 .INP(net_45),
 .OUT(LDO),
@@ -107,9 +107,9 @@ amplifier_a91f9ff9 Xamplifier1 (
 .SIMPV(MUDV),
 .CELSUB(CELSUB40948),
 .ok_amplifier(net_46),
-.amplifiercontrol({register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1[2],register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1[1],register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1[0]}),
+.amplifiercontrol({register_AMPCONTROLHIGHgain_e8e23518_Xdatamap1[2],register_AMPCONTROLHIGHgain_e8e23518_Xdatamap1[1],register_AMPCONTROLHIGHgain_e8e23518_Xdatamap1[0]}),
 .enable_amplifier(enable_ldo),
-.global_amplifier(global_amplifier_f43ac5fa_Xamplifier1)
+.global_amplifier(global_amplifier_c87274ce_Xamplifier1)
 );
 
 DFTtm8t dft_hex0x10 (
@@ -117,7 +117,7 @@ DFTtm8t dft_hex0x10 (
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x10_ten_7,noconn_dft_hex0x10_ten_6,noconn_dft_hex0x10_ten_5,noconn_dft_hex0x10_ten_4,noconn_dft_hex0x10_ten_3,noconn_dft_hex0x10_ten_2,noconn_dft_hex0x10_ten_1,global_amplifier_f43ac5fa_Xamplifier1}),
+.ten({noconn_dft_hex0x10_ten_7,noconn_dft_hex0x10_ten_6,noconn_dft_hex0x10_ten_5,noconn_dft_hex0x10_ten_4,noconn_dft_hex0x10_ten_3,noconn_dft_hex0x10_ten_2,noconn_dft_hex0x10_ten_1,global_amplifier_c87274ce_Xamplifier1}),
 .tma({a0,a0,a0,a1,a0,a0,a0,a0}),
 .tmi(tmi[4:0])
 );
