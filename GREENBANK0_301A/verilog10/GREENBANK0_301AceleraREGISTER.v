@@ -139,7 +139,7 @@ input  sdai;
 output  ADDRESS;
 input  CELG59462;
 input  CELV96848;
-output  PORB97836;
+  input  PORB97836;
 input  CELSUB40948;
 output  sdapd_registermap;
 input  KELVINsenseADDRESS;
@@ -249,7 +249,7 @@ STONEi2cREGISTER8_1 XREG0x01 (
 .i2cbus(i2cbus[12:0]),
 .address({c0,c0,c0,c0,c0,c0,c0,c1}),
 .i2cmiso(i2cmiso),
-.register({XNC_XREG0x01_7,XNC_XREG0x01_6,XNC_XREG0x01_5,XNC_XREG0x01_4,XNC_XREG0x01_3,register_AMPCONTROLHIGHgain_e8e23518_Xdatamap1[2],register_AMPCONTROLHIGHgain_e8e23518_Xdatamap1[1],register_AMPCONTROLHIGHgain_e8e23518_Xdatamap1[0]})
+.register({c0,c0,c0,c0,c0,register_AMPCONTROLHIGHgain_e8e23518_Xdatamap1[2],register_AMPCONTROLHIGHgain_e8e23518_Xdatamap1[1],register_AMPCONTROLHIGHgain_e8e23518_Xdatamap1[0]})
 );
 
 STONEi2cREGISTER8_1 XREG0x02 (
@@ -263,7 +263,7 @@ STONEi2cREGISTER8_1 XREG0x02 (
 .i2cbus(i2cbus[12:0]),
 .address({d0,d0,d0,d0,d0,d0,d1,d0}),
 .i2cmiso(i2cmiso),
-.register({XNC_XREG0x02_7,XNC_XREG0x02_6,XNC_XREG0x02_5,XNC_XREG0x02_4,XNC_XREG0x02_3,register_AMPCONTROLMEDIUMgain_e310431d_Xdatamap1[2],register_AMPCONTROLMEDIUMgain_e310431d_Xdatamap1[1],register_AMPCONTROLMEDIUMgain_e310431d_Xdatamap1[0]})
+.register({d0,d0,d0,d0,d0,register_AMPCONTROLMEDIUMgain_e310431d_Xdatamap1[2],register_AMPCONTROLMEDIUMgain_e310431d_Xdatamap1[1],register_AMPCONTROLMEDIUMgain_e310431d_Xdatamap1[0]})
 );
 
 STONEi2cREGISTER8_1 XREG0x03 (
@@ -277,7 +277,7 @@ STONEi2cREGISTER8_1 XREG0x03 (
 .i2cbus(i2cbus[12:0]),
 .address({i0,i0,i0,i0,i0,i0,i1,i1}),
 .i2cmiso(i2cmiso),
-.register({XNC_XREG0x03_7,XNC_XREG0x03_6,XNC_XREG0x03_5,XNC_XREG0x03_4,XNC_XREG0x03_3,register_REF2output_46e2454e_Xdatamap2[2],register_REF2output_46e2454e_Xdatamap2[1],register_REF2output_46e2454e_Xdatamap2[0]})
+.register({i0,i0,i0,i0,i0,register_REF2output_46e2454e_Xdatamap2[2],register_REF2output_46e2454e_Xdatamap2[1],register_REF2output_46e2454e_Xdatamap2[0]})
 );
 
 STONEi2cREGISTER8_1 XREG0x04 (
@@ -291,7 +291,7 @@ STONEi2cREGISTER8_1 XREG0x04 (
 .i2cbus(i2cbus[12:0]),
 .address({j0,j0,j0,j0,j0,j1,j0,j0}),
 .i2cmiso(i2cmiso),
-.register({XNC_XREG0x04_7,XNC_XREG0x04_6,XNC_XREG0x04_5,XNC_XREG0x04_4,XNC_XREG0x04_3,register_REF3output_00f9a76d_Xdatamap1[2],register_REF3output_00f9a76d_Xdatamap1[1],register_REF3output_00f9a76d_Xdatamap1[0]})
+.register({j0,j0,j0,j0,j0,register_REF3output_00f9a76d_Xdatamap1[2],register_REF3output_00f9a76d_Xdatamap1[1],register_REF3output_00f9a76d_Xdatamap1[0]})
 );
 
 STONEi2cREGISTER8_1 XREG0x05 (
@@ -305,7 +305,7 @@ STONEi2cREGISTER8_1 XREG0x05 (
 .i2cbus(i2cbus[12:0]),
 .address({k0,k0,k0,k0,k0,k1,k0,k1}),
 .i2cmiso(i2cmiso),
-.register({XNC_XREG0x05_7,XNC_XREG0x05_6,XNC_XREG0x05_5,register_REFERENCEselect_b05f295d_Xdatamap4[2],register_REFERENCEselect_b05f295d_Xdatamap4[1],register_REFERENCEselect_b05f295d_Xdatamap4[0],XNC_XREG0x05_1,XNC_XREG0x05_0})
+.register({k0,k0,k0,register_REFERENCEselect_b05f295d_Xdatamap4[2],register_REFERENCEselect_b05f295d_Xdatamap4[1],register_REFERENCEselect_b05f295d_Xdatamap4[0],k0,k0})
 );
 
 STONEi2cREGISTER8_1 XREG0x06 (
@@ -319,7 +319,7 @@ STONEi2cREGISTER8_1 XREG0x06 (
 .i2cbus(i2cbus[12:0]),
 .address({l0,l0,l0,l0,l0,l1,l1,l0}),
 .i2cmiso(i2cmiso),
-.register({register_SERVICEconfiguration_d530de71_Xdatamap3[0],XNC_XREG0x06_6,XNC_XREG0x06_5,register_SERVICEconfiguration_d530de71_Xdatamap3[5],register_SERVICEconfiguration_d530de71_Xdatamap3[4],register_SERVICEconfiguration_d530de71_Xdatamap3[3],register_SERVICEconfiguration_d530de71_Xdatamap3[2],register_SERVICEconfiguration_d530de71_Xdatamap3[1]})
+.register({register_SERVICEconfiguration_d530de71_Xdatamap3[0],l0,l0,register_SERVICEconfiguration_d530de71_Xdatamap3[5],register_SERVICEconfiguration_d530de71_Xdatamap3[4],register_SERVICEconfiguration_d530de71_Xdatamap3[3],register_SERVICEconfiguration_d530de71_Xdatamap3[2],register_SERVICEconfiguration_d530de71_Xdatamap3[1]})
 );
 
 STONEi2cREGISTER8_1 XREG0x21 (
@@ -333,7 +333,7 @@ STONEi2cREGISTER8_1 XREG0x21 (
 .i2cbus(i2cbus[12:0]),
 .address({h0,h0,h1,h0,h0,h0,h0,h1}),
 .i2cmiso(i2cmiso),
-.register({register_LDOconfigurationA_d0b55acf_Xdatamap1[0],XNC_XREG0x21_6,XNC_XREG0x21_5,XNC_XREG0x21_4,XNC_XREG0x21_3,register_LDOconfigurationA_d0b55acf_Xdatamap1[3],register_LDOconfigurationA_d0b55acf_Xdatamap1[2],register_LDOconfigurationA_d0b55acf_Xdatamap1[1]})
+.register({register_LDOconfigurationA_d0b55acf_Xdatamap1[0],h0,h0,h0,h0,register_LDOconfigurationA_d0b55acf_Xdatamap1[3],register_LDOconfigurationA_d0b55acf_Xdatamap1[2],register_LDOconfigurationA_d0b55acf_Xdatamap1[1]})
 );
 
 STONEi2cREGISTER8_1 XREG0x22 (
@@ -347,7 +347,7 @@ STONEi2cREGISTER8_1 XREG0x22 (
 .i2cbus(i2cbus[12:0]),
 .address({g0,g0,g1,g0,g0,g0,g1,g0}),
 .i2cmiso(i2cmiso),
-.register({XNC_XREG0x22_7,register_LDOconfigurationA_775ec168_Xdatamap2[3],register_LDOconfigurationA_775ec168_Xdatamap2[2],register_LDOconfigurationA_775ec168_Xdatamap2[1],register_LDOconfigurationA_775ec168_Xdatamap2[0],XNC_XREG0x22_2,XNC_XREG0x22_1,XNC_XREG0x22_0})
+.register({g0,register_LDOconfigurationA_775ec168_Xdatamap2[3],register_LDOconfigurationA_775ec168_Xdatamap2[2],register_LDOconfigurationA_775ec168_Xdatamap2[1],register_LDOconfigurationA_775ec168_Xdatamap2[0],g0,g0,g0})
 );
 
 STONEi2cREGISTER8_1 XREG0x45 (
@@ -361,7 +361,7 @@ STONEi2cREGISTER8_1 XREG0x45 (
 .i2cbus(i2cbus[12:0]),
 .address({e0,e1,e0,e0,e0,e1,e0,e1}),
 .i2cmiso(i2cmiso),
-.register({XNC_XREG0x45_7,XNC_XREG0x45_6,register_AMPCONTROLSLOWgain_5dd36175_Xdatamap1[2],register_AMPCONTROLSLOWgain_5dd36175_Xdatamap1[1],register_AMPCONTROLSLOWgain_5dd36175_Xdatamap1[0],XNC_XREG0x45_2,XNC_XREG0x45_1,XNC_XREG0x45_0})
+.register({e0,e0,register_AMPCONTROLSLOWgain_5dd36175_Xdatamap1[2],register_AMPCONTROLSLOWgain_5dd36175_Xdatamap1[1],register_AMPCONTROLSLOWgain_5dd36175_Xdatamap1[0],e0,e0,e0})
 );
 
 STONEi2cREGISTER8_1 XREG0xA2 (
@@ -551,166 +551,6 @@ STONEi2cSTATUS XSTATUS_0xA2 (
 .status5(m0),
 .status6(m0),
 .status7(m0)
-);
-
-STONEnoconn XNC_XREG0x01_3 (
-.noconn(XNC_XREG0x01_3)
-);
-
-STONEnoconn XNC_XREG0x01_4 (
-.noconn(XNC_XREG0x01_4)
-);
-
-STONEnoconn XNC_XREG0x01_5 (
-.noconn(XNC_XREG0x01_5)
-);
-
-STONEnoconn XNC_XREG0x01_6 (
-.noconn(XNC_XREG0x01_6)
-);
-
-STONEnoconn XNC_XREG0x01_7 (
-.noconn(XNC_XREG0x01_7)
-);
-
-STONEnoconn XNC_XREG0x02_3 (
-.noconn(XNC_XREG0x02_3)
-);
-
-STONEnoconn XNC_XREG0x02_4 (
-.noconn(XNC_XREG0x02_4)
-);
-
-STONEnoconn XNC_XREG0x02_5 (
-.noconn(XNC_XREG0x02_5)
-);
-
-STONEnoconn XNC_XREG0x02_6 (
-.noconn(XNC_XREG0x02_6)
-);
-
-STONEnoconn XNC_XREG0x02_7 (
-.noconn(XNC_XREG0x02_7)
-);
-
-STONEnoconn XNC_XREG0x03_3 (
-.noconn(XNC_XREG0x03_3)
-);
-
-STONEnoconn XNC_XREG0x03_4 (
-.noconn(XNC_XREG0x03_4)
-);
-
-STONEnoconn XNC_XREG0x03_5 (
-.noconn(XNC_XREG0x03_5)
-);
-
-STONEnoconn XNC_XREG0x03_6 (
-.noconn(XNC_XREG0x03_6)
-);
-
-STONEnoconn XNC_XREG0x03_7 (
-.noconn(XNC_XREG0x03_7)
-);
-
-STONEnoconn XNC_XREG0x04_3 (
-.noconn(XNC_XREG0x04_3)
-);
-
-STONEnoconn XNC_XREG0x04_4 (
-.noconn(XNC_XREG0x04_4)
-);
-
-STONEnoconn XNC_XREG0x04_5 (
-.noconn(XNC_XREG0x04_5)
-);
-
-STONEnoconn XNC_XREG0x04_6 (
-.noconn(XNC_XREG0x04_6)
-);
-
-STONEnoconn XNC_XREG0x04_7 (
-.noconn(XNC_XREG0x04_7)
-);
-
-STONEnoconn XNC_XREG0x05_0 (
-.noconn(XNC_XREG0x05_0)
-);
-
-STONEnoconn XNC_XREG0x05_1 (
-.noconn(XNC_XREG0x05_1)
-);
-
-STONEnoconn XNC_XREG0x05_5 (
-.noconn(XNC_XREG0x05_5)
-);
-
-STONEnoconn XNC_XREG0x05_6 (
-.noconn(XNC_XREG0x05_6)
-);
-
-STONEnoconn XNC_XREG0x05_7 (
-.noconn(XNC_XREG0x05_7)
-);
-
-STONEnoconn XNC_XREG0x06_5 (
-.noconn(XNC_XREG0x06_5)
-);
-
-STONEnoconn XNC_XREG0x06_6 (
-.noconn(XNC_XREG0x06_6)
-);
-
-STONEnoconn XNC_XREG0x21_3 (
-.noconn(XNC_XREG0x21_3)
-);
-
-STONEnoconn XNC_XREG0x21_4 (
-.noconn(XNC_XREG0x21_4)
-);
-
-STONEnoconn XNC_XREG0x21_5 (
-.noconn(XNC_XREG0x21_5)
-);
-
-STONEnoconn XNC_XREG0x21_6 (
-.noconn(XNC_XREG0x21_6)
-);
-
-STONEnoconn XNC_XREG0x22_0 (
-.noconn(XNC_XREG0x22_0)
-);
-
-STONEnoconn XNC_XREG0x22_1 (
-.noconn(XNC_XREG0x22_1)
-);
-
-STONEnoconn XNC_XREG0x22_2 (
-.noconn(XNC_XREG0x22_2)
-);
-
-STONEnoconn XNC_XREG0x22_7 (
-.noconn(XNC_XREG0x22_7)
-);
-
-STONEnoconn XNC_XREG0x45_0 (
-.noconn(XNC_XREG0x45_0)
-);
-
-STONEnoconn XNC_XREG0x45_1 (
-.noconn(XNC_XREG0x45_1)
-);
-
-STONEnoconn XNC_XREG0x45_2 (
-.noconn(XNC_XREG0x45_2)
-);
-
-STONEnoconn XNC_XREG0x45_6 (
-.noconn(XNC_XREG0x45_6)
-);
-
-STONEnoconn XNC_XREG0x45_7 (
-.noconn(XNC_XREG0x45_7)
 );
 
 endmodule
