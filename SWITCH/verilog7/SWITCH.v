@@ -74,8 +74,8 @@ switchgnd_d6772c2d Xswitch1 (
 );
 
 switchsupply_c3942c76 Xswitch2 (
-.I(net_29),
-.O(net_30),
+.I(net_28),
+.O(net_29),
 .CELG(CELG59462),
 .SIMPV(TBD_XSWITCH_Xswitch2_SIMPV),
 .CELSUB(CELSUB40948),
@@ -83,8 +83,8 @@ switchsupply_c3942c76 Xswitch2 (
 );
 
 switchtswitch_4b165e0d Xswitch3 (
-.I(net_31),
-.O(net_32),
+.I(net_29),
+.O(net_30),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
@@ -92,7 +92,7 @@ switchtswitch_4b165e0d Xswitch3 (
 );
 
 switchtransmission_72e1c2b6 Xswitch4 (
-.I(net_33),
+.I(net_30),
 .O(OUT),
 .CELG(CELG59462),
 .CELV(CELV96848),

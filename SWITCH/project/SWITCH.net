@@ -24,16 +24,13 @@ V1 2 0 PWL NSEG=2 X0=0 Y0=0 X1=10u Y1=0 X2=20u Y2={VIN}
 .node_map O0 28
 .node_map O1 29
 .node_map O2 30
-.node_map O3 31
-.node_map O4 32
-.node_map O5 33
 .node_map enable 27
 .node_map IN 25
 X$pinprobe1 26 pinprobe vars: pinprobe_description='GMV_regulation_reference' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
 X$switch1 25 28 27 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
-X$switch2 29 30 27 switchsupply vars: switch_type='supply' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
-X$switch3 31 32 27 switchtswitch vars: switch_type='tswitch' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
-X$switch4 33 26 27 switchtransmission vars: switch_type='transmission' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
+X$switch2 28 29 27 switchsupply vars: switch_type='supply' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
+X$switch3 29 30 27 switchtswitch vars: switch_type='tswitch' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
+X$switch4 30 26 27 switchtransmission vars: switch_type='transmission' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
 X$switch5 22 21 27 switchpullup vars: switch_type='pullup' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
 X$switch6 24 23 27 switchpulldown vars: switch_type='pulldown' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
 X$U1 25 pinprobe vars: pinprobe_description='Low_voltage_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
