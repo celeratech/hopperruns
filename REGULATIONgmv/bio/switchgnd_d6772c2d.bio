@@ -48,8 +48,6 @@ user,switch_ron,1000Ohms
 description,Switch ON Resistance
 user,switch_type,gnd
 description,Switch Architecture
-user,switch_polarity,noninvert
-description,Switch Enable Polarity
 user,NESTO,0.3.2
 description,Nesto generator revision
 //**********************************************
@@ -240,9 +238,11 @@ revision,pinorder,0.2.0
 pinorder,I,O,enable_switch
 
 endpinorder
+//**********************************************
+
 // *********************************************
 //Calculator Parameters
-#define,SIMPVminimum,1.4
+#define,CELVminimum,1.4
 #define,FETlayoutrotatePULLDOWN,n0
 //**********************************************	
 //TRIM Parameters
@@ -275,16 +275,16 @@ trim,description7,empty
 //Cell Pin Descriptions
 // *********************************************
 
-pinname,SIMPV
-definition,SIMPV,power
-iq,SIMPV,SIMULATION
-absmax,SIMPV,6
-absmin,SIMPV,1.4
-io,SIMPV,power
-mode,SIMPV,power
-router,SIMPV,TBD
-dftpriority,SIMPV,1
-esd,SIMPV,TBD
+pinname,CELV
+definition,CELV,power
+iq,CELV,SIMULATION
+absmax,CELV,6
+absmin,CELV,2.0
+io,CELV,power
+mode,CELV,power
+router,CELV,TBD
+dftpriority,CELV,1
+esd,CELV,TBD
 
 pinname,CELG
 definition,CELG,power ground

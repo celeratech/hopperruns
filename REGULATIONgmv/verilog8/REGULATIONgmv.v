@@ -26,15 +26,6 @@ module dbuf_e926e395 (i,o,SUB,CELG,CELV);
   input  CELV;
 endmodule
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
 module celeradacladder_94ceb33f (i,IP,DAC,ten,CELG,SIMPV,CELSUB,DACREF,ok_dac,TAI_DAC,ten_dac,GNDSENSE,enable_dac,strobe_dac,ten_daccontrol,trim_daconegative,trim_dacopositive);
   input [3:0] i;
   input  IP;
@@ -99,14 +90,23 @@ module PEBBLEtiehi ( q, G, SUB, V );
 endmodule
 
 
-module switchgnd_d6772c2d (I,O,CELG,SIMPV,CELSUB,enable_switch);
+module switchgnd_d6772c2d (I,O,CELG,CELV,CELSUB,enable_switch);
   input  I;
   inout  O;
   input  CELG;
-  input  SIMPV;
+  input  CELV;
   input  CELSUB;
   input  enable_switch;
 endmodule
+
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
 
 module vbuffer_fcb32e68 (IN,IP,OUT,CELG,SIMPV,CELSUB,ok_vbuffer,enable_vbuffer,global_vbuffer);
   input  IN;
@@ -193,10 +193,6 @@ dbuf_e926e395 XU4 (
 .CELV(CELV96848)
 );
 
-STONEnoconn XNC90 (
-.noconn(net_90)
-);
-
 celeradacladder_94ceb33f Xdac1 (
 .i({register_vcapfb_dac_c6a66abd_Xdatamap1[3],register_vcapfb_dac_c6a66abd_Xdatamap1[2],register_vcapfb_dac_c6a66abd_Xdatamap1[1],register_vcapfb_dac_c6a66abd_Xdatamap1[0]}),
 .IP(IP_c9c6ef72_Xdac1),
@@ -229,7 +225,7 @@ delayclock_518c565f Xdelay1 (
 .out(net_87),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.clock(clock_regulation),
+.clock(net_90),
 .CELSUB(CELSUB40948),
 .celeraporb(PORB97836)
 );
@@ -239,7 +235,7 @@ delayclock_891a3e2d Xdelay2 (
 .out(net_88),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.clock(clock_regulation),
+.clock(net_90),
 .CELSUB(CELSUB40948),
 .celeraporb(PORB97836)
 );
@@ -262,7 +258,7 @@ switchgnd_d6772c2d Xswitch1 (
 .I(net_85),
 .O(GMV),
 .CELG(CELG59462),
-.SIMPV(TBD_XGMV_Xswitch1_SIMPV),
+.CELV(CELV96848),
 .CELSUB(CELSUB40948),
 .enable_switch(net_87)
 );
