@@ -1,0 +1,32 @@
+//Celera:IPOTTldo_86a0e914
+//Celera Confidential Symbol Generator
+//LDO:Output Unity Gain
+module IPOTTldo_86a0e914 (LDO,celkelvin_LDO,ok_ldo,
+enable_ldo,SIMPV,REF,
+factory_ldoerror,
+factory_ldogain,
+factory_ldopsrr,
+factory_ldofeedforward,
+factory_ldocompensation,
+CELPOWER_LDO,
+global_ldo,
+celkelvin_GNDldo,
+CELG,CELSUB); 
+input SIMPV;
+input CELPOWER_LDO;
+input enable_ldo;
+input global_ldo;
+output LDO;
+input celkelvin_LDO;
+output ok_ldo;
+input REF;
+input [2:0] factory_ldoerror;
+input [2:0] factory_ldogain;
+input [5:0] factory_ldopsrr;
+input [2:0] factory_ldofeedforward;
+input [5:0] factory_ldocompensation;
+input celkelvin_GNDldo;
+input CELG;
+input CELSUB;
+endmodule
+

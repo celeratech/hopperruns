@@ -35,6 +35,9 @@ limit,timingskew_dft,choose0,no
 limit,timingskew_dft,choose1,yes
 limit,timingskew_datasheet_name,text
 limit,timingskew_datasheet_description,text
+limit,timingskew_supply,minimum,2.0
+limit,timingskew_supply,maximum,5.5
+
 //**********************************************
 //PAD Parameters
 //**********************************************
@@ -211,14 +214,43 @@ endlayoutbio
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
 sub_area,WRAPPER5,5
-sub_area,STONEtimingskewlsb8nr,900
-sub_area,STONEdelay8nr4x,3500
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
+sub_area,timingskewdelay_timingskew_2ef6b0d9_delay8nsrise,60152
 sub_area,STONEbypassdelay,4100
-sub_area,STONEdelay8nr8x,3700
 sub_area,STONEbypassdelay,4100
-sub_area,STONEdelay8nr16x,3900
 sub_area,STONEbypassdelay,4100
-generate_area,timingskew_2ef6b0d9,24305
+sub_area,STONEbypassdelay,4100
+sub_area,STONEbypassdelay,4100
+generate_area,timingskew_2ef6b0d9,1885217
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.5
@@ -237,6 +269,8 @@ revision,pinorder,0.2.0
 pinorder,in,register_timingskew0,register_timingskew1,register_timingskew2,register_timingskew3,register_timingskew4,out
 
 endpinorder
+//**********************************************
+
 //**********************************************
 //TRIM Parameters
 cell,timingskew

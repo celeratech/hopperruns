@@ -1,0 +1,1710 @@
+//Celera BIO Generator...Updated BIO Pin List
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Celera Confidential BIO Data Generator
+//Cell Name
+cell,IPOTTldo
+//**********************************************
+//Generator Revision
+revision,generator,0.1.2
+//**********************************************
+//Simplis Limits
+revision,limit,0p1
+//LDO  IPOTT  Version 0.1.0
+
+limit,ldo_voltagein,choose0,6
+limit,ldo_voltagein,choose1,12
+limit,ldo_voltagein,choose2,20
+limit,ldo_voltagein,choose3,24
+limit,ldo_voltagein,choose4,30
+limit,ldo_voltagein,choose5,36
+limit,ldo_voltagein,choose6,40
+limit,ldo_voltagein,choose7,60
+
+limit,ldo_output,choose0,single
+limit,ldo_output,choose1,configurable
+limit,ldo_output,choose2,unity
+
+limit,ldo_outputcount,choose0,1
+limit,ldo_outputcount,choose1,2
+limit,ldo_outputcount,choose2,3
+limit,ldo_outputcount,choose3,4
+limit,ldo_outputcount,choose4,5
+limit,ldo_outputcount,choose5,6
+limit,ldo_outputcount,choose6,7
+limit,ldo_outputcount,choose7,8
+
+limit,ldo_outputcontrol,choose0,pin
+limit,ldo_outputcontrol,choose1,register
+limit,ldo_outputcontrol,choose2,factory
+limit,ldo_outputcontrol,choose3,no
+
+limit,ldo_outputpor,choose0,0
+limit,ldo_outputpor,choose1,1
+limit,ldo_outputpor,choose2,2
+limit,ldo_outputpor,choose3,3
+limit,ldo_outputpor,choose4,4
+limit,ldo_outputpor,choose5,5
+limit,ldo_outputpor,choose6,6
+limit,ldo_outputpor,choose7,7
+
+limit,ldo_outputname,text
+limit,ldo_outputdescription,text
+
+limit,ldo_outputvoltage0,minimum,0.6
+limit,ldo_outputvoltage0,maximum,5.0
+limit,ldo_outputvoltage1,minimum,0.6
+limit,ldo_outputvoltage1,maximum,5.0
+limit,ldo_outputvoltage2,minimum,0.6
+limit,ldo_outputvoltage2,maximum,5.0
+limit,ldo_outputvoltage3,minimum,0.6
+limit,ldo_outputvoltage3,maximum,5.0
+limit,ldo_outputvoltage4,minimum,0.6
+limit,ldo_outputvoltage4,maximum,5.0
+limit,ldo_outputvoltage5,minimum,0.6
+limit,ldo_outputvoltage5,maximum,5.0
+limit,ldo_outputvoltage6,minimum,0.6
+limit,ldo_outputvoltage6,maximum,5.0
+limit,ldo_outputvoltage7,minimum,0.6
+limit,ldo_outputvoltage7,maximum,5.0
+
+limit,ldo_currentoutput,minimum,10
+limit,ldo_currentoutput,maximum,1000
+limit,ldo_currentaccuracy,choose0,no
+limit,ldo_currentaccuracy,choose1,yes
+
+limit,ldo_dropout,minimum,50
+limit,ldo_dropout,maximum,500
+
+limit,ldo_reference,choose0,local
+limit,ldo_reference,choose1,global
+limit,ldo_reference,choose1,standalone
+
+limit,ldo_referencelocal,minimum,0.6
+limit,ldo_referencelocal,maximum,5.2
+
+limit,ldo_psrr,choose0,low
+limit,ldo_psrr,choose1,medium
+limit,ldo_psrr,choose2,high
+limit,ldo_noise,choose0,normal
+limit,ldo_noise,choose1,low
+limit,ldo_noise,choose1,ultra_low
+
+limit,ldo_discharge,choose0,no
+limit,ldo_discharge,choose1,20
+limit,ldo_discharge,choose2,100
+limit,ldo_discharge,choose3,200
+limit,ldo_discharge,choose4,500
+limit,ldo_discharge,choose5,1000
+
+limit,ldo_fault,choose0,no
+limit,ldo_fault,choose1,yes
+
+limit,ldo_accuracy,choose0,low
+limit,ldo_accuracy,choose1,medium
+limit,ldo_accuracy,choose2,high
+
+limit,ldo_feedbackcontrol,choose0,internal
+limit,ldo_feedbackcontrol,choose1,external
+limit,ldo_uvlocontrol,choose0,no
+limit,ldo_uvlocontrol,choose1,yes
+
+limit,ldo_uvlo,minimum,2.5
+limit,ldo_uvlo,maximum,60
+
+limit,ldo_enable,choose0,digital
+limit,ldo_enable,choose1,analog
+limit,ldo_enable,choose2,always_on
+
+
+//Celera Parameters ////////////////////////////////////
+limit,ldo_calibration,choose0,no
+limit,ldo_calibration,choose1,yes
+limit,ldo_ifbdesign,choose0,fixed
+limit,ldo_ifbdesign,choose1,calculate
+limit,ldo_ifb,minimum,1
+limit,ldo_ifb,maximum,100
+limit,ldo_dft,choose0,no
+limit,ldo_dft,choose1,yes
+limit,ldo_vmax,minimum,2
+limit,ldo_vmax,maximum,6
+limit,ldo_uvloifb,minimum,1
+limit,ldo_uvloifb,maximum,100
+
+//Datasheet Parameters /////////////////////////////
+limit,ldo_accuracyname,text
+limit,ldo_accuracydescription,text
+limit,ldo_currentname,text
+limit,ldo_currentdescription,text
+
+//**********************************************
+//PAD Parameters
+//**********************************************
+//USER Parameters
+user,ldo_voltagein,6V
+description,Input Volatge
+user,ldo_uvlo,10uA
+description,Feedabck Impedance
+user,POR,2V Iout:10mA DropOut:50mV
+description,LDO 'single: specifications
+user,NESTO,0.1.2
+description,NESTO Generate Revision
+//**********************************************
+//POR Parameters
+//**********************************************
+//REGISTER Parameters
+//Celera Map Generator
+registermap,ldo
+register,instance,IPOTTldo_3abd8dad
+register,source,cell
+
+//Output Voltage 
+register,name,na
+register,enable,no
+register,bits,0
+register,mode,readwrite
+register,por,0
+register,userdescription,na
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
+//Netlister Information
+register,busname,na
+
+//**********************************************
+//FACTORY Parameters
+//Celera Map Generator
+factorymap,ldo
+factory,instance,IPOTTldo_3abd8dad
+factory,source,cell
+
+//Output Voltage
+factory,name,LDO10confiuration
+factory,enable,yes
+factory,bits,3
+factory,mode,readwrite
+factory,por,0
+factory,userdescription,LDO10 configurationfactory,description0,2V
+factory,description1,2.3V
+factory,description2,2.5V
+factory,description3,2.7V
+factory,description4,3V
+factory,description5,3.3V
+factory,description6,3.6V
+factory,description7,4V
+//Netlister Information
+factory,busname,factory_ldo
+
+//Error Configuration
+factory,name,LDO10confiuration_ERROR
+factory,enable,yes
+factory,bits,3
+factory,mode,readwrite
+factory,por,0
+factory,userdescription,LDO10 configurationfactory,description0,AMPLIFIER trip threshold resistance0
+factory,description1,AMPLIFIER trip threshold resistance1
+factory,description2,ERROR bias Current
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
+//Netlister Information
+factory,busname,factory_ldoerror
+
+//Gain Configuration
+factory,name,LDO10confiuration_GAIN
+factory,enable,yes
+factory,bits,3
+factory,mode,readwrite
+factory,por,0
+factory,userdescription,LDO10 configurationfactory,description0,GAIN0:500KOhm
+factory,description1,GAIN1:1000KOhm
+factory,description2,GAIN2:1500KOhm
+factory,description3,GAIN3:2000KOhm
+factory,description4,GAIN4:2500KOhm
+factory,description5,GAIN5:3000KOhm
+factory,description6,GAIN6:3500KOhm
+factory,description7,GAIN7:4000KOhm
+//Netlister Information
+factory,busname,factory_ldogain
+
+//PSRR Cnnfiguration
+factory,name,LDO10confiuration_PSRR
+factory,enable,yes
+factory,bits,6
+factory,mode,readwrite
+factory,por,0
+factory,userdescription,LDO10 configurationfactory,description0,RESISTORdecoder0:000:1KOhm 001:100KOhm 010:200KOhm
+factory,description1,RESISTORdecoder1:011:300KOhm 100:400KOhm 101:500KOhm
+factory,description2,RESISTORdecoder2:110:1000KOhm 111:2000KOhm
+factory,description3,CAPACITORdecoder0:000:0.5pF 001:3pF 010:5pF
+factory,description4,CAPACITORdecoder1:011:8pF 100:10pF 101:12pF
+factory,description5,CAPACITORdecoder2:110:15pF 111:20pF
+factory,description6,not used
+factory,description7,not used
+//Netlister Information
+factory,busname,factory_ldopsrr
+
+
+//FEEDFORWARD Configuration
+factory,name,LDO10confiuration_FEEDFORWARD
+factory,enable,yes
+factory,bits,3
+factory,mode,readwrite
+factory,por,0
+factory,userdescription,LDO10 configurationfactory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,CAPACITORdecoder0:000:0.5pF 001:2pF 010:4pF
+factory,description4,CAPACITORdecoder1:011:6pF 100:8pF 101:10pF
+factory,description5,CAPACITORdecoder2:110:15pF 111:20pF
+factory,description6,not used
+factory,description7,not used
+//Netlister Information
+factory,busname,factory_ldofeedforward
+
+//COMPENSATION Configuration
+factory,name,LDO10confiuration_COMPENSATION
+factory,enable,yes
+factory,bits,6
+factory,mode,readwrite
+factory,por,0
+factory,userdescription,LDO10 configurationfactory,description0,RESISTORdecoder0:000:1KOhm 001:100KOhm 010:200KOhm
+factory,description1,RESISTORdecoder1:011:300KOhm 100:400KOhm 101:500KOhm
+factory,description2,RESISTORdecoder2:110:1000KOhm 111:2000KOhm
+factory,description3,CAPACITORdecoder0:000:0.5pF 001:2pF 010:4pF
+factory,description4,CAPACITORdecoder1:011:8pF 100:10pF 101:12pF
+factory,description5,CAPACITORdecoder2:110:15pF 111:20pF
+factory,description6,not used
+factory,description7,not used
+//Netlister Information
+factory,busname,factory_ldocompensation
+
+//REFERENCE Filter Calibration
+factory,name,na
+factory,enable,no
+factory,bits,0
+factory,mode,readwrite
+factory,por,0
+factory,userdescription,na
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
+//Netlister Information
+factory,busname,na
+
+//**********************************************
+//Layout Parameters
+revision,layout,0p1
+//LDO 
+
+//New Ip 06192024
+
+place IPOTT STONEldoOK 0 0 R0
+place IPOTT STONEldoIBIASaccuracy 0 0 R0
+place IPOTT STONEldoIBIAS 0 0 R0
+place IPOTT STONEldoAMPLIFIER 0 0 R0
+place IPOTT STONEldoAMPLIFIERconfiguration 0 0 R0
+place IPOTT STONEldoOUTPUT 0 0 R0
+place IPOTT STONEldoERRORsingle 0 0 R0
+place IPOTT STONEldoERRORdual 0 0 R0
+place IPOTT STONEldoFBreference 0 0 R0
+place IPOTT STONEldoFBreferenceACCURACY 0 0 R0
+placeIFELSE cellNameContains *configuration
+//IF contains configuration
+place IPOTT STONEldoENABLE 112.66 129.635 R0
+place IPOTT STONEldoDFT 112.66 146.375 MX
+placeELSE
+//IFnot configuration  - place DFT and find a home for ENABLE
+place IPOTT STONEldoDFT 113.03 129.635 R0
+//and NOT configuration - ENABLE in config spot
+placeTAPuntil
+placeTAP 150 122
+placeALTVIEW IPOTT STONEldoENABLE layout1 112.525 147.875 MX
+//IFdual accuracy and Not configuration
+placeTAP 180 12
+place IPOTT STONEldoENABLE 171.66 7.84 R0
+//IFsingle accuracy and NOT configuration
+placeTAP 115 135
+place IPOTT STONEldoENABLE 112.66 129.635 R0
+placeTAPEND
+placeEND
+//placeIFELSE cellNameContains *reference
+placeINST XPFET 248.28 130.71 MX
+placeINST XNFET 248.28 130.71 MX
+
+
+
+
+
+
+endlayoutbio
+//**********************************************
+//Project Parameters
+//Celera:GREENBANK0_30 Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.8
+#define,PROJECTsupply,5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
+// *********************************************
+//Die Size Estimate
+revision,vis15cbdiesize,0p1
+sub_area,feedbackdivider_IPOTTldo_3abd8dad_FBD,814259
+sub_area,fet_IPOTTldo_3abd8dad_PFET,202810464
+sub_area,STONEldoOUTPUT,99999
+sub_area,STONEldoERRORdual,99999
+sub_area,STONEldoOK,99999
+sub_area,STONEldoAMPLIFIERconfiguration,99999
+sub_area,STONEldoIBIAS,99999
+sub_area,WRAPPER3,3
+sub_area,rcnetwork_IPOTTldo_3abd8dad_GAIN,6662
+sub_area,rcnetwork_IPOTTldo_3abd8dad_PSRR,22542
+sub_area,rcnetwork_IPOTTldo_3abd8dad_FEEDFORWARD,20220
+sub_area,rcnetwork_IPOTTldo_3abd8dad_COMPENSATION,22533
+sub_area,STONEnoconn,0
+sub_area,STONEldoENABLE,99999
+sub_area,PEBBLEtielo,30
+generate_area,IPOTTldo_3abd8dad,204296707
+// *********************************************
+//CELL DFT Parameters
+// *********************************************
+//Pinorder Parameters
+*******************************************
+** Celera Library Pin Order Generator    **
+*******************************************
+//ldo  IPOTT  version
+revision,pinorder,0.2.0
+pinorder,SIMPV,LDO,enable_ldo,ok_ldo,net_skip,net_skip,REF,factory_ldooutput_0,factory_ldooutput_1,factory_ldooutput_2,net_skip,net_skip,net_skip,net_skip
+
+
+endpinorder
+// *********************************************
+//Calculator Parameters
+#define,CELVminimumLDO,2.3
+
+//Feedabck Current
+#define,IFBminimum,10
+#define,IFBmaximum,100
+#define,IFBswitchover,500
+//Reference 'local' 
+#define,FBbandgap,1.00
+//OK threshold 
+#define,FBpositiveOffset,10
+#define,FBnegativeOffset,12
+
+//Add dedicated POWER pin
+#define,IPOWERlimit,20
+
+//Voltage Accuracy
+#define,FBpretrimhigh,0.15
+#define,FBpretrimlow,0.95
+#define,FBposttrimlsb,0.02
+#define,IBIAStarget,2.0
+#define,IBIASpretrimhigh,2.8
+#define,IBIASpretrimlow,1.2
+#define,IBIASposttrimlsb,0.1
+
+//GAIN
+#define,RGAIN6minimum,600
+#define,RGAIN6maximum,4000
+#define RGAIN6typical,600
+
+#define,GAIN6resistor0,500
+#define,GAIN6resistor1,1000
+#define,GAIN6resistor2,1500
+#define,GAIN6resistor3,2000
+#define,GAIN6resistor4,2500
+#define,GAIN6resistor5,3000
+#define,GAIN6resistor6,3500
+#define,GAIN6resistor7,4000
+
+//PSRR
+#define,RPSRR6minimum,1
+#define,RPSRR6maximum,1000
+#define,RPSRR6typical,200
+
+#define,PSRR6resistor0,1
+#define,PSRR6resistor1,100
+#define,PSRR6resistor2,200
+#define,PSRR6resistor3,300
+#define,PSRR6resistor4,400
+#define,PSRR6resistor5,500
+#define,PSRR6resistor6,1000
+#define,PSRR6resistor7,2000
+
+#define,CPSRR6minimum,0.5
+#define,CPSRR6maximum,10
+#define,CPSRR6typical,5
+
+#define,PSRR6capacitor0,0.5
+#define,PSRR6capacitor1,3
+#define,PSRR6capacitor2,5
+#define,PSRR6capacitor3,8
+#define,PSRR6capacitor4,10
+#define,PSRR6capacitor5,12
+#define,PSRR6capacitor6,15
+#define,PSRR6capacitor7,20
+
+//FEEDFORWARD
+#define,FF6minimum,0.5
+#define,FF6maximum,20
+#define,FF6typical,10
+
+#define,FF6capacitor0,0.5
+#define,FF6capacitor1,2
+#define,FF6capacitor2,4
+#define,FF6capacitor3,6
+#define,FF6capacitor4,8
+#define,FF6capacitor5,10
+#define,FF6capacitor6,15
+#define,FF6capacitor7,20
+
+//COMPENSATION 6V
+#define,RCOMP6minimum,1
+#define,RCOMP6maximum,1000
+#define,RCOMP6typical,200
+#define,COMPENSATION6resistor0,1
+#define,COMPENSATION6resistor1,100
+#define,COMPENSATION6resistor2,200
+#define,COMPENSATION6resistor3,300
+#define,COMPENSATION6resistor4,400
+#define,COMPENSATION6resistor5,500
+#define,COMPENSATION6resistor6,1000
+#define,COMPENSATION6resistor7,2000
+
+#define,CCOMP6minimum,0.5
+#define,CCOMP6maximum,20
+#define,CCOMP6typical,12
+#define,COMPENSATION6capacitor0,0.5
+#define,COMPENSATION6capacitor1,2
+#define,COMPENSATION6capacitor2,4
+#define,COMPENSATION6capacitor3,8
+#define,COMPENSATION6capacitor4,10
+#define,COMPENSATION6capacitor5,12
+#define,COMPENSATION6capacitor6,15
+#define,COMPENSATION6capacitor7,20
+
+//COMPENSATION 12V
+#define,RCOMP12minimum,100
+#define,RCOMP12maximum,800
+#define,RCOMP12typical,200
+#define,COMPENSATION12resistor0,100
+#define,COMPENSATION12resistor1,200
+#define,COMPENSATION12resistor2,300
+#define,COMPENSATION12resistor3,400
+#define,COMPENSATION12resistor4,500
+#define,COMPENSATION12resistor5,600
+#define,COMPENSATION12resistor6,700
+#define,COMPENSATION12resistor7,800
+
+#define,CCOMP12minimum,1
+#define,CCOMP12maximum,15
+#define,CCOMP12typical,5
+#define,COMPENSATION12capacitor0,1
+#define,COMPENSATION12capacitor1,2
+#define,COMPENSATION12capacitor2,4
+#define,COMPENSATION12capacitor3,8
+#define,COMPENSATION12capacitor4,10
+#define,COMPENSATION12capacitor5,12
+#define,COMPENSATION12capacitor6,14
+#define,COMPENSATION12capacitor7,16
+
+//COMPENSATION 45V
+#define,RCOMP45minimum,100
+#define,RCOMP45maximum,800
+#define,RCOMP45typical,200
+#define,COMPENSATION45resistor0,100
+#define,COMPENSATION45resistor1,200
+#define,COMPENSATION45resistor2,300
+#define,COMPENSATION45resistor3,400
+#define,COMPENSATION45resistor4,500
+#define,COMPENSATION45resistor5,600
+#define,COMPENSATION45resistor6,700
+#define,COMPENSATION45resistor7,800
+
+#define,CCOMP45minimum,1
+#define,CCOMP45maximum,15
+#define,CCOMP45typical,5
+#define,COMPENSATION45capacitor0,1
+#define,COMPENSATION45capacitor1,2
+#define,COMPENSATION45capacitor2,4
+#define,COMPENSATION45capacitor3,8
+#define,COMPENSATION45capacitor4,10
+#define,COMPENSATION45capacitor5,12
+#define,COMPENSATION45capacitor6,14
+#define,COMPENSATION45capacitor7,16
+
+//COMPENSATION 60V
+#define,RCOMP60minimum,100
+#define,RCOMP60maximum,800
+#define,RCOMP60typical,200
+#define,COMPENSATION60resistor0,100
+#define,COMPENSATION60resistor1,200
+#define,COMPENSATION60resistor2,300
+#define,COMPENSATION60resistor3,400
+#define,COMPENSATION60resistor4,500
+#define,COMPENSATION60resistor5,600
+#define,COMPENSATION60resistor6,700
+#define,COMPENSATION60resistor7,800
+
+#define,CCOMP60minimum,1
+#define,CCOMP60maximum,15
+#define,CCOMP60typical,5
+#define,COMPENSATION60capacitor0,1
+#define,COMPENSATION60capacitor1,2
+#define,COMPENSATION60capacitor2,4
+#define,COMPENSATION60capacitor3,8
+#define,COMPENSATION60capacitor4,10
+#define,COMPENSATION60capacitor5,12
+#define,COMPENSATION60capacitor6,14
+#define,COMPENSATION60capacitor7,16
+
+//CURRENTLIMIT 12V
+#define,RCURRENTLIMIT12minimum,100
+#define,RCURRENTLIMIT12maximum,800
+#define,RCURRENTLIMIT12typical,200
+#define,CURRENTLIMIT12resistor0,100
+#define,CURRENTLIMIT12resistor1,200
+#define,CURRENTLIMIT12resistor2,300
+#define,CURRENTLIMIT12resistor3,400
+#define,CURRENTLIMIT12resistor4,500
+#define,CURRENTLIMIT12resistor5,600
+#define,CURRENTLIMIT12resistor6,700
+#define,CURRENTLIMIT12resistor7,800
+
+#define,CCURRENTLIMIT12minimum,1
+#define,CCURRENTLIMIT12maximum,15
+#define,CCURRENTLIMIT12typical,5
+#define,CURRENTLIMIT12capacitor0,1
+#define,CURRENTLIMIT12capacitor1,2
+#define,CURRENTLIMIT12capacitor2,4
+#define,CURRENTLIMIT12capacitor3,8
+#define,CURRENTLIMIT12capacitor4,10
+#define,CURRENTLIMIT12capacitor5,12
+#define,CURRENTLIMIT12capacitor6,14
+#define,CURRENTLIMIT12capacitor7,16
+
+//CURRENTLIMIT 45V
+#define,RCURRENTLIMIT45minimum,100
+#define,RCURRENTLIMIT45maximum,800
+#define,RCURRENTLIMIT45typical,200
+#define,CURRENTLIMIT45resistor0,100
+#define,CURRENTLIMIT45resistor1,200
+#define,CURRENTLIMIT45resistor2,300
+#define,CURRENTLIMIT45resistor3,400
+#define,CURRENTLIMIT45resistor4,500
+#define,CURRENTLIMIT45resistor5,600
+#define,CURRENTLIMIT45resistor6,700
+#define,CURRENTLIMIT45resistor7,800
+
+#define,CCURRENTLIMIT45minimum,1
+#define,CCURRENTLIMIT45maximum,15
+#define,CCURRENTLIMIT45typical,5
+#define,CURRENTLIMIT45capacitor0,1
+#define,CURRENTLIMIT45capacitor1,2
+#define,CURRENTLIMIT45capacitor2,4
+#define,CURRENTLIMIT45capacitor3,8
+#define,CURRENTLIMIT45capacitor4,10
+#define,CURRENTLIMIT45capacitor5,12
+#define,CURRENTLIMIT45capacitor6,14
+#define,CURRENTLIMIT45capacitor7,16
+
+//CURRENTLIMIT 60V
+#define,RCURRENTLIMIT60minimum,100
+#define,RCURRENTLIMIT60maximum,800
+#define,RCURRENTLIMIT60typical,200
+#define,CURRENTLIMIT60resistor0,100
+#define,CURRENTLIMIT60resistor1,200
+#define,CURRENTLIMIT60resistor2,300
+#define,CURRENTLIMIT60resistor3,400
+#define,CURRENTLIMIT60resistor4,500
+#define,CURRENTLIMIT60resistor5,600
+#define,CURRENTLIMIT60resistor6,700
+#define,CURRENTLIMIT60resistor7,800
+
+#define,CCURRENTLIMIT60minimum,1
+#define,CCURRENTLIMIT60maximum,15
+#define,CCURRENTLIMIT60typical,5
+#define,CURRENTLIMIT60capacitor0,1
+#define,CURRENTLIMIT60capacitor1,2
+#define,CURRENTLIMIT60capacitor2,4
+#define,CURRENTLIMIT60capacitor3,8
+#define,CURRENTLIMIT60capacitor4,10
+#define,CURRENTLIMIT60capacitor5,12
+#define,CURRENTLIMIT60capacitor6,14
+#define,CURRENTLIMIT60capacitor7,16
+
+//PSRR COMPENSATION 6V
+#define,RPSRRCOMP6minimum,TBD
+#define,RPSRRCOMP6maximum,TBD
+#define,RPSRRCOMP6typical,TBD
+#define,PSRRCOMP6resistor0,TBD
+#define,PSRRCOMP6resistor1,TBD
+#define,PSRRCOMP6resistor2,TBD
+#define,PSRRCOMP6resistor3,TBD
+#define,PSRRCOMP6resistor4,TBD
+#define,PSRRCOMP6resistor5,TBD
+#define,PSRRCOMP6resistor6,TBD
+#define,PSRRCOMP6resistor7,TBD
+
+#define,CPSRRCOMP6minimum,TBD
+#define,CPSRRCOMP6maximum,TBD
+#define,CPSRRCOMP6typical,TBD
+#define,PSRRCOMP6capacitor0,TBD
+#define,PSRRCOMP6capacitor1,TBD
+#define,PSRRCOMP6capacitor2,TBD
+#define,PSRRCOMP6capacitor3,TBD
+#define,PSRRCOMP6capacitor4,TBD
+#define,PSRRCOMP6capacitor5,TBD
+#define,PSRRCOMP6capacitor6,TBD
+#define,PSRRCOMP6capacitor7,TBD
+
+//PSRR COMPENSATION 12
+#define,RPSRRCOMP12minimum,100
+#define,RPSRRCOMP12maximum,300
+#define,RPSRRCOMP12typical,200
+#define,PSRRCOMP12resistor0,50
+#define,PSRRCOMP12resistor1,100
+#define,PSRRCOMP12resistor2,200
+#define,PSRRCOMP12resistor3,300
+#define,PSRRCOMP12resistor4,400
+#define,PSRRCOMP12resistor5,500
+#define,PSRRCOMP12resistor6,600
+#define,PSRRCOMP12resistor7,700
+
+#define,CPSRRCOMP12minimum,1
+#define,CPSRRCOMP12maximum,10
+#define,CPSRRCOMP12typical,4
+#define,PSRRCOMP12capacitor0,1
+#define,PSRRCOMP12capacitor1,2
+#define,PSRRCOMP12capacitor2,3
+#define,PSRRCOMP12capacitor3,4
+#define,PSRRCOMP12capacitor4,5
+#define,PSRRCOMP12capacitor5,6
+#define,PSRRCOMP12capacitor6,7
+#define,PSRRCOMP12capacitor7,8
+
+//PSRR COMPENSATION 45
+#define,RPSRRCOMP45minimum,100
+#define,RPSRRCOMP45maximum,300
+#define,RPSRRCOMP45typical,200
+#define,PSRRCOMP45resistor0,50
+#define,PSRRCOMP45resistor1,100
+#define,PSRRCOMP45resistor2,200
+#define,PSRRCOMP45resistor3,300
+#define,PSRRCOMP45resistor4,400
+#define,PSRRCOMP45resistor5,500
+#define,PSRRCOMP45resistor6,600
+#define,PSRRCOMP45resistor7,700
+
+#define,CPSRRCOMP45minimum,1
+#define,CPSRRCOMP45maximum,10
+#define,CPSRRCOMP45typical,4
+#define,PSRRCOMP45capacitor0,1
+#define,PSRRCOMP45capacitor1,2
+#define,PSRRCOMP45capacitor2,3
+#define,PSRRCOMP45capacitor3,4
+#define,PSRRCOMP45capacitor4,5
+#define,PSRRCOMP45capacitor5,6
+#define,PSRRCOMP45capacitor6,7
+#define,PSRRCOMP45capacitor7,8
+
+
+
+//Reference Filter delay
+#define,Fcutoff0,200
+#define,Fcutoff1,100
+#define,Fcutoff2,75
+#define,Fcutoff3,50
+#define,Fcutoff4,25
+#define,Fcutoff5,10
+#define,Fcutoff6,5
+#define,Fcutoff7,1
+#define,FcutoffTypical,25
+
+#define,FILTERcap,40
+#define,OKthreshold,70
+#define,Tconstant,4
+#define,Tfudge,1
+//Curent limit
+#define,ReplicaThreshold,500
+//UVLO
+#define UVLObandgap,1.000
+#define UVLOifb, 1.0
+
+//PFET Calculator
+#define,PFETfudge,50
+#define,ILIMtarget,4.0
+#define,FETratioMAX,35
+//**********************************************	
+//TRIM Parameters
+cell,ldo
+trim,instance,IPOTTldo_3abd8dad
+
+trim,name,na
+trim,enable,no
+trim,bits,TBD
+trim,por,0
+trim,pinname,TBD
+trim,testname,TBD
+trim,description,TBD
+trim,target,na
+trim,units,TBD
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,%
+trim,description0,empty
+trim,description1,empty
+trim,description2,empty
+trim,description3,empty
+trim,description4,empty
+trim,description5,empty
+trim,description6,empty
+trim,description7,empty
+
+trim,name,na
+trim,enable,no
+trim,bits,TBD
+trim,por,0
+trim,pinname,TBD
+trim,testname,TBD
+trim,description,TBD
+trim,target,na
+trim,units,TBD
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,%
+trim,description0,empty
+trim,description1,empty
+trim,description2,empty
+trim,description3,empty
+trim,description4,empty
+trim,description5,empty
+trim,description6,empty
+trim,description7,empty
+
+//**********************************************
+//Cell Pin Descriptions
+// *********************************************
+pinname,SIMPV
+definition,SIMPV,LDO Low voltage Supply Rail
+iq,SIMPV,SIMULATION
+absmax,SIMPV,6
+absmin,SIMPV,2.3
+io,SIMPV,input
+mode,SIMPV,power
+router,SIMPV,TBD
+dftpriority,SIMPV,1
+esd,SIMPV,TBD
+
+pinname,CELG
+definition,CELG,cell power ground
+iq,CELG,SIMULATION
+absmax,CELG,0.3
+absmin,CELG,-0.3
+io,CELG,input
+mode,CELG,power
+router,CELG,TBD
+dftpriority,CELG,1
+esd,CELG,TBD
+
+pinname,celkelvin_GNDldo
+definition,celkelvin_GNDldo,LDO kelvin_ground input sense
+iq,celkelvin_GNDldo,SIMULATION
+absmax,celkelvin_GNDldo,6
+absmin,celkelvin_GNDldo,-0.3
+io,celkelvin_GNDldo,input
+mode,celkelvin_GNDldo,analog
+router,celkelvin_GNDldo,TBD
+dftpriority,celkelvin_GNDldo,1
+esd,celkelvin_GNDldo,TBD
+
+pinname,REF
+definition,REF,Local Reference Local input
+iq,REF,SIMULATION
+absmax,REF,6
+absmin,REF,-0.3
+io,REF,input
+mode,REF,analog
+router,REF,TBD
+dftpriority,REF,1
+esd,REF,TBD
+
+pinname,enable_ldo
+definition,enable_ldo,Digital Enable LDO 
+iq,enable_ldo,SIMULATION
+absmax,enable_ldo,6
+absmin,enable_ldo,-0.3
+io,enable_ldo,input
+mode,enable_ldo,digital
+router,enable_ldo,TBD
+dftpriority,enable_ldo,1
+esd,enable_ldo,TBD
+
+pinname,global_ldo
+definition,global_ldo,DFT Enable LDO
+iq,global_ldo,SIMULATION
+absmax,global_ldo,6
+absmin,global_ldo,-0.3
+io,global_ldo,input
+mode,global_ldo,digital
+router,global_ldo,TBD
+dftpriority,global_ldo,1
+esd,global_ldo,TBD
+
+pinname,ok_ldo
+definition,ok_ldo,LDO enabled and ready
+iq,ok_ldo,SIMULATION
+absmax,ok_ldo,6
+absmin,ok_ldo,-0.3
+io,ok_ldo,output
+mode,ok_ldo,digital
+router,ok_ldo,TBD
+dftpriority,ok_ldo,1
+esd,ok_ldo,TBD
+
+pinname,LDO
+definition,LDO,Linear Regulator output
+iq,LDO,SIMULATION
+absmax,LDO,6
+absmin,LDO,-0.3
+io,LDO,output
+mode,LDO,analog
+router,LDO,TBD
+dftpriority,LDO,1
+esd,LDO,TBD
+
+pinname,celkelvin_LDO
+definition,celkelvin_LDO,Linear Regulator kelvin input
+iq,celkelvin_LDO,SIMULATION
+absmax,celkelvin_LDO,6
+absmin,celkelvin_LDO,-0.3
+io,celkelvin_LDO,output
+mode,celkelvin_LDO,analog
+router,celkelvin_LDO,TBD
+dftpriority,celkelvin_LDO,1
+esd,celkelvin_LDO,TBD
+
+
+pinname,factory_ldooutput
+definition,factory_ldooutput,Linear Regulator output voltage control
+iq,factory_ldooutputt,SIMULATION
+absmax,factory_ldooutput,6
+absmin,factory_ldooutput,-0.3
+io,factory_ldooutput,input
+mode,factory_ldooutput,digital
+router,factory_ldooutput,TBD
+dftpriority,factory_ldooutput,1
+esd,factory_ldooutput,TBD
+
+pinname,factory_ldoerror
+definition,factory_ldoerror,Calibrate ERROR response
+iq,factory_ldoerror,SIMULATION
+absmax,factory_ldoerror,6
+absmin,factory_ldoerror,-0.3
+io,factory_ldoerror,input
+mode,factory_ldoerror,digital
+router,factory_ldoerror,TBD
+dftpriority,factory_ldoerror,1
+esd,factory_ldoerror,TBD
+
+pinname,factory_ldogain
+definition,factory_ldogain,Calibrate GAIN response
+iq,factory_ldogain,SIMULATION
+absmax,factory_ldogain,6
+absmin,factory_ldogain,-0.3
+io,factory_ldogain,input
+mode,factory_ldogain,digital
+router,factory_ldogain,TBD
+dftpriority,factory_ldogain,1
+esd,factory_ldogain,TBD
+
+pinname,factory_ldopsrr
+definition,factory_ldopsrr,Calibrate PSRR response
+iq,factory_ldopsrr,SIMULATION
+absmax,factory_ldopsrr,6
+absmin,factory_ldopsrr,-0.3
+io,factory_ldopsrr,input
+mode,factory_ldopsrr,digital
+router,factory_ldopsrr,TBD
+dftpriority,factory_ldopsrr,1
+esd,factory_ldopsrr,TBD
+
+pinname,factory_ldofeedforward
+definition,factory_ldofeedforward,Calibrate FEEDFORWARD response
+iq,factory_ldofeedforward,SIMULATION
+absmax,factory_ldofeedforward,6
+absmin,factory_ldofeedforward,-0.3
+io,factory_ldofeedforward,input
+mode,factory_ldofeedforward,digital
+router,factory_ldofeedforward,TBD
+dftpriority,factory_ldofeedforward,1
+esd,factory_ldofeedforward,TBD
+
+pinname,factory_ldocompensation
+definition,factory_ldocompensation,Calibrate COMPENSATION response
+iq,factory_ldocompensation,SIMULATION
+absmax,factory_ldocompensation,6
+absmin,factory_ldocompensation,-0.3
+io,factory_ldocompensation,input
+mode,factory_ldocompensation,digital
+router,factory_ldocompensation,TBD
+dftpriority,factory_ldocompensation,1
+esd,factory_ldocompensation,TBD
+
+pinname,CELSUB
+definition,CELSUB,SUBstrate
+iq,CELSUB,SIMULATION
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
+io,CELSUB,input
+mode,CELSUB,power
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
+//**********************************************
+//Process Parameters
+revision,vis15cb,0p1
+	
+//Design Resistor Parameters
+
+//POLY Resistor
+#define POLYrint,0.00004944
+//#define,POLYrsheet,3278
+#define,POLYrsheet,3471
+#define,POLYdeltal,0.01
+#define,POLYdeltaw,0.07
+#define,POLYkeepoutw,0.25
+#define,POLYkeepoutl,0.25
+#define,POLYimax,12.0
+#define,RESISTORlengthmaxPOLY,60.0
+#define RESISTORlengthminPOLY,1.0
+#define,RESISTORwidthmaxPOLY,12.5
+#define,RESISTORwidthminPOLY,0.4
+#define,RESISTORprocessPOLY,40.0
+#define,RESISTORdensityPOLY,1.0
+#define,RESISTORratioPOLY,2.0
+#define,RESISTORstepPOLY,0.8
+
+//RPODRPO Resistor
+#define,RPODRPOrsheet1,117.16
+#define RPODRPOrsheet2,TBD
+#define,RPODRPOminw,2.0
+#define,RPODRPOmaxw,40.0
+#define,RPODRPOminl,10
+#define,RPODRPOmaxl,200.0
+#define,RPODRPOkeepout,0.25		
+#define,RPODRPOdeltal,0.01
+#define,RPODRPOdeltaw,0.0
+#define,RPODRPOkeepoutw,0.25
+#define,RPODRPOkeepoutl,0.25
+#define,RPODRPOimax,20.0
+#define,RESISTORlengthmaxRPODRPO,200.0
+#define RESISTORlengthminRPODRPO,10.0
+#define,RESISTORwidthmaxRPODRPO,40.0
+#define,RESISTORwidthminRPODRPO,2.0
+#define,RESISTORprocessRPODRPO,35.0
+#define,RESISTORdensityRPODRPO,1.0
+#define,RESISTORratioRPODRPO,5.0
+#define,RESISTORstepRPODRPO,0.8
+
+//RPOD Resistor
+#define,RPODrsheet1,6.677
+#define RPODrsheet2,TBD
+#define,RPODminw,2.0
+#define,RPODmaxw,40.0
+#define,RPODminl,10
+#define,RPODmaxl,200.0
+#define,RPODkeepout,0.25		
+#define,RPODdeltal,0.01
+#define,RPODdeltaw,0.0
+#define,RPODkeepoutw,0.25
+#define,RPODkeepoutl,0.25
+#define,RPODimax,20.0
+#define,RESISTORlengthmaxRPOD,200.0
+#define RESISTORlengthminRPOD,10.0
+#define,RESISTORwidthmaxRPOD,40.0
+#define,RESISTORwidthminRPOD,2.0
+#define,RESISTORprocessRPOD,35.0
+#define,RESISTORdensityRPOD,1.0
+#define,RESISTORratioRPOD,5.0
+#define,RESISTORstepRPOD,0.8
+
+//RNOD Resistor
+#define,RNODrsheet1,6.7
+#define,RNODrsheet2,90.92
+#define,RNODminw,0.4
+#define,RNODmaxw,199.8
+#define,RNODminl,1.0
+#define,RNODmaxl,999.0	
+#define,RNODkeepout,0.25		
+#define,RNODdeltal,0.01
+#define,RNODdeltaw,0.07
+#define,RNODkeepoutw,0.25
+#define,RNODkeepoutl,0.25
+#define,RNODimax,20.0
+#define,RESISTORlengthmaxRNOD,999.0
+#define RESISTORlengthminRNOD,2.0
+#define,RESISTORwidthmaxRNOD,199.8
+#define,RESISTORwidthminRNOD,0.4
+#define,RESISTORprocessRNOD,35.0
+#define,RESISTORdensityRNOD,1.0
+#define,RESISTORratioRNOD,5.0
+#define,RESISTORstepRNOD,0.8
+
+//RNODRPO Resistor
+#define,RNODRPOrsheet1,90.92
+#define RNODRPOrsheet2,TBD
+#define,RNODRPOminw,2.0
+#define,RNODRPOmaxw,12.0
+#define,RNODRPOminl,10
+#define,RNODRPOmaxl,400.0
+#define,RNODRPOkeepout,0.25		
+#define,RNODRPOdeltal,0.01
+#define,RNODRPOdeltaw,0.0
+#define,RNODRPOkeepoutw,0.25
+#define,RNODRPOkeepoutl,0.25
+#define,RNODRPOimax,20.0
+#define,RESISTORlengthmaxRNODRPO,200.0
+#define RESISTORlengthminRNODRPO,10.0
+#define,RESISTORwidthmaxRNODRPO,12.0
+#define,RESISTORwidthminRNODRPO,2.0
+#define,RESISTORprocessRNODRPO,35.0
+#define,RESISTORdensityRNODRPO,1.0
+#define,RESISTORratioRNODRPO,5.0
+#define,RESISTORstepRNODRPO,0.8
+
+//METAL Resistor
+#define,RMETrsheet,111.2
+#define,RMETminw,0.2
+#define,RMETmaxw,35
+#define,RMETminl,0.2
+#define,RMETmaxl,200	
+#define,RMETkeepout,0.25		
+#define,RMETdeltal,0.01
+#define,RMETdeltaw,0.07
+#define,RMETkeepoutw,0.25
+#define,RMETkeepoutl,0.25
+#define,RMETimax,1
+#define,RESISTORlayer,rm1
+
+//MIM Capacitor
+//Design Capacitor Parameters
+#define,CAPACITORlengthmaxMIM,30.0
+#define,CAPACITORlengthminMIM,5.0
+#define,CAPACITORwidthmaxMIM,30.0
+#define,CAPACITORwidthminMIM,5.0
+#define,CAPACITORprocessMIM,40
+#define,CAPACITORratioMIM,0.75
+#define,CAPACITORkeepoutMIM,2.8
+
+#define,mimca,0.00198
+#define,mimcf,0.000127
+
+//MOM_3 Capacitor
+#define,mom_3c,0.614886
+#define,mom_3l,0.9921753
+#define,mom_3f,1.0069967
+#define,CAPACITORlengthmaxMOM,35.0
+#define,CAPACITORlengthminMOM,10.0
+#define,CAPACITORfingermaxMOM,35.0
+#define,CAPACITORfingerminMOM,10.0
+#define,CAPACITORprocessMOM,40
+#define,CAPACITORratioMOM,0.75
+#define,CAPACITORkeepoutMOM,2.8
+//MOM_4 Capacitor
+#define,mom_4c,0.614886
+#define,mom_4l,0.9921753
+#define,mom_4f,1.0069967
+
+//NMOS Paramters
+#define,NMOSkeepoutl,100
+#define,NMOSkeepoutw,100
+#define,NMOSmaximumwidth,100000000
+
+//NMOS power Design Parameters
+#define,n6powerconsti,2.0395
+#define,n6powervgs,-0.7616
+#define,n6powertemp,0.1883
+#define,n6powermult,-1.0091
+#define,n12powerconsti,2.2356
+#define,n12powervgs,-0.5503
+#define,n12powertemp,0.2123
+#define,n12powermult,-1.0022
+#define,n20powerconsti,2.1012
+#define,n20powervgs,-0.4986
+#define,n20powertemp,0.2555
+#define,n20powermult,-0.9990
+#define,n24powerconsti,2.2039
+#define,n24powervgs,-0.4250
+#define,n24powertemp,0.2430
+#define,n24powermult,-0.9979
+#define,n30powerconsti,2.2786
+#define,n30powervgs,-0.3591
+#define,n30powertemp,0.2504
+#define,n30powermult,-0.9954
+#define,n40powerconsti,2.3417
+#define,n40powervgs,-0.3196
+#define,n40powertemp,0.2664
+#define,n40powermult,-0.9934
+#define,n45powerconsti,2.620
+#define,n45powervgs,-0.2384
+#define,n45powertemp,0.2749
+#define,n45powermult,-0.9957
+#define,n60powerconsti,3.180
+#define,n60powervgs,-0.2751
+#define,n60powertemp,0.3350
+#define,n60powermult,-0.9941
+
+//NMOS Power Minimum Width
+#define,n6replicaminimumwidth,2.0
+#define,n12replicaminimumwidth,2.0
+#define,n20replicaminimumwidth,2.0
+#define,n24replicaminimumwidth,2.0
+#define,n30replicaminimumwidth,2.0
+#define,n40replicaminimumwidth,2.0
+#define,n45replicaminimumwidth,2.4
+#define,n60replicaminimumwidth,2.4
+
+#define,n6replicaconsti,1000
+#define,n12replicaconsti,2000
+#define,n20replicaconsti,2000
+#define,n24replicaconsti,2100
+#define,n30replicaconsti,2400
+#define,n40replicaconsti,2800
+#define,n45replicaconsti,3124
+#define,n60replicaconsti,3124
+
+#define,n6replicapower,-0.49
+#define,n12replicapower,-0.49
+#define,n20replicapower,-0.49
+#define,n24replicapower,-0.49
+#define,n30replicapower,-0.49
+#define,n40replicapower,-0.49
+#define,n45replicapower,-0.49
+#define,n60replicapower,-0.49
+
+//PMOS power Design Parameters
+#define,p6powerconsti,3.9763
+#define,p6powervgs,-1.0337
+#define,p6powertemp,0.1391
+#define,p6powermult,-1.0208
+#define,p12powerconsti,4.1495
+#define,p12powervgs,-0.8445
+#define,p12powertemp,0.1800
+#define,p12powermult,-1.0268
+#define,p20powerconsti,4.8426
+#define,p20powervgs,-1.0336
+#define,p20powertemp,0.1699
+#define,p20powermult,-1.0491
+#define,p24powerconsti,4.3401
+#define,p24powervgs,-0.8231
+#define,p24powertemp,0.1936
+#define,p24powermult,-1.0253
+#define,p30powerconsti,4.1720
+#define,p30powervgs,-0.6639
+#define,p30powertemp,0.2133
+#define,p30powermult,-1.0204
+#define,p36powerconsti,3.5513
+#define,p36powervgs,-0.2524
+#define,p36powertemp,0.2520
+#define,p36powermult,-1.0006
+#define,p40powerconsti,4.0367
+#define,p40powervgs,-0.4140
+#define,p40powertemp,0.2620
+#define,p40powermult,-1.002
+#define,p45powerconsti,4.0000
+#define,p45powervgs,-0.41459
+#define,p45powertemp,0.25245
+#define,p45powermult,-1.0015
+#define,p60powerconsti,4.1050
+#define,p60powervgs,-0.3600
+#define,p60powertemp,0.2648
+#define,p60powermult,-1.0017
+
+
+//NMOS signal Design Parameters
+#define,n6signalconsti,6.6306
+#define,n6signalvgs,-0.7177
+#define,n6signaltemp,0.1938
+#define,n6signalmult,-1.0004
+#define,n12signalconsti,7.4707
+#define,n12signalvgs,-0.6379
+#define,n12signaltemp,0.2460
+#define,n12signalmult,-1.0004
+#define,n20signalconsti,7.4405
+#define,n20signalvgs,-0.5973
+#define,n20signaltemp,0.2410
+#define,n20signalmult,-1.0005
+#define,n24signalconsti,7.4422
+#define,n24signalvgs,-0.6030
+#define,n24signaltemp,0.2548
+#define,n24signalmult,-1.0005
+#define,n30signalconsti,7.4734
+#define,n30signalvgs,-0.5406
+#define,n30signaltemp,0.2574
+#define,n30signalmult,-1.0005
+#define,n40signalconsti,7.5067
+#define,n40signalvgs,-0.4782
+#define,n40signaltemp,0.2670
+#define,n40signalmult,-1.0003
+#define,n45signalconsti,7.5064
+#define,n45signalvgs,-0.4782
+#define,n45signaltemp,0.2670
+#define,n45signalmult,-1.0003
+#define,n60signalconsti,7.0377
+#define,n60signalvgs,-0.4059
+#define,n60signaltemp,0.2811
+#define,n60signalmult,-1.0000
+
+
+//PMOS signal Design Parameters
+#define,p6signalconsti,9.5485
+#define,p6signalvgs,-1.3083
+#define,p6signaltemp,0.1428
+#define,p6signalmult,-1.0035
+#define,p12signalconsti,9.1127
+#define,p12signalvgs,-0.7732
+#define,p12signaltemp,0.2382
+#define,p12signalmult,-1.0028
+#define,p20signalconsti,9.1444
+#define,p20signalvgs,-0.7901
+#define,p20signaltemp,0.2213
+#define,p20signalmult,-1.0024
+#define,p24signalconsti,9.2507
+#define,p24signalvgs,-0.7563
+#define,p24signaltemp,0.2111
+#define,p24signalmult,-1.0023
+#define,p30signalconsti,8.8449
+#define,p30signalvgs,-0.4977
+#define,p30signaltemp,0.2608
+#define,p30signalmult,-1.0019
+#define,p40signalconsti,8.2925
+#define,p40signalvgs,-0.3985
+#define,p40signaltemp,0.2677
+#define,p40signalmult,-1.0010
+#define,p45signalconsti,8.3299
+#define,p45signalvgs,-0.3861
+#define,p45signaltemp,0.2521
+#define,p45signalmult,-1.0010
+#define,p60signalconsti,8.4177
+#define,p60signalvgs,-0.3804
+#define,p60signaltemp,0.2464
+#define,p60signalmult,-1.0008
+////////////////////////////////////////////////////////////////////////
+//NCH2 Design Parameters
+#define,NCHmaxwidth,900
+#define,NCHminwidth,0.3
+#define,NCHmaxfinger,999
+#define,NCHminfinger,1
+#define,NCHmaxmult,999
+#define,NCHminmult,1
+#define,NCHlength,0.18
+////////////////////////////////////////////////////////////////////////
+//NCH5I2 Design Parameters
+#define,NCH5I2maxwidth,200
+#define,NCH5I2minwidth,0.3
+#define,NCH5I2maxfinger,999
+#define,NCH5I2minfinger,1
+#define,NCH5I2maxmult,999
+#define NCH5I2minmult,1
+#define,NCH5I2length,0.6
+////////////////////////////////////////////////////////////////////////
+//AN5G6 power Design Parameters
+#define,AN5G6DW1maxwidth,200
+#define,AN5G6DW1minwidth,2
+#define,AN5G6DW1maxfinger,98
+#define,AN5G6DW1minfinger,2
+#define,AN5G6DW1length,0.2
+#define,AN5G6DW1maxmult,99
+#define,AN5G6DW1minmult,1
+
+//AN5G6 signal Design Parameters
+#define,AN5G6DC1maxwidth,200
+#define,AN5G6DC1minwidth,2
+#define,AN5G6DC1maxfinger,98
+#define,AN5G6DC1minfinger,2
+#define,AN5G6DC1length,2.0
+#define,AN5G6DC1maxmult,99
+#define,AN5G6DC1minmult,1
+////////////////////////////////////////////////////////////////////////
+//AN5G12 power Design Parameters
+#define,AN5G12DW2maxwidth,200
+#define,AN5G12DW2minwidth,2
+#define,AN5G12DW2maxfinger,98
+#define,AN5G12DW2minfinger,2
+#define,AN5G12DW2length,0.2
+#define,AN5G12DW2maxmult,99
+#define,AN5G12DW2minmult,1
+
+//AN5G12 signal Design Parameters
+#define,AN5G12DC1maxwidth,200
+#define,AN5G12DC1minwidth,2
+#define,AN5G12DC1maxfinger,98
+#define,AN5G12DC1minfinger,2
+#define,AN5G12DC1length,2.0
+#define,AN5G12DC1maxmult,99
+#define,AN5G12DC1minmult,1
+////////////////////////////////////////////////////////////////////////
+//AN5G20 power Design Parameters
+#define,AN5G20DW2maxwidth,200
+#define,AN5G20DW2minwidth,2
+#define,AN5G20DW2maxfinger,98
+#define,AN5G20DW2minfinger,2
+#define,AN5G20DW2length,0.2
+#define,AN5G20DW2maxmult,99
+#define,AN5G20DW2minmult,1
+
+//AN5G20 signal Design Parameters
+#define,AN5G20DC1maxwidth,200
+#define,AN5G20DC1minwidth,2
+#define,AN5G20DC1maxfinger,98
+#define,AN5G20DC1minfinger,2
+#define,AN5G20DC1length,2.0
+#define,AN5G20DC1maxmult,99
+#define,AN5G20DC1minmult,1
+////////////////////////////////////////////////////////////////////////
+//AN5G24 power Design Parameters
+#define,AN5G24DW2maxwidth,200
+#define,AN5G24DW2minwidth,2
+#define,AN5G24DW2maxfinger,98
+#define,AN5G24DW2minfinger,2
+#define,AN5G24DW2length,0.2
+#define,AN5G24DW2maxmult,99
+#define,AN5G24DW2minmult,1
+
+//AN5G24 signal Design Parameters
+#define,AN5G24DC1maxwidth,200
+#define,AN5G24DC1minwidth,2
+#define,AN5G24DC1maxfinger,98
+#define,AN5G24DC1minfinger,2
+#define,AN5G24DC1length,2.0
+#define,AN5G24DC1maxmult,99
+#define,AN5G24DC1minmult,1
+////////////////////////////////////////////////////////////////////////
+//AN5G30 power Design Parameters
+#define,AN5G30DW2maxwidth,200
+#define,AN5G30DW2minwidth,2
+#define,AN5G30DW2maxfinger,98
+#define,AN5G30DW2minfinger,2
+#define,AN5G30DW2length,0.2
+#define,AN5G30DW2maxmult,99
+#define,AN5G30DW2minmult,1
+
+//AN5G30 signal Design Parameters
+#define,AN5G30DC1maxwidth,200
+#define,AN5G30DC1minwidth,2
+#define,AN5G30DC1maxfinger,98
+#define,AN5G30DC1minfinger,2
+#define,AN5G30DC1length,2.0
+#define,AN5G30DC1maxmult,99
+#define,AN5G30DC1minmult,1
+////////////////////////////////////////////////////////////////////////
+//AN5G40 power Design Parameters
+#define,AN5G40DW2maxwidth,200
+#define,AN5G40DW2minwidth,2
+#define,AN5G40DW2maxfinger,98
+#define,AN5G40DW2minfinger,2
+#define,AN5G40DW2length,0.2
+#define,AN5G40DW2maxmult,99
+#define,AN5G40DW2minmult,1
+
+//AN5G40 signal Design Parameters
+#define,AN5G40DC1maxwidth,200
+#define,AN5G40DC1minwidth,2
+#define,AN5G40DC1maxfinger,98
+#define,AN5G40DC1minfinger,2
+#define,AN5G40DC1maxlength,20.0
+#define,AN5G40DC1minlength,2.0
+#define,AN5G40DC1maxmult,99
+#define,AN5G40DC1minmult,1
+////////////////////////////////////////////////////////////////////////
+//AN5G45 power Design Parameters
+#define,AN5G45DW1maxwidth,200
+#define,AN5G45DW1minwidth,2
+#define,AN5G45DW1maxfinger,98
+#define,AN5G45DW1minfinger,2
+#define,AN5G45DW1length,0.2
+#define,AN5G45DW1maxmult,99
+#define,AN5G45DW1minmult,1
+
+//AN5G45 signal Design Parameters
+#define,AN5G45DC1maxwidth,200
+#define,AN5G45DC1minwidth,2
+#define,AN5G45DC1maxfinger,98
+#define,AN5G45DC1minfinger,2
+#define,AN5G45DC1maxlength,20.0
+#define,AN5G45DC1minlength,2.0
+#define,AN5G45DC1maxmult,99
+#define,AN5G45DC1minmult,1
+////////////////////////////////////////////////////////////////////////
+//AN5G60 power Design Parameters
+#define,AN5G60DW2maxwidth,200
+#define,AN5G60DW2minwidth,2
+#define,AN5G60DW2maxfinger,98
+#define,AN5G60DW2minfinger,2
+#define,AN5G60DW2length,0.5
+#define,AN5G60DW2maxmult,99
+#define,AN5G60DW2minmult,1
+
+//AN5G60 signal Design Parameters
+#define,AN5G60DC1maxwidth,200
+#define,AN5G60DC1minwidth,2.0
+#define,AN5G60DC1maxfinger,98
+#define,AN5G60DC1minfinger,2
+#define,AN5G60DC1maxlength,1.0
+#define,AN5G60DC1minlength,1.0
+#define,AN5G60DC1maxmult,99
+#define,AN5G60DC1minmult,1
+////////////////////////////////////////////////////////////////////////
+
+
+//PMOS Parameters
+#define,PMOSkeepoutl,200
+#define,PMOSkeepoutw,200
+#define PMOSmaximumwidth,100000000
+////////////////////////////////////////////////////////////////////////
+//PCH2 Design Parameters
+#define,PCHmaxwidth,900
+#define,PCHminwidth,0.3
+#define,PCHmaxfinger,999
+#define,PCHminfinger,1
+#define,PCHmaxmult,999
+#define PCHminmult,1
+#define,PCHlength,0.18
+////////////////////////////////////////////////////////////////////////
+//PCH5I2 Design Parameters
+#define,PCH5I2maxwidth,200
+#define,PCH5I2minwidth,0.22
+#define,PCH5I2maxfinger,999
+#define,PCH5I2minfinger,1
+#define,PCH5I2maxmult,999
+#define PCH5I2minmult,1
+#define,PCH5I2length,0.6
+////////////////////////////////////////////////////////////////////////
+//AP5G6 power Design Parameters
+#define,AP5G6DW1maxwidth,200
+#define,AP5G6DW1minwidth,2
+#define,AP5G6DW1maxfinger,98
+#define,AP5G6DW1minfinger,2
+#define,AP5G6DW1length,0.2
+#define,AP5G6DW1maxmult,99
+#define,AP5G6DW1minmult,1
+
+//AP5G6 signal Design Parameters
+#define,AP5G6DC1maxwidth,200
+#define,AP5G6DC1minwidth,2
+#define,AP5G6DC1maxfinger,98
+#define,AP5G6DC1minfinger,2
+#define,AP5G6DC1length,0.6
+#define,AP5G6DC1maxmult,99
+#define,AP5G6DC1minmult,1
+////////////////////////////////////////////////////////////////////////
+//AP5G12 power Design Parameters
+#define,AP5G12DW2maxwidth,200
+#define,AP5G12DW2minwidth,2
+#define,AP5G12DW2maxfinger,98
+#define,AP5G12DW2minfinger,2
+#define,AP5G12DW2length,0.35
+#define,AP5G12DW2maxmult,99
+#define,AP5G12DW2minmult,1
+
+//AP5G12 signal Design Parameters
+#define,AP5G12DC1maxwidth,200
+#define,AP5G12DC1minwidth,2.0
+#define,AP5G12DC1maxfinger,98
+#define,AP5G12DC1minfinger,2
+#define,AP5G12DC1length,0.6
+#define,AP5G12DC1maxmult,99
+#define,AP5G12DC1minmult,1
+////////////////////////////////////////////////////////////////////////
+//AP5G20 power Design Parameters
+#define,AP5G20DW2maxwidth,200
+#define,AP5G20DW2minwidth,2.0
+#define,AP5G20DW2maxfinger,98
+#define,AP5G20DW2minfinger,2
+#define,AP5G20DW2length,0.35
+#define,AP5G20DW2maxmult,99
+#define,AP5G20DW2minmult,1
+
+//AP5G20 signal Design Parameters
+#define,AP5G20DC1maxwidth,200
+#define,AP5G20DC1minwidth,2
+#define,AP5G20DC1maxfinger,98
+#define,AP5G20DC1minfinger,2
+#define,AP5G20DC1length,0.6
+#define,AP5G20DC1maxmult,99
+#define,AP5G20DC1minmult,1
+////////////////////////////////////////////////////////////////////////
+//AP5G24 power Design Parameters
+#define,AP5G24DW2maxwidth,200
+#define,AP5G24DW2minwidth,2
+#define,AP5G24DW2maxfinger,98
+#define,AP5G24DW2minfinger,2
+#define,AP5G24DW2length,0.35
+#define,AP5G24DW2maxmult,99
+#define,AP5G24DW2minmult,1
+
+//AP5G24 signal Design Parameters
+#define,AP5G24DC1maxwidth,200
+#define,AP5G24DC1minwidth,2
+#define,AP5G24DC1maxfinger,98
+#define,AP5G24DC1minfinger,2
+#define,AP5G24DC1length,0.6
+#define,AP5G24DC1maxmult,99
+#define,AP5G24DC1minmult,1
+////////////////////////////////////////////////////////////////////////
+//AP5G30 power Design Parameters
+#define,AP5G30DW2maxwidth,200
+#define,AP5G30DW2minwidth,2
+#define,AP5G30DW2maxfinger,98
+#define,AP5G30DW2minfinger,2
+#define,AP5G30DW2length,0.35
+#define,AP5G30DW2maxmult,99
+#define,AP5G30DW2minmult,1
+
+//AP5G30 signal Design Parameters
+#define,AP5G30DC1maxwidth,200
+#define,AP5G30DC1minwidth,2
+#define,AP5G30DC1maxfinger,98
+#define,AP5G30DC1minfinger,2
+#define,AP5G30DC1length,0.6
+#define,AP5G30DC1maxmult,99
+#define,AP5G30DC1minmult,1
+////////////////////////////////////////////////////////////////////////
+//AP4G36 power design Parameters
+#define,AP5G36DW1maxwidth,200
+#define,AP5G36DW1minwidth,2
+#define,AP5G36DW1maxfinger,98
+#define,AP5G36DW1minfinger,2
+#define,AP5G36DW1length,0.2
+#define,AP5G36DW1maxmult,99
+#define,AP5G36DW1minmult,1
+////////////////////////////////////////////////////////////////////////
+//AP5G40 signal Design Parameters
+#define,AP5G40DC1maxwidth,200
+#define,AP5G40DC1minwidth,2
+#define,AP5G40DC1maxfinger,98
+#define,AP5G40DC1minfinger,2
+#define,AP5G40DC1maxlength,20.0
+#define,AP5G40DC1minlength,2.0
+#define,AP5G40DC1maxmult,99
+#define,AP5G40DC1minmult,1
+////////////////////////////////////////////////////////////////////////
+//AP4G40 power design Parameters
+#define,AP5G40DW3maxwidth,200
+#define,AP5G40DW3minwidth,2
+#define,AP5G40DW3maxfinger,98
+#define,AP5G40DW3minfinger,2
+#define,AP5G40DW3length,0.35
+#define,AP5G40DW3maxmult,99
+#define,AP5G40DW3minmult,1
+////////////////////////////////////////////////////////////////////////
+//AP4G45 power design Parameters
+#define,AP5G45DW1maxwidth,200
+#define,AP5G45DW1minwidth,2
+#define,AP5G45DW1maxfinger,98
+#define,AP5G45DW1minfinger,2
+#define,AP5G45DW1length,0.35
+#define,AP5G45DW1maxmult,99
+#define,AP5G45DW1minmult,1
+
+//AP5G45 signal Design Parameters
+#define,AP5G45DC1maxwidth,200
+#define,AP5G45DC1minwidth,2
+#define,AP5G45DC1maxfinger,98
+#define,AP5G45DC1minfinger,2
+#define,AP5G45DC1maxlength,0.6
+#define,AP5G45DC1minlength,20.0
+#define,AP5G45DC1maxmult,99
+#define,AP5G45DC1minmult,1
+////////////////////////////////////////////////////////////////////////
+//AP5G60 power Design Parameters
+#define,AP5G60DW2maxwidth,200
+#define,AP5G60DW2minwidth,2
+#define,AP5G60DW2maxfinger,98
+#define,AP5G60DW2minfinger,2
+#define,AP5G60DW2length,0.35
+#define,AP5G60DW2maxmult,99
+#define,AP5G60DW2minmult,1
+
+//AP5G60 signal Design Parameters
+#define,AP5G60DC1maxwidth,200
+#define,AP5G60DC1minwidth,2
+#define,AP5G60DC1maxfinger,98
+#define,AP5G60DC1minfinger,2
+#define,AP5G60DC1maxlength,20.0
+#define,AP5G60DC1minlength,2.0
+#define,AP5G60DC1maxmult,99
+#define,AP5G60DC1minmult,1
+////////////////////////////////////////////////////////////////////////
+// *********************************************
+endbio// *********************************************
+
+
+
+
+
+
+
+
+
+
+
+
+

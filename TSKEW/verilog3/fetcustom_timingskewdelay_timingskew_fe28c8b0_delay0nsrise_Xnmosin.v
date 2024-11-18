@@ -1,0 +1,41 @@
+// Celera Brick Generator Confidential
+//CORE:fetcustom
+//NAME:fetcustom_timingskewdelay_timingskew_fe28c8b0_delay0nsrise_Xnmosin
+//GENERATOR REVISION:0.5.0
+//FET TYPE:n
+//VDS RATING:6V
+
+//Celera Confidential Do Not Copy PMOS Signal
+module nch5i2_6t_1p0x0p6x1x1 (DRAIN,GATE,SOURCE,BULK,SUB);
+  input GATE;
+  input BULK;
+  input SUB;
+  inout SOURCE;
+  inout DRAIN;
+endmodule
+
+//Celera Confidential Do Not Copy fetcustom_timingskewdelay_timingskew_fe28c8b0_delay0nsrise_Xnmosin
+//Celera Confidential Symbol Generator
+//signal
+//Vds 6V
+module fetcustom_timingskewdelay_timingskew_fe28c8b0_delay0nsrise_Xnmosin (GATE,DRAIN,SOURCE,
+NMOSiso6,CELSUB);
+input NMOSiso6;
+input GATE;
+inout SOURCE;
+inout DRAIN;
+input CELSUB;
+
+//Celera Confidential Do Not Copy nch5i2_6t_1p0x0p6x1x1
+nch5i2_6t_1p0x0p6x1x1 Xnmosin(
+.GATE (GATE),
+.BULK (NMOSiso6),
+.SUB (CELSUB),
+.SOURCE (SOURCE),
+.DRAIN (DRAIN)
+);
+//,diesize,nch5i2_6t_1p0x0p6x1x1
+
+//Celera Confidential Do Not Copy Module End
+//Celera Schematic Generator
+endmodule
