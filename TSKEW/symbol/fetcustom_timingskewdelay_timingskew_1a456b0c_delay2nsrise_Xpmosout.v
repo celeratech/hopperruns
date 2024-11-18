@@ -1,8 +1,10 @@
-//Celera:fetcustom_timingskewdelay_timingskew_1a456b0c_delay2nsrise_Xpmosout
+//Celera:fetcustom_timingskewdelay_timingskew_1a456b0c_delay2nsrise_Xpmos#define,REFERENCEccncode,15
+
 //Celera Confidential Symbol Generator
 //signal
 //Vds 6V
-module fetcustom_timingskewdelay_timingskew_1a456b0c_delay2nsrise_Xpmosout (GATE,DRAIN,SOURCE,
+module fetcustom_timingskewdelay_timingskew_1a456b0c_delay2nsrise_Xpmos#define,REFERENCEccncode,15
+ (GATE,DRAIN,SOURCE,
 PMOSiso6,CELSUB);
 input PMOSiso6;
 input GATE;
