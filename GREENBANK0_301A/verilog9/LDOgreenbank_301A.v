@@ -16,7 +16,7 @@ endmodule
 module LDOgreenbankLDOconfigure (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,celkelvin_LDO10_9e0b544b,celkelvin_MUDG_9e0b544b5);
   output  LDO;
   input  REF;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   input  MUDV;
   input  CELG59462;
   input  CELV96848;
@@ -30,7 +30,7 @@ endmodule
 module LDOgreenbankLDOconfigure20mA (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,celkelvin_LDO14_1d518b73,celkelvin_MUDG_1d518b736);
   output  LDO;
   input  REF;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   input  MUDV;
   input  CELG59462;
   input  CELV96848;
@@ -59,7 +59,7 @@ endmodule
 module LDOgreenbankLDOfixed20mA (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,celkelvin_LDO12_73f01841,celkelvin_MUDG_73f018418);
   output  LDO;
   input  REF;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   input  MUDV;
   input  CELG59462;
   input  CELV96848;
@@ -72,7 +72,7 @@ endmodule
 
 module LDOgreenbankLDOstandalone (LDO,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,CELPOWER_LDO_601da658,celkelvin_LDO9_67c0774a,celkelvin_MUDG_67c0774a9);
   output  LDO;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   input  MUDV;
   input  CELG59462;
   input  CELV96848;
@@ -86,7 +86,7 @@ endmodule
 
 module LDOgreenbankLDOstandalone20mA (LDO,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,celkelvin_LDO13_f8678617,celkelvin_MUDG_f867861710);
   output  LDO;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   input  MUDV;
   input  CELG59462;
   input  CELV96848;
@@ -100,7 +100,7 @@ endmodule
 module LDOgreenbankLDOunity (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,CELPOWER_LDO_90e98eb0,celkelvin_LDO11_c0cd2385,celkelvin_MUDG_c0cd238511);
   output  LDO;
   input  REF;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   input  MUDV;
   input  CELG59462;
   input  CELV96848;
@@ -142,7 +142,7 @@ endmodule
 module LDOgreenbank_301A (REF, tdo, tmi, LDO8, LDO9, MUDV, LDO10, LDO11, LDO12, LDO13, LDO14, LDO15, CELG59462, CELV96848, CELSUB40948, CELPOWER_LDO_214c0f74, CELPOWER_LDO_4b7cb037, CELPOWER_LDO_601da658, CELPOWER_LDO_90e98eb0, celkelvin_LDO8_635a8467, celkelvin_LDO9_67c0774a, celkelvin_LDO10_9e0b544b, celkelvin_LDO11_c0cd2385, celkelvin_LDO12_73f01841, celkelvin_LDO13_f8678617, celkelvin_LDO14_1d518b73, celkelvin_LDO15_ceb54526, celkelvin_MUDG_1d518b736, celkelvin_MUDG_635a84677, celkelvin_MUDG_67c0774a9, celkelvin_MUDG_73f018418, celkelvin_MUDG_9e0b544b5, celkelvin_MUDG_ceb545264, celkelvin_MUDG_c0cd238511, celkelvin_MUDG_f867861710, register_LDOconfigurationA_775ec168_Xdatamap2, register_LDOconfigurationA_d0b55acf_Xdatamap1);
 input  REF;
 inout  tdo;
-input [4:0] tmi;
+inout [4:0] tmi;
 output  LDO8;
 output  LDO9;
 input  MUDV;
