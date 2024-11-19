@@ -6,7 +6,7 @@ module CAPcalculator (porb,CELG59462,CELV96848,PORB97836,CELSUB40948,mode_backup
   input  PORB97836;
   input  CELSUB40948;
   input  mode_backup;
-  input  enable_shunt;
+  output  enable_shunt;
   input  meas_vcap1_0;
   input  meas_vcap1_1;
   input  meas_vcap1_2;
@@ -71,11 +71,11 @@ module CAPcalculator (porb,CELG59462,CELV96848,PORB97836,CELSUB40948,mode_backup
   input  meas_vcap4_13;
   input  meas_vcap4_14;
   input  meas_vcap4_15;
-  input  enable_balancer;
+  output  enable_balancer;
   input  clock_calculator;
   output  done_capcalculate;
-  input  maximum_channel_0;
-  input  maximum_channel_1;
+  output  maximum_channel_0;
+  output  maximum_channel_1;
   output  fault_capcalculate;
   input  enable_capcalculator;
   output  shunt_registeractive;

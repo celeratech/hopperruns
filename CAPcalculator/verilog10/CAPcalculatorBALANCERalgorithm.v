@@ -68,9 +68,11 @@ module delayclock_5fb23497 (in,out,CELG,CELV,clock,CELSUB,celeraporb);
   input  celeraporb;
 endmodule
 
-module dff_fc5ad7bd (d,ck,rb,CELG,CELV,CELSUB);
+module dff_fc5ad7bd (d,q,ck,qb,rb,CELG,CELV,CELSUB);
   input  d;
+  output  q;
   input  ck;
+  output  qb;
   input  rb;
   input  CELG;
   input  CELV;
@@ -84,6 +86,15 @@ module inv_12e192f5 (i,o,SUB,CELG,CELV);
   input  CELG;
   input  CELV;
 endmodule
+
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
 
 // ------------------------ Module Verilog ---------------
 module CAPcalculatorBALANCERalgorithm (porb, CELG59462, CELV96848, PORB97836, maximum_0, maximum_1, maximum_2, maximum_3, maximum_4, maximum_5, maximum_6, maximum_7, maximum_8, maximum_9, minimum_0, minimum_1, minimum_2, minimum_3, minimum_4, minimum_5, minimum_6, minimum_7, minimum_8, minimum_9, maximum_10, maximum_11, maximum_12, maximum_13, maximum_14, maximum_15, minimum_10, minimum_11, minimum_12, minimum_13, minimum_14, minimum_15, ok_maximum, ok_minimum, CELSUB40948, on_balancer, vbalancer_0, vbalancer_1, vbalancer_2, vbalancer_3, vbalancer_4, vbalancer_5, vbalancer_6, vbalancer_7, clock_calculator, vbalancer_hyst_0, vbalancer_hyst_1, vbalancer_hyst_2, vbalancer_hyst_3, vbalancer_hyst_4, vbalancer_hyst_5, vbalancer_hyst_6, vbalancer_hyst_7, calculate_balancer, ok_balanceralgorithm, calculate_balancerminmax, register_A_5aad4f3a_XU19, register_A_c4858523_XU17);
@@ -245,7 +256,9 @@ delayclock_5fb23497 XU21 (
 
 dff_fc5ad7bd XU26 (
 .d(net_168),
+.q(net_169),
 .ck(net_167),
+.qb(net_172),
 .rb(porb),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -258,6 +271,10 @@ inv_12e192f5 XU29 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
+);
+
+STONEnoconn XNC169 (
+.noconn(net_169)
 );
 
 endmodule

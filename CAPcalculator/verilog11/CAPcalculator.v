@@ -219,8 +219,8 @@ module CAPcalculatorMAXIMUM (porb,CELG59462,CELV96848,PORB97836,maximum_0,maximu
   input  select_shunt_1;
   input  select_shunt_2;
   input  select_shunt_3;
-  input  maximum_channel_0;
-  input  maximum_channel_1;
+  output  maximum_channel_0;
+  output  maximum_channel_1;
   input  calculate_shuntmaximum;
   input  calculate_balancerminmax;
 endmodule
@@ -322,11 +322,11 @@ module CAPcalculatorOUTPUT (porb,CELG59462,CELV96848,PORB97836,CELSUB40948,enabl
   input  CELV96848;
   input  PORB97836;
   input  CELSUB40948;
-  input  enable_shunt;
+  output  enable_shunt;
   input  shunt_status;
   input  balancer_status;
   input  clock_calculate;
-  input  enable_balancer;
+  output  enable_balancer;
   input  done_capcalculate;
 endmodule
 
@@ -426,10 +426,10 @@ module CAPcalculatorSHUNTalgorithm (porb,on_shunt,vshunt_0,vshunt_1,vshunt_2,vsh
   input  vshunt_hyst_5;
   input  vshunt_hyst_6;
   input  vshunt_hyst_7;
-  input  select_shunt_0;
-  input  select_shunt_1;
-  input  select_shunt_2;
-  input  select_shunt_3;
+  output  select_shunt_0;
+  output  select_shunt_1;
+  output  select_shunt_2;
+  output  select_shunt_3;
   input  calculate_shunt;
   input  clock_calculator;
   output  ok_shuntalgorithm;
@@ -446,7 +446,7 @@ input  CELV96848;
 input  PORB97836;
 input  CELSUB40948;
 input  mode_backup;
-  input  enable_shunt;
+output  enable_shunt;
 input  meas_vcap1_0;
 input  meas_vcap1_1;
 input  meas_vcap1_2;
@@ -511,11 +511,11 @@ input  meas_vcap4_12;
 input  meas_vcap4_13;
 input  meas_vcap4_14;
 input  meas_vcap4_15;
-  input  enable_balancer;
+output  enable_balancer;
 input  clock_calculator;
 output  done_capcalculate;
-input  maximum_channel_0;
-input  maximum_channel_1;
+output  maximum_channel_0;
+output  maximum_channel_1;
 output  fault_capcalculate;
 input  enable_capcalculator;
 output  shunt_registeractive;

@@ -7,9 +7,11 @@ module dbuf_e926e395 (i,o,SUB,CELG,CELV);
   input  CELV;
 endmodule
 
-module dff_fc5ad7bd (d,ck,rb,CELG,CELV,CELSUB);
+module dff_fc5ad7bd (d,q,ck,qb,rb,CELG,CELV,CELSUB);
   input  d;
+  output  q;
   input  ck;
+  output  qb;
   input  rb;
   input  CELG;
   input  CELV;
@@ -31,8 +33,8 @@ input  ck;
 input  rb;
 input  d_0;
 input  d_1;
-  input  q_0;
-  input  q_1;
+output  q_0;
+output  q_1;
 input  CELG59462;
 input  CELV96848;
 input  CELSUB40948;
@@ -59,7 +61,9 @@ dbuf_e926e395 XU4 (
 
 dff_fc5ad7bd XU13 (
 .d(d_0),
+.q(q_0),
 .ck(net_28),
+.qb(net_23),
 .rb(net_30),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -68,7 +72,9 @@ dff_fc5ad7bd XU13 (
 
 dff_fc5ad7bd XU14 (
 .d(d_1),
+.q(q_1),
 .ck(net_28),
+.qb(net_24),
 .rb(net_30),
 .CELG(CELG59462),
 .CELV(CELV96848),

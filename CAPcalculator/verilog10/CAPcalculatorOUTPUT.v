@@ -7,9 +7,11 @@ module dbuf_e926e395 (i,o,SUB,CELG,CELV);
   input  CELV;
 endmodule
 
-module dff_fc5ad7bd (d,ck,rb,CELG,CELV,CELSUB);
+module dff_fc5ad7bd (d,q,ck,qb,rb,CELG,CELV,CELSUB);
   input  d;
+  output  q;
   input  ck;
+  output  qb;
   input  rb;
   input  CELG;
   input  CELV;
@@ -33,11 +35,11 @@ input  CELG59462;
 input  CELV96848;
 input  PORB97836;
 input  CELSUB40948;
-  input  enable_shunt;
+output  enable_shunt;
 input  shunt_status;
 input  balancer_status;
 input  clock_calculate;
-  input  enable_balancer;
+output  enable_balancer;
 input  done_capcalculate;
 
 
@@ -70,7 +72,9 @@ dbuf_e926e395 XU18 (
 
 dff_fc5ad7bd Xdff1 (
 .d(net_45),
+.q(enable_shunt),
 .ck(net_46),
+.qb(net_32),
 .rb(net_47),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -79,7 +83,9 @@ dff_fc5ad7bd Xdff1 (
 
 dff_fc5ad7bd Xdff2 (
 .d(net_48),
+.q(enable_balancer),
 .ck(net_46),
+.qb(net_33),
 .rb(net_47),
 .CELG(CELG59462),
 .CELV(CELV96848),

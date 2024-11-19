@@ -63,9 +63,11 @@ module VESPAasmINPUT1 (o,i0,Tstate,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module dff_fc5ad7bd (d,ck,rb,CELG,CELV,CELSUB);
+module dff_fc5ad7bd (d,q,ck,qb,rb,CELG,CELV,CELSUB);
   input  d;
+  output  q;
   input  ck;
+  output  qb;
   input  rb;
   input  CELG;
   input  CELV;
@@ -220,10 +222,10 @@ input  meas_vcap4_15;
   input  vshunt_hyst_5;
   input  vshunt_hyst_6;
   input  vshunt_hyst_7;
-input  select_shunt_0;
-input  select_shunt_1;
-input  select_shunt_2;
-input  select_shunt_3;
+output  select_shunt_0;
+output  select_shunt_1;
+output  select_shunt_2;
+output  select_shunt_3;
 input  calculate_shunt;
 input  clock_calculator;
 output  ok_shuntalgorithm;
@@ -478,7 +480,9 @@ VESPAasmINPUT1 XU8 (
 
 dff_fc5ad7bd XU1 (
 .d(net_354),
+.q(select_shunt_0),
 .ck(net_358),
+.qb(net_359),
 .rb(calculate_shunt),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -533,7 +537,9 @@ delayclock_feaaa0d6 XU9 (
 
 dff_fc5ad7bd XU12 (
 .d(net_361),
+.q(select_shunt_1),
 .ck(net_358),
+.qb(net_363),
 .rb(calculate_shunt),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -542,7 +548,9 @@ dff_fc5ad7bd XU12 (
 
 dff_fc5ad7bd XU13 (
 .d(net_367),
+.q(select_shunt_2),
 .ck(net_358),
+.qb(net_369),
 .rb(calculate_shunt),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -551,7 +559,9 @@ dff_fc5ad7bd XU13 (
 
 dff_fc5ad7bd XU14 (
 .d(net_371),
+.q(select_shunt_3),
 .ck(net_358),
+.qb(net_373),
 .rb(calculate_shunt),
 .CELG(CELG59462),
 .CELV(CELV96848),
