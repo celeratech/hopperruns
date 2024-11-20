@@ -1,0 +1,80 @@
+* Z:\celera\projects\Simplis\playbrian\nesto\301a\verification\sim_DFFtest.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map PORB 33
+.node_map RCLK 30
+.node_map RQB 37
+.node_map RD 34
+.node_map FCLK 32
+.node_map FQB 36
+.node_map FD 39
+.node_map RQ 35
+.node_map RPORB 40
+.node_map FQ 38
+.node_map FPORB 41
+.node_map CLK 31
+.node_map GND 42
+.node_map IN 29
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 300u 0
+.globalvar REF=1.0
+.globalvar TEMP=25
+.globalvar VIN=5
+.globalvar tdext_khz=1000
+
+X$DFFtest 29 31 30 33 32 34 35 37 39 38 36 40 41 DFFtest
+
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+** From Z:\celera\projects\Simplis\playbrian\nesto\301a\design\DFFtest.sxcmp
+.subckt DFFtest 49 50 51 52 53 54 55 57 56 58 59 60 61
+*#hierarchy
+.node_map PORB 52
+.node_map RCLK 51
+.node_map RQB 57
+.node_map RD 54
+.node_map FCLK 53
+.node_map FQB 59
+.node_map FD 56
+.node_map RQ 55
+.node_map RPORB 60
+.node_map FQ 58
+.node_map FPORB 61
+.node_map CLK 50
+.node_map IN 49
+X$dff1 54 51 55 57 60 dff vars: dff_edge='rise' dff_outputs='both' dff_bits=1 dff_vmax=6
+X$dff2 56 53 58 59 61 dff vars: dff_edge='fall' dff_outputs='both' dff_bits=1 dff_vmax=6
+X$pinprobe1 54 pinprobe vars: pinprobe_description='Rising_D_Input' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe10 50 pinprobe vars: pinprobe_description='CLK' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 60 pinprobe vars: pinprobe_description='Rising_PORB_Input' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe12 61 pinprobe vars: pinprobe_description='Falling_PORB_Input' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe13 52 pinprobe vars: pinprobe_description='PORB' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 55 pinprobe vars: pinprobe_description='Rising_Q_Output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe3 57 pinprobe vars: pinprobe_description='Rising_QB_Output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe4 56 pinprobe vars: pinprobe_description='Falling_D_Input' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe5 58 pinprobe vars: pinprobe_description='Falling_Q_Output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe6 59 pinprobe vars: pinprobe_description='Falling_QB_Output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe7 51 pinprobe vars: pinprobe_description='Rising_CLK_Input' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe8 53 pinprobe vars: pinprobe_description='Falling_CLK_Input' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe9 49 pinprobe vars: pinprobe_description='Input' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$U1 54 49 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U2 56 49 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U3 51 50 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U4 50 53 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U5 60 52 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U6 61 52 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+.ends DFFtest
+
+** From Z:\celera\projects\Simplis\playbrian\nesto\301a\verification\FORCE_DFFtest.sxcmp
+
+
+.end
