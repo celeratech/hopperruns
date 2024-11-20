@@ -15,6 +15,15 @@ module inv_12e192f5 (i,o,SUB,CELG,CELV);
   input  CELV;
 endmodule
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 module dff_e5264df5 (d,q,ck,qb,rb,CELG,CELV,CELSUB);
   input  d;
   output  q;
@@ -106,6 +115,54 @@ dbuf_e926e395 XU6 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
+);
+
+dbuf_e926e395 XU7 (
+.i(RQ),
+.o(net_53),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
+);
+
+dbuf_e926e395 XU10 (
+.i(RQB),
+.o(net_54),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
+);
+
+dbuf_e926e395 XU11 (
+.i(FQ),
+.o(net_55),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
+);
+
+dbuf_e926e395 XU13 (
+.i(FQB),
+.o(net_56),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
+);
+
+STONEnoconn XNC53 (
+.noconn(net_53)
+);
+
+STONEnoconn XNC54 (
+.noconn(net_54)
+);
+
+STONEnoconn XNC55 (
+.noconn(net_55)
+);
+
+STONEnoconn XNC56 (
+.noconn(net_56)
 );
 
 dff_e5264df5 Xdff1 (

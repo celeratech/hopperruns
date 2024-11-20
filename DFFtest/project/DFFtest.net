@@ -36,42 +36,50 @@ X$DFFtest 29 31 30 33 32 34 35 37 39 38 36 40 41 DFFtest
 
 X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
 ** From Z:\celera\projects\Simplis\playbrian\nesto\301a\design\DFFtest.sxcmp
-.subckt DFFtest 49 50 51 52 53 54 55 57 56 58 59 60 61
+.subckt DFFtest 57 58 59 60 61 62 63 65 64 66 67 68 69
 *#hierarchy
-.node_map PORB 52
-.node_map RCLK 51
-.node_map RQB 57
-.node_map RD 54
-.node_map FCLK 53
-.node_map FQB 59
-.node_map FD 56
-.node_map RQ 55
-.node_map RPORB 60
-.node_map FQ 58
-.node_map FPORB 61
-.node_map CLK 50
-.node_map IN 49
-X$dff1 54 51 55 57 60 dff vars: dff_edge='rise' dff_outputs='both' dff_bits=1 dff_vmax=6
-X$dff2 56 53 58 59 61 dff vars: dff_edge='fall' dff_outputs='both' dff_bits=1 dff_vmax=6
-X$pinprobe1 54 pinprobe vars: pinprobe_description='Rising_D_Input' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
-X$pinprobe10 50 pinprobe vars: pinprobe_description='CLK' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe11 60 pinprobe vars: pinprobe_description='Rising_PORB_Input' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
-X$pinprobe12 61 pinprobe vars: pinprobe_description='Falling_PORB_Input' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
-X$pinprobe13 52 pinprobe vars: pinprobe_description='PORB' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe2 55 pinprobe vars: pinprobe_description='Rising_Q_Output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
-X$pinprobe3 57 pinprobe vars: pinprobe_description='Rising_QB_Output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
-X$pinprobe4 56 pinprobe vars: pinprobe_description='Falling_D_Input' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
-X$pinprobe5 58 pinprobe vars: pinprobe_description='Falling_Q_Output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
-X$pinprobe6 59 pinprobe vars: pinprobe_description='Falling_QB_Output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
-X$pinprobe7 51 pinprobe vars: pinprobe_description='Rising_CLK_Input' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
-X$pinprobe8 53 pinprobe vars: pinprobe_description='Falling_CLK_Input' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
-X$pinprobe9 49 pinprobe vars: pinprobe_description='Input' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$U1 54 49 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
-X$U2 56 49 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
-X$U3 51 50 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
-X$U4 50 53 inv vars: logicgate_type='inv' logicgate_vmax=6
-X$U5 60 52 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
-X$U6 61 52 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+.node_map PORB 60
+.node_map RCLK 59
+.node_map RQB 65
+.node_map RD 62
+.node_map FCLK 61
+.node_map FQB 67
+.node_map FD 64
+.node_map RQ 63
+.node_map RPORB 68
+.node_map FQ 66
+.node_map FPORB 69
+.node_map CLK 58
+.node_map IN 57
+X$dff1 62 59 63 65 68 dff vars: dff_edge='rise' dff_outputs='both' dff_bits=1 dff_vmax=6
+X$dff2 64 61 66 67 69 dff vars: dff_edge='fall' dff_outputs='both' dff_bits=1 dff_vmax=6
+X$pinprobe1 62 pinprobe vars: pinprobe_description='Rising_D_Input' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe10 58 pinprobe vars: pinprobe_description='CLK' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 68 pinprobe vars: pinprobe_description='Rising_PORB_Input' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe12 69 pinprobe vars: pinprobe_description='Falling_PORB_Input' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe13 60 pinprobe vars: pinprobe_description='PORB' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 63 pinprobe vars: pinprobe_description='Rising_Q_Output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe3 65 pinprobe vars: pinprobe_description='Rising_QB_Output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe4 64 pinprobe vars: pinprobe_description='Falling_D_Input' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe5 66 pinprobe vars: pinprobe_description='Falling_Q_Output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe6 67 pinprobe vars: pinprobe_description='Falling_QB_Output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe7 59 pinprobe vars: pinprobe_description='Rising_CLK_Input' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe8 61 pinprobe vars: pinprobe_description='Falling_CLK_Input' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe9 57 pinprobe vars: pinprobe_description='Input' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$U1 62 57 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U10 54 65 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U11 55 66 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U12 56 celeranoconn vars: ='%'
+X$U13 56 67 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U14 55 celeranoconn vars: ='%'
+X$U2 64 57 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U3 59 58 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U4 58 61 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U5 68 60 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U6 69 60 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U7 53 63 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U8 53 celeranoconn vars: ='%'
+X$U9 54 celeranoconn vars: ='%'
 .ends DFFtest
 
 ** From Z:\celera\projects\Simplis\playbrian\nesto\301a\verification\FORCE_DFFtest.sxcmp
