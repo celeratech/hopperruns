@@ -59,7 +59,7 @@ limit,fet_calculator,choose1,maximum
 user,Type,p
 description,FET type
 user,Ron,500 Ohm
-user,Ron_Design,-nan Ohm
+user,Ron_Design,208.333 Ohm
 description,FET on resistance
 user,Vds,6V
 description,FET Maximum Vds rating
@@ -155,7 +155,7 @@ trim,description7,empty
 // *********************************************
 //Layout Parameters
 powerfet,layout instruction
-placeFET 0 0 8.360 10.380 2 2 standardmetal
+placeFET 0 0 8.360 24.380 1 0 standardmetal
 //fetpower.bio
 revision,layout,0p1
 layout,fetpower
@@ -223,7 +223,7 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,1.2
+#define,PROJECTreference,TBD
 #define,PROJECTsupply,5
 #define,TaRoom,25
 #define,ground,0.0
@@ -262,11 +262,8 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,ap5g6dw1_5t_2p0x0p2x2x1,216101
-sub_area,ap5g6dw1_5t_2p0x0p2x2x1,216101
-sub_area,ap5g6dw1_5t_2p0x0p2x2x1,216101
-sub_area,ap5g6dw1_5t_2p0x0p2x2x1,216101
-generate_area,fet_paddigitaloutput_0bafb000_Xpmos,864404
+sub_area,ap5g6dw1_5t_16p0x0p2x2p0x1p0,20186566
+generate_area,fet_paddigitaloutput_0bafb000_Xpmos,20186566
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.3
@@ -420,6 +417,8 @@ revision,pinorder,0.2.0
 pinorder,SOURCE,DRAIN,GATE,net_skip,net_skip,net_skip
 
 endpinorder
+//**********************************************
+
 //**********************************************
 //Cell Pin Descriptions	
 //**********************************************	

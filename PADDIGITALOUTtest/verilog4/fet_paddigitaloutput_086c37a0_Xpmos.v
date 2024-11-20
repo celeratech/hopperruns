@@ -14,7 +14,7 @@
 //DFT:no
 
 //Celera Confidential Do Not Copy PMOS
-module ap5g6dw1_5t_2p0x0p2x2x1 (DRAIN,GATE,SOURCE,SUB);
+module ap5g6dw1_5t_16p0x0p2x2p0x1p0 (DRAIN,GATE,SOURCE,SUB);
   input GATE;
   input SUB;
   inout SOURCE;
@@ -33,41 +33,14 @@ inout SOURCE;
 inout DRAIN;
 input SUB;
 
-//Celera Confidential Do Not Copy ap5g6dw1_5t_2p0x0p2x2x1
-ap5g6dw1_5t_2p0x0p2x2x1 Xpmos0(
+//Celera Confidential Do Not Copy ap5g6dw1_5t_16p0x0p2x2p0x1p0
+ap5g6dw1_5t_16p0x0p2x2p0x1p0 Xpmos0(
 .DRAIN (DRAIN),
 .GATE (GATE),
 .SOURCE (SOURCE),
 .SUB (SUB)
 );
-//,diesize,ap5g6dw1_5t_2p0x0p2x2x1
-
-//Celera Confidential Do Not Copy ap5g6dw1_5t_2p0x0p2x2x1
-ap5g6dw1_5t_2p0x0p2x2x1 Xpmos1(
-.DRAIN (DRAIN),
-.GATE (GATE),
-.SOURCE (SOURCE),
-.SUB (SUB)
-);
-//,diesize,ap5g6dw1_5t_2p0x0p2x2x1
-
-//Celera Confidential Do Not Copy ap5g6dw1_5t_2p0x0p2x2x1
-ap5g6dw1_5t_2p0x0p2x2x1 Xpmos2(
-.DRAIN (DRAIN),
-.GATE (GATE),
-.SOURCE (SOURCE),
-.SUB (SUB)
-);
-//,diesize,ap5g6dw1_5t_2p0x0p2x2x1
-
-//Celera Confidential Do Not Copy ap5g6dw1_5t_2p0x0p2x2x1
-ap5g6dw1_5t_2p0x0p2x2x1 Xpmos3(
-.DRAIN (DRAIN),
-.GATE (GATE),
-.SOURCE (SOURCE),
-.SUB (SUB)
-);
-//,diesize,ap5g6dw1_5t_2p0x0p2x2x1
+//,diesize,ap5g6dw1_5t_16p0x0p2x2p0x1p0
 
 //Celera Confidential Do Not Copy Module End
 //Celera Schematic Generator

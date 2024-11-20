@@ -245,7 +245,7 @@ delay0_paddigitaloutput_bd611a76_Xflagfilter Xfilter(
 .CELV (SIMPV),
 .i (fault),
 .o (fault_paddigitaloutput),
-.SUB (CELSUB),
+.CELSUB (CELSUB),
 .CELG (CELG)
 );
 //,diesize,delay0_paddigitaloutput_bd611a76_Xflagfilter
