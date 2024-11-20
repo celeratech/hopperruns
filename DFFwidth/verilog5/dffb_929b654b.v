@@ -1,0 +1,383 @@
+// Celera Stone Generator Confidential
+//CORE:dffb
+//NAME:dffb_929b654b
+//GENERATOR REVISION:0.5.0
+//Clock Edge:rise
+
+//Celera Confidential Do Not Copy PEBBLEdffR
+//Verilog HDL for "PEBBLES", "PEBBLEdffR" "functional"
+
+
+module PEBBLEdffR ( q, qb, G, SUB, V, ck, d, rb );
+
+  input V;
+  output q;
+  input rb;
+  input d;
+  input G;
+  input ck;
+  input SUB;
+  output qb;
+endmodule
+
+//Celera Confidential Do Not Copy PEBBLEdbuf4
+//Verilog HDL for "PEBBLES", "PEBBLEdbuf4" "functional"
+
+
+module PEBBLEdbuf4 ( dbuf0, dbuf1, dbuf2, dbuf3, CELG, CELSUB, CELV, i );
+
+  input CELV;
+  output dbuf1;
+  input CELSUB;
+  output dbuf0;
+  output dbuf3;
+  output dbuf2;
+  input i;
+  input CELG;
+endmodule
+
+//Celera Confidential Do Not Copy WRAPPER16
+//Verilog HDL for "Generate", "WRAPPER16" "functional"
+
+
+module WRAPPER16 ( i, o0, o1, o2, o3, o4, o5, o6, o7, o8, o9, o15, o14, o13,
+o12, o11, o10 );
+
+  inout o9;
+  inout o7;
+  inout o5;
+  inout o10;
+  inout o12;
+  inout o4;
+  inout o6;
+  inout o1;
+  inout o13;
+  inout o0;
+  inout o3;
+  inout  [15:0] i;
+  inout o11;
+  inout o15;
+  inout o14;
+  inout o8;
+  inout o2;
+endmodule
+
+//Celera Confidential Do Not Copy dffb_929b654b
+//Celera Confidential Symbol Generator
+//DFF latch
+module dffb_929b654b (CELV,d,rb,ck,q,qb,CELG,CELSUB);
+input CELV;
+input [15:0]d;
+input rb;
+input ck;
+output [15:0]q;
+output [15:0]qb;
+input CELG;
+input CELSUB;
+
+//Celera Confidential Do Not Copy Pin i
+wire[15:0] i;
+
+//Celera Confidential Do Not Copy dffb
+PEBBLEdffR Xdffb_0(
+.V (CELV),
+.d (d0),
+.rb (rb0),
+.ck (ck0),
+.q (q0),
+.qb (qb0),
+.G (CELG),
+.SUB (CELSUB)
+);
+//,diesize,PEBBLEdffR
+
+//Celera Confidential Do Not Copy dffb
+PEBBLEdffR Xdffb_1(
+.V (CELV),
+.d (d1),
+.rb (rb0),
+.ck (ck0),
+.q (q1),
+.qb (qb1),
+.G (CELG),
+.SUB (CELSUB)
+);
+//,diesize,PEBBLEdffR
+
+//Celera Confidential Do Not Copy dffb
+PEBBLEdffR Xdffb_2(
+.V (CELV),
+.d (d2),
+.rb (rb0),
+.ck (ck0),
+.q (q2),
+.qb (qb2),
+.G (CELG),
+.SUB (CELSUB)
+);
+//,diesize,PEBBLEdffR
+
+//Celera Confidential Do Not Copy dffb
+PEBBLEdffR Xdffb_3(
+.V (CELV),
+.d (d3),
+.rb (rb0),
+.ck (ck0),
+.q (q3),
+.qb (qb3),
+.G (CELG),
+.SUB (CELSUB)
+);
+//,diesize,PEBBLEdffR
+
+//Celera Confidential Do Not Copy dffb
+PEBBLEdffR Xdffb_4(
+.V (CELV),
+.d (d4),
+.rb (rb1),
+.ck (ck1),
+.q (q4),
+.qb (qb4),
+.G (CELG),
+.SUB (CELSUB)
+);
+//,diesize,PEBBLEdffR
+
+//Celera Confidential Do Not Copy dffb
+PEBBLEdffR Xdffb_5(
+.V (CELV),
+.d (d5),
+.rb (rb1),
+.ck (ck1),
+.q (q5),
+.qb (qb5),
+.G (CELG),
+.SUB (CELSUB)
+);
+//,diesize,PEBBLEdffR
+
+//Celera Confidential Do Not Copy dffb
+PEBBLEdffR Xdffb_6(
+.V (CELV),
+.d (d6),
+.rb (rb1),
+.ck (ck1),
+.q (q6),
+.qb (qb6),
+.G (CELG),
+.SUB (CELSUB)
+);
+//,diesize,PEBBLEdffR
+
+//Celera Confidential Do Not Copy dffb
+PEBBLEdffR Xdffb_7(
+.V (CELV),
+.d (d7),
+.rb (rb1),
+.ck (ck1),
+.q (q7),
+.qb (qb7),
+.G (CELG),
+.SUB (CELSUB)
+);
+//,diesize,PEBBLEdffR
+
+//Celera Confidential Do Not Copy dffb
+PEBBLEdffR Xdffb_8(
+.V (CELV),
+.d (d8),
+.rb (rb2),
+.ck (ck2),
+.q (q8),
+.qb (qb8),
+.G (CELG),
+.SUB (CELSUB)
+);
+//,diesize,PEBBLEdffR
+
+//Celera Confidential Do Not Copy dffb
+PEBBLEdffR Xdffb_9(
+.V (CELV),
+.d (d9),
+.rb (rb2),
+.ck (ck2),
+.q (q9),
+.qb (qb9),
+.G (CELG),
+.SUB (CELSUB)
+);
+//,diesize,PEBBLEdffR
+
+//Celera Confidential Do Not Copy dffb
+PEBBLEdffR Xdffb_10(
+.V (CELV),
+.d (d10),
+.rb (rb2),
+.ck (ck2),
+.q (q10),
+.qb (qb10),
+.G (CELG),
+.SUB (CELSUB)
+);
+//,diesize,PEBBLEdffR
+
+//Celera Confidential Do Not Copy dffb
+PEBBLEdffR Xdffb_11(
+.V (CELV),
+.d (d11),
+.rb (rb2),
+.ck (ck2),
+.q (q11),
+.qb (qb11),
+.G (CELG),
+.SUB (CELSUB)
+);
+//,diesize,PEBBLEdffR
+
+//Celera Confidential Do Not Copy dffb
+PEBBLEdffR Xdffb_12(
+.V (CELV),
+.d (d12),
+.rb (rb3),
+.ck (ck3),
+.q (q12),
+.qb (qb12),
+.G (CELG),
+.SUB (CELSUB)
+);
+//,diesize,PEBBLEdffR
+
+//Celera Confidential Do Not Copy dffb
+PEBBLEdffR Xdffb_13(
+.V (CELV),
+.d (d13),
+.rb (rb3),
+.ck (ck3),
+.q (q13),
+.qb (qb13),
+.G (CELG),
+.SUB (CELSUB)
+);
+//,diesize,PEBBLEdffR
+
+//Celera Confidential Do Not Copy dffb
+PEBBLEdffR Xdffb_14(
+.V (CELV),
+.d (d14),
+.rb (rb3),
+.ck (ck3),
+.q (q14),
+.qb (qb14),
+.G (CELG),
+.SUB (CELSUB)
+);
+//,diesize,PEBBLEdffR
+
+//Celera Confidential Do Not Copy dffb
+PEBBLEdffR Xdffb_15(
+.V (CELV),
+.d (d15),
+.rb (rb3),
+.ck (ck3),
+.q (q15),
+.qb (qb15),
+.G (CELG),
+.SUB (CELSUB)
+);
+//,diesize,PEBBLEdffR
+
+//Celera Confidential Do Not Copy WRAPPER16
+WRAPPER16 XWRAPPER16_q(
+.o0 (q0),
+.o1 (q1),
+.o2 (q2),
+.o3 (q3),
+.o4 (q4),
+.o5 (q5),
+.o6 (q6),
+.o7 (q7),
+.o8 (q8),
+.o9 (q9),
+.o10 (q10),
+.o11 (q11),
+.o12 (q12),
+.o13 (q13),
+.o14 (q14),
+.o15 (q15),
+.i (q [15:0])
+);
+//,diesize,WRAPPER16
+
+//Celera Confidential Do Not Copy WRAPPER16
+WRAPPER16 XWRAPPER16_qb(
+.o0 (qb0),
+.o1 (qb1),
+.o2 (qb2),
+.o3 (qb3),
+.o4 (qb4),
+.o5 (qb5),
+.o6 (qb6),
+.o7 (qb7),
+.o8 (qb8),
+.o9 (qb9),
+.o10 (qb10),
+.o11 (qb11),
+.o12 (qb12),
+.o13 (qb13),
+.o14 (qb14),
+.o15 (qb15),
+.i (qb [15:0])
+);
+//,diesize,WRAPPER16
+
+//Celera Confidential Do Not Copy WRAPPER16
+WRAPPER16 XWRAPPER16_d(
+.o0 (d0),
+.o1 (d1),
+.o2 (d2),
+.o3 (d3),
+.o4 (d4),
+.o5 (d5),
+.o6 (d6),
+.o7 (d7),
+.o8 (d8),
+.o9 (d9),
+.o10 (d10),
+.o11 (d11),
+.o12 (d12),
+.o13 (d13),
+.o14 (d14),
+.o15 (d15),
+.i (d [15:0])
+);
+//,diesize,WRAPPER16
+
+//Celera Confidential Do Not Copy PEBBLEdbuf4
+PEBBLEdbuf4 XPEBBLEdbuf4_0(
+.dbuf0 (ck0),
+.dbuf1 (ck1),
+.dbuf2 (ck2),
+.dbuf3 (ck3),
+.i (ck),
+.CELV (CELV),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,PEBBLEdbuf4
+
+//Celera Confidential Do Not Copy PEBBLEdbuf4
+PEBBLEdbuf4 XPEBBLEdbuf4_1(
+.dbuf0 (rb0),
+.dbuf1 (rb1),
+.dbuf2 (rb2),
+.dbuf3 (rb3),
+.i (rb),
+.CELV (CELV),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,PEBBLEdbuf4
+
+//Celera Confidential Do Not Copy Module End
+//Celera Schematic Generator
+endmodule
