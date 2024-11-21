@@ -1,0 +1,296 @@
+* Z:\celera\projects\Simplis\playjoseph\NESTO\301a\verification\sim_TIMINGSKEWrising.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map D_1n_1 79
+.node_map D_1n_2 60
+.node_map D_1n_3 58
+.node_map D_1n_4 62
+.node_map D_1n_5 57
+.node_map D_4n_1 76
+.node_map D_4n_2 78
+.node_map D_4n_3 75
+.node_map D_4n_4 69
+.node_map D_4n_5 61
+.node_map D_2n_1 80
+.node_map D_2n_2 77
+.node_map D_2n_3 74
+.node_map D_2n_4 67
+.node_map D_2n_5 59
+.node_map D_8n_1 70
+.node_map D_8n_2 73
+.node_map D_8n_3 72
+.node_map D_8n_4 71
+.node_map D_8n_5 63
+.node_map GND 81
+.node_map IN 55
+.node_map D_0p5n_1 65
+.node_map D_0p5n_2 66
+.node_map D_0p5n_3 68
+.node_map D_0p5n_4 64
+.node_map D_0p5n_5 56
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 300u 0
+.globalvar REF=1.0
+.globalvar TEMP=25
+.globalvar VIN=5
+.globalvar tdext_khz=1000
+
+
+X$TIMINGSKEWrising 56 57 59 61 63 55 64 62 67 69 71 68 58 74 75 72 66 60 77 78 73 65 79 80 76 70 TIMINGSKEWrising
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+** From Z:\celera\projects\Simplis\playjoseph\NESTO\301a\verification\FORCE_TIMINGSKEWrising.sxcmp
+
+
+** From Z:\celera\projects\Simplis\playbrian\nesto\301a\design\TIMINGSKEWrising.sxcmp
+.subckt TIMINGSKEWrising 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263
+*#hierarchy
+.node_map BUS15$4 162
+.node_map BUS24$0 203
+.node_map BUS24$1 204
+.node_map BUS24$2 205
+.node_map BUS24$3 206
+.node_map BUS16$0 163
+.node_map BUS24$4 207
+.node_map BUS16$1 164
+.node_map BUS16$2 165
+.node_map BUS16$3 166
+.node_map BUS16$4 167
+.node_map BUS25$0 208
+.node_map BUS25$1 209
+.node_map BUS25$2 210
+.node_map BUS25$3 211
+.node_map BUS17$0 168
+.node_map BUS25$4 212
+.node_map BUS17$1 169
+.node_map BUS17$2 170
+.node_map BUS17$3 171
+.node_map BUS1$0 88
+.node_map BUS17$4 172
+.node_map BUS1$1 89
+.node_map BUS26$0 213
+.node_map BUS1$2 90
+.node_map BUS26$1 214
+.node_map BUS1$3 91
+.node_map BUS26$2 215
+.node_map BUS1$4 92
+.node_map BUS26$3 216
+.node_map BUS18$0 173
+.node_map BUS26$4 217
+.node_map BUS18$1 174
+.node_map BUS18$2 175
+.node_map BUS18$3 176
+.node_map BUS2$0 93
+.node_map BUS18$4 177
+.node_map BUS2$1 94
+.node_map BUS27$0 218
+.node_map BUS2$2 95
+.node_map BUS27$1 219
+.node_map BUS2$3 96
+.node_map BUS27$2 220
+.node_map BUS2$4 97
+.node_map BUS27$3 221
+.node_map BUS19$0 178
+.node_map BUS27$4 222
+.node_map BUS19$1 179
+.node_map BUS19$2 180
+.node_map BUS19$3 181
+.node_map BUS3$0 98
+.node_map BUS19$4 182
+.node_map BUS3$1 99
+.node_map BUS28$0 223
+.node_map BUS3$2 100
+.node_map BUS28$1 224
+.node_map BUS3$3 101
+.node_map BUS28$2 225
+.node_map BUS3$4 102
+.node_map BUS28$3 226
+.node_map BUS28$4 227
+.node_map BUS4$0 103
+.node_map BUS4$1 104
+.node_map BUS29$0 228
+.node_map BUS4$2 105
+.node_map BUS29$1 229
+.node_map BUS4$3 106
+.node_map BUS29$2 230
+.node_map BUS4$4 107
+.node_map BUS29$3 231
+.node_map BUS29$4 232
+.node_map BUS5$0 108
+.node_map BUS5$1 109
+.node_map BUS5$2 110
+.node_map BUS5$3 111
+.node_map BUS5$4 112
+.node_map BUS6$0 113
+.node_map D_1n_1 260
+.node_map BUS6$1 114
+.node_map D_1n_2 255
+.node_map BUS10$0 133
+.node_map BUS6$2 115
+.node_map D_1n_3 250
+.node_map BUS10$1 134
+.node_map BUS6$3 116
+.node_map D_1n_4 245
+.node_map BUS10$2 135
+.node_map BUS6$4 117
+.node_map D_1n_5 239
+.node_map BUS10$3 136
+.node_map D_4n_1 262
+.node_map BUS10$4 137
+.node_map D_4n_2 257
+.node_map D_4n_3 252
+.node_map BUS7$0 118
+.node_map D_4n_4 247
+.node_map BUS7$1 119
+.node_map D_4n_5 241
+.node_map BUS11$0 138
+.node_map BUS7$2 120
+.node_map BUS11$1 139
+.node_map BUS7$3 121
+.node_map BUS11$2 140
+.node_map BUS7$4 122
+.node_map BUS11$3 141
+.node_map D_2n_1 261
+.node_map BUS11$4 142
+.node_map D_2n_2 256
+.node_map BUS20$0 183
+.node_map D_2n_3 251
+.node_map BUS20$1 184
+.node_map BUS8$0 123
+.node_map D_2n_4 246
+.node_map BUS20$2 185
+.node_map BUS8$1 124
+.node_map D_2n_5 240
+.node_map BUS20$3 186
+.node_map BUS12$0 143
+.node_map BUS8$2 125
+.node_map BUS20$4 187
+.node_map BUS12$1 144
+.node_map BUS8$3 126
+.node_map BUS12$2 145
+.node_map BUS8$4 127
+.node_map BUS12$3 146
+.node_map BUS12$4 147
+.node_map BUS21$0 188
+.node_map D_8n_1 263
+.node_map BUS21$1 189
+.node_map BUS9$0 128
+.node_map D_8n_2 258
+.node_map BUS21$2 190
+.node_map BUS9$1 129
+.node_map D_8n_3 253
+.node_map BUS21$3 191
+.node_map BUS13$0 148
+.node_map BUS9$2 130
+.node_map D_8n_4 248
+.node_map BUS21$4 192
+.node_map BUS13$1 149
+.node_map BUS9$3 131
+.node_map D_8n_5 242
+.node_map BUS30$0 233
+.node_map BUS13$2 150
+.node_map BUS9$4 132
+.node_map BUS30$1 234
+.node_map BUS13$3 151
+.node_map BUS30$2 235
+.node_map BUS13$4 152
+.node_map BUS30$3 236
+.node_map BUS22$0 193
+.node_map BUS30$4 237
+.node_map BUS22$1 194
+.node_map BUS22$2 195
+.node_map BUS22$3 196
+.node_map BUS14$0 153
+.node_map BUS22$4 197
+.node_map BUS14$1 154
+.node_map BUS14$2 155
+.node_map IN 243
+.node_map BUS14$3 156
+.node_map BUS14$4 157
+.node_map D_0p5n_1 259
+.node_map BUS23$0 198
+.node_map D_0p5n_2 254
+.node_map BUS23$1 199
+.node_map D_0p5n_3 249
+.node_map BUS23$2 200
+.node_map D_0p5n_4 244
+.node_map BUS23$3 201
+.node_map BUS15$0 158
+.node_map D_0p5n_5 238
+.node_map BUS23$4 202
+.node_map BUS15$1 159
+.node_map BUS15$2 160
+.node_map BUS15$3 161
+X$pinprobe1 238 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe10 260 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe11 261 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe12 251 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe13 256 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe14 240 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe15 246 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe16 241 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe17 257 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe18 252 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe19 262 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe2 244 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe20 247 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe21 242 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe22 258 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe23 248 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe24 253 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe25 263 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe26 243 pinprobe vars: pinprobe_description='IN' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 249 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe4 254 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe5 259 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe6 239 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe7 245 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe8 255 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe9 250 pinprobe vars: pinprobe_description='Out' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$U1 259 93 94 95 96 97 254 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_0p5_1' timingskew_datasheet_description='text' timingskew_bits=2 timingskew_por=0 timingskew_lsb=0.5 timingskew_vmax=6
+X$U10 255 128 129 130 131 132 250 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_1_2' timingskew_datasheet_description='text' timingskew_bits=3 timingskew_por=1 timingskew_lsb=1 timingskew_vmax=6
+X$U11 239 143 144 145 146 147 84 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_1_4' timingskew_datasheet_description='text' timingskew_bits=5 timingskew_por=1 timingskew_lsb=1 timingskew_vmax=6
+X$U12 238 113 114 115 116 117 83 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_0p5_4' timingskew_datasheet_description='text' timingskew_bits=5 timingskew_por=0 timingskew_lsb=0.5 timingskew_vmax=6
+X$U13 83 celeranoconn vars: ='%'
+X$U14 84 celeranoconn vars: ='%'
+X$U15 240 173 174 175 176 177 85 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_2_4' timingskew_datasheet_description='text' timingskew_bits=5 timingskew_por=1 timingskew_lsb=2 timingskew_vmax=6
+X$U16 246 168 169 170 171 172 240 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_2_4' timingskew_datasheet_description='text' timingskew_bits=5 timingskew_por=1 timingskew_lsb=2 timingskew_vmax=6
+X$U17 251 163 164 165 166 167 246 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_2_3' timingskew_datasheet_description='text' timingskew_bits=4 timingskew_por=1 timingskew_lsb=2 timingskew_vmax=6
+X$U18 261 153 154 155 156 157 256 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_2_1' timingskew_datasheet_description='text' timingskew_bits=2 timingskew_por=1 timingskew_lsb=2 timingskew_vmax=6
+X$U19 85 celeranoconn vars: ='%'
+X$U2 254 98 99 100 101 102 249 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_0p5_2' timingskew_datasheet_description='text' timingskew_bits=3 timingskew_por=0 timingskew_lsb=0.5 timingskew_vmax=6
+X$U20 256 158 159 160 161 162 251 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_2_2' timingskew_datasheet_description='text' timingskew_bits=3 timingskew_por=1 timingskew_lsb=2 timingskew_vmax=6
+X$U21 243 148 149 150 151 152 261 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_2_0' timingskew_datasheet_description='text' timingskew_bits=2 timingskew_por=1 timingskew_lsb=2 timingskew_vmax=6
+X$U22 243 178 179 180 181 182 262 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_4_0' timingskew_datasheet_description='text' timingskew_bits=2 timingskew_por=1 timingskew_lsb=4 timingskew_vmax=6
+X$U23 241 203 204 205 206 207 86 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_4_4' timingskew_datasheet_description='text' timingskew_bits=5 timingskew_por=1 timingskew_lsb=4 timingskew_vmax=6
+X$U24 252 193 194 195 196 197 247 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_4_3' timingskew_datasheet_description='text' timingskew_bits=4 timingskew_por=1 timingskew_lsb=4 timingskew_vmax=6
+X$U25 247 198 199 200 201 202 241 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_4_4' timingskew_datasheet_description='text' timingskew_bits=5 timingskew_por=1 timingskew_lsb=4 timingskew_vmax=6
+X$U26 257 188 189 190 191 192 252 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_4_2' timingskew_datasheet_description='text' timingskew_bits=3 timingskew_por=1 timingskew_lsb=4 timingskew_vmax=6
+X$U27 262 183 184 185 186 187 257 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_4_1' timingskew_datasheet_description='text' timingskew_bits=2 timingskew_por=1 timingskew_lsb=4 timingskew_vmax=6
+X$U28 86 celeranoconn vars: ='%'
+X$U29 263 213 214 215 216 217 258 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_8_1' timingskew_datasheet_description='text' timingskew_bits=2 timingskew_por=1 timingskew_lsb=8 timingskew_vmax=6
+X$U3 249 103 104 105 106 107 244 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_0p5_3' timingskew_datasheet_description='text' timingskew_bits=4 timingskew_por=0 timingskew_lsb=0.5 timingskew_vmax=6
+X$U30 253 223 224 225 226 227 248 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_8_3' timingskew_datasheet_description='text' timingskew_bits=4 timingskew_por=1 timingskew_lsb=8 timingskew_vmax=6
+X$U31 242 233 234 235 236 237 87 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_8_4' timingskew_datasheet_description='text' timingskew_bits=5 timingskew_por=1 timingskew_lsb=8 timingskew_vmax=6
+X$U32 248 228 229 230 231 232 242 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_8_4' timingskew_datasheet_description='text' timingskew_bits=5 timingskew_por=1 timingskew_lsb=8 timingskew_vmax=6
+X$U33 258 218 219 220 221 222 253 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_8_2' timingskew_datasheet_description='text' timingskew_bits=3 timingskew_por=1 timingskew_lsb=8 timingskew_vmax=6
+X$U34 87 celeranoconn vars: ='%'
+X$U35 243 208 209 210 211 212 263 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_8_0' timingskew_datasheet_description='text' timingskew_bits=2 timingskew_por=1 timingskew_lsb=8 timingskew_vmax=6
+X$U4 243 88 89 90 91 92 259 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_0p5_0' timingskew_datasheet_description='text' timingskew_bits=2 timingskew_por=0 timingskew_lsb=0.5 timingskew_vmax=6
+X$U5 244 108 109 110 111 112 238 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_0p5_4' timingskew_datasheet_description='text' timingskew_bits=5 timingskew_por=0 timingskew_lsb=0.5 timingskew_vmax=6
+X$U6 250 133 134 135 136 137 245 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_1_3' timingskew_datasheet_description='text' timingskew_bits=4 timingskew_por=1 timingskew_lsb=1 timingskew_vmax=6
+X$U7 245 138 139 140 141 142 239 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_1_4' timingskew_datasheet_description='text' timingskew_bits=5 timingskew_por=1 timingskew_lsb=1 timingskew_vmax=6
+X$U8 243 118 119 120 121 122 260 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_1_0' timingskew_datasheet_description='text' timingskew_bits=2 timingskew_por=1 timingskew_lsb=1 timingskew_vmax=6
+X$U9 260 123 124 125 126 127 255 timingskew vars: timingskew_type='rise' timingskew_control='register' timingskew_dft='no' timingskew_datasheet_name='Delay_1_1' timingskew_datasheet_description='text' timingskew_bits=2 timingskew_por=1 timingskew_lsb=1 timingskew_vmax=6
+.ends TIMINGSKEWrising
+
+.end
