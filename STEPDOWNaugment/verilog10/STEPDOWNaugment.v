@@ -138,22 +138,22 @@ wire [4:0] tmi;
 // ------------------------ Networks ---------------------
 STATEDRIVERate_413c808b XATE (
 .clock(clock),
-.go_driver(net_86),
-.hijack_clock(net_90),
+.go_driver(net_83),
+.hijack_clock(net_87),
 .enable_driver(enable_loop),
-.hijack_go_driver(net_87),
-.hijack_enable_driver(net_84)
+.hijack_go_driver(net_84),
+.hijack_enable_driver(net_81)
 );
 
 STEPDOWNalgorithmCONTROL0p2_DYES_34db1f0a XCONTROL (
 .tmi(tmi[4:0]),
 .porb(porb),
-.clock(net_90),
+.clock(net_87),
 .botstate(net_105),
 .topstate(net_103),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.go_driver(net_87),
+.go_driver(net_84),
 .ok_driver(net_100),
 .botswipeak(net_104),
 .topswipeak(net_101),
@@ -185,7 +185,7 @@ MUDdriverSdAugment_f5b11c82 XDRIVER (
 .botswstatus(net_106),
 .botswzcross(net_107),
 .topswstatus(net_102),
-.enable_driver(net_84),
+.enable_driver(net_81),
 .IP_a05962c0_XBOTTOMIPEAK(IP_a05962c0_XBOTTOMIPEAK),
 .IP_8c8c74a2_XBOTTOMZCROSS(IP_8c8c74a2_XBOTTOMZCROSS)
 );
@@ -207,7 +207,7 @@ REGULATIONaugmentfixedfreq_3abbaf99 XREGULATION (
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.go_driver(net_86),
+.go_driver(net_83),
 .SIMPV96848(SIMPV96848),
 .CELREF84329(CELREF84329),
 .CELSUB40948(CELSUB40948),
@@ -224,7 +224,7 @@ REGULATIONaugmentfixedfreq_3abbaf99 XREGULATION (
 .IP_2fc28aa9_XU42(IP_2fc28aa9_XU42),
 .IP_78bfd2d8_XU21(IP_78bfd2d8_XU21),
 .IP_eba62906_XU15(IP_eba62906_XU15),
-.clock_regulation(net_90),
+.clock_regulation(net_87),
 .enable_regulation(enable_loop)
 );
 

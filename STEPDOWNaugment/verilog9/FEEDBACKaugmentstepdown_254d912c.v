@@ -8,7 +8,7 @@ module MUDfeedbackATEyes_d10f8ed1 (CELG59462,CELV96848,CELSUB40948,ok_feedback,e
   input  hijack_enable_feedback;
 endmodule
 
-module FEEDBACKstepdownSELECT_f3849c6b (FBI,tmi,enable,CELG59462,CELV96848,sense_OUT,CELSUB40948,ok_feedback,kelvin_GNDfeedback);
+module FEEDBACKstepdownSELECT_9494b760 (FBI,tmi,enable,CELG59462,CELV96848,sense_OUT,CELSUB40948,ok_feedback,kelvin_GNDfeedback);
   output  FBI;
   inout [4:0] tmi;
   input  enable;
@@ -43,13 +43,13 @@ MUDfeedbackATEyes_d10f8ed1 XATE (
 .CELSUB40948(CELSUB40948),
 .ok_feedback(ok_feedback),
 .enable_feedback(enable_feedback),
-.hijack_enable_feedback(net_22)
+.hijack_enable_feedback(net_24)
 );
 
-FEEDBACKstepdownSELECT_f3849c6b XU1 (
+FEEDBACKstepdownSELECT_9494b760 XMAIN (
 .FBI(FBI),
 .tmi(tmi[4:0]),
-.enable(net_22),
+.enable(net_24),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .sense_OUT(kelvin_OUT),

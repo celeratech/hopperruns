@@ -30,10 +30,11 @@ module MUDbbmAugment_d1b77b55 (tmi,botswon,topswon,botstate,topstate,CELG59462,C
   input  topswstatus;
 endmodule
 
-module MUDbotswnmosSdIlimAugment_51cfa4f0 (SW,tmi,MUDV,PMUDG,PMUDV,botswon,CELG59462,CELV96848,botswipeak,CELSUB40948,botswstatus,botswzcross,enable_driver,IP_a05962c0_XBOTTOMIPEAK,IP_8c8c74a2_XBOTTOMZCROSS);
+module MUDbotswnmosSdIlimAugment_51cfa4f0 (SW,tmi,MUDV,CBOOT,PMUDG,PMUDV,botswon,CELG59462,CELV96848,botswipeak,CELSUB40948,botswstatus,botswzcross,enable_driver,IP_a05962c0_XBOTTOMIPEAK,IP_8c8c74a2_XBOTTOMZCROSS);
   inout  SW;
   inout [4:0] tmi;
   input  MUDV;
+  input  CBOOT;
   inout  PMUDG;
   input  PMUDV;
   input  botswon;
@@ -109,17 +110,17 @@ MUDdriverSdAteSyncAugment_7caea33e XATEDRIVER (
 .botswzcross(botswzcross),
 .topswstatus(topswstatus),
 .enable_driver(enable_driver),
-.hijack_topstate(net_79),
-.hijack_bottomstate(net_81),
-.hijack_enable_driver(net_91)
+.hijack_topstate(net_88),
+.hijack_bottomstate(net_89),
+.hijack_enable_driver(net_87)
 );
 
 MUDbbmAugment_d1b77b55 XBBMDRIVER (
 .tmi(tmi[4:0]),
-.botswon(net_82),
-.topswon(net_80),
-.botstate(net_81),
-.topstate(net_79),
+.botswon(net_91),
+.topswon(net_90),
+.botstate(net_89),
+.topstate(net_88),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948),
@@ -131,16 +132,17 @@ MUDbotswnmosSdIlimAugment_51cfa4f0 XBOTDRIVER (
 .SW(SW),
 .tmi(tmi[4:0]),
 .MUDV(MUDV),
+.CBOOT(CBOOT),
 .PMUDG(PMUDG),
 .PMUDV(PMUDV),
-.botswon(net_82),
+.botswon(net_91),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .botswipeak(botswipeak),
 .CELSUB40948(CELSUB40948),
 .botswstatus(botswstatus),
 .botswzcross(botswzcross),
-.enable_driver(net_91),
+.enable_driver(net_87),
 .IP_a05962c0_XBOTTOMIPEAK(IP_a05962c0_XBOTTOMIPEAK),
 .IP_8c8c74a2_XBOTTOMZCROSS(IP_8c8c74a2_XBOTTOMZCROSS)
 );
@@ -151,7 +153,7 @@ MUDtopswnmosSdIrefAugment_5b40733e XTOPDRIVER (
 .CBOOT(CBOOT),
 .PMUDV(PMUDV),
 .PMUDHV(PMUDHV),
-.topswon(net_80),
+.topswon(net_90),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .ok_driver(ok_driver),
@@ -160,7 +162,7 @@ MUDtopswnmosSdIrefAugment_5b40733e XTOPDRIVER (
 .IREF_DRIVER(IREF_DRIVER),
 .botswstatus(botswstatus),
 .topswstatus(topswstatus),
-.enable_driver(net_91)
+.enable_driver(net_87)
 );
 
 endmodule
