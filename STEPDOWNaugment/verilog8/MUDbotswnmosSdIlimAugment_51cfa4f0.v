@@ -133,7 +133,7 @@ module drm16L ( V, G, SUB, tmi, bypload, lastdrm, id, drm0, drm1, d1, d0 );
 endmodule
 
 
-module fetdriver_83874bbc (HVPOS,global_fetdriver,fetin,GATE,gate_status,gate_status_vin,CELV,CELG,enable_fetdriver,HVNEG,CELSUB);
+module fetdriver_1fc0ad21 (HVPOS,global_fetdriver,fetin,GATE,gate_status,gate_status_vin,CELV,CELG,enable_fetdriver,HVNEG,CELSUB);
   input  CELG;
   input  CELV;
   output  GATE;
@@ -344,7 +344,7 @@ drm16L drm_hex0x06 (
 .lastdrm(b0)
 );
 
-fetdriver_83874bbc XBOTSWDRIVER (
+fetdriver_1fc0ad21 XBOTSWDRIVER (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .GATE(net_107),
