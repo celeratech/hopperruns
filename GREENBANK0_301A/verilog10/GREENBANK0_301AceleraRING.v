@@ -151,18 +151,8 @@ module celerapaddft_CELINA (GESD,TAEXT,CELINA,CELG59462,CELV96848,ten_taext,CELS
   input  CELSUB40948;
 endmodule
 
-module celerapaddft_CELIND (GESD,tdext,CELIND,CELG59462,CELV96848,ten_tdext,CELSUB40948);
-  inout  GESD;
-  output  tdext;
-  input  CELIND;
-  input  CELG59462;
-  input  CELV96848;
-  input  ten_tdext;
-  input  CELSUB40948;
-endmodule
-
 // ------------------------ Module Verilog ---------------
-module GREENBANK0_301AceleraRING (LDO0, LDO1, LDO2, LDO3, LDO4, LDO5, LDO6, LDO7, LDO8, LDO9, MUDG, MUDV, LDO10, LDO11, LDO12, LDO13, LDO14, LDO15, TAEXT, CELINA, CELIND, CELG59462, CELV96848, sense_LDO2, sense_LDO5, sense_LDO7, CELSUB40948, kelvin_MUDV, CELPOWER_LDO, SENSE_G_924d4d4f, kelvin_MUDGservice, kelvin_MUDGamplifier, CELPOWER_LDO_214c0f74, CELPOWER_LDO_4b7cb037, CELPOWER_LDO_601da658, CELPOWER_LDO_90e98eb0, celkelvin_LDO8_635a8467, celkelvin_LDO9_67c0774a, celkelvin_LDO10_9e0b544b, celkelvin_LDO11_c0cd2385, celkelvin_LDO12_73f01841, celkelvin_LDO13_f8678617, celkelvin_LDO14_1d518b73, celkelvin_LDO15_ceb54526, celkelvin_MUDG_1d518b736, celkelvin_MUDG_3f3140ae3, celkelvin_MUDG_5b4bc5a72, celkelvin_MUDG_614c8f411, celkelvin_MUDG_635a84677, celkelvin_MUDG_67c0774a9, celkelvin_MUDG_73f018418, celkelvin_MUDG_9e0b544b5, celkelvin_MUDG_ceb545264, celkelvin_MUDG_ec7b0f830, celkelvin_MUDG_2c5f340512, celkelvin_MUDG_c0cd238511, celkelvin_MUDG_f867861710);
+module GREENBANK0_301AceleraRING (LDO0, LDO1, LDO2, LDO3, LDO4, LDO5, LDO6, LDO7, LDO8, LDO9, MUDG, MUDV, LDO10, LDO11, LDO12, LDO13, LDO14, LDO15, TAEXT, CELINA, CELG59462, CELV96848, sense_LDO2, sense_LDO5, sense_LDO7, CELSUB40948, kelvin_MUDV, CELPOWER_LDO, SENSE_G_924d4d4f, kelvin_MUDGservice, kelvin_MUDGamplifier, CELPOWER_LDO_214c0f74, CELPOWER_LDO_4b7cb037, CELPOWER_LDO_601da658, CELPOWER_LDO_90e98eb0, celkelvin_LDO8_635a8467, celkelvin_LDO9_67c0774a, celkelvin_LDO10_9e0b544b, celkelvin_LDO11_c0cd2385, celkelvin_LDO12_73f01841, celkelvin_LDO13_f8678617, celkelvin_LDO14_1d518b73, celkelvin_LDO15_ceb54526, celkelvin_MUDG_1d518b736, celkelvin_MUDG_3f3140ae3, celkelvin_MUDG_5b4bc5a72, celkelvin_MUDG_614c8f411, celkelvin_MUDG_635a84677, celkelvin_MUDG_67c0774a9, celkelvin_MUDG_73f018418, celkelvin_MUDG_9e0b544b5, celkelvin_MUDG_ceb545264, celkelvin_MUDG_ec7b0f830, celkelvin_MUDG_2c5f340512, celkelvin_MUDG_c0cd238511, celkelvin_MUDG_f867861710);
 inout  LDO0;
 inout  LDO1;
 inout  LDO2;
@@ -183,7 +173,6 @@ inout  LDO14;
 inout  LDO15;
 output  TAEXT;
 input  CELINA;
-input  CELIND;
 output  CELG59462;
 output  CELV96848;
 inout  sense_LDO2;
@@ -374,16 +363,6 @@ celerapaddft_CELINA XCELINA (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .ten_taext(ten_taext),
-.CELSUB40948(CELSUB40948)
-);
-
-celerapaddft_CELIND XCELIND (
-.GESD(GESD),
-.tdext(tdext),
-.CELIND(CELIND),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.ten_tdext(ten_tdext),
 .CELSUB40948(CELSUB40948)
 );
 
