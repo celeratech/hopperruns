@@ -46,7 +46,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module LDOgreenbankLDOfixed40mA (LDO, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, CELPOWER_LDO_4b7cb037, celkelvin_LDO15_ceb54526, celkelvin_MUDG_ceb545264);
+module LDOgreenbankLDOfixed40mA (LDO, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, CELPOWER_LDO_ae2828c4, celkelvin_LDO15_2f19d9b2, celkelvin_MUDG_2f19d9b24);
 output  LDO;
 input [4:0] tmi;
 input  MUDV;
@@ -55,9 +55,9 @@ input  CELV96848;
 input  enable_ldo;
 input  CELSUB40948;
 output  dft_startup;
-input  CELPOWER_LDO_4b7cb037;
-input  celkelvin_LDO15_ceb54526;
-input  celkelvin_MUDG_ceb545264;
+input  CELPOWER_LDO_ae2828c4;
+input  celkelvin_LDO15_2f19d9b2;
+input  celkelvin_MUDG_2f19d9b24;
 
 
 // ------------------------ Wires ------------------------
@@ -83,10 +83,10 @@ IPOTTldo_86a37331 XLDO1 (
 .CELSUB(CELSUB40948),
 .ok_ldo(net_28),
 .enable_ldo(enable_ldo),
-.global_ldo(global_ldo_4b7cb037_XLDO1),
-.CELPOWER_LDO(CELPOWER_LDO_4b7cb037),
-.celkelvin_LDO(celkelvin_LDO15_ceb54526),
-.celkelvin_GNDldo(celkelvin_MUDG_ceb545264)
+.global_ldo(global_ldo_ae2828c4_XLDO1),
+.CELPOWER_LDO(CELPOWER_LDO_ae2828c4),
+.celkelvin_LDO(celkelvin_LDO15_2f19d9b2),
+.celkelvin_GNDldo(celkelvin_MUDG_2f19d9b24)
 );
 
 DFTtm8t dft_hex0x07 (
@@ -94,7 +94,7 @@ DFTtm8t dft_hex0x07 (
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x07_ten_7,noconn_dft_hex0x07_ten_6,noconn_dft_hex0x07_ten_5,noconn_dft_hex0x07_ten_4,noconn_dft_hex0x07_ten_3,noconn_dft_hex0x07_ten_2,noconn_dft_hex0x07_ten_1,global_ldo_4b7cb037_XLDO1}),
+.ten({noconn_dft_hex0x07_ten_7,noconn_dft_hex0x07_ten_6,noconn_dft_hex0x07_ten_5,noconn_dft_hex0x07_ten_4,noconn_dft_hex0x07_ten_3,noconn_dft_hex0x07_ten_2,noconn_dft_hex0x07_ten_1,global_ldo_ae2828c4_XLDO1}),
 .tma({a0,a0,a0,a0,a0,a1,a1,a1}),
 .tmi(tmi[4:0])
 );

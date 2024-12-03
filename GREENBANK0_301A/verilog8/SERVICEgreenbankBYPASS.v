@@ -129,7 +129,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SERVICEgreenbankBYPASS (tmi, MUDV, CELG59462, CELV96848, PORB97836, dft_clock, dft_bypass, ok_service, CELSUB40948, bypass_filter, ok_reference0, ok_reference1, ok_reference2, ok_reference3, ok_reference4, ok_reference5, disable_bypass, SENSE_G_924d4d4f, enable_reference0, enable_reference1, enable_reference2, enable_reference3, enable_reference4, filter_resistor_0, filter_resistor_1, filter_resistor_2, enable_reference567, IP_924d4d4f_Xoscillator1);
+module SERVICEgreenbankBYPASS (tmi, MUDV, CELG59462, CELV96848, PORB97836, dft_clock, dft_bypass, ok_service, CELSUB40948, bypass_filter, ok_reference0, ok_reference1, ok_reference2, ok_reference3, ok_reference4, ok_reference5, disable_bypass, SENSE_G_2f9d3d8e, enable_reference0, enable_reference1, enable_reference2, enable_reference3, enable_reference4, filter_resistor_0, filter_resistor_1, filter_resistor_2, enable_reference567, IP_2f9d3d8e_Xoscillator1);
 input [4:0] tmi;
 input  MUDV;
 input  CELG59462;
@@ -147,7 +147,7 @@ input  ok_reference3;
 input  ok_reference4;
 input  ok_reference5;
 input  disable_bypass;
-input  SENSE_G_924d4d4f;
+input  SENSE_G_2f9d3d8e;
 input  enable_reference0;
 input  enable_reference1;
 input  enable_reference2;
@@ -157,7 +157,7 @@ input  filter_resistor_0;
 input  filter_resistor_1;
 input  filter_resistor_2;
 input  enable_reference567;
-input  IP_924d4d4f_Xoscillator1;
+input  IP_2f9d3d8e_Xoscillator1;
 
 
 // ------------------------ Wires ------------------------
@@ -407,21 +407,21 @@ DFTtm8t dft_hex0x01 (
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x01_ten_7,noconn_dft_hex0x01_ten_6,noconn_dft_hex0x01_ten_5,noconn_dft_hex0x01_ten_4,noconn_dft_hex0x01_ten_3,noconn_dft_hex0x01_ten_2,noconn_dft_hex0x01_ten_1,global_oscillator_924d4d4f_Xoscillator1}),
+.ten({noconn_dft_hex0x01_ten_7,noconn_dft_hex0x01_ten_6,noconn_dft_hex0x01_ten_5,noconn_dft_hex0x01_ten_4,noconn_dft_hex0x01_ten_3,noconn_dft_hex0x01_ten_2,noconn_dft_hex0x01_ten_1,global_oscillator_2f9d3d8e_Xoscillator1}),
 .tma({a0,a0,a0,a0,a0,a0,a0,a1}),
 .tmi(tmi[4:0])
 );
 
 oscillatorcrude_6f9c64ad Xoscillator1 (
-.IP(IP_924d4d4f_Xoscillator1),
+.IP(IP_2f9d3d8e_Xoscillator1),
 .osc(net_147),
 .CELG(CELG59462),
 .SIMPV(MUDV),
 .CELSUB(CELSUB40948),
-.SENSE_G(SENSE_G_924d4d4f),
+.SENSE_G(SENSE_G_2f9d3d8e),
 .ok_oscillator(net_152),
 .enable_oscillator(net_148),
-.global_oscillator(global_oscillator_924d4d4f_Xoscillator1)
+.global_oscillator(global_oscillator_2f9d3d8e_Xoscillator1)
 );
 
 STONEnoconn XNCnoconn_dft_hex0x01_ten_1 (

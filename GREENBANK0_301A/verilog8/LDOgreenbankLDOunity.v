@@ -87,7 +87,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module LDOgreenbankLDOunity (LDO, REF, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, CELPOWER_LDO_90e98eb0, celkelvin_LDO11_c0cd2385, celkelvin_MUDG_c0cd238511);
+module LDOgreenbankLDOunity (LDO, REF, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, CELPOWER_LDO_2d7d2b54, celkelvin_LDO11_5b2f9385, celkelvin_MUDG_5b2f938511);
 output  LDO;
 input  REF;
 inout [4:0] tmi;
@@ -97,9 +97,9 @@ input  CELV96848;
 input  enable_ldo;
 input  CELSUB40948;
 output  dft_startup;
-input  CELPOWER_LDO_90e98eb0;
-input  celkelvin_LDO11_c0cd2385;
-input  celkelvin_MUDG_c0cd238511;
+input  CELPOWER_LDO_2d7d2b54;
+input  celkelvin_LDO11_5b2f9385;
+input  celkelvin_MUDG_5b2f938511;
 
 
 // ------------------------ Wires ------------------------
@@ -136,7 +136,7 @@ switchgnd_321bf2ca XU9 (
 .I(REF),
 .O(net_34),
 .CELG(CELG59462),
-.SIMPV(TBD_XU1_XceleraCORE_XU19_XLDOUNITY_XU9_SIMPV),
+.SIMPV(TBD_XU3_XceleraCORE_XU19_XLDOUNITY_XU9_SIMPV),
 .CELSUB(CELSUB40948),
 .enable_switch(enable_ldo)
 );
@@ -149,15 +149,15 @@ IPOTTldo_86a0e914 XLDO1 (
 .CELSUB(CELSUB40948),
 .ok_ldo(net_35),
 .enable_ldo(enable_ldo),
-.global_ldo(global_ldo_90e98eb0_XLDO1),
-.CELPOWER_LDO(CELPOWER_LDO_90e98eb0),
-.celkelvin_LDO(celkelvin_LDO11_c0cd2385),
-.factory_ldogain({factory_ldogain_90e98eb0_2,factory_ldogain_90e98eb0_1,factory_ldogain_90e98eb0_0}),
-.factory_ldopsrr({factory_ldopsrr_90e98eb0_5,factory_ldopsrr_90e98eb0_4,factory_ldopsrr_90e98eb0_3,factory_ldopsrr_90e98eb0_2,factory_ldopsrr_90e98eb0_1,factory_ldopsrr_90e98eb0_0}),
-.celkelvin_GNDldo(celkelvin_MUDG_c0cd238511),
-.factory_ldoerror({factory_ldoerror_90e98eb0_2,factory_ldoerror_90e98eb0_1,factory_ldoerror_90e98eb0_0}),
-.factory_ldofeedforward({factory_ldofeedforward_90e98eb0_2,factory_ldofeedforward_90e98eb0_1,factory_ldofeedforward_90e98eb0_0}),
-.factory_ldocompensation({factory_ldocompensation_90e98eb0_5,factory_ldocompensation_90e98eb0_4,factory_ldocompensation_90e98eb0_3,factory_ldocompensation_90e98eb0_2,factory_ldocompensation_90e98eb0_1,factory_ldocompensation_90e98eb0_0})
+.global_ldo(global_ldo_2d7d2b54_XLDO1),
+.CELPOWER_LDO(CELPOWER_LDO_2d7d2b54),
+.celkelvin_LDO(celkelvin_LDO11_5b2f9385),
+.factory_ldogain({factory_ldogain_2d7d2b54_2,factory_ldogain_2d7d2b54_1,factory_ldogain_2d7d2b54_0}),
+.factory_ldopsrr({factory_ldopsrr_2d7d2b54_5,factory_ldopsrr_2d7d2b54_4,factory_ldopsrr_2d7d2b54_3,factory_ldopsrr_2d7d2b54_2,factory_ldopsrr_2d7d2b54_1,factory_ldopsrr_2d7d2b54_0}),
+.celkelvin_GNDldo(celkelvin_MUDG_5b2f938511),
+.factory_ldoerror({factory_ldoerror_2d7d2b54_2,factory_ldoerror_2d7d2b54_1,factory_ldoerror_2d7d2b54_0}),
+.factory_ldofeedforward({factory_ldofeedforward_2d7d2b54_2,factory_ldofeedforward_2d7d2b54_1,factory_ldofeedforward_2d7d2b54_0}),
+.factory_ldocompensation({factory_ldocompensation_2d7d2b54_5,factory_ldocompensation_2d7d2b54_4,factory_ldocompensation_2d7d2b54_3,factory_ldocompensation_2d7d2b54_2,factory_ldocompensation_2d7d2b54_1,factory_ldocompensation_2d7d2b54_0})
 );
 
 DFTtm8t dft_hex0x0E (
@@ -165,7 +165,7 @@ DFTtm8t dft_hex0x0E (
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x0E_ten_7,noconn_dft_hex0x0E_ten_6,noconn_dft_hex0x0E_ten_5,noconn_dft_hex0x0E_ten_4,noconn_dft_hex0x0E_ten_3,noconn_dft_hex0x0E_ten_2,noconn_dft_hex0x0E_ten_1,global_ldo_90e98eb0_XLDO1}),
+.ten({noconn_dft_hex0x0E_ten_7,noconn_dft_hex0x0E_ten_6,noconn_dft_hex0x0E_ten_5,noconn_dft_hex0x0E_ten_4,noconn_dft_hex0x0E_ten_3,noconn_dft_hex0x0E_ten_2,noconn_dft_hex0x0E_ten_1,global_ldo_2d7d2b54_XLDO1}),
 .tma({a0,a0,a0,a0,a1,a1,a1,a0}),
 .tmi(tmi[4:0])
 );
@@ -178,10 +178,10 @@ drm32 drm_hex0x09 (
 .id({c0,c0,c0,c0,c1,c0,c0,c1}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm32_drm0_7,noconn_drm32_drm0_6,factory_ldoerror_90e98eb0_2,factory_ldoerror_90e98eb0_1,factory_ldoerror_90e98eb0_0,factory_ldogain_90e98eb0_2,factory_ldogain_90e98eb0_1,factory_ldogain_90e98eb0_0}),
-.drm1({noconn_drm32_drm1_7,noconn_drm32_drm1_6,factory_ldopsrr_90e98eb0_5,factory_ldopsrr_90e98eb0_4,factory_ldopsrr_90e98eb0_3,factory_ldopsrr_90e98eb0_2,factory_ldopsrr_90e98eb0_1,factory_ldopsrr_90e98eb0_0}),
-.drm2({noconn_drm32_drm2_7,noconn_drm32_drm2_6,noconn_drm32_drm2_5,noconn_drm32_drm2_4,noconn_drm32_drm2_3,factory_ldofeedforward_90e98eb0_2,factory_ldofeedforward_90e98eb0_1,factory_ldofeedforward_90e98eb0_0}),
-.drm3({noconn_drm32_drm3_7,noconn_drm32_drm3_6,factory_ldocompensation_90e98eb0_5,factory_ldocompensation_90e98eb0_4,factory_ldocompensation_90e98eb0_3,factory_ldocompensation_90e98eb0_2,factory_ldocompensation_90e98eb0_1,factory_ldocompensation_90e98eb0_0}),
+.drm0({noconn_drm32_drm0_7,noconn_drm32_drm0_6,factory_ldoerror_2d7d2b54_2,factory_ldoerror_2d7d2b54_1,factory_ldoerror_2d7d2b54_0,factory_ldogain_2d7d2b54_2,factory_ldogain_2d7d2b54_1,factory_ldogain_2d7d2b54_0}),
+.drm1({noconn_drm32_drm1_7,noconn_drm32_drm1_6,factory_ldopsrr_2d7d2b54_5,factory_ldopsrr_2d7d2b54_4,factory_ldopsrr_2d7d2b54_3,factory_ldopsrr_2d7d2b54_2,factory_ldopsrr_2d7d2b54_1,factory_ldopsrr_2d7d2b54_0}),
+.drm2({noconn_drm32_drm2_7,noconn_drm32_drm2_6,noconn_drm32_drm2_5,noconn_drm32_drm2_4,noconn_drm32_drm2_3,factory_ldofeedforward_2d7d2b54_2,factory_ldofeedforward_2d7d2b54_1,factory_ldofeedforward_2d7d2b54_0}),
+.drm3({noconn_drm32_drm3_7,noconn_drm32_drm3_6,factory_ldocompensation_2d7d2b54_5,factory_ldocompensation_2d7d2b54_4,factory_ldocompensation_2d7d2b54_3,factory_ldocompensation_2d7d2b54_2,factory_ldocompensation_2d7d2b54_1,factory_ldocompensation_2d7d2b54_0}),
 .por0({c0,c0,c0,c0,c0,c0,c0,c0}),
 .por1({c0,c0,c0,c0,c0,c0,c0,c0}),
 .por2({c0,c0,c0,c0,c0,c0,c0,c0}),

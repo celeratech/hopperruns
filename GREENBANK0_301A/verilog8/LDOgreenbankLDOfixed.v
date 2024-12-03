@@ -56,7 +56,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module LDOgreenbankLDOfixed (LDO, REF, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, CELPOWER_LDO_214c0f74, celkelvin_LDO8_635a8467, celkelvin_MUDG_635a84677);
+module LDOgreenbankLDOfixed (LDO, REF, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, CELPOWER_LDO_71a83686, celkelvin_LDO8_606cfcba, celkelvin_MUDG_606cfcba7);
 output  LDO;
 input  REF;
 input [4:0] tmi;
@@ -66,9 +66,9 @@ input  CELV96848;
 input  enable_ldo;
 input  CELSUB40948;
 output  dft_startup;
-input  CELPOWER_LDO_214c0f74;
-input  celkelvin_LDO8_635a8467;
-input  celkelvin_MUDG_635a84677;
+input  CELPOWER_LDO_71a83686;
+input  celkelvin_LDO8_606cfcba;
+input  celkelvin_MUDG_606cfcba7;
 
 
 // ------------------------ Wires ------------------------
@@ -91,7 +91,7 @@ switchgnd_321bf2ca XU9 (
 .I(REF),
 .O(net_36),
 .CELG(CELG59462),
-.SIMPV(TBD_XU1_XceleraCORE_XU19_XLDOFIXED_XU9_SIMPV),
+.SIMPV(TBD_XU3_XceleraCORE_XU19_XLDOFIXED_XU9_SIMPV),
 .CELSUB(CELSUB40948),
 .enable_switch(enable_ldo)
 );
@@ -104,10 +104,10 @@ IPOTTldo_d6d23838 XLDO1 (
 .CELSUB(CELSUB40948),
 .ok_ldo(net_37),
 .enable_ldo(enable_ldo),
-.global_ldo(global_ldo_214c0f74_XLDO1),
-.CELPOWER_LDO(CELPOWER_LDO_214c0f74),
-.celkelvin_LDO(celkelvin_LDO8_635a8467),
-.celkelvin_GNDldo(celkelvin_MUDG_635a84677)
+.global_ldo(global_ldo_71a83686_XLDO1),
+.CELPOWER_LDO(CELPOWER_LDO_71a83686),
+.celkelvin_LDO(celkelvin_LDO8_606cfcba),
+.celkelvin_GNDldo(celkelvin_MUDG_606cfcba7)
 );
 
 DFTtm8t dft_hex0x0A (
@@ -115,7 +115,7 @@ DFTtm8t dft_hex0x0A (
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x0A_ten_7,noconn_dft_hex0x0A_ten_6,noconn_dft_hex0x0A_ten_5,noconn_dft_hex0x0A_ten_4,noconn_dft_hex0x0A_ten_3,noconn_dft_hex0x0A_ten_2,noconn_dft_hex0x0A_ten_1,global_ldo_214c0f74_XLDO1}),
+.ten({noconn_dft_hex0x0A_ten_7,noconn_dft_hex0x0A_ten_6,noconn_dft_hex0x0A_ten_5,noconn_dft_hex0x0A_ten_4,noconn_dft_hex0x0A_ten_3,noconn_dft_hex0x0A_ten_2,noconn_dft_hex0x0A_ten_1,global_ldo_71a83686_XLDO1}),
 .tma({a0,a0,a0,a0,a1,a0,a1,a0}),
 .tmi(tmi[4:0])
 );

@@ -1,31 +1,22 @@
 // ------------------------ Module Definitions -----------
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
+//Verilog HDL for "COMMS", "STONEi2cCORE" "functional"
 
 
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
-//Verilog HDL for "COMMS", "STONEi2cCOREreset" "functional"
-
-
-module STONEi2cCOREreset ( d0, d1, i2cbus, sdapd_registermap, CELG, CELV, CELSUB,
-i2caddress, i2cmiso, porb, scli, sdai, unlock_registermap );
+module STONEi2cCORE ( a0, a1, i2cbus, sdapd_registermap, CELG, CELV, SUB, i2caddress,
+i2cmiso, porb, scli, sdai, unlock_registermap );
 
   input CELV;
+  output a1;
+  output a0;
   input porb;
-  input CELSUB;
   output  [12:0] i2cbus;
-  output d1;
   input scli;
   input  [7:0] i2caddress;
   output sdapd_registermap;
   input sdai;
-  output d0;
   input i2cmiso;
   input unlock_registermap;
+  input SUB;
   input CELG;
 endmodule
 
@@ -37,33 +28,6 @@ module STONEi2cGLOBAL ( i2c_miso, CELG, CELV );
 
   input CELV;
   inout i2c_miso;
-  input CELG;
-endmodule
-
-
-//Verilog HDL for "MUD", "MUDaddress8" "functional"
-
-
-module MUDaddress8 ( ADDRESS, d0, d1, i2c_address, CELG, CELSUB, MUDV, address0,
-address1, address2, address3, address4, address5, address6, address7, kelvin_ADDRESS,
-porb );
-
-  input  [7:0] address1;
-  input MUDV;
-  input  [7:0] address4;
-  input porb;
-  input CELSUB;
-  output d1;
-  output ADDRESS;
-  input  [7:0] address3;
-  input  [7:0] address0;
-  input kelvin_ADDRESS;
-  input  [7:0] address6;
-  input  [7:0] address2;
-  output  [7:0] i2c_address;
-  output d0;
-  input  [7:0] address7;
-  input  [7:0] address5;
   input CELG;
 endmodule
 
@@ -85,6 +49,15 @@ i2cbus, lock, por );
   inout i2cmiso;
   input SUB;
   input CELG;
+endmodule
+
+
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
 endmodule
 
 
@@ -132,82 +105,66 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module GREENBANK0_301AceleraREGISTER (MUDV, scli, sdai, ADDRESS, CELG59462, CELV96848, PORB97836, CELSUB40948, sdapd_registermap, KELVINsenseADDRESS, status_AMPLIFIERstatus1_b44cfc34, status_AMPLIFIERstatus2_55bb4d7c, status_AMPLIFIERstatus3_227c42a4, status_AMPLIFIERstatus4_875e88ef, status_AMPLIFIERstatus5_9e11f413, register_REF2output_46e2454e_Xdatamap2, register_REF3output_00f9a76d_Xdatamap1, register_REFERENCEselect_b05f295d_Xdatamap4, register_LDOconfigurationA_775ec168_Xdatamap2, register_LDOconfigurationA_d0b55acf_Xdatamap1, register_AMPCONTROLHIGHgain_e8e23518_Xdatamap1, register_AMPCONTROLSLOWgain_5dd36175_Xdatamap1, register_AMPCONTROLMEDIUMgain_e310431d_Xdatamap1, register_SERVICEconfiguration_d530de71_Xdatamap3, register_AMPLIFIERconfiguration_6aaefe15_Xdatamap1);
-inout  MUDV;
+module GREENBANK0_301AceleraREGISTER (scli, sdai, CELG59462, CELV96848, PORB97836, CELSUB40948, sdapd_registermap, status_AMPLIFIERstatus1_00af776c, status_AMPLIFIERstatus2_4975e8c9, status_AMPLIFIERstatus3_09172988, status_AMPLIFIERstatus4_f84d078e, status_AMPLIFIERstatus5_71c46bc1, register_REF2output_ed373047_Xdatamap2, register_REF3output_f5f0bf23_Xdatamap1, register_REFERENCEselect_501ed25d_Xdatamap4, register_LDOconfigurationA_08bb5ce4_Xdatamap2, register_LDOconfigurationA_c101a3fa_Xdatamap1, register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1, register_AMPCONTROLSLOWgain_94286c99_Xdatamap1, register_AMPCONTROLMEDIUMgain_d4d2a186_Xdatamap1, register_SERVICEconfiguration_39b04185_Xdatamap3, register_AMPLIFIERconfiguration_170035c8_Xdatamap1);
 input  scli;
 input  sdai;
-output  ADDRESS;
 input  CELG59462;
 input  CELV96848;
   input  PORB97836;
 input  CELSUB40948;
 output  sdapd_registermap;
-input  KELVINsenseADDRESS;
-input [1:0] status_AMPLIFIERstatus1_b44cfc34;
-input [2:0] status_AMPLIFIERstatus2_55bb4d7c;
-input [5:0] status_AMPLIFIERstatus3_227c42a4;
-input [6:0] status_AMPLIFIERstatus4_875e88ef;
-input [7:0] status_AMPLIFIERstatus5_9e11f413;
-output [2:0] register_REF2output_46e2454e_Xdatamap2;
-output [2:0] register_REF3output_00f9a76d_Xdatamap1;
-output [2:0] register_REFERENCEselect_b05f295d_Xdatamap4;
-output [3:0] register_LDOconfigurationA_775ec168_Xdatamap2;
-output [3:0] register_LDOconfigurationA_d0b55acf_Xdatamap1;
-output [2:0] register_AMPCONTROLHIGHgain_e8e23518_Xdatamap1;
-output [2:0] register_AMPCONTROLSLOWgain_5dd36175_Xdatamap1;
-output [2:0] register_AMPCONTROLMEDIUMgain_e310431d_Xdatamap1;
-output [5:0] register_SERVICEconfiguration_d530de71_Xdatamap3;
-output [7:0] register_AMPLIFIERconfiguration_6aaefe15_Xdatamap1;
+input [1:0] status_AMPLIFIERstatus1_00af776c;
+input [2:0] status_AMPLIFIERstatus2_4975e8c9;
+input [5:0] status_AMPLIFIERstatus3_09172988;
+input [6:0] status_AMPLIFIERstatus4_f84d078e;
+input [7:0] status_AMPLIFIERstatus5_71c46bc1;
+output [2:0] register_REF2output_ed373047_Xdatamap2;
+output [2:0] register_REF3output_f5f0bf23_Xdatamap1;
+output [2:0] register_REFERENCEselect_501ed25d_Xdatamap4;
+output [3:0] register_LDOconfigurationA_08bb5ce4_Xdatamap2;
+output [3:0] register_LDOconfigurationA_c101a3fa_Xdatamap1;
+output [2:0] register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1;
+output [2:0] register_AMPCONTROLSLOWgain_94286c99_Xdatamap1;
+output [2:0] register_AMPCONTROLMEDIUMgain_d4d2a186_Xdatamap1;
+output [5:0] register_SERVICEconfiguration_39b04185_Xdatamap3;
+output [7:0] register_AMPLIFIERconfiguration_170035c8_Xdatamap1;
 
 
 // ------------------------ Wires ------------------------
-wire [1:0] status_AMPLIFIERstatus1_b44cfc34;
-wire [2:0] status_AMPLIFIERstatus2_55bb4d7c;
-wire [5:0] status_AMPLIFIERstatus3_227c42a4;
-wire [6:0] status_AMPLIFIERstatus4_875e88ef;
-wire [7:0] status_AMPLIFIERstatus5_9e11f413;
-wire [2:0] register_REF2output_46e2454e_Xdatamap2;
-wire [2:0] register_REF3output_00f9a76d_Xdatamap1;
-wire [2:0] register_REFERENCEselect_b05f295d_Xdatamap4;
-wire [3:0] register_LDOconfigurationA_775ec168_Xdatamap2;
-wire [3:0] register_LDOconfigurationA_d0b55acf_Xdatamap1;
-wire [2:0] register_AMPCONTROLHIGHgain_e8e23518_Xdatamap1;
-wire [2:0] register_AMPCONTROLSLOWgain_5dd36175_Xdatamap1;
-wire [2:0] register_AMPCONTROLMEDIUMgain_e310431d_Xdatamap1;
-wire [5:0] register_SERVICEconfiguration_d530de71_Xdatamap3;
-wire [7:0] register_AMPLIFIERconfiguration_6aaefe15_Xdatamap1;
+wire [1:0] status_AMPLIFIERstatus1_00af776c;
+wire [2:0] status_AMPLIFIERstatus2_4975e8c9;
+wire [5:0] status_AMPLIFIERstatus3_09172988;
+wire [6:0] status_AMPLIFIERstatus4_f84d078e;
+wire [7:0] status_AMPLIFIERstatus5_71c46bc1;
+wire [2:0] register_REF2output_ed373047_Xdatamap2;
+wire [2:0] register_REF3output_f5f0bf23_Xdatamap1;
+wire [2:0] register_REFERENCEselect_501ed25d_Xdatamap4;
+wire [3:0] register_LDOconfigurationA_08bb5ce4_Xdatamap2;
+wire [3:0] register_LDOconfigurationA_c101a3fa_Xdatamap1;
+wire [2:0] register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1;
+wire [2:0] register_AMPCONTROLSLOWgain_94286c99_Xdatamap1;
+wire [2:0] register_AMPCONTROLMEDIUMgain_d4d2a186_Xdatamap1;
+wire [5:0] register_SERVICEconfiguration_39b04185_Xdatamap3;
+wire [7:0] register_AMPLIFIERconfiguration_170035c8_Xdatamap1;
 wire [12:0] i2cbus;
 wire [7:0] i2caddress;
-wire [7:0] address0;
-wire [7:0] address1;
-wire [7:0] address2;
-wire [7:0] address3;
-wire [7:0] address4;
-wire [7:0] address5;
-wire [7:0] address6;
-wire [7:0] address7;
-wire [7:0] i2c_address;
 wire [7:0] por;
 wire [7:0] address;
 wire [7:0] register;
 
 // ------------------------ Networks ---------------------
-STONEnoconn XNCa0 (
-.noconn(a0)
-);
-
-STONEi2cCOREreset XSLAVE (
-.d0(a0),
-.d1(a1),
+STONEi2cCORE XSLAVE (
+.a0(a0),
+.a1(a1),
+.SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .porb(PORB97836),
 .scli(scli),
 .sdai(sdai),
-.CELSUB(CELSUB40948),
 .i2cbus(i2cbus[12:0]),
 .i2cmiso(i2cmiso),
-.i2caddress(i2caddress[7:0]),
+.i2caddress({a0,a0,a0,a0,a0,a0,a0,a0}),
 .sdapd_registermap(sdapd_registermap),
 .unlock_registermap(a1)
 );
@@ -218,27 +175,21 @@ STONEi2cGLOBAL XGLOBAL (
 .i2c_miso(i2cmiso)
 );
 
-MUDaddress8 XSlave8 (
+STONEi2cREGISTER8_1 XREG0x10 (
 .d0(b0),
 .d1(b1),
+.SUB(CELSUB40948),
+.por({b0,b0,b0,b0,b0,b0,b0,b0}),
 .CELG(CELG59462),
-.MUDV(MUDV),
-.porb(PORB97836),
-.CELSUB(CELSUB40948),
-.ADDRESS(ADDRESS),
-.address0({b0,b0,b0,b1,b0,b0,b0,b0}),
-.address1({b0,b0,b1,b0,b0,b0,b0,b0}),
-.address2({b0,b0,b1,b1,b0,b0,b0,b0}),
-.address3({b0,b1,b0,b0,b0,b0,b0,b0}),
-.address4({b0,b1,b0,b1,b0,b0,b0,b0}),
-.address5({b0,b1,b1,b0,b0,b0,b0,b0}),
-.address6({b0,b1,b1,b1,b0,b0,b0,b0}),
-.address7({b1,b0,b0,b0,b0,b0,b0,b0}),
-.i2c_address(i2caddress[7:0]),
-.kelvin_ADDRESS(KELVINsenseADDRESS)
+.CELV(CELV96848),
+.lock(b0),
+.i2cbus(i2cbus[12:0]),
+.address({b0,b0,b0,b1,b0,b0,b0,b0}),
+.i2cmiso(i2cmiso),
+.register({REG0x10_7,REG0x10_6,REG0x10_5,REG0x10_4,REG0x10_3,register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1[2],register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1[1],register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1[0]})
 );
 
-STONEi2cREGISTER8_1 XREG0x01 (
+STONEi2cREGISTER8_1 XREG0x11 (
 .d0(c0),
 .d1(c1),
 .SUB(CELSUB40948),
@@ -247,54 +198,54 @@ STONEi2cREGISTER8_1 XREG0x01 (
 .CELV(CELV96848),
 .lock(c0),
 .i2cbus(i2cbus[12:0]),
-.address({c0,c0,c0,c0,c0,c0,c0,c1}),
+.address({c0,c0,c0,c1,c0,c0,c0,c1}),
 .i2cmiso(i2cmiso),
-.register({REG0x01_7,REG0x01_6,REG0x01_5,REG0x01_4,REG0x01_3,register_AMPCONTROLHIGHgain_e8e23518_Xdatamap1[2],register_AMPCONTROLHIGHgain_e8e23518_Xdatamap1[1],register_AMPCONTROLHIGHgain_e8e23518_Xdatamap1[0]})
+.register({REG0x11_7,REG0x11_6,REG0x11_5,REG0x11_4,REG0x11_3,register_AMPCONTROLMEDIUMgain_d4d2a186_Xdatamap1[2],register_AMPCONTROLMEDIUMgain_d4d2a186_Xdatamap1[1],register_AMPCONTROLMEDIUMgain_d4d2a186_Xdatamap1[0]})
 );
 
-STONEi2cREGISTER8_1 XREG0x02 (
-.d0(d0),
-.d1(d1),
+STONEi2cREGISTER8_1 XREG0x12 (
+.d0(h0),
+.d1(h1),
 .SUB(CELSUB40948),
-.por({d0,d0,d0,d0,d0,d0,d0,d0}),
+.por({h0,h0,h0,h0,h0,h1,h0,h1}),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.lock(d0),
+.lock(h0),
 .i2cbus(i2cbus[12:0]),
-.address({d0,d0,d0,d0,d0,d0,d1,d0}),
+.address({h0,h0,h0,h1,h0,h0,h1,h0}),
 .i2cmiso(i2cmiso),
-.register({REG0x02_7,REG0x02_6,REG0x02_5,REG0x02_4,REG0x02_3,register_AMPCONTROLMEDIUMgain_e310431d_Xdatamap1[2],register_AMPCONTROLMEDIUMgain_e310431d_Xdatamap1[1],register_AMPCONTROLMEDIUMgain_e310431d_Xdatamap1[0]})
+.register({REG0x12_7,REG0x12_6,REG0x12_5,REG0x12_4,REG0x12_3,register_REF2output_ed373047_Xdatamap2[2],register_REF2output_ed373047_Xdatamap2[1],register_REF2output_ed373047_Xdatamap2[0]})
 );
 
-STONEi2cREGISTER8_1 XREG0x03 (
+STONEi2cREGISTER8_1 XREG0x13 (
 .d0(i0),
 .d1(i1),
 .SUB(CELSUB40948),
-.por({i0,i0,i0,i0,i0,i1,i0,i1}),
+.por({i0,i0,i0,i0,i0,i0,i1,i0}),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .lock(i0),
 .i2cbus(i2cbus[12:0]),
-.address({i0,i0,i0,i0,i0,i0,i1,i1}),
+.address({i0,i0,i0,i1,i0,i0,i1,i1}),
 .i2cmiso(i2cmiso),
-.register({REG0x03_7,REG0x03_6,REG0x03_5,REG0x03_4,REG0x03_3,register_REF2output_46e2454e_Xdatamap2[2],register_REF2output_46e2454e_Xdatamap2[1],register_REF2output_46e2454e_Xdatamap2[0]})
+.register({REG0x13_7,REG0x13_6,REG0x13_5,REG0x13_4,REG0x13_3,register_REF3output_f5f0bf23_Xdatamap1[2],register_REF3output_f5f0bf23_Xdatamap1[1],register_REF3output_f5f0bf23_Xdatamap1[0]})
 );
 
-STONEi2cREGISTER8_1 XREG0x04 (
+STONEi2cREGISTER8_1 XREG0x14 (
 .d0(j0),
 .d1(j1),
 .SUB(CELSUB40948),
-.por({j0,j0,j0,j0,j0,j0,j1,j0}),
+.por({j0,j0,j0,j0,j0,j0,j0,j0}),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .lock(j0),
 .i2cbus(i2cbus[12:0]),
-.address({j0,j0,j0,j0,j0,j1,j0,j0}),
+.address({j0,j0,j0,j1,j0,j1,j0,j0}),
 .i2cmiso(i2cmiso),
-.register({REG0x04_7,REG0x04_6,REG0x04_5,REG0x04_4,REG0x04_3,register_REF3output_00f9a76d_Xdatamap1[2],register_REF3output_00f9a76d_Xdatamap1[1],register_REF3output_00f9a76d_Xdatamap1[0]})
+.register({REG0x14_7,REG0x14_6,REG0x14_5,register_REFERENCEselect_501ed25d_Xdatamap4[2],register_REFERENCEselect_501ed25d_Xdatamap4[1],register_REFERENCEselect_501ed25d_Xdatamap4[0],REG0x14_1,REG0x14_0})
 );
 
-STONEi2cREGISTER8_1 XREG0x05 (
+STONEi2cREGISTER8_1 XREG0x15 (
 .d0(k0),
 .d1(k1),
 .SUB(CELSUB40948),
@@ -303,40 +254,12 @@ STONEi2cREGISTER8_1 XREG0x05 (
 .CELV(CELV96848),
 .lock(k0),
 .i2cbus(i2cbus[12:0]),
-.address({k0,k0,k0,k0,k0,k1,k0,k1}),
+.address({k0,k0,k0,k1,k0,k1,k0,k1}),
 .i2cmiso(i2cmiso),
-.register({REG0x05_7,REG0x05_6,REG0x05_5,register_REFERENCEselect_b05f295d_Xdatamap4[2],register_REFERENCEselect_b05f295d_Xdatamap4[1],register_REFERENCEselect_b05f295d_Xdatamap4[0],REG0x05_1,REG0x05_0})
-);
-
-STONEi2cREGISTER8_1 XREG0x06 (
-.d0(l0),
-.d1(l1),
-.SUB(CELSUB40948),
-.por({l0,l0,l0,l0,l0,l0,l0,l0}),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.lock(l0),
-.i2cbus(i2cbus[12:0]),
-.address({l0,l0,l0,l0,l0,l1,l1,l0}),
-.i2cmiso(i2cmiso),
-.register({register_SERVICEconfiguration_d530de71_Xdatamap3[0],REG0x06_6,REG0x06_5,register_SERVICEconfiguration_d530de71_Xdatamap3[5],register_SERVICEconfiguration_d530de71_Xdatamap3[4],register_SERVICEconfiguration_d530de71_Xdatamap3[3],register_SERVICEconfiguration_d530de71_Xdatamap3[2],register_SERVICEconfiguration_d530de71_Xdatamap3[1]})
+.register({register_SERVICEconfiguration_39b04185_Xdatamap3[0],REG0x15_6,REG0x15_5,register_SERVICEconfiguration_39b04185_Xdatamap3[5],register_SERVICEconfiguration_39b04185_Xdatamap3[4],register_SERVICEconfiguration_39b04185_Xdatamap3[3],register_SERVICEconfiguration_39b04185_Xdatamap3[2],register_SERVICEconfiguration_39b04185_Xdatamap3[1]})
 );
 
 STONEi2cREGISTER8_1 XREG0x21 (
-.d0(h0),
-.d1(h1),
-.SUB(CELSUB40948),
-.por({h0,h0,h0,h0,h0,h0,h0,h0}),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.lock(h0),
-.i2cbus(i2cbus[12:0]),
-.address({h0,h0,h1,h0,h0,h0,h0,h1}),
-.i2cmiso(i2cmiso),
-.register({register_LDOconfigurationA_d0b55acf_Xdatamap1[0],REG0x21_6,REG0x21_5,REG0x21_4,REG0x21_3,register_LDOconfigurationA_d0b55acf_Xdatamap1[3],register_LDOconfigurationA_d0b55acf_Xdatamap1[2],register_LDOconfigurationA_d0b55acf_Xdatamap1[1]})
-);
-
-STONEi2cREGISTER8_1 XREG0x22 (
 .d0(g0),
 .d1(g1),
 .SUB(CELSUB40948),
@@ -345,26 +268,12 @@ STONEi2cREGISTER8_1 XREG0x22 (
 .CELV(CELV96848),
 .lock(g0),
 .i2cbus(i2cbus[12:0]),
-.address({g0,g0,g1,g0,g0,g0,g1,g0}),
+.address({g0,g0,g1,g0,g0,g0,g0,g1}),
 .i2cmiso(i2cmiso),
-.register({REG0x22_7,register_LDOconfigurationA_775ec168_Xdatamap2[3],register_LDOconfigurationA_775ec168_Xdatamap2[2],register_LDOconfigurationA_775ec168_Xdatamap2[1],register_LDOconfigurationA_775ec168_Xdatamap2[0],REG0x22_2,REG0x22_1,REG0x22_0})
+.register({register_LDOconfigurationA_c101a3fa_Xdatamap1[0],REG0x21_6,REG0x21_5,REG0x21_4,REG0x21_3,register_LDOconfigurationA_c101a3fa_Xdatamap1[3],register_LDOconfigurationA_c101a3fa_Xdatamap1[2],register_LDOconfigurationA_c101a3fa_Xdatamap1[1]})
 );
 
-STONEi2cREGISTER8_1 XREG0x45 (
-.d0(e0),
-.d1(e1),
-.SUB(CELSUB40948),
-.por({e0,e0,e0,e0,e0,e0,e0,e0}),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.lock(e0),
-.i2cbus(i2cbus[12:0]),
-.address({e0,e1,e0,e0,e0,e1,e0,e1}),
-.i2cmiso(i2cmiso),
-.register({REG0x45_7,REG0x45_6,register_AMPCONTROLSLOWgain_5dd36175_Xdatamap1[2],register_AMPCONTROLSLOWgain_5dd36175_Xdatamap1[1],register_AMPCONTROLSLOWgain_5dd36175_Xdatamap1[0],REG0x45_2,REG0x45_1,REG0x45_0})
-);
-
-STONEi2cREGISTER8_1 XREG0xA2 (
+STONEi2cREGISTER8_1 XREG0x22 (
 .d0(f0),
 .d1(f1),
 .SUB(CELSUB40948),
@@ -373,117 +282,145 @@ STONEi2cREGISTER8_1 XREG0xA2 (
 .CELV(CELV96848),
 .lock(f0),
 .i2cbus(i2cbus[12:0]),
-.address({f1,f0,f1,f0,f0,f0,f1,f0}),
+.address({f0,f0,f1,f0,f0,f0,f1,f0}),
 .i2cmiso(i2cmiso),
-.register({register_AMPLIFIERconfiguration_6aaefe15_Xdatamap1[0],register_AMPLIFIERconfiguration_6aaefe15_Xdatamap1[7],register_AMPLIFIERconfiguration_6aaefe15_Xdatamap1[6],register_AMPLIFIERconfiguration_6aaefe15_Xdatamap1[5],register_AMPLIFIERconfiguration_6aaefe15_Xdatamap1[4],register_AMPLIFIERconfiguration_6aaefe15_Xdatamap1[3],register_AMPLIFIERconfiguration_6aaefe15_Xdatamap1[2],register_AMPLIFIERconfiguration_6aaefe15_Xdatamap1[1]})
+.register({REG0x22_7,register_LDOconfigurationA_08bb5ce4_Xdatamap2[3],register_LDOconfigurationA_08bb5ce4_Xdatamap2[2],register_LDOconfigurationA_08bb5ce4_Xdatamap2[1],register_LDOconfigurationA_08bb5ce4_Xdatamap2[0],REG0x22_2,REG0x22_1,REG0x22_0})
 );
 
-STONEnoconn XNCREG0x01_3 (
-.noconn(REG0x01_3)
+STONEi2cREGISTER8_1 XREG0x45 (
+.d0(d0),
+.d1(d1),
+.SUB(CELSUB40948),
+.por({d0,d0,d0,d0,d0,d0,d0,d0}),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.lock(d0),
+.i2cbus(i2cbus[12:0]),
+.address({d0,d1,d0,d0,d0,d1,d0,d1}),
+.i2cmiso(i2cmiso),
+.register({REG0x45_7,REG0x45_6,register_AMPCONTROLSLOWgain_94286c99_Xdatamap1[2],register_AMPCONTROLSLOWgain_94286c99_Xdatamap1[1],register_AMPCONTROLSLOWgain_94286c99_Xdatamap1[0],REG0x45_2,REG0x45_1,REG0x45_0})
 );
 
-STONEnoconn XNCREG0x01_4 (
-.noconn(REG0x01_4)
+STONEi2cREGISTER8_1 XREG0xA4 (
+.d0(e0),
+.d1(e1),
+.SUB(CELSUB40948),
+.por({e0,e0,e0,e0,e0,e0,e0,e0}),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.lock(e0),
+.i2cbus(i2cbus[12:0]),
+.address({e1,e0,e1,e0,e0,e1,e0,e0}),
+.i2cmiso(i2cmiso),
+.register({register_AMPLIFIERconfiguration_170035c8_Xdatamap1[0],register_AMPLIFIERconfiguration_170035c8_Xdatamap1[7],register_AMPLIFIERconfiguration_170035c8_Xdatamap1[6],register_AMPLIFIERconfiguration_170035c8_Xdatamap1[5],register_AMPLIFIERconfiguration_170035c8_Xdatamap1[4],register_AMPLIFIERconfiguration_170035c8_Xdatamap1[3],register_AMPLIFIERconfiguration_170035c8_Xdatamap1[2],register_AMPLIFIERconfiguration_170035c8_Xdatamap1[1]})
 );
 
-STONEnoconn XNCREG0x01_5 (
-.noconn(REG0x01_5)
+STONEnoconn XNCREG0x10_3 (
+.noconn(REG0x10_3)
 );
 
-STONEnoconn XNCREG0x01_6 (
-.noconn(REG0x01_6)
+STONEnoconn XNCREG0x10_4 (
+.noconn(REG0x10_4)
 );
 
-STONEnoconn XNCREG0x01_7 (
-.noconn(REG0x01_7)
+STONEnoconn XNCREG0x10_5 (
+.noconn(REG0x10_5)
 );
 
-STONEnoconn XNCREG0x02_3 (
-.noconn(REG0x02_3)
+STONEnoconn XNCREG0x10_6 (
+.noconn(REG0x10_6)
 );
 
-STONEnoconn XNCREG0x02_4 (
-.noconn(REG0x02_4)
+STONEnoconn XNCREG0x10_7 (
+.noconn(REG0x10_7)
 );
 
-STONEnoconn XNCREG0x02_5 (
-.noconn(REG0x02_5)
+STONEnoconn XNCREG0x11_3 (
+.noconn(REG0x11_3)
 );
 
-STONEnoconn XNCREG0x02_6 (
-.noconn(REG0x02_6)
+STONEnoconn XNCREG0x11_4 (
+.noconn(REG0x11_4)
 );
 
-STONEnoconn XNCREG0x02_7 (
-.noconn(REG0x02_7)
+STONEnoconn XNCREG0x11_5 (
+.noconn(REG0x11_5)
 );
 
-STONEnoconn XNCREG0x03_3 (
-.noconn(REG0x03_3)
+STONEnoconn XNCREG0x11_6 (
+.noconn(REG0x11_6)
 );
 
-STONEnoconn XNCREG0x03_4 (
-.noconn(REG0x03_4)
+STONEnoconn XNCREG0x11_7 (
+.noconn(REG0x11_7)
 );
 
-STONEnoconn XNCREG0x03_5 (
-.noconn(REG0x03_5)
+STONEnoconn XNCREG0x12_3 (
+.noconn(REG0x12_3)
 );
 
-STONEnoconn XNCREG0x03_6 (
-.noconn(REG0x03_6)
+STONEnoconn XNCREG0x12_4 (
+.noconn(REG0x12_4)
 );
 
-STONEnoconn XNCREG0x03_7 (
-.noconn(REG0x03_7)
+STONEnoconn XNCREG0x12_5 (
+.noconn(REG0x12_5)
 );
 
-STONEnoconn XNCREG0x04_3 (
-.noconn(REG0x04_3)
+STONEnoconn XNCREG0x12_6 (
+.noconn(REG0x12_6)
 );
 
-STONEnoconn XNCREG0x04_4 (
-.noconn(REG0x04_4)
+STONEnoconn XNCREG0x12_7 (
+.noconn(REG0x12_7)
 );
 
-STONEnoconn XNCREG0x04_5 (
-.noconn(REG0x04_5)
+STONEnoconn XNCREG0x13_3 (
+.noconn(REG0x13_3)
 );
 
-STONEnoconn XNCREG0x04_6 (
-.noconn(REG0x04_6)
+STONEnoconn XNCREG0x13_4 (
+.noconn(REG0x13_4)
 );
 
-STONEnoconn XNCREG0x04_7 (
-.noconn(REG0x04_7)
+STONEnoconn XNCREG0x13_5 (
+.noconn(REG0x13_5)
 );
 
-STONEnoconn XNCREG0x05_0 (
-.noconn(REG0x05_0)
+STONEnoconn XNCREG0x13_6 (
+.noconn(REG0x13_6)
 );
 
-STONEnoconn XNCREG0x05_1 (
-.noconn(REG0x05_1)
+STONEnoconn XNCREG0x13_7 (
+.noconn(REG0x13_7)
 );
 
-STONEnoconn XNCREG0x05_5 (
-.noconn(REG0x05_5)
+STONEnoconn XNCREG0x14_0 (
+.noconn(REG0x14_0)
 );
 
-STONEnoconn XNCREG0x05_6 (
-.noconn(REG0x05_6)
+STONEnoconn XNCREG0x14_1 (
+.noconn(REG0x14_1)
 );
 
-STONEnoconn XNCREG0x05_7 (
-.noconn(REG0x05_7)
+STONEnoconn XNCREG0x14_5 (
+.noconn(REG0x14_5)
 );
 
-STONEnoconn XNCREG0x06_5 (
-.noconn(REG0x06_5)
+STONEnoconn XNCREG0x14_6 (
+.noconn(REG0x14_6)
 );
 
-STONEnoconn XNCREG0x06_6 (
-.noconn(REG0x06_6)
+STONEnoconn XNCREG0x14_7 (
+.noconn(REG0x14_7)
+);
+
+STONEnoconn XNCREG0x15_5 (
+.noconn(REG0x15_5)
+);
+
+STONEnoconn XNCREG0x15_6 (
+.noconn(REG0x15_6)
 );
 
 STONEnoconn XNCREG0x21_3 (
@@ -538,112 +475,7 @@ STONEnoconn XNCREG0x45_7 (
 .noconn(REG0x45_7)
 );
 
-STONEi2cSTATUS XSTATUS_0x07 (
-.a0(p0),
-.a1(p1),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.edge0(p0),
-.edge1(p0),
-.edge2(p0),
-.edge3(p0),
-.edge4(p0),
-.edge5(p0),
-.edge6(p0),
-.edge7(p0),
-.CELSUB(CELSUB40948),
-.i2cbus(i2cbus[12:0]),
-.level0(p0),
-.level1(p0),
-.level2(p0),
-.level3(p0),
-.level4(p0),
-.level5(p0),
-.level6(p0),
-.level7(p0),
-.address({p0,p0,p0,p0,p0,p1,p1,p1}),
-.i2cmiso(i2cmiso),
-.status0(status_AMPLIFIERstatus3_227c42a4[0]),
-.status1(status_AMPLIFIERstatus3_227c42a4[1]),
-.status2(status_AMPLIFIERstatus3_227c42a4[2]),
-.status3(status_AMPLIFIERstatus3_227c42a4[3]),
-.status4(status_AMPLIFIERstatus3_227c42a4[4]),
-.status5(status_AMPLIFIERstatus3_227c42a4[5]),
-.status6(p0),
-.status7(p0)
-);
-
-STONEi2cSTATUS XSTATUS_0x08 (
-.a0(q0),
-.a1(q1),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.edge0(q0),
-.edge1(q0),
-.edge2(q0),
-.edge3(q0),
-.edge4(q0),
-.edge5(q0),
-.edge6(q0),
-.edge7(q0),
-.CELSUB(CELSUB40948),
-.i2cbus(i2cbus[12:0]),
-.level0(q0),
-.level1(q0),
-.level2(q0),
-.level3(q0),
-.level4(q0),
-.level5(q0),
-.level6(q0),
-.level7(q0),
-.address({q0,q0,q0,q0,q1,q0,q0,q0}),
-.i2cmiso(i2cmiso),
-.status0(status_AMPLIFIERstatus4_875e88ef[0]),
-.status1(status_AMPLIFIERstatus4_875e88ef[1]),
-.status2(status_AMPLIFIERstatus4_875e88ef[2]),
-.status3(status_AMPLIFIERstatus4_875e88ef[3]),
-.status4(status_AMPLIFIERstatus4_875e88ef[4]),
-.status5(status_AMPLIFIERstatus4_875e88ef[5]),
-.status6(status_AMPLIFIERstatus4_875e88ef[6]),
-.status7(q0)
-);
-
-STONEi2cSTATUS XSTATUS_0x1F (
-.a0(n0),
-.a1(n1),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.edge0(n0),
-.edge1(n0),
-.edge2(n0),
-.edge3(n0),
-.edge4(n0),
-.edge5(n0),
-.edge6(n0),
-.edge7(n0),
-.CELSUB(CELSUB40948),
-.i2cbus(i2cbus[12:0]),
-.level0(n0),
-.level1(n0),
-.level2(n0),
-.level3(n0),
-.level4(n0),
-.level5(n0),
-.level6(n0),
-.level7(n0),
-.address({n0,n0,n0,n1,n1,n1,n1,n1}),
-.i2cmiso(i2cmiso),
-.status0(status_AMPLIFIERstatus2_55bb4d7c[0]),
-.status1(status_AMPLIFIERstatus2_55bb4d7c[1]),
-.status2(status_AMPLIFIERstatus2_55bb4d7c[2]),
-.status3(n0),
-.status4(n0),
-.status5(n0),
-.status6(n0),
-.status7(n0)
-);
-
-STONEi2cSTATUS XSTATUS_0x44 (
+STONEi2cSTATUS XSTATUS_0x16 (
 .a0(o0),
 .a1(o1),
 .CELG(CELG59462),
@@ -666,19 +498,54 @@ STONEi2cSTATUS XSTATUS_0x44 (
 .level5(o0),
 .level6(o0),
 .level7(o0),
-.address({o0,o1,o0,o0,o0,o1,o0,o0}),
+.address({o0,o0,o0,o1,o0,o1,o1,o0}),
 .i2cmiso(i2cmiso),
-.status0(status_AMPLIFIERstatus5_9e11f413[0]),
-.status1(status_AMPLIFIERstatus5_9e11f413[1]),
-.status2(status_AMPLIFIERstatus5_9e11f413[2]),
-.status3(status_AMPLIFIERstatus5_9e11f413[3]),
-.status4(status_AMPLIFIERstatus5_9e11f413[4]),
-.status5(status_AMPLIFIERstatus5_9e11f413[5]),
-.status6(status_AMPLIFIERstatus5_9e11f413[6]),
-.status7(status_AMPLIFIERstatus5_9e11f413[7])
+.status0(status_AMPLIFIERstatus3_09172988[0]),
+.status1(status_AMPLIFIERstatus3_09172988[1]),
+.status2(status_AMPLIFIERstatus3_09172988[2]),
+.status3(status_AMPLIFIERstatus3_09172988[3]),
+.status4(status_AMPLIFIERstatus3_09172988[4]),
+.status5(status_AMPLIFIERstatus3_09172988[5]),
+.status6(o0),
+.status7(o0)
 );
 
-STONEi2cSTATUS XSTATUS_0xA2 (
+STONEi2cSTATUS XSTATUS_0x17 (
+.a0(p0),
+.a1(p1),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.edge0(p0),
+.edge1(p0),
+.edge2(p0),
+.edge3(p0),
+.edge4(p0),
+.edge5(p0),
+.edge6(p0),
+.edge7(p0),
+.CELSUB(CELSUB40948),
+.i2cbus(i2cbus[12:0]),
+.level0(p0),
+.level1(p0),
+.level2(p0),
+.level3(p0),
+.level4(p0),
+.level5(p0),
+.level6(p0),
+.level7(p0),
+.address({p0,p0,p0,p1,p0,p1,p1,p1}),
+.i2cmiso(i2cmiso),
+.status0(status_AMPLIFIERstatus4_f84d078e[0]),
+.status1(status_AMPLIFIERstatus4_f84d078e[1]),
+.status2(status_AMPLIFIERstatus4_f84d078e[2]),
+.status3(status_AMPLIFIERstatus4_f84d078e[3]),
+.status4(status_AMPLIFIERstatus4_f84d078e[4]),
+.status5(status_AMPLIFIERstatus4_f84d078e[5]),
+.status6(status_AMPLIFIERstatus4_f84d078e[6]),
+.status7(p0)
+);
+
+STONEi2cSTATUS XSTATUS_0x1F (
 .a0(m0),
 .a1(m1),
 .CELG(CELG59462),
@@ -701,16 +568,86 @@ STONEi2cSTATUS XSTATUS_0xA2 (
 .level5(m0),
 .level6(m0),
 .level7(m0),
-.address({m1,m0,m1,m0,m0,m0,m1,m0}),
+.address({m0,m0,m0,m1,m1,m1,m1,m1}),
 .i2cmiso(i2cmiso),
-.status0(status_AMPLIFIERstatus1_b44cfc34[0]),
-.status1(status_AMPLIFIERstatus1_b44cfc34[1]),
-.status2(m0),
+.status0(status_AMPLIFIERstatus2_4975e8c9[0]),
+.status1(status_AMPLIFIERstatus2_4975e8c9[1]),
+.status2(status_AMPLIFIERstatus2_4975e8c9[2]),
 .status3(m0),
 .status4(m0),
 .status5(m0),
 .status6(m0),
 .status7(m0)
+);
+
+STONEi2cSTATUS XSTATUS_0x44 (
+.a0(n0),
+.a1(n1),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.edge0(n0),
+.edge1(n0),
+.edge2(n0),
+.edge3(n0),
+.edge4(n0),
+.edge5(n0),
+.edge6(n0),
+.edge7(n0),
+.CELSUB(CELSUB40948),
+.i2cbus(i2cbus[12:0]),
+.level0(n0),
+.level1(n0),
+.level2(n0),
+.level3(n0),
+.level4(n0),
+.level5(n0),
+.level6(n0),
+.level7(n0),
+.address({n0,n1,n0,n0,n0,n1,n0,n0}),
+.i2cmiso(i2cmiso),
+.status0(status_AMPLIFIERstatus5_71c46bc1[0]),
+.status1(status_AMPLIFIERstatus5_71c46bc1[1]),
+.status2(status_AMPLIFIERstatus5_71c46bc1[2]),
+.status3(status_AMPLIFIERstatus5_71c46bc1[3]),
+.status4(status_AMPLIFIERstatus5_71c46bc1[4]),
+.status5(status_AMPLIFIERstatus5_71c46bc1[5]),
+.status6(status_AMPLIFIERstatus5_71c46bc1[6]),
+.status7(status_AMPLIFIERstatus5_71c46bc1[7])
+);
+
+STONEi2cSTATUS XSTATUS_0xA2 (
+.a0(l0),
+.a1(l1),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.edge0(l0),
+.edge1(l0),
+.edge2(l0),
+.edge3(l0),
+.edge4(l0),
+.edge5(l0),
+.edge6(l0),
+.edge7(l0),
+.CELSUB(CELSUB40948),
+.i2cbus(i2cbus[12:0]),
+.level0(l0),
+.level1(l0),
+.level2(l0),
+.level3(l0),
+.level4(l0),
+.level5(l0),
+.level6(l0),
+.level7(l0),
+.address({l1,l0,l1,l0,l0,l0,l1,l0}),
+.i2cmiso(i2cmiso),
+.status0(status_AMPLIFIERstatus1_00af776c[0]),
+.status1(status_AMPLIFIERstatus1_00af776c[1]),
+.status2(l0),
+.status3(l0),
+.status4(l0),
+.status5(l0),
+.status6(l0),
+.status7(l0)
 );
 
 endmodule

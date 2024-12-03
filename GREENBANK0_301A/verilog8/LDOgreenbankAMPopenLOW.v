@@ -68,7 +68,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module LDOgreenbankAMPopenLOW (LDO, REF, tmi, MUDV, CELG59462, CELV96848, sense_LDO, enable_ldo, CELSUB40948, dft_startup, IP_b45372ed_Xamplifier1);
+module LDOgreenbankAMPopenLOW (LDO, REF, tmi, MUDV, CELG59462, CELV96848, sense_LDO, enable_ldo, CELSUB40948, dft_startup, IP_2f4c979a_Xamplifier1);
 output  LDO;
 input  REF;
 input [4:0] tmi;
@@ -79,7 +79,7 @@ input  sense_LDO;
 input  enable_ldo;
 input  CELSUB40948;
 output  dft_startup;
-input  IP_b45372ed_Xamplifier1;
+input  IP_2f4c979a_Xamplifier1;
 
 
 // ------------------------ Wires ------------------------
@@ -102,13 +102,13 @@ switchgnd_321bf2ca XU9 (
 .I(REF),
 .O(net_32),
 .CELG(CELG59462),
-.SIMPV(TBD_XU1_XceleraCORE_XU21_XAMPOPENlow_XU9_SIMPV),
+.SIMPV(TBD_XU3_XceleraCORE_XU21_XAMPOPENlow_XU9_SIMPV),
 .CELSUB(CELSUB40948),
 .enable_switch(enable_ldo)
 );
 
 amplifier_0e1b07e7 Xamplifier1 (
-.IP(IP_b45372ed_Xamplifier1),
+.IP(IP_2f4c979a_Xamplifier1),
 .INN(clamp_Xamplifier1_36),
 .INP(net_32),
 .OUT(LDO),
@@ -117,7 +117,7 @@ amplifier_0e1b07e7 Xamplifier1 (
 .CELSUB(CELSUB40948),
 .ok_amplifier(net_33),
 .enable_amplifier(enable_ldo),
-.global_amplifier(global_amplifier_b45372ed_Xamplifier1)
+.global_amplifier(global_amplifier_2f4c979a_Xamplifier1)
 );
 
 DFTtm8t dft_hex0x16 (
@@ -125,7 +125,7 @@ DFTtm8t dft_hex0x16 (
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x16_ten_7,noconn_dft_hex0x16_ten_6,noconn_dft_hex0x16_ten_5,noconn_dft_hex0x16_ten_4,noconn_dft_hex0x16_ten_3,noconn_dft_hex0x16_ten_2,noconn_dft_hex0x16_ten_1,global_amplifier_b45372ed_Xamplifier1}),
+.ten({noconn_dft_hex0x16_ten_7,noconn_dft_hex0x16_ten_6,noconn_dft_hex0x16_ten_5,noconn_dft_hex0x16_ten_4,noconn_dft_hex0x16_ten_3,noconn_dft_hex0x16_ten_2,noconn_dft_hex0x16_ten_1,global_amplifier_2f4c979a_Xamplifier1}),
 .tma({a0,a0,a0,a1,a0,a1,a1,a0}),
 .tmi(tmi[4:0])
 );

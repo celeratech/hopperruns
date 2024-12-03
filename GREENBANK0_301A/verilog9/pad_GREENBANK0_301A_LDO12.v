@@ -29,11 +29,11 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_GREENBANK0_301A_LDO12 (GESD, MUDV, LDO12, celkelvin_LDO12_73f01841);
+module pad_GREENBANK0_301A_LDO12 (GESD, MUDV, LDO12, celkelvin_LDO12_ddaae812);
 input  GESD;
 inout  MUDV;
 inout  LDO12;
-output  celkelvin_LDO12_73f01841;
+output  celkelvin_LDO12_ddaae812;
 
 
 // ------------------------ Wires ------------------------
@@ -53,9 +53,9 @@ ESDdiode Xesd2_XPAD1 (
 .P(GESD)
 );
 
-WRAPPER1 XWRAP_celkelvin_LDO12_73f01841 (
+WRAPPER1 XWRAP_celkelvin_LDO12_ddaae812 (
 .i(LDO12),
-.o(celkelvin_LDO12_73f01841)
+.o(celkelvin_LDO12_ddaae812)
 );
 
 endmodule
