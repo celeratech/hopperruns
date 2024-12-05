@@ -121,6 +121,15 @@ module dftprobeModel0_80e43a5a (i,tdi,ten,CELG,CELV,CELSUB);
   input  CELSUB;
 endmodule
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 //Verilog HDL for "DFT", "DFTtm8d" "functional"
 
 
@@ -135,6 +144,16 @@ module DFTtm8d ( a, ten, tdo, tmi, G, SUB, V, tdi, tma );
   input G;
   input SUB;
   inout  [4:0] tmi;
+endmodule
+
+
+//Verilog HDL for "Generate", "WRAPPER1" "functional"
+
+
+module WRAPPER1 ( o, i );
+
+  input i;
+  output o;
 endmodule
 
 
@@ -195,7 +214,7 @@ LDOgreenbankLDOfixed40mA XLDOconfigNO1 (
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.enable_ldo(register_LDOconfigurationA_08bb5ce4_Xdatamap2[3]),
+.enable_ldo(net_95),
 .CELSUB40948(CELSUB40948),
 .dft_startup(net_129),
 .CELPOWER_LDO_ae2828c4(CELPOWER_LDO_ae2828c4),
@@ -224,7 +243,7 @@ LDOgreenbankLDOconfigure20mA XLDOCONFIGURE20mA (
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.enable_ldo(register_LDOconfigurationA_08bb5ce4_Xdatamap2[2]),
+.enable_ldo(net_94),
 .CELSUB40948(CELSUB40948),
 .dft_startup(net_128),
 .celkelvin_LDO14_9c93d8b1(celkelvin_LDO14_9c93d8b1),
@@ -253,7 +272,7 @@ LDOgreenbankLDOfixed20mA XLDOFIXED1 (
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.enable_ldo(register_LDOconfigurationA_08bb5ce4_Xdatamap2[0]),
+.enable_ldo(net_92),
 .CELSUB40948(CELSUB40948),
 .dft_startup(net_126),
 .celkelvin_LDO12_ddaae812(celkelvin_LDO12_ddaae812),
@@ -280,7 +299,7 @@ LDOgreenbankLDOstandalone20mA XLDOSTANDALONE20mA (
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.enable_ldo(register_LDOconfigurationA_08bb5ce4_Xdatamap2[1]),
+.enable_ldo(net_93),
 .CELSUB40948(CELSUB40948),
 .dft_startup(net_127),
 .celkelvin_LDO13_065c4558(celkelvin_LDO13_065c4558),
@@ -374,6 +393,22 @@ dftprobeModel0_80e43a5a XU19 (
 .CELSUB(CELSUB40948)
 );
 
+STONEnoconn XNC76 (
+.noconn(net_76)
+);
+
+STONEnoconn XNC77 (
+.noconn(net_77)
+);
+
+STONEnoconn XNC78 (
+.noconn(net_78)
+);
+
+STONEnoconn XNC79 (
+.noconn(net_79)
+);
+
 DFTtm8d dft_hex0x0F (
 .G(CELG59462),
 .V(CELV96848),
@@ -384,6 +419,46 @@ DFTtm8d dft_hex0x0F (
 .ten({ten_a45a1301_XU8,ten_e7b85f8c_XU6,ten_ea868367_XU5,ten_0f38767e_XU19,ten_f1dbe31b_XU18,ten_4c4345e3_XU17,ten_3f8f2ada_XU16,ten_e1adfe2e_XU1}),
 .tma({a0,a0,a0,a0,a1,a1,a1,a1}),
 .tmi(tmi[4:0])
+);
+
+WRAPPER1 XWRAPregister_LDOconfigurationA_08bb5ce4_Xdatamap2_0 (
+.i(register_LDOconfigurationA_08bb5ce4_Xdatamap2[0]),
+.o(net_92)
+);
+
+WRAPPER1 XWRAPregister_LDOconfigurationA_08bb5ce4_Xdatamap2_1 (
+.i(register_LDOconfigurationA_08bb5ce4_Xdatamap2[1]),
+.o(net_93)
+);
+
+WRAPPER1 XWRAPregister_LDOconfigurationA_08bb5ce4_Xdatamap2_2 (
+.i(register_LDOconfigurationA_08bb5ce4_Xdatamap2[2]),
+.o(net_94)
+);
+
+WRAPPER1 XWRAPregister_LDOconfigurationA_08bb5ce4_Xdatamap2_3 (
+.i(register_LDOconfigurationA_08bb5ce4_Xdatamap2[3]),
+.o(net_95)
+);
+
+WRAPPER1 XWRAPregister_LDOconfigurationA_c101a3fa_Xdatamap1_0 (
+.i(register_LDOconfigurationA_c101a3fa_Xdatamap1[0]),
+.o(net_76)
+);
+
+WRAPPER1 XWRAPregister_LDOconfigurationA_c101a3fa_Xdatamap1_1 (
+.i(register_LDOconfigurationA_c101a3fa_Xdatamap1[1]),
+.o(net_77)
+);
+
+WRAPPER1 XWRAPregister_LDOconfigurationA_c101a3fa_Xdatamap1_2 (
+.i(register_LDOconfigurationA_c101a3fa_Xdatamap1[2]),
+.o(net_78)
+);
+
+WRAPPER1 XWRAPregister_LDOconfigurationA_c101a3fa_Xdatamap1_3 (
+.i(register_LDOconfigurationA_c101a3fa_Xdatamap1[3]),
+.o(net_79)
 );
 
 endmodule

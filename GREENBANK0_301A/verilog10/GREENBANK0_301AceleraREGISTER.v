@@ -105,7 +105,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module GREENBANK0_301AceleraREGISTER (scli, sdai, CELG59462, CELV96848, PORB97836, CELSUB40948, sdapd_registermap, status_AMPLIFIERstatus1_00af776c, status_AMPLIFIERstatus2_4975e8c9, status_AMPLIFIERstatus3_09172988, status_AMPLIFIERstatus4_f84d078e, status_AMPLIFIERstatus5_71c46bc1, register_REF2output_ed373047_Xdatamap2, register_REF3output_f5f0bf23_Xdatamap1, register_REFERENCEselect_501ed25d_Xdatamap4, register_LDOconfigurationA_08bb5ce4_Xdatamap2, register_LDOconfigurationA_c101a3fa_Xdatamap1, register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1, register_AMPCONTROLSLOWgain_94286c99_Xdatamap1, register_AMPCONTROLMEDIUMgain_d4d2a186_Xdatamap1, register_SERVICEconfiguration_39b04185_Xdatamap3, register_AMPLIFIERconfiguration_170035c8_Xdatamap1);
+module GREENBANK0_301AceleraREGISTER (scli, sdai, CELG59462, CELV96848, PORB97836, CELSUB40948, sdapd_registermap, register_REF2output_ed373047_Xdatamap2, register_REF3output_f5f0bf23_Xdatamap1, status_AMPLIFIERstatus1_7c82cc70_Xdatamap2, status_AMPLIFIERstatus2_d3f207c0_Xdatamap3, status_AMPLIFIERstatus3_08952fe9_Xdatamap4, status_AMPLIFIERstatus4_4aacd207_Xdatamap5, status_AMPLIFIERstatus5_8bc1d0bd_Xdatamap6, register_REFERENCEselect_501ed25d_Xdatamap4, register_LDOconfigurationA_08bb5ce4_Xdatamap2, register_LDOconfigurationA_c101a3fa_Xdatamap1, register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1, register_AMPCONTROLSLOWgain_94286c99_Xdatamap1, register_AMPCONTROLMEDIUMgain_d4d2a186_Xdatamap1, register_SERVICEconfiguration_39b04185_Xdatamap3, register_AMPLIFIERconfiguration_170035c8_Xdatamap1);
 input  scli;
 input  sdai;
 input  CELG59462;
@@ -113,13 +113,13 @@ input  CELV96848;
   input  PORB97836;
 input  CELSUB40948;
 output  sdapd_registermap;
-input [1:0] status_AMPLIFIERstatus1_00af776c;
-input [2:0] status_AMPLIFIERstatus2_4975e8c9;
-input [5:0] status_AMPLIFIERstatus3_09172988;
-input [6:0] status_AMPLIFIERstatus4_f84d078e;
-input [7:0] status_AMPLIFIERstatus5_71c46bc1;
 output [2:0] register_REF2output_ed373047_Xdatamap2;
 output [2:0] register_REF3output_f5f0bf23_Xdatamap1;
+input [1:0] status_AMPLIFIERstatus1_7c82cc70_Xdatamap2;
+input [2:0] status_AMPLIFIERstatus2_d3f207c0_Xdatamap3;
+input [5:0] status_AMPLIFIERstatus3_08952fe9_Xdatamap4;
+input [6:0] status_AMPLIFIERstatus4_4aacd207_Xdatamap5;
+input [7:0] status_AMPLIFIERstatus5_8bc1d0bd_Xdatamap6;
 output [2:0] register_REFERENCEselect_501ed25d_Xdatamap4;
 output [3:0] register_LDOconfigurationA_08bb5ce4_Xdatamap2;
 output [3:0] register_LDOconfigurationA_c101a3fa_Xdatamap1;
@@ -131,13 +131,13 @@ output [7:0] register_AMPLIFIERconfiguration_170035c8_Xdatamap1;
 
 
 // ------------------------ Wires ------------------------
-wire [1:0] status_AMPLIFIERstatus1_00af776c;
-wire [2:0] status_AMPLIFIERstatus2_4975e8c9;
-wire [5:0] status_AMPLIFIERstatus3_09172988;
-wire [6:0] status_AMPLIFIERstatus4_f84d078e;
-wire [7:0] status_AMPLIFIERstatus5_71c46bc1;
 wire [2:0] register_REF2output_ed373047_Xdatamap2;
 wire [2:0] register_REF3output_f5f0bf23_Xdatamap1;
+wire [1:0] status_AMPLIFIERstatus1_7c82cc70_Xdatamap2;
+wire [2:0] status_AMPLIFIERstatus2_d3f207c0_Xdatamap3;
+wire [5:0] status_AMPLIFIERstatus3_08952fe9_Xdatamap4;
+wire [6:0] status_AMPLIFIERstatus4_4aacd207_Xdatamap5;
+wire [7:0] status_AMPLIFIERstatus5_8bc1d0bd_Xdatamap6;
 wire [2:0] register_REFERENCEselect_501ed25d_Xdatamap4;
 wire [3:0] register_LDOconfigurationA_08bb5ce4_Xdatamap2;
 wire [3:0] register_LDOconfigurationA_c101a3fa_Xdatamap1;
@@ -500,12 +500,12 @@ STONEi2cSTATUS XSTATUS_0x16 (
 .level7(o0),
 .address({o0,o0,o0,o1,o0,o1,o1,o0}),
 .i2cmiso(i2cmiso),
-.status0(status_AMPLIFIERstatus3_09172988[0]),
-.status1(status_AMPLIFIERstatus3_09172988[1]),
-.status2(status_AMPLIFIERstatus3_09172988[2]),
-.status3(status_AMPLIFIERstatus3_09172988[3]),
-.status4(status_AMPLIFIERstatus3_09172988[4]),
-.status5(status_AMPLIFIERstatus3_09172988[5]),
+.status0(status_AMPLIFIERstatus3_08952fe9_Xdatamap4[0]),
+.status1(status_AMPLIFIERstatus3_08952fe9_Xdatamap4[1]),
+.status2(status_AMPLIFIERstatus3_08952fe9_Xdatamap4[2]),
+.status3(status_AMPLIFIERstatus3_08952fe9_Xdatamap4[3]),
+.status4(status_AMPLIFIERstatus3_08952fe9_Xdatamap4[4]),
+.status5(status_AMPLIFIERstatus3_08952fe9_Xdatamap4[5]),
 .status6(o0),
 .status7(o0)
 );
@@ -535,13 +535,13 @@ STONEi2cSTATUS XSTATUS_0x17 (
 .level7(p0),
 .address({p0,p0,p0,p1,p0,p1,p1,p1}),
 .i2cmiso(i2cmiso),
-.status0(status_AMPLIFIERstatus4_f84d078e[0]),
-.status1(status_AMPLIFIERstatus4_f84d078e[1]),
-.status2(status_AMPLIFIERstatus4_f84d078e[2]),
-.status3(status_AMPLIFIERstatus4_f84d078e[3]),
-.status4(status_AMPLIFIERstatus4_f84d078e[4]),
-.status5(status_AMPLIFIERstatus4_f84d078e[5]),
-.status6(status_AMPLIFIERstatus4_f84d078e[6]),
+.status0(status_AMPLIFIERstatus4_4aacd207_Xdatamap5[0]),
+.status1(status_AMPLIFIERstatus4_4aacd207_Xdatamap5[1]),
+.status2(status_AMPLIFIERstatus4_4aacd207_Xdatamap5[2]),
+.status3(status_AMPLIFIERstatus4_4aacd207_Xdatamap5[3]),
+.status4(status_AMPLIFIERstatus4_4aacd207_Xdatamap5[4]),
+.status5(status_AMPLIFIERstatus4_4aacd207_Xdatamap5[5]),
+.status6(status_AMPLIFIERstatus4_4aacd207_Xdatamap5[6]),
 .status7(p0)
 );
 
@@ -570,9 +570,9 @@ STONEi2cSTATUS XSTATUS_0x1F (
 .level7(m0),
 .address({m0,m0,m0,m1,m1,m1,m1,m1}),
 .i2cmiso(i2cmiso),
-.status0(status_AMPLIFIERstatus2_4975e8c9[0]),
-.status1(status_AMPLIFIERstatus2_4975e8c9[1]),
-.status2(status_AMPLIFIERstatus2_4975e8c9[2]),
+.status0(status_AMPLIFIERstatus2_d3f207c0_Xdatamap3[0]),
+.status1(status_AMPLIFIERstatus2_d3f207c0_Xdatamap3[1]),
+.status2(status_AMPLIFIERstatus2_d3f207c0_Xdatamap3[2]),
 .status3(m0),
 .status4(m0),
 .status5(m0),
@@ -605,14 +605,14 @@ STONEi2cSTATUS XSTATUS_0x44 (
 .level7(n0),
 .address({n0,n1,n0,n0,n0,n1,n0,n0}),
 .i2cmiso(i2cmiso),
-.status0(status_AMPLIFIERstatus5_71c46bc1[0]),
-.status1(status_AMPLIFIERstatus5_71c46bc1[1]),
-.status2(status_AMPLIFIERstatus5_71c46bc1[2]),
-.status3(status_AMPLIFIERstatus5_71c46bc1[3]),
-.status4(status_AMPLIFIERstatus5_71c46bc1[4]),
-.status5(status_AMPLIFIERstatus5_71c46bc1[5]),
-.status6(status_AMPLIFIERstatus5_71c46bc1[6]),
-.status7(status_AMPLIFIERstatus5_71c46bc1[7])
+.status0(status_AMPLIFIERstatus5_8bc1d0bd_Xdatamap6[0]),
+.status1(status_AMPLIFIERstatus5_8bc1d0bd_Xdatamap6[1]),
+.status2(status_AMPLIFIERstatus5_8bc1d0bd_Xdatamap6[2]),
+.status3(status_AMPLIFIERstatus5_8bc1d0bd_Xdatamap6[3]),
+.status4(status_AMPLIFIERstatus5_8bc1d0bd_Xdatamap6[4]),
+.status5(status_AMPLIFIERstatus5_8bc1d0bd_Xdatamap6[5]),
+.status6(status_AMPLIFIERstatus5_8bc1d0bd_Xdatamap6[6]),
+.status7(status_AMPLIFIERstatus5_8bc1d0bd_Xdatamap6[7])
 );
 
 STONEi2cSTATUS XSTATUS_0xA2 (
@@ -640,8 +640,8 @@ STONEi2cSTATUS XSTATUS_0xA2 (
 .level7(l0),
 .address({l1,l0,l1,l0,l0,l0,l1,l0}),
 .i2cmiso(i2cmiso),
-.status0(status_AMPLIFIERstatus1_00af776c[0]),
-.status1(status_AMPLIFIERstatus1_00af776c[1]),
+.status0(status_AMPLIFIERstatus1_7c82cc70_Xdatamap2[0]),
+.status1(status_AMPLIFIERstatus1_7c82cc70_Xdatamap2[1]),
 .status2(l0),
 .status3(l0),
 .status4(l0),

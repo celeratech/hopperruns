@@ -202,8 +202,22 @@ th );
 endmodule
 
 
+//Verilog HDL for "DFT", "DFTstatus16" "functional"
+
+
+module DFTstatus16 ( tmi, CELG, CELSUB, CELV, dftstatusLSB, dftstatusMSB );
+
+  input CELV;
+  input  [7:0] dftstatusLSB;
+  input CELSUB;
+  input  [7:0] dftstatusMSB;
+  input CELG;
+  inout  [4:0] tmi;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module GREENBANK0_301AceleraRING (SCL, SDA, TAO, tdo, tmi, GOTP, LDO0, LDO1, LDO2, LDO3, LDO4, LDO5, LDO6, LDO7, LDO8, LDO9, MUDG, MUDV, VOTP, LDO10, LDO11, LDO12, LDO13, LDO14, LDO15, TAEXT, CELINA, unlock, CELOUTA, CELOUTD, CELG59462, CELV96848, sense_LDO2, sense_LDO5, sense_LDO7, CELSUB40948, kelvin_MUDV, CELPOWER_LDO, SENSE_G_2f9d3d8e, kelvin_MUDGservice, kelvin_MUDGamplifier, CELPOWER_LDO_2d7d2b54, CELPOWER_LDO_71a83686, CELPOWER_LDO_ae2828c4, CELPOWER_LDO_cc7190a0, celkelvin_LDO8_606cfcba, celkelvin_LDO9_ec3a1ea5, celkelvin_MUDV_d0b76f1c, celkelvin_LDO10_f4bf3314, celkelvin_LDO11_5b2f9385, celkelvin_LDO12_ddaae812, celkelvin_LDO13_065c4558, celkelvin_LDO14_9c93d8b1, celkelvin_LDO15_2f19d9b2, celkelvin_MUDG_2f19d9b24, celkelvin_MUDG_56d80a491, celkelvin_MUDG_606cfcba7, celkelvin_MUDG_9ba9bd602, celkelvin_MUDG_9c93d8b16, celkelvin_MUDG_a05d20923, celkelvin_MUDG_c3b29dca0, celkelvin_MUDG_ddaae8128, celkelvin_MUDG_ec3a1ea59, celkelvin_MUDG_f4bf33145, celkelvin_MUDG_065c455810, celkelvin_MUDG_5b2f938511, celkelvin_MUDG_fb5baa3c12);
+module GREENBANK0_301AceleraRING (SCL, SDA, TAO, tdo, tmi, GOTP, LDO0, LDO1, LDO2, LDO3, LDO4, LDO5, LDO6, LDO7, LDO8, LDO9, MUDG, MUDV, VOTP, LDO10, LDO11, LDO12, LDO13, LDO14, LDO15, TAEXT, CELINA, unlock, CELOUTA, CELOUTD, CELG59462, CELV96848, sense_LDO2, sense_LDO5, sense_LDO7, CELSUB40948, kelvin_MUDV, CELPOWER_LDO, dftstatusLSB, dftstatusMSB, SENSE_G_2f9d3d8e, kelvin_MUDGservice, kelvin_MUDGamplifier, CELPOWER_LDO_2d7d2b54, CELPOWER_LDO_71a83686, CELPOWER_LDO_ae2828c4, CELPOWER_LDO_cc7190a0, celkelvin_LDO8_606cfcba, celkelvin_LDO9_ec3a1ea5, celkelvin_MUDV_d0b76f1c, celkelvin_LDO10_f4bf3314, celkelvin_LDO11_5b2f9385, celkelvin_LDO12_ddaae812, celkelvin_LDO13_065c4558, celkelvin_LDO14_9c93d8b1, celkelvin_LDO15_2f19d9b2, celkelvin_MUDG_2f19d9b24, celkelvin_MUDG_56d80a491, celkelvin_MUDG_606cfcba7, celkelvin_MUDG_9ba9bd602, celkelvin_MUDG_9c93d8b16, celkelvin_MUDG_a05d20923, celkelvin_MUDG_c3b29dca0, celkelvin_MUDG_ddaae8128, celkelvin_MUDG_ec3a1ea59, celkelvin_MUDG_f4bf33145, celkelvin_MUDG_065c455810, celkelvin_MUDG_5b2f938511, celkelvin_MUDG_fb5baa3c12);
 input  SCL;
 inout  SDA;
 inout  TAO;
@@ -242,6 +256,8 @@ inout  sense_LDO7;
 output  CELSUB40948;
 inout  kelvin_MUDV;
 inout  CELPOWER_LDO;
+input [7:0] dftstatusLSB;
+input [7:0] dftstatusMSB;
 output  SENSE_G_2f9d3d8e;
 inout  kelvin_MUDGservice;
 inout  kelvin_MUDGamplifier;
@@ -275,6 +291,8 @@ output  celkelvin_MUDG_fb5baa3c12;
 
 // ------------------------ Wires ------------------------
 wire [5:0] tmi;
+wire [7:0] dftstatusLSB;
+wire [7:0] dftstatusMSB;
 wire [7:0] revision;
 wire [7:0] chipidlsb;
 wire [7:0] chipidmsb;
@@ -475,6 +493,15 @@ CELERAid XCHIPid (
 .revision({a0,a0,a0,a0,a0,a0,a0,a0}),
 .chipidlsb({a0,a0,a1,a1,a0,a0,a1,a0}),
 .chipidmsb({a0,a0,a0,a0,a0,a0,a0,a0})
+);
+
+DFTstatus16 XDFTstatus16 (
+.tmi(tmi[4:0]),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948),
+.dftstatusLSB(dftstatusLSB[7:0]),
+.dftstatusMSB(dftstatusMSB[7:0])
 );
 
 endmodule

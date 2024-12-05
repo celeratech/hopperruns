@@ -55,6 +55,16 @@ module STONEnoconn ( noconn );
 endmodule
 
 
+//Verilog HDL for "Generate", "WRAPPER1" "functional"
+
+
+module WRAPPER1 ( o, i );
+
+  input i;
+  output o;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
 module LDOgreenbankAMPcontrolHIGH (LDO, REF, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, kelvin_GNDldo, IP_b802e904_Xamplifier1, register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1);
 output  LDO;
@@ -107,7 +117,7 @@ amplifier_a91f9ff9 Xamplifier1 (
 .SIMPV(MUDV),
 .CELSUB(CELSUB40948),
 .ok_amplifier(net_46),
-.amplifiercontrol({register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1[2],register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1[1],register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1[0]}),
+.amplifiercontrol({net_28,net_27,net_26}),
 .enable_amplifier(enable_ldo),
 .global_amplifier(global_amplifier_b802e904_Xamplifier1)
 );
@@ -148,6 +158,21 @@ STONEnoconn XNCnoconn_dft_hex0x10_ten_6 (
 
 STONEnoconn XNCnoconn_dft_hex0x10_ten_7 (
 .noconn(noconn_dft_hex0x10_ten_7)
+);
+
+WRAPPER1 XWRAPregister_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1_0 (
+.i(register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1[0]),
+.o(net_26)
+);
+
+WRAPPER1 XWRAPregister_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1_1 (
+.i(register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1[1]),
+.o(net_27)
+);
+
+WRAPPER1 XWRAPregister_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1_2 (
+.i(register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1[2]),
+.o(net_28)
 );
 
 endmodule

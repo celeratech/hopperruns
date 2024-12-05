@@ -417,6 +417,16 @@ module dftprobeModel3_9ca00b64 (i,TAI,ten,CELG,CELV,CELSUB);
   input  CELSUB;
 endmodule
 
+//Verilog HDL for "Generate", "WRAPPER1" "functional"
+
+
+module WRAPPER1 ( o, i );
+
+  input i;
+  output o;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
 module SERVICEgreenbank_30 (REF, TAO, tdo, tmi, MUDV, TAEXT, CELG59462, CELV96848, PORB97836, CELBG83021, CELSUB40948, kelvin_MUDV, IP_9f5fab65_XU7, IP_cce7bb16_XU27, SENSE_G_2f9d3d8e, kelvin_MUDGservice, IP_2f9d3d8e_Xoscillator1, celkelvin_MUDG_56d80a491, celkelvin_MUDG_9ba9bd602, celkelvin_MUDG_a05d20923, celkelvin_MUDG_c3b29dca0, register_REF2output_ed373047_Xdatamap2, register_REF3output_f5f0bf23_Xdatamap1, register_REFERENCEselect_501ed25d_Xdatamap4, register_SERVICEconfiguration_39b04185_Xdatamap3);
 output  REF;
@@ -502,16 +512,16 @@ SERVICEgreenbankBYPASS XBYPASS (
 .ok_reference3(net_270),
 .ok_reference4(net_272),
 .ok_reference5(net_273),
-.disable_bypass(register_SERVICEconfiguration_39b04185_Xdatamap3[1]),
+.disable_bypass(net_167),
 .SENSE_G_2f9d3d8e(SENSE_G_2f9d3d8e),
 .enable_reference0(net_249),
 .enable_reference1(net_256),
 .enable_reference2(net_262),
 .enable_reference3(net_266),
 .enable_reference4(net_267),
-.filter_resistor_0(register_SERVICEconfiguration_39b04185_Xdatamap3[2]),
-.filter_resistor_1(register_SERVICEconfiguration_39b04185_Xdatamap3[3]),
-.filter_resistor_2(register_SERVICEconfiguration_39b04185_Xdatamap3[4]),
+.filter_resistor_0(net_168),
+.filter_resistor_1(net_169),
+.filter_resistor_2(net_170),
 .enable_reference567(net_268),
 .IP_2f9d3d8e_Xoscillator1(IP_2f9d3d8e_Xoscillator1)
 );
@@ -523,9 +533,9 @@ SERVICEgreenbankFILTER XFILTER (
 .REFoutput(net_252),
 .CELSUB40948(CELSUB40948),
 .bypass_filter(net_253),
-.filter_resistor_0(register_SERVICEconfiguration_39b04185_Xdatamap3[2]),
-.filter_resistor_1(register_SERVICEconfiguration_39b04185_Xdatamap3[3]),
-.filter_resistor_2(register_SERVICEconfiguration_39b04185_Xdatamap3[4]),
+.filter_resistor_0(net_168),
+.filter_resistor_1(net_169),
+.filter_resistor_2(net_170),
 .kelvin_MUDGservice(kelvin_MUDGservice)
 );
 
@@ -589,7 +599,7 @@ resistor_3490198b XU1 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.adjust_resistor({register_REF3output_f5f0bf23_Xdatamap1[2],register_REF3output_f5f0bf23_Xdatamap1[1],register_REF3output_f5f0bf23_Xdatamap1[0]})
+.adjust_resistor({net_230,net_229,net_228})
 );
 
 reference_b7625506 XU2 (
@@ -682,7 +692,7 @@ amux8_dc44282c XU9 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(MUDV),
-.amux({register_REFERENCEselect_501ed25d_Xdatamap4[2],register_REFERENCEselect_501ed25d_Xdatamap4[1],register_REFERENCEselect_501ed25d_Xdatamap4[0]})
+.amux({net_184,net_183,net_182})
 );
 
 reference_183215b5 XU10 (
@@ -719,7 +729,7 @@ amux2_436b457d XU14 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(MUDV),
-.amux(register_SERVICEconfiguration_39b04185_Xdatamap3[5])
+.amux(net_171)
 );
 
 porb_857d66ac XU17 (
@@ -728,7 +738,7 @@ porb_857d66ac XU17 (
 .CELV(MUDV),
 .porb(net_248),
 .SENSE_PORB(kelvin_MUDV),
-.enable_porb(register_SERVICEconfiguration_39b04185_Xdatamap3[0])
+.enable_porb(net_166)
 );
 
 reference_2e07093a XU19 (
@@ -752,12 +762,12 @@ reference_2e07093a XU19 (
 );
 
 decoder3_82ad6e6e XU21 (
-.i({register_REFERENCEselect_501ed25d_Xdatamap4[2],register_REFERENCEselect_501ed25d_Xdatamap4[1],register_REFERENCEselect_501ed25d_Xdatamap4[0]}),
+.i({net_184,net_183,net_182}),
 .o({net_205,net_204,net_203,net_202,net_201,net_200,net_199,net_198}),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.enable_decoder(register_SERVICEconfiguration_39b04185_Xdatamap3[0])
+.enable_decoder(net_166)
 );
 
 capacitorfixed_f0008a74 XU23 (
@@ -773,7 +783,7 @@ resistor_0da73ba0 XU25 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.adjust_resistor({register_REF2output_ed373047_Xdatamap2[2],register_REF2output_ed373047_Xdatamap2[1],register_REF2output_ed373047_Xdatamap2[0]})
+.adjust_resistor({net_211,net_210,net_209})
 );
 
 currentgenerator_25ffd7d0 XU27 (
@@ -1071,6 +1081,81 @@ STONEnoconn XNCnoconn_drm64_drm6_5 (
 
 STONEnoconn XNCnoconn_drm64_drm6_6 (
 .noconn(noconn_drm64_drm6_6)
+);
+
+WRAPPER1 XWRAPregister_REF2output_ed373047_Xdatamap2_0 (
+.i(register_REF2output_ed373047_Xdatamap2[0]),
+.o(net_209)
+);
+
+WRAPPER1 XWRAPregister_REF2output_ed373047_Xdatamap2_1 (
+.i(register_REF2output_ed373047_Xdatamap2[1]),
+.o(net_210)
+);
+
+WRAPPER1 XWRAPregister_REF2output_ed373047_Xdatamap2_2 (
+.i(register_REF2output_ed373047_Xdatamap2[2]),
+.o(net_211)
+);
+
+WRAPPER1 XWRAPregister_REF3output_f5f0bf23_Xdatamap1_0 (
+.i(register_REF3output_f5f0bf23_Xdatamap1[0]),
+.o(net_228)
+);
+
+WRAPPER1 XWRAPregister_REF3output_f5f0bf23_Xdatamap1_1 (
+.i(register_REF3output_f5f0bf23_Xdatamap1[1]),
+.o(net_229)
+);
+
+WRAPPER1 XWRAPregister_REF3output_f5f0bf23_Xdatamap1_2 (
+.i(register_REF3output_f5f0bf23_Xdatamap1[2]),
+.o(net_230)
+);
+
+WRAPPER1 XWRAPregister_REFERENCEselect_501ed25d_Xdatamap4_0 (
+.i(register_REFERENCEselect_501ed25d_Xdatamap4[0]),
+.o(net_182)
+);
+
+WRAPPER1 XWRAPregister_REFERENCEselect_501ed25d_Xdatamap4_1 (
+.i(register_REFERENCEselect_501ed25d_Xdatamap4[1]),
+.o(net_183)
+);
+
+WRAPPER1 XWRAPregister_REFERENCEselect_501ed25d_Xdatamap4_2 (
+.i(register_REFERENCEselect_501ed25d_Xdatamap4[2]),
+.o(net_184)
+);
+
+WRAPPER1 XWRAPregister_SERVICEconfiguration_39b04185_Xdatamap3_0 (
+.i(register_SERVICEconfiguration_39b04185_Xdatamap3[0]),
+.o(net_166)
+);
+
+WRAPPER1 XWRAPregister_SERVICEconfiguration_39b04185_Xdatamap3_1 (
+.i(register_SERVICEconfiguration_39b04185_Xdatamap3[1]),
+.o(net_167)
+);
+
+WRAPPER1 XWRAPregister_SERVICEconfiguration_39b04185_Xdatamap3_2 (
+.i(register_SERVICEconfiguration_39b04185_Xdatamap3[2]),
+.o(net_168)
+);
+
+WRAPPER1 XWRAPregister_SERVICEconfiguration_39b04185_Xdatamap3_3 (
+.i(register_SERVICEconfiguration_39b04185_Xdatamap3[3]),
+.o(net_169)
+);
+
+WRAPPER1 XWRAPregister_SERVICEconfiguration_39b04185_Xdatamap3_4 (
+.i(register_SERVICEconfiguration_39b04185_Xdatamap3[4]),
+.o(net_170)
+);
+
+WRAPPER1 XWRAPregister_SERVICEconfiguration_39b04185_Xdatamap3_5 (
+.i(register_SERVICEconfiguration_39b04185_Xdatamap3[5]),
+.o(net_171)
 );
 
 endmodule
