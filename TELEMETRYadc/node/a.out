@@ -1,0 +1,197 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x563211910d00 .scope module, "currentmirror_f5b9334a" "currentmirror_f5b9334a" 2 113;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "CELV";
+    .port_info 1 /INPUT 1 "CELSUB";
+    .port_info 2 /INPUT 1 "enable_currentmirror";
+    .port_info 3 /INPUT 1 "ISET";
+    .port_info 4 /OUTPUT 1 "ok_currentmirror";
+    .port_info 5 /INOUT 1 "I0";
+    .port_info 6 /INOUT 1 "I1";
+    .port_info 7 /INOUT 1 "I2";
+    .port_info 8 /INOUT 1 "I3";
+    .port_info 9 /INPUT 1 "CELG";
+o0x7fa9d56b9018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5632119364f0_0 .net "CELG", 0 0, o0x7fa9d56b9018;  0 drivers
+o0x7fa9d56b9138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x563211936590_0 .net "CELSUB", 0 0, o0x7fa9d56b9138;  0 drivers
+o0x7fa9d56b9048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x563211936760_0 .net "CELV", 0 0, o0x7fa9d56b9048;  0 drivers
+o0x7fa9d56b9858 .functor BUFZ 1, C4<z>; HiZ drive
+v0x563211936940_0 .net "I0", 0 0, o0x7fa9d56b9858;  0 drivers
+o0x7fa9d56b99a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x563211936a10_0 .net "I1", 0 0, o0x7fa9d56b99a8;  0 drivers
+o0x7fa9d56b9ac8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x563211936ab0_0 .net "I2", 0 0, o0x7fa9d56b9ac8;  0 drivers
+o0x7fa9d56b9be8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x563211936b80_0 .net "I3", 0 0, o0x7fa9d56b9be8;  0 drivers
+o0x7fa9d56b90a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x563211936c50_0 .net "ISET", 0 0, o0x7fa9d56b90a8;  0 drivers
+o0x7fa9d56b9078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x563211936d20_0 .net "NCAS5U", 0 0, o0x7fa9d56b9078;  0 drivers
+o0x7fa9d56b9588 .functor BUFZ 1, C4<z>; HiZ drive
+v0x563211936dc0_0 .net "NMIR5U", 0 0, o0x7fa9d56b9588;  0 drivers
+o0x7fa9d56b90d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x563211936e60_0 .net "NOK", 0 0, o0x7fa9d56b90d8;  0 drivers
+o0x7fa9d56b95b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x563211936f50_0 .net "PCAS5U", 0 0, o0x7fa9d56b95b8;  0 drivers
+o0x7fa9d56b9888 .functor BUFZ 1, C4<z>; HiZ drive
+v0x563211936ff0_0 .net "PMIR5U", 0 0, o0x7fa9d56b9888;  0 drivers
+o0x7fa9d56b9108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x563211937090_0 .net "POK", 0 0, o0x7fa9d56b9108;  0 drivers
+v0x563211937180_0 .net "a0", 0 0, L_0x563211937790;  1 drivers
+o0x7fa9d56b91c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x563211937220_0 .net "en", 0 0, o0x7fa9d56b91c8;  0 drivers
+o0x7fa9d56b91f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5632119372c0_0 .net "enable_currentmirror", 0 0, o0x7fa9d56b91f8;  0 drivers
+o0x7fa9d56b9228 .functor BUFZ 1, C4<z>; HiZ drive
+v0x563211937470_0 .net "enb", 0 0, o0x7fa9d56b9228;  0 drivers
+v0x563211937560_0 .net "noconnect_a1", 0 0, L_0x5632119376a0;  1 drivers
+o0x7fa9d56b9258 .functor BUFZ 1, C4<z>; HiZ drive
+v0x563211937600_0 .net "ok_currentmirror", 0 0, o0x7fa9d56b9258;  0 drivers
+o0x7fa9d56b9168 .functor BUFZ 2, C4<zz>; HiZ drive
+L_0x5632119376a0 .part o0x7fa9d56b9168, 1, 1;
+L_0x563211937790 .part o0x7fa9d56b9168, 0, 1;
+S_0x563211910f90 .scope module, "XcurrentmirrorMAIN" "STONEcurrentmirrormain" 2 137, 2 19 0, S_0x563211910d00;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "ICAS";
+    .port_info 1 /OUTPUT 2 "a";
+    .port_info 2 /OUTPUT 1 "en";
+    .port_info 3 /OUTPUT 1 "enb";
+    .port_info 4 /OUTPUT 1 "ok_currentmirror";
+    .port_info 5 /INPUT 1 "CELG";
+    .port_info 6 /INPUT 1 "CELV";
+    .port_info 7 /INPUT 1 "ISET";
+    .port_info 8 /INPUT 1 "NOK";
+    .port_info 9 /INPUT 1 "POK";
+    .port_info 10 /INPUT 1 "SUB";
+    .port_info 11 /INPUT 1 "disnok";
+    .port_info 12 /INPUT 1 "dispok";
+    .port_info 13 /INPUT 1 "enable_currentmirror";
+    .port_info 14 /INPUT 1 "ten";
+    .port_info 15 /INPUT 1 "ten_currentmirror";
+v0x56321191a610_0 .net "CELG", 0 0, o0x7fa9d56b9018;  alias, 0 drivers
+v0x563211931f80_0 .net "CELV", 0 0, o0x7fa9d56b9048;  alias, 0 drivers
+v0x563211932040_0 .net "ICAS", 0 0, o0x7fa9d56b9078;  alias, 0 drivers
+v0x5632119320e0_0 .net "ISET", 0 0, o0x7fa9d56b90a8;  alias, 0 drivers
+v0x5632119321a0_0 .net "NOK", 0 0, o0x7fa9d56b90d8;  alias, 0 drivers
+v0x5632119322b0_0 .net "POK", 0 0, o0x7fa9d56b9108;  alias, 0 drivers
+v0x563211932370_0 .net "SUB", 0 0, o0x7fa9d56b9138;  alias, 0 drivers
+v0x563211932430_0 .net "a", 1 0, o0x7fa9d56b9168;  0 drivers
+v0x563211932510_0 .net "disnok", 0 0, L_0x563211937790;  alias, 1 drivers
+v0x5632119325d0_0 .net "dispok", 0 0, L_0x563211937790;  alias, 1 drivers
+v0x563211932670_0 .net "en", 0 0, o0x7fa9d56b91c8;  alias, 0 drivers
+v0x563211932710_0 .net "enable_currentmirror", 0 0, o0x7fa9d56b91f8;  alias, 0 drivers
+v0x5632119327d0_0 .net "enb", 0 0, o0x7fa9d56b9228;  alias, 0 drivers
+v0x563211932890_0 .net "ok_currentmirror", 0 0, o0x7fa9d56b9258;  alias, 0 drivers
+v0x563211932950_0 .net "ten", 0 0, L_0x563211937790;  alias, 1 drivers
+v0x5632119329f0_0 .net "ten_currentmirror", 0 0, L_0x563211937790;  alias, 1 drivers
+S_0x563211932d20 .scope module, "XcurrentmirrorNMOS5UPREF" "CASCODEnmos5u" 2 187, 2 74 0, S_0x563211910d00;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "O";
+    .port_info 1 /INPUT 1 "SUB";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "CELG";
+    .port_info 4 /INOUT 1 "NCAS";
+    .port_info 5 /INOUT 1 "NMIR";
+v0x563211932fc0_0 .net "CELG", 0 0, o0x7fa9d56b9018;  alias, 0 drivers
+v0x563211933060_0 .net "CELV", 0 0, o0x7fa9d56b9048;  alias, 0 drivers
+v0x563211933130_0 .net "NCAS", 0 0, o0x7fa9d56b9078;  alias, 0 drivers
+v0x563211933230_0 .net "NMIR", 0 0, o0x7fa9d56b9588;  alias, 0 drivers
+v0x5632119332d0_0 .net "O", 0 0, o0x7fa9d56b95b8;  alias, 0 drivers
+v0x5632119333c0_0 .net "SUB", 0 0, o0x7fa9d56b9138;  alias, 0 drivers
+S_0x5632119334c0 .scope module, "XcurrentmirrorNMOS5UREF" "CASCODEnmos5uref" 2 157, 2 45 0, S_0x563211910d00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "SUB";
+    .port_info 1 /INPUT 1 "CELV";
+    .port_info 2 /INPUT 1 "CELG";
+    .port_info 3 /INPUT 1 "enb";
+    .port_info 4 /INOUT 1 "NCAS";
+    .port_info 5 /INOUT 1 "NMIR";
+    .port_info 6 /OUTPUT 1 "N5U";
+v0x563211933780_0 .net "CELG", 0 0, o0x7fa9d56b9018;  alias, 0 drivers
+v0x563211933870_0 .net "CELV", 0 0, o0x7fa9d56b9048;  alias, 0 drivers
+v0x563211933980_0 .net "N5U", 0 0, o0x7fa9d56b90d8;  alias, 0 drivers
+v0x563211933a20_0 .net "NCAS", 0 0, o0x7fa9d56b9078;  alias, 0 drivers
+v0x563211933b10_0 .net "NMIR", 0 0, o0x7fa9d56b9588;  alias, 0 drivers
+v0x563211933c00_0 .net "SUB", 0 0, o0x7fa9d56b9138;  alias, 0 drivers
+v0x563211933cf0_0 .net "enb", 0 0, o0x7fa9d56b9228;  alias, 0 drivers
+S_0x563211933dd0 .scope module, "XcurrentmirrorPMOS5U00" "CASCODEpmos5u" 2 168, 2 88 0, S_0x563211910d00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "SUB";
+    .port_info 1 /INPUT 1 "CELV";
+    .port_info 2 /INOUT 1 "PMIR";
+    .port_info 3 /INOUT 1 "PCAS";
+    .port_info 4 /INOUT 1 "O";
+v0x563211934030_0 .net "CELV", 0 0, o0x7fa9d56b9048;  alias, 0 drivers
+v0x5632119340f0_0 .net "O", 0 0, o0x7fa9d56b9858;  alias, 0 drivers
+v0x5632119341b0_0 .net "PCAS", 0 0, o0x7fa9d56b95b8;  alias, 0 drivers
+v0x5632119342b0_0 .net "PMIR", 0 0, o0x7fa9d56b9888;  alias, 0 drivers
+v0x563211934350_0 .net "SUB", 0 0, o0x7fa9d56b9138;  alias, 0 drivers
+S_0x5632119344c0 .scope module, "XcurrentmirrorPMOS5U10" "CASCODEpmos5u" 2 197, 2 88 0, S_0x563211910d00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "SUB";
+    .port_info 1 /INPUT 1 "CELV";
+    .port_info 2 /INOUT 1 "PMIR";
+    .port_info 3 /INOUT 1 "PCAS";
+    .port_info 4 /INOUT 1 "O";
+v0x563211934770_0 .net "CELV", 0 0, o0x7fa9d56b9048;  alias, 0 drivers
+v0x563211934830_0 .net "O", 0 0, o0x7fa9d56b99a8;  alias, 0 drivers
+v0x5632119348f0_0 .net "PCAS", 0 0, o0x7fa9d56b95b8;  alias, 0 drivers
+v0x563211934990_0 .net "PMIR", 0 0, o0x7fa9d56b9888;  alias, 0 drivers
+v0x563211934a30_0 .net "SUB", 0 0, o0x7fa9d56b9138;  alias, 0 drivers
+S_0x563211934c10 .scope module, "XcurrentmirrorPMOS5U20" "CASCODEpmos5u" 2 206, 2 88 0, S_0x563211910d00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "SUB";
+    .port_info 1 /INPUT 1 "CELV";
+    .port_info 2 /INOUT 1 "PMIR";
+    .port_info 3 /INOUT 1 "PCAS";
+    .port_info 4 /INOUT 1 "O";
+v0x563211934e20_0 .net "CELV", 0 0, o0x7fa9d56b9048;  alias, 0 drivers
+v0x563211934ee0_0 .net "O", 0 0, o0x7fa9d56b9ac8;  alias, 0 drivers
+v0x563211934fa0_0 .net "PCAS", 0 0, o0x7fa9d56b95b8;  alias, 0 drivers
+v0x563211935070_0 .net "PMIR", 0 0, o0x7fa9d56b9888;  alias, 0 drivers
+v0x563211935160_0 .net "SUB", 0 0, o0x7fa9d56b9138;  alias, 0 drivers
+S_0x5632119352d0 .scope module, "XcurrentmirrorPMOS5U30" "CASCODEpmos5u" 2 215, 2 88 0, S_0x563211910d00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "SUB";
+    .port_info 1 /INPUT 1 "CELV";
+    .port_info 2 /INOUT 1 "PMIR";
+    .port_info 3 /INOUT 1 "PCAS";
+    .port_info 4 /INOUT 1 "O";
+v0x563211935530_0 .net "CELV", 0 0, o0x7fa9d56b9048;  alias, 0 drivers
+v0x5632119355f0_0 .net "O", 0 0, o0x7fa9d56b9be8;  alias, 0 drivers
+v0x5632119356b0_0 .net "PCAS", 0 0, o0x7fa9d56b95b8;  alias, 0 drivers
+v0x5632119357e0_0 .net "PMIR", 0 0, o0x7fa9d56b9888;  alias, 0 drivers
+v0x563211935880_0 .net "SUB", 0 0, o0x7fa9d56b9138;  alias, 0 drivers
+S_0x5632119359a0 .scope module, "XcurrentmirrorPMOS5UREF" "CASCODEpmos5uref" 2 177, 2 60 0, S_0x563211910d00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "SUB";
+    .port_info 1 /INPUT 1 "CELV";
+    .port_info 2 /INOUT 1 "PMIR";
+    .port_info 3 /INOUT 1 "PCAS";
+    .port_info 4 /INPUT 1 "en";
+    .port_info 5 /OUTPUT 1 "P5U";
+v0x563211935c20_0 .net "CELV", 0 0, o0x7fa9d56b9048;  alias, 0 drivers
+v0x563211935ce0_0 .net "P5U", 0 0, o0x7fa9d56b9108;  alias, 0 drivers
+v0x563211935da0_0 .net "PCAS", 0 0, o0x7fa9d56b95b8;  alias, 0 drivers
+v0x563211935e70_0 .net "PMIR", 0 0, o0x7fa9d56b9888;  alias, 0 drivers
+v0x563211935fa0_0 .net "SUB", 0 0, o0x7fa9d56b9138;  alias, 0 drivers
+v0x563211936040_0 .net "en", 0 0, o0x7fa9d56b91c8;  alias, 0 drivers
+S_0x563211936120 .scope module, "Xnoconn1" "STONEnoconn" 2 131, 2 101 0, S_0x563211910d00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x5632119363d0_0 .net "noconn", 0 0, L_0x5632119376a0;  alias, 1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/./celera//projects//Sunnyvale//software//TELEMETRYadc//verilog5//currentmirror_f5b9334a.v";
