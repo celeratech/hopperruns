@@ -137,7 +137,7 @@ module oscillatorcrude_fa6711d9 (IP,osc,CELG,SIMPV,CELSUB,SENSE_G,ok_oscillator,
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module SOFTSTARTwaltz8MAIN (SS, REF, MUDV, halfway, CELG59462, CELV96848, dft_clock, CELSUB40948, enable_brick, softstart_1ms, done_softstart, SENSE_G_4c0bef8e, enable_softstart, kelvin_MUDGsoftstart, global_dac_0cc08401_XU5, IP_4c0bef8e_Xoscillator1, global_oscillator_4c0bef8e_Xoscillator1);
+module SOFTSTARTwaltz8MAIN (SS, REF, MUDV, halfway, CELG59462, CELV96848, dft_clock, CELSUB40948, enable_brick, softstart_1ms, done_softstart, SENSE_G_4c0bef8e, enable_softstart, kelvin_MUDGsoftstart, global_dac_0cc08401_XU5, IP_4c0bef8e_Xoscillator1, global_dac_0cc08401_XU5_b48f6491_XMAIN8, global_oscillator_4c0bef8e_Xoscillator1, global_oscillator_4c0bef8e_Xoscillator1_b48f6491_XMAIN8);
 output  SS;
 input  REF;
 input  MUDV;
@@ -154,7 +154,9 @@ input  enable_softstart;
 input  kelvin_MUDGsoftstart;
 input  global_dac_0cc08401_XU5;
 input  IP_4c0bef8e_Xoscillator1;
+input  global_dac_0cc08401_XU5_b48f6491_XMAIN8;
 input  global_oscillator_4c0bef8e_Xoscillator1;
+input  global_oscillator_4c0bef8e_Xoscillator1_b48f6491_XMAIN8;
 
 
 // ------------------------ Wires ------------------------

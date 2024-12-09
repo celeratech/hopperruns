@@ -128,8 +128,17 @@ module ESDminiClamp6 ( O, G, I, SUB, V );
 endmodule
 
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module CLOCKwaltzMAIN (FSET, MUDV, SYNC, clock, dft_sync, ok_clock, CELG59462, CELV96848, dft_clock, ISLOPECOMP, CELREF84329, CELSENSE_RF, CELSUB40948, dft_synclow, fault_clock, dft_synchigh, enable_clock, dft_clocksync, CLOCKofftime_0, CLOCKofftime_1, CLOCKofftime_2, CLOCKofftime_3, dft_clockstartup, dft_clockinternal, IP_90c263a6_XOSCEXT, celkelvin_GND_bb7e77f4, tdi_osc_90c263a6_XOSCEXT, ten_osc_90c263a6_XOSCEXT, trim_oscillator_ext_fine_90c263a6, trim_oscillator_int_fine_90c263a6, global_oscillator_90c263a6_XOSCEXT, trim_oscillator_ext_coarse_90c263a6, trim_oscillator_int_coarse_90c263a6, global_clocksync_5d4c1f91_Xclocksync1);
+module CLOCKwaltzMAIN (FSET, MUDV, SYNC, clock, dft_sync, ok_clock, CELG59462, CELV96848, dft_clock, ISLOPECOMP, CELREF84329, CELSENSE_RF, CELSUB40948, dft_synclow, fault_clock, dft_synchigh, enable_clock, dft_clocksync, CLOCKofftime_0, CLOCKofftime_1, CLOCKofftime_2, CLOCKofftime_3, dft_clockstartup, dft_clockinternal, IP_90c263a6_XOSCEXT, celkelvin_GND_bb7e77f4, tdi_osc_90c263a6_XOSCEXT, ten_osc_90c263a6_XOSCEXT, trim_oscillator_ext_fine_90c263a6, trim_oscillator_int_fine_90c263a6, global_oscillator_90c263a6_XOSCEXT, trim_oscillator_ext_coarse_90c263a6, trim_oscillator_int_coarse_90c263a6, global_clocksync_5d4c1f91_Xclocksync1, tdi_osc_90c263a6_XOSCEXT_e3014061_XMAIN, ten_osc_90c263a6_XOSCEXT_e3014061_XMAIN, global_oscillator_90c263a6_XOSCEXT_e3014061_XMAIN, global_clocksync_5d4c1f91_Xclocksync1_e3014061_XMAIN);
 output  FSET;
 input  MUDV;
 input  SYNC;
@@ -164,6 +173,10 @@ input  global_oscillator_90c263a6_XOSCEXT;
 input [2:0] trim_oscillator_ext_coarse_90c263a6;
 input [2:0] trim_oscillator_int_coarse_90c263a6;
 input  global_clocksync_5d4c1f91_Xclocksync1;
+output  tdi_osc_90c263a6_XOSCEXT_e3014061_XMAIN;
+input  ten_osc_90c263a6_XOSCEXT_e3014061_XMAIN;
+input  global_oscillator_90c263a6_XOSCEXT_e3014061_XMAIN;
+input  global_clocksync_5d4c1f91_Xclocksync1_e3014061_XMAIN;
 
 
 // ------------------------ Wires ------------------------
@@ -340,6 +353,10 @@ ESDminiClamp6 XCLAMP_XU24_IN (
 .O(clamp_XU24_90),
 .V(CELV96848),
 .SUB(CELSUB40948)
+);
+
+STONEnoconn XNCtdi_osc_90c263a6_XOSCEXT_e3014061_XMAIN (
+.noconn(tdi_osc_90c263a6_XOSCEXT_e3014061_XMAIN)
 );
 
 endmodule

@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module SOFTSTARTwaltzDEBUG (SS,CELG59462,CELV96848,dft_clock,CELSUB40948,enable_brick,done_softstart,TAI_81f80d4d_XU8,enable_softstart,tdi_ed87e5db_XU5,tdi_f665b623_XU6,ten_81f80d4d_XU8,ten_ed87e5db_XU5,ten_f665b623_XU6,tdi_528f048c_XU10,ten_528f048c_XU10,hijack_enable_brick,hijack_enable_softstart,ten_hijack_297df8ef_XU1,ten_hijack_dcf795e2_XU14,ten_hijacki_297df8ef_XU1,ten_hijacki_dcf795e2_XU14);
+module SOFTSTARTwaltzDEBUG (SS,CELG59462,CELV96848,dft_clock,CELSUB40948,enable_brick,done_softstart,TAI_81f80d4d_XU8,enable_softstart,tdi_ed87e5db_XU5,tdi_f665b623_XU6,ten_81f80d4d_XU8,ten_ed87e5db_XU5,ten_f665b623_XU6,tdi_528f048c_XU10,ten_528f048c_XU10,hijack_enable_brick,hijack_enable_softstart,ten_hijack_297df8ef_XU1,ten_hijack_dcf795e2_XU14,ten_hijacki_297df8ef_XU1,ten_hijacki_dcf795e2_XU14,TAI_81f80d4d_XU8_88e49508_XDEBUG,tdi_ed87e5db_XU5_88e49508_XDEBUG,tdi_f665b623_XU6_88e49508_XDEBUG,ten_81f80d4d_XU8_88e49508_XDEBUG,ten_ed87e5db_XU5_88e49508_XDEBUG,ten_f665b623_XU6_88e49508_XDEBUG,tdi_528f048c_XU10_88e49508_XDEBUG,ten_528f048c_XU10_88e49508_XDEBUG,ten_hijack_297df8ef_XU1_88e49508_XDEBUG,ten_hijack_dcf795e2_XU14_88e49508_XDEBUG,ten_hijacki_297df8ef_XU1_88e49508_XDEBUG,ten_hijacki_dcf795e2_XU14_88e49508_XDEBUG);
   input  SS;
   input  CELG59462;
   input  CELV96848;
@@ -22,9 +22,21 @@ module SOFTSTARTwaltzDEBUG (SS,CELG59462,CELV96848,dft_clock,CELSUB40948,enable_
   input  ten_hijack_dcf795e2_XU14;
   input  ten_hijacki_297df8ef_XU1;
   input  ten_hijacki_dcf795e2_XU14;
+  output  TAI_81f80d4d_XU8_88e49508_XDEBUG;
+  output  tdi_ed87e5db_XU5_88e49508_XDEBUG;
+  output  tdi_f665b623_XU6_88e49508_XDEBUG;
+  input  ten_81f80d4d_XU8_88e49508_XDEBUG;
+  input  ten_ed87e5db_XU5_88e49508_XDEBUG;
+  input  ten_f665b623_XU6_88e49508_XDEBUG;
+  output  tdi_528f048c_XU10_88e49508_XDEBUG;
+  input  ten_528f048c_XU10_88e49508_XDEBUG;
+  input  ten_hijack_297df8ef_XU1_88e49508_XDEBUG;
+  input  ten_hijack_dcf795e2_XU14_88e49508_XDEBUG;
+  input  ten_hijacki_297df8ef_XU1_88e49508_XDEBUG;
+  input  ten_hijacki_dcf795e2_XU14_88e49508_XDEBUG;
 endmodule
 
-module SOFTSTARTwaltz8MAIN (SS,REF,MUDV,halfway,CELG59462,CELV96848,dft_clock,CELSUB40948,enable_brick,softstart_1ms,done_softstart,SENSE_G_4c0bef8e,enable_softstart,kelvin_MUDGsoftstart,global_dac_0cc08401_XU5,IP_4c0bef8e_Xoscillator1,global_oscillator_4c0bef8e_Xoscillator1);
+module SOFTSTARTwaltz8MAIN (SS,REF,MUDV,halfway,CELG59462,CELV96848,dft_clock,CELSUB40948,enable_brick,softstart_1ms,done_softstart,SENSE_G_4c0bef8e,enable_softstart,kelvin_MUDGsoftstart,global_dac_0cc08401_XU5,IP_4c0bef8e_Xoscillator1,global_dac_0cc08401_XU5_b48f6491_XMAIN8,global_oscillator_4c0bef8e_Xoscillator1,global_oscillator_4c0bef8e_Xoscillator1_b48f6491_XMAIN8);
   output  SS;
   input  REF;
   input  MUDV;
@@ -41,7 +53,9 @@ module SOFTSTARTwaltz8MAIN (SS,REF,MUDV,halfway,CELG59462,CELV96848,dft_clock,CE
   input  kelvin_MUDGsoftstart;
   input  global_dac_0cc08401_XU5;
   input  IP_4c0bef8e_Xoscillator1;
+  input  global_dac_0cc08401_XU5_b48f6491_XMAIN8;
   input  global_oscillator_4c0bef8e_Xoscillator1;
+  input  global_oscillator_4c0bef8e_Xoscillator1_b48f6491_XMAIN8;
 endmodule
 
 //Verilog HDL for "DFT", "DFTtm8" "functional"
@@ -141,7 +155,7 @@ SOFTSTARTwaltzDEBUG XDEBUG (
 .SS(SS),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.dft_clock(net_52),
+.dft_clock(net_60),
 .CELSUB40948(CELSUB40948),
 .enable_brick(enable_brick),
 .done_softstart(done_softstart),
@@ -154,32 +168,46 @@ SOFTSTARTwaltzDEBUG XDEBUG (
 .ten_f665b623_XU6(ten_f665b623_XU6),
 .tdi_528f048c_XU10(tdi_528f048c_XU10),
 .ten_528f048c_XU10(ten_528f048c_XU10),
-.hijack_enable_brick(net_50),
-.hijack_enable_softstart(net_51),
+.hijack_enable_brick(net_58),
+.hijack_enable_softstart(net_59),
 .ten_hijack_297df8ef_XU1(ten_hijack_297df8ef_XU1),
 .ten_hijack_dcf795e2_XU14(ten_hijack_dcf795e2_XU14),
 .ten_hijacki_297df8ef_XU1(ten_hijacki_297df8ef_XU1),
-.ten_hijacki_dcf795e2_XU14(ten_hijacki_dcf795e2_XU14)
+.ten_hijacki_dcf795e2_XU14(ten_hijacki_dcf795e2_XU14),
+.TAI_81f80d4d_XU8_88e49508_XDEBUG(TAI_81f80d4d_XU8_88e49508_XDEBUG),
+.tdi_ed87e5db_XU5_88e49508_XDEBUG(tdi_ed87e5db_XU5_88e49508_XDEBUG),
+.tdi_f665b623_XU6_88e49508_XDEBUG(tdi_f665b623_XU6_88e49508_XDEBUG),
+.ten_81f80d4d_XU8_88e49508_XDEBUG(ten_81f80d4d_XU8_88e49508_XDEBUG),
+.ten_ed87e5db_XU5_88e49508_XDEBUG(ten_ed87e5db_XU5_88e49508_XDEBUG),
+.ten_f665b623_XU6_88e49508_XDEBUG(ten_f665b623_XU6_88e49508_XDEBUG),
+.tdi_528f048c_XU10_88e49508_XDEBUG(tdi_528f048c_XU10_88e49508_XDEBUG),
+.ten_528f048c_XU10_88e49508_XDEBUG(ten_528f048c_XU10_88e49508_XDEBUG),
+.ten_hijack_297df8ef_XU1_88e49508_XDEBUG(ten_hijack_297df8ef_XU1_88e49508_XDEBUG),
+.ten_hijack_dcf795e2_XU14_88e49508_XDEBUG(ten_hijack_dcf795e2_XU14_88e49508_XDEBUG),
+.ten_hijacki_297df8ef_XU1_88e49508_XDEBUG(ten_hijacki_297df8ef_XU1_88e49508_XDEBUG),
+.ten_hijacki_dcf795e2_XU14_88e49508_XDEBUG(ten_hijacki_dcf795e2_XU14_88e49508_XDEBUG)
 );
 
 SOFTSTARTwaltz8MAIN XMAIN8 (
 .SS(SS),
 .REF(REF),
 .MUDV(MUDV),
-.halfway(SOFTSTARTconfiguration_5abeb710_1),
+.halfway(SOFTSTARTconfiguration_a2482902_1),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.dft_clock(net_52),
+.dft_clock(net_60),
 .CELSUB40948(CELSUB40948),
-.enable_brick(net_50),
-.softstart_1ms(SOFTSTARTconfiguration_5abeb710_0),
+.enable_brick(net_58),
+.softstart_1ms(SOFTSTARTconfiguration_a2482902_0),
 .done_softstart(done_softstart),
 .SENSE_G_4c0bef8e(SENSE_G_4c0bef8e),
-.enable_softstart(net_51),
+.enable_softstart(net_59),
 .kelvin_MUDGsoftstart(kelvin_MUDGsoftstart),
 .global_dac_0cc08401_XU5(global_dac_0cc08401_XU5),
 .IP_4c0bef8e_Xoscillator1(IP_4c0bef8e_Xoscillator1),
-.global_oscillator_4c0bef8e_Xoscillator1(global_oscillator_4c0bef8e_Xoscillator1)
+.global_dac_0cc08401_XU5_b48f6491_XMAIN8(global_dac_0cc08401_XU5_b48f6491_XMAIN8),
+.global_oscillator_4c0bef8e_Xoscillator1(global_oscillator_4c0bef8e_Xoscillator1),
+.global_oscillator_4c0bef8e_Xoscillator1_b48f6491_XMAIN8(global_oscillator_4c0bef8e_Xoscillator1_b48f6491_XMAIN8)
 );
 
 DFTtm8 dft_hex0x14 (
@@ -206,18 +234,42 @@ DFTtm8t dft_hex0x15 (
 .tmi(tmi[4:0])
 );
 
+DFTtm8 dft_hex0x2B (
+.G(CELG59462),
+.V(CELV96848),
+.a({d1,d0}),
+.SUB(CELSUB40948),
+.TAI({d0,d0,d0,d0,d0,d0,d0,TAI_81f80d4d_XU8_88e49508_XDEBUG}),
+.TAO(TAO),
+.tdi({d0,d0,d0,d0,d0,tdi_528f048c_XU10_88e49508_XDEBUG,tdi_f665b623_XU6_88e49508_XDEBUG,tdi_ed87e5db_XU5_88e49508_XDEBUG}),
+.tdo(tdo),
+.ten({ten_528f048c_XU10_88e49508_XDEBUG,ten_f665b623_XU6_88e49508_XDEBUG,ten_ed87e5db_XU5_88e49508_XDEBUG,ten_81f80d4d_XU8_88e49508_XDEBUG,ten_hijacki_dcf795e2_XU14,ten_hijack_dcf795e2_XU14,ten_hijacki_297df8ef_XU1,ten_hijack_297df8ef_XU1}),
+.tma({d0,d0,d1,d0,d1,d0,d1,d1}),
+.tmi(tmi[4:0])
+);
+
+DFTtm8t dft_hex0x2C (
+.G(CELG59462),
+.V(CELV96848),
+.a({e1,e0}),
+.SUB(CELSUB40948),
+.ten({noconn_dft_hex0x2C_ten_7,noconn_dft_hex0x2C_ten_6,global_oscillator_4c0bef8e_Xoscillator1_b48f6491_XMAIN8,global_dac_0cc08401_XU5_b48f6491_XMAIN8,ten_hijacki_dcf795e2_XU14_88e49508_XDEBUG,ten_hijacki_297df8ef_XU1_88e49508_XDEBUG,ten_hijack_dcf795e2_XU14_88e49508_XDEBUG,ten_hijack_297df8ef_XU1_88e49508_XDEBUG}),
+.tma({e0,e0,e1,e0,e1,e1,e0,e0}),
+.tmi(tmi[4:0])
+);
+
 drm8 drm_hex0x08 (
 .G(CELG59462),
 .V(CELV96848),
-.d0(d0),
-.d1(d1),
-.id({d0,d0,d0,d0,d1,d0,d0,d0}),
+.d0(g0),
+.d1(g1),
+.id({g0,g0,g0,g0,g1,g0,g0,g0}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,noconn_drm8_drm0_3,noconn_drm8_drm0_2,SOFTSTARTconfiguration_5abeb710_1,SOFTSTARTconfiguration_5abeb710_0}),
-.por0({d0,d0,d0,d0,d0,d0,d0,d0}),
-.bypload(d0),
-.lastdrm(d0)
+.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,noconn_drm8_drm0_3,noconn_drm8_drm0_2,SOFTSTARTconfiguration_a2482902_1,SOFTSTARTconfiguration_a2482902_0}),
+.por0({g0,g0,g0,g0,g0,g0,g0,g0}),
+.bypload(g0),
+.lastdrm(g0)
 );
 
 STONEnoconn XNCnoconn_drm8_drm0_2 (
@@ -266,6 +318,14 @@ STONEnoconn XNCnoconn_dft_hex0x15_ten_6 (
 
 STONEnoconn XNCnoconn_dft_hex0x15_ten_7 (
 .noconn(noconn_dft_hex0x15_ten_7)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x2C_ten_6 (
+.noconn(noconn_dft_hex0x2C_ten_6)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x2C_ten_7 (
+.noconn(noconn_dft_hex0x2C_ten_7)
 );
 
 endmodule

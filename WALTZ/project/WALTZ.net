@@ -2,13 +2,13 @@
 *#SIMETRIX
 X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
 
-.node_map BST 24
-.node_map POK 23
+.node_map BST 25
+.node_map POK 24
 .node_map PGND 27
-.node_map VCC 25
-.node_map GND 26
+.node_map VCC 26
+.node_map GND 22
 .node_map IN 20
-.node_map SW 22
+.node_map SW 23
 .node_map GBD 21
 .options
 + PSP_NPT=10001
@@ -78,11 +78,11 @@ X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
 
 .globalvar Cff=3p
 
-V$GND 26 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=0 X2=20u Y2=0 
-V$IN 20 0 PWL NSEG=3 X0=0 Y0=0 X1={Tin0} Y1={ENABLEin} X2={Tin1} Y2={ENABLEin} X3={Tin2} Y3=0 
+V$GND 22 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=0 X2=20u Y2=0 
+V$IN 20 0 PWL NSEG=2 X0=0 Y0=0 X1=10u Y1=0 X2=20u Y2=24 
 V$PGND 27 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=0 X2=20u Y2=0 
 X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
-X$WALTZ 20 21 20 22 23 24 25 26 25 26 26 26 WALTZ
+X$WALTZ 20 21 22 23 24 25 26 22 26 22 22 22 WALTZ
 ** From Z:\celera\projects\Waltz2\simplis\301\design\WALTZ.sxcmp
 .subckt WALTZ 146 147 148 149 150 151 152 153 154 155 156 157
 *#hierarchy
@@ -162,44 +162,52 @@ X$U9 155 pinprobe vars: pinprobe_description='Ground_input' pinprobe_mode='tbd' 
 .ends WALTZ
 
 ** From Z:\celera\projects\Waltz2\simplis\301\design\CLOCKwaltz.sxcmp
-.subckt CLOCKwaltz 52 53 54 56 55 58 59 57
+.subckt CLOCKwaltz 60 61 62 64 63 66 67 65
 *#hierarchy
-.node_map fault_clock 57
+.node_map fault_clock 65
 .node_map CLOCKofftime$0 44
 .node_map CLOCKofftime$1 45
 .node_map CLOCKofftime$2 46
 .node_map CLOCKofftime$3 47
-.node_map dft_clockstartup 64
-.node_map FSET 58
+.node_map dft_clockstartup 72
+.node_map FSET 66
 .node_map CLOCKofftime$4 48
 .node_map CLOCKofftime$5 49
 .node_map CLOCKofftime$6 50
 .node_map CLOCKofftime$7 51
-.node_map enable_clock 54
-.node_map dft_clocksync 66
-.node_map clock 53
-.node_map hijack_enable_clock 60
-.node_map dft_synclow 62
-.node_map dft_clock 61
-.node_map ISLOPECOMP 59
-.node_map MUDV 52
-.node_map ok_clock 55
-.node_map dft_synchigh 63
-.node_map dft_clockinternal 65
-.node_map SYNC 56
-.node_map dft_sync 67
-X$DEBUG 54 61 57 59 62 63 64 60 65 66 67 CLOCKwaltzDEBUG
-X$MAIN 52 53 60 57 56 55 58 59 44 45 46 47 61 62 63 64 65 66 67 CLOCKwaltzMAIN
-X$U1 53 pinprobe vars: pinprobe_description='Internal_clock' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+.node_map CLOCKofftime$8 52
+.node_map CLOCKofftime$9 53
+.node_map CLOCKofftime$10 54
+.node_map CLOCKofftime$11 55
+.node_map CLOCKofftime$12 56
+.node_map CLOCKofftime$13 57
+.node_map CLOCKofftime$14 58
+.node_map CLOCKofftime$15 59
+.node_map enable_clock 62
+.node_map dft_clocksync 74
+.node_map clock 61
+.node_map hijack_enable_clock 68
+.node_map dft_synclow 70
+.node_map dft_clock 69
+.node_map ISLOPECOMP 67
+.node_map MUDV 60
+.node_map ok_clock 63
+.node_map dft_synchigh 71
+.node_map dft_clockinternal 73
+.node_map SYNC 64
+.node_map dft_sync 75
+X$datamap1 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 datamap0 vars: datamap_function='range' datamap_name='CLOCKofftime' datamap_description='Adjust_Minimum_off_time' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_por01='0' datamap_por00='9' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='ns' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=4 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=8 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$DEBUG 62 69 65 67 70 71 72 68 73 74 75 CLOCKwaltzDEBUG
+X$MAIN 60 61 68 65 64 63 66 67 44 45 46 47 69 70 71 72 73 74 75 CLOCKwaltzMAIN
+X$U1 61 pinprobe vars: pinprobe_description='Internal_clock' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U10 43 brick vars: ibias=0 drm=1 dft=1 global=0 brick=0 revision=0 description='CLOCK_Brick' description1='External_clock_setup_through_FSET_resistor' description2='50_400KHz' description3='Fault_flag_if_FSET_grounded_or_floating' description4='Set_FSET_to_VCC_for_default_400KHz' description5='Override_clock_with_SYNC_input' description6='Factory_option_for_minimum_off_time' description7='Debug_enabled' description8='text' description9='text' description10='text'
-X$U2 54 pinprobe vars: pinprobe_description='Enable_clock_brick' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U3 56 pinprobe vars: pinprobe_description='External_SyNC_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
-X$U4 58 pinprobe vars: pinprobe_description='External_Resistor_to_set_frequency' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
-X$U5 57 pinprobe vars: pinprobe_description='Clock_faulted_at_startup' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U6 52 pinprobe vars: pinprobe_description='MUD_low_voltage_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
-X$U7 55 pinprobe vars: pinprobe_description='Clock_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U8 44 45 46 47 48 49 50 51 datamap0 vars: datamap_function='range' datamap_name='CLOCKofftime' datamap_description='Adjust_Minimum_off_time' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='9' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='ns' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=4 datamap_location=0 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=8 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
-X$U9 59 pinprobe vars: pinprobe_description='Slope_Compensation_reference_current' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U2 62 pinprobe vars: pinprobe_description='Enable_clock_brick' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 64 pinprobe vars: pinprobe_description='External_SyNC_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U4 66 pinprobe vars: pinprobe_description='External_Resistor_to_set_frequency' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U5 65 pinprobe vars: pinprobe_description='Clock_faulted_at_startup' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 60 pinprobe vars: pinprobe_description='MUD_low_voltage_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U7 63 pinprobe vars: pinprobe_description='Clock_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 67 pinprobe vars: pinprobe_description='Slope_Compensation_reference_current' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
 .ends CLOCKwaltz
 
 ** From Z:\celera\projects\Waltz2\simplis\301\design\CLOCKwaltzDEBUG.sxcmp
@@ -347,150 +355,166 @@ X$U5 4 6 inv vars: logicgate_type='inv' logicgate_vmax=6
 .ends VESPAasmINPUT1
 
 ** From Z:\celera\projects\Waltz2\simplis\301\design\CONTROLwaltz2.sxcmp
-.subckt CONTROLwaltz2 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 83 84
+.subckt CONTROLwaltz2 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 91 92
 *#hierarchy
-.node_map porb 67
-.node_map topstate 68
-.node_map topswipeak 74
+.node_map porb 75
+.node_map BUS1$10 69
+.node_map BUS1$11 70
+.node_map topstate 76
+.node_map BUS1$12 71
+.node_map BUS1$13 72
+.node_map BUS1$14 73
+.node_map BUS1$15 74
+.node_map topswipeak 82
 .node_map BUS1$3 62
 .node_map BUS1$4 63
 .node_map BUS1$5 64
 .node_map BUS1$6 65
-.node_map bbm_bottomon 84
+.node_map bbm_bottomon 92
 .node_map BUS1$7 66
-.node_map ok_driver 78
+.node_map ok_driver 86
+.node_map BUS1$8 67
+.node_map BUS1$9 68
 .node_map blank_bottom 60
 .node_map blank_refresh 61
-.node_map enable_control 69
-.node_map botswzcross 77
-.node_map done_sofstart 82
+.node_map enable_control 77
+.node_map botswzcross 85
+.node_map done_sofstart 90
 .node_map fcm 59
-.node_map clock 71
-.node_map switch_control 80
-.node_map freeze_control 79
-.node_map botswineg 76
-.node_map fault_control 72
-.node_map botswipeak 75
-.node_map botstate 70
-.node_map bbm_topon 83
-.node_map done_softstart 81
-.node_map go_driver 73
-X$CONTROL 67 68 69 70 71 72 78 73 79 80 59 74 75 77 76 81 60 61 83 84 Algorithm5p9_DYES
-X$U1 59 60 61 62 63 64 65 66 datamap0 vars: datamap_function='function' datamap_name='CONTROLconfiguration' datamap_description='CONTROL_configuration' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='3' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_function0='Operating_Mode' datamap_function0_off='Discontinous' datamap_function0_on='Continous' datamap_function1='Blank_bottom' datamap_function1_off='Maximum_on_time_fault' datamap_function1_on='Blank_maximum_on_time' datamap_function2='Blank_refresh' datamap_function2_off='Refresh_with_ok_driver' datamap_function2_on='Blank_refresh' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='0' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_location=0 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=420 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+.node_map clock 79
+.node_map switch_control 88
+.node_map freeze_control 87
+.node_map botswineg 84
+.node_map fault_control 80
+.node_map botswipeak 83
+.node_map botstate 78
+.node_map bbm_topon 91
+.node_map done_softstart 89
+.node_map go_driver 81
+X$CONTROL 75 76 77 78 79 80 86 81 87 88 59 82 83 85 84 89 60 61 91 92 Algorithm5p9_DYES
+X$datamap1 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 datamap0 vars: datamap_function='function' datamap_name='CONTROLconfiguration' datamap_description='CONTROL_configuration' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_por01='0' datamap_por00='3' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='Operating_Mode' datamap_function0_off='Discontinous' datamap_function0_on='Continous' datamap_function1='Blank_bottom' datamap_function1_off='Maximum_on_time_fault' datamap_function1_on='Blank_maximum_on_time' datamap_function2='Blank_refresh' datamap_function2_off='Refresh_with_ok_driver' datamap_function2_on='Blank_refresh' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=420 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
 X$U2 58 brick vars: ibias=0 drm=1 dft=1 global=0 brick=0 revision=9 description='CONTROL_Statemachine' description1='StepDown_Control_algorithm_5p9pA' description2='Factory_option_for_Forced_continous_mode' description3='Factory_option_for_blank_bottom_maximum_on_time' description4='Debug_enabled' description5='Rev9_Added_BBM_overide_to_STATE' description6='text' description7='text' description8='text' description9='text' description10='text'
-X$U3 82 pinprobe vars: pinprobe_description='SoftStart_complete_flag' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U4 84 pinprobe vars: pinprobe_description='BBM_bottom_switch_control' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U5 83 pinprobe vars: pinprobe_description='BBM_top_on_switch_control' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$Ubotstate 70 pinprobe vars: pinprobe_description='Turn_bottom_switch_on'
-X$Ubotswineg 76 pinprobe vars: pinprobe_description='Bottom_Switch_Negative_Peak_Current_Detect			'
-X$Ubotswipeak 75 pinprobe vars: pinprobe_description='Bottom_Switch_Peak_Current_Detect	'
-X$Ubotswzcross 77 pinprobe vars: pinprobe_description='Zero_current_bottom_switch	'
-X$Uclock 71 pinprobe vars: pinprobe_description='Fixed_frequency_clock'
-X$Uenable_control 69 pinprobe vars: pinprobe_description='Module_enable		'
-X$Ufault_controller 72 pinprobe vars: pinprobe_description='Control_Algorithm_fault_flag'
-X$Ufreeze_control 79 pinprobe vars: pinprobe_description='Fault_Manager_freeze_request'
-X$Ugo_driver 73 pinprobe vars: pinprobe_description='Allow_driver_to_switch'
-X$Uok_driver 78 pinprobe vars: pinprobe_description='DRIVER_module_ready'
-X$Uporb 67 pinprobe vars: pinprobe_description='Power_on_reset_input	'
-X$Uswitch_control 80 pinprobe vars: pinprobe_description='Enable_controller_switching'
-X$Utopstate 68 pinprobe vars: pinprobe_description='Turn_top_switch_on'
-X$Utopswipeak 74 pinprobe vars: pinprobe_description='Top_swotch_peak_current_detect		'
+X$U3 90 pinprobe vars: pinprobe_description='SoftStart_complete_flag' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 92 pinprobe vars: pinprobe_description='BBM_bottom_switch_control' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 91 pinprobe vars: pinprobe_description='BBM_top_on_switch_control' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$Ubotstate 78 pinprobe vars: pinprobe_description='Turn_bottom_switch_on'
+X$Ubotswineg 84 pinprobe vars: pinprobe_description='Bottom_Switch_Negative_Peak_Current_Detect			'
+X$Ubotswipeak 83 pinprobe vars: pinprobe_description='Bottom_Switch_Peak_Current_Detect	'
+X$Ubotswzcross 85 pinprobe vars: pinprobe_description='Zero_current_bottom_switch	'
+X$Uclock 79 pinprobe vars: pinprobe_description='Fixed_frequency_clock'
+X$Uenable_control 77 pinprobe vars: pinprobe_description='Module_enable		'
+X$Ufault_controller 80 pinprobe vars: pinprobe_description='Control_Algorithm_fault_flag'
+X$Ufreeze_control 87 pinprobe vars: pinprobe_description='Fault_Manager_freeze_request'
+X$Ugo_driver 81 pinprobe vars: pinprobe_description='Allow_driver_to_switch'
+X$Uok_driver 86 pinprobe vars: pinprobe_description='DRIVER_module_ready'
+X$Uporb 75 pinprobe vars: pinprobe_description='Power_on_reset_input	'
+X$Uswitch_control 88 pinprobe vars: pinprobe_description='Enable_controller_switching'
+X$Utopstate 76 pinprobe vars: pinprobe_description='Turn_top_switch_on'
+X$Utopswipeak 82 pinprobe vars: pinprobe_description='Top_swotch_peak_current_detect		'
 .ends CONTROLwaltz2
 
 ** From Z:\celera\projects\Waltz2\simplis\301\design\Algorithm5p9_DYES.sxcmp
-.subckt Algorithm5p9_DYES 125 126 127 128 129 130 132 133 135 137 139 141 143 145 147 149 153 155 157 158
+.subckt Algorithm5p9_DYES 133 134 135 136 137 138 140 141 143 145 147 149 151 153 155 157 161 163 165 166
 *#hierarchy
-.node_map POWERUPmaxdelayo 152
-.node_map FAULT 144
-.node_map porb 125
-.node_map ipeak_bottom 143
-.node_map TOPmaxdelayo 165
-.node_map BOTTOMmaxdelayo 164
-.node_map POWERUP 142
-.node_map top6aSYNC 136
+.node_map POWERUPmaxdelayo 160
+.node_map FAULT 152
+.node_map porb 133
+.node_map BUS1$10 127
+.node_map ipeak_bottom 151
+.node_map BUS1$11 128
+.node_map TOPmaxdelayo 173
+.node_map BUS1$12 129
+.node_map BOTTOMmaxdelayo 172
+.node_map BUS1$13 130
+.node_map BUS1$14 131
+.node_map BUS1$15 132
+.node_map POWERUP 150
+.node_map top6aSYNC 144
 .node_map BUS1$5 122
 .node_map BUS1$6 123
-.node_map bbm_bottomon 158
-.node_map top4SYNC 134
+.node_map bbm_bottomon 166
+.node_map top4SYNC 142
 .node_map BUS1$7 124
-.node_map ok_driver 132
-.node_map blank_bottom 153
-.node_map REFRESHmaxdelayo 163
-.node_map inegative_bottom 147
+.node_map ok_driver 140
+.node_map BUS1$8 125
+.node_map BUS1$9 126
+.node_map blank_bottom 161
+.node_map REFRESHmaxdelayo 171
+.node_map inegative_bottom 155
 .node_map STATEcontrol0 117
 .node_map STATEcontrol1 118
 .node_map STATEcontrol2 119
-.node_map blank_refresh 155
-.node_map IDLE 148
+.node_map blank_refresh 163
+.node_map IDLE 156
 .node_map STATEcontrol3 120
-.node_map REFRESH 150
-.node_map REFRESHmindelayo 162
-.node_map enable_control 127
-.node_map fcm 139
-.node_map TOP 156
-.node_map READY 146
-.node_map OFF 140
-.node_map top_switch 126
+.node_map REFRESH 158
+.node_map REFRESHmindelayo 170
+.node_map enable_control 135
+.node_map fcm 147
+.node_map TOP 164
+.node_map READY 154
+.node_map OFF 148
+.node_map top_switch 134
 .node_map enableFAULT 121
-.node_map zcross_bottom 145
-.node_map switch_control 137
-.node_map POWERUPdelayi 151
-.node_map freeze_control 135
-.node_map fault_control 130
-.node_map top3SYNC 131
-.node_map bottom_switch 128
-.node_map BOTTOM 154
-.node_map bbm_topon 157
-.node_map top6bSYNC 138
-.node_map TOPdelayi 161
-.node_map done_softstart 149
-.node_map BOTTOMdelayi 160
-.node_map REFRESHdelayi 159
-.node_map clock_control 129
-.node_map ipeak_top 141
-.node_map go_driver 133
-X$ALGORITHM 125 127 129 132 133 135 137 139 141 143 145 147 149 153 155 157 158 117 118 119 120 121 152 162 163 164 165 126 128 130 131 134 136 138 140 142 144 146 148 150 154 156 151 159 160 161 Algorithm5p9_DYES_0
-X$U14 131 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='Algorithm5p9_top3SYNC' dftprobe_description='Algorithm5p9_top3_sync_output_state' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U16 134 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='Algorithm5p9_top4SYNC' dftprobe_description='Algorithm5p9_top4_sync_output_state' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U18 136 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='Algorithm5p9_top6aSYNC' dftprobe_description='Algorithm5p9_top6a_sync_output_state' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U20 138 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='Algorithm5p9_top6bSYNC' dftprobe_description='Algorithm5p9_top6b_sync_output_state' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U22 117 118 119 120 121 122 123 124 datamap0 vars: datamap_function='code' datamap_text0='0' datamap_name='Algorithm5p9_statecontrol' datamap_description='Algorithm5p9_STATE_control' datamap_io='input' datamap_status_mode='live' datamap_status_level='level' datamap_status_enable='no' datamap_type='factory' datamap_por='10' datamap_mode='readonly' datamap_timeenable='no' datamap_text1='0' datamap_function0='text' datamap_function0_on='text' datamap_function0_off='text' datamap_function1='text' datamap_function1_on='text' datamap_function1_off='text' datamap_function2='text' datamap_function2_on='text' datamap_function2_off='text' datamap_function3='text' datamap_function3_on='text' datamap_function3_off='text' datamap_function4='text' datamap_function4_on='text' datamap_function4_off='text' datamap_function5='text' datamap_function5_on='text' datamap_function5_off='text' datamap_function6='text' datamap_function6_on='text' datamap_function6_off='text' datamap_function7='text' datamap_function7_on='text' datamap_function7_off='text' datamap_code0='STATE_Code0_control' datamap_code1='STATE_Code1_control' datamap_code2='STATE_Code2_control' datamap_code3='STATE_Control_Enable' datamap_code4='tbd' datamap_code5='tbd' datamap_code6='tbd' datamap_code7='tbd' datamap_range_units='text' datamap_startcode='0' datamap_enabletimeunits1='us' datamap_newcode1='1' datamap_enabletimeunits2='us' datamap_newcode2='1' datamap_enabletimeunits3='us' datamap_newcode3='1' datamap_enabletimeunits4='us' datamap_newcode4='1' datamap_enabletimeunits5='us' datamap_newcode5='1' datamap_enabletimeunits6='us' datamap_newcode6='1' datamap_enabletimeunits7='us' datamap_newcode7='1' datamap_enabletimeunits8='us' datamap_newcode8='1' datamap_bits=5 datamap_vmax=6 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1
-X$U29 151 152 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='tbd' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=100 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
-X$U37 159 162 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='tbd' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=1 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
-X$U38 159 163 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='tbd' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=30 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
-X$U41 160 164 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='tbd' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=100 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
-X$U44 161 165 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='tbd' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=10 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
-X$U89 140 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='OFF_Algorithm5p9' dftprobe_description='Algorithm5p9_state0_OFF' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U90 142 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='POWERUP_Algorithm5p9' dftprobe_description='Algorithm5p9_state1_POWERUP' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U91 144 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='FAULT_Algorithm5p9' dftprobe_description='Algorithm5p9_state2_FAULT' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U92 146 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='READY_Algorithm5p9' dftprobe_description='Algorithm5p9_state3_READY' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U93 148 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='IDLE_Algorithm5p9' dftprobe_description='Algorithm5p9_state4_IDLE' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U94 150 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REFRESH_Algorithm5p9' dftprobe_description='Algorithm5p9_state5_REFRESH' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U95 154 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='BOTTOM_Algorithm5p9' dftprobe_description='Algorithm5p9_state6_BOTTOM' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U96 156 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='TOP_Algorithm5p9' dftprobe_description='Algorithm5p9_state7_TOP' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U97 126 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='top_switch_Algorithm5p9' dftprobe_description='Turn_top_switch_on' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U98 128 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='bottom_switch_Algorithm5p9' dftprobe_description='Turn_bottom_switch_on' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U99 130 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='fault_control_Algorithm5p9' dftprobe_description='Control_Algorithm_fault_flag' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$Ubbm_bottomon 158 pinprobe vars: pinprobe_description='Break_before_make_for_bottom_switch_on'
-X$Ubbm_topon 157 pinprobe vars: pinprobe_description='Break_before_make_for_top_switch_on'
-X$Ublank_bottom 153 pinprobe vars: pinprobe_description='FACTORY_mode_Blank_Maximum_Bottom_on_time_fault'
-X$Ublank_refresh 155 pinprobe vars: pinprobe_description='FACTORY_mode_blank_refresh_when_ok_driver_low'
-X$Ubottom_switch 128 pinprobe vars: pinprobe_description='Turn_bottom_switch_on'
-X$Uclock_control 129 pinprobe vars: pinprobe_description='Fixed_frequency_clock'
-X$Udone_softstart 149 pinprobe vars: pinprobe_description='Blank_FCM_until_end_of_softstart'
-X$Uenable_control 127 pinprobe vars: pinprobe_description='Module_enable		'
-X$Ufault_control 130 pinprobe vars: pinprobe_description='Control_Algorithm_fault_flag'
-X$Ufcm 139 pinprobe vars: pinprobe_description='FACTORY_mode_Forced_continous_mode'
-X$Ufreeze_control 135 pinprobe vars: pinprobe_description='Disable_controller_switching'
-X$Ugo_driver 133 pinprobe vars: pinprobe_description='DRIVER_switching_enabled'
-X$Uinegative_bottom 147 pinprobe vars: pinprobe_description='Bottomm_switch_Negative_peak_current_detect'
-X$Uipeak_bottom 143 pinprobe vars: pinprobe_description='Bottom_Switch_Peak_Current_Detect			'
-X$Uipeak_top 141 pinprobe vars: pinprobe_description='Top_swotch_peak_current_detect		'
-X$Uok_driver 132 pinprobe vars: pinprobe_description='DRIVER_enabled_and_ready'
-X$Uporb 125 pinprobe vars: pinprobe_description='Power_on_reset_input	'
-X$Uswitch_control 137 pinprobe vars: pinprobe_description='Enable_controller_swicthing'
-X$Utop_switch 126 pinprobe vars: pinprobe_description='Turn_top_switch_on'
-X$Uzcross_bottom 145 pinprobe vars: pinprobe_description='Zero_current_bottom_switch	'
+.node_map zcross_bottom 153
+.node_map switch_control 145
+.node_map POWERUPdelayi 159
+.node_map freeze_control 143
+.node_map fault_control 138
+.node_map top3SYNC 139
+.node_map bottom_switch 136
+.node_map BOTTOM 162
+.node_map bbm_topon 165
+.node_map top6bSYNC 146
+.node_map TOPdelayi 169
+.node_map done_softstart 157
+.node_map BOTTOMdelayi 168
+.node_map REFRESHdelayi 167
+.node_map clock_control 137
+.node_map ipeak_top 149
+.node_map go_driver 141
+X$ALGORITHM 133 135 137 140 141 143 145 147 149 151 153 155 157 161 163 165 166 117 118 119 120 121 160 170 171 172 173 134 136 138 139 142 144 146 148 150 152 154 156 158 162 164 159 167 168 169 Algorithm5p9_DYES_0
+X$datamap1 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 datamap0 vars: datamap_function='code' datamap_name='Algorithm5p9_statecontrol' datamap_description='Algorithm5p9_STATE_control' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_mode='readonly' datamap_address='NA' datamap_timeenable='no' datamap_por01='1' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='STATE_Code0_control' datamap_code1='STATE_Code1_control' datamap_code2='STATE_Code2_control' datamap_code3='STATE_Control_Enable' datamap_code4='tbd' datamap_code5='tbd' datamap_code6='tbd' datamap_code7='tbd' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=5 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U14 139 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='Algorithm5p9_top3SYNC' dftprobe_description='Algorithm5p9_top3_sync_output_state' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U16 142 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='Algorithm5p9_top4SYNC' dftprobe_description='Algorithm5p9_top4_sync_output_state' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U18 144 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='Algorithm5p9_top6aSYNC' dftprobe_description='Algorithm5p9_top6a_sync_output_state' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U20 146 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='Algorithm5p9_top6bSYNC' dftprobe_description='Algorithm5p9_top6b_sync_output_state' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U29 159 160 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='tbd' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=100 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U37 167 170 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='tbd' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=1 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U38 167 171 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='tbd' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=30 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U41 168 172 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='tbd' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=100 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U44 169 173 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='tbd' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=10 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U89 148 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='OFF_Algorithm5p9' dftprobe_description='Algorithm5p9_state0_OFF' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U90 150 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='POWERUP_Algorithm5p9' dftprobe_description='Algorithm5p9_state1_POWERUP' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U91 152 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='FAULT_Algorithm5p9' dftprobe_description='Algorithm5p9_state2_FAULT' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U92 154 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='READY_Algorithm5p9' dftprobe_description='Algorithm5p9_state3_READY' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U93 156 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='IDLE_Algorithm5p9' dftprobe_description='Algorithm5p9_state4_IDLE' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U94 158 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REFRESH_Algorithm5p9' dftprobe_description='Algorithm5p9_state5_REFRESH' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U95 162 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='BOTTOM_Algorithm5p9' dftprobe_description='Algorithm5p9_state6_BOTTOM' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U96 164 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='TOP_Algorithm5p9' dftprobe_description='Algorithm5p9_state7_TOP' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U97 134 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='top_switch_Algorithm5p9' dftprobe_description='Turn_top_switch_on' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U98 136 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='bottom_switch_Algorithm5p9' dftprobe_description='Turn_bottom_switch_on' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U99 138 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='fault_control_Algorithm5p9' dftprobe_description='Control_Algorithm_fault_flag' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$Ubbm_bottomon 166 pinprobe vars: pinprobe_description='Break_before_make_for_bottom_switch_on'
+X$Ubbm_topon 165 pinprobe vars: pinprobe_description='Break_before_make_for_top_switch_on'
+X$Ublank_bottom 161 pinprobe vars: pinprobe_description='FACTORY_mode_Blank_Maximum_Bottom_on_time_fault'
+X$Ublank_refresh 163 pinprobe vars: pinprobe_description='FACTORY_mode_blank_refresh_when_ok_driver_low'
+X$Ubottom_switch 136 pinprobe vars: pinprobe_description='Turn_bottom_switch_on'
+X$Uclock_control 137 pinprobe vars: pinprobe_description='Fixed_frequency_clock'
+X$Udone_softstart 157 pinprobe vars: pinprobe_description='Blank_FCM_until_end_of_softstart'
+X$Uenable_control 135 pinprobe vars: pinprobe_description='Module_enable		'
+X$Ufault_control 138 pinprobe vars: pinprobe_description='Control_Algorithm_fault_flag'
+X$Ufcm 147 pinprobe vars: pinprobe_description='FACTORY_mode_Forced_continous_mode'
+X$Ufreeze_control 143 pinprobe vars: pinprobe_description='Disable_controller_switching'
+X$Ugo_driver 141 pinprobe vars: pinprobe_description='DRIVER_switching_enabled'
+X$Uinegative_bottom 155 pinprobe vars: pinprobe_description='Bottomm_switch_Negative_peak_current_detect'
+X$Uipeak_bottom 151 pinprobe vars: pinprobe_description='Bottom_Switch_Peak_Current_Detect			'
+X$Uipeak_top 149 pinprobe vars: pinprobe_description='Top_swotch_peak_current_detect		'
+X$Uok_driver 140 pinprobe vars: pinprobe_description='DRIVER_enabled_and_ready'
+X$Uporb 133 pinprobe vars: pinprobe_description='Power_on_reset_input	'
+X$Uswitch_control 145 pinprobe vars: pinprobe_description='Enable_controller_swicthing'
+X$Utop_switch 134 pinprobe vars: pinprobe_description='Turn_top_switch_on'
+X$Uzcross_bottom 153 pinprobe vars: pinprobe_description='Zero_current_bottom_switch	'
 .ends Algorithm5p9_DYES
 
 ** From Z:\celera\projects\Waltz2\simplis\301\design\Algorithm5p9_DYES_0.sxcmp
@@ -1446,65 +1470,73 @@ X$U9 93 pinprobe vars: pinprobe_description='Current_Limit_Reference_Current' pi
 .ends DRIVERwaltz2
 
 ** From Z:\celera\projects\Waltz2\simplis\301\design\DRIVERwaltzBBM2.sxcmp
-.subckt DRIVERwaltzBBM2 67 68 69 70 71 72 73 74
+.subckt DRIVERwaltzBBM2 75 76 77 78 79 80 81 82
 *#hierarchy
-.node_map bottomstateDELAY 82
-.node_map topstate 67
+.node_map BUS1$10 59
+.node_map bottomstateDELAY 90
+.node_map BUS1$11 60
+.node_map topstate 75
+.node_map BUS1$12 61
+.node_map BUS1$13 62
+.node_map BUS1$14 63
+.node_map BUS1$15 64
 .node_map BUS1$2 51
 .node_map BUS1$3 52
-.node_map topon 68
+.node_map topon 76
 .node_map BUS1$4 53
 .node_map BUS1$5 54
 .node_map BUS1$6 55
-.node_map bbm_bottomon 74
+.node_map bbm_bottomon 82
 .node_map BUS1$7 56
-.node_map BUS2$0 57
-.node_map topstateDELAY 78
-.node_map BUS2$1 58
-.node_map BUS2$2 59
-.node_map BUS2$3 60
-.node_map BUS2$4 61
-.node_map BUS3$0 62
-.node_map BUS3$1 63
-.node_map BUS3$2 64
-.node_map BUS3$3 65
+.node_map BUS2$0 65
+.node_map BUS1$8 57
+.node_map topstateDELAY 86
+.node_map BUS2$1 66
+.node_map BUS1$9 58
+.node_map BUS2$2 67
+.node_map BUS2$3 68
+.node_map BUS2$4 69
+.node_map BUS3$0 70
+.node_map BUS3$1 71
+.node_map BUS3$2 72
+.node_map BUS3$3 73
 .node_map top_status_bypass 50
-.node_map bottomstate 73
-.node_map BUS3$4 66
-.node_map bottomstatus 71
-.node_map off 80
-.node_map b 81
-.node_map bottomon 70
+.node_map bottomstate 81
+.node_map BUS3$4 74
+.node_map bottomstatus 79
+.node_map off 88
+.node_map b 89
+.node_map bottomon 78
 .node_map bottom_status_bypass 49
-.node_map t 76
-.node_map bbm_topon 72
-.node_map topstatus 69
-.node_map topstatusBAR 79
-.node_map on 77
-.node_map bottomstatusBAR 75
-X$U1 68 pinprobe vars: pinprobe_description='Top_Switch_turn_on_flag' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U10 74 80 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
-X$U11 72 77 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
-X$U12 70 80 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
-X$U13 48 81 inv vars: logicgate_type='inv' logicgate_vmax=6
-X$U14 72 pinprobe vars: pinprobe_description='Top_Switch_BBM_on_state' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U15 78 77 76 VESPAasmINPUT1
-X$U16 68 77 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
-X$U17 74 pinprobe vars: pinprobe_description='Bottom_Switch_BBM_on_state' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U2 73 pinprobe vars: pinprobe_description='BOTTOM_Switch_State'
-X$U21 50 47 75 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
-X$U22 49 48 79 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
-X$U23 82 80 81 VESPAasmINPUT1
-X$U28 47 76 inv vars: logicgate_type='inv' logicgate_vmax=6
-X$U3 70 pinprobe vars: pinprobe_description='Bottom_Switch_turn_on_flag' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U4 67 pinprobe vars: pinprobe_description='TOP_Switch_State'
-X$U5 71 pinprobe vars: pinprobe_description='BOTTOM_Switch_Gate_Status'
-X$U6 69 pinprobe vars: pinprobe_description='TOP_Switch_Gate_Status'
-X$U7 49 50 51 52 53 54 55 56 datamap0 vars: datamap_function='function' datamap_name='BBMstatus' datamap_description='BBM_Status_Enabled' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='3' datamap_mode='readwrite' datamap_timeenable='no' datamap_function0='Bottom_status' datamap_function0_off='Enable' datamap_function0_on='Disable' datamap_function1='Top_status' datamap_function1_off='Enable' datamap_function1_on='Disable' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='TOP_BOT_Status_Enabled' datamap_code1='TOP_Status_Bypassed_BOT_Status_Enabled' datamap_code2='BOT_Status_Bypassed_TOP_Status_Enabled' datamap_code3='TOP_BOT_Status_Bypassed' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='3' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=100 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
-X$U8 71 75 inv vars: logicgate_type='inv' logicgate_vmax=6
-X$U9 69 79 inv vars: logicgate_type='inv' logicgate_vmax=6
-X$UBOTTOMDELAY 67 57 58 59 60 61 78 timingskew vars: timingskew_type='rise' timingskew_control='factory' timingskew_dft='no' timingskew_datasheet_name='TOPSWITCHstatusDELAY' timingskew_datasheet_description='TOP_Switch_on_delay' timingskew_bits=5 timingskew_por=18 timingskew_lsb=1 timingskew_vmax=6
-X$UTOPDELAY 73 62 63 64 65 66 82 timingskew vars: timingskew_type='rise' timingskew_control='factory' timingskew_dft='no' timingskew_datasheet_name='BOTTOMSWITCHstatusDELAY' timingskew_datasheet_description='BOT_Switch_on_delay' timingskew_bits=5 timingskew_por=18 timingskew_lsb=1 timingskew_vmax=6
+.node_map t 84
+.node_map bbm_topon 80
+.node_map topstatus 77
+.node_map topstatusBAR 87
+.node_map on 85
+.node_map bottomstatusBAR 83
+X$datamap1 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 datamap0 vars: datamap_function='function' datamap_name='BBMstatus' datamap_description='BBM_Status_Enabled' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_por01='0' datamap_por00='3' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='Bottom_status' datamap_function0_off='Enable' datamap_function0_on='Disable' datamap_function1='Top_status' datamap_function1_off='Enable' datamap_function1_on='Disable' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='TOP_BOT_Status_Enabled' datamap_code1='TOP_Status_Bypassed_BOT_Status_Enabled' datamap_code2='BOT_Status_Bypassed_TOP_Status_Enabled' datamap_code3='TOP_BOT_Status_Bypassed' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=100 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U1 76 pinprobe vars: pinprobe_description='Top_Switch_turn_on_flag' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U10 82 88 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U11 80 85 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U12 78 88 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U13 48 89 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U14 80 pinprobe vars: pinprobe_description='Top_Switch_BBM_on_state' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U15 86 85 84 VESPAasmINPUT1
+X$U16 76 85 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U17 82 pinprobe vars: pinprobe_description='Bottom_Switch_BBM_on_state' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U2 81 pinprobe vars: pinprobe_description='BOTTOM_Switch_State'
+X$U21 50 47 83 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U22 49 48 87 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U23 90 88 89 VESPAasmINPUT1
+X$U28 47 84 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U3 78 pinprobe vars: pinprobe_description='Bottom_Switch_turn_on_flag' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 75 pinprobe vars: pinprobe_description='TOP_Switch_State'
+X$U5 79 pinprobe vars: pinprobe_description='BOTTOM_Switch_Gate_Status'
+X$U6 77 pinprobe vars: pinprobe_description='TOP_Switch_Gate_Status'
+X$U8 79 83 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U9 77 87 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$UBOTTOMDELAY 75 65 66 67 68 69 86 timingskew vars: timingskew_type='rise' timingskew_control='factory' timingskew_dft='no' timingskew_datasheet_name='TOPSWITCHstatusDELAY' timingskew_datasheet_description='TOP_Switch_on_delay' timingskew_bits=5 timingskew_por=18 timingskew_lsb=1 timingskew_vmax=6
+X$UTOPDELAY 81 70 71 72 73 74 90 timingskew vars: timingskew_type='rise' timingskew_control='factory' timingskew_dft='no' timingskew_datasheet_name='BOTTOMSWITCHstatusDELAY' timingskew_datasheet_description='BOT_Switch_on_delay' timingskew_bits=5 timingskew_por=18 timingskew_lsb=1 timingskew_vmax=6
 .ends DRIVERwaltzBBM2
 
 ** From Z:\celera\projects\Waltz2\simplis\301\design\DRIVERwaltz0BOTN0.sxcmp
@@ -1630,12 +1662,12 @@ X$U9 48 47 dfthijack vars: dfthijack_name='HJDRIVERbotstate' dfthijack_descripti
 .node_map gate 103
 .node_map SW 89
 C1 92 95 100f IC=0
+X$datamap1 102 datamap1 vars: datamap_function='function' datamap_name='DISABLEslope' datamap_description='Disable_slope_current' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='SLOPE_curent' datamap_function0_off='enable' datamap_function0_on='disable' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=1 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
 X$fetdriver 87 103 76 89 104 77 94 78 82 83 84 85 96 98 fetdriver vars: fetdriver_type='n' fetdriver_on_adjust='no' fetdriver_on_adjust_por='0' fetdriver_on_adjust_name='text' fetdriver_on_adjust_description='text' fetdriver_off_adjust='no' fetdriver_off_adjust_por='0' fetdriver_off_adjust_name='text' fetdriver_off_adjust_description='text' fetdriver_faultdisable='no' fetdriver_levelshiftenable='yes' fetdriver_levelshiftinput='yes' fetdriver_status_levelshifter='yes' fetdriver_status_delay_adjust='no' fetdriver_statusdelay_name='topswstatusdel' fetdriver_statusdelay_description='Top_Switch_Gate_Status_Delay' fetdriver_passive='1000' fetdriver_dft='no' fetdriver_design='fast' fetdriver_on_ron=10 fetdriver_off_ron=5 fetdriver_vmaxlevelshift=60 fetdriver_status_delay=0 fetdriver_vmax=6
 X$U1 89 pinprobe vars: pinprobe_description='NMOS_source' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U10 88 pinprobe vars: pinprobe_description='Input_Voltage_Supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U11 107 108 102 switchtransmission vars: switch_type='transmission' switch_polarity='invert' switch_model='celera' switch_design='np' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
 X$U12 87 pinprobe vars: pinprobe_description='Top_switch_driver_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U13 102 datamap1 vars: datamap_function='function' datamap_name='DISABLEslope' datamap_description='Disable_slope_current' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='0' datamap_mode='readwrite' datamap_timeenable='no' datamap_function0='SLOPE_curent' datamap_function0_off='enable' datamap_function0_on='disable' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=1 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
 X$U14 101 pinprobe vars: pinprobe_description='Bottom_Switch_Gate_Status' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U15 90 pinprobe vars: pinprobe_description='High_Current_Core_Supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U16 86 pinprobe vars: pinprobe_description='High_Current_High_Voltage_Supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
@@ -1656,42 +1688,50 @@ X$U9 91 pinprobe vars: pinprobe_description='Highside_Current_Limit' pinprobe_mo
 .ends DRIVERwaltz0TOPN0
 
 ** From Z:\celera\projects\Waltz2\simplis\301\design\FAULTMANAGERwaltz.sxcmp
-.subckt FAULTMANAGERwaltz 53 54 55 56 57 58 59
+.subckt FAULTMANAGERwaltz 61 62 63 64 65 66 67
 *#hierarchy
-.node_map hijack_faultmanager_status 61
-.node_map hijack_blank_fault 64
-.node_map hijack_enable_fault 60
+.node_map hijack_faultmanager_status 69
+.node_map BUS1$10 55
+.node_map BUS1$11 56
+.node_map BUS1$12 57
+.node_map hijack_blank_fault 72
+.node_map BUS1$13 58
+.node_map hijack_enable_fault 68
+.node_map BUS1$14 59
+.node_map BUS1$15 60
 .node_map BUS1$2 47
-.node_map enable_faultmanager 55
+.node_map enable_faultmanager 63
 .node_map BUS1$3 48
 .node_map BUS1$4 49
 .node_map BUS1$5 50
 .node_map BUS1$6 51
 .node_map BUS1$7 52
-.node_map hijack_delay 66
-.node_map dft_delaySHORT 65
-.node_map clock 58
+.node_map BUS1$8 53
+.node_map BUS1$9 54
+.node_map hijack_delay 74
+.node_map dft_delaySHORT 73
+.node_map clock 66
 .node_map blank_thermal 46
-.node_map fault_freeze 54
-.node_map fault_short 59
-.node_map hijack_fault_short 67
-.node_map MUDV 53
-.node_map hijack_thermal_status 62
-.node_map hijack_short_status 63
+.node_map fault_freeze 62
+.node_map fault_short 67
+.node_map hijack_fault_short 75
+.node_map MUDV 61
+.node_map hijack_thermal_status 70
+.node_map hijack_short_status 71
 .node_map mode_hiccup 45
-.node_map fault_run 56
-.node_map blank_fault 57
-X$DEBUG 55 60 54 61 56 62 65 63 66 57 64 59 67 FAULTMANAGERwaltzDEBUG
-X$MAIN 53 54 60 56 64 58 65 67 61 62 63 66 45 46 FAULTMANAGERwaltzMAIN
-X$U1 45 46 47 48 49 50 51 52 datamap0 vars: datamap_function='function' datamap_name='FAULTMANAGERconfiguration' datamap_description='FAULTMANAGER_configuration' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='1' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_function0='HICCUPmode' datamap_function0_off='Disable' datamap_function0_on='Enable' datamap_function1='BLANKthermal' datamap_function1_off='Disable' datamap_function1_on='Enable' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_location=0 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
-X$U12 57 pinprobe vars: pinprobe_description='blank_fault_input' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+.node_map fault_run 64
+.node_map blank_fault 65
+X$datamap1 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 datamap0 vars: datamap_function='function' datamap_name='FAULTMANAGERconfiguration' datamap_description='FAULTMANAGER_configuration' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='HICCUPmode' datamap_function0_off='Disable' datamap_function0_on='Enable' datamap_function1='BLANKthermal' datamap_function1_off='Disable' datamap_function1_on='Enable' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$DEBUG 63 68 62 69 64 70 73 71 74 65 72 67 75 FAULTMANAGERwaltzDEBUG
+X$MAIN 61 62 68 64 72 66 73 75 69 70 71 74 45 46 FAULTMANAGERwaltzMAIN
+X$U12 65 pinprobe vars: pinprobe_description='blank_fault_input' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 X$U2 44 brick vars: ibias=0 drm=1 dft=1 global=0 brick=0 revision=0 description='FAULTMANAGER_Brick' description1='Temperature_fault' description2='SHORT_fault' description3='Factory_option_for_HiCup' description4='Factory_option_for_burnIn' description5='Debug_enabled' description6='text' description7='text' description8='text' description9='text' description10='text'
-X$U3 54 pinprobe vars: pinprobe_description='Freeze_converter_switching' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U4 55 pinprobe vars: pinprobe_description='Enable_fault_module' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U5 58 pinprobe vars: pinprobe_description='Reference-clock_for_delays' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
-X$U6 56 pinprobe vars: pinprobe_description='Genertate_fault_in_run_mode' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U8 53 pinprobe vars: pinprobe_description='Fault_Module_Input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
-X$U9 59 pinprobe vars: pinprobe_description='OUTPUT_less_than_60percent' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 62 pinprobe vars: pinprobe_description='Freeze_converter_switching' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 63 pinprobe vars: pinprobe_description='Enable_fault_module' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 66 pinprobe vars: pinprobe_description='Reference-clock_for_delays' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
+X$U6 64 pinprobe vars: pinprobe_description='Genertate_fault_in_run_mode' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U8 61 pinprobe vars: pinprobe_description='Fault_Module_Input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U9 67 pinprobe vars: pinprobe_description='OUTPUT_less_than_60percent' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 .ends FAULTMANAGERwaltz
 
 ** From Z:\celera\projects\Waltz2\simplis\301\design\FAULTMANAGERwaltzDEBUG.sxcmp
@@ -2044,59 +2084,67 @@ X$U9 45 pinprobe vars: pinprobe_description='Current_Limit_Reference_Current' pi
 .ends REGULATIONwaltz0
 
 ** From Z:\celera\projects\Waltz2\simplis\301\design\REGULATIONwaltz0DEBUG0.sxcmp
-.subckt REGULATIONwaltz0DEBUG0 69 70 71 76 73 77 75 74 78 72
+.subckt REGULATIONwaltz0DEBUG0 77 78 79 84 81 85 83 82 86 80
 *#hierarchy
-.node_map vss_high 82
-.node_map FBR 80
-.node_map HIJACK_VSS_REGULATION 72
+.node_map vss_high 90
+.node_map FBR 88
+.node_map BUS1$10 68
+.node_map BUS1$11 69
+.node_map BUS1$12 70
+.node_map BUS1$13 71
+.node_map BUS1$14 72
+.node_map BUS1$15 73
+.node_map HIJACK_VSS_REGULATION 80
 .node_map BUS1$3 61
 .node_map BUS1$4 62
 .node_map BUS1$5 63
 .node_map BUS1$6 64
 .node_map BUS1$7 65
-.node_map hijack_enable_regulation 70
-.node_map BUS2$0 66
-.node_map VC 74
-.node_map BUS2$1 67
-.node_map BUS2$2 68
-.node_map VSS_REGULATION 78
-.node_map IREF_DRIVER 77
-.node_map enable_regulation 69
-.node_map REFINT 73
+.node_map hijack_enable_regulation 78
+.node_map BUS2$0 74
+.node_map BUS1$8 66
+.node_map VC 82
+.node_map BUS2$1 75
+.node_map BUS1$9 67
+.node_map BUS2$2 76
+.node_map VSS_REGULATION 86
+.node_map IREF_DRIVER 85
+.node_map enable_regulation 77
+.node_map REFINT 81
 .node_map vc_testmode 58
-.node_map FB_REGULATION 75
-.node_map ok_regulation 71
+.node_map FB_REGULATION 83
+.node_map ok_regulation 79
 .node_map vss_testmode 59
 .node_map vss_status 60
-.node_map go_driver 76
-.node_map vss_low 81
-.node_map vss_statusBAR 79
-X$U1 70 pinprobe vars: pinprobe_description='Regulation_Module_enable'
-X$U10 74 80 58 switchtswitch vars: switch_type='tswitch' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
-X$U11 69 70 dfthijack vars: dfthijack_name='HIJACKenable_regulation' dfthijack_description='Hijack_Regulation_Enable' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
-X$U12 75 pinprobe vars: pinprobe_description='Internal_Feedback_Voltage'
-X$U13 78 pinprobe vars: pinprobe_description='SOFTSTART_Input_reference' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U14 78 72 59 switchtransmission vars: switch_type='transmission' switch_polarity='invert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
-X$U15 56 72 81 switchpulldown vars: switch_type='pulldown' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
-X$U16 57 72 82 switchpullup vars: switch_type='pullup' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
-X$U17 72 pinprobe vars: pinprobe_description='Regulation_Module_Softstart' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U18 70 71 52 VESPAdftpulse
-X$U19 59 81 79 VESPAasmINPUT1
+.node_map go_driver 84
+.node_map vss_low 89
+.node_map vss_statusBAR 87
+X$datamap1 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 datamap0 vars: datamap_function='function' datamap_name='REGULATIONtestmode' datamap_description='REGUALTION_Configure_DEBUG_controls' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='VC_override' datamap_function0_off='disable' datamap_function0_on='enable' datamap_function1='VSS_override' datamap_function1_off='disable' datamap_function1_on='enable' datamap_function2='VSS_status' datamap_function2_off='Low' datamap_function2_on='High' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U1 78 pinprobe vars: pinprobe_description='Regulation_Module_enable'
+X$U10 82 88 58 switchtswitch vars: switch_type='tswitch' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
+X$U11 77 78 dfthijack vars: dfthijack_name='HIJACKenable_regulation' dfthijack_description='Hijack_Regulation_Enable' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$U12 83 pinprobe vars: pinprobe_description='Internal_Feedback_Voltage'
+X$U13 86 pinprobe vars: pinprobe_description='SOFTSTART_Input_reference' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U14 86 80 59 switchtransmission vars: switch_type='transmission' switch_polarity='invert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
+X$U15 56 80 89 switchpulldown vars: switch_type='pulldown' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
+X$U16 57 80 90 switchpullup vars: switch_type='pullup' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
+X$U17 80 pinprobe vars: pinprobe_description='Regulation_Module_Softstart' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U18 78 79 52 VESPAdftpulse
+X$U19 59 89 87 VESPAasmINPUT1
 X$U2 52 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONstartup' dftprobe_description='Regulation_Startup_Time' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U20 59 82 60 VESPAasmINPUT1
-X$U21 60 79 inv vars: logicgate_type='inv' logicgate_vmax=6
-X$U22 74 pinprobe vars: pinprobe_description='VC_50mv_Switching_Threshold'
-X$U23 80 75 53 54 55 66 67 68 resistor vars: resistor_control='resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='text' resistor_datasheet_adjust_description='text' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=75 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=0 resistor_adjust1=0 resistor_adjust2=0 resistor_adjust3=0 resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=6 resistor_imax=1m
-X$U26 76 pinprobe vars: pinprobe_description='VC_50mv_Switching_Threshold'
-X$U28 77 pinprobe vars: pinprobe_description='Highside_Current_Limit_Reference'
-X$U3 71 pinprobe vars: pinprobe_description='Regulation_ready_flag'
-X$U35 73 pinprobe vars: pinprobe_description='Regulation_Reference_Voltage'
-X$U4 58 59 60 61 62 63 64 65 datamap0 vars: datamap_function='function' datamap_name='REGULATIONtestmode' datamap_description='REGUALTION_Configure_DEBUG_controls' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='0' datamap_mode='readwrite' datamap_timeenable='no' datamap_function0='VC_override' datamap_function0_off='disable' datamap_function0_on='enable' datamap_function1='VSS_override' datamap_function1_off='disable' datamap_function1_on='enable' datamap_function2='VSS_status' datamap_function2_off='Low' datamap_function2_on='High' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
-X$U5 69 pinprobe vars: pinprobe_description='Enable_regulation_module'
-X$U6 73 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONref' dftprobe_description='Regulation_Reference_Voltage' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U7 77 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONiref' dftprobe_description='Regulation_Current_Limit_Reference_Current' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U8 76 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONgo' dftprobe_description='Regulation_Go_Driver_Switching_Flag' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U9 74 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONvc' dftprobe_description='Regulation_VC_Voltage' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U20 59 90 60 VESPAasmINPUT1
+X$U21 60 87 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U22 82 pinprobe vars: pinprobe_description='VC_50mv_Switching_Threshold'
+X$U23 88 83 53 54 55 74 75 76 resistor vars: resistor_control='resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='text' resistor_datasheet_adjust_description='text' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=75 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=0 resistor_adjust1=0 resistor_adjust2=0 resistor_adjust3=0 resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=6 resistor_imax=1m
+X$U26 84 pinprobe vars: pinprobe_description='VC_50mv_Switching_Threshold'
+X$U28 85 pinprobe vars: pinprobe_description='Highside_Current_Limit_Reference'
+X$U3 79 pinprobe vars: pinprobe_description='Regulation_ready_flag'
+X$U35 81 pinprobe vars: pinprobe_description='Regulation_Reference_Voltage'
+X$U5 77 pinprobe vars: pinprobe_description='Enable_regulation_module'
+X$U6 81 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONref' dftprobe_description='Regulation_Reference_Voltage' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U7 85 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONiref' dftprobe_description='Regulation_Current_Limit_Reference_Current' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U8 84 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONgo' dftprobe_description='Regulation_Go_Driver_Switching_Flag' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U9 82 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONvc' dftprobe_description='Regulation_VC_Voltage' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
 .ends REGULATIONwaltz0DEBUG0
 
 ** From Z:\celera\projects\Waltz2\simplis\301\design\REGULATIONwaltz0MAIN0.sxcmp
@@ -2153,51 +2201,75 @@ X$U9 89 94 92 90 96 66 vbuffer vars: vbuffer_accuracy='system' vbuffer_datasheet
 .ends REGULATIONwaltz0MAIN0
 
 ** From Z:\celera\projects\Waltz2\simplis\301\design\REGULATIONwaltz0COMPENSATION.sxcmp
-.subckt REGULATIONwaltz0COMPENSATION 60 62 61
+.subckt REGULATIONwaltz0COMPENSATION 84 86 85
 *#hierarchy
+.node_map BUS1$10 43
+.node_map BUS1$11 44
+.node_map BUS1$12 45
+.node_map BUS1$13 46
+.node_map BUS1$14 47
+.node_map BUS4$10 78
+.node_map BUS1$15 48
+.node_map BUS4$11 79
+.node_map BUS4$12 80
+.node_map BUS4$13 81
+.node_map BUS4$14 82
+.node_map BUS4$15 83
 .node_map BUS1$0 33
 .node_map BUS1$1 34
 .node_map BUS1$2 35
+.node_map BUS2$10 59
 .node_map BUS1$3 36
+.node_map BUS2$11 60
 .node_map BUS1$4 37
+.node_map BUS2$12 61
 .node_map BUS1$5 38
+.node_map BUS2$13 62
 .node_map BUS1$6 39
+.node_map BUS2$14 63
 .node_map BUS1$7 40
-.node_map BUS2$0 41
-.node_map VC 60
-.node_map BUS2$1 42
-.node_map BUS2$2 43
-.node_map BUS2$3 44
-.node_map BUS2$4 45
-.node_map BUS2$5 46
-.node_map BUS2$6 47
-.node_map BUS2$7 48
-.node_map BUS3$0 49
-.node_map BUS3$1 50
-.node_map BUS3$2 51
-.node_map BUS4$0 52
-.node_map BUS4$1 53
-.node_map BUS4$2 54
-.node_map BUS4$3 55
-.node_map BUS4$4 56
-.node_map BUS4$5 57
-.node_map BUS4$6 58
-.node_map VC0 63
-.node_map BUS4$7 59
-.node_map enable_regulation 61
-.node_map kelvin_MUDG 62
-X$CZCOMP 27 63 52 53 54 31 29 62 capacitoradj vars: capacitor_control='adjustable_capacitor' capacitor_datasheet_accurate_name='text' capacitor_datasheet_accurate_description='text' capacitor_adjust_control='pin' capacitor_datasheet_adjust_name='VCCAP' capacitor_datasheet_adjust_description='VC_Compensation_Capacitor' capacitor_kelvin='no' capacitor_type='tbd' capacitor_dft='no' capacitor_value=10 capacitor_accurate_value=1 capacitor_accurate_lsb=1 capacitor_adjust0=5 capacitor_adjust1=10 capacitor_adjust2=15 capacitor_adjust3=20 capacitor_adjust4=25 capacitor_adjust5=30 capacitor_adjust6=35 capacitor_adjust7=40 capacitor_adjust_por=7 capacitor_1=0 capacitor_vinitial=0 capacitor_0=0 capacitor_vmax=6 capacitor_maximumvoltage=6
-X$U1 52 53 54 55 56 57 58 59 datamap0 vars: datamap_function='code' datamap_name='CZCOMP' datamap_description='Compensation_Capacitor' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='0' datamap_mode='readwrite' datamap_timeenable='no' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='5pF' datamap_code1='10pF' datamap_code2='15pF' datamap_code3='20pF' datamap_code4='25pF' datamap_code5='30pF' datamap_code6='35pF' datamap_code7='40pF' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
-X$U16 62 pinprobe vars: pinprobe_description='Regulation_Signal_Ground' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U2 63 60 20 22 24 33 34 35 resistor vars: resistor_control='adjustable_resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='pin' resistor_datasheet_adjust_name='VCRES' resistor_datasheet_adjust_description='Voltage_Control_Node_Resistance' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=10 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=100 resistor_adjust1=200 resistor_adjust2=300 resistor_adjust3=400 resistor_adjust4=500 resistor_adjust5=600 resistor_adjust6=700 resistor_adjust7=800 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=6 resistor_imax=5u
-X$U27 28 63 49 50 51 32 30 62 capacitorfixed vars: capacitor_control='capacitor' capacitor_datasheet_accurate_name='text' capacitor_datasheet_accurate_description='text' capacitor_adjust_control='pin' capacitor_datasheet_adjust_name='VCCAP' capacitor_datasheet_adjust_description='VC_Compensation_Capacitor' capacitor_kelvin='no' capacitor_type='tbd' capacitor_dft='no' capacitor_value=30 capacitor_accurate_value=1 capacitor_accurate_lsb=1 capacitor_adjust0=15 capacitor_adjust1=20 capacitor_adjust2=24 capacitor_adjust3=30 capacitor_adjust4=35 capacitor_adjust5=40 capacitor_adjust6=45 capacitor_adjust7=50 capacitor_adjust_por=7 capacitor_1=0 capacitor_vinitial=0 capacitor_0=0 capacitor_vmax=6 capacitor_maximumvoltage=6
-X$U3 33 34 35 36 37 38 39 40 datamap0 vars: datamap_function='code' datamap_name='RZCOMP' datamap_description='Compensation_Resistor' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='3' datamap_mode='readwrite' datamap_timeenable='no' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='100k' datamap_code1='200k' datamap_code2='300k' datamap_code3='400k' datamap_code4='500k' datamap_code5='600k' datamap_code6='700k' datamap_code7='800k' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
-X$U4 62 60 21 23 25 41 42 43 resistor vars: resistor_control='adjustable_resistor' resistor_datasheet_accuracy_name='VCGAIN' resistor_datasheet_accuracy_description='Voltage_Gain_Resistor' resistor_adjust_control='pin' resistor_datasheet_adjust_name='VCGAIN' resistor_datasheet_adjust_description='Voltage_Control_Node_Gain_Resistance' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=5k resistor_accurate_value=5k resistor_accurate_lsb=5 resistor_adjust0=4k resistor_adjust1=5k resistor_adjust2=6k resistor_adjust3=8k resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=1 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=6 resistor_imax=10u
-X$U5 41 42 43 44 45 46 47 48 datamap0 vars: datamap_function='code' datamap_name='GAINCOMP' datamap_description='Compensation_Gain_resistance' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='1' datamap_mode='readwrite' datamap_timeenable='no' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='4000K' datamap_code1='5000K' datamap_code2='6000K' datamap_code3='8000K' datamap_code4='25pF' datamap_code5='30pF' datamap_code6='35pF' datamap_code7='40pF' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
-X$U6 61 pinprobe vars: pinprobe_description='Enable_REGULATION_brick' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U7 19 60 61 switchpulldown vars: switch_type='pulldown' switch_polarity='invert' switch_model='celera' switch_ron=10K switch_pulldownvmax=6 switch_vmax=6
-X$U8 26 63 61 switchpulldown vars: switch_type='pulldown' switch_polarity='invert' switch_model='celera' switch_ron=10K switch_pulldownvmax=6 switch_vmax=6
-X$U9 60 pinprobe vars: pinprobe_description='Compensation_threshold' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+.node_map BUS2$15 64
+.node_map BUS2$0 49
+.node_map BUS1$8 41
+.node_map VC 84
+.node_map BUS2$1 50
+.node_map BUS1$9 42
+.node_map BUS2$2 51
+.node_map BUS2$3 52
+.node_map BUS2$4 53
+.node_map BUS2$5 54
+.node_map BUS2$6 55
+.node_map BUS2$7 56
+.node_map BUS3$0 65
+.node_map BUS2$8 57
+.node_map BUS3$1 66
+.node_map BUS2$9 58
+.node_map BUS3$2 67
+.node_map BUS4$0 68
+.node_map BUS4$1 69
+.node_map BUS4$2 70
+.node_map BUS4$3 71
+.node_map BUS4$4 72
+.node_map BUS4$5 73
+.node_map BUS4$6 74
+.node_map VC0 87
+.node_map BUS4$7 75
+.node_map BUS4$8 76
+.node_map BUS4$9 77
+.node_map enable_regulation 85
+.node_map kelvin_MUDG 86
+X$CZCOMP 27 87 68 69 70 31 29 86 capacitoradj vars: capacitor_control='adjustable_capacitor' capacitor_datasheet_accurate_name='text' capacitor_datasheet_accurate_description='text' capacitor_adjust_control='pin' capacitor_datasheet_adjust_name='VCCAP' capacitor_datasheet_adjust_description='VC_Compensation_Capacitor' capacitor_kelvin='no' capacitor_type='tbd' capacitor_dft='no' capacitor_value=10 capacitor_accurate_value=1 capacitor_accurate_lsb=1 capacitor_adjust0=5 capacitor_adjust1=10 capacitor_adjust2=15 capacitor_adjust3=20 capacitor_adjust4=25 capacitor_adjust5=30 capacitor_adjust6=35 capacitor_adjust7=40 capacitor_adjust_por=7 capacitor_1=0 capacitor_vinitial=0 capacitor_0=0 capacitor_vmax=6 capacitor_maximumvoltage=6
+X$datamap1 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 datamap0 vars: datamap_function='code' datamap_name='RZCOMP' datamap_description='Compensation_Resistor' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_por01='0' datamap_por00='3' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='100k' datamap_code1='200k' datamap_code2='300k' datamap_code3='400k' datamap_code4='500k' datamap_code5='600k' datamap_code6='700k' datamap_code7='800k' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$datamap2 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 datamap0 vars: datamap_function='code' datamap_name='GAINCOMP' datamap_description='Compensation_Gain_resistance' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_por01='0' datamap_por00='1' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='4000K' datamap_code1='5000K' datamap_code2='6000K' datamap_code3='8000K' datamap_code4='25pF' datamap_code5='30pF' datamap_code6='35pF' datamap_code7='40pF' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$datamap3 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 datamap0 vars: datamap_function='code' datamap_name='CZCOMP' datamap_description='Compensation_Capacitor' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='5pF' datamap_code1='10pF' datamap_code2='15pF' datamap_code3='20pF' datamap_code4='25pF' datamap_code5='30pF' datamap_code6='35pF' datamap_code7='40pF' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U16 86 pinprobe vars: pinprobe_description='Regulation_Signal_Ground' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U2 87 84 20 22 24 33 34 35 resistor vars: resistor_control='adjustable_resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='pin' resistor_datasheet_adjust_name='VCRES' resistor_datasheet_adjust_description='Voltage_Control_Node_Resistance' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=10 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=100 resistor_adjust1=200 resistor_adjust2=300 resistor_adjust3=400 resistor_adjust4=500 resistor_adjust5=600 resistor_adjust6=700 resistor_adjust7=800 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=6 resistor_imax=5u
+X$U27 28 87 65 66 67 32 30 86 capacitorfixed vars: capacitor_control='capacitor' capacitor_datasheet_accurate_name='text' capacitor_datasheet_accurate_description='text' capacitor_adjust_control='pin' capacitor_datasheet_adjust_name='VCCAP' capacitor_datasheet_adjust_description='VC_Compensation_Capacitor' capacitor_kelvin='no' capacitor_type='tbd' capacitor_dft='no' capacitor_value=30 capacitor_accurate_value=1 capacitor_accurate_lsb=1 capacitor_adjust0=15 capacitor_adjust1=20 capacitor_adjust2=24 capacitor_adjust3=30 capacitor_adjust4=35 capacitor_adjust5=40 capacitor_adjust6=45 capacitor_adjust7=50 capacitor_adjust_por=7 capacitor_1=0 capacitor_vinitial=0 capacitor_0=0 capacitor_vmax=6 capacitor_maximumvoltage=6
+X$U4 86 84 21 23 25 49 50 51 resistor vars: resistor_control='adjustable_resistor' resistor_datasheet_accuracy_name='VCGAIN' resistor_datasheet_accuracy_description='Voltage_Gain_Resistor' resistor_adjust_control='pin' resistor_datasheet_adjust_name='VCGAIN' resistor_datasheet_adjust_description='Voltage_Control_Node_Gain_Resistance' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=5k resistor_accurate_value=5k resistor_accurate_lsb=5 resistor_adjust0=4k resistor_adjust1=5k resistor_adjust2=6k resistor_adjust3=8k resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=1 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=6 resistor_imax=10u
+X$U6 85 pinprobe vars: pinprobe_description='Enable_REGULATION_brick' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U7 19 84 85 switchpulldown vars: switch_type='pulldown' switch_polarity='invert' switch_model='celera' switch_ron=10K switch_pulldownvmax=6 switch_vmax=6
+X$U8 26 87 85 switchpulldown vars: switch_type='pulldown' switch_polarity='invert' switch_model='celera' switch_ron=10K switch_pulldownvmax=6 switch_vmax=6
+X$U9 84 pinprobe vars: pinprobe_description='Compensation_threshold' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
 .ends REGULATIONwaltz0COMPENSATION
 
 ** From Z:\celera\projects\Waltz2\simplis\301\design\RINGwaltz2.sxcmp
@@ -2293,73 +2365,81 @@ X$Uswitch_control 53 pinprobe vars: pinprobe_description='Enable_controller_swit
 .ends SEQUENCERwaltz
 
 ** From Z:\celera\projects\Waltz2\simplis\301\design\SEQUENCER1waltz_Rev1_DYES.sxcmp
-.subckt SEQUENCER1waltz_Rev1_DYES 88 89 90 91 92 93 95 96 97 98 100 101 103 104
+.subckt SEQUENCER1waltz_Rev1_DYES 96 97 98 99 100 101 103 104 105 106 108 109 111 112
 *#hierarchy
-.node_map FAULT 102
-.node_map REGULATIONdelayi 113
-.node_map ENABLEdelayi 110
-.node_map porb 88
-.node_map fault_clock 100
+.node_map FAULT 110
+.node_map REGULATIONdelayi 121
+.node_map ENABLEdelayi 118
+.node_map porb 96
+.node_map fault_clock 108
+.node_map BUS1$10 90
+.node_map BUS1$11 91
+.node_map BUS1$12 92
+.node_map BUS1$13 93
+.node_map BUS1$14 94
+.node_map BUS1$15 95
 .node_map BUS1$4 84
 .node_map BUS1$5 85
 .node_map BUS1$6 86
 .node_map BUS1$7 87
-.node_map REGULATION 108
-.node_map ok_driver 92
-.node_map SOFTSTART 105
+.node_map REGULATION 116
+.node_map ok_driver 100
+.node_map BUS1$8 88
+.node_map BUS1$9 89
+.node_map SOFTSTART 113
 .node_map STATEcontrol0 80
 .node_map STATEcontrol1 81
 .node_map STATEcontrol2 82
-.node_map REGULATIONmaxdelayo 112
+.node_map REGULATIONmaxdelayo 120
 .node_map STATEcontrol3 83
-.node_map RUN 109
-.node_map enable_softstart 91
-.node_map UNDEF4 106
-.node_map UNDEF5 107
-.node_map enable_regulation 93
-.node_map OFF 94
-.node_map switch_control 98
-.node_map ok_service 90
-.node_map fault_shutdown 101
-.node_map ENABLE 99
-.node_map enable_waltz 89
-.node_map ok_clock 97
-.node_map ENABLEmaxdelayo 111
-.node_map ok_regulation 95
-.node_map done_softstart 104
-.node_map fault_run 103
-.node_map blank_fault 96
-X$MAIN 88 89 90 91 92 93 95 96 97 98 100 94 101 99 103 102 104 105 80 106 81 107 82 108 83 109 111 110 112 113 SEQUENCER1waltz_Rev1_DYES_0
-X$U1 80 81 82 83 84 85 86 87 datamap0 vars: datamap_function='code' datamap_name='SEQUENCER1waltz_Rev1_statecontrol' datamap_description='SEQUENCER1waltz_Rev1_STATE_control' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='0' datamap_mode='readonly' datamap_address='NA' datamap_timeenable='no' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='STATE_Code0_control' datamap_code1='STATE_Code1_control' datamap_code2='STATE_Code2_control' datamap_code3='STATE_Control_Enable' datamap_code4='tbd' datamap_code5='tbd' datamap_code6='tbd' datamap_code7='tbd' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=4 datamap_location=0 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
-X$U10 110 111 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='tbd' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=200 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
-X$U23 113 112 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='tbd' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=10 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
-X$U54 94 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='OFF_SEQUENCER1waltz_Rev1' dftprobe_description='SEQUENCER1waltz_Rev1_state0_OFF' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U55 99 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='ENABLE_SEQUENCER1waltz_Rev1' dftprobe_description='SEQUENCER1waltz_Rev1_state1_ENABLE' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U56 102 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='FAULT_SEQUENCER1waltz_Rev1' dftprobe_description='SEQUENCER1waltz_Rev1_state2_FAULT' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U57 105 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SOFTSTART_SEQUENCER1waltz_Rev1' dftprobe_description='SEQUENCER1waltz_Rev1_state3_SOFTSTART' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U58 106 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='UNDEF4_SEQUENCER1waltz_Rev1' dftprobe_description='SEQUENCER1waltz_Rev1_state4_UNDEF4' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U59 107 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='UNDEF5_SEQUENCER1waltz_Rev1' dftprobe_description='SEQUENCER1waltz_Rev1_state5_UNDEF5' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U60 108 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATION_SEQUENCER1waltz_Rev1' dftprobe_description='SEQUENCER1waltz_Rev1_state6_REGULATION' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U61 109 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='RUN_SEQUENCER1waltz_Rev1' dftprobe_description='SEQUENCER1waltz_Rev1_state7_RUN' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U62 89 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='enable_waltz_SEQUENCER1waltz_Rev1' dftprobe_description='Main_Brick_enable' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U63 91 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='enable_softstart_SEQUENCER1waltz_Rev1' dftprobe_description='SOFTSTART_brick_enable' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U64 93 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='enable_regulation_SEQUENCER1waltz_Rev1' dftprobe_description='REGULATION_brick_enable' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U65 96 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='blank_fault_SEQUENCER1waltz_Rev1' dftprobe_description='Blank_faults_during_softstart' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$U66 98 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='switch_control_SEQUENCER1waltz_Rev1' dftprobe_description='Enable_controller_switching' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
-X$Ublank_fault 96 pinprobe vars: pinprobe_description='Blank_faults_during_softstart'
-X$Udone_softstart 104 pinprobe vars: pinprobe_description='SOFTSTART_ramp_complete'
-X$Uenable_regulation 93 pinprobe vars: pinprobe_description='REGULATION_brick_enable'
-X$Uenable_softstart 91 pinprobe vars: pinprobe_description='SOFTSTART_brick_enable'
-X$Uenable_waltz 89 pinprobe vars: pinprobe_description='Main_Brick_enable'
-X$Ufault_clock 100 pinprobe vars: pinprobe_description='CLOCK_module_fault_flag'
-X$Ufault_run 103 pinprobe vars: pinprobe_description='FAULTMANGER_shutdwon_RUN_flag'
-X$Ufault_shutdown 101 pinprobe vars: pinprobe_description='FAULTMANAGER_shutdown_fault_flag'
-X$Uok_clock 97 pinprobe vars: pinprobe_description='CLOCK_module_enabled_and_ready'
-X$Uok_driver 92 pinprobe vars: pinprobe_description='DRIVER_module_enabled_and_ready'
-X$Uok_regulation 95 pinprobe vars: pinprobe_description='REGULATION_module_enabled_and_ready'
-X$Uok_service 90 pinprobe vars: pinprobe_description='SERVICE_module_enabled_and_ready'
-X$Uporb 88 pinprobe vars: pinprobe_description='Power_on_reset_Input'
-X$Uswitch_control 98 pinprobe vars: pinprobe_description='Enable_controller_switching'
+.node_map RUN 117
+.node_map enable_softstart 99
+.node_map UNDEF4 114
+.node_map UNDEF5 115
+.node_map enable_regulation 101
+.node_map OFF 102
+.node_map switch_control 106
+.node_map ok_service 98
+.node_map fault_shutdown 109
+.node_map ENABLE 107
+.node_map enable_waltz 97
+.node_map ok_clock 105
+.node_map ENABLEmaxdelayo 119
+.node_map ok_regulation 103
+.node_map done_softstart 112
+.node_map fault_run 111
+.node_map blank_fault 104
+X$datamap1 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 datamap0 vars: datamap_function='code' datamap_name='SEQUENCER1waltz_Rev1_statecontrol' datamap_description='SEQUENCER1waltz_Rev1_STATE_control' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_mode='readonly' datamap_address='NA' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='STATE_Code0_control' datamap_code1='STATE_Code1_control' datamap_code2='STATE_Code2_control' datamap_code3='STATE_Control_Enable' datamap_code4='tbd' datamap_code5='tbd' datamap_code6='tbd' datamap_code7='tbd' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=4 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$MAIN 96 97 98 99 100 101 103 104 105 106 108 102 109 107 111 110 112 113 80 114 81 115 82 116 83 117 119 118 120 121 SEQUENCER1waltz_Rev1_DYES_0
+X$U10 118 119 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='tbd' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=200 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U23 121 120 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='tbd' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=10 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U54 102 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='OFF_SEQUENCER1waltz_Rev1' dftprobe_description='SEQUENCER1waltz_Rev1_state0_OFF' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U55 107 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='ENABLE_SEQUENCER1waltz_Rev1' dftprobe_description='SEQUENCER1waltz_Rev1_state1_ENABLE' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U56 110 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='FAULT_SEQUENCER1waltz_Rev1' dftprobe_description='SEQUENCER1waltz_Rev1_state2_FAULT' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U57 113 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SOFTSTART_SEQUENCER1waltz_Rev1' dftprobe_description='SEQUENCER1waltz_Rev1_state3_SOFTSTART' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U58 114 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='UNDEF4_SEQUENCER1waltz_Rev1' dftprobe_description='SEQUENCER1waltz_Rev1_state4_UNDEF4' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U59 115 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='UNDEF5_SEQUENCER1waltz_Rev1' dftprobe_description='SEQUENCER1waltz_Rev1_state5_UNDEF5' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U60 116 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATION_SEQUENCER1waltz_Rev1' dftprobe_description='SEQUENCER1waltz_Rev1_state6_REGULATION' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U61 117 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='RUN_SEQUENCER1waltz_Rev1' dftprobe_description='SEQUENCER1waltz_Rev1_state7_RUN' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U62 97 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='enable_waltz_SEQUENCER1waltz_Rev1' dftprobe_description='Main_Brick_enable' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U63 99 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='enable_softstart_SEQUENCER1waltz_Rev1' dftprobe_description='SOFTSTART_brick_enable' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U64 101 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='enable_regulation_SEQUENCER1waltz_Rev1' dftprobe_description='REGULATION_brick_enable' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U65 104 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='blank_fault_SEQUENCER1waltz_Rev1' dftprobe_description='Blank_faults_during_softstart' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U66 106 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='switch_control_SEQUENCER1waltz_Rev1' dftprobe_description='Enable_controller_switching' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$Ublank_fault 104 pinprobe vars: pinprobe_description='Blank_faults_during_softstart'
+X$Udone_softstart 112 pinprobe vars: pinprobe_description='SOFTSTART_ramp_complete'
+X$Uenable_regulation 101 pinprobe vars: pinprobe_description='REGULATION_brick_enable'
+X$Uenable_softstart 99 pinprobe vars: pinprobe_description='SOFTSTART_brick_enable'
+X$Uenable_waltz 97 pinprobe vars: pinprobe_description='Main_Brick_enable'
+X$Ufault_clock 108 pinprobe vars: pinprobe_description='CLOCK_module_fault_flag'
+X$Ufault_run 111 pinprobe vars: pinprobe_description='FAULTMANGER_shutdwon_RUN_flag'
+X$Ufault_shutdown 109 pinprobe vars: pinprobe_description='FAULTMANAGER_shutdown_fault_flag'
+X$Uok_clock 105 pinprobe vars: pinprobe_description='CLOCK_module_enabled_and_ready'
+X$Uok_driver 100 pinprobe vars: pinprobe_description='DRIVER_module_enabled_and_ready'
+X$Uok_regulation 103 pinprobe vars: pinprobe_description='REGULATION_module_enabled_and_ready'
+X$Uok_service 98 pinprobe vars: pinprobe_description='SERVICE_module_enabled_and_ready'
+X$Uporb 96 pinprobe vars: pinprobe_description='Power_on_reset_Input'
+X$Uswitch_control 106 pinprobe vars: pinprobe_description='Enable_controller_switching'
 .ends SEQUENCER1waltz_Rev1_DYES
 
 ** From Z:\celera\projects\Waltz2\simplis\301\design\SEQUENCER1waltz_Rev1_DYES_0.sxcmp
@@ -2742,37 +2822,45 @@ X$U9 31 pinprobe vars: pinprobe_description='Power_on_reset' pinprobe_mode='tbd'
 .ends SERVICEwaltzOK
 
 ** From Z:\celera\projects\Waltz2\simplis\301\design\SOFTSTARTwaltz.sxcmp
-.subckt SOFTSTARTwaltz 43 44 47 46 48 49 45
+.subckt SOFTSTARTwaltz 51 52 55 54 56 57 53
 *#hierarchy
+.node_map BUS1$10 45
+.node_map BUS1$11 46
+.node_map BUS1$12 47
+.node_map BUS1$13 48
+.node_map BUS1$14 49
+.node_map BUS1$15 50
 .node_map BUS1$2 37
 .node_map BUS1$3 38
 .node_map BUS1$4 39
-.node_map hijack_enable_softstart 51
+.node_map hijack_enable_softstart 59
 .node_map BUS1$5 40
 .node_map BUS1$6 41
 .node_map BUS1$7 42
-.node_map enable_brick 45
-.node_map REF 48
-.node_map enable_softstart 47
-.node_map hijack_enable_brick 50
+.node_map enable_brick 53
+.node_map BUS1$8 43
+.node_map BUS1$9 44
+.node_map REF 56
+.node_map enable_softstart 55
+.node_map hijack_enable_brick 58
 .node_map halfway 36
 .node_map softstart_1ms 35
-.node_map dft_clock 52
-.node_map MUDV 43
-.node_map kelvin_MUDGsoftstart 49
-.node_map done_softstart 46
-.node_map SS 44
-X$DEBUG 47 51 46 44 52 45 50 SOFTSTARTwaltzDEBUG
-X$MAIN8 43 44 51 46 48 52 35 36 49 50 SOFTSTARTwaltz8MAIN
-X$U1 49 pinprobe vars: pinprobe_description='SoftStart_' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd'
-X$U14 46 pinprobe vars: pinprobe_description='Softstart_ramp_completed' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U2 47 pinprobe vars: pinprobe_description='Enable_softstart_brick' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U3 48 pinprobe vars: pinprobe_description='Reference_input_0p9V' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
-X$U4 35 36 37 38 39 40 41 42 datamap0 vars: datamap_function='function' datamap_name='SOFTSTARTconfiguration' datamap_description='Softstart_configuration' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='factory' datamap_por='0' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_function0='Softstart_time' datamap_function0_off='4ms' datamap_function0_on='1ms' datamap_function1='Halfway' datamap_function1_off='disable' datamap_function1_on='enable' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_location=0 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+.node_map dft_clock 60
+.node_map MUDV 51
+.node_map kelvin_MUDGsoftstart 57
+.node_map done_softstart 54
+.node_map SS 52
+X$datamap1 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 datamap0 vars: datamap_function='function' datamap_name='SOFTSTARTconfiguration' datamap_description='Softstart_configuration' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='Softstart_time' datamap_function0_off='4ms' datamap_function0_on='1ms' datamap_function1='Halfway' datamap_function1_off='disable' datamap_function1_on='enable' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$DEBUG 55 59 54 52 60 53 58 SOFTSTARTwaltzDEBUG
+X$MAIN8 51 52 59 54 56 60 35 36 57 58 SOFTSTARTwaltz8MAIN
+X$U1 57 pinprobe vars: pinprobe_description='SoftStart_' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd'
+X$U14 54 pinprobe vars: pinprobe_description='Softstart_ramp_completed' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U2 55 pinprobe vars: pinprobe_description='Enable_softstart_brick' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 56 pinprobe vars: pinprobe_description='Reference_input_0p9V' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
 X$U5 34 brick vars: ibias=0 drm=1 dft=1 global=0 brick=0 revision=0 description='SOFTSTART_Brick' description1='Internal_softstart_at_4ms' description2='DAC_design_option' description3='Factory_option_for_1ms' description4='Debug_enabled' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
-X$U6 43 pinprobe vars: pinprobe_description='MUD_low_voltage_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
-X$U7 44 pinprobe vars: pinprobe_description='Softstart_Internal_voltage_ramp' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
-X$U8 45 pinprobe vars: pinprobe_description='Enable_BRICK' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 51 pinprobe vars: pinprobe_description='MUD_low_voltage_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U7 52 pinprobe vars: pinprobe_description='Softstart_Internal_voltage_ramp' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U8 53 pinprobe vars: pinprobe_description='Enable_BRICK' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
 .ends SOFTSTARTwaltz
 
 ** From Z:\celera\projects\Waltz2\simplis\301\design\SOFTSTARTwaltzDEBUG.sxcmp

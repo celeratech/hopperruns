@@ -39,8 +39,17 @@ module tie_9e2c0894 (a0,SUB,CELG,CELV);
   input  CELV;
 endmodule
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module POWERGOODwaltDEBUG (CELG59462, CELV96848, dft_pgout, CELSUB40948, dft_pgDELAY, fault_short, dft_REFBUFFER, dft_pgSTARTUP, dft_pgDEGLITCH, dft_shortdelay, TAI_6d67c253_XU1, enable_powergood, hijack_risedelay, tdi_14c9168a_XU7, tdi_c69fe1aa_XU8, ten_14c9168a_XU7, ten_6d67c253_XU1, ten_c69fe1aa_XU8, tdi_1d78f0e4_XU13, tdi_d748b831_XU15, tdi_f4762d45_XU11, ten_1d78f0e4_XU13, ten_d748b831_XU15, ten_f4762d45_XU11, hijack_enable_powergood, ten_hijack_6613b2af_XU3, ten_hijack_c541f94b_XU16, ten_hijacki_6613b2af_XU3, ten_hijacki_c541f94b_XU16, tdi_6fd414fa_XUPOWERGOODshortdelay, ten_6fd414fa_XUPOWERGOODshortdelay);
+module POWERGOODwaltDEBUG (CELG59462, CELV96848, dft_pgout, CELSUB40948, dft_pgDELAY, fault_short, dft_REFBUFFER, dft_pgSTARTUP, dft_pgDEGLITCH, dft_shortdelay, TAI_6d67c253_XU1, enable_powergood, hijack_risedelay, tdi_14c9168a_XU7, tdi_c69fe1aa_XU8, ten_14c9168a_XU7, ten_6d67c253_XU1, ten_c69fe1aa_XU8, tdi_1d78f0e4_XU13, tdi_d748b831_XU15, tdi_f4762d45_XU11, ten_1d78f0e4_XU13, ten_d748b831_XU15, ten_f4762d45_XU11, hijack_enable_powergood, ten_hijack_6613b2af_XU3, ten_hijack_c541f94b_XU16, ten_hijacki_6613b2af_XU3, ten_hijacki_c541f94b_XU16, TAI_6d67c253_XU1_1cec7299_XDEBUG, tdi_14c9168a_XU7_1cec7299_XDEBUG, tdi_c69fe1aa_XU8_1cec7299_XDEBUG, ten_14c9168a_XU7_1cec7299_XDEBUG, ten_6d67c253_XU1_1cec7299_XDEBUG, ten_c69fe1aa_XU8_1cec7299_XDEBUG, tdi_1d78f0e4_XU13_1cec7299_XDEBUG, tdi_d748b831_XU15_1cec7299_XDEBUG, tdi_f4762d45_XU11_1cec7299_XDEBUG, ten_1d78f0e4_XU13_1cec7299_XDEBUG, ten_d748b831_XU15_1cec7299_XDEBUG, ten_f4762d45_XU11_1cec7299_XDEBUG, tdi_6fd414fa_XUPOWERGOODshortdelay, ten_6fd414fa_XUPOWERGOODshortdelay, ten_hijack_6613b2af_XU3_1cec7299_XDEBUG, ten_hijack_c541f94b_XU16_1cec7299_XDEBUG, ten_hijacki_6613b2af_XU3_1cec7299_XDEBUG, ten_hijacki_c541f94b_XU16_1cec7299_XDEBUG, tdi_6fd414fa_XUPOWERGOODshortdelay_1cec7299_XDEBUG, ten_6fd414fa_XUPOWERGOODshortdelay_1cec7299_XDEBUG);
 input  CELG59462;
 input  CELV96848;
   input  dft_pgout;
@@ -70,8 +79,26 @@ input  ten_hijack_6613b2af_XU3;
 input  ten_hijack_c541f94b_XU16;
 input  ten_hijacki_6613b2af_XU3;
 input  ten_hijacki_c541f94b_XU16;
+output  TAI_6d67c253_XU1_1cec7299_XDEBUG;
+output  tdi_14c9168a_XU7_1cec7299_XDEBUG;
+output  tdi_c69fe1aa_XU8_1cec7299_XDEBUG;
+input  ten_14c9168a_XU7_1cec7299_XDEBUG;
+input  ten_6d67c253_XU1_1cec7299_XDEBUG;
+input  ten_c69fe1aa_XU8_1cec7299_XDEBUG;
+output  tdi_1d78f0e4_XU13_1cec7299_XDEBUG;
+output  tdi_d748b831_XU15_1cec7299_XDEBUG;
+output  tdi_f4762d45_XU11_1cec7299_XDEBUG;
+input  ten_1d78f0e4_XU13_1cec7299_XDEBUG;
+input  ten_d748b831_XU15_1cec7299_XDEBUG;
+input  ten_f4762d45_XU11_1cec7299_XDEBUG;
 output  tdi_6fd414fa_XUPOWERGOODshortdelay;
 input  ten_6fd414fa_XUPOWERGOODshortdelay;
+input  ten_hijack_6613b2af_XU3_1cec7299_XDEBUG;
+input  ten_hijack_c541f94b_XU16_1cec7299_XDEBUG;
+input  ten_hijacki_6613b2af_XU3_1cec7299_XDEBUG;
+input  ten_hijacki_c541f94b_XU16_1cec7299_XDEBUG;
+output  tdi_6fd414fa_XUPOWERGOODshortdelay_1cec7299_XDEBUG;
+input  ten_6fd414fa_XUPOWERGOODshortdelay_1cec7299_XDEBUG;
 
 
 // ------------------------ Wires ------------------------
@@ -165,6 +192,34 @@ dftprobeModel0_80e43a5a XUPOWERGOODshortdelay (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
+);
+
+STONEnoconn XNCTAI_6d67c253_XU1_1cec7299_XDEBUG (
+.noconn(TAI_6d67c253_XU1_1cec7299_XDEBUG)
+);
+
+STONEnoconn XNCtdi_14c9168a_XU7_1cec7299_XDEBUG (
+.noconn(tdi_14c9168a_XU7_1cec7299_XDEBUG)
+);
+
+STONEnoconn XNCtdi_c69fe1aa_XU8_1cec7299_XDEBUG (
+.noconn(tdi_c69fe1aa_XU8_1cec7299_XDEBUG)
+);
+
+STONEnoconn XNCtdi_1d78f0e4_XU13_1cec7299_XDEBUG (
+.noconn(tdi_1d78f0e4_XU13_1cec7299_XDEBUG)
+);
+
+STONEnoconn XNCtdi_d748b831_XU15_1cec7299_XDEBUG (
+.noconn(tdi_d748b831_XU15_1cec7299_XDEBUG)
+);
+
+STONEnoconn XNCtdi_f4762d45_XU11_1cec7299_XDEBUG (
+.noconn(tdi_f4762d45_XU11_1cec7299_XDEBUG)
+);
+
+STONEnoconn XNCtdi_6fd414fa_XUPOWERGOODshortdelay_1cec7299_XDEBUG (
+.noconn(tdi_6fd414fa_XUPOWERGOODshortdelay_1cec7299_XDEBUG)
 );
 
 endmodule

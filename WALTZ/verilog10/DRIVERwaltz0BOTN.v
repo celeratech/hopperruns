@@ -101,7 +101,7 @@ module fetdriver_e53ed485 (CELG,CELV,GATE,HVNEG,HVPOS,fetin,CELSUB,gate_status,g
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module DRIVERwaltz0BOTN (SW, MUDV, PMUDG, PMUDV, botswon, CELG59462, CELV96848, botswineg, botswipeak, CELSUB40948, botswstatus, botswzcross, enable_driver, IP_14d08c8e_XU3, IP_a0afb596_XU9, IP_2d447a5c_XU17, trim_currentlimit_14d08c8e, trim_currentlimit_2d447a5c, trim_currentlimit_a0afb596, global_currentlimit_14d08c8e_XU3, global_currentlimit_a0afb596_XU9, global_currentlimit_2d447a5c_XU17, tdi_currentlimitlive_14d08c8e_XU3, tdi_currentlimitlive_a0afb596_XU9, tdi_currentlimitlive_2d447a5c_XU17, global_fetdriver_bd0adf3c_Xfetdriver1, ten_measure_currentlimit_14d08c8e_XU3, ten_measure_currentlimit_a0afb596_XU9, ten_measure_currentlimit_2d447a5c_XU17);
+module DRIVERwaltz0BOTN (SW, MUDV, PMUDG, PMUDV, botswon, CELG59462, CELV96848, botswineg, botswipeak, CELSUB40948, botswstatus, botswzcross, enable_driver, IP_14d08c8e_XU3, IP_a0afb596_XU9, IP_2d447a5c_XU17, trim_currentlimit_14d08c8e, trim_currentlimit_2d447a5c, trim_currentlimit_a0afb596, global_currentlimit_14d08c8e_XU3, global_currentlimit_a0afb596_XU9, global_currentlimit_2d447a5c_XU17, tdi_currentlimitlive_14d08c8e_XU3, tdi_currentlimitlive_a0afb596_XU9, tdi_currentlimitlive_2d447a5c_XU17, global_fetdriver_bd0adf3c_Xfetdriver1, ten_measure_currentlimit_14d08c8e_XU3, ten_measure_currentlimit_a0afb596_XU9, ten_measure_currentlimit_2d447a5c_XU17, global_currentlimit_14d08c8e_XU3_ba40258e_XBOTSW, global_currentlimit_a0afb596_XU9_ba40258e_XBOTSW, global_currentlimit_2d447a5c_XU17_ba40258e_XBOTSW, tdi_currentlimitlive_14d08c8e_XU3_ba40258e_XBOTSW, tdi_currentlimitlive_a0afb596_XU9_ba40258e_XBOTSW, tdi_currentlimitlive_2d447a5c_XU17_ba40258e_XBOTSW, global_fetdriver_bd0adf3c_Xfetdriver1_ba40258e_XBOTSW, ten_measure_currentlimit_14d08c8e_XU3_ba40258e_XBOTSW, ten_measure_currentlimit_a0afb596_XU9_ba40258e_XBOTSW, ten_measure_currentlimit_2d447a5c_XU17_ba40258e_XBOTSW);
 inout  SW;
 input  MUDV;
 inout  PMUDG;
@@ -131,6 +131,16 @@ input  global_fetdriver_bd0adf3c_Xfetdriver1;
 input  ten_measure_currentlimit_14d08c8e_XU3;
 input  ten_measure_currentlimit_a0afb596_XU9;
 input  ten_measure_currentlimit_2d447a5c_XU17;
+input  global_currentlimit_14d08c8e_XU3_ba40258e_XBOTSW;
+input  global_currentlimit_a0afb596_XU9_ba40258e_XBOTSW;
+input  global_currentlimit_2d447a5c_XU17_ba40258e_XBOTSW;
+output  tdi_currentlimitlive_14d08c8e_XU3_ba40258e_XBOTSW;
+output  tdi_currentlimitlive_a0afb596_XU9_ba40258e_XBOTSW;
+output  tdi_currentlimitlive_2d447a5c_XU17_ba40258e_XBOTSW;
+input  global_fetdriver_bd0adf3c_Xfetdriver1_ba40258e_XBOTSW;
+input  ten_measure_currentlimit_14d08c8e_XU3_ba40258e_XBOTSW;
+input  ten_measure_currentlimit_a0afb596_XU9_ba40258e_XBOTSW;
+input  ten_measure_currentlimit_2d447a5c_XU17_ba40258e_XBOTSW;
 
 
 // ------------------------ Wires ------------------------
@@ -246,6 +256,18 @@ fetdriver_e53ed485 Xfetdriver1 (
 .gate_status_vin(botswstatus),
 .enable_fetdriver(enable_driver),
 .global_fetdriver(global_fetdriver_bd0adf3c_Xfetdriver1)
+);
+
+STONEnoconn XNCtdi_currentlimitlive_14d08c8e_XU3_ba40258e_XBOTSW (
+.noconn(tdi_currentlimitlive_14d08c8e_XU3_ba40258e_XBOTSW)
+);
+
+STONEnoconn XNCtdi_currentlimitlive_a0afb596_XU9_ba40258e_XBOTSW (
+.noconn(tdi_currentlimitlive_a0afb596_XU9_ba40258e_XBOTSW)
+);
+
+STONEnoconn XNCtdi_currentlimitlive_2d447a5c_XU17_ba40258e_XBOTSW (
+.noconn(tdi_currentlimitlive_2d447a5c_XU17_ba40258e_XBOTSW)
 );
 
 endmodule

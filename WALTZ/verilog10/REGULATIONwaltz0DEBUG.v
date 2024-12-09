@@ -98,8 +98,17 @@ module resistor_ea53afe8 (RN,RP,CELG);
   input  CELG;
 endmodule
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltz0DEBUG (VC, REFINT, CELG59462, CELV96848, go_driver, CELSUB40948, IREF_DRIVER, FB_REGULATION, ok_regulation, VSS_REGULATION, TAI_162b659f_XU9, TAI_913fa695_XU7, TAI_d922ca5f_XU6, tdi_83ff2716_XU8, tdi_95483466_XU2, ten_162b659f_XU9, ten_83ff2716_XU8, ten_913fa695_XU7, ten_95483466_XU2, ten_d922ca5f_XU6, enable_regulation, HIJACK_VSS_REGULATION, hijack_enable_regulation, ten_hijack_de422ccd_XU11, ten_hijacki_de422ccd_XU11, REGULATIONtestmode_d334f942);
+module REGULATIONwaltz0DEBUG (VC, REFINT, CELG59462, CELV96848, go_driver, CELSUB40948, IREF_DRIVER, FB_REGULATION, ok_regulation, VSS_REGULATION, TAI_162b659f_XU9, TAI_913fa695_XU7, TAI_d922ca5f_XU6, tdi_83ff2716_XU8, tdi_95483466_XU2, ten_162b659f_XU9, ten_83ff2716_XU8, ten_913fa695_XU7, ten_95483466_XU2, ten_d922ca5f_XU6, enable_regulation, HIJACK_VSS_REGULATION, hijack_enable_regulation, ten_hijack_de422ccd_XU11, ten_hijacki_de422ccd_XU11, REGULATIONtestmode_d791a7c9, TAI_162b659f_XU9_f255c70e_XDEBUG, TAI_913fa695_XU7_f255c70e_XDEBUG, TAI_d922ca5f_XU6_f255c70e_XDEBUG, tdi_83ff2716_XU8_f255c70e_XDEBUG, tdi_95483466_XU2_f255c70e_XDEBUG, ten_162b659f_XU9_f255c70e_XDEBUG, ten_83ff2716_XU8_f255c70e_XDEBUG, ten_913fa695_XU7_f255c70e_XDEBUG, ten_95483466_XU2_f255c70e_XDEBUG, ten_d922ca5f_XU6_f255c70e_XDEBUG, ten_hijack_de422ccd_XU11_f255c70e_XDEBUG, ten_hijacki_de422ccd_XU11_f255c70e_XDEBUG);
 inout  VC;
   input  REFINT;
 input  CELG59462;
@@ -125,11 +134,23 @@ inout  HIJACK_VSS_REGULATION;
 output  hijack_enable_regulation;
 input  ten_hijack_de422ccd_XU11;
 input  ten_hijacki_de422ccd_XU11;
-input [2:0] REGULATIONtestmode_d334f942;
+input [2:0] REGULATIONtestmode_d791a7c9;
+output  TAI_162b659f_XU9_f255c70e_XDEBUG;
+output  TAI_913fa695_XU7_f255c70e_XDEBUG;
+output  TAI_d922ca5f_XU6_f255c70e_XDEBUG;
+output  tdi_83ff2716_XU8_f255c70e_XDEBUG;
+output  tdi_95483466_XU2_f255c70e_XDEBUG;
+input  ten_162b659f_XU9_f255c70e_XDEBUG;
+input  ten_83ff2716_XU8_f255c70e_XDEBUG;
+input  ten_913fa695_XU7_f255c70e_XDEBUG;
+input  ten_95483466_XU2_f255c70e_XDEBUG;
+input  ten_d922ca5f_XU6_f255c70e_XDEBUG;
+input  ten_hijack_de422ccd_XU11_f255c70e_XDEBUG;
+input  ten_hijacki_de422ccd_XU11_f255c70e_XDEBUG;
 
 
 // ------------------------ Wires ------------------------
-wire [2:0] REGULATIONtestmode_d334f942;
+wire [2:0] REGULATIONtestmode_d791a7c9;
 
 // ------------------------ Networks ---------------------
 VESPAdftpulse XU18 (
@@ -142,18 +163,18 @@ VESPAdftpulse XU18 (
 );
 
 VESPAasmINPUT1 XU19 (
-.o(net_81),
-.i0(net_79),
-.Tstate(REGULATIONtestmode_d334f942[1]),
+.o(net_89),
+.i0(net_87),
+.Tstate(REGULATIONtestmode_d791a7c9[1]),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU20 (
-.o(net_82),
-.i0(REGULATIONtestmode_d334f942[2]),
-.Tstate(REGULATIONtestmode_d334f942[1]),
+.o(net_90),
+.i0(REGULATIONtestmode_d791a7c9[2]),
+.Tstate(REGULATIONtestmode_d791a7c9[1]),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
@@ -206,11 +227,11 @@ dftprobeModel2_2dcf28df XU9 (
 
 switchtswitch_4b165e0d XU10 (
 .I(VC),
-.O(net_80),
+.O(net_88),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.enable_switch(REGULATIONtestmode_d334f942[0])
+.enable_switch(REGULATIONtestmode_d791a7c9[0])
 );
 
 DFThijack XU11 (
@@ -229,7 +250,7 @@ switchtransmission_b0253c94 XU14 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.enable_switchb(REGULATIONtestmode_d334f942[1])
+.enable_switchb(REGULATIONtestmode_d791a7c9[1])
 );
 
 switchpulldown_92a259b6 XU15 (
@@ -237,7 +258,7 @@ switchpulldown_92a259b6 XU15 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.enable_switch(net_81)
+.enable_switch(net_89)
 );
 
 switchpullup_b8e9609e XU16 (
@@ -245,21 +266,41 @@ switchpullup_b8e9609e XU16 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.enable_switch(net_82)
+.enable_switch(net_90)
 );
 
 inv_12e192f5 XU21 (
-.i(REGULATIONtestmode_d334f942[2]),
-.o(net_79),
+.i(REGULATIONtestmode_d791a7c9[2]),
+.o(net_87),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 resistor_ea53afe8 XU23 (
-.RN(net_80),
+.RN(net_88),
 .RP(FB_REGULATION),
 .CELG(CELG59462)
+);
+
+STONEnoconn XNCTAI_162b659f_XU9_f255c70e_XDEBUG (
+.noconn(TAI_162b659f_XU9_f255c70e_XDEBUG)
+);
+
+STONEnoconn XNCTAI_913fa695_XU7_f255c70e_XDEBUG (
+.noconn(TAI_913fa695_XU7_f255c70e_XDEBUG)
+);
+
+STONEnoconn XNCTAI_d922ca5f_XU6_f255c70e_XDEBUG (
+.noconn(TAI_d922ca5f_XU6_f255c70e_XDEBUG)
+);
+
+STONEnoconn XNCtdi_83ff2716_XU8_f255c70e_XDEBUG (
+.noconn(tdi_83ff2716_XU8_f255c70e_XDEBUG)
+);
+
+STONEnoconn XNCtdi_95483466_XU2_f255c70e_XDEBUG (
+.noconn(tdi_95483466_XU2_f255c70e_XDEBUG)
 );
 
 endmodule

@@ -92,8 +92,17 @@ module delayfixed_2b789075 (i,o,CELG,CELV,CELSUB);
   input  CELSUB;
 endmodule
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module Algorithm5p9_DYES (fcm, porb, CELG59462, CELV96848, bbm_topon, go_driver, ipeak_top, ok_driver, top_switch, CELSUB40948, bbm_bottomon, blank_bottom, ipeak_bottom, blank_refresh, bottom_switch, clock_control, fault_control, zcross_bottom, done_softstart, enable_control, freeze_control, switch_control, inegative_bottom, tdi_016e5221_XU14, tdi_10af5487_XU89, tdi_1c924704_XU94, tdi_250e1d7b_XU96, tdi_3a54983a_XU93, tdi_5dbb5861_XU98, tdi_78907f64_XU97, tdi_9e0c6a0f_XU20, tdi_a9541403_XU99, tdi_b275df66_XU92, tdi_c406e2e9_XU16, tdi_dc7df0cc_XU18, tdi_e1c50519_XU90, tdi_e41e5cb3_XU95, tdi_efe3dfd4_XU91, ten_016e5221_XU14, ten_10af5487_XU89, ten_1c924704_XU94, ten_250e1d7b_XU96, ten_3a54983a_XU93, ten_5dbb5861_XU98, ten_78907f64_XU97, ten_9e0c6a0f_XU20, ten_a9541403_XU99, ten_b275df66_XU92, ten_c406e2e9_XU16, ten_dc7df0cc_XU18, ten_e1c50519_XU90, ten_e41e5cb3_XU95, ten_efe3dfd4_XU91, Algorithm5p9_statecontrol_57e26337);
+module Algorithm5p9_DYES (fcm, porb, CELG59462, CELV96848, bbm_topon, go_driver, ipeak_top, ok_driver, top_switch, CELSUB40948, bbm_bottomon, blank_bottom, ipeak_bottom, blank_refresh, bottom_switch, clock_control, fault_control, zcross_bottom, done_softstart, enable_control, freeze_control, switch_control, inegative_bottom, tdi_016e5221_XU14, tdi_10af5487_XU89, tdi_1c924704_XU94, tdi_250e1d7b_XU96, tdi_3a54983a_XU93, tdi_5dbb5861_XU98, tdi_78907f64_XU97, tdi_9e0c6a0f_XU20, tdi_a9541403_XU99, tdi_b275df66_XU92, tdi_c406e2e9_XU16, tdi_dc7df0cc_XU18, tdi_e1c50519_XU90, tdi_e41e5cb3_XU95, tdi_efe3dfd4_XU91, ten_016e5221_XU14, ten_10af5487_XU89, ten_1c924704_XU94, ten_250e1d7b_XU96, ten_3a54983a_XU93, ten_5dbb5861_XU98, ten_78907f64_XU97, ten_9e0c6a0f_XU20, ten_a9541403_XU99, ten_b275df66_XU92, ten_c406e2e9_XU16, ten_dc7df0cc_XU18, ten_e1c50519_XU90, ten_e41e5cb3_XU95, ten_efe3dfd4_XU91, Algorithm5p9_statecontrol_22dba987, tdi_016e5221_XU14_76edd7de_XCONTROL, tdi_10af5487_XU89_76edd7de_XCONTROL, tdi_1c924704_XU94_76edd7de_XCONTROL, tdi_250e1d7b_XU96_76edd7de_XCONTROL, tdi_3a54983a_XU93_76edd7de_XCONTROL, tdi_5dbb5861_XU98_76edd7de_XCONTROL, tdi_78907f64_XU97_76edd7de_XCONTROL, tdi_9e0c6a0f_XU20_76edd7de_XCONTROL, tdi_a9541403_XU99_76edd7de_XCONTROL, tdi_b275df66_XU92_76edd7de_XCONTROL, tdi_c406e2e9_XU16_76edd7de_XCONTROL, tdi_dc7df0cc_XU18_76edd7de_XCONTROL, tdi_e1c50519_XU90_76edd7de_XCONTROL, tdi_e41e5cb3_XU95_76edd7de_XCONTROL, tdi_efe3dfd4_XU91_76edd7de_XCONTROL, ten_016e5221_XU14_76edd7de_XCONTROL, ten_10af5487_XU89_76edd7de_XCONTROL, ten_1c924704_XU94_76edd7de_XCONTROL, ten_250e1d7b_XU96_76edd7de_XCONTROL, ten_3a54983a_XU93_76edd7de_XCONTROL, ten_5dbb5861_XU98_76edd7de_XCONTROL, ten_78907f64_XU97_76edd7de_XCONTROL, ten_9e0c6a0f_XU20_76edd7de_XCONTROL, ten_a9541403_XU99_76edd7de_XCONTROL, ten_b275df66_XU92_76edd7de_XCONTROL, ten_c406e2e9_XU16_76edd7de_XCONTROL, ten_dc7df0cc_XU18_76edd7de_XCONTROL, ten_e1c50519_XU90_76edd7de_XCONTROL, ten_e41e5cb3_XU95_76edd7de_XCONTROL, ten_efe3dfd4_XU91_76edd7de_XCONTROL);
 input  fcm;
 input  porb;
 input  CELG59462;
@@ -147,49 +156,79 @@ input  ten_dc7df0cc_XU18;
 input  ten_e1c50519_XU90;
 input  ten_e41e5cb3_XU95;
 input  ten_efe3dfd4_XU91;
-input [4:0] Algorithm5p9_statecontrol_57e26337;
+input [4:0] Algorithm5p9_statecontrol_22dba987;
+output  tdi_016e5221_XU14_76edd7de_XCONTROL;
+output  tdi_10af5487_XU89_76edd7de_XCONTROL;
+output  tdi_1c924704_XU94_76edd7de_XCONTROL;
+output  tdi_250e1d7b_XU96_76edd7de_XCONTROL;
+output  tdi_3a54983a_XU93_76edd7de_XCONTROL;
+output  tdi_5dbb5861_XU98_76edd7de_XCONTROL;
+output  tdi_78907f64_XU97_76edd7de_XCONTROL;
+output  tdi_9e0c6a0f_XU20_76edd7de_XCONTROL;
+output  tdi_a9541403_XU99_76edd7de_XCONTROL;
+output  tdi_b275df66_XU92_76edd7de_XCONTROL;
+output  tdi_c406e2e9_XU16_76edd7de_XCONTROL;
+output  tdi_dc7df0cc_XU18_76edd7de_XCONTROL;
+output  tdi_e1c50519_XU90_76edd7de_XCONTROL;
+output  tdi_e41e5cb3_XU95_76edd7de_XCONTROL;
+output  tdi_efe3dfd4_XU91_76edd7de_XCONTROL;
+input  ten_016e5221_XU14_76edd7de_XCONTROL;
+input  ten_10af5487_XU89_76edd7de_XCONTROL;
+input  ten_1c924704_XU94_76edd7de_XCONTROL;
+input  ten_250e1d7b_XU96_76edd7de_XCONTROL;
+input  ten_3a54983a_XU93_76edd7de_XCONTROL;
+input  ten_5dbb5861_XU98_76edd7de_XCONTROL;
+input  ten_78907f64_XU97_76edd7de_XCONTROL;
+input  ten_9e0c6a0f_XU20_76edd7de_XCONTROL;
+input  ten_a9541403_XU99_76edd7de_XCONTROL;
+input  ten_b275df66_XU92_76edd7de_XCONTROL;
+input  ten_c406e2e9_XU16_76edd7de_XCONTROL;
+input  ten_dc7df0cc_XU18_76edd7de_XCONTROL;
+input  ten_e1c50519_XU90_76edd7de_XCONTROL;
+input  ten_e41e5cb3_XU95_76edd7de_XCONTROL;
+input  ten_efe3dfd4_XU91_76edd7de_XCONTROL;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] Algorithm5p9_statecontrol_57e26337;
+wire [4:0] Algorithm5p9_statecontrol_22dba987;
 
 // ------------------------ Networks ---------------------
 Algorithm5p9_DYES_ XALGORITHM (
-.OFF(net_140),
-.TOP(net_156),
+.OFF(net_148),
+.TOP(net_164),
 .fcm(fcm),
-.IDLE(net_148),
+.IDLE(net_156),
 .porb(porb),
-.FAULT(net_144),
-.READY(net_146),
-.BOTTOM(net_154),
-.POWERUP(net_142),
-.REFRESH(net_150),
-.top3SYNC(net_131),
-.top4SYNC(net_134),
+.FAULT(net_152),
+.READY(net_154),
+.BOTTOM(net_162),
+.POWERUP(net_150),
+.REFRESH(net_158),
+.top3SYNC(net_139),
+.top4SYNC(net_142),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.TOPdelayi(net_161),
+.TOPdelayi(net_169),
 .bbm_topon(bbm_topon),
 .go_driver(go_driver),
 .ipeak_top(ipeak_top),
 .ok_driver(ok_driver),
-.top6aSYNC(net_136),
-.top6bSYNC(net_138),
+.top6aSYNC(net_144),
+.top6bSYNC(net_146),
 .top_switch(top_switch),
 .CELSUB40948(CELSUB40948),
-.enableFAULT(Algorithm5p9_statecontrol_57e26337[4]),
-.BOTTOMdelayi(net_160),
-.TOPmaxdelayo(net_165),
+.enableFAULT(Algorithm5p9_statecontrol_22dba987[4]),
+.BOTTOMdelayi(net_168),
+.TOPmaxdelayo(net_173),
 .bbm_bottomon(bbm_bottomon),
 .blank_bottom(blank_bottom),
 .ipeak_bottom(ipeak_bottom),
-.POWERUPdelayi(net_151),
-.REFRESHdelayi(net_159),
-.STATEcontrol0(Algorithm5p9_statecontrol_57e26337[0]),
-.STATEcontrol1(Algorithm5p9_statecontrol_57e26337[1]),
-.STATEcontrol2(Algorithm5p9_statecontrol_57e26337[2]),
-.STATEcontrol3(Algorithm5p9_statecontrol_57e26337[3]),
+.POWERUPdelayi(net_159),
+.REFRESHdelayi(net_167),
+.STATEcontrol0(Algorithm5p9_statecontrol_22dba987[0]),
+.STATEcontrol1(Algorithm5p9_statecontrol_22dba987[1]),
+.STATEcontrol2(Algorithm5p9_statecontrol_22dba987[2]),
+.STATEcontrol3(Algorithm5p9_statecontrol_22dba987[3]),
 .blank_refresh(blank_refresh),
 .bottom_switch(bottom_switch),
 .clock_control(clock_control),
@@ -199,15 +238,15 @@ Algorithm5p9_DYES_ XALGORITHM (
 .enable_control(enable_control),
 .freeze_control(freeze_control),
 .switch_control(switch_control),
-.BOTTOMmaxdelayo(net_164),
-.POWERUPmaxdelayo(net_152),
-.REFRESHmaxdelayo(net_163),
-.REFRESHmindelayo(net_162),
+.BOTTOMmaxdelayo(net_172),
+.POWERUPmaxdelayo(net_160),
+.REFRESHmaxdelayo(net_171),
+.REFRESHmindelayo(net_170),
 .inegative_bottom(inegative_bottom)
 );
 
 dftprobeModel0_e1d1778d XU14 (
-.i(net_131),
+.i(net_139),
 .tdi(tdi_016e5221_XU14),
 .ten(ten_016e5221_XU14),
 .CELG(CELG59462),
@@ -216,7 +255,7 @@ dftprobeModel0_e1d1778d XU14 (
 );
 
 dftprobeModel0_e1d1778d XU16 (
-.i(net_134),
+.i(net_142),
 .tdi(tdi_c406e2e9_XU16),
 .ten(ten_c406e2e9_XU16),
 .CELG(CELG59462),
@@ -225,7 +264,7 @@ dftprobeModel0_e1d1778d XU16 (
 );
 
 dftprobeModel0_e1d1778d XU18 (
-.i(net_136),
+.i(net_144),
 .tdi(tdi_dc7df0cc_XU18),
 .ten(ten_dc7df0cc_XU18),
 .CELG(CELG59462),
@@ -234,7 +273,7 @@ dftprobeModel0_e1d1778d XU18 (
 );
 
 dftprobeModel0_e1d1778d XU20 (
-.i(net_138),
+.i(net_146),
 .tdi(tdi_9e0c6a0f_XU20),
 .ten(ten_9e0c6a0f_XU20),
 .CELG(CELG59462),
@@ -243,47 +282,47 @@ dftprobeModel0_e1d1778d XU20 (
 );
 
 delayfixed_000809b0 XU29 (
-.i(net_151),
-.o(net_152),
+.i(net_159),
+.o(net_160),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
 );
 
 delayfixed_f6bc9877 XU37 (
-.i(net_159),
-.o(net_162),
+.i(net_167),
+.o(net_170),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
 );
 
 delayfixed_be9e04b2 XU38 (
-.i(net_159),
-.o(net_163),
+.i(net_167),
+.o(net_171),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
 );
 
 delayfixed_000809b0 XU41 (
-.i(net_160),
-.o(net_164),
+.i(net_168),
+.o(net_172),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
 );
 
 delayfixed_2b789075 XU44 (
-.i(net_161),
-.o(net_165),
+.i(net_169),
+.o(net_173),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
 );
 
 dftprobeModel0_e1d1778d XU89 (
-.i(net_140),
+.i(net_148),
 .tdi(tdi_10af5487_XU89),
 .ten(ten_10af5487_XU89),
 .CELG(CELG59462),
@@ -292,7 +331,7 @@ dftprobeModel0_e1d1778d XU89 (
 );
 
 dftprobeModel0_e1d1778d XU90 (
-.i(net_142),
+.i(net_150),
 .tdi(tdi_e1c50519_XU90),
 .ten(ten_e1c50519_XU90),
 .CELG(CELG59462),
@@ -301,7 +340,7 @@ dftprobeModel0_e1d1778d XU90 (
 );
 
 dftprobeModel0_e1d1778d XU91 (
-.i(net_144),
+.i(net_152),
 .tdi(tdi_efe3dfd4_XU91),
 .ten(ten_efe3dfd4_XU91),
 .CELG(CELG59462),
@@ -310,7 +349,7 @@ dftprobeModel0_e1d1778d XU91 (
 );
 
 dftprobeModel0_e1d1778d XU92 (
-.i(net_146),
+.i(net_154),
 .tdi(tdi_b275df66_XU92),
 .ten(ten_b275df66_XU92),
 .CELG(CELG59462),
@@ -319,7 +358,7 @@ dftprobeModel0_e1d1778d XU92 (
 );
 
 dftprobeModel0_e1d1778d XU93 (
-.i(net_148),
+.i(net_156),
 .tdi(tdi_3a54983a_XU93),
 .ten(ten_3a54983a_XU93),
 .CELG(CELG59462),
@@ -328,7 +367,7 @@ dftprobeModel0_e1d1778d XU93 (
 );
 
 dftprobeModel0_e1d1778d XU94 (
-.i(net_150),
+.i(net_158),
 .tdi(tdi_1c924704_XU94),
 .ten(ten_1c924704_XU94),
 .CELG(CELG59462),
@@ -337,7 +376,7 @@ dftprobeModel0_e1d1778d XU94 (
 );
 
 dftprobeModel0_e1d1778d XU95 (
-.i(net_154),
+.i(net_162),
 .tdi(tdi_e41e5cb3_XU95),
 .ten(ten_e41e5cb3_XU95),
 .CELG(CELG59462),
@@ -346,7 +385,7 @@ dftprobeModel0_e1d1778d XU95 (
 );
 
 dftprobeModel0_e1d1778d XU96 (
-.i(net_156),
+.i(net_164),
 .tdi(tdi_250e1d7b_XU96),
 .ten(ten_250e1d7b_XU96),
 .CELG(CELG59462),
@@ -379,6 +418,66 @@ dftprobeModel0_e1d1778d XU99 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
+);
+
+STONEnoconn XNCtdi_016e5221_XU14_76edd7de_XCONTROL (
+.noconn(tdi_016e5221_XU14_76edd7de_XCONTROL)
+);
+
+STONEnoconn XNCtdi_10af5487_XU89_76edd7de_XCONTROL (
+.noconn(tdi_10af5487_XU89_76edd7de_XCONTROL)
+);
+
+STONEnoconn XNCtdi_1c924704_XU94_76edd7de_XCONTROL (
+.noconn(tdi_1c924704_XU94_76edd7de_XCONTROL)
+);
+
+STONEnoconn XNCtdi_250e1d7b_XU96_76edd7de_XCONTROL (
+.noconn(tdi_250e1d7b_XU96_76edd7de_XCONTROL)
+);
+
+STONEnoconn XNCtdi_3a54983a_XU93_76edd7de_XCONTROL (
+.noconn(tdi_3a54983a_XU93_76edd7de_XCONTROL)
+);
+
+STONEnoconn XNCtdi_5dbb5861_XU98_76edd7de_XCONTROL (
+.noconn(tdi_5dbb5861_XU98_76edd7de_XCONTROL)
+);
+
+STONEnoconn XNCtdi_78907f64_XU97_76edd7de_XCONTROL (
+.noconn(tdi_78907f64_XU97_76edd7de_XCONTROL)
+);
+
+STONEnoconn XNCtdi_9e0c6a0f_XU20_76edd7de_XCONTROL (
+.noconn(tdi_9e0c6a0f_XU20_76edd7de_XCONTROL)
+);
+
+STONEnoconn XNCtdi_a9541403_XU99_76edd7de_XCONTROL (
+.noconn(tdi_a9541403_XU99_76edd7de_XCONTROL)
+);
+
+STONEnoconn XNCtdi_b275df66_XU92_76edd7de_XCONTROL (
+.noconn(tdi_b275df66_XU92_76edd7de_XCONTROL)
+);
+
+STONEnoconn XNCtdi_c406e2e9_XU16_76edd7de_XCONTROL (
+.noconn(tdi_c406e2e9_XU16_76edd7de_XCONTROL)
+);
+
+STONEnoconn XNCtdi_dc7df0cc_XU18_76edd7de_XCONTROL (
+.noconn(tdi_dc7df0cc_XU18_76edd7de_XCONTROL)
+);
+
+STONEnoconn XNCtdi_e1c50519_XU90_76edd7de_XCONTROL (
+.noconn(tdi_e1c50519_XU90_76edd7de_XCONTROL)
+);
+
+STONEnoconn XNCtdi_e41e5cb3_XU95_76edd7de_XCONTROL (
+.noconn(tdi_e41e5cb3_XU95_76edd7de_XCONTROL)
+);
+
+STONEnoconn XNCtdi_efe3dfd4_XU91_76edd7de_XCONTROL (
+.noconn(tdi_efe3dfd4_XU91_76edd7de_XCONTROL)
 );
 
 endmodule

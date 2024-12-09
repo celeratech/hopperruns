@@ -77,7 +77,7 @@ module DRIVERwaltz (SW,TAO,tdo,tmi,BSTV,MUDV,MUDHV,PMUDG,PMUDV,PMUDHV,botstate,t
   input  IP_f4252e65_XU22;
 endmodule
 
-module FAULTMANAGERwaltz (tdo,tmi,MUDV,clock,CELG59462,CELV96848,PORB97836,fault_run,CELSUB40948,blank_fault,fault_short,fault_freeze,enable_faultmanager);
+module FAULTMANAGERwaltz (tdo,tmi,MUDV,clock,CELG59462,CELV96848,PORB97836,fault_run,CELBG83021,CELSUB40948,blank_fault,fault_short,fault_freeze,enable_faultmanager,IP_201f84ba_Xthermal1);
   inout  tdo;
   inout [4:0] tmi;
   input  MUDV;
@@ -86,11 +86,13 @@ module FAULTMANAGERwaltz (tdo,tmi,MUDV,clock,CELG59462,CELV96848,PORB97836,fault
   input  CELV96848;
   input  PORB97836;
   output  fault_run;
+  input  CELBG83021;
   input  CELSUB40948;
   input  blank_fault;
   input  fault_short;
   output  fault_freeze;
   input  enable_faultmanager;
+  input  IP_201f84ba_Xthermal1;
 endmodule
 
 module POWERGOODwaltz (POK,TAO,tdo,tmi,MUDV,clock,sense_FB,CELG59462,CELV96848,PORB97836,CELSUB40948,fault_short,REF_POWERGOOD,IP_70e67769_XU3,IP_e96a4067_XU8,IP_ddbf938d_XU22,enable_powergood,kelvin_MUDGpowergood);
@@ -161,7 +163,7 @@ module SEQUENCERwaltz (tdo,tmi,porb,ok_clock,CELG59462,CELV96848,fault_run,ok_dr
   output  enable_regulation;
 endmodule
 
-module SERVICEwaltz (EN,IN,TAO,VCC,tdo,tmi,BIAS,porb,REF0V9,CELG59462,CELV96848,CELBG83021,OKREF03249,kelvin_VCC,ok_service,CELREF84329,CELSUB40948,IP_75c89176_XU16,kelvin_GNDservice,celkelvin_IN_bc3b7675,celkelvin_GND_d75c3f7f,celkelvin_VCC_bc3b7675,celkelvin_BIAS_bc3b7675);
+module SERVICEwaltz (EN,IN,TAO,VCC,tdo,tmi,BIAS,porb,REF0V9,CELG59462,CELV96848,CELBG83021,kelvin_VCC,ok_service,CELSUB40948,IP_75c89176_XU16,kelvin_GNDservice,celkelvin_IN_bc3b7675,celkelvin_GND_d75c3f7f,celkelvin_VCC_bc3b7675,celkelvin_BIAS_bc3b7675);
   input  EN;
   input  IN;
   inout  TAO;
@@ -174,10 +176,8 @@ module SERVICEwaltz (EN,IN,TAO,VCC,tdo,tmi,BIAS,porb,REF0V9,CELG59462,CELV96848,
   input  CELG59462;
   input  CELV96848;
   output  CELBG83021;
-  output  OKREF03249;
   inout  kelvin_VCC;
   output  ok_service;
-  output  CELREF84329;
   input  CELSUB40948;
   input  IP_75c89176_XU16;
   inout  kelvin_GNDservice;
@@ -214,13 +214,13 @@ module STONEnoconn ( noconn );
 endmodule
 
 
-module CELERAservice (IPO,TAO,tmi,CELG,CELV,CELBG,CELSUB,ok_ibias,enable_ibias,celkelvin_GNDservice);
-  output [14:0] IPO;
+module CELERAservice (IPO,TAO,tmi,CELG,CELV,CELREF,CELSUB,ok_ibias,enable_ibias,celkelvin_GNDservice);
+  output [15:0] IPO;
   inout  TAO;
   inout [4:0] tmi;
   input  CELG;
   input  CELV;
-  input  CELBG;
+  output  CELREF;
   input  CELSUB;
   output  ok_ibias;
   input  enable_ibias;
@@ -268,7 +268,7 @@ input  celkelvin_BIAS_bc3b7675;
 
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
-wire [14:0] IPO;
+wire [15:0] IPO;
 
 // ------------------------ Networks ---------------------
 CLOCKwaltz XCLOCK (
@@ -358,11 +358,13 @@ FAULTMANAGERwaltz XFAULTMANAGER (
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
 .fault_run(net_194),
+.CELBG83021(CELBG83021),
 .CELSUB40948(CELSUB40948),
 .blank_fault(net_193),
 .fault_short(net_195),
 .fault_freeze(net_176),
-.enable_faultmanager(net_161)
+.enable_faultmanager(net_161),
+.IP_201f84ba_Xthermal1(IP_201f84ba_Xthermal1)
 );
 
 POWERGOODwaltz XPOWERGOOD (
@@ -446,10 +448,8 @@ SERVICEwaltz XSERVICE (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELBG83021(CELBG83021),
-.OKREF03249(OKREF03249),
 .kelvin_VCC(kelvin_VCC),
 .ok_service(net_184),
-.CELREF84329(CELREF84329),
 .CELSUB40948(CELSUB40948),
 .IP_75c89176_XU16(IP_75c89176_XU16),
 .kelvin_GNDservice(kelvin_GNDservice),
@@ -482,12 +482,12 @@ STONEnoconn XNCnoconn (
 );
 
 CELERAservice XceleraSERVICE (
-.IPO({IP_14d08c8e_XU3,IP_2d447a5c_XU17,IP_4215aede_XU3,IP_4c0bef8e_Xoscillator1,IP_5c7dff44_XU10,IP_70e67769_XU3,IP_75c89176_XU16,IP_866ca25c_XU9,IP_9015e2a4_XU1,IP_90c263a6_XOSCEXT,IP_a0afb596_XU9,IP_b8eb1a18_XU7,IP_ddbf938d_XU22,IP_e96a4067_XU8,IP_f4252e65_XU22}),
+.IPO({IP_14d08c8e_XU3,IP_201f84ba_Xthermal1,IP_2d447a5c_XU17,IP_4215aede_XU3,IP_4c0bef8e_Xoscillator1,IP_5c7dff44_XU10,IP_70e67769_XU3,IP_75c89176_XU16,IP_866ca25c_XU9,IP_9015e2a4_XU1,IP_90c263a6_XOSCEXT,IP_a0afb596_XU9,IP_b8eb1a18_XU7,IP_ddbf938d_XU22,IP_e96a4067_XU8,IP_f4252e65_XU22}),
 .TAO(TAO),
 .tmi(tmi[4:0]),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.CELBG(CELBG83021),
+.CELREF(CELREF84329),
 .CELSUB(CELSUB40948),
 .ok_ibias(noconn),
 .enable_ibias(OKREF03249),

@@ -17,8 +17,17 @@ module dftprobeModel2_2dcf28df (i,TAI,ten,CELG,CELV,CELSUB);
   input  CELSUB;
 endmodule
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module SERVICEwaltz0DEBUG (porb, REF0V9, go_vcc, CELG59462, CELV96848, ok_service, CELSUB40948, ok_reference, TAI_a6a0ac97_XU3, tdi_1955111b_XU7, tdi_742857bf_XU2, tdi_ec5776d4_XU6, ten_1955111b_XU7, ten_742857bf_XU2, ten_a6a0ac97_XU3, ten_ec5776d4_XU6, tdi_cd882763_XU15, ten_cd882763_XU15);
+module SERVICEwaltz0DEBUG (porb, REF0V9, go_vcc, CELG59462, CELV96848, ok_service, CELSUB40948, ok_reference, TAI_a6a0ac97_XU3, tdi_1955111b_XU7, tdi_742857bf_XU2, tdi_ec5776d4_XU6, ten_1955111b_XU7, ten_742857bf_XU2, ten_a6a0ac97_XU3, ten_ec5776d4_XU6, tdi_cd882763_XU15, ten_cd882763_XU15, TAI_a6a0ac97_XU3_63f6e3c4_XDEBUG, tdi_1955111b_XU7_63f6e3c4_XDEBUG, tdi_742857bf_XU2_63f6e3c4_XDEBUG, tdi_ec5776d4_XU6_63f6e3c4_XDEBUG, ten_1955111b_XU7_63f6e3c4_XDEBUG, ten_742857bf_XU2_63f6e3c4_XDEBUG, ten_a6a0ac97_XU3_63f6e3c4_XDEBUG, ten_ec5776d4_XU6_63f6e3c4_XDEBUG, tdi_cd882763_XU15_63f6e3c4_XDEBUG, ten_cd882763_XU15_63f6e3c4_XDEBUG);
   input  porb;
   input  REF0V9;
   input  go_vcc;
@@ -37,6 +46,16 @@ input  ten_a6a0ac97_XU3;
 input  ten_ec5776d4_XU6;
 output  tdi_cd882763_XU15;
 input  ten_cd882763_XU15;
+output  TAI_a6a0ac97_XU3_63f6e3c4_XDEBUG;
+output  tdi_1955111b_XU7_63f6e3c4_XDEBUG;
+output  tdi_742857bf_XU2_63f6e3c4_XDEBUG;
+output  tdi_ec5776d4_XU6_63f6e3c4_XDEBUG;
+input  ten_1955111b_XU7_63f6e3c4_XDEBUG;
+input  ten_742857bf_XU2_63f6e3c4_XDEBUG;
+input  ten_a6a0ac97_XU3_63f6e3c4_XDEBUG;
+input  ten_ec5776d4_XU6_63f6e3c4_XDEBUG;
+output  tdi_cd882763_XU15_63f6e3c4_XDEBUG;
+input  ten_cd882763_XU15_63f6e3c4_XDEBUG;
 
 
 // ------------------------ Wires ------------------------
@@ -85,6 +104,26 @@ dftprobeModel0_80e43a5a XU15 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
+);
+
+STONEnoconn XNCTAI_a6a0ac97_XU3_63f6e3c4_XDEBUG (
+.noconn(TAI_a6a0ac97_XU3_63f6e3c4_XDEBUG)
+);
+
+STONEnoconn XNCtdi_1955111b_XU7_63f6e3c4_XDEBUG (
+.noconn(tdi_1955111b_XU7_63f6e3c4_XDEBUG)
+);
+
+STONEnoconn XNCtdi_742857bf_XU2_63f6e3c4_XDEBUG (
+.noconn(tdi_742857bf_XU2_63f6e3c4_XDEBUG)
+);
+
+STONEnoconn XNCtdi_ec5776d4_XU6_63f6e3c4_XDEBUG (
+.noconn(tdi_ec5776d4_XU6_63f6e3c4_XDEBUG)
+);
+
+STONEnoconn XNCtdi_cd882763_XU15_63f6e3c4_XDEBUG (
+.noconn(tdi_cd882763_XU15_63f6e3c4_XDEBUG)
 );
 
 endmodule

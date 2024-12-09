@@ -162,8 +162,17 @@ module ESDminiClamp6 ( O, G, I, SUB, V );
 endmodule
 
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module POWERGOODwaltzMAIN (POK, MUDV, clock, sense_FB, CELG59462, CELV96848, PORB97836, dft_pgout, CELSUB40948, dft_pgDELAY, fault_short, REF_POWERGOOD, dft_REFBUFFER, dft_pgSTARTUP, dft_pgDEGLITCH, dft_shortdelay, IP_70e67769_XU3, IP_e96a4067_XU8, IP_ddbf938d_XU22, enable_powergood, hijack_risedelay, kelvin_MUDGpowergood, global_vbuffer_e96a4067_XU8, tdi_padopendrain_54c5b105_XU4, ten_padopendrain_54c5b105_XU4, global_comparator_70e67769_XU3, global_comparator_ddbf938d_XU22, global_resistordivider_37d49b79_XU17);
+module POWERGOODwaltzMAIN (POK, MUDV, clock, sense_FB, CELG59462, CELV96848, PORB97836, dft_pgout, CELSUB40948, dft_pgDELAY, fault_short, REF_POWERGOOD, dft_REFBUFFER, dft_pgSTARTUP, dft_pgDEGLITCH, dft_shortdelay, IP_70e67769_XU3, IP_e96a4067_XU8, IP_ddbf938d_XU22, enable_powergood, hijack_risedelay, kelvin_MUDGpowergood, global_vbuffer_e96a4067_XU8, tdi_padopendrain_54c5b105_XU4, ten_padopendrain_54c5b105_XU4, global_comparator_70e67769_XU3, global_comparator_ddbf938d_XU22, global_resistordivider_37d49b79_XU17, global_vbuffer_e96a4067_XU8_811a9a05_XMAIN, tdi_padopendrain_54c5b105_XU4_811a9a05_XMAIN, ten_padopendrain_54c5b105_XU4_811a9a05_XMAIN, global_comparator_70e67769_XU3_811a9a05_XMAIN, global_comparator_ddbf938d_XU22_811a9a05_XMAIN, global_resistordivider_37d49b79_XU17_811a9a05_XMAIN);
 inout  POK;
 input  MUDV;
 input  clock;
@@ -192,6 +201,12 @@ input  ten_padopendrain_54c5b105_XU4;
 input  global_comparator_70e67769_XU3;
 input  global_comparator_ddbf938d_XU22;
 input  global_resistordivider_37d49b79_XU17;
+input  global_vbuffer_e96a4067_XU8_811a9a05_XMAIN;
+output  tdi_padopendrain_54c5b105_XU4_811a9a05_XMAIN;
+input  ten_padopendrain_54c5b105_XU4_811a9a05_XMAIN;
+input  global_comparator_70e67769_XU3_811a9a05_XMAIN;
+input  global_comparator_ddbf938d_XU22_811a9a05_XMAIN;
+input  global_resistordivider_37d49b79_XU17_811a9a05_XMAIN;
 
 
 // ------------------------ Wires ------------------------
@@ -416,6 +431,10 @@ ESDminiClamp6 XCLAMP_XU22_INN_COMPARATOR (
 .O(clamp_XU22_137),
 .V(CELV96848),
 .SUB(CELSUB40948)
+);
+
+STONEnoconn XNCtdi_padopendrain_54c5b105_XU4_811a9a05_XMAIN (
+.noconn(tdi_padopendrain_54c5b105_XU4_811a9a05_XMAIN)
 );
 
 endmodule

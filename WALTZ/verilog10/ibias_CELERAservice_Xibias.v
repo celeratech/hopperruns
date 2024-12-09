@@ -2,7 +2,7 @@
 //CORE:ibias
 //NAME:ibias_CELERAservice_Xibias
 //GENERATOR REVISION:0.5.1
-//OUTPUTS:15
+//OUTPUTS:16
 //VMAX:6V
 //DFT:yes
 //ACCURACY:yes
@@ -99,7 +99,7 @@ endmodule
 
 //Celera Confidential Do Not Copy ibias_CELERAservice_Xibias
 //Celera Confidential Symbol Generator
-//OUTPUTS:15 VMAX:6V DFT:yes ACCURACY:yes
+//OUTPUTS:16 VMAX:6V DFT:yes ACCURACY:yes
 module ibias_CELERAservice_Xibias (CELV,enable_ibias,global_celeraibias,SENSE_G,ok_ibias,IPO,
 ten_ibias,TAI_IBIAS,trim_ibias,CELBG,CELG,CELSUB);
 input CELV;
@@ -108,7 +108,7 @@ input global_celeraibias;
 output ok_ibias;
 input SENSE_G;
 input CELBG;
-output [14:0] IPO;
+output [15:0] IPO;
 input ten_ibias;
 output TAI_IBIAS;
 input [4:0] trim_ibias;
@@ -210,6 +210,28 @@ STONEibiasOUT Xout4(
 .IPO0 (IPO[12]),
 .IPO1 (IPO[13]),
 .IPO2 (IPO[14]),
+.SUB (CELSUB)
+);
+//,diesize,STONEibiasOUT
+//Celera Confidential Do Not Copy STONEnoconn
+STONEnoconn Xnoconn2(
+.noconn (
+NOCONN_IPO1)
+);
+//,diesize,STONEnoconn
+//Celera Confidential Do Not Copy STONEnoconn
+STONEnoconn Xnoconn3(
+.noconn (
+NOCONN_IPO2)
+);
+//,diesize,STONEnoconn
+//Celera Confidential Do Not Copy STONEibiasOUT
+STONEibiasOUT Xout5(
+.CELV (CELV),
+.GATE (GATE),
+.IPO0 (IPO[15]),
+.IPO1 (NOCONN_IPO1),
+.IPO2 (NOCONN_IPO2),
 .SUB (CELSUB)
 );
 //,diesize,STONEibiasOUT

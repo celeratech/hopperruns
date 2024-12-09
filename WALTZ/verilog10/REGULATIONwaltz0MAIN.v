@@ -1,13 +1,13 @@
 // ------------------------ Module Definitions -----------
-module REGULATIONwaltz0COMPENSATION (VC,CELG59462,CELV96848,CELSUB40948,kelvin_MUDG,CZCOMP_624d9aae,RZCOMP_a9ca9a88,GAINCOMP_62ae95e3,enable_regulation);
+module REGULATIONwaltz0COMPENSATION (VC,CELG59462,CELV96848,CELSUB40948,kelvin_MUDG,CZCOMP_f879cf8e,RZCOMP_e99ba28d,GAINCOMP_2e6ae970,enable_regulation);
   inout  VC;
   input  CELG59462;
   input  CELV96848;
   input  CELSUB40948;
   inout  kelvin_MUDG;
-  input [2:0] CZCOMP_624d9aae;
-  input [2:0] RZCOMP_a9ca9a88;
-  input [1:0] GAINCOMP_62ae95e3;
+  input [2:0] CZCOMP_f879cf8e;
+  input [2:0] RZCOMP_e99ba28d;
+  input [1:0] GAINCOMP_2e6ae970;
   input  enable_regulation;
 endmodule
 
@@ -125,7 +125,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltz0MAIN (VC, MUDG, MUDV, REFINT, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, CZCOMP_624d9aae, IP_4215aede_XU3, IP_866ca25c_XU9, IP_9015e2a4_XU1, IP_b8eb1a18_XU7, RZCOMP_a9ca9a88, IP_5c7dff44_XU10, GAINCOMP_62ae95e3, enable_regulation, trim_clamp_b8eb1a18, global_gm_9015e2a4_XU1, global_clamp_b8eb1a18_XU7, trim_gm_negative_9015e2a4, trim_gm_positive_9015e2a4, global_vbuffer_866ca25c_XU9, trim_vbuffer_negative_866ca25c, trim_vbuffer_positive_866ca25c, global_comparator_5c7dff44_XU10, factory_hyst_comparator_5c7dff44, global_voltage2current_4215aede_XU3);
+module REGULATIONwaltz0MAIN (VC, MUDG, MUDV, REFINT, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, CZCOMP_f879cf8e, IP_4215aede_XU3, IP_866ca25c_XU9, IP_9015e2a4_XU1, IP_b8eb1a18_XU7, RZCOMP_e99ba28d, IP_5c7dff44_XU10, GAINCOMP_2e6ae970, enable_regulation, trim_clamp_b8eb1a18, global_gm_9015e2a4_XU1, global_clamp_b8eb1a18_XU7, trim_gm_negative_9015e2a4, trim_gm_positive_9015e2a4, global_vbuffer_866ca25c_XU9, trim_vbuffer_negative_866ca25c, trim_vbuffer_positive_866ca25c, global_comparator_5c7dff44_XU10, factory_hyst_comparator_5c7dff44, global_voltage2current_4215aede_XU3, global_gm_9015e2a4_XU1_10783060_XMAIN, global_clamp_b8eb1a18_XU7_10783060_XMAIN, global_vbuffer_866ca25c_XU9_10783060_XMAIN, global_comparator_5c7dff44_XU10_10783060_XMAIN, global_voltage2current_4215aede_XU3_10783060_XMAIN);
 inout  VC;
 inout  MUDG;
 input  MUDV;
@@ -141,14 +141,14 @@ input  FB_REGULATION;
 output  ok_regulation;
 input  REF_REGULATION;
 input  VSS_REGULATION;
-input [2:0] CZCOMP_624d9aae;
+input [2:0] CZCOMP_f879cf8e;
 input  IP_4215aede_XU3;
 input  IP_866ca25c_XU9;
 input  IP_9015e2a4_XU1;
 input  IP_b8eb1a18_XU7;
-input [2:0] RZCOMP_a9ca9a88;
+input [2:0] RZCOMP_e99ba28d;
 input  IP_5c7dff44_XU10;
-input [1:0] GAINCOMP_62ae95e3;
+input [1:0] GAINCOMP_2e6ae970;
 input  enable_regulation;
 input [7:0] trim_clamp_b8eb1a18;
 input  global_gm_9015e2a4_XU1;
@@ -161,12 +161,17 @@ input [6:0] trim_vbuffer_positive_866ca25c;
 input  global_comparator_5c7dff44_XU10;
 input [1:0] factory_hyst_comparator_5c7dff44;
 input  global_voltage2current_4215aede_XU3;
+input  global_gm_9015e2a4_XU1_10783060_XMAIN;
+input  global_clamp_b8eb1a18_XU7_10783060_XMAIN;
+input  global_vbuffer_866ca25c_XU9_10783060_XMAIN;
+input  global_comparator_5c7dff44_XU10_10783060_XMAIN;
+input  global_voltage2current_4215aede_XU3_10783060_XMAIN;
 
 
 // ------------------------ Wires ------------------------
-wire [2:0] CZCOMP_624d9aae;
-wire [2:0] RZCOMP_a9ca9a88;
-wire [1:0] GAINCOMP_62ae95e3;
+wire [2:0] CZCOMP_f879cf8e;
+wire [2:0] RZCOMP_e99ba28d;
+wire [1:0] GAINCOMP_2e6ae970;
 wire [7:0] trim_clamp_b8eb1a18;
 wire [6:0] trim_gm_negative_9015e2a4;
 wire [6:0] trim_gm_positive_9015e2a4;
@@ -187,9 +192,9 @@ REGULATIONwaltz0COMPENSATION XCOMPENSATION (
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948),
 .kelvin_MUDG(kelvin_MUDG),
-.CZCOMP_624d9aae(CZCOMP_624d9aae[2:0]),
-.RZCOMP_a9ca9a88(RZCOMP_a9ca9a88[2:0]),
-.GAINCOMP_62ae95e3(GAINCOMP_62ae95e3[1:0]),
+.CZCOMP_f879cf8e(CZCOMP_f879cf8e[2:0]),
+.RZCOMP_e99ba28d(RZCOMP_e99ba28d[2:0]),
+.GAINCOMP_2e6ae970(GAINCOMP_2e6ae970[1:0]),
 .enable_regulation(enable_regulation)
 );
 

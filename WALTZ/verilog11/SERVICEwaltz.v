@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module SERVICEwaltz0DEBUG (porb,REF0V9,go_vcc,CELG59462,CELV96848,ok_service,CELSUB40948,ok_reference,TAI_a6a0ac97_XU3,tdi_1955111b_XU7,tdi_742857bf_XU2,tdi_ec5776d4_XU6,ten_1955111b_XU7,ten_742857bf_XU2,ten_a6a0ac97_XU3,ten_ec5776d4_XU6,tdi_cd882763_XU15,ten_cd882763_XU15);
+module SERVICEwaltz0DEBUG (porb,REF0V9,go_vcc,CELG59462,CELV96848,ok_service,CELSUB40948,ok_reference,TAI_a6a0ac97_XU3,tdi_1955111b_XU7,tdi_742857bf_XU2,tdi_ec5776d4_XU6,ten_1955111b_XU7,ten_742857bf_XU2,ten_a6a0ac97_XU3,ten_ec5776d4_XU6,tdi_cd882763_XU15,ten_cd882763_XU15,TAI_a6a0ac97_XU3_63f6e3c4_XDEBUG,tdi_1955111b_XU7_63f6e3c4_XDEBUG,tdi_742857bf_XU2_63f6e3c4_XDEBUG,tdi_ec5776d4_XU6_63f6e3c4_XDEBUG,ten_1955111b_XU7_63f6e3c4_XDEBUG,ten_742857bf_XU2_63f6e3c4_XDEBUG,ten_a6a0ac97_XU3_63f6e3c4_XDEBUG,ten_ec5776d4_XU6_63f6e3c4_XDEBUG,tdi_cd882763_XU15_63f6e3c4_XDEBUG,ten_cd882763_XU15_63f6e3c4_XDEBUG);
   input  porb;
   input  REF0V9;
   input  go_vcc;
@@ -18,9 +18,19 @@ module SERVICEwaltz0DEBUG (porb,REF0V9,go_vcc,CELG59462,CELV96848,ok_service,CEL
   input  ten_ec5776d4_XU6;
   output  tdi_cd882763_XU15;
   input  ten_cd882763_XU15;
+  output  TAI_a6a0ac97_XU3_63f6e3c4_XDEBUG;
+  output  tdi_1955111b_XU7_63f6e3c4_XDEBUG;
+  output  tdi_742857bf_XU2_63f6e3c4_XDEBUG;
+  output  tdi_ec5776d4_XU6_63f6e3c4_XDEBUG;
+  input  ten_1955111b_XU7_63f6e3c4_XDEBUG;
+  input  ten_742857bf_XU2_63f6e3c4_XDEBUG;
+  input  ten_a6a0ac97_XU3_63f6e3c4_XDEBUG;
+  input  ten_ec5776d4_XU6_63f6e3c4_XDEBUG;
+  output  tdi_cd882763_XU15_63f6e3c4_XDEBUG;
+  input  ten_cd882763_XU15_63f6e3c4_XDEBUG;
 endmodule
 
-module SERVICEwaltz0MAIN (EN,IN,VCC,BIAS,porb,REF0V9,go_vcc,CELG59462,CELV96848,CELBG83021,OKREF03249,kelvin_VCC,ok_service,CELREF84329,CELSUB40948,ok_reference,IP_75c89176_XU16,kelvin_GNDservice,trim_ref_553d3e5b,trim_refbg_553d3e5b,TAI_REF_553d3e5b_XU4,ten_ref_553d3e5b_XU4,celkelvin_IN_bc3b7675,TAI_REFBG_553d3e5b_XU4,celkelvin_GND_d75c3f7f,celkelvin_VCC_bc3b7675,ten_refbg_553d3e5b_XU4,trim_vbiasneg_23bb219c,trim_vbiaspos_23bb219c,trim_vbiasref_23bb219c,celkelvin_BIAS_bc3b7675,factory_refccn_553d3e5b,factory_refccp_553d3e5b,TAI_VBIAS_23bb219c_Xvbias1,tdi_vbias_23bb219c_Xvbias1,ten_taiv2v5_23bb219c_Xvbias1,global_reference_553d3e5b_XU4,global_vbias_23bb219c_Xvbias1,ten_taiv1v0f_23bb219c_Xvbias1,global_comparator_75c89176_XU16,ten_taifbvbias_23bb219c_Xvbias1,ten_tdiokvbias_23bb219c_Xvbias1,ten_enablevbias_23bb219c_Xvbias1);
+module SERVICEwaltz0MAIN (EN,IN,VCC,BIAS,porb,REF0V9,go_vcc,CELG59462,CELV96848,CELBG83021,kelvin_VCC,ok_service,CELSUB40948,ok_reference,IP_75c89176_XU16,kelvin_GNDservice,trim_ref_553d3e5b,trim_refbg_553d3e5b,TAI_REF_553d3e5b_XU4,ten_ref_553d3e5b_XU4,celkelvin_IN_bc3b7675,TAI_REFBG_553d3e5b_XU4,celkelvin_GND_d75c3f7f,celkelvin_VCC_bc3b7675,ten_refbg_553d3e5b_XU4,trim_vbiasneg_23bb219c,trim_vbiaspos_23bb219c,trim_vbiasref_23bb219c,celkelvin_BIAS_bc3b7675,factory_refccn_553d3e5b,factory_refccp_553d3e5b,TAI_VBIAS_23bb219c_Xvbias1,tdi_vbias_23bb219c_Xvbias1,ten_taiv2v5_23bb219c_Xvbias1,global_reference_553d3e5b_XU4,global_vbias_23bb219c_Xvbias1,ten_taiv1v0f_23bb219c_Xvbias1,global_comparator_75c89176_XU16,ten_taifbvbias_23bb219c_Xvbias1,ten_tdiokvbias_23bb219c_Xvbias1,ten_enablevbias_23bb219c_Xvbias1,TAI_REF_553d3e5b_XU4_2345cd7b_XMAIN,ten_ref_553d3e5b_XU4_2345cd7b_XMAIN,TAI_REFBG_553d3e5b_XU4_2345cd7b_XMAIN,ten_refbg_553d3e5b_XU4_2345cd7b_XMAIN,TAI_VBIAS_23bb219c_Xvbias1_2345cd7b_XMAIN,tdi_vbias_23bb219c_Xvbias1_2345cd7b_XMAIN,ten_taiv2v5_23bb219c_Xvbias1_2345cd7b_XMAIN,global_reference_553d3e5b_XU4_2345cd7b_XMAIN,global_vbias_23bb219c_Xvbias1_2345cd7b_XMAIN,ten_taiv1v0f_23bb219c_Xvbias1_2345cd7b_XMAIN,global_comparator_75c89176_XU16_2345cd7b_XMAIN,ten_taifbvbias_23bb219c_Xvbias1_2345cd7b_XMAIN,ten_tdiokvbias_23bb219c_Xvbias1_2345cd7b_XMAIN,ten_enablevbias_23bb219c_Xvbias1_2345cd7b_XMAIN);
   input  EN;
   input  IN;
   output  VCC;
@@ -31,10 +41,8 @@ module SERVICEwaltz0MAIN (EN,IN,VCC,BIAS,porb,REF0V9,go_vcc,CELG59462,CELV96848,
   input  CELG59462;
   input  CELV96848;
   output  CELBG83021;
-  output  OKREF03249;
   inout  kelvin_VCC;
   output  ok_service;
-  output  CELREF84329;
   input  CELSUB40948;
   output  ok_reference;
   input  IP_75c89176_XU16;
@@ -64,6 +72,20 @@ module SERVICEwaltz0MAIN (EN,IN,VCC,BIAS,porb,REF0V9,go_vcc,CELG59462,CELV96848,
   input  ten_taifbvbias_23bb219c_Xvbias1;
   input  ten_tdiokvbias_23bb219c_Xvbias1;
   input  ten_enablevbias_23bb219c_Xvbias1;
+  output  TAI_REF_553d3e5b_XU4_2345cd7b_XMAIN;
+  input  ten_ref_553d3e5b_XU4_2345cd7b_XMAIN;
+  output  TAI_REFBG_553d3e5b_XU4_2345cd7b_XMAIN;
+  input  ten_refbg_553d3e5b_XU4_2345cd7b_XMAIN;
+  output  TAI_VBIAS_23bb219c_Xvbias1_2345cd7b_XMAIN;
+  output  tdi_vbias_23bb219c_Xvbias1_2345cd7b_XMAIN;
+  input  ten_taiv2v5_23bb219c_Xvbias1_2345cd7b_XMAIN;
+  input  global_reference_553d3e5b_XU4_2345cd7b_XMAIN;
+  input  global_vbias_23bb219c_Xvbias1_2345cd7b_XMAIN;
+  input  ten_taiv1v0f_23bb219c_Xvbias1_2345cd7b_XMAIN;
+  input  global_comparator_75c89176_XU16_2345cd7b_XMAIN;
+  input  ten_taifbvbias_23bb219c_Xvbias1_2345cd7b_XMAIN;
+  input  ten_tdiokvbias_23bb219c_Xvbias1_2345cd7b_XMAIN;
+  input  ten_enablevbias_23bb219c_Xvbias1_2345cd7b_XMAIN;
 endmodule
 
 //Verilog HDL for "DFT", "DFTtm8" "functional"
@@ -142,7 +164,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SERVICEwaltz (EN, IN, TAO, VCC, tdo, tmi, BIAS, porb, REF0V9, CELG59462, CELV96848, CELBG83021, OKREF03249, kelvin_VCC, ok_service, CELREF84329, CELSUB40948, IP_75c89176_XU16, kelvin_GNDservice, celkelvin_IN_bc3b7675, celkelvin_GND_d75c3f7f, celkelvin_VCC_bc3b7675, celkelvin_BIAS_bc3b7675);
+module SERVICEwaltz (EN, IN, TAO, VCC, tdo, tmi, BIAS, porb, REF0V9, CELG59462, CELV96848, CELBG83021, kelvin_VCC, ok_service, CELSUB40948, IP_75c89176_XU16, kelvin_GNDservice, celkelvin_IN_bc3b7675, celkelvin_GND_d75c3f7f, celkelvin_VCC_bc3b7675, celkelvin_BIAS_bc3b7675);
 input  EN;
 input  IN;
 inout  TAO;
@@ -155,10 +177,8 @@ output  REF0V9;
 input  CELG59462;
 input  CELV96848;
 output  CELBG83021;
-output  OKREF03249;
 inout  kelvin_VCC;
 output  ok_service;
-output  CELREF84329;
 input  CELSUB40948;
 input  IP_75c89176_XU16;
 inout  kelvin_GNDservice;
@@ -217,7 +237,17 @@ SERVICEwaltz0DEBUG XDEBUG (
 .ten_a6a0ac97_XU3(ten_a6a0ac97_XU3),
 .ten_ec5776d4_XU6(ten_ec5776d4_XU6),
 .tdi_cd882763_XU15(tdi_cd882763_XU15),
-.ten_cd882763_XU15(ten_cd882763_XU15)
+.ten_cd882763_XU15(ten_cd882763_XU15),
+.TAI_a6a0ac97_XU3_63f6e3c4_XDEBUG(TAI_a6a0ac97_XU3_63f6e3c4_XDEBUG),
+.tdi_1955111b_XU7_63f6e3c4_XDEBUG(tdi_1955111b_XU7_63f6e3c4_XDEBUG),
+.tdi_742857bf_XU2_63f6e3c4_XDEBUG(tdi_742857bf_XU2_63f6e3c4_XDEBUG),
+.tdi_ec5776d4_XU6_63f6e3c4_XDEBUG(tdi_ec5776d4_XU6_63f6e3c4_XDEBUG),
+.ten_1955111b_XU7_63f6e3c4_XDEBUG(ten_1955111b_XU7_63f6e3c4_XDEBUG),
+.ten_742857bf_XU2_63f6e3c4_XDEBUG(ten_742857bf_XU2_63f6e3c4_XDEBUG),
+.ten_a6a0ac97_XU3_63f6e3c4_XDEBUG(ten_a6a0ac97_XU3_63f6e3c4_XDEBUG),
+.ten_ec5776d4_XU6_63f6e3c4_XDEBUG(ten_ec5776d4_XU6_63f6e3c4_XDEBUG),
+.tdi_cd882763_XU15_63f6e3c4_XDEBUG(tdi_cd882763_XU15_63f6e3c4_XDEBUG),
+.ten_cd882763_XU15_63f6e3c4_XDEBUG(ten_cd882763_XU15_63f6e3c4_XDEBUG)
 );
 
 SERVICEwaltz0MAIN XMAIN (
@@ -231,10 +261,8 @@ SERVICEwaltz0MAIN XMAIN (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELBG83021(CELBG83021),
-.OKREF03249(OKREF03249),
 .kelvin_VCC(kelvin_VCC),
 .ok_service(ok_service),
-.CELREF84329(CELREF84329),
 .CELSUB40948(CELSUB40948),
 .ok_reference(net_47),
 .IP_75c89176_XU16(IP_75c89176_XU16),
@@ -263,7 +291,21 @@ SERVICEwaltz0MAIN XMAIN (
 .global_comparator_75c89176_XU16(global_comparator_75c89176_XU16),
 .ten_taifbvbias_23bb219c_Xvbias1(ten_taifbvbias_23bb219c_Xvbias1),
 .ten_tdiokvbias_23bb219c_Xvbias1(ten_tdiokvbias_23bb219c_Xvbias1),
-.ten_enablevbias_23bb219c_Xvbias1(ten_enablevbias_23bb219c_Xvbias1)
+.ten_enablevbias_23bb219c_Xvbias1(ten_enablevbias_23bb219c_Xvbias1),
+.TAI_REF_553d3e5b_XU4_2345cd7b_XMAIN(TAI_REF_553d3e5b_XU4_2345cd7b_XMAIN),
+.ten_ref_553d3e5b_XU4_2345cd7b_XMAIN(ten_ref_553d3e5b_XU4_2345cd7b_XMAIN),
+.TAI_REFBG_553d3e5b_XU4_2345cd7b_XMAIN(TAI_REFBG_553d3e5b_XU4_2345cd7b_XMAIN),
+.ten_refbg_553d3e5b_XU4_2345cd7b_XMAIN(ten_refbg_553d3e5b_XU4_2345cd7b_XMAIN),
+.TAI_VBIAS_23bb219c_Xvbias1_2345cd7b_XMAIN(TAI_VBIAS_23bb219c_Xvbias1_2345cd7b_XMAIN),
+.tdi_vbias_23bb219c_Xvbias1_2345cd7b_XMAIN(tdi_vbias_23bb219c_Xvbias1_2345cd7b_XMAIN),
+.ten_taiv2v5_23bb219c_Xvbias1_2345cd7b_XMAIN(ten_taiv2v5_23bb219c_Xvbias1_2345cd7b_XMAIN),
+.global_reference_553d3e5b_XU4_2345cd7b_XMAIN(global_reference_553d3e5b_XU4_2345cd7b_XMAIN),
+.global_vbias_23bb219c_Xvbias1_2345cd7b_XMAIN(global_vbias_23bb219c_Xvbias1_2345cd7b_XMAIN),
+.ten_taiv1v0f_23bb219c_Xvbias1_2345cd7b_XMAIN(ten_taiv1v0f_23bb219c_Xvbias1_2345cd7b_XMAIN),
+.global_comparator_75c89176_XU16_2345cd7b_XMAIN(global_comparator_75c89176_XU16_2345cd7b_XMAIN),
+.ten_taifbvbias_23bb219c_Xvbias1_2345cd7b_XMAIN(ten_taifbvbias_23bb219c_Xvbias1_2345cd7b_XMAIN),
+.ten_tdiokvbias_23bb219c_Xvbias1_2345cd7b_XMAIN(ten_tdiokvbias_23bb219c_Xvbias1_2345cd7b_XMAIN),
+.ten_enablevbias_23bb219c_Xvbias1_2345cd7b_XMAIN(ten_enablevbias_23bb219c_Xvbias1_2345cd7b_XMAIN)
 );
 
 DFTtm8 dft_hex0x12 (
@@ -290,12 +332,36 @@ DFTtm8t dft_hex0x13 (
 .tmi(tmi[4:0])
 );
 
+DFTtm8 dft_hex0x29 (
+.G(CELG59462),
+.V(CELV96848),
+.a({d1,d0}),
+.SUB(CELSUB40948),
+.TAI({d0,d0,d0,d0,TAI_VBIAS_23bb219c_Xvbias1_2345cd7b_XMAIN,TAI_REFBG_553d3e5b_XU4_2345cd7b_XMAIN,TAI_REF_553d3e5b_XU4_2345cd7b_XMAIN,TAI_a6a0ac97_XU3_63f6e3c4_XDEBUG}),
+.TAO(TAO),
+.tdi({d0,d0,d0,tdi_vbias_23bb219c_Xvbias1_2345cd7b_XMAIN,tdi_cd882763_XU15_63f6e3c4_XDEBUG,tdi_ec5776d4_XU6_63f6e3c4_XDEBUG,tdi_742857bf_XU2_63f6e3c4_XDEBUG,tdi_1955111b_XU7_63f6e3c4_XDEBUG}),
+.tdo(tdo),
+.ten({ten_taiv2v5_23bb219c_Xvbias1_2345cd7b_XMAIN,ten_refbg_553d3e5b_XU4_2345cd7b_XMAIN,ten_ref_553d3e5b_XU4_2345cd7b_XMAIN,ten_cd882763_XU15_63f6e3c4_XDEBUG,ten_ec5776d4_XU6_63f6e3c4_XDEBUG,ten_a6a0ac97_XU3_63f6e3c4_XDEBUG,ten_742857bf_XU2_63f6e3c4_XDEBUG,ten_1955111b_XU7_63f6e3c4_XDEBUG}),
+.tma({d0,d0,d1,d0,d1,d0,d0,d1}),
+.tmi(tmi[4:0])
+);
+
+DFTtm8t dft_hex0x2A (
+.G(CELG59462),
+.V(CELV96848),
+.a({e1,e0}),
+.SUB(CELSUB40948),
+.ten({noconn_dft_hex0x2A_ten_7,ten_enablevbias_23bb219c_Xvbias1_2345cd7b_XMAIN,ten_tdiokvbias_23bb219c_Xvbias1_2345cd7b_XMAIN,ten_taifbvbias_23bb219c_Xvbias1_2345cd7b_XMAIN,global_comparator_75c89176_XU16_2345cd7b_XMAIN,ten_taiv1v0f_23bb219c_Xvbias1_2345cd7b_XMAIN,global_vbias_23bb219c_Xvbias1_2345cd7b_XMAIN,global_reference_553d3e5b_XU4_2345cd7b_XMAIN}),
+.tma({e0,e0,e1,e0,e1,e0,e1,e0}),
+.tmi(tmi[4:0])
+);
+
 drm56 drm_hex0x07 (
 .G(CELG59462),
 .V(CELV96848),
-.d0(d0),
-.d1(d1),
-.id({d0,d0,d0,d0,d0,d1,d1,d1}),
+.d0(g0),
+.d1(g1),
+.id({g0,g0,g0,g0,g0,g1,g1,g1}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
 .drm0({noconn_drm56_drm0_7,noconn_drm56_drm0_6,trim_ref_553d3e5b[5],trim_ref_553d3e5b[4],trim_ref_553d3e5b[3],trim_ref_553d3e5b[2],trim_ref_553d3e5b[1],trim_ref_553d3e5b[0]}),
@@ -305,15 +371,15 @@ drm56 drm_hex0x07 (
 .drm4({trim_vbiasneg_23bb219c[7],trim_vbiasneg_23bb219c[6],trim_vbiasneg_23bb219c[5],trim_vbiasneg_23bb219c[4],trim_vbiasneg_23bb219c[3],trim_vbiasneg_23bb219c[2],trim_vbiasneg_23bb219c[1],trim_vbiasneg_23bb219c[0]}),
 .drm5({trim_vbiaspos_23bb219c[7],trim_vbiaspos_23bb219c[6],trim_vbiaspos_23bb219c[5],trim_vbiaspos_23bb219c[4],trim_vbiaspos_23bb219c[3],trim_vbiaspos_23bb219c[2],trim_vbiaspos_23bb219c[1],trim_vbiaspos_23bb219c[0]}),
 .drm6({trim_vbiasref_23bb219c[7],trim_vbiasref_23bb219c[6],trim_vbiasref_23bb219c[5],trim_vbiasref_23bb219c[4],trim_vbiasref_23bb219c[3],trim_vbiasref_23bb219c[2],trim_vbiasref_23bb219c[1],trim_vbiasref_23bb219c[0]}),
-.por0({d0,d0,d0,d0,d0,d0,d0,d0}),
-.por1({d0,d0,d0,d0,d0,d0,d0,d0}),
-.por2({d0,d0,d0,d0,d0,d0,d0,d0}),
-.por3({d0,d0,d0,d0,d0,d0,d0,d0}),
-.por4({d0,d0,d0,d0,d0,d0,d0,d0}),
-.por5({d0,d0,d0,d0,d0,d0,d0,d0}),
-.por6({d0,d0,d0,d0,d0,d0,d0,d0}),
-.bypload(d0),
-.lastdrm(d0)
+.por0({g0,g0,g0,g0,g0,g0,g0,g0}),
+.por1({g0,g0,g0,g0,g0,g0,g0,g0}),
+.por2({g0,g0,g0,g0,g0,g0,g0,g0}),
+.por3({g0,g0,g0,g0,g0,g0,g0,g0}),
+.por4({g0,g0,g0,g0,g0,g0,g0,g0}),
+.por5({g0,g0,g0,g0,g0,g0,g0,g0}),
+.por6({g0,g0,g0,g0,g0,g0,g0,g0}),
+.bypload(g0),
+.lastdrm(g0)
 );
 
 STONEnoconn XNCnoconn_drm56_drm0_6 (
@@ -354,6 +420,10 @@ STONEnoconn XNCnoconn_drm56_drm3_7 (
 
 STONEnoconn XNCnoconn_dft_hex0x13_ten_7 (
 .noconn(noconn_dft_hex0x13_ten_7)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x2A_ten_7 (
+.noconn(noconn_dft_hex0x2A_ten_7)
 );
 
 endmodule

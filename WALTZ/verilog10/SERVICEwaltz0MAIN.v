@@ -99,18 +99,17 @@ module vbias_428cfc85 (IN1,IN2,CELG,VBIAS,CELSUB,ok_vbias,TAI_VBIAS,tdi_vbias,te
   input  ten_enablevbias;
 endmodule
 
-//Verilog HDL for "Generate", "WRAPPER1" "functional"
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
 
 
-module WRAPPER1 ( o, i );
+module STONEnoconn ( noconn );
 
-  input i;
-  output o;
+  input noconn;
 endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SERVICEwaltz0MAIN (EN, IN, VCC, BIAS, porb, REF0V9, go_vcc, CELG59462, CELV96848, CELBG83021, OKREF03249, kelvin_VCC, ok_service, CELREF84329, CELSUB40948, ok_reference, IP_75c89176_XU16, kelvin_GNDservice, trim_ref_553d3e5b, trim_refbg_553d3e5b, TAI_REF_553d3e5b_XU4, ten_ref_553d3e5b_XU4, celkelvin_IN_bc3b7675, TAI_REFBG_553d3e5b_XU4, celkelvin_GND_d75c3f7f, celkelvin_VCC_bc3b7675, ten_refbg_553d3e5b_XU4, trim_vbiasneg_23bb219c, trim_vbiaspos_23bb219c, trim_vbiasref_23bb219c, celkelvin_BIAS_bc3b7675, factory_refccn_553d3e5b, factory_refccp_553d3e5b, TAI_VBIAS_23bb219c_Xvbias1, tdi_vbias_23bb219c_Xvbias1, ten_taiv2v5_23bb219c_Xvbias1, global_reference_553d3e5b_XU4, global_vbias_23bb219c_Xvbias1, ten_taiv1v0f_23bb219c_Xvbias1, global_comparator_75c89176_XU16, ten_taifbvbias_23bb219c_Xvbias1, ten_tdiokvbias_23bb219c_Xvbias1, ten_enablevbias_23bb219c_Xvbias1);
+module SERVICEwaltz0MAIN (EN, IN, VCC, BIAS, porb, REF0V9, go_vcc, CELG59462, CELV96848, CELBG83021, kelvin_VCC, ok_service, CELSUB40948, ok_reference, IP_75c89176_XU16, kelvin_GNDservice, trim_ref_553d3e5b, trim_refbg_553d3e5b, TAI_REF_553d3e5b_XU4, ten_ref_553d3e5b_XU4, celkelvin_IN_bc3b7675, TAI_REFBG_553d3e5b_XU4, celkelvin_GND_d75c3f7f, celkelvin_VCC_bc3b7675, ten_refbg_553d3e5b_XU4, trim_vbiasneg_23bb219c, trim_vbiaspos_23bb219c, trim_vbiasref_23bb219c, celkelvin_BIAS_bc3b7675, factory_refccn_553d3e5b, factory_refccp_553d3e5b, TAI_VBIAS_23bb219c_Xvbias1, tdi_vbias_23bb219c_Xvbias1, ten_taiv2v5_23bb219c_Xvbias1, global_reference_553d3e5b_XU4, global_vbias_23bb219c_Xvbias1, ten_taiv1v0f_23bb219c_Xvbias1, global_comparator_75c89176_XU16, ten_taifbvbias_23bb219c_Xvbias1, ten_tdiokvbias_23bb219c_Xvbias1, ten_enablevbias_23bb219c_Xvbias1, TAI_REF_553d3e5b_XU4_2345cd7b_XMAIN, ten_ref_553d3e5b_XU4_2345cd7b_XMAIN, TAI_REFBG_553d3e5b_XU4_2345cd7b_XMAIN, ten_refbg_553d3e5b_XU4_2345cd7b_XMAIN, TAI_VBIAS_23bb219c_Xvbias1_2345cd7b_XMAIN, tdi_vbias_23bb219c_Xvbias1_2345cd7b_XMAIN, ten_taiv2v5_23bb219c_Xvbias1_2345cd7b_XMAIN, global_reference_553d3e5b_XU4_2345cd7b_XMAIN, global_vbias_23bb219c_Xvbias1_2345cd7b_XMAIN, ten_taiv1v0f_23bb219c_Xvbias1_2345cd7b_XMAIN, global_comparator_75c89176_XU16_2345cd7b_XMAIN, ten_taifbvbias_23bb219c_Xvbias1_2345cd7b_XMAIN, ten_tdiokvbias_23bb219c_Xvbias1_2345cd7b_XMAIN, ten_enablevbias_23bb219c_Xvbias1_2345cd7b_XMAIN);
 input  EN;
 input  IN;
 output  VCC;
@@ -121,10 +120,8 @@ output  go_vcc;
 input  CELG59462;
 input  CELV96848;
 output  CELBG83021;
-output  OKREF03249;
 inout  kelvin_VCC;
 output  ok_service;
-output  CELREF84329;
 input  CELSUB40948;
 output  ok_reference;
 input  IP_75c89176_XU16;
@@ -154,6 +151,20 @@ input  global_comparator_75c89176_XU16;
 input  ten_taifbvbias_23bb219c_Xvbias1;
 input  ten_tdiokvbias_23bb219c_Xvbias1;
 input  ten_enablevbias_23bb219c_Xvbias1;
+output  TAI_REF_553d3e5b_XU4_2345cd7b_XMAIN;
+input  ten_ref_553d3e5b_XU4_2345cd7b_XMAIN;
+output  TAI_REFBG_553d3e5b_XU4_2345cd7b_XMAIN;
+input  ten_refbg_553d3e5b_XU4_2345cd7b_XMAIN;
+output  TAI_VBIAS_23bb219c_Xvbias1_2345cd7b_XMAIN;
+output  tdi_vbias_23bb219c_Xvbias1_2345cd7b_XMAIN;
+input  ten_taiv2v5_23bb219c_Xvbias1_2345cd7b_XMAIN;
+input  global_reference_553d3e5b_XU4_2345cd7b_XMAIN;
+input  global_vbias_23bb219c_Xvbias1_2345cd7b_XMAIN;
+input  ten_taiv1v0f_23bb219c_Xvbias1_2345cd7b_XMAIN;
+input  global_comparator_75c89176_XU16_2345cd7b_XMAIN;
+input  ten_taifbvbias_23bb219c_Xvbias1_2345cd7b_XMAIN;
+input  ten_tdiokvbias_23bb219c_Xvbias1_2345cd7b_XMAIN;
+input  ten_enablevbias_23bb219c_Xvbias1_2345cd7b_XMAIN;
 
 
 // ------------------------ Wires ------------------------
@@ -273,14 +284,20 @@ vbias_428cfc85 Xvbias1 (
 .ten_enablevbias(ten_enablevbias_23bb219c_Xvbias1)
 );
 
-WRAPPER1 XWRAP_OKREF (
-.i(ok_reference),
-.o(OKREF03249)
+STONEnoconn XNCTAI_REF_553d3e5b_XU4_2345cd7b_XMAIN (
+.noconn(TAI_REF_553d3e5b_XU4_2345cd7b_XMAIN)
 );
 
-WRAPPER1 XWRAP_CELREF (
-.i(REF0V9),
-.o(CELREF84329)
+STONEnoconn XNCTAI_REFBG_553d3e5b_XU4_2345cd7b_XMAIN (
+.noconn(TAI_REFBG_553d3e5b_XU4_2345cd7b_XMAIN)
+);
+
+STONEnoconn XNCTAI_VBIAS_23bb219c_Xvbias1_2345cd7b_XMAIN (
+.noconn(TAI_VBIAS_23bb219c_Xvbias1_2345cd7b_XMAIN)
+);
+
+STONEnoconn XNCtdi_vbias_23bb219c_Xvbias1_2345cd7b_XMAIN (
+.noconn(tdi_vbias_23bb219c_Xvbias1_2345cd7b_XMAIN)
 );
 
 endmodule

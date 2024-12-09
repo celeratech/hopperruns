@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module DRIVERwaltzBBM (topon,bottomon,topstate,CELG59462,CELV96848,bbm_topon,topstatus,CELSUB40948,bottomstate,bbm_bottomon,bottomstatus,BBMstatus_b07e0c43,factory_timingskew_7229e0fa,factory_timingskew_a04dd5f1);
+module DRIVERwaltzBBM (topon,bottomon,topstate,CELG59462,CELV96848,bbm_topon,topstatus,CELSUB40948,bottomstate,bbm_bottomon,bottomstatus,BBMstatus_5ecfcf89,factory_timingskew_7229e0fa,factory_timingskew_a04dd5f1);
   output  topon;
   output  bottomon;
   input  topstate;
@@ -11,12 +11,12 @@ module DRIVERwaltzBBM (topon,bottomon,topstate,CELG59462,CELV96848,bbm_topon,top
   input  bottomstate;
   output  bbm_bottomon;
   input  bottomstatus;
-  input [1:0] BBMstatus_b07e0c43;
+  input [1:0] BBMstatus_5ecfcf89;
   input [4:0] factory_timingskew_7229e0fa;
   input [4:0] factory_timingskew_a04dd5f1;
 endmodule
 
-module DRIVERwaltz0BOTN (SW,MUDV,PMUDG,PMUDV,botswon,CELG59462,CELV96848,botswineg,botswipeak,CELSUB40948,botswstatus,botswzcross,enable_driver,IP_14d08c8e_XU3,IP_a0afb596_XU9,IP_2d447a5c_XU17,trim_currentlimit_14d08c8e,trim_currentlimit_2d447a5c,trim_currentlimit_a0afb596,global_currentlimit_14d08c8e_XU3,global_currentlimit_a0afb596_XU9,global_currentlimit_2d447a5c_XU17,tdi_currentlimitlive_14d08c8e_XU3,tdi_currentlimitlive_a0afb596_XU9,tdi_currentlimitlive_2d447a5c_XU17,global_fetdriver_bd0adf3c_Xfetdriver1,ten_measure_currentlimit_14d08c8e_XU3,ten_measure_currentlimit_a0afb596_XU9,ten_measure_currentlimit_2d447a5c_XU17);
+module DRIVERwaltz0BOTN (SW,MUDV,PMUDG,PMUDV,botswon,CELG59462,CELV96848,botswineg,botswipeak,CELSUB40948,botswstatus,botswzcross,enable_driver,IP_14d08c8e_XU3,IP_a0afb596_XU9,IP_2d447a5c_XU17,trim_currentlimit_14d08c8e,trim_currentlimit_2d447a5c,trim_currentlimit_a0afb596,global_currentlimit_14d08c8e_XU3,global_currentlimit_a0afb596_XU9,global_currentlimit_2d447a5c_XU17,tdi_currentlimitlive_14d08c8e_XU3,tdi_currentlimitlive_a0afb596_XU9,tdi_currentlimitlive_2d447a5c_XU17,global_fetdriver_bd0adf3c_Xfetdriver1,ten_measure_currentlimit_14d08c8e_XU3,ten_measure_currentlimit_a0afb596_XU9,ten_measure_currentlimit_2d447a5c_XU17,global_currentlimit_14d08c8e_XU3_ba40258e_XBOTSW,global_currentlimit_a0afb596_XU9_ba40258e_XBOTSW,global_currentlimit_2d447a5c_XU17_ba40258e_XBOTSW,tdi_currentlimitlive_14d08c8e_XU3_ba40258e_XBOTSW,tdi_currentlimitlive_a0afb596_XU9_ba40258e_XBOTSW,tdi_currentlimitlive_2d447a5c_XU17_ba40258e_XBOTSW,global_fetdriver_bd0adf3c_Xfetdriver1_ba40258e_XBOTSW,ten_measure_currentlimit_14d08c8e_XU3_ba40258e_XBOTSW,ten_measure_currentlimit_a0afb596_XU9_ba40258e_XBOTSW,ten_measure_currentlimit_2d447a5c_XU17_ba40258e_XBOTSW);
   inout  SW;
   input  MUDV;
   inout  PMUDG;
@@ -46,9 +46,19 @@ module DRIVERwaltz0BOTN (SW,MUDV,PMUDG,PMUDV,botswon,CELG59462,CELV96848,botswin
   input  ten_measure_currentlimit_14d08c8e_XU3;
   input  ten_measure_currentlimit_a0afb596_XU9;
   input  ten_measure_currentlimit_2d447a5c_XU17;
+  input  global_currentlimit_14d08c8e_XU3_ba40258e_XBOTSW;
+  input  global_currentlimit_a0afb596_XU9_ba40258e_XBOTSW;
+  input  global_currentlimit_2d447a5c_XU17_ba40258e_XBOTSW;
+  output  tdi_currentlimitlive_14d08c8e_XU3_ba40258e_XBOTSW;
+  output  tdi_currentlimitlive_a0afb596_XU9_ba40258e_XBOTSW;
+  output  tdi_currentlimitlive_2d447a5c_XU17_ba40258e_XBOTSW;
+  input  global_fetdriver_bd0adf3c_Xfetdriver1_ba40258e_XBOTSW;
+  input  ten_measure_currentlimit_14d08c8e_XU3_ba40258e_XBOTSW;
+  input  ten_measure_currentlimit_a0afb596_XU9_ba40258e_XBOTSW;
+  input  ten_measure_currentlimit_2d447a5c_XU17_ba40258e_XBOTSW;
 endmodule
 
-module DRIVERwaltz0DEBUG (botstate,topstate,CELG59462,CELV96848,botswineg,ok_driver,botswipeak,topswipeak,CELSUB40948,botswstatus,botswzcross,topswstatus,enable_driver,hijack_botstate,hijack_topstate,tdi_2a0216d2_XU20,tdi_32f97a89_XU11,tdi_34071f1d_XU15,tdi_3788e0aa_XU16,tdi_e5798d25_XU18,tdi_f83f6ba2_XU10,tdi_fcfb2c12_XU12,ten_2a0216d2_XU20,ten_32f97a89_XU11,ten_34071f1d_XU15,ten_3788e0aa_XU16,ten_e5798d25_XU18,ten_f83f6ba2_XU10,ten_fcfb2c12_XU12,hijack_enable_driver,ten_hijack_a6d52f4f_XU9,ten_hijack_af379456_XU5,ten_hijack_cad020c2_XU6,ten_hijacki_a6d52f4f_XU9,ten_hijacki_af379456_XU5,ten_hijacki_cad020c2_XU6);
+module DRIVERwaltz0DEBUG (botstate,topstate,CELG59462,CELV96848,botswineg,ok_driver,botswipeak,topswipeak,CELSUB40948,botswstatus,botswzcross,topswstatus,enable_driver,hijack_botstate,hijack_topstate,tdi_2a0216d2_XU20,tdi_32f97a89_XU11,tdi_34071f1d_XU15,tdi_3788e0aa_XU16,tdi_e5798d25_XU18,tdi_f83f6ba2_XU10,tdi_fcfb2c12_XU12,ten_2a0216d2_XU20,ten_32f97a89_XU11,ten_34071f1d_XU15,ten_3788e0aa_XU16,ten_e5798d25_XU18,ten_f83f6ba2_XU10,ten_fcfb2c12_XU12,hijack_enable_driver,ten_hijack_a6d52f4f_XU9,ten_hijack_af379456_XU5,ten_hijack_cad020c2_XU6,ten_hijacki_a6d52f4f_XU9,ten_hijacki_af379456_XU5,ten_hijacki_cad020c2_XU6,tdi_2a0216d2_XU20_c1b82e6f_XDEBUG,tdi_32f97a89_XU11_c1b82e6f_XDEBUG,tdi_34071f1d_XU15_c1b82e6f_XDEBUG,tdi_3788e0aa_XU16_c1b82e6f_XDEBUG,tdi_e5798d25_XU18_c1b82e6f_XDEBUG,tdi_f83f6ba2_XU10_c1b82e6f_XDEBUG,tdi_fcfb2c12_XU12_c1b82e6f_XDEBUG,ten_2a0216d2_XU20_c1b82e6f_XDEBUG,ten_32f97a89_XU11_c1b82e6f_XDEBUG,ten_34071f1d_XU15_c1b82e6f_XDEBUG,ten_3788e0aa_XU16_c1b82e6f_XDEBUG,ten_e5798d25_XU18_c1b82e6f_XDEBUG,ten_f83f6ba2_XU10_c1b82e6f_XDEBUG,ten_fcfb2c12_XU12_c1b82e6f_XDEBUG,ten_hijack_a6d52f4f_XU9_c1b82e6f_XDEBUG,ten_hijack_af379456_XU5_c1b82e6f_XDEBUG,ten_hijack_cad020c2_XU6_c1b82e6f_XDEBUG,ten_hijacki_a6d52f4f_XU9_c1b82e6f_XDEBUG,ten_hijacki_af379456_XU5_c1b82e6f_XDEBUG,ten_hijacki_cad020c2_XU6_c1b82e6f_XDEBUG);
   input  botstate;
   input  topstate;
   input  CELG59462;
@@ -85,9 +95,29 @@ module DRIVERwaltz0DEBUG (botstate,topstate,CELG59462,CELV96848,botswineg,ok_dri
   input  ten_hijacki_a6d52f4f_XU9;
   input  ten_hijacki_af379456_XU5;
   input  ten_hijacki_cad020c2_XU6;
+  output  tdi_2a0216d2_XU20_c1b82e6f_XDEBUG;
+  output  tdi_32f97a89_XU11_c1b82e6f_XDEBUG;
+  output  tdi_34071f1d_XU15_c1b82e6f_XDEBUG;
+  output  tdi_3788e0aa_XU16_c1b82e6f_XDEBUG;
+  output  tdi_e5798d25_XU18_c1b82e6f_XDEBUG;
+  output  tdi_f83f6ba2_XU10_c1b82e6f_XDEBUG;
+  output  tdi_fcfb2c12_XU12_c1b82e6f_XDEBUG;
+  input  ten_2a0216d2_XU20_c1b82e6f_XDEBUG;
+  input  ten_32f97a89_XU11_c1b82e6f_XDEBUG;
+  input  ten_34071f1d_XU15_c1b82e6f_XDEBUG;
+  input  ten_3788e0aa_XU16_c1b82e6f_XDEBUG;
+  input  ten_e5798d25_XU18_c1b82e6f_XDEBUG;
+  input  ten_f83f6ba2_XU10_c1b82e6f_XDEBUG;
+  input  ten_fcfb2c12_XU12_c1b82e6f_XDEBUG;
+  input  ten_hijack_a6d52f4f_XU9_c1b82e6f_XDEBUG;
+  input  ten_hijack_af379456_XU5_c1b82e6f_XDEBUG;
+  input  ten_hijack_cad020c2_XU6_c1b82e6f_XDEBUG;
+  input  ten_hijacki_a6d52f4f_XU9_c1b82e6f_XDEBUG;
+  input  ten_hijacki_af379456_XU5_c1b82e6f_XDEBUG;
+  input  ten_hijacki_cad020c2_XU6_c1b82e6f_XDEBUG;
 endmodule
 
-module DRIVERwaltz0TOPN (SW,BSTV,MUDV,MUDHV,PMUDV,PMUDHV,enable,topswon,CELG59462,CELV96848,ok_driver,topswipeak,CELSUB40948,IREF_DRIVER,botswstatus,topswstatus,ISLOPE_DRIVER,IP_f4252e65_XU22,DISABLEslope_07db7e9a,trim_slopecomp_f4252e65,global_cboot_35156756_XU17,trim_currentlimit_98fa5525,TAI_ISLOPECOMP_f4252e65_XU22,global_slopecomp_f4252e65_XU22,ten_taiislopecomp_f4252e65_XU22,tdi_currentlimitlive_98fa5525_XU2,global_fetdriver_8018c87b_Xfetdriver,ten_measure_currentlimit_98fa5525_XU2,factory_currentlimit_blanking_98fa5525);
+module DRIVERwaltz0TOPN (SW,BSTV,MUDV,MUDHV,PMUDV,PMUDHV,enable,topswon,CELG59462,CELV96848,ok_driver,topswipeak,CELSUB40948,IREF_DRIVER,botswstatus,topswstatus,ISLOPE_DRIVER,IP_f4252e65_XU22,DISABLEslope_650ee20e,trim_slopecomp_f4252e65,global_cboot_35156756_XU17,trim_currentlimit_98fa5525,TAI_ISLOPECOMP_f4252e65_XU22,global_slopecomp_f4252e65_XU22,ten_taiislopecomp_f4252e65_XU22,tdi_currentlimitlive_98fa5525_XU2,global_fetdriver_8018c87b_Xfetdriver,ten_measure_currentlimit_98fa5525_XU2,factory_currentlimit_blanking_98fa5525,global_cboot_35156756_XU17_f604d85e_XTOPSW,TAI_ISLOPECOMP_f4252e65_XU22_f604d85e_XTOPSW,global_slopecomp_f4252e65_XU22_f604d85e_XTOPSW,ten_taiislopecomp_f4252e65_XU22_f604d85e_XTOPSW,tdi_currentlimitlive_98fa5525_XU2_f604d85e_XTOPSW,global_fetdriver_8018c87b_Xfetdriver_f604d85e_XTOPSW,ten_measure_currentlimit_98fa5525_XU2_f604d85e_XTOPSW);
   inout  SW;
   input  BSTV;
   input  MUDV;
@@ -106,7 +136,7 @@ module DRIVERwaltz0TOPN (SW,BSTV,MUDV,MUDHV,PMUDV,PMUDHV,enable,topswon,CELG5946
   output  topswstatus;
   input  ISLOPE_DRIVER;
   input  IP_f4252e65_XU22;
-  input  DISABLEslope_07db7e9a;
+  input  DISABLEslope_650ee20e;
   input [3:0] trim_slopecomp_f4252e65;
   input  global_cboot_35156756_XU17;
   input [7:0] trim_currentlimit_98fa5525;
@@ -117,6 +147,13 @@ module DRIVERwaltz0TOPN (SW,BSTV,MUDV,MUDHV,PMUDV,PMUDHV,enable,topswon,CELG5946
   input  global_fetdriver_8018c87b_Xfetdriver;
   input  ten_measure_currentlimit_98fa5525_XU2;
   input [4:0] factory_currentlimit_blanking_98fa5525;
+  input  global_cboot_35156756_XU17_f604d85e_XTOPSW;
+  output  TAI_ISLOPECOMP_f4252e65_XU22_f604d85e_XTOPSW;
+  input  global_slopecomp_f4252e65_XU22_f604d85e_XTOPSW;
+  input  ten_taiislopecomp_f4252e65_XU22_f604d85e_XTOPSW;
+  output  tdi_currentlimitlive_98fa5525_XU2_f604d85e_XTOPSW;
+  input  global_fetdriver_8018c87b_Xfetdriver_f604d85e_XTOPSW;
+  input  ten_measure_currentlimit_98fa5525_XU2_f604d85e_XTOPSW;
 endmodule
 
 //Verilog HDL for "DFT", "DFTtm8" "functional"
@@ -249,7 +286,7 @@ input  IP_f4252e65_XU22;
 
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
-wire [1:0] BBMstatus_b07e0c43;
+wire [1:0] BBMstatus_5ecfcf89;
 wire [4:0] factory_timingskew_7229e0fa;
 wire [4:0] factory_timingskew_a04dd5f1;
 wire [7:0] trim_currentlimit_14d08c8e;
@@ -294,7 +331,7 @@ DRIVERwaltzBBM XBBM (
 .bottomstate(net_110),
 .bbm_bottomon(bbm_bottomon),
 .bottomstatus(net_107),
-.BBMstatus_b07e0c43(BBMstatus_b07e0c43[1:0]),
+.BBMstatus_5ecfcf89(BBMstatus_5ecfcf89[1:0]),
 .factory_timingskew_7229e0fa(factory_timingskew_7229e0fa[4:0]),
 .factory_timingskew_a04dd5f1(factory_timingskew_a04dd5f1[4:0])
 );
@@ -328,7 +365,17 @@ DRIVERwaltz0BOTN XBOTSW (
 .global_fetdriver_bd0adf3c_Xfetdriver1(global_fetdriver_bd0adf3c_Xfetdriver1),
 .ten_measure_currentlimit_14d08c8e_XU3(ten_measure_currentlimit_14d08c8e_XU3),
 .ten_measure_currentlimit_a0afb596_XU9(ten_measure_currentlimit_a0afb596_XU9),
-.ten_measure_currentlimit_2d447a5c_XU17(ten_measure_currentlimit_2d447a5c_XU17)
+.ten_measure_currentlimit_2d447a5c_XU17(ten_measure_currentlimit_2d447a5c_XU17),
+.global_currentlimit_14d08c8e_XU3_ba40258e_XBOTSW(global_currentlimit_14d08c8e_XU3_ba40258e_XBOTSW),
+.global_currentlimit_a0afb596_XU9_ba40258e_XBOTSW(global_currentlimit_a0afb596_XU9_ba40258e_XBOTSW),
+.global_currentlimit_2d447a5c_XU17_ba40258e_XBOTSW(global_currentlimit_2d447a5c_XU17_ba40258e_XBOTSW),
+.tdi_currentlimitlive_14d08c8e_XU3_ba40258e_XBOTSW(tdi_currentlimitlive_14d08c8e_XU3_ba40258e_XBOTSW),
+.tdi_currentlimitlive_a0afb596_XU9_ba40258e_XBOTSW(tdi_currentlimitlive_a0afb596_XU9_ba40258e_XBOTSW),
+.tdi_currentlimitlive_2d447a5c_XU17_ba40258e_XBOTSW(tdi_currentlimitlive_2d447a5c_XU17_ba40258e_XBOTSW),
+.global_fetdriver_bd0adf3c_Xfetdriver1_ba40258e_XBOTSW(global_fetdriver_bd0adf3c_Xfetdriver1_ba40258e_XBOTSW),
+.ten_measure_currentlimit_14d08c8e_XU3_ba40258e_XBOTSW(ten_measure_currentlimit_14d08c8e_XU3_ba40258e_XBOTSW),
+.ten_measure_currentlimit_a0afb596_XU9_ba40258e_XBOTSW(ten_measure_currentlimit_a0afb596_XU9_ba40258e_XBOTSW),
+.ten_measure_currentlimit_2d447a5c_XU17_ba40258e_XBOTSW(ten_measure_currentlimit_2d447a5c_XU17_ba40258e_XBOTSW)
 );
 
 DRIVERwaltz0DEBUG XDEBUG (
@@ -367,7 +414,27 @@ DRIVERwaltz0DEBUG XDEBUG (
 .ten_hijack_cad020c2_XU6(ten_hijack_cad020c2_XU6),
 .ten_hijacki_a6d52f4f_XU9(ten_hijacki_a6d52f4f_XU9),
 .ten_hijacki_af379456_XU5(ten_hijacki_af379456_XU5),
-.ten_hijacki_cad020c2_XU6(ten_hijacki_cad020c2_XU6)
+.ten_hijacki_cad020c2_XU6(ten_hijacki_cad020c2_XU6),
+.tdi_2a0216d2_XU20_c1b82e6f_XDEBUG(tdi_2a0216d2_XU20_c1b82e6f_XDEBUG),
+.tdi_32f97a89_XU11_c1b82e6f_XDEBUG(tdi_32f97a89_XU11_c1b82e6f_XDEBUG),
+.tdi_34071f1d_XU15_c1b82e6f_XDEBUG(tdi_34071f1d_XU15_c1b82e6f_XDEBUG),
+.tdi_3788e0aa_XU16_c1b82e6f_XDEBUG(tdi_3788e0aa_XU16_c1b82e6f_XDEBUG),
+.tdi_e5798d25_XU18_c1b82e6f_XDEBUG(tdi_e5798d25_XU18_c1b82e6f_XDEBUG),
+.tdi_f83f6ba2_XU10_c1b82e6f_XDEBUG(tdi_f83f6ba2_XU10_c1b82e6f_XDEBUG),
+.tdi_fcfb2c12_XU12_c1b82e6f_XDEBUG(tdi_fcfb2c12_XU12_c1b82e6f_XDEBUG),
+.ten_2a0216d2_XU20_c1b82e6f_XDEBUG(ten_2a0216d2_XU20_c1b82e6f_XDEBUG),
+.ten_32f97a89_XU11_c1b82e6f_XDEBUG(ten_32f97a89_XU11_c1b82e6f_XDEBUG),
+.ten_34071f1d_XU15_c1b82e6f_XDEBUG(ten_34071f1d_XU15_c1b82e6f_XDEBUG),
+.ten_3788e0aa_XU16_c1b82e6f_XDEBUG(ten_3788e0aa_XU16_c1b82e6f_XDEBUG),
+.ten_e5798d25_XU18_c1b82e6f_XDEBUG(ten_e5798d25_XU18_c1b82e6f_XDEBUG),
+.ten_f83f6ba2_XU10_c1b82e6f_XDEBUG(ten_f83f6ba2_XU10_c1b82e6f_XDEBUG),
+.ten_fcfb2c12_XU12_c1b82e6f_XDEBUG(ten_fcfb2c12_XU12_c1b82e6f_XDEBUG),
+.ten_hijack_a6d52f4f_XU9_c1b82e6f_XDEBUG(ten_hijack_a6d52f4f_XU9_c1b82e6f_XDEBUG),
+.ten_hijack_af379456_XU5_c1b82e6f_XDEBUG(ten_hijack_af379456_XU5_c1b82e6f_XDEBUG),
+.ten_hijack_cad020c2_XU6_c1b82e6f_XDEBUG(ten_hijack_cad020c2_XU6_c1b82e6f_XDEBUG),
+.ten_hijacki_a6d52f4f_XU9_c1b82e6f_XDEBUG(ten_hijacki_a6d52f4f_XU9_c1b82e6f_XDEBUG),
+.ten_hijacki_af379456_XU5_c1b82e6f_XDEBUG(ten_hijacki_af379456_XU5_c1b82e6f_XDEBUG),
+.ten_hijacki_cad020c2_XU6_c1b82e6f_XDEBUG(ten_hijacki_cad020c2_XU6_c1b82e6f_XDEBUG)
 );
 
 DRIVERwaltz0TOPN XTOPSW (
@@ -389,7 +456,7 @@ DRIVERwaltz0TOPN XTOPSW (
 .topswstatus(net_105),
 .ISLOPE_DRIVER(ISLOPE_DRIVER),
 .IP_f4252e65_XU22(IP_f4252e65_XU22),
-.DISABLEslope_07db7e9a(DISABLEslope_07db7e9a),
+.DISABLEslope_650ee20e(DISABLEslope_650ee20e),
 .trim_slopecomp_f4252e65(trim_slopecomp_f4252e65[3:0]),
 .global_cboot_35156756_XU17(global_cboot_35156756_XU17),
 .trim_currentlimit_98fa5525(trim_currentlimit_98fa5525[7:0]),
@@ -399,7 +466,14 @@ DRIVERwaltz0TOPN XTOPSW (
 .tdi_currentlimitlive_98fa5525_XU2(tdi_currentlimitlive_98fa5525_XU2),
 .global_fetdriver_8018c87b_Xfetdriver(global_fetdriver_8018c87b_Xfetdriver),
 .ten_measure_currentlimit_98fa5525_XU2(ten_measure_currentlimit_98fa5525_XU2),
-.factory_currentlimit_blanking_98fa5525(factory_currentlimit_blanking_98fa5525[4:0])
+.factory_currentlimit_blanking_98fa5525(factory_currentlimit_blanking_98fa5525[4:0]),
+.global_cboot_35156756_XU17_f604d85e_XTOPSW(global_cboot_35156756_XU17_f604d85e_XTOPSW),
+.TAI_ISLOPECOMP_f4252e65_XU22_f604d85e_XTOPSW(TAI_ISLOPECOMP_f4252e65_XU22_f604d85e_XTOPSW),
+.global_slopecomp_f4252e65_XU22_f604d85e_XTOPSW(global_slopecomp_f4252e65_XU22_f604d85e_XTOPSW),
+.ten_taiislopecomp_f4252e65_XU22_f604d85e_XTOPSW(ten_taiislopecomp_f4252e65_XU22_f604d85e_XTOPSW),
+.tdi_currentlimitlive_98fa5525_XU2_f604d85e_XTOPSW(tdi_currentlimitlive_98fa5525_XU2_f604d85e_XTOPSW),
+.global_fetdriver_8018c87b_Xfetdriver_f604d85e_XTOPSW(global_fetdriver_8018c87b_Xfetdriver_f604d85e_XTOPSW),
+.ten_measure_currentlimit_98fa5525_XU2_f604d85e_XTOPSW(ten_measure_currentlimit_98fa5525_XU2_f604d85e_XTOPSW)
 );
 
 DFTtm8 dft_hex0x05 (
@@ -448,15 +522,61 @@ DFTtm8t dft_hex0x08 (
 .tmi(tmi[4:0])
 );
 
+DFTtm8 dft_hex0x1A (
+.G(CELG59462),
+.V(CELV96848),
+.a({f1,f0}),
+.SUB(CELSUB40948),
+.TAI({f0,f0,f0,f0,f0,f0,f0,TAI_ISLOPECOMP_f4252e65_XU22_f604d85e_XTOPSW}),
+.TAO(TAO),
+.tdi({tdi_e5798d25_XU18_c1b82e6f_XDEBUG,tdi_3788e0aa_XU16_c1b82e6f_XDEBUG,tdi_34071f1d_XU15_c1b82e6f_XDEBUG,tdi_32f97a89_XU11_c1b82e6f_XDEBUG,tdi_2a0216d2_XU20_c1b82e6f_XDEBUG,tdi_currentlimitlive_2d447a5c_XU17_ba40258e_XBOTSW,tdi_currentlimitlive_a0afb596_XU9_ba40258e_XBOTSW,tdi_currentlimitlive_14d08c8e_XU3_ba40258e_XBOTSW}),
+.tdo(tdo),
+.ten({global_currentlimit_a0afb596_XU9_ba40258e_XBOTSW,global_currentlimit_14d08c8e_XU3_ba40258e_XBOTSW,ten_hijacki_a6d52f4f_XU9,ten_hijack_a6d52f4f_XU9,ten_hijacki_cad020c2_XU6,ten_hijack_cad020c2_XU6,ten_hijacki_af379456_XU5,ten_hijack_af379456_XU5}),
+.tma({f0,f0,f0,f1,f1,f0,f1,f0}),
+.tmi(tmi[4:0])
+);
+
+DFTtm8d dft_hex0x1B (
+.G(CELG59462),
+.V(CELV96848),
+.a({g1,g0}),
+.SUB(CELSUB40948),
+.tdi({g0,g0,g0,g0,g0,tdi_currentlimitlive_98fa5525_XU2_f604d85e_XTOPSW,tdi_fcfb2c12_XU12_c1b82e6f_XDEBUG,tdi_f83f6ba2_XU10_c1b82e6f_XDEBUG}),
+.tdo(tdo),
+.ten({ten_34071f1d_XU15_c1b82e6f_XDEBUG,ten_32f97a89_XU11_c1b82e6f_XDEBUG,ten_2a0216d2_XU20_c1b82e6f_XDEBUG,ten_measure_currentlimit_2d447a5c_XU17_ba40258e_XBOTSW,ten_measure_currentlimit_a0afb596_XU9_ba40258e_XBOTSW,ten_measure_currentlimit_14d08c8e_XU3_ba40258e_XBOTSW,global_fetdriver_bd0adf3c_Xfetdriver1_ba40258e_XBOTSW,global_currentlimit_2d447a5c_XU17_ba40258e_XBOTSW}),
+.tma({g0,g0,g0,g1,g1,g0,g1,g1}),
+.tmi(tmi[4:0])
+);
+
+DFTtm8t dft_hex0x1C (
+.G(CELG59462),
+.V(CELV96848),
+.a({h1,h0}),
+.SUB(CELSUB40948),
+.ten({ten_hijacki_a6d52f4f_XU9_c1b82e6f_XDEBUG,ten_hijack_cad020c2_XU6_c1b82e6f_XDEBUG,ten_hijack_af379456_XU5_c1b82e6f_XDEBUG,ten_hijack_a6d52f4f_XU9_c1b82e6f_XDEBUG,ten_fcfb2c12_XU12_c1b82e6f_XDEBUG,ten_f83f6ba2_XU10_c1b82e6f_XDEBUG,ten_e5798d25_XU18_c1b82e6f_XDEBUG,ten_3788e0aa_XU16_c1b82e6f_XDEBUG}),
+.tma({h0,h0,h0,h1,h1,h1,h0,h0}),
+.tmi(tmi[4:0])
+);
+
+DFTtm8t dft_hex0x1D (
+.G(CELG59462),
+.V(CELV96848),
+.a({i1,i0}),
+.SUB(CELSUB40948),
+.ten({noconn_dft_hex0x1D_ten_7,ten_measure_currentlimit_98fa5525_XU2_f604d85e_XTOPSW,global_fetdriver_8018c87b_Xfetdriver_f604d85e_XTOPSW,ten_taiislopecomp_f4252e65_XU22_f604d85e_XTOPSW,global_slopecomp_f4252e65_XU22_f604d85e_XTOPSW,global_cboot_35156756_XU17_f604d85e_XTOPSW,ten_hijacki_cad020c2_XU6_c1b82e6f_XDEBUG,ten_hijacki_af379456_XU5_c1b82e6f_XDEBUG}),
+.tma({i0,i0,i0,i1,i1,i1,i0,i1}),
+.tmi(tmi[4:0])
+);
+
 drm64 drm_hex0x03 (
 .G(CELG59462),
 .V(CELV96848),
-.d0(f0),
-.d1(f1),
-.id({f0,f0,f0,f0,f0,f0,f1,f1}),
+.d0(k0),
+.d1(k1),
+.id({k0,k0,k0,k0,k0,k0,k1,k1}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({DISABLEslope_07db7e9a,factory_timingskew_7229e0fa[4],factory_timingskew_7229e0fa[3],factory_timingskew_7229e0fa[2],factory_timingskew_7229e0fa[1],factory_timingskew_7229e0fa[0],BBMstatus_b07e0c43[1],BBMstatus_b07e0c43[0]}),
+.drm0({DISABLEslope_650ee20e,BBMstatus_5ecfcf89[1],BBMstatus_5ecfcf89[0],factory_timingskew_7229e0fa[4],factory_timingskew_7229e0fa[3],factory_timingskew_7229e0fa[2],factory_timingskew_7229e0fa[1],factory_timingskew_7229e0fa[0]}),
 .drm1({noconn_drm64_drm1_7,noconn_drm64_drm1_6,noconn_drm64_drm1_5,factory_timingskew_a04dd5f1[4],factory_timingskew_a04dd5f1[3],factory_timingskew_a04dd5f1[2],factory_timingskew_a04dd5f1[1],factory_timingskew_a04dd5f1[0]}),
 .drm2({trim_currentlimit_2d447a5c[7],trim_currentlimit_2d447a5c[6],trim_currentlimit_2d447a5c[5],trim_currentlimit_2d447a5c[4],trim_currentlimit_2d447a5c[3],trim_currentlimit_2d447a5c[2],trim_currentlimit_2d447a5c[1],trim_currentlimit_2d447a5c[0]}),
 .drm3({trim_currentlimit_14d08c8e[7],trim_currentlimit_14d08c8e[6],trim_currentlimit_14d08c8e[5],trim_currentlimit_14d08c8e[4],trim_currentlimit_14d08c8e[3],trim_currentlimit_14d08c8e[2],trim_currentlimit_14d08c8e[1],trim_currentlimit_14d08c8e[0]}),
@@ -464,16 +584,16 @@ drm64 drm_hex0x03 (
 .drm5({trim_currentlimit_98fa5525[7],trim_currentlimit_98fa5525[6],trim_currentlimit_98fa5525[5],trim_currentlimit_98fa5525[4],trim_currentlimit_98fa5525[3],trim_currentlimit_98fa5525[2],trim_currentlimit_98fa5525[1],trim_currentlimit_98fa5525[0]}),
 .drm6({noconn_drm64_drm6_7,noconn_drm64_drm6_6,noconn_drm64_drm6_5,factory_currentlimit_blanking_98fa5525[4],factory_currentlimit_blanking_98fa5525[3],factory_currentlimit_blanking_98fa5525[2],factory_currentlimit_blanking_98fa5525[1],factory_currentlimit_blanking_98fa5525[0]}),
 .drm7({noconn_drm64_drm7_7,noconn_drm64_drm7_6,noconn_drm64_drm7_5,noconn_drm64_drm7_4,trim_slopecomp_f4252e65[3],trim_slopecomp_f4252e65[2],trim_slopecomp_f4252e65[1],trim_slopecomp_f4252e65[0]}),
-.por0({f0,f1,f1,f0,f0,f0,f1,f1}),
-.por1({f0,f0,f0,f1,f1,f0,f0,f0}),
-.por2({f0,f0,f0,f0,f0,f0,f0,f0}),
-.por3({f0,f0,f0,f0,f0,f0,f0,f0}),
-.por4({f0,f0,f0,f0,f0,f0,f0,f0}),
-.por5({f0,f0,f0,f0,f0,f0,f0,f0}),
-.por6({f0,f0,f0,f1,f0,f0,f0,f0}),
-.por7({f0,f0,f0,f0,f0,f0,f0,f0}),
-.bypload(f0),
-.lastdrm(f0)
+.por0({k0,k1,k1,k1,k1,k0,k0,k0}),
+.por1({k0,k0,k0,k1,k1,k0,k0,k0}),
+.por2({k0,k0,k0,k0,k0,k0,k0,k0}),
+.por3({k0,k0,k0,k0,k0,k0,k0,k0}),
+.por4({k0,k0,k0,k0,k0,k0,k0,k0}),
+.por5({k0,k0,k0,k0,k0,k0,k0,k0}),
+.por6({k0,k0,k0,k1,k0,k0,k0,k0}),
+.por7({k0,k0,k0,k0,k0,k0,k0,k0}),
+.bypload(k0),
+.lastdrm(k0)
 );
 
 STONEnoconn XNCnoconn_drm64_drm1_5 (
@@ -542,6 +662,10 @@ STONEnoconn XNCnoconn_dft_hex0x08_ten_6 (
 
 STONEnoconn XNCnoconn_dft_hex0x08_ten_7 (
 .noconn(noconn_dft_hex0x08_ten_7)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x1D_ten_7 (
+.noconn(noconn_dft_hex0x1D_ten_7)
 );
 
 endmodule

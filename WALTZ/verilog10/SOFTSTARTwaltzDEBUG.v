@@ -41,8 +41,17 @@ module dftprobeModel2_2dcf28df (i,TAI,ten,CELG,CELV,CELSUB);
   input  CELSUB;
 endmodule
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module SOFTSTARTwaltzDEBUG (SS, CELG59462, CELV96848, dft_clock, CELSUB40948, enable_brick, done_softstart, TAI_81f80d4d_XU8, enable_softstart, tdi_ed87e5db_XU5, tdi_f665b623_XU6, ten_81f80d4d_XU8, ten_ed87e5db_XU5, ten_f665b623_XU6, tdi_528f048c_XU10, ten_528f048c_XU10, hijack_enable_brick, hijack_enable_softstart, ten_hijack_297df8ef_XU1, ten_hijack_dcf795e2_XU14, ten_hijacki_297df8ef_XU1, ten_hijacki_dcf795e2_XU14);
+module SOFTSTARTwaltzDEBUG (SS, CELG59462, CELV96848, dft_clock, CELSUB40948, enable_brick, done_softstart, TAI_81f80d4d_XU8, enable_softstart, tdi_ed87e5db_XU5, tdi_f665b623_XU6, ten_81f80d4d_XU8, ten_ed87e5db_XU5, ten_f665b623_XU6, tdi_528f048c_XU10, ten_528f048c_XU10, hijack_enable_brick, hijack_enable_softstart, ten_hijack_297df8ef_XU1, ten_hijack_dcf795e2_XU14, ten_hijacki_297df8ef_XU1, ten_hijacki_dcf795e2_XU14, TAI_81f80d4d_XU8_88e49508_XDEBUG, tdi_ed87e5db_XU5_88e49508_XDEBUG, tdi_f665b623_XU6_88e49508_XDEBUG, ten_81f80d4d_XU8_88e49508_XDEBUG, ten_ed87e5db_XU5_88e49508_XDEBUG, ten_f665b623_XU6_88e49508_XDEBUG, tdi_528f048c_XU10_88e49508_XDEBUG, ten_528f048c_XU10_88e49508_XDEBUG, ten_hijack_297df8ef_XU1_88e49508_XDEBUG, ten_hijack_dcf795e2_XU14_88e49508_XDEBUG, ten_hijacki_297df8ef_XU1_88e49508_XDEBUG, ten_hijacki_dcf795e2_XU14_88e49508_XDEBUG);
   input  SS;
 input  CELG59462;
 input  CELV96848;
@@ -65,6 +74,18 @@ input  ten_hijack_297df8ef_XU1;
 input  ten_hijack_dcf795e2_XU14;
 input  ten_hijacki_297df8ef_XU1;
 input  ten_hijacki_dcf795e2_XU14;
+output  TAI_81f80d4d_XU8_88e49508_XDEBUG;
+output  tdi_ed87e5db_XU5_88e49508_XDEBUG;
+output  tdi_f665b623_XU6_88e49508_XDEBUG;
+input  ten_81f80d4d_XU8_88e49508_XDEBUG;
+input  ten_ed87e5db_XU5_88e49508_XDEBUG;
+input  ten_f665b623_XU6_88e49508_XDEBUG;
+output  tdi_528f048c_XU10_88e49508_XDEBUG;
+input  ten_528f048c_XU10_88e49508_XDEBUG;
+input  ten_hijack_297df8ef_XU1_88e49508_XDEBUG;
+input  ten_hijack_dcf795e2_XU14_88e49508_XDEBUG;
+input  ten_hijacki_297df8ef_XU1_88e49508_XDEBUG;
+input  ten_hijacki_dcf795e2_XU14_88e49508_XDEBUG;
 
 
 // ------------------------ Wires ------------------------
@@ -133,6 +154,22 @@ DFThijack XU14 (
 .CELSUB(CELSUB40948),
 .ten_hijack(ten_hijack_dcf795e2_XU14),
 .ten_hijacki(ten_hijacki_dcf795e2_XU14)
+);
+
+STONEnoconn XNCTAI_81f80d4d_XU8_88e49508_XDEBUG (
+.noconn(TAI_81f80d4d_XU8_88e49508_XDEBUG)
+);
+
+STONEnoconn XNCtdi_ed87e5db_XU5_88e49508_XDEBUG (
+.noconn(tdi_ed87e5db_XU5_88e49508_XDEBUG)
+);
+
+STONEnoconn XNCtdi_f665b623_XU6_88e49508_XDEBUG (
+.noconn(tdi_f665b623_XU6_88e49508_XDEBUG)
+);
+
+STONEnoconn XNCtdi_528f048c_XU10_88e49508_XDEBUG (
+.noconn(tdi_528f048c_XU10_88e49508_XDEBUG)
 );
 
 endmodule

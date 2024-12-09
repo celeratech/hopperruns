@@ -30,8 +30,17 @@ module tie_9e2c0894 (a0,SUB,CELG,CELV);
   input  CELV;
 endmodule
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module FAULTMANAGERwaltzDEBUG (CELG59462, CELV96848, fault_run, CELSUB40948, blank_fault, fault_short, enable_fault, fault_freeze, hijack_delay, dft_delaySHORT, tdi_6044b743_XU7, tdi_7e48a0c0_XU2, tdi_7e6d3e04_XU1, ten_6044b743_XU7, ten_7e48a0c0_XU2, ten_7e6d3e04_XU1, hijack_blank_fault, hijack_fault_short, hijack_enable_fault, hijack_short_status, hijack_thermal_status, ten_hijack_0b40c959_XU6, ten_hijack_54e727e4_XU15, ten_hijack_55e03ae5_XU16, ten_hijack_7e3d0298_XU27, ten_hijack_9929432d_XU17, ten_hijack_9b5d9ad2_XU29, ten_hijacki_0b40c959_XU6, ten_hijacki_54e727e4_XU15, ten_hijacki_55e03ae5_XU16, ten_hijacki_7e3d0298_XU27, ten_hijacki_9929432d_XU17, ten_hijacki_9b5d9ad2_XU29, hijack_faultmanager_status, ten_hijack_c5202207_Xdfthijack1, ten_hijacki_c5202207_Xdfthijack1);
+module FAULTMANAGERwaltzDEBUG (CELG59462, CELV96848, fault_run, CELSUB40948, blank_fault, fault_short, enable_fault, fault_freeze, hijack_delay, dft_delaySHORT, tdi_6044b743_XU7, tdi_7e48a0c0_XU2, tdi_7e6d3e04_XU1, ten_6044b743_XU7, ten_7e48a0c0_XU2, ten_7e6d3e04_XU1, hijack_blank_fault, hijack_fault_short, hijack_enable_fault, hijack_short_status, hijack_thermal_status, ten_hijack_0b40c959_XU6, ten_hijack_54e727e4_XU15, ten_hijack_55e03ae5_XU16, ten_hijack_7e3d0298_XU27, ten_hijack_9929432d_XU17, ten_hijack_9b5d9ad2_XU29, ten_hijacki_0b40c959_XU6, ten_hijacki_54e727e4_XU15, ten_hijacki_55e03ae5_XU16, ten_hijacki_7e3d0298_XU27, ten_hijacki_9929432d_XU17, ten_hijacki_9b5d9ad2_XU29, hijack_faultmanager_status, ten_hijack_c5202207_Xdfthijack1, tdi_6044b743_XU7_4c867da6_XDEBUG, tdi_7e48a0c0_XU2_4c867da6_XDEBUG, tdi_7e6d3e04_XU1_4c867da6_XDEBUG, ten_6044b743_XU7_4c867da6_XDEBUG, ten_7e48a0c0_XU2_4c867da6_XDEBUG, ten_7e6d3e04_XU1_4c867da6_XDEBUG, ten_hijacki_c5202207_Xdfthijack1, ten_hijack_0b40c959_XU6_4c867da6_XDEBUG, ten_hijack_54e727e4_XU15_4c867da6_XDEBUG, ten_hijack_55e03ae5_XU16_4c867da6_XDEBUG, ten_hijack_7e3d0298_XU27_4c867da6_XDEBUG, ten_hijack_9929432d_XU17_4c867da6_XDEBUG, ten_hijack_9b5d9ad2_XU29_4c867da6_XDEBUG, ten_hijacki_0b40c959_XU6_4c867da6_XDEBUG, ten_hijacki_54e727e4_XU15_4c867da6_XDEBUG, ten_hijacki_55e03ae5_XU16_4c867da6_XDEBUG, ten_hijacki_7e3d0298_XU27_4c867da6_XDEBUG, ten_hijacki_9929432d_XU17_4c867da6_XDEBUG, ten_hijacki_9b5d9ad2_XU29_4c867da6_XDEBUG, ten_hijack_c5202207_Xdfthijack1_4c867da6_XDEBUG, ten_hijacki_c5202207_Xdfthijack1_4c867da6_XDEBUG);
 input  CELG59462;
 input  CELV96848;
   input  fault_run;
@@ -67,7 +76,27 @@ input  ten_hijacki_9929432d_XU17;
 input  ten_hijacki_9b5d9ad2_XU29;
 output  hijack_faultmanager_status;
 input  ten_hijack_c5202207_Xdfthijack1;
+output  tdi_6044b743_XU7_4c867da6_XDEBUG;
+output  tdi_7e48a0c0_XU2_4c867da6_XDEBUG;
+output  tdi_7e6d3e04_XU1_4c867da6_XDEBUG;
+input  ten_6044b743_XU7_4c867da6_XDEBUG;
+input  ten_7e48a0c0_XU2_4c867da6_XDEBUG;
+input  ten_7e6d3e04_XU1_4c867da6_XDEBUG;
 input  ten_hijacki_c5202207_Xdfthijack1;
+input  ten_hijack_0b40c959_XU6_4c867da6_XDEBUG;
+input  ten_hijack_54e727e4_XU15_4c867da6_XDEBUG;
+input  ten_hijack_55e03ae5_XU16_4c867da6_XDEBUG;
+input  ten_hijack_7e3d0298_XU27_4c867da6_XDEBUG;
+input  ten_hijack_9929432d_XU17_4c867da6_XDEBUG;
+input  ten_hijack_9b5d9ad2_XU29_4c867da6_XDEBUG;
+input  ten_hijacki_0b40c959_XU6_4c867da6_XDEBUG;
+input  ten_hijacki_54e727e4_XU15_4c867da6_XDEBUG;
+input  ten_hijacki_55e03ae5_XU16_4c867da6_XDEBUG;
+input  ten_hijacki_7e3d0298_XU27_4c867da6_XDEBUG;
+input  ten_hijacki_9929432d_XU17_4c867da6_XDEBUG;
+input  ten_hijacki_9b5d9ad2_XU29_4c867da6_XDEBUG;
+input  ten_hijack_c5202207_Xdfthijack1_4c867da6_XDEBUG;
+input  ten_hijacki_c5202207_Xdfthijack1_4c867da6_XDEBUG;
 
 
 // ------------------------ Wires ------------------------
@@ -175,6 +204,18 @@ DFThijack Xdfthijack1 (
 .CELSUB(CELSUB40948),
 .ten_hijack(ten_hijack_c5202207_Xdfthijack1),
 .ten_hijacki(ten_hijacki_c5202207_Xdfthijack1)
+);
+
+STONEnoconn XNCtdi_6044b743_XU7_4c867da6_XDEBUG (
+.noconn(tdi_6044b743_XU7_4c867da6_XDEBUG)
+);
+
+STONEnoconn XNCtdi_7e48a0c0_XU2_4c867da6_XDEBUG (
+.noconn(tdi_7e48a0c0_XU2_4c867da6_XDEBUG)
+);
+
+STONEnoconn XNCtdi_7e6d3e04_XU1_4c867da6_XDEBUG (
+.noconn(tdi_7e6d3e04_XU1_4c867da6_XDEBUG)
 );
 
 endmodule

@@ -32,8 +32,17 @@ module DFThijack ( o, CELG, CELV, CELSUB, ten_hijack, ten_hijacki, i );
 endmodule
 
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module CLOCKwaltzDEBUG (dft_sync, CELG59462, CELV96848, dft_clock, ISLOPECOMP, CELSUB40948, dft_synclow, fault_clock, dft_synchigh, enable_clock, dft_clocksync, dft_clockstartup, tdi_496698b1_XU8, tdi_5e7931f3_XU7, tdi_7bb789c1_XU3, tdi_bdb7126b_XU6, tdi_fc840bff_XU4, ten_496698b1_XU8, ten_5e7931f3_XU7, ten_7bb789c1_XU3, ten_bdb7126b_XU6, ten_fc840bff_XU4, TAI_38b575fc_XU10, dft_clockinternal, tdi_71505146_XU19, tdi_b20889dd_XU21, tdi_f614d104_XU20, ten_38b575fc_XU10, ten_71505146_XU19, ten_b20889dd_XU21, ten_f614d104_XU20, hijack_enable_clock, ten_hijack_1762d8ee_XU11, ten_hijacki_1762d8ee_XU11);
+module CLOCKwaltzDEBUG (dft_sync, CELG59462, CELV96848, dft_clock, ISLOPECOMP, CELSUB40948, dft_synclow, fault_clock, dft_synchigh, enable_clock, dft_clocksync, dft_clockstartup, tdi_496698b1_XU8, tdi_5e7931f3_XU7, tdi_7bb789c1_XU3, tdi_bdb7126b_XU6, tdi_fc840bff_XU4, ten_496698b1_XU8, ten_5e7931f3_XU7, ten_7bb789c1_XU3, ten_bdb7126b_XU6, ten_fc840bff_XU4, TAI_38b575fc_XU10, dft_clockinternal, tdi_71505146_XU19, tdi_b20889dd_XU21, tdi_f614d104_XU20, ten_38b575fc_XU10, ten_71505146_XU19, ten_b20889dd_XU21, ten_f614d104_XU20, hijack_enable_clock, ten_hijack_1762d8ee_XU11, ten_hijacki_1762d8ee_XU11, tdi_496698b1_XU8_be4c5eaa_XDEBUG, tdi_5e7931f3_XU7_be4c5eaa_XDEBUG, tdi_7bb789c1_XU3_be4c5eaa_XDEBUG, tdi_bdb7126b_XU6_be4c5eaa_XDEBUG, tdi_fc840bff_XU4_be4c5eaa_XDEBUG, ten_496698b1_XU8_be4c5eaa_XDEBUG, ten_5e7931f3_XU7_be4c5eaa_XDEBUG, ten_7bb789c1_XU3_be4c5eaa_XDEBUG, ten_bdb7126b_XU6_be4c5eaa_XDEBUG, ten_fc840bff_XU4_be4c5eaa_XDEBUG, TAI_38b575fc_XU10_be4c5eaa_XDEBUG, tdi_71505146_XU19_be4c5eaa_XDEBUG, tdi_b20889dd_XU21_be4c5eaa_XDEBUG, tdi_f614d104_XU20_be4c5eaa_XDEBUG, ten_38b575fc_XU10_be4c5eaa_XDEBUG, ten_71505146_XU19_be4c5eaa_XDEBUG, ten_b20889dd_XU21_be4c5eaa_XDEBUG, ten_f614d104_XU20_be4c5eaa_XDEBUG, ten_hijack_1762d8ee_XU11_be4c5eaa_XDEBUG, ten_hijacki_1762d8ee_XU11_be4c5eaa_XDEBUG);
   input  dft_sync;
 input  CELG59462;
 input  CELV96848;
@@ -68,6 +77,26 @@ input  ten_f614d104_XU20;
 output  hijack_enable_clock;
 input  ten_hijack_1762d8ee_XU11;
 input  ten_hijacki_1762d8ee_XU11;
+output  tdi_496698b1_XU8_be4c5eaa_XDEBUG;
+output  tdi_5e7931f3_XU7_be4c5eaa_XDEBUG;
+output  tdi_7bb789c1_XU3_be4c5eaa_XDEBUG;
+output  tdi_bdb7126b_XU6_be4c5eaa_XDEBUG;
+output  tdi_fc840bff_XU4_be4c5eaa_XDEBUG;
+input  ten_496698b1_XU8_be4c5eaa_XDEBUG;
+input  ten_5e7931f3_XU7_be4c5eaa_XDEBUG;
+input  ten_7bb789c1_XU3_be4c5eaa_XDEBUG;
+input  ten_bdb7126b_XU6_be4c5eaa_XDEBUG;
+input  ten_fc840bff_XU4_be4c5eaa_XDEBUG;
+output  TAI_38b575fc_XU10_be4c5eaa_XDEBUG;
+output  tdi_71505146_XU19_be4c5eaa_XDEBUG;
+output  tdi_b20889dd_XU21_be4c5eaa_XDEBUG;
+output  tdi_f614d104_XU20_be4c5eaa_XDEBUG;
+input  ten_38b575fc_XU10_be4c5eaa_XDEBUG;
+input  ten_71505146_XU19_be4c5eaa_XDEBUG;
+input  ten_b20889dd_XU21_be4c5eaa_XDEBUG;
+input  ten_f614d104_XU20_be4c5eaa_XDEBUG;
+input  ten_hijack_1762d8ee_XU11_be4c5eaa_XDEBUG;
+input  ten_hijacki_1762d8ee_XU11_be4c5eaa_XDEBUG;
 
 
 // ------------------------ Wires ------------------------
@@ -162,6 +191,42 @@ dftprobeModel0_80e43a5a XU21 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
+);
+
+STONEnoconn XNCtdi_496698b1_XU8_be4c5eaa_XDEBUG (
+.noconn(tdi_496698b1_XU8_be4c5eaa_XDEBUG)
+);
+
+STONEnoconn XNCtdi_5e7931f3_XU7_be4c5eaa_XDEBUG (
+.noconn(tdi_5e7931f3_XU7_be4c5eaa_XDEBUG)
+);
+
+STONEnoconn XNCtdi_7bb789c1_XU3_be4c5eaa_XDEBUG (
+.noconn(tdi_7bb789c1_XU3_be4c5eaa_XDEBUG)
+);
+
+STONEnoconn XNCtdi_bdb7126b_XU6_be4c5eaa_XDEBUG (
+.noconn(tdi_bdb7126b_XU6_be4c5eaa_XDEBUG)
+);
+
+STONEnoconn XNCtdi_fc840bff_XU4_be4c5eaa_XDEBUG (
+.noconn(tdi_fc840bff_XU4_be4c5eaa_XDEBUG)
+);
+
+STONEnoconn XNCTAI_38b575fc_XU10_be4c5eaa_XDEBUG (
+.noconn(TAI_38b575fc_XU10_be4c5eaa_XDEBUG)
+);
+
+STONEnoconn XNCtdi_71505146_XU19_be4c5eaa_XDEBUG (
+.noconn(tdi_71505146_XU19_be4c5eaa_XDEBUG)
+);
+
+STONEnoconn XNCtdi_b20889dd_XU21_be4c5eaa_XDEBUG (
+.noconn(tdi_b20889dd_XU21_be4c5eaa_XDEBUG)
+);
+
+STONEnoconn XNCtdi_f614d104_XU20_be4c5eaa_XDEBUG (
+.noconn(tdi_f614d104_XU20_be4c5eaa_XDEBUG)
 );
 
 endmodule

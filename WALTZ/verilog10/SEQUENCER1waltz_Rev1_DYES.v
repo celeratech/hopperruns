@@ -60,8 +60,17 @@ module dftprobeModel0_e1d1778d (i,tdi,ten,CELG,CELV,CELSUB);
   input  CELSUB;
 endmodule
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module SEQUENCER1waltz_Rev1_DYES (porb, ok_clock, CELG59462, CELV96848, fault_run, ok_driver, ok_service, CELSUB40948, blank_fault, fault_clock, enable_waltz, ok_regulation, done_softstart, fault_shutdown, switch_control, enable_softstart, enable_regulation, tdi_0721e5d9_XU56, tdi_2958f818_XU61, tdi_29fa69a5_XU60, tdi_3bd9bacc_XU59, tdi_445acf01_XU57, tdi_4c7ada73_XU65, tdi_4d227e72_XU55, tdi_6cd23b02_XU66, tdi_70525239_XU58, tdi_950364d7_XU54, tdi_9d829c39_XU62, tdi_9ef032e9_XU63, tdi_e8d90cd0_XU64, ten_0721e5d9_XU56, ten_2958f818_XU61, ten_29fa69a5_XU60, ten_3bd9bacc_XU59, ten_445acf01_XU57, ten_4c7ada73_XU65, ten_4d227e72_XU55, ten_6cd23b02_XU66, ten_70525239_XU58, ten_950364d7_XU54, ten_9d829c39_XU62, ten_9ef032e9_XU63, ten_e8d90cd0_XU64, SEQUENCER1waltz_Rev1_statecontrol_06133af2);
+module SEQUENCER1waltz_Rev1_DYES (porb, ok_clock, CELG59462, CELV96848, fault_run, ok_driver, ok_service, CELSUB40948, blank_fault, fault_clock, enable_waltz, ok_regulation, done_softstart, fault_shutdown, switch_control, enable_softstart, enable_regulation, tdi_0721e5d9_XU56, tdi_2958f818_XU61, tdi_29fa69a5_XU60, tdi_3bd9bacc_XU59, tdi_445acf01_XU57, tdi_4c7ada73_XU65, tdi_4d227e72_XU55, tdi_6cd23b02_XU66, tdi_70525239_XU58, tdi_950364d7_XU54, tdi_9d829c39_XU62, tdi_9ef032e9_XU63, tdi_e8d90cd0_XU64, ten_0721e5d9_XU56, ten_2958f818_XU61, ten_29fa69a5_XU60, ten_3bd9bacc_XU59, ten_445acf01_XU57, ten_4c7ada73_XU65, ten_4d227e72_XU55, ten_6cd23b02_XU66, ten_70525239_XU58, ten_950364d7_XU54, ten_9d829c39_XU62, ten_9ef032e9_XU63, ten_e8d90cd0_XU64, tdi_0721e5d9_XU56_5c792007_XSEQUENCER, tdi_2958f818_XU61_5c792007_XSEQUENCER, tdi_29fa69a5_XU60_5c792007_XSEQUENCER, tdi_3bd9bacc_XU59_5c792007_XSEQUENCER, tdi_445acf01_XU57_5c792007_XSEQUENCER, tdi_4c7ada73_XU65_5c792007_XSEQUENCER, tdi_4d227e72_XU55_5c792007_XSEQUENCER, tdi_6cd23b02_XU66_5c792007_XSEQUENCER, tdi_70525239_XU58_5c792007_XSEQUENCER, tdi_950364d7_XU54_5c792007_XSEQUENCER, tdi_9d829c39_XU62_5c792007_XSEQUENCER, tdi_9ef032e9_XU63_5c792007_XSEQUENCER, tdi_e8d90cd0_XU64_5c792007_XSEQUENCER, ten_0721e5d9_XU56_5c792007_XSEQUENCER, ten_2958f818_XU61_5c792007_XSEQUENCER, ten_29fa69a5_XU60_5c792007_XSEQUENCER, ten_3bd9bacc_XU59_5c792007_XSEQUENCER, ten_445acf01_XU57_5c792007_XSEQUENCER, ten_4c7ada73_XU65_5c792007_XSEQUENCER, ten_4d227e72_XU55_5c792007_XSEQUENCER, ten_6cd23b02_XU66_5c792007_XSEQUENCER, ten_70525239_XU58_5c792007_XSEQUENCER, ten_950364d7_XU54_5c792007_XSEQUENCER, ten_9d829c39_XU62_5c792007_XSEQUENCER, ten_9ef032e9_XU63_5c792007_XSEQUENCER, ten_e8d90cd0_XU64_5c792007_XSEQUENCER, SEQUENCER1waltz_Rev1_statecontrol_704bb73a);
 input  porb;
 input  ok_clock;
 input  CELG59462;
@@ -105,67 +114,93 @@ input  ten_950364d7_XU54;
 input  ten_9d829c39_XU62;
 input  ten_9ef032e9_XU63;
 input  ten_e8d90cd0_XU64;
-input [3:0] SEQUENCER1waltz_Rev1_statecontrol_06133af2;
+output  tdi_0721e5d9_XU56_5c792007_XSEQUENCER;
+output  tdi_2958f818_XU61_5c792007_XSEQUENCER;
+output  tdi_29fa69a5_XU60_5c792007_XSEQUENCER;
+output  tdi_3bd9bacc_XU59_5c792007_XSEQUENCER;
+output  tdi_445acf01_XU57_5c792007_XSEQUENCER;
+output  tdi_4c7ada73_XU65_5c792007_XSEQUENCER;
+output  tdi_4d227e72_XU55_5c792007_XSEQUENCER;
+output  tdi_6cd23b02_XU66_5c792007_XSEQUENCER;
+output  tdi_70525239_XU58_5c792007_XSEQUENCER;
+output  tdi_950364d7_XU54_5c792007_XSEQUENCER;
+output  tdi_9d829c39_XU62_5c792007_XSEQUENCER;
+output  tdi_9ef032e9_XU63_5c792007_XSEQUENCER;
+output  tdi_e8d90cd0_XU64_5c792007_XSEQUENCER;
+input  ten_0721e5d9_XU56_5c792007_XSEQUENCER;
+input  ten_2958f818_XU61_5c792007_XSEQUENCER;
+input  ten_29fa69a5_XU60_5c792007_XSEQUENCER;
+input  ten_3bd9bacc_XU59_5c792007_XSEQUENCER;
+input  ten_445acf01_XU57_5c792007_XSEQUENCER;
+input  ten_4c7ada73_XU65_5c792007_XSEQUENCER;
+input  ten_4d227e72_XU55_5c792007_XSEQUENCER;
+input  ten_6cd23b02_XU66_5c792007_XSEQUENCER;
+input  ten_70525239_XU58_5c792007_XSEQUENCER;
+input  ten_950364d7_XU54_5c792007_XSEQUENCER;
+input  ten_9d829c39_XU62_5c792007_XSEQUENCER;
+input  ten_9ef032e9_XU63_5c792007_XSEQUENCER;
+input  ten_e8d90cd0_XU64_5c792007_XSEQUENCER;
+input [3:0] SEQUENCER1waltz_Rev1_statecontrol_704bb73a;
 
 
 // ------------------------ Wires ------------------------
-wire [3:0] SEQUENCER1waltz_Rev1_statecontrol_06133af2;
+wire [3:0] SEQUENCER1waltz_Rev1_statecontrol_704bb73a;
 
 // ------------------------ Networks ---------------------
 SEQUENCER1waltz_Rev1_DYES_ XMAIN (
-.OFF(net_94),
-.RUN(net_109),
+.OFF(net_102),
+.RUN(net_117),
 .porb(porb),
-.FAULT(net_102),
-.ENABLE(net_99),
-.UNDEF4(net_106),
-.UNDEF5(net_107),
+.FAULT(net_110),
+.ENABLE(net_107),
+.UNDEF4(net_114),
+.UNDEF5(net_115),
 .ok_clock(ok_clock),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.SOFTSTART(net_105),
+.SOFTSTART(net_113),
 .fault_run(fault_run),
 .ok_driver(ok_driver),
-.REGULATION(net_108),
+.REGULATION(net_116),
 .ok_service(ok_service),
 .CELSUB40948(CELSUB40948),
 .blank_fault(blank_fault),
 .fault_clock(fault_clock),
-.ENABLEdelayi(net_110),
+.ENABLEdelayi(net_118),
 .enable_waltz(enable_waltz),
-.STATEcontrol0(SEQUENCER1waltz_Rev1_statecontrol_06133af2[0]),
-.STATEcontrol1(SEQUENCER1waltz_Rev1_statecontrol_06133af2[1]),
-.STATEcontrol2(SEQUENCER1waltz_Rev1_statecontrol_06133af2[2]),
-.STATEcontrol3(SEQUENCER1waltz_Rev1_statecontrol_06133af2[3]),
+.STATEcontrol0(SEQUENCER1waltz_Rev1_statecontrol_704bb73a[0]),
+.STATEcontrol1(SEQUENCER1waltz_Rev1_statecontrol_704bb73a[1]),
+.STATEcontrol2(SEQUENCER1waltz_Rev1_statecontrol_704bb73a[2]),
+.STATEcontrol3(SEQUENCER1waltz_Rev1_statecontrol_704bb73a[3]),
 .ok_regulation(ok_regulation),
 .done_softstart(done_softstart),
 .fault_shutdown(fault_shutdown),
 .switch_control(switch_control),
-.ENABLEmaxdelayo(net_111),
-.REGULATIONdelayi(net_113),
+.ENABLEmaxdelayo(net_119),
+.REGULATIONdelayi(net_121),
 .enable_softstart(enable_softstart),
 .enable_regulation(enable_regulation),
-.REGULATIONmaxdelayo(net_112)
+.REGULATIONmaxdelayo(net_120)
 );
 
 delayfixed_f61d1814 XU10 (
-.i(net_110),
-.o(net_111),
+.i(net_118),
+.o(net_119),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
 );
 
 delayfixed_2b789075 XU23 (
-.i(net_113),
-.o(net_112),
+.i(net_121),
+.o(net_120),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
 );
 
 dftprobeModel0_e1d1778d XU54 (
-.i(net_94),
+.i(net_102),
 .tdi(tdi_950364d7_XU54),
 .ten(ten_950364d7_XU54),
 .CELG(CELG59462),
@@ -174,7 +209,7 @@ dftprobeModel0_e1d1778d XU54 (
 );
 
 dftprobeModel0_e1d1778d XU55 (
-.i(net_99),
+.i(net_107),
 .tdi(tdi_4d227e72_XU55),
 .ten(ten_4d227e72_XU55),
 .CELG(CELG59462),
@@ -183,7 +218,7 @@ dftprobeModel0_e1d1778d XU55 (
 );
 
 dftprobeModel0_e1d1778d XU56 (
-.i(net_102),
+.i(net_110),
 .tdi(tdi_0721e5d9_XU56),
 .ten(ten_0721e5d9_XU56),
 .CELG(CELG59462),
@@ -192,7 +227,7 @@ dftprobeModel0_e1d1778d XU56 (
 );
 
 dftprobeModel0_e1d1778d XU57 (
-.i(net_105),
+.i(net_113),
 .tdi(tdi_445acf01_XU57),
 .ten(ten_445acf01_XU57),
 .CELG(CELG59462),
@@ -201,7 +236,7 @@ dftprobeModel0_e1d1778d XU57 (
 );
 
 dftprobeModel0_e1d1778d XU58 (
-.i(net_106),
+.i(net_114),
 .tdi(tdi_70525239_XU58),
 .ten(ten_70525239_XU58),
 .CELG(CELG59462),
@@ -210,7 +245,7 @@ dftprobeModel0_e1d1778d XU58 (
 );
 
 dftprobeModel0_e1d1778d XU59 (
-.i(net_107),
+.i(net_115),
 .tdi(tdi_3bd9bacc_XU59),
 .ten(ten_3bd9bacc_XU59),
 .CELG(CELG59462),
@@ -219,7 +254,7 @@ dftprobeModel0_e1d1778d XU59 (
 );
 
 dftprobeModel0_e1d1778d XU60 (
-.i(net_108),
+.i(net_116),
 .tdi(tdi_29fa69a5_XU60),
 .ten(ten_29fa69a5_XU60),
 .CELG(CELG59462),
@@ -228,7 +263,7 @@ dftprobeModel0_e1d1778d XU60 (
 );
 
 dftprobeModel0_e1d1778d XU61 (
-.i(net_109),
+.i(net_117),
 .tdi(tdi_2958f818_XU61),
 .ten(ten_2958f818_XU61),
 .CELG(CELG59462),
@@ -279,6 +314,58 @@ dftprobeModel0_e1d1778d XU66 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
+);
+
+STONEnoconn XNCtdi_0721e5d9_XU56_5c792007_XSEQUENCER (
+.noconn(tdi_0721e5d9_XU56_5c792007_XSEQUENCER)
+);
+
+STONEnoconn XNCtdi_2958f818_XU61_5c792007_XSEQUENCER (
+.noconn(tdi_2958f818_XU61_5c792007_XSEQUENCER)
+);
+
+STONEnoconn XNCtdi_29fa69a5_XU60_5c792007_XSEQUENCER (
+.noconn(tdi_29fa69a5_XU60_5c792007_XSEQUENCER)
+);
+
+STONEnoconn XNCtdi_3bd9bacc_XU59_5c792007_XSEQUENCER (
+.noconn(tdi_3bd9bacc_XU59_5c792007_XSEQUENCER)
+);
+
+STONEnoconn XNCtdi_445acf01_XU57_5c792007_XSEQUENCER (
+.noconn(tdi_445acf01_XU57_5c792007_XSEQUENCER)
+);
+
+STONEnoconn XNCtdi_4c7ada73_XU65_5c792007_XSEQUENCER (
+.noconn(tdi_4c7ada73_XU65_5c792007_XSEQUENCER)
+);
+
+STONEnoconn XNCtdi_4d227e72_XU55_5c792007_XSEQUENCER (
+.noconn(tdi_4d227e72_XU55_5c792007_XSEQUENCER)
+);
+
+STONEnoconn XNCtdi_6cd23b02_XU66_5c792007_XSEQUENCER (
+.noconn(tdi_6cd23b02_XU66_5c792007_XSEQUENCER)
+);
+
+STONEnoconn XNCtdi_70525239_XU58_5c792007_XSEQUENCER (
+.noconn(tdi_70525239_XU58_5c792007_XSEQUENCER)
+);
+
+STONEnoconn XNCtdi_950364d7_XU54_5c792007_XSEQUENCER (
+.noconn(tdi_950364d7_XU54_5c792007_XSEQUENCER)
+);
+
+STONEnoconn XNCtdi_9d829c39_XU62_5c792007_XSEQUENCER (
+.noconn(tdi_9d829c39_XU62_5c792007_XSEQUENCER)
+);
+
+STONEnoconn XNCtdi_9ef032e9_XU63_5c792007_XSEQUENCER (
+.noconn(tdi_9ef032e9_XU63_5c792007_XSEQUENCER)
+);
+
+STONEnoconn XNCtdi_e8d90cd0_XU64_5c792007_XSEQUENCER (
+.noconn(tdi_e8d90cd0_XU64_5c792007_XSEQUENCER)
 );
 
 endmodule
