@@ -37,9 +37,45 @@ module PEBBLEtielo ( q, G, SUB, V );
 endmodule
 
 
+//Verilog HDL for "DRM", "drm32" "functional"
+
+
+module drm32 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, por1, por2, por3,
+drm0, drm1, drm2, drm3, d1, d0 );
+
+  input lastdrm;
+  input V;
+  output d1;
+  input  [7:0] por3;
+  output  [7:0] drm3;
+  input  [7:0] id;
+  output d0;
+  output  [7:0] drm2;
+  input  [7:0] por2;
+  input  [7:0] por1;
+  input bypload;
+  output  [7:0] drm0;
+  input  [7:0] por0;
+  input G;
+  output  [7:0] drm1;
+  inout  [4:0] tmi;
+  input SUB;
+endmodule
+
+
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module LDOgreenbankLDOstandalone20mA (LDO, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, celkelvin_LDO13_f8678617, celkelvin_MUDG_f867861710);
+module LDOgreenbankLDOstandalone20mA (LDO, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, celkelvin_LDO13_f8678617, celkelvin_MUDG_f867861710);
 output  LDO;
+inout [4:0] tmi;
 input  MUDV;
 input  CELG59462;
 input  CELV96848;
@@ -51,11 +87,21 @@ input  celkelvin_MUDG_f867861710;
 
 
 // ------------------------ Wires ------------------------
+wire [4:0] tmi;
 wire [2:0] factory_ldogain;
 wire [5:0] factory_ldopsrr;
 wire [2:0] factory_ldoerror;
 wire [2:0] factory_ldofeedforward;
 wire [5:0] factory_ldocompensation;
+wire [7:0] id;
+wire [7:0] drm0;
+wire [7:0] drm1;
+wire [7:0] drm2;
+wire [7:0] drm3;
+wire [7:0] por0;
+wire [7:0] por1;
+wire [7:0] por2;
+wire [7:0] por3;
 
 // ------------------------ Networks ---------------------
 VESPAdftpulse XU6 (
@@ -76,12 +122,12 @@ IPOTTldo_2e36c35f XLDO1 (
 .enable_ldo(enable_ldo),
 .global_ldo(tl0),
 .celkelvin_LDO(celkelvin_LDO13_f8678617),
-.factory_ldogain({a0,a0,a0}),
-.factory_ldopsrr({a0,a0,a0,a0,a0,a0}),
+.factory_ldogain({factory_ldogain_8ee3cb3c_2,factory_ldogain_8ee3cb3c_1,factory_ldogain_8ee3cb3c_0}),
+.factory_ldopsrr({factory_ldopsrr_8ee3cb3c_5,factory_ldopsrr_8ee3cb3c_4,factory_ldopsrr_8ee3cb3c_3,factory_ldopsrr_8ee3cb3c_2,factory_ldopsrr_8ee3cb3c_1,factory_ldopsrr_8ee3cb3c_0}),
 .celkelvin_GNDldo(celkelvin_MUDG_f867861710),
-.factory_ldoerror({a0,a0,a0}),
-.factory_ldofeedforward({a0,a0,a0}),
-.factory_ldocompensation({a0,a0,a0,a0,a0,a0})
+.factory_ldoerror({factory_ldoerror_8ee3cb3c_2,factory_ldoerror_8ee3cb3c_1,factory_ldoerror_8ee3cb3c_0}),
+.factory_ldofeedforward({factory_ldofeedforward_8ee3cb3c_2,factory_ldofeedforward_8ee3cb3c_1,factory_ldofeedforward_8ee3cb3c_0}),
+.factory_ldocompensation({factory_ldocompensation_8ee3cb3c_5,factory_ldocompensation_8ee3cb3c_4,factory_ldocompensation_8ee3cb3c_3,factory_ldocompensation_8ee3cb3c_2,factory_ldocompensation_8ee3cb3c_1,factory_ldocompensation_8ee3cb3c_0})
 );
 
 PEBBLEtielo XtieLo (
@@ -91,11 +137,68 @@ PEBBLEtielo XtieLo (
 .SUB(CELSUB40948)
 );
 
-PEBBLEtielo XDRMNOTL (
+drm32 drm_hex0x08 (
 .G(CELG59462),
 .V(CELV96848),
-.q(a0),
-.SUB(CELSUB40948)
+.d0(a0),
+.d1(a1),
+.id({a0,a0,a0,a0,a1,a0,a0,a0}),
+.SUB(CELSUB40948),
+.tmi(tmi[4:0]),
+.drm0({noconn_drm32_drm0_7,noconn_drm32_drm0_6,factory_ldoerror_8ee3cb3c_2,factory_ldoerror_8ee3cb3c_1,factory_ldoerror_8ee3cb3c_0,factory_ldogain_8ee3cb3c_2,factory_ldogain_8ee3cb3c_1,factory_ldogain_8ee3cb3c_0}),
+.drm1({noconn_drm32_drm1_7,noconn_drm32_drm1_6,factory_ldopsrr_8ee3cb3c_5,factory_ldopsrr_8ee3cb3c_4,factory_ldopsrr_8ee3cb3c_3,factory_ldopsrr_8ee3cb3c_2,factory_ldopsrr_8ee3cb3c_1,factory_ldopsrr_8ee3cb3c_0}),
+.drm2({noconn_drm32_drm2_7,noconn_drm32_drm2_6,noconn_drm32_drm2_5,noconn_drm32_drm2_4,noconn_drm32_drm2_3,factory_ldofeedforward_8ee3cb3c_2,factory_ldofeedforward_8ee3cb3c_1,factory_ldofeedforward_8ee3cb3c_0}),
+.drm3({noconn_drm32_drm3_7,noconn_drm32_drm3_6,factory_ldocompensation_8ee3cb3c_5,factory_ldocompensation_8ee3cb3c_4,factory_ldocompensation_8ee3cb3c_3,factory_ldocompensation_8ee3cb3c_2,factory_ldocompensation_8ee3cb3c_1,factory_ldocompensation_8ee3cb3c_0}),
+.por0({a0,a0,a0,a0,a0,a0,a0,a0}),
+.por1({a0,a0,a0,a0,a0,a0,a0,a0}),
+.por2({a0,a0,a0,a0,a0,a0,a0,a0}),
+.por3({a0,a0,a0,a0,a0,a0,a0,a0}),
+.bypload(a0),
+.lastdrm(a0)
+);
+
+STONEnoconn XNCnoconn_drm32_drm0_6 (
+.noconn(noconn_drm32_drm0_6)
+);
+
+STONEnoconn XNCnoconn_drm32_drm0_7 (
+.noconn(noconn_drm32_drm0_7)
+);
+
+STONEnoconn XNCnoconn_drm32_drm1_6 (
+.noconn(noconn_drm32_drm1_6)
+);
+
+STONEnoconn XNCnoconn_drm32_drm1_7 (
+.noconn(noconn_drm32_drm1_7)
+);
+
+STONEnoconn XNCnoconn_drm32_drm2_3 (
+.noconn(noconn_drm32_drm2_3)
+);
+
+STONEnoconn XNCnoconn_drm32_drm2_4 (
+.noconn(noconn_drm32_drm2_4)
+);
+
+STONEnoconn XNCnoconn_drm32_drm2_5 (
+.noconn(noconn_drm32_drm2_5)
+);
+
+STONEnoconn XNCnoconn_drm32_drm2_6 (
+.noconn(noconn_drm32_drm2_6)
+);
+
+STONEnoconn XNCnoconn_drm32_drm2_7 (
+.noconn(noconn_drm32_drm2_7)
+);
+
+STONEnoconn XNCnoconn_drm32_drm3_6 (
+.noconn(noconn_drm32_drm3_6)
+);
+
+STONEnoconn XNCnoconn_drm32_drm3_7 (
+.noconn(noconn_drm32_drm3_7)
 );
 
 endmodule
