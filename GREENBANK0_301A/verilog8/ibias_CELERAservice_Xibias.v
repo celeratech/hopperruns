@@ -5,7 +5,7 @@
 //OUTPUTS:11
 //VMAX:6V
 //DFT:yes
-//ACCURACY:yes
+//ACCURACY:no
 
 //Celera Confidential Do Not Copy STONEibiasCONTROLself
 //Verilog HDL for "Generate", "STONEibiasCONTROLself" "functional"
@@ -55,19 +55,15 @@ module STONEibiasDFT ( TAI_IBIAS, CELG, CELV, GATE, SUB, ten_ibias );
   input CELG;
 endmodule
 
-//Celera Confidential Do Not Copy STONEibiasCONTROLselfRTRIM
-//Verilog HDL for "Generate", "STONEibiasCONTROLselfRTRIM" "functional"
+//Celera Confidential Do Not Copy STONEibiasCONTROLselfRUNIT
+//Verilog HDL for "Generate", "STONEibiasCONTROLselfRUNIT" "functional"
 
 
-module STONEibiasCONTROLselfRTRIM ( CELG, CELSUB, CELV, RE0, RE1, trim_ibias,
-SENSE_G );
+module STONEibiasCONTROLselfRUNIT ( CELG, RE0, RE1, SENSE_G );
 
   input SENSE_G;
-  input CELV;
   input RE0;
-  input CELSUB;
   input RE1;
-  input  [4:0] trim_ibias;
   input CELG;
 endmodule
 
@@ -82,9 +78,9 @@ endmodule
 
 //Celera Confidential Do Not Copy ibias_CELERAservice_Xibias
 //Celera Confidential Symbol Generator
-//OUTPUTS:11 VMAX:6V DFT:yes ACCURACY:yes
+//OUTPUTS:11 VMAX:6V DFT:yes ACCURACY:no
 module ibias_CELERAservice_Xibias (CELV,enable_ibias,global_celeraibias,SENSE_G,ok_ibias,IPO,
-ten_ibias,TAI_IBIAS,trim_ibias,CELG,CELSUB);
+ten_ibias,TAI_IBIAS,CELG,CELSUB);
 input CELV;
 input enable_ibias;
 input global_celeraibias;
@@ -93,12 +89,8 @@ input SENSE_G;
 output [10:0] IPO;
 input ten_ibias;
 output TAI_IBIAS;
-input [4:0] trim_ibias;
 input CELG;
 input CELSUB;
-
-//Celera Confidential Do Not Copy Pin trim_ibias
-wire[4:0] trim_ibias;
 
 //Celera Confidential Do Not Copy STONEnoconn
 STONEnoconn Xnoconn0(
@@ -132,16 +124,13 @@ STONEibiasDFT Xdft(
 );
 //,diesize,STONEibiasDFT
 //Celera Confidential Do Not Copy STONEibiasTRIM
-STONEibiasCONTROLselfRTRIM Xtrimself(
-.CELV (CELV),
+STONEibiasCONTROLselfRUNIT Xnotrimself(
 .SENSE_G (SENSE_G),
-.trim_ibias (trim_ibias [4:0]),
 .RE0 (RE0),
 .RE1 (RE1),
-.CELG (CELG),
-.CELSUB (CELSUB)
+.CELG (CELG)
 );
-//,diesize,STONEibiasCONTROLselfRTRIM
+//,diesize,STONEibiasCONTROLselfRUNIT
 //Celera Confidential Do Not Copy STONEibiasOUT
 STONEibiasOUT Xout0(
 .CELV (CELV),

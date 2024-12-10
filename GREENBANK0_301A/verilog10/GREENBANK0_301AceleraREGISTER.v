@@ -67,7 +67,7 @@ input  scli;
 input  sdai;
 input  CELG59462;
 input  CELV96848;
-  input  PORB97836;
+output  PORB97836;
 input  CELSUB40948;
 output  sdapd_registermap;
 output [2:0] register_REF2output_46e2454e_Xdatamap2;
