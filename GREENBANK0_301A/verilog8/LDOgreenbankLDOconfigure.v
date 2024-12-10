@@ -36,15 +36,18 @@ module IPOTTldo_d90fb091 (LDO,REF,CELG,SIMPV,CELSUB,ok_ldo,enable_ldo,global_ldo
   input [5:0] factory_ldocompensation;
 endmodule
 
-//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+//Verilog HDL for "DFT", "DFTtm8t" "functional"
 
 
-module PEBBLEtielo ( q, G, SUB, V );
+module DFTtm8t ( a, ten, tmi, G, SUB, V, tma );
 
   input V;
-  output q;
+  input  [7:0] tma;
+  output  [7:0] ten;
+  output  [1:0] a;
   input G;
   input SUB;
+  inout  [4:0] tmi;
 endmodule
 
 
@@ -106,6 +109,9 @@ wire [2:0] factory_ldoerror;
 wire [2:0] factory_ldooutput;
 wire [2:0] factory_ldofeedforward;
 wire [5:0] factory_ldocompensation;
+wire [1:0] a;
+wire [7:0] ten;
+wire [7:0] tma;
 wire [7:0] id;
 wire [7:0] drm0;
 wire [7:0] drm1;
@@ -143,7 +149,7 @@ IPOTTldo_d90fb091 XLDO1 (
 .CELSUB(CELSUB40948),
 .ok_ldo(net_35),
 .enable_ldo(enable_ldo),
-.global_ldo(tl0),
+.global_ldo(global_ldo_28b60566_XLDO1),
 .celkelvin_LDO(celkelvin_LDO10_9e0b544b),
 .factory_ldogain({factory_ldogain_28b60566_2,factory_ldogain_28b60566_1,factory_ldogain_28b60566_0}),
 .factory_ldopsrr({factory_ldopsrr_28b60566_5,factory_ldopsrr_28b60566_4,factory_ldopsrr_28b60566_3,factory_ldopsrr_28b60566_2,factory_ldopsrr_28b60566_1,factory_ldopsrr_28b60566_0}),
@@ -154,31 +160,34 @@ IPOTTldo_d90fb091 XLDO1 (
 .factory_ldocompensation({factory_ldocompensation_28b60566_5,factory_ldocompensation_28b60566_4,factory_ldocompensation_28b60566_3,factory_ldocompensation_28b60566_2,factory_ldocompensation_28b60566_1,factory_ldocompensation_28b60566_0})
 );
 
-PEBBLEtielo XtieLo (
+DFTtm8t dft_hex0x08 (
 .G(CELG59462),
 .V(CELV96848),
-.q(tl0),
-.SUB(CELSUB40948)
+.a({a1,a0}),
+.SUB(CELSUB40948),
+.ten({noconn_dft_hex0x08_ten_7,noconn_dft_hex0x08_ten_6,noconn_dft_hex0x08_ten_5,noconn_dft_hex0x08_ten_4,noconn_dft_hex0x08_ten_3,noconn_dft_hex0x08_ten_2,noconn_dft_hex0x08_ten_1,global_ldo_28b60566_XLDO1}),
+.tma({a0,a0,a0,a0,a1,a0,a0,a0}),
+.tmi(tmi[4:0])
 );
 
 drm32 drm_hex0x04 (
 .G(CELG59462),
 .V(CELV96848),
-.d0(a0),
-.d1(a1),
-.id({a0,a0,a0,a0,a0,a1,a0,a0}),
+.d0(c0),
+.d1(c1),
+.id({c0,c0,c0,c0,c0,c1,c0,c0}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
 .drm0({noconn_drm32_drm0_7,noconn_drm32_drm0_6,factory_ldoerror_28b60566_2,factory_ldoerror_28b60566_1,factory_ldoerror_28b60566_0,factory_ldogain_28b60566_2,factory_ldogain_28b60566_1,factory_ldogain_28b60566_0}),
 .drm1({noconn_drm32_drm1_7,noconn_drm32_drm1_6,factory_ldopsrr_28b60566_5,factory_ldopsrr_28b60566_4,factory_ldopsrr_28b60566_3,factory_ldopsrr_28b60566_2,factory_ldopsrr_28b60566_1,factory_ldopsrr_28b60566_0}),
 .drm2({noconn_drm32_drm2_7,noconn_drm32_drm2_6,factory_ldofeedforward_28b60566_2,factory_ldofeedforward_28b60566_1,factory_ldofeedforward_28b60566_0,factory_ldooutput_28b60566_2,factory_ldooutput_28b60566_1,factory_ldooutput_28b60566_0}),
 .drm3({noconn_drm32_drm3_7,noconn_drm32_drm3_6,factory_ldocompensation_28b60566_5,factory_ldocompensation_28b60566_4,factory_ldocompensation_28b60566_3,factory_ldocompensation_28b60566_2,factory_ldocompensation_28b60566_1,factory_ldocompensation_28b60566_0}),
-.por0({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por1({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por2({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por3({a0,a0,a0,a0,a0,a0,a0,a0}),
-.bypload(a0),
-.lastdrm(a0)
+.por0({c0,c0,c0,c0,c0,c0,c0,c0}),
+.por1({c0,c0,c0,c0,c0,c0,c0,c0}),
+.por2({c0,c0,c0,c0,c0,c0,c0,c0}),
+.por3({c0,c0,c0,c0,c0,c0,c0,c0}),
+.bypload(c0),
+.lastdrm(c0)
 );
 
 STONEnoconn XNCnoconn_drm32_drm0_6 (
@@ -211,6 +220,34 @@ STONEnoconn XNCnoconn_drm32_drm3_6 (
 
 STONEnoconn XNCnoconn_drm32_drm3_7 (
 .noconn(noconn_drm32_drm3_7)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x08_ten_1 (
+.noconn(noconn_dft_hex0x08_ten_1)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x08_ten_2 (
+.noconn(noconn_dft_hex0x08_ten_2)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x08_ten_3 (
+.noconn(noconn_dft_hex0x08_ten_3)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x08_ten_4 (
+.noconn(noconn_dft_hex0x08_ten_4)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x08_ten_5 (
+.noconn(noconn_dft_hex0x08_ten_5)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x08_ten_6 (
+.noconn(noconn_dft_hex0x08_ten_6)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x08_ten_7 (
+.noconn(noconn_dft_hex0x08_ten_7)
 );
 
 endmodule
