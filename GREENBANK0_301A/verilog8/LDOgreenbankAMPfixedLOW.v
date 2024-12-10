@@ -8,11 +8,11 @@ module VESPAdftpulse (stop,pulse,start,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module switchgnd_321bf2ca (I,O,CELG,SIMPV,CELSUB,enable_switch);
+module switchgnd_321bf2ca (I,O,CELG,CELV,CELSUB,enable_switch);
   input  I;
   inout  O;
   input  CELG;
-  input  SIMPV;
+  input  CELV;
   input  CELSUB;
   input  enable_switch;
 endmodule
@@ -72,7 +72,7 @@ switchgnd_321bf2ca XU1 (
 .I(REF),
 .O(net_32),
 .CELG(CELG59462),
-.SIMPV(TBD_XU1_XceleraCORE_XU20_XAMPFIXEDlow_XU1_SIMPV),
+.CELV(CELV96848),
 .CELSUB(CELSUB40948),
 .enable_switch(enable_ldo)
 );

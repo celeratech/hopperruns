@@ -1,0 +1,84 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x55644eb89f60 .scope module, "sim_gmRegression301b" "sim_gmRegression301b" 2 31;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "CELG59462";
+    .port_info 1 /INPUT 1 "CELSUB40948";
+o0x7fe4afaef318 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55644ebd62a0_0 .net "CELG59462", 0 0, o0x7fe4afaef318;  0 drivers
+o0x7fe4afaef348 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55644ebd6390_0 .net "CELSUB40948", 0 0, o0x7fe4afaef348;  0 drivers
+o0x7fe4afaef378 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55644ebd6460_0 .net "IP_gmRegression301b1", 0 0, o0x7fe4afaef378;  0 drivers
+o0x7fe4afaef1c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55644ebd6560_0 .net "net_10", 0 0, o0x7fe4afaef1c8;  0 drivers
+o0x7fe4afaef198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55644ebd6600_0 .net "net_11", 0 0, o0x7fe4afaef198;  0 drivers
+o0x7fe4afaef228 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55644ebd6740_0 .net "net_12", 0 0, o0x7fe4afaef228;  0 drivers
+o0x7fe4afaef1f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55644ebd6830_0 .net "net_13", 0 0, o0x7fe4afaef1f8;  0 drivers
+o0x7fe4afaef018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55644ebd6920_0 .net "net_14", 0 0, o0x7fe4afaef018;  0 drivers
+o0x7fe4afaef0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55644ebd6a10_0 .net "net_15", 0 0, o0x7fe4afaef0a8;  0 drivers
+o0x7fe4afaef078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55644ebd6b40_0 .net "net_16", 0 0, o0x7fe4afaef078;  0 drivers
+o0x7fe4afaef048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55644ebd6c30_0 .net "net_17", 0 0, o0x7fe4afaef048;  0 drivers
+S_0x55644eb87cf0 .scope module, "XFORCE" "FORCEgm301b" 2 39, 2 2 0, S_0x55644eb89f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "en";
+    .port_info 1 /INPUT 1 "inn";
+    .port_info 2 /INPUT 1 "inp";
+    .port_info 3 /INPUT 1 "SIMPV";
+v0x55644eb894b0_0 .net "SIMPV", 0 0, o0x7fe4afaef018;  alias, 0 drivers
+v0x55644eb8a0f0_0 .net "en", 0 0, o0x7fe4afaef048;  alias, 0 drivers
+v0x55644eb89ec0_0 .net "inn", 0 0, o0x7fe4afaef078;  alias, 0 drivers
+v0x55644ebd4ec0_0 .net "inp", 0 0, o0x7fe4afaef0a8;  alias, 0 drivers
+S_0x55644ebd5030 .scope module, "XU3" "EXTERNALSgm301b" 2 46, 2 9 0, S_0x55644eb89f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "OUTsink";
+    .port_info 1 /INPUT 1 "OUTsource";
+    .port_info 2 /INPUT 1 "OUTpushpull";
+    .port_info 3 /INPUT 1 "OUTpushpull2mm";
+v0x55644ebd52a0_0 .net "OUTpushpull", 0 0, o0x7fe4afaef198;  alias, 0 drivers
+v0x55644ebd5360_0 .net "OUTpushpull2mm", 0 0, o0x7fe4afaef1c8;  alias, 0 drivers
+v0x55644ebd5420_0 .net "OUTsink", 0 0, o0x7fe4afaef1f8;  alias, 0 drivers
+v0x55644ebd54f0_0 .net "OUTsource", 0 0, o0x7fe4afaef228;  alias, 0 drivers
+S_0x55644ebd5660 .scope module, "XU4" "gmRegression301b" 2 53, 2 16 0, S_0x55644eb89f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "en";
+    .port_info 1 /INPUT 1 "inn";
+    .port_info 2 /INPUT 1 "inp";
+    .port_info 3 /INPUT 1 "SIMPV";
+    .port_info 4 /INOUT 1 "OUTsink";
+    .port_info 5 /INPUT 1 "CELG59462";
+    .port_info 6 /INOUT 1 "OUTsource";
+    .port_info 7 /INPUT 1 "CELSUB40948";
+    .port_info 8 /INOUT 1 "OUTpushpull";
+    .port_info 9 /INOUT 1 "OUTpushpull2mm";
+    .port_info 10 /INPUT 1 "IP_gmRegression301b1";
+v0x55644ebd5950_0 .net "CELG59462", 0 0, o0x7fe4afaef318;  alias, 0 drivers
+v0x55644ebd5a10_0 .net "CELSUB40948", 0 0, o0x7fe4afaef348;  alias, 0 drivers
+v0x55644ebd5ad0_0 .net "IP_gmRegression301b1", 0 0, o0x7fe4afaef378;  alias, 0 drivers
+v0x55644ebd5ba0_0 .net "OUTpushpull", 0 0, o0x7fe4afaef198;  alias, 0 drivers
+v0x55644ebd5c70_0 .net "OUTpushpull2mm", 0 0, o0x7fe4afaef1c8;  alias, 0 drivers
+v0x55644ebd5d60_0 .net "OUTsink", 0 0, o0x7fe4afaef1f8;  alias, 0 drivers
+v0x55644ebd5e30_0 .net "OUTsource", 0 0, o0x7fe4afaef228;  alias, 0 drivers
+v0x55644ebd5f00_0 .net "SIMPV", 0 0, o0x7fe4afaef018;  alias, 0 drivers
+v0x55644ebd5fd0_0 .net "en", 0 0, o0x7fe4afaef048;  alias, 0 drivers
+v0x55644ebd60a0_0 .net "inn", 0 0, o0x7fe4afaef078;  alias, 0 drivers
+v0x55644ebd6170_0 .net "inp", 0 0, o0x7fe4afaef0a8;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/celera/projects/Sunnyvale/software/gmRegression301b/verilog8/sim_gmRegression301b.v";

@@ -24,8 +24,8 @@ endmodule
 //Celera Confidential Do Not Copy switchgnd_321bf2ca
 //Celera Confidential Symbol Generator
 //100 Ohm gndSwitch
-module switchgnd_321bf2ca (SIMPV,O,I,enable_switch,CELG,CELSUB);
-input SIMPV;
+module switchgnd_321bf2ca (CELV,O,I,enable_switch,CELG,CELSUB);
+input CELV;
 input I;
 input enable_switch;
 inout O;
@@ -34,7 +34,7 @@ input CELSUB;
 
 //Celera Confidential Do Not Copy PEBBLEswitchG100
 PEBBLEswitchG100 Xswitch(
-.V (SIMPV),
+.V (CELV),
 .I (I),
 .O (O),
 .en (enable_switch),

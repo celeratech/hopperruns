@@ -30,12 +30,12 @@ endmodule
 //Celera Confidential Symbol Generator
 //Inputs: 6, Switch On Resistance: 100
 //Type of Control:pin, T-Switch: no
-module amux8_dc44282c (CELV,SUB,O,I0,I1,
+module amux8_dc44282c (SIMPV,CELSUB,O,I0,I1,
 I2,I3,I4,I5,
 amux,
 CELG);
-input CELV;
-input SUB;
+input SIMPV;
+input CELSUB;
 output O;
 input I0;
 input I1;
@@ -46,18 +46,19 @@ input I5;
 input [2:0] amux;
 input CELG;
 
-//Celera Confidential Do Not Copy s
+//Celera Confidential Do Not Copy Pin s
 wire[2:0] s;
+
 //Celera Confidential Do Not Copy STONEmux6_100
 STONEmux6_100 Xamux(
-.CELV (CELV),
+.CELV (SIMPV),
 .s ({amux[2],amux[1],amux[0]}),
 .I1 (I1),
 .I5 (I5),
 .I4 (I4),
 .I2 (I2),
 .I0 (I0),
-.SUB (SUB),
+.SUB (CELSUB),
 .I3 (I3),
 .CELG (CELG),
 .O (O)

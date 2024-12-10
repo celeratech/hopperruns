@@ -48,8 +48,6 @@ user,switch_ron,500Ohms
 description,Switch ON Resistance
 user,switch_type,transmission
 description,Switch Architecture
-user,switch_vmax,6
-description,Switch Absolute maximum Voltage Rating
 user,NESTO,0.3.1
 description,Nesto generate Revision
 //**********************************************
@@ -183,48 +181,6 @@ movePINS
 endlayoutbio
 //**********************************************
 //Project Parameters
-//Celera:GREENBANK0_301A Project Bio
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////   default.bio'  DO NOT USE  ///////////////////////////////////
-
-//Simplis Project Parameters /////////////////////////////////////////////
-#define,Project,TBD
-#define,PROJECTreference,0.8
-#define,PROJECTsupply,5
-#define,TaRoom,25
-#define,ground,0.0
-#define,leveloffset,5
-//////////////////////////////////////////////////////////////////////////////////////////
-
-//Porcess  Parameters ///////////////////////////////////////////////////////
-#define,PROJECTbg,1.232
-#define,REFERENCEccpcode,15
-#define,REFERENCEccncode,15
-#define,HVNPN2A_5vbe,0.55
-#define,HVNPN2A_5vbetc,-2.1
-#define,VTNnch5i,0.72
-//#define,FETNcalculator_option,typical
-#define,FETNcalculator,maximum
-//#define,FETPcalculator_option,typical
-#define,FETPcalculator,maximum
-////////////////////////////////////////////////////////////////////////////////////////
-
-//Global Parameters ///////////////////////////////////////////////////////
-#define,CELVminimum,2.0
-#define,CELGabsmax,0.3
-#define,CELGabsmin,-0.3
-#define,SUBabsmax,0.3
-#define,SUBabsmin,-0.3
-#define,CELSUBabsmax,0.3
-#define,CELSUBabsmin,-0.3
-/////////////////////////////////////////////////////////////////////////////////////////
-
-//layout Parameters //////////////////////////////////////////////////////////
-#define MODULEdiesizefill 10
-//Percentage of area added to module for routing
-////////////////////////////////////////////////////////////////////////////////////////
-
-
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
@@ -240,6 +196,8 @@ revision,pinorder,0.2.0
 pinorder,I,O,enable_switch
 
 endpinorder
+//**********************************************
+
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.4
@@ -279,7 +237,7 @@ pinname,CELV
 definition,CELV,power
 iq,CELV,SIMULATION
 absmax,CELV,6
-absmin,CELV,2.0
+absmin,CELV,1.4
 io,CELV,power
 mode,CELV,power
 router,CELV,TBD
@@ -289,8 +247,10 @@ esd,CELV,TBD
 pinname,CELG
 definition,CELG,power ground
 iq,CELG,SIMULATION
-absmax,CELG,0.3
-absmin,CELG,-0.3
+absmax,CELG,*******
+
+absmin,CELG,***********************
+
 io,CELG,power
 mode,CELG,power
 router,CELG,TBD
@@ -301,7 +261,8 @@ pinname,I
 definition,I,switch input
 iq,I,SIMULATION
 absmax,I,6
-absmin,I,-0.3
+absmin,I,***********************
+
 io,I,inout
 mode,I,analog
 router,I,TBD
@@ -312,7 +273,8 @@ pinname,enable_switch
 definition,,enable_switch,switch enable
 iq,enable_switch,SIMULATION
 absmax,enable_switch,6
-absmin,enable_switch,-0.3
+absmin,enable_switch,***********************
+
 io,enable_switch,input
 mode,,enable_switch,digital
 router,enable_switch,TBD
@@ -323,7 +285,8 @@ pinname,O
 definition,O,switch output 
 iq,O,SIMULATION
 absmax,O,6
-absmin,O,-0.3
+absmin,O,***********************
+
 io,O,inout
 mode,O,analog
 router,O,TBD
@@ -333,8 +296,8 @@ esd,O,TBD
 pinname,CELSUB
 definition,CELSUB,Substrate
 iq,CELSUB,SIMULATION
-absmax,CELSUB,6
-absmin,CELSUB,-0.3
+absmax,CELSUB,
+absmin,CELSUB,
 io,CELSUB,input
 mode,CELSUB,power
 router,CELSUB,TBD

@@ -274,6 +274,7 @@ factory,busname,na
 revision,layout,0p1
 layout,oscillatorcrude
 place Generate STONEoscillator3LOGIC 0 0 R0
+placeTAP 70 -8
 place Generate STONEoscillator3LOGIC_RevB 0 0 R0
 place Generate STONEoscillator3LOGIC_Rev296 0 0 R0
 place Generate STONEoscillator3IBIAS -0.72 16.74 R0
@@ -283,10 +284,29 @@ place Generate STONEoscillator3CONTROLfast 0 55.08 R0
 place Generate STONEoscillator3CONTROLslow -1.195 52.985 R0
 place Generate STONEoscillator3TRIM 0 -16.74 R0
 place Generate STONEoscillatorSTANDBY 0 -16.74 R0
+placeIFELSE cellNameNOTContains STONEoscillator3TRIM
+placeTAP 63 48
+placeALTVIEW Generate STONEoscillator3LOGIC_RevB layout2 0 0 R0
+placeALTVIEW Generate STONEoscillator3LOGIC_RevB layout1 0 0 R0
+placeELSE
+place Generate STONEoscillator3LOGIC_RevB 0 0 R0
+placeEND
 placeTAP 15 -15 
 place Generate STONEoscillator1DFT 0 -16.74 R0
 place Generate STONEoscillator1DFT 0 -16.74 MX
 placeCAP -1 14 3 R0 73
+placeINST XPEBBLEtieloSIMPV 57.96 -16.74 R180
+placeIF instNameContains Xstartup
+placeTAPuntil
+placeTAP 7 -3
+placeINST Xstartup -0.45 -67.095 R0
+placeTAP 3 -31
+placeINST Xstartup -0.45 -83.835 R0 
+placeTAP 3 -100
+placeINST Xstartup -0.45 -100.575 R0
+placeTAPEND
+placeALTVIEW PEBBLES PEBBLEtielo layoutSHORT 74.945 -59.11 R0
+placeEND
 moveORIGIN y
 placeROUTE
 placeHVRING

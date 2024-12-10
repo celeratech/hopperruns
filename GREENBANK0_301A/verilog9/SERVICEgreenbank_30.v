@@ -130,7 +130,7 @@ module currentgenerator_94421a49 (I0,IP,CELG,SIMPV,TAEXT,CELSUB,TAI_N5UREF,TAI_P
   input  ten_taext_currentgenerator;
 endmodule
 
-module amux8_dc44282c (O,I0,I1,I2,I3,I4,I5,SUB,CELG,CELV,amux);
+module amux8_dc44282c (O,I0,I1,I2,I3,I4,I5,CELG,amux,SIMPV,CELSUB);
   output  O;
   input  I0;
   input  I1;
@@ -138,10 +138,10 @@ module amux8_dc44282c (O,I0,I1,I2,I3,I4,I5,SUB,CELG,CELV,amux);
   input  I3;
   input  I4;
   input  I5;
-  input  SUB;
   input  CELG;
-  input  CELV;
   input [2:0] amux;
+  input  SIMPV;
+  input  CELSUB;
 endmodule
 
 module reference_d628bb93 (REF,CELG,CELBG,SIMPV,CELSUB,TAI_REF,ten_ref,trim_ref,TAI_REFBG,ten_refbg,trim_refbg,ok_reference,factory_refccn,factory_refccp,celkelvin_GNDref,enable_reference,global_reference);
@@ -171,14 +171,14 @@ module capacitorfixed_f0008a74 (CN,CP,KELVIN_CN,KELVIN_CP);
   inout  KELVIN_CP;
 endmodule
 
-module amux2_436b457d (O,I0,I1,SUB,CELG,CELV,amux);
+module amux2_436b457d (O,I0,I1,CELG,amux,SIMPV,CELSUB);
   output  O;
   input  I0;
   input  I1;
-  input  SUB;
   input  CELG;
-  input  CELV;
   input  amux;
+  input  SIMPV;
+  input  CELSUB;
 endmodule
 
 module porb_857d66ac (SUB,CELG,CELV,porb,SENSE_PORB,enable_porb);
@@ -531,10 +531,10 @@ amux8_dc44282c XU9 (
 .I3(net_258),
 .I4(net_259),
 .I5(net_260),
-.SUB(CELSUB40948),
 .CELG(CELG59462),
-.CELV(MUDV),
-.amux({register_REFERENCEselect_b05f295d_Xdatamap4[2],register_REFERENCEselect_b05f295d_Xdatamap4[1],register_REFERENCEselect_b05f295d_Xdatamap4[0]})
+.amux({register_REFERENCEselect_b05f295d_Xdatamap4[2],register_REFERENCEselect_b05f295d_Xdatamap4[1],register_REFERENCEselect_b05f295d_Xdatamap4[0]}),
+.SIMPV(MUDV),
+.CELSUB(CELSUB40948)
 );
 
 reference_d628bb93 XU10 (
@@ -568,10 +568,10 @@ amux2_436b457d XU14 (
 .O(REF),
 .I0(net_251),
 .I1(net_252),
-.SUB(CELSUB40948),
 .CELG(CELG59462),
-.CELV(MUDV),
-.amux(register_SERVICEconfiguration_d530de71_Xdatamap3[5])
+.amux(register_SERVICEconfiguration_d530de71_Xdatamap3[5]),
+.SIMPV(MUDV),
+.CELSUB(CELSUB40948)
 );
 
 porb_857d66ac XU17 (
