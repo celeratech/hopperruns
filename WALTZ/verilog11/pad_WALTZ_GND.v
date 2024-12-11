@@ -8,16 +8,6 @@ module STONEpad1 ( PAD );
 endmodule
 
 
-//Verilog HDL for "Generate", "STONEotpSENSE" "functional"
-
-
-module STONEotpSENSE ( PAD, OTP );
-
-  input PAD;
-  output OTP;
-endmodule
-
-
 //Verilog HDL for "Generate", "WRAPPER1" "functional"
 
 
@@ -29,10 +19,9 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_WALTZ_GND (GND, GESD, GOTP, CELG59462, CELSUB40948, SENSE_G_4c0bef8e, kelvin_GNDservice, kelvin_GNDpowergood, kelvin_GNDsoftstart, kelvin_GNDregulation, celkelvin_GND_73ebd82d, celkelvin_GND_bb7e77f4, celkelvin_GND_d75c3f7f, celkelvin_GND_db749c23);
+module pad_WALTZ_GND (GND, GESD, CELG59462, CELSUB40948, SENSE_G_4c0bef8e, kelvin_GNDservice, kelvin_GNDpowergood, kelvin_GNDsoftstart, kelvin_GNDregulation, celkelvin_GND_73ebd82d, celkelvin_GND_bb7e77f4, celkelvin_GND_d75c3f7f, celkelvin_GND_db749c23);
 inout  GND;
 output  GESD;
-output  GOTP;
 inout  CELG59462;
 output  CELSUB40948;
 output  SENSE_G_4c0bef8e;
@@ -50,11 +39,6 @@ output  celkelvin_GND_db749c23;
 
 // ------------------------ Networks ---------------------
 STONEpad1 XPAD1 (
-.PAD(GND)
-);
-
-STONEotpSENSE Xgotp (
-.OTP(GOTP),
 .PAD(GND)
 );
 

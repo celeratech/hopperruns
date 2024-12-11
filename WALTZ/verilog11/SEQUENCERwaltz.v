@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module SEQUENCER1waltz_Rev1_DYES (tdo,tmi,porb,ok_clock,CELG59462,CELV96848,fault_run,ok_driver,ok_service,CELSUB40948,blank_fault,fault_clock,enable_waltz,ok_regulation,done_softstart,fault_shutdown,switch_control,enable_softstart,enable_regulation,SEQUENCER1waltz_Rev1_statecontrol_704bb73a);
+module SEQUENCER1waltz_Rev1_DYES (tdo,tmi,porb,ok_clock,CELG59462,CELV96848,fault_run,ok_driver,ok_service,CELSUB40948,blank_fault,fault_clock,enable_waltz,ok_regulation,done_softstart,fault_shutdown,switch_control,enable_softstart,enable_regulation);
   inout  tdo;
   input [4:0] tmi;
   input  porb;
@@ -19,41 +19,12 @@ module SEQUENCER1waltz_Rev1_DYES (tdo,tmi,porb,ok_clock,CELG59462,CELV96848,faul
   output  switch_control;
   output  enable_softstart;
   output  enable_regulation;
-  input [3:0] SEQUENCER1waltz_Rev1_statecontrol_704bb73a;
 endmodule
-
-//Verilog HDL for "DRM", "drm8" "functional"
-
-
-module drm8 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, drm0, d1, d0 );
-
-  input lastdrm;
-  input V;
-  output d1;
-  input  [7:0] id;
-  output d0;
-  input bypload;
-  output  [7:0] drm0;
-  input  [7:0] por0;
-  input G;
-  inout  [4:0] tmi;
-  input SUB;
-endmodule
-
-
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
 
 // ------------------------ Module Verilog ---------------
 module SEQUENCERwaltz (tdo, tmi, porb, ok_clock, CELG59462, CELV96848, fault_run, ok_driver, ok_service, CELSUB40948, blank_fault, fault_clock, enable_waltz, ok_regulation, done_softstart, fault_shutdown, switch_control, enable_softstart, enable_regulation);
 inout  tdo;
-inout [4:0] tmi;
+input [4:0] tmi;
 input  porb;
 input  ok_clock;
 input  CELG59462;
@@ -75,10 +46,6 @@ output  enable_regulation;
 
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
-wire [3:0] SEQUENCER1waltz_Rev1_statecontrol_704bb73a;
-wire [7:0] id;
-wire [7:0] drm0;
-wire [7:0] por0;
 
 // ------------------------ Networks ---------------------
 SEQUENCER1waltz_Rev1_DYES XSEQUENCER (
@@ -100,38 +67,7 @@ SEQUENCER1waltz_Rev1_DYES XSEQUENCER (
 .fault_shutdown(fault_shutdown),
 .switch_control(switch_control),
 .enable_softstart(enable_softstart),
-.enable_regulation(enable_regulation),
-.SEQUENCER1waltz_Rev1_statecontrol_704bb73a(SEQUENCER1waltz_Rev1_statecontrol_704bb73a[3:0])
-);
-
-drm8 drm_hex0x06 (
-.G(CELG59462),
-.V(CELV96848),
-.d0(a0),
-.d1(a1),
-.id({a0,a0,a0,a0,a0,a1,a1,a0}),
-.SUB(CELSUB40948),
-.tmi(tmi[4:0]),
-.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,SEQUENCER1waltz_Rev1_statecontrol_704bb73a[3],SEQUENCER1waltz_Rev1_statecontrol_704bb73a[2],SEQUENCER1waltz_Rev1_statecontrol_704bb73a[1],SEQUENCER1waltz_Rev1_statecontrol_704bb73a[0]}),
-.por0({a0,a0,a0,a0,a0,a0,a0,a0}),
-.bypload(a0),
-.lastdrm(a0)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_4 (
-.noconn(noconn_drm8_drm0_4)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_5 (
-.noconn(noconn_drm8_drm0_5)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_6 (
-.noconn(noconn_drm8_drm0_6)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_7 (
-.noconn(noconn_drm8_drm0_7)
+.enable_regulation(enable_regulation)
 );
 
 endmodule

@@ -99,6 +99,18 @@ module vbias_06fccf36 (IN1,IN2,CELG,VBIAS,CELSUB,ok_vbias,TAI_VBIAS,tdi_vbias,te
   input  ten_enablevbias;
 endmodule
 
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 //Verilog HDL for "Generate", "WRAPPER1" "functional"
 
 
@@ -153,7 +165,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SERVICEwaltz0MAIN (EN, IN, TAO, VCC, tdo, tmi, BIAS, porb, REF0V9, go_vcc, CELG59462, CELV96848, CELBG83021, OKREF03249, kelvin_VCC, ok_service, CELREF84329, CELSUB40948, ok_reference, IP_75c89176_XU16, kelvin_GNDservice, trim_ref_553d3e5b, trim_refbg_553d3e5b, celkelvin_IN_bc3b7675, celkelvin_GND_d75c3f7f, celkelvin_VCC_bc3b7675, trim_vbiasneg_23bb219c, trim_vbiaspos_23bb219c, trim_vbiasref_23bb219c, celkelvin_BIAS_bc3b7675, factory_refccn_553d3e5b, factory_refccp_553d3e5b);
+module SERVICEwaltz0MAIN (EN, IN, TAO, VCC, tdo, tmi, BIAS, porb, REF0V9, go_vcc, CELG59462, CELV96848, CELBG83021, OKREF03249, kelvin_VCC, ok_service, CELREF84329, CELSUB40948, ok_reference, IP_75c89176_XU16, kelvin_GNDservice, celkelvin_IN_bc3b7675, celkelvin_GND_d75c3f7f, celkelvin_VCC_bc3b7675, celkelvin_BIAS_bc3b7675);
 input  EN;
 input  IN;
 inout  TAO;
@@ -175,28 +187,14 @@ input  CELSUB40948;
 output  ok_reference;
 input  IP_75c89176_XU16;
 inout  kelvin_GNDservice;
-input [5:0] trim_ref_553d3e5b;
-input [6:0] trim_refbg_553d3e5b;
 input  celkelvin_IN_bc3b7675;
 input  celkelvin_GND_d75c3f7f;
 input  celkelvin_VCC_bc3b7675;
-input [7:0] trim_vbiasneg_23bb219c;
-input [7:0] trim_vbiaspos_23bb219c;
-input [7:0] trim_vbiasref_23bb219c;
 input  celkelvin_BIAS_bc3b7675;
-input [4:0] factory_refccn_553d3e5b;
-input [4:0] factory_refccp_553d3e5b;
 
 
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
-wire [5:0] trim_ref_553d3e5b;
-wire [6:0] trim_refbg_553d3e5b;
-wire [7:0] trim_vbiasneg_23bb219c;
-wire [7:0] trim_vbiaspos_23bb219c;
-wire [7:0] trim_vbiasref_23bb219c;
-wire [4:0] factory_refccn_553d3e5b;
-wire [4:0] factory_refccp_553d3e5b;
 wire [5:0] trim_ref;
 wire [6:0] trim_refbg;
 wire [4:0] factory_refccn;
@@ -247,13 +245,13 @@ reference_4fa591be XU4 (
 .CELSUB(CELSUB40948),
 .TAI_REF(TAI_REF_553d3e5b_XU4),
 .ten_ref(ten_ref_553d3e5b_XU4),
-.trim_ref({trim_ref_553d3e5b[5],trim_ref_553d3e5b[4],trim_ref_553d3e5b[3],trim_ref_553d3e5b[2],trim_ref_553d3e5b[1],trim_ref_553d3e5b[0]}),
+.trim_ref({d0,d0,d0,d0,d0,d0}),
 .TAI_REFBG(TAI_REFBG_553d3e5b_XU4),
 .ten_refbg(ten_refbg_553d3e5b_XU4),
-.trim_refbg({trim_refbg_553d3e5b[6],trim_refbg_553d3e5b[5],trim_refbg_553d3e5b[4],trim_refbg_553d3e5b[3],trim_refbg_553d3e5b[2],trim_refbg_553d3e5b[1],trim_refbg_553d3e5b[0]}),
+.trim_refbg({d0,d0,d0,d0,d0,d0,d0}),
 .ok_reference(ok_reference),
-.factory_refccn({factory_refccn_553d3e5b[4],factory_refccn_553d3e5b[3],factory_refccn_553d3e5b[2],factory_refccn_553d3e5b[1],factory_refccn_553d3e5b[0]}),
-.factory_refccp({factory_refccp_553d3e5b[4],factory_refccp_553d3e5b[3],factory_refccp_553d3e5b[2],factory_refccp_553d3e5b[1],factory_refccp_553d3e5b[0]}),
+.factory_refccn({d0,d0,d0,d0,d0}),
+.factory_refccp({d0,d0,d0,d0,d0}),
 .celkelvin_GNDref(celkelvin_GND_d75c3f7f),
 .enable_reference(porb),
 .global_reference(global_reference_553d3e5b_XU4)
@@ -301,14 +299,21 @@ vbias_06fccf36 Xvbias1 (
 .ten_taiv1v0f(ten_taiv1v0f_23bb219c_Xvbias1),
 .celkelvin_IN1(celkelvin_IN_bc3b7675),
 .celkelvin_IN2(celkelvin_BIAS_bc3b7675),
-.trim_vbiasneg({trim_vbiasneg_23bb219c[7],trim_vbiasneg_23bb219c[6],trim_vbiasneg_23bb219c[5],trim_vbiasneg_23bb219c[4],trim_vbiasneg_23bb219c[3],trim_vbiasneg_23bb219c[2],trim_vbiasneg_23bb219c[1],trim_vbiasneg_23bb219c[0]}),
-.trim_vbiaspos({trim_vbiaspos_23bb219c[7],trim_vbiaspos_23bb219c[6],trim_vbiaspos_23bb219c[5],trim_vbiaspos_23bb219c[4],trim_vbiaspos_23bb219c[3],trim_vbiaspos_23bb219c[2],trim_vbiaspos_23bb219c[1],trim_vbiaspos_23bb219c[0]}),
-.trim_vbiasref({trim_vbiasref_23bb219c[7],trim_vbiasref_23bb219c[6],trim_vbiasref_23bb219c[5],trim_vbiasref_23bb219c[4],trim_vbiasref_23bb219c[3],trim_vbiasref_23bb219c[2],trim_vbiasref_23bb219c[1],trim_vbiasref_23bb219c[0]}),
+.trim_vbiasneg({d0,d0,d0,d0,d0,d0,d0,d0}),
+.trim_vbiaspos({d0,d0,d0,d0,d0,d0,d0,d0}),
+.trim_vbiasref({d0,d0,d0,d0,d0,d0,d0,d0}),
 .ENABLE_VBIASHV(EN),
 .ten_taifbvbias(ten_taifbvbias_23bb219c_Xvbias1),
 .ten_tdiokvbias(ten_tdiokvbias_23bb219c_Xvbias1),
 .celkelvin_VBIAS(celkelvin_VCC_bc3b7675),
 .ten_enablevbias(ten_enablevbias_23bb219c_Xvbias1)
+);
+
+PEBBLEtielo XDRMNOTL (
+.G(CELG59462),
+.V(CELV96848),
+.q(d0),
+.SUB(CELSUB40948)
 );
 
 WRAPPER1 XWRAP_OKREF (

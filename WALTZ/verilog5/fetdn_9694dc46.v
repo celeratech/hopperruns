@@ -14,6 +14,19 @@
 //DFT:no
 
 //Celera Confidential Do Not Copy fet_fetdn_9694dc46_Xfet.v
+//Celera:fet_fetdn_9694dc46_Xfet
+//Celera Confidential Symbol Generator
+//power NMOS:Ron:0.820 Ohm
+//Vgs 6V Vds 60V
+//Kelvin:no
+
+module fet_fetdn_9694dc46_Xfet (GATE,SOURCE,DRAIN,SUB);
+input GATE;
+inout SOURCE;
+inout DRAIN;
+input SUB;
+endmodule
+
 
 //Celera Confidential Do Not Copy NMOS_REPLICA
 module an5g60dw2_2p4x0p5x2p0x1p0 (DRAIN,GATE,SOURCE,SUB);

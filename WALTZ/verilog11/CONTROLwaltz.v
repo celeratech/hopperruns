@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module Algorithm5p9_DYES (fcm,tdo,tmi,porb,CELG59462,CELV96848,bbm_topon,go_driver,ipeak_top,ok_driver,top_switch,CELSUB40948,bbm_bottomon,blank_bottom,ipeak_bottom,blank_refresh,bottom_switch,clock_control,fault_control,zcross_bottom,done_softstart,enable_control,freeze_control,switch_control,inegative_bottom,Algorithm5p9_statecontrol_22dba987);
+module Algorithm5p9_DYES (fcm,tdo,tmi,porb,CELG59462,CELV96848,bbm_topon,go_driver,ipeak_top,ok_driver,top_switch,CELSUB40948,bbm_bottomon,blank_bottom,ipeak_bottom,blank_refresh,bottom_switch,clock_control,fault_control,zcross_bottom,done_softstart,enable_control,freeze_control,switch_control,inegative_bottom);
   input  fcm;
   inout  tdo;
   input [4:0] tmi;
@@ -25,32 +25,21 @@ module Algorithm5p9_DYES (fcm,tdo,tmi,porb,CELG59462,CELV96848,bbm_topon,go_driv
   input  freeze_control;
   input  switch_control;
   input  inegative_bottom;
-  input [4:0] Algorithm5p9_statecontrol_22dba987;
 endmodule
 
-//Verilog HDL for "DRM", "drm8" "functional"
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
 
 
-module drm8 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, drm0, d1, d0 );
+module STONEnoconn ( noconn );
 
-  input lastdrm;
-  input V;
-  output d1;
-  input  [7:0] id;
-  output d0;
-  input bypload;
-  output  [7:0] drm0;
-  input  [7:0] por0;
-  input G;
-  inout  [4:0] tmi;
-  input SUB;
+  input noconn;
 endmodule
 
 
 // ------------------------ Module Verilog ---------------
 module CONTROLwaltz (tdo, tmi, porb, clock, botstate, topstate, CELG59462, CELV96848, bbm_topon, botswineg, go_driver, ok_driver, botswipeak, topswipeak, CELSUB40948, botswzcross, bbm_bottomon, fault_control, done_softstart, enable_control, freeze_control, switch_control);
 inout  tdo;
-inout [4:0] tmi;
+input [4:0] tmi;
 input  porb;
 input  clock;
 output  botstate;
@@ -75,14 +64,10 @@ input  switch_control;
 
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
-wire [4:0] Algorithm5p9_statecontrol_22dba987;
-wire [7:0] id;
-wire [7:0] drm0;
-wire [7:0] por0;
 
 // ------------------------ Networks ---------------------
 Algorithm5p9_DYES XCONTROL (
-.fcm(CONTROLconfiguration_27e3944a_0),
+.fcm(net_59),
 .tdo(tdo),
 .tmi(tmi[4:0]),
 .porb(porb),
@@ -95,9 +80,9 @@ Algorithm5p9_DYES XCONTROL (
 .top_switch(topstate),
 .CELSUB40948(CELSUB40948),
 .bbm_bottomon(bbm_bottomon),
-.blank_bottom(CONTROLconfiguration_27e3944a_1),
+.blank_bottom(net_60),
 .ipeak_bottom(botswipeak),
-.blank_refresh(CONTROLconfiguration_27e3944a_2),
+.blank_refresh(net_61),
 .bottom_switch(botstate),
 .clock_control(clock),
 .fault_control(fault_control),
@@ -106,22 +91,19 @@ Algorithm5p9_DYES XCONTROL (
 .enable_control(enable_control),
 .freeze_control(freeze_control),
 .switch_control(switch_control),
-.inegative_bottom(botswineg),
-.Algorithm5p9_statecontrol_22dba987(Algorithm5p9_statecontrol_22dba987[4:0])
+.inegative_bottom(botswineg)
 );
 
-drm8 drm_hex0x02 (
-.G(CELG59462),
-.V(CELV96848),
-.d0(a0),
-.d1(a1),
-.id({a0,a0,a0,a0,a0,a0,a1,a0}),
-.SUB(CELSUB40948),
-.tmi(tmi[4:0]),
-.drm0({CONTROLconfiguration_27e3944a_2,CONTROLconfiguration_27e3944a_1,CONTROLconfiguration_27e3944a_0,Algorithm5p9_statecontrol_22dba987[4],Algorithm5p9_statecontrol_22dba987[3],Algorithm5p9_statecontrol_22dba987[2],Algorithm5p9_statecontrol_22dba987[1],Algorithm5p9_statecontrol_22dba987[0]}),
-.por0({a0,a1,a1,a1,a0,a0,a0,a0}),
-.bypload(a0),
-.lastdrm(a0)
+STONEnoconn XNC59 (
+.noconn(net_59)
+);
+
+STONEnoconn XNC60 (
+.noconn(net_60)
+);
+
+STONEnoconn XNC61 (
+.noconn(net_61)
 );
 
 endmodule
