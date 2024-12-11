@@ -112,18 +112,6 @@ module nand2_9125fe87 (o,i0,i1,SUB,CELG,CELV);
   input  CELV;
 endmodule
 
-//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
-
-
-module PEBBLEtielo ( q, G, SUB, V );
-
-  input V;
-  output q;
-  input G;
-  input SUB;
-endmodule
-
-
 module thermal_b84c0fbd (IP,ten,CELG,CELBG,SIMPV,CELSUB,fault_thermal,enable_thermal,trim_thermal_accuracy);
   input  IP;
   input  ten;
@@ -161,7 +149,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module FAULTMANAGERwaltzMAIN (tmi, MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELBG83021, CELSUB40948, blank_fault, fault_short, mode_hiccup, enable_fault, fault_freeze, hijack_delay, blank_thermal, dft_delaySHORT, hijack_short_status, IP_201f84ba_Xthermal1, hijack_thermal_status, hijack_faultmanager_status);
+module FAULTMANAGERwaltzMAIN (tmi, MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELBG83021, CELSUB40948, blank_fault, fault_short, mode_hiccup, enable_fault, fault_freeze, hijack_delay, blank_thermal, dft_delaySHORT, hijack_short_status, IP_201f84ba_Xthermal1, hijack_thermal_status, hijack_faultmanager_status, trim_thermal_accuracy_201f84ba);
 input [4:0] tmi;
 input  MUDV;
 input  clock;
@@ -183,10 +171,12 @@ input  hijack_short_status;
 input  IP_201f84ba_Xthermal1;
 input  hijack_thermal_status;
 input  hijack_faultmanager_status;
+input [2:0] trim_thermal_accuracy_201f84ba;
 
 
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
+wire [2:0] trim_thermal_accuracy_201f84ba;
 wire [2:0] trim_thermal_accuracy;
 wire [1:0] a;
 wire [7:0] ten;
@@ -380,13 +370,6 @@ dbuf_e926e395 XU44 (
 .CELV(CELV96848)
 );
 
-PEBBLEtielo XDRMNOTL (
-.G(CELG59462),
-.V(CELV96848),
-.q(c0),
-.SUB(CELSUB40948)
-);
-
 thermal_b84c0fbd Xthermal1 (
 .IP(IP_201f84ba_Xthermal1),
 .ten(ten_201f84ba_Xthermal1),
@@ -396,7 +379,7 @@ thermal_b84c0fbd Xthermal1 (
 .CELSUB(CELSUB40948),
 .fault_thermal(net_94),
 .enable_thermal(net_98),
-.trim_thermal_accuracy({c0,c0,c0})
+.trim_thermal_accuracy({trim_thermal_accuracy_201f84ba[2],trim_thermal_accuracy_201f84ba[1],trim_thermal_accuracy_201f84ba[0]})
 );
 
 DFTtm8t dft_hex0x0D (

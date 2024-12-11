@@ -168,15 +168,6 @@ module dftprobeModel0_53e6eb77 (i,tdi,ten,CELG,CELV,CELSUB);
   input  CELSUB;
 endmodule
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
 //Verilog HDL for "DFT", "DFTtm8d" "functional"
 
 
@@ -194,8 +185,17 @@ module DFTtm8d ( a, ten, tdo, tmi, G, SUB, V, tdi, tma );
 endmodule
 
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module SEQUENCER1waltz_Rev1_DYES (tdo, tmi, porb, ok_clock, CELG59462, CELV96848, fault_run, ok_driver, ok_service, CELSUB40948, blank_fault, fault_clock, enable_waltz, ok_regulation, done_softstart, fault_shutdown, switch_control, enable_softstart, enable_regulation);
+module SEQUENCER1waltz_Rev1_DYES (tdo, tmi, porb, ok_clock, CELG59462, CELV96848, fault_run, ok_driver, ok_service, CELSUB40948, blank_fault, fault_clock, enable_waltz, ok_regulation, done_softstart, fault_shutdown, switch_control, enable_softstart, enable_regulation, SEQUENCER1waltz_Rev1_statecontrol_704bb73a);
 inout  tdo;
 input [4:0] tmi;
 input  porb;
@@ -215,10 +215,12 @@ input  fault_shutdown;
 output  switch_control;
 output  enable_softstart;
 output  enable_regulation;
+input [3:0] SEQUENCER1waltz_Rev1_statecontrol_704bb73a;
 
 
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
+wire [3:0] SEQUENCER1waltz_Rev1_statecontrol_704bb73a;
 wire [1:0] a;
 wire [7:0] tdi;
 wire [7:0] ten;
@@ -246,10 +248,10 @@ SEQUENCER1waltz_Rev1_DYES_ XMAIN (
 .fault_clock(fault_clock),
 .ENABLEdelayi(net_118),
 .enable_waltz(enable_waltz),
-.STATEcontrol0(net_80),
-.STATEcontrol1(net_81),
-.STATEcontrol2(net_82),
-.STATEcontrol3(net_83),
+.STATEcontrol0(SEQUENCER1waltz_Rev1_statecontrol_704bb73a[0]),
+.STATEcontrol1(SEQUENCER1waltz_Rev1_statecontrol_704bb73a[1]),
+.STATEcontrol2(SEQUENCER1waltz_Rev1_statecontrol_704bb73a[2]),
+.STATEcontrol3(SEQUENCER1waltz_Rev1_statecontrol_704bb73a[3]),
 .ok_regulation(ok_regulation),
 .done_softstart(done_softstart),
 .fault_shutdown(fault_shutdown),
@@ -392,22 +394,6 @@ dftprobeModel0_53e6eb77 XU66 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
-);
-
-STONEnoconn XNC80 (
-.noconn(net_80)
-);
-
-STONEnoconn XNC81 (
-.noconn(net_81)
-);
-
-STONEnoconn XNC82 (
-.noconn(net_82)
-);
-
-STONEnoconn XNC83 (
-.noconn(net_83)
 );
 
 DFTtm8d dft_hex0x13 (

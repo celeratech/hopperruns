@@ -218,15 +218,6 @@ module dftprobeModel0_ecc82fc7 (i,tdi,ten,CELG,CELV,CELSUB);
   input  CELSUB;
 endmodule
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
 //Verilog HDL for "DFT", "DFTtm8d" "functional"
 
 
@@ -244,8 +235,17 @@ module DFTtm8d ( a, ten, tdo, tmi, G, SUB, V, tdi, tma );
 endmodule
 
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module Algorithm5p9_DYES (fcm, tdo, tmi, porb, CELG59462, CELV96848, bbm_topon, go_driver, ipeak_top, ok_driver, top_switch, CELSUB40948, bbm_bottomon, blank_bottom, ipeak_bottom, blank_refresh, bottom_switch, clock_control, fault_control, zcross_bottom, done_softstart, enable_control, freeze_control, switch_control, inegative_bottom);
+module Algorithm5p9_DYES (fcm, tdo, tmi, porb, CELG59462, CELV96848, bbm_topon, go_driver, ipeak_top, ok_driver, top_switch, CELSUB40948, bbm_bottomon, blank_bottom, ipeak_bottom, blank_refresh, bottom_switch, clock_control, fault_control, zcross_bottom, done_softstart, enable_control, freeze_control, switch_control, inegative_bottom, Algorithm5p9_statecontrol_22dba987);
 input  fcm;
 inout  tdo;
 input [4:0] tmi;
@@ -271,10 +271,12 @@ input  enable_control;
 input  freeze_control;
 input  switch_control;
 input  inegative_bottom;
+input [4:0] Algorithm5p9_statecontrol_22dba987;
 
 
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
+wire [4:0] Algorithm5p9_statecontrol_22dba987;
 wire [1:0] a;
 wire [7:0] tdi;
 wire [7:0] ten;
@@ -305,7 +307,7 @@ Algorithm5p9_DYES_ XALGORITHM (
 .top6bSYNC(net_146),
 .top_switch(top_switch),
 .CELSUB40948(CELSUB40948),
-.enableFAULT(net_121),
+.enableFAULT(Algorithm5p9_statecontrol_22dba987[4]),
 .BOTTOMdelayi(net_168),
 .TOPmaxdelayo(net_173),
 .bbm_bottomon(bbm_bottomon),
@@ -313,10 +315,10 @@ Algorithm5p9_DYES_ XALGORITHM (
 .ipeak_bottom(ipeak_bottom),
 .POWERUPdelayi(net_159),
 .REFRESHdelayi(net_167),
-.STATEcontrol0(net_117),
-.STATEcontrol1(net_118),
-.STATEcontrol2(net_119),
-.STATEcontrol3(net_120),
+.STATEcontrol0(Algorithm5p9_statecontrol_22dba987[0]),
+.STATEcontrol1(Algorithm5p9_statecontrol_22dba987[1]),
+.STATEcontrol2(Algorithm5p9_statecontrol_22dba987[2]),
+.STATEcontrol3(Algorithm5p9_statecontrol_22dba987[3]),
 .blank_refresh(blank_refresh),
 .bottom_switch(bottom_switch),
 .clock_control(clock_control),
@@ -506,26 +508,6 @@ dftprobeModel0_ecc82fc7 XU99 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
-);
-
-STONEnoconn XNC117 (
-.noconn(net_117)
-);
-
-STONEnoconn XNC118 (
-.noconn(net_118)
-);
-
-STONEnoconn XNC119 (
-.noconn(net_119)
-);
-
-STONEnoconn XNC120 (
-.noconn(net_120)
-);
-
-STONEnoconn XNC121 (
-.noconn(net_121)
 );
 
 DFTtm8d dft_hex0x04 (

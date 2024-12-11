@@ -125,18 +125,6 @@ module resistor_e959927e (RN,RP,CELG);
   input  CELG;
 endmodule
 
-//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
-
-
-module PEBBLEtielo ( q, G, SUB, V );
-
-  input V;
-  output q;
-  input G;
-  input SUB;
-endmodule
-
-
 //Verilog HDL for "DFT", "DFTtm8" "functional"
 
 
@@ -181,7 +169,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltz0DEBUG (VC, TAO, tdo, tmi, REFINT, CELG59462, CELV96848, go_driver, CELSUB40948, IREF_DRIVER, FB_REGULATION, ok_regulation, VSS_REGULATION, enable_regulation, HIJACK_VSS_REGULATION, hijack_enable_regulation);
+module REGULATIONwaltz0DEBUG (VC, TAO, tdo, tmi, REFINT, CELG59462, CELV96848, go_driver, CELSUB40948, IREF_DRIVER, FB_REGULATION, ok_regulation, VSS_REGULATION, enable_regulation, HIJACK_VSS_REGULATION, hijack_enable_regulation, REGULATIONtestmode_d791a7c9);
 inout  VC;
 inout  TAO;
 inout  tdo;
@@ -198,10 +186,12 @@ input  VSS_REGULATION;
 input  enable_regulation;
 inout  HIJACK_VSS_REGULATION;
 output  hijack_enable_regulation;
+input [2:0] REGULATIONtestmode_d791a7c9;
 
 
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
+wire [2:0] REGULATIONtestmode_d791a7c9;
 wire [1:0] a;
 wire [7:0] TAI;
 wire [7:0] tdi;
@@ -221,7 +211,7 @@ VESPAdftpulse XU18 (
 VESPAasmINPUT1 XU19 (
 .o(net_89),
 .i0(net_87),
-.Tstate(net_59),
+.Tstate(REGULATIONtestmode_d791a7c9[1]),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
@@ -229,8 +219,8 @@ VESPAasmINPUT1 XU19 (
 
 VESPAasmINPUT1 XU20 (
 .o(net_90),
-.i0(net_60),
-.Tstate(net_59),
+.i0(REGULATIONtestmode_d791a7c9[2]),
+.Tstate(REGULATIONtestmode_d791a7c9[1]),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
@@ -287,7 +277,7 @@ switchtswitch_4b165e0d XU10 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.enable_switch(e0)
+.enable_switch(REGULATIONtestmode_d791a7c9[0])
 );
 
 DFThijack XU11 (
@@ -306,7 +296,7 @@ switchtransmission_b0253c94 XU14 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.enable_switchb(net_59)
+.enable_switchb(REGULATIONtestmode_d791a7c9[1])
 );
 
 switchpulldown_92a259b6 XU15 (
@@ -326,7 +316,7 @@ switchpullup_b8e9609e XU16 (
 );
 
 inv_12e192f5 XU21 (
-.i(net_60),
+.i(REGULATIONtestmode_d791a7c9[2]),
 .o(net_87),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -337,13 +327,6 @@ resistor_e959927e XU23 (
 .RN(net_88),
 .RP(FB_REGULATION),
 .CELG(CELG59462)
-);
-
-PEBBLEtielo XDRMNOTL (
-.G(CELG59462),
-.V(CELV96848),
-.q(e0),
-.SUB(CELSUB40948)
 );
 
 DFTtm8 dft_hex0x11 (

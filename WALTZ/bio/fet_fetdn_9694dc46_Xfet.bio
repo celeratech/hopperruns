@@ -1,4 +1,3 @@
-//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
@@ -56,103 +55,18 @@ limit,fet_calculator,choose1,maximum
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,Type,n
-description,FET type
-user,Ron,3 x4 Ohm
-user,Ron_Design,0 x4 Ohm
-description,FET on resistance
-user,Vds,60V
-description,FET Maximum Vds rating
-user,VgsMax,6V
-description,FET Maximum Vgs rating
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
-//Celera Map Generator
-registermap,singlepowerfetN
-register,instance,fet_fetdn_9694dc46_Xfet
-register,source,cell
-
-//No register Map Required
-register,name,na
-register,enable,no
-register,bits,0
-register,mode,readwrite
-register,por,0
-register,userdescription,na
-register,description0,not used
-register,description1,not used
-register,description2,not used
-register,description3,not used
-register,description4,not used
-register,description5,not used
-register,description6,not used
-register,description7,not used
-register,description8,empty
-register,description9,empty
-register,description10,empty
-register,description11,empty
-register,description12,empty
-//Netlister Information
-register,busname,na
 //**********************************************
 //FACTORY Parameters
-//Celera Map Generator
-factorymap,singlepowerfetN
-factory,instance,fet_fetdn_9694dc46_Xfet
-factory,source,cell
-
-//No factory Map Required
-factory,name,na
-factory,enable,no
-factory,bits,0
-factory,mode,readonlyfactory,por,0
-factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
-//Netlister Information
-factory,busname,na
-
 //**********************************************
 //TRIM Parameters
-cell,singlepowerfetN
-trim,instance,fet_fetdn_9694dc46_Xfet
-
-trim,name,na
-trim,enable,no
-trim,bits,TBD
-trim,por,0
-trim,pinname,TBD
-trim,testname,TBD
-trim,description,TBD
-trim,target,na
-trim,units,TBD
-trim,pretrim_low_limit,TBD
-trim,pretrim_high_limit,TBD
-trim,posttrim_low_limit,TBD
-trim,posttrim_high_limit,TBD
-trim,codeunits,TBD
-trim,description0,empty
-trim,description1,empty
-trim,description2,empty
-trim,description3,empty
-trim,description4,empty
-trim,description5,empty
-trim,description6,empty
-trim,description7,empty
 //**********************************************
 //CELL DFT Parameters
 // *********************************************
 //Layout Parameters
-powerfet,layout instruction
-placeFET 0 0 223.210 168.480 2 2 fullmetal
 //fetpower.bio
 revision,layout,0p1
 layout,fet_fetpower
@@ -162,56 +76,8 @@ endlayoutbio
 
 //**********************************************
 //Project Parameters
-//Celera:WALTZ Project Bio
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////   default.bio'  DO NOT USE  ///////////////////////////////////
-
-//Simplis Project Parameters /////////////////////////////////////////////
-#define,Project,TBD
-#define,PROJECTreference,0.9
-#define,PROJECTsupply,4.5
-#define,TaRoom,25
-#define,ground,0.0
-#define,leveloffset,5
-//////////////////////////////////////////////////////////////////////////////////////////
-
-//Porcess  Parameters ///////////////////////////////////////////////////////
-#define,PROJECTbg,1.232
-#define,REFERENCEccpcode,15
-#define,REFERENCEccncode,15
-#define,HVNPN2A_5vbe,0.55
-#define,HVNPN2A_5vbetc,-2.1
-#define,VTNnch5i,0.72
-//#define,FETNcalculator_option,typical
-#define,FETNcalculator,maximum
-//#define,FETPcalculator_option,typical
-#define,FETPcalculator,maximum
-////////////////////////////////////////////////////////////////////////////////////////
-
-//Global Parameters ///////////////////////////////////////////////////////
-#define,CELVminimum,2.0
-#define,CELGabsmax,0.3
-#define,CELGabsmin,-0.3
-#define,SUBabsmax,0.3
-#define,SUBabsmin,-0.3
-#define,CELSUBabsmax,0.3
-#define,CELSUBabsmin,-0.3
-/////////////////////////////////////////////////////////////////////////////////////////
-
-//layout Parameters //////////////////////////////////////////////////////////
-#define MODULEdiesizefill 10
-//Percentage of area added to module for routing
-////////////////////////////////////////////////////////////////////////////////////////
-
-
 // *********************************************
 //Die Size Estimate
-revision,vis15cbdiesize,0p1
-sub_area,an5g60dw2_160p1x0p5x44p0x1p0,79942
-sub_area,an5g60dw2_160p1x0p5x44p0x1p0,79942
-sub_area,an5g60dw2_160p1x0p5x44p0x1p0,79942
-sub_area,an5g60dw2_160p1x0p5x44p0x1p0,79942
-generate_area,fet_fetdn_9694dc46_Xfet,319768
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.3
@@ -362,7 +228,7 @@ generate_area,fet_fetdn_9694dc46_Xfet,319768
 *******************************************
 //fet
 revision,pinorder,0.2.0
-pinorder,SOURCE,DRAIN,GATE,net_skip,net_skip,net_skip
+pinorder,SOURCE,DRAIN,GATE,DRAINk,SOURCEk,IREPLICA
 
 endpinorder
 //**********************************************
@@ -383,7 +249,7 @@ pinname,SOURCE
 definition,SOURCE,FET source
 iq,SOURCE,SIMULATION
 absmax,SOURCE,60
-absmin,SOURCE,-0.3
+absmin,SOURCE,èñ∆˛
 io,SOURCE,inout
 mode,SOURCE,analog
 router,SOURCE,TBD
@@ -394,38 +260,190 @@ pinname,DRAIN
 definition,DRAIN,FET drain 
 iq,DRAIN,SIMULATION
 absmax,DRAIN,60
-absmin,DRAIN,-0.3
+absmin,DRAIN,èñ∆˛
 io,DRAIN,inout
 mode,DRAIN,analog
 router,DRAIN,TBD
 dftpriority,DRAIN,1
 esd,DRAIN,TBD
 
+pinname,SOURCEk
+definition,SOURCEk,FET source kelvin
+iq,SOURCEk,SIMULATION
+absmax,SOURCEk,60
+absmin,SOURCEk,èñ∆˛
+io,SOURCEk,inout
+mode,SOURCEk,analog
+router,SOURCEk,TBD
+dftpriority,SOURCEk,1
+esd,SOURCEk,TBD
 
+pinname,DRAINk
+definition,DRAINk,FET drain kelvin
+iq,DRAINk,SIMULATION
+absmax,DRAINk,60
+absmin,DRAINk,èñ∆˛
+io,DRAINk,inout
+mode,DRAINk,analog
+router,DRAINk,TBD
+dftpriority,DRAINk,1
+esd,DRAINk,TBD
 
+pinname,PMOSISO
+definition,PMOSISO,PMOS ISO Connection 
+iq,PMOSISO,SIMULATION
+absmax,PMOSISO,60
+absmin,PMOSISO,èñ∆˛
+io,PMOSISO,input
+mode,PMOSISO,analog
+router,PMOSISO,TBD
+dftpriority,PMOSISO,1
+esd,PMOSISO,TBD
 
+pinname,NMOSiso6
+definition,NMOSiso6,6V NMOS ISO Connection 
+iq,NMOSiso6,SIMULATION
+absmax,NMOSiso6,6
+absmin,NMOSiso6,èñ∆˛
+io,NMOSiso6,input
+mode,NMOSiso6,analog
+router,NMOSiso6,TBD
+dftpriority,NMOSiso6,1
+esd,NMOSiso6,TBD
 
+pinname,NMOSiso12
+definition,NMOSiso12,12V NMOS ISO Connection 
+iq,NMOSiso12,SIMULATION
+absmax,NMOSiso12,6
+absmin,NMOSiso12,èñ∆˛
+io,NMOSiso12,input
+mode,NMOSiso12,analog
+router,NMOSiso12,TBD
+dftpriority,NMOSiso12,1
+esd,NMOSiso12,TBD
 
+pinname,NMOSiso20
+definition,NMOSiso20,20V NMOS ISO Connection 
+iq,NMOSiso20,SIMULATION
+absmax,NMOSiso20,6
+absmin,NMOSiso20,èñ∆˛
+io,NMOSiso20,input
+mode,NMOSiso20,analog
+router,NMOSiso20,TBD
+dftpriority,NMOSiso20,1
+esd,NMOSiso20,TBD
 
+pinname,NMOSiso24
+definition,NMOSiso24,24V NMOS ISO Connection 
+iq,NMOSiso24,SIMULATION
+absmax,NMOSiso24,6
+absmin,NMOSiso24,èñ∆˛
+io,NMOSiso24,input
+mode,NMOSiso24,analog
+router,NMOSiso24,TBD
+dftpriority,NMOSiso24,1
+esd,NMOSiso24,TBD
 
+pinname,ten_fet
+definition,ten_fet,DFT FET sense enable
+iq,ten_fet,SIMULATION
+absmax,ten_fet,6
+absmin,ten_fet,èñ∆˛
+io,ten_fet,input
+mode,ten_fet,digital
+router,ten_fet,TBD
+dftpriority,ten_fet,1
+esd,ten_fet,TBD
 
+pinname,TAI_FETDRAIN
+definition,TAI_FETDRAIN,DFT Drain sense
+iq,TAI_FETDRAIN,SIMULATION
+absmax,TAI_FETDRAIN,6
+absmin,TAI_FETDRAIN,èñ∆˛
+io,TAI_FETDRAIN,output
+mode,TAI_FETDRAIN,analog
+router,TAI_FETDRAIN,TBD
+dftpriority,TAI_FETDRAIN,1
+esd,TAI_FETDRAIN,TBD
 
+pinname,TAI_FETSOURCE
+definition,TAI_FETSOURCE,DFT Drain sense
+iq,TAI_FETSOURCE,SIMULATION
+absmax,TAI_FETSOURCE,6
+absmin,TAI_FETSOURCE,èñ∆˛
+io,TAI_FETSOURCE,output
+mode,TAI_FETSOURCE,analog
+router,TAI_FETSOURCE,TBD
+dftpriority,TAI_FETSOURCE,1
+esd,TAI_FETSOURCE,TBD
 
 pinname,SUB
 definition,SUB,FET substrate 
 iq,SUB,SIMULATION
-absmax,SUB,0.3
-absmin,SUB,-0.3
+absmax,SUB,////////////////////////
+
+absmin,SUB,
+
 io,SUB,input
 mode,SUB,analog
 router,SUB,TBD
 dftpriority,SUB,1
 esd,SUB,TBD
 
+pinname,IREPLICA
+definition,IREPLICA,FET replica current 
+iq,IREPLICA,SIMULATION
+absmax,IREPLICA,60
+absmin,IREPLICA,èñ∆˛
+io,IREPLICA,inout
+mode,IREPLICA,analog
+router,IREPLICA,TBD
+dftpriority,IREPLICA,1
+esd,IREPLICA,TBD
 
+pinname,CELV
+definition,CELV,DFT Power
+iq,CELV,SIMULATION
+absmax,CELV,6
+absmin,CELV,1.3
+io,CELV,power
+mode,CELV,power
+router,CELV,TBD
+dftpriority,CELV,1
+esd,CELV,TBD
 
+pinname,CELG
+definition,CELG,DFT Power ground
+iq,CELG,SIMULATION
+absmax,CELG,
+absmin,CELG,èñ∆˛
+io,CELG,power
+mode,CELG,power
+router,CELG,TBD
+dftpriority,CELG,1
+esd,CELG,TBD
 
+pinname,DRAINB2B
+definition,DRAINB2B, Drain connection for Back2back PFET
+iq,DRAINB2B.SIMULATION
+absmax,DRAINB2B,6
+absmin,DRAINB2B,èñ∆˛
+io,DRAINB2B,inout
+mode,DRAINB2B,analog
+router,DRAINB2B,TBD
+dftpriority,DRAINB2B,1
+esd,DRAINB2B,TBD
 
+pinname,DRAINkB2B
+definition,DRAINkB2B, Kelvin connection for Back2back PFET
+iq,DRAINkB2B.SIMULATION
+absmax,DRAINkB2B,6
+absmin,DRAINkB2B,èñ∆˛
+io,DRAINkB2B,inout
+mode,DRAINkB2B,analog
+router,DRAINkB2B,TBD
+dftpriority,DRAINkB2B,1
+esd,DRAINkB2B,TBD
 
 
 
@@ -1107,4 +1125,3 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
-

@@ -27,9 +27,10 @@ module pad_WALTZ_FSET (FSET,GESD);
   input  GESD;
 endmodule
 
-module pad_WALTZ_GND (GND,GESD,CELG59462,CELSUB40948,SENSE_G_4c0bef8e,kelvin_GNDservice,kelvin_GNDpowergood,kelvin_GNDsoftstart,kelvin_GNDregulation,celkelvin_GND_73ebd82d,celkelvin_GND_bb7e77f4,celkelvin_GND_d75c3f7f,celkelvin_GND_db749c23);
+module pad_WALTZ_GND (GND,GESD,GOTP,CELG59462,CELSUB40948,SENSE_G_4c0bef8e,kelvin_GNDservice,kelvin_GNDpowergood,kelvin_GNDsoftstart,kelvin_GNDregulation,celkelvin_GND_73ebd82d,celkelvin_GND_bb7e77f4,celkelvin_GND_d75c3f7f,celkelvin_GND_db749c23);
   inout  GND;
   output  GESD;
+  output  GOTP;
   inout  CELG59462;
   output  CELSUB40948;
   output  SENSE_G_4c0bef8e;
@@ -70,14 +71,15 @@ module pad_WALTZ_SYNC (GESD,SYNC);
   inout  SYNC;
 endmodule
 
-module pad_WALTZ_VCC (VCC,GESD,PVCC,CELV96848,kelvin_VCC,celkelvin_VCC_bc3b7675,celkelvin_VCC_eb468fcf);
+module pad_WALTZ_VCC (VCC,GESD,PVCC,VOTP,CELV96848,kelvin_VCC,celkelvin_VCC_9893c918,celkelvin_VCC_bc3b7675);
   inout  VCC;
   input  GESD;
   inout  PVCC;
+  output  VOTP;
   output  CELV96848;
   inout  kelvin_VCC;
+  output  celkelvin_VCC_9893c918;
   output  celkelvin_VCC_bc3b7675;
-  output  celkelvin_VCC_eb468fcf;
 endmodule
 
 //Verilog HDL for "Generate", "CELERAid" "functional"
@@ -201,7 +203,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module WALTZceleraRING (EN, FB, IN, SW, BST, GND, PIN, POK, TAO, VCC, tdo, tmi, BIAS, FSET, PGND, PVCC, SYNC, DFTSCL, DFTSDA, unlock, sense_FB, CELG59462, CELV96848, POK_inout, FSET_inout, SYNC_inout, kelvin_VCC, CELSENSE_RF, CELSUB40948, SENSE_G_4c0bef8e, kelvin_GNDservice, kelvin_GNDpowergood, kelvin_GNDsoftstart, kelvin_GNDregulation, celkelvin_IN_bc3b7675, celkelvin_GND_73ebd82d, celkelvin_GND_bb7e77f4, celkelvin_GND_d75c3f7f, celkelvin_VCC_bc3b7675, celkelvin_VCC_eb468fcf, celkelvin_BIAS_bc3b7675);
+module WALTZceleraRING (EN, FB, IN, SW, BST, GND, PIN, POK, TAO, VCC, tdo, tmi, BIAS, FSET, GOTP, PGND, PVCC, SYNC, VOTP, DFTSCL, DFTSDA, unlock, sense_FB, CELG59462, CELV96848, POK_inout, FSET_inout, SYNC_inout, kelvin_VCC, CELSENSE_RF, CELSUB40948, SENSE_G_4c0bef8e, kelvin_GNDservice, kelvin_GNDpowergood, kelvin_GNDsoftstart, kelvin_GNDregulation, celkelvin_IN_bc3b7675, celkelvin_GND_73ebd82d, celkelvin_GND_bb7e77f4, celkelvin_GND_d75c3f7f, celkelvin_VCC_9893c918, celkelvin_VCC_bc3b7675, celkelvin_BIAS_bc3b7675);
 inout  EN;
 inout  FB;
 inout  IN;
@@ -216,9 +218,11 @@ inout  tdo;
 inout [5:0] tmi;
 inout  BIAS;
 inout  FSET;
+output  GOTP;
 inout  PGND;
 inout  PVCC;
 inout  SYNC;
+output  VOTP;
 output  DFTSCL;
 inout  DFTSDA;
 input  unlock;
@@ -240,8 +244,8 @@ output  celkelvin_IN_bc3b7675;
 output  celkelvin_GND_73ebd82d;
 output  celkelvin_GND_bb7e77f4;
 output  celkelvin_GND_d75c3f7f;
+output  celkelvin_VCC_9893c918;
 output  celkelvin_VCC_bc3b7675;
-output  celkelvin_VCC_eb468fcf;
 output  celkelvin_BIAS_bc3b7675;
 
 
@@ -288,6 +292,7 @@ pad_WALTZ_FSET XFSET (
 pad_WALTZ_GND XGND (
 .GND(GND),
 .GESD(GESD),
+.GOTP(GOTP),
 .CELG59462(CELG59462),
 .CELSUB40948(CELSUB40948),
 .SENSE_G_4c0bef8e(SENSE_G_4c0bef8e),
@@ -332,10 +337,11 @@ pad_WALTZ_VCC XVCC (
 .VCC(VCC),
 .GESD(GESD),
 .PVCC(PVCC),
+.VOTP(VOTP),
 .CELV96848(CELV96848),
 .kelvin_VCC(kelvin_VCC),
-.celkelvin_VCC_bc3b7675(celkelvin_VCC_bc3b7675),
-.celkelvin_VCC_eb468fcf(celkelvin_VCC_eb468fcf)
+.celkelvin_VCC_9893c918(celkelvin_VCC_9893c918),
+.celkelvin_VCC_bc3b7675(celkelvin_VCC_bc3b7675)
 );
 
 CELERAid XCHIPid (
