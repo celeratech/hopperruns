@@ -281,6 +281,16 @@ DFTtm8t dft_hex0x08 (
 .tmi(tmi[4:0])
 );
 
+DFTtm8t dft_hex0x1B (
+.G(CELG59462),
+.V(CELV96848),
+.a({d1,d0}),
+.SUB(CELSUB40948),
+.ten({noconn_dft_hex0x1B_ten_7,noconn_dft_hex0x1B_ten_6,ten_hijacki_a6d52f4f_XU9,ten_hijack_a6d52f4f_XU9,ten_hijacki_cad020c2_XU6,ten_hijack_cad020c2_XU6,ten_hijacki_af379456_XU5,ten_hijack_af379456_XU5}),
+.tma({d0,d0,d0,d1,d1,d0,d1,d1}),
+.tmi(tmi[4:0])
+);
+
 STONEnoconn XNCnoconn_dft_hex0x08_ten_5 (
 .noconn(noconn_dft_hex0x08_ten_5)
 );
@@ -291,6 +301,14 @@ STONEnoconn XNCnoconn_dft_hex0x08_ten_6 (
 
 STONEnoconn XNCnoconn_dft_hex0x08_ten_7 (
 .noconn(noconn_dft_hex0x08_ten_7)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x1B_ten_6 (
+.noconn(noconn_dft_hex0x1B_ten_6)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x1B_ten_7 (
+.noconn(noconn_dft_hex0x1B_ten_7)
 );
 
 endmodule

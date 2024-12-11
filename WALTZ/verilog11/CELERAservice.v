@@ -3,7 +3,7 @@
 //NAME:CELERAservice
 //GENERATOR REVISION:0.1.4
 //IP Outputs:16
-//REFERENCE:yes
+//REFERENCE:external
 //DFT:yes
 //ACCURACY:no
 
@@ -24,35 +24,6 @@ input ten_ibias;
 output TAI_IBIAS;
 input CELG;
 input CELSUB;
-endmodule
-
-
-//Celera Confidential Do Not Copy reference_CELERAservice_Xreference.v
-//Celera:reference
-//Celera Confidential Symbol Generator
-//Reference:1.000V without Curveture Correction
-module reference_CELERAservice_Xreference (SIMPV,enable_reference,ok_reference,REF,global_reference,
-CELBG,
-TAEXT,ten_refext,ten_refbgext,
-ten_ref,TAI_REF,
-ten_refbg,TAI_REFBG,
-CELG,celkelvin_GNDref,CELSUB);
-input SIMPV;
-input enable_reference;
-output ok_reference;
-output REF;
-input global_reference;
-output CELBG;
-input ten_refbg;
-input ten_refbgext;
-output TAI_REFBG;
-input TAEXT;
-input ten_ref;
-output TAI_REF;
-input ten_refext;
-input celkelvin_GNDref;
-input CELSUB;
-input CELG;
 endmodule
 
 
@@ -108,13 +79,13 @@ endmodule
 
 //Celera Confidential Do Not Copy CELERAservice
 //Celera Confidential Symbol Generator
-//IP: 16, REFERENCE: yes
+//IP: 16, REFERENCE: external
 //Latch blanking: 
 module CELERAservice (celkelvin_GNDservice,enable_ibias,
 CELV,
 IPO,
 ok_ibias,
-CELREF,
+CELBG,
 TAO,
 tmi,
 CELG,CELSUB);
@@ -123,9 +94,9 @@ input enable_ibias;
 input CELV;
 output ok_ibias;
 output [15:0] IPO;
+input CELBG;
 inout TAO;
 inout [4:0] tmi;
-output CELREF;
 input CELG;
 input CELSUB;
 
@@ -150,7 +121,7 @@ wire[4:0] tmi;
 //Celera Confidential Do Not Copy ibias_CELERAservice_Xibias
 ibias_CELERAservice_Xibias Xibias(
 .CELV (CELV),
-.enable_ibias (ok_celreference),
+.enable_ibias (enable_ibias),
 .global_celeraibias (global_celeraibias),
 .ok_ibias (ok_ibias),
 .SENSE_G (celkelvin_GNDservice),
@@ -162,38 +133,48 @@ ibias_CELERAservice_Xibias Xibias(
 .CELSUB (CELSUB)
 );
 //,diesize,ibias_CELERAservice_Xibias
-//Celera Confidential Do Not Copy reference_CELERAservice_Xreference
-reference_CELERAservice_Xreference Xreference(
-.SIMPV (CELV),
-.enable_reference (enable_ibias),
-.ok_reference (ok_celreference),
-.REF (CELREF),
-.global_reference (global_reference),
-.CELBG (CELBG),
-.celkelvin_CELG (celkelvin_GNDservice),
-.ten_refbg (ten_refbg),
-.ten_refbgext (ten_refbgext),
-.TAI_REFBG (TAI_REFBG),
-.TAEXT (a0),
-.ten_ref (ten_ref),
-.TAI_REF (TAI_REF),
-.ten_refext (ten_refext),
-.CELG (CELG),
-.CELSUB (CELSUB)
-);
-//,diesize,reference_CELERAservice_Xreference
 //Celera Confidential Do Not Copy STONEnoconn
 STONEnoconn Xten70(
 .noconn (
 ten7)
 );
 //,diesize,STONEnoconn
+//Celera Confidential Do Not Copy STONEnoconn
+STONEnoconn Xten61(
+.noconn (
+ten6)
+);
+//,diesize,STONEnoconn
+//Celera Confidential Do Not Copy STONEnoconn
+STONEnoconn Xten52(
+.noconn (
+ten5)
+);
+//,diesize,STONEnoconn
+//Celera Confidential Do Not Copy STONEnoconn
+STONEnoconn Xten43(
+.noconn (
+ten4)
+);
+//,diesize,STONEnoconn
+//Celera Confidential Do Not Copy STONEnoconn
+STONEnoconn Xten34(
+.noconn (
+ten3)
+);
+//,diesize,STONEnoconn
+//Celera Confidential Do Not Copy STONEnoconn
+STONEnoconn Xten25(
+.noconn (
+ten2)
+);
+//,diesize,STONEnoconn
 //Celera Confidential Do Not Copy DFTtm8a
 DFTtm8a X0xFD(
 .V (CELV),
 .tma ({a1,a1,a1,a1,a1,a1,a0,a1}),
-.TAI ({a0,a0,a0,a0,a0,TAI_REFBG,TAI_REF,TAI_IBIAS}),
-.ten ({ten7,ten_refext,ten_ref,ten_refbgext,ten_refbg,global_reference,ten_ibias,global_celeraibias}),
+.TAI ({a0,a0,a0,a0,a0,a0,a0,TAI_IBIAS}),
+.ten ({ten7,ten6,ten5,ten4,ten3,ten2,ten_ibias,global_celeraibias}),
 .a ({a1,a0}),
 .TAO (TAO),
 .tmi (tmi [4:0]),

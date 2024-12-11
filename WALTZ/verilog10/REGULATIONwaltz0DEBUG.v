@@ -156,6 +156,21 @@ module DFTtm8 ( a, ten, TAO, tdo, tmi, G, SUB, TAI, V, tdi, tma );
 endmodule
 
 
+//Verilog HDL for "DFT", "DFTtm8t" "functional"
+
+
+module DFTtm8t ( a, ten, tmi, G, SUB, V, tma );
+
+  input V;
+  input  [7:0] tma;
+  output  [7:0] ten;
+  output  [1:0] a;
+  input G;
+  input SUB;
+  inout  [4:0] tmi;
+endmodule
+
+
 //Verilog HDL for "Generate", "STONEnoconn" "functional"
 
 
@@ -272,7 +287,7 @@ switchtswitch_4b165e0d XU10 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.enable_switch(c0)
+.enable_switch(e0)
 );
 
 DFThijack XU11 (
@@ -327,7 +342,7 @@ resistor_e959927e XU23 (
 PEBBLEtielo XDRMNOTL (
 .G(CELG59462),
 .V(CELV96848),
-.q(c0),
+.q(e0),
 .SUB(CELSUB40948)
 );
 
@@ -345,8 +360,42 @@ DFTtm8 dft_hex0x11 (
 .tmi(tmi[4:0])
 );
 
+DFTtm8t dft_hex0x1F (
+.G(CELG59462),
+.V(CELV96848),
+.a({c1,c0}),
+.SUB(CELSUB40948),
+.ten({noconn_dft_hex0x1F_ten_7,noconn_dft_hex0x1F_ten_6,noconn_dft_hex0x1F_ten_5,noconn_dft_hex0x1F_ten_4,noconn_dft_hex0x1F_ten_3,noconn_dft_hex0x1F_ten_2,ten_hijacki_de422ccd_XU11,ten_hijack_de422ccd_XU11}),
+.tma({c0,c0,c0,c1,c1,c1,c1,c1}),
+.tmi(tmi[4:0])
+);
+
 STONEnoconn XNCnoconn_dft_hex0x11_ten_7 (
 .noconn(noconn_dft_hex0x11_ten_7)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x1F_ten_2 (
+.noconn(noconn_dft_hex0x1F_ten_2)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x1F_ten_3 (
+.noconn(noconn_dft_hex0x1F_ten_3)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x1F_ten_4 (
+.noconn(noconn_dft_hex0x1F_ten_4)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x1F_ten_5 (
+.noconn(noconn_dft_hex0x1F_ten_5)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x1F_ten_6 (
+.noconn(noconn_dft_hex0x1F_ten_6)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x1F_ten_7 (
+.noconn(noconn_dft_hex0x1F_ten_7)
 );
 
 endmodule

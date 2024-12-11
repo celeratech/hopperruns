@@ -39,6 +39,29 @@ description,NESTO revision
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
+//Celera Map Generator
+registermap,ibias
+register,instance,ibias_CELERAservice_Xibias
+register,source,cell
+
+//IBIAS - No Register Required
+register,name,na
+register,enable,no
+register,bits,0
+register,mode,readonly
+register,por,0
+register,userdescription,na
+register,description0,description0,not used
+register,description1,description1,not used
+register,description2,description2,not used
+register,description3,description3,not used
+register,description4,description4,not used
+register,description5,description5,not used
+register,description6,description6,not used
+register,description7,description7,not used
+//Netlister Information
+register,busname,na
+
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
@@ -119,7 +142,7 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,0.8
+#define,PROJECTreference,0.9
 #define,PROJECTsupply,4.5
 #define,TaRoom,25
 #define,ground,0.0

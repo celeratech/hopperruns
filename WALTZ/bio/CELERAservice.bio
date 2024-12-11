@@ -48,8 +48,7 @@ limit,reference_description,text
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,IBIAS with ,Reference 1V
-description,Project Reference
+user,IBIAS with ,description,Project Reference
 user,LastDRM,no
 description,last DRM configuration
 user,NESTO,0.1.4
@@ -155,7 +154,7 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,0.8
+#define,PROJECTreference,0.9
 #define,PROJECTsupply,4.5
 #define,TaRoom,25
 #define,ground,0.0
@@ -348,17 +347,17 @@ router,celkelvin_GNDservice,TBD
 dftpriority,celkelvin_GNDservice,1
 esd,celkelvin_GNDservice,TBD
 
+pinname,CELBG
+definition,CELBG,IBIAS input Bandgap Voltage
+iq,CELBG,SIMULATION
+absmax,CELBG,6
+absmin,CELBG,-0.3
+io,CELBG,input
+mode,CELBG,analog
+router,CELBG,TBD
+dftpriority,CELBG,1
+esd,CELBG,TBD
 
-pinname,CELREF
-definition,CELREF,IBIAS generated reference
-iq,CELREF,SIMULATION
-absmax,CELREF,6
-absmin,CELREF,-0.3
-io,CELREF,input
-mode,CELREF,analog
-router,CELREF,TBD
-dftpriority,CELREF,1
-esd,CELREF,TBD
 
 pinname,enable_ibias
 definition,enable_ibias,IBIAS enable

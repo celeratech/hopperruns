@@ -111,6 +111,16 @@ module PEBBLEtielo ( q, G, SUB, V );
 endmodule
 
 
+//Verilog HDL for "Generate", "WRAPPER1" "functional"
+
+
+module WRAPPER1 ( o, i );
+
+  input i;
+  output o;
+endmodule
+
+
 //Verilog HDL for "DFT", "DFTtm8" "functional"
 
 
@@ -155,7 +165,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SERVICEwaltz0MAIN (EN, IN, TAO, VCC, tdo, tmi, BIAS, porb, REF0V9, go_vcc, CELG59462, CELV96848, CELBG83021, kelvin_VCC, ok_service, CELSUB40948, ok_reference, IP_75c89176_XU16, kelvin_GNDservice, celkelvin_IN_bc3b7675, celkelvin_GND_d75c3f7f, celkelvin_VCC_bc3b7675, celkelvin_BIAS_bc3b7675);
+module SERVICEwaltz0MAIN (EN, IN, TAO, VCC, tdo, tmi, BIAS, porb, REF0V9, go_vcc, CELG59462, CELV96848, CELBG83021, OKREF03249, kelvin_VCC, ok_service, CELREF84329, CELSUB40948, ok_reference, IP_75c89176_XU16, kelvin_GNDservice, celkelvin_IN_bc3b7675, celkelvin_GND_d75c3f7f, celkelvin_VCC_bc3b7675, celkelvin_BIAS_bc3b7675);
 input  EN;
 input  IN;
 inout  TAO;
@@ -169,8 +179,10 @@ output  go_vcc;
 input  CELG59462;
 input  CELV96848;
 output  CELBG83021;
+output  OKREF03249;
 inout  kelvin_VCC;
 output  ok_service;
+output  CELREF84329;
 input  CELSUB40948;
 output  ok_reference;
 input  IP_75c89176_XU16;
@@ -304,6 +316,11 @@ PEBBLEtielo XDRMNOTL (
 .SUB(CELSUB40948)
 );
 
+WRAPPER1 XWRAP_OKREF (
+.i(ok_reference),
+.o(OKREF03249)
+);
+
 DFTtm8 dft_hex0x16 (
 .G(CELG59462),
 .V(CELV96848),
@@ -326,6 +343,11 @@ DFTtm8t dft_hex0x17 (
 .ten({noconn_dft_hex0x17_ten_7,noconn_dft_hex0x17_ten_6,noconn_dft_hex0x17_ten_5,noconn_dft_hex0x17_ten_4,noconn_dft_hex0x17_ten_3,noconn_dft_hex0x17_ten_2,ten_enablevbias_23bb219c_Xvbias1,ten_tdiokvbias_23bb219c_Xvbias1}),
 .tma({b0,b0,b0,b1,b0,b1,b1,b1}),
 .tmi(tmi[4:0])
+);
+
+WRAPPER1 XWRAP_CELREF (
+.i(REF0V9),
+.o(CELREF84329)
 );
 
 STONEnoconn XNCnoconn_dft_hex0x17_ten_2 (

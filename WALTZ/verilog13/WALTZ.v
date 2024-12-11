@@ -95,13 +95,14 @@ module WALTZceleraSERDES (tdo,tmi,DFTSCL,DFTSDA,unlock,CELG59462,CELV96848,PORB9
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module WALTZ (EN, FB, IN, SW, BST, GND, POK, VCC, BIAS, FSET, PGND, PVCC, SYNC);
+module WALTZ (EN, FB, IN, SW, BST, GND, PIN, POK, VCC, BIAS, FSET, PGND, PVCC, SYNC);
 inout  EN;
 inout  FB;
 inout  IN;
 inout  SW;
 inout  BST;
 inout  GND;
+inout  PIN;
 inout  POK;
 inout  VCC;
 inout  BIAS;

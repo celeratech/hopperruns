@@ -261,6 +261,16 @@ DFTtm8t dft_hex0x0F (
 .tmi(tmi[4:0])
 );
 
+DFTtm8t dft_hex0x1E (
+.G(CELG59462),
+.V(CELV96848),
+.a({d1,d0}),
+.SUB(CELSUB40948),
+.ten({noconn_dft_hex0x1E_ten_7,noconn_dft_hex0x1E_ten_6,noconn_dft_hex0x1E_ten_5,noconn_dft_hex0x1E_ten_4,ten_hijacki_6613b2af_XU3,ten_hijack_6613b2af_XU3,ten_hijacki_c541f94b_XU16,ten_hijack_c541f94b_XU16}),
+.tma({d0,d0,d0,d1,d1,d1,d1,d0}),
+.tmi(tmi[4:0])
+);
+
 dftprobeModel0_38198232 XUPOWERGOODshortdelay (
 .i(dft_shortdelay),
 .tdi(tdi_6fd414fa_XUPOWERGOODshortdelay),
@@ -288,6 +298,22 @@ STONEnoconn XNCnoconn_dft_hex0x0F_ten_6 (
 
 STONEnoconn XNCnoconn_dft_hex0x0F_ten_7 (
 .noconn(noconn_dft_hex0x0F_ten_7)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x1E_ten_4 (
+.noconn(noconn_dft_hex0x1E_ten_4)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x1E_ten_5 (
+.noconn(noconn_dft_hex0x1E_ten_5)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x1E_ten_6 (
+.noconn(noconn_dft_hex0x1E_ten_6)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x1E_ten_7 (
+.noconn(noconn_dft_hex0x1E_ten_7)
 );
 
 endmodule

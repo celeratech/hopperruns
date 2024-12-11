@@ -71,29 +71,6 @@ user,delay_vmax,6
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
-//Celera Map Generator
-registermap,delayfast
-register,instance,delay0_paddigitalinput_2a35d913_Xglitch
-register,source,cell
-
-//delay fast 
-register,name,na
-register,enable,no
-register,bits,0
-register,mode,readonly
-register,por,0
-register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
-//Netlister Information
-register,busname,na
-
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
@@ -136,6 +113,48 @@ placeROUTE
 
 //**********************************************
 //Project Parameters
+//Celera:WALTZ Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
@@ -193,7 +212,7 @@ pinname,CELV
 definition,CELV,cell power
 iq,CELV,SIMULATION
 absmax,CELV,6
-absmin,CELV,1.8
+absmin,CELV,2.0
 io,CELV,input
 mode,CELV,power
 router,CELV,TBD
@@ -203,10 +222,8 @@ esd,CELV,TBD
 pinname,CELG
 definition,CELG,cell power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,****************
-
+absmax,CELG,0.3
+absmin,CELG,-0.3
 io,CELG,input
 mode,CELG,power
 router,CELG,TBD
@@ -217,8 +234,7 @@ pinname,i
 definition,i,delay input
 iq,i,SIMULATION
 absmax,i,6
-absmin,i,****************
-
+absmin,i,-0.3
 io,i,input
 mode,i,digital
 router,i,TBD
@@ -229,8 +245,7 @@ pinname,o
 definition,o,delay output
 iq,o,SIMULATION
 absmax,o,6
-absmin,o,****************
-
+absmin,o,-0.3
 io,o,output
 mode,o,digital
 router,o,TBD
@@ -240,8 +255,8 @@ esd,o,TBD
 pinname,CELSUB
 definition,CELSUB,substrate
 iq,CELSUB,SIMULATION
-absmax,CELSUB,
-absmin,CELSUB,
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
 io,CELSUB,power
 mode,CELSUB,analog
 router,CELSUB,TBD
