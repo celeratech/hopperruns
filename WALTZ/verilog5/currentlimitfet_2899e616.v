@@ -1,7 +1,7 @@
 //Celera Brick Generator Confidential
 //CORE:currentlimitfet
 //NAME:currentlimitfet_2899e616
-//GENERATOR REVISION:0.5.7
+//GENERATOR REVISION:0.5.8
 //SENSE ELEMENT:fet
 //FET CONNECTION:nmos_source
 //USAGE:lowside

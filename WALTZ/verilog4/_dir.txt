@@ -6,28 +6,29 @@
     "gen_noconn": true,
     "cad_build_type": "wire",
     "incremental": false,
-    "send_to_cda": false,
+    "send_to_cda": true,
     "ISO Connections": {},
     "General": {
-        "project_netlist_path": "/portal/web/api/utils/hopper/tests/WALTZ.net",
+        "project_netlist_path": "/tmp/WALTZ.net",
         "gen_reports": "Y",
+        "skip_serdes": "N",
         "pad_esd": "2",
         "find_isos": "Y",
         "wipe_bio_symbol": "Y",
         "workers": "8"
     },
     "Ibias": {
-        "enable_net": "XSERVICE.PORB97836"
+        "enable_net": ""
     },
     "DRM": {
-        "add_drm": "Y",
+        "add_drm": "N",
         "drm_ignore_bricks": "N"
     },
     "DFT": {
-        "add_dft": "N",
+        "add_dft": "Y",
         "add_dbufdft": "N",
-        "dft_ignore_bricks": "N",
-        "dft_measure": "Y",
+        "dft_ignore_bricks": "Y",
+        "dft_measure": "N",
         "dft_measure_address": "0xCA",
         "tma_start_address": "0x00",
         "global_testmode": "0x00",
@@ -63,7 +64,7 @@
         "registermap_chipid_lsb": "0x00",
         "registermap_chipid_msb": "0x00",
         "registermap_factoryid": "0x00",
-        "registermap_revision": "0",
+        "registermap_revision": "1",
         "register_software_reset": "N",
         "register_vmax": "6"
     },
@@ -71,24 +72,24 @@
         "serdes_soft_security": "N",
         "serdes_hard_security": "N",
         "serdes_memory_program": "Auto",
-        "serdes_memory_bist": "Y",
-        "serdes_address": "0x01",
-        "serdes_password": "0x02",
+        "serdes_memory_bist": "N",
+        "serdes_address": "0x00",
+        "serdes_password": "0x03",
         "serdes_pad": "dedicated",
         "serdes_vmax": "6",
         "serdes_clock": "3200",
-        "serdes_supply": "na",
+        "serdes_supply": "Single",
         "serdes_split_vi2c_pad": "",
         "serdes_hardwarelock": "N",
-        "serdes_revision": "0",
+        "serdes_revision": "2",
         "otp_reset": "0x00",
         "DRMreset": "0x00",
         "serdes_unlock_address": "0x00",
         "serdes_productaddress": "0xFF"
     },
     "Package": {
-        "package_name": "TQFN3255",
-        "package_size": "32",
+        "package_name": "TDFN1232",
+        "package_size": "12",
         "downbond": "N"
     },
     "Project": {

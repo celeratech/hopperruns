@@ -48,8 +48,6 @@ user,switch_ron,1000Ohms
 description,Switch ON Resistance
 user,switch_type,transmission
 description,Switch Architecture
-user,switch_vmax,6
-description,Switch Absolute maximum Voltage Rating
 user,NESTO,0.3.1
 description,Nesto generate Revision
 //**********************************************
@@ -189,7 +187,7 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,0.9
+#define,PROJECTreference,0.8
 #define,PROJECTsupply,4.5
 #define,TaRoom,25
 #define,ground,0.0
@@ -240,6 +238,8 @@ revision,pinorder,0.2.0
 pinorder,I,O,enable_switchb
 
 endpinorder
+//**********************************************
+
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.4
@@ -333,7 +333,7 @@ esd,O,TBD
 pinname,CELSUB
 definition,CELSUB,Substrate
 iq,CELSUB,SIMULATION
-absmax,CELSUB,6
+absmax,CELSUB,0.3
 absmin,CELSUB,-0.3
 io,CELSUB,input
 mode,CELSUB,power

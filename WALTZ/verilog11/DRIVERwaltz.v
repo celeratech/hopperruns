@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module DRIVERwaltzBBM (topon,bottomon,topstate,CELG59462,CELV96848,bbm_topon,topstatus,CELSUB40948,bottomstate,bbm_bottomon,bottomstatus,BBMstatus_b07e0c43,factory_timingskew_7229e0fa,factory_timingskew_a04dd5f1);
+module DRIVERwaltzBBM (topon,bottomon,topstate,CELG59462,CELV96848,bbm_topon,topstatus,CELSUB40948,bottomstate,bbm_bottomon,bottomstatus);
   output  topon;
   output  bottomon;
   input  topstate;
@@ -11,13 +11,12 @@ module DRIVERwaltzBBM (topon,bottomon,topstate,CELG59462,CELV96848,bbm_topon,top
   input  bottomstate;
   output  bbm_bottomon;
   input  bottomstatus;
-  input [1:0] BBMstatus_b07e0c43;
-  input [4:0] factory_timingskew_7229e0fa;
-  input [4:0] factory_timingskew_a04dd5f1;
 endmodule
 
-module DRIVERwaltz0BOTN (SW,MUDV,PMUDG,PMUDV,botswon,CELG59462,CELV96848,botswineg,botswipeak,CELSUB40948,botswstatus,botswzcross,enable_driver,IP_945fe712_XU8,IP_a0afb596_XU9,IP_2d447a5c_XU17,trim_currentlimit_2d447a5c,trim_currentlimit_945fe712,trim_currentlimit_a0afb596);
+module DRIVERwaltz0BOTN (SW,tdo,tmi,MUDV,PMUDG,PMUDV,botswon,CELG59462,CELV96848,botswineg,botswipeak,CELSUB40948,botswstatus,botswzcross,enable_driver,IP_14d08c8e_XU3,IP_a0afb596_XU9,IP_2d447a5c_XU17);
   inout  SW;
+  inout  tdo;
+  input [4:0] tmi;
   input  MUDV;
   inout  PMUDG;
   input  PMUDV;
@@ -30,15 +29,14 @@ module DRIVERwaltz0BOTN (SW,MUDV,PMUDG,PMUDV,botswon,CELG59462,CELV96848,botswin
   output  botswstatus;
   output  botswzcross;
   input  enable_driver;
-  input  IP_945fe712_XU8;
+  input  IP_14d08c8e_XU3;
   input  IP_a0afb596_XU9;
   input  IP_2d447a5c_XU17;
-  input [7:0] trim_currentlimit_2d447a5c;
-  input [7:0] trim_currentlimit_945fe712;
-  input [7:0] trim_currentlimit_a0afb596;
 endmodule
 
-module DRIVERwaltz0DEBUG (botstate,topstate,CELG59462,CELV96848,botswineg,ok_driver,botswipeak,topswipeak,CELSUB40948,botswstatus,botswzcross,topswstatus,enable_driver,hijack_botstate,hijack_topstate,hijack_enable_driver);
+module DRIVERwaltz0DEBUG (tdo,tmi,botstate,topstate,CELG59462,CELV96848,botswineg,ok_driver,botswipeak,topswipeak,CELSUB40948,botswstatus,botswzcross,topswstatus,enable_driver,hijack_botstate,hijack_topstate,hijack_enable_driver);
+  inout  tdo;
+  input [4:0] tmi;
   input  botstate;
   input  topstate;
   input  CELG59462;
@@ -57,8 +55,11 @@ module DRIVERwaltz0DEBUG (botstate,topstate,CELG59462,CELV96848,botswineg,ok_dri
   output  hijack_enable_driver;
 endmodule
 
-module DRIVERwaltz0TOPN (SW,BSTV,MUDV,MUDHV,PMUDV,PMUDHV,enable,topswon,CELG59462,CELV96848,ok_driver,topswipeak,CELSUB40948,IREF_DRIVER,botswstatus,topswstatus,ISLOPE_DRIVER,IP_f4252e65_XU22,DISABLEslope_07db7e9a,trim_slopecomp_f4252e65,trim_currentlimit_98fa5525,factory_currentlimit_blanking_98fa5525);
+module DRIVERwaltz0TOPN (SW,TAO,tdo,tmi,BSTV,MUDV,MUDHV,PMUDV,PMUDHV,enable,topswon,CELG59462,CELV96848,ok_driver,topswipeak,CELSUB40948,IREF_DRIVER,botswstatus,topswstatus,ISLOPE_DRIVER,IP_f4252e65_XU22);
   inout  SW;
+  inout  TAO;
+  inout  tdo;
+  input [4:0] tmi;
   input  BSTV;
   input  MUDV;
   input  MUDHV;
@@ -76,60 +77,14 @@ module DRIVERwaltz0TOPN (SW,BSTV,MUDV,MUDHV,PMUDV,PMUDHV,enable,topswon,CELG5946
   output  topswstatus;
   input  ISLOPE_DRIVER;
   input  IP_f4252e65_XU22;
-  input  DISABLEslope_07db7e9a;
-  input [3:0] trim_slopecomp_f4252e65;
-  input [7:0] trim_currentlimit_98fa5525;
-  input [4:0] factory_currentlimit_blanking_98fa5525;
 endmodule
-
-//Verilog HDL for "DRM", "drm64" "functional"
-
-
-module drm64 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, por1, por2, por3,
-por4, por5, por6, por7, drm0, drm1, drm2, drm3, drm4, drm5, drm6, drm7, d1,
-d0 );
-
-  input  [7:0] por3;
-  input  [7:0] id;
-  output  [7:0] drm2;
-  output  [7:0] drm5;
-  output  [7:0] drm6;
-  input V;
-  output  [7:0] drm3;
-  input  [7:0] por1;
-  input G;
-  input SUB;
-  inout  [4:0] tmi;
-  output  [7:0] drm1;
-  input lastdrm;
-  output  [7:0] drm4;
-  output d1;
-  input  [7:0] por2;
-  output  [7:0] drm0;
-  input  [7:0] por6;
-  input  [7:0] por5;
-  output d0;
-  output  [7:0] drm7;
-  input bypload;
-  input  [7:0] por4;
-  input  [7:0] por7;
-  input  [7:0] por0;
-endmodule
-
-
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
 
 // ------------------------ Module Verilog ---------------
-module DRIVERwaltz (SW, tmi, BSTV, MUDV, MUDHV, PMUDG, PMUDV, PMUDHV, botstate, topstate, CELG59462, CELV96848, bbm_topon, botswineg, ok_driver, botswipeak, topswipeak, CELSUB40948, IREF_DRIVER, botswzcross, bbm_bottomon, ISLOPE_DRIVER, enable_driver, IP_945fe712_XU8, IP_a0afb596_XU9, IP_2d447a5c_XU17, IP_f4252e65_XU22);
+module DRIVERwaltz (SW, TAO, tdo, tmi, BSTV, MUDV, MUDHV, PMUDG, PMUDV, PMUDHV, botstate, topstate, CELG59462, CELV96848, bbm_topon, botswineg, ok_driver, botswipeak, topswipeak, CELSUB40948, IREF_DRIVER, botswzcross, bbm_bottomon, ISLOPE_DRIVER, enable_driver, IP_14d08c8e_XU3, IP_a0afb596_XU9, IP_2d447a5c_XU17, IP_f4252e65_XU22);
 inout  SW;
-inout [4:0] tmi;
+inout  TAO;
+inout  tdo;
+input [4:0] tmi;
 input  BSTV;
 input  MUDV;
 input  MUDHV;
@@ -151,7 +106,7 @@ output  botswzcross;
 output  bbm_bottomon;
 input  ISLOPE_DRIVER;
 input  enable_driver;
-input  IP_945fe712_XU8;
+input  IP_14d08c8e_XU3;
 input  IP_a0afb596_XU9;
 input  IP_2d447a5c_XU17;
 input  IP_f4252e65_XU22;
@@ -159,32 +114,6 @@ input  IP_f4252e65_XU22;
 
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
-wire [1:0] BBMstatus_b07e0c43;
-wire [4:0] factory_timingskew_7229e0fa;
-wire [4:0] factory_timingskew_a04dd5f1;
-wire [7:0] trim_currentlimit_2d447a5c;
-wire [7:0] trim_currentlimit_945fe712;
-wire [7:0] trim_currentlimit_a0afb596;
-wire [3:0] trim_slopecomp_f4252e65;
-wire [7:0] trim_currentlimit_98fa5525;
-wire [4:0] factory_currentlimit_blanking_98fa5525;
-wire [7:0] id;
-wire [7:0] drm0;
-wire [7:0] drm1;
-wire [7:0] drm2;
-wire [7:0] drm3;
-wire [7:0] drm4;
-wire [7:0] drm5;
-wire [7:0] drm6;
-wire [7:0] drm7;
-wire [7:0] por0;
-wire [7:0] por1;
-wire [7:0] por2;
-wire [7:0] por3;
-wire [7:0] por4;
-wire [7:0] por5;
-wire [7:0] por6;
-wire [7:0] por7;
 
 // ------------------------ Networks ---------------------
 DRIVERwaltzBBM XBBM (
@@ -198,14 +127,13 @@ DRIVERwaltzBBM XBBM (
 .CELSUB40948(CELSUB40948),
 .bottomstate(net_110),
 .bbm_bottomon(bbm_bottomon),
-.bottomstatus(net_107),
-.BBMstatus_b07e0c43(BBMstatus_b07e0c43[1:0]),
-.factory_timingskew_7229e0fa(factory_timingskew_7229e0fa[4:0]),
-.factory_timingskew_a04dd5f1(factory_timingskew_a04dd5f1[4:0])
+.bottomstatus(net_107)
 );
 
 DRIVERwaltz0BOTN XBOTSW (
 .SW(SW),
+.tdo(tdo),
+.tmi(tmi[4:0]),
 .MUDV(MUDV),
 .PMUDG(PMUDG),
 .PMUDV(PMUDV),
@@ -218,15 +146,14 @@ DRIVERwaltz0BOTN XBOTSW (
 .botswstatus(net_107),
 .botswzcross(botswzcross),
 .enable_driver(net_104),
-.IP_945fe712_XU8(IP_945fe712_XU8),
+.IP_14d08c8e_XU3(IP_14d08c8e_XU3),
 .IP_a0afb596_XU9(IP_a0afb596_XU9),
-.IP_2d447a5c_XU17(IP_2d447a5c_XU17),
-.trim_currentlimit_2d447a5c(trim_currentlimit_2d447a5c[7:0]),
-.trim_currentlimit_945fe712(trim_currentlimit_945fe712[7:0]),
-.trim_currentlimit_a0afb596(trim_currentlimit_a0afb596[7:0])
+.IP_2d447a5c_XU17(IP_2d447a5c_XU17)
 );
 
 DRIVERwaltz0DEBUG XDEBUG (
+.tdo(tdo),
+.tmi(tmi[4:0]),
 .botstate(botstate),
 .topstate(topstate),
 .CELG59462(CELG59462),
@@ -247,6 +174,9 @@ DRIVERwaltz0DEBUG XDEBUG (
 
 DRIVERwaltz0TOPN XTOPSW (
 .SW(SW),
+.TAO(TAO),
+.tdo(tdo),
+.tmi(tmi[4:0]),
 .BSTV(BSTV),
 .MUDV(MUDV),
 .MUDHV(MUDHV),
@@ -263,79 +193,7 @@ DRIVERwaltz0TOPN XTOPSW (
 .botswstatus(net_107),
 .topswstatus(net_105),
 .ISLOPE_DRIVER(ISLOPE_DRIVER),
-.IP_f4252e65_XU22(IP_f4252e65_XU22),
-.DISABLEslope_07db7e9a(DISABLEslope_07db7e9a),
-.trim_slopecomp_f4252e65(trim_slopecomp_f4252e65[3:0]),
-.trim_currentlimit_98fa5525(trim_currentlimit_98fa5525[7:0]),
-.factory_currentlimit_blanking_98fa5525(factory_currentlimit_blanking_98fa5525[4:0])
-);
-
-drm64 drm_hex0x03 (
-.G(CELG59462),
-.V(CELV96848),
-.d0(a0),
-.d1(a1),
-.id({a0,a0,a0,a0,a0,a0,a1,a1}),
-.SUB(CELSUB40948),
-.tmi(tmi[4:0]),
-.drm0({DISABLEslope_07db7e9a,factory_timingskew_7229e0fa[4],factory_timingskew_7229e0fa[3],factory_timingskew_7229e0fa[2],factory_timingskew_7229e0fa[1],factory_timingskew_7229e0fa[0],BBMstatus_b07e0c43[1],BBMstatus_b07e0c43[0]}),
-.drm1({noconn_drm64_drm1_7,noconn_drm64_drm1_6,noconn_drm64_drm1_5,factory_timingskew_a04dd5f1[4],factory_timingskew_a04dd5f1[3],factory_timingskew_a04dd5f1[2],factory_timingskew_a04dd5f1[1],factory_timingskew_a04dd5f1[0]}),
-.drm2({trim_currentlimit_2d447a5c[7],trim_currentlimit_2d447a5c[6],trim_currentlimit_2d447a5c[5],trim_currentlimit_2d447a5c[4],trim_currentlimit_2d447a5c[3],trim_currentlimit_2d447a5c[2],trim_currentlimit_2d447a5c[1],trim_currentlimit_2d447a5c[0]}),
-.drm3({trim_currentlimit_945fe712[7],trim_currentlimit_945fe712[6],trim_currentlimit_945fe712[5],trim_currentlimit_945fe712[4],trim_currentlimit_945fe712[3],trim_currentlimit_945fe712[2],trim_currentlimit_945fe712[1],trim_currentlimit_945fe712[0]}),
-.drm4({trim_currentlimit_a0afb596[7],trim_currentlimit_a0afb596[6],trim_currentlimit_a0afb596[5],trim_currentlimit_a0afb596[4],trim_currentlimit_a0afb596[3],trim_currentlimit_a0afb596[2],trim_currentlimit_a0afb596[1],trim_currentlimit_a0afb596[0]}),
-.drm5({trim_currentlimit_98fa5525[7],trim_currentlimit_98fa5525[6],trim_currentlimit_98fa5525[5],trim_currentlimit_98fa5525[4],trim_currentlimit_98fa5525[3],trim_currentlimit_98fa5525[2],trim_currentlimit_98fa5525[1],trim_currentlimit_98fa5525[0]}),
-.drm6({noconn_drm64_drm6_7,noconn_drm64_drm6_6,noconn_drm64_drm6_5,factory_currentlimit_blanking_98fa5525[4],factory_currentlimit_blanking_98fa5525[3],factory_currentlimit_blanking_98fa5525[2],factory_currentlimit_blanking_98fa5525[1],factory_currentlimit_blanking_98fa5525[0]}),
-.drm7({noconn_drm64_drm7_7,noconn_drm64_drm7_6,noconn_drm64_drm7_5,noconn_drm64_drm7_4,trim_slopecomp_f4252e65[3],trim_slopecomp_f4252e65[2],trim_slopecomp_f4252e65[1],trim_slopecomp_f4252e65[0]}),
-.por0({a0,a1,a1,a0,a0,a0,a1,a1}),
-.por1({a0,a0,a0,a1,a1,a0,a0,a0}),
-.por2({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por3({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por4({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por5({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por6({a0,a0,a0,a1,a0,a0,a0,a0}),
-.por7({a0,a0,a0,a0,a0,a0,a0,a0}),
-.bypload(a0),
-.lastdrm(a0)
-);
-
-STONEnoconn XNCnoconn_drm64_drm1_5 (
-.noconn(noconn_drm64_drm1_5)
-);
-
-STONEnoconn XNCnoconn_drm64_drm1_6 (
-.noconn(noconn_drm64_drm1_6)
-);
-
-STONEnoconn XNCnoconn_drm64_drm1_7 (
-.noconn(noconn_drm64_drm1_7)
-);
-
-STONEnoconn XNCnoconn_drm64_drm6_5 (
-.noconn(noconn_drm64_drm6_5)
-);
-
-STONEnoconn XNCnoconn_drm64_drm6_6 (
-.noconn(noconn_drm64_drm6_6)
-);
-
-STONEnoconn XNCnoconn_drm64_drm6_7 (
-.noconn(noconn_drm64_drm6_7)
-);
-
-STONEnoconn XNCnoconn_drm64_drm7_4 (
-.noconn(noconn_drm64_drm7_4)
-);
-
-STONEnoconn XNCnoconn_drm64_drm7_5 (
-.noconn(noconn_drm64_drm7_5)
-);
-
-STONEnoconn XNCnoconn_drm64_drm7_6 (
-.noconn(noconn_drm64_drm7_6)
-);
-
-STONEnoconn XNCnoconn_drm64_drm7_7 (
-.noconn(noconn_drm64_drm7_7)
+.IP_f4252e65_XU22(IP_f4252e65_XU22)
 );
 
 endmodule

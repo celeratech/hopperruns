@@ -79,31 +79,6 @@ module paddigitalinput_2a35d913 (IN,out,CELG,CELV,SIMPV,CELSUB);
   input  CELSUB;
 endmodule
 
-module clocksync_3aed083e (clk,CELG,CELV,CELSUB,clocksync_in,clocksync_low,clocksync_out,clocksync_high,enable_clocksync,global_clocksync);
-  input  clk;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
-  input  clocksync_in;
-  output  clocksync_low;
-  output  clocksync_out;
-  output  clocksync_high;
-  input  enable_clocksync;
-  input  global_clocksync;
-endmodule
-
-//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
-
-
-module PEBBLEtielo ( q, G, SUB, V );
-
-  input V;
-  output q;
-  input G;
-  input SUB;
-endmodule
-
-
 module oscillator_d9a22b83 (IP,osc,CELG,IOSC,SIMPV,CELREF,CELSUB,tdi_osc,ten_osc,CELFORCE_RF,CELSENSE_RF,ok_oscillator,fault_oscillator,enable_oscillator,global_oscillator,celkelvin_GNDoscillator,trim_oscillator_ext_fine,trim_oscillator_int_fine,trim_oscillator_ext_coarse,trim_oscillator_int_coarse);
   input  IP;
   output  osc;
@@ -126,6 +101,48 @@ module oscillator_d9a22b83 (IP,osc,CELG,IOSC,SIMPV,CELREF,CELSUB,tdi_osc,ten_osc
   input [2:0] trim_oscillator_ext_coarse;
   input [2:0] trim_oscillator_int_coarse;
 endmodule
+
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
+module clocksync_473e0ab6 (clk,CELG,CELV,CELSUB,clocksync_in,clocksync_low,clocksync_out,clocksync_high,enable_clocksync,global_clocksync);
+  input  clk;
+  input  CELG;
+  input  CELV;
+  input  CELSUB;
+  input  clocksync_in;
+  output  clocksync_low;
+  output  clocksync_out;
+  output  clocksync_high;
+  input  enable_clocksync;
+  input  global_clocksync;
+endmodule
+
+//Verilog HDL for "DFT", "DFTtm8d" "functional"
+
+
+module DFTtm8d ( a, ten, tdo, tmi, G, SUB, V, tdi, tma );
+
+  input V;
+  input  [7:0] tma;
+  output  [7:0] ten;
+  output  [1:0] a;
+  inout tdo;
+  input  [7:0] tdi;
+  input G;
+  input SUB;
+  inout  [4:0] tmi;
+endmodule
+
 
 //Verilog HDL for "Esd", "ESDminiClamp6" "functional"
 
@@ -150,7 +167,9 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CLOCKwaltzMAIN (FSET, MUDV, SYNC, clock, dft_sync, ok_clock, CELG59462, CELV96848, dft_clock, ISLOPECOMP, CELREF84329, CELSENSE_RF, CELSUB40948, dft_synclow, fault_clock, dft_synchigh, enable_clock, dft_clocksync, CLOCKofftime_0, CLOCKofftime_1, CLOCKofftime_2, CLOCKofftime_3, dft_clockstartup, dft_clockinternal, IP_90c263a6_XOSCEXT, celkelvin_GND_bb7e77f4, trim_oscillator_ext_fine_90c263a6, trim_oscillator_int_fine_90c263a6, trim_oscillator_ext_coarse_90c263a6, trim_oscillator_int_coarse_90c263a6);
+module CLOCKwaltzMAIN (tdo, tmi, FSET, MUDV, SYNC, clock, dft_sync, ok_clock, CELG59462, CELV96848, dft_clock, ISLOPECOMP, CELREF84329, CELSENSE_RF, CELSUB40948, dft_synclow, fault_clock, dft_synchigh, enable_clock, dft_clocksync, CLOCKofftime_0, CLOCKofftime_1, CLOCKofftime_2, CLOCKofftime_3, dft_clockstartup, dft_clockinternal, IP_90c263a6_XOSCEXT, celkelvin_GND_bb7e77f4);
+inout  tdo;
+input [4:0] tmi;
 output  FSET;
 input  MUDV;
 input  SYNC;
@@ -177,22 +196,19 @@ output  dft_clockstartup;
 output  dft_clockinternal;
 input  IP_90c263a6_XOSCEXT;
 input  celkelvin_GND_bb7e77f4;
-input [4:0] trim_oscillator_ext_fine_90c263a6;
-input [4:0] trim_oscillator_int_fine_90c263a6;
-input [2:0] trim_oscillator_ext_coarse_90c263a6;
-input [2:0] trim_oscillator_int_coarse_90c263a6;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] trim_oscillator_ext_fine_90c263a6;
-wire [4:0] trim_oscillator_int_fine_90c263a6;
-wire [2:0] trim_oscillator_ext_coarse_90c263a6;
-wire [2:0] trim_oscillator_int_coarse_90c263a6;
+wire [4:0] tmi;
 wire [3:0] s;
 wire [4:0] trim_oscillator_ext_fine;
 wire [4:0] trim_oscillator_int_fine;
 wire [2:0] trim_oscillator_ext_coarse;
 wire [2:0] trim_oscillator_int_coarse;
+wire [1:0] a;
+wire [7:0] tdi;
+wire [7:0] ten;
+wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
 VESPAasmINPUT2 XU15 (
@@ -307,32 +323,12 @@ dbuf_e926e395 XU25 (
 .CELV(CELV96848)
 );
 
-clocksync_3aed083e XU30 (
-.clk(net_105),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948),
-.clocksync_in(net_101),
-.clocksync_low(dft_synclow),
-.clocksync_out(net_102),
-.clocksync_high(dft_synchigh),
-.enable_clocksync(enable_clock),
-.global_clocksync(tl0)
-);
-
 dbuf_e926e395 XU31 (
 .i(net_80),
 .o(dft_sync),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
-);
-
-PEBBLEtielo XtieLo (
-.G(CELG59462),
-.V(CELV96848),
-.q(tl0),
-.SUB(CELSUB40948)
 );
 
 oscillator_d9a22b83 XOSCEXT (
@@ -343,19 +339,51 @@ oscillator_d9a22b83 XOSCEXT (
 .SIMPV(MUDV),
 .CELREF(CELREF84329),
 .CELSUB(CELSUB40948),
-.tdi_osc(noconn_no_dft_tdi_osc1),
-.ten_osc(tl0),
+.tdi_osc(tdi_osc_90c263a6_XOSCEXT),
+.ten_osc(ten_osc_90c263a6_XOSCEXT),
 .CELFORCE_RF(FSET),
 .CELSENSE_RF(CELSENSE_RF),
 .ok_oscillator(net_106),
 .fault_oscillator(fault_clock),
 .enable_oscillator(enable_clock),
-.global_oscillator(tl0),
+.global_oscillator(global_oscillator_90c263a6_XOSCEXT),
 .celkelvin_GNDoscillator(celkelvin_GND_bb7e77f4),
-.trim_oscillator_ext_fine({trim_oscillator_ext_fine_90c263a6[4],trim_oscillator_ext_fine_90c263a6[3],trim_oscillator_ext_fine_90c263a6[2],trim_oscillator_ext_fine_90c263a6[1],trim_oscillator_ext_fine_90c263a6[0]}),
-.trim_oscillator_int_fine({trim_oscillator_int_fine_90c263a6[4],trim_oscillator_int_fine_90c263a6[3],trim_oscillator_int_fine_90c263a6[2],trim_oscillator_int_fine_90c263a6[1],trim_oscillator_int_fine_90c263a6[0]}),
-.trim_oscillator_ext_coarse({trim_oscillator_ext_coarse_90c263a6[2],trim_oscillator_ext_coarse_90c263a6[1],trim_oscillator_ext_coarse_90c263a6[0]}),
-.trim_oscillator_int_coarse({trim_oscillator_int_coarse_90c263a6[2],trim_oscillator_int_coarse_90c263a6[1],trim_oscillator_int_coarse_90c263a6[0]})
+.trim_oscillator_ext_fine({c0,c0,c0,c0,c0}),
+.trim_oscillator_int_fine({c0,c0,c0,c0,c0}),
+.trim_oscillator_ext_coarse({c0,c0,c0}),
+.trim_oscillator_int_coarse({c0,c0,c0})
+);
+
+PEBBLEtielo XDRMNOTL (
+.G(CELG59462),
+.V(CELV96848),
+.q(c0),
+.SUB(CELSUB40948)
+);
+
+clocksync_473e0ab6 Xclocksync1 (
+.clk(net_105),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948),
+.clocksync_in(net_101),
+.clocksync_low(dft_synclow),
+.clocksync_out(net_102),
+.clocksync_high(dft_synchigh),
+.enable_clocksync(enable_clock),
+.global_clocksync(global_clocksync_5d4c1f91_Xclocksync1)
+);
+
+DFTtm8d dft_hex0x03 (
+.G(CELG59462),
+.V(CELV96848),
+.a({a1,a0}),
+.SUB(CELSUB40948),
+.tdi({a0,a0,a0,a0,a0,a0,a0,tdi_osc_90c263a6_XOSCEXT}),
+.tdo(tdo),
+.ten({noconn_dft_hex0x03_ten_7,noconn_dft_hex0x03_ten_6,noconn_dft_hex0x03_ten_5,noconn_dft_hex0x03_ten_4,noconn_dft_hex0x03_ten_3,global_clocksync_5d4c1f91_Xclocksync1,global_oscillator_90c263a6_XOSCEXT,ten_osc_90c263a6_XOSCEXT}),
+.tma({a0,a0,a0,a0,a0,a0,a1,a1}),
+.tmi(tmi[4:0])
 );
 
 ESDminiClamp6 XCLAMP_XU24_IN (
@@ -366,8 +394,24 @@ ESDminiClamp6 XCLAMP_XU24_IN (
 .SUB(CELSUB40948)
 );
 
-STONEnoconn XNCnoconn_no_dft_tdi_osc1 (
-.noconn(noconn_no_dft_tdi_osc1)
+STONEnoconn XNCnoconn_dft_hex0x03_ten_3 (
+.noconn(noconn_dft_hex0x03_ten_3)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x03_ten_4 (
+.noconn(noconn_dft_hex0x03_ten_4)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x03_ten_5 (
+.noconn(noconn_dft_hex0x03_ten_5)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x03_ten_6 (
+.noconn(noconn_dft_hex0x03_ten_6)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x03_ten_7 (
+.noconn(noconn_dft_hex0x03_ten_7)
 );
 
 endmodule

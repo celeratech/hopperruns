@@ -7,7 +7,7 @@
 :vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
 :vpi_module "/usr/local/lib/ivl/va_math.vpi";
-S_0x55bbf0592f60 .scope module, "WALTZ" "WALTZ" 2 104;
+S_0x557107daef60 .scope module, "WALTZ" "WALTZ" 2 98;
  .timescale 0 0;
     .port_info 0 /INOUT 1 "EN";
     .port_info 1 /INOUT 1 "FB";
@@ -22,103 +22,96 @@ S_0x55bbf0592f60 .scope module, "WALTZ" "WALTZ" 2 104;
     .port_info 10 /INOUT 1 "PGND";
     .port_info 11 /INOUT 1 "PVCC";
     .port_info 12 /INOUT 1 "SYNC";
-    .port_info 13 /INPUT 1 "CELIND";
-o0x7f29045990d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf05ff310_0 .net "BIAS", 0 0, o0x7f29045990d8;  0 drivers
-o0x7f2904599108 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf05ff3d0_0 .net "BST", 0 0, o0x7f2904599108;  0 drivers
-o0x7f2904599138 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf05ff4e0_0 .net "CELG59462", 0 0, o0x7f2904599138;  0 drivers
-o0x7f2904599d38 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf05ff580_0 .net "CELIND", 0 0, o0x7f2904599d38;  0 drivers
-o0x7f2904599168 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf05ff620_0 .net "CELSENSE_RF", 0 0, o0x7f2904599168;  0 drivers
-o0x7f2904599198 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf05ff760_0 .net "CELSUB40948", 0 0, o0x7f2904599198;  0 drivers
-o0x7f29045991c8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf05ff800_0 .net "CELV96848", 0 0, o0x7f29045991c8;  0 drivers
-o0x7f2904599d68 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf05ff8a0_0 .net "DFTSCL", 0 0, o0x7f2904599d68;  0 drivers
-o0x7f2904599d98 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf05ff990_0 .net "DFTSDA", 0 0, o0x7f2904599d98;  0 drivers
-o0x7f29045991f8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf05ffa30_0 .net "EN", 0 0, o0x7f29045991f8;  0 drivers
-o0x7f2904599228 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf05ffb20_0 .net "FB", 0 0, o0x7f2904599228;  0 drivers
-o0x7f2904599258 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf05ffc10_0 .net "FSET", 0 0, o0x7f2904599258;  0 drivers
-o0x7f2904599288 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf05ffd00_0 .net "GND", 0 0, o0x7f2904599288;  0 drivers
-o0x7f2904599dc8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf05ffdf0_0 .net "GOTP", 0 0, o0x7f2904599dc8;  0 drivers
-o0x7f29045992b8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf05ffee0_0 .net "IN", 0 0, o0x7f29045992b8;  0 drivers
-o0x7f29045992e8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf05fffd0_0 .net "PGND", 0 0, o0x7f29045992e8;  0 drivers
-o0x7f2904599318 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf06000c0_0 .net "PIN", 0 0, o0x7f2904599318;  0 drivers
-o0x7f2904599348 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf06001b0_0 .net "POK", 0 0, o0x7f2904599348;  0 drivers
-o0x7f2904599378 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf06002a0_0 .net "PORB97836", 0 0, o0x7f2904599378;  0 drivers
-o0x7f29045993a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf0600390_0 .net "PVCC", 0 0, o0x7f29045993a8;  0 drivers
-o0x7f29045993d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf0600480_0 .net "SENSE_G_2f5a8499", 0 0, o0x7f29045993d8;  0 drivers
-o0x7f2904599408 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf0600570_0 .net "SW", 0 0, o0x7f2904599408;  0 drivers
-o0x7f2904599438 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf0600660_0 .net "SYNC", 0 0, o0x7f2904599438;  0 drivers
-o0x7f2904599468 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf0600750_0 .net "VCC", 0 0, o0x7f2904599468;  0 drivers
-o0x7f2904599df8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf0600840_0 .net "VOTP", 0 0, o0x7f2904599df8;  0 drivers
-o0x7f2904599498 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf0600930_0 .net "celkelvin_BIAS_bc3b7675", 0 0, o0x7f2904599498;  0 drivers
-o0x7f29045994c8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf0600a20_0 .net "celkelvin_GND_73ebd82d", 0 0, o0x7f29045994c8;  0 drivers
-o0x7f29045994f8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf0600b10_0 .net "celkelvin_GND_bb7e77f4", 0 0, o0x7f29045994f8;  0 drivers
-o0x7f2904599528 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf0600c00_0 .net "celkelvin_GND_d75c3f7f", 0 0, o0x7f2904599528;  0 drivers
-o0x7f2904599558 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf0600cf0_0 .net "celkelvin_IN_bc3b7675", 0 0, o0x7f2904599558;  0 drivers
-o0x7f2904599588 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf0600de0_0 .net "celkelvin_VCC_bc3b7675", 0 0, o0x7f2904599588;  0 drivers
-o0x7f2904599e28 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf0600ed0_0 .net "celkelvin_VCC_fc9a589a", 0 0, o0x7f2904599e28;  0 drivers
-o0x7f29045995b8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf0600fc0_0 .net "kelvin_GNDpowergood", 0 0, o0x7f29045995b8;  0 drivers
-o0x7f29045995e8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf06012c0_0 .net "kelvin_GNDregulation", 0 0, o0x7f29045995e8;  0 drivers
-o0x7f2904599618 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf06013b0_0 .net "kelvin_GNDservice", 0 0, o0x7f2904599618;  0 drivers
-o0x7f2904599648 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf06014a0_0 .net "kelvin_GNDsoftstart", 0 0, o0x7f2904599648;  0 drivers
-o0x7f2904599678 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf0601590_0 .net "kelvin_VCC", 0 0, o0x7f2904599678;  0 drivers
-o0x7f2904599018 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf0601680_0 .net "otp_done", 0 0, o0x7f2904599018;  0 drivers
-o0x7f29045996a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf0601770_0 .net "sense_FB", 0 0, o0x7f29045996a8;  0 drivers
-o0x7f2904599e58 .functor BUFZ 6, C4<zzzzzz>; HiZ drive
-I0x55bbf05dea30 .island tran;
-p0x7f2904599e58 .port I0x55bbf05dea30, o0x7f2904599e58;
-v0x55bbf0601860_0 .net8 "tmi", 5 0, p0x7f2904599e58;  0 drivers, strength-aware
-o0x7f2904599078 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55bbf0601950_0 .net "unlock", 0 0, o0x7f2904599078;  0 drivers
-o0x7f29045996d8 .functor BUFZ 5, C4<zzzzz>; HiZ drive
-p0x7f29045996d8 .port I0x55bbf05dea30, o0x7f29045996d8;
- .tranvp 6 5 0, I0x55bbf05dea30, p0x7f2904599e58 p0x7f29045996d8;
-S_0x55bbf05d6330 .scope module, "XNCotp_done" "STONEnoconn" 2 221, 2 97 0, S_0x55bbf0592f60;
- .timescale 0 0;
-    .port_info 0 /INPUT 1 "noconn";
-v0x55bbf05924b0_0 .net "noconn", 0 0, o0x7f2904599018;  alias, 0 drivers
-S_0x55bbf05f98d0 .scope module, "XNCunlock" "STONEnoconn" 2 217, 2 97 0, S_0x55bbf0592f60;
- .timescale 0 0;
-    .port_info 0 /INPUT 1 "noconn";
-v0x55bbf05930f0_0 .net "noconn", 0 0, o0x7f2904599078;  alias, 0 drivers
-S_0x55bbf05f9b50 .scope module, "XceleraCORE" "WALTZceleraCORE" 2 125, 2 2 0, S_0x55bbf0592f60;
+o0x7fc0c7e67018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1acf0_0 .net "BIAS", 0 0, o0x7fc0c7e67018;  0 drivers
+o0x7fc0c7e67048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1adb0_0 .net "BST", 0 0, o0x7fc0c7e67048;  0 drivers
+o0x7fc0c7e67078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1aec0_0 .net "CELG59462", 0 0, o0x7fc0c7e67078;  0 drivers
+o0x7fc0c7e670a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1af60_0 .net "CELSENSE_RF", 0 0, o0x7fc0c7e670a8;  0 drivers
+o0x7fc0c7e670d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1b050_0 .net "CELSUB40948", 0 0, o0x7fc0c7e670d8;  0 drivers
+o0x7fc0c7e67108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1b140_0 .net "CELV96848", 0 0, o0x7fc0c7e67108;  0 drivers
+o0x7fc0c7e67d38 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1b1e0_0 .net "DFTSCL", 0 0, o0x7fc0c7e67d38;  0 drivers
+o0x7fc0c7e67d68 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1b2d0_0 .net "DFTSDA", 0 0, o0x7fc0c7e67d68;  0 drivers
+o0x7fc0c7e67138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1b3c0_0 .net "EN", 0 0, o0x7fc0c7e67138;  0 drivers
+o0x7fc0c7e67168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1b460_0 .net "FB", 0 0, o0x7fc0c7e67168;  0 drivers
+o0x7fc0c7e67d98 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1b550_0 .net "FSET", 0 0, o0x7fc0c7e67d98;  0 drivers
+o0x7fc0c7e67198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1b5f0_0 .net "FSET_inout", 0 0, o0x7fc0c7e67198;  0 drivers
+o0x7fc0c7e671c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1b6e0_0 .net "GND", 0 0, o0x7fc0c7e671c8;  0 drivers
+o0x7fc0c7e671f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1b7d0_0 .net "IN", 0 0, o0x7fc0c7e671f8;  0 drivers
+o0x7fc0c7e67228 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1b8c0_0 .net "PGND", 0 0, o0x7fc0c7e67228;  0 drivers
+o0x7fc0c7e67258 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1b9b0_0 .net "PIN", 0 0, o0x7fc0c7e67258;  0 drivers
+o0x7fc0c7e67dc8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1baa0_0 .net "POK", 0 0, o0x7fc0c7e67dc8;  0 drivers
+o0x7fc0c7e67288 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1bb40_0 .net "POK_inout", 0 0, o0x7fc0c7e67288;  0 drivers
+o0x7fc0c7e672b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1bc30_0 .net "PORB97836", 0 0, o0x7fc0c7e672b8;  0 drivers
+o0x7fc0c7e672e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1bd20_0 .net "PVCC", 0 0, o0x7fc0c7e672e8;  0 drivers
+o0x7fc0c7e67318 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1be10_0 .net "SENSE_G_4c0bef8e", 0 0, o0x7fc0c7e67318;  0 drivers
+o0x7fc0c7e67348 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1bf00_0 .net "SW", 0 0, o0x7fc0c7e67348;  0 drivers
+o0x7fc0c7e67df8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1bff0_0 .net "SYNC", 0 0, o0x7fc0c7e67df8;  0 drivers
+o0x7fc0c7e67378 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1c090_0 .net "SYNC_inout", 0 0, o0x7fc0c7e67378;  0 drivers
+o0x7fc0c7e673a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1c180_0 .net "TAO", 0 0, o0x7fc0c7e673a8;  0 drivers
+o0x7fc0c7e673d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1c270_0 .net "VCC", 0 0, o0x7fc0c7e673d8;  0 drivers
+o0x7fc0c7e67408 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1c360_0 .net "celkelvin_BIAS_bc3b7675", 0 0, o0x7fc0c7e67408;  0 drivers
+o0x7fc0c7e67438 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1c450_0 .net "celkelvin_GND_73ebd82d", 0 0, o0x7fc0c7e67438;  0 drivers
+o0x7fc0c7e67468 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1c540_0 .net "celkelvin_GND_bb7e77f4", 0 0, o0x7fc0c7e67468;  0 drivers
+o0x7fc0c7e67498 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1c630_0 .net "celkelvin_GND_d75c3f7f", 0 0, o0x7fc0c7e67498;  0 drivers
+o0x7fc0c7e674c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1c720_0 .net "celkelvin_IN_bc3b7675", 0 0, o0x7fc0c7e674c8;  0 drivers
+o0x7fc0c7e674f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1c810_0 .net "celkelvin_VCC_bc3b7675", 0 0, o0x7fc0c7e674f8;  0 drivers
+o0x7fc0c7e67e28 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1c900_0 .net "celkelvin_VCC_eb468fcf", 0 0, o0x7fc0c7e67e28;  0 drivers
+o0x7fc0c7e67528 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1cc00_0 .net "kelvin_GNDpowergood", 0 0, o0x7fc0c7e67528;  0 drivers
+o0x7fc0c7e67558 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1ccf0_0 .net "kelvin_GNDregulation", 0 0, o0x7fc0c7e67558;  0 drivers
+o0x7fc0c7e67588 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1cde0_0 .net "kelvin_GNDservice", 0 0, o0x7fc0c7e67588;  0 drivers
+o0x7fc0c7e675b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1ced0_0 .net "kelvin_GNDsoftstart", 0 0, o0x7fc0c7e675b8;  0 drivers
+o0x7fc0c7e675e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1cfc0_0 .net "kelvin_VCC", 0 0, o0x7fc0c7e675e8;  0 drivers
+o0x7fc0c7e67618 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1d0b0_0 .net "sense_FB", 0 0, o0x7fc0c7e67618;  0 drivers
+o0x7fc0c7e67648 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1d1a0_0 .net "tdo", 0 0, o0x7fc0c7e67648;  0 drivers
+o0x7fc0c7e67e58 .functor BUFZ 6, C4<zzzzzz>; HiZ drive
+I0x557107df6c80 .island tran;
+p0x7fc0c7e67e58 .port I0x557107df6c80, o0x7fc0c7e67e58;
+v0x557107e1d240_0 .net8 "tmi", 5 0, p0x7fc0c7e67e58;  0 drivers, strength-aware
+o0x7fc0c7e67e88 .functor BUFZ 1, C4<z>; HiZ drive
+v0x557107e1d330_0 .net "unlock", 0 0, o0x7fc0c7e67e88;  0 drivers
+o0x7fc0c7e67678 .functor BUFZ 5, C4<zzzzz>; HiZ drive
+p0x7fc0c7e67678 .port I0x557107df6c80, o0x7fc0c7e67678;
+ .tranvp 6 5 0, I0x557107df6c80, p0x7fc0c7e67e58 p0x7fc0c7e67678;
+S_0x557107dace30 .scope module, "XceleraCORE" "WALTZceleraCORE" 2 118, 2 2 0, S_0x557107daef60;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "EN";
     .port_info 1 /INOUT 1 "FB";
@@ -128,65 +121,69 @@ S_0x55bbf05f9b50 .scope module, "XceleraCORE" "WALTZceleraCORE" 2 125, 2 2 0, S_
     .port_info 5 /INOUT 1 "GND";
     .port_info 6 /INOUT 1 "PIN";
     .port_info 7 /INOUT 1 "POK";
-    .port_info 8 /OUTPUT 1 "VCC";
-    .port_info 9 /INOUT 5 "tmi";
-    .port_info 10 /INPUT 1 "BIAS";
-    .port_info 11 /OUTPUT 1 "FSET";
-    .port_info 12 /INOUT 1 "PGND";
-    .port_info 13 /INPUT 1 "PVCC";
-    .port_info 14 /INPUT 1 "SYNC";
-    .port_info 15 /INPUT 1 "sense_FB";
-    .port_info 16 /INPUT 1 "CELG59462";
-    .port_info 17 /INPUT 1 "CELV96848";
-    .port_info 18 /INPUT 1 "PORB97836";
-    .port_info 19 /INOUT 1 "kelvin_VCC";
-    .port_info 20 /INPUT 1 "CELSENSE_RF";
-    .port_info 21 /INPUT 1 "CELSUB40948";
-    .port_info 22 /INPUT 1 "SENSE_G_2f5a8499";
-    .port_info 23 /INOUT 1 "kelvin_GNDservice";
-    .port_info 24 /INOUT 1 "kelvin_GNDpowergood";
-    .port_info 25 /INPUT 1 "kelvin_GNDsoftstart";
-    .port_info 26 /INOUT 1 "kelvin_GNDregulation";
-    .port_info 27 /INPUT 1 "celkelvin_IN_bc3b7675";
-    .port_info 28 /INPUT 1 "celkelvin_GND_73ebd82d";
-    .port_info 29 /INPUT 1 "celkelvin_GND_bb7e77f4";
-    .port_info 30 /INPUT 1 "celkelvin_GND_d75c3f7f";
-    .port_info 31 /INPUT 1 "celkelvin_VCC_bc3b7675";
-    .port_info 32 /INPUT 1 "celkelvin_BIAS_bc3b7675";
-v0x55bbf0592ec0_0 .net "BIAS", 0 0, o0x7f29045990d8;  alias, 0 drivers
-v0x55bbf05fa050_0 .net "BST", 0 0, o0x7f2904599108;  alias, 0 drivers
-v0x55bbf05fa110_0 .net "CELG59462", 0 0, o0x7f2904599138;  alias, 0 drivers
-v0x55bbf05fa1e0_0 .net "CELSENSE_RF", 0 0, o0x7f2904599168;  alias, 0 drivers
-v0x55bbf05fa2a0_0 .net "CELSUB40948", 0 0, o0x7f2904599198;  alias, 0 drivers
-v0x55bbf05fa3b0_0 .net "CELV96848", 0 0, o0x7f29045991c8;  alias, 0 drivers
-v0x55bbf05fa470_0 .net "EN", 0 0, o0x7f29045991f8;  alias, 0 drivers
-v0x55bbf05fa530_0 .net "FB", 0 0, o0x7f2904599228;  alias, 0 drivers
-v0x55bbf05fa5f0_0 .net "FSET", 0 0, o0x7f2904599258;  alias, 0 drivers
-v0x55bbf05fa6b0_0 .net "GND", 0 0, o0x7f2904599288;  alias, 0 drivers
-v0x55bbf05fa770_0 .net "IN", 0 0, o0x7f29045992b8;  alias, 0 drivers
-v0x55bbf05fa830_0 .net "PGND", 0 0, o0x7f29045992e8;  alias, 0 drivers
-v0x55bbf05fa8f0_0 .net "PIN", 0 0, o0x7f2904599318;  alias, 0 drivers
-v0x55bbf05fa9b0_0 .net "POK", 0 0, o0x7f2904599348;  alias, 0 drivers
-v0x55bbf05faa70_0 .net "PORB97836", 0 0, o0x7f2904599378;  alias, 0 drivers
-v0x55bbf05fab30_0 .net "PVCC", 0 0, o0x7f29045993a8;  alias, 0 drivers
-v0x55bbf05fabf0_0 .net "SENSE_G_2f5a8499", 0 0, o0x7f29045993d8;  alias, 0 drivers
-v0x55bbf05facb0_0 .net "SW", 0 0, o0x7f2904599408;  alias, 0 drivers
-v0x55bbf05fad70_0 .net "SYNC", 0 0, o0x7f2904599438;  alias, 0 drivers
-v0x55bbf05fae30_0 .net "VCC", 0 0, o0x7f2904599468;  alias, 0 drivers
-v0x55bbf05faef0_0 .net "celkelvin_BIAS_bc3b7675", 0 0, o0x7f2904599498;  alias, 0 drivers
-v0x55bbf05fafb0_0 .net "celkelvin_GND_73ebd82d", 0 0, o0x7f29045994c8;  alias, 0 drivers
-v0x55bbf05fb070_0 .net "celkelvin_GND_bb7e77f4", 0 0, o0x7f29045994f8;  alias, 0 drivers
-v0x55bbf05fb130_0 .net "celkelvin_GND_d75c3f7f", 0 0, o0x7f2904599528;  alias, 0 drivers
-v0x55bbf05fb1f0_0 .net "celkelvin_IN_bc3b7675", 0 0, o0x7f2904599558;  alias, 0 drivers
-v0x55bbf05fb2b0_0 .net "celkelvin_VCC_bc3b7675", 0 0, o0x7f2904599588;  alias, 0 drivers
-v0x55bbf05fb370_0 .net "kelvin_GNDpowergood", 0 0, o0x7f29045995b8;  alias, 0 drivers
-v0x55bbf05fb430_0 .net "kelvin_GNDregulation", 0 0, o0x7f29045995e8;  alias, 0 drivers
-v0x55bbf05fb4f0_0 .net "kelvin_GNDservice", 0 0, o0x7f2904599618;  alias, 0 drivers
-v0x55bbf05fb5b0_0 .net "kelvin_GNDsoftstart", 0 0, o0x7f2904599648;  alias, 0 drivers
-v0x55bbf05fb670_0 .net "kelvin_VCC", 0 0, o0x7f2904599678;  alias, 0 drivers
-v0x55bbf05fb730_0 .net "sense_FB", 0 0, o0x7f29045996a8;  alias, 0 drivers
-v0x55bbf05fb7f0_0 .net8 "tmi", 4 0, p0x7f29045996d8;  0 drivers, strength-aware
-S_0x55bbf05fbf00 .scope module, "XceleraRING" "WALTZceleraRING" 2 161, 2 38 0, S_0x55bbf0592f60;
+    .port_info 8 /INOUT 1 "TAO";
+    .port_info 9 /OUTPUT 1 "VCC";
+    .port_info 10 /INOUT 1 "tdo";
+    .port_info 11 /INOUT 5 "tmi";
+    .port_info 12 /INPUT 1 "BIAS";
+    .port_info 13 /OUTPUT 1 "FSET";
+    .port_info 14 /INOUT 1 "PGND";
+    .port_info 15 /INPUT 1 "PVCC";
+    .port_info 16 /INPUT 1 "SYNC";
+    .port_info 17 /INPUT 1 "sense_FB";
+    .port_info 18 /INPUT 1 "CELG59462";
+    .port_info 19 /INPUT 1 "CELV96848";
+    .port_info 20 /INPUT 1 "PORB97836";
+    .port_info 21 /INOUT 1 "kelvin_VCC";
+    .port_info 22 /INPUT 1 "CELSENSE_RF";
+    .port_info 23 /INPUT 1 "CELSUB40948";
+    .port_info 24 /INPUT 1 "SENSE_G_4c0bef8e";
+    .port_info 25 /INOUT 1 "kelvin_GNDservice";
+    .port_info 26 /INOUT 1 "kelvin_GNDpowergood";
+    .port_info 27 /INPUT 1 "kelvin_GNDsoftstart";
+    .port_info 28 /INOUT 1 "kelvin_GNDregulation";
+    .port_info 29 /INPUT 1 "celkelvin_IN_bc3b7675";
+    .port_info 30 /INPUT 1 "celkelvin_GND_73ebd82d";
+    .port_info 31 /INPUT 1 "celkelvin_GND_bb7e77f4";
+    .port_info 32 /INPUT 1 "celkelvin_GND_d75c3f7f";
+    .port_info 33 /INPUT 1 "celkelvin_VCC_bc3b7675";
+    .port_info 34 /INPUT 1 "celkelvin_BIAS_bc3b7675";
+v0x557107dae4b0_0 .net "BIAS", 0 0, o0x7fc0c7e67018;  alias, 0 drivers
+v0x557107daf0f0_0 .net "BST", 0 0, o0x7fc0c7e67048;  alias, 0 drivers
+v0x557107daeec0_0 .net "CELG59462", 0 0, o0x7fc0c7e67078;  alias, 0 drivers
+v0x557107e15910_0 .net "CELSENSE_RF", 0 0, o0x7fc0c7e670a8;  alias, 0 drivers
+v0x557107e159d0_0 .net "CELSUB40948", 0 0, o0x7fc0c7e670d8;  alias, 0 drivers
+v0x557107e15ae0_0 .net "CELV96848", 0 0, o0x7fc0c7e67108;  alias, 0 drivers
+v0x557107e15ba0_0 .net "EN", 0 0, o0x7fc0c7e67138;  alias, 0 drivers
+v0x557107e15c60_0 .net "FB", 0 0, o0x7fc0c7e67168;  alias, 0 drivers
+v0x557107e15d20_0 .net "FSET", 0 0, o0x7fc0c7e67198;  alias, 0 drivers
+v0x557107e15de0_0 .net "GND", 0 0, o0x7fc0c7e671c8;  alias, 0 drivers
+v0x557107e15ea0_0 .net "IN", 0 0, o0x7fc0c7e671f8;  alias, 0 drivers
+v0x557107e15f60_0 .net "PGND", 0 0, o0x7fc0c7e67228;  alias, 0 drivers
+v0x557107e16020_0 .net "PIN", 0 0, o0x7fc0c7e67258;  alias, 0 drivers
+v0x557107e160e0_0 .net "POK", 0 0, o0x7fc0c7e67288;  alias, 0 drivers
+v0x557107e161a0_0 .net "PORB97836", 0 0, o0x7fc0c7e672b8;  alias, 0 drivers
+v0x557107e16260_0 .net "PVCC", 0 0, o0x7fc0c7e672e8;  alias, 0 drivers
+v0x557107e16320_0 .net "SENSE_G_4c0bef8e", 0 0, o0x7fc0c7e67318;  alias, 0 drivers
+v0x557107e163e0_0 .net "SW", 0 0, o0x7fc0c7e67348;  alias, 0 drivers
+v0x557107e164a0_0 .net "SYNC", 0 0, o0x7fc0c7e67378;  alias, 0 drivers
+v0x557107e16560_0 .net "TAO", 0 0, o0x7fc0c7e673a8;  alias, 0 drivers
+v0x557107e16620_0 .net "VCC", 0 0, o0x7fc0c7e673d8;  alias, 0 drivers
+v0x557107e166e0_0 .net "celkelvin_BIAS_bc3b7675", 0 0, o0x7fc0c7e67408;  alias, 0 drivers
+v0x557107e167a0_0 .net "celkelvin_GND_73ebd82d", 0 0, o0x7fc0c7e67438;  alias, 0 drivers
+v0x557107e16860_0 .net "celkelvin_GND_bb7e77f4", 0 0, o0x7fc0c7e67468;  alias, 0 drivers
+v0x557107e16920_0 .net "celkelvin_GND_d75c3f7f", 0 0, o0x7fc0c7e67498;  alias, 0 drivers
+v0x557107e169e0_0 .net "celkelvin_IN_bc3b7675", 0 0, o0x7fc0c7e674c8;  alias, 0 drivers
+v0x557107e16aa0_0 .net "celkelvin_VCC_bc3b7675", 0 0, o0x7fc0c7e674f8;  alias, 0 drivers
+v0x557107e16b60_0 .net "kelvin_GNDpowergood", 0 0, o0x7fc0c7e67528;  alias, 0 drivers
+v0x557107e16c20_0 .net "kelvin_GNDregulation", 0 0, o0x7fc0c7e67558;  alias, 0 drivers
+v0x557107e16ce0_0 .net "kelvin_GNDservice", 0 0, o0x7fc0c7e67588;  alias, 0 drivers
+v0x557107e16da0_0 .net "kelvin_GNDsoftstart", 0 0, o0x7fc0c7e675b8;  alias, 0 drivers
+v0x557107e16e60_0 .net "kelvin_VCC", 0 0, o0x7fc0c7e675e8;  alias, 0 drivers
+v0x557107e16f20_0 .net "sense_FB", 0 0, o0x7fc0c7e67618;  alias, 0 drivers
+v0x557107e171f0_0 .net "tdo", 0 0, o0x7fc0c7e67648;  alias, 0 drivers
+v0x557107e172b0_0 .net8 "tmi", 4 0, p0x7fc0c7e67678;  0 drivers, strength-aware
+S_0x557107e177f0 .scope module, "XceleraRING" "WALTZceleraRING" 2 156, 2 40 0, S_0x557107daef60;
  .timescale 0 0;
     .port_info 0 /INOUT 1 "EN";
     .port_info 1 /INOUT 1 "FB";
@@ -196,100 +193,102 @@ S_0x55bbf05fbf00 .scope module, "XceleraRING" "WALTZceleraRING" 2 161, 2 38 0, S
     .port_info 5 /INOUT 1 "GND";
     .port_info 6 /INOUT 1 "PIN";
     .port_info 7 /INOUT 1 "POK";
-    .port_info 8 /INOUT 1 "VCC";
-    .port_info 9 /INOUT 6 "tmi";
-    .port_info 10 /INOUT 1 "BIAS";
-    .port_info 11 /INOUT 1 "FSET";
-    .port_info 12 /OUTPUT 1 "GOTP";
-    .port_info 13 /INOUT 1 "PGND";
-    .port_info 14 /INOUT 1 "PVCC";
-    .port_info 15 /INOUT 1 "SYNC";
-    .port_info 16 /OUTPUT 1 "VOTP";
-    .port_info 17 /INPUT 1 "CELIND";
-    .port_info 18 /INPUT 1 "DFTSCL";
-    .port_info 19 /INOUT 1 "DFTSDA";
+    .port_info 8 /INOUT 1 "TAO";
+    .port_info 9 /INOUT 1 "VCC";
+    .port_info 10 /INOUT 1 "tdo";
+    .port_info 11 /INOUT 6 "tmi";
+    .port_info 12 /INOUT 1 "BIAS";
+    .port_info 13 /INOUT 1 "FSET";
+    .port_info 14 /INOUT 1 "PGND";
+    .port_info 15 /INOUT 1 "PVCC";
+    .port_info 16 /INOUT 1 "SYNC";
+    .port_info 17 /OUTPUT 1 "DFTSCL";
+    .port_info 18 /INOUT 1 "DFTSDA";
+    .port_info 19 /INPUT 1 "unlock";
     .port_info 20 /INOUT 1 "sense_FB";
     .port_info 21 /OUTPUT 1 "CELG59462";
     .port_info 22 /OUTPUT 1 "CELV96848";
-    .port_info 23 /INOUT 1 "kelvin_VCC";
-    .port_info 24 /OUTPUT 1 "CELSENSE_RF";
-    .port_info 25 /OUTPUT 1 "CELSUB40948";
-    .port_info 26 /OUTPUT 1 "SENSE_G_2f5a8499";
-    .port_info 27 /INOUT 1 "kelvin_GNDservice";
-    .port_info 28 /INOUT 1 "kelvin_GNDpowergood";
-    .port_info 29 /INOUT 1 "kelvin_GNDsoftstart";
-    .port_info 30 /INOUT 1 "kelvin_GNDregulation";
-    .port_info 31 /OUTPUT 1 "celkelvin_IN_bc3b7675";
-    .port_info 32 /OUTPUT 1 "celkelvin_GND_73ebd82d";
-    .port_info 33 /OUTPUT 1 "celkelvin_GND_bb7e77f4";
-    .port_info 34 /OUTPUT 1 "celkelvin_GND_d75c3f7f";
-    .port_info 35 /OUTPUT 1 "celkelvin_VCC_bc3b7675";
-    .port_info 36 /OUTPUT 1 "celkelvin_VCC_fc9a589a";
-    .port_info 37 /OUTPUT 1 "celkelvin_BIAS_bc3b7675";
-v0x55bbf05fc430_0 .net "BIAS", 0 0, o0x7f29045990d8;  alias, 0 drivers
-v0x55bbf05fc4f0_0 .net "BST", 0 0, o0x7f2904599108;  alias, 0 drivers
-v0x55bbf05fc5c0_0 .net "CELG59462", 0 0, o0x7f2904599138;  alias, 0 drivers
-v0x55bbf05fc6c0_0 .net "CELIND", 0 0, o0x7f2904599d38;  alias, 0 drivers
-v0x55bbf05fc760_0 .net "CELSENSE_RF", 0 0, o0x7f2904599168;  alias, 0 drivers
-v0x55bbf05fc850_0 .net "CELSUB40948", 0 0, o0x7f2904599198;  alias, 0 drivers
-v0x55bbf05fc920_0 .net "CELV96848", 0 0, o0x7f29045991c8;  alias, 0 drivers
-v0x55bbf05fc9f0_0 .net "DFTSCL", 0 0, o0x7f2904599d68;  alias, 0 drivers
-v0x55bbf05fca90_0 .net "DFTSDA", 0 0, o0x7f2904599d98;  alias, 0 drivers
-v0x55bbf05fcb30_0 .net "EN", 0 0, o0x7f29045991f8;  alias, 0 drivers
-v0x55bbf05fcc00_0 .net "FB", 0 0, o0x7f2904599228;  alias, 0 drivers
-v0x55bbf05fccd0_0 .net "FSET", 0 0, o0x7f2904599258;  alias, 0 drivers
-v0x55bbf05fcda0_0 .net "GND", 0 0, o0x7f2904599288;  alias, 0 drivers
-v0x55bbf05fce70_0 .net "GOTP", 0 0, o0x7f2904599dc8;  alias, 0 drivers
-v0x55bbf05fcf10_0 .net "IN", 0 0, o0x7f29045992b8;  alias, 0 drivers
-v0x55bbf05fcfe0_0 .net "PGND", 0 0, o0x7f29045992e8;  alias, 0 drivers
-v0x55bbf05fd0b0_0 .net "PIN", 0 0, o0x7f2904599318;  alias, 0 drivers
-v0x55bbf05fd180_0 .net "POK", 0 0, o0x7f2904599348;  alias, 0 drivers
-v0x55bbf05fd250_0 .net "PVCC", 0 0, o0x7f29045993a8;  alias, 0 drivers
-v0x55bbf05fd320_0 .net "SENSE_G_2f5a8499", 0 0, o0x7f29045993d8;  alias, 0 drivers
-v0x55bbf05fd3f0_0 .net "SW", 0 0, o0x7f2904599408;  alias, 0 drivers
-v0x55bbf05fd4c0_0 .net "SYNC", 0 0, o0x7f2904599438;  alias, 0 drivers
-v0x55bbf05fd590_0 .net "VCC", 0 0, o0x7f2904599468;  alias, 0 drivers
-v0x55bbf05fd660_0 .net "VOTP", 0 0, o0x7f2904599df8;  alias, 0 drivers
-v0x55bbf05fd700_0 .net "celkelvin_BIAS_bc3b7675", 0 0, o0x7f2904599498;  alias, 0 drivers
-v0x55bbf05fd7d0_0 .net "celkelvin_GND_73ebd82d", 0 0, o0x7f29045994c8;  alias, 0 drivers
-v0x55bbf05fd8a0_0 .net "celkelvin_GND_bb7e77f4", 0 0, o0x7f29045994f8;  alias, 0 drivers
-v0x55bbf05fd970_0 .net "celkelvin_GND_d75c3f7f", 0 0, o0x7f2904599528;  alias, 0 drivers
-v0x55bbf05fda40_0 .net "celkelvin_IN_bc3b7675", 0 0, o0x7f2904599558;  alias, 0 drivers
-v0x55bbf05fdb10_0 .net "celkelvin_VCC_bc3b7675", 0 0, o0x7f2904599588;  alias, 0 drivers
-v0x55bbf05fdbe0_0 .net "celkelvin_VCC_fc9a589a", 0 0, o0x7f2904599e28;  alias, 0 drivers
-v0x55bbf05fdc80_0 .net "kelvin_GNDpowergood", 0 0, o0x7f29045995b8;  alias, 0 drivers
-v0x55bbf05fdd50_0 .net "kelvin_GNDregulation", 0 0, o0x7f29045995e8;  alias, 0 drivers
-v0x55bbf05fe030_0 .net "kelvin_GNDservice", 0 0, o0x7f2904599618;  alias, 0 drivers
-v0x55bbf05fe100_0 .net "kelvin_GNDsoftstart", 0 0, o0x7f2904599648;  alias, 0 drivers
-v0x55bbf05fe1d0_0 .net "kelvin_VCC", 0 0, o0x7f2904599678;  alias, 0 drivers
-v0x55bbf05fe2a0_0 .net "sense_FB", 0 0, o0x7f29045996a8;  alias, 0 drivers
-v0x55bbf05fe370_0 .net8 "tmi", 5 0, p0x7f2904599e58;  alias, 0 drivers, strength-aware
-S_0x55bbf05fe5d0 .scope module, "XceleraSERDES" "WALTZceleraSERDES" 2 202, 2 79 0, S_0x55bbf0592f60;
+    .port_info 23 /INPUT 1 "POK_inout";
+    .port_info 24 /OUTPUT 1 "FSET_inout";
+    .port_info 25 /OUTPUT 1 "SYNC_inout";
+    .port_info 26 /INOUT 1 "kelvin_VCC";
+    .port_info 27 /OUTPUT 1 "CELSENSE_RF";
+    .port_info 28 /OUTPUT 1 "CELSUB40948";
+    .port_info 29 /OUTPUT 1 "SENSE_G_4c0bef8e";
+    .port_info 30 /INOUT 1 "kelvin_GNDservice";
+    .port_info 31 /INOUT 1 "kelvin_GNDpowergood";
+    .port_info 32 /INOUT 1 "kelvin_GNDsoftstart";
+    .port_info 33 /INOUT 1 "kelvin_GNDregulation";
+    .port_info 34 /OUTPUT 1 "celkelvin_IN_bc3b7675";
+    .port_info 35 /OUTPUT 1 "celkelvin_GND_73ebd82d";
+    .port_info 36 /OUTPUT 1 "celkelvin_GND_bb7e77f4";
+    .port_info 37 /OUTPUT 1 "celkelvin_GND_d75c3f7f";
+    .port_info 38 /OUTPUT 1 "celkelvin_VCC_bc3b7675";
+    .port_info 39 /OUTPUT 1 "celkelvin_VCC_eb468fcf";
+    .port_info 40 /OUTPUT 1 "celkelvin_BIAS_bc3b7675";
+v0x557107e17d80_0 .net "BIAS", 0 0, o0x7fc0c7e67018;  alias, 0 drivers
+v0x557107e17e20_0 .net "BST", 0 0, o0x7fc0c7e67048;  alias, 0 drivers
+v0x557107e17ef0_0 .net "CELG59462", 0 0, o0x7fc0c7e67078;  alias, 0 drivers
+v0x557107e17ff0_0 .net "CELSENSE_RF", 0 0, o0x7fc0c7e670a8;  alias, 0 drivers
+v0x557107e180c0_0 .net "CELSUB40948", 0 0, o0x7fc0c7e670d8;  alias, 0 drivers
+v0x557107e181b0_0 .net "CELV96848", 0 0, o0x7fc0c7e67108;  alias, 0 drivers
+v0x557107e18280_0 .net "DFTSCL", 0 0, o0x7fc0c7e67d38;  alias, 0 drivers
+v0x557107e18320_0 .net "DFTSDA", 0 0, o0x7fc0c7e67d68;  alias, 0 drivers
+v0x557107e183c0_0 .net "EN", 0 0, o0x7fc0c7e67138;  alias, 0 drivers
+v0x557107e18490_0 .net "FB", 0 0, o0x7fc0c7e67168;  alias, 0 drivers
+v0x557107e18560_0 .net "FSET", 0 0, o0x7fc0c7e67d98;  alias, 0 drivers
+v0x557107e18600_0 .net "FSET_inout", 0 0, o0x7fc0c7e67198;  alias, 0 drivers
+v0x557107e186d0_0 .net "GND", 0 0, o0x7fc0c7e671c8;  alias, 0 drivers
+v0x557107e187a0_0 .net "IN", 0 0, o0x7fc0c7e671f8;  alias, 0 drivers
+v0x557107e18870_0 .net "PGND", 0 0, o0x7fc0c7e67228;  alias, 0 drivers
+v0x557107e18940_0 .net "PIN", 0 0, o0x7fc0c7e67258;  alias, 0 drivers
+v0x557107e18a10_0 .net "POK", 0 0, o0x7fc0c7e67dc8;  alias, 0 drivers
+v0x557107e18ab0_0 .net "POK_inout", 0 0, o0x7fc0c7e67288;  alias, 0 drivers
+v0x557107e18b80_0 .net "PVCC", 0 0, o0x7fc0c7e672e8;  alias, 0 drivers
+v0x557107e18c50_0 .net "SENSE_G_4c0bef8e", 0 0, o0x7fc0c7e67318;  alias, 0 drivers
+v0x557107e18d20_0 .net "SW", 0 0, o0x7fc0c7e67348;  alias, 0 drivers
+v0x557107e18df0_0 .net "SYNC", 0 0, o0x7fc0c7e67df8;  alias, 0 drivers
+v0x557107e18e90_0 .net "SYNC_inout", 0 0, o0x7fc0c7e67378;  alias, 0 drivers
+v0x557107e18f60_0 .net "TAO", 0 0, o0x7fc0c7e673a8;  alias, 0 drivers
+v0x557107e19030_0 .net "VCC", 0 0, o0x7fc0c7e673d8;  alias, 0 drivers
+v0x557107e19100_0 .net "celkelvin_BIAS_bc3b7675", 0 0, o0x7fc0c7e67408;  alias, 0 drivers
+v0x557107e191d0_0 .net "celkelvin_GND_73ebd82d", 0 0, o0x7fc0c7e67438;  alias, 0 drivers
+v0x557107e192a0_0 .net "celkelvin_GND_bb7e77f4", 0 0, o0x7fc0c7e67468;  alias, 0 drivers
+v0x557107e19370_0 .net "celkelvin_GND_d75c3f7f", 0 0, o0x7fc0c7e67498;  alias, 0 drivers
+v0x557107e19440_0 .net "celkelvin_IN_bc3b7675", 0 0, o0x7fc0c7e674c8;  alias, 0 drivers
+v0x557107e19510_0 .net "celkelvin_VCC_bc3b7675", 0 0, o0x7fc0c7e674f8;  alias, 0 drivers
+v0x557107e195e0_0 .net "celkelvin_VCC_eb468fcf", 0 0, o0x7fc0c7e67e28;  alias, 0 drivers
+v0x557107e19680_0 .net "kelvin_GNDpowergood", 0 0, o0x7fc0c7e67528;  alias, 0 drivers
+v0x557107e19960_0 .net "kelvin_GNDregulation", 0 0, o0x7fc0c7e67558;  alias, 0 drivers
+v0x557107e19a30_0 .net "kelvin_GNDservice", 0 0, o0x7fc0c7e67588;  alias, 0 drivers
+v0x557107e19b00_0 .net "kelvin_GNDsoftstart", 0 0, o0x7fc0c7e675b8;  alias, 0 drivers
+v0x557107e19bd0_0 .net "kelvin_VCC", 0 0, o0x7fc0c7e675e8;  alias, 0 drivers
+v0x557107e19ca0_0 .net "sense_FB", 0 0, o0x7fc0c7e67618;  alias, 0 drivers
+v0x557107e19d70_0 .net "tdo", 0 0, o0x7fc0c7e67648;  alias, 0 drivers
+v0x557107e19e40_0 .net8 "tmi", 5 0, p0x7fc0c7e67e58;  alias, 0 drivers, strength-aware
+v0x557107e19ee0_0 .net "unlock", 0 0, o0x7fc0c7e67e88;  alias, 0 drivers
+S_0x557107e1a180 .scope module, "XceleraSERDES" "WALTZceleraSERDES" 2 200, 2 84 0, S_0x557107daef60;
  .timescale 0 0;
-    .port_info 0 /INOUT 6 "tmi";
-    .port_info 1 /INPUT 1 "GOTP";
-    .port_info 2 /INPUT 1 "VOTP";
-    .port_info 3 /INOUT 1 "DFTSCL";
-    .port_info 4 /INOUT 1 "DFTSDA";
-    .port_info 5 /OUTPUT 1 "unlock";
-    .port_info 6 /OUTPUT 1 "otp_done";
-    .port_info 7 /INPUT 1 "CELG59462";
-    .port_info 8 /INPUT 1 "CELV96848";
-    .port_info 9 /OUTPUT 1 "PORB97836";
-    .port_info 10 /INPUT 1 "CELSUB40948";
-    .port_info 11 /INPUT 1 "celkelvin_VCC_fc9a589a";
-v0x55bbf05fe8e0_0 .net "CELG59462", 0 0, o0x7f2904599138;  alias, 0 drivers
-v0x55bbf05fe9f0_0 .net "CELSUB40948", 0 0, o0x7f2904599198;  alias, 0 drivers
-v0x55bbf05feb00_0 .net "CELV96848", 0 0, o0x7f29045991c8;  alias, 0 drivers
-v0x55bbf05febf0_0 .net "DFTSCL", 0 0, o0x7f2904599d68;  alias, 0 drivers
-v0x55bbf05fec90_0 .net "DFTSDA", 0 0, o0x7f2904599d98;  alias, 0 drivers
-v0x55bbf05fed80_0 .net "GOTP", 0 0, o0x7f2904599dc8;  alias, 0 drivers
-v0x55bbf05fee20_0 .net "PORB97836", 0 0, o0x7f2904599378;  alias, 0 drivers
-v0x55bbf05feec0_0 .net "VOTP", 0 0, o0x7f2904599df8;  alias, 0 drivers
-v0x55bbf05fef90_0 .net "celkelvin_VCC_fc9a589a", 0 0, o0x7f2904599e28;  alias, 0 drivers
-v0x55bbf05ff060_0 .net "otp_done", 0 0, o0x7f2904599018;  alias, 0 drivers
-v0x55bbf05ff130_0 .net8 "tmi", 5 0, p0x7f2904599e58;  alias, 0 drivers, strength-aware
-v0x55bbf05ff200_0 .net "unlock", 0 0, o0x7f2904599078;  alias, 0 drivers
+    .port_info 0 /INOUT 1 "tdo";
+    .port_info 1 /INOUT 6 "tmi";
+    .port_info 2 /INOUT 1 "DFTSCL";
+    .port_info 3 /INOUT 1 "DFTSDA";
+    .port_info 4 /OUTPUT 1 "unlock";
+    .port_info 5 /INPUT 1 "CELG59462";
+    .port_info 6 /INPUT 1 "CELV96848";
+    .port_info 7 /OUTPUT 1 "PORB97836";
+    .port_info 8 /INPUT 1 "CELSUB40948";
+    .port_info 9 /INPUT 1 "celkelvin_VCC_eb468fcf";
+v0x557107e1a440_0 .net "CELG59462", 0 0, o0x7fc0c7e67078;  alias, 0 drivers
+v0x557107e1a530_0 .net "CELSUB40948", 0 0, o0x7fc0c7e670d8;  alias, 0 drivers
+v0x557107e1a640_0 .net "CELV96848", 0 0, o0x7fc0c7e67108;  alias, 0 drivers
+v0x557107e1a730_0 .net "DFTSCL", 0 0, o0x7fc0c7e67d38;  alias, 0 drivers
+v0x557107e1a7d0_0 .net "DFTSDA", 0 0, o0x7fc0c7e67d68;  alias, 0 drivers
+v0x557107e1a8c0_0 .net "PORB97836", 0 0, o0x7fc0c7e672b8;  alias, 0 drivers
+v0x557107e1a960_0 .net "celkelvin_VCC_eb468fcf", 0 0, o0x7fc0c7e67e28;  alias, 0 drivers
+v0x557107e1aa30_0 .net "tdo", 0 0, o0x7fc0c7e67648;  alias, 0 drivers
+v0x557107e1ab20_0 .net8 "tmi", 5 0, p0x7fc0c7e67e58;  alias, 0 drivers, strength-aware
+v0x557107e1abc0_0 .net "unlock", 0 0, o0x7fc0c7e67e88;  alias, 0 drivers
 # The file index is used to find the file name in the following table.
 :file_names 3;
     "N/A";

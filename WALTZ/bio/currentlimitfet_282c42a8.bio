@@ -9,7 +9,7 @@
 cell,currentlimitfet
 ///**********************************************
 //Generator Revision
-revision,generator,0.5.7
+revision,generator,0.5.8
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
@@ -100,7 +100,7 @@ user,currentlimit_maxiref,50
 description,Current Limit Max IREF
 user,Low Volatge,single
 description,Low Voltage supply
-user,NESTO,0.5.7
+user,NESTO,0.5.8
 description,NESTO Generate revision
 //**********************************************
 //POR Parameters
@@ -256,7 +256,7 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,0.9
+#define,PROJECTreference,0.8
 #define,PROJECTsupply,4.5
 #define,TaRoom,25
 #define,ground,0.0
@@ -336,7 +336,7 @@ generate_area,currentlimitfet_282c42a8,1862028
 *******************************************
 //currentlimitfet
 revision,pinorder,0.2.0
-pinorder,net_skip,net_skip,currentlimit_lv,net_skip,net_skip,VSENSE,IREPLICA,net_skip,CELPOS,net_skip,net_skip,enable_currentlimit,measure_currentlimit_vin
+pinorder,net_skip,net_skip,currentlimit_lv,net_skip,net_skip,VSENSE,IREPLICA,net_skip,CELPOS,net_skip,net_skip,enable_currentlimit,measure_currentlimit
 
 endpinorder
 //**********************************************

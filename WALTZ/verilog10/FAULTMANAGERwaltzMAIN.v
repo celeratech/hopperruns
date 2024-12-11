@@ -79,18 +79,6 @@ module inv_12e192f5 (i,o,SUB,CELG,CELV);
   input  CELV;
 endmodule
 
-module thermal_46af0fda (IP,ten,CELG,CELBG,SIMPV,CELSUB,fault_thermal,enable_thermal,trim_thermal_accuracy);
-  input  IP;
-  input  ten;
-  input  CELG;
-  input  CELBG;
-  input  SIMPV;
-  input  CELSUB;
-  output  fault_thermal;
-  input  enable_thermal;
-  input [2:0] trim_thermal_accuracy;
-endmodule
-
 module dbuf_e926e395 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
@@ -136,8 +124,45 @@ module PEBBLEtielo ( q, G, SUB, V );
 endmodule
 
 
+module thermal_b84c0fbd (IP,ten,CELG,CELBG,SIMPV,CELSUB,fault_thermal,enable_thermal,trim_thermal_accuracy);
+  input  IP;
+  input  ten;
+  input  CELG;
+  input  CELBG;
+  input  SIMPV;
+  input  CELSUB;
+  output  fault_thermal;
+  input  enable_thermal;
+  input [2:0] trim_thermal_accuracy;
+endmodule
+
+//Verilog HDL for "DFT", "DFTtm8t" "functional"
+
+
+module DFTtm8t ( a, ten, tmi, G, SUB, V, tma );
+
+  input V;
+  input  [7:0] tma;
+  output  [7:0] ten;
+  output  [1:0] a;
+  input G;
+  input SUB;
+  inout  [4:0] tmi;
+endmodule
+
+
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module FAULTMANAGERwaltzMAIN (MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELBG83021, CELSUB40948, blank_fault, fault_short, mode_hiccup, enable_fault, fault_freeze, hijack_delay, blank_thermal, dft_delaySHORT, IP_7939b03c_XU7, hijack_short_status, hijack_thermal_status, hijack_faultmanager_status, trim_thermal_accuracy_7939b03c);
+module FAULTMANAGERwaltzMAIN (tmi, MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELBG83021, CELSUB40948, blank_fault, fault_short, mode_hiccup, enable_fault, fault_freeze, hijack_delay, blank_thermal, dft_delaySHORT, hijack_short_status, IP_201f84ba_Xthermal1, hijack_thermal_status, hijack_faultmanager_status);
+input [4:0] tmi;
 input  MUDV;
 input  clock;
 input  CELG59462;
@@ -154,16 +179,18 @@ output  fault_freeze;
 input  hijack_delay;
 input  blank_thermal;
 output  dft_delaySHORT;
-input  IP_7939b03c_XU7;
 input  hijack_short_status;
+input  IP_201f84ba_Xthermal1;
 input  hijack_thermal_status;
 input  hijack_faultmanager_status;
-input [2:0] trim_thermal_accuracy_7939b03c;
 
 
 // ------------------------ Wires ------------------------
-wire [2:0] trim_thermal_accuracy_7939b03c;
+wire [4:0] tmi;
 wire [2:0] trim_thermal_accuracy;
+wire [1:0] a;
+wire [7:0] ten;
+wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
 VESPAfaultmanagerINTERNALdebug XU14 (
@@ -253,18 +280,6 @@ inv_12e192f5 XU5 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
-);
-
-thermal_46af0fda XU7 (
-.IP(IP_7939b03c_XU7),
-.ten(tl0),
-.CELG(CELG59462),
-.CELBG(CELBG83021),
-.SIMPV(MUDV),
-.CELSUB(CELSUB40948),
-.fault_thermal(net_94),
-.enable_thermal(net_98),
-.trim_thermal_accuracy({trim_thermal_accuracy_7939b03c[2],trim_thermal_accuracy_7939b03c[1],trim_thermal_accuracy_7939b03c[0]})
 );
 
 inv_12e192f5 XU17 (
@@ -365,11 +380,61 @@ dbuf_e926e395 XU44 (
 .CELV(CELV96848)
 );
 
-PEBBLEtielo XtieLo (
+PEBBLEtielo XDRMNOTL (
 .G(CELG59462),
 .V(CELV96848),
-.q(tl0),
+.q(c0),
 .SUB(CELSUB40948)
+);
+
+thermal_b84c0fbd Xthermal1 (
+.IP(IP_201f84ba_Xthermal1),
+.ten(ten_201f84ba_Xthermal1),
+.CELG(CELG59462),
+.CELBG(CELBG83021),
+.SIMPV(MUDV),
+.CELSUB(CELSUB40948),
+.fault_thermal(net_94),
+.enable_thermal(net_98),
+.trim_thermal_accuracy({c0,c0,c0})
+);
+
+DFTtm8t dft_hex0x0D (
+.G(CELG59462),
+.V(CELV96848),
+.a({a1,a0}),
+.SUB(CELSUB40948),
+.ten({noconn_dft_hex0x0D_ten_7,noconn_dft_hex0x0D_ten_6,noconn_dft_hex0x0D_ten_5,noconn_dft_hex0x0D_ten_4,noconn_dft_hex0x0D_ten_3,noconn_dft_hex0x0D_ten_2,noconn_dft_hex0x0D_ten_1,ten_201f84ba_Xthermal1}),
+.tma({a0,a0,a0,a0,a1,a1,a0,a1}),
+.tmi(tmi[4:0])
+);
+
+STONEnoconn XNCnoconn_dft_hex0x0D_ten_1 (
+.noconn(noconn_dft_hex0x0D_ten_1)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x0D_ten_2 (
+.noconn(noconn_dft_hex0x0D_ten_2)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x0D_ten_3 (
+.noconn(noconn_dft_hex0x0D_ten_3)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x0D_ten_4 (
+.noconn(noconn_dft_hex0x0D_ten_4)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x0D_ten_5 (
+.noconn(noconn_dft_hex0x0D_ten_5)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x0D_ten_6 (
+.noconn(noconn_dft_hex0x0D_ten_6)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x0D_ten_7 (
+.noconn(noconn_dft_hex0x0D_ten_7)
 );
 
 endmodule

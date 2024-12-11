@@ -9,7 +9,7 @@
 cell,timingskew
 //**********************************************
 //Generator Revision
-revision,generator,0.4.0
+revision,generator,0.5.0
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
@@ -35,6 +35,9 @@ limit,timingskew_dft,choose0,no
 limit,timingskew_dft,choose1,yes
 limit,timingskew_datasheet_name,text
 limit,timingskew_datasheet_description,text
+limit,timingskew_supply,minimum,2.0
+limit,timingskew_supply,maximum,5.5
+
 //**********************************************
 //PAD Parameters
 //**********************************************
@@ -45,8 +48,10 @@ user,timingskew_por,15
 description,Timing skew POR value
 user,timingskew_lsb,8.0ns
 description,Timing Skew LSB
-user,NESTO,0.4.0
+user,NESTO,0.5.0
 description,Nesto generate revision
+user,Generate Supply,4.5V
+description,Nesto generate supply voltage
 //**********************************************
 //POR Parameters
 //**********************************************
@@ -171,7 +176,7 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,0.9
+#define,PROJECTreference,0.8
 #define,PROJECTsupply,4.5
 #define,TaRoom,25
 #define,ground,0.0
@@ -211,12 +216,26 @@ endlayoutbio
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
 sub_area,WRAPPER4,4
-sub_area,STONEtimingskewlsb8nr,900
-sub_area,STONEdelay8nr4x,3500
+sub_area,delay_timingskew_13ab43f9_d8nsr,40103
+sub_area,delay_timingskew_13ab43f9_d8nsr,40103
+sub_area,delay_timingskew_13ab43f9_d8nsr,40103
+sub_area,delay_timingskew_13ab43f9_d8nsr,40103
+sub_area,delay_timingskew_13ab43f9_d8nsr,40103
+sub_area,delay_timingskew_13ab43f9_d8nsr,40103
+sub_area,delay_timingskew_13ab43f9_d8nsr,40103
+sub_area,delay_timingskew_13ab43f9_d8nsr,40103
+sub_area,delay_timingskew_13ab43f9_d8nsr,40103
+sub_area,delay_timingskew_13ab43f9_d8nsr,40103
+sub_area,delay_timingskew_13ab43f9_d8nsr,40103
+sub_area,delay_timingskew_13ab43f9_d8nsr,40103
+sub_area,delay_timingskew_13ab43f9_d8nsr,40103
+sub_area,delay_timingskew_13ab43f9_d8nsr,40103
+sub_area,delay_timingskew_13ab43f9_d8nsr,40103
 sub_area,STONEbypassdelay,4100
-sub_area,STONEdelay8nr8x,3700
 sub_area,STONEbypassdelay,4100
-generate_area,timingskew_13ab43f9,16304
+sub_area,STONEbypassdelay,4100
+sub_area,STONEbypassdelay,4100
+generate_area,timingskew_13ab43f9,617949
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.5
@@ -224,7 +243,6 @@ generate_area,timingskew_13ab43f9,16304
 #define CELGabsmax,0.3
 #define CELSUBabsmin,-0.3
 #define CELSUBabsmax,0.3
-
 //**********************************************
 //Pinorder Parameters
 *******************************************
@@ -235,6 +253,8 @@ revision,pinorder,0.2.0
 pinorder,in,s0,s1,s2,s3,net_skip,out
 
 endpinorder
+//**********************************************
+
 //**********************************************
 //TRIM Parameters
 cell,timingskew

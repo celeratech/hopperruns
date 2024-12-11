@@ -278,13 +278,13 @@ module PEBBLEtielo ( q, G, SUB, V );
 endmodule
 
 //Celera Confidential Do Not Copy COSC Capacitor
-module mim34_2f22p2x16p7 (CP,CN);
+module mim34_2f22p5x16p9 (CP,CN);
 inout CP;
 inout CN;
 endmodule
 
 //Celera Confidential Do Not Copy COSC Capacitor
-module mim34_2f11p9x9p0 (CP,CN);
+module mim34_2f12p0x9p0 (CP,CN);
 inout CP;
 inout CN;
 endmodule
@@ -744,49 +744,49 @@ STONEoscillatorRFduty1p0 XdutyB(
 );
 //,diesize,STONEoscillatorRFduty1p0
 //Celera Confidential Do Not Copy COSC_
-mim34_2f22p2x16p7 XCOSC_0(
+mim34_2f22p5x16p9 XCOSC_0(
 .CP (COSC),
 .CN (celkelvin_GNDoscillator)
 );
-mim34_2f22p2x16p7 XCOSC_1(
+mim34_2f22p5x16p9 XCOSC_1(
 .CP (COSC),
 .CN (celkelvin_GNDoscillator)
 );
 
 //Celera Confidential Do Not Copy CT0
-mim34_2f11p9x9p0 XCT00(
+mim34_2f12p0x9p0 XCT00(
 .CP (CT0),
 .CN (celkelvin_GNDoscillator)
 );
 
 //Celera Confidential Do Not Copy CT1_
-mim34_2f11p9x9p0 XCT1_0(
+mim34_2f12p0x9p0 XCT1_0(
 .CP (CT1),
 .CN (celkelvin_GNDoscillator)
 );
-mim34_2f11p9x9p0 XCT1_1(
+mim34_2f12p0x9p0 XCT1_1(
 .CP (CT1),
 .CN (celkelvin_GNDoscillator)
 );
 
 //Celera Confidential Do Not Copy CT2_
-mim34_2f11p9x9p0 XCT2_0(
+mim34_2f12p0x9p0 XCT2_0(
 .CP (CT2),
 .CN (celkelvin_GNDoscillator)
 );
-mim34_2f11p9x9p0 XCT2_1(
+mim34_2f12p0x9p0 XCT2_1(
 .CP (CT2),
 .CN (celkelvin_GNDoscillator)
 );
-mim34_2f11p9x9p0 XCT2_2(
+mim34_2f12p0x9p0 XCT2_2(
 .CP (CT2),
 .CN (celkelvin_GNDoscillator)
 );
-mim34_2f11p9x9p0 XCT2_3(
+mim34_2f12p0x9p0 XCT2_3(
 .CP (CT2),
 .CN (CT2_A)
 );
-mim34_2f11p9x9p0 XCT2_4(
+mim34_2f12p0x9p0 XCT2_4(
 .CP (CT2_A),
 .CN (celkelvin_GNDoscillator)
 );
