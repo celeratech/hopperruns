@@ -34,6 +34,19 @@ module STONEtimingskewEND ( out, CELG, CELSUB, CELV, GATE );
 endmodule
 
 //Celera Confidential Do Not Copy fet_delay_timingskew_afbafd68_d1nsr_pin.v
+//Celera:fet_delay_timingskew_afbafd68_d1nsr_pin
+//Celera Confidential Symbol Generator
+//signal
+//Vds 6V
+module fet_delay_timingskew_afbafd68_d1nsr_pin (GATE,DRAIN,SOURCE,
+PMOSiso6,CELSUB);
+input PMOSiso6;
+input GATE;
+inout SOURCE;
+inout DRAIN;
+input CELSUB;
+endmodule
+
 
 //Celera Confidential Do Not Copy fet_delay_timingskew_afbafd68_d1nsr_nin.v
 //Celera:fet_delay_timingskew_afbafd68_d1nsr_nin
@@ -66,6 +79,19 @@ endmodule
 
 
 //Celera Confidential Do Not Copy fet_delay_timingskew_afbafd68_d1nsr_nout.v
+//Celera:fet_delay_timingskew_afbafd68_d1nsr_nout
+//Celera Confidential Symbol Generator
+//signal
+//Vds 6V
+module fet_delay_timingskew_afbafd68_d1nsr_nout (GATE,DRAIN,SOURCE,
+NMOSiso6,CELSUB);
+input NMOSiso6;
+input GATE;
+inout SOURCE;
+inout DRAIN;
+input CELSUB;
+endmodule
+
 
 //Celera Confidential Do Not Copy delay_timingskew_afbafd68_d1nsr
 //Celera Confidential Symbol Generator

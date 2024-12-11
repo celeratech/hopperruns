@@ -97,14 +97,15 @@ endlayoutbio
 revision,vis15cbdiesize,0p1
 sub_area,STONEtimingskewFRONTrise,9999
 sub_area,STONEtimingskewEND,9999
-sub_area,fet_delay_timingskew_0bb48130_d1nsr_pin,1
+sub_area,fet_delay_timingskew_0bb48130_d1nsr_pin,16048
 sub_area,fet_delay_timingskew_0bb48130_d1nsr_nin,4021
 sub_area,fet_delay_timingskew_0bb48130_d1nsr_pout,16082
-sub_area,fet_delay_timingskew_0bb48130_d1nsr_nout,1
-generate_area,delay_timingskew_0bb48130_d1nsr,40103
+sub_area,fet_delay_timingskew_0bb48130_d1nsr_nout,4046
+generate_area,delay_timingskew_0bb48130_d1nsr,60195
 // *********************************************
 //Calculator Parameters
-#define,CELVminimum,1.8
+#define,CELVminimum,2.0
+#define CELVminimum0p5,2.5
 #define CELGabsmin,-0.3
 #define CELGabsmax,0.3
 #define CELSUBabsmin,-0.3
@@ -120,8 +121,8 @@ generate_area,delay_timingskew_0bb48130_d1nsr,40103
 #define,N1length_default,0.6
 #define,N1width_default,1.0
 
-#define,P0length_default0p5,2.0
-#define,N0length_default0p5,2.0
+#define,P0width_default0p5,2.0
+#define,P1width_default0p5,2.0
 
 #define,PWdefault,2.0
 #define,NLdefault,0.6
@@ -133,23 +134,69 @@ generate_area,delay_timingskew_0bb48130_d1nsr,40103
 #define,P1Ldefault0p5,5.2
 #define,N1Ldefault0p5,5.1
 
-#define,AkR0p51,0.102
-#define,AkR0p52,0.031
-#define,BkR0p51,0.172
-#define,BkR0p52,0.014
-#define,CkR0p51,0.518
-#define,CkR0p52,-0.315
+#define,AkR0p51,0.167
+#define,AkR0p52,0.055
+#define,BkR0p51,0.463
+#define,BkR0p52,0.05
+#define,CkR0p51,0.609
+#define,CkR0p52,-0.339
 
-#define,AkF0p51,0.227
-#define,AkF0p52,0.053
-#define,BkF0p51,0.083
-#define,BkF0p52,-0.008
-#define,CkF0p51,0.535
-#define,CkF0p52,-0.321
+#define,AkF0p51,0.163
+#define,AkF0p52,0.059
+#define,BkF0p51,0.431
+#define,BkF0p52,0.057
+#define,CkF0p51,0.644
+#define,CkF0p52,-0.35
 
-#define,0p5KF,0.787
-#define,0p5KR,0.798
+#define,0p5KF,0.786
+#define,0p5KR,0.799
 
+//1ns Calculator
+#define,P0Ldefault1,1.6
+#define,N0Ldefault1,10.0
+#define,P1Ldefault1,2.3
+#define,N1Ldefault1,9.8
+
+#define,AkR11,1.809
+#define,AkR12,0.524
+#define,BkR11,7.013
+#define,BkR12,1.263
+#define,CkR11,5.314
+#define,CkR12,-3.106
+
+#define,AkF11,1.489
+#define,AkF12,0.609
+#define,BkF11,5.736
+#define,BkF12,1.606
+#define,CkF11,4.345
+#define,CkF12,-2.846
+
+#define,1KF,0.9
+#define,1KR,0.799
+
+
+//2ns Calculator
+#define,P0Ldefault2,1.6
+#define,N0Ldefault2,10.0
+#define,P1Ldefault2,2.3
+#define,N1Ldefault2,9.8
+
+#define,AkR21,1.809
+#define,AkR22,0.524
+#define,BkR21,7.013
+#define,BkR22,1.263
+#define,CkR21,5.314
+#define,CkR22,-3.106
+
+#define,AkF21,1.489
+#define,AkF22,0.609
+#define,BkF21,5.736
+#define,BkF22,1.606
+#define,CkF21,4.345
+#define,CkF22,-2.846
+
+#define,2KF,0.9
+#define,2KR,0.799
 //4ns Calculator
 #define,P0Ldefault4,1.6
 #define,N0Ldefault4,10.0
@@ -179,19 +226,19 @@ generate_area,delay_timingskew_0bb48130_d1nsr,40103
 #define,P1Ldefault8,7.0
 #define,N1Ldefault8,10.0
 
-#define,AkR81,3.149
-#define,AkR82,2.296
-#define,BkR81,12.48
-#define,BkR82,4.371
-#define,CkR81,9.028
-#define,CkR82,-5.581
+#define,AkR81,3.472
+#define,AkR82,2.209
+#define,BkR81,13.763
+#define,BkR82,4.026
+#define,CkR81,9.957
+#define,CkR82,-5.5831
 
-#define,AkF81,2.068
-#define,AkF82,1.228
-#define,BkF81,12.018
-#define,BkF82,3.264
-#define,CkF81,9.861
-#define,CkF82,-5.813
+#define,AkF81,2.196
+#define,AkF82,1.194
+#define,BkF81,12.765
+#define,BkF82,3.062
+#define,CkF81,10.474
+#define,CkF82,-5.980
 
 #define,8KF,0.85
 #define,8KR,0.831
