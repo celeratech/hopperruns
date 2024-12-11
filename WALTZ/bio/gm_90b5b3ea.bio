@@ -8,7 +8,7 @@
 cell,gm
 ///**********************************************
 //Generator Revision
-revision,generator,0.3.5
+revision,generator,0.5.0
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
@@ -41,7 +41,9 @@ limit,gm_accuracy,choose1,cell
 limit,gm_accuracy,choose2,system
 limit,gm_ok,choose0,no
 limit,gm_ok,choose1,yes
-
+limit,gm_output,choose0,pushpull
+limit,gm_output,choose1,source
+limit,gm_output,choose2,sink
 limit,gm_lowiq_name,text
 limit,gm_lowiq_description,text
 limit,gm_trim_name,text
@@ -179,14 +181,14 @@ endlayoutbio
 revision,vis15cbdiesize,0p1
 sub_area,CASCODEgminpcore1xpover,99999
 sub_area,STONEgminptrim1x,99999
-sub_area,CASCODEnmos5u,3800
+sub_area,CASCODEpmos5u,3800
+sub_area,CASCODEpmos5u,3800
+sub_area,CASCODEpmos5u,3800
 sub_area,CASCODEpmos5u,3800
 sub_area,CASCODEnmos5u,3800
-sub_area,CASCODEpmos5u,3800
 sub_area,CASCODEnmos5u,3800
-sub_area,CASCODEpmos5u,3800
 sub_area,CASCODEnmos5u,3800
-sub_area,CASCODEpmos5u,3800
+sub_area,CASCODEnmos5u,3800
 sub_area,STONEnoconn,0
 sub_area,CASCODEgminpmain_disout,99999
 generate_area,gm_90b5b3ea,330397
@@ -209,6 +211,8 @@ revision,pinorder,0.2.0
 pinorder,SIMPV,INN,GMO,INOR,net_skip,INP,enable_gm,net_skip,net_skip,ok_gm
 
 endpinorder
+//**********************************************
+
 //**********************************************
 //TRIM Parameters
 cell,gm

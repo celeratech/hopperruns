@@ -2,7 +2,7 @@
 //Celera Brick Generator Confidential
 //CORE:timingskew
 //NAME:timingskew_c85f9998
-//GENERATOR REVISION:0.4.0
+//GENERATOR REVISION:0.5.0
 //SKEW EDGE:rise
 //CONTROL:factory 5Bits
 //POR:0x018
@@ -10,21 +10,19 @@
 //VMAX::6V
 //DFT:no
 
-//Celera Confidential Do Not Copy STONEtimingskewlsb1nr
-//Verilog HDL for "Generate", "STONEtimingskewlsb1nr" "functional"
-
-
-module STONEtimingskewlsb1nr ( odel, out, CELG, CELV, SUB, in, indel, s );
-
-  input CELV;
-  input  [1:0] s;
-  input indel;
-  input in;
-  output odel;
-  output out;
-  input SUB;
-  input CELG;
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr.v
+//Celera:delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Symbol Generator
+//TYPE:rise with 1ns at 4.5V
+module delay_timingskew_c85f9998_d1nsr (CELV,in,out,
+CELG,CELSUB);
+input CELV;
+input in;
+output out;
+input CELG;
+input CELSUB;
 endmodule
+
 
 //Celera Confidential Do Not Copy STONEbypassdelay
 //Verilog HDL for "Generate", "STONEbypassdelay" "functional"
@@ -37,45 +35,6 @@ module STONEbypassdelay ( o, CELG, CELV, SUB, bit, i, idel );
   input bit;
   input i;
   output o;
-  input SUB;
-  input CELG;
-endmodule
-
-//Celera Confidential Do Not Copy STONEdelay1nr4x
-//Verilog HDL for "Generate", "STONEdelay1nr4x" "functional"
-
-
-module STONEdelay1nr4x ( idel, CELG, CELV, SUB, i );
-
-  input CELV;
-  output idel;
-  input i;
-  input SUB;
-  input CELG;
-endmodule
-
-//Celera Confidential Do Not Copy STONEdelay1nr8x
-//Verilog HDL for "Generate", "STONEdelay1nr8x" "functional"
-
-
-module STONEdelay1nr8x ( idel, CELG, CELV, SUB, i );
-
-  input CELV;
-  output idel;
-  input i;
-  input SUB;
-  input CELG;
-endmodule
-
-//Celera Confidential Do Not Copy STONEdelay1nr16x
-//Verilog HDL for "Generate", "STONEdelay1nr16x" "functional"
-
-
-module STONEdelay1nr16x ( idel, CELG, CELV, SUB, i );
-
-  input CELV;
-  output idel;
-  input i;
   input SUB;
   input CELG;
 endmodule
@@ -107,90 +66,349 @@ input [4:0] factory_timingskew;
 input CELG;
 input CELSUB;
 
-//Celera Confidential Do Not Copy Pin s
-//wire[1:0] s;
-
 //Celera Confidential Do Not Copy Pin i
 //wire[4:0] i;
 
 //Celera Confidential Do Not Copy WRAPPER5
 WRAPPER5 Xwrap(
-.o0 (ss0),
-.o1 (ss1),
-.o2 (ss2),
-.o3 (ss3),
-.o4 (ss4),
+.o0 (bit0),
+.o1 (bit1),
+.o2 (bit2),
+.o3 (bit3),
+.o4 (bit4),
 .i (factory_timingskew [4:0])
 );
 //,diesize,WRAPPER5
-//Celera Confidential Do Not Copy STONEtimingskewlsb1nr
-STONEtimingskewlsb1nr Xlsb(
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay0_0 (
 .CELV (CELV),
 .in (in),
-.s ({ss1,ss0}),
-.out (out),
-.odel (odel),
-.indel (indel),
+.out (idel0),
 .CELG (CELG),
-.SUB (CELSUB)
+.CELSUB (CELSUB)
 );
-//,diesize,STONEtimingskewlsb1nr
-//Celera Confidential Do Not Copy STONEdelay1nr4x
-STONEdelay1nr4x X4x(
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay1_0 (
 .CELV (CELV),
-.i (odel),
-.idel (idel4x),
+.in (o0_0),
+.out (idel1_0),
 .CELG (CELG),
-.SUB (CELSUB)
+.CELSUB (CELSUB)
 );
-//,diesize,STONEdelay1nr4x
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay1_1 (
+.CELV (CELV),
+.in (idel1_0),
+.out (idel1),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay2_0 (
+.CELV (CELV),
+.in (o1_1),
+.out (idel2_0),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay2_1 (
+.CELV (CELV),
+.in (idel2_0),
+.out (idel2_1),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay2_2 (
+.CELV (CELV),
+.in (idel2_1),
+.out (idel2_2),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay2_3 (
+.CELV (CELV),
+.in (idel2_2),
+.out (idel2),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay3_0 (
+.CELV (CELV),
+.in (o2_2),
+.out (idel3_0),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay3_1 (
+.CELV (CELV),
+.in (idel3_0),
+.out (idel3_1),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay3_2 (
+.CELV (CELV),
+.in (idel3_1),
+.out (idel3_2),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay3_3 (
+.CELV (CELV),
+.in (idel3_2),
+.out (idel3_3),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay3_4 (
+.CELV (CELV),
+.in (idel3_3),
+.out (idel3_4),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay3_5 (
+.CELV (CELV),
+.in (idel3_4),
+.out (idel3_5),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay3_6 (
+.CELV (CELV),
+.in (idel3_5),
+.out (idel3_6),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay3_7 (
+.CELV (CELV),
+.in (idel3_6),
+.out (idel3),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay4_0 (
+.CELV (CELV),
+.in (o3_3),
+.out (idel4_0),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay4_1 (
+.CELV (CELV),
+.in (idel4_0),
+.out (idel4_1),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay4_2 (
+.CELV (CELV),
+.in (idel4_1),
+.out (idel4_2),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay4_3 (
+.CELV (CELV),
+.in (idel4_2),
+.out (idel4_3),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay4_4 (
+.CELV (CELV),
+.in (idel4_3),
+.out (idel4_4),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay4_5 (
+.CELV (CELV),
+.in (idel4_4),
+.out (idel4_5),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay4_6 (
+.CELV (CELV),
+.in (idel4_5),
+.out (idel4_6),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay4_7 (
+.CELV (CELV),
+.in (idel4_6),
+.out (idel4_7),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay4_8 (
+.CELV (CELV),
+.in (idel4_7),
+.out (idel4_8),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay4_9 (
+.CELV (CELV),
+.in (idel4_8),
+.out (idel4_9),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay4_10 (
+.CELV (CELV),
+.in (idel4_9),
+.out (idel4_10),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay4_11 (
+.CELV (CELV),
+.in (idel4_10),
+.out (idel4_11),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay4_12 (
+.CELV (CELV),
+.in (idel4_11),
+.out (idel4_12),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay4_13 (
+.CELV (CELV),
+.in (idel4_12),
+.out (idel4_13),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay4_14 (
+.CELV (CELV),
+.in (idel4_13),
+.out (idel4_14),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
+//Celera Confidential Do Not Copy delay_timingskew_c85f9998_d1nsr
+delay_timingskew_c85f9998_d1nsr Xdelay4_15 (
+.CELV (CELV),
+.in (idel4_14),
+.out (idel4),
+.CELG (CELG),
+.CELSUB (CELSUB)
+);
+//,diesize,delay_timingskew_c85f9998_d1nsr
 //Celera Confidential Do Not Copy STONEbypassdelay
-STONEbypassdelay Xbypass1(
+STONEbypassdelay Xbypass0 (
 .CELV (CELV),
-.i (odel),
-.bit (ss2),
-.o (odel1),
-.idel (idel4x),
+.i (in),
+.bit (bit0),
+.o (o0_0),
+.idel (idel0),
 .CELG (CELG),
 .SUB (CELSUB)
 );
 //,diesize,STONEbypassdelay
-//Celera Confidential Do Not Copy STONEdelay1nr8x
-STONEdelay1nr8x X8x(
-.CELV (CELV),
-.i (odel1),
-.idel (idel8x),
-.CELG (CELG),
-.SUB (CELSUB)
-);
-//,diesize,STONEdelay1nr8x
 //Celera Confidential Do Not Copy STONEbypassdelay
-STONEbypassdelay Xbypass2(
+STONEbypassdelay Xbypass1 (
 .CELV (CELV),
-.i (odel1),
-.bit (ss3),
-.o (odel2),
-.idel (idel8x),
+.i (o0_0),
+.bit (bit1),
+.o (o1_1),
+.idel (idel1),
 .CELG (CELG),
 .SUB (CELSUB)
 );
 //,diesize,STONEbypassdelay
-//Celera Confidential Do Not Copy STONEdelay1nr16x
-STONEdelay1nr16x X16x(
+//Celera Confidential Do Not Copy STONEbypassdelay
+STONEbypassdelay Xbypass2 (
 .CELV (CELV),
-.i (odel2),
-.idel (idel16x),
+.i (o1_1),
+.bit (bit2),
+.o (o2_2),
+.idel (idel2),
 .CELG (CELG),
 .SUB (CELSUB)
 );
-//,diesize,STONEdelay1nr16x
+//,diesize,STONEbypassdelay
 //Celera Confidential Do Not Copy STONEbypassdelay
-STONEbypassdelay Xbypass3(
+STONEbypassdelay Xbypass3 (
 .CELV (CELV),
-.i (odel2),
-.bit (ss4),
-.o (indel),
-.idel (idel16x),
+.i (o2_2),
+.bit (bit3),
+.o (o3_3),
+.idel (idel3),
+.CELG (CELG),
+.SUB (CELSUB)
+);
+//,diesize,STONEbypassdelay
+//Celera Confidential Do Not Copy STONEbypassdelay
+STONEbypassdelay Xbypass4 (
+.CELV (CELV),
+.i (o3_3),
+.bit (bit4),
+.o (out),
+.idel (idel4),
 .CELG (CELG),
 .SUB (CELSUB)
 );

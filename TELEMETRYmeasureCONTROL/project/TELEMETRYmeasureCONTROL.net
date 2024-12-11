@@ -1,0 +1,584 @@
+* Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301A\overlay\overlay_TELEMETRYmeasureCONTROL.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map SIMPV 76
+.node_map REF 85
+.node_map CAPmeasure$0 60
+.node_map CAPmeasure$1 61
+.node_map CAPmeasure$2 62
+.node_map CAPmeasure$3 63
+.node_map CAPmeasure$4 64
+.node_map CAPmeasure$5 65
+.node_map CAPmeasure$6 66
+.node_map CAPmeasure$7 67
+.node_map CAPmeasure$8 68
+.node_map CAPmeasure$9 69
+.node_map enable_ichrg 89
+.node_map clock 81
+.node_map enable_iin 88
+.node_map ready_control 79
+.node_map enabel_vcap 91
+.node_map enable_vin 84
+.node_map enable 78
+.node_map CAPmeasure$10 70
+.node_map CAPmeasure$11 71
+.node_map CAPmeasure$12 72
+.node_map CAPmeasure$13 73
+.node_map CAPmeasure$14 74
+.node_map ADCinput 77
+.node_map CAPmeasure$15 75
+.node_map enable_vout 87
+.node_map GND 92
+.node_map enable_gpi 83
+.node_map enable_capmeasure 82
+.node_map enable_vcap 86
+.node_map ready_count 80
+.node_map enable_dtemp 90
+.options
++ PSP_NPT=50001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+.tran 2m 0
+
+.globalvar TEMP=25
+.globalvar tdext_khz=10
+
+.globalvar IN = 12
+.globalvar VIN = 5.0
+.globalvar REF = 1.2
+.globalvar VCC2P5=2.4
+
+.globalvar CAP1=2.0
+.globalvar CAP2=2.2
+.globalvar CAP3=2.4
+.globalvar CAP4=2.6
+
+X$CONTROL 60 61 62 63 77 76 81 82 82 85 60 61 83 83 85 84 84 85 91 86 85 87 87 85 88 88 85 89 89 85 90 90 92 78 85 79 80 TELEMETRYmeasureCONTROL
+X$datamap1 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 datamap0 vars: datamap_function='code' datamap_name='A' datamap_description='A' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='A' datamap_code1='A' datamap_code2='A' datamap_code3='A' datamap_code4='A' datamap_code5='A' datamap_code6='A' datamap_code7='A' datamap_code8='A' datamap_code9='A' datamap_code10='A' datamap_code11='A' datamap_code12='A' datamap_code13='A' datamap_code14='A' datamap_code15='A' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=4 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+.PRINT V(#ADCinput)
+.GRAPH :#ADCinput curveLabel= ADCinput nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe1  
+.PRINT V(#enable_dtemp)
+.GRAPH :#enable_dtemp curveLabel= enable_dtemp nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe10  
+.PRINT V(#enable)
+.GRAPH :#enable curveLabel= enable nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe11  
+.PRINT V(#ready_count)
+.GRAPH :#ready_count curveLabel= ready_count nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe12  
+.PRINT V(#ready_control)
+.GRAPH :#ready_control curveLabel= ready_control nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe2  
+.PRINT V(#enable_capmeasure)
+.GRAPH :#enable_capmeasure curveLabel= enable_capmeasure nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe3  
+.PRINT V(#enable_gpi)
+.GRAPH :#enable_gpi curveLabel= enable_gpi nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe4  
+.PRINT V(#enable_vin)
+.GRAPH :#enable_vin curveLabel= enable_vin nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe5  
+.PRINT V(#enable_vcap)
+.GRAPH :#enable_vcap axisType="auto" persistence=-1 curveLabel="enable_vcap" analysis="tran|pop" xLog="auto" yLog="auto"  nowarn=true disabled=false PROBEREF=Probe6  
+.PRINT V(#enable_vout)
+.GRAPH :#enable_vout curveLabel= enable_vout nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe7  
+.PRINT V(#enable_iin)
+.GRAPH :#enable_iin curveLabel= enable_iin nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe8  
+.PRINT V(#enable_ichrg)
+.GRAPH :#enable_ichrg curveLabel= enable_ichrg nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe9  
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+X$U2 80 58 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U3 81 59 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+V1 78 0 PWL NSEG=2 X0=0 Y0=0 X1=20u Y1=0 X2=20.001u Y2={VIN} 
+X$V12 59 0 PUL_SOURCE vars: _V1=0 _V2={VIN} _FREQ=1Meg _DELAY=5u _DRATIOx100=50 _T_RISE=1n _T_FALL=1n _DAMP_COEF=0 _PWIDTH=499n _OFF_UNTIL_DELAY=1 _IDLE_IN_POP=0 _USEPHASE=0 _PHASE=5u
+V2 92 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=0 X2=2u Y2=0 
+V3 76 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=0 X2=2u Y2={VIN} 
+V4 85 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=0 X2=2u Y2={REF} 
+X$V5 58 0 PUL_SOURCE vars: _V1=0 _V2={VIN} _FREQ=50k _DELAY=200u _DRATIOx100=50 _T_RISE=20n _T_FALL=20n _DAMP_COEF=0 _PWIDTH=9.98u _OFF_UNTIL_DELAY=1 _IDLE_IN_POP=0 _USEPHASE=0 _PHASE=200u
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301A\design\TELEMETRYmeasureCONTROL.sxcmp
+.subckt TELEMETRYmeasureCONTROL 125 126 127 128 162 161 165 169 166 171 141 142 174 168 176 178 170 181 182 172 183 184 173 185 186 175 187 188 177 189 190 179 192 164 191 163 167
+*#hierarchy
+.node_map ok_vout 184
+.node_map GPO 176
+.node_map SIMPV 161
+.node_map CAPmeasureDIFF 171
+.node_map hijack_enable_iin 200
+.node_map hijack_enable_vcap 198
+.node_map hijack_enable_vin 197
+.node_map ok_vcap 182
+.node_map kelvin_IN 181
+.node_map hijack_enable_control 193
+.node_map ok_capmeasure 169
+.node_map ok_gpi 174
+.node_map hijack_enable_dtemp 202
+.node_map ok_ichrg 188
+.node_map CHANNELselect$0 125
+.node_map CHANNELselect$1 126
+.node_map kelvin_VOUTSP 185
+.node_map CHANNELselect$2 127
+.node_map CHANNELselect$3 128
+.node_map CHANNELselect$4 129
+.node_map CHANNELselect$5 130
+.node_map CHANNELselect$6 131
+.node_map CHANNELselect$7 132
+.node_map hijack_enable_gpi 196
+.node_map GNDcontrol 192
+.node_map CHANNELselect$8 133
+.node_map CHANNELselect$9 134
+.node_map CAPmeasure$0 141
+.node_map CAPmeasure$1 142
+.node_map CAPmeasure$2 143
+.node_map CAPmeasure$3 144
+.node_map CAPmeasure$4 145
+.node_map CAPmeasure$5 146
+.node_map enable_control 164
+.node_map CAPmeasure$6 147
+.node_map CAPmeasure$7 148
+.node_map hijack_ready_count 194
+.node_map CAPmeasure$8 149
+.node_map CAPmeasure$9 150
+.node_map enabel_dtemp 180
+.node_map DTEMP 191
+.node_map enable_ichrg 177
+.node_map hijack_CHANNELselect$0 157
+.node_map hijack_CHANNELselect$1 158
+.node_map hijack_enable_capmeasure 195
+.node_map hijack_CHANNELselect$2 159
+.node_map hijack_CHANNELselect$3 160
+.node_map CHANNELselect$10 135
+.node_map CHANNELselect$11 136
+.node_map ICHRG 189
+.node_map CHANNELselect$12 137
+.node_map CHANNELselect$13 138
+.node_map CHANNELselect$14 139
+.node_map CHANNELselect$15 140
+.node_map enable_iin 175
+.node_map ready_control 163
+.node_map IIN 187
+.node_map enable_vin 170
+.node_map hijack_enable_ichrg 201
+.node_map ok_dtemp 190
+.node_map CAPmeasure$10 151
+.node_map CAPmeasure$11 152
+.node_map CAPmeasure$12 153
+.node_map CAPmeasure$13 154
+.node_map CAPmeasure$14 155
+.node_map ADCinput 162
+.node_map CAPmeasure$15 156
+.node_map enable_vout 173
+.node_map kelvin_VCAP 183
+.node_map clock_control 165
+.node_map enable_gpi 168
+.node_map enable_capmeasure 166
+.node_map enable_vcap 172
+.node_map ready_count 167
+.node_map ok_iin 186
+.node_map hijack_enable_vout 199
+.node_map enable_dtemp 179
+.node_map ok_vin 178
+X$DEBUG 164 193 195 166 196 168 197 170 198 172 199 173 200 175 201 177 202 179 171 176 181 183 185 187 189 191 162 167 125 126 127 128 194 157 158 159 160 TELEMETRYmeasureCONTROLdebug
+X$MAIN 161 162 157 158 159 160 163 193 141 142 165 195 194 196 169 197 171 198 199 174 200 176 201 178 202 181 182 183 184 185 186 187 188 189 190 191 192 TELEMETRYmeasureCONTROLmain
+X$pinprobe1 164 pinprobe vars: pinprobe_description='Telemetry_Measurement_sequencer_clock' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe10 176 pinprobe vars: pinprobe_description='GPO_output_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 165 pinprobe vars: pinprobe_description='Telemetry_Measurement_sequencer_clock' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe12 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 pinprobeBUS vars: pinprobe_description='Select_CAPmeasure_channel' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=2
+X$pinprobe13 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 pinprobeBUS vars: pinprobe_description='Channel_counter' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=4
+X$pinprobe14 178 pinprobe vars: pinprobe_description='vin_enabled_and_ready' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe15 170 pinprobe vars: pinprobe_description='Enable_VIN_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe16 181 pinprobe vars: pinprobe_description='VIN_output_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe17 172 pinprobe vars: pinprobe_description='Enable_VCAP_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe18 182 pinprobe vars: pinprobe_description='vin_enabled_and_ready' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe19 183 pinprobe vars: pinprobe_description='VIN_output_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 161 pinprobe vars: pinprobe_description='enable_telemetry_sequencer' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe20 185 pinprobe vars: pinprobe_description='VIN_output_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe21 184 pinprobe vars: pinprobe_description='vin_enabled_and_ready' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe22 173 pinprobe vars: pinprobe_description='Enable_VOUT_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe23 175 pinprobe vars: pinprobe_description='Enable_IIN_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe24 186 pinprobe vars: pinprobe_description='vin_enabled_and_ready' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe25 187 pinprobe vars: pinprobe_description='VIN_output_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe26 189 pinprobe vars: pinprobe_description='VIN_output_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe27 188 pinprobe vars: pinprobe_description='vin_enabled_and_ready' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe28 177 pinprobe vars: pinprobe_description='Enable_ICHRG_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe29 180 pinprobe vars: pinprobe_description='Enable_VIN_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 162 pinprobe vars: pinprobe_description='Enable_CAPmeasure_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe30 190 pinprobe vars: pinprobe_description='vin_enabled_and_ready' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe31 191 pinprobe vars: pinprobe_description='VIN_output_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe32 192 pinprobe vars: pinprobe_description='Analogue_ground' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe33 163 pinprobe vars: pinprobe_description='ADC_input_enabled_and_ready' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 174 pinprobe vars: pinprobe_description='GPI_enabled_and_ready' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 169 pinprobe vars: pinprobe_description='CAPmeasure_enabled_and_ready' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 167 pinprobe vars: pinprobe_description='Counter_is_ready' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe7 168 pinprobe vars: pinprobe_description='Enable_GPI_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe8 166 pinprobe vars: pinprobe_description='Enable_CAPmeasure_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe9 171 pinprobe vars: pinprobe_description='CAPmeasure_output_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+.ends TELEMETRYmeasureCONTROL
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301A\design\TELEMETRYmeasureCONTROLdebug.sxcmp
+.subckt TELEMETRYmeasureCONTROLdebug 140 141 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 142 108 109 110 111 143 124 125 126 127
+*#hierarchy
+.node_map GPO 161
+.node_map CAPmeasureDIFF 160
+.node_map hijack_enable_iin 154
+.node_map hijack_enable_vcap 150
+.node_map hijack_enable_vin 148
+.node_map kelvin_IN 162
+.node_map hijack_enable_control 141
+.node_map hijack_enable_dtemp 158
+.node_map CHANNELselect$0 108
+.node_map CHANNELselect$1 109
+.node_map kelvin_VOUTSP 164
+.node_map CHANNELselect$2 110
+.node_map CHANNELselect$3 111
+.node_map CHANNELselect$4 112
+.node_map CHANNELselect$5 113
+.node_map CHANNELselect$6 114
+.node_map CHANNELselect$7 115
+.node_map hijack_enable_gpi 146
+.node_map CHANNELselect$8 116
+.node_map CHANNELselect$9 117
+.node_map enable_control 140
+.node_map hijack_ready_count 143
+.node_map DTEMP 167
+.node_map enable_ichrg 157
+.node_map hijack_CHANNELselect$0 124
+.node_map hijack_CHANNELselect$1 125
+.node_map hijack_enable_capmeasure 144
+.node_map hijack_CHANNELselect$2 126
+.node_map hijack_CHANNELselect$3 127
+.node_map hijack_CHANNELselect$4 128
+.node_map hijack_CHANNELselect$5 129
+.node_map CHANNELselect$10 118
+.node_map hijack_CHANNELselect$6 130
+.node_map CHANNELselect$11 119
+.node_map ICHRG 166
+.node_map hijack_CHANNELselect$7 131
+.node_map CHANNELselect$12 120
+.node_map hijack_CHANNELselect$8 132
+.node_map CHANNELselect$13 121
+.node_map hijack_CHANNELselect$9 133
+.node_map CHANNELselect$14 122
+.node_map CHANNELselect$15 123
+.node_map enable_iin 155
+.node_map IIN 165
+.node_map enable_vin 149
+.node_map hijack_enable_ichrg 156
+.node_map hijack_CHANNELselect$10 134
+.node_map hijack_CHANNELselect$11 135
+.node_map hijack_CHANNELselect$12 136
+.node_map hijack_CHANNELselect$13 137
+.node_map hijack_CHANNELselect$14 138
+.node_map ADCinput 168
+.node_map hijack_CHANNELselect$15 139
+.node_map enable_vout 153
+.node_map kelvin_VCAP 163
+.node_map enable_gpi 147
+.node_map enable_capmeasure 145
+.node_map enable_vcap 151
+.node_map ready_count 142
+.node_map hijack_enable_vout 152
+.node_map enable_dtemp 159
+X$dfthijack1 140 141 dfthijack vars: dfthijack_name='TELEMETERYmeasureCONTROLenable' dfthijack_description='Hiajck_enable_input' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack10 142 143 dfthijack vars: dfthijack_name='TELEMETERYmeasureCONTROLready' dfthijack_description='Hiajck_counter_ready' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack11 108 124 dfthijack vars: dfthijack_name='TELEMETERYmeasureCONTROLselect0' dfthijack_description='Hiajck_CHANNELselect_bit0' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack12 109 125 dfthijack vars: dfthijack_name='TELEMETERYmeasureCONTROLselect0' dfthijack_description='Hiajck_CHANNELselect_bit0' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack13 110 126 dfthijack vars: dfthijack_name='TELEMETERYmeasureCONTROLselect0' dfthijack_description='Hiajck_CHANNELselect_bit0' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack14 111 127 dfthijack vars: dfthijack_name='TELEMETERYmeasureCONTROLselect0' dfthijack_description='Hiajck_CHANNELselect_bit0' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack2 144 145 dfthijack vars: dfthijack_name='TELEMETERYmeasureCONTROLcap' dfthijack_description='Hiajck_CAPmeasure_enable' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack3 146 147 dfthijack vars: dfthijack_name='TELEMETERYmeasureCONTROLgpi' dfthijack_description='Hiajck_GPI_enable' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack4 148 149 dfthijack vars: dfthijack_name='TELEMETERYmeasureCONTROLvin' dfthijack_description='Hiajck_VIN_enable' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack5 150 151 dfthijack vars: dfthijack_name='TELEMETERYmeasureCONTROLvcap' dfthijack_description='Hiajck_VCAP_enable' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack6 152 153 dfthijack vars: dfthijack_name='TELEMETERYmeasureCONTROLvout' dfthijack_description='Hiajck_VOUT_enable' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack7 154 155 dfthijack vars: dfthijack_name='TELEMETERYmeasureCONTROLiin' dfthijack_description='Hiajck_IIN_enable' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack8 156 157 dfthijack vars: dfthijack_name='TELEMETERYmeasureCONTROLichrg' dfthijack_description='Hiajck_ICHRG_enable' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack9 158 159 dfthijack vars: dfthijack_name='TELEMETERYmeasureCONTROLdtemp' dfthijack_description='Hiajck_Die_temperature_Enable' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$pinprobe1 141 pinprobe vars: pinprobe_description='Hijack_enable_control' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe10 147 pinprobe vars: pinprobe_description='Enable_GPI_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 156 pinprobe vars: pinprobe_description='Enable_ICHRG_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe12 152 pinprobe vars: pinprobe_description='Enable_VOUT_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe13 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 pinprobeBUS vars: pinprobe_description='Channel_control_selector' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=4
+X$pinprobe14 142 pinprobe vars: pinprobe_description='Counter_is_ready' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe15 149 pinprobe vars: pinprobe_description='Enable_VIN_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe16 162 pinprobe vars: pinprobe_description='IN_output_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe17 151 pinprobe vars: pinprobe_description='Enable_VCAP_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe18 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 pinprobeBUS vars: pinprobe_description='Hijcked_Channel_control_selector' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=4
+X$pinprobe19 163 pinprobe vars: pinprobe_description='VCAP_output_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 148 pinprobe vars: pinprobe_description='Enable_VIN_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe20 164 pinprobe vars: pinprobe_description='VOUTSP_output_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe21 165 pinprobe vars: pinprobe_description='Input_current' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe22 153 pinprobe vars: pinprobe_description='Enable_VOUT_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe23 155 pinprobe vars: pinprobe_description='Enable_IIN_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe24 166 pinprobe vars: pinprobe_description='Charge_current' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe25 167 pinprobe vars: pinprobe_description='Die_temperature' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe27 143 pinprobe vars: pinprobe_description='Hijack_COUNTER_ready' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe28 157 pinprobe vars: pinprobe_description='Enable_ICHRG_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe29 159 pinprobe vars: pinprobe_description='Enable_VIN_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 146 pinprobe vars: pinprobe_description='Enable_GPI_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe34 160 pinprobe vars: pinprobe_description='CAPmeasure_output_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe39 161 pinprobe vars: pinprobe_description='GPO_output_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 150 pinprobe vars: pinprobe_description='Enable_VCAP_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe40 140 pinprobe vars: pinprobe_description='Telemetry_Measurement_sequencer_clock' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 144 pinprobe vars: pinprobe_description='Enable_CAPmeasure_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 154 pinprobe vars: pinprobe_description='Enable_IIN_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe7 158 pinprobe vars: pinprobe_description='Enable_VIN_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe8 145 pinprobe vars: pinprobe_description='Enable_CAPmeasure_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe9 168 pinprobe vars: pinprobe_description='ADC_Input_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$UTELEMETRYmeasureCONROLvin 162 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='TELEMETRYmeasureCONROLvin' dftprobe_description='Measure_IN_input' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UTELEMETRYmeasureCONTROLadc 168 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='TELEMETRYmeasureCONTROLadc' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UTELEMETRYmeasureCONTROLcapdiff 160 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='TELEMETRYmeasureCONTROLcapdiff' dftprobe_description='Measure_CAPdiff_input' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UTELEMETRYmeasureCONTROLdtemp 167 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='TELEMETRYmeasureCONTROLdtemp' dftprobe_description='Measure_Die_temperature' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UTELEMETRYmeasureCONTROLgpi 161 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='TELEMETRYmeasureCONTROLgpi' dftprobe_description='Measure_GPI_input' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UTELEMETRYmeasureCONTROLichrg 166 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='TELEMETRYmeasureCONTROLichrg' dftprobe_description='Measure_CHARGE_current' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UTELEMETRYmeasureCONTROLiin 165 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='TELEMETRYmeasureCONTROLiin' dftprobe_description='Measure_IN_current' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UTELEMETRYmeasureCONTROLvcap 163 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='TELEMETRYmeasureCONTROLvcap' dftprobe_description='Measure_VCAP_input' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UTELEMETRYmeasureCONTROLvout 164 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='TELEMETRYmeasureCONTROLvout' dftprobe_description='Measure_VOUT_input' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+.ends TELEMETRYmeasureCONTROLdebug
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301A\design\TELEMETRYmeasureCONTROLmain.sxcmp
+.subckt TELEMETRYmeasureCONTROLmain 303 304 232 233 234 235 305 306 248 249 307 308 309 310 311 312 313 314 315 316 317 318 319 320 321 323 324 325 326 327 328 329 330 331 332 333 334
+*#hierarchy
+.node_map ok_vout 326
+.node_map OFF$15 279
+.node_map OFF$4 268
+.node_map GPO 318
+.node_map OFF$5 269
+.node_map readyDELAY 339
+.node_map SIMPV 303
+.node_map OFF$6 270
+.node_map CAPmeasureDIFF 313
+.node_map OFF$7 271
+.node_map OFF$8 272
+.node_map OFF$9 273
+.node_map measure_vout 347
+.node_map measure_capmeasure 335
+.node_map ok_vcap 324
+.node_map measure_dtemp 351
+.node_map kelvin_IN 323
+.node_map measure_vcap 346
+.node_map measure_iin 348
+.node_map ADClsb 344
+.node_map ok_capmeasure 311
+.node_map ok_gpi 316
+.node_map msb0 296
+.node_map measure_vin 343
+.node_map msb1 297
+.node_map ok_ichrg 330
+.node_map CHANNELselect$0 232
+.node_map CHANNELselect$1 233
+.node_map kelvin_VOUTSP 327
+.node_map CHANNELselect$2 234
+.node_map CHANNELselect$3 235
+.node_map ADCmsb 349
+.node_map CHANNELselect$4 236
+.node_map measure_ichrg 350
+.node_map cap 337
+.node_map CHANNELselect$5 237
+.node_map CHANNELselect$6 238
+.node_map CHANNELselect$7 239
+.node_map ready0 352
+.node_map GNDcontrol 334
+.node_map BUS3$0 299
+.node_map CHANNELselect$8 240
+.node_map ready1 354
+.node_map BUS3$1 300
+.node_map CHANNELselect$9 241
+.node_map tl 266
+.node_map CAPmeasure$0 248
+.node_map CAPmeasure$1 249
+.node_map CAPmeasure$2 250
+.node_map CAPmeasure$3 251
+.node_map BUS4$0 301
+.node_map CAPmeasure$4 252
+.node_map BUS4$1 302
+.node_map CAPmeasure$5 253
+.node_map cs2BAR 336
+.node_map enable_control 306
+.node_map CAPmeasure$6 254
+.node_map CAPmeasure$7 255
+.node_map CAPmeasure$8 256
+.node_map CAPmeasure$9 257
+.node_map measure_gpi 340
+.node_map enabel_dtemp 322
+.node_map DTEMP 333
+.node_map enable_ichrg 319
+.node_map cs0BAR 342
+.node_map clock 341
+.node_map cs3BAR 338
+.node_map ready 353
+.node_map CHANNELmsb$2 298
+.node_map CHANNELselect$10 242
+.node_map cs1BAR 345
+.node_map CHANNELselect$11 243
+.node_map ICHRG 331
+.node_map CHANNELselect$12 244
+.node_map CHANNELselect$13 245
+.node_map SELECT$10 290
+.node_map CHANNELselect$14 246
+.node_map SELECT$11 291
+.node_map SELECT$4 284
+.node_map CHANNELselect$15 247
+.node_map enable_iin 317
+.node_map SELECT$12 292
+.node_map SELECT$5 285
+.node_map ready_control 305
+.node_map SELECT$13 293
+.node_map SELECT$6 286
+.node_map SELECT$14 294
+.node_map SELECT$7 287
+.node_map IIN 329
+.node_map enable_vin 312
+.node_map SELECT$15 295
+.node_map SELECT$8 288
+.node_map SELECT$9 289
+.node_map ok_dtemp 332
+.node_map CAPmeasure$10 258
+.node_map th0 264
+.node_map CAPmeasure$11 259
+.node_map th1 265
+.node_map CAPmeasure$12 260
+.node_map th2 267
+.node_map CAPmeasure$13 261
+.node_map CAPmeasure$14 262
+.node_map ADCinput 304
+.node_map CAPmeasure$15 263
+.node_map enable_vout 315
+.node_map cs0 280
+.node_map kelvin_VCAP 325
+.node_map cs1 281
+.node_map cs2 282
+.node_map cs3 283
+.node_map clock_control 307
+.node_map enable_gpi 310
+.node_map enable_capmeasure 308
+.node_map enable_vcap 314
+.node_map ready_count 309
+.node_map ok_iin 328
+.node_map OFF$10 274
+.node_map OFF$11 275
+.node_map OFF$12 276
+.node_map enable_dtemp 321
+.node_map ok_vin 320
+.node_map OFF$13 277
+.node_map OFF$14 278
+X$amux1 313 313 313 313 318 323 325 327 344 303 280 281 282 amux8 vars: amux_control='pin' amux_datasheet_name='text' amux_datasheet_description='text' amux_tswitch='no' amux_inputs=8 amux_por=0 amux_ron=1K amux_vmax=6
+X$amux2 329 331 333 334 225 226 227 228 349 303 296 297 298 amux8 vars: amux_control='pin' amux_datasheet_name='text' amux_datasheet_description='text' amux_tswitch='no' amux_inputs=4 amux_por=0 amux_ron=1K amux_vmax=6
+X$amux3 344 349 304 303 283 amux2 vars: amux_control='pin' amux_datasheet_name='text' amux_datasheet_description='text' amux_tswitch='no' amux_inputs=2 amux_por=0 amux_ron=1K amux_vmax=6
+X$delay1 353 231 341 301 302 230 delayclock vars: delay_type='clock' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=5 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$delay9 309 339 341 299 300 229 delayclock vars: delay_type='clock' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$dmux1 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 280 281 282 283 284 285 286 287 288 289 290 291 292 293 294 295 306 dmux2b vars: dmux_type='pin' dmux_datasheet_name='text' dmux_datasheet_description='text' dmux_inputs=2 dmux_bits=4 dmux_reg_por=0 dmux_vmax=6
+X$pinprobe1 306 pinprobe vars: pinprobe_description='Telemetry_Measurement_sequencer_clock' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe10 318 pinprobe vars: pinprobe_description='GPO_output_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 307 pinprobe vars: pinprobe_description='Telemetry_Measurement_sequencer_clock' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe12 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 pinprobeBUS vars: pinprobe_description='Select_CAPmeasure_channel' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=2
+X$pinprobe13 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 pinprobeBUS vars: pinprobe_description='Channel_counter' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=4
+X$pinprobe14 320 pinprobe vars: pinprobe_description='vin_enabled_and_ready' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe15 312 pinprobe vars: pinprobe_description='Enable_VIN_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe16 323 pinprobe vars: pinprobe_description='VIN_output_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe17 314 pinprobe vars: pinprobe_description='Enable_VCAP_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe18 324 pinprobe vars: pinprobe_description='vin_enabled_and_ready' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe19 325 pinprobe vars: pinprobe_description='VIN_output_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 303 pinprobe vars: pinprobe_description='enable_telemetry_sequencer' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe20 327 pinprobe vars: pinprobe_description='VIN_output_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe21 326 pinprobe vars: pinprobe_description='vin_enabled_and_ready' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe22 315 pinprobe vars: pinprobe_description='Enable_VOUT_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe23 317 pinprobe vars: pinprobe_description='Enable_IIN_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe24 328 pinprobe vars: pinprobe_description='vin_enabled_and_ready' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe25 329 pinprobe vars: pinprobe_description='VIN_output_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe26 331 pinprobe vars: pinprobe_description='VIN_output_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe27 330 pinprobe vars: pinprobe_description='vin_enabled_and_ready' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe28 319 pinprobe vars: pinprobe_description='Enable_ICHRG_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe29 322 pinprobe vars: pinprobe_description='Enable_VIN_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 304 pinprobe vars: pinprobe_description='Enable_CAPmeasure_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe30 332 pinprobe vars: pinprobe_description='vin_enabled_and_ready' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe31 333 pinprobe vars: pinprobe_description='VIN_output_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe32 334 pinprobe vars: pinprobe_description='Analogue_ground' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe33 305 pinprobe vars: pinprobe_description='ADC_input_enabled_and_ready' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 316 pinprobe vars: pinprobe_description='GPI_enabled_and_ready' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 311 pinprobe vars: pinprobe_description='CAPmeasure_enabled_and_ready' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 309 pinprobe vars: pinprobe_description='Counter_is_ready' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe7 310 pinprobe vars: pinprobe_description='Enable_GPI_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe8 308 pinprobe vars: pinprobe_description='Enable_CAPmeasure_brick' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe9 313 pinprobe vars: pinprobe_description='CAPmeasure_output_voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$U1 280 342 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U10 283 338 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U11 312 343 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U12 337 249 281 306 VESPAasmINPUT2
+X$U13 342 281 346 282 338 339 VESPAasmINPUT4
+X$U14 308 335 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U15 280 281 347 282 338 339 VESPAasmINPUT4
+X$U16 342 345 348 336 283 339 VESPAasmINPUT4
+X$U17 280 345 350 336 283 339 VESPAasmINPUT4
+X$U18 342 281 351 336 283 339 VESPAasmINPUT4
+X$U19 317 348 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U2 339 335 337 VESPAasmINPUT1
+X$U20 315 347 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U21 321 351 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U22 319 350 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U23 280 296 283 306 VESPAasmINPUT2
+X$U24 281 297 283 306 VESPAasmINPUT2
+X$U25 306 341 307 VESPAasmINPUT1
+X$U26 314 346 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U27 266 tie vars: tie_mode='low' tie_vmax=6
+X$U28 266 264 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U29 311 316 320 352 324 nor4 vars: logicgate_type='nor4' logicgate_vmax=6
+X$U3 342 345 340 282 338 339 VESPAasmINPUT4
+X$U30 326 328 330 354 332 nor4 vars: logicgate_type='nor4' logicgate_vmax=6
+X$U31 352 353 352 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U32 305 231 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U33 266 265 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U34 266 267 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U4 336 337 338 306 VESPAasmINPUT2
+X$U5 281 345 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U6 337 248 280 306 VESPAasmINPUT2
+X$U7 282 336 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U8 310 340 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U9 280 345 343 282 338 339 VESPAasmINPUT4
+.ends TELEMETRYmeasureCONTROLmain
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT1.sxcmp
+.subckt VESPAasmINPUT1 5 6 7
+*#hierarchy
+.node_map Tstate 5
+.node_map i0 7
+.node_map o 6
+X$U1 5 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 7 pinprobe vars: pinprobe_description='input1'
+X$U3 6 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 5 4 7 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U5 4 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+.ends VESPAasmINPUT1
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT2.sxcmp
+.subckt VESPAasmINPUT2 7 8 9 6
+*#hierarchy
+.node_map Tstate 6
+.node_map i0 7
+.node_map i1 9
+.node_map o 8
+X$U1 6 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 9 pinprobe vars: pinprobe_description='input1'
+X$U3 8 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 6 9 5 7 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U5 5 8 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U6 7 pinprobe vars: pinprobe_description='input0'
+.ends VESPAasmINPUT2
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT4.sxcmp
+.subckt VESPAasmINPUT4 10 11 12 13 14 15
+*#hierarchy
+.node_map Tstate 15
+.node_map i0 10
+.node_map i1 11
+.node_map i2 13
+.node_map i3 14
+.node_map o 12
+X$U1 15 pinprobe vars: pinprobe_description='state_blank_time'
+X$U19 12 8 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U2 11 pinprobe vars: pinprobe_description='input1'
+X$U3 12 pinprobe vars: pinprobe_description='INPUT3_output'
+X$U4 10 13 7 11 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U5 14 9 15 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U6 7 8 9 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U7 10 pinprobe vars: pinprobe_description='input0'
+X$U8 13 pinprobe vars: pinprobe_description='input2'
+X$U9 14 pinprobe vars: pinprobe_description='input3'
+.ends VESPAasmINPUT4
+
+.end

@@ -7,9 +7,11 @@ module inv_12e192f5 (i,o,SUB,CELG,CELV);
   input  CELV;
 endmodule
 
-module dff_fc5ad7bd (d,ck,rb,CELG,CELV,CELSUB);
+module dff_fc5ad7bd (d,q,ck,qb,rb,CELG,CELV,CELSUB);
   input  d;
+  output  q;
   input  ck;
+  output  qb;
   input  rb;
   input  CELG;
   input  CELV;
@@ -53,7 +55,7 @@ endmodule
 // ------------------------ Module Verilog ---------------
 module VESPAclockSYNC (din, out, clock, state, CELG59462, CELV96848, CELSUB40948);
 input  din;
-  input  out;
+output  out;
 input  clock;
 input  state;
 input  CELG59462;
@@ -74,7 +76,9 @@ inv_12e192f5 XU1 (
 
 dff_fc5ad7bd XU2 (
 .d(net_5),
+.q(out),
 .ck(net_6),
+.qb(net_7),
 .rb(net_8),
 .CELG(CELG59462),
 .CELV(CELV96848),

@@ -100,9 +100,28 @@ module fetdriver_e53ed485 (CELG,CELV,GATE,HVNEG,HVPOS,fetin,CELSUB,gate_status,g
   input  global_fetdriver;
 endmodule
 
+//Verilog HDL for "DFT", "DFTtm8d" "functional"
+
+
+module DFTtm8d ( a, ten, tdo, tmi, G, SUB, V, tdi, tma );
+
+  input V;
+  input  [7:0] tma;
+  output  [7:0] ten;
+  output  [1:0] a;
+  inout tdo;
+  input  [7:0] tdi;
+  input G;
+  input SUB;
+  inout  [4:0] tmi;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module DRIVERwaltz0BOTN (SW, MUDV, PMUDG, PMUDV, botswon, CELG59462, CELV96848, botswineg, botswipeak, CELSUB40948, botswstatus, botswzcross, enable_driver, IP_14d08c8e_XU3, IP_a0afb596_XU9, IP_2d447a5c_XU17, trim_currentlimit_14d08c8e, trim_currentlimit_2d447a5c, trim_currentlimit_a0afb596, global_currentlimit_14d08c8e_XU3, global_currentlimit_a0afb596_XU9, global_currentlimit_2d447a5c_XU17, tdi_currentlimitlive_14d08c8e_XU3, tdi_currentlimitlive_a0afb596_XU9, tdi_currentlimitlive_2d447a5c_XU17, global_fetdriver_bd0adf3c_Xfetdriver1, ten_measure_currentlimit_14d08c8e_XU3, ten_measure_currentlimit_a0afb596_XU9, ten_measure_currentlimit_2d447a5c_XU17, global_currentlimit_14d08c8e_XU3_ba40258e_XBOTSW, global_currentlimit_a0afb596_XU9_ba40258e_XBOTSW, global_currentlimit_2d447a5c_XU17_ba40258e_XBOTSW, tdi_currentlimitlive_14d08c8e_XU3_ba40258e_XBOTSW, tdi_currentlimitlive_a0afb596_XU9_ba40258e_XBOTSW, tdi_currentlimitlive_2d447a5c_XU17_ba40258e_XBOTSW, global_fetdriver_bd0adf3c_Xfetdriver1_ba40258e_XBOTSW, ten_measure_currentlimit_14d08c8e_XU3_ba40258e_XBOTSW, ten_measure_currentlimit_a0afb596_XU9_ba40258e_XBOTSW, ten_measure_currentlimit_2d447a5c_XU17_ba40258e_XBOTSW);
+module DRIVERwaltz0BOTN (SW, tdo, tmi, MUDV, PMUDG, PMUDV, botswon, CELG59462, CELV96848, botswineg, botswipeak, CELSUB40948, botswstatus, botswzcross, enable_driver, IP_14d08c8e_XU3, IP_a0afb596_XU9, IP_2d447a5c_XU17, trim_currentlimit_14d08c8e, trim_currentlimit_2d447a5c, trim_currentlimit_a0afb596);
 inout  SW;
+inout  tdo;
+input [4:0] tmi;
 input  MUDV;
 inout  PMUDG;
 input  PMUDV;
@@ -121,33 +140,18 @@ input  IP_2d447a5c_XU17;
 input [7:0] trim_currentlimit_14d08c8e;
 input [7:0] trim_currentlimit_2d447a5c;
 input [7:0] trim_currentlimit_a0afb596;
-input  global_currentlimit_14d08c8e_XU3;
-input  global_currentlimit_a0afb596_XU9;
-input  global_currentlimit_2d447a5c_XU17;
-output  tdi_currentlimitlive_14d08c8e_XU3;
-output  tdi_currentlimitlive_a0afb596_XU9;
-output  tdi_currentlimitlive_2d447a5c_XU17;
-input  global_fetdriver_bd0adf3c_Xfetdriver1;
-input  ten_measure_currentlimit_14d08c8e_XU3;
-input  ten_measure_currentlimit_a0afb596_XU9;
-input  ten_measure_currentlimit_2d447a5c_XU17;
-input  global_currentlimit_14d08c8e_XU3_ba40258e_XBOTSW;
-input  global_currentlimit_a0afb596_XU9_ba40258e_XBOTSW;
-input  global_currentlimit_2d447a5c_XU17_ba40258e_XBOTSW;
-output  tdi_currentlimitlive_14d08c8e_XU3_ba40258e_XBOTSW;
-output  tdi_currentlimitlive_a0afb596_XU9_ba40258e_XBOTSW;
-output  tdi_currentlimitlive_2d447a5c_XU17_ba40258e_XBOTSW;
-input  global_fetdriver_bd0adf3c_Xfetdriver1_ba40258e_XBOTSW;
-input  ten_measure_currentlimit_14d08c8e_XU3_ba40258e_XBOTSW;
-input  ten_measure_currentlimit_a0afb596_XU9_ba40258e_XBOTSW;
-input  ten_measure_currentlimit_2d447a5c_XU17_ba40258e_XBOTSW;
 
 
 // ------------------------ Wires ------------------------
+wire [4:0] tmi;
 wire [7:0] trim_currentlimit_14d08c8e;
 wire [7:0] trim_currentlimit_2d447a5c;
 wire [7:0] trim_currentlimit_a0afb596;
 wire [7:0] trim_currentlimit;
+wire [1:0] a;
+wire [7:0] tdi;
+wire [7:0] ten;
+wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
 currentlimitfet_bdeab8a2 XU3 (
@@ -161,7 +165,7 @@ currentlimitfet_bdeab8a2 XU3 (
 .trim_currentlimit({trim_currentlimit_14d08c8e[7],trim_currentlimit_14d08c8e[6],trim_currentlimit_14d08c8e[5],trim_currentlimit_14d08c8e[4],trim_currentlimit_14d08c8e[3],trim_currentlimit_14d08c8e[2],trim_currentlimit_14d08c8e[1],trim_currentlimit_14d08c8e[0]}),
 .enable_currentlimit(enable_driver),
 .global_currentlimit(global_currentlimit_14d08c8e_XU3),
-.measure_currentlimit(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_XU3_measure_currentlimit),
+.measure_currentlimit(botswstatus),
 .tdi_currentlimitlive(tdi_currentlimitlive_14d08c8e_XU3),
 .ten_measure_currentlimit(ten_measure_currentlimit_14d08c8e_XU3)
 );
@@ -187,7 +191,7 @@ currentlimitfet_2899e616 XU9 (
 .trim_currentlimit({trim_currentlimit_a0afb596[7],trim_currentlimit_a0afb596[6],trim_currentlimit_a0afb596[5],trim_currentlimit_a0afb596[4],trim_currentlimit_a0afb596[3],trim_currentlimit_a0afb596[2],trim_currentlimit_a0afb596[1],trim_currentlimit_a0afb596[0]}),
 .enable_currentlimit(enable_driver),
 .global_currentlimit(global_currentlimit_a0afb596_XU9),
-.measure_currentlimit(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_XU9_measure_currentlimit),
+.measure_currentlimit(botswstatus),
 .tdi_currentlimitlive(tdi_currentlimitlive_a0afb596_XU9),
 .ten_measure_currentlimit(ten_measure_currentlimit_a0afb596_XU9)
 );
@@ -223,7 +227,7 @@ currentlimitfet_282c42a8 XU17 (
 .trim_currentlimit({trim_currentlimit_2d447a5c[7],trim_currentlimit_2d447a5c[6],trim_currentlimit_2d447a5c[5],trim_currentlimit_2d447a5c[4],trim_currentlimit_2d447a5c[3],trim_currentlimit_2d447a5c[2],trim_currentlimit_2d447a5c[1],trim_currentlimit_2d447a5c[0]}),
 .enable_currentlimit(enable_driver),
 .global_currentlimit(global_currentlimit_2d447a5c_XU17),
-.measure_currentlimit(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_XU17_measure_currentlimit),
+.measure_currentlimit(botswstatus),
 .tdi_currentlimitlive(tdi_currentlimitlive_2d447a5c_XU17),
 .ten_measure_currentlimit(ten_measure_currentlimit_2d447a5c_XU17)
 );
@@ -258,16 +262,20 @@ fetdriver_e53ed485 Xfetdriver1 (
 .global_fetdriver(global_fetdriver_bd0adf3c_Xfetdriver1)
 );
 
-STONEnoconn XNCtdi_currentlimitlive_14d08c8e_XU3_ba40258e_XBOTSW (
-.noconn(tdi_currentlimitlive_14d08c8e_XU3_ba40258e_XBOTSW)
+DFTtm8d dft_hex0x06 (
+.G(CELG59462),
+.V(CELV96848),
+.a({a1,a0}),
+.SUB(CELSUB40948),
+.tdi({a0,a0,a0,a0,a0,tdi_currentlimitlive_a0afb596_XU9,tdi_currentlimitlive_14d08c8e_XU3,tdi_currentlimitlive_2d447a5c_XU17}),
+.tdo(tdo),
+.ten({noconn_dft_hex0x06_ten_7,global_fetdriver_bd0adf3c_Xfetdriver1,ten_measure_currentlimit_a0afb596_XU9,global_currentlimit_a0afb596_XU9,ten_measure_currentlimit_14d08c8e_XU3,global_currentlimit_14d08c8e_XU3,ten_measure_currentlimit_2d447a5c_XU17,global_currentlimit_2d447a5c_XU17}),
+.tma({a0,a0,a0,a0,a0,a1,a1,a0}),
+.tmi(tmi[4:0])
 );
 
-STONEnoconn XNCtdi_currentlimitlive_a0afb596_XU9_ba40258e_XBOTSW (
-.noconn(tdi_currentlimitlive_a0afb596_XU9_ba40258e_XBOTSW)
-);
-
-STONEnoconn XNCtdi_currentlimitlive_2d447a5c_XU17_ba40258e_XBOTSW (
-.noconn(tdi_currentlimitlive_2d447a5c_XU17_ba40258e_XBOTSW)
+STONEnoconn XNCnoconn_dft_hex0x06_ten_7 (
+.noconn(noconn_dft_hex0x06_ten_7)
 );
 
 endmodule

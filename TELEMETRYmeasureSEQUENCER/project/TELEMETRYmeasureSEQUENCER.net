@@ -1,0 +1,553 @@
+* Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301A\overlay\overlay_TELEMETRYmeasureSEQUENCER.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map SIMPV 46
+.node_map CHANNELselect$0 33
+.node_map CHANNELselect$1 34
+.node_map CHANNELselect$2 35
+.node_map CHANNELselect$3 36
+.node_map convert_adc 37
+.node_map REF 47
+.node_map enable_control 39
+.node_map done_sequencer 44
+.node_map clock 42
+.node_map ready_control 40
+.node_map enable 41
+.node_map GND 45
+.node_map done_adc 38
+.node_map ready_count 43
+.options
++ PSP_NPT=50001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+.tran 200u 0
+
+.globalvar TEMP=25
+.globalvar tdext_khz=10
+
+.globalvar IN = 12
+.globalvar VIN = 5.0
+.globalvar REF = 1.2
+.globalvar VCC2P5=2.4
+
+.globalvar CAP1=2.0
+.globalvar CAP2=2.2
+.globalvar CAP3=2.4
+.globalvar CAP4=2.6
+
+X$delay1 39 40 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=5 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$delay2 37 38 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=5 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+.PRINT V(#enable_control)
+.GRAPH :#enable_control curveLabel= enable_control nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe1  
+.PRINT V(#convert_adc)
+.GRAPH :#convert_adc curveLabel= convert_adc nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe2  
+.PRINT V(#ready_count)
+.GRAPH :#ready_count curveLabel= ready_count nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe3  
+.GRAPH "ComposeDigital('#CHANNELselect', [0, 3],  '' , '%BUSNAME%$%WIRENUM%', [0.8, 0.9])*1.0+0" complete=true  axistype=digital   bus=dec curveLabel="CHANNELselect" disabled=false 
+.PRINT ^CHANNELselect$*
+.PRINT V(#done_sequencer)
+.GRAPH :#done_sequencer curveLabel= done_sequencer nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe5  
+.PRINT V(#enable)
+.GRAPH :#enable curveLabel= enable nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe6  
+.PRINT V(#clock)
+.GRAPH :#clock curveLabel= clock nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe7  
+.PRINT V(#ready_control)
+.GRAPH :#ready_control curveLabel= ready_control nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe8  
+.PRINT V(#done_adc)
+.GRAPH :#done_adc curveLabel= done_adc nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe9  
+X$SEQUENCER 41 42 33 34 35 36 40 39 38 37 43 44 TELEMETRYmeasureSEQUENCER
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+X$U3 42 32 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+V1 41 0 PWL NSEG=2 X0=0 Y0=0 X1=20u Y1=0 X2=20.001u Y2={VIN} 
+X$V12 32 0 PUL_SOURCE vars: _V1=0 _V2={VIN} _FREQ=1Meg _DELAY=5u _DRATIOx100=50 _T_RISE=1n _T_FALL=1n _DAMP_COEF=0 _PWIDTH=499n _OFF_UNTIL_DELAY=1 _IDLE_IN_POP=0 _USEPHASE=0 _PHASE=5u
+V2 45 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=0 X2=2u Y2=0 
+V3 46 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=0 X2=2u Y2={VIN} 
+V4 47 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=0 X2=2u Y2={REF} 
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301A\design\TELEMETRYmeasureSEQUENCER.sxcmp
+.subckt TELEMETRYmeasureSEQUENCER 91 92 59 60 61 62 94 93 96 95 97 98
+*#hierarchy
+.node_map done_measure 101
+.node_map done_count 103
+.node_map CHANNELselect$0 59
+.node_map CHANNELselect$1 60
+.node_map CHANNELselect$2 61
+.node_map CHANNELselect$3 62
+.node_map TELEMETRYcountConfiguration$8 83
+.node_map CHANNELselect$4 63
+.node_map TELEMETRYcountConfiguration$9 84
+.node_map enable_freeze 79
+.node_map CHANNELselect$5 64
+.node_map CHANNELselect$6 65
+.node_map convert_adc 95
+.node_map CHANNELselect$7 66
+.node_map CHANNELselect$8 67
+.node_map CHANNELselect$9 68
+.node_map enable_count 100
+.node_map enable_control 93
+.node_map done_sequencer 98
+.node_map sample 81
+.node_map FREEZEchannel$0 75
+.node_map TELEMETRYcountConfiguration$10 85
+.node_map FREEZEchannel$1 76
+.node_map TELEMETRYcountConfiguration$11 86
+.node_map FREEZEchannel$2 77
+.node_map TELEMETRYcountConfiguration$12 87
+.node_map FREEZEchannel$3 78
+.node_map TELEMETRYcountConfiguration$13 88
+.node_map TELEMETRYcountConfiguration$14 89
+.node_map CHANNELselect$10 69
+.node_map enable_sequencer 91
+.node_map TELEMETRYcountConfiguration$15 90
+.node_map CHANNELselect$11 70
+.node_map CHANNELselect$12 71
+.node_map CHANNELselect$13 72
+.node_map CHANNELselect$14 73
+.node_map CHANNELselect$15 74
+.node_map ready_control 94
+.node_map clock_sequencer 92
+.node_map only_cap 82
+.node_map hijack_enable_sequencer 99
+.node_map count_next 102
+.node_map sample_mode 80
+.node_map done_adc 96
+.node_map ready_count 97
+X$COUNT 100 59 60 61 62 92 103 102 97 91 79 75 76 77 78 101 82 98 TELEMETRYmeasureCOUNT
+X$datamap1 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 datamap0 vars: datamap_function='code' datamap_name='TELEMTRYcountConfiguration' datamap_description='Configure_telemetry_counter_range' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='Freeze_count' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='STOP_decode0' datamap_code1='STOP_decode1' datamap_code2='STOP_decode2' datamap_code3='STOP_decode3' datamap_code4='Freeze_enable' datamap_code5='Continous_mode' datamap_code6='Sampe_request' datamap_code7='Test_cap' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='6' datamap_newcode10='1' datamap_enabletimeunits1='ms' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=8 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=20 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$DEBUG 91 99 59 60 61 62 97 101 103 95 96 98 TELEMETRYmeasureSEQUENCERdebug
+X$MAIN 99 92 100 97 94 96 103 95 102 93 80 81 101 TELEMETRYmeasureSEQUENCERmain
+X$pinprobe1 91 pinprobe vars: pinprobe_description='enable_telemetry_sequencer' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 92 pinprobe vars: pinprobe_description='Telemetry_Measurement_sequencer_clock' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe13 96 pinprobe vars: pinprobe_description='ADC_meaurement_complete' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 97 pinprobe vars: pinprobe_description='Counter_state_is_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 94 pinprobe vars: pinprobe_description='Counter_channel_is_ready' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 93 pinprobe vars: pinprobe_description='Enable_Sequencer_CONTROL' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 95 pinprobe vars: pinprobe_description='REquest_ADC_conversion' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 pinprobeBUS vars: pinprobe_description='Measurement_channel_selector' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=4
+X$pinprobe7 98 pinprobe vars: pinprobe_description='Sequencer_reached_end' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+.ends TELEMETRYmeasureSEQUENCER
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301A\design\TELEMETRYmeasureCOUNT.sxcmp
+.subckt TELEMETRYmeasureCOUNT 255 96 97 98 99 258 257 260 256 254 263 112 113 114 115 261 262 259
+*#hierarchy
+.node_map go_countBAR 269
+.node_map done_measure 261
+.node_map done_count 257
+.node_map BUS4$10 226
+.node_map start 268
+.node_map BUS4$11 227
+.node_map BUS4$12 228
+.node_map BUS4$13 229
+.node_map BUS4$14 230
+.node_map BUS4$15 231
+.node_map BUS2$10 194
+.node_map clock_count 258
+.node_map BUS2$11 195
+.node_map BUS2$12 196
+.node_map BUS2$13 197
+.node_map BUS2$14 198
+.node_map BUS5$10 242
+.node_map BUS2$15 199
+.node_map UPstop$0 176
+.node_map CHANNELselect$0 96
+.node_map BUS5$11 243
+.node_map UPstop$1 177
+.node_map CHANNELselect$1 97
+.node_map BUS5$12 244
+.node_map UPstop$2 178
+.node_map CHANNELselect$2 98
+.node_map BUS5$13 245
+.node_map UPstop$3 179
+.node_map CHANNELselect$3 99
+.node_map BUS5$14 246
+.node_map UPstop$4 180
+.node_map CHANNELselect$4 100
+.node_map enable_freeze 263
+.node_map BUS5$15 247
+.node_map UPstop$5 181
+.node_map CHANNELselect$5 101
+.node_map UPstop$6 182
+.node_map CHANNELselect$6 102
+.node_map UPstop$7 183
+.node_map CHANNELselect$7 103
+.node_map BUS3$10 210
+.node_map BUS3$0 200
+.node_map BUS2$8 192
+.node_map UPstop$8 184
+.node_map CHANNELselect$8 104
+.node_map BUS3$11 211
+.node_map BUS3$1 201
+.node_map BUS2$9 193
+.node_map UPstop$9 185
+.node_map CHANNELselect$9 105
+.node_map BUS3$12 212
+.node_map BUS3$2 202
+.node_map BUS3$13 213
+.node_map BUS3$3 203
+.node_map BUS3$14 214
+.node_map BUS3$4 204
+.node_map BUS3$15 215
+.node_map BUS3$5 205
+.node_map BUS3$6 206
+.node_map BUS3$7 207
+.node_map BUS4$0 216
+.node_map BUS3$8 208
+.node_map BUS4$1 217
+.node_map BUS3$9 209
+.node_map enable_count 255
+.node_map BUS4$2 218
+.node_map BUS4$3 219
+.node_map BUS4$4 220
+.node_map BUS4$5 221
+.node_map BUS4$6 222
+.node_map BUS4$7 223
+.node_map BUS5$0 232
+.node_map BUS4$8 224
+.node_map done_sequencer 259
+.node_map BUS5$1 233
+.node_map BUS4$9 225
+.node_map done_measureBUF 274
+.node_map BUS5$2 234
+.node_map clock 267
+.node_map BUS5$3 235
+.node_map reset_goBAR 272
+.node_map BUS5$4 236
+.node_map BUS5$5 237
+.node_map BUS5$6 238
+.node_map BUS5$7 239
+.node_map BUS6$0 248
+.node_map BUS5$8 240
+.node_map BUS6$1 249
+.node_map BUS5$9 241
+.node_map CAPstop$0 160
+.node_map FREEZEchannel$0 112
+.node_map CAPstop$1 161
+.node_map FREEZEchannel$1 113
+.node_map CAPstop$2 162
+.node_map FREEZEchannel$2 114
+.node_map CAPstop$3 163
+.node_map FREEZEchannel$3 115
+.node_map CAPstop$4 164
+.node_map FREEZEchannel$4 116
+.node_map CAPstop$5 165
+.node_map FREEZEchannel$5 117
+.node_map CHANNELselect$10 106
+.node_map goOSHT 275
+.node_map enable_sequencer 254
+.node_map CAPstop$6 166
+.node_map FREEZEchannel$6 118
+.node_map CHANNELselect$11 107
+.node_map BUS7$0 250
+.node_map CAPstop$7 167
+.node_map FULLstop$0 144
+.node_map FREEZEchannel$7 119
+.node_map CHANNELselect$12 108
+.node_map BUS7$1 251
+.node_map CAPstop$8 168
+.node_map FULLstop$1 145
+.node_map FREEZEchannel$8 120
+.node_map CHANNELselect$13 109
+.node_map qready 265
+.node_map CAPstop$9 169
+.node_map FULLstop$2 146
+.node_map FREEZEchannel$9 121
+.node_map CHANNELselect$14 110
+.node_map FULLstop$3 147
+.node_map CHANNELselect$15 111
+.node_map FULLstop$4 148
+.node_map FULLstop$5 149
+.node_map UPstop$10 186
+.node_map FULLstop$6 150
+.node_map UPstop$11 187
+.node_map FULLstop$7 151
+.node_map BUS8$0 252
+.node_map UPstop$12 188
+.node_map CAPstop$10 170
+.node_map FULLstop$8 152
+.node_map BUS8$1 253
+.node_map UPstop$13 189
+.node_map CAPstop$11 171
+.node_map FULLstop$9 153
+.node_map UPstop$14 190
+.node_map CAPstop$12 172
+.node_map UPstop$15 191
+.node_map CAPstop$13 173
+.node_map CAPstop$14 174
+.node_map end 270
+.node_map only_cap 262
+.node_map CAPstop$15 175
+.node_map go_count 264
+.node_map reset_measureBAR 273
+.node_map count_next 260
+.node_map FREEZEchannel$10 122
+.node_map full_count 276
+.node_map FULLstop$10 154
+.node_map FREEZEchannel$11 123
+.node_map FULLstop$11 155
+.node_map count$0 128
+.node_map FREEZEchannel$12 124
+.node_map FULLstop$12 156
+.node_map count$1 129
+.node_map FREEZEchannel$13 125
+.node_map FULLstop$13 157
+.node_map count$2 130
+.node_map FREEZEchannel$14 126
+.node_map reset0 278
+.node_map FULLstop$14 158
+.node_map count$3 131
+.node_map FREEZEchannel$15 127
+.node_map reset1 277
+.node_map FULLstop$15 159
+.node_map count$4 132
+.node_map done 271
+.node_map count$5 133
+.node_map count$6 134
+.node_map count_nextBUF 266
+.node_map count$7 135
+.node_map count$10 138
+.node_map count$8 136
+.node_map count$11 139
+.node_map count$9 137
+.node_map ready_count 256
+.node_map count$12 140
+.node_map count$13 141
+.node_map count$14 142
+.node_map count$15 143
+X$datamap1 144 145 146 147 160 161 162 163 192 193 194 195 196 197 198 199 datamap0 vars: datamap_function='code' datamap_name='TELEMETRYcountConfiguration' datamap_description='TELEMETERY_set_COUNT_operating_range' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_por01='3' datamap_por00='A' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='A' datamap_code1='A' datamap_code2='A' datamap_code3='A' datamap_code4='A' datamap_code5='A' datamap_code6='A' datamap_code7='A' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=8 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$delay1 271 90 267 250 251 88 delayclock vars: delay_type='clock' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$delay2 265 92 267 252 253 91 delayclock vars: delay_type='clock' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=8 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$delay3 269 94 delayfixed vars: delay_type='fixed' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=250 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$delay4 264 89 267 248 249 87 delayclock vars: delay_type='clock' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=8 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$dff1 254 268 264 269 272 dff vars: dff_edge='rise' dff_outputs='both' dff_bits=1 dff_vmax=6
+X$dff2 264 270 265 84 273 dff vars: dff_edge='rise' dff_outputs='q' dff_bits=1 dff_vmax=6
+X$dmux1 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 263 dmux2b vars: dmux_type='pin' dmux_datasheet_name='text' dmux_datasheet_description='text' dmux_inputs=2 dmux_bits=4 dmux_reg_por=0 dmux_vmax=6
+X$dmux2 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 262 dmux2b vars: dmux_type='pin' dmux_datasheet_name='text' dmux_datasheet_description='text' dmux_inputs=2 dmux_bits=4 dmux_reg_por=0 dmux_vmax=6
+X$pinprobe1 255 pinprobe vars: pinprobe_description='Enable_ADC-counter' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe10 262 pinprobe vars: pinprobe_description='Only_measure_CAPs' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 259 pinprobe vars: pinprobe_description='Sequencer_reached_end' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 260 pinprobe vars: pinprobe_description='Start_next_counter' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 257 pinprobe vars: pinprobe_description='Sequencer_count_reached_COUNTstop_limit' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 pinprobeBUS vars: pinprobe_description='Select_Channel_to_freeze_on' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=4
+X$pinprobe5 254 pinprobe vars: pinprobe_description='Enable_ADC-counter' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 pinprobeBUS vars: pinprobe_description='Measurement_channel_selector' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=4
+X$pinprobe7 263 pinprobe vars: pinprobe_description='Enable_count_frreze_on_channel' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe8 261 pinprobe vars: pinprobe_description='ADC_conversion_complte' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe9 256 pinprobe vars: pinprobe_description='Start_measurement_for_channel' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$U1 266 95 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U10 275 93 266 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U11 89 275 oneshot vars: oneshot_time=100 oneshot_vmax=6
+X$U12 93 270 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U13 274 261 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U14 278 273 274 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U15 256 92 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U16 257 269 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U18 268 255 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U19 278 272 277 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U2 264 95 260 VESPAasmINPUT1
+X$U3 264 267 258 VESPAasmINPUT1
+X$U4 276 90 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U5 261 277 276 VESPAasmINPUT1
+X$U6 264 266 85 86 271 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 count  vars: count_mode='up' count_upstart_config='fixed' count_upstartdatasheetname='text' count_upstartdatasheetdescription='text' count_upstop_config='pin' count_upstopdatasheetname='text' count_upstopdatasheetdescription='text' count_updatasheetunits='CHANNEL' count_dnstart_config='fixed' count_dnstartdatasheetname='text' count_dnstartdatasheetdescription='text' count_dnstop_config='fixed' count_dnstopdatasheetname='text' count_dnstopdatasheetdescription='text' count_dndatasheetunits='text' count_seq_upstart_config='fixed' count_seq_upstartdatasheetname='text' count_seq_upstartdatasheetdescription='text' count_seq_upstop_config='fixed' count_seq_upstopdatasheetname='text' count_seq_upstopdatasheetdescription='text' count_seq_dnstart_config='fixed' count_seq_dnstartdatasheetname='text' count_seq_dnstartdatasheetdescription='text' count_seq_dnstop_config='fixed' count_seq_dnstopdatasheetname='text' count_seq_dnstopdatasheetdescription='text' count_uppin='pin' count_uppin_name='text' count_uppin_description='text' count_seqdatasheetunits='text' count_roll='no' count_roll_name='text' count_roll_description='text' count_enable='pin' count_enable_name='text' count_enable_description='text' count_q='yes' count_doneflag='yes' count_dft='no' count_upstart=0 count_upstop=10 count_updatasheetoffset=0 count_updatasheetlsb=1 count_dnstart=255 count_dnstop=0 count_dndatasheetoffset=0 count_dndatasheetlsb=1 count_seq_upstart=0 count_seq_upstop=255 count_seq_dnstart=255 count_seq_dnstop=0 count_seqdatasheetoffset=0 count_seqdatasheetlsb=1 count_uppin_por=0 count_roll_por=0 count_enable_por=0 count_bits=4 count_3=0 count_vmax=6
+X$U7 254 278 oneshot vars: oneshot_time=100 oneshot_vmax=6
+X$U8 259 94 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U9 258 pinprobe vars: pinprobe_description='Master_sync_clock' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+.ends TELEMETRYmeasureCOUNT
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT1.sxcmp
+.subckt VESPAasmINPUT1 5 6 7
+*#hierarchy
+.node_map Tstate 5
+.node_map i0 7
+.node_map o 6
+X$U1 5 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 7 pinprobe vars: pinprobe_description='input1'
+X$U3 6 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 5 4 7 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U5 4 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+.ends VESPAasmINPUT1
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301A\design\TELEMETRYmeasureSEQUENCERdebug.sxcmp
+.subckt TELEMETRYmeasureSEQUENCERdebug 49 50 33 34 35 36 51 52 53 54 55 56
+*#hierarchy
+.node_map done_measure 52
+.node_map done_count 53
+.node_map CHANNELselect$0 33
+.node_map CHANNELselect$1 34
+.node_map CHANNELselect$2 35
+.node_map CHANNELselect$3 36
+.node_map CHANNELselect$4 37
+.node_map CHANNELselect$5 38
+.node_map CHANNELselect$6 39
+.node_map convert_adc 54
+.node_map CHANNELselect$7 40
+.node_map CHANNELselect$8 41
+.node_map CHANNELselect$9 42
+.node_map done_sequencer 56
+.node_map CHANNELselect$10 43
+.node_map enable_sequencer 49
+.node_map CHANNELselect$11 44
+.node_map CHANNELselect$12 45
+.node_map CHANNELselect$13 46
+.node_map CHANNELselect$14 47
+.node_map CHANNELselect$15 48
+.node_map hijack_enable_sequencer 50
+.node_map done_adc 55
+.node_map ready_count 51
+X$dfthijack1 49 50 dfthijack vars: dfthijack_name='TELEMETERYmeasureSEQUENCERenable' dfthijack_description='Hiajck_enable_input' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$dftstatus1 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 32 dftstatusModel0 vars: dftstatus_name='TELEMETRYmeasureSEQUENCERselect' dftstatus_enable='0' dftstatus_bits=4 dftstatus_vmax=6
+X$pinprobe1 50 pinprobe vars: pinprobe_description='Hijack_enable_sequencer' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 52 pinprobe vars: pinprobe_description='Measuure_time_to_complete_sequencer' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 53 pinprobe vars: pinprobe_description='Measure_count_is_full' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 51 pinprobe vars: pinprobe_description='Start_measurement_for_channel' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 55 pinprobe vars: pinprobe_description='Measure_ADC_conversion_complete_flag' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 49 pinprobe vars: pinprobe_description='Enable_ADC-counter' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 pinprobeBUS vars: pinprobe_description='Measurement_channel_selector' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=4
+X$pinprobe7 54 pinprobe vars: pinprobe_description='Measuure_Request_ADC_Falg' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe8 56 pinprobe vars: pinprobe_description='Sequencer_reached_end' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$U1 55 54 30 VESPAdftpulse
+X$U8 50 53 31 VESPAdftpulse
+X$UTELEMETRYmeasureSEQUENCERadctime 30 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='TELEMETRYmeasureSEQUENCERadctime' dftprobe_description='Measure_ADC_conversion_time' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UTELEMETRYmeasureSEQUENCERconvertadc 54 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_global_VIN_or_below' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='TELEMETRYmeasureSEQUENCERconvertadc' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UTELEMETRYmeasureSEQUENCERdone 56 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='TELEMETRYmeasureSEQUENCERdone' dftprobe_description='Measure_Sequencer_Done_flag' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UTELEMETRYmeasureSEQUENCERdoneadc 55 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='TELEMETRYmeasureSEQUENCERdoneadc' dftprobe_description='Measure_Done_ADC_flag' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UTELEMETRYmeasureSEQUENCERdonecount 53 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='TELEMETRYmeasureSEQUENCERdonecount' dftprobe_description='Measure_Done_count' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UTELEMETRYmeasureSEQUENCERdonemeasure 52 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='TELEMETRYmeasureSEQUENCERdonemeasure' dftprobe_description='Measure_Done_measure_flag' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UTELEMETRYmeasureSEQUENCERreadycount 51 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='TELEMETRYmeasureSEQUENCERreadycount' dftprobe_description='Measure_ready_count' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UTELEMETRYmeasureSEQUENCERtime 31 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='TELEMETRYmeasureSEQUENCERtime' dftprobe_description='Measure_total_conversion_time' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+.ends TELEMETRYmeasureSEQUENCERdebug
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAdftpulse.sxcmp
+.subckt VESPAdftpulse 7 8 9
+*#hierarchy
+.node_map start 7
+.node_map stop 8
+.node_map pulse 9
+X$U11 7 pinprobe vars: pinprobe_description='DFT_timer_start_input'
+X$U15 8 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U17 8 pinprobe vars: pinprobe_description='DFT_timer_stop_input'
+X$U52 7 4 6 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U53 4 5 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U55 9 5 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U8 9 pinprobe vars: pinprobe_description='DFT_Timer_pulse'
+.ends VESPAdftpulse
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301A\design\TELEMETRYmeasureSEQUENCERmain.sxcmp
+.subckt TELEMETRYmeasureSEQUENCERmain 128 130 131 136 138 139 140 133 137 129 132 134 135
+*#hierarchy
+.node_map done_measure 135
+.node_map done_count 140
+.node_map start 145
+.node_map BUS1$0 114
+.node_map BUS1$1 115
+.node_map offDELAY 155
+.node_map BUS2$0 116
+.node_map BUS2$1 117
+.node_map start0 143
+.node_map convert_adc 133
+.node_map start1 148
+.node_map BUS3$0 118
+.node_map done_adcOSHT 161
+.node_map BUS3$1 119
+.node_map BUS4$0 120
+.node_map BUS4$1 121
+.node_map enable_count 131
+.node_map enable_control 129
+.node_map reset 149
+.node_map clockBUF 141
+.node_map BUS5$0 122
+.node_map BUS5$1 123
+.node_map request_restart 152
+.node_map sample 134
+.node_map rcount 147
+.node_map BUS6$0 124
+.node_map rnext 158
+.node_map BUS6$1 125
+.node_map first 157
+.node_map enable_sequencer 128
+.node_map BUS7$0 126
+.node_map rmeasure 160
+.node_map done_countBAR 150
+.node_map BUS7$1 127
+.node_map enable_sequencerBAR 142
+.node_map ready_control 138
+.node_map clock_sequencer 130
+.node_map count_next 137
+.node_map sample_mode 132
+.node_map ready_countBARdelay 154
+.node_map sample_modeBAR 151
+.node_map done_countOSHT 159
+.node_map ck 146
+.node_map done_adc 139
+.node_map radc 156
+.node_map go 144
+.node_map ready_count 136
+.node_map ready_countBAR 153
+X$delay1 147 101 141 114 115 100 delayclock vars: delay_type='clock' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=5 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$delay2 140 155 141 126 127 113 delayclock vars: delay_type='clock' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=21 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$delay3 156 106 141 118 119 105 delayclock vars: delay_type='clock' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=5 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$delay4 153 154 141 116 117 103 delayclock vars: delay_type='clock' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=7 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$delay5 128 110 141 122 123 109 delayclock vars: delay_type='clock' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=5 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$delay6 128 157 141 120 121 107 delayclock vars: delay_type='clock' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=35 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$delay9 134 112 141 124 125 111 delayclock vars: delay_type='clock' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=5 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$dff1 128 146 144 98 149 dff vars: dff_edge='rise' dff_outputs='q' dff_bits=1 dff_vmax=6
+X$pinprobe1 128 pinprobe vars: pinprobe_description='enable_telemetry_sequencer' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 130 pinprobe vars: pinprobe_description='Telemetry_Measurement_sequencer_clock' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe12 133 pinprobe vars: pinprobe_description='Request_ADC_conversion' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe13 139 pinprobe vars: pinprobe_description='ADC_meaurement_complete' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe14 140 pinprobe vars: pinprobe_description='COUNTER_completed_full_cycle' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe15 137 pinprobe vars: pinprobe_description='Start_next_channel_count' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 132 pinprobe vars: pinprobe_description='Measurement_in_sample_mode' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 138 pinprobe vars: pinprobe_description='Counter_channel_is_ready' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 129 pinprobe vars: pinprobe_description='Enable_Sequencer_control' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 134 pinprobe vars: pinprobe_description='Request_a_smaple_routine_in_sample_mode' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 136 pinprobe vars: pinprobe_description='Counter_channel_is_ready' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe7 135 pinprobe vars: pinprobe_description='ADC_Measurement_complete' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe9 131 pinprobe vars: pinprobe_description='Enable_Sequencer_counter' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$U1 131 102 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U10 145 104 152 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U11 139 161 oneshot vars: oneshot_time=100 oneshot_vmax=6
+X$U12 144 156 136 VESPAasmINPUT1
+X$U13 135 160 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U14 133 106 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U2 155 152 151 VESPAasmINPUT1
+X$U26 142 149 159 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U28 112 148 oneshot vars: oneshot_time=100 oneshot_vmax=6
+X$U29 143 99 148 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U3 132 151 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U30 99 145 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U31 136 153 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U32 144 147 138 VESPAasmINPUT1
+X$U33 129 144 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U37 158 108 oneshot vars: oneshot_time=100 oneshot_vmax=6
+X$U38 101 102 oneshot vars: oneshot_time=100 oneshot_vmax=6
+X$U39 137 108 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U4 128 141 130 VESPAasmINPUT1
+X$U43 140 150 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U44 140 159 oneshot vars: oneshot_time=100 oneshot_vmax=6
+X$U45 128 142 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U5 110 143 oneshot vars: oneshot_time=100 oneshot_vmax=6
+X$U6 150 158 154 157 VESPAasmINPUT2
+X$U7 104 146 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U8 161 160 133 VESPAasmINPUT1
+.ends TELEMETRYmeasureSEQUENCERmain
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT2.sxcmp
+.subckt VESPAasmINPUT2 7 8 9 6
+*#hierarchy
+.node_map Tstate 6
+.node_map i0 7
+.node_map i1 9
+.node_map o 8
+X$U1 6 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 9 pinprobe vars: pinprobe_description='input1'
+X$U3 8 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 6 9 5 7 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U5 5 8 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U6 7 pinprobe vars: pinprobe_description='input0'
+.ends VESPAasmINPUT2
+
+.end

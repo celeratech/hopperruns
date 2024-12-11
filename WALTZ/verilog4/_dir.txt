@@ -1,4 +1,4 @@
-/celera-code/projects/Sunnyvale/software/WALTZ/verilog4
+/celera/projects/Sunnyvale/software/WALTZ/verilog4
 {
     "target": "product",
     "gen_product": true,
@@ -6,11 +6,12 @@
     "gen_noconn": true,
     "cad_build_type": "wire",
     "incremental": false,
-    "send_to_cda": true,
+    "send_to_cda": false,
     "ISO Connections": {},
     "General": {
-        "project_netlist_path": "/tmp/kyle/mnt/celera/projects/Waltz2/simplis/301/verification/SIMPLIS_Data/sim_WALTZ2.net",
+        "project_netlist_path": "/tmp/kyle/mnt/celera/projects/Simplis/playrich/Waltz/WALTZ2/301/verification/SIMPLIS_Data/sim_WALTZ2.net",
         "gen_reports": "N",
+        "skip_serdes": "N",
         "pad_esd": "2",
         "find_isos": "N",
         "wipe_bio_symbol": "N",
@@ -26,7 +27,7 @@
     "DFT": {
         "add_dft": "Y",
         "add_dbufdft": "N",
-        "dft_ignore_bricks": "N",
+        "dft_ignore_bricks": "Y",
         "dft_measure": "N",
         "dft_measure_address": "0xCA",
         "tma_start_address": "0x00",

@@ -48,8 +48,7 @@ limit,reference_description,text
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,IBIAS with ,Reference 1V
-description,Project Reference
+user,IBIAS with ,description,Project Reference
 user,LastDRM,no
 description,last DRM configuration
 user,NESTO,0.1.4
@@ -155,7 +154,7 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,TBD
+#define,PROJECTreference,0.9
 #define,PROJECTsupply,4.5
 #define,TaRoom,25
 #define,ground,0.0
@@ -264,54 +263,53 @@ trim,description6,description6,not used
 trim,description7,description7,not used
 trim,description8,empty
 //***********************************************
-trim,name,CELERAbandgap
-trim,enable,yes
-trim,bits,7
+trim,name,na
+trim,enable,no
+trim,bits,TBD
 trim,por,0
 trim,pinname,trim_refbg
-trim,testname,CELERAbandgap
-trim,description,Bandgap Output Voltage Accuracy
-trim,target,1232
-trim,units,mV
+trim,testname,TBD
+trim,description,TBD
+trim,target,na
+trim,units,TBD
 trim,userdescription,TBD
-trim,pretrim_low_limit,82.000
-trim,pretrim_high_limit,2582.000
-trim,posttrim_low_limit,1231.250
-trim,posttrim_high_limit,1232.750
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
 trim,codeunits,uA
-trim,description0,code 0x00 1232
-trim,description1,code 0x01 +0.5
-trim,description2,code 0x02 +1.0
-trim,description3,code 0x04 +2.0
-trim,description4,code 0x08 +4.0
-trim,description5,code 0x10 +8.0
-trim,description6,code 0x20 +16.0
-trim,description7,code 0x40 -32.0
+trim,description0,empty
+trim,description1,empty
+trim,description2,empty
+trim,description3,empty
+trim,description4,empty
+trim,description5,empty
+trim,description6,empty
+trim,description7,empty
 trim,description8,empty//***********************************************
-trim,name,REFaccuracy
-trim,enable,yes
-trim,bits,6
+trim,name,na
+trim,enable,no
+trim,bits,TBD
 trim,por,0
 trim,pinname,trim_refbg
-trim,testname,REFaccuracy
-trim,description,IBIAS reference accuracy
-
-trim,target,1000
-trim,units,mV
+trim,testname,TBD
+trim,description,TBD
+trim,target,na
+trim,units,TBD
 trim,userdescription,TBD
-trim,pretrim_low_limit,100.000
-trim,pretrim_high_limit,2100.000
-trim,posttrim_low_limit,999.250
-trim,posttrim_high_limit,1000.750
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
 trim,codeunits,uA
-trim,description0,code 0x001000
-trim,description1,+1.0
-trim,description2,+2.0
-trim,description3,+4.0
-trim,description4,+8.0
-trim,description5,+16.0
-trim,description6,-32.0
-trim,description7,not used
+trim,description0,empty
+trim,description1,empty
+trim,description2,empty
+trim,description3,empty
+trim,description4,empty
+trim,description5,empty
+trim,description6,empty
+trim,description7,empty
 trim,description8,empty
 //**********************************************
 //Pin Descriptions
@@ -349,17 +347,17 @@ router,celkelvin_GNDservice,TBD
 dftpriority,celkelvin_GNDservice,1
 esd,celkelvin_GNDservice,TBD
 
+pinname,CELBG
+definition,CELBG,IBIAS input Bandgap Voltage
+iq,CELBG,SIMULATION
+absmax,CELBG,6
+absmin,CELBG,-0.3
+io,CELBG,input
+mode,CELBG,analog
+router,CELBG,TBD
+dftpriority,CELBG,1
+esd,CELBG,TBD
 
-pinname,CELREF
-definition,CELREF,IBIAS generated reference
-iq,CELREF,SIMULATION
-absmax,CELREF,6
-absmin,CELREF,-0.3
-io,CELREF,input
-mode,CELREF,analog
-router,CELREF,TBD
-dftpriority,CELREF,1
-esd,CELREF,TBD
 
 pinname,enable_ibias
 definition,enable_ibias,IBIAS enable

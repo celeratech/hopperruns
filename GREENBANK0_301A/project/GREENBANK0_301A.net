@@ -1,0 +1,1131 @@
+* Z:\celera\projects\Simplis\playrelease\Release\play301a\Regression\sim_GREENBANK_301A1.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map LDO10 54
+.node_map LDO11 55
+.node_map LDO12 56
+.node_map LDO13 57
+.node_map LDO14 58
+.node_map LDO15 59
+.node_map MUDG 51
+.node_map LDO0 43
+.node_map LDO1 44
+.node_map LDO2 45
+.node_map LDO3 46
+.node_map LDO4 47
+.node_map LDO5 48
+.node_map LDO6 49
+.node_map LDO7 52
+.node_map MUDV 50
+.node_map LDO8 42
+.node_map LDO9 53
+.options
++ PSP_NPT=20001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1f
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+.tran 300u 0
+
+.globalvar VIN =5
+.globalvar REF = 0.8
+.globalvar tdext_khz=10
+
+C1 42 0 100n IC=0
+C2 53 0 100n IC=0
+C3 54 0 100n IC=0
+C4 55 0 100n IC=0
+C5 56 0 100n IC=0
+C6 57 0 100n IC=0
+C7 58 0 100n IC=0
+C8 59 0 1n
+.PRINT V(#LDO8)
+.GRAPH :#LDO8 curveLabel= LDO8 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe1  
+.PRINT V(#LDO0)
+.GRAPH :#LDO0 curveLabel= LDO0 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe2  
+X$U1 43 44 45 46 47 48 49 50 52 42 51 53 54 55 59 58 57 56 GREENBANK0_301A
+X$U2 41 celera vars: simulation_module='name' status='dev' simulation='typical'
+V1 51 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=0 X2=2u Y2=0 
+V2 50 0 PWL NSEG=2 X0=0 Y0=0 X1=10u Y1=0 X2=20u Y2={VIN} 
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\GREENBANK0_301A.sxcmp
+.subckt GREENBANK0_301A 89 90 91 92 93 94 95 96 101 102 98 103 105 106 110 111 112 108
+*#hierarchy
+.node_map kelvin_MUDV 104
+.node_map kelvin_MUDGamplifier 109
+.node_map LDO10 105
+.node_map LDO11 106
+.node_map LDO12 108
+.node_map LDO13 112
+.node_map LDO14 111
+.node_map REF 113
+.node_map LDO15 110
+.node_map kelvin_MUDGservice 107
+.node_map sense_LDO2 97
+.node_map sense_LDO5 99
+.node_map sense_LDO7 100
+.node_map MUDG 98
+.node_map LDO0 89
+.node_map LDO1 90
+.node_map LDO2 91
+.node_map LDO3 92
+.node_map LDO4 93
+.node_map LDO5 94
+.node_map LDO6 95
+.node_map LDO7 101
+.node_map MUDV 96
+.node_map LDO8 102
+.node_map LDO9 103
+X$RING 97 99 100 89 90 91 92 93 94 95 101 96 102 104 103 105 98 106 107 108 109 112 111 110 RINGgreenbank
+X$SERVICE 96 113 104 107 SERVICEgreenbank_301
+X$U1 98 pinprobe vars: pinprobe_description='Ground' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U10 101 pinprobe vars: pinprobe_description='Amplifier_LDO7' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U11 108 pinprobe vars: pinprobe_description='LDO_LDO12' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U12 112 pinprobe vars: pinprobe_description='LDO_LDO13' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U13 111 pinprobe vars: pinprobe_description='LDO_LDO14' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U14 106 pinprobe vars: pinprobe_description='LDO_LDO11' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U15 103 pinprobe vars: pinprobe_description='LDO_LDO9' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U16 102 pinprobe vars: pinprobe_description='LDO_LDO8' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U17 110 pinprobe vars: pinprobe_description='LDO_LDO15' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U18 105 pinprobe vars: pinprobe_description='LDO_LDO10' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U19 96 113 102 103 105 106 108 112 111 110 LDOgreenbank_301A
+X$U2 90 pinprobe vars: pinprobe_description='Amplifier_LDO1' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U21 96 89 113 90 91 97 92 99 93 100 94 109 95 101 AMPLIFIERgreenbank_301A1
+X$U3 96 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 91 pinprobe vars: pinprobe_description='Amplifier_LDO2' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 92 pinprobe vars: pinprobe_description='Amplifier_LDO3' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 93 pinprobe vars: pinprobe_description='Amplifier_LDO4' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U7 94 pinprobe vars: pinprobe_description='Amplifier_LDO5' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U8 89 pinprobe vars: pinprobe_description='Amplifier_LDO0' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 95 pinprobe vars: pinprobe_description='Amplifier_LDO6' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+.ends GREENBANK0_301A
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\RINGgreenbank.sxcmp
+.subckt RINGgreenbank 355 356 365 357 358 359 360 361 362 363 366 364 368 367 369 373 370 374 371 378 372 377 376 375
+*#hierarchy
+.node_map kelvin_MUDV 367
+.node_map kelvin_MUDGamplifier 372
+.node_map LDO10 373
+.node_map LDO11 374
+.node_map LDO12 378
+.node_map LDO13 377
+.node_map LDO14 376
+.node_map LDO15 375
+.node_map kelvin_MUDGservice 371
+.node_map sense_LDO2 355
+.node_map sense_LDO5 356
+.node_map sense_LDO7 365
+.node_map MUDG 370
+.node_map LDO0 357
+.node_map LDO1 358
+.node_map LDO2 359
+.node_map LDO3 360
+.node_map LDO4 361
+.node_map LDO5 362
+.node_map LDO6 363
+.node_map LDO7 366
+.node_map MUDV 364
+.node_map LDO8 368
+.node_map LDO9 369
+X$U1 364 367 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='vcc' pad_sense1='1' pad_sense2='no' pad_description='Supply' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=1
+X$U10 369 pinprobe vars: pinprobe_description='LDO9' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U11 368 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 364 pad vars: pad_absmax_wrt='pin' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='LDO8' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=22
+X$U12 368 pinprobe vars: pinprobe_description='LDO8' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U13 366 pinprobe vars: pinprobe_description='LDO7' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U14 366 365 207 208 209 210 211 212 213 214 215 216 217 218 219 220 364 pad vars: pad_absmax_wrt='pin' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='1' pad_sense2='no' pad_description='LDO7' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=23
+X$U15 362 pinprobe vars: pinprobe_description='LDO5' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U16 361 190 184 177 170 163 156 149 142 135 128 121 114 107 100 93 364 pad vars: pad_absmax_wrt='pin' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='LDO4' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=27
+X$U17 363 pinprobe vars: pinprobe_description='LDO6' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U18 374 280 281 282 283 284 285 286 287 288 289 290 291 292 293 294 364 pad vars: pad_absmax_wrt='pin' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='LDO11' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=19
+X$U19 359 355 182 175 168 161 154 147 140 133 126 119 112 105 98 91 364 pad vars: pad_absmax_wrt='pin' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='1' pad_sense2='no' pad_description='LDO2' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=29
+X$U2 364 pinprobe vars: pinprobe_description='Input_Supply'
+X$U20 358 188 181 174 167 160 153 146 139 132 125 118 111 104 97 90 364 pad vars: pad_absmax_wrt='pin' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='LDO1' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=30
+X$U21 358 pinprobe vars: pinprobe_description='LDO1' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U22 376 pinprobe vars: pinprobe_description='LDO14' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U23 360 189 183 176 169 162 155 148 141 134 127 120 113 106 99 92 364 pad vars: pad_absmax_wrt='pin' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='LDO3' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=28
+X$U24 361 pinprobe vars: pinprobe_description='LDO4' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U25 360 pinprobe vars: pinprobe_description='LDO3' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U26 357 pinprobe vars: pinprobe_description='LDO0' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U27 376 296 300 304 308 312 316 320 324 328 332 336 340 344 348 352 364 pad vars: pad_absmax_wrt='pin' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='LDO14' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=13
+X$U28 359 pinprobe vars: pinprobe_description='LDO2' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U29 375 295 299 303 307 311 315 319 323 327 331 335 339 343 347 351 364 pad vars: pad_absmax_wrt='pin' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='description' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=12
+X$U3 362 356 185 178 171 164 157 150 143 136 129 122 115 108 101 94 364 pad vars: pad_absmax_wrt='pin' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='1' pad_sense2='no' pad_description='LDO5' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=26
+X$U30 370 pinprobe vars: pinprobe_description='Ground'
+X$U31 378 298 302 306 310 314 318 322 326 330 334 338 342 346 350 354 364 pad vars: pad_absmax_wrt='pin' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='LDO12' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=15
+X$U32 375 pinprobe vars: pinprobe_description='LDO15' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U33 378 pinprobe vars: pinprobe_description='LDO12' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U34 377 pinprobe vars: pinprobe_description='LDO13' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U35 377 297 301 305 309 313 317 321 325 329 333 337 341 345 349 353 364 pad vars: pad_absmax_wrt='pin' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='LDO13' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=14
+X$U4 357 187 180 173 166 159 152 145 138 131 124 117 110 103 96 89 364 pad vars: pad_absmax_wrt='pin' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='LDO0' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=31
+X$U5 370 371 236 237 372 238 239 240 241 242 243 244 245 246 247 248 249 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='ground' pad_sense1='2' pad_sense2='no' pad_description='Ground' pad_combine='no' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=4
+X$U53 367 pinprobe vars: pinprobe_description='MUDV_kelvin_input' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U54 373 pinprobe vars: pinprobe_description='LDO10' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U57 371 pinprobe vars: pinprobe_description='GND_kelvin_input_SERVICE' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U58 372 pinprobe vars: pinprobe_description='GND_kelvin_Input_AMPLIFIER' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 363 191 186 179 172 165 158 151 144 137 130 123 116 109 102 95 364 pad vars: pad_absmax_wrt='pin' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='LDO6' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=25
+X$U62 355 pinprobe vars: pinprobe_description='LDO2_sense_input' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U63 356 pinprobe vars: pinprobe_description='LDO5_sense_input' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U64 365 pinprobe vars: pinprobe_description='LDO7_sense_input' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U7 373 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 364 pad vars: pad_absmax_wrt='pin' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='Data1' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=20
+X$U8 374 pinprobe vars: pinprobe_description='LDO11' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 369 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 364 pad vars: pad_absmax_wrt='pin' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='LDO9' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=21
+.ends RINGgreenbank
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\SERVICEgreenbank_301.sxcmp
+.subckt SERVICEgreenbank_301 244 245 246 247
+*#hierarchy
+.node_map REFoutput 252
+.node_map ref_output 171
+.node_map porb 248
+.node_map kelvin_MUDV 246
+.node_map REF0 250
+.node_map REF1 255
+.node_map REF2 257
+.node_map ok_reference0 254
+.node_map ok_reference1 264
+.node_map dft_bypass 263
+.node_map REF3 258
+.node_map REFinput 251
+.node_map SERVICEconfiguration$10 176
+.node_map ok_reference2 269
+.node_map REF4 259
+.node_map SERVICEconfiguration$11 177
+.node_map ok_reference3 270
+.node_map REF5 260
+.node_map BUS4$10 219
+.node_map SERVICEconfiguration$12 178
+.node_map ok_reference4 272
+.node_map BUS4$11 220
+.node_map SERVICEconfiguration$13 179
+.node_map ok_reference5 273
+.node_map BUS4$12 221
+.node_map SERVICEconfiguration$14 180
+.node_map enable_service 166
+.node_map BUS4$13 222
+.node_map SERVICEconfiguration$15 181
+.node_map BUS4$14 223
+.node_map BUS4$15 224
+.node_map BUS3$0 206
+.node_map BUS3$1 207
+.node_map BUS3$2 208
+.node_map REF 245
+.node_map kelvin_MUDGservice 247
+.node_map BUS6$10 238
+.node_map BUS6$11 239
+.node_map BUS6$12 240
+.node_map BUS6$13 241
+.node_map BUS4$0 209
+.node_map REFERENCEselect$10 192
+.node_map REF3I 275
+.node_map BUS6$14 242
+.node_map BUS4$1 210
+.node_map REFERENCEselect$11 193
+.node_map BUS6$15 243
+.node_map BUS4$2 211
+.node_map REFERENCEselect$12 194
+.node_map REFERENCEselect$0 182
+.node_map BUS4$3 212
+.node_map REFERENCEselect$13 195
+.node_map REFERENCEselect$1 183
+.node_map BUS4$4 213
+.node_map REFERENCEselect$14 196
+.node_map REFERENCEselect$2 184
+.node_map BUS4$5 214
+.node_map REFERENCEselect$15 197
+.node_map REFERENCEselect$3 185
+.node_map BUS4$6 215
+.node_map REFERENCEselect$4 186
+.node_map BUS4$7 216
+.node_map REFERENCEselect$5 187
+.node_map BUS5$0 225
+.node_map BUS4$8 217
+.node_map REFERENCEselect$6 188
+.node_map BUS5$1 226
+.node_map BUS4$9 218
+.node_map REFERENCEselect$7 189
+.node_map BUS5$2 227
+.node_map REFERENCEselect$8 190
+.node_map REFERENCEselect$9 191
+.node_map bypass_filter 253
+.node_map BUS6$0 228
+.node_map BUS6$1 229
+.node_map BUS6$2 230
+.node_map BUS6$3 231
+.node_map BUS6$4 232
+.node_map BUS6$5 233
+.node_map BUS6$6 234
+.node_map BUS6$7 235
+.node_map BUS6$8 236
+.node_map enable567 271
+.node_map BUS6$9 237
+.node_map SERVICEconfiguration$2 168
+.node_map SERVICEconfiguration$3 169
+.node_map SERVICEconfiguration$4 170
+.node_map SERVICEconfiguration$6 172
+.node_map SERVICEconfiguration$7 173
+.node_map dft_clock 265
+.node_map ok_service 261
+.node_map SERVICEconfiguration$8 174
+.node_map enable0 198
+.node_map SERVICEconfiguration$9 175
+.node_map enable1 199
+.node_map enable2 200
+.node_map disable_bypass 167
+.node_map MUDV 244
+.node_map enable3 201
+.node_map enable4 202
+.node_map enable5 203
+.node_map enable_reference567 268
+.node_map enable6 204
+.node_map enable7 205
+.node_map enable_reference0 249
+.node_map enable_reference1 256
+.node_map enable_reference2 262
+.node_map enable_reference3 266
+.node_map enable_reference4 267
+.node_map REF2I 274
+X$BYPASS 244 249 261 256 253 262 263 266 265 254 264 269 270 167 168 169 170 267 268 272 273 SERVICEgreenbankBYPASS
+X$datamap1 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 datamap0 vars: datamap_function='code' datamap_name='REF3output' datamap_description='Reference3_output' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_por01='0' datamap_por00='2' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='0.6V' datamap_code1='0.8V' datamap_code2='1.0V' datamap_code3='1.8V' datamap_code4='2.0V' datamap_code5='2.5V' datamap_code6='3.3V' datamap_code7='4.0V' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$datamap2 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 datamap0 vars: datamap_function='code' datamap_name='REF2output' datamap_description='Reference2_output' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_por01='0' datamap_por00='5' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='0.68V' datamap_code1='0.71V' datamap_code2='0.74V' datamap_code3='0.78V' datamap_code4='0.8V' datamap_code5='0.84V' datamap_code6='0.87V' datamap_code7='0.9V' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$datamap3 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 datamap0 vars: datamap_function='code' datamap_name='SERVICEconfiguration' datamap_description='SERVICE_configuration' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='yes' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='Enable_Service' datamap_function0_off='disable' datamap_function0_on='enable' datamap_function1='disable_bypass' datamap_function1_off='enable' datamap_function1_on='disable' datamap_function2='Filter_decode0' datamap_function2_off='11M,1.5M' datamap_function2_on='2M,2.5M' datamap_function3='Filter_decode1' datamap_function3_off='3M' datamap_function3_on='3.5M' datamap_function4='Filter_decode2' datamap_function4_off='4M' datamap_function4_on='4.5M' datamap_function5='Reference_output' datamap_function5_off='Filtered' datamap_function5_on='Live' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='0.68V' datamap_code1='0.71V' datamap_code2='0.74V' datamap_code3='0.78V' datamap_code4='0.8V' datamap_code5='0.84V' datamap_code6='0.87V' datamap_code7='0.9V' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=6 datamap_info=0 datamap_location=5 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=100 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$datamap4 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 datamap0 vars: datamap_function='code' datamap_name='REFERENCEselect' datamap_description='REFERENCE_selection_for_LDO' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='yes' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='Enable_Service' datamap_function0_off='disable' datamap_function0_on='enable' datamap_function1='disable_bypass' datamap_function1_off='enable' datamap_function1_on='disable' datamap_function2='Filter_decode0' datamap_function2_off='11M,1.5M' datamap_function2_on='2M,2.5M' datamap_function3='Filter_decode1' datamap_function3_off='3M' datamap_function3_on='3.5M' datamap_function4='Filter_decode2' datamap_function4_off='4M' datamap_function4_on='4.5M' datamap_function5='Reference_output' datamap_function5_off='Filtered' datamap_function5_on='Live' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='Reference0' datamap_code1='Reference1' datamap_code2='Reference2' datamap_code3='Reference3' datamap_code4='Reference4' datamap_code5='Reference5' datamap_code6='Reference5' datamap_code7='Reference5' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='3' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_info=0 datamap_location=5 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$FILTER 251 252 253 247 168 169 170 SERVICEgreenbankFILTER
+X$U1 247 275 161 162 163 228 229 230 resistor vars: resistor_control='adjustable_resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='pin' resistor_datasheet_adjust_name='REFERENCE2impedance' resistor_datasheet_adjust_description='Reference2_Impedance_to_0p8V' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=10 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=30 resistor_adjust1=40 resistor_adjust2=50 resistor_adjust3=90 resistor_adjust4=125 resistor_adjust5=150 resistor_adjust6=175 resistor_adjust7=200 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=6 resistor_imax=1m
+X$U10 273 260 268 139 244 reference  vars: reference_accuracy='yes' reference_trim_name='REFERENCE5accuracy' reference_trim_description='Reference5_Accuracy_to_0.8V' reference_lowiq='na' reference_lowiq_name='text' reference_lowiq_description='text' reference_cc_trim='yes' reference_factory_name='REFERENCE5curve' reference_factory_description='Reference5_Curvature_Correction_Accuracy' reference_bgout='no' reference_buffer='yes' reference_dft='no' reference_ref=800m reference_lowiq_por=0 reference_ccn_por=15 reference_ccp_por=15 reference_ifb=10 reference_vmax=6
+X$U11 198 249 248 VESPAasmINPUT1
+X$U12 258 275 225 226 227 164 165 247 capacitorfixed vars: capacitor_control='capacitor' capacitor_datasheet_accurate_name='text' capacitor_datasheet_accurate_description='text' capacitor_adjust_control='factory' capacitor_datasheet_adjust_name='text' capacitor_datasheet_adjust_description='text' capacitor_kelvin='yes' capacitor_type='tbd' capacitor_dft='no' capacitor_value=50 capacitor_accurate_value=1 capacitor_accurate_lsb=1 capacitor_adjust0=1 capacitor_adjust1=2 capacitor_adjust2=4 capacitor_adjust3=8 capacitor_adjust4=0 capacitor_adjust5=0 capacitor_adjust6=0 capacitor_adjust7=0 capacitor_adjust_por=4 capacitor_1=0 capacitor_vinitial=0 capacitor_0=0 capacitor_vmax=6 capacitor_maximumvoltage=6
+X$U14 251 252 245 244 171 amux2 vars: amux_control='pin' amux_datasheet_name='text' amux_datasheet_description='text' amux_tswitch='no' amux_inputs=2 amux_por=0 amux_ron=100 amux_vmax=6
+X$U15 199 256 248 VESPAasmINPUT1
+X$U16 165 celeranoconn vars: ='%'
+X$U17 244 246 128 166 248 porb vars: porb_enable='yes' porb_dft='no' porb_output='digital' porb_vmax=6
+X$U18 200 262 248 VESPAasmINPUT1
+X$U19 272 259 267 138 244 reference  vars: reference_accuracy='yes' reference_trim_name='REFERENCE4accuracy' reference_trim_description='Reference4_Accuracy_to_0.8V' reference_lowiq='na' reference_lowiq_name='text' reference_lowiq_description='text' reference_cc_trim='yes' reference_factory_name='REFERENCE4curve' reference_factory_description='Reference4_Curvature_Correction_Accuracy' reference_bgout='no' reference_buffer='yes' reference_dft='no' reference_ref=800m reference_lowiq_por=0 reference_ccn_por=15 reference_ccp_por=15 reference_ifb=1 reference_vmax=6
+X$U2 264 255 256 135 244 reference  vars: reference_accuracy='yes' reference_trim_name='REFERENCE1accuracy' reference_trim_description='Reference1_Accuracy_to_0.8V' reference_lowiq='na' reference_lowiq_name='text' reference_lowiq_description='text' reference_cc_trim='yes' reference_factory_name='REFERENCE1curve' reference_factory_description='Reference1_Curvature_Correction_Accuracy' reference_bgout='no' reference_buffer='no' reference_dft='no' reference_ref=800m reference_lowiq_por=0 reference_ccn_por=15 reference_ccp_por=15 reference_ifb=10 reference_vmax=6
+X$U21 198 199 200 201 202 203 204 205 182 183 184 166 decoder3 vars: decoder_type='pin' decoder_datasheet_name='text' decoder_datasheet_description='text' decoder_type_por='0' decoder_enable_pin='pin' decoder_timing='no' decoder_bits=3 decoder_enable_por=0 decoder_vmax=6
+X$U22 201 266 248 VESPAasmINPUT1
+X$U23 257 274 206 207 208 151 152 247 capacitorfixed vars: capacitor_control='capacitor' capacitor_datasheet_accurate_name='text' capacitor_datasheet_accurate_description='text' capacitor_adjust_control='factory' capacitor_datasheet_adjust_name='text' capacitor_datasheet_adjust_description='text' capacitor_kelvin='yes' capacitor_type='tbd' capacitor_dft='no' capacitor_value=50 capacitor_accurate_value=1 capacitor_accurate_lsb=1 capacitor_adjust0=1 capacitor_adjust1=2 capacitor_adjust2=4 capacitor_adjust3=8 capacitor_adjust4=0 capacitor_adjust5=0 capacitor_adjust6=0 capacitor_adjust7=0 capacitor_adjust_por=4 capacitor_1=0 capacitor_vinitial=0 capacitor_0=0 capacitor_vmax=6 capacitor_maximumvoltage=6
+X$U24 247 pinprobe vars: pinprobe_description='Kelvin_Ground_input' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd'
+X$U25 247 274 148 149 150 209 210 211 resistor vars: resistor_control='adjustable_resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='pin' resistor_datasheet_adjust_name='REFERENCE2accuracy' resistor_datasheet_adjust_description='Reference2_Impedance_to_0p8V' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=10 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=68 resistor_adjust1=71 resistor_adjust2=74 resistor_adjust3=77 resistor_adjust4=80 resistor_adjust5=83 resistor_adjust6=86 resistor_adjust7=89 resistor_adjust_por=4 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=6 resistor_imax=1m
+X$U26 152 celeranoconn vars: ='%'
+X$U27 274 141 142 143 144 145 146 147 244 262 269 140 currentgenerator vars: currentgenerator_polarity0='source' currentgenerator_polarity1='sink' currentgenerator_polarity2='sink' currentgenerator_polarity3='sink' currentgenerator_polarity4='sink' currentgenerator_polarity5='sink' currentgenerator_polarity6='sink' currentgenerator_polarity7='sink' currentgenerator_accuracy='yes' currentgenerator_datasheet_accuracy_name='REFERENCE2accuracy' currentgenerator_datasheet_accuracy_description='REFERENCE2_accuracy_0p8V' currentgenerator_tempco='zero' currentgenerator_dft='no' currentgenerator_output0=10 currentgenerator_output1=1 currentgenerator_output2=1 currentgenerator_output3=1 currentgenerator_output4=1 currentgenerator_output5=1 currentgenerator_output6=1 currentgenerator_output7=1 currentgenerator_number=1 currentgenerator_tempco_gain=3 currentgenerator_vmax=6 currentgenerator_vout=6
+X$U3 244 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U31 250 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SERVICEreference0' dftprobe_description='SERVICE_reference0' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U32 255 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SERVICEreference1' dftprobe_description='SERVICE_reference1' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U33 257 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SERVICEreference2' dftprobe_description='SERVICE_reference2' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U34 258 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SERVICEreference3' dftprobe_description='SERVICE_reference3' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U35 263 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SERVICEbypass' dftprobe_description='Measure_Reference_bypass_time' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U36 261 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SERVICEok' dftprobe_description='Measure_SERVICE_ready_flag' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U37 271 268 248 VESPAasmINPUT1
+X$U38 202 267 248 VESPAasmINPUT1
+X$U39 260 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SERVICEreference5' dftprobe_description='SERVICE_reference5' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U4 254 250 249 129 244 reference  vars: reference_accuracy='yes' reference_trim_name='REFERENCE0accuracy' reference_trim_description='Reference0_Accuracy_to_0.8V' reference_lowiq='na' reference_lowiq_name='text' reference_lowiq_description='text' reference_cc_trim='yes' reference_factory_name='REFERENCE0curve' reference_factory_description='Reference0_Curvature_Correction_Accuracy' reference_bgout='no' reference_buffer='no' reference_dft='no' reference_ref=800m reference_lowiq_por=0 reference_ccn_por=15 reference_ccp_por=15 reference_ifb=1 reference_vmax=6
+X$U40 259 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SERVICEreference4' dftprobe_description='SERVICE_reference4' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U41 137 271 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U46 203 204 137 205 nor3 vars: logicgate_type='nor3' logicgate_vmax=6
+X$U5 246 pinprobe vars: pinprobe_description='Kelvin_Regulated_input_supply' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd'
+X$U6 265 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SERVICEclock' dftprobe_description='Measure_crossover_clock_timer' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U7 275 154 155 156 157 158 159 160 244 266 270 153 currentgenerator vars: currentgenerator_polarity0='source' currentgenerator_polarity1='sink' currentgenerator_polarity2='sink' currentgenerator_polarity3='sink' currentgenerator_polarity4='sink' currentgenerator_polarity5='sink' currentgenerator_polarity6='sink' currentgenerator_polarity7='sink' currentgenerator_accuracy='yes' currentgenerator_datasheet_accuracy_name='REFERENCE2accuracy' currentgenerator_datasheet_accuracy_description='REFERENCE2_accuracy_0p8V' currentgenerator_tempco='zero' currentgenerator_dft='no' currentgenerator_output0=20 currentgenerator_output1=1 currentgenerator_output2=1 currentgenerator_output3=1 currentgenerator_output4=1 currentgenerator_output5=1 currentgenerator_output6=1 currentgenerator_output7=1 currentgenerator_number=1 currentgenerator_tempco_gain=3 currentgenerator_vmax=6 currentgenerator_vout=6
+X$U8 245 pinprobe vars: pinprobe_description='Reference_output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 250 255 257 258 259 260 131 132 251 244 182 183 184 amux8 vars: amux_control='pin' amux_datasheet_name='text' amux_datasheet_description='text' amux_tswitch='no' amux_inputs=6 amux_por=0 amux_ron=100 amux_vmax=6
+X$USERVICEreference 245 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SERVICEreference' dftprobe_description='text' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+.ends SERVICEgreenbank_301
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\SERVICEgreenbankBYPASS.sxcmp
+.subckt SERVICEgreenbankBYPASS 134 135 136 137 138 144 145 149 150 140 155 162 165 171 164 168 159 154 158 167 170
+*#hierarchy
+.node_map ok_reference0 140
+.node_map ok_reference1 155
+.node_map dft_bypass 145
+.node_map ok_reference2 162
+.node_map disable_bypasss 172
+.node_map ok_reference3 165
+.node_map ok_reference4 167
+.node_map ok_reference5 170
+.node_map enable_clock 148
+.node_map fr2BAR 160
+.node_map goDELAY0 143
+.node_map goDELAY1 157
+.node_map clock 147
+.node_map bypass_filter 138
+.node_map fdelay0 130
+.node_map fdelay1 131
+.node_map fdelay2 132
+.node_map fdelay3 133
+.node_map goDELAYBAR 161
+.node_map filter_resistor$0 164
+.node_map filter_resistor$1 168
+.node_map dft_clock 150
+.node_map ok_service 136
+.node_map filter_resistor$2 159
+.node_map disable_bypass 171
+.node_map MUDV 134
+.node_map bypass_out 163
+.node_map enable_reference567 158
+.node_map ok_clock 152
+.node_map enable_reference0 135
+.node_map enable_reference1 137
+.node_map enable_reference2 144
+.node_map enable_reference3 149
+.node_map enable_reference4 154
+.node_map ok0 139
+.node_map bypass_outBAR 166
+.node_map ok1 141
+.node_map ok2 146
+.node_map ok3 151
+.node_map ok4 153
+.node_map ok5 156
+.node_map go 142
+.node_map disable_bypassBAR 169
+X$oscillator1 152 134 147 125 123 122 148 124 126 oscillatorcrude vars: osc_type='crude' osc_accuracy='no' osc_datasheet_accuracy_name='text' osc_datasheet_accuracy_description='text' osc_enable='pin' osc_enable_por='disable' osc_datasheet_enable_name='text' osc_datasheet_enable_description='text' osc_ss='no' osc_standbyclock='no' osc_standbyclockpor='disable' osc_ext_freq_default='no' osc_crystalbias='3.3' osc_crystalglobalref='yes' osc_ss_configuration='fixed' osc_ss_enable_control='fixed' osc_ss_mode_por='sweep' osc_ss_enable_por='enable' osc_ss_clock_sync='synchronized' osc_ss_datasheetname='text' osc_dft='no' osc_ibias='global' osc_int_freq=1k osc_int_duty=50 osc_int_ireplica_gain=10 osc_int_1=0 osc_ext_freq=1k osc_ext_resistor=50 osc_ext_duty=50 osc_ext_replicagain=0 osc_ext_comment=0 osc_crude_freq=32 osc_crude_generatesupply=3.3 osc_crude_duty=50 osc_crystalfreq=1 osc_crystalreflocal=1 osc_crystalcleancountpor=32 osc_ringfreq=20 osc_ss_range_por=5 osc_ss_clock_independent=50 osc_ss_clock_divide=64 osc_vmax=6
+X$U1 145 163 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U10 136 142 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U11 172 pinprobe vars: pinprobe_description='Disable_Filter_bypass_control' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U13 148 163 152 169 VESPAasmINPUT2
+X$U16 150 147 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U17 150 pinprobe vars: pinprobe_description='Measure_Filter_Clock' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U18 154 pinprobe vars: pinprobe_description='enable_reference4' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U2 145 pinprobe vars: pinprobe_description='Measure_filter_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U20 158 pinprobe vars: pinprobe_description='enable_reference5' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U21 167 pinprobe vars: pinprobe_description='Reference4_enabled_and_ready' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U22 170 pinprobe vars: pinprobe_description='Reference5_enabled_and_ready' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U23 155 pinprobe vars: pinprobe_description='Reference1_enabled_and_ready' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U24 144 pinprobe vars: pinprobe_description='enable_reference2' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U25 162 pinprobe vars: pinprobe_description='Reference2_enabled_and_ready' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U26 149 pinprobe vars: pinprobe_description='enable_reference3' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U27 140 pinprobe vars: pinprobe_description='Reference0_enabled_and_ready' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U28 129 138 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='fall' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=5 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U29 166 129 142 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U3 135 pinprobe vars: pinprobe_description='enable_reference0' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U30 142 143 147 130 131 120 delayclock vars: delay_type='clock' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=4 delayclock_por=0 delayclock_count0=52 delayclock_count1=77 delayclock_count2=103 delayclock_count3=128 delayclock_0=0 delayclock_freq=32
+X$U31 165 pinprobe vars: pinprobe_description='Reference3_enabled_and_ready' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U32 170 156 158 VESPAasmINPUT1
+X$U33 140 139 135 VESPAasmINPUT1
+X$U34 163 166 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U35 159 160 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U36 160 130 164 VESPAasmINPUT1
+X$U37 160 131 168 VESPAasmINPUT1
+X$U38 159 133 168 VESPAasmINPUT1
+X$U39 159 132 164 VESPAasmINPUT1
+X$U4 161 148 142 VESPAasmINPUT1
+X$U40 142 157 147 132 133 128 delayclock vars: delay_type='clock' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=4 delayclock_por=0 delayclock_count0=154 delayclock_count1=180 delayclock_count2=205 delayclock_count3=231 delayclock_0=0 delayclock_freq=32
+X$U41 143 161 157 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U42 155 141 137 VESPAasmINPUT1
+X$U43 162 146 144 VESPAasmINPUT1
+X$U44 165 151 149 VESPAasmINPUT1
+X$U45 167 153 154 VESPAasmINPUT1
+X$U46 139 141 121 146 nor3 vars: logicgate_type='nor3' logicgate_vmax=6
+X$U47 151 153 127 156 nor3 vars: logicgate_type='nor3' logicgate_vmax=6
+X$U48 121 142 127 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U49 171 169 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U5 137 pinprobe vars: pinprobe_description='enable_reference1' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 134 pinprobe vars: pinprobe_description='Regulated_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U7 136 pinprobe vars: pinprobe_description='SERVICE_is_enabled_and_ready' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U8 138 pinprobe vars: pinprobe_description='Bypass_filter_control' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+.ends SERVICEgreenbankBYPASS
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT2.sxcmp
+.subckt VESPAasmINPUT2 7 8 9 6
+*#hierarchy
+.node_map Tstate 6
+.node_map i0 7
+.node_map i1 9
+.node_map o 8
+X$U1 6 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 9 pinprobe vars: pinprobe_description='input1'
+X$U3 8 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 6 9 5 7 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U5 5 8 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U6 7 pinprobe vars: pinprobe_description='input0'
+.ends VESPAasmINPUT2
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\SERVICEgreenbankFILTER.sxcmp
+.subckt SERVICEgreenbankFILTER 37 38 39 40 28 29 30
+*#hierarchy
+.node_map REFoutput 38
+.node_map REFinput 37
+.node_map BUS1$0 31
+.node_map BUS1$1 32
+.node_map BUS1$2 33
+.node_map BUS2$0 34
+.node_map BUS2$1 35
+.node_map BUS2$2 36
+.node_map kelvin_MUDGservice 40
+.node_map bypass_filter 39
+.node_map filter_resistor$0 28
+.node_map filter_resistor$1 29
+.node_map filter_resistor$2 30
+X$U1 37 38 39 switchtransmission vars: switch_type='transmission' switch_polarity='noninvert' switch_model='celera' switch_ron=500 switch_pulldownvmax=6 switch_vmax=6
+X$U10 20 38 31 32 33 26 23 40 capacitorfixed vars: capacitor_control='capacitor' capacitor_datasheet_accurate_name='text' capacitor_datasheet_accurate_description='text' capacitor_adjust_control='factory' capacitor_datasheet_adjust_name='REFERENCEfilterCAPACITOR' capacitor_datasheet_adjust_description='REFERENCE_filter_capacitance' capacitor_kelvin='no' capacitor_type='tbd' capacitor_dft='no' capacitor_value=50 capacitor_accurate_value=1 capacitor_accurate_lsb=1 capacitor_adjust0=40 capacitor_adjust1=50 capacitor_adjust2=50 capacitor_adjust3=50 capacitor_adjust4=0 capacitor_adjust5=0 capacitor_adjust6=0 capacitor_adjust7=0 capacitor_adjust_por=4 capacitor_1=0 capacitor_vinitial=0 capacitor_0=0 capacitor_vmax=6 capacitor_maximumvoltage=6
+X$U12 21 38 34 35 36 27 24 40 capacitorfixed vars: capacitor_control='capacitor' capacitor_datasheet_accurate_name='text' capacitor_datasheet_accurate_description='text' capacitor_adjust_control='factory' capacitor_datasheet_adjust_name='REFERENCEfilterCAPACITOR' capacitor_datasheet_adjust_description='REFERENCE_filter_capacitance' capacitor_kelvin='no' capacitor_type='tbd' capacitor_dft='no' capacitor_value=50 capacitor_accurate_value=1 capacitor_accurate_lsb=1 capacitor_adjust0=40 capacitor_adjust1=50 capacitor_adjust2=50 capacitor_adjust3=50 capacitor_adjust4=0 capacitor_adjust5=0 capacitor_adjust6=0 capacitor_adjust7=0 capacitor_adjust_por=4 capacitor_1=0 capacitor_vinitial=0 capacitor_0=0 capacitor_vmax=6 capacitor_maximumvoltage=6
+X$U2 38 37 19 22 25 28 29 30 resistor vars: resistor_control='adjustable_resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='pin' resistor_datasheet_adjust_name='REFERENCEfilterRESISTOR' resistor_datasheet_adjust_description='Reference_output_filter' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=10 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=1k resistor_adjust1=1.5k resistor_adjust2=2k resistor_adjust3=2.5k resistor_adjust4=3k resistor_adjust5=3.5k resistor_adjust6=4k resistor_adjust7=4.5k resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=6 resistor_imax=1m
+X$U3 37 pinprobe vars: pinprobe_description='Reference_input' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 38 pinprobe vars: pinprobe_description='Reference_filtered_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 39 pinprobe vars: pinprobe_description='bypass_reference_filter' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 40 pinprobe vars: pinprobe_description='Kelvin_ground' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+.ends SERVICEgreenbankFILTER
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT1.sxcmp
+.subckt VESPAasmINPUT1 5 6 7
+*#hierarchy
+.node_map Tstate 5
+.node_map i0 7
+.node_map o 6
+X$U1 5 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 7 pinprobe vars: pinprobe_description='input1'
+X$U3 6 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 5 4 7 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U5 4 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+.ends VESPAasmINPUT1
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\LDOgreenbank_301A.sxcmp
+.subckt LDOgreenbank_301A 108 109 110 111 112 113 115 118 120 121
+*#hierarchy
+.node_map LDOconfiguration$0 76
+.node_map LDOconfiguration$1 77
+.node_map LDOconfiguration$2 78
+.node_map LDOconfiguration$3 79
+.node_map dft_startup10 124
+.node_map enable_ldo10 117
+.node_map LDOconfiguration$4 80
+.node_map dft_startup11 125
+.node_map enable_ldo11 119
+.node_map LDOconfiguration$5 81
+.node_map dft_startup12 126
+.node_map enable_ldo12 92
+.node_map LDOconfiguration$6 82
+.node_map dft_startup13 127
+.node_map enable_ldo13 93
+.node_map LDOconfiguration$7 83
+.node_map dft_startup14 128
+.node_map enable_ldo14 94
+.node_map LDOconfiguration$8 84
+.node_map dft_startup15 129
+.node_map enable_ldo15 95
+.node_map LDOconfiguration$9 85
+.node_map LDOconfigurationB$4 96
+.node_map LDOconfigurationB$5 97
+.node_map LDOconfigurationB$6 98
+.node_map LDOconfiguration$10 86
+.node_map LDOconfigurationB$7 99
+.node_map LDOconfiguration$11 87
+.node_map LDOconfigurationB$8 100
+.node_map LDOconfiguration$12 88
+.node_map LDO10 112
+.node_map LDOconfigurationB$9 101
+.node_map LDOconfiguration$13 89
+.node_map LDO11 113
+.node_map LDOconfiguration$14 90
+.node_map LDO12 115
+.node_map LDOconfiguration$15 91
+.node_map LDO13 118
+.node_map LDO14 120
+.node_map LDO15 121
+.node_map REF 109
+.node_map enable_ldo8 114
+.node_map enable_ldo9 116
+.node_map LDOconfigurationB$10 102
+.node_map dft_startup8 122
+.node_map LDOconfigurationB$11 103
+.node_map dft_startup9 123
+.node_map LDOconfigurationB$12 104
+.node_map LDOconfigurationB$13 105
+.node_map LDOconfigurationB$14 106
+.node_map LDOconfigurationB$15 107
+.node_map MUDV 108
+.node_map LDO8 110
+.node_map LDO9 111
+X$datamap1 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 datamap0 vars: datamap_function='function' datamap_name='LDOconfigurationA' datamap_description='LDO_configurationA' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='21' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='LDO8' datamap_function0_off='disable' datamap_function0_on='enable' datamap_function1='LDO9' datamap_function1_off='disable' datamap_function1_on='enable' datamap_function2='LDO10' datamap_function2_off='disable' datamap_function2_on='enable' datamap_function3='LDO11' datamap_function3_off='disable' datamap_function3_on='enable' datamap_function4='LDO12' datamap_function4_off='disable' datamap_function4_on='enable' datamap_function5='LDO13' datamap_function5_off='disable' datamap_function5_on='enable' datamap_function6='LDO14' datamap_function6_off='disable' datamap_function6_on='enable' datamap_function7='LDO15' datamap_function7_off='disable' datamap_function7_on='enable' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=4 datamap_info=0 datamap_location=3 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=200 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$datamap2 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 datamap0 vars: datamap_function='function' datamap_name='LDOconfigurationA' datamap_description='LDO_configurationA' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='22' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='LDO8' datamap_function0_off='disable' datamap_function0_on='enable' datamap_function1='LDO9' datamap_function1_off='disable' datamap_function1_on='enable' datamap_function2='LDO10' datamap_function2_off='disable' datamap_function2_on='enable' datamap_function3='LDO11' datamap_function3_off='disable' datamap_function3_on='enable' datamap_function4='LDO12' datamap_function4_off='disable' datamap_function4_on='enable' datamap_function5='LDO13' datamap_function5_off='disable' datamap_function5_on='enable' datamap_function6='LDO14' datamap_function6_off='disable' datamap_function6_on='enable' datamap_function7='LDO15' datamap_function7_off='disable' datamap_function7_on='enable' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=4 datamap_info=0 datamap_location=7 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=200 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$LDOconfigNO1 108 121 95 129 LDOgreenbankLDOfixed40mA
+X$LDOCONFIGURE1 108 112 109 124 117 LDOgreenbankLDOconfigure
+X$LDOCONFIGURE20mA 108 120 109 128 94 LDOgreenbankLDOconfigure20mA
+X$LDOFIXED 108 110 109 122 114 LDOgreenbankLDOfixed
+X$LDOFIXED1 108 115 109 126 92 LDOgreenbankLDOfixed20mA
+X$LDOSTANDALONE 108 111 123 116 LDOgreenbankLDOstandalone
+X$LDOSTANDALONE20mA 108 118 93 127 LDOgreenbankLDOstandalone20mA
+X$LDOUNITY 108 113 109 125 119 LDOgreenbankLDOunity
+X$U1 122 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP8' dftprobe_description='Startup_LDO8' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U10 112 pinprobe vars: pinprobe_description='LDO_configure_100mA' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U11 118 pinprobe vars: pinprobe_description='LDO_standalone_20mA' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U12 113 pinprobe vars: pinprobe_description='LDO_unity_20mA' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U13 115 pinprobe vars: pinprobe_description='LDO_fixed_20mA' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U14 121 pinprobe vars: pinprobe_description='LDO_control_fixed_40mA' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U15 120 pinprobe vars: pinprobe_description='LDO_configure_20mA' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U16 126 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP12' dftprobe_description='Startup_LDO12' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U17 127 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP13' dftprobe_description='Startup_LDO13' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U18 128 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP14' dftprobe_description='Startup_LDO14' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U19 129 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP15' dftprobe_description='Startup_LDO15' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U2 110 pinprobe vars: pinprobe_description='LDO_fixed_100mA' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U3 108 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U5 123 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP9' dftprobe_description='Startup_LDO9' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U6 124 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP10' dftprobe_description='Startup_LDO10' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U7 109 pinprobe vars: pinprobe_description='Reference_input' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
+X$U8 125 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP11' dftprobe_description='Startup_LDO11' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U9 111 pinprobe vars: pinprobe_description='LDO_standalone_100mA' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+.ends LDOgreenbank_301A
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\LDOgreenbankLDOfixed40mA.sxcmp
+.subckt LDOgreenbankLDOfixed40mA 26 27 29 30
+*#hierarchy
+.node_map BUS1$0 23
+.node_map BUS1$1 24
+.node_map BUS1$2 25
+.node_map enable_ldo 29
+.node_map LDO 27
+.node_map dft_startup 30
+.node_map ok_ldo 28
+.node_map MUDV 26
+X$LDO1 26 27 29 28 16 17 18 23 24 25 19 20 21 22 IPOTTldo vars: ldo_output='single' ldo_outputcontrol='factory' ldo_outputname='text' ldo_outputdescription='text' ldo_accuracy='low' ldo_accuracyname='LDO15accuracy' ldo_accuracydescription='LDO15_Accuracy_3p3' ldo_currentaccuracy='no' ldo_currentaccuracy_name='text' ldo_currentaccuracy_description='text' ldo_reference='standalone' ldo_psrr='low' ldo_noise='low' ldo_discharge='no' ldo_fault='no' ldo_feedbackcontrol='internal' ldo_uvlocontrol='no' ldo_enable='digital' ldo_calibration='no' ldo_ifbdesign='calculate' ldo_dft='no' ldo_railcontrol='no' ldo_voltagein=6 ldo_outputpor=0 ldo_outputvoltage0=3.3 ldo_outputvoltage1=0 ldo_outputvoltage2=0 ldo_outputvoltage3=0 ldo_outputvoltage4=0 ldo_outputvoltage5=0 ldo_outputvoltage6=0 ldo_outputvoltage7=0 ldo_currentoutput=40 ldo_dropout=100 ldo_referencelocal=800m ldo_uvlo=2.5 ldo_ifb=10 ldo_uvloifb=10 ldo_vmax=6 ldo_rail=2.5 ldo_outputcap=1
+X$U2 30 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 26 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 29 pinprobe vars: pinprobe_description='enable_ldo' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 29 28 30 VESPAdftpulse
+X$U8 27 pinprobe vars: pinprobe_description='Reference_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+.ends LDOgreenbankLDOfixed40mA
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAdftpulse.sxcmp
+.subckt VESPAdftpulse 7 8 9
+*#hierarchy
+.node_map start 7
+.node_map stop 8
+.node_map pulse 9
+X$U11 7 pinprobe vars: pinprobe_description='DFT_timer_start_input'
+X$U15 8 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U17 8 pinprobe vars: pinprobe_description='DFT_timer_stop_input'
+X$U52 7 4 6 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U53 4 5 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U55 9 5 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U8 9 pinprobe vars: pinprobe_description='DFT_Timer_pulse'
+.ends VESPAdftpulse
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\LDOgreenbankLDOconfigure.sxcmp
+.subckt LDOgreenbankLDOconfigure 31 32 33 36 37
+*#hierarchy
+.node_map BUS1$0 28
+.node_map BUS1$1 29
+.node_map BUS1$2 30
+.node_map REFin 34
+.node_map REF 33
+.node_map enable_ldo 37
+.node_map LDO 32
+.node_map dft_startup 36
+.node_map ok_ldo 35
+.node_map MUDV 31
+X$LDO1 31 32 37 35 22 23 34 28 29 30 24 25 26 27 IPOTTldo vars: ldo_output='configurable' ldo_outputcontrol='factory' ldo_outputname='LDO10confiuration' ldo_outputdescription='LDO10_configuration' ldo_accuracy='low' ldo_accuracyname='LDO10accuracy' ldo_accuracydescription='LDO10_Accuracy_2p0' ldo_currentaccuracy='no' ldo_currentaccuracy_name='text' ldo_currentaccuracy_description='text' ldo_reference='local' ldo_psrr='low' ldo_noise='low' ldo_discharge='no' ldo_fault='no' ldo_feedbackcontrol='internal' ldo_uvlocontrol='no' ldo_enable='digital' ldo_calibration='yes' ldo_ifbdesign='calculate' ldo_dft='no' ldo_railcontrol='no' ldo_voltagein=6 ldo_outputpor=0 ldo_outputvoltage0=2 ldo_outputvoltage1=2.3 ldo_outputvoltage2=2.5 ldo_outputvoltage3=2.7 ldo_outputvoltage4=3 ldo_outputvoltage5=3.3 ldo_outputvoltage6=3.6 ldo_outputvoltage7=4 ldo_currentoutput=10 ldo_dropout=50 ldo_referencelocal=1 ldo_uvlo=2.5 ldo_ifb=1 ldo_uvloifb=10 ldo_vmax=6 ldo_rail=2.5 ldo_outputcap=1
+X$U2 36 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 31 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 33 pinprobe vars: pinprobe_description='REference_input_0p8V' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 37 pinprobe vars: pinprobe_description='enable_ldo' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 37 35 36 VESPAdftpulse
+X$U8 32 pinprobe vars: pinprobe_description='Reference_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 33 34 37 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' switch_model='celera' switch_ron=100 switch_pulldownvmax=6 switch_vmax=6
+.ends LDOgreenbankLDOconfigure
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\LDOgreenbankLDOconfigure20mA.sxcmp
+.subckt LDOgreenbankLDOconfigure20mA 31 32 33 36 37
+*#hierarchy
+.node_map BUS1$0 28
+.node_map BUS1$1 29
+.node_map BUS1$2 30
+.node_map REFin 34
+.node_map REF 33
+.node_map enable_ldo 37
+.node_map LDO 32
+.node_map dft_startup 36
+.node_map ok_ldo 35
+.node_map MUDV 31
+X$LDO1 31 32 37 35 22 23 34 28 29 30 24 25 26 27 IPOTTldo vars: ldo_output='configurable' ldo_outputcontrol='factory' ldo_outputname='LDO14confiuration' ldo_outputdescription='LDO14_configuration' ldo_accuracy='low' ldo_accuracyname='LDO14accuracy' ldo_accuracydescription='LDO14_Accuracy_2p0' ldo_currentaccuracy='no' ldo_currentaccuracy_name='text' ldo_currentaccuracy_description='text' ldo_reference='local' ldo_psrr='low' ldo_noise='low' ldo_discharge='no' ldo_fault='no' ldo_feedbackcontrol='internal' ldo_uvlocontrol='no' ldo_enable='digital' ldo_calibration='yes' ldo_ifbdesign='calculate' ldo_dft='no' ldo_railcontrol='no' ldo_voltagein=6 ldo_outputpor=0 ldo_outputvoltage0=2 ldo_outputvoltage1=2.3 ldo_outputvoltage2=2.5 ldo_outputvoltage3=2.7 ldo_outputvoltage4=3 ldo_outputvoltage5=3.3 ldo_outputvoltage6=3.6 ldo_outputvoltage7=4 ldo_currentoutput=20 ldo_dropout=100 ldo_referencelocal=800m ldo_uvlo=2.5 ldo_ifb=10 ldo_uvloifb=10 ldo_vmax=6 ldo_rail=2.5 ldo_outputcap=1
+X$U2 36 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 31 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 33 pinprobe vars: pinprobe_description='REference_input_0p8V' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 37 pinprobe vars: pinprobe_description='enable_ldo' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 37 35 36 VESPAdftpulse
+X$U8 32 pinprobe vars: pinprobe_description='Reference_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 33 34 37 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' switch_model='celera' switch_ron=100 switch_pulldownvmax=6 switch_vmax=6
+.ends LDOgreenbankLDOconfigure20mA
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\LDOgreenbankLDOfixed.sxcmp
+.subckt LDOgreenbankLDOfixed 31 32 33 34 35
+*#hierarchy
+.node_map BUS1$0 28
+.node_map BUS1$1 29
+.node_map BUS1$2 30
+.node_map REFin 36
+.node_map REF 33
+.node_map enable_ldo 35
+.node_map LDO 32
+.node_map dft_startup 34
+.node_map ok_ldo 37
+.node_map MUDV 31
+X$LDO1 31 32 35 37 22 23 36 28 29 30 24 25 26 27 IPOTTldo vars: ldo_output='single' ldo_outputcontrol='pin' ldo_outputname='text' ldo_outputdescription='text' ldo_accuracy='low' ldo_accuracyname='LDO8accuracy' ldo_accuracydescription='LDO8accuracy_3p3V' ldo_currentaccuracy='no' ldo_currentaccuracy_name='text' ldo_currentaccuracy_description='text' ldo_reference='local' ldo_psrr='low' ldo_noise='low' ldo_discharge='no' ldo_fault='no' ldo_feedbackcontrol='internal' ldo_uvlocontrol='no' ldo_enable='digital' ldo_calibration='no' ldo_ifbdesign='calculate' ldo_dft='yes' ldo_railcontrol='no' ldo_voltagein=6 ldo_outputpor=0 ldo_outputvoltage0=3.3 ldo_outputvoltage1=0 ldo_outputvoltage2=0 ldo_outputvoltage3=0 ldo_outputvoltage4=0 ldo_outputvoltage5=0 ldo_outputvoltage6=0 ldo_outputvoltage7=0 ldo_currentoutput=100 ldo_dropout=100 ldo_referencelocal=800m ldo_uvlo=2.5 ldo_ifb=10 ldo_uvloifb=10 ldo_vmax=6 ldo_rail=2.5 ldo_outputcap=1
+X$U2 34 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 31 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U4 33 pinprobe vars: pinprobe_description='REference_input_0p8V' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U5 35 pinprobe vars: pinprobe_description='enable_ldo' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='pad'
+X$U6 35 37 34 VESPAdftpulse
+X$U7 32 pinprobe vars: pinprobe_description='Reference_output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U9 33 36 35 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' switch_model='celera' switch_ron=100 switch_pulldownvmax=6 switch_vmax=6
+.ends LDOgreenbankLDOfixed
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\LDOgreenbankLDOfixed20mA.sxcmp
+.subckt LDOgreenbankLDOfixed20mA 31 32 33 36 37
+*#hierarchy
+.node_map BUS1$0 28
+.node_map BUS1$1 29
+.node_map BUS1$2 30
+.node_map REFin 34
+.node_map REF 33
+.node_map enable_ldo 37
+.node_map LDO 32
+.node_map dft_startup 36
+.node_map ok_ldo 35
+.node_map MUDV 31
+X$LDO1 31 32 37 35 22 23 34 28 29 30 24 25 26 27 IPOTTldo vars: ldo_output='single' ldo_outputcontrol='factory' ldo_outputname='text' ldo_outputdescription='text' ldo_accuracy='low' ldo_accuracyname='LDO12accuracy' ldo_accuracydescription='LDO12_Accuracy_2p3' ldo_currentaccuracy='no' ldo_currentaccuracy_name='text' ldo_currentaccuracy_description='text' ldo_reference='local' ldo_psrr='low' ldo_noise='low' ldo_discharge='no' ldo_fault='no' ldo_feedbackcontrol='internal' ldo_uvlocontrol='no' ldo_enable='digital' ldo_calibration='yes' ldo_ifbdesign='calculate' ldo_dft='yes' ldo_railcontrol='no' ldo_voltagein=6 ldo_outputpor=0 ldo_outputvoltage0=2.5 ldo_outputvoltage1=0 ldo_outputvoltage2=0 ldo_outputvoltage3=0 ldo_outputvoltage4=0 ldo_outputvoltage5=0 ldo_outputvoltage6=0 ldo_outputvoltage7=0 ldo_currentoutput=20 ldo_dropout=100 ldo_referencelocal=800m ldo_uvlo=2.5 ldo_ifb=10 ldo_uvloifb=10 ldo_vmax=6 ldo_rail=2.5 ldo_outputcap=1
+X$U2 36 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 31 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 33 pinprobe vars: pinprobe_description='REference_input_0p8V' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 37 pinprobe vars: pinprobe_description='enable_ldo' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 37 35 36 VESPAdftpulse
+X$U8 32 pinprobe vars: pinprobe_description='Reference_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 33 34 37 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' switch_model='celera' switch_ron=100 switch_pulldownvmax=6 switch_vmax=6
+.ends LDOgreenbankLDOfixed20mA
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\LDOgreenbankLDOstandalone.sxcmp
+.subckt LDOgreenbankLDOstandalone 26 27 30 29
+*#hierarchy
+.node_map BUS1$0 23
+.node_map BUS1$1 24
+.node_map BUS1$2 25
+.node_map enable_ldo 29
+.node_map LDO 27
+.node_map dft_startup 30
+.node_map ok_ldo 28
+.node_map MUDV 26
+X$LDO1 26 27 29 28 16 17 18 23 24 25 19 20 21 22 IPOTTldo vars: ldo_output='single' ldo_outputcontrol='factory' ldo_outputname='text' ldo_outputdescription='text' ldo_accuracy='low' ldo_accuracyname='LDO9accuracy' ldo_accuracydescription='LDO9_Accuracy_2p3' ldo_currentaccuracy='no' ldo_currentaccuracy_name='text' ldo_currentaccuracy_description='text' ldo_reference='standalone' ldo_psrr='low' ldo_noise='low' ldo_discharge='no' ldo_fault='no' ldo_feedbackcontrol='internal' ldo_uvlocontrol='no' ldo_enable='digital' ldo_calibration='yes' ldo_ifbdesign='calculate' ldo_dft='yes' ldo_railcontrol='no' ldo_voltagein=6 ldo_outputpor=0 ldo_outputvoltage0=2.3 ldo_outputvoltage1=0 ldo_outputvoltage2=0 ldo_outputvoltage3=0 ldo_outputvoltage4=0 ldo_outputvoltage5=0 ldo_outputvoltage6=0 ldo_outputvoltage7=0 ldo_currentoutput=100 ldo_dropout=100 ldo_referencelocal=800m ldo_uvlo=2.5 ldo_ifb=10 ldo_uvloifb=10 ldo_vmax=6 ldo_rail=2.5 ldo_outputcap=1
+X$U2 30 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 26 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 29 pinprobe vars: pinprobe_description='enable_ldo' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 29 28 30 VESPAdftpulse
+X$U8 27 pinprobe vars: pinprobe_description='Reference_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+.ends LDOgreenbankLDOstandalone
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\LDOgreenbankLDOstandalone20mA.sxcmp
+.subckt LDOgreenbankLDOstandalone20mA 26 27 29 30
+*#hierarchy
+.node_map BUS1$0 23
+.node_map BUS1$1 24
+.node_map BUS1$2 25
+.node_map enable_ldo 29
+.node_map LDO 27
+.node_map dft_startup 30
+.node_map ok_ldo 28
+.node_map MUDV 26
+X$LDO1 26 27 29 28 16 17 18 23 24 25 19 20 21 22 IPOTTldo vars: ldo_output='single' ldo_outputcontrol='factory' ldo_outputname='text' ldo_outputdescription='text' ldo_accuracy='low' ldo_accuracyname='LDO13accuracy' ldo_accuracydescription='LDO13_accuracy_at_3.3V' ldo_currentaccuracy='no' ldo_currentaccuracy_name='text' ldo_currentaccuracy_description='text' ldo_reference='standalone' ldo_psrr='low' ldo_noise='low' ldo_discharge='no' ldo_fault='no' ldo_feedbackcontrol='internal' ldo_uvlocontrol='no' ldo_enable='digital' ldo_calibration='yes' ldo_ifbdesign='calculate' ldo_dft='yes' ldo_railcontrol='no' ldo_voltagein=6 ldo_outputpor=0 ldo_outputvoltage0=3.3 ldo_outputvoltage1=0 ldo_outputvoltage2=0 ldo_outputvoltage3=0 ldo_outputvoltage4=0 ldo_outputvoltage5=0 ldo_outputvoltage6=0 ldo_outputvoltage7=0 ldo_currentoutput=20 ldo_dropout=100 ldo_referencelocal=800m ldo_uvlo=2.5 ldo_ifb=10 ldo_uvloifb=10 ldo_vmax=6 ldo_rail=2.5 ldo_outputcap=1
+X$U2 30 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 26 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 29 pinprobe vars: pinprobe_description='enable_ldo' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 29 28 30 VESPAdftpulse
+X$U8 27 pinprobe vars: pinprobe_description='Reference_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+.ends LDOgreenbankLDOstandalone20mA
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\LDOgreenbankLDOunity.sxcmp
+.subckt LDOgreenbankLDOunity 31 32 33 36 37
+*#hierarchy
+.node_map BUS1$0 28
+.node_map BUS1$1 29
+.node_map BUS1$2 30
+.node_map REFin 34
+.node_map REF 33
+.node_map enable_ldo 37
+.node_map LDO 32
+.node_map dft_startup 36
+.node_map ok_ldo 35
+.node_map MUDV 31
+X$LDO1 31 32 37 35 22 23 34 28 29 30 24 25 26 27 IPOTTldo vars: ldo_output='unity' ldo_outputcontrol='factory' ldo_outputname='text' ldo_outputdescription='text' ldo_accuracy='low' ldo_accuracyname='LDO11accuracy' ldo_accuracydescription='LDO11_Accuracy_2p0' ldo_currentaccuracy='no' ldo_currentaccuracy_name='text' ldo_currentaccuracy_description='text' ldo_reference='local' ldo_psrr='low' ldo_noise='low' ldo_discharge='no' ldo_fault='no' ldo_feedbackcontrol='internal' ldo_uvlocontrol='no' ldo_enable='digital' ldo_calibration='yes' ldo_ifbdesign='calculate' ldo_dft='no' ldo_railcontrol='no' ldo_voltagein=6 ldo_outputpor=0 ldo_outputvoltage0=2.5 ldo_outputvoltage1=2.3 ldo_outputvoltage2=2.5 ldo_outputvoltage3=2.7 ldo_outputvoltage4=3 ldo_outputvoltage5=3.3 ldo_outputvoltage6=3.6 ldo_outputvoltage7=4 ldo_currentoutput=100 ldo_dropout=100 ldo_referencelocal=800m ldo_uvlo=2.5 ldo_ifb=10 ldo_uvloifb=10 ldo_vmax=6 ldo_rail=2.5 ldo_outputcap=1
+X$U2 36 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 31 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 33 pinprobe vars: pinprobe_description='REference_input_0p8V' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 37 pinprobe vars: pinprobe_description='enable_ldo' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 37 35 36 VESPAdftpulse
+X$U8 32 pinprobe vars: pinprobe_description='Reference_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 33 34 37 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' switch_model='celera' switch_ron=100 switch_pulldownvmax=6 switch_vmax=6
+.ends LDOgreenbankLDOunity
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\AMPLIFIERgreenbank_301A1.sxcmp
+.subckt AMPLIFIERgreenbank_301A1 195 196 197 198 199 200 202 203 205 207 209 201 210 211
+*#hierarchy
+.node_map BUS1$10 146
+.node_map BUS1$11 147
+.node_map BUS1$12 148
+.node_map BUS1$13 149
+.node_map BUS1$14 150
+.node_map BUS4$10 181
+.node_map BUS1$15 151
+.node_map BUS4$11 182
+.node_map BUS4$12 183
+.node_map BUS4$13 184
+.node_map BUS4$14 185
+.node_map BUS4$15 186
+.node_map kelvin_MUDGamplifier 201
+.node_map BUS1$2 138
+.node_map BUS2$10 162
+.node_map BUS1$3 139
+.node_map BUS2$11 163
+.node_map BUS1$4 140
+.node_map BUS2$12 164
+.node_map BUS1$5 141
+.node_map BUS2$13 165
+.node_map BUS1$6 142
+.node_map BUS2$14 166
+.node_map BUS1$7 143
+.node_map BUS5$10 189
+.node_map BUS2$15 167
+.node_map BUS1$8 144
+.node_map BUS5$11 190
+.node_map BUS1$9 145
+.node_map BUS5$12 191
+.node_map BUS5$13 192
+.node_map BUS2$3 155
+.node_map BUS5$14 193
+.node_map BUS2$4 156
+.node_map BUS5$15 194
+.node_map BUS2$5 157
+.node_map BUS2$6 158
+.node_map BUS2$7 159
+.node_map BUS3$10 172
+.node_map BUS2$8 160
+.node_map BUS3$11 173
+.node_map BUS2$9 161
+.node_map BUS3$12 174
+.node_map BUS3$13 175
+.node_map REF 197
+.node_map BUS3$14 176
+.node_map enable_ldo0 120
+.node_map BUS3$15 177
+.node_map enable_ldo1 121
+.node_map BUS3$6 168
+.node_map enable_ldo2 122
+.node_map BUS3$7 169
+.node_map enable_ldo3 123
+.node_map BUS3$8 170
+.node_map enable_ldo4 124
+.node_map BUS3$9 171
+.node_map enable_ldo5 125
+.node_map enable_ldo6 126
+.node_map enable_ldo7 127
+.node_map BUS4$7 178
+.node_map BUS4$8 179
+.node_map BUS4$9 180
+.node_map sense_LDO2 200
+.node_map sense_LDO5 203
+.node_map sense_LDO7 207
+.node_map BUS5$8 187
+.node_map dft_startup0 136
+.node_map AMPLIFERconfiguration0$8 128
+.node_map BUS5$9 188
+.node_map dft_startup1 137
+.node_map AMPLIFERconfiguration0$10 130
+.node_map AMPLIFERconfiguration0$9 129
+.node_map dft_startup2 152
+.node_map AMPLIFERconfiguration0$11 131
+.node_map dft_startup3 153
+.node_map AMPLIFERconfiguration0$12 132
+.node_map dft_startup4 154
+.node_map AMPLIFERconfiguration0$13 133
+.node_map dft_startup5 204
+.node_map AMPLIFERconfiguration0$14 134
+.node_map dft_startup6 206
+.node_map AMPLIFERconfiguration0$15 135
+.node_map dft_startup7 208
+.node_map LDO0 196
+.node_map LDO1 198
+.node_map LDO2 199
+.node_map LDO3 202
+.node_map LDO4 205
+.node_map LDO5 209
+.node_map LDO6 210
+.node_map LDO7 211
+.node_map MUDV 195
+X$AMPCONTROLhigh 195 210 197 206 126 201 LDOgreenbankAMPcontrolHIGH
+X$AMPCONTROLlow 195 198 197 137 121 201 LDOgreenbankAMPcontrolLOW
+X$AMPCONTROLmedium 195 205 197 154 124 201 LDOgreenbankAMPcontrolMEDIUM
+X$AMPFIXEDlow 195 196 197 136 120 201 LDOgreenbankAMPfixedLOW
+X$AMPFIXEDmedium 195 202 197 153 123 201 LDOgreenbankAMPfixedMEDIUM
+X$AMPOPENhigh 195 211 197 208 127 207 LDOgreenbankAMPopenHIGH
+X$AMPOPENlow 195 199 197 152 122 200 LDOgreenbankAMPopenLOW
+X$AMPOPENmedium 195 209 197 204 125 203 LDOgreenbankAMPopenMEDIUM
+X$datamap1 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 datamap0 vars: datamap_function='function' datamap_name='AMPLIFIERconfiguration' datamap_description='AMPLIFER_configuration' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='A2' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='LDO0' datamap_function0_off='disable' datamap_function0_on='disable' datamap_function1='LDO1' datamap_function1_off='disable' datamap_function1_on='disable' datamap_function2='LDO2' datamap_function2_off='disable' datamap_function2_on='disable' datamap_function3='LDO3' datamap_function3_off='disable' datamap_function3_on='disable' datamap_function4='LDO4' datamap_function4_off='disable' datamap_function4_on='disable' datamap_function5='LDO5' datamap_function5_off='disable' datamap_function5_on='disable' datamap_function6='LDO6' datamap_function6_off='disable' datamap_function6_on='disable' datamap_function7='LDO7' datamap_function7_off='disable' datamap_function7_on='disable' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=8 datamap_info=0 datamap_location=7 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$datamap2 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 datamap0s vars: datamap_function='function' datamap_name='AMPLIFIERstatus1' datamap_description='AMPLIFER_configuration' datamap_io='status' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='A2' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='LDO0' datamap_function0_off='disable' datamap_function0_on='disable' datamap_function1='LDO1' datamap_function1_off='disable' datamap_function1_on='disable' datamap_function2='LDO2' datamap_function2_off='disable' datamap_function2_on='disable' datamap_function3='LDO3' datamap_function3_off='disable' datamap_function3_on='disable' datamap_function4='LDO4' datamap_function4_off='disable' datamap_function4_on='disable' datamap_function5='LDO5' datamap_function5_off='disable' datamap_function5_on='disable' datamap_function6='LDO6' datamap_function6_off='disable' datamap_function6_on='disable' datamap_function7='LDO7' datamap_function7_off='disable' datamap_function7_on='disable' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_info=0 datamap_location=3 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$datamap3 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 datamap0s vars: datamap_function='function' datamap_name='AMPLIFIERstatus2' datamap_description='AMPLIFER_configuration' datamap_io='status' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='1F' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='LDO0' datamap_function0_off='disable' datamap_function0_on='disable' datamap_function1='LDO1' datamap_function1_off='disable' datamap_function1_on='disable' datamap_function2='LDO2' datamap_function2_off='disable' datamap_function2_on='disable' datamap_function3='LDO3' datamap_function3_off='disable' datamap_function3_on='disable' datamap_function4='LDO4' datamap_function4_off='disable' datamap_function4_on='disable' datamap_function5='LDO5' datamap_function5_off='disable' datamap_function5_on='disable' datamap_function6='LDO6' datamap_function6_off='disable' datamap_function6_on='disable' datamap_function7='LDO7' datamap_function7_off='disable' datamap_function7_on='disable' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_info=0 datamap_location=6 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$datamap4 152 153 154 152 153 154 168 169 170 171 172 173 174 175 176 177 datamap0s vars: datamap_function='function' datamap_name='AMPLIFIERstatus3' datamap_description='AMPLIFER_configuration' datamap_io='status' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='na' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='LDO0' datamap_function0_off='disable' datamap_function0_on='disable' datamap_function1='LDO1' datamap_function1_off='disable' datamap_function1_on='disable' datamap_function2='LDO2' datamap_function2_off='disable' datamap_function2_on='disable' datamap_function3='LDO3' datamap_function3_off='disable' datamap_function3_on='disable' datamap_function4='LDO4' datamap_function4_off='disable' datamap_function4_on='disable' datamap_function5='LDO5' datamap_function5_off='disable' datamap_function5_on='disable' datamap_function6='LDO6' datamap_function6_off='disable' datamap_function6_on='disable' datamap_function7='LDO7' datamap_function7_off='disable' datamap_function7_on='disable' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=6 datamap_info=0 datamap_location=7 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$datamap5 152 153 154 152 153 154 154 178 179 180 181 182 183 184 185 186 datamap0s vars: datamap_function='function' datamap_name='AMPLIFIERstatus4' datamap_description='AMPLIFER_configuration' datamap_io='status' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='na' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='LDO0' datamap_function0_off='disable' datamap_function0_on='disable' datamap_function1='LDO1' datamap_function1_off='disable' datamap_function1_on='disable' datamap_function2='LDO2' datamap_function2_off='disable' datamap_function2_on='disable' datamap_function3='LDO3' datamap_function3_off='disable' datamap_function3_on='disable' datamap_function4='LDO4' datamap_function4_off='disable' datamap_function4_on='disable' datamap_function5='LDO5' datamap_function5_off='disable' datamap_function5_on='disable' datamap_function6='LDO6' datamap_function6_off='disable' datamap_function6_on='disable' datamap_function7='LDO7' datamap_function7_off='disable' datamap_function7_on='disable' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=7 datamap_info=0 datamap_location=7 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$datamap6 152 153 154 152 153 154 154 152 187 188 189 190 191 192 193 194 datamap0s vars: datamap_function='function' datamap_name='AMPLIFIERstatus5' datamap_description='AMPLIFER_configuration' datamap_io='status' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='44' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='LDO0' datamap_function0_off='disable' datamap_function0_on='disable' datamap_function1='LDO1' datamap_function1_off='disable' datamap_function1_on='disable' datamap_function2='LDO2' datamap_function2_off='disable' datamap_function2_on='disable' datamap_function3='LDO3' datamap_function3_off='disable' datamap_function3_on='disable' datamap_function4='LDO4' datamap_function4_off='disable' datamap_function4_on='disable' datamap_function5='LDO5' datamap_function5_off='disable' datamap_function5_on='disable' datamap_function6='LDO6' datamap_function6_off='disable' datamap_function6_on='disable' datamap_function7='LDO7' datamap_function7_off='disable' datamap_function7_on='disable' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=8 datamap_info=0 datamap_location=7 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U1 136 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP0' dftprobe_description='Startup_LDO0' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U10 199 pinprobe vars: pinprobe_description='LDO_AMP_open_slow' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U11 209 pinprobe vars: pinprobe_description='LDO_AMP_open_medium' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U12 202 pinprobe vars: pinprobe_description='LDO_AMP_fixed_medium' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U13 205 pinprobe vars: pinprobe_description='LDO_AMP_fixed_medium' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U14 211 pinprobe vars: pinprobe_description='LDO_AMP_control_high' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U15 210 pinprobe vars: pinprobe_description='LDO_AMP_fixed_high' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U16 137 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP1' dftprobe_description='Startup_LDO1' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U17 152 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP2' dftprobe_description='Startup_LDO2' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U18 153 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP3' dftprobe_description='Startup_LDO3' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U19 154 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP4' dftprobe_description='Startup_LDO4' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U2 196 pinprobe vars: pinprobe_description='LDO_AMP_fixed_slow' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U20 204 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP5' dftprobe_description='Startup_LDO5' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U21 206 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP6' dftprobe_description='Startup_LDO6' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U22 208 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='STARTUP7' dftprobe_description='Startup_LDO7' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U23 201 pinprobe vars: pinprobe_description='Kelvin_Ground_input' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd'
+X$U3 195 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U5 200 pinprobe vars: pinprobe_description='LDO2_sense_input' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd'
+X$U6 203 pinprobe vars: pinprobe_description='LDO5_sense_input' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd'
+X$U7 197 pinprobe vars: pinprobe_description='Reference_input' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
+X$U8 207 pinprobe vars: pinprobe_description='LDO5_sense_input' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd'
+X$U9 198 pinprobe vars: pinprobe_description='LDO_AMP_control_slow' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='pad'
+.ends AMPLIFIERgreenbank_301A1
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\LDOgreenbankAMPcontrolHIGH.sxcmp
+.subckt LDOgreenbankAMPcontrolHIGH 42 43 44 47 48 49
+*#hierarchy
+.node_map REFin 45
+.node_map REF 44
+.node_map ldo_gain$0 26
+.node_map ldo_gain$1 27
+.node_map ldo_gain$2 28
+.node_map ldo_gain$3 29
+.node_map ldo_gain$4 30
+.node_map ldo_gain$5 31
+.node_map ldo_gain$6 32
+.node_map ldo_gain$7 33
+.node_map ldo_gain$8 34
+.node_map enable_ldo 48
+.node_map ldo_gain$9 35
+.node_map LDO 43
+.node_map dft_startup 47
+.node_map kelvin_GNDldo 49
+.node_map ldo_gain$10 36
+.node_map ldo_gain$11 37
+.node_map ldo_gain$12 38
+.node_map ldo_gain$13 39
+.node_map ok_ldo 46
+.node_map ldo_gain$14 40
+.node_map MUDV 42
+.node_map ldo_gain$15 41
+X$amplifier1 42 49 43 45 48 46 26 27 28 25 amplifier vars: amplifier_gainadjust='control' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='high' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=100 amplifier_controloptions=8 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$datamap1 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 datamap0 vars: datamap_function='code' datamap_name='AMPCONTROLHIGHgain' datamap_description='AMP_CONTROL_High_gain_adjustment' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='1' datamap_code1='2' datamap_code2='3' datamap_code3='4' datamap_code4='5' datamap_code5='6' datamap_code6='7' datamap_code7='8' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U2 47 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U24 49 pinprobe vars: pinprobe_description='Kelvin_Ground_input' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 42 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 44 pinprobe vars: pinprobe_description='REference_input_0p8V' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 48 pinprobe vars: pinprobe_description='enable_ldo' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 48 46 47 VESPAdftpulse
+X$U8 43 pinprobe vars: pinprobe_description='Reference_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 44 45 48 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' switch_model='celera' switch_ron=100 switch_pulldownvmax=6 switch_vmax=6
+.ends LDOgreenbankAMPcontrolHIGH
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\LDOgreenbankAMPcontrolLOW.sxcmp
+.subckt LDOgreenbankAMPcontrolLOW 42 43 44 47 48 49
+*#hierarchy
+.node_map REFin 45
+.node_map REF 44
+.node_map ldo_gain$0 26
+.node_map ldo_gain$1 27
+.node_map ldo_gain$2 28
+.node_map ldo_gain$3 29
+.node_map ldo_gain$4 30
+.node_map ldo_gain$5 31
+.node_map ldo_gain$6 32
+.node_map ldo_gain$7 33
+.node_map ldo_gain$8 34
+.node_map enable_ldo 48
+.node_map ldo_gain$9 35
+.node_map LDO 43
+.node_map dft_startup 47
+.node_map kelvin_GNDldo 49
+.node_map ldo_gain$10 36
+.node_map ldo_gain$11 37
+.node_map ldo_gain$12 38
+.node_map ldo_gain$13 39
+.node_map ok_ldo 46
+.node_map ldo_gain$14 40
+.node_map MUDV 42
+.node_map ldo_gain$15 41
+X$amplifier1 42 49 43 45 48 46 26 27 28 25 amplifier vars: amplifier_gainadjust='control' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=100 amplifier_controloptions=8 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=1.2 amplifier_controlgain2=1.4 amplifier_controlgain3=1.6 amplifier_controlgain4=1.8 amplifier_controlgain5=2 amplifier_controlgain6=2.2 amplifier_controlgain7=2.4
+X$datamap1 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 datamap0 vars: datamap_function='code' datamap_name='AMPCONTROLSLOWgain' datamap_description='AMP_CONTROL_Slow_gain_adjustment' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='45' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='0.8V' datamap_code1='0.96V' datamap_code2='1.12V' datamap_code3='1.28V' datamap_code4='1.44V' datamap_code5='1.60V' datamap_code6='1.76V' datamap_code7='1.92V' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_info=0 datamap_location=6 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U2 47 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U24 49 pinprobe vars: pinprobe_description='Kelvin_Ground_input' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 42 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 44 pinprobe vars: pinprobe_description='REference_input_0p8V' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 48 pinprobe vars: pinprobe_description='enable_ldo' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 48 46 47 VESPAdftpulse
+X$U8 43 pinprobe vars: pinprobe_description='Reference_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 44 45 48 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' switch_model='celera' switch_ron=100 switch_pulldownvmax=6 switch_vmax=6
+.ends LDOgreenbankAMPcontrolLOW
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\LDOgreenbankAMPcontrolMEDIUM.sxcmp
+.subckt LDOgreenbankAMPcontrolMEDIUM 42 43 44 47 48 49
+*#hierarchy
+.node_map REFin 45
+.node_map REF 44
+.node_map ldo_gain$0 26
+.node_map ldo_gain$1 27
+.node_map ldo_gain$2 28
+.node_map ldo_gain$3 29
+.node_map ldo_gain$4 30
+.node_map ldo_gain$5 31
+.node_map ldo_gain$6 32
+.node_map ldo_gain$7 33
+.node_map ldo_gain$8 34
+.node_map enable_ldo 48
+.node_map ldo_gain$9 35
+.node_map LDO 43
+.node_map dft_startup 47
+.node_map kelvin_GNDldo 49
+.node_map ldo_gain$10 36
+.node_map ldo_gain$11 37
+.node_map ldo_gain$12 38
+.node_map ldo_gain$13 39
+.node_map ok_ldo 46
+.node_map ldo_gain$14 40
+.node_map MUDV 42
+.node_map ldo_gain$15 41
+X$amplifier1 42 49 43 45 48 46 26 27 28 25 amplifier vars: amplifier_gainadjust='control' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='medium' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=100 amplifier_controloptions=8 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$datamap1 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 datamap0 vars: datamap_function='code' datamap_name='AMPCONTROLMEDIUMgain' datamap_description='AMP_CONTROL_Medium_gain_adjustment' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='1' datamap_code1='2' datamap_code2='3' datamap_code3='4' datamap_code4='5' datamap_code5='6' datamap_code6='7' datamap_code7='8' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U2 47 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U24 49 pinprobe vars: pinprobe_description='Kelvin_Ground_input' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 42 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 44 pinprobe vars: pinprobe_description='REference_input_0p8V' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 48 pinprobe vars: pinprobe_description='enable_ldo' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 48 46 47 VESPAdftpulse
+X$U8 43 pinprobe vars: pinprobe_description='Reference_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 44 45 48 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' switch_model='celera' switch_ron=100 switch_pulldownvmax=6 switch_vmax=6
+.ends LDOgreenbankAMPcontrolMEDIUM
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\LDOgreenbankAMPfixedLOW.sxcmp
+.subckt LDOgreenbankAMPfixedLOW 29 30 31 34 35 36
+*#hierarchy
+.node_map BUS1$0 26
+.node_map BUS1$1 27
+.node_map BUS1$2 28
+.node_map REFin 32
+.node_map REF 31
+.node_map enable_ldo 35
+.node_map LDO 30
+.node_map dft_startup 34
+.node_map kelvin_GNDldo 36
+.node_map ok_ldo 33
+.node_map MUDV 29
+X$amplifier1 29 36 30 32 35 33 26 27 28 25 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=4 amplifier_1=0 amplifier_fixedr1=300 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$U1 31 32 35 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' switch_model='celera' switch_ron=100 switch_pulldownvmax=6 switch_vmax=6
+X$U2 34 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U24 36 pinprobe vars: pinprobe_description='Kelvin_Ground_input' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 29 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 31 pinprobe vars: pinprobe_description='REference_input_0p8V' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 35 pinprobe vars: pinprobe_description='enable_ldo' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 35 33 34 VESPAdftpulse
+X$U8 30 pinprobe vars: pinprobe_description='Reference_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+.ends LDOgreenbankAMPfixedLOW
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\LDOgreenbankAMPfixedMEDIUM.sxcmp
+.subckt LDOgreenbankAMPfixedMEDIUM 29 30 31 34 35 36
+*#hierarchy
+.node_map BUS1$0 26
+.node_map BUS1$1 27
+.node_map BUS1$2 28
+.node_map REFin 32
+.node_map REF 31
+.node_map enable_ldo 35
+.node_map LDO 30
+.node_map dft_startup 34
+.node_map kelvin_GNDldo 36
+.node_map ok_ldo 33
+.node_map MUDV 29
+X$amplifier1 29 36 30 32 35 33 26 27 28 25 amplifier vars: amplifier_gainadjust='fixed' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='medium' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=4 amplifier_1=0 amplifier_fixedr1=100 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$U2 34 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U24 36 pinprobe vars: pinprobe_description='Kelvin_Ground_input' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 29 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 31 pinprobe vars: pinprobe_description='REference_input_0p8V' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 35 pinprobe vars: pinprobe_description='enable_ldo' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 35 33 34 VESPAdftpulse
+X$U8 30 pinprobe vars: pinprobe_description='Reference_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 31 32 35 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' switch_model='celera' switch_ron=100 switch_pulldownvmax=6 switch_vmax=6
+.ends LDOgreenbankAMPfixedMEDIUM
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\LDOgreenbankAMPopenHIGH.sxcmp
+.subckt LDOgreenbankAMPopenHIGH 29 30 31 34 35 36
+*#hierarchy
+.node_map BUS1$0 26
+.node_map BUS1$1 27
+.node_map BUS1$2 28
+.node_map REFin 32
+.node_map REF 31
+.node_map enable_ldo 35
+.node_map LDO 30
+.node_map dft_startup 34
+.node_map ok_ldo 33
+.node_map MUDV 29
+.node_map sense_LDO 36
+X$amplifier1 29 36 30 32 35 33 26 27 28 25 amplifier vars: amplifier_gainadjust='openloop' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='high' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$U10 36 pinprobe vars: pinprobe_description='LDO_input_sense' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U2 34 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 29 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 31 pinprobe vars: pinprobe_description='REference_input_0p8V' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 35 pinprobe vars: pinprobe_description='enable_ldo' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 35 33 34 VESPAdftpulse
+X$U8 30 pinprobe vars: pinprobe_description='Reference_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 31 32 35 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' switch_model='celera' switch_ron=100 switch_pulldownvmax=6 switch_vmax=6
+.ends LDOgreenbankAMPopenHIGH
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\LDOgreenbankAMPopenLOW.sxcmp
+.subckt LDOgreenbankAMPopenLOW 29 30 31 34 35 36
+*#hierarchy
+.node_map BUS1$0 26
+.node_map BUS1$1 27
+.node_map BUS1$2 28
+.node_map REFin 32
+.node_map REF 31
+.node_map enable_ldo 35
+.node_map LDO 30
+.node_map dft_startup 34
+.node_map ok_ldo 33
+.node_map MUDV 29
+.node_map sense_LDO 36
+X$amplifier1 29 36 30 32 35 33 26 27 28 25 amplifier vars: amplifier_gainadjust='openloop' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$U10 36 pinprobe vars: pinprobe_description='LDO_input_sense' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U2 34 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 29 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 31 pinprobe vars: pinprobe_description='REference_input_0p8V' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 35 pinprobe vars: pinprobe_description='enable_ldo' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 35 33 34 VESPAdftpulse
+X$U8 30 pinprobe vars: pinprobe_description='Reference_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 31 32 35 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' switch_model='celera' switch_ron=100 switch_pulldownvmax=6 switch_vmax=6
+.ends LDOgreenbankAMPopenLOW
+
+** From Z:\celera\projects\Simplis\playcalum\Greenbank\Greenbank0\301\design\LDOgreenbankAMPopenMEDIUM.sxcmp
+.subckt LDOgreenbankAMPopenMEDIUM 29 30 31 34 35 36
+*#hierarchy
+.node_map BUS1$0 26
+.node_map BUS1$1 27
+.node_map BUS1$2 28
+.node_map REFin 32
+.node_map REF 31
+.node_map enable_ldo 35
+.node_map LDO 30
+.node_map dft_startup 34
+.node_map ok_ldo 33
+.node_map MUDV 29
+.node_map sense_LDO 36
+X$amplifier1 29 36 30 32 35 33 26 27 28 25 amplifier vars: amplifier_gainadjust='openloop' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='text' amplifier_accuracydescription='text' amplifier_bandwidth='medium' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$U10 36 pinprobe vars: pinprobe_description='LDO_input_sense' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U2 34 pinprobe vars: pinprobe_description='LDO_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 29 pinprobe vars: pinprobe_description='Regulated_input_supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 31 pinprobe vars: pinprobe_description='REference_input_0p8V' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 35 pinprobe vars: pinprobe_description='enable_ldo' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 35 33 34 VESPAdftpulse
+X$U8 30 pinprobe vars: pinprobe_description='Reference_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 31 32 35 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' switch_model='celera' switch_ron=100 switch_pulldownvmax=6 switch_vmax=6
+.ends LDOgreenbankAMPopenMEDIUM
+
+.end

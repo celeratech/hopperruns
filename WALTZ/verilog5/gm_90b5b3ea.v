@@ -1,7 +1,7 @@
 //Celera Brick Generator Confidential
 //CORE:gm
 //NAME:gm_90b5b3ea
-//GENERATOR REVISION:0.3.5
+//GENERATOR REVISION:0.5.0
 //GAIN:0.10
 //TYPE:p
 //CLAMP HIGH:no
@@ -185,6 +185,42 @@ STONEgminptrim1x XgmINP_TRIM1X(
 .SUB (CELSUB)
 );
 //,diesize,STONEgminptrim1x
+//Celera Confidential Do Not Copy CASCODEpmos5u
+CASCODEpmos5u Xpmos5U_0(
+.CELV (SIMPV),
+.PCAS (PCAS500N),
+.PMIR (PIDPP),
+.SUB (CELSUB),
+.O (GMO)
+);
+//,diesize,CASCODEpmos5u
+//Celera Confidential Do Not Copy CASCODEpmos5u
+CASCODEpmos5u Xpmos5U_1(
+.CELV (SIMPV),
+.PCAS (PCAS500N),
+.PMIR (PIDPP),
+.SUB (CELSUB),
+.O (GMO)
+);
+//,diesize,CASCODEpmos5u
+//Celera Confidential Do Not Copy CASCODEpmos5u
+CASCODEpmos5u Xpmos5U_2(
+.CELV (SIMPV),
+.PCAS (PCAS500N),
+.PMIR (PIDPP),
+.SUB (CELSUB),
+.O (GMO)
+);
+//,diesize,CASCODEpmos5u
+//Celera Confidential Do Not Copy CASCODEpmos5u
+CASCODEpmos5u Xpmos5U_3(
+.CELV (SIMPV),
+.PCAS (PCAS500N),
+.PMIR (PIDPP),
+.SUB (CELSUB),
+.O (GMO)
+);
+//,diesize,CASCODEpmos5u
 //Celera Confidential Do Not Copy CASCODEnmos5u
 CASCODEnmos5u Xnmos5U_0(
 .CELV (SIMPV),
@@ -195,15 +231,6 @@ CASCODEnmos5u Xnmos5U_0(
 .O (GMO)
 );
 //,diesize,CASCODEnmos5u
-//Celera Confidential Do Not Copy CASCODEpmos5u
-CASCODEpmos5u Xpmos5U_0(
-.CELV (SIMPV),
-.PCAS (PCAS500N),
-.PMIR (PIDPP),
-.SUB (CELSUB),
-.O (GMO)
-);
-//,diesize,CASCODEpmos5u
 //Celera Confidential Do Not Copy CASCODEnmos5u
 CASCODEnmos5u Xnmos5U_1(
 .CELV (SIMPV),
@@ -214,15 +241,6 @@ CASCODEnmos5u Xnmos5U_1(
 .O (GMO)
 );
 //,diesize,CASCODEnmos5u
-//Celera Confidential Do Not Copy CASCODEpmos5u
-CASCODEpmos5u Xpmos5U_1(
-.CELV (SIMPV),
-.PCAS (PCAS500N),
-.PMIR (PIDPP),
-.SUB (CELSUB),
-.O (GMO)
-);
-//,diesize,CASCODEpmos5u
 //Celera Confidential Do Not Copy CASCODEnmos5u
 CASCODEnmos5u Xnmos5U_2(
 .CELV (SIMPV),
@@ -233,15 +251,6 @@ CASCODEnmos5u Xnmos5U_2(
 .O (GMO)
 );
 //,diesize,CASCODEnmos5u
-//Celera Confidential Do Not Copy CASCODEpmos5u
-CASCODEpmos5u Xpmos5U_2(
-.CELV (SIMPV),
-.PCAS (PCAS500N),
-.PMIR (PIDPP),
-.SUB (CELSUB),
-.O (GMO)
-);
-//,diesize,CASCODEpmos5u
 //Celera Confidential Do Not Copy CASCODEnmos5u
 CASCODEnmos5u Xnmos5U_3(
 .CELV (SIMPV),
@@ -252,15 +261,6 @@ CASCODEnmos5u Xnmos5U_3(
 .O (GMO)
 );
 //,diesize,CASCODEnmos5u
-//Celera Confidential Do Not Copy CASCODEpmos5u
-CASCODEpmos5u Xpmos5U_3(
-.CELV (SIMPV),
-.PCAS (PCAS500N),
-.PMIR (PIDPP),
-.SUB (CELSUB),
-.O (GMO)
-);
-//,diesize,CASCODEpmos5u
 //Celera Confidential Do Not Copy STONEnoconn
 STONEnoconn Xnoconn1(
 .noconn (
