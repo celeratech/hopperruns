@@ -4,182 +4,211 @@
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Celera Confidential BIO Data Generator
+
 //Cell Name
-cell,thermal
+cell,clockrequest
 //**********************************************
 //Generator Revision
-revision,generator,0.3.4
+revision,generator,0.4.3
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,thermal_type,choose0,fixed
-limit,thermal_type,choose1,control
-limit,thermal_rise,minimum,-40.0
-limit,thermal_rise,maximum,180.0
-limit,thermal_rise0,minimum,-40.0
-limit,thermal_rise0,maximum,180.0
-limit,thermal_rise1,minimum,-40.0
-limit,thermal_rise1,maximum,180.0
-limit,thermal_rise2,minimum,-40.0
-limit,thermal_rise2,maximum,180.0
-limit,thermal_rise3,minimum,-40.0
-limit,thermal_rise3,maximum,180.0
-limit,thermal_fall,minimum,-40.0
-limit,thermal_fall,maximum,180.0
-limit,thermal_fall0,minimum,-40.0
-limit,thermal_fall0,maximum,180.0
-limit,thermal_fall1,minimum,-40.0
-limit,thermal_fall1,maximum,180.0
-limit,thermal_fall2,minimum,-40.0
-limit,thermal_fall2,maximum,180.0
-limit,thermal_fall3,minimum,-40.0
-limit,thermal_fall3,maximum,180.0
-limit,thermal_register_por,choose0,0
-limit,thermal_register_por,choose1,1
-limit,thermal_register_por,choose2,2
-limit,thermal_register_por,choose3,3
-limit,thermal_vmax,choose0,2
-limit,thermal_vmax,choose1,6
-limit,thermal_dft,choose0,no
-limit,thermal_dft,choose1,yes
-limit,thermal_selections,choose0,1
-limit,thermal_selections,choose1,2
-limit,thermal_selections,choose2,3
-limit,thermal_selections,choose3,1
-limit,thermal_disable,choose0,no
-limit,thermal_disable,choose1,yes
-limit,thermal_accuracy,choose0,no
-limit,thermal_accuracy,choose1,yes
-limit,thermal_control_type,choose0,pin
-limit,thermal_control_type,choose1,factory
-limit,thermal_control_type,choose2,register
-limit,thermal_trim_name,text
-limit,thermal_trim_description,text
-limit,thermal_temperature_name,text
-limit,thermal_temperature_description,text
+
+limit,clockrequest_outputs,minimum,1
+limit,clockrequest_outputs,maximum,14
+limit,clockrequest_enable0,choose0,pin
+limit,clockrequest_enable0,choose1,always
+limit,clockrequest_enable1,choose0,pin
+limit,clockrequest_enable1,choose1,always
+limit,clockrequest_enable2,choose0,pin
+limit,clockrequest_enable2,choose1,always
+limit,clockrequest_enable3,choose0,pin
+limit,clockrequest_enable3,choose1,always
+limit,clockrequest_enable4,choose0,pin
+limit,clockrequest_enable4,choose1,always
+limit,clockrequest_enable5,choose0,pin
+limit,clockrequest_enable5,choose1,always
+limit,clockrequest_enable6,choose0,pin
+limit,clockrequest_enable6,choose1,always
+limit,clockrequest_enable7,choose0,pin
+limit,clockrequest_enable7,choose1,always
+limit,clockrequest_enable8,choose0,pin
+limit,clockrequest_enable8,choose1,always
+limit,clockrequest_enable9,choose0,pin
+limit,clockrequest_enable9,choose1,always
+limit,clockrequest_enable10,choose0,pin
+limit,clockrequest_enable10,choose1,always
+limit,clockrequest_enable11,choose0,pin
+limit,clockrequest_enable11,choose1,always
+limit,clockrequest_enable12,choose0,pin
+limit,clockrequest_enable12,choose1,always
+limit,clockrequest_enable13,choose0,pin
+limit,clockrequest_enable13,choose1,always
+limit,clockrequest_enable14,choose0,pin
+limit,clockrequest_enable14,choose1,always
+
+limit,clockrequest_divide0,minimum,0
+limit,clockrequest_divide0,maximum,255
+limit,clockrequest_divide1,minimum,0
+limit,clockrequest_divide1,maximum,255
+limit,clockrequest_divide2,minimum,0
+limit,clockrequest_divide2,maximum,255
+limit,clockrequest_divide3,minimum,0
+limit,clockrequest_divide3,maximum,255
+limit,clockrequest_divide4,minimum,0
+limit,clockrequest_divide4,maximum,255
+limit,clockrequest_divide5,minimum,0
+limit,clockrequest_divide5,maximum,255
+limit,clockrequest_divide6,minimum,0
+limit,clockrequest_divide6,maximum,255
+limit,clockrequest_divide7,minimum,0
+limit,clockrequest_divide7,maximum,255
+limit,clockrequest_divide8,minimum,0
+limit,clockrequest_divide8,maximum,255
+limit,clockrequest_divide9,minimum,0
+limit,clockrequest_divide9,maximum,255
+limit,clockrequest_divide10,minimum,0
+limit,clockrequest_divide10,maximum,255
+limit,clockrequest_divide11,minimum,0
+limit,clockrequest_divide11,maximum,255
+limit,clockrequest_divide12,minimum,0
+limit,clockrequest_divide12,maximum,255
+limit,clockrequest_divide13,minimum,0
+limit,clockrequest_divide13,maximum,255
+limit,clockrequest_divide14,minimum,0
+limit,clockrequest_divide14,maximum,255
+
+limit,clockrequest_invert0,choose0,no
+limit,clockrequest_invert0,choose1,yes
+limit,clockrequest_invert1,choose0,no
+limit,clockrequest_invert1,choose1,yes
+limit,clockrequest_invert2,choose0,no
+limit,clockrequest_invert2,choose1,yes
+limit,clockrequest_invert3,choose0,no
+limit,clockrequest_invert3,choose1,yes
+limit,clockrequest_invert4,choose0,no
+limit,clockrequest_invert4,choose1,yes
+limit,clockrequest_invert5,choose0,no
+limit,clockrequest_invert5,choose1,yes
+limit,clockrequest_invert6,choose0,no
+limit,clockrequest_invert6,choose1,yes
+limit,clockrequest_invert7,choose0,no
+limit,clockrequest_invert7,choose1,yes
+limit,clockrequest_invert8,choose0,no
+limit,clockrequest_invert8,choose1,yes
+limit,clockrequest_invert9,choose0,no
+limit,clockrequest_invert9,choose1,yes
+limit,clockrequest_invert10,choose0,no
+limit,clockrequest_invert10,choose1,yes
+limit,clockrequest_invert11,choose0,no
+limit,clockrequest_invert11,choose1,yes
+limit,clockrequest_invert12,choose0,no
+limit,clockrequest_invert12,choose1,yes
+limit,clockrequest_invert13,choose0,no
+limit,clockrequest_invert13,choose1,yes
+limit,clockrequest_invert14,choose0,no
+limit,clockrequest_invert14,choose1,yes
+
+limit,clockrequest_dft,choose0,no
+limit,clockrequest_dft,choose1,yes
+limit,clockrequest_srambist,choose0,no
+limit,clockrequest_srambist,choose1,yes
+limit,clockrequest_vmax,choose0,2
+limit,clockrequest_vmax,choose1,6
+limit,clockrequest_standby,choose0,yes
+limit,clockrequest_standby,choose1,no
 
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,thermal_type,fixed
-description,Thermal Protection control mode
-user,thermal_accuracy,yes
-description,Thermal Protection Accuracy
-user,thermal_rise0,165C
-description,Thermal Protection Rising Threshold
-user,thermal_fall0,C
-description,Thermal Protection Falling Threshold
-user,REF,,0.9V
-description,Thermal Protection Project Reference
-user,NESTOrevsion,0.3.4
-description,Nesto Generator
+user,clockrequest_outputs,5
+description,ClockReport Requests
+user,Channel0,pin_DIV0
+description,Channel0 Request
+user,Channel1,pin_DIV2
+description,Channel1 Request
+user,Channel2,pin_DIV4
+description,Channel2 Request
+user,Channel3,pin_DIV8
+description,Channel3 Request
+user,Channel4,pin_DIV16
+description,Channel4 Request
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,thermal
-register,instance,thermal_51a067d4
+registermap,clockrequest
+register,instance,clockrequest_ad390ee9
 register,source,cell
 
-///Thermal Fault Threshold Adjust
+//delay time 
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readwrite
+register,mode,readonly
 register,por,0
 register,userdescription,na
-register,description0,not used
-register,description1,not used
-register,description2,not used
-register,description3,not used
-register,description4,not used
-register,description5,not used
-register,description6,not used
-register,description7,not used
+register,description0,description0,not used
+register,description1,description1,not used
+register,description2,description2,not used
+register,description3,description3,not used
+register,description4,description4,not used
+register,description5,description5,not used
+register,description6,description6,not used
+register,description7,description7,not used
 //Netlister Information
 register,busname,na
 
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,thermal
-factory,instance,thermal_51a067d4
+factorymap,clockrequest
+factory,instance,clockrequest_ad390ee9
 factory,source,cell
 
-///Thermal Blank Flag
+//clocksync
 factory,name,na
 factory,enable,no
 factory,bits,0
 factory,mode,readonly
 factory,por,0
 factory,userdescription,na
-factory,description0,not used
-factory,description1,not used
-factory,description2,not used
-factory,description3,not used
-factory,description4,not used
-factory,description5,not used
-factory,description6,not used
-factory,description7,not used
+factory,description0,description0,not used
+factory,description1,description1,not used
+factory,description2,description2,not used
+factory,description3,description3,not used
+factory,description4,description4,not used
+factory,description5,description5,not used
+factory,description6,description6,not used
+factory,description7,description7,not used
 //Netlister Information
 factory,busname,na
-
-///Thermal Fault Threshold Adjust
-factory,name,na
-factory,enable,no
-factory,bits,0
-factory,mode,readonly
-factory,por,0
-factory,userdescription,na
-factory,description0,not used
-factory,description1,not used
-factory,description2,not used
-factory,description3,not used
-factory,description4,not used
-factory,description5,not used
-factory,description6,not used
-factory,description7,not used
-//Netlister Information
-factory,busname,na
-
-//**********************************************
+// *********************************************
 //CELL DFT Parameters
 // *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,thermal
-place Generate STONEthermalCONTROL2 0 0 R0
-placeIFELSE cellNameContains DFT&&TRIM
-place Generate STONEthermalDFT 55.98 71.705 MX
-place Generate STONEthermalTRIM 17.55 80.075 MX
-placeRES 7.795 90.565 0.8 0.8 R0 x y 115
-placeELSE
-place Generate STONEthermalDFT 55.98 71.705 MX
-placeALTVIEW Generate STONEthermalTRIM layout1 17.55 80.025 MX
-placeRES 7.795 82.22 0.8 0.8 R0 x y 115
-placeEND 
-place Generate STONEthermalDECODE4 44.64 -9.67 R0
-place Generate STONEthermalDECODE3 44.64 -1.295 R0
-place Generate STONEthermalDECODE2 44.64 7.075 R0
-place Generate STONEthermalDECODE1 45.27 23.815 MX
-placeRESRING 
-placeHVRING
-placeROUTE
+
+layout,clockrequest
+
+
+//New NESTO for Simplis294
+
+
 endlayoutbio
 
 //**********************************************
 //Project Parameters
-//Celera:WALTZ Project Bio
+//Celera:TELEMETRYadcCLOCK Project Bio
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////   default.bio'  DO NOT USE  ///////////////////////////////////
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,0.9
-#define,PROJECTsupply,4.5
+#define,PROJECTreference,1.2
+#define,PROJECTsupply,5.0
 #define,TaRoom,25
 #define,ground,0.0
 #define,leveloffset,5
@@ -218,87 +247,70 @@ endlayoutbio
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
 sub_area,STONEnoconn,0
-sub_area,STONEthermalCONTROL2,7072
-sub_area,STONEthermalDECODE1,85
-sub_area,STONEthermalTRIM,1120
-sub_area,rlpp3000rpo113p6u0p5u,170
-sub_area,rlpp3000rpo113p6u0p5u,683
-sub_area,rlpp3000rpo113p6u0p5u,256
-sub_area,rlpp3000rpo2p5u0p5u,2
-sub_area,rlpp3000rpo2p5u0p5u,2
-sub_area,rlpp3000rpo2p5u0p5u,2
-sub_area,rlpp3000rpo2p5u0p5u,2
-sub_area,rlpp3000rpo2p5u0p5u,2
-sub_area,rlpp3000rpo2p5u0p5u,2
-generate_area,thermal_51a067d4,9398
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,clkgen8_div4,999999
+generate_area,clockrequest_ad390ee9,999999
 // *********************************************
 //Calculator Parameters
-#define,THERMALresistorlength,113.57
-#define,THERMALresistorwidth,2.0
-#define,THERMALresistortrimwidth,0.5
-#define,THERMALresistoriso,CELG
-#define,THERMALiref,0.5
-#define,CELVminimum,2.2
-#define,THERMALtrimrange,10.0
-#define,THERMALpretrimhigh,15.0
-#define,THERMALpretrimlow,15.0
-#define,THERMALposttrimlsb,4.0
-#define,THERMALreferenceTemp,1.04
+
+#define,CELVminimum,2.0
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//thermal
+//clockrequest
 revision,pinorder,0.2.0
-pinorder,fault_thermal,enable_thermal,net_skip,net_skip,SIMPV
+pinorder,clock,enable_clock0,enable_clock1,enable_clock2,enable_clock3,enable_clock4,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,clock0,clock1,clock2,clock3,clock4,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip
 
 endpinorder
 //**********************************************
-
-//**********************************************
 //TRIM Parameters
-cell,thermal
-trim,instance,thermal_51a067d4
+cell,clockrequest
+trim,instance,clockrequest_ad390ee9
 
-//Thermal Accuracy
-trim,name,THERMALaccuracy
-trim,enable,yes
-trim,bits,3
+trim,name,na
+trim,enable,no
+trim,bits,TBD
 trim,por,0
-trim,testname,THERMALaccuracy
-trim,description,Thermal at 165C
-trim,pinname,trim_thermal_accuracy
-trim,target,165
-trim,units,C
-trim,pretrim_low_limit,150.000
-trim,pretrim_high_limit,180.000
-trim,posttrim_low_limit,159.000
-trim,posttrim_high_limit,171.000
-trim,codeunits,C
-trim,description0,code 0x00,165C
-trim,description1,code 0x01,+2.0
-trim,description2,code 0x02,+4.0
-trim,description3,code 0x03,+6.0
-trim,description4,code 0x04,+0.0
-trim,description5,code 0x05,-2.0
-trim,description6,code 0x06,-4.0
-trim,description7,code 0x07,-6.0
+trim,pinname,trim_delay
+trim,testname,TBD
+trim,description,TBD
+trim,target,na
+trim,units,mV
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,%
+trim,description0,empty
+trim,description1,empty
+trim,description2,empty
+trim,description3,empty
+trim,description4,empty
+trim,description5,empty
+trim,description6,empty
+trim,description7,empty
+trim,description8,empty
+
+
+
 
 //**********************************************
-//Cell Pin Descriptions	
-//**********************************************
-
-pinname,SIMPV
-definition,SIMPV,cell power
-iq,SIMPV,SIMULATION
-absmax,SIMPV,6
-absmin,SIMPV,2.0
-io,SIMPV,input
-mode,SIMPV,power
-router,SIMPV,TBD
-dftpriority,SIMPV,1
-esd,SIMPV,TBD
+//Cell Pin Descriptions
+pinname,CELV
+definition,CELV,cell power
+iq,CELV,SIMULATION
+absmax,CELV,6
+absmin,CELV,2.0
+io,CELV,input
+mode,CELV,power
+router,CELV,TBD
+dftpriority,CELV,1
+esd,CELV,TBD
 
 pinname,CELG
 definition,CELG,cell power ground
@@ -311,83 +323,150 @@ router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,IP
-definition,IP,reference current
-iq,IP,SIMULATION
-absmax,IP,6
-absmin,IP,-0.3
-io,IP,input
-mode,IP,analog
-router,IP,TBD
-dftpriority,IP,1
-esd,IP,TBD
+pinname,celeraporb
+definition,celeraporb,Power on reset input
+iq,celeraporb,SIMULATION
+absmax,celeraporb,6
+absmin,celeraporb,-0.3
+io,celeraporb,input
+mode,celeraporb,digital
+router,celeraporb,TBD
+dftpriority,celeraporb,1
+esd,celeraporb,TBD
 
-pinname,CELBG
-definition,CELBG,Thermal Vbe Reference voltage
-iq,CELBG,SIMULATION
-absmax,CELBG,6
-absmin,CELBG,-0.3
-io,CELBG,input
-mode,CELBG,analog
-router,CELBG,TBD
-dftpriority,CELBG,1
-esd,CELBG,TBD
+pinname,clock
+definition,clock,Master clock input
+iq,clock,SIMULATION
+absmax,clock,6
+absmin,clock,-0.3
+io,clock,input
+mode,clock,digital
+router,clock,TBD
+dftpriority,clock,1
+esd,clock,TBD
 
-pinname,enable_thermal
-definition,enable_thermal,enable Thermal Protection
-iq,enable_thermal,SIMULATION
-absmax,enable_thermal,6
-absmin,enable_thermal,-0.3
-io,enable_thermal,input
-mode,enable_thermal,digital
-router,enable_thermal,TBD
-dftpriority,enable_thermal,1
-esd,enable_thermal,TBD
+pinname,enable_clock0
+definition,enable_clock0,Channel0 enable request
+iq,enable_clock0,SIMULATION
+absmax,enable_clock0,6
+absmin,enable_clock0,-0.3
+io,enable_clock0,input
+mode,enable_clock0,digital
+router,enable_clock0,TBD
+dftpriority,enable_clock0,1
+esd,enable_clock0,TBD
 
-pinname,ten
-definition,ten,Global enable
-iq,ten,SIMULATION
-absmax,ten,6
-absmin,ten,-0.3
-io,ten,input
-mode,ten,digital
-router,ten,TBD
-dftpriority,ten,1
-esd,ten,TBD
+pinname,enable_clock1
+definition,enable_clock1,Channel1 enable request
+iq,enable_clock1,SIMULATION
+absmax,enable_clock1,6
+absmin,enable_clock1,-0.3
+io,enable_clock1,input
+mode,enable_clock1,digital
+router,enable_clock1,TBD
+dftpriority,enable_clock1,1
+esd,enable_clock1,TBD
 
-pinname,fault_thermal
-definition,fault_thermal,Thermal Output fault Flag
-iq,fault_thermal,SIMULATION
-absmax,fault_thermal,6
-absmin,fault_thermal,-0.3
-io,fault_thermal,output
-mode,fault_thermal,digital
-router,fault_thermal,TBD
-dftpriority,fault_thermal,1
-esd,fault_thermal,TBD
+pinname,enable_clock2
+definition,enable_clock2,Channel2 enable request
+iq,enable_clock2,SIMULATION
+absmax,enable_clock2,6
+absmin,enable_clock2,-0.3
+io,enable_clock2,input
+mode,enable_clock2,digital
+router,enable_clock2,TBD
+dftpriority,enable_clock2,1
+esd,enable_clock2,TBD
 
-pinname,trim_thermal_accuracy
-definition,trim_thermal_accuracy,Factory trim Thermal threshold adjust
-iq,trim_thermal_accuracy,SIMULATION
-absmax,trim_thermal_accuracy,6
-absmin,trim_thermal_accuracy,-0.3
-io,trim_thermal_accuracy,input
-mode,trim_thermal_accuracy,digital
-router,trim_thermal_accuracy,TBD
-dftpriority,trim_thermal_accuracy,1
-esd,trim_thermal_accuracy,TBD
+pinname,enable_clock3
+definition,enable_clock3,Channel3 enable request
+iq,enable_clock3,SIMULATION
+absmax,enable_clock3,6
+absmin,enable_clock3,-0.3
+io,enable_clock3,input
+mode,enable_clock3,digital
+router,enable_clock3,TBD
+dftpriority,enable_clock3,1
+esd,enable_clock3,TBD
+
+pinname,enable_clock4
+definition,enable_clock4,Channel4 enable request
+iq,enable_clock4,SIMULATION
+absmax,enable_clock4,6
+absmin,enable_clock4,-0.3
+io,enable_clock4,input
+mode,enable_clock4,digital
+router,enable_clock4,TBD
+dftpriority,enable_clock4,1
+esd,enable_clock4,TBD
+
+pinname,clock0
+definition,clock0,Output clock0
+iq,clock0,SIMULATION
+absmax,clock0,6
+absmin,clock0,-0.3
+io,clock0,output
+mode,clock0,digital
+router,clock0,TBD
+dftpriority,clock0,1
+esd,clock0,TBD
+
+pinname,clock1
+definition,clock1,Output clock1
+iq,clock1,SIMULATION
+absmax,clock1,6
+absmin,clock1,-0.3
+io,clock1,output
+mode,clock1,digital
+router,clock1,TBD
+dftpriority,clock1,1
+esd,clock1,TBD
+
+pinname,clock2
+definition,clock2,Output clock2
+iq,clock2,SIMULATION
+absmax,clock2,6
+absmin,clock2,-0.3
+io,clock2,output
+mode,clock2,digital
+router,clock2,TBD
+dftpriority,clock2,1
+esd,clock2,TBD
+
+pinname,clock3
+definition,clock3,Output clock3
+iq,clock3,SIMULATION
+absmax,clock3,6
+absmin,clock3,-0.3
+io,clock3,output
+mode,clock3,digital
+router,clock3,TBD
+dftpriority,clock3,1
+esd,clock3,TBD
+
+pinname,clock4
+definition,clock4,Output clock4
+iq,clock4,SIMULATION
+absmax,clock4,6
+absmin,clock4,-0.3
+io,clock4,output
+mode,clock4,digital
+router,clock4,TBD
+dftpriority,clock4,1
+esd,clock4,TBD
 
 pinname,CELSUB
-definition,CELSUB,Substrate
+definition,CELSUB,substrate
 iq,CELSUB,SIMULATION
 absmax,CELSUB,0.3
 absmin,CELSUB,-0.3
 io,CELSUB,input
-mode,CELSUB,power
+mode,CELSUB,analog
 router,CELSUB,TBD
 dftpriority,CELSUB,1
 esd,CELSUB,TBD
 
+endbio
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -1064,6 +1143,6 @@ revision,vis15cb,0p1
 #define,AP5G60DC1maxmult,99
 #define,AP5G60DC1minmult,1
 ////////////////////////////////////////////////////////////////////////
-//*********************************************
+// *********************************************
 endbio
 

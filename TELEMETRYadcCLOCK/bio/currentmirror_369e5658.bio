@@ -6,89 +6,98 @@
 
 //Celera Confidential BIO Data Generator
 //Cell Name
-cell,thermal
-//**********************************************
+cell,currentmirror
+///**********************************************
 //Generator Revision
-revision,generator,0.3.4
+revision,generator,0.5.0
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,thermal_type,choose0,fixed
-limit,thermal_type,choose1,control
-limit,thermal_rise,minimum,-40.0
-limit,thermal_rise,maximum,180.0
-limit,thermal_rise0,minimum,-40.0
-limit,thermal_rise0,maximum,180.0
-limit,thermal_rise1,minimum,-40.0
-limit,thermal_rise1,maximum,180.0
-limit,thermal_rise2,minimum,-40.0
-limit,thermal_rise2,maximum,180.0
-limit,thermal_rise3,minimum,-40.0
-limit,thermal_rise3,maximum,180.0
-limit,thermal_fall,minimum,-40.0
-limit,thermal_fall,maximum,180.0
-limit,thermal_fall0,minimum,-40.0
-limit,thermal_fall0,maximum,180.0
-limit,thermal_fall1,minimum,-40.0
-limit,thermal_fall1,maximum,180.0
-limit,thermal_fall2,minimum,-40.0
-limit,thermal_fall2,maximum,180.0
-limit,thermal_fall3,minimum,-40.0
-limit,thermal_fall3,maximum,180.0
-limit,thermal_register_por,choose0,0
-limit,thermal_register_por,choose1,1
-limit,thermal_register_por,choose2,2
-limit,thermal_register_por,choose3,3
-limit,thermal_vmax,choose0,2
-limit,thermal_vmax,choose1,6
-limit,thermal_dft,choose0,no
-limit,thermal_dft,choose1,yes
-limit,thermal_selections,choose0,1
-limit,thermal_selections,choose1,2
-limit,thermal_selections,choose2,3
-limit,thermal_selections,choose3,1
-limit,thermal_disable,choose0,no
-limit,thermal_disable,choose1,yes
-limit,thermal_accuracy,choose0,no
-limit,thermal_accuracy,choose1,yes
-limit,thermal_control_type,choose0,pin
-limit,thermal_control_type,choose1,factory
-limit,thermal_control_type,choose2,register
-limit,thermal_trim_name,text
-limit,thermal_trim_description,text
-limit,thermal_temperature_name,text
-limit,thermal_temperature_description,text
+
+limit,currentmirror_isetpolarity,choose0,sink
+limit,currentmirror_isetpolarity,choose1,source
+limit,currentmirror_number,minimum,1
+limit,currentmirror_number,maximum,8
+limit,currentmirror_maxiset,minimum,0.01
+limit,currentmirror_maxiset,maximum,100.0
+limit,currentmirror_maxvout,choose0,6
+limit,currentmirror_maxvout,choose1,12
+limit,currentmirror_maxvout,choose2,20
+limit,currentmirror_maxvout,choose3,24
+limit,currentmirror_maxvout,choose4,30
+limit,currentmirror_maxvout,choose5,36
+limit,currentmirror_maxvout,choose6,40
+limit,currentmirror_maxvout,choose7,45
+limit,currentmirror_maxvout,choose8,60
+limit,currentmirror_gain0,minimum,0.1
+limit,currentmirror_gain0,maximum,20.0
+limit,currentmirror_gain1,minimum,0.1
+limit,currentmirror_gain1,maximum,20.0
+limit,currentmirror_gain2,minimum,0.1
+limit,currentmirror_gain2,maximum,20.0
+limit,currentmirror_gain3,minimum,0.1
+limit,currentmirror_gain3,maximum,20.0
+limit,currentmirror_gain4,minimum,0.1
+limit,currentmirror_gain4,maximum,20.0
+limit,currentmirror_gain5,minimum,0.1
+limit,currentmirror_gain5,maximum,20.0
+limit,currentmirror_gain6,minimum,0.1
+limit,currentmirror_gain6,maximum,20.0
+limit,currentmirror_gain7,minimum,0.1
+limit,currentmirror_gain7,maximum,20.0
+limit,currentmirror_type0,choose0,sink
+limit,currentmirror_type0,choose1,source
+limit,currentmirror_type1,choose0,sink
+limit,currentmirror_type1,choose1,source
+limit,currentmirror_type2,choose0,sink
+limit,currentmirror_type2,choose1,source
+limit,currentmirror_type3,choose0,sink
+limit,currentmirror_type3,choose1,source
+limit,currentmirror_type4,choose0,sink
+limit,currentmirror_type4,choose1,source
+limit,currentmirror_type5,choose0,sink
+limit,currentmirror_type5,choose1,source
+limit,currentmirror_type6,choose0,sink
+limit,currentmirror_type6,choose1,source
+limit,currentmirror_type7,choose0,sink
+limit,currentmirror_type7,choose1,source
+limit,currentmirror_vmax,choose0,2
+limit,currentmirror_vmax,choose1,6
+limit,currentmirror_dft,choose0,no
+limit,currentmirror_dft,choose1,yes
+limit,currentmirror_global,choose0,no
+limit,currentmirror_global,choose1,yes
 
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,thermal_type,fixed
-description,Thermal Protection control mode
-user,thermal_accuracy,yes
-description,Thermal Protection Accuracy
-user,thermal_rise0,165C
-description,Thermal Protection Rising Threshold
-user,thermal_fall0,C
-description,Thermal Protection Falling Threshold
-user,REF,,0.9V
-description,Thermal Protection Project Reference
-user,NESTOrevsion,0.3.4
-description,Nesto Generator
+user,currentmirror_isetpolarity,source
+description,Current Mirror Iset polarity
+user,currentmirror_maxiset,10
+description,Current Mirror Maximum Output current
+user,currentmirror_maxvout,6
+description,Current Mirror Maximum Output Voltage
+user,currentmirror_supply,lowvoltage
+description,Minimum Operating Voltage
+user,currentmirror_gain0,1_source
+description,Current Mirror Output0
+user,NESTO,0.5.0
+description,Nesto generate Revision
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,thermal
-register,instance,thermal_51a067d4
+registermap,currentmirror
+register,instance,currentmirror_369e5658
 register,source,cell
 
-///Thermal Fault Threshold Adjust
+//No register Map Required
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readwrite
+register,mode,readonly
 register,por,0
 register,userdescription,na
 register,description0,not used
@@ -99,87 +108,78 @@ register,description4,not used
 register,description5,not used
 register,description6,not used
 register,description7,not used
+register,description8,empty
+register,description9,empty
+register,description10,empty
+register,description11,empty
+register,description12,empty
 //Netlister Information
 register,busname,na
-
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,thermal
-factory,instance,thermal_51a067d4
+factorymap,currentmirror
+factory,instance,currentmirror_369e5658
 factory,source,cell
 
-///Thermal Blank Flag
+///No factory Map Required
 factory,name,na
 factory,enable,no
 factory,bits,0
 factory,mode,readonly
 factory,por,0
 factory,userdescription,na
-factory,description0,not used
-factory,description1,not used
-factory,description2,not used
-factory,description3,not used
-factory,description4,not used
-factory,description5,not used
-factory,description6,not used
-factory,description7,not used
+factory,description0,description0,not used
+factory,description1,description1,not used
+factory,description2,description2,not used
+factory,description3,description3,not used
+factory,description4,description4,not used
+factory,description5,description5,not used
+factory,description6,description6,not used
+factory,description7,description7,not used
 //Netlister Information
 factory,busname,na
-
-///Thermal Fault Threshold Adjust
-factory,name,na
-factory,enable,no
-factory,bits,0
-factory,mode,readonly
-factory,por,0
-factory,userdescription,na
-factory,description0,not used
-factory,description1,not used
-factory,description2,not used
-factory,description3,not used
-factory,description4,not used
-factory,description5,not used
-factory,description6,not used
-factory,description7,not used
-//Netlister Information
-factory,busname,na
-
 //**********************************************
 //CELL DFT Parameters
 // *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,thermal
-place Generate STONEthermalCONTROL2 0 0 R0
-placeIFELSE cellNameContains DFT&&TRIM
-place Generate STONEthermalDFT 55.98 71.705 MX
-place Generate STONEthermalTRIM 17.55 80.075 MX
-placeRES 7.795 90.565 0.8 0.8 R0 x y 115
+layout,currentmirror
+
+place Generate STONEcurrentmirrormain 0 0 R0
+place Generate STONEcurrentmirrorpmos50urefhv30 52.64 -37.62 R0
+place Generate STONEcurrentmirrorpmos5urefhv30 52.64 -37.62 R0
+place Generate STONEcurrentmirrorpmos500nrefhv30 52.64 -37.62 R0
+place Generate STONEcurrentmirrormaindft -0.54 -0.16 MX 
+placeSTEP Generate STONEcurrentmirrornmos50uhv30 -10.28 -79.2 x 29.7 R0
+placeSTEP Generate STONEcurrentmirrorpmos50uhv30 -10.79 -121.385 x 20.9 R0
+placeSTEP Generate STONEcurrentmirrornmos5uhv30 -10.28 -53.68 x 12.22 R0
+placeSTEP Generate STONEcurrentmirrorpmos5uhv30 -10.79 -77.55 x 20.9 R0
+placeSTEP Generate STONEcurrentmirrornmos500nhv30 -10.28 -71.66 x 29.7 R0
+placeSTEP Generate STONEcurrentmirrorpmos500nhv30 -10.79 -95.53 x 20.9 R0
+placeIFELSE cellNameContains dft
+placeSTEP PEBBLES PEBBLEswitchG10K 10.08 -27.97 x 4.41 R0
 placeELSE
-place Generate STONEthermalDFT 55.98 71.705 MX
-placeALTVIEW Generate STONEthermalTRIM layout1 17.55 80.025 MX
-placeRES 7.795 82.22 0.8 0.8 R0 x y 115
-placeEND 
-place Generate STONEthermalDECODE4 44.64 -9.67 R0
-place Generate STONEthermalDECODE3 44.64 -1.295 R0
-place Generate STONEthermalDECODE2 44.64 7.075 R0
-place Generate STONEthermalDECODE1 45.27 23.815 MX
-placeRESRING 
-placeHVRING
-placeROUTE
+placeSTEP PEBBLES PEBBLEswitchG10K 44.1 0 x 4.41 R0
+placeEND
+placeTILE 0.66
+//place constraints module generator 
+//placeROUTE
 endlayoutbio
+
+
+
 
 //**********************************************
 //Project Parameters
-//Celera:WALTZ Project Bio
+//Celera:TELEMETRYadcCLOCK Project Bio
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////   default.bio'  DO NOT USE  ///////////////////////////////////
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,0.9
-#define,PROJECTsupply,4.5
+#define,PROJECTreference,1.2
+#define,PROJECTsupply,5.0
 #define,TaRoom,25
 #define,ground,0.0
 #define,leveloffset,5
@@ -218,90 +218,81 @@ endlayoutbio
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
 sub_area,STONEnoconn,0
-sub_area,STONEthermalCONTROL2,7072
-sub_area,STONEthermalDECODE1,85
-sub_area,STONEthermalTRIM,1120
-sub_area,rlpp3000rpo113p6u0p5u,170
-sub_area,rlpp3000rpo113p6u0p5u,683
-sub_area,rlpp3000rpo113p6u0p5u,256
-sub_area,rlpp3000rpo2p5u0p5u,2
-sub_area,rlpp3000rpo2p5u0p5u,2
-sub_area,rlpp3000rpo2p5u0p5u,2
-sub_area,rlpp3000rpo2p5u0p5u,2
-sub_area,rlpp3000rpo2p5u0p5u,2
-sub_area,rlpp3000rpo2p5u0p5u,2
-generate_area,thermal_51a067d4,9398
+sub_area,STONEcurrentmirrormain,100
+sub_area,CASCODEnmos5uref,3800
+sub_area,CASCODEpmos5u,3800
+sub_area,CASCODEpmos5uref,3800
+sub_area,CASCODEnmos5u,3800
+generate_area,currentmirror_369e5658,15300
+// *********************************************
+//Operating Range
+#define,STONEminimum,2.1
+#define,STONELVminimum,1.0
+#define,CELVminimum,2.1
+#define,HVPOSminimum,2.1
 // *********************************************
 //Calculator Parameters
-#define,THERMALresistorlength,113.57
-#define,THERMALresistorwidth,2.0
-#define,THERMALresistortrimwidth,0.5
-#define,THERMALresistoriso,CELG
-#define,THERMALiref,0.5
-#define,CELVminimum,2.2
-#define,THERMALtrimrange,10.0
-#define,THERMALpretrimhigh,15.0
-#define,THERMALpretrimlow,15.0
-#define,THERMALposttrimlsb,4.0
-#define,THERMALreferenceTemp,1.04
+#define,CELVminimum,2.0
+#define,count_runitw,2.0
+#define,count_runitmaxl,50.0
+#define,count_runitminl,5.0
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//thermal
+//currentmirror1
 revision,pinorder,0.2.0
-pinorder,fault_thermal,enable_thermal,net_skip,net_skip,SIMPV
+pinorder,I0,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,ISET,CELV,enable_currentmirror,ok_currentmirror,net_skip
 
 endpinorder
 //**********************************************
 
 //**********************************************
 //TRIM Parameters
-cell,thermal
-trim,instance,thermal_51a067d4
+cell,currentmirror
+trim,instance,currentmirror_369e5658
 
-//Thermal Accuracy
-trim,name,THERMALaccuracy
-trim,enable,yes
-trim,bits,3
+//currentmirror - no trim
+trim,name,na
+trim,enable,no
+trim,bits,TBD
 trim,por,0
-trim,testname,THERMALaccuracy
-trim,description,Thermal at 165C
-trim,pinname,trim_thermal_accuracy
-trim,target,165
-trim,units,C
-trim,pretrim_low_limit,150.000
-trim,pretrim_high_limit,180.000
-trim,posttrim_low_limit,159.000
-trim,posttrim_high_limit,171.000
-trim,codeunits,C
-trim,description0,code 0x00,165C
-trim,description1,code 0x01,+2.0
-trim,description2,code 0x02,+4.0
-trim,description3,code 0x03,+6.0
-trim,description4,code 0x04,+0.0
-trim,description5,code 0x05,-2.0
-trim,description6,code 0x06,-4.0
-trim,description7,code 0x07,-6.0
+trim,pinname,TBD
+trim,testname,TBD
+trim,description,TBD
+trim,target,na
+trim,units,TBD
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,TBD
+trim,description0,empty
+trim,description1,empty
+trim,description2,empty
+trim,description3,empty
+trim,description4,empty
+trim,description5,empty
+trim,description6,empty
+trim,description7,empty
 
 //**********************************************
-//Cell Pin Descriptions	
+//Cell Pin Descriptions
 //**********************************************
-
-pinname,SIMPV
-definition,SIMPV,cell power
-iq,SIMPV,SIMULATION
-absmax,SIMPV,6
-absmin,SIMPV,2.0
-io,SIMPV,input
-mode,SIMPV,power
-router,SIMPV,TBD
-dftpriority,SIMPV,1
-esd,SIMPV,TBD
+pinname,CELV
+definition,CELV,power supply
+iq,CELV,SIMULATION
+absmax,CELV,6
+absmin,CELV,2.0
+io,CELV,input
+mode,CELV,power
+router,CELV,TBD
+dftpriority,CELV,1
+esd,CELV,TBD
 
 pinname,CELG
-definition,CELG,cell power ground
+definition,CELG,power ground
 iq,CELG,SIMULATION
 absmax,CELG,0.3
 absmin,CELG,-0.3
@@ -311,74 +302,8 @@ router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,IP
-definition,IP,reference current
-iq,IP,SIMULATION
-absmax,IP,6
-absmin,IP,-0.3
-io,IP,input
-mode,IP,analog
-router,IP,TBD
-dftpriority,IP,1
-esd,IP,TBD
-
-pinname,CELBG
-definition,CELBG,Thermal Vbe Reference voltage
-iq,CELBG,SIMULATION
-absmax,CELBG,6
-absmin,CELBG,-0.3
-io,CELBG,input
-mode,CELBG,analog
-router,CELBG,TBD
-dftpriority,CELBG,1
-esd,CELBG,TBD
-
-pinname,enable_thermal
-definition,enable_thermal,enable Thermal Protection
-iq,enable_thermal,SIMULATION
-absmax,enable_thermal,6
-absmin,enable_thermal,-0.3
-io,enable_thermal,input
-mode,enable_thermal,digital
-router,enable_thermal,TBD
-dftpriority,enable_thermal,1
-esd,enable_thermal,TBD
-
-pinname,ten
-definition,ten,Global enable
-iq,ten,SIMULATION
-absmax,ten,6
-absmin,ten,-0.3
-io,ten,input
-mode,ten,digital
-router,ten,TBD
-dftpriority,ten,1
-esd,ten,TBD
-
-pinname,fault_thermal
-definition,fault_thermal,Thermal Output fault Flag
-iq,fault_thermal,SIMULATION
-absmax,fault_thermal,6
-absmin,fault_thermal,-0.3
-io,fault_thermal,output
-mode,fault_thermal,digital
-router,fault_thermal,TBD
-dftpriority,fault_thermal,1
-esd,fault_thermal,TBD
-
-pinname,trim_thermal_accuracy
-definition,trim_thermal_accuracy,Factory trim Thermal threshold adjust
-iq,trim_thermal_accuracy,SIMULATION
-absmax,trim_thermal_accuracy,6
-absmin,trim_thermal_accuracy,-0.3
-io,trim_thermal_accuracy,input
-mode,trim_thermal_accuracy,digital
-router,trim_thermal_accuracy,TBD
-dftpriority,trim_thermal_accuracy,1
-esd,trim_thermal_accuracy,TBD
-
 pinname,CELSUB
-definition,CELSUB,Substrate
+definition,CELSUB,power ground
 iq,CELSUB,SIMULATION
 absmax,CELSUB,0.3
 absmin,CELSUB,-0.3
@@ -388,6 +313,68 @@ router,CELSUB,TBD
 dftpriority,CELSUB,1
 esd,CELSUB,TBD
 
+
+pinname,enable_currentmirror
+definition,enable_currentmirror,Enable Pin
+iq,enable_currentmirror,SIMULATION
+absmax,enable_currentmirror,6
+absmin,enable_currentmirror,-0.3
+io,enable_currentmirror,input
+mode,enable_currentmirror,digital
+router,enable_currentmirror,TBD
+dftpriority,enable_currentmirror,1
+esd,enable_currentmirror,TBD
+
+pinname,ISET
+definition,ISET,Mirror Current Reference
+iq,ISET,SIMULATION
+absmax,ISET,6
+absmin,ISET,-0.3
+io,ISET,input
+mode,ISET,analog
+router,ISET,TBD
+dftpriority,ISET,1
+esd,ISET,TBD
+
+pinname,ok_currentmirror
+definition,ok_currentmirror,Current Mirror OK
+iq,ok_currentmirror,SIMULATION
+absmax,ok_currentmirror,6
+absmin,ok_currentmirror,-0.3
+io,ok_currentmirror,output
+mode,ok_currentmirror,digital
+router,ok_currentmirror,TBD
+dftpriority,ok_currentmirror,1
+esd,ok_currentmirror,TBD
+
+pinname,I0
+definition,I0,Output 0
+iq,I0,SIMULATION
+absmax,I0,6
+absmin,I0,-0.3
+io,I0,inout
+mode,I0,analog
+router,I0,TBD
+dftpriority,I0,1
+esd,I0,TBD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+endbio
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -1064,6 +1051,19 @@ revision,vis15cb,0p1
 #define,AP5G60DC1maxmult,99
 #define,AP5G60DC1minmult,1
 ////////////////////////////////////////////////////////////////////////
-//*********************************************
+// *********************************************
 endbio
+// *********************************************
+
+
+
+
+
+
+
+
+
+
+
+
 

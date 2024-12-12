@@ -4,91 +4,82 @@
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Celera Confidential BIO Data Generator
+///Celera Confidential BIO Data Generator
 //Cell Name
-cell,thermal
+cell,oscillatorring
 //**********************************************
 //Generator Revision
-revision,generator,0.3.4
+revision,generator,0.5.2
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,thermal_type,choose0,fixed
-limit,thermal_type,choose1,control
-limit,thermal_rise,minimum,-40.0
-limit,thermal_rise,maximum,180.0
-limit,thermal_rise0,minimum,-40.0
-limit,thermal_rise0,maximum,180.0
-limit,thermal_rise1,minimum,-40.0
-limit,thermal_rise1,maximum,180.0
-limit,thermal_rise2,minimum,-40.0
-limit,thermal_rise2,maximum,180.0
-limit,thermal_rise3,minimum,-40.0
-limit,thermal_rise3,maximum,180.0
-limit,thermal_fall,minimum,-40.0
-limit,thermal_fall,maximum,180.0
-limit,thermal_fall0,minimum,-40.0
-limit,thermal_fall0,maximum,180.0
-limit,thermal_fall1,minimum,-40.0
-limit,thermal_fall1,maximum,180.0
-limit,thermal_fall2,minimum,-40.0
-limit,thermal_fall2,maximum,180.0
-limit,thermal_fall3,minimum,-40.0
-limit,thermal_fall3,maximum,180.0
-limit,thermal_register_por,choose0,0
-limit,thermal_register_por,choose1,1
-limit,thermal_register_por,choose2,2
-limit,thermal_register_por,choose3,3
-limit,thermal_vmax,choose0,2
-limit,thermal_vmax,choose1,6
-limit,thermal_dft,choose0,no
-limit,thermal_dft,choose1,yes
-limit,thermal_selections,choose0,1
-limit,thermal_selections,choose1,2
-limit,thermal_selections,choose2,3
-limit,thermal_selections,choose3,1
-limit,thermal_disable,choose0,no
-limit,thermal_disable,choose1,yes
-limit,thermal_accuracy,choose0,no
-limit,thermal_accuracy,choose1,yes
-limit,thermal_control_type,choose0,pin
-limit,thermal_control_type,choose1,factory
-limit,thermal_control_type,choose2,register
-limit,thermal_trim_name,text
-limit,thermal_trim_description,text
-limit,thermal_temperature_name,text
-limit,thermal_temperature_description,text
+
+limit,osc_type,choose0,ring
+limit,osc_enable,choose0,pin
+limit,osc_enable,choose1,register
+limit,osc_enable,choose2,factory
+limit,osc_enable_por,choose0,disable
+limit,osc_enable_por,choose1,enable
+limit,osc_datasheet_enable_name,text
+limit,osc_datasheet_enable_description,text
+limit,osc_accuracy,choose0,no
+limit,osc_accuracy,choose1,yes
+limit,osc_ringfreq,choose0,5
+limit,osc_ringfreq,choose1,10
+limit,osc_ringfreq,choose2,20
+limit,osc_ringfreq,choose3.30
+limit,osc_ringfreq,choose4,40
+limit,osc_vmax,choose0,2
+limit,osc_vmax,choose1,6
+limit,osc_dft,choose0,no
+limit,osc_dft,choose1,yes
+limit,osc_standbyclock,choose0,no
+limit,osc_standbyclock,choose1,pin
+limit,osc_standbyclock,choose2,register
+limit,osc_standbyclock,choose3,factory
+limit,osc_standbyclockpor,choose0,disable
+limit,osc_standbyclockpor,choose1,enable
 
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,thermal_type,fixed
-description,Thermal Protection control mode
-user,thermal_accuracy,yes
-description,Thermal Protection Accuracy
-user,thermal_rise0,165C
-description,Thermal Protection Rising Threshold
-user,thermal_fall0,C
-description,Thermal Protection Falling Threshold
-user,REF,,0.9V
-description,Thermal Protection Project Reference
-user,NESTOrevsion,0.3.4
-description,Nesto Generator
+user,Frequency,20MHz
+description,Ring Operating Frequency
+user,NESTO,0.5.2
+description,NESTO revision
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,thermal
-register,instance,thermal_51a067d4
+registermap,oscillatorring
+register,instance,oscillatorring_92324fa9
 register,source,cell
 
-///Thermal Fault Threshold Adjust
+///Oscilaltor RING Enable control
+register,name,na
+register,enable,no
+register,bits,na
+register,mode,readwrite
+register,por,na
+register,userdescription,na
+register,description0,description0,not used
+register,description1,description1,not used
+register,description2,description2,not used
+register,description3,description3,not used
+register,description4,description4,not used
+register,description5,description5,not used
+register,description6,description6,not used
+register,description7,description7,not used
+//Netlister Information
+register,busname,na
+
+///Oscilaltor RING Standby control
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readwrite
+register,mode,TBD
 register,por,0
 register,userdescription,na
 register,description0,not used
@@ -101,37 +92,37 @@ register,description6,not used
 register,description7,not used
 //Netlister Information
 register,busname,na
-
+///////////////////////////////////////////////////////////////////////
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,thermal
-factory,instance,thermal_51a067d4
+factorymap,oscillatorring
+factory,instance,oscillatorring_92324fa9
 factory,source,cell
 
-///Thermal Blank Flag
+///Oscillator RING Enable 
 factory,name,na
 factory,enable,no
-factory,bits,0
+factory,bits,na
 factory,mode,readonly
-factory,por,0
+factory,por,na
 factory,userdescription,na
-factory,description0,not used
-factory,description1,not used
-factory,description2,not used
-factory,description3,not used
-factory,description4,not used
-factory,description5,not used
-factory,description6,not used
-factory,description7,not used
+factory,description0,description0,not used
+factory,description1,description1,not used
+factory,description2,description2,not used
+factory,description3,description3,not used
+factory,description4,description4,not used
+factory,description5,description5,not used
+factory,description6,description6,not used
+factory,description7,description7,not used
 //Netlister Information
 factory,busname,na
 
-///Thermal Fault Threshold Adjust
+///Oscillator RING Standby
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,readonly
+factory,mode,TBD
 factory,por,0
 factory,userdescription,na
 factory,description0,not used
@@ -144,42 +135,37 @@ factory,description6,not used
 factory,description7,not used
 //Netlister Information
 factory,busname,na
+////////////////////////////////////////////////////////////////////
 
 //**********************************************
 //CELL DFT Parameters
 // *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,thermal
-place Generate STONEthermalCONTROL2 0 0 R0
-placeIFELSE cellNameContains DFT&&TRIM
-place Generate STONEthermalDFT 55.98 71.705 MX
-place Generate STONEthermalTRIM 17.55 80.075 MX
-placeRES 7.795 90.565 0.8 0.8 R0 x y 115
-placeELSE
-place Generate STONEthermalDFT 55.98 71.705 MX
-placeALTVIEW Generate STONEthermalTRIM layout1 17.55 80.025 MX
-placeRES 7.795 82.22 0.8 0.8 R0 x y 115
-placeEND 
-place Generate STONEthermalDECODE4 44.64 -9.67 R0
-place Generate STONEthermalDECODE3 44.64 -1.295 R0
-place Generate STONEthermalDECODE2 44.64 7.075 R0
-place Generate STONEthermalDECODE1 45.27 23.815 MX
-placeRESRING 
-placeHVRING
+layout,oscillatorring
+
+
+//NEW cell in Simplis294
+
+place Generate STONEringCONTROL1 0 0 R0
+place Generate STONEringRING 20 20 R0
+place Generate STONEringACCURACY20MHZ 40 40 R0
 placeROUTE
 endlayoutbio
 
+
+
+
 //**********************************************
 //Project Parameters
-//Celera:WALTZ Project Bio
+//Celera:TELEMETRYadcCLOCK Project Bio
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////   default.bio'  DO NOT USE  ///////////////////////////////////
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,0.9
-#define,PROJECTsupply,4.5
+#define,PROJECTreference,1.2
+#define,PROJECTsupply,5.0
 #define,TaRoom,25
 #define,ground,0.0
 #define,leveloffset,5
@@ -217,83 +203,64 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,STONEnoconn,0
-sub_area,STONEthermalCONTROL2,7072
-sub_area,STONEthermalDECODE1,85
-sub_area,STONEthermalTRIM,1120
-sub_area,rlpp3000rpo113p6u0p5u,170
-sub_area,rlpp3000rpo113p6u0p5u,683
-sub_area,rlpp3000rpo113p6u0p5u,256
-sub_area,rlpp3000rpo2p5u0p5u,2
-sub_area,rlpp3000rpo2p5u0p5u,2
-sub_area,rlpp3000rpo2p5u0p5u,2
-sub_area,rlpp3000rpo2p5u0p5u,2
-sub_area,rlpp3000rpo2p5u0p5u,2
-sub_area,rlpp3000rpo2p5u0p5u,2
-generate_area,thermal_51a067d4,9398
+sub_area,STONEringCONTROL1,99999
+sub_area,STONEringRING,99999
+sub_area,STONEringACCURACY20MHZ,99999
+generate_area,oscillatorring_92324fa9,299997
 // *********************************************
-//Calculator Parameters
-#define,THERMALresistorlength,113.57
-#define,THERMALresistorwidth,2.0
-#define,THERMALresistortrimwidth,0.5
-#define,THERMALresistoriso,CELG
-#define,THERMALiref,0.5
-#define,CELVminimum,2.2
-#define,THERMALtrimrange,10.0
-#define,THERMALpretrimhigh,15.0
-#define,THERMALpretrimlow,15.0
-#define,THERMALposttrimlsb,4.0
-#define,THERMALreferenceTemp,1.04
+
+//Calculate Filter 
+#define,OSCILLATORRINGpretrimlow,0
+#define,OSCILLATORRINGpretrimhigh,20.0
+#define,OSCILLATORRINGposttrimlsb,2.0
+
+//Design Parameters
+#define,CELVminimum,2.1
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//thermal
+//oscillatorring
 revision,pinorder,0.2.0
-pinorder,fault_thermal,enable_thermal,net_skip,net_skip,SIMPV
+pinorder,clock,enable_oscillator,ok_oscillator,net_skip,SIMPV,fault_oscillator
 
 endpinorder
 //**********************************************
-
-//**********************************************
 //TRIM Parameters
-cell,thermal
-trim,instance,thermal_51a067d4
+cell,oscillatorring
+trim,instance,oscillatorring_92324fa9
 
-//Thermal Accuracy
-trim,name,THERMALaccuracy
+trim,name,ADCLOCKaccuracy
 trim,enable,yes
 trim,bits,3
 trim,por,0
-trim,testname,THERMALaccuracy
-trim,description,Thermal at 165C
-trim,pinname,trim_thermal_accuracy
-trim,target,165
-trim,units,C
-trim,pretrim_low_limit,150.000
-trim,pretrim_high_limit,180.000
-trim,posttrim_low_limit,159.000
-trim,posttrim_high_limit,171.000
-trim,codeunits,C
-trim,description0,code 0x00,165C
-trim,description1,code 0x01,+2.0
-trim,description2,code 0x02,+4.0
-trim,description3,code 0x03,+6.0
-trim,description4,code 0x04,+0.0
-trim,description5,code 0x05,-2.0
-trim,description6,code 0x06,-4.0
-trim,description7,code 0x07,-6.0
-
+trim,pinname,trim_oscillatorring
+trim,testname,ADCLOCKaccuracy
+trim,description,ADC_CLOCK-accuracy_to_20MHz
+trim,target,20
+trim,units,MHz
+trim,pretrim_low_limit,20.000
+trim,pretrim_high_limit,40.000
+trim,posttrim_low_limit,17.000
+trim,posttrim_high_limit,23.000
+trim,codeunits,%
+trim,description0,code 0x01.-2.0
+trim,description1,code 0x02.-4.0
+trim,description2,code 0x03.-6.0
+trim,description3,code 0x04.-8.0
+trim,description4,code 0x05.-10
+trim,description5,code 0x06.-12.0
+trim,description6,code 0x07.-14.0
+trim,description7,not used
+trim,description8,empty
 //**********************************************
-//Cell Pin Descriptions	
-//**********************************************
-
+//Cell Pin Descriptions
 pinname,SIMPV
-definition,SIMPV,cell power
+definition,SIMPV
 iq,SIMPV,SIMULATION
 absmax,SIMPV,6
-absmin,SIMPV,2.0
+absmin,SIMPV,-0.3
 io,SIMPV,input
 mode,SIMPV,power
 router,SIMPV,TBD
@@ -312,7 +279,7 @@ dftpriority,CELG,1
 esd,CELG,TBD
 
 pinname,IP
-definition,IP,reference current
+definition,IP,Reference 0.5uA Input current
 iq,IP,SIMULATION
 absmax,IP,6
 absmin,IP,-0.3
@@ -322,68 +289,90 @@ router,IP,TBD
 dftpriority,IP,1
 esd,IP,TBD
 
-pinname,CELBG
-definition,CELBG,Thermal Vbe Reference voltage
-iq,CELBG,SIMULATION
-absmax,CELBG,6
-absmin,CELBG,-0.3
-io,CELBG,input
-mode,CELBG,analog
-router,CELBG,TBD
-dftpriority,CELBG,1
-esd,CELBG,TBD
+pinname,CELREF
+definition,CELREF,Reference,voltage from Global reference
+iq,CELREF,SIMULATION
+absmax,CELREF,6
+absmin,CELREF,-0.3
+io,CELREF,input
+mode,CELREF,analog
+router,CELREF,TBD
+dftpriority,CELREF,1
+esd,CELREF,TBD
 
-pinname,enable_thermal
-definition,enable_thermal,enable Thermal Protection
-iq,enable_thermal,SIMULATION
-absmax,enable_thermal,6
-absmin,enable_thermal,-0.3
-io,enable_thermal,input
-mode,enable_thermal,digital
-router,enable_thermal,TBD
-dftpriority,enable_thermal,1
-esd,enable_thermal,TBD
+pinname,enable_oscillator
+definition,enable_oscillator,Oscillator enable pin
+iq,enable_oscillator,SIMULATION
+absmax,enable_oscillator,6
+absmin,enable_oscillator,-0.3
+io,enable_oscillator,input
+mode,enable_oscillator,digital
+router,enable_oscillator,TBD
+dftpriority,enable_oscillator,1
+esd,enable_oscillator,TBD
 
-pinname,ten
-definition,ten,Global enable
-iq,ten,SIMULATION
-absmax,ten,6
-absmin,ten,-0.3
-io,ten,input
-mode,ten,digital
-router,ten,TBD
-dftpriority,ten,1
-esd,ten,TBD
+pinname,trim_oscillatorring
+definition,trim_oscillatorring.RING Cfrequencey accuracy
+iq,trim_oscillatorring,SIMULATION
+absmax,trim_oscillatorring,6
+absmin,trim_oscillatorring,-0.3
+io,trim_oscillatorring,input
+mode,trim_oscillatorring,digital
+router,trim_oscillatorring,TBD
+dftpriority,trim_oscillatorring,1
+esd,trim_oscillatorring,TBD
 
-pinname,fault_thermal
-definition,fault_thermal,Thermal Output fault Flag
-iq,fault_thermal,SIMULATION
-absmax,fault_thermal,6
-absmin,fault_thermal,-0.3
-io,fault_thermal,output
-mode,fault_thermal,digital
-router,fault_thermal,TBD
-dftpriority,fault_thermal,1
-esd,fault_thermal,TBD
+pinname,global_oscillatorring
+definition,global_oscillatorring.RING Global DFT enable
+iq,global_oscillatorring,SIMULATION
+absmax,global_oscillatorring,6
+absmin,global_oscillatorring,-0.3
+io,global_oscillatorring,input
+mode,global_oscillatorring,digital
+router,global_oscillatorring,TBD
+dftpriority,global_oscillatorring,1
+esd,global_oscillatorring,TBD
 
-pinname,trim_thermal_accuracy
-definition,trim_thermal_accuracy,Factory trim Thermal threshold adjust
-iq,trim_thermal_accuracy,SIMULATION
-absmax,trim_thermal_accuracy,6
-absmin,trim_thermal_accuracy,-0.3
-io,trim_thermal_accuracy,input
-mode,trim_thermal_accuracy,digital
-router,trim_thermal_accuracy,TBD
-dftpriority,trim_thermal_accuracy,1
-esd,trim_thermal_accuracy,TBD
+pinname,ok_oscillator
+definition,ok_oscillator,Oscillator OK output Flag
+iq,ok_oscillator,SIMULATION
+absmax,ok_oscillator,6
+absmin,ok_oscillator,-0.3
+io,ok_oscillator,output
+mode,ok_oscillator,digital
+routerok_oscillator,TBD
+dftpriority,ok_oscillator,1
+esd,ok_oscillator,TBD
+
+pinname,fault_oscillator
+definition,fault_oscillator,Oscillator fault output flag
+iq,fault_oscillator,SIMULATION
+absmax,fault_oscillator,6
+absmin,fault_oscillator,-0.3
+io,fault_oscillator,output
+mode,fault_oscillator,digital
+router,fault_oscillator,TBD
+dftpriority,fault_oscillator,1
+esd,fault_oscillator,TBD
+
+pinname,clock
+definition,clock,clock output
+iq,clock,SIMULATION
+absmax,clock,6
+absmin,clock,-0.3
+io,clock,output
+mode,clock,digital
+router,clock,TBD
+dftpriority,clock,1
+esd,clock,TBD
 
 pinname,CELSUB
-definition,CELSUB,Substrate
+definition,CELSUB,substrate
 iq,CELSUB,SIMULATION
 absmax,CELSUB,0.3
 absmin,CELSUB,-0.3
 io,CELSUB,input
-mode,CELSUB,power
+mode,CELSUB,analog
 router,CELSUB,TBD
 dftpriority,CELSUB,1
 esd,CELSUB,TBD
@@ -1064,6 +1053,6 @@ revision,vis15cb,0p1
 #define,AP5G60DC1maxmult,99
 #define,AP5G60DC1minmult,1
 ////////////////////////////////////////////////////////////////////////
-//*********************************************
+// *********************************************
 endbio
 

@@ -6,142 +6,102 @@
 
 //Celera Confidential BIO Data Generator
 //Cell Name
-cell,thermal
+cell,delayclock
 //**********************************************
 //Generator Revision
-revision,generator,0.3.4
+revision,generator,0.4.0
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,thermal_type,choose0,fixed
-limit,thermal_type,choose1,control
-limit,thermal_rise,minimum,-40.0
-limit,thermal_rise,maximum,180.0
-limit,thermal_rise0,minimum,-40.0
-limit,thermal_rise0,maximum,180.0
-limit,thermal_rise1,minimum,-40.0
-limit,thermal_rise1,maximum,180.0
-limit,thermal_rise2,minimum,-40.0
-limit,thermal_rise2,maximum,180.0
-limit,thermal_rise3,minimum,-40.0
-limit,thermal_rise3,maximum,180.0
-limit,thermal_fall,minimum,-40.0
-limit,thermal_fall,maximum,180.0
-limit,thermal_fall0,minimum,-40.0
-limit,thermal_fall0,maximum,180.0
-limit,thermal_fall1,minimum,-40.0
-limit,thermal_fall1,maximum,180.0
-limit,thermal_fall2,minimum,-40.0
-limit,thermal_fall2,maximum,180.0
-limit,thermal_fall3,minimum,-40.0
-limit,thermal_fall3,maximum,180.0
-limit,thermal_register_por,choose0,0
-limit,thermal_register_por,choose1,1
-limit,thermal_register_por,choose2,2
-limit,thermal_register_por,choose3,3
-limit,thermal_vmax,choose0,2
-limit,thermal_vmax,choose1,6
-limit,thermal_dft,choose0,no
-limit,thermal_dft,choose1,yes
-limit,thermal_selections,choose0,1
-limit,thermal_selections,choose1,2
-limit,thermal_selections,choose2,3
-limit,thermal_selections,choose3,1
-limit,thermal_disable,choose0,no
-limit,thermal_disable,choose1,yes
-limit,thermal_accuracy,choose0,no
-limit,thermal_accuracy,choose1,yes
-limit,thermal_control_type,choose0,pin
-limit,thermal_control_type,choose1,factory
-limit,thermal_control_type,choose2,register
-limit,thermal_trim_name,text
-limit,thermal_trim_description,text
-limit,thermal_temperature_name,text
-limit,thermal_temperature_description,text
+limit,delay_type,choose0,clock
+limit,delay_edge,choose0,rise
+limit,delay_edge,choose1,fall
+limit,delay_dft,choose0,no
+limit,delay_dft,choose1,yes
+limit,delay_vmax,choose0,2
+limit,delay_vmax,choose1,6
 
+limit,delayclock_control,choose0,pin
+limit,delayclock_control,choose1,register
+limit,delayclock_control,choose2,factory
+limit,delayclock_options,minimum,1
+limit,delayclock_options,maximum,4
+limit,delayclock_por,minimum,0
+limit,delayclock_por,maximum,3
+limit,delayclock_datasheetname,text
+limit,delayclock_datasheetdescription,text
+limit,delayclock_count0,minimum,0
+limit,delayclock_count0,maximum,131072
+limit,delayclock_count1,minimum,0
+limit,delayclock_count1,maximum,131072
+limit,delayclock_count2,minimum,0
+limit,delayclock_count2,maximum,131072
+limit,delayclock_count3,minimum,0
+limit,delayclock_count3,maximum,131072
+limit,delayclock_accuracy,choose0,no
+limit,delayclock_accuracy,choose1,yes
+limit,delayclock_accuracyname,text
+limit,delayclock_accuracydescription,text
+limit,delayclock_freq,minimum,1
+limit,delayclock_freq,maximum,40000
+//************************************************************
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,thermal_type,fixed
-description,Thermal Protection control mode
-user,thermal_accuracy,yes
-description,Thermal Protection Accuracy
-user,thermal_rise0,165C
-description,Thermal Protection Rising Threshold
-user,thermal_fall0,C
-description,Thermal Protection Falling Threshold
-user,REF,,0.9V
-description,Thermal Protection Project Reference
-user,NESTOrevsion,0.3.4
-description,Nesto Generator
+user,delay,12.5us_at_1000KHz
+description,delay Clock 1 input
+user,delayclock_datasheetdescription,rise
+description,delay Edge
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,thermal
-register,instance,thermal_51a067d4
+registermap,delayclock
+register,instance,delayclock_171023ef
 register,source,cell
 
-///Thermal Fault Threshold Adjust
+//delay time 
 register,name,na
 register,enable,no
-register,bits,0
+register,bits,na
 register,mode,readwrite
-register,por,0
+register,por,na
 register,userdescription,na
-register,description0,not used
-register,description1,not used
-register,description2,not used
-register,description3,not used
-register,description4,not used
-register,description5,not used
-register,description6,not used
-register,description7,not used
+register,description0,description0,not used
+register,description1,description1,not used
+register,description2,description2,not used
+register,description3,description3,not used
+register,description4,description4,not used
+register,description5,description5,not used
+register,description6,description6,not used
+register,description7,description7,not used
 //Netlister Information
 register,busname,na
 
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,thermal
-factory,instance,thermal_51a067d4
+factorymap,delayclock
+factory,instance,delayclock_171023ef
 factory,source,cell
 
-///Thermal Blank Flag
+//delay time 
 factory,name,na
 factory,enable,no
-factory,bits,0
+factory,bits,na
 factory,mode,readonly
-factory,por,0
+factory,por,na
 factory,userdescription,na
-factory,description0,not used
-factory,description1,not used
-factory,description2,not used
-factory,description3,not used
-factory,description4,not used
-factory,description5,not used
-factory,description6,not used
-factory,description7,not used
-//Netlister Information
-factory,busname,na
-
-///Thermal Fault Threshold Adjust
-factory,name,na
-factory,enable,no
-factory,bits,0
-factory,mode,readonly
-factory,por,0
-factory,userdescription,na
-factory,description0,not used
-factory,description1,not used
-factory,description2,not used
-factory,description3,not used
-factory,description4,not used
-factory,description5,not used
-factory,description6,not used
-factory,description7,not used
+factory,description0,description0,not used
+factory,description1,description1,not used
+factory,description2,description2,not used
+factory,description3,description3,not used
+factory,description4,description4,not used
+factory,description5,description5,not used
+factory,description6,description6,not used
+factory,description7,description7,not used
 //Netlister Information
 factory,busname,na
 
@@ -150,36 +110,40 @@ factory,busname,na
 // *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,thermal
-place Generate STONEthermalCONTROL2 0 0 R0
-placeIFELSE cellNameContains DFT&&TRIM
-place Generate STONEthermalDFT 55.98 71.705 MX
-place Generate STONEthermalTRIM 17.55 80.075 MX
-placeRES 7.795 90.565 0.8 0.8 R0 x y 115
-placeELSE
-place Generate STONEthermalDFT 55.98 71.705 MX
-placeALTVIEW Generate STONEthermalTRIM layout1 17.55 80.025 MX
-placeRES 7.795 82.22 0.8 0.8 R0 x y 115
-placeEND 
-place Generate STONEthermalDECODE4 44.64 -9.67 R0
-place Generate STONEthermalDECODE3 44.64 -1.295 R0
-place Generate STONEthermalDECODE2 44.64 7.075 R0
-place Generate STONEthermalDECODE1 45.27 23.815 MX
-placeRESRING 
-placeHVRING
-placeROUTE
+//Delay based on master clock
+layout,delayclock
+
+place Generate STONEdelayclockDFT 0 0 R0
+place Generate STONEdelayclockEDGE 0 0 R0
+place Generate STONEdelayclockSELECT25 0 0 R0
+place Generate STONEdelayclockSELECT29 0 0 R0
+place Generate STONEdelayclockSELECT45 0 0 R0
+place Generate STONEdelayclockSELECT49 0 0 R0
+placeALTVIEW Generate STONEdelayclockSELECT417 layout1 0 0 R0
+place Generate STONEdelayclockSELECT217 0 0 R0
+place Generate STONEdelayclockTIE 0 0 R0
+
+
+place Generate prog_delay_5bit 120 0 R90
+place Generate prog_delay_5bit_trim 120 0 R90
+place Generate prog_delay_9bit 120 0 R90
+place Generate prog_delay_9bit_trim 120 0 R90
+place Generate prog_delay_17bit 240 0 R90
+place Generate prog_delay_17bit_trim 240 0 R90
+
+placeROUTE24
 endlayoutbio
 
 //**********************************************
 //Project Parameters
-//Celera:WALTZ Project Bio
+//Celera:TELEMETRYadcCLOCK Project Bio
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////   default.bio'  DO NOT USE  ///////////////////////////////////
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,0.9
-#define,PROJECTsupply,4.5
+#define,PROJECTreference,1.2
+#define,PROJECTsupply,5.0
 #define,TaRoom,25
 #define,ground,0.0
 #define,leveloffset,5
@@ -217,88 +181,70 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,STONEnoconn,0
-sub_area,STONEthermalCONTROL2,7072
-sub_area,STONEthermalDECODE1,85
-sub_area,STONEthermalTRIM,1120
-sub_area,rlpp3000rpo113p6u0p5u,170
-sub_area,rlpp3000rpo113p6u0p5u,683
-sub_area,rlpp3000rpo113p6u0p5u,256
-sub_area,rlpp3000rpo2p5u0p5u,2
-sub_area,rlpp3000rpo2p5u0p5u,2
-sub_area,rlpp3000rpo2p5u0p5u,2
-sub_area,rlpp3000rpo2p5u0p5u,2
-sub_area,rlpp3000rpo2p5u0p5u,2
-sub_area,rlpp3000rpo2p5u0p5u,2
-generate_area,thermal_51a067d4,9398
+sub_area,prog_delay_5bit,99999
+generate_area,delayclock_171023ef,99999
 // *********************************************
+#define,DELAYresistorISO,CELG
+#define,CELVminimum,1.8
+
 //Calculator Parameters
-#define,THERMALresistorlength,113.57
-#define,THERMALresistorwidth,2.0
-#define,THERMALresistortrimwidth,0.5
-#define,THERMALresistoriso,CELG
-#define,THERMALiref,0.5
-#define,CELVminimum,2.2
-#define,THERMALtrimrange,10.0
-#define,THERMALpretrimhigh,15.0
-#define,THERMALpretrimlow,15.0
-#define,THERMALposttrimlsb,4.0
-#define,THERMALreferenceTemp,1.04
+#define,DELAYpretrimhigh,30.0
+#define,DELAYpretrimlow,30.0
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//thermal
+//delayclock
 revision,pinorder,0.2.0
-pinorder,fault_thermal,enable_thermal,net_skip,net_skip,SIMPV
+pinorder,in,out,clock,net_skip,net_skip,net_skip
 
 endpinorder
 //**********************************************
-
-//**********************************************
 //TRIM Parameters
-cell,thermal
-trim,instance,thermal_51a067d4
+cell,delayclock
+trim,instance,delayclock_171023ef
 
-//Thermal Accuracy
-trim,name,THERMALaccuracy
-trim,enable,yes
-trim,bits,3
+trim,name,na
+trim,enable,no
+trim,bits,TBD
 trim,por,0
-trim,testname,THERMALaccuracy
-trim,description,Thermal at 165C
-trim,pinname,trim_thermal_accuracy
-trim,target,165
-trim,units,C
-trim,pretrim_low_limit,150.000
-trim,pretrim_high_limit,180.000
-trim,posttrim_low_limit,159.000
-trim,posttrim_high_limit,171.000
-trim,codeunits,C
-trim,description0,code 0x00,165C
-trim,description1,code 0x01,+2.0
-trim,description2,code 0x02,+4.0
-trim,description3,code 0x03,+6.0
-trim,description4,code 0x04,+0.0
-trim,description5,code 0x05,-2.0
-trim,description6,code 0x06,-4.0
-trim,description7,code 0x07,-6.0
+trim,pinname,trim_delay
+trim,testname,TBD
+trim,description,TBD
+trim,target,na
+trim,units,ns
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,%
+trim,description0,empty
+trim,description1,empty
+trim,description2,empty
+trim,description3,empty
+trim,description4,empty
+trim,description5,empty
+trim,description6,empty
+trim,description7,empty
+trim,description8,empty
+
+
+
 
 //**********************************************
 //Cell Pin Descriptions	
 //**********************************************
-
-pinname,SIMPV
-definition,SIMPV,cell power
-iq,SIMPV,SIMULATION
-absmax,SIMPV,6
-absmin,SIMPV,2.0
-io,SIMPV,input
-mode,SIMPV,power
-router,SIMPV,TBD
-dftpriority,SIMPV,1
-esd,SIMPV,TBD
+pinname,CELV
+definition,CELV,cell power
+iq,CELV,SIMULATION
+absmax,CELV,6
+absmin,CELV,2.0
+io,CELV,input
+mode,CELV,power
+router,CELV,TBD
+dftpriority,CELV,1
+esd,CELV,TBD
 
 pinname,CELG
 definition,CELG,cell power ground
@@ -311,83 +257,60 @@ router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,IP
-definition,IP,reference current
-iq,IP,SIMULATION
-absmax,IP,6
-absmin,IP,-0.3
-io,IP,input
-mode,IP,analog
-router,IP,TBD
-dftpriority,IP,1
-esd,IP,TBD
+pinname,celeraporb
+definition,celeraporb.Global Power on reset
+iq,celeraporb,SIMULATION
+absmax,celeraporb,6
+absmin,celeraporb,-0.3
+io,celeraporb,input
+mode,celeraporb,digital
+router,celeraporb,TBD
+dftpriority,celeraporb,1
+esd,celeraporb,TBD
 
-pinname,CELBG
-definition,CELBG,Thermal Vbe Reference voltage
-iq,CELBG,SIMULATION
-absmax,CELBG,6
-absmin,CELBG,-0.3
-io,CELBG,input
-mode,CELBG,analog
-router,CELBG,TBD
-dftpriority,CELBG,1
-esd,CELBG,TBD
+pinname,in
+definition,in,delay input
+iq,in,SIMULATION
+absmax,in,6
+absmin,in,-0.3
+io,in,input
+mode,in,digital
+router,in,TBD
+dftpriority,in,1
+esd,in,TBD
 
-pinname,enable_thermal
-definition,enable_thermal,enable Thermal Protection
-iq,enable_thermal,SIMULATION
-absmax,enable_thermal,6
-absmin,enable_thermal,-0.3
-io,enable_thermal,input
-mode,enable_thermal,digital
-router,enable_thermal,TBD
-dftpriority,enable_thermal,1
-esd,enable_thermal,TBD
+pinname,out
+definition,out,delay output
+iq,out,SIMULATION
+absmax,out,6
+absmin,out,-0.3
+io,out,output
+mode,out,digital
+router,out,TBD
+dftpriority,out,1
+esd,out,TBD
 
-pinname,ten
-definition,ten,Global enable
-iq,ten,SIMULATION
-absmax,ten,6
-absmin,ten,-0.3
-io,ten,input
-mode,ten,digital
-router,ten,TBD
-dftpriority,ten,1
-esd,ten,TBD
-
-pinname,fault_thermal
-definition,fault_thermal,Thermal Output fault Flag
-iq,fault_thermal,SIMULATION
-absmax,fault_thermal,6
-absmin,fault_thermal,-0.3
-io,fault_thermal,output
-mode,fault_thermal,digital
-router,fault_thermal,TBD
-dftpriority,fault_thermal,1
-esd,fault_thermal,TBD
-
-pinname,trim_thermal_accuracy
-definition,trim_thermal_accuracy,Factory trim Thermal threshold adjust
-iq,trim_thermal_accuracy,SIMULATION
-absmax,trim_thermal_accuracy,6
-absmin,trim_thermal_accuracy,-0.3
-io,trim_thermal_accuracy,input
-mode,trim_thermal_accuracy,digital
-router,trim_thermal_accuracy,TBD
-dftpriority,trim_thermal_accuracy,1
-esd,trim_thermal_accuracy,TBD
+pinname,clock
+definition,clock,delay input reference clock
+iq,clock,SIMULATION
+absmax,clock,6
+absmin,clock,-0.3
+io,clock,input
+mode,clock,digital
+router,clock,TBD
+dftpriority,clock,1
+esd,clock,TBD
 
 pinname,CELSUB
-definition,CELSUB,Substrate
+definition,CELSUB,substrate
 iq,CELSUB,SIMULATION
 absmax,CELSUB,0.3
 absmin,CELSUB,-0.3
-io,CELSUB,input
-mode,CELSUB,power
+io,CELSUB,power
+mode,CELSUB,analog
 router,CELSUB,TBD
 dftpriority,CELSUB,1
 esd,CELSUB,TBD
-
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -1064,6 +987,6 @@ revision,vis15cb,0p1
 #define,AP5G60DC1maxmult,99
 #define,AP5G60DC1minmult,1
 ////////////////////////////////////////////////////////////////////////
-//*********************************************
+// *********************************************
 endbio
 
