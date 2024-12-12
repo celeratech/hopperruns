@@ -32,6 +32,40 @@ module DFThijack ( o, CELG, CELV, CELSUB, ten_hijack, ten_hijacki, i );
 endmodule
 
 
+//Verilog HDL for "DFT", "DFTtm8" "functional"
+
+
+module DFTtm8 ( a, ten, TAO, tdo, tmi, G, SUB, TAI, V, tdi, tma );
+
+  input V;
+  input  [7:0] tma;
+  input  [7:0] TAI;
+  output  [7:0] ten;
+  output  [1:0] a;
+  inout tdo;
+  inout TAO;
+  input  [7:0] tdi;
+  input G;
+  input SUB;
+  inout  [4:0] tmi;
+endmodule
+
+
+//Verilog HDL for "DFT", "DFTtm8t" "functional"
+
+
+module DFTtm8t ( a, ten, tmi, G, SUB, V, tma );
+
+  input V;
+  input  [7:0] tma;
+  output  [7:0] ten;
+  output  [1:0] a;
+  input G;
+  input SUB;
+  inout  [4:0] tmi;
+endmodule
+
+
 //Verilog HDL for "Generate", "STONEnoconn" "functional"
 
 
@@ -42,7 +76,10 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CLOCKwaltzDEBUG (dft_sync, CELG59462, CELV96848, dft_clock, ISLOPECOMP, CELSUB40948, dft_synclow, fault_clock, dft_synchigh, enable_clock, dft_clocksync, dft_clockstartup, tdi_496698b1_XU8, tdi_5e7931f3_XU7, tdi_7bb789c1_XU3, tdi_bdb7126b_XU6, tdi_fc840bff_XU4, ten_496698b1_XU8, ten_5e7931f3_XU7, ten_7bb789c1_XU3, ten_bdb7126b_XU6, ten_fc840bff_XU4, TAI_38b575fc_XU10, dft_clockinternal, tdi_71505146_XU19, tdi_b20889dd_XU21, tdi_f614d104_XU20, ten_38b575fc_XU10, ten_71505146_XU19, ten_b20889dd_XU21, ten_f614d104_XU20, hijack_enable_clock, ten_hijack_1762d8ee_XU11, ten_hijacki_1762d8ee_XU11, tdi_496698b1_XU8_be4c5eaa_XDEBUG, tdi_5e7931f3_XU7_be4c5eaa_XDEBUG, tdi_7bb789c1_XU3_be4c5eaa_XDEBUG, tdi_bdb7126b_XU6_be4c5eaa_XDEBUG, tdi_fc840bff_XU4_be4c5eaa_XDEBUG, ten_496698b1_XU8_be4c5eaa_XDEBUG, ten_5e7931f3_XU7_be4c5eaa_XDEBUG, ten_7bb789c1_XU3_be4c5eaa_XDEBUG, ten_bdb7126b_XU6_be4c5eaa_XDEBUG, ten_fc840bff_XU4_be4c5eaa_XDEBUG, TAI_38b575fc_XU10_be4c5eaa_XDEBUG, tdi_71505146_XU19_be4c5eaa_XDEBUG, tdi_b20889dd_XU21_be4c5eaa_XDEBUG, tdi_f614d104_XU20_be4c5eaa_XDEBUG, ten_38b575fc_XU10_be4c5eaa_XDEBUG, ten_71505146_XU19_be4c5eaa_XDEBUG, ten_b20889dd_XU21_be4c5eaa_XDEBUG, ten_f614d104_XU20_be4c5eaa_XDEBUG, ten_hijack_1762d8ee_XU11_be4c5eaa_XDEBUG, ten_hijacki_1762d8ee_XU11_be4c5eaa_XDEBUG);
+module CLOCKwaltzDEBUG (TAO, tdo, tmi, dft_sync, CELG59462, CELV96848, dft_clock, ISLOPECOMP, CELSUB40948, dft_synclow, fault_clock, dft_synchigh, enable_clock, dft_clocksync, dft_clockstartup, dft_clockinternal, hijack_enable_clock);
+inout  TAO;
+inout  tdo;
+input [4:0] tmi;
   input  dft_sync;
 input  CELG59462;
 input  CELV96848;
@@ -55,51 +92,17 @@ input  CELSUB40948;
 input  enable_clock;
   input  dft_clocksync;
   input  dft_clockstartup;
-output  tdi_496698b1_XU8;
-output  tdi_5e7931f3_XU7;
-output  tdi_7bb789c1_XU3;
-output  tdi_bdb7126b_XU6;
-output  tdi_fc840bff_XU4;
-input  ten_496698b1_XU8;
-input  ten_5e7931f3_XU7;
-input  ten_7bb789c1_XU3;
-input  ten_bdb7126b_XU6;
-input  ten_fc840bff_XU4;
-output  TAI_38b575fc_XU10;
   input  dft_clockinternal;
-output  tdi_71505146_XU19;
-output  tdi_b20889dd_XU21;
-output  tdi_f614d104_XU20;
-input  ten_38b575fc_XU10;
-input  ten_71505146_XU19;
-input  ten_b20889dd_XU21;
-input  ten_f614d104_XU20;
 output  hijack_enable_clock;
-input  ten_hijack_1762d8ee_XU11;
-input  ten_hijacki_1762d8ee_XU11;
-output  tdi_496698b1_XU8_be4c5eaa_XDEBUG;
-output  tdi_5e7931f3_XU7_be4c5eaa_XDEBUG;
-output  tdi_7bb789c1_XU3_be4c5eaa_XDEBUG;
-output  tdi_bdb7126b_XU6_be4c5eaa_XDEBUG;
-output  tdi_fc840bff_XU4_be4c5eaa_XDEBUG;
-input  ten_496698b1_XU8_be4c5eaa_XDEBUG;
-input  ten_5e7931f3_XU7_be4c5eaa_XDEBUG;
-input  ten_7bb789c1_XU3_be4c5eaa_XDEBUG;
-input  ten_bdb7126b_XU6_be4c5eaa_XDEBUG;
-input  ten_fc840bff_XU4_be4c5eaa_XDEBUG;
-output  TAI_38b575fc_XU10_be4c5eaa_XDEBUG;
-output  tdi_71505146_XU19_be4c5eaa_XDEBUG;
-output  tdi_b20889dd_XU21_be4c5eaa_XDEBUG;
-output  tdi_f614d104_XU20_be4c5eaa_XDEBUG;
-input  ten_38b575fc_XU10_be4c5eaa_XDEBUG;
-input  ten_71505146_XU19_be4c5eaa_XDEBUG;
-input  ten_b20889dd_XU21_be4c5eaa_XDEBUG;
-input  ten_f614d104_XU20_be4c5eaa_XDEBUG;
-input  ten_hijack_1762d8ee_XU11_be4c5eaa_XDEBUG;
-input  ten_hijacki_1762d8ee_XU11_be4c5eaa_XDEBUG;
 
 
 // ------------------------ Wires ------------------------
+wire [4:0] tmi;
+wire [1:0] a;
+wire [7:0] TAI;
+wire [7:0] tdi;
+wire [7:0] ten;
+wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
 dftprobeModel0_80e43a5a XU3 (
@@ -193,40 +196,82 @@ dftprobeModel0_80e43a5a XU21 (
 .CELSUB(CELSUB40948)
 );
 
-STONEnoconn XNCtdi_496698b1_XU8_be4c5eaa_XDEBUG (
-.noconn(tdi_496698b1_XU8_be4c5eaa_XDEBUG)
+DFTtm8 dft_hex0x01 (
+.G(CELG59462),
+.V(CELV96848),
+.a({a1,a0}),
+.SUB(CELSUB40948),
+.TAI({a0,a0,a0,a0,a0,a0,a0,TAI_38b575fc_XU10}),
+.TAO(TAO),
+.tdi({tdi_496698b1_XU8,tdi_5e7931f3_XU7,tdi_bdb7126b_XU6,tdi_fc840bff_XU4,tdi_7bb789c1_XU3,tdi_b20889dd_XU21,tdi_f614d104_XU20,tdi_71505146_XU19}),
+.tdo(tdo),
+.ten({ten_fc840bff_XU4,ten_7bb789c1_XU3,ten_b20889dd_XU21,ten_f614d104_XU20,ten_71505146_XU19,ten_hijacki_1762d8ee_XU11,ten_hijack_1762d8ee_XU11,ten_38b575fc_XU10}),
+.tma({a0,a0,a0,a0,a0,a0,a0,a1}),
+.tmi(tmi[4:0])
 );
 
-STONEnoconn XNCtdi_5e7931f3_XU7_be4c5eaa_XDEBUG (
-.noconn(tdi_5e7931f3_XU7_be4c5eaa_XDEBUG)
+DFTtm8t dft_hex0x02 (
+.G(CELG59462),
+.V(CELV96848),
+.a({b1,b0}),
+.SUB(CELSUB40948),
+.ten({noconn_dft_hex0x02_ten_7,noconn_dft_hex0x02_ten_6,noconn_dft_hex0x02_ten_5,noconn_dft_hex0x02_ten_4,noconn_dft_hex0x02_ten_3,ten_496698b1_XU8,ten_5e7931f3_XU7,ten_bdb7126b_XU6}),
+.tma({b0,b0,b0,b0,b0,b0,b1,b0}),
+.tmi(tmi[4:0])
 );
 
-STONEnoconn XNCtdi_7bb789c1_XU3_be4c5eaa_XDEBUG (
-.noconn(tdi_7bb789c1_XU3_be4c5eaa_XDEBUG)
+DFTtm8t dft_hex0x1A (
+.G(CELG59462),
+.V(CELV96848),
+.a({d1,d0}),
+.SUB(CELSUB40948),
+.ten({noconn_dft_hex0x1A_ten_7,noconn_dft_hex0x1A_ten_6,noconn_dft_hex0x1A_ten_5,noconn_dft_hex0x1A_ten_4,noconn_dft_hex0x1A_ten_3,noconn_dft_hex0x1A_ten_2,ten_hijacki_1762d8ee_XU11,ten_hijack_1762d8ee_XU11}),
+.tma({d0,d0,d0,d1,d1,d0,d1,d0}),
+.tmi(tmi[4:0])
 );
 
-STONEnoconn XNCtdi_bdb7126b_XU6_be4c5eaa_XDEBUG (
-.noconn(tdi_bdb7126b_XU6_be4c5eaa_XDEBUG)
+STONEnoconn XNCnoconn_dft_hex0x02_ten_3 (
+.noconn(noconn_dft_hex0x02_ten_3)
 );
 
-STONEnoconn XNCtdi_fc840bff_XU4_be4c5eaa_XDEBUG (
-.noconn(tdi_fc840bff_XU4_be4c5eaa_XDEBUG)
+STONEnoconn XNCnoconn_dft_hex0x02_ten_4 (
+.noconn(noconn_dft_hex0x02_ten_4)
 );
 
-STONEnoconn XNCTAI_38b575fc_XU10_be4c5eaa_XDEBUG (
-.noconn(TAI_38b575fc_XU10_be4c5eaa_XDEBUG)
+STONEnoconn XNCnoconn_dft_hex0x02_ten_5 (
+.noconn(noconn_dft_hex0x02_ten_5)
 );
 
-STONEnoconn XNCtdi_71505146_XU19_be4c5eaa_XDEBUG (
-.noconn(tdi_71505146_XU19_be4c5eaa_XDEBUG)
+STONEnoconn XNCnoconn_dft_hex0x02_ten_6 (
+.noconn(noconn_dft_hex0x02_ten_6)
 );
 
-STONEnoconn XNCtdi_b20889dd_XU21_be4c5eaa_XDEBUG (
-.noconn(tdi_b20889dd_XU21_be4c5eaa_XDEBUG)
+STONEnoconn XNCnoconn_dft_hex0x02_ten_7 (
+.noconn(noconn_dft_hex0x02_ten_7)
 );
 
-STONEnoconn XNCtdi_f614d104_XU20_be4c5eaa_XDEBUG (
-.noconn(tdi_f614d104_XU20_be4c5eaa_XDEBUG)
+STONEnoconn XNCnoconn_dft_hex0x1A_ten_2 (
+.noconn(noconn_dft_hex0x1A_ten_2)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x1A_ten_3 (
+.noconn(noconn_dft_hex0x1A_ten_3)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x1A_ten_4 (
+.noconn(noconn_dft_hex0x1A_ten_4)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x1A_ten_5 (
+.noconn(noconn_dft_hex0x1A_ten_5)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x1A_ten_6 (
+.noconn(noconn_dft_hex0x1A_ten_6)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x1A_ten_7 (
+.noconn(noconn_dft_hex0x1A_ten_7)
 );
 
 endmodule

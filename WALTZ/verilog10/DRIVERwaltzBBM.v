@@ -42,8 +42,40 @@ module timingskew_c85f9998 (in,out,CELG,CELV,CELSUB,factory_timingskew);
   input [4:0] factory_timingskew;
 endmodule
 
+//Verilog HDL for "DRM", "drm16" "functional"
+
+
+module drm16 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, por1, drm0, drm1,
+d1, d0 );
+
+  input lastdrm;
+  input V;
+  output d1;
+  input  [7:0] id;
+  output d0;
+  input  [7:0] por1;
+  input bypload;
+  output  [7:0] drm0;
+  input  [7:0] por0;
+  input G;
+  output  [7:0] drm1;
+  inout  [4:0] tmi;
+  input SUB;
+endmodule
+
+
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module DRIVERwaltzBBM (topon, bottomon, topstate, CELG59462, CELV96848, bbm_topon, topstatus, CELSUB40948, bottomstate, bbm_bottomon, bottomstatus, BBMstatus_5ecfcf89, factory_timingskew_7229e0fa, factory_timingskew_a04dd5f1);
+module DRIVERwaltzBBM (tmi, topon, bottomon, topstate, CELG59462, CELV96848, bbm_topon, topstatus, CELSUB40948, bottomstate, bbm_bottomon, bottomstatus);
+inout [4:0] tmi;
 output  topon;
 output  bottomon;
 input  topstate;
@@ -55,16 +87,16 @@ input  CELSUB40948;
 input  bottomstate;
 output  bbm_bottomon;
 input  bottomstatus;
-input [1:0] BBMstatus_5ecfcf89;
-input [4:0] factory_timingskew_7229e0fa;
-input [4:0] factory_timingskew_a04dd5f1;
 
 
 // ------------------------ Wires ------------------------
-wire [1:0] BBMstatus_5ecfcf89;
-wire [4:0] factory_timingskew_7229e0fa;
-wire [4:0] factory_timingskew_a04dd5f1;
+wire [4:0] tmi;
 wire [4:0] factory_timingskew;
+wire [7:0] id;
+wire [7:0] drm0;
+wire [7:0] drm1;
+wire [7:0] por0;
+wire [7:0] por1;
 
 // ------------------------ Networks ---------------------
 VESPAasmINPUT1 XU15 (
@@ -143,7 +175,7 @@ dbuf_e926e395 XU16 (
 
 nor2_ee112582 XU21 (
 .o(net_47),
-.i0(BBMstatus_5ecfcf89[1]),
+.i0(BBMstatus_5ecfcf89_1),
 .i1(net_83),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -152,7 +184,7 @@ nor2_ee112582 XU21 (
 
 nor2_ee112582 XU22 (
 .o(net_48),
-.i0(BBMstatus_5ecfcf89[0]),
+.i0(BBMstatus_5ecfcf89_0),
 .i1(net_87),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -173,7 +205,23 @@ timingskew_c85f9998 XUTOPDELAY (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.factory_timingskew({factory_timingskew_a04dd5f1[4],factory_timingskew_a04dd5f1[3],factory_timingskew_a04dd5f1[2],factory_timingskew_a04dd5f1[1],factory_timingskew_a04dd5f1[0]})
+.factory_timingskew({factory_timingskew_a04dd5f1_4,factory_timingskew_a04dd5f1_3,factory_timingskew_a04dd5f1_2,factory_timingskew_a04dd5f1_1,factory_timingskew_a04dd5f1_0})
+);
+
+drm16 drm_hex0x05 (
+.G(CELG59462),
+.V(CELV96848),
+.d0(a0),
+.d1(a1),
+.id({a0,a0,a0,a0,a0,a1,a0,a1}),
+.SUB(CELSUB40948),
+.tmi(tmi[4:0]),
+.drm0({noconn_drm16_drm0_7,BBMstatus_5ecfcf89_1,BBMstatus_5ecfcf89_0,factory_timingskew_7229e0fa_4,factory_timingskew_7229e0fa_3,factory_timingskew_7229e0fa_2,factory_timingskew_7229e0fa_1,factory_timingskew_7229e0fa_0}),
+.drm1({noconn_drm16_drm1_7,noconn_drm16_drm1_6,noconn_drm16_drm1_5,factory_timingskew_a04dd5f1_4,factory_timingskew_a04dd5f1_3,factory_timingskew_a04dd5f1_2,factory_timingskew_a04dd5f1_1,factory_timingskew_a04dd5f1_0}),
+.por0({a0,a1,a1,a1,a1,a0,a0,a0}),
+.por1({a0,a0,a0,a1,a1,a0,a0,a0}),
+.bypload(a0),
+.lastdrm(a0)
 );
 
 timingskew_c85f9998 XUBOTTOMDELAY (
@@ -182,7 +230,23 @@ timingskew_c85f9998 XUBOTTOMDELAY (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.factory_timingskew({factory_timingskew_7229e0fa[4],factory_timingskew_7229e0fa[3],factory_timingskew_7229e0fa[2],factory_timingskew_7229e0fa[1],factory_timingskew_7229e0fa[0]})
+.factory_timingskew({factory_timingskew_7229e0fa_4,factory_timingskew_7229e0fa_3,factory_timingskew_7229e0fa_2,factory_timingskew_7229e0fa_1,factory_timingskew_7229e0fa_0})
+);
+
+STONEnoconn XNCnoconn_drm16_drm0_7 (
+.noconn(noconn_drm16_drm0_7)
+);
+
+STONEnoconn XNCnoconn_drm16_drm1_5 (
+.noconn(noconn_drm16_drm1_5)
+);
+
+STONEnoconn XNCnoconn_drm16_drm1_6 (
+.noconn(noconn_drm16_drm1_6)
+);
+
+STONEnoconn XNCnoconn_drm16_drm1_7 (
+.noconn(noconn_drm16_drm1_7)
 );
 
 endmodule

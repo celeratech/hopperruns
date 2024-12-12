@@ -2,25 +2,13 @@
 
 revision,0.2.1
 GenerateLevel,10
-generate,reference
-path,CELERAservice,Xreference,
-instance,Xreference
-parameter,reference_accuracy,yes
-parameter,reference_trim_name,REFERENCEibiasACCURACY
-parameter,reference_trim_description,Accurate_reference_for_IBIAS
-parameter,reference_lowiq,na
-parameter,reference_lowiq_name,text
-parameter,reference_lowiq_description,text
-parameter,reference_cc_trim,no
-parameter,reference_factory_name,text
-parameter,reference_factory_description,text
-parameter,reference_bgout,yes
-parameter,reference_buffer,yes
-parameter,reference_dft,yes
-parameter,reference_lowiq_por,0
-parameter,reference_ccn_por,15
-parameter,reference_ccp_por,14
-parameter,reference_ifb,1
-parameter,reference_vmax,6
-parameter,reference_ref,1
-U3ÿÿ@süÿÿ
+generate,ibias
+path,CELERAservice,Xibias,
+instance,Xibias
+parameter,ibias_outputs,16
+parameter,ibias_dft,yes
+parameter,ibias_vmax,6
+parameter,ibias_accuracy,yes
+parameter,ibias_trim_name,IBIASaccuracy
+parameter,ibias_trim_description,IBIAS accuracy to 2uA source
+parameter,ibias_reference,yes
