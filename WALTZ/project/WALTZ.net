@@ -814,12 +814,11 @@ X$U7 7 pinprobe vars: pinprobe_description='clock_input'
 .node_map din 12
 .node_map clock 14
 .node_map state 15
+X$dff1 6 7 13 5 8 dff vars: dff_edge='rise' dff_outputs='q' dff_bits=1 dff_vmax=6
 X$U1 10 11 inv vars: logicgate_type='inv' logicgate_vmax=6
 X$U10 8 15 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
-X$U11 7 celeranoconn vars: ='%'
-X$U14 11 6 delayfixed vars: delay_type='fixed' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=5 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
-X$U2 5 6 13 7 8 dff vars: dff_edge='rise' dff_vmax=6
-X$U3 5 12 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U14 11 7 delayfixed vars: delay_type='fixed' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=5 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U3 6 12 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
 X$U4 13 pinprobe vars: pinprobe_description='clock_output0'
 X$U5 14 pinprobe vars: pinprobe_description='Sync_clock_input'
 X$U6 9 10 8 nand2 vars: logicgate_type='nand2' logicgate_vmax=6

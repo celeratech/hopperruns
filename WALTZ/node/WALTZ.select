@@ -3121,14 +3121,6 @@ parameter,logicgate_vmax,6
 
 
 GenerateLevel,5
-generate,dff
-path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU13,XU2
-instance,XU2
-parameter,dff_edge,rise
-parameter,dff_vmax,6
-
-
-GenerateLevel,5
 generate,dbuf
 path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU13,XU3
 instance,XU3
@@ -3189,12 +3181,6 @@ parameter,logicgate_vmax,6
 
 
 GenerateLevel,5
-generate,celeranoconn
-path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU13,XU11
-instance,XU11
-
-
-GenerateLevel,5
 generate,delayfixed
 path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU13,XU14
 instance,XU14
@@ -3246,19 +3232,21 @@ parameter,delayclock_datasheetdescription,text
 
 
 GenerateLevel,5
+generate,dff
+path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU13,Xdff1
+instance,Xdff1
+parameter,dff_bits,1
+parameter,dff_edge,rise
+parameter,dff_vmax,6
+parameter,dff_outputs,q
+
+
+GenerateLevel,5
 generate,inv
 path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU15,XU1
 instance,XU1
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
-
-
-GenerateLevel,5
-generate,dff
-path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU15,XU2
-instance,XU2
-parameter,dff_edge,rise
-parameter,dff_vmax,6
 
 
 GenerateLevel,5
@@ -3322,12 +3310,6 @@ parameter,logicgate_vmax,6
 
 
 GenerateLevel,5
-generate,celeranoconn
-path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU15,XU11
-instance,XU11
-
-
-GenerateLevel,5
 generate,delayfixed
 path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU15,XU14
 instance,XU14
@@ -3379,19 +3361,21 @@ parameter,delayclock_datasheetdescription,text
 
 
 GenerateLevel,5
+generate,dff
+path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU15,Xdff1
+instance,Xdff1
+parameter,dff_bits,1
+parameter,dff_edge,rise
+parameter,dff_vmax,6
+parameter,dff_outputs,q
+
+
+GenerateLevel,5
 generate,inv
 path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU17,XU1
 instance,XU1
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
-
-
-GenerateLevel,5
-generate,dff
-path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU17,XU2
-instance,XU2
-parameter,dff_edge,rise
-parameter,dff_vmax,6
 
 
 GenerateLevel,5
@@ -3455,12 +3439,6 @@ parameter,logicgate_vmax,6
 
 
 GenerateLevel,5
-generate,celeranoconn
-path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU17,XU11
-instance,XU11
-
-
-GenerateLevel,5
 generate,delayfixed
 path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU17,XU14
 instance,XU14
@@ -3512,19 +3490,21 @@ parameter,delayclock_datasheetdescription,text
 
 
 GenerateLevel,5
+generate,dff
+path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU17,Xdff1
+instance,Xdff1
+parameter,dff_bits,1
+parameter,dff_edge,rise
+parameter,dff_vmax,6
+parameter,dff_outputs,q
+
+
+GenerateLevel,5
 generate,inv
 path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU19,XU1
 instance,XU1
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
-
-
-GenerateLevel,5
-generate,dff
-path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU19,XU2
-instance,XU2
-parameter,dff_edge,rise
-parameter,dff_vmax,6
 
 
 GenerateLevel,5
@@ -3588,12 +3568,6 @@ parameter,logicgate_vmax,6
 
 
 GenerateLevel,5
-generate,celeranoconn
-path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU19,XU11
-instance,XU11
-
-
-GenerateLevel,5
 generate,delayfixed
 path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU19,XU14
 instance,XU14
@@ -3642,6 +3616,16 @@ parameter,delaycontrol_description,text
 parameter,delay_accuracy_description,text
 parameter,delayclock_accuracydescription,text
 parameter,delayclock_datasheetdescription,text
+
+
+GenerateLevel,5
+generate,dff
+path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU19,Xdff1
+instance,Xdff1
+parameter,dff_bits,1
+parameter,dff_edge,rise
+parameter,dff_vmax,6
+parameter,dff_outputs,q
 
 
 GenerateLevel,5

@@ -10,8 +10,8 @@ module Algorithm5p9_DYES_ (OFF,TOP,fcm,IDLE,porb,FAULT,READY,BOTTOM,POWERUP,REFR
   output  BOTTOM;
   output  POWERUP;
   output  REFRESH;
-  input  top3SYNC;
-  input  top4SYNC;
+  output  top3SYNC;
+  output  top4SYNC;
   input  CELG59462;
   input  CELV96848;
   output  TOPdelayi;
@@ -19,8 +19,8 @@ module Algorithm5p9_DYES_ (OFF,TOP,fcm,IDLE,porb,FAULT,READY,BOTTOM,POWERUP,REFR
   input  go_driver;
   input  ipeak_top;
   input  ok_driver;
-  input  top6aSYNC;
-  input  top6bSYNC;
+  output  top6aSYNC;
+  output  top6bSYNC;
   output  top_switch;
   input  CELSUB40948;
   input  enableFAULT;

@@ -7,15 +7,6 @@ module inv_12e192f5 (i,o,SUB,CELG,CELV);
   input  CELV;
 endmodule
 
-module dff_fc5ad7bd (d,ck,rb,CELG,CELV,CELSUB);
-  input  d;
-  input  ck;
-  input  rb;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
-endmodule
-
 module dbuf_e926e395 (i,o,SUB,CELG,CELV);
   input  i;
   output  o;
@@ -33,15 +24,6 @@ module nand2_9125fe87 (o,i0,i1,SUB,CELG,CELV);
   input  CELV;
 endmodule
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
 module delayfixed_50cdfbd2 (i,o,CELG,CELV,CELSUB);
   input  i;
   output  o;
@@ -50,10 +32,20 @@ module delayfixed_50cdfbd2 (i,o,CELG,CELV,CELSUB);
   input  CELSUB;
 endmodule
 
+module dff_9c8a87f3 (d,q,ck,rb,CELG,CELV,CELSUB);
+  input  d;
+  output  q;
+  input  ck;
+  input  rb;
+  input  CELG;
+  input  CELV;
+  input  CELSUB;
+endmodule
+
 // ------------------------ Module Verilog ---------------
 module VESPAclockSYNC (din, out, clock, state, CELG59462, CELV96848, CELSUB40948);
 input  din;
-  input  out;
+output  out;
 input  clock;
 input  state;
 input  CELG59462;
@@ -72,18 +64,9 @@ inv_12e192f5 XU1 (
 .CELV(CELV96848)
 );
 
-dff_fc5ad7bd XU2 (
-.d(net_5),
-.ck(net_6),
-.rb(net_8),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
-);
-
 dbuf_e926e395 XU3 (
 .i(din),
-.o(net_5),
+.o(net_6),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
@@ -106,10 +89,6 @@ dbuf_e926e395 XU8 (
 .CELV(CELV96848)
 );
 
-STONEnoconn XNC7 (
-.noconn(net_7)
-);
-
 dbuf_e926e395 XU10 (
 .i(state),
 .o(net_8),
@@ -120,7 +99,17 @@ dbuf_e926e395 XU10 (
 
 delayfixed_50cdfbd2 XU14 (
 .i(net_11),
-.o(net_6),
+.o(net_7),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+dff_9c8a87f3 Xdff1 (
+.d(net_6),
+.q(out),
+.ck(net_7),
+.rb(net_8),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
