@@ -92,14 +92,14 @@ module inv_12e192f5 (i,o,SUB,CELG,CELV);
   input  CELV;
 endmodule
 
-module amux2_a6effade (O,I0,I1,SUB,CELG,CELV,amux);
+module amux2_a6effade (O,I0,I1,CELG,amux,SIMPV,CELSUB);
   output  O;
   input  I0;
   input  I1;
-  input  SUB;
   input  CELG;
-  input  CELV;
   input  amux;
+  input  SIMPV;
+  input  CELSUB;
 endmodule
 
 module resistordivider_b8083128 (TOP,CELG,CELV,TAP0,TAP1,TAP2,BOTTOM,CELSUB,enable_resistordivider,global_resistordivider);
@@ -365,10 +365,10 @@ amux2_a6effade XU15 (
 .O(net_154),
 .I0(net_156),
 .I1(net_157),
-.SUB(CELSUB40948),
 .CELG(CELG59462),
-.CELV(MUDV),
-.amux(net_153)
+.amux(net_153),
+.SIMPV(MUDV),
+.CELSUB(CELSUB40948)
 );
 
 resistordivider_b8083128 XU17 (

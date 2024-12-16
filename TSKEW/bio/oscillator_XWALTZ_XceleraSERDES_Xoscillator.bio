@@ -4,123 +4,339 @@
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Celera Confidential BIO Data Generator
+///Celera Confidential BIO Data Generator
 //Cell Name
-cell,logicshifter
-///**********************************************
+cell,oscillator
+//**********************************************
 //Generator Revision
-revision,generator,0.4.1
+revision,generator,0.5.0
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,logicshifter_enable,choose0,no
-limit,logicshifter_enable,choose1,yes
-limit,logicshifter_vmax,choose0,2
-limit,logicshifter_vmax,choose0,6
-limit,logicshifter_vhigh,choose0,2
-limit,logicshifter_vhigh,choose1,6
-limit,logicshifter_vhigh,choose2,12
-limit,logicshifter_vhigh,choose3,20
-limit,logicshifter_vhigh,choose4,24
-limit,logicshifter_vhigh,choose5,30
-limit,logicshifter_vhigh,choose6,36
-limit,logicshifter_vhigh,choose7,40
-limit,logicshifter_vhigh,choose8,45
-limit,logicshifter_vhigh,choose9,60
-limit,logicshifter_direction,choose0,low2high
-limit,logicshifter_direction,choose1,high2low
-limit,logicshifter_direction,choose2,na
-limit,logicshifter_bits,minimum,1
-limit,logicshifter_bits,maximum,16
 
+limit,osc_type,choose0,internal
+limit,osc_type,choose1,external
+limit,osc_type,choose2,crude
+limit,osc_accuracy,choose0,no
+limit,osc_accuracy,choose1,yes
+limit,osc_enable,choose0,pin
+limit,osc_enable,choose1,register
+limit,osc_enable,choose2,factory
+limit,osc_ss,choose0,no
+limit,osc_ss,choose1,yes
+limit,osc_vmax,choose0,2
+limit,osc_vmax,choose1,6
+limit,osc_dft,choose0,no
+limit,osc_dft,choose1,yes
+limit,osc_enable_por,choose0,disable
+limit,osc_enable_por,choose1,enable
+limit,osc_standbyclock,choose0,no
+limit,osc_standbyclock,choose1,pin
+limit,osc_standbyclock,choose2,register
+limit,osc_standbyclock,choose3,factory
+limit,osc_standbyclockpor,choose0,disable
+limit,osc_standbyclockpor,choose1,enable
+
+//Internal
+limit,osc_int_freq,minimum,100.0
+limit,osc_int_freq,maximum,10000.0
+limit,osc_int_duty,choose0,5
+limit,osc_int_duty,choose1,10
+limit,osc_int_duty,choose2,15
+limit,osc_int_duty,choose3,20
+limit,osc_int_duty,choose4,25
+limit,osc_int_duty,choose5,30
+limit,osc_int_duty,choose6,35
+limit,osc_int_duty,choose7,40
+limit,osc_int_duty,choose8,45
+limit,osc_int_duty,choose9,50
+limit,osc_int_duty,choose10,55
+limit,osc_int_duty,choose11,60
+limit,osc_int_duty,choose12,65
+limit,osc_int_duty,choose13,70
+limit,osc_int_duty,choose14,75
+limit,osc_int_duty,choose15,80
+limit,osc_int_duty,choose16,85
+limit,osc_int_duty,choose17,90
+limit,osc_int_duty,choose18,95
+limit,osc_int_ireplica_gain,choose0,0
+limit,osc_int_ireplica_gain,choose1,1
+limit,osc_int_ireplica_gain,choose2,2
+limit,osc_int_ireplica_gain,choose3,3
+limit,osc_int_ireplica_gain,choose4,4
+limit,osc_int_ireplica_gain,choose5,5
+limit,osc_int_ireplica_gain,choose6,6
+limit,osc_int_ireplica_gain,choose7,7
+limit,osc_int_ireplica_gain,choose8,8
+limit,osc_int_ireplica_gain,choose9,9
+limit,osc_int_ireplica_gain,choose10,10
+
+//Spreadspectrum
+limit,osc_ss_configuration,choose0,fixed
+limit,osc_ss_configuration,choose1,register
+limit,osc_ss_configuration,choose2,factory
+limit,osc_ss_enable_control,choose0,fixed
+limit,osc_ss_enable_control,choose1,register
+limit,osc_ss_enable_control,choose2,factory
+limit,osc_ss_enable_control,choose3,pin
+limit,osc_ss_clock_sync,choose0,synchronized
+limit,osc_ss_clock_sync,choose1,independent
+limit,osc_ss_clock_independent,minimum,1.0
+limit,osc_ss_clock_independent,maximum,100.0
+limit,osc_ss_clock_divide,minimum,0
+limit,osc_ss_clock_divide,maximum,1023
+limit,osc_ss_range_por,choose0,5
+limit,osc_ss_range_por,choose1,10
+limit,osc_ss_mode_por,choose0,sweep
+limit,osc_ss_mode_por,choose1,pseudo
+limit,osc_ss_enable_por,choose0,disable
+limit,osc_ss_enable_por,choose1,enable
+
+//Crude
+limit,osc_crude_freq,minimum,1.0
+limit,osc_crude_freq,maximum,20000.0
+limit,osc_crude_duty,choose0,5
+limit,osc_crude_duty,choose1,10
+limit,osc_crude_duty,choose2,15
+limit,osc_crude_duty,choose3,20
+limit,osc_crude_duty,choose4,25
+limit,osc_crude_duty,choose5,30
+limit,osc_crude_duty,choose6,35
+limit,osc_crude_duty,choose7,40
+limit,osc_crude_duty,choose8,45
+limit,osc_crude_duty,choose9,50
+limit,osc_crude_duty,choose10,55
+limit,osc_crude_duty,choose11,60
+limit,osc_crude_duty,choose12,65
+limit,osc_crude_duty,choose13,70
+limit,osc_crude_duty,choose14,75
+limit,osc_crude_duty,choose15,80
+limit,osc_crude_duty,choose16,85
+limit,osc_crude_duty,choose17,90
+limit,osc_crude_duty,choose18,95
+limit,osc_ibias,choose0,global
+limit,osc_ibias,choose1,local
+limit,osc_crude_supply,minimum,2.3
+limit,osc_crude_supply,maximum,5.5
+//external
+limit,osc_ext_freq,minimum,100.0
+limit,osc_ext_freq,maximum,5000.0
+limit,osc_ext_resistor,minimum,5.0
+limit,osc_ext_resistor,maximum,100.0
+limit,osc_ext_freq_default,choose0,no
+limit,osc_ext_freq_default,choose1,yes
+limit,osc_ext_duty,choose0,5
+limit,osc_ext_duty,choose1,10
+limit,osc_ext_duty,choose2,15
+limit,osc_ext_duty,choose3,20
+limit,osc_ext_duty,choose4,25
+limit,osc_ext_duty,choose5,30
+limit,osc_ext_duty,choose6,35
+limit,osc_ext_duty,choose7,40
+limit,osc_ext_duty,choose8,45
+limit,osc_ext_duty,choose9,50
+limit,osc_ext_duty,choose10,55
+limit,osc_ext_duty,choose11,60
+limit,osc_ext_duty,choose12,65
+limit,osc_ext_duty,choose13,70
+limit,osc_ext_duty,choose14,75
+limit,osc_ext_duty,choose15,80
+limit,osc_ext_duty,choose16,85
+limit,osc_ext_duty,choose17,90
+limit,osc_ext_duty,choose18,95
+limit,osc_ext_replicagain,choose0,0
+limit,osc_ext_replicagain,choose1,0.1
+limit,osc_ext_replicagain,choose2,0.2
+limit,osc_ext_replicagain,choose3,0.3
+limit,osc_ext_replicagain,choose4,0.4
+limit,osc_ext_replicagain,choose5,0.5
+limit,osc_ext_replicagain,choose6,0.6
+limit,osc_ext_replicagain,choose7,0.7
+limit,osc_ext_replicagain,choose8,0.8
+limit,osc_ext_replicagain,choose9,0.9
+limit,osc_ext_replicagain,choose10,1
+
+limit,osc_datasheet_accuracy_name,text
+limit,osc_datasheet_accuracy_description,text
+limit,osc_datasheet_enable_name,text
+limit,osc_datasheet_enable_description,text
+limit,osc_ss_datasheet_name,text
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,VIN,6V
-user,VOUT,6V
-user,DIRECTION,low2high
-user,NESTO,0.4.1
+user,osc_crude_freq,3200KHz
+description,Oscillator Frequency
+user,osc_vmax,6
+description,Oscillator Absolute Maxium Voltage Rating
+user,osc_dft,yes
+description,Oscillator DFT enabled
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,logicshifter
-register,instance,logicshifter0L2H_currentlimitfet_d1834b5a_Xlogice
+registermap,oscillatorcrudehf
+register,instance,oscillator_XWALTZ_XceleraSERDES_Xoscillator
 register,source,cell
 
-//logicshifter
+//Oscillator Crude HF Enable
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readonly
+register,units,TBD
+register,mode,readwrite
 register,por,0
 register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
 //Netlister Information
 register,busname,na
+
+//Oscillator Crude HF Standby
+register,name,na
+register,enable,no
+register,bits,0
+register,units,logic
+register,mode,TBD
+register,por,0
+register,userdescription,na
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
+//Netlister Information
+register,busname,na
+/////////////////////////////////////////////////////
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,logicshifter
-factory,instance,logicshifter0L2H_currentlimitfet_d1834b5a_Xlogice
+factorymap,oscillatorcrudehf
+factory,instance,oscillator_XWALTZ_XceleraSERDES_Xoscillator
 factory,source,cell
 
-//logicshifter
+//EOscillator Crude HF Enable
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,readonly
+factory,units,TBD
+factory,mode,readwrite
 factory,por,0
 factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
 //Netlister Information
 factory,busname,na
+
+//EOscillator Crude HF Standby
+factory,name,na
+factory,enable,no
+factory,bits,0
+factory,units,logic
+factory,mode,TBD
+factory,por,0
+factory,userdescription,na
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
+//Netlister Information
+factory,busname,na
+/////////////////////////////////////////////////////////////////
 //**********************************************
 //CELL DFT Parameters
+//Cell DFT Generator oscillator crude HF
+celldft,oscillatorcrudehf
+celldft,path,oscillator_XWALTZ_XceleraSERDES_Xoscillator
+celldft,instance,Xoscillator
+celldft,source,cell
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+celldft,ten_oscillator_on
+celldft,ten_oscillator_on,testname,tenOSCILLATORCRUDEHFon
+celldft,ten_oscillator_on,definition,Enable Crude High Frequency Oscillator
+celldft,ten_oscillator_on,input,ten
+celldft,ten_oscillator_on,output,na
+celldft,ten_oscillator_on,end
+
+celldft,ten_oscillator_off
+celldft,ten_oscillator_off,testname,tenOSCILLATORCRUDEHFoff
+celldft,ten_oscillator_off,definition,Disable Crude High Frequency Oscillator
+celldft,ten_oscillator_off,input,ten
+celldft,ten_oscillator_off,output,na
+celldft,ten_oscillator_off,end
+
+celldft,ten_oscillator_div8
+celldft,ten_oscillator_div8,testname,tenOSCILLATORCRUDEHFDIV8
+celldft,ten_oscillator_div8,definition,Measure OSC divided by eight
+celldft,ten_oscillator_div8,input,ten
+celldft,ten_oscillator_div8,output,tdi_oscillator
+celldft,ten_oscillator_div8,end
+
+celldft,ten_oscillator_external
+celldft,ten_oscillator_external,testname,tenOSCILLATORCRUDEHFexternal
+celldft,ten_oscillator_external,definition,Enable External Oscillator
+celldft,ten_oscillator_external,input,ten
+celldft,ten_oscillator_external,output,na
+celldft,ten_oscillator_external,end
+
+celldft,tdi_oscillator
+celldft,tdi_oscillator,testname,measureOSCILLATORCRUDEHF
+celldft,tdi_oscillator,definition,Measure output OSC
+celldft,tdi_oscillator,input,na
+celldft,tdi_oscillator,output,tdi
+celldft,tdi_oscillator,end
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,logicshifter
+layout,oscillatorcrudehf
 
-placeSTEParray Generate STONElogicshifter_6NOME 0 0 8.58 74 n y R0
-placeSTEParray Generate STONElogicshifter_hl12NOME 0 0 71.55 57.42 y y R0
-placeSTEParray Generate STONElogicshifter_hl30NOME 0 0 88.33 62.67 y y R0
-placeSTEParray Generate STONElogicshifter_hl45NOME 0 0 88.33 62.67 y y R0
-placeSTEParray Generate STONElogicshifter_lh6NOME 0 0 84.66 61.42 y y R0
-placeSTEParray Generate STONElogicshifter_lh12NOME 0 0 84.66 61.42 y y R0
-placeSTEParray Generate STONElogicshifter_lh30NOME 0 0 101.06 70.89 y y R0
-placeSTEParray Generate STONElogicshifter_lh45NOME 0 0 101.06 70.89 y y R0
-placeSTEParray PEBBLES PEBBLElogicshifterEN 0 0 43.11 8.37 y y R0
-placeSTEParray Generate STONElogicshifter_6NOME 0 0 43.11 8.37 y y R0
-movePINS
-placeROUTEnopins
+place Generate STONEotpOSC8 0 0 R0
+place Generate STONEotpFREQUENCY 90.07 86.4 MX
+place Generate STONEotpPOWER 0 0 R0
+place Generate STONEotpOSCdft 88.035 36.72 R0
+place Generate STONEotp64x1 0 0 R0
+place Generate STONEotp64x8 0 0 R0
+placeCAP 0 80 3 R0 122
+placeTAP 92 36
+placeRES 92 72.9 0.8 0.8 R0 x y maxL
+placeRES 92 36.8 0.8 0.8 R0 x y maxL
+//placeRES 122.6 0.485 0.8 0.8 R0 x y maxL
+placeRESRING
+//placeHVRING
+placeROUTE
+
 endlayoutbio
 //**********************************************
 //Project Parameters
-//Celera:WALTZ Project Bio
+//Celera:TSKEW Project Bio
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////   default.bio'  DO NOT USE  ///////////////////////////////////
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,0.9
-#define,PROJECTsupply,4.5
+#define,PROJECTreference,TBD
+#define,PROJECTsupply,TBD
 #define,TaRoom,25
 #define,ground,0.0
 #define,leveloffset,5
@@ -158,35 +374,52 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,STONElogicshifter_6NOME,2000
-generate_area,logicshifter0L2H_currentlimitfet_d1834b5a_Xlogice,2000
+sub_area,STONEnoconn,0
+sub_area,STONEotpOSC8,900
+sub_area,STONEotpOSCdft,300
+generate_area,oscillator_XWALTZ_XceleraSERDES_Xoscillator,1200
 // *********************************************
+//Calculator Parameters
+#define,OSCILLATORresistoriso,CELG
+#define,OSCILLATORresistorlength,20.0
+#define OSCIILLATORcore,235.0
+//Capacitro Crude
+#define,OSCILLATORcrudehffudge,0.0
+#define,OSCILLATORcrudehfK1,5860.2
+#define,OSCILLATORcrudehfK2,-0.831
+
+#define,OSCILLATORCRUDEpretrimlow,25.0
+#define,OSCILLATORCRUDEpretrimhigh,25.0
+#define,OSCILLATORCRUDEposttrimlsb,2.0
+
+#define,OSCILLATORcrudehfratio,0.8
+#define,OSCILLATORserialmax,16
+#define,OSCILLATORparallelmax,32
+#define,CELVcrude_minimum,2.0
+//**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//logicshifter0L2H
+//oscillator
 revision,pinorder,0.2.0
-pinorder,VIN2,out,VIN1,in,enable_logicshifter,net_skip
+pinorder,ok_oscillator,SIMPV,oscillator,net_skip,net_skip,net_skip,enable_oscillator,net_skip,net_skip
 
 endpinorder
-// *********************************************
-//Calculator Parameters
-#define,CELVminimum,1.5
-//**********************************************	
+//**********************************************
 //TRIM Parameters
-cell,logicshifter
-trim,instance,logicshifter0L2H_currentlimitfet_d1834b5a_Xlogice
+cell,oscillatorcrudehf
+trim,instance,oscillator_XWALTZ_XceleraSERDES_Xoscillator
 
 trim,name,na
 trim,enable,no
 trim,bits,TBD
 trim,por,0
-trim,pinname,TBD
+trim,pinname,trim_oscillator
 trim,testname,TBD
 trim,description,TBD
 trim,target,na
-trim,units,KHz
+trim,units,TBD
 trim,pretrim_low_limit,TBD
 trim,pretrim_high_limit,TBD
 trim,posttrim_low_limit,TBD
@@ -200,35 +433,23 @@ trim,description4,empty
 trim,description5,empty
 trim,description6,empty
 trim,description7,empty
+trim,description8,empty
+
 //**********************************************
 //Cell Pin Descriptions
-// *********************************************
-pinname,VIN1
-definition,VIN1,Level Shifter input Supply
-iq,VIN1,SIMULATION
-absmax,VIN1,6
-absmin,VIN1,-0.3
-io,VIN1,input
-mode,VIN1,power
-router,VIN1,TBD
-dftpriority,VIN1,1
-esd,VIN1,TBD
-
-pinname,VIN2
-definition,VIN2,Level Shifter output Supply
-iq,VIN2,SIMULATION
-absmax,VIN2,6
-absmin,VIN2,-0.3
-io,VIN2,input
-mode,VIN2,power
-router,VIN2,TBD
-dftpriority,VIN2,1
-esd,VIN2,TBD
-
-
+pinname,SIMPV
+definition,SIMPV,cell power
+iq,SIMPV,SIMULATION
+absmax,SIMPV,6
+absmin,SIMPV,2.0
+io,SIMPV,input
+mode,SIMPV,power
+router,SIMPV,TBD
+dftpriority,SIMPV,1
+esd,SIMPV,TBD
 
 pinname,CELG
-definition,CELG,Reference power ground
+definition,CELG,cell power ground
 iq,CELG,SIMULATION
 absmax,CELG,0.3
 absmin,CELG,-0.3
@@ -238,51 +459,124 @@ router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
+pinname,enable_oscillator
+definition,enable_oscillator,Oscillator enable pin
+iq,enable_oscillator,SIMULATION
+absmax,enable_oscillator,6
+absmin,enable_oscillator,-0.3
+io,enable_oscillator,input
+mode,enable_oscillator,digital
+router,enable_oscillator,TBD
+dftpriority,enable_oscillator,1
+esd,enable_oscillator,TBD
 
-pinname,enable_logicshifter
-definition,enable_logicshifter,Logicshifter enable
-iq,enable_logicshifter,SIMULATION
-absmax,enable_logicshifter,6
-absmin,enable_logicshifter,-0.3
-io,enable_logicshifter,input
-mode,enable_logicshifter,digital
-router,enable_logicshifter,TBD
-dftpriority,enable_logicshifter,1
-esd,enable_logicshifter,TBD
+pinname,ok_oscillator
+definition,ok_oscillator,Oscillator OK Flag
+iq,ok_oscillator,SIMULATION
+absmax,ok_oscillator,6
+absmin,ok_oscillator,-0.3
+io,ok_oscillator,output
+mode,ok_oscillator,digital
+router,ok_oscillator,TBD
+dftpriority,ok_oscillator1
+esd,ok_oscillator,TBD
 
-pinname,in
-definition,in,logicshifter input
-iq,in,SIMULATION
-absmax,in,6
-absmin,in,-0.3
-io,in,input
-mode,in,digital
-router,in,TBD
-dftpriority,in,1
-esd,in,TBD
+pinname,oscillator
+definition,oscillator,Oscillator outpurt clock
+iq,oscillator,SIMULATION
+absmax,oscillator,6
+absmin,oscillator,-0.3
+io,oscillator,output
+mode,oscillator,digital
+router,oscillator,TBD
+dftpriority,oscillator,1
+esd,oscillator,TBD
 
+pinname,ten_oscillator_on
+definition,ten_oscillator_on,Testmode Input:Enable Crude High Frequency Oscillator
+iq,ten_oscillator_on,SIMULATION
+absmax,ten_oscillator_on,6
+absmin,ten_oscillator_on,-0.3
+io,ten_oscillator_on,input
+mode,ten_oscillator_on,digital
+router,ten_oscillator_on,TBD
+dftpriority,ten_oscillator_on,1
+esd,ten_oscillator_on,TBD
 
+pinname,ten
+definition,ten,Global Testmode enable
+iq,ten,SIMULATION
+absmax,ten,6
+absmin,ten,-0.3
+io,ten,input
+mode,ten,digital
+router,ten,TBD
+dftpriority,ten,1
+esd,ten,TBD
 
-pinname,out
-definition,out,logicshifter output
-iq,out,SIMULATION
-absmax,out,6
-absmin,out,-0.3
-io,out,output
-mode,out,digital
-router,out,TBD
-dftpriority,out,1
-esd,out,TBD
+pinname,ten_oscillator_off
+definition,ten_oscillator_off,Testmode Input:Disable Oscillator
+iq,ten_oscillator_off,SIMULATION
+absmax,ten_oscillator_off,6
+absmin,ten_oscillator_off,-0.3
+io,ten_oscillator_off,input
+mode,ten_oscillator_off,digital
+router,ten_oscillator_off,TBD
+dftpriority,ten_oscillator_off,1
+esd,ten_oscillator_off,TBD
 
+pinname,ten_oscillator_div8
+definition,,ten_oscillator_div8,Testmode Input:Measure OSC/8
+iq,ten_oscillator_div8,SIMULATION
+absmax,ten_oscillator_div8,6
+absmin,ten_oscillator_div8,-0.3
+io,ten_oscillator_div8,input
+mode,ten_oscillator_div8,digital
+router,ten_oscillator_div8,TBD
+dftpriority,ten_oscillator_div8,1
+esd,ten_oscillator_div8,TBD
 
+pinname,ten_oscillator_external
+definition,ten_oscillator_external,Testmode Input:Enable External oscillator
+iq,ten_oscillator_external,SIMULATION
+absmax,ten_oscillator_external,6
+absmin,ten_oscillator_external,-0.3
+io,ten_oscillator_external,input
+mode,ten_oscillator_external,digital
+router,ten_oscillator_external,TBD
+dftpriority,ten_oscillator_external,1
+esd,ten_oscillator_external,TBD
+
+pinname,tdext
+definition,tdext,Testmode Input:External Digitial control
+iq,tdext,SIMULATION
+absmax,tdext,6
+absmin,tdext,-0.3
+io,tdext,input
+mode,tdext,digital
+router,tdext,TBD
+dftpriority,tdext,1
+esd,tdext,TBD
+
+pinname,tdi_oscillator
+definition,tdi_oscillator,Testmode Output:Measure OSC
+vq,tdi_oscillator,SIMULATION
+iq,tdi_oscillator,SIMULATION
+absmax,tdi_oscillator,6
+absmin,tdi_oscillator,-0.3
+io,tdi_oscillator,output
+mode,tdi_oscillator,digital
+routertdi_oscillator,TBD
+dftpriority,tdi_oscillator,1
+esd,tdi_oscillator,TBD
 
 pinname,CELSUB
-definition,CELSUB,Substrate
+definition,CELSUB,substrate
 iq,CELSUB,SIMULATION
 absmax,CELSUB,0.3
 absmin,CELSUB,-0.3
 io,CELSUB,input
-mode,CELSUB,power
+mode,CELSUB,analog
 router,CELSUB,TBD
 dftpriority,CELSUB,1
 esd,CELSUB,TBD
@@ -964,6 +1258,5 @@ revision,vis15cb,0p1
 #define,AP5G60DC1minmult,1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
-
-endbio// *********************************************
+endbio
 

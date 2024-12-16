@@ -1,19 +1,19 @@
 // ------------------------ Module Definitions -----------
 module SOFTSTARTwaltzMAINcount (clock,count_0,count_1,count_2,count_3,count_4,count_5,count_6,count_7,halfway,CELG59462,CELV96848,done_count,half_count,CELSUB40948,enable_count);
   input  clock;
-  input  count_0;
-  input  count_1;
-  input  count_2;
-  input  count_3;
-  input  count_4;
-  input  count_5;
-  input  count_6;
-  input  count_7;
+  output  count_0;
+  output  count_1;
+  output  count_2;
+  output  count_3;
+  output  count_4;
+  output  count_5;
+  output  count_6;
+  output  count_7;
   input  halfway;
   input  CELG59462;
   input  CELV96848;
   output  done_count;
-  input  half_count;
+  output  half_count;
   input  CELSUB40948;
   input  enable_count;
 endmodule
@@ -37,19 +37,21 @@ module VESPAasmINPUT2 (o,i0,i1,Tstate,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module amux2_a0dc83ed (O,I0,I1,SUB,CELG,CELV,amux);
+module amux2_a0dc83ed (O,I0,I1,CELG,amux,SIMPV,CELSUB);
   output  O;
   input  I0;
   input  I1;
-  input  SUB;
   input  CELG;
-  input  CELV;
   input  amux;
+  input  SIMPV;
+  input  CELSUB;
 endmodule
 
-module dff_fc5ad7bd (d,ck,rb,CELG,CELV,CELSUB);
+module dff_fc5ad7bd (d,q,ck,qb,rb,CELG,CELV,CELSUB);
   input  d;
+  output  q;
   input  ck;
+  output  qb;
   input  rb;
   input  CELG;
   input  CELV;
@@ -239,15 +241,17 @@ amux2_a0dc83ed XU3 (
 .O(SS),
 .I0(net_111),
 .I1(net_129),
-.SUB(CELSUB40948),
 .CELG(CELG59462),
-.CELV(MUDV),
-.amux(net_130)
+.amux(net_130),
+.SIMPV(MUDV),
+.CELSUB(CELSUB40948)
 );
 
 dff_fc5ad7bd XU4 (
 .d(net_137),
+.q(net_138),
 .ck(net_135),
+.qb(net_137),
 .rb(net_123),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -286,7 +290,9 @@ inv_12e192f5 XU12 (
 
 dff_fc5ad7bd XU13 (
 .d(net_139),
+.q(net_133),
 .ck(net_138),
+.qb(net_139),
 .rb(net_123),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -297,10 +303,10 @@ amux2_a0dc83ed XU14 (
 .O(net_136),
 .I0(net_133),
 .I1(XDBUF1_o),
-.SUB(CELSUB40948),
 .CELG(CELG59462),
-.CELV(MUDV),
-.amux(softstart_1ms)
+.amux(softstart_1ms),
+.SIMPV(MUDV),
+.CELSUB(CELSUB40948)
 );
 
 dbuf_e926e395 XU21 (
@@ -346,7 +352,9 @@ nor2_ee112582 XU25 (
 
 dff_fc5ad7bd XU26 (
 .d(enable_softstart),
+.q(net_130),
 .ck(net_125),
+.qb(net_131),
 .rb(net_132),
 .CELG(CELG59462),
 .CELV(CELV96848),

@@ -184,7 +184,7 @@ currentlimitfet_bdeab8a2 XU3 (
 .trim_currentlimit({trim_currentlimit_14d08c8e_7,trim_currentlimit_14d08c8e_6,trim_currentlimit_14d08c8e_5,trim_currentlimit_14d08c8e_4,trim_currentlimit_14d08c8e_3,trim_currentlimit_14d08c8e_2,trim_currentlimit_14d08c8e_1,trim_currentlimit_14d08c8e_0}),
 .enable_currentlimit(enable_driver),
 .global_currentlimit(global_currentlimit_14d08c8e_XU3),
-.measure_currentlimit(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_XU3_measure_currentlimit),
+.measure_currentlimit(botswstatus),
 .tdi_currentlimitlive(tdi_currentlimitlive_14d08c8e_XU3),
 .ten_measure_currentlimit(ten_measure_currentlimit_14d08c8e_XU3)
 );
@@ -210,7 +210,7 @@ currentlimitfet_2899e616 XU9 (
 .trim_currentlimit({trim_currentlimit_a0afb596_7,trim_currentlimit_a0afb596_6,trim_currentlimit_a0afb596_5,trim_currentlimit_a0afb596_4,trim_currentlimit_a0afb596_3,trim_currentlimit_a0afb596_2,trim_currentlimit_a0afb596_1,trim_currentlimit_a0afb596_0}),
 .enable_currentlimit(enable_driver),
 .global_currentlimit(global_currentlimit_a0afb596_XU9),
-.measure_currentlimit(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_XU9_measure_currentlimit),
+.measure_currentlimit(botswstatus),
 .tdi_currentlimitlive(tdi_currentlimitlive_a0afb596_XU9),
 .ten_measure_currentlimit(ten_measure_currentlimit_a0afb596_XU9)
 );
@@ -246,7 +246,7 @@ currentlimitfet_282c42a8 XU17 (
 .trim_currentlimit({trim_currentlimit_2d447a5c_7,trim_currentlimit_2d447a5c_6,trim_currentlimit_2d447a5c_5,trim_currentlimit_2d447a5c_4,trim_currentlimit_2d447a5c_3,trim_currentlimit_2d447a5c_2,trim_currentlimit_2d447a5c_1,trim_currentlimit_2d447a5c_0}),
 .enable_currentlimit(enable_driver),
 .global_currentlimit(global_currentlimit_2d447a5c_XU17),
-.measure_currentlimit(TBD_XWALTZ_XceleraCORE_XDRIVER_XBOTSW_XU17_measure_currentlimit),
+.measure_currentlimit(botswstatus),
 .tdi_currentlimitlive(tdi_currentlimitlive_2d447a5c_XU17),
 .ten_measure_currentlimit(ten_measure_currentlimit_2d447a5c_XU17)
 );

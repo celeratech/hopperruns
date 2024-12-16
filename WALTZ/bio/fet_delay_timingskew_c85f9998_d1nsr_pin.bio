@@ -48,7 +48,7 @@ user,Type,p
 description,FET type
 user,Usage,signal
 description,FET used as Signal
-user,Vds,6V 1p0x2p2um
+user,Vds,6V 1p0x3p0um
 description,FET Design rating
 user,NESTOrevison,0.5.0
 description,NESTO Generate code
@@ -152,7 +152,7 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,TBD
+#define,PROJECTreference,0.9
 #define,PROJECTsupply,4.5
 #define,TaRoom,25
 #define,ground,0.0
@@ -191,8 +191,8 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,pch5i2_5t_1p0x2p2x1x1,16048
-generate_area,fet_delay_timingskew_c85f9998_d1nsr_pin,16048
+sub_area,pch5i2_5t_1p0x3p0x1x1,16052
+generate_area,fet_delay_timingskew_c85f9998_d1nsr_pin,16052
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.3

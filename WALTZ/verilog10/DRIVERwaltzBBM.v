@@ -218,8 +218,8 @@ drm16 drm_hex0x05 (
 .tmi(tmi[4:0]),
 .drm0({noconn_drm16_drm0_7,BBMstatus_5ecfcf89_1,BBMstatus_5ecfcf89_0,factory_timingskew_7229e0fa_4,factory_timingskew_7229e0fa_3,factory_timingskew_7229e0fa_2,factory_timingskew_7229e0fa_1,factory_timingskew_7229e0fa_0}),
 .drm1({noconn_drm16_drm1_7,noconn_drm16_drm1_6,noconn_drm16_drm1_5,factory_timingskew_a04dd5f1_4,factory_timingskew_a04dd5f1_3,factory_timingskew_a04dd5f1_2,factory_timingskew_a04dd5f1_1,factory_timingskew_a04dd5f1_0}),
-.por0({a0,a1,a1,a1,a1,a0,a0,a0}),
-.por1({a0,a0,a0,a1,a1,a0,a0,a0}),
+.por0({a0,a1,a1,a1,a0,a0,a1,a0}),
+.por1({a0,a0,a0,a1,a0,a0,a1,a0}),
 .bypload(a0),
 .lastdrm(a0)
 );

@@ -26,9 +26,11 @@ module nand3_3e9b0d1d (o,i0,i1,i2,SUB,CELG,CELV);
   input  CELV;
 endmodule
 
-module dff_fc5ad7bd (d,ck,rb,CELG,CELV,CELSUB);
+module dff_fc5ad7bd (d,q,ck,qb,rb,CELG,CELV,CELSUB);
   input  d;
+  output  q;
   input  ck;
+  output  qb;
   input  rb;
   input  CELG;
   input  CELV;
@@ -56,19 +58,19 @@ endmodule
 // ------------------------ Module Verilog ---------------
 module SOFTSTARTwaltzMAINcount (clock, count_0, count_1, count_2, count_3, count_4, count_5, count_6, count_7, halfway, CELG59462, CELV96848, done_count, half_count, CELSUB40948, enable_count);
 input  clock;
-input  count_0;
-input  count_1;
-input  count_2;
-input  count_3;
-input  count_4;
-input  count_5;
-input  count_6;
-input  count_7;
+output  count_0;
+output  count_1;
+output  count_2;
+output  count_3;
+output  count_4;
+output  count_5;
+output  count_6;
+output  count_7;
 input  halfway;
 input  CELG59462;
 input  CELV96848;
 output  done_count;
-  input  half_count;
+output  half_count;
 input  CELSUB40948;
 input  enable_count;
 
@@ -105,7 +107,9 @@ nand3_3e9b0d1d XU4 (
 
 dff_fc5ad7bd XU8 (
 .d(halfway),
+.q(half_count),
 .ck(net_122),
+.qb(net_116),
 .rb(enable_count),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -124,7 +128,9 @@ nand3_3e9b0d1d XU12 (
 
 dff_fc5ad7bd XU13 (
 .d(net_111),
+.q(count_0),
 .ck(net_112),
+.qb(net_111),
 .rb(enable_count),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -133,7 +139,9 @@ dff_fc5ad7bd XU13 (
 
 dff_fc5ad7bd XU14 (
 .d(net_113),
+.q(count_1),
 .ck(net_111),
+.qb(net_113),
 .rb(enable_count),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -142,7 +150,9 @@ dff_fc5ad7bd XU14 (
 
 dff_fc5ad7bd XU15 (
 .d(net_115),
+.q(count_3),
 .ck(net_114),
+.qb(net_115),
 .rb(enable_count),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -151,7 +161,9 @@ dff_fc5ad7bd XU15 (
 
 dff_fc5ad7bd XU16 (
 .d(net_114),
+.q(count_2),
 .ck(net_113),
+.qb(net_114),
 .rb(enable_count),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -160,7 +172,9 @@ dff_fc5ad7bd XU16 (
 
 dff_fc5ad7bd XU17 (
 .d(net_118),
+.q(count_4),
 .ck(net_115),
+.qb(net_118),
 .rb(enable_count),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -169,7 +183,9 @@ dff_fc5ad7bd XU17 (
 
 dff_fc5ad7bd XU18 (
 .d(net_119),
+.q(count_5),
 .ck(net_118),
+.qb(net_119),
 .rb(enable_count),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -188,7 +204,9 @@ nor3_c2b5cbd2 XU19 (
 
 dff_fc5ad7bd XU20 (
 .d(net_120),
+.q(count_6),
 .ck(net_119),
+.qb(net_120),
 .rb(enable_count),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -197,7 +215,9 @@ dff_fc5ad7bd XU20 (
 
 dff_fc5ad7bd XU21 (
 .d(net_121),
+.q(count_7),
 .ck(net_120),
+.qb(net_121),
 .rb(enable_count),
 .CELG(CELG59462),
 .CELV(CELV96848),
