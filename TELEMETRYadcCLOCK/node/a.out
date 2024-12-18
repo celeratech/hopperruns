@@ -7,7 +7,7 @@
 :vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
 :vpi_module "/usr/local/lib/ivl/va_math.vpi";
-S_0x5583ad4eff60 .scope module, "TELEMETRYadcCLOCK" "TELEMETRYadcCLOCK" 2 49;
+S_0x55fe93f9bf60 .scope module, "TELEMETRYadcCLOCK" "TELEMETRYadcCLOCK" 2 48;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "SIMPV";
     .port_info 1 /OUTPUT 1 "clock";
@@ -21,39 +21,37 @@ S_0x5583ad4eff60 .scope module, "TELEMETRYadcCLOCK" "TELEMETRYadcCLOCK" 2 49;
     .port_info 9 /OUTPUT 1 "ok_adcclock";
     .port_info 10 /OUTPUT 1 "fault_adcclock";
     .port_info 11 /INPUT 1 "IP_TELEMETRYadcCLOCK1";
-o0x7ff236437018 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5583ad541da0_0 .net "CELG59462", 0 0, o0x7ff236437018;  0 drivers
-o0x7ff2364374f8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5583ad541e40_0 .net "CELREF84329", 0 0, o0x7ff2364374f8;  0 drivers
-o0x7ff236437048 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5583ad541f30_0 .net "CELSUB40948", 0 0, o0x7ff236437048;  0 drivers
-o0x7ff236437078 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5583ad542000_0 .net "CELV96848", 0 0, o0x7ff236437078;  0 drivers
-o0x7ff2364370a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5583ad5420a0_0 .net "IP_68c3961a_Xoscillator1", 0 0, o0x7ff2364370a8;  0 drivers
-o0x7ff2364370d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5583ad5421e0_0 .net "IP_TELEMETRYadcCLOCK1", 0 0, o0x7ff2364370d8;  0 drivers
-o0x7ff236437528 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5583ad542280_0 .net "PORB97836", 0 0, o0x7ff236437528;  0 drivers
-o0x7ff236437558 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5583ad542320_0 .net "SIMPV", 0 0, o0x7ff236437558;  0 drivers
-o0x7ff236437588 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5583ad5423f0_0 .net "clock", 0 0, o0x7ff236437588;  0 drivers
-o0x7ff2364375b8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5583ad542550_0 .net "clock_adc", 0 0, o0x7ff2364375b8;  0 drivers
-o0x7ff2364372b8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5583ad542620_0 .net "dft_clock", 0 0, o0x7ff2364372b8;  0 drivers
-o0x7ff236437108 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5583ad5426c0_0 .net "enable_adc", 0 0, o0x7ff236437108;  0 drivers
-o0x7ff2364372e8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5583ad5427b0_0 .net "fault_adcclock", 0 0, o0x7ff2364372e8;  0 drivers
-o0x7ff236437318 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5583ad5428a0_0 .net "net_34", 0 0, o0x7ff236437318;  0 drivers
-o0x7ff236437138 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5583ad542990_0 .net "noconn", 0 0, o0x7ff236437138;  0 drivers
-o0x7ff236437348 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5583ad542a80_0 .net "ok_adcclock", 0 0, o0x7ff236437348;  0 drivers
-S_0x5583ad52ab80 .scope module, "XCurrentMirror1" "currentmirror_369e5658" 2 98, 2 38 0, S_0x5583ad4eff60;
+o0x7f182a73d018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55fe93fed520_0 .net "CELG59462", 0 0, o0x7f182a73d018;  0 drivers
+o0x7f182a73d048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55fe93fed5c0_0 .net "CELSUB40948", 0 0, o0x7f182a73d048;  0 drivers
+o0x7f182a73d078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55fe93fed680_0 .net "CELV96848", 0 0, o0x7f182a73d078;  0 drivers
+o0x7f182a73d0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55fe93fed750_0 .net "IP_68c3961a_Xoscillator1", 0 0, o0x7f182a73d0a8;  0 drivers
+o0x7f182a73d0d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55fe93fed840_0 .net "IP_TELEMETRYadcCLOCK1", 0 0, o0x7f182a73d0d8;  0 drivers
+o0x7f182a73d4f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55fe93fed930_0 .net "PORB97836", 0 0, o0x7f182a73d4f8;  0 drivers
+o0x7f182a73d528 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55fe93fed9d0_0 .net "SIMPV", 0 0, o0x7f182a73d528;  0 drivers
+o0x7f182a73d558 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55fe93fedaa0_0 .net "clock", 0 0, o0x7f182a73d558;  0 drivers
+o0x7f182a73d588 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55fe93fedb70_0 .net "clock_adc", 0 0, o0x7f182a73d588;  0 drivers
+o0x7f182a73d2b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55fe93fedcd0_0 .net "dft_clock", 0 0, o0x7f182a73d2b8;  0 drivers
+o0x7f182a73d108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55fe93fedd70_0 .net "enable_adc", 0 0, o0x7f182a73d108;  0 drivers
+o0x7f182a73d2e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55fe93fede60_0 .net "fault_adcclock", 0 0, o0x7f182a73d2e8;  0 drivers
+o0x7f182a73d318 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55fe93fedf50_0 .net "net_34", 0 0, o0x7f182a73d318;  0 drivers
+o0x7f182a73d138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55fe93fee040_0 .net "noconn", 0 0, o0x7f182a73d138;  0 drivers
+o0x7f182a73d348 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55fe93fee130_0 .net "ok_adcclock", 0 0, o0x7f182a73d348;  0 drivers
+S_0x55fe93fd6930 .scope module, "XCurrentMirror1" "currentmirror_369e5658" 2 96, 2 37 0, S_0x55fe93f9bf60;
  .timescale 0 0;
     .port_info 0 /INOUT 1 "I0";
     .port_info 1 /INPUT 1 "CELG";
@@ -62,14 +60,14 @@ S_0x5583ad52ab80 .scope module, "XCurrentMirror1" "currentmirror_369e5658" 2 98,
     .port_info 4 /INPUT 1 "CELSUB";
     .port_info 5 /OUTPUT 1 "ok_currentmirror";
     .port_info 6 /INPUT 1 "enable_currentmirror";
-v0x5583ad4ef4b0_0 .net "CELG", 0 0, o0x7ff236437018;  alias, 0 drivers
-v0x5583ad4f00f0_0 .net "CELSUB", 0 0, o0x7ff236437048;  alias, 0 drivers
-v0x5583ad4efec0_0 .net "CELV", 0 0, o0x7ff236437078;  alias, 0 drivers
-v0x5583ad53fd90_0 .net "I0", 0 0, o0x7ff2364370a8;  alias, 0 drivers
-v0x5583ad53fe50_0 .net "ISET", 0 0, o0x7ff2364370d8;  alias, 0 drivers
-v0x5583ad53ff60_0 .net "enable_currentmirror", 0 0, o0x7ff236437108;  alias, 0 drivers
-v0x5583ad540020_0 .net "ok_currentmirror", 0 0, o0x7ff236437138;  alias, 0 drivers
-S_0x5583ad5401c0 .scope module, "XDEBUG" "TELEMETRYadcCLOCKdebug" 2 67, 2 2 0, S_0x5583ad4eff60;
+v0x55fe93f9b4b0_0 .net "CELG", 0 0, o0x7f182a73d018;  alias, 0 drivers
+v0x55fe93f9c0f0_0 .net "CELSUB", 0 0, o0x7f182a73d048;  alias, 0 drivers
+v0x55fe93f9bec0_0 .net "CELV", 0 0, o0x7f182a73d078;  alias, 0 drivers
+v0x55fe93feb600_0 .net "I0", 0 0, o0x7f182a73d0a8;  alias, 0 drivers
+v0x55fe93feb6c0_0 .net "ISET", 0 0, o0x7f182a73d0d8;  alias, 0 drivers
+v0x55fe93feb7d0_0 .net "enable_currentmirror", 0 0, o0x7f182a73d108;  alias, 0 drivers
+v0x55fe93feb890_0 .net "ok_currentmirror", 0 0, o0x7f182a73d138;  alias, 0 drivers
+S_0x55fe93feba30 .scope module, "XDEBUG" "TELEMETRYadcCLOCKdebug" 2 66, 2 2 0, S_0x55fe93f9bf60;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "CELG59462";
     .port_info 1 /INPUT 1 "CELV96848";
@@ -79,15 +77,15 @@ S_0x5583ad5401c0 .scope module, "XDEBUG" "TELEMETRYadcCLOCKdebug" 2 67, 2 2 0, S
     .port_info 5 /INPUT 1 "ok_adcclock";
     .port_info 6 /INPUT 1 "fault_adcclock";
     .port_info 7 /OUTPUT 1 "hijack_enable_adc";
-v0x5583ad5404e0_0 .net "CELG59462", 0 0, o0x7ff236437018;  alias, 0 drivers
-v0x5583ad540580_0 .net "CELSUB40948", 0 0, o0x7ff236437048;  alias, 0 drivers
-v0x5583ad540650_0 .net "CELV96848", 0 0, o0x7ff236437078;  alias, 0 drivers
-v0x5583ad540750_0 .net "dft_clock", 0 0, o0x7ff2364372b8;  alias, 0 drivers
-v0x5583ad5407f0_0 .net "enable_adc", 0 0, o0x7ff236437108;  alias, 0 drivers
-v0x5583ad5408e0_0 .net "fault_adcclock", 0 0, o0x7ff2364372e8;  alias, 0 drivers
-v0x5583ad540980_0 .net "hijack_enable_adc", 0 0, o0x7ff236437318;  alias, 0 drivers
-v0x5583ad540a20_0 .net "ok_adcclock", 0 0, o0x7ff236437348;  alias, 0 drivers
-S_0x5583ad540bf0 .scope module, "XMAIN" "TELEMETRYadcCLOCKmain" 2 78, 2 13 0, S_0x5583ad4eff60;
+v0x55fe93febd50_0 .net "CELG59462", 0 0, o0x7f182a73d018;  alias, 0 drivers
+v0x55fe93febdf0_0 .net "CELSUB40948", 0 0, o0x7f182a73d048;  alias, 0 drivers
+v0x55fe93febec0_0 .net "CELV96848", 0 0, o0x7f182a73d078;  alias, 0 drivers
+v0x55fe93febfc0_0 .net "dft_clock", 0 0, o0x7f182a73d2b8;  alias, 0 drivers
+v0x55fe93fec060_0 .net "enable_adc", 0 0, o0x7f182a73d108;  alias, 0 drivers
+v0x55fe93fec150_0 .net "fault_adcclock", 0 0, o0x7f182a73d2e8;  alias, 0 drivers
+v0x55fe93fec1f0_0 .net "hijack_enable_adc", 0 0, o0x7f182a73d318;  alias, 0 drivers
+v0x55fe93fec290_0 .net "ok_adcclock", 0 0, o0x7f182a73d348;  alias, 0 drivers
+S_0x55fe93fec460 .scope module, "XMAIN" "TELEMETRYadcCLOCKmain" 2 77, 2 13 0, S_0x55fe93f9bf60;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "SIMPV";
     .port_info 1 /OUTPUT 1 "clock";
@@ -97,28 +95,26 @@ S_0x5583ad540bf0 .scope module, "XMAIN" "TELEMETRYadcCLOCKmain" 2 78, 2 13 0, S_
     .port_info 5 /INPUT 1 "clock_adc";
     .port_info 6 /OUTPUT 1 "dft_clock";
     .port_info 7 /INPUT 1 "enable_adc";
-    .port_info 8 /INPUT 1 "CELREF84329";
-    .port_info 9 /INPUT 1 "CELSUB40948";
-    .port_info 10 /OUTPUT 1 "ok_adcclock";
-    .port_info 11 /OUTPUT 1 "fault_adcclock";
-    .port_info 12 /INPUT 1 "IP_68c3961a_Xoscillator1";
-v0x5583ad540ef0_0 .net "CELG59462", 0 0, o0x7ff236437018;  alias, 0 drivers
-v0x5583ad540fe0_0 .net "CELREF84329", 0 0, o0x7ff2364374f8;  alias, 0 drivers
-v0x5583ad5410a0_0 .net "CELSUB40948", 0 0, o0x7ff236437048;  alias, 0 drivers
-v0x5583ad541190_0 .net "CELV96848", 0 0, o0x7ff236437078;  alias, 0 drivers
-v0x5583ad541280_0 .net "IP_68c3961a_Xoscillator1", 0 0, o0x7ff2364370a8;  alias, 0 drivers
-v0x5583ad541370_0 .net "PORB97836", 0 0, o0x7ff236437528;  alias, 0 drivers
-v0x5583ad541410_0 .net "SIMPV", 0 0, o0x7ff236437558;  alias, 0 drivers
-v0x5583ad5414b0_0 .net "clock", 0 0, o0x7ff236437588;  alias, 0 drivers
-v0x5583ad541570_0 .net "clock_adc", 0 0, o0x7ff2364375b8;  alias, 0 drivers
-v0x5583ad5416c0_0 .net "dft_clock", 0 0, o0x7ff2364372b8;  alias, 0 drivers
-v0x5583ad541760_0 .net "enable_adc", 0 0, o0x7ff236437318;  alias, 0 drivers
-v0x5583ad541800_0 .net "fault_adcclock", 0 0, o0x7ff2364372e8;  alias, 0 drivers
-v0x5583ad5418d0_0 .net "ok_adcclock", 0 0, o0x7ff236437348;  alias, 0 drivers
-S_0x5583ad541ac0 .scope module, "XNCnoconn" "STONEnoconn" 2 94, 2 32 0, S_0x5583ad4eff60;
+    .port_info 8 /INPUT 1 "CELSUB40948";
+    .port_info 9 /OUTPUT 1 "ok_adcclock";
+    .port_info 10 /OUTPUT 1 "fault_adcclock";
+    .port_info 11 /INPUT 1 "IP_68c3961a_Xoscillator1";
+v0x55fe93fec750_0 .net "CELG59462", 0 0, o0x7f182a73d018;  alias, 0 drivers
+v0x55fe93fec840_0 .net "CELSUB40948", 0 0, o0x7f182a73d048;  alias, 0 drivers
+v0x55fe93fec950_0 .net "CELV96848", 0 0, o0x7f182a73d078;  alias, 0 drivers
+v0x55fe93feca40_0 .net "IP_68c3961a_Xoscillator1", 0 0, o0x7f182a73d0a8;  alias, 0 drivers
+v0x55fe93fecae0_0 .net "PORB97836", 0 0, o0x7f182a73d4f8;  alias, 0 drivers
+v0x55fe93fecbd0_0 .net "SIMPV", 0 0, o0x7f182a73d528;  alias, 0 drivers
+v0x55fe93fecc70_0 .net "clock", 0 0, o0x7f182a73d558;  alias, 0 drivers
+v0x55fe93fecd10_0 .net "clock_adc", 0 0, o0x7f182a73d588;  alias, 0 drivers
+v0x55fe93fecdd0_0 .net "dft_clock", 0 0, o0x7f182a73d2b8;  alias, 0 drivers
+v0x55fe93fecf00_0 .net "enable_adc", 0 0, o0x7f182a73d318;  alias, 0 drivers
+v0x55fe93fecfa0_0 .net "fault_adcclock", 0 0, o0x7f182a73d2e8;  alias, 0 drivers
+v0x55fe93fed070_0 .net "ok_adcclock", 0 0, o0x7f182a73d348;  alias, 0 drivers
+S_0x55fe93fed240 .scope module, "XNCnoconn" "STONEnoconn" 2 92, 2 31 0, S_0x55fe93f9bf60;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "noconn";
-v0x5583ad541c90_0 .net "noconn", 0 0, o0x7ff236437138;  alias, 0 drivers
+v0x55fe93fed410_0 .net "noconn", 0 0, o0x7f182a73d138;  alias, 0 drivers
 # The file index is used to find the file name in the following table.
 :file_names 3;
     "N/A";

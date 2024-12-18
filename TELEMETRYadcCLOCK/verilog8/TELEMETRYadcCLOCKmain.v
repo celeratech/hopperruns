@@ -80,7 +80,7 @@ module clockrequest_ad390ee9 (CELG,CELV,clock,CELSUB,clock0,clock1,clock2,clock3
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module TELEMETRYadcCLOCKmain (SIMPV, clock, CELG59462, CELV96848, PORB97836, clock_adc, dft_clock, enable_adc, CELREF84329, CELSUB40948, ok_adcclock, fault_adcclock, IP_68c3961a_Xoscillator1);
+module TELEMETRYadcCLOCKmain (SIMPV, clock, CELG59462, CELV96848, PORB97836, clock_adc, dft_clock, enable_adc, CELSUB40948, ok_adcclock, fault_adcclock, IP_68c3961a_Xoscillator1);
 input  SIMPV;
 output  clock;
 input  CELG59462;
@@ -89,7 +89,6 @@ input  PORB97836;
 input  clock_adc;
 output  dft_clock;
 input  enable_adc;
-input  CELREF84329;
 input  CELSUB40948;
 output  ok_adcclock;
 output  fault_adcclock;
@@ -182,7 +181,7 @@ oscillatorring_c836a188 Xoscillator1 (
 .CELG(CELG59462),
 .SIMPV(SIMPV),
 .clock(net_113),
-.CELREF(CELREF84329),
+.CELREF(TBD_XCLOCK_XMAIN_Xoscillator1_CELREF),
 .CELSUB(CELSUB40948),
 .ok_oscillator(net_114),
 .fault_oscillator(net_115),

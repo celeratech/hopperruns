@@ -10,7 +10,7 @@ module TELEMETRYadcCLOCKdebug (CELG59462,CELV96848,dft_clock,enable_adc,CELSUB40
   output  hijack_enable_adc;
 endmodule
 
-module TELEMETRYadcCLOCKmain (SIMPV,clock,CELG59462,CELV96848,PORB97836,clock_adc,dft_clock,enable_adc,CELREF84329,CELSUB40948,ok_adcclock,fault_adcclock,IP_68c3961a_Xoscillator1);
+module TELEMETRYadcCLOCKmain (SIMPV,clock,CELG59462,CELV96848,PORB97836,clock_adc,dft_clock,enable_adc,CELSUB40948,ok_adcclock,fault_adcclock,IP_68c3961a_Xoscillator1);
   input  SIMPV;
   output  clock;
   input  CELG59462;
@@ -19,7 +19,6 @@ module TELEMETRYadcCLOCKmain (SIMPV,clock,CELG59462,CELV96848,PORB97836,clock_ad
   input  clock_adc;
   output  dft_clock;
   input  enable_adc;
-  input  CELREF84329;
   input  CELSUB40948;
   output  ok_adcclock;
   output  fault_adcclock;
@@ -84,7 +83,6 @@ TELEMETRYadcCLOCKmain XMAIN (
 .clock_adc(clock_adc),
 .dft_clock(dft_clock),
 .enable_adc(net_34),
-.CELREF84329(CELREF84329),
 .CELSUB40948(CELSUB40948),
 .ok_adcclock(ok_adcclock),
 .fault_adcclock(fault_adcclock),
