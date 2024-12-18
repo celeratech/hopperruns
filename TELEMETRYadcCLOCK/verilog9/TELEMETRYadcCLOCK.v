@@ -27,7 +27,7 @@ module TELEMETRYadcCLOCKmain (tmi,SIMPV,clock,CELG59462,CELV96848,PORB97836,cloc
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module TELEMETRYadcCLOCK (tmi, SIMPV, clock, CELG59462, CELV96848, PORB97836, clock_adc, dft_clock, enable_adc, CELSUB40948, ok_adcclock, fault_adcclock);
+module TELEMETRYadcCLOCK (tmi, SIMPV, clock, CELG59462, CELV96848, PORB97836, clock_adc, dft_clock, enable_adc, CELSUB40948, ok_adcclock, fault_adcclock, IP_68c3961a_Xoscillator1);
 inout [4:0] tmi;
 input  SIMPV;
 output  clock;
@@ -40,6 +40,7 @@ input  enable_adc;
 input  CELSUB40948;
 output  ok_adcclock;
 output  fault_adcclock;
+input  IP_68c3961a_Xoscillator1;
 
 
 // ------------------------ Wires ------------------------
