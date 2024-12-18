@@ -1,0 +1,749 @@
+* Z:\celera\projects\Simplis\playrelease\Release\play301\Caprice\300\verification\sim_CAPRICE.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map SNS 9
+.node_map BIAS 12
+.node_map PGND 13
+.node_map VCC 10
+.node_map DRN 11
+.node_map GATE 14
+.node_map GND 15
+.options
++ PSP_NPT=50001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+.tran 2m 0
+
+.globalvar TEMP=25
+*celera
+.globalvar VIN = 5.0
+.globalvar REF = 1.0
+.globalvar tdext_khz=10
+
+*Externals
+.globalvar Cvcc=0.1u
+.globalvar Cvcc_initial=0
+.globalvar Cbias=1u
+.globalvar Cbias_initial=0
+.globalvar Rdrn_pullup=100K
+
+*Force
+.globalvar Fsns=10k
+.globalvar Tsns_start=200u
+
+
+X$CAPRICE 10 9 12 11 14 15 13 CAPRICE
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Caprice\300\design\CAPRICE.sxcmp
+.subckt CAPRICE 37 38 40 39 42 43 41
+*#hierarchy
+.node_map SNS 38
+.node_map BIAS 40
+.node_map kelvin_GND 47
+.node_map kelvin_SNS 45
+.node_map PGND 41
+.node_map PBIAS 44
+.node_map kelvin_BIAS 46
+.node_map VCC 37
+.node_map DRN 39
+.node_map GATE 42
+.node_map GND 43
+X$DESIGN0 38 37 45 40 46 39 44 42 43 47 41 CAPRICEdesign
+X$RING0 37 38 40 39 44 42 46 43 47 45 41 RINGcaprice
+X$U1 38 pinprobe vars: pinprobe_description='BIAS_module_enabled_and_ready'
+X$U10 39 pinprobe vars: pinprobe_description='Internal_FET_Open_drain_source'
+X$U11 42 pinprobe vars: pinprobe_description='External_FET_gate_driver'
+X$U2 37 pinprobe vars: pinprobe_description='Rectified_Supply_output'
+X$U3 40 pinprobe vars: pinprobe_description='Regulated_BIAS_supply'
+X$U4 41 pinprobe vars: pinprobe_description='Power_ground'
+X$U7 43 pinprobe vars: pinprobe_description='Analog_Ground'
+.ends CAPRICE
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Caprice\300\design\CAPRICEdesign.sxcmp
+.subckt CAPRICEdesign 48 49 50 51 52 53 54 55 56 58 57
+*#hierarchy
+.node_map SNS 48
+.node_map out_regulation 64
+.node_map BIAS 51
+.node_map kelvin_GND 58
+.node_map kelvin_SNS 50
+.node_map enable_driver 62
+.node_map PGND 57
+.node_map PBIAS 54
+.node_map kelvin_BIAS 52
+.node_map fault_regulation 63
+.node_map enable_regulation 60
+.node_map VCC 49
+.node_map ok_bias 59
+.node_map DRN 53
+.node_map GATE 55
+.node_map ok_regulation 61
+.node_map GND 56
+X$BIAS0 48 49 51 59 BIAScaprice
+X$DRIVER0 54 53 57 55 64 62 DRIVERcaprice
+X$ENABLE0 59 62 61 60 63 ENABLEcaprice
+X$REGULATION0 51 52 61 64 60 58 56 50 63 REGULATIONcaprice
+X$U1 48 pinprobe vars: pinprobe_description='BIAS_module_enabled_and_ready'
+X$U10 53 pinprobe vars: pinprobe_description='Internal_FET_Open_drain_source'
+X$U11 55 pinprobe vars: pinprobe_description='External_FET_gate_driver'
+X$U12 47 brick vars: ibias=0 drm=0 dft=0 global=0 revision=0 description='Half_Bridge_Driver' description1='Detect_SNS_ground_threshold' description2='Output_indicator_with_opendrain_or_gate_driver' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U2 49 pinprobe vars: pinprobe_description='Rectified_Supply_output'
+X$U3 51 pinprobe vars: pinprobe_description='Regulated_BIAS_supply'
+X$U4 52 pinprobe vars: pinprobe_description='BIAS_kelvin_Input'
+X$U5 50 pinprobe vars: pinprobe_description='KS_kelvin_input'
+X$U6 54 pinprobe vars: pinprobe_description='BIAS_Power_input'
+X$U7 56 pinprobe vars: pinprobe_description='Analog_Ground'
+X$U8 58 pinprobe vars: pinprobe_description='GND_kelvin_input'
+X$U9 57 pinprobe vars: pinprobe_description='GND_Power_input'
+.ends CAPRICEdesign
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Caprice\300\design\BIAScaprice.sxcmp
+.subckt BIAScaprice 16 17 18 19
+*#hierarchy
+.node_map SNS 16
+.node_map BIAS 18
+.node_map VCC 17
+.node_map ok_bias 19
+.node_map ok 20
+X$DEBUG0 20 19 BIAScapriceDEBUG
+X$MAIN0 16 17 18 20 BIAScapriceMAIN
+X$U1 16 pinprobe vars: pinprobe_description='AC_Input_supply_24V' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U2 17 pinprobe vars: pinprobe_description='Recified_Supply_24V' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U3 19 pinprobe vars: pinprobe_description='BIA_Supply_is_greater_than_UVLO' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 18 pinprobe vars: pinprobe_description='Regulated_Supply_rail_5V' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U5 15 brick vars: ibias=0 drm=1 dft=1 global=1 revision=0 description='Half_bridge_Rectifier' description1='AC_SNS_input_is_rectified_onto_BIAS' description2='BIAS_has_an_external_capacitor' description3='VCC_is_a_regulated_5V_supply_from_BIAS' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+.ends BIAScaprice
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Caprice\300\design\BIAScapriceDEBUG.sxcmp
+.subckt BIAScapriceDEBUG 8 9
+*#hierarchy
+.node_map ok_input 8
+.node_map ok_bias 9
+X$U1 8 pinprobe vars: pinprobe_description='BIAS_ok_ioutput'
+X$U2 8 9 dfthijack vars: dfthijack_name='HIJACKokbias' dfthijack_description='Hijack_ok_Bias_flag' dfthijack_enable='no' dfthijack_output='low' dfthijack_state='logic' dfthijack_vmax=6 dfthijack_comment=1
+X$U3 9 pinprobe vars: pinprobe_description='BIAS_ok-debug'
+X$U4 9 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='BIASok' dftprobe_description='BIAS_ok_output_flag' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+.ends BIAScapriceDEBUG
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Caprice\300\design\BIAScapriceMAIN.sxcmp
+.subckt BIAScapriceMAIN 18 17 19 20
+*#hierarchy
+.node_map SNS 18
+.node_map BIAS 19
+.node_map VCC 17
+.node_map ok_bias 20
+X$U1 18 pinprobe vars: pinprobe_description='AC_Input_supply_24V'
+X$U2 17 pinprobe vars: pinprobe_description='Recified_Supply_24V'
+X$U3 20 pinprobe vars: pinprobe_description='BIA_Supply_is_greater_than_UVLO'
+X$U4 19 pinprobe vars: pinprobe_description='Regulated_Supply_rail_5V'
+X$U6 19 14 17 20 15 16 vbias vars: vbias_voutaccuracy='no' vbias_trim_name='text' vbias_trim_description='text' vbias_discharge='no' vbias_enable='no' vbias_enablevoltage='highvoltage' vbias_latch='no' vbias_okflag='yes' vbias_dft='no' vbias_maxvin1=30 vbias_uvlo=4 vbias_inputs=1 vbias_maxvin2=6 vbias_switchover=2.5 vbias_vout=5 vbias_iout=20 vbias_vmax=6
+X$U7 18 17 cdiode vars: cdiode_maxreverse='30' cdiode_irating=40
+.ends BIAScapriceMAIN
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Caprice\300\design\DRIVERcaprice.sxcmp
+.subckt DRIVERcaprice 24 25 26 27 28 29
+*#hierarchy
+.node_map on_driver 28
+.node_map enable_driverHIJACK 31
+.node_map enable_driver 29
+.node_map PGND 26
+.node_map PBIAS 24
+.node_map DRN 25
+.node_map on_driverHIJACK 30
+.node_map GATE 27
+X$DEBUG0 28 29 31 30 DRIVERcapriceDEBUG
+X$MAIN0 24 25 26 27 30 31 DRIVERcapriceMAIN
+X$U1 26 pinprobe vars: pinprobe_description='Power_ground_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U2 25 pinprobe vars: pinprobe_description='Open_drian_pull_down_' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U3 29 pinprobe vars: pinprobe_description='enable_driver' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 24 pinprobe vars: pinprobe_description='Power_Bias_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U5 28 pinprobe vars: pinprobe_description='Dirver_input_control' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 27 pinprobe vars: pinprobe_description='External_FET_driver_gate' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U7 23 brick vars: ibias=0 drm=1 dft=1 global=1 revision=0 description='Output_driver_Either_internal_or_external' description1='Internal_Open_drain_pulldown_DRN' description2='External_gate' description3='Factory_Configurtion_for_mode_and_strength' description4='<0>Internal_Enable_<1>Internal_polarity_<2>External_enable_<3>External_polarity' description5='GATE_Turn_on_off_impedance' description6='text' description7='text' description8='text' description9='text' description10='text'
+.ends DRIVERcaprice
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Caprice\300\design\DRIVERcapriceDEBUG.sxcmp
+.subckt DRIVERcapriceDEBUG 13 15 16 14
+*#hierarchy
+.node_map on_driver 13
+.node_map enable_driverHIJACK 16
+.node_map enable_driver 15
+.node_map on_driverHIJACK 14
+X$U1 13 14 dfthijack vars: dfthijack_name='HIJACKdriverON' dfthijack_description='Hijack_Driver_On_control' dfthijack_enable='no' dfthijack_output='high' dfthijack_state='logic' dfthijack_vmax=6 dfthijack_comment=1
+X$U10 13 pinprobe vars: pinprobe_description='Dirver_input_control'
+X$U2 15 16 dfthijack vars: dfthijack_name='HIJACKdriverENABLE' dfthijack_description='Hijack_Driver_enable_control' dfthijack_enable='no' dfthijack_output='high' dfthijack_state='logic' dfthijack_vmax=6 dfthijack_comment=1
+X$U3 15 pinprobe vars: pinprobe_description='enable_driver'
+X$U4 14 pinprobe vars: pinprobe_description='Dirver_input_control'
+X$U5 16 pinprobe vars: pinprobe_description='enable_driver'
+.ends DRIVERcapriceDEBUG
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Caprice\300\design\DRIVERcapriceMAIN.sxcmp
+.subckt DRIVERcapriceMAIN 93 94 95 96 98 99
+*#hierarchy
+.node_map on_internal 104
+.node_map on_driver 98
+.node_map internal_polarity 78
+.node_map BUS1$4 81
+.node_map BUS1$5 82
+.node_map BUS1$6 83
+.node_map BUS1$7 84
+.node_map BUS2$0 85
+.node_map BUS2$1 86
+.node_map enable_external 102
+.node_map BUS3$0 87
+.node_map BUS3$1 88
+.node_map internal 77
+.node_map enable_driver 99
+.node_map BUS4$0 89
+.node_map BUS4$1 90
+.node_map external_polarity 80
+.node_map PGND 95
+.node_map on_external 106
+.node_map PBIAS 93
+.node_map BUS5$0 91
+.node_map BUS5$1 92
+.node_map one 105
+.node_map oni 103
+.node_map enable_driverBUF 101
+.node_map DRN 94
+.node_map external 79
+.node_map enable_internal 100
+.node_map GATE 96
+.node_map gate0 97
+C1 97 95 1p IC=0
+X$fetdriver1 93 97 56 95 60 57 58 59 85 86 87 88 100 104 fetdriver vars: fetdriver_type='n' fetdriver_on_adjust='no' fetdriver_on_adjust_por='1' fetdriver_on_adjust_name='text' fetdriver_on_adjust_description='text' fetdriver_off_adjust='no' fetdriver_off_adjust_por='0' fetdriver_off_adjust_name='text' fetdriver_off_adjust_description='text' fetdriver_faultdisable='no' fetdriver_levelshiftenable='yes' fetdriver_levelshiftinput='yes' fetdriver_status_levelshifter='no' fetdriver_status_delay_adjust='no' fetdriver_statusdelay_name='text' fetdriver_statusdelay_description='text' fetdriver_passive='1000' fetdriver_dft='no' fetdriver_design='consumer' fetdriver_on_ron=100m fetdriver_off_ron=100m fetdriver_vmaxlevelshift=6 fetdriver_status_delay=0 fetdriver_vmax=6
+X$fetdriver2 93 96 69 95 74 70 71 72 89 90 91 92 102 106 fetdriver vars: fetdriver_type='n' fetdriver_on_adjust='no' fetdriver_on_adjust_por='1' fetdriver_on_adjust_name='GATEon' fetdriver_on_adjust_description='GATE_Turn_on_strength' fetdriver_off_adjust='no' fetdriver_off_adjust_por='0' fetdriver_off_adjust_name='GATEoff' fetdriver_off_adjust_description='GATE_Turn_off_strength' fetdriver_faultdisable='no' fetdriver_levelshiftenable='yes' fetdriver_levelshiftinput='yes' fetdriver_status_levelshifter='no' fetdriver_status_delay_adjust='no' fetdriver_statusdelay_name='text' fetdriver_statusdelay_description='text' fetdriver_passive='1000' fetdriver_dft='no' fetdriver_design='consumer' fetdriver_on_ron=100m fetdriver_off_ron=100m fetdriver_vmaxlevelshift=6 fetdriver_status_delay=0 fetdriver_vmax=6
+X$U1 95 pinprobe vars: pinprobe_description='Power_ground_input'
+X$U10 98 pinprobe vars: pinprobe_description='Dirver_input_control'
+X$U11 60 celeranoconn vars: ='%'
+X$U12 77 78 79 80 81 82 83 84 datamap0 vars: datamap_function='function' datamap_name='DRIVERconfiguration' datamap_description='Configure_Driver_outputs_and_enable' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='register' datamap_por='0' datamap_mode='readwrite' datamap_address='2' datamap_timeenable='no' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=4 datamap_location=7 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U13 101 100 77 VESPAasmINPUT1
+X$U14 101 102 79 VESPAasmINPUT1
+X$U15 74 celeranoconn vars: ='%'
+X$U16 78 64 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U17 64 65 66 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U18 78 67 98 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U19 65 103 67 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U2 94 pinprobe vars: pinprobe_description='Open_drian_pull_down_'
+X$U20 98 66 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U21 101 104 103 VESPAasmINPUT1
+X$U23 101 106 105 VESPAasmINPUT1
+X$U24 73 105 76 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U25 80 68 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U26 98 75 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U27 68 73 75 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U28 80 76 98 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U3 99 pinprobe vars: pinprobe_description='enable_driver'
+X$U4 95 94 97 63 62 61 fetdn vars: fet_usage='power' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='yes' fet_ron_signal=1k fet_ron_power=20m fet_replica_gain=10 fet_maximumvds=24 count_1=0 fet_vmax=6
+X$U5 101 99 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U6 96 pinprobe vars: pinprobe_description='External_FET_driver_gate'
+X$U8 93 pinprobe vars: pinprobe_description='Power_Bias_input'
+.ends DRIVERcapriceMAIN
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT1.sxcmp
+.subckt VESPAasmINPUT1 5 6 7
+*#hierarchy
+.node_map Tstate 5
+.node_map i0 7
+.node_map o 6
+X$U1 5 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 7 pinprobe vars: pinprobe_description='input1'
+X$U3 6 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 5 4 7 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U5 4 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+.ends VESPAasmINPUT1
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Caprice\300\design\ENABLEcaprice.sxcmp
+.subckt ENABLEcaprice 22 25 24 23 26
+*#hierarchy
+.node_map enable_driver 25
+.node_map fault_regulation 26
+.node_map enable_regulation 23
+.node_map ok_bias 22
+.node_map ok_regulation 24
+.node_map fault_regulationHIJACK 27
+X$DEBUG0 22 25 23 26 27 ENABLEcapriceDEBUG
+X$MAIN0 22 25 24 23 27 ENABLEcapriceMAIN
+X$U1 22 pinprobe vars: pinprobe_description='BIAS_module_enabled_and_ready' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U2 25 pinprobe vars: pinprobe_description='enable_DRIVER_module' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 23 pinprobe vars: pinprobe_description='enable_REGULATION_module' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 24 pinprobe vars: pinprobe_description='REGULATION_module_enabled_and_ready' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 26 pinprobe vars: pinprobe_description='REGULATION_module_faulted_at_startup' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 21 brick vars: ibias=0 drm=1 dft=1 global=1 revision=0 description='ENABLE_control' description1='Enable_control_through_Register' description2='Enable_bricks_when_SERVICE_is_ready' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+.ends ENABLEcaprice
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Caprice\300\design\ENABLEcapriceDEBUG.sxcmp
+.subckt ENABLEcapriceDEBUG 20 21 22 24 25
+*#hierarchy
+.node_map enable_regualtion 23
+.node_map enable_driver 21
+.node_map fault_regulation 24
+.node_map enable_regulation 22
+.node_map ok_bias 20
+.node_map fault_regulationHIJACK 25
+X$U1 20 pinprobe vars: pinprobe_description='BIAS_module_enabled_and_ready'
+X$U10 24 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='ENABLEfault' dftprobe_description='Regualtion_fault_flag' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U11 25 pinprobe vars: pinprobe_description='REGULATION_module_faulted_at_startup'
+X$U2 21 pinprobe vars: pinprobe_description='enable_DRIVER_module'
+X$U3 23 pinprobe vars: pinprobe_description='enable_REGULATION_module'
+X$U4 18 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='ENABLEregulation' dftprobe_description='Start_up_time_to_enablle_REGULATION' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U5 19 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='ENABLEdriver' dftprobe_description='Start_up_time_to_enablle_Driver' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U6 20 22 18 VESPAdftpulse
+X$U7 24 25 dfthijack vars: dfthijack_name='HIJACKenableFAULT' dfthijack_description='Hijack_Enable_fault_flag' dfthijack_enable='no' dfthijack_output='low' dfthijack_state='logic' dfthijack_vmax=6 dfthijack_comment=1
+X$U8 20 21 19 VESPAdftpulse
+X$U9 24 pinprobe vars: pinprobe_description='REGULATION_module_faulted_at_startup'
+.ends ENABLEcapriceDEBUG
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAdftpulse.sxcmp
+.subckt VESPAdftpulse 7 8 9
+*#hierarchy
+.node_map start 7
+.node_map stop 8
+.node_map pulse 9
+X$U11 7 pinprobe vars: pinprobe_description='DFT_timer_start_input'
+X$U15 8 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U17 8 pinprobe vars: pinprobe_description='DFT_timer_stop_input'
+X$U52 7 4 6 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U53 4 5 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U55 9 5 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U8 9 pinprobe vars: pinprobe_description='DFT_Timer_pulse'
+.ends VESPAdftpulse
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Caprice\300\design\ENABLEcapriceMAIN.sxcmp
+.subckt ENABLEcapriceMAIN 20 21 22 23 25
+*#hierarchy
+.node_map fault_regulationBAR 26
+.node_map enable_regualtion 24
+.node_map enable_driver 21
+.node_map fault_regulation 25
+.node_map enable_regulation 23
+.node_map ok_bias 20
+.node_map ok_regulation 22
+X$U1 20 pinprobe vars: pinprobe_description='BIAS_module_enabled_and_ready'
+X$U2 21 pinprobe vars: pinprobe_description='enable_DRIVER_module'
+X$U3 24 pinprobe vars: pinprobe_description='enable_REGULATION_module'
+X$U4 20 23 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=5 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U5 22 pinprobe vars: pinprobe_description='REGULATION_module_enabled_and_ready'
+X$U6 23 19 22 26 VESPAasmINPUT2
+X$U7 25 26 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U8 19 21 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U9 25 pinprobe vars: pinprobe_description='REGULATION_module_faulted_at_startup'
+.ends ENABLEcapriceMAIN
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT2.sxcmp
+.subckt VESPAasmINPUT2 7 8 9 6
+*#hierarchy
+.node_map Tstate 6
+.node_map i0 7
+.node_map i1 9
+.node_map o 8
+X$U1 6 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 9 pinprobe vars: pinprobe_description='input1'
+X$U3 8 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 6 9 5 7 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U5 5 8 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U6 7 pinprobe vars: pinprobe_description='input0'
+.ends VESPAasmINPUT2
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Caprice\300\design\REGULATIONcaprice.sxcmp
+.subckt REGULATIONcaprice 47 49 48 52 53 54 55 51 50
+*#hierarchy
+.node_map blank_on 60
+.node_map enable_regulationHIJACK 56
+.node_map out_regulation 52
+.node_map BIAS 47
+.node_map REFERENCE 57
+.node_map SENSE 58
+.node_map kelvin_GND 54
+.node_map kelvin_SNS 51
+.node_map kelvin_BIAS 49
+.node_map fault_regulation 50
+.node_map okHIJACK 63
+.node_map enable_regulation 53
+.node_map blank_off 61
+.node_map ok 62
+.node_map ok_regulation 48
+.node_map GND 55
+.node_map state 59
+X$DEBUG1 53 57 58 59 48 62 56 63 60 61 52 REGULATIONcapriceDEBUG
+X$MAIN0 47 48 49 50 51 52 56 54 55 57 58 59 62 63 60 61 REGULATIONcapriceMAIN
+X$U1 55 pinprobe vars: pinprobe_description='Analog_Ground_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U10 46 brick vars: ibias=0 drm=1 dft=1 global=1 revision=0 description='Turn_DRIVER_on_when_BIAS_is_less_than_-50mV' description1='Turn_DRIVER_off_when_BIAS_is_greater_than_0mV' description2='Factory_configuration_to_change_detection_method' description3='Factory_configuration_to_add_Blank_time_after_detection' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U2 52 pinprobe vars: pinprobe_description='REGULATION_sense-output_status' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 47 pinprobe vars: pinprobe_description='BIAS_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U4 49 pinprobe vars: pinprobe_description='BIAS_kelvin_input' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd'
+X$U5 51 pinprobe vars: pinprobe_description='BIAS_kelvin_input' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd'
+X$U6 53 pinprobe vars: pinprobe_description='Enable_REGULATION_input' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U7 48 pinprobe vars: pinprobe_description='REGULATION_module_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U8 54 pinprobe vars: pinprobe_description='GND_kelvin_input' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd'
+X$U9 50 pinprobe vars: pinprobe_description='REGULATION_module_faulted_at_statrtup' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+.ends REGULATIONcaprice
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Caprice\300\design\REGULATIONcapriceDEBUG.sxcmp
+.subckt REGULATIONcapriceDEBUG 36 40 41 42 38 43 37 39 44 45 46
+*#hierarchy
+.node_map out_regulation 46
+.node_map blank_on 44
+.node_map enable_regulationHIJACK 37
+.node_map REFERENCE 40
+.node_map SENSE 41
+.node_map okHIJACK 39
+.node_map enable_regulation 36
+.node_map blank_off 45
+.node_map ok 43
+.node_map ok_regulation 38
+.node_map state 42
+X$U1 43 39 dfthijack vars: dfthijack_name='HIJACKregulationOK' dfthijack_description='Hijack_REGULATION_ok' dfthijack_enable='no' dfthijack_output='high' dfthijack_state='logic' dfthijack_vmax=6 dfthijack_comment=1
+X$U10 42 pinprobe vars: pinprobe_description='Comparator_output'
+X$U11 37 pinprobe vars: pinprobe_description='Enable_REGULATION_input'
+X$U12 39 pinprobe vars: pinprobe_description='REGULATION_ok_flag'
+X$U13 41 pinprobe vars: pinprobe_description='Negative_trip_threshold'
+X$U14 35 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONstartup' dftprobe_description='REGULATION_startup_time' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U15 45 pinprobe vars: pinprobe_description='DFT_Off_time_blank_pulse'
+X$U16 44 pinprobe vars: pinprobe_description='DFT_On_time_blank_pulse'
+X$U17 44 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONblankon' dftprobe_description='REGULATION_on_time_blank' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U18 45 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONblankoff' dftprobe_description='REGULATION_off_time_blank' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U19 46 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONout' dftprobe_description='REGULATION_comparator_output' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U2 43 pinprobe vars: pinprobe_description='REGULATION_ok_flag'
+X$U20 46 pinprobe vars: pinprobe_description='DFT_REGULATION_sense_output'
+X$U22 36 38 35 VESPAdftpulse
+X$U3 42 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONstate' dftprobe_description='REGULATION_comparator_output' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U4 40 pinprobe vars: pinprobe_description='Posivive_Trip_threshold'
+X$U5 41 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONsense' dftprobe_description='REGULATION_negative_threshold' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U7 38 pinprobe vars: pinprobe_description='REGULATION_module_enabled_and_ready'
+X$U8 36 37 dfthijack vars: dfthijack_name='HIJACKregulationENABLE' dfthijack_description='Hijack_REGULATION_enable' dfthijack_enable='no' dfthijack_output='high' dfthijack_state='logic' dfthijack_vmax=6 dfthijack_comment=1
+X$U9 36 pinprobe vars: pinprobe_description='Enable_REGULATION_input'
+X$UREGULATIONreference 40 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONreference' dftprobe_description='REGULATION_positive_threshold' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+.ends REGULATIONcapriceDEBUG
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Caprice\300\design\REGULATIONcapriceMAIN.sxcmp
+.subckt REGULATIONcapriceMAIN 90 91 92 93 94 95 96 101 103 97 99 100 102 98 104 105
+*#hierarchy
+.node_map mode 82
+.node_map ok_comparator 108
+.node_map outBAR 109
+.node_map out 107
+.node_map BUS1$2 84
+.node_map BUS1$3 85
+.node_map BUS1$4 86
+.node_map blank_on 104
+.node_map out_regulation 95
+.node_map BIAS 90
+.node_map BUS1$5 87
+.node_map BUS1$6 88
+.node_map BUS1$7 89
+.node_map REFERENCE 97
+.node_map SENSE 99
+.node_map kelvin_GND 101
+.node_map kelvin_SNS 94
+.node_map blank 83
+.node_map ok_sense 110
+.node_map kelvin_BIAS 92
+.node_map fault_regulation 93
+.node_map okHIJACK 98
+.node_map enable_regulation 96
+.node_map blank_off 105
+.node_map ok 102
+.node_map ok_regulation 91
+.node_map ok_reference 106
+.node_map GND 103
+.node_map state 100
+X$BLANK0 100 95 83 96 104 105 REGULATIONcapriceBLANK
+X$REFERENCE0 90 92 97 106 96 100 82 101 REGULATIONcapriceREFERENCE
+X$SENSE0 94 90 96 99 100 110 82 103 101 REGULATIONcapriceSENSE
+X$U1 103 pinprobe vars: pinprobe_description='Analog_Ground_input'
+X$U10 94 pinprobe vars: pinprobe_description='BIAS_kelvin_input'
+X$U11 93 pinprobe vars: pinprobe_description='REGULATION_module_faulted_at_statrtup'
+X$U12 105 pinprobe vars: pinprobe_description='Off_time_blank_pulse'
+X$U13 92 pinprobe vars: pinprobe_description='BIAS_kelvin_input'
+X$U14 110 108 102 106 96 VESPAasmINPUT3
+X$U15 101 pinprobe vars: pinprobe_description='GND_kelvin_input'
+X$U16 104 pinprobe vars: pinprobe_description='On_time_blank_pulse'
+X$U17 91 100 109 VESPAasmINPUT1
+X$U18 97 pinprobe vars: pinprobe_description='DEBUG_positive_threshold'
+X$U19 100 pinprobe vars: pinprobe_description='DEBUG_comparator_output'
+X$U2 108 90 96 107 97 79 99 80 81 78 comparatornoctlpins vars: comparator_model='comparator' comparator_hysteresismode='fixed' comparator_edge='falling' comparator_speed='slow' comparator_type='p' comparator_deglitch='yes' comparator_lowiq='no' comparator_datasheet_name='ONhystersis' comparator_datasheet_description='Configure_ON_threshold_hystersis' bgcomp_accuracy='no' bgcomp_logicshift='no' bgcomp_trim_name='text' bgcomp_trim_description='text' bgcomp_enable='yes' comparatorgnd_threshold='50' comparatorgnd_edge='falling' comparator_dft='no' comparator_hysteresis=0 comparator_lowiqpor=0 bgcomp_threshold=1.2 bgcomp_maxcelpos=6 bgcomp_maxvin=6 comparator_vmax=6
+X$U20 99 pinprobe vars: pinprobe_description='DEBUG_negative_threshold'
+X$U23 107 109 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U3 82 83 84 85 86 87 88 89 datamap0 vars: datamap_function='function' datamap_name='Regulation_configuration' datamap_description='Configure_REGULATION_trip_threshold_functions' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='register' datamap_por='0' datamap_mode='readwrite' datamap_address='0' datamap_timeenable='no' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_location=7 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U4 90 pinprobe vars: pinprobe_description='BIAS_input_supply'
+X$U5 102 pinprobe vars: pinprobe_description='DEBUG_REGULATION_startup_ok_flag'
+X$U6 98 pinprobe vars: pinprobe_description='Hijack_ok_to_test_fault_flag'
+X$U7 91 pinprobe vars: pinprobe_description='REGULATION_module_enabled_and_ready'
+X$U8 95 pinprobe vars: pinprobe_description='REGULATION_sense_output_status'
+X$U9 96 pinprobe vars: pinprobe_description='Enable_REGULATION_input'
+X$VESPAok 96 91 98 93 VESPAmoduleOK
+.ends REGULATIONcapriceMAIN
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Caprice\300\design\REGULATIONcapriceBLANK.sxcmp
+.subckt REGULATIONcapriceBLANK 57 60 62 59 61 63
+*#hierarchy
+.node_map out 68
+.node_map stateBAR 65
+.node_map blank_on 61
+.node_map out_regulation 60
+.node_map ckon 73
+.node_map ckenable 64
+.node_map blank 62
+.node_map diff 69
+.node_map blank_off 63
+.node_map diffonDELAY 70
+.node_map qb 66
+.node_map diffoffDELAY 72
+.node_map ckoff 71
+.node_map q 58
+.node_map ck 67
+.node_map enable_blank 59
+.node_map state 57
+X$U1 69 70 delaycontrol vars: delay_type='control' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='factory' delaycontrol_name='BLANKontime' delaycontrol_description='Blank_on_time_delay' delaycontrol_units0='us' delaycontrol_units1='us' delaycontrol_units2='us' delaycontrol_units3='us' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=100 delay_0=0 delay_vmax=6 delaycontrol_outputs=4 delaycontrol_por=0 delaycontrol_time0=10 delaycontrol_time1=50 delaycontrol_time2=100 delaycontrol_time3=200 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U10 61 pinprobe vars: pinprobe_description='On_time_blank_pulse'
+X$U11 63 pinprobe vars: pinprobe_description='Off_time_blank_pulse'
+X$U12 60 68 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U13 69 73 70 57 VESPAasmINPUT2
+X$U14 73 71 55 64 nor3 vars: logicgate_type='nor3' logicgate_vmax=6
+X$U15 69 71 72 65 VESPAasmINPUT2
+X$U16 59 53 delayfixed vars: delay_type='fixed' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='factory' delaycontrol_name='BLANKontime' delaycontrol_description='Blank_on_time_delay' delaycontrol_units0='us' delaycontrol_units1='us' delaycontrol_units2='us' delaycontrol_units3='us' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=100 delay_0=0 delay_vmax=6 delaycontrol_outputs=4 delaycontrol_por=0 delaycontrol_time0=10 delaycontrol_time1=50 delaycontrol_time2=100 delaycontrol_time3=200 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U17 54 69 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U18 68 57 54 xnor2 vars: logicgate_type='xnor2' logicgate_vmax=6
+X$U19 53 64 oneshot vars: oneshot_time=100 oneshot_vmax=6
+X$U2 69 72 delaycontrol vars: delay_type='control' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='factory' delaycontrol_name='BLANKofftime' delaycontrol_description='Blank_off_time_delay' delaycontrol_units0='us' delaycontrol_units1='us' delaycontrol_units2='us' delaycontrol_units3='us' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=100 delay_0=0 delay_vmax=6 delaycontrol_outputs=4 delaycontrol_por=0 delaycontrol_time0=10 delaycontrol_time1=50 delaycontrol_time2=100 delaycontrol_time3=200 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U23 56 67 oneshot vars: oneshot_time=100 oneshot_vmax=6
+X$U25 55 56 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U26 57 65 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U3 57 58 68 62 dmux2 vars: dmux_type='pin' dmux_datasheet_name='text' dmux_datasheet_description='text' dmux_inputs=2 dmux_reg_por=1 dmux_vmax=6
+X$U33 57 pinprobe vars: pinprobe_description='Comparator_output'
+X$U4 62 pinprobe vars: pinprobe_description='Force_transistion_blnak_time'
+X$U5 59 pinprobe vars: pinprobe_description='enable_blank'
+X$U6 66 67 58 66 59 dff vars: dff_edge='rise' dff_vmax=6
+X$U7 69 70 61 VESPAdftpulse
+X$U8 60 pinprobe vars: pinprobe_description='REGUALTION_Sense_output_status'
+X$U9 69 72 63 VESPAdftpulse
+.ends REGULATIONcapriceBLANK
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Caprice\300\design\REGULATIONcapriceREFERENCE.sxcmp
+.subckt REGULATIONcapriceREFERENCE 69 71 70 72 73 74 75 76
+*#hierarchy
+.node_map RISE 82
+.node_map hyst$0 61
+.node_map enable_reference 73
+.node_map hyst$1 62
+.node_map hyst$2 63
+.node_map hyst$3 64
+.node_map hyst$4 65
+.node_map hyst$5 66
+.node_map hyst$6 67
+.node_map hyst$7 68
+.node_map mode 75
+.node_map FALL 79
+.node_map stateBAR 87
+.node_map BIAS 69
+.node_map REFERENCE 70
+.node_map kelvin_GND 76
+.node_map enable_referenceBUF 77
+.node_map REF 83
+.node_map kelvin_BIAS 71
+.node_map okDELAY 88
+.node_map select 85
+.node_map ok 86
+.node_map ok_reference 72
+.node_map RISE0 78
+.node_map RISE1 81
+.node_map RISE2 84
+.node_map state 74
+.node_map RISE3 80
+X$U1 79 78 81 84 80 56 55 54 71 76 77 resistordivider vars: resistordivider_disconnect='yes' resistordivider_disconnect_tap='top' resistordivider_dft='no' resistordivider_rtotal=200 resistordivider_vresistortop=6 resistordivider_vmax=6 resistordivider_outputs=5 resistordivider_tap0=8 resistordivider_tap1=12 resistordivider_tap2=16 resistordivider_tap3=20 resistordivider_tap4=24 resistordivider_tap5=7 resistordivider_tap6=8 resistordivider_tap7=9
+X$U10 79 82 83 69 85 amux2 vars: amux_control='pin' amux_datasheet_name='text' amux_datasheet_description='text' amux_tswitch='no' amux_inputs=2 amux_por=0 amux_ron=1K amux_vmax=6
+X$U11 70 pinprobe vars: pinprobe_description='REGULATION_module_faulted_at_statrtup'
+X$U12 75 pinprobe vars: pinprobe_description='Hystersis_mode'
+X$U13 71 pinprobe vars: pinprobe_description='BIAS_kelvin_input'
+X$U14 75 85 87 VESPAasmINPUT1
+X$U15 76 pinprobe vars: pinprobe_description='GND_kelvin_input'
+X$U16 86 88 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=20 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U17 77 72 88 VESPAasmINPUT1
+X$U18 77 73 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U19 74 87 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U2 72 pinprobe vars: pinprobe_description='REFERENCE_enabled_and_ready'
+X$U3 78 81 84 80 57 58 59 60 82 69 61 62 63 amux8 vars: amux_control='pin' amux_datasheet_name='text' amux_datasheet_description='text' amux_tswitch='no' amux_inputs=4 amux_por=0 amux_ron=1K amux_vmax=6
+X$U4 69 pinprobe vars: pinprobe_description='BIAS_input_supply'
+X$U5 74 pinprobe vars: pinprobe_description='Comparator_output_state'
+X$U6 61 62 63 64 65 66 67 68 datamap0 vars: datamap_function='function' datamap_name='REFERENCE_hysteresis' datamap_description='REFERENCE_hystersis_on_SNS_rising_edge' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='register' datamap_por='0' datamap_mode='readwrite' datamap_address='0' datamap_timeenable='no' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_location=5 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U7 73 pinprobe vars: pinprobe_description='Enable_REFERENCE_input'
+X$U8 69 86 83 70 77 76 vbuffer vars: vbuffer_accuracy='system' vbuffer_datasheet_name='REFERENCEaccuracy' vbuffer_datasheet_description='Trip_thresold_reference_accuracy_100mV' vbuffer_type='p' vbuffer_inputbuffer='no' vbuffer_drive='internal' vbuffer_gndsense='yes' vbuffer_dft='no' vbuffer_gain=250m vbuffer_feedbackimpedance=1000 vbuffer_vmax=6
+.ends REGULATIONcapriceREFERENCE
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Caprice\300\design\REGULATIONcapriceSENSE.sxcmp
+.subckt REGULATIONcapriceSENSE 151 152 153 154 155 156 157 158 159
+*#hierarchy
+.node_map enable_senseBUF0 148
+.node_map enable_senseBUF1 180
+.node_map r0 140
+.node_map enable_senseBUF2 149
+.node_map r1 141
+.node_map mode 157
+.node_map enable_sense 153
+.node_map r2 142
+.node_map f2BAR 172
+.node_map h0 163
+.node_map h1 168
+.node_map f0 132
+.node_map h2 173
+.node_map f1 133
+.node_map f2 134
+.node_map h4 175
+.node_map h5 177
+.node_map h6 178
+.node_map stateBAR 176
+.node_map BUS1$3 135
+.node_map h7 179
+.node_map BUS1$4 136
+.node_map BIAS 152
+.node_map BUS1$5 137
+.node_map BUS1$6 138
+.node_map BUS1$7 139
+.node_map SENSE 154
+.node_map kelvin_GND 159
+.node_map BUS2$3 143
+.node_map BUS2$4 144
+.node_map BUS2$5 145
+.node_map BUS2$6 146
+.node_map BUS2$7 147
+.node_map kelvin_SNS 151
+.node_map DR 160
+.node_map hyst 174
+.node_map ok_sense 156
+.node_map I0 161
+.node_map I1 164
+.node_map I2 165
+.node_map I3 166
+.node_map I4 167
+.node_map i5 169
+.node_map i6 170
+.node_map i7 171
+.node_map SRC 150
+.node_map ok 162
+.node_map GND 158
+.node_map state 155
+C1 148 150 1p IC=0
+C2 149 150 1p IC=0
+X$U1 156 pinprobe vars: pinprobe_description='SENSE_enabled_and_ready'
+X$U10 170 154 178 switchtransmission vars: switch_type='transmission' switch_polarity='noninvert' switch_model='celera' switch_ron=10K switch_pulldownvmax=6 switch_vmax=6
+X$U11 155 pinprobe vars: pinprobe_description='Output_select_flag'
+X$U12 156 163 132 VESPAasmINPUT1
+X$U13 156 168 133 VESPAasmINPUT1
+X$U14 156 173 172 VESPAasmINPUT1
+X$U15 154 pinprobe vars: pinprobe_description='KS_Sense_threshold'
+X$U16 157 pinprobe vars: pinprobe_description='Trip_thresold_mode'
+X$U17 156 175 174 VESPAasmINPUT1
+X$U18 161 154 156 switchtransmission vars: switch_type='transmission' switch_polarity='noninvert' switch_model='celera' switch_ron=10K switch_pulldownvmax=6 switch_vmax=6
+X$U19 167 154 175 switchtransmission vars: switch_type='transmission' switch_polarity='noninvert' switch_model='celera' switch_ron=10K switch_pulldownvmax=6 switch_vmax=6
+X$U2 161 164 165 166 167 169 170 171 152 148 162 125 currentgenerator vars: currentgenerator_polarity0='source' currentgenerator_polarity1='source' currentgenerator_polarity2='source' currentgenerator_polarity3='source' currentgenerator_polarity4='sink' currentgenerator_polarity5='sink' currentgenerator_polarity6='sink' currentgenerator_polarity7='sink' currentgenerator_accuracy='no' currentgenerator_datasheet_accuracy_name='text' currentgenerator_datasheet_accuracy_description='text' currentgenerator_tempco='zero' currentgenerator_dft='no' currentgenerator_output0=200m currentgenerator_output1=50m currentgenerator_output2=100m currentgenerator_output3=200m currentgenerator_output4=50m currentgenerator_output5=50m currentgenerator_output6=100m currentgenerator_output7=200m currentgenerator_number=8 currentgenerator_tempco_gain=3 currentgenerator_vmax=6 currentgenerator_vout=6
+X$U20 164 154 163 switchtransmission vars: switch_type='transmission' switch_polarity='noninvert' switch_model='celera' switch_ron=10K switch_pulldownvmax=6 switch_vmax=6
+X$U21 140 177 174 156 VESPAasmINPUT2
+X$U22 141 178 174 156 VESPAasmINPUT2
+X$U23 142 179 174 156 VESPAasmINPUT2
+X$U24 165 154 168 switchtransmission vars: switch_type='transmission' switch_polarity='noninvert' switch_model='celera' switch_ron=10K switch_pulldownvmax=6 switch_vmax=6
+X$U25 151 150 150 115 117 119 121 123 160 159 154 116 118 120 122 124 resistorarray vars: resistor_array_type='poly' resistor_array_dummy='yes' resistor_array_value=100 resistor_array_number=3 resistor_array_r1_series=6 resistor_array_r1_parallel=0 resistor_array_r2_series=6 resistor_array_r2_parallel=0 resistor_array_r3_series=0 resistor_array_r3_parallel=12 resistor_array_r4_series=1 resistor_array_r4_parallel=0 resistor_array_r5_series=1 resistor_array_r5_parallel=0 resistor_array_r6_series=1 resistor_array_r6_parallel=0 resistor_array_r7_series=1 resistor_array_r7_parallel=0 resistor_array_r8_series=1 resistor_array_r8_parallel=0 resistor_array_vmax=6 resistor_array_imax=100u
+X$U26 162 156 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=10 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U27 155 176 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U28 140 141 142 143 144 145 146 147 datamap0 vars: datamap_function='code' datamap_name='SNSriseThreshold' datamap_description='SENSE_rising_threshod' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='register' datamap_por='0' datamap_mode='readwrite' datamap_address='1' datamap_timeenable='no' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_location=4 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U29 155 174 157 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U3 132 133 134 135 136 137 138 139 datamap0 vars: datamap_function='code' datamap_name='SNSfallThreshold' datamap_description='SENSE_falling_threshod' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_enable='no' datamap_type='register' datamap_por='0' datamap_mode='readwrite' datamap_address='1' datamap_timeenable='no' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_range_units='text' datamap_startcode='0' datamap_newcode1='1' datamap_enabletimeunits1='us' datamap_newcode2='1' datamap_enabletimeunits2='us' datamap_newcode3='1' datamap_enabletimeunits3='us' datamap_newcode4='1' datamap_enabletimeunits4='us' datamap_newcode5='1' datamap_enabletimeunits5='us' datamap_newcode6='1' datamap_enabletimeunits6='us' datamap_newcode7='1' datamap_enabletimeunits7='us' datamap_newcode8='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_location=7 datamap_text1=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$U30 150 160 148 128 127 126 fet vars: fet_usage='signal' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=100 fet_ron_power=1 fet_replica_gain=10 fet_maximumvds=24 count_1=0 fet_vmax=6
+X$U31 150 158 148 131 130 129 fet vars: fet_usage='signal' fet_replica='no' fet_type='p' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=1k fet_ron_power=1 fet_replica_gain=10 fet_maximumvds=6 count_1=0 fet_vmax=6
+X$U32 158 pinprobe vars: pinprobe_description='Analogue_ground_input'
+X$U33 151 pinprobe vars: pinprobe_description='BIAS_kelvin_input'
+X$U34 148 153 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U35 180 153 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U36 159 pinprobe vars: pinprobe_description='GND_kelvin_input'
+X$U37 149 153 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U4 152 pinprobe vars: pinprobe_description='BIAS_input_supply'
+X$U5 166 154 173 switchtransmission vars: switch_type='transmission' switch_polarity='noninvert' switch_model='celera' switch_ron=10K switch_pulldownvmax=6 switch_vmax=6
+X$U6 134 172 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U7 169 154 177 switchtransmission vars: switch_type='transmission' switch_polarity='noninvert' switch_model='celera' switch_ron=10K switch_pulldownvmax=6 switch_vmax=6
+X$U8 171 154 179 switchtransmission vars: switch_type='transmission' switch_polarity='noninvert' switch_model='celera' switch_ron=10K switch_pulldownvmax=6 switch_vmax=6
+X$U9 153 pinprobe vars: pinprobe_description='Enable_REGULATION_input'
+.ends REGULATIONcapriceSENSE
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT3.sxcmp
+.subckt VESPAasmINPUT3 9 10 11 12 13
+*#hierarchy
+.node_map Tstate 13
+.node_map i0 9
+.node_map i1 10
+.node_map i2 12
+.node_map o 11
+X$U1 13 pinprobe vars: pinprobe_description='state_blank_time'
+X$U19 11 7 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U2 10 pinprobe vars: pinprobe_description='input1'
+X$U3 11 pinprobe vars: pinprobe_description='INPUT2_output'
+X$U4 9 12 6 10 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U5 13 8 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U6 6 7 8 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U7 9 pinprobe vars: pinprobe_description='input0'
+X$U8 12 pinprobe vars: pinprobe_description='input2'
+.ends VESPAasmINPUT3
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Caprice\300\design\VESPAmoduleOK.sxcmp
+.subckt VESPAmoduleOK 25 26 27 28
+*#hierarchy
+.node_map ok_module 26
+.node_map enableDELAY 31
+.node_map fault_module 28
+.node_map okBAR 29
+.node_map fck 30
+.node_map enable 25
+.node_map ok 27
+X$U10 25 30 28 24 25 dff vars: dff_edge='rise' dff_vmax=6
+X$U11 31 23 29 VESPAasmINPUT1
+X$U12 23 30 delayfixed vars: delay_type='fixed' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=10 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U13 27 pinprobe vars: pinprobe_description='Module_ok'
+X$U17 25 26 27 VESPAasmINPUT1
+X$U22 24 celeranoconn vars: ='%'
+X$U3 27 29 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U4 25 pinprobe vars: pinprobe_description='Module_enable'
+X$U6 25 31 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=100 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U7 26 pinprobe vars: pinprobe_description='Module_ok_output'
+X$U8 28 pinprobe vars: pinprobe_description='Module_fault_output'
+.ends VESPAmoduleOK
+
+** From Z:\celera\projects\Simplis\playrelease\Release\play301\Caprice\300\design\RINGcaprice.sxcmp
+.subckt RINGcaprice 145 146 148 147 150 152 151 153 154 144 149
+*#hierarchy
+.node_map SNS 146
+.node_map BIAS 148
+.node_map kelvin_GND 154
+.node_map kelvin_SNS 144
+.node_map PGND 149
+.node_map PBIAS 150
+.node_map kelvin_BIAS 151
+.node_map VCC 145
+.node_map DRN 147
+.node_map GATE 152
+.node_map GND 153
+X$U1 146 pinprobe vars: pinprobe_description='AC_input_supply'
+X$U10 148 pinprobe vars: pinprobe_description='Regulated_Supply'
+X$U11 147 83 82 81 80 79 78 75 72 69 66 63 60 57 54 51 48 pad vars: pad_absmax_wrt='none' pad_absmin_wrt='none' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='Power_FET_drain' pad_combine='no' pad_absmax_value=24 pad_absmin_value=-0.3 pad_count1=3 pad_count2=1 pad_esd=2 pad_number=14
+X$U12 153 pinprobe vars: pinprobe_description='Ground'
+X$U13 144 pinprobe vars: pinprobe_description='KS_kelvin_input'
+X$U14 149 pinprobe vars: pinprobe_description='GND_Power_input'
+X$U15 149 pinprobe vars: pinprobe_description='Power_Ground'
+X$U16 149 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='description' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=3 pad_count2=1 pad_esd=2 pad_number=12
+X$U17 147 pinprobe vars: pinprobe_description='Internal_FET_Drain'
+X$U2 146 144 39 41 43 45 47 50 53 56 59 62 65 68 71 74 77 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='supply' pad_sense1='1' pad_sense2='no' pad_description='High_Voltage_AC_input_supply' pad_combine='no' pad_absmax_value=24 pad_absmin_value=-24 pad_count1=1 pad_count2=2 pad_esd=2 pad_number=15
+X$U22 152 pinprobe vars: pinprobe_description='Internal_FET_Drain'
+X$U24 151 pinprobe vars: pinprobe_description='BIAS_Kelvin_input'
+X$U3 148 151 150 100 101 102 103 104 105 106 107 108 109 110 111 112 113 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='vcc' pad_sense1='1' pad_sense2='no' pad_description='Regulated_BIAS_supply' pad_combine='yes' pad_absmax_value=6 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=1
+X$U4 153 154 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 pad vars: pad_absmax_wrt='pin' pad_absmin_wrt='ground' pad_mode='ground' pad_sense1='1' pad_sense2='no' pad_description='Ground' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=1 pad_count2=2 pad_esd=2 pad_number=4
+X$U5 154 pinprobe vars: pinprobe_description='GND_kelvin_input'
+X$U6 145 37 38 40 42 44 46 49 52 55 58 61 64 67 70 73 76 pad vars: pad_absmax_wrt='ground' pad_absmin_wrt='ground' pad_mode='input' pad_sense1='no' pad_sense2='no' pad_description='Recitified_supply_input' pad_combine='no' pad_absmax_value=24 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=16
+X$U7 150 pinprobe vars: pinprobe_description='Power_BIAS_input_supply'
+X$U8 152 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 148 pad vars: pad_absmax_wrt='pin' pad_absmin_wrt='ground' pad_mode='output' pad_sense1='no' pad_sense2='no' pad_description='Power_FET_Gate_output' pad_combine='no' pad_absmax_value=0.3 pad_absmin_value=-0.3 pad_count1=1 pad_count2=1 pad_esd=2 pad_number=10
+X$U9 145 pinprobe vars: pinprobe_description='Rectified_High_Volatge_supply'
+.ends RINGcaprice
+
+.end
