@@ -26,27 +26,8 @@ module TELEMETRYadcCLOCKmain (tmi,SIMPV,clock,CELG59462,CELV96848,PORB97836,cloc
   input  IP_68c3961a_Xoscillator1;
 endmodule
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
-module currentmirror_369e5658 (I0,CELG,CELV,ISET,CELSUB,ok_currentmirror,enable_currentmirror);
-  inout  I0;
-  input  CELG;
-  input  CELV;
-  input  ISET;
-  input  CELSUB;
-  output  ok_currentmirror;
-  input  enable_currentmirror;
-endmodule
-
 // ------------------------ Module Verilog ---------------
-module TELEMETRYadcCLOCK (tmi, SIMPV, clock, CELG59462, CELV96848, PORB97836, clock_adc, dft_clock, enable_adc, CELSUB40948, ok_adcclock, fault_adcclock, IP_TELEMETRYadcCLOCK1);
+module TELEMETRYadcCLOCK (tmi, SIMPV, clock, CELG59462, CELV96848, PORB97836, clock_adc, dft_clock, enable_adc, CELSUB40948, ok_adcclock, fault_adcclock);
 inout [4:0] tmi;
 input  SIMPV;
 output  clock;
@@ -59,7 +40,6 @@ input  enable_adc;
 input  CELSUB40948;
 output  ok_adcclock;
 output  fault_adcclock;
-input  IP_TELEMETRYadcCLOCK1;
 
 
 // ------------------------ Wires ------------------------
@@ -91,20 +71,6 @@ TELEMETRYadcCLOCKmain XMAIN (
 .ok_adcclock(ok_adcclock),
 .fault_adcclock(fault_adcclock),
 .IP_68c3961a_Xoscillator1(IP_68c3961a_Xoscillator1)
-);
-
-STONEnoconn XNCnoconn (
-.noconn(noconn)
-);
-
-currentmirror_369e5658 XCurrentMirror1 (
-.I0(IP_68c3961a_Xoscillator1),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.ISET(IP_TELEMETRYadcCLOCK1),
-.CELSUB(CELSUB40948),
-.ok_currentmirror(noconn),
-.enable_currentmirror(enable_adc)
 );
 
 endmodule
