@@ -7,11 +7,10 @@ module SERVICEwaltz0DEBUG (porb,REF0V9,go_vcc,ok_service,ok_reference);
   input  ok_reference;
 endmodule
 
-module SERVICEwaltz0MAIN (EN,IN,VCC,tmi,BIAS,porb,REF0V9,go_vcc,CELG59462,CELV96848,CELBG83021,OKREF03249,kelvin_VCC,ok_service,CELREF84329,CELSUB40948,ok_reference,IP_75c89176_XU16,kelvin_GNDservice,celkelvin_IN_bc3b7675,celkelvin_GND_d75c3f7f,celkelvin_VCC_bc3b7675,celkelvin_BIAS_bc3b7675);
+module SERVICEwaltz0MAIN (EN,IN,VCC,BIAS,porb,REF0V9,go_vcc,CELG59462,CELV96848,CELBG83021,OKREF03249,kelvin_VCC,ok_service,CELREF84329,CELSUB40948,ok_reference,IP_75c89176_XU16,kelvin_GNDservice,celkelvin_IN_bc3b7675,celkelvin_GND_d75c3f7f,celkelvin_VCC_bc3b7675,celkelvin_BIAS_bc3b7675);
   input  EN;
   input  IN;
   output  VCC;
-  inout [4:0] tmi;
   input  BIAS;
   output  porb;
   output  REF0V9;
@@ -34,11 +33,10 @@ module SERVICEwaltz0MAIN (EN,IN,VCC,tmi,BIAS,porb,REF0V9,go_vcc,CELG59462,CELV96
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module SERVICEwaltz (EN, IN, VCC, tmi, BIAS, porb, REF0V9, CELG59462, CELV96848, CELBG83021, OKREF03249, kelvin_VCC, ok_service, CELREF84329, CELSUB40948, IP_75c89176_XU16, kelvin_GNDservice, celkelvin_IN_bc3b7675, celkelvin_GND_d75c3f7f, celkelvin_VCC_bc3b7675, celkelvin_BIAS_bc3b7675);
+module SERVICEwaltz (EN, IN, VCC, BIAS, porb, REF0V9, CELG59462, CELV96848, CELBG83021, OKREF03249, kelvin_VCC, ok_service, CELREF84329, CELSUB40948, IP_75c89176_XU16, kelvin_GNDservice, celkelvin_IN_bc3b7675, celkelvin_GND_d75c3f7f, celkelvin_VCC_bc3b7675, celkelvin_BIAS_bc3b7675);
 input  EN;
 input  IN;
 output  VCC;
-inout [4:0] tmi;
 input  BIAS;
 output  porb;
 output  REF0V9;
@@ -59,7 +57,6 @@ input  celkelvin_BIAS_bc3b7675;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
 
 // ------------------------ Networks ---------------------
 SERVICEwaltz0DEBUG XDEBUG (
@@ -74,7 +71,6 @@ SERVICEwaltz0MAIN XMAIN (
 .EN(EN),
 .IN(IN),
 .VCC(VCC),
-.tmi(tmi[4:0]),
 .BIAS(BIAS),
 .porb(porb),
 .REF0V9(REF0V9),

@@ -1,6 +1,5 @@
 // ------------------------ Module Definitions -----------
-module CLOCKwaltz (tmi,FSET,MUDV,SYNC,clock,ok_clock,CELG59462,CELV96848,ISLOPECOMP,CELREF84329,CELSENSE_RF,CELSUB40948,fault_clock,enable_clock,IP_90c263a6_XOSCEXT,celkelvin_GND_bb7e77f4);
-  inout [4:0] tmi;
+module CLOCKwaltz (FSET,MUDV,SYNC,clock,ok_clock,CELG59462,CELV96848,ISLOPECOMP,CELREF84329,CELSENSE_RF,CELSUB40948,fault_clock,enable_clock,IP_90c263a6_XOSCEXT,celkelvin_GND_bb7e77f4);
   output  FSET;
   input  MUDV;
   input  SYNC;
@@ -18,8 +17,7 @@ module CLOCKwaltz (tmi,FSET,MUDV,SYNC,clock,ok_clock,CELG59462,CELV96848,ISLOPEC
   input  celkelvin_GND_bb7e77f4;
 endmodule
 
-module CONTROLwaltz (tmi,porb,clock,botstate,topstate,CELG59462,CELV96848,bbm_topon,botswineg,go_driver,ok_driver,botswipeak,topswipeak,CELSUB40948,botswzcross,bbm_bottomon,fault_control,done_softstart,enable_control,freeze_control,switch_control);
-  inout [4:0] tmi;
+module CONTROLwaltz (porb,clock,botstate,topstate,CELG59462,CELV96848,bbm_topon,botswineg,go_driver,ok_driver,botswipeak,topswipeak,CELSUB40948,botswzcross,bbm_bottomon,fault_control,done_softstart,enable_control,freeze_control,switch_control);
   input  porb;
   input  clock;
   output  botstate;
@@ -42,9 +40,8 @@ module CONTROLwaltz (tmi,porb,clock,botstate,topstate,CELG59462,CELV96848,bbm_to
   input  switch_control;
 endmodule
 
-module DRIVERwaltz (SW,tmi,BSTV,MUDV,MUDHV,PMUDG,PMUDV,PMUDHV,botstate,topstate,CELG59462,CELV96848,bbm_topon,botswineg,ok_driver,botswipeak,topswipeak,CELSUB40948,IREF_DRIVER,botswzcross,bbm_bottomon,ISLOPE_DRIVER,enable_driver,IP_14d08c8e_XU3,IP_a0afb596_XU9,IP_2d447a5c_XU17,IP_f4252e65_XU22);
+module DRIVERwaltz (SW,BSTV,MUDV,MUDHV,PMUDG,PMUDV,PMUDHV,botstate,topstate,CELG59462,CELV96848,bbm_topon,botswineg,ok_driver,botswipeak,topswipeak,CELSUB40948,IREF_DRIVER,botswzcross,bbm_bottomon,ISLOPE_DRIVER,enable_driver,IP_14d08c8e_XU3,IP_a0afb596_XU9,IP_2d447a5c_XU17,IP_f4252e65_XU22);
   inout  SW;
-  inout [4:0] tmi;
   input  BSTV;
   input  MUDV;
   input  MUDHV;
@@ -72,8 +69,7 @@ module DRIVERwaltz (SW,tmi,BSTV,MUDV,MUDHV,PMUDG,PMUDV,PMUDHV,botstate,topstate,
   input  IP_f4252e65_XU22;
 endmodule
 
-module FAULTMANAGERwaltz (tmi,MUDV,clock,CELG59462,CELV96848,PORB97836,fault_run,CELBG83021,CELSUB40948,blank_fault,fault_short,fault_freeze,enable_faultmanager,IP_201f84ba_Xthermal1);
-  inout [4:0] tmi;
+module FAULTMANAGERwaltz (MUDV,clock,CELG59462,CELV96848,PORB97836,fault_run,CELBG83021,CELSUB40948,blank_fault,fault_short,fault_freeze,enable_faultmanager,IP_201f84ba_Xthermal1);
   input  MUDV;
   input  clock;
   input  CELG59462;
@@ -107,8 +103,7 @@ module POWERGOODwaltz (POK,MUDV,clock,sense_FB,CELG59462,CELV96848,PORB97836,CEL
   inout  kelvin_MUDGpowergood;
 endmodule
 
-module REGULATIONwaltz (tmi,MUDG,MUDV,CELG59462,CELV96848,go_driver,CELREF84329,CELSUB40948,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,IP_4215aede_XU3,IP_866ca25c_XU9,IP_b8eb1a18_XU7,IP_5c7dff44_XU10,IP_e44d2b4d_Xgm1,enable_regulation);
-  inout [4:0] tmi;
+module REGULATIONwaltz (MUDG,MUDV,CELG59462,CELV96848,go_driver,CELREF84329,CELSUB40948,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,IP_4215aede_XU3,IP_866ca25c_XU9,IP_b8eb1a18_XU7,IP_5c7dff44_XU10,IP_e44d2b4d_Xgm1,enable_regulation);
   inout  MUDG;
   input  MUDV;
   input  CELG59462;
@@ -130,8 +125,7 @@ module REGULATIONwaltz (tmi,MUDG,MUDV,CELG59462,CELV96848,go_driver,CELREF84329,
   input  enable_regulation;
 endmodule
 
-module SEQUENCERwaltz (tmi,porb,ok_clock,CELG59462,CELV96848,fault_run,ok_driver,ok_service,CELSUB40948,blank_fault,fault_clock,enable_waltz,ok_regulation,done_softstart,fault_shutdown,switch_control,enable_softstart,enable_regulation);
-  inout [4:0] tmi;
+module SEQUENCERwaltz (porb,ok_clock,CELG59462,CELV96848,fault_run,ok_driver,ok_service,CELSUB40948,blank_fault,fault_clock,enable_waltz,ok_regulation,done_softstart,fault_shutdown,switch_control,enable_softstart,enable_regulation);
   input  porb;
   input  ok_clock;
   input  CELG59462;
@@ -151,11 +145,10 @@ module SEQUENCERwaltz (tmi,porb,ok_clock,CELG59462,CELV96848,fault_run,ok_driver
   output  enable_regulation;
 endmodule
 
-module SERVICEwaltz (EN,IN,VCC,tmi,BIAS,porb,REF0V9,CELG59462,CELV96848,CELBG83021,OKREF03249,kelvin_VCC,ok_service,CELREF84329,CELSUB40948,IP_75c89176_XU16,kelvin_GNDservice,celkelvin_IN_bc3b7675,celkelvin_GND_d75c3f7f,celkelvin_VCC_bc3b7675,celkelvin_BIAS_bc3b7675);
+module SERVICEwaltz (EN,IN,VCC,BIAS,porb,REF0V9,CELG59462,CELV96848,CELBG83021,OKREF03249,kelvin_VCC,ok_service,CELREF84329,CELSUB40948,IP_75c89176_XU16,kelvin_GNDservice,celkelvin_IN_bc3b7675,celkelvin_GND_d75c3f7f,celkelvin_VCC_bc3b7675,celkelvin_BIAS_bc3b7675);
   input  EN;
   input  IN;
   output  VCC;
-  inout [4:0] tmi;
   input  BIAS;
   output  porb;
   output  REF0V9;
@@ -175,10 +168,9 @@ module SERVICEwaltz (EN,IN,VCC,tmi,BIAS,porb,REF0V9,CELG59462,CELV96848,CELBG830
   input  celkelvin_BIAS_bc3b7675;
 endmodule
 
-module SOFTSTARTwaltz (SS,REF,tmi,MUDV,CELG59462,CELV96848,CELSUB40948,enable_brick,done_softstart,SENSE_G_4c0bef8e,enable_softstart,kelvin_MUDGsoftstart,IP_4c0bef8e_Xoscillator1);
+module SOFTSTARTwaltz (SS,REF,MUDV,CELG59462,CELV96848,CELSUB40948,enable_brick,done_softstart,SENSE_G_4c0bef8e,enable_softstart,kelvin_MUDGsoftstart,IP_4c0bef8e_Xoscillator1);
   output  SS;
   input  REF;
-  inout [4:0] tmi;
   input  MUDV;
   input  CELG59462;
   input  CELV96848;
@@ -200,9 +192,8 @@ module STONEnoconn ( noconn );
 endmodule
 
 
-module CELERAservice (IPO,tmi,CELG,CELV,CELBG,CELSUB,ok_ibias,enable_ibias,celkelvin_GNDservice);
+module CELERAservice (IPO,CELG,CELV,CELBG,CELSUB,ok_ibias,enable_ibias,celkelvin_GNDservice);
   output [15:0] IPO;
-  inout [4:0] tmi;
   input  CELG;
   input  CELV;
   input  CELBG;
@@ -213,7 +204,7 @@ module CELERAservice (IPO,tmi,CELG,CELV,CELBG,CELSUB,ok_ibias,enable_ibias,celke
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module WALTZceleraCORE (EN, FB, IN, SW, BST, GND, PIN, POK, VCC, tmi, BIAS, FSET, PGND, PVCC, SYNC, sense_FB, CELG59462, CELV96848, PORB97836, kelvin_VCC, CELSENSE_RF, CELSUB40948, SENSE_G_4c0bef8e, kelvin_GNDservice, kelvin_GNDpowergood, kelvin_GNDsoftstart, kelvin_GNDregulation, celkelvin_IN_bc3b7675, celkelvin_GND_73ebd82d, celkelvin_GND_bb7e77f4, celkelvin_GND_d75c3f7f, celkelvin_VCC_bc3b7675, celkelvin_BIAS_bc3b7675);
+module WALTZceleraCORE (EN, FB, IN, SW, BST, GND, PIN, POK, VCC, BIAS, FSET, PGND, PVCC, SYNC, sense_FB, CELG59462, CELV96848, PORB97836, kelvin_VCC, CELSENSE_RF, CELSUB40948, SENSE_G_4c0bef8e, kelvin_GNDservice, kelvin_GNDpowergood, kelvin_GNDsoftstart, kelvin_GNDregulation, celkelvin_IN_bc3b7675, celkelvin_GND_73ebd82d, celkelvin_GND_bb7e77f4, celkelvin_GND_d75c3f7f, celkelvin_VCC_bc3b7675, celkelvin_BIAS_bc3b7675);
 input  EN;
 inout  FB;
 input  IN;
@@ -223,7 +214,6 @@ inout  GND;
 inout  PIN;
 inout  POK;
 output  VCC;
-inout [4:0] tmi;
 input  BIAS;
 output  FSET;
 inout  PGND;
@@ -250,12 +240,10 @@ input  celkelvin_BIAS_bc3b7675;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
 wire [15:0] IPO;
 
 // ------------------------ Networks ---------------------
 CLOCKwaltz XCLOCK (
-.tmi(tmi[4:0]),
 .FSET(FSET),
 .MUDV(VCC),
 .SYNC(SYNC),
@@ -274,7 +262,6 @@ CLOCKwaltz XCLOCK (
 );
 
 CONTROLwaltz XCONTROL (
-.tmi(tmi[4:0]),
 .porb(net_159),
 .clock(net_163),
 .botstate(net_162),
@@ -299,7 +286,6 @@ CONTROLwaltz XCONTROL (
 
 DRIVERwaltz XDRIVER (
 .SW(SW),
-.tmi(tmi[4:0]),
 .BSTV(BST),
 .MUDV(VCC),
 .MUDHV(IN),
@@ -328,7 +314,6 @@ DRIVERwaltz XDRIVER (
 );
 
 FAULTMANAGERwaltz XFAULTMANAGER (
-.tmi(tmi[4:0]),
 .MUDV(VCC),
 .clock(net_163),
 .CELG59462(CELG59462),
@@ -363,7 +348,6 @@ POWERGOODwaltz XPOWERGOOD (
 );
 
 REGULATIONwaltz XREGULATION (
-.tmi(tmi[4:0]),
 .MUDG(GND),
 .MUDV(VCC),
 .CELG59462(CELG59462),
@@ -386,7 +370,6 @@ REGULATIONwaltz XREGULATION (
 );
 
 SEQUENCERwaltz XSEQUENCER (
-.tmi(tmi[4:0]),
 .porb(net_159),
 .ok_clock(net_187),
 .CELG59462(CELG59462),
@@ -410,7 +393,6 @@ SERVICEwaltz XSERVICE (
 .EN(EN),
 .IN(IN),
 .VCC(VCC),
-.tmi(tmi[4:0]),
 .BIAS(BIAS),
 .porb(net_159),
 .REF0V9(net_183),
@@ -433,7 +415,6 @@ SERVICEwaltz XSERVICE (
 SOFTSTARTwaltz XSOFTSTART (
 .SS(net_192),
 .REF(net_183),
-.tmi(tmi[4:0]),
 .MUDV(VCC),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -452,7 +433,6 @@ STONEnoconn XNCnoconn (
 
 CELERAservice XceleraSERVICE (
 .IPO({IP_14d08c8e_XU3,IP_201f84ba_Xthermal1,IP_2d447a5c_XU17,IP_4215aede_XU3,IP_4c0bef8e_Xoscillator1,IP_5c7dff44_XU10,IP_70e67769_XU3,IP_75c89176_XU16,IP_866ca25c_XU9,IP_90c263a6_XOSCEXT,IP_a0afb596_XU9,IP_b8eb1a18_XU7,IP_ddbf938d_XU22,IP_e44d2b4d_Xgm1,IP_e96a4067_XU8,IP_f4252e65_XU22}),
-.tmi(tmi[4:0]),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELBG(CELBG83021),

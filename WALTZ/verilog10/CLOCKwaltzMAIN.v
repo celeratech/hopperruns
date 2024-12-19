@@ -118,25 +118,6 @@ module clocksync_473e0ab6 (clk,CELG,CELV,CELSUB,clocksync_in,clocksync_low,clock
   input  global_clocksync;
 endmodule
 
-//Verilog HDL for "DRM", "drm16L" "functional"
-
-
-module drm16L ( V, G, SUB, tmi, bypload, lastdrm, id, drm0, drm1, d1, d0 );
-
-  input lastdrm;
-  input V;
-  output d1;
-  input  [7:0] id;
-  output d0;
-  input bypload;
-  output  [7:0] drm0;
-  input G;
-  output  [7:0] drm1;
-  inout  [4:0] tmi;
-  input SUB;
-endmodule
-
-
 module timingskew_d39a4f5a (s,in,out,CELG,CELV,CELSUB);
   input [3:0] s;
   input  in;
@@ -169,8 +150,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CLOCKwaltzMAIN (tmi, FSET, MUDV, SYNC, clock, dft_sync, ok_clock, CELG59462, CELV96848, dft_clock, ISLOPECOMP, CELREF84329, CELSENSE_RF, CELSUB40948, dft_synclow, fault_clock, dft_synchigh, enable_clock, dft_clocksync, CLOCKofftime_0, CLOCKofftime_1, CLOCKofftime_2, CLOCKofftime_3, dft_clockstartup, dft_clockinternal, IP_90c263a6_XOSCEXT, celkelvin_GND_bb7e77f4);
-inout [4:0] tmi;
+module CLOCKwaltzMAIN (FSET, MUDV, SYNC, clock, dft_sync, ok_clock, CELG59462, CELV96848, dft_clock, ISLOPECOMP, CELREF84329, CELSENSE_RF, CELSUB40948, dft_synclow, fault_clock, dft_synchigh, enable_clock, dft_clocksync, CLOCKofftime_0, CLOCKofftime_1, CLOCKofftime_2, CLOCKofftime_3, dft_clockstartup, dft_clockinternal, IP_90c263a6_XOSCEXT, celkelvin_GND_bb7e77f4);
 output  FSET;
 input  MUDV;
 input  SYNC;
@@ -200,14 +180,10 @@ input  celkelvin_GND_bb7e77f4;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
 wire [4:0] trim_oscillator_ext_fine;
 wire [4:0] trim_oscillator_int_fine;
 wire [2:0] trim_oscillator_ext_coarse;
 wire [2:0] trim_oscillator_int_coarse;
-wire [7:0] id;
-wire [7:0] drm0;
-wire [7:0] drm1;
 wire [3:0] s;
 
 // ------------------------ Networks ---------------------
@@ -346,10 +322,17 @@ oscillator_d9a22b83 XOSCEXT (
 .enable_oscillator(enable_clock),
 .global_oscillator(tl0),
 .celkelvin_GNDoscillator(celkelvin_GND_bb7e77f4),
-.trim_oscillator_ext_fine({trim_oscillator_ext_fine_90c263a6_4,trim_oscillator_ext_fine_90c263a6_3,trim_oscillator_ext_fine_90c263a6_2,trim_oscillator_ext_fine_90c263a6_1,trim_oscillator_ext_fine_90c263a6_0}),
-.trim_oscillator_int_fine({trim_oscillator_int_fine_90c263a6_4,trim_oscillator_int_fine_90c263a6_3,trim_oscillator_int_fine_90c263a6_2,trim_oscillator_int_fine_90c263a6_1,trim_oscillator_int_fine_90c263a6_0}),
-.trim_oscillator_ext_coarse({trim_oscillator_ext_coarse_90c263a6_2,trim_oscillator_ext_coarse_90c263a6_1,trim_oscillator_ext_coarse_90c263a6_0}),
-.trim_oscillator_int_coarse({trim_oscillator_int_coarse_90c263a6_2,trim_oscillator_int_coarse_90c263a6_1,trim_oscillator_int_coarse_90c263a6_0})
+.trim_oscillator_ext_fine({a0,a0,a0,a0,a0}),
+.trim_oscillator_int_fine({a0,a0,a0,a0,a0}),
+.trim_oscillator_ext_coarse({a0,a0,a0}),
+.trim_oscillator_int_coarse({a0,a0,a0})
+);
+
+PEBBLEtielo XDRMNOTL (
+.G(CELG59462),
+.V(CELV96848),
+.q(a0),
+.SUB(CELSUB40948)
 );
 
 clocksync_473e0ab6 Xclocksync1 (
@@ -363,20 +346,6 @@ clocksync_473e0ab6 Xclocksync1 (
 .clocksync_high(dft_synchigh),
 .enable_clocksync(enable_clock),
 .global_clocksync(tl0)
-);
-
-drm16L drm_hex0x01 (
-.G(CELG59462),
-.V(CELV96848),
-.d0(a0),
-.d1(a1),
-.id({a0,a0,a0,a0,a0,a0,a0,a1}),
-.SUB(CELSUB40948),
-.tmi(tmi[4:0]),
-.drm0({trim_oscillator_ext_coarse_90c263a6_2,trim_oscillator_ext_coarse_90c263a6_1,trim_oscillator_ext_coarse_90c263a6_0,trim_oscillator_ext_fine_90c263a6_4,trim_oscillator_ext_fine_90c263a6_3,trim_oscillator_ext_fine_90c263a6_2,trim_oscillator_ext_fine_90c263a6_1,trim_oscillator_ext_fine_90c263a6_0}),
-.drm1({trim_oscillator_int_coarse_90c263a6_2,trim_oscillator_int_coarse_90c263a6_1,trim_oscillator_int_coarse_90c263a6_0,trim_oscillator_int_fine_90c263a6_4,trim_oscillator_int_fine_90c263a6_3,trim_oscillator_int_fine_90c263a6_2,trim_oscillator_int_fine_90c263a6_1,trim_oscillator_int_fine_90c263a6_0}),
-.bypload(a0),
-.lastdrm(a0)
 );
 
 timingskew_d39a4f5a Xtimingskew1 (

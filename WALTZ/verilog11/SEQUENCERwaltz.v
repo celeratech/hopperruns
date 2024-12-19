@@ -1,6 +1,5 @@
 // ------------------------ Module Definitions -----------
-module SEQUENCER1waltz_Rev1_DYES (tmi,porb,ok_clock,CELG59462,CELV96848,fault_run,ok_driver,ok_service,CELSUB40948,blank_fault,fault_clock,enable_waltz,ok_regulation,done_softstart,fault_shutdown,switch_control,enable_softstart,enable_regulation);
-  inout [4:0] tmi;
+module SEQUENCER1waltz_Rev1_DYES (porb,ok_clock,CELG59462,CELV96848,fault_run,ok_driver,ok_service,CELSUB40948,blank_fault,fault_clock,enable_waltz,ok_regulation,done_softstart,fault_shutdown,switch_control,enable_softstart,enable_regulation);
   input  porb;
   input  ok_clock;
   input  CELG59462;
@@ -21,8 +20,7 @@ module SEQUENCER1waltz_Rev1_DYES (tmi,porb,ok_clock,CELG59462,CELV96848,fault_ru
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module SEQUENCERwaltz (tmi, porb, ok_clock, CELG59462, CELV96848, fault_run, ok_driver, ok_service, CELSUB40948, blank_fault, fault_clock, enable_waltz, ok_regulation, done_softstart, fault_shutdown, switch_control, enable_softstart, enable_regulation);
-inout [4:0] tmi;
+module SEQUENCERwaltz (porb, ok_clock, CELG59462, CELV96848, fault_run, ok_driver, ok_service, CELSUB40948, blank_fault, fault_clock, enable_waltz, ok_regulation, done_softstart, fault_shutdown, switch_control, enable_softstart, enable_regulation);
 input  porb;
 input  ok_clock;
 input  CELG59462;
@@ -43,11 +41,9 @@ output  enable_regulation;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
 
 // ------------------------ Networks ---------------------
 SEQUENCER1waltz_Rev1_DYES XSEQUENCER (
-.tmi(tmi[4:0]),
 .porb(porb),
 .ok_clock(ok_clock),
 .CELG59462(CELG59462),

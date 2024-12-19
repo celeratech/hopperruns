@@ -106,37 +106,6 @@ factory,description7,not used
 factory,busname,na
 //**********************************************
 //CELL DFT Parameters
-//Cell DFT Generator CELERAservice
-
-celldft,CELERAservice
-celldft,path,CELERAservice
-celldft,instance,
-celldft,source,cell
-
-//ten
-
-celldft,ten_ibias
-celldft,ten_ibias,testname,tenIBIAS
-celldft,ten_ibias,definition,Enable IBIAS module
-celldft,ten_ibias,input,ten
-celldft,ten_ibias,output,TAI_IBIAS
-celldft,ten_ibias,end
-
-celldft,global_celeraibias
-celldft,global_celeraibias,testname,tenIBAISglobal
-celldft,global_celeraibias,definition,Global Enable IBIAS module
-celldft,global_celeraibias,input,ten
-celldft,global_celeraibias,output,TAI_IBIAS
-celldft,global_celeraibias,end
-
-celldft,TAI_IBIAS
-celldft,TAI_IBIAS,testname,measureIBIAS
-celldft,TAI_IBIAS,definition,Measure IBIAS source current
-celldft,TAI_IBIAS,input,ten_ibias
-celldft,TAI_IBIAS,output,TAI
-celldft,TAI_IBIAS,end
-
-celldft,end
 //*********************************************
 //Layout Parameters
 revision,layout,0p1
@@ -238,29 +207,29 @@ revision,pinorder,0.2.0
 cell,CELERAservice
 trim,instance,CELERAservice
 
-trim,name,IBIASaccuracy
-trim,enable,yes
-trim,bits,5
+trim,name,na
+trim,enable,no
+trim,bits,TBD
 trim,por,0
 trim,pinname,trim_ibias
-trim,testname,IBIASaccuracy
-trim,description,IBIAS accuracy to 2uA source
-trim,target,2.0
-trim,units,na
+trim,testname,TBD
+trim,description,TBD
+trim,target,na
+trim,units,TBD
 trim,userdescription,TBD
-trim,pretrim_low_limit,1.600
-trim,pretrim_high_limit,2.400
-trim,posttrim_low_limit,1.985
-trim,posttrim_high_limit,2.015
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
 trim,codeunits,uA
-trim,description0,2.0
-trim,description1,-0.065
-trim,description2,-0.13
-trim,description3,-0.25
-trim,description4,-0.5
-trim,description5,-3.8
-trim,description6,description6,not used
-trim,description7,description7,not used
+trim,description0,empty
+trim,description1,empty
+trim,description2,empty
+trim,description3,empty
+trim,description4,empty
+trim,description5,empty
+trim,description6,empty
+trim,description7,empty
 trim,description8,empty
 //***********************************************
 trim,name,na
@@ -392,27 +361,7 @@ router,IPO,TBD
 dftpriority,IPO,1
 esd,IPO,TBD
 
-pinname,TAO
-definition,TAO,DFT analog testmode output
-iq,TAO,SIMULATION
-absmax,TAO,6
-absmin,TAO,-0.3
-io,TAO,inout
-mode,TAO,analog
-router,TAO,TBD
-dftpriority,TAO,1
-esd,TAO,TBD
 
-pinname,tmi
-definition,tmi,DFT communication bus
-iq,tmi,SIMULATION
-absmax,tmi,6
-absmin,tmi,-0.3
-io,tmi,inout
-mode,tmi,digital
-router,tmi,TBD
-dftpriority,tmi,1
-esd,tmi,TBD
 
 
 pinname,CELSUB

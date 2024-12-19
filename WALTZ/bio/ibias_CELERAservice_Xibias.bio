@@ -1,3 +1,4 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
@@ -32,37 +33,12 @@ limit,ibias_reference,choose1,yes
 //USER Parameters
 user,Design,yes
 description,IBIAS design
-user,ibias_accuracy,IBIASaccuracy
-description,IBIAS TRIM Enabled
 user,NESTOrevision,0.5.1
 description,NESTO revision
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
-//Celera Map Generator
-registermap,ibias
-register,instance,ibias_CELERAservice_Xibias
-register,source,cell
-
-//IBIAS - No Register Required
-register,name,na
-register,enable,no
-register,bits,0
-register,mode,readonly
-register,por,0
-register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
-//Netlister Information
-register,busname,na
-
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
@@ -90,29 +66,6 @@ factory,busname,na
 
 //**********************************************
 //CELL DFT Parameters
-//Cell DFT Generator currentsenseamplifier 
-celldft,ibias
-celldft,path,ibias_CELERAservice_Xibias
-celldft,instance,Xibias
-celldft,source,cell
-
-celldft,ten_ibias
-celldft,ten_ibias,testname,enableIBIASdft
-celldft,ten_ibias,definition,Enable IBIAS DFTs
-celldft,ten_ibias,input,ten
-celldft,ten_ibias,output,na
-celldft,ten_ibias,partner,na
-celldft,ten_currentlimit,end
-
-celldft,TAI_IBIAS
-celldft,TAI_IBIAS,testname,measureIBIAS
-celldft,TAI_IBIAS,definition,Measure IBIAS output current
-celldft,TAI_IBIAS,input,na
-celldft,TAI_IBIAS,output,TAI
-celldft,TAI_IBIAS,partner,ten_ibias
-celldft,TAI_IBIAS,end
-
-celldft,end
 //*********************************************
 //Layout Parameters
 revision,layout,0p1
@@ -182,10 +135,7 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,STONEnoconn,0
 sub_area,STONEibiasCONTROL,100
-sub_area,STONEibiasDFT,200
-sub_area,STONEibiasTRIM,400
 sub_area,STONEibiasOUT,300
 sub_area,STONEibiasOUT,300
 sub_area,STONEibiasOUT,300
@@ -194,13 +144,8 @@ sub_area,STONEibiasOUT,300
 sub_area,STONEnoconn,0
 sub_area,STONEnoconn,0
 sub_area,STONEibiasOUT,300
-sub_area,rlpp3000rpo24p8u0p5u,75
-sub_area,rlpp3000rpo10p2u0p4u,27
-sub_area,rlpp3000rpo10p2u0p4u,13
-sub_area,rlpp3000rpo10p2u0p4u,6
-sub_area,rlpp3000rpo10p2u0p4u,13
-sub_area,rlpp3000rpo10p2u0p4u,27
-generate_area,ibias_CELERAservice_Xibias,2661
+sub_area,rlpp3000rpo25p4u2p0u,1558
+generate_area,ibias_CELERAservice_Xibias,3458
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.9
@@ -236,29 +181,29 @@ endpinorder
 cell,ibias
 trim,instance,ibias_CELERAservice_Xibias
 
-trim,name,IBIASaccuracy
-trim,enable,yes
-trim,bits,5
+trim,name,na
+trim,enable,no
+trim,bits,TBD
 trim,por,0
 trim,pinname,trim_ibias
-trim,testname,IBIASaccuracy
-trim,description,IBIAS accuracy to 2uA source
-trim,target,2.0
-trim,units,uA
+trim,testname,TBD
+trim,description,TBD
+trim,target,na
+trim,units,TBD
 trim,userdescription,TBD
-trim,pretrim_low_limit,1.600
-trim,pretrim_high_limit,2.400
-trim,posttrim_low_limit,1.985
-trim,posttrim_high_limit,2.015
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
 trim,codeunits,uA
-trim,description0,code 0x00 2.0
-trim,description1,code 0x01 -0.065
-trim,description2,code 0x02 -0.13
-trim,description3,code 0x04 -0.25
-trim,description4,code 0x08 -0.5
-trim,description5,code 0x10 -3.8
-trim,description6,not used
-trim,description7,not used
+trim,description0,empty
+trim,description1,empty
+trim,description2,empty
+trim,description3,empty
+trim,description4,empty
+trim,description5,empty
+trim,description6,empty
+trim,description7,empty
 trim,description8,empty
 
 //**********************************************
@@ -319,17 +264,6 @@ router,enable_ibias,TBD
 dftpriority,enable_ibias,1
 esd,enable_ibias,TBD
 
-pinname,ten_ibias
-definition,ten_ibias,IBIAS Testmode enable
-iq,ten_ibias,SIMULATION
-absmax,ten_ibias,6
-absmin,ten_ibias,-0.3
-io,ten_ibias,input
-mode,ten_ibias,digital
-router,ten_ibias,TBD
-dftpriority,ten_ibias,1
-esd,ten_ibias,TBD
-
 pinname,global_celeraibias
 definition,global_celeraibias,IBIAS Global Testmode enable
 iq,global_celeraibias,SIMULATION
@@ -341,17 +275,6 @@ router,global_celeraibias,TBD
 dftpriority,global_celeraibias,1
 esd,global_celeraibias,TBD
 
-pinname,trim_ibias
-definition,trim_ibias,Trim IBIAS output current
-iq,trim_ibias,SIMULATION
-absmax,trim_ibias,6
-absmin,trim_ibias,-0.3
-io,trim_ibias,input
-mode,trim_ibias,digital
-router,trim_ibias,TBD
-dftpriority,trim_ibias,1
-esd,trim_ibias,TBD
-
 pinname,ok_ibias
 definition,ok_ibias,IBIAS ok Flag
 iq,ok_ibias,SIMULATION
@@ -362,17 +285,6 @@ mode,ok_ibias,digital
 router,ok_ibias,TBD
 dftpriority,ok_ibias,1
 esd,ok_ibias,TBD
-
-pinname,TAI_IBIAS
-definition,TAI_IBIAS,IBIAS Testmode Output:Measure IBIAS*4
-iq,TAI_IBIAS,SIMULATION
-absmax,TAI_IBIAS,6
-absmin,TAI_IBIAS,-0.3
-io,TAI_IBIAS,output
-mode,TAI_IBIAS,analog
-router,TAI_IBIAS,TBD
-dftpriority,TAI_IBIAS,1
-esd,TAI_IBIAS,TBD
 
 pinname,IPO
 definition,IPO,IBIAS Output current source
@@ -1077,6 +989,7 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+
 
 
 

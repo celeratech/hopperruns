@@ -8,16 +8,6 @@ module STONEpad1 ( PAD );
 endmodule
 
 
-//Verilog HDL for "Generate", "STONEotpSENSE" "functional"
-
-
-module STONEotpSENSE ( PAD, OTP );
-
-  input PAD;
-  output OTP;
-endmodule
-
-
 //Verilog HDL for "Generate", "WRAPPER1" "functional"
 
 
@@ -39,14 +29,12 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_WALTZ_VCC (VCC, GESD, PVCC, VOTP, CELV96848, kelvin_VCC, celkelvin_VCC_9893c918, celkelvin_VCC_bc3b7675);
+module pad_WALTZ_VCC (VCC, GESD, PVCC, CELV96848, kelvin_VCC, celkelvin_VCC_bc3b7675);
 inout  VCC;
 input  GESD;
 inout  PVCC;
-output  VOTP;
 output  CELV96848;
 inout  kelvin_VCC;
-output  celkelvin_VCC_9893c918;
 output  celkelvin_VCC_bc3b7675;
 
 
@@ -59,11 +47,6 @@ STONEpad1 XPAD1 (
 
 STONEpad1 XPAD2 (
 .PAD(PVCC)
-);
-
-STONEotpSENSE Xvotp (
-.OTP(VOTP),
-.PAD(VCC)
 );
 
 WRAPPER1 Xwrap_CELV (
@@ -84,11 +67,6 @@ ESDcore6 XESDcore6_6 (
 WRAPPER1 Xwrap_PAD1_SENSE0 (
 .i(VCC),
 .o(kelvin_VCC)
-);
-
-WRAPPER1 XWRAP_celkelvin_VCC_9893c918 (
-.i(VCC),
-.o(celkelvin_VCC_9893c918)
 );
 
 WRAPPER1 XWRAP_celkelvin_VCC_bc3b7675 (

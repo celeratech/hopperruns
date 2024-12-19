@@ -83,25 +83,6 @@ module delayfixed_07168cbb (i,o,CELG,CELV,CELSUB);
   input  CELSUB;
 endmodule
 
-//Verilog HDL for "DRM", "drm8" "functional"
-
-
-module drm8 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, drm0, d1, d0 );
-
-  input lastdrm;
-  input V;
-  output d1;
-  input  [7:0] id;
-  output d0;
-  input bypload;
-  output  [7:0] drm0;
-  input  [7:0] por0;
-  input G;
-  inout  [4:0] tmi;
-  input SUB;
-endmodule
-
-
 //Verilog HDL for "Generate", "STONEnoconn" "functional"
 
 
@@ -112,9 +93,8 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module Algorithm5p9_DYES (fcm, tmi, porb, CELG59462, CELV96848, bbm_topon, go_driver, ipeak_top, ok_driver, top_switch, CELSUB40948, bbm_bottomon, blank_bottom, ipeak_bottom, blank_refresh, bottom_switch, clock_control, fault_control, zcross_bottom, done_softstart, enable_control, freeze_control, switch_control, inegative_bottom);
+module Algorithm5p9_DYES (fcm, porb, CELG59462, CELV96848, bbm_topon, go_driver, ipeak_top, ok_driver, top_switch, CELSUB40948, bbm_bottomon, blank_bottom, ipeak_bottom, blank_refresh, bottom_switch, clock_control, fault_control, zcross_bottom, done_softstart, enable_control, freeze_control, switch_control, inegative_bottom);
 input  fcm;
-inout [4:0] tmi;
 input  porb;
 input  CELG59462;
 input  CELV96848;
@@ -140,10 +120,6 @@ input  inegative_bottom;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
-wire [7:0] id;
-wire [7:0] drm0;
-wire [7:0] por0;
 
 // ------------------------ Networks ---------------------
 Algorithm5p9_DYES_ XALGORITHM (
@@ -170,7 +146,7 @@ Algorithm5p9_DYES_ XALGORITHM (
 .top6bSYNC(XU20_no_dft_noconn_top6bSYNC),
 .top_switch(top_switch),
 .CELSUB40948(CELSUB40948),
-.enableFAULT(Algorithm5p9_statecontrol_22dba987_4),
+.enableFAULT(net_121),
 .BOTTOMdelayi(net_168),
 .TOPmaxdelayo(net_173),
 .bbm_bottomon(bbm_bottomon),
@@ -178,10 +154,10 @@ Algorithm5p9_DYES_ XALGORITHM (
 .ipeak_bottom(ipeak_bottom),
 .POWERUPdelayi(net_159),
 .REFRESHdelayi(net_167),
-.STATEcontrol0(Algorithm5p9_statecontrol_22dba987_0),
-.STATEcontrol1(Algorithm5p9_statecontrol_22dba987_1),
-.STATEcontrol2(Algorithm5p9_statecontrol_22dba987_2),
-.STATEcontrol3(Algorithm5p9_statecontrol_22dba987_3),
+.STATEcontrol0(net_117),
+.STATEcontrol1(net_118),
+.STATEcontrol2(net_119),
+.STATEcontrol3(net_120),
 .blank_refresh(blank_refresh),
 .bottom_switch(bottom_switch),
 .clock_control(clock_control),
@@ -236,32 +212,6 @@ delayfixed_07168cbb XU44 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
-);
-
-drm8 drm_hex0x03 (
-.G(CELG59462),
-.V(CELV96848),
-.d0(a0),
-.d1(a1),
-.id({a0,a0,a0,a0,a0,a0,a1,a1}),
-.SUB(CELSUB40948),
-.tmi(tmi[4:0]),
-.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,Algorithm5p9_statecontrol_22dba987_4,Algorithm5p9_statecontrol_22dba987_3,Algorithm5p9_statecontrol_22dba987_2,Algorithm5p9_statecontrol_22dba987_1,Algorithm5p9_statecontrol_22dba987_0}),
-.por0({a0,a0,a0,a1,a0,a0,a0,a0}),
-.bypload(a0),
-.lastdrm(a0)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_5 (
-.noconn(noconn_drm8_drm0_5)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_6 (
-.noconn(noconn_drm8_drm0_6)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_7 (
-.noconn(noconn_drm8_drm0_7)
 );
 
 STONEnoconn XNCXU89_no_dft_noconn_OFF (
