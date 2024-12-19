@@ -86,6 +86,18 @@ module STONEnoconn ( noconn );
 endmodule
 
 
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 module fetdriver_f3635860 (CELG,CELV,GATE,HVNEG,HVPOS,fetin,CELSUB,gate_status,gate_status_vin,enable_fetdriver,global_fetdriver);
   input  CELG;
   input  CELV;
@@ -101,7 +113,7 @@ module fetdriver_f3635860 (CELG,CELV,GATE,HVNEG,HVPOS,fetin,CELSUB,gate_status,g
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module DRIVERwaltz0TOPN (SW, BSTV, MUDV, MUDHV, PMUDV, PMUDHV, enable, topswon, CELG59462, CELV96848, ok_driver, topswipeak, CELSUB40948, IREF_DRIVER, botswstatus, topswstatus, ISLOPE_DRIVER, IP_f4252e65_XU22, DISABLEslope_650ee20e, trim_slopecomp_f4252e65, global_cboot_35156756_XU17, trim_currentlimit_98fa5525, TAI_ISLOPECOMP_f4252e65_XU22, global_slopecomp_f4252e65_XU22, ten_taiislopecomp_f4252e65_XU22, tdi_currentlimitlive_98fa5525_XU2, global_fetdriver_8018c87b_Xfetdriver, ten_measure_currentlimit_98fa5525_XU2, factory_currentlimit_blanking_98fa5525, global_cboot_35156756_XU17_f604d85e_XTOPSW, TAI_ISLOPECOMP_f4252e65_XU22_f604d85e_XTOPSW, global_slopecomp_f4252e65_XU22_f604d85e_XTOPSW, ten_taiislopecomp_f4252e65_XU22_f604d85e_XTOPSW, tdi_currentlimitlive_98fa5525_XU2_f604d85e_XTOPSW, global_fetdriver_8018c87b_Xfetdriver_f604d85e_XTOPSW, ten_measure_currentlimit_98fa5525_XU2_f604d85e_XTOPSW);
+module DRIVERwaltz0TOPN (SW, BSTV, MUDV, MUDHV, PMUDV, PMUDHV, enable, topswon, CELG59462, CELV96848, ok_driver, topswipeak, CELSUB40948, IREF_DRIVER, botswstatus, topswstatus, ISLOPE_DRIVER, IP_f4252e65_XU22, DISABLEslope_650ee20e, trim_slopecomp_f4252e65, trim_currentlimit_98fa5525, factory_currentlimit_blanking_98fa5525);
 inout  SW;
 input  BSTV;
 input  MUDV;
@@ -122,22 +134,8 @@ input  ISLOPE_DRIVER;
 input  IP_f4252e65_XU22;
 input  DISABLEslope_650ee20e;
 input [3:0] trim_slopecomp_f4252e65;
-input  global_cboot_35156756_XU17;
 input [7:0] trim_currentlimit_98fa5525;
-output  TAI_ISLOPECOMP_f4252e65_XU22;
-input  global_slopecomp_f4252e65_XU22;
-input  ten_taiislopecomp_f4252e65_XU22;
-output  tdi_currentlimitlive_98fa5525_XU2;
-input  global_fetdriver_8018c87b_Xfetdriver;
-input  ten_measure_currentlimit_98fa5525_XU2;
 input [4:0] factory_currentlimit_blanking_98fa5525;
-input  global_cboot_35156756_XU17_f604d85e_XTOPSW;
-output  TAI_ISLOPECOMP_f4252e65_XU22_f604d85e_XTOPSW;
-input  global_slopecomp_f4252e65_XU22_f604d85e_XTOPSW;
-input  ten_taiislopecomp_f4252e65_XU22_f604d85e_XTOPSW;
-output  tdi_currentlimitlive_98fa5525_XU2_f604d85e_XTOPSW;
-input  global_fetdriver_8018c87b_Xfetdriver_f604d85e_XTOPSW;
-input  ten_measure_currentlimit_98fa5525_XU2_f604d85e_XTOPSW;
 
 
 // ------------------------ Wires ------------------------
@@ -173,8 +171,8 @@ currentlimitfet_e27944c0 XU2 (
 .trim_currentlimit({trim_currentlimit_98fa5525[7],trim_currentlimit_98fa5525[6],trim_currentlimit_98fa5525[5],trim_currentlimit_98fa5525[4],trim_currentlimit_98fa5525[3],trim_currentlimit_98fa5525[2],trim_currentlimit_98fa5525[1],trim_currentlimit_98fa5525[0]}),
 .enable_currentlimit(enable),
 .measure_currentlimit(net_104),
-.tdi_currentlimitlive(tdi_currentlimitlive_98fa5525_XU2),
-.ten_measure_currentlimit(ten_measure_currentlimit_98fa5525_XU2),
+.tdi_currentlimitlive(noconn_no_dft_tdi_currentlimitlive5),
+.ten_measure_currentlimit(tl0),
 .factory_currentlimit_blanking({factory_currentlimit_blanking_98fa5525[4],factory_currentlimit_blanking_98fa5525[3],factory_currentlimit_blanking_98fa5525[2],factory_currentlimit_blanking_98fa5525[1],factory_currentlimit_blanking_98fa5525[0]})
 );
 
@@ -208,7 +206,7 @@ cboot_7dc01c49 XU17 (
 .on_charge(botswstatus),
 .ok_cboothv(net_75),
 .enable_cboot(enable),
-.global_cboot(global_cboot_35156756_XU17)
+.global_cboot(tl0)
 );
 
 slopecomp_00a4cb3c XU22 (
@@ -220,15 +218,22 @@ slopecomp_00a4cb3c XU22 (
 .CELSUB(CELSUB40948),
 .ISLOPECOMP(net_107),
 .ok_slopecomp(net_106),
-.TAI_ISLOPECOMP(TAI_ISLOPECOMP_f4252e65_XU22),
+.TAI_ISLOPECOMP(noconn_no_dft_TAI_ISLOPECOMP6),
 .trim_slopecomp({trim_slopecomp_f4252e65[3],trim_slopecomp_f4252e65[2],trim_slopecomp_f4252e65[1],trim_slopecomp_f4252e65[0]}),
 .enable_slopecomp(enable),
-.global_slopecomp(global_slopecomp_f4252e65_XU22),
-.ten_taiislopecomp(ten_taiislopecomp_f4252e65_XU22)
+.global_slopecomp(tl0),
+.ten_taiislopecomp(tl0)
 );
 
 STONEnoconn XNC75 (
 .noconn(net_75)
+);
+
+PEBBLEtielo XtieLo (
+.G(CELG59462),
+.V(CELV96848),
+.q(tl0),
+.SUB(CELSUB40948)
 );
 
 fetdriver_f3635860 Xfetdriver (
@@ -242,15 +247,15 @@ fetdriver_f3635860 Xfetdriver (
 .gate_status(net_104),
 .gate_status_vin(topswstatus),
 .enable_fetdriver(enable),
-.global_fetdriver(global_fetdriver_8018c87b_Xfetdriver)
+.global_fetdriver(tl0)
 );
 
-STONEnoconn XNCTAI_ISLOPECOMP_f4252e65_XU22_f604d85e_XTOPSW (
-.noconn(TAI_ISLOPECOMP_f4252e65_XU22_f604d85e_XTOPSW)
+STONEnoconn XNCnoconn_no_dft_TAI_ISLOPECOMP6 (
+.noconn(noconn_no_dft_TAI_ISLOPECOMP6)
 );
 
-STONEnoconn XNCtdi_currentlimitlive_98fa5525_XU2_f604d85e_XTOPSW (
-.noconn(tdi_currentlimitlive_98fa5525_XU2_f604d85e_XTOPSW)
+STONEnoconn XNCnoconn_no_dft_tdi_currentlimitlive5 (
+.noconn(noconn_no_dft_tdi_currentlimitlive5)
 );
 
 endmodule
