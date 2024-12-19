@@ -149,23 +149,6 @@ module dbuf_e926e395 (i,o,SUB,CELG,CELV);
   input  CELV;
 endmodule
 
-//Verilog HDL for "DFT", "DFTtm8d" "functional"
-
-
-module DFTtm8d ( a, ten, tdo, tmi, G, SUB, V, tdi, tma );
-
-  input V;
-  input  [7:0] tma;
-  output  [7:0] ten;
-  output  [1:0] a;
-  inout tdo;
-  input  [7:0] tdi;
-  input G;
-  input SUB;
-  inout  [4:0] tmi;
-endmodule
-
-
 //Verilog HDL for "Esd", "ESDminiClamp6" "functional"
 
 
@@ -189,10 +172,8 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module POWERGOODwaltzMAIN (POK, tdo, tmi, MUDV, clock, sense_FB, CELG59462, CELV96848, PORB97836, dft_pgout, CELSUB40948, dft_pgDELAY, fault_short, REF_POWERGOOD, dft_REFBUFFER, dft_pgSTARTUP, dft_pgDEGLITCH, dft_shortdelay, IP_70e67769_XU3, IP_e96a4067_XU8, IP_ddbf938d_XU22, enable_powergood, hijack_risedelay, kelvin_MUDGpowergood);
+module POWERGOODwaltzMAIN (POK, MUDV, clock, sense_FB, CELG59462, CELV96848, PORB97836, dft_pgout, CELSUB40948, dft_pgDELAY, fault_short, REF_POWERGOOD, dft_REFBUFFER, dft_pgSTARTUP, dft_pgDEGLITCH, dft_shortdelay, IP_70e67769_XU3, IP_e96a4067_XU8, IP_ddbf938d_XU22, enable_powergood, hijack_risedelay, kelvin_MUDGpowergood, global_vbuffer_e96a4067_XU8, tdi_padopendrain_54c5b105_XU4, ten_padopendrain_54c5b105_XU4, global_comparator_70e67769_XU3, global_comparator_ddbf938d_XU22, global_resistordivider_37d49b79_XU17, global_vbuffer_e96a4067_XU8_811a9a05_XMAIN, tdi_padopendrain_54c5b105_XU4_811a9a05_XMAIN, ten_padopendrain_54c5b105_XU4_811a9a05_XMAIN, global_comparator_70e67769_XU3_811a9a05_XMAIN, global_comparator_ddbf938d_XU22_811a9a05_XMAIN, global_resistordivider_37d49b79_XU17_811a9a05_XMAIN);
 inout  POK;
-inout  tdo;
-input [4:0] tmi;
 input  MUDV;
 input  clock;
 input  sense_FB;
@@ -214,14 +195,21 @@ input  IP_ddbf938d_XU22;
 input  enable_powergood;
 input  hijack_risedelay;
 inout  kelvin_MUDGpowergood;
+input  global_vbuffer_e96a4067_XU8;
+output  tdi_padopendrain_54c5b105_XU4;
+input  ten_padopendrain_54c5b105_XU4;
+input  global_comparator_70e67769_XU3;
+input  global_comparator_ddbf938d_XU22;
+input  global_resistordivider_37d49b79_XU17;
+input  global_vbuffer_e96a4067_XU8_811a9a05_XMAIN;
+output  tdi_padopendrain_54c5b105_XU4_811a9a05_XMAIN;
+input  ten_padopendrain_54c5b105_XU4_811a9a05_XMAIN;
+input  global_comparator_70e67769_XU3_811a9a05_XMAIN;
+input  global_comparator_ddbf938d_XU22_811a9a05_XMAIN;
+input  global_resistordivider_37d49b79_XU17_811a9a05_XMAIN;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
-wire [1:0] a;
-wire [7:0] tdi;
-wire [7:0] ten;
-wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
 VESPAasmINPUT1 XU20 (
@@ -429,18 +417,6 @@ dbuf_e926e395 XU26 (
 .CELV(CELV96848)
 );
 
-DFTtm8d dft_hex0x10 (
-.G(CELG59462),
-.V(CELV96848),
-.a({a1,a0}),
-.SUB(CELSUB40948),
-.tdi({a0,a0,a0,a0,a0,a0,a0,tdi_padopendrain_54c5b105_XU4}),
-.tdo(tdo),
-.ten({noconn_dft_hex0x10_ten_7,noconn_dft_hex0x10_ten_6,noconn_dft_hex0x10_ten_5,global_vbuffer_e96a4067_XU8,ten_padopendrain_54c5b105_XU4,global_comparator_70e67769_XU3,global_comparator_ddbf938d_XU22,global_resistordivider_37d49b79_XU17}),
-.tma({a0,a0,a0,a1,a0,a0,a0,a0}),
-.tmi(tmi[4:0])
-);
-
 ESDminiClamp6 XCLAMP_XU3_INP_COMPARATOR (
 .G(CELG59462),
 .I(sense_FB),
@@ -457,16 +433,8 @@ ESDminiClamp6 XCLAMP_XU22_INN_COMPARATOR (
 .SUB(CELSUB40948)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x10_ten_5 (
-.noconn(noconn_dft_hex0x10_ten_5)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x10_ten_6 (
-.noconn(noconn_dft_hex0x10_ten_6)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x10_ten_7 (
-.noconn(noconn_dft_hex0x10_ten_7)
+STONEnoconn XNCtdi_padopendrain_54c5b105_XU4_811a9a05_XMAIN (
+.noconn(tdi_padopendrain_54c5b105_XU4_811a9a05_XMAIN)
 );
 
 endmodule
