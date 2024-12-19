@@ -192,48 +192,6 @@ moveORIGIN y
 endlayoutbio
 //**********************************************
 //Project Parameters
-//Celera:WALTZ Project Bio
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////   default.bio'  DO NOT USE  ///////////////////////////////////
-
-//Simplis Project Parameters /////////////////////////////////////////////
-#define,Project,TBD
-#define,PROJECTreference,0.9
-#define,PROJECTsupply,4.5
-#define,TaRoom,25
-#define,ground,0.0
-#define,leveloffset,5
-//////////////////////////////////////////////////////////////////////////////////////////
-
-//Porcess  Parameters ///////////////////////////////////////////////////////
-#define,PROJECTbg,1.232
-#define,REFERENCEccpcode,15
-#define,REFERENCEccncode,15
-#define,HVNPN2A_5vbe,0.55
-#define,HVNPN2A_5vbetc,-2.1
-#define,VTNnch5i,0.72
-//#define,FETNcalculator_option,typical
-#define,FETNcalculator,maximum
-//#define,FETPcalculator_option,typical
-#define,FETPcalculator,maximum
-////////////////////////////////////////////////////////////////////////////////////////
-
-//Global Parameters ///////////////////////////////////////////////////////
-#define,CELVminimum,2.0
-#define,CELGabsmax,0.3
-#define,CELGabsmin,-0.3
-#define,SUBabsmax,0.3
-#define,SUBabsmin,-0.3
-#define,CELSUBabsmax,0.3
-#define,CELSUBabsmin,-0.3
-/////////////////////////////////////////////////////////////////////////////////////////
-
-//layout Parameters //////////////////////////////////////////////////////////
-#define MODULEdiesizefill 10
-//Percentage of area added to module for routing
-////////////////////////////////////////////////////////////////////////////////////////
-
-
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
@@ -318,8 +276,10 @@ esd,SIMPV,TBD
 pinname,CELG
 definition,CELG,power ground
 iq,CELG,SIMULATION
-absmax,CELG,0.3
-absmin,CELG,-0.3
+absmax,CELG,
+
+absmin,CELG,********************************
+
 io,CELG,input
 mode,CELG,power
 router,CELG,TBD
@@ -329,8 +289,8 @@ esd,CELG,TBD
 pinname,CELSUB
 definition,CELSUB,power ground
 iq,CELSUB,SIMULATION
-absmax,CELSUB,0.3
-absmin,CELSUB,-0.3
+absmax,CELSUB,
+absmin,CELSUB,
 io,CELSUB,input
 mode,CELSUB,power
 router,CELSUB,TBD
@@ -342,7 +302,8 @@ pinname,enable_currentgenerator
 definition,enable_currentgenerator,Enable Pin
 iq,enable_currentgenerator,SIMULATION
 absmax,enable_currentgenerator,6
-absmin,enable_currentgenerator,-0.3
+absmin,enable_currentgenerator,********************************
+
 io,enable_currentgenerator,input
 mode,enable_currentgenerator,digital
 router,enable_currentgenerator,TBD
@@ -353,7 +314,8 @@ pinname,IP
 definition,IP,500n Current Reference
 iq,IP,SIMULATION
 absmax,IP,6
-absmin,IP,-0.3
+absmin,IP,********************************
+
 io,IP,input
 mode,IP,analog
 router,IP,TBD
@@ -364,7 +326,8 @@ pinname,ok_currentgenerator
 definition,ok_currentgenerator,Current generator OK
 iq,ok_currentgenerator,SIMULATION
 absmax,ok_currentgenerator,6
-absmin,ok_currentgenerator,-0.3
+absmin,ok_currentgenerator,********************************
+
 io,ok_currentgenerator,output
 mode,ok_currentgenerator,digital
 router,ok_currentgenerator,TBD
@@ -375,7 +338,8 @@ pinname,I0
 definition,I0,Output0
 iq,I0,SIMULATION
 absmax,I0,6
-absmin,I0,-0.3
+absmin,I0,********************************
+
 io,I0,inout
 mode,I0,analog
 router,I0,TBD
@@ -394,7 +358,8 @@ pinname,global_currentgenerator
 definition,global_currentgenerator,Global Test Enable
 iq,global_currentgenerator,SIMULATION
 absmax,global_currentgenerator,6
-absmin,global_currentgenerator,-0.3
+absmin,global_currentgenerator,********************************
+
 io,global_currentgenerator,input
 mode,global_currentgenerator,digital
 router,global_currentgenerator,TBD

@@ -132,6 +132,21 @@ module PEBBLEtielo ( q, G, SUB, V );
 endmodule
 
 
+//Verilog HDL for "DFT", "DFTtm8t" "functional"
+
+
+module DFTtm8t ( a, ten, tmi, G, SUB, V, tma );
+
+  input V;
+  input  [7:0] tma;
+  output  [7:0] ten;
+  output  [1:0] a;
+  input G;
+  input SUB;
+  inout  [4:0] tmi;
+endmodule
+
+
 //Verilog HDL for "Esd", "ESDminiClamp6" "functional"
 
 
@@ -145,9 +160,19 @@ module ESDminiClamp6 ( O, G, I, SUB, V );
 endmodule
 
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltz0MAIN (VC, MUDG, MUDV, REFINT, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, IP_4215aede_XU3, IP_866ca25c_XU9, IP_b8eb1a18_XU7, IP_5c7dff44_XU10, IP_e44d2b4d_Xgm1, enable_regulation, global_gm_e44d2b4d_Xgm1, global_clamp_b8eb1a18_XU7, global_vbuffer_866ca25c_XU9, global_comparator_5c7dff44_XU10, global_voltage2current_4215aede_XU3, global_gm_e44d2b4d_Xgm1_10783060_XMAIN, global_clamp_b8eb1a18_XU7_10783060_XMAIN, global_vbuffer_866ca25c_XU9_10783060_XMAIN, global_comparator_5c7dff44_XU10_10783060_XMAIN, global_voltage2current_4215aede_XU3_10783060_XMAIN);
+module REGULATIONwaltz0MAIN (VC, tmi, MUDG, MUDV, REFINT, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, IP_4215aede_XU3, IP_866ca25c_XU9, IP_b8eb1a18_XU7, IP_5c7dff44_XU10, IP_e44d2b4d_Xgm1, enable_regulation);
 inout  VC;
+input [4:0] tmi;
 inout  MUDG;
 input  MUDV;
 inout  REFINT;
@@ -168,25 +193,19 @@ input  IP_b8eb1a18_XU7;
 input  IP_5c7dff44_XU10;
 input  IP_e44d2b4d_Xgm1;
 input  enable_regulation;
-input  global_gm_e44d2b4d_Xgm1;
-input  global_clamp_b8eb1a18_XU7;
-input  global_vbuffer_866ca25c_XU9;
-input  global_comparator_5c7dff44_XU10;
-input  global_voltage2current_4215aede_XU3;
-input  global_gm_e44d2b4d_Xgm1_10783060_XMAIN;
-input  global_clamp_b8eb1a18_XU7_10783060_XMAIN;
-input  global_vbuffer_866ca25c_XU9_10783060_XMAIN;
-input  global_comparator_5c7dff44_XU10_10783060_XMAIN;
-input  global_voltage2current_4215aede_XU3_10783060_XMAIN;
 
 
 // ------------------------ Wires ------------------------
+wire [4:0] tmi;
 wire [7:0] trim_clamp;
 wire [6:0] trim_vbuffer_negative;
 wire [6:0] trim_vbuffer_positive;
 wire [1:0] factory_hyst_comparator;
 wire [6:0] trim_gm_negative;
 wire [6:0] trim_gm_positive;
+wire [1:0] a;
+wire [7:0] ten;
+wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
 REGULATIONwaltz0COMPENSATION XCOMPENSATION (
@@ -228,7 +247,7 @@ clamp_57e24cde XU7 (
 .SIMPV(MUDV),
 .CELREF(CELREF84329),
 .CELSUB(CELSUB40948),
-.trim_clamp({a0,a0,a0,a0,a0,a0,a0,a0}),
+.trim_clamp({c0,c0,c0,c0,c0,c0,c0,c0}),
 .enable_clamp(enable_regulation),
 .global_clamp(global_clamp_b8eb1a18_XU7)
 );
@@ -243,8 +262,8 @@ vbuffer_602daa59 XU9 (
 .ok_vbuffer(net_94),
 .enable_vbuffer(enable_regulation),
 .global_vbuffer(global_vbuffer_866ca25c_XU9),
-.trim_vbuffer_negative({a0,a0,a0,a0,a0,a0,a0}),
-.trim_vbuffer_positive({a0,a0,a0,a0,a0,a0,a0})
+.trim_vbuffer_negative({c0,c0,c0,c0,c0,c0,c0}),
+.trim_vbuffer_positive({c0,c0,c0,c0,c0,c0,c0})
 );
 
 comparatornoctlpins_1b4420c5 XU10 (
@@ -258,7 +277,7 @@ comparatornoctlpins_1b4420c5 XU10 (
 .out_comparator(go_driver),
 .enable_comparator(net_94),
 .global_comparator(global_comparator_5c7dff44_XU10),
-.factory_hyst_comparator({a0,a1})
+.factory_hyst_comparator({c0,c1})
 );
 
 switchideal_c21fcc50 XU11 (
@@ -294,22 +313,32 @@ gm_6be6af5d Xgm1 (
 .CELSUB(CELSUB40948),
 .enable_gm(enable_regulation),
 .global_gm(global_gm_e44d2b4d_Xgm1),
-.trim_gm_negative({a0,a0,a0,a0,a0,a0,a0}),
-.trim_gm_positive({a0,a0,a0,a0,a0,a0,a0})
+.trim_gm_negative({c0,c0,c0,c0,c0,c0,c0}),
+.trim_gm_positive({c0,c0,c0,c0,c0,c0,c0})
 );
 
 PEBBLEtiehi XDRMNOTH (
 .G(CELG59462),
 .V(CELV96848),
-.q(a1),
+.q(c1),
 .SUB(CELSUB40948)
 );
 
 PEBBLEtielo XDRMNOTL (
 .G(CELG59462),
 .V(CELV96848),
-.q(a0),
+.q(c0),
 .SUB(CELSUB40948)
+);
+
+DFTtm8t dft_hex0x12 (
+.G(CELG59462),
+.V(CELV96848),
+.a({a1,a0}),
+.SUB(CELSUB40948),
+.ten({noconn_dft_hex0x12_ten_7,noconn_dft_hex0x12_ten_6,noconn_dft_hex0x12_ten_5,global_gm_e44d2b4d_Xgm1,global_vbuffer_866ca25c_XU9,global_clamp_b8eb1a18_XU7,global_voltage2current_4215aede_XU3,global_comparator_5c7dff44_XU10}),
+.tma({a0,a0,a0,a1,a0,a0,a1,a0}),
+.tmi(tmi[4:0])
 );
 
 ESDminiClamp6 XCLAMP_Xgm1_INN (
@@ -318,6 +347,18 @@ ESDminiClamp6 XCLAMP_Xgm1_INN (
 .O(clamp_Xgm1_99),
 .V(CELV96848),
 .SUB(CELSUB40948)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x12_ten_5 (
+.noconn(noconn_dft_hex0x12_ten_5)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x12_ten_6 (
+.noconn(noconn_dft_hex0x12_ten_6)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x12_ten_7 (
+.noconn(noconn_dft_hex0x12_ten_7)
 );
 
 endmodule
