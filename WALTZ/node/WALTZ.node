@@ -788,21 +788,6 @@ parameter,logicgate_vmax,6
 
 
 GenerateLevel,9
-generate,timingskew
-path,XWALTZ,XCLOCK,XMAIN,XU12
-instance,XU12
-parameter,timingskew_dft,no
-parameter,timingskew_lsb,8
-parameter,timingskew_por,15
-parameter,timingskew_bits,4
-parameter,timingskew_type,rise
-parameter,timingskew_vmax,6
-parameter,timingskew_control,pin
-parameter,timingskew_datasheet_name,text
-parameter,timingskew_datasheet_description,text
-
-
-GenerateLevel,9
 generate,pinprobe
 path,XWALTZ,XCLOCK,XMAIN,XU13
 instance,XU13
@@ -856,16 +841,6 @@ parameter,pinprobe_mode,output
 parameter,pinprobe_input,tbd
 parameter,pinprobe_output,tbd
 parameter,pinprobe_description,DFT_CLOCK_Measure_startup_time
-
-
-GenerateLevel,9
-generate,pinprobe
-path,XWALTZ,XCLOCK,XMAIN,XU21
-instance,XU21
-parameter,pinprobe_mode,input
-parameter,pinprobe_input,datamap
-parameter,pinprobe_output,tbd
-parameter,pinprobe_description,Adjusdt_Clock_Ott_time
 
 
 GenerateLevel,9
@@ -992,6 +967,17 @@ parameter,osc_datasheet_accuracy_description,CLOCK_accuracy_at_400KHz_50K
 
 
 GenerateLevel,9
+generate,pinprobe
+path,XWALTZ,XCLOCK,XMAIN,Xpinprobe1
+instance,Xpinprobe1
+parameter,pinprobe_bits,1
+parameter,pinprobe_mode,input
+parameter,pinprobe_input,datamap
+parameter,pinprobe_output,tbd
+parameter,pinprobe_description,Adjusdt_Clock_Ott_time
+
+
+GenerateLevel,9
 generate,clocksync
 path,XWALTZ,XCLOCK,XMAIN,Xclocksync1
 instance,Xclocksync1
@@ -1004,6 +990,22 @@ parameter,clocksync_dutycyclemax,70
 parameter,clocksync_dutycyclemin,30
 parameter,clocksync_statusoutput,both
 parameter,clocksync_trim_description,text
+
+
+GenerateLevel,9
+generate,timingskew
+path,XWALTZ,XCLOCK,XMAIN,Xtimingskew1
+instance,Xtimingskew1
+parameter,timingskew_dft,no
+parameter,timingskew_lsb,8
+parameter,timingskew_por,15
+parameter,timingskew_bits,4
+parameter,timingskew_type,rise
+parameter,timingskew_vmax,6
+parameter,timingskew_supply,5
+parameter,timingskew_control,pin
+parameter,timingskew_datasheet_name,text
+parameter,timingskew_datasheet_description,text
 
 
 GenerateLevel,5
@@ -3121,14 +3123,6 @@ parameter,logicgate_vmax,6
 
 
 GenerateLevel,5
-generate,dff
-path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU13,XU2
-instance,XU2
-parameter,dff_edge,rise
-parameter,dff_vmax,6
-
-
-GenerateLevel,5
 generate,dbuf
 path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU13,XU3
 instance,XU3
@@ -3189,12 +3183,6 @@ parameter,logicgate_vmax,6
 
 
 GenerateLevel,5
-generate,celeranoconn
-path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU13,XU11
-instance,XU11
-
-
-GenerateLevel,5
 generate,delayfixed
 path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU13,XU14
 instance,XU14
@@ -3246,19 +3234,21 @@ parameter,delayclock_datasheetdescription,text
 
 
 GenerateLevel,5
+generate,dff
+path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU13,Xdff1
+instance,Xdff1
+parameter,dff_bits,1
+parameter,dff_edge,rise
+parameter,dff_vmax,6
+parameter,dff_outputs,q
+
+
+GenerateLevel,5
 generate,inv
 path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU15,XU1
 instance,XU1
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
-
-
-GenerateLevel,5
-generate,dff
-path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU15,XU2
-instance,XU2
-parameter,dff_edge,rise
-parameter,dff_vmax,6
 
 
 GenerateLevel,5
@@ -3322,12 +3312,6 @@ parameter,logicgate_vmax,6
 
 
 GenerateLevel,5
-generate,celeranoconn
-path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU15,XU11
-instance,XU11
-
-
-GenerateLevel,5
 generate,delayfixed
 path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU15,XU14
 instance,XU14
@@ -3379,19 +3363,21 @@ parameter,delayclock_datasheetdescription,text
 
 
 GenerateLevel,5
+generate,dff
+path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU15,Xdff1
+instance,Xdff1
+parameter,dff_bits,1
+parameter,dff_edge,rise
+parameter,dff_vmax,6
+parameter,dff_outputs,q
+
+
+GenerateLevel,5
 generate,inv
 path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU17,XU1
 instance,XU1
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
-
-
-GenerateLevel,5
-generate,dff
-path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU17,XU2
-instance,XU2
-parameter,dff_edge,rise
-parameter,dff_vmax,6
 
 
 GenerateLevel,5
@@ -3455,12 +3441,6 @@ parameter,logicgate_vmax,6
 
 
 GenerateLevel,5
-generate,celeranoconn
-path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU17,XU11
-instance,XU11
-
-
-GenerateLevel,5
 generate,delayfixed
 path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU17,XU14
 instance,XU14
@@ -3512,19 +3492,21 @@ parameter,delayclock_datasheetdescription,text
 
 
 GenerateLevel,5
+generate,dff
+path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU17,Xdff1
+instance,Xdff1
+parameter,dff_bits,1
+parameter,dff_edge,rise
+parameter,dff_vmax,6
+parameter,dff_outputs,q
+
+
+GenerateLevel,5
 generate,inv
 path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU19,XU1
 instance,XU1
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
-
-
-GenerateLevel,5
-generate,dff
-path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU19,XU2
-instance,XU2
-parameter,dff_edge,rise
-parameter,dff_vmax,6
 
 
 GenerateLevel,5
@@ -3588,12 +3570,6 @@ parameter,logicgate_vmax,6
 
 
 GenerateLevel,5
-generate,celeranoconn
-path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU19,XU11
-instance,XU11
-
-
-GenerateLevel,5
 generate,delayfixed
 path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU19,XU14
 instance,XU14
@@ -3642,6 +3618,16 @@ parameter,delaycontrol_description,text
 parameter,delay_accuracy_description,text
 parameter,delayclock_accuracydescription,text
 parameter,delayclock_datasheetdescription,text
+
+
+GenerateLevel,5
+generate,dff
+path,XWALTZ,XCONTROL,XCONTROL,XALGORITHM,XU19,Xdff1
+instance,Xdff1
+parameter,dff_bits,1
+parameter,dff_edge,rise
+parameter,dff_vmax,6
+parameter,dff_outputs,q
 
 
 GenerateLevel,5
@@ -9887,32 +9873,34 @@ parameter,datamap_status_resettimeunits,us
 
 GenerateLevel,9
 generate,timingskew
-path,XWALTZ,XDRIVER,XBBM,XUTOPDELAY
-instance,XUTOPDELAY
+path,XWALTZ,XDRIVER,XBBM,Xtimingskew1
+instance,Xtimingskew1
 parameter,timingskew_dft,no
 parameter,timingskew_lsb,1
 parameter,timingskew_por,18
 parameter,timingskew_bits,5
 parameter,timingskew_type,rise
 parameter,timingskew_vmax,6
+parameter,timingskew_supply,5
 parameter,timingskew_control,factory
-parameter,timingskew_datasheet_name,BOTTOMSWITCHstatusDELAY
-parameter,timingskew_datasheet_description,BOT_Switch_on_delay
+parameter,timingskew_datasheet_name,TOPSWITCHstatusDELAY
+parameter,timingskew_datasheet_description,TOP_Switch_on_delay
 
 
 GenerateLevel,9
 generate,timingskew
-path,XWALTZ,XDRIVER,XBBM,XUBOTTOMDELAY
-instance,XUBOTTOMDELAY
+path,XWALTZ,XDRIVER,XBBM,Xtimingskew2
+instance,Xtimingskew2
 parameter,timingskew_dft,no
 parameter,timingskew_lsb,1
 parameter,timingskew_por,18
 parameter,timingskew_bits,5
 parameter,timingskew_type,rise
 parameter,timingskew_vmax,6
+parameter,timingskew_supply,5
 parameter,timingskew_control,factory
-parameter,timingskew_datasheet_name,TOPSWITCHstatusDELAY
-parameter,timingskew_datasheet_description,TOP_Switch_on_delay
+parameter,timingskew_datasheet_name,BOTTOMSWITCHstatusDELAY
+parameter,timingskew_datasheet_description,BOT_Switch_on_delay
 
 
 GenerateLevel,5
@@ -14693,27 +14681,6 @@ parameter,logicgate_vmax,6
 
 
 GenerateLevel,9
-generate,gm
-path,XWALTZ,XREGULATION,XMAIN,XU1
-instance,XU1
-parameter,gm_ok,yes
-parameter,gm_dft,no
-parameter,gm_gain,100m
-parameter,gm_type,p
-parameter,gm_vmax,6
-parameter,gm_lowiq,no
-parameter,gm_accuracy,system
-parameter,gm_override,inp
-parameter,gm_clamp_low,no
-parameter,gm_lowiq_por,0
-parameter,gm_trim_name,GMaccuracy
-parameter,gm_clamp_high,no
-parameter,gm_lowiq_name,text
-parameter,gm_trim_description,Set_Regulation_Loop_Offset_Voltage
-parameter,gm_lowiq_description,text
-
-
-GenerateLevel,9
 generate,pinprobe
 path,XWALTZ,XREGULATION,XMAIN,XU2
 instance,XU2
@@ -14979,6 +14946,28 @@ parameter,resistor_datasheet_adjust_name,VCGAIN
 parameter,resistor_datasheet_accuracy_name,VCGAIN
 parameter,resistor_datasheet_adjust_description,Voltage_Control_Node_Gain_Resistance
 parameter,resistor_datasheet_accuracy_description,Voltage_Gain_Resistor
+
+
+GenerateLevel,9
+generate,gm
+path,XWALTZ,XREGULATION,XMAIN,Xgm1
+instance,Xgm1
+parameter,gm_ok,yes
+parameter,gm_dft,no
+parameter,gm_gain,100m
+parameter,gm_type,p
+parameter,gm_vmax,6
+parameter,gm_lowiq,no
+parameter,gm_output,pushpull
+parameter,gm_accuracy,system
+parameter,gm_override,inp
+parameter,gm_clamp_low,no
+parameter,gm_lowiq_por,0
+parameter,gm_trim_name,GMaccuracy
+parameter,gm_clamp_high,no
+parameter,gm_lowiq_name,text
+parameter,gm_trim_description,Set_Regulation_Loop_Offset_Voltage
+parameter,gm_lowiq_description,text
 
 
 GenerateLevel,8
@@ -15314,6 +15303,7 @@ parameter,datamap_enabletimeunits7,us
 parameter,datamap_enabletimeunits8,us
 parameter,datamap_status_readunits,us
 parameter,datamap_status_resettime,10
+parameter,datamap_register_selfreset,no
 parameter,datamap_status_resettimeunits,us
 
 
@@ -15468,6 +15458,7 @@ parameter,datamap_enabletimeunits7,us
 parameter,datamap_enabletimeunits8,us
 parameter,datamap_status_readunits,us
 parameter,datamap_status_resettime,10
+parameter,datamap_register_selfreset,no
 parameter,datamap_status_resettimeunits,us
 
 
@@ -15622,6 +15613,7 @@ parameter,datamap_enabletimeunits7,us
 parameter,datamap_enabletimeunits8,us
 parameter,datamap_status_readunits,us
 parameter,datamap_status_resettime,10
+parameter,datamap_register_selfreset,no
 parameter,datamap_status_resettimeunits,us
 
 

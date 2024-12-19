@@ -3,7 +3,7 @@ module REGULATIONwaltz0DEBUG (VC,TAO,tdo,tmi,REFINT,CELG59462,CELV96848,go_drive
   inout  VC;
   inout  TAO;
   inout  tdo;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   input  REFINT;
   input  CELG59462;
   input  CELV96848;
@@ -18,9 +18,9 @@ module REGULATIONwaltz0DEBUG (VC,TAO,tdo,tmi,REFINT,CELG59462,CELV96848,go_drive
   output  hijack_enable_regulation;
 endmodule
 
-module REGULATIONwaltz0MAIN (VC,tmi,MUDG,MUDV,REFINT,CELG59462,CELV96848,go_driver,CELREF84329,CELSUB40948,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,IP_4215aede_XU3,IP_866ca25c_XU9,IP_9015e2a4_XU1,IP_b8eb1a18_XU7,IP_5c7dff44_XU10,enable_regulation);
+module REGULATIONwaltz0MAIN (VC,tmi,MUDG,MUDV,REFINT,CELG59462,CELV96848,go_driver,CELREF84329,CELSUB40948,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,IP_4215aede_XU3,IP_866ca25c_XU9,IP_b8eb1a18_XU7,IP_5c7dff44_XU10,IP_e44d2b4d_Xgm1,enable_regulation);
   inout  VC;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   inout  MUDG;
   input  MUDV;
   inout  REFINT;
@@ -37,17 +37,17 @@ module REGULATIONwaltz0MAIN (VC,tmi,MUDG,MUDV,REFINT,CELG59462,CELV96848,go_driv
   input  VSS_REGULATION;
   input  IP_4215aede_XU3;
   input  IP_866ca25c_XU9;
-  input  IP_9015e2a4_XU1;
   input  IP_b8eb1a18_XU7;
   input  IP_5c7dff44_XU10;
+  input  IP_e44d2b4d_Xgm1;
   input  enable_regulation;
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltz (TAO, tdo, tmi, MUDG, MUDV, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, IP_4215aede_XU3, IP_866ca25c_XU9, IP_9015e2a4_XU1, IP_b8eb1a18_XU7, IP_5c7dff44_XU10, enable_regulation);
+module REGULATIONwaltz (TAO, tdo, tmi, MUDG, MUDV, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, IP_4215aede_XU3, IP_866ca25c_XU9, IP_b8eb1a18_XU7, IP_5c7dff44_XU10, IP_e44d2b4d_Xgm1, enable_regulation);
 inout  TAO;
 inout  tdo;
-input [4:0] tmi;
+inout [4:0] tmi;
 inout  MUDG;
 input  MUDV;
 input  CELG59462;
@@ -63,9 +63,9 @@ input  REF_REGULATION;
 input  VSS_REGULATION;
 input  IP_4215aede_XU3;
 input  IP_866ca25c_XU9;
-input  IP_9015e2a4_XU1;
 input  IP_b8eb1a18_XU7;
 input  IP_5c7dff44_XU10;
+input  IP_e44d2b4d_Xgm1;
 input  enable_regulation;
 
 
@@ -111,9 +111,9 @@ REGULATIONwaltz0MAIN XMAIN (
 .VSS_REGULATION(net_57),
 .IP_4215aede_XU3(IP_4215aede_XU3),
 .IP_866ca25c_XU9(IP_866ca25c_XU9),
-.IP_9015e2a4_XU1(IP_9015e2a4_XU1),
 .IP_b8eb1a18_XU7(IP_b8eb1a18_XU7),
 .IP_5c7dff44_XU10(IP_5c7dff44_XU10),
+.IP_e44d2b4d_Xgm1(IP_e44d2b4d_Xgm1),
 .enable_regulation(net_54)
 );
 

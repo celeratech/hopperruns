@@ -2,7 +2,7 @@
 module CLOCKwaltz (TAO,tdo,tmi,FSET,MUDV,SYNC,clock,ok_clock,CELG59462,CELV96848,ISLOPECOMP,CELREF84329,CELSENSE_RF,CELSUB40948,fault_clock,enable_clock,IP_90c263a6_XOSCEXT,celkelvin_GND_bb7e77f4);
   inout  TAO;
   inout  tdo;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   output  FSET;
   input  MUDV;
   input  SYNC;
@@ -22,7 +22,7 @@ endmodule
 
 module CONTROLwaltz (tdo,tmi,porb,clock,botstate,topstate,CELG59462,CELV96848,bbm_topon,botswineg,go_driver,ok_driver,botswipeak,topswipeak,CELSUB40948,botswzcross,bbm_bottomon,fault_control,done_softstart,enable_control,freeze_control,switch_control);
   inout  tdo;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   input  porb;
   input  clock;
   output  botstate;
@@ -49,7 +49,7 @@ module DRIVERwaltz (SW,TAO,tdo,tmi,BSTV,MUDV,MUDHV,PMUDG,PMUDV,PMUDHV,botstate,t
   inout  SW;
   inout  TAO;
   inout  tdo;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   input  BSTV;
   input  MUDV;
   input  MUDHV;
@@ -79,7 +79,7 @@ endmodule
 
 module FAULTMANAGERwaltz (tdo,tmi,MUDV,clock,CELG59462,CELV96848,PORB97836,fault_run,CELBG83021,CELSUB40948,blank_fault,fault_short,fault_freeze,enable_faultmanager,IP_201f84ba_Xthermal1);
   inout  tdo;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   input  MUDV;
   input  clock;
   input  CELG59462;
@@ -116,10 +116,10 @@ module POWERGOODwaltz (POK,TAO,tdo,tmi,MUDV,clock,sense_FB,CELG59462,CELV96848,P
   inout  kelvin_MUDGpowergood;
 endmodule
 
-module REGULATIONwaltz (TAO,tdo,tmi,MUDG,MUDV,CELG59462,CELV96848,go_driver,CELREF84329,CELSUB40948,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,IP_4215aede_XU3,IP_866ca25c_XU9,IP_9015e2a4_XU1,IP_b8eb1a18_XU7,IP_5c7dff44_XU10,enable_regulation);
+module REGULATIONwaltz (TAO,tdo,tmi,MUDG,MUDV,CELG59462,CELV96848,go_driver,CELREF84329,CELSUB40948,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,IP_4215aede_XU3,IP_866ca25c_XU9,IP_b8eb1a18_XU7,IP_5c7dff44_XU10,IP_e44d2b4d_Xgm1,enable_regulation);
   inout  TAO;
   inout  tdo;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   inout  MUDG;
   input  MUDV;
   input  CELG59462;
@@ -135,15 +135,15 @@ module REGULATIONwaltz (TAO,tdo,tmi,MUDG,MUDV,CELG59462,CELV96848,go_driver,CELR
   input  VSS_REGULATION;
   input  IP_4215aede_XU3;
   input  IP_866ca25c_XU9;
-  input  IP_9015e2a4_XU1;
   input  IP_b8eb1a18_XU7;
   input  IP_5c7dff44_XU10;
+  input  IP_e44d2b4d_Xgm1;
   input  enable_regulation;
 endmodule
 
 module SEQUENCERwaltz (tdo,tmi,porb,ok_clock,CELG59462,CELV96848,fault_run,ok_driver,ok_service,CELSUB40948,blank_fault,fault_clock,enable_waltz,ok_regulation,done_softstart,fault_shutdown,switch_control,enable_softstart,enable_regulation);
   inout  tdo;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   input  porb;
   input  ok_clock;
   input  CELG59462;
@@ -169,7 +169,7 @@ module SERVICEwaltz (EN,IN,TAO,VCC,tdo,tmi,BIAS,porb,REF0V9,CELG59462,CELV96848,
   inout  TAO;
   output  VCC;
   inout  tdo;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   input  BIAS;
   output  porb;
   output  REF0V9;
@@ -194,7 +194,7 @@ module SOFTSTARTwaltz (SS,REF,TAO,tdo,tmi,MUDV,CELG59462,CELV96848,CELSUB40948,e
   input  REF;
   inout  TAO;
   inout  tdo;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   input  MUDV;
   input  CELG59462;
   input  CELV96848;
@@ -409,9 +409,9 @@ REGULATIONwaltz XREGULATION (
 .VSS_REGULATION(net_192),
 .IP_4215aede_XU3(IP_4215aede_XU3),
 .IP_866ca25c_XU9(IP_866ca25c_XU9),
-.IP_9015e2a4_XU1(IP_9015e2a4_XU1),
 .IP_b8eb1a18_XU7(IP_b8eb1a18_XU7),
 .IP_5c7dff44_XU10(IP_5c7dff44_XU10),
+.IP_e44d2b4d_Xgm1(IP_e44d2b4d_Xgm1),
 .enable_regulation(net_189)
 );
 
@@ -486,7 +486,7 @@ STONEnoconn XNCnoconn (
 );
 
 CELERAservice XceleraSERVICE (
-.IPO({IP_14d08c8e_XU3,IP_201f84ba_Xthermal1,IP_2d447a5c_XU17,IP_4215aede_XU3,IP_4c0bef8e_Xoscillator1,IP_5c7dff44_XU10,IP_70e67769_XU3,IP_75c89176_XU16,IP_866ca25c_XU9,IP_9015e2a4_XU1,IP_90c263a6_XOSCEXT,IP_a0afb596_XU9,IP_b8eb1a18_XU7,IP_ddbf938d_XU22,IP_e96a4067_XU8,IP_f4252e65_XU22}),
+.IPO({IP_14d08c8e_XU3,IP_201f84ba_Xthermal1,IP_2d447a5c_XU17,IP_4215aede_XU3,IP_4c0bef8e_Xoscillator1,IP_5c7dff44_XU10,IP_70e67769_XU3,IP_75c89176_XU16,IP_866ca25c_XU9,IP_90c263a6_XOSCEXT,IP_a0afb596_XU9,IP_b8eb1a18_XU7,IP_ddbf938d_XU22,IP_e44d2b4d_Xgm1,IP_e96a4067_XU8,IP_f4252e65_XU22}),
 .TAO(TAO),
 .tmi(tmi[4:0]),
 .CELG(CELG59462),

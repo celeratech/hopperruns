@@ -1,5 +1,6 @@
 // ------------------------ Module Definitions -----------
-module DRIVERwaltzBBM (topon,bottomon,topstate,CELG59462,CELV96848,bbm_topon,topstatus,CELSUB40948,bottomstate,bbm_bottomon,bottomstatus);
+module DRIVERwaltzBBM (tmi,topon,bottomon,topstate,CELG59462,CELV96848,bbm_topon,topstatus,CELSUB40948,bottomstate,bbm_bottomon,bottomstatus);
+  inout [4:0] tmi;
   output  topon;
   output  bottomon;
   input  topstate;
@@ -16,7 +17,7 @@ endmodule
 module DRIVERwaltz0BOTN (SW,tdo,tmi,MUDV,PMUDG,PMUDV,botswon,CELG59462,CELV96848,botswineg,botswipeak,CELSUB40948,botswstatus,botswzcross,enable_driver,IP_14d08c8e_XU3,IP_a0afb596_XU9,IP_2d447a5c_XU17);
   inout  SW;
   inout  tdo;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   input  MUDV;
   inout  PMUDG;
   input  PMUDV;
@@ -59,7 +60,7 @@ module DRIVERwaltz0TOPN (SW,TAO,tdo,tmi,BSTV,MUDV,MUDHV,PMUDV,PMUDHV,enable,tops
   inout  SW;
   inout  TAO;
   inout  tdo;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   input  BSTV;
   input  MUDV;
   input  MUDHV;
@@ -84,7 +85,7 @@ module DRIVERwaltz (SW, TAO, tdo, tmi, BSTV, MUDV, MUDHV, PMUDG, PMUDV, PMUDHV, 
 inout  SW;
 inout  TAO;
 inout  tdo;
-input [4:0] tmi;
+inout [4:0] tmi;
 input  BSTV;
 input  MUDV;
 input  MUDHV;
@@ -117,6 +118,7 @@ wire [4:0] tmi;
 
 // ------------------------ Networks ---------------------
 DRIVERwaltzBBM XBBM (
+.tmi(tmi[4:0]),
 .topon(net_106),
 .bottomon(net_109),
 .topstate(net_108),

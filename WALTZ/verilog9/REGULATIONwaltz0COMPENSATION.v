@@ -39,21 +39,29 @@ module capacitoradj_739bba44 (CN,CP,CELG,CELV,CELSUB,capacitoradjust);
   input [2:0] capacitoradjust;
 endmodule
 
-//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+//Verilog HDL for "DRM", "drm8" "functional"
 
 
-module PEBBLEtielo ( q, G, SUB, V );
+module drm8 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, drm0, d1, d0 );
 
+  input lastdrm;
   input V;
-  output q;
+  output d1;
+  input  [7:0] id;
+  output d0;
+  input bypload;
+  output  [7:0] drm0;
+  input  [7:0] por0;
   input G;
+  inout  [4:0] tmi;
   input SUB;
 endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltz0COMPENSATION (VC, CELG59462, CELV96848, CELSUB40948, kelvin_MUDG, enable_regulation);
+module REGULATIONwaltz0COMPENSATION (VC, tmi, CELG59462, CELV96848, CELSUB40948, kelvin_MUDG, enable_regulation);
 inout  VC;
+inout [4:0] tmi;
 input  CELG59462;
 input  CELV96848;
 input  CELSUB40948;
@@ -62,8 +70,12 @@ input  enable_regulation;
 
 
 // ------------------------ Wires ------------------------
+wire [4:0] tmi;
 wire [2:0] adjust_resistor;
 wire [2:0] capacitoradjust;
+wire [7:0] id;
+wire [7:0] drm0;
+wire [7:0] por0;
 
 // ------------------------ Networks ---------------------
 resistor_ffe18c73 XU2 (
@@ -72,7 +84,7 @@ resistor_ffe18c73 XU2 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.adjust_resistor(a0[2:0])
+.adjust_resistor({RZCOMP_e99ba28d_2,RZCOMP_e99ba28d_1,RZCOMP_e99ba28d_0})
 );
 
 resistor_5ba04093 XU4 (
@@ -81,7 +93,7 @@ resistor_5ba04093 XU4 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.adjust_resistor(a0[1:0])
+.adjust_resistor({GAINCOMP_2e6ae970_1,GAINCOMP_2e6ae970_0})
 );
 
 switchpulldown_00288888 XU7 (
@@ -111,14 +123,21 @@ capacitoradj_739bba44 XCZCOMP (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.capacitoradjust(a0[2:0])
+.capacitoradjust({CZCOMP_f879cf8e_2,CZCOMP_f879cf8e_1,CZCOMP_f879cf8e_0})
 );
 
-PEBBLEtielo XDRMNOTL (
+drm8 drm_hex0x0B (
 .G(CELG59462),
 .V(CELV96848),
-.q(a0),
-.SUB(CELSUB40948)
+.d0(a0),
+.d1(a1),
+.id({a0,a0,a0,a0,a1,a0,a1,a1}),
+.SUB(CELSUB40948),
+.tmi(tmi[4:0]),
+.drm0({CZCOMP_f879cf8e_2,CZCOMP_f879cf8e_1,CZCOMP_f879cf8e_0,GAINCOMP_2e6ae970_1,GAINCOMP_2e6ae970_0,RZCOMP_e99ba28d_2,RZCOMP_e99ba28d_1,RZCOMP_e99ba28d_0}),
+.por0({a0,a0,a0,a0,a1,a0,a1,a1}),
+.bypload(a0),
+.lastdrm(a0)
 );
 
 endmodule

@@ -1,7 +1,7 @@
 // ------------------------ Module Definitions -----------
 module SEQUENCER1waltz_Rev1_DYES (tdo,tmi,porb,ok_clock,CELG59462,CELV96848,fault_run,ok_driver,ok_service,CELSUB40948,blank_fault,fault_clock,enable_waltz,ok_regulation,done_softstart,fault_shutdown,switch_control,enable_softstart,enable_regulation);
   inout  tdo;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   input  porb;
   input  ok_clock;
   input  CELG59462;
@@ -24,7 +24,7 @@ endmodule
 // ------------------------ Module Verilog ---------------
 module SEQUENCERwaltz (tdo, tmi, porb, ok_clock, CELG59462, CELV96848, fault_run, ok_driver, ok_service, CELSUB40948, blank_fault, fault_clock, enable_waltz, ok_regulation, done_softstart, fault_shutdown, switch_control, enable_softstart, enable_regulation);
 inout  tdo;
-input [4:0] tmi;
+inout [4:0] tmi;
 input  porb;
 input  ok_clock;
 input  CELG59462;
