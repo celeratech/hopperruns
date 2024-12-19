@@ -137,7 +137,7 @@ module thermal_b84c0fbd (IP,ten,CELG,CELBG,SIMPV,CELSUB,fault_thermal,enable_the
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module FAULTMANAGERwaltzMAIN (MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELBG83021, CELSUB40948, blank_fault, fault_short, mode_hiccup, enable_fault, fault_freeze, hijack_delay, blank_thermal, dft_delaySHORT, hijack_short_status, IP_201f84ba_Xthermal1, hijack_thermal_status, hijack_faultmanager_status, trim_thermal_accuracy_201f84ba);
+module FAULTMANAGERwaltzMAIN (MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELBG83021, CELSUB40948, blank_fault, fault_short, mode_hiccup, enable_fault, fault_freeze, hijack_delay, blank_thermal, dft_delaySHORT, hijack_short_status, IP_201f84ba_Xthermal1, hijack_thermal_status, ten_201f84ba_Xthermal1, hijack_faultmanager_status, ten_201f84ba_Xthermal1_7fcbe2c9_XMAIN);
 input  MUDV;
 input  clock;
 input  CELG59462;
@@ -157,12 +157,12 @@ output  dft_delaySHORT;
 input  hijack_short_status;
 input  IP_201f84ba_Xthermal1;
 input  hijack_thermal_status;
+input  ten_201f84ba_Xthermal1;
 input  hijack_faultmanager_status;
-input [2:0] trim_thermal_accuracy_201f84ba;
+input  ten_201f84ba_Xthermal1_7fcbe2c9_XMAIN;
 
 
 // ------------------------ Wires ------------------------
-wire [2:0] trim_thermal_accuracy_201f84ba;
 wire [2:0] trim_thermal_accuracy;
 
 // ------------------------ Networks ---------------------
@@ -353,23 +353,23 @@ dbuf_e926e395 XU44 (
 .CELV(CELV96848)
 );
 
-PEBBLEtielo XtieLo (
+PEBBLEtielo XDRMNOTL (
 .G(CELG59462),
 .V(CELV96848),
-.q(tl0),
+.q(a0),
 .SUB(CELSUB40948)
 );
 
 thermal_b84c0fbd Xthermal1 (
 .IP(IP_201f84ba_Xthermal1),
-.ten(tl0),
+.ten(ten_201f84ba_Xthermal1),
 .CELG(CELG59462),
 .CELBG(CELBG83021),
 .SIMPV(MUDV),
 .CELSUB(CELSUB40948),
 .fault_thermal(net_94),
 .enable_thermal(net_98),
-.trim_thermal_accuracy({trim_thermal_accuracy_201f84ba[2],trim_thermal_accuracy_201f84ba[1],trim_thermal_accuracy_201f84ba[0]})
+.trim_thermal_accuracy({a0,a0,a0})
 );
 
 endmodule

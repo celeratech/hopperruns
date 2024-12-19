@@ -52,7 +52,7 @@ module timingskew_b5de11eb (in,out,CELG,CELV,CELSUB,factory_timingskew);
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module DRIVERwaltzBBM (topon, bottomon, topstate, CELG59462, CELV96848, bbm_topon, topstatus, CELSUB40948, bottomstate, bbm_bottomon, bottomstatus, BBMstatus_5ecfcf89, factory_timingskew_4b0da531, factory_timingskew_f36c7113);
+module DRIVERwaltzBBM (topon, bottomon, topstate, CELG59462, CELV96848, bbm_topon, topstatus, CELSUB40948, bottomstate, bbm_bottomon, bottomstatus);
 output  topon;
 output  bottomon;
 input  topstate;
@@ -64,15 +64,9 @@ input  CELSUB40948;
 input  bottomstate;
 output  bbm_bottomon;
 input  bottomstatus;
-input [1:0] BBMstatus_5ecfcf89;
-input [4:0] factory_timingskew_4b0da531;
-input [4:0] factory_timingskew_f36c7113;
 
 
 // ------------------------ Wires ------------------------
-wire [1:0] BBMstatus_5ecfcf89;
-wire [4:0] factory_timingskew_4b0da531;
-wire [4:0] factory_timingskew_f36c7113;
 wire [4:0] factory_timingskew;
 
 // ------------------------ Networks ---------------------
@@ -152,7 +146,7 @@ dbuf_e926e395 XU16 (
 
 nor2_ee112582 XU21 (
 .o(net_47),
-.i0(BBMstatus_5ecfcf89[1]),
+.i0(net_50),
 .i1(net_83),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -161,7 +155,7 @@ nor2_ee112582 XU21 (
 
 nor2_ee112582 XU22 (
 .o(net_48),
-.i0(BBMstatus_5ecfcf89[0]),
+.i0(net_49),
 .i1(net_87),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -182,7 +176,7 @@ timingskew_d7d32aa0 Xtimingskew1 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.factory_timingskew({factory_timingskew_4b0da531[4],factory_timingskew_4b0da531[3],factory_timingskew_4b0da531[2],factory_timingskew_4b0da531[1],factory_timingskew_4b0da531[0]})
+.factory_timingskew({net_69,net_68,net_67,net_66,net_65})
 );
 
 timingskew_b5de11eb Xtimingskew2 (
@@ -191,7 +185,7 @@ timingskew_b5de11eb Xtimingskew2 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.factory_timingskew({factory_timingskew_f36c7113[4],factory_timingskew_f36c7113[3],factory_timingskew_f36c7113[2],factory_timingskew_f36c7113[1],factory_timingskew_f36c7113[0]})
+.factory_timingskew({net_74,net_73,net_72,net_71,net_70})
 );
 
 endmodule

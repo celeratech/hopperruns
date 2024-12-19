@@ -1,13 +1,10 @@
 // ------------------------ Module Definitions -----------
-module REGULATIONwaltz0COMPENSATION (VC,CELG59462,CELV96848,CELSUB40948,kelvin_MUDG,CZCOMP_f879cf8e,RZCOMP_e99ba28d,GAINCOMP_2e6ae970,enable_regulation);
+module REGULATIONwaltz0COMPENSATION (VC,CELG59462,CELV96848,CELSUB40948,kelvin_MUDG,enable_regulation);
   inout  VC;
   input  CELG59462;
   input  CELV96848;
   input  CELSUB40948;
   inout  kelvin_MUDG;
-  input [2:0] CZCOMP_f879cf8e;
-  input [2:0] RZCOMP_e99ba28d;
-  input [1:0] GAINCOMP_2e6ae970;
   input  enable_regulation;
 endmodule
 
@@ -111,6 +108,18 @@ module gm_6be6af5d (IP,GMO,INN,INP,CELG,INOR,SIMPV,ok_gm,CELSUB,enable_gm,global
   input [6:0] trim_gm_positive;
 endmodule
 
+//Verilog HDL for "PEBBLES", "PEBBLEtiehi" "functional"
+
+
+module PEBBLEtiehi ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 //Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
 
 
@@ -137,7 +146,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltz0MAIN (VC, MUDG, MUDV, REFINT, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, CZCOMP_f879cf8e, IP_4215aede_XU3, IP_866ca25c_XU9, IP_b8eb1a18_XU7, RZCOMP_e99ba28d, IP_5c7dff44_XU10, IP_e44d2b4d_Xgm1, GAINCOMP_2e6ae970, enable_regulation, trim_clamp_b8eb1a18, trim_gm_negative_e44d2b4d, trim_gm_positive_e44d2b4d, trim_vbuffer_negative_866ca25c, trim_vbuffer_positive_866ca25c, factory_hyst_comparator_5c7dff44);
+module REGULATIONwaltz0MAIN (VC, MUDG, MUDV, REFINT, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, IP_4215aede_XU3, IP_866ca25c_XU9, IP_b8eb1a18_XU7, IP_5c7dff44_XU10, IP_e44d2b4d_Xgm1, enable_regulation, global_gm_e44d2b4d_Xgm1, global_clamp_b8eb1a18_XU7, global_vbuffer_866ca25c_XU9, global_comparator_5c7dff44_XU10, global_voltage2current_4215aede_XU3, global_gm_e44d2b4d_Xgm1_10783060_XMAIN, global_clamp_b8eb1a18_XU7_10783060_XMAIN, global_vbuffer_866ca25c_XU9_10783060_XMAIN, global_comparator_5c7dff44_XU10_10783060_XMAIN, global_voltage2current_4215aede_XU3_10783060_XMAIN);
 inout  VC;
 inout  MUDG;
 input  MUDV;
@@ -153,33 +162,25 @@ input  FB_REGULATION;
 output  ok_regulation;
 input  REF_REGULATION;
 input  VSS_REGULATION;
-input [2:0] CZCOMP_f879cf8e;
 input  IP_4215aede_XU3;
 input  IP_866ca25c_XU9;
 input  IP_b8eb1a18_XU7;
-input [2:0] RZCOMP_e99ba28d;
 input  IP_5c7dff44_XU10;
 input  IP_e44d2b4d_Xgm1;
-input [1:0] GAINCOMP_2e6ae970;
 input  enable_regulation;
-input [7:0] trim_clamp_b8eb1a18;
-input [6:0] trim_gm_negative_e44d2b4d;
-input [6:0] trim_gm_positive_e44d2b4d;
-input [6:0] trim_vbuffer_negative_866ca25c;
-input [6:0] trim_vbuffer_positive_866ca25c;
-input [1:0] factory_hyst_comparator_5c7dff44;
+input  global_gm_e44d2b4d_Xgm1;
+input  global_clamp_b8eb1a18_XU7;
+input  global_vbuffer_866ca25c_XU9;
+input  global_comparator_5c7dff44_XU10;
+input  global_voltage2current_4215aede_XU3;
+input  global_gm_e44d2b4d_Xgm1_10783060_XMAIN;
+input  global_clamp_b8eb1a18_XU7_10783060_XMAIN;
+input  global_vbuffer_866ca25c_XU9_10783060_XMAIN;
+input  global_comparator_5c7dff44_XU10_10783060_XMAIN;
+input  global_voltage2current_4215aede_XU3_10783060_XMAIN;
 
 
 // ------------------------ Wires ------------------------
-wire [2:0] CZCOMP_f879cf8e;
-wire [2:0] RZCOMP_e99ba28d;
-wire [1:0] GAINCOMP_2e6ae970;
-wire [7:0] trim_clamp_b8eb1a18;
-wire [6:0] trim_gm_negative_e44d2b4d;
-wire [6:0] trim_gm_positive_e44d2b4d;
-wire [6:0] trim_vbuffer_negative_866ca25c;
-wire [6:0] trim_vbuffer_positive_866ca25c;
-wire [1:0] factory_hyst_comparator_5c7dff44;
 wire [7:0] trim_clamp;
 wire [6:0] trim_vbuffer_negative;
 wire [6:0] trim_vbuffer_positive;
@@ -194,9 +195,6 @@ REGULATIONwaltz0COMPENSATION XCOMPENSATION (
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948),
 .kelvin_MUDG(kelvin_MUDG),
-.CZCOMP_f879cf8e(CZCOMP_f879cf8e[2:0]),
-.RZCOMP_e99ba28d(RZCOMP_e99ba28d[2:0]),
-.GAINCOMP_2e6ae970(GAINCOMP_2e6ae970[1:0]),
 .enable_regulation(enable_regulation)
 );
 
@@ -219,7 +217,7 @@ voltage2current_17279485 XU3 (
 .CELSUB(CELSUB40948),
 .ok_voltage2current(net_104),
 .enable_voltage2current(enable_regulation),
-.global_voltage2current(tl0)
+.global_voltage2current(global_voltage2current_4215aede_XU3)
 );
 
 clamp_57e24cde XU7 (
@@ -230,9 +228,9 @@ clamp_57e24cde XU7 (
 .SIMPV(MUDV),
 .CELREF(CELREF84329),
 .CELSUB(CELSUB40948),
-.trim_clamp({trim_clamp_b8eb1a18[7],trim_clamp_b8eb1a18[6],trim_clamp_b8eb1a18[5],trim_clamp_b8eb1a18[4],trim_clamp_b8eb1a18[3],trim_clamp_b8eb1a18[2],trim_clamp_b8eb1a18[1],trim_clamp_b8eb1a18[0]}),
+.trim_clamp({a0,a0,a0,a0,a0,a0,a0,a0}),
 .enable_clamp(enable_regulation),
-.global_clamp(tl0)
+.global_clamp(global_clamp_b8eb1a18_XU7)
 );
 
 vbuffer_602daa59 XU9 (
@@ -244,9 +242,9 @@ vbuffer_602daa59 XU9 (
 .CELSUB(CELSUB40948),
 .ok_vbuffer(net_94),
 .enable_vbuffer(enable_regulation),
-.global_vbuffer(tl0),
-.trim_vbuffer_negative({trim_vbuffer_negative_866ca25c[6],trim_vbuffer_negative_866ca25c[5],trim_vbuffer_negative_866ca25c[4],trim_vbuffer_negative_866ca25c[3],trim_vbuffer_negative_866ca25c[2],trim_vbuffer_negative_866ca25c[1],trim_vbuffer_negative_866ca25c[0]}),
-.trim_vbuffer_positive({trim_vbuffer_positive_866ca25c[6],trim_vbuffer_positive_866ca25c[5],trim_vbuffer_positive_866ca25c[4],trim_vbuffer_positive_866ca25c[3],trim_vbuffer_positive_866ca25c[2],trim_vbuffer_positive_866ca25c[1],trim_vbuffer_positive_866ca25c[0]})
+.global_vbuffer(global_vbuffer_866ca25c_XU9),
+.trim_vbuffer_negative({a0,a0,a0,a0,a0,a0,a0}),
+.trim_vbuffer_positive({a0,a0,a0,a0,a0,a0,a0})
 );
 
 comparatornoctlpins_1b4420c5 XU10 (
@@ -259,8 +257,8 @@ comparatornoctlpins_1b4420c5 XU10 (
 .INP_COMPARATOR(VC),
 .out_comparator(go_driver),
 .enable_comparator(net_94),
-.global_comparator(tl0),
-.factory_hyst_comparator({factory_hyst_comparator_5c7dff44[1],factory_hyst_comparator_5c7dff44[0]})
+.global_comparator(global_comparator_5c7dff44_XU10),
+.factory_hyst_comparator({a0,a1})
 );
 
 switchideal_c21fcc50 XU11 (
@@ -295,15 +293,22 @@ gm_6be6af5d Xgm1 (
 .ok_gm(net_105),
 .CELSUB(CELSUB40948),
 .enable_gm(enable_regulation),
-.global_gm(tl0),
-.trim_gm_negative({trim_gm_negative_e44d2b4d[6],trim_gm_negative_e44d2b4d[5],trim_gm_negative_e44d2b4d[4],trim_gm_negative_e44d2b4d[3],trim_gm_negative_e44d2b4d[2],trim_gm_negative_e44d2b4d[1],trim_gm_negative_e44d2b4d[0]}),
-.trim_gm_positive({trim_gm_positive_e44d2b4d[6],trim_gm_positive_e44d2b4d[5],trim_gm_positive_e44d2b4d[4],trim_gm_positive_e44d2b4d[3],trim_gm_positive_e44d2b4d[2],trim_gm_positive_e44d2b4d[1],trim_gm_positive_e44d2b4d[0]})
+.global_gm(global_gm_e44d2b4d_Xgm1),
+.trim_gm_negative({a0,a0,a0,a0,a0,a0,a0}),
+.trim_gm_positive({a0,a0,a0,a0,a0,a0,a0})
 );
 
-PEBBLEtielo XtieLo (
+PEBBLEtiehi XDRMNOTH (
 .G(CELG59462),
 .V(CELV96848),
-.q(tl0),
+.q(a1),
+.SUB(CELSUB40948)
+);
+
+PEBBLEtielo XDRMNOTL (
+.G(CELG59462),
+.V(CELV96848),
+.q(a0),
 .SUB(CELSUB40948)
 );
 

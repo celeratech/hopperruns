@@ -126,18 +126,6 @@ module PEBBLEdbuf ( o, G, SUB, V, i );
 endmodule
 
 
-//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
-
-
-module PEBBLEtielo ( q, G, SUB, V );
-
-  input V;
-  output q;
-  input G;
-  input SUB;
-endmodule
-
-
 module oscillatorcrude_f6e6c185 (IP,osc,CELG,SIMPV,CELSUB,SENSE_G,ok_oscillator,enable_oscillator,global_oscillator);
   input  IP;
   output  osc;
@@ -151,7 +139,7 @@ module oscillatorcrude_f6e6c185 (IP,osc,CELG,SIMPV,CELSUB,SENSE_G,ok_oscillator,
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module SOFTSTARTwaltz8MAIN (SS, REF, MUDV, halfway, CELG59462, CELV96848, dft_clock, CELSUB40948, enable_brick, softstart_1ms, done_softstart, SENSE_G_4c0bef8e, enable_softstart, kelvin_MUDGsoftstart, IP_4c0bef8e_Xoscillator1);
+module SOFTSTARTwaltz8MAIN (SS, REF, MUDV, halfway, CELG59462, CELV96848, dft_clock, CELSUB40948, enable_brick, softstart_1ms, done_softstart, SENSE_G_4c0bef8e, enable_softstart, kelvin_MUDGsoftstart, global_dac_0cc08401_XU5, IP_4c0bef8e_Xoscillator1, global_dac_0cc08401_XU5_b48f6491_XMAIN8, global_oscillator_4c0bef8e_Xoscillator1, global_oscillator_4c0bef8e_Xoscillator1_b48f6491_XMAIN8);
 output  SS;
 input  REF;
 input  MUDV;
@@ -166,7 +154,11 @@ output  done_softstart;
 input  SENSE_G_4c0bef8e;
 input  enable_softstart;
 input  kelvin_MUDGsoftstart;
+input  global_dac_0cc08401_XU5;
 input  IP_4c0bef8e_Xoscillator1;
+input  global_dac_0cc08401_XU5_b48f6491_XMAIN8;
+input  global_oscillator_4c0bef8e_Xoscillator1;
+input  global_oscillator_4c0bef8e_Xoscillator1_b48f6491_XMAIN8;
 
 
 // ------------------------ Wires ------------------------
@@ -251,7 +243,7 @@ celeradacr2r_d4e46535 XU5 (
 .ok_dac(net_128),
 .GNDSENSE(kelvin_MUDGsoftstart),
 .enable_dac(enable_softstart),
-.global_dac(tl0),
+.global_dac(global_dac_0cc08401_XU5),
 .strobe_dac(net_124)
 );
 
@@ -377,13 +369,6 @@ PEBBLEdbuf XDBUF1 (
 .SUB(CELSUB40948)
 );
 
-PEBBLEtielo XtieLo (
-.G(CELG59462),
-.V(CELV96848),
-.q(tl0),
-.SUB(CELSUB40948)
-);
-
 oscillatorcrude_f6e6c185 Xoscillator1 (
 .IP(IP_4c0bef8e_Xoscillator1),
 .osc(net_122),
@@ -393,7 +378,7 @@ oscillatorcrude_f6e6c185 Xoscillator1 (
 .SENSE_G(SENSE_G_4c0bef8e),
 .ok_oscillator(net_123),
 .enable_oscillator(enable_softstart),
-.global_oscillator(tl0)
+.global_oscillator(global_oscillator_4c0bef8e_Xoscillator1)
 );
 
 endmodule

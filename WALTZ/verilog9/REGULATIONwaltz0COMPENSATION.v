@@ -40,22 +40,16 @@ module capacitoradj_739bba44 (CN,CP,CELG,CELV,CELSUB,capacitoradjust);
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltz0COMPENSATION (VC, CELG59462, CELV96848, CELSUB40948, kelvin_MUDG, CZCOMP_f879cf8e, RZCOMP_e99ba28d, GAINCOMP_2e6ae970, enable_regulation);
+module REGULATIONwaltz0COMPENSATION (VC, CELG59462, CELV96848, CELSUB40948, kelvin_MUDG, enable_regulation);
 inout  VC;
 input  CELG59462;
 input  CELV96848;
 input  CELSUB40948;
 inout  kelvin_MUDG;
-input [2:0] CZCOMP_f879cf8e;
-input [2:0] RZCOMP_e99ba28d;
-input [1:0] GAINCOMP_2e6ae970;
 input  enable_regulation;
 
 
 // ------------------------ Wires ------------------------
-wire [2:0] CZCOMP_f879cf8e;
-wire [2:0] RZCOMP_e99ba28d;
-wire [1:0] GAINCOMP_2e6ae970;
 wire [2:0] adjust_resistor;
 wire [2:0] capacitoradjust;
 
@@ -66,7 +60,7 @@ resistor_ffe18c73 XU2 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.adjust_resistor({RZCOMP_e99ba28d[2],RZCOMP_e99ba28d[1],RZCOMP_e99ba28d[0]})
+.adjust_resistor({net_35,net_34,net_33})
 );
 
 resistor_5ba04093 XU4 (
@@ -75,7 +69,7 @@ resistor_5ba04093 XU4 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.adjust_resistor({GAINCOMP_2e6ae970[1],GAINCOMP_2e6ae970[0]})
+.adjust_resistor({net_50,net_49})
 );
 
 switchpulldown_00288888 XU7 (
@@ -105,7 +99,7 @@ capacitoradj_739bba44 XCZCOMP (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.capacitoradjust({CZCOMP_f879cf8e[2],CZCOMP_f879cf8e[1],CZCOMP_f879cf8e[0]})
+.capacitoradjust({net_70,net_69,net_68})
 );
 
 endmodule
