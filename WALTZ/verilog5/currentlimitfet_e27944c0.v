@@ -284,6 +284,7 @@ noconn_adjdelay1)
 STONEadjdelay1ns5bits Xadjdelay(
 .CELV (CELPOS),
 .adj_delay ({o4,o3,o2,o1,o0}),
+.a ({noconn_adjdelay1,hva0}),
 .i (enmeasure_currentlimit),
 .o (measure_delay),
 .SUB (CELSUB),

@@ -6,7 +6,7 @@
 //VDS RATING:6V
 
 //Celera Confidential Do Not Copy PMOS Signal
-module pch5i2_5t_1p0x2p3x1x1 (DRAIN,GATE,SOURCE,BULK,SUB);
+module pch5i2_5t_1p0x3p4x1x1 (DRAIN,GATE,SOURCE,BULK,SUB);
   input GATE;
   input BULK;
   input SUB;
@@ -26,15 +26,15 @@ inout SOURCE;
 inout DRAIN;
 input CELSUB;
 
-//Celera Confidential Do Not Copy pch5i2_5t_1p0x2p3x1x1
-pch5i2_5t_1p0x2p3x1x1 pin(
+//Celera Confidential Do Not Copy pch5i2_5t_1p0x3p4x1x1
+pch5i2_5t_1p0x3p4x1x1 pin(
 .GATE (GATE),
 .BULK (PMOSiso6),
 .SUB (CELSUB),
 .SOURCE (SOURCE),
 .DRAIN (DRAIN)
 );
-//,diesize,pch5i2_5t_1p0x2p3x1x1
+//,diesize,pch5i2_5t_1p0x3p4x1x1
 
 //Celera Confidential Do Not Copy Module End
 //Celera Schematic Generator

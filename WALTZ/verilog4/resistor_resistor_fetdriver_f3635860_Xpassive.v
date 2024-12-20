@@ -1,7 +1,7 @@
 // Celera Brick Generator Confidential
 //CORE:resistor
 //NAME:resistor_resistor_fetdriver_f3635860_Xpassive
-//GENERATOR CODE REVISION:0.4.3
+//GENERATOR CODE REVISION:0.4.5
 //VALUE:1000.00Kohms
 //Imax:0.100mA
 //TYPE:tbd

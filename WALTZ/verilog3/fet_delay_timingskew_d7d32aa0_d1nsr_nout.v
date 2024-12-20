@@ -6,7 +6,7 @@
 //VDS RATING:6V
 
 //Celera Confidential Do Not Copy NMOS Signal
-module nch5i2_6t_1p0x14p0x1x1 (DRAIN,GATE,SOURCE,BULK,ISO,SUB);
+module nch5i2_6t_1p0x7p3x1x1 (DRAIN,GATE,SOURCE,BULK,ISO,SUB);
   input GATE;
   input BULK;
   input SUB;
@@ -27,8 +27,8 @@ inout SOURCE;
 inout DRAIN;
 input CELSUB;
 
-//Celera Confidential Do Not Copy nch5i2_6t_1p0x14p0x1x1
-nch5i2_6t_1p0x14p0x1x1 nout(
+//Celera Confidential Do Not Copy nch5i2_6t_1p0x7p3x1x1
+nch5i2_6t_1p0x7p3x1x1 nout(
 .GATE (GATE),
 .ISO (NMOSiso6),
 .SUB (CELSUB),
@@ -36,7 +36,7 @@ nch5i2_6t_1p0x14p0x1x1 nout(
 .DRAIN (DRAIN),
 .BULK (SOURCE)
 );
-//,diesize,nch5i2_6t_1p0x14p0x1x1
+//,diesize,nch5i2_6t_1p0x7p3x1x1
 
 //Celera Confidential Do Not Copy Module End
 //Celera Schematic Generator
