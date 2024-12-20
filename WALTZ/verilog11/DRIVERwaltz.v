@@ -1,5 +1,6 @@
 // ------------------------ Module Definitions -----------
-module DRIVERwaltzBBM (topon,bottomon,topstate,CELG59462,CELV96848,bbm_topon,topstatus,CELSUB40948,bottomstate,bbm_bottomon,bottomstatus);
+module DRIVERwaltzBBM (tmi,topon,bottomon,topstate,CELG59462,CELV96848,bbm_topon,topstatus,CELSUB40948,bottomstate,bbm_bottomon,bottomstatus);
+  inout [4:0] tmi;
   output  topon;
   output  bottomon;
   input  topstate;
@@ -13,8 +14,10 @@ module DRIVERwaltzBBM (topon,bottomon,topstate,CELG59462,CELV96848,bbm_topon,top
   input  bottomstatus;
 endmodule
 
-module DRIVERwaltz0BOTN (SW,MUDV,PMUDG,PMUDV,botswon,CELG59462,CELV96848,botswineg,botswipeak,CELSUB40948,botswstatus,botswzcross,enable_driver,IP_14d08c8e_XU3,IP_a0afb596_XU9,IP_2d447a5c_XU17);
+module DRIVERwaltz0BOTN (SW,tdo,tmi,MUDV,PMUDG,PMUDV,botswon,CELG59462,CELV96848,botswineg,botswipeak,CELSUB40948,botswstatus,botswzcross,enable_driver,IP_14d08c8e_XU3,IP_a0afb596_XU9,IP_2d447a5c_XU17);
   inout  SW;
+  inout  tdo;
+  inout [4:0] tmi;
   input  MUDV;
   inout  PMUDG;
   input  PMUDV;
@@ -32,7 +35,9 @@ module DRIVERwaltz0BOTN (SW,MUDV,PMUDG,PMUDV,botswon,CELG59462,CELV96848,botswin
   input  IP_2d447a5c_XU17;
 endmodule
 
-module DRIVERwaltz0DEBUG (botstate,topstate,CELG59462,CELV96848,botswineg,ok_driver,botswipeak,topswipeak,CELSUB40948,botswstatus,botswzcross,topswstatus,enable_driver,hijack_botstate,hijack_topstate,hijack_enable_driver);
+module DRIVERwaltz0DEBUG (tdo,tmi,botstate,topstate,CELG59462,CELV96848,botswineg,ok_driver,botswipeak,topswipeak,CELSUB40948,botswstatus,botswzcross,topswstatus,enable_driver,hijack_botstate,hijack_topstate,hijack_enable_driver);
+  inout  tdo;
+  input [4:0] tmi;
   input  botstate;
   input  topstate;
   input  CELG59462;
@@ -51,8 +56,11 @@ module DRIVERwaltz0DEBUG (botstate,topstate,CELG59462,CELV96848,botswineg,ok_dri
   output  hijack_enable_driver;
 endmodule
 
-module DRIVERwaltz0TOPN (SW,BSTV,MUDV,MUDHV,PMUDV,PMUDHV,enable,topswon,CELG59462,CELV96848,ok_driver,topswipeak,CELSUB40948,IREF_DRIVER,botswstatus,topswstatus,ISLOPE_DRIVER,IP_f4252e65_XU22);
+module DRIVERwaltz0TOPN (SW,TAO,tdo,tmi,BSTV,MUDV,MUDHV,PMUDV,PMUDHV,enable,topswon,CELG59462,CELV96848,ok_driver,topswipeak,CELSUB40948,IREF_DRIVER,botswstatus,topswstatus,ISLOPE_DRIVER,IP_f4252e65_XU22);
   inout  SW;
+  inout  TAO;
+  inout  tdo;
+  inout [4:0] tmi;
   input  BSTV;
   input  MUDV;
   input  MUDHV;
@@ -73,8 +81,11 @@ module DRIVERwaltz0TOPN (SW,BSTV,MUDV,MUDHV,PMUDV,PMUDHV,enable,topswon,CELG5946
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module DRIVERwaltz (SW, BSTV, MUDV, MUDHV, PMUDG, PMUDV, PMUDHV, botstate, topstate, CELG59462, CELV96848, bbm_topon, botswineg, ok_driver, botswipeak, topswipeak, CELSUB40948, IREF_DRIVER, botswzcross, bbm_bottomon, ISLOPE_DRIVER, enable_driver, IP_14d08c8e_XU3, IP_a0afb596_XU9, IP_2d447a5c_XU17, IP_f4252e65_XU22);
+module DRIVERwaltz (SW, TAO, tdo, tmi, BSTV, MUDV, MUDHV, PMUDG, PMUDV, PMUDHV, botstate, topstate, CELG59462, CELV96848, bbm_topon, botswineg, ok_driver, botswipeak, topswipeak, CELSUB40948, IREF_DRIVER, botswzcross, bbm_bottomon, ISLOPE_DRIVER, enable_driver, IP_14d08c8e_XU3, IP_a0afb596_XU9, IP_2d447a5c_XU17, IP_f4252e65_XU22);
 inout  SW;
+inout  TAO;
+inout  tdo;
+inout [4:0] tmi;
 input  BSTV;
 input  MUDV;
 input  MUDHV;
@@ -103,9 +114,11 @@ input  IP_f4252e65_XU22;
 
 
 // ------------------------ Wires ------------------------
+wire [4:0] tmi;
 
 // ------------------------ Networks ---------------------
 DRIVERwaltzBBM XBBM (
+.tmi(tmi[4:0]),
 .topon(net_106),
 .bottomon(net_109),
 .topstate(net_108),
@@ -121,6 +134,8 @@ DRIVERwaltzBBM XBBM (
 
 DRIVERwaltz0BOTN XBOTSW (
 .SW(SW),
+.tdo(tdo),
+.tmi(tmi[4:0]),
 .MUDV(MUDV),
 .PMUDG(PMUDG),
 .PMUDV(PMUDV),
@@ -139,6 +154,8 @@ DRIVERwaltz0BOTN XBOTSW (
 );
 
 DRIVERwaltz0DEBUG XDEBUG (
+.tdo(tdo),
+.tmi(tmi[4:0]),
 .botstate(botstate),
 .topstate(topstate),
 .CELG59462(CELG59462),
@@ -159,6 +176,9 @@ DRIVERwaltz0DEBUG XDEBUG (
 
 DRIVERwaltz0TOPN XTOPSW (
 .SW(SW),
+.TAO(TAO),
+.tdo(tdo),
+.tmi(tmi[4:0]),
 .BSTV(BSTV),
 .MUDV(MUDV),
 .MUDHV(MUDHV),

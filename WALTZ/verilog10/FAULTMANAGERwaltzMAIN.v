@@ -112,18 +112,6 @@ module nand2_9125fe87 (o,i0,i1,SUB,CELG,CELV);
   input  CELV;
 endmodule
 
-//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
-
-
-module PEBBLEtielo ( q, G, SUB, V );
-
-  input V;
-  output q;
-  input G;
-  input SUB;
-endmodule
-
-
 module thermal_b84c0fbd (IP,ten,CELG,CELBG,SIMPV,CELSUB,fault_thermal,enable_thermal,trim_thermal_accuracy);
   input  IP;
   input  ten;
@@ -136,8 +124,51 @@ module thermal_b84c0fbd (IP,ten,CELG,CELBG,SIMPV,CELSUB,fault_thermal,enable_the
   input [2:0] trim_thermal_accuracy;
 endmodule
 
+//Verilog HDL for "DFT", "DFTtm8t" "functional"
+
+
+module DFTtm8t ( a, ten, tmi, G, SUB, V, tma );
+
+  input V;
+  input  [7:0] tma;
+  output  [7:0] ten;
+  output  [1:0] a;
+  input G;
+  input SUB;
+  inout  [4:0] tmi;
+endmodule
+
+
+//Verilog HDL for "DRM", "drm8L" "functional"
+
+
+module drm8L ( V, G, SUB, tmi, bypload, lastdrm, id, drm0, d1, d0 );
+
+  input lastdrm;
+  input V;
+  output d1;
+  input  [7:0] id;
+  output d0;
+  input bypload;
+  output  [7:0] drm0;
+  input G;
+  inout  [4:0] tmi;
+  input SUB;
+endmodule
+
+
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module FAULTMANAGERwaltzMAIN (MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELBG83021, CELSUB40948, blank_fault, fault_short, mode_hiccup, enable_fault, fault_freeze, hijack_delay, blank_thermal, dft_delaySHORT, hijack_short_status, IP_201f84ba_Xthermal1, hijack_thermal_status, hijack_faultmanager_status);
+module FAULTMANAGERwaltzMAIN (tmi, MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELBG83021, CELSUB40948, blank_fault, fault_short, mode_hiccup, enable_fault, fault_freeze, hijack_delay, blank_thermal, dft_delaySHORT, hijack_short_status, IP_201f84ba_Xthermal1, hijack_thermal_status, hijack_faultmanager_status);
+inout [4:0] tmi;
 input  MUDV;
 input  clock;
 input  CELG59462;
@@ -161,7 +192,13 @@ input  hijack_faultmanager_status;
 
 
 // ------------------------ Wires ------------------------
+wire [4:0] tmi;
 wire [2:0] trim_thermal_accuracy;
+wire [1:0] a;
+wire [7:0] ten;
+wire [7:0] tma;
+wire [7:0] id;
+wire [7:0] drm0;
 
 // ------------------------ Networks ---------------------
 VESPAfaultmanagerINTERNALdebug XU14 (
@@ -351,30 +388,87 @@ dbuf_e926e395 XU44 (
 .CELV(CELV96848)
 );
 
-PEBBLEtielo XtieLo (
-.G(CELG59462),
-.V(CELV96848),
-.q(tl0),
-.SUB(CELSUB40948)
-);
-
-PEBBLEtielo XDRMNOTL (
-.G(CELG59462),
-.V(CELV96848),
-.q(a0),
-.SUB(CELSUB40948)
-);
-
 thermal_b84c0fbd Xthermal1 (
 .IP(IP_201f84ba_Xthermal1),
-.ten(tl0),
+.ten(ten_201f84ba_Xthermal1),
 .CELG(CELG59462),
 .CELBG(CELBG83021),
 .SIMPV(MUDV),
 .CELSUB(CELSUB40948),
 .fault_thermal(net_94),
 .enable_thermal(net_98),
-.trim_thermal_accuracy({a0,a0,a0})
+.trim_thermal_accuracy({trim_thermal_accuracy_201f84ba_2,trim_thermal_accuracy_201f84ba_1,trim_thermal_accuracy_201f84ba_0})
+);
+
+DFTtm8t dft_hex0x0D (
+.G(CELG59462),
+.V(CELV96848),
+.a({a1,a0}),
+.SUB(CELSUB40948),
+.ten({noconn_dft_hex0x0D_ten_7,noconn_dft_hex0x0D_ten_6,noconn_dft_hex0x0D_ten_5,noconn_dft_hex0x0D_ten_4,noconn_dft_hex0x0D_ten_3,noconn_dft_hex0x0D_ten_2,noconn_dft_hex0x0D_ten_1,ten_201f84ba_Xthermal1}),
+.tma({a0,a0,a0,a0,a1,a1,a0,a1}),
+.tmi(tmi[4:0])
+);
+
+drm8L drm_hex0x08 (
+.G(CELG59462),
+.V(CELV96848),
+.d0(c0),
+.d1(c1),
+.id({c0,c0,c0,c0,c1,c0,c0,c0}),
+.SUB(CELSUB40948),
+.tmi(tmi[4:0]),
+.drm0({noconn_drm8L_drm0_7,noconn_drm8L_drm0_6,noconn_drm8L_drm0_5,noconn_drm8L_drm0_4,noconn_drm8L_drm0_3,trim_thermal_accuracy_201f84ba_2,trim_thermal_accuracy_201f84ba_1,trim_thermal_accuracy_201f84ba_0}),
+.bypload(c0),
+.lastdrm(c0)
+);
+
+STONEnoconn XNCnoconn_drm8L_drm0_3 (
+.noconn(noconn_drm8L_drm0_3)
+);
+
+STONEnoconn XNCnoconn_drm8L_drm0_4 (
+.noconn(noconn_drm8L_drm0_4)
+);
+
+STONEnoconn XNCnoconn_drm8L_drm0_5 (
+.noconn(noconn_drm8L_drm0_5)
+);
+
+STONEnoconn XNCnoconn_drm8L_drm0_6 (
+.noconn(noconn_drm8L_drm0_6)
+);
+
+STONEnoconn XNCnoconn_drm8L_drm0_7 (
+.noconn(noconn_drm8L_drm0_7)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x0D_ten_1 (
+.noconn(noconn_dft_hex0x0D_ten_1)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x0D_ten_2 (
+.noconn(noconn_dft_hex0x0D_ten_2)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x0D_ten_3 (
+.noconn(noconn_dft_hex0x0D_ten_3)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x0D_ten_4 (
+.noconn(noconn_dft_hex0x0D_ten_4)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x0D_ten_5 (
+.noconn(noconn_dft_hex0x0D_ten_5)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x0D_ten_6 (
+.noconn(noconn_dft_hex0x0D_ten_6)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x0D_ten_7 (
+.noconn(noconn_dft_hex0x0D_ten_7)
 );
 
 endmodule

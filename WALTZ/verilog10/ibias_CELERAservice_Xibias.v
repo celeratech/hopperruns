@@ -4,8 +4,8 @@
 //GENERATOR REVISION:0.5.1
 //OUTPUTS:16
 //VMAX:6V
-//DFT:no
-//ACCURACY:no
+//DFT:yes
+//ACCURACY:yes
 
 //Celera Confidential Do Not Copy STONEibiasCONTROL
 //Verilog HDL for "Generate", "STONEibiasCONTROL" "functional"
@@ -41,8 +41,48 @@ module STONEibiasOUT ( IPO0, IPO1, IPO2, CELV, GATE, SUB );
   input SUB;
 endmodule
 
+//Celera Confidential Do Not Copy STONEibiasDFT
+//Verilog HDL for "Generate", "STONEibiasDFT" "functional"
+
+
+module STONEibiasDFT ( TAI_IBIAS, CELG, CELV, GATE, SUB, ten_ibias );
+
+  input CELV;
+  input ten_ibias;
+  output TAI_IBIAS;
+  input GATE;
+  input SUB;
+  input CELG;
+endmodule
+
+//Celera Confidential Do Not Copy STONEibiasTRIM
+//Verilog HDL for "Generate", "STONEibiasTRIM" "functional"
+
+
+module STONEibiasTRIM ( RN0, RN1, RN2, RN3, RN4, CELG, CELV, SENSE_G, SUB, trim_ibias
+);
+
+  input SENSE_G;
+  input CELV;
+  inout RN3;
+  inout RN4;
+  inout RN1;
+  inout RN0;
+  input  [4:0] trim_ibias;
+  input SUB;
+  input CELG;
+  inout RN2;
+endmodule
+
 //Celera Confidential Do Not Copy R(IBIAS)
-module rlpp3000rpo25p4u2p0u (ISO,RP,RN);
+module rlpp3000rpo24p8u0p5u (ISO,RP,RN);
+input ISO;
+inout RP;
+inout RN;
+endmodule
+
+//Celera Confidential Do Not Copy R(IBIAS)
+module rlpp3000rpo10p2u0p4u (ISO,RP,RN);
 input ISO;
 inout RP;
 inout RN;
@@ -59,9 +99,9 @@ endmodule
 
 //Celera Confidential Do Not Copy ibias_CELERAservice_Xibias
 //Celera Confidential Symbol Generator
-//OUTPUTS:16 VMAX:6V DFT:no ACCURACY:no
+//OUTPUTS:16 VMAX:6V DFT:yes ACCURACY:yes
 module ibias_CELERAservice_Xibias (CELV,enable_ibias,global_celeraibias,SENSE_G,ok_ibias,IPO,
-CELBG,CELG,CELSUB);
+ten_ibias,TAI_IBIAS,trim_ibias,CELBG,CELG,CELSUB);
 input CELV;
 input enable_ibias;
 input global_celeraibias;
@@ -69,9 +109,21 @@ output ok_ibias;
 input SENSE_G;
 input CELBG;
 output [15:0] IPO;
+input ten_ibias;
+output TAI_IBIAS;
+input [4:0] trim_ibias;
 input CELG;
 input CELSUB;
 
+//Celera Confidential Do Not Copy Pin trim_ibias
+wire[4:0] trim_ibias;
+
+//Celera Confidential Do Not Copy STONEnoconn
+STONEnoconn Xnoconn0(
+.noconn (
+noconn_a0)
+);
+//,diesize,STONEnoconn
 //Celera Confidential Do Not Copy STONEibiasCONTROL
 STONEibiasCONTROL Xcontrol(
 .CELV (CELV),
@@ -79,14 +131,38 @@ STONEibiasCONTROL Xcontrol(
 .GATE (GATE),
 .RP (RP),
 .enable_ibias (enable_ibias),
-.a0 (a0),
-.ten_ibias (a0),
+.a0 (noconn_a0),
+.ten_ibias (ten_ibias),
 .ten (global_celeraibias),
 .ok_ibias (ok_ibias),
 .CELG (CELG),
 .SUB (CELSUB)
 );
 //,diesize,STONEibiasCONTROL
+//Celera Confidential Do Not Copy STONEibiasDFT
+STONEibiasDFT Xdft(
+.CELV (CELV),
+.GATE (GATE),
+.ten_ibias (ten_ibias),
+.TAI_IBIAS (TAI_IBIAS),
+.CELG (CELG),
+.SUB (CELSUB)
+);
+//,diesize,STONEibiasDFT
+//Celera Confidential Do Not Copy STONEibiasTRIM
+STONEibiasTRIM Xtrim(
+.CELV (CELV),
+.SENSE_G (SENSE_G),
+.trim_ibias (trim_ibias [4:0]),
+.RN4 (RN4),
+.RN3 (RN3),
+.RN2 (RN2),
+.RN1 (RN1),
+.RN0 (RN0),
+.CELG (CELG),
+.SUB (CELSUB)
+);
+//,diesize,STONEibiasTRIM
 //Celera Confidential Do Not Copy STONEibiasOUT
 STONEibiasOUT Xout0(
 .CELV (CELV),
@@ -138,13 +214,13 @@ STONEibiasOUT Xout4(
 );
 //,diesize,STONEibiasOUT
 //Celera Confidential Do Not Copy STONEnoconn
-STONEnoconn Xnoconn0(
+STONEnoconn Xnoconn2(
 .noconn (
 NOCONN_IPO1)
 );
 //,diesize,STONEnoconn
 //Celera Confidential Do Not Copy STONEnoconn
-STONEnoconn Xnoconn1(
+STONEnoconn Xnoconn3(
 .noconn (
 NOCONN_IPO2)
 );
@@ -160,146 +236,131 @@ STONEibiasOUT Xout5(
 );
 //,diesize,STONEibiasOUT
 //Celera Confidential Do Not Copy RIBIAS
-rlpp3000rpo25p4u2p0u XRIBIAS_0(
+rlpp3000rpo24p8u0p5u XRIBIAS_0(
 .RP (RP),
-.RN (RPSENSE_G_1),
+.RN (RPRN4_1),
 .ISO (CELG)
 );
-rlpp3000rpo25p4u2p0u XRIBIAS_1(
-.RP (RPSENSE_G_1),
-.RN (RPSENSE_G_2),
+rlpp3000rpo24p8u0p5u XRIBIAS_1(
+.RP (RPRN4_1),
+.RN (RPRN4_2),
 .ISO (CELG)
 );
-rlpp3000rpo25p4u2p0u XRIBIAS_2(
-.RP (RPSENSE_G_2),
-.RN (RPSENSE_G_3),
+rlpp3000rpo24p8u0p5u XRIBIAS_2(
+.RP (RPRN4_2),
+.RN (RPRN4_3),
 .ISO (CELG)
 );
-rlpp3000rpo25p4u2p0u XRIBIAS_3(
-.RP (RPSENSE_G_3),
-.RN (RPSENSE_G_4),
+rlpp3000rpo24p8u0p5u XRIBIAS_3(
+.RP (RPRN4_3),
+.RN (RN4),
 .ISO (CELG)
 );
-rlpp3000rpo25p4u2p0u XRIBIAS_4(
-.RP (RPSENSE_G_4),
-.RN (RPSENSE_G_5),
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo24p8u0p5u
+
+//Die Size Calculator rlpp3000rpo24p8u0p5u
+//,diesize,rlpp3000rpo24p8u0p5u,4
+
+//Celera Confidential Do Not Copy RN4
+rlpp3000rpo10p2u0p4u XRN4_0(
+.RP (RN4),
+.RN (RN4RN3_1),
 .ISO (CELG)
 );
-rlpp3000rpo25p4u2p0u XRIBIAS_5(
-.RP (RPSENSE_G_5),
-.RN (RPSENSE_G_6),
+rlpp3000rpo10p2u0p4u XRN4_1(
+.RP (RN4RN3_1),
+.RN (RN4RN3_2),
 .ISO (CELG)
 );
-rlpp3000rpo25p4u2p0u XRIBIAS_6(
-.RP (RPSENSE_G_6),
-.RN (RPSENSE_G_7),
+rlpp3000rpo10p2u0p4u XRN4_2(
+.RP (RN4RN3_2),
+.RN (RN4RN3_3),
 .ISO (CELG)
 );
-rlpp3000rpo25p4u2p0u XRIBIAS_7(
-.RP (RPSENSE_G_7),
-.RN (RPSENSE_G_8),
+rlpp3000rpo10p2u0p4u XRN4_3(
+.RP (RN4RN3_3),
+.RN (RN3),
 .ISO (CELG)
 );
-rlpp3000rpo25p4u2p0u XRIBIAS_8(
-.RP (RPSENSE_G_8),
-.RN (RPSENSE_G_9),
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo10p2u0p4u
+
+//Die Size Calculator rlpp3000rpo10p2u0p4u
+//,diesize,rlpp3000rpo10p2u0p4u,4
+
+//Celera Confidential Do Not Copy RN3
+rlpp3000rpo10p2u0p4u XRN3_0(
+.RP (RN3),
+.RN (RN3RN2_1),
 .ISO (CELG)
 );
-rlpp3000rpo25p4u2p0u XRIBIAS_9(
-.RP (RPSENSE_G_9),
-.RN (RPSENSE_G_10),
+rlpp3000rpo10p2u0p4u XRN3_1(
+.RP (RN3RN2_1),
+.RN (RN2),
 .ISO (CELG)
 );
-rlpp3000rpo25p4u2p0u XRIBIAS_10(
-.RP (RPSENSE_G_10),
-.RN (RPSENSE_G_11),
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo10p2u0p4u
+
+//Die Size Calculator rlpp3000rpo10p2u0p4u
+//,diesize,rlpp3000rpo10p2u0p4u,2
+
+//Celera Confidential Do Not Copy RN2
+rlpp3000rpo10p2u0p4u XRN2_0(
+.RP (RN2),
+.RN (RN1),
 .ISO (CELG)
 );
-rlpp3000rpo25p4u2p0u XRIBIAS_11(
-.RP (RPSENSE_G_11),
-.RN (RPSENSE_G_12),
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo10p2u0p4u
+
+//Die Size Calculator rlpp3000rpo10p2u0p4u
+//,diesize,rlpp3000rpo10p2u0p4u,1
+
+//Celera Confidential Do Not Copy RN1
+rlpp3000rpo10p2u0p4u XRN1_0(
+.RP (RN1),
+.RN (RN0),
 .ISO (CELG)
 );
-rlpp3000rpo25p4u2p0u XRIBIAS_12(
-.RP (RPSENSE_G_12),
-.RN (RPSENSE_G_13),
+rlpp3000rpo10p2u0p4u XRN1_1(
+.RP (RN1),
+.RN (RN0),
 .ISO (CELG)
 );
-rlpp3000rpo25p4u2p0u XRIBIAS_13(
-.RP (RPSENSE_G_13),
-.RN (RPSENSE_G_14),
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo10p2u0p4u
+
+//Die Size Calculator rlpp3000rpo10p2u0p4u
+//,diesize,rlpp3000rpo10p2u0p4u,2
+
+//Celera Confidential Do Not Copy RN0
+rlpp3000rpo10p2u0p4u XRN0_0(
+.RP (RN0),
+.RN (SENSE_G),
 .ISO (CELG)
 );
-rlpp3000rpo25p4u2p0u XRIBIAS_14(
-.RP (RPSENSE_G_14),
-.RN (RPSENSE_G_15),
+rlpp3000rpo10p2u0p4u XRN0_1(
+.RP (RN0),
+.RN (SENSE_G),
 .ISO (CELG)
 );
-rlpp3000rpo25p4u2p0u XRIBIAS_15(
-.RP (RPSENSE_G_15),
-.RN (RPSENSE_G_16),
+rlpp3000rpo10p2u0p4u XRN0_2(
+.RP (RN0),
+.RN (SENSE_G),
 .ISO (CELG)
 );
-rlpp3000rpo25p4u2p0u XRIBIAS_16(
-.RP (RPSENSE_G_16),
-.RN (RPSENSE_G_17),
-.ISO (CELG)
-);
-rlpp3000rpo25p4u2p0u XRIBIAS_17(
-.RP (RPSENSE_G_17),
-.RN (RPSENSE_G_18),
-.ISO (CELG)
-);
-rlpp3000rpo25p4u2p0u XRIBIAS_18(
-.RP (RPSENSE_G_18),
-.RN (RPSENSE_G_19),
-.ISO (CELG)
-);
-rlpp3000rpo25p4u2p0u XRIBIAS_19(
-.RP (RPSENSE_G_19),
-.RN (RPSENSE_G_20),
-.ISO (CELG)
-);
-rlpp3000rpo25p4u2p0u XRIBIAS_20(
-.RP (RPSENSE_G_20),
-.RN (RPSENSE_G_21),
-.ISO (CELG)
-);
-rlpp3000rpo25p4u2p0u XRIBIAS_21(
-.RP (RPSENSE_G_21),
-.RN (RPSENSE_G_22),
-.ISO (CELG)
-);
-rlpp3000rpo25p4u2p0u XRIBIAS_22(
-.RP (RPSENSE_G_22),
-.RN (RPSENSE_G_23),
-.ISO (CELG)
-);
-rlpp3000rpo25p4u2p0u XRIBIAS_23(
-.RP (RPSENSE_G_23),
-.RN (RPSENSE_G_24),
-.ISO (CELG)
-);
-rlpp3000rpo25p4u2p0u XRIBIAS_24(
-.RP (RPSENSE_G_24),
-.RN (RPSENSE_G_25),
-.ISO (CELG)
-);
-rlpp3000rpo25p4u2p0u XRIBIAS_25(
-.RP (RPSENSE_G_25),
-.RN (RPSENSE_G_26),
-.ISO (CELG)
-);
-rlpp3000rpo25p4u2p0u XRIBIAS_26(
-.RP (RPSENSE_G_26),
+rlpp3000rpo10p2u0p4u XRN0_3(
+.RP (RN0),
 .RN (SENSE_G),
 .ISO (CELG)
 );
 
-//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo25p4u2p0u
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo10p2u0p4u
 
-//Die Size Calculator rlpp3000rpo25p4u2p0u
-//,diesize,rlpp3000rpo25p4u2p0u,27
+//Die Size Calculator rlpp3000rpo10p2u0p4u
+//,diesize,rlpp3000rpo10p2u0p4u,4
 
 //Celera Confidential Do Not Copy Module End
 //Celera Schematic Generator
