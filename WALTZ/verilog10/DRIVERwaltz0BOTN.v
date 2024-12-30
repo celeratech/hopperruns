@@ -86,6 +86,18 @@ module STONEnoconn ( noconn );
 endmodule
 
 
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 module fetdriver_e53ed485 (CELG,CELV,GATE,HVNEG,HVPOS,fetin,CELSUB,gate_status,gate_status_vin,enable_fetdriver,global_fetdriver);
   input  CELG;
   input  CELV;
@@ -117,32 +129,11 @@ module DFTtm8d ( a, ten, tdo, tmi, G, SUB, V, tdi, tma );
 endmodule
 
 
-//Verilog HDL for "DRM", "drm24L" "functional"
-
-
-module drm24L ( V, G, SUB, tmi, bypload, lastdrm, id, drm0, drm1, drm2, d1,
-d0 );
-
-  input lastdrm;
-  input V;
-  output d1;
-  input  [7:0] id;
-  output d0;
-  output  [7:0] drm2;
-  input bypload;
-  output  [7:0] drm0;
-  input G;
-  output  [7:0] drm1;
-  inout  [4:0] tmi;
-  input SUB;
-endmodule
-
-
 // ------------------------ Module Verilog ---------------
 module DRIVERwaltz0BOTN (SW, tdo, tmi, MUDV, PMUDG, PMUDV, botswon, CELG59462, CELV96848, botswineg, botswipeak, CELSUB40948, botswstatus, botswzcross, enable_driver, IP_14d08c8e_XU3, IP_a0afb596_XU9, IP_2d447a5c_XU17);
 inout  SW;
 inout  tdo;
-inout [4:0] tmi;
+input [4:0] tmi;
 input  MUDV;
 inout  PMUDG;
 input  PMUDV;
@@ -167,10 +158,6 @@ wire [1:0] a;
 wire [7:0] tdi;
 wire [7:0] ten;
 wire [7:0] tma;
-wire [7:0] id;
-wire [7:0] drm0;
-wire [7:0] drm1;
-wire [7:0] drm2;
 
 // ------------------------ Networks ---------------------
 currentlimitfet_bdeab8a2 XU3 (
@@ -181,7 +168,7 @@ currentlimitfet_bdeab8a2 XU3 (
 .VSENSE(net_105),
 .IREPLICA(net_100),
 .currentlimit_lv(botswzcross),
-.trim_currentlimit({trim_currentlimit_14d08c8e_7,trim_currentlimit_14d08c8e_6,trim_currentlimit_14d08c8e_5,trim_currentlimit_14d08c8e_4,trim_currentlimit_14d08c8e_3,trim_currentlimit_14d08c8e_2,trim_currentlimit_14d08c8e_1,trim_currentlimit_14d08c8e_0}),
+.trim_currentlimit({c0,c0,c0,c0,c0,c0,c0,c0}),
 .enable_currentlimit(enable_driver),
 .global_currentlimit(global_currentlimit_14d08c8e_XU3),
 .measure_currentlimit(botswstatus),
@@ -207,7 +194,7 @@ currentlimitfet_2899e616 XU9 (
 .VSENSE(net_106),
 .IREPLICA(net_101),
 .currentlimit_lv(botswipeak),
-.trim_currentlimit({trim_currentlimit_a0afb596_7,trim_currentlimit_a0afb596_6,trim_currentlimit_a0afb596_5,trim_currentlimit_a0afb596_4,trim_currentlimit_a0afb596_3,trim_currentlimit_a0afb596_2,trim_currentlimit_a0afb596_1,trim_currentlimit_a0afb596_0}),
+.trim_currentlimit({c0,c0,c0,c0,c0,c0,c0,c0}),
 .enable_currentlimit(enable_driver),
 .global_currentlimit(global_currentlimit_a0afb596_XU9),
 .measure_currentlimit(botswstatus),
@@ -243,7 +230,7 @@ currentlimitfet_282c42a8 XU17 (
 .VSENSE(net_107),
 .IREPLICA(net_102),
 .currentlimit_lv(botswineg),
-.trim_currentlimit({trim_currentlimit_2d447a5c_7,trim_currentlimit_2d447a5c_6,trim_currentlimit_2d447a5c_5,trim_currentlimit_2d447a5c_4,trim_currentlimit_2d447a5c_3,trim_currentlimit_2d447a5c_2,trim_currentlimit_2d447a5c_1,trim_currentlimit_2d447a5c_0}),
+.trim_currentlimit({c0,c0,c0,c0,c0,c0,c0,c0}),
 .enable_currentlimit(enable_driver),
 .global_currentlimit(global_currentlimit_2d447a5c_XU17),
 .measure_currentlimit(botswstatus),
@@ -265,6 +252,13 @@ STONEnoconn XNC71 (
 
 STONEnoconn XNC72 (
 .noconn(net_72)
+);
+
+PEBBLEtielo XDRMNOTL (
+.G(CELG59462),
+.V(CELV96848),
+.q(c0),
+.SUB(CELSUB40948)
 );
 
 fetdriver_e53ed485 Xfetdriver1 (
@@ -291,21 +285,6 @@ DFTtm8d dft_hex0x06 (
 .ten({noconn_dft_hex0x06_ten_7,global_fetdriver_bd0adf3c_Xfetdriver1,ten_measure_currentlimit_a0afb596_XU9,global_currentlimit_a0afb596_XU9,ten_measure_currentlimit_14d08c8e_XU3,global_currentlimit_14d08c8e_XU3,ten_measure_currentlimit_2d447a5c_XU17,global_currentlimit_2d447a5c_XU17}),
 .tma({a0,a0,a0,a0,a0,a1,a1,a0}),
 .tmi(tmi[4:0])
-);
-
-drm24L drm_hex0x06 (
-.G(CELG59462),
-.V(CELV96848),
-.d0(c0),
-.d1(c1),
-.id({c0,c0,c0,c0,c0,c1,c1,c0}),
-.SUB(CELSUB40948),
-.tmi(tmi[4:0]),
-.drm0({trim_currentlimit_2d447a5c_7,trim_currentlimit_2d447a5c_6,trim_currentlimit_2d447a5c_5,trim_currentlimit_2d447a5c_4,trim_currentlimit_2d447a5c_3,trim_currentlimit_2d447a5c_2,trim_currentlimit_2d447a5c_1,trim_currentlimit_2d447a5c_0}),
-.drm1({trim_currentlimit_14d08c8e_7,trim_currentlimit_14d08c8e_6,trim_currentlimit_14d08c8e_5,trim_currentlimit_14d08c8e_4,trim_currentlimit_14d08c8e_3,trim_currentlimit_14d08c8e_2,trim_currentlimit_14d08c8e_1,trim_currentlimit_14d08c8e_0}),
-.drm2({trim_currentlimit_a0afb596_7,trim_currentlimit_a0afb596_6,trim_currentlimit_a0afb596_5,trim_currentlimit_a0afb596_4,trim_currentlimit_a0afb596_3,trim_currentlimit_a0afb596_2,trim_currentlimit_a0afb596_1,trim_currentlimit_a0afb596_0}),
-.bypload(c0),
-.lastdrm(c0)
 );
 
 STONEnoconn XNCnoconn_dft_hex0x06_ten_7 (

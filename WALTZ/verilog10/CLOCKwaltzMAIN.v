@@ -93,6 +93,18 @@ module oscillator_d9a22b83 (IP,osc,CELG,IOSC,SIMPV,CELREF,CELSUB,tdi_osc,ten_osc
   input [2:0] trim_oscillator_int_coarse;
 endmodule
 
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 module clocksync_473e0ab6 (clk,CELG,CELV,CELSUB,clocksync_in,clocksync_low,clocksync_out,clocksync_high,enable_clocksync,global_clocksync);
   input  clk;
   input  CELG;
@@ -120,25 +132,6 @@ module DFTtm8d ( a, ten, tdo, tmi, G, SUB, V, tdi, tma );
   input G;
   input SUB;
   inout  [4:0] tmi;
-endmodule
-
-
-//Verilog HDL for "DRM", "drm16L" "functional"
-
-
-module drm16L ( V, G, SUB, tmi, bypload, lastdrm, id, drm0, drm1, d1, d0 );
-
-  input lastdrm;
-  input V;
-  output d1;
-  input  [7:0] id;
-  output d0;
-  input bypload;
-  output  [7:0] drm0;
-  input G;
-  output  [7:0] drm1;
-  inout  [4:0] tmi;
-  input SUB;
 endmodule
 
 
@@ -176,7 +169,7 @@ endmodule
 // ------------------------ Module Verilog ---------------
 module CLOCKwaltzMAIN (tdo, tmi, FSET, MUDV, SYNC, clock, dft_sync, ok_clock, CELG59462, CELV96848, dft_clock, ISLOPECOMP, CELREF84329, CELSENSE_RF, CELSUB40948, dft_synclow, fault_clock, dft_synchigh, enable_clock, dft_clocksync, CLOCKofftime_0, CLOCKofftime_1, CLOCKofftime_2, CLOCKofftime_3, dft_clockstartup, dft_clockinternal, IP_90c263a6_XOSCEXT, celkelvin_GND_bb7e77f4);
 inout  tdo;
-inout [4:0] tmi;
+input [4:0] tmi;
 output  FSET;
 input  MUDV;
 input  SYNC;
@@ -215,9 +208,6 @@ wire [1:0] a;
 wire [7:0] tdi;
 wire [7:0] ten;
 wire [7:0] tma;
-wire [7:0] id;
-wire [7:0] drm0;
-wire [7:0] drm1;
 wire [3:0] s;
 
 // ------------------------ Networks ---------------------
@@ -349,10 +339,17 @@ oscillator_d9a22b83 XOSCEXT (
 .enable_oscillator(enable_clock),
 .global_oscillator(global_oscillator_90c263a6_XOSCEXT),
 .celkelvin_GNDoscillator(celkelvin_GND_bb7e77f4),
-.trim_oscillator_ext_fine({trim_oscillator_ext_fine_90c263a6_4,trim_oscillator_ext_fine_90c263a6_3,trim_oscillator_ext_fine_90c263a6_2,trim_oscillator_ext_fine_90c263a6_1,trim_oscillator_ext_fine_90c263a6_0}),
-.trim_oscillator_int_fine({trim_oscillator_int_fine_90c263a6_4,trim_oscillator_int_fine_90c263a6_3,trim_oscillator_int_fine_90c263a6_2,trim_oscillator_int_fine_90c263a6_1,trim_oscillator_int_fine_90c263a6_0}),
-.trim_oscillator_ext_coarse({trim_oscillator_ext_coarse_90c263a6_2,trim_oscillator_ext_coarse_90c263a6_1,trim_oscillator_ext_coarse_90c263a6_0}),
-.trim_oscillator_int_coarse({trim_oscillator_int_coarse_90c263a6_2,trim_oscillator_int_coarse_90c263a6_1,trim_oscillator_int_coarse_90c263a6_0})
+.trim_oscillator_ext_fine({c0,c0,c0,c0,c0}),
+.trim_oscillator_int_fine({c0,c0,c0,c0,c0}),
+.trim_oscillator_ext_coarse({c0,c0,c0}),
+.trim_oscillator_int_coarse({c0,c0,c0})
+);
+
+PEBBLEtielo XDRMNOTL (
+.G(CELG59462),
+.V(CELV96848),
+.q(c0),
+.SUB(CELSUB40948)
 );
 
 clocksync_473e0ab6 Xclocksync1 (
@@ -378,20 +375,6 @@ DFTtm8d dft_hex0x03 (
 .ten({noconn_dft_hex0x03_ten_7,noconn_dft_hex0x03_ten_6,noconn_dft_hex0x03_ten_5,noconn_dft_hex0x03_ten_4,noconn_dft_hex0x03_ten_3,global_clocksync_5d4c1f91_Xclocksync1,global_oscillator_90c263a6_XOSCEXT,ten_osc_90c263a6_XOSCEXT}),
 .tma({a0,a0,a0,a0,a0,a0,a1,a1}),
 .tmi(tmi[4:0])
-);
-
-drm16L drm_hex0x01 (
-.G(CELG59462),
-.V(CELV96848),
-.d0(c0),
-.d1(c1),
-.id({c0,c0,c0,c0,c0,c0,c0,c1}),
-.SUB(CELSUB40948),
-.tmi(tmi[4:0]),
-.drm0({trim_oscillator_ext_coarse_90c263a6_2,trim_oscillator_ext_coarse_90c263a6_1,trim_oscillator_ext_coarse_90c263a6_0,trim_oscillator_ext_fine_90c263a6_4,trim_oscillator_ext_fine_90c263a6_3,trim_oscillator_ext_fine_90c263a6_2,trim_oscillator_ext_fine_90c263a6_1,trim_oscillator_ext_fine_90c263a6_0}),
-.drm1({trim_oscillator_int_coarse_90c263a6_2,trim_oscillator_int_coarse_90c263a6_1,trim_oscillator_int_coarse_90c263a6_0,trim_oscillator_int_fine_90c263a6_4,trim_oscillator_int_fine_90c263a6_3,trim_oscillator_int_fine_90c263a6_2,trim_oscillator_int_fine_90c263a6_1,trim_oscillator_int_fine_90c263a6_0}),
-.bypload(c0),
-.lastdrm(c0)
 );
 
 timingskew_d39a4f5a Xtimingskew1 (

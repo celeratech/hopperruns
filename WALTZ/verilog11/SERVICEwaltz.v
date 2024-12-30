@@ -19,7 +19,7 @@ module SERVICEwaltz0MAIN (EN,IN,TAO,VCC,tdo,tmi,BIAS,porb,REF0V9,go_vcc,CELG5946
   inout  TAO;
   output  VCC;
   inout  tdo;
-  inout [4:0] tmi;
+  input [4:0] tmi;
   input  BIAS;
   output  porb;
   output  REF0V9;
@@ -48,7 +48,7 @@ input  IN;
 inout  TAO;
 output  VCC;
 inout  tdo;
-inout [4:0] tmi;
+input [4:0] tmi;
 input  BIAS;
 output  porb;
 output  REF0V9;

@@ -185,25 +185,6 @@ module DFTtm8d ( a, ten, tdo, tmi, G, SUB, V, tdi, tma );
 endmodule
 
 
-//Verilog HDL for "DRM", "drm8" "functional"
-
-
-module drm8 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, drm0, d1, d0 );
-
-  input lastdrm;
-  input V;
-  output d1;
-  input  [7:0] id;
-  output d0;
-  input bypload;
-  output  [7:0] drm0;
-  input  [7:0] por0;
-  input G;
-  inout  [4:0] tmi;
-  input SUB;
-endmodule
-
-
 //Verilog HDL for "Generate", "STONEnoconn" "functional"
 
 
@@ -216,7 +197,7 @@ endmodule
 // ------------------------ Module Verilog ---------------
 module SEQUENCER1waltz_Rev1_DYES (tdo, tmi, porb, ok_clock, CELG59462, CELV96848, fault_run, ok_driver, ok_service, CELSUB40948, blank_fault, fault_clock, enable_waltz, ok_regulation, done_softstart, fault_shutdown, switch_control, enable_softstart, enable_regulation);
 inout  tdo;
-inout [4:0] tmi;
+input [4:0] tmi;
 input  porb;
 input  ok_clock;
 input  CELG59462;
@@ -242,9 +223,6 @@ wire [1:0] a;
 wire [7:0] tdi;
 wire [7:0] ten;
 wire [7:0] tma;
-wire [7:0] id;
-wire [7:0] drm0;
-wire [7:0] por0;
 
 // ------------------------ Networks ---------------------
 SEQUENCER1waltz_Rev1_DYES_ XMAIN (
@@ -268,10 +246,10 @@ SEQUENCER1waltz_Rev1_DYES_ XMAIN (
 .fault_clock(fault_clock),
 .ENABLEdelayi(net_118),
 .enable_waltz(enable_waltz),
-.STATEcontrol0(SEQUENCER1waltz_Rev1_statecontrol_704bb73a_0),
-.STATEcontrol1(SEQUENCER1waltz_Rev1_statecontrol_704bb73a_1),
-.STATEcontrol2(SEQUENCER1waltz_Rev1_statecontrol_704bb73a_2),
-.STATEcontrol3(SEQUENCER1waltz_Rev1_statecontrol_704bb73a_3),
+.STATEcontrol0(net_80),
+.STATEcontrol1(net_81),
+.STATEcontrol2(net_82),
+.STATEcontrol3(net_83),
 .ok_regulation(ok_regulation),
 .done_softstart(done_softstart),
 .fault_shutdown(fault_shutdown),
@@ -438,36 +416,6 @@ DFTtm8d dft_hex0x14 (
 .ten({noconn_dft_hex0x14_ten_7,noconn_dft_hex0x14_ten_6,noconn_dft_hex0x14_ten_5,ten_6cd23b02_XU66,ten_4c7ada73_XU65,ten_e8d90cd0_XU64,ten_9ef032e9_XU63,ten_9d829c39_XU62}),
 .tma({b0,b0,b0,b1,b0,b1,b0,b0}),
 .tmi(tmi[4:0])
-);
-
-drm8 drm_hex0x0D (
-.G(CELG59462),
-.V(CELV96848),
-.d0(d0),
-.d1(d1),
-.id({d0,d0,d0,d0,d1,d1,d0,d1}),
-.SUB(CELSUB40948),
-.tmi(tmi[4:0]),
-.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,SEQUENCER1waltz_Rev1_statecontrol_704bb73a_3,SEQUENCER1waltz_Rev1_statecontrol_704bb73a_2,SEQUENCER1waltz_Rev1_statecontrol_704bb73a_1,SEQUENCER1waltz_Rev1_statecontrol_704bb73a_0}),
-.por0({d0,d0,d0,d0,d0,d0,d0,d0}),
-.bypload(d0),
-.lastdrm(d0)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_4 (
-.noconn(noconn_drm8_drm0_4)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_5 (
-.noconn(noconn_drm8_drm0_5)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_6 (
-.noconn(noconn_drm8_drm0_6)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_7 (
-.noconn(noconn_drm8_drm0_7)
 );
 
 STONEnoconn XNCnoconn_dft_hex0x14_ten_5 (
