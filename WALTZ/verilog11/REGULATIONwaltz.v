@@ -1,7 +1,9 @@
 // ------------------------ Module Definitions -----------
-module REGULATIONwaltz0DEBUG (VC,tmi,REFINT,CELG59462,CELV96848,go_driver,CELSUB40948,IREF_DRIVER,FB_REGULATION,ok_regulation,VSS_REGULATION,enable_regulation,HIJACK_VSS_REGULATION,hijack_enable_regulation);
+module REGULATIONwaltz0DEBUG (VC,TAO,tdo,tmi,REFINT,CELG59462,CELV96848,go_driver,CELSUB40948,IREF_DRIVER,FB_REGULATION,ok_regulation,VSS_REGULATION,enable_regulation,HIJACK_VSS_REGULATION,hijack_enable_regulation);
   inout  VC;
-  inout [4:0] tmi;
+  inout  TAO;
+  inout  tdo;
+  input [4:0] tmi;
   input  REFINT;
   input  CELG59462;
   input  CELV96848;
@@ -18,7 +20,7 @@ endmodule
 
 module REGULATIONwaltz0MAIN (VC,tmi,MUDG,MUDV,REFINT,CELG59462,CELV96848,go_driver,CELREF84329,CELSUB40948,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,IP_4215aede_XU3,IP_866ca25c_XU9,IP_b8eb1a18_XU7,IP_5c7dff44_XU10,IP_e44d2b4d_Xgm1,enable_regulation);
   inout  VC;
-  inout [4:0] tmi;
+  input [4:0] tmi;
   inout  MUDG;
   input  MUDV;
   inout  REFINT;
@@ -42,8 +44,10 @@ module REGULATIONwaltz0MAIN (VC,tmi,MUDG,MUDV,REFINT,CELG59462,CELV96848,go_driv
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltz (tmi, MUDG, MUDV, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, IP_4215aede_XU3, IP_866ca25c_XU9, IP_b8eb1a18_XU7, IP_5c7dff44_XU10, IP_e44d2b4d_Xgm1, enable_regulation);
-inout [4:0] tmi;
+module REGULATIONwaltz (TAO, tdo, tmi, MUDG, MUDV, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, IP_4215aede_XU3, IP_866ca25c_XU9, IP_b8eb1a18_XU7, IP_5c7dff44_XU10, IP_e44d2b4d_Xgm1, enable_regulation);
+inout  TAO;
+inout  tdo;
+input [4:0] tmi;
 inout  MUDG;
 input  MUDV;
 input  CELG59462;
@@ -71,6 +75,8 @@ wire [4:0] tmi;
 // ------------------------ Networks ---------------------
 REGULATIONwaltz0DEBUG XDEBUG (
 .VC(net_56),
+.TAO(TAO),
+.tdo(tdo),
 .tmi(tmi[4:0]),
 .REFINT(net_55),
 .CELG59462(CELG59462),
