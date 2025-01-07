@@ -1,10 +1,10 @@
 // ------------------------ Module Definitions -----------
-//Verilog HDL for "DFT", "SERDESdftNoNo" "functional"
+//Verilog HDL for "DFT", "SERDESdftYesNo" "functional"
 
 
-module SERDESdftNoNo ( tdext, tdo, ten_oscillator_div8, ten_oscillator_external,
+module SERDESdftYesNo ( tdext, tdo, ten_oscillator_div8, ten_oscillator_external,
 ten_oscillator_off, ten_oscillator_on, ten_serdes, tmi, CELG, CELSUB, CELV,
-enable_hardware, otp_clock, otp_clock_enable, otp_nr, otp_pgenb, otpdone, tdi_clock,
+enable_hardware, otp_clock, otp_clock_enable, otp_loadok, otp_nr, otpdone, tdi_clock,
 tma, unlock );
 
   input CELV;
@@ -17,10 +17,10 @@ tma, unlock );
   input CELSUB;
   output ten_oscillator_div8;
   input otp_nr;
+  input otp_loadok;
   input otp_clock;
   output ten_serdes;
   input unlock;
-  input otp_pgenb;
   output tdo;
   output tdext;
   input enable_hardware;
@@ -93,7 +93,7 @@ wire [1:0] i2caddr;
 wire [1:0] i2cpasswd;
 
 // ------------------------ Networks ---------------------
-SERDESdftNoNo XSERDESdftNoNo (
+SERDESdftYesNo XSERDESdftYesNo (
 .tdo(tdo),
 .tma({a1,a1,a1,a1,a1,a1,a0,a0}),
 .tmi(tmi[4:0]),
@@ -103,10 +103,10 @@ SERDESdftNoNo XSERDESdftNoNo (
 .CELSUB(CELSUB40948),
 .otp_nr(otp_nr),
 .unlock(unlock),
-.otpdone(otp_done),
+.otpdone(otp_program_done),
 .otp_clock(otp_clock),
-.otp_pgenb(otp_pgenb),
 .tdi_clock(tdi_clock),
+.otp_loadok(otp_loadok),
 .ten_serdes(ten_serdes),
 .enable_hardware(a1),
 .otp_clock_enable(otp_clock_enable),
