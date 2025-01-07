@@ -41,7 +41,14 @@ module currentlimitfet_2899e616 (IP,CELG,CELPOS,CELSUB,VSENSE,IREPLICA,currentli
   input  ten_measure_currentlimit;
 endmodule
 
-module fetdn_359003a8 ();
+module fetdn_359003a8 (SUB,GATE,DRAIN,DRAINk,SOURCE,SOURCEk,IREPLICA);
+  input  SUB;
+  input  GATE;
+  inout  DRAIN;
+  inout  DRAINk;
+  inout  SOURCE;
+  inout  SOURCEk;
+  inout  IREPLICA;
 endmodule
 
 module fetdn_9694dc46 (SUB,GATE,DRAIN,DRAINk,SOURCE,SOURCEk,IREPLICA);
@@ -196,7 +203,13 @@ currentlimitfet_2899e616 XU9 (
 );
 
 fetdn_359003a8 XU14 (
-
+.SUB(CELSUB40948),
+.GATE(net_114),
+.DRAIN(SW),
+.DRAINk(net_66),
+.SOURCE(PMUDG),
+.SOURCEk(net_105),
+.IREPLICA(net_100)
 );
 
 fetdn_9694dc46 XU16 (

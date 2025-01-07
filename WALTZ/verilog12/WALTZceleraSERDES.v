@@ -53,6 +53,24 @@ i2caddr, i2cpasswd, celkelvin_CELV, pd, scl_serdes, sda_serdes );
 endmodule
 
 
+//Verilog HDL for "DFT", "SERDESinputSINGLEserdes" "functional"
+
+
+module SERDESinputSINGLEserdes ( scl_serdes, sda_serdes, CELG, CELSUB, CELVIN,
+DFTSCL, DFTSDA, porb, sdao );
+
+  input porb;
+  input CELSUB;
+  output sda_serdes;
+  output scl_serdes;
+  input DFTSDA;
+  input DFTSCL;
+  input sdao;
+  input CELVIN;
+  input CELG;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
 module WALTZceleraSERDES (tdo, tmi, DFTSCL, DFTSDA, unlock, CELG59462, CELV96848, PORB97836, CELSUB40948, celkelvin_VCC_eb468fcf);
 inout  tdo;
@@ -112,7 +130,19 @@ SERDEScontrolDFT XSERDEScontrolDFT (
 .scl_serdes(scl_serdes),
 .sda_serdes(sda_serdes),
 .celkelvin_CELV(celkelvin_VCC_eb468fcf),
-.enable_hardware(enable_hardware)
+.enable_hardware(a1)
+);
+
+SERDESinputSINGLEserdes XSERDESinputSINGLEserdes (
+.CELG(CELG59462),
+.porb(PORB97836),
+.sdao(sdao),
+.CELSUB(CELSUB40948),
+.CELVIN(CELV96848),
+.DFTSCL(DFTSCL),
+.DFTSDA(DFTSDA),
+.scl_serdes(scl_serdes),
+.sda_serdes(sda_serdes)
 );
 
 endmodule
