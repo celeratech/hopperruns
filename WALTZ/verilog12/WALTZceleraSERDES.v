@@ -130,7 +130,7 @@ SERDESdftYesNo XSERDESdftYesNo (
 .tmi(tmi[4:0]),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.tdext(tdext_noconn_noconn),
+.tdext(tdext_noconn_noconn_noconn),
 .CELSUB(CELSUB40948),
 .otp_nr(a0),
 .unlock(unlock),
@@ -168,10 +168,6 @@ STONEnoconn XNCten_serdes_noconn (
 .noconn(ten_serdes_noconn)
 );
 
-STONEnoconn XNCtdext_noconn_noconn (
-.noconn(tdext_noconn_noconn)
-);
-
 SERDESinputSINGLEserdes XSERDESinputSINGLEserdes (
 .CELG(CELG59462),
 .porb(PORB97836),
@@ -190,6 +186,10 @@ STONEnoconn XNCten_oscillator_on_noconn (
 
 STONEnoconn XNCten_oscillator_off_noconn (
 .noconn(ten_oscillator_off_noconn)
+);
+
+STONEnoconn XNCtdext_noconn_noconn_noconn (
+.noconn(tdext_noconn_noconn_noconn)
 );
 
 STONEnoconn XNCten_oscillator_div8_noconn (

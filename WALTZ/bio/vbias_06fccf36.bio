@@ -255,48 +255,6 @@ endlayoutbio
 
 //**********************************************
 //Project Parameters
-//Celera:WALTZ Project Bio
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////   default.bio'  DO NOT USE  ///////////////////////////////////
-
-//Simplis Project Parameters /////////////////////////////////////////////
-#define,Project,TBD
-#define,PROJECTreference,0.9
-#define,PROJECTsupply,4.5
-#define,TaRoom,25
-#define,ground,0.0
-#define,leveloffset,5
-//////////////////////////////////////////////////////////////////////////////////////////
-
-//Porcess  Parameters ///////////////////////////////////////////////////////
-#define,PROJECTbg,1.232
-#define,REFERENCEccpcode,15
-#define,REFERENCEccncode,15
-#define,HVNPN2A_5vbe,0.55
-#define,HVNPN2A_5vbetc,-2.1
-#define,VTNnch5i,0.72
-//#define,FETNcalculator_option,typical
-#define,FETNcalculator,maximum
-//#define,FETPcalculator_option,typical
-#define,FETPcalculator,maximum
-////////////////////////////////////////////////////////////////////////////////////////
-
-//Global Parameters ///////////////////////////////////////////////////////
-#define,CELVminimum,2.0
-#define,CELGabsmax,0.3
-#define,CELGabsmin,-0.3
-#define,SUBabsmax,0.3
-#define,SUBabsmin,-0.3
-#define,CELSUBabsmax,0.3
-#define,CELSUBabsmin,-0.3
-/////////////////////////////////////////////////////////////////////////////////////////
-
-//layout Parameters //////////////////////////////////////////////////////////
-#define MODULEdiesizefill 10
-//Percentage of area added to module for routing
-////////////////////////////////////////////////////////////////////////////////////////
-
-
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
@@ -441,8 +399,10 @@ trim,description8,empty
 pinname,CELG
 definition,CELG,power ground
 iq,CELG,SIMULATION
-absmax,CELG,0.3
-absmin,CELG,-0.3
+absmax,CELG,////////////////////////
+
+absmin,CELG,////////////////////////////////////////
+
 io,CELG,input
 mode,CELG,power
 router,CELG,TBD
@@ -452,8 +412,9 @@ esd,CELG,TBD
 pinname,CELSUB
 definition,CELSUB,VBIAS Substrate input
 iq,CELSUB,SIMULATION
-absmax,CELSUB,0.3
-absmin,CELSUB,-0.3
+absmax,CELSUB,
+absmin,CELSUB,////////////////////////////////////////
+
 io,CELSUB,input
 mode,CELSUB,power
 router,CELSUB,TBD
@@ -464,7 +425,8 @@ pinname,IN1
 definition,IN1,VBIAS Input1  Power Supply
 iq,IN1,SIMULATION
 absmax,IN1,60
-absmin,IN1,-0.3
+absmin,IN1,////////////////////////////////////////
+
 io,IN1,input
 mode,IN1,power
 router,IN1,TBD
@@ -475,7 +437,8 @@ pinname,celkelvin_IN1
 definition,celkelvin_IN1,VBIAS Input1 sennse input
 iq,celkelvin_IN1,SIMULATION
 absmax,celkelvin_IN1,60
-absmin,celkelvin_IN1,-0.3
+absmin,celkelvin_IN1,////////////////////////////////////////
+
 io,celkelvin_IN1,input
 mode,celkelvin_IN1,analog
 router,celkelvin_IN1,TBD
@@ -486,7 +449,8 @@ pinname,IN2
 definition,IN2,VBIAS Input2  Power Supply
 iq,IN2,SIMULATION
 absmax,IN2,20
-absmin,IN2,-0.3
+absmin,IN2,////////////////////////////////////////
+
 io,IN2,input
 mode,IN2,power
 router,IN2,TBD
@@ -497,7 +461,8 @@ pinname,celkelvin_IN2
 definition,celkelvin_IN2,VBIAS Input2 sense input
 iq,celkelvin_IN2,SIMULATION
 absmax,celkelvin_IN2,20
-absmin,celkelvin_IN2,-0.3
+absmin,celkelvin_IN2,////////////////////////////////////////
+
 io,celkelvin_IN2,input
 mode,celkelvin_IN2,analog
 router,celkelvin_IN2,TBD
@@ -508,7 +473,8 @@ pinname,VBIAS
 definition,VBIAS,Vbias output rail
 iq,VBIAS,SIMULATION
 absmax,VBIAS,6
-absmin,VBIAS,-0.3
+absmin,VBIAS,////////////////////////////////////////
+
 io,VBIAS,output
 mode,VBIAS,power
 router,VBIAS,TBD
@@ -519,7 +485,8 @@ pinname,celkelvin_VBIAS
 definition,celkelvin_VBIAS,Vbias pad input Sense Voltage
 iq,celkelvin_VBIAS,SIMULATION
 absmax,celkelvin_VBIAS,6
-absmin,celkelvin_VBIAS,-0.3
+absmin,celkelvin_VBIAS,////////////////////////////////////////
+
 io,celkelvin_VBIAS,input
 mode,celkelvin_VBIAS,analog
 router,celkelvin_VBIAS,TBD
@@ -531,7 +498,8 @@ pinname,ENABLE_VBIASHV
 definition,ENABLE_VBIASHV,High Voltage Enable Input pin
 iq,ENABLE_VBIASHV,SIMULATION
 absmax,ENABLE_VBIASHV,60
-absmin,ENABLE_VBIASHV,-0.3
+absmin,ENABLE_VBIASHV,////////////////////////////////////////
+
 io,ENABLE_VBIASHV,input
 mode,ENABLE_VBIASHV,analog
 router,ENABLE_VBIASHV,TBD
@@ -543,7 +511,8 @@ pinname,ok_vbias
 definition,ok_vbias,VBIAS Cell OK
 iq,ok_vbias,SIMULATION
 absmax,ok_vbias,6
-absmin,ok_vbias,-0.3
+absmin,ok_vbias,////////////////////////////////////////
+
 io,ok_vbias,output
 mode,ok_vbias,digital
 router,ok_vbias,TBD
@@ -554,7 +523,8 @@ pinname,trim_vbiaspos
 definition,trim_vbiaspos,Vbias Output Voltage Positive Trim
 iq,trim_vbiaspos,SIMULATION
 absmax,trim_vbiaspos,6
-absmin,trim_vbiaspos,-0.3
+absmin,trim_vbiaspos,////////////////////////////////////////
+
 io,trim_vbiaspos,input
 mode,trim_vbiaspos,digital
 router,trim_vbiaspos,TBD
@@ -565,7 +535,8 @@ pinname,trim_vbiasneg
 definition,trim_vbiasneg,Vbias Output Voltage Negative Trim
 iq,trim_vbiasneg,SIMULATION
 absmax,trim_vbiasneg,6
-absmin,trim_vbiasneg,-0.3
+absmin,trim_vbiasneg,////////////////////////////////////////
+
 io,trim_vbiasneg,input
 mode,trim_vbiasneg,digital
 router,trim_vbiasneg,TBD
@@ -576,7 +547,8 @@ pinname,trim_vbiasref
 definition,trim_vbiasref,Reference Voltage Trim
 iq,trim_vbiasref,SIMULATION
 absmax,trim_vbiasref,6
-absmin,trim_vbiasref,-0.3
+absmin,trim_vbiasref,////////////////////////////////////////
+
 io,trim_vbiasref,input
 mode,trim_vbiasref,digital
 router,trim_vbiasref,TBD
@@ -587,7 +559,8 @@ pinname,global_vbias
 definition,global_vbias,Global Test Mode Enable
 iq,global_vbias,SIMULATION
 absmax,global_vbias,6
-absmin,global_vbias,-0.3
+absmin,global_vbias,////////////////////////////////////////
+
 io,global_vbias,input
 mode,global_vbias,digital
 router,global_vbias,TBD
@@ -598,7 +571,8 @@ pinname,ten_enablevbias
 definition,ten_enablevbias,Global Test Mode Enable
 iq,ten_enablevbias,SIMULATION
 absmax,ten_enablevbias,6
-absmin,ten_enablevbias,-0.3
+absmin,ten_enablevbias,////////////////////////////////////////
+
 io,ten_enablevbias,input
 mode,ten_enablevbias,digital
 router,ten_enablevbias,TBD
@@ -609,7 +583,8 @@ pinname,ten_taifbvbias
 definition,ten_taifbvbias,Measure VBIAS feedback on TAI
 iq,ten_taifbvbias,SIMULATION
 absmax,ten_taifbvbias,6
-absmin,ten_taifbvbias,-0.3
+absmin,ten_taifbvbias,////////////////////////////////////////
+
 io,ten_taifbvbias,input
 mode,ten_taifbvbias,digital
 router,ten_taifbvbias,TBD
@@ -620,7 +595,8 @@ pinname,ten_taiv2v5
 definition,ten_taiv2v5,Measure VBIAS V2V5 on TAI
 iq,ten_taiv2v5,SIMULATION
 absmax,ten_taiv2v5,6
-absmin,ten_taiv2v5,-0.3
+absmin,ten_taiv2v5,////////////////////////////////////////
+
 io,ten_taiv2v5,output
 mode,ten_taiv2v5,digital
 router,ten_taiv2v5,TBD
@@ -631,7 +607,8 @@ pinname,ten_taiv1v0f
 definition,ten_taiv1v0f,Measure V1V0F on TAI
 iq,ten_taiv1v0f,SIMULATION
 absmax,ten_taiv1v0f,6
-absmin,ten_taiv1v0f,-0.3
+absmin,ten_taiv1v0f,////////////////////////////////////////
+
 io,ten_taiv1v0f,input
 mode,ten_taiv1v0f,digital
 router,ten_taiv1v0f,TBD
@@ -642,7 +619,8 @@ pinname,ten_tdiokvbias
 definition,ten_tdiokvbias,MEASURE VBIAS ok on tdi
 iq,ten_tdiokvbias,SIMULATION
 absmax,ten_tdiokvbias,6
-absmin,ten_tdiokvbias,-0.3
+absmin,ten_tdiokvbias,////////////////////////////////////////
+
 io,ten_tdiokvbias,output
 mode,ten_tdiokvbias,digital
 router,ten_tdiokvbias,TBD
@@ -653,7 +631,8 @@ pinname,tdi_vbias
 definition,tdi_vbias,VBIAS digital output
 iq,tdi_vbias,SIMULATION
 absmax,tdi_vbias,6
-absmin,tdi_vbias,-0.3
+absmin,tdi_vbias,////////////////////////////////////////
+
 io,tdi_vbias,output
 mode,tdi_vbias,digital
 router,tdi_vbias,TBD
@@ -664,7 +643,8 @@ pinname,TAI_VBIAS
 definition,TAI_VBIAS,VBIAS analog output
 iq,TAI_VBIAS,SIMULATION
 absmax,TAI_VBIAS,6
-absmin,TAI_VBIAS,-0.3
+absmin,TAI_VBIAS,////////////////////////////////////////
+
 io,TAI_VBIAS,output
 mode,TAI_VBIAS,analog
 router,TAI_VBIAS,TBD
