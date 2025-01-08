@@ -1,4 +1,25 @@
 // ------------------------ Module Definitions -----------
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 //Verilog HDL for "DFT", "SERDESdftYesNo" "functional"
 
 
@@ -93,27 +114,42 @@ wire [1:0] i2caddr;
 wire [1:0] i2cpasswd;
 
 // ------------------------ Networks ---------------------
+STONEnoconn XNC0 (
+.noconn(net_0)
+);
+
+STONEnoconn XNCtdo (
+.noconn(tdo)
+);
+
+PEBBLEtielo XtieLo (
+.G(CELG59462),
+.V(CELV96848),
+.q(net_0),
+.SUB(CELSUB40948)
+);
+
 SERDESdftYesNo XSERDESdftYesNo (
-.tdo(tdo),
+.tdo(tdo_noconn),
 .tma({a1,a1,a1,a1,a1,a1,a0,a0}),
 .tmi(tmi[4:0]),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.tdext(tdext),
+.tdext(tdext_noconn_noconn_noconn),
 .CELSUB(CELSUB40948),
-.otp_nr(otp_nr),
+.otp_nr(a0),
 .unlock(unlock),
-.otpdone(otp_program_done),
-.otp_clock(otp_clock),
+.otpdone(a0),
+.otp_clock(a0),
 .tdi_clock(tdi_clock),
-.otp_loadok(otp_loadok),
-.ten_serdes(ten_serdes),
+.otp_loadok(a0),
+.ten_serdes(ten_serdes_noconn),
 .enable_hardware(a1),
-.otp_clock_enable(otp_clock_enable),
-.ten_oscillator_on(ten_oscillator_on),
-.ten_oscillator_off(ten_oscillator_off),
-.ten_oscillator_div8(ten_oscillator_div8),
-.ten_oscillator_external(ten_oscillator_external)
+.otp_clock_enable(a0),
+.ten_oscillator_on(ten_oscillator_on_noconn),
+.ten_oscillator_off(ten_oscillator_off_noconn),
+.ten_oscillator_div8(ten_oscillator_div8_noconn),
+.ten_oscillator_external(ten_oscillator_external_noconn)
 );
 
 SERDEScontrolDFT XSERDEScontrolDFT (
@@ -133,6 +169,10 @@ SERDEScontrolDFT XSERDEScontrolDFT (
 .enable_hardware(a1)
 );
 
+STONEnoconn XNCten_serdes_noconn (
+.noconn(ten_serdes_noconn)
+);
+
 SERDESinputSINGLEserdes XSERDESinputSINGLEserdes (
 .CELG(CELG59462),
 .porb(PORB97836),
@@ -143,6 +183,26 @@ SERDESinputSINGLEserdes XSERDESinputSINGLEserdes (
 .DFTSDA(DFTSDA),
 .scl_serdes(scl_serdes),
 .sda_serdes(sda_serdes)
+);
+
+STONEnoconn XNCten_oscillator_on_noconn (
+.noconn(ten_oscillator_on_noconn)
+);
+
+STONEnoconn XNCten_oscillator_off_noconn (
+.noconn(ten_oscillator_off_noconn)
+);
+
+STONEnoconn XNCtdext_noconn_noconn_noconn (
+.noconn(tdext_noconn_noconn_noconn)
+);
+
+STONEnoconn XNCten_oscillator_div8_noconn (
+.noconn(ten_oscillator_div8_noconn)
+);
+
+STONEnoconn XNCten_oscillator_external_noconn (
+.noconn(ten_oscillator_external_noconn)
 );
 
 endmodule
