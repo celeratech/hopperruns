@@ -50,6 +50,39 @@ module CLOCKwaltzMAIN (tdo,tmi,FSET,MUDV,SYNC,clock,dft_sync,ok_clock,CELG59462,
   input  celkelvin_GND_bb7e77f4;
 endmodule
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
+//Verilog HDL for "PEBBLES", "PEBBLEtiehi" "functional"
+
+
+module PEBBLEtiehi ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
 module CLOCKwaltz (TAO, tdo, tmi, FSET, MUDV, SYNC, clock, ok_clock, CELG59462, CELV96848, ISLOPECOMP, CELREF84329, CELSENSE_RF, CELSUB40948, fault_clock, enable_clock, IP_90c263a6_XOSCEXT, celkelvin_GND_bb7e77f4);
 inout  TAO;
@@ -117,14 +150,32 @@ CLOCKwaltzMAIN XMAIN (
 .dft_synchigh(net_71),
 .enable_clock(net_68),
 .dft_clocksync(net_74),
-.CLOCKofftime_0(net_44),
-.CLOCKofftime_1(net_45),
-.CLOCKofftime_2(net_46),
-.CLOCKofftime_3(net_47),
+.CLOCKofftime_0(a0),
+.CLOCKofftime_1(a0),
+.CLOCKofftime_2(a0),
+.CLOCKofftime_3(a0),
 .dft_clockstartup(net_72),
 .dft_clockinternal(net_73),
 .IP_90c263a6_XOSCEXT(IP_90c263a6_XOSCEXT),
 .celkelvin_GND_bb7e77f4(celkelvin_GND_bb7e77f4)
+);
+
+STONEnoconn XNCa1 (
+.noconn(a1)
+);
+
+PEBBLEtiehi XDRMNOTH (
+.G(CELG59462),
+.V(CELV96848),
+.q(a1),
+.SUB(CELSUB40948)
+);
+
+PEBBLEtielo XDRMNOTL (
+.G(CELG59462),
+.V(CELV96848),
+.q(a0),
+.SUB(CELSUB40948)
 );
 
 endmodule

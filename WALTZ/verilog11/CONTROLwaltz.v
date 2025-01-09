@@ -27,6 +27,39 @@ module Algorithm5p9_DYES (fcm,tdo,tmi,porb,CELG59462,CELV96848,bbm_topon,go_driv
   input  inegative_bottom;
 endmodule
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
+//Verilog HDL for "PEBBLES", "PEBBLEtiehi" "functional"
+
+
+module PEBBLEtiehi ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
 module CONTROLwaltz (tdo, tmi, porb, clock, botstate, topstate, CELG59462, CELV96848, bbm_topon, botswineg, go_driver, ok_driver, botswipeak, topswipeak, CELSUB40948, botswzcross, bbm_bottomon, fault_control, done_softstart, enable_control, freeze_control, switch_control);
 inout  tdo;
@@ -58,7 +91,7 @@ wire [4:0] tmi;
 
 // ------------------------ Networks ---------------------
 Algorithm5p9_DYES XCONTROL (
-.fcm(net_59),
+.fcm(a0),
 .tdo(tdo),
 .tmi(tmi[4:0]),
 .porb(porb),
@@ -71,9 +104,9 @@ Algorithm5p9_DYES XCONTROL (
 .top_switch(topstate),
 .CELSUB40948(CELSUB40948),
 .bbm_bottomon(bbm_bottomon),
-.blank_bottom(net_60),
+.blank_bottom(a0),
 .ipeak_bottom(botswipeak),
-.blank_refresh(net_61),
+.blank_refresh(a0),
 .bottom_switch(botstate),
 .clock_control(clock),
 .fault_control(fault_control),
@@ -83,6 +116,24 @@ Algorithm5p9_DYES XCONTROL (
 .freeze_control(freeze_control),
 .switch_control(switch_control),
 .inegative_bottom(botswineg)
+);
+
+STONEnoconn XNCa1 (
+.noconn(a1)
+);
+
+PEBBLEtiehi XDRMNOTH (
+.G(CELG59462),
+.V(CELV96848),
+.q(a1),
+.SUB(CELSUB40948)
+);
+
+PEBBLEtielo XDRMNOTL (
+.G(CELG59462),
+.V(CELV96848),
+.q(a0),
+.SUB(CELSUB40948)
 );
 
 endmodule

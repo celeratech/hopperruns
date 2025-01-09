@@ -225,7 +225,7 @@ switchtransmission_75e4adc9 XU11 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.enable_switchb(net_102)
+.enable_switchb(c0)
 );
 
 cboot_7dc01c49 XU17 (

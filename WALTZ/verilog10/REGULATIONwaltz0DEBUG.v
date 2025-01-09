@@ -125,6 +125,18 @@ module resistor_e959927e (RN,RP,CELG);
   input  CELG;
 endmodule
 
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 //Verilog HDL for "DFT", "DFTtm8" "functional"
 
 
@@ -260,7 +272,7 @@ switchtswitch_4b165e0d XU10 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.enable_switch(net_58)
+.enable_switch(c0)
 );
 
 DFThijack XU11 (
@@ -310,6 +322,13 @@ resistor_e959927e XU23 (
 .RN(net_88),
 .RP(FB_REGULATION),
 .CELG(CELG59462)
+);
+
+PEBBLEtielo XDRMNOTL (
+.G(CELG59462),
+.V(CELV96848),
+.q(c0),
+.SUB(CELSUB40948)
 );
 
 DFTtm8 dft_hex0x11 (

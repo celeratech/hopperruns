@@ -218,6 +218,39 @@ module dftprobeModel0_ecc82fc7 (i,tdi,ten,CELG,CELV,CELSUB);
   input  CELSUB;
 endmodule
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
+//Verilog HDL for "PEBBLES", "PEBBLEtiehi" "functional"
+
+
+module PEBBLEtiehi ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 //Verilog HDL for "DFT", "DFTtm8d" "functional"
 
 
@@ -232,15 +265,6 @@ module DFTtm8d ( a, ten, tdo, tmi, G, SUB, V, tdi, tma );
   input G;
   input SUB;
   inout  [4:0] tmi;
-endmodule
-
-
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
 endmodule
 
 
@@ -305,7 +329,7 @@ Algorithm5p9_DYES_ XALGORITHM (
 .top6bSYNC(net_146),
 .top_switch(top_switch),
 .CELSUB40948(CELSUB40948),
-.enableFAULT(net_121),
+.enableFAULT(d0),
 .BOTTOMdelayi(net_168),
 .TOPmaxdelayo(net_173),
 .bbm_bottomon(bbm_bottomon),
@@ -313,10 +337,10 @@ Algorithm5p9_DYES_ XALGORITHM (
 .ipeak_bottom(ipeak_bottom),
 .POWERUPdelayi(net_159),
 .REFRESHdelayi(net_167),
-.STATEcontrol0(net_117),
-.STATEcontrol1(net_118),
-.STATEcontrol2(net_119),
-.STATEcontrol3(net_120),
+.STATEcontrol0(d0),
+.STATEcontrol1(d0),
+.STATEcontrol2(d0),
+.STATEcontrol3(d0),
 .blank_refresh(blank_refresh),
 .bottom_switch(bottom_switch),
 .clock_control(clock_control),
@@ -506,6 +530,24 @@ dftprobeModel0_ecc82fc7 XU99 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
+);
+
+STONEnoconn XNCd1 (
+.noconn(d1)
+);
+
+PEBBLEtiehi XDRMNOTH (
+.G(CELG59462),
+.V(CELV96848),
+.q(d1),
+.SUB(CELSUB40948)
+);
+
+PEBBLEtielo XDRMNOTL (
+.G(CELG59462),
+.V(CELV96848),
+.q(d0),
+.SUB(CELSUB40948)
 );
 
 DFTtm8d dft_hex0x04 (

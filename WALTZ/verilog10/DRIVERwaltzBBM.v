@@ -170,7 +170,7 @@ dbuf_e926e395 XU16 (
 
 nor2_ee112582 XU21 (
 .o(net_47),
-.i0(net_50),
+.i0(a0),
 .i1(net_83),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -179,7 +179,7 @@ nor2_ee112582 XU21 (
 
 nor2_ee112582 XU22 (
 .o(net_48),
-.i0(net_49),
+.i0(a0),
 .i1(net_87),
 .SUB(CELSUB40948),
 .CELG(CELG59462),

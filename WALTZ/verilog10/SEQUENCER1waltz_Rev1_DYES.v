@@ -168,6 +168,18 @@ module dftprobeModel0_53e6eb77 (i,tdi,ten,CELG,CELV,CELSUB);
   input  CELSUB;
 endmodule
 
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 //Verilog HDL for "DFT", "DFTtm8d" "functional"
 
 
@@ -246,10 +258,10 @@ SEQUENCER1waltz_Rev1_DYES_ XMAIN (
 .fault_clock(fault_clock),
 .ENABLEdelayi(net_118),
 .enable_waltz(enable_waltz),
-.STATEcontrol0(net_80),
-.STATEcontrol1(net_81),
-.STATEcontrol2(net_82),
-.STATEcontrol3(net_83),
+.STATEcontrol0(d0),
+.STATEcontrol1(d0),
+.STATEcontrol2(d0),
+.STATEcontrol3(d0),
 .ok_regulation(ok_regulation),
 .done_softstart(done_softstart),
 .fault_shutdown(fault_shutdown),
@@ -392,6 +404,13 @@ dftprobeModel0_53e6eb77 XU66 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
+);
+
+PEBBLEtielo XDRMNOTL (
+.G(CELG59462),
+.V(CELV96848),
+.q(d0),
+.SUB(CELSUB40948)
 );
 
 DFTtm8d dft_hex0x13 (

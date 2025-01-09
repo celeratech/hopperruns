@@ -34,6 +34,18 @@ module SOFTSTARTwaltz8MAIN (SS,REF,tmi,MUDV,halfway,CELG59462,CELV96848,dft_cloc
   input  IP_4c0bef8e_Xoscillator1;
 endmodule
 
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
 module SOFTSTARTwaltz (SS, REF, TAO, tdo, tmi, MUDV, CELG59462, CELV96848, CELSUB40948, enable_brick, done_softstart, SENSE_G_4c0bef8e, enable_softstart, kelvin_MUDGsoftstart, IP_4c0bef8e_Xoscillator1);
 output  SS;
@@ -78,18 +90,25 @@ SOFTSTARTwaltz8MAIN XMAIN8 (
 .REF(REF),
 .tmi(tmi[4:0]),
 .MUDV(MUDV),
-.halfway(net_36),
+.halfway(a0),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .dft_clock(net_60),
 .CELSUB40948(CELSUB40948),
 .enable_brick(net_58),
-.softstart_1ms(net_35),
+.softstart_1ms(a0),
 .done_softstart(done_softstart),
 .SENSE_G_4c0bef8e(SENSE_G_4c0bef8e),
 .enable_softstart(net_59),
 .kelvin_MUDGsoftstart(kelvin_MUDGsoftstart),
 .IP_4c0bef8e_Xoscillator1(IP_4c0bef8e_Xoscillator1)
+);
+
+PEBBLEtielo XDRMNOTL (
+.G(CELG59462),
+.V(CELV96848),
+.q(a0),
+.SUB(CELSUB40948)
 );
 
 endmodule

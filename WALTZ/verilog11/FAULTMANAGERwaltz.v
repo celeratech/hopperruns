@@ -44,6 +44,18 @@ module FAULTMANAGERwaltzMAIN (tmi,MUDV,clock,CELG59462,CELV96848,PORB97836,fault
   input  hijack_faultmanager_status;
 endmodule
 
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
 module FAULTMANAGERwaltz (tdo, tmi, MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELBG83021, CELSUB40948, blank_fault, fault_short, fault_freeze, enable_faultmanager, IP_201f84ba_Xthermal1);
 inout  tdo;
@@ -100,16 +112,23 @@ FAULTMANAGERwaltzMAIN XMAIN (
 .CELSUB40948(CELSUB40948),
 .blank_fault(net_72),
 .fault_short(net_75),
-.mode_hiccup(net_45),
+.mode_hiccup(a0),
 .enable_fault(net_68),
 .fault_freeze(fault_freeze),
 .hijack_delay(net_74),
-.blank_thermal(net_46),
+.blank_thermal(a0),
 .dft_delaySHORT(net_73),
 .hijack_short_status(net_71),
 .IP_201f84ba_Xthermal1(IP_201f84ba_Xthermal1),
 .hijack_thermal_status(net_70),
 .hijack_faultmanager_status(net_69)
+);
+
+PEBBLEtielo XDRMNOTL (
+.G(CELG59462),
+.V(CELV96848),
+.q(a0),
+.SUB(CELSUB40948)
 );
 
 endmodule
