@@ -1,4 +1,16 @@
 // ------------------------ Module Definitions -----------
+//Verilog HDL for "PEBBLES", "PEBBLEtiehi" "functional"
+
+
+module PEBBLEtiehi ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 //Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
 
 
@@ -113,6 +125,13 @@ wire [1:0] i2caddr;
 wire [1:0] i2cpasswd;
 
 // ------------------------ Networks ---------------------
+PEBBLEtiehi XtieHi (
+.G(CELG59462),
+.V(CELV96848),
+.q(a1),
+.SUB(CELSUB40948)
+);
+
 PEBBLEtielo XtieLo (
 .G(CELG59462),
 .V(CELV96848),
@@ -120,8 +139,16 @@ PEBBLEtielo XtieLo (
 .SUB(CELSUB40948)
 );
 
+STONEnoconn XNCtdi_clock (
+.noconn(tdi_clock)
+);
+
 STONEnoconn XNCtdo_noconn (
 .noconn(tdo_noconn)
+);
+
+STONEnoconn XNCtdext_noconn (
+.noconn(tdext_noconn)
 );
 
 SERDESdftYesNo XSERDESdftYesNo (
@@ -130,7 +157,7 @@ SERDESdftYesNo XSERDESdftYesNo (
 .tmi(tmi[4:0]),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.tdext(tdext_noconn_noconn_noconn),
+.tdext(tdext_noconn),
 .CELSUB(CELSUB40948),
 .otp_nr(a0),
 .unlock(unlock),
@@ -156,8 +183,8 @@ SERDEScontrolDFT XSERDEScontrolDFT (
 .sdao(sdao),
 .CELSUB(CELSUB40948),
 .unlock(unlock),
-.i2caddr(i2caddr[1:0]),
-.i2cpasswd(i2cpasswd[1:0]),
+.i2caddr({a0,a0,a0,a0,a0,a0,a0,a0}),
+.i2cpasswd({a0,a0,a0,a0,a0,a0,a1,a1}),
 .scl_serdes(scl_serdes),
 .sda_serdes(sda_serdes),
 .celkelvin_CELV(celkelvin_VCC_eb468fcf),
@@ -186,10 +213,6 @@ STONEnoconn XNCten_oscillator_on_noconn (
 
 STONEnoconn XNCten_oscillator_off_noconn (
 .noconn(ten_oscillator_off_noconn)
-);
-
-STONEnoconn XNCtdext_noconn_noconn_noconn (
-.noconn(tdext_noconn_noconn_noconn)
 );
 
 STONEnoconn XNCten_oscillator_div8_noconn (

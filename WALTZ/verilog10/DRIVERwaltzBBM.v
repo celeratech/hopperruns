@@ -33,6 +33,30 @@ module nor2_ee112582 (o,i0,i1,SUB,CELG,CELV);
   input  CELV;
 endmodule
 
+//Verilog HDL for "PEBBLES", "PEBBLEtiehi" "functional"
+
+
+module PEBBLEtiehi ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 module timingskew_d7d32aa0 (in,out,CELG,CELV,CELSUB,factory_timingskew);
   input  in;
   output  out;
@@ -170,13 +194,27 @@ inv_12e192f5 XU28 (
 .CELV(CELV96848)
 );
 
+PEBBLEtiehi XDRMNOTH (
+.G(CELG59462),
+.V(CELV96848),
+.q(a1),
+.SUB(CELSUB40948)
+);
+
+PEBBLEtielo XDRMNOTL (
+.G(CELG59462),
+.V(CELV96848),
+.q(a0),
+.SUB(CELSUB40948)
+);
+
 timingskew_d7d32aa0 Xtimingskew1 (
 .in(topstate),
 .out(net_86),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.factory_timingskew({net_69,net_68,net_67,net_66,net_65})
+.factory_timingskew({a0,a1,a1,a0,a0})
 );
 
 timingskew_b5de11eb Xtimingskew2 (
@@ -185,7 +223,7 @@ timingskew_b5de11eb Xtimingskew2 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.factory_timingskew({net_74,net_73,net_72,net_71,net_70})
+.factory_timingskew({a0,a1,a1,a0,a0})
 );
 
 endmodule
