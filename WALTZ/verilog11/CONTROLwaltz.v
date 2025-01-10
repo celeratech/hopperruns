@@ -27,27 +27,6 @@ module Algorithm5p9_DYES (fcm,tdo,tmi,porb,CELG59462,CELV96848,bbm_topon,go_driv
   input  inegative_bottom;
 endmodule
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
-//Verilog HDL for "PEBBLES", "PEBBLEtiehi" "functional"
-
-
-module PEBBLEtiehi ( q, G, SUB, V );
-
-  input V;
-  output q;
-  input G;
-  input SUB;
-endmodule
-
-
 //Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
 
 
@@ -116,17 +95,6 @@ Algorithm5p9_DYES XCONTROL (
 .freeze_control(freeze_control),
 .switch_control(switch_control),
 .inegative_bottom(botswineg)
-);
-
-STONEnoconn XNCa1 (
-.noconn(a1)
-);
-
-PEBBLEtiehi XDRMNOTH (
-.G(CELG59462),
-.V(CELV96848),
-.q(a1),
-.SUB(CELSUB40948)
 );
 
 PEBBLEtielo XDRMNOTL (

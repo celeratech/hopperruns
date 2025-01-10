@@ -218,27 +218,6 @@ module dftprobeModel0_ecc82fc7 (i,tdi,ten,CELG,CELV,CELSUB);
   input  CELSUB;
 endmodule
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
-//Verilog HDL for "PEBBLES", "PEBBLEtiehi" "functional"
-
-
-module PEBBLEtiehi ( q, G, SUB, V );
-
-  input V;
-  output q;
-  input G;
-  input SUB;
-endmodule
-
-
 //Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
 
 
@@ -265,6 +244,15 @@ module DFTtm8d ( a, ten, tdo, tmi, G, SUB, V, tdi, tma );
   input G;
   input SUB;
   inout  [4:0] tmi;
+endmodule
+
+
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
 endmodule
 
 
@@ -530,17 +518,6 @@ dftprobeModel0_ecc82fc7 XU99 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
-);
-
-STONEnoconn XNCd1 (
-.noconn(d1)
-);
-
-PEBBLEtiehi XDRMNOTH (
-.G(CELG59462),
-.V(CELV96848),
-.q(d1),
-.SUB(CELSUB40948)
 );
 
 PEBBLEtielo XDRMNOTL (
