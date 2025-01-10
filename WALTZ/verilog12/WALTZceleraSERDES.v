@@ -105,7 +105,8 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module WALTZceleraSERDES (tmi, DFTSCL, DFTSDA, unlock, CELG59462, CELV96848, PORB97836, CELSUB40948, celkelvin_VCC_eb468fcf);
+module WALTZceleraSERDES (tdo, tmi, DFTSCL, DFTSDA, unlock, CELG59462, CELV96848, PORB97836, CELSUB40948, celkelvin_VCC_eb468fcf);
+inout  tdo;
 inout [5:0] tmi;
 inout  DFTSCL;
 inout  DFTSDA;
@@ -139,12 +140,12 @@ PEBBLEtielo XtieLo (
 .SUB(CELSUB40948)
 );
 
-STONEnoconn XNCtdi_clock (
-.noconn(tdi_clock)
-);
-
 STONEnoconn XNCtdo_noconn (
 .noconn(tdo_noconn)
+);
+
+STONEnoconn XNCtdext_noconn (
+.noconn(tdext_noconn)
 );
 
 SERDESdftYesNo XSERDESdftYesNo (
@@ -153,13 +154,13 @@ SERDESdftYesNo XSERDESdftYesNo (
 .tmi(tmi[4:0]),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.tdext(tdext_noconn_noconn),
+.tdext(tdext_noconn),
 .CELSUB(CELSUB40948),
 .otp_nr(a0),
 .unlock(unlock),
 .otpdone(a0),
 .otp_clock(a0),
-.tdi_clock(tdi_clock),
+.tdi_clock(a0),
 .otp_loadok(a0),
 .ten_serdes(ten_serdes_noconn),
 .enable_hardware(a1),
@@ -189,10 +190,6 @@ SERDEScontrolDFT XSERDEScontrolDFT (
 
 STONEnoconn XNCten_serdes_noconn (
 .noconn(ten_serdes_noconn)
-);
-
-STONEnoconn XNCtdext_noconn_noconn (
-.noconn(tdext_noconn_noconn)
 );
 
 SERDESinputSINGLEserdes XSERDESinputSINGLEserdes (

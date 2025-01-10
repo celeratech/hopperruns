@@ -183,6 +183,48 @@ movePINS
 endlayoutbio
 //**********************************************
 //Project Parameters
+//Celera:WALTZ Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
@@ -237,7 +279,7 @@ pinname,CELV
 definition,CELV,power
 iq,CELV,SIMULATION
 absmax,CELV,6
-absmin,CELV,1.4
+absmin,CELV,2.0
 io,CELV,power
 mode,CELV,power
 router,CELV,TBD
@@ -247,10 +289,8 @@ esd,CELV,TBD
 pinname,CELG
 definition,CELG,power ground
 iq,CELG,SIMULATION
-absmax,CELG,*******
-
-absmin,CELG,***********************
-
+absmax,CELG,0.3
+absmin,CELG,-0.3
 io,CELG,power
 mode,CELG,power
 router,CELG,TBD
@@ -261,8 +301,7 @@ pinname,enable_switch
 definition,,enable_switch,switch enable
 iq,enable_switch,SIMULATION
 absmax,enable_switch,6
-absmin,enable_switch,***********************
-
+absmin,enable_switch,-0.3
 io,enable_switch,input
 mode,,enable_switch,digital
 router,enable_switch,TBD
@@ -273,8 +312,7 @@ pinname,O
 definition,O,switch output 
 iq,O,SIMULATION
 absmax,O,6
-absmin,O,***********************
-
+absmin,O,-0.3
 io,O,inout
 mode,O,analog
 router,O,TBD
@@ -285,8 +323,7 @@ pinname,CELSUB
 definition,CELSUB,Substrate
 iq,CELSUB,SIMULATION
 absmax,CELSUB,6
-absmin,CELSUB,***********************
-
+absmin,CELSUB,-0.3
 io,CELSUB,input
 mode,CELSUB,power
 router,CELSUB,TBD
