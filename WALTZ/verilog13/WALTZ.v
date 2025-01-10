@@ -81,8 +81,7 @@ module WALTZceleraRING (EN,FB,IN,SW,BST,GND,PIN,POK,TAO,VCC,tdo,tmi,BIAS,FSET,PG
   output  celkelvin_BIAS_bc3b7675;
 endmodule
 
-module WALTZceleraSERDES (tdo,tmi,DFTSCL,DFTSDA,unlock,CELG59462,CELV96848,PORB97836,CELSUB40948,celkelvin_VCC_eb468fcf);
-  inout  tdo;
+module WALTZceleraSERDES (tmi,DFTSCL,DFTSDA,unlock,CELG59462,CELV96848,PORB97836,CELSUB40948,celkelvin_VCC_eb468fcf);
   inout [5:0] tmi;
   inout  DFTSCL;
   inout  DFTSDA;
@@ -199,7 +198,6 @@ WALTZceleraRING XceleraRING (
 );
 
 WALTZceleraSERDES XceleraSERDES (
-.tdo(tdo),
 .tmi(tmi[5:0]),
 .DFTSCL(DFTSCL),
 .DFTSDA(DFTSDA),

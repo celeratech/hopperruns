@@ -105,8 +105,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module WALTZceleraSERDES (tdo, tmi, DFTSCL, DFTSDA, unlock, CELG59462, CELV96848, PORB97836, CELSUB40948, celkelvin_VCC_eb468fcf);
-inout  tdo;
+module WALTZceleraSERDES (tmi, DFTSCL, DFTSDA, unlock, CELG59462, CELV96848, PORB97836, CELSUB40948, celkelvin_VCC_eb468fcf);
 inout [5:0] tmi;
 inout  DFTSCL;
 inout  DFTSDA;

@@ -146,6 +146,48 @@ revision,layout,0p1
 endlayoutbio
 //**********************************************
 //Project Parameters
+//Celera:WALTZ Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
@@ -305,7 +347,7 @@ pinname,GATE
 definition,GATE,FET gate 	
 iq,GATE,SIMULATION
 absmax,GATE,1
-absmin,GATE,
+absmin,GATE,-0.3
 io,GATE,input
 mode,GATE,analog
 router,GATE,TBD
@@ -316,7 +358,7 @@ pinname,SOURCE
 definition,SOURCE,FET source
 iq,SOURCE,SIMULATION
 absmax,SOURCE,1
-absmin,SOURCE,
+absmin,SOURCE,-0.3
 io,SOURCE,inout
 mode,SOURCE,analog
 router,SOURCE,TBD
@@ -327,7 +369,7 @@ pinname,DRAIN
 definition,DRAIN,FET drain 
 iq,DRAIN,SIMULATION
 absmax,DRAIN,1
-absmin,DRAIN,
+absmin,DRAIN,-0.3
 io,DRAIN,inout
 mode,DRAIN,analog
 router,DRAIN,TBD
@@ -338,7 +380,7 @@ pinname,PMOSiso6
 definition,PMOSiso6,PMOS ISO Connection 
 iq,PMOSiso6,SIMULATION
 absmax,PMOSiso6,1
-absmin,PMOSiso6,
+absmin,PMOSiso6,-0.3
 io,PMOSiso6,input
 mode,PMOSiso6,analog
 router,PMOSiso6,TBD
@@ -352,8 +394,8 @@ esd,PMOSiso6,TBD
 pinname,CELSUB
 definition,CELSUB,FET CELSUBstrate 
 iq,CELSUB,SIMULATION
-absmax,CELSUB,
-absmin,CELSUB,
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
 io,CELSUB,input
 mode,CELSUB,analog
 router,CELSUB,TBD
