@@ -197,37 +197,60 @@ module VESPAasmOUTPUT2_0 (o,tstate0,tstate1,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module inv_12e192f5 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+//Celera:inv_12e192f5
+//Celera Confidential Symbol Generator
+//5V Inverter
+module inv_12e192f5 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
 
-module delayfixed_2f9b06c1 (i,o,CELG,CELV,CELSUB);
-  input  i;
-  output  o;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+//Celera:delayfixed_2f9b06c1
+//Celera Confidential Symbol Generator
+//TYPE:fixed Egde:rise
+module delayfixed_2f9b06c1 (CELV,i,o,
+CELG,CELSUB);
+input CELV;
+input i;
+output o;
+input CELG;
+input CELSUB;
 endmodule
 
-module delayfixed_4c9b837a (i,o,CELG,CELV,CELSUB);
-  input  i;
-  output  o;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+//Celera:delayfixed_4c9b837a
+//Celera Confidential Symbol Generator
+//TYPE:fixed Egde:rise
+module delayfixed_4c9b837a (CELV,i,o,
+CELG,CELSUB);
+input CELV;
+input i;
+output o;
+input CELG;
+input CELSUB;
 endmodule
 
-module delayfixed_285c0416 (i,o,CELG,CELV,CELSUB);
-  input  i;
-  output  o;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+//Celera:delayfixed_285c0416
+//Celera Confidential Symbol Generator
+//TYPE:fixed Egde:rise
+module delayfixed_285c0416 (CELV,i,o,
+CELG,CELSUB);
+input CELV;
+input i;
+output o;
+input CELG;
+input CELSUB;
 endmodule
+
+
 
 // ------------------------ Module Verilog ---------------
 module SEQUENCER1waltz_Rev1_DYES_ (OFF, RUN, porb, FAULT, ENABLE, UNDEF4, UNDEF5, ok_clock, CELG59462, CELV96848, SOFTSTART, fault_run, ok_driver, REGULATION, ok_service, CELSUB40948, blank_fault, fault_clock, ENABLEdelayi, enable_waltz, STATEcontrol0, STATEcontrol1, STATEcontrol2, STATEcontrol3, ok_regulation, done_softstart, fault_shutdown, switch_control, ENABLEmaxdelayo, REGULATIONdelayi, enable_softstart, enable_regulation, REGULATIONmaxdelayo);

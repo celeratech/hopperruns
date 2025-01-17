@@ -15,32 +15,49 @@ module VESPAasmHIJACK3 (qi0,qi1,qi2,hj_0,hj_1,hj_2,hj_3,qo_0,qo_1,qo_2,CELG59462
   input  CELSUB40948;
 endmodule
 
-module delayfixed_3d22e6ee (i,o,CELG,CELV,CELSUB);
-  input  i;
-  output  o;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+//Celera:delayfixed_3d22e6ee
+//Celera Confidential Symbol Generator
+//TYPE:fixed Egde:rise
+module delayfixed_3d22e6ee (CELV,i,o,
+CELG,CELSUB);
+input CELV;
+input i;
+output o;
+input CELG;
+input CELSUB;
 endmodule
 
-module srlatch_39d292e9 (q,r,s,qb,rb,SUB,CELG,CELV);
-  output  q;
-  input  r;
-  input  s;
-  output  qb;
-  input  rb;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:srlatch_39d292e9
+//Celera Confidential Symbol Generator
+//SR Latch
+module srlatch_39d292e9 (CELV,CELG,s,r,rb,q,qb,SUB);
+input CELV;
+input CELG;
+input s;
+input r;
+input rb;
+input SUB;
+output q;
+output qb;
 endmodule
 
-module decoder3_0389bc20 (i,o,SUB,CELG,CELV);
-  input [2:0] i;
-  output [7:0] o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:decoder3_0389bc20
+//Celera Confidential Symbol Generator
+//DECODER
+module decoder3_0389bc20 (CELV,i,o,
+CELG,SUB);
+input CELV;
+input [2:0] i;
+output [7:0] o;
+input CELG;
+input SUB;
 endmodule
+
+
 
 //Verilog HDL for "Generate", "STONEnoconn" "functional"
 

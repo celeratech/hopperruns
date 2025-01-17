@@ -51,66 +51,103 @@ module VESPAfaultmanagerDELAYdebug (delayi,delayo,enable,fault_in,CELG59462,CELV
   input  hijack_status;
 endmodule
 
-module delayclock_de2e40ea (in,out,CELG,CELV,clock,delay,CELSUB,celeraporb);
-  input  in;
-  output  out;
-  input  CELG;
-  input  CELV;
-  input  clock;
-  input  delay;
-  input  CELSUB;
-  input  celeraporb;
+//Celera:delayclock_de2e40ea
+//CONTROL:Pin:2 outputs
+module delayclock_de2e40ea (in,CELV,out,clock,celeraporb,
+delay,
+CELG,CELSUB);
+input CELV;
+input in;
+output out;
+input clock;
+input celeraporb;
+input CELSUB;
+input CELG;
+input delay;
 endmodule
 
-module nor2_ee112582 (o,i0,i1,SUB,CELG,CELV);
-  output  o;
-  input  i0;
-  input  i1;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:nor2_ee112582
+//Celera Confidential Symbol Generator
+//nor2
+module nor2_ee112582 (CELV,CELG,i0,i1,o,SUB);
+input CELV;
+input CELG;
+input i0;
+input i1;
+input SUB;
+output o;
 endmodule
 
-module inv_12e192f5 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:inv_12e192f5
+//Celera Confidential Symbol Generator
+//5V Inverter
+module inv_12e192f5 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
 
-module dbuf_e926e395 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:dbuf_e926e395
+//Celera Confidential Symbol Generator
+//Digital Buffer
+module dbuf_e926e395 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
 
-module oneshot_b3f9fb06 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:oneshot_b3f9fb06
+//Celera Confidential Symbol Generator
+//One Shot1000ns OneShot - Bad Designer!!
+module oneshot_b3f9fb06 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
 
-module delayfixed_8edbcb06 (i,o,CELG,CELV,CELSUB);
-  input  i;
-  output  o;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+//Celera:delayfixed_8edbcb06
+//Celera Confidential Symbol Generator
+//TYPE:fixed Egde:rise
+module delayfixed_8edbcb06 (CELV,i,o,
+CELG,CELSUB);
+input CELV;
+input i;
+output o;
+input CELG;
+input CELSUB;
 endmodule
 
-module nand2_9125fe87 (o,i0,i1,SUB,CELG,CELV);
-  output  o;
-  input  i0;
-  input  i1;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:nand2_9125fe87
+//Celera Confidential Symbol Generator
+//5V NAND2
+module nand2_9125fe87 (CELV,CELG,i0,i1,o,SUB);
+input CELV;
+input CELG;
+input i0;
+input i1;
+input SUB;
+output o;
 endmodule
+
+
 
 //Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
 
@@ -124,30 +161,40 @@ module PEBBLEtielo ( q, G, SUB, V );
 endmodule
 
 
-module thermal_b84c0fbd (IP,ten,CELG,CELBG,SIMPV,CELSUB,fault_thermal,enable_thermal,trim_thermal_accuracy);
-  input  IP;
-  input  ten;
-  input  CELG;
-  input  CELBG;
-  input  SIMPV;
-  input  CELSUB;
-  output  fault_thermal;
-  input  enable_thermal;
-  input [2:0] trim_thermal_accuracy;
+//Celera:thermal
+//Celera Confidential Symbol Generator
+//Thermal Protector:Rise 165C Fall naC
+ module thermal_b84c0fbd (SIMPV,CELBG,IP,enable_thermal,fault_thermal,ten,
+trim_thermal_accuracy,
+CELG,CELSUB);
+input SIMPV;
+input CELBG;
+input IP;
+input enable_thermal;
+output fault_thermal;
+input ten;
+input [2:0] trim_thermal_accuracy;
+input CELG;
+input CELSUB;
 endmodule
 
-//Verilog HDL for "DFT", "DFTtm8t" "functional"
 
 
-module DFTtm8t ( a, ten, tmi, G, SUB, V, tma );
+//Verilog HDL for "DRM", "drm8L" "functional"
 
+
+module drm8L ( V, G, SUB, tmi, bypload, lastdrm, id, drm0, d1, d0 );
+
+  input lastdrm;
   input V;
-  input  [7:0] tma;
-  output  [7:0] ten;
-  output  [1:0] a;
+  output d1;
+  input  [7:0] id;
+  output d0;
+  input bypload;
+  output  [7:0] drm0;
   input G;
-  input SUB;
   inout  [4:0] tmi;
+  input SUB;
 endmodule
 
 
@@ -162,7 +209,7 @@ endmodule
 
 // ------------------------ Module Verilog ---------------
 module FAULTMANAGERwaltzMAIN (tmi, MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELBG83021, CELSUB40948, blank_fault, fault_short, mode_hiccup, enable_fault, fault_freeze, hijack_delay, blank_thermal, dft_delaySHORT, hijack_short_status, IP_201f84ba_Xthermal1, hijack_thermal_status, hijack_faultmanager_status);
-input [4:0] tmi;
+inout [4:0] tmi;
 input  MUDV;
 input  clock;
 input  CELG59462;
@@ -188,9 +235,8 @@ input  hijack_faultmanager_status;
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
 wire [2:0] trim_thermal_accuracy;
-wire [1:0] a;
-wire [7:0] ten;
-wire [7:0] tma;
+wire [7:0] id;
+wire [7:0] drm0;
 
 // ------------------------ Networks ---------------------
 VESPAfaultmanagerINTERNALdebug XU14 (
@@ -380,61 +426,56 @@ dbuf_e926e395 XU44 (
 .CELV(CELV96848)
 );
 
-PEBBLEtielo XDRMNOTL (
+PEBBLEtielo XtieLo (
 .G(CELG59462),
 .V(CELV96848),
-.q(c0),
+.q(tl0),
 .SUB(CELSUB40948)
 );
 
 thermal_b84c0fbd Xthermal1 (
 .IP(IP_201f84ba_Xthermal1),
-.ten(ten_201f84ba_Xthermal1),
+.ten(tl0),
 .CELG(CELG59462),
 .CELBG(CELBG83021),
 .SIMPV(MUDV),
 .CELSUB(CELSUB40948),
 .fault_thermal(net_94),
 .enable_thermal(net_98),
-.trim_thermal_accuracy({c0,c0,c0})
+.trim_thermal_accuracy({trim_thermal_accuracy_201f84ba_2,trim_thermal_accuracy_201f84ba_1,trim_thermal_accuracy_201f84ba_0})
 );
 
-DFTtm8t dft_hex0x0D (
+drm8L drm_hex0x08 (
 .G(CELG59462),
 .V(CELV96848),
-.a({a1,a0}),
+.d0(a0),
+.d1(a1),
+.id({a0,a0,a0,a0,a1,a0,a0,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x0D_ten_7,noconn_dft_hex0x0D_ten_6,noconn_dft_hex0x0D_ten_5,noconn_dft_hex0x0D_ten_4,noconn_dft_hex0x0D_ten_3,noconn_dft_hex0x0D_ten_2,noconn_dft_hex0x0D_ten_1,ten_201f84ba_Xthermal1}),
-.tma({a0,a0,a0,a0,a1,a1,a0,a1}),
-.tmi(tmi[4:0])
+.tmi(tmi[4:0]),
+.drm0({noconn_drm8L_drm0_7,noconn_drm8L_drm0_6,noconn_drm8L_drm0_5,noconn_drm8L_drm0_4,noconn_drm8L_drm0_3,trim_thermal_accuracy_201f84ba_2,trim_thermal_accuracy_201f84ba_1,trim_thermal_accuracy_201f84ba_0}),
+.bypload(a0),
+.lastdrm(a0)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x0D_ten_1 (
-.noconn(noconn_dft_hex0x0D_ten_1)
+STONEnoconn XNCnoconn_drm8L_drm0_3 (
+.noconn(noconn_drm8L_drm0_3)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x0D_ten_2 (
-.noconn(noconn_dft_hex0x0D_ten_2)
+STONEnoconn XNCnoconn_drm8L_drm0_4 (
+.noconn(noconn_drm8L_drm0_4)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x0D_ten_3 (
-.noconn(noconn_dft_hex0x0D_ten_3)
+STONEnoconn XNCnoconn_drm8L_drm0_5 (
+.noconn(noconn_drm8L_drm0_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x0D_ten_4 (
-.noconn(noconn_dft_hex0x0D_ten_4)
+STONEnoconn XNCnoconn_drm8L_drm0_6 (
+.noconn(noconn_drm8L_drm0_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x0D_ten_5 (
-.noconn(noconn_dft_hex0x0D_ten_5)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x0D_ten_6 (
-.noconn(noconn_dft_hex0x0D_ten_6)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x0D_ten_7 (
-.noconn(noconn_dft_hex0x0D_ten_7)
+STONEnoconn XNCnoconn_drm8L_drm0_7 (
+.noconn(noconn_drm8L_drm0_7)
 );
 
 endmodule

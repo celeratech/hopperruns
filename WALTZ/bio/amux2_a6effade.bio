@@ -113,48 +113,6 @@ endlayoutbio
 
 //**********************************************
 //Project Parameters
-//Celera:WALTZ Project Bio
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////   default.bio'  DO NOT USE  ///////////////////////////////////
-
-//Simplis Project Parameters /////////////////////////////////////////////
-#define,Project,TBD
-#define,PROJECTreference,0.9
-#define,PROJECTsupply,4.5
-#define,TaRoom,25
-#define,ground,0.0
-#define,leveloffset,5
-//////////////////////////////////////////////////////////////////////////////////////////
-
-//Porcess  Parameters ///////////////////////////////////////////////////////
-#define,PROJECTbg,1.232
-#define,REFERENCEccpcode,15
-#define,REFERENCEccncode,15
-#define,HVNPN2A_5vbe,0.55
-#define,HVNPN2A_5vbetc,-2.1
-#define,VTNnch5i,0.72
-//#define,FETNcalculator_option,typical
-#define,FETNcalculator,maximum
-//#define,FETPcalculator_option,typical
-#define,FETPcalculator,maximum
-////////////////////////////////////////////////////////////////////////////////////////
-
-//Global Parameters ///////////////////////////////////////////////////////
-#define,CELVminimum,2.0
-#define,CELGabsmax,0.3
-#define,CELGabsmin,-0.3
-#define,SUBabsmax,0.3
-#define,SUBabsmin,-0.3
-#define,CELSUBabsmax,0.3
-#define,CELSUBabsmin,-0.3
-/////////////////////////////////////////////////////////////////////////////////////////
-
-//layout Parameters //////////////////////////////////////////////////////////
-#define MODULEdiesizefill 10
-//Percentage of area added to module for routing
-////////////////////////////////////////////////////////////////////////////////////////
-
-
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
@@ -210,7 +168,7 @@ pinname,SIMPV
 definition,SIMPV,AMUX power supply
 iq,SIMPV,SIMULATION
 absmax,SIMPV,6
-absmin,SIMPV,2.0
+absmin,SIMPV,
 io,SIMPV,input
 mode,SIMPV,power
 router,SIMPV,TBD
@@ -220,8 +178,10 @@ esd,SIMPV,TBD
 pinname,CELG
 definition,CELG,AMUX power ground
 iq,CELG,SIMULATION
-absmax,CELG,0.3
-absmin,CELG,-0.3
+absmax,CELG,
+
+absmin,CELG,****************
+
 io,CELG,input
 mode,CELG,power
 router,CELG,TBD
@@ -231,8 +191,8 @@ esd,CELG,TBD
 pinname,CELSUB
 definition,CELSUB,power ground
 iq,CELSUB,SIMULATION
-absmax,CELSUB,0.3
-absmin,CELSUB,-0.3
+absmax,CELSUB,
+absmin,CELSUB,
 io,CELSUB,input
 mode,CELSUB,power
 router,CELSUB,TBD
@@ -243,7 +203,8 @@ pinname,I0
 definition,I0,AMUX Input0
 iq,I0,SIMULATION
 absmax,I0,6
-absmin,I0,-0.3
+absmin,I0,****************
+
 io,I0,input
 mode,I0,analog
 router,I0,TBD
@@ -254,7 +215,8 @@ pinname,I1
 definition,I1,AMUX Input1
 iq,I1,SIMULATION
 absmax,I1,6
-absmin,I1,-0.3
+absmin,I1,****************
+
 io,I1,input
 mode,I1,analog
 router,I1,TBD
@@ -271,7 +233,8 @@ pinname,O
 definition,O,MUX output
 iq,O,SIMULATION
 absmax,O,6
-absmin,O,-0.3
+absmin,O,****************
+
 io,O,output
 mode,O,analog
 router,O,TBD
@@ -282,7 +245,8 @@ pinname,amux
 definition,amux,AMUX pin select bus
 iq,amux,SIMULATION
 absmax,amux,6
-absmin,amux,-0.3
+absmin,amux,****************
+
 io,amux,input
 mode,amux,digital
 router,amux,TBD

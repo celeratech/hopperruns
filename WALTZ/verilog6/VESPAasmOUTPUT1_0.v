@@ -1,19 +1,30 @@
 // ------------------------ Module Definitions -----------
-module delayfixed_cf78160c (i,o,CELG,CELV,CELSUB);
-  input  i;
-  output  o;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+//Celera:delayfixed_cf78160c
+//Celera Confidential Symbol Generator
+//TYPE:fixed Egde:both
+module delayfixed_cf78160c (CELV,i,o,
+CELG,CELSUB);
+input CELV;
+input i;
+output o;
+input CELG;
+input CELSUB;
 endmodule
 
-module dbuf_e926e395 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:dbuf_e926e395
+//Celera Confidential Symbol Generator
+//Digital Buffer
+module dbuf_e926e395 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
+
+
 
 // ------------------------ Module Verilog ---------------
 module VESPAasmOUTPUT1_0 (o, tstate, CELG59462, CELV96848, CELSUB40948);

@@ -1,11 +1,16 @@
 // ------------------------ Module Definitions -----------
-module dbuf_e926e395 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+//Celera:dbuf_e926e395
+//Celera Confidential Symbol Generator
+//Digital Buffer
+module dbuf_e926e395 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
+
+
 
 // ------------------------ Module Verilog ---------------
 module VESPAclocktree4 (clock0, clock1, clock2, clock3, clocki, CELG59462, CELV96848, CELSUB40948);

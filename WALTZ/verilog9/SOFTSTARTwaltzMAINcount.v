@@ -8,52 +8,77 @@ module VESPAasmINPUT1 (o,i0,Tstate,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module dbuf_e926e395 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+//Celera:dbuf_e926e395
+//Celera Confidential Symbol Generator
+//Digital Buffer
+module dbuf_e926e395 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
 
-module nand3_3e9b0d1d (o,i0,i1,i2,SUB,CELG,CELV);
-  output  o;
-  input  i0;
-  input  i1;
-  input  i2;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:nand3_3e9b0d1d
+//Celera Confidential Symbol Generator
+//5V Inverter
+module nand3_3e9b0d1d (CELV,CELG,i0,i1,i2,o,SUB);
+input CELV;
+input CELG;
+input i0;
+input i1;
+input i2;
+input SUB;
+output o;
 endmodule
 
-module dff_fc5ad7bd (d,q,ck,qb,rb,CELG,CELV,CELSUB);
-  input  d;
-  output  q;
-  input  ck;
-  output  qb;
-  input  rb;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+//Celera:dff_fc5ad7bd
+//Celera Confidential Symbol Generator
+//DFF latch
+module dff_fc5ad7bd (CELV,d,rb,ck,q,qb,CELG,CELSUB);
+input CELV;
+input d;
+input rb;
+input ck;
+output q;
+output qb;
+input CELG;
+input CELSUB;
 endmodule
 
-module nor3_c2b5cbd2 (o,i0,i1,i2,SUB,CELG,CELV);
-  output  o;
-  input  i0;
-  input  i1;
-  input  i2;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:nor3_c2b5cbd2
+//Celera Confidential Symbol Generator
+//NOR3
+module nor3_c2b5cbd2 (CELV,CELG,i0,i1,i2,o,SUB);
+input CELV;
+input CELG;
+input i0;
+input i1;
+input i2;
+input SUB;
+output o;
 endmodule
 
-module inv_12e192f5 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:inv_12e192f5
+//Celera Confidential Symbol Generator
+//5V Inverter
+module inv_12e192f5 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
+
+
 
 // ------------------------ Module Verilog ---------------
 module SOFTSTARTwaltzMAINcount (clock, count_0, count_1, count_2, count_3, count_4, count_5, count_6, count_7, halfway, CELG59462, CELV96848, done_count, half_count, CELSUB40948, enable_count);

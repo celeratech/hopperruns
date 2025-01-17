@@ -1,28 +1,43 @@
 // ------------------------ Module Definitions -----------
-module nand2_9125fe87 (o,i0,i1,SUB,CELG,CELV);
-  output  o;
-  input  i0;
-  input  i1;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+//Celera:nand2_9125fe87
+//Celera Confidential Symbol Generator
+//5V NAND2
+module nand2_9125fe87 (CELV,CELG,i0,i1,o,SUB);
+input CELV;
+input CELG;
+input i0;
+input i1;
+input SUB;
+output o;
 endmodule
 
-module dbuf_e926e395 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:dbuf_e926e395
+//Celera Confidential Symbol Generator
+//Digital Buffer
+module dbuf_e926e395 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
 
-module inv_12e192f5 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:inv_12e192f5
+//Celera Confidential Symbol Generator
+//5V Inverter
+module inv_12e192f5 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
+
+
 
 // ------------------------ Module Verilog ---------------
 module VESPAasmTIMERminmax (state, Tstate, CELG59462, CELV96848, CELSUB40948, STATEtimeout, t_delayinput, tmax_delayoutput, tmin_delayoutput);

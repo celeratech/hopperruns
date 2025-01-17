@@ -1,30 +1,45 @@
 // ------------------------ Module Definitions -----------
-module nor4_ff041824 (o,i0,i1,i2,i3,SUB,CELG,CELV);
-  output  o;
-  input  i0;
-  input  i1;
-  input  i2;
-  input  i3;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+//Celera:nor4_ff041824
+//Celera Confidential Symbol Generator
+//nor4
+module nor4_ff041824 (CELV,CELG,i0,i1,i2,i3,o,SUB);
+input CELV;
+input CELG;
+input i0;
+input i1;
+input i2;
+input i3;
+input SUB;
+output o;
 endmodule
 
-module inv_12e192f5 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:inv_12e192f5
+//Celera Confidential Symbol Generator
+//5V Inverter
+module inv_12e192f5 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
 
-module dbuf_e926e395 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:dbuf_e926e395
+//Celera Confidential Symbol Generator
+//Digital Buffer
+module dbuf_e926e395 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
+
+
 
 // ------------------------ Module Verilog ---------------
 module VESPAasmSR4 (i0, i1, i2, i3, sr, CELG59462, CELV96848, CELSUB40948);

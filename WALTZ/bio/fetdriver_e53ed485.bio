@@ -241,44 +241,44 @@ moveORIGIN -x
 placeINST Xpowernmos0 0 0 MXR90
 moveORIGIN x
 moveORIGIN y
-place Generate STONEfetdrivermain 65.885 -30.94 R180
-placeSTEP Generate STONEfetdriverpdrive1 9.275 -29.74 x 13.74 R0
-placeSTEPcontinue Generate STONEfetdriverndrive1 x 11.25 R0
-placeSTEPcontinue Generate STONEfetdriverpdrive2 x 78.99 R0
-placeSTEPcontinue Generate STONEfetdriverndrive2 x 36.21 R0
-placeINST Xstatusdelay 9.275 -50 MX
-place Generate STONEfetdriverENABLEnome 94.325 -50 MX
+//place Generate STONEfetdrivermain 65.885 -30.94 R180
+//placeSTEP Generate STONEfetdriverpdrive1 9.275 -29.74 x 13.74 R0
+//placeSTEPcontinue Generate STONEfetdriverndrive1 x 11.25 R0
+//placeSTEPcontinue Generate STONEfetdriverpdrive2 x 78.99 R0
+//placeSTEPcontinue Generate STONEfetdriverndrive2 x 36.21 R0
+//placeINST Xstatusdelay 9.275 -50 MX
+//place Generate STONEfetdriverENABLEnome 94.325 -50 MX
 
-placeIFELSE cellNameContains pdrive3&&ndrive3
-place Generate STONEfetdriverpdrive3 10.28 -47.68 R0
-placeSTEP Generate STONEfetdriverndrive3 10.28 -64.42 x 114.03 R0
-place Generate STONEadjdelay1ns5bits 124.31 -64.42 R0
-placeELSE
-placeSTEP Generate STONEfetdriverndrive3 10.28 -47.68 x 114.03 R0
-placeSTEPcontinue Generate STONEfetdriverpdrive3 x 277.4 R0
-placeTAPuntil
-placeTAP 20 -24.8
-place Generate STONEadjdelay1ns5bits 10.28 -29.74 R0
-placeTAP 20 -36
-place Generate STONEadjdelay1ns5bits 10.28 -47.68 R0
-placeTAP 20 -55
-place Generate STONEadjdelay1ns5bits 10.28 -64.48 R0
-placeTAPEND
-placeEND
+//placeIFELSE cellNameContains pdrive3&&ndrive3
+//place Generate STONEfetdriverpdrive3 10.28 -47.68 R0
+//placeSTEP Generate STONEfetdriverndrive3 10.28 -64.42 x 114.03 R0
+//place Generate STONEadjdelay1ns5bits 124.31 -64.42 R0
+//placeELSE
+//placeSTEP Generate STONEfetdriverndrive3 10.28 -47.68 x 114.03 R0
+//placeSTEPcontinue Generate STONEfetdriverpdrive3 x 277.4 R0
+//placeTAPuntil
+//placeTAP 20 -24.8
+//place Generate STONEadjdelay1ns5bits 10.28 -29.74 R0
+//placeTAP 20 -36
+//place Generate STONEadjdelay1ns5bits 10.28 -47.68 R0
+//placeTAP 20 -55
+//place Generate STONEadjdelay1ns5bits 10.28 -64.48 R0
+//placeTAPEND
+//placeEND
 //
-moveORIGIN y
+//moveORIGIN y
 //
-placeINST Xfetin 279.145 12.01 R0
-placeINST Xenable 444.62 148.03 R0
-placeINST Xpassive 61 22 R270
-placeIFELSE instNameContains Xfetin
-placeINST Xglobal 272 148.03 R0
-placeHVRING rect
-placeELSE
-placeINST Xglobal 118.87 -21.365 R0
-placeINST Xenablelv 65.885 27.43 MX
-placeDBLHVRING 120 -20 155 12
-placeEND
+placeINST Xfetin 0 -132.825 R0
+placeINST Xenable 212.05 -132.825 MY
+//placeINST Xpassive 61 22 R270
+//placeIFELSE instNameContains Xfetin
+placeINST Xglobal 0 -113.205 MX
+//placeHVRING rect
+//placeELSE
+//placeINST Xglobal 118.87 -21.365 R0
+//placeINST Xenablelv 65.885 27.43 MX
+//placeDBLHVRING 120 -20 155 12
+//placeEND
 //moveORIGIN x
 //moveORIGIN y
 //placeROUTE

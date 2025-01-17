@@ -15,23 +15,33 @@ module VESPAasmBLANK8 (o,i0,i1,i2,i3,i4,i5,i6,i7,Tstate,CELG59462,CELV96848,CELS
   input  CELSUB40948;
 endmodule
 
-module srlatch_39d292e9 (q,r,s,qb,rb,SUB,CELG,CELV);
-  output  q;
-  input  r;
-  input  s;
-  output  qb;
-  input  rb;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+//Celera:srlatch_39d292e9
+//Celera Confidential Symbol Generator
+//SR Latch
+module srlatch_39d292e9 (CELV,CELG,s,r,rb,q,qb,SUB);
+input CELV;
+input CELG;
+input s;
+input r;
+input rb;
+input SUB;
+output q;
+output qb;
 endmodule
 
-module tie_9e2c0894 (a0,SUB,CELG,CELV);
-  output  a0;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:tie_9e2c0894
+//Celera Confidential Symbol Generator
+//TIE
+module tie_9e2c0894 (CELV,CELG,a0,SUB);
+input CELV;
+input CELG;
+output a0;
+input SUB;
 endmodule
+
+
 
 //Verilog HDL for "Generate", "STONEnoconn" "functional"
 

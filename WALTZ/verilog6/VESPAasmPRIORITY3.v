@@ -1,47 +1,72 @@
 // ------------------------ Module Definitions -----------
-module srlatch_39d292e9 (q,r,s,qb,rb,SUB,CELG,CELV);
-  output  q;
-  input  r;
-  input  s;
-  output  qb;
-  input  rb;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+//Celera:srlatch_39d292e9
+//Celera Confidential Symbol Generator
+//SR Latch
+module srlatch_39d292e9 (CELV,CELG,s,r,rb,q,qb,SUB);
+input CELV;
+input CELG;
+input s;
+input r;
+input rb;
+input SUB;
+output q;
+output qb;
 endmodule
 
-module nor2_ee112582 (o,i0,i1,SUB,CELG,CELV);
-  output  o;
-  input  i0;
-  input  i1;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:nor2_ee112582
+//Celera Confidential Symbol Generator
+//nor2
+module nor2_ee112582 (CELV,CELG,i0,i1,o,SUB);
+input CELV;
+input CELG;
+input i0;
+input i1;
+input SUB;
+output o;
 endmodule
 
-module nand2_9125fe87 (o,i0,i1,SUB,CELG,CELV);
-  output  o;
-  input  i0;
-  input  i1;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:nand2_9125fe87
+//Celera Confidential Symbol Generator
+//5V NAND2
+module nand2_9125fe87 (CELV,CELG,i0,i1,o,SUB);
+input CELV;
+input CELG;
+input i0;
+input i1;
+input SUB;
+output o;
 endmodule
 
-module tie_9e2c0894 (a0,SUB,CELG,CELV);
-  output  a0;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:tie_9e2c0894
+//Celera Confidential Symbol Generator
+//TIE
+module tie_9e2c0894 (CELV,CELG,a0,SUB);
+input CELV;
+input CELG;
+output a0;
+input SUB;
 endmodule
 
-module inv_12e192f5 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:inv_12e192f5
+//Celera Confidential Symbol Generator
+//5V Inverter
+module inv_12e192f5 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
+
+
 
 //Verilog HDL for "Generate", "STONEnoconn" "functional"
 

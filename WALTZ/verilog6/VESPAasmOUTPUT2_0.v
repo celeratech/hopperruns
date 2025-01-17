@@ -1,36 +1,57 @@
 // ------------------------ Module Definitions -----------
-module inv_12e192f5 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+//Celera:inv_12e192f5
+//Celera Confidential Symbol Generator
+//5V Inverter
+module inv_12e192f5 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
 
-module nor2_ee112582 (o,i0,i1,SUB,CELG,CELV);
-  output  o;
-  input  i0;
-  input  i1;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:nor2_ee112582
+//Celera Confidential Symbol Generator
+//nor2
+module nor2_ee112582 (CELV,CELG,i0,i1,o,SUB);
+input CELV;
+input CELG;
+input i0;
+input i1;
+input SUB;
+output o;
 endmodule
 
-module delayfixed_cf78160c (i,o,CELG,CELV,CELSUB);
-  input  i;
-  output  o;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+//Celera:delayfixed_cf78160c
+//Celera Confidential Symbol Generator
+//TYPE:fixed Egde:both
+module delayfixed_cf78160c (CELV,i,o,
+CELG,CELSUB);
+input CELV;
+input i;
+output o;
+input CELG;
+input CELSUB;
 endmodule
 
-module dbuf_e926e395 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:dbuf_e926e395
+//Celera Confidential Symbol Generator
+//Digital Buffer
+module dbuf_e926e395 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
+
+
 
 // ------------------------ Module Verilog ---------------
 module VESPAasmOUTPUT2_0 (o, tstate0, tstate1, CELG59462, CELV96848, CELSUB40948);

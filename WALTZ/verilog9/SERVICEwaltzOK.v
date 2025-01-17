@@ -1,56 +1,88 @@
 // ------------------------ Module Definitions -----------
-module inv_12e192f5 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+//Celera:inv_12e192f5
+//Celera Confidential Symbol Generator
+//5V Inverter
+module inv_12e192f5 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
 
-module nor2_ee112582 (o,i0,i1,SUB,CELG,CELV);
-  output  o;
-  input  i0;
-  input  i1;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:nor2_ee112582
+//Celera Confidential Symbol Generator
+//nor2
+module nor2_ee112582 (CELV,CELG,i0,i1,o,SUB);
+input CELV;
+input CELG;
+input i0;
+input i1;
+input SUB;
+output o;
 endmodule
 
-module nand2_9125fe87 (o,i0,i1,SUB,CELG,CELV);
-  output  o;
-  input  i0;
-  input  i1;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:nand2_9125fe87
+//Celera Confidential Symbol Generator
+//5V NAND2
+module nand2_9125fe87 (CELV,CELG,i0,i1,o,SUB);
+input CELV;
+input CELG;
+input i0;
+input i1;
+input SUB;
+output o;
 endmodule
 
-module delayfixed_29084986 (i,o,CELG,CELV,CELSUB);
-  input  i;
-  output  o;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+//Celera:delayfixed_29084986
+//Celera Confidential Symbol Generator
+//TYPE:fixed Egde:rise
+module delayfixed_29084986 (CELV,i,o,
+CELG,CELSUB);
+input CELV;
+input i;
+output o;
+input CELG;
+input CELSUB;
 endmodule
 
-module delayfixed_43e73311 (i,o,CELG,CELV,CELSUB);
-  input  i;
-  output  o;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+//Celera:delayfixed_43e73311
+//Celera Confidential Symbol Generator
+//TYPE:fixed Egde:fall
+module delayfixed_43e73311 (CELV,i,o,
+CELG,CELSUB);
+input CELV;
+input i;
+output o;
+input CELG;
+input CELSUB;
 endmodule
 
-module srlatch_39d292e9 (q,r,s,qb,rb,SUB,CELG,CELV);
-  output  q;
-  input  r;
-  input  s;
-  output  qb;
-  input  rb;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:srlatch_39d292e9
+//Celera Confidential Symbol Generator
+//SR Latch
+module srlatch_39d292e9 (CELV,CELG,s,r,rb,q,qb,SUB);
+input CELV;
+input CELG;
+input s;
+input r;
+input rb;
+input SUB;
+output q;
+output qb;
 endmodule
+
+
 
 //Verilog HDL for "Generate", "STONEnoconn" "functional"
 

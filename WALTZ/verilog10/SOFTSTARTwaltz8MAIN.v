@@ -37,81 +37,131 @@ module VESPAasmINPUT2 (o,i0,i1,Tstate,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module amux2_a0dc83ed (O,I0,I1,CELG,amux,SIMPV,CELSUB);
-  output  O;
-  input  I0;
-  input  I1;
-  input  CELG;
-  input  amux;
-  input  SIMPV;
-  input  CELSUB;
+//Celera:amux2_a0dc83ed
+//Celera Confidential Symbol Generator
+//Inputs: 2, Switch On Resistance: 1K
+//Type of Control:pin, T-Switch: no
+module amux2_a0dc83ed (SIMPV,CELSUB,O,I0,I1,
+amux,
+CELG);
+input SIMPV;
+input CELSUB;
+output O;
+input I0;
+input I1;
+input amux;
+input CELG;
 endmodule
 
-module dff_fc5ad7bd (d,q,ck,qb,rb,CELG,CELV,CELSUB);
-  input  d;
-  output  q;
-  input  ck;
-  output  qb;
-  input  rb;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+//Celera:dff_fc5ad7bd
+//Celera Confidential Symbol Generator
+//DFF latch
+module dff_fc5ad7bd (CELV,d,rb,ck,q,qb,CELG,CELSUB);
+input CELV;
+input d;
+input rb;
+input ck;
+output q;
+output qb;
+input CELG;
+input CELSUB;
 endmodule
 
-module celeradacr2r_d4e46535 (i,DAC,CELG,CELV,CELSUB,DACREF,ok_dac,GNDSENSE,enable_dac,global_dac,strobe_dac);
-  input [7:0] i;
-  output  DAC;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
-  input  DACREF;
-  output  ok_dac;
-  input  GNDSENSE;
-  input  enable_dac;
-  input  global_dac;
-  input  strobe_dac;
+
+
+//Celera:celeradacr2r_d4e46535
+//Celera Confidential Symbol Generator
+//LADDER DAC:8 Bits 500.0K with no buffer
+module celeradacr2r_d4e46535 (CELV,
+global_dac,DAC,ok_dac,
+i,
+enable_dac,
+strobe_dac,
+DACREF,
+GNDSENSE,
+CELG,CELSUB); 
+input CELV;
+input DACREF;
+input global_dac;
+output DAC;
+input strobe_dac;
+output ok_dac;
+input [7:0] i;
+input enable_dac;
+input GNDSENSE;
+input CELG;
+input CELSUB;
 endmodule
 
-module inv_12e192f5 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:inv_12e192f5
+//Celera Confidential Symbol Generator
+//5V Inverter
+module inv_12e192f5 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
 
-module dbuf_e926e395 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:dbuf_e926e395
+//Celera Confidential Symbol Generator
+//Digital Buffer
+module dbuf_e926e395 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
 
-module oneshot_9251da09 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:oneshot_9251da09
+//Celera Confidential Symbol Generator
+//One Shot50ns OneShot - Bad Designer!!
+module oneshot_9251da09 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
 
-module switchpullup_a01cd9ef (O,CELG,CELV,CELSUB,enable_switch);
-  inout  O;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
-  input  enable_switch;
+
+
+//Celera:switchpullup_a01cd9ef
+//Celera Confidential Symbol Generator
+//10000 Ohm pullupSwitch
+module switchpullup_a01cd9ef (CELV,O,enable_switch,CELG,CELSUB);
+input CELV;
+input enable_switch;
+inout O;
+input CELG;
+input CELSUB;
 endmodule
 
-module nor2_ee112582 (o,i0,i1,SUB,CELG,CELV);
-  output  o;
-  input  i0;
-  input  i1;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:nor2_ee112582
+//Celera Confidential Symbol Generator
+//nor2
+module nor2_ee112582 (CELV,CELG,i0,i1,o,SUB);
+input CELV;
+input CELG;
+input i0;
+input i1;
+input SUB;
+output o;
 endmodule
+
+
 
 //Verilog HDL for "PEBBLES", "PEBBLEdbuf" "functional"
 
@@ -126,47 +176,42 @@ module PEBBLEdbuf ( o, G, SUB, V, i );
 endmodule
 
 
-//Verilog HDL for "DFT", "DFTtm8t" "functional"
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
 
 
-module DFTtm8t ( a, ten, tmi, G, SUB, V, tma );
+module PEBBLEtielo ( q, G, SUB, V );
 
   input V;
-  input  [7:0] tma;
-  output  [7:0] ten;
-  output  [1:0] a;
+  output q;
   input G;
   input SUB;
-  inout  [4:0] tmi;
 endmodule
 
 
-module oscillatorcrude_f6e6c185 (IP,osc,CELG,SIMPV,CELSUB,SENSE_G,ok_oscillator,enable_oscillator,global_oscillator);
-  input  IP;
-  output  osc;
-  input  CELG;
-  input  SIMPV;
-  input  CELSUB;
-  input  SENSE_G;
-  output  ok_oscillator;
-  input  enable_oscillator;
-  input  global_oscillator;
+//Celera:oscillatorcrude_f6e6c185
+//Celera Confidential Symbol Generator
+//VMAX:globalV,Crude:256.000KHz
+module oscillatorcrude_f6e6c185 (SIMPV,ok_oscillator,osc,global_oscillator,
+enable_oscillator,
+IP,
+CELG,SENSE_G,CELSUB);
+input SIMPV;
+output ok_oscillator;
+output osc;
+input global_oscillator;
+input IP;
+input enable_oscillator;
+input CELG;
+input SENSE_G;
+input CELSUB;
 endmodule
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SOFTSTARTwaltz8MAIN (SS, REF, tmi, MUDV, halfway, CELG59462, CELV96848, dft_clock, CELSUB40948, enable_brick, softstart_1ms, done_softstart, SENSE_G_4c0bef8e, enable_softstart, kelvin_MUDGsoftstart, IP_4c0bef8e_Xoscillator1);
+module SOFTSTARTwaltz8MAIN (SS, REF, MUDV, halfway, CELG59462, CELV96848, dft_clock, CELSUB40948, enable_brick, softstart_1ms, done_softstart, SENSE_G_4c0bef8e, enable_softstart, kelvin_MUDGsoftstart, IP_4c0bef8e_Xoscillator1);
 output  SS;
 input  REF;
-input [4:0] tmi;
 input  MUDV;
 input  halfway;
 input  CELG59462;
@@ -183,11 +228,7 @@ input  IP_4c0bef8e_Xoscillator1;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
 wire [7:0] i;
-wire [1:0] a;
-wire [7:0] ten;
-wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
 SOFTSTARTwaltzMAINcount XCOUNT (
@@ -268,7 +309,7 @@ celeradacr2r_d4e46535 XU5 (
 .ok_dac(net_128),
 .GNDSENSE(kelvin_MUDGsoftstart),
 .enable_dac(enable_softstart),
-.global_dac(global_dac_0cc08401_XU5),
+.global_dac(tl0),
 .strobe_dac(net_124)
 );
 
@@ -394,14 +435,11 @@ PEBBLEdbuf XDBUF1 (
 .SUB(CELSUB40948)
 );
 
-DFTtm8t dft_hex0x19 (
+PEBBLEtielo XtieLo (
 .G(CELG59462),
 .V(CELV96848),
-.a({a1,a0}),
-.SUB(CELSUB40948),
-.ten({noconn_dft_hex0x19_ten_7,noconn_dft_hex0x19_ten_6,noconn_dft_hex0x19_ten_5,noconn_dft_hex0x19_ten_4,noconn_dft_hex0x19_ten_3,noconn_dft_hex0x19_ten_2,global_oscillator_4c0bef8e_Xoscillator1,global_dac_0cc08401_XU5}),
-.tma({a0,a0,a0,a1,a1,a0,a0,a1}),
-.tmi(tmi[4:0])
+.q(tl0),
+.SUB(CELSUB40948)
 );
 
 oscillatorcrude_f6e6c185 Xoscillator1 (
@@ -413,31 +451,7 @@ oscillatorcrude_f6e6c185 Xoscillator1 (
 .SENSE_G(SENSE_G_4c0bef8e),
 .ok_oscillator(net_123),
 .enable_oscillator(enable_softstart),
-.global_oscillator(global_oscillator_4c0bef8e_Xoscillator1)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x19_ten_2 (
-.noconn(noconn_dft_hex0x19_ten_2)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x19_ten_3 (
-.noconn(noconn_dft_hex0x19_ten_3)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x19_ten_4 (
-.noconn(noconn_dft_hex0x19_ten_4)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x19_ten_5 (
-.noconn(noconn_dft_hex0x19_ten_5)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x19_ten_6 (
-.noconn(noconn_dft_hex0x19_ten_6)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x19_ten_7 (
-.noconn(noconn_dft_hex0x19_ten_7)
+.global_oscillator(tl0)
 );
 
 endmodule

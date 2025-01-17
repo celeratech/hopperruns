@@ -38,131 +38,204 @@ module VESPAasmINPUT2 (o,i0,i1,Tstate,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module comparatornoctlpins_94b63eab (IP,CELG,SIMPV,CELSUB,ok_comparator,INN_COMPARATOR,INP_COMPARATOR,out_comparator,enable_comparator,global_comparator);
-  input  IP;
-  input  CELG;
-  input  SIMPV;
-  input  CELSUB;
-  output  ok_comparator;
-  input  INN_COMPARATOR;
-  input  INP_COMPARATOR;
-  output  out_comparator;
-  input  enable_comparator;
-  input  global_comparator;
+//Celera:comparatornoctlpins_94b63eab
+//Celera Confidential Symbol Generator
+//Type p Hysteris Mode:fixed 0mV Hysteresis,Edge rising with deglitch
+//Low IQ:no DFT:no
+module comparatornoctlpins_94b63eab (enable_comparator,IP,out_comparator,INP_COMPARATOR,
+INN_COMPARATOR,SIMPV,global_comparator,ok_comparator,
+CELG,CELSUB);
+input SIMPV;
+input enable_comparator;
+input global_comparator;
+input IP;
+input INP_COMPARATOR;
+input INN_COMPARATOR;
+output out_comparator;
+input CELG;
+input CELSUB;
+output ok_comparator;
 endmodule
 
-module padopendrain_ff7ffa6a (PAD,SUB,CELG,CELV,tdi_padopendrain,ten_padopendrain,input_padopendrain);
-  inout  PAD;
-  input  SUB;
-  input  CELG;
-  input  CELV;
-  output  tdi_padopendrain;
-  input  ten_padopendrain;
-  input  input_padopendrain;
+
+
+//Celera:padopendrain_ff7ffa6a
+//Celera Confidential Symbol Generator
+//Open Drain output PAD with 6V, Ron 50 Ohms
+//No Glitch filter
+//ON Logic:invert polarity
+//DFT:yes TESTMODE:no RETURN PIN:no
+module padopendrain_ff7ffa6a (CELV, input_padopendrain, PAD, 
+ten_padopendrain, tdi_padopendrain,
+CELG, SUB ); 
+input CELV;
+input input_padopendrain;
+input ten_padopendrain;
+output tdi_padopendrain;
+input CELG;
+input SUB;
+inout PAD;
 endmodule
 
-module delayclock_ab9af190 (in,out,CELG,CELV,clock,delay,CELSUB,celeraporb);
-  input  in;
-  output  out;
-  input  CELG;
-  input  CELV;
-  input  clock;
-  input  delay;
-  input  CELSUB;
-  input  celeraporb;
+
+
+//Celera:delayclock_ab9af190
+//CONTROL:Pin:2 outputs
+module delayclock_ab9af190 (in,CELV,out,clock,celeraporb,
+delay,
+CELG,CELSUB);
+input CELV;
+input in;
+output out;
+input clock;
+input celeraporb;
+input CELSUB;
+input CELG;
+input delay;
 endmodule
 
-module vbuffer_8cf47f40 (IN,IP,OUT,CELG,SIMPV,CELSUB,ok_vbuffer,enable_vbuffer,global_vbuffer);
-  input  IN;
-  input  IP;
-  output  OUT;
-  input  CELG;
-  input  SIMPV;
-  input  CELSUB;
-  output  ok_vbuffer;
-  input  enable_vbuffer;
-  input  global_vbuffer;
+
+
+//Celera:vbuffer_8cf47f40
+//Celera Confidential Symbol Generator
+//GAIN:1.0 Input:p with 1000K Impedance
+module vbuffer_8cf47f40 (SIMPV,IN,IP,OUT,enable_vbuffer,ok_vbuffer,global_vbuffer,
+CELG,CELSUB);
+input SIMPV;
+input IN;
+input IP;
+output OUT;
+input enable_vbuffer;
+output ok_vbuffer;
+input global_vbuffer;
+input CELG;
+input CELSUB;
 endmodule
 
-module inv_12e192f5 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:inv_12e192f5
+//Celera Confidential Symbol Generator
+//5V Inverter
+module inv_12e192f5 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
 
-module amux2_a6effade (O,I0,I1,CELG,amux,SIMPV,CELSUB);
-  output  O;
-  input  I0;
-  input  I1;
-  input  CELG;
-  input  amux;
-  input  SIMPV;
-  input  CELSUB;
+
+
+//Celera:amux2_a6effade
+//Celera Confidential Symbol Generator
+//Inputs: 2, Switch On Resistance: 10K
+//Type of Control:pin, T-Switch: no
+module amux2_a6effade (SIMPV,CELSUB,O,I0,I1,
+amux,
+CELG);
+input SIMPV;
+input CELSUB;
+output O;
+input I0;
+input I1;
+input amux;
+input CELG;
 endmodule
 
-module resistordivider_b8083128 (TOP,CELG,CELV,TAP0,TAP1,TAP2,BOTTOM,CELSUB,enable_resistordivider,global_resistordivider);
-  inout  TOP;
-  input  CELG;
-  input  CELV;
-  output  TAP0;
-  output  TAP1;
-  output  TAP2;
-  inout  BOTTOM;
-  input  CELSUB;
-  input  enable_resistordivider;
-  input  global_resistordivider;
+
+
+//Celera:resistordivider_b8083128
+//Celera Confidential Symbol Generator
+//VMAX:6V R:100.0KOhm 3Taps
+module resistordivider_b8083128 (TOP,
+enable_resistordivider,global_resistordivider,CELV,CELSUB,TAP0,
+TAP1,
+TAP2,
+CELG, BOTTOM);
+inout TOP;
+input enable_resistordivider;
+input global_resistordivider;
+input CELV;
+input CELSUB;
+output TAP0;
+output TAP1;
+output TAP2;
+input CELG;
+inout BOTTOM;
 endmodule
 
-module capacitorfixed_3f66c9af (CN,CP);
-  inout  CN;
-  inout  CP;
+
+
+//Celera:capacitorfixed_3f66c9af
+//Celera Confidential Symbol Generator
+//CAPACITOR CONTROL:capacitor
+//VALUE: 5.00pF TYPE:mim
+module capacitorfixed_3f66c9af (CP,
+CN);
+inout CP;
+inout CN;
 endmodule
 
-module delayfixed_00a6f48f (i,o,CELG,CELV,CELSUB);
-  input  i;
-  output  o;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+//Celera:delayfixed_00a6f48f
+//Celera Confidential Symbol Generator
+//TYPE:fixed Egde:fall
+module delayfixed_00a6f48f (CELV,i,o,
+CELG,CELSUB);
+input CELV;
+input i;
+output o;
+input CELG;
+input CELSUB;
 endmodule
 
-module comparatornoctlpins_370523ee (IP,CELG,SIMPV,CELSUB,ok_comparator,INN_COMPARATOR,INP_COMPARATOR,out_comparator,enable_comparator,global_comparator);
-  input  IP;
-  input  CELG;
-  input  SIMPV;
-  input  CELSUB;
-  output  ok_comparator;
-  input  INN_COMPARATOR;
-  input  INP_COMPARATOR;
-  output  out_comparator;
-  input  enable_comparator;
-  input  global_comparator;
+
+
+//Celera:comparatornoctlpins_370523ee
+//Celera Confidential Symbol Generator
+//Type p Hysteris Mode:fixed 50mV Hysteresis,Edge rising with deglitch
+//Low IQ:no DFT:no
+module comparatornoctlpins_370523ee (enable_comparator,IP,out_comparator,INP_COMPARATOR,
+INN_COMPARATOR,SIMPV,global_comparator,ok_comparator,
+CELG,CELSUB);
+input SIMPV;
+input enable_comparator;
+input global_comparator;
+input IP;
+input INP_COMPARATOR;
+input INN_COMPARATOR;
+output out_comparator;
+input CELG;
+input CELSUB;
+output ok_comparator;
 endmodule
 
-module dbuf_e926e395 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:dbuf_e926e395
+//Celera Confidential Symbol Generator
+//Digital Buffer
+module dbuf_e926e395 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
 
-//Verilog HDL for "DFT", "DFTtm8d" "functional"
 
 
-module DFTtm8d ( a, ten, tdo, tmi, G, SUB, V, tdi, tma );
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
 
   input V;
-  input  [7:0] tma;
-  output  [7:0] ten;
-  output  [1:0] a;
-  inout tdo;
-  input  [7:0] tdi;
+  output q;
   input G;
   input SUB;
-  inout  [4:0] tmi;
 endmodule
 
 
@@ -189,10 +262,8 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module POWERGOODwaltzMAIN (POK, tdo, tmi, MUDV, clock, sense_FB, CELG59462, CELV96848, PORB97836, dft_pgout, CELSUB40948, dft_pgDELAY, fault_short, REF_POWERGOOD, dft_REFBUFFER, dft_pgSTARTUP, dft_pgDEGLITCH, dft_shortdelay, IP_70e67769_XU3, IP_e96a4067_XU8, IP_ddbf938d_XU22, enable_powergood, hijack_risedelay, kelvin_MUDGpowergood);
+module POWERGOODwaltzMAIN (POK, MUDV, clock, sense_FB, CELG59462, CELV96848, PORB97836, dft_pgout, CELSUB40948, dft_pgDELAY, fault_short, REF_POWERGOOD, dft_REFBUFFER, dft_pgSTARTUP, dft_pgDEGLITCH, dft_shortdelay, IP_70e67769_XU3, IP_e96a4067_XU8, IP_ddbf938d_XU22, enable_powergood, hijack_risedelay, kelvin_MUDGpowergood);
 inout  POK;
-inout  tdo;
-input [4:0] tmi;
 input  MUDV;
 input  clock;
 input  sense_FB;
@@ -217,11 +288,6 @@ inout  kelvin_MUDGpowergood;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
-wire [1:0] a;
-wire [7:0] tdi;
-wire [7:0] ten;
-wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
 VESPAasmINPUT1 XU20 (
@@ -309,7 +375,7 @@ comparatornoctlpins_94b63eab XU3 (
 .INP_COMPARATOR(clamp_XU3_137),
 .out_comparator(net_153),
 .enable_comparator(enable_powergood),
-.global_comparator(global_comparator_70e67769_XU3)
+.global_comparator(tl0)
 );
 
 padopendrain_ff7ffa6a XU4 (
@@ -317,8 +383,8 @@ padopendrain_ff7ffa6a XU4 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.tdi_padopendrain(tdi_padopendrain_54c5b105_XU4),
-.ten_padopendrain(ten_padopendrain_54c5b105_XU4),
+.tdi_padopendrain(noconn_no_dft_tdi_padopendrain7),
+.ten_padopendrain(tl0),
 .input_padopendrain(net_150)
 );
 
@@ -342,7 +408,7 @@ vbuffer_8cf47f40 XU8 (
 .CELSUB(CELSUB40948),
 .ok_vbuffer(net_151),
 .enable_vbuffer(enable_powergood),
-.global_vbuffer(global_vbuffer_e96a4067_XU8)
+.global_vbuffer(tl0)
 );
 
 inv_12e192f5 XU13 (
@@ -381,7 +447,7 @@ resistordivider_b8083128 XU17 (
 .BOTTOM(kelvin_MUDGpowergood),
 .CELSUB(CELSUB40948),
 .enable_resistordivider(enable_powergood),
-.global_resistordivider(global_resistordivider_37d49b79_XU17)
+.global_resistordivider(tl0)
 );
 
 capacitorfixed_3f66c9af XU19 (
@@ -407,7 +473,7 @@ comparatornoctlpins_370523ee XU22 (
 .INP_COMPARATOR(net_158),
 .out_comparator(net_159),
 .enable_comparator(enable_powergood),
-.global_comparator(global_comparator_ddbf938d_XU22)
+.global_comparator(tl0)
 );
 
 delayclock_ab9af190 XU23 (
@@ -429,16 +495,11 @@ dbuf_e926e395 XU26 (
 .CELV(CELV96848)
 );
 
-DFTtm8d dft_hex0x10 (
+PEBBLEtielo XtieLo (
 .G(CELG59462),
 .V(CELV96848),
-.a({a1,a0}),
-.SUB(CELSUB40948),
-.tdi({a0,a0,a0,a0,a0,a0,a0,tdi_padopendrain_54c5b105_XU4}),
-.tdo(tdo),
-.ten({noconn_dft_hex0x10_ten_7,noconn_dft_hex0x10_ten_6,noconn_dft_hex0x10_ten_5,global_vbuffer_e96a4067_XU8,ten_padopendrain_54c5b105_XU4,global_comparator_70e67769_XU3,global_comparator_ddbf938d_XU22,global_resistordivider_37d49b79_XU17}),
-.tma({a0,a0,a0,a1,a0,a0,a0,a0}),
-.tmi(tmi[4:0])
+.q(tl0),
+.SUB(CELSUB40948)
 );
 
 ESDminiClamp6 XCLAMP_XU3_INP_COMPARATOR (
@@ -457,16 +518,8 @@ ESDminiClamp6 XCLAMP_XU22_INN_COMPARATOR (
 .SUB(CELSUB40948)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x10_ten_5 (
-.noconn(noconn_dft_hex0x10_ten_5)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x10_ten_6 (
-.noconn(noconn_dft_hex0x10_ten_6)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x10_ten_7 (
-.noconn(noconn_dft_hex0x10_ten_7)
+STONEnoconn XNCnoconn_no_dft_tdi_padopendrain7 (
+.noconn(noconn_no_dft_tdi_padopendrain7)
 );
 
 endmodule

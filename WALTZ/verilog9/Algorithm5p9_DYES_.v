@@ -294,53 +294,88 @@ module VESPAasmOUTPUT3_0 (o,tstate0,tstate1,tstate2,CELG59462,CELV96848,CELSUB40
   input  CELSUB40948;
 endmodule
 
-module inv_12e192f5 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+//Celera:inv_12e192f5
+//Celera Confidential Symbol Generator
+//5V Inverter
+module inv_12e192f5 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
 
-module delayfixed_a1102ff4 (i,o,CELG,CELV,CELSUB);
-  input  i;
-  output  o;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+//Celera:delayfixed_a1102ff4
+//Celera Confidential Symbol Generator
+//TYPE:fixed Egde:rise
+module delayfixed_a1102ff4 (CELV,i,o,
+CELG,CELSUB);
+input CELV;
+input i;
+output o;
+input CELG;
+input CELSUB;
 endmodule
 
-module delayfixed_4c9b837a (i,o,CELG,CELV,CELSUB);
-  input  i;
-  output  o;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+//Celera:delayfixed_4c9b837a
+//Celera Confidential Symbol Generator
+//TYPE:fixed Egde:rise
+module delayfixed_4c9b837a (CELV,i,o,
+CELG,CELSUB);
+input CELV;
+input i;
+output o;
+input CELG;
+input CELSUB;
 endmodule
 
-module delayfixed_2f9b06c1 (i,o,CELG,CELV,CELSUB);
-  input  i;
-  output  o;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+//Celera:delayfixed_2f9b06c1
+//Celera Confidential Symbol Generator
+//TYPE:fixed Egde:rise
+module delayfixed_2f9b06c1 (CELV,i,o,
+CELG,CELSUB);
+input CELV;
+input i;
+output o;
+input CELG;
+input CELSUB;
 endmodule
 
-module delayfixed_a42d648b (i,o,CELG,CELV,CELSUB);
-  input  i;
-  output  o;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+//Celera:delayfixed_a42d648b
+//Celera Confidential Symbol Generator
+//TYPE:fixed Egde:rise
+module delayfixed_a42d648b (CELV,i,o,
+CELG,CELSUB);
+input CELV;
+input i;
+output o;
+input CELG;
+input CELSUB;
 endmodule
 
-module delayfixed_db2ae1c9 (i,o,CELG,CELV,CELSUB);
-  input  i;
-  output  o;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+//Celera:delayfixed_db2ae1c9
+//Celera Confidential Symbol Generator
+//TYPE:fixed Egde:rise
+module delayfixed_db2ae1c9 (CELV,i,o,
+CELG,CELSUB);
+input CELV;
+input i;
+output o;
+input CELG;
+input CELSUB;
 endmodule
+
+
 
 // ------------------------ Module Verilog ---------------
 module Algorithm5p9_DYES_ (OFF, TOP, fcm, IDLE, porb, FAULT, READY, BOTTOM, POWERUP, REFRESH, top3SYNC, top4SYNC, CELG59462, CELV96848, TOPdelayi, bbm_topon, go_driver, ipeak_top, ok_driver, top6aSYNC, top6bSYNC, top_switch, CELSUB40948, enableFAULT, BOTTOMdelayi, TOPmaxdelayo, bbm_bottomon, blank_bottom, ipeak_bottom, POWERUPdelayi, REFRESHdelayi, STATEcontrol0, STATEcontrol1, STATEcontrol2, STATEcontrol3, blank_refresh, bottom_switch, clock_control, fault_control, zcross_bottom, done_softstart, enable_control, freeze_control, switch_control, BOTTOMmaxdelayo, POWERUPmaxdelayo, REFRESHmaxdelayo, REFRESHmindelayo, inegative_bottom);
