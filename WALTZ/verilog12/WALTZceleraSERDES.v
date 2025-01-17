@@ -1,4 +1,16 @@
 // ------------------------ Module Definitions -----------
+//Verilog HDL for "PEBBLES", "PEBBLEtiehi" "functional"
+
+
+module PEBBLEtiehi ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 //Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
 
 
@@ -138,6 +150,13 @@ wire [7:0] otp_strobe;
 wire [1:0] i2cpassword;
 
 // ------------------------ Networks ---------------------
+PEBBLEtiehi XtieHi (
+.G(CELG59462),
+.V(CELV96848),
+.q(a1),
+.SUB(CELSUB40948)
+);
+
 PEBBLEtielo XtieLo (
 .G(CELG59462),
 .V(CELV96848),
