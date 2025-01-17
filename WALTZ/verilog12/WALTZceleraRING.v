@@ -121,7 +121,7 @@ inout  GND;
 inout  PIN;
 inout  POK;
 inout  VCC;
-inout [4:0] tmi;
+inout [5:0] tmi;
 inout  BIAS;
 inout  FSET;
 output  GOTP;
@@ -152,7 +152,7 @@ output  celkelvin_BIAS_bc3b7675;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
+wire [5:0] tmi;
 wire [7:0] revision;
 wire [7:0] chipidlsb;
 wire [7:0] chipidmsb;
