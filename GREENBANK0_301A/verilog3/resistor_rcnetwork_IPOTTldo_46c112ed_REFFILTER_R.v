@@ -1,7 +1,7 @@
 // Celera Brick Generator Confidential
 //CORE:resistor
 //NAME:resistor_rcnetwork_IPOTTldo_46c112ed_REFFILTER_R
-//GENERATOR CODE REVISION:0.4.3
+//GENERATOR CODE REVISION:0.4.5
 //VALUE:60.00Kohms
 //Imax:1.000mA
 //TYPE:poly

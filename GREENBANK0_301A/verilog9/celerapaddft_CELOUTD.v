@@ -8,17 +8,25 @@ module STONEpad1 ( PAD );
 endmodule
 
 
-//Verilog HDL for "Generate", "STONEpadOUTstandaloneTDO" "functional"
+//Verilog HDL for "DRM", "DRMmeasureSINGLEstandaloneTDO" "functional"
 
 
-module STONEpadOUTstandaloneTDO ( PAD, CELG, CELSUB, CELV, tdo, unlock );
+module DRMmeasureSINGLEstandaloneTDO ( d0, d1, PAD, tdo, tmi, CELG, CELSUB,
+CELV, tdext, ten_measureck, ten_tdo, tmb, unlock );
 
   input CELV;
-  output PAD;
+  inout PAD;
   input CELSUB;
+  output d1;
+  input ten_measureck;
+  input ten_tdo;
+  output d0;
   input unlock;
-  input tdo;
+  input tdext;
+  inout tdo;
+  input  [7:0] tmb;
   input CELG;
+  inout  [4:0] tmi;
 endmodule
 
 
@@ -33,33 +41,46 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module celerapaddft_CELOUTD (tdo, GESD, CELOUTD, CELG59462, CELV96848, unlockTDO, CELSUB40948);
-input  tdo;
+module celerapaddft_CELOUTD (tdo, tmi, GESD, tdext, CELOUTD, ten_tdo, CELG59462, CELV96848, unlockTDO, CELSUB40948, ten_measureck);
+inout  tdo;
+inout [4:0] tmi;
 inout  GESD;
+input  tdext;
 output  CELOUTD;
+input  ten_tdo;
 input  CELG59462;
 input  CELV96848;
 input  unlockTDO;
 input  CELSUB40948;
+input  ten_measureck;
 
 
 // ------------------------ Wires ------------------------
+wire [4:0] tmi;
+wire [7:0] tmb;
 
 // ------------------------ Networks ---------------------
 STONEpad1 Xdftpad (
 .PAD(CELOUTD)
 );
 
-STONEpadOUTstandaloneTDO XCELOUTD (
+DRMmeasureSINGLEstandaloneTDO XCELOUTD (
+.d0(d0),
+.d1(d1),
 .PAD(CELOUTD),
 .tdo(tdo),
+.tmb({d1,d1,d1,d1,d1,d1,d0,d0}),
+.tmi(tmi[4:0]),
 .CELG(CELG59462),
 .CELV(CELV96848),
+.tdext(tdext),
 .CELSUB(CELSUB40948),
-.unlock(unlockTDO)
+.unlock(unlockTDO),
+.ten_tdo(ten_tdo),
+.ten_measureck(ten_measureck)
 );
 
-ESDcore6 XESDcore6_2 (
+ESDcore6 XESDcore6_3 (
 .PAD(CELOUTD),
 .GESD(GESD)
 );

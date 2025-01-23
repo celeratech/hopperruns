@@ -8,32 +8,51 @@ module VESPAdftpulse (stop,pulse,start,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module switchgnd_321bf2ca (I,O,CELG,CELV,CELSUB,enable_switch);
-  input  I;
-  inout  O;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
-  input  enable_switch;
+//Celera:switchgnd_321bf2ca
+//Celera Confidential Symbol Generator
+//100 Ohm gndSwitch
+module switchgnd_321bf2ca (CELV,O,I,enable_switch,CELG,CELSUB);
+input CELV;
+input I;
+input enable_switch;
+inout O;
+input CELG;
+input CELSUB;
 endmodule
 
-module IPOTTldo_aec3f94a (LDO,REF,CELG,SIMPV,CELSUB,ok_ldo,enable_ldo,global_ldo,celkelvin_LDO,factory_ldogain,factory_ldopsrr,celkelvin_GNDldo,factory_ldoerror,factory_ldofeedforward,factory_ldocompensation);
-  output  LDO;
-  input  REF;
-  input  CELG;
-  input  SIMPV;
-  input  CELSUB;
-  output  ok_ldo;
-  input  enable_ldo;
-  input  global_ldo;
-  input  celkelvin_LDO;
-  input [2:0] factory_ldogain;
-  input [5:0] factory_ldopsrr;
-  input  celkelvin_GNDldo;
-  input [2:0] factory_ldoerror;
-  input [2:0] factory_ldofeedforward;
-  input [5:0] factory_ldocompensation;
+
+
+//Celera:IPOTTldo_aec3f94a
+//Celera Confidential Symbol Generator
+//LDO:Output 2.5V
+module IPOTTldo_aec3f94a (LDO,celkelvin_LDO,ok_ldo,
+enable_ldo,SIMPV,REF,
+factory_ldoerror,
+factory_ldogain,
+factory_ldopsrr,
+factory_ldofeedforward,
+factory_ldocompensation,
+global_ldo,
+celkelvin_GNDldo,
+CELG,CELSUB); 
+input SIMPV;
+input enable_ldo;
+input global_ldo;
+output LDO;
+input celkelvin_LDO;
+output ok_ldo;
+input REF;
+input [2:0] factory_ldoerror;
+input [2:0] factory_ldogain;
+input [5:0] factory_ldopsrr;
+input [2:0] factory_ldofeedforward;
+input [5:0] factory_ldocompensation;
+input celkelvin_GNDldo;
+input CELG;
+input CELSUB;
 endmodule
+
+
 
 //Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
 
@@ -72,7 +91,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module LDOgreenbankLDOfixed20mA (LDO, REF, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, celkelvin_LDO12_73f01841, celkelvin_MUDG_73f018418);
+module LDOgreenbankLDOfixed20mA (LDO, REF, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, celkelvin_MUDG_73f01841, celkelvin_LDO12_73f01841);
 output  LDO;
 input  REF;
 input [4:0] tmi;
@@ -82,8 +101,8 @@ input  CELV96848;
 input  enable_ldo;
 input  CELSUB40948;
 output  dft_startup;
+input  celkelvin_MUDG_73f01841;
 input  celkelvin_LDO12_73f01841;
-input  celkelvin_MUDG_73f018418;
 
 
 // ------------------------ Wires ------------------------
@@ -128,7 +147,7 @@ IPOTTldo_aec3f94a XLDO1 (
 .celkelvin_LDO(celkelvin_LDO12_73f01841),
 .factory_ldogain({c0,c0,c0}),
 .factory_ldopsrr({c0,c0,c0,c0,c0,c0}),
-.celkelvin_GNDldo(celkelvin_MUDG_73f018418),
+.celkelvin_GNDldo(celkelvin_MUDG_73f01841),
 .factory_ldoerror({c0,c0,c0}),
 .factory_ldofeedforward({c0,c0,c0}),
 .factory_ldocompensation({c0,c0,c0,c0,c0,c0})

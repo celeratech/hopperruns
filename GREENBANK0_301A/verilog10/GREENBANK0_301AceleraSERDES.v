@@ -1,4 +1,37 @@
 // ------------------------ Module Definitions -----------
+//Verilog HDL for "PEBBLES", "PEBBLEtiehi" "functional"
+
+
+module PEBBLEtiehi ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 //Verilog HDL for "DFT", "SERDESdftYesYes" "functional"
 
 
@@ -53,15 +86,17 @@ i2caddr, i2cpasswd, celkelvin_CELV, pd, scl_serdes, sda_serdes );
 endmodule
 
 
-//Verilog HDL for "DFT", "SERDESinputSINGLEregister" "functional"
+//Verilog HDL for "DFT", "SERDESinputSINGLEserdesregister" "functional"
 
 
-module SERDESinputSINGLEregister ( scl_register, sda_register, CELG, CELSUB,
-CELVIN, SCL, SDA, porb, sdao );
+module SERDESinputSINGLEserdesregister ( scl_register, scl_serdes, sda_register,
+sda_serdes, CELG, CELSUB, CELVIN, SCL, SDA, porb, sdao );
 
   input porb;
   input CELSUB;
   output sda_register;
+  output sda_serdes;
+  output scl_serdes;
   input sdao;
   output scl_register;
   input CELVIN;
@@ -72,11 +107,10 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module GREENBANK0_301AceleraSERDES (SCL, SDA, pd0, tdo, tmi, scli, sdai, unlock, CELG59462, CELV96848, PORB97836, CELSUB40948, celkelvin_MUDV_92662d48);
+module GREENBANK0_301AceleraSERDES (SCL, SDA, pd0, tmi, scli, sdai, unlock, CELG59462, CELV96848, PORB97836, CELSUB40948, celkelvin_MUDV_92662d48);
 inout  SCL;
 inout  SDA;
 input  pd0;
-inout  tdo;
 inout [5:0] tmi;
 output  scli;
 inout  sdai;
@@ -96,27 +130,45 @@ wire [1:0] i2caddr;
 wire [1:0] i2cpasswd;
 
 // ------------------------ Networks ---------------------
+PEBBLEtiehi XtieHi (
+.G(CELG59462),
+.V(CELV96848),
+.q(a1),
+.SUB(CELSUB40948)
+);
+
+PEBBLEtielo XtieLo (
+.G(CELG59462),
+.V(CELV96848),
+.q(a0),
+.SUB(CELSUB40948)
+);
+
+STONEnoconn XNCtdo_noconn (
+.noconn(tdo_noconn)
+);
+
 SERDESdftYesYes XSERDESdftYesYes (
-.tdo(tdo),
+.tdo(tdo_noconn),
 .tma({a1,a1,a1,a1,a1,a1,a0,a0}),
 .tmi(tmi[4:0]),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.tdext(tdext),
+.tdext(tdext_noconn_noconn_noconn),
 .CELSUB(CELSUB40948),
 .unlock(unlock),
-.otpdone(otp_done),
-.otp_clock(otp_clock),
-.tdi_clock(tdi_clock),
-.otp_bistok(otp_bistok),
-.otp_loadok(otp_loadok),
-.ten_serdes(ten_serdes),
-.otp_programdone(otp_program_done),
-.otp_clock_enable(otp_clock_enable),
-.ten_oscillator_on(ten_oscillator_on),
-.ten_oscillator_off(ten_oscillator_off),
-.ten_oscillator_div8(ten_oscillator_div8),
-.ten_oscillator_external(ten_oscillator_external)
+.otpdone(a0),
+.otp_clock(a0),
+.tdi_clock(a0),
+.otp_bistok(a0),
+.otp_loadok(a0),
+.ten_serdes(ten_serdes_noconn),
+.otp_programdone(a0),
+.otp_clock_enable(a0),
+.ten_oscillator_on(ten_oscillator_on_noconn),
+.ten_oscillator_off(ten_oscillator_off_noconn),
+.ten_oscillator_div8(ten_oscillator_div8_noconn),
+.ten_oscillator_external(ten_oscillator_external_noconn)
 );
 
 SERDEScontrolDFT XSERDEScontrolDFT (
@@ -128,15 +180,35 @@ SERDEScontrolDFT XSERDEScontrolDFT (
 .sdao(sdao),
 .CELSUB(CELSUB40948),
 .unlock(unlock),
-.i2caddr(i2caddr[1:0]),
-.i2cpasswd(i2cpasswd[1:0]),
+.i2caddr({a0,a1}),
+.i2cpasswd({a1,a0}),
 .scl_serdes(scl_serdes),
 .sda_serdes(sda_serdes),
 .celkelvin_CELV(celkelvin_MUDV_92662d48),
-.enable_hardware(enable_hardware)
+.enable_hardware(a1)
 );
 
-SERDESinputSINGLEregister XSERDESinputSINGLEregister (
+STONEnoconn XNCten_serdes_noconn (
+.noconn(ten_serdes_noconn)
+);
+
+STONEnoconn XNCten_oscillator_on_noconn (
+.noconn(ten_oscillator_on_noconn)
+);
+
+STONEnoconn XNCten_oscillator_off_noconn (
+.noconn(ten_oscillator_off_noconn)
+);
+
+STONEnoconn XNCtdext_noconn_noconn_noconn (
+.noconn(tdext_noconn_noconn_noconn)
+);
+
+STONEnoconn XNCten_oscillator_div8_noconn (
+.noconn(ten_oscillator_div8_noconn)
+);
+
+SERDESinputSINGLEserdesregister XSERDESinputSINGLEserdesregister (
 .SCL(SCL),
 .SDA(SDA),
 .CELG(CELG59462),
@@ -144,8 +216,14 @@ SERDESinputSINGLEregister XSERDESinputSINGLEregister (
 .sdao(sdao),
 .CELSUB(CELSUB40948),
 .CELVIN(CELV96848),
-.scl_register(scl_register),
-.sda_register(sda_register)
+.scl_serdes(scl_serdes),
+.sda_serdes(sda_serdes),
+.scl_register(scli),
+.sda_register(sdai)
+);
+
+STONEnoconn XNCten_oscillator_external_noconn (
+.noconn(ten_oscillator_external_noconn)
 );
 
 endmodule

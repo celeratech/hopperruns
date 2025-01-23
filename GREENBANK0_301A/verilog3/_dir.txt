@@ -11,18 +11,18 @@
     "General": {
         "project_netlist_path": "/tmp/kyle/mnt/celera/projects/Simplis/playrelease/Release/play301a/Regression/SIMPLIS_Data/sim_GREENBANK_301A.net",
         "gen_reports": "Y",
-        "skip_serdes": "N",
         "pad_esd": "2",
         "find_isos": "Y",
         "wipe_bio_symbol": "Y",
-        "workers": "8"
+        "workers": "8",
+        "skip_serdes": "N"
     },
     "Ibias": {
         "enable_net": ""
     },
     "DRM": {
         "add_drm": "N",
-        "drm_ignore_bricks": "N"
+        "drm_ignore_bricks": "Y"
     },
     "DFT": {
         "add_dft": "Y",
@@ -40,6 +40,7 @@
         "dft_tdextout": ""
     },
     "Register": {
+        "registermap_buswidth": "8",
         "registermap_security": "N",
         "registermap_reset": "N",
         "registermap_chipid": "N",

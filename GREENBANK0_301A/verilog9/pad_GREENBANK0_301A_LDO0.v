@@ -18,22 +18,11 @@ module ESDdiode ( N, P );
 endmodule
 
 
-//Verilog HDL for "Generate", "WRAPPER1" "functional"
-
-
-module WRAPPER1 ( o, i );
-
-  input i;
-  output o;
-endmodule
-
-
 // ------------------------ Module Verilog ---------------
-module pad_GREENBANK0_301A_LDO0 (GESD, LDO0, MUDV, celkelvin_MUDV_92662d48);
+module pad_GREENBANK0_301A_LDO0 (GESD, LDO0, MUDV);
 input  GESD;
 inout  LDO0;
 inout  MUDV;
-output  celkelvin_MUDV_92662d48;
 
 
 // ------------------------ Wires ------------------------
@@ -51,11 +40,6 @@ ESDdiode Xesd1_XPAD1 (
 ESDdiode Xesd2_XPAD1 (
 .N(LDO0),
 .P(GESD)
-);
-
-WRAPPER1 XWRAP_celkelvin_MUDV_92662d48 (
-.i(LDO0),
-.o(celkelvin_MUDV_92662d48)
 );
 
 endmodule

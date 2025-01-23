@@ -8,28 +8,41 @@ module VESPAdftpulse (stop,pulse,start,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module switchgnd_321bf2ca (I,O,CELG,CELV,CELSUB,enable_switch);
-  input  I;
-  inout  O;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
-  input  enable_switch;
+//Celera:switchgnd_321bf2ca
+//Celera Confidential Symbol Generator
+//100 Ohm gndSwitch
+module switchgnd_321bf2ca (CELV,O,I,enable_switch,CELG,CELSUB);
+input CELV;
+input I;
+input enable_switch;
+inout O;
+input CELG;
+input CELSUB;
 endmodule
 
-module amplifier_a91f9ff9 (IP,INN,INP,OUT,CELG,SIMPV,CELSUB,ok_amplifier,amplifiercontrol,enable_amplifier,global_amplifier);
-  input  IP;
-  input  INN;
-  input  INP;
-  output  OUT;
-  input  CELG;
-  input  SIMPV;
-  input  CELSUB;
-  output  ok_amplifier;
-  input [2:0] amplifiercontrol;
-  input  enable_amplifier;
-  input  global_amplifier;
+
+
+//Celera:amplifier_a91f9ff9
+//Celera Confidential Symbol Generator
+//Gain Adjust:control, Input Type:p, Bandwidth:high
+module amplifier_a91f9ff9 (SIMPV,INP,IP,OUT,enable_amplifier,ok_amplifier,global_amplifier,
+amplifiercontrol,
+INN,
+CELG,CELSUB);
+input SIMPV;
+input INP;
+input INN;
+input IP;
+output OUT;
+input enable_amplifier;
+output ok_amplifier;
+input global_amplifier;
+input [2:0] amplifiercontrol;
+input CELG;
+input CELSUB;
 endmodule
+
+
 
 //Verilog HDL for "DFT", "DFTtm8t" "functional"
 
@@ -55,8 +68,18 @@ module STONEnoconn ( noconn );
 endmodule
 
 
+//Verilog HDL for "Generate", "WRAPPER1" "functional"
+
+
+module WRAPPER1 ( o, i );
+
+  input i;
+  output o;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module LDOgreenbankAMPcontrolHIGH (LDO, REF, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, kelvin_GNDldo, IP_f43ac5fa_Xamplifier1, register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1);
+module LDOgreenbankAMPcontrolHIGH (LDO, REF, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, kelvin_GNDldo, IP_f43ac5fa_Xamplifier1, register_AMPCONTROLHIGHgain_xdatamap1_6baf17c3);
 output  LDO;
 input  REF;
 input [4:0] tmi;
@@ -68,12 +91,12 @@ input  CELSUB40948;
 output  dft_startup;
 input  kelvin_GNDldo;
 input  IP_f43ac5fa_Xamplifier1;
-input [2:0] register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1;
+input [2:0] register_AMPCONTROLHIGHgain_xdatamap1_6baf17c3;
 
 
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
-wire [2:0] register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1;
+wire [2:0] register_AMPCONTROLHIGHgain_xdatamap1_6baf17c3;
 wire [2:0] amplifiercontrol;
 wire [1:0] a;
 wire [7:0] ten;
@@ -107,7 +130,7 @@ amplifier_a91f9ff9 Xamplifier1 (
 .SIMPV(MUDV),
 .CELSUB(CELSUB40948),
 .ok_amplifier(net_46),
-.amplifiercontrol({register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1[2],register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1[1],register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1[0]}),
+.amplifiercontrol({net_28,net_27,net_26}),
 .enable_amplifier(enable_ldo),
 .global_amplifier(global_amplifier_f43ac5fa_Xamplifier1)
 );
@@ -148,6 +171,21 @@ STONEnoconn XNCnoconn_dft_hex0x10_ten_6 (
 
 STONEnoconn XNCnoconn_dft_hex0x10_ten_7 (
 .noconn(noconn_dft_hex0x10_ten_7)
+);
+
+WRAPPER1 XWRAPregister_AMPCONTROLHIGHgain_xdatamap1_6baf17c3_0 (
+.i(register_AMPCONTROLHIGHgain_xdatamap1_6baf17c3[0]),
+.o(net_26)
+);
+
+WRAPPER1 XWRAPregister_AMPCONTROLHIGHgain_xdatamap1_6baf17c3_1 (
+.i(register_AMPCONTROLHIGHgain_xdatamap1_6baf17c3[1]),
+.o(net_27)
+);
+
+WRAPPER1 XWRAPregister_AMPCONTROLHIGHgain_xdatamap1_6baf17c3_2 (
+.i(register_AMPCONTROLHIGHgain_xdatamap1_6baf17c3[2]),
+.o(net_28)
 );
 
 endmodule

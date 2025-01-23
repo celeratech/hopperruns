@@ -1,26 +1,48 @@
 // ------------------------ Module Definitions -----------
-module switchtransmission_1afed728 (I,O,CELG,CELV,CELSUB,enable_switch);
-  input  I;
-  inout  O;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
-  input  enable_switch;
+//Celera:switchtransmission_1afed728
+//Celera Confidential Symbol Generator
+//500 Ohm transmissionSwitch
+module switchtransmission_1afed728 (CELV,O,I,enable_switch,CELG,CELSUB);
+input CELV;
+input I;
+input enable_switch;
+inout O;
+input CELG;
+input CELSUB;
 endmodule
 
-module resistor_7a0589b8 (RN,RP,CELG,CELV,CELSUB,adjust_resistor);
-  inout  RN;
-  inout  RP;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
-  input [2:0] adjust_resistor;
+
+
+//Celera:resistor_7a0589b8
+//Celera Confidential Symbol Generator
+//RESISTOR:1000KOhm TYPE:poly Adjust:1000Kohm DFT:no
+module resistor_7a0589b8 (RP,
+CELV,
+CELG,
+CELSUB,
+adjust_resistor,
+RN);
+inout RP;
+inout RN;
+input CELV;
+input CELG;
+input CELSUB;
+input [2:0] adjust_resistor;
 endmodule
 
-module capacitorfixed_2b744771 (CN,CP);
-  inout  CN;
-  inout  CP;
+
+
+//Celera:capacitorfixed_2b744771
+//Celera Confidential Symbol Generator
+//CAPACITOR CONTROL:capacitor
+//VALUE: 50.00pF TYPE:mim
+module capacitorfixed_2b744771 (CP,
+CN);
+inout CP;
+inout CN;
 endmodule
+
+
 
 // ------------------------ Module Verilog ---------------
 module SERVICEgreenbankFILTER (REFinput, CELG59462, CELV96848, REFoutput, CELSUB40948, bypass_filter, filter_resistor_0, filter_resistor_1, filter_resistor_2, kelvin_MUDGservice);

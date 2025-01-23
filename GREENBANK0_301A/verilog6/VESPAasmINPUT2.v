@@ -1,21 +1,31 @@
 // ------------------------ Module Definitions -----------
-module nand3_3e9b0d1d (o,i0,i1,i2,SUB,CELG,CELV);
-  output  o;
-  input  i0;
-  input  i1;
-  input  i2;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+//Celera:nand3_3e9b0d1d
+//Celera Confidential Symbol Generator
+//5V Inverter
+module nand3_3e9b0d1d (CELV,CELG,i0,i1,i2,o,SUB);
+input CELV;
+input CELG;
+input i0;
+input i1;
+input i2;
+input SUB;
+output o;
 endmodule
 
-module inv_12e192f5 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:inv_12e192f5
+//Celera Confidential Symbol Generator
+//5V Inverter
+module inv_12e192f5 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
+
+
 
 // ------------------------ Module Verilog ---------------
 module VESPAasmINPUT2 (o, i0, i1, Tstate, CELG59462, CELV96848, CELSUB40948);

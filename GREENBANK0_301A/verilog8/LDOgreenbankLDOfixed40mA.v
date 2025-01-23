@@ -8,18 +8,27 @@ module VESPAdftpulse (stop,pulse,start,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module IPOTTldo_d8237f8c (LDO,CELG,SIMPV,CELSUB,ok_ldo,enable_ldo,global_ldo,CELPOWER_LDO,celkelvin_LDO,celkelvin_GNDldo);
-  output  LDO;
-  input  CELG;
-  input  SIMPV;
-  input  CELSUB;
-  output  ok_ldo;
-  input  enable_ldo;
-  input  global_ldo;
-  input  CELPOWER_LDO;
-  input  celkelvin_LDO;
-  input  celkelvin_GNDldo;
+//Celera:IPOTTldo_d8237f8c
+//Celera Confidential Symbol Generator
+//LDO:Output 3.3V
+module IPOTTldo_d8237f8c (LDO,celkelvin_LDO,ok_ldo,
+enable_ldo,SIMPV,CELPOWER_LDO,
+global_ldo,
+celkelvin_GNDldo,
+CELG,CELSUB); 
+input SIMPV;
+input CELPOWER_LDO;
+input enable_ldo;
+input global_ldo;
+output LDO;
+input celkelvin_LDO;
+output ok_ldo;
+input celkelvin_GNDldo;
+input CELG;
+input CELSUB;
 endmodule
+
+
 
 //Verilog HDL for "DFT", "DFTtm8t" "functional"
 
@@ -46,7 +55,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module LDOgreenbankLDOfixed40mA (LDO, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, CELPOWER_LDO_4b7cb037, celkelvin_LDO15_ceb54526, celkelvin_MUDG_ceb545264);
+module LDOgreenbankLDOfixed40mA (LDO, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, CELPOWER_LDO_4b7cb037, celkelvin_MUDG_ceb54526, celkelvin_LDO15_ceb54526);
 output  LDO;
 input [4:0] tmi;
 input  MUDV;
@@ -56,8 +65,8 @@ input  enable_ldo;
 input  CELSUB40948;
 output  dft_startup;
 input  CELPOWER_LDO_4b7cb037;
+input  celkelvin_MUDG_ceb54526;
 input  celkelvin_LDO15_ceb54526;
-input  celkelvin_MUDG_ceb545264;
 
 
 // ------------------------ Wires ------------------------
@@ -86,7 +95,7 @@ IPOTTldo_d8237f8c XLDO1 (
 .global_ldo(global_ldo_4b7cb037_XLDO1),
 .CELPOWER_LDO(CELPOWER_LDO_4b7cb037),
 .celkelvin_LDO(celkelvin_LDO15_ceb54526),
-.celkelvin_GNDldo(celkelvin_MUDG_ceb545264)
+.celkelvin_GNDldo(celkelvin_MUDG_ceb54526)
 );
 
 DFTtm8t dft_hex0x07 (

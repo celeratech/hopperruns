@@ -8,27 +8,39 @@ module VESPAdftpulse (stop,pulse,start,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module switchgnd_321bf2ca (I,O,CELG,CELV,CELSUB,enable_switch);
-  input  I;
-  inout  O;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
-  input  enable_switch;
+//Celera:switchgnd_321bf2ca
+//Celera Confidential Symbol Generator
+//100 Ohm gndSwitch
+module switchgnd_321bf2ca (CELV,O,I,enable_switch,CELG,CELSUB);
+input CELV;
+input I;
+input enable_switch;
+inout O;
+input CELG;
+input CELSUB;
 endmodule
 
-module amplifier_d3d8dcb1 (IP,INN,INP,OUT,CELG,SIMPV,CELSUB,ok_amplifier,enable_amplifier,global_amplifier);
-  input  IP;
-  input  INN;
-  input  INP;
-  output  OUT;
-  input  CELG;
-  input  SIMPV;
-  input  CELSUB;
-  output  ok_amplifier;
-  input  enable_amplifier;
-  input  global_amplifier;
+
+
+//Celera:amplifier_d3d8dcb1
+//Celera Confidential Symbol Generator
+//Gain Adjust:fixed, Input Type:p, Bandwidth:medium
+module amplifier_d3d8dcb1 (SIMPV,INP,IP,OUT,enable_amplifier,ok_amplifier,global_amplifier,
+INN,
+CELG,CELSUB);
+input SIMPV;
+input INP;
+input INN;
+input IP;
+output OUT;
+input enable_amplifier;
+output ok_amplifier;
+input global_amplifier;
+input CELG;
+input CELSUB;
 endmodule
+
+
 
 //Verilog HDL for "DFT", "DFTtm8t" "functional"
 

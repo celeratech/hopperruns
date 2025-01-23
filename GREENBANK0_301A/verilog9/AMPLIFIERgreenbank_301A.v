@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module LDOgreenbankAMPcontrolHIGH (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,kelvin_GNDldo,IP_f43ac5fa_Xamplifier1,register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1);
+module LDOgreenbankAMPcontrolHIGH (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,kelvin_GNDldo,IP_f43ac5fa_Xamplifier1,register_AMPCONTROLHIGHgain_xdatamap1_6baf17c3);
   output  LDO;
   input  REF;
   input [4:0] tmi;
@@ -11,10 +11,10 @@ module LDOgreenbankAMPcontrolHIGH (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_l
   output  dft_startup;
   input  kelvin_GNDldo;
   input  IP_f43ac5fa_Xamplifier1;
-  input [2:0] register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1;
+  input [2:0] register_AMPCONTROLHIGHgain_xdatamap1_6baf17c3;
 endmodule
 
-module LDOgreenbankAMPcontrolLOW (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,kelvin_GNDldo,IP_8242d15d_Xamplifier1,register_AMPCONTROLSLOWgain_8be083fe_Xdatamap1);
+module LDOgreenbankAMPcontrolLOW (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,kelvin_GNDldo,IP_8242d15d_Xamplifier1,register_AMPCONTROLSLOWgain_xdatamap1_b93155df);
   output  LDO;
   input  REF;
   input [4:0] tmi;
@@ -26,10 +26,10 @@ module LDOgreenbankAMPcontrolLOW (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ld
   output  dft_startup;
   input  kelvin_GNDldo;
   input  IP_8242d15d_Xamplifier1;
-  input [2:0] register_AMPCONTROLSLOWgain_8be083fe_Xdatamap1;
+  input [2:0] register_AMPCONTROLSLOWgain_xdatamap1_b93155df;
 endmodule
 
-module LDOgreenbankAMPcontrolMEDIUM (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,kelvin_GNDldo,IP_02fc9eb5_Xamplifier1,register_AMPCONTROLMEDIUMgain_a341b3ad_Xdatamap1);
+module LDOgreenbankAMPcontrolMEDIUM (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,kelvin_GNDldo,IP_02fc9eb5_Xamplifier1,register_AMPCONTROLMEDIUMgain_xdatamap1_3be5c37d);
   output  LDO;
   input  REF;
   input [4:0] tmi;
@@ -41,7 +41,7 @@ module LDOgreenbankAMPcontrolMEDIUM (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable
   output  dft_startup;
   input  kelvin_GNDldo;
   input  IP_02fc9eb5_Xamplifier1;
-  input [2:0] register_AMPCONTROLMEDIUMgain_a341b3ad_Xdatamap1;
+  input [2:0] register_AMPCONTROLMEDIUMgain_xdatamap1_3be5c37d;
 endmodule
 
 module LDOgreenbankAMPfixedLOW (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,kelvin_GNDldo,IP_4b15d023_Xamplifier1);
@@ -114,77 +114,93 @@ module LDOgreenbankAMPopenMEDIUM (LDO,REF,tmi,MUDV,CELG59462,CELV96848,sense_LDO
   input  IP_655a9185_Xamplifier1;
 endmodule
 
-module dftprobeModel0_99fb68cf (i,tdi,ten,CELG,CELV,CELSUB);
-  input  i;
-  output  tdi;
-  input  ten;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+module dftprobeModel0_99fb68cf (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
 endmodule
 
-module dftprobeModel0_dbbadfc9 (i,tdi,ten,CELG,CELV,CELSUB);
-  input  i;
-  output  tdi;
-  input  ten;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+module dftprobeModel0_dbbadfc9 (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
 endmodule
 
-module dftprobeModel0_1b624fd3 (i,tdi,ten,CELG,CELV,CELSUB);
-  input  i;
-  output  tdi;
-  input  ten;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+module dftprobeModel0_1b624fd3 (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
 endmodule
 
-module dftprobeModel0_246cafb7 (i,tdi,ten,CELG,CELV,CELSUB);
-  input  i;
-  output  tdi;
-  input  ten;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+module dftprobeModel0_246cafb7 (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
 endmodule
 
-module dftprobeModel0_3db0a87e (i,tdi,ten,CELG,CELV,CELSUB);
-  input  i;
-  output  tdi;
-  input  ten;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+module dftprobeModel0_3db0a87e (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
 endmodule
 
-module dftprobeModel0_27a113a4 (i,tdi,ten,CELG,CELV,CELSUB);
-  input  i;
-  output  tdi;
-  input  ten;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+module dftprobeModel0_27a113a4 (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
 endmodule
 
-module dftprobeModel0_2997adfe (i,tdi,ten,CELG,CELV,CELSUB);
-  input  i;
-  output  tdi;
-  input  ten;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+module dftprobeModel0_2997adfe (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
 endmodule
 
-module dftprobeModel0_035fb43c (i,tdi,ten,CELG,CELV,CELSUB);
-  input  i;
-  output  tdi;
-  input  ten;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+module dftprobeModel0_035fb43c (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
 endmodule
+
+
 
 //Verilog HDL for "DFT", "DFTtm8d" "functional"
 
@@ -203,8 +219,18 @@ module DFTtm8d ( a, ten, tdo, tmi, G, SUB, V, tdi, tma );
 endmodule
 
 
+//Verilog HDL for "Generate", "WRAPPER1" "functional"
+
+
+module WRAPPER1 ( o, i );
+
+  input i;
+  output o;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module AMPLIFIERgreenbank_301A (REF, tdo, tmi, LDO0, LDO1, LDO2, LDO3, LDO4, LDO5, LDO6, LDO7, MUDV, CELG59462, CELV96848, sense_LDO2, sense_LDO5, sense_LDO7, CELSUB40948, kelvin_MUDGamplifier, IP_02fc9eb5_Xamplifier1, IP_4b15d023_Xamplifier1, IP_57f65156_Xamplifier1, IP_655a9185_Xamplifier1, IP_8242d15d_Xamplifier1, IP_cdc307ec_Xamplifier1, IP_d8ecf8f1_Xamplifier1, IP_f43ac5fa_Xamplifier1, register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1, register_AMPCONTROLSLOWgain_8be083fe_Xdatamap1, register_AMPCONTROLMEDIUMgain_a341b3ad_Xdatamap1, register_AMPLIFIERconfiguration_d770927e_Xdatamap1);
+module AMPLIFIERgreenbank_301A (REF, tdo, tmi, LDO0, LDO1, LDO2, LDO3, LDO4, LDO5, LDO6, LDO7, MUDV, CELG59462, CELV96848, sense_LDO2, sense_LDO5, sense_LDO7, CELSUB40948, kelvin_MUDGamplifier, IP_02fc9eb5_Xamplifier1, IP_4b15d023_Xamplifier1, IP_57f65156_Xamplifier1, IP_655a9185_Xamplifier1, IP_8242d15d_Xamplifier1, IP_cdc307ec_Xamplifier1, IP_d8ecf8f1_Xamplifier1, IP_f43ac5fa_Xamplifier1, register_AMPCONTROLHIGHgain_xdatamap1_6baf17c3, register_AMPCONTROLSLOWgain_xdatamap1_b93155df, register_AMPCONTROLMEDIUMgain_xdatamap1_3be5c37d, register_AMPLIFIERconfiguration_xdatamap1_4f9eeb49);
 input  REF;
 inout  tdo;
 input [4:0] tmi;
@@ -232,18 +258,18 @@ input  IP_8242d15d_Xamplifier1;
 input  IP_cdc307ec_Xamplifier1;
 input  IP_d8ecf8f1_Xamplifier1;
 input  IP_f43ac5fa_Xamplifier1;
-input [2:0] register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1;
-input [2:0] register_AMPCONTROLSLOWgain_8be083fe_Xdatamap1;
-input [2:0] register_AMPCONTROLMEDIUMgain_a341b3ad_Xdatamap1;
-input [7:0] register_AMPLIFIERconfiguration_d770927e_Xdatamap1;
+input [2:0] register_AMPCONTROLHIGHgain_xdatamap1_6baf17c3;
+input [2:0] register_AMPCONTROLSLOWgain_xdatamap1_b93155df;
+input [2:0] register_AMPCONTROLMEDIUMgain_xdatamap1_3be5c37d;
+input [7:0] register_AMPLIFIERconfiguration_xdatamap1_4f9eeb49;
 
 
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
-wire [2:0] register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1;
-wire [2:0] register_AMPCONTROLSLOWgain_8be083fe_Xdatamap1;
-wire [2:0] register_AMPCONTROLMEDIUMgain_a341b3ad_Xdatamap1;
-wire [7:0] register_AMPLIFIERconfiguration_d770927e_Xdatamap1;
+wire [2:0] register_AMPCONTROLHIGHgain_xdatamap1_6baf17c3;
+wire [2:0] register_AMPCONTROLSLOWgain_xdatamap1_b93155df;
+wire [2:0] register_AMPCONTROLMEDIUMgain_xdatamap1_3be5c37d;
+wire [7:0] register_AMPLIFIERconfiguration_xdatamap1_4f9eeb49;
 wire [1:0] a;
 wire [7:0] tdi;
 wire [7:0] ten;
@@ -257,12 +283,12 @@ LDOgreenbankAMPcontrolHIGH XAMPCONTROLhigh (
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.enable_ldo(register_AMPLIFIERconfiguration_d770927e_Xdatamap1[6]),
+.enable_ldo(net_100),
 .CELSUB40948(CELSUB40948),
 .dft_startup(net_126),
 .kelvin_GNDldo(kelvin_MUDGamplifier),
 .IP_f43ac5fa_Xamplifier1(IP_f43ac5fa_Xamplifier1),
-.register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1(register_AMPCONTROLHIGHgain_f328e92a_Xdatamap1[2:0])
+.register_AMPCONTROLHIGHgain_xdatamap1_6baf17c3(register_AMPCONTROLHIGHgain_xdatamap1_6baf17c3[2:0])
 );
 
 LDOgreenbankAMPcontrolLOW XAMPCONTROLlow (
@@ -272,12 +298,12 @@ LDOgreenbankAMPcontrolLOW XAMPCONTROLlow (
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.enable_ldo(register_AMPLIFIERconfiguration_d770927e_Xdatamap1[1]),
+.enable_ldo(net_95),
 .CELSUB40948(CELSUB40948),
 .dft_startup(net_115),
 .kelvin_GNDldo(kelvin_MUDGamplifier),
 .IP_8242d15d_Xamplifier1(IP_8242d15d_Xamplifier1),
-.register_AMPCONTROLSLOWgain_8be083fe_Xdatamap1(register_AMPCONTROLSLOWgain_8be083fe_Xdatamap1[2:0])
+.register_AMPCONTROLSLOWgain_xdatamap1_b93155df(register_AMPCONTROLSLOWgain_xdatamap1_b93155df[2:0])
 );
 
 LDOgreenbankAMPcontrolMEDIUM XAMPCONTROLmedium (
@@ -287,12 +313,12 @@ LDOgreenbankAMPcontrolMEDIUM XAMPCONTROLmedium (
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.enable_ldo(register_AMPLIFIERconfiguration_d770927e_Xdatamap1[4]),
+.enable_ldo(net_98),
 .CELSUB40948(CELSUB40948),
 .dft_startup(net_122),
 .kelvin_GNDldo(kelvin_MUDGamplifier),
 .IP_02fc9eb5_Xamplifier1(IP_02fc9eb5_Xamplifier1),
-.register_AMPCONTROLMEDIUMgain_a341b3ad_Xdatamap1(register_AMPCONTROLMEDIUMgain_a341b3ad_Xdatamap1[2:0])
+.register_AMPCONTROLMEDIUMgain_xdatamap1_3be5c37d(register_AMPCONTROLMEDIUMgain_xdatamap1_3be5c37d[2:0])
 );
 
 LDOgreenbankAMPfixedLOW XAMPFIXEDlow (
@@ -302,7 +328,7 @@ LDOgreenbankAMPfixedLOW XAMPFIXEDlow (
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.enable_ldo(register_AMPLIFIERconfiguration_d770927e_Xdatamap1[0]),
+.enable_ldo(net_94),
 .CELSUB40948(CELSUB40948),
 .dft_startup(net_114),
 .kelvin_GNDldo(kelvin_MUDGamplifier),
@@ -316,7 +342,7 @@ LDOgreenbankAMPfixedMEDIUM XAMPFIXEDmedium (
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.enable_ldo(register_AMPLIFIERconfiguration_d770927e_Xdatamap1[3]),
+.enable_ldo(net_97),
 .CELSUB40948(CELSUB40948),
 .dft_startup(net_120),
 .kelvin_GNDldo(kelvin_MUDGamplifier),
@@ -331,7 +357,7 @@ LDOgreenbankAMPopenHIGH XAMPOPENhigh (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .sense_LDO(sense_LDO7),
-.enable_ldo(register_AMPLIFIERconfiguration_d770927e_Xdatamap1[7]),
+.enable_ldo(net_101),
 .CELSUB40948(CELSUB40948),
 .dft_startup(net_128),
 .IP_cdc307ec_Xamplifier1(IP_cdc307ec_Xamplifier1)
@@ -345,7 +371,7 @@ LDOgreenbankAMPopenLOW XAMPOPENlow (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .sense_LDO(sense_LDO2),
-.enable_ldo(register_AMPLIFIERconfiguration_d770927e_Xdatamap1[2]),
+.enable_ldo(net_96),
 .CELSUB40948(CELSUB40948),
 .dft_startup(net_117),
 .IP_d8ecf8f1_Xamplifier1(IP_d8ecf8f1_Xamplifier1)
@@ -359,7 +385,7 @@ LDOgreenbankAMPopenMEDIUM XAMPOPENmedium (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .sense_LDO(sense_LDO5),
-.enable_ldo(register_AMPLIFIERconfiguration_d770927e_Xdatamap1[5]),
+.enable_ldo(net_99),
 .CELSUB40948(CELSUB40948),
 .dft_startup(net_124),
 .IP_655a9185_Xamplifier1(IP_655a9185_Xamplifier1)
@@ -447,6 +473,46 @@ DFTtm8d dft_hex0x18 (
 .ten({ten_e4f8b3db_XU22,ten_10984a03_XU21,ten_2ee47580_XU20,ten_28635dfc_XU19,ten_247462ee_XU18,ten_7f02331b_XU17,ten_3412c472_XU16,ten_1271fc3d_XU1}),
 .tma({a0,a0,a0,a1,a1,a0,a0,a0}),
 .tmi(tmi[4:0])
+);
+
+WRAPPER1 XWRAPregister_AMPLIFIERconfiguration_xdatamap1_4f9eeb49_0 (
+.i(register_AMPLIFIERconfiguration_xdatamap1_4f9eeb49[0]),
+.o(net_94)
+);
+
+WRAPPER1 XWRAPregister_AMPLIFIERconfiguration_xdatamap1_4f9eeb49_1 (
+.i(register_AMPLIFIERconfiguration_xdatamap1_4f9eeb49[1]),
+.o(net_95)
+);
+
+WRAPPER1 XWRAPregister_AMPLIFIERconfiguration_xdatamap1_4f9eeb49_2 (
+.i(register_AMPLIFIERconfiguration_xdatamap1_4f9eeb49[2]),
+.o(net_96)
+);
+
+WRAPPER1 XWRAPregister_AMPLIFIERconfiguration_xdatamap1_4f9eeb49_3 (
+.i(register_AMPLIFIERconfiguration_xdatamap1_4f9eeb49[3]),
+.o(net_97)
+);
+
+WRAPPER1 XWRAPregister_AMPLIFIERconfiguration_xdatamap1_4f9eeb49_4 (
+.i(register_AMPLIFIERconfiguration_xdatamap1_4f9eeb49[4]),
+.o(net_98)
+);
+
+WRAPPER1 XWRAPregister_AMPLIFIERconfiguration_xdatamap1_4f9eeb49_5 (
+.i(register_AMPLIFIERconfiguration_xdatamap1_4f9eeb49[5]),
+.o(net_99)
+);
+
+WRAPPER1 XWRAPregister_AMPLIFIERconfiguration_xdatamap1_4f9eeb49_6 (
+.i(register_AMPLIFIERconfiguration_xdatamap1_4f9eeb49[6]),
+.o(net_100)
+);
+
+WRAPPER1 XWRAPregister_AMPLIFIERconfiguration_xdatamap1_4f9eeb49_7 (
+.i(register_AMPLIFIERconfiguration_xdatamap1_4f9eeb49[7]),
+.o(net_101)
 );
 
 endmodule

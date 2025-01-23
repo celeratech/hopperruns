@@ -8,28 +8,43 @@ module VESPAdftpulse (stop,pulse,start,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module switchgnd_321bf2ca (I,O,CELG,CELV,CELSUB,enable_switch);
-  input  I;
-  inout  O;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
-  input  enable_switch;
+//Celera:switchgnd_321bf2ca
+//Celera Confidential Symbol Generator
+//100 Ohm gndSwitch
+module switchgnd_321bf2ca (CELV,O,I,enable_switch,CELG,CELSUB);
+input CELV;
+input I;
+input enable_switch;
+inout O;
+input CELG;
+input CELSUB;
 endmodule
 
-module IPOTTldo_46c112ed (LDO,REF,CELG,SIMPV,CELSUB,ok_ldo,enable_ldo,global_ldo,CELPOWER_LDO,celkelvin_LDO,celkelvin_GNDldo);
-  output  LDO;
-  input  REF;
-  input  CELG;
-  input  SIMPV;
-  input  CELSUB;
-  output  ok_ldo;
-  input  enable_ldo;
-  input  global_ldo;
-  input  CELPOWER_LDO;
-  input  celkelvin_LDO;
-  input  celkelvin_GNDldo;
+
+
+//Celera:IPOTTldo_46c112ed
+//Celera Confidential Symbol Generator
+//LDO:Output 3.3V
+module IPOTTldo_46c112ed (LDO,celkelvin_LDO,ok_ldo,
+enable_ldo,SIMPV,REF,
+CELPOWER_LDO,
+global_ldo,
+celkelvin_GNDldo,
+CELG,CELSUB); 
+input SIMPV;
+input CELPOWER_LDO;
+input enable_ldo;
+input global_ldo;
+output LDO;
+input celkelvin_LDO;
+output ok_ldo;
+input REF;
+input celkelvin_GNDldo;
+input CELG;
+input CELSUB;
 endmodule
+
+
 
 //Verilog HDL for "DFT", "DFTtm8t" "functional"
 
@@ -56,7 +71,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module LDOgreenbankLDOfixed (LDO, REF, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, CELPOWER_LDO_214c0f74, celkelvin_LDO8_635a8467, celkelvin_MUDG_635a84677);
+module LDOgreenbankLDOfixed (LDO, REF, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, CELPOWER_LDO_214c0f74, celkelvin_LDO8_635a8467, celkelvin_MUDG_635a8467);
 output  LDO;
 input  REF;
 input [4:0] tmi;
@@ -68,7 +83,7 @@ input  CELSUB40948;
 output  dft_startup;
 input  CELPOWER_LDO_214c0f74;
 input  celkelvin_LDO8_635a8467;
-input  celkelvin_MUDG_635a84677;
+input  celkelvin_MUDG_635a8467;
 
 
 // ------------------------ Wires ------------------------
@@ -107,7 +122,7 @@ IPOTTldo_46c112ed XLDO1 (
 .global_ldo(global_ldo_214c0f74_XLDO1),
 .CELPOWER_LDO(CELPOWER_LDO_214c0f74),
 .celkelvin_LDO(celkelvin_LDO8_635a8467),
-.celkelvin_GNDldo(celkelvin_MUDG_635a84677)
+.celkelvin_GNDldo(celkelvin_MUDG_635a8467)
 );
 
 DFTtm8t dft_hex0x0A (

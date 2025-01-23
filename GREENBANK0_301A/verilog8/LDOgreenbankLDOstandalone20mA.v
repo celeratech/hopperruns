@@ -8,22 +8,35 @@ module VESPAdftpulse (stop,pulse,start,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module IPOTTldo_2e36c35f (LDO,CELG,SIMPV,CELSUB,ok_ldo,enable_ldo,global_ldo,celkelvin_LDO,factory_ldogain,factory_ldopsrr,celkelvin_GNDldo,factory_ldoerror,factory_ldofeedforward,factory_ldocompensation);
-  output  LDO;
-  input  CELG;
-  input  SIMPV;
-  input  CELSUB;
-  output  ok_ldo;
-  input  enable_ldo;
-  input  global_ldo;
-  input  celkelvin_LDO;
-  input [2:0] factory_ldogain;
-  input [5:0] factory_ldopsrr;
-  input  celkelvin_GNDldo;
-  input [2:0] factory_ldoerror;
-  input [2:0] factory_ldofeedforward;
-  input [5:0] factory_ldocompensation;
+//Celera:IPOTTldo_2e36c35f
+//Celera Confidential Symbol Generator
+//LDO:Output 3.3V
+module IPOTTldo_2e36c35f (LDO,celkelvin_LDO,ok_ldo,
+enable_ldo,SIMPV,factory_ldoerror,
+factory_ldogain,
+factory_ldopsrr,
+factory_ldofeedforward,
+factory_ldocompensation,
+global_ldo,
+celkelvin_GNDldo,
+CELG,CELSUB); 
+input SIMPV;
+input enable_ldo;
+input global_ldo;
+output LDO;
+input celkelvin_LDO;
+output ok_ldo;
+input [2:0] factory_ldoerror;
+input [2:0] factory_ldogain;
+input [5:0] factory_ldopsrr;
+input [2:0] factory_ldofeedforward;
+input [5:0] factory_ldocompensation;
+input celkelvin_GNDldo;
+input CELG;
+input CELSUB;
 endmodule
+
+
 
 //Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
 
@@ -62,7 +75,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module LDOgreenbankLDOstandalone20mA (LDO, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, celkelvin_LDO13_f8678617, celkelvin_MUDG_f867861710);
+module LDOgreenbankLDOstandalone20mA (LDO, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, celkelvin_MUDG_f8678617, celkelvin_LDO13_f8678617);
 output  LDO;
 input [4:0] tmi;
 input  MUDV;
@@ -71,8 +84,8 @@ input  CELV96848;
 input  enable_ldo;
 input  CELSUB40948;
 output  dft_startup;
+input  celkelvin_MUDG_f8678617;
 input  celkelvin_LDO13_f8678617;
-input  celkelvin_MUDG_f867861710;
 
 
 // ------------------------ Wires ------------------------
@@ -107,7 +120,7 @@ IPOTTldo_2e36c35f XLDO1 (
 .celkelvin_LDO(celkelvin_LDO13_f8678617),
 .factory_ldogain({c0,c0,c0}),
 .factory_ldopsrr({c0,c0,c0,c0,c0,c0}),
-.celkelvin_GNDldo(celkelvin_MUDG_f867861710),
+.celkelvin_GNDldo(celkelvin_MUDG_f8678617),
 .factory_ldoerror({c0,c0,c0}),
 .factory_ldofeedforward({c0,c0,c0}),
 .factory_ldocompensation({c0,c0,c0,c0,c0,c0})

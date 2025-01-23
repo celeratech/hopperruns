@@ -59,7 +59,7 @@ STONEpadOUTstandaloneTAO XCELOUTA (
 .unlock(unlockTAO)
 );
 
-ESDcore6 XESDcore6_3 (
+ESDcore6 XESDcore6_4 (
 .PAD(CELOUTA),
 .GESD(GESD)
 );

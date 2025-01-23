@@ -52,307 +52,470 @@ module VESPAasmINPUT1 (o,i0,Tstate,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module resistor_0937c013 (RN,RP,CELG,CELV,CELSUB,adjust_resistor);
-  inout  RN;
-  inout  RP;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
-  input [2:0] adjust_resistor;
+//Celera:resistor_0937c013
+//Celera Confidential Symbol Generator
+//RESISTOR:30.00KOhm TYPE:poly Adjust:30.00Kohm DFT:no
+module resistor_0937c013 (RP,
+CELV,
+CELG,
+CELSUB,
+adjust_resistor,
+RN);
+inout RP;
+inout RN;
+input CELV;
+input CELG;
+input CELSUB;
+input [2:0] adjust_resistor;
 endmodule
 
-module reference_c03501a6 (REF,CELG,CELBG,SIMPV,CELSUB,TAI_REF,ten_ref,trim_ref,TAI_REFBG,ten_refbg,trim_refbg,ok_reference,factory_refccn,factory_refccp,celkelvin_GNDref,enable_reference,global_reference);
-  output  REF;
-  input  CELG;
-  output  CELBG;
-  input  SIMPV;
-  input  CELSUB;
-  output  TAI_REF;
-  input  ten_ref;
-  input [5:0] trim_ref;
-  output  TAI_REFBG;
-  input  ten_refbg;
-  input [6:0] trim_refbg;
-  output  ok_reference;
-  input [4:0] factory_refccn;
-  input [4:0] factory_refccp;
-  input  celkelvin_GNDref;
-  input  enable_reference;
-  input  global_reference;
+
+
+//Celera:reference
+//Celera Confidential Symbol Generator
+//Reference:0.800V with Curveture Correction
+module reference_c03501a6 (SIMPV,enable_reference,ok_reference,REF,global_reference,
+CELBG,
+ten_ref,TAI_REF,
+ten_refbg,TAI_REFBG,
+trim_ref,trim_refbg,
+factory_refccn,
+factory_refccp,
+CELG,celkelvin_GNDref,CELSUB);
+input SIMPV;
+input enable_reference;
+output ok_reference;
+output REF;
+input global_reference;
+output CELBG;
+input ten_refbg;
+output TAI_REFBG;
+input ten_ref;
+output TAI_REF;
+input [6:0] trim_refbg;
+input [5:0] trim_ref;
+input [4:0] factory_refccn;
+input [4:0] factory_refccp;
+input celkelvin_GNDref;
+input CELSUB;
+input CELG;
 endmodule
 
-module reference_425caed2 (REF,CELG,CELBG,SIMPV,CELSUB,TAI_REF,ten_ref,trim_ref,TAI_REFBG,ten_refbg,trim_refbg,ok_reference,factory_refccn,factory_refccp,celkelvin_GNDref,enable_reference,global_reference);
-  output  REF;
-  input  CELG;
-  output  CELBG;
-  input  SIMPV;
-  input  CELSUB;
-  output  TAI_REF;
-  input  ten_ref;
-  input [5:0] trim_ref;
-  output  TAI_REFBG;
-  input  ten_refbg;
-  input [6:0] trim_refbg;
-  output  ok_reference;
-  input [4:0] factory_refccn;
-  input [4:0] factory_refccp;
-  input  celkelvin_GNDref;
-  input  enable_reference;
-  input  global_reference;
+
+
+//Celera:reference
+//Celera Confidential Symbol Generator
+//Reference:0.800V with Curveture Correction
+module reference_425caed2 (SIMPV,enable_reference,ok_reference,REF,global_reference,
+CELBG,
+ten_ref,TAI_REF,
+ten_refbg,TAI_REFBG,
+trim_ref,trim_refbg,
+factory_refccn,
+factory_refccp,
+CELG,celkelvin_GNDref,CELSUB);
+input SIMPV;
+input enable_reference;
+output ok_reference;
+output REF;
+input global_reference;
+output CELBG;
+input ten_refbg;
+output TAI_REFBG;
+input ten_ref;
+output TAI_REF;
+input [6:0] trim_refbg;
+input [5:0] trim_ref;
+input [4:0] factory_refccn;
+input [4:0] factory_refccp;
+input celkelvin_GNDref;
+input CELSUB;
+input CELG;
 endmodule
 
-module dftprobeModel0_23542a9f (i,tdi,ten,CELG,CELV,CELSUB);
-  input  i;
-  output  tdi;
-  input  ten;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+module dftprobeModel0_23542a9f (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
 endmodule
 
-module currentgenerator_94421a49 (I0,IP,CELG,SIMPV,TAEXT,CELSUB,TAI_N5UREF,TAI_P5UREF,TAI_N50UREF,TAI_P50NREF,TAI_P50UREF,TAI_N500NREF,TAI_P500NREF,ten_tai_n5uref,ten_tai_p5uref,ten_tai_n50uref,ten_tai_p50nref,ten_tai_p50uref,ten_tai_n500nref,ten_tai_p500nref,ok_currentgenerator,ten_currentgenerator,trim_currentgenerator,enable_currentgenerator,global_currentgenerator,tdi_ok_currentgenerator,ten_taext_currentgenerator);
-  inout  I0;
-  input  IP;
-  input  CELG;
-  input  SIMPV;
-  input  TAEXT;
-  input  CELSUB;
-  output  TAI_N5UREF;
-  output  TAI_P5UREF;
-  output  TAI_N50UREF;
-  output  TAI_P50NREF;
-  output  TAI_P50UREF;
-  output  TAI_N500NREF;
-  output  TAI_P500NREF;
-  input  ten_tai_n5uref;
-  input  ten_tai_p5uref;
-  input  ten_tai_n50uref;
-  input  ten_tai_p50nref;
-  input  ten_tai_p50uref;
-  input  ten_tai_n500nref;
-  input  ten_tai_p500nref;
-  output  ok_currentgenerator;
-  input  ten_currentgenerator;
-  input [5:0] trim_currentgenerator;
-  input  enable_currentgenerator;
-  input  global_currentgenerator;
-  output  tdi_ok_currentgenerator;
-  input  ten_taext_currentgenerator;
+
+
+//Celera:currentgenerator_94421a49
+//Celera Confidential Symbol Generator
+//Number of outputs: 1, Max Vout: 6V, Accuracy: yes%, Temperature Coefficient: zero, Temperature Gain: 3, DFT: yes
+//POLARITY0:source, OUTPUT0:20
+module currentgenerator_94421a49 (SIMPV,CELSUB,enable_currentgenerator,global_currentgenerator,IP,ok_currentgenerator,
+I0,
+trim_currentgenerator,
+ten_currentgenerator,TAEXT,ten_taext_currentgenerator,tdi_ok_currentgenerator,TAI_N500NREF,ten_tai_n500nref,
+TAI_N5UREF,ten_tai_n5uref,
+TAI_N50UREF,ten_tai_n50uref,
+TAI_P50NREF,ten_tai_p50nref,
+TAI_P500NREF,ten_tai_p500nref,
+TAI_P5UREF,ten_tai_p5uref,
+TAI_P50UREF,ten_tai_p50uref,
+CELG);
+input SIMPV;
+input CELG;
+input CELSUB;
+input enable_currentgenerator;
+input IP;
+output ok_currentgenerator;
+input global_currentgenerator;
+inout I0;
+input [5:0] trim_currentgenerator;
+input TAEXT;
+input ten_taext_currentgenerator;
+output tdi_ok_currentgenerator;
+output TAI_N500NREF;
+input ten_tai_n500nref;
+input ten_currentgenerator;
+output TAI_N5UREF;
+input ten_tai_n5uref;
+output TAI_N50UREF;
+input ten_tai_n50uref;
+output TAI_P50NREF;
+input ten_tai_p50nref;
+output TAI_P500NREF;
+input ten_tai_p500nref;
+output TAI_P5UREF;
+input ten_tai_p5uref;
+output TAI_P50UREF;
+input ten_tai_p50uref;
 endmodule
 
-module amux8_dc44282c (O,I0,I1,I2,I3,I4,I5,CELG,amux,SIMPV,CELSUB);
-  output  O;
-  input  I0;
-  input  I1;
-  input  I2;
-  input  I3;
-  input  I4;
-  input  I5;
-  input  CELG;
-  input [2:0] amux;
-  input  SIMPV;
-  input  CELSUB;
+
+
+//Celera:amux8_dc44282c
+//Celera Confidential Symbol Generator
+//Inputs: 6, Switch On Resistance: 100
+//Type of Control:pin, T-Switch: no
+module amux8_dc44282c (SIMPV,CELSUB,O,I0,I1,
+I2,I3,I4,I5,
+amux,
+CELG);
+input SIMPV;
+input CELSUB;
+output O;
+input I0;
+input I1;
+input I2;
+input I3;
+input I4;
+input I5;
+input [2:0] amux;
+input CELG;
 endmodule
 
-module reference_d628bb93 (REF,CELG,CELBG,SIMPV,CELSUB,TAI_REF,ten_ref,trim_ref,TAI_REFBG,ten_refbg,trim_refbg,ok_reference,factory_refccn,factory_refccp,celkelvin_GNDref,enable_reference,global_reference);
-  output  REF;
-  input  CELG;
-  output  CELBG;
-  input  SIMPV;
-  input  CELSUB;
-  output  TAI_REF;
-  input  ten_ref;
-  input [5:0] trim_ref;
-  output  TAI_REFBG;
-  input  ten_refbg;
-  input [6:0] trim_refbg;
-  output  ok_reference;
-  input [4:0] factory_refccn;
-  input [4:0] factory_refccp;
-  input  celkelvin_GNDref;
-  input  enable_reference;
-  input  global_reference;
+
+
+//Celera:reference
+//Celera Confidential Symbol Generator
+//Reference:0.800V with Curveture Correction
+module reference_d628bb93 (SIMPV,enable_reference,ok_reference,REF,global_reference,
+CELBG,
+ten_ref,TAI_REF,
+ten_refbg,TAI_REFBG,
+trim_ref,trim_refbg,
+factory_refccn,
+factory_refccp,
+CELG,celkelvin_GNDref,CELSUB);
+input SIMPV;
+input enable_reference;
+output ok_reference;
+output REF;
+input global_reference;
+output CELBG;
+input ten_refbg;
+output TAI_REFBG;
+input ten_ref;
+output TAI_REF;
+input [6:0] trim_refbg;
+input [5:0] trim_ref;
+input [4:0] factory_refccn;
+input [4:0] factory_refccp;
+input celkelvin_GNDref;
+input CELSUB;
+input CELG;
 endmodule
 
-module capacitorfixed_f0008a74 (CN,CP,KELVIN_CN,KELVIN_CP);
-  inout  CN;
-  inout  CP;
-  inout  KELVIN_CN;
-  inout  KELVIN_CP;
+
+
+//Celera:capacitorfixed_f0008a74
+//Celera Confidential Symbol Generator
+//CAPACITOR CONTROL:capacitor
+//VALUE: 50.00pF TYPE:mim
+module capacitorfixed_f0008a74 (CP,
+KELVIN_CP,KELVIN_CN,
+CN);
+inout CP;
+inout CN;
+inout KELVIN_CN;
+inout KELVIN_CP;
 endmodule
 
-module amux2_436b457d (O,I0,I1,CELG,amux,SIMPV,CELSUB);
-  output  O;
-  input  I0;
-  input  I1;
-  input  CELG;
-  input  amux;
-  input  SIMPV;
-  input  CELSUB;
+
+
+//Celera:amux2_436b457d
+//Celera Confidential Symbol Generator
+//Inputs: 2, Switch On Resistance: 100
+//Type of Control:pin, T-Switch: no
+module amux2_436b457d (SIMPV,CELSUB,O,I0,I1,
+amux,
+CELG);
+input SIMPV;
+input CELSUB;
+output O;
+input I0;
+input I1;
+input amux;
+input CELG;
 endmodule
 
-module porb_857d66ac (SUB,CELG,CELV,porb,SENSE_PORB,enable_porb);
-  input  SUB;
-  input  CELG;
-  input  CELV;
-  output  porb;
-  input  SENSE_PORB;
-  input  enable_porb;
+
+
+//Celera:porb_857d66ac
+//Global PORB
+module porb_857d66ac (CELV,SENSE_PORB,porb,
+enable_porb,CELG,SUB);
+input CELV;
+input SENSE_PORB;
+output porb;
+input enable_porb;
+input SUB;
+input CELG;
 endmodule
 
-module reference_0c0fda20 (REF,CELG,CELBG,SIMPV,CELSUB,TAI_REF,ten_ref,trim_ref,TAI_REFBG,ten_refbg,trim_refbg,ok_reference,factory_refccn,factory_refccp,celkelvin_GNDref,enable_reference,global_reference);
-  output  REF;
-  input  CELG;
-  output  CELBG;
-  input  SIMPV;
-  input  CELSUB;
-  output  TAI_REF;
-  input  ten_ref;
-  input [5:0] trim_ref;
-  output  TAI_REFBG;
-  input  ten_refbg;
-  input [6:0] trim_refbg;
-  output  ok_reference;
-  input [4:0] factory_refccn;
-  input [4:0] factory_refccp;
-  input  celkelvin_GNDref;
-  input  enable_reference;
-  input  global_reference;
+
+
+//Celera:reference
+//Celera Confidential Symbol Generator
+//Reference:0.800V with Curveture Correction
+module reference_0c0fda20 (SIMPV,enable_reference,ok_reference,REF,global_reference,
+CELBG,
+ten_ref,TAI_REF,
+ten_refbg,TAI_REFBG,
+trim_ref,trim_refbg,
+factory_refccn,
+factory_refccp,
+CELG,celkelvin_GNDref,CELSUB);
+input SIMPV;
+input enable_reference;
+output ok_reference;
+output REF;
+input global_reference;
+output CELBG;
+input ten_refbg;
+output TAI_REFBG;
+input ten_ref;
+output TAI_REF;
+input [6:0] trim_refbg;
+input [5:0] trim_ref;
+input [4:0] factory_refccn;
+input [4:0] factory_refccp;
+input celkelvin_GNDref;
+input CELSUB;
+input CELG;
 endmodule
 
-module decoder3_2e5975da (i,o,SUB,CELG,CELV,enable_decoder);
-  input [2:0] i;
-  output [7:0] o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
-  input  enable_decoder;
+
+
+//Celera:decoder3_2e5975da
+//Celera Confidential Symbol Generator
+//DECODER
+module decoder3_2e5975da (CELV,i,o,
+enable_decoder,
+CELG,SUB);
+input CELV;
+input [2:0] i;
+output [7:0] o;
+input enable_decoder;
+input CELG;
+input SUB;
 endmodule
 
-module resistor_0c3791eb (RN,RP,CELG,CELV,CELSUB,adjust_resistor);
-  inout  RN;
-  inout  RP;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
-  input [2:0] adjust_resistor;
+
+
+//Celera:resistor_0c3791eb
+//Celera Confidential Symbol Generator
+//RESISTOR:80.00KOhm TYPE:poly Adjust:68.00Kohm DFT:no
+module resistor_0c3791eb (RP,
+CELV,
+CELG,
+CELSUB,
+adjust_resistor,
+RN);
+inout RP;
+inout RN;
+input CELV;
+input CELG;
+input CELSUB;
+input [2:0] adjust_resistor;
 endmodule
 
-module currentgenerator_25ffd7d0 (I0,IP,CELG,SIMPV,TAEXT,CELSUB,TAI_N5UREF,TAI_P5UREF,TAI_P50NREF,TAI_N500NREF,TAI_P500NREF,ten_tai_n5uref,ten_tai_p5uref,ten_tai_p50nref,ten_tai_n500nref,ten_tai_p500nref,ok_currentgenerator,ten_currentgenerator,trim_currentgenerator,enable_currentgenerator,global_currentgenerator,tdi_ok_currentgenerator,ten_taext_currentgenerator);
-  inout  I0;
-  input  IP;
-  input  CELG;
-  input  SIMPV;
-  input  TAEXT;
-  input  CELSUB;
-  output  TAI_N5UREF;
-  output  TAI_P5UREF;
-  output  TAI_P50NREF;
-  output  TAI_N500NREF;
-  output  TAI_P500NREF;
-  input  ten_tai_n5uref;
-  input  ten_tai_p5uref;
-  input  ten_tai_p50nref;
-  input  ten_tai_n500nref;
-  input  ten_tai_p500nref;
-  output  ok_currentgenerator;
-  input  ten_currentgenerator;
-  input [5:0] trim_currentgenerator;
-  input  enable_currentgenerator;
-  input  global_currentgenerator;
-  output  tdi_ok_currentgenerator;
-  input  ten_taext_currentgenerator;
+
+
+//Celera:currentgenerator_25ffd7d0
+//Celera Confidential Symbol Generator
+//Number of outputs: 1, Max Vout: 6V, Accuracy: yes%, Temperature Coefficient: zero, Temperature Gain: 3, DFT: yes
+//POLARITY0:source, OUTPUT0:10
+module currentgenerator_25ffd7d0 (SIMPV,CELSUB,enable_currentgenerator,global_currentgenerator,IP,ok_currentgenerator,
+I0,
+trim_currentgenerator,
+ten_currentgenerator,TAEXT,ten_taext_currentgenerator,tdi_ok_currentgenerator,TAI_N500NREF,ten_tai_n500nref,
+TAI_N5UREF,ten_tai_n5uref,
+TAI_P50NREF,ten_tai_p50nref,
+TAI_P500NREF,ten_tai_p500nref,
+TAI_P5UREF,ten_tai_p5uref,
+CELG);
+input SIMPV;
+input CELG;
+input CELSUB;
+input enable_currentgenerator;
+input IP;
+output ok_currentgenerator;
+input global_currentgenerator;
+inout I0;
+input [5:0] trim_currentgenerator;
+input TAEXT;
+input ten_taext_currentgenerator;
+output tdi_ok_currentgenerator;
+output TAI_N500NREF;
+input ten_tai_n500nref;
+input ten_currentgenerator;
+output TAI_N5UREF;
+input ten_tai_n5uref;
+output TAI_P50NREF;
+input ten_tai_p50nref;
+output TAI_P500NREF;
+input ten_tai_p500nref;
+output TAI_P5UREF;
+input ten_tai_p5uref;
 endmodule
 
-module dftprobeModel2_90295773 (i,TAI,ten,CELG,CELV,CELSUB);
-  input  i;
-  output  TAI;
-  input  ten;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+module dftprobeModel2_90295773 (i,TAI,ten,CELG,CELSUB,CELV);
+input  i;
+output  TAI;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
 endmodule
 
-module dftprobeModel2_06648748 (i,TAI,ten,CELG,CELV,CELSUB);
-  input  i;
-  output  TAI;
-  input  ten;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+module dftprobeModel2_06648748 (i,TAI,ten,CELG,CELSUB,CELV);
+input  i;
+output  TAI;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
 endmodule
 
-module dftprobeModel2_7c54c544 (i,TAI,ten,CELG,CELV,CELSUB);
-  input  i;
-  output  TAI;
-  input  ten;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+module dftprobeModel2_7c54c544 (i,TAI,ten,CELG,CELSUB,CELV);
+input  i;
+output  TAI;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
 endmodule
 
-module dftprobeModel2_d5136c9b (i,TAI,ten,CELG,CELV,CELSUB);
-  input  i;
-  output  TAI;
-  input  ten;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+module dftprobeModel2_d5136c9b (i,TAI,ten,CELG,CELSUB,CELV);
+input  i;
+output  TAI;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
 endmodule
 
-module dftprobeModel0_ea6d640e (i,tdi,ten,CELG,CELV,CELSUB);
-  input  i;
-  output  tdi;
-  input  ten;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+module dftprobeModel0_ea6d640e (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
 endmodule
 
-module dftprobeModel0_90dc65c3 (i,tdi,ten,CELG,CELV,CELSUB);
-  input  i;
-  output  tdi;
-  input  ten;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+module dftprobeModel0_90dc65c3 (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
 endmodule
 
-module dftprobeModel2_53ba4bdc (i,TAI,ten,CELG,CELV,CELSUB);
-  input  i;
-  output  TAI;
-  input  ten;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+module dftprobeModel2_53ba4bdc (i,TAI,ten,CELG,CELSUB,CELV);
+input  i;
+output  TAI;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
 endmodule
 
-module dftprobeModel2_f22b36ca (i,TAI,ten,CELG,CELV,CELSUB);
-  input  i;
-  output  TAI;
-  input  ten;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+module dftprobeModel2_f22b36ca (i,TAI,ten,CELG,CELSUB,CELV);
+input  i;
+output  TAI;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
 endmodule
 
-module inv_12e192f5 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:inv_12e192f5
+//Celera Confidential Symbol Generator
+//5V Inverter
+module inv_12e192f5 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
 
-module nor3_c2b5cbd2 (o,i0,i1,i2,SUB,CELG,CELV);
-  output  o;
-  input  i0;
-  input  i1;
-  input  i2;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+
+
+//Celera:nor3_c2b5cbd2
+//Celera Confidential Symbol Generator
+//NOR3
+module nor3_c2b5cbd2 (CELV,CELG,i0,i1,i2,o,SUB);
+input CELV;
+input CELG;
+input i0;
+input i1;
+input i2;
+input SUB;
+output o;
 endmodule
+
+
 
 //Verilog HDL for "Generate", "STONEnoconn" "functional"
 
@@ -438,17 +601,29 @@ module DFTtm8t ( a, ten, tmi, G, SUB, V, tma );
 endmodule
 
 
-module dftprobeModel3_7c75d582 (i,TAI,ten,CELG,CELV,CELSUB);
-  input  i;
-  output  TAI;
-  input  ten;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+module dftprobeModel3_7c75d582 (i,TAI,ten,CELG,CELSUB,CELV);
+input  i;
+output  TAI;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
 endmodule
 
+
+
+//Verilog HDL for "Generate", "WRAPPER1" "functional"
+
+
+module WRAPPER1 ( o, i );
+
+  input i;
+  output o;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module SERVICEgreenbank_30 (REF, TAO, tdo, tmi, MUDV, TAEXT, CELG59462, CELV96848, PORB97836, CELBG83021, CELSUB40948, kelvin_MUDV, IP_b38e83c8_XU7, IP_c99e7035_XU27, SENSE_G_924d4d4f, kelvin_MUDGservice, IP_924d4d4f_Xoscillator1, celkelvin_MUDG_3f3140ae3, celkelvin_MUDG_5b4bc5a72, celkelvin_MUDG_614c8f411, celkelvin_MUDG_ec7b0f830, register_REF2output_46e2454e_Xdatamap2, register_REF3output_00f9a76d_Xdatamap1, register_REFERENCEselect_b05f295d_Xdatamap4, register_SERVICEconfiguration_d530de71_Xdatamap3);
+module SERVICEgreenbank_30 (REF, TAO, tdo, tmi, MUDV, TAEXT, CELG59462, CELV96848, PORB97836, CELBG83021, CELSUB40948, kelvin_MUDV, IP_b38e83c8_XU7, IP_c99e7035_XU27, SENSE_G_924d4d4f, kelvin_MUDGservice, celkelvin_MUDG_3f3140ae, celkelvin_MUDG_5b4bc5a7, celkelvin_MUDG_614c8f41, celkelvin_MUDG_ec7b0f83, IP_924d4d4f_Xoscillator1, register_REF2output_xdatamap2_8e30a47d, register_REF3output_xdatamap1_e1ae9635, register_REFERENCEselect_xdatamap4_d156f668, register_SERVICEconfiguration_xdatamap3_d08024d7);
 output  REF;
 inout  TAO;
 inout  tdo;
@@ -465,23 +640,23 @@ input  IP_b38e83c8_XU7;
 input  IP_c99e7035_XU27;
 input  SENSE_G_924d4d4f;
 inout  kelvin_MUDGservice;
+input  celkelvin_MUDG_3f3140ae;
+input  celkelvin_MUDG_5b4bc5a7;
+input  celkelvin_MUDG_614c8f41;
+input  celkelvin_MUDG_ec7b0f83;
 input  IP_924d4d4f_Xoscillator1;
-input  celkelvin_MUDG_3f3140ae3;
-input  celkelvin_MUDG_5b4bc5a72;
-input  celkelvin_MUDG_614c8f411;
-input  celkelvin_MUDG_ec7b0f830;
-input [2:0] register_REF2output_46e2454e_Xdatamap2;
-input [2:0] register_REF3output_00f9a76d_Xdatamap1;
-input [2:0] register_REFERENCEselect_b05f295d_Xdatamap4;
-input [5:0] register_SERVICEconfiguration_d530de71_Xdatamap3;
+input [2:0] register_REF2output_xdatamap2_8e30a47d;
+input [2:0] register_REF3output_xdatamap1_e1ae9635;
+input [2:0] register_REFERENCEselect_xdatamap4_d156f668;
+input [5:0] register_SERVICEconfiguration_xdatamap3_d08024d7;
 
 
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
-wire [2:0] register_REF2output_46e2454e_Xdatamap2;
-wire [2:0] register_REF3output_00f9a76d_Xdatamap1;
-wire [2:0] register_REFERENCEselect_b05f295d_Xdatamap4;
-wire [5:0] register_SERVICEconfiguration_d530de71_Xdatamap3;
+wire [2:0] register_REF2output_xdatamap2_8e30a47d;
+wire [2:0] register_REF3output_xdatamap1_e1ae9635;
+wire [2:0] register_REFERENCEselect_xdatamap4_d156f668;
+wire [5:0] register_SERVICEconfiguration_xdatamap3_d08024d7;
 wire [2:0] adjust_resistor;
 wire [5:0] trim_ref;
 wire [6:0] trim_refbg;
@@ -515,16 +690,16 @@ SERVICEgreenbankBYPASS XBYPASS (
 .ok_reference3(net_270),
 .ok_reference4(net_272),
 .ok_reference5(net_273),
-.disable_bypass(register_SERVICEconfiguration_d530de71_Xdatamap3[1]),
+.disable_bypass(net_167),
 .SENSE_G_924d4d4f(SENSE_G_924d4d4f),
 .enable_reference0(net_249),
 .enable_reference1(net_256),
 .enable_reference2(net_262),
 .enable_reference3(net_266),
 .enable_reference4(net_267),
-.filter_resistor_0(register_SERVICEconfiguration_d530de71_Xdatamap3[2]),
-.filter_resistor_1(register_SERVICEconfiguration_d530de71_Xdatamap3[3]),
-.filter_resistor_2(register_SERVICEconfiguration_d530de71_Xdatamap3[4]),
+.filter_resistor_0(net_168),
+.filter_resistor_1(net_169),
+.filter_resistor_2(net_170),
 .enable_reference567(net_268),
 .IP_924d4d4f_Xoscillator1(IP_924d4d4f_Xoscillator1)
 );
@@ -536,9 +711,9 @@ SERVICEgreenbankFILTER XFILTER (
 .REFoutput(net_252),
 .CELSUB40948(CELSUB40948),
 .bypass_filter(net_253),
-.filter_resistor_0(register_SERVICEconfiguration_d530de71_Xdatamap3[2]),
-.filter_resistor_1(register_SERVICEconfiguration_d530de71_Xdatamap3[3]),
-.filter_resistor_2(register_SERVICEconfiguration_d530de71_Xdatamap3[4]),
+.filter_resistor_0(net_168),
+.filter_resistor_1(net_169),
+.filter_resistor_2(net_170),
 .kelvin_MUDGservice(kelvin_MUDGservice)
 );
 
@@ -602,7 +777,7 @@ resistor_0937c013 XU1 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.adjust_resistor({register_REF3output_00f9a76d_Xdatamap1[2],register_REF3output_00f9a76d_Xdatamap1[1],register_REF3output_00f9a76d_Xdatamap1[0]})
+.adjust_resistor({net_230,net_229,net_228})
 );
 
 reference_c03501a6 XU2 (
@@ -620,7 +795,7 @@ reference_c03501a6 XU2 (
 .ok_reference(net_264),
 .factory_refccn({g0,g1,g1,g1,g1}),
 .factory_refccp({g0,g1,g1,g1,g1}),
-.celkelvin_GNDref(celkelvin_MUDG_ec7b0f830),
+.celkelvin_GNDref(celkelvin_MUDG_ec7b0f83),
 .enable_reference(net_256),
 .global_reference(global_reference_a9100825_XU2)
 );
@@ -640,7 +815,7 @@ reference_425caed2 XU4 (
 .ok_reference(net_254),
 .factory_refccn({g0,g1,g1,g1,g1}),
 .factory_refccp({g0,g1,g1,g1,g1}),
-.celkelvin_GNDref(celkelvin_MUDG_614c8f411),
+.celkelvin_GNDref(celkelvin_MUDG_614c8f41),
 .enable_reference(net_249),
 .global_reference(global_reference_5bd609b6_XU4)
 );
@@ -693,7 +868,7 @@ amux8_dc44282c XU9 (
 .I4(net_259),
 .I5(net_260),
 .CELG(CELG59462),
-.amux({register_REFERENCEselect_b05f295d_Xdatamap4[2],register_REFERENCEselect_b05f295d_Xdatamap4[1],register_REFERENCEselect_b05f295d_Xdatamap4[0]}),
+.amux({net_184,net_183,net_182}),
 .SIMPV(MUDV),
 .CELSUB(CELSUB40948)
 );
@@ -713,7 +888,7 @@ reference_d628bb93 XU10 (
 .ok_reference(net_273),
 .factory_refccn({g0,g1,g1,g1,g1}),
 .factory_refccp({g0,g1,g1,g1,g1}),
-.celkelvin_GNDref(celkelvin_MUDG_5b4bc5a72),
+.celkelvin_GNDref(celkelvin_MUDG_5b4bc5a7),
 .enable_reference(net_268),
 .global_reference(global_reference_8285af71_XU10)
 );
@@ -730,7 +905,7 @@ amux2_436b457d XU14 (
 .I0(net_251),
 .I1(net_252),
 .CELG(CELG59462),
-.amux(register_SERVICEconfiguration_d530de71_Xdatamap3[5]),
+.amux(net_171),
 .SIMPV(MUDV),
 .CELSUB(CELSUB40948)
 );
@@ -741,7 +916,7 @@ porb_857d66ac XU17 (
 .CELV(MUDV),
 .porb(net_248),
 .SENSE_PORB(kelvin_MUDV),
-.enable_porb(register_SERVICEconfiguration_d530de71_Xdatamap3[0])
+.enable_porb(net_166)
 );
 
 reference_0c0fda20 XU19 (
@@ -759,18 +934,18 @@ reference_0c0fda20 XU19 (
 .ok_reference(net_272),
 .factory_refccn({g0,g1,g1,g1,g1}),
 .factory_refccp({g0,g1,g1,g1,g1}),
-.celkelvin_GNDref(celkelvin_MUDG_3f3140ae3),
+.celkelvin_GNDref(celkelvin_MUDG_3f3140ae),
 .enable_reference(net_267),
 .global_reference(global_reference_408a39ad_XU19)
 );
 
 decoder3_2e5975da XU21 (
-.i({register_REFERENCEselect_b05f295d_Xdatamap4[2],register_REFERENCEselect_b05f295d_Xdatamap4[1],register_REFERENCEselect_b05f295d_Xdatamap4[0]}),
+.i({net_184,net_183,net_182}),
 .o({net_205,net_204,net_203,net_202,net_201,net_200,net_199,net_198}),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.enable_decoder(register_SERVICEconfiguration_d530de71_Xdatamap3[0])
+.enable_decoder(net_166)
 );
 
 capacitorfixed_f0008a74 XU23 (
@@ -786,7 +961,7 @@ resistor_0c3791eb XU25 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.adjust_resistor({register_REF2output_46e2454e_Xdatamap2[2],register_REF2output_46e2454e_Xdatamap2[1],register_REF2output_46e2454e_Xdatamap2[0]})
+.adjust_resistor({net_211,net_210,net_209})
 );
 
 currentgenerator_25ffd7d0 XU27 (
@@ -994,6 +1169,81 @@ dftprobeModel3_7c75d582 XUSERVICEreference (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
+);
+
+WRAPPER1 XWRAPregister_REF2output_xdatamap2_8e30a47d_0 (
+.i(register_REF2output_xdatamap2_8e30a47d[0]),
+.o(net_209)
+);
+
+WRAPPER1 XWRAPregister_REF2output_xdatamap2_8e30a47d_1 (
+.i(register_REF2output_xdatamap2_8e30a47d[1]),
+.o(net_210)
+);
+
+WRAPPER1 XWRAPregister_REF2output_xdatamap2_8e30a47d_2 (
+.i(register_REF2output_xdatamap2_8e30a47d[2]),
+.o(net_211)
+);
+
+WRAPPER1 XWRAPregister_REF3output_xdatamap1_e1ae9635_0 (
+.i(register_REF3output_xdatamap1_e1ae9635[0]),
+.o(net_228)
+);
+
+WRAPPER1 XWRAPregister_REF3output_xdatamap1_e1ae9635_1 (
+.i(register_REF3output_xdatamap1_e1ae9635[1]),
+.o(net_229)
+);
+
+WRAPPER1 XWRAPregister_REF3output_xdatamap1_e1ae9635_2 (
+.i(register_REF3output_xdatamap1_e1ae9635[2]),
+.o(net_230)
+);
+
+WRAPPER1 XWRAPregister_REFERENCEselect_xdatamap4_d156f668_0 (
+.i(register_REFERENCEselect_xdatamap4_d156f668[0]),
+.o(net_182)
+);
+
+WRAPPER1 XWRAPregister_REFERENCEselect_xdatamap4_d156f668_1 (
+.i(register_REFERENCEselect_xdatamap4_d156f668[1]),
+.o(net_183)
+);
+
+WRAPPER1 XWRAPregister_REFERENCEselect_xdatamap4_d156f668_2 (
+.i(register_REFERENCEselect_xdatamap4_d156f668[2]),
+.o(net_184)
+);
+
+WRAPPER1 XWRAPregister_SERVICEconfiguration_xdatamap3_d08024d7_0 (
+.i(register_SERVICEconfiguration_xdatamap3_d08024d7[0]),
+.o(net_166)
+);
+
+WRAPPER1 XWRAPregister_SERVICEconfiguration_xdatamap3_d08024d7_1 (
+.i(register_SERVICEconfiguration_xdatamap3_d08024d7[1]),
+.o(net_167)
+);
+
+WRAPPER1 XWRAPregister_SERVICEconfiguration_xdatamap3_d08024d7_2 (
+.i(register_SERVICEconfiguration_xdatamap3_d08024d7[2]),
+.o(net_168)
+);
+
+WRAPPER1 XWRAPregister_SERVICEconfiguration_xdatamap3_d08024d7_3 (
+.i(register_SERVICEconfiguration_xdatamap3_d08024d7[3]),
+.o(net_169)
+);
+
+WRAPPER1 XWRAPregister_SERVICEconfiguration_xdatamap3_d08024d7_4 (
+.i(register_SERVICEconfiguration_xdatamap3_d08024d7[4]),
+.o(net_170)
+);
+
+WRAPPER1 XWRAPregister_SERVICEconfiguration_xdatamap3_d08024d7_5 (
+.i(register_SERVICEconfiguration_xdatamap3_d08024d7[5]),
+.o(net_171)
 );
 
 endmodule
