@@ -1,4 +1,13 @@
 // ------------------------ Module Definitions -----------
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 //Verilog HDL for "PEBBLES", "PEBBLEtiehi" "functional"
 
 
@@ -23,15 +32,6 @@ module PEBBLEtielo ( q, G, SUB, V );
 endmodule
 
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
 //Verilog HDL for "memory", "fusebank" "functional"
 
 
@@ -45,23 +45,6 @@ module fusebank ( VOTP, GOTP, strobe, pgenb, we, nr, q );
   input VOTP;
   input GOTP;
 endmodule
-
-
-//Celera:oscillator_XWALTZ_XceleraSERDES_Xoscillator
-//Celera Confidential Symbol Generator
-//VMAX:6Crude:3200KHz
-module oscillator_XWALTZ_XceleraSERDES_Xoscillator (SIMPV,ok_oscillator,oscillator,ten,
-enable_oscillator,
-CELG,CELSUB);
-input SIMPV;
-output oscillator;
-output ok_oscillator;
-input enable_oscillator;
-input ten;
-input CELG;
-input CELSUB;
-endmodule
-
 
 
 //Verilog HDL for "DFT", "SERDEScontrolDRMautoNo" "functional"
@@ -150,6 +133,10 @@ wire [7:0] otp_strobe;
 wire [1:0] i2cpassword;
 
 // ------------------------ Networks ---------------------
+STONEnoconn XNCtmi (
+.noconn(tmi)
+);
+
 PEBBLEtiehi XtieHi (
 .G(CELG59462),
 .V(CELV96848),
@@ -164,10 +151,6 @@ PEBBLEtielo XtieLo (
 .SUB(CELSUB40948)
 );
 
-STONEnoconn XNCnoconn (
-.noconn(noconn)
-);
-
 fusebank Xfusebank (
 .q(otp_q[7:0]),
 .nr(otp_nr),
@@ -176,16 +159,6 @@ fusebank Xfusebank (
 .VOTP(VOTP),
 .pgenb(otp_pgrnb),
 .strobe(otp_strobe[7:0])
-);
-
-oscillator_XWALTZ_XceleraSERDES_Xoscillator Xoscillator (
-.ten(a0),
-.CELG(CELG59462),
-.SIMPV(CELV96848),
-.CELSUB(CELSUB40948),
-.oscillator(otp_clock),
-.ok_oscillator(noconn),
-.enable_oscillator(otp_clock_enable)
 );
 
 STONEnoconn XNCotp_loadok (
