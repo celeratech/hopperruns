@@ -1,0 +1,196 @@
+* Z:\celera\projects\Simplis\playjoseph\PUGET0\300d\verification\sim_CAPACITORGOODpuget.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map SIMPV 16
+.node_map ok_capacitorgood 19
+.node_map CAPGD 17
+.node_map enable_capacitorgood 18
+.node_map REF_CAPACITORGOOD 20
+.node_map kelvin_GNDcapacitorgood 22
+.node_map CAPFB 21
+.node_map GND 23
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 10.05m  0
+.globalvar REF=1.0
+.globalvar TEMP=25
+.globalvar VIN=5
+.globalvar tdext_khz=1000
+.globalvar  celera_i2c_frequency_KHz=100
+
+X$CAPACITORGOODpuget 16 17 18 20 21 22 19 CAPACITORGOODpuget
+
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301B\design\CAPACITORGOODpuget.sxcmp
+.subckt CAPACITORGOODpuget 37 38 39 41 42 43 40
+*#hierarchy
+.node_map hijack_enable_capacitorgood 45
+.node_map SIMPV 37
+.node_map ok_capacitorgood 40
+.node_map chrg_cappg 44
+.node_map CAPGD 38
+.node_map dft_capdetect 48
+.node_map dft_startup 49
+.node_map enable_capacitorgood 39
+.node_map dft_risedelay 50
+.node_map REF_CAPACITORGOOD 41
+.node_map DFT_CAPREFinput 46
+.node_map kelvin_GNDcapacitorgood 43
+.node_map hijack_CAPGDoutput 47
+.node_map CAPFB 42
+X$datamap1 44 datamap1s vars: datamap_function='function' datamap_name='chrg_status' datamap_description='Charger_status_Register' datamap_io='status' datamap_status_mode='live' datamap_status_readunits='ms' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_register_selfreset='no' datamap_mode='readwrite' datamap_address='1B' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='chrg_cappg' datamap_function0_off='CAP_is_below_power_good' datamap_function0_on='CAP_is_above_power_good' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=1 datamap_status_resettime=10 datamap_bits=1 datamap_info=0 datamap_location=5 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$DEBUG 39 45 46 47 48 49 50 CAPACITORGOODpugetDEBUG
+X$MAIN 37 38 45 46 41 48 42 49 47 43 50 44 40 CAPACITORGOODpugetMAIN
+X$pinprobe1 40 pinprobe vars: pinprobe_description='CAPATORGOOD_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$U1 38 pinprobe vars: pinprobe_description='CAPATORGOOD_opendrain_status' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U10 42 pinprobe vars: pinprobe_description='Capacitor_stack+feedback_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U2 39 pinprobe vars: pinprobe_description='Enable_CAPACITORGOOD_brick' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 41 pinprobe vars: pinprobe_description='CAPACITORGOOD_Reference_input_voltage' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U4 43 pinprobe vars: pinprobe_description='Kelvin_ground_CAPACITORGOOD' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd'
+X$U5 36 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='CAPGD_Detect_if_CAPFB_is_greater_than_REF_CAPACITORGOOD' description1='REF_CAPACTORGOOD_is_based_on_GMVselect_code' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U6 37 pinprobe vars: pinprobe_description='Low_voltage_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+.ends CAPACITORGOODpuget
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301B\design\CAPACITORGOODpugetDEBUG.sxcmp
+.subckt CAPACITORGOODpugetDEBUG 23 24 26 25 27 28 29
+*#hierarchy
+.node_map hijack_enable_capacitorgood 24
+.node_map dft_capdetect 27
+.node_map dft_startup 28
+.node_map enable_capacitorgood 23
+.node_map dft_risedelay 29
+.node_map DFT_CAPREFinput 26
+.node_map hijack_CAPGDoutput 25
+X$U1 24 pinprobe vars: pinprobe_description='Enable_CAPACITORGOOD_brick' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U10 26 pinprobe vars: pinprobe_description='Measure_Capacitor_trip_threshold_reference' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U2 23 pinprobe vars: pinprobe_description='Enable_CAPACITORGOOD_brick' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 25 pinprobe vars: pinprobe_description='Hijack_Enable_CAPGD_output_open_drain' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 22 tie vars: tie_mode='low' tie_vmax=6
+X$U5 27 pinprobe vars: pinprobe_description='Measure_Capacitor_detect_comparator_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 29 pinprobe vars: pinprobe_description='Meaure_output_delay_CAPFB_rising' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U7 28 pinprobe vars: pinprobe_description='Measure_Capacitor_Good_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U8 23 24 dfthijack vars: dfthijack_name='CAPACITORGOODenable' dfthijack_description='Hijack_CAPACITORGODD_enable' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$U9 22 25 dfthijackp vars: dfthijack_name='CAPACITORGOODoutput' dfthijack_description='Hijack_CAPACITORGODD_output_opendrain' dfthijack_enable='timebased' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=2 dfthijack_startcode=0  dfthijack_newcode1=0 dfthijack_enabletime1=10 dfthijack_newcode2=0 dfthijack_enabletime2=11 dfthijack_newcode3=0 dfthijack_enabletime3=11 dfthijack_newcode4=0 dfthijack_enabletime4=11 dfthijack_newcode5=0 dfthijack_enabletime5=11 dfthijack_newcode6=0 dfthijack_enabletime6=11 dfthijack_newcode7=0 dfthijack_enabletime7=11 dfthijack_newcode8=0 dfthijack_enabletime8=11 dfthijack_vmax=6 dfthijack_comment=1
+X$UCAPACITORGOODdelay 29 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CAPACITORGOODdelay' dftprobe_description='Measure_Output_delay_OUTFB_rising' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UCAPACITORGOODdetect 27 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CAPACITORGOODdetect' dftprobe_description='Measure_CAPACITORGOOD_detect_threshold' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UCAPACITORGOODreference 26 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CAPACITORGOODreference' dftprobe_description='Measure_CAPACITORGOOD_trip_reference' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UCAPACITORGOODstartup 28 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CAPACITORGOODstartup' dftprobe_description='Measure_CAPACITORGOOD_startup_time' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+.ends CAPACITORGOODpugetDEBUG
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301B\design\CAPACITORGOODpugetMAIN.sxcmp
+.subckt CAPACITORGOODpugetMAIN 94 95 96 101 98 103 100 105 102 104 106 99 97
+*#hierarchy
+.node_map rise 107
+.node_map SIMPV 94
+.node_map dft_capdetectBAR 116
+.node_map ok_comparator 113
+.node_map fall 108
+.node_map BUS1$0 91
+.node_map ok_capacitorgood 97
+.node_map BUS1$1 92
+.node_map padopendrain 111
+.node_map BUS1$2 93
+.node_map chrg_cappg 99
+.node_map okDELAYbar 109
+.node_map CAPGD 95
+.node_map dft_capdetect 103
+.node_map padopendrainBAR 110
+.node_map dft_startup 105
+.node_map enable_capacitorgood 96
+.node_map dft_risedelay 106
+.node_map REF_CAPACITORGOOD 98
+.node_map DFT_CAPREFinput 101
+.node_map okDELAY 114
+.node_map capgoodDELAY 112
+.node_map kelvin_GNDcapacitorgood 104
+.node_map ok 115
+.node_map hijack_CAPGDoutput 102
+.node_map CAPFB 100
+X$amux1 108 107 101 94 103 amux2 vars: amux_control='pin' amux_datasheet_name='text' amux_datasheet_description='text' amux_tswitch='no' amux_inputs=2 amux_por=0 amux_ron=10K amux_vmax=6
+X$delay1 115 114 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=10 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=20 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$pinprobe1 99 pinprobe vars: pinprobe_description='CAPACITORGOOD_status_flag' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe2 95 pinprobe vars: pinprobe_description='CAPACITORGOOD_opendrain_status' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe3 97 pinprobe vars: pinprobe_description='CAPACITORGOOD_enabled_and_ready' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$U1 94 pinprobe vars: pinprobe_description='Low_voltage_input_supply' pinprobe_mode='tbd' pinprobe_input='pad' pinprobe_output='tbd'
+X$U10 102 109 110 112 nor3 vars: logicgate_type='nor3' logicgate_vmax=6
+X$U11 114 109 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U12 108 107 81 80 79 78 77 76 98 104 96 resistordivider vars: resistordivider_disconnect='yes' resistordivider_disconnect_tap='top' resistordivider_dft='no' resistordivider_rtotal=1.2k resistordivider_vresistortop=6 resistordivider_vmax=6 resistordivider_outputs=2 resistordivider_tap0=92 resistordivider_tap1=94 resistordivider_tap2=30 resistordivider_tap3=40 resistordivider_tap4=50 resistordivider_tap5=60 resistordivider_tap6=70 resistordivider_tap7=80
+X$U13 96 115 113 VESPAasmINPUT1
+X$U14 88 101 91 92 93 90 89 104 capacitorfixed vars: capacitor_control='capacitor' capacitor_datasheet_accurate_name='text' capacitor_datasheet_accurate_description='text' capacitor_adjust_control='factory' capacitor_datasheet_adjust_name='text' capacitor_datasheet_adjust_description='text' capacitor_kelvin='no' capacitor_type='tbd' capacitor_dft='no' capacitor_value=5 capacitor_accurate_value=1 capacitor_accurate_lsb=1 capacitor_adjust0=1 capacitor_adjust1=2 capacitor_adjust2=4 capacitor_adjust3=8 capacitor_adjust4=0 capacitor_adjust5=0 capacitor_adjust6=0 capacitor_adjust7=0 capacitor_adjust_por=4 capacitor_1=0 capacitor_vinitial=0 capacitor_0=0 capacitor_vmax=6 capacitor_maximumvoltage=6
+X$U15 113 94 96 103 101 84 100 85 86 83 comparatornoctlpins vars: comparator_model='comparator' comparator_hysteresismode='fixed' comparator_edge='falling' comparator_speed='slow' comparator_type='p' comparator_deglitch='yes' comparator_lowiq='no' comparator_datasheet_name='text' comparator_datasheet_description='text' bgcomp_accuracy='no' bgcomp_outputanalog='supply' bgcomp_note1='Usage' bgcomp_outputdigital='no' bgcomp_trim_name='text' bgcomp_trim_description='text' bgcomp_enable='yes' comparator_dft='no' comparatorsupply_reference='ground' comparatorsupply_threshold='50' comparatorsupply_edge='falling' comparatorsupply_output='analog' comparatorsupply_enable='analog' comparator_hysteresis=0 comparator_lowiqpor=0 bgcomp_threshold=1.2 bgcomp_maxcelpos=6 bgcomp_maxvin=6 comparator_vmax=6
+X$U16 113 87 103 96 VESPAasmINPUT2
+X$U17 96 114 105 VESPAdftpulse
+X$U18 87 112 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='fall' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=9 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$U19 101 pinprobe vars: pinprobe_description='Capacitor_trip_threshold_reference' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U2 96 pinprobe vars: pinprobe_description='Enable_CAPACITORGOOD_brick' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U20 103 116 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U21 105 pinprobe vars: pinprobe_description='Capacitor_Good_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U22 116 110 106 VESPAdftpulse
+X$U23 110 111 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U24 111 95 82 padopendrain vars: padopendrain_polarity='noninvert' padopendrain_return='no' padopendrain_filter='no' padopendrain_edge='on' padopendrain_testmode='no' padopendrain_dft='no' padopendrain_ron=200 padopendrain_voutmax=6 padopendrain_filter_time=50 padopendrain_vmax=6
+X$U25 106 pinprobe vars: pinprobe_description='Ouptu_delay_CAPFB_rising' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 102 pinprobe vars: pinprobe_description='Hijack_Enable_CAPGD_output_open_drain' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 98 pinprobe vars: pinprobe_description='CAPACITORGOOD_Reference_input_voltage' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 103 pinprobe vars: pinprobe_description='Capacitor_detect_comparator_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 100 pinprobe vars: pinprobe_description='Capacitor_stack+feedback_input' pinprobe_mode='tbd' pinprobe_input='pad' pinprobe_output='tbd'
+X$U7 104 pinprobe vars: pinprobe_description='Kelvin_ground_CAPACITORGOOD' pinprobe_mode='tbd' pinprobe_input='pad' pinprobe_output='tbd'
+X$U8 99 110 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U9 97 114 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+.ends CAPACITORGOODpugetMAIN
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT1.sxcmp
+.subckt VESPAasmINPUT1 5 6 7
+*#hierarchy
+.node_map Tstate 5
+.node_map i0 7
+.node_map o 6
+X$U1 5 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 7 pinprobe vars: pinprobe_description='input1'
+X$U3 6 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 5 4 7 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U5 4 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+.ends VESPAasmINPUT1
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT2.sxcmp
+.subckt VESPAasmINPUT2 7 8 9 6
+*#hierarchy
+.node_map Tstate 6
+.node_map i0 7
+.node_map i1 9
+.node_map o 8
+X$U1 6 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 9 pinprobe vars: pinprobe_description='input1'
+X$U3 8 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 6 9 5 7 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U5 5 8 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U6 7 pinprobe vars: pinprobe_description='input0'
+.ends VESPAasmINPUT2
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAdftpulse.sxcmp
+.subckt VESPAdftpulse 7 8 9
+*#hierarchy
+.node_map start 7
+.node_map stop 8
+.node_map pulse 9
+X$U11 7 pinprobe vars: pinprobe_description='DFT_timer_start_input'
+X$U15 8 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U17 8 pinprobe vars: pinprobe_description='DFT_timer_stop_input'
+X$U52 7 4 6 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U53 4 5 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U55 9 5 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U8 9 pinprobe vars: pinprobe_description='DFT_Timer_pulse'
+.ends VESPAdftpulse
+
+** From Z:\celera\projects\Simplis\playjoseph\PUGET0\300d\verification\FORCE_CAPACITORGOODpuget.sxcmp
+
+
+.end

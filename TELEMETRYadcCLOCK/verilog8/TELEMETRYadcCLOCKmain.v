@@ -1,39 +1,61 @@
 // ------------------------ Module Definitions -----------
-module dbuf_e926e395 (i,o,SUB,CELG,CELV);
-  input  i;
-  output  o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+//Celera:dbuf_e926e395
+//Celera Confidential Symbol Generator
+//Digital Buffer
+module dbuf_e926e395 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
 endmodule
 
-module delayclock_8cb6d0ce (in,out,CELG,CELV,clock,CELSUB,celeraporb);
-  input  in;
-  output  out;
-  input  CELG;
-  input  CELV;
-  input  clock;
-  input  CELSUB;
-  input  celeraporb;
+
+
+//Celera:delayclock_8cb6d0ce
+//TYPE:clock  EDGE:rise DFT:no ACC:no%
+module delayclock_8cb6d0ce (in,CELV,out,clock,celeraporb,
+CELG,CELSUB);
+input CELV;
+input in;
+output out;
+input clock;
+input celeraporb;
+input CELSUB;
+input CELG;
 endmodule
 
-module decoder2_c9e06f07 (i,o,SUB,CELG,CELV,enable_decoder);
-  input [1:0] i;
-  output [3:0] o;
-  input  SUB;
-  input  CELG;
-  input  CELV;
-  input  enable_decoder;
+
+
+//Celera:decoder2_c9e06f07
+//Celera Confidential Symbol Generator
+//DECODER
+module decoder2_c9e06f07 (CELV,i,o,
+enable_decoder,
+CELG,SUB);
+input CELV;
+input [1:0] i;
+output [3:0] o;
+input enable_decoder;
+input CELG;
+input SUB;
 endmodule
 
-module dmux4_b15a4cfc (i,o,s,CELG,CELV,CELSUB);
-  input [3:0] i;
-  output  o;
-  input [1:0] s;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+
+
+//Celera:dmux4_b15a4cfc
+//Celera Confidential Symbol Generator
+//DMUX
+module dmux4_b15a4cfc (CELV,CELG,i,s,o,CELSUB );
+input CELV;
+input CELG;
+input [3:0] i;
+input [1:0] s;
+output o;
+input CELSUB;
 endmodule
+
+
 
 //Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
 
@@ -47,40 +69,64 @@ module PEBBLEtielo ( q, G, SUB, V );
 endmodule
 
 
-module oscillatorring_c836a188 (IP,CELG,SIMPV,clock,CELREF,CELSUB,ok_oscillator,fault_oscillator,enable_oscillator,trim_oscillatorring,global_oscillatorring);
-  input  IP;
-  input  CELG;
-  input  SIMPV;
-  output  clock;
-  input  CELREF;
-  input  CELSUB;
-  output  ok_oscillator;
-  output  fault_oscillator;
-  input  enable_oscillator;
-  input [2:0] trim_oscillatorring;
-  input  global_oscillatorring;
+//Celera:oscillatorring_c836a188
+//TYPE:ring //FREQUENCY:20
+module oscillatorring_c836a188 (SIMPV,clock,ok_oscillator,fault_oscillator,
+IP,CELREF,
+trim_oscillatorring,
+enable_oscillator,
+global_oscillatorring,
+CELG,CELSUB);
+input SIMPV;
+output clock;
+output ok_oscillator;
+output fault_oscillator;
+input IP;
+input CELREF;
+input enable_oscillator;
+input [2:0] trim_oscillatorring;
+input global_oscillatorring;
+input CELSUB;
+input CELG;
 endmodule
 
-module clockrequest_ad390ee9 (CELG,CELV,clock,CELSUB,clock0,clock1,clock2,clock3,clock4,celeraporb,enable_clock0,enable_clock1,enable_clock2,enable_clock3,enable_clock4);
-  input  CELG;
-  input  CELV;
-  input  clock;
-  input  CELSUB;
-  output  clock0;
-  output  clock1;
-  output  clock2;
-  output  clock3;
-  output  clock4;
-  input  celeraporb;
-  input  enable_clock0;
-  input  enable_clock1;
-  input  enable_clock2;
-  input  enable_clock3;
-  input  enable_clock4;
+
+
+//Celera:clockrequest_ad390ee9
+//Celera Confidential Symbol Generator
+//VMAX:6V OUTPUTS:5 DIV:yes DIVmax:4BITs
+module clockrequest_ad390ee9 (CELV,clock,clock0,celeraporb,
+clock1,
+clock2,
+clock3,
+clock4,
+enable_clock0,
+enable_clock1,
+enable_clock2,
+enable_clock3,
+enable_clock4,
+CELG,CELSUB);
+input CELV;
+input clock;
+input celeraporb;
+output clock0;
+output clock1;
+output clock2;
+output clock3;
+output clock4;
+input enable_clock0;
+input enable_clock1;
+input enable_clock2;
+input enable_clock3;
+input enable_clock4;
+input CELG;
+input CELSUB;
 endmodule
+
+
 
 // ------------------------ Module Verilog ---------------
-module TELEMETRYadcCLOCKmain (SIMPV, clock, CELG59462, CELV96848, PORB97836, clock_adc, dft_clock, enable_adc, CELSUB40948, ok_adcclock, fault_adcclock, IP_68c3961a_Xoscillator1);
+module TELEMETRYadcCLOCKmain (SIMPV, clock, CELG59462, CELV96848, PORB97836, clock_adc, dft_clock, enable_adc, CELSUB40948, IP_68c3961a, ok_adcclock, fault_adcclock);
 input  SIMPV;
 output  clock;
 input  CELG59462;
@@ -90,9 +136,9 @@ input  clock_adc;
 output  dft_clock;
 input  enable_adc;
 input  CELSUB40948;
+input  IP_68c3961a;
 output  ok_adcclock;
 output  fault_adcclock;
-input  IP_68c3961a_Xoscillator1;
 
 
 // ------------------------ Wires ------------------------
@@ -162,13 +208,6 @@ dmux4_b15a4cfc XU25 (
 .CELSUB(CELSUB40948)
 );
 
-PEBBLEtielo XtieLo (
-.G(CELG59462),
-.V(CELV96848),
-.q(tl0),
-.SUB(CELSUB40948)
-);
-
 PEBBLEtielo XDRMNOTL (
 .G(CELG59462),
 .V(CELV96848),
@@ -177,7 +216,7 @@ PEBBLEtielo XDRMNOTL (
 );
 
 oscillatorring_c836a188 Xoscillator1 (
-.IP(IP_68c3961a_Xoscillator1),
+.IP(IP_68c3961a),
 .CELG(CELG59462),
 .SIMPV(SIMPV),
 .clock(net_113),

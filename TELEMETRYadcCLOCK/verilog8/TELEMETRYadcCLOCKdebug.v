@@ -56,14 +56,6 @@ WRAPPER1 XWRAP_18_19 (
 .o(hijack_enable_adc)
 );
 
-STONEnoconn XNCdft_clock (
-.noconn(dft_clock)
-);
-
-STONEnoconn XNCfault_adcclock (
-.noconn(fault_adcclock)
-);
-
 STONEnoconn XNCXUADCCLOCKstartup_no_dft_noconn_pulse (
 .noconn(XUADCCLOCKstartup_no_dft_noconn_pulse)
 );
