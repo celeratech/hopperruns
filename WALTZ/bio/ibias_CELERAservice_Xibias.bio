@@ -1,66 +1,56 @@
-//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Celera Confidential BIO Data Generator
-//Cell Name
-cell,delayfixed
-//*********************************************
+//Celera Confidential
+//Celera BIO Data Generator - Rev0p1
+cell,ibias
+//**********************************************
 //Generator Revision
-revision,generator,0.4.1
+revision,generator,0.5.1
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
 
-limit,delay_type,choose0,control
-limit,delay_type,choose1,fixed
-limit,delay_edge,choose0,rise
-limit,delay_edge,choose1,fall
-limit,delay_edge,choose2,both
-limit,delay_dft,choose0,no
-limit,delay_dft,choose1,yes
-limit,delay_vmax,choose0,2
-limit,delay_vmax,choose1,6
+limit,ibias_outputs,minimum,1
+limit,ibias_outputs,maximum,32
+limit,ibias_dft,choose0,yes
+limit,ibias_dft,choose1,no
+limit,ibias_vmax,choose0,2
+limit,ibias_vmax,choose1,6
+limit,ibias_accuracy,choose0,yes
+limit,ibias_accuracy,choose1,no
 
-
-limit,delay_time,minimum,1.0
-limit,delay_time,maximum,999.0
-limit,delay_units,choose0,ns
-limit,delay_units,choose1,us
-limit,delay_units,choose2,ms
-limit,delay_accuracy,choose0,no
-limit,delay_accuracy,choose1,yes
-limit,delay_accuracyname,text
-limit,delay_accuracydescription,text
+limit,ibias_trim_name,text
+limit,ibias_trim_description,text
+limit,ibias_reference,choose0,no
+limit,ibias_reference,choose1,yes
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,delay_type,fixed
-description,Delay Type
-user,delay_edge,fall
-description,Delay Edge
-user,delay_time,9us
-description,Delay
-user,NESTO,0.4.1
-description,NESTO Generate revision
+user,Design,yes
+description,IBIAS design
+user,ibias_accuracy,IBIASaccuracy
+description,IBIAS TRIM Enabled
+user,NESTOrevision,0.5.1
+description,NESTO revision
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,delayfixed
-register,instance,delayfixed_7f16ad38
+registermap,ibias
+register,instance,ibias_CELERAservice_Xibias
 register,source,cell
 
-//delay time 
+//IBIAS - No Register Required
 register,name,na
 register,enable,no
-register,bits,na
-register,mode,na
-register,por,na
+register,bits,0
+register,mode,readonly
+register,por,0
 register,userdescription,na
 register,description0,description0,not used
 register,description1,description1,not used
@@ -76,16 +66,16 @@ register,busname,na
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,delayfixed
-factory,instance,delayfixed_7f16ad38
+factorymap,ibias
+factory,instance,ibias_CELERAservice_Xibias
 factory,source,cell
 
-//delay fast 
+//IBIASmirror - No register Map Required
 factory,name,na
 factory,enable,no
-factory,bits,na
-factory,mode,na
-factory,por,na
+factory,bits,0
+factory,mode,readonly
+factory,por,0
 factory,userdescription,na
 factory,description0,description0,not used
 factory,description1,description1,not used
@@ -99,72 +89,62 @@ factory,description7,description7,not used
 factory,busname,na
 
 //**********************************************
-//TRIM Parameters
-cell,delayfixed
-trim,instance,delayfixed_7f16ad38
-
-trim,name,na
-trim,enable,no
-trim,bits,TBD
-trim,por,0
-trim,pinname,trim_delay
-trim,testname,TBD
-trim,description,TBD
-trim,target,na
-trim,units,TBD
-trim,pretrim_low_limit,TBD
-trim,pretrim_high_limit,TBD
-trim,posttrim_low_limit,TBD
-trim,posttrim_high_limit,TBD
-trim,codeunits,TBD
-trim,description0,empty
-trim,description1,empty
-trim,description2,empty
-trim,description3,empty
-trim,description4,empty
-trim,description5,empty
-trim,description6,empty
-trim,description7,empty
-trim,description8,empty
-
-//**********************************************
 //CELL DFT Parameters
-// *********************************************
+//Cell DFT Generator currentsenseamplifier 
+celldft,ibias
+celldft,path,ibias_CELERAservice_Xibias
+celldft,instance,Xibias
+celldft,source,cell
+
+celldft,ten_ibias
+celldft,ten_ibias,testname,enableIBIASdft
+celldft,ten_ibias,definition,Enable IBIAS DFTs
+celldft,ten_ibias,input,ten
+celldft,ten_ibias,output,na
+celldft,ten_ibias,partner,na
+celldft,ten_currentlimit,end
+
+celldft,TAI_IBIAS
+celldft,TAI_IBIAS,testname,measureIBIAS
+celldft,TAI_IBIAS,definition,Measure IBIAS output current
+celldft,TAI_IBIAS,input,na
+celldft,TAI_IBIAS,output,TAI
+celldft,TAI_IBIAS,partner,ten_ibias
+celldft,TAI_IBIAS,end
+
+celldft,end
+//*********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,delayfixed
+layout,ibias
 
-//New Cell Simplis 291 release
-
-
-placeINST Xdelay0 0 0 R0
+place Generate STONEibiasCONTROL 0 0 MX
+place Generate STONEibiasCONTROLself -9.73 -13.44 MX
+place Generate STONEibiasCONTROLselfRUNIT 49.775 -61.515 MX
+place Generate STONEibiasCONTROLselfRTRIM -0.48 -55.77 R0
+place Generate STONEibiasTRIM 52.64 -28.1 R180
+place Generate STONEibiasDFT -0.48 -71.36 MX
+placeTAP 2 -73
+placeSTEP Generate STONEibiasOUT -0.48 -71.36 y -5.04 MX
+placeSTEP Generate STONEibiasOUT -0.48 -81.44 y -5.04 MX
+placeSTEPcell Generate ibiasringcon MX
+placeRES 1 1.15 0.8 0.8 R0 x y 55
+placeRESRING
+moveORIGIN y
+placeHVRING rect
 movePINS
 placeROUTEnopins
-
 endlayoutbio
 //**********************************************
-//Calculator Parameters
-#define,CELVminimum,2.0
-#define,DELAYfixedProcess,40.0
-#define,DELAYfixedProcessOffset,5.0
-#define,DELAYfixedTimeOffset,2.0
-#define,DELAYfixedLSBminimum,5.0
-#define,DELAYfixedBitMax,8
-#define,DELAYfixedTrimMinimum,32
-#define,DELAYpulsestretch,RISE,45
-#define,DELAYpulsestretch,FALL,40
-#define,delaytimethreshold,150
-
-//**********************************************
 //Project Parameters
-//Celera:CAPACITORGOODpuget Project Bio
+//Celera:WALTZ Project Bio
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////   default.bio'  DO NOT USE  ///////////////////////////////////
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
 #define,PROJECTreference,0.9
-#define,PROJECTsupply,5
+#define,PROJECTsupply,4.5
 #define,TaRoom,25
 #define,ground,0.0
 #define,leveloffset,5
@@ -202,22 +182,90 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,delay0_delayfixed_7f16ad38_delay0,7007
-generate_area,delayfixed_7f16ad38,7007
+sub_area,STONEnoconn,0
+sub_area,STONEibiasCONTROL,100
+sub_area,STONEibiasDFT,200
+sub_area,STONEibiasTRIM,400
+sub_area,STONEibiasOUT,300
+sub_area,STONEibiasOUT,300
+sub_area,STONEibiasOUT,300
+sub_area,STONEibiasOUT,300
+sub_area,STONEibiasOUT,300
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEibiasOUT,300
+sub_area,rlpp3000rpo24p8u0p5u,75
+sub_area,rlpp3000rpo10p2u0p4u,27
+sub_area,rlpp3000rpo10p2u0p4u,13
+sub_area,rlpp3000rpo10p2u0p4u,6
+sub_area,rlpp3000rpo10p2u0p4u,13
+sub_area,rlpp3000rpo10p2u0p4u,27
+generate_area,ibias_CELERAservice_Xibias,2661
 // *********************************************
+//Calculator Parameters
+#define,CELVminimum,1.9
+#define,IBIASresistoriso,CELG
+
+#define,IBIASresistorlength,25.07
+#define,IBIASresistorwidthH,2.0
+#define,IBIASresistorwidthL,0.5
+#define,IBIASresistorwidthT,0.4
+#define,IBIAStail,1.0
+
+#define,IBIAStrimRANGE,35.0
+#define,IBIAStrimTARGET,2.0
+#define,IBIAStrimLSB,2.0
+#define,IBIASresistorlengthT,10.0
+#define,IBIASresistorwidthT,0.4
+
+#define,IBIASpretrimlow,20.0
+#define,IBIASpretrimhigh,20.0
+#define,IBIASposttrimlsb,0.5
+//**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//delayfixed
+//ibias
 revision,pinorder,0.2.0
-pinorder,i,o
+pinorder,ok_ibias,CELV,IPO0,IPO1,IPO2,IPO3,IPO4,IPO5,IPO6,IPO7,IPO8,IPO9,IPO10,IPO11,IPO12,IPO13,IPO14,IPO15,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,enable_ibias
 
 endpinorder
 //**********************************************
-//Cell Pin Descriptions
+//TRIM Parameters
+cell,ibias
+trim,instance,ibias_CELERAservice_Xibias
+
+trim,name,IBIASaccuracy
+trim,enable,yes
+trim,bits,5
+trim,por,0
+trim,pinname,trim_ibias
+trim,testname,IBIASaccuracy
+trim,description,IBIAS accuracy to 2uA source
+trim,target,2.0
+trim,units,uA
+trim,userdescription,TBD
+trim,pretrim_low_limit,1.600
+trim,pretrim_high_limit,2.400
+trim,posttrim_low_limit,1.985
+trim,posttrim_high_limit,2.015
+trim,codeunits,uA
+trim,description0,code 0x00 2.0
+trim,description1,code 0x01 -0.065
+trim,description2,code 0x02 -0.13
+trim,description3,code 0x04 -0.25
+trim,description4,code 0x08 -0.5
+trim,description5,code 0x10 -3.8
+trim,description6,not used
+trim,description7,not used
+trim,description8,empty
+
+//**********************************************
+//Pin Descriptions
+//**********************************************
 pinname,CELV
-definition,CELV,cell power
+definition,CELV,IBIAS cell power
 iq,CELV,SIMULATION
 absmax,CELV,6
 absmin,CELV,2.0
@@ -238,45 +286,119 @@ router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i
-definition,i,delay input
-iq,i,SIMULATION
-absmax,i,6
-absmin,i,-0.3
-io,i,input
-mode,i,digital
-router,i,TBD
-dftpriority,i,1
-esd,i,TBD
+pinname,SENSE_G
+definition,SENSE_G,IBIAS sense ground
+iq,SENSE_G,SIMULATION
+absmax,SENSE_G,6
+absmin,SENSE_G,-0.3
+io,SENSE_G,input
+mode,SENSE_G,analog
+router,SENSE_G,TBD
+dftpriority,SENSE_G,1
+esd,SENSE_G,TBD
 
-pinname,o
-definition,o,delay output
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,-0.3
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
+pinname,CELBG
+definition,CELBG,IBIAS input Bandgap Voltage
+iq,CELBG,SIMULATION
+absmax,CELBG,6
+absmin,CELBG,-0.3
+io,CELBG,input
+mode,CELBG,analog
+router,CELBG,TBD
+dftpriority,CELBG,1
+esd,CELBG,TBD
 
+pinname,enable_ibias
+definition,enable_ibias,IBIAS enable
+iq,enable_ibias,SIMULATION
+absmax,enable_ibias,6
+absmin,enable_ibias,-0.3
+io,enable_ibias,input
+mode,enable_ibias,digital
+router,enable_ibias,TBD
+dftpriority,enable_ibias,1
+esd,enable_ibias,TBD
 
+pinname,ten_ibias
+definition,ten_ibias,IBIAS Testmode enable
+iq,ten_ibias,SIMULATION
+absmax,ten_ibias,6
+absmin,ten_ibias,-0.3
+io,ten_ibias,input
+mode,ten_ibias,digital
+router,ten_ibias,TBD
+dftpriority,ten_ibias,1
+esd,ten_ibias,TBD
 
+pinname,global_celeraibias
+definition,global_celeraibias,IBIAS Global Testmode enable
+iq,global_celeraibias,SIMULATION
+absmax,global_celeraibias,6
+absmin,global_celeraibias,-0.3
+io,global_celeraibias,input
+mode,global_celeraibias,digital
+router,global_celeraibias,TBD
+dftpriority,global_celeraibias,1
+esd,global_celeraibias,TBD
 
+pinname,trim_ibias
+definition,trim_ibias,Trim IBIAS output current
+iq,trim_ibias,SIMULATION
+absmax,trim_ibias,6
+absmin,trim_ibias,-0.3
+io,trim_ibias,input
+mode,trim_ibias,digital
+router,trim_ibias,TBD
+dftpriority,trim_ibias,1
+esd,trim_ibias,TBD
 
+pinname,ok_ibias
+definition,ok_ibias,IBIAS ok Flag
+iq,ok_ibias,SIMULATION
+absmax,ok_ibias,6
+absmin,ok_ibias,-0.3
+io,ok_ibias,output
+mode,ok_ibias,digital
+router,ok_ibias,TBD
+dftpriority,ok_ibias,1
+esd,ok_ibias,TBD
 
+pinname,TAI_IBIAS
+definition,TAI_IBIAS,IBIAS Testmode Output:Measure IBIAS*4
+iq,TAI_IBIAS,SIMULATION
+absmax,TAI_IBIAS,6
+absmin,TAI_IBIAS,-0.3
+io,TAI_IBIAS,output
+mode,TAI_IBIAS,analog
+router,TAI_IBIAS,TBD
+dftpriority,TAI_IBIAS,1
+esd,TAI_IBIAS,TBD
+
+pinname,IPO
+definition,IPO,IBIAS Output current source
+iq,IPO,SIMULATION
+absmax,IPO,6
+absmin,IPO,-0.3
+io,IPO,output
+mode,IPO,analog
+router,IPO,TBD
+dftpriority,IPO,1
+esd,IPO,TBD
 
 pinname,CELSUB
-definition,CELSUB,substrate
+definition,CELSUB,Substrate
 iq,CELSUB,SIMULATION
-absmax,CELSUB,0.3
+absmax,CELSUB,6
 absmin,CELSUB,-0.3
-io,CELSUB,power
-mode,CELSUB,power
+io,CELSUB,input
+mode,CELSUB,analog
 router,CELSUB,TBD
 dftpriority,CELSUB,1
 esd,CELSUB,TBD
-
+//**********************************************
+//Constraints Parameters*******************
+constraint,ibias,IPO,shield
+constraint,ibias,CELBG,shield
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -954,5 +1076,15 @@ revision,vis15cb,0p1
 #define,AP5G60DC1minmult,1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
-endbio
+endbio
+
+
+
+
+
+
+
+
+
+
 
