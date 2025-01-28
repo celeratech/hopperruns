@@ -1,0 +1,169 @@
+* Z:\celera\projects\Simplis\playjoseph\PUGET0\300d\verification\sim_GPIpuget.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map GPO 17
+.node_map SIMPV 16
+.node_map kelvin_GNDgpi 22
+.node_map ok_gpi 19
+.node_map measure_gpi 21
+.node_map ctl_gpi_buffer_en 20
+.node_map GND 23
+.node_map GPI 18
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 100.0u  0
+.globalvar REF=1.0
+.globalvar TEMP=25
+.globalvar VIN=5
+.globalvar tdext_khz=1000
+.globalvar  celera_i2c_frequency_KHz=100
+
+
+X$GPIpuget 16 17 18 19 21 22 20 GPIpuget
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+** From Z:\celera\projects\Simplis\playjoseph\PUGET0\300d\verification\FORCE_GPIpuget.sxcmp
+
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301B\design\GPIpuget.sxcmp
+.subckt GPIpuget 33 37 34 39 35 36 38
+*#hierarchy
+.node_map GPO 37
+.node_map SIMPV 33
+.node_map kelvin_GNDgpi 36
+.node_map ok_gpi 39
+.node_map measure_gpi 35
+.node_map GPBUF 43
+.node_map dft_startup 41
+.node_map hijack_enable_gpibuffer 42
+.node_map ctl_gpi_buffer_en 38
+.node_map hijack_measure_gpi 40
+.node_map GPI 34
+X$DEBUG 35 40 38 42 37 41 43 39 GPIpugetDEBUG
+X$MAIN 33 37 34 39 40 41 42 43 36 GPIpugetMAIN
+X$pinprobe1 35 pinprobe vars: pinprobe_description='Telemetry_request_to_measure' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe16 38 pinprobe vars: pinprobe_description='Enable_GPI_input_buffer' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$U1 34 pinprobe vars: pinprobe_description='General_purpose_PAD_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U12 37 pinprobe vars: pinprobe_description='GPI_output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U2 32 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='General_purpose_input_buffer' description1='Input_option_for_Buffer' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U3 36 pinprobe vars: pinprobe_description='kelvin_GNDgpi' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd'
+X$U4 39 pinprobe vars: pinprobe_description='GPI_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 33 pinprobe vars: pinprobe_description='Input_Voltage_Supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+.ends GPIpuget
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301B\design\GPIpugetDEBUG.sxcmp
+.subckt GPIpugetDEBUG 25 26 27 28 29 30 31 32
+*#hierarchy
+.node_map GPO 29
+.node_map enable_gpibuffer 27
+.node_map ok_gpi 32
+.node_map measure_gpi 25
+.node_map GPBUF 31
+.node_map dft_startup 30
+.node_map hijack_enable_gpibuffer 28
+.node_map hijack_measure_gpi 26
+X$dfthijack1 25 26 dfthijack vars: dfthijack_name='GPImeasure' dfthijack_description='Hijack_GPI_measure_request' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$pinprobe1 25 pinprobe vars: pinprobe_description='Telemetry_request_measure' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$U1 26 pinprobe vars: pinprobe_description='Hijack_GPI_brick_enable' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U10 30 pinprobe vars: pinprobe_description='Measure_POWERGOOD_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 28 pinprobe vars: pinprobe_description='hijack_GPI_enable_buffer' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U30 29 pinprobe vars: pinprobe_description='GPI_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 32 pinprobe vars: pinprobe_description='GPI_enabled_and_ready' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 31 pinprobe vars: pinprobe_description='Measure_GPI_buffered_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U7 27 pinprobe vars: pinprobe_description='Enable_GPI_Buffer' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U8 27 28 dfthijack vars: dfthijack_name='GPIenableBuffer' dfthijack_description='Hijack_GPI_buffer_enable' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$UGPIbuffer 31 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='GPIbuffer' dftprobe_description='Measure_GPI_buffered_output' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UGPIok 32 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='GPIok' dftprobe_description='Measure_GPI_ok_status' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UGPIoutput 29 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='GPIoutput' dftprobe_description='Measure_GPI_output' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UGPIstartup 30 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='GPIstartup' dftprobe_description='Measure_GPI_startup_time' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+.ends GPIpugetDEBUG
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301B\design\GPIpugetMAIN.sxcmp
+.subckt GPIpugetMAIN 75 77 76 79 78 81 80 83 82
+*#hierarchy
+.node_map GPO 77
+.node_map enable_gpibuffer 80
+.node_map SIMPV 75
+.node_map kelvin_GNDgpi 82
+.node_map enable_buffer 86
+.node_map GPPT 87
+.node_map ok_gpi 79
+.node_map enable_gpibufferBAR 90
+.node_map enable_gpiBAR 84
+.node_map measure_gpi 78
+.node_map enable_passthrough 91
+.node_map GPBUF 83
+.node_map GPOout 89
+.node_map gin 85
+.node_map dft_startup 81
+.node_map ok_buffer 88
+.node_map okDELAY 93
+.node_map ok 92
+.node_map ok1 94
+.node_map ok2 95
+.node_map GPI 76
+X$amux1 87 83 89 75 86 amux2 vars: amux_control='pin' amux_datasheet_name='text' amux_datasheet_description='text' amux_tswitch='no' amux_inputs=2 amux_por=0 amux_ron=1K amux_vmax=6
+X$delay1 92 93 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=15 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1000
+X$rdivider1 77 73 72 71 70 69 68 67 89 82 92 resistordivider vars: resistordivider_disconnect='yes' resistordivider_disconnect_tap='top' resistordivider_dft='no' resistordivider_rtotal=2.5k resistordivider_vresistortop=6 resistordivider_vmax=6 resistordivider_outputs=1 resistordivider_tap0=50 resistordivider_tap1=34 resistordivider_tap2=30 resistordivider_tap3=40 resistordivider_tap4=50 resistordivider_tap5=60 resistordivider_tap6=70 resistordivider_tap7=80
+X$U1 76 pinprobe vars: pinprobe_description='General_purpose_PAD_input' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U10 81 pinprobe vars: pinprobe_description='Measure_POWERGOOD_startup_time' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U11 80 86 78 VESPAasmINPUT1
+X$U12 77 pinprobe vars: pinprobe_description='GPI_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U13 78 93 81 VESPAdftpulse
+X$U14 76 87 91 switchideal vars: switch_type='gnd' switch_polarity='noninvert' switch_model='ideal' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
+X$U16 90 91 78 VESPAasmINPUT1
+X$U17 80 90 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U18 78 95 88 VESPAasmINPUT1
+X$U2 78 pinprobe vars: pinprobe_description='Enable_GPI_brick' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U20 82 pinprobe vars: pinprobe_description='GPI_kelvin_ground' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U22 78 94 91 VESPAasmINPUT1
+X$U23 94 74 95 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U24 74 92 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U26 78 84 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U28 79 93 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U3 65 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='General_Purpose_input' description1='User_can_enable_Input_buffer' description2='Input_impedance_2p5M_without_buffer' description3='Gain_50percent_to_ADC' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U4 79 pinprobe vars: pinprobe_description='GPI_enabled_and_ready' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 83 pinprobe vars: pinprobe_description='Measure_GPI_buffered_output' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 75 88 85 83 86 66 vbuffer vars: vbuffer_accuracy='system' vbuffer_datasheet_name='GPIaccuracy' vbuffer_datasheet_description='GPI_Input_offset_accuracy' vbuffer_type='p' vbuffer_inputbuffer='no' vbuffer_drive='internal' vbuffer_gndsense='no' vbuffer_dft='no' vbuffer_gain=1 vbuffer_feedbackimpedance=1000 vbuffer_vmax=6
+X$U7 80 pinprobe vars: pinprobe_description='Enable_GPI_Buffer' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U8 76 85 86 switchideal vars: switch_type='gnd' switch_polarity='noninvert' switch_model='ideal' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
+X$U9 75 pinprobe vars: pinprobe_description='Input_Voltage_Supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+.ends GPIpugetMAIN
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAdftpulse.sxcmp
+.subckt VESPAdftpulse 7 8 9
+*#hierarchy
+.node_map start 7
+.node_map stop 8
+.node_map pulse 9
+X$U11 7 pinprobe vars: pinprobe_description='DFT_timer_start_input'
+X$U15 8 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U17 8 pinprobe vars: pinprobe_description='DFT_timer_stop_input'
+X$U52 7 4 6 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U53 4 5 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U55 9 5 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U8 9 pinprobe vars: pinprobe_description='DFT_Timer_pulse'
+.ends VESPAdftpulse
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT1.sxcmp
+.subckt VESPAasmINPUT1 5 6 7
+*#hierarchy
+.node_map Tstate 5
+.node_map i0 7
+.node_map o 6
+X$U1 5 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 7 pinprobe vars: pinprobe_description='input1'
+X$U3 6 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 5 4 7 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U5 4 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+.ends VESPAasmINPUT1
+
+.end

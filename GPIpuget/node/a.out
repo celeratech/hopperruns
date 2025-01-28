@@ -1,0 +1,96 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x55a816532f60 .scope module, "sim_GPIpuget_ROW13" "sim_GPIpuget_ROW13" 2 33;
+ .timescale 0 0;
+o0x7f27b7ec9018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a816580eb0_0 .net "CELG59462", 0 0, o0x7f27b7ec9018;  0 drivers
+o0x7f27b7ec9048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a816580f70_0 .net "CELSUB40948", 0 0, o0x7f27b7ec9048;  0 drivers
+o0x7f27b7ec9078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a816581080_0 .net "CELV96848", 0 0, o0x7f27b7ec9078;  0 drivers
+o0x7f27b7ec90a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a816581170_0 .net "GND", 0 0, o0x7f27b7ec90a8;  0 drivers
+o0x7f27b7ec90d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a816581210_0 .net "GPI", 0 0, o0x7f27b7ec90d8;  0 drivers
+o0x7f27b7ec9108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a816581350_0 .net "GPO", 0 0, o0x7f27b7ec9108;  0 drivers
+o0x7f27b7ec9138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a816581440_0 .net "IP_d3406f97", 0 0, o0x7f27b7ec9138;  0 drivers
+o0x7f27b7ec9168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a816581530_0 .net "SIMPV", 0 0, o0x7f27b7ec9168;  0 drivers
+o0x7f27b7ec9198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a816581620_0 .net "ctl_gpi_buffer_en", 0 0, o0x7f27b7ec9198;  0 drivers
+o0x7f27b7ec91c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a816581750_0 .net "kelvin_GNDgpi", 0 0, o0x7f27b7ec91c8;  0 drivers
+o0x7f27b7ec91f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a816581840_0 .net "measure_gpi", 0 0, o0x7f27b7ec91f8;  0 drivers
+o0x7f27b7ec94f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a816581930_0 .net "ok_gpi", 0 0, o0x7f27b7ec94f8;  0 drivers
+o0x7f27b7ec9228 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8165819d0_0 .net "register_ctl_gpi_buffer_en_xd_ctl_gpi_buffer_en_dcabf808", 0 0, o0x7f27b7ec9228;  0 drivers
+o0x7f27b7ec9258 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a816581a70_0 .net "register_measure_gpi_xd_measure_gpi_6b21a7df", 0 0, o0x7f27b7ec9258;  0 drivers
+S_0x55a81656a4f0 .scope module, "XFORCE_GPIpuget1" "FORCE_GPIpuget" 2 39, 2 2 0, S_0x55a816532f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "GND";
+    .port_info 1 /OUTPUT 1 "GPI";
+    .port_info 2 /OUTPUT 1 "GPO";
+    .port_info 3 /OUTPUT 1 "SIMPV";
+    .port_info 4 /OUTPUT 1 "CELG59462";
+    .port_info 5 /OUTPUT 1 "CELV96848";
+    .port_info 6 /OUTPUT 1 "CELSUB40948";
+    .port_info 7 /OUTPUT 1 "IP_d3406f97";
+    .port_info 8 /OUTPUT 1 "measure_gpi";
+    .port_info 9 /OUTPUT 1 "kelvin_GNDgpi";
+    .port_info 10 /OUTPUT 1 "ctl_gpi_buffer_en";
+    .port_info 11 /INPUT 1 "register_measure_gpi_xd_measure_gpi_6b21a7df";
+    .port_info 12 /INPUT 1 "register_ctl_gpi_buffer_en_xd_ctl_gpi_buffer_en_dcabf808";
+v0x55a8165324b0_0 .net "CELG59462", 0 0, o0x7f27b7ec9018;  alias, 0 drivers
+v0x55a8165330f0_0 .net "CELSUB40948", 0 0, o0x7f27b7ec9048;  alias, 0 drivers
+v0x55a816532ec0_0 .net "CELV96848", 0 0, o0x7f27b7ec9078;  alias, 0 drivers
+v0x55a81657f860_0 .net "GND", 0 0, o0x7f27b7ec90a8;  alias, 0 drivers
+v0x55a81657f920_0 .net "GPI", 0 0, o0x7f27b7ec90d8;  alias, 0 drivers
+v0x55a81657fa30_0 .net "GPO", 0 0, o0x7f27b7ec9108;  alias, 0 drivers
+v0x55a81657faf0_0 .net "IP_d3406f97", 0 0, o0x7f27b7ec9138;  alias, 0 drivers
+v0x55a81657fbb0_0 .net "SIMPV", 0 0, o0x7f27b7ec9168;  alias, 0 drivers
+v0x55a81657fc70_0 .net "ctl_gpi_buffer_en", 0 0, o0x7f27b7ec9198;  alias, 0 drivers
+v0x55a81657fdc0_0 .net "kelvin_GNDgpi", 0 0, o0x7f27b7ec91c8;  alias, 0 drivers
+v0x55a81657fe80_0 .net "measure_gpi", 0 0, o0x7f27b7ec91f8;  alias, 0 drivers
+v0x55a81657ff40_0 .net "register_ctl_gpi_buffer_en_xd_ctl_gpi_buffer_en_dcabf808", 0 0, o0x7f27b7ec9228;  alias, 0 drivers
+v0x55a816580000_0 .net "register_measure_gpi_xd_measure_gpi_6b21a7df", 0 0, o0x7f27b7ec9258;  alias, 0 drivers
+S_0x55a816580260 .scope module, "XGPIpuget1" "GPIpuget" 2 55, 2 18 0, S_0x55a816532f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GPI";
+    .port_info 1 /OUTPUT 1 "GPO";
+    .port_info 2 /INPUT 1 "SIMPV";
+    .port_info 3 /OUTPUT 1 "ok_gpi";
+    .port_info 4 /INPUT 1 "CELG59462";
+    .port_info 5 /INPUT 1 "CELV96848";
+    .port_info 6 /INPUT 1 "CELSUB40948";
+    .port_info 7 /INPUT 1 "IP_d3406f97";
+    .port_info 8 /INPUT 1 "measure_gpi";
+    .port_info 9 /INOUT 1 "kelvin_GNDgpi";
+    .port_info 10 /INPUT 1 "ctl_gpi_buffer_en";
+v0x55a816580520_0 .net "CELG59462", 0 0, o0x7f27b7ec9018;  alias, 0 drivers
+v0x55a8165805c0_0 .net "CELSUB40948", 0 0, o0x7f27b7ec9048;  alias, 0 drivers
+v0x55a816580690_0 .net "CELV96848", 0 0, o0x7f27b7ec9078;  alias, 0 drivers
+v0x55a816580790_0 .net "GPI", 0 0, o0x7f27b7ec90d8;  alias, 0 drivers
+v0x55a816580860_0 .net "GPO", 0 0, o0x7f27b7ec9108;  alias, 0 drivers
+v0x55a816580950_0 .net "IP_d3406f97", 0 0, o0x7f27b7ec9138;  alias, 0 drivers
+v0x55a816580a20_0 .net "SIMPV", 0 0, o0x7f27b7ec9168;  alias, 0 drivers
+v0x55a816580af0_0 .net "ctl_gpi_buffer_en", 0 0, o0x7f27b7ec9198;  alias, 0 drivers
+v0x55a816580bc0_0 .net "kelvin_GNDgpi", 0 0, o0x7f27b7ec91c8;  alias, 0 drivers
+v0x55a816580d20_0 .net "measure_gpi", 0 0, o0x7f27b7ec91f8;  alias, 0 drivers
+v0x55a816580df0_0 .net "ok_gpi", 0 0, o0x7f27b7ec94f8;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/celera/projects/Sunnyvale/software/GPIpuget/verilog10/sim_GPIpuget_ROW13.v";
