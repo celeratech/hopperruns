@@ -220,7 +220,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SERVICEwaltz0MAIN (EN, IN, VCC, tmi, BIAS, porb, REF0V9, go_vcc, CELG59462, CELV96848, CELBG83021, OKREF03249, kelvin_VCC, ok_service, CELREF84329, CELSUB40948, ok_reference, IP_75c89176_XU16, kelvin_GNDservice, celkelvin_IN_bc3b7675, celkelvin_GND_d75c3f7f, celkelvin_VCC_bc3b7675, celkelvin_BIAS_bc3b7675);
+module SERVICEwaltz0MAIN (EN, IN, VCC, tmi, BIAS, porb, REF0V9, go_vcc, CELG59462, CELV96848, CELBG83021, OKREF03249, kelvin_VCC, ok_service, CELREF84329, CELSUB40948, IP_75c89176, ok_reference, kelvin_GNDservice, celkelvin_IN_bc3b7675, celkelvin_GND_d75c3f7f, celkelvin_VCC_bc3b7675, celkelvin_BIAS_bc3b7675);
 input  EN;
 input  IN;
 output  VCC;
@@ -237,8 +237,8 @@ inout  kelvin_VCC;
 output  ok_service;
 output  CELREF84329;
 input  CELSUB40948;
+input  IP_75c89176;
 output  ok_reference;
-input  IP_75c89176_XU16;
 inout  kelvin_GNDservice;
 input  celkelvin_IN_bc3b7675;
 input  celkelvin_GND_d75c3f7f;
@@ -329,7 +329,7 @@ porb_a5607837 XU7 (
 );
 
 comparatornoctlpins_0d29f302 XU16 (
-.IP(IP_75c89176_XU16),
+.IP(IP_75c89176),
 .CELG(CELG59462),
 .SIMPV(VCC),
 .CELSUB(CELSUB40948),

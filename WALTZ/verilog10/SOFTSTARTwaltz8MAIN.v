@@ -209,7 +209,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SOFTSTARTwaltz8MAIN (SS, REF, MUDV, halfway, CELG59462, CELV96848, dft_clock, CELSUB40948, enable_brick, softstart_1ms, done_softstart, SENSE_G_4c0bef8e, enable_softstart, kelvin_MUDGsoftstart, IP_4c0bef8e_Xoscillator1);
+module SOFTSTARTwaltz8MAIN (SS, REF, MUDV, halfway, CELG59462, CELV96848, dft_clock, CELSUB40948, IP_4c0bef8e, enable_brick, softstart_1ms, done_softstart, SENSE_G_4c0bef8e, enable_softstart, kelvin_MUDGsoftstart);
 output  SS;
 input  REF;
 input  MUDV;
@@ -218,13 +218,13 @@ input  CELG59462;
 input  CELV96848;
 output  dft_clock;
 input  CELSUB40948;
+input  IP_4c0bef8e;
 input  enable_brick;
 input  softstart_1ms;
 output  done_softstart;
 input  SENSE_G_4c0bef8e;
 input  enable_softstart;
 input  kelvin_MUDGsoftstart;
-input  IP_4c0bef8e_Xoscillator1;
 
 
 // ------------------------ Wires ------------------------
@@ -443,7 +443,7 @@ PEBBLEtielo XtieLo (
 );
 
 oscillatorcrude_f6e6c185 Xoscillator1 (
-.IP(IP_4c0bef8e_Xoscillator1),
+.IP(IP_4c0bef8e),
 .osc(net_122),
 .CELG(CELG59462),
 .SIMPV(MUDV),

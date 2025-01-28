@@ -232,7 +232,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltz0MAIN (VC, tmi, MUDG, MUDV, REFINT, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, IP_4215aede_XU3, IP_866ca25c_XU9, IP_b8eb1a18_XU7, IP_5c7dff44_XU10, IP_e44d2b4d_Xgm1, enable_regulation);
+module REGULATIONwaltz0MAIN (VC, tmi, MUDG, MUDV, REFINT, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IP_4215aede, IP_5c7dff44, IP_866ca25c, IP_b8eb1a18, IP_e44d2b4d, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, enable_regulation);
 inout  VC;
 inout [4:0] tmi;
 inout  MUDG;
@@ -243,17 +243,17 @@ input  CELV96848;
 output  go_driver;
 input  CELREF84329;
 input  CELSUB40948;
+input  IP_4215aede;
+input  IP_5c7dff44;
+input  IP_866ca25c;
+input  IP_b8eb1a18;
+input  IP_e44d2b4d;
 inout  IREF_DRIVER;
 inout  kelvin_MUDG;
 input  FB_REGULATION;
 output  ok_regulation;
 input  REF_REGULATION;
 input  VSS_REGULATION;
-input  IP_4215aede_XU3;
-input  IP_866ca25c_XU9;
-input  IP_b8eb1a18_XU7;
-input  IP_5c7dff44_XU10;
-input  IP_e44d2b4d_Xgm1;
 input  enable_regulation;
 
 
@@ -301,7 +301,7 @@ VESPAasmINPUT2 XU12 (
 );
 
 voltage2current_17279485 XU3 (
-.IP(IP_4215aede_XU3),
+.IP(IP_4215aede),
 .VIN(VC),
 .CELG(CELG59462),
 .IOUT(IREF_DRIVER),
@@ -314,7 +314,7 @@ voltage2current_17279485 XU3 (
 
 clamp_57e24cde XU7 (
 .IN(VC),
-.IP(IP_b8eb1a18_XU7),
+.IP(IP_b8eb1a18),
 .CELG(CELG59462),
 .SHUNT(MUDG),
 .SIMPV(MUDV),
@@ -327,7 +327,7 @@ clamp_57e24cde XU7 (
 
 vbuffer_602daa59 XU9 (
 .IN(REF_REGULATION),
-.IP(IP_866ca25c_XU9),
+.IP(IP_866ca25c),
 .OUT(REFINT),
 .CELG(CELG59462),
 .SIMPV(MUDV),
@@ -340,7 +340,7 @@ vbuffer_602daa59 XU9 (
 );
 
 comparatornoctlpins_1b4420c5 XU10 (
-.IP(IP_5c7dff44_XU10),
+.IP(IP_5c7dff44),
 .CELG(CELG59462),
 .SIMPV(MUDV),
 .CELSUB(CELSUB40948),
@@ -375,7 +375,7 @@ resistor_c2797d46 XU34 (
 );
 
 gm_6be6af5d Xgm1 (
-.IP(IP_e44d2b4d_Xgm1),
+.IP(IP_e44d2b4d),
 .GMO(VC),
 .INN(clamp_Xgm1_99),
 .INP(REFINT),

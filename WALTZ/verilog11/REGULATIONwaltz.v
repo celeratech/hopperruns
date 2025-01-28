@@ -16,7 +16,7 @@ module REGULATIONwaltz0DEBUG (VC,tmi,REFINT,CELG59462,CELV96848,go_driver,CELSUB
   output  hijack_enable_regulation;
 endmodule
 
-module REGULATIONwaltz0MAIN (VC,tmi,MUDG,MUDV,REFINT,CELG59462,CELV96848,go_driver,CELREF84329,CELSUB40948,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,IP_4215aede_XU3,IP_866ca25c_XU9,IP_b8eb1a18_XU7,IP_5c7dff44_XU10,IP_e44d2b4d_Xgm1,enable_regulation);
+module REGULATIONwaltz0MAIN (VC,tmi,MUDG,MUDV,REFINT,CELG59462,CELV96848,go_driver,CELREF84329,CELSUB40948,IP_4215aede,IP_5c7dff44,IP_866ca25c,IP_b8eb1a18,IP_e44d2b4d,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,enable_regulation);
   inout  VC;
   inout [4:0] tmi;
   inout  MUDG;
@@ -27,22 +27,22 @@ module REGULATIONwaltz0MAIN (VC,tmi,MUDG,MUDV,REFINT,CELG59462,CELV96848,go_driv
   output  go_driver;
   input  CELREF84329;
   input  CELSUB40948;
+  input  IP_4215aede;
+  input  IP_5c7dff44;
+  input  IP_866ca25c;
+  input  IP_b8eb1a18;
+  input  IP_e44d2b4d;
   inout  IREF_DRIVER;
   inout  kelvin_MUDG;
   input  FB_REGULATION;
   output  ok_regulation;
   input  REF_REGULATION;
   input  VSS_REGULATION;
-  input  IP_4215aede_XU3;
-  input  IP_866ca25c_XU9;
-  input  IP_b8eb1a18_XU7;
-  input  IP_5c7dff44_XU10;
-  input  IP_e44d2b4d_Xgm1;
   input  enable_regulation;
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltz (tmi, MUDG, MUDV, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, IP_4215aede_XU3, IP_866ca25c_XU9, IP_b8eb1a18_XU7, IP_5c7dff44_XU10, IP_e44d2b4d_Xgm1, enable_regulation);
+module REGULATIONwaltz (tmi, MUDG, MUDV, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IP_4215aede, IP_5c7dff44, IP_866ca25c, IP_b8eb1a18, IP_e44d2b4d, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, enable_regulation);
 inout [4:0] tmi;
 inout  MUDG;
 input  MUDV;
@@ -51,17 +51,17 @@ input  CELV96848;
 output  go_driver;
 input  CELREF84329;
 input  CELSUB40948;
+input  IP_4215aede;
+input  IP_5c7dff44;
+input  IP_866ca25c;
+input  IP_b8eb1a18;
+input  IP_e44d2b4d;
 inout  IREF_DRIVER;
 inout  kelvin_MUDG;
 inout  FB_REGULATION;
 output  ok_regulation;
 input  REF_REGULATION;
 input  VSS_REGULATION;
-input  IP_4215aede_XU3;
-input  IP_866ca25c_XU9;
-input  IP_b8eb1a18_XU7;
-input  IP_5c7dff44_XU10;
-input  IP_e44d2b4d_Xgm1;
 input  enable_regulation;
 
 
@@ -97,17 +97,17 @@ REGULATIONwaltz0MAIN XMAIN (
 .go_driver(go_driver),
 .CELREF84329(CELREF84329),
 .CELSUB40948(CELSUB40948),
+.IP_4215aede(IP_4215aede),
+.IP_5c7dff44(IP_5c7dff44),
+.IP_866ca25c(IP_866ca25c),
+.IP_b8eb1a18(IP_b8eb1a18),
+.IP_e44d2b4d(IP_e44d2b4d),
 .IREF_DRIVER(IREF_DRIVER),
 .kelvin_MUDG(kelvin_MUDG),
 .FB_REGULATION(FB_REGULATION),
 .ok_regulation(ok_regulation),
 .REF_REGULATION(REF_REGULATION),
 .VSS_REGULATION(net_57),
-.IP_4215aede_XU3(IP_4215aede_XU3),
-.IP_866ca25c_XU9(IP_866ca25c_XU9),
-.IP_b8eb1a18_XU7(IP_b8eb1a18_XU7),
-.IP_5c7dff44_XU10(IP_5c7dff44_XU10),
-.IP_e44d2b4d_Xgm1(IP_e44d2b4d_Xgm1),
 .enable_regulation(net_54)
 );
 

@@ -208,7 +208,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module FAULTMANAGERwaltzMAIN (tmi, MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELBG83021, CELSUB40948, blank_fault, fault_short, mode_hiccup, enable_fault, fault_freeze, hijack_delay, blank_thermal, dft_delaySHORT, hijack_short_status, IP_201f84ba_Xthermal1, hijack_thermal_status, hijack_faultmanager_status);
+module FAULTMANAGERwaltzMAIN (tmi, MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELBG83021, CELSUB40948, IP_201f84ba, blank_fault, fault_short, mode_hiccup, enable_fault, fault_freeze, hijack_delay, blank_thermal, dft_delaySHORT, hijack_short_status, hijack_thermal_status, hijack_faultmanager_status);
 inout [4:0] tmi;
 input  MUDV;
 input  clock;
@@ -218,6 +218,7 @@ input  PORB97836;
 output  fault_run;
 input  CELBG83021;
 input  CELSUB40948;
+input  IP_201f84ba;
 input  blank_fault;
 input  fault_short;
 input  mode_hiccup;
@@ -227,7 +228,6 @@ input  hijack_delay;
 input  blank_thermal;
 output  dft_delaySHORT;
 input  hijack_short_status;
-input  IP_201f84ba_Xthermal1;
 input  hijack_thermal_status;
 input  hijack_faultmanager_status;
 
@@ -434,7 +434,7 @@ PEBBLEtielo XtieLo (
 );
 
 thermal_b84c0fbd Xthermal1 (
-.IP(IP_201f84ba_Xthermal1),
+.IP(IP_201f84ba),
 .ten(tl0),
 .CELG(CELG59462),
 .CELBG(CELBG83021),

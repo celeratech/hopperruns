@@ -224,7 +224,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CLOCKwaltzMAIN (tmi, FSET, MUDV, SYNC, clock, dft_sync, ok_clock, CELG59462, CELV96848, dft_clock, ISLOPECOMP, CELREF84329, CELSENSE_RF, CELSUB40948, dft_synclow, fault_clock, dft_synchigh, enable_clock, dft_clocksync, CLOCKofftime_0, CLOCKofftime_1, CLOCKofftime_2, CLOCKofftime_3, dft_clockstartup, dft_clockinternal, IP_90c263a6_XOSCEXT, celkelvin_GND_bb7e77f4);
+module CLOCKwaltzMAIN (tmi, FSET, MUDV, SYNC, clock, dft_sync, ok_clock, CELG59462, CELV96848, dft_clock, ISLOPECOMP, CELREF84329, CELSENSE_RF, CELSUB40948, IP_90c263a6, dft_synclow, fault_clock, dft_synchigh, enable_clock, dft_clocksync, CLOCKofftime_0, CLOCKofftime_1, CLOCKofftime_2, CLOCKofftime_3, dft_clockstartup, dft_clockinternal, celkelvin_GND_bb7e77f4);
 inout [4:0] tmi;
 output  FSET;
 input  MUDV;
@@ -239,6 +239,7 @@ output  ISLOPECOMP;
 input  CELREF84329;
 input  CELSENSE_RF;
 input  CELSUB40948;
+input  IP_90c263a6;
 output  dft_synclow;
 output  fault_clock;
 output  dft_synchigh;
@@ -250,7 +251,6 @@ input  CLOCKofftime_2;
 input  CLOCKofftime_3;
 output  dft_clockstartup;
 output  dft_clockinternal;
-input  IP_90c263a6_XOSCEXT;
 input  celkelvin_GND_bb7e77f4;
 
 
@@ -385,7 +385,7 @@ PEBBLEtielo XtieLo (
 );
 
 oscillator_d9a22b83 XOSCEXT (
-.IP(IP_90c263a6_XOSCEXT),
+.IP(IP_90c263a6),
 .osc(net_105),
 .CELG(CELG59462),
 .IOSC(ISLOPECOMP),

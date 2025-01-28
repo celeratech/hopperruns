@@ -10,11 +10,11 @@ endmodule
 
 // ------------------------ Module Verilog ---------------
 module SERVICEwaltz0DEBUG (porb, REF0V9, go_vcc, ok_service, ok_reference);
-  input  porb;
-  input  REF0V9;
-  input  go_vcc;
-  input  ok_service;
-  input  ok_reference;
+input  porb;
+input  REF0V9;
+input  go_vcc;
+input  ok_service;
+input  ok_reference;
 
 
 // ------------------------ Wires ------------------------

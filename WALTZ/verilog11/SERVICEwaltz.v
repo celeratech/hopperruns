@@ -7,7 +7,7 @@ module SERVICEwaltz0DEBUG (porb,REF0V9,go_vcc,ok_service,ok_reference);
   input  ok_reference;
 endmodule
 
-module SERVICEwaltz0MAIN (EN,IN,VCC,tmi,BIAS,porb,REF0V9,go_vcc,CELG59462,CELV96848,CELBG83021,OKREF03249,kelvin_VCC,ok_service,CELREF84329,CELSUB40948,ok_reference,IP_75c89176_XU16,kelvin_GNDservice,celkelvin_IN_bc3b7675,celkelvin_GND_d75c3f7f,celkelvin_VCC_bc3b7675,celkelvin_BIAS_bc3b7675);
+module SERVICEwaltz0MAIN (EN,IN,VCC,tmi,BIAS,porb,REF0V9,go_vcc,CELG59462,CELV96848,CELBG83021,OKREF03249,kelvin_VCC,ok_service,CELREF84329,CELSUB40948,IP_75c89176,ok_reference,kelvin_GNDservice,celkelvin_IN_bc3b7675,celkelvin_GND_d75c3f7f,celkelvin_VCC_bc3b7675,celkelvin_BIAS_bc3b7675);
   input  EN;
   input  IN;
   output  VCC;
@@ -24,8 +24,8 @@ module SERVICEwaltz0MAIN (EN,IN,VCC,tmi,BIAS,porb,REF0V9,go_vcc,CELG59462,CELV96
   output  ok_service;
   output  CELREF84329;
   input  CELSUB40948;
+  input  IP_75c89176;
   output  ok_reference;
-  input  IP_75c89176_XU16;
   inout  kelvin_GNDservice;
   input  celkelvin_IN_bc3b7675;
   input  celkelvin_GND_d75c3f7f;
@@ -34,7 +34,7 @@ module SERVICEwaltz0MAIN (EN,IN,VCC,tmi,BIAS,porb,REF0V9,go_vcc,CELG59462,CELV96
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module SERVICEwaltz (EN, IN, VCC, tmi, BIAS, porb, REF0V9, CELG59462, CELV96848, CELBG83021, OKREF03249, kelvin_VCC, ok_service, CELREF84329, CELSUB40948, IP_75c89176_XU16, kelvin_GNDservice, celkelvin_IN_bc3b7675, celkelvin_GND_d75c3f7f, celkelvin_VCC_bc3b7675, celkelvin_BIAS_bc3b7675);
+module SERVICEwaltz (EN, IN, VCC, tmi, BIAS, porb, REF0V9, CELG59462, CELV96848, CELBG83021, OKREF03249, kelvin_VCC, ok_service, CELREF84329, CELSUB40948, IP_75c89176, kelvin_GNDservice, celkelvin_IN_bc3b7675, celkelvin_GND_d75c3f7f, celkelvin_VCC_bc3b7675, celkelvin_BIAS_bc3b7675);
 input  EN;
 input  IN;
 output  VCC;
@@ -50,7 +50,7 @@ inout  kelvin_VCC;
 output  ok_service;
 output  CELREF84329;
 input  CELSUB40948;
-input  IP_75c89176_XU16;
+input  IP_75c89176;
 inout  kelvin_GNDservice;
 input  celkelvin_IN_bc3b7675;
 input  celkelvin_GND_d75c3f7f;
@@ -87,8 +87,8 @@ SERVICEwaltz0MAIN XMAIN (
 .ok_service(ok_service),
 .CELREF84329(CELREF84329),
 .CELSUB40948(CELSUB40948),
+.IP_75c89176(IP_75c89176),
 .ok_reference(net_47),
-.IP_75c89176_XU16(IP_75c89176_XU16),
 .kelvin_GNDservice(kelvin_GNDservice),
 .celkelvin_IN_bc3b7675(celkelvin_IN_bc3b7675),
 .celkelvin_GND_d75c3f7f(celkelvin_GND_d75c3f7f),

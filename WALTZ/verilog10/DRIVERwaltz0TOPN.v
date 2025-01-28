@@ -196,7 +196,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module DRIVERwaltz0TOPN (SW, tmi, BSTV, MUDV, MUDHV, PMUDV, PMUDHV, enable, topswon, CELG59462, CELV96848, ok_driver, topswipeak, CELSUB40948, IREF_DRIVER, botswstatus, topswstatus, ISLOPE_DRIVER, IP_f4252e65_XU22);
+module DRIVERwaltz0TOPN (SW, tmi, BSTV, MUDV, MUDHV, PMUDV, PMUDHV, enable, topswon, CELG59462, CELV96848, ok_driver, topswipeak, CELSUB40948, IP_f4252e65, IREF_DRIVER, botswstatus, topswstatus, ISLOPE_DRIVER);
 inout  SW;
 inout [4:0] tmi;
 input  BSTV;
@@ -211,11 +211,11 @@ input  CELV96848;
 output  ok_driver;
 output  topswipeak;
 input  CELSUB40948;
+input  IP_f4252e65;
 input  IREF_DRIVER;
 input  botswstatus;
 output  topswstatus;
 input  ISLOPE_DRIVER;
-input  IP_f4252e65_XU22;
 
 
 // ------------------------ Wires ------------------------
@@ -295,7 +295,7 @@ cboot_7dc01c49 XU17 (
 );
 
 slopecomp_00a4cb3c XU22 (
-.IP(IP_f4252e65_XU22),
+.IP(IP_f4252e65),
 .CELG(CELG59462),
 .IOSC(ISLOPE_DRIVER),
 .SIMPV(MUDV),

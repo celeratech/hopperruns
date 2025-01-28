@@ -139,12 +139,12 @@ endmodule
 module REGULATIONwaltz0DEBUG (VC, tmi, REFINT, CELG59462, CELV96848, go_driver, CELSUB40948, IREF_DRIVER, FB_REGULATION, ok_regulation, VSS_REGULATION, enable_regulation, HIJACK_VSS_REGULATION, hijack_enable_regulation);
 inout  VC;
 inout [4:0] tmi;
-  input  REFINT;
+input  REFINT;
 input  CELG59462;
 input  CELV96848;
-  input  go_driver;
+input  go_driver;
 input  CELSUB40948;
-  input  IREF_DRIVER;
+input  IREF_DRIVER;
 inout  FB_REGULATION;
 input  ok_regulation;
 input  VSS_REGULATION;
@@ -162,7 +162,7 @@ wire [7:0] por0;
 // ------------------------ Networks ---------------------
 VESPAdftpulse XU18 (
 .stop(ok_regulation),
-.pulse(XU2_no_dft_noconn_pulse),
+.pulse(net_52),
 .start(hijack_enable_regulation),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -235,6 +235,10 @@ resistor_e959927e XU23 (
 .CELG(CELG59462)
 );
 
+STONEnoconn XNC52 (
+.noconn(net_52)
+);
+
 STONEnoconn XNCREFINT (
 .noconn(REFINT)
 );
@@ -284,10 +288,6 @@ STONEnoconn XNCnoconn_drm8_drm0_6 (
 
 STONEnoconn XNCnoconn_drm8_drm0_7 (
 .noconn(noconn_drm8_drm0_7)
-);
-
-STONEnoconn XNCXU2_no_dft_noconn_pulse (
-.noconn(XU2_no_dft_noconn_pulse)
 );
 
 endmodule

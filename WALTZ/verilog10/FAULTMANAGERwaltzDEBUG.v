@@ -34,14 +34,14 @@ endmodule
 module FAULTMANAGERwaltzDEBUG (CELG59462, CELV96848, fault_run, CELSUB40948, blank_fault, fault_short, enable_fault, fault_freeze, hijack_delay, dft_delaySHORT, hijack_blank_fault, hijack_fault_short, hijack_enable_fault, hijack_short_status, hijack_thermal_status, hijack_faultmanager_status);
 input  CELG59462;
 input  CELV96848;
-  input  fault_run;
+input  fault_run;
 input  CELSUB40948;
 input  blank_fault;
 input  fault_short;
 input  enable_fault;
-  input  fault_freeze;
+input  fault_freeze;
 output  hijack_delay;
-  input  dft_delaySHORT;
+input  dft_delaySHORT;
 output  hijack_blank_fault;
 output  hijack_fault_short;
 output  hijack_enable_fault;

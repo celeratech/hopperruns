@@ -107,6 +107,15 @@ endmodule
 
 
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 //Verilog HDL for "DRM", "drm8" "functional"
 
 
@@ -123,15 +132,6 @@ module drm8 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, drm0, d1, d0 );
   input G;
   inout  [4:0] tmi;
   input SUB;
-endmodule
-
-
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
 endmodule
 
 
@@ -171,18 +171,18 @@ wire [7:0] por0;
 
 // ------------------------ Networks ---------------------
 Algorithm5p9_DYES_ XALGORITHM (
-.OFF(XU89_no_dft_noconn_OFF),
-.TOP(XU96_no_dft_noconn_TOP),
+.OFF(net_148),
+.TOP(net_164),
 .fcm(fcm),
-.IDLE(XU93_no_dft_noconn_IDLE),
+.IDLE(net_156),
 .porb(porb),
-.FAULT(XU91_no_dft_noconn_FAULT),
-.READY(XU92_no_dft_noconn_READY),
-.BOTTOM(XU95_no_dft_noconn_BOTTOM),
-.POWERUP(XU90_no_dft_noconn_POWERUP),
-.REFRESH(XU94_no_dft_noconn_REFRESH),
-.top3SYNC(XU14_no_dft_noconn_top3SYNC),
-.top4SYNC(XU16_no_dft_noconn_top4SYNC),
+.FAULT(net_152),
+.READY(net_154),
+.BOTTOM(net_162),
+.POWERUP(net_150),
+.REFRESH(net_158),
+.top3SYNC(net_139),
+.top4SYNC(net_142),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .TOPdelayi(net_169),
@@ -190,8 +190,8 @@ Algorithm5p9_DYES_ XALGORITHM (
 .go_driver(go_driver),
 .ipeak_top(ipeak_top),
 .ok_driver(ok_driver),
-.top6aSYNC(XU18_no_dft_noconn_top6aSYNC),
-.top6bSYNC(XU20_no_dft_noconn_top6bSYNC),
+.top6aSYNC(net_144),
+.top6bSYNC(net_146),
 .top_switch(top_switch),
 .CELSUB40948(CELSUB40948),
 .enableFAULT(Algorithm5p9_statecontrol_22dba987_4),
@@ -262,6 +262,54 @@ delayfixed_07168cbb XU44 (
 .CELSUB(CELSUB40948)
 );
 
+STONEnoconn XNC139 (
+.noconn(net_139)
+);
+
+STONEnoconn XNC142 (
+.noconn(net_142)
+);
+
+STONEnoconn XNC144 (
+.noconn(net_144)
+);
+
+STONEnoconn XNC146 (
+.noconn(net_146)
+);
+
+STONEnoconn XNC148 (
+.noconn(net_148)
+);
+
+STONEnoconn XNC150 (
+.noconn(net_150)
+);
+
+STONEnoconn XNC152 (
+.noconn(net_152)
+);
+
+STONEnoconn XNC154 (
+.noconn(net_154)
+);
+
+STONEnoconn XNC156 (
+.noconn(net_156)
+);
+
+STONEnoconn XNC158 (
+.noconn(net_158)
+);
+
+STONEnoconn XNC162 (
+.noconn(net_162)
+);
+
+STONEnoconn XNC164 (
+.noconn(net_164)
+);
+
 drm8 drm_hex0x03 (
 .G(CELG59462),
 .V(CELV96848),
@@ -286,54 +334,6 @@ STONEnoconn XNCnoconn_drm8_drm0_6 (
 
 STONEnoconn XNCnoconn_drm8_drm0_7 (
 .noconn(noconn_drm8_drm0_7)
-);
-
-STONEnoconn XNCXU89_no_dft_noconn_OFF (
-.noconn(XU89_no_dft_noconn_OFF)
-);
-
-STONEnoconn XNCXU96_no_dft_noconn_TOP (
-.noconn(XU96_no_dft_noconn_TOP)
-);
-
-STONEnoconn XNCXU93_no_dft_noconn_IDLE (
-.noconn(XU93_no_dft_noconn_IDLE)
-);
-
-STONEnoconn XNCXU91_no_dft_noconn_FAULT (
-.noconn(XU91_no_dft_noconn_FAULT)
-);
-
-STONEnoconn XNCXU92_no_dft_noconn_READY (
-.noconn(XU92_no_dft_noconn_READY)
-);
-
-STONEnoconn XNCXU95_no_dft_noconn_BOTTOM (
-.noconn(XU95_no_dft_noconn_BOTTOM)
-);
-
-STONEnoconn XNCXU90_no_dft_noconn_POWERUP (
-.noconn(XU90_no_dft_noconn_POWERUP)
-);
-
-STONEnoconn XNCXU94_no_dft_noconn_REFRESH (
-.noconn(XU94_no_dft_noconn_REFRESH)
-);
-
-STONEnoconn XNCXU14_no_dft_noconn_top3SYNC (
-.noconn(XU14_no_dft_noconn_top3SYNC)
-);
-
-STONEnoconn XNCXU16_no_dft_noconn_top4SYNC (
-.noconn(XU16_no_dft_noconn_top4SYNC)
-);
-
-STONEnoconn XNCXU18_no_dft_noconn_top6aSYNC (
-.noconn(XU18_no_dft_noconn_top6aSYNC)
-);
-
-STONEnoconn XNCXU20_no_dft_noconn_top6bSYNC (
-.noconn(XU20_no_dft_noconn_top6bSYNC)
 );
 
 endmodule

@@ -14,7 +14,7 @@ module DRIVERwaltzBBM (tmi,topon,bottomon,topstate,CELG59462,CELV96848,bbm_topon
   input  bottomstatus;
 endmodule
 
-module DRIVERwaltz0BOTN (SW,tmi,MUDV,PMUDG,PMUDV,botswon,CELG59462,CELV96848,botswineg,botswipeak,CELSUB40948,botswstatus,botswzcross,enable_driver,IP_14d08c8e_XU3,IP_a0afb596_XU9,IP_2d447a5c_XU17);
+module DRIVERwaltz0BOTN (SW,tmi,MUDV,PMUDG,PMUDV,botswon,CELG59462,CELV96848,botswineg,botswipeak,CELSUB40948,IP_14d08c8e,IP_2d447a5c,IP_a0afb596,botswstatus,botswzcross,enable_driver);
   inout  SW;
   inout [4:0] tmi;
   input  MUDV;
@@ -26,12 +26,12 @@ module DRIVERwaltz0BOTN (SW,tmi,MUDV,PMUDG,PMUDV,botswon,CELG59462,CELV96848,bot
   output  botswineg;
   output  botswipeak;
   input  CELSUB40948;
+  input  IP_14d08c8e;
+  input  IP_2d447a5c;
+  input  IP_a0afb596;
   output  botswstatus;
   output  botswzcross;
   input  enable_driver;
-  input  IP_14d08c8e_XU3;
-  input  IP_a0afb596_XU9;
-  input  IP_2d447a5c_XU17;
 endmodule
 
 module DRIVERwaltz0DEBUG (botstate,topstate,CELG59462,CELV96848,botswineg,ok_driver,botswipeak,topswipeak,CELSUB40948,botswstatus,botswzcross,topswstatus,enable_driver,hijack_botstate,hijack_topstate,hijack_enable_driver);
@@ -53,7 +53,7 @@ module DRIVERwaltz0DEBUG (botstate,topstate,CELG59462,CELV96848,botswineg,ok_dri
   output  hijack_enable_driver;
 endmodule
 
-module DRIVERwaltz0TOPN (SW,tmi,BSTV,MUDV,MUDHV,PMUDV,PMUDHV,enable,topswon,CELG59462,CELV96848,ok_driver,topswipeak,CELSUB40948,IREF_DRIVER,botswstatus,topswstatus,ISLOPE_DRIVER,IP_f4252e65_XU22);
+module DRIVERwaltz0TOPN (SW,tmi,BSTV,MUDV,MUDHV,PMUDV,PMUDHV,enable,topswon,CELG59462,CELV96848,ok_driver,topswipeak,CELSUB40948,IP_f4252e65,IREF_DRIVER,botswstatus,topswstatus,ISLOPE_DRIVER);
   inout  SW;
   inout [4:0] tmi;
   input  BSTV;
@@ -68,15 +68,15 @@ module DRIVERwaltz0TOPN (SW,tmi,BSTV,MUDV,MUDHV,PMUDV,PMUDHV,enable,topswon,CELG
   output  ok_driver;
   output  topswipeak;
   input  CELSUB40948;
+  input  IP_f4252e65;
   input  IREF_DRIVER;
   input  botswstatus;
   output  topswstatus;
   input  ISLOPE_DRIVER;
-  input  IP_f4252e65_XU22;
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module DRIVERwaltz (SW, tmi, BSTV, MUDV, MUDHV, PMUDG, PMUDV, PMUDHV, botstate, topstate, CELG59462, CELV96848, bbm_topon, botswineg, ok_driver, botswipeak, topswipeak, CELSUB40948, IREF_DRIVER, botswzcross, bbm_bottomon, ISLOPE_DRIVER, enable_driver, IP_14d08c8e_XU3, IP_a0afb596_XU9, IP_2d447a5c_XU17, IP_f4252e65_XU22);
+module DRIVERwaltz (SW, tmi, BSTV, MUDV, MUDHV, PMUDG, PMUDV, PMUDHV, botstate, topstate, CELG59462, CELV96848, bbm_topon, botswineg, ok_driver, botswipeak, topswipeak, CELSUB40948, IP_14d08c8e, IP_2d447a5c, IP_a0afb596, IP_f4252e65, IREF_DRIVER, botswzcross, bbm_bottomon, ISLOPE_DRIVER, enable_driver);
 inout  SW;
 inout [4:0] tmi;
 input  BSTV;
@@ -95,15 +95,15 @@ output  ok_driver;
 output  botswipeak;
 output  topswipeak;
 input  CELSUB40948;
+input  IP_14d08c8e;
+input  IP_2d447a5c;
+input  IP_a0afb596;
+input  IP_f4252e65;
 input  IREF_DRIVER;
 output  botswzcross;
 output  bbm_bottomon;
 input  ISLOPE_DRIVER;
 input  enable_driver;
-input  IP_14d08c8e_XU3;
-input  IP_a0afb596_XU9;
-input  IP_2d447a5c_XU17;
-input  IP_f4252e65_XU22;
 
 
 // ------------------------ Wires ------------------------
@@ -137,12 +137,12 @@ DRIVERwaltz0BOTN XBOTSW (
 .botswineg(botswineg),
 .botswipeak(botswipeak),
 .CELSUB40948(CELSUB40948),
+.IP_14d08c8e(IP_14d08c8e),
+.IP_2d447a5c(IP_2d447a5c),
+.IP_a0afb596(IP_a0afb596),
 .botswstatus(net_107),
 .botswzcross(botswzcross),
-.enable_driver(net_104),
-.IP_14d08c8e_XU3(IP_14d08c8e_XU3),
-.IP_a0afb596_XU9(IP_a0afb596_XU9),
-.IP_2d447a5c_XU17(IP_2d447a5c_XU17)
+.enable_driver(net_104)
 );
 
 DRIVERwaltz0DEBUG XDEBUG (
@@ -179,11 +179,11 @@ DRIVERwaltz0TOPN XTOPSW (
 .ok_driver(ok_driver),
 .topswipeak(topswipeak),
 .CELSUB40948(CELSUB40948),
+.IP_f4252e65(IP_f4252e65),
 .IREF_DRIVER(IREF_DRIVER),
 .botswstatus(net_107),
 .topswstatus(net_105),
-.ISLOPE_DRIVER(ISLOPE_DRIVER),
-.IP_f4252e65_XU22(IP_f4252e65_XU22)
+.ISLOPE_DRIVER(ISLOPE_DRIVER)
 );
 
 endmodule

@@ -262,7 +262,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module POWERGOODwaltzMAIN (POK, MUDV, clock, sense_FB, CELG59462, CELV96848, PORB97836, dft_pgout, CELSUB40948, dft_pgDELAY, fault_short, REF_POWERGOOD, dft_REFBUFFER, dft_pgSTARTUP, dft_pgDEGLITCH, dft_shortdelay, IP_70e67769_XU3, IP_e96a4067_XU8, IP_ddbf938d_XU22, enable_powergood, hijack_risedelay, kelvin_MUDGpowergood);
+module POWERGOODwaltzMAIN (POK, MUDV, clock, sense_FB, CELG59462, CELV96848, PORB97836, dft_pgout, CELSUB40948, IP_70e67769, IP_ddbf938d, IP_e96a4067, dft_pgDELAY, fault_short, REF_POWERGOOD, dft_REFBUFFER, dft_pgSTARTUP, dft_pgDEGLITCH, dft_shortdelay, enable_powergood, hijack_risedelay, kelvin_MUDGpowergood);
 inout  POK;
 input  MUDV;
 input  clock;
@@ -272,6 +272,9 @@ input  CELV96848;
 input  PORB97836;
 output  dft_pgout;
 input  CELSUB40948;
+input  IP_70e67769;
+input  IP_ddbf938d;
+input  IP_e96a4067;
 output  dft_pgDELAY;
 output  fault_short;
 input  REF_POWERGOOD;
@@ -279,9 +282,6 @@ inout  dft_REFBUFFER;
 output  dft_pgSTARTUP;
 output  dft_pgDEGLITCH;
 output  dft_shortdelay;
-input  IP_70e67769_XU3;
-input  IP_e96a4067_XU8;
-input  IP_ddbf938d_XU22;
 input  enable_powergood;
 input  hijack_risedelay;
 inout  kelvin_MUDGpowergood;
@@ -366,7 +366,7 @@ VESPAasmINPUT1 XU5 (
 );
 
 comparatornoctlpins_94b63eab XU3 (
-.IP(IP_70e67769_XU3),
+.IP(IP_70e67769),
 .CELG(CELG59462),
 .SIMPV(MUDV),
 .CELSUB(CELSUB40948),
@@ -401,7 +401,7 @@ delayclock_ab9af190 XU7 (
 
 vbuffer_8cf47f40 XU8 (
 .IN(REF_POWERGOOD),
-.IP(IP_e96a4067_XU8),
+.IP(IP_e96a4067),
 .OUT(dft_REFBUFFER),
 .CELG(CELG59462),
 .SIMPV(MUDV),
@@ -464,7 +464,7 @@ delayfixed_00a6f48f XU21 (
 );
 
 comparatornoctlpins_370523ee XU22 (
-.IP(IP_ddbf938d_XU22),
+.IP(IP_ddbf938d),
 .CELG(CELG59462),
 .SIMPV(MUDV),
 .CELSUB(CELSUB40948),

@@ -20,16 +20,16 @@ endmodule
 
 // ------------------------ Module Verilog ---------------
 module CLOCKwaltzDEBUG (dft_sync, dft_clock, ISLOPECOMP, dft_synclow, fault_clock, dft_synchigh, enable_clock, dft_clocksync, dft_clockstartup, dft_clockinternal, hijack_enable_clock);
-  input  dft_sync;
-  input  dft_clock;
-  input  ISLOPECOMP;
-  input  dft_synclow;
-  input  fault_clock;
-  input  dft_synchigh;
+input  dft_sync;
+input  dft_clock;
+input  ISLOPECOMP;
+input  dft_synclow;
+input  fault_clock;
+input  dft_synchigh;
 input  enable_clock;
-  input  dft_clocksync;
-  input  dft_clockstartup;
-  input  dft_clockinternal;
+input  dft_clocksync;
+input  dft_clockstartup;
+input  dft_clockinternal;
 output  hijack_enable_clock;
 
 

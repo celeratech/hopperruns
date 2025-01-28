@@ -207,7 +207,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module DRIVERwaltz0BOTN (SW, tmi, MUDV, PMUDG, PMUDV, botswon, CELG59462, CELV96848, botswineg, botswipeak, CELSUB40948, botswstatus, botswzcross, enable_driver, IP_14d08c8e_XU3, IP_a0afb596_XU9, IP_2d447a5c_XU17);
+module DRIVERwaltz0BOTN (SW, tmi, MUDV, PMUDG, PMUDV, botswon, CELG59462, CELV96848, botswineg, botswipeak, CELSUB40948, IP_14d08c8e, IP_2d447a5c, IP_a0afb596, botswstatus, botswzcross, enable_driver);
 inout  SW;
 inout [4:0] tmi;
 input  MUDV;
@@ -219,12 +219,12 @@ input  CELV96848;
 output  botswineg;
 output  botswipeak;
 input  CELSUB40948;
+input  IP_14d08c8e;
+input  IP_2d447a5c;
+input  IP_a0afb596;
 output  botswstatus;
 output  botswzcross;
 input  enable_driver;
-input  IP_14d08c8e_XU3;
-input  IP_a0afb596_XU9;
-input  IP_2d447a5c_XU17;
 
 
 // ------------------------ Wires ------------------------
@@ -237,7 +237,7 @@ wire [7:0] drm2;
 
 // ------------------------ Networks ---------------------
 currentlimitfet_bdeab8a2 XU3 (
-.IP(IP_14d08c8e_XU3),
+.IP(IP_14d08c8e),
 .CELG(CELG59462),
 .CELPOS(MUDV),
 .CELSUB(CELSUB40948),
@@ -263,7 +263,7 @@ fetdn_d04087c0 XU5 (
 );
 
 currentlimitfet_2899e616 XU9 (
-.IP(IP_a0afb596_XU9),
+.IP(IP_a0afb596),
 .CELG(CELG59462),
 .CELPOS(MUDV),
 .CELSUB(CELSUB40948),
@@ -299,7 +299,7 @@ fetdn_9694dc46 XU16 (
 );
 
 currentlimitfet_282c42a8 XU17 (
-.IP(IP_2d447a5c_XU17),
+.IP(IP_2d447a5c),
 .CELG(CELG59462),
 .CELPOS(MUDV),
 .CELSUB(CELSUB40948),

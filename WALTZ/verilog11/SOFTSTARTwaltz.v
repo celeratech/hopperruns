@@ -12,7 +12,7 @@ module SOFTSTARTwaltzDEBUG (SS,CELG59462,CELV96848,dft_clock,CELSUB40948,enable_
   output  hijack_enable_softstart;
 endmodule
 
-module SOFTSTARTwaltz8MAIN (SS,REF,MUDV,halfway,CELG59462,CELV96848,dft_clock,CELSUB40948,enable_brick,softstart_1ms,done_softstart,SENSE_G_4c0bef8e,enable_softstart,kelvin_MUDGsoftstart,IP_4c0bef8e_Xoscillator1);
+module SOFTSTARTwaltz8MAIN (SS,REF,MUDV,halfway,CELG59462,CELV96848,dft_clock,CELSUB40948,IP_4c0bef8e,enable_brick,softstart_1ms,done_softstart,SENSE_G_4c0bef8e,enable_softstart,kelvin_MUDGsoftstart);
   output  SS;
   input  REF;
   input  MUDV;
@@ -21,13 +21,13 @@ module SOFTSTARTwaltz8MAIN (SS,REF,MUDV,halfway,CELG59462,CELV96848,dft_clock,CE
   input  CELV96848;
   output  dft_clock;
   input  CELSUB40948;
+  input  IP_4c0bef8e;
   input  enable_brick;
   input  softstart_1ms;
   output  done_softstart;
   input  SENSE_G_4c0bef8e;
   input  enable_softstart;
   input  kelvin_MUDGsoftstart;
-  input  IP_4c0bef8e_Xoscillator1;
 endmodule
 
 //Verilog HDL for "DRM", "drm8" "functional"
@@ -59,7 +59,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SOFTSTARTwaltz (SS, REF, tmi, MUDV, CELG59462, CELV96848, CELSUB40948, enable_brick, done_softstart, SENSE_G_4c0bef8e, enable_softstart, kelvin_MUDGsoftstart, IP_4c0bef8e_Xoscillator1);
+module SOFTSTARTwaltz (SS, REF, tmi, MUDV, CELG59462, CELV96848, CELSUB40948, IP_4c0bef8e, enable_brick, done_softstart, SENSE_G_4c0bef8e, enable_softstart, kelvin_MUDGsoftstart);
 output  SS;
 input  REF;
 inout [4:0] tmi;
@@ -67,12 +67,12 @@ input  MUDV;
 input  CELG59462;
 input  CELV96848;
 input  CELSUB40948;
+input  IP_4c0bef8e;
 input  enable_brick;
 output  done_softstart;
 input  SENSE_G_4c0bef8e;
 input  enable_softstart;
 input  kelvin_MUDGsoftstart;
-input  IP_4c0bef8e_Xoscillator1;
 
 
 // ------------------------ Wires ------------------------
@@ -104,13 +104,13 @@ SOFTSTARTwaltz8MAIN XMAIN8 (
 .CELV96848(CELV96848),
 .dft_clock(net_60),
 .CELSUB40948(CELSUB40948),
+.IP_4c0bef8e(IP_4c0bef8e),
 .enable_brick(net_58),
 .softstart_1ms(SOFTSTARTconfiguration_a2482902_0),
 .done_softstart(done_softstart),
 .SENSE_G_4c0bef8e(SENSE_G_4c0bef8e),
 .enable_softstart(net_59),
-.kelvin_MUDGsoftstart(kelvin_MUDGsoftstart),
-.IP_4c0bef8e_Xoscillator1(IP_4c0bef8e_Xoscillator1)
+.kelvin_MUDGsoftstart(kelvin_MUDGsoftstart)
 );
 
 drm8 drm_hex0x0F (

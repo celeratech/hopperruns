@@ -29,10 +29,10 @@ endmodule
 
 // ------------------------ Module Verilog ---------------
 module SOFTSTARTwaltzDEBUG (SS, CELG59462, CELV96848, dft_clock, CELSUB40948, enable_brick, done_softstart, enable_softstart, hijack_enable_brick, hijack_enable_softstart);
-  input  SS;
+input  SS;
 input  CELG59462;
 input  CELV96848;
-  input  dft_clock;
+input  dft_clock;
 input  CELSUB40948;
 input  enable_brick;
 input  done_softstart;
@@ -46,11 +46,15 @@ output  hijack_enable_softstart;
 // ------------------------ Networks ---------------------
 VESPAdftpulse XU4 (
 .stop(done_softstart),
-.pulse(XU5_no_dft_noconn_pulse),
+.pulse(net_24),
 .start(hijack_enable_softstart),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
+);
+
+STONEnoconn XNC24 (
+.noconn(net_24)
 );
 
 STONEnoconn XNCSS (
@@ -69,10 +73,6 @@ WRAPPER1 XWRAP_27_28 (
 
 STONEnoconn XNCdft_clock (
 .noconn(dft_clock)
-);
-
-STONEnoconn XNCXU5_no_dft_noconn_pulse (
-.noconn(XU5_no_dft_noconn_pulse)
 );
 
 endmodule

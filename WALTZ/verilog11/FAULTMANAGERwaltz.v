@@ -18,7 +18,7 @@ module FAULTMANAGERwaltzDEBUG (CELG59462,CELV96848,fault_run,CELSUB40948,blank_f
   output  hijack_faultmanager_status;
 endmodule
 
-module FAULTMANAGERwaltzMAIN (tmi,MUDV,clock,CELG59462,CELV96848,PORB97836,fault_run,CELBG83021,CELSUB40948,blank_fault,fault_short,mode_hiccup,enable_fault,fault_freeze,hijack_delay,blank_thermal,dft_delaySHORT,hijack_short_status,IP_201f84ba_Xthermal1,hijack_thermal_status,hijack_faultmanager_status);
+module FAULTMANAGERwaltzMAIN (tmi,MUDV,clock,CELG59462,CELV96848,PORB97836,fault_run,CELBG83021,CELSUB40948,IP_201f84ba,blank_fault,fault_short,mode_hiccup,enable_fault,fault_freeze,hijack_delay,blank_thermal,dft_delaySHORT,hijack_short_status,hijack_thermal_status,hijack_faultmanager_status);
   inout [4:0] tmi;
   input  MUDV;
   input  clock;
@@ -28,6 +28,7 @@ module FAULTMANAGERwaltzMAIN (tmi,MUDV,clock,CELG59462,CELV96848,PORB97836,fault
   output  fault_run;
   input  CELBG83021;
   input  CELSUB40948;
+  input  IP_201f84ba;
   input  blank_fault;
   input  fault_short;
   input  mode_hiccup;
@@ -37,7 +38,6 @@ module FAULTMANAGERwaltzMAIN (tmi,MUDV,clock,CELG59462,CELV96848,PORB97836,fault
   input  blank_thermal;
   output  dft_delaySHORT;
   input  hijack_short_status;
-  input  IP_201f84ba_Xthermal1;
   input  hijack_thermal_status;
   input  hijack_faultmanager_status;
 endmodule
@@ -71,7 +71,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module FAULTMANAGERwaltz (tmi, MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELBG83021, CELSUB40948, blank_fault, fault_short, fault_freeze, enable_faultmanager, IP_201f84ba_Xthermal1);
+module FAULTMANAGERwaltz (tmi, MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELBG83021, CELSUB40948, IP_201f84ba, blank_fault, fault_short, fault_freeze, enable_faultmanager);
 inout [4:0] tmi;
 input  MUDV;
 input  clock;
@@ -81,11 +81,11 @@ input  PORB97836;
 output  fault_run;
 input  CELBG83021;
 input  CELSUB40948;
+input  IP_201f84ba;
 input  blank_fault;
 input  fault_short;
 output  fault_freeze;
 input  enable_faultmanager;
-input  IP_201f84ba_Xthermal1;
 
 
 // ------------------------ Wires ------------------------
@@ -124,6 +124,7 @@ FAULTMANAGERwaltzMAIN XMAIN (
 .fault_run(fault_run),
 .CELBG83021(CELBG83021),
 .CELSUB40948(CELSUB40948),
+.IP_201f84ba(IP_201f84ba),
 .blank_fault(net_72),
 .fault_short(net_75),
 .mode_hiccup(FAULTMANAGERconfiguration_277cd7f6_0),
@@ -133,7 +134,6 @@ FAULTMANAGERwaltzMAIN XMAIN (
 .blank_thermal(FAULTMANAGERconfiguration_277cd7f6_1),
 .dft_delaySHORT(net_73),
 .hijack_short_status(net_71),
-.IP_201f84ba_Xthermal1(IP_201f84ba_Xthermal1),
 .hijack_thermal_status(net_70),
 .hijack_faultmanager_status(net_69)
 );

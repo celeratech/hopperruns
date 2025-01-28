@@ -63,6 +63,15 @@ endmodule
 
 
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 //Verilog HDL for "DRM", "drm8" "functional"
 
 
@@ -79,15 +88,6 @@ module drm8 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, drm0, d1, d0 );
   input G;
   inout  [4:0] tmi;
   input SUB;
-endmodule
-
-
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
 endmodule
 
 
@@ -121,20 +121,20 @@ wire [7:0] por0;
 
 // ------------------------ Networks ---------------------
 SEQUENCER1waltz_Rev1_DYES_ XMAIN (
-.OFF(XU54_no_dft_noconn_OFF),
-.RUN(XU61_no_dft_noconn_RUN),
+.OFF(net_102),
+.RUN(net_117),
 .porb(porb),
-.FAULT(XU56_no_dft_noconn_FAULT),
-.ENABLE(XU55_no_dft_noconn_ENABLE),
-.UNDEF4(XU58_no_dft_noconn_UNDEF4),
-.UNDEF5(XU59_no_dft_noconn_UNDEF5),
+.FAULT(net_110),
+.ENABLE(net_107),
+.UNDEF4(net_114),
+.UNDEF5(net_115),
 .ok_clock(ok_clock),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.SOFTSTART(XU57_no_dft_noconn_SOFTSTART),
+.SOFTSTART(net_113),
 .fault_run(fault_run),
 .ok_driver(ok_driver),
-.REGULATION(XU60_no_dft_noconn_REGULATION),
+.REGULATION(net_116),
 .ok_service(ok_service),
 .CELSUB40948(CELSUB40948),
 .blank_fault(blank_fault),
@@ -172,6 +172,38 @@ delayfixed_07168cbb XU23 (
 .CELSUB(CELSUB40948)
 );
 
+STONEnoconn XNC102 (
+.noconn(net_102)
+);
+
+STONEnoconn XNC107 (
+.noconn(net_107)
+);
+
+STONEnoconn XNC110 (
+.noconn(net_110)
+);
+
+STONEnoconn XNC113 (
+.noconn(net_113)
+);
+
+STONEnoconn XNC114 (
+.noconn(net_114)
+);
+
+STONEnoconn XNC115 (
+.noconn(net_115)
+);
+
+STONEnoconn XNC116 (
+.noconn(net_116)
+);
+
+STONEnoconn XNC117 (
+.noconn(net_117)
+);
+
 drm8 drm_hex0x0D (
 .G(CELG59462),
 .V(CELV96848),
@@ -200,38 +232,6 @@ STONEnoconn XNCnoconn_drm8_drm0_6 (
 
 STONEnoconn XNCnoconn_drm8_drm0_7 (
 .noconn(noconn_drm8_drm0_7)
-);
-
-STONEnoconn XNCXU54_no_dft_noconn_OFF (
-.noconn(XU54_no_dft_noconn_OFF)
-);
-
-STONEnoconn XNCXU61_no_dft_noconn_RUN (
-.noconn(XU61_no_dft_noconn_RUN)
-);
-
-STONEnoconn XNCXU56_no_dft_noconn_FAULT (
-.noconn(XU56_no_dft_noconn_FAULT)
-);
-
-STONEnoconn XNCXU55_no_dft_noconn_ENABLE (
-.noconn(XU55_no_dft_noconn_ENABLE)
-);
-
-STONEnoconn XNCXU58_no_dft_noconn_UNDEF4 (
-.noconn(XU58_no_dft_noconn_UNDEF4)
-);
-
-STONEnoconn XNCXU59_no_dft_noconn_UNDEF5 (
-.noconn(XU59_no_dft_noconn_UNDEF5)
-);
-
-STONEnoconn XNCXU57_no_dft_noconn_SOFTSTART (
-.noconn(XU57_no_dft_noconn_SOFTSTART)
-);
-
-STONEnoconn XNCXU60_no_dft_noconn_REGULATION (
-.noconn(XU60_no_dft_noconn_REGULATION)
 );
 
 endmodule
