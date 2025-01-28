@@ -21,15 +21,24 @@ module WRAPPER1 ( o, i );
 endmodule
 
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
 module CAPACITORGOODpugetDEBUG (CELG59462, CELV96848, CELSUB40948, dft_startup, dft_capdetect, dft_risedelay, DFT_CAPREFinput, hijack_CAPGDoutput, enable_capacitorgood, hijack_enable_capacitorgood);
 input  CELG59462;
 input  CELV96848;
 input  CELSUB40948;
-  input  dft_startup;
-  input  dft_capdetect;
-  input  dft_risedelay;
-  input  DFT_CAPREFinput;
+input  dft_startup;
+input  dft_capdetect;
+input  dft_risedelay;
+input  DFT_CAPREFinput;
 output  hijack_CAPGDoutput;
 input  enable_capacitorgood;
 output  hijack_enable_capacitorgood;
@@ -53,6 +62,22 @@ WRAPPER1 XWRAP_22_25 (
 WRAPPER1 XWRAP_23_24 (
 .i(enable_capacitorgood),
 .o(hijack_enable_capacitorgood)
+);
+
+STONEnoconn XNCdft_startup (
+.noconn(dft_startup)
+);
+
+STONEnoconn XNCdft_capdetect (
+.noconn(dft_capdetect)
+);
+
+STONEnoconn XNCdft_risedelay (
+.noconn(dft_risedelay)
+);
+
+STONEnoconn XNCDFT_CAPREFinput (
+.noconn(DFT_CAPREFinput)
 );
 
 endmodule
