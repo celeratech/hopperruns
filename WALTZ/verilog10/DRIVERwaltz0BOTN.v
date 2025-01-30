@@ -248,7 +248,7 @@ currentlimitfet_bdeab8a2 XU3 (
 .enable_currentlimit(enable_driver),
 .global_currentlimit(tl0),
 .measure_currentlimit(botswstatus),
-.tdi_currentlimitlive(noconn_no_dft_tdi_currentlimitlive2),
+.tdi_currentlimitlive(noconn_tdi_currentlimitlive2),
 .ten_measure_currentlimit(tl0)
 );
 
@@ -274,7 +274,7 @@ currentlimitfet_2899e616 XU9 (
 .enable_currentlimit(enable_driver),
 .global_currentlimit(tl0),
 .measure_currentlimit(botswstatus),
-.tdi_currentlimitlive(noconn_no_dft_tdi_currentlimitlive3),
+.tdi_currentlimitlive(noconn_tdi_currentlimitlive3),
 .ten_measure_currentlimit(tl0)
 );
 
@@ -310,7 +310,7 @@ currentlimitfet_282c42a8 XU17 (
 .enable_currentlimit(enable_driver),
 .global_currentlimit(tl0),
 .measure_currentlimit(botswstatus),
-.tdi_currentlimitlive(noconn_no_dft_tdi_currentlimitlive4),
+.tdi_currentlimitlive(noconn_tdi_currentlimitlive4),
 .ten_measure_currentlimit(tl0)
 );
 
@@ -366,16 +366,16 @@ drm24L drm_hex0x06 (
 .lastdrm(a0)
 );
 
-STONEnoconn XNCnoconn_no_dft_tdi_currentlimitlive2 (
-.noconn(noconn_no_dft_tdi_currentlimitlive2)
+STONEnoconn XNCnoconn_tdi_currentlimitlive2 (
+.noconn(noconn_tdi_currentlimitlive2)
 );
 
-STONEnoconn XNCnoconn_no_dft_tdi_currentlimitlive3 (
-.noconn(noconn_no_dft_tdi_currentlimitlive3)
+STONEnoconn XNCnoconn_tdi_currentlimitlive3 (
+.noconn(noconn_tdi_currentlimitlive3)
 );
 
-STONEnoconn XNCnoconn_no_dft_tdi_currentlimitlive4 (
-.noconn(noconn_no_dft_tdi_currentlimitlive4)
+STONEnoconn XNCnoconn_tdi_currentlimitlive4 (
+.noconn(noconn_tdi_currentlimitlive4)
 );
 
 endmodule

@@ -392,7 +392,7 @@ oscillator_d9a22b83 XOSCEXT (
 .SIMPV(MUDV),
 .CELREF(CELREF84329),
 .CELSUB(CELSUB40948),
-.tdi_osc(noconn_no_dft_tdi_osc1),
+.tdi_osc(noconn_tdi_osc1),
 .ten_osc(tl0),
 .CELFORCE_RF(FSET),
 .CELSENSE_RF(CELSENSE_RF),
@@ -451,8 +451,8 @@ ESDminiClamp6 XCLAMP_XU24_IN (
 .SUB(CELSUB40948)
 );
 
-STONEnoconn XNCnoconn_no_dft_tdi_osc1 (
-.noconn(noconn_no_dft_tdi_osc1)
+STONEnoconn XNCnoconn_tdi_osc1 (
+.noconn(noconn_tdi_osc1)
 );
 
 endmodule

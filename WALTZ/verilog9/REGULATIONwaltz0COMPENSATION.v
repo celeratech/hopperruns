@@ -160,7 +160,7 @@ capacitorfixed_cbed1b77 XU27 (
 );
 
 capacitoradj_739bba44 XCZCOMP (
-.CN(kelvin_MUDG),
+.CN(net_29),
 .CP(net_87),
 .CELG(CELG59462),
 .CELV(CELV96848),

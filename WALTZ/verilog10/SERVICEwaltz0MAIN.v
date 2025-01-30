@@ -306,10 +306,10 @@ reference_4fa591be XU4 (
 .CELBG(CELBG83021),
 .SIMPV(VCC),
 .CELSUB(CELSUB40948),
-.TAI_REF(noconn_no_dft_TAI_REF8),
+.TAI_REF(noconn_TAI_REF8),
 .ten_ref(tl0),
 .trim_ref({trim_ref_553d3e5b_5,trim_ref_553d3e5b_4,trim_ref_553d3e5b_3,trim_ref_553d3e5b_2,trim_ref_553d3e5b_1,trim_ref_553d3e5b_0}),
-.TAI_REFBG(noconn_no_dft_TAI_REFBG9),
+.TAI_REFBG(noconn_TAI_REFBG9),
 .ten_refbg(tl0),
 .trim_refbg({trim_refbg_553d3e5b_6,trim_refbg_553d3e5b_5,trim_refbg_553d3e5b_4,trim_refbg_553d3e5b_3,trim_refbg_553d3e5b_2,trim_refbg_553d3e5b_1,trim_refbg_553d3e5b_0}),
 .ok_reference(ok_reference),
@@ -362,8 +362,8 @@ vbias_06fccf36 Xvbias1 (
 .VBIAS(VCC),
 .CELSUB(CELSUB40948),
 .ok_vbias(net_83),
-.TAI_VBIAS(noconn_no_dft_TAI_VBIAS10),
-.tdi_vbias(noconn_no_dft_tdi_vbias11),
+.TAI_VBIAS(noconn_TAI_VBIAS10),
+.tdi_vbias(noconn_tdi_vbias11),
 .ten_taiv2v5(tl0),
 .global_vbias(tl0),
 .ten_taiv1v0f(tl0),
@@ -415,6 +415,22 @@ WRAPPER1 XWRAP_CELREF (
 .o(CELREF84329)
 );
 
+STONEnoconn XNCnoconn_TAI_REF8 (
+.noconn(noconn_TAI_REF8)
+);
+
+STONEnoconn XNCnoconn_TAI_REFBG9 (
+.noconn(noconn_TAI_REFBG9)
+);
+
+STONEnoconn XNCnoconn_TAI_VBIAS10 (
+.noconn(noconn_TAI_VBIAS10)
+);
+
+STONEnoconn XNCnoconn_tdi_vbias11 (
+.noconn(noconn_tdi_vbias11)
+);
+
 STONEnoconn XNCnoconn_drm56_drm0_6 (
 .noconn(noconn_drm56_drm0_6)
 );
@@ -449,22 +465,6 @@ STONEnoconn XNCnoconn_drm56_drm3_6 (
 
 STONEnoconn XNCnoconn_drm56_drm3_7 (
 .noconn(noconn_drm56_drm3_7)
-);
-
-STONEnoconn XNCnoconn_no_dft_TAI_REF8 (
-.noconn(noconn_no_dft_TAI_REF8)
-);
-
-STONEnoconn XNCnoconn_no_dft_TAI_REFBG9 (
-.noconn(noconn_no_dft_TAI_REFBG9)
-);
-
-STONEnoconn XNCnoconn_no_dft_TAI_VBIAS10 (
-.noconn(noconn_no_dft_TAI_VBIAS10)
-);
-
-STONEnoconn XNCnoconn_no_dft_tdi_vbias11 (
-.noconn(noconn_no_dft_tdi_vbias11)
 );
 
 endmodule

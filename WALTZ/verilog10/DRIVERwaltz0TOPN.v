@@ -256,7 +256,7 @@ currentlimitfet_e27944c0 XU2 (
 .trim_currentlimit({trim_currentlimit_98fa5525_7,trim_currentlimit_98fa5525_6,trim_currentlimit_98fa5525_5,trim_currentlimit_98fa5525_4,trim_currentlimit_98fa5525_3,trim_currentlimit_98fa5525_2,trim_currentlimit_98fa5525_1,trim_currentlimit_98fa5525_0}),
 .enable_currentlimit(enable),
 .measure_currentlimit(net_104),
-.tdi_currentlimitlive(noconn_no_dft_tdi_currentlimitlive5),
+.tdi_currentlimitlive(noconn_tdi_currentlimitlive5),
 .ten_measure_currentlimit(tl0),
 .factory_currentlimit_blanking({factory_currentlimit_blanking_98fa5525_4,factory_currentlimit_blanking_98fa5525_3,factory_currentlimit_blanking_98fa5525_2,factory_currentlimit_blanking_98fa5525_1,factory_currentlimit_blanking_98fa5525_0})
 );
@@ -303,7 +303,7 @@ slopecomp_00a4cb3c XU22 (
 .CELSUB(CELSUB40948),
 .ISLOPECOMP(net_107),
 .ok_slopecomp(net_106),
-.TAI_ISLOPECOMP(noconn_no_dft_TAI_ISLOPECOMP6),
+.TAI_ISLOPECOMP(noconn_TAI_ISLOPECOMP6),
 .trim_slopecomp({trim_slopecomp_f4252e65_3,trim_slopecomp_f4252e65_2,trim_slopecomp_f4252e65_1,trim_slopecomp_f4252e65_0}),
 .enable_slopecomp(enable),
 .global_slopecomp(tl0),
@@ -377,12 +377,12 @@ STONEnoconn XNCnoconn_drm24_drm2_7 (
 .noconn(noconn_drm24_drm2_7)
 );
 
-STONEnoconn XNCnoconn_no_dft_TAI_ISLOPECOMP6 (
-.noconn(noconn_no_dft_TAI_ISLOPECOMP6)
+STONEnoconn XNCnoconn_TAI_ISLOPECOMP6 (
+.noconn(noconn_TAI_ISLOPECOMP6)
 );
 
-STONEnoconn XNCnoconn_no_dft_tdi_currentlimitlive5 (
-.noconn(noconn_no_dft_tdi_currentlimitlive5)
+STONEnoconn XNCnoconn_tdi_currentlimitlive5 (
+.noconn(noconn_tdi_currentlimitlive5)
 );
 
 endmodule

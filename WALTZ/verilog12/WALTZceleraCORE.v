@@ -227,7 +227,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module WALTZceleraCORE (EN, FB, IN, SW, BST, GND, PIN, POK, VCC, tmi, BIAS, FSET, PGND, PVCC, SYNC, sense_FB, CELG59462, CELV96848, PORB97836, kelvin_VCC, CELSENSE_RF, CELSUB40948, SENSE_G_4c0bef8e, kelvin_GNDservice, kelvin_GNDpowergood, kelvin_GNDsoftstart, kelvin_GNDregulation, celkelvin_IN_bc3b7675, celkelvin_GND_73ebd82d, celkelvin_GND_bb7e77f4, celkelvin_GND_d75c3f7f, celkelvin_VCC_bc3b7675, celkelvin_BIAS_bc3b7675);
+module WALTZceleraCORE (EN, FB, IN, SW, BST, GND, PIN, POK, TAO, VCC, tmi, BIAS, FSET, PGND, PVCC, SYNC, sense_FB, CELG59462, CELV96848, PORB97836, kelvin_VCC, CELSENSE_RF, CELSUB40948, SENSE_G_4c0bef8e, kelvin_GNDservice, kelvin_GNDpowergood, kelvin_GNDsoftstart, kelvin_GNDregulation, celkelvin_IN_bc3b7675, celkelvin_GND_73ebd82d, celkelvin_GND_bb7e77f4, celkelvin_GND_d75c3f7f, celkelvin_VCC_bc3b7675, celkelvin_BIAS_bc3b7675);
 input  EN;
 inout  FB;
 input  IN;
@@ -236,6 +236,7 @@ input  BST;
 inout  GND;
 inout  PIN;
 inout  POK;
+inout  TAO;
 output  VCC;
 inout [4:0] tmi;
 input  BIAS;
@@ -460,12 +461,21 @@ SOFTSTARTwaltz XSOFTSTART (
 .kelvin_MUDGsoftstart(kelvin_GNDsoftstart)
 );
 
+STONEnoconn XNCTAO (
+.noconn(TAO)
+);
+
+STONEnoconn XNCtmi (
+.noconn(tmi)
+);
+
 STONEnoconn XNCnoconn (
 .noconn(noconn)
 );
 
 CELERAservice XceleraSERVICE (
 .IPO({IP_14d08c8e,IP_201f84ba,IP_2d447a5c,IP_4215aede,IP_4c0bef8e,IP_5c7dff44,IP_70e67769,IP_75c89176,IP_866ca25c,IP_90c263a6,IP_a0afb596,IP_b8eb1a18,IP_ddbf938d,IP_e44d2b4d,IP_e96a4067,IP_f4252e65}),
+.TAO(TAO),
 .tmi(tmi[4:0]),
 .CELG(CELG59462),
 .CELV(CELV96848),

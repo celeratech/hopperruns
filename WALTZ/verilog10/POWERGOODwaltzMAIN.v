@@ -383,7 +383,7 @@ padopendrain_ff7ffa6a XU4 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.tdi_padopendrain(noconn_no_dft_tdi_padopendrain7),
+.tdi_padopendrain(noconn_tdi_padopendrain7),
 .ten_padopendrain(tl0),
 .input_padopendrain(net_150)
 );
@@ -518,8 +518,8 @@ ESDminiClamp6 XCLAMP_XU22_INN_COMPARATOR (
 .SUB(CELSUB40948)
 );
 
-STONEnoconn XNCnoconn_no_dft_tdi_padopendrain7 (
-.noconn(noconn_no_dft_tdi_padopendrain7)
+STONEnoconn XNCnoconn_tdi_padopendrain7 (
+.noconn(noconn_tdi_padopendrain7)
 );
 
 endmodule
