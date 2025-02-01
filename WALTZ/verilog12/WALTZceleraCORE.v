@@ -460,6 +460,10 @@ SOFTSTARTwaltz XSOFTSTART (
 .kelvin_MUDGsoftstart(kelvin_GNDsoftstart)
 );
 
+STONEnoconn XNCTAO (
+.noconn(TAO)
+);
+
 STONEnoconn XNCnoconn (
 .noconn(noconn)
 );
