@@ -92,15 +92,6 @@ module pad_WALTZ_VCC (VCC,GESD,PVCC,VOTP,CELV96848,kelvin_VCC,celkelvin_VCC_9893
   output  celkelvin_VCC_bc3b7675;
 endmodule
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
 //Verilog HDL for "Generate", "CELERAid" "functional"
 
 
@@ -258,10 +249,6 @@ pad_WALTZ_VCC XVCC (
 .kelvin_VCC(kelvin_VCC),
 .celkelvin_VCC_9893c918(celkelvin_VCC_9893c918),
 .celkelvin_VCC_bc3b7675(celkelvin_VCC_bc3b7675)
-);
-
-STONEnoconn XNCtmi (
-.noconn(tmi)
 );
 
 CELERAid XCHIPid (
