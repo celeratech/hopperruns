@@ -163,48 +163,6 @@ placeROUTE
 endlayoutbio
 //**********************************************
 //Project Parameters
-//Celera:WALTZ Project Bio
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////   default.bio'  DO NOT USE  ///////////////////////////////////
-
-//Simplis Project Parameters /////////////////////////////////////////////
-#define,Project,TBD
-#define,PROJECTreference,0.9
-#define,PROJECTsupply,4.5
-#define,TaRoom,25
-#define,ground,0.0
-#define,leveloffset,5
-//////////////////////////////////////////////////////////////////////////////////////////
-
-//Porcess  Parameters ///////////////////////////////////////////////////////
-#define,PROJECTbg,1.232
-#define,REFERENCEccpcode,15
-#define,REFERENCEccncode,15
-#define,HVNPN2A_5vbe,0.55
-#define,HVNPN2A_5vbetc,-2.1
-#define,VTNnch5i,0.72
-//#define,FETNcalculator_option,typical
-#define,FETNcalculator,maximum
-//#define,FETPcalculator_option,typical
-#define,FETPcalculator,maximum
-////////////////////////////////////////////////////////////////////////////////////////
-
-//Global Parameters ///////////////////////////////////////////////////////
-#define,CELVminimum,2.0
-#define,CELGabsmax,0.3
-#define,CELGabsmin,-0.3
-#define,SUBabsmax,0.3
-#define,SUBabsmin,-0.3
-#define,CELSUBabsmax,0.3
-#define,CELSUBabsmin,-0.3
-/////////////////////////////////////////////////////////////////////////////////////////
-
-//layout Parameters //////////////////////////////////////////////////////////
-#define MODULEdiesizefill 10
-//Percentage of area added to module for routing
-////////////////////////////////////////////////////////////////////////////////////////
-
-
 //**********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
@@ -300,7 +258,8 @@ pinname,CP
 definition,CP,Positive Capacitor connection
 iq,CP,SIMULATION
 absmax,CP,6
-absmin,CP,-0.3
+absmin,CP,CN,CN,RTN
+
 io,CP,inout
 mode,CP,analog
 router,CP,TBD
@@ -312,7 +271,8 @@ pinname,CN
 definition,CN,Negative Capacitor connection
 iq,CN,SIMULATION
 absmax,CN,6
-absmin,CN,-0.3
+absmin,CN,CN,CN,RTN
+
 io,CN,inout
 mode,CN,analog
 router,CN,TBD
@@ -325,7 +285,8 @@ pinname,capacitoradjust
 definition,capacitoradjust,Capacitor adjust control
 iq,capacitoradjust,SIMULATION
 absmax,capacitoradjust,6
-absmin,capacitoradjust,-0.3
+absmin,capacitoradjust,CN,CN,RTN
+
 io,capacitoradjust,input
 mode,capacitoradjust,digital
 router,capacitoradjust,TBD
@@ -348,8 +309,10 @@ esd,CELV,TBD
 pinname,CELG
 definition,CELG,Capacitor Trim Ground
 iq,CELG,SIMULATION
-absmax,CELG,0.3
-absmin,CELG,-0.3
+absmax,CELG,////////////////////////////////////////
+
+absmin,CELG,CN,CN,RTN
+
 io,CELG,power
 mode,CELG,power
 router,CELG,TBD
@@ -364,8 +327,8 @@ esd,CELG,TBD
 pinname,CELSUB
 definition,CELSUB,CELSUB Substrate connection
 iq,CELSUB,SIMULATION
-absmax,CELSUB,0.3
-absmin,CELSUB,-0.3
+absmax,CELSUB,
+absmin,CELSUB,
 io,CELSUB,input
 mode,CELSUB,power
 router,CELSUB,TBD

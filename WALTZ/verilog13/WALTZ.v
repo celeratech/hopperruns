@@ -167,7 +167,7 @@ WALTZceleraRING XceleraRING (
 .PIN(PIN),
 .POK(POK),
 .VCC(VCC),
-.tmi(tmi[5:0]),
+.tmi(>[5:0]),
 .BIAS(BIAS),
 .FSET(FSET),
 .GOTP(GOTP),
