@@ -1,7 +1,6 @@
 // Celera Brick Generator Confidential
 //CORE:SINGLEpowerFET P
-//NAME:fet_fet_fetdrive#define,PROJECTbg,1.232
-
+//NAME:fet_fet_fetdriver_e53ed485_Xpmos0_Xfet
 //GENERATOR REVISION:0.4.0
 //FET TYPE:p
 //ON RESISTANCE:8.000 Ohms
@@ -23,15 +22,13 @@ module ap5g6dw1_5t_69p1x0p2x16p0x1p0 (DRAIN,GATE,SOURCE,BULK,SUB);
   inout DRAIN;
 endmodule
 
-//Celera Confidential Do Not Copy fet_fet_fetdrive#define,PROJECTbg,1.232
-
+//Celera Confidential Do Not Copy fet_fet_fetdriver_e53ed485_Xpmos0_Xfet
 //Celera Confidential Symbol Generator
 //power PMOS:Ron:8.000 Ohm
 //Vgs 6V Vds 6V
 //Kelvin:no
 
-module fet_fet_fetdrive#define,PROJECTbg,1.232
- (GATE,SOURCE,DRAIN,PMOSiso6,SUB);
+module fet_fet_fetdriver_e53ed485_Xpmos0_Xfet (GATE,SOURCE,DRAIN,PMOSiso6,SUB);
 input GATE;
 inout SOURCE;
 inout DRAIN;

@@ -89,7 +89,7 @@ module FAULTMANAGERwaltz (tmi,MUDV,clock,CELG59462,CELV96848,PORB97836,fault_run
   input  enable_faultmanager;
 endmodule
 
-module POWERGOODwaltz (POK,MUDV,clock,sense_FB,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_70e67769,IP_e96a4067,fault_short,REF_POWERGOOD,enable_powergood,kelvin_MUDGpowergood);
+module POWERGOODwaltz (POK,MUDV,clock,sense_FB,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_70e67769,IP_ddbf938d,IP_e96a4067,fault_short,REF_POWERGOOD,enable_powergood,kelvin_MUDGpowergood);
   inout  POK;
   input  MUDV;
   input  clock;
@@ -99,6 +99,7 @@ module POWERGOODwaltz (POK,MUDV,clock,sense_FB,CELG59462,CELV96848,PORB97836,CEL
   input  PORB97836;
   input  CELSUB40948;
   input  IP_70e67769;
+  input  IP_ddbf938d;
   input  IP_e96a4067;
   output  fault_short;
   input  REF_POWERGOOD;
@@ -106,17 +107,16 @@ module POWERGOODwaltz (POK,MUDV,clock,sense_FB,CELG59462,CELV96848,PORB97836,CEL
   inout  kelvin_MUDGpowergood;
 endmodule
 
-module REGULATIONwaltz (tmi,MUDG,MUDV,CELG59462,CELV96848,go_driver,CELREF84329,CELSUB40948,IP_4215aede,IP_5c7dff44,IP_866ca25c,IP_b8eb1a18,IP_e44d2b4d,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,enable_regulation);
+module REGULATIONwaltz (tmi,MUDG,MUDV,CELG59462,CELV96848,go_driver,CELREF84329,CELSUB40948,IP_4215aede,IP_866ca25c,IP_b8eb1a18,IP_e44d2b4d,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,enable_regulation);
   inout [4:0] tmi;
   inout  MUDG;
   input  MUDV;
   input  CELG59462;
   input  CELV96848;
-  output  go_driver;
+  input  go_driver;
   input  CELREF84329;
   input  CELSUB40948;
   input  IP_4215aede;
-  input  IP_5c7dff44;
   input  IP_866ca25c;
   input  IP_b8eb1a18;
   input  IP_e44d2b4d;
@@ -367,6 +367,7 @@ POWERGOODwaltz XPOWERGOOD (
 .PORB97836(PORB97836),
 .CELSUB40948(CELSUB40948),
 .IP_70e67769(IP_70e67769),
+.IP_ddbf938d(IP_ddbf938d),
 .IP_e96a4067(IP_e96a4067),
 .fault_short(net_195),
 .REF_POWERGOOD(net_183),
@@ -384,7 +385,6 @@ REGULATIONwaltz XREGULATION (
 .CELREF84329(CELREF84329),
 .CELSUB40948(CELSUB40948),
 .IP_4215aede(IP_4215aede),
-.IP_5c7dff44(IP_5c7dff44),
 .IP_866ca25c(IP_866ca25c),
 .IP_b8eb1a18(IP_b8eb1a18),
 .IP_e44d2b4d(IP_e44d2b4d),
@@ -467,8 +467,8 @@ STONEnoconn XNCnoconn (
 );
 
 CELERAservice XceleraSERVICE (
-.IPO({IP_14d08c8e,IP_201f84ba,IP_2d447a5c,IP_4215aede,IP_4c0bef8e,IP_5c7dff44,IP_70e67769,IP_75c89176,IP_866ca25c,IP_90c263a6,IP_a0afb596,IP_b8eb1a18,IP_e44d2b4d,IP_e96a4067,IP_f4252e65}),
-.TAO(TBD_XWALTZ_XceleraCORE_XceleraSERVICE_TAO),
+.IPO({IP_14d08c8e,IP_201f84ba,IP_2d447a5c,IP_4215aede,IP_4c0bef8e,IP_70e67769,IP_75c89176,IP_866ca25c,IP_90c263a6,IP_a0afb596,IP_b8eb1a18,IP_ddbf938d,IP_e44d2b4d,IP_e96a4067,IP_f4252e65}),
+.TAO(TAO),
 .tmi(tmi[4:0]),
 .CELG(CELG59462),
 .CELV(CELV96848),

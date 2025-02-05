@@ -15,7 +15,7 @@ module POWERGOODwaltDEBUG (CELG59462,CELV96848,dft_pgout,CELSUB40948,dft_pgDELAY
   output  hijack_enable_powergood;
 endmodule
 
-module POWERGOODwaltzMAIN (POK,MUDV,clock,sense_FB,CELG59462,CELV96848,PORB97836,dft_pgout,CELSUB40948,IP_70e67769,IP_e96a4067,dft_pgDELAY,fault_short,REF_POWERGOOD,dft_REFBUFFER,dft_pgSTARTUP,dft_pgDEGLITCH,dft_shortdelay,enable_powergood,hijack_risedelay,kelvin_MUDGpowergood);
+module POWERGOODwaltzMAIN (POK,MUDV,clock,sense_FB,CELG59462,CELV96848,PORB97836,dft_pgout,CELSUB40948,IP_70e67769,IP_ddbf938d,IP_e96a4067,dft_pgDELAY,fault_short,REF_POWERGOOD,dft_REFBUFFER,dft_pgSTARTUP,dft_pgDEGLITCH,dft_shortdelay,enable_powergood,hijack_risedelay,kelvin_MUDGpowergood);
   inout  POK;
   input  MUDV;
   input  clock;
@@ -26,6 +26,7 @@ module POWERGOODwaltzMAIN (POK,MUDV,clock,sense_FB,CELG59462,CELV96848,PORB97836
   output  dft_pgout;
   input  CELSUB40948;
   input  IP_70e67769;
+  input  IP_ddbf938d;
   input  IP_e96a4067;
   output  dft_pgDELAY;
   output  fault_short;
@@ -40,7 +41,7 @@ module POWERGOODwaltzMAIN (POK,MUDV,clock,sense_FB,CELG59462,CELV96848,PORB97836
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module POWERGOODwaltz (POK, MUDV, clock, sense_FB, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_70e67769, IP_e96a4067, fault_short, REF_POWERGOOD, enable_powergood, kelvin_MUDGpowergood);
+module POWERGOODwaltz (POK, MUDV, clock, sense_FB, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_70e67769, IP_ddbf938d, IP_e96a4067, fault_short, REF_POWERGOOD, enable_powergood, kelvin_MUDGpowergood);
 inout  POK;
 input  MUDV;
 input  clock;
@@ -50,6 +51,7 @@ input  CELV96848;
 input  PORB97836;
 input  CELSUB40948;
 input  IP_70e67769;
+input  IP_ddbf938d;
 input  IP_e96a4067;
 output  fault_short;
 input  REF_POWERGOOD;
@@ -87,6 +89,7 @@ POWERGOODwaltzMAIN XMAIN (
 .dft_pgout(net_54),
 .CELSUB40948(CELSUB40948),
 .IP_70e67769(IP_70e67769),
+.IP_ddbf938d(IP_ddbf938d),
 .IP_e96a4067(IP_e96a4067),
 .dft_pgDELAY(net_55),
 .fault_short(fault_short),

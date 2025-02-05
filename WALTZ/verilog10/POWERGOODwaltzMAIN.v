@@ -193,8 +193,26 @@ endmodule
 
 
 
-module comparatornoctlpins_370523ee ();
+//Celera:comparatornoctlpins_370523ee
+//Celera Confidential Symbol Generator
+//Type p Hysteris Mode:fixed 50mV Hysteresis,Edge rising with deglitch
+//Low IQ:no DFT:no
+module comparatornoctlpins_370523ee (enable_comparator,IP,out_comparator,INP_COMPARATOR,
+INN_COMPARATOR,SIMPV,global_comparator,ok_comparator,
+CELG,CELSUB);
+input SIMPV;
+input enable_comparator;
+input global_comparator;
+input IP;
+input INP_COMPARATOR;
+input INN_COMPARATOR;
+output out_comparator;
+input CELG;
+input CELSUB;
+output ok_comparator;
 endmodule
+
+
 
 //Celera:dbuf_e926e395
 //Celera Confidential Symbol Generator
@@ -244,7 +262,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module POWERGOODwaltzMAIN (POK, MUDV, clock, sense_FB, CELG59462, CELV96848, PORB97836, dft_pgout, CELSUB40948, IP_70e67769, IP_e96a4067, dft_pgDELAY, fault_short, REF_POWERGOOD, dft_REFBUFFER, dft_pgSTARTUP, dft_pgDEGLITCH, dft_shortdelay, enable_powergood, hijack_risedelay, kelvin_MUDGpowergood);
+module POWERGOODwaltzMAIN (POK, MUDV, clock, sense_FB, CELG59462, CELV96848, PORB97836, dft_pgout, CELSUB40948, IP_70e67769, IP_ddbf938d, IP_e96a4067, dft_pgDELAY, fault_short, REF_POWERGOOD, dft_REFBUFFER, dft_pgSTARTUP, dft_pgDEGLITCH, dft_shortdelay, enable_powergood, hijack_risedelay, kelvin_MUDGpowergood);
 inout  POK;
 input  MUDV;
 input  clock;
@@ -255,6 +273,7 @@ input  PORB97836;
 output  dft_pgout;
 input  CELSUB40948;
 input  IP_70e67769;
+input  IP_ddbf938d;
 input  IP_e96a4067;
 output  dft_pgDELAY;
 output  fault_short;
@@ -445,7 +464,16 @@ delayfixed_00a6f48f XU21 (
 );
 
 comparatornoctlpins_370523ee XU22 (
-
+.IP(IP_ddbf938d),
+.CELG(CELG59462),
+.SIMPV(MUDV),
+.CELSUB(CELSUB40948),
+.ok_comparator(net_152),
+.INN_COMPARATOR(clamp_XU22_137),
+.INP_COMPARATOR(net_158),
+.out_comparator(net_159),
+.enable_comparator(enable_powergood),
+.global_comparator(tl0)
 );
 
 delayclock_ab9af190 XU23 (
@@ -478,6 +506,14 @@ ESDminiClamp6 XCLAMP_XU3_INP_COMPARATOR (
 .G(CELG59462),
 .I(sense_FB),
 .O(clamp_XU3_137),
+.V(CELV96848),
+.SUB(CELSUB40948)
+);
+
+ESDminiClamp6 XCLAMP_XU22_INN_COMPARATOR (
+.G(CELG59462),
+.I(sense_FB),
+.O(clamp_XU22_137),
 .V(CELV96848),
 .SUB(CELSUB40948)
 );

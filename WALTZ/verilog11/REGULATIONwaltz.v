@@ -16,7 +16,7 @@ module REGULATIONwaltz0DEBUG (VC,tmi,REFINT,CELG59462,CELV96848,go_driver,CELSUB
   output  hijack_enable_regulation;
 endmodule
 
-module REGULATIONwaltz0MAIN (VC,tmi,MUDG,MUDV,REFINT,CELG59462,CELV96848,go_driver,CELREF84329,CELSUB40948,IP_4215aede,IP_5c7dff44,IP_866ca25c,IP_b8eb1a18,IP_e44d2b4d,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,enable_regulation);
+module REGULATIONwaltz0MAIN (VC,tmi,MUDG,MUDV,REFINT,CELG59462,CELV96848,go_driver,CELREF84329,CELSUB40948,IP_4215aede,IP_866ca25c,IP_b8eb1a18,IP_e44d2b4d,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,enable_regulation);
   inout  VC;
   inout [4:0] tmi;
   inout  MUDG;
@@ -24,11 +24,10 @@ module REGULATIONwaltz0MAIN (VC,tmi,MUDG,MUDV,REFINT,CELG59462,CELV96848,go_driv
   inout  REFINT;
   input  CELG59462;
   input  CELV96848;
-  output  go_driver;
+  input  go_driver;
   input  CELREF84329;
   input  CELSUB40948;
   input  IP_4215aede;
-  input  IP_5c7dff44;
   input  IP_866ca25c;
   input  IP_b8eb1a18;
   input  IP_e44d2b4d;
@@ -42,17 +41,16 @@ module REGULATIONwaltz0MAIN (VC,tmi,MUDG,MUDV,REFINT,CELG59462,CELV96848,go_driv
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltz (tmi, MUDG, MUDV, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IP_4215aede, IP_5c7dff44, IP_866ca25c, IP_b8eb1a18, IP_e44d2b4d, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, enable_regulation);
+module REGULATIONwaltz (tmi, MUDG, MUDV, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IP_4215aede, IP_866ca25c, IP_b8eb1a18, IP_e44d2b4d, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, enable_regulation);
 inout [4:0] tmi;
 inout  MUDG;
 input  MUDV;
 input  CELG59462;
 input  CELV96848;
-output  go_driver;
+input  go_driver;
 input  CELREF84329;
 input  CELSUB40948;
 input  IP_4215aede;
-input  IP_5c7dff44;
 input  IP_866ca25c;
 input  IP_b8eb1a18;
 input  IP_e44d2b4d;
@@ -98,7 +96,6 @@ REGULATIONwaltz0MAIN XMAIN (
 .CELREF84329(CELREF84329),
 .CELSUB40948(CELSUB40948),
 .IP_4215aede(IP_4215aede),
-.IP_5c7dff44(IP_5c7dff44),
 .IP_866ca25c(IP_866ca25c),
 .IP_b8eb1a18(IP_b8eb1a18),
 .IP_e44d2b4d(IP_e44d2b4d),

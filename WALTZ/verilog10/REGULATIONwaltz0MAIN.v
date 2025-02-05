@@ -79,27 +79,8 @@ endmodule
 
 
 
-//Celera:comparatornoctlpins_1b4420c5
-//Celera Confidential Symbol Generator
-//Type p Hysteris Mode:factory 20mV Hysteresis,Edge rising without deglitch
-//Low IQ:no DFT:no
-module comparatornoctlpins_1b4420c5 (enable_comparator,IP,out_comparator,INP_COMPARATOR,
-INN_COMPARATOR,SIMPV,global_comparator,ok_comparator,
-factory_hyst_comparator, CELG,CELSUB);
-input SIMPV;
-input enable_comparator;
-input global_comparator;
-input IP;
-input INP_COMPARATOR;
-input INN_COMPARATOR;
-output out_comparator;
-input CELG;
-input CELSUB;
-output ok_comparator;
-input [1:0] factory_hyst_comparator;
+module comparatornoctlpins_1b4420c5 ();
 endmodule
-
-
 
 //Celera:switchideal_c21fcc50
 //Celera Confidential Symbol Generator
@@ -179,29 +160,22 @@ module PEBBLEtielo ( q, G, SUB, V );
 endmodule
 
 
-//Verilog HDL for "DRM", "drm48" "functional"
+//Verilog HDL for "DRM", "drm40L" "functional"
 
 
-module drm48 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, por1, por2, por3,
-por4, por5, drm0, drm1, drm2, drm3, drm4, drm5, d1, d0 );
+module drm40L ( V, G, SUB, tmi, bypload, lastdrm, id, drm0, drm1, drm2, drm3,
+drm4, d1, d0 );
 
   output  [7:0] drm4;
   input lastdrm;
   input V;
   output d1;
-  input  [7:0] por3;
   output  [7:0] drm3;
-  input  [7:0] por5;
   input  [7:0] id;
   output d0;
-  output  [7:0] drm5;
   output  [7:0] drm2;
-  input  [7:0] por2;
-  input  [7:0] por1;
-  input  [7:0] por4;
   input bypload;
   output  [7:0] drm0;
-  input  [7:0] por0;
   input G;
   output  [7:0] drm1;
   inout  [4:0] tmi;
@@ -232,7 +206,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltz0MAIN (VC, tmi, MUDG, MUDV, REFINT, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IP_4215aede, IP_5c7dff44, IP_866ca25c, IP_b8eb1a18, IP_e44d2b4d, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, enable_regulation);
+module REGULATIONwaltz0MAIN (VC, tmi, MUDG, MUDV, REFINT, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IP_4215aede, IP_866ca25c, IP_b8eb1a18, IP_e44d2b4d, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, enable_regulation);
 inout  VC;
 inout [4:0] tmi;
 inout  MUDG;
@@ -240,11 +214,10 @@ input  MUDV;
 inout  REFINT;
 input  CELG59462;
 input  CELV96848;
-output  go_driver;
+  input  go_driver;
 input  CELREF84329;
 input  CELSUB40948;
 input  IP_4215aede;
-input  IP_5c7dff44;
 input  IP_866ca25c;
 input  IP_b8eb1a18;
 input  IP_e44d2b4d;
@@ -262,7 +235,6 @@ wire [4:0] tmi;
 wire [7:0] trim_clamp;
 wire [6:0] trim_vbuffer_negative;
 wire [6:0] trim_vbuffer_positive;
-wire [1:0] factory_hyst_comparator;
 wire [6:0] trim_gm_negative;
 wire [6:0] trim_gm_positive;
 wire [7:0] id;
@@ -271,13 +243,6 @@ wire [7:0] drm1;
 wire [7:0] drm2;
 wire [7:0] drm3;
 wire [7:0] drm4;
-wire [7:0] drm5;
-wire [7:0] por0;
-wire [7:0] por1;
-wire [7:0] por2;
-wire [7:0] por3;
-wire [7:0] por4;
-wire [7:0] por5;
 
 // ------------------------ Networks ---------------------
 REGULATIONwaltz0COMPENSATION XCOMPENSATION (
@@ -340,17 +305,7 @@ vbuffer_602daa59 XU9 (
 );
 
 comparatornoctlpins_1b4420c5 XU10 (
-.IP(IP_5c7dff44),
-.CELG(CELG59462),
-.SIMPV(MUDV),
-.CELSUB(CELSUB40948),
-.ok_comparator(net_97),
-.INN_COMPARATOR(net_93),
-.INP_COMPARATOR(VC),
-.out_comparator(go_driver),
-.enable_comparator(net_94),
-.global_comparator(tl0),
-.factory_hyst_comparator({factory_hyst_comparator_5c7dff44_1,factory_hyst_comparator_5c7dff44_0})
+
 );
 
 switchideal_c21fcc50 XU11 (
@@ -397,7 +352,7 @@ PEBBLEtielo XtieLo (
 .SUB(CELSUB40948)
 );
 
-drm48 drm_hex0x0C (
+drm40L drm_hex0x0C (
 .G(CELG59462),
 .V(CELV96848),
 .d0(a0),
@@ -405,18 +360,11 @@ drm48 drm_hex0x0C (
 .id({a0,a0,a0,a0,a1,a1,a0,a0}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm48_drm0_7,noconn_drm48_drm0_6,noconn_drm48_drm0_5,noconn_drm48_drm0_4,noconn_drm48_drm0_3,noconn_drm48_drm0_2,factory_hyst_comparator_5c7dff44_1,factory_hyst_comparator_5c7dff44_0}),
-.drm1({trim_clamp_b8eb1a18_7,trim_clamp_b8eb1a18_6,trim_clamp_b8eb1a18_5,trim_clamp_b8eb1a18_4,trim_clamp_b8eb1a18_3,trim_clamp_b8eb1a18_2,trim_clamp_b8eb1a18_1,trim_clamp_b8eb1a18_0}),
-.drm2({noconn_drm48_drm2_7,trim_vbuffer_negative_866ca25c_6,trim_vbuffer_negative_866ca25c_5,trim_vbuffer_negative_866ca25c_4,trim_vbuffer_negative_866ca25c_3,trim_vbuffer_negative_866ca25c_2,trim_vbuffer_negative_866ca25c_1,trim_vbuffer_negative_866ca25c_0}),
-.drm3({noconn_drm48_drm3_7,trim_vbuffer_positive_866ca25c_6,trim_vbuffer_positive_866ca25c_5,trim_vbuffer_positive_866ca25c_4,trim_vbuffer_positive_866ca25c_3,trim_vbuffer_positive_866ca25c_2,trim_vbuffer_positive_866ca25c_1,trim_vbuffer_positive_866ca25c_0}),
-.drm4({noconn_drm48_drm4_7,trim_gm_negative_e44d2b4d_6,trim_gm_negative_e44d2b4d_5,trim_gm_negative_e44d2b4d_4,trim_gm_negative_e44d2b4d_3,trim_gm_negative_e44d2b4d_2,trim_gm_negative_e44d2b4d_1,trim_gm_negative_e44d2b4d_0}),
-.drm5({noconn_drm48_drm5_7,trim_gm_positive_e44d2b4d_6,trim_gm_positive_e44d2b4d_5,trim_gm_positive_e44d2b4d_4,trim_gm_positive_e44d2b4d_3,trim_gm_positive_e44d2b4d_2,trim_gm_positive_e44d2b4d_1,trim_gm_positive_e44d2b4d_0}),
-.por0({a0,a0,a0,a0,a0,a0,a0,a1}),
-.por1({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por2({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por3({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por4({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por5({a0,a0,a0,a0,a0,a0,a0,a0}),
+.drm0({trim_clamp_b8eb1a18_7,trim_clamp_b8eb1a18_6,trim_clamp_b8eb1a18_5,trim_clamp_b8eb1a18_4,trim_clamp_b8eb1a18_3,trim_clamp_b8eb1a18_2,trim_clamp_b8eb1a18_1,trim_clamp_b8eb1a18_0}),
+.drm1({noconn_drm40L_drm1_7,trim_vbuffer_negative_866ca25c_6,trim_vbuffer_negative_866ca25c_5,trim_vbuffer_negative_866ca25c_4,trim_vbuffer_negative_866ca25c_3,trim_vbuffer_negative_866ca25c_2,trim_vbuffer_negative_866ca25c_1,trim_vbuffer_negative_866ca25c_0}),
+.drm2({noconn_drm40L_drm2_7,trim_vbuffer_positive_866ca25c_6,trim_vbuffer_positive_866ca25c_5,trim_vbuffer_positive_866ca25c_4,trim_vbuffer_positive_866ca25c_3,trim_vbuffer_positive_866ca25c_2,trim_vbuffer_positive_866ca25c_1,trim_vbuffer_positive_866ca25c_0}),
+.drm3({noconn_drm40L_drm3_7,trim_gm_negative_e44d2b4d_6,trim_gm_negative_e44d2b4d_5,trim_gm_negative_e44d2b4d_4,trim_gm_negative_e44d2b4d_3,trim_gm_negative_e44d2b4d_2,trim_gm_negative_e44d2b4d_1,trim_gm_negative_e44d2b4d_0}),
+.drm4({noconn_drm40L_drm4_7,trim_gm_positive_e44d2b4d_6,trim_gm_positive_e44d2b4d_5,trim_gm_positive_e44d2b4d_4,trim_gm_positive_e44d2b4d_3,trim_gm_positive_e44d2b4d_2,trim_gm_positive_e44d2b4d_1,trim_gm_positive_e44d2b4d_0}),
 .bypload(a0),
 .lastdrm(a0)
 );
@@ -429,44 +377,20 @@ ESDminiClamp6 XCLAMP_Xgm1_INN (
 .SUB(CELSUB40948)
 );
 
-STONEnoconn XNCnoconn_drm48_drm0_2 (
-.noconn(noconn_drm48_drm0_2)
+STONEnoconn XNCnoconn_drm40L_drm1_7 (
+.noconn(noconn_drm40L_drm1_7)
 );
 
-STONEnoconn XNCnoconn_drm48_drm0_3 (
-.noconn(noconn_drm48_drm0_3)
+STONEnoconn XNCnoconn_drm40L_drm2_7 (
+.noconn(noconn_drm40L_drm2_7)
 );
 
-STONEnoconn XNCnoconn_drm48_drm0_4 (
-.noconn(noconn_drm48_drm0_4)
+STONEnoconn XNCnoconn_drm40L_drm3_7 (
+.noconn(noconn_drm40L_drm3_7)
 );
 
-STONEnoconn XNCnoconn_drm48_drm0_5 (
-.noconn(noconn_drm48_drm0_5)
-);
-
-STONEnoconn XNCnoconn_drm48_drm0_6 (
-.noconn(noconn_drm48_drm0_6)
-);
-
-STONEnoconn XNCnoconn_drm48_drm0_7 (
-.noconn(noconn_drm48_drm0_7)
-);
-
-STONEnoconn XNCnoconn_drm48_drm2_7 (
-.noconn(noconn_drm48_drm2_7)
-);
-
-STONEnoconn XNCnoconn_drm48_drm3_7 (
-.noconn(noconn_drm48_drm3_7)
-);
-
-STONEnoconn XNCnoconn_drm48_drm4_7 (
-.noconn(noconn_drm48_drm4_7)
-);
-
-STONEnoconn XNCnoconn_drm48_drm5_7 (
-.noconn(noconn_drm48_drm5_7)
+STONEnoconn XNCnoconn_drm40L_drm4_7 (
+.noconn(noconn_drm40L_drm4_7)
 );
 
 endmodule

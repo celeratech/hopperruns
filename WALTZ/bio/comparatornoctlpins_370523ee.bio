@@ -54,16 +54,16 @@ limit,comparator_datasheet_description,text
 //USER Parameters
 user,comparator_type,p
 description,Comparator input stage
-user,comparator_speed,fast
+user,comparator_speed,slow
 description,Comparator Response speed
 user,comparator_edge,rising
 description,Comparator Accurate Edge
-user,comparator_vmax,6V
-description,Comparator Maximum Operating Supply Voltage
-user,comparator_hysteresismode,factory
+user,comparator_deglitch,yes
+description,Comparator Output 1000ns Deglitch time
+user,comparator_hysteresismode,fixed
 description,Comparator Hystersis Mode
-user,comparator_hysteresis,20
-description,Comparator Hystersis Control POR Code
+user,comparator_hysteresis,50mV
+description,Comparator Hystersis Value
 user,NESTO,0.5.0
 description,NESTO revision
 //**********************************************
@@ -72,7 +72,7 @@ description,NESTO revision
 //REGISTER Parameters
 //Celera Map Generator
 registermap,comparator
-register,instance,comparatornoctlpins_1b4420c5
+register,instance,comparatornoctlpins_370523ee
 register,source,cell
 
 ///Lowiq Control
@@ -116,7 +116,7 @@ register,busname,na
 //FACTORY Parameters
 //Celera Map Generator
 factorymap,comparator
-factory,instance,comparatornoctlpins_1b4420c5
+factory,instance,comparatornoctlpins_370523ee
 factory,source,cell
 
 
@@ -139,61 +139,63 @@ factory,description7,not used
 factory,busname,na
 
 //Hysteris control
-factory,name,DCM Output Rripple
-factory,enable,yes
-factory,bits,2
+factory,name,na
+factory,enable,no
+factory,bits,0
 factory,mode,readwrite
-factory,por,1
-factory,userdescription,Regulation output ripple in DCM mode
-factory,description0,Hysterisis control
-factory,description1,code 0x00.No hystersis
-factory,description2,code 0x01,20mV on rising edge
-factory,description3,code 0x02,50mV on rising edge
-factory,description4,code 0x03,100mV on rising edge
+factory,por,0
+factory,userdescription,na
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
 factory,description5,not used
 factory,description6,not used
 factory,description7,not used
 //Netlister Information
-factory,busname,factory_hyst_comparator
+factory,busname,na
 
 
 
 //**********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,comparatorinpfast
+layout,comparatorinpslow
 
-place Generate STONEcomparatorinpfastNOME 0 0 R0
-place Generate STONEcomparatorinphysterisisfastNOME 30.53 1.735 MX
-place Generate STONEcomparatorexthysterisis 128.285 -7.88 R0
-
-placeSTEP PEBBLES PEBBLEswG 98.91 1.735 x 12.6 MX
-placeSTEPcontinue PEBBLES PEBBLEamux2 x 10.08 MX
-placeINST Xdfthystedge 100.17 -15.005 R0
-placeINST Xdfthyst1 115.92 -15.005 R0
-placeINST Xdfthyst0 131.67 -15.005 R0
+place Generate STONEcomparatorinpslowNOME 0 0 R0
+place Generate STONEcomparatordeglitchNOME 28.1 62 R0
 placeIFELSE cellNameNOTContains dftsel||swG||amux||ext
-placeALTVIEW Generate STONEcomparatorinphysterisisfast layout1 30.53 -21.235 R0
-place Generate STONEcomparatorexthysterisis 128.285 -7.88 R0
+place Generate STONEcomparatorinphysterisisslowNOME 99.27 1.235 R0
+place Generate STONEcomparatorexthysterisisNOME 104.26 2.72 R0
 placeELSE
+placeALTVIEW Generate STONEcomparatorinphysterisisslowNOME layout1 20.085 -0.325 MX
+place Generate STONEcomparatorexthysterisis 2.325 -11.465 R0
+placeEND
+placeSTEP PEBBLES PEBBLEswG 99.27 17.975 x 12.6 MX
+placeSTEPcontinue PEBBLES PEBBLEamux2 x 10.08 MX
+placeINST Xdfthystedge 99.27 1.235 R0
+placeINST Xdfthyst1 115.02 1.235 R0
+placeINST Xdfthyst0 130.77 1.235 R0
 placeTAPuntil
-placeTAP 135 1
-placeINST Xdftlowiq 131.67 1.735 MX
-placeTAP 131.6 -17
-placeINST Xdftlowiq 131.67 -15.005 MX
+placeTAP 105 5
+placeINST Xdftlowiq 101.16 0.875 R0
+placeTAP 125 5
+placeINST Xdftlowiq 116.91 0.875 R0
+placeTAP 135 5
+placeINST Xdftlowiq 132.66 0.875 R0
+placeTAP 140 -5
+placeINST Xdftlowiq 132.66 -0.325 MX
 placeTAPEND
 placeEND
-placeIFELSE cellNameNOTContains hysterisisfast
-place Generate STONEcomparatorexthysterisis 29.925 2.83 MX
-placeTAP 136 -20
-place Generate STONEcomparatorexthysterisis 29.925 2.83 MX
-placeINST Xdftlowiq 83.16 1.735 MX
-place PEBBLES PEBBLEtsw1K 55.465 3.47 MX
-placeELSE
-placeEND
-//placeHVRING
-movePINS
-placeROUTEnopins
+placeTAP 122 5
+place PEBBLES PEBBLEtsw1K 128.19 6.55 MX
+place PEBBLES PEBBLEtsw1K 40.155 0.995 MX
+placeTAP 122 5
+place Generate STONEcomparatorexthysterisisNOME 104.31 -0.1 MX
+place Generate STONEcomparatorexthysterisisNOME 38.27 0.415 R180
+placeHVRING
+placeROUTE
 endlayoutbio
 
 //**********************************************
@@ -243,11 +245,11 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,STONEcomparatorinphysterisisfastNOME,99999
+sub_area,STONEcomparatorinphysterisisslowNOME,99999
+sub_area,STONEcomparatordeglitchNOME,99999
 sub_area,STONEnoconn,0
-sub_area,STONEnoconn,0
-sub_area,STONEcomparatorinpfastNOME,99999
-generate_area,comparatornoctlpins_1b4420c5,199998
+sub_area,STONEcomparatorinpslowNOME,99999
+generate_area,comparatornoctlpins_370523ee,299997
 // *********************************************
 //CELL DFT Parameters
 // *********************************************
@@ -270,7 +272,7 @@ endpinorder
 //**********************************************	
 //TRIM Parameters
 cell,comparator
-trim,instance,comparatornoctlpins_1b4420c5
+trim,instance,comparatornoctlpins_370523ee
 
 trim,name,na
 trim,enable,no
@@ -386,17 +388,6 @@ mode,out_comparator,digital
 router,out_comparator,TBD
 dftpriority,out_comparator,1
 esd,out_comparator,TBD
-
-pinname,factory_hyst_comparator
-definition,factory_hyst_comparator,Factory Hysteresis Select
-iq,factory_hyst_comparator,SIMULATION
-absmax,factory_hyst_comparator,6
-absmin,factory_hyst_comparator,-0.3
-io,factory_hyst_comparator,input
-mode,factory_hyst_comparator,digital
-router,factory_hyst_comparator,TBD
-dftpriority,factory_hyst_comparator,1
-esd,factory_hyst_comparator,TBD
 
 pinname,global_comparator
 definition,global_comparator,Global Testmode Enable

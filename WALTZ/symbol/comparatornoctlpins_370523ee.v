@@ -1,10 +1,10 @@
-//Celera:comparatornoctlpins_1b4420c5
+//Celera:comparatornoctlpins_370523ee
 //Celera Confidential Symbol Generator
-//Type p Hysteris Mode:factory 20mV Hysteresis,Edge rising without deglitch
+//Type p Hysteris Mode:fixed 50mV Hysteresis,Edge rising with deglitch
 //Low IQ:no DFT:no
-module comparatornoctlpins_1b4420c5 (enable_comparator,IP,out_comparator,INP_COMPARATOR,
+module comparatornoctlpins_370523ee (enable_comparator,IP,out_comparator,INP_COMPARATOR,
 INN_COMPARATOR,SIMPV,global_comparator,ok_comparator,
-factory_hyst_comparator, CELG,CELSUB);
+CELG,CELSUB);
 input SIMPV;
 input enable_comparator;
 input global_comparator;
@@ -15,6 +15,5 @@ output out_comparator;
 input CELG;
 input CELSUB;
 output ok_comparator;
-input [1:0] factory_hyst_comparator;
 endmodule
 
