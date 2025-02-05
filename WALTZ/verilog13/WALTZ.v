@@ -45,7 +45,7 @@ module WALTZceleraRING (EN,FB,IN,SW,BST,GND,PIN,POK,VCC,tmi,BIAS,FSET,GOTP,PGND,
   inout  PIN;
   inout  POK;
   inout  VCC;
-  inout [0:4] tmi;
+  inout [4:0] tmi;
   inout  BIAS;
   inout  FSET;
   output  GOTP;
@@ -167,7 +167,7 @@ WALTZceleraRING XceleraRING (
 .PIN(PIN),
 .POK(POK),
 .VCC(VCC),
-.tmi(tmi[0:4]),
+.tmi(tmi[4:0]),
 .BIAS(BIAS),
 .FSET(FSET),
 .GOTP(GOTP),

@@ -121,7 +121,7 @@ inout  GND;
 inout  PIN;
 inout  POK;
 inout  VCC;
-inout [0:4] tmi;
+inout [4:0] tmi;
 inout  BIAS;
 inout  FSET;
 output  GOTP;
