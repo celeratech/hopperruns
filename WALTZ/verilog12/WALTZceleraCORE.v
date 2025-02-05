@@ -89,7 +89,7 @@ module FAULTMANAGERwaltz (tmi,MUDV,clock,CELG59462,CELV96848,PORB97836,fault_run
   input  enable_faultmanager;
 endmodule
 
-module POWERGOODwaltz (POK,MUDV,clock,sense_FB,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_70e67769,IP_ddbf938d,IP_e96a4067,fault_short,REF_POWERGOOD,enable_powergood,kelvin_MUDGpowergood);
+module POWERGOODwaltz (POK,MUDV,clock,sense_FB,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_70e67769,IP_e96a4067,fault_short,REF_POWERGOOD,enable_powergood,kelvin_MUDGpowergood);
   inout  POK;
   input  MUDV;
   input  clock;
@@ -99,7 +99,6 @@ module POWERGOODwaltz (POK,MUDV,clock,sense_FB,CELG59462,CELV96848,PORB97836,CEL
   input  PORB97836;
   input  CELSUB40948;
   input  IP_70e67769;
-  input  IP_ddbf938d;
   input  IP_e96a4067;
   output  fault_short;
   input  REF_POWERGOOD;
@@ -202,7 +201,7 @@ endmodule
 
 //Celera:CELERAservice
 //Celera Confidential Symbol Generator
-//IP: 16, REFERENCE: external
+//IP: 15, REFERENCE: external
 //Latch blanking: 
 module CELERAservice (celkelvin_GNDservice,enable_ibias,
 CELV,
@@ -216,7 +215,7 @@ input celkelvin_GNDservice;
 input enable_ibias;
 input CELV;
 output ok_ibias;
-output [15:0] IPO;
+output [14:0] IPO;
 input CELBG;
 inout TAO;
 inout [4:0] tmi;
@@ -265,7 +264,7 @@ input  celkelvin_BIAS_bc3b7675;
 
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
-wire [15:0] IPO;
+wire [14:0] IPO;
 
 // ------------------------ Networks ---------------------
 CLOCKwaltz XCLOCK (
@@ -368,7 +367,6 @@ POWERGOODwaltz XPOWERGOOD (
 .PORB97836(PORB97836),
 .CELSUB40948(CELSUB40948),
 .IP_70e67769(IP_70e67769),
-.IP_ddbf938d(IP_ddbf938d),
 .IP_e96a4067(IP_e96a4067),
 .fault_short(net_195),
 .REF_POWERGOOD(net_183),
@@ -469,7 +467,7 @@ STONEnoconn XNCnoconn (
 );
 
 CELERAservice XceleraSERVICE (
-.IPO({IP_14d08c8e,IP_201f84ba,IP_2d447a5c,IP_4215aede,IP_4c0bef8e,IP_5c7dff44,IP_70e67769,IP_75c89176,IP_866ca25c,IP_90c263a6,IP_a0afb596,IP_b8eb1a18,IP_ddbf938d,IP_e44d2b4d,IP_e96a4067,IP_f4252e65}),
+.IPO({IP_14d08c8e,IP_201f84ba,IP_2d447a5c,IP_4215aede,IP_4c0bef8e,IP_5c7dff44,IP_70e67769,IP_75c89176,IP_866ca25c,IP_90c263a6,IP_a0afb596,IP_b8eb1a18,IP_e44d2b4d,IP_e96a4067,IP_f4252e65}),
 .TAO(TBD_XWALTZ_XceleraCORE_XceleraSERVICE_TAO),
 .tmi(tmi[4:0]),
 .CELG(CELG59462),
