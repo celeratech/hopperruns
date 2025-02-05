@@ -1,6 +1,6 @@
 // Celera Brick Generator Confidential
 //CORE:powerfetN
-//NAME:fetdn_a0946f8e
+//NAME:fetdn_9694dc46
 //GENERATOR REVISION:0.4.0
 //FET TYPE:n
 //ON RESISTANCE:0.820 Ohms
@@ -9,18 +9,18 @@
 //BODY DIODE:yes
 //DIODE DRIVE:diode
 //REPLICA:drain
-//REPLICA GAIN:25
+//REPLICA GAIN:10
 //KEVLIN:yes
 //DFT:no
 
-//Celera Confidential Do Not Copy fet_fetdn_a0946f8e_Xfet.v
-//Celera:fet_fetdn_a0946f8e_Xfet
+//Celera Confidential Do Not Copy fet_fetdn_9694dc46_Xfet.v
+//Celera:fet_fetdn_9694dc46_Xfet
 //Celera Confidential Symbol Generator
 //power NMOS:Ron:0.820 Ohm
 //Vgs 6V Vds 60V
 //Kelvin:no
 
-module fet_fetdn_a0946f8e_Xfet (GATE,SOURCE,DRAIN,SUB);
+module fet_fetdn_9694dc46_Xfet (GATE,SOURCE,DRAIN,SUB);
 input GATE;
 inout SOURCE;
 inout DRAIN;
@@ -46,13 +46,13 @@ module PEBBLElink ( I, O );
   inout O;
 endmodule
 
-//Celera Confidential Do Not Copy fetdn_a0946f8e
+//Celera Confidential Do Not Copy fetdn_9694dc46
 //Celera Confidential Symbol Generator
 //power NMOS:Ron:0.820 Ohm
 //Vgs 6V Vds 60V
 //Kelvin:yes
 
-module fetdn_a0946f8e (GATE,SOURCE,DRAIN,SOURCEk,DRAINk,IREPLICA,SUB);
+module fetdn_9694dc46 (GATE,SOURCE,DRAIN,SOURCEk,DRAINk,IREPLICA,SUB);
 input GATE;
 inout SOURCE;
 inout DRAIN;
@@ -61,14 +61,14 @@ inout SOURCEk;
 input SUB;
 inout IREPLICA;
 
-//Celera Confidential Do Not Copy fet_fetdn_a0946f8e_Xfet
-fet_fetdn_a0946f8e_Xfet XnmosPower0(
+//Celera Confidential Do Not Copy fet_fetdn_9694dc46_Xfet
+fet_fetdn_9694dc46_Xfet XnmosPower0(
 .DRAIN (DRAIN),
 .GATE (GATE),
 .SOURCE (SOURCE),
 .SUB (SUB)
 );
-//,diesize,fet_fetdn_a0946f8e_Xfet
+//,diesize,fet_fetdn_9694dc46_Xfet
 
 //Celera Confidential Do Not Copy an5g60dw2_2p4x0p5x2p0x1p0
 an5g60dw2_2p4x0p5x2p0x1p0 XnmosreplicaS_0(
@@ -108,62 +108,8 @@ an5g60dw2_2p4x0p5x2p0x1p0 XnmosreplicaS_3(
 
 //Celera Confidential Do Not Copy an5g60dw2_2p4x0p5x2p0x1p0
 an5g60dw2_2p4x0p5x2p0x1p0 XnmosreplicaS_4(
+.GATE (GATE),
 .DRAIN (conn_3),
-.GATE (GATE),
-.SOURCE (conn_4),
-.SUB (SUB)
-);
-//,diesize,an5g60dw2_2p4x0p5x2p0x1p0
-
-//Celera Confidential Do Not Copy an5g60dw2_2p4x0p5x2p0x1p0
-an5g60dw2_2p4x0p5x2p0x1p0 XnmosreplicaS_5(
-.DRAIN (conn_4),
-.GATE (GATE),
-.SOURCE (conn_5),
-.SUB (SUB)
-);
-//,diesize,an5g60dw2_2p4x0p5x2p0x1p0
-
-//Celera Confidential Do Not Copy an5g60dw2_2p4x0p5x2p0x1p0
-an5g60dw2_2p4x0p5x2p0x1p0 XnmosreplicaS_6(
-.DRAIN (conn_5),
-.GATE (GATE),
-.SOURCE (conn_6),
-.SUB (SUB)
-);
-//,diesize,an5g60dw2_2p4x0p5x2p0x1p0
-
-//Celera Confidential Do Not Copy an5g60dw2_2p4x0p5x2p0x1p0
-an5g60dw2_2p4x0p5x2p0x1p0 XnmosreplicaS_7(
-.DRAIN (conn_6),
-.GATE (GATE),
-.SOURCE (conn_7),
-.SUB (SUB)
-);
-//,diesize,an5g60dw2_2p4x0p5x2p0x1p0
-
-//Celera Confidential Do Not Copy an5g60dw2_2p4x0p5x2p0x1p0
-an5g60dw2_2p4x0p5x2p0x1p0 XnmosreplicaS_8(
-.DRAIN (conn_7),
-.GATE (GATE),
-.SOURCE (conn_8),
-.SUB (SUB)
-);
-//,diesize,an5g60dw2_2p4x0p5x2p0x1p0
-
-//Celera Confidential Do Not Copy an5g60dw2_2p4x0p5x2p0x1p0
-an5g60dw2_2p4x0p5x2p0x1p0 XnmosreplicaS_9(
-.DRAIN (conn_8),
-.GATE (GATE),
-.SOURCE (conn_9),
-.SUB (SUB)
-);
-//,diesize,an5g60dw2_2p4x0p5x2p0x1p0
-
-//Celera Confidential Do Not Copy an5g60dw2_2p4x0p5x2p0x1p0
-an5g60dw2_2p4x0p5x2p0x1p0 XnmosreplicaS_10(
-.GATE (GATE),
-.DRAIN (conn_9),
 .SOURCE (SOURCE),
 .SUB (SUB)
 );

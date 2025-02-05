@@ -91,8 +91,23 @@ endmodule
 
 
 
-module fetdn_9694dc46 ();
+//Celera:fetdn_9694dc46
+//Celera Confidential Symbol Generator
+//power NMOS:Ron:0.820 Ohm
+//Vgs 6V Vds 60V
+//Kelvin:yes
+
+module fetdn_9694dc46 (GATE,SOURCE,DRAIN,SOURCEk,DRAINk,IREPLICA,SUB);
+input GATE;
+inout SOURCE;
+inout DRAIN;
+inout DRAINk;
+inout SOURCEk;
+input SUB;
+inout IREPLICA;
 endmodule
+
+
 
 //Celera:currentlimitfet_282c42a8
 //Celera Confidential Symbol Generator
@@ -274,7 +289,13 @@ fetdn_359003a8 XU14 (
 );
 
 fetdn_9694dc46 XU16 (
-
+.SUB(CELSUB40948),
+.GATE(net_114),
+.DRAIN(SW),
+.DRAINk(net_107),
+.SOURCE(PMUDG),
+.SOURCEk(net_72),
+.IREPLICA(net_102)
 );
 
 currentlimitfet_282c42a8 XU17 (
