@@ -43,9 +43,33 @@ description,Nesto generate revision
 // *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,timingskew
+layout,timingskewdelay
 
 //New Sub cell of timingskew 301
+place Generate STONEtimingskewFRONTrise 0 0 R0
+place Generate STONEtimingskewFRONTfall 0 0 R0
+placeINST nin|nin|M0 2.2 0.79 R0
+placeINST pin|pin|M0 2.2 4.89 R0
+placeINST pout|pout|M0 4 4.89 R0
+placeINST nout|nout|M0 4 0.79 R0
+placeINST nin 2.2 0.79 R0
+placeINST pin 2.2 4.89 R0
+placeINST pout 4 4.89 R0
+placeINST nout 4 0.79 R0
+place Generate STONEtimingskewEND 6.93 0 R0
+
+
+
+//placeTAPuntil 6.05 1.3 
+//DONOTHING
+//placeTAPuntil 7.21 1.3
+//placeCELL PEBBLES FEED2 5.04 0 R0 13.23
+//placeTAPuntil 6.68 1.3
+//placeCELL PEBBLES FEED4 5.04 0 R0
+//placeTAPuntil 6.68 1.3
+//placeCELL PEBBLES FEED2 5.04 0 R0
+//placeTAPuntil 6.68 1.3
+//placeIF
 
 endlayoutbio
 //**********************************************

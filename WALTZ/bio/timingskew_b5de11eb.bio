@@ -110,64 +110,68 @@ factory,busname,factory_timingskew
 revision,layout,0p1
 layout,timingskew
 
-place Generate STONEtimingskewlsb0p5nr 0 0 R0
-place Generate STONEtimingskewlsb0p5nf 0 0 R0
-place Generate STONEtimingskewlsb1nr 0 0 R0
-place Generate STONEtimingskewlsb1nf 0 0 R0
-place Generate STONEtimingskewlsb2nr 0 0 R0
-place Generate STONEtimingskewlsb2nf 0 0 R0
-place Generate STONEtimingskewlsb4nr 0 0 R0
-place Generate STONEtimingskewlsb4nf 0 0 R0
-place Generate STONEtimingskewlsb8nr 0 0 R0
-place Generate STONEtimingskewlsb8nf 0 0 R0
-place Generate STONEtimingskewdft 0 -1.2 MX
-place Generate STONEdelay0p5nf8x 0 16.74 R0
-place Generate STONEdelay0p5nr8x 0 16.74 R0
-place Generate STONEdelay0p5nr16x 0 25.11 R0
-place Generate STONEdelay0p5nf16x 0 25.11 R0
-place Generate STONEdelay0p5nr4x 0 16.74 MX
-place Generate STONEdelay0p5nf4x 0 16.74 MX
-place Generate STONEdelay1nr4x 0 16.74 MX
-place Generate STONEdelay1nr8x 0 16.74 R0
-place Generate STONEdelay1nr16x 0 25.11 R0
-place Generate STONEdelay1nf16x 0 25.11 R0
-place Generate STONEdelay1nf4x 0 16.74 MX
-place Generate STONEdelay1nf8x 0 16.74 R0
-place Generate STONEdelay2nr16x 0 25.11 R0
-place Generate STONEdelay2nr4x 0 16.74 MX
-place Generate STONEdelay2nr8x 0 16.74 R0
-place Generate STONEdelay2nf16x 0 25.11 R0
-place Generate STONEdelay2nf4x 0 16.74 MX
-place Generate STONEdelay2nf8x 0 16.74 R0
-place Generate STONEdelay4nr4x 0 16.74 MX
-place Generate STONEdelay4nr8x 0 16.74 R0
-place Generate STONEdelay4nf4x 0 16.74 MX
-place Generate STONEdelay4nf8x 0 16.74 R0
-place Generate STONEdelay4nr16x 0 25.11 R0
-place Generate STONEdelay4nf16x 0 25.11 R0
-place Generate STONEdelay8nr16x 0 25.11 R0
-place Generate STONEdelay8nr4x 0 16.74 MX
-place Generate STONEdelay8nr8x 0 16.74 R0
-place Generate STONEdelay8nf16x 0 25.11 R0
-place Generate STONEdelay8nf4x 0 16.74 MX
-place Generate STONEdelay8nf8x 0 16.74 R0
-placeTAPuntil
-//0p5,1
-placeTAP 29 10
-placeSTEP Generate STONEbypassdelay 27.72 16.74 x 8.82 MX
-//2rise
-placeTAP 37 10
-placeSTEP Generate STONEbypassdelay 35.28 16.74 x 8.82 MX
-//4,8rise
-placeTAP 39 10
-placeSTEP Generate STONEbypassdelay 37.8 16.74 x 8.82 MX
-//2fall,8
-placeTAP 42 10
-placeSTEP Generate STONEbypassdelay 40.32 16.74 x 8.82 MX
-placeTAPEND
-movePINS
-placeROUTEnopins
+301b edits to simplis
+placeDIG
 endlayoutbio
+//OLD timing skew information
+//place Generate STONEtimingskewlsb0p5nr 0 0 R0
+//place Generate STONEtimingskewlsb0p5nf 0 0 R0
+//place Generate STONEtimingskewlsb1nr 0 0 R0
+//place Generate STONEtimingskewlsb1nf 0 0 R0
+//place Generate STONEtimingskewlsb2nr 0 0 R0
+//place Generate STONEtimingskewlsb2nf 0 0 R0
+//place Generate STONEtimingskewlsb4nr 0 0 R0
+//place Generate STONEtimingskewlsb4nf 0 0 R0
+//place Generate STONEtimingskewlsb8nr 0 0 R0
+//place Generate STONEtimingskewlsb8nf 0 0 R0
+//place Generate STONEtimingskewdft 0 -1.2 MX
+//place Generate STONEdelay0p5nf8x 0 16.74 R0
+//place Generate STONEdelay0p5nr8x 0 16.74 R0
+//place Generate STONEdelay0p5nr16x 0 25.11 R0
+//place Generate STONEdelay0p5nf16x 0 25.11 R0
+//place Generate STONEdelay0p5nr4x 0 16.74 MX
+//place Generate STONEdelay0p5nf4x 0 16.74 MX
+//place Generate STONEdelay1nr4x 0 16.74 MX
+//place Generate STONEdelay1nr8x 0 16.74 R0
+//place Generate STONEdelay1nr16x 0 25.11 R0
+//place Generate STONEdelay1nf16x 0 25.11 R0
+//place Generate STONEdelay1nf4x 0 16.74 MX
+//place Generate STONEdelay1nf8x 0 16.74 R0
+//place Generate STONEdelay2nr16x 0 25.11 R0
+//place Generate STONEdelay2nr4x 0 16.74 MX
+//place Generate STONEdelay2nr8x 0 16.74 R0
+//place Generate STONEdelay2nf16x 0 25.11 R0
+//place Generate STONEdelay2nf4x 0 16.74 MX
+//place Generate STONEdelay2nf8x 0 16.74 R0
+//place Generate STONEdelay4nr4x 0 16.74 MX
+//place Generate STONEdelay4nr8x 0 16.74 R0
+//place Generate STONEdelay4nf4x 0 16.74 MX
+//place Generate STONEdelay4nf8x 0 16.74 R0
+//place Generate STONEdelay4nr16x 0 25.11 R0
+//place Generate STONEdelay4nf16x 0 25.11 R0
+//place Generate STONEdelay8nr16x 0 25.11 R0
+//place Generate STONEdelay8nr4x 0 16.74 MX
+//place Generate STONEdelay8nr8x 0 16.74 R0
+//place Generate STONEdelay8nf16x 0 25.11 R0
+//place Generate STONEdelay8nf4x 0 16.74 MX
+//place Generate STONEdelay8nf8x 0 16.74 R0
+//placeTAPuntil
+////0p5,1
+//placeTAP 29 10
+//placeSTEP Generate STONEbypassdelay 27.72 16.74 x 8.82 MX
+////2rise
+//placeTAP 37 10
+//placeSTEP Generate STONEbypassdelay 35.28 16.74 x 8.82 MX
+////4,8rise
+//placeTAP 39 10
+//placeSTEP Generate STONEbypassdelay 37.8 16.74 x 8.82 MX
+////2fall,8
+//placeTAP 42 10
+//placeSTEP Generate STONEbypassdelay 40.32 16.74 x 8.82 MX
+//placeTAPEND
+//movePINS
+//placeROUTEnopins
+////endlayoutbio
 //**********************************************
 //Project Parameters
 //Celera:WALTZ Project Bio

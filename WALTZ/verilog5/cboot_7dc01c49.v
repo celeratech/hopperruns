@@ -62,6 +62,19 @@ enable_cboot, on_highside, ten, ten_cboot );
 endmodule
 
 //Celera Confidential Do Not Copy fet_cboot_7dc01c49_Xnmos.v
+//Celera:fet_cboot_7dc01c49_Xnmos
+//Celera Confidential Symbol Generator
+//power NMOS:Ron:10.000 Ohm
+//Vgs 6V Vds 60V
+//Kelvin:no
+
+module fet_cboot_7dc01c49_Xnmos (GATE,SOURCE,DRAIN,SUB);
+input GATE;
+inout SOURCE;
+inout DRAIN;
+input SUB;
+endmodule
+
 
 //Celera Confidential Do Not Copy logicshifter0L2H_cboot_7dc01c49_Xglobal.v
 //Celera:logicshifter0L2H_cboot_7dc01c49_Xglobal

@@ -9,7 +9,7 @@
 cell,fet
 //**********************************************
 //Generator Revision
-revision,generator,0.4.1
+revision,generator,0.4.2
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
@@ -51,7 +51,8 @@ limit,fet_dft,choose1,yes
 limit,fet_calculator,choose0,typical
 limit,fet_calculator,choose1,maximum
 
-
+limit,fet_padopendrain,choose0,no
+limit,fet_padopendrain,choose1,yes
 //**********************************************
 //PAD Parameters
 //**********************************************
@@ -63,9 +64,8 @@ user,Ron_Design,20.833 Ohm
 description,FET on resistance
 user,Vds,6V
 description,FET Maximum Vds rating
-user,VgsMax,6V
-description,FET Maximum Vgs rating
-//**********************************************
+user,NESTO,0.4.2
+description,NESTO generate revision//**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
@@ -202,8 +202,8 @@ placeFET 0 0 6.510 51.980 1 0 standardmetal
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,an5g6dw1_43p6x0p2x2p0x1p0,48817
-generate_area,fet_padopendrain_ff7ffa6a_Xnmos,48817
+sub_area,an5g6dw1_85p0x0p2x2p0x1p0,57114
+generate_area,fet_padopendrain_ff7ffa6a_Xnmos,57114
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.3
@@ -346,7 +346,8 @@ generate_area,fet_padopendrain_ff7ffa6a_Xnmos,48817
 #define,nmos40fudge,100
 #define,nmos45fudge,100
 #define,nmos60fudge,100
-
+//PADopenDrain
+#define,PADopendrainWlimit,85.0
 //**********************************************
 //Pinorder Parameters
 *******************************************

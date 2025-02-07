@@ -1,7 +1,6 @@
 // ------------------------ Module Definitions -----------
-module REGULATIONwaltz0DEBUG (VC,tmi,REFINT,CELG59462,CELV96848,go_driver,CELSUB40948,IREF_DRIVER,FB_REGULATION,ok_regulation,VSS_REGULATION,enable_regulation,HIJACK_VSS_REGULATION,hijack_enable_regulation);
+module REGULATIONwaltz0DEBUG (VC,REFINT,CELG59462,CELV96848,go_driver,CELSUB40948,IREF_DRIVER,FB_REGULATION,ok_regulation,VSS_REGULATION,enable_regulation,HIJACK_VSS_REGULATION,hijack_enable_regulation);
   inout  VC;
-  inout [4:0] tmi;
   input  REFINT;
   input  CELG59462;
   input  CELV96848;
@@ -16,18 +15,18 @@ module REGULATIONwaltz0DEBUG (VC,tmi,REFINT,CELG59462,CELV96848,go_driver,CELSUB
   output  hijack_enable_regulation;
 endmodule
 
-module REGULATIONwaltz0MAIN (VC,tmi,MUDG,MUDV,REFINT,CELG59462,CELV96848,go_driver,CELREF84329,CELSUB40948,IP_4215aede,IP_866ca25c,IP_b8eb1a18,IP_e44d2b4d,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,enable_regulation);
+module REGULATIONwaltz0MAIN (VC,MUDG,MUDV,REFINT,CELG59462,CELV96848,go_driver,CELREF84329,CELSUB40948,IP_4215aede,IP_5c7dff44,IP_866ca25c,IP_b8eb1a18,IP_e44d2b4d,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,enable_regulation);
   inout  VC;
-  inout [4:0] tmi;
   inout  MUDG;
   input  MUDV;
   inout  REFINT;
   input  CELG59462;
   input  CELV96848;
-  input  go_driver;
+  output  go_driver;
   input  CELREF84329;
   input  CELSUB40948;
   input  IP_4215aede;
+  input  IP_5c7dff44;
   input  IP_866ca25c;
   input  IP_b8eb1a18;
   input  IP_e44d2b4d;
@@ -41,16 +40,16 @@ module REGULATIONwaltz0MAIN (VC,tmi,MUDG,MUDV,REFINT,CELG59462,CELV96848,go_driv
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltz (tmi, MUDG, MUDV, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IP_4215aede, IP_866ca25c, IP_b8eb1a18, IP_e44d2b4d, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, enable_regulation);
-inout [4:0] tmi;
+module REGULATIONwaltz (MUDG, MUDV, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IP_4215aede, IP_5c7dff44, IP_866ca25c, IP_b8eb1a18, IP_e44d2b4d, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, enable_regulation);
 inout  MUDG;
 input  MUDV;
 input  CELG59462;
 input  CELV96848;
-input  go_driver;
+output  go_driver;
 input  CELREF84329;
 input  CELSUB40948;
 input  IP_4215aede;
+input  IP_5c7dff44;
 input  IP_866ca25c;
 input  IP_b8eb1a18;
 input  IP_e44d2b4d;
@@ -64,12 +63,10 @@ input  enable_regulation;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
 
 // ------------------------ Networks ---------------------
 REGULATIONwaltz0DEBUG XDEBUG (
 .VC(net_56),
-.tmi(tmi[4:0]),
 .REFINT(net_55),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -86,7 +83,6 @@ REGULATIONwaltz0DEBUG XDEBUG (
 
 REGULATIONwaltz0MAIN XMAIN (
 .VC(net_56),
-.tmi(tmi[4:0]),
 .MUDG(MUDG),
 .MUDV(MUDV),
 .REFINT(net_55),
@@ -96,6 +92,7 @@ REGULATIONwaltz0MAIN XMAIN (
 .CELREF84329(CELREF84329),
 .CELSUB40948(CELSUB40948),
 .IP_4215aede(IP_4215aede),
+.IP_5c7dff44(IP_5c7dff44),
 .IP_866ca25c(IP_866ca25c),
 .IP_b8eb1a18(IP_b8eb1a18),
 .IP_e44d2b4d(IP_e44d2b4d),

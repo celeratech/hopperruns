@@ -86,8 +86,9 @@ input CELG;
 input SUB;
 inout PAD;
 
-//Celera Confidential Do Not Copy a
+//Celera Confidential Do Not Copy Pin a
 wire[1:0] a;
+
 //Celera Confidential Do Not Copy STONEpadopendrainDFT
 STONEpadopendrainDFT Xdft(
 .V (CELV),

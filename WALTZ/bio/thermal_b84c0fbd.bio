@@ -63,13 +63,9 @@ limit,thermal_temperature_description,text
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,thermal_type,fixed
-description,Thermal Protection control mode
-user,thermal_accuracy,yes
-description,Thermal Protection Accuracy
 user,thermal_rise0,165C
 description,Thermal Protection Rising Threshold
-user,thermal_fall0,C
+user,thermal_fall0,145C
 description,Thermal Protection Falling Threshold
 user,REF,,0.9V
 description,Thermal Protection Project Reference
@@ -222,15 +218,15 @@ sub_area,STONEthermalCONTROL2,7072
 sub_area,STONEthermalDECODE1,85
 sub_area,STONEthermalTRIM,1120
 sub_area,rlpp3000rpo113p6u0p5u,170
-sub_area,rlpp3000rpo113p6u0p5u,683
-sub_area,rlpp3000rpo113p6u0p5u,256
+sub_area,rlpp3000rpo113p6u0p5u,597
+sub_area,rlpp3000rpo113p6u0p5u,341
 sub_area,rlpp3000rpo2p5u0p5u,2
 sub_area,rlpp3000rpo2p5u0p5u,2
 sub_area,rlpp3000rpo2p5u0p5u,2
 sub_area,rlpp3000rpo2p5u0p5u,2
 sub_area,rlpp3000rpo2p5u0p5u,2
 sub_area,rlpp3000rpo2p5u0p5u,2
-generate_area,thermal_b84c0fbd,9398
+generate_area,thermal_b84c0fbd,9397
 // *********************************************
 //Calculator Parameters
 #define,THERMALresistorlength,113.57

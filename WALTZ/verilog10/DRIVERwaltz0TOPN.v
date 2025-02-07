@@ -144,6 +144,18 @@ module PEBBLEtielo ( q, G, SUB, V );
 endmodule
 
 
+//Verilog HDL for "PEBBLES", "PEBBLEtiehi" "functional"
+
+
+module PEBBLEtiehi ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 //Celera:fetdriver_f3635860
 //Celera Confidential Symbol Generator
 //FET DRIVER 'n' Type 10 Ron 5 Roff 
@@ -171,34 +183,9 @@ endmodule
 
 
 
-//Verilog HDL for "DRM", "drm24" "functional"
-
-
-module drm24 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, por1, por2, drm0,
-drm1, drm2, d1, d0 );
-
-  input lastdrm;
-  input V;
-  output d1;
-  input  [7:0] id;
-  output d0;
-  output  [7:0] drm2;
-  input  [7:0] por2;
-  input  [7:0] por1;
-  input bypload;
-  output  [7:0] drm0;
-  input  [7:0] por0;
-  input G;
-  output  [7:0] drm1;
-  inout  [4:0] tmi;
-  input SUB;
-endmodule
-
-
 // ------------------------ Module Verilog ---------------
-module DRIVERwaltz0TOPN (SW, tmi, BSTV, MUDV, MUDHV, PMUDV, PMUDHV, enable, topswon, CELG59462, CELV96848, ok_driver, topswipeak, CELSUB40948, IP_f4252e65, IREF_DRIVER, botswstatus, topswstatus, ISLOPE_DRIVER);
+module DRIVERwaltz0TOPN (SW, BSTV, MUDV, MUDHV, PMUDV, PMUDHV, enable, topswon, CELG59462, CELV96848, ok_driver, topswipeak, CELSUB40948, IP_f4252e65, IREF_DRIVER, botswstatus, topswstatus, ISLOPE_DRIVER);
 inout  SW;
-inout [4:0] tmi;
 input  BSTV;
 input  MUDV;
 input  MUDHV;
@@ -219,17 +206,9 @@ input  ISLOPE_DRIVER;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
 wire [7:0] trim_currentlimit;
 wire [4:0] factory_currentlimit_blanking;
 wire [3:0] trim_slopecomp;
-wire [7:0] id;
-wire [7:0] drm0;
-wire [7:0] drm1;
-wire [7:0] drm2;
-wire [7:0] por0;
-wire [7:0] por1;
-wire [7:0] por2;
 
 // ------------------------ Networks ---------------------
 VESPAasmINPUT1 XU32 (
@@ -253,12 +232,12 @@ currentlimitfet_e27944c0 XU2 (
 .IREPLICA(net_95),
 .ISLOPECOMP(net_108),
 .currentlimit_lv(topswipeak),
-.trim_currentlimit({trim_currentlimit_98fa5525_7,trim_currentlimit_98fa5525_6,trim_currentlimit_98fa5525_5,trim_currentlimit_98fa5525_4,trim_currentlimit_98fa5525_3,trim_currentlimit_98fa5525_2,trim_currentlimit_98fa5525_1,trim_currentlimit_98fa5525_0}),
+.trim_currentlimit({a0,a0,a0,a0,a0,a0,a0,a0}),
 .enable_currentlimit(enable),
 .measure_currentlimit(net_104),
 .tdi_currentlimitlive(noconn_tdi_currentlimitlive5),
 .ten_measure_currentlimit(tl0),
-.factory_currentlimit_blanking({factory_currentlimit_blanking_98fa5525_4,factory_currentlimit_blanking_98fa5525_3,factory_currentlimit_blanking_98fa5525_2,factory_currentlimit_blanking_98fa5525_1,factory_currentlimit_blanking_98fa5525_0})
+.factory_currentlimit_blanking({a0,a1,a0,a1,a0})
 );
 
 fetdn_a0946f8e XU5 (
@@ -277,7 +256,7 @@ switchtransmission_75e4adc9 XU11 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.enable_switchb(DISABLEslope_650ee20e)
+.enable_switchb(a0)
 );
 
 cboot_7dc01c49 XU17 (
@@ -304,7 +283,7 @@ slopecomp_00a4cb3c XU22 (
 .ISLOPECOMP(net_107),
 .ok_slopecomp(net_106),
 .TAI_ISLOPECOMP(noconn_TAI_ISLOPECOMP6),
-.trim_slopecomp({trim_slopecomp_f4252e65_3,trim_slopecomp_f4252e65_2,trim_slopecomp_f4252e65_1,trim_slopecomp_f4252e65_0}),
+.trim_slopecomp({a0,a0,a0,a0}),
 .enable_slopecomp(enable),
 .global_slopecomp(tl0),
 .ten_taiislopecomp(tl0)
@@ -321,6 +300,20 @@ PEBBLEtielo XtieLo (
 .SUB(CELSUB40948)
 );
 
+PEBBLEtiehi XDRMNOTH (
+.G(CELG59462),
+.V(CELV96848),
+.q(a1),
+.SUB(CELSUB40948)
+);
+
+PEBBLEtielo XDRMNOTL (
+.G(CELG59462),
+.V(CELV96848),
+.q(a0),
+.SUB(CELSUB40948)
+);
+
 fetdriver_f3635860 Xfetdriver (
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -333,48 +326,6 @@ fetdriver_f3635860 Xfetdriver (
 .gate_status_vin(topswstatus),
 .enable_fetdriver(enable),
 .global_fetdriver(tl0)
-);
-
-drm24 drm_hex0x07 (
-.G(CELG59462),
-.V(CELV96848),
-.d0(a0),
-.d1(a1),
-.id({a0,a0,a0,a0,a0,a1,a1,a1}),
-.SUB(CELSUB40948),
-.tmi(tmi[4:0]),
-.drm0({trim_currentlimit_98fa5525_7,trim_currentlimit_98fa5525_6,trim_currentlimit_98fa5525_5,trim_currentlimit_98fa5525_4,trim_currentlimit_98fa5525_3,trim_currentlimit_98fa5525_2,trim_currentlimit_98fa5525_1,trim_currentlimit_98fa5525_0}),
-.drm1({noconn_drm24_drm1_7,noconn_drm24_drm1_6,DISABLEslope_650ee20e,factory_currentlimit_blanking_98fa5525_4,factory_currentlimit_blanking_98fa5525_3,factory_currentlimit_blanking_98fa5525_2,factory_currentlimit_blanking_98fa5525_1,factory_currentlimit_blanking_98fa5525_0}),
-.drm2({noconn_drm24_drm2_7,noconn_drm24_drm2_6,noconn_drm24_drm2_5,noconn_drm24_drm2_4,trim_slopecomp_f4252e65_3,trim_slopecomp_f4252e65_2,trim_slopecomp_f4252e65_1,trim_slopecomp_f4252e65_0}),
-.por0({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por1({a0,a0,a0,a1,a0,a0,a0,a0}),
-.por2({a0,a0,a0,a0,a0,a0,a0,a0}),
-.bypload(a0),
-.lastdrm(a0)
-);
-
-STONEnoconn XNCnoconn_drm24_drm1_6 (
-.noconn(noconn_drm24_drm1_6)
-);
-
-STONEnoconn XNCnoconn_drm24_drm1_7 (
-.noconn(noconn_drm24_drm1_7)
-);
-
-STONEnoconn XNCnoconn_drm24_drm2_4 (
-.noconn(noconn_drm24_drm2_4)
-);
-
-STONEnoconn XNCnoconn_drm24_drm2_5 (
-.noconn(noconn_drm24_drm2_5)
-);
-
-STONEnoconn XNCnoconn_drm24_drm2_6 (
-.noconn(noconn_drm24_drm2_6)
-);
-
-STONEnoconn XNCnoconn_drm24_drm2_7 (
-.noconn(noconn_drm24_drm2_7)
 );
 
 STONEnoconn XNCnoconn_TAI_ISLOPECOMP6 (

@@ -1,6 +1,5 @@
 // ------------------------ Module Definitions -----------
-module DRIVERwaltzBBM (tmi,topon,bottomon,topstate,CELG59462,CELV96848,bbm_topon,topstatus,CELSUB40948,bottomstate,bbm_bottomon,bottomstatus);
-  inout [4:0] tmi;
+module DRIVERwaltzBBM (topon,bottomon,topstate,CELG59462,CELV96848,bbm_topon,topstatus,CELSUB40948,bottomstate,bbm_bottomon,bottomstatus);
   output  topon;
   output  bottomon;
   input  topstate;
@@ -14,9 +13,8 @@ module DRIVERwaltzBBM (tmi,topon,bottomon,topstate,CELG59462,CELV96848,bbm_topon
   input  bottomstatus;
 endmodule
 
-module DRIVERwaltz0BOTN (SW,tmi,MUDV,PMUDG,PMUDV,botswon,CELG59462,CELV96848,botswineg,botswipeak,CELSUB40948,IP_14d08c8e,IP_2d447a5c,IP_a0afb596,botswstatus,botswzcross,enable_driver);
+module DRIVERwaltz0BOTN (SW,MUDV,PMUDG,PMUDV,botswon,CELG59462,CELV96848,botswineg,botswipeak,CELSUB40948,IP_14d08c8e,IP_2d447a5c,IP_a0afb596,botswstatus,botswzcross,enable_driver);
   inout  SW;
-  inout [4:0] tmi;
   input  MUDV;
   inout  PMUDG;
   input  PMUDV;
@@ -53,9 +51,8 @@ module DRIVERwaltz0DEBUG (botstate,topstate,CELG59462,CELV96848,botswineg,ok_dri
   output  hijack_enable_driver;
 endmodule
 
-module DRIVERwaltz0TOPN (SW,tmi,BSTV,MUDV,MUDHV,PMUDV,PMUDHV,enable,topswon,CELG59462,CELV96848,ok_driver,topswipeak,CELSUB40948,IP_f4252e65,IREF_DRIVER,botswstatus,topswstatus,ISLOPE_DRIVER);
+module DRIVERwaltz0TOPN (SW,BSTV,MUDV,MUDHV,PMUDV,PMUDHV,enable,topswon,CELG59462,CELV96848,ok_driver,topswipeak,CELSUB40948,IP_f4252e65,IREF_DRIVER,botswstatus,topswstatus,ISLOPE_DRIVER);
   inout  SW;
-  inout [4:0] tmi;
   input  BSTV;
   input  MUDV;
   input  MUDHV;
@@ -76,9 +73,8 @@ module DRIVERwaltz0TOPN (SW,tmi,BSTV,MUDV,MUDHV,PMUDV,PMUDHV,enable,topswon,CELG
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module DRIVERwaltz (SW, tmi, BSTV, MUDV, MUDHV, PMUDG, PMUDV, PMUDHV, botstate, topstate, CELG59462, CELV96848, bbm_topon, botswineg, ok_driver, botswipeak, topswipeak, CELSUB40948, IP_14d08c8e, IP_2d447a5c, IP_a0afb596, IP_f4252e65, IREF_DRIVER, botswzcross, bbm_bottomon, ISLOPE_DRIVER, enable_driver);
+module DRIVERwaltz (SW, BSTV, MUDV, MUDHV, PMUDG, PMUDV, PMUDHV, botstate, topstate, CELG59462, CELV96848, bbm_topon, botswineg, ok_driver, botswipeak, topswipeak, CELSUB40948, IP_14d08c8e, IP_2d447a5c, IP_a0afb596, IP_f4252e65, IREF_DRIVER, botswzcross, bbm_bottomon, ISLOPE_DRIVER, enable_driver);
 inout  SW;
-inout [4:0] tmi;
 input  BSTV;
 input  MUDV;
 input  MUDHV;
@@ -107,11 +103,9 @@ input  enable_driver;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
 
 // ------------------------ Networks ---------------------
 DRIVERwaltzBBM XBBM (
-.tmi(tmi[4:0]),
 .topon(net_106),
 .bottomon(net_109),
 .topstate(net_108),
@@ -127,7 +121,6 @@ DRIVERwaltzBBM XBBM (
 
 DRIVERwaltz0BOTN XBOTSW (
 .SW(SW),
-.tmi(tmi[4:0]),
 .MUDV(MUDV),
 .PMUDG(PMUDG),
 .PMUDV(PMUDV),
@@ -166,7 +159,6 @@ DRIVERwaltz0DEBUG XDEBUG (
 
 DRIVERwaltz0TOPN XTOPSW (
 .SW(SW),
-.tmi(tmi[4:0]),
 .BSTV(BSTV),
 .MUDV(MUDV),
 .MUDHV(MUDHV),

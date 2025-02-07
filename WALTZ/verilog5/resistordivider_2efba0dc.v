@@ -1,7 +1,7 @@
 //Celera Brick Generator Confidential
 //CORE:resistordivider
 //NAME:resistordivider_2efba0dc
-//GENERATOR REVISION:0.4.7
+//GENERATOR REVISION:0.4.8
 //VMAX:6V
 //VTOP:6V
 //TOTAL:100.0

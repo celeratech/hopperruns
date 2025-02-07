@@ -3,11 +3,12 @@
 //CORE:thermal
 //GENERATOR REVISION:0.3.4
 //NAME:thermal_b84c0fbd
+//REV:0.3.4
 //CONTROL:fixed
 //VMAX:6V
 //ACCURACY:yes/n//DFT:no
 //RISE:165c
-//FALL:nac
+//FALL:145c
 
 //Celera Confidential Do Not Copy STONEthermalCONTROL2
 //Verilog HDL for "Generate", "STONEthermalCONTROL2" "functional"
@@ -91,7 +92,7 @@ endmodule
 
 //Celera Confidential Do Not Copy thermal
 //Celera Confidential Symbol Generator
-//Thermal Protector:Rise 165C Fall naC
+//Thermal Protector:Rise 165C Fall 145C
  module thermal_b84c0fbd (SIMPV,CELBG,IP,enable_thermal,fault_thermal,ten,
 trim_thermal_accuracy,
 CELG,CELSUB);
@@ -168,8 +169,8 @@ STONEthermalTRIM Xtrim(
 
 //Die Size Calculator rlpp3000rpo113p6u0p5u
 //,diesize,rlpp3000rpo113p6u0p5u,2
-//,diesize,rlpp3000rpo113p6u0p5u,8
-//,diesize,rlpp3000rpo113p6u0p5u,3
+//,diesize,rlpp3000rpo113p6u0p5u,7
+//,diesize,rlpp3000rpo113p6u0p5u,4
 
 //Celera Confidential Do Not Copy R1
 rlpp3000rpo113p6u0p5u XR1_0(
@@ -186,17 +187,17 @@ rlpp3000rpo113p6u0p5u XR1_1(
 //Celera Confidential Do Not Copy R2
 rlpp3000rpo113p6u0p5u XR2_0(
 .RP (TRIP),
-.RN (TRIPHYST_B),
+.RN (TRIPHYST_A),
 .ISO (CELG)
 );
 rlpp3000rpo113p6u0p5u XR2_1(
-.RP (TRIP),
+.RP (TRIPHYST_A),
 .RN (TRIPHYST_B),
 .ISO (CELG)
 );
 rlpp3000rpo113p6u0p5u XR2_2(
-.RP (TRIPHYST_B),
-.RN (HYST),
+.RP (TRIPHYST_A),
+.RN (TRIPHYST_B),
 .ISO (CELG)
 );
 rlpp3000rpo113p6u0p5u XR2_3(
@@ -219,25 +220,25 @@ rlpp3000rpo113p6u0p5u XR2_6(
 .RN (HYST),
 .ISO (CELG)
 );
-rlpp3000rpo113p6u0p5u XR2_7(
-.RP (TRIPHYST_B),
-.RN (HYST),
-.ISO (CELG)
-);
 
 //Celera Confidential Do Not Copy R3
 rlpp3000rpo113p6u0p5u XR3_0(
 .RP (HYST),
-.RN (HYSTRFB_A),
+.RN (RFB),
 .ISO (CELG)
 );
 rlpp3000rpo113p6u0p5u XR3_1(
-.RP (HYSTRFB_A),
+.RP (HYST),
 .RN (RFB),
 .ISO (CELG)
 );
 rlpp3000rpo113p6u0p5u XR3_2(
-.RP (HYSTRFB_A),
+.RP (HYST),
+.RN (RFB),
+.ISO (CELG)
+);
+rlpp3000rpo113p6u0p5u XR3_3(
+.RP (HYST),
 .RN (RFB),
 .ISO (CELG)
 );

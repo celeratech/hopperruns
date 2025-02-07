@@ -8,16 +8,6 @@ module STONEpad1 ( PAD );
 endmodule
 
 
-//Verilog HDL for "Generate", "STONEotpSENSE" "functional"
-
-
-module STONEotpSENSE ( PAD, OTP );
-
-  input PAD;
-  output OTP;
-endmodule
-
-
 //Verilog HDL for "Generate", "WRAPPER1" "functional"
 
 
@@ -29,10 +19,9 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_WALTZ_GND (GND, GESD, GOTP, CELG59462, CELSUB40948, SENSE_G_4c0bef8e, kelvin_GNDservice, kelvin_GNDpowergood, kelvin_GNDsoftstart, kelvin_GNDregulation, celkelvin_GND_73ebd82d, celkelvin_GND_bb7e77f4, celkelvin_GND_d75c3f7f);
+module pad_WALTZ_GND (GND, GESD, CELG59462, CELSUB40948, SENSE_G_4c0bef8e, kelvin_GNDservice, kelvin_GNDpowergood, kelvin_GNDsoftstart, kelvin_GNDregulation, celkelvin_GND_73ebd82d, celkelvin_GND_bb7e77f4, celkelvin_GND_d75c3f7f);
 inout  GND;
 output  GESD;
-output  GOTP;
 inout  CELG59462;
 output  CELSUB40948;
 output  SENSE_G_4c0bef8e;
@@ -49,11 +38,6 @@ output  celkelvin_GND_d75c3f7f;
 
 // ------------------------ Networks ---------------------
 STONEpad1 XPAD1 (
-.PAD(GND)
-);
-
-STONEotpSENSE Xgotp (
-.OTP(GOTP),
 .PAD(GND)
 );
 
@@ -77,17 +61,17 @@ WRAPPER1 Xwrap_PAD1_SENSE0 (
 .o(kelvin_GNDregulation)
 );
 
-WRAPPER1 Xwrap_PAD1_SENSE1 (
+WRAPPER1 Xwrap_PAD1_SENSE3 (
 .i(GND),
 .o(kelvin_GNDsoftstart)
 );
 
-WRAPPER1 Xwrap_PAD1_SENSE2 (
+WRAPPER1 Xwrap_PAD1_SENSE4 (
 .i(GND),
 .o(kelvin_GNDpowergood)
 );
 
-WRAPPER1 Xwrap_PAD1_SENSE3 (
+WRAPPER1 Xwrap_PAD1_SENSE7 (
 .i(GND),
 .o(kelvin_GNDservice)
 );

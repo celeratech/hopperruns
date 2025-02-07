@@ -51,7 +51,8 @@ limit,fet_dft,choose1,yes
 limit,fet_calculator,choose0,typical
 limit,fet_calculator,choose1,maximum
 
-
+limit,fet_padopendrain,choose0,no
+limit,fet_padopendrain,choose1,yes
 //**********************************************
 //PAD Parameters
 //**********************************************
@@ -422,7 +423,8 @@ generate_area,fetdn_a0946f8e,767270
 #define,nmos40fudge,100
 #define,nmos45fudge,100
 #define,nmos60fudge,100
-
+//PADopenDrain
+#define,PADopendrainWlimit,85.0
 //**********************************************
 //Pinorder Parameters
 *******************************************

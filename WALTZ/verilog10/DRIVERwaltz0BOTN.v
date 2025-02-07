@@ -73,11 +73,41 @@ endmodule
 
 
 
-module fetdn_359003a8 ();
+//Celera:fetdn_359003a8
+//Celera Confidential Symbol Generator
+//power NMOS:Ron:0.820 Ohm
+//Vgs 6V Vds 60V
+//Kelvin:yes
+
+module fetdn_359003a8 (GATE,SOURCE,DRAIN,SOURCEk,DRAINk,IREPLICA,SUB);
+input GATE;
+inout SOURCE;
+inout DRAIN;
+inout DRAINk;
+inout SOURCEk;
+input SUB;
+inout IREPLICA;
 endmodule
 
-module fetdn_9694dc46 ();
+
+
+//Celera:fetdn_9694dc46
+//Celera Confidential Symbol Generator
+//power NMOS:Ron:0.820 Ohm
+//Vgs 6V Vds 60V
+//Kelvin:yes
+
+module fetdn_9694dc46 (GATE,SOURCE,DRAIN,SOURCEk,DRAINk,IREPLICA,SUB);
+input GATE;
+inout SOURCE;
+inout DRAIN;
+inout DRAINk;
+inout SOURCEk;
+input SUB;
+inout IREPLICA;
 endmodule
+
+
 
 //Celera:currentlimitfet_282c42a8
 //Celera Confidential Symbol Generator
@@ -155,31 +185,9 @@ endmodule
 
 
 
-//Verilog HDL for "DRM", "drm24L" "functional"
-
-
-module drm24L ( V, G, SUB, tmi, bypload, lastdrm, id, drm0, drm1, drm2, d1,
-d0 );
-
-  input lastdrm;
-  input V;
-  output d1;
-  input  [7:0] id;
-  output d0;
-  output  [7:0] drm2;
-  input bypload;
-  output  [7:0] drm0;
-  input G;
-  output  [7:0] drm1;
-  inout  [4:0] tmi;
-  input SUB;
-endmodule
-
-
 // ------------------------ Module Verilog ---------------
-module DRIVERwaltz0BOTN (SW, tmi, MUDV, PMUDG, PMUDV, botswon, CELG59462, CELV96848, botswineg, botswipeak, CELSUB40948, IP_14d08c8e, IP_2d447a5c, IP_a0afb596, botswstatus, botswzcross, enable_driver);
+module DRIVERwaltz0BOTN (SW, MUDV, PMUDG, PMUDV, botswon, CELG59462, CELV96848, botswineg, botswipeak, CELSUB40948, IP_14d08c8e, IP_2d447a5c, IP_a0afb596, botswstatus, botswzcross, enable_driver);
 inout  SW;
-inout [4:0] tmi;
 input  MUDV;
 inout  PMUDG;
 input  PMUDV;
@@ -198,12 +206,7 @@ input  enable_driver;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
 wire [7:0] trim_currentlimit;
-wire [7:0] id;
-wire [7:0] drm0;
-wire [7:0] drm1;
-wire [7:0] drm2;
 
 // ------------------------ Networks ---------------------
 currentlimitfet_bdeab8a2 XU3 (
@@ -214,7 +217,7 @@ currentlimitfet_bdeab8a2 XU3 (
 .VSENSE(net_105),
 .IREPLICA(net_100),
 .currentlimit_lv(botswzcross),
-.trim_currentlimit({trim_currentlimit_14d08c8e_7,trim_currentlimit_14d08c8e_6,trim_currentlimit_14d08c8e_5,trim_currentlimit_14d08c8e_4,trim_currentlimit_14d08c8e_3,trim_currentlimit_14d08c8e_2,trim_currentlimit_14d08c8e_1,trim_currentlimit_14d08c8e_0}),
+.trim_currentlimit({a0,a0,a0,a0,a0,a0,a0,a0}),
 .enable_currentlimit(enable_driver),
 .global_currentlimit(tl0),
 .measure_currentlimit(botswstatus),
@@ -240,7 +243,7 @@ currentlimitfet_2899e616 XU9 (
 .VSENSE(net_106),
 .IREPLICA(net_101),
 .currentlimit_lv(botswipeak),
-.trim_currentlimit({trim_currentlimit_a0afb596_7,trim_currentlimit_a0afb596_6,trim_currentlimit_a0afb596_5,trim_currentlimit_a0afb596_4,trim_currentlimit_a0afb596_3,trim_currentlimit_a0afb596_2,trim_currentlimit_a0afb596_1,trim_currentlimit_a0afb596_0}),
+.trim_currentlimit({a0,a0,a0,a0,a0,a0,a0,a0}),
 .enable_currentlimit(enable_driver),
 .global_currentlimit(tl0),
 .measure_currentlimit(botswstatus),
@@ -249,11 +252,23 @@ currentlimitfet_2899e616 XU9 (
 );
 
 fetdn_359003a8 XU14 (
-
+.SUB(CELSUB40948),
+.GATE(net_114),
+.DRAIN(SW),
+.DRAINk(net_66),
+.SOURCE(PMUDG),
+.SOURCEk(net_105),
+.IREPLICA(net_100)
 );
 
 fetdn_9694dc46 XU16 (
-
+.SUB(CELSUB40948),
+.GATE(net_114),
+.DRAIN(SW),
+.DRAINk(net_107),
+.SOURCE(PMUDG),
+.SOURCEk(net_72),
+.IREPLICA(net_102)
 );
 
 currentlimitfet_282c42a8 XU17 (
@@ -264,7 +279,7 @@ currentlimitfet_282c42a8 XU17 (
 .VSENSE(net_107),
 .IREPLICA(net_102),
 .currentlimit_lv(botswineg),
-.trim_currentlimit({trim_currentlimit_2d447a5c_7,trim_currentlimit_2d447a5c_6,trim_currentlimit_2d447a5c_5,trim_currentlimit_2d447a5c_4,trim_currentlimit_2d447a5c_3,trim_currentlimit_2d447a5c_2,trim_currentlimit_2d447a5c_1,trim_currentlimit_2d447a5c_0}),
+.trim_currentlimit({a0,a0,a0,a0,a0,a0,a0,a0}),
 .enable_currentlimit(enable_driver),
 .global_currentlimit(tl0),
 .measure_currentlimit(botswstatus),
@@ -295,6 +310,13 @@ PEBBLEtielo XtieLo (
 .SUB(CELSUB40948)
 );
 
+PEBBLEtielo XDRMNOTL (
+.G(CELG59462),
+.V(CELV96848),
+.q(a0),
+.SUB(CELSUB40948)
+);
+
 fetdriver_e53ed485 Xfetdriver1 (
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -307,21 +329,6 @@ fetdriver_e53ed485 Xfetdriver1 (
 .gate_status_vin(botswstatus),
 .enable_fetdriver(enable_driver),
 .global_fetdriver(tl0)
-);
-
-drm24L drm_hex0x06 (
-.G(CELG59462),
-.V(CELV96848),
-.d0(a0),
-.d1(a1),
-.id({a0,a0,a0,a0,a0,a1,a1,a0}),
-.SUB(CELSUB40948),
-.tmi(tmi[4:0]),
-.drm0({trim_currentlimit_2d447a5c_7,trim_currentlimit_2d447a5c_6,trim_currentlimit_2d447a5c_5,trim_currentlimit_2d447a5c_4,trim_currentlimit_2d447a5c_3,trim_currentlimit_2d447a5c_2,trim_currentlimit_2d447a5c_1,trim_currentlimit_2d447a5c_0}),
-.drm1({trim_currentlimit_14d08c8e_7,trim_currentlimit_14d08c8e_6,trim_currentlimit_14d08c8e_5,trim_currentlimit_14d08c8e_4,trim_currentlimit_14d08c8e_3,trim_currentlimit_14d08c8e_2,trim_currentlimit_14d08c8e_1,trim_currentlimit_14d08c8e_0}),
-.drm2({trim_currentlimit_a0afb596_7,trim_currentlimit_a0afb596_6,trim_currentlimit_a0afb596_5,trim_currentlimit_a0afb596_4,trim_currentlimit_a0afb596_3,trim_currentlimit_a0afb596_2,trim_currentlimit_a0afb596_1,trim_currentlimit_a0afb596_0}),
-.bypload(a0),
-.lastdrm(a0)
 );
 
 STONEnoconn XNCnoconn_tdi_currentlimitlive2 (

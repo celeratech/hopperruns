@@ -8,15 +8,6 @@ module STONEpad1 ( PAD );
 endmodule
 
 
-//Verilog HDL for "Generate", "STONEpad2" "functional"
-
-
-module STONEpad2 ( PAD );
-
-  inout PAD;
-endmodule
-
-
 //Verilog HDL for "Esd", "ESDcore60" "functional"
 
 
@@ -54,20 +45,15 @@ STONEpad1 XPAD1 (
 .PAD(IN)
 );
 
-STONEpad2 XPAD2 (
-.PAD(PIN)
-);
-
 ESDcore60 XESDcore60_1 (
 .PAD(IN),
 .GESD(GESD),
 .CELSUB(CELSUB40948)
 );
 
-ESDcore60 XESDcore60_2 (
-.PAD(PIN),
-.GESD(GESD),
-.CELSUB(CELSUB40948)
+WRAPPER1 Xwrap_PAD1_SENSE1 (
+.i(IN),
+.o(PIN)
 );
 
 WRAPPER1 XWRAP_celkelvin_IN_bc3b7675 (

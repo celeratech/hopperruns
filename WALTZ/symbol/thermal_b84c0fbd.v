@@ -1,6 +1,6 @@
 //Celera:thermal
 //Celera Confidential Symbol Generator
-//Thermal Protector:Rise 165C Fall naC
+//Thermal Protector:Rise 165C Fall 145C
  module thermal_b84c0fbd (SIMPV,CELBG,IP,enable_thermal,fault_thermal,ten,
 trim_thermal_accuracy,
 CELG,CELSUB);
