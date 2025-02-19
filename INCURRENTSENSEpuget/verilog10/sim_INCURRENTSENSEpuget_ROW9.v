@@ -1,19 +1,16 @@
 // ------------------------ Module Definitions -----------
-module FORCE_INCURRENTSENSEpuget (GND,SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,CELSUB40948,IP_2ceca3e2,IP_4ad46a6e,IP_5c672501,clock_currentsensein,enable_currentsensein,measure_currentsensein,kelvin_GNDcurrentsensein,register_enable_currentsensein_xd_enable_currentsensein_89705365,register_measure_currentsensein_xd_measure_currentsensein_824d3563);
-  inout  GND;
-  output  SIMPV;
-  output  VOUTSN;
-  output  VOUTSP;
-  output  CELG59462;
+module FORCE_INCURRENTSENSEpuget (GND,SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,CELSUB40948,clock_currentsensein,enable_currentsensein,measure_currentsensein,kelvin_GNDcurrentsensein,register_enable_currentsensein_xd_enable_currentsensein_89705365,register_measure_currentsensein_xd_measure_currentsensein_824d3563);
+  input  GND;
+  input  SIMPV;
+  input  VOUTSN;
+  input  VOUTSP;
+  input  CELG59462;
   input  CELV96848;
-  output  CELSUB40948;
-  output  IP_2ceca3e2;
-  output  IP_4ad46a6e;
-  output  IP_5c672501;
+  input  CELSUB40948;
   output  clock_currentsensein;
-  inout  enable_currentsensein;
-  inout  measure_currentsensein;
-  output  kelvin_GNDcurrentsensein;
+  output  enable_currentsensein;
+  output  measure_currentsensein;
+  input  kelvin_GNDcurrentsensein;
   input  register_enable_currentsensein_xd_enable_currentsensein_89705365;
   input  register_measure_currentsensein_xd_measure_currentsensein_824d3563;
 endmodule
@@ -52,9 +49,6 @@ FORCE_INCURRENTSENSEpuget XFORCE_INCURRENTSENSEpuget1 (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948),
-.IP_2ceca3e2(IP_2ceca3e2),
-.IP_4ad46a6e(IP_4ad46a6e),
-.IP_5c672501(IP_5c672501),
 .clock_currentsensein(clock_currentsensein),
 .enable_currentsensein(enable_currentsensein),
 .measure_currentsensein(measure_currentsensein),
