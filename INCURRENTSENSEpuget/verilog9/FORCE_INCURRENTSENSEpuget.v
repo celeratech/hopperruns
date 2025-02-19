@@ -8,19 +8,6 @@ module STONEnoconn ( noconn );
 endmodule
 
 
-//Celera:dbuf_e926e395
-//Celera Confidential Symbol Generator
-//Digital Buffer
-module dbuf_e926e395 (CELV,CELG,i,o,SUB);
-input CELV;
-input CELG;
-input i;
-input SUB;
-output o;
-endmodule
-
-
-
 //Verilog HDL for "Generate", "WRAPPER1" "functional"
 
 
@@ -107,7 +94,7 @@ output  VOUTSP;
 output  CELG59462;
 input  CELV96848;
 output  CELSUB40948;
-output  clock_currentsensein;
+  input  clock_currentsensein;
 inout  enable_currentsensein;
 inout  measure_currentsensein;
 output  IP_INCURRENTSENSEpuget1;
@@ -121,14 +108,6 @@ input  register_measure_currentsensein_xd_measure_currentsensein_824d3563;
 // ------------------------ Networks ---------------------
 STONEnoconn XNCip (
 .noconn(noconn_IN)
-);
-
-dbuf_e926e395 Xd_clock_currentsensein (
-.i(net_148),
-.o(clock_currentsensein),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
 );
 
 WRAPPER1 XWRAPregister_enable_currentsensein_xd_enable_currentsensein_89705365 (

@@ -7,7 +7,7 @@ module FORCE_INCURRENTSENSEpuget (GND,SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,CE
   output  CELG59462;
   input  CELV96848;
   output  CELSUB40948;
-  output  clock_currentsensein;
+  input  clock_currentsensein;
   inout  enable_currentsensein;
   inout  measure_currentsensein;
   output  IP_INCURRENTSENSEpuget1;
