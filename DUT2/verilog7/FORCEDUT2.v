@@ -1,4 +1,17 @@
 // ------------------------ Module Definitions -----------
+//Celera:dbuf_e926e395
+//Celera Confidential Symbol Generator
+//Digital Buffer
+module dbuf_e926e395 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
+endmodule
+
+
+
 //Verilog HDL for "Generate", "STONEnoconn" "functional"
 
 
@@ -121,7 +134,7 @@ inout  ITRI;
 inout  VPUL;
 output  VPWL;
 inout  VSIN;
-  input  VSQR;
+output  VSQR;
 inout  VTRI;
 output  CELG59462;
 output  CELV96848;
@@ -133,6 +146,14 @@ output  SENSE_G_465a3572;
 // ------------------------ Wires ------------------------
 
 // ------------------------ Networks ---------------------
+dbuf_e926e395 XU1 (
+.i(net_35),
+.o(VSQR),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
+);
+
 STONEnoconn XNCip (
 .noconn(noconn_IN)
 );
