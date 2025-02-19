@@ -197,7 +197,7 @@ vdc_0 VI__VOUTSP (
 );
 
 SIMbias XIP_INCURRENTSENSEpuget1 (
-.V(CELV96848),
+.V(SIMPV),
 .IN(noconn_IN),
 .IP(IP_INCURRENTSENSEpuget1)
 );
