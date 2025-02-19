@@ -56,7 +56,7 @@ module FORCEDUT2 (GND,BS_0,BS_1,BS_2,BS_3,IPUL,IPWL,ISIN,ISQR,ITRI,VPUL,VPWL,VSI
   input  VSQR;
   inout  VTRI;
   output  CELG59462;
-  input  CELV96848;
+  output  CELV96848;
   output  CELSUB40948;
   output  IP_efc25439;
   output  SENSE_G_465a3572;

@@ -70,6 +70,11 @@ module vpwl_0x0 (PLUS,MINUS);
   output  MINUS;
 endmodule
 
+module vpwl_0x5 (PLUS,MINUS);
+  output  PLUS;
+  output  MINUS;
+endmodule
+
 module vdc_0(PLUS, MINUS);
 output PLUS;
 output MINUS;
@@ -119,7 +124,7 @@ inout  VSIN;
   input  VSQR;
 inout  VTRI;
 output  CELG59462;
-input  CELV96848;
+output  CELV96848;
 output  CELSUB40948;
 output  IP_efc25439;
 output  SENSE_G_465a3572;
@@ -189,6 +194,11 @@ vsin_3d5x1d5x10kx0 XV5 (
 
 vpwl_0x0 XCELG (
 .PLUS(CELG59462),
+.MINUS(GND)
+);
+
+vpwl_0x5 XCELV (
+.PLUS(CELV96848),
 .MINUS(GND)
 );
 
