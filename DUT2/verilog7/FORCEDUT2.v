@@ -208,7 +208,7 @@ vpwl_0x0 XSENSE_G (
 );
 
 SIMbias XIP_efc25439 (
-.V(CELV),
+.V(CELV96848),
 .IN(noconn_IN),
 .IP(IP_efc25439)
 );
