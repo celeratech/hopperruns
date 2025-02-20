@@ -7,53 +7,47 @@
 :vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
 :vpi_module "/usr/local/lib/ivl/va_math.vpi";
-S_0x5555558801e0 .scope module, "sim_INCURRENTSENSEpuget_ROW9" "sim_INCURRENTSENSEpuget_ROW9" 2 43;
+S_0x55555587f810 .scope module, "sim_INCURRENTSENSEpuget_ROW9" "sim_INCURRENTSENSEpuget_ROW9" 2 39;
  .timescale 0 0;
 o0x7fffff25f018 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589b0f0_0 .net "CELG59462", 0 0, o0x7fffff25f018;  0 drivers
+v0x555555899120_0 .net "CELG59462", 0 0, o0x7fffff25f018;  0 drivers
 o0x7fffff25f048 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589b1b0_0 .net "CELSUB40948", 0 0, o0x7fffff25f048;  0 drivers
+v0x5555558991e0_0 .net "CELSUB40948", 0 0, o0x7fffff25f048;  0 drivers
 o0x7fffff25f078 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589b2c0_0 .net "CELV96848", 0 0, o0x7fffff25f078;  0 drivers
+v0x5555558992f0_0 .net "CELV96848", 0 0, o0x7fffff25f078;  0 drivers
 o0x7fffff25f0a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589b3b0_0 .net "GND", 0 0, o0x7fffff25f0a8;  0 drivers
+v0x5555558993e0_0 .net "GND", 0 0, o0x7fffff25f0a8;  0 drivers
 o0x7fffff25f0d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589b450_0 .net "IP_2ceca3e2", 0 0, o0x7fffff25f0d8;  0 drivers
+v0x555555899480_0 .net "IP_INCURRENTSENSEpuget1", 0 0, o0x7fffff25f0d8;  0 drivers
+o0x7fffff25f558 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558995c0_0 .net "PORB97836", 0 0, o0x7fffff25f558;  0 drivers
 o0x7fffff25f108 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589b540_0 .net "IP_4ad46a6e", 0 0, o0x7fffff25f108;  0 drivers
+v0x555555899660_0 .net "SIMPV", 0 0, o0x7fffff25f108;  0 drivers
 o0x7fffff25f138 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589b5e0_0 .net "IP_5c672501", 0 0, o0x7fffff25f138;  0 drivers
+v0x555555899750_0 .net "VOUTSN", 0 0, o0x7fffff25f138;  0 drivers
 o0x7fffff25f168 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589b6b0_0 .net "IP_INCURRENTSENSEpuget1", 0 0, o0x7fffff25f168;  0 drivers
+v0x555555899840_0 .net "VOUTSP", 0 0, o0x7fffff25f168;  0 drivers
+o0x7fffff25f588 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558998e0_0 .net "VSNSI_FILTER", 0 0, o0x7fffff25f588;  0 drivers
+o0x7fffff25f5b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899980_0 .net "VSNSI_LIVE", 0 0, o0x7fffff25f5b8;  0 drivers
 o0x7fffff25f198 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589b7a0_0 .net "PORB97836", 0 0, o0x7fffff25f198;  0 drivers
+v0x555555899a20_0 .net "clock_currentsensein", 0 0, o0x7fffff25f198;  0 drivers
 o0x7fffff25f1c8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589b840_0 .net "SIMPV", 0 0, o0x7fffff25f1c8;  0 drivers
+v0x555555899b10_0 .net "enable_currentsensein", 0 0, o0x7fffff25f1c8;  0 drivers
 o0x7fffff25f1f8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589b930_0 .net "VOUTSN", 0 0, o0x7fffff25f1f8;  0 drivers
+v0x555555899c00_0 .net "kelvin_GNDcurrentsensein", 0 0, o0x7fffff25f1f8;  0 drivers
 o0x7fffff25f228 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589ba20_0 .net "VOUTSP", 0 0, o0x7fffff25f228;  0 drivers
-o0x7fffff25f6d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589bb10_0 .net "VSNSI_FILTER", 0 0, o0x7fffff25f6d8;  0 drivers
-o0x7fffff25f708 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589bbb0_0 .net "VSNSI_LIVE", 0 0, o0x7fffff25f708;  0 drivers
+v0x555555899cf0_0 .net "measure_currentsensein", 0 0, o0x7fffff25f228;  0 drivers
+o0x7fffff25f5e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899de0_0 .net "ok_currentsensein", 0 0, o0x7fffff25f5e8;  0 drivers
+o0x7fffff25f618 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899e80_0 .net "ok_measurecurrentsensein", 0 0, o0x7fffff25f618;  0 drivers
 o0x7fffff25f258 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589bc50_0 .net "clock_currentsensein", 0 0, o0x7fffff25f258;  0 drivers
+v0x55555589a030_0 .net "register_enable_currentsensein_xd_enable_currentsensein_89705365", 0 0, o0x7fffff25f258;  0 drivers
 o0x7fffff25f288 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589bd40_0 .net "enable_currentsensein", 0 0, o0x7fffff25f288;  0 drivers
-o0x7fffff25f2b8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589be30_0 .net "kelvin_GNDcurrentsensein", 0 0, o0x7fffff25f2b8;  0 drivers
-o0x7fffff25f2e8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589c030_0 .net "measure_currentsensein", 0 0, o0x7fffff25f2e8;  0 drivers
-o0x7fffff25f738 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589c120_0 .net "ok_currentsensein", 0 0, o0x7fffff25f738;  0 drivers
-o0x7fffff25f768 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589c1c0_0 .net "ok_measurecurrentsensein", 0 0, o0x7fffff25f768;  0 drivers
-o0x7fffff25f318 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589c260_0 .net "register_enable_currentsensein_xd_enable_currentsensein_89705365", 0 0, o0x7fffff25f318;  0 drivers
-o0x7fffff25f348 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589c300_0 .net "register_measure_currentsensein_xd_measure_currentsensein_824d3563", 0 0, o0x7fffff25f348;  0 drivers
-S_0x555555880370 .scope module, "XFORCE_INCURRENTSENSEpuget1" "FORCE_INCURRENTSENSEpuget" 2 49, 2 2 0, S_0x5555558801e0;
+v0x55555589a0d0_0 .net "register_measure_currentsensein_xd_measure_currentsensein_824d3563", 0 0, o0x7fffff25f288;  0 drivers
+S_0x55555587f9a0 .scope module, "XFORCE_INCURRENTSENSEpuget1" "FORCE_INCURRENTSENSEpuget" 2 45, 2 2 0, S_0x55555587f810;
  .timescale 0 0;
     .port_info 0 /INOUT 1 "GND";
     .port_info 1 /OUTPUT 1 "SIMPV";
@@ -61,37 +55,29 @@ S_0x555555880370 .scope module, "XFORCE_INCURRENTSENSEpuget1" "FORCE_INCURRENTSE
     .port_info 3 /OUTPUT 1 "VOUTSP";
     .port_info 4 /OUTPUT 1 "CELG59462";
     .port_info 5 /OUTPUT 1 "CELV96848";
-    .port_info 6 /OUTPUT 1 "PORB97836";
-    .port_info 7 /OUTPUT 1 "CELSUB40948";
-    .port_info 8 /OUTPUT 1 "IP_2ceca3e2";
-    .port_info 9 /OUTPUT 1 "IP_4ad46a6e";
-    .port_info 10 /OUTPUT 1 "IP_5c672501";
-    .port_info 11 /OUTPUT 1 "clock_currentsensein";
-    .port_info 12 /INOUT 1 "enable_currentsensein";
-    .port_info 13 /INOUT 1 "measure_currentsensein";
-    .port_info 14 /OUTPUT 1 "IP_INCURRENTSENSEpuget1";
-    .port_info 15 /OUTPUT 1 "kelvin_GNDcurrentsensein";
-    .port_info 16 /INPUT 1 "register_enable_currentsensein_xd_enable_currentsensein_89705365";
-    .port_info 17 /INPUT 1 "register_measure_currentsensein_xd_measure_currentsensein_824d3563";
-v0x5555558480f0_0 .net "CELG59462", 0 0, o0x7fffff25f018;  alias, 0 drivers
-v0x555555847ec0_0 .net "CELSUB40948", 0 0, o0x7fffff25f048;  alias, 0 drivers
-v0x555555899060_0 .net "CELV96848", 0 0, o0x7fffff25f078;  alias, 0 drivers
-v0x555555899100_0 .net "GND", 0 0, o0x7fffff25f0a8;  alias, 0 drivers
-v0x5555558991c0_0 .net "IP_2ceca3e2", 0 0, o0x7fffff25f0d8;  alias, 0 drivers
-v0x5555558992d0_0 .net "IP_4ad46a6e", 0 0, o0x7fffff25f108;  alias, 0 drivers
-v0x555555899390_0 .net "IP_5c672501", 0 0, o0x7fffff25f138;  alias, 0 drivers
-v0x555555899450_0 .net "IP_INCURRENTSENSEpuget1", 0 0, o0x7fffff25f168;  alias, 0 drivers
-v0x555555899510_0 .net "PORB97836", 0 0, o0x7fffff25f198;  alias, 0 drivers
-v0x5555558995d0_0 .net "SIMPV", 0 0, o0x7fffff25f1c8;  alias, 0 drivers
-v0x555555899690_0 .net "VOUTSN", 0 0, o0x7fffff25f1f8;  alias, 0 drivers
-v0x555555899750_0 .net "VOUTSP", 0 0, o0x7fffff25f228;  alias, 0 drivers
-v0x555555899810_0 .net "clock_currentsensein", 0 0, o0x7fffff25f258;  alias, 0 drivers
-v0x5555558998d0_0 .net "enable_currentsensein", 0 0, o0x7fffff25f288;  alias, 0 drivers
-v0x555555899990_0 .net "kelvin_GNDcurrentsensein", 0 0, o0x7fffff25f2b8;  alias, 0 drivers
-v0x555555899a50_0 .net "measure_currentsensein", 0 0, o0x7fffff25f2e8;  alias, 0 drivers
-v0x555555899b10_0 .net "register_enable_currentsensein_xd_enable_currentsensein_89705365", 0 0, o0x7fffff25f318;  alias, 0 drivers
-v0x555555899ce0_0 .net "register_measure_currentsensein_xd_measure_currentsensein_824d3563", 0 0, o0x7fffff25f348;  alias, 0 drivers
-S_0x55555589a080 .scope module, "XINCURRENTSENSEpuget1" "INCURRENTSENSEpuget" 2 70, 2 23 0, S_0x5555558801e0;
+    .port_info 6 /OUTPUT 1 "CELSUB40948";
+    .port_info 7 /OUTPUT 1 "clock_currentsensein";
+    .port_info 8 /INOUT 1 "enable_currentsensein";
+    .port_info 9 /INOUT 1 "measure_currentsensein";
+    .port_info 10 /OUTPUT 1 "IP_INCURRENTSENSEpuget1";
+    .port_info 11 /OUTPUT 1 "kelvin_GNDcurrentsensein";
+    .port_info 12 /INPUT 1 "register_enable_currentsensein_xd_enable_currentsensein_89705365";
+    .port_info 13 /INPUT 1 "register_measure_currentsensein_xd_measure_currentsensein_824d3563";
+v0x5555558474b0_0 .net "CELG59462", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x5555558480f0_0 .net "CELSUB40948", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x555555847ec0_0 .net "CELV96848", 0 0, o0x7fffff25f078;  alias, 0 drivers
+v0x555555897520_0 .net "GND", 0 0, o0x7fffff25f0a8;  alias, 0 drivers
+v0x5555558975e0_0 .net "IP_INCURRENTSENSEpuget1", 0 0, o0x7fffff25f0d8;  alias, 0 drivers
+v0x5555558976f0_0 .net "SIMPV", 0 0, o0x7fffff25f108;  alias, 0 drivers
+v0x5555558977b0_0 .net "VOUTSN", 0 0, o0x7fffff25f138;  alias, 0 drivers
+v0x555555897870_0 .net "VOUTSP", 0 0, o0x7fffff25f168;  alias, 0 drivers
+v0x555555897930_0 .net "clock_currentsensein", 0 0, o0x7fffff25f198;  alias, 0 drivers
+v0x5555558979f0_0 .net "enable_currentsensein", 0 0, o0x7fffff25f1c8;  alias, 0 drivers
+v0x555555897ab0_0 .net "kelvin_GNDcurrentsensein", 0 0, o0x7fffff25f1f8;  alias, 0 drivers
+v0x555555897b70_0 .net "measure_currentsensein", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x555555897c30_0 .net "register_enable_currentsensein_xd_enable_currentsensein_89705365", 0 0, o0x7fffff25f258;  alias, 0 drivers
+v0x555555897cf0_0 .net "register_measure_currentsensein_xd_measure_currentsensein_824d3563", 0 0, o0x7fffff25f288;  alias, 0 drivers
+S_0x555555897f70 .scope module, "XINCURRENTSENSEpuget1" "INCURRENTSENSEpuget" 2 62, 2 19 0, S_0x55555587f810;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "SIMPV";
     .port_info 1 /INPUT 1 "VOUTSN";
@@ -109,22 +95,22 @@ S_0x55555589a080 .scope module, "XINCURRENTSENSEpuget1" "INCURRENTSENSEpuget" 2 
     .port_info 13 /INPUT 1 "IP_INCURRENTSENSEpuget1";
     .port_info 14 /INOUT 1 "kelvin_GNDcurrentsensein";
     .port_info 15 /OUTPUT 1 "ok_measurecurrentsensein";
-v0x5555558474b0_0 .net "CELG59462", 0 0, o0x7fffff25f018;  alias, 0 drivers
-v0x55555589a3c0_0 .net "CELSUB40948", 0 0, o0x7fffff25f048;  alias, 0 drivers
-v0x55555589a490_0 .net "CELV96848", 0 0, o0x7fffff25f078;  alias, 0 drivers
-v0x55555589a590_0 .net "IP_INCURRENTSENSEpuget1", 0 0, o0x7fffff25f168;  alias, 0 drivers
-v0x55555589a660_0 .net "PORB97836", 0 0, o0x7fffff25f198;  alias, 0 drivers
-v0x55555589a750_0 .net "SIMPV", 0 0, o0x7fffff25f1c8;  alias, 0 drivers
-v0x55555589a820_0 .net "VOUTSN", 0 0, o0x7fffff25f1f8;  alias, 0 drivers
-v0x55555589a8f0_0 .net "VOUTSP", 0 0, o0x7fffff25f228;  alias, 0 drivers
-v0x55555589a9c0_0 .net "VSNSI_FILTER", 0 0, o0x7fffff25f6d8;  alias, 0 drivers
-v0x55555589aa60_0 .net "VSNSI_LIVE", 0 0, o0x7fffff25f708;  alias, 0 drivers
-v0x55555589ab00_0 .net "clock_currentsensein", 0 0, o0x7fffff25f258;  alias, 0 drivers
-v0x55555589abd0_0 .net "enable_currentsensein", 0 0, o0x7fffff25f288;  alias, 0 drivers
-v0x55555589aca0_0 .net "kelvin_GNDcurrentsensein", 0 0, o0x7fffff25f2b8;  alias, 0 drivers
-v0x55555589ad70_0 .net "measure_currentsensein", 0 0, o0x7fffff25f2e8;  alias, 0 drivers
-v0x55555589ae40_0 .net "ok_currentsensein", 0 0, o0x7fffff25f738;  alias, 0 drivers
-v0x55555589aee0_0 .net "ok_measurecurrentsensein", 0 0, o0x7fffff25f768;  alias, 0 drivers
+v0x5555558982b0_0 .net "CELG59462", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x555555898350_0 .net "CELSUB40948", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x555555898420_0 .net "CELV96848", 0 0, o0x7fffff25f078;  alias, 0 drivers
+v0x555555898520_0 .net "IP_INCURRENTSENSEpuget1", 0 0, o0x7fffff25f0d8;  alias, 0 drivers
+v0x5555558985f0_0 .net "PORB97836", 0 0, o0x7fffff25f558;  alias, 0 drivers
+v0x5555558986e0_0 .net "SIMPV", 0 0, o0x7fffff25f108;  alias, 0 drivers
+v0x555555898780_0 .net "VOUTSN", 0 0, o0x7fffff25f138;  alias, 0 drivers
+v0x555555898850_0 .net "VOUTSP", 0 0, o0x7fffff25f168;  alias, 0 drivers
+v0x555555898920_0 .net "VSNSI_FILTER", 0 0, o0x7fffff25f588;  alias, 0 drivers
+v0x555555898a50_0 .net "VSNSI_LIVE", 0 0, o0x7fffff25f5b8;  alias, 0 drivers
+v0x555555898af0_0 .net "clock_currentsensein", 0 0, o0x7fffff25f198;  alias, 0 drivers
+v0x555555898bc0_0 .net "enable_currentsensein", 0 0, o0x7fffff25f1c8;  alias, 0 drivers
+v0x555555898c90_0 .net "kelvin_GNDcurrentsensein", 0 0, o0x7fffff25f1f8;  alias, 0 drivers
+v0x555555898d60_0 .net "measure_currentsensein", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x555555898e30_0 .net "ok_currentsensein", 0 0, o0x7fffff25f5e8;  alias, 0 drivers
+v0x555555898ed0_0 .net "ok_measurecurrentsensein", 0 0, o0x7fffff25f618;  alias, 0 drivers
 # The file index is used to find the file name in the following table.
 :file_names 3;
     "N/A";
