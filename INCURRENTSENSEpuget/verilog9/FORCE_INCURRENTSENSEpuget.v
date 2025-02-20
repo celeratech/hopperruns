@@ -42,6 +42,11 @@ output MINUS;
 endmodule
 
 
+module vpwl_0x5 (PLUS,MINUS);
+  output  PLUS;
+  output  MINUS;
+endmodule
+
 module vpwl_0x0_10ux0_11ux0 (PLUS,MINUS);
   output  PLUS;
   output  MINUS;
@@ -105,7 +110,7 @@ output  SIMPV;
 output  VOUTSN;
 output  VOUTSP;
 output  CELG59462;
-input  CELV96848;
+output  CELV96848;
 output  CELSUB40948;
 output  clock_currentsensein;
 inout  enable_currentsensein;
@@ -151,9 +156,19 @@ vpwl_0x0 XCELG (
 .MINUS(GND)
 );
 
+vpwl_0x5 XCELV (
+.PLUS(CELV96848),
+.MINUS(GND)
+);
+
 vpwl_0x0_10ux0_11ux0 V_GNDx (
 .PLUS(net_61),
 .MINUS(net_0)
+);
+
+vpwl_0x5 XSIMPV (
+.PLUS(SIMPV),
+.MINUS(GND)
 );
 
 vdc_0 VI__GND (
