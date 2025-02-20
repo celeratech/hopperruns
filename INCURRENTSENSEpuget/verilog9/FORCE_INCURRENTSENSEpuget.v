@@ -104,13 +104,14 @@ input GND;
 endmodule 
 
 // ------------------------ Module Verilog ---------------
-module FORCE_INCURRENTSENSEpuget (GND, SIMPV, VOUTSN, VOUTSP, CELG59462, CELV96848, CELSUB40948, clock_currentsensein, enable_currentsensein, measure_currentsensein, IP_INCURRENTSENSEpuget1, kelvin_GNDcurrentsensein, register_enable_currentsensein_xd_enable_currentsensein_89705365, register_measure_currentsensein_xd_measure_currentsensein_824d3563);
+module FORCE_INCURRENTSENSEpuget (GND, SIMPV, VOUTSN, VOUTSP, CELG59462, CELV96848, PORB97836, CELSUB40948, clock_currentsensein, enable_currentsensein, measure_currentsensein, IP_INCURRENTSENSEpuget1, kelvin_GNDcurrentsensein, register_enable_currentsensein_xd_enable_currentsensein_89705365, register_measure_currentsensein_xd_measure_currentsensein_824d3563);
 inout  GND;
 output  SIMPV;
 output  VOUTSN;
 output  VOUTSP;
 output  CELG59462;
 output  CELV96848;
+output  PORB97836;
 output  CELSUB40948;
 output  clock_currentsensein;
 inout  enable_currentsensein;
@@ -158,6 +159,11 @@ vpwl_0x0 XCELG (
 
 vpwl_0x5 XCELV (
 .PLUS(CELV96848),
+.MINUS(GND)
+);
+
+vpwl_0x5 XPORB (
+.PLUS(PORB97836),
 .MINUS(GND)
 );
 
