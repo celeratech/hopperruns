@@ -120,7 +120,7 @@ input GND;
 endmodule 
 
 // ------------------------ Module Verilog ---------------
-module FORCEDUT2 (GND, BS_0, BS_1, BS_2, BS_3, IPUL, IPWL, ISIN, ISQR, ITRI, VPUL, VPWL, VSIN, VSQR, VTRI, CELG59462, CELV96848, CELSUB40948, IP_efc25439, SENSE_G_465a3572);
+module FORCEDUT2 (GND, BS_0, BS_1, BS_2, BS_3, IPUL, IPWL, ISIN, ISQR, ITRI, VPUL, VPWL, VSIN, VSQR, VTRI, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_efc25439, SENSE_G_465a3572);
 inout  GND;
 inout  BS_0;
 inout  BS_1;
@@ -138,6 +138,7 @@ output  VSQR;
 inout  VTRI;
 output  CELG59462;
 output  CELV96848;
+output  PORB97836;
 output  CELSUB40948;
 output  IP_efc25439;
 output  SENSE_G_465a3572;
@@ -220,6 +221,11 @@ vpwl_0x0 XCELG (
 
 vpwl_0x5 XCELV (
 .PLUS(CELV96848),
+.MINUS(GND)
+);
+
+vpwl_0x5 XPORB (
+.PLUS(PORB97836),
 .MINUS(GND)
 );
 
