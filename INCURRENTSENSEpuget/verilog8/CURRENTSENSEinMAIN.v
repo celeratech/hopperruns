@@ -227,7 +227,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CURRENTSENSEinMAIN (IIN, SIMPV, VOUTSN, VOUTSP, dft_ok, ok_iin, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_2ceca3e2, IP_4ad46a6e, IP_5c672501, dft_startup, IIN_TELEMETRY, ok_currentsense, dft_measure_delay, clock_currentsense, porb|PORB_e3b0c442, enable_currentsense, measure_currentsense, kelvin_GNDcurrentsense);
+module CURRENTSENSEinMAIN (IIN, SIMPV, VOUTSN, VOUTSP, dft_ok, ok_iin, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_2ceca3e2, IP_4ad46a6e, IP_5c672501, dft_startup, IIN_TELEMETRY, ok_currentsense, dft_measure_delay, clock_currentsense, enable_currentsense, measure_currentsense, kelvin_GNDcurrentsense);
 inout  IIN;
 input  SIMPV;
 input  VOUTSN;
@@ -246,7 +246,6 @@ inout  IIN_TELEMETRY;
 output  ok_currentsense;
 output  dft_measure_delay;
 input  clock_currentsense;
-input  porb|PORB_e3b0c442;
 input  enable_currentsense;
 input  measure_currentsense;
 inout  kelvin_GNDcurrentsense;
@@ -346,7 +345,7 @@ delayclock_e9793f67 Xdelay1 (
 .clock(net_147),
 .delay({a0,a0}),
 .CELSUB(CELSUB40948),
-.celeraporb(porb|PORB_e3b0c442)
+.celeraporb(PORB97836)
 );
 
 PEBBLEtielo XDRMNOTL (
