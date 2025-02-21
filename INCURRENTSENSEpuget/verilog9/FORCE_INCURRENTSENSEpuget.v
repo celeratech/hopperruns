@@ -110,7 +110,7 @@ output  SIMPV;
 output  VOUTSN;
 output  VOUTSP;
 output  CELG59462;
-output  CELV96848;
+input  CELV96848;
 output  PORB97836;
 output  CELSUB40948;
 output  clock_currentsensein;
@@ -157,11 +157,6 @@ vpwl_0x0 XCELG (
 .MINUS(GND)
 );
 
-vpwl_0x5 XCELV (
-.PLUS(CELV96848),
-.MINUS(GND)
-);
-
 vpwl_0x5 XPORB (
 .PLUS(PORB97836),
 .MINUS(GND)
@@ -170,11 +165,6 @@ vpwl_0x5 XPORB (
 vpwl_0x0_10ux0_11ux0 V_GNDx (
 .PLUS(net_61),
 .MINUS(net_0)
-);
-
-vpwl_0x5 XSIMPV (
-.PLUS(SIMPV),
-.MINUS(GND)
 );
 
 vdc_0 VI__GND (

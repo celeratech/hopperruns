@@ -5,7 +5,7 @@ module FORCE_INCURRENTSENSEpuget (GND,SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,PO
   output  VOUTSN;
   output  VOUTSP;
   output  CELG59462;
-  output  CELV96848;
+  input  CELV96848;
   output  PORB97836;
   output  CELSUB40948;
   output  clock_currentsensein;
