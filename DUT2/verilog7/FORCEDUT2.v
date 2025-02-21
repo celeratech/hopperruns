@@ -137,7 +137,7 @@ inout  VSIN;
 output  VSQR;
 inout  VTRI;
 output  CELG59462;
-output  CELV96848;
+input  CELV96848;
 output  PORB97836;
 output  CELSUB40948;
 output  IP_efc25439;
@@ -216,11 +216,6 @@ vsin_3d5x1d5x10kx0 XV5 (
 
 vpwl_0x0 XCELG (
 .PLUS(CELG59462),
-.MINUS(GND)
-);
-
-vpwl_0x5 XCELV (
-.PLUS(CELV96848),
 .MINUS(GND)
 );
 
