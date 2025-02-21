@@ -154,17 +154,17 @@ vpulse_0x1x1d0ux0x1nx1nx500d0n XV2 (
 
 vpwl_0x0 XCELG (
 .PLUS(CELG59462),
-.MINUS(GND)
+.MINUS(net_0)
 );
 
 vpwl_0x5 XCELV (
 .PLUS(CELV96848),
-.MINUS(GND)
+.MINUS(net_0)
 );
 
 vpwl_0x5 XPORB (
 .PLUS(PORB97836),
-.MINUS(GND)
+.MINUS(net_0)
 );
 
 vpwl_0x0_10ux0_11ux0 V_GNDx (
@@ -174,7 +174,7 @@ vpwl_0x0_10ux0_11ux0 V_GNDx (
 
 vpwl_0x5 XSIMPV (
 .PLUS(SIMPV),
-.MINUS(GND)
+.MINUS(net_0)
 );
 
 vdc_0 VI__GND (
@@ -184,7 +184,7 @@ vdc_0 VI__GND (
 
 vpwl_0x0 XCELSUB (
 .PLUS(CELSUB40948),
-.MINUS(GND)
+.MINUS(net_0)
 );
 
 vpwl_0x0_10d0ux0_11d0ux5 V_SIMPVx (
@@ -235,12 +235,12 @@ vdc_0 VI__kelvin_GNDcurrentsensein (
 
 vpwl_0x0_10d999ux0_11d0ux5 Xd_enable_currentsensein_pwl_bit0 (
 .PLUS(enable_currentsensein),
-.MINUS(GND)
+.MINUS(net_0)
 );
 
 vpwl_0x0_11d0ux0 Xd_measure_currentsensein_pwl_bit0 (
 .PLUS(measure_currentsensein),
-.MINUS(GND)
+.MINUS(net_0)
 );
 
 alibgnd G1 ( 
