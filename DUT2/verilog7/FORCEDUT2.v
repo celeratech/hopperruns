@@ -137,7 +137,7 @@ inout  VSIN;
 output  VSQR;
 inout  VTRI;
 output  CELG59462;
-input  CELV96848;
+output  CELV96848;
 output  PORB97836;
 output  CELSUB40948;
 output  IP_efc25439;
@@ -216,17 +216,22 @@ vsin_3d5x1d5x10kx0 XV5 (
 
 vpwl_0x0 XCELG (
 .PLUS(CELG59462),
-.MINUS(GND)
+.MINUS(net_0)
+);
+
+vpwl_0x5 XCELV (
+.PLUS(CELV96848),
+.MINUS(net_0)
 );
 
 vpwl_0x5 XPORB (
 .PLUS(PORB97836),
-.MINUS(GND)
+.MINUS(net_0)
 );
 
 vpwl_0x0 XCELSUB (
 .PLUS(CELSUB40948),
-.MINUS(GND)
+.MINUS(net_0)
 );
 
 vdc_0 VIPROBE1 (
@@ -236,7 +241,7 @@ vdc_0 VIPROBE1 (
 
 vpwl_0x0 XSENSE_G (
 .PLUS(SENSE_G_465a3572),
-.MINUS(GND)
+.MINUS(net_0)
 );
 
 SIMbias XIP_efc25439 (
@@ -247,22 +252,22 @@ SIMbias XIP_efc25439 (
 
 vpwl_0x0_9d999ux0_10ux5_19d999ux5_20ux0_29d999ux0_30ux5_39d999ux5_40ux0_49d999ux0_50ux5_60ux5 Xdatamap1_pwl_bit0 (
 .PLUS(BS_0),
-.MINUS(GND)
+.MINUS(net_0)
 );
 
 vpwl_0x0_9d999ux0_10ux5_19d999ux5_20ux0_30ux0_39d999ux0_40ux5_49d999ux5_50ux0_59d999ux0_60ux5 Xdatamap1_pwl_bit1 (
 .PLUS(BS_1),
-.MINUS(GND)
+.MINUS(net_0)
 );
 
 vpwl_0x0_9d999ux0_10ux5_19d999ux5_20ux0_29d999ux0_30ux5_39d999ux5_40ux0_49d999ux0_50ux5_60ux5 Xdatamap1_pwl_bit2 (
 .PLUS(BS_2),
-.MINUS(GND)
+.MINUS(net_0)
 );
 
 vpwl_0x0_9d999ux0_10ux5_19d999ux5_20ux0_30ux0_39d999ux0_40ux5_49d999ux5_50ux0_59d999ux0_60ux5 Xdatamap1_pwl_bit3 (
 .PLUS(BS_3),
-.MINUS(GND)
+.MINUS(net_0)
 );
 
 alibgnd G1 ( 
