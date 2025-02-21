@@ -169,13 +169,15 @@ celldft,end
 revision,layout,0p1
 //Current Sense Amplifier 
 
+place Generate STONEcurrentsenseamplifier_inp_amp 0 0 R0
+place Generate STONEcurrentsenseamplifier_inp_lvbias 55.24 10.455 R0
+place Generate STONEcurrentsenseamplifier_dft 58.62 41.73 R0
 place Generate STONEbitshifter125bits 0 0 R0
 place Generate STONEbitshifter457bits 879.9 326.12 R180
 place Generate STONEcurrentsenseamplifier_inn_5 0 0 R0
 place Generate STONEcurrentsenseamplifier_inn_12 0 0 R0
 place Generate STONEcurrentsenseamplifier_inn_30 0 0 R0
 place Generate STONEcurrentsenseamplifier_inn_45 0 0 R0
-place Generate STONEcurrentsenseamplifier_inp 0 0 R0
 //moveORIGIN -x
 //placeINST XoutputRES 2 10.14 R0
 //moveORIGIN -x
