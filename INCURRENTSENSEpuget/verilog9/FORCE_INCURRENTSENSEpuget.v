@@ -106,7 +106,7 @@ endmodule
 // ------------------------ Module Verilog ---------------
 module FORCE_INCURRENTSENSEpuget (GND, SIMPV, VOUTSN, VOUTSP, CELG59462, CELV96848, PORB97836, CELSUB40948, clock_currentsensein, enable_currentsensein, measure_currentsensein, IP_INCURRENTSENSEpuget1, kelvin_GNDcurrentsensein, register_enable_currentsensein_xd_enable_currentsensein_89705365, register_measure_currentsensein_xd_measure_currentsensein_824d3563);
 inout  GND;
-  input  SIMPV;
+output  SIMPV;
 output  VOUTSN;
 output  VOUTSP;
 output  CELG59462;
@@ -154,17 +154,17 @@ vpulse_0x1x1d0ux0x1nx1nx500d0n XV2 (
 
 vpwl_0x0 XCELG (
 .PLUS(CELG59462),
-.MINUS(net_0)
+.MINUS(GND)
 );
 
 vpwl_0x5 XCELV (
 .PLUS(CELV96848),
-.MINUS(net_0)
+.MINUS(GND)
 );
 
 vpwl_0x5 XPORB (
 .PLUS(PORB97836),
-.MINUS(net_0)
+.MINUS(GND)
 );
 
 vpwl_0x0_10ux0_11ux0 V_GNDx (
@@ -184,7 +184,7 @@ vdc_0 VI__GND (
 
 vpwl_0x0 XCELSUB (
 .PLUS(CELSUB40948),
-.MINUS(net_0)
+.MINUS(GND)
 );
 
 vpwl_0x0_10d0ux0_11d0ux5 V_SIMPVx (
@@ -194,7 +194,7 @@ vpwl_0x0_10d0ux0_11d0ux5 V_SIMPVx (
 
 vdc_0 VI__SIMPV (
 .PLUS(net_57),
-.MINUS(net_52)
+.MINUS(SIMPV)
 );
 
 vpwl_0x0_10d0ux0_11d0ux11d968 V_VOUTSNx (
@@ -218,7 +218,7 @@ vdc_0 VI__VOUTSP (
 );
 
 SIMbias XIP_INCURRENTSENSEpuget1 (
-.V(CELV96848),
+.V(SIMPV),
 .IN(noconn_IN),
 .IP(IP_INCURRENTSENSEpuget1)
 );
@@ -235,12 +235,12 @@ vdc_0 VI__kelvin_GNDcurrentsensein (
 
 vpwl_0x0_10d999ux0_11d0ux5 Xd_enable_currentsensein_pwl_bit0 (
 .PLUS(enable_currentsensein),
-.MINUS(net_0)
+.MINUS(GND)
 );
 
 vpwl_0x0_11d0ux0 Xd_measure_currentsensein_pwl_bit0 (
 .PLUS(measure_currentsensein),
-.MINUS(net_0)
+.MINUS(GND)
 );
 
 alibgnd G1 ( 
