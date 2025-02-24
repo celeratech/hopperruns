@@ -37,7 +37,7 @@ module INCURRENTSENSEpuget (SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,PORB97836,VS
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module sim_INCURRENTSENSEpuget_ROW5 ();
+module sim_INCURRENTSENSEpuget_ROW9 ();
 
 
 // ------------------------ Wires ------------------------

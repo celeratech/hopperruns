@@ -1,8 +1,9 @@
 // ------------------------ Module Definitions -----------
-module VESPAasmINPUT2 (o,i0,i1,Tstate,CELG59462,CELV96848,CELSUB40948);
+module VESPAasmINPUT3 (o,i0,i1,i2,Tstate,CELG59462,CELV96848,CELSUB40948);
   output  o;
   input  i0;
   input  i1;
+  input  i2;
   input  Tstate;
   input  CELG59462;
   input  CELV96848;
@@ -69,9 +70,9 @@ endmodule
 
 
 
-//Celera:delayclock_58885d25
+//Celera:delayclock_e9793f67
 //CONTROL:Pin:4 outputs
-module delayclock_58885d25 (in,CELV,out,clock,celeraporb,
+module delayclock_e9793f67 (in,CELV,out,clock,celeraporb,
 delay,
 CELG,CELSUB);
 input CELV;
@@ -106,6 +107,37 @@ input CELV;
 inout I;
 input enable_switch;
 inout O;
+input CELG;
+input CELSUB;
+endmodule
+
+
+
+//Celera:switchpulldown_00288888
+//Celera Confidential Symbol Generator
+//10000 Ohm pulldownSwitch
+module switchpulldown_00288888 (CELV,O,enable_switchb,CELG,CELSUB);
+input CELV;
+input enable_switchb;
+inout O;
+input CELG;
+input CELSUB;
+endmodule
+
+
+
+//Celera:vbuffer_10b584fd
+//Celera Confidential Symbol Generator
+//GAIN:0.616 Input:p with 1000K Impedance
+module vbuffer_10b584fd (SIMPV,IN,IP,OUT,enable_vbuffer,ok_vbuffer,global_vbuffer,
+CELG,CELSUB);
+input SIMPV;
+input IN;
+input IP;
+output OUT;
+input enable_vbuffer;
+output ok_vbuffer;
+input global_vbuffer;
 input CELG;
 input CELSUB;
 endmodule
@@ -195,7 +227,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CURRENTSENSEinMAIN (IIN, SIMPV, VOUTSN, VOUTSP, dft_ok, ok_iin, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_4ad46a6e, IP_5c672501, dft_startup, IIN_TELEMETRY, ok_currentsense, dft_measure_delay, clock_currentsense, enable_currentsense, measure_currentsense, kelvin_GNDcurrentsense);
+module CURRENTSENSEinMAIN (IIN, SIMPV, VOUTSN, VOUTSP, dft_ok, ok_iin, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_2ceca3e2, IP_4ad46a6e, IP_5c672501, dft_startup, IIN_TELEMETRY, ok_currentsense, dft_measure_delay, clock_currentsense, enable_currentsense, measure_currentsense, kelvin_GNDcurrentsense);
 inout  IIN;
 input  SIMPV;
 input  VOUTSN;
@@ -206,6 +238,7 @@ input  CELG59462;
 input  CELV96848;
 input  PORB97836;
 input  CELSUB40948;
+input  IP_2ceca3e2;
 input  IP_4ad46a6e;
 input  IP_5c672501;
 output  dft_startup;
@@ -225,10 +258,11 @@ wire [1:0] delay;
 wire [2:0] factory_adjust_resistor;
 
 // ------------------------ Networks ---------------------
-VESPAasmINPUT2 XU3 (
+VESPAasmINPUT3 XU1 (
 .o(ok_currentsense),
-.i0(net_132),
-.i1(net_130),
+.i0(net_141),
+.i1(net_140),
+.i2(net_143),
 .Tstate(enable_currentsense),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -236,7 +270,7 @@ VESPAasmINPUT2 XU3 (
 );
 
 VESPAasmINPUT1 XU5 (
-.o(net_135),
+.o(net_147),
 .i0(clock_currentsense),
 .Tstate(enable_currentsense),
 .CELG59462(CELG59462),
@@ -245,7 +279,7 @@ VESPAasmINPUT1 XU5 (
 );
 
 VESPAdftpulse XU6 (
-.stop(net_131),
+.stop(net_145),
 .pulse(dft_measure_delay),
 .start(measure_currentsense),
 .CELG59462(CELG59462),
@@ -254,7 +288,7 @@ VESPAdftpulse XU6 (
 );
 
 VESPAasmINPUT1 XU7 (
-.o(net_134),
+.o(net_146),
 .i0(measure_currentsense),
 .Tstate(ok_currentsense),
 .CELG59462(CELG59462),
@@ -272,7 +306,7 @@ VESPAdftpulse XU8 (
 );
 
 dbuf_e926e395 XU4 (
-.i(net_131),
+.i(net_145),
 .o(ok_iin),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -296,19 +330,19 @@ currentsenseamplifier_48054596 XCSA1 (
 .CELSUB(CELSUB40948),
 .trim_csainput({a0,a0,a0,a0,a0,a0,a0}),
 .trim_csaoutput({a0,a0,a0,a0,a0,a0,a0}),
-.ok_currentsenseamplifier(net_130),
+.ok_currentsenseamplifier(net_140),
 .INN_CURRENTSENSEAMPLIFIER(VOUTSP),
 .INP_CURRENTSENSEAMPLIFIER(VOUTSN),
 .OUT_CURRENTSENSEAMPLIFIER(IIN),
 .enable_currentsenseamplifier(enable_currentsense)
 );
 
-delayclock_58885d25 Xdelay1 (
-.in(net_134),
-.out(net_131),
+delayclock_e9793f67 Xdelay1 (
+.in(net_146),
+.out(net_145),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.clock(net_135),
+.clock(net_147),
 .delay({a0,a0}),
 .CELSUB(CELSUB40948),
 .celeraporb(PORB97836)
@@ -322,7 +356,7 @@ PEBBLEtielo XDRMNOTL (
 );
 
 switchtswitch_4b165e0d Xswitch1 (
-.I(net_133),
+.I(net_144),
 .O(IIN_TELEMETRY),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -330,9 +364,29 @@ switchtswitch_4b165e0d Xswitch1 (
 .enable_switch(measure_currentsense)
 );
 
+switchpulldown_00288888 Xswitch2 (
+.O(IIN_TELEMETRY),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948),
+.enable_switchb(measure_currentsense)
+);
+
+vbuffer_10b584fd Xvbuffer1 (
+.IN(net_142),
+.IP(IP_2ceca3e2),
+.OUT(net_144),
+.CELG(CELG59462),
+.SIMPV(SIMPV),
+.CELSUB(CELSUB40948),
+.ok_vbuffer(net_143),
+.enable_vbuffer(enable_currentsense),
+.global_vbuffer(tl0)
+);
+
 resistor_f78b97c7 Xresistor1 (
 .RN(IIN),
-.RP(net_69),
+.RP(net_77),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
@@ -340,8 +394,8 @@ resistor_f78b97c7 Xresistor1 (
 );
 
 resistor_308d63e4 Xresistor2 (
-.RN(net_69),
-.RP(net_76),
+.RN(net_77),
+.RP(net_85),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
@@ -350,25 +404,25 @@ resistor_308d63e4 Xresistor2 (
 
 amplifier_b9b34961 Xamplifier1 (
 .IP(IP_4ad46a6e),
-.INN(net_133),
-.INP(net_76),
-.OUT(net_133),
+.INN(net_142),
+.INP(net_85),
+.OUT(net_142),
 .CELG(CELG59462),
 .SIMPV(SIMPV),
 .CELSUB(CELSUB40948),
-.ok_amplifier(net_132),
+.ok_amplifier(net_141),
 .enable_amplifier(enable_currentsense),
 .global_amplifier(tl0)
 );
 
 capacitorfixed_bb7f99ed Xcapacitor1 (
 .CN(kelvin_GNDcurrentsense),
-.CP(net_76)
+.CP(net_85)
 );
 
 capacitorfixed_b8fedd7c Xcapacitor2 (
-.CN(net_69),
-.CP(net_133)
+.CN(net_77),
+.CP(net_142)
 );
 
 endmodule

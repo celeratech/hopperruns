@@ -6,90 +6,83 @@
 
 //Celera Confidential BIO Data Generator
 //Cell Name
-cell,capacitorfixed
-///**********************************************
+cell,fet
+//**********************************************
 //Generator Revision
-revision,generator,0.3.4
+revision,generator,0.3.5
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,capacitor_control,choose0,capacitor
-limit,capacitor_control,choose1,accurate_capacitor
-limit,capacitor_control,choose2,adjustable_capacitor
-limit,capacitor_value,minimum,0.1
-limit,capacitor_value,maximum,50.0
-limit,capacitor_accurate_value,minimum,0.1
-limit,capacitor_accurate_value,maximum,50.0
-limit,capacitor_accurate_lsb,minimum,0.5
-limit,capacitor_accurate_lsb,maximum,10.0
-limit,capacitor_adjust0,minimum,0.0
-limit,capacitor_adjust0,maximum,50.0
-limit,capacitor_adjust1,minimum,0.0
-limit,capacitor_adjust1,maximum,50.0
-limit,capacitor_adjust2,minimum,0.0
-limit,capacitor_adjust2,maximum,50.0
-limit,capacitor_adjust3,minimum,0.0
-limit,capacitor_adjust3,maximum,50.0
-limit,capacitor_adjust4,minimum,0.0
-limit,capacitor_adjust4,maximum,50.0
-limit,capacitor_adjust5,minimum,0.0
-limit,capacitor_adjust5,maximum,50.0
-limit,capacitor_adjust6,minimum,0.0
-limit,capacitor_adjust6,maximum,50.0
-limit,capacitor_adjust7,minimum,0.0
-limit,capacitor_adjust7,maximum,50.0
-limit,capacitor_adjust_por,minimum,0
-limit,capacitor_adjust_por,maximum,7
-limit,capacitor_adjust_control,choose0,pin
-limit,capacitor_adjust_control,choose1,factory
-limit,capacitor_adjust_control,choose2,register
-limit,capacitor_kelvin,choose0,no
-limit,capacitor_kelvin,choose1,yes
-limit,capacitor_vinitial,minimum,0.0
-limit,capacitor_vinitial,maximum,40.0
-limit,capacitor_type,choose0,mim
-limit,capacitor_type,choose1,mom
-limit,capacitor_type,choose2,metal
-limit,capacitor_type,choose3,tbd
-limit,capacitor_vmax,choose0,2
-limit,capacitor_vmax,choose1,6
-limit,capacitor_maximumvoltage,minimum,2.0
-limit,capacitor_maximumvoltage,maximum,40.0
-limit,capacitor_dft,choose0,no
-limit,capacitor_dft,choose1,yes
+limit,fet_usage,choose0,signal,
+limit,fet_usage,choose1,power,
+limit,fet_ron_power,minimum,0.001,
+limit,fet_ron_power,maximum,60000,
+limit,fet_ron_signal,minimum,10,
+limit,fet_ron_signal,maximum,60000,
+limit,fet_type,choose0,n,
+limit,fet_type,choose1,p,
+limit,fet_vmax,choose0,2
+limit,fet_vmax,choose1,6
+limit,fet_maximumvds,choose0,2
+limit,fet_maximumvds,choose1,6
+limit,fet_maximumvds,choose2,12
+limit,fet_maximumvds,choose3,20
+limit,fet_maximumvds,choose4,24
+limit,fet_maximumvds,choose5,30
+limit,fet_maximumvds,choose6,36
+limit,fet_maximumvds,choose7,40
+limit,fet_maximumvds,choose8,45
+limit,fet_maximumvds,choose9,60
+limit,fet_diode,choose0,yes
+limit,fet_diode,choose1,no
+limit,fet_diodedrive,choose0,diode
+limit,fet_diodedrive,choose1,active
+limit,fet_replica,choose0,no
+limit,fet_replica,choose1,drain
+limit,fet_replica,choose2,source
+limit,fet_replica_gain,minimum,1,
+limit,fet_replica_gain,maximum,40,
+limit,fet_kelvin,choose0,no
+limit,fet_kelvin,choose1,yes
+limit,fet_layoutrotate,choose0,no
+limit,fet_layoutrotate,choose1,yes
+limit,fet_dft,choose0,no
+limit,fet_dft,choose1,yes
+limit,fet_calculator,choose0,typical
+limit,fet_calculator,choose1,maximum
 
-limit,capacitor_datasheet_accurate_name,text
-limit,capacitor_datasheet_accurate_description,text
-limit,capacitor_datasheet_adjust_name,text
-limit,capacitor_datasheet_adjust_description,text
+limit,fet_padopendrain,choose0,no
+limit,fet_padopendrain,choose1,yes
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,capacitor_value,14.15pF
-description,Capacitor Value
-user,NESTOrevision,0.3.4
-description,Nesto Generator revison
-user,capacitor_type,mim
-description,Capacitor Type
-user,capacitor_maximumvoltage,6V
-description,Capacitor Absolute Maximum Voltage Rating
+user,Type,n
+description,FET type
+user,Usage,signal
+description,FET was as signal
+user,Ron,10.0 KOhm
+description,FET on resistance
+user,Vds,6V
+description,FET Maximum Vds rating
+user,VgsMax,6V
+description,FET Maximum Vgs rating
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,capacitor
-register,instance,capacitorfixed_bb7f99ed
+registermap,fet
+register,instance,fet_switchpulldown_00288888_Xnmos0
 register,source,cell
 
-//Adjust Control
+//No register Map Required
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readwrite
+register,mode,na
 register,por,0
-register,userdescription,not used
+register,userdescription,na
 register,description0,not used
 register,description1,not used
 register,description2,not used
@@ -98,22 +91,27 @@ register,description4,not used
 register,description5,not used
 register,description6,not used
 register,description7,not used
+register,description8,empty
+register,description9,empty
+register,description10,empty
+register,description11,empty
+register,description12,empty
 //Netlister Information
 register,busname,na
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,capacitor
-factory,instance,capacitorfixed_bb7f99ed
+factorymap,fet
+factory,instance,fet_switchpulldown_00288888_Xnmos0
 factory,source,cell
 
-//Adjust Control
+//No factory Map Required
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,readonly
+factory,mode,na
 factory,por,0
-factory,userdescription,not used
+factory,userdescription,na
 factory,description0,not used
 factory,description1,not used
 factory,description2,not used
@@ -125,44 +123,53 @@ factory,description7,not used
 //Netlister Information
 factory,busname,na
 //**********************************************
+//TRIM Parameters
+cell,fet
+trim,instance,fet_switchpulldown_00288888_Xnmos0
+
+trim,name,na
+trim,enable,no
+trim,bits,TBD
+trim,por,0
+trim,pinname,TBD
+trim,testname,TBD
+trim,description,TBD
+trim,target,0
+trim,units,TBD
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,TBD
+trim,description0,empty
+trim,description1,empty
+trim,description2,empty
+trim,description3,empty
+trim,description4,empty
+trim,description5,empty
+trim,description6,empty
+trim,description7,empty
+//**********************************************
 //CELL DFT Parameters
 // *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,capacitor
+//fetsignal
+placeFETsignal Xnmos0 10.0 0.0 R0
+placeFETsignal Xpmos0 10.0 0.0 R0
+placeFETsignal Xnmos3c 71.74 0.0 R0
+placeFETsignal XnmosB 40.87 0.0 R0
+placeFETsignal XnmosA 10.0 0.0 R0
+placeROUTEnopins
 
-placeINST Xlogicshifter -13 -3.8 R0
-//place Generate STONEcapacitorDFT 0 10 R0
-place Generate STONEcapacitorDFT 0 10 R0
-//moveORIGIN -y
-place Generate STONEcapacitor_pin1 116.74 58.005 MX
-place Generate STONEcapacitor_pin2 116.74 58.005 MX
-place Generate STONEcapacitor_pin3 0 5 MX
-placeINST XkelvinP -3.88 20.22 R90
-placeINST XkelvinN -3.88 16.48 R90
-//41428182
-//placeSTEParray Generate STONEcapacitor_bit 207 163 10.08 8.37 y y R0
-//placeCAP 254 152 3 R0 41
-//8
-//placeSTEParray Generate STONEcapacitor_bit 117.4 163 10.08 8.37 y y R0
-//placeCAP 164 152 3 R0 100
-//placeCAP -10 223 3 R0 300
-//placeSTEParray Generate STONEcapacitor_bit 0 5 10.08 8.37 y y R0
-//placeSTEP Generate STONEcapacitor_bit 0 0 x 10.08 R0
-//placeCAP 0 15 3 R0 167
-//placeCAP 35 0 3 R0 130
-//moveORIGIN y
-placeCAP 45 0 3 R0 80
-placeTAP 75 300
-placeCAP 0 15 3 R0 150
-placeCAP 45 0 3 R0 80
-placeSTEP Generate STONEcapacitor_bit 0 5 x 10.08 R0
 
-placeINST Xtiehi 88.06 147.415 R90
-placeINST Xtielo 88.06 148.045 MYR90
-placeHVRING
-placeROUTE
-endlayoutbio
+//an5g6dw1 3.3 
+//an5g12dw2 4.1
+//an5g20dw2 4.9
+//an5g24dw2 5.3
+//an5g30dw2 6.3
+//an5g40dw1 7.9
+
 //**********************************************
 //Project Parameters
 //Celera:INCURRENTSENSEpuget Project Bio
@@ -207,110 +214,233 @@ endlayoutbio
 ////////////////////////////////////////////////////////////////////////////////////////
 
 
-//**********************************************
+// *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,mim34_2f30p0x29p0,8344
-generate_area,capacitorfixed_bb7f99ed,8344
+sub_area,nch5i2_6t_0p3x0p6x1p0x1p0,40180
+sub_area,nch5i2_6t_0p3x0p6x1p0x1p0,40180
+generate_area,fet_switchpulldown_00288888_Xnmos0,80360
+// *********************************************
+//Calculator Parameters
+#define,CELVminimum,1.3
+#define,NMOSaccuracy,5.0
+#define,NMOSPOWERaccuracy,2.0
+#define,NMOSsignalmetalAdder,2
+#define,NMOSpowermetalAdder,20
+#define,NMOSprocessAdder,100
+#define,NMOSsinglestep6,3.3
+#define,NMOSsinglestep12,4.1
+#define,NMOSsinglestep20,4.9
+#define,NMOSsinglestep24,5.9
+#define,NMOSsinglestep30,6.3
+#define,NMOSsinglestep40,8.0
+#define,NMOSsingleratio,0.75
+
+//293 updates
+#define,NMOSsinglestep36,10.0
+#define,NMOSsinglestep45,10.0
+#define,NMOSsinglestep60,10.0
+
+#define,PMOSaccuracy,1.0
+#define,PMOSPOWERaccuracy,2.0
+#define,PMOSpowermetalAdder,30
+#define,PMOSsignalmetalAdder,2
+#define,PMOSprocessAdder,100
+#define,PMOSsinglestep6,3.96
+#define,PMOSsinglestep12,4.76
+#define,PMOSsinglestep20,5.96
+#define,PMOSsinglestep24,6.56
+#define,PMOSsinglestep30,7.96
+#define,PMOSsinglestep40,9.0
+#define,PMOSsingleratio,0.75
+
+//293 updates
+#define,PMOSsinglestep36,10.0
+#define,PMOSsinglestep45,10.0
+#define,PMOSsinglestep60,10.0
+
+//Define default calculators
+#define,CELV_TEMP,3.3
+#define,TEMPERATURE_TEMP,125
+//#define,VGS_TEMP,2.3
+#define,VGS_TEMP,5.0
+
+//Ddefine Signal Layout Guidelines
+#define,SIGNALmaximumwidth,200
+//Error Winodow of SIGNAL Ron Calculation
+#define,SIGNALaccuracy,10.0
+#define,POWERaccuracy,5.0
+//Define Power Layout Rules
+#define,POWERmaximumwidth,400
+//Limit the size of device X
+#define,POWERxlimit,100000
+
+//Power fet Calculations
+//RevA Mode1 - Power
+//#define,POWERx,2.33
+//#define,POWERy,8.38
+//#define,POWERk6,3.3
+//#define,POWERk12,4.1
+//#define,POWERk20,4.9
+//#define,POWERk24,5.3
+//#define,POWERk30,6.3
+//#define,POWERk40,7.9
+
+//RevB Model - Power
+#define,POWERxN,3.21
+#define,POWERxP,4.4
+#define,POWERy,8.38
+#define,POWERk6N,3.3
+#define,POWERk12N,4.1
+#define,POWERk20N,4.9
+#define,POWERk24N,5.3
+#define,POWERk30N,6.3
+#define,POWERk40N,7.9
+#define,POWERk6P,3.96
+#define,POWERk12P,4.76
+#define,POWERk20P,5.96
+#define,POWERk24P,6.56
+#define,POWERk30P,7.76
+#define,POWERk40P,7.86
+//293 Updates
+#define,POWERk40N,10.0
+#define,POWERk45N,10.0
+#define,POWERk60N,10.0
+
+#define,POWERk36P,10.0
+#define,POWERk45P,10.0
+#define,POWERk60P,10.0
+
+
+//Layout Rules
+#define,NMOSlayoutratio,0.75
+#define,PMOSlayoutratio,0.75
+
+//Limit how many columns/row are allowed
+#define,POWERcolumnstart,2
+//Limt the number of X  Fets placed
+#define,POWERFETmaximumX,2750
+//How accuracy the FTE ratio has to be with respect to 'layoutratio' <%>
+#define,POWERFETratioACCURACY,10.0
+//DeltaW sstep when search for final Width
+#define,POWERFETwidthSTEP,0.1
+
+//RevA Model - Signal
+#define,SIGNALk6N,0.44
+#define,SIGNALk12N,7.43
+#define,SIGNALk20N,7.63
+#define,SIGNALk24N,8.03
+#define,SIGNALk30N,9.63
+//293 updates
+#define,SIGNALk40N,10.0
+#define,SIGNALk45N,10.0
+#define,SIGNALk60N,10.0
+
+#define,SIGNALk6P,0.44
+#define,SIGNALk12P,5.86
+#define,SIGNALk20P,6.96
+#define,SIGNALk24P,7.76
+#define,SIGNALk30P,7.96
+//293 updates
+#define,SIGNALk40P,10.0
+#define,SIGNALk45P,10.0
+#define,SIGNALk60P,10.0
+
+#define,NMOSsignallayoutratio,0.75
+#define,PMOSsignallayoutratio,0.75
+
+//Replica
+#define,REPLICAserialmaximum,40
+#define,REPLICAaccuracyAREA,2.0
+#define,REPLICAaccuracyRON,20.0
+#define,nmos2fudge,100
+#define,nmos6fudge,100
+#define,nmos12fudge,100
+#define,nmos20fudge,100
+#define,nmos24fudge,100
+#define,nmos30fudge,80
+#define,nmos40fudge,100
+#define,nmos45fudge,100
+#define,nmos60fudge,100
+//PADopenDrain
+#define,PADopendrainWlimit,85.0
 //**********************************************
-//Calculator Parameters	
-#define,CAPACITORlayoutlengthMIM,30.0
-#define,MIMfudge,1.0
-#define,CAPACITORparallelmaxMIM,30.0
-#define,CAPACITORserialmaxMIM,4.0
-#define,CAPACITORstepMIM,0.1
-#define,CAPACITORlayoutratioMIM,0.75
-
-//Accuryte Calculators
-#define,CAPACITORtrimbitmax,8
-#define ACCURATEprocessoffset,5
-#define,ACCURATEerrorlimit,1.0
-
-#define,TAItarget,1000
-#define,CAPACITORswitchRONl,0.1
-#define,CAPACITORswitchRONh,1.1
-#define,CAPACITORswitchRATIO,10
-
-
-//define temporary reference
-#define,CAPACITORreferenceDFT,1.0
-#define,TDItarget,100
-#define,CELVminimum,1.0
-#define,CAPACITORpretrimhigh,30.0
-#define,CAPACITORpretrimlow,30.0
-#define,CAPposttrimlsb,1.0
-#define,CELVminimumT,1.8
-///**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//capacitorfixed
+//fet
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,net_skip,CP,net_skip,net_skip,net_skip,net_skip,net_skip,CN
+pinorder,SOURCE,DRAIN,GATE,net_skip,net_skip,net_skip
 endpinorder
 //**********************************************
-//TRIM Parameters
-cell,capacitor
-trim,instance,capacitorfixed_bb7f99ed
-
-trim,name,na
-trim,enable,no
-trim,bits,TBD
-trim,por,TBD
-trim,testname,TBD
-trim,pinname,trim_capacitor
-trim,description,TBD
-trim,target,na
-trim,units,TBD
-trim,pretrim_low_limit,TBD
-trim,pretrim_high_limit,TBD
-trim,posttrim_low_limit,TBD
-trim,posttrim_high_limit,TBD
-trim,codeunits,pF
-trim,description0,empty
-trim,description1,empty
-trim,description2,empty
-trim,description3,empty
-trim,description4,empty
-trim,description5,empty
-trim,description6,empty
-trim,description7,empty
-//**********************************************
 //Cell Pin Descriptions	
-//**********************************************
+//**********************************************	
+pinname,GATE
+definition,GATE,FET gate 	
+iq,GATE,SIMULATION
+absmax,GATE,6
+absmin,GATE,-0.3
+io,GATE,input
+mode,GATE,analog
+router,GATE,TBD
+dftpriority,GATE,1
+esd,GATE,TBD
 
-//Cell Pin Descriptions
-pinname,CP
-definition,CP,Positive Capacitor connection
-iq,CP,SIMULATION
-absmax,CP,6
-absmin,CP,-0.3
-io,CP,inout
-mode,CP,analog
-router,CP,TBD
-dftpriority,CP,1
-esd,CP,TBD
+pinname,SOURCE
+definition,SOURCE,FET source
+iq,SOURCE,SIMULATION
+absmax,SOURCE,6
+absmin,SOURCE,-0.3
+io,SOURCE,inout
+mode,SOURCE,analog
+router,SOURCE,TBD
+dftpriority,SOURCE,1
+esd,SOURCE,TBD
 
-
-pinname,CN
-definition,CN,Negative Capacitor connection
-iq,CN,SIMULATION
-absmax,CN,6
-absmin,CN,-0.3
-io,CN,inout
-mode,CN,analog
-router,CN,TBD
-dftpriority,CN,1
-esd,CN,TBD
-
+pinname,DRAIN
+definition,DRAIN,FET drain 
+iq,DRAIN,SIMULATION
+absmax,DRAIN,6
+absmin,DRAIN,-0.3
+io,DRAIN,inout
+mode,DRAIN,analog
+router,DRAIN,TBD
+dftpriority,DRAIN,1
+esd,DRAIN,TBD
 
 
 
 
+pinname,NMOSiso6
+definition,NMOSiso6,6V NMOS ISO Connection 
+iq,NMOSiso6,SIMULATION
+absmax,NMOSiso6,6
+absmin,NMOSiso6,-0.3
+io,NMOSiso6,input
+mode,NMOSiso6,analog
+router,NMOSiso6,TBD
+dftpriority,NMOSiso6,1
+esd,NMOSiso6,TBD
 
+
+
+
+
+
+
+pinname,SUB
+definition,SUB,FET substrate 
+iq,SUB,SIMULATION
+absmax,SUB,0.3
+absmin,SUB,-0.3
+io,SUB,input
+mode,SUB,analog
+router,SUB,TBD
+dftpriority,SUB,1
+esd,SUB,TBD
 
 
 

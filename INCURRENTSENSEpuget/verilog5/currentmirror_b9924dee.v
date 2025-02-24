@@ -1,14 +1,15 @@
 //Celera Brick Generator Confidential
 //CORE:currentmirror
-//NAME:currentmirror_3a3e0620
+//NAME:currentmirror_b9924dee
 //GENERATOR REVISION:0.5.0
 //INPUT POLARITY:source
 //MAX CURRENT:10
-//NUMBER OF OUTPUTS:2
+//NUMBER OF OUTPUTS:3
 //DFT:no
 //MAX VOUT:6V 
 //GAIN0:1, TYPE0:source
 //GAIN1:1, TYPE1:source
+//GAIN2:1, TYPE2:source
 
 //Celera Confidential Do Not Copy STONEcurrentmirrormain
 //Verilog HDL for "Generate", "STONEcurrentmirrormain" "functional"
@@ -101,13 +102,14 @@ module STONEnoconn ( noconn );
   input noconn;
 endmodule
 
-//Celera Confidential Do Not Copy currentmirror_3a3e0620
+//Celera Confidential Do Not Copy currentmirror_b9924dee
 //Celera Confidential Symbol Generator
-//Polarity: source, Maximum Current: 10, Number of outputs: 2, DFT: no, Max Vout: 6
+//Polarity: source, Maximum Current: 10, Number of outputs: 3, DFT: no, Max Vout: 6
 //GAIN0:1, TYPE0:source
 //GAIN1:1, TYPE1:source
-module currentmirror_3a3e0620 (CELV,CELSUB,enable_currentmirror,ISET,ok_currentmirror,
-I0,I1,
+//GAIN2:1, TYPE2:source
+module currentmirror_b9924dee (CELV,CELSUB,enable_currentmirror,ISET,ok_currentmirror,
+I0,I1,I2,
 CELG);
 input CELV;
 input CELG;
@@ -117,6 +119,7 @@ input ISET;
 output ok_currentmirror;
 inout I0;
 inout I1;
+inout I2;
 
 //Celera Confidential Do Not Copy Pin a
 wire[1:0] a;
@@ -194,6 +197,15 @@ CASCODEpmos5u XcurrentmirrorPMOS5U10(
 .PMIR (PMIR5U),
 .SUB (CELSUB),
 .O (I1)
+);
+//,diesize,CASCODEpmos5u
+//Celera Confidential Do Not Copy CASCODEpmos5u
+CASCODEpmos5u XcurrentmirrorPMOS5U20(
+.CELV (CELV),
+.PCAS (PCAS5U),
+.PMIR (PMIR5U),
+.SUB (CELSUB),
+.O (I2)
 );
 //,diesize,CASCODEpmos5u
 //Celera Confidential Do Not Copy Module End
