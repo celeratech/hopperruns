@@ -103,7 +103,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module DUT2 (BS_0, BS_1, BS_2, BS_3, ISIN, ITRI, VPWL, VSQR, VTRI, BSO_0, BSO_1, BSO_2, BSO_3, COMPOUT, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_efc25439, SENSE_G_465a3572);
+module DUT2 (BS_0, BS_1, BS_2, BS_3, ISIN, ITRI, VPWL, VSQR, VTRI, BSO_0, BSO_1, BSO_2, BSO_3, COMPOUT, CELG59462, CELV96848, PORB97836, CELSUB40948, SENSE_G_465a3572);
 input  BS_0;
 input  BS_1;
 input  BS_2;
@@ -122,7 +122,6 @@ input  CELG59462;
 input  CELV96848;
 input  PORB97836;
 input  CELSUB40948;
-input  IP_efc25439;
 input  SENSE_G_465a3572;
 
 
