@@ -6,118 +6,129 @@
 
 //Celera Confidential BIO Data Generator
 //Cell Name
-cell,resistordivider
-//**********************************************
+cell,currentmirror
+///**********************************************
 //Generator Revision
-revision,generator,0.4.8
+revision,generator,0.5.0
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
 
-limit,resistordivider_vmax,choose0,2
-limit,resistordivider_vmax,choose1,6
-limit,resistordivider_vresistortop,choose0,2
-limit,resistordivider_vresistortop,choose1,6
-limit,resistordivider_vresistortop,choose2,6
-limit,resistordivider_vresistortop,choose3,12
-limit,resistordivider_vresistortop,choose3,20
-limit,resistordivider_vresistortop,choose5,24
-limit,resistordivider_vresistortop,choose6,30
-limit,resistordivider_vresistortop,choose7,36
-limit,resistordivider_vresistortop,choose8,40
-limit,resistordivider_vresistortop,choose9,45
-limit,resistordivider_vresistortop,choose10,60
-limit,resistordivider_rtotal,minimum,10.0
-limit,resistordivider_rtotal,maximum,10000.0
-limit,resistordivider_disconnect,choose0,no
-limit,resistordivider_disconnect,choose0,yes
-limit,resistordivider_disconnect_tap,choose0,top
-limit,resistordivider_disconnect_tap,choose1,bottom
-limit,resistordivider_disconnect_tap,choose2,tap0
-limit,resistordivider_disconnect_tap,choose3,tap1
-limit,resistordivider_disconnect_tap,choose4,tap2
-limit,resistordivider_disconnect_tap,choose5,tap3
-limit,resistordivider_disconnect_tap,choose6,tap4
-limit,resistordivider_disconnect_tap,choose7,tap5
-limit,resistordivider_disconnect_tap,choose8,tap6
-limit,resistordivider_disconnect_tap,choose9,tap7
-limit,resistordivider_outputs,minimum,1
-limit,resistordivider_outputs,maximum,8
-limit,resistordivider_tap0,minimum,1.0
-limit,resistordivider_tap0,maximum,99.0
-limit,resistordivider_tap1,minimum,1.0
-limit,resistordivider_tap1,maximum,99.0
-limit,resistordivider_tap2,minimum,1.0
-limit,resistordivider_tap2,maximum,99.0
-limit,resistordivider_tap3,minimum,1.0
-limit,resistordivider_tap3,maximum,99.0
-limit,resistordivider_tap4,minimum,1.0
-limit,resistordivider_tap4,maximum,99.0
-limit,resistordivider_tap5,minimum,1.0
-limit,resistordivider_tap5,maximum,99.0
-limit,resistordivider_tap6,minimum,1.0
-limit,resistordivider_tap6,maximum,99.0
-limit,resistordivider_tap7,minimum,1.0
-limit,resistordivider_tap7,maximum,99.0
-
-limit,resistordivider_dft,choose0,no
-limit,resistordivider_dft,choose1,yes
-
+limit,currentmirror_isetpolarity,choose0,sink
+limit,currentmirror_isetpolarity,choose1,source
+limit,currentmirror_number,minimum,1
+limit,currentmirror_number,maximum,8
+limit,currentmirror_maxiset,minimum,0.01
+limit,currentmirror_maxiset,maximum,100.0
+limit,currentmirror_maxvout,choose0,6
+limit,currentmirror_maxvout,choose1,12
+limit,currentmirror_maxvout,choose2,20
+limit,currentmirror_maxvout,choose3,24
+limit,currentmirror_maxvout,choose4,30
+limit,currentmirror_maxvout,choose5,36
+limit,currentmirror_maxvout,choose6,40
+limit,currentmirror_maxvout,choose7,45
+limit,currentmirror_maxvout,choose8,60
+limit,currentmirror_gain0,minimum,0.1
+limit,currentmirror_gain0,maximum,20.0
+limit,currentmirror_gain1,minimum,0.1
+limit,currentmirror_gain1,maximum,20.0
+limit,currentmirror_gain2,minimum,0.1
+limit,currentmirror_gain2,maximum,20.0
+limit,currentmirror_gain3,minimum,0.1
+limit,currentmirror_gain3,maximum,20.0
+limit,currentmirror_gain4,minimum,0.1
+limit,currentmirror_gain4,maximum,20.0
+limit,currentmirror_gain5,minimum,0.1
+limit,currentmirror_gain5,maximum,20.0
+limit,currentmirror_gain6,minimum,0.1
+limit,currentmirror_gain6,maximum,20.0
+limit,currentmirror_gain7,minimum,0.1
+limit,currentmirror_gain7,maximum,20.0
+limit,currentmirror_type0,choose0,sink
+limit,currentmirror_type0,choose1,source
+limit,currentmirror_type1,choose0,sink
+limit,currentmirror_type1,choose1,source
+limit,currentmirror_type2,choose0,sink
+limit,currentmirror_type2,choose1,source
+limit,currentmirror_type3,choose0,sink
+limit,currentmirror_type3,choose1,source
+limit,currentmirror_type4,choose0,sink
+limit,currentmirror_type4,choose1,source
+limit,currentmirror_type5,choose0,sink
+limit,currentmirror_type5,choose1,source
+limit,currentmirror_type6,choose0,sink
+limit,currentmirror_type6,choose1,source
+limit,currentmirror_type7,choose0,sink
+limit,currentmirror_type7,choose1,source
+limit,currentmirror_vmax,choose0,2
+limit,currentmirror_vmax,choose1,6
+limit,currentmirror_dft,choose0,no
+limit,currentmirror_dft,choose1,yes
+limit,currentmirror_global,choose0,no
+limit,currentmirror_global,choose1,yes
 
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,resistordivider_vresistortop,6V
-description,Resistor divider top volatge
-user,resistordivider_rtotal,1000.0K
-description,Resistor divider total impedance
-user,resistordivider_disconnect_tap,top
-description,Resistor divider Disconnect Tap
-user,resistordivider_vmax,6V
-description,Resistor divider Absolute Maxiumum voltage rating
-user,resistordivider_tap0,61.6%
-description,Resistor divider TAP0
-user,NESTO,0.4.8
-description,Nesto Revision
+user,currentmirror_isetpolarity,source
+description,Current Mirror Iset polarity
+user,currentmirror_maxiset,10
+description,Current Mirror Maximum Output current
+user,currentmirror_maxvout,6
+description,Current Mirror Maximum Output Voltage
+user,currentmirror_supply,lowvoltage
+description,Minimum Operating Voltage
+user,currentmirror_gain0,1_source
+description,Current Mirror Output0
+user,currentmirror_gain1,1_source
+description,Current Mirror Output1
+user,NESTO,0.5.0
+description,Nesto generate Revision
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,resistordivider
-register,instance,resistordivider_vbuffer_10b584fd_Xrfb
+registermap,currentmirror
+register,instance,currentmirror_3a3e0620
 register,source,cell
 
-//resistordivider
+//No register Map Required
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,na
+register,mode,readonly
 register,por,0
 register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
+register,description8,empty
+register,description9,empty
+register,description10,empty
+register,description11,empty
+register,description12,empty
 //Netlister Information
 register,busname,na
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,resistordivider
-factory,instance,resistordivider_vbuffer_10b584fd_Xrfb
+factorymap,currentmirror
+factory,instance,currentmirror_3a3e0620
 factory,source,cell
 
-//resistordivider
+///No factory Map Required
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,na
+factory,mode,readonly
 factory,por,0
 factory,userdescription,na
 factory,description0,description0,not used
@@ -134,61 +145,32 @@ factory,busname,na
 //CELL DFT Parameters
 // *********************************************
 //Layout Parameters
-//Layout Parameters
 revision,layout,0p1
-layout,resistordivider
+layout,currentmirror
 
-placeIFELSE cellNameNOTContains sw
-placeRES 0.26 -2.21 0.8 0.8 R0 x y 70
-placeRESRING
-place Generate STONEresistordividermain 0 0 R0
+place Generate STONEcurrentmirrormain 0 0 R0
+place Generate STONEcurrentmirrorpmos50urefhv30 52.64 -37.62 R0
+place Generate STONEcurrentmirrorpmos5urefhv30 52.64 -37.62 R0
+place Generate STONEcurrentmirrorpmos500nrefhv30 52.64 -37.62 R0
+place Generate STONEcurrentmirrormaindft -0.54 -0.16 MX 
+placeSTEP Generate STONEcurrentmirrornmos50uhv30 -10.28 -79.2 x 29.7 R0
+placeSTEP Generate STONEcurrentmirrorpmos50uhv30 -10.79 -121.385 x 20.9 R0
+placeSTEP Generate STONEcurrentmirrornmos5uhv30 -10.28 -53.68 x 12.22 R0
+placeSTEP Generate STONEcurrentmirrorpmos5uhv30 -10.79 -77.55 x 20.9 R0
+placeSTEP Generate STONEcurrentmirrornmos500nhv30 -10.28 -71.66 x 29.7 R0
+placeSTEP Generate STONEcurrentmirrorpmos500nhv30 -10.79 -95.53 x 21.02 R0
+placeIFELSE cellNameContains dft
+placeSTEP PEBBLES PEBBLEswitchG10K 10.08 -27.97 x 4.41 R0
 placeELSE
+placeSTEP PEBBLES PEBBLEswitchG10K 44.1 0 x 4.41 R0
 placeEND
-placeIF cellNameContains psw40
-place Generate STONEresistordividerpsw40v10u 0 0 MXR90
-place Generate STONEresistordividerpsw40v100u 0 0 MXR90
-placeSTEP PEBBLES PEBBLEswitchG10K 55.765 0.85 x 4.41 R0
-place Generate STONEresistordividermain 45.685 0.85 R0
-placeRES 11.835 -12.34 0.8 0.8 R0 x -y 102
-placeRESRING
-placeHVRING
-placeEND
-placeIF cellNameContains psw30v
-place Generate STONEresistordividerpsw30v10u 0 0 MXR90
-place Generate STONEresistordividerpsw30v100u 0 0 MXR90
-place Generate STONEresistordividermain 10.28 -19.48 R0
-placeSTEP PEBBLES PEBBLEswitchG10K 20.36 -19.48 x 4.41 R0
-placeRES 10.54 -21.21 0.56 0.8 R0 x -y 120
-placeRESRING
-placeHVRING
-placeEND
-placeIF cellNameContains nsw30
-place Generate STONEresistordividernsw30v10u 0 -8.98 MY
-place Generate STONEresistordividernsw30v100u 0 -8.98 MY
-place Generate STONEresistordividermain 19.98 0 R90
-placeSTEP PEBBLES PEBBLEswitchG10K 19.98 10.08 y 4.41 R90
-placeRES 24.415 0.26 0.8 0.8 R90 x y 70
-placeRESRING
-placeHVRING
-placeEND
-placeIF cellNameContains 5v10u
-place Generate STONEresistordividersw5v10u 42.84 8.37 R180
-place Generate STONEresistordividermain 42.84 8.37 MX
-placeSTEP PEBBLES PEBBLEswitchG10K 52.92 8.37 y 4.41 MX
-placeRES 0.21 10.1 0.8 0.8 R0 x y 70
-placeRESRING
-placeEND
-placeIF cellNameContains 5v100u
-place Generate STONEresistordividersw5v100u 0 0 MXR90
-place Generate STONEresistordividermain 33.01 -8.02 R0
-placeSTEP PEBBLES PEBBLEswitchG10K 43.04 -8.02 y 4.41 R0
-placeRES 0.715 -10.75 0.8 0.8 R0 x -y 63
-placeRESRING
-placeEND
-placeROUTE
-moveORIGIN x
-moveORIGIN y
+placeTILE 0.66 6.32 6.04
+//place constraints module generator 
+//placeROUTE
 endlayoutbio
+
+
+
 
 //**********************************************
 //Project Parameters
@@ -238,105 +220,44 @@ endlayoutbio
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
 sub_area,STONEnoconn,0
-sub_area,STONEresistordividermain,100
-sub_area,STONEresistordividersw5v10u,200
-sub_area,rlpp3000rpo18p3u0p4u,24
-sub_area,rlpp3000rpo19p6u0p4u,38
-generate_area,resistordivider_vbuffer_10b584fd_Xrfb,362
+sub_area,STONEcurrentmirrormain,100
+sub_area,CASCODEnmos5uref,3800
+sub_area,CASCODEpmos5u,3800
+sub_area,CASCODEpmos5uref,3800
+sub_area,CASCODEnmos5u,3800
+sub_area,CASCODEpmos5u,3800
+generate_area,currentmirror_3a3e0620,19100
+// *********************************************
+//Operating Range
+#define,STONEminimum,2.1
+#define,STONELVminimum,1.0
+#define,CELVminimum,2.1
+#define,HVPOSminimum,2.1
 // *********************************************
 //Calculator Parameters
-#define,CELVminimum,1.2
-#define,RESISTORDIVIDERminimumvaluePOLY,0.5
-#define,RESISTORDIVIDERtolerance,0.05
-#define,RESISTORDIVIDERrmult,4
-
-#define,RESISTORDIVIDERresistoriso,CELG
-#define,RESISTORDIVIDERrontopLOW,1.9
-#define,RESISTORDIVIDERrontopHIGH,5.0
-#define,RESISTORDIVIDERronbottomLOW,1.9
-#define,RESISTORDIVIDERronbottomHIGH,5.0
-#define,RESISTORDIVIDERrontapLOW,1.9
-#define,RESISTORDIVIDERrontapHIGH,5.0
-#define,RESISTORDIVIDERronthreshold,50.0
-
-#define,RESISTORDIVIDERiq,15.0
-#define,RESISTORDIVIDERv0,6.0
-#define,RESISTORDIVIDERv1,12.0
-#define,RESISTORDIVIDERv2,30.0
-#define,RESISTORDIVIDERswitchvt,2.0
-#define,RESISTORDIVIDERraccuracy,1000.0
-
-//Layout Calculators
-#define,RESISTORDIVIDERrwidth0,2.0
-#define,RESISTORDIVIDERrwidth1,0.5
-#define,RESISTORDIVIDERrlength,25.0
-#define,RESISTORDIVIDERrpercenterror,0.25
-#define,RESISTORDIVIDERrparallel,30
-//////////////////////////////////////////////////////////////////////////////////
-
-//Define Resistor calculator Algorithm
-//#define,RESISTORlayoutalgorithm,layout
-#define,RESISTORlayoutalgorithm,size
-#define,RESISTORlengthstep,0.1
-#define,RESISTORwidthstep,0.1
-//Define Resistor Area Calculator Algorithm
-//#define,RESISTORareaalgorithm,1
-//1=Resistor in one column
-#define,RESISTORareaalgorithm,2
-//2=Worst Case Kl+Kw
-//#define,RESISTORareaalgorithm,3
-//3 Define X Dimesion and calculate Row/Column
-#define,RESISTORareaXdimesion,100
-//X diminsion area that resistor can fit into
-
-//maximum number of parallel resistors
-#define,RESISTORparallelmaxPOLY,256
-#define,RESISTORparallelmaxRPOD,300
-#define,RESISTORparallelmaxRPODRPO,300
-#define,RESISTORparallelmaxRNOD,300
-#define,RESISTORparallelmaxRNODRPO,300
-
-//Starting Resistor Length <if Algorithm=layout>
-#define,RESISTORlayoutstartlengthPOLY,50.0
-#define,RESISTORlayoutstartlengthRPOD,60.0
-#define,RESISTORlayoutstartlengthRPODRPO,60.0
-#define,RESISTORlayoutstartlengthRNOD,60.0
-#define,RESISTORlayoutstartlengthRNODRPO,60.0
-
-#define,RESISTORlayoutmaxlength,100.0
-//POLY Resistor
-//type=tbd minimum value of poly resistor
-#define,RESISTORminimumvaluePOLY,3.0
-
-
-//Resistor Type rules
-#define RESISTORtbd,yes
-//#define RESISTORtdb,no
-//reassign tbd resistor type
-
-#define RESISTORrpodrposwitch,0.4
-#define RESISTORrpodswitch,0.1
-//switch resistor from rpodrpo to rpod
-///////////////////////////////////////////////////////////////////////////////
-
+#define,CELVminimum,2.0
+#define,count_runitw,2.0
+#define,count_runitmaxl,50.0
+#define,count_runitminl,5.0
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//resistordivider
+//currentmirror2
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,TAP0,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,TOP,BOTTOM,enable_resistordivider
+pinorder,I0,I1,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,ISET,CELV,enable_currentmirror,ok_currentmirror,net_skip
 endpinorder
 //**********************************************
 
 //**********************************************
 //TRIM Parameters
-cell,resistordivider
-trim,instance,resistordivider_vbuffer_10b584fd_Xrfb
+cell,currentmirror
+trim,instance,currentmirror_3a3e0620
 
+//currentmirror - no trim
 trim,name,na
 trim,enable,no
 trim,bits,TBD
@@ -345,12 +266,12 @@ trim,pinname,TBD
 trim,testname,TBD
 trim,description,TBD
 trim,target,na
-trim,units,KHz
+trim,units,TBD
 trim,pretrim_low_limit,TBD
 trim,pretrim_high_limit,TBD
 trim,posttrim_low_limit,TBD
 trim,posttrim_high_limit,TBD
-trim,codeunits,%
+trim,codeunits,TBD
 trim,description0,empty
 trim,description1,empty
 trim,description2,empty
@@ -359,10 +280,12 @@ trim,description4,empty
 trim,description5,empty
 trim,description6,empty
 trim,description7,empty
+
 //**********************************************
-//Cell PinDescriptions
+//Cell Pin Descriptions
+//**********************************************
 pinname,CELV
-definition,CELV,resistor divider power
+definition,CELV,power supply
 iq,CELV,SIMULATION
 absmax,CELV,6
 absmin,CELV,2.0
@@ -373,7 +296,7 @@ dftpriority,CELV,1
 esd,CELV,TBD
 
 pinname,CELG
-definition,CELG,ressitor divider  power ground
+definition,CELG,power ground
 iq,CELG,SIMULATION
 absmax,CELG,0.3
 absmin,CELG,-0.3
@@ -383,84 +306,88 @@ router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,BOTTOM
-definition,BOTTOM,resistor divider bottom connection
-iq,BOTTOM,SIMULATION
-absmax,BOTTOM,6
-absmin,BOTTOM,-0.3
-io,BOTTOM,inout
-mode,BOTTOM,analog
-router,BOTTOM,TBD
-dftpriority,BOTTOM,1
-esd,BOTTOM,TBD
-
-pinname,global_resistordivider
-definition,global_resistordivider,Global DFT enable
-iq,global_resistordivider,SIMULATION
-absmax,global_resistordivider,6
-absmin,global_resistordivider,-0.3
-io,global_resistordivider,input
-mode,global_resistordivider,digital
-router,global_resistordivider,TBD
-dftpriority,global_resistordivider,1
-esd,global_resistordivider,TBD
-
-pinname,enable_resistordivider
-definition,enable_resistordivider,resistor divider logic enable
-iq,enable_resistordivider,SIMULATION
-absmax,enable_resistordivider,6
-absmin,enable_resistordivider,-0.3
-io,enable_resistordivider,input
-mode,enable_resistordivider,digital
-router,enable_resistordivider,TBD
-dftpriority,enable_resistordivider,1
-esd,enable_resistordivider,TBD
-
-pinname,TOP
-definition,TOP,Resistor divider top connection
-iq,TOP,SIMULATION
-absmax,TOP,6
-absmin,TOP,-0.3
-io,TOP,inout
-mode,TOP,analog
-router,TOP,TBD
-dftpriority,TOP,1
-esd,TOP,TBD
-
-pinname,TAP0
-definition,TAP0,Resistor divider feedback voltage0
-iq,TAP0,SIMULATION
-absmax,TAP0,6
-absmin,TAP0,-0.3
-io,TAP0,output
-mode,TAP0,analog
-router,TAP0,TBD
-dftpriority,TAP0,1
-esd,TAP0,TBD
-
 pinname,CELSUB
-definition,CELSUB,Substrate
+definition,CELSUB,power ground
 iq,CELSUB,SIMULATION
-absmax,CELSUB,6
+absmax,CELSUB,0.3
 absmin,CELSUB,-0.3
 io,CELSUB,input
-mode,CELSUB,analog
+mode,CELSUB,power
 router,CELSUB,TBD
 dftpriority,CELSUB,1
 esd,CELSUB,TBD
 
-//**********************************************
-//Constraints Parameters
-constraint,resistordivider,TAP0,shield
-constraint,resistordivider,TAP1,shield
-constraint,resistordivider,TAP2,shield
-constraint,resistordivider,TAP3,shield
-constraint,resistordivider,TAP4,shield
-constraint,resistordivider,TAP5,shield
-constraint,resistordivider,TAP6,shield
-constraint,resistordivider,TAP7,shield
-constraint,resistordivider,TOP,shield
-//**********************************************
+
+pinname,enable_currentmirror
+definition,enable_currentmirror,Enable Pin
+iq,enable_currentmirror,SIMULATION
+absmax,enable_currentmirror,6
+absmin,enable_currentmirror,-0.3
+io,enable_currentmirror,input
+mode,enable_currentmirror,digital
+router,enable_currentmirror,TBD
+dftpriority,enable_currentmirror,1
+esd,enable_currentmirror,TBD
+
+pinname,ISET
+definition,ISET,Mirror Current Reference
+iq,ISET,SIMULATION
+absmax,ISET,6
+absmin,ISET,-0.3
+io,ISET,input
+mode,ISET,analog
+router,ISET,TBD
+dftpriority,ISET,1
+esd,ISET,TBD
+
+pinname,ok_currentmirror
+definition,ok_currentmirror,Current Mirror OK
+iq,ok_currentmirror,SIMULATION
+absmax,ok_currentmirror,6
+absmin,ok_currentmirror,-0.3
+io,ok_currentmirror,output
+mode,ok_currentmirror,digital
+router,ok_currentmirror,TBD
+dftpriority,ok_currentmirror,1
+esd,ok_currentmirror,TBD
+
+pinname,I0
+definition,I0,Output 0
+iq,I0,SIMULATION
+absmax,I0,6
+absmin,I0,-0.3
+io,I0,inout
+mode,I0,analog
+router,I0,TBD
+dftpriority,I0,1
+esd,I0,TBD
+
+pinname,I1
+definition,I1,Output 1
+iq,I1,SIMULATION
+absmax,I1,6
+absmin,I1,-0.3
+io,I1,inout
+mode,I1,analog
+router,I1,TBD
+dftpriority,I1,1
+esd,I1,TBD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 endbio
 //**********************************************
 //Process Parameters
@@ -1140,4 +1067,17 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+// *********************************************
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -1,6 +1,6 @@
-//Celera:delayclock_e9793f67
+//Celera:delayclock_58885d25
 //CONTROL:Pin:4 outputs
-module delayclock_e9793f67 (in,CELV,out,clock,celeraporb,
+module delayclock_58885d25 (in,CELV,out,clock,celeraporb,
 delay,
 CELG,CELSUB);
 input CELV;
