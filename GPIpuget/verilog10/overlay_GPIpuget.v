@@ -1,12 +1,9 @@
 // ------------------------ Module Definitions -----------
-module GPIfpugetFORCE (GND,GPI,SIMPV,CELG59462,CELV96848,enable_gpi,CELSUB40948,IP_4cb4e1e0);
+module GPIfpugetFORCE (GND,GPI,SIMPV,enable_gpi,IP_4cb4e1e0);
   output  GND;
   output  GPI;
   output  SIMPV;
-  output  CELG59462;
-  output  CELV96848;
   output  enable_gpi;
-  output  CELSUB40948;
   output  IP_4cb4e1e0;
 endmodule
 
@@ -35,10 +32,7 @@ GPIfpugetFORCE XFORCE (
 .GND(kelvin_GNDgpi),
 .GPI(GPI),
 .SIMPV(SIMPV),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
 .enable_gpi(enable_gpi),
-.CELSUB40948(CELSUB40948),
 .IP_4cb4e1e0(IP_4cb4e1e0)
 );
 
