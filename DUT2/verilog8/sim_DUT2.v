@@ -23,44 +23,44 @@ module DUT2 (BS_0,BS_1,BS_2,BS_3,ISIN,ITRI,VPWL,VSQR,VTRI,BSO_0,BSO_1,BSO_2,BSO_
 endmodule
 
 module EXTERNALDUT2 (GND,IPUL,IPWL,ISIN,ISQR,ITRI,VPUL,VSIN,VTRI,BSO_0,BSO_1,BSO_2,BSO_3,COMPOUT);
-  input  GND;
-  input  IPUL;
-  input  IPWL;
-  input  ISIN;
-  input  ISQR;
-  input  ITRI;
-  input  VPUL;
-  input  VSIN;
+  inout  GND;
+  inout  IPUL;
+  inout  IPWL;
+  inout  ISIN;
+  inout  ISQR;
+  inout  ITRI;
+  inout  VPUL;
+  inout  VSIN;
   input  VTRI;
   input  BSO_0;
   input  BSO_1;
   input  BSO_2;
   input  BSO_3;
-  input  COMPOUT;
+  inout  COMPOUT;
 endmodule
 
 module FORCEDUT2 (GND,BS_0,BS_1,BS_2,BS_3,IPUL,IPWL,ISIN,ISQR,ITRI,VPUL,VPWL,VSIN,VSQR,VTRI,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_efc25439,SENSE_G_465a3572);
-  input  GND;
-  input  BS_0;
-  input  BS_1;
-  input  BS_2;
-  input  BS_3;
-  input  IPUL;
-  input  IPWL;
-  input  ISIN;
-  input  ISQR;
-  input  ITRI;
-  input  VPUL;
-  input  VPWL;
-  input  VSIN;
+  inout  GND;
+  inout  BS_0;
+  inout  BS_1;
+  inout  BS_2;
+  inout  BS_3;
+  inout  IPUL;
+  output  IPWL;
+  inout  ISIN;
+  inout  ISQR;
+  inout  ITRI;
+  inout  VPUL;
+  output  VPWL;
+  inout  VSIN;
   output  VSQR;
-  input  VTRI;
-  input  CELG59462;
-  input  CELV96848;
-  input  PORB97836;
-  input  CELSUB40948;
-  input  IP_efc25439;
-  input  SENSE_G_465a3572;
+  inout  VTRI;
+  output  CELG59462;
+  output  CELV96848;
+  output  PORB97836;
+  output  CELSUB40948;
+  output  IP_efc25439;
+  output  SENSE_G_465a3572;
 endmodule
 
 // ------------------------ Module Verilog ---------------
