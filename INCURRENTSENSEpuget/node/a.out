@@ -49,19 +49,19 @@ o0x7fffff25f2b8 .functor BUFZ 1, C4<z>; HiZ drive
 v0x55555589a6a0_0 .net "register_measure_currentsensein_xd_measure_currentsensein_824d3563", 0 0, o0x7fffff25f2b8;  0 drivers
 S_0x55555587fbf0 .scope module, "XFORCE_INCURRENTSENSEpuget1" "FORCE_INCURRENTSENSEpuget" 2 46, 2 2 0, S_0x55555587fa60;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "GND";
-    .port_info 1 /INPUT 1 "SIMPV";
-    .port_info 2 /INPUT 1 "VOUTSN";
-    .port_info 3 /INPUT 1 "VOUTSP";
-    .port_info 4 /INPUT 1 "CELG59462";
-    .port_info 5 /INPUT 1 "CELV96848";
-    .port_info 6 /INPUT 1 "PORB97836";
-    .port_info 7 /INPUT 1 "CELSUB40948";
+    .port_info 0 /INOUT 1 "GND";
+    .port_info 1 /OUTPUT 1 "SIMPV";
+    .port_info 2 /OUTPUT 1 "VOUTSN";
+    .port_info 3 /OUTPUT 1 "VOUTSP";
+    .port_info 4 /OUTPUT 1 "CELG59462";
+    .port_info 5 /OUTPUT 1 "CELV96848";
+    .port_info 6 /OUTPUT 1 "PORB97836";
+    .port_info 7 /OUTPUT 1 "CELSUB40948";
     .port_info 8 /OUTPUT 1 "clock_currentsensein";
-    .port_info 9 /OUTPUT 1 "enable_currentsensein";
-    .port_info 10 /OUTPUT 1 "measure_currentsensein";
-    .port_info 11 /INOUT 1 "IP_INCURRENTSENSEpuget1";
-    .port_info 12 /INPUT 1 "kelvin_GNDcurrentsensein";
+    .port_info 9 /INOUT 1 "enable_currentsensein";
+    .port_info 10 /INOUT 1 "measure_currentsensein";
+    .port_info 11 /OUTPUT 1 "IP_INCURRENTSENSEpuget1";
+    .port_info 12 /OUTPUT 1 "kelvin_GNDcurrentsensein";
     .port_info 13 /INPUT 1 "register_enable_currentsensein_xd_enable_currentsensein_89705365";
     .port_info 14 /INPUT 1 "register_measure_currentsensein_xd_measure_currentsensein_824d3563";
 v0x5555558474b0_0 .net "CELG59462", 0 0, o0x7fffff25f018;  alias, 0 drivers
