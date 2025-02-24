@@ -1,33 +1,10 @@
 // ------------------------ Module Definitions -----------
-//Celera:dbuf_e926e395
-//Celera Confidential Symbol Generator
-//Digital Buffer
-module dbuf_e926e395 (CELV,CELG,i,o,SUB);
-input CELV;
-input CELG;
-input i;
-input SUB;
-output o;
-endmodule
-
-
-
 //Verilog HDL for "Generate", "STONEnoconn" "functional"
 
 
 module STONEnoconn ( noconn );
 
   input noconn;
-endmodule
-
-
-//Verilog HDL for "Generate", "WRAPPER1" "functional"
-
-
-module WRAPPER1 ( o, i );
-
-  input i;
-  output o;
 endmodule
 
 
@@ -130,7 +107,7 @@ input GND;
 endmodule 
 
 // ------------------------ Module Verilog ---------------
-module FORCEDUT2 (GND, BS_0, BS_1, BS_2, BS_3, IPUL, IPWL, ISIN, ISQR, ITRI, VPUL, VPWL, VSIN, VSQR, VTRI, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_efc25439, SENSE_G_465a3572, register_BS_xdatamap1_19739851);
+module FORCEDUT2 (GND, BS_0, BS_1, BS_2, BS_3, IPUL, IPWL, ISIN, ISQR, ITRI, VPUL, VPWL, VSIN, VSQR, VTRI, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_efc25439, SENSE_G_465a3572);
 inout  GND;
 inout  BS_0;
 inout  BS_1;
@@ -144,7 +121,7 @@ inout  ITRI;
 inout  VPUL;
 output  VPWL;
 inout  VSIN;
-output  VSQR;
+  input  VSQR;
 inout  VTRI;
 output  CELG59462;
 output  CELV96848;
@@ -152,43 +129,13 @@ output  PORB97836;
 output  CELSUB40948;
 output  IP_efc25439;
 output  SENSE_G_465a3572;
-input [3:0] register_BS_xdatamap1_19739851;
 
 
 // ------------------------ Wires ------------------------
-wire [3:0] register_BS_xdatamap1_19739851;
 
 // ------------------------ Networks ---------------------
-dbuf_e926e395 XU1 (
-.i(net_35),
-.o(VSQR),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
 STONEnoconn XNCip (
 .noconn(noconn_IN)
-);
-
-WRAPPER1 XWRAPregister_BS_xdatamap1_19739851_0 (
-.i(register_BS_xdatamap1_19739851[0]),
-.o(BS_0)
-);
-
-WRAPPER1 XWRAPregister_BS_xdatamap1_19739851_1 (
-.i(register_BS_xdatamap1_19739851[1]),
-.o(BS_1)
-);
-
-WRAPPER1 XWRAPregister_BS_xdatamap1_19739851_2 (
-.i(register_BS_xdatamap1_19739851[2]),
-.o(BS_2)
-);
-
-WRAPPER1 XWRAPregister_BS_xdatamap1_19739851_3 (
-.i(register_BS_xdatamap1_19739851[3]),
-.o(BS_3)
 );
 
 ipwl_0x0_10ux0_20ux10u I1 (
