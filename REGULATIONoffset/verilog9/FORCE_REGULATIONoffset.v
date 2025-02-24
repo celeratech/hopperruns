@@ -29,11 +29,6 @@ module vpwl_0x0_10d0ux0_11d0ux1d2 (PLUS,MINUS);
   output  MINUS;
 endmodule
 
-module vpwl_0x5 (PLUS,MINUS);
-  output  PLUS;
-  output  MINUS;
-endmodule
-
 module vdc_0(PLUS, MINUS);
 output PLUS;
 output MINUS;
@@ -187,11 +182,6 @@ vpwl_0x0_10ux0_11ux0 V_GNDx (
 
 vpwl_0x0_10d0ux0_11d0ux1d2 V_REFx (
 .PLUS(net_71),
-.MINUS(GND)
-);
-
-vpwl_0x5 XSIMPV (
-.PLUS(SIMPV),
 .MINUS(GND)
 );
 
