@@ -1,4 +1,23 @@
-//Celera BIO Generator...Updated BIO Pin List
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
@@ -6,129 +25,62 @@
 
 //Celera Confidential BIO Data Generator
 //Cell Name
-cell,currentmirror
-///**********************************************
+cell,nor2
+//**********************************************
 //Generator Revision
-revision,generator,0.5.0
+revision,generator,0.3.0
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-
-limit,currentmirror_isetpolarity,choose0,sink
-limit,currentmirror_isetpolarity,choose1,source
-limit,currentmirror_number,minimum,1
-limit,currentmirror_number,maximum,8
-limit,currentmirror_maxiset,minimum,0.01
-limit,currentmirror_maxiset,maximum,100.0
-limit,currentmirror_maxvout,choose0,6
-limit,currentmirror_maxvout,choose1,12
-limit,currentmirror_maxvout,choose2,20
-limit,currentmirror_maxvout,choose3,24
-limit,currentmirror_maxvout,choose4,30
-limit,currentmirror_maxvout,choose5,36
-limit,currentmirror_maxvout,choose6,40
-limit,currentmirror_maxvout,choose7,45
-limit,currentmirror_maxvout,choose8,60
-limit,currentmirror_gain0,minimum,0.1
-limit,currentmirror_gain0,maximum,20.0
-limit,currentmirror_gain1,minimum,0.1
-limit,currentmirror_gain1,maximum,20.0
-limit,currentmirror_gain2,minimum,0.1
-limit,currentmirror_gain2,maximum,20.0
-limit,currentmirror_gain3,minimum,0.1
-limit,currentmirror_gain3,maximum,20.0
-limit,currentmirror_gain4,minimum,0.1
-limit,currentmirror_gain4,maximum,20.0
-limit,currentmirror_gain5,minimum,0.1
-limit,currentmirror_gain5,maximum,20.0
-limit,currentmirror_gain6,minimum,0.1
-limit,currentmirror_gain6,maximum,20.0
-limit,currentmirror_gain7,minimum,0.1
-limit,currentmirror_gain7,maximum,20.0
-limit,currentmirror_type0,choose0,sink
-limit,currentmirror_type0,choose1,source
-limit,currentmirror_type1,choose0,sink
-limit,currentmirror_type1,choose1,source
-limit,currentmirror_type2,choose0,sink
-limit,currentmirror_type2,choose1,source
-limit,currentmirror_type3,choose0,sink
-limit,currentmirror_type3,choose1,source
-limit,currentmirror_type4,choose0,sink
-limit,currentmirror_type4,choose1,source
-limit,currentmirror_type5,choose0,sink
-limit,currentmirror_type5,choose1,source
-limit,currentmirror_type6,choose0,sink
-limit,currentmirror_type6,choose1,source
-limit,currentmirror_type7,choose0,sink
-limit,currentmirror_type7,choose1,source
-limit,currentmirror_vmax,choose0,2
-limit,currentmirror_vmax,choose1,6
-limit,currentmirror_dft,choose0,no
-limit,currentmirror_dft,choose1,yes
-limit,currentmirror_global,choose0,no
-limit,currentmirror_global,choose1,yes
-
+limit,logicgate_vmax,choose0,2
+limit,logicgate_vmax,choose1,6
+limit,logicgate_type,choose0,nor2
+limit,logicgate_type,choose1,nor3
+limit,logicgate_type,choose2,nor4
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,currentmirror_isetpolarity,source
-description,Current Mirror Iset polarity
-user,currentmirror_maxiset,10
-description,Current Mirror Maximum Output current
-user,currentmirror_maxvout,6
-description,Current Mirror Maximum Output Voltage
-user,currentmirror_supply,lowvoltage
-description,Minimum Operating Voltage
-user,currentmirror_gain0,1_source
-description,Current Mirror Output0
-user,currentmirror_gain1,1_source
-description,Current Mirror Output1
-user,NESTO,0.5.0
-description,Nesto generate Revision
+user,logicgate_vmax,6
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,currentmirror
-register,instance,currentmirror_3a3e0620
+registermap,nor2
+register,instance,nor2_ee112582
 register,source,cell
 
-//No register Map Required
+//Logic nor2
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readonly
+register,mode,na
 register,por,0
 register,userdescription,na
-register,description0,not used
-register,description1,not used
-register,description2,not used
-register,description3,not used
-register,description4,not used
-register,description5,not used
-register,description6,not used
-register,description7,not used
-register,description8,empty
-register,description9,empty
-register,description10,empty
-register,description11,empty
-register,description12,empty
+register,description0,description0,not used
+register,description1,description1,not used
+register,description2,description2,not used
+register,description3,description3,not used
+register,description4,description4,not used
+register,description5,description5,not used
+register,description6,description6,not used
+register,description7,description7,not used
 //Netlister Information
 register,busname,na
+
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,currentmirror
-factory,instance,currentmirror_3a3e0620
+factorymap,nor2
+factory,instance,nor2_ee112582
 factory,source,cell
 
-///No factory Map Required
+//LOGIC CELLS nor2
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,readonly
+factory,mode,na
 factory,por,0
 factory,userdescription,na
 factory,description0,description0,not used
@@ -142,35 +94,12 @@ factory,description7,description7,not used
 //Netlister Information
 factory,busname,na
 //**********************************************
-//CELL DFT Parameters
-// *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,currentmirror
-
-place Generate STONEcurrentmirrormain 0 0 R0
-place Generate STONEcurrentmirrorpmos50urefhv30 52.64 -37.62 R0
-place Generate STONEcurrentmirrorpmos5urefhv30 52.64 -37.62 R0
-place Generate STONEcurrentmirrorpmos500nrefhv30 52.64 -37.62 R0
-place Generate STONEcurrentmirrormaindft -0.54 -0.16 MX 
-placeSTEP Generate STONEcurrentmirrornmos50uhv30 -10.28 -79.2 x 29.7 R0
-placeSTEP Generate STONEcurrentmirrorpmos50uhv30 -10.79 -121.385 x 20.9 R0
-placeSTEP Generate STONEcurrentmirrornmos5uhv30 -10.28 -53.68 x 12.22 R0
-placeSTEP Generate STONEcurrentmirrorpmos5uhv30 -10.79 -77.55 x 20.9 R0
-placeSTEP Generate STONEcurrentmirrornmos500nhv30 -10.28 -71.66 x 29.7 R0
-placeSTEP Generate STONEcurrentmirrorpmos500nhv30 -10.79 -95.53 x 21.02 R0
-placeIFELSE cellNameContains dft
-placeSTEP PEBBLES PEBBLEswitchG10K 10.08 -27.97 x 4.41 R0
-placeELSE
-placeSTEP PEBBLES PEBBLEswitchG10K 44.1 0 x 4.41 R0
-placeEND
-placeTILE 0.66 6.32 6.04
-//place constraints module generator 
-//placeROUTE
+layout,nor2
+place PEBBLES PEBBLEnor2 0 0 R0
+movePINS
 endlayoutbio
-
-
-
 
 //**********************************************
 //Project Parameters
@@ -219,45 +148,28 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,STONEnoconn,0
-sub_area,STONEcurrentmirrormain,100
-sub_area,CASCODEnmos5uref,3800
-sub_area,CASCODEpmos5u,3800
-sub_area,CASCODEpmos5uref,3800
-sub_area,CASCODEnmos5u,3800
-sub_area,CASCODEpmos5u,3800
-generate_area,currentmirror_3a3e0620,19100
-// *********************************************
-//Operating Range
-#define,STONEminimum,2.1
-#define,STONELVminimum,1.0
-#define,CELVminimum,2.1
-#define,HVPOSminimum,2.1
+sub_area,PEBBLEnor2,54
+generate_area,nor2_ee112582,54
 // *********************************************
 //Calculator Parameters
-#define,CELVminimum,2.0
-#define,count_runitw,2.0
-#define,count_runitmaxl,50.0
-#define,count_runitminl,5.0
+#define,CELVminimum,1.4
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//currentmirror2
+//nor2
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,I0,I1,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,ISET,CELV,enable_currentmirror,ok_currentmirror,net_skip
+pinorder,i0,o,i1
+
 endpinorder
 //**********************************************
-
-//**********************************************
 //TRIM Parameters
-cell,currentmirror
-trim,instance,currentmirror_3a3e0620
+cell,nor2
+trim,instance,nor2_ee112582
 
-//currentmirror - no trim
 trim,name,na
 trim,enable,no
 trim,bits,TBD
@@ -271,7 +183,7 @@ trim,pretrim_low_limit,TBD
 trim,pretrim_high_limit,TBD
 trim,posttrim_low_limit,TBD
 trim,posttrim_high_limit,TBD
-trim,codeunits,TBD
+trim,codeunits,%
 trim,description0,empty
 trim,description1,empty
 trim,description2,empty
@@ -285,11 +197,11 @@ trim,description7,empty
 //Cell Pin Descriptions
 //**********************************************
 pinname,CELV
-definition,CELV,power supply
+definition,CELV,power	
 iq,CELV,SIMULATION
 absmax,CELV,6
 absmin,CELV,2.0
-io,CELV,input
+io,CELV,power
 mode,CELV,power
 router,CELV,TBD
 dftpriority,CELV,1
@@ -300,95 +212,55 @@ definition,CELG,power ground
 iq,CELG,SIMULATION
 absmax,CELG,0.3
 absmin,CELG,-0.3
-io,CELG,input
+io,CELG,power
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,CELSUB
-definition,CELSUB,power ground
-iq,CELSUB,SIMULATION
-absmax,CELSUB,0.3
-absmin,CELSUB,-0.3
-io,CELSUB,input
-mode,CELSUB,power
-router,CELSUB,TBD
-dftpriority,CELSUB,1
-esd,CELSUB,TBD
+pinname,i0
+definition,i0,nor2 input 
+iq,i0,SIMULATION
+absmax,i0,6
+absmin,i0,-0.3
+io,i0,input
+mode,i0,digital
+router,i0,TBD
+dftpriority,i0,1
+esd,i0,TBD
 
+pinname,i1
+definition,i1,nor2 input 
+iq,i1,SIMULATION
+absmax,i1,6
+absmin,i1,-0.3
+io,i1,input
+mode,i1,digital
+router,i1,TBD
+dftpriority,i1,1
+esd,i1,TBD
 
-pinname,enable_currentmirror
-definition,enable_currentmirror,Enable Pin
-iq,enable_currentmirror,SIMULATION
-absmax,enable_currentmirror,6
-absmin,enable_currentmirror,-0.3
-io,enable_currentmirror,input
-mode,enable_currentmirror,digital
-router,enable_currentmirror,TBD
-dftpriority,enable_currentmirror,1
-esd,enable_currentmirror,TBD
+pinname,o
+definition,o,nor2 output 
+iq,o,SIMULATION
+absmax,o,6
+absmin,o,-0.3
+io,o,output
+mode,o,digital
+router,o,TBD
+dftpriority,o,1
+esd,o,TBD
 
-pinname,ISET
-definition,ISET,Mirror Current Reference
-iq,ISET,SIMULATION
-absmax,ISET,6
-absmin,ISET,-0.3
-io,ISET,input
-mode,ISET,analog
-router,ISET,TBD
-dftpriority,ISET,1
-esd,ISET,TBD
-
-pinname,ok_currentmirror
-definition,ok_currentmirror,Current Mirror OK
-iq,ok_currentmirror,SIMULATION
-absmax,ok_currentmirror,6
-absmin,ok_currentmirror,-0.3
-io,ok_currentmirror,output
-mode,ok_currentmirror,digital
-router,ok_currentmirror,TBD
-dftpriority,ok_currentmirror,1
-esd,ok_currentmirror,TBD
-
-pinname,I0
-definition,I0,Output 0
-iq,I0,SIMULATION
-absmax,I0,6
-absmin,I0,-0.3
-io,I0,inout
-mode,I0,analog
-router,I0,TBD
-dftpriority,I0,1
-esd,I0,TBD
-
-pinname,I1
-definition,I1,Output 1
-iq,I1,SIMULATION
-absmax,I1,6
-absmin,I1,-0.3
-io,I1,inout
-mode,I1,analog
-router,I1,TBD
-dftpriority,I1,1
-esd,I1,TBD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-endbio
+pinname,SUB
+definition,SUB,substrate
+iq,SUB,SIMULATION
+absmax,SUB,0.3
+absmin,SUB,-0.3
+io,SUB,input
+mode,SUB,power
+router,SUB,TBD
+dftpriority,SUB,1
+esd,SUB,TBD
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -1067,17 +939,3 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
-// *********************************************
-
-
-
-
-
-
-
-
-
-
-
-
-

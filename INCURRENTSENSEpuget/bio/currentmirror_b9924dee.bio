@@ -6,99 +6,132 @@
 
 //Celera Confidential BIO Data Generator
 //Cell Name
-cell,delayclock
-//**********************************************
+cell,currentmirror
+///**********************************************
 //Generator Revision
-revision,generator,0.4.1
+revision,generator,0.5.0
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,delay_type,choose0,clock
-limit,delay_edge,choose0,rise
-limit,delay_edge,choose1,fall
-limit,delay_dft,choose0,no
-limit,delay_dft,choose1,yes
-limit,delay_vmax,choose0,2
-limit,delay_vmax,choose1,6
 
-limit,delayclock_control,choose0,pin
-limit,delayclock_control,choose1,register
-limit,delayclock_control,choose2,factory
-limit,delayclock_options,minimum,1
-limit,delayclock_options,maximum,4
-limit,delayclock_por,minimum,0
-limit,delayclock_por,maximum,3
-limit,delayclock_datasheetname,text
-limit,delayclock_datasheetdescription,text
-limit,delayclock_count0,minimum,0
-limit,delayclock_count0,maximum,131072
-limit,delayclock_count1,minimum,0
-limit,delayclock_count1,maximum,131072
-limit,delayclock_count2,minimum,0
-limit,delayclock_count2,maximum,131072
-limit,delayclock_count3,minimum,0
-limit,delayclock_count3,maximum,131072
-limit,delayclock_accuracy,choose0,no
-limit,delayclock_accuracy,choose1,yes
-limit,delayclock_accuracyname,text
-limit,delayclock_accuracydescription,text
-limit,delayclock_freq,minimum,1
-limit,delayclock_freq,maximum,40000
-//************************************************************
+limit,currentmirror_isetpolarity,choose0,sink
+limit,currentmirror_isetpolarity,choose1,source
+limit,currentmirror_number,minimum,1
+limit,currentmirror_number,maximum,8
+limit,currentmirror_maxiset,minimum,0.01
+limit,currentmirror_maxiset,maximum,100.0
+limit,currentmirror_maxvout,choose0,6
+limit,currentmirror_maxvout,choose1,12
+limit,currentmirror_maxvout,choose2,20
+limit,currentmirror_maxvout,choose3,24
+limit,currentmirror_maxvout,choose4,30
+limit,currentmirror_maxvout,choose5,36
+limit,currentmirror_maxvout,choose6,40
+limit,currentmirror_maxvout,choose7,45
+limit,currentmirror_maxvout,choose8,60
+limit,currentmirror_gain0,minimum,0.1
+limit,currentmirror_gain0,maximum,20.0
+limit,currentmirror_gain1,minimum,0.1
+limit,currentmirror_gain1,maximum,20.0
+limit,currentmirror_gain2,minimum,0.1
+limit,currentmirror_gain2,maximum,20.0
+limit,currentmirror_gain3,minimum,0.1
+limit,currentmirror_gain3,maximum,20.0
+limit,currentmirror_gain4,minimum,0.1
+limit,currentmirror_gain4,maximum,20.0
+limit,currentmirror_gain5,minimum,0.1
+limit,currentmirror_gain5,maximum,20.0
+limit,currentmirror_gain6,minimum,0.1
+limit,currentmirror_gain6,maximum,20.0
+limit,currentmirror_gain7,minimum,0.1
+limit,currentmirror_gain7,maximum,20.0
+limit,currentmirror_type0,choose0,sink
+limit,currentmirror_type0,choose1,source
+limit,currentmirror_type1,choose0,sink
+limit,currentmirror_type1,choose1,source
+limit,currentmirror_type2,choose0,sink
+limit,currentmirror_type2,choose1,source
+limit,currentmirror_type3,choose0,sink
+limit,currentmirror_type3,choose1,source
+limit,currentmirror_type4,choose0,sink
+limit,currentmirror_type4,choose1,source
+limit,currentmirror_type5,choose0,sink
+limit,currentmirror_type5,choose1,source
+limit,currentmirror_type6,choose0,sink
+limit,currentmirror_type6,choose1,source
+limit,currentmirror_type7,choose0,sink
+limit,currentmirror_type7,choose1,source
+limit,currentmirror_vmax,choose0,2
+limit,currentmirror_vmax,choose1,6
+limit,currentmirror_dft,choose0,no
+limit,currentmirror_dft,choose1,yes
+limit,currentmirror_global,choose0,no
+limit,currentmirror_global,choose1,yes
+
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,delay0,5.0us_at_1000KHz
-description,delay Clock input0
-user,delay1,10.0us_at_1000KHz
-description,delay Clock input1
-user,delay2,15.0us_at_1000KHz
-description,delay Clock input2
-user,delay3,20.0us_at_1000KHz
-description,delay Clock input3
-user,delayclock_datasheetdescription,rise
-description,delay Edge
+user,currentmirror_isetpolarity,source
+description,Current Mirror Iset polarity
+user,currentmirror_maxiset,10
+description,Current Mirror Maximum Output current
+user,currentmirror_maxvout,6
+description,Current Mirror Maximum Output Voltage
+user,currentmirror_supply,lowvoltage
+description,Minimum Operating Voltage
+user,currentmirror_gain0,1_source
+description,Current Mirror Output0
+user,currentmirror_gain1,1_source
+description,Current Mirror Output1
+user,currentmirror_gain2,1_source
+description,Current Mirror Output2
+user,NESTO,0.5.0
+description,Nesto generate Revision
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,delayclock
-register,instance,delayclock_58885d25
+registermap,currentmirror
+register,instance,currentmirror_b9924dee
 register,source,cell
 
-//delay time 
+//No register Map Required
 register,name,na
 register,enable,no
-register,bits,na
-register,mode,readwrite
-register,por,na
+register,bits,0
+register,mode,readonly
+register,por,0
 register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
+register,description8,empty
+register,description9,empty
+register,description10,empty
+register,description11,empty
+register,description12,empty
 //Netlister Information
 register,busname,na
-
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,delayclock
-factory,instance,delayclock_58885d25
+factorymap,currentmirror
+factory,instance,currentmirror_b9924dee
 factory,source,cell
 
-//delay time 
+///No factory Map Required
 factory,name,na
 factory,enable,no
-factory,bits,na
+factory,bits,0
 factory,mode,readonly
-factory,por,na
+factory,por,0
 factory,userdescription,na
 factory,description0,description0,not used
 factory,description1,description1,not used
@@ -110,35 +143,36 @@ factory,description6,description6,not used
 factory,description7,description7,not used
 //Netlister Information
 factory,busname,na
-
 //**********************************************
 //CELL DFT Parameters
 // *********************************************
 //Layout Parameters
 revision,layout,0p1
-//Delay based on master clock
-layout,delayclock
+layout,currentmirror
 
-place Generate STONEdelayclockDFT 0 0 R0
-place Generate STONEdelayclockEDGE 0 0 R0
-place Generate STONEdelayclockSELECT25 0 0 R0
-place Generate STONEdelayclockSELECT29 0 0 R0
-place Generate STONEdelayclockSELECT45 0 0 R0
-place Generate STONEdelayclockSELECT49 0 0 R0
-placeALTVIEW Generate STONEdelayclockSELECT417 layout1 0 0 R0
-place Generate STONEdelayclockSELECT217 0 0 R0
-place Generate STONEdelayclockTIE 0 0 R0
-
-
-place Generate prog_delay_5bit 120 0 R90
-place Generate prog_delay_5bit_trim 120 0 R90
-place Generate prog_delay_9bit 120 0 R90
-place Generate prog_delay_9bit_trim 120 0 R90
-place Generate prog_delay_17bit 240 0 R90
-place Generate prog_delay_17bit_trim 240 0 R90
-
-placeROUTE24
+place Generate STONEcurrentmirrormain 0 0 R0
+place Generate STONEcurrentmirrorpmos50urefhv30 52.64 -37.62 R0
+place Generate STONEcurrentmirrorpmos5urefhv30 52.64 -37.62 R0
+place Generate STONEcurrentmirrorpmos500nrefhv30 52.64 -37.62 R0
+place Generate STONEcurrentmirrormaindft -0.54 -0.16 MX 
+placeSTEP Generate STONEcurrentmirrornmos50uhv30 -10.28 -79.2 x 29.7 R0
+placeSTEP Generate STONEcurrentmirrorpmos50uhv30 -10.79 -121.385 x 20.9 R0
+placeSTEP Generate STONEcurrentmirrornmos5uhv30 -10.28 -53.68 x 12.22 R0
+placeSTEP Generate STONEcurrentmirrorpmos5uhv30 -10.79 -77.55 x 20.9 R0
+placeSTEP Generate STONEcurrentmirrornmos500nhv30 -10.28 -71.66 x 29.7 R0
+placeSTEP Generate STONEcurrentmirrorpmos500nhv30 -10.79 -95.53 x 21.02 R0
+placeIFELSE cellNameContains dft
+placeSTEP PEBBLES PEBBLEswitchG10K 10.08 -27.97 x 4.41 R0
+placeELSE
+placeSTEP PEBBLES PEBBLEswitchG10K 44.1 0 x 4.41 R0
+placeEND
+placeTILE 0.66 6.32 6.04
+//place constraints module generator 
+//placeROUTE
 endlayoutbio
+
+
+
 
 //**********************************************
 //Project Parameters
@@ -187,48 +221,60 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,STONEdelayclockSELECT49,99999
-sub_area,prog_delay_9bit,99999
-generate_area,delayclock_58885d25,199998
+sub_area,STONEnoconn,0
+sub_area,STONEcurrentmirrormain,100
+sub_area,CASCODEnmos5uref,3800
+sub_area,CASCODEpmos5u,3800
+sub_area,CASCODEpmos5uref,3800
+sub_area,CASCODEnmos5u,3800
+sub_area,CASCODEpmos5u,3800
+sub_area,CASCODEpmos5u,3800
+generate_area,currentmirror_b9924dee,22900
 // *********************************************
-#define,DELAYresistorISO,CELG
-#define,CELVminimum,1.8
-
+//Operating Range
+#define,STONEminimum,2.1
+#define,STONELVminimum,1.0
+#define,CELVminimum,2.1
+#define,HVPOSminimum,2.1
+// *********************************************
 //Calculator Parameters
-#define,DELAYpretrimhigh,30.0
-#define,DELAYpretrimlow,30.0
+#define,CELVminimum,2.0
+#define,count_runitw,2.0
+#define,count_runitmaxl,50.0
+#define,count_runitminl,5.0
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//delayclock
+//currentmirror3
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,in,out,clock,delay0,delay1,net_skip
+pinorder,I0,I1,I2,net_skip,net_skip,net_skip,net_skip,net_skip,ISET,CELV,enable_currentmirror,ok_currentmirror,net_skip
 endpinorder
 //**********************************************
 
 //**********************************************
 //TRIM Parameters
-cell,delayclock
-trim,instance,delayclock_58885d25
+cell,currentmirror
+trim,instance,currentmirror_b9924dee
 
+//currentmirror - no trim
 trim,name,na
 trim,enable,no
 trim,bits,TBD
 trim,por,0
-trim,pinname,trim_delay
+trim,pinname,TBD
 trim,testname,TBD
 trim,description,TBD
 trim,target,na
-trim,units,ns
+trim,units,TBD
 trim,pretrim_low_limit,TBD
 trim,pretrim_high_limit,TBD
 trim,posttrim_low_limit,TBD
 trim,posttrim_high_limit,TBD
-trim,codeunits,%
+trim,codeunits,TBD
 trim,description0,empty
 trim,description1,empty
 trim,description2,empty
@@ -237,16 +283,12 @@ trim,description4,empty
 trim,description5,empty
 trim,description6,empty
 trim,description7,empty
-trim,description8,empty
-
-
-
 
 //**********************************************
-//Cell Pin Descriptions	
+//Cell Pin Descriptions
 //**********************************************
 pinname,CELV
-definition,CELV,cell power
+definition,CELV,power supply
 iq,CELV,SIMULATION
 absmax,CELV,6
 absmin,CELV,2.0
@@ -257,7 +299,7 @@ dftpriority,CELV,1
 esd,CELV,TBD
 
 pinname,CELG
-definition,CELG,cell power ground
+definition,CELG,power ground
 iq,CELG,SIMULATION
 absmax,CELG,0.3
 absmin,CELG,-0.3
@@ -267,71 +309,99 @@ router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,celeraporb
-definition,celeraporb.Global Power on reset
-iq,celeraporb,SIMULATION
-absmax,celeraporb,6
-absmin,celeraporb,-0.3
-io,celeraporb,input
-mode,celeraporb,digital
-router,celeraporb,TBD
-dftpriority,celeraporb,1
-esd,celeraporb,TBD
-
-pinname,in
-definition,in,delay input
-iq,in,SIMULATION
-absmax,in,6
-absmin,in,-0.3
-io,in,input
-mode,in,digital
-router,in,TBD
-dftpriority,in,1
-esd,in,TBD
-
-pinname,out
-definition,out,delay output
-iq,out,SIMULATION
-absmax,out,6
-absmin,out,-0.3
-io,out,output
-mode,out,digital
-router,out,TBD
-dftpriority,out,1
-esd,out,TBD
-
-pinname,clock
-definition,clock,delay input reference clock
-iq,clock,SIMULATION
-absmax,clock,6
-absmin,clock,-0.3
-io,clock,input
-mode,clock,digital
-router,clock,TBD
-dftpriority,clock,1
-esd,clock,TBD
-
-pinname,delay
-definition,delay,delay control select
-iq,delay,SIMULATION
-absmax,delay,6
-absmin,delay,-0.3
-io,delay,input
-mode,delay,digital
-router,delay,TBD
-dftpriority,delay,1
-esd,delay,TBD
-
 pinname,CELSUB
-definition,CELSUB,substrate
+definition,CELSUB,power ground
 iq,CELSUB,SIMULATION
 absmax,CELSUB,0.3
 absmin,CELSUB,-0.3
-io,CELSUB,power
-mode,CELSUB,analog
+io,CELSUB,input
+mode,CELSUB,power
 router,CELSUB,TBD
 dftpriority,CELSUB,1
 esd,CELSUB,TBD
+
+
+pinname,enable_currentmirror
+definition,enable_currentmirror,Enable Pin
+iq,enable_currentmirror,SIMULATION
+absmax,enable_currentmirror,6
+absmin,enable_currentmirror,-0.3
+io,enable_currentmirror,input
+mode,enable_currentmirror,digital
+router,enable_currentmirror,TBD
+dftpriority,enable_currentmirror,1
+esd,enable_currentmirror,TBD
+
+pinname,ISET
+definition,ISET,Mirror Current Reference
+iq,ISET,SIMULATION
+absmax,ISET,6
+absmin,ISET,-0.3
+io,ISET,input
+mode,ISET,analog
+router,ISET,TBD
+dftpriority,ISET,1
+esd,ISET,TBD
+
+pinname,ok_currentmirror
+definition,ok_currentmirror,Current Mirror OK
+iq,ok_currentmirror,SIMULATION
+absmax,ok_currentmirror,6
+absmin,ok_currentmirror,-0.3
+io,ok_currentmirror,output
+mode,ok_currentmirror,digital
+router,ok_currentmirror,TBD
+dftpriority,ok_currentmirror,1
+esd,ok_currentmirror,TBD
+
+pinname,I0
+definition,I0,Output 0
+iq,I0,SIMULATION
+absmax,I0,6
+absmin,I0,-0.3
+io,I0,inout
+mode,I0,analog
+router,I0,TBD
+dftpriority,I0,1
+esd,I0,TBD
+
+pinname,I1
+definition,I1,Output 1
+iq,I1,SIMULATION
+absmax,I1,6
+absmin,I1,-0.3
+io,I1,inout
+mode,I1,analog
+router,I1,TBD
+dftpriority,I1,1
+esd,I1,TBD
+
+pinname,I2
+definition,I2,Output 2
+iq,I2,SIMULATION
+absmax,I2,6
+absmin,I2,-0.3
+io,I2,inout
+mode,I2,analog
+router,I2,TBD
+dftpriority,I2,1
+esd,I2,TBD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+endbio
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -1010,4 +1080,17 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+// *********************************************
+
+
+
+
+
+
+
+
+
+
+
+
 
