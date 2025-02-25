@@ -1,34 +1,70 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///Celera Confidential BIO Data Generator
+//Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
+cell,vbuffer
 //**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.3.7
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
+limit,vbuffer_accuracy,choose0,no
+limit,vbuffer_accuracy,choose1,cell
+limit,vbuffer_accuracy,choose1,system
+limit,vbuffer_gain,minimum,0.1
+limit,vbuffer_gain,maximum,20.0
+limit,vbuffer_type,choose0,p
+limit,vbuffer_type,choose1,n
+limit,vbuffer_type,choose2,np
+limit,vbuffer_drive,choose0,internal
+limit,vbuffer_drive,choose1,external
+limit,vbuffer_vmax,choose0,2
+limit,vbuffer_vmax,choose1,6
+limit,vbuffer_feedbackimpedance,minimum,10
+limit,vbuffer_feedbackimpedance,maximum,5000
+limit,vbuffer_dft,choose0,no
+limit,vbuffer_dft,choose1,yes
+limit,vbuffer_datasheet_name,text
+limit,vbuffer_datasheet_description,text
+//Rev0.3.1 Addition/////////////////////////////////////////////////////
+limit,vbuffer_gndsense,choose0,no
+limit,vbuffer_gndsense,choose0,yes
+///////////////////////////////////////////////////////////////////////////////////
+//Rev0.3.2 Addition/////////////////////////////////////////////////////
+limit,vbuffer_inputbuffer,choose0,no
+limit,vbuffer_inputbuffer,choose0,yes
+///////////////////////////////////////////////////////////////////////////////////
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+user,vbuffer_gain,1.0
+description,vbuffer voltage gain
+user,vbuffer_accuracy,no
+description,vbuffer Accuracy
+user,vbuffer_type,p
+description,vbuffer input stage
+user,vbuffer_drive,internal
+description,vbuffer drive
+user,vbuffer_vmax,6V
+description,vbuffer Absolute Maxium Voltage Rating
+user,NESTO,0.3.7
+description,NESTO revision generate
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,vbuffer
+register,instance,vbuffer_8cf47f40
 register,source,cell
 
-//Logic nand2
+///vbuffer
 register,name,na
 register,enable,no
 register,bits,0
@@ -49,11 +85,11 @@ register,busname,na
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,vbuffer
+factory,instance,vbuffer_8cf47f40
 factory,source,cell
 
-//LOGIC CELLS nand2
+///vbuffer
 factory,name,na
 factory,enable,no
 factory,bits,0
@@ -70,137 +106,356 @@ factory,description6,description6,not used
 factory,description7,description7,not used
 //Netlister Information
 factory,busname,na
+
 //**********************************************
+//CELL DFT Parameters
+// *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
-movePINS
+layout,vbuffer
+
+
+//If finds a cell with *inp* and doesn't find a *rrr* cell execute all lines between placeIFELSE and the placeELSE statements
+placeIFELSE cellNameContains inp$$rrr
+place Generate STONEvbufferinp 69.55 3.52 MY
+place Generate STONEvbufferinp_ext 69.55 3.52 MY
+place Generate STONEvbufferdft 0.05 99.49 MX
+placeALTVIEW Generate STONEvbufferinptrim layout1 108.52 41.14 MY
+placeINST Xrfbi -2.96 4.04 R90
+placeINST Xrfbo -2.96 4.04 R90
+placeDBLHVRING 87 2.5 118 74
+placeELSE
+placeEND
+
+//If finds a cell with inn and doesn't find a *rrr* cekk execute all lines between placeIFELSE and placeELSE statements
+placeIFELSE cellNameContains inn$$rrr
+place Generate STONEvbufferinn 75.46 0 MY
+place Generate STONEvbufferinn_ext 75.46 0 MY
+placeALTVIEW Generate STONEvbufferinntrim layout1 86.495 1.62 R90
+place Generate STONEvbufferdft 0.975 78.645 R0
+placeINST Xrfbi -2.96 1.38 R90
+placeINST Xrfbo -2.96 1.38 R90
+placeHVRING
+placeELSE
+placeEND
+
+// if cell contains *rrr* and *trim* execute lines between placeIFELSE and placeELSE statements
+placeIFELSE cellNameContains rrr&&trim
+placeALTVIEW Generate STONEvbufferrr layout2 0 2.98 R0
+place Generate STONEvbufferdft 0.05 103.27 MX
+place Generate STONEvbufferinptrim -38.75 2.565 R0
+place Generate STONEvbufferinntrim -26.55 65.73 MXR90
+placeINST Xrfbi 47.89 1.41 MX 
+placeINST Xrfbo 47.89 1.41 MX 
+placeHVRING
+placeELSE
+placeEND
+
+// if cell contains rrr and not trim
+placeIFELSE cellNameContains rrr$$trim
+place Generate STONEvbufferrr 103.42 2.98 MY
+place Generate STONEvbufferdft 0.05 103.27 MX
+placeINST Xrfbi -2.96 3.67 R90
+placeINST Xrfbo -2.96 3.67 R90
+placeHVRING
+placeELSE
+placeEND
+
+placeROUTE
 endlayoutbio
+
+
+
+
 //**********************************************
 //Project Parameters
+//Celera:WALTZ2 Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEvbufferinp,100
+generate_area,vbuffer_8cf47f40,100
 // *********************************************
 //Calculator Parameters
-#define,CELVminimum,1.4
+#define,SIMPVminimum,2.0
+#define,VBUFFERresistoriso,CELG
+//Resistor DividerCalculators
+#define,vbufferrwidth0,2.0
+#define,vbufferrwidth1,0.5
+#define,vbufferrlength,25.0
+#define,vbufferrpercenterror,0.25
+#define,vbufferrparallel,30
+
+#define,VBUFFERtrimTAEXT,1.5
+#define,VBUFFERpretrimcellhigh,10.0
+#define,VBUFFERpretrimcelllow,10.0
+#define,VBUFFERpretrimsystemhigh,35.0
+#define,VBUFFERpretrimsystemlow,35.0
+#define,VBUFFERposttrimlsb,2.0
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//vbuffer
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
-
+pinorder,SIMPV,ok_vbuffer,IN,OUT,enable_vbuffer,net_skip
 endpinorder
 //**********************************************
 //TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
+cell,vbuffer
+trim,instance,vbuffer_8cf47f40
 
+//Cell positive offset
 trim,name,na
 trim,enable,no
 trim,bits,TBD
 trim,por,0
-trim,pinname,TBD
 trim,testname,TBD
-trim,description,TBD
+trim,description,vbuffer input offset positive trim
+trim,pinname,trim_vbuffer_positive
 trim,target,na
 trim,units,TBD
 trim,pretrim_low_limit,TBD
 trim,pretrim_high_limit,TBD
 trim,posttrim_low_limit,TBD
 trim,posttrim_high_limit,TBD
-trim,codeunits,%
-trim,description0,empty
-trim,description1,empty
-trim,description2,empty
-trim,description3,empty
-trim,description4,empty
-trim,description5,empty
-trim,description6,empty
-trim,description7,empty
+trim,codeunits,mV
+trim,description0,TBD
+trim,description1,TBD
+trim,description2,TBD
+trim,description3,TBD
+trim,description4,TBD
+trim,description5,TBD
+trim,description6,TBD
+trim,description7,TBD
 
+//Cell Negative offset
+trim,name,na
+trim,enable,no
+trim,bits,TBD
+trim,por,0
+trim,testname,TBD
+trim,description,vbuffer input offset negative trim
+trim,pinname,trim_vbuffer_negative
+trim,target,na
+trim,units,TBD
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,mV
+trim,description0,TBD
+trim,description1,TBD
+trim,description2,TBD
+trim,description3,TBD
+trim,description4,TBD
+trim,description5,TBD
+trim,description6,TBD
+trim,description7,TBD
+
+//System Positive offset
+trim,name,na
+trim,enable,no
+trim,bits,TBD
+trim,por,0
+trim,testname,TBD
+trim,description,vbuffer system positive trim
+trim,pinname,trim_vbuffer_positive
+trim,target,na
+trim,units,TBD
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,mV
+trim,description0,TBD
+trim,description1,TBD
+trim,description2,TBD
+trim,description3,TBD
+trim,description4,TBD
+trim,description5,TBD
+trim,description6,TBD
+trim,description7,TBD
+
+//System Negative offset
+trim,name,na
+trim,enable,no
+trim,bits,TBD
+trim,por,0
+trim,testname,TBD
+trim,description,vbuffer system trim
+trim,pinname,trim_vbuffer_negative
+trim,target,na
+trim,units,TBD
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,mV
+trim,description0,TBD
+trim,description1,TBD
+trim,description2,TBD
+trim,description3,TBD
+trim,description4,TBD
+trim,description5,TBD
+trim,description6,TBD
+trim,description7,TBD
 //**********************************************
-//Cell Pin Descriptions	
-//**********************************************
-pinname,CELV
-definition,CELV,power
-iq,CELV,SIMULATION
-absmax,CELV,6
-absmin,CELV,1.4
-io,CELV,power
-mode,CELV,power
-router,CELV,TBD
-dftpriority,CELV,1
-esd,CELV,TBD
+//Cell PinDescriptions
+pinname,SIMPV
+definition,SIMPV,vbuffer power
+iq,SIMPV,SIMULATION
+absmax,SIMPV,6
+absmin,SIMPV,2.0
+io,SIMPV,input
+mode,SIMPV,power
+router,SIMPV,TBD
+dftpriority,SIMPV,1
+esd,SIMPV,TBD
+layout,SIMPV,na
 
 pinname,CELG
-definition,CELG,power ground
+definition,CELG,vbuffer power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,****************
-
-io,CELG,power
+absmax,CELG,0.3
+absmin,CELG,-0.3
+io,CELG,input
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
+layout,CELG,na
 
-pinname,i0
-definition,i0,nand2 input
-iq,i0,SIMULATION
-absmax,i0,6
-absmin,i0,****************
+pinname,IN
+definition,IN,vbuffer input voltage
+iq,IN,SIMULATION
+absmax,IN,6
+absmin,IN,-0.3
+io,IN,input
+mode,IN,analog
+router,IN,TBD
+dftpriority,IN,1
+esd,IN,TBD
+layout,IN,na
 
-io,i0,input
-mode,i0,digital
-router,i0,TBD
-dftpriority,i0,1
-esd,i0,TBD
+pinname,global_vbuffer
+definition,,global_vbuffer,Global DFT enable
+iq,,global_vbuffer,SIMULATION
+absmax,global_vbuffer,6
+absmin,global_vbuffer,-0.3
+io,,global_vbuffer,input
+mode,,global_vbuffer,digital
+router,,global_vbuffer,TBD
+dftpriority,,global_vbuffer,1
+esd,,global_vbuffer,TBD
+layout,,global_vbuffer,na
 
-pinname,i1
-definition,i1,nand2 input
-iq,i1,SIMULATION
-absmax,i1,6
-absmin,i1,****************
+pinname,ok_vbuffer
+definition,ok_vbuffer,vbuffer output flag
+iq,ok_vbuffer,SIMULATION
+absmax,ok_vbuffer,6
+absmin,ok_vbuffer,-0.3
+io,ok_vbuffer,output
+mode,ok_vbuffer,digital
+router,ok_vbuffer,TBD
+dftpriority,ok_vbuffer,1
+esd,ok_vbuffer,TBD
+layout,ok_vbuffer,na
 
-io,i1,input
-mode,i1,digital
-router,i1,TBD
-dftpriority,i1,1
-esd,i1,TBD
+pinname,enable_vbuffer
+definition,enable_vbuffer,vbuffer logic enable
+iq,enable_vbuffer,SIMULATION
+absmax,enable_vbuffer,6
+absmin,enable_vbuffer,-0.3
+io,enable_vbuffer,input
+mode,enable_vbuffer,digital
+router,enable_vbuffer,TBD
+dftpriority,enable_vbuffer,1
+esd,enable_vbuffer,TBD
+layout,enable_vbuffer,na
 
-pinname,o
-definition,o,inverter output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,****************
+pinname,OUT
+definition,OUT,vbuffer output voltage 
+iq,OUT,SIMULATION
+absmax,OUT,6
+absmin,OUT,-0.3
+io,OUT,output
+mode,OUT,analog
+router,OUT,TBD
+dftpriority,OUT,1
+esd,OUT,TBD
+layout,OUT,10
 
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
+pinname,IP
+definition,IP,vbuffer 0.5uA reference current
+iq,IP,SIMULATION
+absmax,IP,6
+absmin,IP,-0.3
+io,IP,input
+mode,IP,analog
+router,IP,TBD
+dftpriority,IP,1
+esd,IP,TBD
 
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
-
+pinname,CELSUB
+definition,CELSUB,Substrate
+iq,CELSUB,SIMULATION
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
+io,CELSUB,input
+mode,CELSUB,analog
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
+endbio
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -879,3 +1134,16 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+
+
+
+
+
+
+
+
+
+
+
+
+

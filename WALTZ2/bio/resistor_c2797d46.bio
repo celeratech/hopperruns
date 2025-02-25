@@ -1,205 +1,418 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///Celera Confidential BIO Data Generator
+
+//Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
-//**********************************************
+cell,resistor
+///**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.4.5
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
+limit,resistor_type,choose0,poly
+limit,resistor_type,choose1,n
+limit,resistor_type,choose2,p
+limit,resistor_type,choose3,metal
+limit,resistor_type,choose4,tbd
+limit,resistor_control,choose0,resistor
+limit,resistor_control,choose1,accurate_resistor
+limit,resistor_control,choose2,adjustable_resistor
+limit,resistor_value,minimum,0.00001
+limit,resistor_value,maximum,20000.0
+limit,resistor_accurate_value,minimum,0.00001
+limit,resistor_accurate_value,maximum,20000.0
+limit,resistor_accurate_lsb,minimum,0.5
+limit,resistor_accurate_lsb,maximum,10.0
+limit,resistor_adjust_value,minimum,0.00001
+limit,resistor_adjust_value,maximum,20000.0
+limit,resistor_adjust0,minimum,0.000
+limit,resistor_adjust0,maximum,20000.0
+limit,resistor_adjust1,minimum,0.000
+limit,resistor_adjust1,maximum,20000.0
+limit,resistor_adjust2,minimum,0.000
+limit,resistor_adjust2,maximum,20000.0
+limit,resistor_adjust3,minimum,0.000
+limit,resistor_adjust3,maximum,20000.0
+limit,resistor_adjust4,minimum,0.000
+limit,resistor_adjust4,maximum,20000.0
+limit,resistor_adjust5,minimum,0.000
+limit,resistor_adjust5,maximum,20000.0
+limit,resistor_adjust6,minimum,0.000
+limit,resistor_adjust6,maximum,20000.0
+limit,resistor_adjust7,minimum,0.000
+limit,resistor_adjust7,maximum,20000.0
+limit,resistor_adjust_por,minimum,0
+limit,resistor_adjust_por,maximum,7
+limit,resistor_adjust_control,choose0,pin
+limit,resistor_adjust_control,choose1,factory
+limit,resistor_adjust_control,choose2,register
+limit,resistor_imax,minimum,0.1
+limit,resistor_imax,maximum,1000.0
+limit,resistor_vmax,choose0,2
+limit,resistor_vmax,choose1,6
+limit,resistor_maximumvoltage,choose0,2
+limit,resistor_maximumvoltage,choose1,6
+limit,resistor_maximumvoltage,choose2,12
+limit,resistor_maximumvoltage,choose3,20
+limit,resistor_maximumvoltage,choose4,24
+limit,resistor_maximumvoltage,choose5,30
+limit,resistor_maximumvoltage,choose6,36
+limit,resistor_maximumvoltage,choose7,40
+limit,resistor_maximumvoltage,choose8,45
+limit,resistor_maximumvoltage,choose9,60
+
+
+limit,resistor_kelvin,choose0,no
+limit,resistor_kelvin,choose1,yes
+limit,resistor_dft,choose0,no
+limit,resistor_dft,choose1,yes
+limit,resistor_insertls,choose0,no
+limit,resistor_insertls,choose1,yes
+
+limit,resistor_datasheet_accuracy_name,text
+limit,resistor_datasheet_accuracy_description,text
+limit,resistor_datasheet_adjust_name,text
+limit,resistor_datasheet_adjust_description,text
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+user,resistor_value,1000K
+description,Resistor value
+user,resistor_type,poly
+description,Resistor Type
+user,resistor_imax,0.10000mA
+description,Resistor Maximum Current Density
+user,NESTO,0.4.5
+description,NESTO generate Revision
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,resistor
+register,instance,resistor_c2797d46
 register,source,cell
 
-//Logic nand2
+//Adjust Control
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readonly
+register,mode,readwrite
 register,por,0
-register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
+register,userdescription,not used
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
 //Netlister Information
 register,busname,na
 
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,resistor
+factory,instance,resistor_c2797d46
 factory,source,cell
 
-//LOGIC CELLS nand2
+//Adjust Control
 factory,name,na
 factory,enable,no
 factory,bits,0
 factory,mode,readonly
 factory,por,0
-factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
+factory,userdescription,not used
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
 //Netlister Information
 factory,busname,na
+
 //**********************************************
+//CELL DFT Parameters
+// *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
+layout,resistor
+//placeSTEP Generate STONEresistorswitchH 14.89 58.005 x 6.3 R180
+//placeSTEPcontinue Generate STONEresistorswitchHB x 6.3 R180
+placeSTEP Generate STONEresistorswitchH 7.985 53.655 x 6.3 R180
+placeSTEPcontinue Generate STONEresistorswitchHB x 6.3 R180
+//place Generate STONEresistorswitchHB 20.295 51.175 R180
+place Generate STONEresistorswitchT 0 0 R0
+place Generate STONEresistorswitchTB 0 0 R0
+//placeINST XkelvinN 5.55 -9.23 R0
+//placeINST XkelvinN 5.55 .25 R0
+placeTAP 10 10
+placeINST XkelvinP -1.675 .25 R0
+placeINST XkelvinP 86.03 19.4 R270
+placeTAP 10 10
+placeINST XkelvinN 5.55 .25 R0
+placeINST XkelvinN 61.9 20.335 R270
+placeTAP 10 10
+placeSTEP Generate STONEresistorswitchL 0 7.87 x 7.99 R0
+placeSTEP Generate STONEresistorswitchL 158.4 7.87 x 7.99 R0
+placeSTEPcontinue Generate STONEresistorswitchLB x 7.99 R0
+placeSTEPcontinue Generate STONEresistorDFT x 11 R0
+place Generate STONEresistorimux0p125 42.345 49.635 R0
+place Generate STONEresistorimux0p25 42.345 49.635 R0
+place Generate STONEresistorimux0p5 42.345 49.635 R0
+place Generate STONEresistorimux4 42.345 49.635 R0
+place Generate STONEresistorimux8 42.345 49.635 R0
+place Generate STONEresistorimux2 42.345 49.635 R0
+place PEBBLES PEBBLEdec2to4weak 1 6.8 MX
+place PEBBLES PEBBLEdec3to8weak -29 6.8 MX
+//placeIFELSE cellNameNOTContains switchT&&switchL
+//specific cell placeRES 0 0 0.8 0.8 R0 x y 85
+//placeRES 0 8 0.8 0.8 R90 x y 25
+//placeELSE
+//placeTAP 101 20
+//placeRES -2.19 -0.99 0.8 0.8 R90 -x y 35
+//placeRES 8.85 59.655 0.8 0.8 R0 x y 131H
+//placeEND
+placeRES -2.19 8.85 0.8 0.8 R90 -x y 40
+placeRESRING
+placeINST Xlogicshifter 0 -12 MX
+placeINST Xtiehi 101.06 -23.955 MXR90
+placeINST Xtielo 101.06 -23.955 R90
+place PEBBLES PEBBLEdec2to4weak -7.47 -2.3 R0
+//placeSTEP Generate STONEresistorswitchH 17.105 14.435 x 6.3 R180
+//placeSTEPcontinue Generate STONEresistorswitchHB x 6.3 R180
+placeSTEP Generate STONEresistorswitchL 0 7.87 x 7.99 R0
+placeSTEPcontinue Generate STONEresistorswitchLB x 7.99 R0
+place PEBBLES PEBBLEdec3to8weak -29.24 6.8 MX
 movePINS
+moveORIGIN x
+moveORIGIN y
+
+
+
+//placeIFELSE cellNameNOTContains STONE&&PEBBLE
+//placeROUTE
+//placeELSE
+//placeHVRING rect
+//placeROUTE
+//placeEND
 endlayoutbio
+
 //**********************************************
 //Project Parameters
+//Celera:WALTZ2 Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
+sub_area,rlpp3000rpo47p5u0p4u,62
+generate_area,resistor_c2797d46,62
+// *********************************************
+//TRIM Parameters
+cell,resistor
+trim,instance,resistor_c2797d46
+
+trim,name,na
+
+trim,enable,no
+trim,bits,0
+trim,por,0
+trim,pinname,trim_resistor
+trim,testname,na
+
+trim,description,na
+trim,target,na
+trim,units,Kohm
+trim,pretrim_low_limit,0.000
+trim,pretrim_high_limit,0.000
+trim,posttrim_low_limit,0.000
+trim,posttrim_high_limit,0.000
+trim,codeunits,%
+trim,description0,not used
+trim,description1,not used
+trim,description2,not used
+trim,description3,not used
+trim,description4,not used
+trim,description5,not used
+trim,description6,not used
+trim,description7,not used
+
+
+
 // *********************************************
 //Calculator Parameters
-#define,CELVminimum,1.4
+
+//Trim Calculators
+#define,TAItarget,1000
+#define,RESISTORtrimbitmax,8
+#define,RESISTORswitchRONl,0.1
+#define,RESISTORswitchRONh,1.1
+#define,RESISTORswitchRATIO,10
+
+//Define Resistor calculator Algorithm
+//#define,RESISTORlayoutalgorithm,layout
+#define,RESISTORlayoutalgorithm,size
+#define,RESISTORlengthstep,0.1
+#define,RESISTORwidthstep,0.1
+
+//Define Resistor Area Calculator Algorithm
+//#define,RESISTORareaalgorithm,1
+//1=Resistor in one column
+#define,RESISTORareaalgorithm,2
+//2=Worst Case Kl+Kw
+//#define,RESISTORareaalgorithm,3
+//3 Define X Dimesion and calculate Row/Column
+#define,RESISTORareaXdimesion,100
+//X diminsion area that resistor can fit into
+
+//maximum number of parallel resistors
+#define,RESISTORparallelmaxPOLY,256
+#define,RESISTORparallelmaxRPOD,300
+#define,RESISTORparallelmaxRPODRPO,300
+#define,RESISTORparallelmaxRNOD,300
+#define,RESISTORparallelmaxRNODRPO,300
+
+//Starting Resistor Length <if Algorithm=layout>
+#define,RESISTORlayoutstartlengthPOLY,50.0
+#define,RESISTORlayoutstartlengthRPOD,60.0
+#define,RESISTORlayoutstartlengthRPODRPO,60.0
+#define,RESISTORlayoutstartlengthRNOD,60.0
+#define,RESISTORlayoutstartlengthRNODRPO,60.0
+
+#define,RESISTORlayoutmaxlength,100.0
+//POLY Resistor
+//type=tbd minimum value of poly resistor
+#define,RESISTORminimumvaluePOLY,3.0
+
+
+//Resistor Type rules
+#define RESISTORtbd,yes
+//#define RESISTORtdb,no
+//reassign tbd resistor type
+
+#define RESISTORrpodrposwitch,0.4
+#define RESISTORrpodswitch,0.1
+//switch resistor from rpodrpo to rpod
+
+
+#define,RESISTORiso,CELG
+#define,RESISTORpretrimhigh,40.0
+#define,RESISTORpretrimlow,40.0
+#define,CELVminimumT,1.8
+#define,CELVminimum,0.05
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//resistor
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
-
+pinorder,RN,RP,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip
 endpinorder
 //**********************************************
-//TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
-
-trim,name,na
-trim,enable,no
-trim,bits,TBD
-trim,por,0
-trim,pinname,TBD
-trim,testname,TBD
-trim,description,TBD
-trim,target,na
-trim,units,TBD
-trim,pretrim_low_limit,TBD
-trim,pretrim_high_limit,TBD
-trim,posttrim_low_limit,TBD
-trim,posttrim_high_limit,TBD
-trim,codeunits,%
-trim,description0,empty
-trim,description1,empty
-trim,description2,empty
-trim,description3,empty
-trim,description4,empty
-trim,description5,empty
-trim,description6,empty
-trim,description7,empty
 
 //**********************************************
 //Cell Pin Descriptions	
 //**********************************************
-pinname,CELV
-definition,CELV,power
-iq,CELV,SIMULATION
-absmax,CELV,6
-absmin,CELV,1.4
-io,CELV,power
-mode,CELV,power
-router,CELV,TBD
-dftpriority,CELV,1
-esd,CELV,TBD
+pinname,RP
+definition,RP,Positive Resistor connection
+iq,RP,SIMULATION
+absmax,RP,6
+absmin,RP,-0.3
+io,RP,inout
+mode,RP,analog
+router,RP,TBD
+dftpriority,RP,1
+esd,RP,TBD
+
+
+pinname,RN
+definition,RN,Negative Resistor connection
+iq,RN,SIMULATION
+absmax,RN,6
+absmin,RN,-0.3
+io,RN,inout
+mode,RN,analog
+router,RN,TBD
+dftpriority,RN,1
+esd,RN,TBD
+
+
 
 pinname,CELG
-definition,CELG,power ground
+definition,CELG,Resistor Trim Ground
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,****************
-
-io,CELG,power
-mode,CELG,power
+absmax,CELG,0.3
+absmin,CELG,-0.3
+io,CELG,input
+mode,CELG,analog
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i0
-definition,i0,nand2 input
-iq,i0,SIMULATION
-absmax,i0,6
-absmin,i0,****************
 
-io,i0,input
-mode,i0,digital
-router,i0,TBD
-dftpriority,i0,1
-esd,i0,TBD
 
-pinname,i1
-definition,i1,nand2 input
-iq,i1,SIMULATION
-absmax,i1,6
-absmin,i1,****************
 
-io,i1,input
-mode,i1,digital
-router,i1,TBD
-dftpriority,i1,1
-esd,i1,TBD
 
-pinname,o
-definition,o,inverter output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,****************
 
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
 
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
+
+
+
+
 
 //**********************************************
 //Process Parameters
@@ -879,3 +1092,4 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+

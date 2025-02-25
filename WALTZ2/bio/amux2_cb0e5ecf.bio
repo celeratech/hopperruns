@@ -1,108 +1,185 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///Celera Confidential BIO Data Generator
+//Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
-//**********************************************
+cell,amux
+///**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.4.1
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
+
+limit,amux_inputs,minimum,2
+limit,amux_inputs,maximum,8
+limit,amux_control,choose0,register
+limit,amux_control,choose1,pin
+limit,amux_control,choose2,factory
+limit,amux_por,choose0,0
+limit,amux_por,choose1,1
+limit,amux_por,choose2,2
+limit,amux_por,choose3,3
+limit,amux_por,choose4,4
+limit,amux_por,choose5,5
+limit,amux_por,choose6,6
+limit,amux_por,choose7,7
+limit,amux_ron,choose0,10K
+limit,amux_ron,choose1,1K
+limit,amux_ron,choose2,100
+limit,amux_ron,choose3,10
+limit,amux_vmax,choose0,2
+limit,amux_vmax,choose1,6
+limit,amux_tswitch,choose0,no
+limit,amux_tswitch,choose1,yes
+
+limit,amux_datasheet_name,text
+limit,amux_datasheet_description,text
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+amux_inputs,2
+description,Number of inputs
+user,amux_ron,10K
+description,Switch on resistance
+user,amux_control,pin
+description,Type of control
+user,NESTO generate,0.4.1
+description,NESTO generator revision
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,amux
+register,instance,amux2_cb0e5ecf
 register,source,cell
 
-//Logic nand2
+//amux
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readonly
+register,mode,readwrite
 register,por,0
 register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
 //Netlister Information
 register,busname,na
 
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,amux
+factory,instance,amux2_cb0e5ecf
 factory,source,cell
 
-//LOGIC CELLS nand2
+//amux
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,readonly
+factory,mode,readwrite
 factory,por,0
 factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
 //Netlister Information
 factory,busname,na
+
 //**********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
+layout,amux
+
+placeINST Xamux 0 0 R0
 movePINS
 endlayoutbio
+
 //**********************************************
 //Project Parameters
+//Celera:WALTZ2 Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
+sub_area,STONEmux2_10K,104
+generate_area,amux2_cb0e5ecf,104
 // *********************************************
 //Calculator Parameters
-#define,CELVminimum,1.4
+#define,SIMPVminimum,1.2
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//amux2
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
-
+pinorder,I0,I1,O,SIMPV,amux
 endpinorder
 //**********************************************
+
+//**********************************************
 //TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
+cell,amux
+trim,instance,amux2_cb0e5ecf
 
 trim,name,na
 trim,enable,no
@@ -128,79 +205,94 @@ trim,description6,empty
 trim,description7,empty
 
 //**********************************************
-//Cell Pin Descriptions	
+//Cell Pin Descriptions
 //**********************************************
-pinname,CELV
-definition,CELV,power
-iq,CELV,SIMULATION
-absmax,CELV,6
-absmin,CELV,1.4
-io,CELV,power
-mode,CELV,power
-router,CELV,TBD
-dftpriority,CELV,1
-esd,CELV,TBD
+pinname,SIMPV
+definition,SIMPV,AMUX power supply
+iq,SIMPV,SIMULATION
+absmax,SIMPV,6
+absmin,SIMPV,2.0
+io,SIMPV,input
+mode,SIMPV,power
+router,SIMPV,TBD
+dftpriority,SIMPV,1
+esd,SIMPV,TBD
 
 pinname,CELG
-definition,CELG,power ground
+definition,CELG,AMUX power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,****************
-
-io,CELG,power
+absmax,CELG,0.3
+absmin,CELG,-0.3
+io,CELG,input
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i0
-definition,i0,nand2 input
-iq,i0,SIMULATION
-absmax,i0,6
-absmin,i0,****************
+pinname,CELSUB
+definition,CELSUB,power ground
+iq,CELSUB,SIMULATION
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
+io,CELSUB,input
+mode,CELSUB,power
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
 
-io,i0,input
-mode,i0,digital
-router,i0,TBD
-dftpriority,i0,1
-esd,i0,TBD
+pinname,I0
+definition,I0,AMUX Input0
+iq,I0,SIMULATION
+absmax,I0,6
+absmin,I0,-0.3
+io,I0,input
+mode,I0,analog
+router,I0,TBD
+dftpriority,I0,1
+esd,I0,TBD
 
-pinname,i1
-definition,i1,nand2 input
-iq,i1,SIMULATION
-absmax,i1,6
-absmin,i1,****************
+pinname,I1
+definition,I1,AMUX Input1
+iq,I1,SIMULATION
+absmax,I1,6
+absmin,I1,-0.3
+io,I1,input
+mode,I1,analog
+router,I1,TBD
+dftpriority,I1,1
+esd,I1,TBD
 
-io,i1,input
-mode,i1,digital
-router,i1,TBD
-dftpriority,i1,1
-esd,i1,TBD
 
-pinname,o
-definition,o,inverter output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,****************
 
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
 
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
 
+
+
+pinname,O
+definition,O,MUX output
+iq,O,SIMULATION
+absmax,O,6
+absmin,O,-0.3
+io,O,output
+mode,O,analog
+router,O,TBD
+dftpriority,O,1
+esd,O,TBD
+
+pinname,amux
+definition,amux,AMUX pin select bus
+iq,amux,SIMULATION
+absmax,amux,6
+absmin,amux,-0.3
+io,amux,input
+mode,amux,digital
+router,amux,TBD
+dftpriority,amux,1
+esd,amux,TBD
+
+
+
+endbio
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -879,3 +971,17 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+// *********************************************
+
+
+
+
+
+
+
+
+
+
+
+
+

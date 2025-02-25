@@ -1,89 +1,206 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
-//**********************************************
+cell,decoder
+///**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.3.1
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
+
+limit,decoder_bits,choose0,2
+limit,decoder_bits,choose1,3
+limit,decoder_bits,choose2,4
+limit,decoder_vmax,choose0,2
+limit,decoder_vmax,choose1,6
+limit,decoder_type,choose0,pin
+limit,decoder_type,choose1,register
+limit,decoder_type,choose2,factory
+limit,decoder_enable_pin,choose0,pin
+limit,decoder_enable_pin,choose1,register
+limit,decoder_enable_pin,choose2,factory
+limit,decoder_enable_pin,choose3,no
+limit,decoder_enable_por,choose0,0
+limit,decoder_enable_por,choose1,1
+limit,decoder_timing,choose0,no
+limit,decoder_timing,choose1,yes
+limit,decoder_type_por,minimum,0
+limit,decoder_type_por,maximum,15
+
+limit,decoder_datasheet_name,text
+limit,decoder_datasheet_description,text
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+user,decoder_bits,3 Bits
+user,decoder_type,pin
+user,decoder_vmax,6V
+user,decoder_datasheet_name,State Decoder
+user,decoder_enable_por,0
+user,decoder_timing,yes
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,decoder3
+register,instance,decoder3_0389bc20
 register,source,cell
 
-//Logic nand2
+//DECODER 3 input Control
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readonly
+register,mode,readwrite
 register,por,0
 register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
+//Netlister Information
+register,busname,na
+
+//DECODER 3 Enable
+register,name,na
+register,enable,no
+register,bits,0
+register,mode,readwrite
+register,por,0
+register,userdescription,na
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
 //Netlister Information
 register,busname,na
 
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,decoder3
+factory,instance,decoder3_0389bc20
 factory,source,cell
 
-//LOGIC CELLS nand2
+//DECODER 3 input control
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,readonly
+factory,mode,readwrite
 factory,por,0
 factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
 //Netlister Information
 factory,busname,na
+
+//DECODER 3 Enable
+factory,name,na
+factory,enable,no
+factory,bits,0
+factory,mode,readwrite
+factory,por,0
+factory,userdescription,na
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
+//Netlister Information
+factory,busname,na
+
+//**********************************************
+//CELL DFT Parameters
 //**********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
+layout,decoder
+place PEBBLES PEBBLEdec2to4 0 0 R0
+place PEBBLES PEBBLEdec2to4weak 0 0 R0
+place PEBBLES PEBBLEdec3to8 0 0 R0
+place PEBBLES PEBBLEdec3to8weak 0 0 R0
+place PEBBLES PEBBLEdec4to16 0 0 R0
+place PEBBLES PEBBLEdec4to16weak 0 0 R0
+place PEBBLES PEBBLEdecen2to4 0 0 R0
+place PEBBLES PEBBLEdecen2to4weak 0 0 R0
+place PEBBLES PEBBLEdecen3to8 0 0 R0
+place PEBBLES PEBBLEdecen3to8weak 0 0 R0
+place PEBBLES PEBBLEdecen4to16 0 0 R0
+place PEBBLES PEBBLEdecen4to16weak 0 0 R0
 movePINS
 endlayoutbio
 //**********************************************
 //Project Parameters
+//Celera:WALTZ2 Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
+sub_area,PEBBLEdec3to8,7200
+generate_area,decoder3_0389bc20,7200
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.4
@@ -92,17 +209,17 @@ generate_area,nand2_9125fe87,60
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//decoder3
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
+pinorder,o0,o1,o2,o3,o4,o5,o6,o7,i0,i1,i2,net_skip
 
 endpinorder
 //**********************************************
 //TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
+cell,decoder3
+trim,instance,decoder3_0389bc20
 
 trim,name,na
 trim,enable,no
@@ -128,13 +245,13 @@ trim,description6,empty
 trim,description7,empty
 
 //**********************************************
-//Cell Pin Descriptions	
+//Cell Pin Descriptions
 //**********************************************
 pinname,CELV
 definition,CELV,power
 iq,CELV,SIMULATION
 absmax,CELV,6
-absmin,CELV,1.4
+absmin,CELV,2.0
 io,CELV,power
 mode,CELV,power
 router,CELV,TBD
@@ -144,46 +261,30 @@ esd,CELV,TBD
 pinname,CELG
 definition,CELG,power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,****************
-
+absmax,CELG,0.3
+absmin,CELG,-0.3
 io,CELG,power
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i0
-definition,i0,nand2 input
-iq,i0,SIMULATION
-absmax,i0,6
-absmin,i0,****************
-
-io,i0,input
-mode,i0,digital
-router,i0,TBD
-dftpriority,i0,1
-esd,i0,TBD
-
-pinname,i1
-definition,i1,nand2 input
-iq,i1,SIMULATION
-absmax,i1,6
-absmin,i1,****************
-
-io,i1,input
-mode,i1,digital
-router,i1,TBD
-dftpriority,i1,1
-esd,i1,TBD
+pinname,i
+definition,i,decoder pin input bus
+iq,i,SIMULATION
+absmax,i,6
+absmin,i,-0.3
+io,i,input
+mode,i,digital
+router,i,TBD
+dftpriority,i,1
+esd,i,TBD
 
 pinname,o
-definition,o,inverter output 
+definition,o,decoder output bus
 iq,o,SIMULATION
 absmax,o,6
-absmin,o,****************
-
+absmin,o,-0.3
 io,o,output
 mode,o,digital
 router,o,TBD
@@ -193,8 +294,8 @@ esd,o,TBD
 pinname,SUB
 definition,SUB,substrate
 iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
+absmax,SUB,0.3
+absmin,SUB,-0.3
 io,SUB,input
 mode,SUB,power
 router,SUB,TBD
@@ -879,3 +980,6 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+// *********************************************
+
+

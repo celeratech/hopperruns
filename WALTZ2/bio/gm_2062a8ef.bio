@@ -1,123 +1,241 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-///Celera Confidential BIO Data Generator
+//Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
-//**********************************************
+cell,gm
+///**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.5.0
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
+
+limit,gm_gain,minimum,0.1
+limit,gm_gain,maximum,2.0
+limit,gm_type,choose0,n
+limit,gm_type,choose1,p
+limit,gm_type,choose2,np
+limit,gm_clamp_high,choose0,no
+limit,gm_clamp_high,choose1,yes
+limit,gm_clamp_low,choose0,no
+limit,gm_clamp_low,choose1,yes
+limit,gm_lowiq,choose0,no
+limit,gm_lowiq,choose1,always
+limit,gm_lowiq,choose2,pin
+limit,gm_lowiq,choose3,register
+limit,gm_lowiq,choose4,factory
+limit,gm_lowiq_por,choose0,0
+limit,gm_lowiq_por,choose1,1
+limit,gm_override,choose0,no
+limit,gm_override,choose1,inp
+limit,gm_override,choose2,inn
+limit,gm_vmax,choose0,2
+limit,gm_vmax,choose1,6
+limit,gm_dft,choose0,no
+limit,gm_dft,choose1,yes
+limit,gm_accuracy,choose0,no
+limit,gm_accuracy,choose1,cell
+limit,gm_accuracy,choose2,system
+limit,gm_ok,choose0,no
+limit,gm_ok,choose1,yes
+limit,gm_output,choose0,pushpull
+limit,gm_output,choose1,source
+limit,gm_output,choose2,sink
+limit,gm_lowiq_name,text
+limit,gm_lowiq_description,text
+limit,gm_trim_name,text
+limit,gm_trim_description,text
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+user,gm_gain,0.10
+description,Current gainmHo
+user,gm_type,p
+description,Type of input stage
+user,gm_override,inp
+description,Override input
+user,gm_accuracy,system
+description,GM Accuracy enabled
+user,GM_TrimTarget,1.5V
+description,GM Accuracy Trim Target
+user,gm_ok,yes
+description,GM PK Flag enabled
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,gm
+register,instance,gm_2062a8ef
 register,source,cell
 
-//Logic nand2
+///GM LowIQ Control
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readonly
+register,units,na
+register,mode,readwrite
 register,por,0
 register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
 //Netlister Information
 register,busname,na
-
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,gm
+factory,instance,gm_2062a8ef
 factory,source,cell
 
-//LOGIC CELLS nand2
+///GM LowIQ Control
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,readonly
+factory,units,na
+factory,mode,readwrite
 factory,por,0
 factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
 //Netlister Information
 factory,busname,na
+
 //**********************************************
+//CELL DFT Parameters
+// *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
+layout,gm
+
+placeTILE 0.66
+moveORIGIN x
+moveORIGIN y
 movePINS
+//place Generate STONEgminptrim1x -131.835 -20 R0
+//place CASCODES CASCODEanaloggminpcore1xpover 104.48 53.18 MX
+//placeTILE 0.66
+//placeHVRING rect
+//placeROUTE
 endlayoutbio
+
 //**********************************************
 //Project Parameters
+//Celera:WALTZ2 Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
+sub_area,CASCODEgminpcore1xpover,99999
+sub_area,STONEgminptrim1x,99999
+sub_area,CASCODEpmos5u,3800
+sub_area,CASCODEpmos5u,3800
+sub_area,CASCODEpmos5u,3800
+sub_area,CASCODEpmos5u,3800
+sub_area,CASCODEnmos5u,3800
+sub_area,CASCODEnmos5u,3800
+sub_area,CASCODEnmos5u,3800
+sub_area,CASCODEnmos5u,3800
+sub_area,STONEnoconn,0
+sub_area,CASCODEgminpmain_disout,99999
+generate_area,gm_2062a8ef,330397
 // *********************************************
 //Calculator Parameters
-#define,CELVminimum,1.4
+#define,SIMPVminimum,2.0
+#define,GMpretrimcellhigh,10.0
+#define,GMpretrimcelllow,10.0
+#define,GMpretrimsystemhigh,20.0
+#define,GMpretrimsystemlow,20.0
+#define,GMposttrimlsb,1.0
+#define,GMtrimTAEXT,1.5
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//gm
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
-
+pinorder,SIMPV,INN,GMO,INOR,net_skip,INP,enable_gm,net_skip,net_skip,ok_gm
 endpinorder
 //**********************************************
+
+//**********************************************
 //TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
+cell,gm
+trim,instance,gm_2062a8ef
 
 trim,name,na
 trim,enable,no
 trim,bits,TBD
 trim,por,0
-trim,pinname,TBD
+trim,pinname,trim_gm_positive
 trim,testname,TBD
-trim,description,TBD
+trim,description,Gm input offset Positive trim
 trim,target,na
-trim,units,TBD
+trim,units,mV
 trim,pretrim_low_limit,TBD
 trim,pretrim_high_limit,TBD
 trim,posttrim_low_limit,TBD
 trim,posttrim_high_limit,TBD
-trim,codeunits,%
+trim,codeunits,mV
 trim,description0,empty
 trim,description1,empty
 trim,description2,empty
@@ -126,80 +244,258 @@ trim,description4,empty
 trim,description5,empty
 trim,description6,empty
 trim,description7,empty
+trim,description8,empty
 
+trim,name,na
+trim,enable,no
+trim,bits,TBD
+trim,por,0
+trim,pinname,trim_gm_negative
+trim,testname,TBD
+trim,description,Gm input offset Negative trim
+trim,target,na
+trim,units,mV
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,mV
+trim,description0,empty
+trim,description1,empty
+trim,description2,empty
+trim,description3,empty
+trim,description4,empty
+trim,description5,empty
+trim,description6,empty
+trim,description7,empty
+trim,description8,empty
+
+trim,name,GMaccuracy
+trim,enable,yes
+trim,bits,7
+trim,por,0
+trim,pinname,trim_gm_positive
+trim,testname,GMaccuracy
+trim,description,Set Regulation Loop Offset Voltage_input system positive trim
+
+trim,target,1500
+trim,units,mV
+trim,pretrim_low_limit,1480.000
+trim,pretrim_high_limit,1520.000
+trim,posttrim_low_limit,1498.500
+trim,posttrim_high_limit,1501.500
+trim,codeunits,mV
+trim,description0,code 0x01.+1
+trim,description1,code 0x02.+2
+trim,description2,code 0x04.+4
+trim,description3,code 0x08.+8
+trim,description4,code 0x02.+16
+trim,description5,code 0x04.+32
+trim,description6,code 0x08.+64
+trim,description7,not used
+trim,description8,empty
+
+trim,name,GMaccuracy
+trim,enable,yes
+trim,bits,7
+trim,por,0
+trim,pinname,trim_gm_negative
+trim,testname,GMaccuracy
+trim,description,Set Regulation Loop Offset Voltage_input system negative trim
+
+trim,target,1500
+trim,units,mV
+trim,pretrim_low_limit,1480.000
+trim,pretrim_high_limit,1520.000
+trim,posttrim_low_limit,1498.500
+trim,posttrim_high_limit,1501.500
+trim,codeunits,mV
+trim,description0,code 0x01.-1
+trim,description1,code 0x02.-2
+trim,description2,code 0x04.-4
+trim,description3,code 0x08.-8
+trim,description4,code 0x02.-16
+trim,description5,code 0x04.-32
+trim,description6,code 0x08.64
+trim,description7,not used
+trim,description8,empty
 //**********************************************
-//Cell Pin Descriptions	
+//Cell Pin Descriptions
 //**********************************************
-pinname,CELV
-definition,CELV,power
-iq,CELV,SIMULATION
-absmax,CELV,6
-absmin,CELV,1.4
-io,CELV,power
-mode,CELV,power
-router,CELV,TBD
-dftpriority,CELV,1
-esd,CELV,TBD
+pinname,SIMPV
+definition,SIMPV,power supply
+iq,SIMPV,SIMULATION
+absmax,SIMPV,6
+absmin,SIMPV,-0.3
+io,SIMPV,input
+mode,SIMPV,power
+router,SIMPV,TBD
+dftpriority,SIMPV,1
+esd,SIMPV,TBD
 
 pinname,CELG
 definition,CELG,power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,****************
-
-io,CELG,power
+absmax,CELG,0.3
+absmin,CELG,-0.3
+io,CELG,input
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i0
-definition,i0,nand2 input
-iq,i0,SIMULATION
-absmax,i0,6
-absmin,i0,****************
+pinname,CELSUB
+definition,CELSUB,power ground
+iq,CELSUB,SIMULATION
+absmax,CELSUB,6
+absmin,CELSUB,-0.3
+io,CELSUB,input
+mode,CELSUB,power
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
 
-io,i0,input
-mode,i0,digital
-router,i0,TBD
-dftpriority,i0,1
-esd,i0,TBD
+pinname,enable_gm
+definition,enable_gm,Enable gm
+iq,enable_gm,SIMULATION
+absmax,enable_gm,6
+absmin,enable_gm,-0.3
+io,enable_gm,input
+mode,enable_gm,digital
+router,enable_gm,TBD
+dftpriority,enable_gm,1
+esd,enable_gm,TBD
 
-pinname,i1
-definition,i1,nand2 input
-iq,i1,SIMULATION
-absmax,i1,6
-absmin,i1,****************
+pinname,IP
+definition,IP,500n Current Reference
+iq,IP,SIMULATION
+absmax,IP,6
+absmin,IP,-0.3
+io,IP,input
+mode,IP,analog
+router,IP,TBD
+dftpriority,IP,1
+esd,IP,TBD
 
-io,i1,input
-mode,i1,digital
-router,i1,TBD
-dftpriority,i1,1
-esd,i1,TBD
+pinname,ok_gm
+definition,ok_gm,gm OK
+iq,ok_gm,SIMULATION
+absmax,ok_gm,6
+absmin,ok_gm,-0.3
+io,ok_gm,output
+mode,ok_gm,digital
+router,ok_gm,TBD
+dftpriority,ok_gm,1
+esd,ok_gm,TBD
 
-pinname,o
-definition,o,inverter output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,****************
 
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
 
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
+
+pinname,GMO
+definition,GMO,gm output pin
+iq,GMO,SIMULATION
+absmax,GMO,6
+absmin,GMO,-0.3
+io,GMO,inout
+mode,GMO,analog
+router,GMO,TBD
+dftpriority,GMO,1
+esd,GMO,TBD
+
+pinname,INP
+definition,INP,GM Positive Input
+iq,INP,SIMULATION
+absmax,INP,6
+absmin,INP,-0.3
+io,INP,input
+mode,INP,analog
+router,INP,TBD
+dftpriority,INP,1
+esd,INP,TBD
+
+pinname,INN
+definition,INN,GM Negative Input
+iq,INN,SIMULATION
+absmax,INN,6
+absmin,INN,-0.3
+io,INN,input
+mode,INN,analog
+router,INN,TBD
+dftpriority,INN,1
+esd,INN,TBD
+
+pinname,INOR
+definition,INOR,GM Input Override
+iq,INOR,SIMULATION
+absmax,INOR,6
+absmin,INOR,-0.3
+io,INOR,input
+mode,INOR,analog
+router,INOR,TBD
+dftpriority,INOR,1
+esd,INOR,TBD
+
+
+
+pinname,trim_gm_positive
+definition,trim_gm_positive,GM Positive Tirm inputs
+iq,trim_gm_positive,SIMULATION
+absmax,trim_gm_positive,6
+absmin,trim_gm_positive,-0.3
+io,trim_gm_positive,input
+mode,trim_gm_positive,digital
+router,trim_gm_positive,TBD
+dftpriority,trim_gm_positive,1
+esd,trim_gm_positive,TBD
+
+pinname,trim_gm_negative
+definition,trim_gm_negative,GM Negative Tirm inputs
+iq,trim_gm_negative,SIMULATION
+absmax,trim_gm_negative,6
+absmin,trim_gm_negative,-0.3
+io,trim_gm_negative,input
+mode,trim_gm_negative,digital
+router,trim_gm_negative,TBD
+dftpriority,trim_gm_negative,1
+esd,trim_gm_negative,TBD
+
+pinname,global_gm
+definition,global_gm,Global Test Enable
+iq,global_gm,SIMULATION
+absmax,global_gm,6
+absmin,global_gm,-0.3
+io,global_gm,input
+mode,global_gm,digital
+router,global_gm,TBD
+dftpriority,global_gm,1
+esd,global_gm,TBD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Constraints Parameters*******************
+constraint,gm,IP,shield
+constraint,gm,GMO,shield
+constraint,gm,INP,shield
+constraint,gm,INN,shield
+constraint,gm,INOR,shield
+//**********************************************
 
 //**********************************************
 //Process Parameters
@@ -879,3 +1175,17 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+// *********************************************
+
+
+
+
+
+
+
+
+
+
+
+
+

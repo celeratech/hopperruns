@@ -2,10 +2,29 @@
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
+cell,nand3
 //**********************************************
 //Generator Revision
 revision,generator,0.3.0
@@ -13,22 +32,23 @@ revision,generator,0.3.0
 //Simplis Limits
 revision,limit,0p1
 limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
+limit,logicgate_vmax,choose2,6
+
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+user,logicgate_vmax,6
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,nand3
+register,instance,nand3_3e9b0d1d
 register,source,cell
 
-//Logic nand2
+//Logic nand3
 register,name,na
 register,enable,no
 register,bits,0
@@ -49,11 +69,11 @@ register,busname,na
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,nand3
+factory,instance,nand3_3e9b0d1d
 factory,source,cell
 
-//LOGIC CELLS nand2
+//LOGIC CELLS nand3
 factory,name,na
 factory,enable,no
 factory,bits,0
@@ -73,8 +93,8 @@ factory,busname,na
 //**********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
+layout,nand3
+place PEBBLES PEBBLEnand3 0 0 R0
 movePINS
 endlayoutbio
 //**********************************************
@@ -82,8 +102,8 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
+sub_area,PEBBLEnand3,80
+generate_area,nand3_3e9b0d1d,80
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.4
@@ -92,17 +112,17 @@ generate_area,nand2_9125fe87,60
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//nand3
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
+pinorder,i0,i1,o,i2
 
 endpinorder
 //**********************************************
 //TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
+cell,nand3
+trim,instance,nand3_3e9b0d1d
 
 trim,name,na
 trim,enable,no
@@ -155,7 +175,7 @@ dftpriority,CELG,1
 esd,CELG,TBD
 
 pinname,i0
-definition,i0,nand2 input
+definition,i0,nand2 input 
 iq,i0,SIMULATION
 absmax,i0,6
 absmin,i0,****************
@@ -167,7 +187,7 @@ dftpriority,i0,1
 esd,i0,TBD
 
 pinname,i1
-definition,i1,nand2 input
+definition,i1,nand2 input 
 iq,i1,SIMULATION
 absmax,i1,6
 absmin,i1,****************
@@ -177,6 +197,18 @@ mode,i1,digital
 router,i1,TBD
 dftpriority,i1,1
 esd,i1,TBD
+
+pinname,i2
+definition,i2,nand2 input 
+iq,i2,SIMULATION
+absmax,i2,6
+absmin,i2,****************
+
+io,i2,input
+mode,i2,digital
+router,i2,TBD
+dftpriority,i2,1
+esd,i2,TBD
 
 pinname,o
 definition,o,inverter output 
@@ -200,7 +232,6 @@ mode,SUB,power
 router,SUB,TBD
 dftpriority,SUB,1
 esd,SUB,TBD
-
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1

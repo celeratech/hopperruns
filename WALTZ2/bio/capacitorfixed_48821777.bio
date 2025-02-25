@@ -1,115 +1,267 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///Celera Confidential BIO Data Generator
+//Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
-//**********************************************
+cell,capacitorfixed
+///**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.3.4
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
+limit,capacitor_control,choose0,capacitor
+limit,capacitor_control,choose1,accurate_capacitor
+limit,capacitor_control,choose2,adjustable_capacitor
+limit,capacitor_value,minimum,0.1
+limit,capacitor_value,maximum,50.0
+limit,capacitor_accurate_value,minimum,0.1
+limit,capacitor_accurate_value,maximum,50.0
+limit,capacitor_accurate_lsb,minimum,0.5
+limit,capacitor_accurate_lsb,maximum,10.0
+limit,capacitor_adjust0,minimum,0.0
+limit,capacitor_adjust0,maximum,50.0
+limit,capacitor_adjust1,minimum,0.0
+limit,capacitor_adjust1,maximum,50.0
+limit,capacitor_adjust2,minimum,0.0
+limit,capacitor_adjust2,maximum,50.0
+limit,capacitor_adjust3,minimum,0.0
+limit,capacitor_adjust3,maximum,50.0
+limit,capacitor_adjust4,minimum,0.0
+limit,capacitor_adjust4,maximum,50.0
+limit,capacitor_adjust5,minimum,0.0
+limit,capacitor_adjust5,maximum,50.0
+limit,capacitor_adjust6,minimum,0.0
+limit,capacitor_adjust6,maximum,50.0
+limit,capacitor_adjust7,minimum,0.0
+limit,capacitor_adjust7,maximum,50.0
+limit,capacitor_adjust_por,minimum,0
+limit,capacitor_adjust_por,maximum,7
+limit,capacitor_adjust_control,choose0,pin
+limit,capacitor_adjust_control,choose1,factory
+limit,capacitor_adjust_control,choose2,register
+limit,capacitor_kelvin,choose0,no
+limit,capacitor_kelvin,choose1,yes
+limit,capacitor_vinitial,minimum,0.0
+limit,capacitor_vinitial,maximum,40.0
+limit,capacitor_type,choose0,mim
+limit,capacitor_type,choose1,mom
+limit,capacitor_type,choose2,metal
+limit,capacitor_type,choose3,tbd
+limit,capacitor_vmax,choose0,2
+limit,capacitor_vmax,choose1,6
+limit,capacitor_maximumvoltage,minimum,2.0
+limit,capacitor_maximumvoltage,maximum,40.0
+limit,capacitor_dft,choose0,no
+limit,capacitor_dft,choose1,yes
+
+limit,capacitor_datasheet_accurate_name,text
+limit,capacitor_datasheet_accurate_description,text
+limit,capacitor_datasheet_adjust_name,text
+limit,capacitor_datasheet_adjust_description,text
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+user,capacitor_value,30.00pF
+description,Capacitor Value
+user,NESTOrevision,0.3.4
+description,Nesto Generator revison
+user,capacitor_type,mim
+description,Capacitor Type
+user,capacitor_maximumvoltage,6V
+description,Capacitor Absolute Maximum Voltage Rating
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,capacitor
+register,instance,capacitorfixed_48821777
 register,source,cell
 
-//Logic nand2
+//Adjust Control
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readonly
+register,mode,readwrite
 register,por,0
-register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
+register,userdescription,not used
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
 //Netlister Information
 register,busname,na
-
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,capacitor
+factory,instance,capacitorfixed_48821777
 factory,source,cell
 
-//LOGIC CELLS nand2
+//Adjust Control
 factory,name,na
 factory,enable,no
 factory,bits,0
 factory,mode,readonly
 factory,por,0
-factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
+factory,userdescription,not used
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
 //Netlister Information
 factory,busname,na
 //**********************************************
+//CELL DFT Parameters
+// *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
-movePINS
+layout,capacitor
+
+placeINST Xlogicshifter -13 -3.8 R0
+//place Generate STONEcapacitorDFT 0 10 R0
+place Generate STONEcapacitorDFT 0 10 R0
+//moveORIGIN -y
+place Generate STONEcapacitor_pin1 116.74 58.005 MX
+place Generate STONEcapacitor_pin2 116.74 58.005 MX
+place Generate STONEcapacitor_pin3 0 5 MX
+placeINST XkelvinP -3.88 20.22 R90
+placeINST XkelvinN -3.88 16.48 R90
+//41428182
+//placeSTEParray Generate STONEcapacitor_bit 207 163 10.08 8.37 y y R0
+//placeCAP 254 152 3 R0 41
+//8
+//placeSTEParray Generate STONEcapacitor_bit 117.4 163 10.08 8.37 y y R0
+//placeCAP 164 152 3 R0 100
+//placeCAP -10 223 3 R0 300
+//placeSTEParray Generate STONEcapacitor_bit 0 5 10.08 8.37 y y R0
+//placeSTEP Generate STONEcapacitor_bit 0 0 x 10.08 R0
+//placeCAP 0 15 3 R0 167
+//placeCAP 35 0 3 R0 130
+//moveORIGIN y
+placeCAP 45 0 3 R0 80
+placeTAP 75 300
+placeCAP 0 15 3 R0 150
+placeCAP 45 0 3 R0 80
+placeSTEP Generate STONEcapacitor_bit 0 5 x 10.08 R0
+
+placeINST Xtiehi 88.06 147.415 R90
+placeINST Xtielo 88.06 148.045 MYR90
+placeHVRING
+placeROUTE
 endlayoutbio
 //**********************************************
 //Project Parameters
-// *********************************************
+//Celera:WALTZ2 Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
+//**********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
-// *********************************************
-//Calculator Parameters
-#define,CELVminimum,1.4
+sub_area,mim34_2f30p0x28p9,17675
+generate_area,capacitorfixed_48821777,17675
 //**********************************************
+//Calculator Parameters	
+#define,CAPACITORlayoutlengthMIM,30.0
+#define,MIMfudge,1.0
+#define,CAPACITORparallelmaxMIM,30.0
+#define,CAPACITORserialmaxMIM,4.0
+#define,CAPACITORstepMIM,0.1
+#define,CAPACITORlayoutratioMIM,0.75
+
+//Accuryte Calculators
+#define,CAPACITORtrimbitmax,8
+#define ACCURATEprocessoffset,5
+#define,ACCURATEerrorlimit,1.0
+
+#define,TAItarget,1000
+#define,CAPACITORswitchRONl,0.1
+#define,CAPACITORswitchRONh,1.1
+#define,CAPACITORswitchRATIO,10
+
+
+//define temporary reference
+#define,CAPACITORreferenceDFT,1.0
+#define,TDItarget,100
+#define,CELVminimum,1.0
+#define,CAPACITORpretrimhigh,30.0
+#define,CAPACITORpretrimlow,30.0
+#define,CAPposttrimlsb,1.0
+#define,CELVminimumT,1.8
+///**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//capacitorfixed
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
-
+pinorder,net_skip,CP,net_skip,net_skip,net_skip,net_skip,net_skip,CN
 endpinorder
 //**********************************************
 //TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
+cell,capacitor
+trim,instance,capacitorfixed_48821777
 
 trim,name,na
 trim,enable,no
 trim,bits,TBD
-trim,por,0
-trim,pinname,TBD
+trim,por,TBD
 trim,testname,TBD
+trim,pinname,trim_capacitor
 trim,description,TBD
 trim,target,na
 trim,units,TBD
@@ -117,7 +269,7 @@ trim,pretrim_low_limit,TBD
 trim,pretrim_high_limit,TBD
 trim,posttrim_low_limit,TBD
 trim,posttrim_high_limit,TBD
-trim,codeunits,%
+trim,codeunits,pF
 trim,description0,empty
 trim,description1,empty
 trim,description2,empty
@@ -126,80 +278,46 @@ trim,description4,empty
 trim,description5,empty
 trim,description6,empty
 trim,description7,empty
-
 //**********************************************
 //Cell Pin Descriptions	
 //**********************************************
-pinname,CELV
-definition,CELV,power
-iq,CELV,SIMULATION
-absmax,CELV,6
-absmin,CELV,1.4
-io,CELV,power
-mode,CELV,power
-router,CELV,TBD
-dftpriority,CELV,1
-esd,CELV,TBD
 
-pinname,CELG
-definition,CELG,power ground
-iq,CELG,SIMULATION
-absmax,CELG,
+//Cell Pin Descriptions
+pinname,CP
+definition,CP,Positive Capacitor connection
+iq,CP,SIMULATION
+absmax,CP,6
+absmin,CP,-0.3
+io,CP,inout
+mode,CP,analog
+router,CP,TBD
+dftpriority,CP,1
+esd,CP,TBD
 
-absmin,CELG,****************
 
-io,CELG,power
-mode,CELG,power
-router,CELG,TBD
-dftpriority,CELG,1
-esd,CELG,TBD
+pinname,CN
+definition,CN,Negative Capacitor connection
+iq,CN,SIMULATION
+absmax,CN,6
+absmin,CN,-0.3
+io,CN,inout
+mode,CN,analog
+router,CN,TBD
+dftpriority,CN,1
+esd,CN,TBD
 
-pinname,i0
-definition,i0,nand2 input
-iq,i0,SIMULATION
-absmax,i0,6
-absmin,i0,****************
 
-io,i0,input
-mode,i0,digital
-router,i0,TBD
-dftpriority,i0,1
-esd,i0,TBD
 
-pinname,i1
-definition,i1,nand2 input
-iq,i1,SIMULATION
-absmax,i1,6
-absmin,i1,****************
 
-io,i1,input
-mode,i1,digital
-router,i1,TBD
-dftpriority,i1,1
-esd,i1,TBD
 
-pinname,o
-definition,o,inverter output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,****************
 
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
 
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
+
+
+
+
+
+
 
 //**********************************************
 //Process Parameters
@@ -879,3 +997,4 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+

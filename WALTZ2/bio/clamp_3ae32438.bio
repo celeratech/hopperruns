@@ -1,206 +1,397 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-///Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
+cell,clamp
 //**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.3.4
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
+
+limit,clamp_type,choose0,high
+limit,clamp_type,choose1,low
+limit,clamp_voltage_high,minimum,1.6
+limit,clamp_voltage_high,maximum,5.0
+limit,clamp_accuracy,choose0,no
+limit,clamp_accuracy,choose1,yes
+limit,clamp_imax,minimum,0.01
+limit,clamp_imax,maximum,5.0
+limit,clamp_vmax,choose0,2
+limit,clamp_vmax,choose1,6
+limit,clamp_dft,choose0,yes
+limit,clamp_dft,choose1,no
+limit,clamp_voltage_low,minimum,0.02
+limit,clamp_voltage_low,maximum,3.9
+
+limit,clamp_trim_name,text
+limit,clamp_trim_description,text
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+user,clamp_type,high
+description,Clamp Type
+user,clamp_voltage_high,3.000V
+description,Clamp Voltage
+user,clamp_imax,0.200mA
+description,Clamp Maximum Output current
+user,REF,0.9V
+description,CNESTO Generator revision
+user,NESTO,0.3.4
+description,CNESTO Generator revision
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,clamp
+register,instance,clamp_3ae32438
 register,source,cell
 
-//Logic nand2
+//clamp
 register,name,na
 register,enable,no
 register,bits,0
 register,mode,readonly
 register,por,0
 register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
 //Netlister Information
 register,busname,na
-
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,clamp
+factory,instance,clamp_3ae32438
 factory,source,cell
 
-//LOGIC CELLS nand2
+//clamp
 factory,name,na
 factory,enable,no
 factory,bits,0
 factory,mode,readonly
 factory,por,0
 factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
 //Netlister Information
 factory,busname,na
+// *********************************************
+//CELL DFT Parameters
+// *********************************************
+//Accuray Design  Parameters
+#define,CLAMPpretrimhigh,10.0
+#define,CLAMPpretrimlow,10.0
+#define,CLAMPposttrimlsb,1.0
+
+//Calculator Parameters
+#define,CLAMPreferenceDEBUG,1.0
+#define,CLAMPiout,0.75
+
+//Resistor unit length
+#define,CLAMPhighResistorLength,28.5
+#define,CLAMPhighResistorWidth,1.0
+#define,CLAMPlowResistorLength,28.5
+#define,CLAMPlowResistorWidth,1.0
+#define,CLAMPresistoriso,CELG
+#define,CLAMPresistor0A,2000
+#define,CLAMPresistor0B,1000
+#define,CLAMPresistor2mult,0.2
+#define,CLAMPresistor1mult,0.8
+#define,CLAMPresistor2B,200
+#define,CLAMProutLength,30.0
+#define,CLAMProutWidth,1.0
+#define,CLAMProutValue,100.0
+
+#define,SIMPVminimum,2.0
+//**********************************************	
+//TRIM Parameters
+cell,clamp
+trim,instance,clamp_3ae32438
+
+trim,name,VCclampACCURACY
+trim,enable,yes
+trim,bits,8
+trim,por,TBD
+trim,pinname,trim_clamp
+trim,testname,VCclampACCURACY
+trim,description,Voltage Control Node Clamp Accuracy to 3V
+trim,target,3000.0
+trim,units,mV
+trim,pretrim_low_limit,2990.000
+trim,pretrim_high_limit,3010.000
+trim,posttrim_low_limit,2998.500
+trim,posttrim_high_limit,3001.500
+trim,codeunits,mV
+trim,description0,+1mV
+trim,description1,+2mV
+trim,description2,+4mV
+trim,description3,+8mV
+trim,description4,-1mV
+trim,description5,-2mV
+trim,description6,-4mV
+trim,description7,-8mV
+trim,description8,empty
+//**********************************************
 //**********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
-movePINS
+layout,clamp
+
+//place Generate STONEmainhclamp 71.395 70.27 R180
+//place Generate STONEhclamp50u -11.045 0.02 R0
+//place Generate STONEhclamp500u 9.065 -36.665 R0
+//place Generate STONEhclamp5m 9.065 -60.47 R0
+place Generate STONEmainhclamp 71.73 70.665 R180
+place Generate STONEhclamp50u -11.05 0.37 R0
+place Generate STONEhclamp500u 9.53 -36.42 R0
+place Generate STONEhclamp5m 9.4 -60.58 R0
+
+place Generate STONEmainlclamp 71.395 70.725 R180
+place Generate STONElclamp50u -10.57 31.035 MX
+place Generate STONElclamp500u 9.4 -36.665 R0
+place Generate STONElclamp5m 9.4 -60.73 R0
+place Generate STONEclampdft 70.07 19.245 MX
+
+placeIFELSE cellNameContains trim
+place Generate STONEclamptrim 78.615 21.495 R0
+placeALTVIEW Generate STONEmainhclamp layout1 71.73 70.665 R180
+placeALTVIEW Generate STONEmainlclamp layout1 71.395 70.725 R180
+placeELSE
+placeEND
+
+moveORIGIN y
+
+placeIFELSE cellNameContains clamp5m||dft
+placeTAP -6 10
+placeRES 10.89 -1.23 0.8 0.8 R0 x -y 120
+placeRES -9.08 -1.23 0.8 0.8 R0 x -y 120
+placeELSE
+placeTAP -6 10
+placeRES 10.89 -1.23 0.8 0.8 R0 x -y 96
+placeRES -9.08 -1.23 0.8 0.8 R0 x -y 96
+placeEND
+
+placeIFELSE cellNameContains clamp50u&&trim
+placeRES -9.08 -1.68 0.8 0.8 R0 x -y 120
+placeELSE
+placeEND
+
+placeRESRING
+placeHVRING
+placeROUTE
 endlayoutbio
+
 //**********************************************
 //Project Parameters
+//Celera:WALTZ2 Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
-// *********************************************
-//Calculator Parameters
-#define,CELVminimum,1.4
+sub_area,STONEmainhclamp,100
+sub_area,STONEhclamp500u,700
+sub_area,STONEclamptrim,300
+sub_area,feedbackdivider_clamp_3ae32438_FBD,16080
+generate_area,clamp_3ae32438,17180
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//clamp
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
-
+pinorder,SHUNT,IN,enable_clamp,SIMPV
 endpinorder
 //**********************************************
-//TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
-
-trim,name,na
-trim,enable,no
-trim,bits,TBD
-trim,por,0
-trim,pinname,TBD
-trim,testname,TBD
-trim,description,TBD
-trim,target,na
-trim,units,TBD
-trim,pretrim_low_limit,TBD
-trim,pretrim_high_limit,TBD
-trim,posttrim_low_limit,TBD
-trim,posttrim_high_limit,TBD
-trim,codeunits,%
-trim,description0,empty
-trim,description1,empty
-trim,description2,empty
-trim,description3,empty
-trim,description4,empty
-trim,description5,empty
-trim,description6,empty
-trim,description7,empty
 
 //**********************************************
-//Cell Pin Descriptions	
-//**********************************************
-pinname,CELV
-definition,CELV,power
-iq,CELV,SIMULATION
-absmax,CELV,6
-absmin,CELV,1.4
-io,CELV,power
-mode,CELV,power
-router,CELV,TBD
-dftpriority,CELV,1
-esd,CELV,TBD
+//Cell Pin Descriptions
+pinname,SIMPV
+definition,SIMPV,CLAMP input power supply
+iq,SIMPV,SIMULATION
+absmax,SIMPV,6
+absmin,SIMPV,2.0
+io,SIMPV,input
+mode,SIMPV,power
+router,SIMPV,TBD
+dftpriority,SIMPV,1
+esd,SIMPV,TBD
 
 pinname,CELG
-definition,CELG,power ground
+definition,CELG,CLAMP ground input
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,****************
-
-io,CELG,power
+absmax,CELG,0.3
+absmin,CELG,-0.3
+io,CELG,input
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i0
-definition,i0,nand2 input
-iq,i0,SIMULATION
-absmax,i0,6
-absmin,i0,****************
+pinname,IN
+definition,IN, Clamp Input Sense
+iq,IN,SIMULATION
+absmax,IN,6
+absmin,IN,-0.3
+io,IN,inout
+mode,IN,analog
+router,IN,TBD
+dftpriority,IN,1
+esd,IN,TBD
 
-io,i0,input
-mode,i0,digital
-router,i0,TBD
-dftpriority,i0,1
-esd,i0,TBD
+pinname,SHUNT
+definition,SHUNT,Clamp Output current
+iq,SHUNT,SIMULATION
+absmax,SHUNT,6
+absmin,SHUNT,-0.3
+io,SHUNT,inout
+mode,SHUNT,analog
+router,SHUNT,TBD
+dftpriority,SHUNT,1
+esd,SHUNT,TBD
 
-pinname,i1
-definition,i1,nand2 input
-iq,i1,SIMULATION
-absmax,i1,6
-absmin,i1,****************
+pinname,IP
+definition,IP,Clamp Input 0.5uA CELREFerence current
+iq,IP,SIMULATION
+absmax,IP,6
+absmin,IP,-0.3
+io,IP,input
+mode,IP,analog
+router,IP,TBD
+dftpriority,IP,1
+esd,IP,TBD
 
-io,i1,input
-mode,i1,digital
-router,i1,TBD
-dftpriority,i1,1
-esd,i1,TBD
+pinname,enable_clamp
+definition,enable_clamp,Clamp enable 
+iq,enable_clamp,SIMULATION
+absmax,enable_clamp,6
+absmin,enable_clamp,-0.3
+io,enable_clamp,input
+mode,enable_clamp,digital
+router,enable_clamp,TBD
+dftpriority,enable_clamp,1
+esd,enable_clamp,TBD
 
-pinname,o
-definition,o,inverter output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,****************
+pinname,CELREF
+definition,CELREF,Clamp Input CELERA Reference voltage
+iq,CELREF,SIMULATION
+absmax,CELREF,6
+absmin,CELREF,-0.3
+io,CELREF,input
+mode,CELREF,analog
+router,CELREF,TBD
+dftpriority,CELREF,1
+esd,CELREF,TBD
 
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
+pinname,global_clamp
+definition,global_clamp,Clamp Global Testmode enable
+iq,global_clamp,SIMULATION
+absmax,global_clamp,6
+absmin,global_clamp,-0.3
+io,global_clamp,input
+mode,global_clamp,digital
+router,global_clamp,TBD
+dftpriority,global_clamp,1
+esd,global_clamp,TBD
 
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
 
+
+
+
+
+
+
+
+
+
+
+pinname,trim_clamp
+definition,trim_clamp,Clamp Clamp Voltage Trim Bits
+iq,trim_clamp,SIMULATION
+absmax,trim_clamp,6
+absmin,trim_clamp,-0.3
+io,trim_clamp,input
+mode,trim_clamp,digital
+router,trim_clamp,TBD
+dftpriority,trim_clamp,1
+esd,trim_clamp,TBD
+
+pinname,CELSUB
+definition,CELSUB,CLAMP Substrate input
+iq,CELSUB,SIMULATION
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
+io,CELSUB,input
+mode,CELSUB,analog
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
+
+//**********************************************
+//Constraints Parameters*******************
+constraint,clamp,IN,shield
+constraint,clamp,IP,shield
+constraint,clamp,CELREF,shield
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -879,3 +1070,4 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+

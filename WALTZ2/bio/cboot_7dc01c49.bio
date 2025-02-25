@@ -1,34 +1,83 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///Celera Confidential BIO Data Generator
+//Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
+cell,cboot
 //**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.6.0
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
+
+limit,cboot_input_vmax,choose0,6
+limit,cboot_input_vmax,choose1,12
+limit,cboot_input_vmax,choose2,20
+limit,cboot_input_vmax,choose3,24
+limit,cboot_input_vmax,choose4,30
+limit,cboot_input_vmax,choose5,36
+limit,cboot_input_vmax,choose6,40
+limit,cboot_input_vmax,choose7,60
+limit,cboot_ron,minimum,1.0
+limit,cboot_ron,maximum,1000.0
+limit,cboot_vmax,choose0,2
+limit,cboot_vmax,choose1,6
+limit,cboot_diode,choose0,no
+limit,cboot_diode,choose1,yes
+limit,cboot_dft,choose0,no
+limit,cboot_dft,choose1,yes
+limit,cboot_output_vmax,choose0,12
+limit,cboot_output_vmax,choose1,20
+limit,cboot_output_vmax,choose2,24
+limit,cboot_output_vmax,choose3,30
+limit,cboot_output_vmax,choose4,36
+limit,cboot_output_vmax,choose5,40
+limit,cboot_output_vmax,choose6,60
+
+limit,cboot_ok,choose0,none
+limit,cboot_ok,choose1,floating
+limit,cboot_ok,choose2,digital
+limit,cboot_ok,choose3,both
+
+limit,cboot_enable_type,choose0,analog
+limit,cboot_enable_type,choose1,digital
+limit,cboot_charge_type,choose0,analog
+limit,cboot_charge_type,choose1,digital
+limit,cboot_ondetect_type,choose0,analog
+limit,cboot_ondetect_type,choose1,digital
+limit,cboot_keepalive,choose0,no
+limit,cboot_keepalive,choose1,yes
+
+
+
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+user,Input Voltage,6V
+description,CBOOT maximum input voltage rating
+user,Output Voltage,60V
+description,CBOOT maximum output voltage rating
+user,Ron,10 Ohm
+description,CBOOT On Resistance
+user,BodyDiode,yes
+description,CBOOT Body diode removed
+user,NESTO revision,0.6.0
+description,NESTO hopper revision
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,cboot
+register,instance,cboot_7dc01c49
 register,source,cell
 
-//Logic nand2
+//cboot
 register,name,na
 register,enable,no
 register,bits,0
@@ -45,15 +94,14 @@ register,description6,description6,not used
 register,description7,description7,not used
 //Netlister Information
 register,busname,na
-
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,cboot
+factory,instance,cboot_7dc01c49
 factory,source,cell
 
-//LOGIC CELLS nand2
+//cboot
 factory,name,na
 factory,enable,no
 factory,bits,0
@@ -71,38 +119,110 @@ factory,description7,description7,not used
 //Netlister Information
 factory,busname,na
 //**********************************************
+//CELL DFT Parameters
+// *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
+layout,cboot
+
+placeINST Xnmos0 69.32 -0.875 MY
+//placeINST Xnmos0 0 8.04 M270
+placeTAP 180 15
+placeINST Xpmos0 0 8.04 M90
+placeINST Xpmos0 0 8.04 M270
+placeTAP 180 15
+//moveORIGIN x
+//moveORIGIN y
+place Generate STONEcbootcpNOME 228.365 1.72 MY
+place Generate STONEcboot_change5NOME 137.255 109.88 MY
+placeINST Xcharge5 137.255 109.88 MY
+place Generate STONEcboot12 164.935 1.84 R180
+place Generate STONEcboot20 164.76 1.84 R180
+place Generate STONEcboot24 164.76 1.84 R180
+place Generate STONEcboot30 164.935 1.84 R180
+place Generate STONEcboot40 164.76 1.84 R180
+place Generate STONEcboot45NOME 158.55 12.325 MY
+place Generate STONEcboot60NOME 158.55 12.325 MY
+place Generate STONEcbootdft 80.295 -37.32 MXR90
+//moveORIGIN y
+//moveORIGIN -x
+//placeINST Xnmos0 11.04 11.04 R0
+//moveORIGIN x
+//placeROUTE
 movePINS
 endlayoutbio
 //**********************************************
 //Project Parameters
+//Celera:WALTZ2 Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
+sub_area,STONEcbootcpNOME,21000
+sub_area,STONEcboot60NOME,11200
+sub_area,STONEnoconn,0
+sub_area,STONEcboot_charge5NOME,1000000
+sub_area,fet_cboot_7dc01c49_Xnmos,75058
+generate_area,cboot_7dc01c49,1107258
 // *********************************************
 //Calculator Parameters
-#define,CELVminimum,1.4
+#define,SIMPVminimum,2.0
+#define,CBOOTsupply,2.5
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//cboot
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
-
+pinorder,CELPOS,CBOOT,ok_cboot,CELNEG,ok_cboothv,enable_cboot,on_charge,net_skip,net_skip
 endpinorder
 //**********************************************
 //TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
+cell,cboot
+trim,instance,cboot_7dc01c49
 
 trim,name,na
 trim,enable,no
@@ -126,81 +246,136 @@ trim,description4,empty
 trim,description5,empty
 trim,description6,empty
 trim,description7,empty
-
 //**********************************************
 //Cell Pin Descriptions	
 //**********************************************
 pinname,CELV
-definition,CELV,power
+definition,CELV,CBOOT digital supply input
 iq,CELV,SIMULATION
 absmax,CELV,6
-absmin,CELV,1.4
-io,CELV,power
+absmin,CELV,2.0
+io,CELV,input
 mode,CELV,power
 router,CELV,TBD
 dftpriority,CELV,1
 esd,CELV,TBD
 
+pinname,CELPOS
+definition,CELPOS,cell power
+iq,CELPOS,SIMULATION
+absmax,CELPOS,6
+absmin,CELPOS,-0.3
+io,CELPOS,input
+mode,CELPOS,power
+router,CELPOS,TBD
+dftpriority,CELPOS,1
+esd,CELPOS,TBD
+
 pinname,CELG
-definition,CELG,power ground
+definition,CELG,cell power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,****************
-
-io,CELG,power
+absmax,CELG,0.3
+absmin,CELG,-0.3
+io,CELG,input
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i0
-definition,i0,nand2 input
-iq,i0,SIMULATION
-absmax,i0,6
-absmin,i0,****************
+pinname,CBOOT
+definition,CBOOT,CBOOT input power supply
+iq,CBOOT,SIMULATION
+absmax,CBOOT,60
+absmin,CBOOT,-0.3
+io,CBOOT,input
+mode,CBOOT,analog
+router,CBOOT,TBD
+impedance,CBOOT,TBD
+dftpriority,CBOOT,1
+esd,CBOOT,TBD
 
-io,i0,input
-mode,i0,digital
-router,i0,TBD
-dftpriority,i0,1
-esd,i0,TBD
+pinname,CELNEG
+definition,CELNEG,CBOOT flaoting return rail
+iq,CELNEG,SIMULATION
+absmax,CELNEG,60
+absmin,CELNEG,-0.3
+io,CELNEG,inout
+mode,CELNEG,analog
+router,CELNEG,TBD
+impedance,CELNEG,1
+dftpriority,CELNEG,1
+esd,CELNEG,TBD
 
-pinname,i1
-definition,i1,nand2 input
-iq,i1,SIMULATION
-absmax,i1,6
-absmin,i1,****************
+pinname,enable_cboot
+definition,enable_cboot,cboot enable
+iq,enable_cboot,SIMULATION
+absmax,enable_cboot,6
+absmin,enable_cboot,-0.3
+io,enable_cboot,input
+mode,enable_cboot,digital
+router,enable_cboot,TBD
+dftpriority,enable_cboot,1
+esd,enable_cboot,TBD
 
-io,i1,input
-mode,i1,digital
-router,i1,TBD
-dftpriority,i1,1
-esd,i1,TBD
+pinname,on_charge
+definition,on_charge,CBOOT chargepump enable
+iq,on_charge,SIMULATION
+absmax,on_charge,6
+absmin,on_charge,-0.3
+io,on_charge,input
+mode,on_charge,digital
+router,on_charge,TBD
+dftpriority,on_charge,1
+esd,on_charge,TBD
 
-pinname,o
-definition,o,inverter output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,****************
+pinname,ok_cboothv
+definition,ok_cboothv,cboot high voltage output flag
+iq,ok_cboothv,SIMULATION
+absmax,ok_cboothv,60
+absmin,ok_cboothv,54
+io,ok_cboothv,output
+mode,ok_cboothv,digital
+router,ok_cboothv,TBD
+dftpriority,ok_cboothv,1
+esd,ok_cboothv,TBD
 
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
+pinname,ok_cboot
+definition,ok_cboot,CBOOT ok flag with respect to Digital supply
+iq,ok_cboot,SIMULATION
+absmax,ok_cboot,6
+absmin,ok_cboot,-0.3
+io,ok_cboot,output
+mode,ok_cboot,digital
+router,ok_cboot,TBD
+dftpriority,ok_cboot,1
+esd,ok_cboot,TBD
 
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
 
+
+pinname,global_cboot
+definition,global_cboot,cboot dft enable
+iq,global_cboot,SIMULATION
+absmax,global_cboot,6
+absmin,global_cboot,-0.3
+io,global_cboot,input
+mode,global_cboot,digital
+router,global_cboot,TBD
+dftpriority,global_cboot,1
+esd,global_cboot,TBD
+
+
+
+
+pinname,CELSUB
+definition,CELSUB,SUBstrate
+iq,CELSUB,SIMULATION
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
+io,CELSUB,power
+mode,CELSUB,analog
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -879,3 +1054,4 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+

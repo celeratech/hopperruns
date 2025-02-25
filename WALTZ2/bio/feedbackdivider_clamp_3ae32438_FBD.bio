@@ -1,108 +1,370 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///Celera Confidential BIO Data Generator
+//Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
-//**********************************************
+cell,feedbackdivider
+///**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.4.4
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
+
+limit,feedbackdivider_type,choose0,fixed
+limit,feedbackdivider_type,choose1,control
+limit,feedbackdivider_globalref,choose0,yes
+limit,feedbackdivider_globalref,choose1,no
+limit,feedbackdivider_fb,minimum,0.1
+limit,feedbackdivider_fb,maximum,3.0
+limit,feedbackdivider_shutdown,choose0,no
+limit,feedbackdivider_shutdown,choose1,pin
+limit,feedbackdivider_shutdown,choose2,register
+limit,feedbackdivider_shutdown,choose3,factory
+limit,feedbackdivider_shutdownpor,choose0,0
+limit,feedbackdivider_shutdownpor,choose1,1
+limit,feedbackdivider_p_offset,minimum,0
+limit,feedbackdivider_p_offset,maximum,25
+limit,feedbackdivider_n_offset,minimum,0
+limit,feedbackdivider_n_offset,maximum,25
+limit,feedbackdivider_voutfixed,minimum,0.01
+limit,feedbackdivider_voutfixed,maximum,60.0
+limit,feedbackdivider_control,choose0,pin
+limit,feedbackdivider_control,choose1,register
+limit,feedbackdivider_control,choose2,factory
+limit,feedbackdivider_settings,minimum,2
+limit,feedbackdivider_settings,maximum,8
+limit,feedbackdivider_registerpor,minimum,0
+limit,feedbackdivider_registerpor,maximum,7
+limit,feedbackdivider_vout0,minimum,0.01
+limit,feedbackdivider_vout0,maximum,60.0
+limit,feedbackdivider_vout1,minimum,0.01
+limit,feedbackdivider_vout1,maximum,60.0
+limit,feedbackdivider_vout2,minimum,0.01
+limit,feedbackdivider_vout2,maximum,60.0
+limit,feedbackdivider_vout3,minimum,0.01
+limit,feedbackdivider_vout3,maximum,60.0
+limit,feedbackdivider_vout4,minimum,0.01
+limit,feedbackdivider_vout4,maximum,60.0
+limit,feedbackdivider_vout5,minimum,0.01
+limit,feedbackdivider_vout5,maximum,60.0
+limit,feedbackdivider_vout6,minimum,0.01
+limit,feedbackdivider_vout6,maximum,60.0
+limit,feedbackdivider_vout7,minimum,0.01
+limit,feedbackdivider_vout7,maximum,60.0
+limit,feedbackdivider_0,choose0,0
+limit,feedbackdivider_0,choose1,1
+limit,feedbackdivider_iq,minimum,0.5
+limit,feedbackdivider_iq,maximum,100.0
+limit,feedbackdivider_vmax,choose0,2
+limit,feedbackdivider_vmax,choose1,6
+limit,feedbackdivider_dft,choose0,no
+limit,feedbackdivider_dft,choose1,yes
+
+limit,feedbackdivider_datasheet_shutdown_name,text
+limit,feedbackdivider_datasheet_shutdown_description,text
+limit,feedbackdivider_datasheet_output_name,text
+limit,feedbackdivider_datasheet_output_description,text
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+feedbackdivider_type,fixed
+description,Type of Feedback Divider
+user,Global Reference,0.9V
+description,FeedbackDivider Feedback Voltage
+user,feedbackdivider_iq,0.75uA
+description,FeedbackDivider Bias Current
+user,feedbackdivider_voutfixed,3.000V
+description,FeedbackDivider VOUT
+user,NESTO,0.4.4
+description,NEST generate Revision
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,feedbackdivider
+register,instance,feedbackdivider_clamp_3ae32438_FBD
 register,source,cell
 
-//Logic nand2
+// Feedback Divider Register Enable
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readonly
+register,mode,readwrite
 register,por,0
 register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
 //Netlister Information
+
 register,busname,na
 
+//Feedback Divder Ouput voltage
+register,name,na
+register,enable,no
+register,bits,0
+register,mode,readwrite
+register,por,0
+register,userdescription,na
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
+//Netlister Information
+
+register,busname,na
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,feedbackdivider
+factory,instance,feedbackdivider_clamp_3ae32438_FBD
 factory,source,cell
 
-//LOGIC CELLS nand2
+// Feedback Divider factory Enable
 factory,name,na
 factory,enable,no
 factory,bits,0
 factory,mode,readonly
 factory,por,0
 factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
 //Netlister Information
+
+factory,busname,na
+
+//Feedback Divder Ouput voltage
+factory,name,na
+factory,enable,no
+factory,bits,0
+factory,mode,readonly
+factory,por,0
+factory,userdescription,na
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
+//Netlister Information
+
 factory,busname,na
 //**********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
+layout,feedbackdivider
+
+place Generate STONEfeedbackdividerMAIN 15.25 0 R0
+placeALTVIEW Esd ESDminiClamp6 layout1 0 -9.225 R0
+//place Generate STONEfeedbackdivideradjust8 45.49 0 MX
+//place Generate STONEfeedbackdivideradjust4 15.25 0 MX
+//place Generate STONEfeedbackdivideradjust2 15.25 0 MX
+//place Generate STONEfeedbackdividerDFTpositive 29.74 0 R0
+//place Generate STONEfeedbackdividerDFTnegative 29.74 0 R0
+//place Generate STONEfeedbackdividerDFTfull 29.74 0 R0
+placeIFELSE cellNameContains 100u
+placeRES 1.25 -10.56 0.8 0.8 R0 x -y 270
+placeELSE
+placeRES 1.25 -10.56 0.8 0.8 R0 x -y 120
+placeEND
+//placeIF cellNameContains dividersw30v10u
+//placeRES 1.25 -10.56 0.8 0.8 R0 x -y 216
+//placeEND
+//placeIF cellNameContains dividersw12v100u
+//placeRES 1.25 -10.56 0.8 0.8 R0 x -y 180
+//placeEND
+//moveORIGIN y
+
+//placeIF cellNameContains dividersw5v10u
+//placeSTEP Generate STONEfeedbackdividersw5v10u 34.135 26.97 x 2.71 R0
+//placeSTEPcell Generate hookfeedbackring5v MY
+//placeCELL Generate hookfeedbackring5v 34.135 26.97 R0
+//placeEND
+placeIF cellNameContains dividersw5v10u
+placeSTEP Generate STONEfeedbackdividersw5v10u 10.86 39.62 x 2.71 R0
+placeSTEPcell Generate hookfeedbackring5v MY
+placeCELL Generate hookfeedbackring5v 10.86 39.62 R0
+placeALTVIEW Generate STONEfeedbackdivideradjust8 layoutNEW 74.63 16.83 R0
+place Generate STONEfeedbackdividerMAIN 74.63 8.46 R0
+placeRES 55.355 36.045 0.8 0.8 R0 x y 100
+placeALTVIEW Esd ESDminiClamp6 layout1 55 10.98 R0
+placeEND
+
+placeIF cellNameContains dividersw5v100u
+placeSTEP Generate STONEfeedbackdividersw5v100u 36.35 2.83 x 21.43 R0
+placeSTEPcell Generate hookfeedbackring5v MY
+placeCELL Generate hookfeedbackring5v 36.35 2.83 R0
+placeEND
+
+placeIF cellNameContains dividersw12v10u
+placeSTEP Generate STONEfeedbackdividersw12v10u 24 -53.24 x 8.5 R0
+placeSTEPcell Generate hookfeedbackring12v MY
+placeCELL Generate hookfeedbackring12v 23.12 -53.24 R0
+placeEND
+
+placeIF cellNameContains dividersw12v100u
+//placeSTEP Generate STONEfeedbackdividersw12v100u 1.11 -53.24 x 45.4 R0
+//placeSTEPcell Generate hookfeedbackring12v MY
+placeINST Xswitch_12V100U_0 0.065 -53.24 R0
+placeINST Xswitch_12V100U_4 0.065 -102.76 R0
+placeINST Xswitch_12V100U_1 45.465 -53.24 R0
+placeINST Xswitch_12V100U_5 45.465 -102.76 R0
+placeINST Xswitch_12V100U_2 90.865 -53.24 R0
+placeINST Xswitch_12V100U_6 90.865 -102.76 R0
+placeINST Xswitch_12V100U_3 136.265 -53.24 R0
+placeINST Xswitch_12V100U_7 136.265 -102.76 R0
+placeCELL Generate hookfeedbackring12v 0.67 -53.24 R0
+placeCELL Generate hookfeedbackring12v 0.67 -102.76 R0
+placeCELL Generate hookfeedbackring12v 183.15 -53.24 MY
+placeCELL Generate hookfeedbackring12v 183.15 -102.76 MY
+placeEND
+
+placeIF cellNameContains dividersw30v
+placeSTEP Generate STONEfeedbackdividersw30v10u 3.6 -78 x 29.86 R0
+//placeSTEP Generate STONEfeedbackdividersw30v100u 3.6 -78 x 86.51 R0
+placeINST Xswitch_30V100U_0 3.6 -78 R0
+placeINST Xswitch_30V100U_4 3.6 -157.52 R0
+placeINST Xswitch_30V100U_1 90.16 -78 R0
+placeINST Xswitch_30V100U_5 90.16 -157.52 R0
+placeINST Xswitch_30V100U_2 176.72 -78 R0
+placeINST Xswitch_30V100U_6 176.72 -157.52 R0
+placeINST Xswitch_30V100U_3 263.28 -78 R0
+placeINST Xswitch_30V100U_7 263.28 -157.52 R0
+placeEND
+
+place Generate STONEfeedbackdividerDFT1 -100 0 R0
+placeRESRING
+placeHVRING rect
 movePINS
+placeROUTEnopins
+
 endlayoutbio
+
 //**********************************************
 //Project Parameters
+//Celera:WALTZ2 Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
+sub_area,ESDminiClamp6,12345
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEfeedbackdividerMAIN,700
+sub_area,rlpp3000rpo80p4u1p0u,403
+sub_area,rlpp3000rpo80p4u1p0u,1
+sub_area,rlpp3000rpo80p4u1p0u,1
+sub_area,rlpp3000rpo80p4u1p0u,1
+sub_area,rlpp3000rpo80p4u1p0u,907
+sub_area,rlpp3000rpo80p4u1p0u,403
+sub_area,rlpp3000rpo80p4u1p0u,1
+sub_area,rlpp3000rpo80p4u1p0u,1
+sub_area,rlpp3000rpo80p4u1p0u,1
+sub_area,rlpp3000rpo80p4u1p0u,1
+sub_area,rlpp3000rpo80p4u1p0u,1
+sub_area,rlpp3000rpo80p4u1p0u,1
+sub_area,rlpp3000rpo80p4u1p0u,1
+sub_area,rlpp3000rpo80p4u1p0u,907
+sub_area,rlpp3000rpo80p4u1p0u,403
+sub_area,rlpp3000rpo80p4u1p0u,1
+sub_area,rlpp3000rpo80p4u1p0u,1
+generate_area,feedbackdivider_clamp_3ae32438_FBD,16080
+// *********************************************
+//CELL DFT Parameters
 // *********************************************
 //Calculator Parameters
-#define,CELVminimum,1.4
+#define,SIMPVminimum,1.6
+#define,FEEDBACKDIVIDERreftemporary,1.1
+#define,FEEDBACKDIVIDERrunitw,1.0
+#define,FEEDBACKDIVIDERrunitmaxlength,100
+
+//#define,FEEDBACKDIVIDERrunitmaxr,80.0
+#define,FEEDBACKDIVIDERrunitmaxr,160.0
+#define,FEEDBACKDIVIDERrunitminr,8.0
+#define,FEEDBACKDIVIDERlimitparallel,16
+#define,FEEDBACKDIVIDERrsheet,3.278
+#define,FEEDBACKDIVIDERrcont,0.5
+#define,FEEDBACKDIVIDERriso,CELG
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//feedbackdivider
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
-
+pinorder,kelvin_FEEDBACKDIVIDER,net_skip,net_skip,FEEDBACKDIVIDER_FB,net_skip,net_skip,net_skip,net_skip,RTN
 endpinorder
 //**********************************************
+
+//**********************************************
 //TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
+cell,feedbackdivider
+trim,instance,feedbackdivider_clamp_3ae32438_FBD
 
 trim,name,na
 trim,enable,no
@@ -112,7 +374,7 @@ trim,pinname,TBD
 trim,testname,TBD
 trim,description,TBD
 trim,target,na
-trim,units,TBD
+trim,units,KHz
 trim,pretrim_low_limit,TBD
 trim,pretrim_high_limit,TBD
 trim,posttrim_low_limit,TBD
@@ -126,80 +388,102 @@ trim,description4,empty
 trim,description5,empty
 trim,description6,empty
 trim,description7,empty
-
 //**********************************************
-//Cell Pin Descriptions	
+//Cell Pin Descriptions
 //**********************************************
-pinname,CELV
-definition,CELV,power
-iq,CELV,SIMULATION
-absmax,CELV,6
-absmin,CELV,1.4
-io,CELV,power
-mode,CELV,power
-router,CELV,TBD
-dftpriority,CELV,1
-esd,CELV,TBD
+pinname,SIMPV
+definition,SIMPV,power supply
+iq,SIMPV,SIMULATION
+absmax,SIMPV,6
+absmin,SIMPV,2.0
+io,SIMPV,input
+mode,SIMPV,power
+router,SIMPV,TBD
+dftpriority,SIMPV,1
+esd,SIMPV,TBD
 
 pinname,CELG
 definition,CELG,power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,****************
-
-io,CELG,power
+absmax,CELG,0.3
+absmin,CELG,-0.3
+io,CELG,input
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i0
-definition,i0,nand2 input
-iq,i0,SIMULATION
-absmax,i0,6
-absmin,i0,****************
+pinname,CELSUB
+definition,CELSUB,power ground
+iq,CELSUB,SIMULATION
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
+io,CELSUB,input
+mode,CELSUB,power
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
 
-io,i0,input
-mode,i0,digital
-router,i0,TBD
-dftpriority,i0,1
-esd,i0,TBD
 
-pinname,i1
-definition,i1,nand2 input
-iq,i1,SIMULATION
-absmax,i1,6
-absmin,i1,****************
 
-io,i1,input
-mode,i1,digital
-router,i1,TBD
-dftpriority,i1,1
-esd,i1,TBD
 
-pinname,o
-definition,o,inverter output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,****************
+pinname,kelvin_FEEDBACKDIVIDER
+definition,kelvin_FEEDBACKDIVIDER,Feedback Sense Pin
+iq,kelvin_FEEDBACKDIVIDER,SIMULATION
+absmax,kelvin_FEEDBACKDIVIDER,6
+absmin,kelvin_FEEDBACKDIVIDER,-0.3
+io,kelvin_FEEDBACKDIVIDER,input
+mode,kelvin_FEEDBACKDIVIDER,analog
+router,kelvin_FEEDBACKDIVIDER,TBD
+dftpriority,kelvin_FEEDBACKDIVIDER,1
+esd,kelvin_FEEDBACKDIVIDER,TBD
 
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
+pinname,FEEDBACKDIVIDER_FB
+definition,FEEDBACKDIVIDER_FB,Feedback Node
+iq,FEEDBACKDIVIDER_FB,SIMULATION
+absmax,FEEDBACKDIVIDER_FB,6
+absmin,FEEDBACKDIVIDER_FB,-0.3
+io,FEEDBACKDIVIDER_FB,output
+mode,FEEDBACKDIVIDER_FB,analog
+router,FEEDBACKDIVIDER_FB,TBD
+dftpriority,FEEDBACKDIVIDER_FB,1
+esd,FEEDBACKDIVIDER_FB,TBD
 
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
+pinname,RTN
+definition,RTN,Feedback Divider Ground Return
+iq,RTN,SIMULATION
+absmax,RTN,6
+absmin,RTN,-0.3
+io,RTN,inout
+mode,RTN,analog
+router,RTN,TBD
+dftpriority,RTN,1
+esd,RTN,TBD
+
+
+
+
+
+
+
+
+pinname,global_feedbackdivider
+definition,global_feedbackdivider,Global Test Enable
+iq,global_feedbackdivider,SIMULATION
+absmax,global_feedbackdivider,6
+absmin,global_feedbackdivider,-0.3
+io,global_feedbackdivider,input
+mode,global_feedbackdivider,digital
+router,global_feedbackdivider,TBD
+dftpriority,global_feedbackdivider,1
+esd,global_feedbackdivider,TBD
+
+
+
+
+
+
+
 
 //**********************************************
 //Process Parameters
@@ -879,3 +1163,17 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+// *********************************************
+
+
+
+
+
+
+
+
+
+
+
+
+

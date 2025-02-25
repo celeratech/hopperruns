@@ -1,3 +1,4 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
@@ -5,34 +6,62 @@
 
 ///Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
+cell,slopecomp
 //**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.3.8
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
+limit,slopecomp_type,choose0,linear
+limit,slopecomp_type,choose1,pwl
+limit,slopecomp_freq,minimum,100.0
+limit,slopecomp_freq,maximum,5000.0
+limit,slopecomp_iosc,minimum,0.5
+limit,slopecomp_iosc,maximum,50.0
+limit,slopecomp_dft,choose0,no
+limit,slopecomp_dft,choose1,yes
+limit,slopecomp_vmax,choose0,2
+limit,slopecomp_vmax,choose1,6
+limit,slopecomp_accuracy,choose0,no
+limit,slopecomp_accuracy,choose1,yes
+limit,slopecomp_trim_name,text
+limit,slopecomp_trim_description,text
+limit,slopecomp_output,choose0,sink
+limit,slopecomp_output,choose1,source
+limit,slopecomp_outputcurrent,minimum,1.0
+limit,slopecomp_outputcurrent,maximum,50.0
+limit,slopecomp_trim_name,text
+limit,slopecomp_trim_description,text
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+user,slopecomp_type,linear
+description,Slopecomp Type
+user,slopecomp_freq,400KHz
+description,Slopecomp Frequency
+user,slopecomp_iosc,18.000
+description,Slopecomp Oscillator Current
+user,slopecomp_outputcurrent,15uA
+description,Slopecomp Output Current
+user,slopecomp_output,source
+description,Slopecomp Output Direction
+user,NESTO,0.3.8
+description,NESTO generate code
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,slopecomp
+register,instance,slopecomp_315a9290
 register,source,cell
 
-//Logic nand2
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readonly
+register,mode,na
 register,por,0
 register,userdescription,na
 register,description0,description0,not used
@@ -49,15 +78,14 @@ register,busname,na
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,slopecomp
+factory,instance,slopecomp_315a9290
 factory,source,cell
 
-//LOGIC CELLS nand2
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,readonly
+factory,mode,na
 factory,por,0
 factory,userdescription,na
 factory,description0,description0,not used
@@ -70,137 +98,306 @@ factory,description6,description6,not used
 factory,description7,description7,not used
 //Netlister Information
 factory,busname,na
+
 //**********************************************
+//CELL DFT Parameters
+//*********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
-movePINS
+layout,SLOPECOMP
+
+place Generate STONEslopecomp 0 0 R0
+place Generate STONEslopecompdft 1.94 56.265 R0
+placeTAP 72.41 51.2
+placeSTEP Generate STONEslopecomppmos 3 64.665 x 2.07 R270
+placeSTEParray Generate STONEslopecomppmos -0.28 61.26 4.4 2.07 n n R180
+placeTAP 72.41 51.2
+placeSTEP Generate STONEslopecompnmos 3 64.665 x 2.07 R270
+placeSTEParray Generate STONEslopecompnmos -0.28 61.26 4.4 2.07 n n R180
+
+placeHVRING rect
+moveORIGIN x
+moveORIGIN y
+placeINST Xslc0 -6 8 MX
+//placeROUTE
+
 endlayoutbio
+
 //**********************************************
 //Project Parameters
+//Celera:WALTZ2 Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEslopecomp,10000
+sub_area,STONEslopecomppmos,10000
+sub_area,STONEslopecomppmos,10000
+sub_area,STONEslopecomppmos,10000
+sub_area,STONEslopecomppmos,10000
+sub_area,STONEslopecomppmos,10000
+sub_area,STONEslopecomppmos,10000
+sub_area,STONEslopecomppmos,10000
+sub_area,STONEslopecomppmos,10000
+sub_area,STONEslopecomppmos,10000
+sub_area,STONEslopecomppmos,10000
+sub_area,STONEslopecomppmos,10000
+sub_area,STONEslopecomppmos,10000
+sub_area,STONEslopecomppmos,10000
+sub_area,STONEslopecomppmos,10000
+sub_area,STONEslopecomppmos,10000
+sub_area,capacitorfixed_slopecomp_315a9290_Xslc,26485
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEslopecompdft,10000
+sub_area,PEBBLEtielo,30
+generate_area,slopecomp_315a9290,196515
 // *********************************************
 //Calculator Parameters
-#define,CELVminimum,1.4
+#define,SIMPVminimum,2.5
+#define,SLOPECOMPcapCALC,10.0
+#define,SLOPECOMPcapMAX,50.0
+
+//Trim Calculators
+#define,SLOPECOMPtrimTARGET,10.0
+#define,SLOPECOMPpretrimHIGH,12.0
+#define,SLOPECOMPpretrimLOW,8.0
+#define,SLOPECOMPposttrimLSB,0.5
+// *********************************************
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//slopecomp
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
+pinorder,clock,ISLOPECOMP,enable_slopecomp,IOSC,SIMPV,ok_slopecomp
 
 endpinorder
 //**********************************************
 //TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
+cell,slopecomp
+trim,instance,slopecomp_315a9290
 
-trim,name,na
-trim,enable,no
-trim,bits,TBD
+trim,name,SLOPECOMPENSATIONaccuracy
+trim,enable,yes
+trim,bits,4
 trim,por,0
-trim,pinname,TBD
-trim,testname,TBD
-trim,description,TBD
-trim,target,na
-trim,units,TBD
-trim,pretrim_low_limit,TBD
-trim,pretrim_high_limit,TBD
-trim,posttrim_low_limit,TBD
-trim,posttrim_high_limit,TBD
-trim,codeunits,%
-trim,description0,empty
-trim,description1,empty
-trim,description2,empty
-trim,description3,empty
-trim,description4,empty
-trim,description5,empty
-trim,description6,empty
-trim,description7,empty
-
+trim,pinname,trim_slopecomp
+trim,testname,SLOPECOMPENSATIONaccuracy
+trim,description,userdescription,AA
+trim,target,18.000
+trim,units,uA
+trim,pretrim_low_limit,16.560
+trim,pretrim_high_limit,20.160
+trim,posttrim_low_limit,17.865
+trim,posttrim_high_limit,18.135
+trim,codeunits,uA
+trim,description0,code 0x00 18.000
+trim,description1,code 0x01 9.5u
+trim,description2,code 0x02 9u
+trim,description3,code 0x04 8u
+trim,description4,code 0x08 12u
+trim,description5,not used
+trim,description6,not used
+trim,description7,not used
 //**********************************************
 //Cell Pin Descriptions	
 //**********************************************
-pinname,CELV
-definition,CELV,power
-iq,CELV,SIMULATION
-absmax,CELV,6
-absmin,CELV,1.4
-io,CELV,power
-mode,CELV,power
-router,CELV,TBD
-dftpriority,CELV,1
-esd,CELV,TBD
+//Pin Descriptions
+//**********************************************
+pinname,SIMPV
+definition,SIMPV,cell power
+iq,SIMPV,SIMULATION
+absmax,SIMPV,6
+absmin,SIMPV,2.5
+io,SIMPV,input
+mode,SIMPV,power
+router,SIMPV,TBD
+dftpriority,SIMPV,1
+esd,SIMPV,TBD
+
+pinname,IP
+definition,IP,reference 0.5uA current source
+iq,IP,SIMULATION
+absmax,IP,6
+absmin,IP,-0.3
+io,IP,input
+mode,IP,analog
+router,IP,TBD
+dftpriority,IP,1
+esd,IP,TBD
+
+pinname,IOSC
+definition,IOSC,Oscillator current source
+iq,IOSC,SIMULATION
+absmax,IOSC,6
+absmin,IOSC,-0.3
+io,IOSC,input
+mode,IOSC,analog
+router,IOSC,TBD
+dftpriority,IOSC,1
+esd,IOSC,TBD
+
+pinname,enable_slopecomp
+definition,enable_slopecomp,slopecomp enable
+iq,enable_slopecomp,SIMULATION
+absmax,enable_slopecomp,6
+absmin,enable_slopecomp,-0.3
+io,enable_slopecomp,input
+mode,enable_slopecomp,digital
+router,enable_slopecomp,TBD
+dftpriority,enable_slopecomp,1
+esd,enable_slopecomp,TBD
+
+pinname,global_slopecomp
+definition,global_slopecomp,DFT gloable enable pin
+iq,global_slopecomp,SIMULATION
+absmax,global_slopecomp,6
+absmin,global_slopecomp,-0.3
+io,global_slopecomp,input
+mode,global_slopecomp,digital
+router,global_slopecomp,TBD
+dftpriority,global_slopecomp,1
+esd,global_slopecomp,TBD
+
+pinname,clock
+definition,clock,Slopecomp clock
+iq,clock,SIMULATION
+absmax,clock,6
+absmin,clock,-0.3
+io,clock,input
+mode,clock,digital
+router,clock,TBD
+dftpriority,clock,1
+esd,clock,TBD
+
+pinname,ISLOPECOMP
+definition,ISLOPECOMP,Slopecomp current output
+iq,ISLOPECOMP,SIMULATION
+absmax,ISLOPECOMP,6
+absmin,ISLOPECOMP,-0.3
+io,ISLOPECOMP,output
+mode,ISLOPECOMP,digital
+router,ISLOPECOMP,TBD
+dftpriority,ISLOPECOMP,1
+esd,ISLOPECOMP,TBD
+
+pinname,ok_slopecomp
+definition,ok_slopecomp,Slopecomp ok flag
+iq,ok_slopecomp,SIMULATION
+absmax,ok_slopecomp,6
+absmin,ok_slopecomp,-0.3
+io,ok_slopecomp,output
+mode,ok_slopecomp,digital
+router,ok_slopecomp,TBD
+dftpriority,ok_slopecomp,1
+esd,ok_slopecomp,TBD
+
+pinname,trim_slopecomp
+definition,trim_slopecomp,Slopecomp accuracy trim bus
+iq,trim_slopecomp,SIMULATION
+absmax,trim_slopecomp,6
+absmin,trim_slopecomp,-0.3
+io,trim_slopecomp,input
+mode,trim_slopecomp,digital
+router,trim_slopecomp,TBD
+dftpriority,trim_slopecomp,1
+esd,trim_slopecomp,TBD
+
+pinname,ten_taiislopecomp
+definition,ten_taiislopecomp,Enable DFT slopecomp current output
+iq,ten_taiislopecomp,SIMULATION
+absmax,ten_taiislopecomp,6
+absmin,ten_taiislopecomp,-0.3
+io,ten_taiislopecomp,input
+mode,ten_taiislopecomp,digital
+router,ten_taiislopecomp,TBD
+dftpriority,ten_taiislopecomp,1
+esd,ten_taiislopecomp,TBD
+
+pinname,TAI_ISLOPECOMP
+definition,TAI_ISLOPECOMP,DFT slopecomp current output
+iq,TAI_ISLOPECOMP,SIMULATION
+absmax,TAI_ISLOPECOMP,6
+absmin,TAI_ISLOPECOMP,-0.3
+io,TAI_ISLOPECOMP,output
+mode,TAI_ISLOPECOMP,analog
+router,TAI_ISLOPECOMP,TBD
+dftpriority,TAI_ISLOPECOMP,1
+esd,TAI_ISLOPECOMP,TBD
 
 pinname,CELG
-definition,CELG,power ground
+definition,CELG,cell power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,****************
-
-io,CELG,power
+absmax,CELG,0.3
+absmin,CELG,-0.3
+io,CELG,input
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i0
-definition,i0,nand2 input
-iq,i0,SIMULATION
-absmax,i0,6
-absmin,i0,****************
-
-io,i0,input
-mode,i0,digital
-router,i0,TBD
-dftpriority,i0,1
-esd,i0,TBD
-
-pinname,i1
-definition,i1,nand2 input
-iq,i1,SIMULATION
-absmax,i1,6
-absmin,i1,****************
-
-io,i1,input
-mode,i1,digital
-router,i1,TBD
-dftpriority,i1,1
-esd,i1,TBD
-
-pinname,o
-definition,o,inverter output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,****************
-
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
-
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
-
+pinname,CELSUB
+definition,CELSUB,substrate
+iq,CELSUB,SIMULATION
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
+io,CELSUB,power
+mode,CELSUB,analog
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
+//**********************************************
+//Constraints Parameters*******************
+constraint,slopecomp,IP,shield
+constraint,slopecomp,IOSC,shield
+constraint,slopecomp,clock,shield
+constraint,slopecomp,ISLOPECOMP,shield
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -878,4 +1075,5 @@ revision,vis15cb,0p1
 #define,AP5G60DC1minmult,1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
-endbio
+endbio
+

@@ -1,205 +1,389 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///Celera Confidential BIO Data Generator
+//Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
+cell,thermal
 //**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.3.4
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
+limit,thermal_type,choose0,fixed
+limit,thermal_type,choose1,control
+limit,thermal_rise,minimum,-40.0
+limit,thermal_rise,maximum,180.0
+limit,thermal_rise0,minimum,-40.0
+limit,thermal_rise0,maximum,180.0
+limit,thermal_rise1,minimum,-40.0
+limit,thermal_rise1,maximum,180.0
+limit,thermal_rise2,minimum,-40.0
+limit,thermal_rise2,maximum,180.0
+limit,thermal_rise3,minimum,-40.0
+limit,thermal_rise3,maximum,180.0
+limit,thermal_fall,minimum,-40.0
+limit,thermal_fall,maximum,180.0
+limit,thermal_fall0,minimum,-40.0
+limit,thermal_fall0,maximum,180.0
+limit,thermal_fall1,minimum,-40.0
+limit,thermal_fall1,maximum,180.0
+limit,thermal_fall2,minimum,-40.0
+limit,thermal_fall2,maximum,180.0
+limit,thermal_fall3,minimum,-40.0
+limit,thermal_fall3,maximum,180.0
+limit,thermal_register_por,choose0,0
+limit,thermal_register_por,choose1,1
+limit,thermal_register_por,choose2,2
+limit,thermal_register_por,choose3,3
+limit,thermal_vmax,choose0,2
+limit,thermal_vmax,choose1,6
+limit,thermal_dft,choose0,no
+limit,thermal_dft,choose1,yes
+limit,thermal_selections,choose0,1
+limit,thermal_selections,choose1,2
+limit,thermal_selections,choose2,3
+limit,thermal_selections,choose3,1
+limit,thermal_disable,choose0,no
+limit,thermal_disable,choose1,yes
+limit,thermal_accuracy,choose0,no
+limit,thermal_accuracy,choose1,yes
+limit,thermal_control_type,choose0,pin
+limit,thermal_control_type,choose1,factory
+limit,thermal_control_type,choose2,register
+limit,thermal_trim_name,text
+limit,thermal_trim_description,text
+limit,thermal_temperature_name,text
+limit,thermal_temperature_description,text
+
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+user,thermal_rise0,165C
+description,Thermal Protection Rising Threshold
+user,thermal_fall0,145C
+description,Thermal Protection Falling Threshold
+user,REF,,0.9V
+description,Thermal Protection Project Reference
+user,NESTOrevsion,0.3.4
+description,Nesto Generator
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,thermal
+register,instance,thermal_b84c0fbd
 register,source,cell
 
-//Logic nand2
+///Thermal Fault Threshold Adjust
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readonly
+register,mode,readwrite
 register,por,0
 register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
 //Netlister Information
 register,busname,na
 
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,thermal
+factory,instance,thermal_b84c0fbd
 factory,source,cell
 
-//LOGIC CELLS nand2
+///Thermal Blank Flag
 factory,name,na
 factory,enable,no
 factory,bits,0
 factory,mode,readonly
 factory,por,0
 factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
 //Netlister Information
 factory,busname,na
+
+///Thermal Fault Threshold Adjust
+factory,name,na
+factory,enable,no
+factory,bits,0
+factory,mode,readonly
+factory,por,0
+factory,userdescription,na
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
+//Netlister Information
+factory,busname,na
+
 //**********************************************
+//CELL DFT Parameters
+// *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
-movePINS
+layout,thermal
+place Generate STONEthermalCONTROL2 0 0 R0
+placeIFELSE cellNameContains DFT&&TRIM
+place Generate STONEthermalDFT 55.98 71.705 MX
+place Generate STONEthermalTRIM 17.55 80.075 MX
+placeRES 7.795 90.565 0.8 0.8 R0 x y 115
+placeELSE
+place Generate STONEthermalDFT 55.98 71.705 MX
+placeALTVIEW Generate STONEthermalTRIM layout1 17.55 80.025 MX
+placeRES 7.795 82.22 0.8 0.8 R0 x y 115
+placeEND 
+place Generate STONEthermalDECODE4 44.64 -9.67 R0
+place Generate STONEthermalDECODE3 44.64 -1.295 R0
+place Generate STONEthermalDECODE2 44.64 7.075 R0
+place Generate STONEthermalDECODE1 45.27 23.815 MX
+placeRESRING 
+placeHVRING
+placeROUTE
 endlayoutbio
+
 //**********************************************
 //Project Parameters
+//Celera:WALTZ2 Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
+sub_area,STONEnoconn,0
+sub_area,STONEthermalCONTROL2,7072
+sub_area,STONEthermalDECODE1,85
+sub_area,STONEthermalTRIM,1120
+sub_area,rlpp3000rpo113p6u0p5u,170
+sub_area,rlpp3000rpo113p6u0p5u,597
+sub_area,rlpp3000rpo113p6u0p5u,341
+sub_area,rlpp3000rpo2p5u0p5u,2
+sub_area,rlpp3000rpo2p5u0p5u,2
+sub_area,rlpp3000rpo2p5u0p5u,2
+sub_area,rlpp3000rpo2p5u0p5u,2
+sub_area,rlpp3000rpo2p5u0p5u,2
+sub_area,rlpp3000rpo2p5u0p5u,2
+generate_area,thermal_b84c0fbd,9397
 // *********************************************
 //Calculator Parameters
-#define,CELVminimum,1.4
+#define,THERMALresistorlength,113.57
+#define,THERMALresistorwidth,2.0
+#define,THERMALresistortrimwidth,0.5
+#define,THERMALresistoriso,CELG
+#define,THERMALiref,0.5
+#define,CELVminimum,2.2
+#define,THERMALtrimrange,10.0
+#define,THERMALpretrimhigh,15.0
+#define,THERMALpretrimlow,15.0
+#define,THERMALposttrimlsb,4.0
+#define,THERMALreferenceTemp,1.04
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//thermal
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
-
+pinorder,fault_thermal,enable_thermal,net_skip,net_skip,SIMPV
 endpinorder
 //**********************************************
-//TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
 
-trim,name,na
-trim,enable,no
-trim,bits,TBD
+//**********************************************
+//TRIM Parameters
+cell,thermal
+trim,instance,thermal_b84c0fbd
+
+//Thermal Accuracy
+trim,name,THERMALaccuracy
+trim,enable,yes
+trim,bits,3
 trim,por,0
-trim,pinname,TBD
-trim,testname,TBD
-trim,description,TBD
-trim,target,na
-trim,units,TBD
-trim,pretrim_low_limit,TBD
-trim,pretrim_high_limit,TBD
-trim,posttrim_low_limit,TBD
-trim,posttrim_high_limit,TBD
-trim,codeunits,%
-trim,description0,empty
-trim,description1,empty
-trim,description2,empty
-trim,description3,empty
-trim,description4,empty
-trim,description5,empty
-trim,description6,empty
-trim,description7,empty
+trim,testname,THERMALaccuracy
+trim,description,Thermal at 165C
+trim,pinname,trim_thermal_accuracy
+trim,target,165
+trim,units,C
+trim,pretrim_low_limit,150.000
+trim,pretrim_high_limit,180.000
+trim,posttrim_low_limit,159.000
+trim,posttrim_high_limit,171.000
+trim,codeunits,C
+trim,description0,code 0x00,165C
+trim,description1,code 0x01,+2.0
+trim,description2,code 0x02,+4.0
+trim,description3,code 0x03,+6.0
+trim,description4,code 0x04,+0.0
+trim,description5,code 0x05,-2.0
+trim,description6,code 0x06,-4.0
+trim,description7,code 0x07,-6.0
 
 //**********************************************
 //Cell Pin Descriptions	
 //**********************************************
-pinname,CELV
-definition,CELV,power
-iq,CELV,SIMULATION
-absmax,CELV,6
-absmin,CELV,1.4
-io,CELV,power
-mode,CELV,power
-router,CELV,TBD
-dftpriority,CELV,1
-esd,CELV,TBD
+
+pinname,SIMPV
+definition,SIMPV,cell power
+iq,SIMPV,SIMULATION
+absmax,SIMPV,6
+absmin,SIMPV,2.0
+io,SIMPV,input
+mode,SIMPV,power
+router,SIMPV,TBD
+dftpriority,SIMPV,1
+esd,SIMPV,TBD
 
 pinname,CELG
-definition,CELG,power ground
+definition,CELG,cell power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,****************
-
-io,CELG,power
+absmax,CELG,0.3
+absmin,CELG,-0.3
+io,CELG,input
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i0
-definition,i0,nand2 input
-iq,i0,SIMULATION
-absmax,i0,6
-absmin,i0,****************
+pinname,IP
+definition,IP,reference current
+iq,IP,SIMULATION
+absmax,IP,6
+absmin,IP,-0.3
+io,IP,input
+mode,IP,analog
+router,IP,TBD
+dftpriority,IP,1
+esd,IP,TBD
 
-io,i0,input
-mode,i0,digital
-router,i0,TBD
-dftpriority,i0,1
-esd,i0,TBD
+pinname,CELBG
+definition,CELBG,Thermal Vbe Reference voltage
+iq,CELBG,SIMULATION
+absmax,CELBG,6
+absmin,CELBG,-0.3
+io,CELBG,input
+mode,CELBG,analog
+router,CELBG,TBD
+dftpriority,CELBG,1
+esd,CELBG,TBD
 
-pinname,i1
-definition,i1,nand2 input
-iq,i1,SIMULATION
-absmax,i1,6
-absmin,i1,****************
+pinname,enable_thermal
+definition,enable_thermal,enable Thermal Protection
+iq,enable_thermal,SIMULATION
+absmax,enable_thermal,6
+absmin,enable_thermal,-0.3
+io,enable_thermal,input
+mode,enable_thermal,digital
+router,enable_thermal,TBD
+dftpriority,enable_thermal,1
+esd,enable_thermal,TBD
 
-io,i1,input
-mode,i1,digital
-router,i1,TBD
-dftpriority,i1,1
-esd,i1,TBD
+pinname,ten
+definition,ten,Global enable
+iq,ten,SIMULATION
+absmax,ten,6
+absmin,ten,-0.3
+io,ten,input
+mode,ten,digital
+router,ten,TBD
+dftpriority,ten,1
+esd,ten,TBD
 
-pinname,o
-definition,o,inverter output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,****************
+pinname,fault_thermal
+definition,fault_thermal,Thermal Output fault Flag
+iq,fault_thermal,SIMULATION
+absmax,fault_thermal,6
+absmin,fault_thermal,-0.3
+io,fault_thermal,output
+mode,fault_thermal,digital
+router,fault_thermal,TBD
+dftpriority,fault_thermal,1
+esd,fault_thermal,TBD
 
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
+pinname,trim_thermal_accuracy
+definition,trim_thermal_accuracy,Factory trim Thermal threshold adjust
+iq,trim_thermal_accuracy,SIMULATION
+absmax,trim_thermal_accuracy,6
+absmin,trim_thermal_accuracy,-0.3
+io,trim_thermal_accuracy,input
+mode,trim_thermal_accuracy,digital
+router,trim_thermal_accuracy,TBD
+dftpriority,trim_thermal_accuracy,1
+esd,trim_thermal_accuracy,TBD
 
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
+pinname,CELSUB
+definition,CELSUB,Substrate
+iq,CELSUB,SIMULATION
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
+io,CELSUB,input
+mode,CELSUB,power
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
 
 //**********************************************
 //Process Parameters
@@ -877,5 +1061,6 @@ revision,vis15cb,0p1
 #define,AP5G60DC1maxmult,99
 #define,AP5G60DC1minmult,1
 ////////////////////////////////////////////////////////////////////////
-// *********************************************
+//*********************************************
 endbio
+

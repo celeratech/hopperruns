@@ -1,108 +1,282 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///Celera Confidential BIO Data Generator
+//Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
-//**********************************************
+cell,padopendrain
+///**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.4.2
 //**********************************************
 //Simplis Limits
-revision,limit,0p1
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
+revision,limit,0p2
+limit,padopendrain_ron,minimum,1
+limit,padopendrain_ron,maximum,500
+limit,padopendrain_vmax,choose0,2
+limit,padopendrain_vmax,choose1,6
+limit,padopendrain_voutmax,choose0,2
+limit,padopendrain_voutmax,choose1,6
+limit,padopendrain_voutmax,choose2,12
+limit,padopendrain_voutmax,choose3,20
+limit,padopendrain_voutmax,choose4,24
+limit,padopendrain_voutmax,choose5,30
+limit,padopendrain_voutmax,choose6,36
+limit,padopendrain_voutmax,choose7,40
+limit,padopendrain_voutmax,choose8,45
+limit,padopendrain_voutmax,choose9,60
+
+limit,padopendrain_filter,choose0,yes
+limit,padopendrain_filter,choose1,no
+limit,padopendrain_edge,choose0,on
+limit,padopendrain_edge,choose1,off
+limit,padopendrain_edge,choose2,both
+limit,padopendrain_filter_time,choose0,5
+limit,padopendrain_filter_time,choose1,10
+limit,padopendrain_filter_time,choose2,25
+limit,padopendrain_filter_time,choose3,50
+limit,padopendrain_filter_time,choose4,100
+limit,padopendrain_filter_time,choose5,250
+limit,padopendrain_filter_time,choose6,500
+limit,padopendrain_filter_time,choose7,1000
+limit,padopendrain_polarity,choose0,noninvert
+limit,padopendrain_polarity,choose1,invert
+limit,padopendrain_dft,choose0,no
+limit,padopendrain_dft,choose1,yes
+limit,padopendrain_testmode,choose0,yes
+limit,padopendrain_testmode,choose1,no
+limit,fet_calculator,choose0,typical
+limit,fet_calculator,choose1,maximum
+limit,padopendrain_return,choose0,no
+limit,padopendrain_return,choose0,yes
+
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+user,Resistance,50ohms
+user,VoltgeRating,6V
+user,InputGlitchFilter,no
+user,InputLogicPolarity,invert
+user,AbsMax,6V
+user,DFT,yes
+
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,padopendrain
+register,instance,padopendrain_ff7ffa6a
 register,source,cell
 
-//Logic nand2
+//No register Map Required
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readonly
+register,mode,readwrite
 register,por,0
 register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
+register,description8,empty
+register,description9,empty
+register,description10,empty
+register,description11,empty
+register,description12,empty
 //Netlister Information
 register,busname,na
-
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,padopendrain
+factory,instance,padopendrain_ff7ffa6a
 factory,source,cell
 
-//LOGIC CELLS nand2
+//No factory Map Required
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,readonly
+factory,mode,emp.bio
 factory,por,0
 factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
 //Netlister Information
 factory,busname,na
-//**********************************************
+
+// *********************************************
+//CELL DFT Parameters
+//Cell DFT Generator padopendrain 
+
+celldft,padopendrain
+celldft,path,padopendrain_ff7ffa6a
+celldft,instance,ff7ffa6a
+celldft,source,cell
+
+//ten_testmode, tdo
+
+celldft,ten_padopendrain
+celldft,ten_padopendrain,testname,tenPADOPENDRAIN
+celldft,ten_padopendrain,definition,Enable Measure Pad Open Drain
+celldft,ten_padopendrain,input,ten
+celldft,ten_padopendrain,output,na
+celldft,ten_padopendrain,partner,tdi_padopendrain
+celldft,ten_padopendrain,end
+
+celldft,tdi_padopendrain
+celldft,tdi_padopendrain,testname,measurePADOPENDRAIN
+celldft,tdi_padopendrain,definition,Enable Measure Pad Open Drain Output Gate
+celldft,tdi_padopendrain,input,na
+celldft,tdi_padopendrain,output,tdi
+celldft,tdi_padopendrain,partner,ten_padopendrain
+celldft,tdi_padopendrain,end
+
+celldft,end
+// *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
+layout,padopendrain
+
+place Generate STONEpadopendrainCONTROL 23.46 -4.865 MXR90
+place Generate STONEpadopendrainDFT 40.2 -4.865 R90
+place Generate STONEpadopendrainTESTMODE 23.46 -4.865 R90
+placeIFELSE cellNameContains delay250||delay500||delay1000||100nRF||50nRF
+placeTAP 20 2
+placeINST Xdelay|XpartA 23.46 -4.865 R90
+placeINST Xdelay|XpartA 6.72 -4.865 MXR90
+placeTAP 12 2
+placeINST Xdelay|XpartB 6.72 -4.865 MXR90
+placeINST Xdelay|XpartB 6.72 -4.865 R90
+placeELSE
+placeTAP 20 2
+placeINST Xdelay 23.46 -4.865 R90
+placeINST Xdelay 6.72 -4.865 MXR90
+placeEND
+placeTAP 35 5
+place Generate STONEpadopendrainDRIVER 33.03 14.035 R270
+place Generate STONEpadopendrainDRIVER 40.2 14.035 R270
+moveORIGIN -x
+moveORIGIN x
+placeINST Xjohnpowernmos -27.73 0 MY
+placeHVRING
 movePINS
+placeROUTEnopins
 endlayoutbio
 //**********************************************
 //Project Parameters
-// *********************************************
+//Celera:WALTZ2 Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
+//**********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
-// *********************************************
+sub_area,STONEpadopendrainDFT,270
+sub_area,fet_padopendrain_ff7ffa6a_Xnmos,57114
+sub_area,STONEnoconn,0
+sub_area,STONEpadopendrainCONTROL,270
+generate_area,padopendrain_ff7ffa6a,57654
+//**********************************************
 //Calculator Parameters
-#define,CELVminimum,1.4
+#define,FETronForDriver,10
+//26206266510f Ron for Metal Adder
+#define,NMOSsignalmetalAdder,5
+//26206267640f Ron for Process Adder
+#define,NMOSprocessAdder,100
+//Target Layout Width
+#define,PADOPENDRAINlayoutwidth,29.0
+
+#define NMOSlayoutratio,0.75
+#define NMOSaccuracy,10
+
+//Define Power Layout Rules
+#define,POWERmaximumwidth,400
+#define,POWERx,2.33
+#define,POWERy,8.38
+#define,POWERk6,3.3
+#define,POWERk12,4.1
+#define,POWERk20,4.9
+#define,POWERk24,5.3
+#define,POWERk30,6.3
+#define,POWERk40,7.9
+//Limit how many columns/row are allowed
+#define,POWERcolumnstart,2
+
+//Define default calculators
+#define,CELV_TEMP,3.3
+#define,TEMPERATURE_TEMP,125
+#define,VGS_TEMP,2.3
+#define,CELVminimum,1.8
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//padopendrain
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
-
+pinorder,input_padopendrain,PAD,net_skip
 endpinorder
 //**********************************************
+
+//**********************************************
 //TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
+cell,padopendrain
+trim,instance,padopendrain_ff7ffa6a
 
 trim,name,na
 trim,enable,no
@@ -112,7 +286,7 @@ trim,pinname,TBD
 trim,testname,TBD
 trim,description,TBD
 trim,target,na
-trim,units,TBD
+trim,units,KHz
 trim,pretrim_low_limit,TBD
 trim,pretrim_high_limit,TBD
 trim,posttrim_low_limit,TBD
@@ -126,75 +300,80 @@ trim,description4,empty
 trim,description5,empty
 trim,description6,empty
 trim,description7,empty
-
 //**********************************************
 //Cell Pin Descriptions	
-//**********************************************
+//**********************************************	
 pinname,CELV
-definition,CELV,power
+definition,CELV,cell power
 iq,CELV,SIMULATION
 absmax,CELV,6
-absmin,CELV,1.4
-io,CELV,power
+absmin,CELV,2.0
+io,CELV,input
 mode,CELV,power
 router,CELV,TBD
 dftpriority,CELV,1
 esd,CELV,TBD
 
 pinname,CELG
-definition,CELG,power ground
+definition,CELG,cell power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,****************
-
-io,CELG,power
+absmax,CELG,0.3
+absmin,CELG,-0.3
+io,CELG,input
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i0
-definition,i0,nand2 input
-iq,i0,SIMULATION
-absmax,i0,6
-absmin,i0,****************
+pinname,input_padopendrain
+definition,input_padopendrain,logic input
+iq,input_padopendrain,SIMULATION
+absmax,input_padopendrain,6
+absmin,input_padopendrain,-0.3
+io,input_padopendrain,input
+mode,input_padopendrain,digital
+router,input_padopendrain,TBD
+dftpriority,input_padopendrain,1
+esd,input_padopendrain,TBD
 
-io,i0,input
-mode,i0,digital
-router,i0,TBD
-dftpriority,i0,1
-esd,i0,TBD
+pinname,PAD
+definitionPAD,PAD opendrain 
+iq,PAD,SIMULATION
+absmax,PAD,6
+absmin,PAD,-0.3
+io,PAD,inout
+mode,PAD,analog
+router,PAD,TBD
+dftpriority,PAD,1
+esd,PAD,TBD
 
-pinname,i1
-definition,i1,nand2 input
-iq,i1,SIMULATION
-absmax,i1,6
-absmin,i1,****************
+pinname,ten_padopendrain
+definition,ten_padopendrain,Testmode control
+iq,ten_padopendrain,SIMULATION
+absmax,ten_padopendrain,6
+absmin,ten_padopendrain,-0.3
+io,ten_padopendrain,input
+mode,ten_padopendrain,digital
+router,ten_padopendrain,TBD
+dftpriority,ten_padopendrain,1
+esd,ten_padopendrain,TBD
 
-io,i1,input
-mode,i1,digital
-router,i1,TBD
-dftpriority,i1,1
-esd,i1,TBD
-
-pinname,o
-definition,o,inverter output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,****************
-
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
+pinname,tdi_padopendrain
+definition,tdi_padopendrain,Testmode output - Gate
+iq,tdi_padopendrain,SIMULATION
+absmax,tdi_padopendrain,6
+absmin,tdi_padopendrain,-0.3
+io,tdi_padopendrain,output
+mode,tdi_padopendrain,digital
+router,tdi_padopendrain,TBD
+dftpriority,tdi_padopendrain,1
+esd,tdi_padopendrain,TBD
 
 pinname,SUB
-definition,SUB,substrate
+definition,SUB,Substrate
 iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
+absmax,SUB,0.3
+absmin,SUB,-0.3
 io,SUB,input
 mode,SUB,power
 router,SUB,TBD
@@ -879,3 +1058,4 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+

@@ -1,34 +1,65 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-///Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
+cell,clocksync
 //**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.5.0
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
+
+limit,clocksync_dutycyclemin,minimum,5
+limit,clocksync_dutycyclemin,maximum,95
+limit,clocksync_dutycyclemax,minimum,5
+limit,clocksync_dutycyclemax,maximum,95
+limit,clocksync_frequency,minimum,10.0
+limit,clocksync_frequency,maximum,5000.0
+//limit,clocksync_offset,minimum,0
+//limit,clocksync_offset,maximum,60
+limit,clocksync_accuracy,choose0,no
+limit,clocksync_accuracy,choose1,yes
+limit,clocksync_statusoutput,choose0,no
+limit,clocksync_statusoutput,choose1,high
+limit,clocksync_statusoutput,choose2,low
+limit,clocksync_statusoutput,choose3,both
+limit,clocksync_vmax,choose0,2
+limit,clocksync_vmax,choose1,6
+limit,clocksync_dft,choose0,no
+limit,clocksync_dft,choose1,yes
+
+limit,clocksync_trim_name,text
+limit,clocksync_trim_description,text
+
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+user,clocksync_frequency,375KHz
+description,Clocksync Frequency
+user,clocksync_dutycyclemin,30%
+description,Clocksync Input Duty cycle
+user,clocksync_offset,0%
+description,Clocksync target offset
+user,Thigh,2us
+description,Clocksync Calcualted 'High' Time
+user,Tlow,2us
+description,Clocksync Calcualted 'Low' Time
+user,NESTO Revision,0.5.0
+description,NESTO Revision code
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,clocksync
+register,instance,clocksync_473e0ab6
 register,source,cell
 
-//Logic nand2
+//clocksync
 register,name,na
 register,enable,no
 register,bits,0
@@ -45,15 +76,14 @@ register,description6,description6,not used
 register,description7,description7,not used
 //Netlister Information
 register,busname,na
-
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,clocksync
+factory,instance,clocksync_473e0ab6
 factory,source,cell
 
-//LOGIC CELLS nand2
+//clocksync
 factory,name,na
 factory,enable,no
 factory,bits,0
@@ -70,47 +100,115 @@ factory,description6,description6,not used
 factory,description7,description7,not used
 //Netlister Information
 factory,busname,na
-//**********************************************
+// *********************************************
+//CELL DFT Parameters
+// *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
-movePINS
+
+layout,clocksync
+place Generate STONEclocksyncCORE 0 0 R0
+place Generate STONEclocksyncDFT 0 33.48 R0
+placeIFELSE cellNameContains DFT
+placeSTEP Generate STONEclocksyncFLAG 0 50.22 x 20.16 MX
+placeELSE
+placeSTEP Generate STONEclocksyncFLAG 0 33.48 x 20.16 R0
+placeEND
+placeINST Xrise 0 0 MX
+moveORIGIN y
+placeINST Xfall 0 -1.2 MX
+moveORIGIN y
+placeHVRING
+//placeROUTE
 endlayoutbio
+
 //**********************************************
 //Project Parameters
+//Celera:WALTZ2 Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
+sub_area,delay0_clocksync_473e0ab6_Xrise,2604
+sub_area,delay0_clocksync_473e0ab6_Xfall,2604
+sub_area,STONEnoconn,0
+sub_area,STONEclocksyncCORE,100
+sub_area,STONEclocksyncFLAG,200
+sub_area,STONEclocksyncFLAG,200
+generate_area,clocksync_473e0ab6,5708
 // *********************************************
 //Calculator Parameters
-#define,CELVminimum,1.4
+#define,CLOCKSYNCaccurateoffset,10.0
+#define,CLOCKSYNCpretrimmax,25.0
+#define,CLOCKSYNCpretrimmin,25.0
+#define,CLOCKSYNCposttrimlsb,2.0
+
+#define,CELVminimum,2.0
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//clocksync
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
-
+pinorder,clocksync_low,clocksync_in,clk,clocksync_out,clocksync_high,enable_clocksync
 endpinorder
 //**********************************************
+
+//**********************************************
 //TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
+cell,clocksync
+trim,instance,clocksync_473e0ab6
 
 trim,name,na
 trim,enable,no
 trim,bits,TBD
 trim,por,0
-trim,pinname,TBD
+trim,pinname,trim_clocksynchigh
 trim,testname,TBD
-trim,description,TBD
+trim,description,Trim clocksync high timer
 trim,target,na
 trim,units,TBD
 trim,pretrim_low_limit,TBD
@@ -126,81 +224,151 @@ trim,description4,empty
 trim,description5,empty
 trim,description6,empty
 trim,description7,empty
+trim,description8,empty
+
+trim,name,na
+trim,enable,no
+trim,bits,TBD
+trim,por,0
+trim,pinname,trim_clocksynclow
+trim,testname,TBD
+trim,description,Trim clocksync low timer
+trim,target,na
+trim,units,TBD
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,%
+trim,description0,empty
+trim,description1,empty
+trim,description2,empty
+trim,description3,empty
+trim,description4,empty
+trim,description5,empty
+trim,description6,empty
+trim,description7,empty
+trim,description8,empty
 
 //**********************************************
-//Cell Pin Descriptions	
-//**********************************************
+//Cell Pin Descriptions
 pinname,CELV
-definition,CELV,power
+definition,CELV,cell power
 iq,CELV,SIMULATION
 absmax,CELV,6
-absmin,CELV,1.4
-io,CELV,power
+absmin,CELV,2.0
+io,CELV,input
 mode,CELV,power
 router,CELV,TBD
 dftpriority,CELV,1
 esd,CELV,TBD
 
 pinname,CELG
-definition,CELG,power ground
+definition,CELG,cell power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,****************
-
-io,CELG,power
+absmax,CELG,0.3
+absmin,CELG,-0.3
+io,CELG,input
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i0
-definition,i0,nand2 input
-iq,i0,SIMULATION
-absmax,i0,6
-absmin,i0,****************
+pinname,clocksync_in
+definition,clocksync_in,clcoksync sync clock input
+iq,clocksync_in,SIMULATION
+absmax,clocksync_in,6
+absmin,clocksync_in,-0.3
+io,clocksync_in,input
+mode,clocksync_in,digital
+router,clocksync_in,TBD
+dftpriority,clocksync_in,1
+esd,clocksync_in,TBD
 
-io,i0,input
-mode,i0,digital
-router,i0,TBD
-dftpriority,i0,1
-esd,i0,TBD
+pinname,clocksync_out
+definition,clocksync_out,clocksync output clock
+iq,clocksync_out,SIMULATION
+absmax,clocksync_out,6
+absmin,clocksync_out,-0.3
+io,clocksync_out,output
+mode,clocksync_out,digital
+router,clocksync_out,TBD
+dftpriority,clocksync_out,1
+esd,clocksync_out,TBD
 
-pinname,i1
-definition,i1,nand2 input
-iq,i1,SIMULATION
-absmax,i1,6
-absmin,i1,****************
+pinname,clk
+definition,clk,clcoksync master inout clock
+iq,clk,SIMULATION
+absmax,clk,6
+absmin,clk,-0.3
+io,clk,input
+mode,clk,digital
+router,clk,TBD
+dftpriority,clk,1
+esd,clk,TBD
 
-io,i1,input
-mode,i1,digital
-router,i1,TBD
-dftpriority,i1,1
-esd,i1,TBD
+pinname,clocksync_high
+definition,clocksync_high,clocksync high output flag
+iq,clocksync_high,SIMULATION
+absmax,clocksync_high,6
+absmin,clocksync_high,-0.3
+io,clocksync_high,output
+mode,clocksync_high,digital
+router,clocksync_high,TBD
+dftpriority,clocksync_high,1
+esd,clocksync_high,TBD
 
-pinname,o
-definition,o,inverter output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,****************
+pinname,clocksync_low
+definition,clocksync_low,clocksync low output flag
+iq,clocksync_low,SIMULATION
+absmax,clocksync_low,6
+absmin,clocksync_low,-0.3
+io,clocksync_low,output
+mode,clocksync_low,digital
+router,clocksync_low,TBD
+dftpriority,clocksync_low,1
+esd,clocksync_low,TBD
 
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
+pinname,enable_clocksync
+definition,enable_clocksync,clocksync enable
+iq,enable_clocksync,SIMULATION
+absmax,enable_clocksync,6
+absmin,enable_clocksync,-0.3
+io,enable_clocksync,input
+mode,enable_clocksync,digital
+router,enable_clocksync,TBD
+dftpriority,enable_clocksync,1
+esd,enable_clocksync,TBD
 
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
+pinname,global_clocksync
+definition,global_clocksync,clocksync global enable
+iq,global_clocksync,SIMULATION
+absmax,global_clocksync,6
+absmin,global_clocksync,-0.3
+io,global_clocksync,input
+mode,global_clocksync,digital
+router,global_clocksync,TBD
+dftpriority,global_clocksync,1
+esd,global_clocksync,TBD
 
+pinname,CELSUB
+definition,CELSUB,substrate
+iq,CELSUB,SIMULATION
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
+io,CELSUB,input
+mode,CELSUB,analog
+routerSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
+
+//**********************************************
+//Constraints Parameters*******************
+constraint,clocksync,clocksync_in,shield
+constraint,clocksync,clocksync_out,shield
+constraint,clocksync,clk,shield
+//**********************************************
+endbio
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -879,3 +1047,4 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+

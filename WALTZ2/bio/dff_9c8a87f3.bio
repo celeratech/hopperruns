@@ -1,34 +1,45 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///Celera Confidential BIO Data Generator
+//Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
+cell,dff
 //**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.5.0
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
+
+limit,dff_edge,choose0,rise
+limit,dff_edge,choose1,fall
+limit,dff_outputs,choose0,q
+limit,dff_outputs,choose1,qb
+limit,dff_outputs,choose2,both
+limit,dff_bits,minimum,1
+limit,dff_bits,maximum,16
+limit,dff_vmax,choose0,2
+limit,dff_vmax,choose1,6
+
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+user,dff_edge,rise
+user,NESTOrevision,0.5.0
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,dff
+register,instance,dff_9c8a87f3
 register,source,cell
 
-//Logic nand2
+//Logic dff
 register,name,na
 register,enable,no
 register,bits,0
@@ -49,11 +60,11 @@ register,busname,na
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,dff
+factory,instance,dff_9c8a87f3
 factory,source,cell
 
-//LOGIC CELLS nand2
+//LOGIC CELLS dff
 factory,name,na
 factory,enable,no
 factory,bits,0
@@ -73,17 +84,63 @@ factory,busname,na
 //**********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
+layout,dff
+place PEBBLES PEBBLEdffR 0 0 R0
+place PEBBLES PEBBLEdffF 0 0 R0
 movePINS
 endlayoutbio
+
+
 //**********************************************
 //Project Parameters
+//Celera:WALTZ2 Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
+sub_area,STONEnoconn,0
+sub_area,PEBBLEdffR,195
+generate_area,dff_9c8a87f3,195
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.4
@@ -92,17 +149,18 @@ generate_area,nand2_9125fe87,60
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//dff
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
-
+pinorder,d,ck,q,net_skip,rb
 endpinorder
 //**********************************************
+
+//**********************************************
 //TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
+cell,dff
+trim,instance,dff_9c8a87f3
 
 trim,name,na
 trim,enable,no
@@ -134,7 +192,7 @@ pinname,CELV
 definition,CELV,power
 iq,CELV,SIMULATION
 absmax,CELV,6
-absmin,CELV,1.4
+absmin,CELV,2.0
 io,CELV,power
 mode,CELV,power
 router,CELV,TBD
@@ -144,62 +202,68 @@ esd,CELV,TBD
 pinname,CELG
 definition,CELG,power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,****************
-
+absmax,CELG,0.3
+absmin,CELG,-0.3
 io,CELG,power
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i0
-definition,i0,nand2 input
-iq,i0,SIMULATION
-absmax,i0,6
-absmin,i0,****************
+pinname,d
+definition,d,dff d input 
+iq,d,SIMULATION
+absmax,d,6
+absmin,d,-0.3
+io,d,input
+mode,d,digital
+router,d,TBD
+dftpriority,d,1
+esd,d,TBD
 
-io,i0,input
-mode,i0,digital
-router,i0,TBD
-dftpriority,i0,1
-esd,i0,TBD
+pinname,rb
+definition,rb,dff reset 
+iq,rb,SIMULATION
+absmax,rb,6
+absmin,rb,-0.3
+io,rb,input
+mode,rb,digital
+router,rb,TBD
+dftpriority,rb,1
+esd,rb,TBD
 
-pinname,i1
-definition,i1,nand2 input
-iq,i1,SIMULATION
-absmax,i1,6
-absmin,i1,****************
+pinname,ck
+definition,ck,dff clock input
+iq,ck,SIMULATION
+absmax,ck,6
+absmin,ck,-0.3
+io,ck,input
+mode,ck,digital
+router,ck,TBD
+dftpriority,ck,1
+esd,ck,TBD
 
-io,i1,input
-mode,i1,digital
-router,i1,TBD
-dftpriority,i1,1
-esd,i1,TBD
+pinname,q
+definition,q,dff output 
+iq,q,SIMULATION
+absmax,q,6
+absmin,q,-0.3
+io,q,output
+mode,q,digital
+router,q,TBD
+dftpriority,q,1
+esd,q,TBD
 
-pinname,o
-definition,o,inverter output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,****************
-
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
-
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
+pinname,CELSUB
+definition,CELSUB,DFF Substrate power
+iq,CELSUB,SIMULATION
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
+io,CELSUB,input
+mode,CELSUB,power
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
 
 //**********************************************
 //Process Parameters
@@ -879,3 +943,4 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+

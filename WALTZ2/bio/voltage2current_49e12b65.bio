@@ -1,34 +1,61 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///Celera Confidential BIO Data Generator
+//Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
-//**********************************************
+cell,voltage2current
+///**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.3.3
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
+
+limit,voltage2current_gain,minimum,1.0
+limit,voltage2current_gain,maximum,250.0
+limit,voltage2current_direction,choose0,source
+limit,voltage2current_direction,choose1,sink
+limit,voltage2current_iout_clamp,choose0,no
+limit,voltage2current_iout_clamp,choose1,yes
+limit,voltage2current_iout,minimum,10.0
+limit,voltage2current_iout,maximum,500.0
+limit,voltage2current_vmax,choose0,2
+limit,voltage2current_vmax,choose1,6
+limit,voltage2current_dft,choose0,no
+limit,voltage2current_dft,choose1,yes
+limit,voltage2current_type,choose0,p
+limit,voltage2current_type,choose1,n
+limit,voltage2current_type,choose2,np
+limit,voltage2current_accuracy,choose0,no
+limit,voltage2current_accuracy,choose1,yes
+
+limit,voltage2current_trim_name,text
+limit,voltage2current_trim_description,text
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+user,voltage2current_gain,25
+description,V2I gainuMho
+user,voltage2current_direction,source
+description,V2I current current direction
+user,voltage2current_iout,200
+description,V2I Maximum Output Current
+user,NESTO,0.3.3
+description,NESTO generate revision
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,voltage2current
+register,instance,voltage2current_49e12b65
 register,source,cell
 
-//Logic nand2
+//voltage2current
 register,name,na
 register,enable,no
 register,bits,0
@@ -45,15 +72,14 @@ register,description6,description6,not used
 register,description7,description7,not used
 //Netlister Information
 register,busname,na
-
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,voltage2current
+factory,instance,voltage2current_49e12b65
 factory,source,cell
 
-//LOGIC CELLS nand2
+//voltage2current
 factory,name,na
 factory,enable,no
 factory,bits,0
@@ -71,48 +97,133 @@ factory,description7,description7,not used
 //Netlister Information
 factory,busname,na
 //**********************************************
+//CELL DFT Parameters
+// *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
-movePINS
+layout,voltage2current
+
+place Generate STONEv2imain 0 0 R0
+place CASCODES CASCODEanalogv2ipmirrtrim100u 0 0 R0
+place Generate STONEv2idft 122.9 -0.86 R0
+place Generate STONEv2ipmirr100u 115 0 R0
+place Generate STONEv2ipmirr200u 115 0 R0
+place Generate STONEv2ipmirr500u 428.69 -145.335 MY
+place Generate STONEv2ipmirrtrim100u 49.37 -124.325 R0
+place Generate STONEv2ipmirrtrim200u 200 0 R0
+place Generate STONEv2ipmirrtrim500u 415.9 -145.335 MY
+place Generate STONEv2inmirr100u 150 0 R0
+place Generate STONEv2inmirr200u 150 0 R0
+place Generate STONEv2inmirr500u 150 0 R0
+place Generate STONEv2inmirrtrim100u 49.37 -124.325 R0
+place Generate STONEv2inmirrtrim200u -9.205 -141.92 R0
+place Generate STONEv2inmirrtrim500u 279.575 -220.43 MY
+placeTAP 140 10
+placeRES 124.175 -13 0.8 0.8 R90 x y 70
+placeRES 175.8 -13 0.8 0.8 R90 x y 70
+placeTAP 176 6
+placeRES 140.315 50.51 0.8 0.8 R0 x y maxL
+placeINST Xvbuf -87.02 81.02 MX
+placeRES 52.15 46.045 0.8 0.8 R0 x y maxL
+placeRESRING
+placeINST Xvbuf -87.02 81.02 MX
+placeHVRING rect
+//placeROUTE
 endlayoutbio
+
 //**********************************************
 //Project Parameters
+//Celera:WALTZ2 Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
+sub_area,STONEv2ipmirr100u,200
+sub_area,rlpp3000rpo22p2u2p0u,50
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEv2imain,100
+generate_area,voltage2current_49e12b65,350
 // *********************************************
 //Calculator Parameters
-#define,CELVminimum,1.4
+#define,VOLTAGE2CURRENTminrunitw,2.0
+#define,VOLTAGE2CURRENTrunitmaxr,160.0
+#define,VOLTAGE2CURRENTrunitminr,8.0
+#define,VOLTAGE2CURRENTidensity,500
+#define,VOLTAGE2CURRENTmaxparallel,16
+#define,SIMPVminimum,2.0
+#define,V2Ipretrimhigh,30.0
+#define,V2Ipretrimlow,30.0
+#define,V2Iposttrimlsb,2.0
+#define,V2ItrimInput,1.0
+#define,V2ItrimTAEXT,1.20
+#define V2IimaxGain,5.0 
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//voltage2current
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
+pinorder,VIN,enable_voltage2current,IOUT,SIMPV,ok_voltage2current
 
 endpinorder
 //**********************************************
 //TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
+cell,voltage2current
+trim,instance,voltage2current_49e12b65
 
 trim,name,na
 trim,enable,no
 trim,bits,TBD
 trim,por,0
-trim,pinname,TBD
+trim,pinname,trim_voltage2current
 trim,testname,TBD
-trim,description,TBD
+trim,description,voltage2current offset trim
 trim,target,na
-trim,units,TBD
+trim,units,uA
 trim,pretrim_low_limit,TBD
 trim,pretrim_high_limit,TBD
 trim,posttrim_low_limit,TBD
@@ -127,80 +238,135 @@ trim,description5,empty
 trim,description6,empty
 trim,description7,empty
 
+
+
 //**********************************************
-//Cell Pin Descriptions	
+//Cell Pin Descriptions
 //**********************************************
-pinname,CELV
-definition,CELV,power
-iq,CELV,SIMULATION
-absmax,CELV,6
-absmin,CELV,1.4
-io,CELV,power
-mode,CELV,power
-router,CELV,TBD
-dftpriority,CELV,1
-esd,CELV,TBD
+pinname,SIMPV
+definition,SIMPV,power supply
+iq,SIMPV,SIMULATION
+absmax,SIMPV,6
+absmin,SIMPV,2.0
+io,SIMPV,input
+mode,SIMPV,power
+router,SIMPV,TBD
+dftpriority,SIMPV,1
+esd,SIMPV,TBD
 
 pinname,CELG
 definition,CELG,power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,****************
-
-io,CELG,power
+absmax,CELG,0.3
+absmin,CELG,-0.3
+io,CELG,input
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i0
-definition,i0,nand2 input
-iq,i0,SIMULATION
-absmax,i0,6
-absmin,i0,****************
+pinname,CELSUB
+definition,CELSUB,power ground
+iq,CELSUB,SIMULATION
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
+io,CELSUB,input
+mode,CELSUB,power
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
 
-io,i0,input
-mode,i0,digital
-router,i0,TBD
-dftpriority,i0,1
-esd,i0,TBD
+pinname,enable_voltage2current
+definition,enable_voltage2current,Enable V2I
+iq,enable_voltage2current,SIMULATION
+absmax,enable_voltage2current,6
+absmin,enable_voltage2current,-0.3
+io,enable_voltage2current,input
+mode,enable_voltage2current,digital
+router,enable_voltage2current,TBD
+dftpriority,enable_voltage2current,1
+esd,enable_voltage2current,TBD
 
-pinname,i1
-definition,i1,nand2 input
-iq,i1,SIMULATION
-absmax,i1,6
-absmin,i1,****************
+pinname,IP
+definition,IP,Reference Current,0.5uA
+iq,IP,SIMULATION
+absmax,IP,6
+absmin,IP,-0.3
+io,IP,input
+mode,IP,analog
+router,IP,TBD
+dftpriority,IP,1
+esd,IP,TBD
 
-io,i1,input
-mode,i1,digital
-router,i1,TBD
-dftpriority,i1,1
-esd,i1,TBD
+pinname,ok_voltage2current
+definition,ok_voltage2current,voltage2current OK
+iq,ok_voltage2current,SIMULATION
+absmax,ok_voltage2current,6
+absmin,ok_voltage2current,-0.3
+io,ok_voltage2current,output
+mode,ok_voltage2current,digital
+router,ok_voltage2current,TBD
+dftpriority,ok_voltage2current,1
+esd,ok_voltage2current,TBD
 
-pinname,o
-definition,o,inverter output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,****************
+pinname,IOUT
+definition,IOUT,current output pin
+iq,IOUT,SIMULATION
+absmax,IOUT,6
+absmin,IOUT,-0.3
+io,IOUT,output
+mode,IOUT,analog
+router,IOUT,TBD
+dftpriority,IOUT,1
+esd,IOUT,TBD
 
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
+pinname,VIN
+definition,VIN,Voltage Input
+iq,VIN,SIMULATION
+absmax,VIN,6
+absmin,VIN,-0.3
+io,VIN,input
+mode,VIN,analog
+router,VIN,TBD
+dftpriority,VIN,1
+esd,VIN,TBD
 
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
 
+
+pinname,global_voltage2current
+definition,global_voltage2current,Global Test Enable
+iq,global_voltage2current,SIMULATION
+absmax,global_voltage2current,6
+absmin,global_voltage2current,-0.3
+io,global_voltage2current,input
+mode,global_voltage2current,digital
+router,global_voltage2current,TBD
+dftpriority,global_voltage2current,1
+esd,global_voltage2current,TBD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Constraints Parameters*******************
+constraint,voltage2current,IP,shield
+constraint,voltage2current,IOUT,shield
+constraint,voltage2current,VIN,shield
+constraint,voltage2current,REF,shield
+//**********************************************
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -879,3 +1045,17 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+// *********************************************
+
+
+
+
+
+
+
+
+
+
+
+
+

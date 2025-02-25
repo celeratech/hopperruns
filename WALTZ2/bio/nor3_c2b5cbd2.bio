@@ -2,10 +2,30 @@
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ///Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
+cell,nor3
 //**********************************************
 //Generator Revision
 revision,generator,0.3.0
@@ -18,21 +38,21 @@ limit,logicgate_vmax,choose1,6
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+user,logicgate_vmax,6
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,nor3
+register,instance,nor3_c2b5cbd2
 register,source,cell
 
-//Logic nand2
+//Logic nor3
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readonly
+register,mode,na
 register,por,0
 register,userdescription,na
 register,description0,description0,not used
@@ -49,15 +69,15 @@ register,busname,na
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,nor3
+factory,instance,nor3_c2b5cbd2
 factory,source,cell
 
-//LOGIC CELLS nand2
+//LOGIC CELLS nor3
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,readonly
+factory,mode,na
 factory,por,0
 factory,userdescription,na
 factory,description0,description0,not used
@@ -73,17 +93,59 @@ factory,busname,na
 //**********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
+layout,nor3
+place PEBBLES PEBBLEnor3 0 0 R0
 movePINS
 endlayoutbio
 //**********************************************
 //Project Parameters
+//Celera:WALTZ2 Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
+sub_area,PEBBLEnor3,70
+generate_area,nor3_c2b5cbd2,70
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.4
@@ -92,17 +154,17 @@ generate_area,nand2_9125fe87,60
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//nor3
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
+pinorder,i0,i1,o,i2
 
 endpinorder
 //**********************************************
 //TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
+cell,nor3
+trim,instance,nor3_c2b5cbd2
 
 trim,name,na
 trim,enable,no
@@ -134,7 +196,7 @@ pinname,CELV
 definition,CELV,power
 iq,CELV,SIMULATION
 absmax,CELV,6
-absmin,CELV,1.4
+absmin,CELV,2.0
 io,CELV,power
 mode,CELV,power
 router,CELV,TBD
@@ -144,10 +206,8 @@ esd,CELV,TBD
 pinname,CELG
 definition,CELG,power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,****************
-
+absmax,CELG,0.3
+absmin,CELG,-0.3
 io,CELG,power
 mode,CELG,power
 router,CELG,TBD
@@ -155,11 +215,10 @@ dftpriority,CELG,1
 esd,CELG,TBD
 
 pinname,i0
-definition,i0,nand2 input
+definition,i0,nor3 input 
 iq,i0,SIMULATION
 absmax,i0,6
-absmin,i0,****************
-
+absmin,i0,-0.3
 io,i0,input
 mode,i0,digital
 router,i0,TBD
@@ -167,23 +226,32 @@ dftpriority,i0,1
 esd,i0,TBD
 
 pinname,i1
-definition,i1,nand2 input
+definition,i1,nor3 input 
 iq,i1,SIMULATION
 absmax,i1,6
-absmin,i1,****************
-
+absmin,i1,-0.3
 io,i1,input
 mode,i1,digital
 router,i1,TBD
 dftpriority,i1,1
 esd,i1,TBD
 
+pinname,i2
+definition,i2,nor3 input 
+iq,i2,SIMULATION
+absmax,i2,6
+absmin,i2,-0.3
+io,i2,input
+mode,i2,digital
+router,i2,TBD
+dftpriority,i2,1
+esd,i2,TBD
+
 pinname,o
-definition,o,inverter output 
+definition,o,nor3 output 
 iq,o,SIMULATION
 absmax,o,6
-absmin,o,****************
-
+absmin,o,-0.3
 io,o,output
 mode,o,digital
 router,o,TBD
@@ -193,14 +261,13 @@ esd,o,TBD
 pinname,SUB
 definition,SUB,substrate
 iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
+absmax,SUB,0.3
+absmin,SUB,-0.3
 io,SUB,input
 mode,SUB,power
 router,SUB,TBD
 dftpriority,SUB,1
 esd,SUB,TBD
-
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1

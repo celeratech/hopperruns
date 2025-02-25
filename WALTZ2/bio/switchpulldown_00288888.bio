@@ -1,34 +1,65 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-///Celera Confidential BIO Data Generator
+//Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
+cell,switch
 //**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.4.1
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
+limit,switch_ron,choose1,10
+limit,switch_ron,choose2,100
+limit,switch_ron,choose3,500
+limit,switch_ron,choose4,1000
+limit,switch_ron,choose5,10000
+limit,switch_vmax,choose0,2
+limit,switch_vmax,choose1,6
+limit,switch_type,choose1,gnd
+limit,switch_type,choose2,supply
+limit,switch_type,choose3,transmission
+limit,switch_type,choose4,tswitch
+limit,switch_type,choose5,pullup
+limit,switch_type,choose6,pulldown,
+limit,switch_polarity,choose0,noninvert
+limit,switch_polarity,choose1,invert
+limit,switch_pulldownvmax,choose1,2
+limit,switch_pulldownvmax,choose2,6
+limit,switch_pulldownvmax,choose3,12
+limit,switch_pulldownvmax,choose4,20
+limit,switch_pulldownvmax,choose5,24
+limit,switch_pulldownvmax,choose6,30
+limit,switch_pulldownvmax,choose7,36
+limit,switch_pulldownvmax,choose8,40
+limit,switch_pulldownvmax,choose9,45
+limit,switch_pulldownvmax,choose10,60
+
+
+
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+user,switch_ron,10000Ohm@6V
+description,Switch ON Resistance
+user,switch_polarity,invert
+description,Switch Enable Polarity
+user,NESTO,0.4.1
+description,Nesto generate revision
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,switch
+register,instance,switchpulldown_00288888
 register,source,cell
 
-//Logic nand2
+//switch
 register,name,na
 register,enable,no
 register,bits,0
@@ -45,15 +76,14 @@ register,description6,description6,not used
 register,description7,description7,not used
 //Netlister Information
 register,busname,na
-
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,switch
+factory,instance,switchpulldown_00288888
 factory,source,cell
 
-//LOGIC CELLS nand2
+//switch
 factory,name,na
 factory,enable,no
 factory,bits,0
@@ -73,8 +103,80 @@ factory,busname,na
 //**********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
+layout,switch
+
+placeINST Xnmos0 0 0 R0
+place PEBBLES PEBBLEinv1 31.905 -3.665 R0
+place PEBBLES PEBBLEdbuf 33.795 -3.665 R0
+
+placeALTVIEW PEBBLES PEBBLEswitchG1K layout1 0 0 R0
+place Generate STONEswitchG1K 0 0 R0
+place PEBBLES PEBBLEswitchV1K 0 0 R0
+place Generate STONEswitchV1K 0 00 R0
+place PEBBLES PEBBLEtsw1K 0 0 R0
+place Generate STONEtsw1K 0 0 R0
+place PEBBLES PEBBLExg1K 0 0 R0
+place Generate STONExg1K 0 0 R0
+place PEBBLES PEBBLEswitchG10K 0 0 R0
+place Generate STONEswitchG10K 0 0 R0
+place PEBBLES PEBBLEtsw10K 0 0 R0
+place Generate STONEtsw10K 0 0 R0
+place PEBBLES PEBBLEswitchV10K 0 0 R0
+place Generate STONEswitchV10K 0 0 R0
+place PEBBLES PEBBLExg10K 0 0 R0
+place Generate STONExg10K 0 0 R0
+place PEBBLES PEBBLEtsw10 0 0 R0
+place Generate STONEtsw10 0 0 R0
+place PEBBLES PEBBLEswitchG10 0 0 R0
+place Generate STONEswitchG10 0 0 R0
+place PEBBLES PEBBLEswitchV10 0 0 R0
+place Generate STONEswitchV10 0 0 R0
+place PEBBLES PEBBLExg10 0 0 R0
+place Generate STONExg10 0 0 R0
+place PEBBLES PEBBLEtsw100 0 0 R0
+place Generate STONEtsw100 0 0 R0
+place PEBBLES PEBBLEswitchG100 0 0 R0
+place Generate STONEswitchG100 0 0 R0
+place PEBBLES PEBBLEswitchG1K 0 0 R0
+place Generate STONEswitchV1K 0 0 R0
+place PEBBLES PEBBLEswitchV1K 0 0 R0
+place Generate STONEswitchG1K 0 0 R0
+place PEBBLES PEBBLEtsw1K 0 0 R0
+place Generate STONEtsw1K 0 0 R0
+place PEBBLES PEBBLExg1K 0 0 R0
+place Generate STONExg1K 0 0 R0
+place PEBBLES PEBBLEswitchG10K 0 0 R0
+place Generate STONEswitchG10K 0 0 R0
+place PEBBLES PEBBLEtsw10K 0 0 R0
+place Generate STONEtsw10K 0 0 R0
+place PEBBLES PEBBLEswitchV10K 0 0 R0
+place Generate STONEswitchV10K 0 0 R0
+place PEBBLES PEBBLExg10K 0 0 R0
+place Generate STONExg10K 0 0 R0
+place PEBBLES PEBBLEtsw10 0 0 R0
+place Generate STONEtsw10 0 0 R0
+place PEBBLES PEBBLEswitchG10 0 0 R0
+place Generate STONEswitchG10 0 0 R0
+place PEBBLES PEBBLEswitchV10 0 0 R0
+place Generate STONEswitchV10 0 0 R0
+place PEBBLES PEBBLExg10 0 0 R0
+place Generate STONExg10 0 0 R0
+place PEBBLES PEBBLEtsw100 0 0 R0
+place Generate STONEtsw100 0 0 R0
+place PEBBLES PEBBLEswitchG100 0 0 R0
+place Generate STONEswitchG100 0 0 R0
+place PEBBLES PEBBLEswitchV100 0 0 R0
+place Generate STONEswitchV100 0 0 R0
+place PEBBLES PEBBLExg100 0 0 R0
+place Generate STONExg100 0 0 R0
+place PEBBLES PEBBLEswitchG500 0 0 R0
+place Generate STONEswitchG500 0 0 R0
+place PEBBLES PEBBLEswitchV500 0 0 R0
+place Generate STONEswitchV500 0 0 R0
+place PEBBLES PEBBLExg500 0 0 R0
+place Generate STONExg500 0 0 R0
+place PEBBLES PEBBLEtsw500 0 0 R0
+place Generate STONEtsw500 0 0 R0
 movePINS
 endlayoutbio
 //**********************************************
@@ -82,27 +184,31 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
+sub_area,PEBBLEdbuf,80
+sub_area,PEBBLEinv1,30
+sub_area,fet_switchpulldown_00288888_Xnmos0,80360
+generate_area,switchpulldown_00288888,80470
 // *********************************************
-//Calculator Parameters
-#define,CELVminimum,1.4
-//**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//switchpulldown
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
-
+pinorder,net_skip,O,enable_switchb
 endpinorder
 //**********************************************
+
+// *********************************************
+//Calculator Parameters
+#define,CELVminimum,1.4
+#define,FETlayoutrotatePULLDOWN,n0
+//**********************************************	
 //TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
+cell,switch
+trim,instance,switchpulldown_00288888
 
 trim,name,na
 trim,enable,no
@@ -126,10 +232,10 @@ trim,description4,empty
 trim,description5,empty
 trim,description6,empty
 trim,description7,empty
+//**********************************************
+//Cell Pin Descriptions
+// *********************************************
 
-//**********************************************
-//Cell Pin Descriptions	
-//**********************************************
 pinname,CELV
 definition,CELV,power
 iq,CELV,SIMULATION
@@ -144,9 +250,9 @@ esd,CELV,TBD
 pinname,CELG
 definition,CELG,power ground
 iq,CELG,SIMULATION
-absmax,CELG,
+absmax,CELG,*******
 
-absmin,CELG,****************
+absmin,CELG,***********************
 
 io,CELG,power
 mode,CELG,power
@@ -154,53 +260,40 @@ router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i0
-definition,i0,nand2 input
-iq,i0,SIMULATION
-absmax,i0,6
-absmin,i0,****************
+pinname,enable_switchb
+definition,enable_switchb,switch inverted enable 
+iq,enable_switchb,SIMULATION
+absmax,enable_switchb,6
+absmin,enable_switchb,***********************
 
-io,i0,input
-mode,i0,digital
-router,i0,TBD
-dftpriority,i0,1
-esd,i0,TBD
+io,enable_switchb,input
+mode,enable_switchb,digital
+router,enable_switchb,TBD
+dftpriority,enable_switchb,1
+esd,enable_switchb,TBD
 
-pinname,i1
-definition,i1,nand2 input
-iq,i1,SIMULATION
-absmax,i1,6
-absmin,i1,****************
+pinname,O
+definition,O,switch output 
+iq,O,SIMULATION
+absmax,O,6
+absmin,O,***********************
 
-io,i1,input
-mode,i1,digital
-router,i1,TBD
-dftpriority,i1,1
-esd,i1,TBD
+io,O,inout
+mode,O,analog
+router,O,TBD
+dftpriority,O,1
+esd,O,TBD
 
-pinname,o
-definition,o,inverter output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,****************
-
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
-
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
-
+pinname,CELSUB
+definition,CELSUB,Substrate
+iq,CELSUB,SIMULATION
+absmax,CELSUB,
+absmin,CELSUB,
+io,CELSUB,input
+mode,CELSUB,power
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -878,4 +971,5 @@ revision,vis15cb,0p1
 #define,AP5G60DC1minmult,1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
-endbio
+endbio// *********************************************
+

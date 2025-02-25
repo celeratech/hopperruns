@@ -1,38 +1,103 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///Celera Confidential BIO Data Generator
+//Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
+cell,resistordivider
 //**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.4.8
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
+
+limit,resistordivider_vmax,choose0,2
+limit,resistordivider_vmax,choose1,6
+limit,resistordivider_vresistortop,choose0,2
+limit,resistordivider_vresistortop,choose1,6
+limit,resistordivider_vresistortop,choose2,6
+limit,resistordivider_vresistortop,choose3,12
+limit,resistordivider_vresistortop,choose3,20
+limit,resistordivider_vresistortop,choose5,24
+limit,resistordivider_vresistortop,choose6,30
+limit,resistordivider_vresistortop,choose7,36
+limit,resistordivider_vresistortop,choose8,40
+limit,resistordivider_vresistortop,choose9,45
+limit,resistordivider_vresistortop,choose10,60
+limit,resistordivider_rtotal,minimum,10.0
+limit,resistordivider_rtotal,maximum,10000.0
+limit,resistordivider_disconnect,choose0,no
+limit,resistordivider_disconnect,choose0,yes
+limit,resistordivider_disconnect_tap,choose0,top
+limit,resistordivider_disconnect_tap,choose1,bottom
+limit,resistordivider_disconnect_tap,choose2,tap0
+limit,resistordivider_disconnect_tap,choose3,tap1
+limit,resistordivider_disconnect_tap,choose4,tap2
+limit,resistordivider_disconnect_tap,choose5,tap3
+limit,resistordivider_disconnect_tap,choose6,tap4
+limit,resistordivider_disconnect_tap,choose7,tap5
+limit,resistordivider_disconnect_tap,choose8,tap6
+limit,resistordivider_disconnect_tap,choose9,tap7
+limit,resistordivider_outputs,minimum,1
+limit,resistordivider_outputs,maximum,8
+limit,resistordivider_tap0,minimum,1.0
+limit,resistordivider_tap0,maximum,99.0
+limit,resistordivider_tap1,minimum,1.0
+limit,resistordivider_tap1,maximum,99.0
+limit,resistordivider_tap2,minimum,1.0
+limit,resistordivider_tap2,maximum,99.0
+limit,resistordivider_tap3,minimum,1.0
+limit,resistordivider_tap3,maximum,99.0
+limit,resistordivider_tap4,minimum,1.0
+limit,resistordivider_tap4,maximum,99.0
+limit,resistordivider_tap5,minimum,1.0
+limit,resistordivider_tap5,maximum,99.0
+limit,resistordivider_tap6,minimum,1.0
+limit,resistordivider_tap6,maximum,99.0
+limit,resistordivider_tap7,minimum,1.0
+limit,resistordivider_tap7,maximum,99.0
+
+limit,resistordivider_dft,choose0,no
+limit,resistordivider_dft,choose1,yes
+
+
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+user,resistordivider_vresistortop,6V
+description,Resistor divider top volatge
+user,resistordivider_rtotal,100.0K
+description,Resistor divider total impedance
+user,resistordivider_disconnect_tap,top
+description,Resistor divider Disconnect Tap
+user,resistordivider_vmax,6V
+description,Resistor divider Absolute Maxiumum voltage rating
+user,resistordivider_tap0,60%
+description,Resistor divider TAP0
+user,resistordivider_tap1,92%
+description,Resistor divider TAP1
+user,resistordivider_tap2,95%
+description,Resistor divider TAP2
+user,NESTO,0.4.8
+description,Nesto Revision
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,resistordivider
+register,instance,resistordivider_b8083128
 register,source,cell
 
-//Logic nand2
+//resistordivider
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readonly
+register,mode,na
 register,por,0
 register,userdescription,na
 register,description0,description0,not used
@@ -45,19 +110,18 @@ register,description6,description6,not used
 register,description7,description7,not used
 //Netlister Information
 register,busname,na
-
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,resistordivider
+factory,instance,resistordivider_b8083128
 factory,source,cell
 
-//LOGIC CELLS nand2
+//resistordivider
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,readonly
+factory,mode,na
 factory,por,0
 factory,userdescription,na
 factory,description0,description0,not used
@@ -71,38 +135,213 @@ factory,description7,description7,not used
 //Netlister Information
 factory,busname,na
 //**********************************************
+//CELL DFT Parameters
+// *********************************************
+//Layout Parameters
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
-movePINS
+layout,resistordivider
+
+placeIFELSE cellNameNOTContains sw
+placeRES 0.26 -2.21 0.8 0.8 R0 x y 70
+placeRESRING
+place Generate STONEresistordividermain 0 0 R0
+placeELSE
+placeEND
+placeIF cellNameContains psw40
+place Generate STONEresistordividerpsw40v10u 0 0 MXR90
+place Generate STONEresistordividerpsw40v100u 0 0 MXR90
+placeSTEP PEBBLES PEBBLEswitchG10K 55.765 0.85 x 4.41 R0
+place Generate STONEresistordividermain 45.685 0.85 R0
+placeRES 11.835 -12.34 0.8 0.8 R0 x -y 102
+placeRESRING
+placeHVRING
+placeEND
+placeIF cellNameContains psw30v
+place Generate STONEresistordividerpsw30v10u 0 0 MXR90
+place Generate STONEresistordividerpsw30v100u 0 0 MXR90
+place Generate STONEresistordividermain 10.28 -19.48 R0
+placeSTEP PEBBLES PEBBLEswitchG10K 20.36 -19.48 x 4.41 R0
+placeRES 10.54 -21.21 0.56 0.8 R0 x -y 120
+placeRESRING
+placeHVRING
+placeEND
+placeIF cellNameContains nsw30
+place Generate STONEresistordividernsw30v10u 0 -8.98 MY
+place Generate STONEresistordividernsw30v100u 0 -8.98 MY
+place Generate STONEresistordividermain 19.98 0 R90
+placeSTEP PEBBLES PEBBLEswitchG10K 19.98 10.08 y 4.41 R90
+placeRES 24.415 0.26 0.8 0.8 R90 x y 70
+placeRESRING
+placeHVRING
+placeEND
+placeIF cellNameContains 5v10u
+place Generate STONEresistordividersw5v10u 42.84 8.37 R180
+place Generate STONEresistordividermain 42.84 8.37 MX
+placeSTEP PEBBLES PEBBLEswitchG10K 52.92 8.37 y 4.41 MX
+placeRES 0.21 10.1 0.8 0.8 R0 x y 70
+placeRESRING
+placeEND
+placeIF cellNameContains 5v100u
+place Generate STONEresistordividersw5v100u 0 0 MXR90
+place Generate STONEresistordividermain 33.01 -8.02 R0
+placeSTEP PEBBLES PEBBLEswitchG10K 43.04 -8.02 y 4.41 R0
+placeRES 0.715 -10.75 0.8 0.8 R0 x -y 63
+placeRESRING
+placeEND
+placeROUTE
+moveORIGIN x
+moveORIGIN y
 endlayoutbio
+
 //**********************************************
 //Project Parameters
+//Celera:WALTZ2 Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
+sub_area,STONEnoconn,0
+sub_area,STONEresistordividermain,100
+sub_area,STONEresistordividersw5v10u,200
+sub_area,rlpp3000rpo1p0u0p4u,1
+sub_area,rlpp3000rpo0p9u0p4u,2
+sub_area,rlpp3000rpo3p1u0p4u,2
+sub_area,rlpp3000rpo5p7u0p4u,3
+generate_area,resistordivider_b8083128,308
 // *********************************************
 //Calculator Parameters
-#define,CELVminimum,1.4
+#define,CELVminimum,1.2
+#define,RESISTORDIVIDERminimumvaluePOLY,0.5
+#define,RESISTORDIVIDERtolerance,0.05
+#define,RESISTORDIVIDERrmult,4
+
+#define,RESISTORDIVIDERresistoriso,CELG
+#define,RESISTORDIVIDERrontopLOW,1.9
+#define,RESISTORDIVIDERrontopHIGH,5.0
+#define,RESISTORDIVIDERronbottomLOW,1.9
+#define,RESISTORDIVIDERronbottomHIGH,5.0
+#define,RESISTORDIVIDERrontapLOW,1.9
+#define,RESISTORDIVIDERrontapHIGH,5.0
+#define,RESISTORDIVIDERronthreshold,50.0
+
+#define,RESISTORDIVIDERiq,15.0
+#define,RESISTORDIVIDERv0,6.0
+#define,RESISTORDIVIDERv1,12.0
+#define,RESISTORDIVIDERv2,30.0
+#define,RESISTORDIVIDERswitchvt,2.0
+#define,RESISTORDIVIDERraccuracy,1000.0
+
+//Layout Calculators
+#define,RESISTORDIVIDERrwidth0,2.0
+#define,RESISTORDIVIDERrwidth1,0.5
+#define,RESISTORDIVIDERrlength,25.0
+#define,RESISTORDIVIDERrpercenterror,0.25
+#define,RESISTORDIVIDERrparallel,30
+//////////////////////////////////////////////////////////////////////////////////
+
+//Define Resistor calculator Algorithm
+//#define,RESISTORlayoutalgorithm,layout
+#define,RESISTORlayoutalgorithm,size
+#define,RESISTORlengthstep,0.1
+#define,RESISTORwidthstep,0.1
+//Define Resistor Area Calculator Algorithm
+//#define,RESISTORareaalgorithm,1
+//1=Resistor in one column
+#define,RESISTORareaalgorithm,2
+//2=Worst Case Kl+Kw
+//#define,RESISTORareaalgorithm,3
+//3 Define X Dimesion and calculate Row/Column
+#define,RESISTORareaXdimesion,100
+//X diminsion area that resistor can fit into
+
+//maximum number of parallel resistors
+#define,RESISTORparallelmaxPOLY,256
+#define,RESISTORparallelmaxRPOD,300
+#define,RESISTORparallelmaxRPODRPO,300
+#define,RESISTORparallelmaxRNOD,300
+#define,RESISTORparallelmaxRNODRPO,300
+
+//Starting Resistor Length <if Algorithm=layout>
+#define,RESISTORlayoutstartlengthPOLY,50.0
+#define,RESISTORlayoutstartlengthRPOD,60.0
+#define,RESISTORlayoutstartlengthRPODRPO,60.0
+#define,RESISTORlayoutstartlengthRNOD,60.0
+#define,RESISTORlayoutstartlengthRNODRPO,60.0
+
+#define,RESISTORlayoutmaxlength,100.0
+//POLY Resistor
+//type=tbd minimum value of poly resistor
+#define,RESISTORminimumvaluePOLY,3.0
+
+
+//Resistor Type rules
+#define RESISTORtbd,yes
+//#define RESISTORtdb,no
+//reassign tbd resistor type
+
+#define RESISTORrpodrposwitch,0.4
+#define RESISTORrpodswitch,0.1
+//switch resistor from rpodrpo to rpod
+///////////////////////////////////////////////////////////////////////////////
+
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//resistordivider
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
-
+pinorder,TAP0,TAP1,TAP2,net_skip,net_skip,net_skip,net_skip,net_skip,TOP,BOTTOM,enable_resistordivider
 endpinorder
 //**********************************************
+
+//**********************************************
 //TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
+cell,resistordivider
+trim,instance,resistordivider_b8083128
 
 trim,name,na
 trim,enable,no
@@ -112,7 +351,7 @@ trim,pinname,TBD
 trim,testname,TBD
 trim,description,TBD
 trim,target,na
-trim,units,TBD
+trim,units,KHz
 trim,pretrim_low_limit,TBD
 trim,pretrim_high_limit,TBD
 trim,posttrim_low_limit,TBD
@@ -126,81 +365,131 @@ trim,description4,empty
 trim,description5,empty
 trim,description6,empty
 trim,description7,empty
-
 //**********************************************
-//Cell Pin Descriptions	
-//**********************************************
+//Cell PinDescriptions
 pinname,CELV
-definition,CELV,power
+definition,CELV,resistor divider power
 iq,CELV,SIMULATION
 absmax,CELV,6
-absmin,CELV,1.4
-io,CELV,power
+absmin,CELV,2.0
+io,CELV,input
 mode,CELV,power
 router,CELV,TBD
 dftpriority,CELV,1
 esd,CELV,TBD
 
 pinname,CELG
-definition,CELG,power ground
+definition,CELG,ressitor divider  power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,****************
-
-io,CELG,power
+absmax,CELG,0.3
+absmin,CELG,-0.3
+io,CELG,input
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i0
-definition,i0,nand2 input
-iq,i0,SIMULATION
-absmax,i0,6
-absmin,i0,****************
+pinname,BOTTOM
+definition,BOTTOM,resistor divider bottom connection
+iq,BOTTOM,SIMULATION
+absmax,BOTTOM,6
+absmin,BOTTOM,-0.3
+io,BOTTOM,inout
+mode,BOTTOM,analog
+router,BOTTOM,TBD
+dftpriority,BOTTOM,1
+esd,BOTTOM,TBD
 
-io,i0,input
-mode,i0,digital
-router,i0,TBD
-dftpriority,i0,1
-esd,i0,TBD
+pinname,global_resistordivider
+definition,global_resistordivider,Global DFT enable
+iq,global_resistordivider,SIMULATION
+absmax,global_resistordivider,6
+absmin,global_resistordivider,-0.3
+io,global_resistordivider,input
+mode,global_resistordivider,digital
+router,global_resistordivider,TBD
+dftpriority,global_resistordivider,1
+esd,global_resistordivider,TBD
 
-pinname,i1
-definition,i1,nand2 input
-iq,i1,SIMULATION
-absmax,i1,6
-absmin,i1,****************
+pinname,enable_resistordivider
+definition,enable_resistordivider,resistor divider logic enable
+iq,enable_resistordivider,SIMULATION
+absmax,enable_resistordivider,6
+absmin,enable_resistordivider,-0.3
+io,enable_resistordivider,input
+mode,enable_resistordivider,digital
+router,enable_resistordivider,TBD
+dftpriority,enable_resistordivider,1
+esd,enable_resistordivider,TBD
 
-io,i1,input
-mode,i1,digital
-router,i1,TBD
-dftpriority,i1,1
-esd,i1,TBD
+pinname,TOP
+definition,TOP,Resistor divider top connection
+iq,TOP,SIMULATION
+absmax,TOP,6
+absmin,TOP,-0.3
+io,TOP,inout
+mode,TOP,analog
+router,TOP,TBD
+dftpriority,TOP,1
+esd,TOP,TBD
 
-pinname,o
-definition,o,inverter output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,****************
+pinname,TAP0
+definition,TAP0,Resistor divider feedback voltage0
+iq,TAP0,SIMULATION
+absmax,TAP0,6
+absmin,TAP0,-0.3
+io,TAP0,output
+mode,TAP0,analog
+router,TAP0,TBD
+dftpriority,TAP0,1
+esd,TAP0,TBD
 
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
+pinname,TAP1
+definition,TAP1,Resistor divider feedback voltage1
+iq,TAP1,SIMULATION
+absmax,TAP1,6
+absmin,TAP1,-0.3
+io,TAP1,output
+mode,TAP1,analog
+router,TAP1,TBD
+dftpriority,TAP1,1
+esd,TAP1,TBD
 
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
+pinname,TAP2
+definition,TAP2,Resistor divider feedback voltage2
+iq,TAP2,0.01u
+absmax,TAP2,6
+absmin,TAP2,-0.3
+io,TAP2,output
+mode,TAP2,analog
+router,TAP2,TBD
+dftpriority,TAP2,1
+esd,TAP2,TBD
 
+pinname,CELSUB
+definition,CELSUB,Substrate
+iq,CELSUB,SIMULATION
+absmax,CELSUB,6
+absmin,CELSUB,-0.3
+io,CELSUB,input
+mode,CELSUB,analog
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
+
+//**********************************************
+//Constraints Parameters
+constraint,resistordivider,TAP0,shield
+constraint,resistordivider,TAP1,shield
+constraint,resistordivider,TAP2,shield
+constraint,resistordivider,TAP3,shield
+constraint,resistordivider,TAP4,shield
+constraint,resistordivider,TAP5,shield
+constraint,resistordivider,TAP6,shield
+constraint,resistordivider,TAP7,shield
+constraint,resistordivider,TOP,shield
+//**********************************************
+endbio
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -879,3 +1168,4 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+

@@ -1,108 +1,286 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///Celera Confidential BIO Data Generator
+//Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
+cell,timingskew
 //**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.5.0
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
+limit,timingskew_type,choose0,rise
+limit,timingskew_type,choose1,fall
+limit,timingskew_control,choose0,pin
+limit,timingskew_control,choose1,factory
+limit,timingskew_control,choose2,register
+limit,timingskew_bits,choose0,2
+limit,timingskew_bits,choose1,3
+limit,timingskew_bits,choose2,4
+limit,timingskew_bits,choose3,5
+limit,timingskew_por,minimum,0
+limit,timingskew_por,maximum,31
+limit,timingskew_lsb,choose0,0.5
+limit,timingskew_lsb,choose1,1.0
+limit,timingskew_lsb,choose2,2.0
+limit,timingskew_lsb,choose3,4.0
+limit,timingskew_lsb,choose4,8.0
+limit,timingskew_vmax,choose0,2
+limit,timingskew_vmax,choose1,6
+limit,timingskew_dft,choose0,no
+limit,timingskew_dft,choose1,yes
+limit,timingskew_datasheet_name,text
+limit,timingskew_datasheet_description,text
+limit,timingskew_supply,minimum,2.0
+limit,timingskew_supply,maximum,5.5
+
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+user,timingskew_type,rise
+description,Timing skew edge adjust
+user,timingskew_por,18
+description,Timing skew POR value
+user,timingskew_lsb,1.0ns
+description,Timing Skew LSB
+user,NESTO,0.5.0
+description,Nesto generate revision
+user,Generate Supply,5V
+description,Nesto generate supply voltage
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,timingskew
+register,instance,timingskew_b5de11eb
 register,source,cell
 
-//Logic nand2
+//timingskew
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readonly
+register,mode,readwrite
 register,por,0
 register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
 //Netlister Information
 register,busname,na
 
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,timingskew
+factory,instance,timingskew_b5de11eb
 factory,source,cell
 
-//LOGIC CELLS nand2
-factory,name,na
-factory,enable,no
-factory,bits,0
-factory,mode,readonly
-factory,por,0
-factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
+//timingskew
+factory,name,BOTTOMSWITCHstatusDELAY
+factory,enable,yes
+factory,bits,5
+factory,mode,readwrite
+factory,por,12
+factory,userdescription,BOT Switch on delay
+factory,description0,factory_timingskew[4:0]
+factory,description1,code,0x00,1.0ns
+factory,description2,code,0x01,2.0ns
+factory,description3,code,0x02,4.0ns
+factory,description4,code,0x04,8.0ns
+factory,description5,code,0x08,16.0ns
+factory,description6,code,0x10,32.0ns
+factory,description7,not used
 //Netlister Information
-factory,busname,na
+factory,busname,factory_timingskew
 //**********************************************
+//CELL DFT Parameters
+// *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
-movePINS
+layout,timingskew
+
+301b edits to simplis
+placeDIG
 endlayoutbio
+//OLD timing skew information
+//place Generate STONEtimingskewlsb0p5nr 0 0 R0
+//place Generate STONEtimingskewlsb0p5nf 0 0 R0
+//place Generate STONEtimingskewlsb1nr 0 0 R0
+//place Generate STONEtimingskewlsb1nf 0 0 R0
+//place Generate STONEtimingskewlsb2nr 0 0 R0
+//place Generate STONEtimingskewlsb2nf 0 0 R0
+//place Generate STONEtimingskewlsb4nr 0 0 R0
+//place Generate STONEtimingskewlsb4nf 0 0 R0
+//place Generate STONEtimingskewlsb8nr 0 0 R0
+//place Generate STONEtimingskewlsb8nf 0 0 R0
+//place Generate STONEtimingskewdft 0 -1.2 MX
+//place Generate STONEdelay0p5nf8x 0 16.74 R0
+//place Generate STONEdelay0p5nr8x 0 16.74 R0
+//place Generate STONEdelay0p5nr16x 0 25.11 R0
+//place Generate STONEdelay0p5nf16x 0 25.11 R0
+//place Generate STONEdelay0p5nr4x 0 16.74 MX
+//place Generate STONEdelay0p5nf4x 0 16.74 MX
+//place Generate STONEdelay1nr4x 0 16.74 MX
+//place Generate STONEdelay1nr8x 0 16.74 R0
+//place Generate STONEdelay1nr16x 0 25.11 R0
+//place Generate STONEdelay1nf16x 0 25.11 R0
+//place Generate STONEdelay1nf4x 0 16.74 MX
+//place Generate STONEdelay1nf8x 0 16.74 R0
+//place Generate STONEdelay2nr16x 0 25.11 R0
+//place Generate STONEdelay2nr4x 0 16.74 MX
+//place Generate STONEdelay2nr8x 0 16.74 R0
+//place Generate STONEdelay2nf16x 0 25.11 R0
+//place Generate STONEdelay2nf4x 0 16.74 MX
+//place Generate STONEdelay2nf8x 0 16.74 R0
+//place Generate STONEdelay4nr4x 0 16.74 MX
+//place Generate STONEdelay4nr8x 0 16.74 R0
+//place Generate STONEdelay4nf4x 0 16.74 MX
+//place Generate STONEdelay4nf8x 0 16.74 R0
+//place Generate STONEdelay4nr16x 0 25.11 R0
+//place Generate STONEdelay4nf16x 0 25.11 R0
+//place Generate STONEdelay8nr16x 0 25.11 R0
+//place Generate STONEdelay8nr4x 0 16.74 MX
+//place Generate STONEdelay8nr8x 0 16.74 R0
+//place Generate STONEdelay8nf16x 0 25.11 R0
+//place Generate STONEdelay8nf4x 0 16.74 MX
+//place Generate STONEdelay8nf8x 0 16.74 R0
+//placeTAPuntil
+////0p5,1
+//placeTAP 29 10
+//placeSTEP Generate STONEbypassdelay 27.72 16.74 x 8.82 MX
+////2rise
+//placeTAP 37 10
+//placeSTEP Generate STONEbypassdelay 35.28 16.74 x 8.82 MX
+////4,8rise
+//placeTAP 39 10
+//placeSTEP Generate STONEbypassdelay 37.8 16.74 x 8.82 MX
+////2fall,8
+//placeTAP 42 10
+//placeSTEP Generate STONEbypassdelay 40.32 16.74 x 8.82 MX
+//placeTAPEND
+//movePINS
+//placeROUTEnopins
+////endlayoutbio
 //**********************************************
 //Project Parameters
+//Celera:WALTZ2 Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
+sub_area,WRAPPER5,5
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,delay_timingskew_b5de11eb_d1p0nsr,60177
+sub_area,STONEbypassdelay,4100
+sub_area,STONEbypassdelay,4100
+sub_area,STONEbypassdelay,4100
+sub_area,STONEbypassdelay,4100
+sub_area,STONEbypassdelay,4100
+generate_area,timingskew_b5de11eb,1885992
 // *********************************************
 //Calculator Parameters
-#define,CELVminimum,1.4
+#define,CELVminimum,1.5
+#define CELGabsmin,-0.3
+#define CELGabsmax,0.3
+#define CELSUBabsmin,-0.3
+#define CELSUBabsmax,0.3
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//timingskew
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
-
+pinorder,in,factory_timingskew0,factory_timingskew1,factory_timingskew2,factory_timingskew3,factory_timingskew4,out
 endpinorder
 //**********************************************
+
+//**********************************************
 //TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
+cell,timingskew
+trim,instance,timingskew_b5de11eb
 
 trim,name,na
 trim,enable,no
@@ -112,7 +290,7 @@ trim,pinname,TBD
 trim,testname,TBD
 trim,description,TBD
 trim,target,na
-trim,units,TBD
+trim,units,KHz
 trim,pretrim_low_limit,TBD
 trim,pretrim_high_limit,TBD
 trim,posttrim_low_limit,TBD
@@ -126,81 +304,79 @@ trim,description4,empty
 trim,description5,empty
 trim,description6,empty
 trim,description7,empty
-
 //**********************************************
-//Cell Pin Descriptions	
-//**********************************************
+//Cell PinDescriptions
 pinname,CELV
-definition,CELV,power
+definition,CELV,vbuffer power
 iq,CELV,SIMULATION
 absmax,CELV,6
-absmin,CELV,1.4
-io,CELV,power
+absmin,CELV,2.0
+io,CELV,input
 mode,CELV,power
 router,CELV,TBD
 dftpriority,CELV,1
 esd,CELV,TBD
+layout,na
 
 pinname,CELG
-definition,CELG,power ground
+definition,CELG,vbuffer  power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,****************
-
-io,CELG,power
+absmax,CELG,0.3
+absmin,CELG,-0.3
+io,CELG,input
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
+layout,na
 
-pinname,i0
-definition,i0,nand2 input
-iq,i0,SIMULATION
-absmax,i0,6
-absmin,i0,****************
+pinname,in
+definition,in,timingskew logic input
+iq,in,SIMULATION
+absmax,in,6
+absmin,in,-0.3
+io,in,input
+mode,in,digital
+router,in,TBD
+dftpriority,in,1
+esd,in,TBD
+layout,na
 
-io,i0,input
-mode,i0,digital
-router,i0,TBD
-dftpriority,i0,1
-esd,i0,TBD
+pinname,factory_timingskew
+definition,factory_timingskew,timing skew input decoder
+iq,factory_timingskew,SIMULATION
+absmax,factory_timingskew,6
+absmin,factory_timingskew,-0.3
+io,factory_timingskew,input
+mode,factory_timingskew,digital
+router,factory_timingskew,TBD
+dftpriority,factory_timingskew,1
+esd,factory_timingskew,TBD
+layout,factory_timingskew,na
 
-pinname,i1
-definition,i1,nand2 input
-iq,i1,SIMULATION
-absmax,i1,6
-absmin,i1,****************
+pinname,out
+definition,out,timing skw logic output
+iq,out,SIMULATION
+absmax,out,6
+absmin,out,-0.3
+io,out,output
+mode,out,digital
+router,out,TBD
+dftpriority,out,1
+esd,out,TBD
+layout,out,na
 
-io,i1,input
-mode,i1,digital
-router,i1,TBD
-dftpriority,i1,1
-esd,i1,TBD
-
-pinname,o
-definition,o,inverter output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,****************
-
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
-
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
-
+pinname,CELSUB
+definition,CELSUB,Substrate
+iq,CELSUB,SIMULATION
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
+io,CELSUB,input
+mode,CELSUB,analog
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
+endbio
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -879,3 +1055,16 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+
+
+
+
+
+
+
+
+
+
+
+
+

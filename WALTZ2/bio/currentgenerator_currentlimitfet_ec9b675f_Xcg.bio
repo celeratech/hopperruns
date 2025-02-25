@@ -1,38 +1,110 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///Celera Confidential BIO Data Generator
+//Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
-//**********************************************
+cell,currentgenerator
+///**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.4.1
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
+
+limit,currentgenerator_polarity0,choose0,sink
+limit,currentgenerator_polarity0,choose1,source
+limit,currentgenerator_output0,minimum,0.05
+limit,currentgenerator_output0,maximum,1000.0
+limit,currentgenerator_polarity1,choose0,sink
+limit,currentgenerator_polarity1,choose1,source
+limit,currentgenerator_output1,minimum,0.05
+limit,currentgenerator_output1,maximum,1000.0
+limit,currentgenerator_polarity2,choose0,sink
+limit,currentgenerator_polarity2,choose1,source
+limit,currentgenerator_output2,minimum,0.05
+limit,currentgenerator_output2,maximum,1000.0
+limit,currentgenerator_polarity3,choose0,sink
+limit,currentgenerator_polarity3,choose1,source
+limit,currentgenerator_output3,minimum,0.05
+limit,currentgenerator_output3,maximum,1000.0
+limit,currentgenerator_polarity4,choose0,sink
+limit,currentgenerator_polarity4,choose1,source
+limit,currentgenerator_output4,minimum,0.05
+limit,currentgenerator_output4,maximum,1000.0
+limit,currentgenerator_polarity5,choose0,sink
+limit,currentgenerator_polarity5,choose1,source
+limit,currentgenerator_output5,minimum,0.05
+limit,currentgenerator_output5,maximum,1000.0
+limit,currentgenerator_polarity6,choose0,sink
+limit,currentgenerator_polarity6,choose1,source
+limit,currentgenerator_output6,minimum,0.05
+limit,currentgenerator_output6,maximum,1000.0
+limit,currentgenerator_polarity7,choose0,sink
+limit,currentgenerator_polarity7,choose1,source
+limit,currentgenerator_output7,minimum,0.05
+limit,currentgenerator_output7,maximum,1000.0
+limit,currentgenerator_accuracy,choose0,no
+limit,currentgenerator_accuracy,choose1,yes
+limit,currentgenerator_number,minimum,1
+limit,currentgenerator_number,maximum,8
+limit,currentgenerator_tempco,choose0,positive
+limit,currentgenerator_tempco,choose1,negative
+limit,currentgenerator_tempco,choose2,zero
+limit,currentgenerator_tempco_gain,minimum,1.0
+limit,currentgenerator_tempco_gain,maximum,10.0
+limit,currentgenerator_vmax,choose0,2
+limit,currentgenerator_vmax,choose1,6
+limit,currentgenerator_vout,choose0,2
+limit,currentgenerator_vout,choose1,6
+limit,currentgenerator_vout,choose2,12
+limit,currentgenerator_vout,choose3,20
+limit,currentgenerator_vout,choose4,24
+limit,currentgenerator_vout,choose5,30
+limit,currentgenerator_vout,choose6,36
+limit,currentgenerator_vout,choose7,40
+limit,currentgenerator_vout,choose8,45
+limit,currentgenerator_vout,choose9,60
+limit,currentgenerator_dft,choose0,no
+limit,currentgenerator_dft,choose1,yes
+limit,currentgenerator_shutdown,choose0,float
+limit,currentgenerator_shutdown,choose1,high
+limit,currentgenerator_shutdown,choose2,low
+
+limit,currentgenerator_datasheet_accuracy_name,text
+limit,currentgenerator_datasheet_accuracy_description,text
+
+
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+user,currentgenerator_number,1
+description,Number of outputs
+user,currentgenerator_vout,6
+description,Maximum Output Voltage
+user,currentgenerator_polarity0,source
+description,Generator Polarity
+user,currentgenerator_output0,15.0
+description,Generator Output
+user,NESTO,0.4.1
+description,NESTO generate revision
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,currentgenerator
+register,instance,currentgenerator_currentlimitfet_ec9b675f_Xcg
 register,source,cell
 
-//Logic nand2
+//No register Map Required
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readonly
+register,mode,na
 register,por,0
 register,userdescription,na
 register,description0,description0,not used
@@ -43,21 +115,26 @@ register,description4,description4,not used
 register,description5,description5,not used
 register,description6,description6,not used
 register,description7,description7,not used
+register,description8,empty
+register,description9,empty
+register,description10,empty
+register,description11,empty
+register,description12,empty
 //Netlister Information
 register,busname,na
 
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,currentgenerator
+factory,instance,currentgenerator_currentlimitfet_ec9b675f_Xcg
 factory,source,cell
 
-//LOGIC CELLS nand2
+//No factory Map Required
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,readonly
+factory,mode,na
 factory,por,0
 factory,userdescription,na
 factory,description0,description0,not used
@@ -71,44 +148,142 @@ factory,description7,description7,not used
 //Netlister Information
 factory,busname,na
 //**********************************************
+//CELL DFT Parameters
+// *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
-movePINS
+layout,currentgenerator
+
+place Generate STONEcurrentgeneratormain 0 0 R0
+place Generate STONEcurrentgeneratormaindft -29.12 -24.345 R0
+place CASCODES CASCODEanalogtrimn5uref 23.73 -23.845 R0
+place CASCODES CASCODEanalogtrimn50nref 23.73 -23.845 R0
+place CASCODES CASCODEanalogtrimn500nref 23.73 -23.845 R0
+place CASCODES CASCODEanalogtrimp500nref 24.36 -23.845 R0
+place CASCODES CASCODEanalogtrimp50nref 24.36 -23.845 R0
+place CASCODES CASCODEanalogtrimp5uref 24.36 -23.845 R0
+place Generate STONEcurrentgeneratorTRIMpassFETS 20 0 R0
+place Generate STONEcurrentgeneratorADJUSTcontrolNEW 30 0 R0
+place Generate STONEcurrentgeneratorADJUSTpassGETS 40 0 R0
+placeSTEP Generate STONEcurrentgeneratorRESISTORunit 20 50 x 12 R0
+placeSTEP Generate STONEcurrentgeneratorPMOS_W6L3 30 50 x 12 R0
+placeSTEP Generate STONEcurrentgeneratorPMOS_W4L5 40 50 x 12 R0
+placeSTEP Generate STONEcurrentgeneratorPMOS 50 50 x 12 R0
+placeSTEP Generate STONEcurrentgeneratorNMOS_W5L4 30 60 x 12 R0
+placeSTEP Generate STONEcurrentgeneratorNMOS_W3L6 30 70 x 12 R0
+placeSTEP Generate STONEcurrentgeneratorNMOS 30 70 x 12 R0
+placeSTEP Generate STONEcurrentgeneratorTESTcontrol 50 0 x 12 R0
+placeSTEP Generate STONEcurrentgeneratorTESTOUT 60 0 x 12 R0
+place Generate STONEcurrentgeneratorINPUT 90 0 R0
+place PEBBLES PEBBLEamux2 70 0 R0
+placeIF cellNameContains trimp
+placeSTEP PEBBLES PEBBLEswitchG10K 33.18 -23.845 x 4.41 R0
+placeEND
+placeIF cellNameContains trimn
+placeSTEP PEBBLES PEBBLEswitchG10K 36.96 -23.845 x 4.41 R0
+placeEND
+placeSTEP Generate STONEcurrentgeneratorNMOS 100 0 x 12 R0
+//placeTILE 0.66
+placeTILE 0.66 6.32 6.04
+moveORIGIN x
+moveORIGIN y
+//placeROUTE
+
 endlayoutbio
 //**********************************************
 //Project Parameters
+//Celera:WALTZ2 Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
+sub_area,STONEcurrentgeneratormain,5000
+sub_area,CASCODEpmos10u,14000
+sub_area,CASCODEpmos5u,3800
+sub_area,CASCODEpmos500nref,3800
+sub_area,CASCODEnmos500n,3800
+sub_area,CASCODEpmos500n10x,14000
+sub_area,CASCODEnmos5uref,3800
+sub_area,CASCODEpmos5uref,3800
+sub_area,CASCODEnmos5u,3800
+sub_area,CASCODEpmos5u10x,14000
+sub_area,CASCODEnmos50uref,3800
+sub_area,CASCODEpmos50uref,3800
+sub_area,CASCODEnmos50u,3800
+generate_area,currentgenerator_currentlimitfet_ec9b675f_Xcg,81200
 // *********************************************
 //Calculator Parameters
-#define,CELVminimum,1.4
+#define,SIMPVminimum,2.1
+#define,HVPOSminimum,2.5
+#define,count_runitw,2.0
+#define,count_runitmaxl,50.0
+#define,count_runitminl,5.0
+
+#define,CURRENTGENERATORpretrimhigh,30.0
+#define,CURRENTGENERATORpretrimlow,30.0
+#define,CURRENTGENERATORposttrimlsb,2.0
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//currentgenerator
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
+pinorder,I0,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,SIMPV,enable_currentgenerator,ok_currentgenerator,net_skip
 
 endpinorder
 //**********************************************
 //TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
+cell,currentgenerator
+trim,instance,currentgenerator_currentlimitfet_ec9b675f_Xcg
 
 trim,name,na
 trim,enable,no
 trim,bits,TBD
 trim,por,0
-trim,pinname,TBD
+trim,pinname,trim_currentgenerator
 trim,testname,TBD
 trim,description,TBD
 trim,target,na
@@ -117,7 +292,7 @@ trim,pretrim_low_limit,TBD
 trim,pretrim_high_limit,TBD
 trim,posttrim_low_limit,TBD
 trim,posttrim_high_limit,TBD
-trim,codeunits,%
+trim,codeunits,uA
 trim,description0,empty
 trim,description1,empty
 trim,description2,empty
@@ -126,81 +301,127 @@ trim,description4,empty
 trim,description5,empty
 trim,description6,empty
 trim,description7,empty
-
 //**********************************************
-//Cell Pin Descriptions	
+//Cell Pin Descriptions
 //**********************************************
-pinname,CELV
-definition,CELV,power
-iq,CELV,SIMULATION
-absmax,CELV,6
-absmin,CELV,1.4
-io,CELV,power
-mode,CELV,power
-router,CELV,TBD
-dftpriority,CELV,1
-esd,CELV,TBD
+pinname,SIMPV
+definition,SIMPV,power supply
+iq,SIMPV,SIMULATION
+absmax,SIMPV,6
+absmin,SIMPV,2.1
+io,SIMPV,input
+mode,SIMPV,power
+router,SIMPV,TBD
+dftpriority,SIMPV,1
+esd,SIMPV,TBD
 
 pinname,CELG
 definition,CELG,power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,****************
-
-io,CELG,power
+absmax,CELG,0.3
+absmin,CELG,-0.3
+io,CELG,input
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i0
-definition,i0,nand2 input
-iq,i0,SIMULATION
-absmax,i0,6
-absmin,i0,****************
+pinname,CELSUB
+definition,CELSUB,power ground
+iq,CELSUB,SIMULATION
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
+io,CELSUB,input
+mode,CELSUB,power
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
 
-io,i0,input
-mode,i0,digital
-router,i0,TBD
-dftpriority,i0,1
-esd,i0,TBD
 
-pinname,i1
-definition,i1,nand2 input
-iq,i1,SIMULATION
-absmax,i1,6
-absmin,i1,****************
+pinname,enable_currentgenerator
+definition,enable_currentgenerator,Enable Pin
+iq,enable_currentgenerator,SIMULATION
+absmax,enable_currentgenerator,6
+absmin,enable_currentgenerator,-0.3
+io,enable_currentgenerator,input
+mode,enable_currentgenerator,digital
+router,enable_currentgenerator,TBD
+dftpriority,enable_currentgenerator,1
+esd,enable_currentgenerator,TBD
 
-io,i1,input
-mode,i1,digital
-router,i1,TBD
-dftpriority,i1,1
-esd,i1,TBD
+pinname,IP
+definition,IP,500n Current Reference
+iq,IP,SIMULATION
+absmax,IP,6
+absmin,IP,-0.3
+io,IP,input
+mode,IP,analog
+router,IP,TBD
+dftpriority,IP,1
+esd,IP,TBD
 
-pinname,o
-definition,o,inverter output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,****************
+pinname,ok_currentgenerator
+definition,ok_currentgenerator,Current generator OK
+iq,ok_currentgenerator,SIMULATION
+absmax,ok_currentgenerator,6
+absmin,ok_currentgenerator,-0.3
+io,ok_currentgenerator,output
+mode,ok_currentgenerator,digital
+router,ok_currentgenerator,TBD
+dftpriority,ok_currentgenerator,1
+esd,ok_currentgenerator,TBD
 
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
+pinname,I0
+definition,I0,Output0
+iq,I0,SIMULATION
+absmax,I0,6
+absmin,I0,-0.3
+io,I0,inout
+mode,I0,analog
+router,I0,TBD
+dftpriority,I0,1
+esd,I0,TBD
 
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
 
+
+
+
+
+
+
+
+pinname,global_currentgenerator
+definition,global_currentgenerator,Global Test Enable
+iq,global_currentgenerator,SIMULATION
+absmax,global_currentgenerator,6
+absmin,global_currentgenerator,-0.3
+io,global_currentgenerator,input
+mode,global_currentgenerator,digital
+router,global_currentgenerator,TBD
+dftpriority,global_currentgenerator,1
+esd,global_currentgenerator,TBD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+endbio
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -879,3 +1100,17 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+// *********************************************
+
+
+
+
+
+
+
+
+
+
+
+
+

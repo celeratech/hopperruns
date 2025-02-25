@@ -1,206 +1,554 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///Celera Confidential BIO Data Generator
+//Celera Confidential BIO Data Generator
 //Cell Name
-cell,nand2
-//**********************************************
+cell,currentlimitfet
+///**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.5.8
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
+
+limit,currentlimit_sense,choose0,fet
+limit,currentlimit_sense,choose1,resistor
+limit,currentlimit_fetterm,choose0,pmos_drain
+limit,currentlimit_fetterm,choose1,pmos_source
+limit,currentlimit_fetterm,choose2,nmos_drain
+limit,currentlimit_fetterm,choose3,nmos_source
+limit,currentlimit_fetratio,minimum,1
+limit,currentlimit_fetratio,maximum,40
+limit,currentlimit_limitout,choose0,live
+limit,currentlimit_limitout,choose1,latched
+limit,currentlimit_limit,minimum,0.01
+limit,currentlimit_limit,maximum,4.0
+limit,currentlimit_usage,choose0,lowside
+limit,currentlimit_usage,choose1,highside
+limit,currentlimit_iref,choose0,internal
+limit,currentlimit_iref,choose1,external
+limit,currentlimit_maxiref,choose0,10
+limit,currentlimit_maxiref,choose1,20
+limit,currentlimit_maxiref,choose1,50
+limit,currentlimit_maxiref,choose1,100
+limit,currentlimit_vsensemax,choose0,6
+limit,currentlimit_vsensemax,choose1,12
+limit,currentlimit_vsensemax,choose2,20
+limit,currentlimit_vsensemax,choose3,24
+limit,currentlimit_vsensemax,choose4,36
+limit,currentlimit_vsensemax,choose5,36
+limit,currentlimit_vsensemax,choose6,40
+limit,currentlimit_vsensemax,choose7,45
+limit,currentlimit_vsensemax,choose8,60
+limit,currentlimit_levelshift,choose0,no
+limit,currentlimit_levelshift,choose1,yes
+limit,currentlimit_blanking,minimum,0
+limit,currentlimit_blanking,maximum,62
+limit,currentlimit_blanking_adjust,choose0,no
+limit,currentlimit_blanking_adjust,choose1,register
+limit,currentlimit_blanking_adjust,choose2,factory
+limit,currentlimit_dft,choose0,no
+limit,currentlimit_dft,choose1,yes
+limit,currentlimit_vmax,choose0,2
+limit,currentlimit_vmax,choose1,6
+limit,currentlimit_accuracy,choose0,no
+limit,currentlimit_accuracy,choose1,yes
+limit,currentlimit_datasheet_blanking_name,text
+limit,currentlimit_datasheet_blanking_description,text
+limit,currentlimit_datasheet_accuracy_name,text
+limit,currentlimit_datasheet_accuracy_description,text
+limit,currentlimit_slopecomp,choose0,no
+limit,currentlimit_slopecomp,choose1,yeslimit,currentlimit_levelshiftinsert,choose0,no
+limit,currentlimit_levelshiftinsert,choose1,yes
+limit,currentlimit_levelshiftenable,choose0,no
+limit,currentlimit_levelshiftenable,choose1,yes
+limit,currentlimit_levelshiftmeasure,choose0,no
+limit,currentlimit_levelshiftmeasure,choose1,yes
+limit,currentlimit_levelshiftoutput,choose0,no
+limit,currentlimit_levelshiftoutput,choose1,yes
+limit,currentlimit_output_polarity,choose0,low
+limit,currentlimit_output_polarity,choose0,high
+
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,logicgate_vmax,6V
+user,currentlimit_sense,fet
+description,Sense element
+user,currentlimit_fetterm,nmos_drain
+description,Fet connection
+user,currentlimit_usage,lowside
+description,Usage
+user,currentlimit_vsensemax,60V
+description,Max sense voltage
+user,currentlimit_iref,internal
+description,Reference current
+user,currentlimit_blanking_adjust,no
+description,Latch blanking adjust
+user,currentlimit_blanking,60ns
+description,Latch blanking time
+user,currentlimit_output_polarity,high
+description,Output Polarity
+user,currentlimit_limit,0.30
+description,Current Limit Value
+user,currentlimit_fetratio,10K
+description,Current Limit Fet Ratio
+user,currentlimit_maxiref,50
+description,Current Limit Max IREF
+user,Low Volatge,split
+description,Low Voltage supply
+user,NESTO,0.5.8
+description,NESTO Generate revision
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,nand2
-register,instance,nand2_9125fe87
+registermap,currentlimitfet
+register,instance,currentlimitfet_ec9b675f
 register,source,cell
 
-//Logic nand2
+///Current Limit Blanking time
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readonly
+register,units,ns
+register,mode,readwrite
 register,por,0
 register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
 //Netlister Information
 register,busname,na
 
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,nand2
-factory,instance,nand2_9125fe87
+factorymap,currentlimitfet
+factory,instance,currentlimitfet_ec9b675f
 factory,source,cell
 
-//LOGIC CELLS nand2
+///Current Limit Blanking
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,readonly
+factory,units,ns
+factory,mode,readwrite
 factory,por,0
 factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
 //Netlister Information
 factory,busname,na
+
+
+
 //**********************************************
+//CELL DFT Parameters
+// *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,nand2
-place PEBBLES PEBBLEnand2 0 0 R0
+layout,currentlimitfet
+
+placeIFELSE cellNameNOTContains dft*v
+placeALTVIEW Generate STONEbitshifter305bits layout -270.87 -112.485 R0
+placeALTVIEW Generate STONEadjdelay1ns5bits layout5row 414.285 36.755 R0
+placeALTVIEW Generate STONEadjdelay2ns5bits layout1 47.87 23.74 R0
+place Generate STONEcurrentlimitcompinp 121.245 17.725 R0
+place Generate STONEcurrentlimitcompinn 378.775 36.755 R0
+place Generate STONEcurrentlimitdft -8.75 68.285 R0
+place Generate STONEcurrentlimitreftrim10u -7.87 16.075 R0
+place Generate STONEcurrentlimitreftrim 316 22 R0
+place Generate STONEcurrentlimitlowsidedrain6v_en 183.535 16 R0
+place Generate STONEcurrentlimithighsidepmos6vbuck_en 204.535 16 R0
+place Generate STONEcurrentlimitlowsidedrain30v_en 308.88 88.895 R180
+place Generate STONEcurrentlimitlowsidesource_en 102.86 60.985 R0
+//place Generate STONEcurrentlimitlowsidedrain30v_en 370.93 93.795 R180
+//place Generate STONEcurrentlimitlowsidesource_en 447.45 98.885 R0
+placeINST Xls 351.575 -20.135 MY
+placeINST Xcg 154.53 16.675 R0
+place Generate STONEcurrentlimithighsidepmos6vboost_en 236 36.755 R0
+placeELSE
+
+place Generate STONEcurrentlimithighsidenmos30v_en 443.395 -18.765 R0
+place Generate STONEcurrentlimithighsidenmos45v_en 222.035 -249.185 R0
+placeALTVIEW Generate STONEadjdelay2ns5bits layout 479.16 -75.915 R0
+placeINST Xbitshifter 198.7 16.385 R0
+place Generate STONEcurrentlimitcompinp 446.16 -75.915 R0
+place Generate STONEcurrentlimitdft45v 736.255 0 R0
+place Generate STONEcurrentlimitdft30v 189.96 -91.885 R0
+place Generate STONEcurrentlimitreftrim100u 575.37 -82.425 R0
+place Generate STONEbitshifter455bits 197.26 16.385 R0
+place Generate STONEbitshifter305bits 216.045 -191.095 R0
+placeINST Xls 790.06 -105.42 MY
+placeIFELSE instNameContains nmos12v_en
+placeINST Xls 741.235 -281.95 MY
+place Generate STONEcurrentlimithighsidenmos12v_en 175.2 -91.885 R0
+place Generate STONEcurrentlimitdft12v 183.29 -294.09 R0
+placeALTVIEW Generate STONEbitshifter305bits layout1 409.075 -289.11 R0
+placeELSE
+placeEND
+//placeALTVIEW Generate STONEadjdelay1ns5bits layout5row 553.5 102.97 R0
+//place Generate STONEbitshifter305bits 0 0 R0
+//placeINST Xls 129.31 174.46 MY
+//place Generate STONEcurrentlimithighsidepmos30vboost_en 333.21 186.32 R0
+//place Generate STONEcurrentlimitreftrim 173.18 184.275 R0
+//place Generate STONEcurrentlimitreftrim10u 179.18 187.275 R0
+//place Generate STONEcurrentlimitreftrim10u 538.18 184.275 R0
+//place Generate STONEcurrentlimitcompinn 289.5 196.225 R0
+//place Generate STONEcurrentlimitcompinp 289.5 196.225 R0
+//placeINST Xcg 572.42 181.91 R0
+//placeINST Xcg 229.42 187.91 R0
+placeEND
+Previous to modesto
+//place Generate STONEbitshifter305bits -13.78 -54.16 MX
+//place Generate STONEcurrentlimittrim1000u 0 0 R0
+//place Generate STONEcurrentlimitlowside1000u 156.715 -0.17 R0
+//place Generate STONEcurrentlimittrim500u 0 0 R0
+//place Generate STONEcurrentlimitlowside500u -4.36 130.31 R0
+//place Generate STONEcurrentlimittrim200u 0 0 R0
+//place Generate STONEcurrentlimitlowside200u -4.36 65.1 R0
+//place Generate STONEcurrentlimitcompinp 55.645 -1.2 MX
+//place Generate STONEcurrentlimitcompinn 55.645 -1.2 MX
+//placeALTVIEW Generate STONEadjdelay1ns5bits layout5row -3.5 -1.2 MX
+//placeTAP 10 -50
+//place Generate STONEbitshifter305bits -13.78 -54.16 MX
+//place Generate STONEbitshifter305bits -13.78 -74.5 MX
+//place Generate STONEcurrentlimithighsidepmos6v 102.555 -53.15 R0
+//place Generate STONEcurrentlimithighsidenmos6v 102.555 -53.15 R0
+//place Generate STONEcurrentlimithighsidepmos30v 102.555 -53.15 R0
+//place Generate STONEcurrentlimithighsidenmos30v 102.555 -53.15 R0
+//place Generate STONEcurrentlimitlowsidedrain6v 102.555 -53.15 R0
+//place Generate STONEcurrentlimitlowsidedrain30v 102.555 -53.15 R0
+//place Generate STONEcurrentlimitdft -4.04 -63.635 R0
+moveORIGIN -x
+moveORIGIN x
+moveORIGIN y
+
+placeHVRING rect
 movePINS
+//place Generate STONEcurrentlimitlowsidedrain40v 0 0 R0
+//place Generate STONEcurrentlimithighsidepmos40V 0 0 R0
+//place Generate STONEcurrentlimithighsidenmos40V 0 0 R0
+//placeROUTE
 endlayoutbio
+
 //**********************************************
 //Project Parameters
+//Celera:WALTZ2 Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,0.9
+#define,PROJECTsupply,4.5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEnand2,60
-generate_area,nand2_9125fe87,60
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEadjdelay2ns5bits,2000
+sub_area,STONEcurrentlimitcompinp,800
+sub_area,STONEcurrentlimitlowsidedrain60v_en,888999
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,PEBBLEtielo,30
+sub_area,STONEnoconn,0
+sub_area,currentgenerator_currentlimitfet_ec9b675f_Xcg,81200
+sub_area,logicshifter0L2H_currentlimitfet_ec9b675f_Xlogice,2000
+sub_area,PEBBLEtiehi,30
+sub_area,levelshifter0L2H_currentlimitfet_ec9b675f_Xmeasure,8900
+sub_area,levelshifter0H2L_currentlimitfet_ec9b675f_Xoutput,8500
+sub_area,STONEcurrentlimitreftrim50u,888999
+generate_area,currentlimitfet_ec9b675f,1881458
 // *********************************************
 //Calculator Parameters
-#define,CELVminimum,1.4
+#define SIMPVminimum,2.2
+#define,CURRENTLIMITpretrimhigh,50.0
+#define,CURRENTLIMITpretrimlow,50.0
+#define,CURRENTLIMITposttrimlsb,2.0
+#define,CURRENTLIMITpretrimhighGAIN,15.0
+#define,CURRENTLIMITpretrimlowGAIN,1.0
+#define,CURRENTLIMITposttrimlsbGAIN,1.0
+#define,CURRENTLIMITporval,100
+#define,CURRENTLIMITFETgeneratorGain,1
+
+#define,MEASUREshifter,level
+//#define,MEASUREshifter,logic
+#define,OUTPUTshifter,level
+//#define,OUTPUTshifter,logic
+
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//nand2
+//currentlimitfet
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,i0,o,i1
-
+pinorder,net_skip,net_skip,currentlimit_lv,net_skip,net_skip,VSENSE,IREPLICA,net_skip,CELPOS,net_skip,net_skip,enable_currentlimit,measure_currentlimit
 endpinorder
 //**********************************************
-//TRIM Parameters
-cell,nand2
-trim,instance,nand2_9125fe87
-
-trim,name,na
-trim,enable,no
-trim,bits,TBD
-trim,por,0
-trim,pinname,TBD
-trim,testname,TBD
-trim,description,TBD
-trim,target,na
-trim,units,TBD
-trim,pretrim_low_limit,TBD
-trim,pretrim_high_limit,TBD
-trim,posttrim_low_limit,TBD
-trim,posttrim_high_limit,TBD
-trim,codeunits,%
-trim,description0,empty
-trim,description1,empty
-trim,description2,empty
-trim,description3,empty
-trim,description4,empty
-trim,description5,empty
-trim,description6,empty
-trim,description7,empty
 
 //**********************************************
-//Cell Pin Descriptions	
+//TRIM Parameters
+cell,currentlimitfet
+trim,instance,currentlimitfet_ec9b675f
+
+trim,name,botswinegacc
+trim,enable,yes
+trim,bits,8
+trim,por,0
+trim,pinname,trim_currentlimit
+trim,testname,botswinegacc
+trim,description,Lowside Negative Current Accuracy
+trim,target,0.30
+trim,units,A
+trim,pretrim_low_limit,0.150
+trim,pretrim_high_limit,0.450
+trim,posttrim_low_limit,0.291
+trim,posttrim_high_limit,0.309
+trim,codeunits,A
+trim,description0,code 0x01.+1.0
+trim,description1,code 0x02.+2.0
+trim,description2,code 0x04.+4.0
+trim,description3,code 0x08.+8.0
+trim,description4,code 0x10.+16.0
+trim,description5,code 0x20.+32.0
+trim,description6,code 0x40,+64.0
+trim,description7,code 0x80,+128.0
+
+//**********************************************
+//Cell Pin Descriptions
 //**********************************************
 pinname,CELV
-definition,CELV,power
+definition,CELV,Digital Power Supply input
 iq,CELV,SIMULATION
 absmax,CELV,6
-absmin,CELV,1.4
-io,CELV,power
+absmin,CELV,-0.3
+io,CELV,input
 mode,CELV,power
 router,CELV,TBD
 dftpriority,CELV,1
-esd,CELV,TBD
+esd,,CELV,TBD
 
 pinname,CELG
 definition,CELG,power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,****************
-
-io,CELG,power
+absmax,CELG,0.3
+absmin,CELG,-0.3
+io,CELG,input
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i0
-definition,i0,nand2 input
-iq,i0,SIMULATION
-absmax,i0,6
-absmin,i0,****************
+pinname,CELSUB
+definition,CELSUB,power ground
+iq,CELSUB,SIMULATION
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
+io,CELSUB,input
+mode,CELSUB,power
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
 
-io,i0,input
-mode,i0,digital
-router,i0,TBD
-dftpriority,i0,1
-esd,i0,TBD
+pinname,measure_currentlimit
+definition,measure_currentlimit,Measure Current limit Pin
+iq,measure_currentlimit,SIMULATION
+absmax,measure_currentlimit,6
+absmin,measure_currentlimit,-0.3
+io,measure_currentlimit,input
+mode,measure_currentlimit,digital
+router,measure_currentlimit,TBD
+dftpriority,measure_currentlimit,1
+esd,measure_currentlimit,TBD
 
-pinname,i1
-definition,i1,nand2 input
-iq,i1,SIMULATION
-absmax,i1,6
-absmin,i1,****************
+pinname,VSENSE
+definition,VSENSE,Comparator Reference Node
+iq,VSENSE,SIMULATION
+absmax,VSENSE,60
+absmin,VSENSE,-0.3
+io,VSENSE,input
+mode,VSENSE,analog
+router,VSENSE,TBD
+dftpriority,VSENSE,1
+esd,VSENSE,TBD
 
-io,i1,input
-mode,i1,digital
-router,i1,TBD
-dftpriority,i1,1
-esd,i1,TBD
+pinname,IREPLICA
+definition,IREPLICA,Comparator Measure Node
+iq,IREPLICA,SIMULATION
+absmax,IREPLICA,60
+absmin,IREPLICA,-0.3
+io,IREPLICA,input
+mode,IREPLICA,analog
+router,IREPLICA,TBD
+dftpriority,IREPLICA,1
+esd,IREPLICA,TBD
 
-pinname,o
-definition,o,inverter output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,****************
 
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
+pinname,trim_currentlimit
+definition,trim_currentlimit,Current Limit Trim
+iq,trim_currentlimit,SIMULATION
+absmax,trim_currentlimit,6
+absmin,trim_currentlimit,-0.3
+io,trim_currentlimit,input
+mode,trim_currentlimit,digital
+router,trim_currentlimit,TBD
+dftpriority,trim_currentlimit,1
+esd,trim_currentlimit,TBD
 
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
 
+
+pinname,global_currentlimit
+definition,global_currentlimit,Global Test Enable
+iq,global_currentlimit,SIMULATION
+absmax,global_currentlimit,6
+absmin,global_currentlimit,-0.3
+io,global_currentlimit,input
+mode,global_currentlimit,digital
+router,global_currentlimit,TBD
+dftpriority,global_currentlimit,1
+esd,global_currentlimit,TBD
+
+pinname,enable_currentlimit
+definition,enable_currentlimit,Enable Pin
+iq,enable_currentlimit,SIMULATION
+absmax,enable_currentlimit,6
+absmin,enable_currentlimit,-0.3
+io,enable_currentlimit,input
+mode,enable_currentlimit,digital
+router,enable_currentlimit,TBD
+dftpriority,enable_currentlimit,1
+esd,enable_currentlimit,TBD
+
+pinname,IP
+definition,IP,500na Current Reference
+iq,IP,SIMULATION
+absmax,IP,6
+absmin,IP,-0.3
+io,IP,input
+mode,IP,analog
+router,IP,TBD
+dftpriority,IP,1
+esd,IP,TBD
+
+
+
+pinname,CELPOS
+definition,CELPOS,High Voltage power supply
+iq,CELPOS,SIMULATION
+absmax,CELPOS,60
+absmin,CELPOS,2.2
+io,CELPOS,input
+mode,CELPOS,power
+router,CELPOS,TBD
+dftpriority,CELPOS,1
+esd,CELPOS,TBD
+
+
+
+pinname,currentlimit_lv
+definition,currentlimit_lv,Level Shifted Current Limit Output Signal
+iq,currentlimit_lv,SIMULATION
+absmax,currentlimit_lv,6
+absmin,currentlimit_lv,-0.3
+io,currentlimit_lv,output
+mode,currentlimit_lv,digital
+router,currentlimit_lv,TBD
+dftpriority,currentlimit_lv,1
+esd,currentlimit_lv,TBD
+
+
+
+pinname,ten_measure_currentlimit
+definition,ten_measure_currentlimit,Test Enable Measure
+iq,ten_measure_currentlimit,SIMULATION
+absmax,ten_measure_currentlimit,6
+absmin,ten_measure_currentlimit,-0.3
+io,ten_measure_currentlimit,input
+mode,ten_measure_currentlimit,digital
+router,ten_measure_currentlimit,TBD
+dftpriority,ten_measure_currentlimit,1
+esd,ten_measure_currentlimit,TBD
+
+
+
+pinname,tdi_currentlimitlive
+definition,tdi_currentlimitlive,Current Limit Live Output Signal
+iq,tdi_currentlimitlive,SIMULATION
+absmax,tdi_currentlimitlive,6
+absmin,tdi_currentlimitlive,-0.3
+io,tdi_currentlimitlive,output
+mode,tdi_currentlimitlive,digital
+router,tdi_currentlimitlive,TBD
+dftpriority,tdi_currentlimitlive,1
+esd,tdi_currentlimitlive,TBD
+
+
+//**********************************************
+//Constraints Parameters*******************
+constraint,currentlimitfet,VSENSE,shield
+constraint,currentlimitfet,IREPLICA,shield
+constraint,currentlimitfet,IP,shield
+constraint,currentlimitfet,IREF,shield
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -879,3 +1227,5 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+// *********************************************
+
