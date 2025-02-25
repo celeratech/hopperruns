@@ -1,12 +1,7 @@
 // ------------------------ Module Definitions -----------
-module CURRENTSENSEinDEBUG (IIN,TAO,tmi,dft_ok,CELG59462,CELV96848,CELSUB40948,dft_startup,IIN_TELEMETRY,dft_measure_delay,enable_currentsense,measure_currentsense,hijack_enable_currentsense,hijack_measure_currentsense);
+module CURRENTSENSEinDEBUG (IIN,dft_ok,dft_startup,IIN_TELEMETRY,dft_measure_delay,enable_currentsense,measure_currentsense,hijack_enable_currentsense,hijack_measure_currentsense);
   input  IIN;
-  inout  TAO;
-  input [4:0] tmi;
   input  dft_ok;
-  input  CELG59462;
-  input  CELV96848;
-  input  CELSUB40948;
   input  dft_startup;
   input  IIN_TELEMETRY;
   input  dft_measure_delay;
@@ -16,9 +11,8 @@ module CURRENTSENSEinDEBUG (IIN,TAO,tmi,dft_ok,CELG59462,CELV96848,CELSUB40948,d
   output  hijack_measure_currentsense;
 endmodule
 
-module CURRENTSENSEinMAIN (IIN,tmi,SIMPV,VOUTSN,VOUTSP,dft_ok,ok_iin,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_2ceca3e2,IP_4ad46a6e,IP_5c672501,dft_startup,IIN_TELEMETRY,ok_currentsense,dft_measure_delay,clock_currentsense,enable_currentsense,measure_currentsense,kelvin_GNDcurrentsense);
+module CURRENTSENSEinMAIN (IIN,SIMPV,VOUTSN,VOUTSP,dft_ok,ok_iin,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_4ad46a6e,IP_5c672501,dft_startup,IIN_TELEMETRY,ok_currentsense,dft_measure_delay,clock_currentsense,enable_currentsense,measure_currentsense,kelvin_GNDcurrentsense);
   inout  IIN;
-  inout [4:0] tmi;
   input  SIMPV;
   input  VOUTSN;
   input  VOUTSP;
@@ -28,7 +22,6 @@ module CURRENTSENSEinMAIN (IIN,tmi,SIMPV,VOUTSN,VOUTSP,dft_ok,ok_iin,CELG59462,C
   input  CELV96848;
   input  PORB97836;
   input  CELSUB40948;
-  input  IP_2ceca3e2;
   input  IP_4ad46a6e;
   input  IP_5c672501;
   output  dft_startup;
@@ -41,14 +34,13 @@ module CURRENTSENSEinMAIN (IIN,tmi,SIMPV,VOUTSN,VOUTSP,dft_ok,ok_iin,CELG59462,C
   inout  kelvin_GNDcurrentsense;
 endmodule
 
-//Celera:currentmirror_b9924dee
+//Celera:currentmirror_3a3e0620
 //Celera Confidential Symbol Generator
-//Polarity: source, Maximum Current: 10, Number of outputs: 3, DFT: no, Max Vout: 6
+//Polarity: source, Maximum Current: 10, Number of outputs: 2, DFT: no, Max Vout: 6
 //GAIN0:1, TYPE0:source
 //GAIN1:1, TYPE1:source
-//GAIN2:1, TYPE2:source
-module currentmirror_b9924dee (CELV,CELSUB,enable_currentmirror,ISET,ok_currentmirror,
-I0,I1,I2,
+module currentmirror_3a3e0620 (CELV,CELSUB,enable_currentmirror,ISET,ok_currentmirror,
+I0,I1,
 CELG);
 input CELV;
 input CELG;
@@ -58,7 +50,6 @@ input ISET;
 output ok_currentmirror;
 inout I0;
 inout I1;
-inout I2;
 endmodule
 
 
@@ -73,9 +64,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module INCURRENTSENSEpuget (TAO, tmi, SIMPV, VOUTSN, VOUTSP, CELG59462, CELV96848, PORB97836, VSNSI_LIVE, CELSUB40948, VSNSI_FILTER, ok_currentsensein, clock_currentsensein, enable_currentsensein, measure_currentsensein, IP_INCURRENTSENSEpuget1, kelvin_GNDcurrentsensein, ok_measurecurrentsensein);
-inout  TAO;
-inout [4:0] tmi;
+module INCURRENTSENSEpuget (SIMPV, VOUTSN, VOUTSP, CELG59462, CELV96848, PORB97836, VSNSI_LIVE, CELSUB40948, VSNSI_FILTER, ok_currentsensein, clock_currentsensein, enable_currentsensein, measure_currentsensein, IP_INCURRENTSENSEpuget1, kelvin_GNDcurrentsensein, ok_measurecurrentsensein);
 input  SIMPV;
 input  VOUTSN;
 input  VOUTSP;
@@ -95,17 +84,11 @@ output  ok_measurecurrentsensein;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
 
 // ------------------------ Networks ---------------------
 CURRENTSENSEinDEBUG XDEBUG (
 .IIN(VSNSI_LIVE),
-.TAO(TAO),
-.tmi(tmi[4:0]),
 .dft_ok(net_60),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948),
 .dft_startup(net_59),
 .IIN_TELEMETRY(VSNSI_FILTER),
 .dft_measure_delay(net_62),
@@ -117,7 +100,6 @@ CURRENTSENSEinDEBUG XDEBUG (
 
 CURRENTSENSEinMAIN XMAIN (
 .IIN(VSNSI_LIVE),
-.tmi(tmi[4:0]),
 .SIMPV(SIMPV),
 .VOUTSN(VOUTSN),
 .VOUTSP(VOUTSP),
@@ -127,7 +109,6 @@ CURRENTSENSEinMAIN XMAIN (
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
 .CELSUB40948(CELSUB40948),
-.IP_2ceca3e2(IP_2ceca3e2),
 .IP_4ad46a6e(IP_4ad46a6e),
 .IP_5c672501(IP_5c672501),
 .dft_startup(net_59),
@@ -140,10 +121,9 @@ CURRENTSENSEinMAIN XMAIN (
 .kelvin_GNDcurrentsense(kelvin_GNDcurrentsensein)
 );
 
-currentmirror_b9924dee XCurrentMirror1 (
-.I0(IP_2ceca3e2),
-.I1(IP_4ad46a6e),
-.I2(IP_5c672501),
+currentmirror_3a3e0620 XCurrentMirror1 (
+.I0(IP_4ad46a6e),
+.I1(IP_5c672501),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .ISET(IP_INCURRENTSENSEpuget1),

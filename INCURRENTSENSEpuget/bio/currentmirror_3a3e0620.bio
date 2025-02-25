@@ -84,8 +84,6 @@ user,currentmirror_gain0,1_source
 description,Current Mirror Output0
 user,currentmirror_gain1,1_source
 description,Current Mirror Output1
-user,currentmirror_gain2,1_source
-description,Current Mirror Output2
 user,NESTO,0.5.0
 description,Nesto generate Revision
 //**********************************************
@@ -94,7 +92,7 @@ description,Nesto generate Revision
 //REGISTER Parameters
 //Celera Map Generator
 registermap,currentmirror
-register,instance,currentmirror_b9924dee
+register,instance,currentmirror_3a3e0620
 register,source,cell
 
 //No register Map Required
@@ -123,7 +121,7 @@ register,busname,na
 //FACTORY Parameters
 //Celera Map Generator
 factorymap,currentmirror
-factory,instance,currentmirror_b9924dee
+factory,instance,currentmirror_3a3e0620
 factory,source,cell
 
 ///No factory Map Required
@@ -228,8 +226,7 @@ sub_area,CASCODEpmos5u,3800
 sub_area,CASCODEpmos5uref,3800
 sub_area,CASCODEnmos5u,3800
 sub_area,CASCODEpmos5u,3800
-sub_area,CASCODEpmos5u,3800
-generate_area,currentmirror_b9924dee,22900
+generate_area,currentmirror_3a3e0620,19100
 // *********************************************
 //Operating Range
 #define,STONEminimum,2.1
@@ -247,18 +244,18 @@ generate_area,currentmirror_b9924dee,22900
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//currentmirror3
+//currentmirror2
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,I0,I1,I2,net_skip,net_skip,net_skip,net_skip,net_skip,ISET,CELV,enable_currentmirror,ok_currentmirror,net_skip
+pinorder,I0,I1,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,ISET,CELV,enable_currentmirror,ok_currentmirror,net_skip
 endpinorder
 //**********************************************
 
 //**********************************************
 //TRIM Parameters
 cell,currentmirror
-trim,instance,currentmirror_b9924dee
+trim,instance,currentmirror_3a3e0620
 
 //currentmirror - no trim
 trim,name,na
@@ -376,16 +373,6 @@ router,I1,TBD
 dftpriority,I1,1
 esd,I1,TBD
 
-pinname,I2
-definition,I2,Output 2
-iq,I2,SIMULATION
-absmax,I2,6
-absmin,I2,-0.3
-io,I2,inout
-mode,I2,analog
-router,I2,TBD
-dftpriority,I2,1
-esd,I2,TBD
 
 
 

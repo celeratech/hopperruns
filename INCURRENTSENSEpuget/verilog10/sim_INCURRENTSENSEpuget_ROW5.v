@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module FORCE_INCURRENTSENSEpuget (GND,SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,PORB97836,CELSUB40948,clock_currentsensein,enable_currentsensein,measure_currentsensein,kelvin_GNDcurrentsensein,register_enable_currentsensein_xd_enable_currentsensein_89705365,register_measure_currentsensein_xd_measure_currentsensein_824d3563);
+module FORCE_INCURRENTSENSEpuget (GND,SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,PORB97836,CELSUB40948,clock_currentsensein,enable_currentsensein,measure_currentsensein,IP_INCURRENTSENSEpuget1,kelvin_GNDcurrentsensein,register_enable_currentsensein_xd_enable_currentsensein_89705365,register_measure_currentsensein_xd_measure_currentsensein_824d3563);
   inout  GND;
   output  SIMPV;
   output  VOUTSN;
@@ -11,14 +11,13 @@ module FORCE_INCURRENTSENSEpuget (GND,SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,PO
   output  clock_currentsensein;
   inout  enable_currentsensein;
   inout  measure_currentsensein;
+  output  IP_INCURRENTSENSEpuget1;
   output  kelvin_GNDcurrentsensein;
   input  register_enable_currentsensein_xd_enable_currentsensein_89705365;
   input  register_measure_currentsensein_xd_measure_currentsensein_824d3563;
 endmodule
 
-module INCURRENTSENSEpuget (TAO,tmi,SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,PORB97836,VSNSI_LIVE,CELSUB40948,VSNSI_FILTER,ok_currentsensein,clock_currentsensein,enable_currentsensein,measure_currentsensein,IP_INCURRENTSENSEpuget1,kelvin_GNDcurrentsensein,ok_measurecurrentsensein);
-  inout  TAO;
-  inout [4:0] tmi;
+module INCURRENTSENSEpuget (SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,PORB97836,VSNSI_LIVE,CELSUB40948,VSNSI_FILTER,ok_currentsensein,clock_currentsensein,enable_currentsensein,measure_currentsensein,IP_INCURRENTSENSEpuget1,kelvin_GNDcurrentsensein,ok_measurecurrentsensein);
   input  SIMPV;
   input  VOUTSN;
   input  VOUTSP;
@@ -38,11 +37,10 @@ module INCURRENTSENSEpuget (TAO,tmi,SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,PORB
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module sim_INCURRENTSENSEpuget_ROW9 ();
+module sim_INCURRENTSENSEpuget_ROW5 ();
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
 
 // ------------------------ Networks ---------------------
 FORCE_INCURRENTSENSEpuget XFORCE_INCURRENTSENSEpuget1 (
@@ -57,14 +55,13 @@ FORCE_INCURRENTSENSEpuget XFORCE_INCURRENTSENSEpuget1 (
 .clock_currentsensein(clock_currentsensein),
 .enable_currentsensein(enable_currentsensein),
 .measure_currentsensein(measure_currentsensein),
+.IP_INCURRENTSENSEpuget1(IP_INCURRENTSENSEpuget1),
 .kelvin_GNDcurrentsensein(kelvin_GNDcurrentsensein),
 .register_enable_currentsensein_xd_enable_currentsensein_89705365(register_enable_currentsensein_xd_enable_currentsensein_89705365),
 .register_measure_currentsensein_xd_measure_currentsensein_824d3563(register_measure_currentsensein_xd_measure_currentsensein_824d3563)
 );
 
 INCURRENTSENSEpuget XINCURRENTSENSEpuget1 (
-.TAO(TAO),
-.tmi(tmi[4:0]),
 .SIMPV(SIMPV),
 .VOUTSN(VOUTSN),
 .VOUTSP(VOUTSP),
