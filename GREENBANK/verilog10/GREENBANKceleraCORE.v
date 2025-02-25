@@ -2,7 +2,7 @@
 module AMPLIFIERgreenbank (REF,tdo,tmi,LDO0,LDO1,LDO2,LDO3,LDO4,LDO5,LDO6,LDO7,MUDV,CELG59462,CELV96848,sense_LDO2,sense_LDO5,sense_LDO7,CELSUB40948,IP_04d81c2f,IP_1836dbc4,IP_2c5a4e72,IP_3a1af20a,IP_b085943e,IP_bb9024c6,IP_be65c403,IP_bfb33430,kelvin_MUDGamplifier);
   input  REF;
   inout  tdo;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   output  LDO0;
   output  LDO1;
   output  LDO2;
@@ -32,7 +32,7 @@ endmodule
 module LDOgreenbank (REF,tdo,tmi,LDO8,LDO9,MUDV,LDO10,LDO11,LDO12,LDO13,LDO14,LDO15,CELG59462,CELV96848,CELSUB40948,CELPOWER_LDO_62423880,CELPOWER_LDO_af77ae17,CELPOWER_LDO_d8ea4418,CELPOWER_LDO_fd4a89e4,celkelvin_LDO8_37713079,celkelvin_LDO9_e7f88029,celkelvin_MUDG_31b80673,celkelvin_MUDG_37713079,celkelvin_MUDG_58ede99a,celkelvin_MUDG_92a31bd7,celkelvin_MUDG_9b1f0b60,celkelvin_MUDG_dbb8d281,celkelvin_MUDG_e09c7b4a,celkelvin_MUDG_e7f88029,celkelvin_LDO10_9b1f0b60,celkelvin_LDO11_58ede99a,celkelvin_LDO12_dbb8d281,celkelvin_LDO13_e09c7b4a,celkelvin_LDO14_31b80673,celkelvin_LDO15_92a31bd7);
   input  REF;
   inout  tdo;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   output  LDO8;
   output  LDO9;
   input  MUDV;
@@ -71,7 +71,7 @@ module SERVICEgreenbank (REF,TAO,tdo,tmi,MUDV,TAEXT,CELG59462,CELV96848,PORB9783
   output  REF;
   inout  TAO;
   inout  tdo;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   input  MUDV;
   input  TAEXT;
   input  CELG59462;

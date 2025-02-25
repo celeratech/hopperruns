@@ -2,7 +2,7 @@
 module LDOgreenbankAMPcontrolHIGH (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,IP_04d81c2f,dft_startup,kelvin_GNDldo);
   output  LDO;
   input  REF;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   input  MUDV;
   input  CELG59462;
   input  CELV96848;
@@ -16,7 +16,7 @@ endmodule
 module LDOgreenbankAMPcontrolLOW (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,IP_bb9024c6,dft_startup,kelvin_GNDldo);
   output  LDO;
   input  REF;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   input  MUDV;
   input  CELG59462;
   input  CELV96848;
@@ -30,7 +30,7 @@ endmodule
 module LDOgreenbankAMPcontrolMEDIUM (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,IP_b085943e,dft_startup,kelvin_GNDldo);
   output  LDO;
   input  REF;
-  input [4:0] tmi;
+  inout [4:0] tmi;
   input  MUDV;
   input  CELG59462;
   input  CELV96848;
@@ -199,18 +199,6 @@ endmodule
 
 
 
-//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
-
-
-module PEBBLEtielo ( q, G, SUB, V );
-
-  input V;
-  output q;
-  input G;
-  input SUB;
-endmodule
-
-
 //Verilog HDL for "DFT", "DFTtm8d" "functional"
 
 
@@ -228,11 +216,30 @@ module DFTtm8d ( a, ten, tdo, tmi, G, SUB, V, tdi, tma );
 endmodule
 
 
+//Verilog HDL for "DRM", "drm8" "functional"
+
+
+module drm8 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, drm0, d1, d0 );
+
+  input lastdrm;
+  input V;
+  output d1;
+  input  [7:0] id;
+  output d0;
+  input bypload;
+  output  [7:0] drm0;
+  input  [7:0] por0;
+  input G;
+  inout  [4:0] tmi;
+  input SUB;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
 module AMPLIFIERgreenbank (REF, tdo, tmi, LDO0, LDO1, LDO2, LDO3, LDO4, LDO5, LDO6, LDO7, MUDV, CELG59462, CELV96848, sense_LDO2, sense_LDO5, sense_LDO7, CELSUB40948, IP_04d81c2f, IP_1836dbc4, IP_2c5a4e72, IP_3a1af20a, IP_b085943e, IP_bb9024c6, IP_be65c403, IP_bfb33430, kelvin_MUDGamplifier);
 input  REF;
 inout  tdo;
-input [4:0] tmi;
+inout [4:0] tmi;
 output  LDO0;
 output  LDO1;
 output  LDO2;
@@ -265,6 +272,9 @@ wire [1:0] a;
 wire [7:0] tdi;
 wire [7:0] ten;
 wire [7:0] tma;
+wire [7:0] id;
+wire [7:0] drm0;
+wire [7:0] por0;
 
 // ------------------------ Networks ---------------------
 LDOgreenbankAMPcontrolHIGH XAMPCONTROLhigh (
@@ -274,7 +284,7 @@ LDOgreenbankAMPcontrolHIGH XAMPCONTROLhigh (
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.enable_ldo(c0),
+.enable_ldo(net_100),
 .CELSUB40948(CELSUB40948),
 .IP_04d81c2f(IP_04d81c2f),
 .dft_startup(net_126),
@@ -288,7 +298,7 @@ LDOgreenbankAMPcontrolLOW XAMPCONTROLlow (
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.enable_ldo(c0),
+.enable_ldo(net_95),
 .CELSUB40948(CELSUB40948),
 .IP_bb9024c6(IP_bb9024c6),
 .dft_startup(net_115),
@@ -302,7 +312,7 @@ LDOgreenbankAMPcontrolMEDIUM XAMPCONTROLmedium (
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.enable_ldo(c0),
+.enable_ldo(net_98),
 .CELSUB40948(CELSUB40948),
 .IP_b085943e(IP_b085943e),
 .dft_startup(net_122),
@@ -316,7 +326,7 @@ LDOgreenbankAMPfixedLOW XAMPFIXEDlow (
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.enable_ldo(c0),
+.enable_ldo(net_94),
 .CELSUB40948(CELSUB40948),
 .IP_2c5a4e72(IP_2c5a4e72),
 .dft_startup(net_114),
@@ -330,7 +340,7 @@ LDOgreenbankAMPfixedMEDIUM XAMPFIXEDmedium (
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.enable_ldo(c0),
+.enable_ldo(net_97),
 .CELSUB40948(CELSUB40948),
 .IP_1836dbc4(IP_1836dbc4),
 .dft_startup(net_120),
@@ -345,7 +355,7 @@ LDOgreenbankAMPopenHIGH XAMPOPENhigh (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .sense_LDO(sense_LDO7),
-.enable_ldo(c0),
+.enable_ldo(net_101),
 .CELSUB40948(CELSUB40948),
 .IP_3a1af20a(IP_3a1af20a),
 .dft_startup(net_128)
@@ -359,7 +369,7 @@ LDOgreenbankAMPopenLOW XAMPOPENlow (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .sense_LDO(sense_LDO2),
-.enable_ldo(c0),
+.enable_ldo(net_96),
 .CELSUB40948(CELSUB40948),
 .IP_bfb33430(IP_bfb33430),
 .dft_startup(net_117)
@@ -373,7 +383,7 @@ LDOgreenbankAMPopenMEDIUM XAMPOPENmedium (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .sense_LDO(sense_LDO5),
-.enable_ldo(c0),
+.enable_ldo(net_99),
 .CELSUB40948(CELSUB40948),
 .IP_be65c403(IP_be65c403),
 .dft_startup(net_124)
@@ -451,13 +461,6 @@ dftprobeModel0_035fb43c XU22 (
 .CELSUB(CELSUB40948)
 );
 
-PEBBLEtielo XDRMNOTL (
-.G(CELG59462),
-.V(CELV96848),
-.q(c0),
-.SUB(CELSUB40948)
-);
-
 DFTtm8d dft_hex0x09 (
 .G(CELG59462),
 .V(CELV96848),
@@ -468,6 +471,20 @@ DFTtm8d dft_hex0x09 (
 .ten({ten_39d4c910_XU22,ten_b957074a_XU21,ten_504b6118_XU20,ten_67efbeaa_XU19,ten_ca8a82f5_XU18,ten_38edcf69_XU17,ten_01d6b48b_XU16,ten_e2484965_XU1}),
 .tma({a0,a0,a0,a0,a1,a0,a0,a1}),
 .tmi(tmi[4:0])
+);
+
+drm8 drm_hex0x04 (
+.G(CELG59462),
+.V(CELV96848),
+.d0(c0),
+.d1(c1),
+.id({c0,c0,c0,c0,c0,c1,c0,c0}),
+.SUB(CELSUB40948),
+.tmi(tmi[4:0]),
+.drm0({net_101,net_100,net_99,net_98,net_97,net_96,net_95,net_94}),
+.por0({c0,c0,c0,c0,c0,c0,c0,c0}),
+.bypload(c0),
+.lastdrm(c0)
 );
 
 endmodule

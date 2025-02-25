@@ -1,35 +1,41 @@
 // ------------------------ Module Definitions -----------
-//Verilog HDL for "PEBBLES", "PEBBLEtiehi" "functional"
+//Verilog HDL for "memory", "fusebank" "functional"
 
 
-module PEBBLEtiehi ( q, G, SUB, V );
+module fusebank ( VOTP, GOTP, strobe, pgenb, we, nr, q );
 
-  input V;
-  output q;
-  input G;
-  input SUB;
+  input nr;
+  input  [63:0] we;
+  input  [7:0] strobe;
+  output  [7:0] q;
+  input pgenb;
+  input VOTP;
+  input GOTP;
 endmodule
 
 
-//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
-
-
-module PEBBLEtielo ( q, G, SUB, V );
-
-  input V;
-  output q;
-  input G;
-  input SUB;
+//Celera:oscillator_XGREENBANK_XceleraSERDES_Xoscillator
+//Celera Confidential Symbol Generator
+//VMAX:6Crude:3200KHz
+module oscillator_XGREENBANK_XceleraSERDES_Xoscillator (SIMPV,ok_oscillator,oscillator,ten,
+tdext,ten_oscillator_on,ten_oscillator_off,ten_oscillator_div8,ten_oscillator_external,tdi_oscillator,
+enable_oscillator,
+CELG,CELSUB);
+input SIMPV;
+output oscillator;
+output ok_oscillator;
+input enable_oscillator;
+input ten;
+input tdext;
+input ten_oscillator_on;
+input ten_oscillator_off;
+input ten_oscillator_div8;
+input ten_oscillator_external;
+output tdi_oscillator;
+input CELG;
+input CELSUB;
 endmodule
 
-
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
 
 
 //Verilog HDL for "DFT", "SERDESdftYesYes" "functional"
@@ -63,26 +69,42 @@ tdi_clock, tma, unlock );
 endmodule
 
 
-//Verilog HDL for "DFT", "SERDEScontrolDFT" "functional"
+//Verilog HDL for "DFT", "SERDEScontrolDRMautoYes" "functional"
 
 
-module SERDEScontrolDFT ( porb, sdao, unlock, tmi, CELG, CELSUB, CELV, enable_hardware,
-i2caddr, i2cpasswd, celkelvin_CELV, pd, scl_serdes, sda_serdes );
+module SERDEScontrolDRMautoYes ( a0, a1, otp_bistok, otp_clock_enable, otp_done,
+otp_loadok, otp_nr, otp_pgrnb, otp_program_done, otp_strobe, otp_we, porb, sdao,
+unlock, tmi, CELG, CELSUB, CELV, enable_hardware, i2caddress, i2cpassword, celkelvin_CELV,
+otp_clock, otp_id, otp_q, pd, scl_serdes, sda_serdes );
 
-  input  [1:0] i2caddr;
-  input CELV;
-  input celkelvin_CELV;
-  input CELSUB;
   output porb;
+  input CELSUB;
+  input celkelvin_CELV;
+  output otp_nr;
+  input  [7:0] otp_id;
+  output otp_pgrnb;
+  output otp_program_done;
+  output a1;
+  output  [7:0] otp_strobe;
   input sda_serdes;
-  input scl_serdes;
-  output unlock;
-  output sdao;
-  input enable_hardware;
-  input  [7:0] pd;
-  input  [1:0] i2cpasswd;
-  input CELG;
+  input otp_clock;
   inout  [5:0] tmi;
+  input  [7:0] otp_q;
+  output otp_clock_enable;
+  output  [63:0] otp_we;
+  input  [1:0] i2caddress;
+  input  [7:0] pd;
+  input CELG;
+  input CELV;
+  output a0;
+  input scl_serdes;
+  output otp_loadok;
+  input  [1:0] i2cpassword;
+  output otp_done;
+  output sdao;
+  output unlock;
+  input enable_hardware;
+  output otp_bistok;
 endmodule
 
 
@@ -105,85 +127,118 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module GREENBANKceleraSERDES (pd0, tmi, scli, sdai, DFTSCL, DFTSDA, unlock, CELG59462, CELV96848, PORB97836, CELSUB40948, celkelvin_MUDV_4be07aeb);
+module GREENBANKceleraSERDES (pd0, tdo, tmi, GOTP, VOTP, scli, sdai, DFTSCL, DFTSDA, unlock, otp_done, CELG59462, CELV96848, PORB97836, CELSUB40948, celkelvin_MUDV_55c016d1);
 input  pd0;
+inout  tdo;
 inout [5:0] tmi;
+input  GOTP;
+input  VOTP;
 output  scli;
 inout  sdai;
 inout  DFTSCL;
 inout  DFTSDA;
 output  unlock;
+output  otp_done;
 input  CELG59462;
-input  CELV96848;
+  input  CELV96848;
 output  PORB97836;
 input  CELSUB40948;
-input  celkelvin_MUDV_4be07aeb;
+input  celkelvin_MUDV_55c016d1;
 
 
 // ------------------------ Wires ------------------------
 wire [5:0] tmi;
+wire [7:0] q;
+wire [63:0] we;
+wire [7:0] strobe;
 wire [7:0] tma;
 wire [7:0] pd;
-wire [1:0] i2caddr;
-wire [1:0] i2cpasswd;
+wire [7:0] otp_q;
+wire [7:0] otp_id;
+wire [63:0] otp_we;
+wire [1:0] i2caddress;
+wire [7:0] otp_strobe;
+wire [1:0] i2cpassword;
 
 // ------------------------ Networks ---------------------
-PEBBLEtiehi XtieHi (
-.G(CELG59462),
-.V(CELV96848),
-.q(a1),
-.SUB(CELSUB40948)
+fusebank Xfusebank (
+.q(otp_q[7:0]),
+.nr(otp_nr),
+.we(otp_we[63:0]),
+.GOTP(GOTP),
+.VOTP(VOTP),
+.pgenb(otp_pgrnb),
+.strobe(otp_strobe[7:0])
 );
 
-PEBBLEtielo XtieLo (
-.G(CELG59462),
-.V(CELV96848),
-.q(a0),
-.SUB(CELSUB40948)
-);
-
-STONEnoconn XNCtdo_noconn (
-.noconn(tdo_noconn)
+oscillator_XGREENBANK_XceleraSERDES_Xoscillator Xoscillator (
+.ten(ten_serdes),
+.CELG(CELG59462),
+.SIMPV(CELV96848),
+.tdext(tdext_noconn_noconn),
+.CELSUB(CELSUB40948),
+.oscillator(otp_clock),
+.ok_oscillator(noconn),
+.tdi_oscillator(tdi_clock),
+.enable_oscillator(otp_clock_enable),
+.ten_oscillator_on(ten_oscillator_on),
+.ten_oscillator_off(ten_oscillator_off),
+.ten_oscillator_div8(ten_oscillator_div8),
+.ten_oscillator_external(ten_oscillator_external)
 );
 
 SERDESdftYesYes XSERDESdftYesYes (
-.tdo(tdo_noconn),
+.tdo(tdo),
 .tma({a1,a1,a1,a1,a1,a1,a0,a0}),
 .tmi(tmi[4:0]),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.tdext(tdext_noconn),
+.tdext(tdext_noconn_noconn),
 .CELSUB(CELSUB40948),
 .unlock(unlock),
-.otpdone(a0),
-.otp_clock(a0),
-.tdi_clock(a0),
-.otp_bistok(a0),
-.otp_loadok(a0),
-.ten_serdes(ten_serdes_noconn),
-.otp_programdone(a0),
-.otp_clock_enable(a0),
-.ten_oscillator_on(ten_oscillator_on_noconn),
-.ten_oscillator_off(ten_oscillator_off_noconn),
-.ten_oscillator_div8(ten_oscillator_div8_noconn),
-.ten_oscillator_external(ten_oscillator_external_noconn)
+.otpdone(otp_done),
+.otp_clock(otp_clock),
+.tdi_clock(tdi_clock),
+.otp_bistok(otp_bistok),
+.otp_loadok(otp_loadok),
+.ten_serdes(ten_serdes),
+.otp_programdone(otp_program_done),
+.otp_clock_enable(otp_clock_enable),
+.ten_oscillator_on(ten_oscillator_on),
+.ten_oscillator_off(ten_oscillator_off),
+.ten_oscillator_div8(ten_oscillator_div8),
+.ten_oscillator_external(ten_oscillator_external)
 );
 
-SERDEScontrolDFT XSERDEScontrolDFT (
+SERDEScontrolDRMautoYes XSERDEScontrolDRMautoYes (
+.a0(a0),
+.a1(a1),
 .pd({a0,a0,a0,a0,a0,a0,a0,pd0}),
 .tmi(tmi[5:0]),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .porb(PORB97836),
 .sdao(sdao),
+.otp_q(otp_q[7:0]),
 .CELSUB(CELSUB40948),
+.otp_id({a0,a0,a1,a1,a0,a0,a1,a0}),
+.otp_nr(otp_nr),
+.otp_we(otp_we[63:0]),
 .unlock(unlock),
-.i2caddr({a0,a1}),
-.i2cpasswd({a1,a0}),
+.otp_done(otp_done),
+.otp_clock(otp_clock),
+.otp_pgrnb(otp_pgrnb),
+.i2caddress({a0,a1}),
+.otp_bistok(otp_bistok),
+.otp_loadok(otp_loadok),
+.otp_strobe(otp_strobe[7:0]),
 .scl_serdes(scl_serdes),
 .sda_serdes(sda_serdes),
-.celkelvin_CELV(celkelvin_MUDV_4be07aeb),
-.enable_hardware(a1)
+.i2cpassword({a1,a0}),
+.celkelvin_CELV(celkelvin_MUDV_55c016d1),
+.enable_hardware(a1),
+.otp_clock_enable(otp_clock_enable),
+.otp_program_done(otp_program_done)
 );
 
 SERDESinputSINGLEserdes XSERDESinputSINGLEserdes (

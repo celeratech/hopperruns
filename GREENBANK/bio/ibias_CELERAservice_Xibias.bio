@@ -33,6 +33,8 @@ limit,ibias_reference,choose1,yes
 //USER Parameters
 user,Design,no
 description,IBIAS design
+user,ibias_accuracy,IBIASaccuracy
+description,IBIAS TRIM Enabled
 user,NESTOrevision,0.5.1
 description,NESTO revision
 //**********************************************
@@ -184,7 +186,7 @@ revision,vis15cbdiesize,0p1
 sub_area,STONEnoconn,0
 sub_area,STONEibiasCONTROLself,99999
 sub_area,STONEibiasDFT,200
-sub_area,STONEibiasCONTROLselfRUNIT,99999
+sub_area,STONEibiasCONTROLselfRTRIM,99999
 sub_area,STONEibiasOUT,300
 sub_area,STONEibiasOUT,300
 sub_area,STONEibiasOUT,300
@@ -229,29 +231,29 @@ endpinorder
 cell,ibias
 trim,instance,ibias_CELERAservice_Xibias
 
-trim,name,na
-trim,enable,no
-trim,bits,TBD
+trim,name,IBIASaccuracy
+trim,enable,yes
+trim,bits,5
 trim,por,0
 trim,pinname,trim_ibias
-trim,testname,TBD
-trim,description,TBD
-trim,target,na
-trim,units,TBD
+trim,testname,IBIASaccuracy
+trim,description,IBIAS accuracy to 2uA source
+trim,target,2.0
+trim,units,uA
 trim,userdescription,TBD
-trim,pretrim_low_limit,TBD
-trim,pretrim_high_limit,TBD
-trim,posttrim_low_limit,TBD
-trim,posttrim_high_limit,TBD
+trim,pretrim_low_limit,1.600
+trim,pretrim_high_limit,2.400
+trim,posttrim_low_limit,1.985
+trim,posttrim_high_limit,2.015
 trim,codeunits,uA
-trim,description0,empty
-trim,description1,empty
-trim,description2,empty
-trim,description3,empty
-trim,description4,empty
-trim,description5,empty
-trim,description6,empty
-trim,description7,empty
+trim,description0,code 0x00 2.0
+trim,description1,code 0x01 -0.065
+trim,description2,code 0x02 -0.13
+trim,description3,code 0x04 -0.25
+trim,description4,code 0x08 -0.5
+trim,description5,code 0x10 -3.8
+trim,description6,not used
+trim,description7,not used
 trim,description8,empty
 
 //**********************************************
@@ -322,6 +324,17 @@ mode,global_celeraibias,digital
 router,global_celeraibias,TBD
 dftpriority,global_celeraibias,1
 esd,global_celeraibias,TBD
+
+pinname,trim_ibias
+definition,trim_ibias,Trim IBIAS output current
+iq,trim_ibias,SIMULATION
+absmax,trim_ibias,6
+absmin,trim_ibias,-0.3
+io,trim_ibias,input
+mode,trim_ibias,digital
+router,trim_ibias,TBD
+dftpriority,trim_ibias,1
+esd,trim_ibias,TBD
 
 pinname,ok_ibias
 definition,ok_ibias,IBIAS ok Flag
