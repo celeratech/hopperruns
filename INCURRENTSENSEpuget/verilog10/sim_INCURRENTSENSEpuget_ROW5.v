@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module FORCE_INCURRENTSENSEpuget (GND,SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,PORB97836,CELSUB40948,clock_currentsensein,enable_currentsensein,measure_currentsensein,IP_INCURRENTSENSEpuget1,kelvin_GNDcurrentsensein,register_enable_currentsensein_xd_enable_currentsensein_89705365,register_measure_currentsensein_xd_measure_currentsensein_824d3563);
+module FORCE_INCURRENTSENSEpuget (GND,SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,PORB97836,CELSUB40948,clock_currentsensein,enable_currentsensein,measure_currentsensein,IP_INCURRENTSENSEpuget1,kelvin_GNDcurrentsensein);
   inout  GND;
   output  SIMPV;
   output  VOUTSN;
@@ -13,8 +13,6 @@ module FORCE_INCURRENTSENSEpuget (GND,SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,PO
   inout  measure_currentsensein;
   output  IP_INCURRENTSENSEpuget1;
   output  kelvin_GNDcurrentsensein;
-  input  register_enable_currentsensein_xd_enable_currentsensein_89705365;
-  input  register_measure_currentsensein_xd_measure_currentsensein_824d3563;
 endmodule
 
 module INCURRENTSENSEpuget (SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,PORB97836,VSNSI_LIVE,CELSUB40948,VSNSI_FILTER,ok_currentsensein,clock_currentsensein,enable_currentsensein,measure_currentsensein,IP_INCURRENTSENSEpuget1,kelvin_GNDcurrentsensein,ok_measurecurrentsensein);
@@ -56,9 +54,7 @@ FORCE_INCURRENTSENSEpuget XFORCE_INCURRENTSENSEpuget1 (
 .enable_currentsensein(enable_currentsensein),
 .measure_currentsensein(measure_currentsensein),
 .IP_INCURRENTSENSEpuget1(IP_INCURRENTSENSEpuget1),
-.kelvin_GNDcurrentsensein(kelvin_GNDcurrentsensein),
-.register_enable_currentsensein_xd_enable_currentsensein_89705365(register_enable_currentsensein_xd_enable_currentsensein_89705365),
-.register_measure_currentsensein_xd_measure_currentsensein_824d3563(register_measure_currentsensein_xd_measure_currentsensein_824d3563)
+.kelvin_GNDcurrentsensein(kelvin_GNDcurrentsensein)
 );
 
 INCURRENTSENSEpuget XINCURRENTSENSEpuget1 (

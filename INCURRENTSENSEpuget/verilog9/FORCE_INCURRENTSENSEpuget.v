@@ -21,16 +21,6 @@ endmodule
 
 
 
-//Verilog HDL for "Generate", "WRAPPER1" "functional"
-
-
-module WRAPPER1 ( o, i );
-
-  input i;
-  output o;
-endmodule
-
-
 module vpulse_0x1x1d0ux0x1nx1nx500d0n(PLUS, MINUS);
 inout PLUS;
 inout MINUS;
@@ -99,7 +89,7 @@ input GND;
 endmodule 
 
 // ------------------------ Module Verilog ---------------
-module FORCE_INCURRENTSENSEpuget (GND, SIMPV, VOUTSN, VOUTSP, CELG59462, CELV96848, PORB97836, CELSUB40948, clock_currentsensein, enable_currentsensein, measure_currentsensein, IP_INCURRENTSENSEpuget1, kelvin_GNDcurrentsensein, register_enable_currentsensein_xd_enable_currentsensein_89705365, register_measure_currentsensein_xd_measure_currentsensein_824d3563);
+module FORCE_INCURRENTSENSEpuget (GND, SIMPV, VOUTSN, VOUTSP, CELG59462, CELV96848, PORB97836, CELSUB40948, clock_currentsensein, enable_currentsensein, measure_currentsensein, IP_INCURRENTSENSEpuget1, kelvin_GNDcurrentsensein);
 inout  GND;
 output  SIMPV;
 output  VOUTSN;
@@ -113,8 +103,6 @@ inout  enable_currentsensein;
 inout  measure_currentsensein;
 output  IP_INCURRENTSENSEpuget1;
 output  kelvin_GNDcurrentsensein;
-input  register_enable_currentsensein_xd_enable_currentsensein_89705365;
-input  register_measure_currentsensein_xd_measure_currentsensein_824d3563;
 
 
 // ------------------------ Wires ------------------------
@@ -130,16 +118,6 @@ dbuf_e926e395 Xd_clock_currentsensein (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
-);
-
-WRAPPER1 XWRAPregister_enable_currentsensein_xd_enable_currentsensein_89705365 (
-.i(register_enable_currentsensein_xd_enable_currentsensein_89705365),
-.o(enable_currentsensein)
-);
-
-WRAPPER1 XWRAPregister_measure_currentsensein_xd_measure_currentsensein_824d3563 (
-.i(register_measure_currentsensein_xd_measure_currentsensein_824d3563),
-.o(measure_currentsensein)
 );
 
 vpulse_0x1x1d0ux0x1nx1nx500d0n XV2 (
