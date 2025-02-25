@@ -1,13 +1,4 @@
 // ------------------------ Module Definitions -----------
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
 //Celera:dbuf_e926e395
 //Celera Confidential Symbol Generator
 //Digital Buffer
@@ -73,17 +64,6 @@ module vpwl_0x0_10d0ux0_11d0ux12 (PLUS,MINUS);
   output  MINUS;
 endmodule
 
-//Verilog HDL for "TEST", "SIMbias" "functional"
-
-
-module SIMbias ( V, IP, IN );
-
-  input V;
-  output IN;
-  output IP;
-endmodule
-
-
 module vpwl_0x0_10d0ux0_11d0ux0 (PLUS,MINUS);
   output  PLUS;
   output  MINUS;
@@ -104,7 +84,7 @@ input GND;
 endmodule 
 
 // ------------------------ Module Verilog ---------------
-module FORCE_INCURRENTSENSEpuget (GND, SIMPV, VOUTSN, VOUTSP, CELG59462, CELV96848, PORB97836, CELSUB40948, clock_currentsensein, enable_currentsensein, measure_currentsensein, IP_INCURRENTSENSEpuget1, kelvin_GNDcurrentsensein, register_enable_currentsensein_xd_enable_currentsensein_89705365, register_measure_currentsensein_xd_measure_currentsensein_824d3563);
+module FORCE_INCURRENTSENSEpuget (GND, SIMPV, VOUTSN, VOUTSP, CELG59462, CELV96848, PORB97836, CELSUB40948, clock_currentsensein, enable_currentsensein, measure_currentsensein, kelvin_GNDcurrentsensein, register_enable_currentsensein_xd_enable_currentsensein_89705365, register_measure_currentsensein_xd_measure_currentsensein_824d3563);
 inout  GND;
 output  SIMPV;
 output  VOUTSN;
@@ -116,7 +96,6 @@ output  CELSUB40948;
 output  clock_currentsensein;
 inout  enable_currentsensein;
 inout  measure_currentsensein;
-output  IP_INCURRENTSENSEpuget1;
 output  kelvin_GNDcurrentsensein;
 input  register_enable_currentsensein_xd_enable_currentsensein_89705365;
 input  register_measure_currentsensein_xd_measure_currentsensein_824d3563;
@@ -125,10 +104,6 @@ input  register_measure_currentsensein_xd_measure_currentsensein_824d3563;
 // ------------------------ Wires ------------------------
 
 // ------------------------ Networks ---------------------
-STONEnoconn XNCip (
-.noconn(noconn_IN)
-);
-
 dbuf_e926e395 Xd_clock_currentsensein (
 .i(net_148),
 .o(clock_currentsensein),
@@ -210,12 +185,6 @@ vdc_0 VI__VOUTSN (
 vdc_0 VI__VOUTSP (
 .PLUS(net_58),
 .MINUS(VOUTSP)
-);
-
-SIMbias XIP_INCURRENTSENSEpuget1 (
-.V(SIMPV),
-.IN(noconn_IN),
-.IP(IP_INCURRENTSENSEpuget1)
 );
 
 vpwl_0x0_10d0ux0_11d0ux0 V_kelvin_GNDcurrentsenseinx (
