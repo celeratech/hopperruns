@@ -1,0 +1,551 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x556c57178f60 .scope module, "GREENBANKceleraRING" "GREENBANKceleraRING" 2 218;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "TAO";
+    .port_info 1 /INOUT 1 "tdo";
+    .port_info 2 /INOUT 5 "tmi";
+    .port_info 3 /INOUT 1 "LDO0";
+    .port_info 4 /INOUT 1 "LDO1";
+    .port_info 5 /INOUT 1 "LDO2";
+    .port_info 6 /INOUT 1 "LDO3";
+    .port_info 7 /INOUT 1 "LDO4";
+    .port_info 8 /INOUT 1 "LDO5";
+    .port_info 9 /INOUT 1 "LDO6";
+    .port_info 10 /INOUT 1 "LDO7";
+    .port_info 11 /INOUT 1 "LDO8";
+    .port_info 12 /INOUT 1 "LDO9";
+    .port_info 13 /INOUT 1 "MUDG";
+    .port_info 14 /INOUT 1 "MUDV";
+    .port_info 15 /INOUT 1 "LDO10";
+    .port_info 16 /INOUT 1 "LDO11";
+    .port_info 17 /INOUT 1 "LDO12";
+    .port_info 18 /INOUT 1 "LDO13";
+    .port_info 19 /INOUT 1 "LDO14";
+    .port_info 20 /INOUT 1 "LDO15";
+    .port_info 21 /OUTPUT 1 "TAEXT";
+    .port_info 22 /INPUT 1 "CELINA";
+    .port_info 23 /INPUT 1 "CELIND";
+    .port_info 24 /INPUT 1 "DFTSCL";
+    .port_info 25 /INOUT 1 "DFTSDA";
+    .port_info 26 /INPUT 1 "unlock";
+    .port_info 27 /OUTPUT 1 "CELOUTA";
+    .port_info 28 /OUTPUT 1 "CELOUTD";
+    .port_info 29 /OUTPUT 1 "CELG59462";
+    .port_info 30 /OUTPUT 1 "CELV96848";
+    .port_info 31 /INOUT 1 "sense_LDO2";
+    .port_info 32 /INOUT 1 "sense_LDO5";
+    .port_info 33 /INOUT 1 "sense_LDO7";
+    .port_info 34 /OUTPUT 1 "CELSUB40948";
+    .port_info 35 /INOUT 1 "kelvin_MUDV";
+    .port_info 36 /INOUT 1 "CELPOWER_LDO";
+    .port_info 37 /OUTPUT 1 "SENSE_G_30a24d84";
+    .port_info 38 /INOUT 1 "kelvin_MUDGservice";
+    .port_info 39 /INOUT 1 "kelvin_MUDGamplifier";
+    .port_info 40 /OUTPUT 1 "CELPOWER_LDO_62423880";
+    .port_info 41 /OUTPUT 1 "CELPOWER_LDO_af77ae17";
+    .port_info 42 /OUTPUT 1 "CELPOWER_LDO_d8ea4418";
+    .port_info 43 /OUTPUT 1 "CELPOWER_LDO_fd4a89e4";
+    .port_info 44 /OUTPUT 1 "celkelvin_LDO8_37713079";
+    .port_info 45 /OUTPUT 1 "celkelvin_LDO9_e7f88029";
+    .port_info 46 /OUTPUT 1 "celkelvin_MUDG_2e498fae";
+    .port_info 47 /OUTPUT 1 "celkelvin_MUDG_31b80673";
+    .port_info 48 /OUTPUT 1 "celkelvin_MUDG_37713079";
+    .port_info 49 /OUTPUT 1 "celkelvin_MUDG_58ede99a";
+    .port_info 50 /OUTPUT 1 "celkelvin_MUDG_5f8d3afe";
+    .port_info 51 /OUTPUT 1 "celkelvin_MUDG_92a31bd7";
+    .port_info 52 /OUTPUT 1 "celkelvin_MUDG_9b1f0b60";
+    .port_info 53 /OUTPUT 1 "celkelvin_MUDG_ac0a699d";
+    .port_info 54 /OUTPUT 1 "celkelvin_MUDG_dbb8d281";
+    .port_info 55 /OUTPUT 1 "celkelvin_MUDG_e09c7b4a";
+    .port_info 56 /OUTPUT 1 "celkelvin_MUDG_e5e6d906";
+    .port_info 57 /OUTPUT 1 "celkelvin_MUDG_e7f88029";
+    .port_info 58 /OUTPUT 1 "celkelvin_MUDG_f3f88263";
+    .port_info 59 /OUTPUT 1 "celkelvin_MUDV_4be07aeb";
+    .port_info 60 /OUTPUT 1 "celkelvin_LDO10_9b1f0b60";
+    .port_info 61 /OUTPUT 1 "celkelvin_LDO11_58ede99a";
+    .port_info 62 /OUTPUT 1 "celkelvin_LDO12_dbb8d281";
+    .port_info 63 /OUTPUT 1 "celkelvin_LDO13_e09c7b4a";
+    .port_info 64 /OUTPUT 1 "celkelvin_LDO14_31b80673";
+    .port_info 65 /OUTPUT 1 "celkelvin_LDO15_92a31bd7";
+o0x7f92a8f8c018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720cba0_0 .net "CELG59462", 0 0, o0x7f92a8f8c018;  0 drivers
+o0x7f92a8f8c048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720cc60_0 .net "CELINA", 0 0, o0x7f92a8f8c048;  0 drivers
+o0x7f92a8f8c2b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720cd20_0 .net "CELIND", 0 0, o0x7f92a8f8c2b8;  0 drivers
+o0x7f92a8f8c498 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720ce20_0 .net "CELOUTA", 0 0, o0x7f92a8f8c498;  0 drivers
+o0x7f92a8f8c678 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720cef0_0 .net "CELOUTD", 0 0, o0x7f92a8f8c678;  0 drivers
+o0x7f92a8f8e478 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720cf90_0 .net "CELPOWER_LDO", 0 0, o0x7f92a8f8e478;  0 drivers
+o0x7f92a8f8e4a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720d060_0 .net "CELPOWER_LDO_62423880", 0 0, o0x7f92a8f8e4a8;  0 drivers
+o0x7f92a8f8e4d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720d130_0 .net "CELPOWER_LDO_af77ae17", 0 0, o0x7f92a8f8e4d8;  0 drivers
+o0x7f92a8f8e508 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720d200_0 .net "CELPOWER_LDO_d8ea4418", 0 0, o0x7f92a8f8e508;  0 drivers
+o0x7f92a8f8e538 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720d2d0_0 .net "CELPOWER_LDO_fd4a89e4", 0 0, o0x7f92a8f8e538;  0 drivers
+o0x7f92a8f8c078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720d3a0_0 .net "CELSUB40948", 0 0, o0x7f92a8f8c078;  0 drivers
+o0x7f92a8f8c0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720d440_0 .net "CELV96848", 0 0, o0x7f92a8f8c0a8;  0 drivers
+o0x7f92a8f8cc18 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720d4e0_0 .net "DFTSCL", 0 0, o0x7f92a8f8cc18;  0 drivers
+o0x7f92a8f8cca8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720d5b0_0 .net "DFTSDA", 0 0, o0x7f92a8f8cca8;  0 drivers
+o0x7f92a8f8c0d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720d680_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  0 drivers
+o0x7f92a8f8cd38 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720d720_0 .net "LDO0", 0 0, o0x7f92a8f8cd38;  0 drivers
+o0x7f92a8f8ce28 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720d7f0_0 .net "LDO1", 0 0, o0x7f92a8f8ce28;  0 drivers
+o0x7f92a8f8cee8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720d8c0_0 .net "LDO10", 0 0, o0x7f92a8f8cee8;  0 drivers
+o0x7f92a8f8d008 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720d990_0 .net "LDO11", 0 0, o0x7f92a8f8d008;  0 drivers
+o0x7f92a8f8d128 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720da60_0 .net "LDO12", 0 0, o0x7f92a8f8d128;  0 drivers
+o0x7f92a8f8d248 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720db30_0 .net "LDO13", 0 0, o0x7f92a8f8d248;  0 drivers
+o0x7f92a8f8d368 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720dc00_0 .net "LDO14", 0 0, o0x7f92a8f8d368;  0 drivers
+o0x7f92a8f8d488 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720dcd0_0 .net "LDO15", 0 0, o0x7f92a8f8d488;  0 drivers
+o0x7f92a8f8d5a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720dda0_0 .net "LDO2", 0 0, o0x7f92a8f8d5a8;  0 drivers
+o0x7f92a8f8d6c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720de70_0 .net "LDO3", 0 0, o0x7f92a8f8d6c8;  0 drivers
+o0x7f92a8f8d788 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720df40_0 .net "LDO4", 0 0, o0x7f92a8f8d788;  0 drivers
+o0x7f92a8f8d848 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720e010_0 .net "LDO5", 0 0, o0x7f92a8f8d848;  0 drivers
+o0x7f92a8f8d968 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720e0e0_0 .net "LDO6", 0 0, o0x7f92a8f8d968;  0 drivers
+o0x7f92a8f8da28 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720e1b0_0 .net "LDO7", 0 0, o0x7f92a8f8da28;  0 drivers
+o0x7f92a8f8db48 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720e280_0 .net "LDO8", 0 0, o0x7f92a8f8db48;  0 drivers
+o0x7f92a8f8dc68 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720e350_0 .net "LDO9", 0 0, o0x7f92a8f8dc68;  0 drivers
+o0x7f92a8f8dd88 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720e420_0 .net "MUDG", 0 0, o0x7f92a8f8dd88;  0 drivers
+o0x7f92a8f8cd68 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720e4f0_0 .net "MUDV", 0 0, o0x7f92a8f8cd68;  0 drivers
+o0x7f92a8f8ddb8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720e7a0_0 .net "SENSE_G_30a24d84", 0 0, o0x7f92a8f8ddb8;  0 drivers
+o0x7f92a8f8c108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720e870_0 .net "TAEXT", 0 0, o0x7f92a8f8c108;  0 drivers
+o0x7f92a8f8c4c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720e940_0 .net "TAO", 0 0, o0x7f92a8f8c4c8;  0 drivers
+o0x7f92a8f8ca38 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720ea10_0 .net "a0", 0 0, o0x7f92a8f8ca38;  0 drivers
+o0x7f92a8f8ca08 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720eae0_0 .net "a1", 0 0, o0x7f92a8f8ca08;  0 drivers
+o0x7f92a8f8cf18 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720ebb0_0 .net "celkelvin_LDO10_9b1f0b60", 0 0, o0x7f92a8f8cf18;  0 drivers
+o0x7f92a8f8d038 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720ec80_0 .net "celkelvin_LDO11_58ede99a", 0 0, o0x7f92a8f8d038;  0 drivers
+o0x7f92a8f8d158 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720ed50_0 .net "celkelvin_LDO12_dbb8d281", 0 0, o0x7f92a8f8d158;  0 drivers
+o0x7f92a8f8d278 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720ee20_0 .net "celkelvin_LDO13_e09c7b4a", 0 0, o0x7f92a8f8d278;  0 drivers
+o0x7f92a8f8d398 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720eef0_0 .net "celkelvin_LDO14_31b80673", 0 0, o0x7f92a8f8d398;  0 drivers
+o0x7f92a8f8d4b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720efc0_0 .net "celkelvin_LDO15_92a31bd7", 0 0, o0x7f92a8f8d4b8;  0 drivers
+o0x7f92a8f8db78 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720f090_0 .net "celkelvin_LDO8_37713079", 0 0, o0x7f92a8f8db78;  0 drivers
+o0x7f92a8f8dc98 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720f160_0 .net "celkelvin_LDO9_e7f88029", 0 0, o0x7f92a8f8dc98;  0 drivers
+o0x7f92a8f8dde8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720f230_0 .net "celkelvin_MUDG_2e498fae", 0 0, o0x7f92a8f8dde8;  0 drivers
+o0x7f92a8f8de18 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720f300_0 .net "celkelvin_MUDG_31b80673", 0 0, o0x7f92a8f8de18;  0 drivers
+o0x7f92a8f8de48 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720f3d0_0 .net "celkelvin_MUDG_37713079", 0 0, o0x7f92a8f8de48;  0 drivers
+o0x7f92a8f8de78 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720f4a0_0 .net "celkelvin_MUDG_58ede99a", 0 0, o0x7f92a8f8de78;  0 drivers
+o0x7f92a8f8dea8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720f570_0 .net "celkelvin_MUDG_5f8d3afe", 0 0, o0x7f92a8f8dea8;  0 drivers
+o0x7f92a8f8ded8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720f640_0 .net "celkelvin_MUDG_92a31bd7", 0 0, o0x7f92a8f8ded8;  0 drivers
+o0x7f92a8f8df08 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720f710_0 .net "celkelvin_MUDG_9b1f0b60", 0 0, o0x7f92a8f8df08;  0 drivers
+o0x7f92a8f8df38 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720f7e0_0 .net "celkelvin_MUDG_ac0a699d", 0 0, o0x7f92a8f8df38;  0 drivers
+o0x7f92a8f8df68 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720f8b0_0 .net "celkelvin_MUDG_dbb8d281", 0 0, o0x7f92a8f8df68;  0 drivers
+o0x7f92a8f8df98 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720f980_0 .net "celkelvin_MUDG_e09c7b4a", 0 0, o0x7f92a8f8df98;  0 drivers
+o0x7f92a8f8dfc8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720fa50_0 .net "celkelvin_MUDG_e5e6d906", 0 0, o0x7f92a8f8dfc8;  0 drivers
+o0x7f92a8f8dff8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720fb20_0 .net "celkelvin_MUDG_e7f88029", 0 0, o0x7f92a8f8dff8;  0 drivers
+o0x7f92a8f8e028 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720fbf0_0 .net "celkelvin_MUDG_f3f88263", 0 0, o0x7f92a8f8e028;  0 drivers
+o0x7f92a8f8e568 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720fcc0_0 .net "celkelvin_MUDV_4be07aeb", 0 0, o0x7f92a8f8e568;  0 drivers
+o0x7f92a8f8e058 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720fd90_0 .net "kelvin_MUDGamplifier", 0 0, o0x7f92a8f8e058;  0 drivers
+o0x7f92a8f8e088 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720fe60_0 .net "kelvin_MUDGservice", 0 0, o0x7f92a8f8e088;  0 drivers
+o0x7f92a8f8e598 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c5720ff30_0 .net "kelvin_MUDV", 0 0, o0x7f92a8f8e598;  0 drivers
+o0x7f92a8f8d5d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c57210000_0 .net "sense_LDO2", 0 0, o0x7f92a8f8d5d8;  0 drivers
+o0x7f92a8f8d878 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c572100d0_0 .net "sense_LDO5", 0 0, o0x7f92a8f8d878;  0 drivers
+o0x7f92a8f8da58 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c572105b0_0 .net "sense_LDO7", 0 0, o0x7f92a8f8da58;  0 drivers
+o0x7f92a8f8c2e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c57210680_0 .net "tdext", 0 0, o0x7f92a8f8c2e8;  0 drivers
+o0x7f92a8f8c6a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c57210720_0 .net "tdo", 0 0, o0x7f92a8f8c6a8;  0 drivers
+o0x7f92a8f8c6d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c572107c0_0 .net "ten_measureck", 0 0, o0x7f92a8f8c6d8;  0 drivers
+o0x7f92a8f8c138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c57210890_0 .net "ten_taext", 0 0, o0x7f92a8f8c138;  0 drivers
+o0x7f92a8f8c318 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c57210960_0 .net "ten_tdext", 0 0, o0x7f92a8f8c318;  0 drivers
+o0x7f92a8f8c708 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c57210a30_0 .net "ten_tdo", 0 0, o0x7f92a8f8c708;  0 drivers
+o0x7f92a8f8c738 .functor BUFZ 5, C4<zzzzz>; HiZ drive
+v0x556c57210b00_0 .net "tmi", 4 0, o0x7f92a8f8c738;  0 drivers
+o0x7f92a8f8c4f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556c57210bf0_0 .net "unlock", 0 0, o0x7f92a8f8c4f8;  0 drivers
+S_0x556c571ca6c0 .scope module, "XCELINA" "celerapaddft_CELINA" 2 447, 2 155 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "GESD";
+    .port_info 1 /OUTPUT 1 "TAEXT";
+    .port_info 2 /INPUT 1 "CELINA";
+    .port_info 3 /INPUT 1 "CELG59462";
+    .port_info 4 /INPUT 1 "CELV96848";
+    .port_info 5 /INPUT 1 "ten_taext";
+    .port_info 6 /INPUT 1 "CELSUB40948";
+v0x556c571790f0_0 .net "CELG59462", 0 0, o0x7f92a8f8c018;  alias, 0 drivers
+v0x556c571ca620_0 .net "CELINA", 0 0, o0x7f92a8f8c048;  alias, 0 drivers
+v0x556c572017e0_0 .net "CELSUB40948", 0 0, o0x7f92a8f8c078;  alias, 0 drivers
+v0x556c57201880_0 .net "CELV96848", 0 0, o0x7f92a8f8c0a8;  alias, 0 drivers
+v0x556c57201940_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c57201a00_0 .net "TAEXT", 0 0, o0x7f92a8f8c108;  alias, 0 drivers
+v0x556c57201ac0_0 .net "ten_taext", 0 0, o0x7f92a8f8c138;  alias, 0 drivers
+S_0x556c57201c60 .scope module, "XCELIND" "celerapaddft_CELIND" 2 457, 2 165 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "GESD";
+    .port_info 1 /OUTPUT 1 "tdext";
+    .port_info 2 /INPUT 1 "CELIND";
+    .port_info 3 /INPUT 1 "CELG59462";
+    .port_info 4 /INPUT 1 "CELV96848";
+    .port_info 5 /INPUT 1 "ten_tdext";
+    .port_info 6 /INPUT 1 "CELSUB40948";
+v0x556c57201ec0_0 .net "CELG59462", 0 0, o0x7f92a8f8c018;  alias, 0 drivers
+v0x556c57201f60_0 .net "CELIND", 0 0, o0x7f92a8f8c2b8;  alias, 0 drivers
+v0x556c57202000_0 .net "CELSUB40948", 0 0, o0x7f92a8f8c078;  alias, 0 drivers
+v0x556c572020a0_0 .net "CELV96848", 0 0, o0x7f92a8f8c0a8;  alias, 0 drivers
+v0x556c57202140_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c572021e0_0 .net "tdext", 0 0, o0x7f92a8f8c2e8;  alias, 0 drivers
+v0x556c57202280_0 .net "ten_tdext", 0 0, o0x7f92a8f8c318;  alias, 0 drivers
+S_0x556c572023c0 .scope module, "XCELOUTA" "celerapaddft_CELOUTA" 2 467, 2 175 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "TAO";
+    .port_info 1 /INOUT 1 "GESD";
+    .port_info 2 /OUTPUT 1 "CELOUTA";
+    .port_info 3 /INPUT 1 "CELG59462";
+    .port_info 4 /INPUT 1 "CELV96848";
+    .port_info 5 /INPUT 1 "unlockTAO";
+    .port_info 6 /INPUT 1 "CELSUB40948";
+v0x556c57202600_0 .net "CELG59462", 0 0, o0x7f92a8f8c018;  alias, 0 drivers
+v0x556c572026a0_0 .net "CELOUTA", 0 0, o0x7f92a8f8c498;  alias, 0 drivers
+v0x556c57202760_0 .net "CELSUB40948", 0 0, o0x7f92a8f8c078;  alias, 0 drivers
+v0x556c57202800_0 .net "CELV96848", 0 0, o0x7f92a8f8c0a8;  alias, 0 drivers
+v0x556c572028f0_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c57202a30_0 .net "TAO", 0 0, o0x7f92a8f8c4c8;  alias, 0 drivers
+v0x556c57202ad0_0 .net "unlockTAO", 0 0, o0x7f92a8f8c4f8;  alias, 0 drivers
+S_0x556c57202c70 .scope module, "XCELOUTD" "celerapaddft_CELOUTD" 2 477, 2 185 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "tdo";
+    .port_info 1 /INOUT 5 "tmi";
+    .port_info 2 /INOUT 1 "GESD";
+    .port_info 3 /INPUT 1 "tdext";
+    .port_info 4 /OUTPUT 1 "CELOUTD";
+    .port_info 5 /INPUT 1 "ten_tdo";
+    .port_info 6 /INPUT 1 "CELG59462";
+    .port_info 7 /INPUT 1 "CELV96848";
+    .port_info 8 /INPUT 1 "unlockTDO";
+    .port_info 9 /INPUT 1 "CELSUB40948";
+    .port_info 10 /INPUT 1 "ten_measureck";
+v0x556c57202f60_0 .net "CELG59462", 0 0, o0x7f92a8f8c018;  alias, 0 drivers
+v0x556c57203020_0 .net "CELOUTD", 0 0, o0x7f92a8f8c678;  alias, 0 drivers
+v0x556c572030e0_0 .net "CELSUB40948", 0 0, o0x7f92a8f8c078;  alias, 0 drivers
+v0x556c57203180_0 .net "CELV96848", 0 0, o0x7f92a8f8c0a8;  alias, 0 drivers
+v0x556c57203220_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c57203310_0 .net "tdext", 0 0, o0x7f92a8f8c2e8;  alias, 0 drivers
+v0x556c572033b0_0 .net "tdo", 0 0, o0x7f92a8f8c6a8;  alias, 0 drivers
+v0x556c57203450_0 .net "ten_measureck", 0 0, o0x7f92a8f8c6d8;  alias, 0 drivers
+v0x556c572034f0_0 .net "ten_tdo", 0 0, o0x7f92a8f8c708;  alias, 0 drivers
+v0x556c572035b0_0 .net "tmi", 4 0, o0x7f92a8f8c738;  alias, 0 drivers
+v0x556c57203690_0 .net "unlockTDO", 0 0, o0x7f92a8f8c4f8;  alias, 0 drivers
+S_0x556c57203870 .scope module, "XCHIPid" "CELERAid" 2 491, 2 202 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "CELV";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELSUB";
+    .port_info 3 /INOUT 5 "tmi";
+    .port_info 4 /INPUT 8 "chipidlsb";
+    .port_info 5 /INPUT 8 "chipidmsb";
+    .port_info 6 /INPUT 8 "revision";
+    .port_info 7 /OUTPUT 1 "tl";
+    .port_info 8 /OUTPUT 1 "th";
+v0x556c57203b80_0 .net "CELG", 0 0, o0x7f92a8f8c018;  alias, 0 drivers
+v0x556c57203c40_0 .net "CELSUB", 0 0, o0x7f92a8f8c078;  alias, 0 drivers
+v0x556c57203d00_0 .net "CELV", 0 0, o0x7f92a8f8c0a8;  alias, 0 drivers
+L_0x7f92a8f43018 .functor BUFT 1, C4<zzzzzzzz>, C4<0>, C4<0>, C4<0>;
+v0x556c57203e30_0 .net "chipidlsb", 7 0, L_0x7f92a8f43018;  1 drivers
+o0x7f92a8f8c9a8 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v0x556c57203ed0_0 .net "chipidmsb", 7 0, o0x7f92a8f8c9a8;  0 drivers
+o0x7f92a8f8c9d8 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v0x556c57203fb0_0 .net "revision", 7 0, o0x7f92a8f8c9d8;  0 drivers
+v0x556c57204090_0 .net "th", 0 0, o0x7f92a8f8ca08;  alias, 0 drivers
+v0x556c57204150_0 .net "tl", 0 0, o0x7f92a8f8ca38;  alias, 0 drivers
+v0x556c57204210_0 .net "tmi", 4 0, o0x7f92a8f8c738;  alias, 0 drivers
+S_0x556c57204460 .scope module, "XDFTSCL" "pad_GREENBANK_DFTSCL" 2 294, 2 2 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GESD";
+    .port_info 1 /INOUT 1 "DFTSCL";
+v0x556c57204610_0 .net "DFTSCL", 0 0, o0x7f92a8f8cc18;  alias, 0 drivers
+v0x556c572046f0_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+S_0x556c57204880 .scope module, "XDFTSDA" "pad_GREENBANK_DFTSDA" 2 299, 2 7 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GESD";
+    .port_info 1 /INOUT 1 "DFTSDA";
+v0x556c57204a10_0 .net "DFTSDA", 0 0, o0x7f92a8f8cca8;  alias, 0 drivers
+v0x556c57204af0_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+S_0x556c57204bf0 .scope module, "XLDO0" "pad_GREENBANK_LDO0" 2 304, 2 12 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GESD";
+    .port_info 1 /INOUT 1 "LDO0";
+    .port_info 2 /INOUT 1 "MUDV";
+v0x556c57204d80_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c57204e40_0 .net "LDO0", 0 0, o0x7f92a8f8cd38;  alias, 0 drivers
+v0x556c57204f00_0 .net "MUDV", 0 0, o0x7f92a8f8cd68;  alias, 0 drivers
+S_0x556c57205020 .scope module, "XLDO1" "pad_GREENBANK_LDO1" 2 310, 2 18 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GESD";
+    .port_info 1 /INOUT 1 "LDO1";
+    .port_info 2 /INOUT 1 "MUDV";
+v0x556c57205290_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c57205350_0 .net "LDO1", 0 0, o0x7f92a8f8ce28;  alias, 0 drivers
+v0x556c57205410_0 .net "MUDV", 0 0, o0x7f92a8f8cd68;  alias, 0 drivers
+S_0x556c57205520 .scope module, "XLDO10" "pad_GREENBANK_LDO10" 2 316, 2 24 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GESD";
+    .port_info 1 /INOUT 1 "MUDV";
+    .port_info 2 /INOUT 1 "LDO10";
+    .port_info 3 /OUTPUT 1 "celkelvin_LDO10_9b1f0b60";
+v0x556c57205730_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c572058e0_0 .net "LDO10", 0 0, o0x7f92a8f8cee8;  alias, 0 drivers
+v0x556c572059a0_0 .net "MUDV", 0 0, o0x7f92a8f8cd68;  alias, 0 drivers
+v0x556c57205ac0_0 .net "celkelvin_LDO10_9b1f0b60", 0 0, o0x7f92a8f8cf18;  alias, 0 drivers
+S_0x556c57205be0 .scope module, "XLDO11" "pad_GREENBANK_LDO11" 2 323, 2 31 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GESD";
+    .port_info 1 /INOUT 1 "MUDV";
+    .port_info 2 /INOUT 1 "LDO11";
+    .port_info 3 /OUTPUT 1 "celkelvin_LDO11_58ede99a";
+v0x556c57205e30_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c57205ef0_0 .net "LDO11", 0 0, o0x7f92a8f8d008;  alias, 0 drivers
+v0x556c57205fb0_0 .net "MUDV", 0 0, o0x7f92a8f8cd68;  alias, 0 drivers
+v0x556c57206080_0 .net "celkelvin_LDO11_58ede99a", 0 0, o0x7f92a8f8d038;  alias, 0 drivers
+S_0x556c572061d0 .scope module, "XLDO12" "pad_GREENBANK_LDO12" 2 330, 2 38 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GESD";
+    .port_info 1 /INOUT 1 "MUDV";
+    .port_info 2 /INOUT 1 "LDO12";
+    .port_info 3 /OUTPUT 1 "celkelvin_LDO12_dbb8d281";
+v0x556c57206420_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c572064e0_0 .net "LDO12", 0 0, o0x7f92a8f8d128;  alias, 0 drivers
+v0x556c572065a0_0 .net "MUDV", 0 0, o0x7f92a8f8cd68;  alias, 0 drivers
+v0x556c57206670_0 .net "celkelvin_LDO12_dbb8d281", 0 0, o0x7f92a8f8d158;  alias, 0 drivers
+S_0x556c572067c0 .scope module, "XLDO13" "pad_GREENBANK_LDO13" 2 337, 2 45 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GESD";
+    .port_info 1 /INOUT 1 "MUDV";
+    .port_info 2 /INOUT 1 "LDO13";
+    .port_info 3 /OUTPUT 1 "celkelvin_LDO13_e09c7b4a";
+v0x556c572069c0_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c57206a80_0 .net "LDO13", 0 0, o0x7f92a8f8d248;  alias, 0 drivers
+v0x556c57206b40_0 .net "MUDV", 0 0, o0x7f92a8f8cd68;  alias, 0 drivers
+v0x556c57206c10_0 .net "celkelvin_LDO13_e09c7b4a", 0 0, o0x7f92a8f8d278;  alias, 0 drivers
+S_0x556c57206d60 .scope module, "XLDO14" "pad_GREENBANK_LDO14" 2 344, 2 52 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GESD";
+    .port_info 1 /INOUT 1 "MUDV";
+    .port_info 2 /INOUT 1 "LDO14";
+    .port_info 3 /OUTPUT 1 "celkelvin_LDO14_31b80673";
+v0x556c57206fb0_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c57207070_0 .net "LDO14", 0 0, o0x7f92a8f8d368;  alias, 0 drivers
+v0x556c57207130_0 .net "MUDV", 0 0, o0x7f92a8f8cd68;  alias, 0 drivers
+v0x556c57207200_0 .net "celkelvin_LDO14_31b80673", 0 0, o0x7f92a8f8d398;  alias, 0 drivers
+S_0x556c57207350 .scope module, "XLDO15" "pad_GREENBANK_LDO15" 2 351, 2 59 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GESD";
+    .port_info 1 /INOUT 1 "MUDV";
+    .port_info 2 /INOUT 1 "LDO15";
+    .port_info 3 /OUTPUT 1 "celkelvin_LDO15_92a31bd7";
+v0x556c572075a0_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c57207660_0 .net "LDO15", 0 0, o0x7f92a8f8d488;  alias, 0 drivers
+v0x556c57207720_0 .net "MUDV", 0 0, o0x7f92a8f8cd68;  alias, 0 drivers
+v0x556c572077f0_0 .net "celkelvin_LDO15_92a31bd7", 0 0, o0x7f92a8f8d4b8;  alias, 0 drivers
+S_0x556c57207940 .scope module, "XLDO2" "pad_GREENBANK_LDO2" 2 358, 2 66 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GESD";
+    .port_info 1 /INOUT 1 "LDO2";
+    .port_info 2 /INOUT 1 "MUDV";
+    .port_info 3 /INOUT 1 "sense_LDO2";
+v0x556c57207b90_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c57207c50_0 .net "LDO2", 0 0, o0x7f92a8f8d5a8;  alias, 0 drivers
+v0x556c57207d10_0 .net "MUDV", 0 0, o0x7f92a8f8cd68;  alias, 0 drivers
+v0x556c57207ef0_0 .net "sense_LDO2", 0 0, o0x7f92a8f8d5d8;  alias, 0 drivers
+S_0x556c57208040 .scope module, "XLDO3" "pad_GREENBANK_LDO3" 2 365, 2 73 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GESD";
+    .port_info 1 /INOUT 1 "LDO3";
+    .port_info 2 /INOUT 1 "MUDV";
+v0x556c572083a0_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c57208460_0 .net "LDO3", 0 0, o0x7f92a8f8d6c8;  alias, 0 drivers
+v0x556c57208520_0 .net "MUDV", 0 0, o0x7f92a8f8cd68;  alias, 0 drivers
+S_0x556c57208620 .scope module, "XLDO4" "pad_GREENBANK_LDO4" 2 371, 2 79 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GESD";
+    .port_info 1 /INOUT 1 "LDO4";
+    .port_info 2 /INOUT 1 "MUDV";
+v0x556c57208850_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c57208910_0 .net "LDO4", 0 0, o0x7f92a8f8d788;  alias, 0 drivers
+v0x556c572089d0_0 .net "MUDV", 0 0, o0x7f92a8f8cd68;  alias, 0 drivers
+S_0x556c57208b00 .scope module, "XLDO5" "pad_GREENBANK_LDO5" 2 377, 2 85 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GESD";
+    .port_info 1 /INOUT 1 "LDO5";
+    .port_info 2 /INOUT 1 "MUDV";
+    .port_info 3 /INOUT 1 "sense_LDO5";
+v0x556c57208d80_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c57208e20_0 .net "LDO5", 0 0, o0x7f92a8f8d848;  alias, 0 drivers
+v0x556c57208ee0_0 .net "MUDV", 0 0, o0x7f92a8f8cd68;  alias, 0 drivers
+v0x556c57208fb0_0 .net "sense_LDO5", 0 0, o0x7f92a8f8d878;  alias, 0 drivers
+S_0x556c57209100 .scope module, "XLDO6" "pad_GREENBANK_LDO6" 2 384, 2 92 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GESD";
+    .port_info 1 /INOUT 1 "LDO6";
+    .port_info 2 /INOUT 1 "MUDV";
+v0x556c57209350_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c57209410_0 .net "LDO6", 0 0, o0x7f92a8f8d968;  alias, 0 drivers
+v0x556c572094d0_0 .net "MUDV", 0 0, o0x7f92a8f8cd68;  alias, 0 drivers
+S_0x556c572095d0 .scope module, "XLDO7" "pad_GREENBANK_LDO7" 2 390, 2 98 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GESD";
+    .port_info 1 /INOUT 1 "LDO7";
+    .port_info 2 /INOUT 1 "MUDV";
+    .port_info 3 /INOUT 1 "sense_LDO7";
+v0x556c57209850_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c572098f0_0 .net "LDO7", 0 0, o0x7f92a8f8da28;  alias, 0 drivers
+v0x556c572099b0_0 .net "MUDV", 0 0, o0x7f92a8f8cd68;  alias, 0 drivers
+v0x556c57209a80_0 .net "sense_LDO7", 0 0, o0x7f92a8f8da58;  alias, 0 drivers
+S_0x556c57209bd0 .scope module, "XLDO8" "pad_GREENBANK_LDO8" 2 397, 2 105 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GESD";
+    .port_info 1 /INOUT 1 "LDO8";
+    .port_info 2 /INOUT 1 "MUDV";
+    .port_info 3 /OUTPUT 1 "celkelvin_LDO8_37713079";
+v0x556c57209e20_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c57209ee0_0 .net "LDO8", 0 0, o0x7f92a8f8db48;  alias, 0 drivers
+v0x556c57209fa0_0 .net "MUDV", 0 0, o0x7f92a8f8cd68;  alias, 0 drivers
+v0x556c5720a070_0 .net "celkelvin_LDO8_37713079", 0 0, o0x7f92a8f8db78;  alias, 0 drivers
+S_0x556c5720a1c0 .scope module, "XLDO9" "pad_GREENBANK_LDO9" 2 404, 2 112 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GESD";
+    .port_info 1 /INOUT 1 "LDO9";
+    .port_info 2 /INOUT 1 "MUDV";
+    .port_info 3 /OUTPUT 1 "celkelvin_LDO9_e7f88029";
+v0x556c5720a410_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c5720a4d0_0 .net "LDO9", 0 0, o0x7f92a8f8dc68;  alias, 0 drivers
+v0x556c5720a590_0 .net "MUDV", 0 0, o0x7f92a8f8cd68;  alias, 0 drivers
+v0x556c5720a660_0 .net "celkelvin_LDO9_e7f88029", 0 0, o0x7f92a8f8dc98;  alias, 0 drivers
+S_0x556c5720a7b0 .scope module, "XMUDG" "pad_GREENBANK_MUDG" 2 411, 2 119 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "GESD";
+    .port_info 1 /INOUT 1 "MUDG";
+    .port_info 2 /INOUT 1 "CELG59462";
+    .port_info 3 /OUTPUT 1 "CELSUB40948";
+    .port_info 4 /OUTPUT 1 "SENSE_G_30a24d84";
+    .port_info 5 /INOUT 1 "kelvin_MUDGservice";
+    .port_info 6 /INOUT 1 "kelvin_MUDGamplifier";
+    .port_info 7 /OUTPUT 1 "celkelvin_MUDG_2e498fae";
+    .port_info 8 /OUTPUT 1 "celkelvin_MUDG_31b80673";
+    .port_info 9 /OUTPUT 1 "celkelvin_MUDG_37713079";
+    .port_info 10 /OUTPUT 1 "celkelvin_MUDG_58ede99a";
+    .port_info 11 /OUTPUT 1 "celkelvin_MUDG_5f8d3afe";
+    .port_info 12 /OUTPUT 1 "celkelvin_MUDG_92a31bd7";
+    .port_info 13 /OUTPUT 1 "celkelvin_MUDG_9b1f0b60";
+    .port_info 14 /OUTPUT 1 "celkelvin_MUDG_ac0a699d";
+    .port_info 15 /OUTPUT 1 "celkelvin_MUDG_dbb8d281";
+    .port_info 16 /OUTPUT 1 "celkelvin_MUDG_e09c7b4a";
+    .port_info 17 /OUTPUT 1 "celkelvin_MUDG_e5e6d906";
+    .port_info 18 /OUTPUT 1 "celkelvin_MUDG_e7f88029";
+    .port_info 19 /OUTPUT 1 "celkelvin_MUDG_f3f88263";
+v0x556c5720ac30_0 .net "CELG59462", 0 0, o0x7f92a8f8c018;  alias, 0 drivers
+v0x556c5720acf0_0 .net "CELSUB40948", 0 0, o0x7f92a8f8c078;  alias, 0 drivers
+v0x556c5720adb0_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c5720ae50_0 .net "MUDG", 0 0, o0x7f92a8f8dd88;  alias, 0 drivers
+v0x556c5720aef0_0 .net "SENSE_G_30a24d84", 0 0, o0x7f92a8f8ddb8;  alias, 0 drivers
+v0x556c5720afe0_0 .net "celkelvin_MUDG_2e498fae", 0 0, o0x7f92a8f8dde8;  alias, 0 drivers
+v0x556c5720b0a0_0 .net "celkelvin_MUDG_31b80673", 0 0, o0x7f92a8f8de18;  alias, 0 drivers
+v0x556c5720b160_0 .net "celkelvin_MUDG_37713079", 0 0, o0x7f92a8f8de48;  alias, 0 drivers
+v0x556c5720b220_0 .net "celkelvin_MUDG_58ede99a", 0 0, o0x7f92a8f8de78;  alias, 0 drivers
+v0x556c5720b2e0_0 .net "celkelvin_MUDG_5f8d3afe", 0 0, o0x7f92a8f8dea8;  alias, 0 drivers
+v0x556c5720b3a0_0 .net "celkelvin_MUDG_92a31bd7", 0 0, o0x7f92a8f8ded8;  alias, 0 drivers
+v0x556c5720b460_0 .net "celkelvin_MUDG_9b1f0b60", 0 0, o0x7f92a8f8df08;  alias, 0 drivers
+v0x556c5720b520_0 .net "celkelvin_MUDG_ac0a699d", 0 0, o0x7f92a8f8df38;  alias, 0 drivers
+v0x556c5720b5e0_0 .net "celkelvin_MUDG_dbb8d281", 0 0, o0x7f92a8f8df68;  alias, 0 drivers
+v0x556c5720b6a0_0 .net "celkelvin_MUDG_e09c7b4a", 0 0, o0x7f92a8f8df98;  alias, 0 drivers
+v0x556c5720b760_0 .net "celkelvin_MUDG_e5e6d906", 0 0, o0x7f92a8f8dfc8;  alias, 0 drivers
+v0x556c5720b820_0 .net "celkelvin_MUDG_e7f88029", 0 0, o0x7f92a8f8dff8;  alias, 0 drivers
+v0x556c5720b8e0_0 .net "celkelvin_MUDG_f3f88263", 0 0, o0x7f92a8f8e028;  alias, 0 drivers
+v0x556c5720b9a0_0 .net "kelvin_MUDGamplifier", 0 0, o0x7f92a8f8e058;  alias, 0 drivers
+v0x556c5720ba60_0 .net "kelvin_MUDGservice", 0 0, o0x7f92a8f8e088;  alias, 0 drivers
+S_0x556c5720be50 .scope module, "XMUDV" "pad_GREENBANK_MUDV" 2 434, 2 142 0, S_0x556c57178f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GESD";
+    .port_info 1 /INOUT 1 "MUDV";
+    .port_info 2 /OUTPUT 1 "CELV96848";
+    .port_info 3 /INOUT 1 "kelvin_MUDV";
+    .port_info 4 /INOUT 1 "CELPOWER_LDO";
+    .port_info 5 /OUTPUT 1 "CELPOWER_LDO_62423880";
+    .port_info 6 /OUTPUT 1 "CELPOWER_LDO_af77ae17";
+    .port_info 7 /OUTPUT 1 "CELPOWER_LDO_d8ea4418";
+    .port_info 8 /OUTPUT 1 "CELPOWER_LDO_fd4a89e4";
+    .port_info 9 /OUTPUT 1 "celkelvin_MUDV_4be07aeb";
+v0x556c5720c0e0_0 .net "CELPOWER_LDO", 0 0, o0x7f92a8f8e478;  alias, 0 drivers
+v0x556c5720c1c0_0 .net "CELPOWER_LDO_62423880", 0 0, o0x7f92a8f8e4a8;  alias, 0 drivers
+v0x556c5720c280_0 .net "CELPOWER_LDO_af77ae17", 0 0, o0x7f92a8f8e4d8;  alias, 0 drivers
+v0x556c5720c320_0 .net "CELPOWER_LDO_d8ea4418", 0 0, o0x7f92a8f8e508;  alias, 0 drivers
+v0x556c5720c3e0_0 .net "CELPOWER_LDO_fd4a89e4", 0 0, o0x7f92a8f8e538;  alias, 0 drivers
+v0x556c5720c4f0_0 .net "CELV96848", 0 0, o0x7f92a8f8c0a8;  alias, 0 drivers
+v0x556c5720c590_0 .net "GESD", 0 0, o0x7f92a8f8c0d8;  alias, 0 drivers
+v0x556c5720c630_0 .net "MUDV", 0 0, o0x7f92a8f8cd68;  alias, 0 drivers
+v0x556c5720c8e0_0 .net "celkelvin_MUDV_4be07aeb", 0 0, o0x7f92a8f8e568;  alias, 0 drivers
+v0x556c5720c9a0_0 .net "kelvin_MUDV", 0 0, o0x7f92a8f8e598;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/celera/projects/Sunnyvale/software/GREENBANK/verilog10/GREENBANKceleraRING.v";
