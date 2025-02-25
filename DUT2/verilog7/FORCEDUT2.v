@@ -21,9 +21,6 @@ module STONEnoconn ( noconn );
 endmodule
 
 
-module pwl_datamap_c8e3d4ae ();
-endmodule
-
 module ipwl_0x0_10ux0_20ux10u(PLUS, MINUS);
 output PLUS;
 output MINUS;
@@ -160,10 +157,6 @@ dbuf_e926e395 XU1 (
 
 STONEnoconn XNCip (
 .noconn(noconn_IN)
-);
-
-pwl_datamap_c8e3d4ae Xdatamap1 (
-
 );
 
 ipwl_0x0_10ux0_20ux10u I1 (
