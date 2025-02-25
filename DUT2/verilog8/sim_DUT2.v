@@ -38,7 +38,7 @@ module EXTERNALDUT2 (GND,IPUL,IPWL,ISIN,ISQR,ITRI,VPUL,VSIN,VTRI,BSO_0,BSO_1,BSO
   inout  COMPOUT;
 endmodule
 
-module FORCEDUT2 (GND,BS_0,BS_1,BS_2,BS_3,IPUL,IPWL,ISIN,ISQR,ITRI,VPUL,VPWL,VSIN,VSQR,VTRI,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_efc25439,SENSE_G_465a3572);
+module FORCEDUT2 (GND,BS_0,BS_1,BS_2,BS_3,IPUL,IPWL,ISIN,ISQR,ITRI,VPUL,VPWL,VSIN,VSQR,VTRI,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_efc25439,SENSE_G_465a3572,register_BS_xdatamap1_19739851);
   inout  GND;
   inout  BS_0;
   inout  BS_1;
@@ -60,6 +60,7 @@ module FORCEDUT2 (GND,BS_0,BS_1,BS_2,BS_3,IPUL,IPWL,ISIN,ISQR,ITRI,VPUL,VPWL,VSI
   output  CELSUB40948;
   output  IP_efc25439;
   output  SENSE_G_465a3572;
+  input [3:0] register_BS_xdatamap1_19739851;
 endmodule
 
 // ------------------------ Module Verilog ---------------
@@ -67,6 +68,7 @@ module sim_DUT2 ();
 
 
 // ------------------------ Wires ------------------------
+wire [3:0] register_BS_xdatamap1_19739851;
 
 // ------------------------ Networks ---------------------
 DUT2 XDUT2 (
@@ -129,7 +131,8 @@ FORCEDUT2 XFORCEDUT2 (
 .PORB97836(PORB97836),
 .CELSUB40948(CELSUB40948),
 .IP_efc25439(IP_efc25439),
-.SENSE_G_465a3572(SENSE_G_465a3572)
+.SENSE_G_465a3572(SENSE_G_465a3572),
+.register_BS_xdatamap1_19739851(register_BS_xdatamap1_19739851[3:0])
 );
 
 endmodule
