@@ -1,7 +1,7 @@
 //Celera:disable Wire
 // Celera Generator Confidential
 //CELL SOURCE:delayclock
-//NAME:delayclock_58885d25
+//NAME:delayclock_e9793f67
 //DELAY GENERATOR REVISION:0.4.1
 //TYPE:clock
 //EDGE:rise
@@ -53,9 +53,9 @@ module STONEnoconn ( noconn );
   input noconn;
 endmodule
 
-//Celera Confidential Do Not Copy delayclock_58885d25
+//Celera Confidential Do Not Copy delayclock_e9793f67
 //CONTROL:Pin:4 outputs
-module delayclock_58885d25 (in,CELV,out,clock,celeraporb,
+module delayclock_e9793f67 (in,CELV,out,clock,celeraporb,
 delay,
 CELG,CELSUB);
 input CELV;
@@ -91,10 +91,10 @@ input [1:0] delay;
 //Celera Confidential Do Not Copy STONEdelayclockSELECT49
 STONEdelayclockSELECT49 Xselect9(
 .CELV (CELV),
-.i0 ({do,do,do,do,do,d1,do,d1,do}),
-.i1 ({do,do,do,do,d1,do,d1,do,do}),
-.i2 ({do,do,do,do,d1,d1,d1,d1,do}),
-.i3 ({do,do,do,d1,do,d1,do,do,do}),
+.i0 ({do,do,do,do,d1,do,d1,do,do}),
+.i1 ({do,do,do,d1,do,d1,do,do,do}),
+.i2 ({do,do,do,d1,d1,d1,d1,do,do}),
+.i3 ({do,do,d1,do,d1,do,do,do,do}),
 .sel (delay [1:0]),
 .o ({sd8,sd7,sd6,sd5,sd4,sd3,sd2,sd1,sd0}),
 .CELG (CELG),

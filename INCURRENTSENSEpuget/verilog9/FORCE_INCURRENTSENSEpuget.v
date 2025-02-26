@@ -53,7 +53,12 @@ module vpwl_0x0_10d0ux0_11d0ux5 (PLUS,MINUS);
   output  MINUS;
 endmodule
 
-module vpwl_0x0_10d0ux0_11d0ux0d032 (PLUS,MINUS);
+module vpwl_0x0_10d0ux0_11d0ux11d968 (PLUS,MINUS);
+  output  PLUS;
+  output  MINUS;
+endmodule
+
+module vpwl_0x0_10d0ux0_11d0ux12 (PLUS,MINUS);
   output  PLUS;
   output  MINUS;
 endmodule
@@ -113,7 +118,7 @@ STONEnoconn XNCip (
 );
 
 dbuf_e926e395 Xd_clock_currentsensein (
-.i(net_136),
+.i(net_148),
 .o(clock_currentsensein),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -121,7 +126,7 @@ dbuf_e926e395 Xd_clock_currentsensein (
 );
 
 vpulse_0x1x1d0ux0x1nx1nx500d0n XV2 (
-.PLUS(net_136),
+.PLUS(net_148),
 .MINUS(GND)
 );
 
@@ -165,12 +170,12 @@ vdc_0 VI__SIMPV (
 .MINUS(SIMPV)
 );
 
-vpwl_0x0_10d0ux0_11d0ux0d032 V_VOUTSNx (
+vpwl_0x0_10d0ux0_11d0ux11d968 V_VOUTSNx (
 .PLUS(net_59),
 .MINUS(GND)
 );
 
-vpwl_0x0_10d0ux0_11d0ux0d032 V_VOUTSPx (
+vpwl_0x0_10d0ux0_11d0ux12 V_VOUTSPx (
 .PLUS(net_58),
 .MINUS(GND)
 );
