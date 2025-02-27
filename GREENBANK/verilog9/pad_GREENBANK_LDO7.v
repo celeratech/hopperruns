@@ -18,6 +18,16 @@ module ESDdiode ( N, P );
 endmodule
 
 
+//Verilog HDL for "PEBBLES", "PEBBLElinkKELVIN" "functional"
+
+
+module PEBBLElinkKELVIN ( NEG, POS );
+
+  inout POS;
+  inout NEG;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
 module pad_GREENBANK_LDO7 (GESD, LDO7, MUDV, sense_LDO7);
 input  GESD;
@@ -41,6 +51,11 @@ ESDdiode Xesd1_XPAD1 (
 ESDdiode Xesd2_XPAD1 (
 .N(LDO7),
 .P(GESD)
+);
+
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE_SINGLE (
+.NEG(sense_LDO7),
+.POS(LDO7)
 );
 
 endmodule

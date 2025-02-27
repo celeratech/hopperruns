@@ -38,6 +38,26 @@ module ESDcore6 ( GESD, PAD );
 endmodule
 
 
+//Verilog HDL for "Esd", "ESDdiode" "functional"
+
+
+module ESDdiode ( N, P );
+
+  input P;
+  input N;
+endmodule
+
+
+//Verilog HDL for "PEBBLES", "PEBBLElinkKELVIN" "functional"
+
+
+module PEBBLElinkKELVIN ( NEG, POS );
+
+  inout POS;
+  inout NEG;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
 module pad_GREENBANK_MUDV (GESD, MUDV, VOTP, CELV96848, kelvin_MUDV, CELPOWER_LDO, CELPOWER_LDO_62423880, CELPOWER_LDO_af77ae17, CELPOWER_LDO_d8ea4418, CELPOWER_LDO_fd4a89e4, celkelvin_MUDV_55c016d1);
 input  GESD;
@@ -75,9 +95,24 @@ ESDcore6 XESDcore6_1 (
 .GESD(GESD)
 );
 
-WRAPPER1 Xwrap_PAD1_SENSE1 (
-.i(MUDV),
-.o(CELPOWER_LDO)
+ESDdiode Xesd1_XPAD1 (
+.N(GESD),
+.P(MUDV)
+);
+
+ESDdiode Xesd2_XPAD1 (
+.N(MUDV),
+.P(GESD)
+);
+
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE1 (
+.NEG(CELPOWER_LDO),
+.POS(MUDV)
+);
+
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE_SINGLE (
+.NEG(kelvin_MUDV),
+.POS(MUDV)
 );
 
 WRAPPER1 Xwrap_CELPOWER_LDO_62423880 (

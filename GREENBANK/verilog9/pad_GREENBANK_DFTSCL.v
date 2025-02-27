@@ -18,6 +18,16 @@ module ESDcore6 ( GESD, PAD );
 endmodule
 
 
+//Verilog HDL for "Esd", "ESDdiode" "functional"
+
+
+module ESDdiode ( N, P );
+
+  input P;
+  input N;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
 module pad_GREENBANK_DFTSCL (GESD, DFTSCL);
 input  GESD;
@@ -34,6 +44,16 @@ STONEpad1 XPAD1 (
 ESDcore6 XESDcore6_3 (
 .PAD(DFTSCL),
 .GESD(GESD)
+);
+
+ESDdiode Xesd1_XPAD1 (
+.N(GESD),
+.P(DFTSCL)
+);
+
+ESDdiode Xesd2_XPAD1 (
+.N(DFTSCL),
+.P(GESD)
 );
 
 endmodule

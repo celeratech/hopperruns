@@ -40,6 +40,16 @@ module ESDcore6 ( GESD, PAD );
 endmodule
 
 
+//Verilog HDL for "Esd", "ESDdiode" "functional"
+
+
+module ESDdiode ( N, P );
+
+  input P;
+  input N;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
 module celerapaddft_CELOUTD (tdo, tmi, GESD, tdext, CELOUTD, ten_tdo, CELG59462, CELV96848, unlockTDO, CELSUB40948, ten_measureck);
 inout  tdo;
@@ -83,6 +93,16 @@ DRMmeasureSINGLEstandaloneTDO XCELOUTD (
 ESDcore6 XESDcore6_3 (
 .PAD(CELOUTD),
 .GESD(GESD)
+);
+
+ESDdiode Xesd1_Xdftpad (
+.N(GESD),
+.P(CELOUTD)
+);
+
+ESDdiode Xesd2_Xdftpad (
+.N(CELOUTD),
+.P(GESD)
 );
 
 endmodule

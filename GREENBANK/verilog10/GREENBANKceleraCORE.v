@@ -91,6 +91,15 @@ module SERVICEgreenbank (REF,TAO,tdo,tmi,MUDV,TAEXT,CELG59462,CELV96848,PORB9783
   input  celkelvin_MUDG_e5e6d906;
 endmodule
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 //Celera:CELERAservice
 //Celera Confidential Symbol Generator
 //IP: 11, REFERENCE: no
@@ -273,6 +282,10 @@ SERVICEgreenbank XSERVICE (
 .celkelvin_MUDG_e5e6d906(celkelvin_MUDG_e5e6d906)
 );
 
+STONEnoconn XNCok_ibias (
+.noconn(ok_ibias)
+);
+
 CELERAservice XceleraSERVICE (
 .IPO({IP_04d81c2f,IP_1836dbc4,IP_2c5a4e72,IP_2e771304,IP_30a24d84,IP_3a1af20a,IP_b085943e,IP_b4f75526,IP_bb9024c6,IP_be65c403,IP_bfb33430}),
 .TAO(TAO),
@@ -280,7 +293,7 @@ CELERAservice XceleraSERVICE (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.ok_ibias(noconn),
+.ok_ibias(ok_ibias),
 .enable_ibias(PORB97836),
 .celkelvin_GNDservice(celkelvin_MUDG_f3f88263)
 );

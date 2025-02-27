@@ -28,6 +28,16 @@ module WRAPPER1 ( o, i );
 endmodule
 
 
+//Verilog HDL for "PEBBLES", "PEBBLElinkKELVIN" "functional"
+
+
+module PEBBLElinkKELVIN ( NEG, POS );
+
+  inout POS;
+  inout NEG;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
 module pad_GREENBANK_MUDG (GESD, GOTP, MUDG, CELG59462, CELSUB40948, SENSE_G_30a24d84, kelvin_MUDGservice, kelvin_MUDGamplifier, celkelvin_MUDG_2e498fae, celkelvin_MUDG_31b80673, celkelvin_MUDG_37713079, celkelvin_MUDG_58ede99a, celkelvin_MUDG_5f8d3afe, celkelvin_MUDG_92a31bd7, celkelvin_MUDG_9b1f0b60, celkelvin_MUDG_ac0a699d, celkelvin_MUDG_dbb8d281, celkelvin_MUDG_e09c7b4a, celkelvin_MUDG_e5e6d906, celkelvin_MUDG_e7f88029, celkelvin_MUDG_f3f88263);
 output  GESD;
@@ -80,14 +90,14 @@ WRAPPER1 Xwrap_CELSUB (
 .o(CELSUB40948)
 );
 
-WRAPPER1 Xwrap_PAD1_SENSE0 (
-.i(MUDG),
-.o(kelvin_MUDGservice)
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE0 (
+.NEG(kelvin_MUDGservice),
+.POS(MUDG)
 );
 
-WRAPPER1 Xwrap_PAD1_SENSE1 (
-.i(MUDG),
-.o(kelvin_MUDGamplifier)
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE1 (
+.NEG(kelvin_MUDGamplifier),
+.POS(MUDG)
 );
 
 WRAPPER1 XWRAP_SENSE_G_30a24d84 (
