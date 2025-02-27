@@ -11,7 +11,7 @@ module CURRENTSENSEinDEBUG (IIN,dft_ok,dft_startup,IIN_TELEMETRY,dft_measure_del
   output  hijack_measure_currentsense;
 endmodule
 
-module CURRENTSENSEinMAIN (IIN,SIMPV,VOUTSN,VOUTSP,dft_ok,ok_iin,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_4ad46a6e,IP_5c672501,dft_startup,IIN_TELEMETRY,ok_currentsense,dft_measure_delay,clock_currentsense,enable_currentsense,measure_currentsense,kelvin_GNDcurrentsense);
+module CURRENTSENSEinMAIN (IIN,SIMPV,VOUTSN,VOUTSP,dft_ok,ok_iin,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_2ceca3e2,IP_4ad46a6e,IP_5c672501,dft_startup,IIN_TELEMETRY,ok_currentsense,dft_measure_delay,clock_currentsense,enable_currentsense,measure_currentsense,kelvin_GNDcurrentsense);
   inout  IIN;
   input  SIMPV;
   input  VOUTSN;
@@ -22,6 +22,7 @@ module CURRENTSENSEinMAIN (IIN,SIMPV,VOUTSN,VOUTSP,dft_ok,ok_iin,CELG59462,CELV9
   input  CELV96848;
   input  PORB97836;
   input  CELSUB40948;
+  input  IP_2ceca3e2;
   input  IP_4ad46a6e;
   input  IP_5c672501;
   output  dft_startup;
@@ -35,7 +36,7 @@ module CURRENTSENSEinMAIN (IIN,SIMPV,VOUTSN,VOUTSP,dft_ok,ok_iin,CELG59462,CELV9
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module INCURRENTSENSEpuget (SIMPV, VOUTSN, VOUTSP, CELG59462, CELV96848, PORB97836, VSNSI_LIVE, CELSUB40948, IP_4ad46a6e, IP_5c672501, VSNSI_FILTER, ok_currentsensein, clock_currentsensein, enable_currentsensein, measure_currentsensein, kelvin_GNDcurrentsensein, ok_measurecurrentsensein);
+module INCURRENTSENSEpuget (SIMPV, VOUTSN, VOUTSP, CELG59462, CELV96848, PORB97836, VSNSI_LIVE, CELSUB40948, IP_2ceca3e2, IP_4ad46a6e, IP_5c672501, VSNSI_FILTER, ok_currentsensein, clock_currentsensein, enable_currentsensein, measure_currentsensein, kelvin_GNDcurrentsensein, ok_measurecurrentsensein);
 input  SIMPV;
 input  VOUTSN;
 input  VOUTSP;
@@ -44,6 +45,7 @@ input  CELV96848;
 input  PORB97836;
 inout  VSNSI_LIVE;
 input  CELSUB40948;
+input  IP_2ceca3e2;
 input  IP_4ad46a6e;
 input  IP_5c672501;
 inout  VSNSI_FILTER;
@@ -81,6 +83,7 @@ CURRENTSENSEinMAIN XMAIN (
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
 .CELSUB40948(CELSUB40948),
+.IP_2ceca3e2(IP_2ceca3e2),
 .IP_4ad46a6e(IP_4ad46a6e),
 .IP_5c672501(IP_5c672501),
 .dft_startup(net_59),
