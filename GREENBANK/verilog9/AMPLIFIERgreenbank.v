@@ -1,7 +1,8 @@
 // ------------------------ Module Definitions -----------
-module LDOgreenbankAMPcontrolHIGH (LDO,REF,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,IP_04d81c2f,dft_startup,kelvin_GNDldo);
+module LDOgreenbankAMPcontrolHIGH (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,IP_04d81c2f,dft_startup,kelvin_GNDldo);
   output  LDO;
   input  REF;
+  inout [4:0] tmi;
   input  MUDV;
   input  CELG59462;
   input  CELV96848;
@@ -12,9 +13,10 @@ module LDOgreenbankAMPcontrolHIGH (LDO,REF,MUDV,CELG59462,CELV96848,enable_ldo,C
   input  kelvin_GNDldo;
 endmodule
 
-module LDOgreenbankAMPcontrolLOW (LDO,REF,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,IP_bb9024c6,dft_startup,kelvin_GNDldo);
+module LDOgreenbankAMPcontrolLOW (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,IP_bb9024c6,dft_startup,kelvin_GNDldo);
   output  LDO;
   input  REF;
+  inout [4:0] tmi;
   input  MUDV;
   input  CELG59462;
   input  CELV96848;
@@ -25,9 +27,10 @@ module LDOgreenbankAMPcontrolLOW (LDO,REF,MUDV,CELG59462,CELV96848,enable_ldo,CE
   input  kelvin_GNDldo;
 endmodule
 
-module LDOgreenbankAMPcontrolMEDIUM (LDO,REF,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,IP_b085943e,dft_startup,kelvin_GNDldo);
+module LDOgreenbankAMPcontrolMEDIUM (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,IP_b085943e,dft_startup,kelvin_GNDldo);
   output  LDO;
   input  REF;
+  inout [4:0] tmi;
   input  MUDV;
   input  CELG59462;
   input  CELV96848;
@@ -38,9 +41,10 @@ module LDOgreenbankAMPcontrolMEDIUM (LDO,REF,MUDV,CELG59462,CELV96848,enable_ldo
   input  kelvin_GNDldo;
 endmodule
 
-module LDOgreenbankAMPfixedLOW (LDO,REF,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,IP_2c5a4e72,dft_startup,kelvin_GNDldo);
+module LDOgreenbankAMPfixedLOW (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,IP_2c5a4e72,dft_startup,kelvin_GNDldo);
   output  LDO;
   input  REF;
+  input [4:0] tmi;
   input  MUDV;
   input  CELG59462;
   input  CELV96848;
@@ -51,9 +55,10 @@ module LDOgreenbankAMPfixedLOW (LDO,REF,MUDV,CELG59462,CELV96848,enable_ldo,CELS
   input  kelvin_GNDldo;
 endmodule
 
-module LDOgreenbankAMPfixedMEDIUM (LDO,REF,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,IP_1836dbc4,dft_startup,kelvin_GNDldo);
+module LDOgreenbankAMPfixedMEDIUM (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,IP_1836dbc4,dft_startup,kelvin_GNDldo);
   output  LDO;
   input  REF;
+  input [4:0] tmi;
   input  MUDV;
   input  CELG59462;
   input  CELV96848;
@@ -64,9 +69,10 @@ module LDOgreenbankAMPfixedMEDIUM (LDO,REF,MUDV,CELG59462,CELV96848,enable_ldo,C
   input  kelvin_GNDldo;
 endmodule
 
-module LDOgreenbankAMPopenHIGH (LDO,REF,MUDV,CELG59462,CELV96848,sense_LDO,enable_ldo,CELSUB40948,IP_3a1af20a,dft_startup);
+module LDOgreenbankAMPopenHIGH (LDO,REF,tmi,MUDV,CELG59462,CELV96848,sense_LDO,enable_ldo,CELSUB40948,IP_3a1af20a,dft_startup);
   output  LDO;
   input  REF;
+  input [4:0] tmi;
   input  MUDV;
   input  CELG59462;
   input  CELV96848;
@@ -77,9 +83,10 @@ module LDOgreenbankAMPopenHIGH (LDO,REF,MUDV,CELG59462,CELV96848,sense_LDO,enabl
   output  dft_startup;
 endmodule
 
-module LDOgreenbankAMPopenLOW (LDO,REF,MUDV,CELG59462,CELV96848,sense_LDO,enable_ldo,CELSUB40948,IP_bfb33430,dft_startup);
+module LDOgreenbankAMPopenLOW (LDO,REF,tmi,MUDV,CELG59462,CELV96848,sense_LDO,enable_ldo,CELSUB40948,IP_bfb33430,dft_startup);
   output  LDO;
   input  REF;
+  input [4:0] tmi;
   input  MUDV;
   input  CELG59462;
   input  CELV96848;
@@ -90,9 +97,10 @@ module LDOgreenbankAMPopenLOW (LDO,REF,MUDV,CELG59462,CELV96848,sense_LDO,enable
   output  dft_startup;
 endmodule
 
-module LDOgreenbankAMPopenMEDIUM (LDO,REF,MUDV,CELG59462,CELV96848,sense_LDO,enable_ldo,CELSUB40948,IP_be65c403,dft_startup);
+module LDOgreenbankAMPopenMEDIUM (LDO,REF,tmi,MUDV,CELG59462,CELV96848,sense_LDO,enable_ldo,CELSUB40948,IP_be65c403,dft_startup);
   output  LDO;
   input  REF;
+  input [4:0] tmi;
   input  MUDV;
   input  CELG59462;
   input  CELV96848;
@@ -103,30 +111,135 @@ module LDOgreenbankAMPopenMEDIUM (LDO,REF,MUDV,CELG59462,CELV96848,sense_LDO,ena
   output  dft_startup;
 endmodule
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
+module dftprobeModel0_99fb68cf (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
 endmodule
 
 
-//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+module dftprobeModel0_dbbadfc9 (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
 
 
-module PEBBLEtielo ( q, G, SUB, V );
+
+module dftprobeModel0_1b624fd3 (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+
+
+
+module dftprobeModel0_246cafb7 (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+
+
+
+module dftprobeModel0_3db0a87e (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+
+
+
+module dftprobeModel0_27a113a4 (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+
+
+
+module dftprobeModel0_2997adfe (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+
+
+
+module dftprobeModel0_035fb43c (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+
+
+
+//Verilog HDL for "DFT", "DFTtm8d" "functional"
+
+
+module DFTtm8d ( a, ten, tdo, tmi, G, SUB, V, tdi, tma );
 
   input V;
-  output q;
+  input  [7:0] tma;
+  output  [7:0] ten;
+  output  [1:0] a;
+  inout tdo;
+  input  [7:0] tdi;
   input G;
+  input SUB;
+  inout  [4:0] tmi;
+endmodule
+
+
+//Verilog HDL for "DRM", "drm8" "functional"
+
+
+module drm8 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, drm0, d1, d0 );
+
+  input lastdrm;
+  input V;
+  output d1;
+  input  [7:0] id;
+  output d0;
+  input bypload;
+  output  [7:0] drm0;
+  input  [7:0] por0;
+  input G;
+  inout  [4:0] tmi;
   input SUB;
 endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module AMPLIFIERgreenbank (REF, LDO0, LDO1, LDO2, LDO3, LDO4, LDO5, LDO6, LDO7, MUDV, CELG59462, CELV96848, sense_LDO2, sense_LDO5, sense_LDO7, CELSUB40948, IP_04d81c2f, IP_1836dbc4, IP_2c5a4e72, IP_3a1af20a, IP_b085943e, IP_bb9024c6, IP_be65c403, IP_bfb33430, kelvin_MUDGamplifier);
+module AMPLIFIERgreenbank (REF, tdo, tmi, LDO0, LDO1, LDO2, LDO3, LDO4, LDO5, LDO6, LDO7, MUDV, CELG59462, CELV96848, sense_LDO2, sense_LDO5, sense_LDO7, CELSUB40948, IP_04d81c2f, IP_1836dbc4, IP_2c5a4e72, IP_3a1af20a, IP_b085943e, IP_bb9024c6, IP_be65c403, IP_bfb33430, kelvin_MUDGamplifier);
 input  REF;
+inout  tdo;
+inout [4:0] tmi;
 output  LDO0;
 output  LDO1;
 output  LDO2;
@@ -154,15 +267,24 @@ input  kelvin_MUDGamplifier;
 
 
 // ------------------------ Wires ------------------------
+wire [4:0] tmi;
+wire [1:0] a;
+wire [7:0] tdi;
+wire [7:0] ten;
+wire [7:0] tma;
+wire [7:0] id;
+wire [7:0] drm0;
+wire [7:0] por0;
 
 // ------------------------ Networks ---------------------
 LDOgreenbankAMPcontrolHIGH XAMPCONTROLhigh (
 .LDO(LDO6),
 .REF(REF),
+.tmi(tmi[4:0]),
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.enable_ldo(a0),
+.enable_ldo(net_100),
 .CELSUB40948(CELSUB40948),
 .IP_04d81c2f(IP_04d81c2f),
 .dft_startup(net_126),
@@ -172,10 +294,11 @@ LDOgreenbankAMPcontrolHIGH XAMPCONTROLhigh (
 LDOgreenbankAMPcontrolLOW XAMPCONTROLlow (
 .LDO(LDO1),
 .REF(REF),
+.tmi(tmi[4:0]),
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.enable_ldo(a0),
+.enable_ldo(net_95),
 .CELSUB40948(CELSUB40948),
 .IP_bb9024c6(IP_bb9024c6),
 .dft_startup(net_115),
@@ -185,10 +308,11 @@ LDOgreenbankAMPcontrolLOW XAMPCONTROLlow (
 LDOgreenbankAMPcontrolMEDIUM XAMPCONTROLmedium (
 .LDO(LDO4),
 .REF(REF),
+.tmi(tmi[4:0]),
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.enable_ldo(a0),
+.enable_ldo(net_98),
 .CELSUB40948(CELSUB40948),
 .IP_b085943e(IP_b085943e),
 .dft_startup(net_122),
@@ -198,10 +322,11 @@ LDOgreenbankAMPcontrolMEDIUM XAMPCONTROLmedium (
 LDOgreenbankAMPfixedLOW XAMPFIXEDlow (
 .LDO(LDO0),
 .REF(REF),
+.tmi(tmi[4:0]),
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.enable_ldo(a0),
+.enable_ldo(net_94),
 .CELSUB40948(CELSUB40948),
 .IP_2c5a4e72(IP_2c5a4e72),
 .dft_startup(net_114),
@@ -211,10 +336,11 @@ LDOgreenbankAMPfixedLOW XAMPFIXEDlow (
 LDOgreenbankAMPfixedMEDIUM XAMPFIXEDmedium (
 .LDO(LDO3),
 .REF(REF),
+.tmi(tmi[4:0]),
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.enable_ldo(a0),
+.enable_ldo(net_97),
 .CELSUB40948(CELSUB40948),
 .IP_1836dbc4(IP_1836dbc4),
 .dft_startup(net_120),
@@ -224,11 +350,12 @@ LDOgreenbankAMPfixedMEDIUM XAMPFIXEDmedium (
 LDOgreenbankAMPopenHIGH XAMPOPENhigh (
 .LDO(LDO7),
 .REF(REF),
+.tmi(tmi[4:0]),
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .sense_LDO(sense_LDO7),
-.enable_ldo(a0),
+.enable_ldo(net_101),
 .CELSUB40948(CELSUB40948),
 .IP_3a1af20a(IP_3a1af20a),
 .dft_startup(net_128)
@@ -237,11 +364,12 @@ LDOgreenbankAMPopenHIGH XAMPOPENhigh (
 LDOgreenbankAMPopenLOW XAMPOPENlow (
 .LDO(LDO2),
 .REF(REF),
+.tmi(tmi[4:0]),
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .sense_LDO(sense_LDO2),
-.enable_ldo(a0),
+.enable_ldo(net_96),
 .CELSUB40948(CELSUB40948),
 .IP_bfb33430(IP_bfb33430),
 .dft_startup(net_117)
@@ -250,53 +378,113 @@ LDOgreenbankAMPopenLOW XAMPOPENlow (
 LDOgreenbankAMPopenMEDIUM XAMPOPENmedium (
 .LDO(LDO5),
 .REF(REF),
+.tmi(tmi[4:0]),
 .MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .sense_LDO(sense_LDO5),
-.enable_ldo(a0),
+.enable_ldo(net_99),
 .CELSUB40948(CELSUB40948),
 .IP_be65c403(IP_be65c403),
 .dft_startup(net_124)
 );
 
-STONEnoconn XNC114 (
-.noconn(net_114)
+dftprobeModel0_99fb68cf XU1 (
+.i(net_114),
+.tdi(tdi_e2484965_XU1),
+.ten(ten_e2484965_XU1),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
-STONEnoconn XNC115 (
-.noconn(net_115)
+dftprobeModel0_dbbadfc9 XU16 (
+.i(net_115),
+.tdi(tdi_01d6b48b_XU16),
+.ten(ten_01d6b48b_XU16),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
-STONEnoconn XNC117 (
-.noconn(net_117)
+dftprobeModel0_1b624fd3 XU17 (
+.i(net_117),
+.tdi(tdi_38edcf69_XU17),
+.ten(ten_38edcf69_XU17),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
-STONEnoconn XNC120 (
-.noconn(net_120)
+dftprobeModel0_246cafb7 XU18 (
+.i(net_120),
+.tdi(tdi_ca8a82f5_XU18),
+.ten(ten_ca8a82f5_XU18),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
-STONEnoconn XNC122 (
-.noconn(net_122)
+dftprobeModel0_3db0a87e XU19 (
+.i(net_122),
+.tdi(tdi_67efbeaa_XU19),
+.ten(ten_67efbeaa_XU19),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
-STONEnoconn XNC124 (
-.noconn(net_124)
+dftprobeModel0_27a113a4 XU20 (
+.i(net_124),
+.tdi(tdi_504b6118_XU20),
+.ten(ten_504b6118_XU20),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
-STONEnoconn XNC126 (
-.noconn(net_126)
+dftprobeModel0_2997adfe XU21 (
+.i(net_126),
+.tdi(tdi_b957074a_XU21),
+.ten(ten_b957074a_XU21),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
-STONEnoconn XNC128 (
-.noconn(net_128)
+dftprobeModel0_035fb43c XU22 (
+.i(net_128),
+.tdi(tdi_39d4c910_XU22),
+.ten(ten_39d4c910_XU22),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
-PEBBLEtielo XDRMNOTL (
+DFTtm8d dft_hex0x09 (
 .G(CELG59462),
 .V(CELV96848),
-.q(a0),
-.SUB(CELSUB40948)
+.a({a1,a0}),
+.SUB(CELSUB40948),
+.tdi({tdi_39d4c910_XU22,tdi_b957074a_XU21,tdi_504b6118_XU20,tdi_67efbeaa_XU19,tdi_ca8a82f5_XU18,tdi_38edcf69_XU17,tdi_01d6b48b_XU16,tdi_e2484965_XU1}),
+.tdo(tdo),
+.ten({ten_39d4c910_XU22,ten_b957074a_XU21,ten_504b6118_XU20,ten_67efbeaa_XU19,ten_ca8a82f5_XU18,ten_38edcf69_XU17,ten_01d6b48b_XU16,ten_e2484965_XU1}),
+.tma({a0,a0,a0,a0,a1,a0,a0,a1}),
+.tmi(tmi[4:0])
+);
+
+drm8 drm_hex0x04 (
+.G(CELG59462),
+.V(CELV96848),
+.d0(c0),
+.d1(c1),
+.id({c0,c0,c0,c0,c0,c1,c0,c0}),
+.SUB(CELSUB40948),
+.tmi(tmi[4:0]),
+.drm0({net_101,net_100,net_99,net_98,net_97,net_96,net_95,net_94}),
+.por0({c0,c0,c0,c0,c0,c0,c0,c0}),
+.bypload(c0),
+.lastdrm(c0)
 );
 
 endmodule
