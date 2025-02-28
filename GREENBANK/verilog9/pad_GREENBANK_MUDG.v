@@ -8,16 +8,6 @@ module STONEpad1 ( PAD );
 endmodule
 
 
-//Verilog HDL for "Generate", "STONEotpSENSE" "functional"
-
-
-module STONEotpSENSE ( PAD, OTP );
-
-  input PAD;
-  output OTP;
-endmodule
-
-
 //Verilog HDL for "Generate", "WRAPPER1" "functional"
 
 
@@ -39,9 +29,8 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_GREENBANK_MUDG (GESD, GOTP, MUDG, CELG59462, CELSUB40948, SENSE_G_30a24d84, kelvin_MUDGservice, kelvin_MUDGamplifier, celkelvin_MUDG_2e498fae, celkelvin_MUDG_31b80673, celkelvin_MUDG_37713079, celkelvin_MUDG_58ede99a, celkelvin_MUDG_5f8d3afe, celkelvin_MUDG_92a31bd7, celkelvin_MUDG_9b1f0b60, celkelvin_MUDG_ac0a699d, celkelvin_MUDG_dbb8d281, celkelvin_MUDG_e09c7b4a, celkelvin_MUDG_e5e6d906, celkelvin_MUDG_e7f88029, celkelvin_MUDG_f3f88263);
+module pad_GREENBANK_MUDG (GESD, MUDG, CELG59462, CELSUB40948, SENSE_G_30a24d84, kelvin_MUDGservice, kelvin_MUDGamplifier, celkelvin_MUDG_2e498fae, celkelvin_MUDG_31b80673, celkelvin_MUDG_37713079, celkelvin_MUDG_58ede99a, celkelvin_MUDG_5f8d3afe, celkelvin_MUDG_92a31bd7, celkelvin_MUDG_9b1f0b60, celkelvin_MUDG_ac0a699d, celkelvin_MUDG_dbb8d281, celkelvin_MUDG_e09c7b4a, celkelvin_MUDG_e5e6d906, celkelvin_MUDG_e7f88029, celkelvin_MUDG_f3f88263);
 output  GESD;
-output  GOTP;
 inout  MUDG;
 inout  CELG59462;
 output  CELSUB40948;
@@ -67,11 +56,6 @@ output  celkelvin_MUDG_f3f88263;
 
 // ------------------------ Networks ---------------------
 STONEpad1 XPAD1 (
-.PAD(MUDG)
-);
-
-STONEotpSENSE Xgotp (
-.OTP(GOTP),
 .PAD(MUDG)
 );
 

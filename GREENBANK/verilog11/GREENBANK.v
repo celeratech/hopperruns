@@ -1,8 +1,5 @@
 // ------------------------ Module Definitions -----------
-module GREENBANKceleraCORE (TAO,tdo,tmi,LDO0,LDO1,LDO2,LDO3,LDO4,LDO5,LDO6,LDO7,LDO8,LDO9,MUDV,LDO10,LDO11,LDO12,LDO13,LDO14,LDO15,TAEXT,CELG59462,CELV96848,PORB97836,sense_LDO2,sense_LDO5,sense_LDO7,CELSUB40948,kelvin_MUDV,SENSE_G_30a24d84,kelvin_MUDGservice,kelvin_MUDGamplifier,CELPOWER_LDO_62423880,CELPOWER_LDO_af77ae17,CELPOWER_LDO_d8ea4418,CELPOWER_LDO_fd4a89e4,celkelvin_LDO8_37713079,celkelvin_LDO9_e7f88029,celkelvin_MUDG_2e498fae,celkelvin_MUDG_31b80673,celkelvin_MUDG_37713079,celkelvin_MUDG_58ede99a,celkelvin_MUDG_5f8d3afe,celkelvin_MUDG_92a31bd7,celkelvin_MUDG_9b1f0b60,celkelvin_MUDG_ac0a699d,celkelvin_MUDG_dbb8d281,celkelvin_MUDG_e09c7b4a,celkelvin_MUDG_e5e6d906,celkelvin_MUDG_e7f88029,celkelvin_MUDG_f3f88263,celkelvin_LDO10_9b1f0b60,celkelvin_LDO11_58ede99a,celkelvin_LDO12_dbb8d281,celkelvin_LDO13_e09c7b4a,celkelvin_LDO14_31b80673,celkelvin_LDO15_92a31bd7);
-  inout  TAO;
-  inout  tdo;
-  inout [4:0] tmi;
+module GREENBANKceleraCORE (LDO0,LDO1,LDO2,LDO3,LDO4,LDO5,LDO6,LDO7,LDO8,LDO9,MUDV,LDO10,LDO11,LDO12,LDO13,LDO14,LDO15,TAEXT,CELG59462,CELV96848,PORB97836,sense_LDO2,sense_LDO5,sense_LDO7,CELSUB40948,kelvin_MUDV,SENSE_G_30a24d84,kelvin_MUDGservice,kelvin_MUDGamplifier,CELPOWER_LDO_62423880,CELPOWER_LDO_af77ae17,CELPOWER_LDO_d8ea4418,CELPOWER_LDO_fd4a89e4,celkelvin_LDO8_37713079,celkelvin_LDO9_e7f88029,celkelvin_MUDG_2e498fae,celkelvin_MUDG_31b80673,celkelvin_MUDG_37713079,celkelvin_MUDG_58ede99a,celkelvin_MUDG_5f8d3afe,celkelvin_MUDG_92a31bd7,celkelvin_MUDG_9b1f0b60,celkelvin_MUDG_ac0a699d,celkelvin_MUDG_dbb8d281,celkelvin_MUDG_e09c7b4a,celkelvin_MUDG_e5e6d906,celkelvin_MUDG_e7f88029,celkelvin_MUDG_f3f88263,celkelvin_LDO10_9b1f0b60,celkelvin_LDO11_58ede99a,celkelvin_LDO12_dbb8d281,celkelvin_LDO13_e09c7b4a,celkelvin_LDO14_31b80673,celkelvin_LDO15_92a31bd7);
   output  LDO0;
   output  LDO1;
   output  LDO2;
@@ -64,16 +61,12 @@ module GREENBANKceleraREGISTER (scli,sdai,CELG59462,CELV96848,PORB97836,CELSUB40
   input  sdai;
   input  CELG59462;
   input  CELV96848;
-  input  PORB97836;
+  output  PORB97836;
   input  CELSUB40948;
   output  sdapd_registermap;
 endmodule
 
-module GREENBANKceleraRING (TAO,tdo,tmi,GOTP,LDO0,LDO1,LDO2,LDO3,LDO4,LDO5,LDO6,LDO7,LDO8,LDO9,MUDG,MUDV,VOTP,LDO10,LDO11,LDO12,LDO13,LDO14,LDO15,TAEXT,CELINA,CELIND,DFTSCL,DFTSDA,unlock,CELOUTA,CELOUTD,CELG59462,CELV96848,sense_LDO2,sense_LDO5,sense_LDO7,CELSUB40948,kelvin_MUDV,CELPOWER_LDO,SENSE_G_30a24d84,kelvin_MUDGservice,kelvin_MUDGamplifier,CELPOWER_LDO_62423880,CELPOWER_LDO_af77ae17,CELPOWER_LDO_d8ea4418,CELPOWER_LDO_fd4a89e4,celkelvin_LDO8_37713079,celkelvin_LDO9_e7f88029,celkelvin_MUDG_2e498fae,celkelvin_MUDG_31b80673,celkelvin_MUDG_37713079,celkelvin_MUDG_58ede99a,celkelvin_MUDG_5f8d3afe,celkelvin_MUDG_92a31bd7,celkelvin_MUDG_9b1f0b60,celkelvin_MUDG_ac0a699d,celkelvin_MUDG_dbb8d281,celkelvin_MUDG_e09c7b4a,celkelvin_MUDG_e5e6d906,celkelvin_MUDG_e7f88029,celkelvin_MUDG_f3f88263,celkelvin_MUDV_55c016d1,celkelvin_LDO10_9b1f0b60,celkelvin_LDO11_58ede99a,celkelvin_LDO12_dbb8d281,celkelvin_LDO13_e09c7b4a,celkelvin_LDO14_31b80673,celkelvin_LDO15_92a31bd7);
-  inout  TAO;
-  inout  tdo;
-  inout [4:0] tmi;
-  output  GOTP;
+module GREENBANKceleraRING (LDO0,LDO1,LDO2,LDO3,LDO4,LDO5,LDO6,LDO7,LDO8,LDO9,MUDG,MUDV,LDO10,LDO11,LDO12,LDO13,LDO14,LDO15,TAEXT,CELINA,CELIND,CELG59462,CELV96848,sense_LDO2,sense_LDO5,sense_LDO7,CELSUB40948,kelvin_MUDV,CELPOWER_LDO,SENSE_G_30a24d84,kelvin_MUDGservice,kelvin_MUDGamplifier,CELPOWER_LDO_62423880,CELPOWER_LDO_af77ae17,CELPOWER_LDO_d8ea4418,CELPOWER_LDO_fd4a89e4,celkelvin_LDO8_37713079,celkelvin_LDO9_e7f88029,celkelvin_MUDG_2e498fae,celkelvin_MUDG_31b80673,celkelvin_MUDG_37713079,celkelvin_MUDG_58ede99a,celkelvin_MUDG_5f8d3afe,celkelvin_MUDG_92a31bd7,celkelvin_MUDG_9b1f0b60,celkelvin_MUDG_ac0a699d,celkelvin_MUDG_dbb8d281,celkelvin_MUDG_e09c7b4a,celkelvin_MUDG_e5e6d906,celkelvin_MUDG_e7f88029,celkelvin_MUDG_f3f88263,celkelvin_LDO10_9b1f0b60,celkelvin_LDO11_58ede99a,celkelvin_LDO12_dbb8d281,celkelvin_LDO13_e09c7b4a,celkelvin_LDO14_31b80673,celkelvin_LDO15_92a31bd7);
   inout  LDO0;
   inout  LDO1;
   inout  LDO2;
@@ -86,7 +79,6 @@ module GREENBANKceleraRING (TAO,tdo,tmi,GOTP,LDO0,LDO1,LDO2,LDO3,LDO4,LDO5,LDO6,
   inout  LDO9;
   inout  MUDG;
   inout  MUDV;
-  output  VOTP;
   inout  LDO10;
   inout  LDO11;
   inout  LDO12;
@@ -96,11 +88,6 @@ module GREENBANKceleraRING (TAO,tdo,tmi,GOTP,LDO0,LDO1,LDO2,LDO3,LDO4,LDO5,LDO6,
   output  TAEXT;
   input  CELINA;
   input  CELIND;
-  input  DFTSCL;
-  inout  DFTSDA;
-  input  unlock;
-  output  CELOUTA;
-  output  CELOUTD;
   output  CELG59462;
   output  CELV96848;
   inout  sense_LDO2;
@@ -131,7 +118,6 @@ module GREENBANKceleraRING (TAO,tdo,tmi,GOTP,LDO0,LDO1,LDO2,LDO3,LDO4,LDO5,LDO6,
   output  celkelvin_MUDG_e5e6d906;
   output  celkelvin_MUDG_e7f88029;
   output  celkelvin_MUDG_f3f88263;
-  output  celkelvin_MUDV_55c016d1;
   output  celkelvin_LDO10_9b1f0b60;
   output  celkelvin_LDO11_58ede99a;
   output  celkelvin_LDO12_dbb8d281;
@@ -140,27 +126,8 @@ module GREENBANKceleraRING (TAO,tdo,tmi,GOTP,LDO0,LDO1,LDO2,LDO3,LDO4,LDO5,LDO6,
   output  celkelvin_LDO15_92a31bd7;
 endmodule
 
-module GREENBANKceleraSERDES (pd0,tdo,tmi,GOTP,VOTP,scli,sdai,DFTSCL,DFTSDA,unlock,otp_done,CELG59462,CELV96848,PORB97836,CELSUB40948,celkelvin_MUDV_55c016d1);
-  input  pd0;
-  inout  tdo;
-  inout [5:0] tmi;
-  input  GOTP;
-  input  VOTP;
-  output  scli;
-  inout  sdai;
-  inout  DFTSCL;
-  inout  DFTSDA;
-  output  unlock;
-  output  otp_done;
-  input  CELG59462;
-  input  CELV96848;
-  output  PORB97836;
-  input  CELSUB40948;
-  input  celkelvin_MUDV_55c016d1;
-endmodule
-
 // ------------------------ Module Verilog ---------------
-module GREENBANK (LDO0, LDO1, LDO2, LDO3, LDO4, LDO5, LDO6, LDO7, LDO8, LDO9, MUDG, MUDV, LDO10, LDO11, LDO12, LDO13, LDO14, LDO15, CELINA, CELIND, CELOUTA, CELOUTD);
+module GREENBANK (LDO0, LDO1, LDO2, LDO3, LDO4, LDO5, LDO6, LDO7, LDO8, LDO9, MUDG, MUDV, LDO10, LDO11, LDO12, LDO13, LDO14, LDO15, CELINA, CELIND);
 inout  LDO0;
 inout  LDO1;
 inout  LDO2;
@@ -181,18 +148,12 @@ inout  LDO14;
 inout  LDO15;
 input  CELINA;
 input  CELIND;
-output  CELOUTA;
-output  CELOUTD;
 
 
 // ------------------------ Wires ------------------------
-wire [5:0] tmi;
 
 // ------------------------ Networks ---------------------
 GREENBANKceleraCORE XceleraCORE (
-.TAO(TAO),
-.tdo(tdo),
-.tmi(tmi[4:0]),
 .LDO0(LDO0),
 .LDO1(LDO1),
 .LDO2(LDO2),
@@ -260,10 +221,6 @@ GREENBANKceleraREGISTER XceleraREGISTER (
 );
 
 GREENBANKceleraRING XceleraRING (
-.TAO(TAO),
-.tdo(tdo),
-.tmi(tmi[4:0]),
-.GOTP(GOTP),
 .LDO0(LDO0),
 .LDO1(LDO1),
 .LDO2(LDO2),
@@ -276,7 +233,6 @@ GREENBANKceleraRING XceleraRING (
 .LDO9(LDO9),
 .MUDG(MUDG),
 .MUDV(MUDV),
-.VOTP(VOTP),
 .LDO10(LDO10),
 .LDO11(LDO11),
 .LDO12(LDO12),
@@ -286,11 +242,6 @@ GREENBANKceleraRING XceleraRING (
 .TAEXT(TAEXT),
 .CELINA(CELINA),
 .CELIND(CELIND),
-.DFTSCL(DFTSCL),
-.DFTSDA(DFTSDA),
-.unlock(unlock),
-.CELOUTA(CELOUTA),
-.CELOUTD(CELOUTD),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .sense_LDO2(sense_LDO2),
@@ -321,32 +272,12 @@ GREENBANKceleraRING XceleraRING (
 .celkelvin_MUDG_e5e6d906(celkelvin_MUDG_e5e6d906),
 .celkelvin_MUDG_e7f88029(celkelvin_MUDG_e7f88029),
 .celkelvin_MUDG_f3f88263(celkelvin_MUDG_f3f88263),
-.celkelvin_MUDV_55c016d1(celkelvin_MUDV_55c016d1),
 .celkelvin_LDO10_9b1f0b60(celkelvin_LDO10_9b1f0b60),
 .celkelvin_LDO11_58ede99a(celkelvin_LDO11_58ede99a),
 .celkelvin_LDO12_dbb8d281(celkelvin_LDO12_dbb8d281),
 .celkelvin_LDO13_e09c7b4a(celkelvin_LDO13_e09c7b4a),
 .celkelvin_LDO14_31b80673(celkelvin_LDO14_31b80673),
 .celkelvin_LDO15_92a31bd7(celkelvin_LDO15_92a31bd7)
-);
-
-GREENBANKceleraSERDES XceleraSERDES (
-.pd0(pd0),
-.tdo(tdo),
-.tmi(tmi[5:0]),
-.GOTP(GOTP),
-.VOTP(VOTP),
-.scli(scli),
-.sdai(sdai),
-.DFTSCL(DFTSCL),
-.DFTSDA(DFTSDA),
-.unlock(unlock),
-.otp_done(otp_done),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.PORB97836(PORB97836),
-.CELSUB40948(CELSUB40948),
-.celkelvin_MUDV_55c016d1(celkelvin_MUDV_55c016d1)
 );
 
 endmodule

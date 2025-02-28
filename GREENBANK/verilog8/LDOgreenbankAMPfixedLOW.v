@@ -22,6 +22,18 @@ endmodule
 
 
 
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 //Celera:amplifier_4e08dc67
 //Celera Confidential Symbol Generator
 //Gain Adjust:fixed, Input Type:p, Bandwidth:low
@@ -42,35 +54,10 @@ endmodule
 
 
 
-//Verilog HDL for "DFT", "DFTtm8t" "functional"
-
-
-module DFTtm8t ( a, ten, tmi, G, SUB, V, tma );
-
-  input V;
-  input  [7:0] tma;
-  output  [7:0] ten;
-  output  [1:0] a;
-  input G;
-  input SUB;
-  inout  [4:0] tmi;
-endmodule
-
-
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
 // ------------------------ Module Verilog ---------------
-module LDOgreenbankAMPfixedLOW (LDO, REF, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, IP_2c5a4e72, dft_startup, kelvin_GNDldo);
+module LDOgreenbankAMPfixedLOW (LDO, REF, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, IP_2c5a4e72, dft_startup, kelvin_GNDldo);
 output  LDO;
 input  REF;
-input [4:0] tmi;
 input  MUDV;
 input  CELG59462;
 input  CELV96848;
@@ -82,10 +69,6 @@ input  kelvin_GNDldo;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
-wire [1:0] a;
-wire [7:0] ten;
-wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
 VESPAdftpulse XU6 (
@@ -106,6 +89,13 @@ switchgnd_321bf2ca XU1 (
 .enable_switch(enable_ldo)
 );
 
+PEBBLEtielo XtieLo (
+.G(CELG59462),
+.V(CELV96848),
+.q(tl0),
+.SUB(CELSUB40948)
+);
+
 amplifier_4e08dc67 Xamplifier1 (
 .IP(IP_2c5a4e72),
 .INN(kelvin_GNDldo),
@@ -116,45 +106,7 @@ amplifier_4e08dc67 Xamplifier1 (
 .CELSUB(CELSUB40948),
 .ok_amplifier(net_33),
 .enable_amplifier(enable_ldo),
-.global_amplifier(global_amplifier_2c5a4e72_Xamplifier1)
-);
-
-DFTtm8t dft_hex0x04 (
-.G(CELG59462),
-.V(CELV96848),
-.a({a1,a0}),
-.SUB(CELSUB40948),
-.ten({noconn_dft_hex0x04_ten_7,noconn_dft_hex0x04_ten_6,noconn_dft_hex0x04_ten_5,noconn_dft_hex0x04_ten_4,noconn_dft_hex0x04_ten_3,noconn_dft_hex0x04_ten_2,noconn_dft_hex0x04_ten_1,global_amplifier_2c5a4e72_Xamplifier1}),
-.tma({a0,a0,a0,a0,a0,a1,a0,a0}),
-.tmi(tmi[4:0])
-);
-
-STONEnoconn XNCnoconn_dft_hex0x04_ten_1 (
-.noconn(noconn_dft_hex0x04_ten_1)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x04_ten_2 (
-.noconn(noconn_dft_hex0x04_ten_2)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x04_ten_3 (
-.noconn(noconn_dft_hex0x04_ten_3)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x04_ten_4 (
-.noconn(noconn_dft_hex0x04_ten_4)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x04_ten_5 (
-.noconn(noconn_dft_hex0x04_ten_5)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x04_ten_6 (
-.noconn(noconn_dft_hex0x04_ten_6)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x04_ten_7 (
-.noconn(noconn_dft_hex0x04_ten_7)
+.global_amplifier(tl0)
 );
 
 endmodule

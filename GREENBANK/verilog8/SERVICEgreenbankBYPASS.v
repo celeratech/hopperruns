@@ -101,6 +101,18 @@ endmodule
 
 
 
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 //Celera:delayclock_44f99c0f
 //CONTROL:Pin:4 outputs
 module delayclock_44f99c0f (in,CELV,out,clock,celeraporb,
@@ -135,21 +147,6 @@ endmodule
 
 
 
-//Verilog HDL for "DFT", "DFTtm8t" "functional"
-
-
-module DFTtm8t ( a, ten, tmi, G, SUB, V, tma );
-
-  input V;
-  input  [7:0] tma;
-  output  [7:0] ten;
-  output  [1:0] a;
-  input G;
-  input SUB;
-  inout  [4:0] tmi;
-endmodule
-
-
 //Celera:oscillatorcrude_86504e8e
 //Celera Confidential Symbol Generator
 //VMAX:globalV,Crude:32.000KHz
@@ -170,18 +167,8 @@ endmodule
 
 
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
 // ------------------------ Module Verilog ---------------
-module SERVICEgreenbankBYPASS (tmi, MUDV, CELG59462, CELV96848, PORB97836, dft_clock, dft_bypass, ok_service, CELSUB40948, IP_30a24d84, bypass_filter, ok_reference0, ok_reference1, ok_reference2, ok_reference3, ok_reference4, ok_reference5, disable_bypass, SENSE_G_30a24d84, enable_reference0, enable_reference1, enable_reference2, enable_reference3, enable_reference4, filter_resistor_0, filter_resistor_1, filter_resistor_2, enable_reference567);
-input [4:0] tmi;
+module SERVICEgreenbankBYPASS (MUDV, CELG59462, CELV96848, PORB97836, dft_clock, dft_bypass, ok_service, CELSUB40948, IP_30a24d84, bypass_filter, ok_reference0, ok_reference1, ok_reference2, ok_reference3, ok_reference4, ok_reference5, disable_bypass, SENSE_G_30a24d84, enable_reference0, enable_reference1, enable_reference2, enable_reference3, enable_reference4, filter_resistor_0, filter_resistor_1, filter_resistor_2, enable_reference567);
 input  MUDV;
 input  CELG59462;
 input  CELV96848;
@@ -212,11 +199,7 @@ input  enable_reference567;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
 wire [1:0] delay;
-wire [1:0] a;
-wire [7:0] ten;
-wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
 VESPAasmINPUT2 XU13 (
@@ -431,6 +414,13 @@ inv_12e192f5 XU49 (
 .CELV(CELV96848)
 );
 
+PEBBLEtielo XtieLo (
+.G(CELG59462),
+.V(CELV96848),
+.q(tl0),
+.SUB(CELSUB40948)
+);
+
 delayclock_44f99c0f Xdelay1 (
 .in(net_142),
 .out(net_143),
@@ -453,16 +443,6 @@ delayclock_ec72a802 Xdelay2 (
 .celeraporb(PORB97836)
 );
 
-DFTtm8t dft_hex0x13 (
-.G(CELG59462),
-.V(CELV96848),
-.a({a1,a0}),
-.SUB(CELSUB40948),
-.ten({noconn_dft_hex0x13_ten_7,noconn_dft_hex0x13_ten_6,noconn_dft_hex0x13_ten_5,noconn_dft_hex0x13_ten_4,noconn_dft_hex0x13_ten_3,noconn_dft_hex0x13_ten_2,noconn_dft_hex0x13_ten_1,global_oscillator_30a24d84_Xoscillator1}),
-.tma({a0,a0,a0,a1,a0,a0,a1,a1}),
-.tmi(tmi[4:0])
-);
-
 oscillatorcrude_86504e8e Xoscillator1 (
 .IP(IP_30a24d84),
 .osc(net_147),
@@ -472,35 +452,7 @@ oscillatorcrude_86504e8e Xoscillator1 (
 .SENSE_G(SENSE_G_30a24d84),
 .ok_oscillator(net_152),
 .enable_oscillator(net_148),
-.global_oscillator(global_oscillator_30a24d84_Xoscillator1)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x13_ten_1 (
-.noconn(noconn_dft_hex0x13_ten_1)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x13_ten_2 (
-.noconn(noconn_dft_hex0x13_ten_2)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x13_ten_3 (
-.noconn(noconn_dft_hex0x13_ten_3)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x13_ten_4 (
-.noconn(noconn_dft_hex0x13_ten_4)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x13_ten_5 (
-.noconn(noconn_dft_hex0x13_ten_5)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x13_ten_6 (
-.noconn(noconn_dft_hex0x13_ten_6)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x13_ten_7 (
-.noconn(noconn_dft_hex0x13_ten_7)
+.global_oscillator(tl0)
 );
 
 endmodule

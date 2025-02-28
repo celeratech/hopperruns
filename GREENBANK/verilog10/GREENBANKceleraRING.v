@@ -1,14 +1,4 @@
 // ------------------------ Module Definitions -----------
-module pad_GREENBANK_DFTSCL (GESD,DFTSCL);
-  input  GESD;
-  inout  DFTSCL;
-endmodule
-
-module pad_GREENBANK_DFTSDA (GESD,DFTSDA);
-  input  GESD;
-  inout  DFTSDA;
-endmodule
-
 module pad_GREENBANK_LDO0 (GESD,LDO0,MUDV);
   input  GESD;
   inout  LDO0;
@@ -116,9 +106,8 @@ module pad_GREENBANK_LDO9 (GESD,LDO9,MUDV,celkelvin_LDO9_e7f88029);
   output  celkelvin_LDO9_e7f88029;
 endmodule
 
-module pad_GREENBANK_MUDG (GESD,GOTP,MUDG,CELG59462,CELSUB40948,SENSE_G_30a24d84,kelvin_MUDGservice,kelvin_MUDGamplifier,celkelvin_MUDG_2e498fae,celkelvin_MUDG_31b80673,celkelvin_MUDG_37713079,celkelvin_MUDG_58ede99a,celkelvin_MUDG_5f8d3afe,celkelvin_MUDG_92a31bd7,celkelvin_MUDG_9b1f0b60,celkelvin_MUDG_ac0a699d,celkelvin_MUDG_dbb8d281,celkelvin_MUDG_e09c7b4a,celkelvin_MUDG_e5e6d906,celkelvin_MUDG_e7f88029,celkelvin_MUDG_f3f88263);
+module pad_GREENBANK_MUDG (GESD,MUDG,CELG59462,CELSUB40948,SENSE_G_30a24d84,kelvin_MUDGservice,kelvin_MUDGamplifier,celkelvin_MUDG_2e498fae,celkelvin_MUDG_31b80673,celkelvin_MUDG_37713079,celkelvin_MUDG_58ede99a,celkelvin_MUDG_5f8d3afe,celkelvin_MUDG_92a31bd7,celkelvin_MUDG_9b1f0b60,celkelvin_MUDG_ac0a699d,celkelvin_MUDG_dbb8d281,celkelvin_MUDG_e09c7b4a,celkelvin_MUDG_e5e6d906,celkelvin_MUDG_e7f88029,celkelvin_MUDG_f3f88263);
   output  GESD;
-  output  GOTP;
   inout  MUDG;
   inout  CELG59462;
   output  CELSUB40948;
@@ -140,10 +129,9 @@ module pad_GREENBANK_MUDG (GESD,GOTP,MUDG,CELG59462,CELSUB40948,SENSE_G_30a24d84
   output  celkelvin_MUDG_f3f88263;
 endmodule
 
-module pad_GREENBANK_MUDV (GESD,MUDV,VOTP,CELV96848,kelvin_MUDV,CELPOWER_LDO,CELPOWER_LDO_62423880,CELPOWER_LDO_af77ae17,CELPOWER_LDO_d8ea4418,CELPOWER_LDO_fd4a89e4,celkelvin_MUDV_55c016d1);
+module pad_GREENBANK_MUDV (GESD,MUDV,CELV96848,kelvin_MUDV,CELPOWER_LDO,CELPOWER_LDO_62423880,CELPOWER_LDO_af77ae17,CELPOWER_LDO_d8ea4418,CELPOWER_LDO_fd4a89e4);
   input  GESD;
   inout  MUDV;
-  output  VOTP;
   output  CELV96848;
   inout  kelvin_MUDV;
   inout  CELPOWER_LDO;
@@ -151,7 +139,6 @@ module pad_GREENBANK_MUDV (GESD,MUDV,VOTP,CELV96848,kelvin_MUDV,CELPOWER_LDO,CEL
   output  CELPOWER_LDO_af77ae17;
   output  CELPOWER_LDO_d8ea4418;
   output  CELPOWER_LDO_fd4a89e4;
-  output  celkelvin_MUDV_55c016d1;
 endmodule
 
 module celerapaddft_CELINA (GESD,TAEXT,CELINA,CELG59462,CELV96848,ten_taext,CELSUB40948);
@@ -174,54 +161,8 @@ module celerapaddft_CELIND (GESD,tdext,CELIND,CELG59462,CELV96848,ten_tdext,CELS
   input  CELSUB40948;
 endmodule
 
-module celerapaddft_CELOUTA (TAO,GESD,CELOUTA,CELG59462,CELV96848,unlockTAO,CELSUB40948);
-  input  TAO;
-  inout  GESD;
-  output  CELOUTA;
-  input  CELG59462;
-  input  CELV96848;
-  input  unlockTAO;
-  input  CELSUB40948;
-endmodule
-
-module celerapaddft_CELOUTD (tdo,tmi,GESD,tdext,CELOUTD,ten_tdo,CELG59462,CELV96848,unlockTDO,CELSUB40948,ten_measureck);
-  inout  tdo;
-  inout [4:0] tmi;
-  inout  GESD;
-  input  tdext;
-  output  CELOUTD;
-  input  ten_tdo;
-  input  CELG59462;
-  input  CELV96848;
-  input  unlockTDO;
-  input  CELSUB40948;
-  input  ten_measureck;
-endmodule
-
-//Verilog HDL for "Generate", "CELERAid" "functional"
-
-
-module CELERAid ( CELV, CELG, CELSUB, tmi, chipidlsb, chipidmsb, revision, tl,
-th );
-
-  output th;
-  input CELV;
-  input  [7:0] revision;
-  input CELSUB;
-  output tl;
-  input  [7:0] chipidmsb;
-  input  [7:0] chipidlsb;
-  inout  [4:0] tmi;
-  input CELG;
-endmodule
-
-
 // ------------------------ Module Verilog ---------------
-module GREENBANKceleraRING (TAO, tdo, tmi, GOTP, LDO0, LDO1, LDO2, LDO3, LDO4, LDO5, LDO6, LDO7, LDO8, LDO9, MUDG, MUDV, VOTP, LDO10, LDO11, LDO12, LDO13, LDO14, LDO15, TAEXT, CELINA, CELIND, DFTSCL, DFTSDA, unlock, CELOUTA, CELOUTD, CELG59462, CELV96848, sense_LDO2, sense_LDO5, sense_LDO7, CELSUB40948, kelvin_MUDV, CELPOWER_LDO, SENSE_G_30a24d84, kelvin_MUDGservice, kelvin_MUDGamplifier, CELPOWER_LDO_62423880, CELPOWER_LDO_af77ae17, CELPOWER_LDO_d8ea4418, CELPOWER_LDO_fd4a89e4, celkelvin_LDO8_37713079, celkelvin_LDO9_e7f88029, celkelvin_MUDG_2e498fae, celkelvin_MUDG_31b80673, celkelvin_MUDG_37713079, celkelvin_MUDG_58ede99a, celkelvin_MUDG_5f8d3afe, celkelvin_MUDG_92a31bd7, celkelvin_MUDG_9b1f0b60, celkelvin_MUDG_ac0a699d, celkelvin_MUDG_dbb8d281, celkelvin_MUDG_e09c7b4a, celkelvin_MUDG_e5e6d906, celkelvin_MUDG_e7f88029, celkelvin_MUDG_f3f88263, celkelvin_MUDV_55c016d1, celkelvin_LDO10_9b1f0b60, celkelvin_LDO11_58ede99a, celkelvin_LDO12_dbb8d281, celkelvin_LDO13_e09c7b4a, celkelvin_LDO14_31b80673, celkelvin_LDO15_92a31bd7);
-inout  TAO;
-inout  tdo;
-inout [4:0] tmi;
-output  GOTP;
+module GREENBANKceleraRING (LDO0, LDO1, LDO2, LDO3, LDO4, LDO5, LDO6, LDO7, LDO8, LDO9, MUDG, MUDV, LDO10, LDO11, LDO12, LDO13, LDO14, LDO15, TAEXT, CELINA, CELIND, CELG59462, CELV96848, sense_LDO2, sense_LDO5, sense_LDO7, CELSUB40948, kelvin_MUDV, CELPOWER_LDO, SENSE_G_30a24d84, kelvin_MUDGservice, kelvin_MUDGamplifier, CELPOWER_LDO_62423880, CELPOWER_LDO_af77ae17, CELPOWER_LDO_d8ea4418, CELPOWER_LDO_fd4a89e4, celkelvin_LDO8_37713079, celkelvin_LDO9_e7f88029, celkelvin_MUDG_2e498fae, celkelvin_MUDG_31b80673, celkelvin_MUDG_37713079, celkelvin_MUDG_58ede99a, celkelvin_MUDG_5f8d3afe, celkelvin_MUDG_92a31bd7, celkelvin_MUDG_9b1f0b60, celkelvin_MUDG_ac0a699d, celkelvin_MUDG_dbb8d281, celkelvin_MUDG_e09c7b4a, celkelvin_MUDG_e5e6d906, celkelvin_MUDG_e7f88029, celkelvin_MUDG_f3f88263, celkelvin_LDO10_9b1f0b60, celkelvin_LDO11_58ede99a, celkelvin_LDO12_dbb8d281, celkelvin_LDO13_e09c7b4a, celkelvin_LDO14_31b80673, celkelvin_LDO15_92a31bd7);
 inout  LDO0;
 inout  LDO1;
 inout  LDO2;
@@ -234,7 +175,6 @@ inout  LDO8;
 inout  LDO9;
 inout  MUDG;
 inout  MUDV;
-output  VOTP;
 inout  LDO10;
 inout  LDO11;
 inout  LDO12;
@@ -244,11 +184,6 @@ inout  LDO15;
 output  TAEXT;
 input  CELINA;
 input  CELIND;
-input  DFTSCL;
-inout  DFTSDA;
-input  unlock;
-output  CELOUTA;
-output  CELOUTD;
 output  CELG59462;
 output  CELV96848;
 inout  sense_LDO2;
@@ -279,7 +214,6 @@ output  celkelvin_MUDG_e09c7b4a;
 output  celkelvin_MUDG_e5e6d906;
 output  celkelvin_MUDG_e7f88029;
 output  celkelvin_MUDG_f3f88263;
-output  celkelvin_MUDV_55c016d1;
 output  celkelvin_LDO10_9b1f0b60;
 output  celkelvin_LDO11_58ede99a;
 output  celkelvin_LDO12_dbb8d281;
@@ -289,22 +223,8 @@ output  celkelvin_LDO15_92a31bd7;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
-wire [7:0] revision;
-wire [7:0] chipidlsb;
-wire [7:0] chipidmsb;
 
 // ------------------------ Networks ---------------------
-pad_GREENBANK_DFTSCL XDFTSCL (
-.GESD(GESD),
-.DFTSCL(DFTSCL)
-);
-
-pad_GREENBANK_DFTSDA XDFTSDA (
-.GESD(GESD),
-.DFTSDA(DFTSDA)
-);
-
 pad_GREENBANK_LDO0 XLDO0 (
 .GESD(GESD),
 .LDO0(LDO0),
@@ -414,7 +334,6 @@ pad_GREENBANK_LDO9 XLDO9 (
 
 pad_GREENBANK_MUDG XMUDG (
 .GESD(GESD),
-.GOTP(GOTP),
 .MUDG(MUDG),
 .CELG59462(CELG59462),
 .CELSUB40948(CELSUB40948),
@@ -439,15 +358,13 @@ pad_GREENBANK_MUDG XMUDG (
 pad_GREENBANK_MUDV XMUDV (
 .GESD(GESD),
 .MUDV(MUDV),
-.VOTP(VOTP),
 .CELV96848(CELV96848),
 .kelvin_MUDV(kelvin_MUDV),
 .CELPOWER_LDO(CELPOWER_LDO),
 .CELPOWER_LDO_62423880(CELPOWER_LDO_62423880),
 .CELPOWER_LDO_af77ae17(CELPOWER_LDO_af77ae17),
 .CELPOWER_LDO_d8ea4418(CELPOWER_LDO_d8ea4418),
-.CELPOWER_LDO_fd4a89e4(CELPOWER_LDO_fd4a89e4),
-.celkelvin_MUDV_55c016d1(celkelvin_MUDV_55c016d1)
+.CELPOWER_LDO_fd4a89e4(CELPOWER_LDO_fd4a89e4)
 );
 
 celerapaddft_CELINA XCELINA (
@@ -468,42 +385,6 @@ celerapaddft_CELIND XCELIND (
 .CELV96848(CELV96848),
 .ten_tdext(ten_tdext),
 .CELSUB40948(CELSUB40948)
-);
-
-celerapaddft_CELOUTA XCELOUTA (
-.TAO(TAO),
-.GESD(GESD),
-.CELOUTA(CELOUTA),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.unlockTAO(unlock),
-.CELSUB40948(CELSUB40948)
-);
-
-celerapaddft_CELOUTD XCELOUTD (
-.tdo(tdo),
-.tmi(tmi[4:0]),
-.GESD(GESD),
-.tdext(tdext),
-.CELOUTD(CELOUTD),
-.ten_tdo(ten_tdo),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.unlockTDO(unlock),
-.CELSUB40948(CELSUB40948),
-.ten_measureck(ten_measureck)
-);
-
-CELERAid XCHIPid (
-.th(a1),
-.tl(a0),
-.tmi(tmi[4:0]),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948),
-.revision({a0,a0,a0,a0,a0,a0,a0,a0}),
-.chipidlsb({a0,a0,a1,a1,a0,a0,a1,a0}),
-.chipidmsb({a0,a0,a0,a0,a0,a0,a0,a0})
 );
 
 endmodule
