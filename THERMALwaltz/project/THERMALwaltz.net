@@ -1,0 +1,87 @@
+* Z:\celera\projects\Simplis\playrich\Waltz\WALTZ2\301c\verification\sim_THERMAL.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map fault 16
+.node_map REF 14
+.node_map MUDV 15
+.node_map enable 13
+.options
++ PSP_NPT=50001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+.tran 120u 0
+
+.globalvar celera_i2c_frequency_KHz=1000
+.globalvar TEMP=25
+.globalvar VIN = 5.0
+.globalvar REF = 0.9
+.globalvar tdext_khz=10
+
+.PRINT V(#fault)
+.GRAPH :#fault curveLabel= fault nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe1  
+X$THERMAL 15 13 14 16 THERMALwaltz
+X$U2 13 12 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+V1 15 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=0 X2=2u Y2={VIN} 
+V3 12 0 PWL NSEG=2 X0=0 Y0=0 X1=30u Y1=0 X2=30.001u Y2={VIN} 
+V4 14 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=0 X2=2u Y2=0.9 
+** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ2\301c\design\THERMALwaltz.sxcmp
+.subckt THERMALwaltz 35 36 37 38
+*#hierarchy
+.node_map fault 41
+.node_map ok_comparator 43
+.node_map over 40
+.node_map thermometer 39
+.node_map REF 37
+.node_map ok_thermal 42
+.node_map MUDV 35
+.node_map enable_thermal 36
+.node_map fault_thermal 38
+.node_map ok 44
+.node_map ok_thermalDELAY 45
+X$comparator1 43 35 36 40 39 32 37 33 34 31 comparatornoctlpins vars: comparator_model='comparator' comparator_hysteresismode='fixed' comparator_edge='rising' comparator_speed='slow' comparator_type='p' comparator_deglitch='yes' comparator_lowiq='no' comparator_datasheet_name='text' comparator_datasheet_description='text' bgcomp_accuracy='no' bgcomp_outputanalog='supply' bgcomp_note1='Usage' bgcomp_outputdigital='no' bgcomp_trim_name='text' bgcomp_trim_description='text' bgcomp_enable='yes' comparator_dft='no' comparatorsupply_reference='ground' comparatorsupply_threshold='50' comparatorsupply_edge='falling' comparatorsupply_output='analog' comparatorsupply_enable='analog' comparator_hysteresis=100 comparator_lowiqpor=0 bgcomp_threshold=1.2 bgcomp_maxcelpos=6 bgcomp_maxvin=6 comparator_vmax=6
+X$delay1 42 45 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=100 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1k
+X$pinprobe1 38 pinprobe vars: pinprobe_description='Thermal_fault_flag'' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 36 pinprobe vars: pinprobe_description='Enable_thermal_detection' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 37 pinprobe vars: pinprobe_description='Reference_input' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$thermometer1 35 36 39 42 thermometer vars: thermometer_enable='pin' thermometer_enable_por='1' thermometer_datasheet_name='text' thermometer_datasheet_description='text' thermometer_output_buffer='no' thermometer_accuracy='no' thermometer_trim_name='text' thermometer_trim_description='text' thermometer_verification='no' thermometer_enabletimeunits1='us' thermometer_enabletimeunits2='us' thermometer_enabletimeunits3='us' thermometer_enabletimeunits4='us' thermometer_dft='no' thermometer_25C_outputvoltage=200 thermometer_ptatgain=5 thermometer_note0=0 thermometer_timeenablecodes=1 thermometer_starttemp=0 thermometer_newtemp1=1 thermometer_enabletime1=1 thermometer_newtemp2=1 thermometer_enabletime2=1 thermometer_newtemp3=1 thermometer_enabletime3=1 thermometer_newtemp4=1 thermometer_enabletime4=1 thermometer_VINmin=5 thermometer_vmax=6 thermometer_note1=0 thermometer_note2=0
+X$U13 43 44 45 36 VESPAasmINPUT2
+X$U2 40 41 44 VESPAasmINPUT1
+X$U21 38 41 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U6 30 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='text' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U8 35 pinprobe vars: pinprobe_description='Fault_Module_Input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+.ends THERMALwaltz
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT2.sxcmp
+.subckt VESPAasmINPUT2 7 8 9 6
+*#hierarchy
+.node_map Tstate 6
+.node_map i0 7
+.node_map i1 9
+.node_map o 8
+X$U1 6 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 9 pinprobe vars: pinprobe_description='input1'
+X$U3 8 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 6 9 5 7 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U5 5 8 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U6 7 pinprobe vars: pinprobe_description='input0'
+.ends VESPAasmINPUT2
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT1.sxcmp
+.subckt VESPAasmINPUT1 5 6 7
+*#hierarchy
+.node_map Tstate 5
+.node_map i0 7
+.node_map o 6
+X$U1 5 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 7 pinprobe vars: pinprobe_description='input1'
+X$U3 6 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 5 4 7 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U5 4 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+.ends VESPAasmINPUT1
+
+.end

@@ -1,0 +1,155 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x5648664ebf60 .scope module, "THERMALwaltz" "THERMALwaltz" 2 88;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "REF";
+    .port_info 1 /INPUT 1 "MUDV";
+    .port_info 2 /INPUT 1 "CELG59462";
+    .port_info 3 /INPUT 1 "CELV96848";
+    .port_info 4 /INPUT 1 "CELSUB40948";
+    .port_info 5 /INPUT 1 "IP_20a660aa";
+    .port_info 6 /INPUT 1 "IP_cd0a370d";
+    .port_info 7 /OUTPUT 1 "fault_thermal";
+    .port_info 8 /INPUT 1 "enable_thermal";
+o0x7f4f957a5018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564866543490_0 .net "CELG59462", 0 0, o0x7f4f957a5018;  0 drivers
+o0x7f4f957a5048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564866543550_0 .net "CELSUB40948", 0 0, o0x7f4f957a5048;  0 drivers
+o0x7f4f957a5078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564866543610_0 .net "CELV96848", 0 0, o0x7f4f957a5078;  0 drivers
+o0x7f4f957a55b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564866543770_0 .net "IP_20a660aa", 0 0, o0x7f4f957a55b8;  0 drivers
+o0x7f4f957a5948 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564866543840_0 .net "IP_cd0a370d", 0 0, o0x7f4f957a5948;  0 drivers
+o0x7f4f957a55e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5648665438e0_0 .net "MUDV", 0 0, o0x7f4f957a55e8;  0 drivers
+o0x7f4f957a5558 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564866543980_0 .net "REF", 0 0, o0x7f4f957a5558;  0 drivers
+o0x7f4f957a5978 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564866543a20_0 .net "TBD_XTHERMAL_Xthermometer1_celkelvin_GNDthermometer", 0 0, o0x7f4f957a5978;  0 drivers
+o0x7f4f957a50a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564866543af0_0 .net "enable_thermal", 0 0, o0x7f4f957a50a8;  0 drivers
+o0x7f4f957a5438 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564866543c20_0 .net "fault_thermal", 0 0, o0x7f4f957a5438;  0 drivers
+o0x7f4f957a5588 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564866543cf0_0 .net "net_39", 0 0, o0x7f4f957a5588;  0 drivers
+o0x7f4f957a52b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564866543d90_0 .net "net_40", 0 0, o0x7f4f957a52b8;  0 drivers
+o0x7f4f957a52e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564866543e80_0 .net "net_41", 0 0, o0x7f4f957a52e8;  0 drivers
+o0x7f4f957a5828 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564866543f70_0 .net "net_42", 0 0, o0x7f4f957a5828;  0 drivers
+o0x7f4f957a50d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564866544060_0 .net "net_43", 0 0, o0x7f4f957a50d8;  0 drivers
+o0x7f4f957a5138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564866544150_0 .net "net_44", 0 0, o0x7f4f957a5138;  0 drivers
+o0x7f4f957a5108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564866544240_0 .net "net_45", 0 0, o0x7f4f957a5108;  0 drivers
+o0x7f4f957a5618 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564866544440_0 .net "tl0", 0 0, o0x7f4f957a5618;  0 drivers
+S_0x564866522710 .scope module, "XU13" "VESPAasmINPUT2" 2 103, 2 2 0, S_0x5648664ebf60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o";
+    .port_info 1 /INPUT 1 "i0";
+    .port_info 2 /INPUT 1 "i1";
+    .port_info 3 /INPUT 1 "Tstate";
+    .port_info 4 /INPUT 1 "CELG59462";
+    .port_info 5 /INPUT 1 "CELV96848";
+    .port_info 6 /INPUT 1 "CELSUB40948";
+v0x5648664ec0f0_0 .net "CELG59462", 0 0, o0x7f4f957a5018;  alias, 0 drivers
+v0x5648664ebec0_0 .net "CELSUB40948", 0 0, o0x7f4f957a5048;  alias, 0 drivers
+v0x564866540380_0 .net "CELV96848", 0 0, o0x7f4f957a5078;  alias, 0 drivers
+v0x564866540420_0 .net "Tstate", 0 0, o0x7f4f957a50a8;  alias, 0 drivers
+v0x5648665404e0_0 .net "i0", 0 0, o0x7f4f957a50d8;  alias, 0 drivers
+v0x5648665405f0_0 .net "i1", 0 0, o0x7f4f957a5108;  alias, 0 drivers
+v0x5648665406b0_0 .net "o", 0 0, o0x7f4f957a5138;  alias, 0 drivers
+S_0x564866540850 .scope module, "XU2" "VESPAasmINPUT1" 2 113, 2 12 0, S_0x5648664ebf60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o";
+    .port_info 1 /INPUT 1 "i0";
+    .port_info 2 /INPUT 1 "Tstate";
+    .port_info 3 /INPUT 1 "CELG59462";
+    .port_info 4 /INPUT 1 "CELV96848";
+    .port_info 5 /INPUT 1 "CELSUB40948";
+v0x564866540af0_0 .net "CELG59462", 0 0, o0x7f4f957a5018;  alias, 0 drivers
+v0x564866540b90_0 .net "CELSUB40948", 0 0, o0x7f4f957a5048;  alias, 0 drivers
+v0x564866540c60_0 .net "CELV96848", 0 0, o0x7f4f957a5078;  alias, 0 drivers
+v0x564866540d60_0 .net "Tstate", 0 0, o0x7f4f957a52b8;  alias, 0 drivers
+v0x564866540e00_0 .net "i0", 0 0, o0x7f4f957a5138;  alias, 0 drivers
+v0x564866540ef0_0 .net "o", 0 0, o0x7f4f957a52e8;  alias, 0 drivers
+S_0x564866540ff0 .scope module, "XU21" "dbuf_e926e395" 2 122, 2 24 0, S_0x5648664ebf60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "CELV";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "i";
+    .port_info 3 /OUTPUT 1 "o";
+    .port_info 4 /INPUT 1 "SUB";
+v0x5648665412b0_0 .net "CELG", 0 0, o0x7f4f957a5018;  alias, 0 drivers
+v0x5648665413a0_0 .net "CELV", 0 0, o0x7f4f957a5078;  alias, 0 drivers
+v0x5648665414b0_0 .net "SUB", 0 0, o0x7f4f957a5048;  alias, 0 drivers
+v0x5648665415a0_0 .net "i", 0 0, o0x7f4f957a52e8;  alias, 0 drivers
+v0x564866541640_0 .net "o", 0 0, o0x7f4f957a5438;  alias, 0 drivers
+S_0x564866541790 .scope module, "Xcomparator1" "comparatornoctlpins_5979e320" 2 138, 2 52 0, S_0x5648664ebf60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "enable_comparator";
+    .port_info 1 /INPUT 1 "IP";
+    .port_info 2 /OUTPUT 1 "out_comparator";
+    .port_info 3 /INPUT 1 "INP_COMPARATOR";
+    .port_info 4 /INPUT 1 "INN_COMPARATOR";
+    .port_info 5 /INPUT 1 "SIMPV";
+    .port_info 6 /INPUT 1 "global_comparator";
+    .port_info 7 /OUTPUT 1 "ok_comparator";
+    .port_info 8 /INPUT 1 "CELG";
+    .port_info 9 /INPUT 1 "CELSUB";
+v0x564866541a70_0 .net "CELG", 0 0, o0x7f4f957a5018;  alias, 0 drivers
+v0x564866541b30_0 .net "CELSUB", 0 0, o0x7f4f957a5048;  alias, 0 drivers
+v0x564866541bf0_0 .net "INN_COMPARATOR", 0 0, o0x7f4f957a5558;  alias, 0 drivers
+v0x564866541c90_0 .net "INP_COMPARATOR", 0 0, o0x7f4f957a5588;  alias, 0 drivers
+v0x564866541d30_0 .net "IP", 0 0, o0x7f4f957a55b8;  alias, 0 drivers
+v0x564866541e40_0 .net "SIMPV", 0 0, o0x7f4f957a55e8;  alias, 0 drivers
+v0x564866541f00_0 .net "enable_comparator", 0 0, o0x7f4f957a50a8;  alias, 0 drivers
+v0x564866541fa0_0 .net "global_comparator", 0 0, o0x7f4f957a5618;  alias, 0 drivers
+v0x564866542040_0 .net "ok_comparator", 0 0, o0x7f4f957a50d8;  alias, 0 drivers
+v0x564866542170_0 .net "out_comparator", 0 0, o0x7f4f957a52b8;  alias, 0 drivers
+S_0x564866542340 .scope module, "Xdelay1" "delayfixed_84207a5f" 2 130, 2 37 0, S_0x5648664ebf60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "CELV";
+    .port_info 1 /INPUT 1 "i";
+    .port_info 2 /OUTPUT 1 "o";
+    .port_info 3 /INPUT 1 "CELG";
+    .port_info 4 /INPUT 1 "CELSUB";
+v0x5648665425a0_0 .net "CELG", 0 0, o0x7f4f957a5018;  alias, 0 drivers
+v0x5648665426f0_0 .net "CELSUB", 0 0, o0x7f4f957a5048;  alias, 0 drivers
+v0x564866542840_0 .net "CELV", 0 0, o0x7f4f957a5078;  alias, 0 drivers
+v0x564866542910_0 .net "i", 0 0, o0x7f4f957a5828;  alias, 0 drivers
+v0x5648665429b0_0 .net "o", 0 0, o0x7f4f957a5108;  alias, 0 drivers
+S_0x564866542ae0 .scope module, "Xthermometer1" "thermometer_ec3ca4e2" 2 151, 2 72 0, S_0x5648664ebf60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "SIMPV";
+    .port_info 1 /INPUT 1 "IP";
+    .port_info 2 /OUTPUT 1 "OUT_THERMOMETER";
+    .port_info 3 /OUTPUT 1 "ok_thermometer";
+    .port_info 4 /INPUT 1 "celkelvin_GNDthermometer";
+    .port_info 5 /INPUT 1 "enable_thermometer";
+    .port_info 6 /INPUT 1 "CELG";
+    .port_info 7 /INPUT 1 "CELSUB";
+v0x564866542d90_0 .net "CELG", 0 0, o0x7f4f957a5018;  alias, 0 drivers
+v0x564866542e50_0 .net "CELSUB", 0 0, o0x7f4f957a5048;  alias, 0 drivers
+v0x564866542f10_0 .net "IP", 0 0, o0x7f4f957a5948;  alias, 0 drivers
+v0x564866542fb0_0 .net "OUT_THERMOMETER", 0 0, o0x7f4f957a5588;  alias, 0 drivers
+v0x564866543080_0 .net "SIMPV", 0 0, o0x7f4f957a55e8;  alias, 0 drivers
+v0x564866543170_0 .net "celkelvin_GNDthermometer", 0 0, o0x7f4f957a5978;  alias, 0 drivers
+v0x564866543210_0 .net "enable_thermometer", 0 0, o0x7f4f957a50a8;  alias, 0 drivers
+v0x564866543300_0 .net "ok_thermometer", 0 0, o0x7f4f957a5828;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/celera/projects/Sunnyvale/software/THERMALwaltz/verilog8/THERMALwaltz.v";
