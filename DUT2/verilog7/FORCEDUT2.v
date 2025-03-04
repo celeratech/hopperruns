@@ -83,7 +83,12 @@ module vpwl_0x0 (PLUS,MINUS);
   output  MINUS;
 endmodule
 
-module vpwl_0x5 (PLUS,MINUS);
+module vpwl_0x0_10d0ux0_11d0ux5 (PLUS,MINUS);
+  output  PLUS;
+  output  MINUS;
+endmodule
+
+module vpwl_0x0_11ux0_11d001ux5 (PLUS,MINUS);
   output  PLUS;
   output  MINUS;
 endmodule
@@ -219,12 +224,12 @@ vpwl_0x0 XCELG (
 .MINUS(GND)
 );
 
-vpwl_0x5 XCELV (
+vpwl_0x0_10d0ux0_11d0ux5 XCELV (
 .PLUS(CELV96848),
 .MINUS(GND)
 );
 
-vpwl_0x5 XPORB (
+vpwl_0x0_11ux0_11d001ux5 XPORB (
 .PLUS(PORB97836),
 .MINUS(GND)
 );
