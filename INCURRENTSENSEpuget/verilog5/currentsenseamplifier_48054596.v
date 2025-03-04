@@ -49,7 +49,7 @@ endmodule
 
 
 module STONEcurrentsenseamplifier_inn_45 ( ISN, OUT_CURRENTSENSEAMPLIFIER, TAI_OUT_CURRENTSENSEAMPLIFIER,
-a0, a1, ok_currentsenseamplifier, tdi_ok_currentsenseamplifier, CELG, CELNEG,
+a0, a1, ok_currentsenseamplifier, tdi_ok_currentsenseamplifier, CELNEG, CELG,
 CELPOS, CELSUB, CELV, IDNN, IDPN, INN_CURRENTSENSEAMPLIFIER, INP_CURRENTSENSEAMPLIFIER,
 IP, enable_currentsenseamplifier, ten, ten_currentsenseamplifier, ten_out_currentsenseamplifier
 );
@@ -58,7 +58,7 @@ IP, enable_currentsenseamplifier, ten, ten_currentsenseamplifier, ten_out_curren
   input CELV;
   output a1;
   output ISN;
-  input CELNEG;
+  inout CELNEG;
   output a0;
   output TAI_OUT_CURRENTSENSEAMPLIFIER;
   input CELSUB;
