@@ -1,4 +1,95 @@
 // ------------------------ Module Definitions -----------
+//Verilog HDL for "DFT", "DFThijack" "functional"
+
+
+module DFThijack ( o, CELG, CELV, CELSUB, ten_hijack, ten_hijacki, i );
+
+  input CELV;
+  input ten_hijack;
+  input CELSUB;
+  input ten_hijacki;
+  input i;
+  output o;
+  input CELG;
+endmodule
+
+
+//Verilog HDL for "DFT", "DFTtm8a" "functional"
+
+
+module DFTtm8a ( a, ten, TAO, tmi, G, SUB, TAI, V, tma );
+
+  input V;
+  input  [7:0] tma;
+  input  [7:0] TAI;
+  output  [7:0] ten;
+  output  [1:0] a;
+  inout TAO;
+  input G;
+  input SUB;
+  inout  [4:0] tmi;
+endmodule
+
+
+//Verilog HDL for "DFT", "DFTtm8t" "functional"
+
+
+module DFTtm8t ( a, ten, tmi, G, SUB, V, tma );
+
+  input V;
+  input  [7:0] tma;
+  output  [7:0] ten;
+  output  [1:0] a;
+  input G;
+  input SUB;
+  inout  [4:0] tmi;
+endmodule
+
+
+module dftprobeModel1_164c7767 (i,TAI,ten,CELG,CELSUB,CELV);
+input  i;
+output  TAI;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+
+
+
+module dftprobeModel3_c0ebc781 (i,TAI,ten,CELG,CELSUB,CELV);
+input  i;
+output  TAI;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+
+
+
+module dftprobeModel1_65097f16 (i,TAI,ten,CELG,CELSUB,CELV);
+input  i;
+output  TAI;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+
+
+
+module dftprobeModel3_e031defc (i,TAI,ten,CELG,CELSUB,CELV);
+input  i;
+output  TAI;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+
+
+
 //Verilog HDL for "Generate", "STONEnoconn" "functional"
 
 
@@ -8,23 +99,29 @@ module STONEnoconn ( noconn );
 endmodule
 
 
-//Verilog HDL for "Generate", "WRAPPER1" "functional"
-
-
-module WRAPPER1 ( o, i );
-
-  input i;
-  output o;
+module dftprobeModel1_0d952153 (i,TAI,ten,CELG,CELSUB,CELV);
+input  i;
+output  TAI;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
 endmodule
 
 
+
 // ------------------------ Module Verilog ---------------
-module CURRENTSENSEinDEBUG (IIN, dft_ok, dft_startup, IIN_TELEMETRY, dft_measure_delay, enable_currentsense, measure_currentsense, hijack_enable_currentsense, hijack_measure_currentsense);
-input  IIN;
-input  dft_ok;
-input  dft_startup;
-input  IIN_TELEMETRY;
-input  dft_measure_delay;
+module CURRENTSENSEinDEBUG (IIN, TAO, tmi, dft_ok, CELG59462, CELV96848, CELSUB40948, dft_startup, IIN_TELEMETRY, dft_measure_delay, enable_currentsense, measure_currentsense, hijack_enable_currentsense, hijack_measure_currentsense);
+  input  IIN;
+inout  TAO;
+input [4:0] tmi;
+  input  dft_ok;
+input  CELG59462;
+input  CELV96848;
+input  CELSUB40948;
+  input  dft_startup;
+  input  IIN_TELEMETRY;
+  input  dft_measure_delay;
 input  enable_currentsense;
 input  measure_currentsense;
 output  hijack_enable_currentsense;
@@ -32,36 +129,126 @@ output  hijack_measure_currentsense;
 
 
 // ------------------------ Wires ------------------------
+wire [4:0] tmi;
+wire [1:0] a;
+wire [7:0] TAI;
+wire [7:0] ten;
+wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
-STONEnoconn XNCIIN (
-.noconn(IIN)
-);
-
-STONEnoconn XNCdft_ok (
-.noconn(dft_ok)
-);
-
-WRAPPER1 XWRAP_28_29 (
+DFThijack Xdfthijack1 (
 .i(enable_currentsense),
-.o(hijack_enable_currentsense)
+.o(hijack_enable_currentsense),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948),
+.ten_hijack(ten_hijack_f970f12c_Xdfthijack1),
+.ten_hijacki(ten_hijacki_f970f12c_Xdfthijack1)
 );
 
-WRAPPER1 XWRAP_30_31 (
+DFThijack Xdfthijack2 (
 .i(measure_currentsense),
-.o(hijack_measure_currentsense)
+.o(hijack_measure_currentsense),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948),
+.ten_hijack(ten_hijack_4b841c4c_Xdfthijack2),
+.ten_hijacki(ten_hijacki_4b841c4c_Xdfthijack2)
 );
 
-STONEnoconn XNCdft_startup (
-.noconn(dft_startup)
+DFTtm8a dft_hex0x01 (
+.G(CELG59462),
+.V(CELV96848),
+.a({a1,a0}),
+.SUB(CELSUB40948),
+.TAI({a0,a0,a0,TAI_1d5f6d09_XUCURRENTSENSEin_telemetry,TAI_09c007d7_XUCURRENTSENSEin_startup,TAI_35959252_XUCURRENTSENSEin_output,TAI_0e4bd4ae_XUCURRENTSENSEin_ok,TAI_1fa26df6_XUCURRENTSENSEin_measure_delay}),
+.TAO(TAO),
+.ten({ten_hijack_4b841c4c_Xdfthijack2,ten_hijacki_f970f12c_Xdfthijack1,ten_hijack_f970f12c_Xdfthijack1,ten_1d5f6d09_XUCURRENTSENSEin_telemetry,ten_09c007d7_XUCURRENTSENSEin_startup,ten_35959252_XUCURRENTSENSEin_output,ten_0e4bd4ae_XUCURRENTSENSEin_ok,ten_1fa26df6_XUCURRENTSENSEin_measure_delay}),
+.tma({a0,a0,a0,a0,a0,a0,a0,a1}),
+.tmi(tmi[4:0])
 );
 
-STONEnoconn XNCIIN_TELEMETRY (
-.noconn(IIN_TELEMETRY)
+DFTtm8t dft_hex0x02 (
+.G(CELG59462),
+.V(CELV96848),
+.a({b1,b0}),
+.SUB(CELSUB40948),
+.ten({noconn_dft_hex0x02_ten_7,noconn_dft_hex0x02_ten_6,noconn_dft_hex0x02_ten_5,noconn_dft_hex0x02_ten_4,noconn_dft_hex0x02_ten_3,noconn_dft_hex0x02_ten_2,noconn_dft_hex0x02_ten_1,ten_hijacki_4b841c4c_Xdfthijack2}),
+.tma({b0,b0,b0,b0,b0,b0,b1,b0}),
+.tmi(tmi[4:0])
 );
 
-STONEnoconn XNCdft_measure_delay (
-.noconn(dft_measure_delay)
+dftprobeModel1_164c7767 XUCURRENTSENSEin_ok (
+.i(dft_ok),
+.TAI(TAI_0e4bd4ae_XUCURRENTSENSEin_ok),
+.ten(ten_0e4bd4ae_XUCURRENTSENSEin_ok),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+dftprobeModel3_c0ebc781 XUCURRENTSENSEin_output (
+.i(IIN),
+.TAI(TAI_35959252_XUCURRENTSENSEin_output),
+.ten(ten_35959252_XUCURRENTSENSEin_output),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+dftprobeModel1_65097f16 XUCURRENTSENSEin_startup (
+.i(dft_startup),
+.TAI(TAI_09c007d7_XUCURRENTSENSEin_startup),
+.ten(ten_09c007d7_XUCURRENTSENSEin_startup),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+dftprobeModel3_e031defc XUCURRENTSENSEin_telemetry (
+.i(IIN_TELEMETRY),
+.TAI(TAI_1d5f6d09_XUCURRENTSENSEin_telemetry),
+.ten(ten_1d5f6d09_XUCURRENTSENSEin_telemetry),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x02_ten_1 (
+.noconn(noconn_dft_hex0x02_ten_1)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x02_ten_2 (
+.noconn(noconn_dft_hex0x02_ten_2)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x02_ten_3 (
+.noconn(noconn_dft_hex0x02_ten_3)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x02_ten_4 (
+.noconn(noconn_dft_hex0x02_ten_4)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x02_ten_5 (
+.noconn(noconn_dft_hex0x02_ten_5)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x02_ten_6 (
+.noconn(noconn_dft_hex0x02_ten_6)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x02_ten_7 (
+.noconn(noconn_dft_hex0x02_ten_7)
+);
+
+dftprobeModel1_0d952153 XUCURRENTSENSEin_measure_delay (
+.i(dft_measure_delay),
+.TAI(TAI_1fa26df6_XUCURRENTSENSEin_measure_delay),
+.ten(ten_1fa26df6_XUCURRENTSENSEin_measure_delay),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 endmodule
