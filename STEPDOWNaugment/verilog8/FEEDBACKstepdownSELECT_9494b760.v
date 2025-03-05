@@ -13,7 +13,7 @@ module feedbackdivider_e387aa9c (CELV,SUB,SENSE_FEEDBACKDIVIDER,FEEDBACKDIVIDER_
   input  enable_feedbackdivider;
 endmodule
 
-module delayfixed_671725c3 (CELV,i,o,CELG,CELSUB);
+module delayfixed_a9b86fed (CELV,i,o,CELG,CELSUB);
   input  i;
   output  o;
   input  CELG;
@@ -95,7 +95,7 @@ feedbackdivider_e387aa9c XU2 (
 .enable_feedbackdivider(enable)
 );
 
-delayfixed_671725c3 XU4 (
+delayfixed_a9b86fed XU4 (
 .i(enable),
 .o(ok_feedback),
 .CELG(CELG59462),
@@ -119,7 +119,7 @@ drm8 drm_hex0x0A (
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
 .drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,noconn_drm8_drm0_3,net_27,net_26,net_25}),
-.por0({a0,a0,a0,a0,a0,a1,a1,a0}),
+.por0({a0,a0,a0,a0,a0,a0,a0,a0}),
 .bypload(a0),
 .lastdrm(a0)
 );

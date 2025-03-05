@@ -5839,8 +5839,8 @@ parameter,fetdriver_passive,1000
 parameter,fetdriver_dft,no
 parameter,fetdriver_design,fast
 parameter,fetdriver_model,ideal
-parameter,fetdriver_on_ron,2
-parameter,fetdriver_off_ron,1
+parameter,fetdriver_on_ron,0.5
+parameter,fetdriver_off_ron,0.25
 parameter,fetdriver_vmaxlevelshift,6
 parameter,fetdriver_status_delay,20
 parameter,fetdriver_vmax,6
@@ -5860,9 +5860,9 @@ parameter,fet_dft,no
 parameter,fet_layoutrotate,no
 parameter,fet_powerswitch,no
 parameter,fet_ron_signal,1k
-parameter,fet_ron_power,100m
-parameter,fet_replica_gain,30
-parameter,fet_maximumvds,30
+parameter,fet_ron_power,50m
+parameter,fet_replica_gain,40
+parameter,fet_maximumvds,6
 parameter,count_1,0
 parameter,fet_vmax,6
 
@@ -5881,9 +5881,9 @@ parameter,fet_dft,no
 parameter,fet_layoutrotate,no
 parameter,fet_powerswitch,no
 parameter,fet_ron_signal,1k
-parameter,fet_ron_power,100m
+parameter,fet_ron_power,50m
 parameter,fet_replica_gain,1
-parameter,fet_maximumvds,30
+parameter,fet_maximumvds,6
 parameter,count_1,0
 parameter,fet_vmax,6
 
@@ -5893,7 +5893,7 @@ generate,currentlimitfet
 path,XSTEPDOWN,XDRIVER,XBOTDRIVER,XBOTTOMIPEAK
 instance,XBOTTOMIPEAK
 parameter,currentlimit_sense,fet
-parameter,currentlimit_limit,0.85
+parameter,currentlimit_limit,3.5
 parameter,currentlimit_fetterm,nmos_source
 parameter,currentlimit_3,nmos_source
 parameter,currentlimit_4,nmos_drain
@@ -5916,7 +5916,7 @@ parameter,currentlimit_accuracy,yes
 parameter,currentlimit_datasheet_accuracy_name,botswzcacc
 parameter,currentlimit_datasheet_accuracy_description,Bottom_ZeroCross_accuracy
 parameter,currentlimit_slopecomp,no
-parameter,currentlimit_fetratio,1
+parameter,currentlimit_fetratio,40
 parameter,currentlimit_2,0
 parameter,currentlimit_8,0
 parameter,currentlimit_vsense,100
@@ -6526,7 +6526,7 @@ generate,currentlimitfet
 path,XSTEPDOWN,XDRIVER,XTOPDRIVER,XTOPIPEAK
 instance,XTOPIPEAK
 parameter,currentlimit_sense,fet
-parameter,currentlimit_limit,0.75
+parameter,currentlimit_limit,3.0
 parameter,currentlimit_fetterm,nmos_drain
 parameter,currentlimit_3,nmos_source
 parameter,currentlimit_4,nmos_drain
@@ -6549,12 +6549,12 @@ parameter,currentlimit_accuracy,yes
 parameter,currentlimit_datasheet_accuracy_name,topswipeakacc
 parameter,currentlimit_datasheet_accuracy_description,Highside_Current_Limit_Trim
 parameter,currentlimit_slopecomp,no
-parameter,currentlimit_fetratio,15
+parameter,currentlimit_fetratio,30
 parameter,currentlimit_2,0
 parameter,currentlimit_8,0
 parameter,currentlimit_vsense,100
 parameter,currentlimit_restc,0
-parameter,currentlimit_vsensemax,36
+parameter,currentlimit_vsensemax,12
 parameter,currentlimit_maxiref,100
 parameter,currentlimit_blanking,10
 parameter,currentlimit_1,0
@@ -6576,9 +6576,9 @@ parameter,fet_dft,no
 parameter,fet_layoutrotate,no
 parameter,fet_powerswitch,no
 parameter,fet_ron_signal,1k
-parameter,fet_ron_power,400m
+parameter,fet_ron_power,100m
 parameter,fet_replica_gain,30
-parameter,fet_maximumvds,30
+parameter,fet_maximumvds,6
 parameter,count_1,0
 parameter,fet_vmax,6
 
@@ -6608,8 +6608,8 @@ parameter,fetdriver_passive,1000
 parameter,fetdriver_dft,no
 parameter,fetdriver_design,fast
 parameter,fetdriver_model,ideal
-parameter,fetdriver_on_ron,4
-parameter,fetdriver_off_ron,2
+parameter,fetdriver_on_ron,1
+parameter,fetdriver_off_ron,0.5
 parameter,fetdriver_vmaxlevelshift,36
 parameter,fetdriver_status_delay,20
 parameter,fetdriver_vmax,6
@@ -6629,9 +6629,9 @@ parameter,fet_dft,no
 parameter,fet_layoutrotate,no
 parameter,fet_powerswitch,no
 parameter,fet_ron_signal,1k
-parameter,fet_ron_power,400m
-parameter,fet_replica_gain,15
-parameter,fet_maximumvds,30
+parameter,fet_ron_power,100m
+parameter,fet_replica_gain,30
+parameter,fet_maximumvds,6
 parameter,count_1,0
 parameter,fet_vmax,6
 
@@ -7206,7 +7206,7 @@ parameter,delay_units,us
 parameter,delay_accuracy,no
 parameter,delay_accuracy_name,text
 parameter,delay_accuracy_description,text
-parameter,delay_edge,rise
+parameter,delay_edge,fall
 parameter,delay_dft,no
 parameter,delaycontrol_type,register
 parameter,delaycontrol_name,text
@@ -7260,7 +7260,7 @@ parameter,datamap_status_mode,live
 parameter,datamap_status_readunits,us
 parameter,datamap_status_enable,no
 parameter,datamap_type,factory
-parameter,datamap_por,6
+parameter,datamap_por,0
 parameter,datamap_mode,readonly
 parameter,datamap_timeenable,no
 parameter,datamap_function0,text
@@ -7472,7 +7472,7 @@ parameter,currentmirror_dft,no
 parameter,currentmirror_number,1
 parameter,currentmirror_maxiset,20
 parameter,currentmirror_maxvout,6
-parameter,currentmirror_gain0,2.5
+parameter,currentmirror_gain0,5
 parameter,currentmirror_gain1,100m
 parameter,currentmirror_gain2,100m
 parameter,currentmirror_gain3,100m
