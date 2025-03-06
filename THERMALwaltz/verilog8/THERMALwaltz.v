@@ -31,6 +31,18 @@ endmodule
 
 
 
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 //Celera:delayfixed_84207a5f
 //Celera Confidential Symbol Generator
 //TYPE:fixed Egde:rise
@@ -125,6 +137,13 @@ dbuf_e926e395 XU21 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
+);
+
+PEBBLEtielo XtieLo (
+.G(CELG59462),
+.V(CELV96848),
+.q(tl0),
+.SUB(CELSUB40948)
 );
 
 delayfixed_84207a5f Xdelay1 (
