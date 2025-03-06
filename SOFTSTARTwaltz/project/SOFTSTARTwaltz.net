@@ -1,0 +1,333 @@
+* Z:\celera\projects\Simplis\playrich\Waltz\WALTZ2\301c\verification\sim_SOFTSTART.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map REF 27
+.node_map completed 22
+.node_map MUDV 24
+.node_map enable 25
+.node_map done 23
+.node_map SS 21
+.node_map go 26
+.options
++ PSP_NPT=50001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+.tran 7m 0
+
+.globalvar celera_i2c_frequency_KHz=100
+
+.globalvar TEMP=25
+.globalvar VIN = 5.0
+.globalvar REF = 0.9
+.globalvar tdext_khz=10
+
+X$datamap1 25 datamap1 vars: datamap_function='code' datamap_name='A' datamap_description='A' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='yes' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='A' datamap_code1='A' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=1 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=20 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$datamap2 26 datamap1 vars: datamap_function='code' datamap_name='A' datamap_description='A' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_register_selfreset='no' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='yes' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='A' datamap_code1='A' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='ms' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=1 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+.PRINT V(#enable)
+.GRAPH :#enable curveLabel= enable nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe1  
+.PRINT V(#SS)
+.GRAPH :#SS curveLabel= SS nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe2  
+.PRINT V(#go)
+.GRAPH :#go axisType="auto" persistence=-1 curveLabel="go" analysis="tran|pop" xLog="auto" yLog="auto"  nowarn=true disabled=false PROBEREF=Probe3  
+.PRINT V(#completed)
+.GRAPH :#completed curveLabel= completed nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe4  
+.PRINT V(#done)
+.GRAPH :#done curveLabel= done nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe7  
+X$SOFTSTART 24 21 25 22 26 23 27 0 SOFTSTARTwaltz
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+V1 24 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=0 X2=2u Y2={VIN} 
+V3 27 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=0 X2=2u Y2={REF} 
+** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ2\301c\design\SOFTSTARTwaltz.sxcmp
+.subckt SOFTSTARTwaltz 38 41 39 43 40 45 42 44
+*#hierarchy
+.node_map hijack_enable_softstart 49
+.node_map enable_brick 39
+.node_map REF 42
+.node_map enable_softstart 40
+.node_map hijack_enable_brick 48
+.node_map halfway 47
+.node_map softstart_1ms 46
+.node_map dft_clock 50
+.node_map completed_softstart 43
+.node_map MUDV 38
+.node_map kelvin_MUDGsoftstart 44
+.node_map done_softstart 45
+.node_map SS 41
+X$CONFIGURATION 46 47 SOFTSTARTwaltzCONFIGURATION
+X$DEBUG 40 49 45 41 50 39 48 SOFTSTARTwaltzDEBUG
+X$MAIN 38 41 48 45 49 50 42 46 47 44 43 SOFTSTARTwaltzBMAIN
+X$pinprobe1 43 pinprobe vars: pinprobe_description='Softstart_ramp_completed' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 45 pinprobe vars: pinprobe_description='Softstart_ramp_above_reference' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$U1 44 pinprobe vars: pinprobe_description='SoftStart_' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd'
+X$U2 40 pinprobe vars: pinprobe_description='Enable_softstart_brick' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 42 pinprobe vars: pinprobe_description='Reference_input_0p9V' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
+X$U4 37 brick vars: ibias=0 drm=1 dft=1 global=0 brick=0 revision=0 description='SOFTSTART_Brick' description1='Internal_softstart_at_4ms' description2='DAC_design_option' description3='Factory_option_for_1ms' description4='Debug_enabled' description5='REV2_Redesign_of_softstart_end' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U6 38 pinprobe vars: pinprobe_description='MUD_low_voltage_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U7 41 pinprobe vars: pinprobe_description='Softstart_Internal_voltage_ramp' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U8 39 pinprobe vars: pinprobe_description='Enable_BRICK' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+.ends SOFTSTARTwaltz
+
+** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ2\301c\design\SOFTSTARTwaltzCONFIGURATION.sxcmp
+.subckt SOFTSTARTwaltzCONFIGURATION 8 9
+*#hierarchy
+.node_map BUS1$10 18
+.node_map BUS1$11 19
+.node_map BUS1$12 20
+.node_map BUS1$13 21
+.node_map BUS1$14 22
+.node_map BUS1$15 23
+.node_map BUS1$2 10
+.node_map BUS1$3 11
+.node_map BUS1$4 12
+.node_map BUS1$5 13
+.node_map BUS1$6 14
+.node_map BUS1$7 15
+.node_map BUS1$8 16
+.node_map BUS1$9 17
+.node_map halfway 9
+.node_map softstart_1ms 8
+X$datamap1 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 datamap0 vars: datamap_function='function' datamap_name='SOFTSTARTconfiguration' datamap_description='Softstart_configuration' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_register_selfreset='no' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='no' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='Softstart_time' datamap_function0_off='4ms' datamap_function0_on='1ms' datamap_function1='Halfway' datamap_function1_off='disable' datamap_function1_on='enable' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=1 datamap_enabletime2=1 datamap_enabletime3=1 datamap_enabletime4=1 datamap_enabletime5=1 datamap_enabletime6=1 datamap_enabletime7=1 datamap_enabletime8=1 datamap_vmax=6
+X$pinprobe1 9 pinprobe vars: pinprobe_description='Freeze_softstart_at_half_count' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 8 pinprobe vars: pinprobe_description='Softstart_time_set_to_1ms' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$U1 7 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='SOFTSTART_configuration' description1='Internal_softstart_at_1ms' description2='Freeze_count_at_half_code' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+.ends SOFTSTARTwaltzCONFIGURATION
+
+** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ2\301c\design\SOFTSTARTwaltzDEBUG.sxcmp
+.subckt SOFTSTARTwaltzDEBUG 27 32 28 31 29 26 30
+*#hierarchy
+.node_map hijack_enable_softstart 32
+.node_map enable_brick 26
+.node_map enable_softstart 27
+.node_map hijack_enable_brick 30
+.node_map dft_clock 29
+.node_map done_softstart 28
+.node_map SS 31
+X$U1 27 32 dfthijack vars: dfthijack_name='HIJACKsoftstartENABLE' dfthijack_description='Hijack_enable_for_SOFTSTART' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$U10 29 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SOFTSTARTclock' dftprobe_description='Measure_Softstart_local_clock' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U11 29 pinprobe vars: pinprobe_description='Softstart_local_clock' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U12 26 pinprobe vars: pinprobe_description='Enable_BRICK' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U13 30 pinprobe vars: pinprobe_description='Hijack_BRICK_enable' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U14 26 30 dfthijack vars: dfthijack_name='HIJACKbrickENABLE' dfthijack_description='Hijack_enable_for_BRICK' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$U2 27 pinprobe vars: pinprobe_description='Enable_softstart_brick' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 32 pinprobe vars: pinprobe_description='Hijack_Softstart_enable' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad'
+X$U4 32 28 25 VESPAdftpulse
+X$U5 24 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='text' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U6 28 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SOFTSTARTdone' dftprobe_description='Measure_Softstart_done_flag' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U7 28 pinprobe vars: pinprobe_description='Softstart_ramp_completed' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U8 31 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SOFTSTARTss' dftprobe_description='Measure_Softstart_output_ramp' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U9 31 pinprobe vars: pinprobe_description='Softstart_ramp' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$USOFTSTARTtime 25 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SOFTSTARTtime' dftprobe_description='Measure_Softstart_time' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+.ends SOFTSTARTwaltzDEBUG
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAdftpulse.sxcmp
+.subckt VESPAdftpulse 7 8 9
+*#hierarchy
+.node_map start 7
+.node_map stop 8
+.node_map pulse 9
+X$U11 7 pinprobe vars: pinprobe_description='DFT_timer_start_input'
+X$U15 8 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U17 8 pinprobe vars: pinprobe_description='DFT_timer_stop_input'
+X$U52 7 4 6 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U53 4 5 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U55 9 5 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U8 9 pinprobe vars: pinprobe_description='DFT_Timer_pulse'
+.ends VESPAdftpulse
+
+** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ2\301c\design\SOFTSTARTwaltzBMAIN.sxcmp
+.subckt SOFTSTARTwaltzBMAIN 155 159 156 163 157 165 158 160 162 164 161
+*#hierarchy
+.node_map half_count 173
+.node_map ok_oscillator 167
+.node_map ok_comparator 178
+.node_map d0 186
+.node_map ss1 151
+.node_map ss4 150
+.node_map DACSS 166
+.node_map enable_brick 156
+.node_map BUS2$0 152
+.node_map BUS2$1 153
+.node_map rb 177
+.node_map BUS2$2 154
+.node_map REF 158
+.node_map REFBUF 174
+.node_map enable_softstart 157
+.node_map SSI 182
+.node_map ok_dac 180
+.node_map completedBAR 176
+.node_map clock 189
+.node_map db0 185
+.node_map db1 187
+.node_map count_clock 172
+.node_map done0 179
+.node_map halfway 162
+.node_map rb0 190
+.node_map completed 171
+.node_map ok_buffer 170
+.node_map rb1 191
+.node_map softstart_1ms 160
+.node_map dft_clock 165
+.node_map comp 175
+.node_map completed_softstart 161
+.node_map softstart_1msBAR 183
+.node_map MUDV 155
+.node_map ssdiv 184
+.node_map tiehigh 181
+.node_map select 188
+.node_map count$0 138
+.node_map count$1 139
+.node_map count$2 140
+.node_map count$3 141
+.node_map ok_softstart 168
+.node_map count$4 142
+.node_map done 169
+.node_map kelvin_MUDGsoftstart 164
+.node_map count$5 143
+.node_map done_softstart 163
+.node_map count$6 144
+.node_map SS 159
+.node_map count$7 145
+.node_map count$10 148
+.node_map count$8 146
+.node_map count$11 149
+.node_map count$9 147
+X$amux1 166 181 182 155 171 amux2 vars: amux_control='pin' amux_datasheet_name='text' amux_datasheet_description='text' amux_tswitch='no' amux_inputs=2 amux_por=0 amux_ron=10K amux_vmax=6
+C1 166 0 1p IC=0
+X$comparator1 178 155 157 175 166 123 158 124 125 122 comparatornoctlpins vars: comparator_model='comparator' comparator_hysteresismode='fixed' comparator_edge='rising' comparator_speed='slow' comparator_type='p' comparator_deglitch='yes' comparator_lowiq='no' comparator_datasheet_name='text' comparator_datasheet_description='text' bgcomp_accuracy='no' bgcomp_outputanalog='supply' bgcomp_note1='Usage' bgcomp_outputdigital='no' bgcomp_trim_name='text' bgcomp_trim_description='text' bgcomp_enable='yes' comparator_dft='no' comparatorsupply_reference='ground' comparatorsupply_threshold='50' comparatorsupply_edge='falling' comparatorsupply_output='analog' comparatorsupply_enable='analog' comparator_hysteresis=100 comparator_lowiqpor=0 bgcomp_threshold=1.2 bgcomp_maxcelpos=6 bgcomp_maxvin=6 comparator_vmax=6
+X$COUNT 168 169 172 173 162 138 139 140 141 142 143 144 145 SOFTSTARTwaltzMAINcount8
+X$dac1 127 174 164 138 139 140 141 142 143 144 145 146 147 148 149 166 157 180 168 celeradacr2r vars: dac_type='r2r' dac_flash_fullscale='input' dac_tracking_fullscale='input' dac_dualslope_fullscale='input' dac_sigmadelta_fullscale='input' dac_control='pin' dac_control_por2='0' dac_control_por1='0' dac_control_por0='0' dac_name='text' dac_description='text' dac_units='text' dac_enable_control='pin' dac_strobe_control='pin' dac_buffer='no' dac_mode='unsigned' dac_lowpower='no' dac_ref='local' dac_fullscale='input' dac_gndsense='yes' dac_accuracy='no' dac_trim_name='text' dac_trim_description='text' dac_dft='no' dac_ladder_impedance=100 dac_r2r_impedance=200 dac_flash_impedance=200 dac_tracking_impedance=200 dac_dualslope_frequency=1 dac_sigmadelta_impedance=200 dac_bits=8 dac_2=0 dac_offset=0 dac_lsb=0 dac_enable_por=0 dac_strobe_por=0 dac_filter=10 dac_1=0 dac_vmax=6
+X$dff1 157 169 171 176 177 dff vars: dff_edge='rise' dff_outputs='both' dff_bits=1 dff_vmax=6
+X$dff2 157 175 179 126 177 dff vars: dff_edge='rise' dff_outputs='q' dff_bits=1 dff_vmax=6
+X$dmux1 150 151 189 188 dmux2 vars: dmux_type='pin' dmux_datasheet_name='text' dmux_datasheet_description='text' dmux_inputs=2 dmux_bits=1 dmux_reg_por=0 dmux_vmax=6
+X$oscillator1 167 155 151 120 118 117 157 119 121 oscillatorcrude vars: osc_type='crude' osc_accuracy='no' osc_datasheet_accuracy_name='text' osc_datasheet_accuracy_description='text' osc_enable='pin' osc_enable_por='disable' osc_datasheet_enable_name='text' osc_datasheet_enable_description='text' osc_ss='no' osc_standbyclock='no' osc_standbyclockpor='disable' osc_ext_freq_default='no' osc_crystalbias='3.3' osc_crystalglobalref='yes' osc_ss_configuration='fixed' osc_ss_enable_control='fixed' osc_ss_mode_por='sweep' osc_ss_enable_por='enable' osc_ss_clock_sync='synchronized' osc_ss_datasheetname='text' osc_dft='no' osc_ibias='global' osc_int_freq=1k osc_int_duty=50 osc_int_ireplica_gain=10 osc_int_1=0 osc_ext_freq=1k osc_ext_resistor=50 osc_ext_duty=50 osc_ext_replicagain=0 osc_ext_comment=0 osc_crude_freq=142 osc_crude_generatesupply=4.5 osc_crude_duty=50 osc_crystalfreq=1 osc_crystalreflocal=1 osc_crystalcleancountpor=32 osc_ringfreq=20 osc_ss_range_por=5 osc_ss_clock_independent=50 osc_ss_clock_divide=64 osc_vmax=6
+X$resistor1 182 159 133 134 135 152 153 154 resistor vars: resistor_control='resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='text' resistor_datasheet_adjust_description='text' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=500 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=0 resistor_adjust1=0 resistor_adjust2=0 resistor_adjust3=0 resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=6 resistor_imax=1m
+X$U1 163 pinprobe vars: pinprobe_description='SoftStart_counter_complete' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U10 156 136 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U11 156 pinprobe vars: pinprobe_description='enable_BRICK' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U12 160 183 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U13 187 186 150 187 167 dff vars: dff_edge='rise' dff_vmax=6
+X$U15 176 172 189 VESPAasmINPUT1
+X$U16 151 184 183 VESPAasmINPUT1
+X$U17 160 pinprobe vars: pinprobe_description='Reference_input_0p9V' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
+X$U18 157 pinprobe vars: pinprobe_description='enable_softstart_brick' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U19 165 pinprobe vars: pinprobe_description='Softstart_local_source_timing_clock' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U2 158 pinprobe vars: pinprobe_description='Reference_input_0p9V' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
+X$U20 164 pinprobe vars: pinprobe_description='MUD_Ground_kelvin'
+X$U21 165 151 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U22 157 190 oneshot vars: oneshot_time=50 oneshot_vmax=6
+X$U23 137 181 171 switchpullup vars: switch_type='pullup' switch_polarity='noninvert' switch_model='celera' switch_ron=10K switch_pulldownvmax=6 switch_vmax=6
+X$U24 128 129 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U25 171 128 173 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U26 179 130 173 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U27 161 129 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U28 162 pinprobe vars: pinprobe_description='Freeze_Softstart_half_way' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
+X$U29 136 191 oneshot vars: oneshot_time=50 oneshot_vmax=6
+X$U3 170 178 168 180 167 157 VESPAasmINPUT4
+X$U30 190 177 191 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U31 161 pinprobe vars: pinprobe_description='SoftStart_counter_complete' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U32 160 132 179 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U33 132 188 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U4 185 184 186 185 167 dff vars: dff_edge='rise' dff_vmax=6
+X$U5 130 131 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U6 155 pinprobe vars: pinprobe_description='MUD_low_voltage_supply'
+X$U7 159 pinprobe vars: pinprobe_description='Softstart_voltage_ramp' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U8 116 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='SOFTSTART_8B' description1='done_softstart_Compare_SS_to_REF' description2='completed_softstart_Counter_complete' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U9 163 131 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$vbuffer1 155 170 158 174 157 164 vbuffer vars: vbuffer_accuracy='no' vbuffer_datasheet_name='text' vbuffer_datasheet_description='text' vbuffer_type='p' vbuffer_inputbuffer='no' vbuffer_drive='internal' vbuffer_gndsense='yes' vbuffer_dft='no' vbuffer_gain=2 vbuffer_feedbackimpedance=200 vbuffer_vmax=6
+.ends SOFTSTARTwaltzBMAIN
+
+** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ2\301c\design\SOFTSTARTwaltzMAINcount8.sxcmp
+.subckt SOFTSTARTwaltzMAINcount8 98 99 100 101 102 103 104 105 106 107 108 109 110
+*#hierarchy
+.node_map half_count 101
+.node_map done_count 99
+.node_map clockiBAR 117
+.node_map halfcountBAR 116
+.node_map enable_count 98
+.node_map clock 100
+.node_map qb0 111
+.node_map qb1 113
+.node_map qb2 114
+.node_map qb3 115
+.node_map qb4 118
+.node_map qb5 119
+.node_map halfway 102
+.node_map qb6 120
+.node_map qb7 121
+.node_map count$0 103
+.node_map count$1 104
+.node_map clocki 112
+.node_map count$2 105
+.node_map count$3 106
+.node_map count$4 107
+.node_map count$5 108
+.node_map count$6 109
+.node_map count$7 110
+.node_map half 122
+X$U1 99 pinprobe vars: pinprobe_description='Counter_reached_full_scale' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U10 101 pinprobe vars: pinprobe_description='Counter_reached_half_scale' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U11 98 pinprobe vars: pinprobe_description='enable_softstart_brick' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U12 106 108 93 107 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U13 111 112 103 111 98 dff vars: dff_edge='rise' dff_vmax=6
+X$U14 113 111 104 113 98 dff vars: dff_edge='rise' dff_vmax=6
+X$U15 115 114 106 115 98 dff vars: dff_edge='rise' dff_vmax=6
+X$U16 114 113 105 114 98 dff vars: dff_edge='rise' dff_vmax=6
+X$U17 118 115 107 118 98 dff vars: dff_edge='rise' dff_vmax=6
+X$U18 119 118 108 119 98 dff vars: dff_edge='rise' dff_vmax=6
+X$U19 91 93 94 96 nor3 vars: logicgate_type='nor3' logicgate_vmax=6
+X$U2 99 94 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U20 120 119 109 120 98 dff vars: dff_edge='rise' dff_vmax=6
+X$U21 121 120 110 121 98 dff vars: dff_edge='rise' dff_vmax=6
+X$U22 109 117 96 110 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U23 112 117 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U24 92 95 122 97 nor3 vars: logicgate_type='nor3' logicgate_vmax=6
+X$U25 120 117 97 110 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U27 111 114 92 113 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U28 115 119 95 118 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U3 116 112 100 VESPAasmINPUT1
+X$U30 100 pinprobe vars: pinprobe_description='Count_clock' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U4 103 105 91 104 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U8 102 122 101 116 98 dff vars: dff_edge='rise' dff_vmax=6
+X$U9 102 pinprobe vars: pinprobe_description='Stop_counter_half_way' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+.ends SOFTSTARTwaltzMAINcount8
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT1.sxcmp
+.subckt VESPAasmINPUT1 5 6 7
+*#hierarchy
+.node_map Tstate 5
+.node_map i0 7
+.node_map o 6
+X$U1 5 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 7 pinprobe vars: pinprobe_description='input1'
+X$U3 6 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 5 4 7 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U5 4 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+.ends VESPAasmINPUT1
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT4.sxcmp
+.subckt VESPAasmINPUT4 10 11 12 13 14 15
+*#hierarchy
+.node_map Tstate 15
+.node_map i0 10
+.node_map i1 11
+.node_map i2 13
+.node_map i3 14
+.node_map o 12
+X$U1 15 pinprobe vars: pinprobe_description='state_blank_time'
+X$U19 12 8 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U2 11 pinprobe vars: pinprobe_description='input1'
+X$U3 12 pinprobe vars: pinprobe_description='INPUT3_output'
+X$U4 10 13 7 11 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U5 14 9 15 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U6 7 8 9 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U7 10 pinprobe vars: pinprobe_description='input0'
+X$U8 13 pinprobe vars: pinprobe_description='input2'
+X$U9 14 pinprobe vars: pinprobe_description='input3'
+.ends VESPAasmINPUT4
+
+.end
