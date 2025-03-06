@@ -22,12 +22,11 @@ module cboot_9e4c2e2f (CBOOT,CELV,CELPOS,on_charge,global_cboot,enable_cboot,ok_
   input  global_cboot;
 endmodule
 
-module fet_c86247ba (GATE,SOURCE,DRAIN,NMOSiso6,SUB);
+module fet_218961f2 (GATE,SOURCE,DRAIN,SUB);
   input  SUB;
   input  GATE;
   inout  DRAIN;
   inout  SOURCE;
-  input  NMOSiso6;
 endmodule
 
 //Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
@@ -42,7 +41,7 @@ module PEBBLEtielo ( q, G, SUB, V );
 endmodule
 
 
-module currentlimitfet_51adb00c (CELPOS,CELSUB,measure_currentlimit,VSENSE,IREPLICA,enable_currentlimit,CELV,trim_currentlimit,factory_currentlimit_blanking,IREF,CELNEG,HVREF,currentlimit_lv,ten_measure_currentlimit,tdi_currentlimitlive,CELG);
+module currentlimitfet_f9c09250 (CELPOS,CELSUB,measure_currentlimit,VSENSE,IREPLICA,enable_currentlimit,CELV,trim_currentlimit,factory_currentlimit_blanking,IREF,CELNEG,HVREF,currentlimit_lv,ten_measure_currentlimit,tdi_currentlimitlive,CELG);
   input  CELG;
   input  CELV;
   input  IREF;
@@ -61,7 +60,7 @@ module currentlimitfet_51adb00c (CELPOS,CELSUB,measure_currentlimit,VSENSE,IREPL
   input [4:0] factory_currentlimit_blanking;
 endmodule
 
-module fet_f6618fa4 (GATE,SOURCE,DRAIN,NMOSiso6,SOURCEk,DRAINk,IREPLICA,SUB);
+module fet_2b4d5006 (GATE,SOURCE,DRAIN,SOURCEk,DRAINk,IREPLICA,SUB);
   input  SUB;
   input  GATE;
   inout  DRAIN;
@@ -69,7 +68,6 @@ module fet_f6618fa4 (GATE,SOURCE,DRAIN,NMOSiso6,SOURCEk,DRAINk,IREPLICA,SUB);
   inout  SOURCE;
   inout  SOURCEk;
   inout  IREPLICA;
-  input  NMOSiso6;
 endmodule
 
 //Verilog HDL for "DRM", "drm8" "functional"
@@ -109,7 +107,7 @@ module drm8L ( V, G, SUB, tmi, bypload, lastdrm, id, drm0, d1, d0 );
 endmodule
 
 
-module fetdriver_a12bcb57 (HVPOS,global_fetdriver,fetin,GATE,gate_status,gate_status_vin,CELV,CELG,enable_fetdriver,HVNEG,CELSUB);
+module fetdriver_cd3984f2 (HVPOS,global_fetdriver,fetin,GATE,gate_status,gate_status_vin,CELV,CELG,enable_fetdriver,HVNEG,CELSUB);
   input  CELG;
   input  CELV;
   output  GATE;
@@ -183,12 +181,11 @@ cboot_9e4c2e2f XU2 (
 .global_cboot(tl0)
 );
 
-fet_c86247ba XTOPSW (
+fet_218961f2 XTOPSW (
 .SUB(CELSUB40948),
 .GATE(net_87),
 .DRAIN(PMUDHV),
-.SOURCE(SW),
-.NMOSiso6(CBOOT)
+.SOURCE(SW)
 );
 
 PEBBLEtielo XtieLo (
@@ -198,7 +195,7 @@ PEBBLEtielo XtieLo (
 .SUB(CELSUB40948)
 );
 
-currentlimitfet_51adb00c XTOPIPEAK (
+currentlimitfet_f9c09250 XTOPIPEAK (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .IREF(IREF_DRIVER),
@@ -217,15 +214,14 @@ currentlimitfet_51adb00c XTOPIPEAK (
 .factory_currentlimit_blanking({XTOPIPEAK_factory_currentlimit_blanking_4,XTOPIPEAK_factory_currentlimit_blanking_3,XTOPIPEAK_factory_currentlimit_blanking_2,XTOPIPEAK_factory_currentlimit_blanking_1,XTOPIPEAK_factory_currentlimit_blanking_0})
 );
 
-fet_f6618fa4 XTOPSWREP (
+fet_2b4d5006 XTOPSWREP (
 .SUB(CELSUB40948),
 .GATE(net_87),
 .DRAIN(PMUDHV),
 .DRAINk(net_86),
 .SOURCE(SW),
 .SOURCEk(SW),
-.IREPLICA(net_88),
-.NMOSiso6(CBOOT)
+.IREPLICA(net_88)
 );
 
 drm8 drm_hex0x08 (
@@ -255,7 +251,7 @@ drm8L drm_hex0x09 (
 .lastdrm(b0)
 );
 
-fetdriver_a12bcb57 XTOPSWDRIVER (
+fetdriver_cd3984f2 XTOPSWDRIVER (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .GATE(net_87),
