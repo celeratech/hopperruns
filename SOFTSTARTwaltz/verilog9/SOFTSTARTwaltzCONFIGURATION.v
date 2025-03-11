@@ -1,30 +1,28 @@
 // ------------------------ Module Definitions -----------
-//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
 
 
-module PEBBLEtielo ( q, G, SUB, V );
+module STONEnoconn ( noconn );
 
-  input V;
-  output q;
-  input G;
-  input SUB;
+  input noconn;
 endmodule
 
 
 // ------------------------ Module Verilog ---------------
 module SOFTSTARTwaltzCONFIGURATION (halfway, softstart_1ms);
-output  halfway;
-output  softstart_1ms;
+input  halfway;
+input  softstart_1ms;
 
 
 // ------------------------ Wires ------------------------
 
 // ------------------------ Networks ---------------------
-PEBBLEtielo XDRMNOTL (
-.G(CELG59462),
-.V(CELV96848),
-.q(a0),
-.SUB(CELSUB40948)
+STONEnoconn XNChalfway (
+.noconn(halfway)
+);
+
+STONEnoconn XNCsoftstart_1ms (
+.noconn(softstart_1ms)
 );
 
 endmodule
