@@ -13,8 +13,8 @@ endmodule
 
 // ------------------------ Module Verilog ---------------
 module SOFTSTARTwaltzCONFIGURATION (halfway, softstart_1ms);
-  input  halfway;
-  input  softstart_1ms;
+output  halfway;
+output  softstart_1ms;
 
 
 // ------------------------ Wires ------------------------
@@ -23,7 +23,7 @@ module SOFTSTARTwaltzCONFIGURATION (halfway, softstart_1ms);
 PEBBLEtielo XDRMNOTL (
 .G(CELG59462),
 .V(CELV96848),
-.q(halfway),
+.q(a0),
 .SUB(CELSUB40948)
 );
 
