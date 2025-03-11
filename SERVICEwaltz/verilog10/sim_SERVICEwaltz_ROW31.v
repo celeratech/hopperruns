@@ -1,11 +1,14 @@
 // ------------------------ Module Definitions -----------
-module FORCE_SERVICEwaltz (EN,IN,GND,VCC,BIAS,kelvin_VCC,IP_4a72660b,kelvin_GNDservice);
+module FORCE_SERVICEwaltz (EN,IN,GND,VCC,BIAS,CELG59462,CELV96848,kelvin_VCC,CELSUB40948,IP_4a72660b,kelvin_GNDservice);
   output  EN;
   output  IN;
   inout  GND;
   inout  VCC;
   output  BIAS;
+  output  CELG59462;
+  output  CELV96848;
   output  kelvin_VCC;
+  output  CELSUB40948;
   output  IP_4a72660b;
   output  kelvin_GNDservice;
 endmodule
@@ -43,7 +46,10 @@ FORCE_SERVICEwaltz XFORCE_SERVICEwaltz1 (
 .GND(GND),
 .VCC(kelvin_VCC),
 .BIAS(BIAS),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
 .kelvin_VCC(kelvin_VCC),
+.CELSUB40948(CELSUB40948),
 .IP_4a72660b(IP_4a72660b),
 .kelvin_GNDservice(kelvin_GNDservice)
 );
