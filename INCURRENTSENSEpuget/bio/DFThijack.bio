@@ -1,0 +1,129 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Cell Name
+cell,dfthijack
+//**********************************************
+//Generator Revision
+//**********************************************
+//Simplis Limits
+//**********************************************
+//PAD Parameters
+//**********************************************
+//USER Parameters
+//**********************************************
+//POR Parameters
+//**********************************************
+//REGISTER Parameters
+//**********************************************
+//FACTORY Parameters
+//**********************************************
+//CELL DFT Parameters
+// *********************************************
+//Module Parameters
+// *********************************************
+//Layout Parameters
+//**********************************************
+evision,layout,0p1
+layout,dfthijack
+
+place DFT DFThijack 0 0 R0
+movePINS
+placeROUTEnopins
+
+
+endlayoutbio
+
+//Project Parameters
+// *********************************************
+//Die Size Estimate
+// *********************************************
+//Calculator Parameters
+#define,CELVminimum,1.0
+//**********************************************
+//Pinorder Parameters
+//**********************************************
+//TRIM Parameters
+//**********************************************
+//Cell Pin Descriptions
+pinname,CELV
+definition,CELV,cell power
+iq,CELV,SIMULATION
+absmax,CELV,UPDATE
+absmin,CELV,UPDATE
+io,CELV,input
+mode,CELV,power
+router,CELV,TBD
+dftpriority,CELV,1
+esd,CELV,TBD
+
+pinname,CELG
+definition,CELG,cell power ground
+iq,CELG,SIMULATION
+absmax,CELG,UPDATE
+absmin,CELG,UPDATE
+io,CELG,input
+mode,CELG,power
+router,CELG,TBD
+dftpriority,CELG,1
+esd,CELG,TBD
+
+pinname,in
+definition,in,TBD
+iq,in,SIMULATION
+absmax,in,UPDATE
+absmin,in,UPDATE
+io,in,input
+mode,in,digital
+router,in,TBD
+dftpriority,in,1
+esd,in,TBD
+
+pinname,ten_hijack
+definition,ten_hijack,TBD
+iq,ten_hijack,SIMULATION
+absmax,ten_hijack,UPDATE
+absmin,ten_hijack,UPDATE
+io,ten_hijack,input
+mode,ten_hijack,digital
+router,ten_hijack,TBD
+dftpriority,ten_hijack,1
+esd,ten_hijack,TBD
+
+pinname,ten_hijacki
+definition,ten_hijacki,DFT hijack status 
+iq,ten_hijacki,SIMULATION
+absmax,ten_hijacki,UPDATE
+absmin,ten_hijacki,UPDATE
+io,ten_hijacki,input
+mode,ten_hijacki,digital
+router,ten_hijacki,TBD
+dftpriority,ten_hijacki,1
+esd,ten_hijacki,TBD
+
+pinname,out
+definition,out,DFT hijack output
+iq,out,SIMULATION
+absmax,out,UPDATE
+absmin,out,UPDATE
+io,out,output
+mode,out,digital
+router,out,TBD
+dftpriority,out,1
+esd,out,TBD
+
+pinname,CELSUB
+definition,CELSUB,substrate
+iq,CELSUB,SIMULATION
+absmax,CELSUB,UPDATE
+absmin,CELSUB,UPDATE
+io,CELSUB,input
+mode,CELSUB,analog
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
+//**********************************************
+//Process Parameters
+// *********************************************
+endbio
