@@ -49,15 +49,6 @@ endmodule
 
 
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
 //Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
 
 
@@ -67,6 +58,15 @@ module PEBBLEtielo ( q, G, SUB, V );
   output q;
   input G;
   input SUB;
+endmodule
+
+
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
 endmodule
 
 
@@ -140,30 +140,6 @@ oscillator_d9a22b83 XU10 (
 .trim_oscillator_int_fine({a0,a0,a0,a0,a0}),
 .trim_oscillator_ext_coarse({a0,a0,a0}),
 .trim_oscillator_int_coarse({a0,a0,a0})
-);
-
-STONEnoconn XNC21 (
-.noconn(net_21)
-);
-
-STONEnoconn XNC22 (
-.noconn(net_22)
-);
-
-STONEnoconn XNC23 (
-.noconn(net_23)
-);
-
-STONEnoconn XNC24 (
-.noconn(net_24)
-);
-
-STONEnoconn XNC29 (
-.noconn(net_29)
-);
-
-STONEnoconn XNC30 (
-.noconn(net_30)
 );
 
 PEBBLEtielo XtieLo (
