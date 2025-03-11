@@ -21,7 +21,7 @@ endmodule
 
 
 
-module vpulse_0x1x1d0ux0x1nx1nx500d0n(PLUS, MINUS);
+module vpulse_0x5d0x1d0ux0x1nx1nx500d0n(PLUS, MINUS);
 inout PLUS;
 inout MINUS;
 endmodule
@@ -127,7 +127,7 @@ dbuf_e926e395 Xd_clock_currentsensein (
 .CELV(CELV96848)
 );
 
-vpulse_0x1x1d0ux0x1nx1nx500d0n XV2 (
+vpulse_0x5d0x1d0ux0x1nx1nx500d0n XV2 (
 .PLUS(net_148),
 .MINUS(GND)
 );

@@ -112,7 +112,7 @@ parameter,datamap_por0,0
 parameter,datamap_por1,0
 parameter,datamap_por2,0
 parameter,datamap_por3,0
-parameter,datamap_type,register
+parameter,datamap_type,factory
 parameter,datamap_vmax,6
 parameter,datamap_code0,text
 parameter,datamap_code1,text
@@ -268,7 +268,7 @@ parameter,datamap_por0,0
 parameter,datamap_por1,0
 parameter,datamap_por2,0
 parameter,datamap_por3,0
-parameter,datamap_type,register
+parameter,datamap_type,factory
 parameter,datamap_vmax,6
 parameter,datamap_code0,text
 parameter,datamap_code1,text
@@ -732,7 +732,7 @@ parameter,dfthijack_enabletimeunits8,us
 
 
 GenerateLevel,5
-generate,dftprobeModel1
+generate,dftprobeModel0
 path,XINCURRENTSENSEpuget1,XDEBUG,XUCURRENTSENSEin_ok
 instance,XUCURRENTSENSEin_ok
 parameter,analoginfo,Only_use_for_Analog
@@ -741,13 +741,13 @@ parameter,dftprobe_mode,digital
 parameter,dftprobe_name,CURRENTSENSEin_ok
 parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
 parameter,dftprobe_vmax,6
-parameter,dftprobe_enable,1
+parameter,dftprobe_enable,0
 parameter,dftprobe_description,Measure_CURRENTSENSEin_ok_signal
 parameter,dftprobe_highvoltage,6
 
 
 GenerateLevel,5
-generate,dftprobeModel3
+generate,dftprobeModel2
 path,XINCURRENTSENSEpuget1,XDEBUG,XUCURRENTSENSEin_output
 instance,XUCURRENTSENSEin_output
 parameter,analoginfo,Only_use_for_Analog
@@ -756,13 +756,13 @@ parameter,dftprobe_mode,analog
 parameter,dftprobe_name,CURRENTSENSEin_output
 parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
 parameter,dftprobe_vmax,6
-parameter,dftprobe_enable,1
+parameter,dftprobe_enable,0
 parameter,dftprobe_description,Measure_CURRENTSENSEin_VSNSI
 parameter,dftprobe_highvoltage,6
 
 
 GenerateLevel,5
-generate,dftprobeModel1
+generate,dftprobeModel0
 path,XINCURRENTSENSEpuget1,XDEBUG,XUCURRENTSENSEin_startup
 instance,XUCURRENTSENSEin_startup
 parameter,analoginfo,Only_use_for_Analog
@@ -771,13 +771,13 @@ parameter,dftprobe_mode,digital
 parameter,dftprobe_name,CURRENTSENSEin_startup
 parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
 parameter,dftprobe_vmax,6
-parameter,dftprobe_enable,1
+parameter,dftprobe_enable,0
 parameter,dftprobe_description,Measure_CURRENTSENSEin_startup_time
 parameter,dftprobe_highvoltage,6
 
 
 GenerateLevel,5
-generate,dftprobeModel3
+generate,dftprobeModel2
 path,XINCURRENTSENSEpuget1,XDEBUG,XUCURRENTSENSEin_telemetry
 instance,XUCURRENTSENSEin_telemetry
 parameter,analoginfo,Only_use_for_Analog
@@ -786,13 +786,13 @@ parameter,dftprobe_mode,analog
 parameter,dftprobe_name,CURRENTSENSEin_telemetry
 parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
 parameter,dftprobe_vmax,6
-parameter,dftprobe_enable,1
+parameter,dftprobe_enable,0
 parameter,dftprobe_description,Measure_CURRENTSENSEin_telemetry
 parameter,dftprobe_highvoltage,6
 
 
 GenerateLevel,5
-generate,dftprobeModel1
+generate,dftprobeModel0
 path,XINCURRENTSENSEpuget1,XDEBUG,XUCURRENTSENSEin_measure_delay
 instance,XUCURRENTSENSEin_measure_delay
 parameter,analoginfo,Only_use_for_Analog
@@ -801,7 +801,7 @@ parameter,dftprobe_mode,digital
 parameter,dftprobe_name,CURRENTSENSEin_measure_delay
 parameter,dftprobe_note,Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage
 parameter,dftprobe_vmax,6
-parameter,dftprobe_enable,1
+parameter,dftprobe_enable,0
 parameter,dftprobe_description,Measure_CURRENTSENSEin_ok_signal
 parameter,dftprobe_highvoltage,6
 
