@@ -1,0 +1,839 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x55dcc466cf60 .scope module, "PEBBLEtielo" "PEBBLEtielo" 2 272;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "q";
+    .port_info 1 /INPUT 1 "G";
+    .port_info 2 /INPUT 1 "SUB";
+    .port_info 3 /INPUT 1 "V";
+o0x7f3802f13018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc46c0020_0 .net "G", 0 0, o0x7f3802f13018;  0 drivers
+o0x7f3802f13048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc46c52c0_0 .net "SUB", 0 0, o0x7f3802f13048;  0 drivers
+o0x7f3802f13078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc4712680_0 .net "V", 0 0, o0x7f3802f13078;  0 drivers
+o0x7f3802f130a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc4712720_0 .net "q", 0 0, o0x7f3802f130a8;  0 drivers
+S_0x55dcc46a0ec0 .scope module, "oscillator_d9a22b83" "oscillator_d9a22b83" 2 295;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "SIMPV";
+    .port_info 1 /INPUT 1 "IP";
+    .port_info 2 /INPUT 1 "CELREF";
+    .port_info 3 /OUTPUT 1 "fault_oscillator";
+    .port_info 4 /OUTPUT 1 "ok_oscillator";
+    .port_info 5 /OUTPUT 1 "osc";
+    .port_info 6 /INPUT 1 "global_oscillator";
+    .port_info 7 /INPUT 1 "CELSENSE_RF";
+    .port_info 8 /OUTPUT 1 "CELFORCE_RF";
+    .port_info 9 /INPUT 1 "ten_osc";
+    .port_info 10 /OUTPUT 1 "tdi_osc";
+    .port_info 11 /OUTPUT 1 "IOSC";
+    .port_info 12 /INPUT 3 "trim_oscillator_ext_coarse";
+    .port_info 13 /INPUT 5 "trim_oscillator_ext_fine";
+    .port_info 14 /INPUT 3 "trim_oscillator_int_coarse";
+    .port_info 15 /INPUT 5 "trim_oscillator_int_fine";
+    .port_info 16 /INPUT 1 "enable_oscillator";
+    .port_info 17 /INPUT 1 "CELG";
+    .port_info 18 /INPUT 1 "celkelvin_GNDoscillator";
+    .port_info 19 /INPUT 1 "CELSUB";
+o0x7f3802f16a08 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472b820_0 .net "CELFORCE_RF", 0 0, o0x7f3802f16a08;  0 drivers
+o0x7f3802f138b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472b8e0_0 .net "CELG", 0 0, o0x7f3802f138b8;  0 drivers
+o0x7f3802f138e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472b980_0 .net "CELREF", 0 0, o0x7f3802f138e8;  0 drivers
+o0x7f3802f16a38 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472ba20_0 .net "CELSENSE_RF", 0 0, o0x7f3802f16a38;  0 drivers
+o0x7f3802f13708 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472bac0_0 .net "CELSUB", 0 0, o0x7f3802f13708;  0 drivers
+o0x7f3802f131c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472bbb0_0 .net "COSC", 0 0, o0x7f3802f131c8;  0 drivers
+v0x55dcc472bc50_0 .net "CT0", 0 0, L_0x55dcc472e2d0;  1 drivers
+v0x55dcc472bcf0_0 .net "CT1", 0 0, L_0x55dcc472e1f0;  1 drivers
+v0x55dcc472bde0_0 .net "CT2", 0 0, L_0x55dcc472e150;  1 drivers
+o0x7f3802f13588 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472bf10_0 .net "CT2_A", 0 0, o0x7f3802f13588;  0 drivers
+o0x7f3802f136a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472bfb0_0 .net "GATE", 0 0, o0x7f3802f136a8;  0 drivers
+o0x7f3802f149c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472c050_0 .net "GATE0", 0 0, o0x7f3802f149c8;  0 drivers
+o0x7f3802f149f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472c0f0_0 .net "GATE1", 0 0, o0x7f3802f149f8;  0 drivers
+o0x7f3802f13be8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472c190_0 .net "IC1", 0 0, o0x7f3802f13be8;  0 drivers
+o0x7f3802f13c18 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472c230_0 .net "IC2", 0 0, o0x7f3802f13c18;  0 drivers
+o0x7f3802f142d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472c320_0 .net "ICN", 0 0, o0x7f3802f142d8;  0 drivers
+o0x7f3802f14428 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472c410_0 .net "ICP", 0 0, o0x7f3802f14428;  0 drivers
+o0x7f3802f151a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472c500_0 .net "IOSC", 0 0, o0x7f3802f151a8;  0 drivers
+o0x7f3802f14788 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472c5a0_0 .net "IP", 0 0, o0x7f3802f14788;  0 drivers
+v0x55dcc472c640_0 .net "IPO0", 0 0, L_0x55dcc472e0b0;  1 drivers
+v0x55dcc472c6e0_0 .net "IPO1", 0 0, L_0x55dcc472e010;  1 drivers
+v0x55dcc472c780_0 .net "IPO2", 0 0, L_0x55dcc472ded0;  1 drivers
+v0x55dcc472c820_0 .net "IPO3", 0 0, L_0x55dcc472dde0;  1 drivers
+o0x7f3802f136d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472c8c0_0 .net "IRFi", 0 0, o0x7f3802f136d8;  0 drivers
+o0x7f3802f14a28 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472c960_0 .net "ITRIM", 0 0, o0x7f3802f14a28;  0 drivers
+o0x7f3802f13678 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472ca50_0 .net "SIMPV", 0 0, o0x7f3802f13678;  0 drivers
+o0x7f3802f145a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472caf0_0 .net "VP0", 0 0, o0x7f3802f145a8;  0 drivers
+o0x7f3802f145d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472cb90_0 .net "VP1", 0 0, o0x7f3802f145d8;  0 drivers
+o0x7f3802f13d08 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472cc30_0 .net "a0", 0 0, o0x7f3802f13d08;  0 drivers
+o0x7f3802f13198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472ccd0_0 .net "celkelvin_GNDoscillator", 0 0, o0x7f3802f13198;  0 drivers
+o0x7f3802f139d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472cd70_0 .net "comp", 0 0, o0x7f3802f139d8;  0 drivers
+o0x7f3802f13948 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472ce60_0 .net "en", 0 0, o0x7f3802f13948;  0 drivers
+o0x7f3802f147e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472cf00_0 .net "enable_oscillator", 0 0, o0x7f3802f147e8;  0 drivers
+o0x7f3802f16a68 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472cfa0_0 .net "external", 0 0, o0x7f3802f16a68;  0 drivers
+o0x7f3802f16a98 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472d040_0 .net "fault_oscillator", 0 0, o0x7f3802f16a98;  0 drivers
+o0x7f3802f13978 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472d0e0_0 .net "global_oscillator", 0 0, o0x7f3802f13978;  0 drivers
+o0x7f3802f14608 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472d180_0 .net "internal", 0 0, o0x7f3802f14608;  0 drivers
+o0x7f3802f13c48 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472d220_0 .net "noconn_TAIOSCCOSC", 0 0, o0x7f3802f13c48;  0 drivers
+o0x7f3802f13fa8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472d310_0 .net "noconn_enss", 0 0, o0x7f3802f13fa8;  0 drivers
+o0x7f3802f14818 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472d400_0 .net "ok_ibiasmirror", 0 0, o0x7f3802f14818;  0 drivers
+o0x7f3802f13c78 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472d4f0_0 .net "ok_oscillator", 0 0, o0x7f3802f13c78;  0 drivers
+o0x7f3802f139a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472d590_0 .net "okcomparator", 0 0, o0x7f3802f139a8;  0 drivers
+o0x7f3802f13ca8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472d630_0 .net "osc", 0 0, o0x7f3802f13ca8;  0 drivers
+o0x7f3802f13cd8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472d720_0 .net "osci", 0 0, o0x7f3802f13cd8;  0 drivers
+o0x7f3802f13fd8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472d810_0 .net "tdi_osc", 0 0, o0x7f3802f13fd8;  0 drivers
+o0x7f3802f14008 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55dcc472d8b0_0 .net "ten_osc", 0 0, o0x7f3802f14008;  0 drivers
+o0x7f3802f16e28 .functor BUFZ 3, C4<zzz>; HiZ drive
+v0x55dcc472d950_0 .net "trim_oscillator_ext_coarse", 2 0, o0x7f3802f16e28;  0 drivers
+o0x7f3802f17038 .functor BUFZ 5, C4<zzzzz>; HiZ drive
+v0x55dcc472d9f0_0 .net "trim_oscillator_ext_fine", 4 0, o0x7f3802f17038;  0 drivers
+o0x7f3802f16e58 .functor BUFZ 3, C4<zzz>; HiZ drive
+v0x55dcc472da90_0 .net "trim_oscillator_int_coarse", 2 0, o0x7f3802f16e58;  0 drivers
+o0x7f3802f17068 .functor BUFZ 5, C4<zzzzz>; HiZ drive
+v0x55dcc472db30_0 .net "trim_oscillator_int_fine", 4 0, o0x7f3802f17068;  0 drivers
+o0x7f3802f147b8 .functor BUFZ 4, C4<zzzz>; HiZ drive
+L_0x55dcc472dde0 .part o0x7f3802f147b8, 3, 1;
+L_0x55dcc472ded0 .part o0x7f3802f147b8, 2, 1;
+L_0x55dcc472e010 .part o0x7f3802f147b8, 1, 1;
+L_0x55dcc472e0b0 .part o0x7f3802f147b8, 0, 1;
+o0x7f3802f16df8 .functor BUFZ 3, C4<zzz>; HiZ drive
+L_0x55dcc472e150 .part o0x7f3802f16df8, 2, 1;
+L_0x55dcc472e1f0 .part o0x7f3802f16df8, 1, 1;
+L_0x55dcc472e2d0 .part o0x7f3802f16df8, 0, 1;
+L_0x55dcc472e3c0 .concat [ 1 1 0 0], L_0x55dcc472e0b0, L_0x55dcc472e010;
+S_0x55dcc46a0860 .scope module, "XCOSC_0" "mim34_2f22p2x16p7" 2 756, 2 281 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "CP";
+    .port_info 1 /INOUT 1 "CN";
+v0x55dcc47128a0_0 .net "CN", 0 0, o0x7f3802f13198;  alias, 0 drivers
+v0x55dcc4712980_0 .net "CP", 0 0, o0x7f3802f131c8;  alias, 0 drivers
+S_0x55dcc4712aa0 .scope module, "XCOSC_1" "mim34_2f22p2x16p7" 2 760, 2 281 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "CP";
+    .port_info 1 /INOUT 1 "CN";
+v0x55dcc4712c30_0 .net "CN", 0 0, o0x7f3802f13198;  alias, 0 drivers
+v0x55dcc4712cf0_0 .net "CP", 0 0, o0x7f3802f131c8;  alias, 0 drivers
+S_0x55dcc4712db0 .scope module, "XCT00" "mim34_2f11p9x9p0" 2 766, 2 287 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "CP";
+    .port_info 1 /INOUT 1 "CN";
+v0x55dcc4712f40_0 .net "CN", 0 0, o0x7f3802f13198;  alias, 0 drivers
+v0x55dcc4712fe0_0 .net "CP", 0 0, L_0x55dcc472e2d0;  alias, 1 drivers
+S_0x55dcc4713100 .scope module, "XCT1_0" "mim34_2f11p9x9p0" 2 772, 2 287 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "CP";
+    .port_info 1 /INOUT 1 "CN";
+v0x55dcc47132e0_0 .net "CN", 0 0, o0x7f3802f13198;  alias, 0 drivers
+v0x55dcc47133a0_0 .net "CP", 0 0, L_0x55dcc472e1f0;  alias, 1 drivers
+S_0x55dcc47134c0 .scope module, "XCT1_1" "mim34_2f11p9x9p0" 2 776, 2 287 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "CP";
+    .port_info 1 /INOUT 1 "CN";
+v0x55dcc47136f0_0 .net "CN", 0 0, o0x7f3802f13198;  alias, 0 drivers
+v0x55dcc47137b0_0 .net "CP", 0 0, L_0x55dcc472e1f0;  alias, 1 drivers
+S_0x55dcc4713890 .scope module, "XCT2_0" "mim34_2f11p9x9p0" 2 782, 2 287 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "CP";
+    .port_info 1 /INOUT 1 "CN";
+v0x55dcc4713a20_0 .net "CN", 0 0, o0x7f3802f13198;  alias, 0 drivers
+v0x55dcc4713ae0_0 .net "CP", 0 0, L_0x55dcc472e150;  alias, 1 drivers
+S_0x55dcc4713c00 .scope module, "XCT2_1" "mim34_2f11p9x9p0" 2 786, 2 287 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "CP";
+    .port_info 1 /INOUT 1 "CN";
+v0x55dcc4713e20_0 .net "CN", 0 0, o0x7f3802f13198;  alias, 0 drivers
+v0x55dcc4713ee0_0 .net "CP", 0 0, L_0x55dcc472e150;  alias, 1 drivers
+S_0x55dcc4713fc0 .scope module, "XCT2_2" "mim34_2f11p9x9p0" 2 790, 2 287 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "CP";
+    .port_info 1 /INOUT 1 "CN";
+v0x55dcc47141e0_0 .net "CN", 0 0, o0x7f3802f13198;  alias, 0 drivers
+v0x55dcc47142a0_0 .net "CP", 0 0, L_0x55dcc472e150;  alias, 1 drivers
+S_0x55dcc47143f0 .scope module, "XCT2_3" "mim34_2f11p9x9p0" 2 794, 2 287 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "CP";
+    .port_info 1 /INOUT 1 "CN";
+v0x55dcc4714610_0 .net "CN", 0 0, o0x7f3802f13588;  alias, 0 drivers
+v0x55dcc47146f0_0 .net "CP", 0 0, L_0x55dcc472e150;  alias, 1 drivers
+S_0x55dcc47147f0 .scope module, "XCT2_4" "mim34_2f11p9x9p0" 2 798, 2 287 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "CP";
+    .port_info 1 /INOUT 1 "CN";
+v0x55dcc47149c0_0 .net "CN", 0 0, o0x7f3802f13198;  alias, 0 drivers
+v0x55dcc4714b90_0 .net "CP", 0 0, o0x7f3802f13588;  alias, 0 drivers
+S_0x55dcc4714c70 .scope module, "Xbuffergain0" "STONEoscillatorRFbufferGAIN" 2 345, 2 77 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IEXT";
+    .port_info 1 /INPUT 1 "CELV";
+    .port_info 2 /INPUT 1 "GATE";
+    .port_info 3 /INPUT 1 "SUB";
+v0x55dcc4714ef0_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc4714fb0_0 .net "GATE", 0 0, o0x7f3802f136a8;  alias, 0 drivers
+v0x55dcc4715070_0 .net "IEXT", 0 0, o0x7f3802f136d8;  alias, 0 drivers
+v0x55dcc4715140_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+S_0x55dcc47152b0 .scope module, "Xbuffergain1" "STONEoscillatorRFbufferGAIN" 2 353, 2 77 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IEXT";
+    .port_info 1 /INPUT 1 "CELV";
+    .port_info 2 /INPUT 1 "GATE";
+    .port_info 3 /INPUT 1 "SUB";
+v0x55dcc4715500_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc47155f0_0 .net "GATE", 0 0, o0x7f3802f136a8;  alias, 0 drivers
+v0x55dcc47156c0_0 .net "IEXT", 0 0, o0x7f3802f136d8;  alias, 0 drivers
+v0x55dcc47157c0_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+S_0x55dcc47158c0 .scope module, "Xcomparator" "comparatornoctlpins_oscillator_d9a22b83_Xcomparator" 2 477, 2 30 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "enable_comparator";
+    .port_info 1 /INPUT 1 "IP";
+    .port_info 2 /OUTPUT 1 "out_comparator";
+    .port_info 3 /INPUT 1 "INP_COMPARATOR";
+    .port_info 4 /INPUT 1 "INN_COMPARATOR";
+    .port_info 5 /INPUT 1 "SIMPV";
+    .port_info 6 /INPUT 1 "global_comparator";
+    .port_info 7 /OUTPUT 1 "ok_comparator";
+    .port_info 8 /INPUT 1 "CELG";
+    .port_info 9 /INPUT 1 "CELSUB";
+v0x55dcc4715ba0_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc4715c60_0 .net "CELSUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc4715d70_0 .net "INN_COMPARATOR", 0 0, o0x7f3802f138e8;  alias, 0 drivers
+v0x55dcc4715e10_0 .net "INP_COMPARATOR", 0 0, o0x7f3802f131c8;  alias, 0 drivers
+v0x55dcc4715f00_0 .net "IP", 0 0, L_0x55dcc472ded0;  alias, 1 drivers
+v0x55dcc4715ff0_0 .net "SIMPV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc47160e0_0 .net "enable_comparator", 0 0, o0x7f3802f13948;  alias, 0 drivers
+v0x55dcc47161a0_0 .net "global_comparator", 0 0, o0x7f3802f13978;  alias, 0 drivers
+v0x55dcc4716260_0 .net "ok_comparator", 0 0, o0x7f3802f139a8;  alias, 0 drivers
+v0x55dcc4716320_0 .net "out_comparator", 0 0, o0x7f3802f139d8;  alias, 0 drivers
+S_0x55dcc4716520 .scope module, "Xcontrol" "STONEoscillatorRFcontrol2" 2 497, 2 241 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "TAI_OSC_COSC";
+    .port_info 1 /OUTPUT 1 "ok_oscillator";
+    .port_info 2 /OUTPUT 1 "osc";
+    .port_info 3 /INPUT 1 "CELG";
+    .port_info 4 /INPUT 1 "CELV";
+    .port_info 5 /INPUT 1 "COSC";
+    .port_info 6 /INPUT 1 "IC1";
+    .port_info 7 /INPUT 1 "IC2";
+    .port_info 8 /INPUT 1 "SUB";
+    .port_info 9 /INPUT 1 "comp";
+    .port_info 10 /INPUT 1 "en";
+    .port_info 11 /INPUT 1 "ten_osc_cosc";
+    .port_info 12 /INPUT 1 "okclock";
+v0x55dcc4716860_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc4716920_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc47169c0_0 .net "COSC", 0 0, o0x7f3802f131c8;  alias, 0 drivers
+v0x55dcc4716a60_0 .net "IC1", 0 0, o0x7f3802f13be8;  alias, 0 drivers
+v0x55dcc4716b00_0 .net "IC2", 0 0, o0x7f3802f13c18;  alias, 0 drivers
+v0x55dcc4716bf0_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc4716c90_0 .net "TAI_OSC_COSC", 0 0, o0x7f3802f13c48;  alias, 0 drivers
+v0x55dcc4716d50_0 .net "comp", 0 0, o0x7f3802f139d8;  alias, 0 drivers
+v0x55dcc4716df0_0 .net "en", 0 0, o0x7f3802f139a8;  alias, 0 drivers
+v0x55dcc4716e90_0 .net "ok_oscillator", 0 0, o0x7f3802f13c78;  alias, 0 drivers
+v0x55dcc4716f30_0 .net "okclock", 0 0, o0x7f3802f13ca8;  alias, 0 drivers
+v0x55dcc4716fd0_0 .net "osc", 0 0, o0x7f3802f13cd8;  alias, 0 drivers
+v0x55dcc4717090_0 .net "ten_osc_cosc", 0 0, o0x7f3802f13d08;  alias, 0 drivers
+S_0x55dcc4717360 .scope module, "Xdft" "STONEoscillatorRFdft" 2 520, 2 167 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "enable_spread";
+    .port_info 1 /OUTPUT 1 "osc";
+    .port_info 2 /OUTPUT 1 "tdi_osc";
+    .port_info 3 /INPUT 1 "CELG";
+    .port_info 4 /INPUT 1 "CELV";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "en";
+    .port_info 7 /INPUT 1 "enable_ss";
+    .port_info 8 /INPUT 1 "osci";
+    .port_info 9 /INPUT 1 "tdext";
+    .port_info 10 /INPUT 1 "ten_osc";
+    .port_info 11 /INPUT 1 "ten_osc_disable";
+    .port_info 12 /INPUT 1 "ten_osc_dispread";
+    .port_info 13 /INPUT 1 "ten_osc_tdext";
+v0x55dcc4717650_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc4717760_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc47178b0_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc47179e0_0 .net "en", 0 0, o0x7f3802f13948;  alias, 0 drivers
+v0x55dcc4717a80_0 .net "enable_spread", 0 0, o0x7f3802f13fa8;  alias, 0 drivers
+v0x55dcc4717b20_0 .net "enable_ss", 0 0, o0x7f3802f139a8;  alias, 0 drivers
+v0x55dcc4717bc0_0 .net "osc", 0 0, o0x7f3802f13ca8;  alias, 0 drivers
+v0x55dcc4717c60_0 .net "osci", 0 0, o0x7f3802f13cd8;  alias, 0 drivers
+v0x55dcc4717d00_0 .net "tdext", 0 0, o0x7f3802f13d08;  alias, 0 drivers
+v0x55dcc4717e60_0 .net "tdi_osc", 0 0, o0x7f3802f13fd8;  alias, 0 drivers
+v0x55dcc4717f00_0 .net "ten_osc", 0 0, o0x7f3802f14008;  alias, 0 drivers
+v0x55dcc4717fa0_0 .net "ten_osc_disable", 0 0, o0x7f3802f13d08;  alias, 0 drivers
+v0x55dcc4718040_0 .net "ten_osc_dispread", 0 0, o0x7f3802f13d08;  alias, 0 drivers
+v0x55dcc47180e0_0 .net "ten_osc_tdext", 0 0, o0x7f3802f13d08;  alias, 0 drivers
+S_0x55dcc4718370 .scope module, "XdutyA" "STONEoscillatorRFduty1p0" 2 736, 2 227 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "IOUT";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "IIN";
+    .port_info 4 /INPUT 1 "SUB";
+    .port_info 5 /INPUT 1 "en";
+v0x55dcc47185e0_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc47186a0_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc4718760_0 .net "IIN", 0 0, o0x7f3802f142d8;  alias, 0 drivers
+v0x55dcc4718800_0 .net "IOUT", 0 0, o0x7f3802f13c18;  alias, 0 drivers
+v0x55dcc47188d0_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc47189c0_0 .net "en", 0 0, o0x7f3802f139a8;  alias, 0 drivers
+S_0x55dcc4718b20 .scope module, "XdutyB" "STONEoscillatorRFduty1p0" 2 746, 2 227 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "IOUT";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "IIN";
+    .port_info 4 /INPUT 1 "SUB";
+    .port_info 5 /INPUT 1 "en";
+v0x55dcc4718eb0_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc4718f70_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc4719030_0 .net "IIN", 0 0, o0x7f3802f14428;  alias, 0 drivers
+v0x55dcc47190d0_0 .net "IOUT", 0 0, o0x7f3802f13be8;  alias, 0 drivers
+v0x55dcc47191a0_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc4719240_0 .net "en", 0 0, o0x7f3802f139a8;  alias, 0 drivers
+S_0x55dcc4719430 .scope module, "Xgainint" "STONEoscillatorRFgainINT" 2 373, 2 139 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "VP0";
+    .port_info 1 /OUTPUT 1 "VP1";
+    .port_info 2 /INPUT 1 "CELG";
+    .port_info 3 /INPUT 1 "CELV";
+    .port_info 4 /INPUT 1 "IPO";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "internal";
+v0x55dcc4719670_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc4719730_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc47197f0_0 .net "IPO", 0 0, L_0x55dcc472dde0;  alias, 1 drivers
+v0x55dcc4719890_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc4719930_0 .net "VP0", 0 0, o0x7f3802f145a8;  alias, 0 drivers
+v0x55dcc4719a20_0 .net "VP1", 0 0, o0x7f3802f145d8;  alias, 0 drivers
+v0x55dcc4719ae0_0 .net "internal", 0 0, o0x7f3802f14608;  alias, 0 drivers
+S_0x55dcc4719cc0 .scope module, "Xibias" "STONEoscillatorRFibias4" 2 361, 2 107 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "CELV";
+    .port_info 1 /INPUT 1 "IP";
+    .port_info 2 /INPUT 1 "enable_ibiasmirror";
+    .port_info 3 /INPUT 1 "ten";
+    .port_info 4 /OUTPUT 1 "ok_ibiasmirror";
+    .port_info 5 /OUTPUT 4 "IPO";
+    .port_info 6 /INPUT 1 "CELG";
+    .port_info 7 /INPUT 1 "SUB";
+v0x55dcc4719fc0_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc471a080_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc471a250_0 .net "IP", 0 0, o0x7f3802f14788;  alias, 0 drivers
+v0x55dcc471a2f0_0 .net "IPO", 3 0, o0x7f3802f147b8;  0 drivers
+v0x55dcc471a3b0_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc471a5b0_0 .net "enable_ibiasmirror", 0 0, o0x7f3802f147e8;  alias, 0 drivers
+v0x55dcc471a670_0 .net "ok_ibiasmirror", 0 0, o0x7f3802f14818;  alias, 0 drivers
+v0x55dcc471a730_0 .net "ten", 0 0, o0x7f3802f13978;  alias, 0 drivers
+S_0x55dcc471a900 .scope module, "Xic" "STONEoscillatorRFic" 2 464, 2 89 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "ICN";
+    .port_info 1 /OUTPUT 1 "ICP";
+    .port_info 2 /INPUT 1 "CELG";
+    .port_info 3 /INPUT 1 "CELV";
+    .port_info 4 /INPUT 1 "ITRIM";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "en";
+    .port_info 7 /OUTPUT 1 "GATE0";
+    .port_info 8 /OUTPUT 1 "GATE1";
+v0x55dcc471abc0_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc471ac80_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc471ad40_0 .net "GATE0", 0 0, o0x7f3802f149c8;  alias, 0 drivers
+v0x55dcc471ae10_0 .net "GATE1", 0 0, o0x7f3802f149f8;  alias, 0 drivers
+v0x55dcc471aeb0_0 .net "ICN", 0 0, o0x7f3802f142d8;  alias, 0 drivers
+v0x55dcc471afa0_0 .net "ICP", 0 0, o0x7f3802f14428;  alias, 0 drivers
+v0x55dcc471b070_0 .net "ITRIM", 0 0, o0x7f3802f14a28;  alias, 0 drivers
+v0x55dcc471b110_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc471b1b0_0 .net "en", 0 0, o0x7f3802f139a8;  alias, 0 drivers
+S_0x55dcc471b350 .scope module, "Xintp0" "STONEoscillatorRFgainINTp" 2 384, 2 154 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IRF";
+    .port_info 1 /INPUT 1 "CELV";
+    .port_info 2 /INPUT 1 "SUB";
+    .port_info 3 /INPUT 1 "VP0";
+    .port_info 4 /INPUT 1 "VP1";
+v0x55dcc471b510_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc471b5d0_0 .net "IRF", 0 0, o0x7f3802f136d8;  alias, 0 drivers
+v0x55dcc471b6e0_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc471b780_0 .net "VP0", 0 0, o0x7f3802f145a8;  alias, 0 drivers
+v0x55dcc471b850_0 .net "VP1", 0 0, o0x7f3802f145d8;  alias, 0 drivers
+S_0x55dcc471b990 .scope module, "Xintp1" "STONEoscillatorRFgainINTp" 2 393, 2 154 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IRF";
+    .port_info 1 /INPUT 1 "CELV";
+    .port_info 2 /INPUT 1 "SUB";
+    .port_info 3 /INPUT 1 "VP0";
+    .port_info 4 /INPUT 1 "VP1";
+v0x55dcc471bbf0_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc471bcb0_0 .net "IRF", 0 0, o0x7f3802f136d8;  alias, 0 drivers
+v0x55dcc471bd70_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc471be40_0 .net "VP0", 0 0, o0x7f3802f145a8;  alias, 0 drivers
+v0x55dcc471bf30_0 .net "VP1", 0 0, o0x7f3802f145d8;  alias, 0 drivers
+S_0x55dcc471c0d0 .scope module, "Xintp2" "STONEoscillatorRFgainINTp" 2 402, 2 154 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IRF";
+    .port_info 1 /INPUT 1 "CELV";
+    .port_info 2 /INPUT 1 "SUB";
+    .port_info 3 /INPUT 1 "VP0";
+    .port_info 4 /INPUT 1 "VP1";
+v0x55dcc471c330_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc471c3f0_0 .net "IRF", 0 0, o0x7f3802f136d8;  alias, 0 drivers
+v0x55dcc471c4b0_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc471c550_0 .net "VP0", 0 0, o0x7f3802f145a8;  alias, 0 drivers
+v0x55dcc471c5f0_0 .net "VP1", 0 0, o0x7f3802f145d8;  alias, 0 drivers
+S_0x55dcc471c6f0 .scope module, "Xintp3" "STONEoscillatorRFgainINTp" 2 411, 2 154 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IRF";
+    .port_info 1 /INPUT 1 "CELV";
+    .port_info 2 /INPUT 1 "SUB";
+    .port_info 3 /INPUT 1 "VP0";
+    .port_info 4 /INPUT 1 "VP1";
+v0x55dcc471c950_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc471ca10_0 .net "IRF", 0 0, o0x7f3802f136d8;  alias, 0 drivers
+v0x55dcc471cad0_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc471cb70_0 .net "VP0", 0 0, o0x7f3802f145a8;  alias, 0 drivers
+v0x55dcc471cca0_0 .net "VP1", 0 0, o0x7f3802f145d8;  alias, 0 drivers
+S_0x55dcc471ce30 .scope module, "Xintp4" "STONEoscillatorRFgainINTp" 2 420, 2 154 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IRF";
+    .port_info 1 /INPUT 1 "CELV";
+    .port_info 2 /INPUT 1 "SUB";
+    .port_info 3 /INPUT 1 "VP0";
+    .port_info 4 /INPUT 1 "VP1";
+v0x55dcc471d040_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc471d100_0 .net "IRF", 0 0, o0x7f3802f136d8;  alias, 0 drivers
+v0x55dcc471d1c0_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc471d290_0 .net "VP0", 0 0, o0x7f3802f145a8;  alias, 0 drivers
+v0x55dcc471d330_0 .net "VP1", 0 0, o0x7f3802f145d8;  alias, 0 drivers
+S_0x55dcc471d480 .scope module, "Xintp5" "STONEoscillatorRFgainINTp" 2 429, 2 154 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IRF";
+    .port_info 1 /INPUT 1 "CELV";
+    .port_info 2 /INPUT 1 "SUB";
+    .port_info 3 /INPUT 1 "VP0";
+    .port_info 4 /INPUT 1 "VP1";
+v0x55dcc471d6e0_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc471d7a0_0 .net "IRF", 0 0, o0x7f3802f136d8;  alias, 0 drivers
+v0x55dcc471d860_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc471d930_0 .net "VP0", 0 0, o0x7f3802f145a8;  alias, 0 drivers
+v0x55dcc471d9d0_0 .net "VP1", 0 0, o0x7f3802f145d8;  alias, 0 drivers
+S_0x55dcc471db20 .scope module, "Xiosc0" "STONEoscillatorRFiosc" 2 538, 2 124 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IOSC";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "GATE0";
+    .port_info 4 /INPUT 1 "GATE1";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "ok";
+v0x55dcc471ddb0_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc471df80_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc471e250_0 .net "GATE0", 0 0, o0x7f3802f149c8;  alias, 0 drivers
+v0x55dcc471e320_0 .net "GATE1", 0 0, o0x7f3802f149f8;  alias, 0 drivers
+v0x55dcc471e3f0_0 .net "IOSC", 0 0, o0x7f3802f151a8;  alias, 0 drivers
+v0x55dcc471e4e0_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc471e790_0 .net "ok", 0 0, o0x7f3802f13c78;  alias, 0 drivers
+S_0x55dcc471e8d0 .scope module, "Xiosc1" "STONEoscillatorRFiosc" 2 549, 2 124 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IOSC";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "GATE0";
+    .port_info 4 /INPUT 1 "GATE1";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "ok";
+v0x55dcc471eb60_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc471ec20_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc471ece0_0 .net "GATE0", 0 0, o0x7f3802f149c8;  alias, 0 drivers
+v0x55dcc471ee00_0 .net "GATE1", 0 0, o0x7f3802f149f8;  alias, 0 drivers
+v0x55dcc471eef0_0 .net "IOSC", 0 0, o0x7f3802f151a8;  alias, 0 drivers
+v0x55dcc471efe0_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc471f080_0 .net "ok", 0 0, o0x7f3802f13c78;  alias, 0 drivers
+S_0x55dcc471f230 .scope module, "Xiosc10" "STONEoscillatorRFiosc" 2 648, 2 124 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IOSC";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "GATE0";
+    .port_info 4 /INPUT 1 "GATE1";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "ok";
+v0x55dcc471f4c0_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc471f580_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc471f640_0 .net "GATE0", 0 0, o0x7f3802f149c8;  alias, 0 drivers
+v0x55dcc471f6e0_0 .net "GATE1", 0 0, o0x7f3802f149f8;  alias, 0 drivers
+v0x55dcc471f780_0 .net "IOSC", 0 0, o0x7f3802f151a8;  alias, 0 drivers
+v0x55dcc471f8c0_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc471f960_0 .net "ok", 0 0, o0x7f3802f13c78;  alias, 0 drivers
+S_0x55dcc471fae0 .scope module, "Xiosc11" "STONEoscillatorRFiosc" 2 659, 2 124 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IOSC";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "GATE0";
+    .port_info 4 /INPUT 1 "GATE1";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "ok";
+v0x55dcc471fd70_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc471fe30_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc471fef0_0 .net "GATE0", 0 0, o0x7f3802f149c8;  alias, 0 drivers
+v0x55dcc471ff90_0 .net "GATE1", 0 0, o0x7f3802f149f8;  alias, 0 drivers
+v0x55dcc47200c0_0 .net "IOSC", 0 0, o0x7f3802f151a8;  alias, 0 drivers
+v0x55dcc4720160_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc4720200_0 .net "ok", 0 0, o0x7f3802f13c78;  alias, 0 drivers
+S_0x55dcc4720410 .scope module, "Xiosc12" "STONEoscillatorRFiosc" 2 670, 2 124 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IOSC";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "GATE0";
+    .port_info 4 /INPUT 1 "GATE1";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "ok";
+v0x55dcc4720650_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc4720710_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc47207d0_0 .net "GATE0", 0 0, o0x7f3802f149c8;  alias, 0 drivers
+v0x55dcc4720870_0 .net "GATE1", 0 0, o0x7f3802f149f8;  alias, 0 drivers
+v0x55dcc4720910_0 .net "IOSC", 0 0, o0x7f3802f151a8;  alias, 0 drivers
+v0x55dcc4720a40_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc4720ae0_0 .net "ok", 0 0, o0x7f3802f13c78;  alias, 0 drivers
+S_0x55dcc4720c60 .scope module, "Xiosc13" "STONEoscillatorRFiosc" 2 681, 2 124 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IOSC";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "GATE0";
+    .port_info 4 /INPUT 1 "GATE1";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "ok";
+v0x55dcc4720ea0_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc4720f60_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc4721020_0 .net "GATE0", 0 0, o0x7f3802f149c8;  alias, 0 drivers
+v0x55dcc47210c0_0 .net "GATE1", 0 0, o0x7f3802f149f8;  alias, 0 drivers
+v0x55dcc4721160_0 .net "IOSC", 0 0, o0x7f3802f151a8;  alias, 0 drivers
+v0x55dcc4721250_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc47212f0_0 .net "ok", 0 0, o0x7f3802f13c78;  alias, 0 drivers
+S_0x55dcc4721470 .scope module, "Xiosc14" "STONEoscillatorRFiosc" 2 692, 2 124 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IOSC";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "GATE0";
+    .port_info 4 /INPUT 1 "GATE1";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "ok";
+v0x55dcc4721910_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc47219d0_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc4721a90_0 .net "GATE0", 0 0, o0x7f3802f149c8;  alias, 0 drivers
+v0x55dcc4721b30_0 .net "GATE1", 0 0, o0x7f3802f149f8;  alias, 0 drivers
+v0x55dcc4721bd0_0 .net "IOSC", 0 0, o0x7f3802f151a8;  alias, 0 drivers
+v0x55dcc4721cc0_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc4721d60_0 .net "ok", 0 0, o0x7f3802f13c78;  alias, 0 drivers
+S_0x55dcc4721ee0 .scope module, "Xiosc15" "STONEoscillatorRFiosc" 2 703, 2 124 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IOSC";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "GATE0";
+    .port_info 4 /INPUT 1 "GATE1";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "ok";
+v0x55dcc4722170_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc4722230_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc47222f0_0 .net "GATE0", 0 0, o0x7f3802f149c8;  alias, 0 drivers
+v0x55dcc4722390_0 .net "GATE1", 0 0, o0x7f3802f149f8;  alias, 0 drivers
+v0x55dcc4722430_0 .net "IOSC", 0 0, o0x7f3802f151a8;  alias, 0 drivers
+v0x55dcc4722520_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc47225c0_0 .net "ok", 0 0, o0x7f3802f13c78;  alias, 0 drivers
+S_0x55dcc4722740 .scope module, "Xiosc16" "STONEoscillatorRFiosc" 2 714, 2 124 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IOSC";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "GATE0";
+    .port_info 4 /INPUT 1 "GATE1";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "ok";
+v0x55dcc47229d0_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc4722ca0_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc4722d60_0 .net "GATE0", 0 0, o0x7f3802f149c8;  alias, 0 drivers
+v0x55dcc4722e00_0 .net "GATE1", 0 0, o0x7f3802f149f8;  alias, 0 drivers
+v0x55dcc4722ea0_0 .net "IOSC", 0 0, o0x7f3802f151a8;  alias, 0 drivers
+v0x55dcc4722f90_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc4723030_0 .net "ok", 0 0, o0x7f3802f13c78;  alias, 0 drivers
+S_0x55dcc47231b0 .scope module, "Xiosc17" "STONEoscillatorRFiosc" 2 725, 2 124 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IOSC";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "GATE0";
+    .port_info 4 /INPUT 1 "GATE1";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "ok";
+v0x55dcc4723440_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc4723500_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc47235c0_0 .net "GATE0", 0 0, o0x7f3802f149c8;  alias, 0 drivers
+v0x55dcc4723660_0 .net "GATE1", 0 0, o0x7f3802f149f8;  alias, 0 drivers
+v0x55dcc4723700_0 .net "IOSC", 0 0, o0x7f3802f151a8;  alias, 0 drivers
+v0x55dcc47237f0_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc4723890_0 .net "ok", 0 0, o0x7f3802f13c78;  alias, 0 drivers
+S_0x55dcc4723a10 .scope module, "Xiosc2" "STONEoscillatorRFiosc" 2 560, 2 124 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IOSC";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "GATE0";
+    .port_info 4 /INPUT 1 "GATE1";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "ok";
+v0x55dcc4723ca0_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc4723d60_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc4723e20_0 .net "GATE0", 0 0, o0x7f3802f149c8;  alias, 0 drivers
+v0x55dcc4723ec0_0 .net "GATE1", 0 0, o0x7f3802f149f8;  alias, 0 drivers
+v0x55dcc4723f60_0 .net "IOSC", 0 0, o0x7f3802f151a8;  alias, 0 drivers
+v0x55dcc4724050_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc47240f0_0 .net "ok", 0 0, o0x7f3802f13c78;  alias, 0 drivers
+S_0x55dcc4724270 .scope module, "Xiosc3" "STONEoscillatorRFiosc" 2 571, 2 124 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IOSC";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "GATE0";
+    .port_info 4 /INPUT 1 "GATE1";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "ok";
+v0x55dcc4724500_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc47245c0_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc4724680_0 .net "GATE0", 0 0, o0x7f3802f149c8;  alias, 0 drivers
+v0x55dcc4724720_0 .net "GATE1", 0 0, o0x7f3802f149f8;  alias, 0 drivers
+v0x55dcc47247c0_0 .net "IOSC", 0 0, o0x7f3802f151a8;  alias, 0 drivers
+v0x55dcc47248b0_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc4724950_0 .net "ok", 0 0, o0x7f3802f13c78;  alias, 0 drivers
+S_0x55dcc4724ad0 .scope module, "Xiosc4" "STONEoscillatorRFiosc" 2 582, 2 124 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IOSC";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "GATE0";
+    .port_info 4 /INPUT 1 "GATE1";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "ok";
+v0x55dcc4724d60_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc4724e20_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc4724ee0_0 .net "GATE0", 0 0, o0x7f3802f149c8;  alias, 0 drivers
+v0x55dcc4724f80_0 .net "GATE1", 0 0, o0x7f3802f149f8;  alias, 0 drivers
+v0x55dcc4725020_0 .net "IOSC", 0 0, o0x7f3802f151a8;  alias, 0 drivers
+v0x55dcc4725110_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc47251b0_0 .net "ok", 0 0, o0x7f3802f13c78;  alias, 0 drivers
+S_0x55dcc4725330 .scope module, "Xiosc5" "STONEoscillatorRFiosc" 2 593, 2 124 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IOSC";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "GATE0";
+    .port_info 4 /INPUT 1 "GATE1";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "ok";
+v0x55dcc47255c0_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc4725680_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc4725740_0 .net "GATE0", 0 0, o0x7f3802f149c8;  alias, 0 drivers
+v0x55dcc47257e0_0 .net "GATE1", 0 0, o0x7f3802f149f8;  alias, 0 drivers
+v0x55dcc4725880_0 .net "IOSC", 0 0, o0x7f3802f151a8;  alias, 0 drivers
+v0x55dcc4725970_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc4725a10_0 .net "ok", 0 0, o0x7f3802f13c78;  alias, 0 drivers
+S_0x55dcc4725b90 .scope module, "Xiosc6" "STONEoscillatorRFiosc" 2 604, 2 124 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IOSC";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "GATE0";
+    .port_info 4 /INPUT 1 "GATE1";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "ok";
+v0x55dcc4725e20_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc4725ee0_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc4725fa0_0 .net "GATE0", 0 0, o0x7f3802f149c8;  alias, 0 drivers
+v0x55dcc4726040_0 .net "GATE1", 0 0, o0x7f3802f149f8;  alias, 0 drivers
+v0x55dcc47260e0_0 .net "IOSC", 0 0, o0x7f3802f151a8;  alias, 0 drivers
+v0x55dcc47261d0_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc4726270_0 .net "ok", 0 0, o0x7f3802f13c78;  alias, 0 drivers
+S_0x55dcc47263f0 .scope module, "Xiosc7" "STONEoscillatorRFiosc" 2 615, 2 124 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IOSC";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "GATE0";
+    .port_info 4 /INPUT 1 "GATE1";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "ok";
+v0x55dcc4726680_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc4726740_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc4726800_0 .net "GATE0", 0 0, o0x7f3802f149c8;  alias, 0 drivers
+v0x55dcc4726ab0_0 .net "GATE1", 0 0, o0x7f3802f149f8;  alias, 0 drivers
+v0x55dcc4726d60_0 .net "IOSC", 0 0, o0x7f3802f151a8;  alias, 0 drivers
+v0x55dcc4726e50_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc4726ef0_0 .net "ok", 0 0, o0x7f3802f13c78;  alias, 0 drivers
+S_0x55dcc4727280 .scope module, "Xiosc8" "STONEoscillatorRFiosc" 2 626, 2 124 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IOSC";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "GATE0";
+    .port_info 4 /INPUT 1 "GATE1";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "ok";
+v0x55dcc4727510_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc47275d0_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc4727aa0_0 .net "GATE0", 0 0, o0x7f3802f149c8;  alias, 0 drivers
+v0x55dcc4727b40_0 .net "GATE1", 0 0, o0x7f3802f149f8;  alias, 0 drivers
+v0x55dcc4727be0_0 .net "IOSC", 0 0, o0x7f3802f151a8;  alias, 0 drivers
+v0x55dcc4727cd0_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc4728180_0 .net "ok", 0 0, o0x7f3802f13c78;  alias, 0 drivers
+S_0x55dcc4728300 .scope module, "Xiosc9" "STONEoscillatorRFiosc" 2 637, 2 124 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IOSC";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "GATE0";
+    .port_info 4 /INPUT 1 "GATE1";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "ok";
+v0x55dcc4728590_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc4728650_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc4728710_0 .net "GATE0", 0 0, o0x7f3802f149c8;  alias, 0 drivers
+v0x55dcc47287b0_0 .net "GATE1", 0 0, o0x7f3802f149f8;  alias, 0 drivers
+v0x55dcc4728850_0 .net "IOSC", 0 0, o0x7f3802f151a8;  alias, 0 drivers
+v0x55dcc4728940_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc47289e0_0 .net "ok", 0 0, o0x7f3802f13c78;  alias, 0 drivers
+S_0x55dcc4728b60 .scope module, "Xnoconn0" "STONEnoconn" 2 514, 2 263 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x55dcc4728d80_0 .net "noconn", 0 0, o0x7f3802f13fa8;  alias, 0 drivers
+S_0x55dcc4728e60 .scope module, "Xnoconn8" "STONEnoconn" 2 491, 2 263 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x55dcc4729060_0 .net "noconn", 0 0, o0x7f3802f13c48;  alias, 0 drivers
+S_0x55dcc4729140 .scope module, "Xpad" "STONEoscillatorRFpad" 2 804, 2 50 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "GATE";
+    .port_info 1 /OUTPUT 1 "RT";
+    .port_info 2 /OUTPUT 1 "external";
+    .port_info 3 /OUTPUT 1 "fault";
+    .port_info 4 /OUTPUT 1 "internal";
+    .port_info 5 /INPUT 1 "CELG";
+    .port_info 6 /INPUT 1 "CELV";
+    .port_info 7 /INPUT 2 "IPO";
+    .port_info 8 /INPUT 1 "REF";
+    .port_info 9 /INPUT 1 "RTsense";
+    .port_info 10 /INPUT 1 "SUB";
+    .port_info 11 /INPUT 1 "enable_oscillator";
+    .port_info 12 /INPUT 1 "lowiq";
+    .port_info 13 /INPUT 1 "ten";
+    .port_info 14 /INPUT 1 "ten_oscillator";
+    .port_info 15 /OUTPUT 1 "a0";
+    .port_info 16 /OUTPUT 1 "en";
+v0x55dcc47294c0_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc4729560_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc4729620_0 .net "GATE", 0 0, o0x7f3802f136a8;  alias, 0 drivers
+v0x55dcc4729710_0 .net "IPO", 1 0, L_0x55dcc472e3c0;  1 drivers
+v0x55dcc47297b0_0 .net "REF", 0 0, o0x7f3802f138e8;  alias, 0 drivers
+v0x55dcc47298a0_0 .net "RT", 0 0, o0x7f3802f16a08;  alias, 0 drivers
+v0x55dcc4729940_0 .net "RTsense", 0 0, o0x7f3802f16a38;  alias, 0 drivers
+v0x55dcc4729a00_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc4729aa0_0 .net "a0", 0 0, o0x7f3802f13d08;  alias, 0 drivers
+v0x55dcc4729b40_0 .net "en", 0 0, o0x7f3802f13948;  alias, 0 drivers
+v0x55dcc4729be0_0 .net "enable_oscillator", 0 0, o0x7f3802f14818;  alias, 0 drivers
+v0x55dcc4729c80_0 .net "external", 0 0, o0x7f3802f16a68;  alias, 0 drivers
+v0x55dcc4729d20_0 .net "fault", 0 0, o0x7f3802f16a98;  alias, 0 drivers
+v0x55dcc4729de0_0 .net "internal", 0 0, o0x7f3802f14608;  alias, 0 drivers
+v0x55dcc4729e80_0 .net "lowiq", 0 0, o0x7f3802f13d08;  alias, 0 drivers
+v0x55dcc4729f20_0 .net "ten", 0 0, o0x7f3802f13978;  alias, 0 drivers
+v0x55dcc472a010_0 .net "ten_oscillator", 0 0, o0x7f3802f13d08;  alias, 0 drivers
+S_0x55dcc472a2b0 .scope module, "Xrfctrim" "STONEoscillatorRFctrim" 2 451, 2 191 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 3 "CT";
+    .port_info 1 /INPUT 1 "COSC";
+    .port_info 2 /INPUT 1 "CELG";
+    .port_info 3 /INPUT 1 "SENSE_G";
+    .port_info 4 /INPUT 1 "SUB";
+    .port_info 5 /INPUT 1 "CELV";
+    .port_info 6 /INPUT 1 "external";
+    .port_info 7 /INPUT 3 "trim_osc_ext";
+    .port_info 8 /INPUT 3 "trim_osc_int";
+v0x55dcc472a5c0_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc472a680_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc472a740_0 .net "COSC", 0 0, o0x7f3802f131c8;  alias, 0 drivers
+v0x55dcc472a7e0_0 .net "CT", 2 0, o0x7f3802f16df8;  0 drivers
+v0x55dcc472a880_0 .net "SENSE_G", 0 0, o0x7f3802f13198;  alias, 0 drivers
+v0x55dcc472a920_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc472a9c0_0 .net "external", 0 0, o0x7f3802f16a68;  alias, 0 drivers
+v0x55dcc472aa60_0 .net "trim_osc_ext", 7 5, o0x7f3802f16e28;  alias, 0 drivers
+v0x55dcc472ab20_0 .net "trim_osc_int", 7 5, o0x7f3802f16e58;  alias, 0 drivers
+S_0x55dcc472ad20 .scope module, "Xrftrim" "STONEoscillatorRFtrim" 2 438, 2 209 0, S_0x55dcc46a0ec0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "ITRIM";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "IRF";
+    .port_info 3 /INPUT 1 "SUB";
+    .port_info 4 /INPUT 1 "CELV";
+    .port_info 5 /INPUT 1 "external";
+    .port_info 6 /INPUT 1 "internal";
+    .port_info 7 /INPUT 5 "trim_oscillator_ext";
+    .port_info 8 /INPUT 5 "trim_oscillator_int";
+v0x55dcc472afe0_0 .net "CELG", 0 0, o0x7f3802f138b8;  alias, 0 drivers
+v0x55dcc472b0a0_0 .net "CELV", 0 0, o0x7f3802f13678;  alias, 0 drivers
+v0x55dcc472b160_0 .net "IRF", 0 0, o0x7f3802f136d8;  alias, 0 drivers
+v0x55dcc472b200_0 .net "ITRIM", 0 0, o0x7f3802f14a28;  alias, 0 drivers
+v0x55dcc472b2d0_0 .net "SUB", 0 0, o0x7f3802f13708;  alias, 0 drivers
+v0x55dcc472b3c0_0 .net "external", 0 0, o0x7f3802f16a68;  alias, 0 drivers
+v0x55dcc472b4b0_0 .net "internal", 0 0, o0x7f3802f14608;  alias, 0 drivers
+v0x55dcc472b5a0_0 .net "trim_oscillator_ext", 4 0, o0x7f3802f17038;  alias, 0 drivers
+v0x55dcc472b640_0 .net "trim_oscillator_int", 4 0, o0x7f3802f17068;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/./celera//projects//Sunnyvale//software//CLOCKinternal//verilog5//oscillator_d9a22b83.v";

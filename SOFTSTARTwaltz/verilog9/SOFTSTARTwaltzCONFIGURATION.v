@@ -23,7 +23,7 @@ module SOFTSTARTwaltzCONFIGURATION (halfway, softstart_1ms);
 PEBBLEtielo XDRMNOTL (
 .G(CELG59462),
 .V(CELV96848),
-.q(a0),
+.q(halfway),
 .SUB(CELSUB40948)
 );
 
