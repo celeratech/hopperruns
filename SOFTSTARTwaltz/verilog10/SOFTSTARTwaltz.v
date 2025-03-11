@@ -1,7 +1,11 @@
 // ------------------------ Module Definitions -----------
-module SOFTSTARTwaltzCONFIGURATION (halfway,softstart_1ms);
-  input  halfway;
-  input  softstart_1ms;
+module SOFTSTARTwaltzCONFIGURATION (tmi,halfway,CELG59462,CELV96848,CELSUB40948,softstart_1ms);
+  inout [4:0] tmi;
+  output  halfway;
+  input  CELG59462;
+  input  CELV96848;
+  input  CELSUB40948;
+  output  softstart_1ms;
 endmodule
 
 module SOFTSTARTwaltzDEBUG (SS,CELG59462,CELV96848,dft_clock,CELSUB40948,enable_brick,done_softstart,enable_softstart,hijack_enable_brick,hijack_enable_softstart);
@@ -39,9 +43,10 @@ module SOFTSTARTwaltz8BMAIN (SS,REF,MUDV,halfway,CELG59462,CELV96848,dft_clock,C
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module SOFTSTARTwaltz (SS, REF, MUDV, CELG59462, CELV96848, CELSUB40948, IP_4d71065b, IP_9218e44e, IP_ad72ebe7, enable_brick, done_softstart, SENSE_G_9218e44e, enable_softstart, completed_softstart, kelvin_MUDGsoftstart);
+module SOFTSTARTwaltz (SS, REF, tmi, MUDV, CELG59462, CELV96848, CELSUB40948, IP_4d71065b, IP_9218e44e, IP_ad72ebe7, enable_brick, done_softstart, SENSE_G_9218e44e, enable_softstart, completed_softstart, kelvin_MUDGsoftstart);
 inout  SS;
 input  REF;
+inout [4:0] tmi;
 input  MUDV;
 input  CELG59462;
 input  CELV96848;
@@ -58,10 +63,15 @@ input  kelvin_MUDGsoftstart;
 
 
 // ------------------------ Wires ------------------------
+wire [4:0] tmi;
 
 // ------------------------ Networks ---------------------
 SOFTSTARTwaltzCONFIGURATION XCONFIGURATION (
+.tmi(tmi[4:0]),
 .halfway(net_47),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948),
 .softstart_1ms(net_46)
 );
 
