@@ -1,0 +1,106 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x555555847f60 .scope module, "sim_SERVICEwaltz_ROW31" "sim_SERVICEwaltz_ROW31" 2 35;
+ .timescale 0 0;
+o0x7fffff25f018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555897490_0 .net "BIAS", 0 0, o0x7fffff25f018;  0 drivers
+o0x7fffff25f348 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558975a0_0 .net "CELG59462", 0 0, o0x7fffff25f348;  0 drivers
+o0x7fffff25f378 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555897660_0 .net "CELSUB40948", 0 0, o0x7fffff25f378;  0 drivers
+o0x7fffff25f3a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555897760_0 .net "CELV96848", 0 0, o0x7fffff25f3a8;  0 drivers
+o0x7fffff25f048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555897830_0 .net "EN", 0 0, o0x7fffff25f048;  0 drivers
+o0x7fffff25f078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555897970_0 .net "GND", 0 0, o0x7fffff25f078;  0 drivers
+o0x7fffff25f0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555897a10_0 .net "IN", 0 0, o0x7fffff25f0a8;  0 drivers
+o0x7fffff25f0d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555897b00_0 .net "IP_4a72660b", 0 0, o0x7fffff25f0d8;  0 drivers
+o0x7fffff25f408 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555897bf0_0 .net "celkelvin_IN1", 0 0, o0x7fffff25f408;  0 drivers
+o0x7fffff25f438 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555897c90_0 .net "celkelvin_IN2", 0 0, o0x7fffff25f438;  0 drivers
+o0x7fffff25f468 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555897d30_0 .net "celkelvin_VBIAS", 0 0, o0x7fffff25f468;  0 drivers
+o0x7fffff25f498 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555897dd0_0 .net "global_vbias", 0 0, o0x7fffff25f498;  0 drivers
+o0x7fffff25f138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555897ea0_0 .net "kelvin_GNDservice", 0 0, o0x7fffff25f138;  0 drivers
+o0x7fffff25f108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555897f40_0 .net "kelvin_VCC", 0 0, o0x7fffff25f108;  0 drivers
+o0x7fffff25f3d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555898070_0 .net "net_21", 0 0, o0x7fffff25f3d8;  0 drivers
+o0x7fffff25f4c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555898110_0 .net "ok_service", 0 0, o0x7fffff25f4c8;  0 drivers
+o0x7fffff25f168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558981e0_0 .net "porb", 0 0, o0x7fffff25f168;  0 drivers
+S_0x55555587ebd0 .scope module, "XFORCE_SERVICEwaltz1" "FORCE_SERVICEwaltz" 2 41, 2 2 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "EN";
+    .port_info 1 /OUTPUT 1 "IN";
+    .port_info 2 /INOUT 1 "GND";
+    .port_info 3 /INOUT 1 "VCC";
+    .port_info 4 /OUTPUT 1 "BIAS";
+    .port_info 5 /INPUT 1 "porb";
+    .port_info 6 /OUTPUT 1 "kelvin_VCC";
+    .port_info 7 /OUTPUT 1 "IP_4a72660b";
+    .port_info 8 /OUTPUT 1 "kelvin_GNDservice";
+v0x5555558480f0_0 .net "BIAS", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x555555847ec0_0 .net "EN", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x555555895ba0_0 .net "GND", 0 0, o0x7fffff25f078;  alias, 0 drivers
+v0x555555895c40_0 .net "IN", 0 0, o0x7fffff25f0a8;  alias, 0 drivers
+v0x555555895d00_0 .net "IP_4a72660b", 0 0, o0x7fffff25f0d8;  alias, 0 drivers
+v0x555555895e10_0 .net "VCC", 0 0, o0x7fffff25f108;  alias, 0 drivers
+v0x555555895ed0_0 .net "kelvin_GNDservice", 0 0, o0x7fffff25f138;  alias, 0 drivers
+v0x555555895f90_0 .net "kelvin_VCC", 0 0, o0x7fffff25f108;  alias, 0 drivers
+v0x555555896030_0 .net "porb", 0 0, o0x7fffff25f168;  alias, 0 drivers
+S_0x5555558961f0 .scope module, "XSERVICEwaltz1" "SERVICEwaltz" 2 53, 2 14 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "EN";
+    .port_info 1 /INPUT 1 "IN";
+    .port_info 2 /OUTPUT 1 "VCC";
+    .port_info 3 /INPUT 1 "BIAS";
+    .port_info 4 /OUTPUT 1 "porb";
+    .port_info 5 /INPUT 1 "REF0V9";
+    .port_info 6 /INPUT 1 "CELG59462";
+    .port_info 7 /INPUT 1 "CELV96848";
+    .port_info 8 /INOUT 1 "kelvin_VCC";
+    .port_info 9 /OUTPUT 1 "ok_service";
+    .port_info 10 /INPUT 1 "CELSUB40948";
+    .port_info 11 /INPUT 1 "IP_4a72660b";
+    .port_info 12 /INPUT 1 "global_vbias";
+    .port_info 13 /INPUT 1 "celkelvin_IN1";
+    .port_info 14 /INPUT 1 "celkelvin_IN2";
+    .port_info 15 /INPUT 1 "celkelvin_VBIAS";
+    .port_info 16 /INOUT 1 "kelvin_GNDservice";
+v0x555555896540_0 .net "BIAS", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x555555896610_0 .net "CELG59462", 0 0, o0x7fffff25f348;  alias, 0 drivers
+v0x5555558966b0_0 .net "CELSUB40948", 0 0, o0x7fffff25f378;  alias, 0 drivers
+v0x555555896780_0 .net "CELV96848", 0 0, o0x7fffff25f3a8;  alias, 0 drivers
+v0x555555896840_0 .net "EN", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x555555896930_0 .net "IN", 0 0, o0x7fffff25f0a8;  alias, 0 drivers
+v0x555555896a00_0 .net "IP_4a72660b", 0 0, o0x7fffff25f0d8;  alias, 0 drivers
+v0x555555896ad0_0 .net "REF0V9", 0 0, o0x7fffff25f3d8;  alias, 0 drivers
+v0x555555896b70_0 .net "VCC", 0 0, o0x7fffff25f108;  alias, 0 drivers
+v0x555555896c10_0 .net "celkelvin_IN1", 0 0, o0x7fffff25f408;  alias, 0 drivers
+v0x555555896cb0_0 .net "celkelvin_IN2", 0 0, o0x7fffff25f438;  alias, 0 drivers
+v0x555555896d50_0 .net "celkelvin_VBIAS", 0 0, o0x7fffff25f468;  alias, 0 drivers
+v0x555555896e10_0 .net "global_vbias", 0 0, o0x7fffff25f498;  alias, 0 drivers
+v0x555555896ed0_0 .net "kelvin_GNDservice", 0 0, o0x7fffff25f138;  alias, 0 drivers
+v0x555555896f70_0 .net "kelvin_VCC", 0 0, o0x7fffff25f108;  alias, 0 drivers
+v0x555555897010_0 .net "ok_service", 0 0, o0x7fffff25f4c8;  alias, 0 drivers
+v0x5555558970b0_0 .net "porb", 0 0, o0x7fffff25f168;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/celera/projects/Sunnyvale/software/SERVICEwaltz/verilog10/sim_SERVICEwaltz_ROW31.v";
