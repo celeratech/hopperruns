@@ -100,6 +100,48 @@ endlayoutbio
 
 //**********************************************
 //Project Parameters
+//Celera:SERVICEwaltz Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,TBD
+#define,PROJECTsupply,5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
@@ -156,7 +198,7 @@ pinname,CELV
 definition,CELV,power
 iq,CELV,SIMULATION
 absmax,CELV,6
-absmin,CELV,1.4
+absmin,CELV,2.0
 io,CELV,input
 mode,CELV,power
 router,CELV,TBD
@@ -166,10 +208,8 @@ esd,CELV,TBD
 pinname,CELG
 definition,CELG,power ground
 iq,CELG,SIMULATION
-absmax,CELG,////////////////////////////////////////////////////////
-
-absmin,CELG,////////
-
+absmax,CELG,0.3
+absmin,CELG,-0.3
 io,CELG,input
 mode,CELG,power
 router,CELG,TBD
@@ -180,8 +220,7 @@ pinname,s
 definition,s,srlatch set
 iq,s,SIMULATION
 absmax,s,6
-absmin,s,////////
-
+absmin,s,-0.3
 io,s,input
 mode,s,digital
 router,s,TBD
@@ -192,8 +231,7 @@ pinname,r
 definition,r,srlatch reset
 iq,r,SIMULATION
 absmax,r,6
-absmin,r,////////
-
+absmin,r,-0.3
 io,r,input
 mode,r,digital
 router,r,TBD
@@ -204,8 +242,7 @@ pinname,rb
 definition,rb,srlatch global reset
 iq,rb,SIMULATION
 absmax,rb,6
-absmin,rb,////////
-
+absmin,rb,-0.3
 io,rb,input
 mode,rb,digital
 router,rb,TBD
@@ -216,8 +253,7 @@ pinname,q
 definition,q,srlatch output 
 iq,q,SIMULATION
 absmax,q,6
-absmin,q,////////
-
+absmin,q,-0.3
 io,q,output
 mode,q,digital
 router,q,TBD
@@ -228,8 +264,7 @@ pinname,qb
 definition,qb,srlatch output 
 iq,qb,SIMULATION
 absmax,qb,6
-absmin,qb,////////
-
+absmin,qb,-0.3
 io,qb,output
 mode,qb,digital
 router,qb,TBD
@@ -239,8 +274,8 @@ esd,qb,TBD
 pinname,SUB
 definition,SUB,substrate
 iq,SUB,SIMULATION
-absmax,SUB,
-absmin,SUB,
+absmax,SUB,0.3
+absmin,SUB,-0.3
 io,SUB,input
 mode,SUB,power
 router,SUB,TBD

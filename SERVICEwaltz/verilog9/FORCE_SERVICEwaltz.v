@@ -24,11 +24,6 @@ module vpwl_0x0_10d0ux30_10d0mx30 (PLUS,MINUS);
   output  MINUS;
 endmodule
 
-module vpwl_0x0_11ux0_11d001ux5 (PLUS,MINUS);
-  output  PLUS;
-  output  MINUS;
-endmodule
-
 module ipwl_0x0_10d0ux0_11d0ux100d0u(PLUS, MINUS);
 output PLUS;
 output MINUS;
@@ -67,13 +62,12 @@ input GND;
 endmodule 
 
 // ------------------------ Module Verilog ---------------
-module FORCE_SERVICEwaltz (EN, IN, GND, VCC, BIAS, porb, kelvin_VCC, IP_4a72660b, kelvin_GNDservice);
+module FORCE_SERVICEwaltz (EN, IN, GND, VCC, BIAS, kelvin_VCC, IP_4a72660b, kelvin_GNDservice);
 output  EN;
 output  IN;
 inout  GND;
 inout  VCC;
 output  BIAS;
-  input  porb;
 output  kelvin_VCC;
 output  IP_4a72660b;
 output  kelvin_GNDservice;
@@ -98,11 +92,6 @@ vpwl_0x0_10d0ux0_11d0ux5 V_ENx (
 
 vpwl_0x0_10d0ux30_10d0mx30 V_INx (
 .PLUS(net_60),
-.MINUS(GND)
-);
-
-vpwl_0x0_11ux0_11d001ux5 XPORB (
-.PLUS(porb),
 .MINUS(GND)
 );
 
