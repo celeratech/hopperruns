@@ -7,7 +7,7 @@
 :vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
 :vpi_module "/usr/local/lib/ivl/va_math.vpi";
-S_0x5634351b4f60 .scope module, "CLOCKinternal" "CLOCKinternal" 2 74;
+S_0x55a8a20e4f60 .scope module, "CLOCKinternal" "CLOCKinternal" 2 74;
  .timescale 0 0;
     .port_info 0 /INOUT 1 "GND";
     .port_info 1 /OUTPUT 1 "MUDV";
@@ -18,79 +18,79 @@ S_0x5634351b4f60 .scope module, "CLOCKinternal" "CLOCKinternal" 2 74;
     .port_info 6 /INPUT 1 "enable_clock";
     .port_info 7 /OUTPUT 1 "clock_external";
     .port_info 8 /OUTPUT 1 "clock_internal";
-o0x7f565c52e018 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435213b40_0 .net "CELG59462", 0 0, o0x7f565c52e018;  0 drivers
-o0x7f565c52e048 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435213c00_0 .net "CELSUB40948", 0 0, o0x7f565c52e048;  0 drivers
-o0x7f565c52e078 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435213cc0_0 .net "CELV96848", 0 0, o0x7f565c52e078;  0 drivers
-o0x7f565c52e918 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435213d60_0 .net "GND", 0 0, o0x7f565c52e918;  0 drivers
-o0x7f565c52e318 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435213e00_0 .net "IP_01b40a78", 0 0, o0x7f565c52e318;  0 drivers
-o0x7f565c52ea68 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435213ea0_0 .net "IP_c14a3d26", 0 0, o0x7f565c52ea68;  0 drivers
-o0x7f565c52e348 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435213f70_0 .net "MUDV", 0 0, o0x7f565c52e348;  0 drivers
-o0x7f565c52e288 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435214010_0 .net "TBD_XU4_XU10_CELREF", 0 0, o0x7f565c52e288;  0 drivers
-o0x7f565c52e2b8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5634352140e0_0 .net "TBD_XU4_XU10_CELSENSE_RF", 0 0, o0x7f565c52e2b8;  0 drivers
-o0x7f565c52e378 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5634352141b0_0 .net "TBD_XU4_XU10_celkelvin_GNDoscillator", 0 0, o0x7f565c52e378;  0 drivers
-o0x7f565c52e9d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435214280_0 .net "TBD_XU4_XU8_CELREF", 0 0, o0x7f565c52e9d8;  0 drivers
-o0x7f565c52ea08 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435214350_0 .net "TBD_XU4_XU8_CELSENSE_RF", 0 0, o0x7f565c52ea08;  0 drivers
-o0x7f565c52ea98 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435214420_0 .net "TBD_XU4_XU8_celkelvin_GNDoscillator", 0 0, o0x7f565c52ea98;  0 drivers
-o0x7f565c52e0a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5634352144f0_0 .net "a0", 0 0, o0x7f565c52e0a8;  0 drivers
-o0x7f565c52e468 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5634352145c0_0 .net "clock_external", 0 0, o0x7f565c52e468;  0 drivers
-o0x7f565c52eb28 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435214690_0 .net "clock_internal", 0 0, o0x7f565c52eb28;  0 drivers
-o0x7f565c52e3a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435214760_0 .net "enable_clock", 0 0, o0x7f565c52e3a8;  0 drivers
-o0x7f565c52e2e8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435214910_0 .net "net_21", 0 0, o0x7f565c52e2e8;  0 drivers
-o0x7f565c52ea38 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5634352149b0_0 .net "net_22", 0 0, o0x7f565c52ea38;  0 drivers
-o0x7f565c52e3d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435214a80_0 .net "net_23", 0 0, o0x7f565c52e3d8;  0 drivers
-o0x7f565c52eac8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435214b50_0 .net "net_24", 0 0, o0x7f565c52eac8;  0 drivers
-o0x7f565c52e438 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435214c20_0 .net "net_29", 0 0, o0x7f565c52e438;  0 drivers
-o0x7f565c52eaf8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435214cf0_0 .net "net_30", 0 0, o0x7f565c52eaf8;  0 drivers
-o0x7f565c52e258 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435214dc0_0 .net "net_42", 0 0, o0x7f565c52e258;  0 drivers
-o0x7f565c52e198 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435214e60_0 .net "noconn_tdi_osc1", 0 0, o0x7f565c52e198;  0 drivers
-o0x7f565c52e1f8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435214f50_0 .net "noconn_tdi_osc2", 0 0, o0x7f565c52e1f8;  0 drivers
-o0x7f565c52e408 .functor BUFZ 1, C4<z>; HiZ drive
-v0x563435215040_0 .net "tl0", 0 0, o0x7f565c52e408;  0 drivers
-S_0x5634351db740 .scope module, "XDRMNOTL" "PEBBLEtielo" 2 152, 2 55 0, S_0x5634351b4f60;
+o0x7f0c4e114018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2143b40_0 .net "CELG59462", 0 0, o0x7f0c4e114018;  0 drivers
+o0x7f0c4e114048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2143c00_0 .net "CELSUB40948", 0 0, o0x7f0c4e114048;  0 drivers
+o0x7f0c4e114078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2143cc0_0 .net "CELV96848", 0 0, o0x7f0c4e114078;  0 drivers
+o0x7f0c4e114918 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2143d60_0 .net "GND", 0 0, o0x7f0c4e114918;  0 drivers
+o0x7f0c4e114318 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2143e00_0 .net "IP_01b40a78", 0 0, o0x7f0c4e114318;  0 drivers
+o0x7f0c4e114a68 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2143ea0_0 .net "IP_c14a3d26", 0 0, o0x7f0c4e114a68;  0 drivers
+o0x7f0c4e114348 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2143f70_0 .net "MUDV", 0 0, o0x7f0c4e114348;  0 drivers
+o0x7f0c4e114288 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2144010_0 .net "TBD_XU4_XU10_CELREF", 0 0, o0x7f0c4e114288;  0 drivers
+o0x7f0c4e1142b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a21440e0_0 .net "TBD_XU4_XU10_CELSENSE_RF", 0 0, o0x7f0c4e1142b8;  0 drivers
+o0x7f0c4e114378 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a21441b0_0 .net "TBD_XU4_XU10_celkelvin_GNDoscillator", 0 0, o0x7f0c4e114378;  0 drivers
+o0x7f0c4e1149d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2144280_0 .net "TBD_XU4_XU8_CELREF", 0 0, o0x7f0c4e1149d8;  0 drivers
+o0x7f0c4e114a08 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2144350_0 .net "TBD_XU4_XU8_CELSENSE_RF", 0 0, o0x7f0c4e114a08;  0 drivers
+o0x7f0c4e114a98 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2144420_0 .net "TBD_XU4_XU8_celkelvin_GNDoscillator", 0 0, o0x7f0c4e114a98;  0 drivers
+o0x7f0c4e1140a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a21444f0_0 .net "a0", 0 0, o0x7f0c4e1140a8;  0 drivers
+o0x7f0c4e114468 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a21445c0_0 .net "clock_external", 0 0, o0x7f0c4e114468;  0 drivers
+o0x7f0c4e114b28 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2144690_0 .net "clock_internal", 0 0, o0x7f0c4e114b28;  0 drivers
+o0x7f0c4e1143a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2144760_0 .net "enable_clock", 0 0, o0x7f0c4e1143a8;  0 drivers
+o0x7f0c4e1142e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2144910_0 .net "net_21", 0 0, o0x7f0c4e1142e8;  0 drivers
+o0x7f0c4e114a38 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a21449b0_0 .net "net_22", 0 0, o0x7f0c4e114a38;  0 drivers
+o0x7f0c4e1143d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2144a80_0 .net "net_23", 0 0, o0x7f0c4e1143d8;  0 drivers
+o0x7f0c4e114ac8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2144b50_0 .net "net_24", 0 0, o0x7f0c4e114ac8;  0 drivers
+o0x7f0c4e114438 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2144c20_0 .net "net_29", 0 0, o0x7f0c4e114438;  0 drivers
+o0x7f0c4e114af8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2144cf0_0 .net "net_30", 0 0, o0x7f0c4e114af8;  0 drivers
+o0x7f0c4e114258 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2144dc0_0 .net "net_42", 0 0, o0x7f0c4e114258;  0 drivers
+o0x7f0c4e114198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2144e60_0 .net "noconn_tdi_osc1", 0 0, o0x7f0c4e114198;  0 drivers
+o0x7f0c4e1141f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2144f50_0 .net "noconn_tdi_osc2", 0 0, o0x7f0c4e1141f8;  0 drivers
+o0x7f0c4e114408 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a8a2145040_0 .net "tl0", 0 0, o0x7f0c4e114408;  0 drivers
+S_0x55a8a210b740 .scope module, "XDRMNOTL" "PEBBLEtielo" 2 152, 2 55 0, S_0x55a8a20e4f60;
  .timescale 0 0;
     .port_info 0 /OUTPUT 1 "q";
     .port_info 1 /INPUT 1 "G";
     .port_info 2 /INPUT 1 "SUB";
     .port_info 3 /INPUT 1 "V";
-v0x5634351ee8e0_0 .net "G", 0 0, o0x7f565c52e018;  alias, 0 drivers
-v0x5634351ee810_0 .net "SUB", 0 0, o0x7f565c52e048;  alias, 0 drivers
-v0x5634351ee740_0 .net "V", 0 0, o0x7f565c52e078;  alias, 0 drivers
-v0x5634351b4ec0_0 .net "q", 0 0, o0x7f565c52e0a8;  alias, 0 drivers
-S_0x56343520fe80 .scope module, "XNCnoconn_tdi_osc1" "STONEnoconn" 2 159, 2 67 0, S_0x5634351b4f60;
+v0x55a8a211e8e0_0 .net "G", 0 0, o0x7f0c4e114018;  alias, 0 drivers
+v0x55a8a211e810_0 .net "SUB", 0 0, o0x7f0c4e114048;  alias, 0 drivers
+v0x55a8a211e740_0 .net "V", 0 0, o0x7f0c4e114078;  alias, 0 drivers
+v0x55a8a20e4ec0_0 .net "q", 0 0, o0x7f0c4e1140a8;  alias, 0 drivers
+S_0x55a8a213fe80 .scope module, "XNCnoconn_tdi_osc1" "STONEnoconn" 2 159, 2 67 0, S_0x55a8a20e4f60;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "noconn";
-v0x5634351b50f0_0 .net "noconn", 0 0, o0x7f565c52e198;  alias, 0 drivers
-S_0x563435210120 .scope module, "XNCnoconn_tdi_osc2" "STONEnoconn" 2 163, 2 67 0, S_0x5634351b4f60;
+v0x55a8a20e50f0_0 .net "noconn", 0 0, o0x7f0c4e114198;  alias, 0 drivers
+S_0x55a8a2140120 .scope module, "XNCnoconn_tdi_osc2" "STONEnoconn" 2 163, 2 67 0, S_0x55a8a20e4f60;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "noconn";
-v0x5634351b44b0_0 .net "noconn", 0 0, o0x7f565c52e1f8;  alias, 0 drivers
-S_0x563435210380 .scope module, "XU10" "oscillator_d9a22b83" 2 122, 2 18 0, S_0x5634351b4f60;
+v0x55a8a20e44b0_0 .net "noconn", 0 0, o0x7f0c4e1141f8;  alias, 0 drivers
+S_0x55a8a2140380 .scope module, "XU10" "oscillator_d9a22b83" 2 122, 2 18 0, S_0x55a8a20e4f60;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "SIMPV";
     .port_info 1 /INPUT 1 "IP";
@@ -112,39 +112,39 @@ S_0x563435210380 .scope module, "XU10" "oscillator_d9a22b83" 2 122, 2 18 0, S_0x
     .port_info 17 /INPUT 1 "CELG";
     .port_info 18 /INPUT 1 "celkelvin_GNDoscillator";
     .port_info 19 /INPUT 1 "CELSUB";
-v0x5634351ee9b0_0 .net "CELFORCE_RF", 0 0, o0x7f565c52e258;  alias, 0 drivers
-v0x563435210770_0 .net "CELG", 0 0, o0x7f565c52e018;  alias, 0 drivers
-v0x563435210830_0 .net "CELREF", 0 0, o0x7f565c52e288;  alias, 0 drivers
-v0x5634352108d0_0 .net "CELSENSE_RF", 0 0, o0x7f565c52e2b8;  alias, 0 drivers
-v0x563435210970_0 .net "CELSUB", 0 0, o0x7f565c52e048;  alias, 0 drivers
-v0x563435210a60_0 .net "IOSC", 0 0, o0x7f565c52e2e8;  alias, 0 drivers
-v0x563435210b00_0 .net "IP", 0 0, o0x7f565c52e318;  alias, 0 drivers
-v0x563435210ba0_0 .net "SIMPV", 0 0, o0x7f565c52e348;  alias, 0 drivers
-v0x563435210c60_0 .net "celkelvin_GNDoscillator", 0 0, o0x7f565c52e378;  alias, 0 drivers
-v0x563435210d20_0 .net "enable_oscillator", 0 0, o0x7f565c52e3a8;  alias, 0 drivers
-v0x563435210de0_0 .net "fault_oscillator", 0 0, o0x7f565c52e3d8;  alias, 0 drivers
-v0x563435210ea0_0 .net "global_oscillator", 0 0, o0x7f565c52e408;  alias, 0 drivers
-v0x563435210f60_0 .net "ok_oscillator", 0 0, o0x7f565c52e438;  alias, 0 drivers
-v0x563435211020_0 .net "osc", 0 0, o0x7f565c52e468;  alias, 0 drivers
-v0x5634352110e0_0 .net "tdi_osc", 0 0, o0x7f565c52e1f8;  alias, 0 drivers
-v0x5634352111b0_0 .net "ten_osc", 0 0, o0x7f565c52e408;  alias, 0 drivers
-o0x7f565c52e498 .functor BUFZ 3, C4<zzz>; HiZ drive
-v0x563435211280_0 .net "trim_oscillator_ext_coarse", 2 0, o0x7f565c52e498;  0 drivers
-L_0x7f565c4e5018 .functor BUFT 1, C4<zzzzz>, C4<0>, C4<0>, C4<0>;
-v0x563435211430_0 .net "trim_oscillator_ext_fine", 4 0, L_0x7f565c4e5018;  1 drivers
-o0x7f565c52e4f8 .functor BUFZ 3, C4<zzz>; HiZ drive
-v0x563435211510_0 .net "trim_oscillator_int_coarse", 2 0, o0x7f565c52e4f8;  0 drivers
-o0x7f565c52e528 .functor BUFZ 5, C4<zzzzz>; HiZ drive
-v0x5634352115f0_0 .net "trim_oscillator_int_fine", 4 0, o0x7f565c52e528;  0 drivers
-S_0x563435211950 .scope module, "XU4" "resistor_8a688167" 2 93, 2 5 0, S_0x5634351b4f60;
+v0x55a8a211e9b0_0 .net "CELFORCE_RF", 0 0, o0x7f0c4e114258;  alias, 0 drivers
+v0x55a8a2140770_0 .net "CELG", 0 0, o0x7f0c4e114018;  alias, 0 drivers
+v0x55a8a2140830_0 .net "CELREF", 0 0, o0x7f0c4e114288;  alias, 0 drivers
+v0x55a8a21408d0_0 .net "CELSENSE_RF", 0 0, o0x7f0c4e1142b8;  alias, 0 drivers
+v0x55a8a2140970_0 .net "CELSUB", 0 0, o0x7f0c4e114048;  alias, 0 drivers
+v0x55a8a2140a60_0 .net "IOSC", 0 0, o0x7f0c4e1142e8;  alias, 0 drivers
+v0x55a8a2140b00_0 .net "IP", 0 0, o0x7f0c4e114318;  alias, 0 drivers
+v0x55a8a2140ba0_0 .net "SIMPV", 0 0, o0x7f0c4e114348;  alias, 0 drivers
+v0x55a8a2140c60_0 .net "celkelvin_GNDoscillator", 0 0, o0x7f0c4e114378;  alias, 0 drivers
+v0x55a8a2140d20_0 .net "enable_oscillator", 0 0, o0x7f0c4e1143a8;  alias, 0 drivers
+v0x55a8a2140de0_0 .net "fault_oscillator", 0 0, o0x7f0c4e1143d8;  alias, 0 drivers
+v0x55a8a2140ea0_0 .net "global_oscillator", 0 0, o0x7f0c4e114408;  alias, 0 drivers
+v0x55a8a2140f60_0 .net "ok_oscillator", 0 0, o0x7f0c4e114438;  alias, 0 drivers
+v0x55a8a2141020_0 .net "osc", 0 0, o0x7f0c4e114468;  alias, 0 drivers
+v0x55a8a21410e0_0 .net "tdi_osc", 0 0, o0x7f0c4e1141f8;  alias, 0 drivers
+v0x55a8a21411b0_0 .net "ten_osc", 0 0, o0x7f0c4e114408;  alias, 0 drivers
+o0x7f0c4e114498 .functor BUFZ 3, C4<zzz>; HiZ drive
+v0x55a8a2141280_0 .net "trim_oscillator_ext_coarse", 2 0, o0x7f0c4e114498;  0 drivers
+L_0x7f0c4e0cb018 .functor BUFT 1, C4<zzzzz>, C4<0>, C4<0>, C4<0>;
+v0x55a8a2141430_0 .net "trim_oscillator_ext_fine", 4 0, L_0x7f0c4e0cb018;  1 drivers
+o0x7f0c4e1144f8 .functor BUFZ 3, C4<zzz>; HiZ drive
+v0x55a8a2141510_0 .net "trim_oscillator_int_coarse", 2 0, o0x7f0c4e1144f8;  0 drivers
+o0x7f0c4e114528 .functor BUFZ 5, C4<zzzzz>; HiZ drive
+v0x55a8a21415f0_0 .net "trim_oscillator_int_fine", 4 0, o0x7f0c4e114528;  0 drivers
+S_0x55a8a2141950 .scope module, "XU4" "resistor_8a688167" 2 93, 2 5 0, S_0x55a8a20e4f60;
  .timescale 0 0;
     .port_info 0 /INOUT 1 "RP";
     .port_info 1 /INPUT 1 "CELG";
     .port_info 2 /INOUT 1 "RN";
-v0x563435211ba0_0 .net "CELG", 0 0, o0x7f565c52e018;  alias, 0 drivers
-v0x563435211cb0_0 .net "RN", 0 0, o0x7f565c52e918;  alias, 0 drivers
-v0x563435211d70_0 .net "RP", 0 0, o0x7f565c52e258;  alias, 0 drivers
-S_0x563435211e50 .scope module, "XU8" "oscillator_d9a22b83" 2 99, 2 18 0, S_0x5634351b4f60;
+v0x55a8a2141ba0_0 .net "CELG", 0 0, o0x7f0c4e114018;  alias, 0 drivers
+v0x55a8a2141cb0_0 .net "RN", 0 0, o0x7f0c4e114918;  alias, 0 drivers
+v0x55a8a2141d70_0 .net "RP", 0 0, o0x7f0c4e114258;  alias, 0 drivers
+S_0x55a8a2141e50 .scope module, "XU8" "oscillator_d9a22b83" 2 99, 2 18 0, S_0x55a8a20e4f60;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "SIMPV";
     .port_info 1 /INPUT 1 "IP";
@@ -166,40 +166,40 @@ S_0x563435211e50 .scope module, "XU8" "oscillator_d9a22b83" 2 99, 2 18 0, S_0x56
     .port_info 17 /INPUT 1 "CELG";
     .port_info 18 /INPUT 1 "celkelvin_GNDoscillator";
     .port_info 19 /INPUT 1 "CELSUB";
-v0x563435212220_0 .net "CELFORCE_RF", 0 0, o0x7f565c52e348;  alias, 0 drivers
-v0x5634352122f0_0 .net "CELG", 0 0, o0x7f565c52e018;  alias, 0 drivers
-v0x563435212390_0 .net "CELREF", 0 0, o0x7f565c52e9d8;  alias, 0 drivers
-v0x563435212460_0 .net "CELSENSE_RF", 0 0, o0x7f565c52ea08;  alias, 0 drivers
-v0x563435212500_0 .net "CELSUB", 0 0, o0x7f565c52e048;  alias, 0 drivers
-v0x563435212640_0 .net "IOSC", 0 0, o0x7f565c52ea38;  alias, 0 drivers
-v0x563435212700_0 .net "IP", 0 0, o0x7f565c52ea68;  alias, 0 drivers
-v0x5634352127c0_0 .net "SIMPV", 0 0, o0x7f565c52e348;  alias, 0 drivers
-v0x5634352128b0_0 .net "celkelvin_GNDoscillator", 0 0, o0x7f565c52ea98;  alias, 0 drivers
-v0x563435212970_0 .net "enable_oscillator", 0 0, o0x7f565c52e3a8;  alias, 0 drivers
-v0x563435212a10_0 .net "fault_oscillator", 0 0, o0x7f565c52eac8;  alias, 0 drivers
-v0x563435212ab0_0 .net "global_oscillator", 0 0, o0x7f565c52e408;  alias, 0 drivers
-v0x563435212b50_0 .net "ok_oscillator", 0 0, o0x7f565c52eaf8;  alias, 0 drivers
-v0x563435212c10_0 .net "osc", 0 0, o0x7f565c52eb28;  alias, 0 drivers
-v0x563435212cd0_0 .net "tdi_osc", 0 0, o0x7f565c52e198;  alias, 0 drivers
-v0x563435212d70_0 .net "ten_osc", 0 0, o0x7f565c52e408;  alias, 0 drivers
-o0x7f565c52eb58 .functor BUFZ 3, C4<zzz>; HiZ drive
-v0x563435212e10_0 .net "trim_oscillator_ext_coarse", 2 0, o0x7f565c52eb58;  0 drivers
-o0x7f565c52eb88 .functor BUFZ 5, C4<zzzzz>; HiZ drive
-v0x563435212fe0_0 .net "trim_oscillator_ext_fine", 4 0, o0x7f565c52eb88;  0 drivers
-o0x7f565c52ebb8 .functor BUFZ 3, C4<zzz>; HiZ drive
-v0x5634352130c0_0 .net "trim_oscillator_int_coarse", 2 0, o0x7f565c52ebb8;  0 drivers
-o0x7f565c52ebe8 .functor BUFZ 5, C4<zzzzz>; HiZ drive
-v0x5634352131a0_0 .net "trim_oscillator_int_fine", 4 0, o0x7f565c52ebe8;  0 drivers
-S_0x5634352135b0 .scope module, "XtieLo" "PEBBLEtielo" 2 145, 2 55 0, S_0x5634351b4f60;
+v0x55a8a2142220_0 .net "CELFORCE_RF", 0 0, o0x7f0c4e114348;  alias, 0 drivers
+v0x55a8a21422f0_0 .net "CELG", 0 0, o0x7f0c4e114018;  alias, 0 drivers
+v0x55a8a2142390_0 .net "CELREF", 0 0, o0x7f0c4e1149d8;  alias, 0 drivers
+v0x55a8a2142460_0 .net "CELSENSE_RF", 0 0, o0x7f0c4e114a08;  alias, 0 drivers
+v0x55a8a2142500_0 .net "CELSUB", 0 0, o0x7f0c4e114048;  alias, 0 drivers
+v0x55a8a2142640_0 .net "IOSC", 0 0, o0x7f0c4e114a38;  alias, 0 drivers
+v0x55a8a2142700_0 .net "IP", 0 0, o0x7f0c4e114a68;  alias, 0 drivers
+v0x55a8a21427c0_0 .net "SIMPV", 0 0, o0x7f0c4e114348;  alias, 0 drivers
+v0x55a8a21428b0_0 .net "celkelvin_GNDoscillator", 0 0, o0x7f0c4e114a98;  alias, 0 drivers
+v0x55a8a2142970_0 .net "enable_oscillator", 0 0, o0x7f0c4e1143a8;  alias, 0 drivers
+v0x55a8a2142a10_0 .net "fault_oscillator", 0 0, o0x7f0c4e114ac8;  alias, 0 drivers
+v0x55a8a2142ab0_0 .net "global_oscillator", 0 0, o0x7f0c4e114408;  alias, 0 drivers
+v0x55a8a2142b50_0 .net "ok_oscillator", 0 0, o0x7f0c4e114af8;  alias, 0 drivers
+v0x55a8a2142c10_0 .net "osc", 0 0, o0x7f0c4e114b28;  alias, 0 drivers
+v0x55a8a2142cd0_0 .net "tdi_osc", 0 0, o0x7f0c4e114198;  alias, 0 drivers
+v0x55a8a2142d70_0 .net "ten_osc", 0 0, o0x7f0c4e114408;  alias, 0 drivers
+o0x7f0c4e114b58 .functor BUFZ 3, C4<zzz>; HiZ drive
+v0x55a8a2142e10_0 .net "trim_oscillator_ext_coarse", 2 0, o0x7f0c4e114b58;  0 drivers
+o0x7f0c4e114b88 .functor BUFZ 5, C4<zzzzz>; HiZ drive
+v0x55a8a2142fe0_0 .net "trim_oscillator_ext_fine", 4 0, o0x7f0c4e114b88;  0 drivers
+o0x7f0c4e114bb8 .functor BUFZ 3, C4<zzz>; HiZ drive
+v0x55a8a21430c0_0 .net "trim_oscillator_int_coarse", 2 0, o0x7f0c4e114bb8;  0 drivers
+o0x7f0c4e114be8 .functor BUFZ 5, C4<zzzzz>; HiZ drive
+v0x55a8a21431a0_0 .net "trim_oscillator_int_fine", 4 0, o0x7f0c4e114be8;  0 drivers
+S_0x55a8a21435b0 .scope module, "XtieLo" "PEBBLEtielo" 2 145, 2 55 0, S_0x55a8a20e4f60;
  .timescale 0 0;
     .port_info 0 /OUTPUT 1 "q";
     .port_info 1 /INPUT 1 "G";
     .port_info 2 /INPUT 1 "SUB";
     .port_info 3 /INPUT 1 "V";
-v0x563435213800_0 .net "G", 0 0, o0x7f565c52e018;  alias, 0 drivers
-v0x5634352138c0_0 .net "SUB", 0 0, o0x7f565c52e048;  alias, 0 drivers
-v0x563435213980_0 .net "V", 0 0, o0x7f565c52e078;  alias, 0 drivers
-v0x563435213a50_0 .net "q", 0 0, o0x7f565c52e408;  alias, 0 drivers
+v0x55a8a2143800_0 .net "G", 0 0, o0x7f0c4e114018;  alias, 0 drivers
+v0x55a8a21438c0_0 .net "SUB", 0 0, o0x7f0c4e114048;  alias, 0 drivers
+v0x55a8a2143980_0 .net "V", 0 0, o0x7f0c4e114078;  alias, 0 drivers
+v0x55a8a2143a50_0 .net "q", 0 0, o0x7f0c4e114408;  alias, 0 drivers
 # The file index is used to find the file name in the following table.
 :file_names 3;
     "N/A";
