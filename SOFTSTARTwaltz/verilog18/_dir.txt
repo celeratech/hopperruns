@@ -10,7 +10,7 @@
     "send_to_cda": true,
     "ISO Connections": {},
     "General": {
-        "project_netlist_path": "/tmp/kyle/mnt/celera/projects/Simplis/playrich/Waltz/WALTZ2/301c/verification/SIMPLIS_Data/sim_SOFTSTART.net",
+        "project_netlist_path": "/tmp/kyle/mnt/celera/projects/Simplis/playrich/Waltz/WALTZ2/301c_obselete/verification/SIMPLIS_Data/sim_SOFTSTART.net",
         "gen_reports": "Y",
         "pad_esd": "2",
         "find_isos": "Y",
@@ -43,7 +43,14 @@
     },
     "Register": {
         "registermap_buswidth": "8",
+        "register_software_reset": "N",
         "registermap_security": "N",
+        "include_ara": "N",
+        "alert_address": "1",
+        "alert_outputvoltage": "6",
+        "alert_ron": "N",
+        "alert_dft": "N",
+        "alert_vmax": "6",
         "registermap_reset": "N",
         "registermap_chipid": "N",
         "registermap_address": "fixed",
@@ -68,7 +75,6 @@
         "registermap_chipid_msb": "0x00",
         "registermap_factoryid": "0x00",
         "registermap_revision": "0",
-        "register_software_reset": "N",
         "register_vmax": "6"
     },
     "SerDes": {
