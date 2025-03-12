@@ -12,9 +12,12 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SOFTSTARTwaltzCONFIGURATION (halfway, softstart_1ms);
-output  halfway;
-output  softstart_1ms;
+module SOFTSTARTwaltzCONFIGURATION (halfway, CELG59462, CELV96848, CELSUB40948, softstart_1ms);
+  input  halfway;
+input  CELG59462;
+input  CELV96848;
+input  CELSUB40948;
+  input  softstart_1ms;
 
 
 // ------------------------ Wires ------------------------

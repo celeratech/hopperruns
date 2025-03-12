@@ -7,7 +7,7 @@
 :vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
 :vpi_module "/usr/local/lib/ivl/va_math.vpi";
-S_0x561562b07f60 .scope module, "SOFTSTARTwaltz" "SOFTSTARTwaltz" 2 42;
+S_0x561a97a7bf60 .scope module, "SOFTSTARTwaltz" "SOFTSTARTwaltz" 2 45;
  .timescale 0 0;
     .port_info 0 /INOUT 1 "SS";
     .port_info 1 /INPUT 1 "REF";
@@ -24,53 +24,59 @@ S_0x561562b07f60 .scope module, "SOFTSTARTwaltz" "SOFTSTARTwaltz" 2 42;
     .port_info 12 /INPUT 1 "enable_softstart";
     .port_info 13 /OUTPUT 1 "completed_softstart";
     .port_info 14 /INPUT 1 "kelvin_MUDGsoftstart";
-o0x7f8fe39080d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561562b59a30_0 .net "CELG59462", 0 0, o0x7f8fe39080d8;  0 drivers
-o0x7f8fe3908108 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561562b5ae40_0 .net "CELSUB40948", 0 0, o0x7f8fe3908108;  0 drivers
-o0x7f8fe3908138 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561562b5af50_0 .net "CELV96848", 0 0, o0x7f8fe3908138;  0 drivers
-o0x7f8fe3908498 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561562b5b040_0 .net "IP_4d71065b", 0 0, o0x7f8fe3908498;  0 drivers
-o0x7f8fe39084c8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561562b5b0e0_0 .net "IP_9218e44e", 0 0, o0x7f8fe39084c8;  0 drivers
-o0x7f8fe39084f8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561562b5b1d0_0 .net "IP_ad72ebe7", 0 0, o0x7f8fe39084f8;  0 drivers
-o0x7f8fe3908528 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561562b5b270_0 .net "MUDV", 0 0, o0x7f8fe3908528;  0 drivers
-o0x7f8fe3908558 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561562b5b340_0 .net "REF", 0 0, o0x7f8fe3908558;  0 drivers
-o0x7f8fe3908588 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561562b5b410_0 .net "SENSE_G_9218e44e", 0 0, o0x7f8fe3908588;  0 drivers
-o0x7f8fe3908168 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561562b5b4e0_0 .net "SS", 0 0, o0x7f8fe3908168;  0 drivers
-o0x7f8fe39085b8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561562b5b580_0 .net "completed_softstart", 0 0, o0x7f8fe39085b8;  0 drivers
-o0x7f8fe39081c8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561562b5b620_0 .net "done_softstart", 0 0, o0x7f8fe39081c8;  0 drivers
-o0x7f8fe39081f8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561562b5b710_0 .net "enable_brick", 0 0, o0x7f8fe39081f8;  0 drivers
-o0x7f8fe3908228 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561562b5b7b0_0 .net "enable_softstart", 0 0, o0x7f8fe3908228;  0 drivers
-o0x7f8fe39085e8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561562b5b880_0 .net "kelvin_MUDGsoftstart", 0 0, o0x7f8fe39085e8;  0 drivers
-o0x7f8fe3908048 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561562b5b950_0 .net "net_46", 0 0, o0x7f8fe3908048;  0 drivers
-o0x7f8fe3908018 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561562b5ba40_0 .net "net_47", 0 0, o0x7f8fe3908018;  0 drivers
-o0x7f8fe3908258 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561562b5bc40_0 .net "net_48", 0 0, o0x7f8fe3908258;  0 drivers
-o0x7f8fe3908288 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561562b5bd30_0 .net "net_49", 0 0, o0x7f8fe3908288;  0 drivers
-o0x7f8fe3908198 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561562b5be20_0 .net "net_50", 0 0, o0x7f8fe3908198;  0 drivers
-S_0x561562b3f9d0 .scope module, "XCONFIGURATION" "SOFTSTARTwaltzCONFIGURATION" 2 63, 2 2 0, S_0x561562b07f60;
+o0x7f115820e018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561a97acef00_0 .net "CELG59462", 0 0, o0x7f115820e018;  0 drivers
+o0x7f115820e048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561a97ad0340_0 .net "CELSUB40948", 0 0, o0x7f115820e048;  0 drivers
+o0x7f115820e078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561a97ad0400_0 .net "CELV96848", 0 0, o0x7f115820e078;  0 drivers
+o0x7f115820e528 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561a97ad04d0_0 .net "IP_4d71065b", 0 0, o0x7f115820e528;  0 drivers
+o0x7f115820e558 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561a97ad05a0_0 .net "IP_9218e44e", 0 0, o0x7f115820e558;  0 drivers
+o0x7f115820e588 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561a97ad0640_0 .net "IP_ad72ebe7", 0 0, o0x7f115820e588;  0 drivers
+o0x7f115820e5b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561a97ad0710_0 .net "MUDV", 0 0, o0x7f115820e5b8;  0 drivers
+o0x7f115820e5e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561a97ad07e0_0 .net "REF", 0 0, o0x7f115820e5e8;  0 drivers
+o0x7f115820e618 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561a97ad08b0_0 .net "SENSE_G_9218e44e", 0 0, o0x7f115820e618;  0 drivers
+o0x7f115820e1f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561a97ad0980_0 .net "SS", 0 0, o0x7f115820e1f8;  0 drivers
+o0x7f115820e648 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561a97ad0a20_0 .net "completed_softstart", 0 0, o0x7f115820e648;  0 drivers
+o0x7f115820e258 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561a97ad0ac0_0 .net "done_softstart", 0 0, o0x7f115820e258;  0 drivers
+o0x7f115820e288 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561a97ad0bb0_0 .net "enable_brick", 0 0, o0x7f115820e288;  0 drivers
+o0x7f115820e2b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561a97ad0c50_0 .net "enable_softstart", 0 0, o0x7f115820e2b8;  0 drivers
+o0x7f115820e678 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561a97ad0d20_0 .net "kelvin_MUDGsoftstart", 0 0, o0x7f115820e678;  0 drivers
+o0x7f115820e0d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561a97ad0df0_0 .net "net_46", 0 0, o0x7f115820e0d8;  0 drivers
+o0x7f115820e0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561a97ad0ee0_0 .net "net_47", 0 0, o0x7f115820e0a8;  0 drivers
+o0x7f115820e2e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561a97ad10e0_0 .net "net_48", 0 0, o0x7f115820e2e8;  0 drivers
+o0x7f115820e318 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561a97ad11d0_0 .net "net_49", 0 0, o0x7f115820e318;  0 drivers
+o0x7f115820e228 .functor BUFZ 1, C4<z>; HiZ drive
+v0x561a97ad12c0_0 .net "net_50", 0 0, o0x7f115820e228;  0 drivers
+S_0x561a97ab40a0 .scope module, "XCONFIGURATION" "SOFTSTARTwaltzCONFIGURATION" 2 66, 2 2 0, S_0x561a97a7bf60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "halfway";
-    .port_info 1 /OUTPUT 1 "softstart_1ms";
-v0x561562b074b0_0 .net "halfway", 0 0, o0x7f8fe3908018;  alias, 0 drivers
-v0x561562b080f0_0 .net "softstart_1ms", 0 0, o0x7f8fe3908048;  alias, 0 drivers
-S_0x561562b58d70 .scope module, "XDEBUG" "SOFTSTARTwaltzDEBUG" 2 68, 2 7 0, S_0x561562b07f60;
+    .port_info 0 /INPUT 1 "halfway";
+    .port_info 1 /INPUT 1 "CELG59462";
+    .port_info 2 /INPUT 1 "CELV96848";
+    .port_info 3 /INPUT 1 "CELSUB40948";
+    .port_info 4 /INPUT 1 "softstart_1ms";
+v0x561a97a7b4b0_0 .net "CELG59462", 0 0, o0x7f115820e018;  alias, 0 drivers
+v0x561a97a7c0f0_0 .net "CELSUB40948", 0 0, o0x7f115820e048;  alias, 0 drivers
+v0x561a97a7bec0_0 .net "CELV96848", 0 0, o0x7f115820e078;  alias, 0 drivers
+v0x561a97acdf40_0 .net "halfway", 0 0, o0x7f115820e0a8;  alias, 0 drivers
+v0x561a97ace000_0 .net "softstart_1ms", 0 0, o0x7f115820e0d8;  alias, 0 drivers
+S_0x561a97ace1b0 .scope module, "XDEBUG" "SOFTSTARTwaltzDEBUG" 2 74, 2 10 0, S_0x561a97a7bf60;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "SS";
     .port_info 1 /INPUT 1 "CELG59462";
@@ -82,17 +88,17 @@ S_0x561562b58d70 .scope module, "XDEBUG" "SOFTSTARTwaltzDEBUG" 2 68, 2 7 0, S_0x
     .port_info 7 /INPUT 1 "enable_softstart";
     .port_info 8 /OUTPUT 1 "hijack_enable_brick";
     .port_info 9 /OUTPUT 1 "hijack_enable_softstart";
-v0x561562b07ec0_0 .net "CELG59462", 0 0, o0x7f8fe39080d8;  alias, 0 drivers
-v0x561562b59070_0 .net "CELSUB40948", 0 0, o0x7f8fe3908108;  alias, 0 drivers
-v0x561562b59130_0 .net "CELV96848", 0 0, o0x7f8fe3908138;  alias, 0 drivers
-v0x561562b591d0_0 .net "SS", 0 0, o0x7f8fe3908168;  alias, 0 drivers
-v0x561562b59290_0 .net "dft_clock", 0 0, o0x7f8fe3908198;  alias, 0 drivers
-v0x561562b593a0_0 .net "done_softstart", 0 0, o0x7f8fe39081c8;  alias, 0 drivers
-v0x561562b59460_0 .net "enable_brick", 0 0, o0x7f8fe39081f8;  alias, 0 drivers
-v0x561562b59520_0 .net "enable_softstart", 0 0, o0x7f8fe3908228;  alias, 0 drivers
-v0x561562b595e0_0 .net "hijack_enable_brick", 0 0, o0x7f8fe3908258;  alias, 0 drivers
-v0x561562b596a0_0 .net "hijack_enable_softstart", 0 0, o0x7f8fe3908288;  alias, 0 drivers
-S_0x561562b598a0 .scope module, "XMAIN" "SOFTSTARTwaltz8BMAIN" 2 81, 2 20 0, S_0x561562b07f60;
+v0x561a97ace4b0_0 .net "CELG59462", 0 0, o0x7f115820e018;  alias, 0 drivers
+v0x561a97ace550_0 .net "CELSUB40948", 0 0, o0x7f115820e048;  alias, 0 drivers
+v0x561a97ace620_0 .net "CELV96848", 0 0, o0x7f115820e078;  alias, 0 drivers
+v0x561a97ace720_0 .net "SS", 0 0, o0x7f115820e1f8;  alias, 0 drivers
+v0x561a97ace7c0_0 .net "dft_clock", 0 0, o0x7f115820e228;  alias, 0 drivers
+v0x561a97ace8b0_0 .net "done_softstart", 0 0, o0x7f115820e258;  alias, 0 drivers
+v0x561a97ace950_0 .net "enable_brick", 0 0, o0x7f115820e288;  alias, 0 drivers
+v0x561a97ace9f0_0 .net "enable_softstart", 0 0, o0x7f115820e2b8;  alias, 0 drivers
+v0x561a97aceab0_0 .net "hijack_enable_brick", 0 0, o0x7f115820e2e8;  alias, 0 drivers
+v0x561a97aceb70_0 .net "hijack_enable_softstart", 0 0, o0x7f115820e318;  alias, 0 drivers
+S_0x561a97aced70 .scope module, "XMAIN" "SOFTSTARTwaltz8BMAIN" 2 87, 2 23 0, S_0x561a97a7bf60;
  .timescale 0 0;
     .port_info 0 /INOUT 1 "SS";
     .port_info 1 /INPUT 1 "REF";
@@ -112,24 +118,24 @@ S_0x561562b598a0 .scope module, "XMAIN" "SOFTSTARTwaltz8BMAIN" 2 81, 2 20 0, S_0
     .port_info 15 /INPUT 1 "enable_softstart";
     .port_info 16 /OUTPUT 1 "completed_softstart";
     .port_info 17 /INPUT 1 "kelvin_MUDGsoftstart";
-v0x561562b59c90_0 .net "CELG59462", 0 0, o0x7f8fe39080d8;  alias, 0 drivers
-v0x561562b59d60_0 .net "CELSUB40948", 0 0, o0x7f8fe3908108;  alias, 0 drivers
-v0x561562b59e30_0 .net "CELV96848", 0 0, o0x7f8fe3908138;  alias, 0 drivers
-v0x561562b59f30_0 .net "IP_4d71065b", 0 0, o0x7f8fe3908498;  alias, 0 drivers
-v0x561562b59fd0_0 .net "IP_9218e44e", 0 0, o0x7f8fe39084c8;  alias, 0 drivers
-v0x561562b5a0c0_0 .net "IP_ad72ebe7", 0 0, o0x7f8fe39084f8;  alias, 0 drivers
-v0x561562b5a160_0 .net "MUDV", 0 0, o0x7f8fe3908528;  alias, 0 drivers
-v0x561562b5a200_0 .net "REF", 0 0, o0x7f8fe3908558;  alias, 0 drivers
-v0x561562b5a2c0_0 .net "SENSE_G_9218e44e", 0 0, o0x7f8fe3908588;  alias, 0 drivers
-v0x561562b5a410_0 .net "SS", 0 0, o0x7f8fe3908168;  alias, 0 drivers
-v0x561562b5a4b0_0 .net "completed_softstart", 0 0, o0x7f8fe39085b8;  alias, 0 drivers
-v0x561562b5a550_0 .net "dft_clock", 0 0, o0x7f8fe3908198;  alias, 0 drivers
-v0x561562b5a620_0 .net "done_softstart", 0 0, o0x7f8fe39081c8;  alias, 0 drivers
-v0x561562b5a6f0_0 .net "enable_brick", 0 0, o0x7f8fe3908258;  alias, 0 drivers
-v0x561562b5a7c0_0 .net "enable_softstart", 0 0, o0x7f8fe3908288;  alias, 0 drivers
-v0x561562b5a890_0 .net "halfway", 0 0, o0x7f8fe3908018;  alias, 0 drivers
-v0x561562b5a960_0 .net "kelvin_MUDGsoftstart", 0 0, o0x7f8fe39085e8;  alias, 0 drivers
-v0x561562b5ab10_0 .net "softstart_1ms", 0 0, o0x7f8fe3908048;  alias, 0 drivers
+v0x561a97acf160_0 .net "CELG59462", 0 0, o0x7f115820e018;  alias, 0 drivers
+v0x561a97acf250_0 .net "CELSUB40948", 0 0, o0x7f115820e048;  alias, 0 drivers
+v0x561a97acf360_0 .net "CELV96848", 0 0, o0x7f115820e078;  alias, 0 drivers
+v0x561a97acf450_0 .net "IP_4d71065b", 0 0, o0x7f115820e528;  alias, 0 drivers
+v0x561a97acf4f0_0 .net "IP_9218e44e", 0 0, o0x7f115820e558;  alias, 0 drivers
+v0x561a97acf5e0_0 .net "IP_ad72ebe7", 0 0, o0x7f115820e588;  alias, 0 drivers
+v0x561a97acf6a0_0 .net "MUDV", 0 0, o0x7f115820e5b8;  alias, 0 drivers
+v0x561a97acf760_0 .net "REF", 0 0, o0x7f115820e5e8;  alias, 0 drivers
+v0x561a97acf820_0 .net "SENSE_G_9218e44e", 0 0, o0x7f115820e618;  alias, 0 drivers
+v0x561a97acf970_0 .net "SS", 0 0, o0x7f115820e1f8;  alias, 0 drivers
+v0x561a97acfa10_0 .net "completed_softstart", 0 0, o0x7f115820e648;  alias, 0 drivers
+v0x561a97acfab0_0 .net "dft_clock", 0 0, o0x7f115820e228;  alias, 0 drivers
+v0x561a97acfb50_0 .net "done_softstart", 0 0, o0x7f115820e258;  alias, 0 drivers
+v0x561a97acfbf0_0 .net "enable_brick", 0 0, o0x7f115820e2e8;  alias, 0 drivers
+v0x561a97acfcc0_0 .net "enable_softstart", 0 0, o0x7f115820e318;  alias, 0 drivers
+v0x561a97acfd90_0 .net "halfway", 0 0, o0x7f115820e0a8;  alias, 0 drivers
+v0x561a97acfe60_0 .net "kelvin_MUDGsoftstart", 0 0, o0x7f115820e678;  alias, 0 drivers
+v0x561a97ad0010_0 .net "softstart_1ms", 0 0, o0x7f115820e0d8;  alias, 0 drivers
 # The file index is used to find the file name in the following table.
 :file_names 3;
     "N/A";
