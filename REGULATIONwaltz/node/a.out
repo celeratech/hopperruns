@@ -1,0 +1,126 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x55555587fbe0 .scope module, "sim_REGULATIONwaltz_ROW17" "sim_REGULATIONwaltz_ROW17" 2 43;
+ .timescale 0 0;
+o0x7fffff25f018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558995b0_0 .net "CELG59462", 0 0, o0x7fffff25f018;  0 drivers
+o0x7fffff25f048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589a8b0_0 .net "CELSUB40948", 0 0, o0x7fffff25f048;  0 drivers
+o0x7fffff25f078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589a9c0_0 .net "CELV96848", 0 0, o0x7fffff25f078;  0 drivers
+o0x7fffff25f0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589aab0_0 .net "FB_REGULATION", 0 0, o0x7fffff25f0a8;  0 drivers
+o0x7fffff25f0d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589aba0_0 .net "GND", 0 0, o0x7fffff25f0d8;  0 drivers
+o0x7fffff25f108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589ac90_0 .net "IP_70133221", 0 0, o0x7fffff25f108;  0 drivers
+o0x7fffff25f138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589ad80_0 .net "IP_96171c99", 0 0, o0x7fffff25f138;  0 drivers
+o0x7fffff25f168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589ae70_0 .net "IP_df440ad3", 0 0, o0x7fffff25f168;  0 drivers
+o0x7fffff25f198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589af60_0 .net "IP_f5d94fdd", 0 0, o0x7fffff25f198;  0 drivers
+o0x7fffff25f1c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589b000_0 .net "IP_fa70de6e", 0 0, o0x7fffff25f1c8;  0 drivers
+o0x7fffff25f618 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589b0f0_0 .net "IREF_DRIVER", 0 0, o0x7fffff25f618;  0 drivers
+o0x7fffff25f1f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589b190_0 .net "MUDG", 0 0, o0x7fffff25f1f8;  0 drivers
+o0x7fffff25f228 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589b280_0 .net "MUDV", 0 0, o0x7fffff25f228;  0 drivers
+o0x7fffff25f258 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589b370_0 .net "REF_REGULATION", 0 0, o0x7fffff25f258;  0 drivers
+o0x7fffff25f288 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589b460_0 .net "VSS_REGULATION", 0 0, o0x7fffff25f288;  0 drivers
+o0x7fffff25f2b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589b550_0 .net "enable_regulation", 0 0, o0x7fffff25f2b8;  0 drivers
+o0x7fffff25f648 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589b640_0 .net "go_driver", 0 0, o0x7fffff25f648;  0 drivers
+o0x7fffff25f2e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589b7f0_0 .net "kelvin_MUDG", 0 0, o0x7fffff25f2e8;  0 drivers
+o0x7fffff25f678 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589b8e0_0 .net "ok_regulation", 0 0, o0x7fffff25f678;  0 drivers
+S_0x55555587fd70 .scope module, "XFORCE_REGULATIONwaltz1" "FORCE_REGULATIONwaltz" 2 49, 2 2 0, S_0x55555587fbe0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "GND";
+    .port_info 1 /OUTPUT 1 "MUDG";
+    .port_info 2 /OUTPUT 1 "MUDV";
+    .port_info 3 /OUTPUT 1 "CELG59462";
+    .port_info 4 /OUTPUT 1 "CELV96848";
+    .port_info 5 /OUTPUT 1 "CELSUB40948";
+    .port_info 6 /OUTPUT 1 "IP_70133221";
+    .port_info 7 /OUTPUT 1 "IP_96171c99";
+    .port_info 8 /OUTPUT 1 "IP_df440ad3";
+    .port_info 9 /OUTPUT 1 "IP_f5d94fdd";
+    .port_info 10 /OUTPUT 1 "IP_fa70de6e";
+    .port_info 11 /OUTPUT 1 "kelvin_MUDG";
+    .port_info 12 /OUTPUT 1 "FB_REGULATION";
+    .port_info 13 /OUTPUT 1 "REF_REGULATION";
+    .port_info 14 /OUTPUT 1 "VSS_REGULATION";
+    .port_info 15 /INOUT 1 "enable_regulation";
+v0x5555558474b0_0 .net "CELG59462", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x5555558480f0_0 .net "CELSUB40948", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x555555847ec0_0 .net "CELV96848", 0 0, o0x7fffff25f078;  alias, 0 drivers
+v0x555555898760_0 .net "FB_REGULATION", 0 0, o0x7fffff25f0a8;  alias, 0 drivers
+v0x555555898820_0 .net "GND", 0 0, o0x7fffff25f0d8;  alias, 0 drivers
+v0x555555898930_0 .net "IP_70133221", 0 0, o0x7fffff25f108;  alias, 0 drivers
+v0x5555558989f0_0 .net "IP_96171c99", 0 0, o0x7fffff25f138;  alias, 0 drivers
+v0x555555898ab0_0 .net "IP_df440ad3", 0 0, o0x7fffff25f168;  alias, 0 drivers
+v0x555555898b70_0 .net "IP_f5d94fdd", 0 0, o0x7fffff25f198;  alias, 0 drivers
+v0x555555898c30_0 .net "IP_fa70de6e", 0 0, o0x7fffff25f1c8;  alias, 0 drivers
+v0x555555898cf0_0 .net "MUDG", 0 0, o0x7fffff25f1f8;  alias, 0 drivers
+v0x555555898db0_0 .net "MUDV", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x555555898e70_0 .net "REF_REGULATION", 0 0, o0x7fffff25f258;  alias, 0 drivers
+v0x555555898f30_0 .net "VSS_REGULATION", 0 0, o0x7fffff25f288;  alias, 0 drivers
+v0x555555898ff0_0 .net "enable_regulation", 0 0, o0x7fffff25f2b8;  alias, 0 drivers
+v0x5555558990b0_0 .net "kelvin_MUDG", 0 0, o0x7fffff25f2e8;  alias, 0 drivers
+S_0x555555899400 .scope module, "XREGULATIONwaltz1" "REGULATIONwaltz" 2 68, 2 21 0, S_0x55555587fbe0;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "MUDG";
+    .port_info 1 /INPUT 1 "MUDV";
+    .port_info 2 /INPUT 1 "CELG59462";
+    .port_info 3 /INPUT 1 "CELV96848";
+    .port_info 4 /OUTPUT 1 "go_driver";
+    .port_info 5 /INPUT 1 "CELSUB40948";
+    .port_info 6 /INPUT 1 "IP_70133221";
+    .port_info 7 /INPUT 1 "IP_96171c99";
+    .port_info 8 /INPUT 1 "IP_df440ad3";
+    .port_info 9 /INPUT 1 "IP_f5d94fdd";
+    .port_info 10 /INPUT 1 "IP_fa70de6e";
+    .port_info 11 /INOUT 1 "IREF_DRIVER";
+    .port_info 12 /INOUT 1 "kelvin_MUDG";
+    .port_info 13 /INOUT 1 "FB_REGULATION";
+    .port_info 14 /OUTPUT 1 "ok_regulation";
+    .port_info 15 /INPUT 1 "REF_REGULATION";
+    .port_info 16 /INPUT 1 "VSS_REGULATION";
+    .port_info 17 /INPUT 1 "enable_regulation";
+v0x555555899810_0 .net "CELG59462", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x5555558998b0_0 .net "CELSUB40948", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x555555899980_0 .net "CELV96848", 0 0, o0x7fffff25f078;  alias, 0 drivers
+v0x555555899a80_0 .net "FB_REGULATION", 0 0, o0x7fffff25f0a8;  alias, 0 drivers
+v0x555555899b50_0 .net "IP_70133221", 0 0, o0x7fffff25f108;  alias, 0 drivers
+v0x555555899c40_0 .net "IP_96171c99", 0 0, o0x7fffff25f138;  alias, 0 drivers
+v0x555555899d10_0 .net "IP_df440ad3", 0 0, o0x7fffff25f168;  alias, 0 drivers
+v0x555555899de0_0 .net "IP_f5d94fdd", 0 0, o0x7fffff25f198;  alias, 0 drivers
+v0x555555899eb0_0 .net "IP_fa70de6e", 0 0, o0x7fffff25f1c8;  alias, 0 drivers
+v0x555555899f80_0 .net "IREF_DRIVER", 0 0, o0x7fffff25f618;  alias, 0 drivers
+v0x55555589a020_0 .net "MUDG", 0 0, o0x7fffff25f1f8;  alias, 0 drivers
+v0x55555589a0f0_0 .net "MUDV", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x55555589a1c0_0 .net "REF_REGULATION", 0 0, o0x7fffff25f258;  alias, 0 drivers
+v0x55555589a290_0 .net "VSS_REGULATION", 0 0, o0x7fffff25f288;  alias, 0 drivers
+v0x55555589a360_0 .net "enable_regulation", 0 0, o0x7fffff25f2b8;  alias, 0 drivers
+v0x55555589a430_0 .net "go_driver", 0 0, o0x7fffff25f648;  alias, 0 drivers
+v0x55555589a4d0_0 .net "kelvin_MUDG", 0 0, o0x7fffff25f2e8;  alias, 0 drivers
+v0x55555589a6b0_0 .net "ok_regulation", 0 0, o0x7fffff25f678;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/celera/projects/Sunnyvale/software/REGULATIONwaltz/verilog10/sim_REGULATIONwaltz_ROW17.v";
