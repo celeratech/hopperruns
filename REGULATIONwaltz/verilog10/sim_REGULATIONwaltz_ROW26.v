@@ -4,9 +4,9 @@ module FORCE_REGULATIONwaltz (GND,tmi,MUDG,MUDV,CELG59462,CELV96848,CELSUB40948,
   inout [4:0] tmi;
   output  MUDG;
   output  MUDV;
-  input  CELG59462;
-  input  CELV96848;
-  input  CELSUB40948;
+  output  CELG59462;
+  output  CELV96848;
+  output  CELSUB40948;
   output  IP_0d0816e7;
   output  IP_70133221;
   output  IP_96171c99;
