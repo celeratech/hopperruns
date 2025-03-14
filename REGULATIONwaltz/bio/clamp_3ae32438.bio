@@ -39,7 +39,7 @@ user,clamp_voltage_high,3.000V
 description,Clamp Voltage
 user,clamp_imax,0.200mA
 description,Clamp Maximum Output current
-user,REF,1.0V
+user,REF,0.9V
 description,CNESTO Generator revision
 user,NESTO,0.3.4
 description,CNESTO Generator revision
@@ -212,7 +212,7 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,TBD
+#define,PROJECTreference,0.9
 #define,PROJECTsupply,5
 #define,TaRoom,25
 #define,ground,0.0
@@ -254,8 +254,8 @@ revision,vis15cbdiesize,0p1
 sub_area,STONEmainhclamp,100
 sub_area,STONEhclamp500u,700
 sub_area,STONEclamptrim,300
-sub_area,feedbackdivider_clamp_3ae32438_FBD,15371
-generate_area,clamp_3ae32438,16471
+sub_area,feedbackdivider_clamp_3ae32438_FBD,16080
+generate_area,clamp_3ae32438,17180
 //**********************************************
 //Pinorder Parameters
 *******************************************

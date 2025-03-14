@@ -51,6 +51,11 @@ module vpwl_0x0_10d0ux0_11d0ux0d9 (PLUS,MINUS);
   output  MINUS;
 endmodule
 
+module vpwl_0x0_10d0ux0_8d0mx1d8 (PLUS,MINUS);
+  output  PLUS;
+  output  MINUS;
+endmodule
+
 module vpwl_0x0_10d999ux0_11d0ux5 (PLUS,MINUS);
   inout  PLUS;
   inout  MINUS;
@@ -61,16 +66,16 @@ input GND;
 endmodule 
 
 // ------------------------ Module Verilog ---------------
-module FORCE_REGULATIONwaltz (GND, MUDG, MUDV, CELG59462, CELV96848, CELSUB40948, IP_70133221, IP_96171c99, IP_df440ad3, IP_f5d94fdd, IP_fa70de6e, kelvin_MUDG, FB_REGULATION, REF_REGULATION, VSS_REGULATION, enable_regulation);
+module FORCE_REGULATIONwaltz (GND, MUDG, MUDV, CELG59462, CELV96848, CELSUB40948, IP_0d0816e7, IP_70133221, IP_96171c99, IP_f5d94fdd, IP_fa70de6e, kelvin_MUDG, FB_REGULATION, REF_REGULATION, VSS_REGULATION, enable_regulation);
 output  GND;
 output  MUDG;
 output  MUDV;
 output  CELG59462;
 output  CELV96848;
 output  CELSUB40948;
+output  IP_0d0816e7;
 output  IP_70133221;
 output  IP_96171c99;
-output  IP_df440ad3;
 output  IP_f5d94fdd;
 output  IP_fa70de6e;
 output  kelvin_MUDG;
@@ -132,6 +137,12 @@ vdc_0 VI__MUDV (
 .MINUS(MUDV)
 );
 
+SIMbias XIP_0d0816e7 (
+.V(CELV96848),
+.IN(noconn_IN),
+.IP(IP_0d0816e7)
+);
+
 SIMbias XIP_70133221 (
 .V(CELV96848),
 .IN(noconn_IN),
@@ -142,12 +153,6 @@ SIMbias XIP_96171c99 (
 .V(CELV96848),
 .IN(noconn_IN),
 .IP(IP_96171c99)
-);
-
-SIMbias XIP_df440ad3 (
-.V(CELV96848),
-.IN(noconn_IN),
-.IP(IP_df440ad3)
 );
 
 SIMbias XIP_f5d94fdd (
@@ -162,19 +167,9 @@ SIMbias XIP_fa70de6e (
 .IP(IP_fa70de6e)
 );
 
-vpwl_0x0_10d0ux0_11d0ux0 V_kelvin_MUDGx (
-.PLUS(net_66),
-.MINUS(GND)
-);
-
 vdc_0 VI__kelvin_MUDG (
 .PLUS(net_66),
 .MINUS(kelvin_MUDG)
-);
-
-vpwl_0x0_10d0ux0_11d0ux0 V_FB_REGULATIONx (
-.PLUS(net_67),
-.MINUS(GND)
 );
 
 vdc_0 VI__FB_REGULATION (
@@ -187,7 +182,7 @@ vpwl_0x0_10d0ux0_11d0ux0d9 V_REF_REGULATIONx (
 .MINUS(GND)
 );
 
-vpwl_0x0_10d0ux0_11d0ux5 V_VSS_REGULATIONx (
+vpwl_0x0_10d0ux0_8d0mx1d8 V_VSS_REGULATIONx (
 .PLUS(net_68),
 .MINUS(GND)
 );

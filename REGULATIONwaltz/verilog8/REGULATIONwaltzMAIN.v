@@ -26,6 +26,25 @@ module VESPAasmINPUT2 (o,i0,i1,Tstate,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
+//Celera:voltage2current_49e12b65
+//Celera Confidential Symbol Generator
+//Gain: 25, Direction: source, Iout Clamp: no
+//DFT:no, Accuracy: no, Input Stage Type: p
+module voltage2current_49e12b65 (SIMPV,CELSUB,enable_voltage2current,IP,ok_voltage2current,IOUT,VIN,global_voltage2current,
+CELG);
+input SIMPV;
+input CELSUB;
+input enable_voltage2current;
+input IP;
+output ok_voltage2current;
+output IOUT;
+input VIN;
+input global_voltage2current;
+input CELG;
+endmodule
+
+
+
 //Celera:clamp_3ae32438
 //Celera Confidential Symbol Generator
 //CLAMP:high 3.000V with  0.200mA Max shunt
@@ -133,25 +152,6 @@ endmodule
 
 
 
-//Celera:voltage2current_49e12b65
-//Celera Confidential Symbol Generator
-//Gain: 25, Direction: source, Iout Clamp: no
-//DFT:no, Accuracy: no, Input Stage Type: p
-module voltage2current_49e12b65 (SIMPV,CELSUB,enable_voltage2current,IP,ok_voltage2current,IOUT,VIN,global_voltage2current,
-CELG);
-input SIMPV;
-input CELSUB;
-input enable_voltage2current;
-input IP;
-output ok_voltage2current;
-output IOUT;
-input VIN;
-input global_voltage2current;
-input CELG;
-endmodule
-
-
-
 //Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
 
 
@@ -188,7 +188,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltzMAIN (VC, MUDG, MUDV, REFINT, CZCOMP_0, CZCOMP_1, CZCOMP_2, RZCOMP_0, RZCOMP_1, RZCOMP_2, CELG59462, CELV96848, go_driver, GAINCOMP_0, GAINCOMP_1, CELSUB40948, DCMRIPPLE_0, DCMRIPPLE_1, IP_70133221, IP_96171c99, IP_df440ad3, IP_f5d94fdd, IP_fa70de6e, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, CELREF_e3b0c442, enable_regulation);
+module REGULATIONwaltzMAIN (VC, MUDG, MUDV, REFINT, CZCOMP_0, CZCOMP_1, CZCOMP_2, RZCOMP_0, RZCOMP_1, RZCOMP_2, CELG59462, CELV96848, go_driver, GAINCOMP_0, GAINCOMP_1, CELSUB40948, DCMRIPPLE_0, DCMRIPPLE_1, IP_0d0816e7, IP_70133221, IP_96171c99, IP_f5d94fdd, IP_fa70de6e, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, CELREF_e3b0c442, enable_regulation);
 inout  VC;
 inout  MUDG;
 input  MUDV;
@@ -207,9 +207,9 @@ input  GAINCOMP_1;
 input  CELSUB40948;
 input  DCMRIPPLE_0;
 input  DCMRIPPLE_1;
+input  IP_0d0816e7;
 input  IP_70133221;
 input  IP_96171c99;
-input  IP_df440ad3;
 input  IP_f5d94fdd;
 input  IP_fa70de6e;
 inout  IREF_DRIVER;
@@ -257,9 +257,21 @@ VESPAasmINPUT2 XU12 (
 .CELSUB40948(CELSUB40948)
 );
 
-clamp_3ae32438 XU3 (
-.IN(VC),
+voltage2current_49e12b65 XU3 (
 .IP(IP_f5d94fdd),
+.VIN(VC),
+.CELG(CELG59462),
+.IOUT(IREF_DRIVER),
+.SIMPV(MUDV),
+.CELSUB(CELSUB40948),
+.ok_voltage2current(net_177),
+.enable_voltage2current(enable_regulation),
+.global_voltage2current(tl0)
+);
+
+clamp_3ae32438 XU7 (
+.IN(VC),
+.IP(IP_0d0816e7),
 .CELG(CELG59462),
 .SHUNT(MUDG),
 .SIMPV(MUDV),
@@ -321,16 +333,11 @@ gm_2062a8ef Xgm1 (
 .trim_gm_positive({a0,a0,a0,a0,a0,a0,a0})
 );
 
-voltage2current_49e12b65 Xv2i1 (
-.IP(IP_df440ad3),
-.VIN(VC),
-.CELG(CELG59462),
-.IOUT(IREF_DRIVER),
-.SIMPV(MUDV),
-.CELSUB(CELSUB40948),
-.ok_voltage2current(net_177),
-.enable_voltage2current(enable_regulation),
-.global_voltage2current(tl0)
+PEBBLEtielo XtieLo (
+.G(CELG59462),
+.V(CELV96848),
+.q(tl0),
+.SUB(CELSUB40948)
 );
 
 PEBBLEtielo XDRMNOTL (
