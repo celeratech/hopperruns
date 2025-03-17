@@ -24,7 +24,12 @@ module vpwl_0x0_10d0ux30_10d0mx30 (PLUS,MINUS);
   output  MINUS;
 endmodule
 
-module vpwl_0x0_11ux0_11d001ux5 (PLUS,MINUS);
+module vpwl_0x0 (PLUS,MINUS);
+  output  PLUS;
+  output  MINUS;
+endmodule
+
+module vpwl_0x0_10d0ux0_11d0ux5 (PLUS,MINUS);
   output  PLUS;
   output  MINUS;
 endmodule
@@ -67,14 +72,16 @@ input GND;
 endmodule 
 
 // ------------------------ Module Verilog ---------------
-module FORCE_SERVICEwaltz (EN, IN, GND, VCC, BIAS, porb, kelvin_VCC, IP_4a72660b, kelvin_GNDservice);
+module FORCE_SERVICEwaltz (EN, IN, GND, VCC, BIAS, CELG59462, CELV96848, kelvin_VCC, CELSUB40948, IP_4a72660b, kelvin_GNDservice);
 output  EN;
 output  IN;
 inout  GND;
 inout  VCC;
 output  BIAS;
-  input  porb;
+output  CELG59462;
+output  CELV96848;
 output  kelvin_VCC;
+output  CELSUB40948;
 output  IP_4a72660b;
 output  kelvin_GNDservice;
 
@@ -101,8 +108,13 @@ vpwl_0x0_10d0ux30_10d0mx30 V_INx (
 .MINUS(GND)
 );
 
-vpwl_0x0_11ux0_11d001ux5 XPORB (
-.PLUS(porb),
+vpwl_0x0 XCELG (
+.PLUS(CELG59462),
+.MINUS(GND)
+);
+
+vpwl_0x0_10d0ux0_11d0ux5 XCELV (
+.PLUS(CELV96848),
 .MINUS(GND)
 );
 
@@ -138,6 +150,11 @@ vdc_0 VI__VCC (
 
 vpwl_0x0_10d0ux0_11d0ux6 V_BIASx (
 .PLUS(net_59),
+.MINUS(GND)
+);
+
+vpwl_0x0 XCELSUB (
+.PLUS(CELSUB40948),
 .MINUS(GND)
 );
 
