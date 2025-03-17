@@ -1,0 +1,443 @@
+* Z:\celera\projects\Simplis\playjoseph\WALTZ\301d\verification\sim_REGULATIONwaltz.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+ 
+*BrickToolsVersion:0.112  projname:REGULATIONwaltz
+.node_map REF_REGULATION 29
+.node_map VSS_REGULATION 27
+.node_map IREF_DRIVER 21
+.node_map enable_regulation 24
+.node_map MUDG 22
+.node_map MUDV 20
+.node_map FB_REGULATION 28
+.node_map ok_regulation 26
+
+.node_map GND 30
+.node_map go_driver 23
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 8.05m  0
+.globalvar REF=1.0
+.globalvar TEMP=25
+.globalvar VIN=5
+.globalvar tdext_khz=1000
+.globalvar  celera_i2c_frequency_KHz=100
+
+
+X$REGULATIONwaltz 20 22 22 24 29 21 28 23 27 26 REGULATIONwaltz
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+** From Z:\celera\projects\Simplis\playjoseph\WALTZ\301d\verification\FORCE_REGULATIONwaltz.sxcmp
+
+
+** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ2\301d\design\REGULATIONwaltz.sxcmp
+.subckt REGULATIONwaltz 130 131 132 133 134 135 136 137 138 139
+*#hierarchy
+.node_map GAINCOMP$0 66
+.node_map GAINCOMP$1 67
+.node_map GAINCOMP$2 68
+.node_map BUS1$10 124
+.node_map GAINCOMP$3 69
+.node_map BUS1$11 125
+.node_map GAINCOMP$4 70
+.node_map DCMRIPPLE$0 50
+.node_map BUS1$12 126
+.node_map GAINCOMP$5 71
+.node_map DCMRIPPLE$1 51
+.node_map BUS1$13 127
+.node_map GAINCOMP$6 72
+.node_map DCMRIPPLE$2 52
+.node_map BUS1$14 128
+.node_map GAINCOMP$7 73
+.node_map DCMRIPPLE$3 53
+.node_map BUS1$15 129
+.node_map GAINCOMP$8 74
+.node_map DCMRIPPLE$4 54
+.node_map GAINCOMP$9 75
+.node_map DCMRIPPLE$5 55
+.node_map DCMRIPPLE$6 56
+.node_map HIJACK_VSS_REGULATION 143
+.node_map DCMRIPPLE$7 57
+.node_map DCMRIPPLE$8 58
+.node_map DCMRIPPLE$9 59
+.node_map BUS1$3 117
+.node_map BUS1$4 118
+.node_map BUS1$5 119
+.node_map BUS1$6 120
+.node_map BUS1$7 121
+.node_map hijack_enable_regulation 141
+.node_map BUS1$8 122
+.node_map VC 142
+.node_map BUS1$9 123
+.node_map VSS_REGULATION 138
+.node_map REF_REGULATION 134
+.node_map IREF_DRIVER 135
+.node_map enable_regulation 133
+.node_map RZCOMP$0 82
+.node_map REFINT 140
+.node_map MUDG 131
+.node_map RZCOMP$1 83
+.node_map RZCOMP$2 84
+.node_map vc_testmode 114
+.node_map RZCOMP$3 85
+.node_map RZCOMP$4 86
+.node_map RZCOMP$5 87
+.node_map RZCOMP$6 88
+.node_map RZCOMP$7 89
+.node_map CZCOMP$10 108
+.node_map RZCOMP$8 90
+.node_map CZCOMP$11 109
+.node_map RZCOMP$9 91
+.node_map CZCOMP$12 110
+.node_map CZCOMP$13 111
+.node_map CZCOMP$14 112
+.node_map CZCOMP$15 113
+.node_map MUDV 130
+.node_map DCMRIPPLE$10 60
+.node_map GAINCOMP$10 76
+.node_map DCMRIPPLE$11 61
+.node_map GAINCOMP$11 77
+.node_map DCMRIPPLE$12 62
+.node_map ok_regulation 139
+.node_map FB_REGULATION 136
+.node_map GAINCOMP$12 78
+.node_map DCMRIPPLE$13 63
+.node_map GAINCOMP$13 79
+.node_map DCMRIPPLE$14 64
+.node_map GAINCOMP$14 80
+.node_map DCMRIPPLE$15 65
+.node_map CZCOMP$0 98
+.node_map GAINCOMP$15 81
+.node_map kelvin_MUDG 132
+.node_map CZCOMP$1 99
+.node_map CZCOMP$2 100
+.node_map RZCOMP$10 92
+.node_map CZCOMP$3 101
+.node_map RZCOMP$11 93
+.node_map CZCOMP$4 102
+.node_map RZCOMP$12 94
+.node_map vss_testmode 115
+.node_map CZCOMP$5 103
+.node_map RZCOMP$13 95
+.node_map vss_status 116
+.node_map CZCOMP$6 104
+.node_map RZCOMP$14 96
+.node_map CZCOMP$7 105
+.node_map RZCOMP$15 97
+.node_map CZCOMP$8 106
+.node_map go_driver 137
+.node_map CZCOMP$9 107
+X$datamap1 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 datamap0 vars: datamap_function='function' datamap_name='REGULATIONtestmode' datamap_description='REGUALTION_Configure_DEBUG_controls' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='yes' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='VC_override' datamap_function0_off='disable' datamap_function0_on='enable' datamap_function1='VSS_override' datamap_function1_off='disable' datamap_function1_on='enable' datamap_function2='VSS_status' datamap_function2_off='Low' datamap_function2_on='High' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=11.0 datamap_enabletime2=11.0 datamap_enabletime3=11.0 datamap_enabletime4=11.0 datamap_enabletime5=11.0 datamap_enabletime6=11.0 datamap_enabletime7=11.0 datamap_enabletime8=11.0 datamap_vmax=6
+X$datamap2 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 datamap0 vars: datamap_function='code' datamap_name='REGULATIONripple' datamap_description='Ouptu_ripple_gain' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_register_selfreset='no' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='yes' datamap_por01='0' datamap_por00='1' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='0mV' datamap_code1='20mV' datamap_code2='50mV' datamap_code3='100mV' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='1' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='1' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='1' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='1' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='1' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='1' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='1' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='1' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=11.0 datamap_enabletime2=11.0 datamap_enabletime3=11.0 datamap_enabletime4=11.0 datamap_enabletime5=11.0 datamap_enabletime6=11.0 datamap_enabletime7=11.0 datamap_enabletime8=11.0 datamap_vmax=6
+X$datamap3 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 datamap0 vars: datamap_function='code' datamap_name='REGULATIONczcomp' datamap_description='Compensation_Capacitor' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_register_selfreset='no' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='yes' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='5pF' datamap_code1='10pF' datamap_code2='15pF' datamap_code3='20pF' datamap_code4='25pF' datamap_code5='30pF' datamap_code6='35pF' datamap_code7='40pF' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='0' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='0' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='0' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='0' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='0' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='0' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='0' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='0' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=11.0 datamap_enabletime2=11.0 datamap_enabletime3=11.0 datamap_enabletime4=11.0 datamap_enabletime5=11.0 datamap_enabletime6=11.0 datamap_enabletime7=11.0 datamap_enabletime8=11.0 datamap_vmax=6
+X$datamap4 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 datamap0 vars: datamap_function='code' datamap_name='REGULATIONrzcomp' datamap_description='Compensation_Resistor' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_register_selfreset='no' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='yes' datamap_por01='0' datamap_por00='3' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='100k' datamap_code1='200k' datamap_code2='300k' datamap_code3='400k' datamap_code4='500k' datamap_code5='600k' datamap_code6='700k' datamap_code7='800k' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='0' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='0' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='0' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='0' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='0' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='0' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='0' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='0' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=3 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=11.0 datamap_enabletime2=11.0 datamap_enabletime3=11.0 datamap_enabletime4=11.0 datamap_enabletime5=11.0 datamap_enabletime6=11.0 datamap_enabletime7=11.0 datamap_enabletime8=11.0 datamap_vmax=6
+X$datamap5 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 datamap0 vars: datamap_function='code' datamap_name='REGULATIONgaincomp' datamap_description='Compensation_Gain_resistance' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_register_selfreset='no' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='yes' datamap_por01='0' datamap_por00='1' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='4000K' datamap_code1='5000K' datamap_code2='6000K' datamap_code3='8000K' datamap_code4='25pF' datamap_code5='30pF' datamap_code6='35pF' datamap_code7='40pF' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='0' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='0' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='0' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='0' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='0' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='0' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='0' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='0' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=11.0 datamap_enabletime2=11.0 datamap_enabletime3=11.0 datamap_enabletime4=11.0 datamap_enabletime5=11.0 datamap_enabletime6=11.0 datamap_enabletime7=11.0 datamap_enabletime8=11.0 datamap_vmax=6
+X$DEBUG 133 138 114 115 116 139 140 142 136 137 141 135 143 REGULATIONwaltzDEBUG
+X$MAIN 130 141 136 134 143 98 99 100 140 82 83 84 142 66 67 137 132 139 131 135 50 51 REGULATIONwaltzMAIN
+X$U1 137 pinprobe vars: pinprobe_description='Pulse_Skip_Active_Signal' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U10 131 pinprobe vars: pinprobe_description='Regulation_Ground' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U11 49 brick vars: ibias=0 drm=1 dft=1 global=0 brick=0 revision=0 description='REGULATION_Brick' description1='Current_Mode_control_Regulation' description2='Slope_compensation_enabled' description3='Factory_option_for_Compensation' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U2 130 pinprobe vars: pinprobe_description='CORE_Supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U3 134 pinprobe vars: pinprobe_description='1V_Reference' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
+X$U4 133 pinprobe vars: pinprobe_description='Enable' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 132 pinprobe vars: pinprobe_description='Regulation_Ground' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd'
+X$U6 136 pinprobe vars: pinprobe_description='Feedback_Voltage' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U7 138 pinprobe vars: pinprobe_description='Softstart_Voltage' pinprobe_mode='input' pinprobe_input='service' pinprobe_output='tbd'
+X$U8 139 pinprobe vars: pinprobe_description='REGULATION_brick_enabled_and_Ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 135 pinprobe vars: pinprobe_description='Current_Limit_Reference_Current' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd'
+.ends REGULATIONwaltz
+
+** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ2\301d\design\REGULATIONwaltzDEBUG.sxcmp
+.subckt REGULATIONwaltzDEBUG 65 66 67 68 69 70 71 72 73 74 75 76 77
+*#hierarchy
+.node_map vss_high 81
+.node_map FBR 79
+.node_map HIJACK_VSS_REGULATION 77
+.node_map BUS1$0 62
+.node_map BUS1$1 63
+.node_map BUS1$2 64
+.node_map hijack_enable_regulation 75
+.node_map VC 72
+.node_map VSS_REGULATION 66
+.node_map IREF_DRIVER 76
+.node_map enable_regulation 65
+.node_map REFINT 71
+.node_map vc_testmode 67
+.node_map FB_REGULATION 73
+.node_map ok_regulation 70
+.node_map vss_testmode 68
+.node_map vss_status 69
+.node_map go_driver 74
+.node_map vss_low 80
+.node_map vss_statusBAR 78
+X$U1 75 pinprobe vars: pinprobe_description='Regulation_Module_enable'
+X$U10 72 79 67 switchtswitch vars: switch_type='tswitch' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
+X$U11 65 75 dfthijack vars: dfthijack_name='HIJACKenable_regulation' dfthijack_description='Hijack_Regulation_Enable' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$U12 73 pinprobe vars: pinprobe_description='Internal_Feedback_Voltage'
+X$U13 66 pinprobe vars: pinprobe_description='SOFTSTART_Input_reference' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U14 66 77 68 switchtransmission vars: switch_type='transmission' switch_polarity='invert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
+X$U15 59 77 80 switchpulldown vars: switch_type='pulldown' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
+X$U16 60 77 81 switchpullup vars: switch_type='pullup' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
+X$U17 77 pinprobe vars: pinprobe_description='Regulation_Module_Softstart' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U18 75 70 61 VESPAdftpulse
+X$U19 68 80 78 VESPAasmINPUT1
+X$U2 61 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONstartup' dftprobe_description='Regulation_Startup_Time' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$U20 68 81 69 VESPAasmINPUT1
+X$U21 69 78 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U22 72 pinprobe vars: pinprobe_description='VC_50mv_Switching_Threshold'
+X$U23 79 73 56 57 58 62 63 64 resistor vars: resistor_control='resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='text' resistor_datasheet_adjust_description='text' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=75 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=0 resistor_adjust1=0 resistor_adjust2=0 resistor_adjust3=0 resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=6 resistor_imax=1m
+X$U24 69 pinprobe vars: pinprobe_description='Regulation_Module_enable'
+X$U25 68 pinprobe vars: pinprobe_description='Regulation_Module_Softstart' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U26 74 pinprobe vars: pinprobe_description='VC_50mv_Switching_Threshold'
+X$U27 67 pinprobe vars: pinprobe_description='Regulation_Module_enable'
+X$U28 76 pinprobe vars: pinprobe_description='Highside_Current_Limit_Reference'
+X$U3 70 pinprobe vars: pinprobe_description='Regulation_ready_flag'
+X$U35 71 pinprobe vars: pinprobe_description='Regulation_Reference_Voltage'
+X$U4 55 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='DEBUG' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U5 65 pinprobe vars: pinprobe_description='Enable_regulation_module'
+X$U6 71 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONref' dftprobe_description='Regulation_Reference_Voltage' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U7 76 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONiref' dftprobe_description='Regulation_Current_Limit_Reference_Current' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$U8 74 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONgo' dftprobe_description='Regulation_Go_Driver_Switching_Flag' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$U9 72 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONvc' dftprobe_description='Regulation_VC_Voltage' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+.ends REGULATIONwaltzDEBUG
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAdftpulse.sxcmp
+.subckt VESPAdftpulse 7 8 9
+*#hierarchy
+.node_map start 7
+.node_map stop 8
+.node_map pulse 9
+X$U11 7 pinprobe vars: pinprobe_description='DFT_timer_start_input'
+X$U15 8 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U17 8 pinprobe vars: pinprobe_description='DFT_timer_stop_input'
+X$U52 7 4 6 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U53 4 5 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U55 9 5 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U8 9 pinprobe vars: pinprobe_description='DFT_Timer_pulse'
+.ends VESPAdftpulse
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT1.sxcmp
+.subckt VESPAasmINPUT1 5 6 7
+*#hierarchy
+.node_map Tstate 5
+.node_map i0 7
+.node_map o 6
+X$U1 5 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 7 pinprobe vars: pinprobe_description='input1'
+X$U3 6 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 5 4 7 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U5 4 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+.ends VESPAasmINPUT1
+
+** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ2\301d\design\REGULATIONwaltzMAIN.sxcmp
+.subckt REGULATIONwaltzMAIN 161 162 163 164 165 110 111 112 166 126 127 128 167 142 143 168 169 170 171 172 94 95
+*#hierarchy
+.node_map GAINCOMP$0 142
+.node_map GAINCOMP$1 143
+.node_map GAINCOMP$2 144
+.node_map GAINCOMP$3 145
+.node_map GAINCOMP$4 146
+.node_map DCMRIPPLE$0 94
+.node_map GAINCOMP$5 147
+.node_map DCMRIPPLE$1 95
+.node_map GAINCOMP$6 148
+.node_map DCMRIPPLE$2 96
+.node_map GAINCOMP$7 149
+.node_map DCMRIPPLE$3 97
+.node_map GAINCOMP$8 150
+.node_map DCMRIPPLE$4 98
+.node_map GAINCOMP$9 151
+.node_map DCMRIPPLE$5 99
+.node_map DCMRIPPLE$6 100
+.node_map DCMRIPPLE$7 101
+.node_map DCMRIPPLE$8 102
+.node_map BUS1$0 158
+.node_map DCMRIPPLE$9 103
+.node_map BUS1$1 159
+.node_map BUS1$2 160
+.node_map okcomp 173
+.node_map VC 167
+.node_map okgm 175
+.node_map okv2i 177
+.node_map VSS_REGULATION 165
+.node_map REF_REGULATION 164
+.node_map okref 174
+.node_map IREF_DRIVER 172
+.node_map enable_regulation 162
+.node_map RZCOMP$0 126
+.node_map MUDG 171
+.node_map REFINT 166
+.node_map RZCOMP$1 127
+.node_map RZCOMP$2 128
+.node_map RZCOMP$3 129
+.node_map RZCOMP$4 130
+.node_map RZCOMP$5 131
+.node_map RZCOMP$6 132
+.node_map RZCOMP$7 133
+.node_map RZCOMP$8 134
+.node_map CZCOMP$10 120
+.node_map RZCOMP$9 135
+.node_map CZCOMP$11 121
+.node_map CZCOMP$12 122
+.node_map CZCOMP$13 123
+.node_map CZCOMP$14 124
+.node_map CZCOMP$15 125
+.node_map MUDV 161
+.node_map TAP100MV 176
+.node_map DCMRIPPLE$10 104
+.node_map GAINCOMP$10 152
+.node_map DCMRIPPLE$11 105
+.node_map GAINCOMP$11 153
+.node_map DCMRIPPLE$12 106
+.node_map ok_regulation 170
+.node_map FB_REGULATION 163
+.node_map GAINCOMP$12 154
+.node_map DCMRIPPLE$13 107
+.node_map GAINCOMP$13 155
+.node_map DCMRIPPLE$14 108
+.node_map GAINCOMP$14 156
+.node_map DCMRIPPLE$15 109
+.node_map GAINCOMP$15 157
+.node_map CZCOMP$0 110
+.node_map kelvin_MUDG 169
+.node_map CZCOMP$1 111
+.node_map RZCOMP$10 136
+.node_map CZCOMP$2 112
+.node_map RZCOMP$11 137
+.node_map CZCOMP$3 113
+.node_map RZCOMP$12 138
+.node_map CZCOMP$4 114
+.node_map RZCOMP$13 139
+.node_map CZCOMP$5 115
+.node_map RZCOMP$14 140
+.node_map CZCOMP$6 116
+.node_map RZCOMP$15 141
+.node_map CZCOMP$7 117
+.node_map CZCOMP$8 118
+.node_map go_driver 168
+.node_map CZCOMP$9 119
+X$comparator1 173 161 174 168 167 78 176 94 95 77 comparatorctlpins vars: comparator_model='comparator' comparator_hysteresismode='pin' comparator_edge='rising' comparator_speed='fast' comparator_type='p' comparator_deglitch='no' comparator_lowiq='no' comparator_datasheet_name='DCM_Output_Rripple' comparator_datasheet_description='Regulation_output_ripple_in_DCM_mode' bgcomp_accuracy='no' bgcomp_outputanalog='supply' bgcomp_note1='Usage' bgcomp_outputdigital='no' bgcomp_trim_name='text' bgcomp_trim_description='text' bgcomp_enable='yes' comparator_dft='no' comparatorsupply_reference='ground' comparatorsupply_threshold='50' comparatorsupply_edge='falling' comparatorsupply_output='analog' comparatorsupply_enable='analog' comparator_hysteresis=20 comparator_lowiqpor=0 bgcomp_threshold=1.2 bgcomp_maxcelpos=6 bgcomp_maxvin=6 comparator_vmax=6
+X$COMPENSATION 110 111 112 126 127 128 142 143 167 162 169 REGULATIONwaltzCOMPENSATION
+X$gm1 161 163 167 165 87 166 162 88 89 175 gm vars: gm_type='p' gm_override='inp' gm_output='pushpull' gm_clamp_high='no' gm_clamp_low='no' gm_ok='yes' gm_lowiq='no' gm_lowiq_name='text' gm_lowiq_description='text' gm_dft='no' gm_accuracy='system' gm_trim_name='GMaccuracy' gm_trim_description='Set_Regulation_Loop_Offset_Voltage' gm_gain=100m gm_lowiq_por=0 gm_vmax=6
+X$pinprobe1 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 pinprobeBUS vars: pinprobe_description='Zero_capacitor_compensation' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=3
+X$pinprobe2 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 pinprobeBUS vars: pinprobe_description='Zero_resistor_compensation' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=3
+X$pinprobe3 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 pinprobeBUS vars: pinprobe_description='Gain_compensation' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=2
+X$pinprobe4 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 pinprobeBUS vars: pinprobe_description='DCM_Ouptut_ripple' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=2
+X$U1 75 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='text' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U11 90 172 162 switchideal vars: switch_type='pulldown' switch_polarity='invert' switch_model='ideal' switch_ron=10K switch_pulldownvmax=6 switch_vmax=6
+X$U12 173 170 175 177 VESPAasmINPUT2
+X$U14 165 pinprobe vars: pinprobe_description='Internal_Softstart_Ramp_Voltage' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U16 169 pinprobe vars: pinprobe_description='Regulation_Signal_Ground' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U2 162 pinprobe vars: pinprobe_description='Enable_Regulation_Module' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U21 176 85 84 83 82 81 80 79 166 169 86 resistordivider vars: resistordivider_disconnect='no' resistordivider_disconnect_tap='top' resistordivider_dft='no' resistordivider_rtotal=1k resistordivider_vresistortop=6 resistordivider_vmax=6 resistordivider_outputs=1 resistordivider_tap0=11.1 resistordivider_tap1=60 resistordivider_tap2=30 resistordivider_tap3=40 resistordivider_tap4=50 resistordivider_tap5=60 resistordivider_tap6=70 resistordivider_tap7=80
+X$U22 167 pinprobe vars: pinprobe_description='VC_50mv_Switching_Threshold' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U23 166 pinprobe vars: pinprobe_description='Regulation_Reference_Voltage' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U25 168 pinprobe vars: pinprobe_description='VC_50mv_Switching_Threshold' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U26 172 pinprobe vars: pinprobe_description='Highside_Current_Limit_Reference' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U29 171 pinprobe vars: pinprobe_description='Ground' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U3 167 162 172 161 177 voltage2current vars: voltage2current_direction='source' voltage2current_iout_clamp='no' voltage2current_dft='no' voltage2current_accuracy='no' voltage2current_trim_name='text' voltage2current_trim_description='text' voltage2current_gain='25' voltage2current_iout=200 voltage2current_vmax=6
+X$U34 169 172 91 92 93 158 159 160 resistor  vars: resistor_control='resistor' resistor_datasheet_accuracy_name='VCGAIN' resistor_datasheet_accuracy_description='Voltage_Gain_Resistor' resistor_adjust_control='factory' resistor_datasheet_adjust_name='VCGAIN' resistor_datasheet_adjust_description='Voltage_Control_Node_Gain_Resistance' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=1k resistor_accurate_value=5k resistor_accurate_lsb=5 resistor_adjust0=4k resistor_adjust1=4.5k resistor_adjust2=5k resistor_adjust3=5.5k resistor_adjust4=6k resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=2 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=6 resistor_imax=10u
+X$U4 161 pinprobe vars: pinprobe_description='Core_Supply_Voltage' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U5 163 pinprobe vars: pinprobe_description='Internal_Feedback_Voltage' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U6 164 pinprobe vars: pinprobe_description='1V_Reference_Voltage' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U7 171 167 162 161 clamp  vars: clamp_type='high' clamp_accuracy='yes' clamp_trim_name='VCclampACCURACY' clamp_trim_description='Voltage_Control_Node_Clamp_Accuracy_to_3V' clamp_dft='no' clamp_voltage_high=3 clamp_voltage_low=500m count_1=0 clamp_imax=200m count_2=0 clamp_vmax=6
+X$U8 170 pinprobe vars: pinprobe_description='Regulation_OK' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U9 161 174 164 166 162 76 vbuffer vars: vbuffer_accuracy='system' vbuffer_datasheet_name='REFbufferACCURACY' vbuffer_datasheet_description='FB_Reference_buffer_Accuracy' vbuffer_type='p' vbuffer_inputbuffer='no' vbuffer_drive='internal' vbuffer_gndsense='no' vbuffer_dft='no' vbuffer_gain=1 vbuffer_feedbackimpedance=1000 vbuffer_vmax=6
+.ends REGULATIONwaltzMAIN
+
+** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ2\301d\design\REGULATIONwaltzCOMPENSATION.sxcmp
+.subckt REGULATIONwaltzCOMPENSATION 37 38 39 53 54 55 69 70 88 89 90
+*#hierarchy
+.node_map GAINCOMP$0 69
+.node_map GAINCOMP$1 70
+.node_map GAINCOMP$2 71
+.node_map GAINCOMP$3 72
+.node_map GAINCOMP$4 73
+.node_map GAINCOMP$5 74
+.node_map GAINCOMP$6 75
+.node_map GAINCOMP$7 76
+.node_map GAINCOMP$8 77
+.node_map GAINCOMP$9 78
+.node_map BUS1$0 85
+.node_map BUS1$1 86
+.node_map BUS1$2 87
+.node_map VC 88
+.node_map VC0 91
+.node_map enable_regulation 89
+.node_map RZCOMP$0 53
+.node_map RZCOMP$1 54
+.node_map RZCOMP$2 55
+.node_map RZCOMP$3 56
+.node_map RZCOMP$4 57
+.node_map RZCOMP$5 58
+.node_map RZCOMP$6 59
+.node_map RZCOMP$7 60
+.node_map RZCOMP$8 61
+.node_map CZCOMP$10 47
+.node_map RZCOMP$9 62
+.node_map CZCOMP$11 48
+.node_map CZCOMP$12 49
+.node_map CZCOMP$13 50
+.node_map CZCOMP$14 51
+.node_map CZCOMP$15 52
+.node_map GAINCOMP$10 79
+.node_map GAINCOMP$11 80
+.node_map GAINCOMP$12 81
+.node_map GAINCOMP$13 82
+.node_map GAINCOMP$14 83
+.node_map GAINCOMP$15 84
+.node_map CZCOMP$0 37
+.node_map kelvin_MUDG 90
+.node_map CZCOMP$1 38
+.node_map RZCOMP$10 63
+.node_map CZCOMP$2 39
+.node_map RZCOMP$11 64
+.node_map CZCOMP$3 40
+.node_map RZCOMP$12 65
+.node_map CZCOMP$4 41
+.node_map RZCOMP$13 66
+.node_map CZCOMP$5 42
+.node_map RZCOMP$14 67
+.node_map CZCOMP$6 43
+.node_map RZCOMP$15 68
+.node_map CZCOMP$7 44
+.node_map CZCOMP$8 45
+.node_map CZCOMP$9 46
+X$CZCOMP 25 91 37 38 39 33 29 90 capacitoradj vars: capacitor_control='adjustable_capacitor' capacitor_datasheet_accurate_name='text' capacitor_datasheet_accurate_description='text' capacitor_adjust_control='pin' capacitor_datasheet_adjust_name='VCCAP' capacitor_datasheet_adjust_description='VC_Compensation_Capacitor' capacitor_kelvin='no' capacitor_type='tbd' capacitor_dft='no' capacitor_value=10 capacitor_accurate_value=1 capacitor_accurate_lsb=1 capacitor_adjust0=5 capacitor_adjust1=10 capacitor_adjust2=15 capacitor_adjust3=20 capacitor_adjust4=25 capacitor_adjust5=30 capacitor_adjust6=35 capacitor_adjust7=40 capacitor_adjust_por=7 capacitor_1=0 capacitor_vinitial=0 capacitor_0=0 capacitor_vmax=6 capacitor_maximumvoltage=6
+X$pinprobe1 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 pinprobeBUS vars: pinprobe_description='Zero_capacitor_compensation' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=3
+X$pinprobe2 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 pinprobeBUS vars: pinprobe_description='Zero_resistor_compensation' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=3
+X$pinprobe3 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 pinprobeBUS vars: pinprobe_description='Gain_compensation' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=2
+X$U1 22 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='text' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U16 90 pinprobe vars: pinprobe_description='Regulation_Signal_Ground' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U2 91 88 24 28 32 53 54 55 resistor vars: resistor_control='adjustable_resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='pin' resistor_datasheet_adjust_name='VCRES' resistor_datasheet_adjust_description='Voltage_Control_Node_Resistance' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=10 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=100 resistor_adjust1=200 resistor_adjust2=300 resistor_adjust3=400 resistor_adjust4=500 resistor_adjust5=600 resistor_adjust6=700 resistor_adjust7=800 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=6 resistor_imax=5u
+X$U27 26 91 85 86 87 34 30 90 capacitorfixed vars: capacitor_control='capacitor' capacitor_datasheet_accurate_name='text' capacitor_datasheet_accurate_description='text' capacitor_adjust_control='pin' capacitor_datasheet_adjust_name='VCCAP' capacitor_datasheet_adjust_description='VC_Compensation_Capacitor' capacitor_kelvin='no' capacitor_type='tbd' capacitor_dft='no' capacitor_value=30 capacitor_accurate_value=1 capacitor_accurate_lsb=1 capacitor_adjust0=15 capacitor_adjust1=20 capacitor_adjust2=24 capacitor_adjust3=30 capacitor_adjust4=35 capacitor_adjust5=40 capacitor_adjust6=45 capacitor_adjust7=50 capacitor_adjust_por=7 capacitor_1=0 capacitor_vinitial=0 capacitor_0=0 capacitor_vmax=6 capacitor_maximumvoltage=6
+X$U4 90 88 27 31 35 69 70 71 resistor vars: resistor_control='adjustable_resistor' resistor_datasheet_accuracy_name='VCGAIN' resistor_datasheet_accuracy_description='Voltage_Gain_Resistor' resistor_adjust_control='pin' resistor_datasheet_adjust_name='VCGAIN' resistor_datasheet_adjust_description='Voltage_Control_Node_Gain_Resistance' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=5k resistor_accurate_value=5k resistor_accurate_lsb=5 resistor_adjust0=4k resistor_adjust1=5k resistor_adjust2=6k resistor_adjust3=8k resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=1 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=6 resistor_imax=10u
+X$U6 89 pinprobe vars: pinprobe_description='Enable_REGULATION_brick' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+X$U7 23 88 89 switchpulldown vars: switch_type='pulldown' switch_polarity='invert' switch_model='celera' switch_ron=10K switch_pulldownvmax=6 switch_vmax=6
+X$U8 36 91 89 switchpulldown vars: switch_type='pulldown' switch_polarity='invert' switch_model='celera' switch_ron=10K switch_pulldownvmax=6 switch_vmax=6
+X$U9 88 pinprobe vars: pinprobe_description='Compensation_threshold' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd'
+.ends REGULATIONwaltzCOMPENSATION
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT2.sxcmp
+.subckt VESPAasmINPUT2 7 8 9 6
+*#hierarchy
+.node_map Tstate 6
+.node_map i0 7
+.node_map i1 9
+.node_map o 8
+X$U1 6 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 9 pinprobe vars: pinprobe_description='input1'
+X$U3 8 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 6 9 5 7 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U5 5 8 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U6 7 pinprobe vars: pinprobe_description='input0'
+.ends VESPAasmINPUT2
+
+.end
