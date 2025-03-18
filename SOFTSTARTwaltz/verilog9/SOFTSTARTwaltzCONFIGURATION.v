@@ -1,12 +1,10 @@
 // ------------------------ Module Definitions -----------
-//Verilog HDL for "Generate", "WRAPPER2" "functional"
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
 
 
-module WRAPPER2 ( i, o0, o1 );
+module STONEnoconn ( noconn );
 
-  inout o1;
-  inout o0;
-  inout  [1:0] i;
+  input noconn;
 endmodule
 
 
@@ -22,15 +20,13 @@ module PEBBLEtiehi ( q, G, SUB, V );
 endmodule
 
 
-//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+//Verilog HDL for "Generate", "WRAPPER1" "functional"
 
 
-module PEBBLEtielo ( q, G, SUB, V );
+module WRAPPER1 ( o, i );
 
-  input V;
-  output q;
-  input G;
-  input SUB;
+  input i;
+  output o;
 endmodule
 
 
@@ -46,10 +42,8 @@ output  softstart_1ms;
 // ------------------------ Wires ------------------------
 
 // ------------------------ Networks ---------------------
-WRAPPER2 WRAPPER2 (
-.i({a1,a0}),
-.o0(softstart_1ms),
-.o1(halfway)
+STONEnoconn XNCa1 (
+.noconn(a1)
 );
 
 PEBBLEtiehi XDRMNOTH (
@@ -59,11 +53,14 @@ PEBBLEtiehi XDRMNOTH (
 .SUB(CELSUB40948)
 );
 
-PEBBLEtielo XDRMNOTL (
-.G(CELG59462),
-.V(CELV96848),
-.q(a0),
-.SUB(CELSUB40948)
+WRAPPER1 halfway_WRAPPER (
+.i(a),
+.o(halfway)
+);
+
+WRAPPER1 softstart_1ms_WRAPPER (
+.i(a),
+.o(softstart_1ms)
 );
 
 endmodule
