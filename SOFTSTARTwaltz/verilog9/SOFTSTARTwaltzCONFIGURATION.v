@@ -1,13 +1,4 @@
 // ------------------------ Module Definitions -----------
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
 //Verilog HDL for "Generate", "WRAPPER2" "functional"
 
 
@@ -43,12 +34,8 @@ output  softstart_1ms;
 // ------------------------ Wires ------------------------
 
 // ------------------------ Networks ---------------------
-STONEnoconn XNCa0 (
-.noconn(a0)
-);
-
 WRAPPER2 WRAPPER2 (
-.i(net_0),
+.i(a0),
 .o0(softstart_1ms),
 .o1(halfway)
 );
