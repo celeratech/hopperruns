@@ -11,6 +11,18 @@ module PEBBLEtiehi ( q, G, SUB, V );
 endmodule
 
 
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 //Verilog HDL for "Generate", "WRAPPER1" "functional"
 
 
@@ -40,8 +52,15 @@ PEBBLEtiehi XDRMNOTH (
 .SUB(CELSUB40948)
 );
 
+PEBBLEtielo XDRMNOTL (
+.G(CELG59462),
+.V(CELV96848),
+.q(a0),
+.SUB(CELSUB40948)
+);
+
 WRAPPER1 halfway_WRAPPER (
-.i(a1),
+.i(a0),
 .o(halfway)
 );
 
