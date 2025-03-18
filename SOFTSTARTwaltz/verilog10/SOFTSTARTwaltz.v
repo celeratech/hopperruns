@@ -1,10 +1,10 @@
 // ------------------------ Module Definitions -----------
 module SOFTSTARTwaltzCONFIGURATION (halfway,CELG59462,CELV96848,CELSUB40948,softstart_1ms);
-  output  halfway;
+  input  halfway;
   input  CELG59462;
   input  CELV96848;
   input  CELSUB40948;
-  output  softstart_1ms;
+  input  softstart_1ms;
 endmodule
 
 module SOFTSTARTwaltzDEBUG (SS,CELG59462,CELV96848,dft_clock,CELSUB40948,enable_brick,done_softstart,enable_softstart,hijack_enable_brick,hijack_enable_softstart);
