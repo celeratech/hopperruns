@@ -52,15 +52,6 @@ module REGULATIONwaltzMAIN (VC,MUDG,MUDV,REFINT,CZCOMP_0,CZCOMP_1,CZCOMP_2,RZCOM
   input  enable_regulation;
 endmodule
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
 //Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
 
 
@@ -70,6 +61,29 @@ module PEBBLEtielo ( q, G, SUB, V );
   output q;
   input G;
   input SUB;
+endmodule
+
+
+//Verilog HDL for "Generate", "WRAPPER13" "functional"
+
+
+module WRAPPER13 ( i, o0, o1, o2, o3, o4, o5, o6, o7, o8, o9, o12, o11, o10
+);
+
+  inout o9;
+  inout o7;
+  inout o5;
+  inout o10;
+  inout o12;
+  inout o4;
+  inout o6;
+  inout o1;
+  inout o0;
+  inout o3;
+  inout  [12:0] i;
+  inout o11;
+  inout o8;
+  inout o2;
 endmodule
 
 
@@ -151,15 +165,28 @@ REGULATIONwaltzMAIN XMAIN (
 .enable_regulation(net_141)
 );
 
-STONEnoconn XNCa0 (
-.noconn(a0)
-);
-
 PEBBLEtielo XDRMNOTL (
 .G(CELG59462),
 .V(CELV96848),
 .q(a0),
 .SUB(CELSUB40948)
+);
+
+WRAPPER13 WRAPPER13 (
+.i({a0,a0,a0,a0,a0,a0,a0,a0,a0,a0,a0,a0,a0}),
+.o0(net_114),
+.o1(net_115),
+.o2(net_116),
+.o3(net_50),
+.o4(net_51),
+.o5(net_98),
+.o6(net_99),
+.o7(net_100),
+.o8(net_82),
+.o9(net_83),
+.o10(net_84),
+.o11(net_66),
+.o12(net_67)
 );
 
 endmodule
