@@ -60,12 +60,12 @@ PEBBLEtielo XDRMNOTL (
 );
 
 WRAPPER1 halfway_WRAPPER (
-.i(a0),
+.i(a1),
 .o(halfway)
 );
 
 WRAPPER1 softstart_1ms_WRAPPER (
-.i(a1),
+.i(a0),
 .o(softstart_1ms)
 );
 
