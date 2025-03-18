@@ -1,13 +1,4 @@
 // ------------------------ Module Definitions -----------
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
 //Verilog HDL for "PEBBLES", "PEBBLEtiehi" "functional"
 
 
@@ -42,10 +33,6 @@ output  softstart_1ms;
 // ------------------------ Wires ------------------------
 
 // ------------------------ Networks ---------------------
-STONEnoconn XNCa1 (
-.noconn(a1)
-);
-
 PEBBLEtiehi XDRMNOTH (
 .G(CELG59462),
 .V(CELV96848),
@@ -54,12 +41,12 @@ PEBBLEtiehi XDRMNOTH (
 );
 
 WRAPPER1 halfway_WRAPPER (
-.i(a),
+.i(a1),
 .o(halfway)
 );
 
 WRAPPER1 softstart_1ms_WRAPPER (
-.i(a),
+.i(a1),
 .o(softstart_1ms)
 );
 
