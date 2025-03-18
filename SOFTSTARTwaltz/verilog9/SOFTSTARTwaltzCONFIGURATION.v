@@ -22,6 +22,18 @@ module PEBBLEtiehi ( q, G, SUB, V );
 endmodule
 
 
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
 module SOFTSTARTwaltzCONFIGURATION (halfway, CELG59462, CELV96848, CELSUB40948, softstart_1ms);
 output  halfway;
@@ -35,7 +47,7 @@ output  softstart_1ms;
 
 // ------------------------ Networks ---------------------
 WRAPPER2 WRAPPER2 (
-.i({a1,a1}),
+.i({a1,a0}),
 .o0(softstart_1ms),
 .o1(halfway)
 );
@@ -44,6 +56,13 @@ PEBBLEtiehi XDRMNOTH (
 .G(CELG59462),
 .V(CELV96848),
 .q(a1),
+.SUB(CELSUB40948)
+);
+
+PEBBLEtielo XDRMNOTL (
+.G(CELG59462),
+.V(CELV96848),
+.q(a0),
 .SUB(CELSUB40948)
 );
 
