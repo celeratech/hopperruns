@@ -10,6 +10,18 @@ module WRAPPER2 ( i, o0, o1 );
 endmodule
 
 
+//Verilog HDL for "PEBBLES", "PEBBLEtiehi" "functional"
+
+
+module PEBBLEtiehi ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 //Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
 
 
@@ -35,9 +47,16 @@ output  softstart_1ms;
 
 // ------------------------ Networks ---------------------
 WRAPPER2 WRAPPER2 (
-.i({a0,a0}),
+.i({a1,a0}),
 .o0(softstart_1ms),
 .o1(halfway)
+);
+
+PEBBLEtiehi XDRMNOTH (
+.G(CELG59462),
+.V(CELV96848),
+.q(a1),
+.SUB(CELSUB40948)
 );
 
 PEBBLEtielo XDRMNOTL (
