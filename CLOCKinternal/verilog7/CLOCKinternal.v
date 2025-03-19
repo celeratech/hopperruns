@@ -71,7 +71,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CLOCKinternal (GND, MUDV, CELG59462, CELV96848, CELSUB40948, IP_01b40a78, IP_c14a3d26, enable_clock, clock_external, clock_internal);
+module CLOCKinternal (GND, MUDV, CELG59462, CELV96848, CELSUB40948, IP_01b40a78, IP_c14a3d26, enable_clock, clock_external, clock_internal, celkelvin_GNDoscillator);
 inout  GND;
 output  MUDV;
   input  CELG59462;
@@ -82,6 +82,7 @@ input  IP_c14a3d26;
 input  enable_clock;
 output  clock_external;
 output  clock_internal;
+input  celkelvin_GNDoscillator;
 
 
 // ------------------------ Wires ------------------------
@@ -113,7 +114,7 @@ oscillator_d9a22b83 XU8 (
 .fault_oscillator(net_24),
 .enable_oscillator(enable_clock),
 .global_oscillator(tl0),
-.celkelvin_GNDoscillator(TBD_XU4_XU8_celkelvin_GNDoscillator),
+.celkelvin_GNDoscillator(celkelvin_GNDoscillator),
 .trim_oscillator_ext_fine({a0,a0,a0,a0,a0}),
 .trim_oscillator_int_fine({a0,a0,a0,a0,a0}),
 .trim_oscillator_ext_coarse({a0,a0,a0}),
@@ -136,7 +137,7 @@ oscillator_d9a22b83 XU10 (
 .fault_oscillator(net_23),
 .enable_oscillator(enable_clock),
 .global_oscillator(tl0),
-.celkelvin_GNDoscillator(TBD_XU4_XU10_celkelvin_GNDoscillator),
+.celkelvin_GNDoscillator(celkelvin_GNDoscillator),
 .trim_oscillator_ext_fine({a0,a0,a0,a0,a0}),
 .trim_oscillator_int_fine({a0,a0,a0,a0,a0}),
 .trim_oscillator_ext_coarse({a0,a0,a0}),
