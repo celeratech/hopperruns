@@ -173,6 +173,48 @@ endlayoutbio
 
 //**********************************************
 //Project Parameters
+//Celera:INCURRENTSENSEpuget Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,TBD
+#define,PROJECTsupply,5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
@@ -327,10 +369,8 @@ layout,SIMPV,na
 pinname,CELG
 definition,CELG,vbuffer power ground
 iq,CELG,SIMULATION
-absmax,CELG,ELSE statements
-
-absmin,CELG,////////
-
+absmax,CELG,0.3
+absmin,CELG,-0.3
 io,CELG,input
 mode,CELG,power
 router,CELG,TBD
@@ -342,8 +382,7 @@ pinname,IN
 definition,IN,vbuffer input voltage
 iq,IN,SIMULATION
 absmax,IN,6
-absmin,IN,////////
-
+absmin,IN,-0.3
 io,IN,input
 mode,IN,analog
 router,IN,TBD
@@ -355,8 +394,7 @@ pinname,global_vbuffer
 definition,,global_vbuffer,Global DFT enable
 iq,,global_vbuffer,SIMULATION
 absmax,global_vbuffer,6
-absmin,global_vbuffer,////////
-
+absmin,global_vbuffer,-0.3
 io,,global_vbuffer,input
 mode,,global_vbuffer,digital
 router,,global_vbuffer,TBD
@@ -368,8 +406,7 @@ pinname,ok_vbuffer
 definition,ok_vbuffer,vbuffer output flag
 iq,ok_vbuffer,SIMULATION
 absmax,ok_vbuffer,6
-absmin,ok_vbuffer,////////
-
+absmin,ok_vbuffer,-0.3
 io,ok_vbuffer,output
 mode,ok_vbuffer,digital
 router,ok_vbuffer,TBD
@@ -381,8 +418,7 @@ pinname,enable_vbuffer
 definition,enable_vbuffer,vbuffer logic enable
 iq,enable_vbuffer,SIMULATION
 absmax,enable_vbuffer,6
-absmin,enable_vbuffer,////////
-
+absmin,enable_vbuffer,-0.3
 io,enable_vbuffer,input
 mode,enable_vbuffer,digital
 router,enable_vbuffer,TBD
@@ -394,8 +430,7 @@ pinname,OUT
 definition,OUT,vbuffer output voltage 
 iq,OUT,SIMULATION
 absmax,OUT,6
-absmin,OUT,////////
-
+absmin,OUT,-0.3
 io,OUT,output
 mode,OUT,analog
 router,OUT,TBD
@@ -407,8 +442,7 @@ pinname,IP
 definition,IP,vbuffer 0.5uA reference current
 iq,IP,SIMULATION
 absmax,IP,6
-absmin,IP,////////
-
+absmin,IP,-0.3
 io,IP,input
 mode,IP,analog
 router,IP,TBD
@@ -418,8 +452,8 @@ esd,IP,TBD
 pinname,CELSUB
 definition,CELSUB,Substrate
 iq,CELSUB,SIMULATION
-absmax,CELSUB,
-absmin,CELSUB,
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
 io,CELSUB,input
 mode,CELSUB,analog
 router,CELSUB,TBD

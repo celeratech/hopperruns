@@ -1,6 +1,7 @@
 // ------------------------ Module Definitions -----------
-module FORCE_INCURRENTSENSEpuget (GND,SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_2ceca3e2,IP_4ad46a6e,IP_5c672501,clock_currentsensein,enable_currentsensein,measure_currentsensein,kelvin_GNDcurrentsensein);
+module FORCE_INCURRENTSENSEpuget (GND,tmi,SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_2ceca3e2,IP_4ad46a6e,IP_5c672501,clock_currentsensein,enable_currentsensein,measure_currentsensein,kelvin_GNDcurrentsensein);
   inout  GND;
+  inout [4:0] tmi;
   output  SIMPV;
   output  VOUTSN;
   output  VOUTSP;
@@ -17,7 +18,8 @@ module FORCE_INCURRENTSENSEpuget (GND,SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,PO
   output  kelvin_GNDcurrentsensein;
 endmodule
 
-module INCURRENTSENSEpuget (SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,PORB97836,VSNSI_LIVE,CELSUB40948,IP_2ceca3e2,IP_4ad46a6e,IP_5c672501,VSNSI_FILTER,ok_currentsensein,clock_currentsensein,enable_currentsensein,measure_currentsensein,kelvin_GNDcurrentsensein,ok_measurecurrentsensein);
+module INCURRENTSENSEpuget (tmi,SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,PORB97836,VSNSI_LIVE,CELSUB40948,IP_2ceca3e2,IP_4ad46a6e,IP_5c672501,VSNSI_FILTER,ok_currentsensein,clock_currentsensein,enable_currentsensein,measure_currentsensein,kelvin_GNDcurrentsensein,ok_measurecurrentsensein);
+  inout [4:0] tmi;
   input  SIMPV;
   input  VOUTSN;
   input  VOUTSP;
@@ -43,10 +45,12 @@ module sim_INCURRENTSENSEpuget_ROW5 ();
 
 
 // ------------------------ Wires ------------------------
+wire [4:0] tmi;
 
 // ------------------------ Networks ---------------------
 FORCE_INCURRENTSENSEpuget XFORCE_INCURRENTSENSEpuget1 (
 .GND(GND),
+.tmi(tmi[4:0]),
 .SIMPV(SIMPV),
 .VOUTSN(VOUTSN),
 .VOUTSP(VOUTSP),
@@ -64,6 +68,7 @@ FORCE_INCURRENTSENSEpuget XFORCE_INCURRENTSENSEpuget1 (
 );
 
 INCURRENTSENSEpuget XINCURRENTSENSEpuget1 (
+.tmi(tmi[4:0]),
 .SIMPV(SIMPV),
 .VOUTSN(VOUTSN),
 .VOUTSP(VOUTSP),
