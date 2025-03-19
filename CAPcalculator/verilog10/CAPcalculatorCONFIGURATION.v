@@ -113,7 +113,7 @@ WRAPPER1 vbalancer_0_WRAPPER (
 );
 
 WRAPPER1 vbalancer_1_WRAPPER (
-.i(a0),
+.i(a1),
 .o(vbalancer_1)
 );
 
@@ -123,12 +123,12 @@ WRAPPER1 vbalancer_2_WRAPPER (
 );
 
 WRAPPER1 vbalancer_3_WRAPPER (
-.i(a1),
+.i(a0),
 .o(vbalancer_3)
 );
 
 WRAPPER1 vbalancer_4_WRAPPER (
-.i(a0),
+.i(a1),
 .o(vbalancer_4)
 );
 
@@ -138,7 +138,7 @@ WRAPPER1 vbalancer_5_WRAPPER (
 );
 
 WRAPPER1 vbalancer_6_WRAPPER (
-.i(a1),
+.i(a0),
 .o(vbalancer_6)
 );
 
@@ -153,7 +153,7 @@ WRAPPER1 vshunt_hyst_0_WRAPPER (
 );
 
 WRAPPER1 vshunt_hyst_1_WRAPPER (
-.i(a1),
+.i(a0),
 .o(vshunt_hyst_1)
 );
 
@@ -163,12 +163,12 @@ WRAPPER1 vshunt_hyst_2_WRAPPER (
 );
 
 WRAPPER1 vshunt_hyst_3_WRAPPER (
-.i(a0),
+.i(a1),
 .o(vshunt_hyst_3)
 );
 
 WRAPPER1 vshunt_hyst_4_WRAPPER (
-.i(a1),
+.i(a0),
 .o(vshunt_hyst_4)
 );
 
@@ -178,7 +178,7 @@ WRAPPER1 vshunt_hyst_5_WRAPPER (
 );
 
 WRAPPER1 vshunt_hyst_6_WRAPPER (
-.i(a0),
+.i(a1),
 .o(vshunt_hyst_6)
 );
 
@@ -238,22 +238,22 @@ WRAPPER1 vbalancer_hyst_1_WRAPPER (
 );
 
 WRAPPER1 vbalancer_hyst_2_WRAPPER (
-.i(a1),
+.i(a0),
 .o(vbalancer_hyst_2)
 );
 
 WRAPPER1 vbalancer_hyst_3_WRAPPER (
-.i(a1),
+.i(a0),
 .o(vbalancer_hyst_3)
 );
 
 WRAPPER1 vbalancer_hyst_4_WRAPPER (
-.i(a0),
+.i(a1),
 .o(vbalancer_hyst_4)
 );
 
 WRAPPER1 vbalancer_hyst_5_WRAPPER (
-.i(a0),
+.i(a1),
 .o(vbalancer_hyst_5)
 );
 

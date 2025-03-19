@@ -185,12 +185,12 @@ PEBBLEtielo XDRMNOTL (
 );
 
 WRAPPER1 enableFAULT_WRAPPER (
-.i(a0),
+.i(a1),
 .o(net_82)
 );
 
 WRAPPER1 STATEcontrol0_WRAPPER (
-.i(a1),
+.i(a0),
 .o(net_78)
 );
 
