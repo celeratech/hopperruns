@@ -1,3 +1,4 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
@@ -5,21 +6,28 @@
 
 //Celera Confidential BIO Data Generator
 //Cell Name
-cell,subtractor
+cell,dmux
 //**********************************************
 //Generator Revision
 revision,generator,0.5.0
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-//digital subtractor
-limit,subtractor_bits,minimum,1
-limit,subtractor_bits,maximum,16
-limit,subtractor_difference,choose0,no
-limit,subtractor_difference,choose1,yes
-limit,subtractor_vmax,choose0,2
-limit,subtractor_vmax,choose1,6
 
+limit,dmux_inputs,choose0,2
+limit,dmux_inputs,choose1,4
+limit,dmux_inputs,choose2,8
+limit,dmux_bits,minimum,1
+limit,dmux_bits,maximum,16
+limit,dmux_vmax,choose0,2
+limit,dmux_vmax,choose1,6
+limit,dmux_type,choose0,pin
+limit,dmux_type,choose1,register
+limit,dmux_type,choose2,factory
+limit,dmux_reg_por,minimum,0
+limit,dmux_reg_por,maximum,7
+limit,dmux_datasheet_name,text
+limit,dmux_datasheet_description,text
 //**********************************************
 //PAD Parameters
 //**********************************************
@@ -30,11 +38,11 @@ user,NESTO revision,0.5.0
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,subtractor
-register,instance,subtractor_7c48fb10
+registermap,dmux
+register,instance,dmux4b_1e2aca6a
 register,source,cell
 
-//ALU subtractor
+//Logic dmux
 register,name,na
 register,enable,no
 register,bits,0
@@ -55,11 +63,11 @@ register,busname,na
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,subtractor
-factory,instance,subtractor_7c48fb10
+factorymap,dmux
+factory,instance,dmux4b_1e2aca6a
 factory,source,cell
 
-//ALU CELLS subtractor
+//LOGIC CELLS dmux
 factory,name,na
 factory,enable,no
 factory,bits,0
@@ -80,14 +88,24 @@ factory,busname,na
 //**********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,subtractor
-
-place ALU sub_natural 61.24 0 R90
-place ALU subcompare_natural 61.24 0 R90
-placeALTVIEW PEBBLES PEBBLEdbuf layout_vis 46.12 19.6 MYR90
-placeALTVIEW PEBBLES PEBBLEtielo layout_vis 46.12 10.08 MYR90
+layout,dmux
+//the dmux generated cell has a lower level dmux named similar to resistors with parent names etc.  But both levels are calling the dmux.bio.  Need to discuss with john placeSTEParray vs placeDIG AGAIN this brings up the whole question on not having layout for STONES that are just PEBBLES.  Then use placeDIG for the entire hierarchy.
+// used in PUGET CAPcalculatorMAXIMUM
+New Cell 301A
+placeIFELSE cellNameContains dmux4
+placeSTEParray PEBBLES PEBBLEdmux4 0 0 48.51 16.74 n n R0
+placeSTEParray PEBBLES PEBBLEdbuf 48.51 0 6.3 8.37 n y  R0
+//placeSTEParray PEBBLES PEBBLEdmux2 0 0 9.45 8.37 n y R0
+//placeSTEParray PEBBLES PEBBLEdbuf 48.51 0 6.3 8.37 n y  R0
 movePINS
-routeNOPINS
+placeROUTEnopins
+placeELSE
+placeDIG
+placeEND
+
+movePINS
+
+movePINS
 endlayoutbio
 //**********************************************
 //Project Parameters
@@ -136,11 +154,8 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,STONEnoconn,0
-sub_area,STONEnoconn,0
-sub_area,subcompare_natural,9999999
-sub_area,PEBBLEdbuf,80
-generate_area,subtractor_7c48fb10,10000079
+sub_area,dmux_dmux4b_1e2aca6a_dmux,14322
+generate_area,dmux4b_1e2aca6a,14322
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.4
@@ -149,31 +164,28 @@ generate_area,subtractor_7c48fb10,10000079
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//subtractor
+//dmux4b
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,load,o0,o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,o12,o13,o14,o15,over
-
-
-
+pinorder,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,o0,o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,o12,o13,o14,o15,s0,s1
 endpinorder
 //**********************************************
 
 //**********************************************
 //TRIM Parameters
-cell,subtractor
-trim,instance,subtractor_7c48fb10
+cell,dmux
+trim,instance,dmux4b_1e2aca6a
 
 trim,name,na
 trim,enable,no
 trim,bits,TBD
-trim,por,TBD
+trim,por,0
 trim,pinname,TBD
 trim,testname,TBD
 trim,description,TBD
 trim,target,na
-trim,units,TBD
+trim,units,KHz
 trim,pretrim_low_limit,TBD
 trim,pretrim_high_limit,TBD
 trim,posttrim_low_limit,TBD
@@ -213,7 +225,7 @@ dftpriority,CELG,1
 esd,CELG,TBD
 
 pinname,a
-definition,a,subtractor positive inpuit bus
+definition,a,dmux pin input bus
 iq,a,SIMULATION
 absmax,a,6
 absmin,a,-0.3
@@ -224,7 +236,7 @@ dftpriority,a,1
 esd,a,TBD
 
 pinname,b
-definition,b,subtractor negative input bus
+definition,b,dmux pin input bus
 iq,b,SIMULATION
 absmax,b,6
 absmin,b,-0.3
@@ -234,8 +246,19 @@ router,b,TBD
 dftpriority,b,1
 esd,b,TBD
 
+pinname,c
+definition,c,dmux pin input bus
+iq,c,SIMULATION
+absmax,c,6
+absmin,c,-0.3
+io,c,input
+mode,c,digital
+router,c,TBD
+dftpriority,c,1
+esd,c,TBD
+
 pinname,d
-definition,d,subratractor input compare against subtraction
+definition,d,dmux pin input bus
 iq,d,SIMULATION
 absmax,d,6
 absmin,d,-0.3
@@ -245,19 +268,8 @@ router,d,TBD
 dftpriority,d,1
 esd,d,TBD
 
-pinname,load
-definition,load,Substractor output loaded on rising edge
-iq,load,SIMULATION
-absmax,load,6
-absmin,load,-0.3
-io,load,input
-mode,load,digital
-router,load,TBD
-dftpriority,load,1
-esd,load,TBD
-
 pinname,o
-definition,o,subtractor a-b output
+definition,o,dmux output bus
 iq,o,SIMULATION
 absmax,o,6
 absmin,o,-0.3
@@ -267,27 +279,16 @@ router,o,TBD
 dftpriority,o,1
 esd,o,TBD
 
-pinname,over
-definition,over,Subtractor Delta is greated then a-b
-iq,over,SIMULATION
-absmax,over,6
-absmin,over,-0.3
-io,over,ioutput
-mode,over,digital
-router,over,TBD
-dftpriority,over,1
-esd,over,TBD
-
-pinname,CELERAporb
-definition,CELERAporb,Subtractor Celera Power on reset
-iq,CELERAporb,SIMULATION
-absmax,CELERAporb,6
-absmin,CELERAporb,-0.3
-io,CELERAporb,ioutput
-mode,CELERAporb,digital
-router,CELERAporb,TBD
-dftpriority,CELERAporb,1
-esd,CELERAporb,TBD
+pinname,s
+definition,s,dmux select bus
+iq,s,SIMULATION
+absmax,s,6
+absmin,s,-0.3
+io,s,input
+mode,s,digital
+router,s,TBD
+dftpriority,s,1
+esd,s,TBD
 
 pinname,CELSUB
 definition,CELSUB,substrate
@@ -977,3 +978,4 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+
