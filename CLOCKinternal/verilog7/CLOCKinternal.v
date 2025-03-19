@@ -71,11 +71,12 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CLOCKinternal (GND, MUDV, CELG59462, CELSUB40948, IP_01b40a78, IP_c14a3d26, enable_clock, clock_external, clock_internal);
+module CLOCKinternal (GND, MUDV, CELG59462, CELV96848, CELSUB40948, IP_01b40a78, IP_c14a3d26, enable_clock, clock_external, clock_internal);
 inout  GND;
 output  MUDV;
-input  CELG59462;
-input  CELSUB40948;
+  input  CELG59462;
+  input  CELV96848;
+  input  CELSUB40948;
 input  IP_01b40a78;
 input  IP_c14a3d26;
 input  enable_clock;
