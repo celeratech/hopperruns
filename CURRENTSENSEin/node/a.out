@@ -1,0 +1,205 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x56060f7cff60 .scope module, "currentsenseamplifier_48054596" "currentsenseamplifier_48054596" 2 126;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "enable_currentsenseamplifier";
+    .port_info 1 /INPUT 1 "IP";
+    .port_info 2 /OUTPUT 1 "ok_currentsenseamplifier";
+    .port_info 3 /INPUT 1 "INP_CURRENTSENSEAMPLIFIER";
+    .port_info 4 /INPUT 1 "INN_CURRENTSENSEAMPLIFIER";
+    .port_info 5 /OUTPUT 1 "OUT_CURRENTSENSEAMPLIFIER";
+    .port_info 6 /INPUT 1 "CELV";
+    .port_info 7 /INOUT 1 "RTN";
+    .port_info 8 /INPUT 7 "trim_csaoutput";
+    .port_info 9 /INPUT 1 "CELPOS";
+    .port_info 10 /INPUT 7 "trim_csainput";
+    .port_info 11 /INPUT 1 "CELSUB";
+    .port_info 12 /INPUT 1 "CELG";
+o0x7fe4f104c018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56060f830470_0 .net "CELG", 0 0, o0x7fe4f104c018;  0 drivers
+o0x7fe4f104c2b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56060f830530_0 .net "CELNEG", 0 0, o0x7fe4f104c2b8;  0 drivers
+o0x7fe4f104c0d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56060f830640_0 .net "CELPOS", 0 0, o0x7fe4f104c0d8;  0 drivers
+o0x7fe4f104c048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56060f8306e0_0 .net "CELSUB", 0 0, o0x7fe4f104c048;  0 drivers
+o0x7fe4f104c078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56060f830780_0 .net "CELV", 0 0, o0x7fe4f104c078;  0 drivers
+o0x7fe4f104c2e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56060f830820_0 .net "IDNN", 0 0, o0x7fe4f104c2e8;  0 drivers
+o0x7fe4f104c318 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56060f830910_0 .net "IDPN", 0 0, o0x7fe4f104c318;  0 drivers
+o0x7fe4f104c348 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56060f830a00_0 .net "INNAMP", 0 0, o0x7fe4f104c348;  0 drivers
+o0x7fe4f104c0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56060f830aa0_0 .net "INN_CURRENTSENSEAMPLIFIER", 0 0, o0x7fe4f104c0a8;  0 drivers
+o0x7fe4f104c378 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56060f830b40_0 .net "INP_CURRENTSENSEAMPLIFIER", 0 0, o0x7fe4f104c378;  0 drivers
+o0x7fe4f104c3a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56060f830be0_0 .net "IP", 0 0, o0x7fe4f104c3a8;  0 drivers
+o0x7fe4f104c3d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56060f830c80_0 .net "ISN", 0 0, o0x7fe4f104c3d8;  0 drivers
+o0x7fe4f104c438 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56060f830d70_0 .net "NOCONN_TAIOUT", 0 0, o0x7fe4f104c438;  0 drivers
+o0x7fe4f104c408 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56060f830e60_0 .net "OUT_CURRENTSENSEAMPLIFIER", 0 0, o0x7fe4f104c408;  0 drivers
+o0x7fe4f104cc48 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56060f830f50_0 .net "RTN", 0 0, o0x7fe4f104cc48;  0 drivers
+o0x7fe4f104c468 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56060f830ff0_0 .net "a0", 0 0, o0x7fe4f104c468;  0 drivers
+o0x7fe4f104c4c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56060f831120_0 .net "enable_currentsenseamplifier", 0 0, o0x7fe4f104c4c8;  0 drivers
+o0x7fe4f104c498 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56060f8312d0_0 .net "noconn_a1", 0 0, o0x7fe4f104c498;  0 drivers
+o0x7fe4f104c528 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56060f831370_0 .net "noconn_tdiok", 0 0, o0x7fe4f104c528;  0 drivers
+o0x7fe4f104c4f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56060f831460_0 .net "ok_currentsenseamplifier", 0 0, o0x7fe4f104c4f8;  0 drivers
+v0x56060f831500_0 .net "thv0", 0 0, L_0x56060f832490;  1 drivers
+v0x56060f8315a0_0 .net "thv1", 0 0, L_0x56060f8323a0;  1 drivers
+v0x56060f831640_0 .net "thv2", 0 0, L_0x56060f8322c0;  1 drivers
+v0x56060f8316e0_0 .net "thv3", 0 0, L_0x56060f8321d0;  1 drivers
+v0x56060f831780_0 .net "thv4", 0 0, L_0x56060f8320b0;  1 drivers
+v0x56060f831820_0 .net "thv5", 0 0, L_0x56060f831f70;  1 drivers
+v0x56060f8318c0_0 .net "thv6", 0 0, L_0x56060f831e80;  1 drivers
+o0x7fe4f104c108 .functor BUFZ 7, C4<zzzzzzz>; HiZ drive
+v0x56060f831980_0 .net "trim_csainput", 6 0, o0x7fe4f104c108;  0 drivers
+o0x7fe4f104cc78 .functor BUFZ 7, C4<zzzzzzz>; HiZ drive
+v0x56060f831a40_0 .net "trim_csaoutput", 6 0, o0x7fe4f104cc78;  0 drivers
+LS_0x56060f831cd0_0_0 .concat [ 1 1 1 1], L_0x56060f832490, L_0x56060f8323a0, L_0x56060f8322c0, L_0x56060f8321d0;
+LS_0x56060f831cd0_0_4 .concat [ 1 1 1 0], L_0x56060f8320b0, L_0x56060f831f70, L_0x56060f831e80;
+L_0x56060f831cd0 .concat [ 4 3 0 0], LS_0x56060f831cd0_0_0, LS_0x56060f831cd0_0_4;
+o0x7fe4f104c138 .functor BUFZ 7, C4<zzzzzzz>; HiZ drive
+L_0x56060f831e80 .part o0x7fe4f104c138, 6, 1;
+L_0x56060f831f70 .part o0x7fe4f104c138, 5, 1;
+L_0x56060f8320b0 .part o0x7fe4f104c138, 4, 1;
+L_0x56060f8321d0 .part o0x7fe4f104c138, 3, 1;
+L_0x56060f8322c0 .part o0x7fe4f104c138, 2, 1;
+L_0x56060f8323a0 .part o0x7fe4f104c138, 1, 1;
+L_0x56060f832490 .part o0x7fe4f104c138, 0, 1;
+S_0x56060f8073d0 .scope module, "XcsampBITSHIFTER" "STONEbitshifter457bits" 2 217, 2 102 0, S_0x56060f7cff60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 7 "o";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELSUB";
+    .port_info 3 /INPUT 1 "CELV";
+    .port_info 4 /INPUT 1 "HVNEG";
+    .port_info 5 /INPUT 1 "HVPOS";
+    .port_info 6 /INPUT 7 "i";
+v0x56060f807560_0 .net "CELG", 0 0, o0x7fe4f104c018;  alias, 0 drivers
+v0x56060f82c600_0 .net "CELSUB", 0 0, o0x7fe4f104c048;  alias, 0 drivers
+v0x56060f82c6c0_0 .net "CELV", 0 0, o0x7fe4f104c078;  alias, 0 drivers
+v0x56060f82c760_0 .net "HVNEG", 0 0, o0x7fe4f104c0a8;  alias, 0 drivers
+v0x56060f82c820_0 .net "HVPOS", 0 0, o0x7fe4f104c0d8;  alias, 0 drivers
+v0x56060f82c930_0 .net "i", 6 0, o0x7fe4f104c108;  alias, 0 drivers
+v0x56060f82ca10_0 .net "o", 6 0, o0x7fe4f104c138;  0 drivers
+S_0x56060f82cbd0 .scope module, "XcsampINN" "STONEcurrentsenseamplifier_inn_45" 2 179, 2 51 0, S_0x56060f7cff60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "ISN";
+    .port_info 1 /OUTPUT 1 "OUT_CURRENTSENSEAMPLIFIER";
+    .port_info 2 /OUTPUT 1 "TAI_OUT_CURRENTSENSEAMPLIFIER";
+    .port_info 3 /OUTPUT 1 "a0";
+    .port_info 4 /OUTPUT 1 "a1";
+    .port_info 5 /OUTPUT 1 "ok_currentsenseamplifier";
+    .port_info 6 /OUTPUT 1 "tdi_ok_currentsenseamplifier";
+    .port_info 7 /INPUT 1 "CELG";
+    .port_info 8 /INPUT 1 "CELNEG";
+    .port_info 9 /INPUT 1 "CELPOS";
+    .port_info 10 /INPUT 1 "CELSUB";
+    .port_info 11 /INPUT 1 "CELV";
+    .port_info 12 /INPUT 1 "IDNN";
+    .port_info 13 /INPUT 1 "IDPN";
+    .port_info 14 /INPUT 1 "INN_CURRENTSENSEAMPLIFIER";
+    .port_info 15 /INPUT 1 "INP_CURRENTSENSEAMPLIFIER";
+    .port_info 16 /INPUT 1 "IP";
+    .port_info 17 /INPUT 1 "enable_currentsenseamplifier";
+    .port_info 18 /INPUT 1 "ten";
+    .port_info 19 /INPUT 1 "ten_currentsenseamplifier";
+    .port_info 20 /INPUT 1 "ten_out_currentsenseamplifier";
+v0x56060f82d080_0 .net "CELG", 0 0, o0x7fe4f104c018;  alias, 0 drivers
+v0x56060f82d120_0 .net "CELNEG", 0 0, o0x7fe4f104c2b8;  alias, 0 drivers
+v0x56060f82d1c0_0 .net "CELPOS", 0 0, o0x7fe4f104c0d8;  alias, 0 drivers
+v0x56060f82d260_0 .net "CELSUB", 0 0, o0x7fe4f104c048;  alias, 0 drivers
+v0x56060f82d300_0 .net "CELV", 0 0, o0x7fe4f104c078;  alias, 0 drivers
+v0x56060f82d3f0_0 .net "IDNN", 0 0, o0x7fe4f104c2e8;  alias, 0 drivers
+v0x56060f82d490_0 .net "IDPN", 0 0, o0x7fe4f104c318;  alias, 0 drivers
+v0x56060f82d530_0 .net "INN_CURRENTSENSEAMPLIFIER", 0 0, o0x7fe4f104c348;  alias, 0 drivers
+v0x56060f82d5d0_0 .net "INP_CURRENTSENSEAMPLIFIER", 0 0, o0x7fe4f104c378;  alias, 0 drivers
+v0x56060f82d670_0 .net "IP", 0 0, o0x7fe4f104c3a8;  alias, 0 drivers
+v0x56060f82d730_0 .net "ISN", 0 0, o0x7fe4f104c3d8;  alias, 0 drivers
+v0x56060f82d7f0_0 .net "OUT_CURRENTSENSEAMPLIFIER", 0 0, o0x7fe4f104c408;  alias, 0 drivers
+v0x56060f82d8b0_0 .net "TAI_OUT_CURRENTSENSEAMPLIFIER", 0 0, o0x7fe4f104c438;  alias, 0 drivers
+v0x56060f82d970_0 .net "a0", 0 0, o0x7fe4f104c468;  alias, 0 drivers
+v0x56060f82da30_0 .net "a1", 0 0, o0x7fe4f104c498;  alias, 0 drivers
+v0x56060f82daf0_0 .net "enable_currentsenseamplifier", 0 0, o0x7fe4f104c4c8;  alias, 0 drivers
+v0x56060f82dbb0_0 .net "ok_currentsenseamplifier", 0 0, o0x7fe4f104c4f8;  alias, 0 drivers
+v0x56060f82dd80_0 .net "tdi_ok_currentsenseamplifier", 0 0, o0x7fe4f104c528;  alias, 0 drivers
+v0x56060f82de40_0 .net "ten", 0 0, o0x7fe4f104c468;  alias, 0 drivers
+v0x56060f82dee0_0 .net "ten_currentsenseamplifier", 0 0, o0x7fe4f104c468;  alias, 0 drivers
+v0x56060f82df80_0 .net "ten_out_currentsenseamplifier", 0 0, o0x7fe4f104c468;  alias, 0 drivers
+S_0x56060f82e350 .scope module, "XcsampINNTRIM" "STONEcurrentsenseamplifier_inn_trim" 2 204, 2 84 0, S_0x56060f7cff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "IDNN";
+    .port_info 1 /INOUT 1 "IDPN";
+    .port_info 2 /INPUT 1 "CELG";
+    .port_info 3 /INPUT 1 "CELV";
+    .port_info 4 /INPUT 1 "INN";
+    .port_info 5 /INPUT 1 "INP";
+    .port_info 6 /INPUT 1 "ISN";
+    .port_info 7 /INPUT 1 "SUB";
+    .port_info 8 /INPUT 7 "trim_amplifier";
+v0x56060f82e660_0 .net "CELG", 0 0, o0x7fe4f104c2b8;  alias, 0 drivers
+v0x56060f82e730_0 .net "CELV", 0 0, o0x7fe4f104c0d8;  alias, 0 drivers
+v0x56060f82e820_0 .net "IDNN", 0 0, o0x7fe4f104c2e8;  alias, 0 drivers
+v0x56060f82e8f0_0 .net "IDPN", 0 0, o0x7fe4f104c318;  alias, 0 drivers
+v0x56060f82e9c0_0 .net "INN", 0 0, o0x7fe4f104c348;  alias, 0 drivers
+v0x56060f82eab0_0 .net "INP", 0 0, o0x7fe4f104c378;  alias, 0 drivers
+v0x56060f82eb80_0 .net "ISN", 0 0, o0x7fe4f104c3d8;  alias, 0 drivers
+v0x56060f82ec50_0 .net "SUB", 0 0, o0x7fe4f104c048;  alias, 0 drivers
+v0x56060f82ed40_0 .net "trim_amplifier", 6 0, L_0x56060f831cd0;  1 drivers
+S_0x56060f82ee60 .scope module, "XinputRES" "resistor_currentsenseamplifier_48054596_XinputRES" 2 228, 2 19 0, S_0x56060f7cff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x56060f82f060_0 .net "CELG", 0 0, o0x7fe4f104c0a8;  alias, 0 drivers
+v0x56060f82f120_0 .net "RN", 0 0, o0x7fe4f104c348;  alias, 0 drivers
+v0x56060f82f210_0 .net "RP", 0 0, o0x7fe4f104c0a8;  alias, 0 drivers
+S_0x56060f82f340 .scope module, "Xnoconn0" "STONEnoconn" 2 161, 2 117 0, S_0x56060f7cff60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x56060f82f590_0 .net "noconn", 0 0, o0x7fe4f104c498;  alias, 0 drivers
+S_0x56060f82f670 .scope module, "Xnoconn1" "STONEnoconn" 2 167, 2 117 0, S_0x56060f7cff60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x56060f82f870_0 .net "noconn", 0 0, o0x7fe4f104c438;  alias, 0 drivers
+S_0x56060f82f950 .scope module, "Xnoconn2" "STONEnoconn" 2 173, 2 117 0, S_0x56060f7cff60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x56060f82fb50_0 .net "noconn", 0 0, o0x7fe4f104c528;  alias, 0 drivers
+S_0x56060f82fc60 .scope module, "XoutputRES" "resistor_currentsenseamplifier_48054596_XoutputRES" 2 235, 2 32 0, S_0x56060f7cff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELV";
+    .port_info 2 /INPUT 1 "CELG";
+    .port_info 3 /INPUT 1 "CELSUB";
+    .port_info 4 /INPUT 7 "trim_resistor";
+    .port_info 5 /INOUT 1 "RN";
+v0x56060f82fee0_0 .net "CELG", 0 0, o0x7fe4f104c018;  alias, 0 drivers
+v0x56060f82ffd0_0 .net "CELSUB", 0 0, o0x7fe4f104c048;  alias, 0 drivers
+v0x56060f830090_0 .net "CELV", 0 0, o0x7fe4f104c078;  alias, 0 drivers
+v0x56060f830180_0 .net "RN", 0 0, o0x7fe4f104cc48;  alias, 0 drivers
+v0x56060f830220_0 .net "RP", 0 0, o0x7fe4f104c408;  alias, 0 drivers
+v0x56060f830310_0 .net "trim_resistor", 6 0, o0x7fe4f104cc78;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/./celera//projects//Sunnyvale//software//CURRENTSENSEin//verilog5//currentsenseamplifier_48054596.v";
