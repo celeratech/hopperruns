@@ -1,0 +1,63 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x55f2a9260f60 .scope module, "dmux4b_5c10d728" "dmux4b_5c10d728" 2 30;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "CELV";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /OUTPUT 16 "o";
+    .port_info 3 /INPUT 16 "a";
+    .port_info 4 /INPUT 16 "b";
+    .port_info 5 /INPUT 16 "c";
+    .port_info 6 /INPUT 16 "d";
+    .port_info 7 /INPUT 2 "s";
+    .port_info 8 /INPUT 1 "CELSUB";
+o0x7fd1a762e018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55f2a92ab2f0_0 .net "CELG", 0 0, o0x7fd1a762e018;  0 drivers
+o0x7fd1a762e048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55f2a92ab3b0_0 .net "CELSUB", 0 0, o0x7fd1a762e048;  0 drivers
+o0x7fd1a762e078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55f2a92ab480_0 .net "CELV", 0 0, o0x7fd1a762e078;  0 drivers
+o0x7fd1a762e0a8 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x55f2a92ab580_0 .net "a", 15 0, o0x7fd1a762e0a8;  0 drivers
+o0x7fd1a762e0d8 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x55f2a92ab650_0 .net "b", 15 0, o0x7fd1a762e0d8;  0 drivers
+o0x7fd1a762e108 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x55f2a92ab6f0_0 .net "c", 15 0, o0x7fd1a762e108;  0 drivers
+o0x7fd1a762e138 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x55f2a92ab7c0_0 .net "d", 15 0, o0x7fd1a762e138;  0 drivers
+o0x7fd1a762e168 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x55f2a92ab890_0 .net "o", 15 0, o0x7fd1a762e168;  0 drivers
+o0x7fd1a762e198 .functor BUFZ 2, C4<zz>; HiZ drive
+v0x55f2a92ab960_0 .net "s", 1 0, o0x7fd1a762e198;  0 drivers
+S_0x55f2a925edd0 .scope module, "Xdmux4b" "dmux_dmux4b_5c10d728_dmux" 2 60, 2 14 0, S_0x55f2a9260f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "CELV";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /OUTPUT 16 "o";
+    .port_info 3 /INPUT 16 "a";
+    .port_info 4 /INPUT 16 "b";
+    .port_info 5 /INPUT 16 "c";
+    .port_info 6 /INPUT 16 "d";
+    .port_info 7 /INPUT 2 "s";
+    .port_info 8 /INPUT 1 "CELSUB";
+v0x55f2a92610f0_0 .net "CELG", 0 0, o0x7fd1a762e018;  alias, 0 drivers
+v0x55f2a9260ec0_0 .net "CELSUB", 0 0, o0x7fd1a762e048;  alias, 0 drivers
+v0x55f2a92aaba0_0 .net "CELV", 0 0, o0x7fd1a762e078;  alias, 0 drivers
+v0x55f2a92aac40_0 .net "a", 15 0, o0x7fd1a762e0a8;  alias, 0 drivers
+v0x55f2a92aad20_0 .net "b", 15 0, o0x7fd1a762e0d8;  alias, 0 drivers
+v0x55f2a92aae50_0 .net "c", 15 0, o0x7fd1a762e108;  alias, 0 drivers
+v0x55f2a92aaf30_0 .net "d", 15 0, o0x7fd1a762e138;  alias, 0 drivers
+v0x55f2a92ab010_0 .net "o", 15 0, o0x7fd1a762e168;  alias, 0 drivers
+v0x55f2a92ab0f0_0 .net "s", 1 0, o0x7fd1a762e198;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/./celera//projects//Sunnyvale//software//CAPcalculator//verilog5//dmux4b_5c10d728.v";
