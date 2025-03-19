@@ -188,7 +188,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltzMAIN (VC, MUDG, MUDV, REFINT, CZCOMP_0, CZCOMP_1, CZCOMP_2, RZCOMP_0, RZCOMP_1, RZCOMP_2, CELG59462, CELV96848, go_driver, GAINCOMP_0, GAINCOMP_1, CELSUB40948, DCMRIPPLE_0, DCMRIPPLE_1, IP_0d0816e7, IP_70133221, IP_96171c99, IP_f5d94fdd, IP_fa70de6e, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, CELREF_e3b0c442, enable_regulation, trim_clamp_0d0816e7, trim_gm_negative_70133221, trim_gm_positive_70133221, trim_vbuffer_negative_96171c99, trim_vbuffer_positive_96171c99);
+module REGULATIONwaltzMAIN (VC, MUDG, MUDV, REFINT, CZCOMP_0, CZCOMP_1, CZCOMP_2, RZCOMP_0, RZCOMP_1, RZCOMP_2, CELG59462, CELV96848, go_driver, GAINCOMP_0, GAINCOMP_1, CELSUB40948, DCMRIPPLE_0, DCMRIPPLE_1, IP_0d0816e7, IP_70133221, IP_96171c99, IP_f5d94fdd, IP_fa70de6e, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, CELREF_e3b0c442, enable_regulation);
 inout  VC;
 inout  MUDG;
 input  MUDV;
@@ -220,19 +220,9 @@ input  REF_REGULATION;
 input  VSS_REGULATION;
 input  CELREF_e3b0c442;
 input  enable_regulation;
-input [7:0] trim_clamp_0d0816e7;
-input [6:0] trim_gm_negative_70133221;
-input [6:0] trim_gm_positive_70133221;
-input [6:0] trim_vbuffer_negative_96171c99;
-input [6:0] trim_vbuffer_positive_96171c99;
 
 
 // ------------------------ Wires ------------------------
-wire [7:0] trim_clamp_0d0816e7;
-wire [6:0] trim_gm_negative_70133221;
-wire [6:0] trim_gm_positive_70133221;
-wire [6:0] trim_vbuffer_negative_96171c99;
-wire [6:0] trim_vbuffer_positive_96171c99;
 wire [7:0] trim_clamp;
 wire [6:0] trim_vbuffer_negative;
 wire [6:0] trim_vbuffer_positive;
@@ -287,7 +277,7 @@ clamp_3ae32438 XU7 (
 .SIMPV(MUDV),
 .CELREF(CELREF_e3b0c442),
 .CELSUB(CELSUB40948),
-.trim_clamp({trim_clamp_0d0816e7[7],trim_clamp_0d0816e7[6],trim_clamp_0d0816e7[5],trim_clamp_0d0816e7[4],trim_clamp_0d0816e7[3],trim_clamp_0d0816e7[2],trim_clamp_0d0816e7[1],trim_clamp_0d0816e7[0]}),
+.trim_clamp({a0,a0,a0,a0,a0,a0,a0,a0}),
 .enable_clamp(enable_regulation),
 .global_clamp(tl0)
 );
@@ -302,8 +292,8 @@ vbuffer_602daa59 XU9 (
 .ok_vbuffer(net_174),
 .enable_vbuffer(enable_regulation),
 .global_vbuffer(tl0),
-.trim_vbuffer_negative({trim_vbuffer_negative_96171c99[6],trim_vbuffer_negative_96171c99[5],trim_vbuffer_negative_96171c99[4],trim_vbuffer_negative_96171c99[3],trim_vbuffer_negative_96171c99[2],trim_vbuffer_negative_96171c99[1],trim_vbuffer_negative_96171c99[0]}),
-.trim_vbuffer_positive({trim_vbuffer_positive_96171c99[6],trim_vbuffer_positive_96171c99[5],trim_vbuffer_positive_96171c99[4],trim_vbuffer_positive_96171c99[3],trim_vbuffer_positive_96171c99[2],trim_vbuffer_positive_96171c99[1],trim_vbuffer_positive_96171c99[0]})
+.trim_vbuffer_negative({a0,a0,a0,a0,a0,a0,a0}),
+.trim_vbuffer_positive({a0,a0,a0,a0,a0,a0,a0})
 );
 
 switchideal_c21fcc50 XU11 (
@@ -339,14 +329,21 @@ gm_2062a8ef Xgm1 (
 .CELSUB(CELSUB40948),
 .enable_gm(enable_regulation),
 .global_gm(tl0),
-.trim_gm_negative({trim_gm_negative_70133221[6],trim_gm_negative_70133221[5],trim_gm_negative_70133221[4],trim_gm_negative_70133221[3],trim_gm_negative_70133221[2],trim_gm_negative_70133221[1],trim_gm_negative_70133221[0]}),
-.trim_gm_positive({trim_gm_positive_70133221[6],trim_gm_positive_70133221[5],trim_gm_positive_70133221[4],trim_gm_positive_70133221[3],trim_gm_positive_70133221[2],trim_gm_positive_70133221[1],trim_gm_positive_70133221[0]})
+.trim_gm_negative({a0,a0,a0,a0,a0,a0,a0}),
+.trim_gm_positive({a0,a0,a0,a0,a0,a0,a0})
 );
 
 PEBBLEtielo XtieLo (
 .G(CELG59462),
 .V(CELV96848),
 .q(tl0),
+.SUB(CELSUB40948)
+);
+
+PEBBLEtielo XDRMNOTL (
+.G(CELG59462),
+.V(CELV96848),
+.q(a0),
 .SUB(CELSUB40948)
 );
 

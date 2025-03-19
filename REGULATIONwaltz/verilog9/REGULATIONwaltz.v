@@ -18,7 +18,7 @@ module REGULATIONwaltzDEBUG (VC,REFINT,CELG59462,CELV96848,go_driver,vss_status,
   output  hijack_enable_regulation;
 endmodule
 
-module REGULATIONwaltzMAIN (VC,MUDG,MUDV,REFINT,CZCOMP_0,CZCOMP_1,CZCOMP_2,RZCOMP_0,RZCOMP_1,RZCOMP_2,CELG59462,CELV96848,go_driver,GAINCOMP_0,GAINCOMP_1,CELSUB40948,DCMRIPPLE_0,DCMRIPPLE_1,IP_0d0816e7,IP_70133221,IP_96171c99,IP_f5d94fdd,IP_fa70de6e,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,CELREF_e3b0c442,enable_regulation,trim_clamp_0d0816e7,trim_gm_negative_70133221,trim_gm_positive_70133221,trim_vbuffer_negative_96171c99,trim_vbuffer_positive_96171c99);
+module REGULATIONwaltzMAIN (VC,MUDG,MUDV,REFINT,CZCOMP_0,CZCOMP_1,CZCOMP_2,RZCOMP_0,RZCOMP_1,RZCOMP_2,CELG59462,CELV96848,go_driver,GAINCOMP_0,GAINCOMP_1,CELSUB40948,DCMRIPPLE_0,DCMRIPPLE_1,IP_0d0816e7,IP_70133221,IP_96171c99,IP_f5d94fdd,IP_fa70de6e,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,CELREF_e3b0c442,enable_regulation);
   inout  VC;
   inout  MUDG;
   input  MUDV;
@@ -50,44 +50,7 @@ module REGULATIONwaltzMAIN (VC,MUDG,MUDV,REFINT,CZCOMP_0,CZCOMP_1,CZCOMP_2,RZCOM
   input  VSS_REGULATION;
   input  CELREF_e3b0c442;
   input  enable_regulation;
-  input [7:0] trim_clamp_0d0816e7;
-  input [6:0] trim_gm_negative_70133221;
-  input [6:0] trim_gm_positive_70133221;
-  input [6:0] trim_vbuffer_negative_96171c99;
-  input [6:0] trim_vbuffer_positive_96171c99;
 endmodule
-
-//Verilog HDL for "DRM", "drm56" "functional"
-
-
-module drm56 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, por1, por2, por3,
-por4, por5, por6, drm0, drm1, drm2, drm3, drm4, drm5, drm6, d1, d0 );
-
-  output  [7:0] drm4;
-  input  [7:0] por6;
-  input lastdrm;
-  input V;
-  output d1;
-  input  [7:0] por3;
-  output  [7:0] drm3;
-  input  [7:0] por5;
-  input  [7:0] id;
-  output d0;
-  output  [7:0] drm5;
-  output  [7:0] drm2;
-  input  [7:0] por2;
-  input  [7:0] por1;
-  input  [7:0] por4;
-  input bypload;
-  output  [7:0] drm6;
-  output  [7:0] drm0;
-  input  [7:0] por0;
-  input G;
-  output  [7:0] drm1;
-  inout  [4:0] tmi;
-  input SUB;
-endmodule
-
 
 //Verilog HDL for "Generate", "STONEnoconn" "functional"
 
@@ -98,9 +61,20 @@ module STONEnoconn ( noconn );
 endmodule
 
 
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltz (tmi, MUDG, MUDV, CELG59462, CELV96848, go_driver, CELSUB40948, IP_0d0816e7, IP_70133221, IP_96171c99, IP_f5d94fdd, IP_fa70de6e, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, enable_regulation);
-inout [4:0] tmi;
+module REGULATIONwaltz (MUDG, MUDV, CELG59462, CELV96848, go_driver, CELSUB40948, IP_0d0816e7, IP_70133221, IP_96171c99, IP_f5d94fdd, IP_fa70de6e, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, enable_regulation);
 inout  MUDG;
 input  MUDV;
 input  CELG59462;
@@ -122,27 +96,6 @@ input  enable_regulation;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
-wire [7:0] trim_clamp_0d0816e7;
-wire [6:0] trim_gm_negative_70133221;
-wire [6:0] trim_gm_positive_70133221;
-wire [6:0] trim_vbuffer_negative_96171c99;
-wire [6:0] trim_vbuffer_positive_96171c99;
-wire [7:0] id;
-wire [7:0] drm0;
-wire [7:0] drm1;
-wire [7:0] drm2;
-wire [7:0] drm3;
-wire [7:0] drm4;
-wire [7:0] drm5;
-wire [7:0] drm6;
-wire [7:0] por0;
-wire [7:0] por1;
-wire [7:0] por2;
-wire [7:0] por3;
-wire [7:0] por4;
-wire [7:0] por5;
-wire [7:0] por6;
 
 // ------------------------ Networks ---------------------
 REGULATIONwaltzDEBUG XDEBUG (
@@ -151,11 +104,11 @@ REGULATIONwaltzDEBUG XDEBUG (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .go_driver(go_driver),
-.vss_status(REGULATIONtestmode_5fb9e860_2),
+.vss_status(net_116),
 .CELSUB40948(CELSUB40948),
 .IREF_DRIVER(IREF_DRIVER),
-.vc_testmode(REGULATIONtestmode_5fb9e860_0),
-.vss_testmode(REGULATIONtestmode_5fb9e860_1),
+.vc_testmode(net_114),
+.vss_testmode(net_115),
 .FB_REGULATION(FB_REGULATION),
 .ok_regulation(ok_regulation),
 .VSS_REGULATION(VSS_REGULATION),
@@ -169,20 +122,20 @@ REGULATIONwaltzMAIN XMAIN (
 .MUDG(MUDG),
 .MUDV(MUDV),
 .REFINT(net_140),
-.CZCOMP_0(REGULATIONczcomp_97e82c27_0),
-.CZCOMP_1(REGULATIONczcomp_97e82c27_1),
-.CZCOMP_2(REGULATIONczcomp_97e82c27_2),
-.RZCOMP_0(REGULATIONrzcomp_166fa6ed_0),
-.RZCOMP_1(REGULATIONrzcomp_166fa6ed_1),
-.RZCOMP_2(REGULATIONrzcomp_166fa6ed_2),
+.CZCOMP_0(net_98),
+.CZCOMP_1(net_99),
+.CZCOMP_2(net_100),
+.RZCOMP_0(net_82),
+.RZCOMP_1(net_83),
+.RZCOMP_2(net_84),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .go_driver(go_driver),
-.GAINCOMP_0(REGULATIONgaincomp_b6f2b1a6_0),
-.GAINCOMP_1(REGULATIONgaincomp_b6f2b1a6_1),
+.GAINCOMP_0(net_66),
+.GAINCOMP_1(net_67),
 .CELSUB40948(CELSUB40948),
-.DCMRIPPLE_0(REGULATIONripple_668a78c0_0),
-.DCMRIPPLE_1(REGULATIONripple_668a78c0_1),
+.DCMRIPPLE_0(net_50),
+.DCMRIPPLE_1(net_51),
 .IP_0d0816e7(IP_0d0816e7),
 .IP_70133221(IP_70133221),
 .IP_96171c99(IP_96171c99),
@@ -195,66 +148,18 @@ REGULATIONwaltzMAIN XMAIN (
 .REF_REGULATION(REF_REGULATION),
 .VSS_REGULATION(net_143),
 .CELREF_e3b0c442(CELREF_e3b0c442),
-.enable_regulation(net_141),
-.trim_clamp_0d0816e7(trim_clamp_0d0816e7[7:0]),
-.trim_gm_negative_70133221(trim_gm_negative_70133221[6:0]),
-.trim_gm_positive_70133221(trim_gm_positive_70133221[6:0]),
-.trim_vbuffer_negative_96171c99(trim_vbuffer_negative_96171c99[6:0]),
-.trim_vbuffer_positive_96171c99(trim_vbuffer_positive_96171c99[6:0])
+.enable_regulation(net_141)
 );
 
-drm56 drm_hex0x02 (
+STONEnoconn XNCa0 (
+.noconn(a0)
+);
+
+PEBBLEtielo XDRMNOTL (
 .G(CELG59462),
 .V(CELV96848),
-.d0(a0),
-.d1(a1),
-.id({a0,a0,a0,a0,a0,a0,a1,a0}),
-.SUB(CELSUB40948),
-.tmi(tmi[4:0]),
-.drm0({trim_clamp_0d0816e7[7],trim_clamp_0d0816e7[6],trim_clamp_0d0816e7[5],trim_clamp_0d0816e7[4],trim_clamp_0d0816e7[3],trim_clamp_0d0816e7[2],trim_clamp_0d0816e7[1],trim_clamp_0d0816e7[0]}),
-.drm1({noconn_drm56_drm1_7,trim_vbuffer_negative_96171c99[6],trim_vbuffer_negative_96171c99[5],trim_vbuffer_negative_96171c99[4],trim_vbuffer_negative_96171c99[3],trim_vbuffer_negative_96171c99[2],trim_vbuffer_negative_96171c99[1],trim_vbuffer_negative_96171c99[0]}),
-.drm2({noconn_drm56_drm2_7,trim_vbuffer_positive_96171c99[6],trim_vbuffer_positive_96171c99[5],trim_vbuffer_positive_96171c99[4],trim_vbuffer_positive_96171c99[3],trim_vbuffer_positive_96171c99[2],trim_vbuffer_positive_96171c99[1],trim_vbuffer_positive_96171c99[0]}),
-.drm3({noconn_drm56_drm3_7,trim_gm_negative_70133221[6],trim_gm_negative_70133221[5],trim_gm_negative_70133221[4],trim_gm_negative_70133221[3],trim_gm_negative_70133221[2],trim_gm_negative_70133221[1],trim_gm_negative_70133221[0]}),
-.drm4({noconn_drm56_drm4_7,trim_gm_positive_70133221[6],trim_gm_positive_70133221[5],trim_gm_positive_70133221[4],trim_gm_positive_70133221[3],trim_gm_positive_70133221[2],trim_gm_positive_70133221[1],trim_gm_positive_70133221[0]}),
-.drm5({REGULATIONczcomp_97e82c27_2,REGULATIONczcomp_97e82c27_1,REGULATIONczcomp_97e82c27_0,REGULATIONripple_668a78c0_1,REGULATIONripple_668a78c0_0,REGULATIONtestmode_5fb9e860_2,REGULATIONtestmode_5fb9e860_1,REGULATIONtestmode_5fb9e860_0}),
-.drm6({noconn_drm56_drm6_7,noconn_drm56_drm6_6,noconn_drm56_drm6_5,REGULATIONgaincomp_b6f2b1a6_1,REGULATIONgaincomp_b6f2b1a6_0,REGULATIONrzcomp_166fa6ed_2,REGULATIONrzcomp_166fa6ed_1,REGULATIONrzcomp_166fa6ed_0}),
-.por0({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por1({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por2({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por3({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por4({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por5({a0,a0,a0,a0,a1,a0,a0,a0}),
-.por6({a0,a0,a0,a0,a1,a0,a1,a1}),
-.bypload(a0),
-.lastdrm(a0)
-);
-
-STONEnoconn XNCnoconn_drm56_drm1_7 (
-.noconn(noconn_drm56_drm1_7)
-);
-
-STONEnoconn XNCnoconn_drm56_drm2_7 (
-.noconn(noconn_drm56_drm2_7)
-);
-
-STONEnoconn XNCnoconn_drm56_drm3_7 (
-.noconn(noconn_drm56_drm3_7)
-);
-
-STONEnoconn XNCnoconn_drm56_drm4_7 (
-.noconn(noconn_drm56_drm4_7)
-);
-
-STONEnoconn XNCnoconn_drm56_drm6_5 (
-.noconn(noconn_drm56_drm6_5)
-);
-
-STONEnoconn XNCnoconn_drm56_drm6_6 (
-.noconn(noconn_drm56_drm6_6)
-);
-
-STONEnoconn XNCnoconn_drm56_drm6_7 (
-.noconn(noconn_drm56_drm6_7)
+.q(a0),
+.SUB(CELSUB40948)
 );
 
 endmodule
