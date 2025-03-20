@@ -8,9 +8,6 @@ module STONEnoconn ( noconn );
 endmodule
 
 
-module pwl_dm_1a5ff6ae ();
-endmodule
-
 module vpwl_0x0(PLUS, MINUS);
 output PLUS;
 output MINUS;
@@ -59,11 +56,6 @@ module vpwl_0x0_10d0ux0_8d0mx1d8 (PLUS,MINUS);
   output  MINUS;
 endmodule
 
-module vpwl_0x0_10d999ux0_11d0ux5 (PLUS,MINUS);
-  inout  PLUS;
-  inout  MINUS;
-endmodule
-
 module alibgnd (GND); 
 input GND; 
 endmodule 
@@ -93,10 +85,6 @@ inout  enable_regulation;
 // ------------------------ Networks ---------------------
 STONEnoconn XNCip (
 .noconn(noconn_IN)
-);
-
-pwl_dm_1a5ff6ae Xd_enable_regulation (
-
 );
 
 vpwl_0x0 XCELG (
@@ -202,11 +190,6 @@ vdc_0 VI__REF_REGULATION (
 vdc_0 VI__VSS_REGULATION (
 .PLUS(net_68),
 .MINUS(VSS_REGULATION)
-);
-
-vpwl_0x0_10d999ux0_11d0ux5 Xd_enable_regulation_pwl_bit0 (
-.PLUS(enable_regulation),
-.MINUS(GND)
 );
 
 alibgnd G1 ( 
