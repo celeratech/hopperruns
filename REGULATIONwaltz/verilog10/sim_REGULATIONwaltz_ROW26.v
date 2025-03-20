@@ -1,7 +1,6 @@
 // ------------------------ Module Definitions -----------
-module FORCE_REGULATIONwaltz (GND,tmi,MUDG,MUDV,CELG59462,CELV96848,CELSUB40948,IP_0d0816e7,IP_70133221,IP_96171c99,IP_f5d94fdd,IP_fa70de6e,kelvin_MUDG,FB_REGULATION,REF_REGULATION,VSS_REGULATION,enable_regulation);
+module FORCE_REGULATIONwaltz (GND,MUDG,MUDV,CELG59462,CELV96848,CELSUB40948,IP_0d0816e7,IP_70133221,IP_96171c99,IP_f5d94fdd,IP_fa70de6e,kelvin_MUDG,FB_REGULATION,REF_REGULATION,VSS_REGULATION,enable_regulation);
   output  GND;
-  inout [4:0] tmi;
   output  MUDG;
   output  MUDV;
   output  CELG59462;
@@ -51,7 +50,6 @@ wire [4:0] tmi;
 // ------------------------ Networks ---------------------
 FORCE_REGULATIONwaltz XFORCE_REGULATIONwaltz1 (
 .GND(GND),
-.tmi(tmi[4:0]),
 .MUDG(kelvin_MUDG),
 .MUDV(MUDV),
 .CELG59462(CELG59462),

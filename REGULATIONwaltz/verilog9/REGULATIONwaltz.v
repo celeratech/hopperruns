@@ -203,12 +203,12 @@ REGULATIONwaltzMAIN XMAIN (
 .trim_vbuffer_positive_96171c99(trim_vbuffer_positive_96171c99[6:0])
 );
 
-drm56 drm_hex0x02 (
+drm56 drm_hex0x01 (
 .G(CELG59462),
 .V(CELV96848),
 .d0(a0),
 .d1(a1),
-.id({a0,a0,a0,a0,a0,a0,a1,a0}),
+.id({a0,a0,a0,a0,a0,a0,a0,a1}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
 .drm0({trim_clamp_0d0816e7[7],trim_clamp_0d0816e7[6],trim_clamp_0d0816e7[5],trim_clamp_0d0816e7[4],trim_clamp_0d0816e7[3],trim_clamp_0d0816e7[2],trim_clamp_0d0816e7[1],trim_clamp_0d0816e7[0]}),
