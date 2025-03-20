@@ -467,12 +467,12 @@ capacitorfixed_b8fedd7c Xcapacitor2 (
 .CP(net_142)
 );
 
-drm24 drm_hex0x02 (
+drm24 drm_hex0x01 (
 .G(CELG59462),
 .V(CELV96848),
 .d0(a0),
 .d1(a1),
-.id({a0,a0,a0,a0,a0,a0,a1,a0}),
+.id({a0,a0,a0,a0,a0,a0,a0,a1}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
 .drm0({noconn_drm24_drm0_7,trim_csainput_5c672501_6,trim_csainput_5c672501_5,trim_csainput_5c672501_4,trim_csainput_5c672501_3,trim_csainput_5c672501_2,trim_csainput_5c672501_1,trim_csainput_5c672501_0}),

@@ -8,25 +8,6 @@ module STONEnoconn ( noconn );
 endmodule
 
 
-//Verilog HDL for "DRM", "drm8" "functional"
-
-
-module drm8 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, drm0, d1, d0 );
-
-  input lastdrm;
-  input V;
-  output d1;
-  input  [7:0] id;
-  output d0;
-  input bypload;
-  output  [7:0] drm0;
-  input  [7:0] por0;
-  input G;
-  inout  [4:0] tmi;
-  input SUB;
-endmodule
-
-
 //Celera:dbuf_e926e395
 //Celera Confidential Symbol Generator
 //Digital Buffer
@@ -113,9 +94,8 @@ input GND;
 endmodule 
 
 // ------------------------ Module Verilog ---------------
-module FORCE_INCURRENTSENSEpuget (GND, tmi, SIMPV, VOUTSN, VOUTSP, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_2ceca3e2, IP_4ad46a6e, IP_5c672501, clock_currentsensein, enable_currentsensein, measure_currentsensein, kelvin_GNDcurrentsensein);
+module FORCE_INCURRENTSENSEpuget (GND, SIMPV, VOUTSN, VOUTSP, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_2ceca3e2, IP_4ad46a6e, IP_5c672501, clock_currentsensein, enable_currentsensein, measure_currentsensein, kelvin_GNDcurrentsensein);
 inout  GND;
-inout [4:0] tmi;
 output  SIMPV;
 output  VOUTSN;
 output  VOUTSP;
@@ -133,52 +113,10 @@ output  kelvin_GNDcurrentsensein;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
-wire [7:0] id;
-wire [7:0] drm0;
-wire [7:0] por0;
 
 // ------------------------ Networks ---------------------
 STONEnoconn XNCip (
 .noconn(noconn_IN)
-);
-
-drm8 drm_hex0x01 (
-.G(CELG59462),
-.V(CELV96848),
-.d0(a0),
-.d1(a1),
-.id({a0,a0,a0,a0,a0,a0,a0,a1}),
-.SUB(CELSUB40948),
-.tmi(tmi[4:0]),
-.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,noconn_drm8_drm0_3,noconn_drm8_drm0_2,measure_currentsensein_c8e860f8,enable_currentsensein_1daef928}),
-.por0({a0,a0,a0,a0,a0,a0,a0,a0}),
-.bypload(a0),
-.lastdrm(a0)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_2 (
-.noconn(noconn_drm8_drm0_2)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_3 (
-.noconn(noconn_drm8_drm0_3)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_4 (
-.noconn(noconn_drm8_drm0_4)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_5 (
-.noconn(noconn_drm8_drm0_5)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_6 (
-.noconn(noconn_drm8_drm0_6)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_7 (
-.noconn(noconn_drm8_drm0_7)
 );
 
 dbuf_e926e395 Xd_clock_currentsensein (
@@ -283,12 +221,12 @@ vdc_0 VI__kelvin_GNDcurrentsensein (
 );
 
 vpwl_0x0_10d999ux0_11d0ux5 Xd_enable_currentsensein_pwl_bit0 (
-.PLUS(enable_currentsensein_1daef928),
+.PLUS(enable_currentsensein),
 .MINUS(GND)
 );
 
 vpwl_0x0_11d0ux0 Xd_measure_currentsensein_pwl_bit0 (
-.PLUS(measure_currentsensein_c8e860f8),
+.PLUS(measure_currentsensein),
 .MINUS(GND)
 );
 

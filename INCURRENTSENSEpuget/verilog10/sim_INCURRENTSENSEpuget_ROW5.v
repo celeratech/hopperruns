@@ -1,7 +1,6 @@
 // ------------------------ Module Definitions -----------
-module FORCE_INCURRENTSENSEpuget (GND,tmi,SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_2ceca3e2,IP_4ad46a6e,IP_5c672501,clock_currentsensein,enable_currentsensein,measure_currentsensein,kelvin_GNDcurrentsensein);
+module FORCE_INCURRENTSENSEpuget (GND,SIMPV,VOUTSN,VOUTSP,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_2ceca3e2,IP_4ad46a6e,IP_5c672501,clock_currentsensein,enable_currentsensein,measure_currentsensein,kelvin_GNDcurrentsensein);
   inout  GND;
-  inout [4:0] tmi;
   output  SIMPV;
   output  VOUTSN;
   output  VOUTSP;
@@ -50,7 +49,6 @@ wire [4:0] tmi;
 // ------------------------ Networks ---------------------
 FORCE_INCURRENTSENSEpuget XFORCE_INCURRENTSENSEpuget1 (
 .GND(GND),
-.tmi(tmi[4:0]),
 .SIMPV(SIMPV),
 .VOUTSN(VOUTSN),
 .VOUTSP(VOUTSP),
