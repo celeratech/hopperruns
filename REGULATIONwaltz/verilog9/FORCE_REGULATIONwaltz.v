@@ -56,6 +56,11 @@ module vpwl_0x0_10d0ux0_8d0mx1d8 (PLUS,MINUS);
   output  MINUS;
 endmodule
 
+module diode (PLUS, MINUS);
+inout PLUS;
+inout MINUS;
+endmodule
+
 module alibgnd (GND); 
 input GND; 
 endmodule 
@@ -190,6 +195,11 @@ vdc_0 VI__REF_REGULATION (
 vdc_0 VI__VSS_REGULATION (
 .PLUS(net_68),
 .MINUS(VSS_REGULATION)
+);
+
+diode_dm_pwl Xd_enable_regulation_pwl_bit0 (
+.PLUS(enable_regulation),
+.MINUS(GND)
 );
 
 alibgnd G1 ( 
