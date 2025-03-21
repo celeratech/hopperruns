@@ -9,7 +9,7 @@
 cell,delayclock
 //**********************************************
 //Generator Revision
-revision,generator,0.4.0
+revision,generator,0.4.1
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
@@ -187,8 +187,8 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,prog_delay_9bit,99999
 sub_area,STONEdelayclockSELECT49,99999
+sub_area,prog_delay_9bit,99999
 generate_area,delayclock_6ebc6d97,199998
 // *********************************************
 #define,DELAYresistorISO,CELG
@@ -204,9 +204,12 @@ generate_area,delayclock_6ebc6d97,199998
 *******************************************
 //delayclock
 revision,pinorder,0.2.0
+Key,301
+PinOrder code revision,0.3.0
 pinorder,in,out,clock,delay0,delay1,net_skip
-
 endpinorder
+//**********************************************
+
 //**********************************************
 //TRIM Parameters
 cell,delayclock

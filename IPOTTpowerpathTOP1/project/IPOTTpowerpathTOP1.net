@@ -1,0 +1,139 @@
+* Z:\celera\projects\Simplis\playrich\IPOTT\IPOTTpowerpath\301\verification\sim_IPOTTpowerpathTOP.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map SOURCE 25
+.node_map REF 27
+.node_map enable_powerpath 26
+.node_map MUDV 24
+.node_map CELPOS 21
+.node_map GATE 22
+.node_map IN 23
+.options
++ PSP_NPT=50001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+.tran 1m 0
+
+.globalvar TEMP=25
+.globalvar HVIN = 8.0
+.globalvar VIN = 5.0
+.globalvar CELPOS= 12.0
+.globalvar REF = 1.0
+.globalvar tdext_khz=10
+
+C1 22 23 3.3n IC=0
+X$PPATH 21 22 26 27 0 23 0 24 25 0 IPOTTpowerpathTOP1
+.PRINT V(#GATE)
+.GRAPH :#GATE curveLabel= GATE nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe1  
+.PRINT V(#SOURCE)
+.GRAPH :#SOURCE curveLabel= SOURCE nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe2  
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+V1 24 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=0 X2=2u Y2={VIN} 
+V2 23 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=0 X2=2u Y2={HVIN} 
+V3 27 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=0 X2=2u Y2={REF} 
+V4 21 0 PWL NSEG=2 X0=0 Y0=0 X1=1u Y1=0 X2=2u Y2={CELPOS} 
+V5 26 0 PWL NSEG=2 X0=0 Y0=0 X1=20u Y1=0 X2=20.00001u Y2={VIN} 
+** From Z:\celera\projects\Simplis\playrich\IPOTT\IPOTTpowerpath\301\design\IPOTTpowerpathTOP1.sxcmp
+.subckt IPOTTpowerpathTOP1 263 269 262 284 282 274 280 279 281 278
+*#hierarchy
+.node_map SIMPV 261
+.node_map ok_powerpath 291
+.node_map V0p065 290
+.node_map kelvin_IN 275
+.node_map BUS1$0 258
+.node_map BUS1$1 259
+.node_map BUS1$2 260
+.node_map GATEON 270
+.node_map GATEV 288
+.node_map enable_powerpath_hv 265
+.node_map SOURCE 281
+.node_map kelvin_CELG 289
+.node_map REF 284
+.node_map gateoff 283
+.node_map en_hv 276
+.node_map V0p65 264
+.node_map V0p03 266
+.node_map reset 277
+.node_map ONEMEGFB 285
+.node_map kelvin_OUT 267
+.node_map ok_gm 271
+.node_map set 268
+.node_map MUDG 280
+.node_map enable_powerpath 262
+.node_map UVLO 273
+.node_map Vm0p03 272
+.node_map MUDV 279
+.node_map CELPOS 263
+.node_map GATE 269
+.node_map kelvin_MUDG 282
+.node_map IN 274
+.node_map ONEMEG1 286
+.node_map ONEMEG2 287
+.node_map IP 278
+X$amplifier2 261 285 216 284 262 207 258 259 260 215 amplifier vars: amplifier_gainadjust='openloop' amplifier_input_type='p' amplifier_accuracy='system' amplifier_accuracyname='currref' amplifier_accuracydescription='Reference_Current_Trim' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$comparator2 176 263 265 173 264 172 267 174 175 171 comparatornoctlpins vars: comparator_model='comparator' comparator_hysteresismode='fixed' comparator_edge='rising' comparator_speed='slow' comparator_type='p' comparator_deglitch='no' comparator_lowiq='no' comparator_datasheet_name='text' comparator_datasheet_description='text' bgcomp_accuracy='no' bgcomp_outputanalog='supply' bgcomp_note1='Usage' bgcomp_outputdigital='no' bgcomp_trim_name='text' bgcomp_trim_description='text' bgcomp_enable='yes' comparator_dft='no' comparatorsupply_reference='ground' comparatorsupply_threshold='50' comparatorsupply_edge='falling' comparatorsupply_output='analog' comparatorsupply_enable='analog' comparator_hysteresis=20 comparator_lowiqpor=0 bgcomp_threshold=1.2 bgcomp_maxcelpos=6 bgcomp_maxvin=6 comparator_vmax=6
+X$comparator4 191 263 265 185 272 184 274 186 187 183 comparatornoctlpins vars: comparator_model='comparator' comparator_hysteresismode='fixed' comparator_edge='rising' comparator_speed='fast' comparator_type='p' comparator_deglitch='no' comparator_lowiq='no' comparator_datasheet_name='text' comparator_datasheet_description='text' bgcomp_accuracy='no' bgcomp_outputanalog='supply' bgcomp_note1='Usage' bgcomp_outputdigital='no' bgcomp_trim_name='text' bgcomp_trim_description='text' bgcomp_enable='yes' comparator_dft='no' comparatorsupply_reference='ground' comparatorsupply_threshold='50' comparatorsupply_edge='falling' comparatorsupply_output='analog' comparatorsupply_enable='analog' comparator_hysteresis=20 comparator_lowiqpor=0 bgcomp_threshold=1.2 bgcomp_maxcelpos=6 bgcomp_maxvin=6 comparator_vmax=6
+X$comparator6 196 263 265 190 273 189 275 194 195 188 comparatornoctlpins vars: comparator_model='comparator' comparator_hysteresismode='fixed' comparator_edge='rising' comparator_speed='slow' comparator_type='p' comparator_deglitch='yes' comparator_lowiq='no' comparator_datasheet_name='text' comparator_datasheet_description='text' bgcomp_accuracy='no' bgcomp_outputanalog='supply' bgcomp_note1='Usage' bgcomp_outputdigital='no' bgcomp_trim_name='text' bgcomp_trim_description='text' bgcomp_enable='yes' comparator_dft='no' comparatorsupply_reference='ground' comparatorsupply_threshold='50' comparatorsupply_edge='falling' comparatorsupply_output='analog' comparatorsupply_enable='analog' comparator_hysteresis=100 comparator_lowiqpor=0 bgcomp_threshold=1.2 bgcomp_maxcelpos=6 bgcomp_maxvin=6 comparator_vmax=6
+X$delay1 151 152 delayfixed vars: delay_type='fixed' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=10 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1k
+X$delay2 160 161 delayfixed vars: delay_type='fixed' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=20 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1k
+X$delay3 168 169 delayfixed vars: delay_type='fixed' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1k
+X$delay4 152 153 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=20 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1k
+X$dff1 206 268 270 283 277 dff vars: dff_edge='rise' dff_outputs='both' dff_bits=1 dff_vmax=6
+X$gm2 263 267 179 178 180 266 265 181 182 271 gm vars: gm_type='p' gm_override='no' gm_output='pushpull' gm_clamp_high='no' gm_clamp_low='no' gm_ok='yes' gm_lowiq='no' gm_lowiq_name='text' gm_lowiq_description='text' gm_dft='no' gm_accuracy='cell' gm_trim_name='text' gm_trim_description='text' gm_gain=400m gm_lowiq_por=0 gm_vmax=6
+X$oscillator1 168 261 167 165 163 162 262 164 166 oscillatorcrude vars: osc_type='crude' osc_accuracy='no' osc_datasheet_accuracy_name='text' osc_datasheet_accuracy_description='text' osc_enable='pin' osc_enable_por='disable' osc_datasheet_enable_name='text' osc_datasheet_enable_description='text' osc_ss='no' osc_standbyclock='no' osc_standbyclockpor='disable' osc_ext_freq_default='no' osc_crystalbias='3.3' osc_crystalglobalref='yes' osc_ss_configuration='fixed' osc_ss_enable_control='fixed' osc_ss_mode_por='sweep' osc_ss_enable_por='enable' osc_ss_clock_sync='synchronized' osc_ss_datasheetname='text' osc_dft='no' osc_ibias='global' osc_int_freq=1k osc_int_duty=50 osc_int_ireplica_gain=10 osc_int_1=0 osc_ext_freq=1k osc_ext_resistor=50 osc_ext_duty=50 osc_ext_replicagain=0 osc_ext_comment=0 osc_crude_freq=1k osc_crude_generatesupply=5 osc_crude_duty=50 osc_crystalfreq=1 osc_crystalreflocal=1 osc_crystalcleancountpor=32 osc_ringfreq=20 osc_ss_range_por=5 osc_ss_clock_independent=50 osc_ss_clock_divide=64 osc_vmax=6
+X$oscillator2 160 261 159 157 155 154 262 156 158 oscillatorcrude vars: osc_type='crude' osc_accuracy='no' osc_datasheet_accuracy_name='text' osc_datasheet_accuracy_description='text' osc_enable='pin' osc_enable_por='disable' osc_datasheet_enable_name='text' osc_datasheet_enable_description='text' osc_ss='no' osc_standbyclock='no' osc_standbyclockpor='disable' osc_ext_freq_default='no' osc_crystalbias='3.3' osc_crystalglobalref='yes' osc_ss_configuration='fixed' osc_ss_enable_control='fixed' osc_ss_mode_por='sweep' osc_ss_enable_por='enable' osc_ss_clock_sync='synchronized' osc_ss_datasheetname='text' osc_dft='no' osc_ibias='global' osc_int_freq=1k osc_int_duty=50 osc_int_ireplica_gain=10 osc_int_1=0 osc_ext_freq=1k osc_ext_resistor=50 osc_ext_duty=50 osc_ext_replicagain=0 osc_ext_comment=0 osc_crude_freq=5k osc_crude_generatesupply=5 osc_crude_duty=50 osc_crystalfreq=1 osc_crystalreflocal=1 osc_crystalcleancountpor=32 osc_ringfreq=20 osc_ss_range_por=5 osc_ss_clock_independent=50 osc_ss_clock_divide=64 osc_vmax=6
+X$oscillator3 151 261 150 148 146 145 262 147 149 oscillatorcrude vars: osc_type='crude' osc_accuracy='no' osc_datasheet_accuracy_name='text' osc_datasheet_accuracy_description='text' osc_enable='pin' osc_enable_por='disable' osc_datasheet_enable_name='text' osc_datasheet_enable_description='text' osc_ss='no' osc_standbyclock='no' osc_standbyclockpor='disable' osc_ext_freq_default='no' osc_crystalbias='3.3' osc_crystalglobalref='yes' osc_ss_configuration='fixed' osc_ss_enable_control='fixed' osc_ss_mode_por='sweep' osc_ss_enable_por='enable' osc_ss_clock_sync='synchronized' osc_ss_datasheetname='text' osc_dft='no' osc_ibias='global' osc_int_freq=1k osc_int_duty=50 osc_int_ireplica_gain=10 osc_int_1=0 osc_ext_freq=1k osc_ext_resistor=50 osc_ext_duty=50 osc_ext_replicagain=0 osc_ext_comment=0 osc_crude_freq=10k osc_crude_generatesupply=5 osc_crude_duty=50 osc_crystalfreq=1 osc_crystalreflocal=1 osc_crystalcleancountpor=32 osc_ringfreq=20 osc_ss_range_por=5 osc_ss_clock_independent=50 osc_ss_clock_divide=64 osc_vmax=6
+X$pinprobe1 269 pinprobe vars: pinprobe_description='External_NMOS_Gate' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe10 278 pinprobe vars: pinprobe_description='Current_Reference' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 263 pinprobe vars: pinprobe_description='Charge_Pump_Supply' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 274 pinprobe vars: pinprobe_description='Input_Supply' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 279 pinprobe vars: pinprobe_description='CORE_Supply' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 280 pinprobe vars: pinprobe_description='Regulation_Ground' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 282 pinprobe vars: pinprobe_description='Regulation_Ground' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe7 262 pinprobe vars: pinprobe_description='Enable' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe8 284 pinprobe vars: pinprobe_description='1V_Reference' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe9 281 pinprobe vars: pinprobe_description='External_NMOS_Source' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$switch1 179 269 270 switchtransmission vars: switch_type='transmission' switch_polarity='noninvert' switch_model='celera' switch_ron=100 switch_pulldownvmax=6 switch_vmax=6
+X$U1 261 263 261 291 274 236 levelshifter0L2H vars: levelshifter_direction='low2high' levelshifter_enable='no' levelshifter_vhigh=30 levelshifter_bits=1 levelshifter_vmax=6
+X$U10 263 256 261 263 261 274 logicshifter0H2L vars: logicshifter_direction='high2low' logicshifter_model='ideal' logicshifter_bits=1 logicshifter_vhigh=30 logicshifter_vmax=6
+X$U11 286 272 216 240 238 234 fet vars: fet_usage='signal' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=1k fet_ron_power=1 fet_replica_gain=10 fet_maximumvds=45 count_1=0 fet_vmax=6
+X$U12 287 273 216 241 239 235 fet vars: fet_usage='signal' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=200 fet_ron_power=1 fet_replica_gain=10 fet_maximumvds=45 count_1=0 fet_vmax=6
+X$U13 270 263 261 291 274 251 levelshifter0H2L vars: levelshifter_direction='high2low' levelshifter_enable='no' levelshifter_vhigh=45 levelshifter_bits=1 levelshifter_vmax=6
+X$U14 192 193 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U15 200 201 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U16 263 257 261 263 261 274 logicshifter0H2L vars: logicshifter_direction='high2low' logicshifter_model='ideal' logicshifter_bits=1 logicshifter_vhigh=45 logicshifter_vmax=6
+X$U17 206 tie vars: tie_mode='high' tie_vmax=6
+X$U18 185 191 192 191 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U19 198 277 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U2 270 263 261 291 274 237 levelshifter0H2L vars: levelshifter_direction='high2low' levelshifter_enable='no' levelshifter_vhigh=30 levelshifter_bits=1 levelshifter_vmax=6
+X$U20 193 198 199 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U21 191 199 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U22 263 269 202 205 204 203 fet vars: fet_usage='signal' fet_replica='no' fet_type='p' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=40 fet_ron_power=10 fet_replica_gain=10 fet_maximumvds=30 count_1=0 fet_vmax=6
+X$U23 202 201 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U24 208 283 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U25 270 200 oneshot vars: oneshot_time=250 oneshot_vmax=6
+X$U27 261 263 261 291 274 250 levelshifter0L2H vars: levelshifter_direction='low2high' levelshifter_enable='no' levelshifter_vhigh=45 levelshifter_bits=1 levelshifter_vmax=6
+X$U28 197 276 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U29 190 271 197 196 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U3 226 231 232 233 227 228 229 230 278 279 262 242 263 currentmirror4 vars: currentmirror_isetpolarity='source' currentmirror_type0='source' currentmirror_type1='source' currentmirror_type2='source' currentmirror_type3='source' currentmirror_type4='sink' currentmirror_type5='sink' currentmirror_type6='sink' currentmirror_type7='sink' currentmirror_dft='no' currentmirror_number=4 currentmirror_maxiset=1 currentmirror_maxvout=30 currentmirror_gain0=1 currentmirror_gain1=1 currentmirror_gain2=1 currentmirror_gain3=1 currentmirror_gain4=1 currentmirror_gain5=1 currentmirror_gain6=1 currentmirror_gain7=1 currentmirror_vmax=6
+X$U30 285 290 216 223 220 217 fet vars: fet_usage='signal' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=1k fet_ron_power=1 fet_replica_gain=10 fet_maximumvds=30 count_1=0 fet_vmax=6
+X$U32 267 269 208 213 211 209 fet vars: fet_usage='signal' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=60 fet_ron_power=20 fet_replica_gain=10 fet_maximumvds=30 count_1=0 fet_vmax=6
+X$U33 173 176 177 176 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U34 286 272 216 224 221 218 fet vars: fet_usage='signal' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=1k fet_ron_power=1 fet_replica_gain=10 fet_maximumvds=30 count_1=0 fet_vmax=6
+X$U35 263 265 261 207 263 274 logicshifter0L2H vars: logicshifter_direction='low2high' logicshifter_model='ideal' logicshifter_bits=1 logicshifter_vhigh=30 logicshifter_vmax=6
+X$U36 177 268 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U37 267 269 208 214 212 210 fet vars: fet_usage='signal' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=100 fet_ron_power=20 fet_replica_gain=10 fet_maximumvds=45 count_1=0 fet_vmax=6
+X$U4 285 286 287 288 267 274 266 266 289 289 289 273 272 266 290 290 resistorarray vars: resistor_array_type='poly' resistor_array_dummy='no' resistor_array_value=20 resistor_array_number=8 resistor_array_r1_series=50 resistor_array_r1_parallel=0 resistor_array_r2_series=50 resistor_array_r2_parallel=0 resistor_array_r3_series=10 resistor_array_r3_parallel=0 resistor_array_r4_series=35 resistor_array_r4_parallel=0 resistor_array_r5_series=1 resistor_array_r5_parallel=2 resistor_array_r6_series=1 resistor_array_r6_parallel=2 resistor_array_r7_series=1 resistor_array_r7_parallel=2 resistor_array_r8_series=0 resistor_array_r8_parallel=4 resistor_array_vmax=6 resistor_array_imax=100u
+X$U5 287 273 216 225 222 219 fet vars: fet_usage='signal' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=200 fet_ron_power=1 fet_replica_gain=10 fet_maximumvds=30 count_1=0 fet_vmax=6
+X$U6 263 254 261 261 263 274 logicshifter0L2H vars: logicshifter_direction='low2high' logicshifter_model='ideal' logicshifter_bits=1 logicshifter_vhigh=30 logicshifter_vmax=6
+X$U7 243 248 249 252 244 245 246 247 278 279 262 253 263 currentmirror4 vars: currentmirror_isetpolarity='source' currentmirror_type0='source' currentmirror_type1='source' currentmirror_type2='source' currentmirror_type3='source' currentmirror_type4='sink' currentmirror_type5='sink' currentmirror_type6='sink' currentmirror_type7='sink' currentmirror_dft='no' currentmirror_number=4 currentmirror_maxiset=1 currentmirror_maxvout=45 currentmirror_gain0=1 currentmirror_gain1=1 currentmirror_gain2=1 currentmirror_gain3=1 currentmirror_gain4=1 currentmirror_gain5=1 currentmirror_gain6=1 currentmirror_gain7=1 currentmirror_vmax=6
+X$U8 169 170 oneshot vars: oneshot_time=250 oneshot_vmax=6
+X$U9 263 255 261 261 263 274 logicshifter0L2H vars: logicshifter_direction='low2high' logicshifter_model='ideal' logicshifter_bits=1 logicshifter_vhigh=45 logicshifter_vmax=6
+.ends IPOTTpowerpathTOP1
+
+.end

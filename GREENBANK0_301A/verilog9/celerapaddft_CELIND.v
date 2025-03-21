@@ -60,7 +60,7 @@ STONEpad1 Xdftpad (
 .PAD(CELIND)
 );
 
-ESDcore6 XESDcore6_2 (
+ESDcore6 XESDcore6_1 (
 .PAD(CELIND),
 .GESD(GESD)
 );

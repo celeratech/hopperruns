@@ -1,0 +1,53 @@
+//Celera Brick Generator Confidential
+//CORE:amux
+//NAME:amux2_a6effade
+//GENERATOR REVISION:0.4.1
+//NUMBER OF INPUTS:2
+//SWITCH ON RESISTANCE:10K
+//TYPE OF CONTROL:pin
+//T-SWITCH:no
+
+//Celera Confidential Do Not Copy STONEmux2_10K
+//Verilog HDL for "Generate", "STONEmux2_10K" "functional"
+
+
+module STONEmux2_10K ( O, CELG, CELV, I0, I1, SUB, s );
+
+  input CELV;
+  input s;
+  input I1;
+  input I0;
+  input SUB;
+  input CELG;
+  output O;
+endmodule
+
+//Celera Confidential Do Not Copy amux2_a6effade
+//Celera Confidential Symbol Generator
+//Inputs: 2, Switch On Resistance: 10K
+//Type of Control:pin, T-Switch: no
+module amux2_a6effade (SIMPV,CELSUB,O,I0,I1,
+amux,
+CELG);
+input SIMPV;
+input CELSUB;
+output O;
+input I0;
+input I1;
+input amux;
+input CELG;
+
+//Celera Confidential Do Not Copy STONEmux2_10K
+STONEmux2_10K Xamux(
+.CELV (SIMPV),
+.s (amux),
+.I1 (I1),
+.I0 (I0),
+.SUB (CELSUB),
+.CELG (CELG),
+.O (O)
+);
+//,diesize,STONEmux2_10K
+//Celera Confidential Do Not Copy Module End
+//Celera Schematic Generator
+endmodule

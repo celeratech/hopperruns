@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module LDOgreenbankLDOfixed40mA (LDO,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,CELPOWER_LDO_ae2828c4,celkelvin_LDO15_2f19d9b2,celkelvin_MUDG_2f19d9b24);
+module LDOgreenbankLDOfixed40mA (LDO,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,CELPOWER_LDO_4b7cb037,celkelvin_MUDG_ceb54526,celkelvin_LDO15_ceb54526);
   output  LDO;
   input [4:0] tmi;
   input  MUDV;
@@ -8,12 +8,12 @@ module LDOgreenbankLDOfixed40mA (LDO,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CEL
   input  enable_ldo;
   input  CELSUB40948;
   output  dft_startup;
-  input  CELPOWER_LDO_ae2828c4;
-  input  celkelvin_LDO15_2f19d9b2;
-  input  celkelvin_MUDG_2f19d9b24;
+  input  CELPOWER_LDO_4b7cb037;
+  input  celkelvin_MUDG_ceb54526;
+  input  celkelvin_LDO15_ceb54526;
 endmodule
 
-module LDOgreenbankLDOconfigure (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,celkelvin_LDO10_f4bf3314,celkelvin_MUDG_f4bf33145);
+module LDOgreenbankLDOconfigure (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,celkelvin_MUDG_9e0b544b,celkelvin_LDO10_9e0b544b);
   output  LDO;
   input  REF;
   inout [4:0] tmi;
@@ -23,11 +23,11 @@ module LDOgreenbankLDOconfigure (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo
   input  enable_ldo;
   input  CELSUB40948;
   output  dft_startup;
-  input  celkelvin_LDO10_f4bf3314;
-  input  celkelvin_MUDG_f4bf33145;
+  input  celkelvin_MUDG_9e0b544b;
+  input  celkelvin_LDO10_9e0b544b;
 endmodule
 
-module LDOgreenbankLDOconfigure20mA (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,celkelvin_LDO14_9c93d8b1,celkelvin_MUDG_9c93d8b16);
+module LDOgreenbankLDOconfigure20mA (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,celkelvin_MUDG_1d518b73,celkelvin_LDO14_1d518b73);
   output  LDO;
   input  REF;
   inout [4:0] tmi;
@@ -37,11 +37,11 @@ module LDOgreenbankLDOconfigure20mA (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable
   input  enable_ldo;
   input  CELSUB40948;
   output  dft_startup;
-  input  celkelvin_LDO14_9c93d8b1;
-  input  celkelvin_MUDG_9c93d8b16;
+  input  celkelvin_MUDG_1d518b73;
+  input  celkelvin_LDO14_1d518b73;
 endmodule
 
-module LDOgreenbankLDOfixed (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,CELPOWER_LDO_71a83686,celkelvin_LDO8_606cfcba,celkelvin_MUDG_606cfcba7);
+module LDOgreenbankLDOfixed (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,CELPOWER_LDO_214c0f74,celkelvin_LDO8_635a8467,celkelvin_MUDG_635a8467);
   output  LDO;
   input  REF;
   input [4:0] tmi;
@@ -51,12 +51,12 @@ module LDOgreenbankLDOfixed (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CEL
   input  enable_ldo;
   input  CELSUB40948;
   output  dft_startup;
-  input  CELPOWER_LDO_71a83686;
-  input  celkelvin_LDO8_606cfcba;
-  input  celkelvin_MUDG_606cfcba7;
+  input  CELPOWER_LDO_214c0f74;
+  input  celkelvin_LDO8_635a8467;
+  input  celkelvin_MUDG_635a8467;
 endmodule
 
-module LDOgreenbankLDOfixed20mA (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,celkelvin_LDO12_ddaae812,celkelvin_MUDG_ddaae8128);
+module LDOgreenbankLDOfixed20mA (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,celkelvin_MUDG_73f01841,celkelvin_LDO12_73f01841);
   output  LDO;
   input  REF;
   inout [4:0] tmi;
@@ -66,11 +66,11 @@ module LDOgreenbankLDOfixed20mA (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo
   input  enable_ldo;
   input  CELSUB40948;
   output  dft_startup;
-  input  celkelvin_LDO12_ddaae812;
-  input  celkelvin_MUDG_ddaae8128;
+  input  celkelvin_MUDG_73f01841;
+  input  celkelvin_LDO12_73f01841;
 endmodule
 
-module LDOgreenbankLDOstandalone (LDO,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,CELPOWER_LDO_cc7190a0,celkelvin_LDO9_ec3a1ea5,celkelvin_MUDG_ec3a1ea59);
+module LDOgreenbankLDOstandalone (LDO,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,CELPOWER_LDO_601da658,celkelvin_LDO9_67c0774a,celkelvin_MUDG_67c0774a);
   output  LDO;
   inout [4:0] tmi;
   input  MUDV;
@@ -79,12 +79,12 @@ module LDOgreenbankLDOstandalone (LDO,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CE
   input  enable_ldo;
   input  CELSUB40948;
   output  dft_startup;
-  input  CELPOWER_LDO_cc7190a0;
-  input  celkelvin_LDO9_ec3a1ea5;
-  input  celkelvin_MUDG_ec3a1ea59;
+  input  CELPOWER_LDO_601da658;
+  input  celkelvin_LDO9_67c0774a;
+  input  celkelvin_MUDG_67c0774a;
 endmodule
 
-module LDOgreenbankLDOstandalone20mA (LDO,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,celkelvin_LDO13_065c4558,celkelvin_MUDG_065c455810);
+module LDOgreenbankLDOstandalone20mA (LDO,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,celkelvin_MUDG_f8678617,celkelvin_LDO13_f8678617);
   output  LDO;
   inout [4:0] tmi;
   input  MUDV;
@@ -93,11 +93,11 @@ module LDOgreenbankLDOstandalone20mA (LDO,tmi,MUDV,CELG59462,CELV96848,enable_ld
   input  enable_ldo;
   input  CELSUB40948;
   output  dft_startup;
-  input  celkelvin_LDO13_065c4558;
-  input  celkelvin_MUDG_065c455810;
+  input  celkelvin_MUDG_f8678617;
+  input  celkelvin_LDO13_f8678617;
 endmodule
 
-module LDOgreenbankLDOunity (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,CELPOWER_LDO_2d7d2b54,celkelvin_LDO11_5b2f9385,celkelvin_MUDG_5b2f938511);
+module LDOgreenbankLDOunity (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CELSUB40948,dft_startup,CELPOWER_LDO_90e98eb0,celkelvin_MUDG_c0cd2385,celkelvin_LDO11_c0cd2385);
   output  LDO;
   input  REF;
   inout [4:0] tmi;
@@ -107,19 +107,21 @@ module LDOgreenbankLDOunity (LDO,REF,tmi,MUDV,CELG59462,CELV96848,enable_ldo,CEL
   input  enable_ldo;
   input  CELSUB40948;
   output  dft_startup;
-  input  CELPOWER_LDO_2d7d2b54;
-  input  celkelvin_LDO11_5b2f9385;
-  input  celkelvin_MUDG_5b2f938511;
+  input  CELPOWER_LDO_90e98eb0;
+  input  celkelvin_MUDG_c0cd2385;
+  input  celkelvin_LDO11_c0cd2385;
 endmodule
 
-module dftprobeModel0_80e43a5a (i,tdi,ten,CELG,CELV,CELSUB);
-  input  i;
-  output  tdi;
-  input  ten;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
+module dftprobeModel0_80e43a5a (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
 endmodule
+
+
 
 //Verilog HDL for "Generate", "STONEnoconn" "functional"
 
@@ -158,7 +160,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module LDOgreenbank_301A (REF, tdo, tmi, LDO8, LDO9, MUDV, LDO10, LDO11, LDO12, LDO13, LDO14, LDO15, CELG59462, CELV96848, CELSUB40948, CELPOWER_LDO_2d7d2b54, CELPOWER_LDO_71a83686, CELPOWER_LDO_ae2828c4, CELPOWER_LDO_cc7190a0, celkelvin_LDO8_606cfcba, celkelvin_LDO9_ec3a1ea5, celkelvin_LDO10_f4bf3314, celkelvin_LDO11_5b2f9385, celkelvin_LDO12_ddaae812, celkelvin_LDO13_065c4558, celkelvin_LDO14_9c93d8b1, celkelvin_LDO15_2f19d9b2, celkelvin_MUDG_2f19d9b24, celkelvin_MUDG_606cfcba7, celkelvin_MUDG_9c93d8b16, celkelvin_MUDG_ddaae8128, celkelvin_MUDG_ec3a1ea59, celkelvin_MUDG_f4bf33145, celkelvin_MUDG_065c455810, celkelvin_MUDG_5b2f938511, register_LDOconfigurationA_08bb5ce4_Xdatamap2, register_LDOconfigurationA_c101a3fa_Xdatamap1);
+module LDOgreenbank_301A (REF, tdo, tmi, LDO8, LDO9, MUDV, LDO10, LDO11, LDO12, LDO13, LDO14, LDO15, CELG59462, CELV96848, CELSUB40948, CELPOWER_LDO_214c0f74, CELPOWER_LDO_4b7cb037, CELPOWER_LDO_601da658, CELPOWER_LDO_90e98eb0, celkelvin_LDO8_635a8467, celkelvin_LDO9_67c0774a, celkelvin_MUDG_1d518b73, celkelvin_MUDG_635a8467, celkelvin_MUDG_67c0774a, celkelvin_MUDG_73f01841, celkelvin_MUDG_9e0b544b, celkelvin_MUDG_c0cd2385, celkelvin_MUDG_ceb54526, celkelvin_MUDG_f8678617, celkelvin_LDO10_9e0b544b, celkelvin_LDO11_c0cd2385, celkelvin_LDO12_73f01841, celkelvin_LDO13_f8678617, celkelvin_LDO14_1d518b73, celkelvin_LDO15_ceb54526, register_LDOconfigurationA_3, register_LDOconfigurationA_7);
 input  REF;
 inout  tdo;
 inout [4:0] tmi;
@@ -174,34 +176,34 @@ output  LDO15;
 input  CELG59462;
 input  CELV96848;
 input  CELSUB40948;
-input  CELPOWER_LDO_2d7d2b54;
-input  CELPOWER_LDO_71a83686;
-input  CELPOWER_LDO_ae2828c4;
-input  CELPOWER_LDO_cc7190a0;
-input  celkelvin_LDO8_606cfcba;
-input  celkelvin_LDO9_ec3a1ea5;
-input  celkelvin_LDO10_f4bf3314;
-input  celkelvin_LDO11_5b2f9385;
-input  celkelvin_LDO12_ddaae812;
-input  celkelvin_LDO13_065c4558;
-input  celkelvin_LDO14_9c93d8b1;
-input  celkelvin_LDO15_2f19d9b2;
-input  celkelvin_MUDG_2f19d9b24;
-input  celkelvin_MUDG_606cfcba7;
-input  celkelvin_MUDG_9c93d8b16;
-input  celkelvin_MUDG_ddaae8128;
-input  celkelvin_MUDG_ec3a1ea59;
-input  celkelvin_MUDG_f4bf33145;
-input  celkelvin_MUDG_065c455810;
-input  celkelvin_MUDG_5b2f938511;
-input [3:0] register_LDOconfigurationA_08bb5ce4_Xdatamap2;
-input [3:0] register_LDOconfigurationA_c101a3fa_Xdatamap1;
+input  CELPOWER_LDO_214c0f74;
+input  CELPOWER_LDO_4b7cb037;
+input  CELPOWER_LDO_601da658;
+input  CELPOWER_LDO_90e98eb0;
+input  celkelvin_LDO8_635a8467;
+input  celkelvin_LDO9_67c0774a;
+input  celkelvin_MUDG_1d518b73;
+input  celkelvin_MUDG_635a8467;
+input  celkelvin_MUDG_67c0774a;
+input  celkelvin_MUDG_73f01841;
+input  celkelvin_MUDG_9e0b544b;
+input  celkelvin_MUDG_c0cd2385;
+input  celkelvin_MUDG_ceb54526;
+input  celkelvin_MUDG_f8678617;
+input  celkelvin_LDO10_9e0b544b;
+input  celkelvin_LDO11_c0cd2385;
+input  celkelvin_LDO12_73f01841;
+input  celkelvin_LDO13_f8678617;
+input  celkelvin_LDO14_1d518b73;
+input  celkelvin_LDO15_ceb54526;
+input [3:0] register_LDOconfigurationA_3;
+input [3:0] register_LDOconfigurationA_7;
 
 
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
-wire [3:0] register_LDOconfigurationA_08bb5ce4_Xdatamap2;
-wire [3:0] register_LDOconfigurationA_c101a3fa_Xdatamap1;
+wire [3:0] register_LDOconfigurationA_3;
+wire [3:0] register_LDOconfigurationA_7;
 wire [1:0] a;
 wire [7:0] tdi;
 wire [7:0] ten;
@@ -217,9 +219,9 @@ LDOgreenbankLDOfixed40mA XLDOconfigNO1 (
 .enable_ldo(net_95),
 .CELSUB40948(CELSUB40948),
 .dft_startup(net_129),
-.CELPOWER_LDO_ae2828c4(CELPOWER_LDO_ae2828c4),
-.celkelvin_LDO15_2f19d9b2(celkelvin_LDO15_2f19d9b2),
-.celkelvin_MUDG_2f19d9b24(celkelvin_MUDG_2f19d9b24)
+.CELPOWER_LDO_4b7cb037(CELPOWER_LDO_4b7cb037),
+.celkelvin_MUDG_ceb54526(celkelvin_MUDG_ceb54526),
+.celkelvin_LDO15_ceb54526(celkelvin_LDO15_ceb54526)
 );
 
 LDOgreenbankLDOconfigure XLDOCONFIGURE1 (
@@ -232,8 +234,8 @@ LDOgreenbankLDOconfigure XLDOCONFIGURE1 (
 .enable_ldo(net_117),
 .CELSUB40948(CELSUB40948),
 .dft_startup(net_124),
-.celkelvin_LDO10_f4bf3314(celkelvin_LDO10_f4bf3314),
-.celkelvin_MUDG_f4bf33145(celkelvin_MUDG_f4bf33145)
+.celkelvin_MUDG_9e0b544b(celkelvin_MUDG_9e0b544b),
+.celkelvin_LDO10_9e0b544b(celkelvin_LDO10_9e0b544b)
 );
 
 LDOgreenbankLDOconfigure20mA XLDOCONFIGURE20mA (
@@ -246,8 +248,8 @@ LDOgreenbankLDOconfigure20mA XLDOCONFIGURE20mA (
 .enable_ldo(net_94),
 .CELSUB40948(CELSUB40948),
 .dft_startup(net_128),
-.celkelvin_LDO14_9c93d8b1(celkelvin_LDO14_9c93d8b1),
-.celkelvin_MUDG_9c93d8b16(celkelvin_MUDG_9c93d8b16)
+.celkelvin_MUDG_1d518b73(celkelvin_MUDG_1d518b73),
+.celkelvin_LDO14_1d518b73(celkelvin_LDO14_1d518b73)
 );
 
 LDOgreenbankLDOfixed XLDOFIXED (
@@ -260,9 +262,9 @@ LDOgreenbankLDOfixed XLDOFIXED (
 .enable_ldo(net_114),
 .CELSUB40948(CELSUB40948),
 .dft_startup(net_122),
-.CELPOWER_LDO_71a83686(CELPOWER_LDO_71a83686),
-.celkelvin_LDO8_606cfcba(celkelvin_LDO8_606cfcba),
-.celkelvin_MUDG_606cfcba7(celkelvin_MUDG_606cfcba7)
+.CELPOWER_LDO_214c0f74(CELPOWER_LDO_214c0f74),
+.celkelvin_LDO8_635a8467(celkelvin_LDO8_635a8467),
+.celkelvin_MUDG_635a8467(celkelvin_MUDG_635a8467)
 );
 
 LDOgreenbankLDOfixed20mA XLDOFIXED1 (
@@ -275,8 +277,8 @@ LDOgreenbankLDOfixed20mA XLDOFIXED1 (
 .enable_ldo(net_92),
 .CELSUB40948(CELSUB40948),
 .dft_startup(net_126),
-.celkelvin_LDO12_ddaae812(celkelvin_LDO12_ddaae812),
-.celkelvin_MUDG_ddaae8128(celkelvin_MUDG_ddaae8128)
+.celkelvin_MUDG_73f01841(celkelvin_MUDG_73f01841),
+.celkelvin_LDO12_73f01841(celkelvin_LDO12_73f01841)
 );
 
 LDOgreenbankLDOstandalone XLDOSTANDALONE (
@@ -288,9 +290,9 @@ LDOgreenbankLDOstandalone XLDOSTANDALONE (
 .enable_ldo(net_116),
 .CELSUB40948(CELSUB40948),
 .dft_startup(net_123),
-.CELPOWER_LDO_cc7190a0(CELPOWER_LDO_cc7190a0),
-.celkelvin_LDO9_ec3a1ea5(celkelvin_LDO9_ec3a1ea5),
-.celkelvin_MUDG_ec3a1ea59(celkelvin_MUDG_ec3a1ea59)
+.CELPOWER_LDO_601da658(CELPOWER_LDO_601da658),
+.celkelvin_LDO9_67c0774a(celkelvin_LDO9_67c0774a),
+.celkelvin_MUDG_67c0774a(celkelvin_MUDG_67c0774a)
 );
 
 LDOgreenbankLDOstandalone20mA XLDOSTANDALONE20mA (
@@ -302,8 +304,8 @@ LDOgreenbankLDOstandalone20mA XLDOSTANDALONE20mA (
 .enable_ldo(net_93),
 .CELSUB40948(CELSUB40948),
 .dft_startup(net_127),
-.celkelvin_LDO13_065c4558(celkelvin_LDO13_065c4558),
-.celkelvin_MUDG_065c455810(celkelvin_MUDG_065c455810)
+.celkelvin_MUDG_f8678617(celkelvin_MUDG_f8678617),
+.celkelvin_LDO13_f8678617(celkelvin_LDO13_f8678617)
 );
 
 LDOgreenbankLDOunity XLDOUNITY (
@@ -316,15 +318,15 @@ LDOgreenbankLDOunity XLDOUNITY (
 .enable_ldo(net_119),
 .CELSUB40948(CELSUB40948),
 .dft_startup(net_125),
-.CELPOWER_LDO_2d7d2b54(CELPOWER_LDO_2d7d2b54),
-.celkelvin_LDO11_5b2f9385(celkelvin_LDO11_5b2f9385),
-.celkelvin_MUDG_5b2f938511(celkelvin_MUDG_5b2f938511)
+.CELPOWER_LDO_90e98eb0(CELPOWER_LDO_90e98eb0),
+.celkelvin_MUDG_c0cd2385(celkelvin_MUDG_c0cd2385),
+.celkelvin_LDO11_c0cd2385(celkelvin_LDO11_c0cd2385)
 );
 
 dftprobeModel0_80e43a5a XU1 (
 .i(net_122),
-.tdi(tdi_e1adfe2e_XU1),
-.ten(ten_e1adfe2e_XU1),
+.tdi(tdi_f02995dc_XU1),
+.ten(ten_f02995dc_XU1),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -332,8 +334,8 @@ dftprobeModel0_80e43a5a XU1 (
 
 dftprobeModel0_80e43a5a XU5 (
 .i(net_123),
-.tdi(tdi_ea868367_XU5),
-.ten(ten_ea868367_XU5),
+.tdi(tdi_6d6c90ed_XU5),
+.ten(ten_6d6c90ed_XU5),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -341,8 +343,8 @@ dftprobeModel0_80e43a5a XU5 (
 
 dftprobeModel0_80e43a5a XU6 (
 .i(net_124),
-.tdi(tdi_e7b85f8c_XU6),
-.ten(ten_e7b85f8c_XU6),
+.tdi(tdi_d8a76868_XU6),
+.ten(ten_d8a76868_XU6),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -350,8 +352,8 @@ dftprobeModel0_80e43a5a XU6 (
 
 dftprobeModel0_80e43a5a XU8 (
 .i(net_125),
-.tdi(tdi_a45a1301_XU8),
-.ten(ten_a45a1301_XU8),
+.tdi(tdi_e3ee0227_XU8),
+.ten(ten_e3ee0227_XU8),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -359,8 +361,8 @@ dftprobeModel0_80e43a5a XU8 (
 
 dftprobeModel0_80e43a5a XU16 (
 .i(net_126),
-.tdi(tdi_3f8f2ada_XU16),
-.ten(ten_3f8f2ada_XU16),
+.tdi(tdi_50bed958_XU16),
+.ten(ten_50bed958_XU16),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -368,8 +370,8 @@ dftprobeModel0_80e43a5a XU16 (
 
 dftprobeModel0_80e43a5a XU17 (
 .i(net_127),
-.tdi(tdi_4c4345e3_XU17),
-.ten(ten_4c4345e3_XU17),
+.tdi(tdi_7faccc12_XU17),
+.ten(ten_7faccc12_XU17),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -377,8 +379,8 @@ dftprobeModel0_80e43a5a XU17 (
 
 dftprobeModel0_80e43a5a XU18 (
 .i(net_128),
-.tdi(tdi_f1dbe31b_XU18),
-.ten(ten_f1dbe31b_XU18),
+.tdi(tdi_974f4750_XU18),
+.ten(ten_974f4750_XU18),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -386,8 +388,8 @@ dftprobeModel0_80e43a5a XU18 (
 
 dftprobeModel0_80e43a5a XU19 (
 .i(net_129),
-.tdi(tdi_0f38767e_XU19),
-.ten(ten_0f38767e_XU19),
+.tdi(tdi_aa41323d_XU19),
+.ten(ten_aa41323d_XU19),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -414,51 +416,51 @@ DFTtm8d dft_hex0x0F (
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.tdi({tdi_a45a1301_XU8,tdi_e7b85f8c_XU6,tdi_ea868367_XU5,tdi_0f38767e_XU19,tdi_f1dbe31b_XU18,tdi_4c4345e3_XU17,tdi_3f8f2ada_XU16,tdi_e1adfe2e_XU1}),
+.tdi({tdi_e3ee0227_XU8,tdi_d8a76868_XU6,tdi_6d6c90ed_XU5,tdi_aa41323d_XU19,tdi_974f4750_XU18,tdi_7faccc12_XU17,tdi_50bed958_XU16,tdi_f02995dc_XU1}),
 .tdo(tdo),
-.ten({ten_a45a1301_XU8,ten_e7b85f8c_XU6,ten_ea868367_XU5,ten_0f38767e_XU19,ten_f1dbe31b_XU18,ten_4c4345e3_XU17,ten_3f8f2ada_XU16,ten_e1adfe2e_XU1}),
+.ten({ten_e3ee0227_XU8,ten_d8a76868_XU6,ten_6d6c90ed_XU5,ten_aa41323d_XU19,ten_974f4750_XU18,ten_7faccc12_XU17,ten_50bed958_XU16,ten_f02995dc_XU1}),
 .tma({a0,a0,a0,a0,a1,a1,a1,a1}),
 .tmi(tmi[4:0])
 );
 
-WRAPPER1 XWRAPregister_LDOconfigurationA_08bb5ce4_Xdatamap2_0 (
-.i(register_LDOconfigurationA_08bb5ce4_Xdatamap2[0]),
-.o(net_92)
-);
-
-WRAPPER1 XWRAPregister_LDOconfigurationA_08bb5ce4_Xdatamap2_1 (
-.i(register_LDOconfigurationA_08bb5ce4_Xdatamap2[1]),
-.o(net_93)
-);
-
-WRAPPER1 XWRAPregister_LDOconfigurationA_08bb5ce4_Xdatamap2_2 (
-.i(register_LDOconfigurationA_08bb5ce4_Xdatamap2[2]),
-.o(net_94)
-);
-
-WRAPPER1 XWRAPregister_LDOconfigurationA_08bb5ce4_Xdatamap2_3 (
-.i(register_LDOconfigurationA_08bb5ce4_Xdatamap2[3]),
-.o(net_95)
-);
-
-WRAPPER1 XWRAPregister_LDOconfigurationA_c101a3fa_Xdatamap1_0 (
-.i(register_LDOconfigurationA_c101a3fa_Xdatamap1[0]),
+WRAPPER1 XWRAPregister_LDOconfigurationA_3_0 (
+.i(register_LDOconfigurationA_3[0]),
 .o(net_76)
 );
 
-WRAPPER1 XWRAPregister_LDOconfigurationA_c101a3fa_Xdatamap1_1 (
-.i(register_LDOconfigurationA_c101a3fa_Xdatamap1[1]),
+WRAPPER1 XWRAPregister_LDOconfigurationA_3_1 (
+.i(register_LDOconfigurationA_3[1]),
 .o(net_77)
 );
 
-WRAPPER1 XWRAPregister_LDOconfigurationA_c101a3fa_Xdatamap1_2 (
-.i(register_LDOconfigurationA_c101a3fa_Xdatamap1[2]),
+WRAPPER1 XWRAPregister_LDOconfigurationA_3_2 (
+.i(register_LDOconfigurationA_3[2]),
 .o(net_78)
 );
 
-WRAPPER1 XWRAPregister_LDOconfigurationA_c101a3fa_Xdatamap1_3 (
-.i(register_LDOconfigurationA_c101a3fa_Xdatamap1[3]),
+WRAPPER1 XWRAPregister_LDOconfigurationA_3_3 (
+.i(register_LDOconfigurationA_3[3]),
 .o(net_79)
+);
+
+WRAPPER1 XWRAPregister_LDOconfigurationA_7_0 (
+.i(register_LDOconfigurationA_7[0]),
+.o(net_92)
+);
+
+WRAPPER1 XWRAPregister_LDOconfigurationA_7_1 (
+.i(register_LDOconfigurationA_7[1]),
+.o(net_93)
+);
+
+WRAPPER1 XWRAPregister_LDOconfigurationA_7_2 (
+.i(register_LDOconfigurationA_7[2]),
+.o(net_94)
+);
+
+WRAPPER1 XWRAPregister_LDOconfigurationA_7_3 (
+.i(register_LDOconfigurationA_7[3]),
+.o(net_95)
 );
 
 endmodule

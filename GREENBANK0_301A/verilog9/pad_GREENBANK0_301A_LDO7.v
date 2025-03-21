@@ -18,21 +18,22 @@ module ESDdiode ( N, P );
 endmodule
 
 
-//Verilog HDL for "Generate", "WRAPPER1" "functional"
+//Verilog HDL for "PEBBLES", "PEBBLElinkKELVIN" "functional"
 
 
-module WRAPPER1 ( o, i );
+module PEBBLElinkKELVIN ( NEG, POS );
 
-  input i;
-  output o;
+  inout POS;
+  inout NEG;
 endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_GREENBANK0_301A_LDO7 (GESD, LDO7, MUDV, sense_LDO7);
+module pad_GREENBANK0_301A_LDO7 (GESD, LDO7, MUDV, CELV96848, sense_LDO7);
 input  GESD;
 inout  LDO7;
 inout  MUDV;
+input  CELV96848;
 inout  sense_LDO7;
 
 
@@ -43,8 +44,13 @@ STONEpad1 XPAD1 (
 .PAD(LDO7)
 );
 
+ESDdiode Xesd_XPAD1 (
+.N(LDO7),
+.P(GESD)
+);
+
 ESDdiode Xesd1_XPAD1 (
-.N(MUDV),
+.N(CELV96848),
 .P(LDO7)
 );
 
@@ -53,9 +59,14 @@ ESDdiode Xesd2_XPAD1 (
 .P(GESD)
 );
 
-WRAPPER1 Xwrap_PAD1_SENSE0 (
-.i(LDO7),
-.o(sense_LDO7)
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE0 (
+.NEG(sense_LDO7),
+.POS(LDO7)
+);
+
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE15 (
+.NEG(MUDV),
+.POS(LDO7)
 );
 
 endmodule

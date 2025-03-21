@@ -23,21 +23,29 @@ module fusebank ( VOTP, GOTP, strobe, pgenb, we, nr, q );
 endmodule
 
 
-module oscillator_XU3_XceleraSERDES_Xoscillator (ten,CELG,SIMPV,tdext,CELSUB,oscillator,ok_oscillator,tdi_oscillator,enable_oscillator,ten_oscillator_on,ten_oscillator_off,ten_oscillator_div8,ten_oscillator_external);
-  input  ten;
-  input  CELG;
-  input  SIMPV;
-  input  tdext;
-  input  CELSUB;
-  output  oscillator;
-  output  ok_oscillator;
-  output  tdi_oscillator;
-  input  enable_oscillator;
-  input  ten_oscillator_on;
-  input  ten_oscillator_off;
-  input  ten_oscillator_div8;
-  input  ten_oscillator_external;
+//Celera:oscillator_XU1_XceleraSERDES_Xoscillator
+//Celera Confidential Symbol Generator
+//VMAX:6Crude:3200KHz
+module oscillator_XU1_XceleraSERDES_Xoscillator (SIMPV,ok_oscillator,oscillator,ten,
+tdext,ten_oscillator_on,ten_oscillator_off,ten_oscillator_div8,ten_oscillator_external,tdi_oscillator,
+enable_oscillator,
+CELG,CELSUB);
+input SIMPV;
+output oscillator;
+output ok_oscillator;
+input enable_oscillator;
+input ten;
+input tdext;
+input ten_oscillator_on;
+input ten_oscillator_off;
+input ten_oscillator_div8;
+input ten_oscillator_external;
+output tdi_oscillator;
+input CELG;
+input CELSUB;
 endmodule
+
+
 
 //Verilog HDL for "DFT", "SERDESdftYesYes" "functional"
 
@@ -109,45 +117,41 @@ otp_clock, otp_id, otp_q, pd, scl_serdes, sda_serdes );
 endmodule
 
 
-//Verilog HDL for "DFT", "SERDESinputSPLITserdesregister" "functional"
+//Verilog HDL for "DFT", "SERDESinputSINGLEserdesregister" "functional"
 
 
-module SERDESinputSPLITserdesregister ( scl_register, scl_serdes, sdai_register,
-sdai_serdes, CELG, CELSUB, CELVIN, CELVOUT, SCL, SDA, porb, sdao );
+module SERDESinputSINGLEserdesregister ( scl_register, scl_serdes, sda_register,
+sda_serdes, CELG, CELSUB, CELVIN, SCL, SDA, porb, sdao );
 
   input porb;
   input CELSUB;
-  output sdai_register;
-  output sdai_serdes;
+  output sda_register;
+  output sda_serdes;
   output scl_serdes;
   input sdao;
   output scl_register;
   input CELVIN;
   input SDA;
   input SCL;
-  input CELVOUT;
   input CELG;
 endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module GREENBANK0_301AceleraSERDES (SCL, SDA, pd0, tdo, tmi, GOTP, VOTP, scli, sdai, unlock, otp_done, CELG59462, CELV96848, PORB97836, CELSUB40948, celkelvin_MUDV_d0b76f1c);
+module GREENBANK0_301AceleraSERDES (SCL, SDA, tdo, tmi, GOTP, VOTP, unlock, otp_done, CELG59462, CELV96848, PORB97836, CELSUB40948, celkelvin_MUDV_a3dd9c62);
 inout  SCL;
 inout  SDA;
-input  pd0;
 inout  tdo;
 inout [5:0] tmi;
 input  GOTP;
 input  VOTP;
-output  scli;
-inout  sdai;
 output  unlock;
 output  otp_done;
 input  CELG59462;
   input  CELV96848;
 output  PORB97836;
 input  CELSUB40948;
-input  celkelvin_MUDV_d0b76f1c;
+input  celkelvin_MUDV_a3dd9c62;
 
 
 // ------------------------ Wires ------------------------
@@ -179,7 +183,7 @@ fusebank Xfusebank (
 .strobe(otp_strobe[7:0])
 );
 
-oscillator_XU3_XceleraSERDES_Xoscillator Xoscillator (
+oscillator_XU1_XceleraSERDES_Xoscillator Xoscillator (
 .ten(ten_serdes),
 .CELG(CELG59462),
 .SIMPV(CELV96848),
@@ -221,7 +225,7 @@ SERDESdftYesYes XSERDESdftYesYes (
 SERDEScontrolDRMautoYes XSERDEScontrolDRMautoYes (
 .a0(a0),
 .a1(a1),
-.pd({a0,a0,a0,a0,a0,a0,a0,pd0}),
+.pd({a0,a0,a0,a0,a0,a0,a0,a0}),
 .tmi(tmi[5:0]),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -236,20 +240,20 @@ SERDEScontrolDRMautoYes XSERDEScontrolDRMautoYes (
 .otp_done(otp_done),
 .otp_clock(otp_clock),
 .otp_pgrnb(otp_pgrnb),
-.i2caddress({a0,a0}),
+.i2caddress({a0,a1}),
 .otp_bistok(otp_bistok),
 .otp_loadok(otp_loadok),
 .otp_strobe(otp_strobe[7:0]),
 .scl_serdes(scl_serdes),
 .sda_serdes(sda_serdes),
-.i2cpassword({a0,a0}),
-.celkelvin_CELV(celkelvin_MUDV_d0b76f1c),
+.i2cpassword({a1,a0}),
+.celkelvin_CELV(celkelvin_MUDV_a3dd9c62),
 .enable_hardware(a1),
 .otp_clock_enable(otp_clock_enable),
 .otp_program_done(otp_program_done)
 );
 
-SERDESinputSPLITserdesregister XSERDESinputSPLITserdesregister (
+SERDESinputSINGLEserdesregister XSERDESinputSINGLEserdesregister (
 .SCL(SCL),
 .SDA(SDA),
 .CELG(CELG59462),
@@ -257,11 +261,10 @@ SERDESinputSPLITserdesregister XSERDESinputSPLITserdesregister (
 .sdao(sdao),
 .CELSUB(CELSUB40948),
 .CELVIN(CELV96848),
-.CELVOUT(CELVOUT),
 .scl_serdes(scl_serdes),
-.sdai_serdes(sdai_serdes),
-.scl_register(scl_register),
-.sdai_register(sdai_register)
+.sda_serdes(sda_serdes),
+.scl_register(scli),
+.sda_register(sdai)
 );
 
 endmodule

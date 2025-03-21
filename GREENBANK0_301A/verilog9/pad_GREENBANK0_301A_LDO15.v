@@ -18,6 +18,16 @@ module ESDdiode ( N, P );
 endmodule
 
 
+//Verilog HDL for "PEBBLES", "PEBBLElinkKELVIN" "functional"
+
+
+module PEBBLElinkKELVIN ( NEG, POS );
+
+  inout POS;
+  inout NEG;
+endmodule
+
+
 //Verilog HDL for "Generate", "WRAPPER1" "functional"
 
 
@@ -29,11 +39,12 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_GREENBANK0_301A_LDO15 (GESD, MUDV, LDO15, celkelvin_LDO15_2f19d9b2);
+module pad_GREENBANK0_301A_LDO15 (GESD, MUDV, LDO15, CELV96848, celkelvin_LDO15_ceb54526);
 input  GESD;
 inout  MUDV;
 inout  LDO15;
-output  celkelvin_LDO15_2f19d9b2;
+input  CELV96848;
+output  celkelvin_LDO15_ceb54526;
 
 
 // ------------------------ Wires ------------------------
@@ -43,8 +54,13 @@ STONEpad1 XPAD1 (
 .PAD(LDO15)
 );
 
+ESDdiode Xesd_XPAD1 (
+.N(LDO15),
+.P(GESD)
+);
+
 ESDdiode Xesd1_XPAD1 (
-.N(MUDV),
+.N(CELV96848),
 .P(LDO15)
 );
 
@@ -53,9 +69,14 @@ ESDdiode Xesd2_XPAD1 (
 .P(GESD)
 );
 
-WRAPPER1 XWRAP_celkelvin_LDO15_2f19d9b2 (
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE15 (
+.NEG(MUDV),
+.POS(LDO15)
+);
+
+WRAPPER1 XWRAP_celkelvin_LDO15_ceb54526 (
 .i(LDO15),
-.o(celkelvin_LDO15_2f19d9b2)
+.o(celkelvin_LDO15_ceb54526)
 );
 
 endmodule

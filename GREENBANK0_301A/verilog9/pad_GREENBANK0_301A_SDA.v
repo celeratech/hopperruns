@@ -31,7 +31,7 @@ STONEpad1 XPAD1 (
 .PAD(SDA)
 );
 
-ESDcore6 XESDcore6_3 (
+ESDcore6 XESDcore6_1 (
 .PAD(SDA),
 .GESD(GESD)
 );

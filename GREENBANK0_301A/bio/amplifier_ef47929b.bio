@@ -154,46 +154,64 @@ factory,busname,na
 //Layout Parameters
 revision,layout,0p1
 layout,amplifier
-
+// edited for PUGET, not sure of relevance since new low,med,high versions
+// These cells use ringdef for CELV and ringdef2 for trim internal pocket.
+// Need the NOT version of ifelse statements for do rrr versions.
 placeIFELSE cellNameContains inp$$rrr
-place Generate STONEampinp 69.55 3.52 MY
+place Generate STONEampinplow 0 0 R0
+place Generate STONEampinpmed 0 -2.2 R0
+place Generate STONEampinphigh 0 0 R0
+placeALTVIEW Generate STONEampinptrimlow layout1 148.45 19.235 MY
+place Generate STONEdelay10usRise 13.55 71.635 R0
 place Generate STONEampdft 0.05 99.49 MX
-placeALTVIEW Generate STONEampinptrim layout1 108.39 24.105 MY
-placeINST Xrfbi -2.96 3.67 R90
-placeINST Xrfbo -2.96 3.67 R90
-placeDBLHVRING 87 2.5 118 56
-placeELSE
-placeEND
-placeIFELSE cellNameContains inn$$rrr
-place Generate STONEampinn 75.46 0 MY
-placeALTVIEW Generate STONEampinntrim layout1 86.495 1.62 R90
-place Generate STONEampdft 0.55 98.305 MX
 placeINST Xrfbi -2.96 3.67 R90
 placeINST Xrfbo -2.96 3.67 R90
 placeHVRING
 placeELSE
 placeEND
+//placeIFELSE cellNameContains inp$$rrr
+//place Generate STONEampinp 69.55 3.52 MY
+//place Generate STONEampdft 0.05 99.49 MX
+//placeALTVIEW Generate STONEampinptrim layout1 108.39 24.105 MY
+//placeINST Xrfbi -2.96 3.67 R90
+//placeINST Xrfbo -2.96 3.67 R90
+//placeDBLHVRING 87 2.5 118 56
+//placeELSE
+//placeALTVIEW Generate STONEampinptrimlow layout1 108.39 24.105 MY
+//place Generate STONEampinplow 0 0 R0
+//placeEND
+//placeIFELSE cellNameContains inn$$rrr
+//place Generate STONEampinn 75.46 0 MY
+//placeALTVIEW Generate STONEampinntrim layout1 86.495 1.62 R90
+//place Generate STONEampdft 0.55 98.305 MX
+//placeINST Xrfbi -2.96 3.67 R90
+//placeINST Xrfbo -2.96 3.67 R90
+//placeHVRING
+//placeELSE
+//placeEND
 placeIFELSE cellNameContains rrr&&trim
-placeALTVIEW Generate STONEamprrr layout2 0 2.98 R0
+place Generate STONEamprrrlow 0 0 R0
 place Generate STONEampdft 0.05 103.81 MX
-place Generate STONEampinptrim -38.75 2.565 R0
-place Generate STONEampinntrim -26.55 65.73 MXR90
+place Generate STONEdelay10usRise 23.565 88.31 R0
+place Generate STONEampinptrimlow 127.63 48.305 MY
+place Generate STONEampinntrimlow 49.095 -2.78 R0
 placeHVRING
 placeELSE
 placeEND
-placeIFELSE cellNameContains rrr$$trim
-place Generate STONEamprrr 103.42 2.98 MY
-place Generate STONEampdft 0.05 103.81 MX
-placeINST Xrfbi -2.96 3.67 R90
-placeINST Xrfbo -2.96 3.67 R90
-placeHVRING
-placeELSE
-placeEND
-version with prboundary =0 new prb =1
-//placeINST Xrfbi -0.96 3.67 R90
-//placeINST Xrfbo -0.96 3.67 R90
-placeROUTE
-endlayoutbio
+//placeIFELSE cellNameContains rrr$$trim
+//place Generate STONEamprrr 103.42 2.98 MY
+//place Generate STONEampdft 0.05 103.81 MX
+//placeINST Xrfbi -2.96 3.67 R90
+//placeINST Xrfbo -2.96 3.67 R90
+//placeHVRING
+//placeELSE
+//placeEND
+//version with prboundary =0 no prb =1
+////placeINST Xrfbi -0.96 3.67 R90
+////placeINST Xrfbo -0.96 3.67 R90
+movePINS
+//placeROUTEnopins
+//endlayoutbio
 //**********************************************
 //Project Parameters
 //Celera:GREENBANK0_301A Project Bio
@@ -284,9 +302,12 @@ generate_area,amplifier_ef47929b,1031532
 *******************************************
 //amplifier
 revision,pinorder,0.2.0
+Key,301
+PinOrder code revision,0.3.0
 pinorder,SIMPV,INN,OUT,INP,enable_amplifier,ok_amplifier,amplifiercontrol_0,amplifiercontrol_1,amplifiercontrol_2,net_skip
-
 endpinorder
+//**********************************************
+
 //**********************************************
 //TRIM Parameters
 cell,amplifier

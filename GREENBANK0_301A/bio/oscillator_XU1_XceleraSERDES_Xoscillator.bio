@@ -383,7 +383,7 @@ generate_area,oscillator_XU1_XceleraSERDES_Xoscillator,1200
 #define,OSCILLATORresistoriso,CELG
 #define,OSCILLATORresistorlength,20.0
 #define OSCIILLATORcore,235.0
-//Capacitro Crude
+//Capacitor Crude
 #define,OSCILLATORcrudehffudge,0.0
 #define,OSCILLATORcrudehfK1,5860.2
 #define,OSCILLATORcrudehfK2,-0.831
@@ -396,6 +396,9 @@ generate_area,oscillator_XU1_XceleraSERDES_Xoscillator,1200
 #define,OSCILLATORserialmax,16
 #define,OSCILLATORparallelmax,32
 #define,CELVcrude_minimum,2.0
+
+//Calculator
+#define,OSCILLATORcrudehfSIMPVcalculate,3.5
 //**********************************************
 //Pinorder Parameters
 *******************************************
@@ -403,9 +406,12 @@ generate_area,oscillator_XU1_XceleraSERDES_Xoscillator,1200
 *******************************************
 //oscillator
 revision,pinorder,0.2.0
+Key,301
+PinOrder code revision,0.3.0
 pinorder,ok_oscillator,SIMPV,oscillator,net_skip,net_skip,net_skip,enable_oscillator,net_skip,net_skip
-
 endpinorder
+//**********************************************
+
 //**********************************************
 //TRIM Parameters
 cell,oscillatorcrudehf

@@ -8,23 +8,37 @@ module VESPAdftpulse (stop,pulse,start,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module IPOTTldo_86144ebb (LDO,CELG,SIMPV,CELSUB,ok_ldo,enable_ldo,global_ldo,CELPOWER_LDO,celkelvin_LDO,factory_ldogain,factory_ldopsrr,celkelvin_GNDldo,factory_ldoerror,factory_ldofeedforward,factory_ldocompensation);
-  output  LDO;
-  input  CELG;
-  input  SIMPV;
-  input  CELSUB;
-  output  ok_ldo;
-  input  enable_ldo;
-  input  global_ldo;
-  input  CELPOWER_LDO;
-  input  celkelvin_LDO;
-  input [2:0] factory_ldogain;
-  input [5:0] factory_ldopsrr;
-  input  celkelvin_GNDldo;
-  input [2:0] factory_ldoerror;
-  input [2:0] factory_ldofeedforward;
-  input [5:0] factory_ldocompensation;
+//Celera:IPOTTldo_86144ebb
+//Celera Confidential Symbol Generator
+//LDO:Output 2.3V
+module IPOTTldo_86144ebb (LDO,celkelvin_LDO,ok_ldo,
+enable_ldo,SIMPV,factory_ldoerror,
+factory_ldogain,
+factory_ldopsrr,
+factory_ldofeedforward,
+factory_ldocompensation,
+CELPOWER_LDO,
+global_ldo,
+celkelvin_GNDldo,
+CELG,CELSUB); 
+input SIMPV;
+input CELPOWER_LDO;
+input enable_ldo;
+input global_ldo;
+output LDO;
+input celkelvin_LDO;
+output ok_ldo;
+input [2:0] factory_ldoerror;
+input [2:0] factory_ldogain;
+input [5:0] factory_ldopsrr;
+input [2:0] factory_ldofeedforward;
+input [5:0] factory_ldocompensation;
+input celkelvin_GNDldo;
+input CELG;
+input CELSUB;
 endmodule
+
+
 
 //Verilog HDL for "DFT", "DFTtm8t" "functional"
 
@@ -77,7 +91,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module LDOgreenbankLDOstandalone (LDO, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, CELPOWER_LDO_cc7190a0, celkelvin_LDO9_ec3a1ea5, celkelvin_MUDG_ec3a1ea59);
+module LDOgreenbankLDOstandalone (LDO, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, CELPOWER_LDO_601da658, celkelvin_LDO9_67c0774a, celkelvin_MUDG_67c0774a);
 output  LDO;
 inout [4:0] tmi;
 input  MUDV;
@@ -86,9 +100,9 @@ input  CELV96848;
 input  enable_ldo;
 input  CELSUB40948;
 output  dft_startup;
-input  CELPOWER_LDO_cc7190a0;
-input  celkelvin_LDO9_ec3a1ea5;
-input  celkelvin_MUDG_ec3a1ea59;
+input  CELPOWER_LDO_601da658;
+input  celkelvin_LDO9_67c0774a;
+input  celkelvin_MUDG_67c0774a;
 
 
 // ------------------------ Wires ------------------------
@@ -128,15 +142,15 @@ IPOTTldo_86144ebb XLDO1 (
 .CELSUB(CELSUB40948),
 .ok_ldo(net_28),
 .enable_ldo(enable_ldo),
-.global_ldo(global_ldo_cc7190a0_XLDO1),
-.CELPOWER_LDO(CELPOWER_LDO_cc7190a0),
-.celkelvin_LDO(celkelvin_LDO9_ec3a1ea5),
-.factory_ldogain({factory_ldogain_cc7190a0_2,factory_ldogain_cc7190a0_1,factory_ldogain_cc7190a0_0}),
-.factory_ldopsrr({factory_ldopsrr_cc7190a0_5,factory_ldopsrr_cc7190a0_4,factory_ldopsrr_cc7190a0_3,factory_ldopsrr_cc7190a0_2,factory_ldopsrr_cc7190a0_1,factory_ldopsrr_cc7190a0_0}),
-.celkelvin_GNDldo(celkelvin_MUDG_ec3a1ea59),
-.factory_ldoerror({factory_ldoerror_cc7190a0_2,factory_ldoerror_cc7190a0_1,factory_ldoerror_cc7190a0_0}),
-.factory_ldofeedforward({factory_ldofeedforward_cc7190a0_2,factory_ldofeedforward_cc7190a0_1,factory_ldofeedforward_cc7190a0_0}),
-.factory_ldocompensation({factory_ldocompensation_cc7190a0_5,factory_ldocompensation_cc7190a0_4,factory_ldocompensation_cc7190a0_3,factory_ldocompensation_cc7190a0_2,factory_ldocompensation_cc7190a0_1,factory_ldocompensation_cc7190a0_0})
+.global_ldo(global_ldo_601da658_XLDO1),
+.CELPOWER_LDO(CELPOWER_LDO_601da658),
+.celkelvin_LDO(celkelvin_LDO9_67c0774a),
+.factory_ldogain({factory_ldogain_601da658_2,factory_ldogain_601da658_1,factory_ldogain_601da658_0}),
+.factory_ldopsrr({factory_ldopsrr_601da658_5,factory_ldopsrr_601da658_4,factory_ldopsrr_601da658_3,factory_ldopsrr_601da658_2,factory_ldopsrr_601da658_1,factory_ldopsrr_601da658_0}),
+.celkelvin_GNDldo(celkelvin_MUDG_67c0774a),
+.factory_ldoerror({factory_ldoerror_601da658_2,factory_ldoerror_601da658_1,factory_ldoerror_601da658_0}),
+.factory_ldofeedforward({factory_ldofeedforward_601da658_2,factory_ldofeedforward_601da658_1,factory_ldofeedforward_601da658_0}),
+.factory_ldocompensation({factory_ldocompensation_601da658_5,factory_ldocompensation_601da658_4,factory_ldocompensation_601da658_3,factory_ldocompensation_601da658_2,factory_ldocompensation_601da658_1,factory_ldocompensation_601da658_0})
 );
 
 DFTtm8t dft_hex0x0C (
@@ -144,7 +158,7 @@ DFTtm8t dft_hex0x0C (
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x0C_ten_7,noconn_dft_hex0x0C_ten_6,noconn_dft_hex0x0C_ten_5,noconn_dft_hex0x0C_ten_4,noconn_dft_hex0x0C_ten_3,noconn_dft_hex0x0C_ten_2,noconn_dft_hex0x0C_ten_1,global_ldo_cc7190a0_XLDO1}),
+.ten({noconn_dft_hex0x0C_ten_7,noconn_dft_hex0x0C_ten_6,noconn_dft_hex0x0C_ten_5,noconn_dft_hex0x0C_ten_4,noconn_dft_hex0x0C_ten_3,noconn_dft_hex0x0C_ten_2,noconn_dft_hex0x0C_ten_1,global_ldo_601da658_XLDO1}),
 .tma({a0,a0,a0,a0,a1,a1,a0,a0}),
 .tmi(tmi[4:0])
 );
@@ -157,10 +171,10 @@ drm32 drm_hex0x07 (
 .id({c0,c0,c0,c0,c0,c1,c1,c1}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm32_drm0_7,noconn_drm32_drm0_6,factory_ldoerror_cc7190a0_2,factory_ldoerror_cc7190a0_1,factory_ldoerror_cc7190a0_0,factory_ldogain_cc7190a0_2,factory_ldogain_cc7190a0_1,factory_ldogain_cc7190a0_0}),
-.drm1({noconn_drm32_drm1_7,noconn_drm32_drm1_6,factory_ldopsrr_cc7190a0_5,factory_ldopsrr_cc7190a0_4,factory_ldopsrr_cc7190a0_3,factory_ldopsrr_cc7190a0_2,factory_ldopsrr_cc7190a0_1,factory_ldopsrr_cc7190a0_0}),
-.drm2({noconn_drm32_drm2_7,noconn_drm32_drm2_6,noconn_drm32_drm2_5,noconn_drm32_drm2_4,noconn_drm32_drm2_3,factory_ldofeedforward_cc7190a0_2,factory_ldofeedforward_cc7190a0_1,factory_ldofeedforward_cc7190a0_0}),
-.drm3({noconn_drm32_drm3_7,noconn_drm32_drm3_6,factory_ldocompensation_cc7190a0_5,factory_ldocompensation_cc7190a0_4,factory_ldocompensation_cc7190a0_3,factory_ldocompensation_cc7190a0_2,factory_ldocompensation_cc7190a0_1,factory_ldocompensation_cc7190a0_0}),
+.drm0({noconn_drm32_drm0_7,noconn_drm32_drm0_6,factory_ldoerror_601da658_2,factory_ldoerror_601da658_1,factory_ldoerror_601da658_0,factory_ldogain_601da658_2,factory_ldogain_601da658_1,factory_ldogain_601da658_0}),
+.drm1({noconn_drm32_drm1_7,noconn_drm32_drm1_6,factory_ldopsrr_601da658_5,factory_ldopsrr_601da658_4,factory_ldopsrr_601da658_3,factory_ldopsrr_601da658_2,factory_ldopsrr_601da658_1,factory_ldopsrr_601da658_0}),
+.drm2({noconn_drm32_drm2_7,noconn_drm32_drm2_6,noconn_drm32_drm2_5,noconn_drm32_drm2_4,noconn_drm32_drm2_3,factory_ldofeedforward_601da658_2,factory_ldofeedforward_601da658_1,factory_ldofeedforward_601da658_0}),
+.drm3({noconn_drm32_drm3_7,noconn_drm32_drm3_6,factory_ldocompensation_601da658_5,factory_ldocompensation_601da658_4,factory_ldocompensation_601da658_3,factory_ldocompensation_601da658_2,factory_ldocompensation_601da658_1,factory_ldocompensation_601da658_0}),
 .por0({c0,c0,c0,c0,c0,c0,c0,c0}),
 .por1({c0,c0,c0,c0,c0,c0,c0,c0}),
 .por2({c0,c0,c0,c0,c0,c0,c0,c0}),

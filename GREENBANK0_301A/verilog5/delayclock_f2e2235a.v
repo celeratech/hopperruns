@@ -2,7 +2,7 @@
 // Celera Generator Confidential
 //CELL SOURCE:delayclock
 //NAME:delayclock_f2e2235a
-//DELAY GENERATOR REVISION:0.4.0
+//DELAY GENERATOR REVISION:0.4.1
 //TYPE:clock
 //EDGE:rise
 //DFT:no
@@ -67,34 +67,26 @@ input CELSUB;
 input CELG;
 input [1:0] delay;
 
-//Celera Confidential Do Not Copy del
+//Celera Confidential Do Not Copy Pin del
 //wire[8:0] del;
-//Celera Confidential Do Not Copy i0
+
+//Celera Confidential Do Not Copy Pin i0
 //wire[8:0] i0;
-//Celera Confidential Do Not Copy i3
+
+//Celera Confidential Do Not Copy Pin i3
 //wire[8:0] i3;
-//Celera Confidential Do Not Copy i2
+
+//Celera Confidential Do Not Copy Pin i2
 //wire[8:0] i2;
-//Celera Confidential Do Not Copy i1
+
+//Celera Confidential Do Not Copy Pin i1
 //wire[8:0] i1;
-//Celera Confidential Do Not Copy sel
+
+//Celera Confidential Do Not Copy Pin sel
 //wire[1:0] sel;
-//Celera Confidential Do Not Copy o
+
+//Celera Confidential Do Not Copy Pin o
 //wire[8:0] o;
-//Celera Confidential Do Not Copy prog_delay_9bit
-prog_delay_9bit Xdelay9(
-.V (CELV),
-.rst_n (celeraporb),
-.clk (clock),
-.in (in),
-.out (out),
-.d0 (do),
-.d1 (d1),
-.del ({sd8,sd7,sd6,sd5,sd4,sd3,sd2,sd1,sd0}),
-.G (CELG),
-.SUB (CELSUB)
-);
-//,diesize,prog_delay_9bit
 
 //Celera Confidential Do Not Copy STONEdelayclockSELECT49
 STONEdelayclockSELECT49 Xselect9(
@@ -109,6 +101,21 @@ STONEdelayclockSELECT49 Xselect9(
 .CELSUB (CELSUB)
 );
 //,diesize,STONEdelayclockSELECT49
+
+//Celera Confidential Do Not Copy prog_delay_9bit
+prog_delay_9bit Xdelay9(
+.V (CELV),
+.rst_n (celeraporb),
+.clk (clock),
+.in (in),
+.out (out),
+.del ({sd8,sd7,sd6,sd5,sd4,sd3,sd2,sd1,sd0}),
+.d0 (do),
+.d1 (d1),
+.G (CELG),
+.SUB (CELSUB)
+);
+//,diesize,prog_delay_9bit
 
 //Celera Confidential Do Not Copy Module End
 //Celera Schematic Generator

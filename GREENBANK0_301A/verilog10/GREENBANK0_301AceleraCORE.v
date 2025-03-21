@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module SERVICEgreenbank_30 (REF,TAO,tdo,tmi,MUDV,TAEXT,CELG59462,CELV96848,PORB97836,CELBG83021,CELSUB40948,kelvin_MUDV,IP_9f5fab65_XU7,IP_cce7bb16_XU27,SENSE_G_2f9d3d8e,kelvin_MUDGservice,IP_2f9d3d8e_Xoscillator1,celkelvin_MUDG_56d80a491,celkelvin_MUDG_9ba9bd602,celkelvin_MUDG_a05d20923,celkelvin_MUDG_c3b29dca0,register_REF2output_ed373047_Xdatamap2,register_REF3output_f5f0bf23_Xdatamap1,register_REFERENCEselect_501ed25d_Xdatamap4,register_SERVICEconfiguration_39b04185_Xdatamap3);
+module SERVICEgreenbank_301 (REF,TAO,tdo,tmi,MUDV,TAEXT,CELG59462,CELV96848,PORB97836,CELBG83021,CELSUB40948,IP_924d4d4f,IP_b38e83c8,IP_c99e7035,kelvin_MUDV,SENSE_G_924d4d4f,kelvin_MUDGservice,register_REF2output_0,register_REF3output_0,celkelvin_MUDG_3f3140ae,celkelvin_MUDG_5b4bc5a7,celkelvin_MUDG_614c8f41,celkelvin_MUDG_ec7b0f83,register_REFERENCEselect_5,register_SERVICEconfiguration_5);
   output  REF;
   inout  TAO;
   inout  tdo;
@@ -11,23 +11,23 @@ module SERVICEgreenbank_30 (REF,TAO,tdo,tmi,MUDV,TAEXT,CELG59462,CELV96848,PORB9
   input  PORB97836;
   output  CELBG83021;
   input  CELSUB40948;
+  input  IP_924d4d4f;
+  input  IP_b38e83c8;
+  input  IP_c99e7035;
   input  kelvin_MUDV;
-  input  IP_9f5fab65_XU7;
-  input  IP_cce7bb16_XU27;
-  input  SENSE_G_2f9d3d8e;
+  input  SENSE_G_924d4d4f;
   inout  kelvin_MUDGservice;
-  input  IP_2f9d3d8e_Xoscillator1;
-  input  celkelvin_MUDG_56d80a491;
-  input  celkelvin_MUDG_9ba9bd602;
-  input  celkelvin_MUDG_a05d20923;
-  input  celkelvin_MUDG_c3b29dca0;
-  input [2:0] register_REF2output_ed373047_Xdatamap2;
-  input [2:0] register_REF3output_f5f0bf23_Xdatamap1;
-  input [2:0] register_REFERENCEselect_501ed25d_Xdatamap4;
-  input [5:0] register_SERVICEconfiguration_39b04185_Xdatamap3;
+  input [2:0] register_REF2output_0;
+  input [2:0] register_REF3output_0;
+  input  celkelvin_MUDG_3f3140ae;
+  input  celkelvin_MUDG_5b4bc5a7;
+  input  celkelvin_MUDG_614c8f41;
+  input  celkelvin_MUDG_ec7b0f83;
+  input [2:0] register_REFERENCEselect_5;
+  input [5:0] register_SERVICEconfiguration_5;
 endmodule
 
-module LDOgreenbank_301A (REF,tdo,tmi,LDO8,LDO9,MUDV,LDO10,LDO11,LDO12,LDO13,LDO14,LDO15,CELG59462,CELV96848,CELSUB40948,CELPOWER_LDO_2d7d2b54,CELPOWER_LDO_71a83686,CELPOWER_LDO_ae2828c4,CELPOWER_LDO_cc7190a0,celkelvin_LDO8_606cfcba,celkelvin_LDO9_ec3a1ea5,celkelvin_LDO10_f4bf3314,celkelvin_LDO11_5b2f9385,celkelvin_LDO12_ddaae812,celkelvin_LDO13_065c4558,celkelvin_LDO14_9c93d8b1,celkelvin_LDO15_2f19d9b2,celkelvin_MUDG_2f19d9b24,celkelvin_MUDG_606cfcba7,celkelvin_MUDG_9c93d8b16,celkelvin_MUDG_ddaae8128,celkelvin_MUDG_ec3a1ea59,celkelvin_MUDG_f4bf33145,celkelvin_MUDG_065c455810,celkelvin_MUDG_5b2f938511,register_LDOconfigurationA_08bb5ce4_Xdatamap2,register_LDOconfigurationA_c101a3fa_Xdatamap1);
+module LDOgreenbank_301A (REF,tdo,tmi,LDO8,LDO9,MUDV,LDO10,LDO11,LDO12,LDO13,LDO14,LDO15,CELG59462,CELV96848,CELSUB40948,CELPOWER_LDO_214c0f74,CELPOWER_LDO_4b7cb037,CELPOWER_LDO_601da658,CELPOWER_LDO_90e98eb0,celkelvin_LDO8_635a8467,celkelvin_LDO9_67c0774a,celkelvin_MUDG_1d518b73,celkelvin_MUDG_635a8467,celkelvin_MUDG_67c0774a,celkelvin_MUDG_73f01841,celkelvin_MUDG_9e0b544b,celkelvin_MUDG_c0cd2385,celkelvin_MUDG_ceb54526,celkelvin_MUDG_f8678617,celkelvin_LDO10_9e0b544b,celkelvin_LDO11_c0cd2385,celkelvin_LDO12_73f01841,celkelvin_LDO13_f8678617,celkelvin_LDO14_1d518b73,celkelvin_LDO15_ceb54526,register_LDOconfigurationA_3,register_LDOconfigurationA_7);
   input  REF;
   inout  tdo;
   inout [4:0] tmi;
@@ -43,31 +43,31 @@ module LDOgreenbank_301A (REF,tdo,tmi,LDO8,LDO9,MUDV,LDO10,LDO11,LDO12,LDO13,LDO
   input  CELG59462;
   input  CELV96848;
   input  CELSUB40948;
-  input  CELPOWER_LDO_2d7d2b54;
-  input  CELPOWER_LDO_71a83686;
-  input  CELPOWER_LDO_ae2828c4;
-  input  CELPOWER_LDO_cc7190a0;
-  input  celkelvin_LDO8_606cfcba;
-  input  celkelvin_LDO9_ec3a1ea5;
-  input  celkelvin_LDO10_f4bf3314;
-  input  celkelvin_LDO11_5b2f9385;
-  input  celkelvin_LDO12_ddaae812;
-  input  celkelvin_LDO13_065c4558;
-  input  celkelvin_LDO14_9c93d8b1;
-  input  celkelvin_LDO15_2f19d9b2;
-  input  celkelvin_MUDG_2f19d9b24;
-  input  celkelvin_MUDG_606cfcba7;
-  input  celkelvin_MUDG_9c93d8b16;
-  input  celkelvin_MUDG_ddaae8128;
-  input  celkelvin_MUDG_ec3a1ea59;
-  input  celkelvin_MUDG_f4bf33145;
-  input  celkelvin_MUDG_065c455810;
-  input  celkelvin_MUDG_5b2f938511;
-  input [3:0] register_LDOconfigurationA_08bb5ce4_Xdatamap2;
-  input [3:0] register_LDOconfigurationA_c101a3fa_Xdatamap1;
+  input  CELPOWER_LDO_214c0f74;
+  input  CELPOWER_LDO_4b7cb037;
+  input  CELPOWER_LDO_601da658;
+  input  CELPOWER_LDO_90e98eb0;
+  input  celkelvin_LDO8_635a8467;
+  input  celkelvin_LDO9_67c0774a;
+  input  celkelvin_MUDG_1d518b73;
+  input  celkelvin_MUDG_635a8467;
+  input  celkelvin_MUDG_67c0774a;
+  input  celkelvin_MUDG_73f01841;
+  input  celkelvin_MUDG_9e0b544b;
+  input  celkelvin_MUDG_c0cd2385;
+  input  celkelvin_MUDG_ceb54526;
+  input  celkelvin_MUDG_f8678617;
+  input  celkelvin_LDO10_9e0b544b;
+  input  celkelvin_LDO11_c0cd2385;
+  input  celkelvin_LDO12_73f01841;
+  input  celkelvin_LDO13_f8678617;
+  input  celkelvin_LDO14_1d518b73;
+  input  celkelvin_LDO15_ceb54526;
+  input [3:0] register_LDOconfigurationA_3;
+  input [3:0] register_LDOconfigurationA_7;
 endmodule
 
-module AMPLIFIERgreenbank_301A (REF,tdo,tmi,LDO0,LDO1,LDO2,LDO3,LDO4,LDO5,LDO6,LDO7,MUDV,CELG59462,CELV96848,sense_LDO2,sense_LDO5,sense_LDO7,CELSUB40948,dftstatusLSB,dftstatusMSB,kelvin_MUDGamplifier,IP_04fc710d_Xamplifier1,IP_2f4c979a_Xamplifier1,IP_4ca209e2_Xamplifier1,IP_5bf47c57_Xamplifier1,IP_7a870fa6_Xamplifier1,IP_994c1064_Xamplifier1,IP_b802e904_Xamplifier1,IP_df33d8f6_Xamplifier1,status_AMPLIFIERstatus1_7c82cc70_Xdatamap2,status_AMPLIFIERstatus2_d3f207c0_Xdatamap3,status_AMPLIFIERstatus3_08952fe9_Xdatamap4,status_AMPLIFIERstatus4_4aacd207_Xdatamap5,status_AMPLIFIERstatus5_8bc1d0bd_Xdatamap6,register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1,register_AMPCONTROLSLOWgain_94286c99_Xdatamap1,register_AMPCONTROLMEDIUMgain_d4d2a186_Xdatamap1,register_AMPLIFIERconfiguration_170035c8_Xdatamap1);
+module AMPLIFIERgreenbank_301A1 (REF,tdo,tmi,LDO0,LDO1,LDO2,LDO3,LDO4,LDO5,LDO6,LDO7,MUDV,CELG59462,CELV96848,sense_LDO2,sense_LDO5,sense_LDO7,CELSUB40948,IP_3c5376e9,IP_43d2816b,IP_62d04561,IP_8d23f22a,IP_96d00b91,IP_b45372ed,IP_c87274ce,IP_e459a101,kelvin_MUDGamplifier,status_AMPLIFIERstatus1_3,status_AMPLIFIERstatus2_6,status_AMPLIFIERstatus3_7,status_AMPLIFIERstatus4_7,status_AMPLIFIERstatus5_7,register_AMPCONTROLHIGHgain_0,register_AMPCONTROLSLOWgain_6,register_AMPCONTROLMEDIUMgain_0,register_AMPLIFIERconfiguration_7);
   input  REF;
   inout  tdo;
   input [4:0] tmi;
@@ -86,26 +86,24 @@ module AMPLIFIERgreenbank_301A (REF,tdo,tmi,LDO0,LDO1,LDO2,LDO3,LDO4,LDO5,LDO6,L
   input  sense_LDO5;
   input  sense_LDO7;
   input  CELSUB40948;
-  output [7:0] dftstatusLSB;
-  output [7:0] dftstatusMSB;
+  input  IP_3c5376e9;
+  input  IP_43d2816b;
+  input  IP_62d04561;
+  input  IP_8d23f22a;
+  input  IP_96d00b91;
+  input  IP_b45372ed;
+  input  IP_c87274ce;
+  input  IP_e459a101;
   input  kelvin_MUDGamplifier;
-  input  IP_04fc710d_Xamplifier1;
-  input  IP_2f4c979a_Xamplifier1;
-  input  IP_4ca209e2_Xamplifier1;
-  input  IP_5bf47c57_Xamplifier1;
-  input  IP_7a870fa6_Xamplifier1;
-  input  IP_994c1064_Xamplifier1;
-  input  IP_b802e904_Xamplifier1;
-  input  IP_df33d8f6_Xamplifier1;
-  output [1:0] status_AMPLIFIERstatus1_7c82cc70_Xdatamap2;
-  output [2:0] status_AMPLIFIERstatus2_d3f207c0_Xdatamap3;
-  output [5:0] status_AMPLIFIERstatus3_08952fe9_Xdatamap4;
-  output [6:0] status_AMPLIFIERstatus4_4aacd207_Xdatamap5;
-  output [7:0] status_AMPLIFIERstatus5_8bc1d0bd_Xdatamap6;
-  input [2:0] register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1;
-  input [2:0] register_AMPCONTROLSLOWgain_94286c99_Xdatamap1;
-  input [2:0] register_AMPCONTROLMEDIUMgain_d4d2a186_Xdatamap1;
-  input [7:0] register_AMPLIFIERconfiguration_170035c8_Xdatamap1;
+  output [1:0] status_AMPLIFIERstatus1_3;
+  output [2:0] status_AMPLIFIERstatus2_6;
+  output [5:0] status_AMPLIFIERstatus3_7;
+  output [6:0] status_AMPLIFIERstatus4_7;
+  output [7:0] status_AMPLIFIERstatus5_7;
+  input [2:0] register_AMPCONTROLHIGHgain_0;
+  input [2:0] register_AMPCONTROLSLOWgain_6;
+  input [2:0] register_AMPCONTROLMEDIUMgain_0;
+  input [7:0] register_AMPLIFIERconfiguration_7;
 endmodule
 
 //Verilog HDL for "Generate", "STONEnoconn" "functional"
@@ -117,20 +115,32 @@ module STONEnoconn ( noconn );
 endmodule
 
 
-module CELERAservice (IPO,TAO,tmi,CELG,CELV,CELSUB,ok_ibias,enable_ibias,celkelvin_GNDservice);
-  output [10:0] IPO;
-  inout  TAO;
-  inout [4:0] tmi;
-  input  CELG;
-  input  CELV;
-  input  CELSUB;
-  output  ok_ibias;
-  input  enable_ibias;
-  input  celkelvin_GNDservice;
+//Celera:CELERAservice
+//Celera Confidential Symbol Generator
+//IP: 11, REFERENCE: no
+//Latch blanking: 
+module CELERAservice (celkelvin_GNDservice,enable_ibias,
+CELV,
+IPO,
+ok_ibias,
+TAO,
+tmi,
+CELG,CELSUB);
+input celkelvin_GNDservice;
+input enable_ibias;
+input CELV;
+output ok_ibias;
+output [10:0] IPO;
+inout TAO;
+inout [4:0] tmi;
+input CELG;
+input CELSUB;
 endmodule
 
+
+
 // ------------------------ Module Verilog ---------------
-module GREENBANK0_301AceleraCORE (TAO, tdo, tmi, LDO0, LDO1, LDO2, LDO3, LDO4, LDO5, LDO6, LDO7, LDO8, LDO9, MUDV, LDO10, LDO11, LDO12, LDO13, LDO14, LDO15, TAEXT, CELG59462, CELV96848, PORB97836, sense_LDO2, sense_LDO5, sense_LDO7, CELSUB40948, kelvin_MUDV, dftstatusLSB, dftstatusMSB, SENSE_G_2f9d3d8e, kelvin_MUDGservice, kelvin_MUDGamplifier, CELPOWER_LDO_2d7d2b54, CELPOWER_LDO_71a83686, CELPOWER_LDO_ae2828c4, CELPOWER_LDO_cc7190a0, celkelvin_LDO8_606cfcba, celkelvin_LDO9_ec3a1ea5, celkelvin_LDO10_f4bf3314, celkelvin_LDO11_5b2f9385, celkelvin_LDO12_ddaae812, celkelvin_LDO13_065c4558, celkelvin_LDO14_9c93d8b1, celkelvin_LDO15_2f19d9b2, celkelvin_MUDG_2f19d9b24, celkelvin_MUDG_56d80a491, celkelvin_MUDG_606cfcba7, celkelvin_MUDG_9ba9bd602, celkelvin_MUDG_9c93d8b16, celkelvin_MUDG_a05d20923, celkelvin_MUDG_c3b29dca0, celkelvin_MUDG_ddaae8128, celkelvin_MUDG_ec3a1ea59, celkelvin_MUDG_f4bf33145, celkelvin_MUDG_065c455810, celkelvin_MUDG_5b2f938511, celkelvin_MUDG_fb5baa3c12, register_REF2output_ed373047_Xdatamap2, register_REF3output_f5f0bf23_Xdatamap1, status_AMPLIFIERstatus1_7c82cc70_Xdatamap2, status_AMPLIFIERstatus2_d3f207c0_Xdatamap3, status_AMPLIFIERstatus3_08952fe9_Xdatamap4, status_AMPLIFIERstatus4_4aacd207_Xdatamap5, status_AMPLIFIERstatus5_8bc1d0bd_Xdatamap6, register_REFERENCEselect_501ed25d_Xdatamap4, register_LDOconfigurationA_08bb5ce4_Xdatamap2, register_LDOconfigurationA_c101a3fa_Xdatamap1, register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1, register_AMPCONTROLSLOWgain_94286c99_Xdatamap1, register_AMPCONTROLMEDIUMgain_d4d2a186_Xdatamap1, register_SERVICEconfiguration_39b04185_Xdatamap3, register_AMPLIFIERconfiguration_170035c8_Xdatamap1);
+module GREENBANK0_301AceleraCORE (TAO, tdo, tmi, LDO0, LDO1, LDO2, LDO3, LDO4, LDO5, LDO6, LDO7, LDO8, LDO9, MUDV, LDO10, LDO11, LDO12, LDO13, LDO14, LDO15, TAEXT, CELG59462, CELV96848, PORB97836, sense_LDO2, sense_LDO5, sense_LDO7, CELSUB40948, kelvin_MUDV, SENSE_G_924d4d4f, kelvin_MUDGservice, kelvin_MUDGamplifier, CELPOWER_LDO_214c0f74, CELPOWER_LDO_4b7cb037, CELPOWER_LDO_601da658, CELPOWER_LDO_90e98eb0, register_REF2output_0, register_REF3output_0, celkelvin_LDO8_635a8467, celkelvin_LDO9_67c0774a, celkelvin_MUDG_1d518b73, celkelvin_MUDG_2c5f3405, celkelvin_MUDG_3f3140ae, celkelvin_MUDG_5b4bc5a7, celkelvin_MUDG_614c8f41, celkelvin_MUDG_635a8467, celkelvin_MUDG_67c0774a, celkelvin_MUDG_73f01841, celkelvin_MUDG_9e0b544b, celkelvin_MUDG_c0cd2385, celkelvin_MUDG_ceb54526, celkelvin_MUDG_ec7b0f83, celkelvin_MUDG_f8678617, celkelvin_LDO10_9e0b544b, celkelvin_LDO11_c0cd2385, celkelvin_LDO12_73f01841, celkelvin_LDO13_f8678617, celkelvin_LDO14_1d518b73, celkelvin_LDO15_ceb54526, status_AMPLIFIERstatus1_3, status_AMPLIFIERstatus2_6, status_AMPLIFIERstatus3_7, status_AMPLIFIERstatus4_7, status_AMPLIFIERstatus5_7, register_REFERENCEselect_5, register_LDOconfigurationA_3, register_LDOconfigurationA_7, register_AMPCONTROLHIGHgain_0, register_AMPCONTROLSLOWgain_6, register_AMPCONTROLMEDIUMgain_0, register_SERVICEconfiguration_5, register_AMPLIFIERconfiguration_7);
 inout  TAO;
 inout  tdo;
 inout [4:0] tmi;
@@ -160,76 +170,72 @@ input  sense_LDO5;
 input  sense_LDO7;
 input  CELSUB40948;
 input  kelvin_MUDV;
-output [7:0] dftstatusLSB;
-output [7:0] dftstatusMSB;
-input  SENSE_G_2f9d3d8e;
+input  SENSE_G_924d4d4f;
 inout  kelvin_MUDGservice;
 input  kelvin_MUDGamplifier;
-input  CELPOWER_LDO_2d7d2b54;
-input  CELPOWER_LDO_71a83686;
-input  CELPOWER_LDO_ae2828c4;
-input  CELPOWER_LDO_cc7190a0;
-input  celkelvin_LDO8_606cfcba;
-input  celkelvin_LDO9_ec3a1ea5;
-input  celkelvin_LDO10_f4bf3314;
-input  celkelvin_LDO11_5b2f9385;
-input  celkelvin_LDO12_ddaae812;
-input  celkelvin_LDO13_065c4558;
-input  celkelvin_LDO14_9c93d8b1;
-input  celkelvin_LDO15_2f19d9b2;
-input  celkelvin_MUDG_2f19d9b24;
-input  celkelvin_MUDG_56d80a491;
-input  celkelvin_MUDG_606cfcba7;
-input  celkelvin_MUDG_9ba9bd602;
-input  celkelvin_MUDG_9c93d8b16;
-input  celkelvin_MUDG_a05d20923;
-input  celkelvin_MUDG_c3b29dca0;
-input  celkelvin_MUDG_ddaae8128;
-input  celkelvin_MUDG_ec3a1ea59;
-input  celkelvin_MUDG_f4bf33145;
-input  celkelvin_MUDG_065c455810;
-input  celkelvin_MUDG_5b2f938511;
-input  celkelvin_MUDG_fb5baa3c12;
-input [2:0] register_REF2output_ed373047_Xdatamap2;
-input [2:0] register_REF3output_f5f0bf23_Xdatamap1;
-output [1:0] status_AMPLIFIERstatus1_7c82cc70_Xdatamap2;
-output [2:0] status_AMPLIFIERstatus2_d3f207c0_Xdatamap3;
-output [5:0] status_AMPLIFIERstatus3_08952fe9_Xdatamap4;
-output [6:0] status_AMPLIFIERstatus4_4aacd207_Xdatamap5;
-output [7:0] status_AMPLIFIERstatus5_8bc1d0bd_Xdatamap6;
-input [2:0] register_REFERENCEselect_501ed25d_Xdatamap4;
-input [3:0] register_LDOconfigurationA_08bb5ce4_Xdatamap2;
-input [3:0] register_LDOconfigurationA_c101a3fa_Xdatamap1;
-input [2:0] register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1;
-input [2:0] register_AMPCONTROLSLOWgain_94286c99_Xdatamap1;
-input [2:0] register_AMPCONTROLMEDIUMgain_d4d2a186_Xdatamap1;
-input [5:0] register_SERVICEconfiguration_39b04185_Xdatamap3;
-input [7:0] register_AMPLIFIERconfiguration_170035c8_Xdatamap1;
+input  CELPOWER_LDO_214c0f74;
+input  CELPOWER_LDO_4b7cb037;
+input  CELPOWER_LDO_601da658;
+input  CELPOWER_LDO_90e98eb0;
+input [2:0] register_REF2output_0;
+input [2:0] register_REF3output_0;
+input  celkelvin_LDO8_635a8467;
+input  celkelvin_LDO9_67c0774a;
+input  celkelvin_MUDG_1d518b73;
+input  celkelvin_MUDG_2c5f3405;
+input  celkelvin_MUDG_3f3140ae;
+input  celkelvin_MUDG_5b4bc5a7;
+input  celkelvin_MUDG_614c8f41;
+input  celkelvin_MUDG_635a8467;
+input  celkelvin_MUDG_67c0774a;
+input  celkelvin_MUDG_73f01841;
+input  celkelvin_MUDG_9e0b544b;
+input  celkelvin_MUDG_c0cd2385;
+input  celkelvin_MUDG_ceb54526;
+input  celkelvin_MUDG_ec7b0f83;
+input  celkelvin_MUDG_f8678617;
+input  celkelvin_LDO10_9e0b544b;
+input  celkelvin_LDO11_c0cd2385;
+input  celkelvin_LDO12_73f01841;
+input  celkelvin_LDO13_f8678617;
+input  celkelvin_LDO14_1d518b73;
+input  celkelvin_LDO15_ceb54526;
+output [1:0] status_AMPLIFIERstatus1_3;
+output [2:0] status_AMPLIFIERstatus2_6;
+output [5:0] status_AMPLIFIERstatus3_7;
+output [6:0] status_AMPLIFIERstatus4_7;
+output [7:0] status_AMPLIFIERstatus5_7;
+input [2:0] register_REFERENCEselect_5;
+input [3:0] register_LDOconfigurationA_3;
+input [3:0] register_LDOconfigurationA_7;
+input [2:0] register_AMPCONTROLHIGHgain_0;
+input [2:0] register_AMPCONTROLSLOWgain_6;
+input [2:0] register_AMPCONTROLMEDIUMgain_0;
+input [5:0] register_SERVICEconfiguration_5;
+input [7:0] register_AMPLIFIERconfiguration_7;
 
 
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
-wire [7:0] dftstatusLSB;
-wire [7:0] dftstatusMSB;
-wire [2:0] register_REF2output_ed373047_Xdatamap2;
-wire [2:0] register_REF3output_f5f0bf23_Xdatamap1;
-wire [1:0] status_AMPLIFIERstatus1_7c82cc70_Xdatamap2;
-wire [2:0] status_AMPLIFIERstatus2_d3f207c0_Xdatamap3;
-wire [5:0] status_AMPLIFIERstatus3_08952fe9_Xdatamap4;
-wire [6:0] status_AMPLIFIERstatus4_4aacd207_Xdatamap5;
-wire [7:0] status_AMPLIFIERstatus5_8bc1d0bd_Xdatamap6;
-wire [2:0] register_REFERENCEselect_501ed25d_Xdatamap4;
-wire [3:0] register_LDOconfigurationA_08bb5ce4_Xdatamap2;
-wire [3:0] register_LDOconfigurationA_c101a3fa_Xdatamap1;
-wire [2:0] register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1;
-wire [2:0] register_AMPCONTROLSLOWgain_94286c99_Xdatamap1;
-wire [2:0] register_AMPCONTROLMEDIUMgain_d4d2a186_Xdatamap1;
-wire [5:0] register_SERVICEconfiguration_39b04185_Xdatamap3;
-wire [7:0] register_AMPLIFIERconfiguration_170035c8_Xdatamap1;
+wire [2:0] register_REF2output_0;
+wire [2:0] register_REF3output_0;
+wire [1:0] status_AMPLIFIERstatus1_3;
+wire [2:0] status_AMPLIFIERstatus2_6;
+wire [5:0] status_AMPLIFIERstatus3_7;
+wire [6:0] status_AMPLIFIERstatus4_7;
+wire [7:0] status_AMPLIFIERstatus5_7;
+wire [2:0] register_REFERENCEselect_5;
+wire [3:0] register_LDOconfigurationA_3;
+wire [3:0] register_LDOconfigurationA_7;
+wire [2:0] register_AMPCONTROLHIGHgain_0;
+wire [2:0] register_AMPCONTROLSLOWgain_6;
+wire [2:0] register_AMPCONTROLMEDIUMgain_0;
+wire [5:0] register_SERVICEconfiguration_5;
+wire [7:0] register_AMPLIFIERconfiguration_7;
 wire [10:0] IPO;
 
 // ------------------------ Networks ---------------------
-SERVICEgreenbank_30 XSERVICE (
+SERVICEgreenbank_301 XSERVICE (
 .REF(net_113),
 .TAO(TAO),
 .tdo(tdo),
@@ -241,20 +247,20 @@ SERVICEgreenbank_30 XSERVICE (
 .PORB97836(PORB97836),
 .CELBG83021(CELBG83021),
 .CELSUB40948(CELSUB40948),
+.IP_924d4d4f(IP_924d4d4f),
+.IP_b38e83c8(IP_b38e83c8),
+.IP_c99e7035(IP_c99e7035),
 .kelvin_MUDV(kelvin_MUDV),
-.IP_9f5fab65_XU7(IP_9f5fab65_XU7),
-.IP_cce7bb16_XU27(IP_cce7bb16_XU27),
-.SENSE_G_2f9d3d8e(SENSE_G_2f9d3d8e),
+.SENSE_G_924d4d4f(SENSE_G_924d4d4f),
 .kelvin_MUDGservice(kelvin_MUDGservice),
-.IP_2f9d3d8e_Xoscillator1(IP_2f9d3d8e_Xoscillator1),
-.celkelvin_MUDG_56d80a491(celkelvin_MUDG_56d80a491),
-.celkelvin_MUDG_9ba9bd602(celkelvin_MUDG_9ba9bd602),
-.celkelvin_MUDG_a05d20923(celkelvin_MUDG_a05d20923),
-.celkelvin_MUDG_c3b29dca0(celkelvin_MUDG_c3b29dca0),
-.register_REF2output_ed373047_Xdatamap2(register_REF2output_ed373047_Xdatamap2[2:0]),
-.register_REF3output_f5f0bf23_Xdatamap1(register_REF3output_f5f0bf23_Xdatamap1[2:0]),
-.register_REFERENCEselect_501ed25d_Xdatamap4(register_REFERENCEselect_501ed25d_Xdatamap4[2:0]),
-.register_SERVICEconfiguration_39b04185_Xdatamap3(register_SERVICEconfiguration_39b04185_Xdatamap3[5:0])
+.register_REF2output_0(register_REF2output_0[2:0]),
+.register_REF3output_0(register_REF3output_0[2:0]),
+.celkelvin_MUDG_3f3140ae(celkelvin_MUDG_3f3140ae),
+.celkelvin_MUDG_5b4bc5a7(celkelvin_MUDG_5b4bc5a7),
+.celkelvin_MUDG_614c8f41(celkelvin_MUDG_614c8f41),
+.celkelvin_MUDG_ec7b0f83(celkelvin_MUDG_ec7b0f83),
+.register_REFERENCEselect_5(register_REFERENCEselect_5[2:0]),
+.register_SERVICEconfiguration_5(register_SERVICEconfiguration_5[5:0])
 );
 
 LDOgreenbank_301A XU19 (
@@ -273,31 +279,31 @@ LDOgreenbank_301A XU19 (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948),
-.CELPOWER_LDO_2d7d2b54(CELPOWER_LDO_2d7d2b54),
-.CELPOWER_LDO_71a83686(CELPOWER_LDO_71a83686),
-.CELPOWER_LDO_ae2828c4(CELPOWER_LDO_ae2828c4),
-.CELPOWER_LDO_cc7190a0(CELPOWER_LDO_cc7190a0),
-.celkelvin_LDO8_606cfcba(celkelvin_LDO8_606cfcba),
-.celkelvin_LDO9_ec3a1ea5(celkelvin_LDO9_ec3a1ea5),
-.celkelvin_LDO10_f4bf3314(celkelvin_LDO10_f4bf3314),
-.celkelvin_LDO11_5b2f9385(celkelvin_LDO11_5b2f9385),
-.celkelvin_LDO12_ddaae812(celkelvin_LDO12_ddaae812),
-.celkelvin_LDO13_065c4558(celkelvin_LDO13_065c4558),
-.celkelvin_LDO14_9c93d8b1(celkelvin_LDO14_9c93d8b1),
-.celkelvin_LDO15_2f19d9b2(celkelvin_LDO15_2f19d9b2),
-.celkelvin_MUDG_2f19d9b24(celkelvin_MUDG_2f19d9b24),
-.celkelvin_MUDG_606cfcba7(celkelvin_MUDG_606cfcba7),
-.celkelvin_MUDG_9c93d8b16(celkelvin_MUDG_9c93d8b16),
-.celkelvin_MUDG_ddaae8128(celkelvin_MUDG_ddaae8128),
-.celkelvin_MUDG_ec3a1ea59(celkelvin_MUDG_ec3a1ea59),
-.celkelvin_MUDG_f4bf33145(celkelvin_MUDG_f4bf33145),
-.celkelvin_MUDG_065c455810(celkelvin_MUDG_065c455810),
-.celkelvin_MUDG_5b2f938511(celkelvin_MUDG_5b2f938511),
-.register_LDOconfigurationA_08bb5ce4_Xdatamap2(register_LDOconfigurationA_08bb5ce4_Xdatamap2[3:0]),
-.register_LDOconfigurationA_c101a3fa_Xdatamap1(register_LDOconfigurationA_c101a3fa_Xdatamap1[3:0])
+.CELPOWER_LDO_214c0f74(CELPOWER_LDO_214c0f74),
+.CELPOWER_LDO_4b7cb037(CELPOWER_LDO_4b7cb037),
+.CELPOWER_LDO_601da658(CELPOWER_LDO_601da658),
+.CELPOWER_LDO_90e98eb0(CELPOWER_LDO_90e98eb0),
+.celkelvin_LDO8_635a8467(celkelvin_LDO8_635a8467),
+.celkelvin_LDO9_67c0774a(celkelvin_LDO9_67c0774a),
+.celkelvin_MUDG_1d518b73(celkelvin_MUDG_1d518b73),
+.celkelvin_MUDG_635a8467(celkelvin_MUDG_635a8467),
+.celkelvin_MUDG_67c0774a(celkelvin_MUDG_67c0774a),
+.celkelvin_MUDG_73f01841(celkelvin_MUDG_73f01841),
+.celkelvin_MUDG_9e0b544b(celkelvin_MUDG_9e0b544b),
+.celkelvin_MUDG_c0cd2385(celkelvin_MUDG_c0cd2385),
+.celkelvin_MUDG_ceb54526(celkelvin_MUDG_ceb54526),
+.celkelvin_MUDG_f8678617(celkelvin_MUDG_f8678617),
+.celkelvin_LDO10_9e0b544b(celkelvin_LDO10_9e0b544b),
+.celkelvin_LDO11_c0cd2385(celkelvin_LDO11_c0cd2385),
+.celkelvin_LDO12_73f01841(celkelvin_LDO12_73f01841),
+.celkelvin_LDO13_f8678617(celkelvin_LDO13_f8678617),
+.celkelvin_LDO14_1d518b73(celkelvin_LDO14_1d518b73),
+.celkelvin_LDO15_ceb54526(celkelvin_LDO15_ceb54526),
+.register_LDOconfigurationA_3(register_LDOconfigurationA_3[3:0]),
+.register_LDOconfigurationA_7(register_LDOconfigurationA_7[3:0])
 );
 
-AMPLIFIERgreenbank_301A XU21 (
+AMPLIFIERgreenbank_301A1 XU21 (
 .REF(net_113),
 .tdo(tdo),
 .tmi(tmi[4:0]),
@@ -316,42 +322,40 @@ AMPLIFIERgreenbank_301A XU21 (
 .sense_LDO5(sense_LDO5),
 .sense_LDO7(sense_LDO7),
 .CELSUB40948(CELSUB40948),
-.dftstatusLSB(dftstatusLSB[7:0]),
-.dftstatusMSB(dftstatusMSB[7:0]),
+.IP_3c5376e9(IP_3c5376e9),
+.IP_43d2816b(IP_43d2816b),
+.IP_62d04561(IP_62d04561),
+.IP_8d23f22a(IP_8d23f22a),
+.IP_96d00b91(IP_96d00b91),
+.IP_b45372ed(IP_b45372ed),
+.IP_c87274ce(IP_c87274ce),
+.IP_e459a101(IP_e459a101),
 .kelvin_MUDGamplifier(kelvin_MUDGamplifier),
-.IP_04fc710d_Xamplifier1(IP_04fc710d_Xamplifier1),
-.IP_2f4c979a_Xamplifier1(IP_2f4c979a_Xamplifier1),
-.IP_4ca209e2_Xamplifier1(IP_4ca209e2_Xamplifier1),
-.IP_5bf47c57_Xamplifier1(IP_5bf47c57_Xamplifier1),
-.IP_7a870fa6_Xamplifier1(IP_7a870fa6_Xamplifier1),
-.IP_994c1064_Xamplifier1(IP_994c1064_Xamplifier1),
-.IP_b802e904_Xamplifier1(IP_b802e904_Xamplifier1),
-.IP_df33d8f6_Xamplifier1(IP_df33d8f6_Xamplifier1),
-.status_AMPLIFIERstatus1_7c82cc70_Xdatamap2(status_AMPLIFIERstatus1_7c82cc70_Xdatamap2[1:0]),
-.status_AMPLIFIERstatus2_d3f207c0_Xdatamap3(status_AMPLIFIERstatus2_d3f207c0_Xdatamap3[2:0]),
-.status_AMPLIFIERstatus3_08952fe9_Xdatamap4(status_AMPLIFIERstatus3_08952fe9_Xdatamap4[5:0]),
-.status_AMPLIFIERstatus4_4aacd207_Xdatamap5(status_AMPLIFIERstatus4_4aacd207_Xdatamap5[6:0]),
-.status_AMPLIFIERstatus5_8bc1d0bd_Xdatamap6(status_AMPLIFIERstatus5_8bc1d0bd_Xdatamap6[7:0]),
-.register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1(register_AMPCONTROLHIGHgain_9c59cd45_Xdatamap1[2:0]),
-.register_AMPCONTROLSLOWgain_94286c99_Xdatamap1(register_AMPCONTROLSLOWgain_94286c99_Xdatamap1[2:0]),
-.register_AMPCONTROLMEDIUMgain_d4d2a186_Xdatamap1(register_AMPCONTROLMEDIUMgain_d4d2a186_Xdatamap1[2:0]),
-.register_AMPLIFIERconfiguration_170035c8_Xdatamap1(register_AMPLIFIERconfiguration_170035c8_Xdatamap1[7:0])
+.status_AMPLIFIERstatus1_3(status_AMPLIFIERstatus1_3[1:0]),
+.status_AMPLIFIERstatus2_6(status_AMPLIFIERstatus2_6[2:0]),
+.status_AMPLIFIERstatus3_7(status_AMPLIFIERstatus3_7[5:0]),
+.status_AMPLIFIERstatus4_7(status_AMPLIFIERstatus4_7[6:0]),
+.status_AMPLIFIERstatus5_7(status_AMPLIFIERstatus5_7[7:0]),
+.register_AMPCONTROLHIGHgain_0(register_AMPCONTROLHIGHgain_0[2:0]),
+.register_AMPCONTROLSLOWgain_6(register_AMPCONTROLSLOWgain_6[2:0]),
+.register_AMPCONTROLMEDIUMgain_0(register_AMPCONTROLMEDIUMgain_0[2:0]),
+.register_AMPLIFIERconfiguration_7(register_AMPLIFIERconfiguration_7[7:0])
 );
 
-STONEnoconn XNCnoconn (
-.noconn(noconn)
+STONEnoconn XNCok_ibias (
+.noconn(ok_ibias)
 );
 
 CELERAservice XceleraSERVICE (
-.IPO({IP_04fc710d_Xamplifier1,IP_2f4c979a_Xamplifier1,IP_2f9d3d8e_Xoscillator1,IP_4ca209e2_Xamplifier1,IP_5bf47c57_Xamplifier1,IP_7a870fa6_Xamplifier1,IP_994c1064_Xamplifier1,IP_9f5fab65_XU7,IP_b802e904_Xamplifier1,IP_cce7bb16_XU27,IP_df33d8f6_Xamplifier1}),
+.IPO({IP_3c5376e9,IP_43d2816b,IP_62d04561,IP_8d23f22a,IP_924d4d4f,IP_96d00b91,IP_b38e83c8,IP_b45372ed,IP_c87274ce,IP_c99e7035,IP_e459a101}),
 .TAO(TAO),
 .tmi(tmi[4:0]),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.ok_ibias(noconn),
+.ok_ibias(ok_ibias),
 .enable_ibias(PORB97836),
-.celkelvin_GNDservice(celkelvin_MUDG_fb5baa3c12)
+.celkelvin_GNDservice(celkelvin_MUDG_2c5f3405)
 );
 
 endmodule

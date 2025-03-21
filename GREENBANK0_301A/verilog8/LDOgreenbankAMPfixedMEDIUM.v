@@ -8,27 +8,39 @@ module VESPAdftpulse (stop,pulse,start,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module switchgnd_321bf2ca (I,O,CELG,SIMPV,CELSUB,enable_switch);
-  input  I;
-  inout  O;
-  input  CELG;
-  input  SIMPV;
-  input  CELSUB;
-  input  enable_switch;
+//Celera:switchgnd_321bf2ca
+//Celera Confidential Symbol Generator
+//100 Ohm gndSwitch
+module switchgnd_321bf2ca (CELV,O,I,enable_switch,CELG,CELSUB);
+input CELV;
+input I;
+input enable_switch;
+inout O;
+input CELG;
+input CELSUB;
 endmodule
 
-module amplifier_d3d8dcb1 (IP,INN,INP,OUT,CELG,SIMPV,CELSUB,ok_amplifier,enable_amplifier,global_amplifier);
-  input  IP;
-  input  INN;
-  input  INP;
-  output  OUT;
-  input  CELG;
-  input  SIMPV;
-  input  CELSUB;
-  output  ok_amplifier;
-  input  enable_amplifier;
-  input  global_amplifier;
+
+
+//Celera:amplifier_d3d8dcb1
+//Celera Confidential Symbol Generator
+//Gain Adjust:fixed, Input Type:p, Bandwidth:medium
+module amplifier_d3d8dcb1 (SIMPV,INP,IP,OUT,enable_amplifier,ok_amplifier,global_amplifier,
+INN,
+CELG,CELSUB);
+input SIMPV;
+input INP;
+input INN;
+input IP;
+output OUT;
+input enable_amplifier;
+output ok_amplifier;
+input global_amplifier;
+input CELG;
+input CELSUB;
 endmodule
+
+
 
 //Verilog HDL for "DFT", "DFTtm8t" "functional"
 
@@ -55,7 +67,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module LDOgreenbankAMPfixedMEDIUM (LDO, REF, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, kelvin_GNDldo, IP_4ca209e2_Xamplifier1);
+module LDOgreenbankAMPfixedMEDIUM (LDO, REF, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, IP_8d23f22a, dft_startup, kelvin_GNDldo);
 output  LDO;
 input  REF;
 input [4:0] tmi;
@@ -64,9 +76,9 @@ input  CELG59462;
 input  CELV96848;
 input  enable_ldo;
 input  CELSUB40948;
+input  IP_8d23f22a;
 output  dft_startup;
 input  kelvin_GNDldo;
-input  IP_4ca209e2_Xamplifier1;
 
 
 // ------------------------ Wires ------------------------
@@ -89,13 +101,13 @@ switchgnd_321bf2ca XU9 (
 .I(REF),
 .O(net_32),
 .CELG(CELG59462),
-.SIMPV(TBD_XU3_XceleraCORE_XU21_XAMPFIXEDmedium_XU9_SIMPV),
+.CELV(CELV96848),
 .CELSUB(CELSUB40948),
 .enable_switch(enable_ldo)
 );
 
 amplifier_d3d8dcb1 Xamplifier1 (
-.IP(IP_4ca209e2_Xamplifier1),
+.IP(IP_8d23f22a),
 .INN(kelvin_GNDldo),
 .INP(net_32),
 .OUT(LDO),
@@ -104,7 +116,7 @@ amplifier_d3d8dcb1 Xamplifier1 (
 .CELSUB(CELSUB40948),
 .ok_amplifier(net_33),
 .enable_amplifier(enable_ldo),
-.global_amplifier(global_amplifier_4ca209e2_Xamplifier1)
+.global_amplifier(global_amplifier_8d23f22a_Xamplifier1)
 );
 
 DFTtm8t dft_hex0x14 (
@@ -112,7 +124,7 @@ DFTtm8t dft_hex0x14 (
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x14_ten_7,noconn_dft_hex0x14_ten_6,noconn_dft_hex0x14_ten_5,noconn_dft_hex0x14_ten_4,noconn_dft_hex0x14_ten_3,noconn_dft_hex0x14_ten_2,noconn_dft_hex0x14_ten_1,global_amplifier_4ca209e2_Xamplifier1}),
+.ten({noconn_dft_hex0x14_ten_7,noconn_dft_hex0x14_ten_6,noconn_dft_hex0x14_ten_5,noconn_dft_hex0x14_ten_4,noconn_dft_hex0x14_ten_3,noconn_dft_hex0x14_ten_2,noconn_dft_hex0x14_ten_1,global_amplifier_8d23f22a_Xamplifier1}),
 .tma({a0,a0,a0,a1,a0,a1,a0,a0}),
 .tmi(tmi[4:0])
 );

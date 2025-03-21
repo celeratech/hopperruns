@@ -1,7 +1,7 @@
 // Celera Brick Generator Confidential
 //CORE:resistor
 //NAME:resistor_3490198b
-//GENERATOR CODE REVISION:0.4.3
+//GENERATOR CODE REVISION:0.4.5
 //VALUE:30.00Kohms
 //Imax:1.000mA
 //TYPE:tbd
@@ -185,11 +185,16 @@ rlpp3000rpo2p8u0p4u XRA1_2(
 .RN (RA1),
 .ISO (CELG)
 );
+rlpp3000rpo2p8u0p4u XRA1_3(
+.RP (RA0),
+.RN (RA1),
+.ISO (CELG)
+);
 
 //Celera Confidential Do Not Copy //DieSize,rlpp3000rpo2p8u0p4u
 
 //Die Size Calculator rlpp3000rpo2p8u0p4u
-//,diesize,rlpp3000rpo2p8u0p4u,3
+//,diesize,rlpp3000rpo2p8u0p4u,4
 
 //Celera Confidential Do Not Copy STONEresistorswitchLB
 STONEresistorswitchLB XadjustswitchB2(

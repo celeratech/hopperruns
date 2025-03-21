@@ -38,18 +38,29 @@ module ESDcore6 ( GESD, PAD );
 endmodule
 
 
+//Verilog HDL for "PEBBLES", "PEBBLElinkKELVIN" "functional"
+
+
+module PEBBLElinkKELVIN ( NEG, POS );
+
+  inout POS;
+  inout NEG;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module pad_GREENBANK0_301A_MUDV (GESD, MUDV, VOTP, CELV96848, kelvin_MUDV, CELPOWER_LDO, CELPOWER_LDO_2d7d2b54, CELPOWER_LDO_71a83686, CELPOWER_LDO_ae2828c4, CELPOWER_LDO_cc7190a0);
+module pad_GREENBANK0_301A_MUDV (GESD, MUDV, VOTP, CELV96848, kelvin_MUDV, CELPOWER_LDO, CELPOWER_LDO_214c0f74, CELPOWER_LDO_4b7cb037, CELPOWER_LDO_601da658, CELPOWER_LDO_90e98eb0, celkelvin_MUDV_a3dd9c62);
 input  GESD;
 inout  MUDV;
 output  VOTP;
 output  CELV96848;
 inout  kelvin_MUDV;
 inout  CELPOWER_LDO;
-output  CELPOWER_LDO_2d7d2b54;
-output  CELPOWER_LDO_71a83686;
-output  CELPOWER_LDO_ae2828c4;
-output  CELPOWER_LDO_cc7190a0;
+output  CELPOWER_LDO_214c0f74;
+output  CELPOWER_LDO_4b7cb037;
+output  CELPOWER_LDO_601da658;
+output  CELPOWER_LDO_90e98eb0;
+output  celkelvin_MUDV_a3dd9c62;
 
 
 // ------------------------ Wires ------------------------
@@ -57,10 +68,6 @@ output  CELPOWER_LDO_cc7190a0;
 // ------------------------ Networks ---------------------
 STONEpad1 XPAD1 (
 .PAD(MUDV)
-);
-
-STONEpad1 XPAD2 (
-.PAD(CELPOWER_LDO)
 );
 
 STONEotpSENSE Xvotp (
@@ -78,34 +85,39 @@ ESDcore6 XESDcore6_1 (
 .GESD(GESD)
 );
 
-ESDcore6 XESDcore6_2 (
-.PAD(CELPOWER_LDO),
-.GESD(GESD)
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE0 (
+.NEG(kelvin_MUDV),
+.POS(MUDV)
 );
 
-WRAPPER1 Xwrap_PAD1_SENSE0 (
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE1 (
+.NEG(CELPOWER_LDO),
+.POS(MUDV)
+);
+
+WRAPPER1 Xwrap_CELPOWER_LDO_214c0f74 (
+.i(CELPOWER_LDO),
+.o(CELPOWER_LDO_214c0f74)
+);
+
+WRAPPER1 Xwrap_CELPOWER_LDO_4b7cb037 (
+.i(CELPOWER_LDO),
+.o(CELPOWER_LDO_4b7cb037)
+);
+
+WRAPPER1 Xwrap_CELPOWER_LDO_601da658 (
+.i(CELPOWER_LDO),
+.o(CELPOWER_LDO_601da658)
+);
+
+WRAPPER1 Xwrap_CELPOWER_LDO_90e98eb0 (
+.i(CELPOWER_LDO),
+.o(CELPOWER_LDO_90e98eb0)
+);
+
+WRAPPER1 XWRAP_celkelvin_MUDV_a3dd9c62 (
 .i(MUDV),
-.o(kelvin_MUDV)
-);
-
-WRAPPER1 Xwrap_CELPOWER_LDO_2d7d2b54 (
-.i(CELPOWER_LDO),
-.o(CELPOWER_LDO_2d7d2b54)
-);
-
-WRAPPER1 Xwrap_CELPOWER_LDO_71a83686 (
-.i(CELPOWER_LDO),
-.o(CELPOWER_LDO_71a83686)
-);
-
-WRAPPER1 Xwrap_CELPOWER_LDO_ae2828c4 (
-.i(CELPOWER_LDO),
-.o(CELPOWER_LDO_ae2828c4)
-);
-
-WRAPPER1 Xwrap_CELPOWER_LDO_cc7190a0 (
-.i(CELPOWER_LDO),
-.o(CELPOWER_LDO_cc7190a0)
+.o(celkelvin_MUDV_a3dd9c62)
 );
 
 endmodule

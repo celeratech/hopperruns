@@ -28,29 +28,39 @@ module WRAPPER1 ( o, i );
 endmodule
 
 
+//Verilog HDL for "PEBBLES", "PEBBLElinkKELVIN" "functional"
+
+
+module PEBBLElinkKELVIN ( NEG, POS );
+
+  inout POS;
+  inout NEG;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module pad_GREENBANK0_301A_MUDG (GESD, GOTP, MUDG, CELG59462, CELSUB40948, SENSE_G_2f9d3d8e, kelvin_MUDGservice, kelvin_MUDGamplifier, celkelvin_MUDG_2f19d9b24, celkelvin_MUDG_56d80a491, celkelvin_MUDG_606cfcba7, celkelvin_MUDG_9ba9bd602, celkelvin_MUDG_9c93d8b16, celkelvin_MUDG_a05d20923, celkelvin_MUDG_c3b29dca0, celkelvin_MUDG_ddaae8128, celkelvin_MUDG_ec3a1ea59, celkelvin_MUDG_f4bf33145, celkelvin_MUDG_065c455810, celkelvin_MUDG_5b2f938511, celkelvin_MUDG_fb5baa3c12);
+module pad_GREENBANK0_301A_MUDG (GESD, GOTP, MUDG, CELG59462, CELSUB40948, SENSE_G_924d4d4f, kelvin_MUDGservice, kelvin_MUDGamplifier, celkelvin_MUDG_1d518b73, celkelvin_MUDG_2c5f3405, celkelvin_MUDG_3f3140ae, celkelvin_MUDG_5b4bc5a7, celkelvin_MUDG_614c8f41, celkelvin_MUDG_635a8467, celkelvin_MUDG_67c0774a, celkelvin_MUDG_73f01841, celkelvin_MUDG_9e0b544b, celkelvin_MUDG_c0cd2385, celkelvin_MUDG_ceb54526, celkelvin_MUDG_ec7b0f83, celkelvin_MUDG_f8678617);
 output  GESD;
 output  GOTP;
 inout  MUDG;
 inout  CELG59462;
 output  CELSUB40948;
-output  SENSE_G_2f9d3d8e;
+output  SENSE_G_924d4d4f;
 inout  kelvin_MUDGservice;
 inout  kelvin_MUDGamplifier;
-output  celkelvin_MUDG_2f19d9b24;
-output  celkelvin_MUDG_56d80a491;
-output  celkelvin_MUDG_606cfcba7;
-output  celkelvin_MUDG_9ba9bd602;
-output  celkelvin_MUDG_9c93d8b16;
-output  celkelvin_MUDG_a05d20923;
-output  celkelvin_MUDG_c3b29dca0;
-output  celkelvin_MUDG_ddaae8128;
-output  celkelvin_MUDG_ec3a1ea59;
-output  celkelvin_MUDG_f4bf33145;
-output  celkelvin_MUDG_065c455810;
-output  celkelvin_MUDG_5b2f938511;
-output  celkelvin_MUDG_fb5baa3c12;
+output  celkelvin_MUDG_1d518b73;
+output  celkelvin_MUDG_2c5f3405;
+output  celkelvin_MUDG_3f3140ae;
+output  celkelvin_MUDG_5b4bc5a7;
+output  celkelvin_MUDG_614c8f41;
+output  celkelvin_MUDG_635a8467;
+output  celkelvin_MUDG_67c0774a;
+output  celkelvin_MUDG_73f01841;
+output  celkelvin_MUDG_9e0b544b;
+output  celkelvin_MUDG_c0cd2385;
+output  celkelvin_MUDG_ceb54526;
+output  celkelvin_MUDG_ec7b0f83;
+output  celkelvin_MUDG_f8678617;
 
 
 // ------------------------ Wires ------------------------
@@ -80,84 +90,84 @@ WRAPPER1 Xwrap_CELSUB (
 .o(CELSUB40948)
 );
 
-WRAPPER1 Xwrap_PAD1_SENSE0 (
-.i(MUDG),
-.o(kelvin_MUDGservice)
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE0 (
+.NEG(kelvin_MUDGservice),
+.POS(MUDG)
 );
 
-WRAPPER1 Xwrap_PAD1_SENSE1 (
-.i(MUDG),
-.o(kelvin_MUDGamplifier)
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE3 (
+.NEG(kelvin_MUDGamplifier),
+.POS(MUDG)
 );
 
-WRAPPER1 XWRAP_SENSE_G_2f9d3d8e (
+WRAPPER1 XWRAP_SENSE_G_924d4d4f (
 .i(MUDG),
-.o(SENSE_G_2f9d3d8e)
+.o(SENSE_G_924d4d4f)
 );
 
-WRAPPER1 XWRAP_celkelvin_MUDG_2f19d9b24 (
+WRAPPER1 XWRAP_celkelvin_MUDG_1d518b73 (
 .i(MUDG),
-.o(celkelvin_MUDG_2f19d9b24)
+.o(celkelvin_MUDG_1d518b73)
 );
 
-WRAPPER1 XWRAP_celkelvin_MUDG_56d80a491 (
+WRAPPER1 XWRAP_celkelvin_MUDG_2c5f3405 (
 .i(MUDG),
-.o(celkelvin_MUDG_56d80a491)
+.o(celkelvin_MUDG_2c5f3405)
 );
 
-WRAPPER1 XWRAP_celkelvin_MUDG_606cfcba7 (
+WRAPPER1 XWRAP_celkelvin_MUDG_3f3140ae (
 .i(MUDG),
-.o(celkelvin_MUDG_606cfcba7)
+.o(celkelvin_MUDG_3f3140ae)
 );
 
-WRAPPER1 XWRAP_celkelvin_MUDG_9ba9bd602 (
+WRAPPER1 XWRAP_celkelvin_MUDG_5b4bc5a7 (
 .i(MUDG),
-.o(celkelvin_MUDG_9ba9bd602)
+.o(celkelvin_MUDG_5b4bc5a7)
 );
 
-WRAPPER1 XWRAP_celkelvin_MUDG_9c93d8b16 (
+WRAPPER1 XWRAP_celkelvin_MUDG_614c8f41 (
 .i(MUDG),
-.o(celkelvin_MUDG_9c93d8b16)
+.o(celkelvin_MUDG_614c8f41)
 );
 
-WRAPPER1 XWRAP_celkelvin_MUDG_a05d20923 (
+WRAPPER1 XWRAP_celkelvin_MUDG_635a8467 (
 .i(MUDG),
-.o(celkelvin_MUDG_a05d20923)
+.o(celkelvin_MUDG_635a8467)
 );
 
-WRAPPER1 XWRAP_celkelvin_MUDG_c3b29dca0 (
+WRAPPER1 XWRAP_celkelvin_MUDG_67c0774a (
 .i(MUDG),
-.o(celkelvin_MUDG_c3b29dca0)
+.o(celkelvin_MUDG_67c0774a)
 );
 
-WRAPPER1 XWRAP_celkelvin_MUDG_ddaae8128 (
+WRAPPER1 XWRAP_celkelvin_MUDG_73f01841 (
 .i(MUDG),
-.o(celkelvin_MUDG_ddaae8128)
+.o(celkelvin_MUDG_73f01841)
 );
 
-WRAPPER1 XWRAP_celkelvin_MUDG_ec3a1ea59 (
+WRAPPER1 XWRAP_celkelvin_MUDG_9e0b544b (
 .i(MUDG),
-.o(celkelvin_MUDG_ec3a1ea59)
+.o(celkelvin_MUDG_9e0b544b)
 );
 
-WRAPPER1 XWRAP_celkelvin_MUDG_f4bf33145 (
+WRAPPER1 XWRAP_celkelvin_MUDG_c0cd2385 (
 .i(MUDG),
-.o(celkelvin_MUDG_f4bf33145)
+.o(celkelvin_MUDG_c0cd2385)
 );
 
-WRAPPER1 XWRAP_celkelvin_MUDG_065c455810 (
+WRAPPER1 XWRAP_celkelvin_MUDG_ceb54526 (
 .i(MUDG),
-.o(celkelvin_MUDG_065c455810)
+.o(celkelvin_MUDG_ceb54526)
 );
 
-WRAPPER1 XWRAP_celkelvin_MUDG_5b2f938511 (
+WRAPPER1 XWRAP_celkelvin_MUDG_ec7b0f83 (
 .i(MUDG),
-.o(celkelvin_MUDG_5b2f938511)
+.o(celkelvin_MUDG_ec7b0f83)
 );
 
-WRAPPER1 XWRAP_celkelvin_MUDG_fb5baa3c12 (
+WRAPPER1 XWRAP_celkelvin_MUDG_f8678617 (
 .i(MUDG),
-.o(celkelvin_MUDG_fb5baa3c12)
+.o(celkelvin_MUDG_f8678617)
 );
 
 endmodule

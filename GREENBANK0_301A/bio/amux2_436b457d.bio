@@ -48,6 +48,8 @@ user,amux_ron,100
 description,Switch on resistance
 user,amux_control,pin
 description,Type of control
+user,NESTO generate,0.4.1
+description,NESTO generator revision
 //**********************************************
 //POR Parameters
 //**********************************************
@@ -160,7 +162,7 @@ sub_area,STONEmux2_100,102
 generate_area,amux2_436b457d,102
 // *********************************************
 //Calculator Parameters
-#define,CELVminimum,1.2
+#define,SIMPVminimum,1.2
 //**********************************************
 //Pinorder Parameters
 *******************************************
@@ -168,9 +170,12 @@ generate_area,amux2_436b457d,102
 *******************************************
 //amux2
 revision,pinorder,0.2.0
-pinorder,I0,I1,O,CELV,amux
-
+Key,301
+PinOrder code revision,0.3.0
+pinorder,I0,I1,O,SIMPV,amux
 endpinorder
+//**********************************************
+
 //**********************************************
 //TRIM Parameters
 cell,amux
@@ -202,16 +207,16 @@ trim,description7,empty
 //**********************************************
 //Cell Pin Descriptions
 //**********************************************
-pinname,CELV
-definition,CELV,AMUX power supply
-iq,CELV,SIMULATION
-absmax,CELV,6
-absmin,CELV,2.0
-io,CELV,input
-mode,CELV,power
-router,CELV,TBD
-dftpriority,CELV,1
-esd,CELV,TBD
+pinname,SIMPV
+definition,SIMPV,AMUX power supply
+iq,SIMPV,SIMULATION
+absmax,SIMPV,6
+absmin,SIMPV,2.0
+io,SIMPV,input
+mode,SIMPV,power
+router,SIMPV,TBD
+dftpriority,SIMPV,1
+esd,SIMPV,TBD
 
 pinname,CELG
 definition,CELG,AMUX power ground
@@ -224,16 +229,16 @@ router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,SUB
-definition,SUB,power ground
-iq,SUB,SIMULATION
-absmax,SUB,0.3
-absmin,SUB,-0.3
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
+pinname,CELSUB
+definition,CELSUB,power ground
+iq,CELSUB,SIMULATION
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
+io,CELSUB,input
+mode,CELSUB,power
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
 
 pinname,I0
 definition,I0,AMUX Input0

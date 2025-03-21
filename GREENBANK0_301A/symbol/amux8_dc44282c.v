@@ -2,12 +2,12 @@
 //Celera Confidential Symbol Generator
 //Inputs: 6, Switch On Resistance: 100
 //Type of Control:pin, T-Switch: no
-module amux8_dc44282c (CELV,SUB,O,I0,I1,
+module amux8_dc44282c (SIMPV,CELSUB,O,I0,I1,
 I2,I3,I4,I5,
 amux,
 CELG);
-input CELV;
-input SUB;
+input SIMPV;
+input CELSUB;
 output O;
 input I0;
 input I1;

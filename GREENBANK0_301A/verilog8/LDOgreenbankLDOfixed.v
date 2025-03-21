@@ -8,28 +8,43 @@ module VESPAdftpulse (stop,pulse,start,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module switchgnd_321bf2ca (I,O,CELG,SIMPV,CELSUB,enable_switch);
-  input  I;
-  inout  O;
-  input  CELG;
-  input  SIMPV;
-  input  CELSUB;
-  input  enable_switch;
+//Celera:switchgnd_321bf2ca
+//Celera Confidential Symbol Generator
+//100 Ohm gndSwitch
+module switchgnd_321bf2ca (CELV,O,I,enable_switch,CELG,CELSUB);
+input CELV;
+input I;
+input enable_switch;
+inout O;
+input CELG;
+input CELSUB;
 endmodule
 
-module IPOTTldo_d6d23838 (LDO,REF,CELG,SIMPV,CELSUB,ok_ldo,enable_ldo,global_ldo,CELPOWER_LDO,celkelvin_LDO,celkelvin_GNDldo);
-  output  LDO;
-  input  REF;
-  input  CELG;
-  input  SIMPV;
-  input  CELSUB;
-  output  ok_ldo;
-  input  enable_ldo;
-  input  global_ldo;
-  input  CELPOWER_LDO;
-  input  celkelvin_LDO;
-  input  celkelvin_GNDldo;
+
+
+//Celera:IPOTTldo_d6d23838
+//Celera Confidential Symbol Generator
+//LDO:Output 3.3V
+module IPOTTldo_d6d23838 (LDO,celkelvin_LDO,ok_ldo,
+enable_ldo,SIMPV,REF,
+CELPOWER_LDO,
+global_ldo,
+celkelvin_GNDldo,
+CELG,CELSUB); 
+input SIMPV;
+input CELPOWER_LDO;
+input enable_ldo;
+input global_ldo;
+output LDO;
+input celkelvin_LDO;
+output ok_ldo;
+input REF;
+input celkelvin_GNDldo;
+input CELG;
+input CELSUB;
 endmodule
+
+
 
 //Verilog HDL for "DFT", "DFTtm8t" "functional"
 
@@ -56,7 +71,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module LDOgreenbankLDOfixed (LDO, REF, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, CELPOWER_LDO_71a83686, celkelvin_LDO8_606cfcba, celkelvin_MUDG_606cfcba7);
+module LDOgreenbankLDOfixed (LDO, REF, tmi, MUDV, CELG59462, CELV96848, enable_ldo, CELSUB40948, dft_startup, CELPOWER_LDO_214c0f74, celkelvin_LDO8_635a8467, celkelvin_MUDG_635a8467);
 output  LDO;
 input  REF;
 input [4:0] tmi;
@@ -66,9 +81,9 @@ input  CELV96848;
 input  enable_ldo;
 input  CELSUB40948;
 output  dft_startup;
-input  CELPOWER_LDO_71a83686;
-input  celkelvin_LDO8_606cfcba;
-input  celkelvin_MUDG_606cfcba7;
+input  CELPOWER_LDO_214c0f74;
+input  celkelvin_LDO8_635a8467;
+input  celkelvin_MUDG_635a8467;
 
 
 // ------------------------ Wires ------------------------
@@ -91,7 +106,7 @@ switchgnd_321bf2ca XU9 (
 .I(REF),
 .O(net_36),
 .CELG(CELG59462),
-.SIMPV(TBD_XU3_XceleraCORE_XU19_XLDOFIXED_XU9_SIMPV),
+.CELV(CELV96848),
 .CELSUB(CELSUB40948),
 .enable_switch(enable_ldo)
 );
@@ -104,10 +119,10 @@ IPOTTldo_d6d23838 XLDO1 (
 .CELSUB(CELSUB40948),
 .ok_ldo(net_37),
 .enable_ldo(enable_ldo),
-.global_ldo(global_ldo_71a83686_XLDO1),
-.CELPOWER_LDO(CELPOWER_LDO_71a83686),
-.celkelvin_LDO(celkelvin_LDO8_606cfcba),
-.celkelvin_GNDldo(celkelvin_MUDG_606cfcba7)
+.global_ldo(global_ldo_214c0f74_XLDO1),
+.CELPOWER_LDO(CELPOWER_LDO_214c0f74),
+.celkelvin_LDO(celkelvin_LDO8_635a8467),
+.celkelvin_GNDldo(celkelvin_MUDG_635a8467)
 );
 
 DFTtm8t dft_hex0x0A (
@@ -115,7 +130,7 @@ DFTtm8t dft_hex0x0A (
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x0A_ten_7,noconn_dft_hex0x0A_ten_6,noconn_dft_hex0x0A_ten_5,noconn_dft_hex0x0A_ten_4,noconn_dft_hex0x0A_ten_3,noconn_dft_hex0x0A_ten_2,noconn_dft_hex0x0A_ten_1,global_ldo_71a83686_XLDO1}),
+.ten({noconn_dft_hex0x0A_ten_7,noconn_dft_hex0x0A_ten_6,noconn_dft_hex0x0A_ten_5,noconn_dft_hex0x0A_ten_4,noconn_dft_hex0x0A_ten_3,noconn_dft_hex0x0A_ten_2,noconn_dft_hex0x0A_ten_1,global_ldo_214c0f74_XLDO1}),
 .tma({a0,a0,a0,a0,a1,a0,a1,a0}),
 .tmi(tmi[4:0])
 );

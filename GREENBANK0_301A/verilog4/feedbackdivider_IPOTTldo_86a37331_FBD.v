@@ -180,7 +180,7 @@ rlpp3000rpo10p7u1p0u XRFBs_0(
 //Celera Confidential Do Not Copy rlpp3000rpo10p7u1p0u
 rlpp3000rpo10p7u1p0u XRFBs_1(
 .ISO (CELG),
-.RP (RTN),
+.RP (RFBmid),
 .RN (RFBs_0)
 );
 

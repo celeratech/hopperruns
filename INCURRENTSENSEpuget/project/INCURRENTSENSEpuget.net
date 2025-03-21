@@ -1,0 +1,245 @@
+* Z:\celera\projects\Simplis\playjoseph\PUGET0\301c\verification\sim_INCURRENTSENSEpuget.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+ 
+*BrickToolsVersion:0.1  projname:INCURRENTSENSEpuget
+.node_map kelvin_GNDcurrentsensein 25
+.node_map SIMPV 21
+.node_map ok_currentsensein 27
+.node_map enable_currentsensein 28
+.node_map clock_currentsensein 31
+.node_map VSNSI_LIVE 22
+.node_map ok_measurecurrentsensein 29
+.node_map VSNSI_FILTER 24
+.node_map measure_currentsensein 30
+.node_map VOUTSN 26
+.node_map VOUTSP 23
+.node_map GND 32
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 100.0u  0
+.globalvar REF=1.0
+.globalvar TEMP=25
+.globalvar VIN=5
+.globalvar tdext_khz=1000
+.globalvar  celera_i2c_frequency_KHz=100
+
+
+X$INCURRENTSENSEpuget 21 22 23 24 26 27 28 29 30 31 25 INCURRENTSENSEpuget
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+** From Z:\celera\projects\Simplis\playjoseph\PUGET0\301c\verification\FORCE_INCURRENTSENSEpuget.sxcmp
+
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301C\design\INCURRENTSENSEpuget.sxcmp
+.subckt INCURRENTSENSEpuget 47 48 49 50 51 52 53 54 55 56 57
+*#hierarchy
+.node_map kelvin_GNDcurrentsensein 57
+.node_map SIMPV 47
+.node_map ok_currentsensein 52
+.node_map enable_currentsensein 53
+.node_map clock_currentsensein 56
+.node_map VSNSI_LIVE 48
+.node_map ok_measurecurrentsensein 54
+.node_map hijack_measure_currentsensein 61
+.node_map VSNSI_FILTER 50
+.node_map dft_ok 60
+.node_map dft_startup 59
+.node_map measure_currentsensein 55
+.node_map hijack_enable_currentsense 58
+.node_map VOUTSN 51
+.node_map dft_measure_delay 62
+.node_map VOUTSP 49
+X$DEBUG 48 59 58 60 62 53 55 61 50 CURRENTSENSEinDEBUG
+X$MAIN 49 50 51 52 57 59 58 60 56 61 48 54 62 47 CURRENTSENSEinMAIN
+X$pinprobe1 48 pinprobe vars: pinprobe_description='CURRENTSENSEin_output_voltage' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe10 47 pinprobe vars: pinprobe_description='CURRENTSENSEin_5V_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 50 pinprobe vars: pinprobe_description='filtered_CURRENTSENSEin_output_voltage' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 52 pinprobe vars: pinprobe_description='CURRENTSENSEin_ok_output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 49 pinprobe vars: pinprobe_description='CURRENTSENSEin_positive_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 51 pinprobe vars: pinprobe_description='CURRENTSENSEin_negative_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 57 pinprobe vars: pinprobe_description='CURRENTSENSEin_ground_kelvin' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 53 pinprobe vars: pinprobe_description='input_currentsense_enable' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe7 54 pinprobe vars: pinprobe_description='CURRENTSENSEin_ok_measure_output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe8 55 pinprobe vars: pinprobe_description='input_currentsense_measure' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe9 56 pinprobe vars: pinprobe_description='input_currentsense_clock' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$U1 46 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='text' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+.ends INCURRENTSENSEpuget
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301C\design\CURRENTSENSEinDEBUG.sxcmp
+.subckt CURRENTSENSEinDEBUG 32 34 29 35 36 28 30 31 33
+*#hierarchy
+.node_map measure_currentsense 30
+.node_map dft_ok 35
+.node_map dft_startup 34
+.node_map dft_measuret_delay 37
+.node_map IIN 32
+.node_map IIN_TELEMETRY 33
+.node_map hijack_enable_currentsense 29
+.node_map enable_currentsense 28
+.node_map hijack_measure_currentsense 31
+.node_map dft_measure_delay 36
+X$dfthijack1 28 29 dfthijack vars: dfthijack_name='CURRENTSENSEinENABLE' dfthijack_description='Hijack_currentsense_in_enable' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack2 30 31 dfthijack vars: dfthijack_name='CURRENTSENSEinMEASURE' dfthijack_description='Hijack_currentsense_in_measure' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$pinprobe1 32 pinprobe vars: pinprobe_description='CURRENTSENSEin_output_voltage' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 34 pinprobe vars: pinprobe_description='Measure_CURRENTSENSEin_startup' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 35 pinprobe vars: pinprobe_description='Measure_CURRENTSENSEin_ok' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 28 pinprobe vars: pinprobe_description='enable_CURRENTSENSEin' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 29 pinprobe vars: pinprobe_description='Hijack_CURRENTSENSEin_enable' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 37 pinprobe vars: pinprobe_description='Measure_CURRENTSENSEin_measure_ok' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe7 31 pinprobe vars: pinprobe_description='Hijack_CURRENTSENSEin_enable' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe8 30 pinprobe vars: pinprobe_description='Measure_CURRENTSENSEin' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe9 33 pinprobe vars: pinprobe_description='CURRENTSENSEin_output_voltage' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$UCURRENTSENSEin_measure_delay 36 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CURRENTSENSEin_measure_delay' dftprobe_description='Measure_CURRENTSENSEin_ok_signal' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UCURRENTSENSEin_ok 35 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CURRENTSENSEin_ok' dftprobe_description='Measure_CURRENTSENSEin_ok_signal' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UCURRENTSENSEin_output 32 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CURRENTSENSEin_output' dftprobe_description='Measure_CURRENTSENSEin_VSNSI' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UCURRENTSENSEin_startup 34 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CURRENTSENSEin_startup' dftprobe_description='Measure_CURRENTSENSEin_startup_time' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UCURRENTSENSEin_telemetry 33 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='CURRENTSENSEin_telemetry' dftprobe_description='Measure_CURRENTSENSEin_telemetry' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+.ends CURRENTSENSEinDEBUG
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301C\design\CURRENTSENSEinMAIN.sxcmp
+.subckt CURRENTSENSEinMAIN 126 129 128 131 138 135 132 137 136 134 127 133 139 130
+*#hierarchy
+.node_map SIMPV 130
+.node_map ok_buff 143
+.node_map BUS1$0 111
+.node_map BUS1$1 112
+.node_map BUS1$2 113
+.node_map measureDELAY$0 95
+.node_map measureDELAY$1 96
+.node_map measureDELAY$2 97
+.node_map measureDELAY$3 98
+.node_map measureDELAY$4 99
+.node_map BUS2$0 114
+.node_map measureDELAY$5 100
+.node_map BUS2$1 115
+.node_map measureDELAY$6 101
+.node_map BUS2$2 116
+.node_map measureDELAY$7 102
+.node_map measureDELAY$8 103
+.node_map measureDELAY$9 104
+.node_map ok_csa 140
+.node_map BUS3$0 117
+.node_map ok_amp 141
+.node_map clock_currentsense 136
+.node_map BUS3$1 118
+.node_map BUS3$2 119
+.node_map kelvin_GNDcurrentsense 138
+.node_map measure_currentsense 134
+.node_map BUS4$0 120
+.node_map BUS4$1 121
+.node_map BUS4$2 122
+.node_map BUS5$0 123
+.node_map BUS5$1 124
+.node_map BUS5$2 125
+.node_map dft_ok 137
+.node_map VSNSI_FILTERi 142
+.node_map dft_startup 135
+.node_map measure 146
+.node_map IIN 127
+.node_map ok_currentsense 131
+.node_map IIN_TELEMETRY 129
+.node_map enable_currentsense 132
+.node_map VOUTSN 128
+.node_map dft_measure_delay 139
+.node_map VOUTSP 126
+.node_map clocki 147
+.node_map measureDELAY$10 105
+.node_map VSNSI_BUFFER 144
+.node_map measureDELAY$11 106
+.node_map measureDELAY$12 107
+.node_map measureDELAY$13 108
+.node_map measureDELAY$14 109
+.node_map measureDELAY$15 110
+.node_map ok_iin 133
+.node_map ok_measure_currentsense 145
+X$amplifier1 130 142 142 85 132 141 114 115 116 81 amplifier vars: amplifier_gainadjust='openloop' amplifier_input_type='p' amplifier_accuracy='no' amplifier_accuracyname='CURRENTSENSEinFILTER' amplifier_accuracydescription='CURRENTSENSE_in_active_filter' amplifier_bandwidth='low' amplifier_dft='no' amplifier_fixedpolarity='positive' amplifier_controltype='pin' amplifier_controldatasheetname='text' amplifier_controldatasheetdescription='text' amplifier_controlpolarity='positive' amplifier_ioutmax=2 amplifier_0=0 amplifier_vmax=6 amplifier_fixedgain=10 amplifier_1=0 amplifier_fixedr1=200 amplifier_controlpor=0 amplifier_controlr1=200 amplifier_controloptions=2 amplifier_2=0 amplifier_controlgain0=1 amplifier_controlgain1=2 amplifier_controlgain2=3 amplifier_controlgain3=4 amplifier_controlgain4=5 amplifier_controlgain5=6 amplifier_controlgain6=7 amplifier_controlgain7=8
+X$capacitor1 90 85 123 124 125 92 91 138 capacitorfixed vars: capacitor_control='capacitor' capacitor_datasheet_accurate_name='text' capacitor_datasheet_accurate_description='text' capacitor_adjust_control='factory' capacitor_datasheet_adjust_name='text' capacitor_datasheet_adjust_description='text' capacitor_kelvin='no' capacitor_type='tbd' capacitor_dft='no' capacitor_value=14.15 capacitor_accurate_value=1 capacitor_accurate_lsb=1 capacitor_adjust0=1 capacitor_adjust1=2 capacitor_adjust2=4 capacitor_adjust3=8 capacitor_adjust4=0 capacitor_adjust5=0 capacitor_adjust6=0 capacitor_adjust7=0 capacitor_adjust_por=4 capacitor_1=0 capacitor_vinitial=0 capacitor_0=0 capacitor_vmax=6 capacitor_maximumvoltage=6
+X$capacitor2 78 142 111 112 113 80 79 77 capacitorfixed vars: capacitor_control='capacitor' capacitor_datasheet_accurate_name='text' capacitor_datasheet_accurate_description='text' capacitor_adjust_control='factory' capacitor_datasheet_adjust_name='text' capacitor_datasheet_adjust_description='text' capacitor_kelvin='no' capacitor_type='tbd' capacitor_dft='no' capacitor_value=28.3 capacitor_accurate_value=1 capacitor_accurate_lsb=1 capacitor_adjust0=1 capacitor_adjust1=2 capacitor_adjust2=4 capacitor_adjust3=8 capacitor_adjust4=0 capacitor_adjust5=0 capacitor_adjust6=0 capacitor_adjust7=0 capacitor_adjust_por=4 capacitor_1=0 capacitor_vinitial=0 capacitor_0=0 capacitor_vmax=6 capacitor_maximumvoltage=6
+X$CSA1 126 128 126 127 132 140 138 currentsenseamplifier vars: currentsenseamplifier_sense='resistor' currentsenseamplifier_usage='n' currentsenseamplifier_outputtype='voltage' currentsenseamplifier_dft='no' currentsenseamplifier_accuracy='yes' currentsenseamplifier_datasheet_name='CURRENTSENSEinACCURACY' currentsenseamplifier_datasheet_description='Regulated_Input_Current_Sense_Voltage' currentsenseamplifier_vsensemax=65m currentsenseamplifier_inputvmax=40 currentsenseamplifier_isensemax=20 currentsenseamplifier_outputvmax=2.4375 currentsenseamplifier_restc=0 currentsenseamplifier_note1=0 currentsenseamplifier_note2=0 currentsenseamplifier_note3=0 currentsenseamplifier_note4=0 currentsenseamplifier_note5=0 currentsenseamplifier_vmax=6
+X$datamap1 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 datamap0 vars: datamap_function='code' datamap_name='CURRENTSENSEinMEASUREdelay' datamap_description='Measure_ok_time_for_Currentsense_in' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='yes' datamap_por01='0' datamap_por00='1' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='1' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='5us' datamap_code1='10us' datamap_code2='15us' datamap_code3='20us' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='0' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='0' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='0' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='0' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='0' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='0' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='0' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='0' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=2 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=11.0 datamap_enabletime2=11.0 datamap_enabletime3=11.0 datamap_enabletime4=11.0 datamap_enabletime5=11.0 datamap_enabletime6=11.0 datamap_enabletime7=11.0 datamap_enabletime8=11.0 datamap_vmax=6
+X$delay1 146 145 147 95 96 94 delayclock vars: delay_type='clock' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=4 delayclock_por=0 delayclock_count0=20 delayclock_count1=40 delayclock_count2=60 delayclock_count3=80 delayclock_0=0 delayclock_freq=1000
+X$pinprobe1 128 pinprobe vars: pinprobe_description='CURRENTSENSEin_negative_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe10 133 pinprobe vars: pinprobe_description='CURRENTSENSEin_ok_measure_output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 127 pinprobe vars: pinprobe_description='CURRENTSENSE_input_output_voltage' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe12 139 pinprobe vars: pinprobe_description='measure_CURRENTSENSEin_ok_measure' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe13 126 pinprobe vars: pinprobe_description='CURRENTSENSEin_positive_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe14 138 pinprobe vars: pinprobe_description='CURRENTSENSEin_ground_kelvin' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 132 pinprobe vars: pinprobe_description='output_currentsense_enable' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 129 pinprobe vars: pinprobe_description='CURRENTSENSE_filtered_output_voltage' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 131 pinprobe vars: pinprobe_description='CURRENTSENSEin_ok_output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 135 pinprobe vars: pinprobe_description='measure_CURRENTSENSEin_startup' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 137 pinprobe vars: pinprobe_description='measure_CURRENTSENSEin_ok' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe7 130 pinprobe vars: pinprobe_description='CURRENTSENSEout_5v_analog_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe8 134 pinprobe vars: pinprobe_description='output' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe9 136 pinprobe vars: pinprobe_description='output' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$resistor1 127 77 83 86 88 117 118 119 resistor vars: resistor_control='adjustable_resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='CURRENTSENSEinR1' resistor_datasheet_adjust_description='CURRENTSENSEin_Filter_Resistor_1' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=10 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=240 resistor_adjust1=280 resistor_adjust2=320 resistor_adjust3=360 resistor_adjust4=400 resistor_adjust5=440 resistor_adjust6=480 resistor_adjust7=560 resistor_adjust_por=4 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=6 resistor_imax=1m
+X$resistor2 77 85 84 87 89 120 121 122 resistor vars: resistor_control='adjustable_resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='CURRENTSENSEinR2' resistor_datasheet_adjust_description='CURRENTSENSEin_Filter_Resistor_2' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=10 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=240 resistor_adjust1=280 resistor_adjust2=320 resistor_adjust3=360 resistor_adjust4=400 resistor_adjust5=440 resistor_adjust6=480 resistor_adjust7=560 resistor_adjust_por=4 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=6 resistor_imax=1m
+X$switch1 144 129 134 switchtswitch vars: switch_type='tswitch' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
+X$switch2 93 129 134 switchpulldown vars: switch_type='pulldown' switch_polarity='invert' switch_model='celera' switch_ron=10K switch_pulldownvmax=6 switch_vmax=6
+X$U1 141 140 131 143 132 VESPAasmINPUT3
+X$U11 137 131 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U2 76 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='text' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U4 133 145 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U5 132 147 136 VESPAasmINPUT1
+X$U6 134 145 139 VESPAdftpulse
+X$U7 131 146 134 VESPAasmINPUT1
+X$U8 132 131 135 VESPAdftpulse
+X$vbuffer1 130 143 142 144 132 82 vbuffer vars: vbuffer_accuracy='no' vbuffer_datasheet_name='text' vbuffer_datasheet_description='text' vbuffer_type='p' vbuffer_inputbuffer='no' vbuffer_drive='internal' vbuffer_gndsense='no' vbuffer_dft='no' vbuffer_gain=615.59m vbuffer_feedbackimpedance=1000 vbuffer_vmax=6
+.ends CURRENTSENSEinMAIN
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT3.sxcmp
+.subckt VESPAasmINPUT3 9 10 11 12 13
+*#hierarchy
+.node_map Tstate 13
+.node_map i0 9
+.node_map i1 10
+.node_map i2 12
+.node_map o 11
+X$U1 13 pinprobe vars: pinprobe_description='state_blank_time'
+X$U19 11 7 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U2 10 pinprobe vars: pinprobe_description='input1'
+X$U3 11 pinprobe vars: pinprobe_description='INPUT2_output'
+X$U4 9 12 6 10 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U5 13 8 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U6 6 7 8 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U7 9 pinprobe vars: pinprobe_description='input0'
+X$U8 12 pinprobe vars: pinprobe_description='input2'
+.ends VESPAasmINPUT3
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT1.sxcmp
+.subckt VESPAasmINPUT1 5 6 7
+*#hierarchy
+.node_map Tstate 5
+.node_map i0 7
+.node_map o 6
+X$U1 5 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 7 pinprobe vars: pinprobe_description='input1'
+X$U3 6 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 5 4 7 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U5 4 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+.ends VESPAasmINPUT1
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAdftpulse.sxcmp
+.subckt VESPAdftpulse 7 8 9
+*#hierarchy
+.node_map start 7
+.node_map stop 8
+.node_map pulse 9
+X$U11 7 pinprobe vars: pinprobe_description='DFT_timer_start_input'
+X$U15 8 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U17 8 pinprobe vars: pinprobe_description='DFT_timer_stop_input'
+X$U52 7 4 6 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U53 4 5 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U55 9 5 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U8 9 pinprobe vars: pinprobe_description='DFT_Timer_pulse'
+.ends VESPAdftpulse
+
+.end

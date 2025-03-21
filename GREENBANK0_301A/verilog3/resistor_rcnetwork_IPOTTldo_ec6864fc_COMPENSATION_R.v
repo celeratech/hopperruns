@@ -1,7 +1,7 @@
 // Celera Brick Generator Confidential
 //CORE:resistor
 //NAME:resistor_rcnetwork_IPOTTldo_ec6864fc_COMPENSATION_R
-//GENERATOR CODE REVISION:0.4.3
+//GENERATOR CODE REVISION:0.4.5
 //VALUE:1.00Kohms
 //Imax:1.000mA
 //TYPE:poly
@@ -217,11 +217,16 @@ rlpp3000rpo1p1u0p4u XRA0_11(
 .RN (RA0),
 .ISO (CELG)
 );
+rlpp3000rpo1p1u0p4u XRA0_12(
+.RP (RP),
+.RN (RA0),
+.ISO (CELG)
+);
 
 //Celera Confidential Do Not Copy //DieSize,rlpp3000rpo1p1u0p4u
 
 //Die Size Calculator rlpp3000rpo1p1u0p4u
-//,diesize,rlpp3000rpo1p1u0p4u,12
+//,diesize,rlpp3000rpo1p1u0p4u,13
 
 //Celera Confidential Do Not Copy STONEresistorswitchHB
 STONEresistorswitchHB XadjustswitchB1(

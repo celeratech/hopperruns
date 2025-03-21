@@ -1,7 +1,7 @@
 // Celera Brick Generator Confidential
 //CORE:resistor
 //NAME:resistor_amplifier_7b9bd0dc_XresR1
-//GENERATOR CODE REVISION:0.4.3
+//GENERATOR CODE REVISION:0.4.5
 //VALUE:300.00Kohms
 //Imax:1.000mA
 //TYPE:poly
