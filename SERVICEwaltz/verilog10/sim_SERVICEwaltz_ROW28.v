@@ -13,7 +13,7 @@ module FORCE_SERVICEwaltz (EN,IN,GND,VCC,BIAS,CELG59462,CELV96848,kelvin_VCC,CEL
   output  kelvin_GNDservice;
 endmodule
 
-module SERVICEwaltz (EN,IN,VCC,BIAS,porb,REF0V9,CELG59462,CELV96848,kelvin_VCC,ok_service,CELSUB40948,IP_4a72660b,kelvin_GNDservice);
+module SERVICEwaltz (EN,IN,VCC,BIAS,porb,REF0V9,CELG59462,CELV96848,kelvin_VCC,ok_service,CELSUB40948,IP_4a72660b,global_vbias,celkelvin_IN1,celkelvin_IN2,celkelvin_VBIAS,celkelvin_GNDref,kelvin_GNDservice);
   input  EN;
   input  IN;
   output  VCC;
@@ -26,6 +26,11 @@ module SERVICEwaltz (EN,IN,VCC,BIAS,porb,REF0V9,CELG59462,CELV96848,kelvin_VCC,o
   output  ok_service;
   input  CELSUB40948;
   input  IP_4a72660b;
+  input  global_vbias;
+  input  celkelvin_IN1;
+  input  celkelvin_IN2;
+  input  celkelvin_VBIAS;
+  input  celkelvin_GNDref;
   inout  kelvin_GNDservice;
 endmodule
 
@@ -63,6 +68,11 @@ SERVICEwaltz XSERVICEwaltz1 (
 .ok_service(ok_service),
 .CELSUB40948(CELSUB40948),
 .IP_4a72660b(IP_4a72660b),
+.global_vbias(global_vbias),
+.celkelvin_IN1(celkelvin_IN1),
+.celkelvin_IN2(celkelvin_IN2),
+.celkelvin_VBIAS(celkelvin_VBIAS),
+.celkelvin_GNDref(celkelvin_GNDref),
 .kelvin_GNDservice(kelvin_GNDservice)
 );
 
