@@ -11,7 +11,7 @@ module CURRENTSENSEinDEBUG (IIN,dft_ok,dft_startup,IIN_TELEMETRY,dft_measure_del
   output  hijack_measure_currentsense;
 endmodule
 
-module CURRENTSENSEinMAIN (IIN,tmi,SIMPV,VOUTSN,VOUTSP,dft_ok,ok_iin,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_2ceca3e2,IP_4ad46a6e,IP_5c672501,dft_startup,IIN_TELEMETRY,ok_currentsense,dft_measure_delay,clock_currentsense,enable_currentsense,measure_currentsense,kelvin_GNDcurrentsense);
+module CURRENTSENSEinMAIN (IIN,tmi,SIMPV,VOUTSN,VOUTSP,dft_ok,ok_iin,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_4ad46a6e,IP_5c672501,dft_startup,IIN_TELEMETRY,ok_currentsense,dft_measure_delay,clock_currentsense,enable_currentsense,measure_currentsense,kelvin_GNDcurrentsense,register_CURRENTSENSEinMEASUREdelay_0);
   inout  IIN;
   inout [4:0] tmi;
   input  SIMPV;
@@ -23,7 +23,6 @@ module CURRENTSENSEinMAIN (IIN,tmi,SIMPV,VOUTSN,VOUTSP,dft_ok,ok_iin,CELG59462,C
   input  CELV96848;
   input  PORB97836;
   input  CELSUB40948;
-  input  IP_2ceca3e2;
   input  IP_4ad46a6e;
   input  IP_5c672501;
   output  dft_startup;
@@ -34,10 +33,11 @@ module CURRENTSENSEinMAIN (IIN,tmi,SIMPV,VOUTSN,VOUTSP,dft_ok,ok_iin,CELG59462,C
   input  enable_currentsense;
   input  measure_currentsense;
   inout  kelvin_GNDcurrentsense;
+  input [1:0] register_CURRENTSENSEinMEASUREdelay_0;
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module INCURRENTSENSEpuget (tmi, SIMPV, VOUTSN, VOUTSP, CELG59462, CELV96848, PORB97836, VSNSI_LIVE, CELSUB40948, IP_2ceca3e2, IP_4ad46a6e, IP_5c672501, VSNSI_FILTER, ok_currentsensein, clock_currentsensein, enable_currentsensein, measure_currentsensein, kelvin_GNDcurrentsensein, ok_measurecurrentsensein);
+module INCURRENTSENSEpuget (tmi, SIMPV, VOUTSN, VOUTSP, CELG59462, CELV96848, PORB97836, VSNSI_LIVE, CELSUB40948, IP_4ad46a6e, IP_5c672501, VSNSI_FILTER, ok_currentsensein, clock_currentsensein, enable_currentsensein, measure_currentsensein, kelvin_GNDcurrentsensein, ok_measurecurrentsensein, register_CURRENTSENSEinMEASUREdelay_0);
 inout [4:0] tmi;
 input  SIMPV;
 input  VOUTSN;
@@ -47,7 +47,6 @@ input  CELV96848;
 input  PORB97836;
 inout  VSNSI_LIVE;
 input  CELSUB40948;
-input  IP_2ceca3e2;
 input  IP_4ad46a6e;
 input  IP_5c672501;
 inout  VSNSI_FILTER;
@@ -57,10 +56,12 @@ input  enable_currentsensein;
 input  measure_currentsensein;
 inout  kelvin_GNDcurrentsensein;
 output  ok_measurecurrentsensein;
+input [1:0] register_CURRENTSENSEinMEASUREdelay_0;
 
 
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
+wire [1:0] register_CURRENTSENSEinMEASUREdelay_0;
 
 // ------------------------ Networks ---------------------
 CURRENTSENSEinDEBUG XDEBUG (
@@ -87,7 +88,6 @@ CURRENTSENSEinMAIN XMAIN (
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
 .CELSUB40948(CELSUB40948),
-.IP_2ceca3e2(IP_2ceca3e2),
 .IP_4ad46a6e(IP_4ad46a6e),
 .IP_5c672501(IP_5c672501),
 .dft_startup(net_59),
@@ -97,7 +97,8 @@ CURRENTSENSEinMAIN XMAIN (
 .clock_currentsense(clock_currentsensein),
 .enable_currentsense(net_58),
 .measure_currentsense(net_61),
-.kelvin_GNDcurrentsense(kelvin_GNDcurrentsensein)
+.kelvin_GNDcurrentsense(kelvin_GNDcurrentsensein),
+.register_CURRENTSENSEinMEASUREdelay_0(register_CURRENTSENSEinMEASUREdelay_0[1:0])
 );
 
 endmodule

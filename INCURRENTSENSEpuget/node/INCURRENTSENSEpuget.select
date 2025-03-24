@@ -112,7 +112,7 @@ parameter,datamap_por0,0
 parameter,datamap_por1,0
 parameter,datamap_por2,0
 parameter,datamap_por3,0
-parameter,datamap_type,factory
+parameter,datamap_type,register
 parameter,datamap_vmax,6
 parameter,datamap_code0,text
 parameter,datamap_code1,text
@@ -268,7 +268,7 @@ parameter,datamap_por0,0
 parameter,datamap_por1,0
 parameter,datamap_por2,0
 parameter,datamap_por3,0
-parameter,datamap_type,factory
+parameter,datamap_type,register
 parameter,datamap_vmax,6
 parameter,datamap_code0,text
 parameter,datamap_code1,text
@@ -885,10 +885,10 @@ parameter,delay_accuracy,no
 parameter,delayclock_por,0
 parameter,delayclock_freq,1000
 parameter,delaycontrol_por,0
-parameter,delayclock_count0,20
-parameter,delayclock_count1,40
-parameter,delayclock_count2,60
-parameter,delayclock_count3,80
+parameter,delayclock_count0,10
+parameter,delayclock_count1,20
+parameter,delayclock_count2,30
+parameter,delayclock_count3,40
 parameter,delaycontrol_name,text
 parameter,delaycontrol_type,register
 parameter,delayclock_control,pin
@@ -933,18 +933,6 @@ parameter,switch_pulldownvmax,6
 
 
 GenerateLevel,5
-generate,switchpulldown
-path,XINCURRENTSENSEpuget1,XMAIN,Xswitch2
-instance,Xswitch2
-parameter,switch_ron,10K
-parameter,switch_type,pulldown
-parameter,switch_vmax,6
-parameter,switch_model,celera
-parameter,switch_polarity,invert
-parameter,switch_pulldownvmax,6
-
-
-GenerateLevel,5
 generate,datamap0
 path,XINCURRENTSENSEpuget1,XMAIN,Xdatamap1
 instance,Xdatamap1
@@ -957,7 +945,7 @@ parameter,datamap_por0,1
 parameter,datamap_por1,0
 parameter,datamap_por2,0
 parameter,datamap_por3,0
-parameter,datamap_type,factory
+parameter,datamap_type,register
 parameter,datamap_vmax,6
 parameter,datamap_code0,5us
 parameter,datamap_code1,10us
@@ -1096,23 +1084,6 @@ parameter,datamap_enabletimeunits8,us
 parameter,datamap_status_readunits,us
 parameter,datamap_status_resettime,10
 parameter,datamap_status_resettimeunits,us
-
-
-GenerateLevel,5
-generate,vbuffer
-path,XINCURRENTSENSEpuget1,XMAIN,Xvbuffer1
-instance,Xvbuffer1
-parameter,vbuffer_dft,no
-parameter,vbuffer_gain,615.59m
-parameter,vbuffer_type,p
-parameter,vbuffer_vmax,6
-parameter,vbuffer_drive,internal
-parameter,vbuffer_accuracy,no
-parameter,vbuffer_gndsense,no
-parameter,vbuffer_inputbuffer,no
-parameter,vbuffer_datasheet_name,text
-parameter,vbuffer_feedbackimpedance,1000
-parameter,vbuffer_datasheet_description,text
 
 
 GenerateLevel,5
@@ -1435,28 +1406,28 @@ parameter,pinprobe_description,CURRENTSENSEin_ground_kelvin
 
 GenerateLevel,5
 generate,pinprobe
-path,XINCURRENTSENSEpuget1,XMAIN,XU1,XU1
+path,XINCURRENTSENSEpuget1,XMAIN,XU3,XU1
 instance,XU1
 parameter,pinprobe_description,state_blank_time
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XINCURRENTSENSEpuget1,XMAIN,XU1,XU2
+path,XINCURRENTSENSEpuget1,XMAIN,XU3,XU2
 instance,XU2
 parameter,pinprobe_description,input1
 
 
 GenerateLevel,5
 generate,pinprobe
-path,XINCURRENTSENSEpuget1,XMAIN,XU1,XU3
+path,XINCURRENTSENSEpuget1,XMAIN,XU3,XU3
 instance,XU3
-parameter,pinprobe_description,INPUT2_output
+parameter,pinprobe_description,INPUT1_output
 
 
 GenerateLevel,5
 generate,nand3
-path,XINCURRENTSENSEpuget1,XMAIN,XU1,XU4
+path,XINCURRENTSENSEpuget1,XMAIN,XU3,XU4
 instance,XU4
 parameter,logicgate_type,nand3
 parameter,logicgate_vmax,6
@@ -1464,40 +1435,17 @@ parameter,logicgate_vmax,6
 
 GenerateLevel,5
 generate,inv
-path,XINCURRENTSENSEpuget1,XMAIN,XU1,XU5
+path,XINCURRENTSENSEpuget1,XMAIN,XU3,XU5
 instance,XU5
 parameter,logicgate_type,inv
 parameter,logicgate_vmax,6
 
 
 GenerateLevel,5
-generate,nor2
-path,XINCURRENTSENSEpuget1,XMAIN,XU1,XU6
+generate,pinprobe
+path,XINCURRENTSENSEpuget1,XMAIN,XU3,XU6
 instance,XU6
-parameter,logicgate_type,nor2
-parameter,logicgate_vmax,6
-
-
-GenerateLevel,5
-generate,pinprobe
-path,XINCURRENTSENSEpuget1,XMAIN,XU1,XU7
-instance,XU7
 parameter,pinprobe_description,input0
-
-
-GenerateLevel,5
-generate,pinprobe
-path,XINCURRENTSENSEpuget1,XMAIN,XU1,XU8
-instance,XU8
-parameter,pinprobe_description,input2
-
-
-GenerateLevel,5
-generate,dbuf
-path,XINCURRENTSENSEpuget1,XMAIN,XU1,XU19
-instance,XU19
-parameter,logicgate_type,dbuf
-parameter,logicgate_vmax,6
 
 
 GenerateLevel,5

@@ -21,7 +21,7 @@ endmodule
 
 
 
-module vpulse_0x5d0x1d0ux0x1nx1nx500d0n(PLUS, MINUS);
+module vpulse_0x1x1d0ux0x1nx1nx500d0n(PLUS, MINUS);
 inout PLUS;
 inout MINUS;
 endmodule
@@ -53,12 +53,7 @@ output MINUS;
 endmodule
 
 
-module vpwl_0x0_10d0ux0_11d0ux11d968 (PLUS,MINUS);
-  output  PLUS;
-  output  MINUS;
-endmodule
-
-module vpwl_0x0_10d0ux0_11d0ux12 (PLUS,MINUS);
+module vpwl_0x0_10d0ux0_11d0ux0d032 (PLUS,MINUS);
   output  PLUS;
   output  MINUS;
 endmodule
@@ -94,7 +89,7 @@ input GND;
 endmodule 
 
 // ------------------------ Module Verilog ---------------
-module FORCE_INCURRENTSENSEpuget (GND, SIMPV, VOUTSN, VOUTSP, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_2ceca3e2, IP_4ad46a6e, IP_5c672501, clock_currentsensein, enable_currentsensein, measure_currentsensein, kelvin_GNDcurrentsensein);
+module FORCE_INCURRENTSENSEpuget (GND, SIMPV, VOUTSN, VOUTSP, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_4ad46a6e, IP_5c672501, clock_currentsensein, enable_currentsensein, measure_currentsensein, kelvin_GNDcurrentsensein);
 inout  GND;
 output  SIMPV;
 output  VOUTSN;
@@ -103,7 +98,6 @@ output  CELG59462;
 output  CELV96848;
 output  PORB97836;
 output  CELSUB40948;
-output  IP_2ceca3e2;
 output  IP_4ad46a6e;
 output  IP_5c672501;
 output  clock_currentsensein;
@@ -120,15 +114,15 @@ STONEnoconn XNCip (
 );
 
 dbuf_e926e395 Xd_clock_currentsensein (
-.i(net_148),
+.i(net_136),
 .o(clock_currentsensein),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
-vpulse_0x5d0x1d0ux0x1nx1nx500d0n XV2 (
-.PLUS(net_148),
+vpulse_0x1x1d0ux0x1nx1nx500d0n XV2 (
+.PLUS(net_136),
 .MINUS(GND)
 );
 
@@ -172,12 +166,12 @@ vdc_0 VI__SIMPV (
 .MINUS(SIMPV)
 );
 
-vpwl_0x0_10d0ux0_11d0ux11d968 V_VOUTSNx (
+vpwl_0x0_10d0ux0_11d0ux0d032 V_VOUTSNx (
 .PLUS(net_59),
 .MINUS(GND)
 );
 
-vpwl_0x0_10d0ux0_11d0ux12 V_VOUTSPx (
+vpwl_0x0_10d0ux0_11d0ux0d032 V_VOUTSPx (
 .PLUS(net_58),
 .MINUS(GND)
 );
@@ -190,12 +184,6 @@ vdc_0 VI__VOUTSN (
 vdc_0 VI__VOUTSP (
 .PLUS(net_58),
 .MINUS(VOUTSP)
-);
-
-SIMbias XIP_2ceca3e2 (
-.V(SIMPV),
-.IN(noconn_IN),
-.IP(IP_2ceca3e2)
 );
 
 SIMbias XIP_4ad46a6e (
