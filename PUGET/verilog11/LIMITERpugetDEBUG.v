@@ -11,6 +11,19 @@ endmodule
 
 
 
+//Celera:dbuf_e926e395
+//Celera Confidential Symbol Generator
+//Digital Buffer
+module dbuf_e926e395 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
+endmodule
+
+
+
 //Verilog HDL for "DFT", "DFThijack" "functional"
 
 
@@ -79,14 +92,13 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module LIMITERpugetDEBUG (tdo, tmi, CELG59462, CELV96848, dft_alert, CELSUB40948, alert_clear, fault_over1, fault_under1, enable_limiter, dft_alertlimiter, hijack_alert_set, hijack_alert_clear, hijack_enable_limiter);
+module LIMITERpugetDEBUG (tdo, tmi, CELG59462, CELV96848, dft_alert, CELSUB40948, fault_over1, fault_under1, enable_limiter, dft_alertlimiter, hijack_alert_set, hijack_alert_clear, hijack_enable_limiter);
 inout  tdo;
 input [4:0] tmi;
 input  CELG59462;
 input  CELV96848;
   input  dft_alert;
 input  CELSUB40948;
-input  alert_clear;
   input  fault_over1;
   input  fault_under1;
 input  enable_limiter;
@@ -105,14 +117,22 @@ wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
 tie_9e2c0894 XU1 (
-.a0(net_39),
+.a0(net_40),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
+);
+
+dbuf_e926e395 XU2 (
+.i(net_30),
+.o(net_31),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 DFThijack Xdfthijack1 (
-.i(net_39),
+.i(net_40),
 .o(hijack_alert_set),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -132,7 +152,7 @@ DFThijack Xdfthijack2 (
 );
 
 DFThijack Xdfthijack3 (
-.i(alert_clear),
+.i(net_31),
 .o(hijack_alert_clear),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -141,7 +161,7 @@ DFThijack Xdfthijack3 (
 .ten_hijacki(ten_hijacki_a7b4832f_Xdfthijack3)
 );
 
-DFTtm8d dft_hex0x53 (
+DFTtm8d dft_hex0x65 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
@@ -149,17 +169,17 @@ DFTtm8d dft_hex0x53 (
 .tdi({a0,a0,a0,a0,tdi_5cea2f03_XULIMITERcap1UNDER,tdi_62b10fd4_XULIMITERcap1OVER,tdi_86cb036e_XULIMITERalertRAW,tdi_f8e6c8b0_XULIMITERalert}),
 .tdo(tdo),
 .ten({ten_hijacki_0ac96fbc_Xdfthijack2,ten_hijack_0ac96fbc_Xdfthijack2,ten_hijacki_263414ab_Xdfthijack1,ten_hijack_263414ab_Xdfthijack1,ten_5cea2f03_XULIMITERcap1UNDER,ten_62b10fd4_XULIMITERcap1OVER,ten_86cb036e_XULIMITERalertRAW,ten_f8e6c8b0_XULIMITERalert}),
-.tma({a0,a1,a0,a1,a0,a0,a1,a1}),
+.tma({a0,a1,a1,a0,a0,a1,a0,a1}),
 .tmi(tmi[4:0])
 );
 
-DFTtm8t dft_hex0x54 (
+DFTtm8t dft_hex0x66 (
 .G(CELG59462),
 .V(CELV96848),
 .a({b1,b0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x54_ten_7,noconn_dft_hex0x54_ten_6,noconn_dft_hex0x54_ten_5,noconn_dft_hex0x54_ten_4,noconn_dft_hex0x54_ten_3,noconn_dft_hex0x54_ten_2,ten_hijacki_a7b4832f_Xdfthijack3,ten_hijack_a7b4832f_Xdfthijack3}),
-.tma({b0,b1,b0,b1,b0,b1,b0,b0}),
+.ten({noconn_dft_hex0x66_ten_7,noconn_dft_hex0x66_ten_6,noconn_dft_hex0x66_ten_5,noconn_dft_hex0x66_ten_4,noconn_dft_hex0x66_ten_3,noconn_dft_hex0x66_ten_2,ten_hijacki_a7b4832f_Xdfthijack3,ten_hijack_a7b4832f_Xdfthijack3}),
+.tma({b0,b1,b1,b0,b0,b1,b1,b0}),
 .tmi(tmi[4:0])
 );
 
@@ -199,28 +219,28 @@ dftprobeModel0_80e43a5a XULIMITERcap1UNDER (
 .CELSUB(CELSUB40948)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x54_ten_2 (
-.noconn(noconn_dft_hex0x54_ten_2)
+STONEnoconn XNCnoconn_dft_hex0x66_ten_2 (
+.noconn(noconn_dft_hex0x66_ten_2)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x54_ten_3 (
-.noconn(noconn_dft_hex0x54_ten_3)
+STONEnoconn XNCnoconn_dft_hex0x66_ten_3 (
+.noconn(noconn_dft_hex0x66_ten_3)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x54_ten_4 (
-.noconn(noconn_dft_hex0x54_ten_4)
+STONEnoconn XNCnoconn_dft_hex0x66_ten_4 (
+.noconn(noconn_dft_hex0x66_ten_4)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x54_ten_5 (
-.noconn(noconn_dft_hex0x54_ten_5)
+STONEnoconn XNCnoconn_dft_hex0x66_ten_5 (
+.noconn(noconn_dft_hex0x66_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x54_ten_6 (
-.noconn(noconn_dft_hex0x54_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x66_ten_6 (
+.noconn(noconn_dft_hex0x66_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x54_ten_7 (
-.noconn(noconn_dft_hex0x54_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x66_ten_7 (
+.noconn(noconn_dft_hex0x66_ten_7)
 );
 
 endmodule

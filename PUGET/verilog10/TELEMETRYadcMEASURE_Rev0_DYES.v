@@ -138,10 +138,10 @@ TELEMETRYadcMEASURE_Rev0_DYES_0 XMAIN (
 .enable_adc(enable_adc),
 .CELSUB40948(CELSUB40948),
 .convert_adc(convert_adc),
-.STATEcontrol0(net_66),
-.STATEcontrol1(net_67),
-.STATEcontrol2(net_68),
-.STATEcontrol3(net_69),
+.STATEcontrol0(TELEMETRYadcMEASURE_Rev0_statecontrol_2fe7649c_0),
+.STATEcontrol1(TELEMETRYadcMEASURE_Rev0_statecontrol_2fe7649c_1),
+.STATEcontrol2(TELEMETRYadcMEASURE_Rev0_statecontrol_2fe7649c_2),
+.STATEcontrol3(TELEMETRYadcMEASURE_Rev0_statecontrol_2fe7649c_3),
 .load_register(load_register),
 .done_adcconvert(done_adcconvert),
 .ready_adcsample(ready_adcsample),
@@ -267,7 +267,7 @@ dftprobeModel0_e1d1778d XU64 (
 .CELSUB(CELSUB40948)
 );
 
-DFTtm8d dft_hex0x77 (
+DFTtm8d dft_hex0x7F (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
@@ -275,31 +275,31 @@ DFTtm8d dft_hex0x77 (
 .tdi({tdi_ec62d6c2_XU59,tdi_1ddb08cc_XU58,tdi_0dfee2c7_XU57,tdi_f74f3374_XU56,tdi_d1d5e184_XU55,tdi_f9b4d110_XU54,tdi_35e1de86_XU53,tdi_d4c14475_XU52}),
 .tdo(tdo),
 .ten({ten_ec62d6c2_XU59,ten_1ddb08cc_XU58,ten_0dfee2c7_XU57,ten_f74f3374_XU56,ten_d1d5e184_XU55,ten_f9b4d110_XU54,ten_35e1de86_XU53,ten_d4c14475_XU52}),
-.tma({a0,a1,a1,a1,a0,a1,a1,a1}),
+.tma({a0,a1,a1,a1,a1,a1,a1,a1}),
 .tmi(tmi[4:0])
 );
 
-DFTtm8d dft_hex0x78 (
+DFTtm8d dft_hex0x80 (
 .G(CELG59462),
 .V(CELV96848),
 .a({b1,b0}),
 .SUB(CELSUB40948),
 .tdi({b0,b0,b0,tdi_6d30afbe_XU64,tdi_328b41d9_XU63,tdi_0d1c49b6_XU62,tdi_fc467cb7_XU61,tdi_337b892f_XU60}),
 .tdo(tdo),
-.ten({noconn_dft_hex0x78_ten_7,noconn_dft_hex0x78_ten_6,noconn_dft_hex0x78_ten_5,ten_6d30afbe_XU64,ten_328b41d9_XU63,ten_0d1c49b6_XU62,ten_fc467cb7_XU61,ten_337b892f_XU60}),
-.tma({b0,b1,b1,b1,b1,b0,b0,b0}),
+.ten({noconn_dft_hex0x80_ten_7,noconn_dft_hex0x80_ten_6,noconn_dft_hex0x80_ten_5,ten_6d30afbe_XU64,ten_328b41d9_XU63,ten_0d1c49b6_XU62,ten_fc467cb7_XU61,ten_337b892f_XU60}),
+.tma({b1,b0,b0,b0,b0,b0,b0,b0}),
 .tmi(tmi[4:0])
 );
 
-drm8 drm_hex0x2B (
+drm8 drm_hex0x32 (
 .G(CELG59462),
 .V(CELV96848),
 .d0(d0),
 .d1(d1),
-.id({d0,d0,d1,d0,d1,d0,d1,d1}),
+.id({d0,d0,d1,d1,d0,d0,d1,d0}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,net_69,net_68,net_67,net_66}),
+.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,TELEMETRYadcMEASURE_Rev0_statecontrol_2fe7649c_3,TELEMETRYadcMEASURE_Rev0_statecontrol_2fe7649c_2,TELEMETRYadcMEASURE_Rev0_statecontrol_2fe7649c_1,TELEMETRYadcMEASURE_Rev0_statecontrol_2fe7649c_0}),
 .por0({d0,d0,d0,d0,d0,d0,d0,d0}),
 .bypload(d0),
 .lastdrm(d0)
@@ -321,16 +321,16 @@ STONEnoconn XNCnoconn_drm8_drm0_7 (
 .noconn(noconn_drm8_drm0_7)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x78_ten_5 (
-.noconn(noconn_dft_hex0x78_ten_5)
+STONEnoconn XNCnoconn_dft_hex0x80_ten_5 (
+.noconn(noconn_dft_hex0x80_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x78_ten_6 (
-.noconn(noconn_dft_hex0x78_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x80_ten_6 (
+.noconn(noconn_dft_hex0x80_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x78_ten_7 (
-.noconn(noconn_dft_hex0x78_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x80_ten_7 (
+.noconn(noconn_dft_hex0x80_ten_7)
 );
 
 endmodule

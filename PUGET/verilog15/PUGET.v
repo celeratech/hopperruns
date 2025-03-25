@@ -1,7 +1,7 @@
 // ------------------------ Module Definitions -----------
-module PUGETceleraCORE (IN,RT,SW,VC,BST,CFN,CFP,GPI,PFI,PFO,TAO,tdo,tmi,CAP1,CAP2,CAP3,CAP4,ICAP,ITST,VCAP,ALERT,BGATE,CAPFB,CAPGD,DRVCC,INFET,OUTFB,SIMPV,TAEXT,TGATE,CAPRTN,INTVCC,OUTFET,VCAPP5,VCC2P5,VOUTM5,VOUTSN,VOUTSP,CAPSLCT0,CAPSLCT1,sense_RT,CELG59462,CELV96848,GNDcapesr,PORB97836,kelvin_IN,GNDcharger,GNDservice,kelvin_CFP,sense_ITST,CELSUB40948,INpowerpath,PGNDcharger,kelvin_CAP1,kelvin_CAP2,kelvin_CAP3,kelvin_CAP4,kelvin_VCAP,GNDpowergood,GNDtelemetry,INcapmanager,dftstatusLSB,dftstatusMSB,kelvin_DRVCC,kelvin_CAPRTN,kelvin_GNDgpi,kelvin_INTVCC,kelvin_VCAPP5,kelvin_VCC2P5,kelvin_VOUTSN,kelvin_VOUTSP,GNDpowerpathin,PGNDchargepump,alert_71cc704f,SENSE_G_05e8d170,SENSE_G_48968f26,kelvin_GNDcapesr,kelvin_GNDservice,status_num_caps_1,kelvin_SIMPVcapesr,register_ctl_reg_0,register_ctl_reg_3,register_vshunt_15,status_meas_cap_15,status_meas_esr_15,status_meas_gpi_15,status_meas_iin_15,status_meas_vin_15,kelvin_GNDcapdecode,kelvin_GNDpowergood,kelvin_GNDtelemetry,status_alarm_reg_15,status_meas_vcap_15,status_meas_vout_15,status_mon_status_9,kelvin_GNDchargepunp,kelvin_GNDregulation,status_meas_dtemp_15,status_meas_ichrg_15,status_meas_vcap1_15,status_meas_vcap2_15,status_meas_vcap3_15,status_meas_vcap4_15,celkelvin_IN_04cc16be,register_clr_cap_ov_1,register_clr_cap_uv_0,register_clr_gpi_ov_3,register_clr_gpi_uv_2,register_vcapfb_dac_3,status_chrg_status_11,status_meas_esrgain_1,register_cap_lo_lvl_15,register_cap_ov_lvl_15,register_cap_uv_lvl_15,register_gpi_ov_lvl_15,register_gpi_uv_lvl_15,register_iin_oc_lvl_15,register_vin_ov_lvl_15,register_vin_uv_lvl_15,celkelvin_SGND_2b3a9b82,celkelvin_SGND_8a994242,celkelvin_SGND_d3b67ad0,celkelvin_SGND_e7548a33,celkelvin_SGND_fb33d1d2,celkelvin_VCAP_fb33d1d2,kelvin_GNDcapacitorgood,register_cap_esr_per_15,register_clear_vin_ov_5,register_clear_vin_uv_4,register_clr_cap_low_15,register_ichg_uc_lvl_15,register_mask_alarms_15,register_vcap_ov_lvl_15,register_vcap_uv_lvl_15,register_vout_ov_lvl_15,register_vout_uv_lvl_15,kelvin_GNDcurrentsensein,register_clear_iin_oc_10,register_clear_vcap_ov_7,register_clear_vcap_uv_6,register_clear_vout_ov_9,register_clear_vout_uv_8,register_esr_high_lvl_15,celkelvin_INTVCC_04cc16be,register_clear_ichg_uc_11,register_dtemp_hot_lvl_15,register_msk_mon_status_9,register_clear_esr_high_14,register_dtemp_cold_lvl_15,register_sequencer_reset_0,status_PUGETfaultmanager_2,status_PUGETfaultmanager_6,status_PUGETfaultmanager_8,register_clear_dtemp_hot_13,status_FAULTMANAGERstatus_9,kelvin_GNDcurrentsensecharge,register_clear_dtemp_cold_12,celkelvin_INpowerpath_e7548a33);
-  input  IN;
-  inout  RT;
+module PUGETceleraCORE (IN,RT,SW,VC,BST,CFN,CFP,GPI,PFI,PFO,TAO,tdo,tmi,CAP1,CAP2,CAP3,CAP4,ICAP,ITST,VCAP,BGATE,CAPFB,CAPGD,DRVCC,INFET,OUTFB,SIMPV,TAEXT,TGATE,CAPRTN,INTVCC,OUTFET,VCAPP5,VCC2P5,VOUTM5,VOUTSN,VOUTSP,CAPSLCT0,CAPSLCT1,sense_RT,CELG59462,CELV96848,GNDcapesr,PORB97836,kelvin_IN,GNDcharger,GNDservice,kelvin_CFP,sense_ITST,CELSENSE_RF,CELSUB40948,INpowerpath,PGNDcharger,kelvin_CAP1,kelvin_CAP2,kelvin_CAP3,kelvin_CAP4,kelvin_VCAP,GNDpowergood,GNDtelemetry,INcapmanager,dftstatusLSB,dftstatusMSB,kelvin_DRVCC,kelvin_CAPRTN,kelvin_GNDgpi,kelvin_INTVCC,kelvin_VCAPP5,kelvin_VCC2P5,kelvin_VOUTSN,kelvin_VOUTSP,GNDpowerpathin,PGNDchargepump,SENSE_G_05e8d170,SENSE_G_48968f26,kelvin_GNDcapesr,kelvin_GNDservice,status_num_caps_1,kelvin_SIMPVcapesr,register_ctl_reg_0,register_ctl_reg_3,register_vshunt_15,status_meas_cap_15,status_meas_esr_15,status_meas_gpi_15,status_meas_iin_15,status_meas_vin_15,kelvin_GNDcapdecode,kelvin_GNDpowergood,kelvin_GNDtelemetry,status_alarm_reg_15,status_meas_vcap_15,status_meas_vout_15,status_mon_status_9,kelvin_GNDchargepunp,kelvin_GNDregulation,status_meas_dtemp_15,status_meas_ichrg_15,status_meas_vcap1_15,status_meas_vcap2_15,status_meas_vcap3_15,status_meas_vcap4_15,register_clr_alarms_0,register_clr_alarms_1,register_clr_alarms_2,register_clr_alarms_3,register_vcapfb_dac_3,status_chrg_status_11,status_meas_esrgain_1,register_cap_lo_lvl_15,register_cap_ov_lvl_15,register_cap_uv_lvl_15,register_clr_alarms_15,register_gpi_ov_lvl_15,register_gpi_uv_lvl_15,register_iin_oc_lvl_15,register_vin_ov_lvl_15,register_vin_uv_lvl_15,celkelvin_SGND_2b3a9b82,celkelvin_SGND_8a994242,celkelvin_SGND_caab0eec,celkelvin_SGND_d3b67ad0,celkelvin_SGND_e7548a33,celkelvin_SGND_fb33d1d2,celkelvin_VCAP_fb33d1d2,kelvin_GNDcapacitorgood,register_cap_esr_per_15,register_clear_alarms_4,register_clear_alarms_5,register_clear_alarms_6,register_clear_alarms_7,register_clear_alarms_8,register_clear_alarms_9,register_ichg_uc_lvl_15,register_mask_alarms_15,register_vcap_ov_lvl_15,register_vcap_uv_lvl_15,register_vout_ov_lvl_15,register_vout_uv_lvl_15,kelvin_GNDcurrentsensein,register_clear_alarms_10,register_clear_alarms_11,register_clear_alarms_12,register_clear_alarms_13,register_clear_alarms_14,register_esr_high_lvl_15,celkelvin_INTVCC_04cc16be,register_dtemp_hot_lvl_15,register_msk_mon_status_9,register_dtemp_cold_lvl_15,register_sequencer_reset_0,status_PUGETfaultmanager_2,status_PUGETfaultmanager_6,status_PUGETfaultmanager_8,status_FAULTMANAGERstatus_9,kelvin_GNDcurrentsensecharge,celkelvin_INpowerpath_e7548a33);
+  inout  IN;
+  output  RT;
   input  SW;
   inout  VC;
   input  BST;
@@ -20,10 +20,9 @@ module PUGETceleraCORE (IN,RT,SW,VC,BST,CFN,CFP,GPI,PFI,PFO,TAO,tdo,tmi,CAP1,CAP
   input  ICAP;
   inout  ITST;
   inout  VCAP;
-  output  ALERT;
   output  BGATE;
   inout  CAPFB;
-  inout  CAPGD;
+  output  CAPGD;
   input  DRVCC;
   output  INFET;
   inout  OUTFB;
@@ -50,6 +49,7 @@ module PUGETceleraCORE (IN,RT,SW,VC,BST,CFN,CFP,GPI,PFI,PFO,TAO,tdo,tmi,CAP1,CAP
   input  GNDservice;
   inout  kelvin_CFP;
   input  sense_ITST;
+  input  CELSENSE_RF;
   input  CELSUB40948;
   input  INpowerpath;
   input  PGNDcharger;
@@ -64,7 +64,7 @@ module PUGETceleraCORE (IN,RT,SW,VC,BST,CFN,CFP,GPI,PFI,PFO,TAO,tdo,tmi,CAP1,CAP
   inout [7:0] dftstatusLSB;
   inout [7:0] dftstatusMSB;
   inout  kelvin_DRVCC;
-  inout  kelvin_CAPRTN;
+  input  kelvin_CAPRTN;
   inout  kelvin_GNDgpi;
   inout  kelvin_INTVCC;
   inout  kelvin_VCAPP5;
@@ -73,7 +73,6 @@ module PUGETceleraCORE (IN,RT,SW,VC,BST,CFN,CFP,GPI,PFI,PFO,TAO,tdo,tmi,CAP1,CAP
   inout  kelvin_VOUTSP;
   input  GNDpowerpathin;
   inout  PGNDchargepump;
-  input  alert_71cc704f;
   input  SENSE_G_05e8d170;
   input  SENSE_G_48968f26;
   inout  kelvin_GNDcapesr;
@@ -89,7 +88,7 @@ module PUGETceleraCORE (IN,RT,SW,VC,BST,CFN,CFP,GPI,PFI,PFO,TAO,tdo,tmi,CAP1,CAP
   output [15:0] status_meas_iin_15;
   output [15:0] status_meas_vin_15;
   inout  kelvin_GNDcapdecode;
-  input  kelvin_GNDpowergood;
+  inout  kelvin_GNDpowergood;
   inout  kelvin_GNDtelemetry;
   output [15:0] status_alarm_reg_15;
   output [15:0] status_meas_vcap_15;
@@ -103,17 +102,17 @@ module PUGETceleraCORE (IN,RT,SW,VC,BST,CFN,CFP,GPI,PFI,PFO,TAO,tdo,tmi,CAP1,CAP
   output [15:0] status_meas_vcap2_15;
   output [15:0] status_meas_vcap3_15;
   output [15:0] status_meas_vcap4_15;
-  input  celkelvin_IN_04cc16be;
-  input  register_clr_cap_ov_1;
-  input  register_clr_cap_uv_0;
-  input  register_clr_gpi_ov_3;
-  input  register_clr_gpi_uv_2;
+  input  register_clr_alarms_0;
+  input  register_clr_alarms_1;
+  input  register_clr_alarms_2;
+  input  register_clr_alarms_3;
   input [3:0] register_vcapfb_dac_3;
   output [11:0] status_chrg_status_11;
   output [1:0] status_meas_esrgain_1;
   input [15:0] register_cap_lo_lvl_15;
   input [15:0] register_cap_ov_lvl_15;
   input [15:0] register_cap_uv_lvl_15;
+  input  register_clr_alarms_15;
   input [15:0] register_gpi_ov_lvl_15;
   input [15:0] register_gpi_uv_lvl_15;
   input [15:0] register_iin_oc_lvl_15;
@@ -121,15 +120,19 @@ module PUGETceleraCORE (IN,RT,SW,VC,BST,CFN,CFP,GPI,PFI,PFO,TAO,tdo,tmi,CAP1,CAP
   input [15:0] register_vin_uv_lvl_15;
   input  celkelvin_SGND_2b3a9b82;
   input  celkelvin_SGND_8a994242;
+  input  celkelvin_SGND_caab0eec;
   input  celkelvin_SGND_d3b67ad0;
   input  celkelvin_SGND_e7548a33;
   input  celkelvin_SGND_fb33d1d2;
   input  celkelvin_VCAP_fb33d1d2;
   inout  kelvin_GNDcapacitorgood;
   input [15:0] register_cap_esr_per_15;
-  input  register_clear_vin_ov_5;
-  input  register_clear_vin_uv_4;
-  input  register_clr_cap_low_15;
+  input  register_clear_alarms_4;
+  input  register_clear_alarms_5;
+  input  register_clear_alarms_6;
+  input  register_clear_alarms_7;
+  input  register_clear_alarms_8;
+  input  register_clear_alarms_9;
   input [15:0] register_ichg_uc_lvl_15;
   input [15:0] register_mask_alarms_15;
   input [15:0] register_vcap_ov_lvl_15;
@@ -137,30 +140,26 @@ module PUGETceleraCORE (IN,RT,SW,VC,BST,CFN,CFP,GPI,PFI,PFO,TAO,tdo,tmi,CAP1,CAP
   input [15:0] register_vout_ov_lvl_15;
   input [15:0] register_vout_uv_lvl_15;
   inout  kelvin_GNDcurrentsensein;
-  input  register_clear_iin_oc_10;
-  input  register_clear_vcap_ov_7;
-  input  register_clear_vcap_uv_6;
-  input  register_clear_vout_ov_9;
-  input  register_clear_vout_uv_8;
+  input  register_clear_alarms_10;
+  input  register_clear_alarms_11;
+  input  register_clear_alarms_12;
+  input  register_clear_alarms_13;
+  input  register_clear_alarms_14;
   input [15:0] register_esr_high_lvl_15;
   input  celkelvin_INTVCC_04cc16be;
-  input  register_clear_ichg_uc_11;
   input [15:0] register_dtemp_hot_lvl_15;
   input [9:0] register_msk_mon_status_9;
-  input  register_clear_esr_high_14;
   input [15:0] register_dtemp_cold_lvl_15;
   input  register_sequencer_reset_0;
   output [2:0] status_PUGETfaultmanager_2;
   output [3:0] status_PUGETfaultmanager_6;
   output [1:0] status_PUGETfaultmanager_8;
-  input  register_clear_dtemp_hot_13;
   output [9:0] status_FAULTMANAGERstatus_9;
   inout  kelvin_GNDcurrentsensecharge;
-  input  register_clear_dtemp_cold_12;
   input  celkelvin_INpowerpath_e7548a33;
 endmodule
 
-module PUGETceleraRING (IN,RT,SW,VC,BST,CFN,CFP,GPI,PFI,PFO,SCL,SDA,TAO,tdo,tmi,CAP1,CAP2,CAP3,CAP4,GOTP,ICAP,ITST,PGND,SGND,VCAP,VOTP,ALERT,BGATE,CAPFB,CAPGD,DRVCC,INFET,OUTFB,SIMPV,TAEXT,TGATE,CAPRTN,CELINA,INTVCC,OUTFET,VCAPP5,VCC2P5,VOUTM5,VOUTSN,VOUTSP,unlock,CELOUTA,CELOUTD,CAPSLCT0,CAPSLCT1,sense_RT,CELG59462,CELV96848,GNDcapesr,kelvin_IN,GNDcharger,GNDservice,kelvin_CFP,sense_ITST,CELSUB40948,INpowerpath,PGNDcharger,kelvin_CAP1,kelvin_CAP2,kelvin_CAP3,kelvin_CAP4,kelvin_VCAP,GNDpowergood,GNDtelemetry,INcapmanager,dftstatusLSB,dftstatusMSB,kelvin_DRVCC,kelvin_CAPRTN,kelvin_GNDgpi,kelvin_INTVCC,kelvin_VCAPP5,kelvin_VCC2P5,kelvin_VOUTSN,kelvin_VOUTSP,GNDpowerpathin,PGNDchargepump,SENSE_G_05e8d170,SENSE_G_48968f26,kelvin_GNDcapesr,kelvin_GNDservice,kelvin_SIMPVcapesr,kelvin_GNDcapdecode,kelvin_GNDpowergood,kelvin_GNDtelemetry,kelvin_GNDchargepunp,kelvin_GNDregulation,celkelvin_IN_04cc16be,celkelvin_SGND_2b3a9b82,celkelvin_SGND_8a994242,celkelvin_SGND_d3b67ad0,celkelvin_SGND_e7548a33,celkelvin_SGND_fb33d1d2,celkelvin_VCAP_fb33d1d2,kelvin_GNDcapacitorgood,kelvin_GNDcurrentsensein,celkelvin_INTVCC_04cc16be,celkelvin_INTVCC_e8bee33d,kelvin_GNDcurrentsensecharge,celkelvin_INpowerpath_e7548a33);
+module PUGETceleraRING (IN,RT,SW,VC,BST,CFN,CFP,GPI,PFI,PFO,SCL,SDA,TAO,tdo,tmi,CAP1,CAP2,CAP3,CAP4,GOTP,ICAP,ITST,PGND,SGND,VCAP,VOTP,ALERT,BGATE,CAPFB,CAPGD,DRVCC,INFET,OUTFB,SIMPV,TAEXT,TGATE,CAPRTN,CELINA,INTVCC,OUTFET,VCAPP5,VCC2P5,VOUTM5,VOUTSN,VOUTSP,unlock,CELOUTA,CELOUTD,CAPSLCT0,CAPSLCT1,sense_RT,CELG59462,CELV96848,GNDcapesr,kelvin_IN,GNDcharger,GNDservice,kelvin_CFP,sense_ITST,CELSENSE_RF,CELSUB40948,INpowerpath,PGNDcharger,kelvin_CAP1,kelvin_CAP2,kelvin_CAP3,kelvin_CAP4,kelvin_VCAP,GNDpowergood,GNDtelemetry,INcapmanager,dftstatusLSB,dftstatusMSB,kelvin_DRVCC,kelvin_CAPRTN,kelvin_GNDgpi,kelvin_INTVCC,kelvin_VCAPP5,kelvin_VCC2P5,kelvin_VOUTSN,kelvin_VOUTSP,GNDpowerpathin,PGNDchargepump,SENSE_G_05e8d170,SENSE_G_48968f26,kelvin_GNDcapesr,kelvin_GNDservice,kelvin_SIMPVcapesr,kelvin_GNDcapdecode,kelvin_GNDpowergood,kelvin_GNDtelemetry,kelvin_GNDchargepunp,kelvin_GNDregulation,celkelvin_SGND_2b3a9b82,celkelvin_SGND_8a994242,celkelvin_SGND_caab0eec,celkelvin_SGND_d3b67ad0,celkelvin_SGND_e7548a33,celkelvin_SGND_fb33d1d2,celkelvin_VCAP_fb33d1d2,kelvin_GNDcapacitorgood,kelvin_GNDcurrentsensein,celkelvin_INTVCC_04cc16be,celkelvin_INTVCC_e8bee33d,kelvin_GNDcurrentsensecharge,celkelvin_INpowerpath_e7548a33);
   inout  IN;
   inout  RT;
   inout  SW;
@@ -175,7 +174,7 @@ module PUGETceleraRING (IN,RT,SW,VC,BST,CFN,CFP,GPI,PFI,PFO,SCL,SDA,TAO,tdo,tmi,
   inout  SDA;
   inout  TAO;
   inout  tdo;
-  inout [5:0] tmi;
+  inout [4:0] tmi;
   inout  CAP1;
   inout  CAP2;
   inout  CAP3;
@@ -220,6 +219,7 @@ module PUGETceleraRING (IN,RT,SW,VC,BST,CFN,CFP,GPI,PFI,PFO,SCL,SDA,TAO,tdo,tmi,
   inout  GNDservice;
   inout  kelvin_CFP;
   inout  sense_ITST;
+  output  CELSENSE_RF;
   output  CELSUB40948;
   inout  INpowerpath;
   inout  PGNDcharger;
@@ -253,9 +253,9 @@ module PUGETceleraRING (IN,RT,SW,VC,BST,CFN,CFP,GPI,PFI,PFO,SCL,SDA,TAO,tdo,tmi,
   inout  kelvin_GNDtelemetry;
   inout  kelvin_GNDchargepunp;
   inout  kelvin_GNDregulation;
-  output  celkelvin_IN_04cc16be;
   output  celkelvin_SGND_2b3a9b82;
   output  celkelvin_SGND_8a994242;
+  output  celkelvin_SGND_caab0eec;
   output  celkelvin_SGND_d3b67ad0;
   output  celkelvin_SGND_e7548a33;
   output  celkelvin_SGND_fb33d1d2;
@@ -284,6 +284,15 @@ module PUGETceleraSERDES (SCL,SDA,tdo,tmi,GOTP,VOTP,i2cbus,unlock,otp_done,CELG5
   input  CELSUB40948;
   input  celkelvin_INTVCC_e8bee33d;
 endmodule
+
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
 
 //Verilog HDL for "COMMS", "PUGET_Rev0_202502271019" "functional"
 
@@ -354,7 +363,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module PUGET (IN, RT, SW, VC, BST, CFN, CFP, GPI, PFI, PFO, SCL, SDA, CAP1, CAP2, CAP3, CAP4, ICAP, ITST, PGND, SGND, VCAP, ALERT, BGATE, CAPFB, CAPGD, DRVCC, INFET, OUTFB, SIMPV, TGATE, CAPRTN, CELINA, INTVCC, OUTFET, VCAPP5, VCC2P5, VOUTM5, VOUTSN, VOUTSP, CELOUTA, CELOUTD, CAPSLCT0, CAPSLCT1, alert_71cc704f);
+module PUGET (IN, RT, SW, VC, BST, CFN, CFP, GPI, PFI, PFO, SCL, SDA, CAP1, CAP2, CAP3, CAP4, ICAP, ITST, PGND, SGND, VCAP, ALERT, BGATE, CAPFB, CAPGD, DRVCC, INFET, OUTFB, SIMPV, TGATE, CAPRTN, CELINA, INTVCC, OUTFET, VCAPP5, VCC2P5, VOUTM5, VOUTSN, VOUTSP, CELOUTA, CELOUTD, CAPSLCT0, CAPSLCT1);
 inout  IN;
 inout  RT;
 inout  SW;
@@ -398,7 +407,6 @@ output  CELOUTA;
 output  CELOUTD;
 inout  CAPSLCT0;
 inout  CAPSLCT1;
-input  alert_71cc704f;
 
 
 // ------------------------ Wires ------------------------
@@ -516,7 +524,6 @@ PUGETceleraCORE XceleraCORE (
 .ICAP(ICAP),
 .ITST(ITST),
 .VCAP(VCAP),
-.ALERT(ALERT),
 .BGATE(BGATE),
 .CAPFB(CAPFB),
 .CAPGD(CAPGD),
@@ -546,6 +553,7 @@ PUGETceleraCORE XceleraCORE (
 .GNDservice(GNDservice),
 .kelvin_CFP(kelvin_CFP),
 .sense_ITST(sense_ITST),
+.CELSENSE_RF(CELSENSE_RF),
 .CELSUB40948(CELSUB40948),
 .INpowerpath(INpowerpath),
 .PGNDcharger(PGNDcharger),
@@ -569,7 +577,6 @@ PUGETceleraCORE XceleraCORE (
 .kelvin_VOUTSP(kelvin_VOUTSP),
 .GNDpowerpathin(GNDpowerpathin),
 .PGNDchargepump(PGNDchargepump),
-.alert_71cc704f(alert_71cc704f),
 .SENSE_G_05e8d170(SENSE_G_05e8d170),
 .SENSE_G_48968f26(SENSE_G_48968f26),
 .kelvin_GNDcapesr(kelvin_GNDcapesr),
@@ -599,17 +606,17 @@ PUGETceleraCORE XceleraCORE (
 .status_meas_vcap2_15(status_meas_vcap2_15[15:0]),
 .status_meas_vcap3_15(status_meas_vcap3_15[15:0]),
 .status_meas_vcap4_15(status_meas_vcap4_15[15:0]),
-.celkelvin_IN_04cc16be(celkelvin_IN_04cc16be),
-.register_clr_cap_ov_1(register_clr_cap_ov_1),
-.register_clr_cap_uv_0(register_clr_cap_uv_0),
-.register_clr_gpi_ov_3(register_clr_gpi_ov_3),
-.register_clr_gpi_uv_2(register_clr_gpi_uv_2),
+.register_clr_alarms_0(register_clr_alarms_0),
+.register_clr_alarms_1(register_clr_alarms_1),
+.register_clr_alarms_2(register_clr_alarms_2),
+.register_clr_alarms_3(register_clr_alarms_3),
 .register_vcapfb_dac_3(register_vcapfb_dac_3[3:0]),
 .status_chrg_status_11(status_chrg_status_11[11:0]),
 .status_meas_esrgain_1(status_meas_esrgain_1[1:0]),
 .register_cap_lo_lvl_15(register_cap_lo_lvl_15[15:0]),
 .register_cap_ov_lvl_15(register_cap_ov_lvl_15[15:0]),
 .register_cap_uv_lvl_15(register_cap_uv_lvl_15[15:0]),
+.register_clr_alarms_15(register_clr_alarms_15),
 .register_gpi_ov_lvl_15(register_gpi_ov_lvl_15[15:0]),
 .register_gpi_uv_lvl_15(register_gpi_uv_lvl_15[15:0]),
 .register_iin_oc_lvl_15(register_iin_oc_lvl_15[15:0]),
@@ -617,15 +624,19 @@ PUGETceleraCORE XceleraCORE (
 .register_vin_uv_lvl_15(register_vin_uv_lvl_15[15:0]),
 .celkelvin_SGND_2b3a9b82(celkelvin_SGND_2b3a9b82),
 .celkelvin_SGND_8a994242(celkelvin_SGND_8a994242),
+.celkelvin_SGND_caab0eec(celkelvin_SGND_caab0eec),
 .celkelvin_SGND_d3b67ad0(celkelvin_SGND_d3b67ad0),
 .celkelvin_SGND_e7548a33(celkelvin_SGND_e7548a33),
 .celkelvin_SGND_fb33d1d2(celkelvin_SGND_fb33d1d2),
 .celkelvin_VCAP_fb33d1d2(celkelvin_VCAP_fb33d1d2),
 .kelvin_GNDcapacitorgood(kelvin_GNDcapacitorgood),
 .register_cap_esr_per_15(register_cap_esr_per_15[15:0]),
-.register_clear_vin_ov_5(register_clear_vin_ov_5),
-.register_clear_vin_uv_4(register_clear_vin_uv_4),
-.register_clr_cap_low_15(register_clr_cap_low_15),
+.register_clear_alarms_4(register_clear_alarms_4),
+.register_clear_alarms_5(register_clear_alarms_5),
+.register_clear_alarms_6(register_clear_alarms_6),
+.register_clear_alarms_7(register_clear_alarms_7),
+.register_clear_alarms_8(register_clear_alarms_8),
+.register_clear_alarms_9(register_clear_alarms_9),
 .register_ichg_uc_lvl_15(register_ichg_uc_lvl_15[15:0]),
 .register_mask_alarms_15(register_mask_alarms_15[15:0]),
 .register_vcap_ov_lvl_15(register_vcap_ov_lvl_15[15:0]),
@@ -633,26 +644,22 @@ PUGETceleraCORE XceleraCORE (
 .register_vout_ov_lvl_15(register_vout_ov_lvl_15[15:0]),
 .register_vout_uv_lvl_15(register_vout_uv_lvl_15[15:0]),
 .kelvin_GNDcurrentsensein(kelvin_GNDcurrentsensein),
-.register_clear_iin_oc_10(register_clear_iin_oc_10),
-.register_clear_vcap_ov_7(register_clear_vcap_ov_7),
-.register_clear_vcap_uv_6(register_clear_vcap_uv_6),
-.register_clear_vout_ov_9(register_clear_vout_ov_9),
-.register_clear_vout_uv_8(register_clear_vout_uv_8),
+.register_clear_alarms_10(register_clear_alarms_10),
+.register_clear_alarms_11(register_clear_alarms_11),
+.register_clear_alarms_12(register_clear_alarms_12),
+.register_clear_alarms_13(register_clear_alarms_13),
+.register_clear_alarms_14(register_clear_alarms_14),
 .register_esr_high_lvl_15(register_esr_high_lvl_15[15:0]),
 .celkelvin_INTVCC_04cc16be(celkelvin_INTVCC_04cc16be),
-.register_clear_ichg_uc_11(register_clear_ichg_uc_11),
 .register_dtemp_hot_lvl_15(register_dtemp_hot_lvl_15[15:0]),
 .register_msk_mon_status_9(register_msk_mon_status_9[9:0]),
-.register_clear_esr_high_14(register_clear_esr_high_14),
 .register_dtemp_cold_lvl_15(register_dtemp_cold_lvl_15[15:0]),
 .register_sequencer_reset_0(register_sequencer_reset_0),
 .status_PUGETfaultmanager_2(status_PUGETfaultmanager_2[2:0]),
 .status_PUGETfaultmanager_6(status_PUGETfaultmanager_6[3:0]),
 .status_PUGETfaultmanager_8(status_PUGETfaultmanager_8[1:0]),
-.register_clear_dtemp_hot_13(register_clear_dtemp_hot_13),
 .status_FAULTMANAGERstatus_9(status_FAULTMANAGERstatus_9[9:0]),
 .kelvin_GNDcurrentsensecharge(kelvin_GNDcurrentsensecharge),
-.register_clear_dtemp_cold_12(register_clear_dtemp_cold_12),
 .celkelvin_INpowerpath_e7548a33(celkelvin_INpowerpath_e7548a33)
 );
 
@@ -671,7 +678,7 @@ PUGETceleraRING XceleraRING (
 .SDA(SDA),
 .TAO(TAO),
 .tdo(tdo),
-.tmi(tmi[5:0]),
+.tmi(tmi[4:0]),
 .CAP1(CAP1),
 .CAP2(CAP2),
 .CAP3(CAP3),
@@ -716,6 +723,7 @@ PUGETceleraRING XceleraRING (
 .GNDservice(GNDservice),
 .kelvin_CFP(kelvin_CFP),
 .sense_ITST(sense_ITST),
+.CELSENSE_RF(CELSENSE_RF),
 .CELSUB40948(CELSUB40948),
 .INpowerpath(INpowerpath),
 .PGNDcharger(PGNDcharger),
@@ -749,9 +757,9 @@ PUGETceleraRING XceleraRING (
 .kelvin_GNDtelemetry(kelvin_GNDtelemetry),
 .kelvin_GNDchargepunp(kelvin_GNDchargepunp),
 .kelvin_GNDregulation(kelvin_GNDregulation),
-.celkelvin_IN_04cc16be(celkelvin_IN_04cc16be),
 .celkelvin_SGND_2b3a9b82(celkelvin_SGND_2b3a9b82),
 .celkelvin_SGND_8a994242(celkelvin_SGND_8a994242),
+.celkelvin_SGND_caab0eec(celkelvin_SGND_caab0eec),
 .celkelvin_SGND_d3b67ad0(celkelvin_SGND_d3b67ad0),
 .celkelvin_SGND_e7548a33(celkelvin_SGND_e7548a33),
 .celkelvin_SGND_fb33d1d2(celkelvin_SGND_fb33d1d2),
@@ -779,6 +787,14 @@ PUGETceleraSERDES XceleraSERDES (
 .PORB97836(PORB97836),
 .CELSUB40948(CELSUB40948),
 .celkelvin_INTVCC_e8bee33d(celkelvin_INTVCC_e8bee33d)
+);
+
+STONEnoconn XNCotp_done (
+.noconn(otp_done)
+);
+
+STONEnoconn XNCserdesTMI5 (
+.noconn(tmi[5])
 );
 
 PUGET_Rev0_202502271019 XPUGET_Rev0_202502271019 (

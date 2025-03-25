@@ -53,22 +53,19 @@ module DFTtm8a ( a, ten, TAO, tmi, G, SUB, TAI, V, tma );
 endmodule
 
 
-//Verilog HDL for "DRM", "drm24L" "functional"
+//Verilog HDL for "DRM", "drm8L" "functional"
 
 
-module drm24L ( V, G, SUB, tmi, bypload, lastdrm, id, drm0, drm1, drm2, d1,
-d0 );
+module drm8L ( V, G, SUB, tmi, bypload, lastdrm, id, drm0, d1, d0 );
 
   input lastdrm;
   input V;
   output d1;
   input  [7:0] id;
   output d0;
-  output  [7:0] drm2;
   input bypload;
   output  [7:0] drm0;
   input G;
-  output  [7:0] drm1;
   inout  [4:0] tmi;
   input SUB;
 endmodule
@@ -81,8 +78,6 @@ module thermometer_716e7203 (SIMPV,IP,OUT_THERMOMETER,ok_thermometer,celkelvin_G
 enable_thermometer,
 global_thermometer,ten_thermometer,ten_out_thermometer,
 TAI_OUT_THERMOMETER,
-trim_thermometer_top,
-trim_thermometer_bottom,
 trim_thermometer_offset,
 CELG,CELSUB); 
 input SIMPV;
@@ -95,8 +90,6 @@ input global_thermometer;
 input ten_thermometer;
 input ten_out_thermometer;
 output TAI_OUT_THERMOMETER;
-input [6:0] trim_thermometer_top;
-input [6:0] trim_thermometer_bottom;
 input [6:0] trim_thermometer_offset;
 input CELG;
 input CELSUB;
@@ -138,10 +131,6 @@ wire [7:0] ten;
 wire [7:0] tma;
 wire [7:0] id;
 wire [7:0] drm0;
-wire [7:0] drm1;
-wire [7:0] drm2;
-wire [6:0] trim_thermometer_top;
-wire [6:0] trim_thermometer_bottom;
 wire [6:0] trim_thermometer_offset;
 
 // ------------------------ Networks ---------------------
@@ -180,29 +169,27 @@ delayclock_737c0be5 Xdelay1 (
 .celeraporb(PORB97836)
 );
 
-DFTtm8a dft_hex0x92 (
+DFTtm8a dft_hex0x99 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
 .TAI({a0,a0,a0,a0,a0,a0,a0,TAI_OUT_THERMOMETER_c2d4cf2d_Xthermometer1}),
 .TAO(TAO),
-.ten({noconn_dft_hex0x92_ten_7,noconn_dft_hex0x92_ten_6,noconn_dft_hex0x92_ten_5,noconn_dft_hex0x92_ten_4,noconn_dft_hex0x92_ten_3,ten_out_thermometer_c2d4cf2d_Xthermometer1,global_thermometer_c2d4cf2d_Xthermometer1,ten_thermometer_c2d4cf2d_Xthermometer1}),
-.tma({a1,a0,a0,a1,a0,a0,a1,a0}),
+.ten({noconn_dft_hex0x99_ten_7,noconn_dft_hex0x99_ten_6,noconn_dft_hex0x99_ten_5,noconn_dft_hex0x99_ten_4,noconn_dft_hex0x99_ten_3,ten_out_thermometer_c2d4cf2d_Xthermometer1,global_thermometer_c2d4cf2d_Xthermometer1,ten_thermometer_c2d4cf2d_Xthermometer1}),
+.tma({a1,a0,a0,a1,a1,a0,a0,a1}),
 .tmi(tmi[4:0])
 );
 
-drm24L drm_hex0x32 (
+drm8L drm_hex0x39 (
 .G(CELG59462),
 .V(CELV96848),
 .d0(c0),
 .d1(c1),
-.id({c0,c0,c1,c1,c0,c0,c1,c0}),
+.id({c0,c0,c1,c1,c1,c0,c0,c1}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm24L_drm0_7,trim_thermometer_top_c2d4cf2d_6,trim_thermometer_top_c2d4cf2d_5,trim_thermometer_top_c2d4cf2d_4,trim_thermometer_top_c2d4cf2d_3,trim_thermometer_top_c2d4cf2d_2,trim_thermometer_top_c2d4cf2d_1,trim_thermometer_top_c2d4cf2d_0}),
-.drm1({noconn_drm24L_drm1_7,trim_thermometer_bottom_c2d4cf2d_6,trim_thermometer_bottom_c2d4cf2d_5,trim_thermometer_bottom_c2d4cf2d_4,trim_thermometer_bottom_c2d4cf2d_3,trim_thermometer_bottom_c2d4cf2d_2,trim_thermometer_bottom_c2d4cf2d_1,trim_thermometer_bottom_c2d4cf2d_0}),
-.drm2({noconn_drm24L_drm2_7,trim_thermometer_offset_c2d4cf2d_6,trim_thermometer_offset_c2d4cf2d_5,trim_thermometer_offset_c2d4cf2d_4,trim_thermometer_offset_c2d4cf2d_3,trim_thermometer_offset_c2d4cf2d_2,trim_thermometer_offset_c2d4cf2d_1,trim_thermometer_offset_c2d4cf2d_0}),
+.drm0({noconn_drm8L_drm0_7,trim_thermometer_offset_c2d4cf2d_6,trim_thermometer_offset_c2d4cf2d_5,trim_thermometer_offset_c2d4cf2d_4,trim_thermometer_offset_c2d4cf2d_3,trim_thermometer_offset_c2d4cf2d_2,trim_thermometer_offset_c2d4cf2d_1,trim_thermometer_offset_c2d4cf2d_0}),
 .bypload(c0),
 .lastdrm(c0)
 );
@@ -219,42 +206,32 @@ thermometer_716e7203 Xthermometer1 (
 .global_thermometer(global_thermometer_c2d4cf2d_Xthermometer1),
 .TAI_OUT_THERMOMETER(TAI_OUT_THERMOMETER_c2d4cf2d_Xthermometer1),
 .ten_out_thermometer(ten_out_thermometer_c2d4cf2d_Xthermometer1),
-.trim_thermometer_top({trim_thermometer_top_c2d4cf2d_6,trim_thermometer_top_c2d4cf2d_5,trim_thermometer_top_c2d4cf2d_4,trim_thermometer_top_c2d4cf2d_3,trim_thermometer_top_c2d4cf2d_2,trim_thermometer_top_c2d4cf2d_1,trim_thermometer_top_c2d4cf2d_0}),
-.trim_thermometer_bottom({trim_thermometer_bottom_c2d4cf2d_6,trim_thermometer_bottom_c2d4cf2d_5,trim_thermometer_bottom_c2d4cf2d_4,trim_thermometer_bottom_c2d4cf2d_3,trim_thermometer_bottom_c2d4cf2d_2,trim_thermometer_bottom_c2d4cf2d_1,trim_thermometer_bottom_c2d4cf2d_0}),
 .trim_thermometer_offset({trim_thermometer_offset_c2d4cf2d_6,trim_thermometer_offset_c2d4cf2d_5,trim_thermometer_offset_c2d4cf2d_4,trim_thermometer_offset_c2d4cf2d_3,trim_thermometer_offset_c2d4cf2d_2,trim_thermometer_offset_c2d4cf2d_1,trim_thermometer_offset_c2d4cf2d_0}),
 .celkelvin_GNDthermometer(celkelvin_SGND_8a994242)
 );
 
-STONEnoconn XNCnoconn_drm24L_drm0_7 (
-.noconn(noconn_drm24L_drm0_7)
+STONEnoconn XNCnoconn_drm8L_drm0_7 (
+.noconn(noconn_drm8L_drm0_7)
 );
 
-STONEnoconn XNCnoconn_drm24L_drm1_7 (
-.noconn(noconn_drm24L_drm1_7)
+STONEnoconn XNCnoconn_dft_hex0x99_ten_3 (
+.noconn(noconn_dft_hex0x99_ten_3)
 );
 
-STONEnoconn XNCnoconn_drm24L_drm2_7 (
-.noconn(noconn_drm24L_drm2_7)
+STONEnoconn XNCnoconn_dft_hex0x99_ten_4 (
+.noconn(noconn_dft_hex0x99_ten_4)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x92_ten_3 (
-.noconn(noconn_dft_hex0x92_ten_3)
+STONEnoconn XNCnoconn_dft_hex0x99_ten_5 (
+.noconn(noconn_dft_hex0x99_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x92_ten_4 (
-.noconn(noconn_dft_hex0x92_ten_4)
+STONEnoconn XNCnoconn_dft_hex0x99_ten_6 (
+.noconn(noconn_dft_hex0x99_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x92_ten_5 (
-.noconn(noconn_dft_hex0x92_ten_5)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x92_ten_6 (
-.noconn(noconn_dft_hex0x92_ten_6)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x92_ten_7 (
-.noconn(noconn_dft_hex0x92_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x99_ten_7 (
+.noconn(noconn_dft_hex0x99_ten_7)
 );
 
 endmodule

@@ -64,8 +64,8 @@ input  meas_esr_6;
 input  meas_esr_7;
 input  meas_esr_8;
 input  meas_esr_9;
-output  AUTOtimer_0;
-output  AUTOtimer_1;
+  input  AUTOtimer_0;
+  input  AUTOtimer_1;
 input  CELSUB40948;
 input  meas_cap_10;
 input  meas_cap_11;
@@ -95,7 +95,7 @@ output  cap_esr_per_12;
 output  cap_esr_per_13;
 output  cap_esr_per_14;
 output  cap_esr_per_15;
-output  request_clockRT;
+  input  request_clockRT;
 output  CONTROLregister_0;
 output  CONTROLregister_1;
 output  CONTROLregister_2;
@@ -104,7 +104,7 @@ input  register_ctl_reg_0;
 input [2:0] register_ctl_reg_3;
 output [15:0] status_meas_cap_15;
 output [15:0] status_meas_esr_15;
-output  blank_configuration;
+  input  blank_configuration;
 output [1:0] status_meas_esrgain_1;
 input [15:0] register_cap_esr_per_15;
 
@@ -129,7 +129,7 @@ drm8 drm_hex0x01 (
 .id({a0,a0,a0,a0,a0,a0,a0,a1}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,blank_configuration,request_clockRT,AUTOtimer_1,AUTOtimer_0}),
+.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,CAPESRconfiguration_fdcfe397_3,CAPESRconfiguration_fdcfe397_2,CAPESRconfiguration_fdcfe397_1,CAPESRconfiguration_fdcfe397_0}),
 .por0({a0,a0,a0,a0,a0,a0,a0,a0}),
 .bypload(a0),
 .lastdrm(a0)

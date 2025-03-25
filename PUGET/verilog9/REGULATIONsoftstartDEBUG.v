@@ -124,8 +124,8 @@ DFThijack Xdfthijack1 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.ten_hijack(ten_hijack_3eea52a5_Xdfthijack1),
-.ten_hijacki(ten_hijacki_3eea52a5_Xdfthijack1)
+.ten_hijack(ten_hijack_0d48502b_Xdfthijack1),
+.ten_hijacki(ten_hijacki_0d48502b_Xdfthijack1)
 );
 
 DFThijack Xdfthijack2 (
@@ -134,8 +134,8 @@ DFThijack Xdfthijack2 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.ten_hijack(ten_hijack_e8915eb3_Xdfthijack2),
-.ten_hijacki(ten_hijacki_e8915eb3_Xdfthijack2)
+.ten_hijack(ten_hijack_ce186fa2_Xdfthijack2),
+.ten_hijacki(ten_hijacki_ce186fa2_Xdfthijack2)
 );
 
 DFThijack Xdfthijack3 (
@@ -144,28 +144,28 @@ DFThijack Xdfthijack3 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.ten_hijack(ten_hijack_55239cf6_Xdfthijack3),
-.ten_hijacki(ten_hijacki_55239cf6_Xdfthijack3)
+.ten_hijack(ten_hijack_ebd8dbdd_Xdfthijack3),
+.ten_hijacki(ten_hijacki_ebd8dbdd_Xdfthijack3)
 );
 
-DFTtm8 dft_hex0x43 (
+DFTtm8 dft_hex0x54 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.TAI({a0,a0,a0,a0,a0,a0,a0,TAI_92f605b8_XUREGULATIONsoftstartSS}),
+.TAI({a0,a0,a0,a0,a0,a0,a0,TAI_e4f5ac32_XUREGULATIONsoftstartSS}),
 .TAO(TAO),
-.tdi({a0,a0,a0,a0,a0,a0,a0,tdi_e5e0f7e2_XUREGULATIONsoftstartTIME}),
+.tdi({a0,a0,a0,a0,a0,a0,a0,tdi_c5374af4_XUREGULATIONsoftstartTIME}),
 .tdo(tdo),
-.ten({ten_hijacki_55239cf6_Xdfthijack3,ten_hijack_55239cf6_Xdfthijack3,ten_hijacki_e8915eb3_Xdfthijack2,ten_hijack_e8915eb3_Xdfthijack2,ten_hijacki_3eea52a5_Xdfthijack1,ten_hijack_3eea52a5_Xdfthijack1,ten_e5e0f7e2_XUREGULATIONsoftstartTIME,ten_92f605b8_XUREGULATIONsoftstartSS}),
-.tma({a0,a1,a0,a0,a0,a0,a1,a1}),
+.ten({ten_hijacki_ebd8dbdd_Xdfthijack3,ten_hijack_ebd8dbdd_Xdfthijack3,ten_hijacki_ce186fa2_Xdfthijack2,ten_hijack_ce186fa2_Xdfthijack2,ten_hijacki_0d48502b_Xdfthijack1,ten_hijack_0d48502b_Xdfthijack1,ten_c5374af4_XUREGULATIONsoftstartTIME,ten_e4f5ac32_XUREGULATIONsoftstartSS}),
+.tma({a0,a1,a0,a1,a0,a1,a0,a0}),
 .tmi(tmi[4:0])
 );
 
 dftprobeModel2_2dcf28df XUREGULATIONsoftstartSS (
 .i(SS),
-.TAI(TAI_92f605b8_XUREGULATIONsoftstartSS),
-.ten(ten_92f605b8_XUREGULATIONsoftstartSS),
+.TAI(TAI_e4f5ac32_XUREGULATIONsoftstartSS),
+.ten(ten_e4f5ac32_XUREGULATIONsoftstartSS),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -173,8 +173,8 @@ dftprobeModel2_2dcf28df XUREGULATIONsoftstartSS (
 
 dftprobeModel0_80e43a5a XUREGULATIONsoftstartTIME (
 .i(net_25),
-.tdi(tdi_e5e0f7e2_XUREGULATIONsoftstartTIME),
-.ten(ten_e5e0f7e2_XUREGULATIONsoftstartTIME),
+.tdi(tdi_c5374af4_XUREGULATIONsoftstartTIME),
+.ten(ten_c5374af4_XUREGULATIONsoftstartTIME),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)

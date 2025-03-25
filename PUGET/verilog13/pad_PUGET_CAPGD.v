@@ -18,16 +18,6 @@ module ESDcore6 ( GESD, PAD );
 endmodule
 
 
-//Verilog HDL for "Esd", "ESDdiode" "functional"
-
-
-module ESDdiode ( N, P );
-
-  input P;
-  input N;
-endmodule
-
-
 // ------------------------ Module Verilog ---------------
 module pad_PUGET_CAPGD (GESD, CAPGD);
 input  GESD;
@@ -41,19 +31,9 @@ STONEpad1 XPAD1 (
 .PAD(CAPGD)
 );
 
-ESDcore6 XESDcore6_2 (
+ESDcore6 XESDcore6_1 (
 .PAD(CAPGD),
 .GESD(GESD)
-);
-
-ESDdiode Xesd1_XPAD1 (
-.N(GESD),
-.P(CAPGD)
-);
-
-ESDdiode Xesd2_XPAD1 (
-.N(CAPGD),
-.P(GESD)
 );
 
 endmodule

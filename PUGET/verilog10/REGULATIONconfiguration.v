@@ -45,7 +45,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONconfiguration (tmi, CELG59462, CELV96848, CELSUB40948, GMVselect_0, GMVselect_1, GMVselect_2, GMVselect_3, ICHARGEmin_0, ICHARGEmin_1, RAMPdutycycle_0, RAMPdutycycle_1, RAMPdutycycle_2, RAMPdutycycle_3, RAMPdutycycle_4, RAMPdutycycle_5, RAMPdutycycle_6, VCconfiguration_0, VCconfiguration_1, VCconfiguration_2, REFconfigurationLSB_0, REFconfigurationLSB_1, REFconfigurationLSB_2, REFconfigurationLSB_3, REFconfigurationLSB_4, REFconfigurationLSB_5, REFconfigurationLSB_6, REFconfigurationLSB_7, REFconfigurationMSB_0, REFconfigurationMSB_1, REFconfigurationMSB_2, REFconfigurationMSB_3, register_vcapfb_dac_3);
+module REGULATIONconfiguration (tmi, CELG59462, CELV96848, CELSUB40948, GMVselect_0, GMVselect_1, GMVselect_2, GMVselect_3, ICHARGEmin_0, ICHARGEmin_1, disable_slopecomp, CAPconfiguration_0, CAPconfiguration_1, CLOCKdutycycleUP_0, CLOCKdutycycleUP_1, CLOCKdutycycleUP_2, IINconfiguration_0, IINconfiguration_1, OUTconfiguration_0, OUTconfiguration_1, REFconfiguration_0, REFconfiguration_1, REFconfiguration_2, REFconfiguration_3, VCconfigurationUP_0, VCconfigurationUP_1, VCconfigurationUP_2, CLOCKdutycycleDOWN_0, CLOCKdutycycleDOWN_1, CLOCKdutycycleDOWN_2, CHARGEconfiguration_0, CHARGEconfiguration_1, VCconfigurationDOWN_0, VCconfigurationDOWN_1, VCconfigurationDOWN_2, register_vcapfb_dac_3);
 inout [4:0] tmi;
 input  CELG59462;
 input  CELV96848;
@@ -54,30 +54,33 @@ output  GMVselect_0;
 output  GMVselect_1;
 output  GMVselect_2;
 output  GMVselect_3;
-output  ICHARGEmin_0;
-output  ICHARGEmin_1;
-output  RAMPdutycycle_0;
-output  RAMPdutycycle_1;
-output  RAMPdutycycle_2;
-output  RAMPdutycycle_3;
-output  RAMPdutycycle_4;
-output  RAMPdutycycle_5;
-output  RAMPdutycycle_6;
-output  VCconfiguration_0;
-output  VCconfiguration_1;
-output  VCconfiguration_2;
-output  REFconfigurationLSB_0;
-output  REFconfigurationLSB_1;
-output  REFconfigurationLSB_2;
-output  REFconfigurationLSB_3;
-output  REFconfigurationLSB_4;
-output  REFconfigurationLSB_5;
-output  REFconfigurationLSB_6;
-output  REFconfigurationLSB_7;
-output  REFconfigurationMSB_0;
-output  REFconfigurationMSB_1;
-output  REFconfigurationMSB_2;
-output  REFconfigurationMSB_3;
+  input  ICHARGEmin_0;
+  input  ICHARGEmin_1;
+  input  disable_slopecomp;
+  input  CAPconfiguration_0;
+  input  CAPconfiguration_1;
+  input  CLOCKdutycycleUP_0;
+  input  CLOCKdutycycleUP_1;
+  input  CLOCKdutycycleUP_2;
+  input  IINconfiguration_0;
+  input  IINconfiguration_1;
+  input  OUTconfiguration_0;
+  input  OUTconfiguration_1;
+  input  REFconfiguration_0;
+  input  REFconfiguration_1;
+  input  REFconfiguration_2;
+  input  REFconfiguration_3;
+  input  VCconfigurationUP_0;
+  input  VCconfigurationUP_1;
+  input  VCconfigurationUP_2;
+  input  CLOCKdutycycleDOWN_0;
+  input  CLOCKdutycycleDOWN_1;
+  input  CLOCKdutycycleDOWN_2;
+  input  CHARGEconfiguration_0;
+  input  CHARGEconfiguration_1;
+  input  VCconfigurationDOWN_0;
+  input  VCconfigurationDOWN_1;
+  input  VCconfigurationDOWN_2;
 input [3:0] register_vcapfb_dac_3;
 
 
@@ -95,44 +98,32 @@ wire [7:0] por2;
 wire [7:0] por3;
 
 // ------------------------ Networks ---------------------
-drm32 drm_hex0x12 (
+drm32 drm_hex0x18 (
 .G(CELG59462),
 .V(CELV96848),
 .d0(a0),
 .d1(a1),
-.id({a0,a0,a0,a1,a0,a0,a1,a0}),
+.id({a0,a0,a0,a1,a1,a0,a0,a0}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm32_drm0_7,RAMPdutycycle_6,RAMPdutycycle_5,VCconfiguration_2,VCconfiguration_1,VCconfiguration_0,ICHARGEmin_1,ICHARGEmin_0}),
-.drm1({REFconfigurationLSB_7,REFconfigurationLSB_6,REFconfigurationLSB_5,REFconfigurationLSB_4,REFconfigurationLSB_3,REFconfigurationLSB_2,REFconfigurationLSB_1,REFconfigurationLSB_0}),
-.drm2({noconn_drm32_drm2_7,noconn_drm32_drm2_6,noconn_drm32_drm2_5,noconn_drm32_drm2_4,REFconfigurationMSB_3,REFconfigurationMSB_2,REFconfigurationMSB_1,REFconfigurationMSB_0}),
-.drm3({noconn_drm32_drm3_7,noconn_drm32_drm3_6,noconn_drm32_drm3_5,RAMPdutycycle_4,RAMPdutycycle_3,RAMPdutycycle_2,RAMPdutycycle_1,RAMPdutycycle_0}),
-.por0({a0,a0,a0,a0,a0,a0,a0,a0}),
+.drm0({REGULATIONconfiguration1C_ba6c0395,REGULATIONconfiguration1B_033e2dd6_1,REGULATIONconfiguration1B_033e2dd6_0,REGULATIONconfiguration1B_2ccf1488_1,REGULATIONconfiguration1B_2ccf1488_0,CLOCKdutycycle_ecc41fc9_2,CLOCKdutycycle_ecc41fc9_1,CLOCKdutycycle_ecc41fc9_0}),
+.drm1({REGULATIONconfiguration1C_6b21e692_3,REGULATIONconfiguration1C_6b21e692_2,REGULATIONconfiguration1C_6b21e692_1,REGULATIONconfiguration1C_6b21e692_0,REGULATIONconfiguration1B_e63c870f_1,REGULATIONconfiguration1B_e63c870f_0,REGULATIONconfiguration1B_e957dea6_1,REGULATIONconfiguration1B_e957dea6_0}),
+.drm2({CLOCKdutycycle_44800eb7_2,CLOCKdutycycle_44800eb7_1,CLOCKdutycycle_44800eb7_0,REGULATIONconfiguration1A_719d180b_2,REGULATIONconfiguration1A_719d180b_1,REGULATIONconfiguration1A_719d180b_0,REGULATIONconfiguration1A_57e8bf17_1,REGULATIONconfiguration1A_57e8bf17_0}),
+.drm3({noconn_drm32_drm3_7,noconn_drm32_drm3_6,noconn_drm32_drm3_5,noconn_drm32_drm3_4,noconn_drm32_drm3_3,REGULATIONconfiguration1A_ba78e93d_2,REGULATIONconfiguration1A_ba78e93d_1,REGULATIONconfiguration1A_ba78e93d_0}),
+.por0({a0,a0,a0,a0,a0,a1,a0,a1}),
 .por1({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por2({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por3({a0,a0,a0,a1,a0,a0,a1,a1}),
+.por2({a1,a0,a1,a0,a0,a0,a0,a0}),
+.por3({a0,a0,a0,a0,a0,a0,a0,a0}),
 .bypload(a0),
 .lastdrm(a0)
 );
 
-STONEnoconn XNCnoconn_drm32_drm0_7 (
-.noconn(noconn_drm32_drm0_7)
+STONEnoconn XNCnoconn_drm32_drm3_3 (
+.noconn(noconn_drm32_drm3_3)
 );
 
-STONEnoconn XNCnoconn_drm32_drm2_4 (
-.noconn(noconn_drm32_drm2_4)
-);
-
-STONEnoconn XNCnoconn_drm32_drm2_5 (
-.noconn(noconn_drm32_drm2_5)
-);
-
-STONEnoconn XNCnoconn_drm32_drm2_6 (
-.noconn(noconn_drm32_drm2_6)
-);
-
-STONEnoconn XNCnoconn_drm32_drm2_7 (
-.noconn(noconn_drm32_drm2_7)
+STONEnoconn XNCnoconn_drm32_drm3_4 (
+.noconn(noconn_drm32_drm3_4)
 );
 
 STONEnoconn XNCnoconn_drm32_drm3_5 (

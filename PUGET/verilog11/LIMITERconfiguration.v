@@ -33,7 +33,7 @@ inout [4:0] tmi;
 input  CELG59462;
 input  CELV96848;
 input  CELSUB40948;
-output  alarm_latched;
+  input  alarm_latched;
 
 
 // ------------------------ Wires ------------------------
@@ -43,15 +43,15 @@ wire [7:0] drm0;
 wire [7:0] por0;
 
 // ------------------------ Networks ---------------------
-drm8 drm_hex0x1F (
+drm8 drm_hex0x28 (
 .G(CELG59462),
 .V(CELV96848),
 .d0(a0),
 .d1(a1),
-.id({a0,a0,a0,a1,a1,a1,a1,a1}),
+.id({a0,a0,a1,a0,a1,a0,a0,a0}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,noconn_drm8_drm0_3,noconn_drm8_drm0_2,noconn_drm8_drm0_1,alarm_latched}),
+.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,noconn_drm8_drm0_3,noconn_drm8_drm0_2,noconn_drm8_drm0_1,LIMITERconfiguration_69f86aec}),
 .por0({a0,a0,a0,a0,a0,a0,a0,a1}),
 .bypload(a0),
 .lastdrm(a0)

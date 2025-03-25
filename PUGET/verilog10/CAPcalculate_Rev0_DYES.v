@@ -141,14 +141,14 @@ CAPcalculate_Rev0_DYES_0 XMAIN (
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
 .CELSUB40948(CELSUB40948),
-.enableFAULT(net_82),
+.enableFAULT(CAPcalculate_Rev0_statecontrol_17a38433_4),
 .mode_backup(mode_backup),
 .on_balancer(on_balancer),
 .shunt_status(shunt_status),
-.STATEcontrol0(net_78),
-.STATEcontrol1(net_79),
-.STATEcontrol2(net_80),
-.STATEcontrol3(net_81),
+.STATEcontrol0(CAPcalculate_Rev0_statecontrol_17a38433_0),
+.STATEcontrol1(CAPcalculate_Rev0_statecontrol_17a38433_1),
+.STATEcontrol2(CAPcalculate_Rev0_statecontrol_17a38433_2),
+.STATEcontrol3(CAPcalculate_Rev0_statecontrol_17a38433_3),
 .balancer_status(balancer_status),
 .calculate_shunt(calculate_shunt),
 .done_capcalculate(done_capcalculate),
@@ -163,8 +163,8 @@ CAPcalculate_Rev0_DYES_0 XMAIN (
 
 dftprobeModel0_e1d1778d XU59 (
 .i(net_100),
-.tdi(tdi_47aefa72_XU59),
-.ten(ten_47aefa72_XU59),
+.tdi(tdi_3ceb9f1e_XU59),
+.ten(ten_3ceb9f1e_XU59),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -172,8 +172,8 @@ dftprobeModel0_e1d1778d XU59 (
 
 dftprobeModel0_e1d1778d XU60 (
 .i(net_105),
-.tdi(tdi_86b68082_XU60),
-.ten(ten_86b68082_XU60),
+.tdi(tdi_35927105_XU60),
+.ten(ten_35927105_XU60),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -181,8 +181,8 @@ dftprobeModel0_e1d1778d XU60 (
 
 dftprobeModel0_e1d1778d XU61 (
 .i(net_109),
-.tdi(tdi_15460b51_XU61),
-.ten(ten_15460b51_XU61),
+.tdi(tdi_9fe8abb0_XU61),
+.ten(ten_9fe8abb0_XU61),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -190,8 +190,8 @@ dftprobeModel0_e1d1778d XU61 (
 
 dftprobeModel0_e1d1778d XU62 (
 .i(net_112),
-.tdi(tdi_672e6234_XU62),
-.ten(ten_672e6234_XU62),
+.tdi(tdi_2a3775e9_XU62),
+.ten(ten_2a3775e9_XU62),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -199,8 +199,8 @@ dftprobeModel0_e1d1778d XU62 (
 
 dftprobeModel0_e1d1778d XU63 (
 .i(net_113),
-.tdi(tdi_58c47629_XU63),
-.ten(ten_58c47629_XU63),
+.tdi(tdi_86f55b85_XU63),
+.ten(ten_86f55b85_XU63),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -208,8 +208,8 @@ dftprobeModel0_e1d1778d XU63 (
 
 dftprobeModel0_e1d1778d XU64 (
 .i(net_114),
-.tdi(tdi_49db6969_XU64),
-.ten(ten_49db6969_XU64),
+.tdi(tdi_ae694e5d_XU64),
+.ten(ten_ae694e5d_XU64),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -217,8 +217,8 @@ dftprobeModel0_e1d1778d XU64 (
 
 dftprobeModel0_e1d1778d XU65 (
 .i(net_115),
-.tdi(tdi_55ab7eb9_XU65),
-.ten(ten_55ab7eb9_XU65),
+.tdi(tdi_33a74ed1_XU65),
+.ten(ten_33a74ed1_XU65),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -226,8 +226,8 @@ dftprobeModel0_e1d1778d XU65 (
 
 dftprobeModel0_e1d1778d XU66 (
 .i(net_116),
-.tdi(tdi_1867b6fe_XU66),
-.ten(ten_1867b6fe_XU66),
+.tdi(tdi_0025ad38_XU66),
+.ten(ten_0025ad38_XU66),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -235,8 +235,8 @@ dftprobeModel0_e1d1778d XU66 (
 
 dftprobeModel0_e1d1778d XU67 (
 .i(calculate_shunt),
-.tdi(tdi_eca35d75_XU67),
-.ten(ten_eca35d75_XU67),
+.tdi(tdi_0edf8502_XU67),
+.ten(ten_0edf8502_XU67),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -244,8 +244,8 @@ dftprobeModel0_e1d1778d XU67 (
 
 dftprobeModel0_e1d1778d XU68 (
 .i(calculate_balancer),
-.tdi(tdi_278b9f92_XU68),
-.ten(ten_278b9f92_XU68),
+.tdi(tdi_77bb02a1_XU68),
+.ten(ten_77bb02a1_XU68),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -253,8 +253,8 @@ dftprobeModel0_e1d1778d XU68 (
 
 dftprobeModel0_e1d1778d XU69 (
 .i(done_capcalculate),
-.tdi(tdi_e2681d59_XU69),
-.ten(ten_e2681d59_XU69),
+.tdi(tdi_e5371399_XU69),
+.ten(ten_e5371399_XU69),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -262,8 +262,8 @@ dftprobeModel0_e1d1778d XU69 (
 
 dftprobeModel0_e1d1778d XU70 (
 .i(shunt_status),
-.tdi(tdi_3b36f080_XU70),
-.ten(ten_3b36f080_XU70),
+.tdi(tdi_4343b42d_XU70),
+.ten(ten_4343b42d_XU70),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -271,8 +271,8 @@ dftprobeModel0_e1d1778d XU70 (
 
 dftprobeModel0_e1d1778d XU71 (
 .i(balancer_status),
-.tdi(tdi_489faf44_XU71),
-.ten(ten_489faf44_XU71),
+.tdi(tdi_94e37fdf_XU71),
+.ten(ten_94e37fdf_XU71),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -280,46 +280,46 @@ dftprobeModel0_e1d1778d XU71 (
 
 dftprobeModel0_e1d1778d XU72 (
 .i(fault_capcalculate),
-.tdi(tdi_5b93bdbe_XU72),
-.ten(ten_5b93bdbe_XU72),
+.tdi(tdi_627124d8_XU72),
+.ten(ten_627124d8_XU72),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
 );
 
-DFTtm8d dft_hex0x58 (
+DFTtm8d dft_hex0x1A (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.tdi({tdi_1867b6fe_XU66,tdi_55ab7eb9_XU65,tdi_49db6969_XU64,tdi_58c47629_XU63,tdi_672e6234_XU62,tdi_15460b51_XU61,tdi_86b68082_XU60,tdi_47aefa72_XU59}),
+.tdi({tdi_0025ad38_XU66,tdi_33a74ed1_XU65,tdi_ae694e5d_XU64,tdi_86f55b85_XU63,tdi_2a3775e9_XU62,tdi_9fe8abb0_XU61,tdi_35927105_XU60,tdi_3ceb9f1e_XU59}),
 .tdo(tdo),
-.ten({ten_1867b6fe_XU66,ten_55ab7eb9_XU65,ten_49db6969_XU64,ten_58c47629_XU63,ten_672e6234_XU62,ten_15460b51_XU61,ten_86b68082_XU60,ten_47aefa72_XU59}),
-.tma({a0,a1,a0,a1,a1,a0,a0,a0}),
+.ten({ten_0025ad38_XU66,ten_33a74ed1_XU65,ten_ae694e5d_XU64,ten_86f55b85_XU63,ten_2a3775e9_XU62,ten_9fe8abb0_XU61,ten_35927105_XU60,ten_3ceb9f1e_XU59}),
+.tma({a0,a0,a0,a1,a1,a0,a1,a0}),
 .tmi(tmi[4:0])
 );
 
-DFTtm8d dft_hex0x59 (
+DFTtm8d dft_hex0x1B (
 .G(CELG59462),
 .V(CELV96848),
 .a({b1,b0}),
 .SUB(CELSUB40948),
-.tdi({b0,b0,tdi_5b93bdbe_XU72,tdi_489faf44_XU71,tdi_3b36f080_XU70,tdi_e2681d59_XU69,tdi_278b9f92_XU68,tdi_eca35d75_XU67}),
+.tdi({b0,b0,tdi_627124d8_XU72,tdi_94e37fdf_XU71,tdi_4343b42d_XU70,tdi_e5371399_XU69,tdi_77bb02a1_XU68,tdi_0edf8502_XU67}),
 .tdo(tdo),
-.ten({noconn_dft_hex0x59_ten_7,noconn_dft_hex0x59_ten_6,ten_5b93bdbe_XU72,ten_489faf44_XU71,ten_3b36f080_XU70,ten_e2681d59_XU69,ten_278b9f92_XU68,ten_eca35d75_XU67}),
-.tma({b0,b1,b0,b1,b1,b0,b0,b1}),
+.ten({noconn_dft_hex0x1B_ten_7,noconn_dft_hex0x1B_ten_6,ten_627124d8_XU72,ten_94e37fdf_XU71,ten_4343b42d_XU70,ten_e5371399_XU69,ten_77bb02a1_XU68,ten_0edf8502_XU67}),
+.tma({b0,b0,b0,b1,b1,b0,b1,b1}),
 .tmi(tmi[4:0])
 );
 
-drm8 drm_hex0x20 (
+drm8 drm_hex0x07 (
 .G(CELG59462),
 .V(CELV96848),
 .d0(d0),
 .d1(d1),
-.id({d0,d0,d1,d0,d0,d0,d0,d0}),
+.id({d0,d0,d0,d0,d0,d1,d1,d1}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,net_82,net_81,net_80,net_79,net_78}),
+.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,CAPcalculate_Rev0_statecontrol_17a38433_4,CAPcalculate_Rev0_statecontrol_17a38433_3,CAPcalculate_Rev0_statecontrol_17a38433_2,CAPcalculate_Rev0_statecontrol_17a38433_1,CAPcalculate_Rev0_statecontrol_17a38433_0}),
 .por0({d0,d0,d0,d1,d0,d0,d0,d0}),
 .bypload(d0),
 .lastdrm(d0)
@@ -337,12 +337,12 @@ STONEnoconn XNCnoconn_drm8_drm0_7 (
 .noconn(noconn_drm8_drm0_7)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x59_ten_6 (
-.noconn(noconn_dft_hex0x59_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x1B_ten_6 (
+.noconn(noconn_dft_hex0x1B_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x59_ten_7 (
-.noconn(noconn_dft_hex0x59_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x1B_ten_7 (
+.noconn(noconn_dft_hex0x1B_ten_7)
 );
 
 endmodule

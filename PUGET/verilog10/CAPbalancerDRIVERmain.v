@@ -317,7 +317,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CAPbalancerDRIVERmain (IN, tmi, CAP1, CAP2, CAP3, CAP4, SIMPV, CAPRTN, CELG59462, CELV96848, PORB97836, dft_gate1, CELSUB40948, IP_65fbc463, IP_9540da5e, IP_aa20537a, IP_dd2307df, dft_startup, clock_balancer, active_balancer, enable_balancer, MAXIMUMchannel_0, MAXIMUMchannel_1);
+module CAPbalancerDRIVERmain (IN, tmi, CAP1, CAP2, CAP3, CAP4, SIMPV, CAPRTN, CELG59462, CELV96848, PORB97836, dft_gate1, CELSUB40948, IP_5557856a, IP_9320ef1e, IP_9e172b94, IP_b76ea97c, dft_startup, clock_balancer, active_balancer, enable_balancer, MAXIMUMchannel_0, MAXIMUMchannel_1);
 input  IN;
 input [4:0] tmi;
 inout  CAP1;
@@ -331,10 +331,10 @@ input  CELV96848;
 input  PORB97836;
 inout  dft_gate1;
 input  CELSUB40948;
-input  IP_65fbc463;
-input  IP_9540da5e;
-input  IP_aa20537a;
-input  IP_dd2307df;
+input  IP_5557856a;
+input  IP_9320ef1e;
+input  IP_9e172b94;
+input  IP_b76ea97c;
 output  dft_startup;
 input  clock_balancer;
 output  active_balancer;
@@ -446,14 +446,14 @@ resistor_8c091a7d XU6 (
 
 currentgenerator_42bd1eaf XU7 (
 .I0(net_215),
-.IP(IP_aa20537a),
+.IP(IP_9e172b94),
 .CELG(CELG59462),
 .HVPOS(IN),
 .SIMPV(SIMPV),
 .CELSUB(CELSUB40948),
 .ok_currentgenerator(net_219),
 .enable_currentgenerator(net_186),
-.global_currentgenerator(global_currentgenerator_aa20537a_XU7)
+.global_currentgenerator(global_currentgenerator_9e172b94_XU7)
 );
 
 resistor_522ed876 XU8 (
@@ -470,26 +470,26 @@ resistor_9eba8e38 XU9 (
 
 currentgenerator_42bd1eaf XU11 (
 .I0(net_222),
-.IP(IP_65fbc463),
+.IP(IP_9320ef1e),
 .CELG(CELG59462),
 .HVPOS(IN),
 .SIMPV(SIMPV),
 .CELSUB(CELSUB40948),
 .ok_currentgenerator(net_218),
 .enable_currentgenerator(net_185),
-.global_currentgenerator(global_currentgenerator_65fbc463_XU11)
+.global_currentgenerator(global_currentgenerator_9320ef1e_XU11)
 );
 
 currentgenerator_42bd1eaf XU12 (
 .I0(net_225),
-.IP(IP_9540da5e),
+.IP(IP_b76ea97c),
 .CELG(CELG59462),
 .HVPOS(IN),
 .SIMPV(SIMPV),
 .CELSUB(CELSUB40948),
 .ok_currentgenerator(net_216),
 .enable_currentgenerator(net_184),
-.global_currentgenerator(global_currentgenerator_9540da5e_XU12)
+.global_currentgenerator(global_currentgenerator_b76ea97c_XU12)
 );
 
 decoder2_779c1eb3 XU16 (
@@ -552,41 +552,41 @@ delayclock_737c0be5 XU37 (
 .celeraporb(PORB97836)
 );
 
-DFTtm8t dft_hex0x57 (
+DFTtm8t dft_hex0x19 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x57_ten_7,noconn_dft_hex0x57_ten_6,noconn_dft_hex0x57_ten_5,noconn_dft_hex0x57_ten_4,global_currentgenerator_dd2307df_Xcurrentgenerator1,global_currentgenerator_aa20537a_XU7,global_currentgenerator_9540da5e_XU12,global_currentgenerator_65fbc463_XU11}),
-.tma({a0,a1,a0,a1,a0,a1,a1,a1}),
+.ten({noconn_dft_hex0x19_ten_7,noconn_dft_hex0x19_ten_6,noconn_dft_hex0x19_ten_5,noconn_dft_hex0x19_ten_4,global_currentgenerator_5557856a_Xcurrentgenerator1,global_currentgenerator_9e172b94_XU7,global_currentgenerator_b76ea97c_XU12,global_currentgenerator_9320ef1e_XU11}),
+.tma({a0,a0,a0,a1,a1,a0,a0,a1}),
 .tmi(tmi[4:0])
 );
 
 currentgenerator_14ed1153 Xcurrentgenerator1 (
 .I0(net_227),
-.IP(IP_dd2307df),
+.IP(IP_5557856a),
 .CELG(CELG59462),
 .SIMPV(SIMPV),
 .CELSUB(CELSUB40948),
 .ok_currentgenerator(net_213),
 .enable_currentgenerator(net_183),
-.global_currentgenerator(global_currentgenerator_dd2307df_Xcurrentgenerator1)
+.global_currentgenerator(global_currentgenerator_5557856a_Xcurrentgenerator1)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x57_ten_4 (
-.noconn(noconn_dft_hex0x57_ten_4)
+STONEnoconn XNCnoconn_dft_hex0x19_ten_4 (
+.noconn(noconn_dft_hex0x19_ten_4)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x57_ten_5 (
-.noconn(noconn_dft_hex0x57_ten_5)
+STONEnoconn XNCnoconn_dft_hex0x19_ten_5 (
+.noconn(noconn_dft_hex0x19_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x57_ten_6 (
-.noconn(noconn_dft_hex0x57_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x19_ten_6 (
+.noconn(noconn_dft_hex0x19_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x57_ten_7 (
-.noconn(noconn_dft_hex0x57_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x19_ten_7 (
+.noconn(noconn_dft_hex0x19_ten_7)
 );
 
 endmodule

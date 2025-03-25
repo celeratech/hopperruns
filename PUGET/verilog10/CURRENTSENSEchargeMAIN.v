@@ -68,11 +68,11 @@ endmodule
 
 
 
-//Celera:currentsenseamplifier_1ad8924d
+//Celera:currentsenseamplifier_3588e1e5
 //Celera Confidential Symbol Generator
 //Sense Type: resistor, Usage: p, Max Input Voltage: 30V, Max Sense Voltage: 0.07V
-//Output Current: 20uA, Output Voltage: 2.4375V, Output Type: voltage, Accuracy: yes, DFT: no
-module currentsenseamplifier_1ad8924d (enable_currentsenseamplifier,IP,ok_currentsenseamplifier,
+//Output Current: 20uA, Output Voltage: 1.073V, Output Type: voltage, Accuracy: yes, DFT: no
+module currentsenseamplifier_3588e1e5 (enable_currentsenseamplifier,IP,ok_currentsenseamplifier,
 INP_CURRENTSENSEAMPLIFIER,INN_CURRENTSENSEAMPLIFIER,OUT_CURRENTSENSEAMPLIFIER,
 CELV,
 RTN,
@@ -146,20 +146,6 @@ endmodule
 
 
 
-//Celera:delayfixed_9bfc107c
-//Celera Confidential Symbol Generator
-//TYPE:fixed Egde:fall
-module delayfixed_9bfc107c (CELV,i,o,
-CELG,CELSUB);
-input CELV;
-input i;
-output o;
-input CELG;
-input CELSUB;
-endmodule
-
-
-
 //Celera:switchtswitch_4b165e0d
 //Celera Confidential Symbol Generator
 //1000 Ohm tswitchSwitch
@@ -187,10 +173,11 @@ endmodule
 
 
 
-//Celera:vbuffer_af041a10
+//Celera:vbuffer_d77a3a8f
 //Celera Confidential Symbol Generator
-//GAIN:0.616 Input:p with 1000K Impedance
-module vbuffer_af041a10 (SIMPV,IN,IP,OUT,enable_vbuffer,ok_vbuffer,global_vbuffer,
+//GAIN:1.4 Input:p with 1000K Impedance
+module vbuffer_d77a3a8f (SIMPV,IN,IP,OUT,enable_vbuffer,ok_vbuffer,global_vbuffer,
+GNDSENSE,
 CELG,CELSUB);
 input SIMPV;
 input IN;
@@ -199,6 +186,30 @@ output OUT;
 input enable_vbuffer;
 output ok_vbuffer;
 input global_vbuffer;
+input GNDSENSE;
+input CELG;
+input CELSUB;
+endmodule
+
+
+
+//Celera:vbuffer_bccfdb66
+//Celera Confidential Symbol Generator
+//GAIN:2.3 Input:p with 200K Impedance
+module vbuffer_bccfdb66 (SIMPV,IN,IP,OUT,enable_vbuffer,ok_vbuffer,global_vbuffer,
+trim_vbuffer_positive,trim_vbuffer_negative,
+GNDSENSE,
+CELG,CELSUB);
+input SIMPV;
+input IN;
+input IP;
+output OUT;
+input enable_vbuffer;
+output ok_vbuffer;
+input global_vbuffer;
+input [6:0] trim_vbuffer_positive;
+input [6:0] trim_vbuffer_negative;
+input GNDSENSE;
 input CELG;
 input CELSUB;
 endmodule
@@ -283,25 +294,29 @@ module DFTtm8t ( a, ten, tmi, G, SUB, V, tma );
 endmodule
 
 
-//Verilog HDL for "DRM", "drm40" "functional"
+//Verilog HDL for "DRM", "drm56" "functional"
 
 
-module drm40 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, por1, por2, por3,
-por4, drm0, drm1, drm2, drm3, drm4, d1, d0 );
+module drm56 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, por1, por2, por3,
+por4, por5, por6, drm0, drm1, drm2, drm3, drm4, drm5, drm6, d1, d0 );
 
   output  [7:0] drm4;
+  input  [7:0] por6;
   input lastdrm;
   input V;
   output d1;
   input  [7:0] por3;
   output  [7:0] drm3;
+  input  [7:0] por5;
   input  [7:0] id;
   output d0;
+  output  [7:0] drm5;
   output  [7:0] drm2;
   input  [7:0] por2;
   input  [7:0] por1;
   input  [7:0] por4;
   input bypload;
+  output  [7:0] drm6;
   output  [7:0] drm0;
   input  [7:0] por0;
   input G;
@@ -355,7 +370,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CURRENTSENSEchargeMAIN (tmi, ICAP, VCAP, SIMPV, VCAPP5, dft_ok, ICHARGE, CELG59462, CELV96848, PORB97836, ok_icharge, CELSUB40948, IP_5edb1fba, IP_710ca24c, dft_startup, mode_stepdown, measure_icharge, ok_currentsense, ICHARGE_TELEMETRY, dft_measure_delay, clock_currentsense, enable_currentsense, CURRENTmeasureDELAY_0, CURRENTmeasureDELAY_1, kelvin_GNDcurrentsense, IP_CURRENTSENSEchargeMAIN1);
+module CURRENTSENSEchargeMAIN (tmi, ICAP, VCAP, SIMPV, VCAPP5, dft_ok, ICHARGE, GMCHARGE, CELG59462, CELV96848, PORB97836, ok_icharge, CELSUB40948, IP_5edb1fba, IP_710ca24c, IP_d9771bce, dft_startup, mode_stepdown, measure_icharge, ok_currentsense, ICHARGE_TELEMETRY, dft_measure_delay, clock_currentsense, enable_currentsense, CURRENTmeasureDELAY_0, CURRENTmeasureDELAY_1, kelvin_GNDcurrentsense, IP_CURRENTSENSEchargeMAIN1);
 inout [4:0] tmi;
 input  ICAP;
 input  VCAP;
@@ -363,6 +378,7 @@ input  SIMPV;
 input  VCAPP5;
 output  dft_ok;
 inout  ICHARGE;
+output  GMCHARGE;
 input  CELG59462;
 input  CELV96848;
 input  PORB97836;
@@ -370,6 +386,7 @@ output  ok_icharge;
 input  CELSUB40948;
 input  IP_5edb1fba;
 input  IP_710ca24c;
+input  IP_d9771bce;
 output  dft_startup;
 input  mode_stepdown;
 input  measure_icharge;
@@ -389,6 +406,8 @@ wire [4:0] tmi;
 wire [6:0] trim_csainput;
 wire [6:0] trim_csaoutput;
 wire [1:0] delay;
+wire [6:0] trim_vbuffer_negative;
+wire [6:0] trim_vbuffer_positive;
 wire [2:0] factory_adjust_resistor;
 wire [1:0] a;
 wire [7:0] ten;
@@ -399,27 +418,40 @@ wire [7:0] drm1;
 wire [7:0] drm2;
 wire [7:0] drm3;
 wire [7:0] drm4;
+wire [7:0] drm5;
+wire [7:0] drm6;
 wire [7:0] por0;
 wire [7:0] por1;
 wire [7:0] por2;
 wire [7:0] por3;
 wire [7:0] por4;
+wire [7:0] por5;
+wire [7:0] por6;
 
 // ------------------------ Networks ---------------------
 VESPAasmINPUT3 XU1 (
-.o(net_184),
-.i0(net_178),
-.i1(net_185),
-.i2(net_180),
+.o(net_197),
+.i0(net_193),
+.i1(net_199),
+.i2(net_198),
 .Tstate(enable_currentsense),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
+VESPAasmINPUT1 XU10 (
+.o(net_191),
+.i0(measure_icharge),
+.Tstate(net_202),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
+);
+
 VESPAasmINPUT1 XU15 (
-.o(net_181),
-.i0(net_124),
+.o(net_194),
+.i0(net_204),
 .Tstate(enable_currentsense),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -427,8 +459,8 @@ VESPAasmINPUT1 XU15 (
 );
 
 VESPAasmINPUT1 XU16 (
-.o(net_188),
-.i0(net_126),
+.o(net_203),
+.i0(net_206),
 .Tstate(enable_currentsense),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -436,7 +468,7 @@ VESPAasmINPUT1 XU16 (
 );
 
 VESPAasmINPUT1 XU5 (
-.o(net_175),
+.o(net_189),
 .i0(clock_currentsense),
 .Tstate(enable_currentsense),
 .CELG59462(CELG59462),
@@ -447,14 +479,14 @@ VESPAasmINPUT1 XU5 (
 VESPAdftpulse XU6 (
 .stop(ok_icharge),
 .pulse(dft_measure_delay),
-.start(net_183),
+.start(net_196),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU7 (
-.o(net_183),
+.o(net_196),
 .i0(ok_currentsense),
 .Tstate(measure_icharge),
 .CELG59462(CELG59462),
@@ -472,7 +504,7 @@ VESPAdftpulse XU8 (
 );
 
 dbuf_e926e395 XU2 (
-.i(net_184),
+.i(net_197),
 .o(dft_ok),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -480,7 +512,7 @@ dbuf_e926e395 XU2 (
 );
 
 dbuf_e926e395 XU4 (
-.i(net_189),
+.i(net_205),
 .o(ok_icharge),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -488,15 +520,15 @@ dbuf_e926e395 XU4 (
 );
 
 inv_12e192f5 XU9 (
-.i(net_125),
-.o(net_126),
+.i(net_204),
+.o(net_206),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU11 (
-.i(net_184),
+.i(net_197),
 .o(ok_currentsense),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -504,23 +536,23 @@ dbuf_e926e395 XU11 (
 );
 
 nor2_ee112582 XU12 (
-.o(net_122),
-.i0(net_176),
-.i1(net_186),
+.o(net_138),
+.i0(net_190),
+.i1(net_200),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 inv_12e192f5 XU13 (
-.i(net_122),
-.o(net_185),
+.i(net_138),
+.o(net_199),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
-currentsenseamplifier_1ad8924d XCSA1 (
+currentsenseamplifier_3588e1e5 XCSA1 (
 .IP(IP_710ca24c),
 .RTN(kelvin_GNDcurrentsense),
 .CELG(CELG59462),
@@ -529,14 +561,14 @@ currentsenseamplifier_1ad8924d XCSA1 (
 .CELSUB(CELSUB40948),
 .trim_csainput({trim_csainput_710ca24c_6,trim_csainput_710ca24c_5,trim_csainput_710ca24c_4,trim_csainput_710ca24c_3,trim_csainput_710ca24c_2,trim_csainput_710ca24c_1,trim_csainput_710ca24c_0}),
 .trim_csaoutput({trim_csaoutput_710ca24c_6,trim_csaoutput_710ca24c_5,trim_csaoutput_710ca24c_4,trim_csaoutput_710ca24c_3,trim_csaoutput_710ca24c_2,trim_csaoutput_710ca24c_1,trim_csaoutput_710ca24c_0}),
-.ok_currentsenseamplifier(net_186),
+.ok_currentsenseamplifier(net_200),
 .INN_CURRENTSENSEAMPLIFIER(ICAP),
 .INP_CURRENTSENSEAMPLIFIER(VCAP),
-.OUT_CURRENTSENSEAMPLIFIER(net_187),
-.enable_currentsenseamplifier(net_188)
+.OUT_CURRENTSENSEAMPLIFIER(net_201),
+.enable_currentsenseamplifier(net_203)
 );
 
-currentsenseamplifier_1ad8924d XCSA2 (
+currentsenseamplifier_3588e1e5 XCSA2 (
 .IP(IP_5edb1fba),
 .RTN(kelvin_GNDcurrentsense),
 .CELG(CELG59462),
@@ -545,29 +577,29 @@ currentsenseamplifier_1ad8924d XCSA2 (
 .CELSUB(CELSUB40948),
 .trim_csainput({trim_csainput_5edb1fba_6,trim_csainput_5edb1fba_5,trim_csainput_5edb1fba_4,trim_csainput_5edb1fba_3,trim_csainput_5edb1fba_2,trim_csainput_5edb1fba_1,trim_csainput_5edb1fba_0}),
 .trim_csaoutput({trim_csaoutput_5edb1fba_6,trim_csaoutput_5edb1fba_5,trim_csaoutput_5edb1fba_4,trim_csaoutput_5edb1fba_3,trim_csaoutput_5edb1fba_2,trim_csaoutput_5edb1fba_1,trim_csaoutput_5edb1fba_0}),
-.ok_currentsenseamplifier(net_176),
+.ok_currentsenseamplifier(net_190),
 .INN_CURRENTSENSEAMPLIFIER(VCAP),
 .INP_CURRENTSENSEAMPLIFIER(ICAP),
-.OUT_CURRENTSENSEAMPLIFIER(net_177),
-.enable_currentsenseamplifier(net_181)
+.OUT_CURRENTSENSEAMPLIFIER(net_192),
+.enable_currentsenseamplifier(net_194)
 );
 
 amux2_a0dc83ed Xamux1 (
 .O(ICHARGE),
-.I0(net_177),
-.I1(net_187),
+.I0(net_192),
+.I1(net_201),
 .CELG(CELG59462),
-.amux(net_188),
+.amux(net_203),
 .SIMPV(SIMPV),
 .CELSUB(CELSUB40948)
 );
 
 delayclock_58511202 Xdelay1 (
-.in(measure_icharge),
-.out(net_189),
+.in(net_191),
+.out(net_205),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.clock(net_175),
+.clock(net_189),
 .delay({CURRENTmeasureDELAY_1,CURRENTmeasureDELAY_0}),
 .CELSUB(CELSUB40948),
 .celeraporb(PORB97836)
@@ -575,27 +607,19 @@ delayclock_58511202 Xdelay1 (
 
 delayfixed_e39efda7 Xdelay2 (
 .i(mode_stepdown),
-.o(net_124),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
-);
-
-delayfixed_9bfc107c Xdelay3 (
-.i(mode_stepdown),
-.o(net_125),
+.o(net_204),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
 );
 
 switchtswitch_4b165e0d Xswitch1 (
-.I(net_182),
+.I(net_188),
 .O(ICHARGE_TELEMETRY),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.enable_switch(net_183)
+.enable_switch(net_191)
 );
 
 switchpulldown_00288888 Xswitch2 (
@@ -603,24 +627,40 @@ switchpulldown_00288888 Xswitch2 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.enable_switchb(net_183)
+.enable_switchb(net_191)
 );
 
-vbuffer_af041a10 Xvbuffer1 (
-.IN(net_179),
+vbuffer_d77a3a8f Xvbuffer1 (
+.IN(net_195),
 .IP(IP_d9771bce),
-.OUT(net_182),
+.OUT(net_188),
 .CELG(CELG59462),
 .SIMPV(SIMPV),
 .CELSUB(CELSUB40948),
-.ok_vbuffer(net_180),
-.enable_vbuffer(enable_currentsense_o),
+.GNDSENSE(kelvin_GNDcurrentsense),
+.ok_vbuffer(net_202),
+.enable_vbuffer(measure_icharge),
 .global_vbuffer(global_vbuffer_d9771bce_Xvbuffer1)
+);
+
+vbuffer_bccfdb66 Xvbuffer2 (
+.IN(ICHARGE),
+.IP(IP_6ba43ce2),
+.OUT(GMCHARGE),
+.CELG(CELG59462),
+.SIMPV(SIMPV),
+.CELSUB(CELSUB40948),
+.GNDSENSE(kelvin_GNDcurrentsense),
+.ok_vbuffer(net_198),
+.enable_vbuffer(enable_currentsense_o),
+.global_vbuffer(global_vbuffer_6ba43ce2_Xvbuffer2),
+.trim_vbuffer_negative({trim_vbuffer_negative_6ba43ce2_6,trim_vbuffer_negative_6ba43ce2_5,trim_vbuffer_negative_6ba43ce2_4,trim_vbuffer_negative_6ba43ce2_3,trim_vbuffer_negative_6ba43ce2_2,trim_vbuffer_negative_6ba43ce2_1,trim_vbuffer_negative_6ba43ce2_0}),
+.trim_vbuffer_positive({trim_vbuffer_positive_6ba43ce2_6,trim_vbuffer_positive_6ba43ce2_5,trim_vbuffer_positive_6ba43ce2_4,trim_vbuffer_positive_6ba43ce2_3,trim_vbuffer_positive_6ba43ce2_2,trim_vbuffer_positive_6ba43ce2_1,trim_vbuffer_positive_6ba43ce2_0})
 );
 
 resistor_4c6aba24 Xresistor1 (
 .RN(ICHARGE),
-.RP(net_106),
+.RP(net_122),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
@@ -628,8 +668,8 @@ resistor_4c6aba24 Xresistor1 (
 );
 
 resistor_4c6aba24 Xresistor2 (
-.RN(net_106),
-.RP(net_114),
+.RN(net_122),
+.RP(net_129),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
@@ -638,55 +678,59 @@ resistor_4c6aba24 Xresistor2 (
 
 amplifier_0e1b07e7 Xamplifier1 (
 .IP(IP_5df77333),
-.INN(net_179),
-.INP(net_114),
-.OUT(net_179),
+.INN(net_195),
+.INP(net_129),
+.OUT(net_195),
 .CELG(CELG59462),
 .SIMPV(SIMPV),
 .CELSUB(CELSUB40948),
-.ok_amplifier(net_178),
+.ok_amplifier(net_193),
 .enable_amplifier(enable_currentsense_o),
 .global_amplifier(global_amplifier_5df77333_Xamplifier1)
 );
 
 capacitorfixed_95ad68ab Xcapacitor1 (
 .CN(kelvin_GNDcurrentsense),
-.CP(net_114)
+.CP(net_129)
 );
 
 capacitorfixed_7d0db12c Xcapacitor2 (
-.CN(net_106),
-.CP(net_179)
+.CN(net_122),
+.CP(net_195)
 );
 
-DFTtm8t dft_hex0x25 (
+DFTtm8t dft_hex0x2E (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x25_ten_7,noconn_dft_hex0x25_ten_6,noconn_dft_hex0x25_ten_5,noconn_dft_hex0x25_ten_4,noconn_dft_hex0x25_ten_3,noconn_dft_hex0x25_ten_2,global_vbuffer_d9771bce_Xvbuffer1,global_amplifier_5df77333_Xamplifier1}),
-.tma({a0,a0,a1,a0,a0,a1,a0,a1}),
+.ten({noconn_dft_hex0x2E_ten_7,noconn_dft_hex0x2E_ten_6,noconn_dft_hex0x2E_ten_5,noconn_dft_hex0x2E_ten_4,noconn_dft_hex0x2E_ten_3,global_vbuffer_6ba43ce2_Xvbuffer2,global_vbuffer_d9771bce_Xvbuffer1,global_amplifier_5df77333_Xamplifier1}),
+.tma({a0,a0,a1,a0,a1,a1,a1,a0}),
 .tmi(tmi[4:0])
 );
 
-drm40 drm_hex0x0B (
+drm56 drm_hex0x0E (
 .G(CELG59462),
 .V(CELV96848),
 .d0(c0),
 .d1(c1),
-.id({c0,c0,c0,c0,c1,c0,c1,c1}),
+.id({c0,c0,c0,c0,c1,c1,c1,c0}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm40_drm0_7,trim_csainput_710ca24c_6,trim_csainput_710ca24c_5,trim_csainput_710ca24c_4,trim_csainput_710ca24c_3,trim_csainput_710ca24c_2,trim_csainput_710ca24c_1,trim_csainput_710ca24c_0}),
-.drm1({noconn_drm40_drm1_7,trim_csaoutput_710ca24c_6,trim_csaoutput_710ca24c_5,trim_csaoutput_710ca24c_4,trim_csaoutput_710ca24c_3,trim_csaoutput_710ca24c_2,trim_csaoutput_710ca24c_1,trim_csaoutput_710ca24c_0}),
-.drm2({noconn_drm40_drm2_7,trim_csainput_5edb1fba_6,trim_csainput_5edb1fba_5,trim_csainput_5edb1fba_4,trim_csainput_5edb1fba_3,trim_csainput_5edb1fba_2,trim_csainput_5edb1fba_1,trim_csainput_5edb1fba_0}),
-.drm3({noconn_drm40_drm3_7,trim_csaoutput_5edb1fba_6,trim_csaoutput_5edb1fba_5,trim_csaoutput_5edb1fba_4,trim_csaoutput_5edb1fba_3,trim_csaoutput_5edb1fba_2,trim_csaoutput_5edb1fba_1,trim_csaoutput_5edb1fba_0}),
-.drm4({noconn_drm40_drm4_7,noconn_drm40_drm4_6,factory_adjust_resistor_8855f5d6_2,factory_adjust_resistor_8855f5d6_1,factory_adjust_resistor_8855f5d6_0,factory_adjust_resistor_355938d3_2,factory_adjust_resistor_355938d3_1,factory_adjust_resistor_355938d3_0}),
+.drm0({noconn_drm56_drm0_7,trim_csainput_710ca24c_6,trim_csainput_710ca24c_5,trim_csainput_710ca24c_4,trim_csainput_710ca24c_3,trim_csainput_710ca24c_2,trim_csainput_710ca24c_1,trim_csainput_710ca24c_0}),
+.drm1({noconn_drm56_drm1_7,trim_csaoutput_710ca24c_6,trim_csaoutput_710ca24c_5,trim_csaoutput_710ca24c_4,trim_csaoutput_710ca24c_3,trim_csaoutput_710ca24c_2,trim_csaoutput_710ca24c_1,trim_csaoutput_710ca24c_0}),
+.drm2({noconn_drm56_drm2_7,trim_csainput_5edb1fba_6,trim_csainput_5edb1fba_5,trim_csainput_5edb1fba_4,trim_csainput_5edb1fba_3,trim_csainput_5edb1fba_2,trim_csainput_5edb1fba_1,trim_csainput_5edb1fba_0}),
+.drm3({noconn_drm56_drm3_7,trim_csaoutput_5edb1fba_6,trim_csaoutput_5edb1fba_5,trim_csaoutput_5edb1fba_4,trim_csaoutput_5edb1fba_3,trim_csaoutput_5edb1fba_2,trim_csaoutput_5edb1fba_1,trim_csaoutput_5edb1fba_0}),
+.drm4({noconn_drm56_drm4_7,noconn_drm56_drm4_6,factory_adjust_resistor_8855f5d6_2,factory_adjust_resistor_8855f5d6_1,factory_adjust_resistor_8855f5d6_0,factory_adjust_resistor_355938d3_2,factory_adjust_resistor_355938d3_1,factory_adjust_resistor_355938d3_0}),
+.drm5({noconn_drm56_drm5_7,trim_vbuffer_negative_6ba43ce2_6,trim_vbuffer_negative_6ba43ce2_5,trim_vbuffer_negative_6ba43ce2_4,trim_vbuffer_negative_6ba43ce2_3,trim_vbuffer_negative_6ba43ce2_2,trim_vbuffer_negative_6ba43ce2_1,trim_vbuffer_negative_6ba43ce2_0}),
+.drm6({noconn_drm56_drm6_7,trim_vbuffer_positive_6ba43ce2_6,trim_vbuffer_positive_6ba43ce2_5,trim_vbuffer_positive_6ba43ce2_4,trim_vbuffer_positive_6ba43ce2_3,trim_vbuffer_positive_6ba43ce2_2,trim_vbuffer_positive_6ba43ce2_1,trim_vbuffer_positive_6ba43ce2_0}),
 .por0({c0,c0,c0,c0,c0,c0,c0,c0}),
 .por1({c0,c0,c0,c0,c0,c0,c0,c0}),
 .por2({c0,c0,c0,c0,c0,c0,c0,c0}),
 .por3({c0,c0,c0,c0,c0,c0,c0,c0}),
 .por4({c0,c0,c1,c0,c0,c1,c0,c0}),
+.por5({c0,c0,c0,c0,c0,c0,c0,c0}),
+.por6({c0,c0,c0,c0,c0,c0,c0,c0}),
 .bypload(c0),
 .lastdrm(c0)
 );
@@ -701,7 +745,7 @@ PEBBLEand2 XPEBBLEand21 (
 );
 
 currentmirror_3a3e0620 XCurrentMirror1 (
-.I0(IP_d9771bce),
+.I0(IP_6ba43ce2),
 .I1(IP_5df77333),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -711,52 +755,56 @@ currentmirror_3a3e0620 XCurrentMirror1 (
 .enable_currentmirror(enable_currentsense)
 );
 
-STONEnoconn XNCnoconn_drm40_drm0_7 (
-.noconn(noconn_drm40_drm0_7)
+STONEnoconn XNCnoconn_drm56_drm0_7 (
+.noconn(noconn_drm56_drm0_7)
 );
 
-STONEnoconn XNCnoconn_drm40_drm1_7 (
-.noconn(noconn_drm40_drm1_7)
+STONEnoconn XNCnoconn_drm56_drm1_7 (
+.noconn(noconn_drm56_drm1_7)
 );
 
-STONEnoconn XNCnoconn_drm40_drm2_7 (
-.noconn(noconn_drm40_drm2_7)
+STONEnoconn XNCnoconn_drm56_drm2_7 (
+.noconn(noconn_drm56_drm2_7)
 );
 
-STONEnoconn XNCnoconn_drm40_drm3_7 (
-.noconn(noconn_drm40_drm3_7)
+STONEnoconn XNCnoconn_drm56_drm3_7 (
+.noconn(noconn_drm56_drm3_7)
 );
 
-STONEnoconn XNCnoconn_drm40_drm4_6 (
-.noconn(noconn_drm40_drm4_6)
+STONEnoconn XNCnoconn_drm56_drm4_6 (
+.noconn(noconn_drm56_drm4_6)
 );
 
-STONEnoconn XNCnoconn_drm40_drm4_7 (
-.noconn(noconn_drm40_drm4_7)
+STONEnoconn XNCnoconn_drm56_drm4_7 (
+.noconn(noconn_drm56_drm4_7)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x25_ten_2 (
-.noconn(noconn_dft_hex0x25_ten_2)
+STONEnoconn XNCnoconn_drm56_drm5_7 (
+.noconn(noconn_drm56_drm5_7)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x25_ten_3 (
-.noconn(noconn_dft_hex0x25_ten_3)
+STONEnoconn XNCnoconn_drm56_drm6_7 (
+.noconn(noconn_drm56_drm6_7)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x25_ten_4 (
-.noconn(noconn_dft_hex0x25_ten_4)
+STONEnoconn XNCnoconn_dft_hex0x2E_ten_3 (
+.noconn(noconn_dft_hex0x2E_ten_3)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x25_ten_5 (
-.noconn(noconn_dft_hex0x25_ten_5)
+STONEnoconn XNCnoconn_dft_hex0x2E_ten_4 (
+.noconn(noconn_dft_hex0x2E_ten_4)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x25_ten_6 (
-.noconn(noconn_dft_hex0x25_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x2E_ten_5 (
+.noconn(noconn_dft_hex0x2E_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x25_ten_7 (
-.noconn(noconn_dft_hex0x25_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x2E_ten_6 (
+.noconn(noconn_dft_hex0x2E_ten_6)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x2E_ten_7 (
+.noconn(noconn_dft_hex0x2E_ten_7)
 );
 
 endmodule

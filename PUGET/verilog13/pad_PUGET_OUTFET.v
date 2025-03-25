@@ -8,13 +8,13 @@ module STONEpad1 ( PAD );
 endmodule
 
 
-//Verilog HDL for "Esd", "ESDdiode" "functional"
+//Verilog HDL for "Esd", "ESDdiodeB2B" "functional"
 
 
-module ESDdiode ( N, P );
+module ESDdiodeB2B ( G1, G2 );
 
-  input P;
-  input N;
+  input G1;
+  input G2;
 endmodule
 
 
@@ -32,14 +32,9 @@ STONEpad1 XPAD1 (
 .PAD(OUTFET)
 );
 
-ESDdiode Xesd1_XPAD1 (
-.N(VCAPP5),
-.P(OUTFET)
-);
-
-ESDdiode Xesd2_XPAD1 (
-.N(OUTFET),
-.P(VCAP)
+ESDdiodeB2B Xesdb2b_XPAD1 (
+.G1(OUTFET),
+.G2(VCAPP5)
 );
 
 endmodule

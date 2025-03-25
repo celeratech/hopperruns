@@ -79,10 +79,10 @@ d1, d0 );
 endmodule
 
 
-//Celera:timingskew_83c285e6
+//Celera:timingskew_34d66942
 //Celera Confidential Symbol Generator
-//TYPE:rise Bits:5 with 2.0ns LSB
-module timingskew_83c285e6 (CELV,in,out,
+//TYPE:rise Bits:5 with 1.0ns LSB
+module timingskew_34d66942 (CELV,in,out,
 factory_timingskew,
 CELG,CELSUB);
 input CELV;
@@ -105,7 +105,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module DRIVERpugetBBM (tmi, on_top, CELG59462, CELV96848, bbm_topon, on_bottom, top_state, dft_bbmtop, top_status, CELSUB40948, bbm_bottomon, bottom_state, bottom_status, dft_bbmbottom, DRIVERconfiguration_0, DRIVERconfiguration_1);
+module DRIVERpugetBBM (tmi, on_top, CELG59462, CELV96848, bbm_topon, on_bottom, top_state, dft_bbmtop, top_status, CELSUB40948, bbm_bottomon, bottom_state, bottom_status, dft_bbmbottom, refresh_state, DRIVERconfiguration_0, DRIVERconfiguration_1);
 inout [4:0] tmi;
 output  on_top;
 input  CELG59462;
@@ -120,6 +120,7 @@ output  bbm_bottomon;
 input  bottom_state;
 input  bottom_status;
 output  dft_bbmbottom;
+input  refresh_state;
 input  DRIVERconfiguration_0;
 input  DRIVERconfiguration_1;
 
@@ -135,16 +136,16 @@ wire [4:0] factory_timingskew;
 
 // ------------------------ Networks ---------------------
 VESPAasmINPUT1 XU15 (
-.o(net_101),
-.i0(net_100),
-.Tstate(net_99),
+.o(net_111),
+.i0(net_110),
+.Tstate(net_109),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAdftpulse XU18 (
-.stop(net_101),
+.stop(net_111),
 .pulse(dft_bbmtop),
 .start(top_state),
 .CELG59462(CELG59462),
@@ -152,8 +153,17 @@ VESPAdftpulse XU18 (
 .CELSUB40948(CELSUB40948)
 );
 
+VESPAasmINPUT1 XU19 (
+.o(net_114),
+.i0(bottom_state),
+.Tstate(refresh_state),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
+);
+
 VESPAdftpulse XU20 (
-.stop(net_103),
+.stop(net_113),
 .pulse(dft_bbmbottom),
 .start(bottom_state),
 .CELG59462(CELG59462),
@@ -162,9 +172,9 @@ VESPAdftpulse XU20 (
 );
 
 VESPAasmINPUT1 XU23 (
-.o(net_103),
-.i0(net_105),
-.Tstate(net_104),
+.o(net_112),
+.i0(net_117),
+.Tstate(net_116),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
@@ -172,7 +182,7 @@ VESPAasmINPUT1 XU23 (
 
 inv_12e192f5 XU8 (
 .i(bottom_status),
-.o(net_98),
+.o(net_108),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
@@ -180,14 +190,14 @@ inv_12e192f5 XU8 (
 
 inv_12e192f5 XU9 (
 .i(top_status),
-.o(net_102),
+.o(net_115),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU10 (
-.i(net_103),
+.i(net_112),
 .o(bbm_bottomon),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -195,7 +205,7 @@ dbuf_e926e395 XU10 (
 );
 
 dbuf_e926e395 XU11 (
-.i(net_101),
+.i(net_111),
 .o(bbm_topon),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -203,7 +213,7 @@ dbuf_e926e395 XU11 (
 );
 
 dbuf_e926e395 XU12 (
-.i(net_103),
+.i(net_112),
 .o(on_bottom),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -211,15 +221,15 @@ dbuf_e926e395 XU12 (
 );
 
 inv_12e192f5 XU13 (
-.i(net_61),
-.o(net_105),
+.i(net_70),
+.o(net_117),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU16 (
-.i(net_101),
+.i(net_111),
 .o(on_top),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -227,37 +237,54 @@ dbuf_e926e395 XU16 (
 );
 
 nor2_ee112582 XU21 (
-.o(net_60),
+.o(net_69),
 .i0(DRIVERconfiguration_1),
-.i1(net_98),
+.i1(net_108),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 nor2_ee112582 XU22 (
-.o(net_61),
+.o(net_70),
 .i0(DRIVERconfiguration_0),
-.i1(net_102),
+.i1(net_115),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
+);
+
+nor2_ee112582 XU24 (
+.o(net_68),
+.i0(net_112),
+.i1(net_114),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
+);
+
+inv_12e192f5 XU27 (
+.i(net_68),
+.o(net_113),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 inv_12e192f5 XU28 (
-.i(net_60),
-.o(net_100),
+.i(net_69),
+.o(net_110),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
-drm16 drm_hex0x0D (
+drm16 drm_hex0x10 (
 .G(CELG59462),
 .V(CELV96848),
 .d0(a0),
 .d1(a1),
-.id({a0,a0,a0,a0,a1,a1,a0,a1}),
+.id({a0,a0,a0,a1,a0,a0,a0,a0}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
 .drm0({noconn_drm16_drm0_7,noconn_drm16_drm0_6,noconn_drm16_drm0_5,factory_timingskew_df1c561c_4,factory_timingskew_df1c561c_3,factory_timingskew_df1c561c_2,factory_timingskew_df1c561c_1,factory_timingskew_df1c561c_0}),
@@ -268,18 +295,18 @@ drm16 drm_hex0x0D (
 .lastdrm(a0)
 );
 
-timingskew_83c285e6 Xtimingskew1 (
+timingskew_34d66942 Xtimingskew1 (
 .in(top_state),
-.out(net_99),
+.out(net_109),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
 .factory_timingskew({factory_timingskew_df1c561c_4,factory_timingskew_df1c561c_3,factory_timingskew_df1c561c_2,factory_timingskew_df1c561c_1,factory_timingskew_df1c561c_0})
 );
 
-timingskew_83c285e6 Xtimingskew2 (
+timingskew_34d66942 Xtimingskew2 (
 .in(bottom_state),
-.out(net_104),
+.out(net_116),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),

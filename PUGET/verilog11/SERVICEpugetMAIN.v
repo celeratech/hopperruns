@@ -102,6 +102,17 @@ module SERVICEcomparatorVOUTSN (TAO,tdo,tmi,ovlo,SIMPV,TAEXT,CELG59462,CELV96848
   input  IP_SERVICEcomparatorVOUTSN1;
 endmodule
 
+//Celera Confidential Do Not Copy cdiode_a2942f6c
+//Celera Confidential Symbol Generator
+//Design:30V 50mA
+module cdiode_a2942f6c (CATHODE,ANODE,CELSUB);
+inout CATHODE;
+inout ANODE;
+input CELSUB;
+endmodule
+
+
+
 //Celera:dbuf_e926e395
 //Celera Confidential Symbol Generator
 //Digital Buffer
@@ -155,17 +166,6 @@ endmodule
 
 
 
-//Celera Confidential Do Not Copy cdiode_a2942f6c
-//Celera Confidential Symbol Generator
-//Design:30V 50mA
-module cdiode_a2942f6c (CATHODE,ANODE,CELSUB);
-inout CATHODE;
-inout ANODE;
-input CELSUB;
-endmodule
-
-
-
 //Celera:dff_e5264df5
 //Celera Confidential Symbol Generator
 //DFF latch
@@ -182,10 +182,10 @@ endmodule
 
 
 
-//Celera:delayfixed_7fc9a98e
+//Celera:delayfixed_5e2698b4
 //Celera Confidential Symbol Generator
 //TYPE:fixed Egde:fall
-module delayfixed_7fc9a98e (CELV,i,o,
+module delayfixed_5e2698b4 (CELV,i,o,
 CELG,CELSUB);
 input CELV;
 input i;
@@ -483,8 +483,8 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SERVICEpugetMAIN (IN, REF, TAO, tdo, tmi, porb, TAEXT, INTVCC, VCC2P5, VOUTSN, CELG59462, CELV96848, PORB97836, chrg_uvlo, kelvin_IN, CELBG83021, GNDservice, OKREF03249, ok_service, CELREF84329, CELSUB40948, IP_5400ae1a, IP_a3f87557, IP_a57f6755, IP_ad040b34, IP_cb3ddf0a, dft_over_in, kelvin_VCAP, sync_stepup, dft_ok_drvcc, kelvin_DRVCC, allow_charger, dft_ok_intvcc, dft_ok_vcc2p5, fault_service, kelvin_INTVCC, kelvin_VCC2P5, kelvin_VOUTSN, clock_sequencer, SENSE_G_05e8d170, kelvin_GNDservice, celkelvin_IN_04cc16be, hijack_enable_service, SERVICEconfiguration_0, SERVICEconfiguration_1, celkelvin_SGND_2b3a9b82, celkelvin_INTVCC_04cc16be, IP_SERVICEcomparatorVOUTSN1);
-input  IN;
+module SERVICEpugetMAIN (IN, REF, TAO, tdo, tmi, porb, TAEXT, INTVCC, VCC2P5, VOUTSN, CELG59462, CELV96848, PORB97836, chrg_uvlo, kelvin_IN, CELBG83021, GNDservice, OKREF03249, ok_service, CELREF84329, CELSUB40948, IP_5400ae1a, IP_a3f87557, IP_a57f6755, IP_ad040b34, IP_cb3ddf0a, dft_over_in, kelvin_VCAP, sync_stepup, dft_ok_drvcc, kelvin_DRVCC, allow_charger, dft_ok_intvcc, dft_ok_vcc2p5, fault_service, kelvin_INTVCC, kelvin_VCC2P5, kelvin_VOUTSN, clock_sequencer, SENSE_G_05e8d170, kelvin_GNDservice, hijack_enable_service, SERVICEconfiguration_0, SERVICEconfiguration_1, celkelvin_SGND_2b3a9b82, celkelvin_INTVCC_04cc16be, IP_SERVICEcomparatorVOUTSN1);
+inout  IN;
 output  REF;
 inout  TAO;
 inout  tdo;
@@ -525,7 +525,6 @@ inout  kelvin_VOUTSN;
 output  clock_sequencer;
 input  SENSE_G_05e8d170;
 inout  kelvin_GNDservice;
-input  celkelvin_IN_04cc16be;
 input  hijack_enable_service;
 input  SERVICEconfiguration_0;
 input  SERVICEconfiguration_1;
@@ -713,6 +712,12 @@ SERVICEcomparatorVOUTSN XVOUTSN (
 .IP_SERVICEcomparatorVOUTSN1(IP_SERVICEcomparatorVOUTSN1)
 );
 
+cdiode_a2942f6c XU2 (
+.ANODE(IN),
+.CELSUB(CELSUB40948),
+.CATHODE(net_250)
+);
+
 dbuf_e926e395 XU5 (
 .i(net_267),
 .o(sync_stepup),
@@ -867,7 +872,7 @@ dff_e5264df5 Xdff1 (
 .CELSUB(CELSUB40948)
 );
 
-delayfixed_7fc9a98e Xdelay1 (
+delayfixed_5e2698b4 Xdelay1 (
 .i(net_187),
 .o(net_251),
 .CELG(CELG59462),
@@ -907,7 +912,7 @@ delayclock_b658fa2c Xdelay4 (
 );
 
 vbias_02ef25fb Xvbias1 (
-.IN1(IN),
+.IN1(net_250),
 .CELG(CELG59462),
 .VBIAS(INTVCC),
 .CELSUB(CELSUB40948),
@@ -916,7 +921,7 @@ vbias_02ef25fb Xvbias1 (
 .ten_taiv2v5(ten_taiv2v5_dc68946b_Xvbias1),
 .global_vbias(global_vbias_dc68946b_Xvbias1),
 .ten_taiv1v0f(ten_taiv1v0f_dc68946b_Xvbias1),
-.celkelvin_IN1(celkelvin_IN_04cc16be),
+.celkelvin_IN1(net_250),
 .trim_vbiasneg({trim_vbiasneg_dc68946b_7,trim_vbiasneg_dc68946b_6,trim_vbiasneg_dc68946b_5,trim_vbiasneg_dc68946b_4,trim_vbiasneg_dc68946b_3,trim_vbiasneg_dc68946b_2,trim_vbiasneg_dc68946b_1,trim_vbiasneg_dc68946b_0}),
 .trim_vbiaspos({trim_vbiaspos_dc68946b_7,trim_vbiaspos_dc68946b_6,trim_vbiaspos_dc68946b_5,trim_vbiaspos_dc68946b_4,trim_vbiaspos_dc68946b_3,trim_vbiaspos_dc68946b_2,trim_vbiaspos_dc68946b_1,trim_vbiaspos_dc68946b_0}),
 .trim_vbiasref({trim_vbiasref_dc68946b_7,trim_vbiasref_dc68946b_6,trim_vbiasref_dc68946b_5,trim_vbiasref_dc68946b_4,trim_vbiasref_dc68946b_3,trim_vbiasref_dc68946b_2,trim_vbiasref_dc68946b_1,trim_vbiasref_dc68946b_0}),
@@ -966,7 +971,7 @@ reference_c3844cf3 Xreference1 (
 .global_reference(global_reference_3e4f0b79_Xreference1)
 );
 
-DFTtm8 dft_hex0x6F (
+DFTtm8 dft_hex0x77 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
@@ -976,26 +981,26 @@ DFTtm8 dft_hex0x6F (
 .tdi({a0,a0,a0,a0,a0,a0,a0,tdi_vbias_dc68946b_Xvbias1}),
 .tdo(tdo),
 .ten({ten_taifbvbias_dc68946b_Xvbias1,ten_taiv1v0f_dc68946b_Xvbias1,global_vbias_dc68946b_Xvbias1,ten_taiv2v5_dc68946b_Xvbias1,global_reference_3e4f0b79_Xreference1,ten_refbg_3e4f0b79_Xreference1,ten_ref_3e4f0b79_Xreference1,ten_05e8d170_Xoscillator1}),
-.tma({a0,a1,a1,a0,a1,a1,a1,a1}),
+.tma({a0,a1,a1,a1,a0,a1,a1,a1}),
 .tmi(tmi[4:0])
 );
 
-DFTtm8t dft_hex0x70 (
+DFTtm8t dft_hex0x78 (
 .G(CELG59462),
 .V(CELV96848),
 .a({b1,b0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x70_ten_7,noconn_dft_hex0x70_ten_6,noconn_dft_hex0x70_ten_5,noconn_dft_hex0x70_ten_4,noconn_dft_hex0x70_ten_3,global_vbuffer_a3f87557_Xvbuffer1,ten_enablevbias_dc68946b_Xvbias1,ten_tdiokvbias_dc68946b_Xvbias1}),
-.tma({b0,b1,b1,b1,b0,b0,b0,b0}),
+.ten({noconn_dft_hex0x78_ten_7,noconn_dft_hex0x78_ten_6,noconn_dft_hex0x78_ten_5,noconn_dft_hex0x78_ten_4,noconn_dft_hex0x78_ten_3,global_vbuffer_a3f87557_Xvbuffer1,ten_enablevbias_dc68946b_Xvbias1,ten_tdiokvbias_dc68946b_Xvbias1}),
+.tma({b0,b1,b1,b1,b1,b0,b0,b0}),
 .tmi(tmi[4:0])
 );
 
-drm64 drm_hex0x26 (
+drm64 drm_hex0x2D (
 .G(CELG59462),
 .V(CELV96848),
 .d0(d0),
 .d1(d1),
-.id({d0,d0,d1,d0,d0,d1,d1,d0}),
+.id({d0,d0,d1,d0,d1,d1,d0,d1}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
 .drm0({noconn_drm64_drm0_7,trim_oscillator_05e8d170_6,trim_oscillator_05e8d170_5,trim_oscillator_05e8d170_4,trim_oscillator_05e8d170_3,trim_oscillator_05e8d170_2,trim_oscillator_05e8d170_1,trim_oscillator_05e8d170_0}),
@@ -1018,12 +1023,12 @@ drm64 drm_hex0x26 (
 .lastdrm(d0)
 );
 
-drm16 drm_hex0x27 (
+drm16 drm_hex0x2E (
 .G(CELG59462),
 .V(CELV96848),
 .d0(e0),
 .d1(e1),
-.id({e0,e0,e1,e0,e0,e1,e1,e1}),
+.id({e0,e0,e1,e0,e1,e1,e1,e0}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
 .drm0({noconn_drm16_drm0_7,trim_vbuffer_negative_a3f87557_6,trim_vbuffer_negative_a3f87557_5,trim_vbuffer_negative_a3f87557_4,trim_vbuffer_negative_a3f87557_3,trim_vbuffer_negative_a3f87557_2,trim_vbuffer_negative_a3f87557_1,trim_vbuffer_negative_a3f87557_0}),
@@ -1108,24 +1113,24 @@ STONEnoconn XNCnoconn_drm64_drm4_7 (
 .noconn(noconn_drm64_drm4_7)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x70_ten_3 (
-.noconn(noconn_dft_hex0x70_ten_3)
+STONEnoconn XNCnoconn_dft_hex0x78_ten_3 (
+.noconn(noconn_dft_hex0x78_ten_3)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x70_ten_4 (
-.noconn(noconn_dft_hex0x70_ten_4)
+STONEnoconn XNCnoconn_dft_hex0x78_ten_4 (
+.noconn(noconn_dft_hex0x78_ten_4)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x70_ten_5 (
-.noconn(noconn_dft_hex0x70_ten_5)
+STONEnoconn XNCnoconn_dft_hex0x78_ten_5 (
+.noconn(noconn_dft_hex0x78_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x70_ten_6 (
-.noconn(noconn_dft_hex0x70_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x78_ten_6 (
+.noconn(noconn_dft_hex0x78_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x70_ten_7 (
-.noconn(noconn_dft_hex0x70_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x78_ten_7 (
+.noconn(noconn_dft_hex0x78_ten_7)
 );
 
 endmodule

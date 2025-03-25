@@ -4,8 +4,8 @@ module SERVICEconfiguration (tmi,CELG59462,CELV96848,CELSUB40948,SERVICEconfigur
   input  CELG59462;
   input  CELV96848;
   input  CELSUB40948;
-  output  SERVICEconfiguration_0;
-  output  SERVICEconfiguration_1;
+  input  SERVICEconfiguration_0;
+  input  SERVICEconfiguration_1;
 endmodule
 
 module SERVICEpugetDEBUG (TAO,tdo,tmi,CELG59462,CELV96848,ok_service,CELSUB40948,dft_over_in,dft_ok_drvcc,REF_SEQUENCER,allow_charger,dft_ok_intvcc,dft_ok_vcc2p5,fault_service,clock_sequencer,Hijack_enable_service);
@@ -27,8 +27,8 @@ module SERVICEpugetDEBUG (TAO,tdo,tmi,CELG59462,CELV96848,ok_service,CELSUB40948
   output  Hijack_enable_service;
 endmodule
 
-module SERVICEpugetMAIN (IN,REF,TAO,tdo,tmi,porb,TAEXT,INTVCC,VCC2P5,VOUTSN,CELG59462,CELV96848,PORB97836,chrg_uvlo,kelvin_IN,CELBG83021,GNDservice,OKREF03249,ok_service,CELREF84329,CELSUB40948,IP_5400ae1a,IP_a3f87557,IP_a57f6755,IP_ad040b34,IP_cb3ddf0a,dft_over_in,kelvin_VCAP,sync_stepup,dft_ok_drvcc,kelvin_DRVCC,allow_charger,dft_ok_intvcc,dft_ok_vcc2p5,fault_service,kelvin_INTVCC,kelvin_VCC2P5,kelvin_VOUTSN,clock_sequencer,SENSE_G_05e8d170,kelvin_GNDservice,celkelvin_IN_04cc16be,hijack_enable_service,SERVICEconfiguration_0,SERVICEconfiguration_1,celkelvin_SGND_2b3a9b82,celkelvin_INTVCC_04cc16be,IP_SERVICEcomparatorVOUTSN1);
-  input  IN;
+module SERVICEpugetMAIN (IN,REF,TAO,tdo,tmi,porb,TAEXT,INTVCC,VCC2P5,VOUTSN,CELG59462,CELV96848,PORB97836,chrg_uvlo,kelvin_IN,CELBG83021,GNDservice,OKREF03249,ok_service,CELREF84329,CELSUB40948,IP_5400ae1a,IP_a3f87557,IP_a57f6755,IP_ad040b34,IP_cb3ddf0a,dft_over_in,kelvin_VCAP,sync_stepup,dft_ok_drvcc,kelvin_DRVCC,allow_charger,dft_ok_intvcc,dft_ok_vcc2p5,fault_service,kelvin_INTVCC,kelvin_VCC2P5,kelvin_VOUTSN,clock_sequencer,SENSE_G_05e8d170,kelvin_GNDservice,hijack_enable_service,SERVICEconfiguration_0,SERVICEconfiguration_1,celkelvin_SGND_2b3a9b82,celkelvin_INTVCC_04cc16be,IP_SERVICEcomparatorVOUTSN1);
+  inout  IN;
   output  REF;
   inout  TAO;
   inout  tdo;
@@ -69,7 +69,6 @@ module SERVICEpugetMAIN (IN,REF,TAO,tdo,tmi,porb,TAEXT,INTVCC,VCC2P5,VOUTSN,CELG
   output  clock_sequencer;
   input  SENSE_G_05e8d170;
   inout  kelvin_GNDservice;
-  input  celkelvin_IN_04cc16be;
   input  hijack_enable_service;
   input  SERVICEconfiguration_0;
   input  SERVICEconfiguration_1;
@@ -79,8 +78,8 @@ module SERVICEpugetMAIN (IN,REF,TAO,tdo,tmi,porb,TAEXT,INTVCC,VCC2P5,VOUTSN,CELG
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module SERVICEpuget (IN, TAO, tdo, tmi, porb, TAEXT, INTVCC, VCC2P5, VOUTSN, CELG59462, CELV96848, PORB97836, chrg_uvlo, kelvin_IN, CELBG83021, GNDservice, OKREF03249, ok_service, CELREF84329, CELSUB40948, IP_5400ae1a, IP_a3f87557, IP_a57f6755, IP_ad040b34, IP_cb3ddf0a, kelvin_VCAP, sync_stepup, kelvin_DRVCC, REF_SEQUENCER, allow_charger, fault_service, kelvin_INTVCC, kelvin_VCC2P5, kelvin_VOUTSN, clock_sequencer, SENSE_G_05e8d170, kelvin_GNDservice, celkelvin_IN_04cc16be, celkelvin_SGND_2b3a9b82, celkelvin_INTVCC_04cc16be, IP_SERVICEcomparatorVOUTSN1);
-input  IN;
+module SERVICEpuget (IN, TAO, tdo, tmi, porb, TAEXT, INTVCC, VCC2P5, VOUTSN, CELG59462, CELV96848, PORB97836, chrg_uvlo, kelvin_IN, CELBG83021, GNDservice, OKREF03249, ok_service, CELREF84329, CELSUB40948, IP_5400ae1a, IP_a3f87557, IP_a57f6755, IP_ad040b34, IP_cb3ddf0a, kelvin_VCAP, sync_stepup, kelvin_DRVCC, REF_SEQUENCER, allow_charger, fault_service, kelvin_INTVCC, kelvin_VCC2P5, kelvin_VOUTSN, clock_sequencer, SENSE_G_05e8d170, kelvin_GNDservice, celkelvin_SGND_2b3a9b82, celkelvin_INTVCC_04cc16be, IP_SERVICEcomparatorVOUTSN1);
+inout  IN;
 inout  TAO;
 inout  tdo;
 inout [4:0] tmi;
@@ -117,7 +116,6 @@ inout  kelvin_VOUTSN;
 output  clock_sequencer;
 input  SENSE_G_05e8d170;
 inout  kelvin_GNDservice;
-input  celkelvin_IN_04cc16be;
 input  celkelvin_SGND_2b3a9b82;
 input  celkelvin_INTVCC_04cc16be;
 input  IP_SERVICEcomparatorVOUTSN1;
@@ -197,7 +195,6 @@ SERVICEpugetMAIN XMAIN (
 .clock_sequencer(clock_sequencer),
 .SENSE_G_05e8d170(SENSE_G_05e8d170),
 .kelvin_GNDservice(kelvin_GNDservice),
-.celkelvin_IN_04cc16be(celkelvin_IN_04cc16be),
 .hijack_enable_service(net_99),
 .SERVICEconfiguration_0(net_77),
 .SERVICEconfiguration_1(net_78),

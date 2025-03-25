@@ -146,13 +146,13 @@ CAPtestSEQUENCER_Rev3_DYES_0 XMAIN (
 .equal_test(equal_test),
 .state_test(state_test),
 .CELSUB40948(CELSUB40948),
-.enableFAULT(net_90),
+.enableFAULT(CAPtestSEQUENCER_Rev3_statecontrol_d20900dd_4),
 .state_count(state_count),
 .done_captest(done_captest),
-.STATEcontrol0(net_86),
-.STATEcontrol1(net_87),
-.STATEcontrol2(net_88),
-.STATEcontrol3(net_89),
+.STATEcontrol0(CAPtestSEQUENCER_Rev3_statecontrol_d20900dd_0),
+.STATEcontrol1(CAPtestSEQUENCER_Rev3_statecontrol_d20900dd_1),
+.STATEcontrol2(CAPtestSEQUENCER_Rev3_statecontrol_d20900dd_2),
+.STATEcontrol3(CAPtestSEQUENCER_Rev3_statecontrol_d20900dd_3),
 .clock_captest(clock_captest),
 .fault_captest(fault_captest),
 .start_captest(start_captest),
@@ -311,7 +311,7 @@ dftprobeModel0_e1d1778d XU72 (
 .CELSUB(CELSUB40948)
 );
 
-DFTtm8d dft_hex0x15 (
+DFTtm8d dft_hex0x13 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
@@ -319,11 +319,11 @@ DFTtm8d dft_hex0x15 (
 .tdi({tdi_5ad50744_XU64,tdi_a32c171f_XU63,tdi_e3c7c0eb_XU62,tdi_c03efad9_XU61,tdi_408cc395_XU60,tdi_441bc2aa_XU59,tdi_793813f0_XU58,tdi_4b11ddad_XU57}),
 .tdo(tdo),
 .ten({ten_5ad50744_XU64,ten_a32c171f_XU63,ten_e3c7c0eb_XU62,ten_c03efad9_XU61,ten_408cc395_XU60,ten_441bc2aa_XU59,ten_793813f0_XU58,ten_4b11ddad_XU57}),
-.tma({a0,a0,a0,a1,a0,a1,a0,a1}),
+.tma({a0,a0,a0,a1,a0,a0,a1,a1}),
 .tmi(tmi[4:0])
 );
 
-DFTtm8d dft_hex0x16 (
+DFTtm8d dft_hex0x14 (
 .G(CELG59462),
 .V(CELV96848),
 .a({b1,b0}),
@@ -331,7 +331,7 @@ DFTtm8d dft_hex0x16 (
 .tdi({tdi_7036268c_XU72,tdi_0f890394_XU71,tdi_72417211_XU70,tdi_155ab3ce_XU69,tdi_79e888b7_XU68,tdi_e6afea4c_XU67,tdi_9b308900_XU66,tdi_c76706e3_XU65}),
 .tdo(tdo),
 .ten({ten_7036268c_XU72,ten_0f890394_XU71,ten_72417211_XU70,ten_155ab3ce_XU69,ten_79e888b7_XU68,ten_e6afea4c_XU67,ten_9b308900_XU66,ten_c76706e3_XU65}),
-.tma({b0,b0,b0,b1,b0,b1,b1,b0}),
+.tma({b0,b0,b0,b1,b0,b1,b0,b0}),
 .tmi(tmi[4:0])
 );
 
@@ -343,7 +343,7 @@ drm8 drm_hex0x06 (
 .id({d0,d0,d0,d0,d0,d1,d1,d0}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,net_90,net_89,net_88,net_87,net_86}),
+.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,CAPtestSEQUENCER_Rev3_statecontrol_d20900dd_4,CAPtestSEQUENCER_Rev3_statecontrol_d20900dd_3,CAPtestSEQUENCER_Rev3_statecontrol_d20900dd_2,CAPtestSEQUENCER_Rev3_statecontrol_d20900dd_1,CAPtestSEQUENCER_Rev3_statecontrol_d20900dd_0}),
 .por0({d0,d0,d0,d1,d0,d0,d0,d0}),
 .bypload(d0),
 .lastdrm(d0)

@@ -15,7 +15,7 @@ module CAPACITORGOODpugetDEBUG (TAO,tdo,tmi,CELG59462,CELV96848,CELSUB40948,dft_
   output  hijack_enable_capacitorgood;
 endmodule
 
-module CAPACITORGOODpugetMAIN (tmi,CAPFB,CAPGD,SIMPV,CELG59462,CELV96848,chrg_cappg,CELSUB40948,IP_91046528,dft_startup,dft_capdetect,dft_risedelay,DFT_CAPREFinput,ok_capacitorgood,REF_CAPACITORGOOD,hijack_CAPGDoutput,enable_capacitorgood,kelvin_GNDcapacitorgood);
+module CAPACITORGOODpugetMAIN (tmi,CAPFB,CAPGD,SIMPV,CELG59462,CELV96848,chrg_cappg,CELSUB40948,dft_startup,dft_capdetect,dft_risedelay,DFT_CAPREFinput,ok_capacitorgood,REF_CAPACITORGOOD,hijack_CAPGDoutput,enable_capacitorgood,kelvin_GNDcapacitorgood,IP_CAPACITORGOODpugetMAIN1);
   input [4:0] tmi;
   input  CAPFB;
   inout  CAPGD;
@@ -24,20 +24,20 @@ module CAPACITORGOODpugetMAIN (tmi,CAPFB,CAPGD,SIMPV,CELG59462,CELV96848,chrg_ca
   input  CELV96848;
   output  chrg_cappg;
   input  CELSUB40948;
-  input  IP_91046528;
   output  dft_startup;
   output  dft_capdetect;
   output  dft_risedelay;
   inout  DFT_CAPREFinput;
   output  ok_capacitorgood;
-  inout  REF_CAPACITORGOOD;
+  input  REF_CAPACITORGOOD;
   input  hijack_CAPGDoutput;
   input  enable_capacitorgood;
   inout  kelvin_GNDcapacitorgood;
+  input  IP_CAPACITORGOODpugetMAIN1;
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module CAPACITORGOODpuget (TAO, tdo, tmi, CAPFB, CAPGD, SIMPV, CELG59462, CELV96848, chrg_cappg, CELSUB40948, IP_91046528, ok_capacitorgood, REF_CAPACITORGOOD, enable_capacitorgood, kelvin_GNDcapacitorgood);
+module CAPACITORGOODpuget (TAO, tdo, tmi, CAPFB, CAPGD, SIMPV, CELG59462, CELV96848, chrg_cappg, CELSUB40948, ok_capacitorgood, REF_CAPACITORGOOD, enable_capacitorgood, kelvin_GNDcapacitorgood, IP_CAPACITORGOODpugetMAIN1);
 inout  TAO;
 inout  tdo;
 input [4:0] tmi;
@@ -48,11 +48,11 @@ input  CELG59462;
 input  CELV96848;
 output  chrg_cappg;
 input  CELSUB40948;
-input  IP_91046528;
 output  ok_capacitorgood;
-inout  REF_CAPACITORGOOD;
+input  REF_CAPACITORGOOD;
 input  enable_capacitorgood;
 inout  kelvin_GNDcapacitorgood;
+input  IP_CAPACITORGOODpugetMAIN1;
 
 
 // ------------------------ Wires ------------------------
@@ -84,7 +84,6 @@ CAPACITORGOODpugetMAIN XMAIN (
 .CELV96848(CELV96848),
 .chrg_cappg(chrg_cappg),
 .CELSUB40948(CELSUB40948),
-.IP_91046528(IP_91046528),
 .dft_startup(net_51),
 .dft_capdetect(net_50),
 .dft_risedelay(net_52),
@@ -93,7 +92,8 @@ CAPACITORGOODpugetMAIN XMAIN (
 .REF_CAPACITORGOOD(REF_CAPACITORGOOD),
 .hijack_CAPGDoutput(net_49),
 .enable_capacitorgood(net_47),
-.kelvin_GNDcapacitorgood(kelvin_GNDcapacitorgood)
+.kelvin_GNDcapacitorgood(kelvin_GNDcapacitorgood),
+.IP_CAPACITORGOODpugetMAIN1(IP_CAPACITORGOODpugetMAIN1)
 );
 
 endmodule

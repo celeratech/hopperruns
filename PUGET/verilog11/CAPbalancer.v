@@ -17,7 +17,7 @@ module CAPbalancerDRIVERdebug (TAO,tdo,tmi,CELG59462,CELV96848,dft_gate1,CELSUB4
   output  hijack_MAXIMUMchannel_1;
 endmodule
 
-module CAPbalancerDRIVERmain (IN,tmi,CAP1,CAP2,CAP3,CAP4,SIMPV,CAPRTN,CELG59462,CELV96848,PORB97836,dft_gate1,CELSUB40948,IP_65fbc463,IP_9540da5e,IP_aa20537a,IP_dd2307df,dft_startup,clock_balancer,active_balancer,enable_balancer,MAXIMUMchannel_0,MAXIMUMchannel_1);
+module CAPbalancerDRIVERmain (IN,tmi,CAP1,CAP2,CAP3,CAP4,SIMPV,CAPRTN,CELG59462,CELV96848,PORB97836,dft_gate1,CELSUB40948,IP_5557856a,IP_9320ef1e,IP_9e172b94,IP_b76ea97c,dft_startup,clock_balancer,active_balancer,enable_balancer,MAXIMUMchannel_0,MAXIMUMchannel_1);
   input  IN;
   input [4:0] tmi;
   inout  CAP1;
@@ -31,10 +31,10 @@ module CAPbalancerDRIVERmain (IN,tmi,CAP1,CAP2,CAP3,CAP4,SIMPV,CAPRTN,CELG59462,
   input  PORB97836;
   inout  dft_gate1;
   input  CELSUB40948;
-  input  IP_65fbc463;
-  input  IP_9540da5e;
-  input  IP_aa20537a;
-  input  IP_dd2307df;
+  input  IP_5557856a;
+  input  IP_9320ef1e;
+  input  IP_9e172b94;
+  input  IP_b76ea97c;
   output  dft_startup;
   input  clock_balancer;
   output  active_balancer;
@@ -44,7 +44,7 @@ module CAPbalancerDRIVERmain (IN,tmi,CAP1,CAP2,CAP3,CAP4,SIMPV,CAPRTN,CELG59462,
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module CAPbalancer (IN, TAO, tdo, tmi, CAP1, CAP2, CAP3, CAP4, SIMPV, CAPRTN, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_65fbc463, IP_9540da5e, IP_aa20537a, IP_dd2307df, clock_balancer, active_balancer, enable_balancer, MAXIMUMchannel_0, MAXIMUMchannel_1);
+module CAPbalancer (IN, TAO, tdo, tmi, CAP1, CAP2, CAP3, CAP4, SIMPV, CAPRTN, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_5557856a, IP_9320ef1e, IP_9e172b94, IP_b76ea97c, clock_balancer, active_balancer, enable_balancer, MAXIMUMchannel_0, MAXIMUMchannel_1);
 input  IN;
 inout  TAO;
 inout  tdo;
@@ -59,10 +59,10 @@ input  CELG59462;
 input  CELV96848;
 input  PORB97836;
 input  CELSUB40948;
-input  IP_65fbc463;
-input  IP_9540da5e;
-input  IP_aa20537a;
-input  IP_dd2307df;
+input  IP_5557856a;
+input  IP_9320ef1e;
+input  IP_9e172b94;
+input  IP_b76ea97c;
 input  clock_balancer;
 output  active_balancer;
 input  enable_balancer;
@@ -106,10 +106,10 @@ CAPbalancerDRIVERmain XMAIN (
 .PORB97836(PORB97836),
 .dft_gate1(net_69),
 .CELSUB40948(CELSUB40948),
-.IP_65fbc463(IP_65fbc463),
-.IP_9540da5e(IP_9540da5e),
-.IP_aa20537a(IP_aa20537a),
-.IP_dd2307df(IP_dd2307df),
+.IP_5557856a(IP_5557856a),
+.IP_9320ef1e(IP_9320ef1e),
+.IP_9e172b94(IP_9e172b94),
+.IP_b76ea97c(IP_b76ea97c),
 .dft_startup(net_68),
 .clock_balancer(clock_balancer),
 .active_balancer(active_balancer),

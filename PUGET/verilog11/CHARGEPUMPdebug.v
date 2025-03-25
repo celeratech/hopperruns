@@ -203,7 +203,7 @@ DFThijack Xdfthijack5 (
 .ten_hijacki(ten_hijacki_d8f80503_Xdfthijack5)
 );
 
-DFTtm8 dft_hex0x1B (
+DFTtm8 dft_hex0x24 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
@@ -213,11 +213,11 @@ DFTtm8 dft_hex0x1B (
 .tdi({tdi_1d720465_XUCHARGEPUMPss,tdi_0a3ae4a4_XUCHARGEPUMPskip,tdi_a1f92949_XUCHARGEPUMPp2skew,tdi_826259ea_XUCHARGEPUMPp1skew,tdi_610d1e9c_XUCHARGEPUMPok1,tdi_26725a90_XUCHARGEPUMPfaulttime,tdi_5a552dc2_XUCHARGEPUMPfault,tdi_f742ce07_XUCHARGEPUMPclkpower}),
 .tdo(tdo),
 .ten({ten_0a3ae4a4_XUCHARGEPUMPskip,ten_a1f92949_XUCHARGEPUMPp2skew,ten_826259ea_XUCHARGEPUMPp1skew,ten_610d1e9c_XUCHARGEPUMPok1,ten_26725a90_XUCHARGEPUMPfaulttime,ten_5a552dc2_XUCHARGEPUMPfault,ten_a628662b_XUCHARGEPUMPdiff,ten_f742ce07_XUCHARGEPUMPclkpower}),
-.tma({a0,a0,a0,a1,a1,a0,a1,a1}),
+.tma({a0,a0,a1,a0,a0,a1,a0,a0}),
 .tmi(tmi[4:0])
 );
 
-DFTtm8d dft_hex0x1C (
+DFTtm8d dft_hex0x25 (
 .G(CELG59462),
 .V(CELV96848),
 .a({b1,b0}),
@@ -225,17 +225,17 @@ DFTtm8d dft_hex0x1C (
 .tdi({b0,b0,b0,b0,b0,b0,tdi_138599af_XUCHARGEPUMPstartup,tdi_d1b49413_XUCHARGEPUMPssdone}),
 .tdo(tdo),
 .ten({ten_hijack_f4a221a1_Xdfthijack3,ten_hijacki_94fcf55c_Xdfthijack2,ten_hijack_94fcf55c_Xdfthijack2,ten_hijacki_89591062_Xdfthijack1,ten_hijack_89591062_Xdfthijack1,ten_138599af_XUCHARGEPUMPstartup,ten_d1b49413_XUCHARGEPUMPssdone,ten_1d720465_XUCHARGEPUMPss}),
-.tma({b0,b0,b0,b1,b1,b1,b0,b0}),
+.tma({b0,b0,b1,b0,b0,b1,b0,b1}),
 .tmi(tmi[4:0])
 );
 
-DFTtm8t dft_hex0x1D (
+DFTtm8t dft_hex0x26 (
 .G(CELG59462),
 .V(CELV96848),
 .a({c1,c0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x1D_ten_7,noconn_dft_hex0x1D_ten_6,noconn_dft_hex0x1D_ten_5,ten_hijacki_d8f80503_Xdfthijack5,ten_hijack_d8f80503_Xdfthijack5,ten_hijacki_464ec44d_Xdfthijack4,ten_hijack_464ec44d_Xdfthijack4,ten_hijacki_f4a221a1_Xdfthijack3}),
-.tma({c0,c0,c0,c1,c1,c1,c0,c1}),
+.ten({noconn_dft_hex0x26_ten_7,noconn_dft_hex0x26_ten_6,noconn_dft_hex0x26_ten_5,ten_hijacki_d8f80503_Xdfthijack5,ten_hijack_d8f80503_Xdfthijack5,ten_hijacki_464ec44d_Xdfthijack4,ten_hijack_464ec44d_Xdfthijack4,ten_hijacki_f4a221a1_Xdfthijack3}),
+.tma({c0,c0,c1,c0,c0,c1,c1,c0}),
 .tmi(tmi[4:0])
 );
 
@@ -338,16 +338,16 @@ dftprobeModel0_80e43a5a XUCHARGEPUMPfaulttime (
 .CELSUB(CELSUB40948)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x1D_ten_5 (
-.noconn(noconn_dft_hex0x1D_ten_5)
+STONEnoconn XNCnoconn_dft_hex0x26_ten_5 (
+.noconn(noconn_dft_hex0x26_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x1D_ten_6 (
-.noconn(noconn_dft_hex0x1D_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x26_ten_6 (
+.noconn(noconn_dft_hex0x26_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x1D_ten_7 (
-.noconn(noconn_dft_hex0x1D_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x26_ten_7 (
+.noconn(noconn_dft_hex0x26_ten_7)
 );
 
 endmodule

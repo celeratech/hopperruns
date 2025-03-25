@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module CAPESRpuget (TAO,tdo,tmi,CAP4,ITST,porb,SIMPV,mode_cv,CELG59462,CELV96848,GNDcapesr,PORB97836,CAPcount_0,CAPcount_1,meas_cap_0,meas_cap_1,meas_cap_2,meas_cap_3,meas_cap_4,meas_cap_5,meas_cap_6,meas_cap_7,meas_cap_8,meas_cap_9,meas_esr_0,meas_esr_1,meas_esr_2,meas_esr_3,meas_esr_4,meas_esr_5,meas_esr_6,meas_esr_7,meas_esr_8,meas_esr_9,power_good,sense_ITST,CELSUB40948,IP_30794d23,alert_clear,meas_cap_10,meas_cap_11,meas_cap_12,meas_cap_13,meas_cap_14,meas_cap_15,meas_esr_10,meas_esr_11,meas_esr_12,meas_esr_13,meas_esr_14,meas_esr_15,alert_capesr,clock_capesr,dftstatusLSB,dftstatusMSB,fault_capesr,kelvin_SIMPV,meas_vcap1_0,meas_vcap1_1,meas_vcap1_2,meas_vcap1_3,meas_vcap1_4,meas_vcap1_5,meas_vcap1_6,meas_vcap1_7,meas_vcap1_8,meas_vcap1_9,meas_vcap2_0,meas_vcap2_1,meas_vcap2_2,meas_vcap2_3,meas_vcap2_4,meas_vcap2_5,meas_vcap2_6,meas_vcap2_7,meas_vcap2_8,meas_vcap2_9,meas_vcap3_0,meas_vcap3_1,meas_vcap3_2,meas_vcap3_3,meas_vcap3_4,meas_vcap3_5,meas_vcap3_6,meas_vcap3_7,meas_vcap3_8,meas_vcap3_9,meas_vcap4_0,meas_vcap4_1,meas_vcap4_2,meas_vcap4_3,meas_vcap4_4,meas_vcap4_5,meas_vcap4_6,meas_vcap4_7,meas_vcap4_8,meas_vcap4_9,allow_charger,blank_charger,enable_capesr,meas_vcap1_10,meas_vcap1_11,meas_vcap1_12,meas_vcap1_13,meas_vcap1_14,meas_vcap1_15,meas_vcap2_10,meas_vcap2_11,meas_vcap2_12,meas_vcap2_13,meas_vcap2_14,meas_vcap2_15,meas_vcap3_10,meas_vcap3_11,meas_vcap3_12,meas_vcap3_13,meas_vcap3_14,meas_vcap3_15,meas_vcap4_10,meas_vcap4_11,meas_vcap4_12,meas_vcap4_13,meas_vcap4_14,meas_vcap4_15,clock_divideRT,done_telemetry,CHANNELselect_0,CHANNELselect_1,CHANNELselect_2,CHANNELselect_3,request_clockRT,GMCHARGEselect_0,GMCHARGEselect_1,GMCHARGEselect_2,GMCHARGEselect_3,kelvin_GNDcapesr,ctl_gpi_buffer_en,done_capcalculate,register_ctl_reg_0,register_ctl_reg_3,status_meas_cap_15,status_meas_esr_15,status_mon_status_9,status_meas_esrgain_1,register_cap_esr_per_15,register_msk_mon_status_9,status_PUGETfaultmanager_6);
+module CAPESRpuget (TAO,tdo,tmi,CAP4,ITST,porb,SIMPV,mode_cv,CELG59462,CELV96848,GNDcapesr,PORB97836,CAPcount_0,CAPcount_1,meas_cap_0,meas_cap_1,meas_cap_2,meas_cap_3,meas_cap_4,meas_cap_5,meas_cap_6,meas_cap_7,meas_cap_8,meas_cap_9,meas_esr_0,meas_esr_1,meas_esr_2,meas_esr_3,meas_esr_4,meas_esr_5,meas_esr_6,meas_esr_7,meas_esr_8,meas_esr_9,power_good,sense_ITST,CELSUB40948,IP_30794d23,meas_cap_10,meas_cap_11,meas_cap_12,meas_cap_13,meas_cap_14,meas_cap_15,meas_esr_10,meas_esr_11,meas_esr_12,meas_esr_13,meas_esr_14,meas_esr_15,clock_capesr,dftstatusLSB,dftstatusMSB,fault_capesr,kelvin_SIMPV,meas_vcap1_0,meas_vcap1_1,meas_vcap1_2,meas_vcap1_3,meas_vcap1_4,meas_vcap1_5,meas_vcap1_6,meas_vcap1_7,meas_vcap1_8,meas_vcap1_9,meas_vcap2_0,meas_vcap2_1,meas_vcap2_2,meas_vcap2_3,meas_vcap2_4,meas_vcap2_5,meas_vcap2_6,meas_vcap2_7,meas_vcap2_8,meas_vcap2_9,meas_vcap3_0,meas_vcap3_1,meas_vcap3_2,meas_vcap3_3,meas_vcap3_4,meas_vcap3_5,meas_vcap3_6,meas_vcap3_7,meas_vcap3_8,meas_vcap3_9,meas_vcap4_0,meas_vcap4_1,meas_vcap4_2,meas_vcap4_3,meas_vcap4_4,meas_vcap4_5,meas_vcap4_6,meas_vcap4_7,meas_vcap4_8,meas_vcap4_9,allow_charger,blank_charger,enable_capesr,meas_vcap1_10,meas_vcap1_11,meas_vcap1_12,meas_vcap1_13,meas_vcap1_14,meas_vcap1_15,meas_vcap2_10,meas_vcap2_11,meas_vcap2_12,meas_vcap2_13,meas_vcap2_14,meas_vcap2_15,meas_vcap3_10,meas_vcap3_11,meas_vcap3_12,meas_vcap3_13,meas_vcap3_14,meas_vcap3_15,meas_vcap4_10,meas_vcap4_11,meas_vcap4_12,meas_vcap4_13,meas_vcap4_14,meas_vcap4_15,clock_divideRT,done_telemetry,CHANNELselect_0,CHANNELselect_1,CHANNELselect_2,CHANNELselect_3,request_clockRT,GMCHARGEselect_0,GMCHARGEselect_1,GMCHARGEselect_2,GMCHARGEselect_3,kelvin_GNDcapesr,ctl_gpi_buffer_en,done_capcalculate,register_ctl_reg_0,register_ctl_reg_3,status_meas_cap_15,status_meas_esr_15,status_mon_status_9,status_meas_esrgain_1,register_cap_esr_per_15,register_msk_mon_status_9,status_PUGETfaultmanager_6);
   inout  TAO;
   inout  tdo;
   inout [4:0] tmi;
@@ -38,7 +38,6 @@ module CAPESRpuget (TAO,tdo,tmi,CAP4,ITST,porb,SIMPV,mode_cv,CELG59462,CELV96848
   input  sense_ITST;
   input  CELSUB40948;
   input  IP_30794d23;
-  input  alert_clear;
   output  meas_cap_10;
   output  meas_cap_11;
   output  meas_cap_12;
@@ -51,7 +50,6 @@ module CAPESRpuget (TAO,tdo,tmi,CAP4,ITST,porb,SIMPV,mode_cv,CELG59462,CELV96848
   output  meas_esr_13;
   output  meas_esr_14;
   output  meas_esr_15;
-  output  alert_capesr;
   input  clock_capesr;
   inout [7:0] dftstatusLSB;
   inout [7:0] dftstatusMSB;
@@ -130,7 +128,7 @@ module CAPESRpuget (TAO,tdo,tmi,CAP4,ITST,porb,SIMPV,mode_cv,CELG59462,CELV96848
   input  CHANNELselect_1;
   input  CHANNELselect_2;
   input  CHANNELselect_3;
-  output  request_clockRT;
+  input  request_clockRT;
   output  GMCHARGEselect_0;
   output  GMCHARGEselect_1;
   output  GMCHARGEselect_2;
@@ -147,6 +145,103 @@ module CAPESRpuget (TAO,tdo,tmi,CAP4,ITST,porb,SIMPV,mode_cv,CELG59462,CELV96848
   input [15:0] register_cap_esr_per_15;
   input [9:0] register_msk_mon_status_9;
   output [3:0] status_PUGETfaultmanager_6;
+endmodule
+
+module CAPMANAGERpuget (TAO,tdo,tmi,CAP1,CAP2,CAP3,CAP4,porb,SIMPV,CAPRTN,chrg_bal,CELG59462,CELV96848,PORB97836,chrg_shnt,power_fail,CELREF84329,CELSUB40948,IP_fa0e77ad,INcapmanager,REF_ICHARGER,dftstatusLSB,meas_vcap1_0,meas_vcap1_1,meas_vcap1_2,meas_vcap1_3,meas_vcap1_4,meas_vcap1_5,meas_vcap1_6,meas_vcap1_7,meas_vcap1_8,meas_vcap1_9,meas_vcap2_0,meas_vcap2_1,meas_vcap2_2,meas_vcap2_3,meas_vcap2_4,meas_vcap2_5,meas_vcap2_6,meas_vcap2_7,meas_vcap2_8,meas_vcap2_9,meas_vcap3_0,meas_vcap3_1,meas_vcap3_2,meas_vcap3_3,meas_vcap3_4,meas_vcap3_5,meas_vcap3_6,meas_vcap3_7,meas_vcap3_8,meas_vcap3_9,meas_vcap4_0,meas_vcap4_1,meas_vcap4_2,meas_vcap4_3,meas_vcap4_4,meas_vcap4_5,meas_vcap4_6,meas_vcap4_7,meas_vcap4_8,meas_vcap4_9,meas_vcap1_10,meas_vcap1_11,meas_vcap1_12,meas_vcap1_13,meas_vcap1_14,meas_vcap1_15,meas_vcap2_10,meas_vcap2_11,meas_vcap2_12,meas_vcap2_13,meas_vcap2_14,meas_vcap2_15,meas_vcap3_10,meas_vcap3_11,meas_vcap3_12,meas_vcap3_13,meas_vcap3_14,meas_vcap3_15,meas_vcap4_10,meas_vcap4_11,meas_vcap4_12,meas_vcap4_13,meas_vcap4_14,meas_vcap4_15,done_telemetry,clock_capmanager,done_capcalculate,fault_capcalculate,register_vshunt_15,IP_CAPMANAGERpuget1,enable_capcalculate,kelvin_GNDcapmanager);
+  inout  TAO;
+  inout  tdo;
+  inout [4:0] tmi;
+  inout  CAP1;
+  inout  CAP2;
+  inout  CAP3;
+  inout  CAP4;
+  input  porb;
+  input  SIMPV;
+  inout  CAPRTN;
+  output  chrg_bal;
+  input  CELG59462;
+  input  CELV96848;
+  input  PORB97836;
+  output  chrg_shnt;
+  input  power_fail;
+  input  CELREF84329;
+  input  CELSUB40948;
+  inout  IP_fa0e77ad;
+  input  INcapmanager;
+  output  REF_ICHARGER;
+  inout [7:0] dftstatusLSB;
+  input  meas_vcap1_0;
+  input  meas_vcap1_1;
+  input  meas_vcap1_2;
+  input  meas_vcap1_3;
+  input  meas_vcap1_4;
+  input  meas_vcap1_5;
+  input  meas_vcap1_6;
+  input  meas_vcap1_7;
+  input  meas_vcap1_8;
+  input  meas_vcap1_9;
+  input  meas_vcap2_0;
+  input  meas_vcap2_1;
+  input  meas_vcap2_2;
+  input  meas_vcap2_3;
+  input  meas_vcap2_4;
+  input  meas_vcap2_5;
+  input  meas_vcap2_6;
+  input  meas_vcap2_7;
+  input  meas_vcap2_8;
+  input  meas_vcap2_9;
+  input  meas_vcap3_0;
+  input  meas_vcap3_1;
+  input  meas_vcap3_2;
+  input  meas_vcap3_3;
+  input  meas_vcap3_4;
+  input  meas_vcap3_5;
+  input  meas_vcap3_6;
+  input  meas_vcap3_7;
+  input  meas_vcap3_8;
+  input  meas_vcap3_9;
+  input  meas_vcap4_0;
+  input  meas_vcap4_1;
+  input  meas_vcap4_2;
+  input  meas_vcap4_3;
+  input  meas_vcap4_4;
+  input  meas_vcap4_5;
+  input  meas_vcap4_6;
+  input  meas_vcap4_7;
+  input  meas_vcap4_8;
+  input  meas_vcap4_9;
+  input  meas_vcap1_10;
+  input  meas_vcap1_11;
+  input  meas_vcap1_12;
+  input  meas_vcap1_13;
+  input  meas_vcap1_14;
+  input  meas_vcap1_15;
+  input  meas_vcap2_10;
+  input  meas_vcap2_11;
+  input  meas_vcap2_12;
+  input  meas_vcap2_13;
+  input  meas_vcap2_14;
+  input  meas_vcap2_15;
+  input  meas_vcap3_10;
+  input  meas_vcap3_11;
+  input  meas_vcap3_12;
+  input  meas_vcap3_13;
+  input  meas_vcap3_14;
+  input  meas_vcap3_15;
+  input  meas_vcap4_10;
+  input  meas_vcap4_11;
+  input  meas_vcap4_12;
+  input  meas_vcap4_13;
+  input  meas_vcap4_14;
+  input  meas_vcap4_15;
+  input  done_telemetry;
+  input  clock_capmanager;
+  output  done_capcalculate;
+  output  fault_capcalculate;
+  input [15:0] register_vshunt_15;
+  input  IP_CAPMANAGERpuget1;
+  input  enable_capcalculate;
+  input  kelvin_GNDcapmanager;
 endmodule
 
 module CHARGEPOWERPATHpuget (tdo,tmi,VCAP,SIMPV,OUTFET,VCAPP5,VOUTSN,CELG59462,CELV96848,PORB97836,CELREF84329,CELSUB40948,IP_2d823e55,ok_powerpathcharge,on_powerpathcharge,clock_powerpathcharge,enable_powerpathcharge,celkelvin_SGND_fb33d1d2,celkelvin_VCAP_fb33d1d2);
@@ -197,8 +292,8 @@ module CHARGEPUMPpuget (CFN,CFP,TAO,tdo,tmi,VCAP,porb,SIMPV,VCAPP5,CELG59462,CEL
   inout  kelvin_GNDchargepump;
 endmodule
 
-module CHARGERpuget (RT,SW,VC,BST,TAO,tdo,tmi,ICAP,VCAP,porb,BGATE,CAPFB,CAPGD,DRVCC,OUTFB,SIMPV,TAEXT,TGATE,VCAPP5,VOUTSN,VOUTSP,ok_iin,mode_cv,chrg_bal,sense_RT,CELG59462,CELV96848,PORB97836,chrg_shnt,chrg_uvlo,GNDcharger,ok_charger,ok_icharge,power_fail,power_good,CELREF84329,CELSUB40948,PGNDcharger,REF_CHARGER,measure_iin,sync_stepup,dftstatusLSB,freeze_fault,IIN_TELEMETRY,allow_charger,blank_charger,clock_charger,fault_charger,clock_divideRT,enable_charger,measure_icharge,request_clockRT,GMCHARGEselect_0,GMCHARGEselect_1,GMCHARGEselect_2,GMCHARGEselect_3,IP_CHARGERpuget1,IP_CHARGERpuget2,IP_CHARGERpuget3,ICHARGE_TELEMETRY,kelvin_GNDregulation,register_vcapfb_dac_3,status_chrg_status_11,kelvin_GNDcapacitorgood,kelvin_GNDcurrentsensein,status_PUGETfaultmanager_2,kelvin_GNDcurrentsensecharge);
-  inout  RT;
+module CHARGERpuget (RT,SW,VC,BST,TAO,tdo,tmi,ICAP,VCAP,porb,BGATE,CAPFB,CAPGD,DRVCC,OUTFB,SIMPV,TAEXT,TGATE,VCAPP5,VOUTSN,VOUTSP,ok_iin,mode_cv,chrg_bal,CELG59462,CELV96848,PORB97836,chrg_shnt,chrg_uvlo,GNDcharger,ok_charger,ok_icharge,power_fail,power_good,CELREF84329,CELSENSE_RF,CELSUB40948,PGNDcharger,REF_CHARGER,measure_iin,sync_stepup,REF_ICHARGER,freeze_fault,IIN_TELEMETRY,allow_charger,blank_charger,clock_charger,fault_charger,clock_divideRT,enable_charger,measure_icharge,request_clockRT,GMCHARGEselect_0,GMCHARGEselect_1,GMCHARGEselect_2,GMCHARGEselect_3,IP_CHARGERpuget1,IP_CHARGERpuget2,IP_CHARGERpuget3,IP_CHARGERpuget4,ICHARGE_TELEMETRY,kelvin_GNDregulation,register_vcapfb_dac_3,status_chrg_status_11,celkelvin_SGND_caab0eec,kelvin_GNDcapacitorgood,kelvin_GNDcurrentsensein,status_PUGETfaultmanager_2,kelvin_GNDcurrentsensecharge);
+  output  RT;
   input  SW;
   inout  VC;
   input  BST;
@@ -213,7 +308,7 @@ module CHARGERpuget (RT,SW,VC,BST,TAO,tdo,tmi,ICAP,VCAP,porb,BGATE,CAPFB,CAPGD,D
   inout  CAPGD;
   input  DRVCC;
   inout  OUTFB;
-  inout  SIMPV;
+  input  SIMPV;
   input  TAEXT;
   output  TGATE;
   input  VCAPP5;
@@ -222,7 +317,6 @@ module CHARGERpuget (RT,SW,VC,BST,TAO,tdo,tmi,ICAP,VCAP,porb,BGATE,CAPFB,CAPGD,D
   output  ok_iin;
   output  mode_cv;
   input  chrg_bal;
-  input  sense_RT;
   input  CELG59462;
   input  CELV96848;
   input  PORB97836;
@@ -234,12 +328,13 @@ module CHARGERpuget (RT,SW,VC,BST,TAO,tdo,tmi,ICAP,VCAP,porb,BGATE,CAPFB,CAPGD,D
   input  power_fail;
   input  power_good;
   input  CELREF84329;
+  input  CELSENSE_RF;
   input  CELSUB40948;
   input  PGNDcharger;
   input  REF_CHARGER;
   input  measure_iin;
   input  sync_stepup;
-  inout [7:0] dftstatusLSB;
+  inout  REF_ICHARGER;
   input  freeze_fault;
   inout  IIN_TELEMETRY;
   input  allow_charger;
@@ -257,10 +352,12 @@ module CHARGERpuget (RT,SW,VC,BST,TAO,tdo,tmi,ICAP,VCAP,porb,BGATE,CAPFB,CAPGD,D
   input  IP_CHARGERpuget1;
   input  IP_CHARGERpuget2;
   input  IP_CHARGERpuget3;
+  input  IP_CHARGERpuget4;
   inout  ICHARGE_TELEMETRY;
   inout  kelvin_GNDregulation;
   input [3:0] register_vcapfb_dac_3;
   output [11:0] status_chrg_status_11;
+  input  celkelvin_SGND_caab0eec;
   inout  kelvin_GNDcapacitorgood;
   inout  kelvin_GNDcurrentsensein;
   output [2:0] status_PUGETfaultmanager_2;
@@ -352,7 +449,7 @@ module INPOWERPATHpuget (tdo,tmi,INFET,SIMPV,VOUTM5,VOUTSP,CELG59462,CELV96848,P
   input  celkelvin_INpowerpath_e7548a33;
 endmodule
 
-module LIMITERpuget (tdo,tmi,porb,CELG59462,CELV96848,PORB97836,meas_cap_0,meas_cap_1,meas_cap_2,meas_cap_3,meas_cap_4,meas_cap_5,meas_cap_6,meas_cap_7,meas_cap_8,meas_cap_9,meas_esr_0,meas_esr_1,meas_esr_2,meas_esr_3,meas_esr_4,meas_esr_5,meas_esr_6,meas_esr_7,meas_esr_8,meas_esr_9,meas_gpi_0,meas_gpi_1,meas_gpi_2,meas_gpi_3,meas_gpi_4,meas_gpi_5,meas_gpi_6,meas_gpi_7,meas_gpi_8,meas_gpi_9,meas_iin_0,meas_iin_1,meas_iin_2,meas_iin_3,meas_iin_4,meas_iin_5,meas_iin_6,meas_iin_7,meas_iin_8,meas_iin_9,meas_vin_0,meas_vin_1,meas_vin_2,meas_vin_3,meas_vin_4,meas_vin_5,meas_vin_6,meas_vin_7,meas_vin_8,meas_vin_9,CELSUB40948,alert_clear,meas_cap_10,meas_cap_11,meas_cap_12,meas_cap_13,meas_cap_14,meas_cap_15,meas_esr_10,meas_esr_11,meas_esr_12,meas_esr_13,meas_esr_14,meas_esr_15,meas_gpi_10,meas_gpi_11,meas_gpi_12,meas_gpi_13,meas_gpi_14,meas_gpi_15,meas_iin_10,meas_iin_11,meas_iin_12,meas_iin_13,meas_iin_14,meas_iin_15,meas_vcap_0,meas_vcap_1,meas_vcap_2,meas_vcap_3,meas_vcap_4,meas_vcap_5,meas_vcap_6,meas_vcap_7,meas_vcap_8,meas_vcap_9,meas_vin_10,meas_vin_11,meas_vin_12,meas_vin_13,meas_vin_14,meas_vin_15,meas_vout_0,meas_vout_1,meas_vout_2,meas_vout_3,meas_vout_4,meas_vout_5,meas_vout_6,meas_vout_7,meas_vout_8,meas_vout_9,meas_dtemp_0,meas_dtemp_1,meas_dtemp_2,meas_dtemp_3,meas_dtemp_4,meas_dtemp_5,meas_dtemp_6,meas_dtemp_7,meas_dtemp_8,meas_dtemp_9,meas_ichrg_0,meas_ichrg_1,meas_ichrg_2,meas_ichrg_3,meas_ichrg_4,meas_ichrg_5,meas_ichrg_6,meas_ichrg_7,meas_ichrg_8,meas_ichrg_9,meas_vcap1_0,meas_vcap1_1,meas_vcap1_2,meas_vcap1_3,meas_vcap1_4,meas_vcap1_5,meas_vcap1_6,meas_vcap1_7,meas_vcap1_8,meas_vcap1_9,meas_vcap2_0,meas_vcap2_1,meas_vcap2_2,meas_vcap2_3,meas_vcap2_4,meas_vcap2_5,meas_vcap2_6,meas_vcap2_7,meas_vcap2_8,meas_vcap2_9,meas_vcap3_0,meas_vcap3_1,meas_vcap3_2,meas_vcap3_3,meas_vcap3_4,meas_vcap3_5,meas_vcap3_6,meas_vcap3_7,meas_vcap3_8,meas_vcap3_9,meas_vcap4_0,meas_vcap4_1,meas_vcap4_2,meas_vcap4_3,meas_vcap4_4,meas_vcap4_5,meas_vcap4_6,meas_vcap4_7,meas_vcap4_8,meas_vcap4_9,meas_vcap_10,meas_vcap_11,meas_vcap_12,meas_vcap_13,meas_vcap_14,meas_vcap_15,meas_vout_10,meas_vout_11,meas_vout_12,meas_vout_13,meas_vout_14,meas_vout_15,alert_limiter,clock_limiter,meas_dtemp_10,meas_dtemp_11,meas_dtemp_12,meas_dtemp_13,meas_dtemp_14,meas_dtemp_15,meas_ichrg_10,meas_ichrg_11,meas_ichrg_12,meas_ichrg_13,meas_ichrg_14,meas_ichrg_15,meas_vcap1_10,meas_vcap1_11,meas_vcap1_12,meas_vcap1_13,meas_vcap1_14,meas_vcap1_15,meas_vcap2_10,meas_vcap2_11,meas_vcap2_12,meas_vcap2_13,meas_vcap2_14,meas_vcap2_15,meas_vcap3_10,meas_vcap3_11,meas_vcap3_12,meas_vcap3_13,meas_vcap3_14,meas_vcap3_15,meas_vcap4_10,meas_vcap4_11,meas_vcap4_12,meas_vcap4_13,meas_vcap4_14,meas_vcap4_15,enable_limiter,status_alarm_reg_15,register_clr_cap_ov_1,register_clr_cap_uv_0,register_clr_gpi_ov_3,register_clr_gpi_uv_2,register_cap_lo_lvl_15,register_cap_ov_lvl_15,register_cap_uv_lvl_15,register_gpi_ov_lvl_15,register_gpi_uv_lvl_15,register_iin_oc_lvl_15,register_vin_ov_lvl_15,register_vin_uv_lvl_15,register_clear_vin_ov_5,register_clear_vin_uv_4,register_clr_cap_low_15,register_ichg_uc_lvl_15,register_mask_alarms_15,register_vcap_ov_lvl_15,register_vcap_uv_lvl_15,register_vout_ov_lvl_15,register_vout_uv_lvl_15,register_clear_iin_oc_10,register_clear_vcap_ov_7,register_clear_vcap_uv_6,register_clear_vout_ov_9,register_clear_vout_uv_8,register_esr_high_lvl_15,register_clear_ichg_uc_11,register_dtemp_hot_lvl_15,register_clear_esr_high_14,register_dtemp_cold_lvl_15,register_clear_dtemp_hot_13,register_clear_dtemp_cold_12);
+module LIMITERpuget (tdo,tmi,porb,CELG59462,CELV96848,PORB97836,meas_cap_0,meas_cap_1,meas_cap_2,meas_cap_3,meas_cap_4,meas_cap_5,meas_cap_6,meas_cap_7,meas_cap_8,meas_cap_9,meas_esr_0,meas_esr_1,meas_esr_2,meas_esr_3,meas_esr_4,meas_esr_5,meas_esr_6,meas_esr_7,meas_esr_8,meas_esr_9,meas_gpi_0,meas_gpi_1,meas_gpi_2,meas_gpi_3,meas_gpi_4,meas_gpi_5,meas_gpi_6,meas_gpi_7,meas_gpi_8,meas_gpi_9,meas_iin_0,meas_iin_1,meas_iin_2,meas_iin_3,meas_iin_4,meas_iin_5,meas_iin_6,meas_iin_7,meas_iin_8,meas_iin_9,meas_vin_0,meas_vin_1,meas_vin_2,meas_vin_3,meas_vin_4,meas_vin_5,meas_vin_6,meas_vin_7,meas_vin_8,meas_vin_9,CELSUB40948,meas_cap_10,meas_cap_11,meas_cap_12,meas_cap_13,meas_cap_14,meas_cap_15,meas_esr_10,meas_esr_11,meas_esr_12,meas_esr_13,meas_esr_14,meas_esr_15,meas_gpi_10,meas_gpi_11,meas_gpi_12,meas_gpi_13,meas_gpi_14,meas_gpi_15,meas_iin_10,meas_iin_11,meas_iin_12,meas_iin_13,meas_iin_14,meas_iin_15,meas_vcap_0,meas_vcap_1,meas_vcap_2,meas_vcap_3,meas_vcap_4,meas_vcap_5,meas_vcap_6,meas_vcap_7,meas_vcap_8,meas_vcap_9,meas_vin_10,meas_vin_11,meas_vin_12,meas_vin_13,meas_vin_14,meas_vin_15,meas_vout_0,meas_vout_1,meas_vout_2,meas_vout_3,meas_vout_4,meas_vout_5,meas_vout_6,meas_vout_7,meas_vout_8,meas_vout_9,meas_dtemp_0,meas_dtemp_1,meas_dtemp_2,meas_dtemp_3,meas_dtemp_4,meas_dtemp_5,meas_dtemp_6,meas_dtemp_7,meas_dtemp_8,meas_dtemp_9,meas_ichrg_0,meas_ichrg_1,meas_ichrg_2,meas_ichrg_3,meas_ichrg_4,meas_ichrg_5,meas_ichrg_6,meas_ichrg_7,meas_ichrg_8,meas_ichrg_9,meas_vcap1_0,meas_vcap1_1,meas_vcap1_2,meas_vcap1_3,meas_vcap1_4,meas_vcap1_5,meas_vcap1_6,meas_vcap1_7,meas_vcap1_8,meas_vcap1_9,meas_vcap2_0,meas_vcap2_1,meas_vcap2_2,meas_vcap2_3,meas_vcap2_4,meas_vcap2_5,meas_vcap2_6,meas_vcap2_7,meas_vcap2_8,meas_vcap2_9,meas_vcap3_0,meas_vcap3_1,meas_vcap3_2,meas_vcap3_3,meas_vcap3_4,meas_vcap3_5,meas_vcap3_6,meas_vcap3_7,meas_vcap3_8,meas_vcap3_9,meas_vcap4_0,meas_vcap4_1,meas_vcap4_2,meas_vcap4_3,meas_vcap4_4,meas_vcap4_5,meas_vcap4_6,meas_vcap4_7,meas_vcap4_8,meas_vcap4_9,meas_vcap_10,meas_vcap_11,meas_vcap_12,meas_vcap_13,meas_vcap_14,meas_vcap_15,meas_vout_10,meas_vout_11,meas_vout_12,meas_vout_13,meas_vout_14,meas_vout_15,clock_limiter,meas_dtemp_10,meas_dtemp_11,meas_dtemp_12,meas_dtemp_13,meas_dtemp_14,meas_dtemp_15,meas_ichrg_10,meas_ichrg_11,meas_ichrg_12,meas_ichrg_13,meas_ichrg_14,meas_ichrg_15,meas_vcap1_10,meas_vcap1_11,meas_vcap1_12,meas_vcap1_13,meas_vcap1_14,meas_vcap1_15,meas_vcap2_10,meas_vcap2_11,meas_vcap2_12,meas_vcap2_13,meas_vcap2_14,meas_vcap2_15,meas_vcap3_10,meas_vcap3_11,meas_vcap3_12,meas_vcap3_13,meas_vcap3_14,meas_vcap3_15,meas_vcap4_10,meas_vcap4_11,meas_vcap4_12,meas_vcap4_13,meas_vcap4_14,meas_vcap4_15,enable_limiter,status_alarm_reg_15,register_clr_alarms_0,register_clr_alarms_1,register_clr_alarms_2,register_clr_alarms_3,register_cap_lo_lvl_15,register_cap_ov_lvl_15,register_cap_uv_lvl_15,register_clr_alarms_15,register_gpi_ov_lvl_15,register_gpi_uv_lvl_15,register_iin_oc_lvl_15,register_vin_ov_lvl_15,register_vin_uv_lvl_15,register_clear_alarms_4,register_clear_alarms_5,register_clear_alarms_6,register_clear_alarms_7,register_clear_alarms_8,register_clear_alarms_9,register_ichg_uc_lvl_15,register_mask_alarms_15,register_vcap_ov_lvl_15,register_vcap_uv_lvl_15,register_vout_ov_lvl_15,register_vout_uv_lvl_15,register_clear_alarms_10,register_clear_alarms_11,register_clear_alarms_12,register_clear_alarms_13,register_clear_alarms_14,register_esr_high_lvl_15,register_dtemp_hot_lvl_15,register_dtemp_cold_lvl_15);
   inout  tdo;
   inout [4:0] tmi;
   input  porb;
@@ -410,7 +507,6 @@ module LIMITERpuget (tdo,tmi,porb,CELG59462,CELV96848,PORB97836,meas_cap_0,meas_
   input  meas_vin_8;
   input  meas_vin_9;
   input  CELSUB40948;
-  input  alert_clear;
   input  meas_cap_10;
   input  meas_cap_11;
   input  meas_cap_12;
@@ -533,7 +629,6 @@ module LIMITERpuget (tdo,tmi,porb,CELG59462,CELV96848,PORB97836,meas_cap_0,meas_
   input  meas_vout_13;
   input  meas_vout_14;
   input  meas_vout_15;
-  output  alert_limiter;
   input  clock_limiter;
   input  meas_dtemp_10;
   input  meas_dtemp_11;
@@ -573,131 +668,39 @@ module LIMITERpuget (tdo,tmi,porb,CELG59462,CELV96848,PORB97836,meas_cap_0,meas_
   input  meas_vcap4_15;
   input  enable_limiter;
   output [15:0] status_alarm_reg_15;
-  input  register_clr_cap_ov_1;
-  input  register_clr_cap_uv_0;
-  input  register_clr_gpi_ov_3;
-  input  register_clr_gpi_uv_2;
+  input  register_clr_alarms_0;
+  input  register_clr_alarms_1;
+  input  register_clr_alarms_2;
+  input  register_clr_alarms_3;
   input [15:0] register_cap_lo_lvl_15;
   input [15:0] register_cap_ov_lvl_15;
   input [15:0] register_cap_uv_lvl_15;
+  input  register_clr_alarms_15;
   input [15:0] register_gpi_ov_lvl_15;
   input [15:0] register_gpi_uv_lvl_15;
   input [15:0] register_iin_oc_lvl_15;
   input [15:0] register_vin_ov_lvl_15;
   input [15:0] register_vin_uv_lvl_15;
-  input  register_clear_vin_ov_5;
-  input  register_clear_vin_uv_4;
-  input  register_clr_cap_low_15;
+  input  register_clear_alarms_4;
+  input  register_clear_alarms_5;
+  input  register_clear_alarms_6;
+  input  register_clear_alarms_7;
+  input  register_clear_alarms_8;
+  input  register_clear_alarms_9;
   input [15:0] register_ichg_uc_lvl_15;
   input [15:0] register_mask_alarms_15;
   input [15:0] register_vcap_ov_lvl_15;
   input [15:0] register_vcap_uv_lvl_15;
   input [15:0] register_vout_ov_lvl_15;
   input [15:0] register_vout_uv_lvl_15;
-  input  register_clear_iin_oc_10;
-  input  register_clear_vcap_ov_7;
-  input  register_clear_vcap_uv_6;
-  input  register_clear_vout_ov_9;
-  input  register_clear_vout_uv_8;
+  input  register_clear_alarms_10;
+  input  register_clear_alarms_11;
+  input  register_clear_alarms_12;
+  input  register_clear_alarms_13;
+  input  register_clear_alarms_14;
   input [15:0] register_esr_high_lvl_15;
-  input  register_clear_ichg_uc_11;
   input [15:0] register_dtemp_hot_lvl_15;
-  input  register_clear_esr_high_14;
   input [15:0] register_dtemp_cold_lvl_15;
-  input  register_clear_dtemp_hot_13;
-  input  register_clear_dtemp_cold_12;
-endmodule
-
-module CAPMANAGERpuget (TAO,tdo,tmi,CAP1,CAP2,CAP3,CAP4,porb,SIMPV,CAPRTN,chrg_bal,CELG59462,CELV96848,PORB97836,chrg_shnt,power_fail,CELSUB40948,INcapmanager,dftstatusLSB,meas_vcap1_0,meas_vcap1_1,meas_vcap1_2,meas_vcap1_3,meas_vcap1_4,meas_vcap1_5,meas_vcap1_6,meas_vcap1_7,meas_vcap1_8,meas_vcap1_9,meas_vcap2_0,meas_vcap2_1,meas_vcap2_2,meas_vcap2_3,meas_vcap2_4,meas_vcap2_5,meas_vcap2_6,meas_vcap2_7,meas_vcap2_8,meas_vcap2_9,meas_vcap3_0,meas_vcap3_1,meas_vcap3_2,meas_vcap3_3,meas_vcap3_4,meas_vcap3_5,meas_vcap3_6,meas_vcap3_7,meas_vcap3_8,meas_vcap3_9,meas_vcap4_0,meas_vcap4_1,meas_vcap4_2,meas_vcap4_3,meas_vcap4_4,meas_vcap4_5,meas_vcap4_6,meas_vcap4_7,meas_vcap4_8,meas_vcap4_9,meas_vcap1_10,meas_vcap1_11,meas_vcap1_12,meas_vcap1_13,meas_vcap1_14,meas_vcap1_15,meas_vcap2_10,meas_vcap2_11,meas_vcap2_12,meas_vcap2_13,meas_vcap2_14,meas_vcap2_15,meas_vcap3_10,meas_vcap3_11,meas_vcap3_12,meas_vcap3_13,meas_vcap3_14,meas_vcap3_15,meas_vcap4_10,meas_vcap4_11,meas_vcap4_12,meas_vcap4_13,meas_vcap4_14,meas_vcap4_15,clock_capmanager,done_capcalculate,fault_capcalculate,register_vshunt_15,IP_CAPMANAGERpuget1,enable_capcalculate);
-  inout  TAO;
-  inout  tdo;
-  inout [4:0] tmi;
-  inout  CAP1;
-  inout  CAP2;
-  inout  CAP3;
-  inout  CAP4;
-  input  porb;
-  input  SIMPV;
-  inout  CAPRTN;
-  output  chrg_bal;
-  input  CELG59462;
-  input  CELV96848;
-  input  PORB97836;
-  output  chrg_shnt;
-  input  power_fail;
-  input  CELSUB40948;
-  input  INcapmanager;
-  inout [7:0] dftstatusLSB;
-  input  meas_vcap1_0;
-  input  meas_vcap1_1;
-  input  meas_vcap1_2;
-  input  meas_vcap1_3;
-  input  meas_vcap1_4;
-  input  meas_vcap1_5;
-  input  meas_vcap1_6;
-  input  meas_vcap1_7;
-  input  meas_vcap1_8;
-  input  meas_vcap1_9;
-  input  meas_vcap2_0;
-  input  meas_vcap2_1;
-  input  meas_vcap2_2;
-  input  meas_vcap2_3;
-  input  meas_vcap2_4;
-  input  meas_vcap2_5;
-  input  meas_vcap2_6;
-  input  meas_vcap2_7;
-  input  meas_vcap2_8;
-  input  meas_vcap2_9;
-  input  meas_vcap3_0;
-  input  meas_vcap3_1;
-  input  meas_vcap3_2;
-  input  meas_vcap3_3;
-  input  meas_vcap3_4;
-  input  meas_vcap3_5;
-  input  meas_vcap3_6;
-  input  meas_vcap3_7;
-  input  meas_vcap3_8;
-  input  meas_vcap3_9;
-  input  meas_vcap4_0;
-  input  meas_vcap4_1;
-  input  meas_vcap4_2;
-  input  meas_vcap4_3;
-  input  meas_vcap4_4;
-  input  meas_vcap4_5;
-  input  meas_vcap4_6;
-  input  meas_vcap4_7;
-  input  meas_vcap4_8;
-  input  meas_vcap4_9;
-  input  meas_vcap1_10;
-  input  meas_vcap1_11;
-  input  meas_vcap1_12;
-  input  meas_vcap1_13;
-  input  meas_vcap1_14;
-  input  meas_vcap1_15;
-  input  meas_vcap2_10;
-  input  meas_vcap2_11;
-  input  meas_vcap2_12;
-  input  meas_vcap2_13;
-  input  meas_vcap2_14;
-  input  meas_vcap2_15;
-  input  meas_vcap3_10;
-  input  meas_vcap3_11;
-  input  meas_vcap3_12;
-  input  meas_vcap3_13;
-  input  meas_vcap3_14;
-  input  meas_vcap3_15;
-  input  meas_vcap4_10;
-  input  meas_vcap4_11;
-  input  meas_vcap4_12;
-  input  meas_vcap4_13;
-  input  meas_vcap4_14;
-  input  meas_vcap4_15;
-  input  clock_capmanager;
-  output  done_capcalculate;
-  output  fault_capcalculate;
-  input [15:0] register_vshunt_15;
-  input  IP_CAPMANAGERpuget1;
-  input  enable_capcalculate;
 endmodule
 
 module POWERGOODpuget (PFI,PFO,tdo,tmi,SIMPV,CELG59462,CELV96848,power_fail,power_good,CELSUB40948,GNDpowergood,ok_powergood,REF_POWERGOOD,enable_powergood,kelvin_GNDpowergood,IP_POWERGOODpugetMAIN1);
@@ -715,7 +718,7 @@ module POWERGOODpuget (PFI,PFO,tdo,tmi,SIMPV,CELG59462,CELV96848,power_fail,powe
   output  ok_powergood;
   input  REF_POWERGOOD;
   input  enable_powergood;
-  input  kelvin_GNDpowergood;
+  inout  kelvin_GNDpowergood;
   input  IP_POWERGOODpugetMAIN1;
 endmodule
 
@@ -773,8 +776,8 @@ module SEQUENCERpuget (TAO,tdo,tmi,porb,CELG59462,CELV96848,PORB97836,ok_voutm5,
   input  register_sequencer_reset_0;
 endmodule
 
-module SERVICEpuget (IN,TAO,tdo,tmi,porb,TAEXT,INTVCC,VCC2P5,VOUTSN,CELG59462,CELV96848,PORB97836,chrg_uvlo,kelvin_IN,CELBG83021,GNDservice,OKREF03249,ok_service,CELREF84329,CELSUB40948,IP_5400ae1a,IP_a3f87557,IP_a57f6755,IP_ad040b34,IP_cb3ddf0a,kelvin_VCAP,sync_stepup,kelvin_DRVCC,REF_SEQUENCER,allow_charger,fault_service,kelvin_INTVCC,kelvin_VCC2P5,kelvin_VOUTSN,clock_sequencer,SENSE_G_05e8d170,kelvin_GNDservice,celkelvin_IN_04cc16be,celkelvin_SGND_2b3a9b82,celkelvin_INTVCC_04cc16be,IP_SERVICEcomparatorVOUTSN1);
-  input  IN;
+module SERVICEpuget (IN,TAO,tdo,tmi,porb,TAEXT,INTVCC,VCC2P5,VOUTSN,CELG59462,CELV96848,PORB97836,chrg_uvlo,kelvin_IN,CELBG83021,GNDservice,OKREF03249,ok_service,CELREF84329,CELSUB40948,IP_5400ae1a,IP_a3f87557,IP_a57f6755,IP_ad040b34,IP_cb3ddf0a,kelvin_VCAP,sync_stepup,kelvin_DRVCC,REF_SEQUENCER,allow_charger,fault_service,kelvin_INTVCC,kelvin_VCC2P5,kelvin_VOUTSN,clock_sequencer,SENSE_G_05e8d170,kelvin_GNDservice,celkelvin_SGND_2b3a9b82,celkelvin_INTVCC_04cc16be,IP_SERVICEcomparatorVOUTSN1);
+  inout  IN;
   inout  TAO;
   inout  tdo;
   inout [4:0] tmi;
@@ -811,7 +814,6 @@ module SERVICEpuget (IN,TAO,tdo,tmi,porb,TAEXT,INTVCC,VCC2P5,VOUTSN,CELG59462,CE
   output  clock_sequencer;
   input  SENSE_G_05e8d170;
   inout  kelvin_GNDservice;
-  input  celkelvin_IN_04cc16be;
   input  celkelvin_SGND_2b3a9b82;
   input  celkelvin_INTVCC_04cc16be;
   input  IP_SERVICEcomparatorVOUTSN1;
@@ -991,7 +993,7 @@ module TELEMETRYpuget (GPO,TAO,tdo,tmi,CAP2,CAP3,CAP4,porb,DTEMP,SIMPV,TAEXT,ok_
   output  ok_telemetry;
   input  IIN_TELEMETRY;
   input  REF_TELEMETRY;
-  inout  kelvin_CAPRTN;
+  input  kelvin_CAPRTN;
   inout  kelvin_VOUTSP;
   output  meas_dtemp_10;
   output  meas_dtemp_11;
@@ -1075,34 +1077,10 @@ module THERMOMETERpuget (TAO,tdo,tmi,DTEMP,SIMPV,ok_dtemp,CELG59462,CELV96848,PO
   input  celkelvin_SGND_8a994242;
 endmodule
 
-//Celera:alert_c893e50d
-//Celera Confidential Symbol Generator
-//Inputs: 2, ARA: 5d, Ron: 100 Ohm,6V
-//DFT: no
-module alert_c893e50d (CELV,ALERT,pod,clear,
-alert_in0,
-alert_clear0,
-alert_in1,
-alert_clear1,
-CELSUB,CELG);
-input CELV;
-input clear;
-output pod;
-output ALERT;
-input alert_in0;
-output alert_clear0;
-input alert_in1;
-output alert_clear1;
-input CELG;
-input CELSUB;
-endmodule
-
-
-
 // ------------------------ Module Verilog ---------------
-module MAINpuget (IN, RT, SW, VC, BST, CFN, CFP, GPI, PFI, PFO, TAO, tdo, tmi, CAP1, CAP2, CAP3, CAP4, ICAP, ITST, VCAP, ALERT, BGATE, CAPFB, CAPGD, DRVCC, INFET, OUTFB, SIMPV, TAEXT, TGATE, CAPRTN, INTVCC, OUTFET, VCAPP5, VCC2P5, VOUTM5, VOUTSN, VOUTSP, CAPSLCT0, CAPSLCT1, sense_RT, CELG59462, CELV96848, GNDcapesr, PORB97836, kelvin_IN, CELBG83021, GNDcharger, GNDservice, OKREF03249, kelvin_CFP, sense_ITST, CELREF84329, CELSUB40948, INcapmanger, INpowerpath, IP_0722e9c9, IP_2d823e55, IP_30794d23, IP_5400ae1a, IP_a3f87557, IP_a57f6755, IP_ad040b34, IP_c2d4cf2d, IP_cb3ddf0a, IP_ea686c1e, PGNDcharger, kelvin_CAP1, kelvin_CAP2, kelvin_CAP3, kelvin_CAP4, kelvin_VCAP, GNDpowergood, GNDtelemetry, dftstatusLSB, dftstatusMSB, kelvin_DRVCC, kelvin_INTCC, kelvin_CAPRTN, kelvin_GNDgpi, kelvin_VCAPP5, kelvin_VCC2P5, kelvin_VOUTSN, kelvin_VOUTSP, GNDpowerpathin, PGNDchargepump, alert_71cc704f, IP_CHARGERpuget1, IP_CHARGERpuget2, IP_CHARGERpuget3, SENSE_G_05e8d170, SENSE_G_48968f26, kelvin_GNDcapesr, IP_CAPdecodeMAIN1, kelvin_GNDservice, status_num_caps_1, IP_TELEMETRYpuget1, kelvin_SIMPVcapesr, register_ctl_reg_0, register_ctl_reg_3, register_vshunt_15, status_meas_cap_15, status_meas_esr_15, status_meas_gpi_15, status_meas_iin_15, status_meas_vin_15, IP_CAPMANAGERpuget1, IP_CHARGEPUMPpuget1, kelvin_GNDcapdecode, kelvin_GNDpowergood, kelvin_GNDtelemetry, status_alarm_reg_15, status_meas_vcap_15, status_meas_vout_15, status_mon_status_9, IP_INPOWERPATHpuget1, kelvin_GNDchargepump, kelvin_GNDregulation, status_meas_dtemp_15, status_meas_ichrg_15, status_meas_vcap1_15, status_meas_vcap2_15, status_meas_vcap3_15, status_meas_vcap4_15, celkelvin_IN_04cc16be, register_clr_cap_ov_1, register_clr_cap_uv_0, register_clr_gpi_ov_3, register_clr_gpi_uv_2, register_vcapfb_dac_3, status_chrg_status_11, status_meas_esrgain_1, IP_POWERGOODpugetMAIN1, register_cap_lo_lvl_15, register_cap_ov_lvl_15, register_cap_uv_lvl_15, register_gpi_ov_lvl_15, register_gpi_uv_lvl_15, register_iin_oc_lvl_15, register_vin_ov_lvl_15, register_vin_uv_lvl_15, celkelvin_SGND_2b3a9b82, celkelvin_SGND_8a994242, celkelvin_SGND_e7548a33, celkelvin_SGND_fb33d1d2, celkelvin_VCAP_fb33d1d2, kelvin_GNDcapacitorgood, register_cap_esr_per_15, register_clear_vin_ov_5, register_clear_vin_uv_4, register_clr_cap_low_15, register_ichg_uc_lvl_15, register_mask_alarms_15, register_vcap_ov_lvl_15, register_vcap_uv_lvl_15, register_vout_ov_lvl_15, register_vout_uv_lvl_15, kelvin_GNDcurrentsensein, register_clear_iin_oc_10, register_clear_vcap_ov_7, register_clear_vcap_uv_6, register_clear_vout_ov_9, register_clear_vout_uv_8, register_esr_high_lvl_15, celkelvin_INTVCC_04cc16be, register_clear_ichg_uc_11, register_dtemp_hot_lvl_15, register_msk_mon_status_9, register_clear_esr_high_14, register_dtemp_cold_lvl_15, register_sequencer_reset_0, status_PUGETfaultmanager_2, status_PUGETfaultmanager_6, status_PUGETfaultmanager_8, IP_SERVICEcomparatorVOUTSN1, register_clear_dtemp_hot_13, status_FAULTMANAGERstatus_9, kelvin_GNDcurrentsensecharge, register_clear_dtemp_cold_12, celkelvin_INpowerpath_e7548a33);
-input  IN;
-inout  RT;
+module MAINpuget (IN, RT, SW, VC, BST, CFN, CFP, GPI, PFI, PFO, TAO, tdo, tmi, CAP1, CAP2, CAP3, CAP4, ICAP, ITST, VCAP, BGATE, CAPFB, CAPGD, DRVCC, INFET, OUTFB, SIMPV, TAEXT, TGATE, CAPRTN, INTVCC, OUTFET, VCAPP5, VCC2P5, VOUTM5, VOUTSN, VOUTSP, CAPSLCT0, CAPSLCT1, sense_RT, CELG59462, CELV96848, GNDcapesr, PORB97836, kelvin_IN, CELBG83021, GNDcharger, GNDservice, OKREF03249, kelvin_CFP, sense_ITST, CELREF84329, CELSENSE_RF, CELSUB40948, INcapmanger, INpowerpath, IP_0722e9c9, IP_2d823e55, IP_30794d23, IP_5400ae1a, IP_a3f87557, IP_a57f6755, IP_ad040b34, IP_c2d4cf2d, IP_cb3ddf0a, IP_ea686c1e, IP_fa0e77ad, PGNDcharger, kelvin_CAP1, kelvin_CAP2, kelvin_CAP3, kelvin_CAP4, kelvin_VCAP, GNDpowergood, GNDtelemetry, dftstatusLSB, dftstatusMSB, kelvin_DRVCC, kelvin_INTCC, kelvin_CAPRTN, kelvin_GNDgpi, kelvin_VCAPP5, kelvin_VCC2P5, kelvin_VOUTSN, kelvin_VOUTSP, GNDpowerpathin, PGNDchargepump, IP_CHARGERpuget1, IP_CHARGERpuget2, IP_CHARGERpuget3, IP_CHARGERpuget4, SENSE_G_05e8d170, SENSE_G_48968f26, kelvin_GNDcapesr, IP_CAPdecodeMAIN1, kelvin_GNDservice, status_num_caps_1, IP_TELEMETRYpuget1, kelvin_SIMPVcapesr, register_ctl_reg_0, register_ctl_reg_3, register_vshunt_15, status_meas_cap_15, status_meas_esr_15, status_meas_gpi_15, status_meas_iin_15, status_meas_vin_15, IP_CAPMANAGERpuget1, IP_CHARGEPUMPpuget1, kelvin_GNDcapdecode, kelvin_GNDpowergood, kelvin_GNDtelemetry, status_alarm_reg_15, status_meas_vcap_15, status_meas_vout_15, status_mon_status_9, IP_INPOWERPATHpuget1, kelvin_GNDcapmanager, kelvin_GNDchargepump, kelvin_GNDregulation, status_meas_dtemp_15, status_meas_ichrg_15, status_meas_vcap1_15, status_meas_vcap2_15, status_meas_vcap3_15, status_meas_vcap4_15, register_clr_alarms_0, register_clr_alarms_1, register_clr_alarms_2, register_clr_alarms_3, register_vcapfb_dac_3, status_chrg_status_11, status_meas_esrgain_1, IP_POWERGOODpugetMAIN1, register_cap_lo_lvl_15, register_cap_ov_lvl_15, register_cap_uv_lvl_15, register_clr_alarms_15, register_gpi_ov_lvl_15, register_gpi_uv_lvl_15, register_iin_oc_lvl_15, register_vin_ov_lvl_15, register_vin_uv_lvl_15, celkelvin_SGND_2b3a9b82, celkelvin_SGND_8a994242, celkelvin_SGND_caab0eec, celkelvin_SGND_e7548a33, celkelvin_SGND_fb33d1d2, celkelvin_VCAP_fb33d1d2, kelvin_GNDcapacitorgood, register_cap_esr_per_15, register_clear_alarms_4, register_clear_alarms_5, register_clear_alarms_6, register_clear_alarms_7, register_clear_alarms_8, register_clear_alarms_9, register_ichg_uc_lvl_15, register_mask_alarms_15, register_vcap_ov_lvl_15, register_vcap_uv_lvl_15, register_vout_ov_lvl_15, register_vout_uv_lvl_15, kelvin_GNDcurrentsensein, register_clear_alarms_10, register_clear_alarms_11, register_clear_alarms_12, register_clear_alarms_13, register_clear_alarms_14, register_esr_high_lvl_15, celkelvin_INTVCC_04cc16be, register_dtemp_hot_lvl_15, register_msk_mon_status_9, register_dtemp_cold_lvl_15, register_sequencer_reset_0, status_PUGETfaultmanager_2, status_PUGETfaultmanager_6, status_PUGETfaultmanager_8, IP_SERVICEcomparatorVOUTSN1, status_FAULTMANAGERstatus_9, kelvin_GNDcurrentsensecharge, celkelvin_INpowerpath_e7548a33);
+inout  IN;
+output  RT;
 input  SW;
 inout  VC;
 input  BST;
@@ -1121,10 +1099,9 @@ inout  CAP4;
 input  ICAP;
 inout  ITST;
 inout  VCAP;
-output  ALERT;
 output  BGATE;
 inout  CAPFB;
-inout  CAPGD;
+output  CAPGD;
 input  DRVCC;
 output  INFET;
 inout  OUTFB;
@@ -1141,7 +1118,7 @@ inout  VOUTSN;
 input  VOUTSP;
 input  CAPSLCT0;
 input  CAPSLCT1;
-input  sense_RT;
+  input  sense_RT;
 input  CELG59462;
 input  CELV96848;
 inout  GNDcapesr;
@@ -1154,6 +1131,7 @@ output  OKREF03249;
 inout  kelvin_CFP;
 input  sense_ITST;
 output  CELREF84329;
+input  CELSENSE_RF;
 input  CELSUB40948;
 input  INcapmanger;
 input  INpowerpath;
@@ -1167,6 +1145,7 @@ input  IP_ad040b34;
 input  IP_c2d4cf2d;
 input  IP_cb3ddf0a;
 input  IP_ea686c1e;
+inout  IP_fa0e77ad;
 input  PGNDcharger;
 inout  kelvin_CAP1;
 inout  kelvin_CAP2;
@@ -1179,7 +1158,7 @@ inout [7:0] dftstatusLSB;
 inout [7:0] dftstatusMSB;
 inout  kelvin_DRVCC;
 inout  kelvin_INTCC;
-inout  kelvin_CAPRTN;
+input  kelvin_CAPRTN;
 inout  kelvin_GNDgpi;
 inout  kelvin_VCAPP5;
 inout  kelvin_VCC2P5;
@@ -1187,10 +1166,10 @@ inout  kelvin_VOUTSN;
 inout  kelvin_VOUTSP;
 input  GNDpowerpathin;
 inout  PGNDchargepump;
-input  alert_71cc704f;
 input  IP_CHARGERpuget1;
 input  IP_CHARGERpuget2;
 input  IP_CHARGERpuget3;
+input  IP_CHARGERpuget4;
 input  SENSE_G_05e8d170;
 input  SENSE_G_48968f26;
 inout  kelvin_GNDcapesr;
@@ -1210,13 +1189,14 @@ output [15:0] status_meas_vin_15;
 input  IP_CAPMANAGERpuget1;
 input  IP_CHARGEPUMPpuget1;
 inout  kelvin_GNDcapdecode;
-input  kelvin_GNDpowergood;
+inout  kelvin_GNDpowergood;
 inout  kelvin_GNDtelemetry;
 output [15:0] status_alarm_reg_15;
 output [15:0] status_meas_vcap_15;
 output [15:0] status_meas_vout_15;
 output [9:0] status_mon_status_9;
 input  IP_INPOWERPATHpuget1;
+input  kelvin_GNDcapmanager;
 inout  kelvin_GNDchargepump;
 inout  kelvin_GNDregulation;
 output [15:0] status_meas_dtemp_15;
@@ -1225,11 +1205,10 @@ output [15:0] status_meas_vcap1_15;
 output [15:0] status_meas_vcap2_15;
 output [15:0] status_meas_vcap3_15;
 output [15:0] status_meas_vcap4_15;
-input  celkelvin_IN_04cc16be;
-input  register_clr_cap_ov_1;
-input  register_clr_cap_uv_0;
-input  register_clr_gpi_ov_3;
-input  register_clr_gpi_uv_2;
+input  register_clr_alarms_0;
+input  register_clr_alarms_1;
+input  register_clr_alarms_2;
+input  register_clr_alarms_3;
 input [3:0] register_vcapfb_dac_3;
 output [11:0] status_chrg_status_11;
 output [1:0] status_meas_esrgain_1;
@@ -1237,6 +1216,7 @@ input  IP_POWERGOODpugetMAIN1;
 input [15:0] register_cap_lo_lvl_15;
 input [15:0] register_cap_ov_lvl_15;
 input [15:0] register_cap_uv_lvl_15;
+input  register_clr_alarms_15;
 input [15:0] register_gpi_ov_lvl_15;
 input [15:0] register_gpi_uv_lvl_15;
 input [15:0] register_iin_oc_lvl_15;
@@ -1244,14 +1224,18 @@ input [15:0] register_vin_ov_lvl_15;
 input [15:0] register_vin_uv_lvl_15;
 input  celkelvin_SGND_2b3a9b82;
 input  celkelvin_SGND_8a994242;
+input  celkelvin_SGND_caab0eec;
 input  celkelvin_SGND_e7548a33;
 input  celkelvin_SGND_fb33d1d2;
 input  celkelvin_VCAP_fb33d1d2;
 inout  kelvin_GNDcapacitorgood;
 input [15:0] register_cap_esr_per_15;
-input  register_clear_vin_ov_5;
-input  register_clear_vin_uv_4;
-input  register_clr_cap_low_15;
+input  register_clear_alarms_4;
+input  register_clear_alarms_5;
+input  register_clear_alarms_6;
+input  register_clear_alarms_7;
+input  register_clear_alarms_8;
+input  register_clear_alarms_9;
 input [15:0] register_ichg_uc_lvl_15;
 input [15:0] register_mask_alarms_15;
 input [15:0] register_vcap_ov_lvl_15;
@@ -1259,27 +1243,23 @@ input [15:0] register_vcap_uv_lvl_15;
 input [15:0] register_vout_ov_lvl_15;
 input [15:0] register_vout_uv_lvl_15;
 inout  kelvin_GNDcurrentsensein;
-input  register_clear_iin_oc_10;
-input  register_clear_vcap_ov_7;
-input  register_clear_vcap_uv_6;
-input  register_clear_vout_ov_9;
-input  register_clear_vout_uv_8;
+input  register_clear_alarms_10;
+input  register_clear_alarms_11;
+input  register_clear_alarms_12;
+input  register_clear_alarms_13;
+input  register_clear_alarms_14;
 input [15:0] register_esr_high_lvl_15;
 input  celkelvin_INTVCC_04cc16be;
-input  register_clear_ichg_uc_11;
 input [15:0] register_dtemp_hot_lvl_15;
 input [9:0] register_msk_mon_status_9;
-input  register_clear_esr_high_14;
 input [15:0] register_dtemp_cold_lvl_15;
 input  register_sequencer_reset_0;
 output [2:0] status_PUGETfaultmanager_2;
 output [3:0] status_PUGETfaultmanager_6;
 output [1:0] status_PUGETfaultmanager_8;
 input  IP_SERVICEcomparatorVOUTSN1;
-input  register_clear_dtemp_hot_13;
 output [9:0] status_FAULTMANAGERstatus_9;
 inout  kelvin_GNDcurrentsensecharge;
-input  register_clear_dtemp_cold_12;
 input  celkelvin_INpowerpath_e7548a33;
 
 
@@ -1339,139 +1319,137 @@ CAPESRpuget XCAPESR (
 .tmi(tmi[4:0]),
 .CAP4(CAP4),
 .ITST(ITST),
-.porb(net_661),
+.porb(net_650),
 .SIMPV(SIMPV),
-.mode_cv(net_721),
+.mode_cv(net_711),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .GNDcapesr(GNDcapesr),
 .PORB97836(PORB97836),
-.CAPcount_0(net_419),
-.CAPcount_1(net_420),
-.meas_cap_0(net_605),
-.meas_cap_1(net_606),
-.meas_cap_2(net_607),
-.meas_cap_3(net_608),
-.meas_cap_4(net_609),
-.meas_cap_5(net_610),
-.meas_cap_6(net_611),
-.meas_cap_7(net_612),
-.meas_cap_8(net_613),
-.meas_cap_9(net_614),
-.meas_esr_0(net_621),
-.meas_esr_1(net_622),
-.meas_esr_2(net_623),
-.meas_esr_3(net_624),
-.meas_esr_4(net_625),
-.meas_esr_5(net_626),
-.meas_esr_6(net_627),
-.meas_esr_7(net_628),
-.meas_esr_8(net_629),
-.meas_esr_9(net_630),
-.power_good(net_647),
+.CAPcount_0(net_408),
+.CAPcount_1(net_409),
+.meas_cap_0(net_594),
+.meas_cap_1(net_595),
+.meas_cap_2(net_596),
+.meas_cap_3(net_597),
+.meas_cap_4(net_598),
+.meas_cap_5(net_599),
+.meas_cap_6(net_600),
+.meas_cap_7(net_601),
+.meas_cap_8(net_602),
+.meas_cap_9(net_603),
+.meas_esr_0(net_610),
+.meas_esr_1(net_611),
+.meas_esr_2(net_612),
+.meas_esr_3(net_613),
+.meas_esr_4(net_614),
+.meas_esr_5(net_615),
+.meas_esr_6(net_616),
+.meas_esr_7(net_617),
+.meas_esr_8(net_618),
+.meas_esr_9(net_619),
+.power_good(net_636),
 .sense_ITST(sense_ITST),
 .CELSUB40948(CELSUB40948),
 .IP_30794d23(IP_30794d23),
-.alert_clear(net_753),
-.meas_cap_10(net_615),
-.meas_cap_11(net_616),
-.meas_cap_12(net_617),
-.meas_cap_13(net_618),
-.meas_cap_14(net_619),
-.meas_cap_15(net_620),
-.meas_esr_10(net_631),
-.meas_esr_11(net_632),
-.meas_esr_12(net_633),
-.meas_esr_13(net_634),
-.meas_esr_14(net_635),
-.meas_esr_15(net_636),
-.alert_capesr(net_747),
-.clock_capesr(net_742),
+.meas_cap_10(net_604),
+.meas_cap_11(net_605),
+.meas_cap_12(net_606),
+.meas_cap_13(net_607),
+.meas_cap_14(net_608),
+.meas_cap_15(net_609),
+.meas_esr_10(net_620),
+.meas_esr_11(net_621),
+.meas_esr_12(net_622),
+.meas_esr_13(net_623),
+.meas_esr_14(net_624),
+.meas_esr_15(net_625),
+.clock_capesr(net_731),
 .dftstatusLSB(dftstatusLSB[7:0]),
 .dftstatusMSB(dftstatusMSB[7:0]),
-.fault_capesr(net_737),
+.fault_capesr(net_725),
 .kelvin_SIMPV(kelvin_SIMPVcapesr),
-.meas_vcap1_0(net_425),
-.meas_vcap1_1(net_426),
-.meas_vcap1_2(net_427),
-.meas_vcap1_3(net_428),
-.meas_vcap1_4(net_429),
-.meas_vcap1_5(net_430),
-.meas_vcap1_6(net_431),
-.meas_vcap1_7(net_432),
-.meas_vcap1_8(net_433),
-.meas_vcap1_9(net_434),
-.meas_vcap2_0(net_441),
-.meas_vcap2_1(net_442),
-.meas_vcap2_2(net_443),
-.meas_vcap2_3(net_444),
-.meas_vcap2_4(net_445),
-.meas_vcap2_5(net_446),
-.meas_vcap2_6(net_447),
-.meas_vcap2_7(net_448),
-.meas_vcap2_8(net_449),
-.meas_vcap2_9(net_450),
-.meas_vcap3_0(net_457),
-.meas_vcap3_1(net_458),
-.meas_vcap3_2(net_459),
-.meas_vcap3_3(net_460),
-.meas_vcap3_4(net_461),
-.meas_vcap3_5(net_462),
-.meas_vcap3_6(net_463),
-.meas_vcap3_7(net_464),
-.meas_vcap3_8(net_465),
-.meas_vcap3_9(net_466),
-.meas_vcap4_0(net_473),
-.meas_vcap4_1(net_474),
-.meas_vcap4_2(net_475),
-.meas_vcap4_3(net_476),
-.meas_vcap4_4(net_477),
-.meas_vcap4_5(net_478),
-.meas_vcap4_6(net_479),
-.meas_vcap4_7(net_480),
-.meas_vcap4_8(net_481),
-.meas_vcap4_9(net_482),
-.allow_charger(net_708),
-.blank_charger(net_739),
-.enable_capesr(net_754),
-.meas_vcap1_10(net_435),
-.meas_vcap1_11(net_436),
-.meas_vcap1_12(net_437),
-.meas_vcap1_13(net_438),
-.meas_vcap1_14(net_439),
-.meas_vcap1_15(net_440),
-.meas_vcap2_10(net_451),
-.meas_vcap2_11(net_452),
-.meas_vcap2_12(net_453),
-.meas_vcap2_13(net_454),
-.meas_vcap2_14(net_455),
-.meas_vcap2_15(net_456),
-.meas_vcap3_10(net_467),
-.meas_vcap3_11(net_468),
-.meas_vcap3_12(net_469),
-.meas_vcap3_13(net_470),
-.meas_vcap3_14(net_471),
-.meas_vcap3_15(net_472),
-.meas_vcap4_10(net_483),
-.meas_vcap4_11(net_484),
-.meas_vcap4_12(net_485),
-.meas_vcap4_13(net_486),
-.meas_vcap4_14(net_487),
-.meas_vcap4_15(net_488),
-.clock_divideRT(net_719),
-.done_telemetry(net_685),
-.CHANNELselect_0(net_421),
-.CHANNELselect_1(net_422),
-.CHANNELselect_2(net_423),
-.CHANNELselect_3(net_424),
-.request_clockRT(net_736),
-.GMCHARGEselect_0(net_601),
-.GMCHARGEselect_1(net_602),
-.GMCHARGEselect_2(net_603),
-.GMCHARGEselect_3(net_604),
+.meas_vcap1_0(net_414),
+.meas_vcap1_1(net_415),
+.meas_vcap1_2(net_416),
+.meas_vcap1_3(net_417),
+.meas_vcap1_4(net_418),
+.meas_vcap1_5(net_419),
+.meas_vcap1_6(net_420),
+.meas_vcap1_7(net_421),
+.meas_vcap1_8(net_422),
+.meas_vcap1_9(net_423),
+.meas_vcap2_0(net_430),
+.meas_vcap2_1(net_431),
+.meas_vcap2_2(net_432),
+.meas_vcap2_3(net_433),
+.meas_vcap2_4(net_434),
+.meas_vcap2_5(net_435),
+.meas_vcap2_6(net_436),
+.meas_vcap2_7(net_437),
+.meas_vcap2_8(net_438),
+.meas_vcap2_9(net_439),
+.meas_vcap3_0(net_446),
+.meas_vcap3_1(net_447),
+.meas_vcap3_2(net_448),
+.meas_vcap3_3(net_449),
+.meas_vcap3_4(net_450),
+.meas_vcap3_5(net_451),
+.meas_vcap3_6(net_452),
+.meas_vcap3_7(net_453),
+.meas_vcap3_8(net_454),
+.meas_vcap3_9(net_455),
+.meas_vcap4_0(net_462),
+.meas_vcap4_1(net_463),
+.meas_vcap4_2(net_464),
+.meas_vcap4_3(net_465),
+.meas_vcap4_4(net_466),
+.meas_vcap4_5(net_467),
+.meas_vcap4_6(net_468),
+.meas_vcap4_7(net_469),
+.meas_vcap4_8(net_470),
+.meas_vcap4_9(net_471),
+.allow_charger(net_697),
+.blank_charger(net_728),
+.enable_capesr(net_740),
+.meas_vcap1_10(net_424),
+.meas_vcap1_11(net_425),
+.meas_vcap1_12(net_426),
+.meas_vcap1_13(net_427),
+.meas_vcap1_14(net_428),
+.meas_vcap1_15(net_429),
+.meas_vcap2_10(net_440),
+.meas_vcap2_11(net_441),
+.meas_vcap2_12(net_442),
+.meas_vcap2_13(net_443),
+.meas_vcap2_14(net_444),
+.meas_vcap2_15(net_445),
+.meas_vcap3_10(net_456),
+.meas_vcap3_11(net_457),
+.meas_vcap3_12(net_458),
+.meas_vcap3_13(net_459),
+.meas_vcap3_14(net_460),
+.meas_vcap3_15(net_461),
+.meas_vcap4_10(net_472),
+.meas_vcap4_11(net_473),
+.meas_vcap4_12(net_474),
+.meas_vcap4_13(net_475),
+.meas_vcap4_14(net_476),
+.meas_vcap4_15(net_477),
+.clock_divideRT(net_708),
+.done_telemetry(net_674),
+.CHANNELselect_0(net_410),
+.CHANNELselect_1(net_411),
+.CHANNELselect_2(net_412),
+.CHANNELselect_3(net_413),
+.request_clockRT(net_713),
+.GMCHARGEselect_0(net_590),
+.GMCHARGEselect_1(net_591),
+.GMCHARGEselect_2(net_592),
+.GMCHARGEselect_3(net_593),
 .kelvin_GNDcapesr(kelvin_GNDcapesr),
-.ctl_gpi_buffer_en(net_743),
-.done_capcalculate(net_749),
+.ctl_gpi_buffer_en(net_732),
+.done_capcalculate(net_737),
 .register_ctl_reg_0(register_ctl_reg_0),
 .register_ctl_reg_3(register_ctl_reg_3[2:0]),
 .status_meas_cap_15(status_meas_cap_15[15:0]),
@@ -1481,6 +1459,103 @@ CAPESRpuget XCAPESR (
 .register_cap_esr_per_15(register_cap_esr_per_15[15:0]),
 .register_msk_mon_status_9(register_msk_mon_status_9[9:0]),
 .status_PUGETfaultmanager_6(status_PUGETfaultmanager_6[3:0])
+);
+
+CAPMANAGERpuget XCAPMANAGER (
+.TAO(TAO),
+.tdo(tdo),
+.tmi(tmi[4:0]),
+.CAP1(CAP1),
+.CAP2(CAP2),
+.CAP3(CAP3),
+.CAP4(CAP4),
+.porb(net_650),
+.SIMPV(SIMPV),
+.CAPRTN(CAPRTN),
+.chrg_bal(net_724),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.PORB97836(PORB97836),
+.chrg_shnt(net_722),
+.power_fail(net_640),
+.CELREF84329(CELREF84329),
+.CELSUB40948(CELSUB40948),
+.IP_fa0e77ad(IP_fa0e77ad),
+.INcapmanager(INcapmanger),
+.REF_ICHARGER(net_710),
+.dftstatusLSB(dftstatusLSB[7:0]),
+.meas_vcap1_0(net_414),
+.meas_vcap1_1(net_415),
+.meas_vcap1_2(net_416),
+.meas_vcap1_3(net_417),
+.meas_vcap1_4(net_418),
+.meas_vcap1_5(net_419),
+.meas_vcap1_6(net_420),
+.meas_vcap1_7(net_421),
+.meas_vcap1_8(net_422),
+.meas_vcap1_9(net_423),
+.meas_vcap2_0(net_430),
+.meas_vcap2_1(net_431),
+.meas_vcap2_2(net_432),
+.meas_vcap2_3(net_433),
+.meas_vcap2_4(net_434),
+.meas_vcap2_5(net_435),
+.meas_vcap2_6(net_436),
+.meas_vcap2_7(net_437),
+.meas_vcap2_8(net_438),
+.meas_vcap2_9(net_439),
+.meas_vcap3_0(net_446),
+.meas_vcap3_1(net_447),
+.meas_vcap3_2(net_448),
+.meas_vcap3_3(net_449),
+.meas_vcap3_4(net_450),
+.meas_vcap3_5(net_451),
+.meas_vcap3_6(net_452),
+.meas_vcap3_7(net_453),
+.meas_vcap3_8(net_454),
+.meas_vcap3_9(net_455),
+.meas_vcap4_0(net_462),
+.meas_vcap4_1(net_463),
+.meas_vcap4_2(net_464),
+.meas_vcap4_3(net_465),
+.meas_vcap4_4(net_466),
+.meas_vcap4_5(net_467),
+.meas_vcap4_6(net_468),
+.meas_vcap4_7(net_469),
+.meas_vcap4_8(net_470),
+.meas_vcap4_9(net_471),
+.meas_vcap1_10(net_424),
+.meas_vcap1_11(net_425),
+.meas_vcap1_12(net_426),
+.meas_vcap1_13(net_427),
+.meas_vcap1_14(net_428),
+.meas_vcap1_15(net_429),
+.meas_vcap2_10(net_440),
+.meas_vcap2_11(net_441),
+.meas_vcap2_12(net_442),
+.meas_vcap2_13(net_443),
+.meas_vcap2_14(net_444),
+.meas_vcap2_15(net_445),
+.meas_vcap3_10(net_456),
+.meas_vcap3_11(net_457),
+.meas_vcap3_12(net_458),
+.meas_vcap3_13(net_459),
+.meas_vcap3_14(net_460),
+.meas_vcap3_15(net_461),
+.meas_vcap4_10(net_472),
+.meas_vcap4_11(net_473),
+.meas_vcap4_12(net_474),
+.meas_vcap4_13(net_475),
+.meas_vcap4_14(net_476),
+.meas_vcap4_15(net_477),
+.done_telemetry(net_674),
+.clock_capmanager(net_762),
+.done_capcalculate(net_737),
+.fault_capcalculate(net_764),
+.register_vshunt_15(register_vshunt_15[15:0]),
+.IP_CAPMANAGERpuget1(IP_CAPMANAGERpuget1),
+.enable_capcalculate(net_766),
+.kelvin_GNDcapmanager(kelvin_GNDcapmanager)
 );
 
 CHARGEPOWERPATHpuget XCHARGE (
@@ -1497,10 +1572,10 @@ CHARGEPOWERPATHpuget XCHARGE (
 .CELREF84329(CELREF84329),
 .CELSUB40948(CELSUB40948),
 .IP_2d823e55(IP_2d823e55),
-.ok_powerpathcharge(net_765),
-.on_powerpathcharge(net_767),
-.clock_powerpathcharge(net_769),
-.enable_powerpathcharge(net_766),
+.ok_powerpathcharge(net_751),
+.on_powerpathcharge(net_753),
+.clock_powerpathcharge(net_755),
+.enable_powerpathcharge(net_752),
 .celkelvin_SGND_fb33d1d2(celkelvin_SGND_fb33d1d2),
 .celkelvin_VCAP_fb33d1d2(celkelvin_VCAP_fb33d1d2)
 );
@@ -1512,7 +1587,7 @@ CHARGEPUMPpuget XCHARGEPUMP (
 .tdo(tdo),
 .tmi(tmi[4:0]),
 .VCAP(VCAP),
-.porb(net_661),
+.porb(net_650),
 .SIMPV(SIMPV),
 .VCAPP5(VCAPP5),
 .CELG59462(CELG59462),
@@ -1522,11 +1597,11 @@ CHARGEPUMPpuget XCHARGEPUMP (
 .CELSUB40948(CELSUB40948),
 .kelvin_VCAP(kelvin_VCAP),
 .kelvin_VCAPP5(kelvin_VCAPP5),
-.ok_chargepump(net_780),
+.ok_chargepump(net_765),
 .PGNDchargepump(PGNDchargepump),
-.clock_chargepump(net_783),
-.fault_chargepump(net_776),
-.enable_chargepump(net_773),
+.clock_chargepump(net_769),
+.fault_chargepump(net_763),
+.enable_chargepump(net_757),
 .IP_CHARGEPUMPpuget1(IP_CHARGEPUMPpuget1),
 .kelvin_GNDchargepump(kelvin_GNDchargepump)
 );
@@ -1541,10 +1616,10 @@ CHARGERpuget XCHARGER (
 .tmi(tmi[4:0]),
 .ICAP(ICAP),
 .VCAP(VCAP),
-.porb(net_661),
+.porb(net_650),
 .BGATE(BGATE),
 .CAPFB(CAPFB),
-.CAPGD(CAPGD),
+.CAPGD(net_677),
 .DRVCC(DRVCC),
 .OUTFB(OUTFB),
 .SIMPV(SIMPV),
@@ -1553,48 +1628,50 @@ CHARGERpuget XCHARGER (
 .VCAPP5(VCAPP5),
 .VOUTSN(VOUTSN),
 .VOUTSP(VOUTSP),
-.ok_iin(net_692),
-.mode_cv(net_721),
-.chrg_bal(net_733),
-.sense_RT(sense_RT),
+.ok_iin(net_686),
+.mode_cv(net_711),
+.chrg_bal(net_724),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
-.chrg_shnt(net_731),
-.chrg_uvlo(net_713),
+.chrg_shnt(net_722),
+.chrg_uvlo(net_702),
 .GNDcharger(GNDcharger),
-.ok_charger(net_710),
-.ok_icharge(net_701),
-.power_fail(net_651),
-.power_good(net_647),
+.ok_charger(net_699),
+.ok_icharge(CAPGD),
+.power_fail(net_640),
+.power_good(net_636),
 .CELREF84329(CELREF84329),
+.CELSENSE_RF(CELSENSE_RF),
 .CELSUB40948(CELSUB40948),
 .PGNDcharger(PGNDcharger),
-.REF_CHARGER(net_718),
-.measure_iin(net_673),
-.sync_stepup(net_717),
-.dftstatusLSB(dftstatusLSB[7:0]),
-.freeze_fault(net_744),
-.IIN_TELEMETRY(net_688),
-.allow_charger(net_708),
-.blank_charger(net_739),
-.clock_charger(net_724),
-.fault_charger(net_714),
-.clock_divideRT(net_719),
-.enable_charger(net_723),
-.measure_icharge(net_677),
-.request_clockRT(net_736),
-.GMCHARGEselect_0(net_601),
-.GMCHARGEselect_1(net_602),
-.GMCHARGEselect_2(net_603),
-.GMCHARGEselect_3(net_604),
+.REF_CHARGER(net_707),
+.measure_iin(net_662),
+.sync_stepup(net_706),
+.REF_ICHARGER(net_710),
+.freeze_fault(net_733),
+.IIN_TELEMETRY(net_681),
+.allow_charger(net_697),
+.blank_charger(net_728),
+.clock_charger(net_729),
+.fault_charger(net_703),
+.clock_divideRT(net_708),
+.enable_charger(net_726),
+.measure_icharge(net_666),
+.request_clockRT(net_713),
+.GMCHARGEselect_0(net_590),
+.GMCHARGEselect_1(net_591),
+.GMCHARGEselect_2(net_592),
+.GMCHARGEselect_3(net_593),
 .IP_CHARGERpuget1(IP_CHARGERpuget1),
 .IP_CHARGERpuget2(IP_CHARGERpuget2),
 .IP_CHARGERpuget3(IP_CHARGERpuget3),
-.ICHARGE_TELEMETRY(net_697),
+.IP_CHARGERpuget4(IP_CHARGERpuget4),
+.ICHARGE_TELEMETRY(net_690),
 .kelvin_GNDregulation(kelvin_GNDregulation),
 .register_vcapfb_dac_3(register_vcapfb_dac_3[3:0]),
 .status_chrg_status_11(status_chrg_status_11[11:0]),
+.celkelvin_SGND_caab0eec(celkelvin_SGND_caab0eec),
 .kelvin_GNDcapacitorgood(kelvin_GNDcapacitorgood),
 .kelvin_GNDcurrentsensein(kelvin_GNDcurrentsensein),
 .status_PUGETfaultmanager_2(status_PUGETfaultmanager_2[2:0]),
@@ -1604,7 +1681,7 @@ CHARGERpuget XCHARGER (
 CAPdecode XDECODE (
 .tdo(tdo),
 .tmi(tmi[4:0]),
-.porb(net_661),
+.porb(net_650),
 .SIMPV(SIMPV),
 .VCC2P5(VCC2P5),
 .CAPSLCT0(CAPSLCT0),
@@ -1612,12 +1689,12 @@ CAPdecode XDECODE (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
-.CAPcount_0(net_419),
-.CAPcount_1(net_420),
+.CAPcount_0(net_408),
+.CAPcount_1(net_409),
 .CELSUB40948(CELSUB40948),
-.done_capdecode(net_642),
-.clock_capdecoder(net_668),
-.enable_capdecode(net_666),
+.done_capdecode(net_631),
+.clock_capdecoder(net_657),
+.enable_capdecode(net_655),
 .IP_CAPdecodeMAIN1(IP_CAPdecodeMAIN1),
 .status_num_caps_1(status_num_caps_1[1:0]),
 .kelvin_GNDcapdecode(kelvin_GNDcapdecode)
@@ -1632,34 +1709,34 @@ FAULTMANAGERpuget XFAULTMANAGER (
 .CELBG83021(CELBG83021),
 .CELSUB40948(CELSUB40948),
 .IP_ea686c1e(IP_ea686c1e),
-.fault_puget(net_772),
-.fault_capesr(net_737),
-.fault_freeze(net_744),
-.fault_charger(net_714),
-.fault_service(net_705),
-.fault_sequencer(net_774),
-.fault_telemetry(net_689),
-.fault_chargepump(net_776),
-.fault_capcalculate(net_778),
-.enable_faultmanager(net_771),
+.fault_puget(net_759),
+.fault_capesr(net_725),
+.fault_freeze(net_733),
+.fault_charger(net_703),
+.fault_service(net_694),
+.fault_sequencer(net_760),
+.fault_telemetry(net_678),
+.fault_chargepump(net_763),
+.fault_capcalculate(net_764),
+.enable_faultmanager(net_758),
 .status_FAULTMANAGERstatus_9(status_FAULTMANAGERstatus_9[9:0])
 );
 
 GPIpuget XGPI (
 .GPI(GPI),
-.GPO(net_722),
+.GPO(net_712),
 .TAO(TAO),
 .tdo(tdo),
 .tmi(tmi[4:0]),
 .SIMPV(SIMPV),
-.ok_gpi(net_727),
+.ok_gpi(net_716),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948),
 .IP_0722e9c9(IP_0722e9c9),
-.measure_gpi(net_671),
+.measure_gpi(net_660),
 .kelvin_GNDgpi(kelvin_GNDgpi),
-.ctl_gpi_buffer_en(net_743)
+.ctl_gpi_buffer_en(net_732)
 );
 
 INPOWERPATHpuget XINPP (
@@ -1672,15 +1749,15 @@ INPOWERPATHpuget XINPP (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
-.ok_voutm5(net_667),
+.ok_voutm5(net_656),
 .CELREF84329(CELREF84329),
 .CELSUB40948(CELSUB40948),
 .INpowerpath(INpowerpath),
 .GNDpowerpath(GNDpowerpathin),
-.ok_powerpathin(net_659),
-.on_powerpathin(net_663),
-.clock_powerpathin(net_658),
-.enable_powerpathin(net_653),
+.ok_powerpathin(net_648),
+.on_powerpathin(net_652),
+.clock_powerpathin(net_647),
+.enable_powerpathin(net_642),
 .IP_INPOWERPATHpuget1(IP_INPOWERPATHpuget1),
 .celkelvin_SGND_e7548a33(celkelvin_SGND_e7548a33),
 .celkelvin_INpowerpath_e7548a33(celkelvin_INpowerpath_e7548a33)
@@ -1689,349 +1766,255 @@ INPOWERPATHpuget XINPP (
 LIMITERpuget XLIMITER (
 .tdo(tdo),
 .tmi(tmi[4:0]),
-.porb(net_661),
+.porb(net_650),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
-.meas_cap_0(net_605),
-.meas_cap_1(net_606),
-.meas_cap_2(net_607),
-.meas_cap_3(net_608),
-.meas_cap_4(net_609),
-.meas_cap_5(net_610),
-.meas_cap_6(net_611),
-.meas_cap_7(net_612),
-.meas_cap_8(net_613),
-.meas_cap_9(net_614),
-.meas_esr_0(net_621),
-.meas_esr_1(net_622),
-.meas_esr_2(net_623),
-.meas_esr_3(net_624),
-.meas_esr_4(net_625),
-.meas_esr_5(net_626),
-.meas_esr_6(net_627),
-.meas_esr_7(net_628),
-.meas_esr_8(net_629),
-.meas_esr_9(net_630),
-.meas_gpi_0(net_489),
-.meas_gpi_1(net_490),
-.meas_gpi_2(net_491),
-.meas_gpi_3(net_492),
-.meas_gpi_4(net_493),
-.meas_gpi_5(net_494),
-.meas_gpi_6(net_495),
-.meas_gpi_7(net_496),
-.meas_gpi_8(net_497),
-.meas_gpi_9(net_498),
-.meas_iin_0(net_553),
-.meas_iin_1(net_554),
-.meas_iin_2(net_555),
-.meas_iin_3(net_556),
-.meas_iin_4(net_557),
-.meas_iin_5(net_558),
-.meas_iin_6(net_559),
-.meas_iin_7(net_560),
-.meas_iin_8(net_561),
-.meas_iin_9(net_562),
-.meas_vin_0(net_505),
-.meas_vin_1(net_506),
-.meas_vin_2(net_507),
-.meas_vin_3(net_508),
-.meas_vin_4(net_509),
-.meas_vin_5(net_510),
-.meas_vin_6(net_511),
-.meas_vin_7(net_512),
-.meas_vin_8(net_513),
-.meas_vin_9(net_514),
+.meas_cap_0(net_594),
+.meas_cap_1(net_595),
+.meas_cap_2(net_596),
+.meas_cap_3(net_597),
+.meas_cap_4(net_598),
+.meas_cap_5(net_599),
+.meas_cap_6(net_600),
+.meas_cap_7(net_601),
+.meas_cap_8(net_602),
+.meas_cap_9(net_603),
+.meas_esr_0(net_610),
+.meas_esr_1(net_611),
+.meas_esr_2(net_612),
+.meas_esr_3(net_613),
+.meas_esr_4(net_614),
+.meas_esr_5(net_615),
+.meas_esr_6(net_616),
+.meas_esr_7(net_617),
+.meas_esr_8(net_618),
+.meas_esr_9(net_619),
+.meas_gpi_0(net_478),
+.meas_gpi_1(net_479),
+.meas_gpi_2(net_480),
+.meas_gpi_3(net_481),
+.meas_gpi_4(net_482),
+.meas_gpi_5(net_483),
+.meas_gpi_6(net_484),
+.meas_gpi_7(net_485),
+.meas_gpi_8(net_486),
+.meas_gpi_9(net_487),
+.meas_iin_0(net_542),
+.meas_iin_1(net_543),
+.meas_iin_2(net_544),
+.meas_iin_3(net_545),
+.meas_iin_4(net_546),
+.meas_iin_5(net_547),
+.meas_iin_6(net_548),
+.meas_iin_7(net_549),
+.meas_iin_8(net_550),
+.meas_iin_9(net_551),
+.meas_vin_0(net_494),
+.meas_vin_1(net_495),
+.meas_vin_2(net_496),
+.meas_vin_3(net_497),
+.meas_vin_4(net_498),
+.meas_vin_5(net_499),
+.meas_vin_6(net_500),
+.meas_vin_7(net_501),
+.meas_vin_8(net_502),
+.meas_vin_9(net_503),
 .CELSUB40948(CELSUB40948),
-.alert_clear(net_753),
-.meas_cap_10(net_615),
-.meas_cap_11(net_616),
-.meas_cap_12(net_617),
-.meas_cap_13(net_618),
-.meas_cap_14(net_619),
-.meas_cap_15(net_620),
-.meas_esr_10(net_631),
-.meas_esr_11(net_632),
-.meas_esr_12(net_633),
-.meas_esr_13(net_634),
-.meas_esr_14(net_635),
-.meas_esr_15(net_636),
-.meas_gpi_10(net_499),
-.meas_gpi_11(net_500),
-.meas_gpi_12(net_501),
-.meas_gpi_13(net_502),
-.meas_gpi_14(net_503),
-.meas_gpi_15(net_504),
-.meas_iin_10(net_563),
-.meas_iin_11(net_564),
-.meas_iin_12(net_565),
-.meas_iin_13(net_566),
-.meas_iin_14(net_567),
-.meas_iin_15(net_568),
-.meas_vcap_0(net_521),
-.meas_vcap_1(net_522),
-.meas_vcap_2(net_523),
-.meas_vcap_3(net_524),
-.meas_vcap_4(net_525),
-.meas_vcap_5(net_526),
-.meas_vcap_6(net_527),
-.meas_vcap_7(net_528),
-.meas_vcap_8(net_529),
-.meas_vcap_9(net_530),
-.meas_vin_10(net_515),
-.meas_vin_11(net_516),
-.meas_vin_12(net_517),
-.meas_vin_13(net_518),
-.meas_vin_14(net_519),
-.meas_vin_15(net_520),
-.meas_vout_0(net_537),
-.meas_vout_1(net_538),
-.meas_vout_2(net_539),
-.meas_vout_3(net_540),
-.meas_vout_4(net_541),
-.meas_vout_5(net_542),
-.meas_vout_6(net_543),
-.meas_vout_7(net_544),
-.meas_vout_8(net_545),
-.meas_vout_9(net_546),
-.meas_dtemp_0(net_585),
-.meas_dtemp_1(net_586),
-.meas_dtemp_2(net_587),
-.meas_dtemp_3(net_588),
-.meas_dtemp_4(net_589),
-.meas_dtemp_5(net_590),
-.meas_dtemp_6(net_591),
-.meas_dtemp_7(net_592),
-.meas_dtemp_8(net_593),
-.meas_dtemp_9(net_594),
-.meas_ichrg_0(net_569),
-.meas_ichrg_1(net_570),
-.meas_ichrg_2(net_571),
-.meas_ichrg_3(net_572),
-.meas_ichrg_4(net_573),
-.meas_ichrg_5(net_574),
-.meas_ichrg_6(net_575),
-.meas_ichrg_7(net_576),
-.meas_ichrg_8(net_577),
-.meas_ichrg_9(net_578),
-.meas_vcap1_0(net_425),
-.meas_vcap1_1(net_426),
-.meas_vcap1_2(net_427),
-.meas_vcap1_3(net_428),
-.meas_vcap1_4(net_429),
-.meas_vcap1_5(net_430),
-.meas_vcap1_6(net_431),
-.meas_vcap1_7(net_432),
-.meas_vcap1_8(net_433),
-.meas_vcap1_9(net_434),
-.meas_vcap2_0(net_441),
-.meas_vcap2_1(net_442),
-.meas_vcap2_2(net_443),
-.meas_vcap2_3(net_444),
-.meas_vcap2_4(net_445),
-.meas_vcap2_5(net_446),
-.meas_vcap2_6(net_447),
-.meas_vcap2_7(net_448),
-.meas_vcap2_8(net_449),
-.meas_vcap2_9(net_450),
-.meas_vcap3_0(net_457),
-.meas_vcap3_1(net_458),
-.meas_vcap3_2(net_459),
-.meas_vcap3_3(net_460),
-.meas_vcap3_4(net_461),
-.meas_vcap3_5(net_462),
-.meas_vcap3_6(net_463),
-.meas_vcap3_7(net_464),
-.meas_vcap3_8(net_465),
-.meas_vcap3_9(net_466),
-.meas_vcap4_0(net_473),
-.meas_vcap4_1(net_474),
-.meas_vcap4_2(net_475),
-.meas_vcap4_3(net_476),
-.meas_vcap4_4(net_477),
-.meas_vcap4_5(net_478),
-.meas_vcap4_6(net_479),
-.meas_vcap4_7(net_480),
-.meas_vcap4_8(net_481),
-.meas_vcap4_9(net_482),
-.meas_vcap_10(net_531),
-.meas_vcap_11(net_532),
-.meas_vcap_12(net_533),
-.meas_vcap_13(net_534),
-.meas_vcap_14(net_535),
-.meas_vcap_15(net_536),
-.meas_vout_10(net_547),
-.meas_vout_11(net_548),
-.meas_vout_12(net_549),
-.meas_vout_13(net_550),
-.meas_vout_14(net_551),
-.meas_vout_15(net_552),
-.alert_limiter(net_746),
-.clock_limiter(net_750),
-.meas_dtemp_10(net_595),
-.meas_dtemp_11(net_596),
-.meas_dtemp_12(net_597),
-.meas_dtemp_13(net_598),
-.meas_dtemp_14(net_599),
-.meas_dtemp_15(net_600),
-.meas_ichrg_10(net_579),
-.meas_ichrg_11(net_580),
-.meas_ichrg_12(net_581),
-.meas_ichrg_13(net_582),
-.meas_ichrg_14(net_583),
-.meas_ichrg_15(net_584),
-.meas_vcap1_10(net_435),
-.meas_vcap1_11(net_436),
-.meas_vcap1_12(net_437),
-.meas_vcap1_13(net_438),
-.meas_vcap1_14(net_439),
-.meas_vcap1_15(net_440),
-.meas_vcap2_10(net_451),
-.meas_vcap2_11(net_452),
-.meas_vcap2_12(net_453),
-.meas_vcap2_13(net_454),
-.meas_vcap2_14(net_455),
-.meas_vcap2_15(net_456),
-.meas_vcap3_10(net_467),
-.meas_vcap3_11(net_468),
-.meas_vcap3_12(net_469),
-.meas_vcap3_13(net_470),
-.meas_vcap3_14(net_471),
-.meas_vcap3_15(net_472),
-.meas_vcap4_10(net_483),
-.meas_vcap4_11(net_484),
-.meas_vcap4_12(net_485),
-.meas_vcap4_13(net_486),
-.meas_vcap4_14(net_487),
-.meas_vcap4_15(net_488),
-.enable_limiter(net_748),
+.meas_cap_10(net_604),
+.meas_cap_11(net_605),
+.meas_cap_12(net_606),
+.meas_cap_13(net_607),
+.meas_cap_14(net_608),
+.meas_cap_15(net_609),
+.meas_esr_10(net_620),
+.meas_esr_11(net_621),
+.meas_esr_12(net_622),
+.meas_esr_13(net_623),
+.meas_esr_14(net_624),
+.meas_esr_15(net_625),
+.meas_gpi_10(net_488),
+.meas_gpi_11(net_489),
+.meas_gpi_12(net_490),
+.meas_gpi_13(net_491),
+.meas_gpi_14(net_492),
+.meas_gpi_15(net_493),
+.meas_iin_10(net_552),
+.meas_iin_11(net_553),
+.meas_iin_12(net_554),
+.meas_iin_13(net_555),
+.meas_iin_14(net_556),
+.meas_iin_15(net_557),
+.meas_vcap_0(net_510),
+.meas_vcap_1(net_511),
+.meas_vcap_2(net_512),
+.meas_vcap_3(net_513),
+.meas_vcap_4(net_514),
+.meas_vcap_5(net_515),
+.meas_vcap_6(net_516),
+.meas_vcap_7(net_517),
+.meas_vcap_8(net_518),
+.meas_vcap_9(net_519),
+.meas_vin_10(net_504),
+.meas_vin_11(net_505),
+.meas_vin_12(net_506),
+.meas_vin_13(net_507),
+.meas_vin_14(net_508),
+.meas_vin_15(net_509),
+.meas_vout_0(net_526),
+.meas_vout_1(net_527),
+.meas_vout_2(net_528),
+.meas_vout_3(net_529),
+.meas_vout_4(net_530),
+.meas_vout_5(net_531),
+.meas_vout_6(net_532),
+.meas_vout_7(net_533),
+.meas_vout_8(net_534),
+.meas_vout_9(net_535),
+.meas_dtemp_0(net_574),
+.meas_dtemp_1(net_575),
+.meas_dtemp_2(net_576),
+.meas_dtemp_3(net_577),
+.meas_dtemp_4(net_578),
+.meas_dtemp_5(net_579),
+.meas_dtemp_6(net_580),
+.meas_dtemp_7(net_581),
+.meas_dtemp_8(net_582),
+.meas_dtemp_9(net_583),
+.meas_ichrg_0(net_558),
+.meas_ichrg_1(net_559),
+.meas_ichrg_2(net_560),
+.meas_ichrg_3(net_561),
+.meas_ichrg_4(net_562),
+.meas_ichrg_5(net_563),
+.meas_ichrg_6(net_564),
+.meas_ichrg_7(net_565),
+.meas_ichrg_8(net_566),
+.meas_ichrg_9(net_567),
+.meas_vcap1_0(net_414),
+.meas_vcap1_1(net_415),
+.meas_vcap1_2(net_416),
+.meas_vcap1_3(net_417),
+.meas_vcap1_4(net_418),
+.meas_vcap1_5(net_419),
+.meas_vcap1_6(net_420),
+.meas_vcap1_7(net_421),
+.meas_vcap1_8(net_422),
+.meas_vcap1_9(net_423),
+.meas_vcap2_0(net_430),
+.meas_vcap2_1(net_431),
+.meas_vcap2_2(net_432),
+.meas_vcap2_3(net_433),
+.meas_vcap2_4(net_434),
+.meas_vcap2_5(net_435),
+.meas_vcap2_6(net_436),
+.meas_vcap2_7(net_437),
+.meas_vcap2_8(net_438),
+.meas_vcap2_9(net_439),
+.meas_vcap3_0(net_446),
+.meas_vcap3_1(net_447),
+.meas_vcap3_2(net_448),
+.meas_vcap3_3(net_449),
+.meas_vcap3_4(net_450),
+.meas_vcap3_5(net_451),
+.meas_vcap3_6(net_452),
+.meas_vcap3_7(net_453),
+.meas_vcap3_8(net_454),
+.meas_vcap3_9(net_455),
+.meas_vcap4_0(net_462),
+.meas_vcap4_1(net_463),
+.meas_vcap4_2(net_464),
+.meas_vcap4_3(net_465),
+.meas_vcap4_4(net_466),
+.meas_vcap4_5(net_467),
+.meas_vcap4_6(net_468),
+.meas_vcap4_7(net_469),
+.meas_vcap4_8(net_470),
+.meas_vcap4_9(net_471),
+.meas_vcap_10(net_520),
+.meas_vcap_11(net_521),
+.meas_vcap_12(net_522),
+.meas_vcap_13(net_523),
+.meas_vcap_14(net_524),
+.meas_vcap_15(net_525),
+.meas_vout_10(net_536),
+.meas_vout_11(net_537),
+.meas_vout_12(net_538),
+.meas_vout_13(net_539),
+.meas_vout_14(net_540),
+.meas_vout_15(net_541),
+.clock_limiter(net_738),
+.meas_dtemp_10(net_584),
+.meas_dtemp_11(net_585),
+.meas_dtemp_12(net_586),
+.meas_dtemp_13(net_587),
+.meas_dtemp_14(net_588),
+.meas_dtemp_15(net_589),
+.meas_ichrg_10(net_568),
+.meas_ichrg_11(net_569),
+.meas_ichrg_12(net_570),
+.meas_ichrg_13(net_571),
+.meas_ichrg_14(net_572),
+.meas_ichrg_15(net_573),
+.meas_vcap1_10(net_424),
+.meas_vcap1_11(net_425),
+.meas_vcap1_12(net_426),
+.meas_vcap1_13(net_427),
+.meas_vcap1_14(net_428),
+.meas_vcap1_15(net_429),
+.meas_vcap2_10(net_440),
+.meas_vcap2_11(net_441),
+.meas_vcap2_12(net_442),
+.meas_vcap2_13(net_443),
+.meas_vcap2_14(net_444),
+.meas_vcap2_15(net_445),
+.meas_vcap3_10(net_456),
+.meas_vcap3_11(net_457),
+.meas_vcap3_12(net_458),
+.meas_vcap3_13(net_459),
+.meas_vcap3_14(net_460),
+.meas_vcap3_15(net_461),
+.meas_vcap4_10(net_472),
+.meas_vcap4_11(net_473),
+.meas_vcap4_12(net_474),
+.meas_vcap4_13(net_475),
+.meas_vcap4_14(net_476),
+.meas_vcap4_15(net_477),
+.enable_limiter(net_736),
 .status_alarm_reg_15(status_alarm_reg_15[15:0]),
-.register_clr_cap_ov_1(register_clr_cap_ov_1),
-.register_clr_cap_uv_0(register_clr_cap_uv_0),
-.register_clr_gpi_ov_3(register_clr_gpi_ov_3),
-.register_clr_gpi_uv_2(register_clr_gpi_uv_2),
+.register_clr_alarms_0(register_clr_alarms_0),
+.register_clr_alarms_1(register_clr_alarms_1),
+.register_clr_alarms_2(register_clr_alarms_2),
+.register_clr_alarms_3(register_clr_alarms_3),
 .register_cap_lo_lvl_15(register_cap_lo_lvl_15[15:0]),
 .register_cap_ov_lvl_15(register_cap_ov_lvl_15[15:0]),
 .register_cap_uv_lvl_15(register_cap_uv_lvl_15[15:0]),
+.register_clr_alarms_15(register_clr_alarms_15),
 .register_gpi_ov_lvl_15(register_gpi_ov_lvl_15[15:0]),
 .register_gpi_uv_lvl_15(register_gpi_uv_lvl_15[15:0]),
 .register_iin_oc_lvl_15(register_iin_oc_lvl_15[15:0]),
 .register_vin_ov_lvl_15(register_vin_ov_lvl_15[15:0]),
 .register_vin_uv_lvl_15(register_vin_uv_lvl_15[15:0]),
-.register_clear_vin_ov_5(register_clear_vin_ov_5),
-.register_clear_vin_uv_4(register_clear_vin_uv_4),
-.register_clr_cap_low_15(register_clr_cap_low_15),
+.register_clear_alarms_4(register_clear_alarms_4),
+.register_clear_alarms_5(register_clear_alarms_5),
+.register_clear_alarms_6(register_clear_alarms_6),
+.register_clear_alarms_7(register_clear_alarms_7),
+.register_clear_alarms_8(register_clear_alarms_8),
+.register_clear_alarms_9(register_clear_alarms_9),
 .register_ichg_uc_lvl_15(register_ichg_uc_lvl_15[15:0]),
 .register_mask_alarms_15(register_mask_alarms_15[15:0]),
 .register_vcap_ov_lvl_15(register_vcap_ov_lvl_15[15:0]),
 .register_vcap_uv_lvl_15(register_vcap_uv_lvl_15[15:0]),
 .register_vout_ov_lvl_15(register_vout_ov_lvl_15[15:0]),
 .register_vout_uv_lvl_15(register_vout_uv_lvl_15[15:0]),
-.register_clear_iin_oc_10(register_clear_iin_oc_10),
-.register_clear_vcap_ov_7(register_clear_vcap_ov_7),
-.register_clear_vcap_uv_6(register_clear_vcap_uv_6),
-.register_clear_vout_ov_9(register_clear_vout_ov_9),
-.register_clear_vout_uv_8(register_clear_vout_uv_8),
+.register_clear_alarms_10(register_clear_alarms_10),
+.register_clear_alarms_11(register_clear_alarms_11),
+.register_clear_alarms_12(register_clear_alarms_12),
+.register_clear_alarms_13(register_clear_alarms_13),
+.register_clear_alarms_14(register_clear_alarms_14),
 .register_esr_high_lvl_15(register_esr_high_lvl_15[15:0]),
-.register_clear_ichg_uc_11(register_clear_ichg_uc_11),
 .register_dtemp_hot_lvl_15(register_dtemp_hot_lvl_15[15:0]),
-.register_clear_esr_high_14(register_clear_esr_high_14),
-.register_dtemp_cold_lvl_15(register_dtemp_cold_lvl_15[15:0]),
-.register_clear_dtemp_hot_13(register_clear_dtemp_hot_13),
-.register_clear_dtemp_cold_12(register_clear_dtemp_cold_12)
-);
-
-CAPMANAGERpuget XMANAGER (
-.TAO(TAO),
-.tdo(tdo),
-.tmi(tmi[4:0]),
-.CAP1(CAP1),
-.CAP2(CAP2),
-.CAP3(CAP3),
-.CAP4(CAP4),
-.porb(net_661),
-.SIMPV(SIMPV),
-.CAPRTN(CAPRTN),
-.chrg_bal(net_733),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.PORB97836(PORB97836),
-.chrg_shnt(net_731),
-.power_fail(net_651),
-.CELSUB40948(CELSUB40948),
-.INcapmanager(INcapmanger),
-.dftstatusLSB(dftstatusLSB[7:0]),
-.meas_vcap1_0(net_425),
-.meas_vcap1_1(net_426),
-.meas_vcap1_2(net_427),
-.meas_vcap1_3(net_428),
-.meas_vcap1_4(net_429),
-.meas_vcap1_5(net_430),
-.meas_vcap1_6(net_431),
-.meas_vcap1_7(net_432),
-.meas_vcap1_8(net_433),
-.meas_vcap1_9(net_434),
-.meas_vcap2_0(net_441),
-.meas_vcap2_1(net_442),
-.meas_vcap2_2(net_443),
-.meas_vcap2_3(net_444),
-.meas_vcap2_4(net_445),
-.meas_vcap2_5(net_446),
-.meas_vcap2_6(net_447),
-.meas_vcap2_7(net_448),
-.meas_vcap2_8(net_449),
-.meas_vcap2_9(net_450),
-.meas_vcap3_0(net_457),
-.meas_vcap3_1(net_458),
-.meas_vcap3_2(net_459),
-.meas_vcap3_3(net_460),
-.meas_vcap3_4(net_461),
-.meas_vcap3_5(net_462),
-.meas_vcap3_6(net_463),
-.meas_vcap3_7(net_464),
-.meas_vcap3_8(net_465),
-.meas_vcap3_9(net_466),
-.meas_vcap4_0(net_473),
-.meas_vcap4_1(net_474),
-.meas_vcap4_2(net_475),
-.meas_vcap4_3(net_476),
-.meas_vcap4_4(net_477),
-.meas_vcap4_5(net_478),
-.meas_vcap4_6(net_479),
-.meas_vcap4_7(net_480),
-.meas_vcap4_8(net_481),
-.meas_vcap4_9(net_482),
-.meas_vcap1_10(net_435),
-.meas_vcap1_11(net_436),
-.meas_vcap1_12(net_437),
-.meas_vcap1_13(net_438),
-.meas_vcap1_14(net_439),
-.meas_vcap1_15(net_440),
-.meas_vcap2_10(net_451),
-.meas_vcap2_11(net_452),
-.meas_vcap2_12(net_453),
-.meas_vcap2_13(net_454),
-.meas_vcap2_14(net_455),
-.meas_vcap2_15(net_456),
-.meas_vcap3_10(net_467),
-.meas_vcap3_11(net_468),
-.meas_vcap3_12(net_469),
-.meas_vcap3_13(net_470),
-.meas_vcap3_14(net_471),
-.meas_vcap3_15(net_472),
-.meas_vcap4_10(net_483),
-.meas_vcap4_11(net_484),
-.meas_vcap4_12(net_485),
-.meas_vcap4_13(net_486),
-.meas_vcap4_14(net_487),
-.meas_vcap4_15(net_488),
-.clock_capmanager(net_777),
-.done_capcalculate(net_749),
-.fault_capcalculate(net_778),
-.register_vshunt_15(register_vshunt_15[15:0]),
-.IP_CAPMANAGERpuget1(IP_CAPMANAGERpuget1),
-.enable_capcalculate(net_781)
+.register_dtemp_cold_lvl_15(register_dtemp_cold_lvl_15[15:0])
 );
 
 POWERGOODpuget XPOWERGOOD (
@@ -2042,13 +2025,13 @@ POWERGOODpuget XPOWERGOOD (
 .SIMPV(SIMPV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.power_fail(net_651),
-.power_good(net_647),
+.power_fail(net_640),
+.power_good(net_636),
 .CELSUB40948(CELSUB40948),
 .GNDpowergood(GNDpowergood),
-.ok_powergood(net_656),
-.REF_POWERGOOD(net_650),
-.enable_powergood(net_655),
+.ok_powergood(net_645),
+.REF_POWERGOOD(net_639),
+.enable_powergood(net_644),
 .kelvin_GNDpowergood(kelvin_GNDpowergood),
 .IP_POWERGOODpugetMAIN1(IP_POWERGOODpugetMAIN1)
 );
@@ -2057,53 +2040,53 @@ SEQUENCERpuget XSEQUENCER (
 .TAO(TAO),
 .tdo(tdo),
 .tmi(tmi[4:0]),
-.porb(net_661),
+.porb(net_650),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
-.ok_voutm5(net_667),
-.ok_charger(net_710),
-.ok_service(net_695),
+.ok_voutm5(net_656),
+.ok_charger(net_699),
+.ok_service(net_684),
 .CELSUB40948(CELSUB40948),
-.REF_CHARGER(net_718),
-.fault_puget(net_772),
-.clock_capesr(net_742),
-.ok_powergood(net_656),
-.ok_telemetry(net_729),
-.REF_POWERGOOD(net_650),
-.REF_SEQUENCER(net_686),
-.REF_TELEMETRY(net_684),
-.clock_charger(net_724),
-.clock_limiter(net_750),
-.enable_capesr(net_754),
-.fault_service(net_705),
-.ok_chargepump(net_780),
-.done_capdecode(net_642),
-.enable_charger(net_723),
-.enable_limiter(net_748),
-.ok_powerpathin(net_659),
-.on_powerpathin(net_663),
-.clock_capdecode(net_668),
-.clock_sequencer(net_700),
-.clock_telemetry(net_680),
-.fault_sequencer(net_774),
-.clock_capmanager(net_777),
-.clock_chargepump(net_783),
-.enable_capdecode(net_666),
-.enable_powergood(net_655),
-.enable_telemetry(net_676),
-.fault_chargepump(net_776),
-.clock_powerpathin(net_658),
-.done_capcalculate(net_749),
-.enable_chargepump(net_773),
-.enable_powerpathin(net_653),
-.ok_powerpathcharge(net_765),
-.on_powerpathcharge(net_767),
-.enable_capcalculate(net_781),
-.enable_faultmanager(net_771),
-.request_capcalculate(net_730),
-.clock_powerpathcharge(net_769),
-.enable_powerpathcharge(net_766),
+.REF_CHARGER(net_707),
+.fault_puget(net_759),
+.clock_capesr(net_731),
+.ok_powergood(net_645),
+.ok_telemetry(net_718),
+.REF_POWERGOOD(net_639),
+.REF_SEQUENCER(net_675),
+.REF_TELEMETRY(net_673),
+.clock_charger(net_729),
+.clock_limiter(net_738),
+.enable_capesr(net_740),
+.fault_service(net_694),
+.ok_chargepump(net_765),
+.done_capdecode(net_631),
+.enable_charger(net_726),
+.enable_limiter(net_736),
+.ok_powerpathin(net_648),
+.on_powerpathin(net_652),
+.clock_capdecode(net_657),
+.clock_sequencer(net_689),
+.clock_telemetry(net_669),
+.fault_sequencer(net_760),
+.clock_capmanager(net_762),
+.clock_chargepump(net_769),
+.enable_capdecode(net_655),
+.enable_powergood(net_644),
+.enable_telemetry(net_665),
+.fault_chargepump(net_763),
+.clock_powerpathin(net_647),
+.done_capcalculate(net_737),
+.enable_chargepump(net_757),
+.enable_powerpathin(net_642),
+.ok_powerpathcharge(net_751),
+.on_powerpathcharge(net_753),
+.enable_capcalculate(net_766),
+.enable_faultmanager(net_758),
+.request_capcalculate(net_719),
+.clock_powerpathcharge(net_755),
+.enable_powerpathcharge(net_752),
 .register_sequencer_reset_0(register_sequencer_reset_0)
 );
 
@@ -2112,7 +2095,7 @@ SERVICEpuget XSERVICE (
 .TAO(TAO),
 .tdo(tdo),
 .tmi(tmi[4:0]),
-.porb(net_661),
+.porb(net_650),
 .TAEXT(TAEXT),
 .INTVCC(INTVCC),
 .VCC2P5(VCC2P5),
@@ -2120,12 +2103,12 @@ SERVICEpuget XSERVICE (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
-.chrg_uvlo(net_713),
+.chrg_uvlo(net_702),
 .kelvin_IN(kelvin_IN),
 .CELBG83021(CELBG83021),
 .GNDservice(GNDservice),
 .OKREF03249(OKREF03249),
-.ok_service(net_695),
+.ok_service(net_684),
 .CELREF84329(CELREF84329),
 .CELSUB40948(CELSUB40948),
 .IP_5400ae1a(IP_5400ae1a),
@@ -2134,73 +2117,72 @@ SERVICEpuget XSERVICE (
 .IP_ad040b34(IP_ad040b34),
 .IP_cb3ddf0a(IP_cb3ddf0a),
 .kelvin_VCAP(kelvin_VOUTSN),
-.sync_stepup(net_717),
+.sync_stepup(net_706),
 .kelvin_DRVCC(kelvin_DRVCC),
-.REF_SEQUENCER(net_686),
-.allow_charger(net_708),
-.fault_service(net_705),
+.REF_SEQUENCER(net_675),
+.allow_charger(net_697),
+.fault_service(net_694),
 .kelvin_INTVCC(kelvin_INTCC),
 .kelvin_VCC2P5(kelvin_VCC2P5),
 .kelvin_VOUTSN(kelvin_VCAP),
-.clock_sequencer(net_700),
+.clock_sequencer(net_689),
 .SENSE_G_05e8d170(SENSE_G_05e8d170),
 .kelvin_GNDservice(kelvin_GNDservice),
-.celkelvin_IN_04cc16be(celkelvin_IN_04cc16be),
 .celkelvin_SGND_2b3a9b82(celkelvin_SGND_2b3a9b82),
 .celkelvin_INTVCC_04cc16be(celkelvin_INTVCC_04cc16be),
 .IP_SERVICEcomparatorVOUTSN1(IP_SERVICEcomparatorVOUTSN1)
 );
 
 TELEMETRYpuget XTELEMETRY (
-.GPO(net_722),
+.GPO(net_712),
 .TAO(TAO),
 .tdo(tdo),
 .tmi(tmi[4:0]),
 .CAP2(CAP2),
 .CAP3(CAP3),
 .CAP4(CAP4),
-.porb(net_661),
-.DTEMP(net_725),
+.porb(net_650),
+.DTEMP(net_714),
 .SIMPV(SIMPV),
 .TAEXT(TAEXT),
-.ok_gpi(net_727),
-.ok_iin(net_692),
-.ok_dtemp(net_728),
+.ok_gpi(net_716),
+.ok_iin(net_681),
+.ok_dtemp(net_717),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
 .kelvin_IN(kelvin_IN),
-.meas_gpi_0(net_489),
-.meas_gpi_1(net_490),
-.meas_gpi_2(net_491),
-.meas_gpi_3(net_492),
-.meas_gpi_4(net_493),
-.meas_gpi_5(net_494),
-.meas_gpi_6(net_495),
-.meas_gpi_7(net_496),
-.meas_gpi_8(net_497),
-.meas_gpi_9(net_498),
-.meas_iin_0(net_553),
-.meas_iin_1(net_554),
-.meas_iin_2(net_555),
-.meas_iin_3(net_556),
-.meas_iin_4(net_557),
-.meas_iin_5(net_558),
-.meas_iin_6(net_559),
-.meas_iin_7(net_560),
-.meas_iin_8(net_561),
-.meas_iin_9(net_562),
-.meas_vin_0(net_505),
-.meas_vin_1(net_506),
-.meas_vin_2(net_507),
-.meas_vin_3(net_508),
-.meas_vin_4(net_509),
-.meas_vin_5(net_510),
-.meas_vin_6(net_511),
-.meas_vin_7(net_512),
-.meas_vin_8(net_513),
-.meas_vin_9(net_514),
-.ok_icharge(net_701),
+.meas_gpi_0(net_478),
+.meas_gpi_1(net_479),
+.meas_gpi_2(net_480),
+.meas_gpi_3(net_481),
+.meas_gpi_4(net_482),
+.meas_gpi_5(net_483),
+.meas_gpi_6(net_484),
+.meas_gpi_7(net_485),
+.meas_gpi_8(net_486),
+.meas_gpi_9(net_487),
+.meas_iin_0(net_542),
+.meas_iin_1(net_543),
+.meas_iin_2(net_544),
+.meas_iin_3(net_545),
+.meas_iin_4(net_546),
+.meas_iin_5(net_547),
+.meas_iin_6(net_548),
+.meas_iin_7(net_549),
+.meas_iin_8(net_550),
+.meas_iin_9(net_551),
+.meas_vin_0(net_494),
+.meas_vin_1(net_495),
+.meas_vin_2(net_496),
+.meas_vin_3(net_497),
+.meas_vin_4(net_498),
+.meas_vin_5(net_499),
+.meas_vin_6(net_500),
+.meas_vin_7(net_501),
+.meas_vin_8(net_502),
+.meas_vin_9(net_503),
+.ok_icharge(net_690),
 .CELREF84329(CELREF84329),
 .CELSUB40948(CELSUB40948),
 .kelvin_CAP1(kelvin_CAP1),
@@ -2208,173 +2190,173 @@ TELEMETRYpuget XTELEMETRY (
 .kelvin_CAP3(kelvin_CAP3),
 .kelvin_CAP4(kelvin_CAP4),
 .kelvin_VCAP(kelvin_VCAP),
-.meas_gpi_10(net_499),
-.meas_gpi_11(net_500),
-.meas_gpi_12(net_501),
-.meas_gpi_13(net_502),
-.meas_gpi_14(net_503),
-.meas_gpi_15(net_504),
-.meas_iin_10(net_563),
-.meas_iin_11(net_564),
-.meas_iin_12(net_565),
-.meas_iin_13(net_566),
-.meas_iin_14(net_567),
-.meas_iin_15(net_568),
-.meas_vcap_0(net_521),
-.meas_vcap_1(net_522),
-.meas_vcap_2(net_523),
-.meas_vcap_3(net_524),
-.meas_vcap_4(net_525),
-.meas_vcap_5(net_526),
-.meas_vcap_6(net_527),
-.meas_vcap_7(net_528),
-.meas_vcap_8(net_529),
-.meas_vcap_9(net_530),
-.meas_vin_10(net_515),
-.meas_vin_11(net_516),
-.meas_vin_12(net_517),
-.meas_vin_13(net_518),
-.meas_vin_14(net_519),
-.meas_vin_15(net_520),
-.meas_vout_0(net_537),
-.meas_vout_1(net_538),
-.meas_vout_2(net_539),
-.meas_vout_3(net_540),
-.meas_vout_4(net_541),
-.meas_vout_5(net_542),
-.meas_vout_6(net_543),
-.meas_vout_7(net_544),
-.meas_vout_8(net_545),
-.meas_vout_9(net_546),
-.measure_gpi(net_671),
-.measure_iin(net_673),
+.meas_gpi_10(net_488),
+.meas_gpi_11(net_489),
+.meas_gpi_12(net_490),
+.meas_gpi_13(net_491),
+.meas_gpi_14(net_492),
+.meas_gpi_15(net_493),
+.meas_iin_10(net_552),
+.meas_iin_11(net_553),
+.meas_iin_12(net_554),
+.meas_iin_13(net_555),
+.meas_iin_14(net_556),
+.meas_iin_15(net_557),
+.meas_vcap_0(net_510),
+.meas_vcap_1(net_511),
+.meas_vcap_2(net_512),
+.meas_vcap_3(net_513),
+.meas_vcap_4(net_514),
+.meas_vcap_5(net_515),
+.meas_vcap_6(net_516),
+.meas_vcap_7(net_517),
+.meas_vcap_8(net_518),
+.meas_vcap_9(net_519),
+.meas_vin_10(net_504),
+.meas_vin_11(net_505),
+.meas_vin_12(net_506),
+.meas_vin_13(net_507),
+.meas_vin_14(net_508),
+.meas_vin_15(net_509),
+.meas_vout_0(net_526),
+.meas_vout_1(net_527),
+.meas_vout_2(net_528),
+.meas_vout_3(net_529),
+.meas_vout_4(net_530),
+.meas_vout_5(net_531),
+.meas_vout_6(net_532),
+.meas_vout_7(net_533),
+.meas_vout_8(net_534),
+.meas_vout_9(net_535),
+.measure_gpi(net_660),
+.measure_iin(net_662),
 .GNDtelemetry(GNDtelemetry),
 .dftstatusLSB(dftstatusLSB[7:0]),
-.meas_dtemp_0(net_585),
-.meas_dtemp_1(net_586),
-.meas_dtemp_2(net_587),
-.meas_dtemp_3(net_588),
-.meas_dtemp_4(net_589),
-.meas_dtemp_5(net_590),
-.meas_dtemp_6(net_591),
-.meas_dtemp_7(net_592),
-.meas_dtemp_8(net_593),
-.meas_dtemp_9(net_594),
-.meas_ichrg_0(net_569),
-.meas_ichrg_1(net_570),
-.meas_ichrg_2(net_571),
-.meas_ichrg_3(net_572),
-.meas_ichrg_4(net_573),
-.meas_ichrg_5(net_574),
-.meas_ichrg_6(net_575),
-.meas_ichrg_7(net_576),
-.meas_ichrg_8(net_577),
-.meas_ichrg_9(net_578),
-.meas_vcap1_0(net_425),
-.meas_vcap1_1(net_426),
-.meas_vcap1_2(net_427),
-.meas_vcap1_3(net_428),
-.meas_vcap1_4(net_429),
-.meas_vcap1_5(net_430),
-.meas_vcap1_6(net_431),
-.meas_vcap1_7(net_432),
-.meas_vcap1_8(net_433),
-.meas_vcap1_9(net_434),
-.meas_vcap2_0(net_441),
-.meas_vcap2_1(net_442),
-.meas_vcap2_2(net_443),
-.meas_vcap2_3(net_444),
-.meas_vcap2_4(net_445),
-.meas_vcap2_5(net_446),
-.meas_vcap2_6(net_447),
-.meas_vcap2_7(net_448),
-.meas_vcap2_8(net_449),
-.meas_vcap2_9(net_450),
-.meas_vcap3_0(net_457),
-.meas_vcap3_1(net_458),
-.meas_vcap3_2(net_459),
-.meas_vcap3_3(net_460),
-.meas_vcap3_4(net_461),
-.meas_vcap3_5(net_462),
-.meas_vcap3_6(net_463),
-.meas_vcap3_7(net_464),
-.meas_vcap3_8(net_465),
-.meas_vcap3_9(net_466),
-.meas_vcap4_0(net_473),
-.meas_vcap4_1(net_474),
-.meas_vcap4_2(net_475),
-.meas_vcap4_3(net_476),
-.meas_vcap4_4(net_477),
-.meas_vcap4_5(net_478),
-.meas_vcap4_6(net_479),
-.meas_vcap4_7(net_480),
-.meas_vcap4_8(net_481),
-.meas_vcap4_9(net_482),
-.meas_vcap_10(net_531),
-.meas_vcap_11(net_532),
-.meas_vcap_12(net_533),
-.meas_vcap_13(net_534),
-.meas_vcap_14(net_535),
-.meas_vcap_15(net_536),
-.meas_vout_10(net_547),
-.meas_vout_11(net_548),
-.meas_vout_12(net_549),
-.meas_vout_13(net_550),
-.meas_vout_14(net_551),
-.meas_vout_15(net_552),
-.ok_telemetry(net_729),
-.IIN_TELEMETRY(net_688),
-.REF_TELEMETRY(net_684),
+.meas_dtemp_0(net_574),
+.meas_dtemp_1(net_575),
+.meas_dtemp_2(net_576),
+.meas_dtemp_3(net_577),
+.meas_dtemp_4(net_578),
+.meas_dtemp_5(net_579),
+.meas_dtemp_6(net_580),
+.meas_dtemp_7(net_581),
+.meas_dtemp_8(net_582),
+.meas_dtemp_9(net_583),
+.meas_ichrg_0(net_558),
+.meas_ichrg_1(net_559),
+.meas_ichrg_2(net_560),
+.meas_ichrg_3(net_561),
+.meas_ichrg_4(net_562),
+.meas_ichrg_5(net_563),
+.meas_ichrg_6(net_564),
+.meas_ichrg_7(net_565),
+.meas_ichrg_8(net_566),
+.meas_ichrg_9(net_567),
+.meas_vcap1_0(net_414),
+.meas_vcap1_1(net_415),
+.meas_vcap1_2(net_416),
+.meas_vcap1_3(net_417),
+.meas_vcap1_4(net_418),
+.meas_vcap1_5(net_419),
+.meas_vcap1_6(net_420),
+.meas_vcap1_7(net_421),
+.meas_vcap1_8(net_422),
+.meas_vcap1_9(net_423),
+.meas_vcap2_0(net_430),
+.meas_vcap2_1(net_431),
+.meas_vcap2_2(net_432),
+.meas_vcap2_3(net_433),
+.meas_vcap2_4(net_434),
+.meas_vcap2_5(net_435),
+.meas_vcap2_6(net_436),
+.meas_vcap2_7(net_437),
+.meas_vcap2_8(net_438),
+.meas_vcap2_9(net_439),
+.meas_vcap3_0(net_446),
+.meas_vcap3_1(net_447),
+.meas_vcap3_2(net_448),
+.meas_vcap3_3(net_449),
+.meas_vcap3_4(net_450),
+.meas_vcap3_5(net_451),
+.meas_vcap3_6(net_452),
+.meas_vcap3_7(net_453),
+.meas_vcap3_8(net_454),
+.meas_vcap3_9(net_455),
+.meas_vcap4_0(net_462),
+.meas_vcap4_1(net_463),
+.meas_vcap4_2(net_464),
+.meas_vcap4_3(net_465),
+.meas_vcap4_4(net_466),
+.meas_vcap4_5(net_467),
+.meas_vcap4_6(net_468),
+.meas_vcap4_7(net_469),
+.meas_vcap4_8(net_470),
+.meas_vcap4_9(net_471),
+.meas_vcap_10(net_520),
+.meas_vcap_11(net_521),
+.meas_vcap_12(net_522),
+.meas_vcap_13(net_523),
+.meas_vcap_14(net_524),
+.meas_vcap_15(net_525),
+.meas_vout_10(net_536),
+.meas_vout_11(net_537),
+.meas_vout_12(net_538),
+.meas_vout_13(net_539),
+.meas_vout_14(net_540),
+.meas_vout_15(net_541),
+.ok_telemetry(net_718),
+.IIN_TELEMETRY(net_677),
+.REF_TELEMETRY(net_673),
 .kelvin_CAPRTN(kelvin_CAPRTN),
 .kelvin_VOUTSP(kelvin_VOUTSP),
-.meas_dtemp_10(net_595),
-.meas_dtemp_11(net_596),
-.meas_dtemp_12(net_597),
-.meas_dtemp_13(net_598),
-.meas_dtemp_14(net_599),
-.meas_dtemp_15(net_600),
-.meas_ichrg_10(net_579),
-.meas_ichrg_11(net_580),
-.meas_ichrg_12(net_581),
-.meas_ichrg_13(net_582),
-.meas_ichrg_14(net_583),
-.meas_ichrg_15(net_584),
-.meas_vcap1_10(net_435),
-.meas_vcap1_11(net_436),
-.meas_vcap1_12(net_437),
-.meas_vcap1_13(net_438),
-.meas_vcap1_14(net_439),
-.meas_vcap1_15(net_440),
-.meas_vcap2_10(net_451),
-.meas_vcap2_11(net_452),
-.meas_vcap2_12(net_453),
-.meas_vcap2_13(net_454),
-.meas_vcap2_14(net_455),
-.meas_vcap2_15(net_456),
-.meas_vcap3_10(net_467),
-.meas_vcap3_11(net_468),
-.meas_vcap3_12(net_469),
-.meas_vcap3_13(net_470),
-.meas_vcap3_14(net_471),
-.meas_vcap3_15(net_472),
-.meas_vcap4_10(net_483),
-.meas_vcap4_11(net_484),
-.meas_vcap4_12(net_485),
-.meas_vcap4_13(net_486),
-.meas_vcap4_14(net_487),
-.meas_vcap4_15(net_488),
-.measure_dtemp(net_681),
-.done_telemetry(net_685),
-.CHANNELselect_0(net_421),
-.CHANNELselect_1(net_422),
-.CHANNELselect_2(net_423),
-.CHANNELselect_3(net_424),
-.clock_telemetry(net_680),
-.fault_telemetry(net_689),
-.measure_icharge(net_677),
+.meas_dtemp_10(net_584),
+.meas_dtemp_11(net_585),
+.meas_dtemp_12(net_586),
+.meas_dtemp_13(net_587),
+.meas_dtemp_14(net_588),
+.meas_dtemp_15(net_589),
+.meas_ichrg_10(net_568),
+.meas_ichrg_11(net_569),
+.meas_ichrg_12(net_570),
+.meas_ichrg_13(net_571),
+.meas_ichrg_14(net_572),
+.meas_ichrg_15(net_573),
+.meas_vcap1_10(net_424),
+.meas_vcap1_11(net_425),
+.meas_vcap1_12(net_426),
+.meas_vcap1_13(net_427),
+.meas_vcap1_14(net_428),
+.meas_vcap1_15(net_429),
+.meas_vcap2_10(net_440),
+.meas_vcap2_11(net_441),
+.meas_vcap2_12(net_442),
+.meas_vcap2_13(net_443),
+.meas_vcap2_14(net_444),
+.meas_vcap2_15(net_445),
+.meas_vcap3_10(net_456),
+.meas_vcap3_11(net_457),
+.meas_vcap3_12(net_458),
+.meas_vcap3_13(net_459),
+.meas_vcap3_14(net_460),
+.meas_vcap3_15(net_461),
+.meas_vcap4_10(net_472),
+.meas_vcap4_11(net_473),
+.meas_vcap4_12(net_474),
+.meas_vcap4_13(net_475),
+.meas_vcap4_14(net_476),
+.meas_vcap4_15(net_477),
+.measure_dtemp(net_670),
+.done_telemetry(net_674),
+.CHANNELselect_0(net_410),
+.CHANNELselect_1(net_411),
+.CHANNELselect_2(net_412),
+.CHANNELselect_3(net_413),
+.clock_telemetry(net_669),
+.fault_telemetry(net_678),
+.measure_icharge(net_666),
 .SENSE_G_48968f26(SENSE_G_48968f26),
-.enable_telemetry(net_676),
-.ICHARGE_TELEMETRY(net_697),
+.enable_telemetry(net_665),
+.ICHARGE_TELEMETRY(net_686),
 .IP_TELEMETRYpuget1(IP_TELEMETRYpuget1),
 .status_meas_gpi_15(status_meas_gpi_15[15:0]),
 .status_meas_iin_15(status_meas_iin_15[15:0]),
@@ -2382,7 +2364,7 @@ TELEMETRYpuget XTELEMETRY (
 .kelvin_GNDtelemetry(kelvin_GNDtelemetry),
 .status_meas_vcap_15(status_meas_vcap_15[15:0]),
 .status_meas_vout_15(status_meas_vout_15[15:0]),
-.request_capcalculate(net_730),
+.request_capcalculate(net_719),
 .status_meas_dtemp_15(status_meas_dtemp_15[15:0]),
 .status_meas_ichrg_15(status_meas_ichrg_15[15:0]),
 .status_meas_vcap1_15(status_meas_vcap1_15[15:0]),
@@ -2396,30 +2378,17 @@ THERMOMETERpuget XTHERMOMTER (
 .TAO(TAO),
 .tdo(tdo),
 .tmi(tmi[4:0]),
-.DTEMP(net_725),
+.DTEMP(net_714),
 .SIMPV(SIMPV),
-.ok_dtemp(net_728),
+.ok_dtemp(net_717),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
 .CELSUB40948(CELSUB40948),
 .IP_c2d4cf2d(IP_c2d4cf2d),
-.clock_dtemp(net_680),
-.measure_dtemp(net_681),
+.clock_dtemp(net_669),
+.measure_dtemp(net_670),
 .celkelvin_SGND_8a994242(celkelvin_SGND_8a994242)
-);
-
-alert_c893e50d Xalert1 (
-.pod(TBD_XPUGET_XceleraCORE_XMAIN_Xalert1_pod),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.ALERT(ALERT),
-.clear(TBD_XPUGET_XceleraCORE_XMAIN_Xalert1_clear),
-.CELSUB(CELSUB40948),
-.alert_in0(alert_71cc704f),
-.alert_in1(alert_71cc704f),
-.alert_clear0(alert_71cc704f),
-.alert_clear1(alert_71cc704f)
 );
 
 endmodule

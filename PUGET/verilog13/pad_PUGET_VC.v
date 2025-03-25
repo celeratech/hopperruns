@@ -32,6 +32,11 @@ STONEpad1 XPAD1 (
 .PAD(VC)
 );
 
+ESDdiode Xesd_XPAD1 (
+.N(VC),
+.P(GESD)
+);
+
 ESDdiode Xesd1_XPAD1 (
 .N(INTVCC),
 .P(VC)

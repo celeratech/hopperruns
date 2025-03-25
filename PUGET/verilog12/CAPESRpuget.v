@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module CAPESRalert (tdo,tmi,porb,CELG59462,CELV96848,power_good,CELSUB40948,alert_clear,alert_capesr,mon_cap_done,mon_esr_done,allow_charger,enable_capesr,mon_cap_failed,mon_esr_failed,mon_capesr_active,mon_capesr_pending,status_mon_status_9,mon_capesr_scheduled,register_msk_mon_status_9);
+module CAPESRalert (tdo,tmi,porb,CELG59462,CELV96848,power_good,CELSUB40948,mon_cap_done,mon_esr_done,allow_charger,enable_capesr,mon_cap_failed,mon_esr_failed,mon_capesr_active,mon_capesr_pending,status_mon_status_9,mon_capesr_scheduled,register_msk_mon_status_9);
   inout  tdo;
   input [4:0] tmi;
   input  porb;
@@ -7,8 +7,6 @@ module CAPESRalert (tdo,tmi,porb,CELG59462,CELV96848,power_good,CELSUB40948,aler
   input  CELV96848;
   input  power_good;
   input  CELSUB40948;
-  input  alert_clear;
-  output  alert_capesr;
   input  mon_cap_done;
   input  mon_esr_done;
   input  allow_charger;
@@ -48,8 +46,8 @@ module CAPESRconfiguration (tmi,CELG59462,CELV96848,ESRgain_0,ESRgain_1,meas_cap
   input  meas_esr_7;
   input  meas_esr_8;
   input  meas_esr_9;
-  output  AUTOtimer_0;
-  output  AUTOtimer_1;
+  input  AUTOtimer_0;
+  input  AUTOtimer_1;
   input  CELSUB40948;
   input  meas_cap_10;
   input  meas_cap_11;
@@ -79,7 +77,7 @@ module CAPESRconfiguration (tmi,CELG59462,CELV96848,ESRgain_0,ESRgain_1,meas_cap
   output  cap_esr_per_13;
   output  cap_esr_per_14;
   output  cap_esr_per_15;
-  output  request_clockRT;
+  input  request_clockRT;
   output  CONTROLregister_0;
   output  CONTROLregister_1;
   output  CONTROLregister_2;
@@ -88,7 +86,7 @@ module CAPESRconfiguration (tmi,CELG59462,CELV96848,ESRgain_0,ESRgain_1,meas_cap
   input [2:0] register_ctl_reg_3;
   output [15:0] status_meas_cap_15;
   output [15:0] status_meas_esr_15;
-  output  blank_configuration;
+  input  blank_configuration;
   output [1:0] status_meas_esrgain_1;
   input [15:0] register_cap_esr_per_15;
 endmodule
@@ -402,7 +400,7 @@ module CAPtest (TAO,tdo,tmi,CAP4,ITST,porb,SIMPV,CELG59462,CELV96848,PORB97836,C
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module CAPESRpuget (TAO, tdo, tmi, CAP4, ITST, porb, SIMPV, mode_cv, CELG59462, CELV96848, GNDcapesr, PORB97836, CAPcount_0, CAPcount_1, meas_cap_0, meas_cap_1, meas_cap_2, meas_cap_3, meas_cap_4, meas_cap_5, meas_cap_6, meas_cap_7, meas_cap_8, meas_cap_9, meas_esr_0, meas_esr_1, meas_esr_2, meas_esr_3, meas_esr_4, meas_esr_5, meas_esr_6, meas_esr_7, meas_esr_8, meas_esr_9, power_good, sense_ITST, CELSUB40948, IP_30794d23, alert_clear, meas_cap_10, meas_cap_11, meas_cap_12, meas_cap_13, meas_cap_14, meas_cap_15, meas_esr_10, meas_esr_11, meas_esr_12, meas_esr_13, meas_esr_14, meas_esr_15, alert_capesr, clock_capesr, dftstatusLSB, dftstatusMSB, fault_capesr, kelvin_SIMPV, meas_vcap1_0, meas_vcap1_1, meas_vcap1_2, meas_vcap1_3, meas_vcap1_4, meas_vcap1_5, meas_vcap1_6, meas_vcap1_7, meas_vcap1_8, meas_vcap1_9, meas_vcap2_0, meas_vcap2_1, meas_vcap2_2, meas_vcap2_3, meas_vcap2_4, meas_vcap2_5, meas_vcap2_6, meas_vcap2_7, meas_vcap2_8, meas_vcap2_9, meas_vcap3_0, meas_vcap3_1, meas_vcap3_2, meas_vcap3_3, meas_vcap3_4, meas_vcap3_5, meas_vcap3_6, meas_vcap3_7, meas_vcap3_8, meas_vcap3_9, meas_vcap4_0, meas_vcap4_1, meas_vcap4_2, meas_vcap4_3, meas_vcap4_4, meas_vcap4_5, meas_vcap4_6, meas_vcap4_7, meas_vcap4_8, meas_vcap4_9, allow_charger, blank_charger, enable_capesr, meas_vcap1_10, meas_vcap1_11, meas_vcap1_12, meas_vcap1_13, meas_vcap1_14, meas_vcap1_15, meas_vcap2_10, meas_vcap2_11, meas_vcap2_12, meas_vcap2_13, meas_vcap2_14, meas_vcap2_15, meas_vcap3_10, meas_vcap3_11, meas_vcap3_12, meas_vcap3_13, meas_vcap3_14, meas_vcap3_15, meas_vcap4_10, meas_vcap4_11, meas_vcap4_12, meas_vcap4_13, meas_vcap4_14, meas_vcap4_15, clock_divideRT, done_telemetry, CHANNELselect_0, CHANNELselect_1, CHANNELselect_2, CHANNELselect_3, request_clockRT, GMCHARGEselect_0, GMCHARGEselect_1, GMCHARGEselect_2, GMCHARGEselect_3, kelvin_GNDcapesr, ctl_gpi_buffer_en, done_capcalculate, register_ctl_reg_0, register_ctl_reg_3, status_meas_cap_15, status_meas_esr_15, status_mon_status_9, status_meas_esrgain_1, register_cap_esr_per_15, register_msk_mon_status_9, status_PUGETfaultmanager_6);
+module CAPESRpuget (TAO, tdo, tmi, CAP4, ITST, porb, SIMPV, mode_cv, CELG59462, CELV96848, GNDcapesr, PORB97836, CAPcount_0, CAPcount_1, meas_cap_0, meas_cap_1, meas_cap_2, meas_cap_3, meas_cap_4, meas_cap_5, meas_cap_6, meas_cap_7, meas_cap_8, meas_cap_9, meas_esr_0, meas_esr_1, meas_esr_2, meas_esr_3, meas_esr_4, meas_esr_5, meas_esr_6, meas_esr_7, meas_esr_8, meas_esr_9, power_good, sense_ITST, CELSUB40948, IP_30794d23, meas_cap_10, meas_cap_11, meas_cap_12, meas_cap_13, meas_cap_14, meas_cap_15, meas_esr_10, meas_esr_11, meas_esr_12, meas_esr_13, meas_esr_14, meas_esr_15, clock_capesr, dftstatusLSB, dftstatusMSB, fault_capesr, kelvin_SIMPV, meas_vcap1_0, meas_vcap1_1, meas_vcap1_2, meas_vcap1_3, meas_vcap1_4, meas_vcap1_5, meas_vcap1_6, meas_vcap1_7, meas_vcap1_8, meas_vcap1_9, meas_vcap2_0, meas_vcap2_1, meas_vcap2_2, meas_vcap2_3, meas_vcap2_4, meas_vcap2_5, meas_vcap2_6, meas_vcap2_7, meas_vcap2_8, meas_vcap2_9, meas_vcap3_0, meas_vcap3_1, meas_vcap3_2, meas_vcap3_3, meas_vcap3_4, meas_vcap3_5, meas_vcap3_6, meas_vcap3_7, meas_vcap3_8, meas_vcap3_9, meas_vcap4_0, meas_vcap4_1, meas_vcap4_2, meas_vcap4_3, meas_vcap4_4, meas_vcap4_5, meas_vcap4_6, meas_vcap4_7, meas_vcap4_8, meas_vcap4_9, allow_charger, blank_charger, enable_capesr, meas_vcap1_10, meas_vcap1_11, meas_vcap1_12, meas_vcap1_13, meas_vcap1_14, meas_vcap1_15, meas_vcap2_10, meas_vcap2_11, meas_vcap2_12, meas_vcap2_13, meas_vcap2_14, meas_vcap2_15, meas_vcap3_10, meas_vcap3_11, meas_vcap3_12, meas_vcap3_13, meas_vcap3_14, meas_vcap3_15, meas_vcap4_10, meas_vcap4_11, meas_vcap4_12, meas_vcap4_13, meas_vcap4_14, meas_vcap4_15, clock_divideRT, done_telemetry, CHANNELselect_0, CHANNELselect_1, CHANNELselect_2, CHANNELselect_3, request_clockRT, GMCHARGEselect_0, GMCHARGEselect_1, GMCHARGEselect_2, GMCHARGEselect_3, kelvin_GNDcapesr, ctl_gpi_buffer_en, done_capcalculate, register_ctl_reg_0, register_ctl_reg_3, status_meas_cap_15, status_meas_esr_15, status_mon_status_9, status_meas_esrgain_1, register_cap_esr_per_15, register_msk_mon_status_9, status_PUGETfaultmanager_6);
 inout  TAO;
 inout  tdo;
 inout [4:0] tmi;
@@ -441,7 +439,6 @@ input  power_good;
 input  sense_ITST;
 input  CELSUB40948;
 input  IP_30794d23;
-input  alert_clear;
 output  meas_cap_10;
 output  meas_cap_11;
 output  meas_cap_12;
@@ -454,7 +451,6 @@ output  meas_esr_12;
 output  meas_esr_13;
 output  meas_esr_14;
 output  meas_esr_15;
-output  alert_capesr;
 input  clock_capesr;
 inout [7:0] dftstatusLSB;
 inout [7:0] dftstatusMSB;
@@ -533,7 +529,7 @@ input  CHANNELselect_0;
 input  CHANNELselect_1;
 input  CHANNELselect_2;
 input  CHANNELselect_3;
-output  request_clockRT;
+input  request_clockRT;
 output  GMCHARGEselect_0;
 output  GMCHARGEselect_1;
 output  GMCHARGEselect_2;
@@ -574,18 +570,16 @@ CAPESRalert XALERT (
 .CELV96848(CELV96848),
 .power_good(power_good),
 .CELSUB40948(CELSUB40948),
-.alert_clear(alert_clear),
-.alert_capesr(alert_capesr),
-.mon_cap_done(net_329),
-.mon_esr_done(net_335),
+.mon_cap_done(net_322),
+.mon_esr_done(net_326),
 .allow_charger(allow_charger),
 .enable_capesr(enable_capesr),
-.mon_cap_failed(net_336),
-.mon_esr_failed(net_338),
-.mon_capesr_active(net_330),
-.mon_capesr_pending(net_332),
+.mon_cap_failed(net_328),
+.mon_esr_failed(net_329),
+.mon_capesr_active(net_321),
+.mon_capesr_pending(net_324),
 .status_mon_status_9(status_mon_status_9[9:0]),
-.mon_capesr_scheduled(net_331),
+.mon_capesr_scheduled(net_323),
 .register_msk_mon_status_9(register_msk_mon_status_9[9:0])
 );
 
@@ -593,8 +587,8 @@ CAPESRconfiguration XCONFIGURATION (
 .tmi(tmi[4:0]),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.ESRgain_0(net_279),
-.ESRgain_1(net_280),
+.ESRgain_0(net_273),
+.ESRgain_1(net_274),
 .meas_cap_0(meas_cap_0),
 .meas_cap_1(meas_cap_1),
 .meas_cap_2(meas_cap_2),
@@ -615,8 +609,8 @@ CAPESRconfiguration XCONFIGURATION (
 .meas_esr_7(meas_esr_7),
 .meas_esr_8(meas_esr_8),
 .meas_esr_9(meas_esr_9),
-.AUTOtimer_0(net_281),
-.AUTOtimer_1(net_282),
+.AUTOtimer_0(net_275),
+.AUTOtimer_1(net_276),
 .CELSUB40948(CELSUB40948),
 .meas_cap_10(meas_cap_10),
 .meas_cap_11(meas_cap_11),
@@ -630,32 +624,32 @@ CAPESRconfiguration XCONFIGURATION (
 .meas_esr_13(meas_esr_13),
 .meas_esr_14(meas_esr_14),
 .meas_esr_15(meas_esr_15),
-.cap_esr_per_0(net_283),
-.cap_esr_per_1(net_284),
-.cap_esr_per_2(net_285),
-.cap_esr_per_3(net_286),
-.cap_esr_per_4(net_287),
-.cap_esr_per_5(net_288),
-.cap_esr_per_6(net_289),
-.cap_esr_per_7(net_290),
-.cap_esr_per_8(net_291),
-.cap_esr_per_9(net_292),
-.cap_esr_per_10(net_293),
-.cap_esr_per_11(net_294),
-.cap_esr_per_12(net_295),
-.cap_esr_per_13(net_296),
-.cap_esr_per_14(net_297),
-.cap_esr_per_15(net_298),
+.cap_esr_per_0(net_277),
+.cap_esr_per_1(net_278),
+.cap_esr_per_2(net_279),
+.cap_esr_per_3(net_280),
+.cap_esr_per_4(net_281),
+.cap_esr_per_5(net_282),
+.cap_esr_per_6(net_283),
+.cap_esr_per_7(net_284),
+.cap_esr_per_8(net_285),
+.cap_esr_per_9(net_286),
+.cap_esr_per_10(net_287),
+.cap_esr_per_11(net_288),
+.cap_esr_per_12(net_289),
+.cap_esr_per_13(net_290),
+.cap_esr_per_14(net_291),
+.cap_esr_per_15(net_292),
 .request_clockRT(request_clockRT),
-.CONTROLregister_0(net_299),
-.CONTROLregister_1(net_300),
-.CONTROLregister_2(net_301),
-.CONTROLregister_3(net_302),
+.CONTROLregister_0(net_293),
+.CONTROLregister_1(net_294),
+.CONTROLregister_2(net_295),
+.CONTROLregister_3(net_296),
 .register_ctl_reg_0(register_ctl_reg_0),
 .register_ctl_reg_3(register_ctl_reg_3[2:0]),
 .status_meas_cap_15(status_meas_cap_15[15:0]),
 .status_meas_esr_15(status_meas_esr_15[15:0]),
-.blank_configuration(net_326),
+.blank_configuration(net_318),
 .status_meas_esrgain_1(status_meas_esrgain_1[1:0]),
 .register_cap_esr_per_15(register_cap_esr_per_15[15:0])
 );
@@ -665,40 +659,40 @@ CAPESRcontrol XCONTROL (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
-.AUTOtimer_0(net_281),
-.AUTOtimer_1(net_282),
+.AUTOtimer_0(net_275),
+.AUTOtimer_1(net_276),
 .CELSUB40948(CELSUB40948),
-.done_capesr(net_339),
+.done_capesr(net_331),
 .clock_capesr(clock_capesr),
 .blank_charger(blank_charger),
-.cap_esr_per_0(net_283),
-.cap_esr_per_1(net_284),
-.cap_esr_per_2(net_285),
-.cap_esr_per_3(net_286),
-.cap_esr_per_4(net_287),
-.cap_esr_per_5(net_288),
-.cap_esr_per_6(net_289),
-.cap_esr_per_7(net_290),
-.cap_esr_per_8(net_291),
-.cap_esr_per_9(net_292),
-.ctl_cap_scale(net_340),
+.cap_esr_per_0(net_277),
+.cap_esr_per_1(net_278),
+.cap_esr_per_2(net_279),
+.cap_esr_per_3(net_280),
+.cap_esr_per_4(net_281),
+.cap_esr_per_5(net_282),
+.cap_esr_per_6(net_283),
+.cap_esr_per_7(net_284),
+.cap_esr_per_8(net_285),
+.cap_esr_per_9(net_286),
+.ctl_cap_scale(net_332),
 .enable_capesr(enable_capesr),
-.cap_esr_per_10(net_293),
-.cap_esr_per_11(net_294),
-.cap_esr_per_12(net_295),
-.cap_esr_per_13(net_296),
-.cap_esr_per_14(net_297),
-.cap_esr_per_15(net_298),
-.request_capesr(net_337),
-.CONTROLregister_0(net_299),
-.CONTROLregister_1(net_300),
-.CONTROLregister_2(net_301),
-.CONTROLregister_3(net_302),
-.blank_charger_cap(net_341),
-.blank_charger_esr(net_342),
+.cap_esr_per_10(net_287),
+.cap_esr_per_11(net_288),
+.cap_esr_per_12(net_289),
+.cap_esr_per_13(net_290),
+.cap_esr_per_14(net_291),
+.cap_esr_per_15(net_292),
+.request_capesr(net_330),
+.CONTROLregister_0(net_293),
+.CONTROLregister_1(net_294),
+.CONTROLregister_2(net_295),
+.CONTROLregister_3(net_296),
+.blank_charger_cap(net_333),
+.blank_charger_esr(net_334),
 .ctl_gpi_buffer_en(ctl_gpi_buffer_en),
-.blank_configuration(net_326),
-.mon_capesr_scheduled(net_331)
+.blank_configuration(net_318),
+.mon_capesr_scheduled(net_323)
 );
 
 ESRtest XESR (
@@ -707,12 +701,12 @@ ESRtest XESR (
 .porb(porb),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.ESRgain_0(net_279),
-.ESRgain_1(net_280),
+.ESRgain_0(net_273),
+.ESRgain_1(net_274),
 .PORB97836(PORB97836),
 .CAPcount_0(CAPcount_0),
 .CAPcount_1(CAPcount_1),
-.go_esrtest(net_344),
+.go_esrtest(net_336),
 .meas_esr_0(meas_esr_0),
 .meas_esr_1(meas_esr_1),
 .meas_esr_2(meas_esr_2),
@@ -732,7 +726,7 @@ ESRtest XESR (
 .meas_esr_15(meas_esr_15),
 .dftstatusLSB(dftstatusLSB[7:0]),
 .dftstatusMSB(dftstatusMSB[7:0]),
-.done_esrtest(net_339),
+.done_esrtest(net_331),
 .meas_vcap1_0(meas_vcap1_0),
 .meas_vcap1_1(meas_vcap1_1),
 .meas_vcap1_2(meas_vcap1_2),
@@ -773,10 +767,10 @@ ESRtest XESR (
 .meas_vcap4_7(meas_vcap4_7),
 .meas_vcap4_8(meas_vcap4_8),
 .meas_vcap4_9(meas_vcap4_9),
-.mon_esr_done(net_335),
-.blank_charger(net_342),
+.mon_esr_done(net_326),
+.blank_charger(net_334),
 .clock_esrtest(clock_capesr),
-.fault_esrtest(net_345),
+.fault_esrtest(net_337),
 .meas_vcap1_10(meas_vcap1_10),
 .meas_vcap1_11(meas_vcap1_11),
 .meas_vcap1_12(meas_vcap1_12),
@@ -802,7 +796,7 @@ ESRtest XESR (
 .meas_vcap4_14(meas_vcap4_14),
 .meas_vcap4_15(meas_vcap4_15),
 .done_telemetry(done_telemetry),
-.enable_esrtest(net_343),
+.enable_esrtest(net_335),
 .CHANNELselect_0(CHANNELselect_0),
 .CHANNELselect_1(CHANNELselect_1),
 .CHANNELselect_2(CHANNELselect_2),
@@ -821,13 +815,13 @@ CAPESRfaultmanager XFAULTMANAGER (
 .clock_capesr(clock_capesr),
 .fault_capesr(fault_capesr),
 .enable_capesr(enable_capesr),
-.fault_captest(net_327),
-.fault_esrtest(net_345),
-.fault_overflow(net_328),
-.mon_cap_failed(net_336),
-.mon_esr_failed(net_338),
-.request_capesr(net_337),
-.fault_sequencer(net_346),
+.fault_captest(net_319),
+.fault_esrtest(net_337),
+.fault_overflow(net_320),
+.mon_cap_failed(net_328),
+.mon_esr_failed(net_329),
+.request_capesr(net_330),
+.fault_sequencer(net_338),
 .status_PUGETfaultmanager_6(status_PUGETfaultmanager_6[3:0])
 );
 
@@ -839,21 +833,21 @@ CAPESRsequencer_Rev1_DYES XSEQUENCER (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
-.go_captest(net_334),
-.go_esrtest(net_344),
+.go_captest(net_327),
+.go_esrtest(net_336),
 .power_good(power_good),
 .CELSUB40948(CELSUB40948),
 .clock_capesr(clock_capesr),
-.done_captest(net_325),
-.done_esrtest(net_339),
-.blank_charger(net_341),
-.enable_captest(net_333),
-.enable_esrtest(net_343),
-.request_capesr(net_337),
-.fault_sequencer(net_346),
+.done_captest(net_317),
+.done_esrtest(net_331),
+.blank_charger(net_333),
+.enable_captest(net_325),
+.enable_esrtest(net_335),
+.request_capesr(net_330),
+.fault_sequencer(net_338),
 .done_capcalculate(done_capcalculate),
-.mon_capesr_active(net_330),
-.mon_capesr_pending(net_332)
+.mon_capesr_active(net_321),
+.mon_capesr_pending(net_324)
 );
 
 CAPtest XTEST (
@@ -870,7 +864,7 @@ CAPtest XTEST (
 .CAPcount_0(CAPcount_0),
 .CAPcount_1(CAPcount_1),
 .GNDcaptest(GNDcapesr),
-.go_captest(net_334),
+.go_captest(net_327),
 .meas_cap_0(meas_cap_0),
 .meas_cap_1(meas_cap_1),
 .meas_cap_2(meas_cap_2),
@@ -890,7 +884,7 @@ CAPtest XTEST (
 .meas_cap_13(meas_cap_13),
 .meas_cap_14(meas_cap_14),
 .meas_cap_15(meas_cap_15),
-.done_captest(net_325),
+.done_captest(net_317),
 .kelvin_SIMPV(kelvin_SIMPV),
 .meas_vcap1_0(meas_vcap1_0),
 .meas_vcap1_1(meas_vcap1_1),
@@ -932,10 +926,10 @@ CAPtest XTEST (
 .meas_vcap4_7(meas_vcap4_7),
 .meas_vcap4_8(meas_vcap4_8),
 .meas_vcap4_9(meas_vcap4_9),
-.mon_cap_done(net_329),
+.mon_cap_done(net_322),
 .clock_captest(clock_capesr),
-.ctl_cap_scale(net_340),
-.fault_captest(net_327),
+.ctl_cap_scale(net_332),
+.fault_captest(net_319),
 .meas_vcap1_10(meas_vcap1_10),
 .meas_vcap1_11(meas_vcap1_11),
 .meas_vcap1_12(meas_vcap1_12),
@@ -961,8 +955,8 @@ CAPtest XTEST (
 .meas_vcap4_14(meas_vcap4_14),
 .meas_vcap4_15(meas_vcap4_15),
 .clock_divideRT(clock_divideRT),
-.enable_captest(net_333),
-.fault_overflow(net_328),
+.enable_captest(net_325),
+.fault_overflow(net_320),
 .request_clockRT(request_clockRT),
 .done_capcalculate(done_capcalculate),
 .kelvin_GNDcaptest(kelvin_GNDcapesr)

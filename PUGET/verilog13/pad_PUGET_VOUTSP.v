@@ -8,16 +8,6 @@ module STONEpad1 ( PAD );
 endmodule
 
 
-//Verilog HDL for "Esd", "ESDdiode" "functional"
-
-
-module ESDdiode ( N, P );
-
-  input P;
-  input N;
-endmodule
-
-
 //Verilog HDL for "Esd", "ESDdiodeB2B" "functional"
 
 
@@ -50,16 +40,6 @@ inout  kelvin_VOUTSP;
 // ------------------------ Networks ---------------------
 STONEpad1 XPAD1 (
 .PAD(VOUTSP)
-);
-
-ESDdiode Xesd1_XPAD1 (
-.N(VOUTSN),
-.P(VOUTSP)
-);
-
-ESDdiode Xesd2_XPAD1 (
-.N(VOUTSP),
-.P(VOUTSN)
 );
 
 ESDdiodeB2B Xesdb2b_XPAD1 (

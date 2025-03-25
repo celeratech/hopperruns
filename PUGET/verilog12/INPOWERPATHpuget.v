@@ -4,8 +4,8 @@ module POWERPATHINconfiguration (tmi,CELG59462,CELV96848,CELSUB40948,disable_vou
   input  CELG59462;
   input  CELV96848;
   input  CELSUB40948;
-  output  disable_voutm5;
-  output  in_startuptime;
+  input  disable_voutm5;
+  input  in_startuptime;
 endmodule
 
 module INPOWERPATHpugetDEBUG (tdo,tmi,ok_infet,on_infet,CELG59462,CELV96848,ok_voutm5,CELSUB40948,disable_voutm5,ok_powerpathin,clock_powerpathin,enable_powerpathin,hijack_enable_voutm5,hijack_enable_powerpathin);

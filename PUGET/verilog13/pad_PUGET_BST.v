@@ -8,16 +8,6 @@ module STONEpad1 ( PAD );
 endmodule
 
 
-//Verilog HDL for "Esd", "ESDdiode" "functional"
-
-
-module ESDdiode ( N, P );
-
-  input P;
-  input N;
-endmodule
-
-
 //Verilog HDL for "Esd", "ESDcore6" "functional"
 
 
@@ -29,9 +19,8 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_PUGET_BST (BST, GESD, VOUTSN);
+module pad_PUGET_BST (BST, VOUTSN);
 inout  BST;
-input  GESD;
 inout  VOUTSN;
 
 
@@ -42,24 +31,9 @@ STONEpad1 XPAD1 (
 .PAD(BST)
 );
 
-ESDdiode Xesd_XPAD1 (
-.N(GESD),
-.P(BST)
-);
-
-ESDdiode Xesd1_XPAD1 (
-.N(VOUTSN),
-.P(BST)
-);
-
-ESDdiode Xesd2_XPAD1 (
-.N(BST),
-.P(VOUTSN)
-);
-
-ESDcore6 XESDcore6_10 (
-.PAD(VOUTSN),
-.GESD(BST)
+ESDcore6 XESDcore6_1 (
+.PAD(BST),
+.GESD(VOUTSN)
 );
 
 endmodule

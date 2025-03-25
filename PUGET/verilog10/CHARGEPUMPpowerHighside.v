@@ -293,13 +293,13 @@ fetdriver_68e4b161 Xfetdriver2 (
 .global_fetdriver(global_fetdriver_ac86ee9b_Xfetdriver2)
 );
 
-DFTtm8t dft_hex0x1E (
+DFTtm8t dft_hex0x27 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x1E_ten_7,noconn_dft_hex0x1E_ten_6,noconn_dft_hex0x1E_ten_5,noconn_dft_hex0x1E_ten_4,global_fetdriver_ac86ee9b_Xfetdriver2,global_fetdriver_36439579_Xfetdriver1,global_currentgenerator_4342eca5_Xcurrentgenerator1,global_floatingreturn_533438fd_XU4}),
-.tma({a0,a0,a0,a1,a1,a1,a1,a0}),
+.ten({noconn_dft_hex0x27_ten_7,noconn_dft_hex0x27_ten_6,noconn_dft_hex0x27_ten_5,noconn_dft_hex0x27_ten_4,global_fetdriver_ac86ee9b_Xfetdriver2,global_fetdriver_36439579_Xfetdriver1,global_currentgenerator_4342eca5_Xcurrentgenerator1,global_floatingreturn_533438fd_XU4}),
+.tma({a0,a0,a1,a0,a0,a1,a1,a1}),
 .tmi(tmi[4:0])
 );
 
@@ -314,20 +314,20 @@ currentgenerator_7973b054 Xcurrentgenerator1 (
 .global_currentgenerator(global_currentgenerator_4342eca5_Xcurrentgenerator1)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x1E_ten_4 (
-.noconn(noconn_dft_hex0x1E_ten_4)
+STONEnoconn XNCnoconn_dft_hex0x27_ten_4 (
+.noconn(noconn_dft_hex0x27_ten_4)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x1E_ten_5 (
-.noconn(noconn_dft_hex0x1E_ten_5)
+STONEnoconn XNCnoconn_dft_hex0x27_ten_5 (
+.noconn(noconn_dft_hex0x27_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x1E_ten_6 (
-.noconn(noconn_dft_hex0x1E_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x27_ten_6 (
+.noconn(noconn_dft_hex0x27_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x1E_ten_7 (
-.noconn(noconn_dft_hex0x1E_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x27_ten_7 (
+.noconn(noconn_dft_hex0x27_ten_7)
 );
 
 endmodule

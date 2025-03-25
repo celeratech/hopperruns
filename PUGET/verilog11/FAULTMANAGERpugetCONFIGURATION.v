@@ -53,9 +53,9 @@ input  fault_sequencer;
 input  fault_telemetry;
 input  fault_chargepump;
 input  fault_capcalculate;
-output  FAULTMANAGERconfiguration_0;
-output  FAULTMANAGERconfiguration_1;
-output  FAULTMANAGERconfiguration_2;
+  input  FAULTMANAGERconfiguration_0;
+  input  FAULTMANAGERconfiguration_1;
+  input  FAULTMANAGERconfiguration_2;
 output [9:0] status_FAULTMANAGERstatus_9;
 
 
@@ -67,15 +67,15 @@ wire [7:0] drm0;
 wire [7:0] por0;
 
 // ------------------------ Networks ---------------------
-drm8 drm_hex0x1A (
+drm8 drm_hex0x23 (
 .G(CELG59462),
 .V(CELV96848),
 .d0(a0),
 .d1(a1),
-.id({a0,a0,a0,a1,a1,a0,a1,a0}),
+.id({a0,a0,a1,a0,a0,a0,a1,a1}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,noconn_drm8_drm0_3,FAULTMANAGERconfiguration_2,FAULTMANAGERconfiguration_1,FAULTMANAGERconfiguration_0}),
+.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,noconn_drm8_drm0_3,FAULTMANAGERconfiguration_79cefc7e_2,FAULTMANAGERconfiguration_79cefc7e_1,FAULTMANAGERconfiguration_79cefc7e_0}),
 .por0({a0,a0,a0,a0,a0,a0,a0,a0}),
 .bypload(a0),
 .lastdrm(a0)

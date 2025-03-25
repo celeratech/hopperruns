@@ -211,7 +211,7 @@ DFTstatusOUTPUT8 Xdftstatus1 (
 .ten_status(ten_status_2fa8fce6_Xdftstatus1)
 );
 
-DFTtm8d dft_hex0x8A (
+DFTtm8d dft_hex0x91 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
@@ -219,28 +219,28 @@ DFTtm8d dft_hex0x8A (
 .tdi({tdi_222b6559_XUTELEMETRYmeasureSEQUENCERtime,tdi_c411c94c_XUTELEMETRYmeasureSEQUENCERreadycount,tdi_21a1dcb0_XUTELEMETRYmeasureSEQUENCERperiod,tdi_047d2ef8_XUTELEMETRYmeasureSEQUENCERdonemeasure,tdi_3768d702_XUTELEMETRYmeasureSEQUENCERdonecount,tdi_238dbebf_XUTELEMETRYmeasureSEQUENCERdoneadc,tdi_bad56a3b_XUTELEMETRYmeasureSEQUENCERconvertadc,tdi_57d80c41_XUTELEMETRYmeasureSEQUENCERadctime}),
 .tdo(tdo),
 .ten({ten_222b6559_XUTELEMETRYmeasureSEQUENCERtime,ten_c411c94c_XUTELEMETRYmeasureSEQUENCERreadycount,ten_21a1dcb0_XUTELEMETRYmeasureSEQUENCERperiod,ten_047d2ef8_XUTELEMETRYmeasureSEQUENCERdonemeasure,ten_3768d702_XUTELEMETRYmeasureSEQUENCERdonecount,ten_238dbebf_XUTELEMETRYmeasureSEQUENCERdoneadc,ten_bad56a3b_XUTELEMETRYmeasureSEQUENCERconvertadc,ten_57d80c41_XUTELEMETRYmeasureSEQUENCERadctime}),
-.tma({a1,a0,a0,a0,a1,a0,a1,a0}),
+.tma({a1,a0,a0,a1,a0,a0,a0,a1}),
 .tmi(tmi[4:0])
 );
 
-DFTtm8d dft_hex0x8B (
+DFTtm8d dft_hex0x92 (
 .G(CELG59462),
 .V(CELV96848),
 .a({b1,b0}),
 .SUB(CELSUB40948),
 .tdi({b0,b0,b0,b0,b0,b0,b0,tdi_dc8cf91e_XUTELEMETRYmeasureTELEMETRYdone}),
 .tdo(tdo),
-.ten({noconn_dft_hex0x8B_ten_7,noconn_dft_hex0x8B_ten_6,ten_status_2fa8fce6_Xdftstatus1,ten_hijacki_4ac6624b_Xdfthijack2,ten_hijack_4ac6624b_Xdfthijack2,ten_hijacki_fd840172_Xdfthijack1,ten_hijack_fd840172_Xdfthijack1,ten_dc8cf91e_XUTELEMETRYmeasureTELEMETRYdone}),
-.tma({b1,b0,b0,b0,b1,b0,b1,b1}),
+.ten({noconn_dft_hex0x92_ten_7,noconn_dft_hex0x92_ten_6,ten_status_2fa8fce6_Xdftstatus1,ten_hijacki_4ac6624b_Xdfthijack2,ten_hijack_4ac6624b_Xdfthijack2,ten_hijacki_fd840172_Xdfthijack1,ten_hijack_fd840172_Xdfthijack1,ten_dc8cf91e_XUTELEMETRYmeasureTELEMETRYdone}),
+.tma({b1,b0,b0,b1,b0,b0,b1,b0}),
 .tmi(tmi[4:0])
 );
 
-STONEnoconn XNCnoconn_dft_hex0x8B_ten_6 (
-.noconn(noconn_dft_hex0x8B_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x92_ten_6 (
+.noconn(noconn_dft_hex0x92_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x8B_ten_7 (
-.noconn(noconn_dft_hex0x8B_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x92_ten_7 (
+.noconn(noconn_dft_hex0x92_ten_7)
 );
 
 dftprobeModel0_80e43a5a XUTELEMETRYmeasureSEQUENCERtime (

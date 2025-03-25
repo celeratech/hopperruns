@@ -23,7 +23,7 @@ module CAPESRalertCONFIGURATION (MASKalert_0,MASKalert_1,MASKalert_2,MASKalert_3
   input [9:0] register_msk_mon_status_9;
 endmodule
 
-module CAPESRalertLATCH (porb,cap_done,esr_done,CELG59462,CELV96848,alert_set,cap_failed,esr_failed,CELSUB40948,alert_clear,alert_capesr,power_failed,capesr_active,enable_capesr,capesr_pending,power_returned,capesr_scheduled);
+module CAPESRalertLATCH (porb,cap_done,esr_done,CELG59462,CELV96848,alert_set,cap_failed,esr_failed,CELSUB40948,power_failed,capesr_active,enable_capesr,capesr_pending,power_returned,capesr_scheduled);
   input  porb;
   input  cap_done;
   input  esr_done;
@@ -33,8 +33,6 @@ module CAPESRalertLATCH (porb,cap_done,esr_done,CELG59462,CELV96848,alert_set,ca
   input  cap_failed;
   input  esr_failed;
   input  CELSUB40948;
-  input  alert_clear;
-  output  alert_capesr;
   input  power_failed;
   input  capesr_active;
   input  enable_capesr;
@@ -100,15 +98,13 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CAPESRalertMAIN (porb, CELG59462, CELV96848, alert_set, power_good, CELSUB40948, alert_clear, alert_capesr, mon_cap_done, mon_esr_done, allow_charger, enable_capesr, mon_cap_failed, mon_esr_failed, mon_capesr_active, mon_capesr_pending, status_mon_status_9, mon_capesr_scheduled, register_msk_mon_status_9);
+module CAPESRalertMAIN (porb, CELG59462, CELV96848, alert_set, power_good, CELSUB40948, mon_cap_done, mon_esr_done, allow_charger, enable_capesr, mon_cap_failed, mon_esr_failed, mon_capesr_active, mon_capesr_pending, status_mon_status_9, mon_capesr_scheduled, register_msk_mon_status_9);
 input  porb;
 input  CELG59462;
 input  CELV96848;
 input  alert_set;
 input  power_good;
 input  CELSUB40948;
-input  alert_clear;
-output  alert_capesr;
 input  mon_cap_done;
 input  mon_esr_done;
 input  allow_charger;
@@ -128,15 +124,15 @@ wire [9:0] register_msk_mon_status_9;
 
 // ------------------------ Networks ---------------------
 CAPESRalertCONFIGURATION XCONFIGURATION (
-.MASKalert_0(net_89),
-.MASKalert_1(net_90),
-.MASKalert_2(net_91),
-.MASKalert_3(net_92),
-.MASKalert_4(net_93),
-.MASKalert_5(net_94),
-.MASKalert_6(net_95),
-.MASKalert_7(net_96),
-.MASKalert_8(net_97),
+.MASKalert_0(net_83),
+.MASKalert_1(net_84),
+.MASKalert_2(net_85),
+.MASKalert_3(net_86),
+.MASKalert_4(net_87),
+.MASKalert_5(net_88),
+.MASKalert_6(net_89),
+.MASKalert_7(net_90),
+.MASKalert_8(net_91),
 .MONstatus_0(mon_capesr_active),
 .MONstatus_1(mon_capesr_scheduled),
 .MONstatus_2(mon_capesr_pending),
@@ -144,63 +140,61 @@ CAPESRalertCONFIGURATION XCONFIGURATION (
 .MONstatus_4(mon_esr_done),
 .MONstatus_5(mon_cap_failed),
 .MONstatus_6(mon_esr_failed),
-.MONstatus_7(net_86),
-.MONstatus_8(net_87),
-.MONstatus_9(net_88),
+.MONstatus_7(net_80),
+.MONstatus_8(net_81),
+.MONstatus_9(net_82),
 .status_mon_status_9(status_mon_status_9[9:0]),
 .register_msk_mon_status_9(register_msk_mon_status_9[9:0])
 );
 
 CAPESRalertLATCH XLATCH (
 .porb(porb),
-.cap_done(net_108),
-.esr_done(net_109),
+.cap_done(net_100),
+.esr_done(net_101),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .alert_set(alert_set),
-.cap_failed(net_110),
-.esr_failed(net_111),
+.cap_failed(net_102),
+.esr_failed(net_103),
 .CELSUB40948(CELSUB40948),
-.alert_clear(alert_clear),
-.alert_capesr(alert_capesr),
-.power_failed(net_112),
-.capesr_active(net_105),
+.power_failed(net_104),
+.capesr_active(net_97),
 .enable_capesr(enable_capesr),
-.capesr_pending(net_107),
-.power_returned(net_113),
-.capesr_scheduled(net_106)
+.capesr_pending(net_99),
+.power_returned(net_105),
+.capesr_scheduled(net_98)
 );
 
 CAPESRalertMASK XMASK (
-.cap_done(net_108),
-.esr_done(net_109),
+.cap_done(net_100),
+.esr_done(net_101),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.cap_failed(net_110),
-.esr_failed(net_111),
+.cap_failed(net_102),
+.esr_failed(net_103),
 .CELSUB40948(CELSUB40948),
-.MASKalert_0(net_89),
-.MASKalert_1(net_90),
-.MASKalert_2(net_91),
-.MASKalert_3(net_92),
-.MASKalert_4(net_93),
-.MASKalert_5(net_94),
-.MASKalert_6(net_95),
-.MASKalert_7(net_96),
-.MASKalert_8(net_97),
+.MASKalert_0(net_83),
+.MASKalert_1(net_84),
+.MASKalert_2(net_85),
+.MASKalert_3(net_86),
+.MASKalert_4(net_87),
+.MASKalert_5(net_88),
+.MASKalert_6(net_89),
+.MASKalert_7(net_90),
+.MASKalert_8(net_91),
 .mon_cap_done(mon_cap_done),
 .mon_esr_done(mon_esr_done),
-.power_failed(net_112),
-.capesr_active(net_105),
-.capesr_pending(net_107),
+.power_failed(net_104),
+.capesr_active(net_97),
+.capesr_pending(net_99),
 .mon_cap_failed(mon_cap_failed),
 .mon_esr_failed(mon_cap_failed),
-.power_returned(net_113),
-.capesr_scheduled(net_106),
-.mon_power_failed(net_87),
+.power_returned(net_105),
+.capesr_scheduled(net_98),
+.mon_power_failed(net_81),
 .mon_capesr_active(mon_capesr_active),
 .mon_capesr_pending(mon_capesr_pending),
-.mon_power_returned(net_88),
+.mon_power_returned(net_82),
 .mon_capesr_scheduled(mon_capesr_scheduled)
 );
 
@@ -211,12 +205,12 @@ CAPESRalertPOWERFAIL XPOWERFAIL (
 .CELSUB40948(CELSUB40948),
 .allow_charger(allow_charger),
 .enable_capesr(enable_capesr),
-.mon_power_failed(net_87),
-.mon_power_returned(net_88)
+.mon_power_failed(net_81),
+.mon_power_returned(net_82)
 );
 
 tie_9e2c0894 XU2 (
-.a0(net_86),
+.a0(net_80),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)

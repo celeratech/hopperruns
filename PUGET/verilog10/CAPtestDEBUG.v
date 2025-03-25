@@ -70,7 +70,7 @@ VESPAdftpulse XU1 (
 .CELSUB40948(CELSUB40948)
 );
 
-DFTtm8d dft_hex0x13 (
+DFTtm8d dft_hex0x12 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
@@ -78,7 +78,7 @@ DFTtm8d dft_hex0x13 (
 .tdi({tdi_4ec66f2b_XUCAPtestTIME,tdi_098131a5_XUCAPtestSTART,tdi_bdd34183_XUCAPtestOVERFLOW,tdi_54f84f86_XUCAPtestOKSINK,tdi_55f316b7_XUCAPtestLOADREGISTER,tdi_536cc243_XUCAPtestEQUAL,tdi_f232ce61_XUCAPtestDONE,tdi_f744a0a2_XUCAPtestCOUNT}),
 .tdo(tdo),
 .ten({ten_4ec66f2b_XUCAPtestTIME,ten_098131a5_XUCAPtestSTART,ten_bdd34183_XUCAPtestOVERFLOW,ten_54f84f86_XUCAPtestOKSINK,ten_55f316b7_XUCAPtestLOADREGISTER,ten_536cc243_XUCAPtestEQUAL,ten_f232ce61_XUCAPtestDONE,ten_f744a0a2_XUCAPtestCOUNT}),
-.tma({a0,a0,a0,a1,a0,a0,a1,a1}),
+.tma({a0,a0,a0,a1,a0,a0,a1,a0}),
 .tmi(tmi[4:0])
 );
 

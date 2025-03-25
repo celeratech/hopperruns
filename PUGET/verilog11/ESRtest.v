@@ -81,58 +81,58 @@ module ESRtestCONFIGURATION (tmi,CELG59462,CELV96848,go_esrtest,CELSUB40948,enab
   input  CELV96848;
   input  go_esrtest;
   input  CELSUB40948;
-  output  enable_busy;
-  output  MULTfactor_0;
-  output  MULTfactor_1;
-  output  MULTfactor_2;
-  output  MULTfactor_3;
-  output  MULTfactor_4;
-  output  MULTfactor_5;
-  output  MULTfactor_6;
-  output  MULTfactor_7;
-  output  esr_algorithm;
+  input  enable_busy;
+  input  MULTfactor_0;
+  input  MULTfactor_1;
+  input  MULTfactor_2;
+  input  MULTfactor_3;
+  input  MULTfactor_4;
+  input  MULTfactor_5;
+  input  MULTfactor_6;
+  input  MULTfactor_7;
+  input  esr_algorithm;
   output  start_esrtest;
-  output  ESRtargetMAX_0;
-  output  ESRtargetMAX_1;
-  output  ESRtargetMAX_2;
-  output  ESRtargetMAX_3;
-  output  ESRtargetMAX_4;
-  output  ESRtargetMAX_5;
-  output  ESRtargetMAX_6;
-  output  ESRtargetMAX_7;
-  output  ESRtargetMAX_8;
-  output  ESRtargetMAX_9;
-  output  ESRtargetMIN_0;
-  output  ESRtargetMIN_1;
-  output  ESRtargetMIN_2;
-  output  ESRtargetMIN_3;
-  output  ESRtargetMIN_4;
-  output  ESRtargetMIN_5;
-  output  ESRtargetMIN_6;
-  output  ESRtargetMIN_7;
-  output  ESRtargetMIN_8;
-  output  ESRtargetMIN_9;
-  output  RELAXdivider_0;
-  output  RELAXdivider_1;
+  input  ESRtargetMAX_0;
+  input  ESRtargetMAX_1;
+  input  ESRtargetMAX_2;
+  input  ESRtargetMAX_3;
+  input  ESRtargetMAX_4;
+  input  ESRtargetMAX_5;
+  input  ESRtargetMAX_6;
+  input  ESRtargetMAX_7;
+  input  ESRtargetMAX_8;
+  input  ESRtargetMAX_9;
+  input  ESRtargetMIN_0;
+  input  ESRtargetMIN_1;
+  input  ESRtargetMIN_2;
+  input  ESRtargetMIN_3;
+  input  ESRtargetMIN_4;
+  input  ESRtargetMIN_5;
+  input  ESRtargetMIN_6;
+  input  ESRtargetMIN_7;
+  input  ESRtargetMIN_8;
+  input  ESRtargetMIN_9;
+  input  RELAXdivider_0;
+  input  RELAXdivider_1;
   input  enable_esrtest;
-  output  ESRtargetMAX_10;
-  output  ESRtargetMAX_11;
-  output  ESRtargetMAX_12;
-  output  ESRtargetMAX_13;
-  output  ESRtargetMAX_14;
-  output  ESRtargetMAX_15;
-  output  ESRtargetMIN_10;
-  output  ESRtargetMIN_11;
-  output  ESRtargetMIN_12;
-  output  ESRtargetMIN_13;
-  output  ESRtargetMIN_14;
-  output  ESRtargetMIN_15;
-  output  GMCHARGEstart_0;
-  output  GMCHARGEstart_1;
-  output  GMCHARGEnominal_0;
-  output  GMCHARGEnominal_1;
-  output  GMCHARGEnominal_2;
-  output  GMCHARGEnominal_3;
+  input  ESRtargetMAX_10;
+  input  ESRtargetMAX_11;
+  input  ESRtargetMAX_12;
+  input  ESRtargetMAX_13;
+  input  ESRtargetMAX_14;
+  input  ESRtargetMAX_15;
+  input  ESRtargetMIN_10;
+  input  ESRtargetMIN_11;
+  input  ESRtargetMIN_12;
+  input  ESRtargetMIN_13;
+  input  ESRtargetMIN_14;
+  input  ESRtargetMIN_15;
+  input  GMCHARGEstart_0;
+  input  GMCHARGEstart_1;
+  input  GMCHARGEnominal_0;
+  input  GMCHARGEnominal_1;
+  input  GMCHARGEnominal_2;
+  input  GMCHARGEnominal_3;
 endmodule
 
 module ESRtestCOUNT (tmi,CELG59462,CELV96848,PORB97836,CAPcount_0,CAPcount_1,ESRcount_0,ESRcount_1,ESRcount_2,ESRcount_3,CELSUB40948,clock_count,blank_charger,done_esrcount,done_esrcharge,done_telemetry,CHANNELselect_0,CHANNELselect_1,CHANNELselect_2,CHANNELselect_3,enable_esrcount,enable_esrcharge);
@@ -421,9 +421,7 @@ module ESRtestREFERENCE (tdo,tmi,porb,CELG59462,CELV96848,GMcount_0,GMcount_1,PO
   input  update_esrreference;
 endmodule
 
-module ESRtestREGISTER (tdo,tmi,porb,CELG59462,CELV96848,PORB97836,ESRcount_0,ESRcount_1,ESRcount_2,ESRcount_3,CAP1relax_0,CAP1relax_1,CAP1relax_2,CAP1relax_3,CAP1relax_4,CAP1relax_5,CAP1relax_6,CAP1relax_7,CAP1relax_8,CAP1relax_9,CAP2relax_0,CAP2relax_1,CAP2relax_2,CAP2relax_3,CAP2relax_4,CAP2relax_5,CAP2relax_6,CAP2relax_7,CAP2relax_8,CAP2relax_9,CAP3relax_0,CAP3relax_1,CAP3relax_2,CAP3relax_3,CAP3relax_4,CAP3relax_5,CAP3relax_6,CAP3relax_7,CAP3relax_8,CAP3relax_9,CAP4relax_0,CAP4relax_1,CAP4relax_2,CAP4relax_3,CAP4relax_4,CAP4relax_5,CAP4relax_6,CAP4relax_7,CAP4relax_8,CAP4relax_9,CELSUB40948,enable_busy,CAP1charge_0,CAP1charge_1,CAP1charge_2,CAP1charge_3,CAP1charge_4,CAP1charge_5,CAP1charge_6,CAP1charge_7,CAP1charge_8,CAP1charge_9,CAP1relax_10,CAP1relax_11,CAP1relax_12,CAP1relax_13,CAP1relax_14,CAP1relax_15,CAP2charge_0,CAP2charge_1,CAP2charge_2,CAP2charge_3,CAP2charge_4,CAP2charge_5,CAP2charge_6,CAP2charge_7,CAP2charge_8,CAP2charge_9,CAP2relax_10,CAP2relax_11,CAP2relax_12,CAP2relax_13,CAP2relax_14,CAP2relax_15,CAP3charge_0,CAP3charge_1,CAP3charge_2,CAP3charge_3,CAP3charge_4,CAP3charge_5,CAP3charge_6,CAP3charge_7,CAP3charge_8,CAP3charge_9,CAP3relax_10,CAP3relax_11,CAP3relax_12,CAP3relax_13,CAP3relax_14,CAP3relax_15,CAP4charge_0,CAP4charge_1,CAP4charge_2,CAP4charge_3,CAP4charge_4,CAP4charge_5,CAP4charge_6,CAP4charge_7,CAP4charge_8,CAP4charge_9,CAP4relax_10,CAP4relax_11,CAP4relax_12,CAP4relax_13,CAP4relax_14,CAP4relax_15,meas_vcap1_0,meas_vcap1_1,meas_vcap1_2,meas_vcap1_3,meas_vcap1_4,meas_vcap1_5,meas_vcap1_6,meas_vcap1_7,meas_vcap1_8,meas_vcap1_9,meas_vcap2_0,meas_vcap2_1,meas_vcap2_2,meas_vcap2_3,meas_vcap2_4,meas_vcap2_5,meas_vcap2_6,meas_vcap2_7,meas_vcap2_8,meas_vcap2_9,meas_vcap3_0,meas_vcap3_1,meas_vcap3_2,meas_vcap3_3,meas_vcap3_4,meas_vcap3_5,meas_vcap3_6,meas_vcap3_7,meas_vcap3_8,meas_vcap3_9,meas_vcap4_0,meas_vcap4_1,meas_vcap4_2,meas_vcap4_3,meas_vcap4_4,meas_vcap4_5,meas_vcap4_6,meas_vcap4_7,meas_vcap4_8,meas_vcap4_9,CAP1charge_10,CAP1charge_11,CAP1charge_12,CAP1charge_13,CAP1charge_14,CAP1charge_15,CAP2charge_10,CAP2charge_11,CAP2charge_12,CAP2charge_13,CAP2charge_14,CAP2charge_15,CAP3charge_10,CAP3charge_11,CAP3charge_12,CAP3charge_13,CAP3charge_14,CAP3charge_15,CAP4charge_10,CAP4charge_11,CAP4charge_12,CAP4charge_13,CAP4charge_14,CAP4charge_15,meas_vcap1_10,meas_vcap1_11,meas_vcap1_12,meas_vcap1_13,meas_vcap1_14,meas_vcap1_15,meas_vcap2_10,meas_vcap2_11,meas_vcap2_12,meas_vcap2_13,meas_vcap2_14,meas_vcap2_15,meas_vcap3_10,meas_vcap3_11,meas_vcap3_12,meas_vcap3_13,meas_vcap3_14,meas_vcap3_15,meas_vcap4_10,meas_vcap4_11,meas_vcap4_12,meas_vcap4_13,meas_vcap4_14,meas_vcap4_15,clock_register,done_loadrelax,enable_esrtest,done_loadcharge,load_esrregister);
-  inout  tdo;
-  input [4:0] tmi;
+module ESRtestREGISTER (porb,CELG59462,CELV96848,PORB97836,ESRcount_0,ESRcount_1,ESRcount_2,ESRcount_3,CAP1relax_0,CAP1relax_1,CAP1relax_2,CAP1relax_3,CAP1relax_4,CAP1relax_5,CAP1relax_6,CAP1relax_7,CAP1relax_8,CAP1relax_9,CAP2relax_0,CAP2relax_1,CAP2relax_2,CAP2relax_3,CAP2relax_4,CAP2relax_5,CAP2relax_6,CAP2relax_7,CAP2relax_8,CAP2relax_9,CAP3relax_0,CAP3relax_1,CAP3relax_2,CAP3relax_3,CAP3relax_4,CAP3relax_5,CAP3relax_6,CAP3relax_7,CAP3relax_8,CAP3relax_9,CAP4relax_0,CAP4relax_1,CAP4relax_2,CAP4relax_3,CAP4relax_4,CAP4relax_5,CAP4relax_6,CAP4relax_7,CAP4relax_8,CAP4relax_9,CELSUB40948,enable_busy,CAP1charge_0,CAP1charge_1,CAP1charge_2,CAP1charge_3,CAP1charge_4,CAP1charge_5,CAP1charge_6,CAP1charge_7,CAP1charge_8,CAP1charge_9,CAP1relax_10,CAP1relax_11,CAP1relax_12,CAP1relax_13,CAP1relax_14,CAP1relax_15,CAP2charge_0,CAP2charge_1,CAP2charge_2,CAP2charge_3,CAP2charge_4,CAP2charge_5,CAP2charge_6,CAP2charge_7,CAP2charge_8,CAP2charge_9,CAP2relax_10,CAP2relax_11,CAP2relax_12,CAP2relax_13,CAP2relax_14,CAP2relax_15,CAP3charge_0,CAP3charge_1,CAP3charge_2,CAP3charge_3,CAP3charge_4,CAP3charge_5,CAP3charge_6,CAP3charge_7,CAP3charge_8,CAP3charge_9,CAP3relax_10,CAP3relax_11,CAP3relax_12,CAP3relax_13,CAP3relax_14,CAP3relax_15,CAP4charge_0,CAP4charge_1,CAP4charge_2,CAP4charge_3,CAP4charge_4,CAP4charge_5,CAP4charge_6,CAP4charge_7,CAP4charge_8,CAP4charge_9,CAP4relax_10,CAP4relax_11,CAP4relax_12,CAP4relax_13,CAP4relax_14,CAP4relax_15,meas_vcap1_0,meas_vcap1_1,meas_vcap1_2,meas_vcap1_3,meas_vcap1_4,meas_vcap1_5,meas_vcap1_6,meas_vcap1_7,meas_vcap1_8,meas_vcap1_9,meas_vcap2_0,meas_vcap2_1,meas_vcap2_2,meas_vcap2_3,meas_vcap2_4,meas_vcap2_5,meas_vcap2_6,meas_vcap2_7,meas_vcap2_8,meas_vcap2_9,meas_vcap3_0,meas_vcap3_1,meas_vcap3_2,meas_vcap3_3,meas_vcap3_4,meas_vcap3_5,meas_vcap3_6,meas_vcap3_7,meas_vcap3_8,meas_vcap3_9,meas_vcap4_0,meas_vcap4_1,meas_vcap4_2,meas_vcap4_3,meas_vcap4_4,meas_vcap4_5,meas_vcap4_6,meas_vcap4_7,meas_vcap4_8,meas_vcap4_9,CAP1charge_10,CAP1charge_11,CAP1charge_12,CAP1charge_13,CAP1charge_14,CAP1charge_15,CAP2charge_10,CAP2charge_11,CAP2charge_12,CAP2charge_13,CAP2charge_14,CAP2charge_15,CAP3charge_10,CAP3charge_11,CAP3charge_12,CAP3charge_13,CAP3charge_14,CAP3charge_15,CAP4charge_10,CAP4charge_11,CAP4charge_12,CAP4charge_13,CAP4charge_14,CAP4charge_15,meas_vcap1_10,meas_vcap1_11,meas_vcap1_12,meas_vcap1_13,meas_vcap1_14,meas_vcap1_15,meas_vcap2_10,meas_vcap2_11,meas_vcap2_12,meas_vcap2_13,meas_vcap2_14,meas_vcap2_15,meas_vcap3_10,meas_vcap3_11,meas_vcap3_12,meas_vcap3_13,meas_vcap3_14,meas_vcap3_15,meas_vcap4_10,meas_vcap4_11,meas_vcap4_12,meas_vcap4_13,meas_vcap4_14,meas_vcap4_15,clock_register,done_loadrelax,enable_esrtest,done_loadcharge,load_esrregister);
   input  porb;
   input  CELG59462;
   input  CELV96848;
@@ -1111,7 +1109,7 @@ ESRtestCOUNT XCOUNT (
 .CHANNELselect_2(CHANNELselect_2),
 .CHANNELselect_3(CHANNELselect_3),
 .enable_esrcount(net_480),
-.enable_esrcharge(net_481)
+.enable_esrcharge(net_482)
 );
 
 ESRtestDEBUG XDEBUG (
@@ -1281,12 +1279,12 @@ ESRtestDEBUG XDEBUG (
 .CAP4charge_15(net_409),
 .blank_charger(blank_charger),
 .done_esrcount(net_487),
-.done_esrtotal(net_482),
+.done_esrtotal(net_481),
 .start_esrtest(net_476),
 .done_telemetry(done_telemetry),
 .enable_esrtest(enable_esrtest),
 .hijack_go_esrtest(net_473),
-.update_esrreference(net_484),
+.update_esrreference(net_485),
 .hijack_done_telemetry(net_479),
 .hijack_enable_esrtest(net_469)
 );
@@ -1296,7 +1294,7 @@ ESRtestFAULTMANAGER XFAULTMANAGER (
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948),
 .fault_esrtest(fault_esrtest),
-.fault_esrtotal(net_485)
+.fault_esrtotal(net_484)
 );
 
 ESRtestREFERENCE XREFERENCE (
@@ -1372,12 +1370,10 @@ ESRtestREFERENCE XREFERENCE (
 .GMCHARGEnominal_2(net_250),
 .GMCHARGEnominal_3(net_251),
 .done_esrreference(net_489),
-.update_esrreference(net_484)
+.update_esrreference(net_485)
 );
 
 ESRtestREGISTER XREGISTER (
-.tdo(tdo),
-.tmi(tmi[4:0]),
 .porb(porb),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -1618,16 +1614,16 @@ ESRtestSEQUENCER_Rev2_DYES XSEQUENCER (
 .done_esrcount(net_487),
 .start_esrtest(net_476),
 .done_esrcharge(net_486),
-.done_loadrelax(net_482),
+.done_loadrelax(net_481),
 .done_telemetry(net_479),
 .done_loadcharge(net_472),
 .enable_esrcount(net_480),
-.enable_esrcharge(net_481),
+.enable_esrcharge(net_482),
 .load_esrregister(net_475),
 .done_esrcalculate(net_488),
 .done_esrreference(net_489),
 .enable_esrcalculate(net_483),
-.update_esrreference(net_484)
+.update_esrreference(net_485)
 );
 
 ESRtestTOTAL XTOTAL (
@@ -1781,10 +1777,10 @@ ESRtestTOTAL XTOTAL (
 .CAP4charge_13(net_407),
 .CAP4charge_14(net_408),
 .CAP4charge_15(net_409),
-.done_esrtotal(net_482),
+.done_esrtotal(net_481),
 .done_loadrelax(net_474),
 .enable_esrtest(enable_esrtest),
-.fault_esrtotal(net_485),
+.fault_esrtotal(net_484),
 .clock_calculate(clock_esrtest)
 );
 

@@ -33,7 +33,7 @@ inout [4:0] tmi;
 input  CELG59462;
 input  CELV96848;
 input  CELSUB40948;
-output  charge_startuptime;
+  input  charge_startuptime;
 
 
 // ------------------------ Wires ------------------------
@@ -43,15 +43,15 @@ wire [7:0] drm0;
 wire [7:0] por0;
 
 // ------------------------ Networks ---------------------
-drm8 drm_hex0x07 (
+drm8 drm_hex0x0A (
 .G(CELG59462),
 .V(CELV96848),
 .d0(a0),
 .d1(a1),
-.id({a0,a0,a0,a0,a0,a1,a1,a1}),
+.id({a0,a0,a0,a0,a1,a0,a1,a0}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,noconn_drm8_drm0_3,noconn_drm8_drm0_2,noconn_drm8_drm0_1,charge_startuptime}),
+.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,noconn_drm8_drm0_3,noconn_drm8_drm0_2,noconn_drm8_drm0_1,POWERPATHCHARGEconfiguration_0e6ed25b}),
 .por0({a0,a0,a0,a0,a0,a0,a0,a0}),
 .bypload(a0),
 .lastdrm(a0)

@@ -1,0 +1,470 @@
+// ------------------------ Module Definitions -----------
+module VESPAdftpulse (stop,pulse,start,CELG59462,CELV96848,CELSUB40948);
+  input  stop;
+  output  pulse;
+  input  start;
+  input  CELG59462;
+  input  CELV96848;
+  input  CELSUB40948;
+endmodule
+
+module VESPAasmINPUT2 (o,i0,i1,Tstate,CELG59462,CELV96848,CELSUB40948);
+  output  o;
+  input  i0;
+  input  i1;
+  input  Tstate;
+  input  CELG59462;
+  input  CELV96848;
+  input  CELSUB40948;
+endmodule
+
+module VESPAasmINPUT1 (o,i0,Tstate,CELG59462,CELV96848,CELSUB40948);
+  output  o;
+  input  i0;
+  input  Tstate;
+  input  CELG59462;
+  input  CELV96848;
+  input  CELSUB40948;
+endmodule
+
+//Celera:dbuf_e926e395
+//Celera Confidential Symbol Generator
+//Digital Buffer
+module dbuf_e926e395 (CELV,CELG,i,o,SUB);
+input CELV;
+input CELG;
+input i;
+input SUB;
+output o;
+endmodule
+
+
+
+//Celera:delayclock_ff20cb3d
+//TYPE:clock  EDGE:rise DFT:no ACC:no%
+module delayclock_ff20cb3d (in,CELV,out,clock,celeraporb,
+CELG,CELSUB);
+input CELV;
+input in;
+output out;
+input clock;
+input celeraporb;
+input CELSUB;
+input CELG;
+endmodule
+
+
+
+//Celera:comparatornoctlpins_8339ec19
+//Celera Confidential Symbol Generator
+//Type p Hysteris Mode:fixed 0mV Hysteresis,Edge falling without deglitch
+//Low IQ:no DFT:no
+module comparatornoctlpins_8339ec19 (enable_comparator,IP,out_comparator,INP_COMPARATOR,
+INN_COMPARATOR,SIMPV,global_comparator,ok_comparator,
+CELG,CELSUB);
+input SIMPV;
+input enable_comparator;
+input global_comparator;
+input IP;
+input INP_COMPARATOR;
+input INN_COMPARATOR;
+output out_comparator;
+input CELG;
+input CELSUB;
+output ok_comparator;
+endmodule
+
+
+
+//Celera:nand2_9125fe87
+//Celera Confidential Symbol Generator
+//5V NAND2
+module nand2_9125fe87 (CELV,CELG,i0,i1,o,SUB);
+input CELV;
+input CELG;
+input i0;
+input i1;
+input SUB;
+output o;
+endmodule
+
+
+
+//Celera:resistordivider_6838d553
+//Celera Confidential Symbol Generator
+//VMAX:60V R:500.0KOhm 2Taps
+module resistordivider_6838d553 (TOP,
+enable_resistordivider,global_resistordivider,CELV,CELSUB,TAP0,
+TAP1,
+CELG, BOTTOM);
+inout TOP;
+input enable_resistordivider;
+input global_resistordivider;
+input CELV;
+input CELSUB;
+output TAP0;
+output TAP1;
+input CELG;
+inout BOTTOM;
+endmodule
+
+
+
+//Celera:delayclock_1de94c16
+//TYPE:clock  EDGE:rise DFT:no ACC:no%
+module delayclock_1de94c16 (in,CELV,out,clock,celeraporb,
+CELG,CELSUB);
+input CELV;
+input in;
+output out;
+input clock;
+input celeraporb;
+input CELSUB;
+input CELG;
+endmodule
+
+
+
+//Celera:dff_e5264df5
+//Celera Confidential Symbol Generator
+//DFF latch
+module dff_e5264df5 (CELV,d,rb,ck,q,qb,CELG,CELSUB);
+input CELV;
+input d;
+input rb;
+input ck;
+output q;
+output qb;
+input CELG;
+input CELSUB;
+endmodule
+
+
+
+//Celera:amux2_a0dc83ed
+//Celera Confidential Symbol Generator
+//Inputs: 2, Switch On Resistance: 1K
+//Type of Control:pin, T-Switch: no
+module amux2_a0dc83ed (SIMPV,CELSUB,O,I0,I1,
+amux,
+CELG);
+input SIMPV;
+input CELSUB;
+output O;
+input I0;
+input I1;
+input amux;
+input CELG;
+endmodule
+
+
+
+//Celera:dmux2b_982e245a
+//Celera Confidential Symbol Generator
+//DMUX
+module dmux2b_982e245a (CELV,CELG,o,a,b,s,CELSUB);
+input CELV;
+input CELG;
+output [1:0] o;
+input [1:0] a;
+input [1:0] b;
+input s;
+input CELSUB;
+endmodule
+
+
+
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
+// ------------------------ Module Verilog ---------------
+module CAPdecodeMAIN (porb, SIMPV, VCC2P5, CAPSLCT0, CAPSLCT1, CELG59462, CELV96848, PORB97836, CAPcount_0, CAPcount_1, dft_sample, CELSUB40948, IP_227a6685, IP_dfd1d9bf, cap2_active, cap3_active, cap4_active, dft_select0, dft_select1, dft_startup, done_capdecode, hijack_measure, clock_capdecode, dft_sampleDELAY, kelvin_GNDcapdecode, enable_capcitordecode);
+input  porb;
+input  SIMPV;
+inout  VCC2P5;
+input  CAPSLCT0;
+input  CAPSLCT1;
+input  CELG59462;
+input  CELV96848;
+input  PORB97836;
+output  CAPcount_0;
+output  CAPcount_1;
+output  dft_sample;
+input  CELSUB40948;
+input  IP_227a6685;
+input  IP_dfd1d9bf;
+output  cap2_active;
+output  cap3_active;
+output  cap4_active;
+output  dft_select0;
+output  dft_select1;
+output  dft_startup;
+output  done_capdecode;
+input  hijack_measure;
+input  clock_capdecode;
+output  dft_sampleDELAY;
+inout  kelvin_GNDcapdecode;
+input  enable_capcitordecode;
+
+
+// ------------------------ Wires ------------------------
+wire [1:0] a;
+wire [1:0] b;
+wire [1:0] o;
+
+// ------------------------ Networks ---------------------
+VESPAdftpulse XU17 (
+.stop(net_213),
+.pulse(dft_startup),
+.start(enable_capcitordecode),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
+);
+
+VESPAasmINPUT2 XU30 (
+.o(net_224),
+.i0(net_223),
+.i1(net_218),
+.Tstate(enable_capcitordecode),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
+);
+
+VESPAasmINPUT1 XU33 (
+.o(net_213),
+.i0(net_225),
+.Tstate(enable_capcitordecode),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
+);
+
+VESPAasmINPUT1 XU40 (
+.o(cap4_active),
+.i0(net_212),
+.Tstate(net_219),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
+);
+
+VESPAasmINPUT1 XU43 (
+.o(net_222),
+.i0(clock_capdecode),
+.Tstate(enable_capcitordecode),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
+);
+
+dbuf_e926e395 XU3 (
+.i(net_173),
+.o(dft_select0),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
+);
+
+dbuf_e926e395 XU4 (
+.i(net_212),
+.o(net_157),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
+);
+
+delayclock_ff20cb3d XU6 (
+.in(net_224),
+.out(net_216),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.clock(net_222),
+.CELSUB(CELSUB40948),
+.celeraporb(PORB97836)
+);
+
+dbuf_e926e395 XU7 (
+.i(net_174),
+.o(dft_select1),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
+);
+
+comparatornoctlpins_8339ec19 XU8 (
+.IP(IP_dfd1d9bf),
+.CELG(CELG59462),
+.SIMPV(SIMPV),
+.CELSUB(CELSUB40948),
+.ok_comparator(net_218),
+.INN_COMPARATOR(net_215),
+.INP_COMPARATOR(CAPSLCT0),
+.out_comparator(net_173),
+.enable_comparator(enable_capcitordecode),
+.global_comparator(tl0)
+);
+
+nand2_9125fe87 XU14 (
+.o(net_138),
+.i0(net_217),
+.i1(net_220),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
+);
+
+dbuf_e926e395 XU15 (
+.i(net_138),
+.o(cap2_active),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
+);
+
+dbuf_e926e395 XU16 (
+.i(net_213),
+.o(done_capdecode),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
+);
+
+dbuf_e926e395 XU19 (
+.i(net_219),
+.o(net_158),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
+);
+
+dbuf_e926e395 XU20 (
+.i(net_225),
+.o(dft_sampleDELAY),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
+);
+
+resistordivider_6838d553 XU21 (
+.TOP(VCC2P5),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.TAP0(net_214),
+.TAP1(net_211),
+.BOTTOM(kelvin_GNDcapdecode),
+.CELSUB(CELSUB40948),
+.enable_resistordivider(enable_capcitordecode),
+.global_resistordivider(tl0)
+);
+
+dbuf_e926e395 XU22 (
+.i(net_219),
+.o(cap3_active),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
+);
+
+dbuf_e926e395 XU24 (
+.i(net_216),
+.o(dft_sample),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
+);
+
+comparatornoctlpins_8339ec19 XU27 (
+.IP(IP_227a6685),
+.CELG(CELG59462),
+.SIMPV(SIMPV),
+.CELSUB(CELSUB40948),
+.ok_comparator(net_223),
+.INN_COMPARATOR(net_221),
+.INP_COMPARATOR(CAPSLCT1),
+.out_comparator(net_174),
+.enable_comparator(enable_capcitordecode),
+.global_comparator(tl0)
+);
+
+delayclock_1de94c16 XU29 (
+.in(net_216),
+.out(net_225),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.clock(net_222),
+.CELSUB(CELSUB40948),
+.celeraporb(PORB97836)
+);
+
+dff_e5264df5 Xdff1 (
+.d(net_173),
+.q(net_212),
+.ck(net_216),
+.qb(net_217),
+.rb(porb),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+dff_e5264df5 Xdff2 (
+.d(net_174),
+.q(net_219),
+.ck(net_216),
+.qb(net_220),
+.rb(porb),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+amux2_a0dc83ed Xamux1 (
+.O(net_221),
+.I0(net_211),
+.I1(net_214),
+.CELG(CELG59462),
+.amux(net_174),
+.SIMPV(SIMPV),
+.CELSUB(CELSUB40948)
+);
+
+amux2_a0dc83ed Xamux2 (
+.O(net_215),
+.I0(net_211),
+.I1(net_214),
+.CELG(CELG59462),
+.amux(net_173),
+.SIMPV(SIMPV),
+.CELSUB(CELSUB40948)
+);
+
+dmux2b_982e245a Xdmux1 (
+.a({net_158,net_157}),
+.b({net_174,net_173}),
+.o({CAPcount_1,CAPcount_0}),
+.s(hijack_measure),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+PEBBLEtielo XtieLo (
+.G(CELG59462),
+.V(CELV96848),
+.q(tl0),
+.SUB(CELSUB40948)
+);
+
+endmodule
+

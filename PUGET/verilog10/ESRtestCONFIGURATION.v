@@ -69,58 +69,58 @@ input  CELG59462;
 input  CELV96848;
 input  go_esrtest;
 input  CELSUB40948;
-output  enable_busy;
-output  MULTfactor_0;
-output  MULTfactor_1;
-output  MULTfactor_2;
-output  MULTfactor_3;
-output  MULTfactor_4;
-output  MULTfactor_5;
-output  MULTfactor_6;
-output  MULTfactor_7;
-output  esr_algorithm;
+  input  enable_busy;
+  input  MULTfactor_0;
+  input  MULTfactor_1;
+  input  MULTfactor_2;
+  input  MULTfactor_3;
+  input  MULTfactor_4;
+  input  MULTfactor_5;
+  input  MULTfactor_6;
+  input  MULTfactor_7;
+  input  esr_algorithm;
 output  start_esrtest;
-output  ESRtargetMAX_0;
-output  ESRtargetMAX_1;
-output  ESRtargetMAX_2;
-output  ESRtargetMAX_3;
-output  ESRtargetMAX_4;
-output  ESRtargetMAX_5;
-output  ESRtargetMAX_6;
-output  ESRtargetMAX_7;
-output  ESRtargetMAX_8;
-output  ESRtargetMAX_9;
-output  ESRtargetMIN_0;
-output  ESRtargetMIN_1;
-output  ESRtargetMIN_2;
-output  ESRtargetMIN_3;
-output  ESRtargetMIN_4;
-output  ESRtargetMIN_5;
-output  ESRtargetMIN_6;
-output  ESRtargetMIN_7;
-output  ESRtargetMIN_8;
-output  ESRtargetMIN_9;
-output  RELAXdivider_0;
-output  RELAXdivider_1;
+  input  ESRtargetMAX_0;
+  input  ESRtargetMAX_1;
+  input  ESRtargetMAX_2;
+  input  ESRtargetMAX_3;
+  input  ESRtargetMAX_4;
+  input  ESRtargetMAX_5;
+  input  ESRtargetMAX_6;
+  input  ESRtargetMAX_7;
+  input  ESRtargetMAX_8;
+  input  ESRtargetMAX_9;
+  input  ESRtargetMIN_0;
+  input  ESRtargetMIN_1;
+  input  ESRtargetMIN_2;
+  input  ESRtargetMIN_3;
+  input  ESRtargetMIN_4;
+  input  ESRtargetMIN_5;
+  input  ESRtargetMIN_6;
+  input  ESRtargetMIN_7;
+  input  ESRtargetMIN_8;
+  input  ESRtargetMIN_9;
+  input  RELAXdivider_0;
+  input  RELAXdivider_1;
 input  enable_esrtest;
-output  ESRtargetMAX_10;
-output  ESRtargetMAX_11;
-output  ESRtargetMAX_12;
-output  ESRtargetMAX_13;
-output  ESRtargetMAX_14;
-output  ESRtargetMAX_15;
-output  ESRtargetMIN_10;
-output  ESRtargetMIN_11;
-output  ESRtargetMIN_12;
-output  ESRtargetMIN_13;
-output  ESRtargetMIN_14;
-output  ESRtargetMIN_15;
-output  GMCHARGEstart_0;
-output  GMCHARGEstart_1;
-output  GMCHARGEnominal_0;
-output  GMCHARGEnominal_1;
-output  GMCHARGEnominal_2;
-output  GMCHARGEnominal_3;
+  input  ESRtargetMAX_10;
+  input  ESRtargetMAX_11;
+  input  ESRtargetMAX_12;
+  input  ESRtargetMAX_13;
+  input  ESRtargetMAX_14;
+  input  ESRtargetMAX_15;
+  input  ESRtargetMIN_10;
+  input  ESRtargetMIN_11;
+  input  ESRtargetMIN_12;
+  input  ESRtargetMIN_13;
+  input  ESRtargetMIN_14;
+  input  ESRtargetMIN_15;
+  input  GMCHARGEstart_0;
+  input  GMCHARGEstart_1;
+  input  GMCHARGEnominal_0;
+  input  GMCHARGEnominal_1;
+  input  GMCHARGEnominal_2;
+  input  GMCHARGEnominal_3;
 
 
 // ------------------------ Wires ------------------------
@@ -167,13 +167,13 @@ drm56 drm_hex0x02 (
 .id({a0,a0,a0,a0,a0,a0,a1,a0}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({ESRtargetMIN_15,ESRtargetMIN_14,ESRtargetMIN_13,ESRtargetMIN_12,ESRtargetMIN_11,ESRtargetMIN_10,ESRtargetMIN_9,ESRtargetMIN_8}),
-.drm1({ESRtargetMIN_7,ESRtargetMIN_6,ESRtargetMIN_5,ESRtargetMIN_4,ESRtargetMIN_3,ESRtargetMIN_2,ESRtargetMIN_1,ESRtargetMIN_0}),
-.drm2({noconn_drm56_drm2_7,enable_busy,GMCHARGEnominal_3,GMCHARGEnominal_2,GMCHARGEnominal_1,GMCHARGEnominal_0,GMCHARGEstart_1,GMCHARGEstart_0}),
-.drm3({ESRtargetMAX_7,ESRtargetMAX_6,ESRtargetMAX_5,ESRtargetMAX_4,ESRtargetMAX_3,ESRtargetMAX_2,ESRtargetMAX_1,ESRtargetMAX_0}),
-.drm4({ESRtargetMAX_15,ESRtargetMAX_14,ESRtargetMAX_13,ESRtargetMAX_12,ESRtargetMAX_11,ESRtargetMAX_10,ESRtargetMAX_9,ESRtargetMAX_8}),
-.drm5({MULTfactor_7,MULTfactor_6,MULTfactor_5,MULTfactor_4,MULTfactor_3,MULTfactor_2,MULTfactor_1,MULTfactor_0}),
-.drm6({noconn_drm56_drm6_7,noconn_drm56_drm6_6,noconn_drm56_drm6_5,noconn_drm56_drm6_4,noconn_drm56_drm6_3,esr_algorithm,RELAXdivider_1,RELAXdivider_0}),
+.drm0({ESRminimumMSB_7c2efc19_7,ESRminimumMSB_7c2efc19_6,ESRminimumMSB_7c2efc19_5,ESRminimumMSB_7c2efc19_4,ESRminimumMSB_7c2efc19_3,ESRminimumMSB_7c2efc19_2,ESRminimumMSB_7c2efc19_1,ESRminimumMSB_7c2efc19_0}),
+.drm1({ESRminimumLSB_8a87e694_7,ESRminimumLSB_8a87e694_6,ESRminimumLSB_8a87e694_5,ESRminimumLSB_8a87e694_4,ESRminimumLSB_8a87e694_3,ESRminimumLSB_8a87e694_2,ESRminimumLSB_8a87e694_1,ESRminimumLSB_8a87e694_0}),
+.drm2({noconn_drm56_drm2_7,ESRtestBUSY_a0d26352,GMInominal_2667fe69_3,GMInominal_2667fe69_2,GMInominal_2667fe69_1,GMInominal_2667fe69_0,GMCHARGEstartCode_12940733_1,GMCHARGEstartCode_12940733_0}),
+.drm3({ESRmaximumLSB_48c9a44e_7,ESRmaximumLSB_48c9a44e_6,ESRmaximumLSB_48c9a44e_5,ESRmaximumLSB_48c9a44e_4,ESRmaximumLSB_48c9a44e_3,ESRmaximumLSB_48c9a44e_2,ESRmaximumLSB_48c9a44e_1,ESRmaximumLSB_48c9a44e_0}),
+.drm4({ESRmaximumMSB_bb980590_7,ESRmaximumMSB_bb980590_6,ESRmaximumMSB_bb980590_5,ESRmaximumMSB_bb980590_4,ESRmaximumMSB_bb980590_3,ESRmaximumMSB_bb980590_2,ESRmaximumMSB_bb980590_1,ESRmaximumMSB_bb980590_0}),
+.drm5({CALCULATIONmultfactor_92321f89_7,CALCULATIONmultfactor_92321f89_6,CALCULATIONmultfactor_92321f89_5,CALCULATIONmultfactor_92321f89_4,CALCULATIONmultfactor_92321f89_3,CALCULATIONmultfactor_92321f89_2,CALCULATIONmultfactor_92321f89_1,CALCULATIONmultfactor_92321f89_0}),
+.drm6({noconn_drm56_drm6_7,noconn_drm56_drm6_6,noconn_drm56_drm6_5,noconn_drm56_drm6_4,noconn_drm56_drm6_3,ESRconfiguration_291ff990_2,ESRconfiguration_291ff990_1,ESRconfiguration_291ff990_0}),
 .por0({a0,a0,a0,a0,a0,a0,a0,a1}),
 .por1({a0,a1,a1,a1,a1,a1,a0,a1}),
 .por2({a0,a1,a1,a1,a1,a1,a0,a1}),

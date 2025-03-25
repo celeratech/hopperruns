@@ -131,7 +131,7 @@ DFThijack Xdfthijack3 (
 .ten_hijacki(ten_hijacki_2dc7bfcd_Xdfthijack3)
 );
 
-DFTtm8d dft_hex0x2A (
+DFTtm8d dft_hex0x33 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
@@ -139,17 +139,17 @@ DFTtm8d dft_hex0x2A (
 .tdi({a0,a0,a0,a0,a0,tdi_22f510e2_XUDRIVERbst,tdi_12bb4859_XUDRIVERbbmTOP,tdi_c89156e6_XUDRIVERbbmBOTTOM}),
 .tdo(tdo),
 .ten({ten_hijack_2dc7bfcd_Xdfthijack3,ten_hijacki_b549caf4_Xdfthijack2,ten_hijack_b549caf4_Xdfthijack2,ten_hijacki_15b51edc_Xdfthijack1,ten_hijack_15b51edc_Xdfthijack1,ten_22f510e2_XUDRIVERbst,ten_12bb4859_XUDRIVERbbmTOP,ten_c89156e6_XUDRIVERbbmBOTTOM}),
-.tma({a0,a0,a1,a0,a1,a0,a1,a0}),
+.tma({a0,a0,a1,a1,a0,a0,a1,a1}),
 .tmi(tmi[4:0])
 );
 
-DFTtm8t dft_hex0x2B (
+DFTtm8t dft_hex0x34 (
 .G(CELG59462),
 .V(CELV96848),
 .a({b1,b0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x2B_ten_7,noconn_dft_hex0x2B_ten_6,noconn_dft_hex0x2B_ten_5,noconn_dft_hex0x2B_ten_4,noconn_dft_hex0x2B_ten_3,noconn_dft_hex0x2B_ten_2,noconn_dft_hex0x2B_ten_1,ten_hijacki_2dc7bfcd_Xdfthijack3}),
-.tma({b0,b0,b1,b0,b1,b0,b1,b1}),
+.ten({noconn_dft_hex0x34_ten_7,noconn_dft_hex0x34_ten_6,noconn_dft_hex0x34_ten_5,noconn_dft_hex0x34_ten_4,noconn_dft_hex0x34_ten_3,noconn_dft_hex0x34_ten_2,noconn_dft_hex0x34_ten_1,ten_hijacki_2dc7bfcd_Xdfthijack3}),
+.tma({b0,b0,b1,b1,b0,b1,b0,b0}),
 .tmi(tmi[4:0])
 );
 
@@ -171,32 +171,32 @@ dftprobeModel0_80e43a5a XUDRIVERbbmBOTTOM (
 .CELSUB(CELSUB40948)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x2B_ten_1 (
-.noconn(noconn_dft_hex0x2B_ten_1)
+STONEnoconn XNCnoconn_dft_hex0x34_ten_1 (
+.noconn(noconn_dft_hex0x34_ten_1)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x2B_ten_2 (
-.noconn(noconn_dft_hex0x2B_ten_2)
+STONEnoconn XNCnoconn_dft_hex0x34_ten_2 (
+.noconn(noconn_dft_hex0x34_ten_2)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x2B_ten_3 (
-.noconn(noconn_dft_hex0x2B_ten_3)
+STONEnoconn XNCnoconn_dft_hex0x34_ten_3 (
+.noconn(noconn_dft_hex0x34_ten_3)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x2B_ten_4 (
-.noconn(noconn_dft_hex0x2B_ten_4)
+STONEnoconn XNCnoconn_dft_hex0x34_ten_4 (
+.noconn(noconn_dft_hex0x34_ten_4)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x2B_ten_5 (
-.noconn(noconn_dft_hex0x2B_ten_5)
+STONEnoconn XNCnoconn_dft_hex0x34_ten_5 (
+.noconn(noconn_dft_hex0x34_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x2B_ten_6 (
-.noconn(noconn_dft_hex0x2B_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x34_ten_6 (
+.noconn(noconn_dft_hex0x34_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x2B_ten_7 (
-.noconn(noconn_dft_hex0x2B_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x34_ten_7 (
+.noconn(noconn_dft_hex0x34_ten_7)
 );
 
 endmodule

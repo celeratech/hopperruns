@@ -58,6 +58,15 @@ endmodule
 
 
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
 module CHARGERmux (clock_rt, CELG59462, CELV96848, go_stepup, top_state, ok_charger, top_stepup, CELSUB40948, go_stepdown, mode_stepup, bottom_state, clock_stepup, start_stepup, top_stepdown, bottom_stepup, enable_driver, mode_stepdown, clock_stepdown, start_stepdown, bottom_stepdown, enable_driver_stepup, enable_driver_stepdown);
 input  clock_rt;
@@ -302,6 +311,14 @@ inv_12e192f5 XU31 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
+);
+
+STONEnoconn XNC130 (
+.noconn(net_130)
+);
+
+STONEnoconn XNC131 (
+.noconn(net_131)
 );
 
 endmodule

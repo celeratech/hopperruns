@@ -29,26 +29,38 @@ module VESPAasmINPUT3 (o,i0,i1,i2,Tstate,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-//Celera:count_17935af6
+//Celera:countupdn_bf26d5cb
 //Celera Confidential Symbol Generator
-//Type updown Number of bits:4 Enable:pin Rollover:no Done:text
-//Up start:0 Up stop:3//Down start:1 Down stop:0
-module count_17935af6 (CELV,global_count,clk,CELSUB,
-up,
+//Type updown Number of bits:4 Enable:pin Rollover:no
+//Start Code:0 Up stop:3 Down stop:0
+module countupdn_bf26d5cb (CELV,global_count,count_clock,
+direction,
 q,
 enable_count,
-ust,
-CELG );
+start,
+CELG,CELSUB);
 
 input CELV;
 input CELG;
 input CELSUB;
 input global_count;
-input clk;
-input up;
+input count_clock;
+input direction;
 input enable_count;
 output [3:0] q;
-input [3:0] ust;
+input [3:0] start;
+endmodule
+
+
+
+//Celera:tie_9e2c0894
+//Celera Confidential Symbol Generator
+//TIE
+module tie_9e2c0894 (CELV,CELG,a0,SUB);
+input CELV;
+input CELG;
+output a0;
+input SUB;
 endmodule
 
 
@@ -89,18 +101,6 @@ module tie_ef1bc46b (CELV,CELG,a1,SUB);
 input CELV;
 input CELG;
 output a1;
-input SUB;
-endmodule
-
-
-
-//Celera:tie_9e2c0894
-//Celera Confidential Symbol Generator
-//TIE
-module tie_9e2c0894 (CELV,CELG,a0,SUB);
-input CELV;
-input CELG;
-output a0;
 input SUB;
 endmodule
 
@@ -314,7 +314,7 @@ input  update_esrreference;
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
 wire [3:0] q;
-wire [3:0] ust;
+wire [3:0] start;
 wire [15:0] x;
 wire [15:0] y;
 wire [3:0] a;
@@ -328,18 +328,18 @@ wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
 VESPAasmINPUT1 XU18 (
-.o(net_420),
-.i0(net_419),
-.Tstate(net_423),
+.o(net_439),
+.i0(net_438),
+.Tstate(net_442),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT2 XU25 (
-.o(net_432),
-.i0(net_431),
-.i1(net_433),
+.o(net_451),
+.i0(net_450),
+.i1(net_452),
 .Tstate(start_esrtest),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -347,7 +347,7 @@ VESPAasmINPUT2 XU25 (
 );
 
 VESPAasmINPUT1 XU4 (
-.o(net_418),
+.o(net_437),
 .i0(clock_esrtest),
 .Tstate(start_esrtest),
 .CELG59462(CELG59462),
@@ -356,7 +356,7 @@ VESPAasmINPUT1 XU4 (
 );
 
 VESPAasmINPUT1 XU7 (
-.o(net_429),
+.o(net_448),
 .i0(update_esrreference),
 .Tstate(esr_algorithm),
 .CELG59462(CELG59462),
@@ -365,26 +365,33 @@ VESPAasmINPUT1 XU7 (
 );
 
 VESPAasmINPUT3 XU9 (
-.o(net_421),
-.i0(net_420),
-.i1(net_426),
-.i2(net_427),
+.o(net_440),
+.i0(net_439),
+.i1(net_445),
+.i2(net_446),
 .Tstate(esr_algorithm),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
-count_17935af6 XU2 (
-.q({net_243,net_242,GMcount_1,GMcount_0}),
-.up(net_424),
-.clk(net_421),
-.ust({net_259,net_258,net_257,net_256}),
+countupdn_bf26d5cb XU1 (
+.q({net_249,net_248,GMcount_1,GMcount_0}),
 .CELG(CELG59462),
 .CELV(CELV96848),
+.start({net_262,net_262,GMCHARGEstart_1,GMCHARGEstart_0}),
 .CELSUB(CELSUB40948),
+.direction(net_443),
+.count_clock(net_440),
 .enable_count(porb),
-.global_count(global_count_c6708275_XU2)
+.global_count(global_count_880b5ea0_XU1)
+);
+
+tie_9e2c0894 XU2 (
+.a0(net_262),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 digitalcomparator_6d42e8af XU3 (
@@ -393,11 +400,11 @@ digitalcomparator_6d42e8af XU3 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.xlteqy(net_425)
+.xlteqy(net_444)
 );
 
 dbuf_e926e395 XU5 (
-.i(net_422),
+.i(net_441),
 .o(done_esrreference),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -405,38 +412,38 @@ dbuf_e926e395 XU5 (
 );
 
 tie_ef1bc46b XU6 (
-.a1(net_285),
+.a1(net_336),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 tie_9e2c0894 XU10 (
-.a0(net_272),
+.a0(net_323),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 inv_12e192f5 XU11 (
-.i(net_124),
-.o(net_422),
+.i(net_130),
+.o(net_441),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 nor2_ee112582 XU12 (
-.o(net_123),
-.i0(net_425),
-.i1(net_430),
+.o(net_129),
+.i0(net_444),
+.i1(net_449),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU13 (
-.i(net_421),
+.i(net_440),
 .o(dft_countclock),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -444,15 +451,15 @@ dbuf_e926e395 XU13 (
 );
 
 inv_12e192f5 XU14 (
-.i(net_123),
-.o(net_419),
+.i(net_129),
+.o(net_438),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU15 (
-.i(net_424),
+.i(net_443),
 .o(dft_countdirection),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -465,54 +472,54 @@ digitalcomparator_45b4cf4d XU17 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.xgteqy(net_430)
+.xgteqy(net_449)
 );
 
 nand2_9125fe87 XU19 (
-.o(net_128),
-.i0(net_126),
-.i1(net_425),
+.o(net_134),
+.i0(net_132),
+.i1(net_444),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 inv_12e192f5 XU20 (
-.i(net_430),
-.o(net_126),
+.i(net_449),
+.o(net_132),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 inv_12e192f5 XU21 (
-.i(net_128),
-.o(net_424),
+.i(net_134),
+.o(net_443),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 inv_12e192f5 XU22 (
-.i(net_428),
-.o(net_426),
+.i(net_447),
+.o(net_445),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 nor2_ee112582 XU24 (
-.o(net_124),
-.i0(net_428),
-.i1(net_434),
+.o(net_130),
+.i0(net_447),
+.i1(net_453),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 inv_12e192f5 XU26 (
-.i(net_429),
-.o(net_431),
+.i(net_448),
+.o(net_450),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
@@ -520,23 +527,23 @@ inv_12e192f5 XU26 (
 
 inv_12e192f5 XU27 (
 .i(esr_algorithm),
-.o(net_433),
+.o(net_452),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
-STONEnoconn XNC242 (
-.noconn(net_242)
+STONEnoconn XNC248 (
+.noconn(net_248)
 );
 
-STONEnoconn XNC243 (
-.noconn(net_243)
+STONEnoconn XNC249 (
+.noconn(net_249)
 );
 
 dmux2b_99500fb1 Xdmux1 (
 .a({GMCHARGEnominal_3,GMCHARGEnominal_2,GMCHARGEnominal_1,GMCHARGEnominal_0}),
-.b({net_341,net_340,net_339,net_338}),
+.b({net_310,net_309,net_308,net_307}),
 .o({GMCHARGEselect_3,GMCHARGEselect_2,GMCHARGEselect_1,GMCHARGEselect_0}),
 .s(start_esrtest),
 .CELG(CELG59462),
@@ -545,9 +552,9 @@ dmux2b_99500fb1 Xdmux1 (
 );
 
 dmux2b_99500fb1 Xdmux2 (
-.a({net_259,net_258,net_257,net_256}),
-.b({net_325,net_324,net_323,net_322}),
-.o({net_341,net_340,net_339,net_338}),
+.a({net_278,net_277,net_276,net_275}),
+.b({net_294,net_293,net_292,net_291}),
+.o({net_310,net_309,net_308,net_307}),
 .s(esr_algorithm),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -555,11 +562,11 @@ dmux2b_99500fb1 Xdmux2 (
 );
 
 dmux4b_04133225 Xdmux3 (
-.a({net_272,net_272,net_272,net_272}),
-.b({net_272,net_272,net_272,net_285}),
-.c({net_272,net_272,net_285,net_285}),
-.d({net_272,net_285,net_285,net_285}),
-.o({net_259,net_258,net_257,net_256}),
+.a({net_323,net_323,net_323,net_323}),
+.b({net_323,net_323,net_323,net_336}),
+.c({net_323,net_323,net_336,net_336}),
+.d({net_323,net_336,net_336,net_336}),
+.o({net_278,net_277,net_276,net_275}),
 .s({GMCHARGEstart_1,GMCHARGEstart_0}),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -567,11 +574,11 @@ dmux4b_04133225 Xdmux3 (
 );
 
 dmux4b_04133225 Xdmux4 (
-.a({net_272,net_272,net_272,net_272}),
-.b({net_272,net_272,net_272,net_285}),
-.c({net_272,net_272,net_285,net_285}),
-.d({net_272,net_285,net_285,net_285}),
-.o({net_325,net_324,net_323,net_322}),
+.a({net_323,net_323,net_323,net_323}),
+.b({net_323,net_323,net_323,net_336}),
+.c({net_323,net_323,net_336,net_336}),
+.d({net_323,net_336,net_336,net_336}),
+.o({net_294,net_293,net_292,net_291}),
 .s({GMcount_1,GMcount_0}),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -579,41 +586,41 @@ dmux4b_04133225 Xdmux4 (
 );
 
 delayclock_54837627 Xdelay1 (
-.in(net_429),
-.out(net_423),
+.in(net_448),
+.out(net_442),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.clock(net_418),
+.clock(net_437),
 .CELSUB(CELSUB40948),
 .celeraporb(PORB97836)
 );
 
 delayclock_54837627 Xdelay2 (
-.in(net_423),
-.out(net_427),
+.in(net_442),
+.out(net_446),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.clock(net_418),
+.clock(net_437),
 .CELSUB(CELSUB40948),
 .celeraporb(PORB97836)
 );
 
 delayclock_54837627 Xdelay3 (
-.in(net_427),
-.out(net_428),
+.in(net_446),
+.out(net_447),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.clock(net_418),
+.clock(net_437),
 .CELSUB(CELSUB40948),
 .celeraporb(PORB97836)
 );
 
 delayclock_54837627 Xdelay4 (
-.in(net_432),
-.out(net_434),
+.in(net_451),
+.out(net_453),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.clock(net_418),
+.clock(net_437),
 .CELSUB(CELSUB40948),
 .celeraporb(PORB97836)
 );
@@ -623,7 +630,7 @@ DFTtm8t dft_hex0x0B (
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x0B_ten_7,noconn_dft_hex0x0B_ten_6,noconn_dft_hex0x0B_ten_5,noconn_dft_hex0x0B_ten_4,noconn_dft_hex0x0B_ten_3,noconn_dft_hex0x0B_ten_2,noconn_dft_hex0x0B_ten_1,global_count_c6708275_XU2}),
+.ten({noconn_dft_hex0x0B_ten_7,noconn_dft_hex0x0B_ten_6,noconn_dft_hex0x0B_ten_5,noconn_dft_hex0x0B_ten_4,noconn_dft_hex0x0B_ten_3,noconn_dft_hex0x0B_ten_2,noconn_dft_hex0x0B_ten_1,global_count_880b5ea0_XU1}),
 .tma({a0,a0,a0,a0,a1,a0,a1,a1}),
 .tmi(tmi[4:0])
 );

@@ -100,25 +100,25 @@ module CAPtestCONFIGURATION (tmi,CELG59462,CELV96848,CELSUB40948,enable_busy,mon
   input  CELG59462;
   input  CELV96848;
   input  CELSUB40948;
-  output  enable_busy;
+  input  enable_busy;
   output  mon_cap_done;
-  output  CAPdischarge_0;
-  output  CAPdischarge_1;
-  output  CAPdischarge_2;
-  output  CAPdischarge_3;
-  output  CAPdischarge_4;
-  output  CAPdischarge_5;
-  output  CAPdischarge_6;
-  output  CAPdischarge_7;
-  output  CAPdischarge_8;
-  output  CAPdischarge_9;
+  input  CAPdischarge_0;
+  input  CAPdischarge_1;
+  input  CAPdischarge_2;
+  input  CAPdischarge_3;
+  input  CAPdischarge_4;
+  input  CAPdischarge_5;
+  input  CAPdischarge_6;
+  input  CAPdischarge_7;
+  input  CAPdischarge_8;
+  input  CAPdischarge_9;
   input  enable_captest;
-  output  CAPdischarge_10;
-  output  CAPdischarge_11;
-  output  CAPdischarge_12;
-  output  CAPdischarge_13;
-  output  CAPdischarge_14;
-  output  CAPdischarge_15;
+  input  CAPdischarge_10;
+  input  CAPdischarge_11;
+  input  CAPdischarge_12;
+  input  CAPdischarge_13;
+  input  CAPdischarge_14;
+  input  CAPdischarge_15;
 endmodule
 
 module CAPtestCOUNT (tmi,CELG59462,CELV96848,PORB97836,dft_count,CELSUB40948,TESTcount_0,TESTcount_1,TESTcount_2,TESTcount_3,TESTcount_4,TESTcount_5,TESTcount_6,TESTcount_7,TESTcount_8,TESTcount_9,clock_count,state_count,TESTcount_10,TESTcount_11,TESTcount_12,TESTcount_13,TESTcount_14,TESTcount_15,ctl_cap_scale,clock_divideRT,request_clockRT,done_capcalculate,overflow_testcount);
@@ -169,9 +169,7 @@ module CAPtestDEBUG (tdo,tmi,CELG59462,CELV96848,dft_count,equal_test,CELSUB4094
   input  overflow_testcount;
 endmodule
 
-module CAPtestREGISTER (tdo,tmi,porb,CELG59462,CELV96848,PORB97836,meas_cap_0,meas_cap_1,meas_cap_2,meas_cap_3,meas_cap_4,meas_cap_5,meas_cap_6,meas_cap_7,meas_cap_8,meas_cap_9,CELSUB40948,TESTcount_0,TESTcount_1,TESTcount_2,TESTcount_3,TESTcount_4,TESTcount_5,TESTcount_6,TESTcount_7,TESTcount_8,TESTcount_9,enable_busy,meas_cap_10,meas_cap_11,meas_cap_12,meas_cap_13,meas_cap_14,meas_cap_15,TESTcount_10,TESTcount_11,TESTcount_12,TESTcount_13,TESTcount_14,TESTcount_15,clock_register,enable_captest,done_loadregister,load_captestregister);
-  inout  tdo;
-  input [4:0] tmi;
+module CAPtestREGISTER (porb,CELG59462,CELV96848,PORB97836,meas_cap_0,meas_cap_1,meas_cap_2,meas_cap_3,meas_cap_4,meas_cap_5,meas_cap_6,meas_cap_7,meas_cap_8,meas_cap_9,CELSUB40948,TESTcount_0,TESTcount_1,TESTcount_2,TESTcount_3,TESTcount_4,TESTcount_5,TESTcount_6,TESTcount_7,TESTcount_8,TESTcount_9,enable_busy,meas_cap_10,meas_cap_11,meas_cap_12,meas_cap_13,meas_cap_14,meas_cap_15,TESTcount_10,TESTcount_11,TESTcount_12,TESTcount_13,TESTcount_14,TESTcount_15,clock_register,enable_captest,done_loadregister,load_captestregister);
   input  porb;
   input  CELG59462;
   input  CELV96848;
@@ -386,8 +384,8 @@ CAPtestCOMPARE XCOMPARE (
 .PORB97836(PORB97836),
 .CAPcount_0(CAPcount_0),
 .CAPcount_1(CAPcount_1),
-.equal_test(net_259),
-.state_test(net_261),
+.equal_test(net_262),
+.state_test(net_263),
 .CELSUB40948(CELSUB40948),
 .meas_vcap1_0(meas_vcap1_0),
 .meas_vcap1_1(meas_vcap1_1),
@@ -453,7 +451,7 @@ CAPtestCOMPARE XCOMPARE (
 .meas_vcap4_13(meas_vcap4_13),
 .meas_vcap4_14(meas_vcap4_14),
 .meas_vcap4_15(meas_vcap4_15),
-.state_measure(net_258),
+.state_measure(net_260),
 .CAPdischarge_0(net_201),
 .CAPdischarge_1(net_202),
 .CAPdischarge_2(net_203),
@@ -507,7 +505,7 @@ CAPtestCOUNT XCOUNT (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
-.dft_count(net_263),
+.dft_count(net_261),
 .CELSUB40948(CELSUB40948),
 .TESTcount_0(net_217),
 .TESTcount_1(net_218),
@@ -520,7 +518,7 @@ CAPtestCOUNT XCOUNT (
 .TESTcount_8(net_225),
 .TESTcount_9(net_226),
 .clock_count(clock_captest),
-.state_count(net_260),
+.state_count(net_257),
 .TESTcount_10(net_227),
 .TESTcount_11(net_228),
 .TESTcount_12(net_229),
@@ -531,7 +529,7 @@ CAPtestCOUNT XCOUNT (
 .clock_divideRT(clock_divideRT),
 .request_clockRT(request_clockRT),
 .done_capcalculate(done_capcalculate),
-.overflow_testcount(net_262)
+.overflow_testcount(net_258)
 );
 
 CAPtestDEBUG XDEBUG (
@@ -539,20 +537,18 @@ CAPtestDEBUG XDEBUG (
 .tmi(tmi[4:0]),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.dft_count(net_263),
-.equal_test(net_259),
+.dft_count(net_261),
+.equal_test(net_262),
 .CELSUB40948(CELSUB40948),
 .done_captest(done_captest),
-.ok_captestsink(net_257),
+.ok_captestsink(net_259),
 .done_loadcapstart(net_256),
 .done_loadregister(net_252),
 .enable_captestsink(net_255),
-.overflow_testcount(net_262)
+.overflow_testcount(net_258)
 );
 
 CAPtestREGISTER XREGISTER (
-.tdo(tdo),
-.tmi(tmi[4:0]),
 .porb(porb),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -604,22 +600,22 @@ CAPtestSEQUENCER_Rev3_DYES XSEQUENCER (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
-.equal_test(net_259),
-.state_test(net_261),
+.equal_test(net_262),
+.state_test(net_263),
 .CELSUB40948(CELSUB40948),
-.state_count(net_260),
+.state_count(net_257),
 .done_captest(done_captest),
 .clock_captest(clock_captest),
 .fault_captest(fault_captest),
 .start_captest(go_captest),
-.state_measure(net_258),
+.state_measure(net_260),
 .enable_captest(enable_captest),
 .fault_overflow(fault_overflow),
-.ok_captestsink(net_257),
+.ok_captestsink(net_259),
 .done_loadcapstart(net_256),
 .done_loadregister(net_252),
 .enable_captestsink(net_255),
-.overflow_testcount(net_262),
+.overflow_testcount(net_258),
 .load_captestregister(net_254)
 );
 
@@ -639,7 +635,7 @@ CAPtestSINK XSINK (
 .IP_30794d23(IP_30794d23),
 .kelvin_SIMPV(kelvin_SIMPV),
 .clock_captest(clock_captest),
-.ok_captestsink(net_257),
+.ok_captestsink(net_259),
 .kelvin_GNDcaptest(kelvin_GNDcaptest),
 .enable_captestsink(net_255)
 );

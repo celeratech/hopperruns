@@ -18,12 +18,13 @@ module ESDdiode ( N, P );
 endmodule
 
 
-//Verilog HDL for "Esd", "ESDcore6" "functional"
+//Verilog HDL for "Esd", "ESDcore24" "functional"
 
 
-module ESDcore6 ( GESD, PAD );
+module ESDcore24 ( GESD, PAD, CELSUB );
 
   inout PAD;
+  input CELSUB;
   input GESD;
 endmodule
 
@@ -39,10 +40,13 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_PUGET_CFP (CFP, GESD, kelvin_CFP);
+module pad_PUGET_CFP (CFN, CFP, GESD, INTVCC, kelvin_CFP, CELSUB40948);
+inout  CFN;
 inout  CFP;
 input  GESD;
+inout  INTVCC;
 inout  kelvin_CFP;
+input  CELSUB40948;
 
 
 // ------------------------ Wires ------------------------
@@ -53,23 +57,14 @@ STONEpad1 XPAD1 (
 );
 
 ESDdiode Xesd_XPAD1 (
-.N(GESD),
-.P(CFP)
-);
-
-ESDcore6 XESDcore6_6 (
-.PAD(no_longer_valid),
-.GESD(CFP)
-);
-
-ESDdiode Xesd1_XPAD1 (
-.N(no_longer_valid),
-.P(CFP)
-);
-
-ESDdiode Xesd2_XPAD1 (
 .N(CFP),
-.P(no_longer_valid)
+.P(GESD)
+);
+
+ESDcore24 XESDcore24_1 (
+.PAD(INTVCC),
+.GESD(CFP),
+.CELSUB(CELSUB40948)
 );
 
 PEBBLElinkKELVIN Xwrap_PAD1_SENSE_SINGLE (

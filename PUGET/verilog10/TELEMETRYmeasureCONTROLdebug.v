@@ -218,7 +218,7 @@ DFThijack Xdfthijack9 (
 .ten_hijacki(ten_hijacki_a33a27f7_Xdfthijack9)
 );
 
-DFTtm8a dft_hex0x7A (
+DFTtm8a dft_hex0x82 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
@@ -226,47 +226,47 @@ DFTtm8a dft_hex0x7A (
 .TAI({a0,a0,TAI_a8c85068_XUTELEMETRYmeasureCONTROLiin,TAI_98734ed0_XUTELEMETRYmeasureCONTROLicharge,TAI_9e08c599_XUTELEMETRYmeasureCONTROLgpi,TAI_c0d49f51_XUTELEMETRYmeasureCONTROLdtemp,TAI_1dce1169_XUTELEMETRYmeasureCONTROLcapdiff,TAI_08d1e50e_XUTELEMETRYmeasureCONTROLadc}),
 .TAO(TAO),
 .ten({ten_hijacki_21629a7d_Xdfthijack1,ten_hijack_21629a7d_Xdfthijack1,ten_a8c85068_XUTELEMETRYmeasureCONTROLiin,ten_98734ed0_XUTELEMETRYmeasureCONTROLicharge,ten_9e08c599_XUTELEMETRYmeasureCONTROLgpi,ten_c0d49f51_XUTELEMETRYmeasureCONTROLdtemp,ten_1dce1169_XUTELEMETRYmeasureCONTROLcapdiff,ten_08d1e50e_XUTELEMETRYmeasureCONTROLadc}),
-.tma({a0,a1,a1,a1,a1,a0,a1,a0}),
+.tma({a1,a0,a0,a0,a0,a0,a1,a0}),
 .tmi(tmi[4:0])
 );
 
-DFTtm8t dft_hex0x7B (
+DFTtm8t dft_hex0x83 (
 .G(CELG59462),
 .V(CELV96848),
 .a({b1,b0}),
 .SUB(CELSUB40948),
 .ten({ten_hijacki_6189e5f3_Xdfthijack13,ten_hijack_6189e5f3_Xdfthijack13,ten_hijacki_11ca9867_Xdfthijack12,ten_hijack_11ca9867_Xdfthijack12,ten_hijacki_ee923c7d_Xdfthijack11,ten_hijack_ee923c7d_Xdfthijack11,ten_hijacki_a3645370_Xdfthijack10,ten_hijack_a3645370_Xdfthijack10}),
-.tma({b0,b1,b1,b1,b1,b0,b1,b1}),
+.tma({b1,b0,b0,b0,b0,b0,b1,b1}),
 .tmi(tmi[4:0])
 );
 
-DFTtm8t dft_hex0x7C (
+DFTtm8t dft_hex0x84 (
 .G(CELG59462),
 .V(CELV96848),
 .a({c1,c0}),
 .SUB(CELSUB40948),
 .ten({ten_hijacki_0ad2d140_Xdfthijack4,ten_hijack_0ad2d140_Xdfthijack4,ten_hijacki_7ca464c0_Xdfthijack3,ten_hijack_7ca464c0_Xdfthijack3,ten_hijacki_a31b5406_Xdfthijack2,ten_hijack_a31b5406_Xdfthijack2,ten_hijacki_6222fa52_Xdfthijack14,ten_hijack_6222fa52_Xdfthijack14}),
-.tma({c0,c1,c1,c1,c1,c1,c0,c0}),
+.tma({c1,c0,c0,c0,c0,c1,c0,c0}),
 .tmi(tmi[4:0])
 );
 
-DFTtm8t dft_hex0x7D (
+DFTtm8t dft_hex0x85 (
 .G(CELG59462),
 .V(CELV96848),
 .a({d1,d0}),
 .SUB(CELSUB40948),
 .ten({ten_hijacki_31e034db_Xdfthijack8,ten_hijack_31e034db_Xdfthijack8,ten_hijacki_65d2e0db_Xdfthijack7,ten_hijack_65d2e0db_Xdfthijack7,ten_hijacki_b096ae10_Xdfthijack6,ten_hijack_b096ae10_Xdfthijack6,ten_hijacki_f70c37bc_Xdfthijack5,ten_hijack_f70c37bc_Xdfthijack5}),
-.tma({d0,d1,d1,d1,d1,d1,d0,d1}),
+.tma({d1,d0,d0,d0,d0,d1,d0,d1}),
 .tmi(tmi[4:0])
 );
 
-DFTtm8t dft_hex0x7E (
+DFTtm8t dft_hex0x86 (
 .G(CELG59462),
 .V(CELV96848),
 .a({e1,e0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x7E_ten_7,noconn_dft_hex0x7E_ten_6,noconn_dft_hex0x7E_ten_5,noconn_dft_hex0x7E_ten_4,noconn_dft_hex0x7E_ten_3,noconn_dft_hex0x7E_ten_2,ten_hijacki_a33a27f7_Xdfthijack9,ten_hijack_a33a27f7_Xdfthijack9}),
-.tma({e0,e1,e1,e1,e1,e1,e1,e0}),
+.ten({noconn_dft_hex0x86_ten_7,noconn_dft_hex0x86_ten_6,noconn_dft_hex0x86_ten_5,noconn_dft_hex0x86_ten_4,noconn_dft_hex0x86_ten_3,noconn_dft_hex0x86_ten_2,ten_hijacki_a33a27f7_Xdfthijack9,ten_hijack_a33a27f7_Xdfthijack9}),
+.tma({e1,e0,e0,e0,e0,e1,e1,e0}),
 .tmi(tmi[4:0])
 );
 
@@ -320,28 +320,28 @@ DFThijack Xdfthijack14 (
 .ten_hijacki(ten_hijacki_6222fa52_Xdfthijack14)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x7E_ten_2 (
-.noconn(noconn_dft_hex0x7E_ten_2)
+STONEnoconn XNCnoconn_dft_hex0x86_ten_2 (
+.noconn(noconn_dft_hex0x86_ten_2)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x7E_ten_3 (
-.noconn(noconn_dft_hex0x7E_ten_3)
+STONEnoconn XNCnoconn_dft_hex0x86_ten_3 (
+.noconn(noconn_dft_hex0x86_ten_3)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x7E_ten_4 (
-.noconn(noconn_dft_hex0x7E_ten_4)
+STONEnoconn XNCnoconn_dft_hex0x86_ten_4 (
+.noconn(noconn_dft_hex0x86_ten_4)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x7E_ten_5 (
-.noconn(noconn_dft_hex0x7E_ten_5)
+STONEnoconn XNCnoconn_dft_hex0x86_ten_5 (
+.noconn(noconn_dft_hex0x86_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x7E_ten_6 (
-.noconn(noconn_dft_hex0x7E_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x86_ten_6 (
+.noconn(noconn_dft_hex0x86_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x7E_ten_7 (
-.noconn(noconn_dft_hex0x7E_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x86_ten_7 (
+.noconn(noconn_dft_hex0x86_ten_7)
 );
 
 dftprobeModel2_5bdaa90a XUTELEMETRYmeasureCONTROLadc (

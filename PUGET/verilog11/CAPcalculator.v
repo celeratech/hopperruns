@@ -87,7 +87,7 @@ module CAPcalculate_Rev0_DYES (tdo,tmi,porb,on_shunt,CELG59462,CELV96848,PORB978
   input  shunt_registeractive;
 endmodule
 
-module CAPcalculatorCONFIGURATION (tmi,vshunt_0,vshunt_1,vshunt_2,vshunt_3,vshunt_4,vshunt_5,vshunt_6,vshunt_7,vshunt_8,vshunt_9,CELG59462,CELV96848,vshunt_10,vshunt_11,vshunt_12,vshunt_13,vshunt_14,vshunt_15,CELSUB40948,vbalancer_0,vbalancer_1,vbalancer_2,vbalancer_3,vbalancer_4,vbalancer_5,vbalancer_6,vbalancer_7,vshunt_hyst_0,vshunt_hyst_1,vshunt_hyst_2,vshunt_hyst_3,vshunt_hyst_4,vshunt_hyst_5,vshunt_hyst_6,vshunt_hyst_7,vshunt_hyst_8,vshunt_hyst_9,vshunt_hyst_10,vshunt_hyst_11,vshunt_hyst_12,vshunt_hyst_13,vshunt_hyst_14,vshunt_hyst_15,vbalancer_hyst_0,vbalancer_hyst_1,vbalancer_hyst_2,vbalancer_hyst_3,vbalancer_hyst_4,vbalancer_hyst_5,vbalancer_hyst_6,vbalancer_hyst_7,register_vshunt_15);
+module CAPcalculatorCONFIGURATION (tmi,vshunt_0,vshunt_1,vshunt_2,vshunt_3,vshunt_4,vshunt_5,vshunt_6,vshunt_7,vshunt_8,vshunt_9,CELG59462,CELV96848,PORB97836,vshunt_10,vshunt_11,vshunt_12,vshunt_13,vshunt_14,vshunt_15,CELSUB40948,vbalancer_0,vbalancer_1,vbalancer_2,vbalancer_3,vbalancer_4,vbalancer_5,vbalancer_6,vbalancer_7,vshunt_hyst_0,vshunt_hyst_1,vshunt_hyst_2,vshunt_hyst_3,vshunt_hyst_4,vshunt_hyst_5,vshunt_hyst_6,vshunt_hyst_7,vshunt_hyst_8,vshunt_hyst_9,vshunt_trip_0,vshunt_trip_1,vshunt_trip_2,vshunt_trip_3,vshunt_trip_4,vshunt_trip_5,vshunt_trip_6,vshunt_trip_7,vshunt_trip_8,vshunt_trip_9,vshunt_hyst_10,vshunt_hyst_11,vshunt_hyst_12,vshunt_hyst_13,vshunt_hyst_14,vshunt_hyst_15,vshunt_trip_10,vshunt_trip_11,vshunt_trip_12,vshunt_trip_13,vshunt_trip_14,vshunt_trip_15,vbalancer_hyst_0,vbalancer_hyst_1,vbalancer_hyst_2,vbalancer_hyst_3,vbalancer_hyst_4,vbalancer_hyst_5,vbalancer_hyst_6,vbalancer_hyst_7,MAXIMUMoverride_0,MAXIMUMoverride_1,MAXIMUMoverride_2,MAXIMUMoverride_3,MAXIMUMoverride_4,MAXIMUMoverride_5,MAXIMUMoverride_6,MAXIMUMoverride_7,MAXIMUMoverride_8,MAXIMUMoverride_9,MAXIMUMoverride_10,MAXIMUMoverride_11,MAXIMUMoverride_12,MAXIMUMoverride_13,MAXIMUMoverride_14,MAXIMUMoverride_15,register_vshunt_15,enable_capcalculate);
   inout [4:0] tmi;
   output  vshunt_0;
   output  vshunt_1;
@@ -101,6 +101,7 @@ module CAPcalculatorCONFIGURATION (tmi,vshunt_0,vshunt_1,vshunt_2,vshunt_3,vshun
   output  vshunt_9;
   input  CELG59462;
   input  CELV96848;
+  input  PORB97836;
   output  vshunt_10;
   output  vshunt_11;
   output  vshunt_12;
@@ -108,48 +109,83 @@ module CAPcalculatorCONFIGURATION (tmi,vshunt_0,vshunt_1,vshunt_2,vshunt_3,vshun
   output  vshunt_14;
   output  vshunt_15;
   input  CELSUB40948;
-  output  vbalancer_0;
-  output  vbalancer_1;
-  output  vbalancer_2;
-  output  vbalancer_3;
-  output  vbalancer_4;
-  output  vbalancer_5;
-  output  vbalancer_6;
-  output  vbalancer_7;
-  output  vshunt_hyst_0;
-  output  vshunt_hyst_1;
-  output  vshunt_hyst_2;
-  output  vshunt_hyst_3;
-  output  vshunt_hyst_4;
-  output  vshunt_hyst_5;
-  output  vshunt_hyst_6;
-  output  vshunt_hyst_7;
-  output  vshunt_hyst_8;
-  output  vshunt_hyst_9;
-  output  vshunt_hyst_10;
-  output  vshunt_hyst_11;
-  output  vshunt_hyst_12;
-  output  vshunt_hyst_13;
-  output  vshunt_hyst_14;
-  output  vshunt_hyst_15;
-  output  vbalancer_hyst_0;
-  output  vbalancer_hyst_1;
-  output  vbalancer_hyst_2;
-  output  vbalancer_hyst_3;
-  output  vbalancer_hyst_4;
-  output  vbalancer_hyst_5;
-  output  vbalancer_hyst_6;
-  output  vbalancer_hyst_7;
+  input  vbalancer_0;
+  input  vbalancer_1;
+  input  vbalancer_2;
+  input  vbalancer_3;
+  input  vbalancer_4;
+  input  vbalancer_5;
+  input  vbalancer_6;
+  input  vbalancer_7;
+  input  vshunt_hyst_0;
+  input  vshunt_hyst_1;
+  input  vshunt_hyst_2;
+  input  vshunt_hyst_3;
+  input  vshunt_hyst_4;
+  input  vshunt_hyst_5;
+  input  vshunt_hyst_6;
+  input  vshunt_hyst_7;
+  input  vshunt_hyst_8;
+  input  vshunt_hyst_9;
+  output  vshunt_trip_0;
+  output  vshunt_trip_1;
+  output  vshunt_trip_2;
+  output  vshunt_trip_3;
+  output  vshunt_trip_4;
+  output  vshunt_trip_5;
+  output  vshunt_trip_6;
+  output  vshunt_trip_7;
+  output  vshunt_trip_8;
+  output  vshunt_trip_9;
+  input  vshunt_hyst_10;
+  input  vshunt_hyst_11;
+  input  vshunt_hyst_12;
+  input  vshunt_hyst_13;
+  input  vshunt_hyst_14;
+  input  vshunt_hyst_15;
+  output  vshunt_trip_10;
+  output  vshunt_trip_11;
+  output  vshunt_trip_12;
+  output  vshunt_trip_13;
+  output  vshunt_trip_14;
+  output  vshunt_trip_15;
+  input  vbalancer_hyst_0;
+  input  vbalancer_hyst_1;
+  input  vbalancer_hyst_2;
+  input  vbalancer_hyst_3;
+  input  vbalancer_hyst_4;
+  input  vbalancer_hyst_5;
+  input  vbalancer_hyst_6;
+  input  vbalancer_hyst_7;
+  input  MAXIMUMoverride_0;
+  input  MAXIMUMoverride_1;
+  input  MAXIMUMoverride_2;
+  input  MAXIMUMoverride_3;
+  input  MAXIMUMoverride_4;
+  input  MAXIMUMoverride_5;
+  input  MAXIMUMoverride_6;
+  input  MAXIMUMoverride_7;
+  input  MAXIMUMoverride_8;
+  input  MAXIMUMoverride_9;
+  input  MAXIMUMoverride_10;
+  input  MAXIMUMoverride_11;
+  input  MAXIMUMoverride_12;
+  input  MAXIMUMoverride_13;
+  input  MAXIMUMoverride_14;
+  input  MAXIMUMoverride_15;
   input [15:0] register_vshunt_15;
+  input  enable_capcalculate;
 endmodule
 
-module CAPcalculatorDEBUG (tdo,tmi,CELG59462,CELV96848,power_fail,CELSUB40948,dftstatusLSB,enable_shunt,shunt_status,SELECTshunt_0,SELECTshunt_1,SELECTshunt_2,SELECTshunt_3,balancer_status,enable_balancer,MAXIMUMchannel_0,MAXIMUMchannel_1,done_capcalculate,hijack_power_fail,enable_capcalculate,shunt_registeractive,hijack_enable_capcalculate);
+module CAPcalculatorDEBUG (TAO,tdo,tmi,CELG59462,CELV96848,power_fail,CELSUB40948,REF_ICHARGER,dftstatusLSB,enable_shunt,shunt_status,SELECTshunt_0,SELECTshunt_1,SELECTshunt_2,SELECTshunt_3,balancer_status,enable_balancer,MAXIMUMchannel_0,MAXIMUMchannel_1,override_maximum,done_capcalculate,hijack_power_fail,enable_capcalculate,shunt_registeractive,hijack_enable_capcalculate);
+  inout  TAO;
   inout  tdo;
   input [4:0] tmi;
   input  CELG59462;
   input  CELV96848;
   input  power_fail;
   input  CELSUB40948;
+  input  REF_ICHARGER;
   inout [7:0] dftstatusLSB;
   input  enable_shunt;
   input  shunt_status;
@@ -161,6 +197,7 @@ module CAPcalculatorDEBUG (tdo,tmi,CELG59462,CELV96848,power_fail,CELSUB40948,df
   input  enable_balancer;
   input  MAXIMUMchannel_0;
   input  MAXIMUMchannel_1;
+  output  override_maximum;
   input  done_capcalculate;
   output  hijack_power_fail;
   input  enable_capcalculate;
@@ -168,7 +205,7 @@ module CAPcalculatorDEBUG (tdo,tmi,CELG59462,CELV96848,power_fail,CELSUB40948,df
   output  hijack_enable_capcalculate;
 endmodule
 
-module CAPcalculatorMAXIMUM (porb,CELG59462,CELV96848,PORB97836,maximum_0,maximum_1,maximum_2,maximum_3,maximum_4,maximum_5,maximum_6,maximum_7,maximum_8,maximum_9,maximum_10,maximum_11,maximum_12,maximum_13,maximum_14,maximum_15,ok_maximum,CELSUB40948,meas_vcap1_0,meas_vcap1_1,meas_vcap1_2,meas_vcap1_3,meas_vcap1_4,meas_vcap1_5,meas_vcap1_6,meas_vcap1_7,meas_vcap1_8,meas_vcap1_9,meas_vcap2_0,meas_vcap2_1,meas_vcap2_2,meas_vcap2_3,meas_vcap2_4,meas_vcap2_5,meas_vcap2_6,meas_vcap2_7,meas_vcap2_8,meas_vcap2_9,meas_vcap3_0,meas_vcap3_1,meas_vcap3_2,meas_vcap3_3,meas_vcap3_4,meas_vcap3_5,meas_vcap3_6,meas_vcap3_7,meas_vcap3_8,meas_vcap3_9,meas_vcap4_0,meas_vcap4_1,meas_vcap4_2,meas_vcap4_3,meas_vcap4_4,meas_vcap4_5,meas_vcap4_6,meas_vcap4_7,meas_vcap4_8,meas_vcap4_9,SELECTshunt_0,SELECTshunt_1,SELECTshunt_2,SELECTshunt_3,clock_maximum,meas_vcap1_10,meas_vcap1_11,meas_vcap1_12,meas_vcap1_13,meas_vcap1_14,meas_vcap1_15,meas_vcap2_10,meas_vcap2_11,meas_vcap2_12,meas_vcap2_13,meas_vcap2_14,meas_vcap2_15,meas_vcap3_10,meas_vcap3_11,meas_vcap3_12,meas_vcap3_13,meas_vcap3_14,meas_vcap3_15,meas_vcap4_10,meas_vcap4_11,meas_vcap4_12,meas_vcap4_13,meas_vcap4_14,meas_vcap4_15,MAXIMUMchannel_0,MAXIMUMchannel_1,calculate_shuntmaximum,calculate_balancerminmax);
+module CAPcalculatorMAXIMUM (porb,CELG59462,CELV96848,PORB97836,maximum_0,maximum_1,maximum_2,maximum_3,maximum_4,maximum_5,maximum_6,maximum_7,maximum_8,maximum_9,maximum_10,maximum_11,maximum_12,maximum_13,maximum_14,maximum_15,ok_maximum,CELSUB40948,meas_vcap1_0,meas_vcap1_1,meas_vcap1_2,meas_vcap1_3,meas_vcap1_4,meas_vcap1_5,meas_vcap1_6,meas_vcap1_7,meas_vcap1_8,meas_vcap1_9,meas_vcap2_0,meas_vcap2_1,meas_vcap2_2,meas_vcap2_3,meas_vcap2_4,meas_vcap2_5,meas_vcap2_6,meas_vcap2_7,meas_vcap2_8,meas_vcap2_9,meas_vcap3_0,meas_vcap3_1,meas_vcap3_2,meas_vcap3_3,meas_vcap3_4,meas_vcap3_5,meas_vcap3_6,meas_vcap3_7,meas_vcap3_8,meas_vcap3_9,meas_vcap4_0,meas_vcap4_1,meas_vcap4_2,meas_vcap4_3,meas_vcap4_4,meas_vcap4_5,meas_vcap4_6,meas_vcap4_7,meas_vcap4_8,meas_vcap4_9,SELECTshunt_0,SELECTshunt_1,SELECTshunt_2,SELECTshunt_3,clock_maximum,meas_vcap1_10,meas_vcap1_11,meas_vcap1_12,meas_vcap1_13,meas_vcap1_14,meas_vcap1_15,meas_vcap2_10,meas_vcap2_11,meas_vcap2_12,meas_vcap2_13,meas_vcap2_14,meas_vcap2_15,meas_vcap3_10,meas_vcap3_11,meas_vcap3_12,meas_vcap3_13,meas_vcap3_14,meas_vcap3_15,meas_vcap4_10,meas_vcap4_11,meas_vcap4_12,meas_vcap4_13,meas_vcap4_14,meas_vcap4_15,MAXIMUMchannel_0,MAXIMUMchannel_1,override_maximum,MAXIMUMoverride_0,MAXIMUMoverride_1,MAXIMUMoverride_2,MAXIMUMoverride_3,MAXIMUMoverride_4,MAXIMUMoverride_5,MAXIMUMoverride_6,MAXIMUMoverride_7,MAXIMUMoverride_8,MAXIMUMoverride_9,MAXIMUMoverride_10,MAXIMUMoverride_11,MAXIMUMoverride_12,MAXIMUMoverride_13,MAXIMUMoverride_14,MAXIMUMoverride_15,calculate_shuntmaximum,calculate_balancerminmax);
   input  porb;
   input  CELG59462;
   input  CELV96848;
@@ -262,6 +299,23 @@ module CAPcalculatorMAXIMUM (porb,CELG59462,CELV96848,PORB97836,maximum_0,maximu
   input  meas_vcap4_15;
   output  MAXIMUMchannel_0;
   output  MAXIMUMchannel_1;
+  input  override_maximum;
+  input  MAXIMUMoverride_0;
+  input  MAXIMUMoverride_1;
+  input  MAXIMUMoverride_2;
+  input  MAXIMUMoverride_3;
+  input  MAXIMUMoverride_4;
+  input  MAXIMUMoverride_5;
+  input  MAXIMUMoverride_6;
+  input  MAXIMUMoverride_7;
+  input  MAXIMUMoverride_8;
+  input  MAXIMUMoverride_9;
+  input  MAXIMUMoverride_10;
+  input  MAXIMUMoverride_11;
+  input  MAXIMUMoverride_12;
+  input  MAXIMUMoverride_13;
+  input  MAXIMUMoverride_14;
+  input  MAXIMUMoverride_15;
   input  calculate_shuntmaximum;
   input  calculate_balancerminmax;
 endmodule
@@ -371,28 +425,59 @@ module CAPcalculatorOUTPUT (porb,CELG59462,CELV96848,PORB97836,CELSUB40948,enabl
   input  done_capcalculate;
 endmodule
 
-module CAPcalculatorSHUNTalgorithm (porb,on_shunt,vshunt_0,vshunt_1,vshunt_2,vshunt_3,vshunt_4,vshunt_5,vshunt_6,vshunt_7,vshunt_8,vshunt_9,CELG59462,CELV96848,PORB97836,vshunt_10,vshunt_11,vshunt_12,vshunt_13,vshunt_14,vshunt_15,ok_maximum,CELSUB40948,meas_vcap1_0,meas_vcap1_1,meas_vcap1_2,meas_vcap1_3,meas_vcap1_4,meas_vcap1_5,meas_vcap1_6,meas_vcap1_7,meas_vcap1_8,meas_vcap1_9,meas_vcap2_0,meas_vcap2_1,meas_vcap2_2,meas_vcap2_3,meas_vcap2_4,meas_vcap2_5,meas_vcap2_6,meas_vcap2_7,meas_vcap2_8,meas_vcap2_9,meas_vcap3_0,meas_vcap3_1,meas_vcap3_2,meas_vcap3_3,meas_vcap3_4,meas_vcap3_5,meas_vcap3_6,meas_vcap3_7,meas_vcap3_8,meas_vcap3_9,meas_vcap4_0,meas_vcap4_1,meas_vcap4_2,meas_vcap4_3,meas_vcap4_4,meas_vcap4_5,meas_vcap4_6,meas_vcap4_7,meas_vcap4_8,meas_vcap4_9,SELECTshunt_0,SELECTshunt_1,SELECTshunt_2,SELECTshunt_3,meas_vcap1_10,meas_vcap1_11,meas_vcap1_12,meas_vcap1_13,meas_vcap1_14,meas_vcap1_15,meas_vcap2_10,meas_vcap2_11,meas_vcap2_12,meas_vcap2_13,meas_vcap2_14,meas_vcap2_15,meas_vcap3_10,meas_vcap3_11,meas_vcap3_12,meas_vcap3_13,meas_vcap3_14,meas_vcap3_15,meas_vcap4_10,meas_vcap4_11,meas_vcap4_12,meas_vcap4_13,meas_vcap4_14,meas_vcap4_15,vshunt_hyst_0,vshunt_hyst_1,vshunt_hyst_2,vshunt_hyst_3,vshunt_hyst_4,vshunt_hyst_5,vshunt_hyst_6,vshunt_hyst_7,vshunt_hyst_8,vshunt_hyst_9,vshunt_hyst_10,vshunt_hyst_11,vshunt_hyst_12,vshunt_hyst_13,vshunt_hyst_14,vshunt_hyst_15,calculate_shunt,clock_calculator,ok_shuntalgorithm,shunt_registeractive,calculate_shuntmaximum);
+module CAPcalculatorREFERENCE (tmi,SIMPV,VSHUNT_0,VSHUNT_1,VSHUNT_2,VSHUNT_3,VSHUNT_4,VSHUNT_5,VSHUNT_6,VSHUNT_7,VSHUNT_8,VSHUNT_9,CELG59462,CELV96848,MAXIMUM_0,MAXIMUM_1,MAXIMUM_2,MAXIMUM_3,MAXIMUM_4,MAXIMUM_5,MAXIMUM_6,MAXIMUM_7,MAXIMUM_8,MAXIMUM_9,PORB97836,VSHUNT_10,VSHUNT_11,VSHUNT_12,VSHUNT_13,VSHUNT_14,VSHUNT_15,MAXIMUM_10,MAXIMUM_11,MAXIMUM_12,MAXIMUM_13,MAXIMUM_14,MAXIMUM_15,ok_maximum,CELREF84329,CELSUB40948,IP_c17db46b,REF_ICHARGER,enable_calculator,kelvin_GNDcalculator);
+  inout [4:0] tmi;
+  input  SIMPV;
+  input  VSHUNT_0;
+  input  VSHUNT_1;
+  input  VSHUNT_2;
+  input  VSHUNT_3;
+  input  VSHUNT_4;
+  input  VSHUNT_5;
+  input  VSHUNT_6;
+  input  VSHUNT_7;
+  input  VSHUNT_8;
+  input  VSHUNT_9;
+  input  CELG59462;
+  input  CELV96848;
+  input  MAXIMUM_0;
+  input  MAXIMUM_1;
+  input  MAXIMUM_2;
+  input  MAXIMUM_3;
+  input  MAXIMUM_4;
+  input  MAXIMUM_5;
+  input  MAXIMUM_6;
+  input  MAXIMUM_7;
+  input  MAXIMUM_8;
+  input  MAXIMUM_9;
+  input  PORB97836;
+  input  VSHUNT_10;
+  input  VSHUNT_11;
+  input  VSHUNT_12;
+  input  VSHUNT_13;
+  input  VSHUNT_14;
+  input  VSHUNT_15;
+  input  MAXIMUM_10;
+  input  MAXIMUM_11;
+  input  MAXIMUM_12;
+  input  MAXIMUM_13;
+  input  MAXIMUM_14;
+  input  MAXIMUM_15;
+  input  ok_maximum;
+  input  CELREF84329;
+  input  CELSUB40948;
+  input  IP_c17db46b;
+  output  REF_ICHARGER;
+  input  enable_calculator;
+  input  kelvin_GNDcalculator;
+endmodule
+
+module CAPcalculatorSHUNTalgorithm (porb,on_shunt,CELG59462,CELV96848,PORB97836,ok_maximum,CELSUB40948,meas_vcap1_0,meas_vcap1_1,meas_vcap1_2,meas_vcap1_3,meas_vcap1_4,meas_vcap1_5,meas_vcap1_6,meas_vcap1_7,meas_vcap1_8,meas_vcap1_9,meas_vcap2_0,meas_vcap2_1,meas_vcap2_2,meas_vcap2_3,meas_vcap2_4,meas_vcap2_5,meas_vcap2_6,meas_vcap2_7,meas_vcap2_8,meas_vcap2_9,meas_vcap3_0,meas_vcap3_1,meas_vcap3_2,meas_vcap3_3,meas_vcap3_4,meas_vcap3_5,meas_vcap3_6,meas_vcap3_7,meas_vcap3_8,meas_vcap3_9,meas_vcap4_0,meas_vcap4_1,meas_vcap4_2,meas_vcap4_3,meas_vcap4_4,meas_vcap4_5,meas_vcap4_6,meas_vcap4_7,meas_vcap4_8,meas_vcap4_9,SELECTshunt_0,SELECTshunt_1,SELECTshunt_2,SELECTshunt_3,meas_vcap1_10,meas_vcap1_11,meas_vcap1_12,meas_vcap1_13,meas_vcap1_14,meas_vcap1_15,meas_vcap2_10,meas_vcap2_11,meas_vcap2_12,meas_vcap2_13,meas_vcap2_14,meas_vcap2_15,meas_vcap3_10,meas_vcap3_11,meas_vcap3_12,meas_vcap3_13,meas_vcap3_14,meas_vcap3_15,meas_vcap4_10,meas_vcap4_11,meas_vcap4_12,meas_vcap4_13,meas_vcap4_14,meas_vcap4_15,vshunt_hyst_0,vshunt_hyst_1,vshunt_hyst_2,vshunt_hyst_3,vshunt_hyst_4,vshunt_hyst_5,vshunt_hyst_6,vshunt_hyst_7,vshunt_hyst_8,vshunt_hyst_9,vshunt_trip_0,vshunt_trip_1,vshunt_trip_2,vshunt_trip_3,vshunt_trip_4,vshunt_trip_5,vshunt_trip_6,vshunt_trip_7,vshunt_trip_8,vshunt_trip_9,vshunt_hyst_10,vshunt_hyst_11,vshunt_hyst_12,vshunt_hyst_13,vshunt_hyst_14,vshunt_hyst_15,vshunt_trip_10,vshunt_trip_11,vshunt_trip_12,vshunt_trip_13,vshunt_trip_14,vshunt_trip_15,calculate_shunt,clock_calculator,ok_shuntalgorithm,shunt_registeractive,calculate_shuntmaximum);
   input  porb;
   output  on_shunt;
-  input  vshunt_0;
-  input  vshunt_1;
-  input  vshunt_2;
-  input  vshunt_3;
-  input  vshunt_4;
-  input  vshunt_5;
-  input  vshunt_6;
-  input  vshunt_7;
-  input  vshunt_8;
-  input  vshunt_9;
   input  CELG59462;
   input  CELV96848;
   input  PORB97836;
-  input  vshunt_10;
-  input  vshunt_11;
-  input  vshunt_12;
-  input  vshunt_13;
-  input  vshunt_14;
-  input  vshunt_15;
   input  ok_maximum;
   input  CELSUB40948;
   input  meas_vcap1_0;
@@ -473,12 +558,28 @@ module CAPcalculatorSHUNTalgorithm (porb,on_shunt,vshunt_0,vshunt_1,vshunt_2,vsh
   input  vshunt_hyst_7;
   input  vshunt_hyst_8;
   input  vshunt_hyst_9;
+  input  vshunt_trip_0;
+  input  vshunt_trip_1;
+  input  vshunt_trip_2;
+  input  vshunt_trip_3;
+  input  vshunt_trip_4;
+  input  vshunt_trip_5;
+  input  vshunt_trip_6;
+  input  vshunt_trip_7;
+  input  vshunt_trip_8;
+  input  vshunt_trip_9;
   input  vshunt_hyst_10;
   input  vshunt_hyst_11;
   input  vshunt_hyst_12;
   input  vshunt_hyst_13;
   input  vshunt_hyst_14;
   input  vshunt_hyst_15;
+  input  vshunt_trip_10;
+  input  vshunt_trip_11;
+  input  vshunt_trip_12;
+  input  vshunt_trip_13;
+  input  vshunt_trip_14;
+  input  vshunt_trip_15;
   input  calculate_shunt;
   input  clock_calculator;
   output  ok_shuntalgorithm;
@@ -487,15 +588,20 @@ module CAPcalculatorSHUNTalgorithm (porb,on_shunt,vshunt_0,vshunt_1,vshunt_2,vsh
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module CAPcalculator (tdo, tmi, porb, CELG59462, CELV96848, PORB97836, power_fail, CELSUB40948, dftstatusLSB, enable_shunt, meas_vcap1_0, meas_vcap1_1, meas_vcap1_2, meas_vcap1_3, meas_vcap1_4, meas_vcap1_5, meas_vcap1_6, meas_vcap1_7, meas_vcap1_8, meas_vcap1_9, meas_vcap2_0, meas_vcap2_1, meas_vcap2_2, meas_vcap2_3, meas_vcap2_4, meas_vcap2_5, meas_vcap2_6, meas_vcap2_7, meas_vcap2_8, meas_vcap2_9, meas_vcap3_0, meas_vcap3_1, meas_vcap3_2, meas_vcap3_3, meas_vcap3_4, meas_vcap3_5, meas_vcap3_6, meas_vcap3_7, meas_vcap3_8, meas_vcap3_9, meas_vcap4_0, meas_vcap4_1, meas_vcap4_2, meas_vcap4_3, meas_vcap4_4, meas_vcap4_5, meas_vcap4_6, meas_vcap4_7, meas_vcap4_8, meas_vcap4_9, meas_vcap1_10, meas_vcap1_11, meas_vcap1_12, meas_vcap1_13, meas_vcap1_14, meas_vcap1_15, meas_vcap2_10, meas_vcap2_11, meas_vcap2_12, meas_vcap2_13, meas_vcap2_14, meas_vcap2_15, meas_vcap3_10, meas_vcap3_11, meas_vcap3_12, meas_vcap3_13, meas_vcap3_14, meas_vcap3_15, meas_vcap4_10, meas_vcap4_11, meas_vcap4_12, meas_vcap4_13, meas_vcap4_14, meas_vcap4_15, enable_balancer, MAXIMUMchannel_0, MAXIMUMchannel_1, clock_calculator, done_capcalculate, fault_capcalculate, register_vshunt_15, enable_capcalculate);
+module CAPcalculator (TAO, tdo, tmi, porb, SIMPV, CELG59462, CELV96848, PORB97836, power_fail, CELREF84329, CELSUB40948, IP_c17db46b, REF_ICHARGER, dftstatusLSB, enable_shunt, meas_vcap1_0, meas_vcap1_1, meas_vcap1_2, meas_vcap1_3, meas_vcap1_4, meas_vcap1_5, meas_vcap1_6, meas_vcap1_7, meas_vcap1_8, meas_vcap1_9, meas_vcap2_0, meas_vcap2_1, meas_vcap2_2, meas_vcap2_3, meas_vcap2_4, meas_vcap2_5, meas_vcap2_6, meas_vcap2_7, meas_vcap2_8, meas_vcap2_9, meas_vcap3_0, meas_vcap3_1, meas_vcap3_2, meas_vcap3_3, meas_vcap3_4, meas_vcap3_5, meas_vcap3_6, meas_vcap3_7, meas_vcap3_8, meas_vcap3_9, meas_vcap4_0, meas_vcap4_1, meas_vcap4_2, meas_vcap4_3, meas_vcap4_4, meas_vcap4_5, meas_vcap4_6, meas_vcap4_7, meas_vcap4_8, meas_vcap4_9, meas_vcap1_10, meas_vcap1_11, meas_vcap1_12, meas_vcap1_13, meas_vcap1_14, meas_vcap1_15, meas_vcap2_10, meas_vcap2_11, meas_vcap2_12, meas_vcap2_13, meas_vcap2_14, meas_vcap2_15, meas_vcap3_10, meas_vcap3_11, meas_vcap3_12, meas_vcap3_13, meas_vcap3_14, meas_vcap3_15, meas_vcap4_10, meas_vcap4_11, meas_vcap4_12, meas_vcap4_13, meas_vcap4_14, meas_vcap4_15, enable_balancer, MAXIMUMchannel_0, MAXIMUMchannel_1, clock_calculator, done_capcalculate, fault_capcalculate, register_vshunt_15, enable_capcalculate, kelvin_GNDcalculator);
+inout  TAO;
 inout  tdo;
 inout [4:0] tmi;
 input  porb;
+input  SIMPV;
 input  CELG59462;
 input  CELV96848;
 input  PORB97836;
 input  power_fail;
+input  CELREF84329;
 input  CELSUB40948;
+input  IP_c17db46b;
+output  REF_ICHARGER;
 inout [7:0] dftstatusLSB;
 output  enable_shunt;
 input  meas_vcap1_0;
@@ -570,6 +676,7 @@ output  done_capcalculate;
 output  fault_capcalculate;
 input [15:0] register_vshunt_15;
 input  enable_capcalculate;
+input  kelvin_GNDcalculator;
 
 
 // ------------------------ Wires ------------------------
@@ -583,168 +690,205 @@ CAPcalculatorBALANCERalgorithm XBALANCER (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
-.maximum_0(net_193),
-.maximum_1(net_194),
-.maximum_2(net_195),
-.maximum_3(net_196),
-.maximum_4(net_197),
-.maximum_5(net_198),
-.maximum_6(net_199),
-.maximum_7(net_200),
-.maximum_8(net_201),
-.maximum_9(net_202),
-.minimum_0(net_229),
-.minimum_1(net_230),
-.minimum_2(net_231),
-.minimum_3(net_232),
-.minimum_4(net_233),
-.minimum_5(net_234),
-.minimum_6(net_235),
-.minimum_7(net_236),
-.minimum_8(net_237),
-.minimum_9(net_238),
-.maximum_10(net_203),
-.maximum_11(net_204),
-.maximum_12(net_205),
-.maximum_13(net_206),
-.maximum_14(net_207),
-.maximum_15(net_208),
-.minimum_10(net_239),
-.minimum_11(net_240),
-.minimum_12(net_241),
-.minimum_13(net_242),
-.minimum_14(net_243),
-.minimum_15(net_244),
-.ok_maximum(net_253),
-.ok_minimum(net_264),
+.maximum_0(net_212),
+.maximum_1(net_213),
+.maximum_2(net_214),
+.maximum_3(net_215),
+.maximum_4(net_216),
+.maximum_5(net_217),
+.maximum_6(net_218),
+.maximum_7(net_219),
+.maximum_8(net_220),
+.maximum_9(net_221),
+.minimum_0(net_280),
+.minimum_1(net_281),
+.minimum_2(net_282),
+.minimum_3(net_283),
+.minimum_4(net_284),
+.minimum_5(net_285),
+.minimum_6(net_286),
+.minimum_7(net_287),
+.minimum_8(net_288),
+.minimum_9(net_289),
+.maximum_10(net_222),
+.maximum_11(net_223),
+.maximum_12(net_224),
+.maximum_13(net_225),
+.maximum_14(net_226),
+.maximum_15(net_227),
+.minimum_10(net_290),
+.minimum_11(net_291),
+.minimum_12(net_292),
+.minimum_13(net_293),
+.minimum_14(net_294),
+.minimum_15(net_295),
+.ok_maximum(net_307),
+.ok_minimum(net_319),
 .CELSUB40948(CELSUB40948),
-.on_balancer(net_267),
-.vbalancer_0(net_209),
-.vbalancer_1(net_210),
-.vbalancer_2(net_211),
-.vbalancer_3(net_212),
-.vbalancer_4(net_213),
-.vbalancer_5(net_214),
-.vbalancer_6(net_215),
-.vbalancer_7(net_216),
+.on_balancer(net_322),
+.vbalancer_0(net_244),
+.vbalancer_1(net_245),
+.vbalancer_2(net_246),
+.vbalancer_3(net_247),
+.vbalancer_4(net_248),
+.vbalancer_5(net_249),
+.vbalancer_6(net_250),
+.vbalancer_7(net_251),
 .enable_balancer(enable_balancer),
 .clock_calculator(clock_calculator),
-.vbalancer_hyst_0(net_217),
-.vbalancer_hyst_1(net_218),
-.vbalancer_hyst_2(net_219),
-.vbalancer_hyst_3(net_220),
-.vbalancer_hyst_4(net_221),
-.vbalancer_hyst_5(net_222),
-.vbalancer_hyst_6(net_223),
-.vbalancer_hyst_7(net_224),
-.calculate_balancer(net_257),
-.ok_balanceralgorithm(net_265),
-.calculate_balancerminmax(net_255)
+.vbalancer_hyst_0(net_252),
+.vbalancer_hyst_1(net_253),
+.vbalancer_hyst_2(net_254),
+.vbalancer_hyst_3(net_255),
+.vbalancer_hyst_4(net_256),
+.vbalancer_hyst_5(net_257),
+.vbalancer_hyst_6(net_258),
+.vbalancer_hyst_7(net_259),
+.calculate_balancer(net_312),
+.ok_balanceralgorithm(net_320),
+.calculate_balancerminmax(net_309)
 );
 
 CAPcalculate_Rev0_DYES XCALCULATE (
 .tdo(tdo),
 .tmi(tmi[4:0]),
 .porb(porb),
-.on_shunt(net_266),
+.on_shunt(net_321),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
 .CELSUB40948(CELSUB40948),
-.mode_backup(net_261),
-.on_balancer(net_267),
-.shunt_status(net_260),
-.balancer_status(net_262),
-.calculate_shunt(net_256),
+.mode_backup(net_316),
+.on_balancer(net_322),
+.shunt_status(net_315),
+.balancer_status(net_317),
+.calculate_shunt(net_311),
 .done_capcalculate(done_capcalculate),
-.ok_shuntalgorithm(net_263),
-.calculate_balancer(net_257),
+.ok_shuntalgorithm(net_318),
+.calculate_balancer(net_312),
 .clock_capcalculate(clock_calculator),
 .fault_capcalculate(fault_capcalculate),
-.enable_capcalculate(net_258),
-.ok_balanceralgorithm(net_265),
-.shunt_registeractive(net_259)
+.enable_capcalculate(net_313),
+.ok_balanceralgorithm(net_320),
+.shunt_registeractive(net_314)
 );
 
 CAPcalculatorCONFIGURATION XCONFIGURATION (
 .tmi(tmi[4:0]),
-.vshunt_0(net_161),
-.vshunt_1(net_162),
-.vshunt_2(net_163),
-.vshunt_3(net_164),
-.vshunt_4(net_165),
-.vshunt_5(net_166),
-.vshunt_6(net_167),
-.vshunt_7(net_168),
-.vshunt_8(net_169),
-.vshunt_9(net_170),
+.vshunt_0(net_180),
+.vshunt_1(net_181),
+.vshunt_2(net_182),
+.vshunt_3(net_183),
+.vshunt_4(net_184),
+.vshunt_5(net_185),
+.vshunt_6(net_186),
+.vshunt_7(net_187),
+.vshunt_8(net_188),
+.vshunt_9(net_189),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.vshunt_10(net_171),
-.vshunt_11(net_172),
-.vshunt_12(net_173),
-.vshunt_13(net_174),
-.vshunt_14(net_175),
-.vshunt_15(net_176),
+.PORB97836(PORB97836),
+.vshunt_10(net_190),
+.vshunt_11(net_191),
+.vshunt_12(net_192),
+.vshunt_13(net_193),
+.vshunt_14(net_194),
+.vshunt_15(net_195),
 .CELSUB40948(CELSUB40948),
-.vbalancer_0(net_209),
-.vbalancer_1(net_210),
-.vbalancer_2(net_211),
-.vbalancer_3(net_212),
-.vbalancer_4(net_213),
-.vbalancer_5(net_214),
-.vbalancer_6(net_215),
-.vbalancer_7(net_216),
-.vshunt_hyst_0(net_177),
-.vshunt_hyst_1(net_178),
-.vshunt_hyst_2(net_179),
-.vshunt_hyst_3(net_180),
-.vshunt_hyst_4(net_181),
-.vshunt_hyst_5(net_182),
-.vshunt_hyst_6(net_183),
-.vshunt_hyst_7(net_184),
-.vshunt_hyst_8(net_185),
-.vshunt_hyst_9(net_186),
-.vshunt_hyst_10(net_187),
-.vshunt_hyst_11(net_188),
-.vshunt_hyst_12(net_189),
-.vshunt_hyst_13(net_190),
-.vshunt_hyst_14(net_191),
-.vshunt_hyst_15(net_192),
-.vbalancer_hyst_0(net_217),
-.vbalancer_hyst_1(net_218),
-.vbalancer_hyst_2(net_219),
-.vbalancer_hyst_3(net_220),
-.vbalancer_hyst_4(net_221),
-.vbalancer_hyst_5(net_222),
-.vbalancer_hyst_6(net_223),
-.vbalancer_hyst_7(net_224),
-.register_vshunt_15(register_vshunt_15[15:0])
+.vbalancer_0(net_244),
+.vbalancer_1(net_245),
+.vbalancer_2(net_246),
+.vbalancer_3(net_247),
+.vbalancer_4(net_248),
+.vbalancer_5(net_249),
+.vbalancer_6(net_250),
+.vbalancer_7(net_251),
+.vshunt_hyst_0(net_228),
+.vshunt_hyst_1(net_229),
+.vshunt_hyst_2(net_230),
+.vshunt_hyst_3(net_231),
+.vshunt_hyst_4(net_232),
+.vshunt_hyst_5(net_233),
+.vshunt_hyst_6(net_234),
+.vshunt_hyst_7(net_235),
+.vshunt_hyst_8(net_236),
+.vshunt_hyst_9(net_237),
+.vshunt_trip_0(net_196),
+.vshunt_trip_1(net_197),
+.vshunt_trip_2(net_198),
+.vshunt_trip_3(net_199),
+.vshunt_trip_4(net_200),
+.vshunt_trip_5(net_201),
+.vshunt_trip_6(net_202),
+.vshunt_trip_7(net_203),
+.vshunt_trip_8(net_204),
+.vshunt_trip_9(net_205),
+.vshunt_hyst_10(net_238),
+.vshunt_hyst_11(net_239),
+.vshunt_hyst_12(net_240),
+.vshunt_hyst_13(net_241),
+.vshunt_hyst_14(net_242),
+.vshunt_hyst_15(net_243),
+.vshunt_trip_10(net_206),
+.vshunt_trip_11(net_207),
+.vshunt_trip_12(net_208),
+.vshunt_trip_13(net_209),
+.vshunt_trip_14(net_210),
+.vshunt_trip_15(net_211),
+.vbalancer_hyst_0(net_252),
+.vbalancer_hyst_1(net_253),
+.vbalancer_hyst_2(net_254),
+.vbalancer_hyst_3(net_255),
+.vbalancer_hyst_4(net_256),
+.vbalancer_hyst_5(net_257),
+.vbalancer_hyst_6(net_258),
+.vbalancer_hyst_7(net_259),
+.MAXIMUMoverride_0(net_260),
+.MAXIMUMoverride_1(net_261),
+.MAXIMUMoverride_2(net_262),
+.MAXIMUMoverride_3(net_263),
+.MAXIMUMoverride_4(net_264),
+.MAXIMUMoverride_5(net_265),
+.MAXIMUMoverride_6(net_266),
+.MAXIMUMoverride_7(net_267),
+.MAXIMUMoverride_8(net_268),
+.MAXIMUMoverride_9(net_269),
+.MAXIMUMoverride_10(net_270),
+.MAXIMUMoverride_11(net_271),
+.MAXIMUMoverride_12(net_272),
+.MAXIMUMoverride_13(net_273),
+.MAXIMUMoverride_14(net_274),
+.MAXIMUMoverride_15(net_275),
+.register_vshunt_15(register_vshunt_15[15:0]),
+.enable_capcalculate(enable_capcalculate)
 );
 
 CAPcalculatorDEBUG XDEBUG (
+.TAO(TAO),
 .tdo(tdo),
 .tmi(tmi[4:0]),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .power_fail(power_fail),
 .CELSUB40948(CELSUB40948),
+.REF_ICHARGER(REF_ICHARGER),
 .dftstatusLSB(dftstatusLSB[7:0]),
 .enable_shunt(enable_shunt),
-.shunt_status(net_260),
-.SELECTshunt_0(net_225),
-.SELECTshunt_1(net_226),
-.SELECTshunt_2(net_227),
-.SELECTshunt_3(net_228),
-.balancer_status(net_262),
+.shunt_status(net_315),
+.SELECTshunt_0(net_276),
+.SELECTshunt_1(net_277),
+.SELECTshunt_2(net_278),
+.SELECTshunt_3(net_279),
+.balancer_status(net_317),
 .enable_balancer(enable_balancer),
 .MAXIMUMchannel_0(MAXIMUMchannel_0),
 .MAXIMUMchannel_1(MAXIMUMchannel_1),
+.override_maximum(net_310),
 .done_capcalculate(done_capcalculate),
-.hijack_power_fail(net_261),
+.hijack_power_fail(net_316),
 .enable_capcalculate(enable_capcalculate),
-.shunt_registeractive(net_259),
-.hijack_enable_capcalculate(net_258)
+.shunt_registeractive(net_314),
+.hijack_enable_capcalculate(net_313)
 );
 
 CAPcalculatorMAXIMUM XMAXIMUM (
@@ -752,23 +896,23 @@ CAPcalculatorMAXIMUM XMAXIMUM (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
-.maximum_0(net_193),
-.maximum_1(net_194),
-.maximum_2(net_195),
-.maximum_3(net_196),
-.maximum_4(net_197),
-.maximum_5(net_198),
-.maximum_6(net_199),
-.maximum_7(net_200),
-.maximum_8(net_201),
-.maximum_9(net_202),
-.maximum_10(net_203),
-.maximum_11(net_204),
-.maximum_12(net_205),
-.maximum_13(net_206),
-.maximum_14(net_207),
-.maximum_15(net_208),
-.ok_maximum(net_253),
+.maximum_0(net_212),
+.maximum_1(net_213),
+.maximum_2(net_214),
+.maximum_3(net_215),
+.maximum_4(net_216),
+.maximum_5(net_217),
+.maximum_6(net_218),
+.maximum_7(net_219),
+.maximum_8(net_220),
+.maximum_9(net_221),
+.maximum_10(net_222),
+.maximum_11(net_223),
+.maximum_12(net_224),
+.maximum_13(net_225),
+.maximum_14(net_226),
+.maximum_15(net_227),
+.ok_maximum(net_307),
 .CELSUB40948(CELSUB40948),
 .meas_vcap1_0(meas_vcap1_0),
 .meas_vcap1_1(meas_vcap1_1),
@@ -810,10 +954,10 @@ CAPcalculatorMAXIMUM XMAXIMUM (
 .meas_vcap4_7(meas_vcap4_7),
 .meas_vcap4_8(meas_vcap4_8),
 .meas_vcap4_9(meas_vcap4_9),
-.SELECTshunt_0(net_225),
-.SELECTshunt_1(net_226),
-.SELECTshunt_2(net_227),
-.SELECTshunt_3(net_228),
+.SELECTshunt_0(net_276),
+.SELECTshunt_1(net_277),
+.SELECTshunt_2(net_278),
+.SELECTshunt_3(net_279),
 .clock_maximum(clock_calculator),
 .meas_vcap1_10(meas_vcap1_10),
 .meas_vcap1_11(meas_vcap1_11),
@@ -841,8 +985,25 @@ CAPcalculatorMAXIMUM XMAXIMUM (
 .meas_vcap4_15(meas_vcap4_15),
 .MAXIMUMchannel_0(MAXIMUMchannel_0),
 .MAXIMUMchannel_1(MAXIMUMchannel_1),
-.calculate_shuntmaximum(net_254),
-.calculate_balancerminmax(net_255)
+.override_maximum(net_310),
+.MAXIMUMoverride_0(net_260),
+.MAXIMUMoverride_1(net_261),
+.MAXIMUMoverride_2(net_262),
+.MAXIMUMoverride_3(net_263),
+.MAXIMUMoverride_4(net_264),
+.MAXIMUMoverride_5(net_265),
+.MAXIMUMoverride_6(net_266),
+.MAXIMUMoverride_7(net_267),
+.MAXIMUMoverride_8(net_268),
+.MAXIMUMoverride_9(net_269),
+.MAXIMUMoverride_10(net_270),
+.MAXIMUMoverride_11(net_271),
+.MAXIMUMoverride_12(net_272),
+.MAXIMUMoverride_13(net_273),
+.MAXIMUMoverride_14(net_274),
+.MAXIMUMoverride_15(net_275),
+.calculate_shuntmaximum(net_308),
+.calculate_balancerminmax(net_309)
 );
 
 CAPcalculatorMINIMUM XMINIMUM1 (
@@ -850,23 +1011,23 @@ CAPcalculatorMINIMUM XMINIMUM1 (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
-.minimum_0(net_229),
-.minimum_1(net_230),
-.minimum_2(net_231),
-.minimum_3(net_232),
-.minimum_4(net_233),
-.minimum_5(net_234),
-.minimum_6(net_235),
-.minimum_7(net_236),
-.minimum_8(net_237),
-.minimum_9(net_238),
-.minimum_10(net_239),
-.minimum_11(net_240),
-.minimum_12(net_241),
-.minimum_13(net_242),
-.minimum_14(net_243),
-.minimum_15(net_244),
-.ok_minimum(net_264),
+.minimum_0(net_280),
+.minimum_1(net_281),
+.minimum_2(net_282),
+.minimum_3(net_283),
+.minimum_4(net_284),
+.minimum_5(net_285),
+.minimum_6(net_286),
+.minimum_7(net_287),
+.minimum_8(net_288),
+.minimum_9(net_289),
+.minimum_10(net_290),
+.minimum_11(net_291),
+.minimum_12(net_292),
+.minimum_13(net_293),
+.minimum_14(net_294),
+.minimum_15(net_295),
+.ok_minimum(net_319),
 .CELSUB40948(CELSUB40948),
 .meas_vcap1_0(meas_vcap1_0),
 .meas_vcap1_1(meas_vcap1_1),
@@ -933,7 +1094,7 @@ CAPcalculatorMINIMUM XMINIMUM1 (
 .meas_vcap4_13(meas_vcap4_13),
 .meas_vcap4_14(meas_vcap4_14),
 .meas_vcap4_15(meas_vcap4_15),
-.calculate_balancerminmax(net_255)
+.calculate_balancerminmax(net_309)
 );
 
 CAPcalculatorOUTPUT XOUTPUT (
@@ -943,36 +1104,67 @@ CAPcalculatorOUTPUT XOUTPUT (
 .PORB97836(PORB97836),
 .CELSUB40948(CELSUB40948),
 .enable_shunt(enable_shunt),
-.shunt_status(net_260),
-.balancer_status(net_262),
+.shunt_status(net_315),
+.balancer_status(net_317),
 .clock_calculate(clock_calculator),
 .enable_balancer(enable_balancer),
 .done_capcalculate(done_capcalculate)
 );
 
+CAPcalculatorREFERENCE XREFERENCE (
+.tmi(tmi[4:0]),
+.SIMPV(SIMPV),
+.VSHUNT_0(net_180),
+.VSHUNT_1(net_181),
+.VSHUNT_2(net_182),
+.VSHUNT_3(net_183),
+.VSHUNT_4(net_184),
+.VSHUNT_5(net_185),
+.VSHUNT_6(net_186),
+.VSHUNT_7(net_187),
+.VSHUNT_8(net_188),
+.VSHUNT_9(net_189),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.MAXIMUM_0(net_212),
+.MAXIMUM_1(net_213),
+.MAXIMUM_2(net_214),
+.MAXIMUM_3(net_215),
+.MAXIMUM_4(net_216),
+.MAXIMUM_5(net_217),
+.MAXIMUM_6(net_218),
+.MAXIMUM_7(net_219),
+.MAXIMUM_8(net_220),
+.MAXIMUM_9(net_221),
+.PORB97836(PORB97836),
+.VSHUNT_10(net_190),
+.VSHUNT_11(net_191),
+.VSHUNT_12(net_192),
+.VSHUNT_13(net_193),
+.VSHUNT_14(net_194),
+.VSHUNT_15(net_195),
+.MAXIMUM_10(net_222),
+.MAXIMUM_11(net_223),
+.MAXIMUM_12(net_224),
+.MAXIMUM_13(net_225),
+.MAXIMUM_14(net_226),
+.MAXIMUM_15(net_227),
+.ok_maximum(net_307),
+.CELREF84329(CELREF84329),
+.CELSUB40948(CELSUB40948),
+.IP_c17db46b(IP_c17db46b),
+.REF_ICHARGER(REF_ICHARGER),
+.enable_calculator(net_313),
+.kelvin_GNDcalculator(kelvin_GNDcalculator)
+);
+
 CAPcalculatorSHUNTalgorithm XSHUNT (
 .porb(porb),
-.on_shunt(net_266),
-.vshunt_0(net_161),
-.vshunt_1(net_162),
-.vshunt_2(net_163),
-.vshunt_3(net_164),
-.vshunt_4(net_165),
-.vshunt_5(net_166),
-.vshunt_6(net_167),
-.vshunt_7(net_168),
-.vshunt_8(net_169),
-.vshunt_9(net_170),
+.on_shunt(net_321),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
-.vshunt_10(net_171),
-.vshunt_11(net_172),
-.vshunt_12(net_173),
-.vshunt_13(net_174),
-.vshunt_14(net_175),
-.vshunt_15(net_176),
-.ok_maximum(net_253),
+.ok_maximum(net_307),
 .CELSUB40948(CELSUB40948),
 .meas_vcap1_0(meas_vcap1_0),
 .meas_vcap1_1(meas_vcap1_1),
@@ -1014,10 +1206,10 @@ CAPcalculatorSHUNTalgorithm XSHUNT (
 .meas_vcap4_7(meas_vcap4_7),
 .meas_vcap4_8(meas_vcap4_8),
 .meas_vcap4_9(meas_vcap4_9),
-.SELECTshunt_0(net_225),
-.SELECTshunt_1(net_226),
-.SELECTshunt_2(net_227),
-.SELECTshunt_3(net_228),
+.SELECTshunt_0(net_276),
+.SELECTshunt_1(net_277),
+.SELECTshunt_2(net_278),
+.SELECTshunt_3(net_279),
 .meas_vcap1_10(meas_vcap1_10),
 .meas_vcap1_11(meas_vcap1_11),
 .meas_vcap1_12(meas_vcap1_12),
@@ -1042,27 +1234,43 @@ CAPcalculatorSHUNTalgorithm XSHUNT (
 .meas_vcap4_13(meas_vcap4_13),
 .meas_vcap4_14(meas_vcap4_14),
 .meas_vcap4_15(meas_vcap4_15),
-.vshunt_hyst_0(net_177),
-.vshunt_hyst_1(net_178),
-.vshunt_hyst_2(net_179),
-.vshunt_hyst_3(net_180),
-.vshunt_hyst_4(net_181),
-.vshunt_hyst_5(net_182),
-.vshunt_hyst_6(net_183),
-.vshunt_hyst_7(net_184),
-.vshunt_hyst_8(net_185),
-.vshunt_hyst_9(net_186),
-.vshunt_hyst_10(net_187),
-.vshunt_hyst_11(net_188),
-.vshunt_hyst_12(net_189),
-.vshunt_hyst_13(net_190),
-.vshunt_hyst_14(net_191),
-.vshunt_hyst_15(net_192),
-.calculate_shunt(net_256),
+.vshunt_hyst_0(net_228),
+.vshunt_hyst_1(net_229),
+.vshunt_hyst_2(net_230),
+.vshunt_hyst_3(net_231),
+.vshunt_hyst_4(net_232),
+.vshunt_hyst_5(net_233),
+.vshunt_hyst_6(net_234),
+.vshunt_hyst_7(net_235),
+.vshunt_hyst_8(net_236),
+.vshunt_hyst_9(net_237),
+.vshunt_trip_0(net_196),
+.vshunt_trip_1(net_197),
+.vshunt_trip_2(net_198),
+.vshunt_trip_3(net_199),
+.vshunt_trip_4(net_200),
+.vshunt_trip_5(net_201),
+.vshunt_trip_6(net_202),
+.vshunt_trip_7(net_203),
+.vshunt_trip_8(net_204),
+.vshunt_trip_9(net_205),
+.vshunt_hyst_10(net_238),
+.vshunt_hyst_11(net_239),
+.vshunt_hyst_12(net_240),
+.vshunt_hyst_13(net_241),
+.vshunt_hyst_14(net_242),
+.vshunt_hyst_15(net_243),
+.vshunt_trip_10(net_206),
+.vshunt_trip_11(net_207),
+.vshunt_trip_12(net_208),
+.vshunt_trip_13(net_209),
+.vshunt_trip_14(net_210),
+.vshunt_trip_15(net_211),
+.calculate_shunt(net_311),
 .clock_calculator(clock_calculator),
-.ok_shuntalgorithm(net_263),
-.shunt_registeractive(net_259),
-.calculate_shuntmaximum(net_254)
+.ok_shuntalgorithm(net_318),
+.shunt_registeractive(net_314),
+.calculate_shuntmaximum(net_308)
 );
 
 endmodule

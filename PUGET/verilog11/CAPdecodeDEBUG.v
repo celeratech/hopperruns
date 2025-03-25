@@ -119,7 +119,7 @@ tie_9e2c0894 XU6 (
 .CELV(CELV96848)
 );
 
-DFTtm8d dft_hex0x49 (
+DFTtm8d dft_hex0x5B (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
@@ -127,19 +127,19 @@ DFTtm8d dft_hex0x49 (
 .tdi({tdi_26e001f4_XUCAPACITORDECODEsampleDELAY,tdi_ab221a9b_XUCAPACITORDECODEsample,tdi_7f9aaffe_XUCAPACITORDECODEok,tdi_0e309e4f_XUCAPACITORDECODEcapslct1,tdi_2d3ba270_XUCAPACITORDECODEcapslct0,tdi_41970759_XUCAPACITORDECODEcap4active,tdi_629fa84a_XUCAPACITORDECODEcap3active,tdi_67087c91_XUCAPACITORDECODEcap2active}),
 .tdo(tdo),
 .ten({ten_2d3ba270_XUCAPACITORDECODEcapslct0,ten_41970759_XUCAPACITORDECODEcap4active,ten_629fa84a_XUCAPACITORDECODEcap3active,ten_67087c91_XUCAPACITORDECODEcap2active,ten_hijacki_23321007_XU5,ten_hijack_23321007_XU5,ten_hijacki_60545fed_XU3,ten_hijack_60545fed_XU3}),
-.tma({a0,a1,a0,a0,a1,a0,a0,a1}),
+.tma({a0,a1,a0,a1,a1,a0,a1,a1}),
 .tmi(tmi[4:0])
 );
 
-DFTtm8d dft_hex0x4A (
+DFTtm8d dft_hex0x5C (
 .G(CELG59462),
 .V(CELV96848),
 .a({b1,b0}),
 .SUB(CELSUB40948),
 .tdi({b0,b0,b0,b0,b0,b0,b0,tdi_b8302929_XUCAPACITORDECODEstartup}),
 .tdo(tdo),
-.ten({noconn_dft_hex0x4A_ten_7,noconn_dft_hex0x4A_ten_6,noconn_dft_hex0x4A_ten_5,ten_b8302929_XUCAPACITORDECODEstartup,ten_26e001f4_XUCAPACITORDECODEsampleDELAY,ten_ab221a9b_XUCAPACITORDECODEsample,ten_7f9aaffe_XUCAPACITORDECODEok,ten_0e309e4f_XUCAPACITORDECODEcapslct1}),
-.tma({b0,b1,b0,b0,b1,b0,b1,b0}),
+.ten({noconn_dft_hex0x5C_ten_7,noconn_dft_hex0x5C_ten_6,noconn_dft_hex0x5C_ten_5,ten_b8302929_XUCAPACITORDECODEstartup,ten_26e001f4_XUCAPACITORDECODEsampleDELAY,ten_ab221a9b_XUCAPACITORDECODEsample,ten_7f9aaffe_XUCAPACITORDECODEok,ten_0e309e4f_XUCAPACITORDECODEcapslct1}),
+.tma({b0,b1,b0,b1,b1,b1,b0,b0}),
 .tmi(tmi[4:0])
 );
 
@@ -188,16 +188,16 @@ dftprobeModel0_80e43a5a XUCAPACITORDECODEcapslct1 (
 .CELSUB(CELSUB40948)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x4A_ten_5 (
-.noconn(noconn_dft_hex0x4A_ten_5)
+STONEnoconn XNCnoconn_dft_hex0x5C_ten_5 (
+.noconn(noconn_dft_hex0x5C_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x4A_ten_6 (
-.noconn(noconn_dft_hex0x4A_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x5C_ten_6 (
+.noconn(noconn_dft_hex0x5C_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x4A_ten_7 (
-.noconn(noconn_dft_hex0x4A_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x5C_ten_7 (
+.noconn(noconn_dft_hex0x5C_ten_7)
 );
 
 dftprobeModel0_80e43a5a XUCAPACITORDECODEcap2active (

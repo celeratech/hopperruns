@@ -128,6 +128,24 @@ module PEBBLEdbuf ( o, G, SUB, V, i );
 endmodule
 
 
+//Celera:amux2_a0dc83ed
+//Celera Confidential Symbol Generator
+//Inputs: 2, Switch On Resistance: 1K
+//Type of Control:pin, T-Switch: no
+module amux2_a0dc83ed (SIMPV,CELSUB,O,I0,I1,
+amux,
+CELG);
+input SIMPV;
+input CELSUB;
+output O;
+input I0;
+input I1;
+input amux;
+input CELG;
+endmodule
+
+
+
 //Celera:delayfixed_671725c3
 //Celera Confidential Symbol Generator
 //TYPE:fixed Egde:rise
@@ -136,20 +154,6 @@ CELG,CELSUB);
 input CELV;
 input i;
 output o;
-input CELG;
-input CELSUB;
-endmodule
-
-
-
-//Celera:switchgnd_321bf2ca
-//Celera Confidential Symbol Generator
-//100 Ohm gndSwitch
-module switchgnd_321bf2ca (CELV,O,I,enable_switch,CELG,CELSUB);
-input CELV;
-input I;
-input enable_switch;
-inout O;
 input CELG;
 input CELSUB;
 endmodule
@@ -169,11 +173,10 @@ endmodule
 
 
 
-//Celera:vbuffer_e02ea750
+//Celera:vbuffer_b5835496
 //Celera Confidential Symbol Generator
-//GAIN:0.975 Input:p with 1000K Impedance
-module vbuffer_e02ea750 (SIMPV,IN,IP,OUT,enable_vbuffer,ok_vbuffer,global_vbuffer,
-GNDSENSE,
+//GAIN:1.0 Input:p with 1000K Impedance
+module vbuffer_b5835496 (SIMPV,IN,IP,OUT,enable_vbuffer,ok_vbuffer,global_vbuffer,
 CELG,CELSUB);
 input SIMPV;
 input IN;
@@ -182,9 +185,26 @@ output OUT;
 input enable_vbuffer;
 output ok_vbuffer;
 input global_vbuffer;
-input GNDSENSE;
 input CELG;
 input CELSUB;
+endmodule
+
+
+
+//Celera:resistordivider_84fc3f0b
+//Celera Confidential Symbol Generator
+//VMAX:6V R:200.0KOhm 1Taps
+module resistordivider_84fc3f0b (TOP,
+enable_resistordivider,global_resistordivider,CELV,CELSUB,TAP0,
+CELG, BOTTOM);
+inout TOP;
+input enable_resistordivider;
+input global_resistordivider;
+input CELV;
+input CELSUB;
+output TAP0;
+input CELG;
+inout BOTTOM;
 endmodule
 
 
@@ -218,11 +238,11 @@ module PEBBLEand2 ( o, CELG, CELSUB, CELV, i0, i1 );
 endmodule
 
 
-//Celera:comparatornoctlpins_969db094
+//Celera:comparatornoctlpins_9f80c233
 //Celera Confidential Symbol Generator
-//Type p Hysteris Mode:fixed 20mV Hysteresis,Edge falling without deglitch
+//Type p Hysteris Mode:fixed 0mV Hysteresis,Edge falling with deglitch
 //Low IQ:no DFT:no
-module comparatornoctlpins_969db094 (enable_comparator,IP,out_comparator,INP_COMPARATOR,
+module comparatornoctlpins_9f80c233 (enable_comparator,IP,out_comparator,INP_COMPARATOR,
 INN_COMPARATOR,SIMPV,global_comparator,ok_comparator,
 CELG,CELSUB);
 input SIMPV;
@@ -286,7 +306,7 @@ input  REF_POWERGOOD;
 output  dft_risedelay;
 output  dft_threshold;
 input  enable_powergood;
-input  kelvin_GNDpowergood;
+inout  kelvin_GNDpowergood;
 input  IP_POWERGOODpugetMAIN1;
 input  hijack_powergood_output;
 
@@ -299,63 +319,63 @@ wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
 VESPAasmINPUT2 XU12 (
-.o(net_126),
-.i0(net_124),
-.i1(net_117),
-.Tstate(net_119),
+.o(net_140),
+.i0(net_138),
+.i1(net_129),
+.Tstate(net_132),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAdftpulse XU17 (
-.stop(net_126),
+.stop(net_140),
 .pulse(dft_startup),
-.start(net_119),
+.start(net_132),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU25 (
-.o(net_131),
-.i0(net_128),
-.Tstate(net_129),
+.o(net_145),
+.i0(net_142),
+.Tstate(net_143),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU27 (
-.o(net_130),
-.i0(net_123),
-.Tstate(net_129),
+.o(net_144),
+.i0(net_137),
+.Tstate(net_143),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAdftpulse XU7 (
-.stop(net_125),
+.stop(net_139),
 .pulse(dft_risedelay),
-.start(net_122),
+.start(net_136),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 delayfixed_f11fe60d XU6 (
-.i(net_122),
-.o(net_125),
+.i(net_136),
+.o(net_139),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
 );
 
 nor2_ee112582 XU8 (
-.o(net_95),
+.o(net_101),
 .i0(hijack_powergood_output),
-.i1(net_121),
+.i1(net_135),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
@@ -367,11 +387,11 @@ padopendrain_fa7d9056 XU11 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.input_padopendrain(net_123)
+.input_padopendrain(net_137)
 );
 
 dbuf_e926e395 XU16 (
-.i(net_122),
+.i(net_136),
 .o(dft_threshold),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -379,24 +399,24 @@ dbuf_e926e395 XU16 (
 );
 
 nor2_ee112582 XU18 (
-.o(net_123),
-.i0(net_125),
-.i1(net_127),
+.o(net_137),
+.i0(net_139),
+.i1(net_141),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 inv_12e192f5 XU19 (
-.i(net_95),
-.o(net_122),
+.i(net_101),
+.o(net_136),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU22 (
-.i(net_126),
+.i(net_140),
 .o(ok_powergood),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -404,7 +424,7 @@ dbuf_e926e395 XU22 (
 );
 
 dbuf_e926e395 XU23 (
-.i(net_130),
+.i(net_144),
 .o(power_fail),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -413,22 +433,22 @@ dbuf_e926e395 XU23 (
 
 dbuf_e926e395 XU24 (
 .i(enable_powergood),
-.o(net_119),
+.o(net_132),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 inv_12e192f5 XU26 (
-.i(net_123),
-.o(net_128),
+.i(net_137),
+.o(net_142),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU28 (
-.i(net_131),
+.i(net_145),
 .o(power_good),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -436,8 +456,8 @@ dbuf_e926e395 XU28 (
 );
 
 inv_12e192f5 XU29 (
-.i(net_129),
-.o(net_127),
+.i(net_143),
+.o(net_141),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
@@ -445,86 +465,97 @@ inv_12e192f5 XU29 (
 
 fet_2efa7187 XU31 (
 .SUB(CELSUB40948),
-.GATE(XDBUF3_o),
+.GATE(XDBUF1_o),
 .DRAIN(PFI),
-.SOURCE(net_118),
+.SOURCE(net_131),
 .NMOSiso20(SIMPV)
 );
 
-PEBBLEdbuf XDBUF3 (
+PEBBLEdbuf XDBUF1 (
 .G(CELG59462),
 .V(CELV96848),
-.i(net_119),
-.o(XDBUF3_o),
+.i(net_132),
+.o(XDBUF1_o),
 .SUB(CELSUB40948)
 );
 
+amux2_a0dc83ed Xamux1 (
+.O(net_134),
+.I0(net_130),
+.I1(net_133),
+.CELG(CELG59462),
+.amux(net_135),
+.SIMPV(SIMPV),
+.CELSUB(CELSUB40948)
+);
+
 delayfixed_671725c3 Xdelay1 (
-.i(net_126),
-.o(net_129),
+.i(net_140),
+.o(net_143),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
 );
 
-switchgnd_321bf2ca Xswitch1 (
-.I(REF_POWERGOOD),
-.O(net_116),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948),
-.enable_switch(enable_powergood)
-);
-
 switchpulldown_00288888 Xswitch2 (
-.O(net_118),
+.O(net_131),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.enable_switchb(net_119)
+.enable_switchb(net_132)
 );
 
-vbuffer_e02ea750 Xvbuffer1 (
-.IN(net_116),
+vbuffer_b5835496 Xvbuffer1 (
+.IN(REF_POWERGOOD),
 .IP(IP_ba392324),
-.OUT(net_120),
+.OUT(net_130),
 .CELG(CELG59462),
 .SIMPV(SIMPV),
 .CELSUB(CELSUB40948),
-.GNDSENSE(kelvin_GNDpowergood),
-.ok_vbuffer(net_117),
+.ok_vbuffer(net_129),
 .enable_vbuffer(enable_powergoodBUF_o),
 .global_vbuffer(global_vbuffer_ba392324_Xvbuffer1)
 );
 
-DFTtm8t dft_hex0x61 (
+resistordivider_84fc3f0b Xrdivider1 (
+.TOP(net_130),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.TAP0(net_133),
+.BOTTOM(kelvin_GNDpowergood),
+.CELSUB(CELSUB40948),
+.enable_resistordivider(net_132),
+.global_resistordivider(global_resistordivider_900a8ae8_Xrdivider1)
+);
+
+DFTtm8t dft_hex0x69 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x61_ten_7,noconn_dft_hex0x61_ten_6,noconn_dft_hex0x61_ten_5,noconn_dft_hex0x61_ten_4,noconn_dft_hex0x61_ten_3,noconn_dft_hex0x61_ten_2,global_vbuffer_ba392324_Xvbuffer1,global_comparator_d571490f_Xcomparator1}),
-.tma({a0,a1,a1,a0,a0,a0,a0,a1}),
+.ten({noconn_dft_hex0x69_ten_7,noconn_dft_hex0x69_ten_6,noconn_dft_hex0x69_ten_5,noconn_dft_hex0x69_ten_4,noconn_dft_hex0x69_ten_3,global_vbuffer_ba392324_Xvbuffer1,global_resistordivider_900a8ae8_Xrdivider1,global_comparator_d571490f_Xcomparator1}),
+.tma({a0,a1,a1,a0,a1,a0,a0,a1}),
 .tmi(tmi[4:0])
 );
 
 PEBBLEand2 XPEBBLEand21 (
 .o(enable_powergoodBUF_o),
-.i0(net_119),
+.i0(net_132),
 .i1(ok_currentmirror1),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
 );
 
-comparatornoctlpins_969db094 Xcomparator1 (
+comparatornoctlpins_9f80c233 Xcomparator1 (
 .IP(IP_d571490f),
 .CELG(CELG59462),
 .SIMPV(SIMPV),
 .CELSUB(CELSUB40948),
-.ok_comparator(net_124),
-.INN_COMPARATOR(net_120),
-.INP_COMPARATOR(net_118),
-.out_comparator(net_121),
+.ok_comparator(net_138),
+.INN_COMPARATOR(net_134),
+.INP_COMPARATOR(net_131),
+.out_comparator(net_135),
 .enable_comparator(enable_powergoodBUF_o),
 .global_comparator(global_comparator_d571490f_Xcomparator1)
 );
@@ -537,31 +568,27 @@ currentmirror_3a3e0620 XCurrentMirror1 (
 .ISET(IP_POWERGOODpugetMAIN1),
 .CELSUB(CELSUB40948),
 .ok_currentmirror(ok_currentmirror1),
-.enable_currentmirror(net_119)
+.enable_currentmirror(net_132)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x61_ten_2 (
-.noconn(noconn_dft_hex0x61_ten_2)
+STONEnoconn XNCnoconn_dft_hex0x69_ten_3 (
+.noconn(noconn_dft_hex0x69_ten_3)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x61_ten_3 (
-.noconn(noconn_dft_hex0x61_ten_3)
+STONEnoconn XNCnoconn_dft_hex0x69_ten_4 (
+.noconn(noconn_dft_hex0x69_ten_4)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x61_ten_4 (
-.noconn(noconn_dft_hex0x61_ten_4)
+STONEnoconn XNCnoconn_dft_hex0x69_ten_5 (
+.noconn(noconn_dft_hex0x69_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x61_ten_5 (
-.noconn(noconn_dft_hex0x61_ten_5)
+STONEnoconn XNCnoconn_dft_hex0x69_ten_6 (
+.noconn(noconn_dft_hex0x69_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x61_ten_6 (
-.noconn(noconn_dft_hex0x61_ten_6)
-);
-
-STONEnoconn XNCnoconn_dft_hex0x61_ten_7 (
-.noconn(noconn_dft_hex0x61_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x69_ten_7 (
+.noconn(noconn_dft_hex0x69_ten_7)
 );
 
 endmodule

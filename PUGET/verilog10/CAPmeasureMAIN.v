@@ -17,7 +17,7 @@ module CAPmeasureDIFFfour (tmi,CAP4,DIFF4,SIMPV,CELG59462,CELV96848,PORB97836,CE
   input  enable_measurediff4;
 endmodule
 
-module CAPmeasureDIFFone (tmi,DIFF1,SIMPV,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_028cac62,kelvin_CAP1,clock_measure,kelvin_CAPRTN,ok_measurediff1,enable_measurediff1);
+module CAPmeasureDIFFone (tmi,DIFF1,SIMPV,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_028cac62,kelvin_CAP1,clock_measure,kelvin_CAPRTN,kelvin_GNDcap,ok_measurediff1,enable_measurediff1);
   inout [4:0] tmi;
   inout  DIFF1;
   input  SIMPV;
@@ -26,9 +26,10 @@ module CAPmeasureDIFFone (tmi,DIFF1,SIMPV,CELG59462,CELV96848,PORB97836,CELSUB40
   input  PORB97836;
   input  CELSUB40948;
   input  IP_028cac62;
-  inout  kelvin_CAP1;
+  input  kelvin_CAP1;
   input  clock_measure;
-  inout  kelvin_CAPRTN;
+  input  kelvin_CAPRTN;
+  inout  kelvin_GNDcap;
   output  ok_measurediff1;
   input  enable_measurediff1;
 endmodule
@@ -300,7 +301,7 @@ inout  kelvin_CAP4;
 input  CAPmeasure_0;
 input  CAPmeasure_1;
 input  clock_measure;
-inout  kelvin_CAPRTN;
+input  kelvin_CAPRTN;
 inout  kelvin_GNDcap;
 output  CAPmeasureDIFF;
 output  ready_capmeasure;
@@ -324,7 +325,7 @@ wire [7:0] por0;
 CAPmeasureDIFFfour XFOUR (
 .tmi(tmi[4:0]),
 .CAP4(CAP4),
-.DIFF4(net_160),
+.DIFF4(net_161),
 .SIMPV(SIMPV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -333,15 +334,15 @@ CAPmeasureDIFFfour XFOUR (
 .IP_373ccde4(IP_373ccde4),
 .kelvin_CAP3(kelvin_CAP3),
 .kelvin_CAP4(kelvin_CAP4),
-.clock_measure(net_155),
+.clock_measure(net_157),
 .kelvin_GNDcap(kelvin_GNDcap),
-.ok_measurediff4(net_165),
-.enable_measurediff4(net_138)
+.ok_measurediff4(net_166),
+.enable_measurediff4(net_139)
 );
 
 CAPmeasureDIFFone XONE (
 .tmi(tmi[4:0]),
-.DIFF1(net_153),
+.DIFF1(net_154),
 .SIMPV(SIMPV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -349,16 +350,17 @@ CAPmeasureDIFFone XONE (
 .CELSUB40948(CELSUB40948),
 .IP_028cac62(IP_028cac62),
 .kelvin_CAP1(kelvin_CAP1),
-.clock_measure(net_155),
+.clock_measure(net_157),
 .kelvin_CAPRTN(kelvin_CAPRTN),
-.ok_measurediff1(net_156),
-.enable_measurediff1(net_135)
+.kelvin_GNDcap(kelvin_GNDcap),
+.ok_measurediff1(net_155),
+.enable_measurediff1(net_136)
 );
 
 CAPmeasureDIFFthree XTHREE (
 .tmi(tmi[4:0]),
 .CAP3(CAP3),
-.DIFF3(net_159),
+.DIFF3(net_160),
 .SIMPV(SIMPV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -367,16 +369,16 @@ CAPmeasureDIFFthree XTHREE (
 .IP_6a204806(IP_6a204806),
 .kelvin_CAP2(kelvin_CAP2),
 .kelvin_CAP3(kelvin_CAP3),
-.clock_measure(net_155),
+.clock_measure(net_157),
 .kelvin_GNDcap(kelvin_GNDcap),
-.ok_measurediff3(net_164),
-.enable_measurediff3(net_137)
+.ok_measurediff3(net_165),
+.enable_measurediff3(net_138)
 );
 
 CAPmeasureDIFFtwo XTWO (
 .tmi(tmi[4:0]),
 .CAP2(CAP2),
-.DIFF2(net_157),
+.DIFF2(net_158),
 .SIMPV(SIMPV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -385,23 +387,23 @@ CAPmeasureDIFFtwo XTWO (
 .IP_6177b54e(IP_6177b54e),
 .kelvin_CAP1(kelvin_CAP1),
 .kelvin_CAP2(kelvin_CAP2),
-.clock_measure(net_155),
+.clock_measure(net_157),
 .kelvin_GNDcap(kelvin_GNDcap),
-.ok_measurediff2(net_162),
-.enable_measurediff2(net_136)
+.ok_measurediff2(net_163),
+.enable_measurediff2(net_137)
 );
 
 VESPAasmINPUT1 XU18 (
-.o(net_166),
-.i0(net_154),
-.Tstate(net_163),
+.o(net_167),
+.i0(net_156),
+.Tstate(net_164),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU9 (
-.o(net_155),
+.o(net_157),
 .i0(clock_measure),
 .Tstate(enable_measurecap),
 .CELG59462(CELG59462),
@@ -410,22 +412,22 @@ VESPAasmINPUT1 XU9 (
 );
 
 nor4_ff041824 XU2 (
-.o(net_111),
-.i0(net_135),
-.i1(net_136),
-.i2(net_137),
-.i3(net_138),
+.o(net_112),
+.i0(net_136),
+.i1(net_137),
+.i2(net_138),
+.i3(net_139),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 amux8_b2e50a1c XU6 (
-.O(net_144),
-.I0(net_153),
-.I1(net_157),
-.I2(net_159),
-.I3(net_160),
+.O(net_145),
+.I0(net_154),
+.I1(net_158),
+.I2(net_160),
+.I3(net_161),
 .CELG(CELG59462),
 .amux({CAPmeasure_1,CAPmeasure_0}),
 .SIMPV(SIMPV),
@@ -433,19 +435,19 @@ amux8_b2e50a1c XU6 (
 );
 
 inv_12e192f5 XU8 (
-.i(net_111),
-.o(net_158),
+.i(net_112),
+.o(net_159),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 nor4_ff041824 XU11 (
-.o(net_110),
-.i0(net_156),
-.i1(net_162),
-.i2(net_164),
-.i3(net_165),
+.o(net_111),
+.i0(net_155),
+.i1(net_163),
+.i2(net_165),
+.i3(net_166),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
@@ -453,7 +455,7 @@ nor4_ff041824 XU11 (
 
 decoder2_779c1eb3 XU12 (
 .i({CAPmeasure_1,CAPmeasure_0}),
-.o({net_138,net_137,net_136,net_135}),
+.o({net_139,net_138,net_137,net_136}),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -461,15 +463,15 @@ decoder2_779c1eb3 XU12 (
 );
 
 inv_12e192f5 XU16 (
-.i(net_110),
-.o(net_163),
+.i(net_111),
+.o(net_164),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU19 (
-.i(net_113),
+.i(net_114),
 .o(ready_capmeasure),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -478,15 +480,15 @@ dbuf_e926e395 XU19 (
 
 capacitorfixed_ff691357 XU22 (
 .CN(kelvin_GNDcap),
-.CP(net_144)
+.CP(net_145)
 );
 
 delayclock_a8db9d9d Xdelay1 (
-.in(net_166),
-.out(net_113),
+.in(net_167),
+.out(net_114),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.clock(net_155),
+.clock(net_157),
 .CELSUB(CELSUB40948),
 .celeraporb(PORB97836),
 .factory_delay({factory_delay_ecf7598b_1,factory_delay_ecf7598b_0})
@@ -494,51 +496,51 @@ delayclock_a8db9d9d Xdelay1 (
 
 delayclock_ccef7efb Xdelay2 (
 .in(enable_measurecap),
-.out(net_161),
+.out(net_162),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.clock(net_155),
+.clock(net_157),
 .CELSUB(CELSUB40948),
 .celeraporb(PORB97836)
 );
 
 switchpulldown_00288888 Xswitch1 (
-.O(net_144),
+.O(net_145),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.enable_switchb(net_161)
+.enable_switchb(net_162)
 );
 
 vbuffer_6d6a9075 Xvbuffer1 (
-.IN(net_144),
+.IN(net_145),
 .IP(IP_0bfa8e10),
 .OUT(CAPmeasureDIFF),
 .CELG(CELG59462),
 .SIMPV(SIMPV),
 .CELSUB(CELSUB40948),
 .GNDSENSE(kelvin_GNDcap),
-.ok_vbuffer(net_154),
-.enable_vbuffer(net_158),
+.ok_vbuffer(net_156),
+.enable_vbuffer(net_159),
 .global_vbuffer(global_vbuffer_0bfa8e10_Xvbuffer1)
 );
 
-DFTtm8t dft_hex0x87 (
+DFTtm8t dft_hex0x8F (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x87_ten_7,noconn_dft_hex0x87_ten_6,noconn_dft_hex0x87_ten_5,noconn_dft_hex0x87_ten_4,noconn_dft_hex0x87_ten_3,noconn_dft_hex0x87_ten_2,noconn_dft_hex0x87_ten_1,global_vbuffer_0bfa8e10_Xvbuffer1}),
-.tma({a1,a0,a0,a0,a0,a1,a1,a1}),
+.ten({noconn_dft_hex0x8F_ten_7,noconn_dft_hex0x8F_ten_6,noconn_dft_hex0x8F_ten_5,noconn_dft_hex0x8F_ten_4,noconn_dft_hex0x8F_ten_3,noconn_dft_hex0x8F_ten_2,noconn_dft_hex0x8F_ten_1,global_vbuffer_0bfa8e10_Xvbuffer1}),
+.tma({a1,a0,a0,a0,a1,a1,a1,a1}),
 .tmi(tmi[4:0])
 );
 
-drm8 drm_hex0x31 (
+drm8 drm_hex0x38 (
 .G(CELG59462),
 .V(CELV96848),
 .d0(c0),
 .d1(c1),
-.id({c0,c0,c1,c1,c0,c0,c0,c1}),
+.id({c0,c0,c1,c1,c1,c0,c0,c0}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
 .drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,noconn_drm8_drm0_3,noconn_drm8_drm0_2,factory_delay_ecf7598b_1,factory_delay_ecf7598b_0}),
@@ -571,32 +573,32 @@ STONEnoconn XNCnoconn_drm8_drm0_7 (
 .noconn(noconn_drm8_drm0_7)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x87_ten_1 (
-.noconn(noconn_dft_hex0x87_ten_1)
+STONEnoconn XNCnoconn_dft_hex0x8F_ten_1 (
+.noconn(noconn_dft_hex0x8F_ten_1)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x87_ten_2 (
-.noconn(noconn_dft_hex0x87_ten_2)
+STONEnoconn XNCnoconn_dft_hex0x8F_ten_2 (
+.noconn(noconn_dft_hex0x8F_ten_2)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x87_ten_3 (
-.noconn(noconn_dft_hex0x87_ten_3)
+STONEnoconn XNCnoconn_dft_hex0x8F_ten_3 (
+.noconn(noconn_dft_hex0x8F_ten_3)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x87_ten_4 (
-.noconn(noconn_dft_hex0x87_ten_4)
+STONEnoconn XNCnoconn_dft_hex0x8F_ten_4 (
+.noconn(noconn_dft_hex0x8F_ten_4)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x87_ten_5 (
-.noconn(noconn_dft_hex0x87_ten_5)
+STONEnoconn XNCnoconn_dft_hex0x8F_ten_5 (
+.noconn(noconn_dft_hex0x8F_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x87_ten_6 (
-.noconn(noconn_dft_hex0x87_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x8F_ten_6 (
+.noconn(noconn_dft_hex0x8F_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x87_ten_7 (
-.noconn(noconn_dft_hex0x87_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x8F_ten_7 (
+.noconn(noconn_dft_hex0x8F_ten_7)
 );
 
 endmodule

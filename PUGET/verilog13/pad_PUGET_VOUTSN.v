@@ -8,16 +8,6 @@ module STONEpad1 ( PAD );
 endmodule
 
 
-//Verilog HDL for "Esd", "ESDdiode" "functional"
-
-
-module ESDdiode ( N, P );
-
-  input P;
-  input N;
-endmodule
-
-
 //Verilog HDL for "Esd", "ESDcore40" "functional"
 
 
@@ -54,17 +44,7 @@ STONEpad1 XPAD1 (
 .PAD(VOUTSN)
 );
 
-ESDdiode Xesd1_XPAD1 (
-.N(GESD),
-.P(VOUTSN)
-);
-
-ESDdiode Xesd2_XPAD1 (
-.N(VOUTSN),
-.P(GESD)
-);
-
-ESDcore40 XESDcore40_13 (
+ESDcore40 XESDcore40_1 (
 .PAD(VOUTSN),
 .GESD(GESD),
 .CELSUB(CELSUB40948)

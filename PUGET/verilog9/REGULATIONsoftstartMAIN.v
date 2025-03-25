@@ -354,7 +354,7 @@ celeradacr2r_1a2f4f0b XU5 (
 .ok_dac(net_134),
 .GNDSENSE(kelvin_GNDsoftstart),
 .enable_dac(go_softstart),
-.global_dac(global_dac_224c049e_XU5),
+.global_dac(global_dac_07be9be4_XU5),
 .strobe_dac(net_128)
 );
 
@@ -397,7 +397,7 @@ amux2_a6effade Xamux1 (
 
 vbuffer_349144b0 Xvbuffer1 (
 .IN(REF),
-.IP(IP_edaf2bbf),
+.IP(IP_0c2c1c0d),
 .OUT(net_130),
 .CELG(CELG59462),
 .SIMPV(SIMPV),
@@ -405,7 +405,7 @@ vbuffer_349144b0 Xvbuffer1 (
 .GNDSENSE(kelvin_GNDsoftstart),
 .ok_vbuffer(net_137),
 .enable_vbuffer(go_softstart_o),
-.global_vbuffer(global_vbuffer_edaf2bbf_Xvbuffer1)
+.global_vbuffer(global_vbuffer_0c2c1c0d_Xvbuffer1)
 );
 
 resistor_d0b86915 Xresistor1 (
@@ -425,13 +425,13 @@ capacitorfixed_f1c87cd1 Xcapacitor1 (
 .CP(SS)
 );
 
-DFTtm8t dft_hex0x44 (
+DFTtm8t dft_hex0x55 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x44_ten_7,noconn_dft_hex0x44_ten_6,noconn_dft_hex0x44_ten_5,noconn_dft_hex0x44_ten_4,noconn_dft_hex0x44_ten_3,global_vbuffer_edaf2bbf_Xvbuffer1,global_comparator_fe473ff1_Xcomparator1,global_dac_224c049e_XU5}),
-.tma({a0,a1,a0,a0,a0,a1,a0,a0}),
+.ten({noconn_dft_hex0x55_ten_7,noconn_dft_hex0x55_ten_6,noconn_dft_hex0x55_ten_5,noconn_dft_hex0x55_ten_4,noconn_dft_hex0x55_ten_3,global_vbuffer_0c2c1c0d_Xvbuffer1,global_comparator_117c777a_Xcomparator1,global_dac_07be9be4_XU5}),
+.tma({a0,a1,a0,a1,a0,a1,a0,a1}),
 .tmi(tmi[4:0])
 );
 
@@ -445,7 +445,7 @@ PEBBLEand2 XPEBBLEand21 (
 );
 
 comparatornoctlpins_d169e52d Xcomparator1 (
-.IP(IP_fe473ff1),
+.IP(IP_117c777a),
 .CELG(CELG59462),
 .SIMPV(SIMPV),
 .CELSUB(CELSUB40948),
@@ -454,12 +454,12 @@ comparatornoctlpins_d169e52d Xcomparator1 (
 .INP_COMPARATOR(net_131),
 .out_comparator(net_136),
 .enable_comparator(go_softstart_o),
-.global_comparator(global_comparator_fe473ff1_Xcomparator1)
+.global_comparator(global_comparator_117c777a_Xcomparator1)
 );
 
 currentmirror_3a3e0620 XCurrentMirror1 (
-.I0(IP_edaf2bbf),
-.I1(IP_fe473ff1),
+.I0(IP_0c2c1c0d),
+.I1(IP_117c777a),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .ISET(IP_REGULATIONsoftstartMAIN1),
@@ -468,24 +468,24 @@ currentmirror_3a3e0620 XCurrentMirror1 (
 .enable_currentmirror(go_softstart)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x44_ten_3 (
-.noconn(noconn_dft_hex0x44_ten_3)
+STONEnoconn XNCnoconn_dft_hex0x55_ten_3 (
+.noconn(noconn_dft_hex0x55_ten_3)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x44_ten_4 (
-.noconn(noconn_dft_hex0x44_ten_4)
+STONEnoconn XNCnoconn_dft_hex0x55_ten_4 (
+.noconn(noconn_dft_hex0x55_ten_4)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x44_ten_5 (
-.noconn(noconn_dft_hex0x44_ten_5)
+STONEnoconn XNCnoconn_dft_hex0x55_ten_5 (
+.noconn(noconn_dft_hex0x55_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x44_ten_6 (
-.noconn(noconn_dft_hex0x44_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x55_ten_6 (
+.noconn(noconn_dft_hex0x55_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x44_ten_7 (
-.noconn(noconn_dft_hex0x44_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x55_ten_7 (
+.noconn(noconn_dft_hex0x55_ten_7)
 );
 
 endmodule

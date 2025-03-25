@@ -32,7 +32,7 @@ module POWERGOODpugetMAIN (PFI,PFO,tmi,SIMPV,CELG59462,CELV96848,power_fail,powe
   output  dft_risedelay;
   output  dft_threshold;
   input  enable_powergood;
-  input  kelvin_GNDpowergood;
+  inout  kelvin_GNDpowergood;
   input  IP_POWERGOODpugetMAIN1;
   input  hijack_powergood_output;
 endmodule
@@ -53,7 +53,7 @@ input  GNDpowergood;
 output  ok_powergood;
 input  REF_POWERGOOD;
 input  enable_powergood;
-input  kelvin_GNDpowergood;
+inout  kelvin_GNDpowergood;
 input  IP_POWERGOODpugetMAIN1;
 
 

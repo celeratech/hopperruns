@@ -359,59 +359,20 @@ celldft,end
 revision,layout,0.1
 layout,dac
 //dac bio for WALTZ and PUGET not sure of anyothers
-placeIF cellNameContains DECODE4
-place Generate STONEladderDECODE4 2.06 1.45 R0
-place Generate STONEdacDFT4 2.755 -2.56 MX
-place Generate STONEdacbufferINPUT 44.965 -2.56 MX
-place Generate STONEdacnobufferINPUT 45.265 -19.3 MY
-placeRES 3.015 13.21 2 2 R0 x y 54
-placeEND
-placeIF cellNameContains DECODE5
-place Generate STONEladderDECODE5 -2.39 0 R0
-place Generate STONEdacDFT5 37.59 -3.14 MX
-place Generate STONEdacbufferINPUT 13.02 -3.14 MX
-place Generate STONEdacnobufferINPUT 87.66 -19.88 MY
-placeRES 0.85 10.21 2 2 R0 x y 105
-placeEND
-placeIF cellNameContains DECODE6
-place Generate STONEladderDECODE6 -2.39 0 R0
-place Generate STONEdacDFT6 120.31 -3.22 MX
-place Generate STONEdacbufferINPUT 95.74 -3.22 MX
-place Generate STONEdacnobufferINPUT 181.72 -19.96 MY
-placeRES 0.85 15.21 2.1 2.1 R0 x y 200
-placeEND
-placeIF cellNameContains DECODE7
-place Generate STONEladderDECODE7 -1.12 -6.88 R0
-place Generate STONEdacDFT7 52.225 -14.93 MX
-place Generate STONEdacbufferINPUT 27.655 -14.93 MX
-place Generate STONEdacnobufferINPUT 157.91 -33.08 MY
-placeRES 0.85 19.21 4 4 R0 x y 200
-moveORIGIN -y
-placeCELL Generate DACspace 0 0 R0
-placeEND
-placeIF cellNameContains DECODE8
-placeINST Xdecode|Xpos -1.12 -13.68 R0
-place Generate STONEladderDECODE8part2 107.505 -12.09 R0
-place Generate STONEdacDFT8 53.225 -14.93 MX
-place Generate STONEdacbufferINPUT 28.655 -14.93 MX
-place Generate STONEdacnobufferINPUT 163.825 -39.88 MY
-placeRES 0.85 8.71 4 4 R0 x y 209
-moveORIGIN -y
-placeINST Xdecode|Xneg -1.12 17 MX
-placeEND
 placeIF cellNameContains r2r
 place Generate STONEdacDFT4 0.59 -14.39 MX
 place Generate STONEdacDFT5 0.59 -14.39 MX
 place Generate STONEdacDFT6 0.59 -14.39 MX
 place Generate STONEdacDFT7 0.59 -14.39 MX
 place Generate STONEdacDFT8 0.59 -14.39 MX
+place Generate STONEdacDFT12 0.59 -14.39 MX
 place Generate STONEdacbufferINPUT 27.05 -14.39 R0
 placeTAP 61 -16
 placeSTEP Generate STONEr2rBBMstrong -0.93 -5.61 y 26.84 R0
 placeSTEP Generate STONEr2rBBMstrong -0.93 3.44 y 26.84 R0
 place Generate STONEdacnobufferINPUT 124.725 -30.53 R0
 placeTAP 125 -31
-placeRES -10.9 .21 .8 .8 R90 x y 223
+placeRES -10.9 .21 .8 .8 R90 x y 150
 placeRES 107.165 -14.16 2.1 2.1 R0 x y 55
 placeTAP 125 -31
 place Generate STONEdacDFT7 0.59 -14.39 MX
@@ -430,99 +391,15 @@ placeINST Xbufferin 37.68 -13.37 MX
 placeINST Xibias -18.06 -51.16 R0
 placeRESRING
 moveORIGIN y
-placeIF cellNameContains BBM
-placeDBLHVRING 70 200 90 500
-placeDBLHVRING 70 230 90 500
 placeEND
 placeHVRING
 placeEND
 placeIFELSE cellNameContains BBMstrong
-placeROUTE
+//placeROUTE
 placeELSE
-placeROUTE24
+//placeROUTE24
 placeEND
-
-//IF cellNameContains DECODE4
-// Generate STONEladderDECODE4 2.06 1.45 R0
-// Generate STONEdacDFT4 2.755 -2.56 MX
-// Generate STONEdacbufferINPUT 44.965 -2.56 MX
-// Generate STONEdacnobufferINPUT 45.265 -19.3 MY
-//RES 3.015 13.21 2 2 R0 x y 54
-//END
-//IF cellNameContains DECODE5
-// Generate STONEladderDECODE5 -2.39 0 R0
-// Generate STONEdacDFT5 37.59 -3.14 MX
-// Generate STONEdacbufferINPUT 13.02 -3.14 MX
-// Generate STONEdacnobufferINPUT 87.66 -19.88 MY
-//RES 0.85 10.21 2 2 R0 x y 105
-//END
-//IF cellNameContains DECODE6
-// Generate STONEladderDECODE6 -2.39 0 R0
-// Generate STONEdacDFT6 120.31 -3.22 MX
-// Generate STONEdacbufferINPUT 95.74 -3.22 MX
-// Generate STONEdacnobufferINPUT 181.72 -19.96 MY
-//RES 0.85 15.21 2.1 2.1 R0 x y 200
-//END
-//IF cellNameContains DECODE7
-// Generate STONEladderDECODE7 -1.12 -6.88 R0
-// Generate STONEdacDFT7 52.225 -14.93 MX
-// Generate STONEdacbufferINPUT 27.655 -14.93 MX
-// Generate STONEdacnobufferINPUT 157.91 -33.08 MY
-//RES 0.85 19.21 4 4 R0 x y 200
-//veORIGIN -y
-//CELL Generate DACspace 0 0 R0
-//END
-//IF cellNameContains DECODE8
-//INST Xdecode|Xpos -1.12 -13.68 R0
-// Generate STONEladderDECODE8part2 107.505 -12.09 R0
-// Generate STONEdacDFT8 53.225 -14.93 MX
-// Generate STONEdacbufferINPUT 28.655 -14.93 MX
-// Generate STONEdacnobufferINPUT 163.825 -39.88 MY
-//RES 0.85 8.71 4 4 R0 x y 209
-//veORIGIN -y
-//INST Xdecode|Xneg -1.12 17 MX
-//END
-//IF cellNameContains r2r
-// Generate STONEdacDFT4 0.59 -14.39 MX
-// Generate STONEdacDFT5 0.59 -14.39 MX
-// Generate STONEdacDFT6 0.59 -14.39 MX
-// Generate STONEdacDFT7 0.59 -14.39 MX
-// Generate STONEdacDFT8 0.59 -14.39 MX
-// Generate STONEdacbufferINPUT 27.05 -14.39 R0
-//TAP 61 -16
-//STEP Generate STONEr2rBBMstrong -0.93 -5.61 y 26.84 R0
-//STEP Generate STONEr2rBBMstrong -0.93 3.44 y 26.84 R0
-// Generate STONEdacnobufferINPUT 124.725 -30.53 R0
-//TAP 125 -31
-//RES 107.165 -18.6 2.1 2.1 R0 x y 55
-//RES 107.165 -14.16 2.1 2.1 R0 x y 55
-//TAP 125 -31
-// Generate STONEdacDFT7 0.59 -14.39 MX
-//ALTVIEW Generate STONEdacDFT7 layout1 0.59 -14.39 MX
-//TAP 125 -31
-// Generate STONEdacDFT8 0.59 -14.39 MX
-//ALTVIEW Generate STONEdacDFT8 layout1 0.59 -14.39 MX
-//END
-//veORIGIN y
-//INST Xbufferout 37.68 -103.07 R0
-//veORIGIN y
-//INST Xbufferin 37.68 -13.37 MX
-//INST Xibias -18.06 -51.16 R0
-//RESRING
-//veORIGIN y
-//IF cellNameContains BBM
-//DBLHVRING 70 200 90 500
-//DBLHVRING 70 230 90 500
-//END
-//HVRING
-//END
-//IFELSE cellNameContains BBMstrong
-//ROUTE
-//ELSE
-//ROUTE24
-//END
 endlayoutbio
-
 //**********************************************
 //Project Parameters
 //Celera:PUGET Project Bio

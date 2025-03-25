@@ -1,72 +1,78 @@
 // ------------------------ Module Definitions -----------
-module REGULATIONoffsetDEBUG (TAO,tmi,REF_GMO,REF_GMV,REF_IIN,CELG59462,CELV96848,CELSUB40948,REF_GMCHARGE);
+module REGULATIONoffsetDEBUG (TAO,tmi,REF_IIN,CELG59462,CELV96848,REF_GMCAP,REF_GMOUT,CELSUB40948,REF_CHARGER,REF_GMCHARGE,REF_ICHARGER);
   inout  TAO;
   input [4:0] tmi;
-  input  REF_GMO;
-  input  REF_GMV;
   input  REF_IIN;
   input  CELG59462;
   input  CELV96848;
+  input  REF_GMCAP;
+  input  REF_GMOUT;
   input  CELSUB40948;
+  input  REF_CHARGER;
   input  REF_GMCHARGE;
+  input  REF_ICHARGER;
 endmodule
 
-module REGULATIONoffsetMAIN (REF,tmi,SIMPV,REF_GMO,REF_GMV,REF_IIN,CELG59462,CELV96848,CELSUB40948,REF_GMCHARGE,mode_stepdown,enable_regulation,REFconfiguration_0,REFconfiguration_1,REFconfiguration_2,REFconfiguration_3,REFconfiguration_4,REFconfiguration_5,REFconfiguration_6,REFconfiguration_7,REFconfiguration_8,REFconfiguration_9,REFconfiguration_10,REFconfiguration_11,IP_REGULATIONoffsetMAIN1);
-  input  REF;
+module REGULATIONoffsetMAIN (tmi,SIMPV,REF_IIN,CELG59462,CELV96848,REF_GMCAP,REF_GMOUT,CELSUB40948,IP_aab4f4b8,IP_f9ac1ded,REF_CHARGER,REF_GMCHARGE,REF_ICHARGER,mode_stepdown,enable_regulation,CAPconfiguration_0,CAPconfiguration_1,IINconfiguration_0,IINconfiguration_1,OUTconfiguration_0,OUTconfiguration_1,REFconfiguration_0,REFconfiguration_1,REFconfiguration_2,REFconfiguration_3,CHARGEconfiguration_0,CHARGEconfiguration_1);
   input [4:0] tmi;
   input  SIMPV;
-  inout  REF_GMO;
-  output  REF_GMV;
   inout  REF_IIN;
   input  CELG59462;
   input  CELV96848;
+  inout  REF_GMCAP;
+  inout  REF_GMOUT;
   input  CELSUB40948;
+  input  IP_aab4f4b8;
+  input  IP_f9ac1ded;
+  input  REF_CHARGER;
   inout  REF_GMCHARGE;
+  inout  REF_ICHARGER;
   input  mode_stepdown;
   input  enable_regulation;
+  input  CAPconfiguration_0;
+  input  CAPconfiguration_1;
+  input  IINconfiguration_0;
+  input  IINconfiguration_1;
+  input  OUTconfiguration_0;
+  input  OUTconfiguration_1;
   input  REFconfiguration_0;
   input  REFconfiguration_1;
   input  REFconfiguration_2;
   input  REFconfiguration_3;
-  input  REFconfiguration_4;
-  input  REFconfiguration_5;
-  input  REFconfiguration_6;
-  input  REFconfiguration_7;
-  input  REFconfiguration_8;
-  input  REFconfiguration_9;
-  input  REFconfiguration_10;
-  input  REFconfiguration_11;
-  input  IP_REGULATIONoffsetMAIN1;
+  input  CHARGEconfiguration_0;
+  input  CHARGEconfiguration_1;
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONoffset (REF, TAO, tmi, SIMPV, REF_GMO, REF_GMV, REF_IIN, CELG59462, CELV96848, CELSUB40948, REF_GMCHARGE, mode_stepdown, enable_regulation, REFconfigurationLSB_0, REFconfigurationLSB_1, REFconfigurationLSB_2, REFconfigurationLSB_3, REFconfigurationLSB_4, REFconfigurationLSB_5, REFconfigurationLSB_6, REFconfigurationLSB_7, REFconfigurationMSB_0, REFconfigurationMSB_1, REFconfigurationMSB_2, REFconfigurationMSB_3, IP_REGULATIONoffsetMAIN1);
-input  REF;
+module REGULATIONoffset (TAO, tmi, SIMPV, REF_IIN, CELG59462, CELV96848, REF_GMCAP, REF_GMOUT, CELSUB40948, IP_aab4f4b8, IP_f9ac1ded, REF_CHARGER, REF_GMCHARGE, REF_ICHARGER, mode_stepdown, enable_regulation, CAPconfiguration_0, CAPconfiguration_1, IINconfiguration_0, IINconfiguration_1, OUTconfiguration_0, OUTconfiguration_1, REFconfiguration_0, REFconfiguration_1, REFconfiguration_2, REFconfiguration_3, CHARGEconfiguration_0, CHARGEconfiguration_1);
 inout  TAO;
 input [4:0] tmi;
 input  SIMPV;
-inout  REF_GMO;
-output  REF_GMV;
 inout  REF_IIN;
 input  CELG59462;
 input  CELV96848;
+inout  REF_GMCAP;
+inout  REF_GMOUT;
 input  CELSUB40948;
+input  IP_aab4f4b8;
+input  IP_f9ac1ded;
+input  REF_CHARGER;
 inout  REF_GMCHARGE;
+inout  REF_ICHARGER;
 input  mode_stepdown;
 input  enable_regulation;
-input  REFconfigurationLSB_0;
-input  REFconfigurationLSB_1;
-input  REFconfigurationLSB_2;
-input  REFconfigurationLSB_3;
-input  REFconfigurationLSB_4;
-input  REFconfigurationLSB_5;
-input  REFconfigurationLSB_6;
-input  REFconfigurationLSB_7;
-input  REFconfigurationMSB_0;
-input  REFconfigurationMSB_1;
-input  REFconfigurationMSB_2;
-input  REFconfigurationMSB_3;
-input  IP_REGULATIONoffsetMAIN1;
+input  CAPconfiguration_0;
+input  CAPconfiguration_1;
+input  IINconfiguration_0;
+input  IINconfiguration_1;
+input  OUTconfiguration_0;
+input  OUTconfiguration_1;
+input  REFconfiguration_0;
+input  REFconfiguration_1;
+input  REFconfiguration_2;
+input  REFconfiguration_3;
+input  CHARGEconfiguration_0;
+input  CHARGEconfiguration_1;
 
 
 // ------------------------ Wires ------------------------
@@ -76,41 +82,45 @@ wire [4:0] tmi;
 REGULATIONoffsetDEBUG XDEBUG (
 .TAO(TAO),
 .tmi(tmi[4:0]),
-.REF_GMO(REF_GMO),
-.REF_GMV(REF_GMV),
 .REF_IIN(REF_IIN),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
+.REF_GMCAP(REF_GMCAP),
+.REF_GMOUT(REF_GMOUT),
 .CELSUB40948(CELSUB40948),
-.REF_GMCHARGE(REF_GMCHARGE)
+.REF_CHARGER(REF_CHARGER),
+.REF_GMCHARGE(REF_GMCHARGE),
+.REF_ICHARGER(REF_ICHARGER)
 );
 
-REGULATIONoffsetMAIN XMAIN (
-.REF(REF),
+REGULATIONoffsetMAIN XOFFSET (
 .tmi(tmi[4:0]),
 .SIMPV(SIMPV),
-.REF_GMO(REF_GMO),
-.REF_GMV(REF_GMV),
 .REF_IIN(REF_IIN),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
+.REF_GMCAP(REF_GMCAP),
+.REF_GMOUT(REF_GMOUT),
 .CELSUB40948(CELSUB40948),
+.IP_aab4f4b8(IP_aab4f4b8),
+.IP_f9ac1ded(IP_f9ac1ded),
+.REF_CHARGER(REF_CHARGER),
 .REF_GMCHARGE(REF_GMCHARGE),
+.REF_ICHARGER(REF_ICHARGER),
 .mode_stepdown(mode_stepdown),
 .enable_regulation(enable_regulation),
-.REFconfiguration_0(REFconfigurationLSB_0),
-.REFconfiguration_1(REFconfigurationLSB_1),
-.REFconfiguration_2(REFconfigurationLSB_2),
-.REFconfiguration_3(REFconfigurationLSB_3),
-.REFconfiguration_4(REFconfigurationLSB_4),
-.REFconfiguration_5(REFconfigurationLSB_5),
-.REFconfiguration_6(REFconfigurationLSB_6),
-.REFconfiguration_7(REFconfigurationLSB_7),
-.REFconfiguration_8(REFconfigurationMSB_0),
-.REFconfiguration_9(REFconfigurationMSB_1),
-.REFconfiguration_10(REFconfigurationMSB_2),
-.REFconfiguration_11(REFconfigurationMSB_3),
-.IP_REGULATIONoffsetMAIN1(IP_REGULATIONoffsetMAIN1)
+.CAPconfiguration_0(CAPconfiguration_0),
+.CAPconfiguration_1(CAPconfiguration_1),
+.IINconfiguration_0(IINconfiguration_0),
+.IINconfiguration_1(IINconfiguration_1),
+.OUTconfiguration_0(OUTconfiguration_0),
+.OUTconfiguration_1(OUTconfiguration_1),
+.REFconfiguration_0(REFconfiguration_0),
+.REFconfiguration_1(REFconfiguration_1),
+.REFconfiguration_2(REFconfiguration_2),
+.REFconfiguration_3(REFconfiguration_3),
+.CHARGEconfiguration_0(CHARGEconfiguration_0),
+.CHARGEconfiguration_1(CHARGEconfiguration_1)
 );
 
 endmodule

@@ -133,7 +133,7 @@ DFThijack Xdfthijack1 (
 .ten_hijacki(ten_hijacki_92e574dd_Xdfthijack1)
 );
 
-DFTtm8 dft_hex0x7F (
+DFTtm8 dft_hex0x87 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
@@ -142,25 +142,25 @@ DFTtm8 dft_hex0x7F (
 .TAO(TAO),
 .tdi({a0,a0,a0,a0,a0,a0,a0,tdi_a27bdd28_XUINstartup}),
 .tdo(tdo),
-.ten({noconn_dft_hex0x7F_ten_7,noconn_dft_hex0x7F_ten_6,noconn_dft_hex0x7F_ten_5,noconn_dft_hex0x7F_ten_4,ten_hijacki_92e574dd_Xdfthijack1,ten_hijack_92e574dd_Xdfthijack1,ten_a27bdd28_XUINstartup,ten_98ffcc73_XUINoutput}),
-.tma({a0,a1,a1,a1,a1,a1,a1,a1}),
+.ten({noconn_dft_hex0x87_ten_7,noconn_dft_hex0x87_ten_6,noconn_dft_hex0x87_ten_5,noconn_dft_hex0x87_ten_4,ten_hijacki_92e574dd_Xdfthijack1,ten_hijack_92e574dd_Xdfthijack1,ten_a27bdd28_XUINstartup,ten_98ffcc73_XUINoutput}),
+.tma({a1,a0,a0,a0,a0,a1,a1,a1}),
 .tmi(tmi[4:0])
 );
 
-STONEnoconn XNCnoconn_dft_hex0x7F_ten_4 (
-.noconn(noconn_dft_hex0x7F_ten_4)
+STONEnoconn XNCnoconn_dft_hex0x87_ten_4 (
+.noconn(noconn_dft_hex0x87_ten_4)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x7F_ten_5 (
-.noconn(noconn_dft_hex0x7F_ten_5)
+STONEnoconn XNCnoconn_dft_hex0x87_ten_5 (
+.noconn(noconn_dft_hex0x87_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x7F_ten_6 (
-.noconn(noconn_dft_hex0x7F_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x87_ten_6 (
+.noconn(noconn_dft_hex0x87_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x7F_ten_7 (
-.noconn(noconn_dft_hex0x7F_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x87_ten_7 (
+.noconn(noconn_dft_hex0x87_ten_7)
 );
 
 endmodule

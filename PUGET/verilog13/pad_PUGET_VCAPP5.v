@@ -39,7 +39,8 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_PUGET_VCAPP5 (GESD, VCAP, VCAPP5, kelvin_VCAPP5);
+module pad_PUGET_VCAPP5 (CFP, GESD, VCAP, VCAPP5, kelvin_VCAPP5);
+inout  CFP;
 input  GESD;
 inout  VCAP;
 inout  VCAPP5;
@@ -54,23 +55,13 @@ STONEpad1 XPAD1 (
 );
 
 ESDdiode Xesd_XPAD1 (
-.N(GESD),
-.P(VCAPP5)
+.N(VCAPP5),
+.P(GESD)
 );
 
-ESDcore6 XESDcore6_8 (
+ESDcore6 XESDcore6_1 (
 .PAD(VCAP),
 .GESD(VCAPP5)
-);
-
-ESDdiode Xesd1_XPAD1 (
-.N(VCAP),
-.P(VCAPP5)
-);
-
-ESDdiode Xesd2_XPAD1 (
-.N(VCAPP5),
-.P(VCAP)
 );
 
 PEBBLElinkKELVIN Xwrap_PAD1_SENSE_SINGLE (

@@ -14,9 +14,9 @@ module FAULTMANAGERpugetCONFIGURATION (tmi,CELG59462,CELV96848,CELSUB40948,fault
   input  fault_telemetry;
   input  fault_chargepump;
   input  fault_capcalculate;
-  output  FAULTMANAGERconfiguration_0;
-  output  FAULTMANAGERconfiguration_1;
-  output  FAULTMANAGERconfiguration_2;
+  input  FAULTMANAGERconfiguration_0;
+  input  FAULTMANAGERconfiguration_1;
+  input  FAULTMANAGERconfiguration_2;
   output [9:0] status_FAULTMANAGERstatus_9;
 endmodule
 

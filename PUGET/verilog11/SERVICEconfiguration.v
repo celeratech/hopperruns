@@ -33,8 +33,8 @@ inout [4:0] tmi;
 input  CELG59462;
 input  CELV96848;
 input  CELSUB40948;
-output  SERVICEconfiguration_0;
-output  SERVICEconfiguration_1;
+  input  SERVICEconfiguration_0;
+  input  SERVICEconfiguration_1;
 
 
 // ------------------------ Wires ------------------------
@@ -44,15 +44,15 @@ wire [7:0] drm0;
 wire [7:0] por0;
 
 // ------------------------ Networks ---------------------
-drm8 drm_hex0x24 (
+drm8 drm_hex0x2B (
 .G(CELG59462),
 .V(CELV96848),
 .d0(a0),
 .d1(a1),
-.id({a0,a0,a1,a0,a0,a1,a0,a0}),
+.id({a0,a0,a1,a0,a1,a0,a1,a1}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,noconn_drm8_drm0_3,noconn_drm8_drm0_2,SERVICEconfiguration_1,SERVICEconfiguration_0}),
+.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,noconn_drm8_drm0_3,noconn_drm8_drm0_2,SERVICEconfiguration_756df643_1,SERVICEconfiguration_756df643_0}),
 .por0({a0,a0,a0,a0,a0,a0,a1,a1}),
 .bypload(a0),
 .lastdrm(a0)

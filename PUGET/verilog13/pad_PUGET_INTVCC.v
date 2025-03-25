@@ -28,16 +28,6 @@ module WRAPPER1 ( o, i );
 endmodule
 
 
-//Verilog HDL for "Esd", "ESDdiode" "functional"
-
-
-module ESDdiode ( N, P );
-
-  input P;
-  input N;
-endmodule
-
-
 //Verilog HDL for "Esd", "ESDcore6" "functional"
 
 
@@ -92,43 +82,18 @@ WRAPPER1 Xwrap_CELV (
 .o(CELV96848)
 );
 
-ESDdiode Xesd1_XPAD1 (
-.N(GESD),
-.P(INTVCC)
-);
-
-ESDdiode Xesd1_XPAD2 (
-.N(GESD),
-.P(SIMPV)
-);
-
-ESDdiode Xesd2_XPAD1 (
-.N(INTVCC),
-.P(GESD)
-);
-
-ESDdiode Xesd2_XPAD2 (
-.N(SIMPV),
-.P(GESD)
-);
-
-ESDcore6 XESDcore6_11 (
-.PAD(INTVCC),
-.GESD(GESD)
-);
-
-ESDcore6 XESDcore6_12 (
+ESDcore6 XESDcore6_1 (
 .PAD(SIMPV),
 .GESD(GESD)
 );
 
 PEBBLElinkKELVIN Xwrap_PAD1_SENSE0 (
-.NEG(kelvin_INTVCC),
+.NEG(kelvin_SIMPVcapesr),
 .POS(INTVCC)
 );
 
 PEBBLElinkKELVIN Xwrap_PAD1_SENSE1 (
-.NEG(kelvin_SIMPVcapesr),
+.NEG(kelvin_INTVCC),
 .POS(INTVCC)
 );
 

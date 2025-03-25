@@ -1,26 +1,11 @@
 // ------------------------ Module Definitions -----------
-//Celera:alert_b9206cfc
-//Celera Confidential Symbol Generator
-//Inputs: 2, ARA: 5d, Ron: 1 Ohm,6V
-//DFT: no
-module alert_b9206cfc (CELV,ALERT,alert_set,alert_clear,
-alert_in0,
-alert_clear0,
-alert_in1,
-alert_clear1,
-CELSUB,CELG);
-input CELV;
-input alert_clear;
-output alert_set;
-output ALERT;
-input alert_in0;
-output alert_clear0;
-input alert_in1;
-output alert_clear1;
-input CELG;
-input CELSUB;
-endmodule
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
 
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
 
 
 //Verilog HDL for "memory", "fusebank" "functional"
@@ -214,17 +199,8 @@ wire [7:0] otp_strobe;
 wire [1:0] i2cpassword;
 
 // ------------------------ Networks ---------------------
-alert_b9206cfc Xalert (
-.CELG(CELG59462),
-.CELV(CELV96848),
-.ALERT(TBD_XPUGET_XceleraSERDES_Xalert_ALERT),
-.CELSUB(CELSUB40948),
-.alert_in0(TBD_XPUGET_XceleraSERDES_Xalert_alert_in0),
-.alert_in1(TBD_XPUGET_XceleraSERDES_Xalert_alert_in1),
-.alert_set(TBD_XPUGET_XceleraSERDES_Xalert_alert_set),
-.alert_clear(TBD_XPUGET_XceleraSERDES_Xalert_alert_clear),
-.alert_clear0(TBD_XPUGET_XceleraSERDES_Xalert_alert_clear0),
-.alert_clear1(TBD_XPUGET_XceleraSERDES_Xalert_alert_clear1)
+STONEnoconn XNCnoconn (
+.noconn(noconn)
 );
 
 fusebank Xfusebank (

@@ -153,28 +153,12 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CAPcalculatorSHUNTalgorithm (porb, on_shunt, vshunt_0, vshunt_1, vshunt_2, vshunt_3, vshunt_4, vshunt_5, vshunt_6, vshunt_7, vshunt_8, vshunt_9, CELG59462, CELV96848, PORB97836, vshunt_10, vshunt_11, vshunt_12, vshunt_13, vshunt_14, vshunt_15, ok_maximum, CELSUB40948, meas_vcap1_0, meas_vcap1_1, meas_vcap1_2, meas_vcap1_3, meas_vcap1_4, meas_vcap1_5, meas_vcap1_6, meas_vcap1_7, meas_vcap1_8, meas_vcap1_9, meas_vcap2_0, meas_vcap2_1, meas_vcap2_2, meas_vcap2_3, meas_vcap2_4, meas_vcap2_5, meas_vcap2_6, meas_vcap2_7, meas_vcap2_8, meas_vcap2_9, meas_vcap3_0, meas_vcap3_1, meas_vcap3_2, meas_vcap3_3, meas_vcap3_4, meas_vcap3_5, meas_vcap3_6, meas_vcap3_7, meas_vcap3_8, meas_vcap3_9, meas_vcap4_0, meas_vcap4_1, meas_vcap4_2, meas_vcap4_3, meas_vcap4_4, meas_vcap4_5, meas_vcap4_6, meas_vcap4_7, meas_vcap4_8, meas_vcap4_9, SELECTshunt_0, SELECTshunt_1, SELECTshunt_2, SELECTshunt_3, meas_vcap1_10, meas_vcap1_11, meas_vcap1_12, meas_vcap1_13, meas_vcap1_14, meas_vcap1_15, meas_vcap2_10, meas_vcap2_11, meas_vcap2_12, meas_vcap2_13, meas_vcap2_14, meas_vcap2_15, meas_vcap3_10, meas_vcap3_11, meas_vcap3_12, meas_vcap3_13, meas_vcap3_14, meas_vcap3_15, meas_vcap4_10, meas_vcap4_11, meas_vcap4_12, meas_vcap4_13, meas_vcap4_14, meas_vcap4_15, vshunt_hyst_0, vshunt_hyst_1, vshunt_hyst_2, vshunt_hyst_3, vshunt_hyst_4, vshunt_hyst_5, vshunt_hyst_6, vshunt_hyst_7, vshunt_hyst_8, vshunt_hyst_9, vshunt_hyst_10, vshunt_hyst_11, vshunt_hyst_12, vshunt_hyst_13, vshunt_hyst_14, vshunt_hyst_15, calculate_shunt, clock_calculator, ok_shuntalgorithm, shunt_registeractive, calculate_shuntmaximum);
+module CAPcalculatorSHUNTalgorithm (porb, on_shunt, CELG59462, CELV96848, PORB97836, ok_maximum, CELSUB40948, meas_vcap1_0, meas_vcap1_1, meas_vcap1_2, meas_vcap1_3, meas_vcap1_4, meas_vcap1_5, meas_vcap1_6, meas_vcap1_7, meas_vcap1_8, meas_vcap1_9, meas_vcap2_0, meas_vcap2_1, meas_vcap2_2, meas_vcap2_3, meas_vcap2_4, meas_vcap2_5, meas_vcap2_6, meas_vcap2_7, meas_vcap2_8, meas_vcap2_9, meas_vcap3_0, meas_vcap3_1, meas_vcap3_2, meas_vcap3_3, meas_vcap3_4, meas_vcap3_5, meas_vcap3_6, meas_vcap3_7, meas_vcap3_8, meas_vcap3_9, meas_vcap4_0, meas_vcap4_1, meas_vcap4_2, meas_vcap4_3, meas_vcap4_4, meas_vcap4_5, meas_vcap4_6, meas_vcap4_7, meas_vcap4_8, meas_vcap4_9, SELECTshunt_0, SELECTshunt_1, SELECTshunt_2, SELECTshunt_3, meas_vcap1_10, meas_vcap1_11, meas_vcap1_12, meas_vcap1_13, meas_vcap1_14, meas_vcap1_15, meas_vcap2_10, meas_vcap2_11, meas_vcap2_12, meas_vcap2_13, meas_vcap2_14, meas_vcap2_15, meas_vcap3_10, meas_vcap3_11, meas_vcap3_12, meas_vcap3_13, meas_vcap3_14, meas_vcap3_15, meas_vcap4_10, meas_vcap4_11, meas_vcap4_12, meas_vcap4_13, meas_vcap4_14, meas_vcap4_15, vshunt_hyst_0, vshunt_hyst_1, vshunt_hyst_2, vshunt_hyst_3, vshunt_hyst_4, vshunt_hyst_5, vshunt_hyst_6, vshunt_hyst_7, vshunt_hyst_8, vshunt_hyst_9, vshunt_trip_0, vshunt_trip_1, vshunt_trip_2, vshunt_trip_3, vshunt_trip_4, vshunt_trip_5, vshunt_trip_6, vshunt_trip_7, vshunt_trip_8, vshunt_trip_9, vshunt_hyst_10, vshunt_hyst_11, vshunt_hyst_12, vshunt_hyst_13, vshunt_hyst_14, vshunt_hyst_15, vshunt_trip_10, vshunt_trip_11, vshunt_trip_12, vshunt_trip_13, vshunt_trip_14, vshunt_trip_15, calculate_shunt, clock_calculator, ok_shuntalgorithm, shunt_registeractive, calculate_shuntmaximum);
 input  porb;
 output  on_shunt;
-input  vshunt_0;
-input  vshunt_1;
-input  vshunt_2;
-input  vshunt_3;
-input  vshunt_4;
-input  vshunt_5;
-input  vshunt_6;
-input  vshunt_7;
-input  vshunt_8;
-input  vshunt_9;
 input  CELG59462;
 input  CELV96848;
 input  PORB97836;
-input  vshunt_10;
-input  vshunt_11;
-input  vshunt_12;
-input  vshunt_13;
-input  vshunt_14;
-input  vshunt_15;
 input  ok_maximum;
 input  CELSUB40948;
 input  meas_vcap1_0;
@@ -255,12 +239,28 @@ input  vshunt_hyst_6;
 input  vshunt_hyst_7;
 input  vshunt_hyst_8;
 input  vshunt_hyst_9;
+input  vshunt_trip_0;
+input  vshunt_trip_1;
+input  vshunt_trip_2;
+input  vshunt_trip_3;
+input  vshunt_trip_4;
+input  vshunt_trip_5;
+input  vshunt_trip_6;
+input  vshunt_trip_7;
+input  vshunt_trip_8;
+input  vshunt_trip_9;
 input  vshunt_hyst_10;
 input  vshunt_hyst_11;
 input  vshunt_hyst_12;
 input  vshunt_hyst_13;
 input  vshunt_hyst_14;
 input  vshunt_hyst_15;
+input  vshunt_trip_10;
+input  vshunt_trip_11;
+input  vshunt_trip_12;
+input  vshunt_trip_13;
+input  vshunt_trip_14;
+input  vshunt_trip_15;
 input  calculate_shunt;
 input  clock_calculator;
 output  ok_shuntalgorithm;
@@ -277,24 +277,24 @@ wire [15:0] o;
 
 // ------------------------ Networks ---------------------
 CAPcalculatorSHUNTenable XENABLE (
-.vshunt_0(vshunt_0),
-.vshunt_1(vshunt_1),
-.vshunt_2(vshunt_2),
-.vshunt_3(vshunt_3),
-.vshunt_4(vshunt_4),
-.vshunt_5(vshunt_5),
-.vshunt_6(vshunt_6),
-.vshunt_7(vshunt_7),
-.vshunt_8(vshunt_8),
-.vshunt_9(vshunt_9),
+.vshunt_0(vshunt_trip_0),
+.vshunt_1(vshunt_trip_1),
+.vshunt_2(vshunt_trip_2),
+.vshunt_3(vshunt_trip_3),
+.vshunt_4(vshunt_trip_4),
+.vshunt_5(vshunt_trip_5),
+.vshunt_6(vshunt_trip_6),
+.vshunt_7(vshunt_trip_7),
+.vshunt_8(vshunt_trip_8),
+.vshunt_9(vshunt_trip_9),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.vshunt_10(vshunt_10),
-.vshunt_11(vshunt_11),
-.vshunt_12(vshunt_12),
-.vshunt_13(vshunt_13),
-.vshunt_14(vshunt_14),
-.vshunt_15(vshunt_15),
+.vshunt_10(vshunt_trip_10),
+.vshunt_11(vshunt_trip_11),
+.vshunt_12(vshunt_trip_12),
+.vshunt_13(vshunt_trip_13),
+.vshunt_14(vshunt_trip_14),
+.vshunt_15(vshunt_trip_15),
 .CELSUB40948(CELSUB40948),
 .shunt_registeractive(shunt_registeractive)
 );
@@ -453,7 +453,7 @@ dff_e5264df5 Xdff4 (
 );
 
 dmux2b_bdbf6db5 Xdmux1 (
-.a({vshunt_15,vshunt_14,vshunt_13,vshunt_12,vshunt_11,vshunt_10,vshunt_9,vshunt_8,vshunt_7,vshunt_6,vshunt_5,vshunt_4,vshunt_3,vshunt_2,vshunt_1,vshunt_0}),
+.a({vshunt_trip_15,vshunt_trip_14,vshunt_trip_13,vshunt_trip_12,vshunt_trip_11,vshunt_trip_10,vshunt_trip_9,vshunt_trip_8,vshunt_trip_7,vshunt_trip_6,vshunt_trip_5,vshunt_trip_4,vshunt_trip_3,vshunt_trip_2,vshunt_trip_1,vshunt_trip_0}),
 .b({net_237,net_236,net_235,net_234,net_233,net_232,net_231,net_230,net_229,net_228,net_227,net_226,net_225,net_224,net_223,net_222}),
 .o({net_269,net_268,net_267,net_266,net_265,net_264,net_263,net_262,net_261,net_260,net_259,net_258,net_257,net_256,net_255,net_254}),
 .s(SELECTshunt_1),
@@ -463,7 +463,7 @@ dmux2b_bdbf6db5 Xdmux1 (
 );
 
 dmux2b_bdbf6db5 Xdmux2 (
-.a({vshunt_15,vshunt_14,vshunt_13,vshunt_12,vshunt_11,vshunt_10,vshunt_9,vshunt_8,vshunt_7,vshunt_6,vshunt_5,vshunt_4,vshunt_3,vshunt_2,vshunt_1,vshunt_0}),
+.a({vshunt_trip_15,vshunt_trip_14,vshunt_trip_13,vshunt_trip_12,vshunt_trip_11,vshunt_trip_10,vshunt_trip_9,vshunt_trip_8,vshunt_trip_7,vshunt_trip_6,vshunt_trip_5,vshunt_trip_4,vshunt_trip_3,vshunt_trip_2,vshunt_trip_1,vshunt_trip_0}),
 .b({net_237,net_236,net_235,net_234,net_233,net_232,net_231,net_230,net_229,net_228,net_227,net_226,net_225,net_224,net_223,net_222}),
 .o({net_253,net_252,net_251,net_250,net_249,net_248,net_247,net_246,net_245,net_244,net_243,net_242,net_241,net_240,net_239,net_238}),
 .s(SELECTshunt_0),
@@ -473,7 +473,7 @@ dmux2b_bdbf6db5 Xdmux2 (
 );
 
 dmux2b_bdbf6db5 Xdmux3 (
-.a({vshunt_15,vshunt_14,vshunt_13,vshunt_12,vshunt_11,vshunt_10,vshunt_9,vshunt_8,vshunt_7,vshunt_6,vshunt_5,vshunt_4,vshunt_3,vshunt_2,vshunt_1,vshunt_0}),
+.a({vshunt_trip_15,vshunt_trip_14,vshunt_trip_13,vshunt_trip_12,vshunt_trip_11,vshunt_trip_10,vshunt_trip_9,vshunt_trip_8,vshunt_trip_7,vshunt_trip_6,vshunt_trip_5,vshunt_trip_4,vshunt_trip_3,vshunt_trip_2,vshunt_trip_1,vshunt_trip_0}),
 .b({net_237,net_236,net_235,net_234,net_233,net_232,net_231,net_230,net_229,net_228,net_227,net_226,net_225,net_224,net_223,net_222}),
 .o({net_285,net_284,net_283,net_282,net_281,net_280,net_279,net_278,net_277,net_276,net_275,net_274,net_273,net_272,net_271,net_270}),
 .s(SELECTshunt_2),
@@ -483,7 +483,7 @@ dmux2b_bdbf6db5 Xdmux3 (
 );
 
 dmux2b_bdbf6db5 Xdmux4 (
-.a({vshunt_15,vshunt_14,vshunt_13,vshunt_12,vshunt_11,vshunt_10,vshunt_9,vshunt_8,vshunt_7,vshunt_6,vshunt_5,vshunt_4,vshunt_3,vshunt_2,vshunt_1,vshunt_0}),
+.a({vshunt_trip_15,vshunt_trip_14,vshunt_trip_13,vshunt_trip_12,vshunt_trip_11,vshunt_trip_10,vshunt_trip_9,vshunt_trip_8,vshunt_trip_7,vshunt_trip_6,vshunt_trip_5,vshunt_trip_4,vshunt_trip_3,vshunt_trip_2,vshunt_trip_1,vshunt_trip_0}),
 .b({net_237,net_236,net_235,net_234,net_233,net_232,net_231,net_230,net_229,net_228,net_227,net_226,net_225,net_224,net_223,net_222}),
 .o({net_301,net_300,net_299,net_298,net_297,net_296,net_295,net_294,net_293,net_292,net_291,net_290,net_289,net_288,net_287,net_286}),
 .s(SELECTshunt_3),
@@ -525,7 +525,7 @@ delayfixed_a2c70785 Xdelay4 (
 );
 
 subtractor_89c1a36f Xsubtractor1 (
-.a({vshunt_15,vshunt_14,vshunt_13,vshunt_12,vshunt_11,vshunt_10,vshunt_9,vshunt_8,vshunt_7,vshunt_6,vshunt_5,vshunt_4,vshunt_3,vshunt_2,vshunt_1,vshunt_0}),
+.a({vshunt_trip_15,vshunt_trip_14,vshunt_trip_13,vshunt_trip_12,vshunt_trip_11,vshunt_trip_10,vshunt_trip_9,vshunt_trip_8,vshunt_trip_7,vshunt_trip_6,vshunt_trip_5,vshunt_trip_4,vshunt_trip_3,vshunt_trip_2,vshunt_trip_1,vshunt_trip_0}),
 .b({vshunt_hyst_15,vshunt_hyst_14,vshunt_hyst_13,vshunt_hyst_12,vshunt_hyst_11,vshunt_hyst_10,vshunt_hyst_9,vshunt_hyst_8,vshunt_hyst_7,vshunt_hyst_6,vshunt_hyst_5,vshunt_hyst_4,vshunt_hyst_3,vshunt_hyst_2,vshunt_hyst_1,vshunt_hyst_0}),
 .o({net_237,net_236,net_235,net_234,net_233,net_232,net_231,net_230,net_229,net_228,net_227,net_226,net_225,net_224,net_223,net_222}),
 .CELG(CELG59462),

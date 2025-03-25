@@ -320,42 +320,42 @@ delayclock_e1d348ae Xdelay2 (
 .celeraporb(PORB97836)
 );
 
-DFTtm8t dft_hex0x79 (
+DFTtm8t dft_hex0x81 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x79_ten_7,noconn_dft_hex0x79_ten_6,noconn_dft_hex0x79_ten_5,noconn_dft_hex0x79_ten_4,noconn_dft_hex0x79_ten_3,noconn_dft_hex0x79_ten_2,noconn_dft_hex0x79_ten_1,global_sandh_069c8d70_XU5}),
-.tma({a0,a1,a1,a1,a1,a0,a0,a1}),
+.ten({noconn_dft_hex0x81_ten_7,noconn_dft_hex0x81_ten_6,noconn_dft_hex0x81_ten_5,noconn_dft_hex0x81_ten_4,noconn_dft_hex0x81_ten_3,noconn_dft_hex0x81_ten_2,noconn_dft_hex0x81_ten_1,global_sandh_069c8d70_XU5}),
+.tma({a1,a0,a0,a0,a0,a0,a0,a1}),
 .tmi(tmi[4:0])
 );
 
-STONEnoconn XNCnoconn_dft_hex0x79_ten_1 (
-.noconn(noconn_dft_hex0x79_ten_1)
+STONEnoconn XNCnoconn_dft_hex0x81_ten_1 (
+.noconn(noconn_dft_hex0x81_ten_1)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x79_ten_2 (
-.noconn(noconn_dft_hex0x79_ten_2)
+STONEnoconn XNCnoconn_dft_hex0x81_ten_2 (
+.noconn(noconn_dft_hex0x81_ten_2)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x79_ten_3 (
-.noconn(noconn_dft_hex0x79_ten_3)
+STONEnoconn XNCnoconn_dft_hex0x81_ten_3 (
+.noconn(noconn_dft_hex0x81_ten_3)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x79_ten_4 (
-.noconn(noconn_dft_hex0x79_ten_4)
+STONEnoconn XNCnoconn_dft_hex0x81_ten_4 (
+.noconn(noconn_dft_hex0x81_ten_4)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x79_ten_5 (
-.noconn(noconn_dft_hex0x79_ten_5)
+STONEnoconn XNCnoconn_dft_hex0x81_ten_5 (
+.noconn(noconn_dft_hex0x81_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x79_ten_6 (
-.noconn(noconn_dft_hex0x79_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x81_ten_6 (
+.noconn(noconn_dft_hex0x81_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x79_ten_7 (
-.noconn(noconn_dft_hex0x79_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x81_ten_7 (
+.noconn(noconn_dft_hex0x81_ten_7)
 );
 
 endmodule

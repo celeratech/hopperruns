@@ -4,21 +4,21 @@ module CHARGEPUMPconfig (tmi,CELG59462,CELV96848,CELSUB40948,fall_skew_0,fall_sk
   input  CELG59462;
   input  CELV96848;
   input  CELSUB40948;
-  output  fall_skew_0;
-  output  fall_skew_1;
-  output  fall_skew_2;
-  output  fall_skew_3;
-  output  fall_skew_4;
-  output  rise_skew_0;
-  output  rise_skew_1;
-  output  rise_skew_2;
-  output  rise_skew_3;
-  output  rise_skew_4;
-  output  skip_enable;
-  output  fault_time_0;
-  output  fault_time_1;
-  output  chargepump_freq_0;
-  output  chargepump_freq_1;
+  input  fall_skew_0;
+  input  fall_skew_1;
+  input  fall_skew_2;
+  input  fall_skew_3;
+  input  fall_skew_4;
+  input  rise_skew_0;
+  input  rise_skew_1;
+  input  rise_skew_2;
+  input  rise_skew_3;
+  input  rise_skew_4;
+  input  skip_enable;
+  input  fault_time_0;
+  input  fault_time_1;
+  input  chargepump_freq_0;
+  input  chargepump_freq_1;
 endmodule
 
 module CHARGEPUMPcontrol (p1,p2,porb,skip,ok_hs,CELG59462,CELV96848,PORB97836,dft_fault,fault_mask,CELSUB40948,clock_power,dft_p1_skew,dft_p2_skew,fall_skew_0,fall_skew_1,fall_skew_2,fall_skew_3,fall_skew_4,rise_skew_0,rise_skew_1,rise_skew_2,rise_skew_3,rise_skew_4,fault_time_0,fault_time_1,dft_clk_power,ok_chargepump,dft_fault_time,enable_delayed,softstart_done,clock_chargepump,fault_chargepump,chargepump_freq_0,chargepump_freq_1,enable_chargepump);

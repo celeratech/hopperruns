@@ -162,13 +162,13 @@ resistordivider_f81b68a5 Xrdivider1 (
 .global_resistordivider(global_resistordivider_a1771f0f_Xrdivider1)
 );
 
-DFTtm8t dft_hex0x69 (
+DFTtm8t dft_hex0x71 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x69_ten_7,noconn_dft_hex0x69_ten_6,noconn_dft_hex0x69_ten_5,noconn_dft_hex0x69_ten_4,noconn_dft_hex0x69_ten_3,noconn_dft_hex0x69_ten_2,global_resistordivider_a1771f0f_Xrdivider1,global_comparator_a57f6755_Xcomparator1}),
-.tma({a0,a1,a1,a0,a1,a0,a0,a1}),
+.ten({noconn_dft_hex0x71_ten_7,noconn_dft_hex0x71_ten_6,noconn_dft_hex0x71_ten_5,noconn_dft_hex0x71_ten_4,noconn_dft_hex0x71_ten_3,noconn_dft_hex0x71_ten_2,global_resistordivider_a1771f0f_Xrdivider1,global_comparator_a57f6755_Xcomparator1}),
+.tma({a0,a1,a1,a1,a0,a0,a0,a1}),
 .tmi(tmi[4:0])
 );
 
@@ -186,28 +186,28 @@ comparatornoctlpins_95d95f15 Xcomparator1 (
 .global_comparator(global_comparator_a57f6755_Xcomparator1)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x69_ten_2 (
-.noconn(noconn_dft_hex0x69_ten_2)
+STONEnoconn XNCnoconn_dft_hex0x71_ten_2 (
+.noconn(noconn_dft_hex0x71_ten_2)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x69_ten_3 (
-.noconn(noconn_dft_hex0x69_ten_3)
+STONEnoconn XNCnoconn_dft_hex0x71_ten_3 (
+.noconn(noconn_dft_hex0x71_ten_3)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x69_ten_4 (
-.noconn(noconn_dft_hex0x69_ten_4)
+STONEnoconn XNCnoconn_dft_hex0x71_ten_4 (
+.noconn(noconn_dft_hex0x71_ten_4)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x69_ten_5 (
-.noconn(noconn_dft_hex0x69_ten_5)
+STONEnoconn XNCnoconn_dft_hex0x71_ten_5 (
+.noconn(noconn_dft_hex0x71_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x69_ten_6 (
-.noconn(noconn_dft_hex0x69_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x71_ten_6 (
+.noconn(noconn_dft_hex0x71_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x69_ten_7 (
-.noconn(noconn_dft_hex0x69_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x71_ten_7 (
+.noconn(noconn_dft_hex0x71_ten_7)
 );
 
 endmodule

@@ -120,7 +120,7 @@ DFThijack XU9 (
 .ten_hijacki(ten_hijacki_3025150e_XU9)
 );
 
-DFTtm8 dft_hex0x21 (
+DFTtm8 dft_hex0x2A (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
@@ -130,7 +130,7 @@ DFTtm8 dft_hex0x21 (
 .tdi({a0,a0,a0,a0,a0,tdi_c70b6d97_XUCAPACITORGOODstartup,tdi_bac38538_XUCAPACITORGOODdetect,tdi_1880ef92_XUCAPACITORGOODdelay}),
 .tdo(tdo),
 .ten({ten_c70b6d97_XUCAPACITORGOODstartup,ten_3563ee7d_XUCAPACITORGOODreference,ten_bac38538_XUCAPACITORGOODdetect,ten_1880ef92_XUCAPACITORGOODdelay,ten_hijacki_3025150e_XU9,ten_hijack_3025150e_XU9,ten_hijacki_90b8a8dc_XU8,ten_hijack_90b8a8dc_XU8}),
-.tma({a0,a0,a1,a0,a0,a0,a0,a1}),
+.tma({a0,a0,a1,a0,a1,a0,a1,a0}),
 .tmi(tmi[4:0])
 );
 

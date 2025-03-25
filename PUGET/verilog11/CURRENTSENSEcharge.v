@@ -4,16 +4,17 @@ module CURRENTSENSECHARGEconfiguration (tmi,CELG59462,CELV96848,CELSUB40948,CURR
   input  CELG59462;
   input  CELV96848;
   input  CELSUB40948;
-  output  CURRENTmeasureDELAY_0;
-  output  CURRENTmeasureDELAY_1;
+  input  CURRENTmeasureDELAY_0;
+  input  CURRENTmeasureDELAY_1;
 endmodule
 
-module CURRENTSENSEchargeDEBUG (TAO,tdo,tmi,dft_ok,ICHARGE,CELG59462,CELV96848,CELSUB40948,dft_startup,measure_icharge,ICHARGE_TELEMETRY,dft_measure_delay,enable_currentsense,hijack_measure_icharge,hijack_enable_currentsense);
+module CURRENTSENSEchargeDEBUG (TAO,tdo,tmi,dft_ok,ICHARGE,GMCHARGE,CELG59462,CELV96848,CELSUB40948,dft_startup,measure_icharge,ICHARGE_TELEMETRY,dft_measure_delay,enable_currentsense,hijack_measure_icharge,hijack_enable_currentsense);
   inout  TAO;
   inout  tdo;
   input [4:0] tmi;
   input  dft_ok;
   input  ICHARGE;
+  input  GMCHARGE;
   input  CELG59462;
   input  CELV96848;
   input  CELSUB40948;
@@ -26,7 +27,7 @@ module CURRENTSENSEchargeDEBUG (TAO,tdo,tmi,dft_ok,ICHARGE,CELG59462,CELV96848,C
   output  hijack_enable_currentsense;
 endmodule
 
-module CURRENTSENSEchargeMAIN (tmi,ICAP,VCAP,SIMPV,VCAPP5,dft_ok,ICHARGE,CELG59462,CELV96848,PORB97836,ok_icharge,CELSUB40948,IP_5edb1fba,IP_710ca24c,dft_startup,mode_stepdown,measure_icharge,ok_currentsense,ICHARGE_TELEMETRY,dft_measure_delay,clock_currentsense,enable_currentsense,CURRENTmeasureDELAY_0,CURRENTmeasureDELAY_1,kelvin_GNDcurrentsense,IP_CURRENTSENSEchargeMAIN1);
+module CURRENTSENSEchargeMAIN (tmi,ICAP,VCAP,SIMPV,VCAPP5,dft_ok,ICHARGE,GMCHARGE,CELG59462,CELV96848,PORB97836,ok_icharge,CELSUB40948,IP_5edb1fba,IP_710ca24c,IP_d9771bce,dft_startup,mode_stepdown,measure_icharge,ok_currentsense,ICHARGE_TELEMETRY,dft_measure_delay,clock_currentsense,enable_currentsense,CURRENTmeasureDELAY_0,CURRENTmeasureDELAY_1,kelvin_GNDcurrentsense,IP_CURRENTSENSEchargeMAIN1);
   inout [4:0] tmi;
   input  ICAP;
   input  VCAP;
@@ -34,6 +35,7 @@ module CURRENTSENSEchargeMAIN (tmi,ICAP,VCAP,SIMPV,VCAPP5,dft_ok,ICHARGE,CELG594
   input  VCAPP5;
   output  dft_ok;
   inout  ICHARGE;
+  output  GMCHARGE;
   input  CELG59462;
   input  CELV96848;
   input  PORB97836;
@@ -41,6 +43,7 @@ module CURRENTSENSEchargeMAIN (tmi,ICAP,VCAP,SIMPV,VCAPP5,dft_ok,ICHARGE,CELG594
   input  CELSUB40948;
   input  IP_5edb1fba;
   input  IP_710ca24c;
+  input  IP_d9771bce;
   output  dft_startup;
   input  mode_stepdown;
   input  measure_icharge;
@@ -56,7 +59,7 @@ module CURRENTSENSEchargeMAIN (tmi,ICAP,VCAP,SIMPV,VCAPP5,dft_ok,ICHARGE,CELG594
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module CURRENTSENSEcharge (TAO, tdo, tmi, ICAP, VCAP, SIMPV, VCAPP5, ICHARGE, CELG59462, CELV96848, PORB97836, ok_icharge, CELSUB40948, IP_5edb1fba, IP_710ca24c, mode_stepdown, measure_icharge, ok_currentsense, ICHARGE_TELEMETRY, clock_currentsense, enable_currentsense, kelvin_GNDcurrentsense, IP_CURRENTSENSEchargeMAIN1);
+module CURRENTSENSEcharge (TAO, tdo, tmi, ICAP, VCAP, SIMPV, VCAPP5, ICHARGE, GMCHARGE, CELG59462, CELV96848, PORB97836, ok_icharge, CELSUB40948, IP_5edb1fba, IP_710ca24c, IP_d9771bce, mode_stepdown, measure_icharge, ok_currentsense, ICHARGE_TELEMETRY, clock_currentsense, enable_currentsense, kelvin_GNDcurrentsense, IP_CURRENTSENSEchargeMAIN1);
 inout  TAO;
 inout  tdo;
 inout [4:0] tmi;
@@ -65,6 +68,7 @@ input  VCAP;
 input  SIMPV;
 input  VCAPP5;
 inout  ICHARGE;
+output  GMCHARGE;
 input  CELG59462;
 input  CELV96848;
 input  PORB97836;
@@ -72,6 +76,7 @@ output  ok_icharge;
 input  CELSUB40948;
 input  IP_5edb1fba;
 input  IP_710ca24c;
+input  IP_d9771bce;
 input  mode_stepdown;
 input  measure_icharge;
 output  ok_currentsense;
@@ -91,26 +96,27 @@ CURRENTSENSECHARGEconfiguration XCONFIGURATION (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948),
-.CURRENTmeasureDELAY_0(net_53),
-.CURRENTmeasureDELAY_1(net_54)
+.CURRENTmeasureDELAY_0(net_57),
+.CURRENTmeasureDELAY_1(net_58)
 );
 
 CURRENTSENSEchargeDEBUG XDEBUG (
 .TAO(TAO),
 .tdo(tdo),
 .tmi(tmi[4:0]),
-.dft_ok(net_71),
+.dft_ok(net_76),
 .ICHARGE(ICHARGE),
+.GMCHARGE(GMCHARGE),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948),
-.dft_startup(net_69),
+.dft_startup(net_75),
 .measure_icharge(measure_icharge),
 .ICHARGE_TELEMETRY(ICHARGE_TELEMETRY),
-.dft_measure_delay(net_72),
+.dft_measure_delay(net_77),
 .enable_currentsense(enable_currentsense),
-.hijack_measure_icharge(net_70),
-.hijack_enable_currentsense(net_68)
+.hijack_measure_icharge(net_74),
+.hijack_enable_currentsense(net_73)
 );
 
 CURRENTSENSEchargeMAIN XMAIN (
@@ -119,8 +125,9 @@ CURRENTSENSEchargeMAIN XMAIN (
 .VCAP(VCAP),
 .SIMPV(SIMPV),
 .VCAPP5(VCAPP5),
-.dft_ok(net_71),
+.dft_ok(net_76),
 .ICHARGE(ICHARGE),
+.GMCHARGE(GMCHARGE),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
@@ -128,16 +135,17 @@ CURRENTSENSEchargeMAIN XMAIN (
 .CELSUB40948(CELSUB40948),
 .IP_5edb1fba(IP_5edb1fba),
 .IP_710ca24c(IP_710ca24c),
-.dft_startup(net_69),
+.IP_d9771bce(IP_d9771bce),
+.dft_startup(net_75),
 .mode_stepdown(mode_stepdown),
-.measure_icharge(net_70),
+.measure_icharge(net_74),
 .ok_currentsense(ok_currentsense),
 .ICHARGE_TELEMETRY(ICHARGE_TELEMETRY),
-.dft_measure_delay(net_72),
+.dft_measure_delay(net_77),
 .clock_currentsense(clock_currentsense),
-.enable_currentsense(net_68),
-.CURRENTmeasureDELAY_0(net_53),
-.CURRENTmeasureDELAY_1(net_54),
+.enable_currentsense(net_73),
+.CURRENTmeasureDELAY_0(net_57),
+.CURRENTmeasureDELAY_1(net_58),
 .kelvin_GNDcurrentsense(kelvin_GNDcurrentsense),
 .IP_CURRENTSENSEchargeMAIN1(IP_CURRENTSENSEchargeMAIN1)
 );

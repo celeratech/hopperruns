@@ -38,7 +38,7 @@ module CAPmeasureMAIN (tmi,CAP2,CAP3,CAP4,SIMPV,CELG59462,CELV96848,PORB97836,CE
   input  CAPmeasure_0;
   input  CAPmeasure_1;
   input  clock_measure;
-  inout  kelvin_CAPRTN;
+  input  kelvin_CAPRTN;
   inout  kelvin_GNDcap;
   output  CAPmeasureDIFF;
   output  ready_capmeasure;
@@ -70,7 +70,7 @@ inout  kelvin_CAP4;
 input  CAPmeasure_0;
 input  CAPmeasure_1;
 input  clock_measure;
-inout  kelvin_CAPRTN;
+input  kelvin_CAPRTN;
 inout  kelvin_GNDcap;
 output  CAPmeasureDIFF;
 output  ready_capmeasure;

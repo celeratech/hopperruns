@@ -151,10 +151,10 @@ ESRtestSEQUENCER_Rev2_DYES_0 XMAIN (
 .done_esrtest(done_esrtest),
 .enable_relax(enable_relax),
 .mon_esr_done(mon_esr_done),
-.STATEcontrol0(net_90),
-.STATEcontrol1(net_91),
-.STATEcontrol2(net_92),
-.STATEcontrol3(net_93),
+.STATEcontrol0(ESRtestSEQUENCER_Rev2_statecontrol_02a05032_0),
+.STATEcontrol1(ESRtestSEQUENCER_Rev2_statecontrol_02a05032_1),
+.STATEcontrol2(ESRtestSEQUENCER_Rev2_statecontrol_02a05032_2),
+.STATEcontrol3(ESRtestSEQUENCER_Rev2_statecontrol_02a05032_3),
 .clock_esrtest(clock_esrtest),
 .done_esrcount(done_esrcount),
 .start_esrtest(start_esrtest),
@@ -315,7 +315,7 @@ dftprobeModel0_e1d1778d XU72 (
 .CELSUB(CELSUB40948)
 );
 
-DFTtm8d dft_hex0x0E (
+DFTtm8d dft_hex0x0D (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
@@ -323,11 +323,11 @@ DFTtm8d dft_hex0x0E (
 .tdi({tdi_c9dd7020_XU64,tdi_5f2651d2_XU63,tdi_d214bf91_XU62,tdi_7f5418af_XU61,tdi_746e8bb4_XU60,tdi_d2529fea_XU59,tdi_988a3f1b_XU58,tdi_efcff673_XU57}),
 .tdo(tdo),
 .ten({ten_c9dd7020_XU64,ten_5f2651d2_XU63,ten_d214bf91_XU62,ten_7f5418af_XU61,ten_746e8bb4_XU60,ten_d2529fea_XU59,ten_988a3f1b_XU58,ten_efcff673_XU57}),
-.tma({a0,a0,a0,a0,a1,a1,a1,a0}),
+.tma({a0,a0,a0,a0,a1,a1,a0,a1}),
 .tmi(tmi[4:0])
 );
 
-DFTtm8d dft_hex0x0F (
+DFTtm8d dft_hex0x0E (
 .G(CELG59462),
 .V(CELV96848),
 .a({b1,b0}),
@@ -335,7 +335,7 @@ DFTtm8d dft_hex0x0F (
 .tdi({tdi_a464f241_XU72,tdi_765c3875_XU71,tdi_fa1cd363_XU70,tdi_a1d5cfda_XU69,tdi_6e2273fe_XU68,tdi_84ee6ffe_XU67,tdi_562ff28a_XU66,tdi_c54228e7_XU65}),
 .tdo(tdo),
 .ten({ten_a464f241_XU72,ten_765c3875_XU71,ten_fa1cd363_XU70,ten_a1d5cfda_XU69,ten_6e2273fe_XU68,ten_84ee6ffe_XU67,ten_562ff28a_XU66,ten_c54228e7_XU65}),
-.tma({b0,b0,b0,b0,b1,b1,b1,b1}),
+.tma({b0,b0,b0,b0,b1,b1,b1,b0}),
 .tmi(tmi[4:0])
 );
 
@@ -347,7 +347,7 @@ drm8 drm_hex0x03 (
 .id({d0,d0,d0,d0,d0,d0,d1,d1}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,net_93,net_92,net_91,net_90}),
+.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,ESRtestSEQUENCER_Rev2_statecontrol_02a05032_3,ESRtestSEQUENCER_Rev2_statecontrol_02a05032_2,ESRtestSEQUENCER_Rev2_statecontrol_02a05032_1,ESRtestSEQUENCER_Rev2_statecontrol_02a05032_0}),
 .por0({d0,d0,d0,d0,d0,d0,d0,d0}),
 .bypload(d0),
 .lastdrm(d0)

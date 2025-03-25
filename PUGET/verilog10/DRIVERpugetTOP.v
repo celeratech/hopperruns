@@ -28,13 +28,13 @@ endmodule
 
 
 
-//Celera:fetdriver_59c08333
+//Celera:fetdriver_d57288e0
 //Celera Confidential Symbol Generator
-//FET DRIVER 'n' Type 2 Ron 0.600 Roff 
+//FET DRIVER 'n' Type 1 Ron 0.500 Roff 
 //Input 40V Levelshifter
 //Gate Sense 40V Sense Levelshifterwith 5nsdelay
 //DFT no
-module fetdriver_59c08333 (HVPOS,global_fetdriver,fetin,GATE,gate_status,
+module fetdriver_d57288e0 (HVPOS,global_fetdriver,fetin,GATE,gate_status,
 gate_status_vin,
 CELV,
 CELG,
@@ -94,8 +94,8 @@ wire [7:0] ten;
 wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
-STONEnoconn XNC37 (
-.noconn(net_37)
+STONEnoconn XNC38 (
+.noconn(net_38)
 );
 
 cboot_3c1e9431 Xcboot1 (
@@ -111,7 +111,7 @@ cboot_3c1e9431 Xcboot1 (
 .global_cboot(global_cboot_0e272f36_Xcboot1)
 );
 
-fetdriver_59c08333 Xfetdriver1 (
+fetdriver_d57288e0 Xfetdriver1 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .GATE(TGATE),
@@ -119,44 +119,44 @@ fetdriver_59c08333 Xfetdriver1 (
 .HVPOS(BST),
 .fetin(on_top),
 .CELSUB(CELSUB40948),
-.gate_status(net_37),
+.gate_status(net_38),
 .gate_status_vin(top_status),
 .enable_fetdriver(enable_driver),
 .global_fetdriver(global_fetdriver_0153d603_Xfetdriver1)
 );
 
-DFTtm8t dft_hex0x2C (
+DFTtm8t dft_hex0x35 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x2C_ten_7,noconn_dft_hex0x2C_ten_6,noconn_dft_hex0x2C_ten_5,noconn_dft_hex0x2C_ten_4,noconn_dft_hex0x2C_ten_3,noconn_dft_hex0x2C_ten_2,global_fetdriver_0153d603_Xfetdriver1,global_cboot_0e272f36_Xcboot1}),
-.tma({a0,a0,a1,a0,a1,a1,a0,a0}),
+.ten({noconn_dft_hex0x35_ten_7,noconn_dft_hex0x35_ten_6,noconn_dft_hex0x35_ten_5,noconn_dft_hex0x35_ten_4,noconn_dft_hex0x35_ten_3,noconn_dft_hex0x35_ten_2,global_fetdriver_0153d603_Xfetdriver1,global_cboot_0e272f36_Xcboot1}),
+.tma({a0,a0,a1,a1,a0,a1,a0,a1}),
 .tmi(tmi[4:0])
 );
 
-STONEnoconn XNCnoconn_dft_hex0x2C_ten_2 (
-.noconn(noconn_dft_hex0x2C_ten_2)
+STONEnoconn XNCnoconn_dft_hex0x35_ten_2 (
+.noconn(noconn_dft_hex0x35_ten_2)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x2C_ten_3 (
-.noconn(noconn_dft_hex0x2C_ten_3)
+STONEnoconn XNCnoconn_dft_hex0x35_ten_3 (
+.noconn(noconn_dft_hex0x35_ten_3)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x2C_ten_4 (
-.noconn(noconn_dft_hex0x2C_ten_4)
+STONEnoconn XNCnoconn_dft_hex0x35_ten_4 (
+.noconn(noconn_dft_hex0x35_ten_4)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x2C_ten_5 (
-.noconn(noconn_dft_hex0x2C_ten_5)
+STONEnoconn XNCnoconn_dft_hex0x35_ten_5 (
+.noconn(noconn_dft_hex0x35_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x2C_ten_6 (
-.noconn(noconn_dft_hex0x2C_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x35_ten_6 (
+.noconn(noconn_dft_hex0x35_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x2C_ten_7 (
-.noconn(noconn_dft_hex0x2C_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x35_ten_7 (
+.noconn(noconn_dft_hex0x35_ten_7)
 );
 
 endmodule

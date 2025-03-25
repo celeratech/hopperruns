@@ -127,7 +127,7 @@ DFThijack Xdfthijack2 (
 .ten_hijacki(ten_hijacki_f9f8ad0b_Xdfthijack2)
 );
 
-DFTtm8 dft_hex0x2D (
+DFTtm8 dft_hex0x36 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
@@ -137,17 +137,17 @@ DFTtm8 dft_hex0x2D (
 .tdi({a0,a0,a0,a0,a0,tdi_074a791a_XUCURRENTSENSEin_startup,tdi_bde70cab_XUCURRENTSENSEin_ok,tdi_e6eec823_XUCURRENTSENSEin_measure_delay}),
 .tdo(tdo),
 .ten({ten_hijack_f9f8ad0b_Xdfthijack2,ten_hijacki_fe0891ee_Xdfthijack1,ten_hijack_fe0891ee_Xdfthijack1,ten_ff9090b7_XUCURRENTSENSEin_telemetry,ten_074a791a_XUCURRENTSENSEin_startup,ten_0ab5e154_XUCURRENTSENSEin_output,ten_bde70cab_XUCURRENTSENSEin_ok,ten_e6eec823_XUCURRENTSENSEin_measure_delay}),
-.tma({a0,a0,a1,a0,a1,a1,a0,a1}),
+.tma({a0,a0,a1,a1,a0,a1,a1,a0}),
 .tmi(tmi[4:0])
 );
 
-DFTtm8t dft_hex0x2E (
+DFTtm8t dft_hex0x37 (
 .G(CELG59462),
 .V(CELV96848),
 .a({b1,b0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x2E_ten_7,noconn_dft_hex0x2E_ten_6,noconn_dft_hex0x2E_ten_5,noconn_dft_hex0x2E_ten_4,noconn_dft_hex0x2E_ten_3,noconn_dft_hex0x2E_ten_2,noconn_dft_hex0x2E_ten_1,ten_hijacki_f9f8ad0b_Xdfthijack2}),
-.tma({b0,b0,b1,b0,b1,b1,b1,b0}),
+.ten({noconn_dft_hex0x37_ten_7,noconn_dft_hex0x37_ten_6,noconn_dft_hex0x37_ten_5,noconn_dft_hex0x37_ten_4,noconn_dft_hex0x37_ten_3,noconn_dft_hex0x37_ten_2,noconn_dft_hex0x37_ten_1,ten_hijacki_f9f8ad0b_Xdfthijack2}),
+.tma({b0,b0,b1,b1,b0,b1,b1,b1}),
 .tmi(tmi[4:0])
 );
 
@@ -187,32 +187,32 @@ dftprobeModel2_2dcf28df XUCURRENTSENSEin_telemetry (
 .CELSUB(CELSUB40948)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x2E_ten_1 (
-.noconn(noconn_dft_hex0x2E_ten_1)
+STONEnoconn XNCnoconn_dft_hex0x37_ten_1 (
+.noconn(noconn_dft_hex0x37_ten_1)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x2E_ten_2 (
-.noconn(noconn_dft_hex0x2E_ten_2)
+STONEnoconn XNCnoconn_dft_hex0x37_ten_2 (
+.noconn(noconn_dft_hex0x37_ten_2)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x2E_ten_3 (
-.noconn(noconn_dft_hex0x2E_ten_3)
+STONEnoconn XNCnoconn_dft_hex0x37_ten_3 (
+.noconn(noconn_dft_hex0x37_ten_3)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x2E_ten_4 (
-.noconn(noconn_dft_hex0x2E_ten_4)
+STONEnoconn XNCnoconn_dft_hex0x37_ten_4 (
+.noconn(noconn_dft_hex0x37_ten_4)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x2E_ten_5 (
-.noconn(noconn_dft_hex0x2E_ten_5)
+STONEnoconn XNCnoconn_dft_hex0x37_ten_5 (
+.noconn(noconn_dft_hex0x37_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x2E_ten_6 (
-.noconn(noconn_dft_hex0x2E_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x37_ten_6 (
+.noconn(noconn_dft_hex0x37_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x2E_ten_7 (
-.noconn(noconn_dft_hex0x2E_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x37_ten_7 (
+.noconn(noconn_dft_hex0x37_ten_7)
 );
 
 dftprobeModel0_80e43a5a XUCURRENTSENSEin_measure_delay (

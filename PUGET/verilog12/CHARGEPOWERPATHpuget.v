@@ -4,7 +4,7 @@ module POWERPATHCHARGEconfiguration (tmi,CELG59462,CELV96848,CELSUB40948,charge_
   input  CELG59462;
   input  CELV96848;
   input  CELSUB40948;
-  output  charge_startuptime;
+  input  charge_startuptime;
 endmodule
 
 module CHARGEPOWERPATHpugetDEBUG (tdo,tmi,CELG59462,CELV96848,CELSUB40948,ok_chargefet,on_chargefet,ok_powerpathcharge,enable_powerpathcharge,hijack_enable_powerpathcharge);

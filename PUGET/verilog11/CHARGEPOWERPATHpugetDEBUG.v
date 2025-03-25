@@ -101,15 +101,15 @@ DFThijack Xdfthijack1 (
 .ten_hijacki(ten_hijacki_22604764_Xdfthijack1)
 );
 
-DFTtm8d dft_hex0x19 (
+DFTtm8d dft_hex0x22 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
 .tdi({a0,a0,a0,a0,tdi_7ba55261_XUCHARGEPOWERPATHstartup,tdi_1f8a778e_XUCHARGEPOWERPATHon_chargefet,tdi_bbb85744_XUCHARGEPOWERPATHok_chargefet,tdi_faf261dd_XUCHARGEPOWERPATHok}),
 .tdo(tdo),
-.ten({noconn_dft_hex0x19_ten_7,noconn_dft_hex0x19_ten_6,ten_hijacki_22604764_Xdfthijack1,ten_hijack_22604764_Xdfthijack1,ten_7ba55261_XUCHARGEPOWERPATHstartup,ten_1f8a778e_XUCHARGEPOWERPATHon_chargefet,ten_bbb85744_XUCHARGEPOWERPATHok_chargefet,ten_faf261dd_XUCHARGEPOWERPATHok}),
-.tma({a0,a0,a0,a1,a1,a0,a0,a1}),
+.ten({noconn_dft_hex0x22_ten_7,noconn_dft_hex0x22_ten_6,ten_hijacki_22604764_Xdfthijack1,ten_hijack_22604764_Xdfthijack1,ten_7ba55261_XUCHARGEPOWERPATHstartup,ten_1f8a778e_XUCHARGEPOWERPATHon_chargefet,ten_bbb85744_XUCHARGEPOWERPATHok_chargefet,ten_faf261dd_XUCHARGEPOWERPATHok}),
+.tma({a0,a0,a1,a0,a0,a0,a1,a0}),
 .tmi(tmi[4:0])
 );
 
@@ -131,12 +131,12 @@ dftprobeModel0_80e43a5a XUCHARGEPOWERPATHstartup (
 .CELSUB(CELSUB40948)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x19_ten_6 (
-.noconn(noconn_dft_hex0x19_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x22_ten_6 (
+.noconn(noconn_dft_hex0x22_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x19_ten_7 (
-.noconn(noconn_dft_hex0x19_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x22_ten_7 (
+.noconn(noconn_dft_hex0x22_ten_7)
 );
 
 dftprobeModel0_80e43a5a XUCHARGEPOWERPATHok_chargefet (

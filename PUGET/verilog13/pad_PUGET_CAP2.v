@@ -8,13 +8,13 @@ module STONEpad1 ( PAD );
 endmodule
 
 
-//Verilog HDL for "Esd", "ESDdiode" "functional"
+//Verilog HDL for "Esd", "ESDdiodeB2B" "functional"
 
 
-module ESDdiode ( N, P );
+module ESDdiodeB2B ( G1, G2 );
 
-  input P;
-  input N;
+  input G1;
+  input G2;
 endmodule
 
 
@@ -43,14 +43,9 @@ STONEpad1 XPAD1 (
 .PAD(CAP2)
 );
 
-ESDdiode Xesd1_XPAD1 (
-.N(CAP3),
-.P(CAP2)
-);
-
-ESDdiode Xesd2_XPAD1 (
-.N(CAP2),
-.P(CAP1)
+ESDdiodeB2B Xesdb2b_XPAD1 (
+.G1(CAP2),
+.G2(CAP3)
 );
 
 PEBBLElinkKELVIN Xwrap_PAD1_SENSE_SINGLE (

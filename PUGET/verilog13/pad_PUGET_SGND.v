@@ -49,7 +49,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_PUGET_SGND (GESD, GOTP, PGND, SGND, CELG59462, GNDcapesr, GNDcharger, GNDservice, CELSUB40948, PGNDcharger, GNDpowergood, GNDtelemetry, kelvin_GNDgpi, GNDpowerpathin, PGNDchargepump, SENSE_G_05e8d170, SENSE_G_48968f26, kelvin_GNDcapesr, kelvin_GNDservice, kelvin_GNDcapdecode, kelvin_GNDpowergood, kelvin_GNDtelemetry, kelvin_GNDchargepunp, kelvin_GNDregulation, celkelvin_SGND_2b3a9b82, celkelvin_SGND_8a994242, celkelvin_SGND_d3b67ad0, celkelvin_SGND_e7548a33, celkelvin_SGND_fb33d1d2, kelvin_GNDcapacitorgood, kelvin_GNDcurrentsensein, kelvin_GNDcurrentsensecharge);
+module pad_PUGET_SGND (GESD, GOTP, PGND, SGND, CELG59462, GNDcapesr, GNDcharger, GNDservice, CELSUB40948, PGNDcharger, GNDpowergood, GNDtelemetry, kelvin_GNDgpi, GNDpowerpathin, PGNDchargepump, SENSE_G_05e8d170, SENSE_G_48968f26, kelvin_GNDcapesr, kelvin_GNDservice, kelvin_GNDcapdecode, kelvin_GNDpowergood, kelvin_GNDtelemetry, kelvin_GNDchargepunp, kelvin_GNDregulation, celkelvin_SGND_2b3a9b82, celkelvin_SGND_8a994242, celkelvin_SGND_caab0eec, celkelvin_SGND_d3b67ad0, celkelvin_SGND_e7548a33, celkelvin_SGND_fb33d1d2, kelvin_GNDcapacitorgood, kelvin_GNDcurrentsensein, kelvin_GNDcurrentsensecharge);
 output  GESD;
 output  GOTP;
 inout  PGND;
@@ -76,6 +76,7 @@ inout  kelvin_GNDchargepunp;
 inout  kelvin_GNDregulation;
 output  celkelvin_SGND_2b3a9b82;
 output  celkelvin_SGND_8a994242;
+output  celkelvin_SGND_caab0eec;
 output  celkelvin_SGND_d3b67ad0;
 output  celkelvin_SGND_e7548a33;
 output  celkelvin_SGND_fb33d1d2;
@@ -156,27 +157,27 @@ PEBBLElinkSTAR Xwrap_PAD2_STAR1 (
 );
 
 PEBBLElinkKELVIN Xwrap_PAD1_SENSE0 (
-.NEG(kelvin_GNDpowergood),
+.NEG(kelvin_GNDregulation),
 .POS(SGND)
 );
 
 PEBBLElinkKELVIN Xwrap_PAD1_SENSE1 (
-.NEG(kelvin_GNDcapdecode),
+.NEG(kelvin_GNDservice),
 .POS(SGND)
 );
 
 PEBBLElinkKELVIN Xwrap_PAD1_SENSE2 (
-.NEG(kelvin_GNDcapacitorgood),
+.NEG(kelvin_GNDcapesr),
 .POS(SGND)
 );
 
 PEBBLElinkKELVIN Xwrap_PAD1_SENSE3 (
-.NEG(kelvin_GNDcurrentsensein),
+.NEG(kelvin_GNDcurrentsensecharge),
 .POS(SGND)
 );
 
 PEBBLElinkKELVIN Xwrap_PAD1_SENSE4 (
-.NEG(kelvin_GNDtelemetry),
+.NEG(kelvin_GNDchargepunp),
 .POS(SGND)
 );
 
@@ -186,27 +187,27 @@ PEBBLElinkKELVIN Xwrap_PAD1_SENSE5 (
 );
 
 PEBBLElinkKELVIN Xwrap_PAD1_SENSE6 (
-.NEG(kelvin_GNDchargepunp),
+.NEG(kelvin_GNDtelemetry),
 .POS(SGND)
 );
 
 PEBBLElinkKELVIN Xwrap_PAD1_SENSE7 (
-.NEG(kelvin_GNDcurrentsensecharge),
+.NEG(kelvin_GNDcurrentsensein),
 .POS(SGND)
 );
 
 PEBBLElinkKELVIN Xwrap_PAD1_SENSE8 (
-.NEG(kelvin_GNDcapesr),
+.NEG(kelvin_GNDcapacitorgood),
 .POS(SGND)
 );
 
 PEBBLElinkKELVIN Xwrap_PAD1_SENSE9 (
-.NEG(kelvin_GNDservice),
+.NEG(kelvin_GNDcapdecode),
 .POS(SGND)
 );
 
 PEBBLElinkKELVIN Xwrap_PAD1_SENSE10 (
-.NEG(kelvin_GNDregulation),
+.NEG(kelvin_GNDpowergood),
 .POS(SGND)
 );
 
@@ -228,6 +229,11 @@ WRAPPER1 XWRAP_celkelvin_SGND_2b3a9b82 (
 WRAPPER1 XWRAP_celkelvin_SGND_8a994242 (
 .i(SGND),
 .o(celkelvin_SGND_8a994242)
+);
+
+WRAPPER1 XWRAP_celkelvin_SGND_caab0eec (
+.i(SGND),
+.o(celkelvin_SGND_caab0eec)
 );
 
 WRAPPER1 XWRAP_celkelvin_SGND_d3b67ad0 (

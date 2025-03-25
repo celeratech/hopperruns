@@ -57,11 +57,11 @@ input  CELG59462;
 input  CELV96848;
 input  CELSUB40948;
 output  reset_puget;
-output  select_voutm5;
-output  BBMconfiguration_0;
-output  BBMconfiguration_1;
-output  select_powerpathin;
-output  select_powerpathcharge;
+  input  select_voutm5;
+  input  BBMconfiguration_0;
+  input  BBMconfiguration_1;
+  input  select_powerpathin;
+  input  select_powerpathcharge;
 input  register_sequencer_reset_0;
 
 
@@ -80,15 +80,15 @@ dbuf_e926e395 XU2 (
 .CELV(CELV96848)
 );
 
-drm8 drm_hex0x22 (
+drm8 drm_hex0x29 (
 .G(CELG59462),
 .V(CELV96848),
 .d0(a0),
 .d1(a1),
-.id({a0,a0,a1,a0,a0,a0,a1,a0}),
+.id({a0,a0,a1,a0,a1,a0,a0,a1}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,BBMconfiguration_1,BBMconfiguration_0,select_voutm5,select_powerpathcharge,select_powerpathin}),
+.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,SEQUENCERbbm_47db2ea5_1,SEQUENCERbbm_47db2ea5_0,SEQUENCERconfiguration_527ea492_2,SEQUENCERconfiguration_527ea492_1,SEQUENCERconfiguration_527ea492_0}),
 .por0({a0,a0,a0,a0,a0,a1,a1,a1}),
 .bypload(a0),
 .lastdrm(a0)

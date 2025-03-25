@@ -10,9 +10,8 @@ module pad_PUGET_BGATE (GESD,BGATE,DRVCC);
   inout  DRVCC;
 endmodule
 
-module pad_PUGET_BST (BST,GESD,VOUTSN);
+module pad_PUGET_BST (BST,VOUTSN);
   inout  BST;
-  input  GESD;
   inout  VOUTSN;
 endmodule
 
@@ -73,15 +72,21 @@ module pad_PUGET_CAPSLCT1 (GESD,VCC2P5,CAPSLCT1);
   inout  CAPSLCT1;
 endmodule
 
-module pad_PUGET_CFN (CFN,GESD);
+module pad_PUGET_CFN (CFN,GESD,PGND,VCAP,CELSUB40948);
   inout  CFN;
   input  GESD;
+  inout  PGND;
+  inout  VCAP;
+  input  CELSUB40948;
 endmodule
 
-module pad_PUGET_CFP (CFP,GESD,kelvin_CFP);
+module pad_PUGET_CFP (CFN,CFP,GESD,INTVCC,kelvin_CFP,CELSUB40948);
+  inout  CFN;
   inout  CFP;
   input  GESD;
+  inout  INTVCC;
   inout  kelvin_CFP;
+  input  CELSUB40948;
 endmodule
 
 module pad_PUGET_DRVCC (GESD,DRVCC,INTVCC,kelvin_DRVCC);
@@ -101,20 +106,18 @@ module pad_PUGET_ICAP (ICAP,VCAP);
   inout  VCAP;
 endmodule
 
-module pad_PUGET_IN (IN,GESD,kelvin_IN,CELSUB40948,INpowerpath,INcapmanager,celkelvin_IN_04cc16be,celkelvin_INpowerpath_e7548a33);
+module pad_PUGET_IN (IN,GESD,kelvin_IN,CELSUB40948,INpowerpath,INcapmanager,celkelvin_INpowerpath_e7548a33);
   inout  IN;
   input  GESD;
   inout  kelvin_IN;
   input  CELSUB40948;
   inout  INpowerpath;
   inout  INcapmanager;
-  output  celkelvin_IN_04cc16be;
   output  celkelvin_INpowerpath_e7548a33;
 endmodule
 
-module pad_PUGET_INFET (IN,GESD,INFET);
+module pad_PUGET_INFET (IN,INFET);
   inout  IN;
-  input  GESD;
   inout  INFET;
 endmodule
 
@@ -159,11 +162,12 @@ module pad_PUGET_PFO (PFO,GESD);
   input  GESD;
 endmodule
 
-module pad_PUGET_RT (RT,GESD,INTVCC,sense_RT);
+module pad_PUGET_RT (RT,GESD,INTVCC,sense_RT,CELSENSE_RF);
   inout  RT;
   input  GESD;
   inout  INTVCC;
   inout  sense_RT;
+  output  CELSENSE_RF;
 endmodule
 
 module pad_PUGET_SCL (SCL,GESD);
@@ -176,7 +180,7 @@ module pad_PUGET_SDA (SDA,GESD);
   input  GESD;
 endmodule
 
-module pad_PUGET_SGND (GESD,GOTP,PGND,SGND,CELG59462,GNDcapesr,GNDcharger,GNDservice,CELSUB40948,PGNDcharger,GNDpowergood,GNDtelemetry,kelvin_GNDgpi,GNDpowerpathin,PGNDchargepump,SENSE_G_05e8d170,SENSE_G_48968f26,kelvin_GNDcapesr,kelvin_GNDservice,kelvin_GNDcapdecode,kelvin_GNDpowergood,kelvin_GNDtelemetry,kelvin_GNDchargepunp,kelvin_GNDregulation,celkelvin_SGND_2b3a9b82,celkelvin_SGND_8a994242,celkelvin_SGND_d3b67ad0,celkelvin_SGND_e7548a33,celkelvin_SGND_fb33d1d2,kelvin_GNDcapacitorgood,kelvin_GNDcurrentsensein,kelvin_GNDcurrentsensecharge);
+module pad_PUGET_SGND (GESD,GOTP,PGND,SGND,CELG59462,GNDcapesr,GNDcharger,GNDservice,CELSUB40948,PGNDcharger,GNDpowergood,GNDtelemetry,kelvin_GNDgpi,GNDpowerpathin,PGNDchargepump,SENSE_G_05e8d170,SENSE_G_48968f26,kelvin_GNDcapesr,kelvin_GNDservice,kelvin_GNDcapdecode,kelvin_GNDpowergood,kelvin_GNDtelemetry,kelvin_GNDchargepunp,kelvin_GNDregulation,celkelvin_SGND_2b3a9b82,celkelvin_SGND_8a994242,celkelvin_SGND_caab0eec,celkelvin_SGND_d3b67ad0,celkelvin_SGND_e7548a33,celkelvin_SGND_fb33d1d2,kelvin_GNDcapacitorgood,kelvin_GNDcurrentsensein,kelvin_GNDcurrentsensecharge);
   output  GESD;
   output  GOTP;
   inout  PGND;
@@ -203,6 +207,7 @@ module pad_PUGET_SGND (GESD,GOTP,PGND,SGND,CELG59462,GNDcapesr,GNDcharger,GNDser
   inout  kelvin_GNDregulation;
   output  celkelvin_SGND_2b3a9b82;
   output  celkelvin_SGND_8a994242;
+  output  celkelvin_SGND_caab0eec;
   output  celkelvin_SGND_d3b67ad0;
   output  celkelvin_SGND_e7548a33;
   output  celkelvin_SGND_fb33d1d2;
@@ -237,7 +242,8 @@ module pad_PUGET_VCAP (GESD,VCAP,CELSUB40948,kelvin_VCAP,celkelvin_VCAP_fb33d1d2
   output  celkelvin_VCAP_fb33d1d2;
 endmodule
 
-module pad_PUGET_VCAPP5 (GESD,VCAP,VCAPP5,kelvin_VCAPP5);
+module pad_PUGET_VCAPP5 (CFP,GESD,VCAP,VCAPP5,kelvin_VCAPP5);
+  inout  CFP;
   input  GESD;
   inout  VCAP;
   inout  VCAPP5;
@@ -332,7 +338,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module PUGETceleraRING (IN, RT, SW, VC, BST, CFN, CFP, GPI, PFI, PFO, SCL, SDA, TAO, tdo, tmi, CAP1, CAP2, CAP3, CAP4, GOTP, ICAP, ITST, PGND, SGND, VCAP, VOTP, ALERT, BGATE, CAPFB, CAPGD, DRVCC, INFET, OUTFB, SIMPV, TAEXT, TGATE, CAPRTN, CELINA, INTVCC, OUTFET, VCAPP5, VCC2P5, VOUTM5, VOUTSN, VOUTSP, unlock, CELOUTA, CELOUTD, CAPSLCT0, CAPSLCT1, sense_RT, CELG59462, CELV96848, GNDcapesr, kelvin_IN, GNDcharger, GNDservice, kelvin_CFP, sense_ITST, CELSUB40948, INpowerpath, PGNDcharger, kelvin_CAP1, kelvin_CAP2, kelvin_CAP3, kelvin_CAP4, kelvin_VCAP, GNDpowergood, GNDtelemetry, INcapmanager, dftstatusLSB, dftstatusMSB, kelvin_DRVCC, kelvin_CAPRTN, kelvin_GNDgpi, kelvin_INTVCC, kelvin_VCAPP5, kelvin_VCC2P5, kelvin_VOUTSN, kelvin_VOUTSP, GNDpowerpathin, PGNDchargepump, SENSE_G_05e8d170, SENSE_G_48968f26, kelvin_GNDcapesr, kelvin_GNDservice, kelvin_SIMPVcapesr, kelvin_GNDcapdecode, kelvin_GNDpowergood, kelvin_GNDtelemetry, kelvin_GNDchargepunp, kelvin_GNDregulation, celkelvin_IN_04cc16be, celkelvin_SGND_2b3a9b82, celkelvin_SGND_8a994242, celkelvin_SGND_d3b67ad0, celkelvin_SGND_e7548a33, celkelvin_SGND_fb33d1d2, celkelvin_VCAP_fb33d1d2, kelvin_GNDcapacitorgood, kelvin_GNDcurrentsensein, celkelvin_INTVCC_04cc16be, celkelvin_INTVCC_e8bee33d, kelvin_GNDcurrentsensecharge, celkelvin_INpowerpath_e7548a33);
+module PUGETceleraRING (IN, RT, SW, VC, BST, CFN, CFP, GPI, PFI, PFO, SCL, SDA, TAO, tdo, tmi, CAP1, CAP2, CAP3, CAP4, GOTP, ICAP, ITST, PGND, SGND, VCAP, VOTP, ALERT, BGATE, CAPFB, CAPGD, DRVCC, INFET, OUTFB, SIMPV, TAEXT, TGATE, CAPRTN, CELINA, INTVCC, OUTFET, VCAPP5, VCC2P5, VOUTM5, VOUTSN, VOUTSP, unlock, CELOUTA, CELOUTD, CAPSLCT0, CAPSLCT1, sense_RT, CELG59462, CELV96848, GNDcapesr, kelvin_IN, GNDcharger, GNDservice, kelvin_CFP, sense_ITST, CELSENSE_RF, CELSUB40948, INpowerpath, PGNDcharger, kelvin_CAP1, kelvin_CAP2, kelvin_CAP3, kelvin_CAP4, kelvin_VCAP, GNDpowergood, GNDtelemetry, INcapmanager, dftstatusLSB, dftstatusMSB, kelvin_DRVCC, kelvin_CAPRTN, kelvin_GNDgpi, kelvin_INTVCC, kelvin_VCAPP5, kelvin_VCC2P5, kelvin_VOUTSN, kelvin_VOUTSP, GNDpowerpathin, PGNDchargepump, SENSE_G_05e8d170, SENSE_G_48968f26, kelvin_GNDcapesr, kelvin_GNDservice, kelvin_SIMPVcapesr, kelvin_GNDcapdecode, kelvin_GNDpowergood, kelvin_GNDtelemetry, kelvin_GNDchargepunp, kelvin_GNDregulation, celkelvin_SGND_2b3a9b82, celkelvin_SGND_8a994242, celkelvin_SGND_caab0eec, celkelvin_SGND_d3b67ad0, celkelvin_SGND_e7548a33, celkelvin_SGND_fb33d1d2, celkelvin_VCAP_fb33d1d2, kelvin_GNDcapacitorgood, kelvin_GNDcurrentsensein, celkelvin_INTVCC_04cc16be, celkelvin_INTVCC_e8bee33d, kelvin_GNDcurrentsensecharge, celkelvin_INpowerpath_e7548a33);
 inout  IN;
 inout  RT;
 inout  SW;
@@ -347,7 +353,7 @@ input  SCL;
 inout  SDA;
 inout  TAO;
 inout  tdo;
-inout [5:0] tmi;
+inout [4:0] tmi;
 inout  CAP1;
 inout  CAP2;
 inout  CAP3;
@@ -392,6 +398,7 @@ inout  GNDcharger;
 inout  GNDservice;
 inout  kelvin_CFP;
 inout  sense_ITST;
+output  CELSENSE_RF;
 output  CELSUB40948;
 inout  INpowerpath;
 inout  PGNDcharger;
@@ -425,9 +432,9 @@ inout  kelvin_GNDpowergood;
 inout  kelvin_GNDtelemetry;
 inout  kelvin_GNDchargepunp;
 inout  kelvin_GNDregulation;
-output  celkelvin_IN_04cc16be;
 output  celkelvin_SGND_2b3a9b82;
 output  celkelvin_SGND_8a994242;
+output  celkelvin_SGND_caab0eec;
 output  celkelvin_SGND_d3b67ad0;
 output  celkelvin_SGND_e7548a33;
 output  celkelvin_SGND_fb33d1d2;
@@ -441,7 +448,7 @@ output  celkelvin_INpowerpath_e7548a33;
 
 
 // ------------------------ Wires ------------------------
-wire [5:0] tmi;
+wire [4:0] tmi;
 wire [7:0] dftstatusLSB;
 wire [7:0] dftstatusMSB;
 wire [7:0] revision;
@@ -462,7 +469,6 @@ pad_PUGET_BGATE XBGATE (
 
 pad_PUGET_BST XBST (
 .BST(BST),
-.GESD(GESD),
 .VOUTSN(VOUTSN)
 );
 
@@ -525,13 +531,19 @@ pad_PUGET_CAPSLCT1 XCAPSLCT1 (
 
 pad_PUGET_CFN XCFN (
 .CFN(CFN),
-.GESD(GESD)
+.GESD(GESD),
+.PGND(PGND),
+.VCAP(VCAP),
+.CELSUB40948(CELSUB40948)
 );
 
 pad_PUGET_CFP XCFP (
+.CFN(CFN),
 .CFP(CFP),
 .GESD(GESD),
-.kelvin_CFP(kelvin_CFP)
+.INTVCC(INTVCC),
+.kelvin_CFP(kelvin_CFP),
+.CELSUB40948(CELSUB40948)
 );
 
 pad_PUGET_DRVCC XDRVCC (
@@ -558,13 +570,11 @@ pad_PUGET_IN XIN (
 .CELSUB40948(CELSUB40948),
 .INpowerpath(INpowerpath),
 .INcapmanager(INcapmanager),
-.celkelvin_IN_04cc16be(celkelvin_IN_04cc16be),
 .celkelvin_INpowerpath_e7548a33(celkelvin_INpowerpath_e7548a33)
 );
 
 pad_PUGET_INFET XINFET (
 .IN(IN),
-.GESD(GESD),
 .INFET(INFET)
 );
 
@@ -613,7 +623,8 @@ pad_PUGET_RT XRT (
 .RT(RT),
 .GESD(GESD),
 .INTVCC(INTVCC),
-.sense_RT(sense_RT)
+.sense_RT(sense_RT),
+.CELSENSE_RF(CELSENSE_RF)
 );
 
 pad_PUGET_SCL XSCL (
@@ -653,6 +664,7 @@ pad_PUGET_SGND XSGND (
 .kelvin_GNDregulation(kelvin_GNDregulation),
 .celkelvin_SGND_2b3a9b82(celkelvin_SGND_2b3a9b82),
 .celkelvin_SGND_8a994242(celkelvin_SGND_8a994242),
+.celkelvin_SGND_caab0eec(celkelvin_SGND_caab0eec),
 .celkelvin_SGND_d3b67ad0(celkelvin_SGND_d3b67ad0),
 .celkelvin_SGND_e7548a33(celkelvin_SGND_e7548a33),
 .celkelvin_SGND_fb33d1d2(celkelvin_SGND_fb33d1d2),
@@ -688,6 +700,7 @@ pad_PUGET_VCAP XVCAP (
 );
 
 pad_PUGET_VCAPP5 XVCAPP5 (
+.CFP(CFP),
 .GESD(GESD),
 .VCAP(VCAP),
 .VCAPP5(VCAPP5),

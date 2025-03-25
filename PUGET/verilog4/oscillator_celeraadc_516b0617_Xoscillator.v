@@ -112,8 +112,9 @@ input [3:0] trim_oscillator;
 input CELG;
 input CELSUB;
 
-//Celera Confidential Do Not Copy trim_osc
+//Celera Confidential Do Not Copy Pin trim_osc
 wire[3:0] trim_osc;
+
 //Celera Confidential Do Not Copy STONEnoconn
 STONEnoconn Xnoconn0(
 .noconn (

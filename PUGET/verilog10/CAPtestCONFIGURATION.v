@@ -78,25 +78,25 @@ inout [4:0] tmi;
 input  CELG59462;
 input  CELV96848;
 input  CELSUB40948;
-output  enable_busy;
+  input  enable_busy;
 output  mon_cap_done;
-output  CAPdischarge_0;
-output  CAPdischarge_1;
-output  CAPdischarge_2;
-output  CAPdischarge_3;
-output  CAPdischarge_4;
-output  CAPdischarge_5;
-output  CAPdischarge_6;
-output  CAPdischarge_7;
-output  CAPdischarge_8;
-output  CAPdischarge_9;
+  input  CAPdischarge_0;
+  input  CAPdischarge_1;
+  input  CAPdischarge_2;
+  input  CAPdischarge_3;
+  input  CAPdischarge_4;
+  input  CAPdischarge_5;
+  input  CAPdischarge_6;
+  input  CAPdischarge_7;
+  input  CAPdischarge_8;
+  input  CAPdischarge_9;
 input  enable_captest;
-output  CAPdischarge_10;
-output  CAPdischarge_11;
-output  CAPdischarge_12;
-output  CAPdischarge_13;
-output  CAPdischarge_14;
-output  CAPdischarge_15;
+  input  CAPdischarge_10;
+  input  CAPdischarge_11;
+  input  CAPdischarge_12;
+  input  CAPdischarge_13;
+  input  CAPdischarge_14;
+  input  CAPdischarge_15;
 
 
 // ------------------------ Wires ------------------------
@@ -142,9 +142,9 @@ drm24 drm_hex0x05 (
 .id({a0,a0,a0,a0,a0,a1,a0,a1}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({CAPdischarge_7,CAPdischarge_6,CAPdischarge_5,CAPdischarge_4,CAPdischarge_3,CAPdischarge_2,CAPdischarge_1,CAPdischarge_0}),
-.drm1({CAPdischarge_15,CAPdischarge_14,CAPdischarge_13,CAPdischarge_12,CAPdischarge_11,CAPdischarge_10,CAPdischarge_9,CAPdischarge_8}),
-.drm2({noconn_drm24_drm2_7,noconn_drm24_drm2_6,noconn_drm24_drm2_5,noconn_drm24_drm2_4,noconn_drm24_drm2_3,noconn_drm24_drm2_2,noconn_drm24_drm2_1,enable_busy}),
+.drm0({CAPdischargeLSB_1607f09d_7,CAPdischargeLSB_1607f09d_6,CAPdischargeLSB_1607f09d_5,CAPdischargeLSB_1607f09d_4,CAPdischargeLSB_1607f09d_3,CAPdischargeLSB_1607f09d_2,CAPdischargeLSB_1607f09d_1,CAPdischargeLSB_1607f09d_0}),
+.drm1({CAPdischargeMSB_fc2042d5_7,CAPdischargeMSB_fc2042d5_6,CAPdischargeMSB_fc2042d5_5,CAPdischargeMSB_fc2042d5_4,CAPdischargeMSB_fc2042d5_3,CAPdischargeMSB_fc2042d5_2,CAPdischargeMSB_fc2042d5_1,CAPdischargeMSB_fc2042d5_0}),
+.drm2({noconn_drm24_drm2_7,noconn_drm24_drm2_6,noconn_drm24_drm2_5,noconn_drm24_drm2_4,noconn_drm24_drm2_3,noconn_drm24_drm2_2,noconn_drm24_drm2_1,CAPtestBUSY_7a7c1745}),
 .por0({a0,a1,a0,a0,a0,a0,a1,a0}),
 .por1({a0,a0,a0,a0,a0,a1,a0,a0}),
 .por2({a0,a0,a0,a0,a0,a0,a0,a1}),

@@ -90,6 +90,19 @@ endmodule
 
 
 
+//Celera:resistor_65f63cc7
+//Celera Confidential Symbol Generator
+//RESISTOR:2.00KOhm TYPE:rpodrpo DFT:no
+module resistor_65f63cc7 (RP,
+CELPOS,
+RN);
+inout RP;
+inout RN;
+input CELPOS;
+endmodule
+
+
+
 //Verilog HDL for "DFT", "DFTtm8t" "functional"
 
 
@@ -175,7 +188,7 @@ wire [7:0] tma;
 // ------------------------ Networks ---------------------
 VESPAasmINPUT1 XU10 (
 .o(ok_captestsink),
-.i0(net_91),
+.i0(net_100),
 .Tstate(enable_captestsink),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -183,7 +196,7 @@ VESPAasmINPUT1 XU10 (
 );
 
 VESPAasmINPUT1 XU13 (
-.o(net_92),
+.o(net_101),
 .i0(clock_captest),
 .Tstate(enable_captestsink),
 .CELG59462(CELG59462),
@@ -201,55 +214,61 @@ fet_9ede87fc XU4 (
 
 amplifier_cbcdf8e4 XU5 (
 .IP(IP_30794d23),
-.INN(clamp_XU5_83),
+.INN(clamp_XU5_91),
 .INP(dft_REF),
-.OUT(net_90),
+.OUT(net_99),
 .CELG(CELG59462),
 .SIMPV(SIMPV),
 .CELSUB(CELSUB40948),
-.ok_amplifier(net_89),
+.ok_amplifier(net_98),
 .enable_amplifier(enable_captestsink),
 .global_amplifier(global_amplifier_30794d23_XU5)
 );
 
 fet_720958c2 XU9 (
 .SUB(CELSUB40948),
-.GATE(net_90),
-.DRAIN(CAP4),
+.GATE(net_99),
+.DRAIN(net_97),
 .SOURCE(ITST),
 .NMOSiso24(CAP4)
 );
 
 delayclock_d9d2112f Xdelay1 (
-.in(net_89),
-.out(net_91),
+.in(net_98),
+.out(net_100),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.clock(net_92),
+.clock(net_101),
 .CELSUB(CELSUB40948),
 .celeraporb(PORB97836)
 );
 
 resistor_b637f233 Xresistor1 (
 .RN(GNDcaptest),
-.RP(net_90),
+.RP(net_99),
 .CELG(CELG59462)
 );
 
-DFTtm8t dft_hex0x18 (
+resistor_65f63cc7 Xresistor2 (
+.RN(net_97),
+.RP(CAP4),
+.CELPOS(CAP4)
+);
+
+DFTtm8t dft_hex0x16 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x18_ten_7,noconn_dft_hex0x18_ten_6,noconn_dft_hex0x18_ten_5,noconn_dft_hex0x18_ten_4,noconn_dft_hex0x18_ten_3,noconn_dft_hex0x18_ten_2,global_resistordivider_ebd4967e_Xresistordivider1,global_amplifier_30794d23_XU5}),
-.tma({a0,a0,a0,a1,a1,a0,a0,a0}),
+.ten({noconn_dft_hex0x16_ten_7,noconn_dft_hex0x16_ten_6,noconn_dft_hex0x16_ten_5,noconn_dft_hex0x16_ten_4,noconn_dft_hex0x16_ten_3,noconn_dft_hex0x16_ten_2,global_resistordivider_ebd4967e_Xresistordivider1,global_amplifier_30794d23_XU5}),
+.tma({a0,a0,a0,a1,a0,a1,a1,a0}),
 .tmi(tmi[4:0])
 );
 
 ESDminiClamp6 XCLAMP_XU5_INN (
 .G(CELG59462),
 .I(sense_ITST),
-.O(clamp_XU5_83),
+.O(clamp_XU5_91),
 .V(CELV96848),
 .SUB(CELSUB40948)
 );
@@ -265,28 +284,28 @@ resistordivider_19792370 Xresistordivider1 (
 .global_resistordivider(global_resistordivider_ebd4967e_Xresistordivider1)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x18_ten_2 (
-.noconn(noconn_dft_hex0x18_ten_2)
+STONEnoconn XNCnoconn_dft_hex0x16_ten_2 (
+.noconn(noconn_dft_hex0x16_ten_2)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x18_ten_3 (
-.noconn(noconn_dft_hex0x18_ten_3)
+STONEnoconn XNCnoconn_dft_hex0x16_ten_3 (
+.noconn(noconn_dft_hex0x16_ten_3)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x18_ten_4 (
-.noconn(noconn_dft_hex0x18_ten_4)
+STONEnoconn XNCnoconn_dft_hex0x16_ten_4 (
+.noconn(noconn_dft_hex0x16_ten_4)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x18_ten_5 (
-.noconn(noconn_dft_hex0x18_ten_5)
+STONEnoconn XNCnoconn_dft_hex0x16_ten_5 (
+.noconn(noconn_dft_hex0x16_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x18_ten_6 (
-.noconn(noconn_dft_hex0x18_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x16_ten_6 (
+.noconn(noconn_dft_hex0x16_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x18_ten_7 (
-.noconn(noconn_dft_hex0x18_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x16_ten_7 (
+.noconn(noconn_dft_hex0x16_ten_7)
 );
 
 endmodule

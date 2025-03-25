@@ -32,16 +32,6 @@ module ESDcore6 ( GESD, PAD );
 endmodule
 
 
-//Verilog HDL for "Esd", "ESDdiode" "functional"
-
-
-module ESDdiode ( N, P );
-
-  input P;
-  input N;
-endmodule
-
-
 // ------------------------ Module Verilog ---------------
 module celerapaddft_CELOUTD (tdo, GESD, CELOUTD, CELG59462, CELV96848, unlockTDO, CELSUB40948);
 input  tdo;
@@ -69,19 +59,9 @@ STONEpadOUTstandaloneTDO XCELOUTD (
 .unlock(unlockTDO)
 );
 
-ESDcore6 XESDcore6_2 (
+ESDcore6 XESDcore6_1 (
 .PAD(CELOUTD),
 .GESD(GESD)
-);
-
-ESDdiode Xesd1_Xdftpad (
-.N(GESD),
-.P(CELOUTD)
-);
-
-ESDdiode Xesd2_Xdftpad (
-.N(CELOUTD),
-.P(GESD)
 );
 
 endmodule

@@ -18,20 +18,24 @@ module ESDdiode ( N, P );
 endmodule
 
 
-//Verilog HDL for "Esd", "ESDcore6" "functional"
+//Verilog HDL for "Esd", "ESDcore24" "functional"
 
 
-module ESDcore6 ( GESD, PAD );
+module ESDcore24 ( GESD, PAD, CELSUB );
 
   inout PAD;
+  input CELSUB;
   input GESD;
 endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_PUGET_CFN (CFN, GESD);
+module pad_PUGET_CFN (CFN, GESD, PGND, VCAP, CELSUB40948);
 inout  CFN;
 input  GESD;
+inout  PGND;
+inout  VCAP;
+input  CELSUB40948;
 
 
 // ------------------------ Wires ------------------------
@@ -42,23 +46,14 @@ STONEpad1 XPAD1 (
 );
 
 ESDdiode Xesd_XPAD1 (
-.N(GESD),
-.P(CFN)
-);
-
-ESDcore6 XESDcore6_7 (
-.PAD(no_longer_valid),
-.GESD(CFN)
-);
-
-ESDdiode Xesd1_XPAD1 (
-.N(no_longer_valid),
-.P(CFN)
-);
-
-ESDdiode Xesd2_XPAD1 (
 .N(CFN),
-.P(no_longer_valid)
+.P(GESD)
+);
+
+ESDcore24 XESDcore24_1 (
+.PAD(PGND),
+.GESD(CFN),
+.CELSUB(CELSUB40948)
 );
 
 endmodule

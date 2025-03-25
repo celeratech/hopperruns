@@ -39,14 +39,13 @@ module VESPAdff16 (ck,rb,d_0,d_1,d_2,d_3,d_4,d_5,d_6,d_7,d_8,d_9,q_0,q_1,q_2,q_3
   input  CELSUB40948;
 endmodule
 
-module LOADrequest_496e536c (tdo,tmi,load,porb,i2cbusy,CELG59462,CELV96848,CELSUB40948,enable_busy,load_register);
-  inout  tdo;
-  input [4:0] tmi;
+module LOADrequest_496e536c (load,porb,i2cbusy,CELG59462,CELV96848,done_load,CELSUB40948,enable_busy,load_register);
   input  load;
   input  porb;
   input  i2cbusy;
   input  CELG59462;
   input  CELV96848;
+  output  done_load;
   input  CELSUB40948;
   input  enable_busy;
   output  load_register;
@@ -150,9 +149,8 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module TELEMETRYmeasureREGISTER (tdo, tmi, ADCdata_0, ADCdata_1, ADCdata_2, ADCdata_3, ADCdata_4, ADCdata_5, ADCdata_6, ADCdata_7, ADCdata_8, ADCdata_9, CELG59462, CELV96848, PORB97836, ADCdata_10, ADCdata_11, meas_gpi_0, meas_gpi_1, meas_gpi_2, meas_gpi_3, meas_gpi_4, meas_gpi_5, meas_gpi_6, meas_gpi_7, meas_gpi_8, meas_gpi_9, meas_iin_0, meas_iin_1, meas_iin_2, meas_iin_3, meas_iin_4, meas_iin_5, meas_iin_6, meas_iin_7, meas_iin_8, meas_iin_9, meas_vin_0, meas_vin_1, meas_vin_2, meas_vin_3, meas_vin_4, meas_vin_5, meas_vin_6, meas_vin_7, meas_vin_8, meas_vin_9, CELSUB40948, enable_busy, meas_gpi_10, meas_gpi_11, meas_gpi_12, meas_gpi_13, meas_gpi_14, meas_gpi_15, meas_iin_10, meas_iin_11, meas_iin_12, meas_iin_13, meas_iin_14, meas_iin_15, meas_vcap_0, meas_vcap_1, meas_vcap_2, meas_vcap_3, meas_vcap_4, meas_vcap_5, meas_vcap_6, meas_vcap_7, meas_vcap_8, meas_vcap_9, meas_vin_10, meas_vin_11, meas_vin_12, meas_vin_13, meas_vin_14, meas_vin_15, meas_vout_0, meas_vout_1, meas_vout_2, meas_vout_3, meas_vout_4, meas_vout_5, meas_vout_6, meas_vout_7, meas_vout_8, meas_vout_9, meas_dtemp_0, meas_dtemp_1, meas_dtemp_2, meas_dtemp_3, meas_dtemp_4, meas_dtemp_5, meas_dtemp_6, meas_dtemp_7, meas_dtemp_8, meas_dtemp_9, meas_ichrg_0, meas_ichrg_1, meas_ichrg_2, meas_ichrg_3, meas_ichrg_4, meas_ichrg_5, meas_ichrg_6, meas_ichrg_7, meas_ichrg_8, meas_ichrg_9, meas_vcap1_0, meas_vcap1_1, meas_vcap1_2, meas_vcap1_3, meas_vcap1_4, meas_vcap1_5, meas_vcap1_6, meas_vcap1_7, meas_vcap1_8, meas_vcap1_9, meas_vcap2_0, meas_vcap2_1, meas_vcap2_2, meas_vcap2_3, meas_vcap2_4, meas_vcap2_5, meas_vcap2_6, meas_vcap2_7, meas_vcap2_8, meas_vcap2_9, meas_vcap3_0, meas_vcap3_1, meas_vcap3_2, meas_vcap3_3, meas_vcap3_4, meas_vcap3_5, meas_vcap3_6, meas_vcap3_7, meas_vcap3_8, meas_vcap3_9, meas_vcap4_0, meas_vcap4_1, meas_vcap4_2, meas_vcap4_3, meas_vcap4_4, meas_vcap4_5, meas_vcap4_6, meas_vcap4_7, meas_vcap4_8, meas_vcap4_9, meas_vcap_10, meas_vcap_11, meas_vcap_12, meas_vcap_13, meas_vcap_14, meas_vcap_15, meas_vout_10, meas_vout_11, meas_vout_12, meas_vout_13, meas_vout_14, meas_vout_15, load_register, meas_dtemp_10, meas_dtemp_11, meas_dtemp_12, meas_dtemp_13, meas_dtemp_14, meas_dtemp_15, meas_ichrg_10, meas_ichrg_11, meas_ichrg_12, meas_ichrg_13, meas_ichrg_14, meas_ichrg_15, meas_vcap1_10, meas_vcap1_11, meas_vcap1_12, meas_vcap1_13, meas_vcap1_14, meas_vcap1_15, meas_vcap2_10, meas_vcap2_11, meas_vcap2_12, meas_vcap2_13, meas_vcap2_14, meas_vcap2_15, meas_vcap3_10, meas_vcap3_11, meas_vcap3_12, meas_vcap3_13, meas_vcap3_14, meas_vcap3_15, meas_vcap4_10, meas_vcap4_11, meas_vcap4_12, meas_vcap4_13, meas_vcap4_14, meas_vcap4_15, CHANNELselect_0, CHANNELselect_1, CHANNELselect_2, CHANNELselect_3, clock_telemetry, enable_register, done_registerload, status_meas_gpi_15, status_meas_iin_15, status_meas_vin_15, status_meas_vcap_15, status_meas_vout_15, status_meas_dtemp_15, status_meas_ichrg_15, status_meas_vcap1_15, status_meas_vcap2_15, status_meas_vcap3_15, status_meas_vcap4_15);
-inout  tdo;
-input [4:0] tmi;
+module TELEMETRYmeasureREGISTER (porb, ADCdata_0, ADCdata_1, ADCdata_2, ADCdata_3, ADCdata_4, ADCdata_5, ADCdata_6, ADCdata_7, ADCdata_8, ADCdata_9, CELG59462, CELV96848, PORB97836, ADCdata_10, ADCdata_11, meas_gpi_0, meas_gpi_1, meas_gpi_2, meas_gpi_3, meas_gpi_4, meas_gpi_5, meas_gpi_6, meas_gpi_7, meas_gpi_8, meas_gpi_9, meas_iin_0, meas_iin_1, meas_iin_2, meas_iin_3, meas_iin_4, meas_iin_5, meas_iin_6, meas_iin_7, meas_iin_8, meas_iin_9, meas_vin_0, meas_vin_1, meas_vin_2, meas_vin_3, meas_vin_4, meas_vin_5, meas_vin_6, meas_vin_7, meas_vin_8, meas_vin_9, CELSUB40948, enable_busy, meas_gpi_10, meas_gpi_11, meas_gpi_12, meas_gpi_13, meas_gpi_14, meas_gpi_15, meas_iin_10, meas_iin_11, meas_iin_12, meas_iin_13, meas_iin_14, meas_iin_15, meas_vcap_0, meas_vcap_1, meas_vcap_2, meas_vcap_3, meas_vcap_4, meas_vcap_5, meas_vcap_6, meas_vcap_7, meas_vcap_8, meas_vcap_9, meas_vin_10, meas_vin_11, meas_vin_12, meas_vin_13, meas_vin_14, meas_vin_15, meas_vout_0, meas_vout_1, meas_vout_2, meas_vout_3, meas_vout_4, meas_vout_5, meas_vout_6, meas_vout_7, meas_vout_8, meas_vout_9, meas_dtemp_0, meas_dtemp_1, meas_dtemp_2, meas_dtemp_3, meas_dtemp_4, meas_dtemp_5, meas_dtemp_6, meas_dtemp_7, meas_dtemp_8, meas_dtemp_9, meas_ichrg_0, meas_ichrg_1, meas_ichrg_2, meas_ichrg_3, meas_ichrg_4, meas_ichrg_5, meas_ichrg_6, meas_ichrg_7, meas_ichrg_8, meas_ichrg_9, meas_vcap1_0, meas_vcap1_1, meas_vcap1_2, meas_vcap1_3, meas_vcap1_4, meas_vcap1_5, meas_vcap1_6, meas_vcap1_7, meas_vcap1_8, meas_vcap1_9, meas_vcap2_0, meas_vcap2_1, meas_vcap2_2, meas_vcap2_3, meas_vcap2_4, meas_vcap2_5, meas_vcap2_6, meas_vcap2_7, meas_vcap2_8, meas_vcap2_9, meas_vcap3_0, meas_vcap3_1, meas_vcap3_2, meas_vcap3_3, meas_vcap3_4, meas_vcap3_5, meas_vcap3_6, meas_vcap3_7, meas_vcap3_8, meas_vcap3_9, meas_vcap4_0, meas_vcap4_1, meas_vcap4_2, meas_vcap4_3, meas_vcap4_4, meas_vcap4_5, meas_vcap4_6, meas_vcap4_7, meas_vcap4_8, meas_vcap4_9, meas_vcap_10, meas_vcap_11, meas_vcap_12, meas_vcap_13, meas_vcap_14, meas_vcap_15, meas_vout_10, meas_vout_11, meas_vout_12, meas_vout_13, meas_vout_14, meas_vout_15, load_register, meas_dtemp_10, meas_dtemp_11, meas_dtemp_12, meas_dtemp_13, meas_dtemp_14, meas_dtemp_15, meas_ichrg_10, meas_ichrg_11, meas_ichrg_12, meas_ichrg_13, meas_ichrg_14, meas_ichrg_15, meas_vcap1_10, meas_vcap1_11, meas_vcap1_12, meas_vcap1_13, meas_vcap1_14, meas_vcap1_15, meas_vcap2_10, meas_vcap2_11, meas_vcap2_12, meas_vcap2_13, meas_vcap2_14, meas_vcap2_15, meas_vcap3_10, meas_vcap3_11, meas_vcap3_12, meas_vcap3_13, meas_vcap3_14, meas_vcap3_15, meas_vcap4_10, meas_vcap4_11, meas_vcap4_12, meas_vcap4_13, meas_vcap4_14, meas_vcap4_15, CHANNELselect_0, CHANNELselect_1, CHANNELselect_2, CHANNELselect_3, clock_telemetry, enable_register, done_registerload, status_meas_gpi_15, status_meas_iin_15, status_meas_vin_15, status_meas_vcap_15, status_meas_vout_15, status_meas_dtemp_15, status_meas_ichrg_15, status_meas_vcap1_15, status_meas_vcap2_15, status_meas_vcap3_15, status_meas_vcap4_15);
+input  porb;
 input  ADCdata_0;
 input  ADCdata_1;
 input  ADCdata_2;
@@ -368,7 +366,6 @@ output [15:0] status_meas_vcap4_15;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
 wire [15:0] status_meas_gpi_15;
 wire [15:0] status_meas_iin_15;
 wire [15:0] status_meas_vin_15;
@@ -385,11 +382,11 @@ wire [15:0] o;
 
 // ------------------------ Networks ---------------------
 VESPAdff16 XDFF16_ (
-.ck(net_378),
-.rb(net_377),
-.d_0(net_347),
-.d_1(net_347),
-.d_2(net_347),
+.ck(net_380),
+.rb(net_379),
+.d_0(net_349),
+.d_1(net_349),
+.d_2(net_349),
 .d_3(ADCdata_0),
 .d_4(ADCdata_1),
 .d_5(ADCdata_2),
@@ -412,7 +409,7 @@ VESPAdff16 XDFF16_ (
 .d_12(ADCdata_9),
 .d_13(ADCdata_10),
 .d_14(ADCdata_11),
-.d_15(net_347),
+.d_15(net_349),
 .q_10(meas_vcap1_10),
 .q_11(meas_vcap1_11),
 .q_12(meas_vcap1_12),
@@ -425,11 +422,11 @@ VESPAdff16 XDFF16_ (
 );
 
 VESPAdff16 XDFF16_1 (
-.ck(net_379),
-.rb(net_377),
-.d_0(net_347),
-.d_1(net_347),
-.d_2(net_347),
+.ck(net_382),
+.rb(net_379),
+.d_0(net_349),
+.d_1(net_349),
+.d_2(net_349),
 .d_3(ADCdata_0),
 .d_4(ADCdata_1),
 .d_5(ADCdata_2),
@@ -452,7 +449,7 @@ VESPAdff16 XDFF16_1 (
 .d_12(ADCdata_9),
 .d_13(ADCdata_10),
 .d_14(ADCdata_11),
-.d_15(net_347),
+.d_15(net_349),
 .q_10(meas_vcap2_10),
 .q_11(meas_vcap2_11),
 .q_12(meas_vcap2_12),
@@ -465,11 +462,11 @@ VESPAdff16 XDFF16_1 (
 );
 
 VESPAdff16 XDFF16_10 (
-.ck(net_388),
-.rb(net_377),
-.d_0(net_347),
-.d_1(net_347),
-.d_2(net_347),
+.ck(net_391),
+.rb(net_379),
+.d_0(net_349),
+.d_1(net_349),
+.d_2(net_349),
 .d_3(ADCdata_0),
 .d_4(ADCdata_1),
 .d_5(ADCdata_2),
@@ -492,7 +489,7 @@ VESPAdff16 XDFF16_10 (
 .d_12(ADCdata_9),
 .d_13(ADCdata_10),
 .d_14(ADCdata_11),
-.d_15(net_347),
+.d_15(net_349),
 .q_10(meas_dtemp_10),
 .q_11(meas_dtemp_11),
 .q_12(meas_dtemp_12),
@@ -505,11 +502,11 @@ VESPAdff16 XDFF16_10 (
 );
 
 VESPAdff16 XDFF16_2 (
-.ck(net_380),
-.rb(net_377),
-.d_0(net_347),
-.d_1(net_347),
-.d_2(net_347),
+.ck(net_383),
+.rb(net_379),
+.d_0(net_349),
+.d_1(net_349),
+.d_2(net_349),
 .d_3(ADCdata_0),
 .d_4(ADCdata_1),
 .d_5(ADCdata_2),
@@ -532,7 +529,7 @@ VESPAdff16 XDFF16_2 (
 .d_12(ADCdata_9),
 .d_13(ADCdata_10),
 .d_14(ADCdata_11),
-.d_15(net_347),
+.d_15(net_349),
 .q_10(meas_vcap3_10),
 .q_11(meas_vcap3_11),
 .q_12(meas_vcap3_12),
@@ -545,11 +542,11 @@ VESPAdff16 XDFF16_2 (
 );
 
 VESPAdff16 XDFF16_3 (
-.ck(net_381),
-.rb(net_377),
-.d_0(net_347),
-.d_1(net_347),
-.d_2(net_347),
+.ck(net_384),
+.rb(net_379),
+.d_0(net_349),
+.d_1(net_349),
+.d_2(net_349),
 .d_3(ADCdata_0),
 .d_4(ADCdata_1),
 .d_5(ADCdata_2),
@@ -572,7 +569,7 @@ VESPAdff16 XDFF16_3 (
 .d_12(ADCdata_9),
 .d_13(ADCdata_10),
 .d_14(ADCdata_11),
-.d_15(net_347),
+.d_15(net_349),
 .q_10(meas_vcap4_10),
 .q_11(meas_vcap4_11),
 .q_12(meas_vcap4_12),
@@ -585,11 +582,11 @@ VESPAdff16 XDFF16_3 (
 );
 
 VESPAdff16 XDFF16_4 (
-.ck(net_382),
-.rb(net_377),
-.d_0(net_347),
-.d_1(net_347),
-.d_2(net_347),
+.ck(net_385),
+.rb(net_379),
+.d_0(net_349),
+.d_1(net_349),
+.d_2(net_349),
 .d_3(ADCdata_0),
 .d_4(ADCdata_1),
 .d_5(ADCdata_2),
@@ -612,7 +609,7 @@ VESPAdff16 XDFF16_4 (
 .d_12(ADCdata_9),
 .d_13(ADCdata_10),
 .d_14(ADCdata_11),
-.d_15(net_347),
+.d_15(net_349),
 .q_10(meas_gpi_10),
 .q_11(meas_gpi_11),
 .q_12(meas_gpi_12),
@@ -625,11 +622,11 @@ VESPAdff16 XDFF16_4 (
 );
 
 VESPAdff16 XDFF16_5 (
-.ck(net_384),
-.rb(net_377),
-.d_0(net_347),
-.d_1(net_347),
-.d_2(net_347),
+.ck(net_387),
+.rb(net_379),
+.d_0(net_349),
+.d_1(net_349),
+.d_2(net_349),
 .d_3(ADCdata_0),
 .d_4(ADCdata_1),
 .d_5(ADCdata_2),
@@ -652,7 +649,7 @@ VESPAdff16 XDFF16_5 (
 .d_12(ADCdata_9),
 .d_13(ADCdata_10),
 .d_14(ADCdata_11),
-.d_15(net_347),
+.d_15(net_349),
 .q_10(meas_vcap_10),
 .q_11(meas_vcap_11),
 .q_12(meas_vcap_12),
@@ -665,11 +662,11 @@ VESPAdff16 XDFF16_5 (
 );
 
 VESPAdff16 XDFF16_6 (
-.ck(net_387),
-.rb(net_377),
-.d_0(net_347),
-.d_1(net_347),
-.d_2(net_347),
+.ck(net_390),
+.rb(net_379),
+.d_0(net_349),
+.d_1(net_349),
+.d_2(net_349),
 .d_3(ADCdata_0),
 .d_4(ADCdata_1),
 .d_5(ADCdata_2),
@@ -692,7 +689,7 @@ VESPAdff16 XDFF16_6 (
 .d_12(ADCdata_9),
 .d_13(ADCdata_10),
 .d_14(ADCdata_11),
-.d_15(net_347),
+.d_15(net_349),
 .q_10(meas_ichrg_10),
 .q_11(meas_ichrg_11),
 .q_12(meas_ichrg_12),
@@ -705,11 +702,11 @@ VESPAdff16 XDFF16_6 (
 );
 
 VESPAdff16 XDFF16_7 (
-.ck(net_383),
-.rb(net_377),
-.d_0(net_347),
-.d_1(net_347),
-.d_2(net_347),
+.ck(net_386),
+.rb(net_379),
+.d_0(net_349),
+.d_1(net_349),
+.d_2(net_349),
 .d_3(ADCdata_0),
 .d_4(ADCdata_1),
 .d_5(ADCdata_2),
@@ -732,7 +729,7 @@ VESPAdff16 XDFF16_7 (
 .d_12(ADCdata_9),
 .d_13(ADCdata_10),
 .d_14(ADCdata_11),
-.d_15(net_347),
+.d_15(net_349),
 .q_10(meas_vin_10),
 .q_11(meas_vin_11),
 .q_12(meas_vin_12),
@@ -745,11 +742,11 @@ VESPAdff16 XDFF16_7 (
 );
 
 VESPAdff16 XDFF16_8 (
-.ck(net_385),
-.rb(net_377),
-.d_0(net_347),
-.d_1(net_347),
-.d_2(net_347),
+.ck(net_388),
+.rb(net_379),
+.d_0(net_349),
+.d_1(net_349),
+.d_2(net_349),
 .d_3(ADCdata_0),
 .d_4(ADCdata_1),
 .d_5(ADCdata_2),
@@ -772,7 +769,7 @@ VESPAdff16 XDFF16_8 (
 .d_12(ADCdata_9),
 .d_13(ADCdata_10),
 .d_14(ADCdata_11),
-.d_15(net_347),
+.d_15(net_349),
 .q_10(meas_vout_10),
 .q_11(meas_vout_11),
 .q_12(meas_vout_12),
@@ -785,11 +782,11 @@ VESPAdff16 XDFF16_8 (
 );
 
 VESPAdff16 XDFF16_9 (
-.ck(net_386),
-.rb(net_377),
-.d_0(net_347),
-.d_1(net_347),
-.d_2(net_347),
+.ck(net_389),
+.rb(net_379),
+.d_0(net_349),
+.d_1(net_349),
+.d_2(net_349),
 .d_3(ADCdata_0),
 .d_4(ADCdata_1),
 .d_5(ADCdata_2),
@@ -812,7 +809,7 @@ VESPAdff16 XDFF16_9 (
 .d_12(ADCdata_9),
 .d_13(ADCdata_10),
 .d_14(ADCdata_11),
-.d_15(net_347),
+.d_15(net_349),
 .q_10(meas_iin_10),
 .q_11(meas_iin_11),
 .q_12(meas_iin_12),
@@ -825,121 +822,120 @@ VESPAdff16 XDFF16_9 (
 );
 
 LOADrequest_496e536c XLOAD (
-.tdo(tdo),
-.tmi(tmi[4:0]),
-.load(net_373),
-.porb(net_371),
-.i2cbusy(net_367),
+.load(net_375),
+.porb(porb),
+.i2cbusy(net_372),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
+.done_load(net_376),
 .CELSUB40948(CELSUB40948),
 .enable_busy(enable_busy),
-.load_register(net_372)
+.load_register(net_374)
 );
 
 VESPAasmINPUT1 XU10 (
-.o(net_379),
-.i0(net_349),
-.Tstate(net_372),
+.o(net_382),
+.i0(net_351),
+.Tstate(net_374),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU11 (
-.o(net_384),
-.i0(net_354),
-.Tstate(net_372),
+.o(net_387),
+.i0(net_356),
+.Tstate(net_374),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU12 (
-.o(net_383),
-.i0(net_353),
-.Tstate(net_372),
+.o(net_386),
+.i0(net_355),
+.Tstate(net_374),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU13 (
-.o(net_380),
-.i0(net_350),
-.Tstate(net_372),
+.o(net_383),
+.i0(net_352),
+.Tstate(net_374),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU14 (
-.o(net_381),
-.i0(net_351),
-.Tstate(net_372),
+.o(net_384),
+.i0(net_353),
+.Tstate(net_374),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU15 (
-.o(net_382),
-.i0(net_352),
-.Tstate(net_372),
+.o(net_385),
+.i0(net_354),
+.Tstate(net_374),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU16 (
-.o(net_385),
-.i0(net_355),
-.Tstate(net_372),
+.o(net_388),
+.i0(net_357),
+.Tstate(net_374),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU17 (
-.o(net_386),
-.i0(net_356),
-.Tstate(net_372),
+.o(net_389),
+.i0(net_358),
+.Tstate(net_374),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU18 (
-.o(net_388),
-.i0(net_358),
-.Tstate(net_372),
+.o(net_391),
+.i0(net_360),
+.Tstate(net_374),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU19 (
-.o(net_121),
+.o(net_123),
 .i0(clock_telemetry),
-.Tstate(net_377),
+.Tstate(net_379),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU3 (
-.o(net_378),
-.i0(net_348),
-.Tstate(net_372),
+.o(net_380),
+.i0(net_350),
+.Tstate(net_374),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU5 (
-.o(net_387),
-.i0(net_357),
-.Tstate(net_372),
+.o(net_390),
+.i0(net_359),
+.Tstate(net_374),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
@@ -947,7 +943,7 @@ VESPAasmINPUT1 XU5 (
 
 dbuf_e926e395 XU1 (
 .i(enable_register),
-.o(net_377),
+.o(net_379),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
@@ -955,15 +951,15 @@ dbuf_e926e395 XU1 (
 
 decoder4_6ecb2379 XU2 (
 .i({CHANNELselect_3,CHANNELselect_2,CHANNELselect_1,CHANNELselect_0}),
-.o({net_363,net_362,net_361,net_360,net_359,net_358,net_357,net_356,net_355,net_354,net_353,net_352,net_351,net_350,net_349,net_348}),
+.o({net_365,net_364,net_363,net_362,net_361,net_360,net_359,net_358,net_357,net_356,net_355,net_354,net_353,net_352,net_351,net_350}),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.enable_decoder(net_377)
+.enable_decoder(net_379)
 );
 
 dbuf_e926e395 XU4 (
-.i(net_120),
+.i(net_122),
 .o(done_registerload),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -971,52 +967,44 @@ dbuf_e926e395 XU4 (
 );
 
 delayclock_4256fcc9 XU6 (
-.in(net_372),
-.out(net_120),
+.in(net_376),
+.out(net_122),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.clock(net_375),
+.clock(net_381),
 .CELSUB(CELSUB40948),
 .celeraporb(PORB97836)
 );
 
 dbuf_e926e395 XU8 (
 .i(load_register),
-.o(net_373),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-inv_12e192f5 XU21 (
-.i(net_376),
-.o(net_347),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-dbuf_e926e395 XU22 (
-.i(net_121),
 .o(net_375),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
-tie_ef1bc46b XU23 (
-.a1(net_376),
+inv_12e192f5 XU21 (
+.i(net_378),
+.o(net_349),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
-STONEnoconn XNC359 (
-.noconn(net_359)
+dbuf_e926e395 XU22 (
+.i(net_123),
+.o(net_381),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
-STONEnoconn XNC360 (
-.noconn(net_360)
+tie_ef1bc46b XU23 (
+.a1(net_378),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 STONEnoconn XNC361 (
@@ -1029,6 +1017,14 @@ STONEnoconn XNC362 (
 
 STONEnoconn XNC363 (
 .noconn(net_363)
+);
+
+STONEnoconn XNC364 (
+.noconn(net_364)
+);
+
+STONEnoconn XNC365 (
+.noconn(net_365)
 );
 
 WRAPPER1 XWRAPstatus_meas_gpi_15_0 (

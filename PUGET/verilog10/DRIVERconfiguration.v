@@ -33,8 +33,8 @@ inout [4:0] tmi;
 input  CELG59462;
 input  CELV96848;
 input  CELSUB40948;
-output  DRIVERconfiguration_0;
-output  DRIVERconfiguration_1;
+  input  DRIVERconfiguration_0;
+  input  DRIVERconfiguration_1;
 
 
 // ------------------------ Wires ------------------------
@@ -44,15 +44,15 @@ wire [7:0] drm0;
 wire [7:0] por0;
 
 // ------------------------ Networks ---------------------
-drm8 drm_hex0x0E (
+drm8 drm_hex0x11 (
 .G(CELG59462),
 .V(CELV96848),
 .d0(a0),
 .d1(a1),
-.id({a0,a0,a0,a0,a1,a1,a1,a0}),
+.id({a0,a0,a0,a1,a0,a0,a0,a1}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,noconn_drm8_drm0_3,noconn_drm8_drm0_2,DRIVERconfiguration_1,DRIVERconfiguration_0}),
+.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,noconn_drm8_drm0_3,noconn_drm8_drm0_2,DRIVERconfiguration_f8fc9661_1,DRIVERconfiguration_f8fc9661_0}),
 .por0({a0,a0,a0,a0,a0,a0,a0,a0}),
 .bypload(a0),
 .lastdrm(a0)

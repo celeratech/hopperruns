@@ -129,7 +129,7 @@ DFThijack Xdfthijack1 (
 .ten_hijacki(ten_hijacki_d260c208_Xdfthijack1)
 );
 
-DFTtm8 dft_hex0x4E (
+DFTtm8 dft_hex0x60 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
@@ -139,7 +139,7 @@ DFTtm8 dft_hex0x4E (
 .tdi({a0,a0,a0,a0,a0,a0,tdi_1dcc0a52_XUGPIstartup,tdi_64c26811_XUGPIok}),
 .tdo(tdo),
 .ten({ten_hijacki_d260c208_Xdfthijack1,ten_hijack_d260c208_Xdfthijack1,ten_1dcc0a52_XUGPIstartup,ten_42370baa_XUGPIoutput,ten_64c26811_XUGPIok,ten_a949d11b_XUGPIbuffer,ten_hijacki_fd2cea80_XU8,ten_hijack_fd2cea80_XU8}),
-.tma({a0,a1,a0,a0,a1,a1,a1,a0}),
+.tma({a0,a1,a1,a0,a0,a0,a0,a0}),
 .tmi(tmi[4:0])
 );
 

@@ -146,14 +146,14 @@ CAPESRsequencer_Rev1_DYES_0 XMAIN (
 .go_esrtest(go_esrtest),
 .power_good(power_good),
 .CELSUB40948(CELSUB40948),
-.enableFAULT(net_87),
+.enableFAULT(CAPESRsequencer_Rev1_statecontrol_4d180c2a_4),
 .clock_capesr(clock_capesr),
 .done_captest(done_captest),
 .done_esrtest(done_esrtest),
-.STATEcontrol0(net_83),
-.STATEcontrol1(net_84),
-.STATEcontrol2(net_85),
-.STATEcontrol3(net_86),
+.STATEcontrol0(CAPESRsequencer_Rev1_statecontrol_4d180c2a_0),
+.STATEcontrol1(CAPESRsequencer_Rev1_statecontrol_4d180c2a_1),
+.STATEcontrol2(CAPESRsequencer_Rev1_statecontrol_4d180c2a_2),
+.STATEcontrol3(CAPESRsequencer_Rev1_statecontrol_4d180c2a_3),
 .blank_charger(blank_charger),
 .enable_captest(enable_captest),
 .enable_esrtest(enable_esrtest),
@@ -308,7 +308,7 @@ dftprobeModel0_e1d1778d XU71 (
 .CELSUB(CELSUB40948)
 );
 
-DFTtm8d dft_hex0x10 (
+DFTtm8d dft_hex0x0F (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
@@ -316,11 +316,11 @@ DFTtm8d dft_hex0x10 (
 .tdi({tdi_3cbeac63_XU63,tdi_f7670f67_XU62,tdi_3727efe1_XU61,tdi_3f81b8dc_XU60,tdi_21d55b1b_XU59,tdi_5e730c17_XU58,tdi_ddea0e6d_XU57,tdi_7e8f4ebb_XU56}),
 .tdo(tdo),
 .ten({ten_3cbeac63_XU63,ten_f7670f67_XU62,ten_3727efe1_XU61,ten_3f81b8dc_XU60,ten_21d55b1b_XU59,ten_5e730c17_XU58,ten_ddea0e6d_XU57,ten_7e8f4ebb_XU56}),
-.tma({a0,a0,a0,a1,a0,a0,a0,a0}),
+.tma({a0,a0,a0,a0,a1,a1,a1,a1}),
 .tmi(tmi[4:0])
 );
 
-DFTtm8d dft_hex0x11 (
+DFTtm8d dft_hex0x10 (
 .G(CELG59462),
 .V(CELV96848),
 .a({b1,b0}),
@@ -328,7 +328,7 @@ DFTtm8d dft_hex0x11 (
 .tdi({tdi_f805c645_XU71,tdi_45800615_XU70,tdi_7a6d5b1c_XU69,tdi_f654a0e1_XU68,tdi_4205ef2f_XU67,tdi_4c389098_XU66,tdi_c1e8647a_XU65,tdi_ceef9318_XU64}),
 .tdo(tdo),
 .ten({ten_f805c645_XU71,ten_45800615_XU70,ten_7a6d5b1c_XU69,ten_f654a0e1_XU68,ten_4205ef2f_XU67,ten_4c389098_XU66,ten_c1e8647a_XU65,ten_ceef9318_XU64}),
-.tma({b0,b0,b0,b1,b0,b0,b0,b1}),
+.tma({b0,b0,b0,b1,b0,b0,b0,b0}),
 .tmi(tmi[4:0])
 );
 
@@ -340,7 +340,7 @@ drm8 drm_hex0x04 (
 .id({d0,d0,d0,d0,d0,d1,d0,d0}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,net_87,net_86,net_85,net_84,net_83}),
+.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,CAPESRsequencer_Rev1_statecontrol_4d180c2a_4,CAPESRsequencer_Rev1_statecontrol_4d180c2a_3,CAPESRsequencer_Rev1_statecontrol_4d180c2a_2,CAPESRsequencer_Rev1_statecontrol_4d180c2a_1,CAPESRsequencer_Rev1_statecontrol_4d180c2a_0}),
 .por0({d0,d0,d0,d1,d0,d0,d0,d0}),
 .bypload(d0),
 .lastdrm(d0)

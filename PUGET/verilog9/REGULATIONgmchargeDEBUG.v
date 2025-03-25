@@ -74,14 +74,14 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONgmchargeDEBUG (TAO, tdo, tmi, REFBUF, CELG59462, CELV96848, CHARGEREF, CELSUB40948, ok_gmcharge, enable_gmcharge, hijack_enable_gmcharge);
+module REGULATIONgmchargeDEBUG (TAO, tdo, tmi, REFBUF, CELG59462, CELV96848, REF_CHARGE, CELSUB40948, ok_gmcharge, enable_gmcharge, hijack_enable_gmcharge);
 inout  TAO;
 inout  tdo;
 input [4:0] tmi;
   input  REFBUF;
 input  CELG59462;
 input  CELV96848;
-  input  CHARGEREF;
+  input  REF_CHARGE;
 input  CELSUB40948;
 input  ok_gmcharge;
 input  enable_gmcharge;
@@ -112,28 +112,28 @@ DFThijack Xdfthijack1 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.ten_hijack(ten_hijack_cdc158b8_Xdfthijack1),
-.ten_hijacki(ten_hijacki_cdc158b8_Xdfthijack1)
+.ten_hijack(ten_hijack_026fab89_Xdfthijack1),
+.ten_hijacki(ten_hijacki_026fab89_Xdfthijack1)
 );
 
-DFTtm8 dft_hex0x33 (
+DFTtm8 dft_hex0x44 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.TAI({a0,a0,a0,a0,a0,a0,TAI_f1acc256_XUREGULATIONgmchargeREF,TAI_9e08c4b7_XUREGULATIONgmchargeBUFFER}),
+.TAI({a0,a0,a0,a0,a0,a0,TAI_b0ed6d3e_XUREGULATIONgmchargeREF,TAI_b7433a87_XUREGULATIONgmchargeBUFFER}),
 .TAO(TAO),
-.tdi({a0,a0,a0,a0,a0,a0,a0,tdi_7b99c5a3_XUREGULATIONgmchargeSTARTUP}),
+.tdi({a0,a0,a0,a0,a0,a0,a0,tdi_165578a3_XUREGULATIONgmchargeSTARTUP}),
 .tdo(tdo),
-.ten({noconn_dft_hex0x33_ten_7,noconn_dft_hex0x33_ten_6,noconn_dft_hex0x33_ten_5,ten_hijacki_cdc158b8_Xdfthijack1,ten_hijack_cdc158b8_Xdfthijack1,ten_7b99c5a3_XUREGULATIONgmchargeSTARTUP,ten_f1acc256_XUREGULATIONgmchargeREF,ten_9e08c4b7_XUREGULATIONgmchargeBUFFER}),
-.tma({a0,a0,a1,a1,a0,a0,a1,a1}),
+.ten({noconn_dft_hex0x44_ten_7,noconn_dft_hex0x44_ten_6,noconn_dft_hex0x44_ten_5,ten_hijacki_026fab89_Xdfthijack1,ten_hijack_026fab89_Xdfthijack1,ten_165578a3_XUREGULATIONgmchargeSTARTUP,ten_b0ed6d3e_XUREGULATIONgmchargeREF,ten_b7433a87_XUREGULATIONgmchargeBUFFER}),
+.tma({a0,a1,a0,a0,a0,a1,a0,a0}),
 .tmi(tmi[4:0])
 );
 
 dftprobeModel2_2dcf28df XUREGULATIONgmchargeREF (
-.i(CHARGEREF),
-.TAI(TAI_f1acc256_XUREGULATIONgmchargeREF),
-.ten(ten_f1acc256_XUREGULATIONgmchargeREF),
+.i(REF_CHARGE),
+.TAI(TAI_b0ed6d3e_XUREGULATIONgmchargeREF),
+.ten(ten_b0ed6d3e_XUREGULATIONgmchargeREF),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -141,29 +141,29 @@ dftprobeModel2_2dcf28df XUREGULATIONgmchargeREF (
 
 dftprobeModel2_2dcf28df XUREGULATIONgmchargeBUFFER (
 .i(REFBUF),
-.TAI(TAI_9e08c4b7_XUREGULATIONgmchargeBUFFER),
-.ten(ten_9e08c4b7_XUREGULATIONgmchargeBUFFER),
+.TAI(TAI_b7433a87_XUREGULATIONgmchargeBUFFER),
+.ten(ten_b7433a87_XUREGULATIONgmchargeBUFFER),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x33_ten_5 (
-.noconn(noconn_dft_hex0x33_ten_5)
+STONEnoconn XNCnoconn_dft_hex0x44_ten_5 (
+.noconn(noconn_dft_hex0x44_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x33_ten_6 (
-.noconn(noconn_dft_hex0x33_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x44_ten_6 (
+.noconn(noconn_dft_hex0x44_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x33_ten_7 (
-.noconn(noconn_dft_hex0x33_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x44_ten_7 (
+.noconn(noconn_dft_hex0x44_ten_7)
 );
 
 dftprobeModel0_80e43a5a XUREGULATIONgmchargeSTARTUP (
 .i(net_17),
-.tdi(tdi_7b99c5a3_XUREGULATIONgmchargeSTARTUP),
-.ten(ten_7b99c5a3_XUREGULATIONgmchargeSTARTUP),
+.tdi(tdi_165578a3_XUREGULATIONgmchargeSTARTUP),
+.ten(ten_165578a3_XUREGULATIONgmchargeSTARTUP),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)

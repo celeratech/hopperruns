@@ -249,22 +249,22 @@ delayclock_b2586abf Xdelay1 (
 .celeraporb(PORB97836)
 );
 
-DFTtm8t dft_hex0x74 (
+DFTtm8t dft_hex0x7C (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x74_ten_7,noconn_dft_hex0x74_ten_6,noconn_dft_hex0x74_ten_5,noconn_dft_hex0x74_ten_4,noconn_dft_hex0x74_ten_3,noconn_dft_hex0x74_ten_2,noconn_dft_hex0x74_ten_1,global_oscillatorring_43a4af64_Xoscillator1}),
-.tma({a0,a1,a1,a1,a0,a1,a0,a0}),
+.ten({noconn_dft_hex0x7C_ten_7,noconn_dft_hex0x7C_ten_6,noconn_dft_hex0x7C_ten_5,noconn_dft_hex0x7C_ten_4,noconn_dft_hex0x7C_ten_3,noconn_dft_hex0x7C_ten_2,noconn_dft_hex0x7C_ten_1,global_oscillatorring_43a4af64_Xoscillator1}),
+.tma({a0,a1,a1,a1,a1,a1,a0,a0}),
 .tmi(tmi[4:0])
 );
 
-drm8L drm_hex0x2A (
+drm8L drm_hex0x31 (
 .G(CELG59462),
 .V(CELV96848),
 .d0(c0),
 .d1(c1),
-.id({c0,c0,c1,c0,c1,c0,c1,c0}),
+.id({c0,c0,c1,c1,c0,c0,c0,c1}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
 .drm0({noconn_drm8L_drm0_7,noconn_drm8L_drm0_6,noconn_drm8L_drm0_5,noconn_drm8L_drm0_4,noconn_drm8L_drm0_3,trim_oscillatorring_43a4af64_2,trim_oscillatorring_43a4af64_1,trim_oscillatorring_43a4af64_0}),
@@ -324,32 +324,32 @@ STONEnoconn XNCnoconn_drm8L_drm0_7 (
 .noconn(noconn_drm8L_drm0_7)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x74_ten_1 (
-.noconn(noconn_dft_hex0x74_ten_1)
+STONEnoconn XNCnoconn_dft_hex0x7C_ten_1 (
+.noconn(noconn_dft_hex0x7C_ten_1)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x74_ten_2 (
-.noconn(noconn_dft_hex0x74_ten_2)
+STONEnoconn XNCnoconn_dft_hex0x7C_ten_2 (
+.noconn(noconn_dft_hex0x7C_ten_2)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x74_ten_3 (
-.noconn(noconn_dft_hex0x74_ten_3)
+STONEnoconn XNCnoconn_dft_hex0x7C_ten_3 (
+.noconn(noconn_dft_hex0x7C_ten_3)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x74_ten_4 (
-.noconn(noconn_dft_hex0x74_ten_4)
+STONEnoconn XNCnoconn_dft_hex0x7C_ten_4 (
+.noconn(noconn_dft_hex0x7C_ten_4)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x74_ten_5 (
-.noconn(noconn_dft_hex0x74_ten_5)
+STONEnoconn XNCnoconn_dft_hex0x7C_ten_5 (
+.noconn(noconn_dft_hex0x7C_ten_5)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x74_ten_6 (
-.noconn(noconn_dft_hex0x74_ten_6)
+STONEnoconn XNCnoconn_dft_hex0x7C_ten_6 (
+.noconn(noconn_dft_hex0x7C_ten_6)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x74_ten_7 (
-.noconn(noconn_dft_hex0x74_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x7C_ten_7 (
+.noconn(noconn_dft_hex0x7C_ten_7)
 );
 
 endmodule

@@ -44,11 +44,11 @@ module SEQUENCERconfiguration (tmi,CELG59462,CELV96848,CELSUB40948,reset_puget,s
   input  CELV96848;
   input  CELSUB40948;
   output  reset_puget;
-  output  select_voutm5;
-  output  BBMconfiguration_0;
-  output  BBMconfiguration_1;
-  output  select_powerpathin;
-  output  select_powerpathcharge;
+  input  select_voutm5;
+  input  BBMconfiguration_0;
+  input  BBMconfiguration_1;
+  input  select_powerpathin;
+  input  select_powerpathcharge;
   input  register_sequencer_reset_0;
 endmodule
 

@@ -158,15 +158,15 @@ CHARGERalgorithm2p0_DYES_0 XMAIN (
 .bottom5SYNC(net_116),
 .bottom6SYNC(net_119),
 .csi_maximum(csi_maximum),
-.enableFAULT(net_93),
+.enableFAULT(CHARGERalgorithm2p0_statecontrol_5fe11ac3_4),
 .bbm_bottomon(bbm_bottomon),
 .bottom_state(bottom_state),
 .fault_stepup(fault_stepup),
 .start_stepup(start_stepup),
-.STATEcontrol0(net_89),
-.STATEcontrol1(net_90),
-.STATEcontrol2(net_91),
-.STATEcontrol3(net_92),
+.STATEcontrol0(CHARGERalgorithm2p0_statecontrol_5fe11ac3_0),
+.STATEcontrol1(CHARGERalgorithm2p0_statecontrol_5fe11ac3_1),
+.STATEcontrol2(CHARGERalgorithm2p0_statecontrol_5fe11ac3_2),
+.STATEcontrol3(CHARGERalgorithm2p0_statecontrol_5fe11ac3_3),
 .clock_charger(clock_charger),
 .enable_driver(enable_driver),
 .go_regulation(go_regulation),
@@ -317,7 +317,7 @@ dftprobeModel0_e1d1778d XU92 (
 .CELSUB(CELSUB40948)
 );
 
-DFTtm8d dft_hex0x47 (
+DFTtm8d dft_hex0x59 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
@@ -325,11 +325,11 @@ DFTtm8d dft_hex0x47 (
 .tdi({tdi_7316e6e5_XU84,tdi_321c687a_XU83,tdi_1f19b92a_XU82,tdi_75823e93_XU81,tdi_e3c5151b_XU80,tdi_4dc7f9a8_XU15,tdi_a9dbd3e9_XU13,tdi_8cd376f8_XU11}),
 .tdo(tdo),
 .ten({ten_7316e6e5_XU84,ten_321c687a_XU83,ten_1f19b92a_XU82,ten_75823e93_XU81,ten_e3c5151b_XU80,ten_4dc7f9a8_XU15,ten_a9dbd3e9_XU13,ten_8cd376f8_XU11}),
-.tma({a0,a1,a0,a0,a0,a1,a1,a1}),
+.tma({a0,a1,a0,a1,a1,a0,a0,a1}),
 .tmi(tmi[4:0])
 );
 
-DFTtm8d dft_hex0x48 (
+DFTtm8d dft_hex0x5A (
 .G(CELG59462),
 .V(CELV96848),
 .a({b1,b0}),
@@ -337,19 +337,19 @@ DFTtm8d dft_hex0x48 (
 .tdi({tdi_18bc8732_XU92,tdi_77d80eed_XU91,tdi_0322235d_XU90,tdi_a1d634a0_XU89,tdi_be1e9c4e_XU88,tdi_71551666_XU87,tdi_25f22613_XU86,tdi_d74a1943_XU85}),
 .tdo(tdo),
 .ten({ten_18bc8732_XU92,ten_77d80eed_XU91,ten_0322235d_XU90,ten_a1d634a0_XU89,ten_be1e9c4e_XU88,ten_71551666_XU87,ten_25f22613_XU86,ten_d74a1943_XU85}),
-.tma({b0,b1,b0,b0,b1,b0,b0,b0}),
+.tma({b0,b1,b0,b1,b1,b0,b1,b0}),
 .tmi(tmi[4:0])
 );
 
-drm8 drm_hex0x19 (
+drm8 drm_hex0x22 (
 .G(CELG59462),
 .V(CELV96848),
 .d0(d0),
 .d1(d1),
-.id({d0,d0,d0,d1,d1,d0,d0,d1}),
+.id({d0,d0,d1,d0,d0,d0,d1,d0}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,net_93,net_92,net_91,net_90,net_89}),
+.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,CHARGERalgorithm2p0_statecontrol_5fe11ac3_4,CHARGERalgorithm2p0_statecontrol_5fe11ac3_3,CHARGERalgorithm2p0_statecontrol_5fe11ac3_2,CHARGERalgorithm2p0_statecontrol_5fe11ac3_1,CHARGERalgorithm2p0_statecontrol_5fe11ac3_0}),
 .por0({d0,d0,d0,d1,d0,d0,d0,d0}),
 .bypload(d0),
 .lastdrm(d0)

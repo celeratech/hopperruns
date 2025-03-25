@@ -40,31 +40,31 @@ inout [4:0] tmi;
 input  CELG59462;
 input  CELV96848;
 input  CELSUB40948;
-output  enable_busy;
-output  RESTARTclock_0;
-output  RESTARTclock_1;
-output  RESTARTclock_2;
-output  RESTARTclock_3;
-output  ADCconfiguration_0;
-output  ADCconfiguration_1;
-output  ADCconfiguration_2;
-output  ADCconfiguration_3;
-output  COUNTconfiguration_0;
-output  COUNTconfiguration_1;
-output  COUNTconfiguration_2;
-output  COUNTconfiguration_3;
-output  COUNTconfiguration_4;
-output  COUNTconfiguration_5;
-output  COUNTconfiguration_6;
-output  COUNTconfiguration_7;
-output  SEQUENCERconfiguration_0;
-output  SEQUENCERconfiguration_1;
-output  SEQUENCERconfiguration_2;
-output  SEQUENCERconfiguration_3;
-output  SEQUENCERconfiguration_4;
-output  SEQUENCERconfiguration_5;
-output  SEQUENCERconfiguration_6;
-output  SEQUENCERconfiguration_7;
+  input  enable_busy;
+  input  RESTARTclock_0;
+  input  RESTARTclock_1;
+  input  RESTARTclock_2;
+  input  RESTARTclock_3;
+  input  ADCconfiguration_0;
+  input  ADCconfiguration_1;
+  input  ADCconfiguration_2;
+  input  ADCconfiguration_3;
+  input  COUNTconfiguration_0;
+  input  COUNTconfiguration_1;
+  input  COUNTconfiguration_2;
+  input  COUNTconfiguration_3;
+  input  COUNTconfiguration_4;
+  input  COUNTconfiguration_5;
+  input  COUNTconfiguration_6;
+  input  COUNTconfiguration_7;
+  input  SEQUENCERconfiguration_0;
+  input  SEQUENCERconfiguration_1;
+  input  SEQUENCERconfiguration_2;
+  input  SEQUENCERconfiguration_3;
+  input  SEQUENCERconfiguration_4;
+  input  SEQUENCERconfiguration_5;
+  input  SEQUENCERconfiguration_6;
+  input  SEQUENCERconfiguration_7;
 
 
 // ------------------------ Wires ------------------------
@@ -80,21 +80,21 @@ wire [7:0] por2;
 wire [7:0] por3;
 
 // ------------------------ Networks ---------------------
-drm32 drm_hex0x2C (
+drm32 drm_hex0x33 (
 .G(CELG59462),
 .V(CELV96848),
 .d0(a0),
 .d1(a1),
-.id({a0,a0,a1,a0,a1,a1,a0,a0}),
+.id({a0,a0,a1,a1,a0,a0,a1,a1}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({SEQUENCERconfiguration_3,SEQUENCERconfiguration_2,SEQUENCERconfiguration_1,SEQUENCERconfiguration_0,ADCconfiguration_3,ADCconfiguration_2,ADCconfiguration_1,ADCconfiguration_0}),
-.drm1({COUNTconfiguration_7,COUNTconfiguration_6,COUNTconfiguration_5,COUNTconfiguration_4,COUNTconfiguration_3,COUNTconfiguration_2,COUNTconfiguration_1,COUNTconfiguration_0}),
-.drm2({SEQUENCERconfiguration_7,SEQUENCERconfiguration_6,SEQUENCERconfiguration_5,SEQUENCERconfiguration_4,RESTARTclock_3,RESTARTclock_2,RESTARTclock_1,RESTARTclock_0}),
-.drm3({noconn_drm32_drm3_7,noconn_drm32_drm3_6,noconn_drm32_drm3_5,noconn_drm32_drm3_4,noconn_drm32_drm3_3,noconn_drm32_drm3_2,noconn_drm32_drm3_1,enable_busy}),
-.por0({a0,a0,a0,a0,a0,a0,a0,a0}),
+.drm0({TELEMTRYsequencerFULL_525a1963_3,TELEMTRYsequencerFULL_525a1963_2,TELEMTRYsequencerFULL_525a1963_1,TELEMTRYsequencerFULL_525a1963_0,TELEMETRYadcCONFIGURATION_cf06a89e_3,TELEMETRYadcCONFIGURATION_cf06a89e_2,TELEMETRYadcCONFIGURATION_cf06a89e_1,TELEMETRYadcCONFIGURATION_cf06a89e_0}),
+.drm1({TELEMTRYcountConfiguration_36205656_7,TELEMTRYcountConfiguration_36205656_6,TELEMTRYcountConfiguration_36205656_5,TELEMTRYcountConfiguration_36205656_4,TELEMTRYcountConfiguration_36205656_3,TELEMTRYcountConfiguration_36205656_2,TELEMTRYcountConfiguration_36205656_1,TELEMTRYcountConfiguration_36205656_0}),
+.drm2({TELEMTRYsequencerCAP_cb3ad3ac_3,TELEMTRYsequencerCAP_cb3ad3ac_2,TELEMTRYsequencerCAP_cb3ad3ac_1,TELEMTRYsequencerCAP_cb3ad3ac_0,TELEMETRYsequencerRESTART_f34237be_3,TELEMETRYsequencerRESTART_f34237be_2,TELEMETRYsequencerRESTART_f34237be_1,TELEMETRYsequencerRESTART_f34237be_0}),
+.drm3({noconn_drm32_drm3_7,noconn_drm32_drm3_6,noconn_drm32_drm3_5,noconn_drm32_drm3_4,noconn_drm32_drm3_3,noconn_drm32_drm3_2,noconn_drm32_drm3_1,TELEMETRYsequencerBUSY_66a0000d}),
+.por0({a1,a0,a1,a1,a0,a0,a0,a0}),
 .por1({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por2({a0,a0,a0,a0,a0,a0,a0,a0}),
+.por2({a0,a0,a1,a1,a0,a0,a0,a0}),
 .por3({a0,a0,a0,a0,a0,a0,a0,a1}),
 .bypload(a0),
 .lastdrm(a0)
