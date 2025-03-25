@@ -69,17 +69,17 @@ module SIMbias ( V, IP, IN );
 endmodule
 
 
+module vpwl_0x0_11d0ux0 (PLUS,MINUS);
+  inout  PLUS;
+  inout  MINUS;
+endmodule
+
 module vpwl_0x0_10d0ux0_11d0ux0 (PLUS,MINUS);
   output  PLUS;
   output  MINUS;
 endmodule
 
 module vpwl_0x0_10d999ux0_11d0ux5 (PLUS,MINUS);
-  inout  PLUS;
-  inout  MINUS;
-endmodule
-
-module vpwl_0x0_11d0ux0 (PLUS,MINUS);
   inout  PLUS;
   inout  MINUS;
 endmodule
@@ -196,6 +196,16 @@ SIMbias XIP_5c672501 (
 .V(SIMPV),
 .IN(noconn_IN),
 .IP(IP_5c672501)
+);
+
+vpwl_0x0_11d0ux0 Xdatamap1_pwl_bit0 (
+.PLUS(register_CURRENTSENSEinMEASUREdelay_0[0]),
+.MINUS(GND)
+);
+
+vpwl_0x0_11d0ux0 Xdatamap1_pwl_bit1 (
+.PLUS(register_CURRENTSENSEinMEASUREdelay_0[1]),
+.MINUS(GND)
 );
 
 vpwl_0x0_10d0ux0_11d0ux0 V_kelvin_GNDcurrentsenseinx (

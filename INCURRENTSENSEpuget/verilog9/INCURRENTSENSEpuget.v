@@ -11,9 +11,8 @@ module CURRENTSENSEinDEBUG (IIN,dft_ok,dft_startup,IIN_TELEMETRY,dft_measure_del
   output  hijack_measure_currentsense;
 endmodule
 
-module CURRENTSENSEinMAIN (IIN,tmi,SIMPV,VOUTSN,VOUTSP,dft_ok,ok_iin,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_4ad46a6e,IP_5c672501,dft_startup,IIN_TELEMETRY,ok_currentsense,dft_measure_delay,clock_currentsense,enable_currentsense,measure_currentsense,kelvin_GNDcurrentsense,register_CURRENTSENSEinMEASUREdelay_0);
+module CURRENTSENSEinMAIN (IIN,SIMPV,VOUTSN,VOUTSP,dft_ok,ok_iin,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_4ad46a6e,IP_5c672501,dft_startup,IIN_TELEMETRY,ok_currentsense,dft_measure_delay,clock_currentsense,enable_currentsense,measure_currentsense,kelvin_GNDcurrentsense,register_CURRENTSENSEinMEASUREdelay_0);
   inout  IIN;
-  inout [4:0] tmi;
   input  SIMPV;
   input  VOUTSN;
   input  VOUTSP;
@@ -37,8 +36,7 @@ module CURRENTSENSEinMAIN (IIN,tmi,SIMPV,VOUTSN,VOUTSP,dft_ok,ok_iin,CELG59462,C
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module INCURRENTSENSEpuget (tmi, SIMPV, VOUTSN, VOUTSP, CELG59462, CELV96848, PORB97836, VSNSI_LIVE, CELSUB40948, IP_4ad46a6e, IP_5c672501, VSNSI_FILTER, ok_currentsensein, clock_currentsensein, enable_currentsensein, measure_currentsensein, kelvin_GNDcurrentsensein, ok_measurecurrentsensein, register_CURRENTSENSEinMEASUREdelay_0);
-inout [4:0] tmi;
+module INCURRENTSENSEpuget (SIMPV, VOUTSN, VOUTSP, CELG59462, CELV96848, PORB97836, VSNSI_LIVE, CELSUB40948, IP_4ad46a6e, IP_5c672501, VSNSI_FILTER, ok_currentsensein, clock_currentsensein, enable_currentsensein, measure_currentsensein, kelvin_GNDcurrentsensein, ok_measurecurrentsensein, register_CURRENTSENSEinMEASUREdelay_0);
 input  SIMPV;
 input  VOUTSN;
 input  VOUTSP;
@@ -60,7 +58,6 @@ input [1:0] register_CURRENTSENSEinMEASUREdelay_0;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
 wire [1:0] register_CURRENTSENSEinMEASUREdelay_0;
 
 // ------------------------ Networks ---------------------
@@ -78,7 +75,6 @@ CURRENTSENSEinDEBUG XDEBUG (
 
 CURRENTSENSEinMAIN XMAIN (
 .IIN(VSNSI_LIVE),
-.tmi(tmi[4:0]),
 .SIMPV(SIMPV),
 .VOUTSN(VOUTSN),
 .VOUTSP(VOUTSP),

@@ -194,39 +194,6 @@ endmodule
 
 
 
-//Verilog HDL for "DRM", "drm24" "functional"
-
-
-module drm24 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, por1, por2, drm0,
-drm1, drm2, d1, d0 );
-
-  input lastdrm;
-  input V;
-  output d1;
-  input  [7:0] id;
-  output d0;
-  output  [7:0] drm2;
-  input  [7:0] por2;
-  input  [7:0] por1;
-  input bypload;
-  output  [7:0] drm0;
-  input  [7:0] por0;
-  input G;
-  output  [7:0] drm1;
-  inout  [4:0] tmi;
-  input SUB;
-endmodule
-
-
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
 //Verilog HDL for "Generate", "WRAPPER1" "functional"
 
 
@@ -238,9 +205,8 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CURRENTSENSEinMAIN (IIN, tmi, SIMPV, VOUTSN, VOUTSP, dft_ok, ok_iin, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_4ad46a6e, IP_5c672501, dft_startup, IIN_TELEMETRY, ok_currentsense, dft_measure_delay, clock_currentsense, enable_currentsense, measure_currentsense, kelvin_GNDcurrentsense, register_CURRENTSENSEinMEASUREdelay_0);
+module CURRENTSENSEinMAIN (IIN, SIMPV, VOUTSN, VOUTSP, dft_ok, ok_iin, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_4ad46a6e, IP_5c672501, dft_startup, IIN_TELEMETRY, ok_currentsense, dft_measure_delay, clock_currentsense, enable_currentsense, measure_currentsense, kelvin_GNDcurrentsense, register_CURRENTSENSEinMEASUREdelay_0);
 inout  IIN;
-inout [4:0] tmi;
 input  SIMPV;
 input  VOUTSN;
 input  VOUTSP;
@@ -264,19 +230,11 @@ input [1:0] register_CURRENTSENSEinMEASUREdelay_0;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
 wire [1:0] register_CURRENTSENSEinMEASUREdelay_0;
 wire [6:0] trim_csainput;
 wire [6:0] trim_csaoutput;
 wire [1:0] delay;
 wire [2:0] factory_adjust_resistor;
-wire [7:0] id;
-wire [7:0] drm0;
-wire [7:0] drm1;
-wire [7:0] drm2;
-wire [7:0] por0;
-wire [7:0] por1;
-wire [7:0] por2;
 
 // ------------------------ Networks ---------------------
 VESPAasmINPUT2 XU3 (
@@ -348,8 +306,8 @@ currentsenseamplifier_48054596 XCSA1 (
 .CELV(CELV96848),
 .CELPOS(VOUTSP),
 .CELSUB(CELSUB40948),
-.trim_csainput({trim_csainput_5c672501_6,trim_csainput_5c672501_5,trim_csainput_5c672501_4,trim_csainput_5c672501_3,trim_csainput_5c672501_2,trim_csainput_5c672501_1,trim_csainput_5c672501_0}),
-.trim_csaoutput({trim_csaoutput_5c672501_6,trim_csaoutput_5c672501_5,trim_csaoutput_5c672501_4,trim_csaoutput_5c672501_3,trim_csaoutput_5c672501_2,trim_csaoutput_5c672501_1,trim_csaoutput_5c672501_0}),
+.trim_csainput({a0,a0,a0,a0,a0,a0,a0}),
+.trim_csaoutput({a0,a0,a0,a0,a0,a0,a0}),
 .ok_currentsenseamplifier(net_130),
 .INN_CURRENTSENSEAMPLIFIER(VOUTSP),
 .INP_CURRENTSENSEAMPLIFIER(VOUTSN),
@@ -375,6 +333,13 @@ delayclock_58885d25 Xdelay1 (
 .celeraporb(PORB97836)
 );
 
+PEBBLEtielo XDRMNOTL (
+.G(CELG59462),
+.V(CELV96848),
+.q(a0),
+.SUB(CELSUB40948)
+);
+
 switchtswitch_4b165e0d Xswitch1 (
 .I(net_133),
 .O(IIN_TELEMETRY),
@@ -390,7 +355,7 @@ resistor_f78b97c7 Xresistor1 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.factory_adjust_resistor({factory_adjust_resistor_c67dbca4_2,factory_adjust_resistor_c67dbca4_1,factory_adjust_resistor_c67dbca4_0})
+.factory_adjust_resistor({a0,a0,a0})
 );
 
 resistor_308d63e4 Xresistor2 (
@@ -399,7 +364,7 @@ resistor_308d63e4 Xresistor2 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.factory_adjust_resistor({factory_adjust_resistor_df617a62_2,factory_adjust_resistor_df617a62_1,factory_adjust_resistor_df617a62_0})
+.factory_adjust_resistor({a0,a0,a0})
 );
 
 amplifier_b9b34961 Xamplifier1 (
@@ -423,40 +388,6 @@ capacitorfixed_bb7f99ed Xcapacitor1 (
 capacitorfixed_b8fedd7c Xcapacitor2 (
 .CN(net_69),
 .CP(net_133)
-);
-
-drm24 drm_hex0x01 (
-.G(CELG59462),
-.V(CELV96848),
-.d0(a0),
-.d1(a1),
-.id({a0,a0,a0,a0,a0,a0,a0,a1}),
-.SUB(CELSUB40948),
-.tmi(tmi[4:0]),
-.drm0({noconn_drm24_drm0_7,trim_csainput_5c672501_6,trim_csainput_5c672501_5,trim_csainput_5c672501_4,trim_csainput_5c672501_3,trim_csainput_5c672501_2,trim_csainput_5c672501_1,trim_csainput_5c672501_0}),
-.drm1({noconn_drm24_drm1_7,trim_csaoutput_5c672501_6,trim_csaoutput_5c672501_5,trim_csaoutput_5c672501_4,trim_csaoutput_5c672501_3,trim_csaoutput_5c672501_2,trim_csaoutput_5c672501_1,trim_csaoutput_5c672501_0}),
-.drm2({noconn_drm24_drm2_7,noconn_drm24_drm2_6,factory_adjust_resistor_df617a62_2,factory_adjust_resistor_df617a62_1,factory_adjust_resistor_df617a62_0,factory_adjust_resistor_c67dbca4_2,factory_adjust_resistor_c67dbca4_1,factory_adjust_resistor_c67dbca4_0}),
-.por0({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por1({a0,a0,a0,a0,a0,a0,a0,a0}),
-.por2({a0,a0,a0,a0,a0,a0,a0,a0}),
-.bypload(a0),
-.lastdrm(a0)
-);
-
-STONEnoconn XNCnoconn_drm24_drm0_7 (
-.noconn(noconn_drm24_drm0_7)
-);
-
-STONEnoconn XNCnoconn_drm24_drm1_7 (
-.noconn(noconn_drm24_drm1_7)
-);
-
-STONEnoconn XNCnoconn_drm24_drm2_6 (
-.noconn(noconn_drm24_drm2_6)
-);
-
-STONEnoconn XNCnoconn_drm24_drm2_7 (
-.noconn(noconn_drm24_drm2_7)
 );
 
 WRAPPER1 XWRAPregister_CURRENTSENSEinMEASUREdelay_0_0 (
