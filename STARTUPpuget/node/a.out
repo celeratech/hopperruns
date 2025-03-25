@@ -1,0 +1,168 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x55a320108f60 .scope module, "CHARGEPUMPdebug" "CHARGEPUMPdebug" 2 34;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "p1";
+    .port_info 1 /INPUT 1 "p2";
+    .port_info 2 /INPUT 1 "dft_ok";
+    .port_info 3 /INPUT 1 "dft_ss";
+    .port_info 4 /INPUT 1 "dft_diff";
+    .port_info 5 /INPUT 1 "dft_skip";
+    .port_info 6 /INPUT 1 "CELG59462";
+    .port_info 7 /INPUT 1 "CELV96848";
+    .port_info 8 /INPUT 1 "dft_fault";
+    .port_info 9 /OUTPUT 1 "hijack_p1";
+    .port_info 10 /OUTPUT 1 "hijack_p2";
+    .port_info 11 /INPUT 1 "CELSUB40948";
+    .port_info 12 /INPUT 1 "dft_p1_skew";
+    .port_info 13 /INPUT 1 "dft_p2_skew";
+    .port_info 14 /INPUT 1 "dft_startup";
+    .port_info 15 /INPUT 1 "dft_clk_power";
+    .port_info 16 /INPUT 1 "dft_fault_time";
+    .port_info 17 /OUTPUT 1 "hijack_force_ss";
+    .port_info 18 /OUTPUT 1 "hijack_faultmask";
+    .port_info 19 /INPUT 1 "enable_chargepump";
+    .port_info 20 /INPUT 1 "dft_softstart_done";
+    .port_info 21 /OUTPUT 1 "hijack_enable_chargepump";
+o0x7fd0cf37c438 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a32015f730_0 .net "CELG59462", 0 0, o0x7fd0cf37c438;  0 drivers
+o0x7fd0cf37c498 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a32015f7d0_0 .net "CELSUB40948", 0 0, o0x7fd0cf37c498;  0 drivers
+o0x7fd0cf37c468 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a32015f8a0_0 .net "CELV96848", 0 0, o0x7fd0cf37c468;  0 drivers
+o0x7fd0cf37c018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a32015f9a0_0 .net "dft_clk_power", 0 0, o0x7fd0cf37c018;  0 drivers
+o0x7fd0cf37c078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a32015fa70_0 .net "dft_diff", 0 0, o0x7fd0cf37c078;  0 drivers
+o0x7fd0cf37c0d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a32015fb60_0 .net "dft_fault", 0 0, o0x7fd0cf37c0d8;  0 drivers
+o0x7fd0cf37c138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a32015fc30_0 .net "dft_fault_time", 0 0, o0x7fd0cf37c138;  0 drivers
+o0x7fd0cf37c198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a32015fd00_0 .net "dft_ok", 0 0, o0x7fd0cf37c198;  0 drivers
+o0x7fd0cf37c1f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a32015fdd0_0 .net "dft_p1_skew", 0 0, o0x7fd0cf37c1f8;  0 drivers
+o0x7fd0cf37c258 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a32015fea0_0 .net "dft_p2_skew", 0 0, o0x7fd0cf37c258;  0 drivers
+o0x7fd0cf37c2b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a32015ff70_0 .net "dft_skip", 0 0, o0x7fd0cf37c2b8;  0 drivers
+o0x7fd0cf37c318 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a320160040_0 .net "dft_softstart_done", 0 0, o0x7fd0cf37c318;  0 drivers
+o0x7fd0cf37c378 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a320160110_0 .net "dft_ss", 0 0, o0x7fd0cf37c378;  0 drivers
+o0x7fd0cf37c3d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a3201601e0_0 .net "dft_startup", 0 0, o0x7fd0cf37c3d8;  0 drivers
+o0x7fd0cf37c5b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a3201602b0_0 .net "enable_chargepump", 0 0, o0x7fd0cf37c5b8;  0 drivers
+o0x7fd0cf37c5e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a320160380_0 .net "hijack_enable_chargepump", 0 0, o0x7fd0cf37c5e8;  0 drivers
+o0x7fd0cf37c7f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a320160450_0 .net "hijack_faultmask", 0 0, o0x7fd0cf37c7f8;  0 drivers
+o0x7fd0cf37c888 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a320160630_0 .net "hijack_force_ss", 0 0, o0x7fd0cf37c888;  0 drivers
+o0x7fd0cf37c6a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a320160700_0 .net "hijack_p1", 0 0, o0x7fd0cf37c6a8;  0 drivers
+o0x7fd0cf37c768 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a3201607d0_0 .net "hijack_p2", 0 0, o0x7fd0cf37c768;  0 drivers
+o0x7fd0cf37c4c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a3201608a0_0 .net "net_80", 0 0, o0x7fd0cf37c4c8;  0 drivers
+o0x7fd0cf37c678 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a320160940_0 .net "p1", 0 0, o0x7fd0cf37c678;  0 drivers
+o0x7fd0cf37c738 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a320160a10_0 .net "p2", 0 0, o0x7fd0cf37c738;  0 drivers
+S_0x55a32013f1e0 .scope module, "XNCdft_clk_power" "STONEnoconn" 2 126, 2 17 0, S_0x55a320108f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x55a3201084b0_0 .net "noconn", 0 0, o0x7fd0cf37c018;  alias, 0 drivers
+S_0x55a32015bf30 .scope module, "XNCdft_diff" "STONEnoconn" 2 77, 2 17 0, S_0x55a320108f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x55a3201090f0_0 .net "noconn", 0 0, o0x7fd0cf37c078;  alias, 0 drivers
+S_0x55a32015c1b0 .scope module, "XNCdft_fault" "STONEnoconn" 2 110, 2 17 0, S_0x55a320108f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x55a320108ec0_0 .net "noconn", 0 0, o0x7fd0cf37c0d8;  alias, 0 drivers
+S_0x55a32015c410 .scope module, "XNCdft_fault_time" "STONEnoconn" 2 130, 2 17 0, S_0x55a320108f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x55a32015c610_0 .net "noconn", 0 0, o0x7fd0cf37c138;  alias, 0 drivers
+S_0x55a32015c730 .scope module, "XNCdft_ok" "STONEnoconn" 2 69, 2 17 0, S_0x55a320108f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x55a32015c980_0 .net "noconn", 0 0, o0x7fd0cf37c198;  alias, 0 drivers
+S_0x55a32015caa0 .scope module, "XNCdft_p1_skew" "STONEnoconn" 2 114, 2 17 0, S_0x55a320108f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x55a32015cca0_0 .net "noconn", 0 0, o0x7fd0cf37c1f8;  alias, 0 drivers
+S_0x55a32015cdc0 .scope module, "XNCdft_p2_skew" "STONEnoconn" 2 118, 2 17 0, S_0x55a320108f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x55a32015cfc0_0 .net "noconn", 0 0, o0x7fd0cf37c258;  alias, 0 drivers
+S_0x55a32015d0e0 .scope module, "XNCdft_skip" "STONEnoconn" 2 81, 2 17 0, S_0x55a320108f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x55a32015d2e0_0 .net "noconn", 0 0, o0x7fd0cf37c2b8;  alias, 0 drivers
+S_0x55a32015d400 .scope module, "XNCdft_softstart_done" "STONEnoconn" 2 134, 2 17 0, S_0x55a320108f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x55a32015d600_0 .net "noconn", 0 0, o0x7fd0cf37c318;  alias, 0 drivers
+S_0x55a32015d720 .scope module, "XNCdft_ss" "STONEnoconn" 2 73, 2 17 0, S_0x55a320108f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x55a32015d8d0_0 .net "noconn", 0 0, o0x7fd0cf37c378;  alias, 0 drivers
+S_0x55a32015d9f0 .scope module, "XNCdft_startup" "STONEnoconn" 2 122, 2 17 0, S_0x55a320108f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x55a32015dbf0_0 .net "noconn", 0 0, o0x7fd0cf37c3d8;  alias, 0 drivers
+S_0x55a32015dd10 .scope module, "XU1" "tie_9e2c0894" 2 62, 2 5 0, S_0x55a320108f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "CELV";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /OUTPUT 1 "a0";
+    .port_info 3 /INPUT 1 "SUB";
+v0x55a32015def0_0 .net "CELG", 0 0, o0x7fd0cf37c438;  alias, 0 drivers
+v0x55a32015dfb0_0 .net "CELV", 0 0, o0x7fd0cf37c468;  alias, 0 drivers
+v0x55a32015e070_0 .net "SUB", 0 0, o0x7fd0cf37c498;  alias, 0 drivers
+v0x55a32015e140_0 .net "a0", 0 0, o0x7fd0cf37c4c8;  alias, 0 drivers
+S_0x55a32015e2b0 .scope module, "XWRAP_61_62" "WRAPPER1" 2 85, 2 26 0, S_0x55a320108f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o";
+    .port_info 1 /INPUT 1 "i";
+v0x55a32015e4b0_0 .net "i", 0 0, o0x7fd0cf37c5b8;  alias, 0 drivers
+v0x55a32015e590_0 .net "o", 0 0, o0x7fd0cf37c5e8;  alias, 0 drivers
+S_0x55a32015e6b0 .scope module, "XWRAP_75_64" "WRAPPER1" 2 90, 2 26 0, S_0x55a320108f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o";
+    .port_info 1 /INPUT 1 "i";
+v0x55a32015e890_0 .net "i", 0 0, o0x7fd0cf37c678;  alias, 0 drivers
+v0x55a32015e970_0 .net "o", 0 0, o0x7fd0cf37c6a8;  alias, 0 drivers
+S_0x55a32015ea90 .scope module, "XWRAP_76_66" "WRAPPER1" 2 95, 2 26 0, S_0x55a320108f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o";
+    .port_info 1 /INPUT 1 "i";
+v0x55a32015ec70_0 .net "i", 0 0, o0x7fd0cf37c738;  alias, 0 drivers
+v0x55a32015ed50_0 .net "o", 0 0, o0x7fd0cf37c768;  alias, 0 drivers
+S_0x55a32015ee70 .scope module, "XWRAP_80_68" "WRAPPER1" 2 100, 2 26 0, S_0x55a320108f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o";
+    .port_info 1 /INPUT 1 "i";
+v0x55a32015f050_0 .net "i", 0 0, o0x7fd0cf37c4c8;  alias, 0 drivers
+v0x55a32015f110_0 .net "o", 0 0, o0x7fd0cf37c7f8;  alias, 0 drivers
+S_0x55a32015f210 .scope module, "XWRAP_80_70" "WRAPPER1" 2 105, 2 26 0, S_0x55a320108f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o";
+    .port_info 1 /INPUT 1 "i";
+v0x55a32015f500_0 .net "i", 0 0, o0x7fd0cf37c4c8;  alias, 0 drivers
+v0x55a32015f610_0 .net "o", 0 0, o0x7fd0cf37c888;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/celera/projects/Sunnyvale/software/STARTUPpuget/verilog10/CHARGEPUMPdebug.v";
