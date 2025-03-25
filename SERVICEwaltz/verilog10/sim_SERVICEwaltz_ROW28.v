@@ -87,17 +87,17 @@ SERVICEwaltz XSERVICEwaltz1 (
 );
 
 WRAPPER1 celkelvin_IN1_WRAPPER (
-.i({celkelvin_IN1,IN}),
+.i(celkelvin_IN1),
 .o(IN)
 );
 
 WRAPPER1 celkelvin_IN2_WRAPPER (
-.i({celkelvin_IN2,BIAS}),
+.i(celkelvin_IN2),
 .o(BIAS)
 );
 
 WRAPPER1 celkelvin_VBIAS_WRAPPER (
-.i({celkelvin_VBIAS,VCC}),
+.i(celkelvin_VBIAS),
 .o(VCC)
 );
 
