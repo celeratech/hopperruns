@@ -101,5 +101,10 @@ WRAPPER1 celkelvin_VBIAS_WRAPPER (
 .o(VCC)
 );
 
+WRAPPER1 celkelvin_GNDref_WRAPPER (
+.i(celkelvin_GNDref),
+.o(CELG59462)
+);
+
 endmodule
 
