@@ -34,6 +34,16 @@ module SERVICEwaltz (EN,IN,VCC,BIAS,porb,REF0V9,CELG59462,CELV96848,kelvin_VCC,o
   inout  kelvin_GNDservice;
 endmodule
 
+//Verilog HDL for "Generate", "WRAPPER1" "functional"
+
+
+module WRAPPER1 ( o, i );
+
+  input i;
+  output o;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
 module sim_SERVICEwaltz_ROW28 ();
 
@@ -74,6 +84,21 @@ SERVICEwaltz XSERVICEwaltz1 (
 .celkelvin_VBIAS(celkelvin_VBIAS),
 .celkelvin_GNDref(celkelvin_GNDref),
 .kelvin_GNDservice(kelvin_GNDservice)
+);
+
+WRAPPER1 celkelvin_IN1_WRAPPER (
+.i({celkelvin_IN1,IN}),
+.o(IN)
+);
+
+WRAPPER1 celkelvin_IN2_WRAPPER (
+.i({celkelvin_IN2,BIAS}),
+.o(BIAS)
+);
+
+WRAPPER1 celkelvin_VBIAS_WRAPPER (
+.i({celkelvin_VBIAS,VCC}),
+.o(VCC)
 );
 
 endmodule
