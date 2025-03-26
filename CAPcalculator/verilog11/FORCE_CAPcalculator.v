@@ -99,7 +99,7 @@ input GND;
 endmodule 
 
 // ------------------------ Module Verilog ---------------
-module FORCE_CAPcalculator (GND, porb, SIMPV, CELG59462, CELV96848, PORB97836, power_fail, CELSUB40948, IP_9a4148db, meas_vcap1_0, meas_vcap1_1, meas_vcap1_2, meas_vcap1_3, meas_vcap1_4, meas_vcap1_5, meas_vcap1_6, meas_vcap1_7, meas_vcap1_8, meas_vcap1_9, meas_vcap2_0, meas_vcap2_1, meas_vcap2_2, meas_vcap2_3, meas_vcap2_4, meas_vcap2_5, meas_vcap2_6, meas_vcap2_7, meas_vcap2_8, meas_vcap2_9, meas_vcap3_0, meas_vcap3_1, meas_vcap3_2, meas_vcap3_3, meas_vcap3_4, meas_vcap3_5, meas_vcap3_6, meas_vcap3_7, meas_vcap3_8, meas_vcap3_9, meas_vcap4_0, meas_vcap4_1, meas_vcap4_2, meas_vcap4_3, meas_vcap4_4, meas_vcap4_5, meas_vcap4_6, meas_vcap4_7, meas_vcap4_8, meas_vcap4_9, meas_vcap1_10, meas_vcap1_11, meas_vcap1_12, meas_vcap1_13, meas_vcap1_14, meas_vcap1_15, meas_vcap2_10, meas_vcap2_11, meas_vcap2_12, meas_vcap2_13, meas_vcap2_14, meas_vcap2_15, meas_vcap3_10, meas_vcap3_11, meas_vcap3_12, meas_vcap3_13, meas_vcap3_14, meas_vcap3_15, meas_vcap4_10, meas_vcap4_11, meas_vcap4_12, meas_vcap4_13, meas_vcap4_14, meas_vcap4_15, clock_calculator, enable_capcalculate, kelvin_GNDcalculator, register_vshunt_15[0], register_vshunt_15[1], register_vshunt_15[2], register_vshunt_15[3], register_vshunt_15[4], register_vshunt_15[5], register_vshunt_15[6], register_vshunt_15[7], register_vshunt_15[8], register_vshunt_15[9], register_vshunt_15[10], register_vshunt_15[11], register_vshunt_15[12], register_vshunt_15[13], register_vshunt_15[14], register_vshunt_15[15]);
+module FORCE_CAPcalculator (GND, porb, SIMPV, CELG59462, CELV96848, PORB97836, power_fail, CELSUB40948, IP_9a4148db, meas_vcap1_0, meas_vcap1_1, meas_vcap1_2, meas_vcap1_3, meas_vcap1_4, meas_vcap1_5, meas_vcap1_6, meas_vcap1_7, meas_vcap1_8, meas_vcap1_9, meas_vcap2_0, meas_vcap2_1, meas_vcap2_2, meas_vcap2_3, meas_vcap2_4, meas_vcap2_5, meas_vcap2_6, meas_vcap2_7, meas_vcap2_8, meas_vcap2_9, meas_vcap3_0, meas_vcap3_1, meas_vcap3_2, meas_vcap3_3, meas_vcap3_4, meas_vcap3_5, meas_vcap3_6, meas_vcap3_7, meas_vcap3_8, meas_vcap3_9, meas_vcap4_0, meas_vcap4_1, meas_vcap4_2, meas_vcap4_3, meas_vcap4_4, meas_vcap4_5, meas_vcap4_6, meas_vcap4_7, meas_vcap4_8, meas_vcap4_9, meas_vcap1_10, meas_vcap1_11, meas_vcap1_12, meas_vcap1_13, meas_vcap1_14, meas_vcap1_15, meas_vcap2_10, meas_vcap2_11, meas_vcap2_12, meas_vcap2_13, meas_vcap2_14, meas_vcap2_15, meas_vcap3_10, meas_vcap3_11, meas_vcap3_12, meas_vcap3_13, meas_vcap3_14, meas_vcap3_15, meas_vcap4_10, meas_vcap4_11, meas_vcap4_12, meas_vcap4_13, meas_vcap4_14, meas_vcap4_15, clock_calculator, register_vshunt_15, enable_capcalculate, kelvin_GNDcalculator);
 inout  GND;
 output  porb;
 output  SIMPV;
@@ -174,27 +174,13 @@ inout  meas_vcap4_13;
 inout  meas_vcap4_14;
 inout  meas_vcap4_15;
 output  clock_calculator;
+input [15:0] register_vshunt_15;
 output  enable_capcalculate;
 output  kelvin_GNDcalculator;
-inout  register_vshunt_15[0];
-inout  register_vshunt_15[1];
-inout  register_vshunt_15[2];
-inout  register_vshunt_15[3];
-inout  register_vshunt_15[4];
-inout  register_vshunt_15[5];
-inout  register_vshunt_15[6];
-inout  register_vshunt_15[7];
-inout  register_vshunt_15[8];
-inout  register_vshunt_15[9];
-inout  register_vshunt_15[10];
-inout  register_vshunt_15[11];
-inout  register_vshunt_15[12];
-inout  register_vshunt_15[13];
-inout  register_vshunt_15[14];
-inout  register_vshunt_15[15];
 
 
 // ------------------------ Wires ------------------------
+wire [15:0] register_vshunt_15;
 
 // ------------------------ Networks ---------------------
 STONEnoconn XNCip (

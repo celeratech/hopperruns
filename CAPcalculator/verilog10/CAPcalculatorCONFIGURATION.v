@@ -144,7 +144,6 @@ wire [15:0] register_vshunt_15;
 wire [15:0] a;
 wire [15:0] b;
 wire [15:0] o;
-wire [15:0] vshunt_15;
 
 // ------------------------ Networks ---------------------
 PEBBLEtiehi XDRMNOTH (
