@@ -167,7 +167,7 @@ module FORCE_CAPcalculator (GND,porb,SIMPV,CELG59462,CELV96848,PORB97836,power_f
   inout  meas_vcap4_14;
   inout  meas_vcap4_15;
   output  clock_calculator;
-  input [15:0] register_vshunt_15;
+  output [15:0] register_vshunt_15;
   output  enable_capcalculate;
   output  kelvin_GNDcalculator;
 endmodule

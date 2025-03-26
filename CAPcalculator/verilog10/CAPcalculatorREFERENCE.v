@@ -79,7 +79,6 @@ module celeradacladder_415ee173 (SIMPV,
 global_dacladder,DAC,ok_dac,
 IP,
 i,
-trim_dacopositive,trim_daconegative,
 strobe_dac,
 CELREF,
 GNDSENSE,
@@ -92,8 +91,6 @@ input strobe_dac;
 output ok_dac;
 input IP;
 input [7:0] i;
-input [6:0] trim_dacopositive;
-input [6:0] trim_daconegative;
 input GNDSENSE;
 input CELG;
 input CELSUB;
@@ -234,8 +231,6 @@ input  enable_chargereference;
 
 // ------------------------ Wires ------------------------
 wire [7:0] i;
-wire [6:0] trim_daconegative;
-wire [6:0] trim_dacopositive;
 wire [15:0] a;
 wire [15:0] b;
 wire [15:0] o;
@@ -309,9 +304,7 @@ celeradacladder_415ee173 Xdac1 (
 .ok_dac(net_180),
 .GNDSENSE(kelvin_GNDcalculator),
 .strobe_dac(net_177),
-.global_dacladder(tl0),
-.trim_daconegative({a0,a0,a0,a0,a0,a0,a0}),
-.trim_dacopositive({a0,a0,a0,a0,a0,a0,a0})
+.global_dacladder(tl0)
 );
 
 dff_8af7c302 Xdff1 (
@@ -379,13 +372,6 @@ delayfixed_a83bf69d Xdelay1 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
-);
-
-PEBBLEtielo XDRMNOTL (
-.G(CELG59462),
-.V(CELV96848),
-.q(a0),
-.SUB(CELSUB40948)
 );
 
 subtractor_7c48fb10 Xsubtractor1 (

@@ -5,7 +5,6 @@ module celeradacladder_415ee173 (SIMPV,
 global_dacladder,DAC,ok_dac,
 IP,
 i,
-trim_dacopositive,trim_daconegative,
 strobe_dac,
 CELREF,
 GNDSENSE,
@@ -18,8 +17,6 @@ input strobe_dac;
 output ok_dac;
 input IP;
 input [7:0] i;
-input [6:0] trim_dacopositive;
-input [6:0] trim_daconegative;
 input GNDSENSE;
 input CELG;
 input CELSUB;
