@@ -178,7 +178,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SERVICEwaltzMAIN (EN, IN, VCC, BIAS, porb, REF0V9, go_vcc, CELG59462, CELV96848, CELBG83021, kelvin_VCC, ok_service, CELSUB40948, IP_4a72660b, REF_e3b0c442, global_vbias, ok_reference, celkelvin_IN1, celkelvin_IN2, celkelvin_VBIAS, celkelvin_GNDref, kelvin_GNDservice);
+module SERVICEwaltzMAIN (EN, IN, VCC, BIAS, porb, REF0V9, go_vcc, CELG59462, CELV96848, CELBG83021, kelvin_VCC, ok_service, CELSUB40948, IP_4a72660b, REF_e3b0c442, ok_reference, celkelvin_IN1, celkelvin_IN2, celkelvin_VBIAS, celkelvin_GNDref, kelvin_GNDservice);
 input  EN;
 input  IN;
 output  VCC;
@@ -194,7 +194,6 @@ output  ok_service;
   input  CELSUB40948;
 input  IP_4a72660b;
 output  REF_e3b0c442;
-input  global_vbias;
 output  ok_reference;
 input  celkelvin_IN1;
 input  celkelvin_IN2;
@@ -306,7 +305,7 @@ vbias_06fccf36 Xvbias1 (
 .TAI_VBIAS(noconn_TAI_VBIAS3),
 .tdi_vbias(noconn_tdi_vbias4),
 .ten_taiv2v5(tl0),
-.global_vbias(global_vbias),
+.global_vbias(tl0),
 .ten_taiv1v0f(tl0),
 .celkelvin_IN1(celkelvin_IN1),
 .celkelvin_IN2(celkelvin_IN2),
