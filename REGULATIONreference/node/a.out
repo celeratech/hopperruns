@@ -1,0 +1,562 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x555555847f60 .scope module, "FORCE_REGULATIONreference" "FORCE_REGULATIONreference" 2 72;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "SS";
+    .port_info 1 /OUTPUT 1 "VC";
+    .port_info 2 /OUTPUT 1 "go";
+    .port_info 3 /OUTPUT 1 "GND";
+    .port_info 4 /OUTPUT 1 "IIN";
+    .port_info 5 /OUTPUT 1 "CAPFB";
+    .port_info 6 /OUTPUT 1 "OUTFB";
+    .port_info 7 /OUTPUT 1 "SIMPV";
+    .port_info 8 /OUTPUT 1 "REF_CAP";
+    .port_info 9 /OUTPUT 1 "REF_IIN";
+    .port_info 10 /OUTPUT 1 "REF_OUT";
+    .port_info 11 /OUTPUT 1 "VCsense";
+    .port_info 12 /OUTPUT 1 "GMCHARGE";
+    .port_info 13 /OUTPUT 1 "CELG59462";
+    .port_info 14 /OUTPUT 1 "CELV96848";
+    .port_info 15 /OUTPUT 1 "REF_CHARGE";
+    .port_info 16 /OUTPUT 1 "CELSUB40948";
+    .port_info 17 /OUTPUT 1 "IP_1748f38b";
+    .port_info 18 /OUTPUT 1 "IP_51d5b7db";
+    .port_info 19 /OUTPUT 1 "IP_52cba950";
+    .port_info 20 /OUTPUT 1 "IP_5c9afec8";
+    .port_info 21 /OUTPUT 1 "IP_65be5a53";
+    .port_info 22 /OUTPUT 1 "IP_7fd756e8";
+    .port_info 23 /OUTPUT 1 "IP_9b35f469";
+    .port_info 24 /OUTPUT 1 "IP_bd9fd3f3";
+    .port_info 25 /OUTPUT 1 "IP_cb653629";
+    .port_info 26 /OUTPUT 1 "IP_d273c85d";
+    .port_info 27 /OUTPUT 1 "IP_e27f820d";
+    .port_info 28 /OUTPUT 1 "IP_f387a76b";
+    .port_info 29 /OUTPUT 1 "REF_CHARGER";
+    .port_info 30 /OUTPUT 1 "GNDregulation";
+    .port_info 31 /OUTPUT 1 "mode_stepdown";
+    .port_info 32 /OUTPUT 1 "freeze_charger";
+    .port_info 33 /OUTPUT 1 "clock_regulation";
+    .port_info 34 /OUTPUT 1 "enable_reference";
+    .port_info 35 /OUTPUT 1 "kelvin_GNDregulation";
+o0x7fffff25f078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d5cb0_0 .net "CAPFB", 0 0, o0x7fffff25f078;  0 drivers
+o0x7fffff260488 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d5d70_0 .net "CELG59462", 0 0, o0x7fffff260488;  0 drivers
+o0x7fffff260518 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d5e10_0 .net "CELSUB40948", 0 0, o0x7fffff260518;  0 drivers
+o0x7fffff2605a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d5ee0_0 .net "CELV96848", 0 0, o0x7fffff2605a8;  0 drivers
+o0x7fffff25f138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d5f80_0 .net "GMCHARGE", 0 0, o0x7fffff25f138;  0 drivers
+o0x7fffff25f228 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d6070_0 .net "GND", 0 0, o0x7fffff25f228;  0 drivers
+o0x7fffff25f2e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d6110_0 .net "GNDregulation", 0 0, o0x7fffff25f2e8;  0 drivers
+o0x7fffff25f378 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d61e0_0 .net "IIN", 0 0, o0x7fffff25f378;  0 drivers
+o0x7fffff260668 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d62b0_0 .net "IP_1748f38b", 0 0, o0x7fffff260668;  0 drivers
+o0x7fffff260728 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d6410_0 .net "IP_51d5b7db", 0 0, o0x7fffff260728;  0 drivers
+o0x7fffff2607e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d64e0_0 .net "IP_52cba950", 0 0, o0x7fffff2607e8;  0 drivers
+o0x7fffff2608a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d65b0_0 .net "IP_5c9afec8", 0 0, o0x7fffff2608a8;  0 drivers
+o0x7fffff260968 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d6680_0 .net "IP_65be5a53", 0 0, o0x7fffff260968;  0 drivers
+o0x7fffff260a28 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d6750_0 .net "IP_7fd756e8", 0 0, o0x7fffff260a28;  0 drivers
+o0x7fffff260ae8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d6820_0 .net "IP_9b35f469", 0 0, o0x7fffff260ae8;  0 drivers
+o0x7fffff260ba8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d68f0_0 .net "IP_bd9fd3f3", 0 0, o0x7fffff260ba8;  0 drivers
+o0x7fffff260c68 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d69c0_0 .net "IP_cb653629", 0 0, o0x7fffff260c68;  0 drivers
+o0x7fffff260d28 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d6ba0_0 .net "IP_d273c85d", 0 0, o0x7fffff260d28;  0 drivers
+o0x7fffff260de8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d6c70_0 .net "IP_e27f820d", 0 0, o0x7fffff260de8;  0 drivers
+o0x7fffff260ea8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d6d40_0 .net "IP_f387a76b", 0 0, o0x7fffff260ea8;  0 drivers
+o0x7fffff25f438 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d6e10_0 .net "OUTFB", 0 0, o0x7fffff25f438;  0 drivers
+o0x7fffff25f4f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d6ee0_0 .net "REF_CAP", 0 0, o0x7fffff25f4f8;  0 drivers
+o0x7fffff25f5b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d6fb0_0 .net "REF_CHARGE", 0 0, o0x7fffff25f5b8;  0 drivers
+o0x7fffff25f678 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d7080_0 .net "REF_CHARGER", 0 0, o0x7fffff25f678;  0 drivers
+o0x7fffff25f738 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d7150_0 .net "REF_IIN", 0 0, o0x7fffff25f738;  0 drivers
+o0x7fffff25f7f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d7220_0 .net "REF_OUT", 0 0, o0x7fffff25f7f8;  0 drivers
+o0x7fffff25f8b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d72f0_0 .net "SIMPV", 0 0, o0x7fffff25f8b8;  0 drivers
+o0x7fffff25f978 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d7390_0 .net "SS", 0 0, o0x7fffff25f978;  0 drivers
+o0x7fffff25fa38 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d7460_0 .net "VC", 0 0, o0x7fffff25fa38;  0 drivers
+o0x7fffff25faf8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d7530_0 .net "VCsense", 0 0, o0x7fffff25faf8;  0 drivers
+o0x7fffff260f98 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d7600_0 .net "clock_regulation", 0 0, o0x7fffff260f98;  0 drivers
+o0x7fffff2610b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d76d0_0 .net "enable_reference", 0 0, o0x7fffff2610b8;  0 drivers
+o0x7fffff2611d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d77a0_0 .net "freeze_charger", 0 0, o0x7fffff2611d8;  0 drivers
+o0x7fffff2612f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d7a80_0 .net "go", 0 0, o0x7fffff2612f8;  0 drivers
+o0x7fffff25fbe8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d7b50_0 .net "kelvin_GNDregulation", 0 0, o0x7fffff25fbe8;  0 drivers
+o0x7fffff261418 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d7c20_0 .net "mode_stepdown", 0 0, o0x7fffff261418;  0 drivers
+o0x7fffff25f018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d7cf0_0 .net "net_0", 0 0, o0x7fffff25f018;  0 drivers
+o0x7fffff25f6a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d7d90_0 .net "net_155", 0 0, o0x7fffff25f6a8;  0 drivers
+o0x7fffff25f2b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d7e80_0 .net "net_156", 0 0, o0x7fffff25f2b8;  0 drivers
+o0x7fffff25f0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d7f70_0 .net "net_157", 0 0, o0x7fffff25f0a8;  0 drivers
+o0x7fffff25f828 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d8060_0 .net "net_158", 0 0, o0x7fffff25f828;  0 drivers
+o0x7fffff25f3a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d8150_0 .net "net_159", 0 0, o0x7fffff25f3a8;  0 drivers
+o0x7fffff25f168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d8240_0 .net "net_160", 0 0, o0x7fffff25f168;  0 drivers
+o0x7fffff25f5e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d8330_0 .net "net_161", 0 0, o0x7fffff25f5e8;  0 drivers
+o0x7fffff25f468 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d8420_0 .net "net_162", 0 0, o0x7fffff25f468;  0 drivers
+o0x7fffff25f528 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d8510_0 .net "net_163", 0 0, o0x7fffff25f528;  0 drivers
+o0x7fffff25fbb8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d8600_0 .net "net_164", 0 0, o0x7fffff25fbb8;  0 drivers
+o0x7fffff25f768 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d86f0_0 .net "net_165", 0 0, o0x7fffff25f768;  0 drivers
+o0x7fffff25f9a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d87e0_0 .net "net_166", 0 0, o0x7fffff25f9a8;  0 drivers
+o0x7fffff25f8e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d88d0_0 .net "net_167", 0 0, o0x7fffff25f8e8;  0 drivers
+o0x7fffff25fa68 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d89c0_0 .net "net_168", 0 0, o0x7fffff25fa68;  0 drivers
+o0x7fffff25fb28 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d8a60_0 .net "net_169", 0 0, o0x7fffff25fb28;  0 drivers
+o0x7fffff25f1f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d8b00_0 .net "net_170", 0 0, o0x7fffff25f1f8;  0 drivers
+o0x7fffff260308 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d8bf0_0 .net "net_269", 0 0, o0x7fffff260308;  0 drivers
+o0x7fffff2603f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d8ce0_0 .net "net_270", 0 0, o0x7fffff2603f8;  0 drivers
+o0x7fffff260158 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d8dd0_0 .net "net_271", 0 0, o0x7fffff260158;  0 drivers
+o0x7fffff2601e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d8ec0_0 .net "net_272", 0 0, o0x7fffff2601e8;  0 drivers
+o0x7fffff260278 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d8fb0_0 .net "net_273", 0 0, o0x7fffff260278;  0 drivers
+o0x7fffff260638 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558d90a0_0 .net "noconn_IN", 0 0, o0x7fffff260638;  0 drivers
+S_0x555555845cf0 .scope module, "G1" "alibgnd" 2 420, 2 67 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GND";
+v0x5555558474b0_0 .net "GND", 0 0, o0x7fffff25f018;  alias, 0 drivers
+S_0x5555558c61d0 .scope module, "VI__CAPFB" "vdc_0" 2 228, 2 45 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558480f0_0 .net "MINUS", 0 0, o0x7fffff25f078;  alias, 0 drivers
+v0x555555847ec0_0 .net "PLUS", 0 0, o0x7fffff25f0a8;  alias, 0 drivers
+S_0x5555558c6470 .scope module, "VI__GMCHARGE" "vdc_0" 2 283, 2 45 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558c6650_0 .net "MINUS", 0 0, o0x7fffff25f138;  alias, 0 drivers
+v0x5555558c6710_0 .net "PLUS", 0 0, o0x7fffff25f168;  alias, 0 drivers
+S_0x5555558c6830 .scope module, "VI__GND" "vdc_0" 2 198, 2 45 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558c6a10_0 .net "MINUS", 0 0, o0x7fffff25f1f8;  alias, 0 drivers
+v0x5555558c6af0_0 .net "PLUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+S_0x5555558c6c10 .scope module, "VI__GNDregulation" "vdc_0" 2 390, 2 45 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558c6e40_0 .net "MINUS", 0 0, o0x7fffff25f2b8;  alias, 0 drivers
+v0x5555558c6f20_0 .net "PLUS", 0 0, o0x7fffff25f2e8;  alias, 0 drivers
+S_0x5555558c7040 .scope module, "VI__IIN" "vdc_0" 2 203, 2 45 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558c7220_0 .net "MINUS", 0 0, o0x7fffff25f378;  alias, 0 drivers
+v0x5555558c7300_0 .net "PLUS", 0 0, o0x7fffff25f3a8;  alias, 0 drivers
+S_0x5555558c7420 .scope module, "VI__OUTFB" "vdc_0" 2 233, 2 45 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558c7600_0 .net "MINUS", 0 0, o0x7fffff25f438;  alias, 0 drivers
+v0x5555558c76e0_0 .net "PLUS", 0 0, o0x7fffff25f468;  alias, 0 drivers
+S_0x5555558c7800 .scope module, "VI__REF_CAP" "vdc_0" 2 258, 2 45 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558c7a20_0 .net "MINUS", 0 0, o0x7fffff25f4f8;  alias, 0 drivers
+v0x5555558c7b00_0 .net "PLUS", 0 0, o0x7fffff25f528;  alias, 0 drivers
+S_0x5555558c7c20 .scope module, "VI__REF_CHARGE" "vdc_0" 2 365, 2 45 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558c7e40_0 .net "MINUS", 0 0, o0x7fffff25f5b8;  alias, 0 drivers
+v0x5555558c7f20_0 .net "PLUS", 0 0, o0x7fffff25f5e8;  alias, 0 drivers
+S_0x5555558c8040 .scope module, "VI__REF_CHARGER" "vdc_0" 2 375, 2 45 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558c8210_0 .net "MINUS", 0 0, o0x7fffff25f678;  alias, 0 drivers
+v0x5555558c82f0_0 .net "PLUS", 0 0, o0x7fffff25f6a8;  alias, 0 drivers
+S_0x5555558c8410 .scope module, "VI__REF_IIN" "vdc_0" 2 263, 2 45 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558c8630_0 .net "MINUS", 0 0, o0x7fffff25f738;  alias, 0 drivers
+v0x5555558c8710_0 .net "PLUS", 0 0, o0x7fffff25f768;  alias, 0 drivers
+S_0x5555558c8830 .scope module, "VI__REF_OUT" "vdc_0" 2 268, 2 45 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558c8a50_0 .net "MINUS", 0 0, o0x7fffff25f7f8;  alias, 0 drivers
+v0x5555558c8b30_0 .net "PLUS", 0 0, o0x7fffff25f828;  alias, 0 drivers
+S_0x5555558c8c50 .scope module, "VI__SIMPV" "vdc_0" 2 238, 2 45 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558c8e70_0 .net "MINUS", 0 0, o0x7fffff25f8b8;  alias, 0 drivers
+v0x5555558c8f50_0 .net "PLUS", 0 0, o0x7fffff25f8e8;  alias, 0 drivers
+S_0x5555558c9070 .scope module, "VI__SS" "vdc_0" 2 178, 2 45 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558c9290_0 .net "MINUS", 0 0, o0x7fffff25f978;  alias, 0 drivers
+v0x5555558c9370_0 .net "PLUS", 0 0, o0x7fffff25f9a8;  alias, 0 drivers
+S_0x5555558c9490 .scope module, "VI__VC" "vdc_0" 2 183, 2 45 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558c96b0_0 .net "MINUS", 0 0, o0x7fffff25fa38;  alias, 0 drivers
+v0x5555558c9790_0 .net "PLUS", 0 0, o0x7fffff25fa68;  alias, 0 drivers
+S_0x5555558c98b0 .scope module, "VI__VCsense" "vdc_0" 2 273, 2 45 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558c9ad0_0 .net "MINUS", 0 0, o0x7fffff25faf8;  alias, 0 drivers
+v0x5555558c9bb0_0 .net "PLUS", 0 0, o0x7fffff25fb28;  alias, 0 drivers
+S_0x5555558c9cd0 .scope module, "VI__kelvin_GNDregulation" "vdc_0" 2 415, 2 45 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558c9ef0_0 .net "MINUS", 0 0, o0x7fffff25fbb8;  alias, 0 drivers
+v0x5555558c9fd0_0 .net "PLUS", 0 0, o0x7fffff25fbe8;  alias, 0 drivers
+S_0x5555558ca0f0 .scope module, "V_CAPFBx" "vpwl_0x0_10d998ux0_11d0ux1d2" 2 213, 2 24 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558ca310_0 .net "MINUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558ca3d0_0 .net "PLUS", 0 0, o0x7fffff25f0a8;  alias, 0 drivers
+S_0x5555558ca4c0 .scope module, "V_GMCHARGEx" "vpwl_0x0_10d998ux0_11d0ux1d2" 2 278, 2 24 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558ca6e0_0 .net "MINUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558ca7f0_0 .net "PLUS", 0 0, o0x7fffff25f168;  alias, 0 drivers
+S_0x5555558ca8d0 .scope module, "V_GNDregulationx" "vpwl_0x0_10d998ux0_11d0ux0" 2 380, 2 30 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558caaf0_0 .net "MINUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558cabb0_0 .net "PLUS", 0 0, o0x7fffff25f2b8;  alias, 0 drivers
+S_0x5555558cacc0 .scope module, "V_GNDx" "vpwl_0x0_10ux0_11ux0" 2 188, 2 51 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558caee0_0 .net "MINUS", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x5555558cafd0_0 .net "PLUS", 0 0, o0x7fffff25f1f8;  alias, 0 drivers
+S_0x5555558cb0c0 .scope module, "V_IINx" "vpwl_0x0_10d998ux0_11d0ux1d2" 2 193, 2 24 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558cb2e0_0 .net "MINUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558cb3a0_0 .net "PLUS", 0 0, o0x7fffff25f3a8;  alias, 0 drivers
+S_0x5555558cb4b0 .scope module, "V_OUTFBx" "vpwl_0x0_10d998ux0_11d0ux1d2" 2 218, 2 24 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558cb680_0 .net "MINUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558cb740_0 .net "PLUS", 0 0, o0x7fffff25f468;  alias, 0 drivers
+S_0x5555558cb850 .scope module, "V_REF_CAPx" "vpwl_0x0_10d998ux0_11d0ux1d2" 2 243, 2 24 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558cba70_0 .net "MINUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558cbb30_0 .net "PLUS", 0 0, o0x7fffff25f528;  alias, 0 drivers
+S_0x5555558cbc40 .scope module, "V_REF_CHARGERx" "vpwl_0x0_10d998ux0_11d0ux1d2" 2 370, 2 24 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558cbe60_0 .net "MINUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558cbf20_0 .net "PLUS", 0 0, o0x7fffff25f6a8;  alias, 0 drivers
+S_0x5555558cc030 .scope module, "V_REF_CHARGEx" "vpwl_0x0_10d998ux0_11d0ux1d2" 2 360, 2 24 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558cc250_0 .net "MINUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558cc420_0 .net "PLUS", 0 0, o0x7fffff25f5e8;  alias, 0 drivers
+S_0x5555558cc530 .scope module, "V_REF_IINx" "vpwl_0x0_10d998ux0_11d0ux1d2" 2 248, 2 24 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558cc750_0 .net "MINUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558cc810_0 .net "PLUS", 0 0, o0x7fffff25f768;  alias, 0 drivers
+S_0x5555558cc920 .scope module, "V_REF_OUTx" "vpwl_0x0_10d998ux0_11d0ux1d2" 2 253, 2 24 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558ccb40_0 .net "MINUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558ccc00_0 .net "PLUS", 0 0, o0x7fffff25f828;  alias, 0 drivers
+S_0x5555558ccd10 .scope module, "V_SIMPVx" "vpwl_0x0_10d998ux0_11d0ux5" 2 223, 2 40 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558ccf30_0 .net "MINUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558ccff0_0 .net "PLUS", 0 0, o0x7fffff25f8e8;  alias, 0 drivers
+S_0x5555558cd100 .scope module, "V_SSx" "vpwl_0x0_10d998ux0_11d0ux1d2" 2 158, 2 24 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558cd320_0 .net "MINUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558cd3e0_0 .net "PLUS", 0 0, o0x7fffff25f9a8;  alias, 0 drivers
+S_0x5555558cd4f0 .scope module, "V_clock_regulationx" "vpwl_0x0_10d998ux0_11d0ux0" 2 400, 2 30 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558cd710_0 .net "MINUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558cd7d0_0 .net "PLUS", 0 0, o0x7fffff260158;  alias, 0 drivers
+S_0x5555558cd8f0 .scope module, "V_enable_referencex" "vpwl_0x0_10d998ux0_11d0ux0" 2 405, 2 30 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558cdb10_0 .net "MINUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558cdbd0_0 .net "PLUS", 0 0, o0x7fffff2601e8;  alias, 0 drivers
+S_0x5555558cdcf0 .scope module, "V_freeze_chargerx" "vpwl_0x0_10d998ux0_11d0ux0" 2 395, 2 30 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558ce120_0 .net "MINUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558ce1e0_0 .net "PLUS", 0 0, o0x7fffff260278;  alias, 0 drivers
+S_0x5555558ce300 .scope module, "V_gox" "vpwl_0x0_10d998ux0_11d0ux0" 2 163, 2 30 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558ce520_0 .net "MINUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558ce7f0_0 .net "PLUS", 0 0, o0x7fffff260308;  alias, 0 drivers
+S_0x5555558ce910 .scope module, "V_kelvin_GNDregulationx" "vpwl_0x0_10d998ux0_11d0ux0" 2 410, 2 30 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558ceb30_0 .net "MINUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558cebf0_0 .net "PLUS", 0 0, o0x7fffff25fbb8;  alias, 0 drivers
+S_0x5555558ced00 .scope module, "V_mode_stepdownx" "vpwl_0x0_10d998ux0_11d0ux0" 2 385, 2 30 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558cef20_0 .net "MINUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558cefe0_0 .net "PLUS", 0 0, o0x7fffff2603f8;  alias, 0 drivers
+S_0x5555558cf100 .scope module, "XCELG" "vpwl_0x0" 2 168, 2 35 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558cf320_0 .net "MINUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558cf3e0_0 .net "PLUS", 0 0, o0x7fffff260488;  alias, 0 drivers
+S_0x5555558cf500 .scope module, "XCELSUB" "vpwl_0x0" 2 208, 2 35 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558cf720_0 .net "MINUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558cf7e0_0 .net "PLUS", 0 0, o0x7fffff260518;  alias, 0 drivers
+S_0x5555558cf900 .scope module, "XCELV" "vpwl_0x0_10d998ux0_11d0ux5" 2 173, 2 40 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "PLUS";
+    .port_info 1 /OUTPUT 1 "MINUS";
+v0x5555558cfb20_0 .net "MINUS", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558cfbe0_0 .net "PLUS", 0 0, o0x7fffff2605a8;  alias, 0 drivers
+S_0x5555558cfd00 .scope module, "XIP_1748f38b" "SIMbias" 2 288, 2 59 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "V";
+    .port_info 1 /OUTPUT 1 "IP";
+    .port_info 2 /OUTPUT 1 "IN";
+v0x5555558cff30_0 .net "IN", 0 0, o0x7fffff260638;  alias, 0 drivers
+v0x5555558d0010_0 .net "IP", 0 0, o0x7fffff260668;  alias, 0 drivers
+v0x5555558d00d0_0 .net "V", 0 0, o0x7fffff25f8b8;  alias, 0 drivers
+S_0x5555558d0210 .scope module, "XIP_51d5b7db" "SIMbias" 2 294, 2 59 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "V";
+    .port_info 1 /OUTPUT 1 "IP";
+    .port_info 2 /OUTPUT 1 "IN";
+v0x5555558d0440_0 .net "IN", 0 0, o0x7fffff260638;  alias, 0 drivers
+v0x5555558d0530_0 .net "IP", 0 0, o0x7fffff260728;  alias, 0 drivers
+v0x5555558d05d0_0 .net "V", 0 0, o0x7fffff25f8b8;  alias, 0 drivers
+S_0x5555558d0750 .scope module, "XIP_52cba950" "SIMbias" 2 300, 2 59 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "V";
+    .port_info 1 /OUTPUT 1 "IP";
+    .port_info 2 /OUTPUT 1 "IN";
+v0x5555558d0980_0 .net "IN", 0 0, o0x7fffff260638;  alias, 0 drivers
+v0x5555558d0a90_0 .net "IP", 0 0, o0x7fffff2607e8;  alias, 0 drivers
+v0x5555558d0b50_0 .net "V", 0 0, o0x7fffff25f8b8;  alias, 0 drivers
+S_0x5555558d0c50 .scope module, "XIP_5c9afec8" "SIMbias" 2 306, 2 59 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "V";
+    .port_info 1 /OUTPUT 1 "IP";
+    .port_info 2 /OUTPUT 1 "IN";
+v0x5555558d0e80_0 .net "IN", 0 0, o0x7fffff260638;  alias, 0 drivers
+v0x5555558d0f40_0 .net "IP", 0 0, o0x7fffff2608a8;  alias, 0 drivers
+v0x5555558d1000_0 .net "V", 0 0, o0x7fffff25f8b8;  alias, 0 drivers
+S_0x5555558d1100 .scope module, "XIP_65be5a53" "SIMbias" 2 312, 2 59 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "V";
+    .port_info 1 /OUTPUT 1 "IP";
+    .port_info 2 /OUTPUT 1 "IN";
+v0x5555558d12e0_0 .net "IN", 0 0, o0x7fffff260638;  alias, 0 drivers
+v0x5555558d13a0_0 .net "IP", 0 0, o0x7fffff260968;  alias, 0 drivers
+v0x5555558d1460_0 .net "V", 0 0, o0x7fffff25f8b8;  alias, 0 drivers
+S_0x5555558d1590 .scope module, "XIP_7fd756e8" "SIMbias" 2 318, 2 59 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "V";
+    .port_info 1 /OUTPUT 1 "IP";
+    .port_info 2 /OUTPUT 1 "IN";
+v0x5555558d1770_0 .net "IN", 0 0, o0x7fffff260638;  alias, 0 drivers
+v0x5555558d1830_0 .net "IP", 0 0, o0x7fffff260a28;  alias, 0 drivers
+v0x5555558d18f0_0 .net "V", 0 0, o0x7fffff25f8b8;  alias, 0 drivers
+S_0x5555558d1a20 .scope module, "XIP_9b35f469" "SIMbias" 2 324, 2 59 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "V";
+    .port_info 1 /OUTPUT 1 "IP";
+    .port_info 2 /OUTPUT 1 "IN";
+v0x5555558d1c50_0 .net "IN", 0 0, o0x7fffff260638;  alias, 0 drivers
+v0x5555558d1d10_0 .net "IP", 0 0, o0x7fffff260ae8;  alias, 0 drivers
+v0x5555558d1dd0_0 .net "V", 0 0, o0x7fffff25f8b8;  alias, 0 drivers
+S_0x5555558d1f00 .scope module, "XIP_bd9fd3f3" "SIMbias" 2 330, 2 59 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "V";
+    .port_info 1 /OUTPUT 1 "IP";
+    .port_info 2 /OUTPUT 1 "IN";
+v0x5555558d2130_0 .net "IN", 0 0, o0x7fffff260638;  alias, 0 drivers
+v0x5555558d21f0_0 .net "IP", 0 0, o0x7fffff260ba8;  alias, 0 drivers
+v0x5555558d22b0_0 .net "V", 0 0, o0x7fffff25f8b8;  alias, 0 drivers
+S_0x5555558d23e0 .scope module, "XIP_cb653629" "SIMbias" 2 336, 2 59 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "V";
+    .port_info 1 /OUTPUT 1 "IP";
+    .port_info 2 /OUTPUT 1 "IN";
+v0x5555558d2610_0 .net "IN", 0 0, o0x7fffff260638;  alias, 0 drivers
+v0x5555558d26d0_0 .net "IP", 0 0, o0x7fffff260c68;  alias, 0 drivers
+v0x5555558d2790_0 .net "V", 0 0, o0x7fffff25f8b8;  alias, 0 drivers
+S_0x5555558d28c0 .scope module, "XIP_d273c85d" "SIMbias" 2 342, 2 59 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "V";
+    .port_info 1 /OUTPUT 1 "IP";
+    .port_info 2 /OUTPUT 1 "IN";
+v0x5555558d2af0_0 .net "IN", 0 0, o0x7fffff260638;  alias, 0 drivers
+v0x5555558d2bb0_0 .net "IP", 0 0, o0x7fffff260d28;  alias, 0 drivers
+v0x5555558d2c70_0 .net "V", 0 0, o0x7fffff25f8b8;  alias, 0 drivers
+S_0x5555558d2da0 .scope module, "XIP_e27f820d" "SIMbias" 2 348, 2 59 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "V";
+    .port_info 1 /OUTPUT 1 "IP";
+    .port_info 2 /OUTPUT 1 "IN";
+v0x5555558d2fd0_0 .net "IN", 0 0, o0x7fffff260638;  alias, 0 drivers
+v0x5555558d3090_0 .net "IP", 0 0, o0x7fffff260de8;  alias, 0 drivers
+v0x5555558d3150_0 .net "V", 0 0, o0x7fffff25f8b8;  alias, 0 drivers
+S_0x5555558d3280 .scope module, "XIP_f387a76b" "SIMbias" 2 354, 2 59 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "V";
+    .port_info 1 /OUTPUT 1 "IP";
+    .port_info 2 /OUTPUT 1 "IN";
+v0x5555558d34b0_0 .net "IN", 0 0, o0x7fffff260638;  alias, 0 drivers
+v0x5555558d3570_0 .net "IP", 0 0, o0x7fffff260ea8;  alias, 0 drivers
+v0x5555558d3630_0 .net "V", 0 0, o0x7fffff25f8b8;  alias, 0 drivers
+S_0x5555558d3760 .scope module, "XNCip" "STONEnoconn" 2 114, 2 5 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x5555558d3960_0 .net "noconn", 0 0, o0x7fffff260638;  alias, 0 drivers
+S_0x5555558d3a60 .scope module, "Xd_clock_regulation" "dbuf_e926e395" 2 142, 2 14 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "CELV";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "i";
+    .port_info 3 /OUTPUT 1 "o";
+    .port_info 4 /INPUT 1 "SUB";
+v0x5555558d3cf0_0 .net "CELG", 0 0, o0x7fffff260488;  alias, 0 drivers
+v0x5555558d3dc0_0 .net "CELV", 0 0, o0x7fffff2605a8;  alias, 0 drivers
+v0x5555558d3e90_0 .net "SUB", 0 0, o0x7fffff260518;  alias, 0 drivers
+v0x5555558d3f90_0 .net "i", 0 0, o0x7fffff260158;  alias, 0 drivers
+v0x5555558d4060_0 .net "o", 0 0, o0x7fffff260f98;  alias, 0 drivers
+S_0x5555558d4170 .scope module, "Xd_enable_reference" "dbuf_e926e395" 2 150, 2 14 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "CELV";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "i";
+    .port_info 3 /OUTPUT 1 "o";
+    .port_info 4 /INPUT 1 "SUB";
+v0x5555558d43d0_0 .net "CELG", 0 0, o0x7fffff260488;  alias, 0 drivers
+v0x5555558d44e0_0 .net "CELV", 0 0, o0x7fffff2605a8;  alias, 0 drivers
+v0x5555558d45f0_0 .net "SUB", 0 0, o0x7fffff260518;  alias, 0 drivers
+v0x5555558d46e0_0 .net "i", 0 0, o0x7fffff2601e8;  alias, 0 drivers
+v0x5555558d4780_0 .net "o", 0 0, o0x7fffff2610b8;  alias, 0 drivers
+S_0x5555558d48d0 .scope module, "Xd_freeze_charger" "dbuf_e926e395" 2 134, 2 14 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "CELV";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "i";
+    .port_info 3 /OUTPUT 1 "o";
+    .port_info 4 /INPUT 1 "SUB";
+v0x5555558d4b30_0 .net "CELG", 0 0, o0x7fffff260488;  alias, 0 drivers
+v0x5555558d4bf0_0 .net "CELV", 0 0, o0x7fffff2605a8;  alias, 0 drivers
+v0x5555558d4cb0_0 .net "SUB", 0 0, o0x7fffff260518;  alias, 0 drivers
+v0x5555558d4d50_0 .net "i", 0 0, o0x7fffff260278;  alias, 0 drivers
+v0x5555558d4e20_0 .net "o", 0 0, o0x7fffff2611d8;  alias, 0 drivers
+S_0x5555558d4f70 .scope module, "Xd_go" "dbuf_e926e395" 2 118, 2 14 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "CELV";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "i";
+    .port_info 3 /OUTPUT 1 "o";
+    .port_info 4 /INPUT 1 "SUB";
+v0x5555558d51d0_0 .net "CELG", 0 0, o0x7fffff260488;  alias, 0 drivers
+v0x5555558d5290_0 .net "CELV", 0 0, o0x7fffff2605a8;  alias, 0 drivers
+v0x5555558d5350_0 .net "SUB", 0 0, o0x7fffff260518;  alias, 0 drivers
+v0x5555558d54b0_0 .net "i", 0 0, o0x7fffff260308;  alias, 0 drivers
+v0x5555558d5580_0 .net "o", 0 0, o0x7fffff2612f8;  alias, 0 drivers
+S_0x5555558d5680 .scope module, "Xd_mode_stepdown" "dbuf_e926e395" 2 126, 2 14 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "CELV";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "i";
+    .port_info 3 /OUTPUT 1 "o";
+    .port_info 4 /INPUT 1 "SUB";
+v0x5555558d5890_0 .net "CELG", 0 0, o0x7fffff260488;  alias, 0 drivers
+v0x5555558d5950_0 .net "CELV", 0 0, o0x7fffff2605a8;  alias, 0 drivers
+v0x5555558d5a10_0 .net "SUB", 0 0, o0x7fffff260518;  alias, 0 drivers
+v0x5555558d5ae0_0 .net "i", 0 0, o0x7fffff2603f8;  alias, 0 drivers
+v0x5555558d5bb0_0 .net "o", 0 0, o0x7fffff261418;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/celera/projects/Sunnyvale/software/REGULATIONreference/verilog10/FORCE_REGULATIONreference.v";
