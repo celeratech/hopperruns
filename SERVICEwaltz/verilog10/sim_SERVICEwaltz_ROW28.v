@@ -98,7 +98,7 @@ WRAPPER1 celkelvin_IN2_WRAPPER (
 
 WRAPPER1 celkelvin_VBIAS_WRAPPER (
 .i(celkelvin_VBIAS),
-.o(VCC)
+.o(kelvin_VCC)
 );
 
 WRAPPER1 celkelvin_GNDref_WRAPPER (
