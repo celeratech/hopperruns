@@ -96,17 +96,28 @@ endmodule
 
 
 
+//Verilog HDL for "Generate", "WRAPPER1" "functional"
+
+
+module WRAPPER1 ( o, i );
+
+  input i;
+  output o;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module THERMALwaltz (REF, MUDV, CELG59462, CELV96848, CELSUB40948, IP_20a660aa, IP_cd0a370d, fault_thermal, enable_thermal);
+module THERMALwaltz (REF, MUDV, CELG59462, CELV96848, CELSUB40948, IP_20a660aa, IP_cd0a370d, fault_thermal, enable_thermal, celkelvin_GNDthermometer);
 input  REF;
 input  MUDV;
-input  CELG59462;
-input  CELV96848;
-input  CELSUB40948;
+  input  CELG59462;
+  input  CELV96848;
+  input  CELSUB40948;
 input  IP_20a660aa;
 input  IP_cd0a370d;
 output  fault_thermal;
 input  enable_thermal;
+input  celkelvin_GNDthermometer;
 
 
 // ------------------------ Wires ------------------------
@@ -175,7 +186,12 @@ thermometer_ec3ca4e2 Xthermometer1 (
 .ok_thermometer(net_42),
 .OUT_THERMOMETER(net_39),
 .enable_thermometer(enable_thermal),
-.celkelvin_GNDthermometer(TBD_XTHERMAL_Xthermometer1_celkelvin_GNDthermometer)
+.celkelvin_GNDthermometer(celkelvin_GNDthermometer)
+);
+
+WRAPPER1 celkelvin_GNDthermometer_WRAPPER (
+.i(celkelvin_GNDthermometer),
+.o(CELG59462)
 );
 
 endmodule
