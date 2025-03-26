@@ -70,13 +70,22 @@ module STONEnoconn ( noconn );
 endmodule
 
 
+//Verilog HDL for "Generate", "WRAPPER1" "functional"
+
+
+module WRAPPER1 ( o, i );
+
+  input i;
+  output o;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module CLOCKinternal (GND, MUDV, CELG59462, CELV96848, CELSUB40948, IP_01b40a78, IP_c14a3d26, enable_clock, clock_external, clock_internal, celkelvin_GNDoscillator);
+module CLOCKinternal (GND, MUDV, CELG59462, CELSUB40948, IP_01b40a78, IP_c14a3d26, enable_clock, clock_external, clock_internal, celkelvin_GNDoscillator);
 inout  GND;
 output  MUDV;
-  input  CELG59462;
-  input  CELV96848;
-  input  CELSUB40948;
+input  CELG59462;
+input  CELSUB40948;
 input  IP_01b40a78;
 input  IP_c14a3d26;
 input  enable_clock;
@@ -164,6 +173,11 @@ STONEnoconn XNCnoconn_tdi_osc1 (
 
 STONEnoconn XNCnoconn_tdi_osc2 (
 .noconn(noconn_tdi_osc2)
+);
+
+WRAPPER1 celkelvin_GNDoscillator_WRAPPER (
+.i(celkelvin_GNDoscillator),
+.o(CELG59462)
 );
 
 endmodule
