@@ -1,4 +1,23 @@
-//Celera BIO Generator...Updated BIO Pin List
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
+/////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
@@ -6,196 +25,84 @@
 
 //Celera Confidential BIO Data Generator
 //Cell Name
-cell,reference
+cell,inv
 //**********************************************
 //Generator Revision
-revision,generator,0.4.2
+revision,generator,0.3.0
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,reference_ref,minimum,0.600
-limit,reference_ref,maximum,1.2
-limit,reference_accuracy,choose0,no
-limit,reference_accuracy,choose1,yes
-limit,reference_bgout,choose0,no
-limit,reference_bgout,choose1,yes
-limit,reference_dft,choose0,no
-limit,reference_dft,choose1,yes
-limit,reference_ifb,minimum,0.2
-limit,reference_ifb,maximum,50.0
-limit,reference_vmax,choose0,2
-limit,reference_vmax,choose1,6
-limit,reference_lowiq,choose0,pin
-limit,reference_lowiq,choose1,factory
-limit,reference_lowiq,choose2,register
-limit,reference_lowiq,choose3,na
-limit,reference_lowiq,choose4,always
-limit,reference_lowiq_por,choose0,0
-limit,reference_lowiq_por,choose1,1
-limit,reference_cc_trim,choose0,no
-limit,reference_cc_trim,choose1,yes
-limit,reference_ccp_por,minimum,0
-limit,reference_ccp_por,maximum,31
-limit,reference_ccn_por,minimum,0
-limit,reference_ccn_por,maximum,31
-limit,reference_buffer,choose0,no
-limit,reference_buffer,choose1,yes
-
-limit,reference_lowiq_name,text
-limit,reference_lowiq_description,text
-limit,reference_trim_name,text
-limit,reference_trim_description,text
-limit,reference_factory_name,text
-limit,reference_factory_description,text
+limit,logicgate_vmax,choose0,2
+limit,logicgate_vmax,choose1,6
+limit,logicgate_type,choose0,inv
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,reference_ref,0.900V
-description,Reference output voltage
-user,reference_ifb,1.000uA
-description,Reference Feedback current
-user,reference_buffer,LowIQ
-description,Reference LowIQ Buffer enabled
-user,reference_cc_trim,yes POR Cold:0 POR Hot:0
-description,Reference curveatue trim
-user,BANDGAP:,SIM:1.15V BENCH:1.232V
-description,Reference Bandgap Design
-user,NESTOrevision,0.4.2
-description,Nesto Generate revision
+user,logicgate_vmax,6V
+user,logicgate_type,inv
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,reference
-register,instance,reference_4fa591be
+registermap,inv
+register,instance,inv_12e192f5
 register,source,cell
 
-//Reference Lowiq 
+//Logic inv
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readwriteregister,por,0
+register,mode,na
+register,por,0
 register,userdescription,na
-register,description0,not used
-register,description1,not used
-register,description2,not used
-register,description3,not used
-register,description4,not used
-register,description5,not used
-register,description6,not used
-register,description7,not used
+register,description0,description0,not used
+register,description1,description1,not used
+register,description2,description2,not used
+register,description3,description3,not used
+register,description4,description4,not used
+register,description5,description5,not used
+register,description6,description6,not used
+register,description7,description7,not used
 //Netlister Information
 register,busname,na
+
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,reference
-factory,instance,reference_4fa591be
+factorymap,inv
+factory,instance,inv_12e192f5
 factory,source,cell
 
-//Reference Positive Curveture Correction
-factory,name,REFCCacc_positive
-factory,enable,yes
-factory,bits,5
-factory,mode,readonly
-factory,por,0
-factory,userdescription,Curvature Correction Accuracy hot
-factory,description0,Bit0,Positive Curveture correction enable
-factory,description1,Bit[2:1] Temperature Enable
-factory,description2,00=90C,01=100C,10=110C,11=120C
-factory,description3,Bit[4:3] BG  Offset Current
-factory,description4,00=75nA,01=125nA,10=250nA,11=500nA
-factory,description5,not used
-factory,description6,not used
-factory,description7,not used
-//Netlister Information
-factory,busname,factory_refccp
-
-//Reference Negative Curveture Correction
-factory,name,REFCCacc_negative
-factory,enable,yes
-factory,bits,5
-factory,mode,readonly
-factory,por,0
-factory,userdescription,Curvature Correction Accuracy cold
-factory,description0,Bit0,Negative Curveture correction enable
-factory,description1,Bit[2:1] Temperature Enable
-factory,description2,00=0C,01=10C,10=-10C,11=-20C
-factory,description3,Bit[4:3] BG Offset Current
-factory,description4,00=75nA,01=125nA,10=250nA,11=500nA
-factory,description5,not used
-factory,description6,not used
-factory,description7,not used
-//Netlister Information
-factory,busname,factory_refccn
-
-//Reference Lowiq 
+//LOGIC CELLS inv
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,readonly
+factory,mode,na
 factory,por,0
 factory,userdescription,na
-factory,description0,not used
-factory,description1,not used
-factory,description2,not used
-factory,description3,not used
-factory,description4,not used
-factory,description5,not used
-factory,description6,not used
-factory,description7,not used
+factory,description0,description0,not used
+factory,description1,description1,not used
+factory,description2,description2,not used
+factory,description3,description3,not used
+factory,description4,description4,not used
+factory,description5,description5,not used
+factory,description6,description6,not used
+factory,description7,description7,not used
 //Netlister Information
 factory,busname,na
-
-
-
 //**********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,reference
-place Generate STONEreferenceBG 0 0 R0
-place Generate STONEreferenceBG1 0 0 R0
-place Generate STONEreferenceBGlowiq 0 0 R0
-place Generate STONEreferenceBGlowiqenable 0 0 R0
-place Generate STONEreferenceBG1lowiqenable 0 0 R0
-place Generate STONEreferenceCCP 313.025 49 MY
-place Generate STONEreferenceCCN 313.025 49 R0
-//TAP determines if there are CCP and CCN cells, top coordinates are for without
-
-placeTAP 260 60
-place Generate STONEreferenceBGOK0 14.975 139.005 R0
-place Generate STONEreferenceBGOK0 369.348 137.485 MY
-placeTAP 260 60
-place Generate STONEreferenceBGOK1 14.975 139.005 R0
-place Generate STONEreferenceBGOK1 369.348 137.485 MY
-placeTAP 260 60
-place Generate STONEreferenceDFTBG 131.565 175.48 R0
-place Generate STONEreferenceDFTBG 320.275 14.895 R0
-placeTAP 260 60
-place Generate STONEreferenceDFTREF 121.485 194.235 MX
-place Generate STONEreferenceDFTREF 330.986 31.635 MX
-placeTAP 260 60
-place Generate STONEreferenceENABLE 121.485 175.48 R0
-place Generate STONEreferenceENABLE 347.995 14.895 R0
-placeTAP 260 60
-place Generate STONEreferenceBUFFER 239.78 171.665 MY
-place Generate STONEreferenceBUFFER 239.78 11.08 R0
-placeTAP 260 60
-place Generate STONEreferenceTRIM 121.485 198.76 R0
-place Generate STONEreferenceTRIM 352.21 33.195 MY
-placeTAP 260 60
-placeRES 243.05 10.86 0.8 0.8 R90 x y 200
-placeRES 146.32 5.82 0.8 0.8 R0 x -y 210
-placeRESRING
-placeROUTE
-placeHVRING
+layout,inv
+place PEBBLES PEBBLEinv1 0 0 R0
+movePINS
 endlayoutbio
 
 //**********************************************
 //Project Parameters
-//Celera:SERVICEwaltz Project Bio
+//Celera:FAULTMANAGERwaltz Project Bio
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////   default.bio'  DO NOT USE  ///////////////////////////////////
 
@@ -240,327 +147,108 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,STONEnoconn,0
-sub_area,STONEreferenceBUFFER,3035
-sub_area,STONEreferenceDFTBG,280
-sub_area,STONEreferenceENABLE,100
-sub_area,STONEreferenceDFTREF,310
-sub_area,STONEnoconn,0
-sub_area,STONEreferenceCCP,6770
-sub_area,STONEnoconn,0
-sub_area,STONEreferenceCCN,6770
-sub_area,STONEreferenceTRIM,220
-sub_area,STONEreferenceBGOK0,7460
-sub_area,PEBBLEconfigLINK,2
-sub_area,STONEnoconn,0
-sub_area,STONEreferenceBGlowiqenable,999999
-sub_area,rlpp3000rpo95p6u1p3u,1337
-sub_area,rlpp3000rpo95p6u1p3u,1337
-sub_area,rlpp3000rpo95p6u1p3u,148
-sub_area,rlpp3000rpo1p2u0p4u,7
-sub_area,rlpp3000rpo1p2u0p4u,3
-sub_area,rlpp3000rpo1p2u0p4u,1
-sub_area,rlpp3000rpo1p2u0p4u,1
-sub_area,rlpp3000rpo1p2u0p4u,1
-sub_area,rlpp3000rpo1p2u0p4u,3
-generate_area,reference_4fa591be,1027784
+sub_area,PEBBLEinv1,30
+generate_area,inv_12e192f5,30
 // *********************************************
-//CELL DFT Parameters
-// *********************************************
+//Calculator Parameters
+#define,CELVminimum,1.4
+//**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//reference
+//inv
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,ok_reference,REF,enable_reference,net_skip,SIMPV
+pinorder,i,o
+
 endpinorder
 //**********************************************
-
-// *********************************************
-//Calculator Parameters
-//**********************************************
-#define,REFERENCEresistorlength,95.62
-#define,REFERENCEresistorwidth2,2.0
-#define,REFERENCEresistorwidth1,1.0
-#define,REFERENCEresistorwidth0,0.4
-#define,REFERENCEtrimlength,0.8
-
-#define,REFERENCEtrimbits,6
-#define,REFERENCEtrimrange,15
-#define,REFERENCEtrimmsbgain,64
-#define,REFERENCEpretrimerror0,0.1
-//Use calculation error if no reference trim
-#define,REFERENCEpretrimerror1,0.5
-
-#define,SIMPVminimum,2.0
-#define,REFERENCEresistoriso,CELG
-#define,REFERENCEresistormaxp,64
-
-#define,REFERENCEpretrimbghigh,20.0
-#define,REFERENCEpretrimbglow,20.0
-#define,REFERENCEposttrimbglsb,0.5
-#define,REFERENCEpretrimrefhigh,10.0
-#define,REFERENCEpretrimreflow,10.0
-#define,REFERENCEposttrimreflsb,0.5
-//**********************************************
-//Cells that need CELBG insert in Trference
-#define,CELBG,thermal
-#define,CELBG,comparatornoctlpins
-#define,CELBG,comparatorctlpins
-
-
-// *********************************************
 //TRIM Parameters
-cell,reference
-trim,instance,reference_4fa591be
+cell,inv
+trim,instance,inv_12e192f5
 
-trim,name,CELERAbandgap
-trim,enable,yes
-trim,bits,7
+trim,name,na
+trim,enable,no
+trim,bits,TBD
 trim,por,0
-trim,pinname,trim_refbg
-trim,testname,CELERAbandgap
-trim,description,Bandgap Output Voltage Accuracy
-trim,target,1232
-trim,units,mV
-trim,pretrim_low_limit,1212.000
-trim,pretrim_high_limit,1252.000
-trim,posttrim_low_limit,1231.250
-trim,posttrim_high_limit,1232.750
-trim,codeunits,mV
-trim,description0,code 0x00 1232
-trim,description1,+0.5%
-trim,description2,+1.0%
-trim,description3,+2.0%
-trim,description4,+4.0%
-trim,description5,+8.0%
-trim,description6,+16.0%
-trim,description7,-32.0%
-trim,description8,empty
-
-trim,name,REFERENCEaccuracy
-trim,enable,yes
-trim,bits,6
-trim,por,0
-trim,pinname,trim_ref
-trim,testname,REFERENCEaccuracy
-trim,description,Reference Accuracy to 0.9V
-
-trim,target,900
-trim,units,mV
-trim,pretrim_low_limit,890.000
-trim,pretrim_high_limit,910.000
-trim,posttrim_low_limit,899.250
-trim,posttrim_high_limit,900.750
-trim,codeunits,mV
-trim,description0,code 0x00900
-trim,description1,code 0x01 +1.0
-trim,description2,code 0x02 +2.0
-trim,description3,code 0x04 +4.0
-trim,description4,code 0x08 +8.0
-trim,description5,code 0x10 +16.0
-trim,description6,code 0x20 -32.0
-trim,description7,not used
-trim,description8,empty
+trim,pinname,TBD
+trim,testname,TBD
+trim,description,TBD
+trim,target,na
+trim,units,TBD
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,%
+trim,description0,empty
+trim,description1,empty
+trim,description2,empty
+trim,description3,empty
+trim,description4,empty
+trim,description5,empty
+trim,description6,empty
+trim,description7,empty
 
 //**********************************************
 //Cell Pin Descriptions
-// *********************************************
-pinname,SIMPV
-definition,SIMPV,Reference power supply
-iq,SIMPV,SIMULATION
-absmax,SIMPV,6
-absmin,SIMPV,2.0
-io,SIMPV,input
-mode,SIMPV,power
-router,SIMPV,TBD
-dftpriority,SIMPV,1
-esd,SIMPV,TBD
+//**********************************************
+pinname,CELV
+definition,CELV,power
+iq,CELV,SIMULATION
+absmax,CELV,6
+absmin,CELV,2.0
+io,CELV,power
+mode,CELV,power
+router,CELV,TBD
+dftpriority,CELV,1
+esd,CELV,TBD
 
 pinname,CELG
-definition,CELG,Reference power ground
+definition,CELG,power ground
 iq,CELG,SIMULATION
 absmax,CELG,0.3
 absmin,CELG,-0.3
-io,CELG,input
+io,CELG,power
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,celkelvin_GNDref
-definition,celkelvin_GNDref,REFERENCE ground sense
-iq,celkelvin_GNDref,SIMULATION
-absmax,celkelvin_GNDref,6
-absmin,celkelvin_GNDref,-0.3
-io,celkelvin_GNDref,input
-mode,celkelvin_GNDref,analog
-router,celkelvin_GNDref,TBD
-dftpriority,celkelvin_GNDref,1
-esd,celkelvin_GNDref,TBD
+pinname,i
+definition,i,inverter input
+iq,i,SIMULATION
+absmax,i,6
+absmin,i,-0.3
+io,i,input
+mode,i,digital
+router,i,TBD
+dftpriority,i,1
+esd,i,TBD
 
-pinname,REF
-definition,REF,Reference Output voltage
-iq,REF,SIMULATION
-absmax,REF,6
-absmin,REF,-0.3
-io,REF,output
-mode,REF,analog
-router,REF,TBD
-dftpriority,REF,1
-esd,REF,TBD
+pinname,o
+definition,o,inverter output 
+iq,o,SIMULATION
+absmax,o,6
+absmin,o,-0.3
+io,o,output
+mode,o,digital
+router,o,TBD
+dftpriority,o,1
+esd,o,TBD
 
-pinname,enable_reference
-definition,enable_reference,Reference enable
-iq,enable_reference,SIMULATION
-absmax,enable_reference,6
-absmin,enable_reference,-0.3
-io,enable_reference,input
-mode,enable_reference,digital
-router,enable_reference,TBD
-dftpriority,enable_reference,1
-esd,enable_reference,TBD
-
-pinname,global_reference
-definition,global_reference,Global enable
-iq,global_reference,SIMULATION
-absmax,global_reference,6
-absmin,global_reference,-0.3
-io,global_reference,input
-mode,global_reference,digital
-router,global_reference,TBD
-dftpriority,global_reference,1
-esd,global_reference,TBD
-
-pinname,trim_ref
-definition,trim_ref,Trim REF output voltage
-iq,trim_ref,SIMULATION
-absmax,trim_ref,6
-absmin,trim_ref,-0.3
-io,trim_ref,input
-mode,trim_ref,digital
-router,trim_ref,TBD
-dftpriority,trim_ref,1
-esd,trim_ref,TBD
-
-pinname,trim_refbg
-definition,trim_refbg,Trim BG output Voltage
-iq,trim_refbg,SIMULATION
-absmax,trim_refbg,6
-absmin,trim_refbg,-0.3
-io,trim_refbg,input
-mode,trim_refbg,digital
-router,trim_refbg,TBD
-dftpriority,trim_refbg,1
-esd,trim_refbg,TBD
-
-pinname,factory_refccp
-definition,factory_refccp,Testmode Input: Reference CCP trim
-iq,factory_refccp,SIMULATION
-absmax,factory_refccp,6
-absmin,factory_refccp,-0.3
-io,factory_refccp,input
-mode,,factory_refccp,digital
-router,factory_refccp,TBD
-dftpriority,factory_refccp,1
-esd,factory_refccp,TBD
-
-pinname,factory_refccn
-definition,factory_refccn,Testmode Input:Reference CCN trim
-iq,factory_refccn,SIMULATION
-absmax,factory_refccn,6
-absmin,factory_refccn,-0.3
-io,factory_refccn,input
-mode,,factory_refccn,digital
-router,factory_refccn,TBD
-dftpriority,factory_refccn,1
-esd,factory_refccn,TBD
-
-pinname,ten_refbg
-definition,ten_refbg,Testmode Input:Enable Measure CELBG
-iq,ten_refbg,SIMULATION
-absmax,ten_refbg,6
-absmin,ten_refbg,-0.3
-io,ten_refbg,input
-mode,ten_refbg,digital
-router,ten_refbg,TBD
-dftpriority,ten_refbg,1
-esd,ten_refbg,TBD
-
-pinname,ten_ref
-definition,ten_ref,Testmode Input:Enable Measure REF
-iq,ten_ref,SIMULATION
-absmax,ten_ref,6
-absmin,ten_ref,-0.3
-io,ten_ref,input
-mode,ten_ref,digital
-router,ten_ref,TBD
-dftpriority,ten_ref,1
-esd,ten_ref,TBD
-
-pinname,ok_reference
-definition,ok_reference,Reference ok flag
-iq,ok_reference,SIMULATION
-absmax,ok_reference,6
-absmin,ok_reference,-0.3
-io,ok_reference,output
-mode,ok_reference,digital
-router,ok_reference,TBD
-dftpriority,ok_reference,1
-esd,ok_reference,TBD
-
-pinname,TAI_REFBG
-definition,TAI_REFBG,Testmode Output:Measure CELBG
-iq,TAI_REFBG,SIMULATION
-absmax,TAI_REFBG,6
-absmin,TAI_REFBG,-0.3
-io,TAI_REFBG,output
-mode,TAI_REFBG,analog
-router,TAI_REFBG,TBD
-dftpriority,TAI_REFBG,1
-esd,TAI_REFBG,TBD
-
-pinname,TAI_REF
-definition,TAI_REF,Testmode Output:Measure REFERENCE
-iq,TAI_REF,SIMULATION
-absmax,TAI_REF,6
-absmin,TAI_REF,-0.3
-io,TAI_REF,output
-mode,TAI_REF,analog
-router,TAI_REF,TBD
-dftpriority,TAI_REF,1
-esd,TAI_REF,TBD
-
-pinname,CELBG
-definition,CELBG, IBIAS and THERMAL reference only
-iq,CELBG,SIMULATION
-absmax,CELBG,6
-absmin,CELBG,-0.3
-io,CELBG,output
-mode,CELBG,analog
-router,CELBG,CELBG
-dftpriority,CELBG,1
-esd,CELBG,TBD
-
-pinname,CELSUB
-definition,CELSUB,Substrate
-iq,CELSUB,SIMULATION
-absmax,CELSUB,0.3
-absmin,CELSUB,-0.3
-io,CELSUB,input
-mode,CELSUB,power
-router,CELSUB,TBD
-dftpriority,CELSUB,1
-esd,CELSUB,TBD
-//**********************************************
-//**********************************************
-//Constraints Parameters
-constraint,reference,REF,shield
-constraint,reference,CELBG,shield
-//**********************************************
+pinname,SUB
+definition,SUB,substrate
+iq,SUB,SIMULATION
+absmax,SUB,0.3
+absmin,SUB,-0.3
+io,SUB,input
+mode,SUB,power
+router,SUB,TBD
+dftpriority,SUB,1
+esd,SUB,TBD
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -1238,5 +926,4 @@ revision,vis15cb,0p1
 #define,AP5G60DC1minmult,1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
-endbio// *********************************************
-
+endbio

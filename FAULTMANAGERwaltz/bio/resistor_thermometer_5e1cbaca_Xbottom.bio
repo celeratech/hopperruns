@@ -4,80 +4,110 @@
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
 //Celera Confidential BIO Data Generator
 //Cell Name
-cell,reference
-//**********************************************
+cell,resistor
+///**********************************************
 //Generator Revision
-revision,generator,0.4.2
+revision,generator,0.4.5
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,reference_ref,minimum,0.600
-limit,reference_ref,maximum,1.2
-limit,reference_accuracy,choose0,no
-limit,reference_accuracy,choose1,yes
-limit,reference_bgout,choose0,no
-limit,reference_bgout,choose1,yes
-limit,reference_dft,choose0,no
-limit,reference_dft,choose1,yes
-limit,reference_ifb,minimum,0.2
-limit,reference_ifb,maximum,50.0
-limit,reference_vmax,choose0,2
-limit,reference_vmax,choose1,6
-limit,reference_lowiq,choose0,pin
-limit,reference_lowiq,choose1,factory
-limit,reference_lowiq,choose2,register
-limit,reference_lowiq,choose3,na
-limit,reference_lowiq,choose4,always
-limit,reference_lowiq_por,choose0,0
-limit,reference_lowiq_por,choose1,1
-limit,reference_cc_trim,choose0,no
-limit,reference_cc_trim,choose1,yes
-limit,reference_ccp_por,minimum,0
-limit,reference_ccp_por,maximum,31
-limit,reference_ccn_por,minimum,0
-limit,reference_ccn_por,maximum,31
-limit,reference_buffer,choose0,no
-limit,reference_buffer,choose1,yes
+limit,resistor_type,choose0,poly
+limit,resistor_type,choose1,n
+limit,resistor_type,choose2,p
+limit,resistor_type,choose3,metal
+limit,resistor_type,choose4,tbd
+limit,resistor_control,choose0,resistor
+limit,resistor_control,choose1,accurate_resistor
+limit,resistor_control,choose2,adjustable_resistor
+limit,resistor_value,minimum,0.00001
+limit,resistor_value,maximum,20000.0
+limit,resistor_accurate_value,minimum,0.00001
+limit,resistor_accurate_value,maximum,20000.0
+limit,resistor_accurate_lsb,minimum,0.5
+limit,resistor_accurate_lsb,maximum,10.0
+limit,resistor_adjust_value,minimum,0.00001
+limit,resistor_adjust_value,maximum,20000.0
+limit,resistor_adjust0,minimum,0.000
+limit,resistor_adjust0,maximum,20000.0
+limit,resistor_adjust1,minimum,0.000
+limit,resistor_adjust1,maximum,20000.0
+limit,resistor_adjust2,minimum,0.000
+limit,resistor_adjust2,maximum,20000.0
+limit,resistor_adjust3,minimum,0.000
+limit,resistor_adjust3,maximum,20000.0
+limit,resistor_adjust4,minimum,0.000
+limit,resistor_adjust4,maximum,20000.0
+limit,resistor_adjust5,minimum,0.000
+limit,resistor_adjust5,maximum,20000.0
+limit,resistor_adjust6,minimum,0.000
+limit,resistor_adjust6,maximum,20000.0
+limit,resistor_adjust7,minimum,0.000
+limit,resistor_adjust7,maximum,20000.0
+limit,resistor_adjust_por,minimum,0
+limit,resistor_adjust_por,maximum,7
+limit,resistor_adjust_control,choose0,pin
+limit,resistor_adjust_control,choose1,factory
+limit,resistor_adjust_control,choose2,register
+limit,resistor_imax,minimum,0.1
+limit,resistor_imax,maximum,1000.0
+limit,resistor_vmax,choose0,2
+limit,resistor_vmax,choose1,6
+limit,resistor_maximumvoltage,choose0,2
+limit,resistor_maximumvoltage,choose1,6
+limit,resistor_maximumvoltage,choose2,12
+limit,resistor_maximumvoltage,choose3,20
+limit,resistor_maximumvoltage,choose4,24
+limit,resistor_maximumvoltage,choose5,30
+limit,resistor_maximumvoltage,choose6,36
+limit,resistor_maximumvoltage,choose7,40
+limit,resistor_maximumvoltage,choose8,45
+limit,resistor_maximumvoltage,choose9,60
 
-limit,reference_lowiq_name,text
-limit,reference_lowiq_description,text
-limit,reference_trim_name,text
-limit,reference_trim_description,text
-limit,reference_factory_name,text
-limit,reference_factory_description,text
+
+limit,resistor_kelvin,choose0,no
+limit,resistor_kelvin,choose1,yes
+limit,resistor_dft,choose0,no
+limit,resistor_dft,choose1,yes
+limit,resistor_insertls,choose0,no
+limit,resistor_insertls,choose1,yes
+
+limit,resistor_datasheet_accuracy_name,text
+limit,resistor_datasheet_accuracy_description,text
+limit,resistor_datasheet_adjust_name,text
+limit,resistor_datasheet_adjust_description,text
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,reference_ref,0.900V
-description,Reference output voltage
-user,reference_ifb,1.000uA
-description,Reference Feedback current
-user,reference_buffer,LowIQ
-description,Reference LowIQ Buffer enabled
-user,reference_cc_trim,yes POR Cold:0 POR Hot:0
-description,Reference curveatue trim
-user,BANDGAP:,SIM:1.15V BENCH:1.232V
-description,Reference Bandgap Design
-user,NESTOrevision,0.4.2
-description,Nesto Generate revision
+user,resistor_value,28.40K
+description,Resistor value
+user,resistor_type,poly
+description,Resistor Type
+user,resistor_imax,1.000mA
+description,Resistor Maximum Current Density
+user,resistor_accurate_lsb,1.000%
+description,Resistor Accuracy LSB
+user,NESTO,0.4.5
+description,NESTO generate Revision
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,reference
-register,instance,reference_4fa591be
+registermap,resistor
+register,instance,resistor_thermometer_5e1cbaca_Xbottom
 register,source,cell
 
-//Reference Lowiq 
+//Adjust Control
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,readwriteregister,por,0
-register,userdescription,na
+register,mode,readwrite
+register,por,0
+register,userdescription,not used
 register,description0,not used
 register,description1,not used
 register,description2,not used
@@ -88,56 +118,21 @@ register,description6,not used
 register,description7,not used
 //Netlister Information
 register,busname,na
+
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,reference
-factory,instance,reference_4fa591be
+factorymap,resistor
+factory,instance,resistor_thermometer_5e1cbaca_Xbottom
 factory,source,cell
 
-//Reference Positive Curveture Correction
-factory,name,REFCCacc_positive
-factory,enable,yes
-factory,bits,5
-factory,mode,readonly
-factory,por,0
-factory,userdescription,Curvature Correction Accuracy hot
-factory,description0,Bit0,Positive Curveture correction enable
-factory,description1,Bit[2:1] Temperature Enable
-factory,description2,00=90C,01=100C,10=110C,11=120C
-factory,description3,Bit[4:3] BG  Offset Current
-factory,description4,00=75nA,01=125nA,10=250nA,11=500nA
-factory,description5,not used
-factory,description6,not used
-factory,description7,not used
-//Netlister Information
-factory,busname,factory_refccp
-
-//Reference Negative Curveture Correction
-factory,name,REFCCacc_negative
-factory,enable,yes
-factory,bits,5
-factory,mode,readonly
-factory,por,0
-factory,userdescription,Curvature Correction Accuracy cold
-factory,description0,Bit0,Negative Curveture correction enable
-factory,description1,Bit[2:1] Temperature Enable
-factory,description2,00=0C,01=10C,10=-10C,11=-20C
-factory,description3,Bit[4:3] BG Offset Current
-factory,description4,00=75nA,01=125nA,10=250nA,11=500nA
-factory,description5,not used
-factory,description6,not used
-factory,description7,not used
-//Netlister Information
-factory,busname,factory_refccn
-
-//Reference Lowiq 
+//Adjust Control
 factory,name,na
 factory,enable,no
 factory,bits,0
 factory,mode,readonly
 factory,por,0
-factory,userdescription,na
+factory,userdescription,not used
 factory,description0,not used
 factory,description1,not used
 factory,description2,not used
@@ -149,53 +144,76 @@ factory,description7,not used
 //Netlister Information
 factory,busname,na
 
-
-
 //**********************************************
+//CELL DFT Parameters
+// *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,reference
-place Generate STONEreferenceBG 0 0 R0
-place Generate STONEreferenceBG1 0 0 R0
-place Generate STONEreferenceBGlowiq 0 0 R0
-place Generate STONEreferenceBGlowiqenable 0 0 R0
-place Generate STONEreferenceBG1lowiqenable 0 0 R0
-place Generate STONEreferenceCCP 313.025 49 MY
-place Generate STONEreferenceCCN 313.025 49 R0
-//TAP determines if there are CCP and CCN cells, top coordinates are for without
-
-placeTAP 260 60
-place Generate STONEreferenceBGOK0 14.975 139.005 R0
-place Generate STONEreferenceBGOK0 369.348 137.485 MY
-placeTAP 260 60
-place Generate STONEreferenceBGOK1 14.975 139.005 R0
-place Generate STONEreferenceBGOK1 369.348 137.485 MY
-placeTAP 260 60
-place Generate STONEreferenceDFTBG 131.565 175.48 R0
-place Generate STONEreferenceDFTBG 320.275 14.895 R0
-placeTAP 260 60
-place Generate STONEreferenceDFTREF 121.485 194.235 MX
-place Generate STONEreferenceDFTREF 330.986 31.635 MX
-placeTAP 260 60
-place Generate STONEreferenceENABLE 121.485 175.48 R0
-place Generate STONEreferenceENABLE 347.995 14.895 R0
-placeTAP 260 60
-place Generate STONEreferenceBUFFER 239.78 171.665 MY
-place Generate STONEreferenceBUFFER 239.78 11.08 R0
-placeTAP 260 60
-place Generate STONEreferenceTRIM 121.485 198.76 R0
-place Generate STONEreferenceTRIM 352.21 33.195 MY
-placeTAP 260 60
-placeRES 243.05 10.86 0.8 0.8 R90 x y 200
-placeRES 146.32 5.82 0.8 0.8 R0 x -y 210
+layout,resistor
+//placeSTEP Generate STONEresistorswitchH 14.89 58.005 x 6.3 R180
+//placeSTEPcontinue Generate STONEresistorswitchHB x 6.3 R180
+placeSTEP Generate STONEresistorswitchH 7.985 53.655 x 6.3 R180
+placeSTEPcontinue Generate STONEresistorswitchHB x 6.3 R180
+//place Generate STONEresistorswitchHB 20.295 51.175 R180
+place Generate STONEresistorswitchT 0 0 R0
+place Generate STONEresistorswitchTB 0 0 R0
+//placeINST XkelvinN 5.55 -9.23 R0
+//placeINST XkelvinN 5.55 .25 R0
+placeTAP 10 10
+placeINST XkelvinP -1.675 .25 R0
+placeINST XkelvinP 86.03 19.4 R270
+placeTAP 10 10
+placeINST XkelvinN 5.55 .25 R0
+placeINST XkelvinN 61.9 20.335 R270
+placeTAP 10 10
+placeSTEP Generate STONEresistorswitchL 0 7.87 x 7.99 R0
+placeSTEP Generate STONEresistorswitchL 158.4 7.87 x 7.99 R0
+placeSTEPcontinue Generate STONEresistorswitchLB x 7.99 R0
+placeSTEPcontinue Generate STONEresistorDFT x 11 R0
+place Generate STONEresistorimux0p125 42.345 49.635 R0
+place Generate STONEresistorimux0p25 42.345 49.635 R0
+place Generate STONEresistorimux0p5 42.345 49.635 R0
+place Generate STONEresistorimux4 42.345 49.635 R0
+place Generate STONEresistorimux8 42.345 49.635 R0
+place Generate STONEresistorimux2 42.345 49.635 R0
+place PEBBLES PEBBLEdec2to4weak 1 6.8 MX
+place PEBBLES PEBBLEdec3to8weak -29 6.8 MX
+//placeIFELSE cellNameNOTContains switchT&&switchL
+//specific cell placeRES 0 0 0.8 0.8 R0 x y 85
+//placeRES 0 8 0.8 0.8 R90 x y 25
+//placeELSE
+//placeTAP 101 20
+//placeRES -2.19 -0.99 0.8 0.8 R90 -x y 35
+//placeRES 8.85 59.655 0.8 0.8 R0 x y 131H
+//placeEND
+placeRES -2.19 8.85 0.8 0.8 R90 -x y 40
 placeRESRING
-placeROUTE
-placeHVRING
+placeINST Xlogicshifter 0 -12 MX
+placeINST Xtiehi 101.06 -23.955 MXR90
+placeINST Xtielo 101.06 -23.955 R90
+place PEBBLES PEBBLEdec2to4weak -7.47 -2.3 R0
+//placeSTEP Generate STONEresistorswitchH 17.105 14.435 x 6.3 R180
+//placeSTEPcontinue Generate STONEresistorswitchHB x 6.3 R180
+placeSTEP Generate STONEresistorswitchL 0 7.87 x 7.99 R0
+placeSTEPcontinue Generate STONEresistorswitchLB x 7.99 R0
+place PEBBLES PEBBLEdec3to8weak -29.24 6.8 MX
+movePINS
+moveORIGIN x
+moveORIGIN y
+
+
+
+//placeIFELSE cellNameNOTContains STONE&&PEBBLE
+//placeROUTE
+//placeELSE
+//placeHVRING rect
+//placeROUTE
+//placeEND
 endlayoutbio
 
 //**********************************************
 //Project Parameters
-//Celera:SERVICEwaltz Project Bio
+//Celera:FAULTMANAGERwaltz Project Bio
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////   default.bio'  DO NOT USE  ///////////////////////////////////
 
@@ -240,313 +258,197 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,STONEnoconn,0
-sub_area,STONEreferenceBUFFER,3035
-sub_area,STONEreferenceDFTBG,280
-sub_area,STONEreferenceENABLE,100
-sub_area,STONEreferenceDFTREF,310
-sub_area,STONEnoconn,0
-sub_area,STONEreferenceCCP,6770
-sub_area,STONEnoconn,0
-sub_area,STONEreferenceCCN,6770
-sub_area,STONEreferenceTRIM,220
-sub_area,STONEreferenceBGOK0,7460
-sub_area,PEBBLEconfigLINK,2
-sub_area,STONEnoconn,0
-sub_area,STONEreferenceBGlowiqenable,999999
-sub_area,rlpp3000rpo95p6u1p3u,1337
-sub_area,rlpp3000rpo95p6u1p3u,1337
-sub_area,rlpp3000rpo95p6u1p3u,148
-sub_area,rlpp3000rpo1p2u0p4u,7
-sub_area,rlpp3000rpo1p2u0p4u,3
-sub_area,rlpp3000rpo1p2u0p4u,1
-sub_area,rlpp3000rpo1p2u0p4u,1
-sub_area,rlpp3000rpo1p2u0p4u,1
-sub_area,rlpp3000rpo1p2u0p4u,3
-generate_area,reference_4fa591be,1027784
+sub_area,rlpp3000rpo1p6u0p4u,1
+sub_area,STONEresistorswitchLB,280
+sub_area,rlpp3000rpo1p0u0p4u,1
+sub_area,STONEresistorswitchL,305
+sub_area,rlpp3000rpo1p6u0p4u,4
+sub_area,STONEresistorswitchL,305
+sub_area,rlpp3000rpo1p3u0p4u,5
+sub_area,STONEresistorswitchL,305
+sub_area,rlpp3000rpo1p1u0p4u,8
+sub_area,STONEresistorswitchL,305
+sub_area,rlpp3000rpo1p1u0p4u,14
+sub_area,STONEresistorswitchL,305
+sub_area,rlpp3000rpo1p0u0p4u,26
+sub_area,STONEresistorswitchL,305
+sub_area,rlpp3000rpo1p0u0p4u,51
+generate_area,resistor_thermometer_5e1cbaca_Xbottom,2220
 // *********************************************
-//CELL DFT Parameters
+//TRIM Parameters
+cell,resistor
+trim,instance,resistor_thermometer_5e1cbaca_Xbottom
+
+trim,name,text THERMOMETER bottom Resistor
+trim,enable,yes
+trim,bits,7
+trim,por,0
+trim,pinname,trim_resistor
+trim,testname,text THERMOMETER bottom Resistor
+trim,description,text THERMOMETER bottom Accuracy
+trim,target,28.40,Kohm
+trim,units,Kohm
+trim,pretrim_low_limit,-11.600
+trim,pretrim_high_limit,68.400
+trim,posttrim_low_limit,26.900
+trim,posttrim_high_limit,29.900
+trim,codeunits,%
+trim,description0,Code 0x01 0.62
+trim,description1,Code 0x02 1.25
+trim,description2,Code 0x04 2.50
+trim,description3,Code 0x08 5.00
+trim,description4,Code 0x10 10.00
+trim,description5,Code 0x20 20.00
+trim,description6,Code 0x40 40.00
+trim,description7,not used
+
+
+
 // *********************************************
+//Calculator Parameters
+
+//Trim Calculators
+#define,TAItarget,1000
+#define,RESISTORtrimbitmax,8
+#define,RESISTORswitchRONl,0.1
+#define,RESISTORswitchRONh,1.1
+#define,RESISTORswitchRATIO,10
+
+//Define Resistor calculator Algorithm
+//#define,RESISTORlayoutalgorithm,layout
+#define,RESISTORlayoutalgorithm,size
+#define,RESISTORlengthstep,0.1
+#define,RESISTORwidthstep,0.1
+
+//Define Resistor Area Calculator Algorithm
+//#define,RESISTORareaalgorithm,1
+//1=Resistor in one column
+#define,RESISTORareaalgorithm,2
+//2=Worst Case Kl+Kw
+//#define,RESISTORareaalgorithm,3
+//3 Define X Dimesion and calculate Row/Column
+#define,RESISTORareaXdimesion,100
+//X diminsion area that resistor can fit into
+
+//maximum number of parallel resistors
+#define,RESISTORparallelmaxPOLY,256
+#define,RESISTORparallelmaxRPOD,300
+#define,RESISTORparallelmaxRPODRPO,300
+#define,RESISTORparallelmaxRNOD,300
+#define,RESISTORparallelmaxRNODRPO,300
+
+//Starting Resistor Length <if Algorithm=layout>
+#define,RESISTORlayoutstartlengthPOLY,50.0
+#define,RESISTORlayoutstartlengthRPOD,60.0
+#define,RESISTORlayoutstartlengthRPODRPO,60.0
+#define,RESISTORlayoutstartlengthRNOD,60.0
+#define,RESISTORlayoutstartlengthRNODRPO,60.0
+
+#define,RESISTORlayoutmaxlength,100.0
+//POLY Resistor
+//type=tbd minimum value of poly resistor
+#define,RESISTORminimumvaluePOLY,3.0
+
+
+//Resistor Type rules
+#define RESISTORtbd,yes
+//#define RESISTORtdb,no
+//reassign tbd resistor type
+
+#define RESISTORrpodrposwitch,0.4
+#define RESISTORrpodswitch,0.1
+//switch resistor from rpodrpo to rpod
+
+
+#define,RESISTORiso,CELG
+#define,RESISTORpretrimhigh,40.0
+#define,RESISTORpretrimlow,40.0
+#define,CELVminimumT,1.8
+#define,CELVminimum,0.05
+//**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//reference
+//resistor
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,ok_reference,REF,enable_reference,net_skip,SIMPV
+pinorder,RN,RP,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip
 endpinorder
 //**********************************************
 
-// *********************************************
-//Calculator Parameters
 //**********************************************
-#define,REFERENCEresistorlength,95.62
-#define,REFERENCEresistorwidth2,2.0
-#define,REFERENCEresistorwidth1,1.0
-#define,REFERENCEresistorwidth0,0.4
-#define,REFERENCEtrimlength,0.8
-
-#define,REFERENCEtrimbits,6
-#define,REFERENCEtrimrange,15
-#define,REFERENCEtrimmsbgain,64
-#define,REFERENCEpretrimerror0,0.1
-//Use calculation error if no reference trim
-#define,REFERENCEpretrimerror1,0.5
-
-#define,SIMPVminimum,2.0
-#define,REFERENCEresistoriso,CELG
-#define,REFERENCEresistormaxp,64
-
-#define,REFERENCEpretrimbghigh,20.0
-#define,REFERENCEpretrimbglow,20.0
-#define,REFERENCEposttrimbglsb,0.5
-#define,REFERENCEpretrimrefhigh,10.0
-#define,REFERENCEpretrimreflow,10.0
-#define,REFERENCEposttrimreflsb,0.5
+//Cell Pin Descriptions	
 //**********************************************
-//Cells that need CELBG insert in Trference
-#define,CELBG,thermal
-#define,CELBG,comparatornoctlpins
-#define,CELBG,comparatorctlpins
+pinname,RP
+definition,RP,Positive Resistor connection
+iq,RP,SIMULATION
+absmax,RP,6
+absmin,RP,-0.3
+io,RP,inout
+mode,RP,analog
+router,RP,TBD
+dftpriority,RP,1
+esd,RP,TBD
 
 
-// *********************************************
-//TRIM Parameters
-cell,reference
-trim,instance,reference_4fa591be
+pinname,RN
+definition,RN,Negative Resistor connection
+iq,RN,SIMULATION
+absmax,RN,6
+absmin,RN,-0.3
+io,RN,inout
+mode,RN,analog
+router,RN,TBD
+dftpriority,RN,1
+esd,RN,TBD
 
-trim,name,CELERAbandgap
-trim,enable,yes
-trim,bits,7
-trim,por,0
-trim,pinname,trim_refbg
-trim,testname,CELERAbandgap
-trim,description,Bandgap Output Voltage Accuracy
-trim,target,1232
-trim,units,mV
-trim,pretrim_low_limit,1212.000
-trim,pretrim_high_limit,1252.000
-trim,posttrim_low_limit,1231.250
-trim,posttrim_high_limit,1232.750
-trim,codeunits,mV
-trim,description0,code 0x00 1232
-trim,description1,+0.5%
-trim,description2,+1.0%
-trim,description3,+2.0%
-trim,description4,+4.0%
-trim,description5,+8.0%
-trim,description6,+16.0%
-trim,description7,-32.0%
-trim,description8,empty
 
-trim,name,REFERENCEaccuracy
-trim,enable,yes
-trim,bits,6
-trim,por,0
-trim,pinname,trim_ref
-trim,testname,REFERENCEaccuracy
-trim,description,Reference Accuracy to 0.9V
-
-trim,target,900
-trim,units,mV
-trim,pretrim_low_limit,890.000
-trim,pretrim_high_limit,910.000
-trim,posttrim_low_limit,899.250
-trim,posttrim_high_limit,900.750
-trim,codeunits,mV
-trim,description0,code 0x00900
-trim,description1,code 0x01 +1.0
-trim,description2,code 0x02 +2.0
-trim,description3,code 0x04 +4.0
-trim,description4,code 0x08 +8.0
-trim,description5,code 0x10 +16.0
-trim,description6,code 0x20 -32.0
-trim,description7,not used
-trim,description8,empty
-
-//**********************************************
-//Cell Pin Descriptions
-// *********************************************
-pinname,SIMPV
-definition,SIMPV,Reference power supply
-iq,SIMPV,SIMULATION
-absmax,SIMPV,6
-absmin,SIMPV,2.0
-io,SIMPV,input
-mode,SIMPV,power
-router,SIMPV,TBD
-dftpriority,SIMPV,1
-esd,SIMPV,TBD
+pinname,CELV
+definition,CELV,Resistor Trim Power
+iq,CELV,SIMULATION
+absmax,CELV,6
+absmin,CELV,1.8
+io,CELV,input
+mode,CELV,analog
+router,CELV,TBD
+dftpriority,CELV,1
+esd,CELV,TBD
 
 pinname,CELG
-definition,CELG,Reference power ground
+definition,CELG,Resistor Trim Ground
 iq,CELG,SIMULATION
 absmax,CELG,0.3
 absmin,CELG,-0.3
 io,CELG,input
-mode,CELG,power
+mode,CELG,analog
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,celkelvin_GNDref
-definition,celkelvin_GNDref,REFERENCE ground sense
-iq,celkelvin_GNDref,SIMULATION
-absmax,celkelvin_GNDref,6
-absmin,celkelvin_GNDref,-0.3
-io,celkelvin_GNDref,input
-mode,celkelvin_GNDref,analog
-router,celkelvin_GNDref,TBD
-dftpriority,celkelvin_GNDref,1
-esd,celkelvin_GNDref,TBD
 
-pinname,REF
-definition,REF,Reference Output voltage
-iq,REF,SIMULATION
-absmax,REF,6
-absmin,REF,-0.3
-io,REF,output
-mode,REF,analog
-router,REF,TBD
-dftpriority,REF,1
-esd,REF,TBD
 
-pinname,enable_reference
-definition,enable_reference,Reference enable
-iq,enable_reference,SIMULATION
-absmax,enable_reference,6
-absmin,enable_reference,-0.3
-io,enable_reference,input
-mode,enable_reference,digital
-router,enable_reference,TBD
-dftpriority,enable_reference,1
-esd,enable_reference,TBD
+pinname,trim_resistor
+definition,trim_resistor,resistor accuracy control 
+iq,trim_resistor,SIMULATION
+absmax,trim_resistor,6
+absmin,trim_resistor,-0.3
+io,trim_resistor,input
+mode,trim_resistor,digital
+router,trim_resistor,TBD
+dftpriority,trim_resistor,1
+esd,trim_resistor,TBD
 
-pinname,global_reference
-definition,global_reference,Global enable
-iq,global_reference,SIMULATION
-absmax,global_reference,6
-absmin,global_reference,-0.3
-io,global_reference,input
-mode,global_reference,digital
-router,global_reference,TBD
-dftpriority,global_reference,1
-esd,global_reference,TBD
 
-pinname,trim_ref
-definition,trim_ref,Trim REF output voltage
-iq,trim_ref,SIMULATION
-absmax,trim_ref,6
-absmin,trim_ref,-0.3
-io,trim_ref,input
-mode,trim_ref,digital
-router,trim_ref,TBD
-dftpriority,trim_ref,1
-esd,trim_ref,TBD
 
-pinname,trim_refbg
-definition,trim_refbg,Trim BG output Voltage
-iq,trim_refbg,SIMULATION
-absmax,trim_refbg,6
-absmin,trim_refbg,-0.3
-io,trim_refbg,input
-mode,trim_refbg,digital
-router,trim_refbg,TBD
-dftpriority,trim_refbg,1
-esd,trim_refbg,TBD
 
-pinname,factory_refccp
-definition,factory_refccp,Testmode Input: Reference CCP trim
-iq,factory_refccp,SIMULATION
-absmax,factory_refccp,6
-absmin,factory_refccp,-0.3
-io,factory_refccp,input
-mode,,factory_refccp,digital
-router,factory_refccp,TBD
-dftpriority,factory_refccp,1
-esd,factory_refccp,TBD
 
-pinname,factory_refccn
-definition,factory_refccn,Testmode Input:Reference CCN trim
-iq,factory_refccn,SIMULATION
-absmax,factory_refccn,6
-absmin,factory_refccn,-0.3
-io,factory_refccn,input
-mode,,factory_refccn,digital
-router,factory_refccn,TBD
-dftpriority,factory_refccn,1
-esd,factory_refccn,TBD
 
-pinname,ten_refbg
-definition,ten_refbg,Testmode Input:Enable Measure CELBG
-iq,ten_refbg,SIMULATION
-absmax,ten_refbg,6
-absmin,ten_refbg,-0.3
-io,ten_refbg,input
-mode,ten_refbg,digital
-router,ten_refbg,TBD
-dftpriority,ten_refbg,1
-esd,ten_refbg,TBD
 
-pinname,ten_ref
-definition,ten_ref,Testmode Input:Enable Measure REF
-iq,ten_ref,SIMULATION
-absmax,ten_ref,6
-absmin,ten_ref,-0.3
-io,ten_ref,input
-mode,ten_ref,digital
-router,ten_ref,TBD
-dftpriority,ten_ref,1
-esd,ten_ref,TBD
-
-pinname,ok_reference
-definition,ok_reference,Reference ok flag
-iq,ok_reference,SIMULATION
-absmax,ok_reference,6
-absmin,ok_reference,-0.3
-io,ok_reference,output
-mode,ok_reference,digital
-router,ok_reference,TBD
-dftpriority,ok_reference,1
-esd,ok_reference,TBD
-
-pinname,TAI_REFBG
-definition,TAI_REFBG,Testmode Output:Measure CELBG
-iq,TAI_REFBG,SIMULATION
-absmax,TAI_REFBG,6
-absmin,TAI_REFBG,-0.3
-io,TAI_REFBG,output
-mode,TAI_REFBG,analog
-router,TAI_REFBG,TBD
-dftpriority,TAI_REFBG,1
-esd,TAI_REFBG,TBD
-
-pinname,TAI_REF
-definition,TAI_REF,Testmode Output:Measure REFERENCE
-iq,TAI_REF,SIMULATION
-absmax,TAI_REF,6
-absmin,TAI_REF,-0.3
-io,TAI_REF,output
-mode,TAI_REF,analog
-router,TAI_REF,TBD
-dftpriority,TAI_REF,1
-esd,TAI_REF,TBD
-
-pinname,CELBG
-definition,CELBG, IBIAS and THERMAL reference only
-iq,CELBG,SIMULATION
-absmax,CELBG,6
-absmin,CELBG,-0.3
-io,CELBG,output
-mode,CELBG,analog
-router,CELBG,CELBG
-dftpriority,CELBG,1
-esd,CELBG,TBD
 
 pinname,CELSUB
-definition,CELSUB,Substrate
+definition,CELSUB,Substrate connection
 iq,CELSUB,SIMULATION
 absmax,CELSUB,0.3
 absmin,CELSUB,-0.3
@@ -555,12 +457,7 @@ mode,CELSUB,power
 router,CELSUB,TBD
 dftpriority,CELSUB,1
 esd,CELSUB,TBD
-//**********************************************
-//**********************************************
-//Constraints Parameters
-constraint,reference,REF,shield
-constraint,reference,CELBG,shield
-//**********************************************
+
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -1238,5 +1135,5 @@ revision,vis15cb,0p1
 #define,AP5G60DC1minmult,1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
-endbio// *********************************************
+endbio
 

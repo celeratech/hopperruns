@@ -7,128 +7,378 @@
 :vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
 :vpi_module "/usr/local/lib/ivl/va_math.vpi";
-S_0x5575d931cf60 .scope module, "sim_SERVICEwaltz_ROW28" "sim_SERVICEwaltz_ROW28" 2 47;
+S_0x55abf8a9cf60 .scope module, "vbias_06fccf36" "vbias_06fccf36" 2 219;
  .timescale 0 0;
-o0x7f041bc8b018 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5575d9370f50_0 .net "BIAS", 0 0, o0x7f041bc8b018;  0 drivers
-o0x7f041bc8b048 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5575d9370ff0_0 .net "CELG59462", 0 0, o0x7f041bc8b048;  0 drivers
-o0x7f041bc8b078 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5575d93710b0_0 .net "CELSUB40948", 0 0, o0x7f041bc8b078;  0 drivers
-o0x7f041bc8b0a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5575d9371150_0 .net "CELV96848", 0 0, o0x7f041bc8b0a8;  0 drivers
-o0x7f041bc8b0d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5575d9371240_0 .net "EN", 0 0, o0x7f041bc8b0d8;  0 drivers
-o0x7f041bc8b108 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5575d9371380_0 .net "GND", 0 0, o0x7f041bc8b108;  0 drivers
-o0x7f041bc8b138 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5575d9371420_0 .net "IN", 0 0, o0x7f041bc8b138;  0 drivers
-o0x7f041bc8b168 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5575d93714c0_0 .net "IP_4a72660b", 0 0, o0x7f041bc8b168;  0 drivers
-o0x7f041bc8b438 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5575d93715b0_0 .net "celkelvin_GNDref", 0 0, o0x7f041bc8b438;  0 drivers
-o0x7f041bc8b468 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5575d93716e0_0 .net "celkelvin_IN1", 0 0, o0x7f041bc8b468;  0 drivers
-o0x7f041bc8b498 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5575d93717d0_0 .net "celkelvin_IN2", 0 0, o0x7f041bc8b498;  0 drivers
-o0x7f041bc8b4c8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5575d93718c0_0 .net "celkelvin_VBIAS", 0 0, o0x7f041bc8b4c8;  0 drivers
-o0x7f041bc8b1c8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5575d93719b0_0 .net "kelvin_GNDservice", 0 0, o0x7f041bc8b1c8;  0 drivers
-o0x7f041bc8b198 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5575d9371aa0_0 .net "kelvin_VCC", 0 0, o0x7f041bc8b198;  0 drivers
-o0x7f041bc8b408 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5575d9371b40_0 .net "net_21", 0 0, o0x7f041bc8b408;  0 drivers
-o0x7f041bc8b4f8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5575d9371be0_0 .net "ok_service", 0 0, o0x7f041bc8b4f8;  0 drivers
-o0x7f041bc8b528 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5575d9371c80_0 .net "porb", 0 0, o0x7f041bc8b528;  0 drivers
-S_0x5575d93540b0 .scope module, "XFORCE_SERVICEwaltz1" "FORCE_SERVICEwaltz" 2 53, 2 2 0, S_0x5575d931cf60;
+    .port_info 0 /INPUT 1 "CELSUB";
+    .port_info 1 /OUTPUT 1 "VBIAS";
+    .port_info 2 /INPUT 1 "IN1";
+    .port_info 3 /INPUT 1 "global_vbias";
+    .port_info 4 /INPUT 1 "celkelvin_VBIAS";
+    .port_info 5 /INPUT 1 "celkelvin_IN1";
+    .port_info 6 /INPUT 1 "IN2";
+    .port_info 7 /INPUT 1 "celkelvin_IN2";
+    .port_info 8 /INPUT 1 "ENABLE_VBIASHV";
+    .port_info 9 /OUTPUT 1 "ok_vbias";
+    .port_info 10 /INPUT 8 "trim_vbiaspos";
+    .port_info 11 /INPUT 8 "trim_vbiasneg";
+    .port_info 12 /INPUT 8 "trim_vbiasref";
+    .port_info 13 /INPUT 1 "ten_enablevbias";
+    .port_info 14 /INPUT 1 "ten_taifbvbias";
+    .port_info 15 /INPUT 1 "ten_taiv2v5";
+    .port_info 16 /INPUT 1 "ten_taiv1v0f";
+    .port_info 17 /INPUT 1 "ten_tdiokvbias";
+    .port_info 18 /OUTPUT 1 "tdi_vbias";
+    .port_info 19 /OUTPUT 1 "TAI_VBIAS";
+    .port_info 20 /INPUT 1 "CELG";
+o0x7f82f188e798 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b17dd0_0 .net "BGPOS", 0 0, o0x7f82f188e798;  0 drivers
+o0x7f82f188e048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b17e90_0 .net "CELG", 0 0, o0x7f82f188e048;  0 drivers
+o0x7f82f188e438 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b17f50_0 .net "CELSUB", 0 0, o0x7f82f188e438;  0 drivers
+o0x7f82f188f2d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b17ff0_0 .net "ENABLE_VBIASHV", 0 0, o0x7f82f188f2d8;  0 drivers
+o0x7f82f188e078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b180c0_0 .net "FB_VBIAS", 0 0, o0x7f82f188e078;  0 drivers
+o0x7f82f188e7c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b181b0_0 .net "HVP100N", 0 0, o0x7f82f188e7c8;  0 drivers
+o0x7f82f188e468 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b18250_0 .net "IDN", 0 0, o0x7f82f188e468;  0 drivers
+o0x7f82f188e498 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b18340_0 .net "IDP", 0 0, o0x7f82f188e498;  0 drivers
+o0x7f82f188e7f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b18430_0 .net "IN1", 0 0, o0x7f82f188e7f8;  0 drivers
+o0x7f82f188e828 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b185f0_0 .net "IN1DIV", 0 0, o0x7f82f188e828;  0 drivers
+o0x7f82f188f3c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b18690_0 .net "IN2", 0 0, o0x7f82f188f3c8;  0 drivers
+o0x7f82f188e858 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b18730_0 .net "IN2DIV", 0 0, o0x7f82f188e858;  0 drivers
+o0x7f82f188e318 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b187d0_0 .net "I_TO_IN1RES", 0 0, o0x7f82f188e318;  0 drivers
+o0x7f82f188e1c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b188c0_0 .net "I_TO_IN2RES", 0 0, o0x7f82f188e1c8;  0 drivers
+o0x7f82f188e888 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b189b0_0 .net "P100N", 0 0, o0x7f82f188e888;  0 drivers
+o0x7f82f188e4c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b18aa0_0 .net "P1U", 0 0, o0x7f82f188e4c8;  0 drivers
+o0x7f82f188f3f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b18b40_0 .net "P500N", 0 0, o0x7f82f188f3f8;  0 drivers
+o0x7f82f188e018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b18d40_0 .net "RESRTN", 0 0, o0x7f82f188e018;  0 drivers
+o0x7f82f188e2e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b18e30_0 .net "RESRTNIN1", 0 0, o0x7f82f188e2e8;  0 drivers
+o0x7f82f188e198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b18f20_0 .net "RESRTNIN2", 0 0, o0x7f82f188e198;  0 drivers
+o0x7f82f188e8b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b19010_0 .net "START", 0 0, o0x7f82f188e8b8;  0 drivers
+o0x7f82f188eeb8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b19100_0 .net "TAI_VBIAS", 0 0, o0x7f82f188eeb8;  0 drivers
+o0x7f82f188e4f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b191a0_0 .net "V1V0F", 0 0, o0x7f82f188e4f8;  0 drivers
+o0x7f82f188e528 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b19240_0 .net "V2V5", 0 0, o0x7f82f188e528;  0 drivers
+o0x7f82f188eee8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b192e0_0 .net "VBIAS", 0 0, o0x7f82f188eee8;  0 drivers
+v0x55abf8b19380_0 .net *"_ivl_1", 0 0, L_0x55abf8b1ade0;  1 drivers
+v0x55abf8b19420_0 .net *"_ivl_11", 0 0, L_0x55abf8b1b1e0;  1 drivers
+v0x55abf8b194c0_0 .net *"_ivl_13", 0 0, L_0x55abf8b1b2c0;  1 drivers
+v0x55abf8b19580_0 .net *"_ivl_15", 0 0, L_0x55abf8b1b360;  1 drivers
+v0x55abf8b19660_0 .net *"_ivl_3", 0 0, L_0x55abf8b1ae80;  1 drivers
+v0x55abf8b19740_0 .net *"_ivl_5", 0 0, L_0x55abf8b1af70;  1 drivers
+v0x55abf8b19820_0 .net *"_ivl_7", 0 0, L_0x55abf8b1b010;  1 drivers
+v0x55abf8b19900_0 .net *"_ivl_9", 0 0, L_0x55abf8b1b140;  1 drivers
+o0x7f82f188e8e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b19bf0_0 .net "a0", 0 0, o0x7f82f188e8e8;  0 drivers
+o0x7f82f188e348 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b19ce0_0 .net "celkelvin_IN1", 0 0, o0x7f82f188e348;  0 drivers
+o0x7f82f188e1f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b19d80_0 .net "celkelvin_IN2", 0 0, o0x7f82f188e1f8;  0 drivers
+o0x7f82f188e0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b19e20_0 .net "celkelvin_VBIAS", 0 0, o0x7f82f188e0a8;  0 drivers
+o0x7f82f188e948 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b19ec0_0 .net "enable_bgcomp", 0 0, o0x7f82f188e948;  0 drivers
+o0x7f82f188ea08 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b19fb0_0 .net "global_vbias", 0 0, o0x7f82f188ea08;  0 drivers
+o0x7f82f188f428 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b1a050_0 .net "noconn_a1", 0 0, o0x7f82f188f428;  0 drivers
+o0x7f82f188e918 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b1a140_0 .net "noconn_discharge", 0 0, o0x7f82f188e918;  0 drivers
+o0x7f82f188e978 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b1a230_0 .net "ok_in1", 0 0, o0x7f82f188e978;  0 drivers
+o0x7f82f188e9a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b1a320_0 .net "ok_in2", 0 0, o0x7f82f188e9a8;  0 drivers
+o0x7f82f188ef18 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b1a410_0 .net "ok_vbias", 0 0, o0x7f82f188ef18;  0 drivers
+o0x7f82f188e9d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b1a500_0 .net "ok_vbiasbg", 0 0, o0x7f82f188e9d8;  0 drivers
+o0x7f82f188ef48 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b1a5f0_0 .net "tdi_vbias", 0 0, o0x7f82f188ef48;  0 drivers
+o0x7f82f188ea38 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b1a690_0 .net "ten_enablevbias", 0 0, o0x7f82f188ea38;  0 drivers
+o0x7f82f188ef78 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b1a730_0 .net "ten_taifbvbias", 0 0, o0x7f82f188ef78;  0 drivers
+o0x7f82f188efa8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b1a7d0_0 .net "ten_taiv1v0f", 0 0, o0x7f82f188efa8;  0 drivers
+o0x7f82f188efd8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b1a870_0 .net "ten_taiv2v5", 0 0, o0x7f82f188efd8;  0 drivers
+o0x7f82f188f008 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55abf8b1a910_0 .net "ten_tdiokvbias", 0 0, o0x7f82f188f008;  0 drivers
+o0x7f82f188e558 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v0x55abf8b1a9b0_0 .net "trim_vbiasneg", 7 0, o0x7f82f188e558;  0 drivers
+o0x7f82f188e588 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v0x55abf8b1aa50_0 .net "trim_vbiaspos", 7 0, o0x7f82f188e588;  0 drivers
+o0x7f82f188fdb8 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v0x55abf8b1aaf0_0 .net "trim_vbiasref", 7 0, o0x7f82f188fdb8;  0 drivers
+L_0x55abf8b1ade0 .part o0x7f82f188fdb8, 7, 1;
+L_0x55abf8b1ae80 .part o0x7f82f188fdb8, 6, 1;
+L_0x55abf8b1af70 .part o0x7f82f188fdb8, 5, 1;
+L_0x55abf8b1b010 .part o0x7f82f188fdb8, 4, 1;
+L_0x55abf8b1b140 .part o0x7f82f188fdb8, 3, 1;
+L_0x55abf8b1b1e0 .part o0x7f82f188fdb8, 2, 1;
+L_0x55abf8b1b2c0 .part o0x7f82f188fdb8, 1, 1;
+L_0x55abf8b1b360 .part o0x7f82f188fdb8, 0, 1;
+LS_0x55abf8b1b450_0_0 .concat [ 1 1 1 1], L_0x55abf8b1b360, L_0x55abf8b1b2c0, L_0x55abf8b1b1e0, L_0x55abf8b1b140;
+LS_0x55abf8b1b450_0_4 .concat [ 1 1 1 1], L_0x55abf8b1b010, L_0x55abf8b1af70, L_0x55abf8b1ae80, L_0x55abf8b1ade0;
+L_0x55abf8b1b450 .concat [ 4 4 0 0], LS_0x55abf8b1b450_0_0, LS_0x55abf8b1b450_0_4;
+S_0x55abf8adfe00 .scope module, "XRfeedback" "resistordivider_vbias_06fccf36_XRfeedback" 2 386, 2 167 0, S_0x55abf8a9cf60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "EN";
-    .port_info 1 /OUTPUT 1 "IN";
-    .port_info 2 /INOUT 1 "GND";
-    .port_info 3 /INOUT 1 "VCC";
-    .port_info 4 /OUTPUT 1 "BIAS";
-    .port_info 5 /OUTPUT 1 "CELG59462";
-    .port_info 6 /OUTPUT 1 "CELV96848";
-    .port_info 7 /OUTPUT 1 "kelvin_VCC";
-    .port_info 8 /OUTPUT 1 "CELSUB40948";
-    .port_info 9 /OUTPUT 1 "IP_4a72660b";
-    .port_info 10 /OUTPUT 1 "kelvin_GNDservice";
-v0x5575d931c4b0_0 .net "BIAS", 0 0, o0x7f041bc8b018;  alias, 0 drivers
-v0x5575d931d0f0_0 .net "CELG59462", 0 0, o0x7f041bc8b048;  alias, 0 drivers
-v0x5575d931cec0_0 .net "CELSUB40948", 0 0, o0x7f041bc8b078;  alias, 0 drivers
-v0x5575d936e5c0_0 .net "CELV96848", 0 0, o0x7f041bc8b0a8;  alias, 0 drivers
-v0x5575d936e680_0 .net "EN", 0 0, o0x7f041bc8b0d8;  alias, 0 drivers
-v0x5575d936e790_0 .net "GND", 0 0, o0x7f041bc8b108;  alias, 0 drivers
-v0x5575d936e850_0 .net "IN", 0 0, o0x7f041bc8b138;  alias, 0 drivers
-v0x5575d936e910_0 .net "IP_4a72660b", 0 0, o0x7f041bc8b168;  alias, 0 drivers
-v0x5575d936e9d0_0 .net "VCC", 0 0, o0x7f041bc8b198;  alias, 0 drivers
-v0x5575d936ea90_0 .net "kelvin_GNDservice", 0 0, o0x7f041bc8b1c8;  alias, 0 drivers
-v0x5575d936eb50_0 .net "kelvin_VCC", 0 0, o0x7f041bc8b198;  alias, 0 drivers
-S_0x5575d936ed30 .scope module, "XSERVICEwaltz1" "SERVICEwaltz" 2 67, 2 16 0, S_0x5575d931cf60;
+    .port_info 0 /INOUT 1 "TOP";
+    .port_info 1 /OUTPUT 1 "TAP0";
+    .port_info 2 /INPUT 1 "CELG";
+    .port_info 3 /INOUT 1 "BOTTOM";
+v0x55abf8aed880_0 .net "BOTTOM", 0 0, o0x7f82f188e018;  alias, 0 drivers
+v0x55abf8b0ffe0_0 .net "CELG", 0 0, o0x7f82f188e048;  alias, 0 drivers
+v0x55abf8b100a0_0 .net "TAP0", 0 0, o0x7f82f188e078;  alias, 0 drivers
+v0x55abf8b10140_0 .net "TOP", 0 0, o0x7f82f188e0a8;  alias, 0 drivers
+S_0x55abf8b10280 .scope module, "XRswitchover" "resistordivider_vbias_06fccf36_XRswitchover" 2 410, 2 195 0, S_0x55abf8a9cf60;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "EN";
-    .port_info 1 /INPUT 1 "IN";
-    .port_info 2 /OUTPUT 1 "VCC";
-    .port_info 3 /INPUT 1 "BIAS";
-    .port_info 4 /OUTPUT 1 "porb";
-    .port_info 5 /INPUT 1 "REF0V9";
-    .port_info 6 /INPUT 1 "CELG59462";
-    .port_info 7 /INPUT 1 "CELV96848";
-    .port_info 8 /INOUT 1 "kelvin_VCC";
-    .port_info 9 /OUTPUT 1 "ok_service";
-    .port_info 10 /INPUT 1 "CELSUB40948";
-    .port_info 11 /INPUT 1 "IP_4a72660b";
-    .port_info 12 /INPUT 1 "celkelvin_IN1";
-    .port_info 13 /INPUT 1 "celkelvin_IN2";
-    .port_info 14 /INPUT 1 "celkelvin_VBIAS";
-    .port_info 15 /INPUT 1 "celkelvin_GNDref";
-    .port_info 16 /INOUT 1 "kelvin_GNDservice";
-v0x5575d936f080_0 .net "BIAS", 0 0, o0x7f041bc8b018;  alias, 0 drivers
-v0x5575d936f150_0 .net "CELG59462", 0 0, o0x7f041bc8b048;  alias, 0 drivers
-v0x5575d936f220_0 .net "CELSUB40948", 0 0, o0x7f041bc8b078;  alias, 0 drivers
-v0x5575d936f320_0 .net "CELV96848", 0 0, o0x7f041bc8b0a8;  alias, 0 drivers
-v0x5575d936f3f0_0 .net "EN", 0 0, o0x7f041bc8b0d8;  alias, 0 drivers
-v0x5575d936f4e0_0 .net "IN", 0 0, o0x7f041bc8b138;  alias, 0 drivers
-v0x5575d936f5b0_0 .net "IP_4a72660b", 0 0, o0x7f041bc8b168;  alias, 0 drivers
-v0x5575d936f680_0 .net "REF0V9", 0 0, o0x7f041bc8b408;  alias, 0 drivers
-v0x5575d936f720_0 .net "VCC", 0 0, o0x7f041bc8b198;  alias, 0 drivers
-v0x5575d936f7c0_0 .net "celkelvin_GNDref", 0 0, o0x7f041bc8b438;  alias, 0 drivers
-v0x5575d936f860_0 .net "celkelvin_IN1", 0 0, o0x7f041bc8b468;  alias, 0 drivers
-v0x5575d936f900_0 .net "celkelvin_IN2", 0 0, o0x7f041bc8b498;  alias, 0 drivers
-v0x5575d936f9a0_0 .net "celkelvin_VBIAS", 0 0, o0x7f041bc8b4c8;  alias, 0 drivers
-v0x5575d936fa40_0 .net "kelvin_GNDservice", 0 0, o0x7f041bc8b1c8;  alias, 0 drivers
-v0x5575d936fae0_0 .net "kelvin_VCC", 0 0, o0x7f041bc8b198;  alias, 0 drivers
-v0x5575d936fb80_0 .net "ok_service", 0 0, o0x7f041bc8b4f8;  alias, 0 drivers
-v0x5575d936fc20_0 .net "porb", 0 0, o0x7f041bc8b528;  alias, 0 drivers
-S_0x5575d936ffb0 .scope module, "celkelvin_GNDref_WRAPPER" "WRAPPER1" 2 102, 2 39 0, S_0x5575d931cf60;
+    .port_info 0 /INOUT 1 "TOP";
+    .port_info 1 /OUTPUT 1 "TAP0";
+    .port_info 2 /INPUT 1 "CELG";
+    .port_info 3 /INOUT 1 "BOTTOM";
+v0x55abf8b104a0_0 .net "BOTTOM", 0 0, o0x7f82f188e198;  alias, 0 drivers
+v0x55abf8b10560_0 .net "CELG", 0 0, o0x7f82f188e048;  alias, 0 drivers
+v0x55abf8b10620_0 .net "TAP0", 0 0, o0x7f82f188e1c8;  alias, 0 drivers
+v0x55abf8b106c0_0 .net "TOP", 0 0, o0x7f82f188e1f8;  alias, 0 drivers
+S_0x55abf8b107f0 .scope module, "XRuvlo" "resistordivider_vbias_06fccf36_XRuvlo" 2 394, 2 181 0, S_0x55abf8a9cf60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "o";
-    .port_info 1 /INPUT 1 "i";
-v0x5575d93701c0_0 .net "i", 0 0, o0x7f041bc8b438;  alias, 0 drivers
-v0x5575d93702b0_0 .net "o", 0 0, o0x7f041bc8b048;  alias, 0 drivers
-S_0x5575d93703e0 .scope module, "celkelvin_IN1_WRAPPER" "WRAPPER1" 2 87, 2 39 0, S_0x5575d931cf60;
+    .port_info 0 /INOUT 1 "TOP";
+    .port_info 1 /OUTPUT 1 "TAP0";
+    .port_info 2 /INPUT 1 "CELG";
+    .port_info 3 /INOUT 1 "BOTTOM";
+v0x55abf8b10a20_0 .net "BOTTOM", 0 0, o0x7f82f188e2e8;  alias, 0 drivers
+v0x55abf8b10ae0_0 .net "CELG", 0 0, o0x7f82f188e048;  alias, 0 drivers
+v0x55abf8b10ba0_0 .net "TAP0", 0 0, o0x7f82f188e318;  alias, 0 drivers
+v0x55abf8b10c40_0 .net "TOP", 0 0, o0x7f82f188e348;  alias, 0 drivers
+S_0x55abf8b10d90 .scope module, "Xaccuracy" "STONEvbiasinptrimNOME" 2 372, 2 124 0, S_0x55abf8a9cf60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "o";
-    .port_info 1 /INPUT 1 "i";
-v0x5575d93705c0_0 .net "i", 0 0, o0x7f041bc8b468;  alias, 0 drivers
-v0x5575d9370680_0 .net "o", 0 0, o0x7f041bc8b138;  alias, 0 drivers
-S_0x5575d93707b0 .scope module, "celkelvin_IN2_WRAPPER" "WRAPPER1" 2 92, 2 39 0, S_0x5575d931cf60;
+    .port_info 0 /INPUT 1 "V2V5";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "V1V0F";
+    .port_info 3 /INPUT 1 "FB_VBIAS";
+    .port_info 4 /INPUT 1 "P1U";
+    .port_info 5 /INPUT 8 "trim_vbiasneg";
+    .port_info 6 /INOUT 1 "IDP";
+    .port_info 7 /INOUT 1 "IDN";
+    .port_info 8 /INPUT 1 "CELSUB";
+    .port_info 9 /INPUT 8 "trim_vbiaspos";
+v0x55abf8b11020_0 .net "CELG", 0 0, o0x7f82f188e048;  alias, 0 drivers
+v0x55abf8b110e0_0 .net "CELSUB", 0 0, o0x7f82f188e438;  alias, 0 drivers
+v0x55abf8b111a0_0 .net "FB_VBIAS", 0 0, o0x7f82f188e078;  alias, 0 drivers
+v0x55abf8b11270_0 .net "IDN", 0 0, o0x7f82f188e468;  alias, 0 drivers
+v0x55abf8b11310_0 .net "IDP", 0 0, o0x7f82f188e498;  alias, 0 drivers
+v0x55abf8b113b0_0 .net "P1U", 0 0, o0x7f82f188e4c8;  alias, 0 drivers
+v0x55abf8b11470_0 .net "V1V0F", 0 0, o0x7f82f188e4f8;  alias, 0 drivers
+v0x55abf8b11530_0 .net "V2V5", 0 0, o0x7f82f188e528;  alias, 0 drivers
+v0x55abf8b115f0_0 .net "trim_vbiasneg", 7 0, o0x7f82f188e558;  alias, 0 drivers
+v0x55abf8b116d0_0 .net "trim_vbiaspos", 7 0, o0x7f82f188e588;  alias, 0 drivers
+S_0x55abf8b118f0 .scope module, "Xbgcomp" "STONEvbiasbgcomp60vin2ACCURATE" 2 270, 2 20 0, S_0x55abf8a9cf60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "o";
-    .port_info 1 /INPUT 1 "i";
-v0x5575d93709e0_0 .net "i", 0 0, o0x7f041bc8b498;  alias, 0 drivers
-v0x5575d9370aa0_0 .net "o", 0 0, o0x7f041bc8b018;  alias, 0 drivers
-S_0x5575d9370bd0 .scope module, "celkelvin_VBIAS_WRAPPER" "WRAPPER1" 2 97, 2 39 0, S_0x5575d931cf60;
+    .port_info 0 /INPUT 1 "IN1";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELSUB";
+    .port_info 3 /OUTPUT 1 "ok_vbiasbg";
+    .port_info 4 /OUTPUT 1 "ok_in1";
+    .port_info 5 /INPUT 1 "enable_vbias";
+    .port_info 6 /INPUT 8 "trim_vbias";
+    .port_info 7 /OUTPUT 1 "BGPOS";
+    .port_info 8 /INPUT 1 "ten";
+    .port_info 9 /INPUT 1 "ten_enable_vbias";
+    .port_info 10 /INPUT 1 "START";
+    .port_info 11 /OUTPUT 1 "RESRTNIN2";
+    .port_info 12 /OUTPUT 1 "ok_in2";
+    .port_info 13 /INPUT 1 "IN2DIV";
+    .port_info 14 /INPUT 1 "IN1DIV";
+    .port_info 15 /OUTPUT 1 "HVP100N";
+    .port_info 16 /OUTPUT 1 "P100N";
+    .port_info 17 /OUTPUT 1 "V1V0F";
+    .port_info 18 /OUTPUT 1 "discharge";
+    .port_info 19 /OUTPUT 1 "RESRTNIN1";
+    .port_info 20 /INPUT 1 "latch_enable";
+    .port_info 21 /OUTPUT 1 "a0";
+v0x55abf8b11ca0_0 .net "BGPOS", 0 0, o0x7f82f188e798;  alias, 0 drivers
+v0x55abf8b11d80_0 .net "CELG", 0 0, o0x7f82f188e048;  alias, 0 drivers
+v0x55abf8b11e40_0 .net "CELSUB", 0 0, o0x7f82f188e438;  alias, 0 drivers
+v0x55abf8b11ee0_0 .net "HVP100N", 0 0, o0x7f82f188e7c8;  alias, 0 drivers
+v0x55abf8b11f80_0 .net "IN1", 0 0, o0x7f82f188e7f8;  alias, 0 drivers
+v0x55abf8b12020_0 .net "IN1DIV", 0 0, o0x7f82f188e828;  alias, 0 drivers
+v0x55abf8b120c0_0 .net "IN2DIV", 0 0, o0x7f82f188e858;  alias, 0 drivers
+v0x55abf8b12180_0 .net "P100N", 0 0, o0x7f82f188e888;  alias, 0 drivers
+v0x55abf8b12240_0 .net "RESRTNIN1", 0 0, o0x7f82f188e2e8;  alias, 0 drivers
+v0x55abf8b122e0_0 .net "RESRTNIN2", 0 0, o0x7f82f188e198;  alias, 0 drivers
+v0x55abf8b123b0_0 .net "START", 0 0, o0x7f82f188e8b8;  alias, 0 drivers
+v0x55abf8b12450_0 .net "V1V0F", 0 0, o0x7f82f188e4f8;  alias, 0 drivers
+v0x55abf8b12520_0 .net "a0", 0 0, o0x7f82f188e8e8;  alias, 0 drivers
+v0x55abf8b125c0_0 .net "discharge", 0 0, o0x7f82f188e918;  alias, 0 drivers
+v0x55abf8b12660_0 .net "enable_vbias", 0 0, o0x7f82f188e948;  alias, 0 drivers
+v0x55abf8b12720_0 .net "latch_enable", 0 0, o0x7f82f188e8e8;  alias, 0 drivers
+v0x55abf8b127f0_0 .net "ok_in1", 0 0, o0x7f82f188e978;  alias, 0 drivers
+v0x55abf8b129a0_0 .net "ok_in2", 0 0, o0x7f82f188e9a8;  alias, 0 drivers
+v0x55abf8b12a60_0 .net "ok_vbiasbg", 0 0, o0x7f82f188e9d8;  alias, 0 drivers
+v0x55abf8b12b20_0 .net "ten", 0 0, o0x7f82f188ea08;  alias, 0 drivers
+v0x55abf8b12be0_0 .net "ten_enable_vbias", 0 0, o0x7f82f188ea38;  alias, 0 drivers
+v0x55abf8b12ca0_0 .net "trim_vbias", 7 0, L_0x55abf8b1b450;  1 drivers
+S_0x55abf8b13040 .scope module, "Xdft" "STONEvbiasateNOME" 2 354, 2 100 0, S_0x55abf8a9cf60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "o";
-    .port_info 1 /INPUT 1 "i";
-v0x5575d9370db0_0 .net "i", 0 0, o0x7f041bc8b4c8;  alias, 0 drivers
-v0x5575d9370e70_0 .net "o", 0 0, o0x7f041bc8b198;  alias, 0 drivers
+    .port_info 0 /OUTPUT 1 "tdi_vbias";
+    .port_info 1 /INOUT 1 "TAI_VBIAS";
+    .port_info 2 /INPUT 1 "BGPOS";
+    .port_info 3 /INPUT 1 "CELG";
+    .port_info 4 /INPUT 1 "CELSUB";
+    .port_info 5 /INPUT 1 "FB_VBIAS";
+    .port_info 6 /INPUT 1 "V1V0F";
+    .port_info 7 /INPUT 1 "V2V5";
+    .port_info 8 /INPUT 1 "VBIAS";
+    .port_info 9 /INPUT 1 "ok_vbias";
+    .port_info 10 /INPUT 1 "ten_tai_fb_vbias";
+    .port_info 11 /INPUT 1 "ten_tai_v1v0f";
+    .port_info 12 /INPUT 1 "ten_tai_v2v5";
+    .port_info 13 /INPUT 1 "ten_tdi_ok_vbias";
+v0x55abf8b13330_0 .net "BGPOS", 0 0, o0x7f82f188e798;  alias, 0 drivers
+v0x55abf8b13420_0 .net "CELG", 0 0, o0x7f82f188e048;  alias, 0 drivers
+v0x55abf8b134c0_0 .net "CELSUB", 0 0, o0x7f82f188e438;  alias, 0 drivers
+v0x55abf8b135e0_0 .net "FB_VBIAS", 0 0, o0x7f82f188e078;  alias, 0 drivers
+v0x55abf8b136d0_0 .net "TAI_VBIAS", 0 0, o0x7f82f188eeb8;  alias, 0 drivers
+v0x55abf8b137c0_0 .net "V1V0F", 0 0, o0x7f82f188e4f8;  alias, 0 drivers
+v0x55abf8b138b0_0 .net "V2V5", 0 0, o0x7f82f188e528;  alias, 0 drivers
+v0x55abf8b13950_0 .net "VBIAS", 0 0, o0x7f82f188eee8;  alias, 0 drivers
+v0x55abf8b139f0_0 .net "ok_vbias", 0 0, o0x7f82f188ef18;  alias, 0 drivers
+v0x55abf8b13a90_0 .net "tdi_vbias", 0 0, o0x7f82f188ef48;  alias, 0 drivers
+v0x55abf8b13b50_0 .net "ten_tai_fb_vbias", 0 0, o0x7f82f188ef78;  alias, 0 drivers
+v0x55abf8b13c10_0 .net "ten_tai_v1v0f", 0 0, o0x7f82f188efa8;  alias, 0 drivers
+v0x55abf8b13cd0_0 .net "ten_tai_v2v5", 0 0, o0x7f82f188efd8;  alias, 0 drivers
+v0x55abf8b13d90_0 .net "ten_tdi_ok_vbias", 0 0, o0x7f82f188f008;  alias, 0 drivers
+S_0x55abf8b14010 .scope module, "Xenable" "STONEvbiasENABLE60NOME" 2 338, 2 143 0, S_0x55abf8a9cf60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "O";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELSUB";
+    .port_info 3 /INPUT 1 "I";
+v0x55abf8b14210_0 .net "CELG", 0 0, o0x7f82f188e048;  alias, 0 drivers
+v0x55abf8b142d0_0 .net "CELSUB", 0 0, o0x7f82f188e438;  alias, 0 drivers
+v0x55abf8b14390_0 .net "I", 0 0, o0x7f82f188f2d8;  alias, 0 drivers
+v0x55abf8b14430_0 .net "O", 0 0, o0x7f82f188e948;  alias, 0 drivers
+S_0x55abf8b14540 .scope module, "Xldo" "STONEvbiasldoin160in230pmosNOME" 2 317, 2 73 0, S_0x55abf8a9cf60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "IN1";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELSUB";
+    .port_info 3 /INPUT 1 "IN2";
+    .port_info 4 /INPUT 1 "V2V5";
+    .port_info 5 /INPUT 1 "V1V0F";
+    .port_info 6 /INPUT 1 "ok_in1";
+    .port_info 7 /OUTPUT 1 "FORCE_VBIAS";
+    .port_info 8 /INPUT 1 "FB_VBIAS";
+    .port_info 9 /INPUT 1 "P1U";
+    .port_info 10 /INPUT 1 "ok_in2";
+    .port_info 11 /INPUT 1 "RESRTN";
+    .port_info 12 /INPUT 1 "P500N";
+    .port_info 13 /OUTPUT 1 "ok_vbias";
+    .port_info 14 /OUTPUT 1 "IDN";
+    .port_info 15 /OUTPUT 1 "IDP";
+    .port_info 16 /OUTPUT 1 "a1";
+v0x55abf8b148c0_0 .net "CELG", 0 0, o0x7f82f188e048;  alias, 0 drivers
+v0x55abf8b14980_0 .net "CELSUB", 0 0, o0x7f82f188e438;  alias, 0 drivers
+v0x55abf8b14ad0_0 .net "FB_VBIAS", 0 0, o0x7f82f188e078;  alias, 0 drivers
+v0x55abf8b14b70_0 .net "FORCE_VBIAS", 0 0, o0x7f82f188eee8;  alias, 0 drivers
+v0x55abf8b14c40_0 .net "IDN", 0 0, o0x7f82f188e468;  alias, 0 drivers
+v0x55abf8b14ce0_0 .net "IDP", 0 0, o0x7f82f188e498;  alias, 0 drivers
+v0x55abf8b14db0_0 .net "IN1", 0 0, o0x7f82f188e7f8;  alias, 0 drivers
+v0x55abf8b14e80_0 .net "IN2", 0 0, o0x7f82f188f3c8;  alias, 0 drivers
+v0x55abf8b14f20_0 .net "P1U", 0 0, o0x7f82f188e4c8;  alias, 0 drivers
+v0x55abf8b15080_0 .net "P500N", 0 0, o0x7f82f188f3f8;  alias, 0 drivers
+v0x55abf8b15120_0 .net "RESRTN", 0 0, o0x7f82f188e018;  alias, 0 drivers
+v0x55abf8b151f0_0 .net "V1V0F", 0 0, o0x7f82f188e4f8;  alias, 0 drivers
+v0x55abf8b15290_0 .net "V2V5", 0 0, o0x7f82f188e528;  alias, 0 drivers
+v0x55abf8b15330_0 .net "a1", 0 0, o0x7f82f188f428;  alias, 0 drivers
+v0x55abf8b153d0_0 .net "ok_in1", 0 0, o0x7f82f188e978;  alias, 0 drivers
+v0x55abf8b15470_0 .net "ok_in2", 0 0, o0x7f82f188e9a8;  alias, 0 drivers
+v0x55abf8b15540_0 .net "ok_vbias", 0 0, o0x7f82f188ef18;  alias, 0 drivers
+S_0x55abf8b15840 .scope module, "Xnoconn0" "STONEnoconn" 2 264, 2 209 0, S_0x55abf8a9cf60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x55abf8b15a60_0 .net "noconn", 0 0, o0x7f82f188e918;  alias, 0 drivers
+S_0x55abf8b15b70 .scope module, "Xnoconn1" "STONEnoconn" 2 311, 2 209 0, S_0x55abf8a9cf60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x55abf8b15d20_0 .net "noconn", 0 0, o0x7f82f188f428;  alias, 0 drivers
+S_0x55abf8b15e30 .scope module, "Xservice" "STONEvbiasservice60vNOME" 2 296, 2 53 0, S_0x55abf8a9cf60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "IN1";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELSUB";
+    .port_info 3 /INPUT 1 "HVP100N";
+    .port_info 4 /INPUT 1 "BGPOS";
+    .port_info 5 /INPUT 1 "P100N";
+    .port_info 6 /INPUT 1 "V1V0F";
+    .port_info 7 /INPUT 1 "ok_vbiasbg";
+    .port_info 8 /OUTPUT 1 "V2V5";
+    .port_info 9 /OUTPUT 1 "P1U";
+    .port_info 10 /OUTPUT 1 "P500N";
+v0x55abf8b16120_0 .net "BGPOS", 0 0, o0x7f82f188e798;  alias, 0 drivers
+v0x55abf8b16210_0 .net "CELG", 0 0, o0x7f82f188e048;  alias, 0 drivers
+v0x55abf8b163e0_0 .net "CELSUB", 0 0, o0x7f82f188e438;  alias, 0 drivers
+v0x55abf8b16480_0 .net "HVP100N", 0 0, o0x7f82f188e7c8;  alias, 0 drivers
+v0x55abf8b16550_0 .net "IN1", 0 0, o0x7f82f188e7f8;  alias, 0 drivers
+v0x55abf8b16690_0 .net "P100N", 0 0, o0x7f82f188e888;  alias, 0 drivers
+v0x55abf8b16730_0 .net "P1U", 0 0, o0x7f82f188e4c8;  alias, 0 drivers
+v0x55abf8b16820_0 .net "P500N", 0 0, o0x7f82f188f3f8;  alias, 0 drivers
+v0x55abf8b168c0_0 .net "V1V0F", 0 0, o0x7f82f188e4f8;  alias, 0 drivers
+v0x55abf8b169f0_0 .net "V2V5", 0 0, o0x7f82f188e528;  alias, 0 drivers
+v0x55abf8b16a90_0 .net "ok_vbiasbg", 0 0, o0x7f82f188e9d8;  alias, 0 drivers
+S_0x55abf8b16bd0 .scope module, "Xstart" "STONEvbiasENABLE60NOME" 2 346, 2 143 0, S_0x55abf8a9cf60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "O";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELSUB";
+    .port_info 3 /INPUT 1 "I";
+v0x55abf8b16e00_0 .net "CELG", 0 0, o0x7f82f188e048;  alias, 0 drivers
+v0x55abf8b16ec0_0 .net "CELSUB", 0 0, o0x7f82f188e438;  alias, 0 drivers
+v0x55abf8b16f80_0 .net "I", 0 0, o0x7f82f188e7f8;  alias, 0 drivers
+v0x55abf8b17050_0 .net "O", 0 0, o0x7f82f188e8b8;  alias, 0 drivers
+S_0x55abf8b17170 .scope module, "Xswitchover" "STONEvbiasENABLE30NOME" 2 418, 2 155 0, S_0x55abf8a9cf60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "O";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELSUB";
+    .port_info 3 /INPUT 1 "I";
+v0x55abf8b17370_0 .net "CELG", 0 0, o0x7f82f188e048;  alias, 0 drivers
+v0x55abf8b17430_0 .net "CELSUB", 0 0, o0x7f82f188e438;  alias, 0 drivers
+v0x55abf8b174f0_0 .net "I", 0 0, o0x7f82f188e1c8;  alias, 0 drivers
+v0x55abf8b175f0_0 .net "O", 0 0, o0x7f82f188e858;  alias, 0 drivers
+S_0x55abf8b176f0 .scope module, "Xuvlo" "STONEvbiasENABLE60NOME" 2 402, 2 143 0, S_0x55abf8a9cf60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "O";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELSUB";
+    .port_info 3 /INPUT 1 "I";
+v0x55abf8b17940_0 .net "CELG", 0 0, o0x7f82f188e048;  alias, 0 drivers
+v0x55abf8b17a00_0 .net "CELSUB", 0 0, o0x7f82f188e438;  alias, 0 drivers
+v0x55abf8b17bd0_0 .net "I", 0 0, o0x7f82f188e318;  alias, 0 drivers
+v0x55abf8b17cd0_0 .net "O", 0 0, o0x7f82f188e828;  alias, 0 drivers
 # The file index is used to find the file name in the following table.
 :file_names 3;
     "N/A";
     "<interactive>";
-    "/celera/projects/Sunnyvale/software/SERVICEwaltz/verilog10/sim_SERVICEwaltz_ROW28.v";
+    "/./celera//projects//Sunnyvale//software//SERVICEwaltz//verilog5//vbias_06fccf36.v";

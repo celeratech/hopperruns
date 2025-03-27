@@ -1,4 +1,4 @@
-* Z:\celera\projects\Simplis\playjoseph\WALTZ\301c\verification\sim_SERVICEwaltz.sxsch
+* Z:\celera\projects\Simplis\playjoseph\WALTZ\301d\verification\sim_SERVICEwaltz.sxsch
 *#SIMETRIX
 X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
  
@@ -33,10 +33,10 @@ X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
 
 X$SERVICEwaltz 18 19 20 21 22 23 19 25 26 SERVICEwaltz
 X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
-** From Z:\celera\projects\Simplis\playjoseph\WALTZ\301c\verification\FORCE_SERVICEwaltz.sxcmp
+** From Z:\celera\projects\Simplis\playjoseph\WALTZ\301d\verification\FORCE_SERVICEwaltz.sxcmp
 
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ2\301c\design\SERVICEwaltz.sxcmp
+** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ2\301d\design\SERVICEwaltz.sxcmp
 .subckt SERVICEwaltz 36 38 37 40 39 42 41 44 43
 *#hierarchy
 .node_map porb 44
@@ -64,7 +64,7 @@ X$U4 38 pinprobe vars: pinprobe_description='5V_Supply_Voltage' pinprobe_mode='o
 X$U9 39 pinprobe vars: pinprobe_description='Enable' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
 .ends SERVICEwaltz
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ2\301c\design\SERVICEwaltzDEBUG0.sxcmp
+** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ2\301d\design\SERVICEwaltzDEBUG0.sxcmp
 .subckt SERVICEwaltzDEBUG0 17 18 19 21 20
 *#hierarchy
 .node_map porb 21
@@ -85,7 +85,7 @@ X$U6 18 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_D
 X$U7 21 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='SERVICEporb' dftprobe_description='VCC_power_on_reset' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
 .ends SERVICEwaltzDEBUG0
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ2\301c\design\SERVICEwaltzMAIN.sxcmp
+** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ2\301d\design\SERVICEwaltzMAIN.sxcmp
 .subckt SERVICEwaltzMAIN 71 72 73 74 75 76 77 78 79 80 81
 *#hierarchy
 .node_map porb 79
@@ -126,7 +126,7 @@ X$U9 72 pinprobe vars: pinprobe_description='High_Voltage_Supply' pinprobe_mode=
 X$vbias1 71 76 72 84 74 55 vbias vars: vbias_voutaccuracy='yes' vbias_trim_name='VCCaccuracy' vbias_trim_description='VCC_5V_Accuracy' vbias_discharge='no' vbias_enable='yes' vbias_enablevoltage='highvoltage' vbias_latch='no' vbias_okflag='yes' vbias_dft='no' vbias_vout=4.5 vbias_iout=20 vbias_inputs=2 vbias_maxvin1=60 vbias_uvlo=3.8 vbias_maxvin2=20 vbias_switchover=4.55 vbias_vmax=6
 .ends SERVICEwaltzMAIN
 
-** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ2\301c\design\SERVICEwaltzOK.sxcmp
+** From Z:\celera\projects\Simplis\playrich\Waltz\WALTZ2\301d\design\SERVICEwaltzOK.sxcmp
 .subckt SERVICEwaltzOK 28 29 30 31
 *#hierarchy
 .node_map porb 31
