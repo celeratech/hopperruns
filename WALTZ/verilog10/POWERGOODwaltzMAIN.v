@@ -59,13 +59,13 @@ endmodule
 
 
 
-//Celera:padopendrain_ff7ffa6a
+//Celera:padopendrain_2c62cb95
 //Celera Confidential Symbol Generator
-//Open Drain output PAD with 6V, Ron 50 Ohms
+//Open Drain output PAD with 6V, Ron 100 Ohms
 //No Glitch filter
 //ON Logic:invert polarity
 //DFT:yes TESTMODE:no RETURN PIN:no
-module padopendrain_ff7ffa6a (CELV, input_padopendrain, PAD, 
+module padopendrain_2c62cb95 (CELV, input_padopendrain, PAD, 
 ten_padopendrain, tdi_padopendrain,
 CELG, SUB ); 
 input CELV;
@@ -363,7 +363,7 @@ comparatornoctlpins_94b63eab XU3 (
 .global_comparator(global_comparator_70e67769_XU3)
 );
 
-padopendrain_ff7ffa6a XU4 (
+padopendrain_2c62cb95 XU4 (
 .PAD(POK),
 .SUB(CELSUB40948),
 .CELG(CELG59462),

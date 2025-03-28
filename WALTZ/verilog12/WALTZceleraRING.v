@@ -50,9 +50,8 @@ module pad_WALTZ_GND (GND,GESD,GOTP,CELG59462,CELSUB40948,SENSE_G_4c0bef8e,kelvi
   output  celkelvin_GND_db749c23;
 endmodule
 
-module pad_WALTZ_IN (IN,PIN,GESD,CELSUB40948,celkelvin_IN_bc3b7675);
+module pad_WALTZ_IN (IN,GESD,CELSUB40948,celkelvin_IN_bc3b7675);
   inout  IN;
-  inout  PIN;
   input  GESD;
   input  CELSUB40948;
   output  celkelvin_IN_bc3b7675;
@@ -61,6 +60,10 @@ endmodule
 module pad_WALTZ_PGND (GESD,PGND);
   input  GESD;
   inout  PGND;
+endmodule
+
+module pad_WALTZ_PIN (PIN);
+  inout  PIN;
 endmodule
 
 module pad_WALTZ_POK (POK,GESD);
@@ -303,7 +306,6 @@ pad_WALTZ_GND XGND (
 
 pad_WALTZ_IN XIN (
 .IN(IN),
-.PIN(PIN),
 .GESD(GESD),
 .CELSUB40948(CELSUB40948),
 .celkelvin_IN_bc3b7675(celkelvin_IN_bc3b7675)
@@ -312,6 +314,10 @@ pad_WALTZ_IN XIN (
 pad_WALTZ_PGND XPGND (
 .GESD(GESD),
 .PGND(PGND)
+);
+
+pad_WALTZ_PIN XPIN (
+.PIN(PIN)
 );
 
 pad_WALTZ_POK XPOK (

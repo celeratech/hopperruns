@@ -131,13 +131,13 @@ module STONEnoconn ( noconn );
 endmodule
 
 
-//Celera:fetdriver_f3635860
+//Celera:fetdriver_3dacaa61
 //Celera Confidential Symbol Generator
 //FET DRIVER 'n' Type 10 Ron 5 Roff 
 //Input 60V Levelshifter
 //Gate Sense 60V Sense Levelshifterwith 0nsdelay
 //DFT no
-module fetdriver_f3635860 (HVPOS,global_fetdriver,fetin,GATE,gate_status,
+module fetdriver_3dacaa61 (HVPOS,global_fetdriver,fetin,GATE,gate_status,
 gate_status_vin,
 CELV,
 CELG,
@@ -159,7 +159,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module DRIVERwaltz0TOPN0 (SW, BSTV, MUDV, MUDHV, PMUDV, PMUDHV, enable, topswon, CELG59462, CELV96848, ok_driver, topswipeak, CELREF84329, CELSUB40948, IP_f4252e65, IREF_DRIVER, botswstatus, topswstatus, ISLOPE_DRIVER, DISABLEslope_650ee20e, trim_slopecomp_f4252e65, global_cboot_35156756_XU17, trim_currentlimit_98fa5525, global_slopecomp_f4252e65_XU22, ten_slopecompcap_f4252e65_XU22, tdi_currentlimitlive_98fa5525_XU2, global_fetdriver_8018c87b_Xfetdriver, ten_measure_currentlimit_98fa5525_XU2, factory_currentlimit_blanking_98fa5525);
+module DRIVERwaltz0TOPN0 (SW, BSTV, MUDV, MUDHV, PMUDV, PMUDHV, enable, topswon, CELG59462, CELV96848, ok_driver, topswipeak, CELREF84329, CELSUB40948, IP_f4252e65, IREF_DRIVER, botswstatus, topswstatus, ISLOPE_DRIVER, DISABLEslope_650ee20e, trim_slopecomp_f4252e65, global_cboot_35156756_XU17, trim_currentlimit_98fa5525, global_slopecomp_f4252e65_XU22, ten_slopecompcap_f4252e65_XU22, tdi_currentlimitlive_98fa5525_XU2, global_fetdriver_eef2a6e8_Xfetdriver1, ten_measure_currentlimit_98fa5525_XU2, factory_currentlimit_blanking_98fa5525);
 inout  SW;
 input  BSTV;
 input  MUDV;
@@ -186,7 +186,7 @@ input [7:0] trim_currentlimit_98fa5525;
 input  global_slopecomp_f4252e65_XU22;
 input  ten_slopecompcap_f4252e65_XU22;
 output  tdi_currentlimitlive_98fa5525_XU2;
-input  global_fetdriver_8018c87b_Xfetdriver;
+input  global_fetdriver_eef2a6e8_Xfetdriver1;
 input  ten_measure_currentlimit_98fa5525_XU2;
 input [4:0] factory_currentlimit_blanking_98fa5525;
 
@@ -282,7 +282,7 @@ STONEnoconn XNC75 (
 .noconn(net_75)
 );
 
-fetdriver_f3635860 Xfetdriver (
+fetdriver_3dacaa61 Xfetdriver1 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .GATE(net_103),
@@ -293,7 +293,7 @@ fetdriver_f3635860 Xfetdriver (
 .gate_status(net_104),
 .gate_status_vin(topswstatus),
 .enable_fetdriver(enable),
-.global_fetdriver(global_fetdriver_8018c87b_Xfetdriver)
+.global_fetdriver(global_fetdriver_eef2a6e8_Xfetdriver1)
 );
 
 endmodule

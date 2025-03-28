@@ -47,7 +47,7 @@ ESDcore6 XESDcore6_1 (
 .GESD(GESD)
 );
 
-PEBBLElinkKELVIN Xwrap_PAD1_SENSE0 (
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE_SINGLE (
 .NEG(sense_FB),
 .POS(FB)
 );

@@ -1,13 +1,13 @@
 // ------------------------ Module Definitions -----------
-module REGULATIONwaltz0COMPENSATION (VC,CELG59462,CELV96848,CELSUB40948,kelvin_MUDG,CZCOMP_f879cf8e,RZCOMP_e99ba28d,GAINCOMP_2e6ae970,enable_regulation);
+module REGULATIONwaltz0COMPENSATION (VC,CELG59462,CELV96848,CELSUB40948,kelvin_MUDG,CZCOMP_2e6ae970,RZCOMP_e99ba28d,GAINCOMP_f879cf8e,enable_regulation);
   inout  VC;
   input  CELG59462;
   input  CELV96848;
   input  CELSUB40948;
   inout  kelvin_MUDG;
-  input [2:0] CZCOMP_f879cf8e;
+  input [2:0] CZCOMP_2e6ae970;
   input [2:0] RZCOMP_e99ba28d;
-  input [1:0] GAINCOMP_2e6ae970;
+  input [1:0] GAINCOMP_f879cf8e;
   input  enable_regulation;
 endmodule
 
@@ -20,6 +20,27 @@ module VESPAasmINPUT2 (o,i0,i1,Tstate,CELG59462,CELV96848,CELSUB40948);
   input  CELV96848;
   input  CELSUB40948;
 endmodule
+
+//Celera:vbuffer_602daa59
+//Celera Confidential Symbol Generator
+//GAIN:1.0 Input:p with 1000K Impedance
+module vbuffer_602daa59 (SIMPV,IN,IP,OUT,enable_vbuffer,ok_vbuffer,global_vbuffer,
+trim_vbuffer_positive,trim_vbuffer_negative,
+CELG,CELSUB);
+input SIMPV;
+input IN;
+input IP;
+output OUT;
+input enable_vbuffer;
+output ok_vbuffer;
+input global_vbuffer;
+input [6:0] trim_vbuffer_positive;
+input [6:0] trim_vbuffer_negative;
+input CELG;
+input CELSUB;
+endmodule
+
+
 
 //Celera:voltage2current_49e12b65
 //Celera Confidential Symbol Generator
@@ -54,27 +75,6 @@ input CELREF;
 inout IN;
 inout SHUNT;
 input [7:0] trim_clamp;
-input CELG;
-input CELSUB;
-endmodule
-
-
-
-//Celera:vbuffer_602daa59
-//Celera Confidential Symbol Generator
-//GAIN:1.0 Input:p with 1000K Impedance
-module vbuffer_602daa59 (SIMPV,IN,IP,OUT,enable_vbuffer,ok_vbuffer,global_vbuffer,
-trim_vbuffer_positive,trim_vbuffer_negative,
-CELG,CELSUB);
-input SIMPV;
-input IN;
-input IP;
-output OUT;
-input enable_vbuffer;
-output ok_vbuffer;
-input global_vbuffer;
-input [6:0] trim_vbuffer_positive;
-input [6:0] trim_vbuffer_negative;
 input CELG;
 input CELSUB;
 endmodule
@@ -183,7 +183,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltz0MAIN0 (VC, MUDG, MUDV, REFINT, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IP_4215aede, IP_5c7dff44, IP_866ca25c, IP_b8eb1a18, IP_e44d2b4d, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, CZCOMP_f879cf8e, RZCOMP_e99ba28d, GAINCOMP_2e6ae970, enable_regulation, trim_clamp_b8eb1a18, global_gm_e44d2b4d_Xgm1, global_clamp_b8eb1a18_XU7, trim_gm_negative_e44d2b4d, trim_gm_positive_e44d2b4d, global_vbuffer_866ca25c_XU9, trim_vbuffer_negative_866ca25c, trim_vbuffer_positive_866ca25c, global_comparator_5c7dff44_XU10, factory_hyst_comparator_5c7dff44, global_voltage2current_4215aede_XU3);
+module REGULATIONwaltz0MAIN0 (VC, MUDG, MUDV, REFINT, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IP_4215aede, IP_5c7dff44, IP_9015e2a4, IP_b8eb1a18, IP_e44d2b4d, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, CZCOMP_2e6ae970, RZCOMP_e99ba28d, GAINCOMP_f879cf8e, enable_regulation, trim_clamp_b8eb1a18, global_gm_e44d2b4d_Xgm1, global_clamp_b8eb1a18_XU7, trim_gm_negative_e44d2b4d, trim_gm_positive_e44d2b4d, global_vbuffer_9015e2a4_XU1, trim_vbuffer_negative_9015e2a4, trim_vbuffer_positive_9015e2a4, global_comparator_5c7dff44_XU10, factory_hyst_comparator_5c7dff44, global_voltage2current_4215aede_XU3);
 inout  VC;
 inout  MUDG;
 input  MUDV;
@@ -195,7 +195,7 @@ input  CELREF84329;
 input  CELSUB40948;
 input  IP_4215aede;
 input  IP_5c7dff44;
-input  IP_866ca25c;
+input  IP_9015e2a4;
 input  IP_b8eb1a18;
 input  IP_e44d2b4d;
 inout  IREF_DRIVER;
@@ -204,36 +204,36 @@ input  FB_REGULATION;
 output  ok_regulation;
 input  REF_REGULATION;
 input  VSS_REGULATION;
-input [2:0] CZCOMP_f879cf8e;
+input [2:0] CZCOMP_2e6ae970;
 input [2:0] RZCOMP_e99ba28d;
-input [1:0] GAINCOMP_2e6ae970;
+input [1:0] GAINCOMP_f879cf8e;
 input  enable_regulation;
 input [7:0] trim_clamp_b8eb1a18;
 input  global_gm_e44d2b4d_Xgm1;
 input  global_clamp_b8eb1a18_XU7;
 input [6:0] trim_gm_negative_e44d2b4d;
 input [6:0] trim_gm_positive_e44d2b4d;
-input  global_vbuffer_866ca25c_XU9;
-input [6:0] trim_vbuffer_negative_866ca25c;
-input [6:0] trim_vbuffer_positive_866ca25c;
+input  global_vbuffer_9015e2a4_XU1;
+input [6:0] trim_vbuffer_negative_9015e2a4;
+input [6:0] trim_vbuffer_positive_9015e2a4;
 input  global_comparator_5c7dff44_XU10;
 input [1:0] factory_hyst_comparator_5c7dff44;
 input  global_voltage2current_4215aede_XU3;
 
 
 // ------------------------ Wires ------------------------
-wire [2:0] CZCOMP_f879cf8e;
+wire [2:0] CZCOMP_2e6ae970;
 wire [2:0] RZCOMP_e99ba28d;
-wire [1:0] GAINCOMP_2e6ae970;
+wire [1:0] GAINCOMP_f879cf8e;
 wire [7:0] trim_clamp_b8eb1a18;
 wire [6:0] trim_gm_negative_e44d2b4d;
 wire [6:0] trim_gm_positive_e44d2b4d;
-wire [6:0] trim_vbuffer_negative_866ca25c;
-wire [6:0] trim_vbuffer_positive_866ca25c;
+wire [6:0] trim_vbuffer_negative_9015e2a4;
+wire [6:0] trim_vbuffer_positive_9015e2a4;
 wire [1:0] factory_hyst_comparator_5c7dff44;
-wire [7:0] trim_clamp;
 wire [6:0] trim_vbuffer_negative;
 wire [6:0] trim_vbuffer_positive;
+wire [7:0] trim_clamp;
 wire [1:0] factory_hyst_comparator;
 wire [6:0] trim_gm_negative;
 wire [6:0] trim_gm_positive;
@@ -245,9 +245,9 @@ REGULATIONwaltz0COMPENSATION XCOMPENSATION (
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948),
 .kelvin_MUDG(kelvin_MUDG),
-.CZCOMP_f879cf8e(CZCOMP_f879cf8e[2:0]),
+.CZCOMP_2e6ae970(CZCOMP_2e6ae970[2:0]),
 .RZCOMP_e99ba28d(RZCOMP_e99ba28d[2:0]),
-.GAINCOMP_2e6ae970(GAINCOMP_2e6ae970[1:0]),
+.GAINCOMP_f879cf8e(GAINCOMP_f879cf8e[1:0]),
 .enable_regulation(enable_regulation)
 );
 
@@ -259,6 +259,20 @@ VESPAasmINPUT2 XU12 (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
+);
+
+vbuffer_602daa59 XU1 (
+.IN(REF_REGULATION),
+.IP(IP_9015e2a4),
+.OUT(REFINT),
+.CELG(CELG59462),
+.SIMPV(MUDV),
+.CELSUB(CELSUB40948),
+.ok_vbuffer(net_94),
+.enable_vbuffer(enable_regulation),
+.global_vbuffer(global_vbuffer_9015e2a4_XU1),
+.trim_vbuffer_negative({trim_vbuffer_negative_9015e2a4[6],trim_vbuffer_negative_9015e2a4[5],trim_vbuffer_negative_9015e2a4[4],trim_vbuffer_negative_9015e2a4[3],trim_vbuffer_negative_9015e2a4[2],trim_vbuffer_negative_9015e2a4[1],trim_vbuffer_negative_9015e2a4[0]}),
+.trim_vbuffer_positive({trim_vbuffer_positive_9015e2a4[6],trim_vbuffer_positive_9015e2a4[5],trim_vbuffer_positive_9015e2a4[4],trim_vbuffer_positive_9015e2a4[3],trim_vbuffer_positive_9015e2a4[2],trim_vbuffer_positive_9015e2a4[1],trim_vbuffer_positive_9015e2a4[0]})
 );
 
 voltage2current_49e12b65 XU3 (
@@ -284,20 +298,6 @@ clamp_3ae32438 XU7 (
 .trim_clamp({trim_clamp_b8eb1a18[7],trim_clamp_b8eb1a18[6],trim_clamp_b8eb1a18[5],trim_clamp_b8eb1a18[4],trim_clamp_b8eb1a18[3],trim_clamp_b8eb1a18[2],trim_clamp_b8eb1a18[1],trim_clamp_b8eb1a18[0]}),
 .enable_clamp(enable_regulation),
 .global_clamp(global_clamp_b8eb1a18_XU7)
-);
-
-vbuffer_602daa59 XU9 (
-.IN(REF_REGULATION),
-.IP(IP_866ca25c),
-.OUT(REFINT),
-.CELG(CELG59462),
-.SIMPV(MUDV),
-.CELSUB(CELSUB40948),
-.ok_vbuffer(net_94),
-.enable_vbuffer(enable_regulation),
-.global_vbuffer(global_vbuffer_866ca25c_XU9),
-.trim_vbuffer_negative({trim_vbuffer_negative_866ca25c[6],trim_vbuffer_negative_866ca25c[5],trim_vbuffer_negative_866ca25c[4],trim_vbuffer_negative_866ca25c[3],trim_vbuffer_negative_866ca25c[2],trim_vbuffer_negative_866ca25c[1],trim_vbuffer_negative_866ca25c[0]}),
-.trim_vbuffer_positive({trim_vbuffer_positive_866ca25c[6],trim_vbuffer_positive_866ca25c[5],trim_vbuffer_positive_866ca25c[4],trim_vbuffer_positive_866ca25c[3],trim_vbuffer_positive_866ca25c[2],trim_vbuffer_positive_866ca25c[1],trim_vbuffer_positive_866ca25c[0]})
 );
 
 comparatornoctlpins_1b4420c5 XU10 (

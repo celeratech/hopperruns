@@ -55,22 +55,6 @@ endmodule
 
 
 
-//Celera:dff_fc5ad7bd
-//Celera Confidential Symbol Generator
-//DFF latch
-module dff_fc5ad7bd (CELV,d,rb,ck,q,qb,CELG,CELSUB);
-input CELV;
-input d;
-input rb;
-input ck;
-output q;
-output qb;
-input CELG;
-input CELSUB;
-endmodule
-
-
-
 //Celera:celeradacr2r_d4e46535
 //Celera Confidential Symbol Generator
 //LADDER DAC:8 Bits 500.0K with no buffer
@@ -159,6 +143,22 @@ input i0;
 input i1;
 input SUB;
 output o;
+endmodule
+
+
+
+//Celera:dff_e5264df5
+//Celera Confidential Symbol Generator
+//DFF latch
+module dff_e5264df5 (CELV,d,rb,ck,q,qb,CELG,CELSUB);
+input CELV;
+input d;
+input rb;
+input ck;
+output q;
+output qb;
+input CELG;
+input CELSUB;
 endmodule
 
 
@@ -278,17 +278,6 @@ amux2_2a6e42d8 XU3 (
 .CELSUB(CELSUB40948)
 );
 
-dff_fc5ad7bd XU4 (
-.d(net_137),
-.q(net_138),
-.ck(net_135),
-.qb(net_137),
-.rb(net_123),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
-);
-
 celeradacr2r_d4e46535 XU5 (
 .i({net_106,net_105,net_104,net_103,net_102,net_101,net_100,net_99}),
 .DAC(net_111),
@@ -317,17 +306,6 @@ inv_12e192f5 XU12 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
-);
-
-dff_fc5ad7bd XU13 (
-.d(net_139),
-.q(net_133),
-.ck(net_138),
-.qb(net_139),
-.rb(net_123),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
 );
 
 amux2_2a6e42d8 XU14 (
@@ -381,17 +359,6 @@ nor2_ee112582 XU25 (
 .CELV(CELV96848)
 );
 
-dff_fc5ad7bd XU26 (
-.d(enable_softstart),
-.q(net_130),
-.ck(net_125),
-.qb(net_131),
-.rb(net_132),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
-);
-
 dbuf_e926e395 XU27 (
 .i(net_96),
 .o(done_softstart),
@@ -415,6 +382,39 @@ nor2_ee112582 XU30 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
+);
+
+dff_e5264df5 Xdff1 (
+.d(net_139),
+.q(net_133),
+.ck(net_138),
+.qb(net_139),
+.rb(net_123),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+dff_e5264df5 Xdff2 (
+.d(net_137),
+.q(net_138),
+.ck(net_135),
+.qb(net_137),
+.rb(net_123),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+dff_e5264df5 Xdff3 (
+.d(enable_softstart),
+.q(net_130),
+.ck(net_125),
+.qb(net_131),
+.rb(net_132),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 PEBBLEdbuf XDBUF1 (

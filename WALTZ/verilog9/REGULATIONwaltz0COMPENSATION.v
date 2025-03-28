@@ -50,18 +50,6 @@ endmodule
 
 
 
-//Celera:capacitorfixed_48821777
-//Celera Confidential Symbol Generator
-//CAPACITOR CONTROL:capacitor
-//VALUE: 30.00pF TYPE:mim
-module capacitorfixed_48821777 (CP,
-CN);
-inout CP;
-inout CN;
-endmodule
-
-
-
 //Celera:capacitoradj_fb89518a
 //Celera Confidential Symbol Generator
 //CAPACITOR CONTROL:adjustable_capacitor
@@ -81,23 +69,35 @@ endmodule
 
 
 
+//Celera:capacitorfixed_48821777
+//Celera Confidential Symbol Generator
+//CAPACITOR CONTROL:capacitor
+//VALUE: 30.00pF TYPE:mim
+module capacitorfixed_48821777 (CP,
+CN);
+inout CP;
+inout CN;
+endmodule
+
+
+
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltz0COMPENSATION (VC, CELG59462, CELV96848, CELSUB40948, kelvin_MUDG, CZCOMP_f879cf8e, RZCOMP_e99ba28d, GAINCOMP_2e6ae970, enable_regulation);
+module REGULATIONwaltz0COMPENSATION (VC, CELG59462, CELV96848, CELSUB40948, kelvin_MUDG, CZCOMP_2e6ae970, RZCOMP_e99ba28d, GAINCOMP_f879cf8e, enable_regulation);
 inout  VC;
 input  CELG59462;
 input  CELV96848;
 input  CELSUB40948;
 inout  kelvin_MUDG;
-input [2:0] CZCOMP_f879cf8e;
+input [2:0] CZCOMP_2e6ae970;
 input [2:0] RZCOMP_e99ba28d;
-input [1:0] GAINCOMP_2e6ae970;
+input [1:0] GAINCOMP_f879cf8e;
 input  enable_regulation;
 
 
 // ------------------------ Wires ------------------------
-wire [2:0] CZCOMP_f879cf8e;
+wire [2:0] CZCOMP_2e6ae970;
 wire [2:0] RZCOMP_e99ba28d;
-wire [1:0] GAINCOMP_2e6ae970;
+wire [1:0] GAINCOMP_f879cf8e;
 wire [2:0] adjust_resistor;
 wire [2:0] capacitoradjust;
 
@@ -117,7 +117,7 @@ resistor_5ba04093 XU4 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.adjust_resistor({GAINCOMP_2e6ae970[1],GAINCOMP_2e6ae970[0]})
+.adjust_resistor({GAINCOMP_f879cf8e[1],GAINCOMP_f879cf8e[0]})
 );
 
 switchpulldown_00288888 XU7 (
@@ -136,18 +136,18 @@ switchpulldown_00288888 XU8 (
 .enable_switchb(enable_regulation)
 );
 
-capacitorfixed_48821777 XU27 (
-.CN(kelvin_MUDG),
-.CP(net_87)
-);
-
 capacitoradj_fb89518a XCZCOMP (
 .CN(kelvin_MUDG),
 .CP(net_87),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.capacitoradjust({CZCOMP_f879cf8e[2],CZCOMP_f879cf8e[1],CZCOMP_f879cf8e[0]})
+.capacitoradjust({CZCOMP_2e6ae970[2],CZCOMP_2e6ae970[1],CZCOMP_2e6ae970[0]})
+);
+
+capacitorfixed_48821777 Xcapacitor1 (
+.CN(kelvin_MUDG),
+.CP(net_87)
 );
 
 endmodule

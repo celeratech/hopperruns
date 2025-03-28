@@ -88,17 +88,17 @@ PEBBLElinkKELVIN Xwrap_PAD1_SENSE0 (
 .POS(GND)
 );
 
-PEBBLElinkKELVIN Xwrap_PAD1_SENSE3 (
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE1 (
 .NEG(kelvin_GNDsoftstart),
 .POS(GND)
 );
 
-PEBBLElinkKELVIN Xwrap_PAD1_SENSE4 (
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE2 (
 .NEG(kelvin_GNDpowergood),
 .POS(GND)
 );
 
-PEBBLElinkKELVIN Xwrap_PAD1_SENSE7 (
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE3 (
 .NEG(kelvin_GNDservice),
 .POS(GND)
 );

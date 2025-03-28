@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module FAULTMANAGERwaltzDEBUG (CELG59462,CELV96848,fault_run,CELSUB40948,blank_fault,fault_short,enable_fault,fault_freeze,hijack_delay,dft_delaySHORT,tdi_6044b743_XU7,tdi_7e48a0c0_XU2,tdi_7e6d3e04_XU1,ten_6044b743_XU7,ten_7e48a0c0_XU2,ten_7e6d3e04_XU1,hijack_blank_fault,hijack_fault_short,hijack_enable_fault,hijack_short_status,hijack_thermal_status,ten_hijack_0b40c959_XU6,ten_hijack_54e727e4_XU15,ten_hijack_55e03ae5_XU16,ten_hijack_7e3d0298_XU27,ten_hijack_9929432d_XU17,ten_hijack_9b5d9ad2_XU29,ten_hijacki_0b40c959_XU6,ten_hijacki_54e727e4_XU15,ten_hijacki_55e03ae5_XU16,ten_hijacki_7e3d0298_XU27,ten_hijacki_9929432d_XU17,ten_hijacki_9b5d9ad2_XU29,hijack_faultmanager_status,ten_hijack_c5202207_Xdfthijack1,ten_hijacki_c5202207_Xdfthijack1);
+module FAULTMANAGERwaltzDEBUG (CELG59462,CELV96848,fault_run,CELSUB40948,blank_fault,fault_short,enable_fault,fault_freeze,hijack_delay,dft_delaySHORT,tdi_6044b743_XU7,tdi_7e48a0c0_XU2,tdi_7e6d3e04_XU1,ten_6044b743_XU7,ten_7e48a0c0_XU2,ten_7e6d3e04_XU1,hijack_blank_fault,hijack_fault_short,hijack_enable_fault,hijack_short_status,hijack_thermal_status,ten_hijack_0b40c959_XU6,ten_hijack_01bc148b_XU28,ten_hijack_54e727e4_XU15,ten_hijack_55e03ae5_XU16,ten_hijack_7e3d0298_XU27,ten_hijack_9929432d_XU17,ten_hijack_9b5d9ad2_XU29,ten_hijacki_0b40c959_XU6,ten_hijacki_01bc148b_XU28,ten_hijacki_54e727e4_XU15,ten_hijacki_55e03ae5_XU16,ten_hijacki_7e3d0298_XU27,ten_hijacki_9929432d_XU17,ten_hijacki_9b5d9ad2_XU29,hijack_faultmanager_status);
   input  CELG59462;
   input  CELV96848;
   input  fault_run;
@@ -22,20 +22,20 @@ module FAULTMANAGERwaltzDEBUG (CELG59462,CELV96848,fault_run,CELSUB40948,blank_f
   output  hijack_short_status;
   output  hijack_thermal_status;
   input  ten_hijack_0b40c959_XU6;
+  input  ten_hijack_01bc148b_XU28;
   input  ten_hijack_54e727e4_XU15;
   input  ten_hijack_55e03ae5_XU16;
   input  ten_hijack_7e3d0298_XU27;
   input  ten_hijack_9929432d_XU17;
   input  ten_hijack_9b5d9ad2_XU29;
   input  ten_hijacki_0b40c959_XU6;
+  input  ten_hijacki_01bc148b_XU28;
   input  ten_hijacki_54e727e4_XU15;
   input  ten_hijacki_55e03ae5_XU16;
   input  ten_hijacki_7e3d0298_XU27;
   input  ten_hijacki_9929432d_XU17;
   input  ten_hijacki_9b5d9ad2_XU29;
   output  hijack_faultmanager_status;
-  input  ten_hijack_c5202207_Xdfthijack1;
-  input  ten_hijacki_c5202207_Xdfthijack1;
 endmodule
 
 module FAULTMANAGERwaltzMAIN (MUDV,clock,CELG59462,CELV96848,PORB97836,fault_run,CELBG83021,CELSUB40948,IP_201f84ba,blank_fault,fault_short,mode_hiccup,enable_fault,fault_freeze,hijack_delay,blank_thermal,dft_delaySHORT,hijack_short_status,hijack_thermal_status,ten_201f84ba_Xthermal1,hijack_faultmanager_status,trim_thermal_accuracy_201f84ba);
@@ -177,20 +177,20 @@ FAULTMANAGERwaltzDEBUG XDEBUG (
 .hijack_short_status(net_71),
 .hijack_thermal_status(net_70),
 .ten_hijack_0b40c959_XU6(ten_hijack_0b40c959_XU6),
+.ten_hijack_01bc148b_XU28(ten_hijack_01bc148b_XU28),
 .ten_hijack_54e727e4_XU15(ten_hijack_54e727e4_XU15),
 .ten_hijack_55e03ae5_XU16(ten_hijack_55e03ae5_XU16),
 .ten_hijack_7e3d0298_XU27(ten_hijack_7e3d0298_XU27),
 .ten_hijack_9929432d_XU17(ten_hijack_9929432d_XU17),
 .ten_hijack_9b5d9ad2_XU29(ten_hijack_9b5d9ad2_XU29),
 .ten_hijacki_0b40c959_XU6(ten_hijacki_0b40c959_XU6),
+.ten_hijacki_01bc148b_XU28(ten_hijacki_01bc148b_XU28),
 .ten_hijacki_54e727e4_XU15(ten_hijacki_54e727e4_XU15),
 .ten_hijacki_55e03ae5_XU16(ten_hijacki_55e03ae5_XU16),
 .ten_hijacki_7e3d0298_XU27(ten_hijacki_7e3d0298_XU27),
 .ten_hijacki_9929432d_XU17(ten_hijacki_9929432d_XU17),
 .ten_hijacki_9b5d9ad2_XU29(ten_hijacki_9b5d9ad2_XU29),
-.hijack_faultmanager_status(net_69),
-.ten_hijack_c5202207_Xdfthijack1(ten_hijack_c5202207_Xdfthijack1),
-.ten_hijacki_c5202207_Xdfthijack1(ten_hijacki_c5202207_Xdfthijack1)
+.hijack_faultmanager_status(net_69)
 );
 
 FAULTMANAGERwaltzMAIN XMAIN (
@@ -235,7 +235,7 @@ DFTtm8t dft_hex0x0A (
 .V(CELV96848),
 .a({b1,b0}),
 .SUB(CELSUB40948),
-.ten({ten_hijack_c5202207_Xdfthijack1,ten_6044b743_XU7,ten_hijacki_0b40c959_XU6,ten_hijack_0b40c959_XU6,ten_hijacki_9b5d9ad2_XU29,ten_hijack_9b5d9ad2_XU29,ten_hijacki_7e3d0298_XU27,ten_hijack_7e3d0298_XU27}),
+.ten({ten_hijacki_0b40c959_XU6,ten_hijack_0b40c959_XU6,ten_hijacki_9b5d9ad2_XU29,ten_hijack_9b5d9ad2_XU29,ten_hijacki_01bc148b_XU28,ten_hijack_01bc148b_XU28,ten_hijacki_7e3d0298_XU27,ten_hijack_7e3d0298_XU27}),
 .tma({b0,b0,b0,b0,b1,b0,b1,b0}),
 .tmi(tmi[4:0])
 );
@@ -245,7 +245,7 @@ DFTtm8t dft_hex0x0B (
 .V(CELV96848),
 .a({c1,c0}),
 .SUB(CELSUB40948),
-.ten({noconn_dft_hex0x0B_ten_7,noconn_dft_hex0x0B_ten_6,noconn_dft_hex0x0B_ten_5,noconn_dft_hex0x0B_ten_4,noconn_dft_hex0x0B_ten_3,noconn_dft_hex0x0B_ten_2,ten_201f84ba_Xthermal1,ten_hijacki_c5202207_Xdfthijack1}),
+.ten({noconn_dft_hex0x0B_ten_7,noconn_dft_hex0x0B_ten_6,noconn_dft_hex0x0B_ten_5,noconn_dft_hex0x0B_ten_4,noconn_dft_hex0x0B_ten_3,noconn_dft_hex0x0B_ten_2,ten_201f84ba_Xthermal1,ten_6044b743_XU7}),
 .tma({c0,c0,c0,c0,c1,c0,c1,c1}),
 .tmi(tmi[4:0])
 );
@@ -259,7 +259,7 @@ drm8 drm_hex0x04 (
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
 .drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,FAULTMANAGERconfiguration_277cd7f6_1,FAULTMANAGERconfiguration_277cd7f6_0,trim_thermal_accuracy_201f84ba[2],trim_thermal_accuracy_201f84ba[1],trim_thermal_accuracy_201f84ba[0]}),
-.por0({e0,e0,e0,e0,e0,e0,e0,e0}),
+.por0({e0,e0,e0,e0,e1,e0,e0,e0}),
 .bypload(e0),
 .lastdrm(e0)
 );

@@ -151,8 +151,9 @@ endmodule
 
 //Celera:thermal
 //Celera Confidential Symbol Generator
-//Thermal Protector:Rise 165C Fall 145C
- module thermal_b84c0fbd (SIMPV,CELBG,IP,enable_thermal,fault_thermal,ten,
+//Thermal Protector:2 Output Options
+module thermal_b5a19f9f (SIMPV,CELBG,IP,enable_thermal,fault_thermal,ten,
+register_thermal,
 trim_thermal_accuracy,
 CELG,CELSUB);
 input SIMPV;
@@ -161,6 +162,7 @@ input IP;
 input enable_thermal;
 output fault_thermal;
 input ten;
+input register_thermal;
 input [2:0] trim_thermal_accuracy;
 input CELG;
 input CELSUB;
@@ -386,7 +388,7 @@ dbuf_e926e395 XU44 (
 .CELV(CELV96848)
 );
 
-thermal_b84c0fbd Xthermal1 (
+thermal_b5a19f9f Xthermal1 (
 .IP(IP_201f84ba),
 .ten(ten_201f84ba_Xthermal1),
 .CELG(CELG59462),
@@ -395,6 +397,7 @@ thermal_b84c0fbd Xthermal1 (
 .CELSUB(CELSUB40948),
 .fault_thermal(net_94),
 .enable_thermal(net_98),
+.register_thermal(net_80),
 .trim_thermal_accuracy({trim_thermal_accuracy_201f84ba[2],trim_thermal_accuracy_201f84ba[1],trim_thermal_accuracy_201f84ba[0]})
 );
 

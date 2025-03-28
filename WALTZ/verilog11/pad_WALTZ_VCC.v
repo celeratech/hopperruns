@@ -67,6 +67,10 @@ STONEpad1 XPAD1 (
 .PAD(VCC)
 );
 
+STONEpad1 XPAD2 (
+.PAD(PVCC)
+);
+
 STONEotpSENSE Xvotp (
 .OTP(VOTP),
 .PAD(VCC)
@@ -78,17 +82,12 @@ WRAPPER1 Xwrap_CELV (
 );
 
 ESDcore6 XESDcore6_1 (
-.PAD(VCC),
+.PAD(PVCC),
 .GESD(GESD)
 );
 
-PEBBLElinkKELVIN Xwrap_PAD1_SENSE0 (
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE_SINGLE (
 .NEG(kelvin_VCC),
-.POS(VCC)
-);
-
-PEBBLElinkKELVIN Xwrap_PAD1_SENSE1 (
-.NEG(PVCC),
 .POS(VCC)
 );
 
