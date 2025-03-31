@@ -170,7 +170,7 @@ place Generate STONEcomparatorinphysterisisslowNOME 99.27 1.235 R0
 place Generate STONEcomparatorexthysterisisNOME 104.26 2.72 R0
 placeELSE
 placeALTVIEW Generate STONEcomparatorinphysterisisslowNOME layout1 20.085 -0.325 MX
-place Generate STONEcomparatorexthysterisis 2.325 -11.465 R0
+place Generate STONEcomparatorexthysterisisNOME 98.665 21.235 MX
 placeEND
 placeSTEP PEBBLES PEBBLEswG 99.27 17.975 x 12.6 MX
 placeSTEPcontinue PEBBLES PEBBLEamux2 x 10.08 MX
@@ -191,11 +191,13 @@ placeEND
 placeTAP 122 5
 place PEBBLES PEBBLEtsw1K 128.19 6.55 MX
 place PEBBLES PEBBLEtsw1K 40.155 0.995 MX
-placeTAP 122 5
-place Generate STONEcomparatorexthysterisisNOME 104.31 -0.1 MX
-place Generate STONEcomparatorexthysterisisNOME 38.27 0.415 R180
+//edited line 11 and commented out below ??? for future use
+//placeTAP 122 5
+//place Generate STONEcomparatorexthysterisisNOME 104.31 -0.1 MX
+//place Generate STONEcomparatorexthysterisisNOME 38.27 0.415 R180
 placeHVRING
-placeROUTE
+movePINS
+placeROUTEnopins
 endlayoutbio
 
 //**********************************************
@@ -262,8 +264,9 @@ generate_area,comparatornoctlpins_94b63eab,199998
 *******************************************
 //comparatornoctlpins
 revision,pinorder,0.2.0
+Key,301
+PinOrder code revision,0.3.0
 pinorder,ok_comparator,SIMPV,enable_comparator,out_comparator,INP_COMPARATOR,net_skip,INN_COMPARATOR,net_skip,net_skip,net_skip
-
 endpinorder
 // *********************************************
 //Calculator Parameters

@@ -77,37 +77,12 @@ register,busname,na
 
 //**********************************************
 //FACTORY Parameters
-//Celera Map Generator
-factorymap,tie
-factory,instance,tie_9e2c0894
-factory,source,cell
-
-//LOGIC CELLS tie
-factory,name,na
-factory,enable,no
-factory,bits,0
-factory,mode,readonly
-factory,por,0
-factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
-//Netlister Information
-factory,busname,na
 //**********************************************
 //Layout Parameters
 revision,layout,0p1
 layout,tie
 
-place PEBBLES PEBBLEtiehi 0 0 R0
-place PEBBLES PEBBLEtielo 0 0 R0
-
-movePINS
+placeNOLAYOUT
 endlayoutbio
 
 
@@ -170,6 +145,8 @@ generate_area,tie_9e2c0894,30
 *******************************************
 //tie
 revision,pinorder,0.2.0
+Key,301
+PinOrder code revision,0.3.0
 pinorder,a0
 
 endpinorder

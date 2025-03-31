@@ -39,7 +39,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_WALTZ_GND (GND, GESD, GOTP, CELG59462, CELSUB40948, SENSE_G_4c0bef8e, kelvin_GNDservice, kelvin_GNDpowergood, kelvin_GNDsoftstart, kelvin_GNDregulation, celkelvin_GND_73ebd82d, celkelvin_GND_bb7e77f4, celkelvin_GND_d75c3f7f, celkelvin_GND_db749c23);
+module pad_WALTZ_GND (GND, GESD, GOTP, CELG59462, CELSUB40948, SENSE_G_4c0bef8e, kelvin_GNDservice, kelvin_GNDpowergood, kelvin_GNDsoftstart, kelvin_GNDregulation, celkelvin_GND_73ebd82d, celkelvin_GND_bb7e77f4, celkelvin_GND_d75c3f7f);
 inout  GND;
 output  GESD;
 output  GOTP;
@@ -53,7 +53,6 @@ inout  kelvin_GNDregulation;
 output  celkelvin_GND_73ebd82d;
 output  celkelvin_GND_bb7e77f4;
 output  celkelvin_GND_d75c3f7f;
-output  celkelvin_GND_db749c23;
 
 
 // ------------------------ Wires ------------------------
@@ -88,17 +87,17 @@ PEBBLElinkKELVIN Xwrap_PAD1_SENSE0 (
 .POS(GND)
 );
 
-PEBBLElinkKELVIN Xwrap_PAD1_SENSE1 (
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE3 (
 .NEG(kelvin_GNDsoftstart),
 .POS(GND)
 );
 
-PEBBLElinkKELVIN Xwrap_PAD1_SENSE2 (
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE4 (
 .NEG(kelvin_GNDpowergood),
 .POS(GND)
 );
 
-PEBBLElinkKELVIN Xwrap_PAD1_SENSE3 (
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE7 (
 .NEG(kelvin_GNDservice),
 .POS(GND)
 );
@@ -121,11 +120,6 @@ WRAPPER1 XWRAP_celkelvin_GND_bb7e77f4 (
 WRAPPER1 XWRAP_celkelvin_GND_d75c3f7f (
 .i(GND),
 .o(celkelvin_GND_d75c3f7f)
-);
-
-WRAPPER1 XWRAP_celkelvin_GND_db749c23 (
-.i(GND),
-.o(celkelvin_GND_db749c23)
 );
 
 endmodule

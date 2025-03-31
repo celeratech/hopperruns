@@ -14,7 +14,7 @@ revision,generator,0.4.2
 //Simplis Limits
 revision,limit,0p2
 limit,padopendrain_ron,minimum,1
-limit,padopendrain_ron,maximum,200
+limit,padopendrain_ron,maximum,500
 limit,padopendrain_vmax,choose0,2
 limit,padopendrain_vmax,choose1,6
 limit,padopendrain_voutmax,choose0,2
@@ -172,9 +172,10 @@ place Generate STONEpadopendrainDRIVER 33.03 14.035 R270
 place Generate STONEpadopendrainDRIVER 40.2 14.035 R270
 moveORIGIN -x
 moveORIGIN x
-placeINST Xnmos -23.5 0 MY
+placeINST Xjohnpowernmos -27.73 0 MY
 placeHVRING
-placeROUTE
+movePINS
+placeROUTEnopins
 endlayoutbio
 //**********************************************
 //Project Parameters
@@ -224,10 +225,10 @@ endlayoutbio
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
 sub_area,STONEpadopendrainDFT,270
-sub_area,fet_padopendrain_ff7ffa6a_Xnmos,48817
+sub_area,fet_padopendrain_ff7ffa6a_Xnmos,57114
 sub_area,STONEnoconn,0
 sub_area,STONEpadopendrainCONTROL,270
-generate_area,padopendrain_ff7ffa6a,49357
+generate_area,padopendrain_ff7ffa6a,57654
 //**********************************************
 //Calculator Parameters
 #define,FETronForDriver,10
@@ -266,9 +267,12 @@ generate_area,padopendrain_ff7ffa6a,49357
 *******************************************
 //padopendrain
 revision,pinorder,0.2.0
+Key,301
+PinOrder code revision,0.3.0
 pinorder,input_padopendrain,PAD,net_skip
-
 endpinorder
+//**********************************************
+
 //**********************************************
 //TRIM Parameters
 cell,padopendrain

@@ -323,60 +323,21 @@ factory,busname,na
 //Layout Parameters
 revision,layout,0.1
 layout,dac
-
-placeIF cellNameContains DECODE4
-place Generate STONEladderDECODE4 2.06 1.45 R0
-place Generate STONEdacDFT4 2.755 -2.56 MX
-place Generate STONEdacbufferINPUT 44.965 -2.56 MX
-place Generate STONEdacnobufferINPUT 45.265 -19.3 MY
-placeRES 3.015 13.21 2 2 R0 x y 54
-placeEND
-placeIF cellNameContains DECODE5
-place Generate STONEladderDECODE5 -2.39 0 R0
-place Generate STONEdacDFT5 37.59 -3.14 MX
-place Generate STONEdacbufferINPUT 13.02 -3.14 MX
-place Generate STONEdacnobufferINPUT 87.66 -19.88 MY
-placeRES 0.85 10.21 2 2 R0 x y 105
-placeEND
-placeIF cellNameContains DECODE6
-place Generate STONEladderDECODE6 -2.39 0 R0
-place Generate STONEdacDFT6 120.31 -3.22 MX
-place Generate STONEdacbufferINPUT 95.74 -3.22 MX
-place Generate STONEdacnobufferINPUT 181.72 -19.96 MY
-placeRES 0.85 15.21 2.1 2.1 R0 x y 200
-placeEND
-placeIF cellNameContains DECODE7
-place Generate STONEladderDECODE7 -1.12 -6.88 R0
-place Generate STONEdacDFT7 52.225 -14.93 MX
-place Generate STONEdacbufferINPUT 27.655 -14.93 MX
-place Generate STONEdacnobufferINPUT 157.91 -33.08 MY
-placeRES 0.85 19.21 4 4 R0 x y 200
-moveORIGIN -y
-placeCELL Generate DACspace 0 0 R0
-placeEND
-placeIF cellNameContains DECODE8
-placeINST Xdecode|Xpos -1.12 -13.68 R0
-place Generate STONEladderDECODE8part2 107.505 -12.09 R0
-place Generate STONEdacDFT8 53.225 -14.93 MX
-place Generate STONEdacbufferINPUT 28.655 -14.93 MX
-place Generate STONEdacnobufferINPUT 163.825 -39.88 MY
-placeRES 0.85 8.71 4 4 R0 x y 209
-moveORIGIN -y
-placeINST Xdecode|Xneg -1.12 17 MX
-placeEND
+//dac bio for WALTZ and PUGET not sure of anyothers
 placeIF cellNameContains r2r
 place Generate STONEdacDFT4 0.59 -14.39 MX
 place Generate STONEdacDFT5 0.59 -14.39 MX
 place Generate STONEdacDFT6 0.59 -14.39 MX
 place Generate STONEdacDFT7 0.59 -14.39 MX
 place Generate STONEdacDFT8 0.59 -14.39 MX
+place Generate STONEdacDFT12 0.59 -14.39 MX
 place Generate STONEdacbufferINPUT 27.05 -14.39 R0
 placeTAP 61 -16
 placeSTEP Generate STONEr2rBBMstrong -0.93 -5.61 y 26.84 R0
 placeSTEP Generate STONEr2rBBMstrong -0.93 3.44 y 26.84 R0
 place Generate STONEdacnobufferINPUT 124.725 -30.53 R0
 placeTAP 125 -31
-placeRES 107.165 -18.6 2.1 2.1 R0 x y 55
+placeRES -10.9 .21 .8 .8 R90 x y 150
 placeRES 107.165 -14.16 2.1 2.1 R0 x y 55
 placeTAP 125 -31
 place Generate STONEdacDFT7 0.59 -14.39 MX
@@ -384,6 +345,9 @@ placeALTVIEW Generate STONEdacDFT7 layout1 0.59 -14.39 MX
 placeTAP 125 -31
 place Generate STONEdacDFT8 0.59 -14.39 MX
 placeALTVIEW Generate STONEdacDFT8 layout1 0.59 -14.39 MX
+placeALTVIEW Generate STONEladderENABLE layout3 -34.68 -31.11 R0
+placeINST Xdacin 26.25 -46.17 MY
+placeCAP -26.85 -12.535 3 R0 30
 placeEND
 moveORIGIN y
 placeINST Xbufferout 37.68 -103.07 R0
@@ -392,19 +356,15 @@ placeINST Xbufferin 37.68 -13.37 MX
 placeINST Xibias -18.06 -51.16 R0
 placeRESRING
 moveORIGIN y
-placeIF cellNameContains BBM
-placeDBLHVRING 70 200 90 500
-placeDBLHVRING 70 230 90 500
 placeEND
 placeHVRING
 placeEND
 placeIFELSE cellNameContains BBMstrong
-placeROUTE
+//placeROUTE
 placeELSE
-placeROUTE24
+//placeROUTE24
 placeEND
 endlayoutbio
-
 //**********************************************
 //Project Parameters
 //Celera:WALTZ Project Bio
@@ -532,9 +492,12 @@ generate_area,celeradacr2r_d4e46535,8657
 *******************************************
 //celeradacr2r
 revision,pinorder,0.2.0
+Key,301
+PinOrder code revision,0.3.0
 pinorder,net_skip,DACREF,GNDSENSE,i0,i1,i2,i3,i4,i5,i6,i7,net_skip,net_skip,net_skip,net_skip,DAC,enable_dac,ok_dac,strobe_dac
-
 endpinorder
+//**********************************************
+
 //**********************************************
 //TRIM Parameters
 cell,celeradac

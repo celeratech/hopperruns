@@ -173,7 +173,7 @@ placeINST Xdfthystedge 100.17 -15.005 R0
 placeINST Xdfthyst1 115.92 -15.005 R0
 placeINST Xdfthyst0 131.67 -15.005 R0
 placeIFELSE cellNameNOTContains dftsel||swG||amux||ext
-placeALTVIEW Generate STONEcomparatorinphysterisisfast layout1 30.53 -21.235 R0
+placeALTVIEW Generate STONEcomparatorinphysterisisfastNOME layout1 30.53 -21.235 R0
 place Generate STONEcomparatorexthysterisis 128.285 -7.88 R0
 placeELSE
 placeTAPuntil
@@ -257,8 +257,9 @@ generate_area,comparatornoctlpins_1b4420c5,199998
 *******************************************
 //comparatornoctlpins
 revision,pinorder,0.2.0
+Key,301
+PinOrder code revision,0.3.0
 pinorder,ok_comparator,SIMPV,enable_comparator,out_comparator,INP_COMPARATOR,net_skip,INN_COMPARATOR,net_skip,net_skip,net_skip
-
 endpinorder
 // *********************************************
 //Calculator Parameters

@@ -19,6 +19,16 @@ module ESDcore60 ( GESD, PAD, CELSUB );
 endmodule
 
 
+//Verilog HDL for "PEBBLES", "PEBBLElinkKELVIN" "functional"
+
+
+module PEBBLElinkKELVIN ( NEG, POS );
+
+  inout POS;
+  inout NEG;
+endmodule
+
+
 //Verilog HDL for "Generate", "WRAPPER1" "functional"
 
 
@@ -30,8 +40,9 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_WALTZ_IN (IN, GESD, CELSUB40948, celkelvin_IN_bc3b7675);
+module pad_WALTZ_IN (IN, PIN, GESD, CELSUB40948, celkelvin_IN_bc3b7675);
 inout  IN;
+inout  PIN;
 input  GESD;
 input  CELSUB40948;
 output  celkelvin_IN_bc3b7675;
@@ -48,6 +59,11 @@ ESDcore60 XESDcore60_1 (
 .PAD(IN),
 .GESD(GESD),
 .CELSUB(CELSUB40948)
+);
+
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE1 (
+.NEG(PIN),
+.POS(IN)
 );
 
 WRAPPER1 XWRAP_celkelvin_IN_bc3b7675 (

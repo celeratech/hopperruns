@@ -17,9 +17,9 @@ revision,limit,0p1
 limit,fetdriver_type,choose0,n
 limit,fetdriver_type,choose1,p
 limit,fetdriver_on_ron,minimum,0.1
-limit,fetdriver_on_ron,maximum,40.0
+limit,fetdriver_on_ron,maximum,400.0
 limit,fetdriver_off_ron,minimum,0.1
-limit,fetdriver_off_ron,maximum,40.0
+limit,fetdriver_off_ron,maximum,400.0
 limit,fetdriver_status_delay,minimum,0
 limit,fetdriver_status_delay,maximum,31
 limit,fetdriver_status_delay_adjust,choose0,no
@@ -248,6 +248,36 @@ placeSTEPcontinue Generate STONEfetdriverpdrive2 x 78.99 R0
 placeSTEPcontinue Generate STONEfetdriverndrive2 x 36.21 R0
 placeINST Xstatusdelay 9.275 -50 MX
 place Generate STONEfetdriverENABLEnome 94.325 -50 MX
+place PEBBLES PEBBLEtiehi 61.56 -50 MX
+
+placeIF cellNameContains 6NOME
+placeTAP 173 20
+placeSTEP Generate STONElogicshifter_6NOME 96 -69.645 x 20 R0
+placeSTEP Generate STONElogicshifter_6NOME 221 -69.645 x 20 R0
+placeTAP 173 20
+placeINST Xenablelv 104.78 -61.275 MX
+placeINST Xenablelv 165 -50 MY
+placeTAP 30 24
+placeINST Xpassive 15 -52 R270
+placeINST Xpassive 71 -40 R270
+placeEND
+
+placeIF cellNameContains 45NOME
+placeSTEP Generate STONElogicshifter_lh45NOME 3.21 -69.7 x 162.94 MX
+//----step array is not working----2/13/202
+//placeSTEParray Generate STONElogicshifter_lh45NOME 3.21 -69.7 162.75 0 y n MX
+placeSTEPcontinue Generate STONElogicshifter_hl45NOME x 162.75 MX
+placeINST Xenablelv 175 -21.335 R180
+placeINST Xpassive 71 -40  R270
+placeEND
+
+placeIF cellNameContains 60NOME
+placeSTEP Generate STONElogicshifter_lh60NOME 3.21 -99.7 x 119.2 MX
+placeINST Xenablelv 152 -100 R180
+placeINST Xpassive 71 -50  R270
+moveORIGIN y
+placeINST Xfetin 0 -10 MX
+placeEND
 
 placeIFELSE cellNameContains pdrive3&&ndrive3
 place Generate STONEfetdriverpdrive3 10.28 -47.68 R0
@@ -265,23 +295,24 @@ placeTAP 20 -55
 place Generate STONEadjdelay1ns5bits 10.28 -64.48 R0
 placeTAPEND
 placeEND
-//
+
 moveORIGIN y
-//
-placeINST Xfetin 279.145 12.01 R0
-placeINST Xenable 444.62 148.03 R0
-placeINST Xpassive 61 22 R270
-placeIFELSE instNameContains Xfetin
-placeINST Xglobal 272 148.03 R0
-placeHVRING rect
-placeELSE
-placeINST Xglobal 118.87 -21.365 R0
-placeINST Xenablelv 65.885 27.43 MX
-placeDBLHVRING 120 -20 155 12
-placeEND
-//moveORIGIN x
-//moveORIGIN y
-//placeROUTE
+
+//placeIFELSE instNameContains Xfetin
+//placeELSE
+//placeINST Xglobal 118.87 -21.365 R0
+//placeINST Xenablelv 65.885 27.43 MX
+//placeDBLHVRING 120 -20 155 12
+//placeEND
+
+placeINST Xfetin 0 -132.825 R0
+placeINST Xenable 212.05 -132.825 MY
+placeINST Xglobal 0 -113.205 MX
+placeHVRING
+moveORIGIN x
+moveORIGIN y
+movePINS
+//placeROUTEnopins
 endlayoutbio
 //**********************************************
 //Project Parameters
@@ -380,8 +411,9 @@ generate_area,fetdriver_f3635860,20436508
 *******************************************
 //fetdriver
 revision,pinorder,0.2.0
+Key,301
+PinOrder code revision,0.3.0
 pinorder,HVPOS,GATE,net_skip,HVNEG,gate_status,net_skip,gate_status_vin,net_skip,net_skip,net_skip,net_skip,net_skip,enable_fetdriver,fetin
-
 endpinorder
 //**********************************************
 //TRIM Parameters

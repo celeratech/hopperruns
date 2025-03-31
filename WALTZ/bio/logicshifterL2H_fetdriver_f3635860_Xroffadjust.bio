@@ -97,19 +97,20 @@ factory,busname,na
 //Layout Parameters
 revision,layout,0p1
 layout,logicshifter
+placeNOLAYOUT
 
-placeSTEParray Generate STONElogicshifter_6NOME 0 0 8.58 74 n y R0
-placeSTEParray Generate STONElogicshifter_hl12NOME 0 0 71.55 57.42 y y R0
-placeSTEParray Generate STONElogicshifter_hl30NOME 0 0 88.33 62.67 y y R0
-placeSTEParray Generate STONElogicshifter_hl45NOME 0 0 88.33 62.67 y y R0
-placeSTEParray Generate STONElogicshifter_lh6NOME 0 0 84.66 61.42 y y R0
-placeSTEParray Generate STONElogicshifter_lh12NOME 0 0 84.66 61.42 y y R0
-placeSTEParray Generate STONElogicshifter_lh30NOME 0 0 101.06 70.89 y y R0
-placeSTEParray Generate STONElogicshifter_lh45NOME 0 0 101.06 70.89 y y R0
-placeSTEParray PEBBLES PEBBLElogicshifterEN 0 0 43.11 8.37 y y R0
-placeSTEParray Generate STONElogicshifter_6NOME 0 0 43.11 8.37 y y R0
-movePINS
-placeROUTEnopins
+//placeSTEParray Generate STONElogicshifter_6NOME 0 0 8.58 74 n y R0
+//placeSTEParray Generate STONElogicshifter_hl12NOME 0 0 71.55 57.42 y y R0
+//placeSTEParray Generate STONElogicshifter_hl30NOME 0 0 88.33 62.67 y y R0
+//placeSTEParray Generate STONElogicshifter_hl45NOME 0 0 88.33 62.67 y y R0
+//placeSTEParray Generate STONElogicshifter_lh6NOME 0 0 84.66 61.42 y y R0
+//placeSTEParray Generate STONElogicshifter_lh12NOME 0 0 84.66 61.42 y y R0
+//placeSTEParray Generate STONElogicshifter_lh30NOME 0 0 101.06 70.89 y y R0
+//placeSTEParray Generate STONElogicshifter_lh45NOME 0 0 101.06 70.89 y y R0
+//placeSTEParray PEBBLES PEBBLElogicshifterEN 0 0 43.11 8.37 y y R0
+//placeSTEParray Generate STONElogicshifter_6NOME 0 0 43.11 8.37 y y R0
+//movePINS
+//placeROUTEnopins
 endlayoutbio
 //**********************************************
 //Project Parameters
@@ -168,6 +169,8 @@ generate_area,logicshifterL2H_fetdriver_f3635860_Xroffadjust,2000
 *******************************************
 //logicshifterL2H
 revision,pinorder,0.2.0
+Key,301
+PinOrder code revision,0.3.0
 pinorder,HVPOS,out0,out1,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,SIMPV,in0,in1,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,enable_logicshifter,HVNEG
 
 endpinorder

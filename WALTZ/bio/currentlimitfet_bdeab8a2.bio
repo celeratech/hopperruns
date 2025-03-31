@@ -9,7 +9,7 @@
 cell,currentlimitfet
 ///**********************************************
 //Generator Revision
-revision,generator,0.5.7
+revision,generator,0.5.8
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
@@ -100,7 +100,7 @@ user,currentlimit_maxiref,10
 description,Current Limit Max IREF
 user,Low Volatge,single
 description,Low Voltage supply
-user,NESTO,0.5.7
+user,NESTO,0.5.8
 description,NESTO Generate revision
 //**********************************************
 //POR Parameters
@@ -297,7 +297,7 @@ endlayoutbio
 revision,vis15cbdiesize,0p1
 sub_area,STONEnoconn,0
 sub_area,STONEnoconn,0
-sub_area,STONEadjdelay1ns5bits,2000
+sub_area,STONEadjdelay2ns5bits,2000
 sub_area,STONEcurrentlimitcompinp,800
 sub_area,STONEcurrentlimitlowsidesource_en,200
 sub_area,STONEnoconn,0
@@ -336,8 +336,9 @@ generate_area,currentlimitfet_bdeab8a2,944029
 *******************************************
 //currentlimitfet
 revision,pinorder,0.2.0
-pinorder,net_skip,net_skip,currentlimit_lv,net_skip,net_skip,VSENSE,IREPLICA,net_skip,CELPOS,net_skip,net_skip,enable_currentlimit,measure_currentlimit_vin
-
+Key,301
+PinOrder code revision,0.3.0
+pinorder,net_skip,net_skip,currentlimit_lv,net_skip,net_skip,VSENSE,IREPLICA,net_skip,CELPOS,net_skip,net_skip,enable_currentlimit,measure_currentlimit
 endpinorder
 //**********************************************
 

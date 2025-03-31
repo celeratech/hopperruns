@@ -1,7 +1,7 @@
 // Celera Brick Generator Confidential
 //CORE:resistor
 //NAME:resistor_ffe18c73
-//GENERATOR CODE REVISION:0.4.3
+//GENERATOR CODE REVISION:0.4.5
 //VALUE:100.00Kohms
 //Imax:0.10000mA
 //TYPE:tbd

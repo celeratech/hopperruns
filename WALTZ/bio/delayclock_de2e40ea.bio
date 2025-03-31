@@ -9,7 +9,7 @@
 cell,delayclock
 //**********************************************
 //Generator Revision
-revision,generator,0.4.0
+revision,generator,0.4.1
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
@@ -135,7 +135,8 @@ place Generate prog_delay_9bit_trim 120 0 R90
 place Generate prog_delay_17bit 240 0 R90
 place Generate prog_delay_17bit_trim 240 0 R90
 
-placeROUTE24
+movePINS
+placeROUTE24nopins
 endlayoutbio
 
 //**********************************************
@@ -185,8 +186,8 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,prog_delay_17bit,99999
 sub_area,STONEdelayclockSELECT217,99999
+sub_area,prog_delay_17bit,99999
 generate_area,delayclock_de2e40ea,199998
 // *********************************************
 #define,DELAYresistorISO,CELG
@@ -202,9 +203,12 @@ generate_area,delayclock_de2e40ea,199998
 *******************************************
 //delayclock
 revision,pinorder,0.2.0
+Key,301
+PinOrder code revision,0.3.0
 pinorder,in,out,clock,net_skip,net_skip,delay
-
 endpinorder
+//**********************************************
+
 //**********************************************
 //TRIM Parameters
 cell,delayclock

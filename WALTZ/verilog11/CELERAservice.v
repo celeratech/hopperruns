@@ -5,14 +5,14 @@
 //IP Outputs:16
 //REFERENCE:external
 //DFT:yes
-//ACCURACY:no
+//ACCURACY:yes
 
 //Celera Confidential Do Not Copy ibias_CELERAservice_Xibias.v
 //Celera:ibias_CELERAservice_Xibias
 //Celera Confidential Symbol Generator
-//OUTPUTS:16 VMAX:6V DFT:yes ACCURACY:no
+//OUTPUTS:16 VMAX:6V DFT:yes ACCURACY:yes
 module ibias_CELERAservice_Xibias (CELV,enable_ibias,global_celeraibias,SENSE_G,ok_ibias,IPO,
-ten_ibias,TAI_IBIAS,CELBG,CELG,CELSUB);
+ten_ibias,TAI_IBIAS,trim_ibias,CELBG,CELG,CELSUB);
 input CELV;
 input enable_ibias;
 input global_celeraibias;
@@ -22,6 +22,7 @@ input CELBG;
 output [15:0] IPO;
 input ten_ibias;
 output TAI_IBIAS;
+input [4:0] trim_ibias;
 input CELG;
 input CELSUB;
 endmodule
@@ -42,6 +43,24 @@ module DFTtm8a ( a, ten, TAO, tmi, G, SUB, TAI, V, tma );
   input G;
   input SUB;
   inout  [4:0] tmi;
+endmodule
+
+//Celera Confidential Do Not Copy drm8L
+//Verilog HDL for "DRM", "drm8L" "functional"
+
+
+module drm8L ( V, G, SUB, tmi, bypload, lastdrm, id, drm0, d1, d0 );
+
+  input lastdrm;
+  input V;
+  output d1;
+  input  [7:0] id;
+  output d0;
+  input bypload;
+  output  [7:0] drm0;
+  input G;
+  inout  [4:0] tmi;
+  input SUB;
 endmodule
 
 //Celera Confidential Do Not Copy PEBBLEtielo
@@ -103,6 +122,9 @@ input CELSUB;
 //Celera Confidential Do Not Copy Pin IPO
 wire[15:0] IPO;
 
+//Celera Confidential Do Not Copy Pin trim_ibias
+wire[4:0] trim_ibias;
+
 //Celera Confidential Do Not Copy Pin tma
 wire[7:0] tma;
 
@@ -118,6 +140,12 @@ wire[1:0] a;
 //Celera Confidential Do Not Copy Pin tmi
 wire[4:0] tmi;
 
+//Celera Confidential Do Not Copy Pin id
+wire[7:0] id;
+
+//Celera Confidential Do Not Copy Pin drm0
+wire[7:0] drm0;
+
 //Celera Confidential Do Not Copy ibias_CELERAservice_Xibias
 ibias_CELERAservice_Xibias Xibias(
 .CELV (CELV),
@@ -129,6 +157,7 @@ ibias_CELERAservice_Xibias Xibias(
 .TAI_IBIAS (TAI_IBIAS),
 .IPO (IPO [15:0]),
 .CELBG (CELBG),
+.trim_ibias (trim_ibias [4:0]),
 .CELG (CELG),
 .CELSUB (CELSUB)
 );
@@ -182,6 +211,38 @@ DFTtm8a X0xFD(
 .SUB (CELSUB)
 );
 //,diesize,DFTtm8a
+//Celera Confidential Do Not Copy STONEnoconn
+STONEnoconn Xdrm076(
+.noconn (
+drm07)
+);
+//,diesize,STONEnoconn
+//Celera Confidential Do Not Copy STONEnoconn
+STONEnoconn Xdrm067(
+.noconn (
+drm06)
+);
+//,diesize,STONEnoconn
+//Celera Confidential Do Not Copy STONEnoconn
+STONEnoconn Xdrm058(
+.noconn (
+drm05)
+);
+//,diesize,STONEnoconn
+//Celera Confidential Do Not Copy drm8L
+drm8L X0xFC(
+.V (CELV),
+.lastdrm (b0),
+.d1 (b1),
+.id ({b1,b1,b1,b1,b1,b1,b0,b0}),
+.d0 (b0),
+.bypload (b0),
+.drm0 ({drm07,drm06,drm05,trim_ibias[4],trim_ibias[3],trim_ibias[2],trim_ibias[1],trim_ibias[0]}),
+.tmi (tmi [4:0]),
+.G (CELG),
+.SUB (CELSUB)
+);
+//,diesize,drm8L
 //Celera Confidential Do Not Copy Module End
 //Celera Schematic Generator
 endmodule

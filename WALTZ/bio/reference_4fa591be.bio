@@ -160,34 +160,57 @@ place Generate STONEreferenceBG1 0 0 R0
 place Generate STONEreferenceBGlowiq 0 0 R0
 place Generate STONEreferenceBGlowiqenable 0 0 R0
 place Generate STONEreferenceBG1lowiqenable 0 0 R0
-place Generate STONEreferenceCCP 313.025 49 MY
-place Generate STONEreferenceCCN 313.025 49 R0
-//TAP determines if there are CCP and CCN cells, top coordinates are for without
+place Generate STONEreferenceCCN 312.485 49 MY
+place Generate STONEreferenceCCP 312.145 49 R0
 
-placeTAP 260 60
-place Generate STONEreferenceBGOK0 14.975 139.005 R0
+ifelse statement not tested, also new trim cell changed placements not tested, see PUGET layout for correct placements.  also version without CCP&CCN trim piece changed and placement not determined.
+placeIFELSE cellNameContains CCP
 place Generate STONEreferenceBGOK0 369.348 137.485 MY
-placeTAP 260 60
-place Generate STONEreferenceBGOK1 14.975 139.005 R0
 place Generate STONEreferenceBGOK1 369.348 137.485 MY
-placeTAP 260 60
-place Generate STONEreferenceDFTBG 131.565 175.48 R0
-place Generate STONEreferenceDFTBG 320.275 14.895 R0
-placeTAP 260 60
-place Generate STONEreferenceDFTREF 121.485 194.235 MX
-place Generate STONEreferenceDFTREF 330.986 31.635 MX
-placeTAP 260 60
-place Generate STONEreferenceENABLE 121.485 175.48 R0
-place Generate STONEreferenceENABLE 347.995 14.895 R0
-placeTAP 260 60
-place Generate STONEreferenceBUFFER 239.78 171.665 MY
+place Generate STONEreferenceDFTBG 360.595 31.635 R180
+place Generate STONEreferenceDFTREF 331.615 31.635 R0
+place Generate STONEreferenceENABLE 330.355 14.895 MY
 place Generate STONEreferenceBUFFER 239.78 11.08 R0
-placeTAP 260 60
-place Generate STONEreferenceTRIM 121.485 198.76 R0
-place Generate STONEreferenceTRIM 352.21 33.195 MY
-placeTAP 260 60
-placeRES 243.05 10.86 0.8 0.8 R90 x y 200
+place Generate STONEreferenceTRIM 379.52 44.42 R180
+placeCELL PEBBLES FEED4 330.335 14.895 R0
 placeRES 146.32 5.82 0.8 0.8 R0 x -y 210
+placeELSE
+place Generate STONEreferenceBGOK0 14.975 139.005 R0
+place Generate STONEreferenceBGOK1 14.975 139.005 R0
+place Generate STONEreferenceDFTBG 131.565 175.48 R0
+place Generate STONEreferenceDFTREF 121.485 194.235 MX
+place Generate STONEreferenceENABLE 121.485 175.48 R0
+place Generate STONEreferenceBUFFER 239.78 171.665 MY
+place Generate STONEreferenceTRIM 121.485 198.76 R0
+placeRES 243.05 10.86 0.8 0.8 R90 x y 200
+placeEND
+
+//BEFORE if statements - TAP determines if there are CCP and CCN cells, top coordinates are for without
+//placeTAP 260 60
+//place Generate STONEreferenceBGOK0 14.975 139.005 R0
+//place Generate STONEreferenceBGOK0 369.348 137.485 MY
+//placeTAP 260 60
+//place Generate STONEreferenceBGOK1 14.975 139.005 R0
+//place Generate STONEreferenceBGOK1 369.348 137.485 MY
+//placeTAP 260 60
+//place Generate STONEreferenceDFTBG 131.565 175.48 R0
+//place Generate STONEreferenceDFTBG 320.275 14.895 R0
+//placeTAP 260 60
+//place Generate STONEreferenceDFTREF 121.485 194.235 MX
+//place Generate STONEreferenceDFTREF 330.986 31.635 MX
+//placeTAP 260 60
+//place Generate STONEreferenceENABLE 121.485 175.48 R0
+//place Generate STONEreferenceENABLE 347.995 14.895 R0
+//placeTAP 260 60
+//place Generate STONEreferenceBUFFER 239.78 171.665 MY
+//place Generate STONEreferenceBUFFER 239.78 11.08 R0
+//placeTAP 260 60
+//place Generate STONEreferenceTRIM 121.485 198.76 R0
+//place Generate STONEreferenceTRIM 352.21 33.195 MY
+//placeTAP 260 60
+//placeRES 243.05 10.86 0.8 0.8 R90 x y 200
+//placeRES 146.32 5.82 0.8 0.8 R0 x -y 210
+
 placeRESRING
 placeROUTE
 placeHVRING
@@ -273,9 +296,12 @@ generate_area,reference_4fa591be,1027784
 *******************************************
 //reference
 revision,pinorder,0.2.0
+Key,301
+PinOrder code revision,0.3.0
 pinorder,ok_reference,REF,enable_reference,net_skip,SIMPV
-
 endpinorder
+//**********************************************
+
 // *********************************************
 //Calculator Parameters
 //**********************************************

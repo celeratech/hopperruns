@@ -9,7 +9,7 @@
 cell,slopecomp
 //**********************************************
 //Generator Revision
-revision,generator,0.3.8
+revision,generator,0.3.9
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
@@ -47,7 +47,7 @@ user,slopecomp_outputcurrent,15uA
 description,Slopecomp Output Current
 user,slopecomp_output,source
 description,Slopecomp Output Direction
-user,NESTO,0.3.8
+user,NESTO,0.3.9
 description,NESTO generate code
 //**********************************************
 //POR Parameters
@@ -189,11 +189,8 @@ sub_area,STONEslopecomppmos,10000
 sub_area,STONEslopecomppmos,10000
 sub_area,STONEslopecomppmos,10000
 sub_area,capacitorfixed_slopecomp_315a9290_Xslc,26485
-sub_area,STONEnoconn,0
-sub_area,STONEnoconn,0
-sub_area,STONEslopecompdft,10000
-sub_area,PEBBLEtielo,30
-generate_area,slopecomp_315a9290,196515
+sub_area,STONEslopecompdftaccuracy,10000
+generate_area,slopecomp_315a9290,196485
 // *********************************************
 //Calculator Parameters
 #define,SIMPVminimum,2.5
@@ -213,9 +210,13 @@ generate_area,slopecomp_315a9290,196515
 *******************************************
 //slopecomp
 revision,pinorder,0.2.0
+Key,301
+PinOrder code revision,0.3.0
 pinorder,clock,ISLOPECOMP,enable_slopecomp,IOSC,SIMPV,ok_slopecomp
 
 endpinorder
+//**********************************************
+
 //**********************************************
 //TRIM Parameters
 cell,slopecomp
@@ -347,27 +348,27 @@ router,trim_slopecomp,TBD
 dftpriority,trim_slopecomp,1
 esd,trim_slopecomp,TBD
 
-pinname,ten_taiislopecomp
-definition,ten_taiislopecomp,Enable DFT slopecomp current output
-iq,ten_taiislopecomp,SIMULATION
-absmax,ten_taiislopecomp,6
-absmin,ten_taiislopecomp,-0.3
-io,ten_taiislopecomp,input
-mode,ten_taiislopecomp,digital
-router,ten_taiislopecomp,TBD
-dftpriority,ten_taiislopecomp,1
-esd,ten_taiislopecomp,TBD
+pinname,ten_slopecompcap
+definition,ten_slopecompcap,Enable DFT slopecomp capactitor override
+iq,ten_slopecompcap,SIMULATION
+absmax,ten_slopecompcap,6
+absmin,ten_slopecompcap,-0.3
+io,ten_slopecompcap,input
+mode,ten_slopecompcap,digital
+router,ten_slopecompcap,TBD
+dftpriority,ten_slopecompcap,1
+esd,ten_slopecompcap,TBD
 
-pinname,TAI_ISLOPECOMP
-definition,TAI_ISLOPECOMP,DFT slopecomp current output
-iq,TAI_ISLOPECOMP,SIMULATION
-absmax,TAI_ISLOPECOMP,6
-absmin,TAI_ISLOPECOMP,-0.3
-io,TAI_ISLOPECOMP,output
-mode,TAI_ISLOPECOMP,analog
-router,TAI_ISLOPECOMP,TBD
-dftpriority,TAI_ISLOPECOMP,1
-esd,TAI_ISLOPECOMP,TBD
+pinname,CELREF_slopecomp
+definition,CELREF_slopecomp,DTF clamp slopecomp output
+iq,CELREF_slopecomp,SIMULATION
+absmax,CELREF_slopecomp,6
+absmin,CELREF_slopecomp,-0.3
+io,CELREF_slopecomp,output
+mode,CELREF_slopecomp,analog
+router,CELREF_slopecomp,TBD
+dftpriority,CELREF_slopecomp,1
+esd,CELREF_slopecomp,TBD
 
 pinname,CELG
 definition,CELG,cell power ground
@@ -396,6 +397,7 @@ constraint,slopecomp,IP,shield
 constraint,slopecomp,IOSC,shield
 constraint,slopecomp,clock,shield
 constraint,slopecomp,ISLOPECOMP,shield
+constraint,slopecomp,CELREF_slopecomp
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1

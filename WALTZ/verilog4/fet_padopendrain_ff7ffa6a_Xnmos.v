@@ -1,7 +1,7 @@
 // Celera Brick Generator Confidential
 //CORE:powerfetN
 //NAME:fet_padopendrain_ff7ffa6a_Xnmos
-//GENERATOR REVISION:0.4.1
+//GENERATOR REVISION:0.4.2
 //FET TYPE:n
 //ON RESISTANCE:50.000 Ohms
 //VDS RATING:6V
@@ -14,7 +14,7 @@
 //DFT:no
 
 //Celera Confidential Do Not Copy NMOS
-module an5g6dw1_43p6x0p2x2p0x1p0 (DRAIN,GATE,SOURCE,ISO,SUB);
+module an5g6dw1_85p0x0p2x2p0x1p0 (DRAIN,GATE,SOURCE,ISO,SUB);
 input GATE;
 input ISO;
 input SUB;
@@ -35,15 +35,15 @@ inout DRAIN;
 input NMOSiso6;
 input SUB;
 
-//Celera Confidential Do Not Copy an5g6dw1_43p6x0p2x2p0x1p0
-an5g6dw1_43p6x0p2x2p0x1p0 Xnmos0(
+//Celera Confidential Do Not Copy an5g6dw1_85p0x0p2x2p0x1p0
+an5g6dw1_85p0x0p2x2p0x1p0 Xnmos0(
 .DRAIN (DRAIN),
 .GATE (GATE),
 .SOURCE (SOURCE),
 .ISO (NMOSiso6),
 .SUB (SUB)
 );
-//,diesize,an5g6dw1_43p6x0p2x2p0x1p0
+//,diesize,an5g6dw1_85p0x0p2x2p0x1p0
 
 //Celera Confidential Do Not Copy Module End
 //Celera Schematic Generator

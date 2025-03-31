@@ -124,12 +124,15 @@ factory,busname,na
 revision,layout,0p1
 layout,gm
 
-place Generate STONEgminptrim1x -131.835 -20 R0
-place CASCODES CASCODEanaloggminpcore1xpover 104.48 53.18 MX
+placeTILE 0.66
+moveORIGIN x
+moveORIGIN y
+movePINS
+//place Generate STONEgminptrim1x -131.835 -20 R0
+//place CASCODES CASCODEanaloggminpcore1xpover 104.48 53.18 MX
 //placeTILE 0.66
 //placeHVRING rect
 //placeROUTE
-//simplification can be done using placeTAPuntil when multiple hunt cells instead of entire new sections.  New sections only cover those in roomtest, not all possibilities.
 endlayoutbio
 
 //**********************************************
@@ -208,8 +211,9 @@ generate_area,gm_2062a8ef,330397
 *******************************************
 //gm
 revision,pinorder,0.2.0
+Key,301
+PinOrder code revision,0.3.0
 pinorder,SIMPV,INN,GMO,INOR,net_skip,INP,enable_gm,net_skip,net_skip,ok_gm
-
 endpinorder
 //**********************************************
 

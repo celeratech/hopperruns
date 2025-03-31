@@ -48,8 +48,6 @@ user,switch_ron,1000Ohms
 description,Switch ON Resistance
 user,switch_type,transmission
 description,Switch Architecture
-user,switch_vmax,6
-description,Switch Absolute maximum Voltage Rating
 user,NESTO,0.3.1
 description,Nesto generate Revision
 //**********************************************
@@ -237,9 +235,12 @@ generate_area,switchtransmission_75e4adc9,180
 *******************************************
 //switchtransmission
 revision,pinorder,0.2.0
+Key,301
+PinOrder code revision,0.3.0
 pinorder,I,O,enable_switchb
-
 endpinorder
+//**********************************************
+
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.4
@@ -333,7 +334,7 @@ esd,O,TBD
 pinname,CELSUB
 definition,CELSUB,Substrate
 iq,CELSUB,SIMULATION
-absmax,CELSUB,6
+absmax,CELSUB,0.3
 absmin,CELSUB,-0.3
 io,CELSUB,input
 mode,CELSUB,power

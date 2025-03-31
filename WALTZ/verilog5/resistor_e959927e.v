@@ -1,7 +1,7 @@
 // Celera Brick Generator Confidential
 //CORE:resistor
 //NAME:resistor_e959927e
-//GENERATOR CODE REVISION:0.4.3
+//GENERATOR CODE REVISION:0.4.5
 //VALUE:75.00Kohms
 //Imax:1.000mA
 //TYPE:tbd

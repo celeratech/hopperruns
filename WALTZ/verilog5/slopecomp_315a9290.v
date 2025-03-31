@@ -1,7 +1,7 @@
 //Celera Brick Generator Confidential
 //CORE:slopecomp
 //NAME:slopecomp_315a9290
-//GENERATOR REVISION:0.3.8
+//GENERATOR REVISION:0.3.9
 //TYPE:linear
 //FREQUENCY:400KHz
 //OSCILLATOR CURRENT:18.000uA
@@ -60,31 +60,20 @@ module STONEslopecomppmos ( CELV, PGATE, CELSUB, ISLOPECOMP );
   input PGATE;
 endmodule
 
-//Celera Confidential Do Not Copy STONEslopecompdft
-//Verilog HDL for "Generate", "STONEslopecompdft" "functional"
+//Celera Confidential Do Not Copy STONEslopecompdftaccuracy
+//Verilog HDL for "Generate", "STONEslopecompdftaccuracy" "functional"
 
 
-module STONEslopecompdft ( CELV, CELG, CELSUB, TAEXT_SLOPECOMPCAP, tdi_okslopecomp,
-GATE, tdi_okslopecompstartup, ok_slopecomp, ten_slopecomp, slopecompcap, ten_okslopecompstartup,
-ten_slopecompcap, ten_taiislopecomp, TAI_ISLOPECOMP, ten_okslopecomp, clock,
-dft_clock );
+module STONEslopecompdftaccuracy ( CELV, CELG, CELSUB, CELREF, slopecompcap,
+ten_slopecompcap, clock, dft_clock );
 
-  input TAEXT_SLOPECOMPCAP;
   input CELV;
-  output TAI_ISLOPECOMP;
-  input ten_okslopecomp;
   input CELSUB;
   output slopecompcap;
-  input ok_slopecomp;
-  output tdi_okslopecompstartup;
-  input ten_taiislopecomp;
-  input GATE;
   output dft_clock;
   input clock;
-  input ten_okslopecompstartup;
+  input CELREF;
   input ten_slopecompcap;
-  input ten_slopecomp;
-  output tdi_okslopecomp;
   input CELG;
 endmodule
 
@@ -115,8 +104,7 @@ endmodule
 //Output direction source with output current 15uA and DFT partial
 module slopecomp_315a9290 (SIMPV,enable_slopecomp,global_slopecomp,IP,clock,IOSC,
 ok_slopecomp,ISLOPECOMP,
-ten_taiislopecomp,
-TAI_ISLOPECOMP,
+ten_slopecompcap,CELREF_slopecomp,
 trim_slopecomp,CELG,CELSUB);
 input SIMPV;
 input enable_slopecomp;
@@ -127,8 +115,8 @@ input IOSC;
 output ok_slopecomp;
 output ISLOPECOMP;
 input [3:0] trim_slopecomp;
-input ten_taiislopecomp;
-output TAI_ISLOPECOMP;
+input ten_slopecompcap;
+input CELREF_slopecomp;
 input CELG;
 input CELSUB;
 
@@ -294,48 +282,18 @@ capacitorfixed_slopecomp_315a9290_Xslc Xslc0(
 );
 //,diesize,capacitorfixed_slopecomp_315a9290_Xslc
 
-//Celera Confidential Do Not Copy STONEnoconn
-STONEnoconn Xnoconn2(
-.noconn (
-noconn_tdiokslopecompstartup)
-);
-//,diesize,STONEnoconn
-//Celera Confidential Do Not Copy STONEnoconn
-STONEnoconn Xnoconn3(
-.noconn (
-noconn_tdiokslopecomp)
-);
-//,diesize,STONEnoconn
-//Celera Confidential Do Not Copy STONEslopecompdft
-STONEslopecompdft Xdft(
-.TAEXT_SLOPECOMPCAP (tielow),
+//Celera Confidential Do Not Copy STONEslopecompdftaccuracy
+STONEslopecompdftaccuracy XdftA(
 .CELV (SIMPV),
-.TAI_ISLOPECOMP (TAI_ISLOPECOMP),
-.ten_okslopecomp (tielow),
-.CELSUB (CELSUB),
-.ok_slopecomp (ok_slopecomp),
-.tdi_okslopecompstartup (noconn_tdiokslopecompstartup),
-.slopecompcap (slopecompcap),
-.ten_taiislopecomp (ten_taiislopecomp),
-.GATE (PGATE),
-.ten_okslopecompstartup (tielow),
-.clock (clock),
+.ten_slopecompcap (ten_slopecompcap),
 .dft_clock (dft_clock),
-.ten_slopecompcap (tielow),
-.ten_slopecomp (global_slopecomp),
-.tdi_okslopecomp (noconn_tdiokslopecomp),
-.CELG (CELG)
+.clock (clock),
+.CELREF (CELREF_slopecomp),
+.slopecompcap (slopecompcap),
+.CELG (CELG),
+.CELSUB (CELSUB)
 );
-//,diesize,STONEslopecompdft
-
-//Celera Confidential Do Not Copy PEBBLEtielo
-PEBBLEtielo XPEBBLEtieloSIMPV(
-.V (SIMPV),
-.q (tielow),
-.G (CELG),
-.SUB (CELSUB)
-);
-//,diesize,PEBBLEtielo
+//,diesize,STONEslopecompdftaccuracy
 
 //Celera Confidential Do Not Copy Module End
 //Celera Schematic Generator

@@ -1,7 +1,7 @@
 //Celera Brick Generator Confidential
 //CORE:currentlimitfet
 //NAME:currentlimitfet_2899e616
-//GENERATOR REVISION:0.5.7
+//GENERATOR REVISION:0.5.8
 //SENSE ELEMENT:fet
 //FET CONNECTION:nmos_source
 //USAGE:lowside
@@ -288,6 +288,7 @@ noconn_adjdelay1)
 STONEadjdelay2ns5bits Xadjdelay(
 .CELV (CELPOS),
 .adj_delay ({a1,a1,a1,a1,a0}),
+.a ({noconn_adjdelay1,noconn_adjdelay0}),
 .i (enmeasure_currentlimit),
 .o (measure_delay),
 .SUB (CELSUB),

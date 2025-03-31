@@ -51,7 +51,8 @@ limit,fet_dft,choose1,yes
 limit,fet_calculator,choose0,typical
 limit,fet_calculator,choose1,maximum
 
-
+limit,fet_padopendrain,choose0,no
+limit,fet_padopendrain,choose1,yes
 //**********************************************
 //PAD Parameters
 //**********************************************
@@ -354,7 +355,8 @@ generate_area,fet_fetdn_359003a8_Xfet,319768
 #define,nmos40fudge,100
 #define,nmos45fudge,100
 #define,nmos60fudge,100
-
+//PADopenDrain
+#define,PADopendrainWlimit,85.0
 //**********************************************
 //Pinorder Parameters
 *******************************************
@@ -362,8 +364,9 @@ generate_area,fet_fetdn_359003a8_Xfet,319768
 *******************************************
 //fet
 revision,pinorder,0.2.0
+Key,301
+PinOrder code revision,0.3.0
 pinorder,SOURCE,DRAIN,GATE,net_skip,net_skip,net_skip
-
 endpinorder
 //**********************************************
 //Cell Pin Descriptions	

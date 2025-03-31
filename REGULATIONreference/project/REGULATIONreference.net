@@ -1,0 +1,834 @@
+* Z:\celera\projects\Simplis\playjoseph\PUGET0\301d\verification\sim_REGULATIONreference.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+ 
+*BrickToolsVersion:0.121  projname:REGULATIONreference
+.node_map VCconfigurationUP$0 51
+.node_map enable_reference 56
+.node_map SIMPV 54
+.node_map VCconfigurationUP$1 52
+.node_map VCconfigurationUP$2 53
+.node_map mode_cv 62
+.node_map VC 55
+.node_map GMCHARGE 76
+.node_map REF_OUT 71
+.node_map mode_stepdown 61
+.node_map REF_CHARGER 66
+.node_map REF_CAP 69
+.node_map VCsense 57
+.node_map REF_CHARGE 73
+.node_map chrg_ci 65
+.node_map VCconfigurationDOWN$0 48
+.node_map VCconfigurationDOWN$1 49
+.node_map VCconfigurationDOWN$2 50
+.node_map chrg_cv 64
+.node_map IIN 77
+.node_map freeze_charger 60
+.node_map REF_IIN 70
+.node_map chrg_input_ilim 67
+.node_map clock_regulation 58
+.node_map ok_reference 59
+.node_map GNDregulation 78
+.node_map CAPFB 75
+.node_map GND 79
+.node_map SS 68
+.node_map kelvin_GNDregulation 72
+.node_map go 63
+.node_map OUTFB 74
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 100.0u  0
+.globalvar REF=1.2
+.globalvar TEMP=25
+.globalvar VIN=5
+.globalvar tdext_khz=1000
+.globalvar  celera_i2c_frequency_KHz=100
+
+
+X$REGULATIONreference 54 55 56 59 58 61 63 69 71 73 68 75 74 77 76 72 78 48 49 50 70 57 62 64 65 67 60 51 52 53 66 REGULATIONreference
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+** From Z:\celera\projects\Simplis\playjoseph\PUGET0\301d\verification\FORCE_REGULATIONreference.sxcmp
+
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301D\design\REGULATIONreference.sxcmp
+.subckt REGULATIONreference 152 167 153 170 154 155 156 159 160 161 163 164 165 168 166 173 175 120 121 122 162 169 171 172 174 176 157 136 137 138 158
+*#hierarchy
+.node_map dft_CHARGEvsIN 195
+.node_map VCconfigurationUP$0 136
+.node_map enable_reference 153
+.node_map SIMPV 152
+.node_map VCconfigurationUP$1 137
+.node_map VCconfigurationDOWN$10 130
+.node_map VCconfigurationUP$2 138
+.node_map VCconfigurationDOWN$11 131
+.node_map VCconfigurationUP$3 139
+.node_map VCconfigurationDOWN$12 132
+.node_map VCconfigurationUP$4 140
+.node_map VCconfigurationDOWN$13 133
+.node_map disable_charge 190
+.node_map VCconfigurationUP$5 141
+.node_map VCconfigurationDOWN$14 134
+.node_map VCconfigurationUP$6 142
+.node_map VCconfigurationDOWN$15 135
+.node_map VCconfigurationUP$7 143
+.node_map VCconfigurationUP$8 144
+.node_map mode_cv 171
+.node_map VCconfigurationUP$9 145
+.node_map dft_OUTvsCHARGE 196
+.node_map hijack_enable_reference 177
+.node_map VC 167
+.node_map disable_ss 192
+.node_map GMCHARGE 166
+.node_map REF_OUT 160
+.node_map mode_stepdown 155
+.node_map VCsinkIIN 182
+.node_map REF_CHARGER 158
+.node_map VCsense 169
+.node_map REF_CAP 159
+.node_map disable_out 189
+.node_map hijack_freeze_charger 181
+.node_map REF_CHARGE 161
+.node_map chrg_ci 174
+.node_map dft_CHARGEvsCAP 194
+.node_map disable_cap 188
+.node_map VCconfigurationDOWN$0 120
+.node_map VCconfigurationDOWN$1 121
+.node_map VCconfigurationDOWN$2 122
+.node_map VCconfigurationDOWN$3 123
+.node_map hijack_go 179
+.node_map VCconfigurationDOWN$4 124
+.node_map chrg_cv 172
+.node_map VCconfigurationDOWN$5 125
+.node_map VCconfigurationDOWN$6 126
+.node_map VCconfigurationDOWN$7 127
+.node_map VCconfigurationDOWN$8 128
+.node_map VCconfigurationDOWN$9 129
+.node_map IIN 168
+.node_map freeze_charger 157
+.node_map disable_source 187
+.node_map VCsinkCHARGE 183
+.node_map enable_stepup 185
+.node_map enable_stepdown 184
+.node_map IINREFBUF 186
+.node_map dft_INvsCAP 193
+.node_map VCsinkOUT 180
+.node_map REF_IIN 162
+.node_map chrg_input_ilim 176
+.node_map clock_regulation 154
+.node_map ok_reference 170
+.node_map GNDregulation 175
+.node_map CAPFB 164
+.node_map VCconfigurationUP$10 146
+.node_map VCsinkCAP 178
+.node_map SS 163
+.node_map VCconfigurationUP$11 147
+.node_map VCconfigurationUP$12 148
+.node_map kelvin_GNDregulation 173
+.node_map go 156
+.node_map VCconfigurationUP$13 149
+.node_map VCconfigurationUP$14 150
+.node_map disable_iin 191
+.node_map VCconfigurationUP$15 151
+.node_map OUTFB 165
+X$DEBUG 153 177 157 181 156 179 186 187 170 188 193 189 194 190 195 191 196 192 REGULATIONreferenceDEBUG
+X$MAIN 152 177 155 179 181 159 160 161 162 167 163 169 178 164 180 165 182 166 183 168 184 120 121 122 185 136 137 138 170 173 186 175 187 188 189 190 192 191 REGULATIONreferenceMAIN
+X$pinprobe1 167 pinprobe vars: pinprobe_description='Compensation_force' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe10 158 pinprobe vars: pinprobe_description='CAP_voltage_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 175 pinprobe vars: pinprobe_description='Regulation_Ground' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe12 164 pinprobe vars: pinprobe_description='CAP_feedback_sense' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe13 160 pinprobe vars: pinprobe_description='OUT_voltage_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe14 168 pinprobe vars: pinprobe_description='Input_current_input' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe15 156 pinprobe vars: pinprobe_description='REGUALTION_enabled_and_ready' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe17 169 pinprobe vars: pinprobe_description='Compensation_sense' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe18 171 pinprobe vars: pinprobe_description='Charger_in_constant_voltage_mode' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe19 155 pinprobe vars: pinprobe_description='Controller_in_stepdown_mode' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 170 pinprobe vars: pinprobe_description='REGULATION_references_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe20 172 pinprobe vars: pinprobe_description='Charger_in_constant_voltage_mode' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe21 174 pinprobe vars: pinprobe_description='Charger_in_constant_current_mode' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe22 176 pinprobe vars: pinprobe_description='Charger_in_constant_input_curent_limit' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe23 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 pinprobeBUS vars: pinprobe_description='Configure_VC_stepdown_zero' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=3
+X$pinprobe26 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 pinprobeBUS vars: pinprobe_description='Configure_VC_stepup_zero' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=3
+X$pinprobe3 166 pinprobe vars: pinprobe_description='Charge_current_sense_for_Regulation' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe30 157 pinprobe vars: pinprobe_description='Charger_switching_frozen' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 161 pinprobe vars: pinprobe_description='Charge_current_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 165 pinprobe vars: pinprobe_description='OUT_feedback_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 159 pinprobe vars: pinprobe_description='CAP_voltage_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe7 173 pinprobe vars: pinprobe_description='Regulation_Ground' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe8 162 pinprobe vars: pinprobe_description='Input_current_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe9 163 pinprobe vars: pinprobe_description='Charge_current_softstart_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$STATUS 152 172 185 174 176 158 178 182 183 193 194 195 171 180 184 196 REGULATIONreferenceSTATUS
+X$U1 152 pinprobe vars: pinprobe_description='Low_voltage_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U2 119 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='REGULATIONreference' description1='REF_CAP_versus_CAPFB' description2='REF_OUT_versus_OUTFB' description3='REF_CHARGE_versus_GMCHARGE' description4='REF_IIN_versus_IIN' description5='STATUS_report_which_loop_is_in_control' description6='VCconfiguration_Adjust_VC_zero_resistance' description7='chrg_cv_The_charger_is_in_constant_voltage_mode' description8='chrg_input_ilim_The_charger_is_in_input_current_limit' description9='chrg_ci_The_charger_is_in_constant_current_mode' description10='text'
+X$U23 154 pinprobe vars: pinprobe_description='Master_sync_clock_1MHZ' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U6 153 pinprobe vars: pinprobe_description='enable_charge_clock' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+.ends REGULATIONreference
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301D\design\REGULATIONreferenceDEBUG.sxcmp
+.subckt REGULATIONreferenceDEBUG 109 110 111 112 113 114 115 118 117 120 119 122 121 124 123 126 125 127
+*#hierarchy
+.node_map dft_CHARGEvsIN 123
+.node_map enable_reference 109
+.node_map disable_charge 124
+.node_map hijack_cap 130
+.node_map dft_OUTvsCHARGE 125
+.node_map hijack_enable_reference 110
+.node_map disable_allsink 135
+.node_map disable_ss 127
+.node_map hijack_goi 131
+.node_map tielow 128
+.node_map disable_out 122
+.node_map hijack_freeze_charger 112
+.node_map hijack_iin 134
+.node_map dft_CHARGEvsCAP 121
+.node_map disable_cap 120
+.node_map hijack_charge 133
+.node_map hijack_go 114
+.node_map IIINREFBUF 116
+.node_map freeze_charger 111
+.node_map disable_source 118
+.node_map hijack_enable 129
+.node_map disable_sink 136
+.node_map IINREFBUF 115
+.node_map dft_INvsCAP 119
+.node_map ok_reference 117
+.node_map go 113
+.node_map disable_iin 126
+.node_map hijack_out 132
+X$dfthijack1 109 129 dfthijack vars: dfthijack_name='REGULATIONreferenceENABLE' dfthijack_description='Hijack_REGULATION_reference_Enable' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack10 128 127 dfthijackp vars: dfthijack_name='REGULATIONreferenceSOFTSTART' dfthijack_description='Hijack_Disable_softstart_input' dfthijack_enable='timebased' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=2 dfthijack_startcode=0  dfthijack_newcode1=0 dfthijack_enabletime1=10 dfthijack_newcode2=0 dfthijack_enabletime2=11 dfthijack_newcode3=0 dfthijack_enabletime3=11 dfthijack_newcode4=0 dfthijack_enabletime4=11 dfthijack_newcode5=0 dfthijack_enabletime5=11 dfthijack_newcode6=0 dfthijack_enabletime6=11 dfthijack_newcode7=0 dfthijack_enabletime7=11 dfthijack_newcode8=0 dfthijack_enabletime8=11 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack2 113 131 dfthijack vars: dfthijack_name='REGULATIONreferenceGO' dfthijack_description='Hijack_REGULATION_GO_Enable' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack3 111 112 dfthijack vars: dfthijack_name='REGULATIONreferenceFREEZE' dfthijack_description='Hijack_REGULATION_referenece_freeze' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack4 128 135 dfthijackp vars: dfthijack_name='REGULATIONreferenceSOURCE' dfthijack_description='Hijack_Disable_VC_sink_currents' dfthijack_enable='timebased' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=2 dfthijack_startcode=0  dfthijack_newcode1=0 dfthijack_enabletime1=10 dfthijack_newcode2=0 dfthijack_enabletime2=11 dfthijack_newcode3=0 dfthijack_enabletime3=11 dfthijack_newcode4=0 dfthijack_enabletime4=11 dfthijack_newcode5=0 dfthijack_enabletime5=11 dfthijack_newcode6=0 dfthijack_enabletime6=11 dfthijack_newcode7=0 dfthijack_enabletime7=11 dfthijack_newcode8=0 dfthijack_enabletime8=11 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack5 128 130 dfthijackp vars: dfthijack_name='REGULATIONreferenceCAP' dfthijack_description='Hijack_Measure_CAP_gm' dfthijack_enable='timebased' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=2 dfthijack_startcode=0  dfthijack_newcode1=0 dfthijack_enabletime1=10 dfthijack_newcode2=0 dfthijack_enabletime2=11 dfthijack_newcode3=0 dfthijack_enabletime3=11 dfthijack_newcode4=0 dfthijack_enabletime4=11 dfthijack_newcode5=0 dfthijack_enabletime5=11 dfthijack_newcode6=0 dfthijack_enabletime6=11 dfthijack_newcode7=0 dfthijack_enabletime7=11 dfthijack_newcode8=0 dfthijack_enabletime8=11 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack6 128 132 dfthijackp vars: dfthijack_name='REGULATIONreferenceOUT' dfthijack_description='Hijack_Measure_OUT_gm' dfthijack_enable='timebased' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=2 dfthijack_startcode=0  dfthijack_newcode1=0 dfthijack_enabletime1=10 dfthijack_newcode2=0 dfthijack_enabletime2=11 dfthijack_newcode3=0 dfthijack_enabletime3=11 dfthijack_newcode4=0 dfthijack_enabletime4=11 dfthijack_newcode5=0 dfthijack_enabletime5=11 dfthijack_newcode6=0 dfthijack_enabletime6=11 dfthijack_newcode7=0 dfthijack_enabletime7=11 dfthijack_newcode8=0 dfthijack_enabletime8=11 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack7 128 133 dfthijackp vars: dfthijack_name='REGULATIONreferenceCHARGE' dfthijack_description='Hijack_Measure_CHARGE_gm' dfthijack_enable='timebased' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=2 dfthijack_startcode=0  dfthijack_newcode1=0 dfthijack_enabletime1=10 dfthijack_newcode2=0 dfthijack_enabletime2=11 dfthijack_newcode3=0 dfthijack_enabletime3=11 dfthijack_newcode4=0 dfthijack_enabletime4=11 dfthijack_newcode5=0 dfthijack_enabletime5=11 dfthijack_newcode6=0 dfthijack_enabletime6=11 dfthijack_newcode7=0 dfthijack_enabletime7=11 dfthijack_newcode8=0 dfthijack_enabletime8=11 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack8 128 134 dfthijack vars: dfthijack_name='REGULATIONreferenceOUT' dfthijack_description='Hijack_Measure_OUT_gm' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=2 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=150 dfthijack_newcode2=0 dfthijack_enabletime2=290 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$dfthijack9 128 118 dfthijackp vars: dfthijack_name='REGULATIONreferenceSINK' dfthijack_description='Hijack_Disable_VC_source_current' dfthijack_enable='timebased' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=2 dfthijack_startcode=0  dfthijack_newcode1=0 dfthijack_enabletime1=10 dfthijack_newcode2=0 dfthijack_enabletime2=11 dfthijack_newcode3=0 dfthijack_enabletime3=11 dfthijack_newcode4=0 dfthijack_enabletime4=11 dfthijack_newcode5=0 dfthijack_enabletime5=11 dfthijack_newcode6=0 dfthijack_enabletime6=11 dfthijack_newcode7=0 dfthijack_enabletime7=11 dfthijack_newcode8=0 dfthijack_enabletime8=11 dfthijack_vmax=6 dfthijack_comment=1
+X$pinprobe1 109 pinprobe vars: pinprobe_description='Enable_REGULATION_reference' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe10 124 pinprobe vars: pinprobe_description='DFT_disable_VC_CHARGE_sink_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 111 pinprobe vars: pinprobe_description='Freeze_charger_switching' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe12 112 pinprobe vars: pinprobe_description='Hijack_freeze_charger_request' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe13 121 pinprobe vars: pinprobe_description='DFT_CHARGE_versus_O_comparator' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe14 119 pinprobe vars: pinprobe_description='DFT_IN_versus_O_comparator' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe15 123 pinprobe vars: pinprobe_description='DFT_CHARGE_versus_IN_comparator' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe16 126 pinprobe vars: pinprobe_description='DFT_disable_VC_IIN_sink_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe17 127 pinprobe vars: pinprobe_description='DFT_disable_VC_IIN_sink_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 117 pinprobe vars: pinprobe_description='REFERENCE_is_enabled_and_ready' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe28 118 pinprobe vars: pinprobe_description='DFT_disable_VC_source_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 120 pinprobe vars: pinprobe_description='DFT_disable_VC_CAP_sink_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 116 pinprobe vars: pinprobe_description='REGULATION_reference_buffer_output' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 110 pinprobe vars: pinprobe_description='Hijack_enable_REGULATION_reference_brick' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 113 pinprobe vars: pinprobe_description='Start_Regulation_release_VC' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe7 114 pinprobe vars: pinprobe_description='Hijack_go_REGULATION_reference_brick' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe8 125 pinprobe vars: pinprobe_description='DFT_OUT_versus_CHARGE_comparator' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe9 122 pinprobe vars: pinprobe_description='DFT_disable_VC_OUT_sink_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$U1 100 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='REGULATIONreference' description1='REGULATIONreferencCAP_Measure' description2='REGULATIONreferencOUT_Measure' description3='REGULATIONreferencCHARGE_Measure' description4='REGULATIONreferencIIN_Measure' description5='REGULATIONreferencSINK_Disable_all_VC_sink_capabilites' description6='REGULATIONreferencSOURCE_Disable_VC_source_capability' description7='text' description8='text' description9='text' description10='text'
+X$U10 110 117 101 VESPAdftpulse
+X$U11 132 133 134 102 135 nor4 vars: logicgate_type='nor4' logicgate_vmax=6
+X$U12 130 133 134 103 135 nor4 vars: logicgate_type='nor4' logicgate_vmax=6
+X$U13 103 122 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U14 130 132 134 104 135 nor4 vars: logicgate_type='nor4' logicgate_vmax=6
+X$U15 104 124 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U16 105 126 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U17 130 132 133 105 135 nor4 vars: logicgate_type='nor4' logicgate_vmax=6
+X$U18 131 136 135 108 118 nor4 vars: logicgate_type='nor4' logicgate_vmax=6
+X$U2 128 tie vars: tie_mode='low' tie_vmax=6
+X$U3 129 136 135 107 118 nor4 vars: logicgate_type='nor4' logicgate_vmax=6
+X$U4 107 110 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U6 108 114 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U7 106 136 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U8 120 122 124 106 126 nor4 vars: logicgate_type='nor4' logicgate_vmax=6
+X$U9 102 120 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$UREGULATIONreferenceCHAREGvsCAP 121 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONreferenceCHAREGvsCAP' dftprobe_description='Measure_REGULATIONreference_ICHARGE_versus_CAP' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UREGULATIONreferenceCHARGEvsIN 123 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONreferenceCHARGEvsIN' dftprobe_description='Measure_REGULATIONreference_ICHARGE_versus_IIN' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UREGULATIONreferenceIINREF 115 dftprobeModel2 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONreferenceIINREF' dftprobe_description='Measure_REGULATION_Charger_reference_buffer' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UREGULATIONreferenceINvsCAP 119 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONreferenceINvsCAP' dftprobe_description='Measure_REGULATIONreference_IIN_versus_CAP' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UREGULATIONreferenceOUTvsCHARGE 125 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONreferenceOUTvsCHARGE' dftprobe_description='Measure_REGULATIONreference_OUT_versus_ICHARGE' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UREGULATIONreferenceSTARTUP 101 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONreferenceSTARTUP' dftprobe_description='Measure_REGULATIONreference_startup_time' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+.ends REGULATIONreferenceDEBUG
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAdftpulse.sxcmp
+.subckt VESPAdftpulse 7 8 9
+*#hierarchy
+.node_map start 7
+.node_map stop 8
+.node_map pulse 9
+X$U11 7 pinprobe vars: pinprobe_description='DFT_timer_start_input'
+X$U15 8 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U17 8 pinprobe vars: pinprobe_description='DFT_timer_stop_input'
+X$U52 7 4 6 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U53 4 5 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U55 9 5 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U8 9 pinprobe vars: pinprobe_description='DFT_Timer_pulse'
+.ends VESPAdftpulse
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301D\design\REGULATIONreferenceMAIN.sxcmp
+.subckt REGULATIONreferenceMAIN 209 210 211 212 213 214 215 216 217 224 218 225 226 219 228 221 230 222 232 223 234 177 178 179 236 193 194 195 238 227 240 229 231 233 235 237 241 239
+*#hierarchy
+.node_map disable_capBAR 262
+.node_map VCconfigurationUP$0 193
+.node_map enable_reference 210
+.node_map SIMPV 209
+.node_map VCconfigurationUP$1 194
+.node_map VCconfigurationDOWN$10 187
+.node_map VCconfigurationUP$2 195
+.node_map VCconfigurationDOWN$11 188
+.node_map VCconfigurationUP$3 196
+.node_map VCconfigurationDOWN$12 189
+.node_map VCconfigurationUP$4 197
+.node_map VCconfigurationDOWN$13 190
+.node_map disable_charge 237
+.node_map VCconfigurationUP$5 198
+.node_map VCconfigurationDOWN$14 191
+.node_map VCconfigurationUP$6 199
+.node_map VCconfigurationDOWN$15 192
+.node_map VCconfigurationUP$7 200
+.node_map VCconfigurationUP$8 201
+.node_map VCconfigurationUP$9 202
+.node_map CAFFB 220
+.node_map enable_out 250
+.node_map disable_chargeBAR 264
+.node_map ok_capfb 251
+.node_map ok_stepdown 247
+.node_map enable_source 244
+.node_map VC 224
+.node_map enable_cap 263
+.node_map disable_ss 241
+.node_map GMCHARGE 222
+.node_map ok_stepup 258
+.node_map stepdown 257
+.node_map enable_referenceBUF 242
+.node_map REF_OUT 215
+.node_map mode_stepdown 211
+.node_map mode_stepup 254
+.node_map VCsinkIIN 230
+.node_map eup 261
+.node_map VCsense 225
+.node_map REF_CAP 214
+.node_map ok_icharge 255
+.node_map ok_out 252
+.node_map disable_out 235
+.node_map VCforce 245
+.node_map REF_CHARGE 216
+.node_map disable_cap 233
+.node_map edown 256
+.node_map VCconfigurationDOWN$0 177
+.node_map VCconfigurationDOWN$1 178
+.node_map enable_charge 267
+.node_map VCconfigurationDOWN$2 179
+.node_map disable_outBAR 259
+.node_map VCconfigurationDOWN$3 180
+.node_map VCconfigurationDOWN$4 181
+.node_map VCconfigurationDOWN$5 182
+.node_map VCconfigurationDOWN$6 183
+.node_map VCconfigurationDOWN$7 184
+.node_map VCconfigurationDOWN$8 185
+.node_map VCconfigurationDOWN$9 186
+.node_map enable_iin 266
+.node_map IIN 223
+.node_map freeze_charger 213
+.node_map disable_source 231
+.node_map VCsinkCHARGE 232
+.node_map okDELAY 249
+.node_map enable_stepup 238
+.node_map enable_stepdown 236
+.node_map IINREFBUF 240
+.node_map stepup 260
+.node_map VCsinkOUT 228
+.node_map disable_iinBAR 265
+.node_map REF_IIN 217
+.node_map ok 248
+.node_map ok_vc 246
+.node_map ok_reference 234
+.node_map disable_sourceBAR 243
+.node_map GNDregulation 229
+.node_map CAPFB 219
+.node_map VCconfigurationUP$10 203
+.node_map VCsinkCAP 226
+.node_map SS 218
+.node_map VCconfigurationUP$11 204
+.node_map VCconfigurationUP$12 205
+.node_map kelvin_GNDregulation 227
+.node_map go 212
+.node_map VCconfigurationUP$13 206
+.node_map VCconfigurationUP$14 207
+.node_map ok_iin 253
+.node_map disable_iin 239
+.node_map VCconfigurationUP$15 208
+.node_map both 268
+.node_map OUTFB 221
+X$delay2 248 249 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=5 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=9 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1k
+X$GMICHARGE 209 267 216 218 232 222 255 245 241 REGULATIONreferenceGMIcharge
+X$GMIIN 209 266 217 230 223 253 240 245 REGULATIONreferenceGMIinput
+X$GMVCAP 209 263 214 226 219 251 245 REGULATIONreferenceGMVcap
+X$GMVOUT 209 250 215 245 221 252 228 REGULATIONreferenceGMVout
+X$pinprobe1 224 pinprobe vars: pinprobe_description='Compensation_capacitor' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe10 211 pinprobe vars: pinprobe_description='Controller_in_stepdown_mode' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 229 pinprobe vars: pinprobe_description='Regulation_Ground' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe12 220 pinprobe vars: pinprobe_description='CAP_feedback_sense' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe13 215 pinprobe vars: pinprobe_description='OUT_voltage_reference' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe14 223 pinprobe vars: pinprobe_description='Input_current_input' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe15 240 pinprobe vars: pinprobe_description='REGULATION_Input_current_reference_buffer' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe17 212 pinprobe vars: pinprobe_description='REGUALTION_enabled_and_ready' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe18 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 pinprobeBUS vars: pinprobe_description='Configure_VC_stepdown_zero' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=3
+X$pinprobe2 234 pinprobe vars: pinprobe_description='REGULATION_references_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe20 225 pinprobe vars: pinprobe_description='Compensation_capacitor_sense' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe21 230 pinprobe vars: pinprobe_description='GMIN_output_forInput_current' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe22 232 pinprobe vars: pinprobe_description='GMCHARGE_output_for_charge_current' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe23 226 pinprobe vars: pinprobe_description='GMO_output_For_CAPFB' pinprobe_mode='output' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe24 228 pinprobe vars: pinprobe_description='GMO_output_For_OUTFB' pinprobe_mode='output' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe25 236 pinprobe vars: pinprobe_description='Enable_GM_Status_for_stepdown' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe26 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 pinprobeBUS vars: pinprobe_description='Configure_VC_stepup_zero' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=3
+X$pinprobe27 238 pinprobe vars: pinprobe_description='Enable_GM_Status_detect_for_stepup' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe28 241 pinprobe vars: pinprobe_description='DFT_disable_softstart' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 222 pinprobe vars: pinprobe_description='Charge_current_sense_Regulation' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe30 213 pinprobe vars: pinprobe_description='Charger_switching_frozen' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe31 235 pinprobe vars: pinprobe_description='DFT_disable_VC_OUT_sink_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe32 233 pinprobe vars: pinprobe_description='DFT_disable_VC_CAP_sink_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe33 231 pinprobe vars: pinprobe_description='DFT_disable_VC_source_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe34 239 pinprobe vars: pinprobe_description='DFT_disable_VC_IIN_sink_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe35 237 pinprobe vars: pinprobe_description='DFT_disable_VC_CHARGE_sink_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 216 pinprobe vars: pinprobe_description='Charge_current_reference' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 221 pinprobe vars: pinprobe_description='OUT_feedback_input' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 214 pinprobe vars: pinprobe_description='CAP_voltage_reference' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe7 227 pinprobe vars: pinprobe_description='kelvin_GNDregulation' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe8 217 pinprobe vars: pinprobe_description='Input_current_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe9 218 pinprobe vars: pinprobe_description='Charge_current_softstart_reference' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$U1 209 pinprobe vars: pinprobe_description='Low_voltage_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U10 174 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='REGULATIONreference' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U11 238 261 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U12 249 256 247 VESPAasmINPUT1
+X$U13 249 261 258 VESPAasmINPUT1
+X$U14 258 175 247 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U15 175 248 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U16 236 256 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U17 176 268 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U18 260 176 257 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U19 257 263 262 VESPAasmINPUT1
+X$U20 233 262 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U21 242 210 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U22 231 243 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U23 237 264 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U24 239 265 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U25 242 260 254 VESPAasmINPUT1
+X$U26 242 257 211 VESPAasmINPUT1
+X$U27 257 266 265 VESPAasmINPUT1
+X$U28 268 267 264 VESPAasmINPUT1
+X$U29 246 252 258 255 260 VESPAasmINPUT3
+X$U3 260 250 259 VESPAasmINPUT1
+X$U4 235 259 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U5 242 244 243 VESPAasmINPUT1
+X$U6 210 pinprobe vars: pinprobe_description='enable_charge_clock' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U7 211 254 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U8 234 249 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U9 246 251 247 253 255 257 VESPAasmINPUT4
+X$VC 209 244 211 212 213 177 178 179 245 193 194 195 225 229 246 224 REGULATIONreferenceVC
+.ends REGULATIONreferenceMAIN
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301D\design\REGULATIONreferenceGMIcharge.sxcmp
+.subckt REGULATIONreferenceGMIcharge 59 60 62 65 64 66 67 63 61
+*#hierarchy
+.node_map enable_reference 60
+.node_map SIMPV 59
+.node_map VC 71
+.node_map disable_ss 61
+.node_map GMCHARGE 66
+.node_map SSI 70
+.node_map ok_icharge 67
+.node_map VCforce 63
+.node_map REF_CHARGE 62
+.node_map ok_gm 73
+.node_map FBICHARGE 69
+.node_map VCsinkCHARGE 64
+.node_map TIEHIGH 68
+.node_map ok 72
+.node_map SS 65
+X$amux1 65 68 70 59 61 amux2 vars: amux_control='pin' amux_datasheet_name='text' amux_datasheet_description='text' amux_tswitch='no' amux_inputs=2 amux_por=0 amux_ron=1K amux_vmax=6
+X$gm1 59 69 71 70 49 62 60 50 51 73 gm vars: gm_type='p' gm_override='inp' gm_output='sink' gm_clamp_high='no' gm_clamp_low='no' gm_ok='yes' gm_lowiq='no' gm_lowiq_name='text' gm_lowiq_description='text' gm_dft='no' gm_accuracy='system' gm_trim_name='GMcharge' gm_trim_description='CHARGE_GM_accuracy' gm_gain=100m gm_lowiq_por=0 gm_vmax=6
+X$pinprobe1 67 pinprobe vars: pinprobe_description='ICHARGE_enabled_and_ready' pinprobe_mode='output' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 64 pinprobe vars: pinprobe_description='GMI_CHARGE_VC_sink_current' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe27 60 pinprobe vars: pinprobe_description='enable_stepdown' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe29 62 pinprobe vars: pinprobe_description='Charge_current_reference' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 66 pinprobe vars: pinprobe_description='Charge_current_sense_input_for_REGULATION' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 63 pinprobe vars: pinprobe_description='GMI_CHARGE_VC_sink_current' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe5 61 pinprobe vars: pinprobe_description='override_softstart_to_tiehigh' pinprobe_mode='input' pinprobe_input='datamap' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe9 65 pinprobe vars: pinprobe_description='Charge_current_softstart_reference' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$switch1 66 69 60 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
+X$U1 63 64 53 54 55 56 57 58 71 59 72 48 52 currentmirror2 vars: currentmirror_isetpolarity='sink' currentmirror_type0='sink' currentmirror_type1='sink' currentmirror_type2='sink' currentmirror_type3='sink' currentmirror_type4='sink' currentmirror_type5='sink' currentmirror_type6='sink' currentmirror_type7='sink' currentmirror_dft='no' currentmirror_number=2 currentmirror_maxiset=20 currentmirror_maxvout=6 currentmirror_gain0=1 currentmirror_gain1=1 currentmirror_gain2=1 currentmirror_gain3=1 currentmirror_gain4=1 currentmirror_gain5=1 currentmirror_gain6=1 currentmirror_gain7=1 currentmirror_vmax=6
+X$U10 59 pinprobe vars: pinprobe_description='Low_voltage_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U16 67 72 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U3 47 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='REGULATIONreference_CHARGE' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U4 68 tie vars: tie_mode='high' tie_vmax=6
+X$U5 48 celeranoconn vars: ='%'
+X$U8 60 72 73 VESPAasmINPUT1
+.ends REGULATIONreferenceGMIcharge
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301D\design\REGULATIONreferenceGMIinput.sxcmp
+.subckt REGULATIONreferenceGMIinput 56 58 60 59 62 61 63 57
+*#hierarchy
+.node_map SIMPV 56
+.node_map VC 66
+.node_map VCsinkIIN 59
+.node_map VCforce 57
+.node_map ok_gm 67
+.node_map FBIIN 65
+.node_map ok_buffer 64
+.node_map IIN 62
+.node_map enable_stepdown 58
+.node_map IINREFBUF 63
+.node_map REF_IIN 60
+.node_map ok 68
+.node_map ok_iin 61
+X$gm1 56 63 66 44 46 65 58 47 48 67 gm vars: gm_type='p' gm_override='no' gm_output='source' gm_clamp_high='no' gm_clamp_low='no' gm_ok='yes' gm_lowiq='no' gm_lowiq_name='text' gm_lowiq_description='text' gm_dft='no' gm_accuracy='system' gm_trim_name='GMiin' gm_trim_description='IIN_GM_accuracy' gm_gain=100m gm_lowiq_por=0 gm_vmax=6
+X$pinprobe1 59 pinprobe vars: pinprobe_description='GMI_IN_VC_sink_current' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe14 62 pinprobe vars: pinprobe_description='Input_current_input' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 63 pinprobe vars: pinprobe_description='CAPACITORgood_Reference' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe27 58 pinprobe vars: pinprobe_description='enable_stepdown' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 61 pinprobe vars: pinprobe_description='GMI_IN_enabled_and_ready' pinprobe_mode='output' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 57 pinprobe vars: pinprobe_description='GMI_IN_VC_sink_current' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe8 60 pinprobe vars: pinprobe_description='Input_current_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$switch1 62 65 58 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
+X$U1 56 pinprobe vars: pinprobe_description='Low_voltage_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U2 67 68 64 58 VESPAasmINPUT2
+X$U3 61 68 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U4 57 59 50 51 52 53 54 55 66 56 58 45 49 currentmirror2 vars: currentmirror_isetpolarity='source' currentmirror_type0='sink' currentmirror_type1='sink' currentmirror_type2='sink' currentmirror_type3='sink' currentmirror_type4='sink' currentmirror_type5='sink' currentmirror_type6='sink' currentmirror_type7='sink' currentmirror_dft='no' currentmirror_number=2 currentmirror_maxiset=20 currentmirror_maxvout=6 currentmirror_gain0=1 currentmirror_gain1=1 currentmirror_gain2=1 currentmirror_gain3=1 currentmirror_gain4=1 currentmirror_gain5=1 currentmirror_gain6=1 currentmirror_gain7=1 currentmirror_vmax=6
+X$U5 45 celeranoconn vars: ='%'
+X$U6 42 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='REGULATION_Input_current' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$vbuffer1 56 64 60 63 58 43 vbuffer vars: vbuffer_accuracy='system' vbuffer_datasheet_name='IINaccuracy' vbuffer_datasheet_description='Input_current_limit_accuracy' vbuffer_type='p' vbuffer_inputbuffer='no' vbuffer_drive='internal' vbuffer_gndsense='no' vbuffer_dft='no' vbuffer_gain=1 vbuffer_feedbackimpedance=1000 vbuffer_vmax=6
+.ends REGULATIONreferenceGMIinput
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT2.sxcmp
+.subckt VESPAasmINPUT2 7 8 9 6
+*#hierarchy
+.node_map Tstate 6
+.node_map i0 7
+.node_map i1 9
+.node_map o 8
+X$U1 6 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 9 pinprobe vars: pinprobe_description='input1'
+X$U3 8 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 6 9 5 7 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U5 5 8 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U6 7 pinprobe vars: pinprobe_description='input0'
+.ends VESPAasmINPUT2
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301D\design\REGULATIONreferenceGMVcap.sxcmp
+.subckt REGULATIONreferenceGMVcap 57 58 60 61 62 63 59
+*#hierarchy
+.node_map SIMPV 57
+.node_map CAFFB 64
+.node_map ok_capfb 63
+.node_map FBCAP 67
+.node_map VC 65
+.node_map CAPFBI 66
+.node_map REF_CAP 60
+.node_map VCforce 59
+.node_map ok_gm 68
+.node_map enable_stepdown 58
+.node_map ok 69
+.node_map CAPFB 62
+.node_map VCsinkCAP 61
+.node_map enable_stepdownBUF 70
+X$gm1 57 60 65 42 44 67 58 45 46 68 gm vars: gm_type='p' gm_override='no' gm_output='source' gm_clamp_high='no' gm_clamp_low='no' gm_ok='yes' gm_lowiq='no' gm_lowiq_name='text' gm_lowiq_description='text' gm_dft='no' gm_accuracy='system' gm_trim_name='GMcap' gm_trim_description='CAP_GM_accuracy' gm_gain=1 gm_lowiq_por=0 gm_vmax=6
+X$pinprobe1 61 pinprobe vars: pinprobe_description='CAPFB_output_Sink' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe12 64 pinprobe vars: pinprobe_description='CAP_feedback_sense' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 59 pinprobe vars: pinprobe_description='CAPFB_output_Sink' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe3 58 pinprobe vars: pinprobe_description='enable_stepdown' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 63 pinprobe vars: pinprobe_description='CAPFB_GM_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 60 pinprobe vars: pinprobe_description='CAP_voltage_reference' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$switch1 66 67 58 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
+X$U1 57 pinprobe vars: pinprobe_description='Low_voltage_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U11 58 69 68 VESPAasmINPUT1
+X$U16 63 69 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U19 66 62 70 56 55 54 fet vars: fet_usage='power' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=1k fet_ron_power=1 fet_replica_gain=10 fet_maximumvds=6 count_1=0 fet_vmax=6
+X$U2 70 58 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U3 43 celeranoconn vars: ='%'
+X$U4 59 61 48 49 50 51 52 53 65 57 58 43 47 currentmirror2 vars: currentmirror_isetpolarity='source' currentmirror_type0='sink' currentmirror_type1='sink' currentmirror_type2='sink' currentmirror_type3='sink' currentmirror_type4='sink' currentmirror_type5='sink' currentmirror_type6='sink' currentmirror_type7='sink' currentmirror_dft='no' currentmirror_number=2 currentmirror_maxiset=50 currentmirror_maxvout=6 currentmirror_gain0=1 currentmirror_gain1=1 currentmirror_gain2=1 currentmirror_gain3=1 currentmirror_gain4=1 currentmirror_gain5=1 currentmirror_gain6=1 currentmirror_gain7=1 currentmirror_vmax=6
+X$U6 41 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='GMV_CAPFB' description1='Capacitor_Reference_versus_CAPFB' description2='Force_FB_to_VMAX_when_not_active' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+.ends REGULATIONreferenceGMVcap
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301D\design\REGULATIONreferenceGMVout.sxcmp
+.subckt REGULATIONreferenceGMVout 56 57 59 58 61 62 60
+*#hierarchy
+.node_map SIMPV 56
+.node_map FBOUT 64
+.node_map VC 65
+.node_map REF_OUT 59
+.node_map ok_out 62
+.node_map VCforce 58
+.node_map ok_gm 67
+.node_map enable_stepup 57
+.node_map VCsinkOUT 60
+.node_map ok 66
+.node_map OUTFBI 63
+.node_map OUTFB 61
+X$gm1 56 59 65 41 43 64 57 44 45 67 gm vars: gm_type='p' gm_override='no' gm_output='source' gm_clamp_high='no' gm_clamp_low='no' gm_ok='yes' gm_lowiq='no' gm_lowiq_name='text' gm_lowiq_description='text' gm_dft='no' gm_accuracy='system' gm_trim_name='GMout' gm_trim_description='OUT_gm_accuracy' gm_gain=400m gm_lowiq_por=0 gm_vmax=6
+X$pinprobe1 58 pinprobe vars: pinprobe_description='GMV_OUT_VC_sink_current' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe27 57 pinprobe vars: pinprobe_description='enable_stepup' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe28 62 pinprobe vars: pinprobe_description='OUT_enabled_and_ready' pinprobe_mode='output' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe29 59 pinprobe vars: pinprobe_description='OUT_reference_regulation' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe31 60 pinprobe vars: pinprobe_description='GMV_OUT_VC_sink_current' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe5 61 pinprobe vars: pinprobe_description='OUT_feedback_input' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd' pinprobe_bits=1
+X$switch1 63 64 57 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
+X$U1 58 60 50 51 52 53 54 55 65 56 66 42 49 currentmirror2 vars: currentmirror_isetpolarity='source' currentmirror_type0='sink' currentmirror_type1='sink' currentmirror_type2='sink' currentmirror_type3='sink' currentmirror_type4='sink' currentmirror_type5='sink' currentmirror_type6='sink' currentmirror_type7='sink' currentmirror_dft='no' currentmirror_number=2 currentmirror_maxiset=20 currentmirror_maxvout=6 currentmirror_gain0=1 currentmirror_gain1=1 currentmirror_gain2=1 currentmirror_gain3=1 currentmirror_gain4=1 currentmirror_gain5=1 currentmirror_gain6=1 currentmirror_gain7=1 currentmirror_vmax=6
+X$U10 56 pinprobe vars: pinprobe_description='Low_voltage_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U16 62 66 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U2 39 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='REGULATIONrefernce' description1='OUTFB_versus_REFOUT' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U20 63 61 40 48 47 46 fet vars: fet_usage='power' fet_replica='no' fet_type='n' fet_diode='yes' fet_diodedrive='diode' fet_kelvin='no' fet_dft='no' fet_layoutrotate='no' fet_powerswitch='no' fet_ron_signal=1k fet_ron_power=1 fet_replica_gain=10 fet_maximumvds=6 count_1=0 fet_vmax=6
+X$U22 57 66 67 VESPAasmINPUT1
+X$U24 40 57 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U3 42 celeranoconn vars: ='%'
+.ends REGULATIONreferenceGMVout
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT3.sxcmp
+.subckt VESPAasmINPUT3 9 10 11 12 13
+*#hierarchy
+.node_map Tstate 13
+.node_map i0 9
+.node_map i1 10
+.node_map i2 12
+.node_map o 11
+X$U1 13 pinprobe vars: pinprobe_description='state_blank_time'
+X$U19 11 7 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U2 10 pinprobe vars: pinprobe_description='input1'
+X$U3 11 pinprobe vars: pinprobe_description='INPUT2_output'
+X$U4 9 12 6 10 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U5 13 8 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U6 6 7 8 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U7 9 pinprobe vars: pinprobe_description='input0'
+X$U8 12 pinprobe vars: pinprobe_description='input2'
+.ends VESPAasmINPUT3
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT1.sxcmp
+.subckt VESPAasmINPUT1 5 6 7
+*#hierarchy
+.node_map Tstate 5
+.node_map i0 7
+.node_map o 6
+X$U1 5 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 7 pinprobe vars: pinprobe_description='input1'
+X$U3 6 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 5 4 7 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U5 4 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+.ends VESPAasmINPUT1
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT4.sxcmp
+.subckt VESPAasmINPUT4 10 11 12 13 14 15
+*#hierarchy
+.node_map Tstate 15
+.node_map i0 10
+.node_map i1 11
+.node_map i2 13
+.node_map i3 14
+.node_map o 12
+X$U1 15 pinprobe vars: pinprobe_description='state_blank_time'
+X$U19 12 8 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U2 11 pinprobe vars: pinprobe_description='input1'
+X$U3 12 pinprobe vars: pinprobe_description='INPUT3_output'
+X$U4 10 13 7 11 nand3 vars: logicgate_type='nand3' logicgate_vmax=6
+X$U5 14 9 15 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U6 7 8 9 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U7 10 pinprobe vars: pinprobe_description='input0'
+X$U8 13 pinprobe vars: pinprobe_description='input2'
+X$U9 14 pinprobe vars: pinprobe_description='input3'
+.ends VESPAasmINPUT4
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301D\design\REGULATIONreferenceVC.sxcmp
+.subckt REGULATIONreferenceVC 121 122 123 124 125 70 71 72 127 86 87 88 128 129 130 126
+*#hierarchy
+.node_map VCconfigurationUP$0 86
+.node_map enable_reference 122
+.node_map SIMPV 121
+.node_map VCconfigurationUP$1 87
+.node_map VCconfigurationDOWN$10 80
+.node_map VCconfigurationUP$2 88
+.node_map VCconfigurationDOWN$11 81
+.node_map VCconfigurationUP$3 89
+.node_map VCconfigurationDOWN$12 82
+.node_map VCconfigurationUP$4 90
+.node_map VCconfigurationDOWN$13 83
+.node_map VCconfigurationUP$5 91
+.node_map VCconfigurationDOWN$14 84
+.node_map VCconfigurationUP$6 92
+.node_map VCconfigurationDOWN$15 85
+.node_map VCconfigurationUP$7 93
+.node_map VCconfigurationUP$8 94
+.node_map VCconfigurationUP$9 95
+.node_map BUS1$0 118
+.node_map BUS1$1 119
+.node_map BUS1$2 120
+.node_map VCconfiguration$0 102
+.node_map VC 126
+.node_map VCconfiguration$1 103
+.node_map VCconfiguration$2 104
+.node_map VCconfiguration$3 105
+.node_map VCconfiguration$4 106
+.node_map VCconfiguration$5 107
+.node_map VCconfiguration$6 108
+.node_map VCconfiguration$7 109
+.node_map VCconfiguration$8 110
+.node_map go_enable 131
+.node_map mode_stepdown 123
+.node_map VCconfiguration$9 111
+.node_map VCsense 128
+.node_map VCforce 127
+.node_map enable_referenceDELAY 135
+.node_map ok_currentgenerator 132
+.node_map VCconfigurationDOWN$0 70
+.node_map VCconfigurationDOWN$1 71
+.node_map VCconfigurationDOWN$2 72
+.node_map VCconfigurationDOWN$3 73
+.node_map VCconfigurationDOWN$4 74
+.node_map VCconfigurationDOWN$5 75
+.node_map VCconfigurationDOWN$6 76
+.node_map VCconfigurationDOWN$7 77
+.node_map VCconfigurationDOWN$8 78
+.node_map VCconfigurationDOWN$9 79
+.node_map freeze_charger 125
+.node_map VCI 136
+.node_map VCO 133
+.node_map VCconfiguration$10 112
+.node_map VCconfiguration$11 113
+.node_map ok 134
+.node_map ok_vc 130
+.node_map VCconfiguration$12 114
+.node_map VCconfiguration$13 115
+.node_map VCconfiguration$14 116
+.node_map VCconfiguration$15 117
+.node_map GNDregulation 129
+.node_map VCconfigurationUP$10 96
+.node_map VCconfigurationUP$11 97
+.node_map VCconfigurationUP$12 98
+.node_map go 124
+.node_map VCconfigurationUP$13 99
+.node_map VCconfigurationUP$14 100
+.node_map VCconfigurationUP$15 101
+X$currentgenerator1 136 56 57 58 59 60 61 62 121 135 132 55 currentgenerator vars: currentgenerator_polarity0='source' currentgenerator_polarity1='sink' currentgenerator_polarity2='sink' currentgenerator_polarity3='sink' currentgenerator_polarity4='sink' currentgenerator_polarity5='sink' currentgenerator_polarity6='sink' currentgenerator_polarity7='sink' currentgenerator_accuracy='yes' currentgenerator_datasheet_accuracy_name='VCsourcecurent' currentgenerator_datasheet_accuracy_description='VC_source_current_10uA' currentgenerator_tempco='zero' currentgenerator_dft='no' currentgenerator_output0=10 currentgenerator_output1=1 currentgenerator_output2=1 currentgenerator_output3=1 currentgenerator_output4=1 currentgenerator_output5=1 currentgenerator_output6=1 currentgenerator_output7=1 currentgenerator_number=1 currentgenerator_tempco_gain=3 currentgenerator_vmax=6 currentgenerator_vout=6
+X$delay1 122 135 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=5 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=9 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1k
+X$dmux1 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 123 dmux2b vars: dmux_type='pin' dmux_datasheet_name='text' dmux_datasheet_description='text' dmux_inputs=2 dmux_bits=3 dmux_reg_por=0 dmux_vmax=6
+X$pinprobe1 130 pinprobe vars: pinprobe_description='VC_source_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe10 123 pinprobe vars: pinprobe_description='Controller_in_stepdown_mode' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 129 pinprobe vars: pinprobe_description='Regulation_Ground' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe17 124 pinprobe vars: pinprobe_description='REGUALTION_enabled_and_ready' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe18 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 pinprobeBUS vars: pinprobe_description='Configure_VC_stepdown_zero' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=3
+X$pinprobe2 126 pinprobe vars: pinprobe_description='Compensation_Output_pad' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe26 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 pinprobeBUS vars: pinprobe_description='Configure_VC_stepup_zero' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=3
+X$pinprobe3 127 pinprobe vars: pinprobe_description='Compensation_capacitor_force' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe30 125 pinprobe vars: pinprobe_description='Charger_switching_frozen' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 128 pinprobe vars: pinprobe_description='Compensation_capacitor_sense' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$resistor1 126 127 66 67 68 102 103 104 resistor vars: resistor_control='adjustable_resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='pin' resistor_datasheet_adjust_name='text' resistor_datasheet_adjust_description='text' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=10 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=100m resistor_adjust1=1 resistor_adjust2=3 resistor_adjust3=5 resistor_adjust4=7 resistor_adjust5=9 resistor_adjust6=11 resistor_adjust7=13 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=6 resistor_imax=1m
+X$resistor2 127 128 63 64 65 118 119 120 resistor vars: resistor_control='resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='text' resistor_datasheet_adjust_description='text' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=10 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=0 resistor_adjust1=0 resistor_adjust2=0 resistor_adjust3=0 resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=6 resistor_imax=1m
+X$switch1 69 127 124 switchpulldown vars: switch_type='pulldown' switch_polarity='invert' switch_model='celera' switch_ron=10 switch_pulldownvmax=6 switch_vmax=6
+X$switch3 133 136 125 switchgnd vars: switch_type='gnd' switch_polarity='invert' switch_model='celera' switch_ron=100 switch_pulldownvmax=6 switch_vmax=6
+X$switch4 133 127 125 switchtransmission vars: switch_type='transmission' switch_polarity='invert' switch_model='celera' switch_ron=100 switch_pulldownvmax=6 switch_vmax=6
+X$U1 121 pinprobe vars: pinprobe_description='Low_voltage_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U10 130 134 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U11 122 131 124 VESPAasmINPUT1
+X$U17 54 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='text' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U2 129 133 122 121 clamp  vars: clamp_type='high' clamp_accuracy='no' clamp_trim_name='text' clamp_trim_description='text' clamp_dft='no' clamp_voltage_high=2.8 clamp_voltage_low=500m count_1=0 clamp_imax=50m count_2=0 clamp_vmax=6
+X$U6 122 pinprobe vars: pinprobe_description='enable_charge_clock' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U7 122 134 132 VESPAasmINPUT1
+.ends REGULATIONreferenceVC
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301D\design\REGULATIONreferenceSTATUS.sxcmp
+.subckt REGULATIONreferenceSTATUS 160 163 164 165 167 166 168 170 172 169 171 173 161 174 162 175
+*#hierarchy
+.node_map dft_CHARGEvsIN 173
+.node_map cv 182
+.node_map SIMPV 160
+.node_map cin_stepdown 194
+.node_map mode_cv 161
+.node_map dft_OUTvsCHARGE 175
+.node_map ok_stepdown 178
+.node_map cv_stepdown 176
+.node_map enable_status 185
+.node_map ok_stepup 195
+.node_map VCsinkIIN 170
+.node_map ccharge_stepdown 189
+.node_map REFBUF 186
+.node_map REF_CHARGER 166
+.node_map chrg_ci 165
+.node_map dft_CHARGEvsCAP 171
+.node_map comp3BAR 191
+.node_map comp1 180
+.node_map comp2 179
+.node_map comp3 197
+.node_map comp4 198
+.node_map chrg_cv 163
+.node_map ccharge_stepup 193
+.node_map comp1BAR 181
+.node_map ok_comparator1 188
+.node_map ok_buffer 177
+.node_map ok_comparator2 187
+.node_map ok_comparator3 183
+.node_map comp4BAR 199
+.node_map ok_comparator4 196
+.node_map VCsinkCHARGE 172
+.node_map comp2BAR 192
+.node_map enable_stepup 164
+.node_map enable_stepdown 162
+.node_map VCsinkOUT 174
+.node_map dft_INvsCAP 169
+.node_map cc 190
+.node_map chrg_input_ilim 167
+.node_map cv_stepup 184
+.node_map VCsinkCAP 168
+X$comparator1 188 160 162 180 170 135 168 136 137 134 comparatornoctlpins vars: comparator_model='comparator' comparator_hysteresismode='fixed' comparator_edge='falling' comparator_speed='slow' comparator_type='p' comparator_deglitch='yes' comparator_lowiq='no' comparator_datasheet_name='text' comparator_datasheet_description='text' bgcomp_accuracy='no' bgcomp_outputanalog='supply' bgcomp_note1='Usage' bgcomp_outputdigital='no' bgcomp_trim_name='text' bgcomp_trim_description='text' bgcomp_enable='yes' comparator_dft='no' comparatorsupply_reference='ground' comparatorsupply_threshold='50' comparatorsupply_edge='falling' comparatorsupply_output='analog' comparatorsupply_enable='analog' comparator_hysteresis=0 comparator_lowiqpor=0 bgcomp_threshold=1.2 bgcomp_maxcelpos=6 bgcomp_maxvin=6 comparator_vmax=6
+X$comparator2 187 160 162 179 172 148 168 149 150 147 comparatornoctlpins vars: comparator_model='comparator' comparator_hysteresismode='fixed' comparator_edge='falling' comparator_speed='slow' comparator_type='p' comparator_deglitch='yes' comparator_lowiq='no' comparator_datasheet_name='text' comparator_datasheet_description='text' bgcomp_accuracy='no' bgcomp_outputanalog='supply' bgcomp_note1='Usage' bgcomp_outputdigital='no' bgcomp_trim_name='text' bgcomp_trim_description='text' bgcomp_enable='yes' comparator_dft='no' comparatorsupply_reference='ground' comparatorsupply_threshold='50' comparatorsupply_edge='falling' comparatorsupply_output='analog' comparatorsupply_enable='analog' comparator_hysteresis=0 comparator_lowiqpor=0 bgcomp_threshold=1.2 bgcomp_maxcelpos=6 bgcomp_maxvin=6 comparator_vmax=6
+X$comparator3 183 160 162 197 172 153 170 154 155 152 comparatornoctlpins vars: comparator_model='comparator' comparator_hysteresismode='fixed' comparator_edge='falling' comparator_speed='slow' comparator_type='p' comparator_deglitch='yes' comparator_lowiq='no' comparator_datasheet_name='text' comparator_datasheet_description='text' bgcomp_accuracy='no' bgcomp_outputanalog='supply' bgcomp_note1='Usage' bgcomp_outputdigital='no' bgcomp_trim_name='text' bgcomp_trim_description='text' bgcomp_enable='yes' comparator_dft='no' comparatorsupply_reference='ground' comparatorsupply_threshold='50' comparatorsupply_edge='falling' comparatorsupply_output='analog' comparatorsupply_enable='analog' comparator_hysteresis=0 comparator_lowiqpor=0 bgcomp_threshold=1.2 bgcomp_maxcelpos=6 bgcomp_maxvin=6 comparator_vmax=6
+X$comparator4 196 160 164 198 174 157 172 158 159 156 comparatornoctlpins vars: comparator_model='comparator' comparator_hysteresismode='fixed' comparator_edge='falling' comparator_speed='slow' comparator_type='p' comparator_deglitch='yes' comparator_lowiq='no' comparator_datasheet_name='text' comparator_datasheet_description='text' bgcomp_accuracy='no' bgcomp_outputanalog='supply' bgcomp_note1='Usage' bgcomp_outputdigital='no' bgcomp_trim_name='text' bgcomp_trim_description='text' bgcomp_enable='yes' comparator_dft='no' comparatorsupply_reference='ground' comparatorsupply_threshold='50' comparatorsupply_edge='falling' comparatorsupply_output='analog' comparatorsupply_enable='analog' comparator_hysteresis=0 comparator_lowiqpor=0 bgcomp_threshold=1.2 bgcomp_maxcelpos=6 bgcomp_maxvin=6 comparator_vmax=6
+X$pinprobe1 163 pinprobe vars: pinprobe_description='Charger_in_constant_voltage_mode' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe10 161 pinprobe vars: pinprobe_description='Charger_in_constant_voltage_mode' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe11 174 pinprobe vars: pinprobe_description='GMCHARGE_output' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe12 162 pinprobe vars: pinprobe_description='enable_status_chaeck_for_stepdown' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe13 172 pinprobe vars: pinprobe_description='GMCHARGE_output' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe14 175 pinprobe vars: pinprobe_description='DFT_CHARGE_versus_IN_comparator' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe19 168 pinprobe vars: pinprobe_description='GMO_output' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 165 pinprobe vars: pinprobe_description='Charger_in_constant_current_mode' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 164 pinprobe vars: pinprobe_description='enable_status_chaeck_for_stepup' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 166 pinprobe vars: pinprobe_description='Reference_input' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 167 pinprobe vars: pinprobe_description='Charger_input_current_limit' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 170 pinprobe vars: pinprobe_description='GMIN_outout' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe7 169 pinprobe vars: pinprobe_description='DFT_IN_versus_O_comparator' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe8 171 pinprobe vars: pinprobe_description='DFT_CHARGE_versus_O_comparator' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe9 173 pinprobe vars: pinprobe_description='DFT_CHARGE_versus_IN_comparator' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$U1 160 pinprobe vars: pinprobe_description='Low_voltage_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U10 197 191 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U11 163 182 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U12 131 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='STATUS' description1='Report_which_loop_is_in_control' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U13 177 195 196 164 VESPAasmINPUT2
+X$U14 179 176 180 178 VESPAasmINPUT2
+X$U15 191 189 192 178 VESPAasmINPUT2
+X$U16 197 194 181 178 VESPAasmINPUT2
+X$U17 167 194 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U18 165 190 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U2 180 181 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U20 177 183 178 187 188 162 VESPAasmINPUT4
+X$U21 195 193 198 VESPAasmINPUT1
+X$U22 195 184 199 VESPAasmINPUT1
+X$U23 198 199 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U24 175 198 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U25 132 182 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U26 176 132 184 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U27 146 190 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U28 189 146 193 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U29 161 182 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U3 169 180 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U4 173 197 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U5 186 186 186 186 145 143 141 139 168 174 170 172 144 142 140 138 resistorarray vars: resistor_array_type='poly' resistor_array_dummy='no' resistor_array_value=30 resistor_array_number=4 resistor_array_r1_series=0 resistor_array_r1_parallel=10 resistor_array_r2_series=0 resistor_array_r2_parallel=4 resistor_array_r3_series=1 resistor_array_r3_parallel=0 resistor_array_r4_series=1 resistor_array_r4_parallel=0 resistor_array_r5_series=1 resistor_array_r5_parallel=0 resistor_array_r6_series=1 resistor_array_r6_parallel=0 resistor_array_r7_series=1 resistor_array_r7_parallel=0 resistor_array_r8_series=1 resistor_array_r8_parallel=0 resistor_array_vmax=6 resistor_array_imax=100u
+X$U6 162 151 164 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U7 151 185 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U8 179 192 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U9 171 179 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$vbuffer1 160 177 166 186 185 133 vbuffer vars: vbuffer_accuracy='no' vbuffer_datasheet_name='text' vbuffer_datasheet_description='text' vbuffer_type='p' vbuffer_inputbuffer='no' vbuffer_drive='internal' vbuffer_gndsense='no' vbuffer_dft='no' vbuffer_gain=1 vbuffer_feedbackimpedance=1k vbuffer_vmax=6
+.ends REGULATIONreferenceSTATUS
+
+.end

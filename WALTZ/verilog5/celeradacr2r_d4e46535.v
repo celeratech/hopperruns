@@ -123,7 +123,7 @@ STONEdacnobufferINPUT2 Xdacin(
 .CELV (CELV),
 .DACREF (DACREF),
 .enable_dac (enable_dac),
-.ten (a0),
+.ten (global_dac),
 .a0 (a0),
 .ten_dac (a0),
 .en (en),
