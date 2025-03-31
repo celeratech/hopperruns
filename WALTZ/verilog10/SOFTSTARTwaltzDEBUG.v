@@ -23,17 +23,6 @@ module DFThijack ( o, CELG, CELV, CELSUB, ten_hijack, ten_hijacki, i );
 endmodule
 
 
-module dftprobeModel0_f0ccd53b (i,tdi,ten,CELG,CELSUB,CELV);
-input  i;
-output  tdi;
-input  ten;
-input  CELG;
-input  CELSUB;
-input  CELV;
-endmodule
-
-
-
 module dftprobeModel0_8b1750b2 (i,tdi,ten,CELG,CELSUB,CELV);
 input  i;
 output  tdi;
@@ -86,6 +75,17 @@ module DFTtm8 ( a, ten, TAO, tdo, tmi, G, SUB, TAI, V, tdi, tma );
 endmodule
 
 
+module dftprobeModel0_f0ccd53b (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+
+
+
 // ------------------------ Module Verilog ---------------
 module SOFTSTARTwaltzDEBUG (SS, TAO, tdo, tmi, CELG59462, CELV96848, dft_clock, CELSUB40948, enable_brick, done_softstart, enable_softstart, hijack_enable_brick, hijack_enable_softstart);
   input  SS;
@@ -114,7 +114,7 @@ wire [7:0] tma;
 // ------------------------ Networks ---------------------
 VESPAdftpulse XU4 (
 .stop(done_softstart),
-.pulse(net_24),
+.pulse(net_25),
 .start(hijack_enable_softstart),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -129,15 +129,6 @@ DFThijack XU1 (
 .CELSUB(CELSUB40948),
 .ten_hijack(ten_hijack_297df8ef_XU1),
 .ten_hijacki(ten_hijacki_297df8ef_XU1)
-);
-
-dftprobeModel0_f0ccd53b XU5 (
-.i(net_24),
-.tdi(tdi_ed87e5db_XU5),
-.ten(ten_ed87e5db_XU5),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
 );
 
 dftprobeModel0_8b1750b2 XU6 (
@@ -177,18 +168,27 @@ DFThijack XU14 (
 .ten_hijacki(ten_hijacki_dcf795e2_XU14)
 );
 
-DFTtm8 dft_hex0x18 (
+DFTtm8 dft_hex0x13 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
 .TAI({a0,a0,a0,a0,a0,a0,a0,TAI_81f80d4d_XU8}),
 .TAO(TAO),
-.tdi({a0,a0,a0,a0,a0,tdi_f665b623_XU6,tdi_ed87e5db_XU5,tdi_528f048c_XU10}),
+.tdi({a0,a0,a0,a0,a0,tdi_fa4970e3_XUSOFTSTARTtime,tdi_f665b623_XU6,tdi_528f048c_XU10}),
 .tdo(tdo),
-.ten({ten_81f80d4d_XU8,ten_f665b623_XU6,ten_ed87e5db_XU5,ten_hijacki_dcf795e2_XU14,ten_hijack_dcf795e2_XU14,ten_528f048c_XU10,ten_hijacki_297df8ef_XU1,ten_hijack_297df8ef_XU1}),
-.tma({a0,a0,a0,a1,a1,a0,a0,a0}),
+.ten({ten_fa4970e3_XUSOFTSTARTtime,ten_81f80d4d_XU8,ten_f665b623_XU6,ten_hijacki_dcf795e2_XU14,ten_hijack_dcf795e2_XU14,ten_528f048c_XU10,ten_hijacki_297df8ef_XU1,ten_hijack_297df8ef_XU1}),
+.tma({a0,a0,a0,a1,a0,a0,a1,a1}),
 .tmi(tmi[4:0])
+);
+
+dftprobeModel0_f0ccd53b XUSOFTSTARTtime (
+.i(net_25),
+.tdi(tdi_fa4970e3_XUSOFTSTARTtime),
+.ten(ten_fa4970e3_XUSOFTSTARTtime),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 endmodule

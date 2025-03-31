@@ -49,7 +49,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_WALTZ_VCC (VCC, GESD, PVCC, VOTP, CELV96848, kelvin_VCC, celkelvin_VCC_9893c918, celkelvin_VCC_bc3b7675);
+module pad_WALTZ_VCC (VCC, GESD, PVCC, VOTP, CELV96848, kelvin_VCC, celkelvin_VCC_9893c918, celkelvin_VCC_f6ed70de);
 inout  VCC;
 input  GESD;
 inout  PVCC;
@@ -57,7 +57,7 @@ output  VOTP;
 output  CELV96848;
 inout  kelvin_VCC;
 output  celkelvin_VCC_9893c918;
-output  celkelvin_VCC_bc3b7675;
+output  celkelvin_VCC_f6ed70de;
 
 
 // ------------------------ Wires ------------------------
@@ -65,6 +65,10 @@ output  celkelvin_VCC_bc3b7675;
 // ------------------------ Networks ---------------------
 STONEpad1 XPAD1 (
 .PAD(VCC)
+);
+
+STONEpad1 XPAD2 (
+.PAD(PVCC)
 );
 
 STONEotpSENSE Xvotp (
@@ -77,18 +81,13 @@ WRAPPER1 Xwrap_CELV (
 .o(CELV96848)
 );
 
-ESDcore6 XESDcore6_4 (
-.PAD(VCC),
+ESDcore6 XESDcore6_1 (
+.PAD(PVCC),
 .GESD(GESD)
 );
 
-PEBBLElinkKELVIN Xwrap_PAD1_SENSE0 (
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE_SINGLE (
 .NEG(kelvin_VCC),
-.POS(VCC)
-);
-
-PEBBLElinkKELVIN Xwrap_PAD1_SENSE1 (
-.NEG(PVCC),
 .POS(VCC)
 );
 
@@ -97,9 +96,9 @@ WRAPPER1 XWRAP_celkelvin_VCC_9893c918 (
 .o(celkelvin_VCC_9893c918)
 );
 
-WRAPPER1 XWRAP_celkelvin_VCC_bc3b7675 (
+WRAPPER1 XWRAP_celkelvin_VCC_f6ed70de (
 .i(VCC),
-.o(celkelvin_VCC_bc3b7675)
+.o(celkelvin_VCC_f6ed70de)
 );
 
 endmodule

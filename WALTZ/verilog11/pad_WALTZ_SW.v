@@ -1,8 +1,8 @@
 // ------------------------ Module Definitions -----------
-//Verilog HDL for "Generate", "STONEpad3" "functional"
+//Verilog HDL for "Generate", "STONEpad1" "functional"
 
 
-module STONEpad3 ( PAD );
+module STONEpad1 ( PAD );
 
   inout PAD;
 endmodule
@@ -16,7 +16,7 @@ inout  SW;
 // ------------------------ Wires ------------------------
 
 // ------------------------ Networks ---------------------
-STONEpad3 XPAD1 (
+STONEpad1 XPAD1 (
 .PAD(SW)
 );
 

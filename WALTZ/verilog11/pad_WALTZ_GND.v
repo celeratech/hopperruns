@@ -39,20 +39,22 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_WALTZ_GND (GND, GESD, GOTP, CELG59462, CELSUB40948, SENSE_G_4c0bef8e, kelvin_GNDservice, kelvin_GNDpowergood, kelvin_GNDsoftstart, kelvin_GNDregulation, celkelvin_GND_73ebd82d, celkelvin_GND_bb7e77f4, celkelvin_GND_d75c3f7f);
+module pad_WALTZ_GND (GND, GESD, GOTP, CELG59462, CELSUB40948, SENSE_G_39ab5afe, kelvin_GNDservice, kelvin_GNDpowergood, kelvin_GNDsoftstart, kelvin_GNDregulation, celkelvin_GND_73ebd82d, celkelvin_GND_b6a75424, celkelvin_GND_ba2e47c1, celkelvin_GND_c2e1c592, celkelvin_GND_db749c23);
 inout  GND;
 output  GESD;
 output  GOTP;
 inout  CELG59462;
 output  CELSUB40948;
-output  SENSE_G_4c0bef8e;
+output  SENSE_G_39ab5afe;
 inout  kelvin_GNDservice;
 inout  kelvin_GNDpowergood;
 inout  kelvin_GNDsoftstart;
 inout  kelvin_GNDregulation;
 output  celkelvin_GND_73ebd82d;
-output  celkelvin_GND_bb7e77f4;
-output  celkelvin_GND_d75c3f7f;
+output  celkelvin_GND_b6a75424;
+output  celkelvin_GND_ba2e47c1;
+output  celkelvin_GND_c2e1c592;
+output  celkelvin_GND_db749c23;
 
 
 // ------------------------ Wires ------------------------
@@ -83,28 +85,28 @@ WRAPPER1 Xwrap_CELSUB (
 );
 
 PEBBLElinkKELVIN Xwrap_PAD1_SENSE0 (
-.NEG(kelvin_GNDregulation),
-.POS(GND)
-);
-
-PEBBLElinkKELVIN Xwrap_PAD1_SENSE3 (
-.NEG(kelvin_GNDsoftstart),
-.POS(GND)
-);
-
-PEBBLElinkKELVIN Xwrap_PAD1_SENSE4 (
-.NEG(kelvin_GNDpowergood),
-.POS(GND)
-);
-
-PEBBLElinkKELVIN Xwrap_PAD1_SENSE7 (
 .NEG(kelvin_GNDservice),
 .POS(GND)
 );
 
-WRAPPER1 XWRAP_SENSE_G_4c0bef8e (
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE1 (
+.NEG(kelvin_GNDpowergood),
+.POS(GND)
+);
+
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE2 (
+.NEG(kelvin_GNDsoftstart),
+.POS(GND)
+);
+
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE3 (
+.NEG(kelvin_GNDregulation),
+.POS(GND)
+);
+
+WRAPPER1 XWRAP_SENSE_G_39ab5afe (
 .i(GND),
-.o(SENSE_G_4c0bef8e)
+.o(SENSE_G_39ab5afe)
 );
 
 WRAPPER1 XWRAP_celkelvin_GND_73ebd82d (
@@ -112,14 +114,24 @@ WRAPPER1 XWRAP_celkelvin_GND_73ebd82d (
 .o(celkelvin_GND_73ebd82d)
 );
 
-WRAPPER1 XWRAP_celkelvin_GND_bb7e77f4 (
+WRAPPER1 XWRAP_celkelvin_GND_b6a75424 (
 .i(GND),
-.o(celkelvin_GND_bb7e77f4)
+.o(celkelvin_GND_b6a75424)
 );
 
-WRAPPER1 XWRAP_celkelvin_GND_d75c3f7f (
+WRAPPER1 XWRAP_celkelvin_GND_ba2e47c1 (
 .i(GND),
-.o(celkelvin_GND_d75c3f7f)
+.o(celkelvin_GND_ba2e47c1)
+);
+
+WRAPPER1 XWRAP_celkelvin_GND_c2e1c592 (
+.i(GND),
+.o(celkelvin_GND_c2e1c592)
+);
+
+WRAPPER1 XWRAP_celkelvin_GND_db749c23 (
+.i(GND),
+.o(celkelvin_GND_db749c23)
 );
 
 endmodule

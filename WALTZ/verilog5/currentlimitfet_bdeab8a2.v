@@ -89,11 +89,11 @@ input enable_levelshifter;
 endmodule
 
 
-//Celera Confidential Do Not Copy STONEadjdelay1ns5bits
-//Verilog HDL for "Generate", "STONEadjdelay1ns5bits" "functional"
+//Celera Confidential Do Not Copy STONEadjdelay2ns5bits
+//Verilog HDL for "Generate", "STONEadjdelay2ns5bits" "functional"
 
 
-module STONEadjdelay1ns5bits ( a, o, CELG, CELV, SUB, adj_delay, i );
+module STONEadjdelay2ns5bits ( a, o, CELG, CELV, SUB, adj_delay, i );
 
   input CELV;
   input  [4:0] adj_delay;
@@ -284,8 +284,8 @@ STONEnoconn Xnoconn1(
 noconn_adjdelay1)
 );
 //,diesize,STONEnoconn
-//Celera Confidential Do Not Copy STONEadjdelay1ns5bits
-STONEadjdelay1ns5bits Xadjdelay(
+//Celera Confidential Do Not Copy STONEadjdelay2ns5bits
+STONEadjdelay2ns5bits Xadjdelay(
 .CELV (CELPOS),
 .adj_delay ({a1,a0,a1,a0,a0}),
 .a ({noconn_adjdelay1,noconn_adjdelay0}),
@@ -294,7 +294,7 @@ STONEadjdelay1ns5bits Xadjdelay(
 .SUB (CELSUB),
 .CELG (CELG)
 );
-//,diesize,STONEadjdelay1ns5bits
+//,diesize,STONEadjdelay2ns5bits
 //Celera Confidential Do Not Copy STONEcurrentlimitcompinp
 STONEcurrentlimitcompinp Xclcompinp(
 .CELNEG (CELG),

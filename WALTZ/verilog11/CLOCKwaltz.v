@@ -1,53 +1,49 @@
 // ------------------------ Module Definitions -----------
-module CLOCKwaltzDEBUG (TAO,tdo,tmi,dft_sync,CELG59462,CELV96848,dft_clock,ISLOPECOMP,CELSUB40948,dft_synclow,fault_clock,dft_synchigh,enable_clock,dft_clocksync,dft_clockstartup,dft_clockinternal,hijack_enable_clock);
-  inout  TAO;
-  inout  tdo;
-  input [4:0] tmi;
-  input  dft_sync;
-  input  CELG59462;
-  input  CELV96848;
-  input  dft_clock;
-  input  ISLOPECOMP;
-  input  CELSUB40948;
-  input  dft_synclow;
-  input  fault_clock;
-  input  dft_synchigh;
-  input  enable_clock;
-  input  dft_clocksync;
-  input  dft_clockstartup;
-  input  dft_clockinternal;
-  output  hijack_enable_clock;
-endmodule
-
-module CLOCKwaltzMAIN (tdo,tmi,FSET,MUDV,SYNC,clock,dft_sync,ok_clock,CELG59462,CELV96848,dft_clock,ISLOPECOMP,CELREF84329,CELSENSE_RF,CELSUB40948,IP_90c263a6,dft_synclow,fault_clock,dft_synchigh,enable_clock,dft_clocksync,CLOCKofftime_0,CLOCKofftime_1,CLOCKofftime_2,CLOCKofftime_3,dft_clockstartup,dft_clockinternal,celkelvin_GND_bb7e77f4);
+module CLOCKwaltzMAIN (tdo,tmi,FSET,MUDV,SYNC,clock,ok_clock,CELG59462,CELV96848,clock_bst,dft_clock,ISLOPECOMP,CELREF84329,CELSENSE_RF,CELSUB40948,IP_1ec2dc90,dft_synclow,fault_clock,dft_clockbst,dft_synchigh,enable_clock,CLOCKofftime_0,CLOCKofftime_1,CLOCKofftime_2,CLOCKofftime_3,enable_clockbst,dft_clockstartup,celkelvin_GND_ba2e47c1);
   inout  tdo;
   inout [4:0] tmi;
   output  FSET;
   input  MUDV;
   input  SYNC;
   output  clock;
-  output  dft_sync;
   output  ok_clock;
   input  CELG59462;
   input  CELV96848;
+  output  clock_bst;
   output  dft_clock;
   output  ISLOPECOMP;
   input  CELREF84329;
   input  CELSENSE_RF;
   input  CELSUB40948;
-  input  IP_90c263a6;
+  input  IP_1ec2dc90;
   output  dft_synclow;
   output  fault_clock;
+  output  dft_clockbst;
   output  dft_synchigh;
   input  enable_clock;
-  output  dft_clocksync;
   input  CLOCKofftime_0;
   input  CLOCKofftime_1;
   input  CLOCKofftime_2;
   input  CLOCKofftime_3;
+  input  enable_clockbst;
   output  dft_clockstartup;
-  output  dft_clockinternal;
-  input  celkelvin_GND_bb7e77f4;
+  input  celkelvin_GND_ba2e47c1;
+endmodule
+
+module CLOCKwaltzDEBUG (tdo,tmi,CELG59462,CELV96848,dft_clock,CELSUB40948,dft_synclow,fault_clock,dft_clockbst,dft_synchigh,enable_clock,dft_clockstartup,hijack_enable_clock);
+  inout  tdo;
+  input [4:0] tmi;
+  input  CELG59462;
+  input  CELV96848;
+  input  dft_clock;
+  input  CELSUB40948;
+  input  dft_synclow;
+  input  fault_clock;
+  input  dft_clockbst;
+  input  dft_synchigh;
+  input  enable_clock;
+  input  dft_clockstartup;
+  output  hijack_enable_clock;
 endmodule
 
 //Verilog HDL for "DRM", "drm8" "functional"
@@ -79,8 +75,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CLOCKwaltz (TAO, tdo, tmi, FSET, MUDV, SYNC, clock, ok_clock, CELG59462, CELV96848, ISLOPECOMP, CELREF84329, CELSENSE_RF, CELSUB40948, IP_90c263a6, fault_clock, enable_clock, celkelvin_GND_bb7e77f4);
-inout  TAO;
+module CLOCKwaltz (tdo, tmi, FSET, MUDV, SYNC, clock, ok_clock, CELG59462, CELV96848, clock_bst, ISLOPECOMP, CELREF84329, CELSENSE_RF, CELSUB40948, IP_1ec2dc90, fault_clock, enable_clock, enable_clockbst, celkelvin_GND_ba2e47c1);
 inout  tdo;
 inout [4:0] tmi;
 output  FSET;
@@ -90,14 +85,16 @@ output  clock;
 output  ok_clock;
 input  CELG59462;
 input  CELV96848;
+output  clock_bst;
 output  ISLOPECOMP;
 input  CELREF84329;
 input  CELSENSE_RF;
 input  CELSUB40948;
-input  IP_90c263a6;
+input  IP_1ec2dc90;
 output  fault_clock;
 input  enable_clock;
-input  celkelvin_GND_bb7e77f4;
+input  enable_clockbst;
+input  celkelvin_GND_ba2e47c1;
 
 
 // ------------------------ Wires ------------------------
@@ -107,55 +104,51 @@ wire [7:0] drm0;
 wire [7:0] por0;
 
 // ------------------------ Networks ---------------------
-CLOCKwaltzDEBUG XDEBUG (
-.TAO(TAO),
-.tdo(tdo),
-.tmi(tmi[4:0]),
-.dft_sync(net_75),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.dft_clock(net_69),
-.ISLOPECOMP(ISLOPECOMP),
-.CELSUB40948(CELSUB40948),
-.dft_synclow(net_70),
-.fault_clock(fault_clock),
-.dft_synchigh(net_71),
-.enable_clock(enable_clock),
-.dft_clocksync(net_74),
-.dft_clockstartup(net_72),
-.dft_clockinternal(net_73),
-.hijack_enable_clock(net_68)
-);
-
-CLOCKwaltzMAIN XMAIN (
+CLOCKwaltzMAIN XCLOCK (
 .tdo(tdo),
 .tmi(tmi[4:0]),
 .FSET(FSET),
 .MUDV(MUDV),
 .SYNC(SYNC),
 .clock(clock),
-.dft_sync(net_75),
 .ok_clock(ok_clock),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.dft_clock(net_69),
+.clock_bst(clock_bst),
+.dft_clock(net_72),
 .ISLOPECOMP(ISLOPECOMP),
 .CELREF84329(CELREF84329),
 .CELSENSE_RF(CELSENSE_RF),
 .CELSUB40948(CELSUB40948),
-.IP_90c263a6(IP_90c263a6),
-.dft_synclow(net_70),
+.IP_1ec2dc90(IP_1ec2dc90),
+.dft_synclow(net_73),
 .fault_clock(fault_clock),
-.dft_synchigh(net_71),
-.enable_clock(net_68),
-.dft_clocksync(net_74),
-.CLOCKofftime_0(net_44),
-.CLOCKofftime_1(net_45),
-.CLOCKofftime_2(net_46),
-.CLOCKofftime_3(net_47),
-.dft_clockstartup(net_72),
-.dft_clockinternal(net_73),
-.celkelvin_GND_bb7e77f4(celkelvin_GND_bb7e77f4)
+.dft_clockbst(net_76),
+.dft_synchigh(net_74),
+.enable_clock(net_71),
+.CLOCKofftime_0(CLOCKofftime_0bca02f8_0),
+.CLOCKofftime_1(CLOCKofftime_0bca02f8_1),
+.CLOCKofftime_2(CLOCKofftime_0bca02f8_2),
+.CLOCKofftime_3(CLOCKofftime_0bca02f8_3),
+.enable_clockbst(enable_clockbst),
+.dft_clockstartup(net_75),
+.celkelvin_GND_ba2e47c1(celkelvin_GND_ba2e47c1)
+);
+
+CLOCKwaltzDEBUG XDEBUG (
+.tdo(tdo),
+.tmi(tmi[4:0]),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.dft_clock(net_72),
+.CELSUB40948(CELSUB40948),
+.dft_synclow(net_73),
+.fault_clock(fault_clock),
+.dft_clockbst(net_76),
+.dft_synchigh(net_74),
+.enable_clock(enable_clock),
+.dft_clockstartup(net_75),
+.hijack_enable_clock(net_71)
 );
 
 drm8 drm_hex0x02 (
@@ -166,7 +159,7 @@ drm8 drm_hex0x02 (
 .id({a0,a0,a0,a0,a0,a0,a1,a0}),
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
-.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,net_47,net_46,net_45,net_44}),
+.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,CLOCKofftime_0bca02f8_3,CLOCKofftime_0bca02f8_2,CLOCKofftime_0bca02f8_1,CLOCKofftime_0bca02f8_0}),
 .por0({a0,a0,a0,a0,a1,a0,a0,a1}),
 .bypload(a0),
 .lastdrm(a0)

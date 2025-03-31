@@ -50,26 +50,26 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CAPcalculatorCONFIGURATION (vshunt_0, vshunt_1, vshunt_2, vshunt_3, vshunt_4, vshunt_5, vshunt_6, vshunt_7, vshunt_8, vshunt_9, CELG59462, CELV96848, PORB97836, vshunt_10, vshunt_11, vshunt_12, vshunt_13, vshunt_14, vshunt_15, CELSUB40948, vbalancer_0, vbalancer_1, vbalancer_2, vbalancer_3, vbalancer_4, vbalancer_5, vbalancer_6, vbalancer_7, vshunt_hyst_0, vshunt_hyst_1, vshunt_hyst_2, vshunt_hyst_3, vshunt_hyst_4, vshunt_hyst_5, vshunt_hyst_6, vshunt_hyst_7, vshunt_hyst_8, vshunt_hyst_9, vshunt_trip_0, vshunt_trip_1, vshunt_trip_2, vshunt_trip_3, vshunt_trip_4, vshunt_trip_5, vshunt_trip_6, vshunt_trip_7, vshunt_trip_8, vshunt_trip_9, vshunt_hyst_10, vshunt_hyst_11, vshunt_hyst_12, vshunt_hyst_13, vshunt_hyst_14, vshunt_hyst_15, vshunt_trip_10, vshunt_trip_11, vshunt_trip_12, vshunt_trip_13, vshunt_trip_14, vshunt_trip_15, vbalancer_hyst_0, vbalancer_hyst_1, vbalancer_hyst_2, vbalancer_hyst_3, vbalancer_hyst_4, vbalancer_hyst_5, vbalancer_hyst_6, vbalancer_hyst_7, MAXIMUMoverride_0, MAXIMUMoverride_1, MAXIMUMoverride_2, MAXIMUMoverride_3, MAXIMUMoverride_4, MAXIMUMoverride_5, MAXIMUMoverride_6, MAXIMUMoverride_7, MAXIMUMoverride_8, MAXIMUMoverride_9, register_vshunt_1, MAXIMUMoverride_10, MAXIMUMoverride_11, MAXIMUMoverride_12, MAXIMUMoverride_13, MAXIMUMoverride_14, MAXIMUMoverride_15, enable_capcalculate);
+module CAPcalculatorCONFIGURATION (vshunt_0, vshunt_1, vshunt_2, vshunt_3, vshunt_4, vshunt_5, vshunt_6, vshunt_7, vshunt_8, vshunt_9, CELG59462, CELV96848, PORB97836, vshunt_10, vshunt_11, vshunt_12, vshunt_13, vshunt_14, vshunt_15, CELSUB40948, vbalancer_0, vbalancer_1, vbalancer_2, vbalancer_3, vbalancer_4, vbalancer_5, vbalancer_6, vbalancer_7, vshunt_hyst_0, vshunt_hyst_1, vshunt_hyst_2, vshunt_hyst_3, vshunt_hyst_4, vshunt_hyst_5, vshunt_hyst_6, vshunt_hyst_7, vshunt_hyst_8, vshunt_hyst_9, vshunt_trip_0, vshunt_trip_1, vshunt_trip_2, vshunt_trip_3, vshunt_trip_4, vshunt_trip_5, vshunt_trip_6, vshunt_trip_7, vshunt_trip_8, vshunt_trip_9, vshunt_hyst_10, vshunt_hyst_11, vshunt_hyst_12, vshunt_hyst_13, vshunt_hyst_14, vshunt_hyst_15, vshunt_trip_10, vshunt_trip_11, vshunt_trip_12, vshunt_trip_13, vshunt_trip_14, vshunt_trip_15, vbalancer_hyst_0, vbalancer_hyst_1, vbalancer_hyst_2, vbalancer_hyst_3, vbalancer_hyst_4, vbalancer_hyst_5, vbalancer_hyst_6, vbalancer_hyst_7, MAXIMUMoverride_0, MAXIMUMoverride_1, MAXIMUMoverride_2, MAXIMUMoverride_3, MAXIMUMoverride_4, MAXIMUMoverride_5, MAXIMUMoverride_6, MAXIMUMoverride_7, MAXIMUMoverride_8, MAXIMUMoverride_9, MAXIMUMoverride_10, MAXIMUMoverride_11, MAXIMUMoverride_12, MAXIMUMoverride_13, MAXIMUMoverride_14, MAXIMUMoverride_15, register_vshunt_15, enable_capcalculate);
 output  vshunt_0;
-input  vshunt_1;
-input  vshunt_2;
-input  vshunt_3;
-input  vshunt_4;
-input  vshunt_5;
-input  vshunt_6;
-input  vshunt_7;
-input  vshunt_8;
-input  vshunt_9;
+output  vshunt_1;
+output  vshunt_2;
+output  vshunt_3;
+output  vshunt_4;
+output  vshunt_5;
+output  vshunt_6;
+output  vshunt_7;
+output  vshunt_8;
+output  vshunt_9;
 input  CELG59462;
 input  CELV96848;
 input  PORB97836;
-input  vshunt_10;
-input  vshunt_11;
-input  vshunt_12;
-input  vshunt_13;
-input  vshunt_14;
-input  vshunt_15;
+output  vshunt_10;
+output  vshunt_11;
+output  vshunt_12;
+output  vshunt_13;
+output  vshunt_14;
+output  vshunt_15;
 input  CELSUB40948;
 output  vbalancer_0;
 output  vbalancer_1;
@@ -129,17 +129,18 @@ output  MAXIMUMoverride_6;
 output  MAXIMUMoverride_7;
 output  MAXIMUMoverride_8;
 output  MAXIMUMoverride_9;
-input  register_vshunt_1;
 output  MAXIMUMoverride_10;
 output  MAXIMUMoverride_11;
 output  MAXIMUMoverride_12;
 output  MAXIMUMoverride_13;
 output  MAXIMUMoverride_14;
 output  MAXIMUMoverride_15;
+input [15:0] register_vshunt_15;
 input  enable_capcalculate;
 
 
 // ------------------------ Wires ------------------------
+wire [15:0] register_vshunt_15;
 wire [15:0] a;
 wire [15:0] b;
 wire [15:0] o;
@@ -265,11 +266,6 @@ WRAPPER1 vshunt_hyst_9_WRAPPER (
 .o(vshunt_hyst_9)
 );
 
-WRAPPER1 XWRAPregister_vshunt_1 (
-.i(register_vshunt_1),
-.o(vshunt_0)
-);
-
 WRAPPER1 vshunt_hyst_10_WRAPPER (
 .i(a0),
 .o(vshunt_hyst_10)
@@ -390,6 +386,56 @@ WRAPPER1 MAXIMUMoverride_9_WRAPPER (
 .o(MAXIMUMoverride_9)
 );
 
+WRAPPER1 XWRAPregister_vshunt_15_0 (
+.i(register_vshunt_15[0]),
+.o(vshunt_0)
+);
+
+WRAPPER1 XWRAPregister_vshunt_15_1 (
+.i(register_vshunt_15[1]),
+.o(vshunt_1)
+);
+
+WRAPPER1 XWRAPregister_vshunt_15_2 (
+.i(register_vshunt_15[2]),
+.o(vshunt_2)
+);
+
+WRAPPER1 XWRAPregister_vshunt_15_3 (
+.i(register_vshunt_15[3]),
+.o(vshunt_3)
+);
+
+WRAPPER1 XWRAPregister_vshunt_15_4 (
+.i(register_vshunt_15[4]),
+.o(vshunt_4)
+);
+
+WRAPPER1 XWRAPregister_vshunt_15_5 (
+.i(register_vshunt_15[5]),
+.o(vshunt_5)
+);
+
+WRAPPER1 XWRAPregister_vshunt_15_6 (
+.i(register_vshunt_15[6]),
+.o(vshunt_6)
+);
+
+WRAPPER1 XWRAPregister_vshunt_15_7 (
+.i(register_vshunt_15[7]),
+.o(vshunt_7)
+);
+
+WRAPPER1 XWRAPregister_vshunt_15_8 (
+.i(register_vshunt_15[8]),
+.o(vshunt_8)
+);
+
+WRAPPER1 XWRAPregister_vshunt_15_9 (
+.i(register_vshunt_15[9]),
+.o(vshunt_9)
+);
+
 WRAPPER1 MAXIMUMoverride_10_WRAPPER (
 .i(a0),
 .o(MAXIMUMoverride_10)
@@ -418,6 +464,36 @@ WRAPPER1 MAXIMUMoverride_14_WRAPPER (
 WRAPPER1 MAXIMUMoverride_15_WRAPPER (
 .i(a0),
 .o(MAXIMUMoverride_15)
+);
+
+WRAPPER1 XWRAPregister_vshunt_15_10 (
+.i(register_vshunt_15[10]),
+.o(vshunt_10)
+);
+
+WRAPPER1 XWRAPregister_vshunt_15_11 (
+.i(register_vshunt_15[11]),
+.o(vshunt_11)
+);
+
+WRAPPER1 XWRAPregister_vshunt_15_12 (
+.i(register_vshunt_15[12]),
+.o(vshunt_12)
+);
+
+WRAPPER1 XWRAPregister_vshunt_15_13 (
+.i(register_vshunt_15[13]),
+.o(vshunt_13)
+);
+
+WRAPPER1 XWRAPregister_vshunt_15_14 (
+.i(register_vshunt_15[14]),
+.o(vshunt_14)
+);
+
+WRAPPER1 XWRAPregister_vshunt_15_15 (
+.i(register_vshunt_15[15]),
+.o(vshunt_15)
 );
 
 endmodule

@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module WALTZceleraCORE (EN,FB,IN,SW,BST,GND,PIN,POK,TAO,VCC,tdo,tmi,BIAS,FSET,PGND,PVCC,SYNC,sense_FB,CELG59462,CELV96848,PORB97836,kelvin_VCC,CELSENSE_RF,CELSUB40948,SENSE_G_4c0bef8e,kelvin_GNDservice,kelvin_GNDpowergood,kelvin_GNDsoftstart,kelvin_GNDregulation,celkelvin_IN_bc3b7675,celkelvin_GND_73ebd82d,celkelvin_GND_bb7e77f4,celkelvin_GND_d75c3f7f,celkelvin_VCC_bc3b7675,celkelvin_BIAS_bc3b7675);
+module WALTZceleraCORE (EN,FB,IN,SW,BST,GND,PIN,POK,TAO,VCC,tdo,tmi,BIAS,FSET,PGND,PVCC,SYNC,sense_FB,CELG59462,CELV96848,PORB97836,kelvin_VCC,CELSENSE_RF,CELSUB40948,SENSE_G_39ab5afe,kelvin_GNDservice,kelvin_GNDpowergood,kelvin_GNDsoftstart,kelvin_GNDregulation,celkelvin_IN_f6ed70de,celkelvin_GND_73ebd82d,celkelvin_GND_b6a75424,celkelvin_GND_ba2e47c1,celkelvin_GND_c2e1c592,celkelvin_VCC_f6ed70de,celkelvin_BIAS_f6ed70de);
   input  EN;
   inout  FB;
   input  IN;
@@ -24,30 +24,21 @@ module WALTZceleraCORE (EN,FB,IN,SW,BST,GND,PIN,POK,TAO,VCC,tdo,tmi,BIAS,FSET,PG
   inout  kelvin_VCC;
   input  CELSENSE_RF;
   input  CELSUB40948;
-  input  SENSE_G_4c0bef8e;
+  input  SENSE_G_39ab5afe;
   inout  kelvin_GNDservice;
   inout  kelvin_GNDpowergood;
   input  kelvin_GNDsoftstart;
   inout  kelvin_GNDregulation;
-  input  celkelvin_IN_bc3b7675;
+  input  celkelvin_IN_f6ed70de;
   input  celkelvin_GND_73ebd82d;
-  input  celkelvin_GND_bb7e77f4;
-  input  celkelvin_GND_d75c3f7f;
-  input  celkelvin_VCC_bc3b7675;
-  input  celkelvin_BIAS_bc3b7675;
+  input  celkelvin_GND_b6a75424;
+  input  celkelvin_GND_ba2e47c1;
+  input  celkelvin_GND_c2e1c592;
+  input  celkelvin_VCC_f6ed70de;
+  input  celkelvin_BIAS_f6ed70de;
 endmodule
 
-module WALTZceleraREGISTER (scli,sdai,CELG59462,CELV96848,PORB97836,CELSUB40948,sdapd_registermap);
-  input  scli;
-  input  sdai;
-  input  CELG59462;
-  input  CELV96848;
-  input  PORB97836;
-  input  CELSUB40948;
-  output  sdapd_registermap;
-endmodule
-
-module WALTZceleraRING (EN,FB,IN,SW,BST,GND,PIN,POK,TAO,VCC,tdo,tmi,BIAS,FSET,GOTP,PGND,PVCC,SYNC,VOTP,CELOUT,DFTSCL,DFTSDA,sense_FB,CELG59462,CELV96848,kelvin_VCC,CELSENSE_RF,CELSUB40948,SENSE_G_4c0bef8e,kelvin_GNDservice,kelvin_GNDpowergood,kelvin_GNDsoftstart,kelvin_GNDregulation,celkelvin_IN_bc3b7675,celkelvin_GND_73ebd82d,celkelvin_GND_bb7e77f4,celkelvin_GND_d75c3f7f,celkelvin_VCC_9893c918,celkelvin_VCC_bc3b7675,celkelvin_BIAS_bc3b7675);
+module WALTZceleraRING (EN,FB,IN,SW,BST,GND,PIN,POK,TAO,VCC,tdo,tmi,BIAS,FSET,GOTP,PGND,PVCC,SYNC,VOTP,DFTSCL,DFTSDA,unlock,sense_FB,CELG59462,CELV96848,POK_inout,PORB97836,FSET_inout,kelvin_VCC,CELSENSE_RF,CELSUB40948,SENSE_G_39ab5afe,kelvin_GNDservice,kelvin_GNDpowergood,kelvin_GNDsoftstart,kelvin_GNDregulation,celkelvin_IN_f6ed70de,celkelvin_GND_73ebd82d,celkelvin_GND_b6a75424,celkelvin_GND_ba2e47c1,celkelvin_GND_c2e1c592,celkelvin_VCC_9893c918,celkelvin_VCC_f6ed70de,celkelvin_BIAS_f6ed70de);
   inout  EN;
   inout  FB;
   inout  IN;
@@ -59,7 +50,7 @@ module WALTZceleraRING (EN,FB,IN,SW,BST,GND,PIN,POK,TAO,VCC,tdo,tmi,BIAS,FSET,GO
   inout  TAO;
   inout  VCC;
   inout  tdo;
-  inout [5:0] tmi;
+  inout [4:0] tmi;
   inout  BIAS;
   inout  FSET;
   output  GOTP;
@@ -67,37 +58,38 @@ module WALTZceleraRING (EN,FB,IN,SW,BST,GND,PIN,POK,TAO,VCC,tdo,tmi,BIAS,FSET,GO
   inout  PVCC;
   inout  SYNC;
   output  VOTP;
-  output  CELOUT;
-  input  DFTSCL;
-  inout  DFTSDA;
+  output  DFTSCL;
+  output  DFTSDA;
+  input  unlock;
   inout  sense_FB;
   output  CELG59462;
   output  CELV96848;
+  input  POK_inout;
+  input  PORB97836;
+  output  FSET_inout;
   inout  kelvin_VCC;
   output  CELSENSE_RF;
   output  CELSUB40948;
-  output  SENSE_G_4c0bef8e;
+  output  SENSE_G_39ab5afe;
   inout  kelvin_GNDservice;
   inout  kelvin_GNDpowergood;
   inout  kelvin_GNDsoftstart;
   inout  kelvin_GNDregulation;
-  output  celkelvin_IN_bc3b7675;
+  output  celkelvin_IN_f6ed70de;
   output  celkelvin_GND_73ebd82d;
-  output  celkelvin_GND_bb7e77f4;
-  output  celkelvin_GND_d75c3f7f;
+  output  celkelvin_GND_b6a75424;
+  output  celkelvin_GND_ba2e47c1;
+  output  celkelvin_GND_c2e1c592;
   output  celkelvin_VCC_9893c918;
-  output  celkelvin_VCC_bc3b7675;
-  output  celkelvin_BIAS_bc3b7675;
+  output  celkelvin_VCC_f6ed70de;
+  output  celkelvin_BIAS_f6ed70de;
 endmodule
 
-module WALTZceleraSERDES (pd0,tdo,tmi,GOTP,VOTP,scli,sdai,DFTSCL,DFTSDA,unlock,otp_done,CELG59462,CELV96848,PORB97836,CELSUB40948,celkelvin_VCC_9893c918);
-  input  pd0;
+module WALTZceleraSERDES (tdo,tmi,GOTP,VOTP,DFTSCL,DFTSDA,unlock,otp_done,CELG59462,CELV96848,PORB97836,CELSUB40948,celkelvin_VCC_9893c918);
   inout  tdo;
   inout [5:0] tmi;
   input  GOTP;
   input  VOTP;
-  output  scli;
-  inout  sdai;
   inout  DFTSCL;
   inout  DFTSDA;
   output  unlock;
@@ -109,21 +101,31 @@ module WALTZceleraSERDES (pd0,tdo,tmi,GOTP,VOTP,scli,sdai,DFTSCL,DFTSDA,unlock,o
   input  celkelvin_VCC_9893c918;
 endmodule
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module WALTZ (EN, FB, IN, SW, BST, GND, POK, VCC, BIAS, FSET, PGND, SYNC, CELOUT);
+module WALTZ (EN, FB, IN, SW, BST, GND, PIN, POK, VCC, BIAS, FSET, PGND, PVCC, SYNC);
 inout  EN;
 inout  FB;
 inout  IN;
 inout  SW;
 inout  BST;
 inout  GND;
+inout  PIN;
 inout  POK;
 inout  VCC;
 inout  BIAS;
 inout  FSET;
 inout  PGND;
+inout  PVCC;
 inout  SYNC;
-output  CELOUT;
 
 
 // ------------------------ Wires ------------------------
@@ -138,13 +140,13 @@ WALTZceleraCORE XceleraCORE (
 .BST(BST),
 .GND(GND),
 .PIN(PIN),
-.POK(POK),
+.POK(POK_inout),
 .TAO(TAO),
 .VCC(VCC),
 .tdo(tdo),
 .tmi(tmi[4:0]),
 .BIAS(BIAS),
-.FSET(FSET),
+.FSET(FSET_inout),
 .PGND(PGND),
 .PVCC(PVCC),
 .SYNC(SYNC),
@@ -155,27 +157,18 @@ WALTZceleraCORE XceleraCORE (
 .kelvin_VCC(kelvin_VCC),
 .CELSENSE_RF(CELSENSE_RF),
 .CELSUB40948(CELSUB40948),
-.SENSE_G_4c0bef8e(SENSE_G_4c0bef8e),
+.SENSE_G_39ab5afe(SENSE_G_39ab5afe),
 .kelvin_GNDservice(kelvin_GNDservice),
 .kelvin_GNDpowergood(kelvin_GNDpowergood),
 .kelvin_GNDsoftstart(kelvin_GNDsoftstart),
 .kelvin_GNDregulation(kelvin_GNDregulation),
-.celkelvin_IN_bc3b7675(celkelvin_IN_bc3b7675),
+.celkelvin_IN_f6ed70de(celkelvin_IN_f6ed70de),
 .celkelvin_GND_73ebd82d(celkelvin_GND_73ebd82d),
-.celkelvin_GND_bb7e77f4(celkelvin_GND_bb7e77f4),
-.celkelvin_GND_d75c3f7f(celkelvin_GND_d75c3f7f),
-.celkelvin_VCC_bc3b7675(celkelvin_VCC_bc3b7675),
-.celkelvin_BIAS_bc3b7675(celkelvin_BIAS_bc3b7675)
-);
-
-WALTZceleraREGISTER XceleraREGISTER (
-.scli(scli),
-.sdai(sdai),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.PORB97836(PORB97836),
-.CELSUB40948(CELSUB40948),
-.sdapd_registermap(pd0)
+.celkelvin_GND_b6a75424(celkelvin_GND_b6a75424),
+.celkelvin_GND_ba2e47c1(celkelvin_GND_ba2e47c1),
+.celkelvin_GND_c2e1c592(celkelvin_GND_c2e1c592),
+.celkelvin_VCC_f6ed70de(celkelvin_VCC_f6ed70de),
+.celkelvin_BIAS_f6ed70de(celkelvin_BIAS_f6ed70de)
 );
 
 WALTZceleraRING XceleraRING (
@@ -190,7 +183,7 @@ WALTZceleraRING XceleraRING (
 .TAO(TAO),
 .VCC(VCC),
 .tdo(tdo),
-.tmi(tmi[5:0]),
+.tmi(tmi[4:0]),
 .BIAS(BIAS),
 .FSET(FSET),
 .GOTP(GOTP),
@@ -198,37 +191,38 @@ WALTZceleraRING XceleraRING (
 .PVCC(PVCC),
 .SYNC(SYNC),
 .VOTP(VOTP),
-.CELOUT(CELOUT),
 .DFTSCL(DFTSCL),
 .DFTSDA(DFTSDA),
+.unlock(unlock),
 .sense_FB(sense_FB),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
+.POK_inout(POK_inout),
+.PORB97836(PORB97836),
+.FSET_inout(FSET_inout),
 .kelvin_VCC(kelvin_VCC),
 .CELSENSE_RF(CELSENSE_RF),
 .CELSUB40948(CELSUB40948),
-.SENSE_G_4c0bef8e(SENSE_G_4c0bef8e),
+.SENSE_G_39ab5afe(SENSE_G_39ab5afe),
 .kelvin_GNDservice(kelvin_GNDservice),
 .kelvin_GNDpowergood(kelvin_GNDpowergood),
 .kelvin_GNDsoftstart(kelvin_GNDsoftstart),
 .kelvin_GNDregulation(kelvin_GNDregulation),
-.celkelvin_IN_bc3b7675(celkelvin_IN_bc3b7675),
+.celkelvin_IN_f6ed70de(celkelvin_IN_f6ed70de),
 .celkelvin_GND_73ebd82d(celkelvin_GND_73ebd82d),
-.celkelvin_GND_bb7e77f4(celkelvin_GND_bb7e77f4),
-.celkelvin_GND_d75c3f7f(celkelvin_GND_d75c3f7f),
+.celkelvin_GND_b6a75424(celkelvin_GND_b6a75424),
+.celkelvin_GND_ba2e47c1(celkelvin_GND_ba2e47c1),
+.celkelvin_GND_c2e1c592(celkelvin_GND_c2e1c592),
 .celkelvin_VCC_9893c918(celkelvin_VCC_9893c918),
-.celkelvin_VCC_bc3b7675(celkelvin_VCC_bc3b7675),
-.celkelvin_BIAS_bc3b7675(celkelvin_BIAS_bc3b7675)
+.celkelvin_VCC_f6ed70de(celkelvin_VCC_f6ed70de),
+.celkelvin_BIAS_f6ed70de(celkelvin_BIAS_f6ed70de)
 );
 
 WALTZceleraSERDES XceleraSERDES (
-.pd0(pd0),
 .tdo(tdo),
 .tmi(tmi[5:0]),
 .GOTP(GOTP),
 .VOTP(VOTP),
-.scli(scli),
-.sdai(sdai),
 .DFTSCL(DFTSCL),
 .DFTSDA(DFTSDA),
 .unlock(unlock),
@@ -238,6 +232,14 @@ WALTZceleraSERDES XceleraSERDES (
 .PORB97836(PORB97836),
 .CELSUB40948(CELSUB40948),
 .celkelvin_VCC_9893c918(celkelvin_VCC_9893c918)
+);
+
+STONEnoconn XNCotp_done (
+.noconn(otp_done)
+);
+
+STONEnoconn XNCserdesTMI5 (
+.noconn(tmi[5])
 );
 
 endmodule

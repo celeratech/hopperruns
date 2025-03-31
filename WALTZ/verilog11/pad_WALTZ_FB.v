@@ -42,12 +42,12 @@ STONEpad1 XPAD1 (
 .PAD(FB)
 );
 
-ESDcore6 XESDcore6_8 (
+ESDcore6 XESDcore6_1 (
 .PAD(FB),
 .GESD(GESD)
 );
 
-PEBBLElinkKELVIN Xwrap_PAD1_SENSE0 (
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE_SINGLE (
 .NEG(sense_FB),
 .POS(FB)
 );

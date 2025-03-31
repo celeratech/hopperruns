@@ -1,4 +1,13 @@
 // ------------------------ Module Definitions -----------
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 //Verilog HDL for "memory", "fusebank" "functional"
 
 
@@ -126,14 +135,11 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module WALTZceleraSERDES (pd0, tdo, tmi, GOTP, VOTP, scli, sdai, DFTSCL, DFTSDA, unlock, otp_done, CELG59462, CELV96848, PORB97836, CELSUB40948, celkelvin_VCC_9893c918);
-input  pd0;
+module WALTZceleraSERDES (tdo, tmi, GOTP, VOTP, DFTSCL, DFTSDA, unlock, otp_done, CELG59462, CELV96848, PORB97836, CELSUB40948, celkelvin_VCC_9893c918);
 inout  tdo;
 inout [5:0] tmi;
 input  GOTP;
 input  VOTP;
-output  scli;
-inout  sdai;
 inout  DFTSCL;
 inout  DFTSDA;
 output  unlock;
@@ -160,6 +166,10 @@ wire [7:0] otp_strobe;
 wire [1:0] i2cpassword;
 
 // ------------------------ Networks ---------------------
+STONEnoconn XNCnoconn (
+.noconn(noconn)
+);
+
 fusebank Xfusebank (
 .q(otp_q[7:0]),
 .nr(otp_nr),
@@ -212,7 +222,7 @@ SERDESdftYesNo XSERDESdftYesNo (
 SERDEScontrolDRMautoNo XSERDEScontrolDRMautoNo (
 .a0(a0),
 .a1(a1),
-.pd({a0,a0,a0,a0,a0,a0,a0,pd0}),
+.pd({a0,a0,a0,a0,a0,a0,a0,a0}),
 .tmi(tmi[5:0]),
 .CELG(CELG59462),
 .CELV(CELV96848),

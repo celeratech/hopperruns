@@ -8,31 +8,21 @@ module STONEpad1 ( PAD );
 endmodule
 
 
-//Verilog HDL for "Esd", "ESDcore6" "functional"
+//Verilog HDL for "Esd", "ESDdiode" "functional"
 
 
-module ESDcore6 ( GESD, PAD );
+module ESDdiode ( N, P );
 
-  inout PAD;
-  input GESD;
-endmodule
-
-
-//Verilog HDL for "Generate", "WRAPPER1" "functional"
-
-
-module WRAPPER1 ( o, i );
-
-  input i;
-  output o;
+  input P;
+  input N;
 endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_WALTZ_FSET (FSET, GESD, CELSENSE_RF);
+module pad_WALTZ_FSET (VCC, FSET, GESD);
+inout  VCC;
 inout  FSET;
 input  GESD;
-output  CELSENSE_RF;
 
 
 // ------------------------ Wires ------------------------
@@ -42,14 +32,19 @@ STONEpad1 XPAD1 (
 .PAD(FSET)
 );
 
-ESDcore6 XESDcore6_3 (
-.PAD(FSET),
-.GESD(GESD)
+ESDdiode Xesd_XPAD1 (
+.N(FSET),
+.P(GESD)
 );
 
-WRAPPER1 XWRAP_CELSENSE_RF (
-.i(FSET),
-.o(CELSENSE_RF)
+ESDdiode Xesd1_XPAD1 (
+.N(VCC),
+.P(FSET)
+);
+
+ESDdiode Xesd2_XPAD1 (
+.N(FSET),
+.P(GESD)
 );
 
 endmodule

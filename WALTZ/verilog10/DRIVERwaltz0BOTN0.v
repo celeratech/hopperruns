@@ -91,8 +91,23 @@ endmodule
 
 
 
-module fetdn_9694dc46 ();
+//Celera:fetdn_9694dc46
+//Celera Confidential Symbol Generator
+//power NMOS:Ron:0.820 Ohm
+//Vgs 6V Vds 60V
+//Kelvin:yes
+
+module fetdn_9694dc46 (GATE,SOURCE,DRAIN,SOURCEk,DRAINk,IREPLICA,SUB);
+input GATE;
+inout SOURCE;
+inout DRAIN;
+inout DRAINk;
+inout SOURCEk;
+input SUB;
+inout IREPLICA;
 endmodule
+
+
 
 //Celera:currentlimitfet_282c42a8
 //Celera Confidential Symbol Generator
@@ -131,13 +146,13 @@ module STONEnoconn ( noconn );
 endmodule
 
 
-//Celera:fetdriver_e53ed485
+//Celera:fetdriver_5a9a8b9f
 //Celera Confidential Symbol Generator
 //FET DRIVER 'n' Type 8 Ron 4 Roff 
 //Input 6V Levelshifter
 //Gate Sense 6V Sense Levelshifterwith 0nsdelay
 //DFT no
-module fetdriver_e53ed485 (HVPOS,global_fetdriver,fetin,GATE,gate_status,
+module fetdriver_5a9a8b9f (HVPOS,global_fetdriver,fetin,GATE,gate_status,
 gate_status_vin,
 CELV,
 CELG,
@@ -284,7 +299,13 @@ fetdn_359003a8 XU14 (
 );
 
 fetdn_9694dc46 XU16 (
-
+.SUB(CELSUB40948),
+.GATE(net_114),
+.DRAIN(SW),
+.DRAINk(net_107),
+.SOURCE(PMUDG),
+.SOURCEk(net_72),
+.IREPLICA(net_102)
 );
 
 currentlimitfet_282c42a8 XU17 (
@@ -319,7 +340,7 @@ STONEnoconn XNC72 (
 .noconn(net_72)
 );
 
-fetdriver_e53ed485 Xfetdriver1 (
+fetdriver_5a9a8b9f Xfetdriver1 (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .GATE(net_114),
@@ -333,15 +354,15 @@ fetdriver_e53ed485 Xfetdriver1 (
 .global_fetdriver(global_fetdriver_bd0adf3c_Xfetdriver1)
 );
 
-DFTtm8d dft_hex0x06 (
+DFTtm8d dft_hex0x04 (
 .G(CELG59462),
 .V(CELV96848),
 .a({a1,a0}),
 .SUB(CELSUB40948),
 .tdi({a0,a0,a0,a0,a0,tdi_currentlimitlive_a0afb596_XU9,tdi_currentlimitlive_14d08c8e_XU3,tdi_currentlimitlive_2d447a5c_XU17}),
 .tdo(tdo),
-.ten({noconn_dft_hex0x06_ten_7,global_fetdriver_bd0adf3c_Xfetdriver1,ten_measure_currentlimit_a0afb596_XU9,global_currentlimit_a0afb596_XU9,ten_measure_currentlimit_14d08c8e_XU3,global_currentlimit_14d08c8e_XU3,ten_measure_currentlimit_2d447a5c_XU17,global_currentlimit_2d447a5c_XU17}),
-.tma({a0,a0,a0,a0,a0,a1,a1,a0}),
+.ten({noconn_dft_hex0x04_ten_7,global_fetdriver_bd0adf3c_Xfetdriver1,ten_measure_currentlimit_a0afb596_XU9,global_currentlimit_a0afb596_XU9,ten_measure_currentlimit_14d08c8e_XU3,global_currentlimit_14d08c8e_XU3,ten_measure_currentlimit_2d447a5c_XU17,global_currentlimit_2d447a5c_XU17}),
+.tma({a0,a0,a0,a0,a0,a1,a0,a0}),
 .tmi(tmi[4:0])
 );
 
@@ -360,8 +381,8 @@ drm24L drm_hex0x06 (
 .lastdrm(c0)
 );
 
-STONEnoconn XNCnoconn_dft_hex0x06_ten_7 (
-.noconn(noconn_dft_hex0x06_ten_7)
+STONEnoconn XNCnoconn_dft_hex0x04_ten_7 (
+.noconn(noconn_dft_hex0x04_ten_7)
 );
 
 endmodule

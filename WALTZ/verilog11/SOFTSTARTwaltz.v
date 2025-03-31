@@ -15,8 +15,8 @@ module SOFTSTARTwaltzDEBUG (SS,TAO,tdo,tmi,CELG59462,CELV96848,dft_clock,CELSUB4
   output  hijack_enable_softstart;
 endmodule
 
-module SOFTSTARTwaltz8MAIN (SS,REF,tmi,MUDV,halfway,CELG59462,CELV96848,dft_clock,CELSUB40948,IP_4c0bef8e,enable_brick,softstart_1ms,done_softstart,SENSE_G_4c0bef8e,enable_softstart,kelvin_MUDGsoftstart);
-  output  SS;
+module SOFTSTARTwaltz8BMAIN (SS,REF,tmi,MUDV,halfway,CELG59462,CELV96848,dft_clock,CELSUB40948,IP_116e6b00,IP_39ab5afe,IP_bca60d43,enable_brick,softstart_1ms,done_softstart,SENSE_G_39ab5afe,enable_softstart,completed_softstart,kelvin_MUDGsoftstart);
+  inout  SS;
   input  REF;
   input [4:0] tmi;
   input  MUDV;
@@ -25,67 +25,55 @@ module SOFTSTARTwaltz8MAIN (SS,REF,tmi,MUDV,halfway,CELG59462,CELV96848,dft_cloc
   input  CELV96848;
   output  dft_clock;
   input  CELSUB40948;
-  input  IP_4c0bef8e;
+  input  IP_116e6b00;
+  input  IP_39ab5afe;
+  input  IP_bca60d43;
   input  enable_brick;
   input  softstart_1ms;
   output  done_softstart;
-  input  SENSE_G_4c0bef8e;
+  input  SENSE_G_39ab5afe;
   input  enable_softstart;
+  output  completed_softstart;
   input  kelvin_MUDGsoftstart;
 endmodule
 
-//Verilog HDL for "DRM", "drm8" "functional"
-
-
-module drm8 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, drm0, d1, d0 );
-
-  input lastdrm;
-  input V;
-  output d1;
-  input  [7:0] id;
-  output d0;
-  input bypload;
-  output  [7:0] drm0;
-  input  [7:0] por0;
-  input G;
-  inout  [4:0] tmi;
-  input SUB;
+//Celera:tie_9e2c0894
+//Celera Confidential Symbol Generator
+//TIE
+module tie_9e2c0894 (CELV,CELG,a0,SUB);
+input CELV;
+input CELG;
+output a0;
+input SUB;
 endmodule
 
-
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SOFTSTARTwaltz (SS, REF, TAO, tdo, tmi, MUDV, CELG59462, CELV96848, CELSUB40948, IP_4c0bef8e, enable_brick, done_softstart, SENSE_G_4c0bef8e, enable_softstart, kelvin_MUDGsoftstart);
-output  SS;
+module SOFTSTARTwaltz (SS, REF, TAO, tdo, tmi, MUDV, CELG59462, CELV96848, CELSUB40948, IP_116e6b00, IP_39ab5afe, IP_bca60d43, enable_brick, softstart_1ms, done_softstart, SENSE_G_39ab5afe, enable_softstart, completed_softstart, kelvin_MUDGsoftstart);
+inout  SS;
 input  REF;
 inout  TAO;
 inout  tdo;
-inout [4:0] tmi;
+input [4:0] tmi;
 input  MUDV;
 input  CELG59462;
 input  CELV96848;
 input  CELSUB40948;
-input  IP_4c0bef8e;
+input  IP_116e6b00;
+input  IP_39ab5afe;
+input  IP_bca60d43;
 input  enable_brick;
+input  softstart_1ms;
 output  done_softstart;
-input  SENSE_G_4c0bef8e;
+input  SENSE_G_39ab5afe;
 input  enable_softstart;
+output  completed_softstart;
 input  kelvin_MUDGsoftstart;
 
 
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
-wire [7:0] id;
-wire [7:0] drm0;
-wire [7:0] por0;
 
 // ------------------------ Networks ---------------------
 SOFTSTARTwaltzDEBUG XDEBUG (
@@ -95,70 +83,42 @@ SOFTSTARTwaltzDEBUG XDEBUG (
 .tmi(tmi[4:0]),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.dft_clock(net_60),
+.dft_clock(net_51),
 .CELSUB40948(CELSUB40948),
 .enable_brick(enable_brick),
 .done_softstart(done_softstart),
 .enable_softstart(enable_softstart),
-.hijack_enable_brick(net_58),
-.hijack_enable_softstart(net_59)
+.hijack_enable_brick(net_49),
+.hijack_enable_softstart(net_50)
 );
 
-SOFTSTARTwaltz8MAIN XMAIN8 (
+SOFTSTARTwaltz8BMAIN XMAIN (
 .SS(SS),
 .REF(REF),
 .tmi(tmi[4:0]),
 .MUDV(MUDV),
-.halfway(net_36),
+.halfway(net_48),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.dft_clock(net_60),
+.dft_clock(net_51),
 .CELSUB40948(CELSUB40948),
-.IP_4c0bef8e(IP_4c0bef8e),
-.enable_brick(net_58),
-.softstart_1ms(net_35),
+.IP_116e6b00(IP_116e6b00),
+.IP_39ab5afe(IP_39ab5afe),
+.IP_bca60d43(IP_bca60d43),
+.enable_brick(net_49),
+.softstart_1ms(softstart_1ms),
 .done_softstart(done_softstart),
-.SENSE_G_4c0bef8e(SENSE_G_4c0bef8e),
-.enable_softstart(net_59),
+.SENSE_G_39ab5afe(SENSE_G_39ab5afe),
+.enable_softstart(net_50),
+.completed_softstart(completed_softstart),
 .kelvin_MUDGsoftstart(kelvin_MUDGsoftstart)
 );
 
-drm8 drm_hex0x0F (
-.G(CELG59462),
-.V(CELV96848),
-.d0(a0),
-.d1(a1),
-.id({a0,a0,a0,a0,a1,a1,a1,a1}),
+tie_9e2c0894 XU5 (
+.a0(net_48),
 .SUB(CELSUB40948),
-.tmi(tmi[4:0]),
-.drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,noconn_drm8_drm0_3,noconn_drm8_drm0_2,net_36,net_35}),
-.por0({a0,a0,a0,a0,a0,a0,a0,a0}),
-.bypload(a0),
-.lastdrm(a0)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_2 (
-.noconn(noconn_drm8_drm0_2)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_3 (
-.noconn(noconn_drm8_drm0_3)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_4 (
-.noconn(noconn_drm8_drm0_4)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_5 (
-.noconn(noconn_drm8_drm0_5)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_6 (
-.noconn(noconn_drm8_drm0_6)
-);
-
-STONEnoconn XNCnoconn_drm8_drm0_7 (
-.noconn(noconn_drm8_drm0_7)
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 endmodule

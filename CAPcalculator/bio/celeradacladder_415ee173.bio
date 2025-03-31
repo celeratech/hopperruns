@@ -408,48 +408,6 @@ endlayoutbio
 
 //**********************************************
 //Project Parameters
-//Celera:CAPcalculator Project Bio
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////   default.bio'  DO NOT USE  ///////////////////////////////////
-
-//Simplis Project Parameters /////////////////////////////////////////////
-#define,Project,TBD
-#define,PROJECTreference,TBD
-#define,PROJECTsupply,5
-#define,TaRoom,25
-#define,ground,0.0
-#define,leveloffset,5
-//////////////////////////////////////////////////////////////////////////////////////////
-
-//Porcess  Parameters ///////////////////////////////////////////////////////
-#define,PROJECTbg,1.232
-#define,REFERENCEccpcode,15
-#define,REFERENCEccncode,15
-#define,HVNPN2A_5vbe,0.55
-#define,HVNPN2A_5vbetc,-2.1
-#define,VTNnch5i,0.72
-//#define,FETNcalculator_option,typical
-#define,FETNcalculator,maximum
-//#define,FETPcalculator_option,typical
-#define,FETPcalculator,maximum
-////////////////////////////////////////////////////////////////////////////////////////
-
-//Global Parameters ///////////////////////////////////////////////////////
-#define,CELVminimum,2.0
-#define,CELGabsmax,0.3
-#define,CELGabsmin,-0.3
-#define,SUBabsmax,0.3
-#define,SUBabsmin,-0.3
-#define,CELSUBabsmax,0.3
-#define,CELSUBabsmin,-0.3
-/////////////////////////////////////////////////////////////////////////////////////////
-
-//layout Parameters //////////////////////////////////////////////////////////
-#define MODULEdiesizefill 10
-//Percentage of area added to module for routing
-////////////////////////////////////////////////////////////////////////////////////////
-
-
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
@@ -903,8 +861,10 @@ layout,SIMPV,na
 pinname,CELG
 definition,CELG,DAC power ground
 iq,CELG,SIMULATION
-absmax,CELG,0.3
-absmin,CELG,-0.3
+absmax,CELG,
+
+absmin,CELG,****************
+
 io,CELG,input
 mode,CELG,power
 router,CELG,TBD
@@ -915,8 +875,8 @@ layout,CELG,na
 pinname,GNDSENSE
 definition,GNDSENSE,DAC sense ground
 iq,GNDSENSE,SIMULATION
-absmax,GNDSENSE,0.3
-absmin,GNDSENSE,-0.3
+absmax,GNDSENSE,
+absmin,GNDSENSE,
 io,GNDSENSE,input
 mode,GNDSENSE,power
 router,GNDSENSE,TBD
@@ -928,7 +888,8 @@ pinname,CELREF
 definition,CELREF,DAC global input Reference voltage
 iq,CELREF,SIMULATION
 absmax,CELREF,6
-absmin,CELREF,-0.3
+absmin,CELREF,****************
+
 io,CELREF,input
 mode,CELREF,analog
 router,CELREF,TBD
@@ -940,7 +901,8 @@ pinname,DAC
 definition,DAC,DAC output voltage
 iq,DAC,SIMULATION
 absmax,DAC,6
-absmin,DAC,-0.3
+absmin,DAC,****************
+
 io,DAC,output
 mode,DAC,analog
 router,DAC,TBD
@@ -952,7 +914,8 @@ pinname,global_dacladder
 definition,global_dacladder,Global DFT enable
 iq,global_dacladder,SIMULATION
 absmax,global_dacladder,6
-absmin,global_dacladder,-0.3
+absmin,global_dacladder,****************
+
 io,global_dacladder,input
 mode,global_dacladder,digital
 router,global_dacladder,TBD
@@ -964,7 +927,8 @@ pinname,strobe_dac
 definition,strobe_dac,Stobe DAC output
 iq,strobe_dac,SIMULATION
 absmax,strobe_dac,6
-absmin,strobe_dac,-0.3
+absmin,strobe_dac,****************
+
 io,strobe_dac,input
 mode,strobe_dac,digital
 router,strobe_dac,TBD
@@ -976,7 +940,8 @@ pinname,IP
 definition,IP,buffer 0.5uA reference current
 iq,IP,SIMULATION
 absmax,IP,6
-absmin,IP,-0.3
+absmin,IP,****************
+
 io,IP,input
 mode,IP,analog
 router,IP,TBD
@@ -987,7 +952,8 @@ pinname,i
 definition,i,DAC input Code
 iq,i,SIMULATION
 absmax,i,6
-absmin,i,-0.3
+absmin,i,****************
+
 io,i,input
 mode,i,digital
 router,i,TBD
@@ -998,7 +964,8 @@ pinname,ok_dac
 definition,ok_dac,DAC output data ready
 iq,ok_dac,SIMULATION
 absmax,ok_dac,6
-absmin,ok_dac,-0.3
+absmin,ok_dac,****************
+
 io,ok_dac,input
 mode,ok_dac,digital
 router,ok_dac,TBD
@@ -1008,8 +975,8 @@ esd,ok_dac,TBD
 pinname,CELSUB
 definition,CELSUB,Substrate
 iq,CELSUB,SIMULATION
-absmax,CELSUB,0.3
-absmin,CELSUB,-0.3
+absmax,CELSUB,
+absmin,CELSUB,
 io,CELSUB,input
 mode,CELSUB,analog
 router,CELSUB,TBD

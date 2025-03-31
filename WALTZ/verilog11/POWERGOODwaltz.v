@@ -1,15 +1,11 @@
 // ------------------------ Module Definitions -----------
-module POWERGOODwaltDEBUG (TAO,tdo,tmi,CELG59462,CELV96848,dft_pgout,CELSUB40948,dft_pgDELAY,fault_short,dft_REFBUFFER,dft_pgSTARTUP,dft_pgDEGLITCH,dft_shortdelay,enable_powergood,hijack_risedelay,hijack_enable_powergood);
-  inout  TAO;
+module POWERGOODwaltDEBUG (tdo,tmi,CELG59462,CELV96848,CELSUB40948,fault_short,dft_pgSTARTUP,dft_pgDEGLITCH,dft_shortdelay,enable_powergood,hijack_risedelay,hijack_enable_powergood);
   inout  tdo;
   input [4:0] tmi;
   input  CELG59462;
   input  CELV96848;
-  input  dft_pgout;
   input  CELSUB40948;
-  input  dft_pgDELAY;
   input  fault_short;
-  input  dft_REFBUFFER;
   input  dft_pgSTARTUP;
   input  dft_pgDEGLITCH;
   input  dft_shortdelay;
@@ -18,9 +14,8 @@ module POWERGOODwaltDEBUG (TAO,tdo,tmi,CELG59462,CELV96848,dft_pgout,CELSUB40948
   output  hijack_enable_powergood;
 endmodule
 
-module POWERGOODwaltzMAIN (POK,tdo,tmi,MUDV,clock,sense_FB,CELG59462,CELV96848,PORB97836,dft_pgout,CELSUB40948,IP_70e67769,IP_ddbf938d,IP_e96a4067,dft_pgDELAY,fault_short,REF_POWERGOOD,dft_REFBUFFER,dft_pgSTARTUP,dft_pgDEGLITCH,dft_shortdelay,enable_powergood,hijack_risedelay,kelvin_MUDGpowergood);
+module POWERGOODwaltzMAIN (POK,tmi,MUDV,clock,sense_FB,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_70e67769,IP_ddbf938d,IP_e96a4067,fault_short,REF_POWERGOOD,dft_pgSTARTUP,dft_pgDEGLITCH,dft_shortdelay,enable_powergood,hijack_risedelay,kelvin_MUDGpowergood);
   inout  POK;
-  inout  tdo;
   input [4:0] tmi;
   input  MUDV;
   input  clock;
@@ -28,15 +23,12 @@ module POWERGOODwaltzMAIN (POK,tdo,tmi,MUDV,clock,sense_FB,CELG59462,CELV96848,P
   input  CELG59462;
   input  CELV96848;
   input  PORB97836;
-  output  dft_pgout;
   input  CELSUB40948;
   input  IP_70e67769;
   input  IP_ddbf938d;
   input  IP_e96a4067;
-  output  dft_pgDELAY;
   output  fault_short;
   input  REF_POWERGOOD;
-  inout  dft_REFBUFFER;
   output  dft_pgSTARTUP;
   output  dft_pgDEGLITCH;
   output  dft_shortdelay;
@@ -46,9 +38,8 @@ module POWERGOODwaltzMAIN (POK,tdo,tmi,MUDV,clock,sense_FB,CELG59462,CELV96848,P
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module POWERGOODwaltz (POK, TAO, tdo, tmi, MUDV, clock, sense_FB, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_70e67769, IP_ddbf938d, IP_e96a4067, fault_short, REF_POWERGOOD, enable_powergood, kelvin_MUDGpowergood);
+module POWERGOODwaltz (POK, tdo, tmi, MUDV, clock, sense_FB, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_70e67769, IP_ddbf938d, IP_e96a4067, fault_short, REF_POWERGOOD, enable_powergood, kelvin_MUDGpowergood);
 inout  POK;
-inout  TAO;
 inout  tdo;
 input [4:0] tmi;
 input  MUDV;
@@ -72,27 +63,22 @@ wire [4:0] tmi;
 
 // ------------------------ Networks ---------------------
 POWERGOODwaltDEBUG XDEBUG (
-.TAO(TAO),
 .tdo(tdo),
 .tmi(tmi[4:0]),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.dft_pgout(net_54),
 .CELSUB40948(CELSUB40948),
-.dft_pgDELAY(net_55),
 .fault_short(fault_short),
-.dft_REFBUFFER(net_52),
-.dft_pgSTARTUP(net_57),
-.dft_pgDEGLITCH(net_56),
-.dft_shortdelay(net_58),
+.dft_pgSTARTUP(net_48),
+.dft_pgDEGLITCH(net_47),
+.dft_shortdelay(net_46),
 .enable_powergood(enable_powergood),
-.hijack_risedelay(net_53),
-.hijack_enable_powergood(net_51)
+.hijack_risedelay(net_49),
+.hijack_enable_powergood(net_45)
 );
 
 POWERGOODwaltzMAIN XMAIN (
 .POK(POK),
-.tdo(tdo),
 .tmi(tmi[4:0]),
 .MUDV(MUDV),
 .clock(clock),
@@ -100,20 +86,17 @@ POWERGOODwaltzMAIN XMAIN (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
-.dft_pgout(net_54),
 .CELSUB40948(CELSUB40948),
 .IP_70e67769(IP_70e67769),
 .IP_ddbf938d(IP_ddbf938d),
 .IP_e96a4067(IP_e96a4067),
-.dft_pgDELAY(net_55),
 .fault_short(fault_short),
 .REF_POWERGOOD(REF_POWERGOOD),
-.dft_REFBUFFER(net_52),
-.dft_pgSTARTUP(net_57),
-.dft_pgDEGLITCH(net_56),
-.dft_shortdelay(net_58),
-.enable_powergood(net_51),
-.hijack_risedelay(net_53),
+.dft_pgSTARTUP(net_48),
+.dft_pgDEGLITCH(net_47),
+.dft_shortdelay(net_46),
+.enable_powergood(net_45),
+.hijack_risedelay(net_49),
 .kelvin_MUDGpowergood(kelvin_MUDGpowergood)
 );
 
