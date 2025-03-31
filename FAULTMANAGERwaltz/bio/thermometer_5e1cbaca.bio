@@ -9,7 +9,7 @@
 cell,thermometer
 //**********************************************
 //Generator Revision
-revision,generator,0.5.0
+revision,generator,0.5.1
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
@@ -35,6 +35,8 @@ limit,thermometer_datasheet_name,text
 limit,thermometer_datasheet_description,text
 limit,thermometer_trim_name,text
 limit,thermometer_trim_description,text
+limit,thermometer_thermalshutdown,choose0,no
+limit,thermometer_thermalshutdown,choose1,yes
 //**********************************************
 //PAD Parameters
 //**********************************************
@@ -43,7 +45,7 @@ user,Offset_25C,200mV
 description,Offset
 user,Gain,5mV/C
 description,Gain
-user,NESTO,0.5.0
+user,NESTO,0.5.1
 description,NESTOn//**********************************************
 //POR Parameters
 //**********************************************
@@ -151,7 +153,7 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,1.0
+#define,PROJECTreference,TBD
 #define,PROJECTsupply,5
 #define,TaRoom,25
 #define,ground,0.0
@@ -193,16 +195,16 @@ revision,vis15cbdiesize,0p1
 sub_area,STONEnoconn,0
 sub_area,STONEnoconn,0
 sub_area,STONEthermometerMAIN,99999
-sub_area,STONEdelay10usRise,999999
-sub_area,resistor_thermometer_5e1cbaca_Xbottom,2220
-sub_area,resistor_thermometer_5e1cbaca_Xtop,2162
+sub_area,resistor_thermometer_5e1cbaca_Xbottom,1
+sub_area,resistor_thermometer_5e1cbaca_Xtop,39
 sub_area,resistor_thermometer_5e1cbaca_Xoffset,2211
-generate_area,thermometer_5e1cbaca,1106591
+generate_area,thermometer_5e1cbaca,102250
 // *********************************************
 //Calculator Parameters
 #define,THERMOMTERvbufferRIN,1000.0
 #define,SIMPVminimumTHERMOMETER,2.2
 #define,THERMOMTERtaext,500
+#define,THERMLAshutdownOVERRIDE,yes
 
 #define Dvbem50,44.74
 #define,Dvbe25,59.63
@@ -406,28 +408,6 @@ mode,TAI_OUT_THERMOMETER,analog
 router,TAI_OUT_THERMOMETER,TBD
 dftpriority,TAI_OUT_THERMOMETER,1
 esd,TAI_OUT_THERMOMETER,TBD
-
-pinname,trim_thermometer_top
-definition,trim_thermometer_topThermometer top accuracy
-iq,trim_thermometer_top,SIMULATION
-absmax,trim_thermometer_top,6
-absmin,trim_thermometer_top,-0.3
-io,trim_thermometer_top,input
-mode,trim_thermometer_top,digital
-router,trim_thermometer_top,TBD
-dftpriority,trim_thermometer_top,1
-esd,trim_thermometer_top,TBD
-
-pinname,trim_thermometer_bottom
-definition,trim_thermometer_bottom,Thermometer bottom accuracy
-iq,trim_thermometer_bottom,SIMULATION
-absmax,trim_thermometer_bottom,6
-absmin,trim_thermometer_bottom,-0.3
-io,trim_thermometer_bottom,input
-mode,trim_thermometer_bottom,digital
-router,trim_thermometer_bottom,TBD
-dftpriority,trim_thermometer_bottom,1
-esd,trim_thermometer_bottom,TBD
 
 pinname,trim_thermometer_offset
 definition,trim_thermometer_offset,Thermometer offset accuracy

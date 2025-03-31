@@ -71,8 +71,6 @@ module thermometer_5e1cbaca (SIMPV,IP,OUT_THERMOMETER,ok_thermometer,celkelvin_G
 enable_thermometer,
 global_thermometer,ten_thermometer,ten_out_thermometer,
 TAI_OUT_THERMOMETER,
-trim_thermometer_top,
-trim_thermometer_bottom,
 trim_thermometer_offset,
 CELG,CELSUB); 
 input SIMPV;
@@ -85,8 +83,6 @@ input global_thermometer;
 input ten_thermometer;
 input ten_out_thermometer;
 output TAI_OUT_THERMOMETER;
-input [6:0] trim_thermometer_top;
-input [6:0] trim_thermometer_bottom;
 input [6:0] trim_thermometer_offset;
 input CELG;
 input CELSUB;
@@ -118,8 +114,6 @@ input  celkelvin_GNDthermometer;
 
 
 // ------------------------ Wires ------------------------
-wire [6:0] trim_thermometer_top;
-wire [6:0] trim_thermometer_bottom;
 wire [6:0] trim_thermometer_offset;
 
 // ------------------------ Networks ---------------------
@@ -189,8 +183,6 @@ thermometer_5e1cbaca Xthermometer1 (
 .global_thermometer(tl0),
 .TAI_OUT_THERMOMETER(noconn_TAI_OUT_THERMOMETER1),
 .ten_out_thermometer(tl0),
-.trim_thermometer_top({a0,a0,a0,a0,a0,a0,a0}),
-.trim_thermometer_bottom({a0,a0,a0,a0,a0,a0,a0}),
 .trim_thermometer_offset({a0,a0,a0,a0,a0,a0,a0}),
 .celkelvin_GNDthermometer(celkelvin_GNDthermometer)
 );

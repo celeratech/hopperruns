@@ -88,8 +88,6 @@ user,resistor_type,poly
 description,Resistor Type
 user,resistor_imax,1.000mA
 description,Resistor Maximum Current Density
-user,resistor_accurate_lsb,1.000%
-description,Resistor Accuracy LSB
 user,NESTO,0.4.5
 description,NESTO generate Revision
 //**********************************************
@@ -219,7 +217,7 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,1.0
+#define,PROJECTreference,TBD
 #define,PROJECTsupply,5
 #define,TaRoom,25
 #define,ground,0.0
@@ -258,48 +256,36 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,rlpp3000rpo24p3u0p4u,15
-sub_area,STONEresistorswitchLB,280
-sub_area,rlpp3000rpo16p2u0p4u,10
-sub_area,STONEresistorswitchL,305
-sub_area,rlpp3000rpo8p1u0p4u,5
-sub_area,STONEresistorswitchL,305
-sub_area,rlpp3000rpo4p0u0p4u,2
-sub_area,STONEresistorswitchL,305
-sub_area,rlpp3000rpo2p0u0p4u,1
-sub_area,STONEresistorswitchL,305
-sub_area,rlpp3000rpo3p0u0p4u,8
-sub_area,STONEresistorswitchL,305
-sub_area,rlpp3000rpo2p0u0p4u,5
-sub_area,STONEresistorswitchL,305
-sub_area,rlpp3000rpo1p5u0p4u,6
-generate_area,resistor_thermometer_5e1cbaca_Xtop,2162
+sub_area,rlpp3000rpo26p4u0p5u,39
+generate_area,resistor_thermometer_5e1cbaca_Xtop,39
 // *********************************************
 //TRIM Parameters
 cell,resistor
 trim,instance,resistor_thermometer_5e1cbaca_Xtop
 
-trim,name,text THERMOMETER top Resistor
-trim,enable,yes
-trim,bits,7
+trim,name,na
+
+trim,enable,no
+trim,bits,0
 trim,por,0
 trim,pinname,trim_resistor
-trim,testname,text THERMOMETER top Resistor
-trim,description,text THERMOMETER top Accuracy
-trim,target,427.37,Kohm
+trim,testname,na
+
+trim,description,na
+trim,target,na
 trim,units,Kohm
-trim,pretrim_low_limit,387.370
-trim,pretrim_high_limit,467.370
-trim,posttrim_low_limit,425.870
-trim,posttrim_high_limit,428.870
+trim,pretrim_low_limit,0.000
+trim,pretrim_high_limit,0.000
+trim,posttrim_low_limit,0.000
+trim,posttrim_high_limit,0.000
 trim,codeunits,%
-trim,description0,Code 0x01 0.62
-trim,description1,Code 0x02 1.25
-trim,description2,Code 0x04 2.50
-trim,description3,Code 0x08 5.00
-trim,description4,Code 0x10 10.00
-trim,description5,Code 0x20 20.00
-trim,description6,Code 0x40 40.00
+trim,description0,not used
+trim,description1,not used
+trim,description2,not used
+trim,description3,not used
+trim,description4,not used
+trim,description5,not used
+trim,description6,not used
 trim,description7,not used
 
 
@@ -405,16 +391,6 @@ dftpriority,RN,1
 esd,RN,TBD
 
 
-pinname,CELV
-definition,CELV,Resistor Trim Power
-iq,CELV,SIMULATION
-absmax,CELV,6
-absmin,CELV,1.8
-io,CELV,input
-mode,CELV,analog
-router,CELV,TBD
-dftpriority,CELV,1
-esd,CELV,TBD
 
 pinname,CELG
 definition,CELG,Resistor Trim Ground
@@ -429,16 +405,6 @@ esd,CELG,TBD
 
 
 
-pinname,trim_resistor
-definition,trim_resistor,resistor accuracy control 
-iq,trim_resistor,SIMULATION
-absmax,trim_resistor,6
-absmin,trim_resistor,-0.3
-io,trim_resistor,input
-mode,trim_resistor,digital
-router,trim_resistor,TBD
-dftpriority,trim_resistor,1
-esd,trim_resistor,TBD
 
 
 
@@ -447,16 +413,6 @@ esd,trim_resistor,TBD
 
 
 
-pinname,CELSUB
-definition,CELSUB,Substrate connection
-iq,CELSUB,SIMULATION
-absmax,CELSUB,0.3
-absmin,CELSUB,-0.3
-io,CELSUB,input
-mode,CELSUB,power
-router,CELSUB,TBD
-dftpriority,CELSUB,1
-esd,CELSUB,TBD
 
 //**********************************************
 //Process Parameters

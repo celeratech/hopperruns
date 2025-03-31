@@ -57,7 +57,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module FAULTMANAGERwaltz (REF, MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELSUB40948, IP_799e9a57, IP_7f7f5fd0, blank_fault, fault_short, fault_freeze, enable_faultmanager);
+module FAULTMANAGERwaltz (REF, MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELSUB40948, IP_799e9a57, IP_7f7f5fd0, blank_fault, fault_short, fault_freeze, enable_faultmanager, celkelvin_GNDthermometer);
 input  REF;
 input  MUDV;
 input  clock;
@@ -72,6 +72,7 @@ input  blank_fault;
 input  fault_short;
 output  fault_freeze;
 input  enable_faultmanager;
+input  celkelvin_GNDthermometer;
 
 
 // ------------------------ Wires ------------------------

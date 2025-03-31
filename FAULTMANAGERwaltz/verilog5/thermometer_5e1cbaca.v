@@ -1,7 +1,7 @@
 //Celera Brick Generator Confidential
 //CORE:thermometer
 //NAME:thermometer_5e1cbaca
-//GENERATOR REVISION:0.5.0
+//GENERATOR REVISION:0.5.1
 //OUTPUT:200V
 //BUFFER:no
 //BUFFER GAIN:1
@@ -10,43 +10,31 @@
 //DFT:yes
 //ACCURACY:yes
 //VMAX:6V
-//N ESTO:0.5.0
+//N ESTO:0.5.1
 
 //Celera Confidential Do Not Copy resistor_thermometer_5e1cbaca_Xbottom.v
 //Celera:resistor_thermometer_5e1cbaca_Xbottom
 //Celera Confidential Symbol Generator
-//RESISTOR:28.40KOhm TYPE:poly Accuracy:1.000% DFT:no
+//RESISTOR:28.40KOhm TYPE:poly DFT:no
 module resistor_thermometer_5e1cbaca_Xbottom (RP,
-CELV,
 CELG,
-CELSUB,
-trim_resistor,
 RN);
 inout RP;
 inout RN;
-input CELV;
 input CELG;
-input CELSUB;
-input [6:0] trim_resistor;
 endmodule
 
 
 //Celera Confidential Do Not Copy resistor_thermometer_5e1cbaca_Xtop.v
 //Celera:resistor_thermometer_5e1cbaca_Xtop
 //Celera Confidential Symbol Generator
-//RESISTOR:427.37KOhm TYPE:poly Accuracy:1.000% DFT:no
+//RESISTOR:427.37KOhm TYPE:poly DFT:no
 module resistor_thermometer_5e1cbaca_Xtop (RP,
-CELV,
 CELG,
-CELSUB,
-trim_resistor,
 RN);
 inout RP;
 inout RN;
-input CELV;
 input CELG;
-input CELSUB;
-input [6:0] trim_resistor;
 endmodule
 
 
@@ -124,8 +112,6 @@ module thermometer_5e1cbaca (SIMPV,IP,OUT_THERMOMETER,ok_thermometer,celkelvin_G
 enable_thermometer,
 global_thermometer,ten_thermometer,ten_out_thermometer,
 TAI_OUT_THERMOMETER,
-trim_thermometer_top,
-trim_thermometer_bottom,
 trim_thermometer_offset,
 CELG,CELSUB); 
 input SIMPV;
@@ -138,8 +124,6 @@ input global_thermometer;
 input ten_thermometer;
 input ten_out_thermometer;
 output TAI_OUT_THERMOMETER;
-input [6:0] trim_thermometer_top;
-input [6:0] trim_thermometer_bottom;
 input [6:0] trim_thermometer_offset;
 input CELG;
 input CELSUB;
@@ -168,7 +152,7 @@ STONEthermometerMAIN Xmain(
 .a0 (noconn_a0),
 .a1 (noconn_a1),
 .IP (IP),
-.ok_thermometer (ok),
+.ok_thermometer (ok_thermometer),
 .ten_thermometer (ten_thermometer),
 .ten_out_thermometer (ten_out_thermometer),
 .TAI_OUT_THERMOMETER (TAI_OUT_THERMOMETER),
@@ -180,21 +164,8 @@ STONEthermometerMAIN Xmain(
 );
 //,diesize,STONEthermometerMAIN
 
-//Celera Confidential Do Not Copy STONEdelay10usRise
-STONEdelay10usRise Xdelayok(
-.CELV (SIMPV),
-.i (ok),
-.o (ok_thermometer),
-.CELG (CELG),
-.CELSUB (CELSUB)
-);
-//,diesize,STONEdelay10usRise
-
 //Celera Confidential Do Not Copy resistor_thermometer_5e1cbaca_Xbottom
 resistor_thermometer_5e1cbaca_Xbottom Xbottom(
-.CELV (SIMPV),
-.CELSUB (CELSUB),
-.trim_resistor (trim_thermometer_bottom [6:0] ),
 .RN (ROFFSET),
 .RP (RBOTTOM),
 .CELG (CELG)
@@ -202,9 +173,6 @@ resistor_thermometer_5e1cbaca_Xbottom Xbottom(
 //,diesize,resistor_thermometer_5e1cbaca_Xbottom
 //Celera Confidential Do Not Copy resistor_thermometer_5e1cbaca_Xtop
 resistor_thermometer_5e1cbaca_Xtop Xtop(
-.CELV (SIMPV),
-.CELSUB (CELSUB),
-.trim_resistor (trim_thermometer_top [6:0] ),
 .RN (RBOTTOM),
 .RP (RTOP),
 .CELG (CELG)

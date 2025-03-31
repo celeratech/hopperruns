@@ -7,7 +7,7 @@
 :vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
 :vpi_module "/usr/local/lib/ivl/va_math.vpi";
-S_0x557d2caa0f60 .scope module, "FAULTMANAGERwaltz" "FAULTMANAGERwaltz" 2 60;
+S_0x55e1c7aedf60 .scope module, "FAULTMANAGERwaltz" "FAULTMANAGERwaltz" 2 60;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "REF";
     .port_info 1 /INPUT 1 "MUDV";
@@ -23,57 +23,58 @@ S_0x557d2caa0f60 .scope module, "FAULTMANAGERwaltz" "FAULTMANAGERwaltz" 2 60;
     .port_info 11 /INPUT 1 "fault_short";
     .port_info 12 /OUTPUT 1 "fault_freeze";
     .port_info 13 /INPUT 1 "enable_faultmanager";
-o0x7f6dee1ac2b8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafb820_0 .net "CELG59462", 0 0, o0x7f6dee1ac2b8;  0 drivers
-o0x7f6dee1ac2e8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafb8c0_0 .net "CELSUB40948", 0 0, o0x7f6dee1ac2e8;  0 drivers
-o0x7f6dee1ac318 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafb9d0_0 .net "CELV96848", 0 0, o0x7f6dee1ac318;  0 drivers
-o0x7f6dee1ac438 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafbac0_0 .net "IP_799e9a57", 0 0, o0x7f6dee1ac438;  0 drivers
-o0x7f6dee1ac468 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafbb60_0 .net "IP_7f7f5fd0", 0 0, o0x7f6dee1ac468;  0 drivers
-o0x7f6dee1ac498 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafbc50_0 .net "MUDV", 0 0, o0x7f6dee1ac498;  0 drivers
-o0x7f6dee1ac4c8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafbcf0_0 .net "PORB97836", 0 0, o0x7f6dee1ac4c8;  0 drivers
-o0x7f6dee1ac4f8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafbdc0_0 .net "REF", 0 0, o0x7f6dee1ac4f8;  0 drivers
-o0x7f6dee1ac348 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafbe90_0 .net "a0", 0 0, o0x7f6dee1ac348;  0 drivers
-o0x7f6dee1ac528 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafbfc0_0 .net "blank_fault", 0 0, o0x7f6dee1ac528;  0 drivers
-o0x7f6dee1ac588 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafc090_0 .net "celkelvin_GNDthermometer", 0 0, o0x7f6dee1ac588;  0 drivers
-o0x7f6dee1ac5b8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafc160_0 .net "clock", 0 0, o0x7f6dee1ac5b8;  0 drivers
-o0x7f6dee1ac048 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafc230_0 .net "enable_faultmanager", 0 0, o0x7f6dee1ac048;  0 drivers
-o0x7f6dee1ac078 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafc300_0 .net "fault_freeze", 0 0, o0x7f6dee1ac078;  0 drivers
-o0x7f6dee1ac0a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafc3a0_0 .net "fault_run", 0 0, o0x7f6dee1ac0a8;  0 drivers
-o0x7f6dee1ac0d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafc490_0 .net "fault_short", 0 0, o0x7f6dee1ac0d8;  0 drivers
-o0x7f6dee1ac6a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafc530_0 .net "net_46", 0 0, o0x7f6dee1ac6a8;  0 drivers
-o0x7f6dee1ac558 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafc730_0 .net "net_47", 0 0, o0x7f6dee1ac558;  0 drivers
-o0x7f6dee1ac618 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafc820_0 .net "net_48", 0 0, o0x7f6dee1ac618;  0 drivers
-o0x7f6dee1ac648 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafc910_0 .net "net_49", 0 0, o0x7f6dee1ac648;  0 drivers
-o0x7f6dee1ac678 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafca00_0 .net "net_50", 0 0, o0x7f6dee1ac678;  0 drivers
-o0x7f6dee1ac5e8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafcaf0_0 .net "net_51", 0 0, o0x7f6dee1ac5e8;  0 drivers
-o0x7f6dee1ac108 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafcbe0_0 .net "net_70", 0 0, o0x7f6dee1ac108;  0 drivers
-o0x7f6dee1ac018 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafccd0_0 .net "net_71", 0 0, o0x7f6dee1ac018;  0 drivers
-o0x7f6dee1ac138 .functor BUFZ 1, C4<z>; HiZ drive
-v0x557d2cafcdc0_0 .net "net_72", 0 0, o0x7f6dee1ac138;  0 drivers
-S_0x557d2ca9ee50 .scope module, "XDEBUG" "FAULTMANAGERwaltzDEBUG" 2 80, 2 2 0, S_0x557d2caa0f60;
+    .port_info 14 /INPUT 1 "celkelvin_GNDthermometer";
+o0x7f87cfbbf2b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b48910_0 .net "CELG59462", 0 0, o0x7f87cfbbf2b8;  0 drivers
+o0x7f87cfbbf2e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b489b0_0 .net "CELSUB40948", 0 0, o0x7f87cfbbf2e8;  0 drivers
+o0x7f87cfbbf318 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b48ac0_0 .net "CELV96848", 0 0, o0x7f87cfbbf318;  0 drivers
+o0x7f87cfbbf438 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b48bb0_0 .net "IP_799e9a57", 0 0, o0x7f87cfbbf438;  0 drivers
+o0x7f87cfbbf468 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b48c50_0 .net "IP_7f7f5fd0", 0 0, o0x7f87cfbbf468;  0 drivers
+o0x7f87cfbbf498 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b48d40_0 .net "MUDV", 0 0, o0x7f87cfbbf498;  0 drivers
+o0x7f87cfbbf4c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b48de0_0 .net "PORB97836", 0 0, o0x7f87cfbbf4c8;  0 drivers
+o0x7f87cfbbf4f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b48eb0_0 .net "REF", 0 0, o0x7f87cfbbf4f8;  0 drivers
+o0x7f87cfbbf348 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b48f80_0 .net "a0", 0 0, o0x7f87cfbbf348;  0 drivers
+o0x7f87cfbbf528 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b490b0_0 .net "blank_fault", 0 0, o0x7f87cfbbf528;  0 drivers
+o0x7f87cfbbf588 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b49180_0 .net "celkelvin_GNDthermometer", 0 0, o0x7f87cfbbf588;  0 drivers
+o0x7f87cfbbf5b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b49250_0 .net "clock", 0 0, o0x7f87cfbbf5b8;  0 drivers
+o0x7f87cfbbf048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b49320_0 .net "enable_faultmanager", 0 0, o0x7f87cfbbf048;  0 drivers
+o0x7f87cfbbf078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b493f0_0 .net "fault_freeze", 0 0, o0x7f87cfbbf078;  0 drivers
+o0x7f87cfbbf0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b49490_0 .net "fault_run", 0 0, o0x7f87cfbbf0a8;  0 drivers
+o0x7f87cfbbf0d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b49580_0 .net "fault_short", 0 0, o0x7f87cfbbf0d8;  0 drivers
+o0x7f87cfbbf6a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b49620_0 .net "net_46", 0 0, o0x7f87cfbbf6a8;  0 drivers
+o0x7f87cfbbf558 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b49820_0 .net "net_47", 0 0, o0x7f87cfbbf558;  0 drivers
+o0x7f87cfbbf618 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b49910_0 .net "net_48", 0 0, o0x7f87cfbbf618;  0 drivers
+o0x7f87cfbbf648 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b49a00_0 .net "net_49", 0 0, o0x7f87cfbbf648;  0 drivers
+o0x7f87cfbbf678 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b49af0_0 .net "net_50", 0 0, o0x7f87cfbbf678;  0 drivers
+o0x7f87cfbbf5e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b49be0_0 .net "net_51", 0 0, o0x7f87cfbbf5e8;  0 drivers
+o0x7f87cfbbf108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b49cd0_0 .net "net_70", 0 0, o0x7f87cfbbf108;  0 drivers
+o0x7f87cfbbf018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b49dc0_0 .net "net_71", 0 0, o0x7f87cfbbf018;  0 drivers
+o0x7f87cfbbf138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e1c7b49eb0_0 .net "net_72", 0 0, o0x7f87cfbbf138;  0 drivers
+S_0x55e1c7aebe60 .scope module, "XDEBUG" "FAULTMANAGERwaltzDEBUG" 2 81, 2 2 0, S_0x55e1c7aedf60;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "fault_run";
     .port_info 1 /INPUT 1 "fault_short";
@@ -82,24 +83,24 @@ S_0x557d2ca9ee50 .scope module, "XDEBUG" "FAULTMANAGERwaltzDEBUG" 2 80, 2 2 0, S
     .port_info 4 /OUTPUT 1 "hijack_fault_short";
     .port_info 5 /INPUT 1 "enable_faultmanager";
     .port_info 6 /OUTPUT 1 "hijack_enable_faultmanager";
-v0x557d2caa04b0_0 .net "dft_delaySHORT", 0 0, o0x7f6dee1ac018;  alias, 0 drivers
-v0x557d2caa10f0_0 .net "enable_faultmanager", 0 0, o0x7f6dee1ac048;  alias, 0 drivers
-v0x557d2caa0ec0_0 .net "fault_freeze", 0 0, o0x7f6dee1ac078;  alias, 0 drivers
-v0x557d2caf7f70_0 .net "fault_run", 0 0, o0x7f6dee1ac0a8;  alias, 0 drivers
-v0x557d2caf8030_0 .net "fault_short", 0 0, o0x7f6dee1ac0d8;  alias, 0 drivers
-v0x557d2caf8140_0 .net "hijack_enable_faultmanager", 0 0, o0x7f6dee1ac108;  alias, 0 drivers
-v0x557d2caf8200_0 .net "hijack_fault_short", 0 0, o0x7f6dee1ac138;  alias, 0 drivers
-S_0x557d2caf83a0 .scope module, "XDRMNOTL" "PEBBLEtielo" 2 115, 2 40 0, S_0x557d2caa0f60;
+v0x55e1c7aed4b0_0 .net "dft_delaySHORT", 0 0, o0x7f87cfbbf018;  alias, 0 drivers
+v0x55e1c7aee0f0_0 .net "enable_faultmanager", 0 0, o0x7f87cfbbf048;  alias, 0 drivers
+v0x55e1c7aedec0_0 .net "fault_freeze", 0 0, o0x7f87cfbbf078;  alias, 0 drivers
+v0x55e1c7b45060_0 .net "fault_run", 0 0, o0x7f87cfbbf0a8;  alias, 0 drivers
+v0x55e1c7b45120_0 .net "fault_short", 0 0, o0x7f87cfbbf0d8;  alias, 0 drivers
+v0x55e1c7b45230_0 .net "hijack_enable_faultmanager", 0 0, o0x7f87cfbbf108;  alias, 0 drivers
+v0x55e1c7b452f0_0 .net "hijack_fault_short", 0 0, o0x7f87cfbbf138;  alias, 0 drivers
+S_0x55e1c7b45490 .scope module, "XDRMNOTL" "PEBBLEtielo" 2 116, 2 40 0, S_0x55e1c7aedf60;
  .timescale 0 0;
     .port_info 0 /OUTPUT 1 "q";
     .port_info 1 /INPUT 1 "G";
     .port_info 2 /INPUT 1 "SUB";
     .port_info 3 /INPUT 1 "V";
-v0x557d2caf85a0_0 .net "G", 0 0, o0x7f6dee1ac2b8;  alias, 0 drivers
-v0x557d2caf8660_0 .net "SUB", 0 0, o0x7f6dee1ac2e8;  alias, 0 drivers
-v0x557d2caf8720_0 .net "V", 0 0, o0x7f6dee1ac318;  alias, 0 drivers
-v0x557d2caf87f0_0 .net "q", 0 0, o0x7f6dee1ac348;  alias, 0 drivers
-S_0x557d2caf8960 .scope module, "XMAIN" "FAULTMANAGERwaltzMAIN" 2 90, 2 12 0, S_0x557d2caa0f60;
+v0x55e1c7b45690_0 .net "G", 0 0, o0x7f87cfbbf2b8;  alias, 0 drivers
+v0x55e1c7b45750_0 .net "SUB", 0 0, o0x7f87cfbbf2e8;  alias, 0 drivers
+v0x55e1c7b45810_0 .net "V", 0 0, o0x7f87cfbbf318;  alias, 0 drivers
+v0x55e1c7b458e0_0 .net "q", 0 0, o0x7f87cfbbf348;  alias, 0 drivers
+S_0x55e1c7b45a50 .scope module, "XMAIN" "FAULTMANAGERwaltzMAIN" 2 91, 2 12 0, S_0x55e1c7aedf60;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "REF";
     .port_info 1 /INPUT 1 "MUDV";
@@ -123,64 +124,64 @@ S_0x557d2caf8960 .scope module, "XMAIN" "FAULTMANAGERwaltzMAIN" 2 90, 2 12 0, S_
     .port_info 19 /INPUT 1 "hijack_thermal_status";
     .port_info 20 /INPUT 1 "celkelvin_GNDthermometer";
     .port_info 21 /INPUT 1 "hijack_faultmanager_status";
-v0x557d2caf8d60_0 .net "CELG59462", 0 0, o0x7f6dee1ac2b8;  alias, 0 drivers
-v0x557d2caf8e30_0 .net "CELSUB40948", 0 0, o0x7f6dee1ac2e8;  alias, 0 drivers
-v0x557d2caf8f00_0 .net "CELV96848", 0 0, o0x7f6dee1ac318;  alias, 0 drivers
-v0x557d2caf9000_0 .net "IP_799e9a57", 0 0, o0x7f6dee1ac438;  alias, 0 drivers
-v0x557d2caf90a0_0 .net "IP_7f7f5fd0", 0 0, o0x7f6dee1ac468;  alias, 0 drivers
-v0x557d2caf9190_0 .net "MUDV", 0 0, o0x7f6dee1ac498;  alias, 0 drivers
-v0x557d2caf9230_0 .net "PORB97836", 0 0, o0x7f6dee1ac4c8;  alias, 0 drivers
-v0x557d2caf92d0_0 .net "REF", 0 0, o0x7f6dee1ac4f8;  alias, 0 drivers
-v0x557d2caf9390_0 .net "blank_fault", 0 0, o0x7f6dee1ac528;  alias, 0 drivers
-v0x557d2caf9450_0 .net "blank_thermal", 0 0, o0x7f6dee1ac558;  alias, 0 drivers
-v0x557d2caf9510_0 .net "celkelvin_GNDthermometer", 0 0, o0x7f6dee1ac588;  alias, 0 drivers
-v0x557d2caf95d0_0 .net "clock", 0 0, o0x7f6dee1ac5b8;  alias, 0 drivers
-v0x557d2caf9690_0 .net "dft_delaySHORT", 0 0, o0x7f6dee1ac018;  alias, 0 drivers
-v0x557d2caf9730_0 .net "enable_faultmanager", 0 0, o0x7f6dee1ac108;  alias, 0 drivers
-v0x557d2caf9800_0 .net "fault_freeze", 0 0, o0x7f6dee1ac078;  alias, 0 drivers
-v0x557d2caf98d0_0 .net "fault_run", 0 0, o0x7f6dee1ac0a8;  alias, 0 drivers
-v0x557d2caf99a0_0 .net "fault_short", 0 0, o0x7f6dee1ac138;  alias, 0 drivers
-v0x557d2caf9b80_0 .net "hijack_delay", 0 0, o0x7f6dee1ac5e8;  alias, 0 drivers
-v0x557d2caf9c20_0 .net "hijack_faultmanager_status", 0 0, o0x7f6dee1ac618;  alias, 0 drivers
-v0x557d2caf9cc0_0 .net "hijack_short_status", 0 0, o0x7f6dee1ac648;  alias, 0 drivers
-v0x557d2caf9d60_0 .net "hijack_thermal_status", 0 0, o0x7f6dee1ac678;  alias, 0 drivers
-v0x557d2caf9e00_0 .net "mode_hiccup", 0 0, o0x7f6dee1ac6a8;  alias, 0 drivers
-S_0x557d2cafa160 .scope module, "blank_thermal_WRAPPER" "WRAPPER1" 2 132, 2 52 0, S_0x557d2caa0f60;
+v0x55e1c7b45e50_0 .net "CELG59462", 0 0, o0x7f87cfbbf2b8;  alias, 0 drivers
+v0x55e1c7b45f20_0 .net "CELSUB40948", 0 0, o0x7f87cfbbf2e8;  alias, 0 drivers
+v0x55e1c7b45ff0_0 .net "CELV96848", 0 0, o0x7f87cfbbf318;  alias, 0 drivers
+v0x55e1c7b460f0_0 .net "IP_799e9a57", 0 0, o0x7f87cfbbf438;  alias, 0 drivers
+v0x55e1c7b46190_0 .net "IP_7f7f5fd0", 0 0, o0x7f87cfbbf468;  alias, 0 drivers
+v0x55e1c7b46280_0 .net "MUDV", 0 0, o0x7f87cfbbf498;  alias, 0 drivers
+v0x55e1c7b46320_0 .net "PORB97836", 0 0, o0x7f87cfbbf4c8;  alias, 0 drivers
+v0x55e1c7b463c0_0 .net "REF", 0 0, o0x7f87cfbbf4f8;  alias, 0 drivers
+v0x55e1c7b46480_0 .net "blank_fault", 0 0, o0x7f87cfbbf528;  alias, 0 drivers
+v0x55e1c7b46540_0 .net "blank_thermal", 0 0, o0x7f87cfbbf558;  alias, 0 drivers
+v0x55e1c7b46600_0 .net "celkelvin_GNDthermometer", 0 0, o0x7f87cfbbf588;  alias, 0 drivers
+v0x55e1c7b466c0_0 .net "clock", 0 0, o0x7f87cfbbf5b8;  alias, 0 drivers
+v0x55e1c7b46780_0 .net "dft_delaySHORT", 0 0, o0x7f87cfbbf018;  alias, 0 drivers
+v0x55e1c7b46820_0 .net "enable_faultmanager", 0 0, o0x7f87cfbbf108;  alias, 0 drivers
+v0x55e1c7b468f0_0 .net "fault_freeze", 0 0, o0x7f87cfbbf078;  alias, 0 drivers
+v0x55e1c7b469c0_0 .net "fault_run", 0 0, o0x7f87cfbbf0a8;  alias, 0 drivers
+v0x55e1c7b46a90_0 .net "fault_short", 0 0, o0x7f87cfbbf138;  alias, 0 drivers
+v0x55e1c7b46c70_0 .net "hijack_delay", 0 0, o0x7f87cfbbf5e8;  alias, 0 drivers
+v0x55e1c7b46d10_0 .net "hijack_faultmanager_status", 0 0, o0x7f87cfbbf618;  alias, 0 drivers
+v0x55e1c7b46db0_0 .net "hijack_short_status", 0 0, o0x7f87cfbbf648;  alias, 0 drivers
+v0x55e1c7b46e50_0 .net "hijack_thermal_status", 0 0, o0x7f87cfbbf678;  alias, 0 drivers
+v0x55e1c7b46ef0_0 .net "mode_hiccup", 0 0, o0x7f87cfbbf6a8;  alias, 0 drivers
+S_0x55e1c7b47250 .scope module, "blank_thermal_WRAPPER" "WRAPPER1" 2 133, 2 52 0, S_0x55e1c7aedf60;
  .timescale 0 0;
     .port_info 0 /OUTPUT 1 "o";
     .port_info 1 /INPUT 1 "i";
-v0x557d2cafa310_0 .net "i", 0 0, o0x7f6dee1ac348;  alias, 0 drivers
-v0x557d2cafa400_0 .net "o", 0 0, o0x7f6dee1ac558;  alias, 0 drivers
-S_0x557d2cafa4f0 .scope module, "hijack_delay_WRAPPER" "WRAPPER1" 2 127, 2 52 0, S_0x557d2caa0f60;
+v0x55e1c7b47400_0 .net "i", 0 0, o0x7f87cfbbf348;  alias, 0 drivers
+v0x55e1c7b474f0_0 .net "o", 0 0, o0x7f87cfbbf558;  alias, 0 drivers
+S_0x55e1c7b475e0 .scope module, "hijack_delay_WRAPPER" "WRAPPER1" 2 128, 2 52 0, S_0x55e1c7aedf60;
  .timescale 0 0;
     .port_info 0 /OUTPUT 1 "o";
     .port_info 1 /INPUT 1 "i";
-v0x557d2cafa720_0 .net "i", 0 0, o0x7f6dee1ac348;  alias, 0 drivers
-v0x557d2cafa830_0 .net "o", 0 0, o0x7f6dee1ac5e8;  alias, 0 drivers
-S_0x557d2cafa910 .scope module, "hijack_faultmanager_status_WRAPPER" "WRAPPER1" 2 147, 2 52 0, S_0x557d2caa0f60;
+v0x55e1c7b47810_0 .net "i", 0 0, o0x7f87cfbbf348;  alias, 0 drivers
+v0x55e1c7b47920_0 .net "o", 0 0, o0x7f87cfbbf5e8;  alias, 0 drivers
+S_0x55e1c7b47a00 .scope module, "hijack_faultmanager_status_WRAPPER" "WRAPPER1" 2 148, 2 52 0, S_0x55e1c7aedf60;
  .timescale 0 0;
     .port_info 0 /OUTPUT 1 "o";
     .port_info 1 /INPUT 1 "i";
-v0x557d2cafaaf0_0 .net "i", 0 0, o0x7f6dee1ac348;  alias, 0 drivers
-v0x557d2cafabb0_0 .net "o", 0 0, o0x7f6dee1ac618;  alias, 0 drivers
-S_0x557d2cafac90 .scope module, "hijack_short_status_WRAPPER" "WRAPPER1" 2 137, 2 52 0, S_0x557d2caa0f60;
+v0x55e1c7b47be0_0 .net "i", 0 0, o0x7f87cfbbf348;  alias, 0 drivers
+v0x55e1c7b47ca0_0 .net "o", 0 0, o0x7f87cfbbf618;  alias, 0 drivers
+S_0x55e1c7b47d80 .scope module, "hijack_short_status_WRAPPER" "WRAPPER1" 2 138, 2 52 0, S_0x55e1c7aedf60;
  .timescale 0 0;
     .port_info 0 /OUTPUT 1 "o";
     .port_info 1 /INPUT 1 "i";
-v0x557d2cafae70_0 .net "i", 0 0, o0x7f6dee1ac348;  alias, 0 drivers
-v0x557d2cafaf30_0 .net "o", 0 0, o0x7f6dee1ac648;  alias, 0 drivers
-S_0x557d2cafb040 .scope module, "hijack_thermal_status_WRAPPER" "WRAPPER1" 2 142, 2 52 0, S_0x557d2caa0f60;
+v0x55e1c7b47f60_0 .net "i", 0 0, o0x7f87cfbbf348;  alias, 0 drivers
+v0x55e1c7b48020_0 .net "o", 0 0, o0x7f87cfbbf648;  alias, 0 drivers
+S_0x55e1c7b48130 .scope module, "hijack_thermal_status_WRAPPER" "WRAPPER1" 2 143, 2 52 0, S_0x55e1c7aedf60;
  .timescale 0 0;
     .port_info 0 /OUTPUT 1 "o";
     .port_info 1 /INPUT 1 "i";
-v0x557d2cafb1d0_0 .net "i", 0 0, o0x7f6dee1ac348;  alias, 0 drivers
-v0x557d2cafb290_0 .net "o", 0 0, o0x7f6dee1ac678;  alias, 0 drivers
-S_0x557d2cafb3a0 .scope module, "mode_hiccup_WRAPPER" "WRAPPER1" 2 122, 2 52 0, S_0x557d2caa0f60;
+v0x55e1c7b482c0_0 .net "i", 0 0, o0x7f87cfbbf348;  alias, 0 drivers
+v0x55e1c7b48380_0 .net "o", 0 0, o0x7f87cfbbf678;  alias, 0 drivers
+S_0x55e1c7b48490 .scope module, "mode_hiccup_WRAPPER" "WRAPPER1" 2 123, 2 52 0, S_0x55e1c7aedf60;
  .timescale 0 0;
     .port_info 0 /OUTPUT 1 "o";
     .port_info 1 /INPUT 1 "i";
-v0x557d2cafb650_0 .net "i", 0 0, o0x7f6dee1ac348;  alias, 0 drivers
-v0x557d2cafb710_0 .net "o", 0 0, o0x7f6dee1ac6a8;  alias, 0 drivers
+v0x55e1c7b48740_0 .net "i", 0 0, o0x7f87cfbbf348;  alias, 0 drivers
+v0x55e1c7b48800_0 .net "o", 0 0, o0x7f87cfbbf6a8;  alias, 0 drivers
 # The file index is used to find the file name in the following table.
 :file_names 3;
     "N/A";

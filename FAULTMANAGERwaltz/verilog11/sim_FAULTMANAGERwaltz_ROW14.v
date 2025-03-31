@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module FAULTMANAGERwaltz (REF,MUDV,clock,CELG59462,CELV96848,PORB97836,fault_run,CELSUB40948,IP_799e9a57,IP_7f7f5fd0,blank_fault,fault_short,fault_freeze,enable_faultmanager);
+module FAULTMANAGERwaltz (REF,MUDV,clock,CELG59462,CELV96848,PORB97836,fault_run,CELSUB40948,IP_799e9a57,IP_7f7f5fd0,blank_fault,fault_short,fault_freeze,enable_faultmanager,celkelvin_GNDthermometer);
   input  REF;
   input  MUDV;
   input  clock;
@@ -14,6 +14,7 @@ module FAULTMANAGERwaltz (REF,MUDV,clock,CELG59462,CELV96848,PORB97836,fault_run
   input  fault_short;
   output  fault_freeze;
   input  enable_faultmanager;
+  input  celkelvin_GNDthermometer;
 endmodule
 
 module FORCE_FAULTMANAGERwaltz (GND,REF,MUDV,clock,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_799e9a57,IP_7f7f5fd0,blank_fault,fault_short,enable_faultmanager);
@@ -63,7 +64,8 @@ FAULTMANAGERwaltz XFAULTMANAGERwaltz1 (
 .blank_fault(blank_fault),
 .fault_short(fault_short),
 .fault_freeze(fault_freeze),
-.enable_faultmanager(enable_faultmanager)
+.enable_faultmanager(enable_faultmanager),
+.celkelvin_GNDthermometer(celkelvin_GNDthermometer)
 );
 
 FORCE_FAULTMANAGERwaltz XFORCE_FAULTMANAGERwaltz1 (
