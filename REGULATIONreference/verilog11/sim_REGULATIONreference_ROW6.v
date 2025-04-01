@@ -88,6 +88,16 @@ module REGULATIONreference (,SS,VC,go,IIN,CAPFB,OUTFB,SIMPV,TAEXT,REF_CAP,REF_II
   input  VCconfigurationDOWN_2;
 endmodule
 
+//Verilog HDL for "Generate", "WRAPPER1" "functional"
+
+
+module WRAPPER1 ( o, i );
+
+  input i;
+  output o;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
 module sim_REGULATIONreference_ROW6 ();
 
@@ -182,6 +192,11 @@ REGULATIONreference XREGULATIONreference1 (
 .VCconfigurationDOWN_0(net_48),
 .VCconfigurationDOWN_1(net_49),
 .VCconfigurationDOWN_2(net_50)
+);
+
+WRAPPER1 TAEXT_WRAPPER (
+.i(TAEXT),
+.o(CELG59462)
 );
 
 endmodule
