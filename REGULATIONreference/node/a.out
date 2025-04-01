@@ -7,386 +7,51 @@
 :vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
 :vpi_module "/usr/local/lib/ivl/va_math.vpi";
-S_0x55fda40c6d50 .scope module, "REGULATIONreference" "REGULATIONreference" 2 106;
+S_0x55e959e8bf60 .scope module, "resistor_2d528d34" "resistor_2d528d34" 2 24;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "SS";
-    .port_info 1 /INOUT 1 "VC";
-    .port_info 2 /INPUT 1 "go";
-    .port_info 3 /INPUT 1 "IIN";
-    .port_info 4 /INOUT 1 "CAPFB";
-    .port_info 5 /INOUT 1 "OUTFB";
-    .port_info 6 /INPUT 1 "SIMPV";
-    .port_info 7 /INPUT 1 "TAEXT";
-    .port_info 8 /INPUT 1 "REF_CAP";
-    .port_info 9 /INPUT 1 "REF_IIN";
-    .port_info 10 /INPUT 1 "REF_OUT";
-    .port_info 11 /INOUT 1 "VCsense";
-    .port_info 12 /OUTPUT 1 "chrg_ci";
-    .port_info 13 /OUTPUT 1 "chrg_cv";
-    .port_info 14 /OUTPUT 1 "mode_cv";
-    .port_info 15 /INPUT 1 "GMCHARGE";
-    .port_info 16 /INPUT 1 "CELG59462";
-    .port_info 17 /INPUT 1 "CELV96848";
-    .port_info 18 /INPUT 1 "REF_CHARGE";
-    .port_info 19 /INPUT 1 "CELSUB40948";
-    .port_info 20 /INPUT 1 "IP_1748f38b";
-    .port_info 21 /INPUT 1 "IP_51d5b7db";
-    .port_info 22 /INPUT 1 "IP_52cba950";
-    .port_info 23 /INPUT 1 "IP_5c9afec8";
-    .port_info 24 /INPUT 1 "IP_65be5a53";
-    .port_info 25 /INPUT 1 "IP_7fd756e8";
-    .port_info 26 /INPUT 1 "IP_9b35f469";
-    .port_info 27 /INPUT 1 "IP_bd9fd3f3";
-    .port_info 28 /INPUT 1 "IP_cb653629";
-    .port_info 29 /INPUT 1 "IP_d273c85d";
-    .port_info 30 /INPUT 1 "IP_e27f820d";
-    .port_info 31 /INPUT 1 "IP_f387a76b";
-    .port_info 32 /INPUT 1 "REF_CHARGER";
-    .port_info 33 /OUTPUT 1 "ok_reference";
-    .port_info 34 /INOUT 1 "GNDregulation";
-    .port_info 35 /INPUT 1 "mode_stepdown";
-    .port_info 36 /INPUT 1 "freeze_charger";
-    .port_info 37 /OUTPUT 1 "chrg_input_ilim";
-    .port_info 38 /INPUT 1 "clock_regulation";
-    .port_info 39 /INPUT 1 "enable_reference";
-    .port_info 40 /INPUT 1 "VCconfigurationUP_0";
-    .port_info 41 /INPUT 1 "VCconfigurationUP_1";
-    .port_info 42 /INPUT 1 "VCconfigurationUP_2";
-    .port_info 43 /INPUT 1 "kelvin_GNDregulation";
-    .port_info 44 /INPUT 1 "VCconfigurationDOWN_0";
-    .port_info 45 /INPUT 1 "VCconfigurationDOWN_1";
-    .port_info 46 /INPUT 1 "VCconfigurationDOWN_2";
-o0x7f7074cfe7f8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413e170_0 .net "CAPFB", 0 0, o0x7f7074cfe7f8;  0 drivers
-o0x7f7074cfe018 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413e260_0 .net "CELG59462", 0 0, o0x7f7074cfe018;  0 drivers
-o0x7f7074cfe048 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413e300_0 .net "CELSUB40948", 0 0, o0x7f7074cfe048;  0 drivers
-o0x7f7074cfe078 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413e3d0_0 .net "CELV96848", 0 0, o0x7f7074cfe078;  0 drivers
-o0x7f7074cfe828 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413e470_0 .net "GMCHARGE", 0 0, o0x7f7074cfe828;  0 drivers
-o0x7f7074cfe858 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413e510_0 .net "GNDregulation", 0 0, o0x7f7074cfe858;  0 drivers
-o0x7f7074cfe888 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413e5e0_0 .net "IIN", 0 0, o0x7f7074cfe888;  0 drivers
-o0x7f7074cfe8b8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413e6b0_0 .net "IP_1748f38b", 0 0, o0x7f7074cfe8b8;  0 drivers
-o0x7f7074cfe8e8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413e780_0 .net "IP_51d5b7db", 0 0, o0x7f7074cfe8e8;  0 drivers
-o0x7f7074cfe918 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413e850_0 .net "IP_52cba950", 0 0, o0x7f7074cfe918;  0 drivers
-o0x7f7074cfe948 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413e920_0 .net "IP_5c9afec8", 0 0, o0x7f7074cfe948;  0 drivers
-o0x7f7074cff7b8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413e9f0_0 .net "IP_65be5a53", 0 0, o0x7f7074cff7b8;  0 drivers
-o0x7f7074cff7e8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413eac0_0 .net "IP_7fd756e8", 0 0, o0x7f7074cff7e8;  0 drivers
-o0x7f7074cfe978 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413eb90_0 .net "IP_9b35f469", 0 0, o0x7f7074cfe978;  0 drivers
-o0x7f7074cfe9a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413ec60_0 .net "IP_bd9fd3f3", 0 0, o0x7f7074cfe9a8;  0 drivers
-o0x7f7074cff818 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413ed30_0 .net "IP_cb653629", 0 0, o0x7f7074cff818;  0 drivers
-o0x7f7074cfe9d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413ee00_0 .net "IP_d273c85d", 0 0, o0x7f7074cfe9d8;  0 drivers
-o0x7f7074cff848 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413efe0_0 .net "IP_e27f820d", 0 0, o0x7f7074cff848;  0 drivers
-o0x7f7074cff878 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413f0b0_0 .net "IP_f387a76b", 0 0, o0x7f7074cff878;  0 drivers
-o0x7f7074cfea08 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413f180_0 .net "OUTFB", 0 0, o0x7f7074cfea08;  0 drivers
-o0x7f7074cfea38 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413f250_0 .net "REF_CAP", 0 0, o0x7f7074cfea38;  0 drivers
-o0x7f7074cfea68 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413f320_0 .net "REF_CHARGE", 0 0, o0x7f7074cfea68;  0 drivers
-o0x7f7074cff8a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413f3f0_0 .net "REF_CHARGER", 0 0, o0x7f7074cff8a8;  0 drivers
-o0x7f7074cfea98 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413f4c0_0 .net "REF_IIN", 0 0, o0x7f7074cfea98;  0 drivers
-o0x7f7074cfeac8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413f590_0 .net "REF_OUT", 0 0, o0x7f7074cfeac8;  0 drivers
-o0x7f7074cfeaf8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413f660_0 .net "SIMPV", 0 0, o0x7f7074cfeaf8;  0 drivers
-o0x7f7074cfeb28 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413f700_0 .net "SS", 0 0, o0x7f7074cfeb28;  0 drivers
-o0x7f7074cfeb58 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413f7a0_0 .net "TAEXT", 0 0, o0x7f7074cfeb58;  0 drivers
-o0x7f7074cfeb88 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413f870_0 .net "VC", 0 0, o0x7f7074cfeb88;  0 drivers
-o0x7f7074cfebb8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413f940_0 .net "VCconfigurationDOWN_0", 0 0, o0x7f7074cfebb8;  0 drivers
-o0x7f7074cfebe8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413fa10_0 .net "VCconfigurationDOWN_1", 0 0, o0x7f7074cfebe8;  0 drivers
-o0x7f7074cfec18 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413fae0_0 .net "VCconfigurationDOWN_2", 0 0, o0x7f7074cfec18;  0 drivers
-o0x7f7074cfec48 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413fbb0_0 .net "VCconfigurationUP_0", 0 0, o0x7f7074cfec48;  0 drivers
-o0x7f7074cfec78 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413fe90_0 .net "VCconfigurationUP_1", 0 0, o0x7f7074cfec78;  0 drivers
-o0x7f7074cfeca8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda413ff60_0 .net "VCconfigurationUP_2", 0 0, o0x7f7074cfeca8;  0 drivers
-o0x7f7074cfecd8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4140030_0 .net "VCsense", 0 0, o0x7f7074cfecd8;  0 drivers
-o0x7f7074cff8d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4140100_0 .net "chrg_ci", 0 0, o0x7f7074cff8d8;  0 drivers
-o0x7f7074cff908 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda41401d0_0 .net "chrg_cv", 0 0, o0x7f7074cff908;  0 drivers
-o0x7f7074cff938 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda41402a0_0 .net "chrg_input_ilim", 0 0, o0x7f7074cff938;  0 drivers
-o0x7f7074cffe18 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4140370_0 .net "clock_regulation", 0 0, o0x7f7074cffe18;  0 drivers
-o0x7f7074cfe2b8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4140410_0 .net "enable_reference", 0 0, o0x7f7074cfe2b8;  0 drivers
-o0x7f7074cfe2e8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda41404e0_0 .net "freeze_charger", 0 0, o0x7f7074cfe2e8;  0 drivers
-o0x7f7074cfe318 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda41405b0_0 .net "go", 0 0, o0x7f7074cfe318;  0 drivers
-o0x7f7074cfedf8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4140680_0 .net "kelvin_GNDregulation", 0 0, o0x7f7074cfedf8;  0 drivers
-o0x7f7074cff968 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4140750_0 .net "mode_cv", 0 0, o0x7f7074cff968;  0 drivers
-o0x7f7074cfee28 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4140820_0 .net "mode_stepdown", 0 0, o0x7f7074cfee28;  0 drivers
-o0x7f7074cfe348 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda41408f0_0 .net "net_177", 0 0, o0x7f7074cfe348;  0 drivers
-o0x7f7074cfed08 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda41409e0_0 .net "net_178", 0 0, o0x7f7074cfed08;  0 drivers
-o0x7f7074cfe3a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4140ad0_0 .net "net_179", 0 0, o0x7f7074cfe3a8;  0 drivers
-o0x7f7074cfed98 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4140bc0_0 .net "net_180", 0 0, o0x7f7074cfed98;  0 drivers
-o0x7f7074cfe378 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4140cb0_0 .net "net_181", 0 0, o0x7f7074cfe378;  0 drivers
-o0x7f7074cfed68 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4140da0_0 .net "net_182", 0 0, o0x7f7074cfed68;  0 drivers
-o0x7f7074cfed38 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4140e90_0 .net "net_183", 0 0, o0x7f7074cfed38;  0 drivers
-o0x7f7074cfee58 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4140f80_0 .net "net_184", 0 0, o0x7f7074cfee58;  0 drivers
-o0x7f7074cfedc8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4141070_0 .net "net_185", 0 0, o0x7f7074cfedc8;  0 drivers
-o0x7f7074cfe0a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4141160_0 .net "net_186", 0 0, o0x7f7074cfe0a8;  0 drivers
-o0x7f7074cfe258 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4141250_0 .net "net_187", 0 0, o0x7f7074cfe258;  0 drivers
-o0x7f7074cfe198 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4141340_0 .net "net_188", 0 0, o0x7f7074cfe198;  0 drivers
-o0x7f7074cfe228 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4141430_0 .net "net_189", 0 0, o0x7f7074cfe228;  0 drivers
-o0x7f7074cfe1c8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4141520_0 .net "net_190", 0 0, o0x7f7074cfe1c8;  0 drivers
-o0x7f7074cfe1f8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4141610_0 .net "net_191", 0 0, o0x7f7074cfe1f8;  0 drivers
-o0x7f7074cfe288 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4141700_0 .net "net_192", 0 0, o0x7f7074cfe288;  0 drivers
-o0x7f7074cfe138 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda41417f0_0 .net "net_193", 0 0, o0x7f7074cfe138;  0 drivers
-o0x7f7074cfe0d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda41418e0_0 .net "net_194", 0 0, o0x7f7074cfe0d8;  0 drivers
-o0x7f7074cfe108 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda41419d0_0 .net "net_195", 0 0, o0x7f7074cfe108;  0 drivers
-o0x7f7074cfe168 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4141ed0_0 .net "net_196", 0 0, o0x7f7074cfe168;  0 drivers
-o0x7f7074cfe3d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fda4141fc0_0 .net "ok_reference", 0 0, o0x7f7074cfe3d8;  0 drivers
-S_0x55fda40c6ee0 .scope module, "XDEBUG" "REGULATIONreferenceDEBUG" 2 159, 2 2 0, S_0x55fda40c6d50;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+o0x7fd52bb7a018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e959ed3c90_0 .net "CELG", 0 0, o0x7fd52bb7a018;  0 drivers
+o0x7fd52bb7a048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e959ed3d30_0 .net "RN", 0 0, o0x7fd52bb7a048;  0 drivers
+o0x7fd52bb7a078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e959ed3df0_0 .net "RP", 0 0, o0x7fd52bb7a078;  0 drivers
+S_0x55e959e89d50 .scope module, "XRunit_0" "rlpp3000rpo2p8u0p4u" 2 32, 2 15 0, S_0x55e959e8bf60;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "go";
-    .port_info 1 /INPUT 1 "CELG59462";
-    .port_info 2 /INPUT 1 "CELV96848";
-    .port_info 3 /INPUT 1 "IINREFBUF";
-    .port_info 4 /OUTPUT 1 "hijack_go";
-    .port_info 5 /OUTPUT 1 "disable_ss";
-    .port_info 6 /INPUT 1 "CELSUB40948";
-    .port_info 7 /INPUT 1 "dft_INvsCAP";
-    .port_info 8 /OUTPUT 1 "disable_cap";
-    .port_info 9 /OUTPUT 1 "disable_iin";
-    .port_info 10 /OUTPUT 1 "disable_out";
-    .port_info 11 /INPUT 1 "ok_reference";
-    .port_info 12 /INPUT 1 "dft_CHARGEvsIN";
-    .port_info 13 /OUTPUT 1 "disable_charge";
-    .port_info 14 /OUTPUT 1 "disable_source";
-    .port_info 15 /INPUT 1 "freeze_charger";
-    .port_info 16 /INPUT 1 "dft_CHARGEvsCAP";
-    .port_info 17 /INPUT 1 "dft_OUTvsCHARGE";
-    .port_info 18 /INPUT 1 "enable_reference";
-    .port_info 19 /OUTPUT 1 "hijack_freeze_charger";
-    .port_info 20 /OUTPUT 1 "hijack_enable_reference";
-v0x55fda40c84b0_0 .net "CELG59462", 0 0, o0x7f7074cfe018;  alias, 0 drivers
-v0x55fda40c90f0_0 .net "CELSUB40948", 0 0, o0x7f7074cfe048;  alias, 0 drivers
-v0x55fda40c8ec0_0 .net "CELV96848", 0 0, o0x7f7074cfe078;  alias, 0 drivers
-v0x55fda4138240_0 .net "IINREFBUF", 0 0, o0x7f7074cfe0a8;  alias, 0 drivers
-v0x55fda4138300_0 .net "dft_CHARGEvsCAP", 0 0, o0x7f7074cfe0d8;  alias, 0 drivers
-v0x55fda4138410_0 .net "dft_CHARGEvsIN", 0 0, o0x7f7074cfe108;  alias, 0 drivers
-v0x55fda41384d0_0 .net "dft_INvsCAP", 0 0, o0x7f7074cfe138;  alias, 0 drivers
-v0x55fda4138590_0 .net "dft_OUTvsCHARGE", 0 0, o0x7f7074cfe168;  alias, 0 drivers
-v0x55fda4138650_0 .net "disable_cap", 0 0, o0x7f7074cfe198;  alias, 0 drivers
-v0x55fda4138710_0 .net "disable_charge", 0 0, o0x7f7074cfe1c8;  alias, 0 drivers
-v0x55fda41387d0_0 .net "disable_iin", 0 0, o0x7f7074cfe1f8;  alias, 0 drivers
-v0x55fda4138890_0 .net "disable_out", 0 0, o0x7f7074cfe228;  alias, 0 drivers
-v0x55fda4138950_0 .net "disable_source", 0 0, o0x7f7074cfe258;  alias, 0 drivers
-v0x55fda4138a10_0 .net "disable_ss", 0 0, o0x7f7074cfe288;  alias, 0 drivers
-v0x55fda4138ad0_0 .net "enable_reference", 0 0, o0x7f7074cfe2b8;  alias, 0 drivers
-v0x55fda4138b90_0 .net "freeze_charger", 0 0, o0x7f7074cfe2e8;  alias, 0 drivers
-v0x55fda4138c50_0 .net "go", 0 0, o0x7f7074cfe318;  alias, 0 drivers
-v0x55fda4138e20_0 .net "hijack_enable_reference", 0 0, o0x7f7074cfe348;  alias, 0 drivers
-v0x55fda4138ee0_0 .net "hijack_freeze_charger", 0 0, o0x7f7074cfe378;  alias, 0 drivers
-v0x55fda4138fa0_0 .net "hijack_go", 0 0, o0x7f7074cfe3a8;  alias, 0 drivers
-v0x55fda4139060_0 .net "ok_reference", 0 0, o0x7f7074cfe3d8;  alias, 0 drivers
-S_0x55fda41393c0 .scope module, "XMAIN" "REGULATIONreferenceMAIN" 2 183, 2 26 0, S_0x55fda40c6d50;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55e959e8b4b0_0 .net "ISO", 0 0, o0x7fd52bb7a018;  alias, 0 drivers
+v0x55e959e8c0f0_0 .net "RN", 0 0, o0x7fd52bb7a048;  alias, 0 drivers
+v0x55e959e8bec0_0 .net "RP", 0 0, o0x7fd52bb7a078;  alias, 0 drivers
+S_0x55e959ed2d80 .scope module, "XRunit_1" "rlpp3000rpo2p8u0p4u" 2 37, 2 15 0, S_0x55e959e8bf60;
  .timescale 0 0;
-    .port_info 0 /NODIR 0 "";
-    .port_info 1 /INPUT 1 "SS";
-    .port_info 2 /INOUT 1 "VC";
-    .port_info 3 /INPUT 1 "go";
-    .port_info 4 /INPUT 1 "IIN";
-    .port_info 5 /INOUT 1 "CAPFB";
-    .port_info 6 /INOUT 1 "OUTFB";
-    .port_info 7 /INPUT 1 "SIMPV";
-    .port_info 8 /INPUT 1 "TAEXT";
-    .port_info 9 /INPUT 1 "REF_CAP";
-    .port_info 10 /INPUT 1 "REF_IIN";
-    .port_info 11 /INPUT 1 "REF_OUT";
-    .port_info 12 /INOUT 1 "VCsense";
-    .port_info 13 /INPUT 1 "GMCHARGE";
-    .port_info 14 /INPUT 1 "CELG59462";
-    .port_info 15 /INPUT 1 "CELV96848";
-    .port_info 16 /OUTPUT 1 "IINREFBUF";
-    .port_info 17 /INOUT 1 "VCsinkCAP";
-    .port_info 18 /INOUT 1 "VCsinkIIN";
-    .port_info 19 /INOUT 1 "VCsinkOUT";
-    .port_info 20 /INPUT 1 "REF_CHARGE";
-    .port_info 21 /INPUT 1 "disable_ss";
-    .port_info 22 /INPUT 1 "CELSUB40948";
-    .port_info 23 /INPUT 1 "IP_1748f38b";
-    .port_info 24 /INPUT 1 "IP_51d5b7db";
-    .port_info 25 /INPUT 1 "IP_52cba950";
-    .port_info 26 /INPUT 1 "IP_5c9afec8";
-    .port_info 27 /INPUT 1 "IP_9b35f469";
-    .port_info 28 /INPUT 1 "IP_bd9fd3f3";
-    .port_info 29 /INPUT 1 "IP_d273c85d";
-    .port_info 30 /INPUT 1 "disable_cap";
-    .port_info 31 /INPUT 1 "disable_iin";
-    .port_info 32 /INPUT 1 "disable_out";
-    .port_info 33 /INOUT 1 "VCsinkCHARGE";
-    .port_info 34 /OUTPUT 1 "ok_reference";
-    .port_info 35 /INOUT 1 "GNDregulation";
-    .port_info 36 /OUTPUT 1 "enable_stepup";
-    .port_info 37 /INPUT 1 "mode_stepdown";
-    .port_info 38 /INPUT 1 "disable_charge";
-    .port_info 39 /INPUT 1 "disable_source";
-    .port_info 40 /INPUT 1 "freeze_charger";
-    .port_info 41 /OUTPUT 1 "enable_stepdown";
-    .port_info 42 /INPUT 1 "enable_reference";
-    .port_info 43 /INPUT 1 "VCconfigurationUP_0";
-    .port_info 44 /INPUT 1 "VCconfigurationUP_1";
-    .port_info 45 /INPUT 1 "VCconfigurationUP_2";
-    .port_info 46 /INPUT 1 "kelvin_GNDregulation";
-    .port_info 47 /INPUT 1 "VCconfigurationDOWN_0";
-    .port_info 48 /INPUT 1 "VCconfigurationDOWN_1";
-    .port_info 49 /INPUT 1 "VCconfigurationDOWN_2";
-v0x55fda4139bc0_0 .net "CAPFB", 0 0, o0x7f7074cfe7f8;  alias, 0 drivers
-v0x55fda4139c80_0 .net "CELG59462", 0 0, o0x7f7074cfe018;  alias, 0 drivers
-v0x55fda4139d40_0 .net "CELSUB40948", 0 0, o0x7f7074cfe048;  alias, 0 drivers
-v0x55fda4139e40_0 .net "CELV96848", 0 0, o0x7f7074cfe078;  alias, 0 drivers
-v0x55fda4139f10_0 .net "GMCHARGE", 0 0, o0x7f7074cfe828;  alias, 0 drivers
-v0x55fda413a000_0 .net "GNDregulation", 0 0, o0x7f7074cfe858;  alias, 0 drivers
-v0x55fda413a0a0_0 .net "IIN", 0 0, o0x7f7074cfe888;  alias, 0 drivers
-v0x55fda413a140_0 .net "IINREFBUF", 0 0, o0x7f7074cfe0a8;  alias, 0 drivers
-v0x55fda413a1e0_0 .net "IP_1748f38b", 0 0, o0x7f7074cfe8b8;  alias, 0 drivers
-v0x55fda413a280_0 .net "IP_51d5b7db", 0 0, o0x7f7074cfe8e8;  alias, 0 drivers
-v0x55fda413a320_0 .net "IP_52cba950", 0 0, o0x7f7074cfe918;  alias, 0 drivers
-v0x55fda413a3c0_0 .net "IP_5c9afec8", 0 0, o0x7f7074cfe948;  alias, 0 drivers
-v0x55fda413a480_0 .net "IP_9b35f469", 0 0, o0x7f7074cfe978;  alias, 0 drivers
-v0x55fda413a540_0 .net "IP_bd9fd3f3", 0 0, o0x7f7074cfe9a8;  alias, 0 drivers
-v0x55fda413a600_0 .net "IP_d273c85d", 0 0, o0x7f7074cfe9d8;  alias, 0 drivers
-v0x55fda413a6c0_0 .net "OUTFB", 0 0, o0x7f7074cfea08;  alias, 0 drivers
-v0x55fda413a780_0 .net "REF_CAP", 0 0, o0x7f7074cfea38;  alias, 0 drivers
-v0x55fda413a950_0 .net "REF_CHARGE", 0 0, o0x7f7074cfea68;  alias, 0 drivers
-v0x55fda413aa10_0 .net "REF_IIN", 0 0, o0x7f7074cfea98;  alias, 0 drivers
-v0x55fda413aad0_0 .net "REF_OUT", 0 0, o0x7f7074cfeac8;  alias, 0 drivers
-v0x55fda413ab90_0 .net "SIMPV", 0 0, o0x7f7074cfeaf8;  alias, 0 drivers
-v0x55fda413ac50_0 .net "SS", 0 0, o0x7f7074cfeb28;  alias, 0 drivers
-v0x55fda413ad10_0 .net "TAEXT", 0 0, o0x7f7074cfeb58;  alias, 0 drivers
-v0x55fda413add0_0 .net "VC", 0 0, o0x7f7074cfeb88;  alias, 0 drivers
-v0x55fda413ae90_0 .net "VCconfigurationDOWN_0", 0 0, o0x7f7074cfebb8;  alias, 0 drivers
-v0x55fda413af50_0 .net "VCconfigurationDOWN_1", 0 0, o0x7f7074cfebe8;  alias, 0 drivers
-v0x55fda413b010_0 .net "VCconfigurationDOWN_2", 0 0, o0x7f7074cfec18;  alias, 0 drivers
-v0x55fda413b0d0_0 .net "VCconfigurationUP_0", 0 0, o0x7f7074cfec48;  alias, 0 drivers
-v0x55fda413b190_0 .net "VCconfigurationUP_1", 0 0, o0x7f7074cfec78;  alias, 0 drivers
-v0x55fda413b250_0 .net "VCconfigurationUP_2", 0 0, o0x7f7074cfeca8;  alias, 0 drivers
-v0x55fda413b310_0 .net "VCsense", 0 0, o0x7f7074cfecd8;  alias, 0 drivers
-v0x55fda413b3d0_0 .net "VCsinkCAP", 0 0, o0x7f7074cfed08;  alias, 0 drivers
-v0x55fda413b490_0 .net "VCsinkCHARGE", 0 0, o0x7f7074cfed38;  alias, 0 drivers
-v0x55fda413b760_0 .net "VCsinkIIN", 0 0, o0x7f7074cfed68;  alias, 0 drivers
-v0x55fda413b820_0 .net "VCsinkOUT", 0 0, o0x7f7074cfed98;  alias, 0 drivers
-v0x55fda413b8e0_0 .net "disable_cap", 0 0, o0x7f7074cfe198;  alias, 0 drivers
-v0x55fda413b9b0_0 .net "disable_charge", 0 0, o0x7f7074cfe1c8;  alias, 0 drivers
-v0x55fda413ba80_0 .net "disable_iin", 0 0, o0x7f7074cfe1f8;  alias, 0 drivers
-v0x55fda413bb50_0 .net "disable_out", 0 0, o0x7f7074cfe228;  alias, 0 drivers
-v0x55fda413bc20_0 .net "disable_source", 0 0, o0x7f7074cfe258;  alias, 0 drivers
-v0x55fda413bcf0_0 .net "disable_ss", 0 0, o0x7f7074cfe288;  alias, 0 drivers
-v0x55fda413bdc0_0 .net "enable_reference", 0 0, o0x7f7074cfe348;  alias, 0 drivers
-v0x55fda413be90_0 .net "enable_stepdown", 0 0, o0x7f7074cfedc8;  alias, 0 drivers
-v0x55fda413bf30_0 .net "enable_stepup", 0 0, o0x7f7074cfe3d8;  alias, 0 drivers
-v0x55fda413c000_0 .net "freeze_charger", 0 0, o0x7f7074cfe378;  alias, 0 drivers
-v0x55fda413c0d0_0 .net "go", 0 0, o0x7f7074cfe3a8;  alias, 0 drivers
-v0x55fda413c1a0_0 .net "kelvin_GNDregulation", 0 0, o0x7f7074cfedf8;  alias, 0 drivers
-v0x55fda413c240_0 .net "mode_stepdown", 0 0, o0x7f7074cfee28;  alias, 0 drivers
-v0x55fda413c2e0_0 .net "ok_reference", 0 0, o0x7f7074cfee58;  alias, 0 drivers
-S_0x55fda4139570 .scope module, "XSTATUS" "REGULATIONreferenceSTATUS" 2 235, 2 78 0, S_0x55fda40c6d50;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55e959ed2fb0_0 .net "ISO", 0 0, o0x7fd52bb7a018;  alias, 0 drivers
+v0x55e959ed30a0_0 .net "RN", 0 0, o0x7fd52bb7a048;  alias, 0 drivers
+v0x55e959ed3170_0 .net "RP", 0 0, o0x7fd52bb7a078;  alias, 0 drivers
+S_0x55e959ed3270 .scope module, "XRunit_2" "rlpp3000rpo2p8u0p4u" 2 42, 2 15 0, S_0x55e959e8bf60;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "SIMPV";
-    .port_info 1 /OUTPUT 1 "chrg_ci";
-    .port_info 2 /OUTPUT 1 "chrg_cv";
-    .port_info 3 /OUTPUT 1 "mode_cv";
-    .port_info 4 /INPUT 1 "CELG59462";
-    .port_info 5 /INPUT 1 "CELV96848";
-    .port_info 6 /INOUT 1 "VCsinkCAP";
-    .port_info 7 /INOUT 1 "VCsinkIIN";
-    .port_info 8 /INOUT 1 "VCsinkOUT";
-    .port_info 9 /INPUT 1 "CELSUB40948";
-    .port_info 10 /INPUT 1 "IP_65be5a53";
-    .port_info 11 /INPUT 1 "IP_7fd756e8";
-    .port_info 12 /INPUT 1 "IP_cb653629";
-    .port_info 13 /INPUT 1 "IP_e27f820d";
-    .port_info 14 /INPUT 1 "IP_f387a76b";
-    .port_info 15 /INPUT 1 "REF_CHARGER";
-    .port_info 16 /OUTPUT 1 "dft_INvsCAP";
-    .port_info 17 /INOUT 1 "VCsinkCHARGE";
-    .port_info 18 /INPUT 1 "enable_stepup";
-    .port_info 19 /OUTPUT 1 "dft_CHARGEvsIN";
-    .port_info 20 /OUTPUT 1 "chrg_input_ilim";
-    .port_info 21 /OUTPUT 1 "dft_CHARGEvsCAP";
-    .port_info 22 /OUTPUT 1 "dft_OUTvsCHARGE";
-    .port_info 23 /INPUT 1 "enable_stepdown";
-v0x55fda413ccf0_0 .net "CELG59462", 0 0, o0x7f7074cfe018;  alias, 0 drivers
-v0x55fda413cde0_0 .net "CELSUB40948", 0 0, o0x7f7074cfe048;  alias, 0 drivers
-v0x55fda413cef0_0 .net "CELV96848", 0 0, o0x7f7074cfe078;  alias, 0 drivers
-v0x55fda413cfe0_0 .net "IP_65be5a53", 0 0, o0x7f7074cff7b8;  alias, 0 drivers
-v0x55fda413d080_0 .net "IP_7fd756e8", 0 0, o0x7f7074cff7e8;  alias, 0 drivers
-v0x55fda413d170_0 .net "IP_cb653629", 0 0, o0x7f7074cff818;  alias, 0 drivers
-v0x55fda413d230_0 .net "IP_e27f820d", 0 0, o0x7f7074cff848;  alias, 0 drivers
-v0x55fda413d2f0_0 .net "IP_f387a76b", 0 0, o0x7f7074cff878;  alias, 0 drivers
-v0x55fda413d3b0_0 .net "REF_CHARGER", 0 0, o0x7f7074cff8a8;  alias, 0 drivers
-v0x55fda413d470_0 .net "SIMPV", 0 0, o0x7f7074cfeaf8;  alias, 0 drivers
-v0x55fda413d510_0 .net "VCsinkCAP", 0 0, o0x7f7074cfed08;  alias, 0 drivers
-v0x55fda413d5b0_0 .net "VCsinkCHARGE", 0 0, o0x7f7074cfed38;  alias, 0 drivers
-v0x55fda413d650_0 .net "VCsinkIIN", 0 0, o0x7f7074cfed68;  alias, 0 drivers
-v0x55fda413d720_0 .net "VCsinkOUT", 0 0, o0x7f7074cfed98;  alias, 0 drivers
-v0x55fda413d7f0_0 .net "chrg_ci", 0 0, o0x7f7074cff8d8;  alias, 0 drivers
-v0x55fda413d890_0 .net "chrg_cv", 0 0, o0x7f7074cff908;  alias, 0 drivers
-v0x55fda413d930_0 .net "chrg_input_ilim", 0 0, o0x7f7074cff938;  alias, 0 drivers
-v0x55fda413d9d0_0 .net "dft_CHARGEvsCAP", 0 0, o0x7f7074cfe0d8;  alias, 0 drivers
-v0x55fda413daa0_0 .net "dft_CHARGEvsIN", 0 0, o0x7f7074cfe108;  alias, 0 drivers
-v0x55fda413db70_0 .net "dft_INvsCAP", 0 0, o0x7f7074cfe138;  alias, 0 drivers
-v0x55fda413dc40_0 .net "dft_OUTvsCHARGE", 0 0, o0x7f7074cfe168;  alias, 0 drivers
-v0x55fda413dd10_0 .net "enable_stepdown", 0 0, o0x7f7074cfee58;  alias, 0 drivers
-v0x55fda413dde0_0 .net "enable_stepup", 0 0, o0x7f7074cfedc8;  alias, 0 drivers
-v0x55fda413deb0_0 .net "mode_cv", 0 0, o0x7f7074cff968;  alias, 0 drivers
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55e959ed34d0_0 .net "ISO", 0 0, o0x7fd52bb7a018;  alias, 0 drivers
+v0x55e959ed35c0_0 .net "RN", 0 0, o0x7fd52bb7a048;  alias, 0 drivers
+v0x55e959ed36d0_0 .net "RP", 0 0, o0x7fd52bb7a078;  alias, 0 drivers
+S_0x55e959ed3800 .scope module, "XRunit_3" "rlpp3000rpo2p8u0p4u" 2 47, 2 15 0, S_0x55e959e8bf60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55e959ed3a30_0 .net "ISO", 0 0, o0x7fd52bb7a018;  alias, 0 drivers
+v0x55e959ed3af0_0 .net "RN", 0 0, o0x7fd52bb7a048;  alias, 0 drivers
+v0x55e959ed3bb0_0 .net "RP", 0 0, o0x7fd52bb7a078;  alias, 0 drivers
 # The file index is used to find the file name in the following table.
 :file_names 3;
     "N/A";
     "<interactive>";
-    "/celera/projects/Sunnyvale/software/REGULATIONreference/verilog10/REGULATIONreference.v";
+    "/./celera//projects//Sunnyvale//software//REGULATIONreference//verilog5//resistor_2d528d34.v";
