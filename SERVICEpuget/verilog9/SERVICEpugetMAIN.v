@@ -811,7 +811,7 @@ vbias_8430b59e Xvbias1 (
 .ten_taiv2v5(tl0),
 .global_vbias(tl0),
 .ten_taiv1v0f(tl0),
-.celkelvin_IN1(TBD_XSERVICEpuget1_XMAIN_Xvbias1_celkelvin_IN1),
+.celkelvin_IN1(celkelvin_IN1),
 .trim_vbiasneg({a0,a0,a0,a0,a0,a0,a0,a0}),
 .trim_vbiaspos({a0,a0,a0,a0,a0,a0,a0,a0}),
 .trim_vbiasref({a0,a0,a0,a0,a0,a0,a0,a0}),
