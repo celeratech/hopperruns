@@ -387,6 +387,16 @@ module STONEnoconn ( noconn );
 endmodule
 
 
+//Verilog HDL for "Generate", "WRAPPER1" "functional"
+
+
+module WRAPPER1 ( o, i );
+
+  input i;
+  output o;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
 module SERVICEpugetMAIN (IN, REF, porb, TAEXT, INTVCC, VCC2P5, VOUTSN, CELG59462, CELV96848, PORB97836, chrg_uvlo, kelvin_IN, CELBG83021, GNDservice, ok_service, CELSUB40948, IP_051b7bcb, IP_30a0e5c5, IP_86807c55, IP_87250ba9, IP_9219bb98, IP_92c9b3c9, IP_de226f75, dft_over_in, kelvin_VCAP, sync_stepup, REF_e3b0c442, dft_ok_drvcc, kelvin_DRVCC, allow_charger, celkelvin_IN1, dft_ok_intvcc, dft_ok_vcc2p5, fault_service, kelvin_INTVCC, kelvin_VCC2P5, kelvin_VOUTSN, celkelvin_VBIAS, clock_sequencer, SENSE_G_344f8d94, celkelvin_GNDref, kelvin_GNDservice, hijack_enable_service, SERVICEconfiguration_0, SERVICEconfiguration_1);
 inout  IN;
@@ -889,6 +899,11 @@ STONEnoconn XNCnoconn_tdi_vbias8 (
 
 STONEnoconn XNCnoconn_TAI_REFBG10 (
 .noconn(noconn_TAI_REFBG10)
+);
+
+WRAPPER1 celkelvin_IN1_WRAPPER (
+.i(celkelvin_IN1),
+.o(net_250)
 );
 
 endmodule
