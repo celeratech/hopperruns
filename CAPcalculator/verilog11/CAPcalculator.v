@@ -85,26 +85,26 @@ module CAPcalculate_Rev0_DYES (porb,on_shunt,CELG59462,CELV96848,PORB97836,CELSU
   input  shunt_registeractive;
 endmodule
 
-module CAPcalculatorCONFIGURATION (vshunt_0,vshunt_1,vshunt_2,vshunt_3,vshunt_4,vshunt_5,vshunt_6,vshunt_7,vshunt_8,vshunt_9,CELG59462,CELV96848,PORB97836,vshunt_10,vshunt_11,vshunt_12,vshunt_13,vshunt_14,vshunt_15,CELSUB40948,vbalancer_0,vbalancer_1,vbalancer_2,vbalancer_3,vbalancer_4,vbalancer_5,vbalancer_6,vbalancer_7,vshunt_hyst_0,vshunt_hyst_1,vshunt_hyst_2,vshunt_hyst_3,vshunt_hyst_4,vshunt_hyst_5,vshunt_hyst_6,vshunt_hyst_7,vshunt_hyst_8,vshunt_hyst_9,vshunt_trip_0,vshunt_trip_1,vshunt_trip_2,vshunt_trip_3,vshunt_trip_4,vshunt_trip_5,vshunt_trip_6,vshunt_trip_7,vshunt_trip_8,vshunt_trip_9,vshunt_hyst_10,vshunt_hyst_11,vshunt_hyst_12,vshunt_hyst_13,vshunt_hyst_14,vshunt_hyst_15,vshunt_trip_10,vshunt_trip_11,vshunt_trip_12,vshunt_trip_13,vshunt_trip_14,vshunt_trip_15,vbalancer_hyst_0,vbalancer_hyst_1,vbalancer_hyst_2,vbalancer_hyst_3,vbalancer_hyst_4,vbalancer_hyst_5,vbalancer_hyst_6,vbalancer_hyst_7,MAXIMUMoverride_0,MAXIMUMoverride_1,MAXIMUMoverride_2,MAXIMUMoverride_3,MAXIMUMoverride_4,MAXIMUMoverride_5,MAXIMUMoverride_6,MAXIMUMoverride_7,MAXIMUMoverride_8,MAXIMUMoverride_9,register_vshunt_1,MAXIMUMoverride_10,MAXIMUMoverride_11,MAXIMUMoverride_12,MAXIMUMoverride_13,MAXIMUMoverride_14,MAXIMUMoverride_15,enable_capcalculate);
+module CAPcalculatorCONFIGURATION (vshunt_0,vshunt_1,vshunt_2,vshunt_3,vshunt_4,vshunt_5,vshunt_6,vshunt_7,vshunt_8,vshunt_9,CELG59462,CELV96848,PORB97836,vshunt_10,vshunt_11,vshunt_12,vshunt_13,vshunt_14,vshunt_15,CELSUB40948,vbalancer_0,vbalancer_1,vbalancer_2,vbalancer_3,vbalancer_4,vbalancer_5,vbalancer_6,vbalancer_7,vshunt_hyst_0,vshunt_hyst_1,vshunt_hyst_2,vshunt_hyst_3,vshunt_hyst_4,vshunt_hyst_5,vshunt_hyst_6,vshunt_hyst_7,vshunt_hyst_8,vshunt_hyst_9,vshunt_trip_0,vshunt_trip_1,vshunt_trip_2,vshunt_trip_3,vshunt_trip_4,vshunt_trip_5,vshunt_trip_6,vshunt_trip_7,vshunt_trip_8,vshunt_trip_9,vshunt_hyst_10,vshunt_hyst_11,vshunt_hyst_12,vshunt_hyst_13,vshunt_hyst_14,vshunt_hyst_15,vshunt_trip_10,vshunt_trip_11,vshunt_trip_12,vshunt_trip_13,vshunt_trip_14,vshunt_trip_15,vbalancer_hyst_0,vbalancer_hyst_1,vbalancer_hyst_2,vbalancer_hyst_3,vbalancer_hyst_4,vbalancer_hyst_5,vbalancer_hyst_6,vbalancer_hyst_7,MAXIMUMoverride_0,MAXIMUMoverride_1,MAXIMUMoverride_2,MAXIMUMoverride_3,MAXIMUMoverride_4,MAXIMUMoverride_5,MAXIMUMoverride_6,MAXIMUMoverride_7,MAXIMUMoverride_8,MAXIMUMoverride_9,MAXIMUMoverride_10,MAXIMUMoverride_11,MAXIMUMoverride_12,MAXIMUMoverride_13,MAXIMUMoverride_14,MAXIMUMoverride_15,register_vshunt_15,enable_capcalculate);
   output  vshunt_0;
-  input  vshunt_1;
-  input  vshunt_2;
-  input  vshunt_3;
-  input  vshunt_4;
-  input  vshunt_5;
-  input  vshunt_6;
-  input  vshunt_7;
-  input  vshunt_8;
-  input  vshunt_9;
+  output  vshunt_1;
+  output  vshunt_2;
+  output  vshunt_3;
+  output  vshunt_4;
+  output  vshunt_5;
+  output  vshunt_6;
+  output  vshunt_7;
+  output  vshunt_8;
+  output  vshunt_9;
   input  CELG59462;
   input  CELV96848;
   input  PORB97836;
-  input  vshunt_10;
-  input  vshunt_11;
-  input  vshunt_12;
-  input  vshunt_13;
-  input  vshunt_14;
-  input  vshunt_15;
+  output  vshunt_10;
+  output  vshunt_11;
+  output  vshunt_12;
+  output  vshunt_13;
+  output  vshunt_14;
+  output  vshunt_15;
   input  CELSUB40948;
   output  vbalancer_0;
   output  vbalancer_1;
@@ -164,13 +164,13 @@ module CAPcalculatorCONFIGURATION (vshunt_0,vshunt_1,vshunt_2,vshunt_3,vshunt_4,
   output  MAXIMUMoverride_7;
   output  MAXIMUMoverride_8;
   output  MAXIMUMoverride_9;
-  input  register_vshunt_1;
   output  MAXIMUMoverride_10;
   output  MAXIMUMoverride_11;
   output  MAXIMUMoverride_12;
   output  MAXIMUMoverride_13;
   output  MAXIMUMoverride_14;
   output  MAXIMUMoverride_15;
+  input [15:0] register_vshunt_15;
   input  enable_capcalculate;
 endmodule
 
@@ -581,7 +581,7 @@ module CAPcalculatorSHUNTalgorithm (porb,on_shunt,CELG59462,CELV96848,PORB97836,
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module CAPcalculator (porb, SIMPV, CELG59462, CELV96848, PORB97836, power_fail, CELSUB40948, IP_9a4148db, REF_ICHARGER, enable_shunt, meas_vcap1_0, meas_vcap1_1, meas_vcap1_2, meas_vcap1_3, meas_vcap1_4, meas_vcap1_5, meas_vcap1_6, meas_vcap1_7, meas_vcap1_8, meas_vcap1_9, meas_vcap2_0, meas_vcap2_1, meas_vcap2_2, meas_vcap2_3, meas_vcap2_4, meas_vcap2_5, meas_vcap2_6, meas_vcap2_7, meas_vcap2_8, meas_vcap2_9, meas_vcap3_0, meas_vcap3_1, meas_vcap3_2, meas_vcap3_3, meas_vcap3_4, meas_vcap3_5, meas_vcap3_6, meas_vcap3_7, meas_vcap3_8, meas_vcap3_9, meas_vcap4_0, meas_vcap4_1, meas_vcap4_2, meas_vcap4_3, meas_vcap4_4, meas_vcap4_5, meas_vcap4_6, meas_vcap4_7, meas_vcap4_8, meas_vcap4_9, meas_vcap1_10, meas_vcap1_11, meas_vcap1_12, meas_vcap1_13, meas_vcap1_14, meas_vcap1_15, meas_vcap2_10, meas_vcap2_11, meas_vcap2_12, meas_vcap2_13, meas_vcap2_14, meas_vcap2_15, meas_vcap3_10, meas_vcap3_11, meas_vcap3_12, meas_vcap3_13, meas_vcap3_14, meas_vcap3_15, meas_vcap4_10, meas_vcap4_11, meas_vcap4_12, meas_vcap4_13, meas_vcap4_14, meas_vcap4_15, enable_balancer, ok_capcalculate, MAXIMUMchannel_0, MAXIMUMchannel_1, clock_calculator, done_capcalculate, register_vshunt_1, fault_capcalculate, enable_capcalculate, kelvin_GNDcalculator, enable_chargereference);
+module CAPcalculator (porb, SIMPV, CELG59462, CELV96848, PORB97836, power_fail, CELSUB40948, IP_9a4148db, REF_ICHARGER, enable_shunt, meas_vcap1_0, meas_vcap1_1, meas_vcap1_2, meas_vcap1_3, meas_vcap1_4, meas_vcap1_5, meas_vcap1_6, meas_vcap1_7, meas_vcap1_8, meas_vcap1_9, meas_vcap2_0, meas_vcap2_1, meas_vcap2_2, meas_vcap2_3, meas_vcap2_4, meas_vcap2_5, meas_vcap2_6, meas_vcap2_7, meas_vcap2_8, meas_vcap2_9, meas_vcap3_0, meas_vcap3_1, meas_vcap3_2, meas_vcap3_3, meas_vcap3_4, meas_vcap3_5, meas_vcap3_6, meas_vcap3_7, meas_vcap3_8, meas_vcap3_9, meas_vcap4_0, meas_vcap4_1, meas_vcap4_2, meas_vcap4_3, meas_vcap4_4, meas_vcap4_5, meas_vcap4_6, meas_vcap4_7, meas_vcap4_8, meas_vcap4_9, meas_vcap1_10, meas_vcap1_11, meas_vcap1_12, meas_vcap1_13, meas_vcap1_14, meas_vcap1_15, meas_vcap2_10, meas_vcap2_11, meas_vcap2_12, meas_vcap2_13, meas_vcap2_14, meas_vcap2_15, meas_vcap3_10, meas_vcap3_11, meas_vcap3_12, meas_vcap3_13, meas_vcap3_14, meas_vcap3_15, meas_vcap4_10, meas_vcap4_11, meas_vcap4_12, meas_vcap4_13, meas_vcap4_14, meas_vcap4_15, enable_balancer, ok_capcalculate, MAXIMUMchannel_0, MAXIMUMchannel_1, clock_calculator, done_capcalculate, fault_capcalculate, register_vshunt_15, enable_capcalculate, kelvin_GNDcalculator, enable_chargereference);
 input  porb;
 input  SIMPV;
 input  CELG59462;
@@ -662,14 +662,15 @@ output  MAXIMUMchannel_0;
 output  MAXIMUMchannel_1;
 input  clock_calculator;
 output  done_capcalculate;
-input  register_vshunt_1;
 output  fault_capcalculate;
+input [15:0] register_vshunt_15;
 input  enable_capcalculate;
 input  kelvin_GNDcalculator;
 input  enable_chargereference;
 
 
 // ------------------------ Wires ------------------------
+wire [15:0] register_vshunt_15;
 
 // ------------------------ Networks ---------------------
 CAPcalculatorBALANCERalgorithm XBALANCER (
@@ -837,13 +838,13 @@ CAPcalculatorCONFIGURATION XCONFIGURATION (
 .MAXIMUMoverride_7(net_268),
 .MAXIMUMoverride_8(net_269),
 .MAXIMUMoverride_9(net_270),
-.register_vshunt_1(register_vshunt_1),
 .MAXIMUMoverride_10(net_271),
 .MAXIMUMoverride_11(net_272),
 .MAXIMUMoverride_12(net_273),
 .MAXIMUMoverride_13(net_274),
 .MAXIMUMoverride_14(net_275),
 .MAXIMUMoverride_15(net_276),
+.register_vshunt_15(register_vshunt_15[15:0]),
 .enable_capcalculate(enable_capcalculate)
 );
 

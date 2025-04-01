@@ -79,6 +79,11 @@ module vpwl_0x0_0d999ux0_1d0ux5 (PLUS,MINUS);
   inout  MINUS;
 endmodule
 
+module vpwl_0x0_1d0ux0 (PLUS,MINUS);
+  inout  PLUS;
+  inout  MINUS;
+endmodule
+
 module vpwl_0x0_5d0ux0 (PLUS,MINUS);
   inout  PLUS;
   inout  MINUS;
@@ -94,7 +99,7 @@ input GND;
 endmodule 
 
 // ------------------------ Module Verilog ---------------
-module FORCE_CAPcalculator (GND, porb, SIMPV, CELG59462, CELV96848, PORB97836, power_fail, CELSUB40948, IP_9a4148db, meas_vcap1_0, meas_vcap1_1, meas_vcap1_2, meas_vcap1_3, meas_vcap1_4, meas_vcap1_5, meas_vcap1_6, meas_vcap1_7, meas_vcap1_8, meas_vcap1_9, meas_vcap2_0, meas_vcap2_1, meas_vcap2_2, meas_vcap2_3, meas_vcap2_4, meas_vcap2_5, meas_vcap2_6, meas_vcap2_7, meas_vcap2_8, meas_vcap2_9, meas_vcap3_0, meas_vcap3_1, meas_vcap3_2, meas_vcap3_3, meas_vcap3_4, meas_vcap3_5, meas_vcap3_6, meas_vcap3_7, meas_vcap3_8, meas_vcap3_9, meas_vcap4_0, meas_vcap4_1, meas_vcap4_2, meas_vcap4_3, meas_vcap4_4, meas_vcap4_5, meas_vcap4_6, meas_vcap4_7, meas_vcap4_8, meas_vcap4_9, meas_vcap1_10, meas_vcap1_11, meas_vcap1_12, meas_vcap1_13, meas_vcap1_14, meas_vcap1_15, meas_vcap2_10, meas_vcap2_11, meas_vcap2_12, meas_vcap2_13, meas_vcap2_14, meas_vcap2_15, meas_vcap3_10, meas_vcap3_11, meas_vcap3_12, meas_vcap3_13, meas_vcap3_14, meas_vcap3_15, meas_vcap4_10, meas_vcap4_11, meas_vcap4_12, meas_vcap4_13, meas_vcap4_14, meas_vcap4_15, clock_calculator, register_vshunt_1, enable_capcalculate, kelvin_GNDcalculator);
+module FORCE_CAPcalculator (GND, porb, SIMPV, CELG59462, CELV96848, PORB97836, power_fail, CELSUB40948, IP_9a4148db, meas_vcap1_0, meas_vcap1_1, meas_vcap1_2, meas_vcap1_3, meas_vcap1_4, meas_vcap1_5, meas_vcap1_6, meas_vcap1_7, meas_vcap1_8, meas_vcap1_9, meas_vcap2_0, meas_vcap2_1, meas_vcap2_2, meas_vcap2_3, meas_vcap2_4, meas_vcap2_5, meas_vcap2_6, meas_vcap2_7, meas_vcap2_8, meas_vcap2_9, meas_vcap3_0, meas_vcap3_1, meas_vcap3_2, meas_vcap3_3, meas_vcap3_4, meas_vcap3_5, meas_vcap3_6, meas_vcap3_7, meas_vcap3_8, meas_vcap3_9, meas_vcap4_0, meas_vcap4_1, meas_vcap4_2, meas_vcap4_3, meas_vcap4_4, meas_vcap4_5, meas_vcap4_6, meas_vcap4_7, meas_vcap4_8, meas_vcap4_9, meas_vcap1_10, meas_vcap1_11, meas_vcap1_12, meas_vcap1_13, meas_vcap1_14, meas_vcap1_15, meas_vcap2_10, meas_vcap2_11, meas_vcap2_12, meas_vcap2_13, meas_vcap2_14, meas_vcap2_15, meas_vcap3_10, meas_vcap3_11, meas_vcap3_12, meas_vcap3_13, meas_vcap3_14, meas_vcap3_15, meas_vcap4_10, meas_vcap4_11, meas_vcap4_12, meas_vcap4_13, meas_vcap4_14, meas_vcap4_15, clock_calculator, register_vshunt_15, enable_capcalculate, kelvin_GNDcalculator);
 inout  GND;
 output  porb;
 output  SIMPV;
@@ -169,13 +174,13 @@ inout  meas_vcap4_13;
 inout  meas_vcap4_14;
 inout  meas_vcap4_15;
 output  clock_calculator;
-inout [15:0] register_vshunt_1;
+output [15:0] register_vshunt_15;
 output  enable_capcalculate;
 output  kelvin_GNDcalculator;
 
 
 // ------------------------ Wires ------------------------
-wire [15:0] register_vshunt_1;
+wire [15:0] register_vshunt_15;
 
 // ------------------------ Networks ---------------------
 STONEnoconn XNCip (
@@ -276,7 +281,82 @@ vpwl_0x0_10d998ux0_11d0ux0 V_power_failx (
 );
 
 vpwl_0x0_0d999ux0_1d0ux5 Xdatamap1_pwl_bit0 (
-.PLUS(register_vshunt_1),
+.PLUS(register_vshunt_15[0]),
+.MINUS(GND)
+);
+
+vpwl_0x0_1d0ux0 Xdatamap1_pwl_bit1 (
+.PLUS(register_vshunt_15[1]),
+.MINUS(GND)
+);
+
+vpwl_0x0_1d0ux0 Xdatamap1_pwl_bit2 (
+.PLUS(register_vshunt_15[2]),
+.MINUS(GND)
+);
+
+vpwl_0x0_0d999ux0_1d0ux5 Xdatamap1_pwl_bit3 (
+.PLUS(register_vshunt_15[3]),
+.MINUS(GND)
+);
+
+vpwl_0x0_0d999ux0_1d0ux5 Xdatamap1_pwl_bit4 (
+.PLUS(register_vshunt_15[4]),
+.MINUS(GND)
+);
+
+vpwl_0x0_1d0ux0 Xdatamap1_pwl_bit5 (
+.PLUS(register_vshunt_15[5]),
+.MINUS(GND)
+);
+
+vpwl_0x0_1d0ux0 Xdatamap1_pwl_bit6 (
+.PLUS(register_vshunt_15[6]),
+.MINUS(GND)
+);
+
+vpwl_0x0_0d999ux0_1d0ux5 Xdatamap1_pwl_bit7 (
+.PLUS(register_vshunt_15[7]),
+.MINUS(GND)
+);
+
+vpwl_0x0_0d999ux0_1d0ux5 Xdatamap1_pwl_bit8 (
+.PLUS(register_vshunt_15[8]),
+.MINUS(GND)
+);
+
+vpwl_0x0_1d0ux0 Xdatamap1_pwl_bit9 (
+.PLUS(register_vshunt_15[9]),
+.MINUS(GND)
+);
+
+vpwl_0x0_1d0ux0 Xdatamap1_pwl_bit10 (
+.PLUS(register_vshunt_15[10]),
+.MINUS(GND)
+);
+
+vpwl_0x0_1d0ux0 Xdatamap1_pwl_bit11 (
+.PLUS(register_vshunt_15[11]),
+.MINUS(GND)
+);
+
+vpwl_0x0_1d0ux0 Xdatamap1_pwl_bit12 (
+.PLUS(register_vshunt_15[12]),
+.MINUS(GND)
+);
+
+vpwl_0x0_1d0ux0 Xdatamap1_pwl_bit13 (
+.PLUS(register_vshunt_15[13]),
+.MINUS(GND)
+);
+
+vpwl_0x0_1d0ux0 Xdatamap1_pwl_bit14 (
+.PLUS(register_vshunt_15[14]),
+.MINUS(GND)
+);
+
+vpwl_0x0_1d0ux0 Xdatamap1_pwl_bit15 (
+.PLUS(register_vshunt_15[15]),
 .MINUS(GND)
 );
 

@@ -81,10 +81,10 @@ endmodule
 module CAPcalculate_Rev0_DYES (porb, on_shunt, CELG59462, CELV96848, PORB97836, CELSUB40948, mode_backup, on_balancer, shunt_status, balancer_status, calculate_shunt, done_capcalculate, ok_shuntalgorithm, calculate_balancer, clock_capcalculate, fault_capcalculate, enable_capcalculate, ok_balanceralgorithm, shunt_registeractive);
 input  porb;
 input  on_shunt;
-input  CELG59462;
-input  CELV96848;
+  input  CELG59462;
+  input  CELV96848;
 input  PORB97836;
-input  CELSUB40948;
+  input  CELSUB40948;
 input  mode_backup;
 input  on_balancer;
 output  shunt_status;
