@@ -2,39 +2,33 @@
 *#SIMETRIX
 X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
  
-*BrickToolsVersion:0.121  projname:REGULATIONreference
-.node_map VCconfigurationUP$0 51
-.node_map enable_reference 56
-.node_map SIMPV 54
-.node_map VCconfigurationUP$1 52
-.node_map VCconfigurationUP$2 53
-.node_map mode_cv 62
-.node_map VC 55
-.node_map GMCHARGE 76
-.node_map REF_OUT 71
-.node_map mode_stepdown 61
-.node_map REF_CHARGER 66
-.node_map REF_CAP 69
-.node_map VCsense 57
-.node_map REF_CHARGE 73
-.node_map chrg_ci 65
-.node_map VCconfigurationDOWN$0 48
-.node_map VCconfigurationDOWN$1 49
-.node_map VCconfigurationDOWN$2 50
-.node_map chrg_cv 64
-.node_map IIN 77
+*BrickToolsVersion:0.112  projname:REGULATIONreference
+.node_map VCconfigurationUP$0 50
+.node_map enable_reference 55
+.node_map SIMPV 53
+.node_map VCconfigurationUP$1 51
+.node_map VCconfigurationUP$2 52
+.node_map VC 54
+.node_map GMCHARGE 69
+.node_map REF_OUT 66
+.node_map mode_stepdown 58
+.node_map REF_CHARGER 62
+.node_map REF_CAP 64
+.node_map VCsense 56
+.node_map REF_CHARGE 67
+.node_map VCconfigurationDOWN$0 47
+.node_map VCconfigurationDOWN$1 48
+.node_map VCconfigurationDOWN$2 49
+.node_map IIN 71
 .node_map freeze_charger 60
-.node_map REF_IIN 70
-.node_map chrg_input_ilim 67
-.node_map clock_regulation 58
-.node_map ok_reference 59
-.node_map GNDregulation 78
-.node_map CAPFB 75
-.node_map GND 79
-.node_map SS 68
-.node_map kelvin_GNDregulation 72
-.node_map go 63
-.node_map OUTFB 74
+.node_map REF_IIN 63
+.node_map clock_regulation 57
+.node_map GNDregulation 72
+.node_map CAPFB 70
+.node_map SS 61
+.node_map kelvin_GNDregulation 65
+.node_map go 59
+.node_map OUTFB 68
 .options
 + PSP_NPT=10001
 + POP_ITRMAX=20
@@ -53,122 +47,125 @@ X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
 .globalvar  celera_i2c_frequency_KHz=100
 
 
-X$REGULATIONreference 54 55 56 59 58 61 63 69 71 73 68 75 74 77 76 72 78 48 49 50 70 57 62 64 65 67 60 51 52 53 66 REGULATIONreference
+X$noconn0 45 celeranoconn vars: ='%'
+X$noconn1 44 celeranoconn vars: ='%'
+X$noconn2 46 celeranoconn vars: ='%'
+X$noconn3 43 celeranoconn vars: ='%'
+X$noconn4 42 celeranoconn vars: ='%'
+X$REGULATIONreference 53 54 55 42 57 58 59 64 66 67 61 70 68 71 69 65 47 48 49 63 56 43 44 45 46 60 50 51 52 62 REGULATIONreference
 X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
 ** From Z:\celera\projects\Simplis\playjoseph\PUGET0\301d\verification\FORCE_REGULATIONreference.sxcmp
 
 
 ** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301D\design\REGULATIONreference.sxcmp
-.subckt REGULATIONreference 152 167 153 170 154 155 156 159 160 161 163 164 165 168 166 173 175 120 121 122 162 169 171 172 174 176 157 136 137 138 158
+.subckt REGULATIONreference 149 163 150 167 151 152 153 156 157 158 160 161 162 166 164 171 117 118 119 159 165 168 169 170 172 154 133 134 135 155
 *#hierarchy
-.node_map dft_CHARGEvsIN 195
-.node_map VCconfigurationUP$0 136
-.node_map enable_reference 153
-.node_map SIMPV 152
-.node_map VCconfigurationUP$1 137
-.node_map VCconfigurationDOWN$10 130
-.node_map VCconfigurationUP$2 138
-.node_map VCconfigurationDOWN$11 131
-.node_map VCconfigurationUP$3 139
-.node_map VCconfigurationDOWN$12 132
-.node_map VCconfigurationUP$4 140
-.node_map VCconfigurationDOWN$13 133
-.node_map disable_charge 190
-.node_map VCconfigurationUP$5 141
-.node_map VCconfigurationDOWN$14 134
-.node_map VCconfigurationUP$6 142
-.node_map VCconfigurationDOWN$15 135
-.node_map VCconfigurationUP$7 143
-.node_map VCconfigurationUP$8 144
-.node_map mode_cv 171
-.node_map VCconfigurationUP$9 145
-.node_map dft_OUTvsCHARGE 196
-.node_map hijack_enable_reference 177
-.node_map VC 167
-.node_map disable_ss 192
-.node_map GMCHARGE 166
-.node_map REF_OUT 160
-.node_map mode_stepdown 155
-.node_map VCsinkIIN 182
-.node_map REF_CHARGER 158
-.node_map VCsense 169
-.node_map REF_CAP 159
-.node_map disable_out 189
-.node_map hijack_freeze_charger 181
-.node_map REF_CHARGE 161
-.node_map chrg_ci 174
-.node_map dft_CHARGEvsCAP 194
-.node_map disable_cap 188
-.node_map VCconfigurationDOWN$0 120
-.node_map VCconfigurationDOWN$1 121
-.node_map VCconfigurationDOWN$2 122
-.node_map VCconfigurationDOWN$3 123
-.node_map hijack_go 179
-.node_map VCconfigurationDOWN$4 124
-.node_map chrg_cv 172
-.node_map VCconfigurationDOWN$5 125
-.node_map VCconfigurationDOWN$6 126
-.node_map VCconfigurationDOWN$7 127
-.node_map VCconfigurationDOWN$8 128
-.node_map VCconfigurationDOWN$9 129
-.node_map IIN 168
-.node_map freeze_charger 157
-.node_map disable_source 187
-.node_map VCsinkCHARGE 183
-.node_map enable_stepup 185
-.node_map enable_stepdown 184
-.node_map IINREFBUF 186
-.node_map dft_INvsCAP 193
-.node_map VCsinkOUT 180
-.node_map REF_IIN 162
-.node_map chrg_input_ilim 176
-.node_map clock_regulation 154
-.node_map ok_reference 170
-.node_map GNDregulation 175
-.node_map CAPFB 164
-.node_map VCconfigurationUP$10 146
-.node_map VCsinkCAP 178
-.node_map SS 163
-.node_map VCconfigurationUP$11 147
-.node_map VCconfigurationUP$12 148
-.node_map kelvin_GNDregulation 173
-.node_map go 156
-.node_map VCconfigurationUP$13 149
-.node_map VCconfigurationUP$14 150
-.node_map disable_iin 191
-.node_map VCconfigurationUP$15 151
-.node_map OUTFB 165
-X$DEBUG 153 177 157 181 156 179 186 187 170 188 193 189 194 190 195 191 196 192 REGULATIONreferenceDEBUG
-X$MAIN 152 177 155 179 181 159 160 161 162 167 163 169 178 164 180 165 182 166 183 168 184 120 121 122 185 136 137 138 170 173 186 175 187 188 189 190 192 191 REGULATIONreferenceMAIN
-X$pinprobe1 167 pinprobe vars: pinprobe_description='Compensation_force' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
-X$pinprobe10 158 pinprobe vars: pinprobe_description='CAP_voltage_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe11 175 pinprobe vars: pinprobe_description='Regulation_Ground' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe12 164 pinprobe vars: pinprobe_description='CAP_feedback_sense' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe13 160 pinprobe vars: pinprobe_description='OUT_voltage_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe14 168 pinprobe vars: pinprobe_description='Input_current_input' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe15 156 pinprobe vars: pinprobe_description='REGUALTION_enabled_and_ready' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe17 169 pinprobe vars: pinprobe_description='Compensation_sense' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
-X$pinprobe18 171 pinprobe vars: pinprobe_description='Charger_in_constant_voltage_mode' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe19 155 pinprobe vars: pinprobe_description='Controller_in_stepdown_mode' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe2 170 pinprobe vars: pinprobe_description='REGULATION_references_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe20 172 pinprobe vars: pinprobe_description='Charger_in_constant_voltage_mode' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe21 174 pinprobe vars: pinprobe_description='Charger_in_constant_current_mode' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe22 176 pinprobe vars: pinprobe_description='Charger_in_constant_input_curent_limit' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe23 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 pinprobeBUS vars: pinprobe_description='Configure_VC_stepdown_zero' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=3
-X$pinprobe26 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 pinprobeBUS vars: pinprobe_description='Configure_VC_stepup_zero' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=3
-X$pinprobe3 166 pinprobe vars: pinprobe_description='Charge_current_sense_for_Regulation' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe30 157 pinprobe vars: pinprobe_description='Charger_switching_frozen' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe4 161 pinprobe vars: pinprobe_description='Charge_current_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe5 165 pinprobe vars: pinprobe_description='OUT_feedback_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe6 159 pinprobe vars: pinprobe_description='CAP_voltage_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe7 173 pinprobe vars: pinprobe_description='Regulation_Ground' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe8 162 pinprobe vars: pinprobe_description='Input_current_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe9 163 pinprobe vars: pinprobe_description='Charge_current_softstart_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$STATUS 152 172 185 174 176 158 178 182 183 193 194 195 171 180 184 196 REGULATIONreferenceSTATUS
-X$U1 152 pinprobe vars: pinprobe_description='Low_voltage_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
-X$U2 119 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='REGULATIONreference' description1='REF_CAP_versus_CAPFB' description2='REF_OUT_versus_OUTFB' description3='REF_CHARGE_versus_GMCHARGE' description4='REF_IIN_versus_IIN' description5='STATUS_report_which_loop_is_in_control' description6='VCconfiguration_Adjust_VC_zero_resistance' description7='chrg_cv_The_charger_is_in_constant_voltage_mode' description8='chrg_input_ilim_The_charger_is_in_input_current_limit' description9='chrg_ci_The_charger_is_in_constant_current_mode' description10='text'
-X$U23 154 pinprobe vars: pinprobe_description='Master_sync_clock_1MHZ' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
-X$U6 153 pinprobe vars: pinprobe_description='enable_charge_clock' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+.node_map dft_CHARGEvsIN 191
+.node_map VCconfigurationUP$0 133
+.node_map enable_reference 150
+.node_map SIMPV 149
+.node_map VCconfigurationUP$1 134
+.node_map VCconfigurationDOWN$10 127
+.node_map VCconfigurationUP$2 135
+.node_map VCconfigurationDOWN$11 128
+.node_map VCconfigurationUP$3 136
+.node_map VCconfigurationDOWN$12 129
+.node_map VCconfigurationUP$4 137
+.node_map VCconfigurationDOWN$13 130
+.node_map disable_charge 186
+.node_map VCconfigurationUP$5 138
+.node_map VCconfigurationDOWN$14 131
+.node_map VCconfigurationUP$6 139
+.node_map VCconfigurationDOWN$15 132
+.node_map VCconfigurationUP$7 140
+.node_map VCconfigurationUP$8 141
+.node_map mode_cv 168
+.node_map VCconfigurationUP$9 142
+.node_map dft_OUTvsCHARGE 192
+.node_map hijack_enable_reference 173
+.node_map VC 163
+.node_map disable_ss 188
+.node_map GMCHARGE 164
+.node_map REF_OUT 157
+.node_map mode_stepdown 152
+.node_map VCsinkIIN 178
+.node_map REF_CHARGER 155
+.node_map VCsense 165
+.node_map REF_CAP 156
+.node_map disable_out 185
+.node_map hijack_freeze_charger 177
+.node_map REF_CHARGE 158
+.node_map chrg_ci 170
+.node_map dft_CHARGEvsCAP 190
+.node_map disable_cap 184
+.node_map VCconfigurationDOWN$0 117
+.node_map VCconfigurationDOWN$1 118
+.node_map VCconfigurationDOWN$2 119
+.node_map VCconfigurationDOWN$3 120
+.node_map hijack_go 175
+.node_map VCconfigurationDOWN$4 121
+.node_map chrg_cv 169
+.node_map VCconfigurationDOWN$5 122
+.node_map VCconfigurationDOWN$6 123
+.node_map VCconfigurationDOWN$7 124
+.node_map VCconfigurationDOWN$8 125
+.node_map VCconfigurationDOWN$9 126
+.node_map IIN 166
+.node_map freeze_charger 154
+.node_map disable_source 183
+.node_map VCsinkCHARGE 179
+.node_map enable_stepup 181
+.node_map enable_stepdown 180
+.node_map IINREFBUF 182
+.node_map dft_INvsCAP 189
+.node_map VCsinkOUT 176
+.node_map REF_IIN 159
+.node_map chrg_input_ilim 172
+.node_map clock_regulation 151
+.node_map ok_reference 167
+.node_map GNDregulation 171
+.node_map CAPFB 161
+.node_map VCconfigurationUP$10 143
+.node_map VCsinkCAP 174
+.node_map SS 160
+.node_map VCconfigurationUP$11 144
+.node_map VCconfigurationUP$12 145
+.node_map go 153
+.node_map VCconfigurationUP$13 146
+.node_map VCconfigurationUP$14 147
+.node_map disable_iin 187
+.node_map VCconfigurationUP$15 148
+.node_map OUTFB 162
+X$DEBUG 150 173 154 177 153 175 182 183 167 184 189 185 190 186 191 187 192 188 REGULATIONreferenceDEBUG
+X$MAIN 149 173 152 175 177 156 157 158 159 163 160 165 174 161 176 162 178 164 179 166 167 117 118 119 180 133 134 135 181 182 171 183 184 185 186 188 187 REGULATIONreferenceMAIN
+X$pinprobe1 163 pinprobe vars: pinprobe_description='Compensation_force' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe10 155 pinprobe vars: pinprobe_description='CAP_voltage_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 171 pinprobe vars: pinprobe_description='Regulation_Ground' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe12 161 pinprobe vars: pinprobe_description='CAP_feedback_sense' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe13 157 pinprobe vars: pinprobe_description='OUT_voltage_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe14 166 pinprobe vars: pinprobe_description='Input_current_input' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe15 153 pinprobe vars: pinprobe_description='REGUALTION_enabled_and_ready' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe16 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 pinprobeBUS vars: pinprobe_description='Configure_VC_stepdown_zero' pinprobe_mode='input' pinprobe_input='datamap' pinprobe_output='tbd' pinprobe_bits=3
+X$pinprobe17 165 pinprobe vars: pinprobe_description='Compensation_sense' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe18 168 pinprobe vars: pinprobe_description='Charger_in_constant_voltage_mode' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe19 152 pinprobe vars: pinprobe_description='Controller_in_stepdown_mode' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 167 pinprobe vars: pinprobe_description='REGULATION_references_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe20 169 pinprobe vars: pinprobe_description='Charger_in_constant_voltage_mode' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe21 170 pinprobe vars: pinprobe_description='Charger_in_constant_current_mode' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe22 172 pinprobe vars: pinprobe_description='Charger_in_constant_input_curent_limit' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe23 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 pinprobeBUS vars: pinprobe_description='Configure_VC_stepup_zero' pinprobe_mode='input' pinprobe_input='datamap' pinprobe_output='tbd' pinprobe_bits=3
+X$pinprobe24 154 pinprobe vars: pinprobe_description='Charger_switching_frozen' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 164 pinprobe vars: pinprobe_description='Charge_current_sense_for_Regulation' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 158 pinprobe vars: pinprobe_description='Charge_current_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 162 pinprobe vars: pinprobe_description='OUT_feedback_input' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 156 pinprobe vars: pinprobe_description='CAP_voltage_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe8 159 pinprobe vars: pinprobe_description='Input_current_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe9 160 pinprobe vars: pinprobe_description='Charge_current_softstart_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$STATUS 149 169 181 170 172 155 174 178 179 189 190 191 168 176 180 192 REGULATIONreferenceSTATUS
+X$U1 149 pinprobe vars: pinprobe_description='Low_voltage_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U2 116 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='REGULATIONreference' description1='REF_CAP_versus_CAPFB' description2='REF_OUT_versus_OUTFB' description3='REF_CHARGE_versus_GMCHARGE' description4='REF_IIN_versus_IIN' description5='STATUS_report_which_loop_is_in_control' description6='VCconfiguration_Adjust_VC_zero_resistance' description7='chrg_cv_The_charger_is_in_constant_voltage_mode' description8='chrg_input_ilim_The_charger_is_in_input_current_limit' description9='chrg_ci_The_charger_is_in_constant_current_mode' description10='text'
+X$U23 151 pinprobe vars: pinprobe_description='Master_sync_clock_1MHZ' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U6 150 pinprobe vars: pinprobe_description='enable_charge_clock' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
 .ends REGULATIONreference
 
 ** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301D\design\REGULATIONreferenceDEBUG.sxcmp
@@ -271,166 +268,164 @@ X$U8 9 pinprobe vars: pinprobe_description='DFT_Timer_pulse'
 .ends VESPAdftpulse
 
 ** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301D\design\REGULATIONreferenceMAIN.sxcmp
-.subckt REGULATIONreferenceMAIN 209 210 211 212 213 214 215 216 217 224 218 225 226 219 228 221 230 222 232 223 234 177 178 179 236 193 194 195 238 227 240 229 231 233 235 237 241 239
+.subckt REGULATIONreferenceMAIN 207 208 209 210 211 212 213 214 215 222 216 223 224 217 225 219 227 220 229 221 232 175 176 177 234 191 192 193 236 237 238 226 228 230 231 235 233
 *#hierarchy
-.node_map disable_capBAR 262
-.node_map VCconfigurationUP$0 193
-.node_map enable_reference 210
-.node_map SIMPV 209
-.node_map VCconfigurationUP$1 194
-.node_map VCconfigurationDOWN$10 187
-.node_map VCconfigurationUP$2 195
-.node_map VCconfigurationDOWN$11 188
-.node_map VCconfigurationUP$3 196
-.node_map VCconfigurationDOWN$12 189
-.node_map VCconfigurationUP$4 197
-.node_map VCconfigurationDOWN$13 190
-.node_map disable_charge 237
-.node_map VCconfigurationUP$5 198
-.node_map VCconfigurationDOWN$14 191
-.node_map VCconfigurationUP$6 199
-.node_map VCconfigurationDOWN$15 192
-.node_map VCconfigurationUP$7 200
-.node_map VCconfigurationUP$8 201
-.node_map VCconfigurationUP$9 202
-.node_map CAFFB 220
-.node_map enable_out 250
-.node_map disable_chargeBAR 264
-.node_map ok_capfb 251
-.node_map ok_stepdown 247
-.node_map enable_source 244
-.node_map VC 224
-.node_map enable_cap 263
-.node_map disable_ss 241
-.node_map GMCHARGE 222
-.node_map ok_stepup 258
-.node_map stepdown 257
-.node_map enable_referenceBUF 242
-.node_map REF_OUT 215
-.node_map mode_stepdown 211
-.node_map mode_stepup 254
-.node_map VCsinkIIN 230
-.node_map eup 261
-.node_map VCsense 225
-.node_map REF_CAP 214
-.node_map ok_icharge 255
-.node_map ok_out 252
-.node_map disable_out 235
-.node_map VCforce 245
-.node_map REF_CHARGE 216
-.node_map disable_cap 233
-.node_map edown 256
-.node_map VCconfigurationDOWN$0 177
-.node_map VCconfigurationDOWN$1 178
-.node_map enable_charge 267
-.node_map VCconfigurationDOWN$2 179
-.node_map disable_outBAR 259
-.node_map VCconfigurationDOWN$3 180
-.node_map VCconfigurationDOWN$4 181
-.node_map VCconfigurationDOWN$5 182
-.node_map VCconfigurationDOWN$6 183
-.node_map VCconfigurationDOWN$7 184
-.node_map VCconfigurationDOWN$8 185
-.node_map VCconfigurationDOWN$9 186
-.node_map enable_iin 266
-.node_map IIN 223
-.node_map freeze_charger 213
-.node_map disable_source 231
-.node_map VCsinkCHARGE 232
-.node_map okDELAY 249
-.node_map enable_stepup 238
-.node_map enable_stepdown 236
-.node_map IINREFBUF 240
-.node_map stepup 260
-.node_map VCsinkOUT 228
-.node_map disable_iinBAR 265
-.node_map REF_IIN 217
-.node_map ok 248
-.node_map ok_vc 246
-.node_map ok_reference 234
-.node_map disable_sourceBAR 243
-.node_map GNDregulation 229
-.node_map CAPFB 219
-.node_map VCconfigurationUP$10 203
-.node_map VCsinkCAP 226
-.node_map SS 218
-.node_map VCconfigurationUP$11 204
-.node_map VCconfigurationUP$12 205
-.node_map kelvin_GNDregulation 227
-.node_map go 212
-.node_map VCconfigurationUP$13 206
-.node_map VCconfigurationUP$14 207
-.node_map ok_iin 253
-.node_map disable_iin 239
-.node_map VCconfigurationUP$15 208
-.node_map both 268
-.node_map OUTFB 221
-X$delay2 248 249 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=5 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=9 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1k
-X$GMICHARGE 209 267 216 218 232 222 255 245 241 REGULATIONreferenceGMIcharge
-X$GMIIN 209 266 217 230 223 253 240 245 REGULATIONreferenceGMIinput
-X$GMVCAP 209 263 214 226 219 251 245 REGULATIONreferenceGMVcap
-X$GMVOUT 209 250 215 245 221 252 228 REGULATIONreferenceGMVout
-X$pinprobe1 224 pinprobe vars: pinprobe_description='Compensation_capacitor' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
-X$pinprobe10 211 pinprobe vars: pinprobe_description='Controller_in_stepdown_mode' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe11 229 pinprobe vars: pinprobe_description='Regulation_Ground' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe12 220 pinprobe vars: pinprobe_description='CAP_feedback_sense' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe13 215 pinprobe vars: pinprobe_description='OUT_voltage_reference' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe14 223 pinprobe vars: pinprobe_description='Input_current_input' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe15 240 pinprobe vars: pinprobe_description='REGULATION_Input_current_reference_buffer' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe17 212 pinprobe vars: pinprobe_description='REGUALTION_enabled_and_ready' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe18 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 pinprobeBUS vars: pinprobe_description='Configure_VC_stepdown_zero' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=3
-X$pinprobe2 234 pinprobe vars: pinprobe_description='REGULATION_references_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe20 225 pinprobe vars: pinprobe_description='Compensation_capacitor_sense' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
-X$pinprobe21 230 pinprobe vars: pinprobe_description='GMIN_output_forInput_current' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe22 232 pinprobe vars: pinprobe_description='GMCHARGE_output_for_charge_current' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe23 226 pinprobe vars: pinprobe_description='GMO_output_For_CAPFB' pinprobe_mode='output' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe24 228 pinprobe vars: pinprobe_description='GMO_output_For_OUTFB' pinprobe_mode='output' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe25 236 pinprobe vars: pinprobe_description='Enable_GM_Status_for_stepdown' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe26 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 pinprobeBUS vars: pinprobe_description='Configure_VC_stepup_zero' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=3
-X$pinprobe27 238 pinprobe vars: pinprobe_description='Enable_GM_Status_detect_for_stepup' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe28 241 pinprobe vars: pinprobe_description='DFT_disable_softstart' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe3 222 pinprobe vars: pinprobe_description='Charge_current_sense_Regulation' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe30 213 pinprobe vars: pinprobe_description='Charger_switching_frozen' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe31 235 pinprobe vars: pinprobe_description='DFT_disable_VC_OUT_sink_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe32 233 pinprobe vars: pinprobe_description='DFT_disable_VC_CAP_sink_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe33 231 pinprobe vars: pinprobe_description='DFT_disable_VC_source_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe34 239 pinprobe vars: pinprobe_description='DFT_disable_VC_IIN_sink_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe35 237 pinprobe vars: pinprobe_description='DFT_disable_VC_CHARGE_sink_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe4 216 pinprobe vars: pinprobe_description='Charge_current_reference' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe5 221 pinprobe vars: pinprobe_description='OUT_feedback_input' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe6 214 pinprobe vars: pinprobe_description='CAP_voltage_reference' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe7 227 pinprobe vars: pinprobe_description='kelvin_GNDregulation' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe8 217 pinprobe vars: pinprobe_description='Input_current_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-X$pinprobe9 218 pinprobe vars: pinprobe_description='Charge_current_softstart_reference' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
-X$U1 209 pinprobe vars: pinprobe_description='Low_voltage_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
-X$U10 174 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='REGULATIONreference' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
-X$U11 238 261 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
-X$U12 249 256 247 VESPAasmINPUT1
-X$U13 249 261 258 VESPAasmINPUT1
-X$U14 258 175 247 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
-X$U15 175 248 inv vars: logicgate_type='inv' logicgate_vmax=6
-X$U16 236 256 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
-X$U17 176 268 inv vars: logicgate_type='inv' logicgate_vmax=6
-X$U18 260 176 257 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
-X$U19 257 263 262 VESPAasmINPUT1
-X$U20 233 262 inv vars: logicgate_type='inv' logicgate_vmax=6
-X$U21 242 210 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
-X$U22 231 243 inv vars: logicgate_type='inv' logicgate_vmax=6
-X$U23 237 264 inv vars: logicgate_type='inv' logicgate_vmax=6
-X$U24 239 265 inv vars: logicgate_type='inv' logicgate_vmax=6
-X$U25 242 260 254 VESPAasmINPUT1
-X$U26 242 257 211 VESPAasmINPUT1
-X$U27 257 266 265 VESPAasmINPUT1
-X$U28 268 267 264 VESPAasmINPUT1
-X$U29 246 252 258 255 260 VESPAasmINPUT3
-X$U3 260 250 259 VESPAasmINPUT1
-X$U4 235 259 inv vars: logicgate_type='inv' logicgate_vmax=6
-X$U5 242 244 243 VESPAasmINPUT1
-X$U6 210 pinprobe vars: pinprobe_description='enable_charge_clock' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
-X$U7 211 254 inv vars: logicgate_type='inv' logicgate_vmax=6
-X$U8 234 249 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
-X$U9 246 251 247 253 255 257 VESPAasmINPUT4
-X$VC 209 244 211 212 213 177 178 179 245 193 194 195 225 229 246 224 REGULATIONreferenceVC
+.node_map disable_capBAR 259
+.node_map VCconfigurationUP$0 191
+.node_map enable_reference 208
+.node_map SIMPV 207
+.node_map VCconfigurationUP$1 192
+.node_map VCconfigurationDOWN$10 185
+.node_map VCconfigurationUP$2 193
+.node_map VCconfigurationDOWN$11 186
+.node_map VCconfigurationUP$3 194
+.node_map VCconfigurationDOWN$12 187
+.node_map VCconfigurationUP$4 195
+.node_map VCconfigurationDOWN$13 188
+.node_map disable_charge 231
+.node_map VCconfigurationUP$5 196
+.node_map VCconfigurationDOWN$14 189
+.node_map VCconfigurationUP$6 197
+.node_map VCconfigurationDOWN$15 190
+.node_map VCconfigurationUP$7 198
+.node_map VCconfigurationUP$8 199
+.node_map VCconfigurationUP$9 200
+.node_map CAFFB 218
+.node_map enable_out 247
+.node_map disable_chargeBAR 261
+.node_map ok_capfb 248
+.node_map ok_stepdown 244
+.node_map enable_source 241
+.node_map VC 222
+.node_map enable_cap 260
+.node_map disable_ss 235
+.node_map GMCHARGE 220
+.node_map ok_stepup 255
+.node_map stepdown 254
+.node_map enable_referenceBUF 239
+.node_map REF_OUT 213
+.node_map mode_stepdown 209
+.node_map mode_stepup 251
+.node_map VCsinkIIN 227
+.node_map eup 258
+.node_map VCsense 223
+.node_map REF_CAP 212
+.node_map ok_icharge 252
+.node_map ok_out 249
+.node_map disable_out 230
+.node_map VCforce 242
+.node_map REF_CHARGE 214
+.node_map disable_cap 228
+.node_map edown 253
+.node_map VCconfigurationDOWN$0 175
+.node_map VCconfigurationDOWN$1 176
+.node_map enable_charge 264
+.node_map VCconfigurationDOWN$2 177
+.node_map disable_outBAR 256
+.node_map VCconfigurationDOWN$3 178
+.node_map VCconfigurationDOWN$4 179
+.node_map VCconfigurationDOWN$5 180
+.node_map VCconfigurationDOWN$6 181
+.node_map VCconfigurationDOWN$7 182
+.node_map VCconfigurationDOWN$8 183
+.node_map VCconfigurationDOWN$9 184
+.node_map enable_iin 263
+.node_map IIN 221
+.node_map freeze_charger 211
+.node_map disable_source 226
+.node_map VCsinkCHARGE 229
+.node_map okDELAY 246
+.node_map enable_stepup 236
+.node_map enable_stepdown 234
+.node_map IINREFBUF 237
+.node_map stepup 257
+.node_map VCsinkOUT 225
+.node_map disable_iinBAR 262
+.node_map REF_IIN 215
+.node_map ok 245
+.node_map ok_vc 243
+.node_map ok_reference 232
+.node_map disable_sourceBAR 240
+.node_map GNDregulation 238
+.node_map CAPFB 217
+.node_map VCconfigurationUP$10 201
+.node_map VCsinkCAP 224
+.node_map SS 216
+.node_map VCconfigurationUP$11 202
+.node_map VCconfigurationUP$12 203
+.node_map go 210
+.node_map VCconfigurationUP$13 204
+.node_map VCconfigurationUP$14 205
+.node_map ok_iin 250
+.node_map disable_iin 233
+.node_map VCconfigurationUP$15 206
+.node_map both 265
+.node_map OUTFB 219
+X$delay2 245 246 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=5 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=9 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1k
+X$GMICHARGE 207 264 214 216 229 220 252 242 235 REGULATIONreferenceGMIcharge
+X$GMIIN 207 263 215 227 221 250 237 242 REGULATIONreferenceGMIinput
+X$GMVCAP 207 260 212 224 217 248 242 REGULATIONreferenceGMVcap
+X$GMVOUT 207 247 213 242 219 249 225 REGULATIONreferenceGMVout
+X$pinprobe1 222 pinprobe vars: pinprobe_description='Compensation_capacitor' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe10 209 pinprobe vars: pinprobe_description='Controller_in_stepdown_mode' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 238 pinprobe vars: pinprobe_description='Regulation_Ground' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe12 218 pinprobe vars: pinprobe_description='CAP_feedback_sense' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe13 213 pinprobe vars: pinprobe_description='OUT_voltage_reference' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe14 221 pinprobe vars: pinprobe_description='Input_current_input' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe15 237 pinprobe vars: pinprobe_description='REGULATION_Input_current_reference_buffer' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe17 210 pinprobe vars: pinprobe_description='REGUALTION_enabled_and_ready' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe18 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 pinprobeBUS vars: pinprobe_description='Configure_VC_stepdown_zero' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=3
+X$pinprobe2 232 pinprobe vars: pinprobe_description='REGULATION_references_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe20 223 pinprobe vars: pinprobe_description='Compensation_capacitor_sense' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe21 227 pinprobe vars: pinprobe_description='GMIN_output_forInput_current' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe22 229 pinprobe vars: pinprobe_description='GMCHARGE_output_for_charge_current' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe23 224 pinprobe vars: pinprobe_description='GMO_output_For_CAPFB' pinprobe_mode='output' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe24 225 pinprobe vars: pinprobe_description='GMO_output_For_OUTFB' pinprobe_mode='output' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe25 234 pinprobe vars: pinprobe_description='Enable_GM_Status_for_stepdown' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe26 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 pinprobeBUS vars: pinprobe_description='Configure_VC_stepup_zero' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=3
+X$pinprobe27 236 pinprobe vars: pinprobe_description='Enable_GM_Status_detect_for_stepup' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe28 235 pinprobe vars: pinprobe_description='DFT_disable_softstart' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 220 pinprobe vars: pinprobe_description='Charge_current_sense_Regulation' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe30 211 pinprobe vars: pinprobe_description='Charger_switching_frozen' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe31 230 pinprobe vars: pinprobe_description='DFT_disable_VC_OUT_sink_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe32 228 pinprobe vars: pinprobe_description='DFT_disable_VC_CAP_sink_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe33 226 pinprobe vars: pinprobe_description='DFT_disable_VC_source_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe34 233 pinprobe vars: pinprobe_description='DFT_disable_VC_IIN_sink_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe35 231 pinprobe vars: pinprobe_description='DFT_disable_VC_CHARGE_sink_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 214 pinprobe vars: pinprobe_description='Charge_current_reference' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 219 pinprobe vars: pinprobe_description='OUT_feedback_input' pinprobe_mode='input' pinprobe_input='sense' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 212 pinprobe vars: pinprobe_description='CAP_voltage_reference' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe8 215 pinprobe vars: pinprobe_description='Input_current_reference' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe9 216 pinprobe vars: pinprobe_description='Charge_current_softstart_reference' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$U1 207 pinprobe vars: pinprobe_description='Low_voltage_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U10 172 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='REGULATIONreference' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U11 236 258 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U12 246 253 244 VESPAasmINPUT1
+X$U13 246 258 255 VESPAasmINPUT1
+X$U14 255 173 244 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U15 173 245 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U16 234 253 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U17 174 265 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U18 257 174 254 nor2 vars: logicgate_type='nor2' logicgate_vmax=6
+X$U19 254 260 259 VESPAasmINPUT1
+X$U20 228 259 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U21 239 208 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U22 226 240 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U23 231 261 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U24 233 262 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U25 239 257 251 VESPAasmINPUT1
+X$U26 239 254 209 VESPAasmINPUT1
+X$U27 254 263 262 VESPAasmINPUT1
+X$U28 265 264 261 VESPAasmINPUT1
+X$U29 243 249 255 252 257 VESPAasmINPUT3
+X$U3 257 247 256 VESPAasmINPUT1
+X$U4 230 256 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U5 239 241 240 VESPAasmINPUT1
+X$U6 208 pinprobe vars: pinprobe_description='enable_charge_clock' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
+X$U7 209 251 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U8 232 246 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U9 243 248 244 250 252 254 VESPAasmINPUT4
+X$VC 207 241 209 210 211 175 176 177 242 191 192 193 223 238 243 222 REGULATIONreferenceVC
 .ends REGULATIONreferenceMAIN
 
 ** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301D\design\REGULATIONreferenceGMIcharge.sxcmp
