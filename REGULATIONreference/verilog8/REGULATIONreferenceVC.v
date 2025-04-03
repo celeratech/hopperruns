@@ -203,13 +203,12 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONreferenceVC (VC, go, SIMPV, TAEXT, ok_vc, CELREF, VCforce, VCsense, CELG59462, CELV96848, CELSUB40948, IP_bd9fd3f3, IP_d273c85d, GNDregulation, mode_stepdown, freeze_charger, CELREF_e3b0c442, enable_reference, VCconfigurationUP_0, VCconfigurationUP_1, VCconfigurationUP_2, VCconfigurationDOWN_0, VCconfigurationDOWN_1, VCconfigurationDOWN_2);
+module REGULATIONreferenceVC (VC, go, SIMPV, TAEXT, ok_vc, VCforce, VCsense, CELG59462, CELV96848, CELSUB40948, IP_bd9fd3f3, IP_d273c85d, GNDregulation, mode_stepdown, freeze_charger, CELREF_e3b0c442, enable_reference, VCconfigurationUP_0, VCconfigurationUP_1, VCconfigurationUP_2, VCconfigurationDOWN_0, VCconfigurationDOWN_1, VCconfigurationDOWN_2);
 inout  VC;
 input  go;
 input  SIMPV;
 input  TAEXT;
 output  ok_vc;
-input  CELREF;
 inout  VCforce;
 inout  VCsense;
   input  CELG59462;
@@ -262,7 +261,7 @@ clamp_0ff3d64d XU2 (
 .CELG(CELG59462),
 .SHUNT(GNDregulation),
 .SIMPV(SIMPV),
-.CELREF(CELREF),
+.CELREF(CELREF_e3b0c442),
 .CELSUB(CELSUB40948),
 .enable_clamp(enable_reference),
 .global_clamp(tl0)

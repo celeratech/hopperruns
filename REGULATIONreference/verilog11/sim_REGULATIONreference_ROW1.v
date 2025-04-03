@@ -43,7 +43,7 @@ module FORCE_REGULATIONreference (SS,VC,go,IIN,CAPFB,OUTFB,SIMPV,REF_CAP,REF_IIN
   inout  VCconfigurationDOWN_2;
 endmodule
 
-module REGULATIONreference (,SS,VC,go,IIN,CAPFB,OUTFB,SIMPV,TAEXT,CELREF,REF_CAP,REF_IIN,REF_OUT,VCsense,chrg_ci,chrg_cv,mode_cv,GMCHARGE,CELG59462,CELV96848,REF_CHARGE,CELSUB40948,IP_1748f38b,IP_51d5b7db,IP_52cba950,IP_5c9afec8,IP_65be5a53,IP_7fd756e8,IP_9b35f469,IP_bd9fd3f3,IP_cb653629,IP_d273c85d,IP_e27f820d,IP_f387a76b,REF_CHARGER,ok_reference,GNDregulation,mode_stepdown,freeze_charger,chrg_input_ilim,clock_regulation,enable_reference,VCconfigurationUP_0,VCconfigurationUP_1,VCconfigurationUP_2,VCconfigurationDOWN_0,VCconfigurationDOWN_1,VCconfigurationDOWN_2);
+module REGULATIONreference (,SS,VC,go,IIN,CAPFB,OUTFB,SIMPV,TAEXT,REF_CAP,REF_IIN,REF_OUT,VCsense,chrg_ci,chrg_cv,mode_cv,GMCHARGE,CELG59462,CELV96848,REF_CHARGE,CELSUB40948,IP_1748f38b,IP_51d5b7db,IP_52cba950,IP_5c9afec8,IP_65be5a53,IP_7fd756e8,IP_9b35f469,IP_bd9fd3f3,IP_cb653629,IP_d273c85d,IP_e27f820d,IP_f387a76b,REF_CHARGER,ok_reference,GNDregulation,mode_stepdown,freeze_charger,chrg_input_ilim,clock_regulation,enable_reference,VCconfigurationUP_0,VCconfigurationUP_1,VCconfigurationUP_2,VCconfigurationDOWN_0,VCconfigurationDOWN_1,VCconfigurationDOWN_2);
   input  SS;
   inout  VC;
   input  go;
@@ -52,7 +52,6 @@ module REGULATIONreference (,SS,VC,go,IIN,CAPFB,OUTFB,SIMPV,TAEXT,CELREF,REF_CAP
   inout  OUTFB;
   input  SIMPV;
   input  TAEXT;
-  input  CELREF;
   input  REF_CAP;
   input  REF_IIN;
   input  REF_OUT;
@@ -163,7 +162,6 @@ REGULATIONreference XREGULATIONreference1 (
 .OUTFB(OUTFB),
 .SIMPV(SIMPV),
 .TAEXT(TAEXT),
-.CELREF(CELREF),
 .REF_CAP(REF_CAP),
 .REF_IIN(REF_IIN),
 .REF_OUT(REF_OUT),
