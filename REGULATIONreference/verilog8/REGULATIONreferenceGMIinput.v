@@ -149,89 +149,89 @@ wire [6:0] trim_vbuffer_positive;
 
 // ------------------------ Networks ---------------------
 VESPAasmINPUT2 XU2 (
-.o(net_68),
-.i0(net_67),
-.i1(net_64),
-.Tstate(enable_stepdown),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
+  .o(net_68),
+  .i0(net_67),
+  .i1(net_64),
+  .Tstate(enable_stepdown),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .CELSUB40948(CELSUB40948)
 );
 
 dbuf_e926e395 XU3 (
-.i(net_68),
-.o(ok_iin),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_68),
+  .o(ok_iin),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 currentmirror2_cd45133e XU4 (
-.I0(VCforce),
-.I1(VCsinkIIN),
-.CELG(CELG59462),
-.ISET(net_66),
-.SIMPV(SIMPV),
-.CELSUB(CELSUB40948),
-.ok_currentmirror(net_45),
-.enable_currentmirror(enable_stepdown),
-.global_currentmirror(tl0)
+  .I0(VCforce),
+  .I1(VCsinkIIN),
+  .CELG(CELG59462),
+  .ISET(net_66),
+  .SIMPV(SIMPV),
+  .CELSUB(CELSUB40948),
+  .ok_currentmirror(net_45),
+  .enable_currentmirror(enable_stepdown),
+  .global_currentmirror(tl0)
 );
 
 gm_47dc2d98 Xgm1 (
-.IP(IP_5c9afec8),
-.GMO(net_66),
-.INN(IINREFBUF),
-.INP(net_65),
-.CELG(CELG59462),
-.SIMPV(SIMPV),
-.ok_gm(net_67),
-.CELSUB(CELSUB40948),
-.enable_gm(enable_stepdown),
-.global_gm(tl0),
-.trim_gm_negative({a0,a0,a0,a0,a0,a0,a0}),
-.trim_gm_positive({a0,a0,a0,a0,a0,a0,a0})
+  .IP(IP_5c9afec8),
+  .GMO(net_66),
+  .INN(IINREFBUF),
+  .INP(net_65),
+  .CELG(CELG59462),
+  .SIMPV(SIMPV),
+  .ok_gm(net_67),
+  .CELSUB(CELSUB40948),
+  .enable_gm(enable_stepdown),
+  .global_gm(tl0),
+  .trim_gm_negative({a0,a0,a0,a0,a0,a0,a0}),
+  .trim_gm_positive({a0,a0,a0,a0,a0,a0,a0})
 );
 
 STONEnoconn XNC45 (
-.noconn(net_45)
+  .noconn(net_45)
 );
 
 PEBBLEtielo XtieLo (
-.G(CELG59462),
-.V(CELV96848),
-.q(tl0),
-.SUB(CELSUB40948)
+  .G(CELG59462),
+  .V(CELV96848),
+  .q(tl0),
+  .SUB(CELSUB40948)
 );
 
 PEBBLEtielo XDRMNOTL (
-.G(CELG59462),
-.V(CELV96848),
-.q(a0),
-.SUB(CELSUB40948)
+  .G(CELG59462),
+  .V(CELV96848),
+  .q(a0),
+  .SUB(CELSUB40948)
 );
 
 switchgnd_d6772c2d Xswitch1 (
-.I(IIN),
-.O(net_65),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948),
-.enable_switch(enable_stepdown)
+  .I(IIN),
+  .O(net_65),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948),
+  .enable_switch(enable_stepdown)
 );
 
 vbuffer_92790751 Xvbuffer1 (
-.IN(REF_IIN),
-.IP(IP_1748f38b),
-.OUT(IINREFBUF),
-.CELG(CELG59462),
-.SIMPV(SIMPV),
-.CELSUB(CELSUB40948),
-.ok_vbuffer(net_64),
-.enable_vbuffer(enable_stepdown),
-.global_vbuffer(tl0),
-.trim_vbuffer_negative({a0,a0,a0,a0,a0,a0,a0}),
-.trim_vbuffer_positive({a0,a0,a0,a0,a0,a0,a0})
+  .IN(REF_IIN),
+  .IP(IP_1748f38b),
+  .OUT(IINREFBUF),
+  .CELG(CELG59462),
+  .SIMPV(SIMPV),
+  .CELSUB(CELSUB40948),
+  .ok_vbuffer(net_64),
+  .enable_vbuffer(enable_stepdown),
+  .global_vbuffer(tl0),
+  .trim_vbuffer_negative({a0,a0,a0,a0,a0,a0,a0}),
+  .trim_vbuffer_positive({a0,a0,a0,a0,a0,a0,a0})
 );
 
 endmodule

@@ -109,299 +109,299 @@ inout  VCconfigurationDOWN_2;
 
 // ------------------------ Networks ---------------------
 STONEnoconn XNCip (
-.noconn(noconn_IN)
+  .noconn(noconn_IN)
 );
 
 vpwl_0x0_10d0ux0_11d0ux1d2 V_SSx (
-.PLUS(net_198),
-.MINUS(net_186)
+  .PLUS(net_198),
+  .MINUS(net_186)
 );
 
 vpwl_0x0 XCELG (
-.PLUS(CELG59462),
-.MINUS(net_0)
+  .PLUS(CELG59462),
+  .MINUS(net_0)
 );
 
 vpwl_0x0_10d0ux0_11d0ux5 XCELV (
-.PLUS(CELV96848),
-.MINUS(net_0)
+  .PLUS(CELV96848),
+  .MINUS(net_0)
 );
 
 vdc_0 VI__SS (
-.PLUS(net_198),
-.MINUS(SS)
+  .PLUS(net_198),
+  .MINUS(SS)
 );
 
 vdc_0 VI__VC (
-.PLUS(net_200),
-.MINUS(VC)
+  .PLUS(net_200),
+  .MINUS(VC)
 );
 
 vpwl_0x0_10ux0_11ux0 V_GNDx (
-.PLUS(net_202),
-.MINUS(net_0)
+  .PLUS(net_202),
+  .MINUS(net_0)
 );
 
 vpwl_0x0_10d0ux0_11d0ux1d2 V_IINx (
-.PLUS(net_191),
-.MINUS(net_186)
+  .PLUS(net_191),
+  .MINUS(net_186)
 );
 
 vdc_0 VI__GND (
-.PLUS(net_186),
-.MINUS(net_202)
+  .PLUS(net_186),
+  .MINUS(net_202)
 );
 
 vdc_0 VI__IIN (
-.PLUS(net_191),
-.MINUS(IIN)
+  .PLUS(net_191),
+  .MINUS(IIN)
 );
 
 vpwl_0x0 XCELSUB (
-.PLUS(CELSUB40948),
-.MINUS(net_0)
+  .PLUS(CELSUB40948),
+  .MINUS(net_0)
 );
 
 vpwl_0x0_10d0ux0_11d0ux1d2 V_CAPFBx (
-.PLUS(net_189),
-.MINUS(net_186)
+  .PLUS(net_189),
+  .MINUS(net_186)
 );
 
 vpwl_0x0_10d0ux0_11d0ux1d2 V_OUTFBx (
-.PLUS(net_194),
-.MINUS(net_186)
+  .PLUS(net_194),
+  .MINUS(net_186)
 );
 
 vpwl_0x0_10d0ux0_11d0ux5 V_SIMPVx (
-.PLUS(net_199),
-.MINUS(net_186)
+  .PLUS(net_199),
+  .MINUS(net_186)
 );
 
 vdc_0 VI__CAPFB (
-.PLUS(net_189),
-.MINUS(CAPFB)
+  .PLUS(net_189),
+  .MINUS(CAPFB)
 );
 
 vdc_0 VI__OUTFB (
-.PLUS(net_194),
-.MINUS(OUTFB)
+  .PLUS(net_194),
+  .MINUS(OUTFB)
 );
 
 vdc_0 VI__SIMPV (
-.PLUS(net_199),
-.MINUS(SIMPV)
+  .PLUS(net_199),
+  .MINUS(SIMPV)
 );
 
 vpwl_0x0_10d0ux0_11d0ux1d2 V_REF_CAPx (
-.PLUS(net_195),
-.MINUS(net_186)
+  .PLUS(net_195),
+  .MINUS(net_186)
 );
 
 vpwl_0x0_10d0ux0_11d0ux1d2 V_REF_IINx (
-.PLUS(net_197),
-.MINUS(net_186)
+  .PLUS(net_197),
+  .MINUS(net_186)
 );
 
 vpwl_0x0_10d0ux0_11d0ux1d2 V_REF_OUTx (
-.PLUS(net_190),
-.MINUS(net_186)
+  .PLUS(net_190),
+  .MINUS(net_186)
 );
 
 vdc_0 VI__REF_CAP (
-.PLUS(net_195),
-.MINUS(REF_CAP)
+  .PLUS(net_195),
+  .MINUS(REF_CAP)
 );
 
 vdc_0 VI__REF_IIN (
-.PLUS(net_197),
-.MINUS(REF_IIN)
+  .PLUS(net_197),
+  .MINUS(REF_IIN)
 );
 
 vdc_0 VI__REF_OUT (
-.PLUS(net_190),
-.MINUS(REF_OUT)
+  .PLUS(net_190),
+  .MINUS(REF_OUT)
 );
 
 vdc_0 VI__VCsense (
-.PLUS(net_201),
-.MINUS(VCsense)
+  .PLUS(net_201),
+  .MINUS(VCsense)
 );
 
 vpwl_0x0_10d0ux0_11d0ux1d2 V_GMCHARGEx (
-.PLUS(net_192),
-.MINUS(net_186)
+  .PLUS(net_192),
+  .MINUS(net_186)
 );
 
 vdc_0 VI__GMCHARGE (
-.PLUS(net_192),
-.MINUS(GMCHARGE)
+  .PLUS(net_192),
+  .MINUS(GMCHARGE)
 );
 
 SIMbias XIP_1748f38b (
-.V(SIMPV),
-.IN(noconn_IN),
-.IP(IP_1748f38b)
+  .V(SIMPV),
+  .IN(noconn_IN),
+  .IP(IP_1748f38b)
 );
 
 SIMbias XIP_51d5b7db (
-.V(SIMPV),
-.IN(noconn_IN),
-.IP(IP_51d5b7db)
+  .V(SIMPV),
+  .IN(noconn_IN),
+  .IP(IP_51d5b7db)
 );
 
 SIMbias XIP_52cba950 (
-.V(SIMPV),
-.IN(noconn_IN),
-.IP(IP_52cba950)
+  .V(SIMPV),
+  .IN(noconn_IN),
+  .IP(IP_52cba950)
 );
 
 SIMbias XIP_5c9afec8 (
-.V(SIMPV),
-.IN(noconn_IN),
-.IP(IP_5c9afec8)
+  .V(SIMPV),
+  .IN(noconn_IN),
+  .IP(IP_5c9afec8)
 );
 
 SIMbias XIP_65be5a53 (
-.V(SIMPV),
-.IN(noconn_IN),
-.IP(IP_65be5a53)
+  .V(SIMPV),
+  .IN(noconn_IN),
+  .IP(IP_65be5a53)
 );
 
 SIMbias XIP_7fd756e8 (
-.V(SIMPV),
-.IN(noconn_IN),
-.IP(IP_7fd756e8)
+  .V(SIMPV),
+  .IN(noconn_IN),
+  .IP(IP_7fd756e8)
 );
 
 SIMbias XIP_9b35f469 (
-.V(SIMPV),
-.IN(noconn_IN),
-.IP(IP_9b35f469)
+  .V(SIMPV),
+  .IN(noconn_IN),
+  .IP(IP_9b35f469)
 );
 
 SIMbias XIP_bd9fd3f3 (
-.V(SIMPV),
-.IN(noconn_IN),
-.IP(IP_bd9fd3f3)
+  .V(SIMPV),
+  .IN(noconn_IN),
+  .IP(IP_bd9fd3f3)
 );
 
 SIMbias XIP_cb653629 (
-.V(SIMPV),
-.IN(noconn_IN),
-.IP(IP_cb653629)
+  .V(SIMPV),
+  .IN(noconn_IN),
+  .IP(IP_cb653629)
 );
 
 SIMbias XIP_d273c85d (
-.V(SIMPV),
-.IN(noconn_IN),
-.IP(IP_d273c85d)
+  .V(SIMPV),
+  .IN(noconn_IN),
+  .IP(IP_d273c85d)
 );
 
 SIMbias XIP_e27f820d (
-.V(SIMPV),
-.IN(noconn_IN),
-.IP(IP_e27f820d)
+  .V(SIMPV),
+  .IN(noconn_IN),
+  .IP(IP_e27f820d)
 );
 
 SIMbias XIP_f387a76b (
-.V(SIMPV),
-.IN(noconn_IN),
-.IP(IP_f387a76b)
+  .V(SIMPV),
+  .IN(noconn_IN),
+  .IP(IP_f387a76b)
 );
 
 vpwl_0x0_10d0ux0_11d0ux1d2 V_REF_CHARGEx (
-.PLUS(net_193),
-.MINUS(net_186)
+  .PLUS(net_193),
+  .MINUS(net_186)
 );
 
 vdc_0 VI__REF_CHARGE (
-.PLUS(net_193),
-.MINUS(REF_CHARGE)
+  .PLUS(net_193),
+  .MINUS(REF_CHARGE)
 );
 
 vpwl_0x0_10d0ux0_11d0ux1d2 V_REF_CHARGERx (
-.PLUS(net_187),
-.MINUS(net_186)
+  .PLUS(net_187),
+  .MINUS(net_186)
 );
 
 vpwl_0x0_11d0ux0 Xd_go_pwl_bit0 (
-.PLUS(go),
-.MINUS(net_0)
+  .PLUS(go),
+  .MINUS(net_0)
 );
 
 vdc_0 VI__REF_CHARGER (
-.PLUS(net_187),
-.MINUS(REF_CHARGER)
+  .PLUS(net_187),
+  .MINUS(REF_CHARGER)
 );
 
 vpwl_0x0_10d0ux0_11d0ux0 V_GNDregulationx (
-.PLUS(net_188),
-.MINUS(net_186)
+  .PLUS(net_188),
+  .MINUS(net_186)
 );
 
 vdc_0 VI__GNDregulation (
-.PLUS(GNDregulation),
-.MINUS(net_188)
+  .PLUS(GNDregulation),
+  .MINUS(net_188)
 );
 
 vpwl_0x0_10d0ux0_11d0ux0 V_kelvin_GNDregulationx (
-.PLUS(net_196),
-.MINUS(net_186)
+  .PLUS(net_196),
+  .MINUS(net_186)
 );
 
 vdc_0 VI__kelvin_GNDregulation (
-.PLUS(kelvin_GNDregulation),
-.MINUS(net_196)
+  .PLUS(kelvin_GNDregulation),
+  .MINUS(net_196)
 );
 
 vpwl_0x0_11d0ux0 Xd_mode_stepdown_pwl_bit0 (
-.PLUS(mode_stepdown),
-.MINUS(net_0)
+  .PLUS(mode_stepdown),
+  .MINUS(net_0)
 );
 
 vpwl_0x0_11d0ux0 Xd_freeze_charger_pwl_bit0 (
-.PLUS(freeze_charger),
-.MINUS(net_0)
+  .PLUS(freeze_charger),
+  .MINUS(net_0)
 );
 
 vpwl_0x0_11d0ux0 Xd_clock_regulation_pwl_bit0 (
-.PLUS(clock_regulation),
-.MINUS(net_0)
+  .PLUS(clock_regulation),
+  .MINUS(net_0)
 );
 
 vpwl_0x0_11d0ux0 Xd_enable_reference_pwl_bit0 (
-.PLUS(enable_reference),
-.MINUS(net_0)
+  .PLUS(enable_reference),
+  .MINUS(net_0)
 );
 
 vpwl_0x0_11d0ux0 Xd_VCconfigurationUP_pwl_bit0 (
-.PLUS(VCconfigurationUP_0),
-.MINUS(net_0)
+  .PLUS(VCconfigurationUP_0),
+  .MINUS(net_0)
 );
 
 vpwl_0x0_11d0ux0 Xd_VCconfigurationUP_pwl_bit1 (
-.PLUS(VCconfigurationUP_1),
-.MINUS(net_0)
+  .PLUS(VCconfigurationUP_1),
+  .MINUS(net_0)
 );
 
 vpwl_0x0_11d0ux0 Xd_VCconfigurationUP_pwl_bit2 (
-.PLUS(VCconfigurationUP_2),
-.MINUS(net_0)
+  .PLUS(VCconfigurationUP_2),
+  .MINUS(net_0)
 );
 
 vpwl_0x0_11d0ux0 Xd_VCconfigurationDOWN_pwl_bit0 (
-.PLUS(VCconfigurationDOWN_0),
-.MINUS(net_0)
+  .PLUS(VCconfigurationDOWN_0),
+  .MINUS(net_0)
 );
 
 vpwl_0x0_11d0ux0 Xd_VCconfigurationDOWN_pwl_bit1 (
-.PLUS(VCconfigurationDOWN_1),
-.MINUS(net_0)
+  .PLUS(VCconfigurationDOWN_1),
+  .MINUS(net_0)
 );
 
 vpwl_0x0_11d0ux0 Xd_VCconfigurationDOWN_pwl_bit2 (
-.PLUS(VCconfigurationDOWN_2),
-.MINUS(net_0)
+  .PLUS(VCconfigurationDOWN_2),
+  .MINUS(net_0)
 );
 
 alibgnd G1 ( 

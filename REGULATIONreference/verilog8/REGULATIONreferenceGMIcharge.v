@@ -157,92 +157,92 @@ wire [6:0] trim_gm_positive;
 
 // ------------------------ Networks ---------------------
 VESPAasmINPUT1 XU8 (
-.o(net_72),
-.i0(net_73),
-.Tstate(enable_reference),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
+  .o(net_72),
+  .i0(net_73),
+  .Tstate(enable_reference),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .CELSUB40948(CELSUB40948)
 );
 
 currentmirror2_e00e07a0 XU1 (
-.I0(VCforce),
-.I1(VCsinkCHARGE),
-.CELG(CELG59462),
-.ISET(net_71),
-.SIMPV(SIMPV),
-.CELSUB(CELSUB40948),
-.ok_currentmirror(net_48),
-.enable_currentmirror(net_72),
-.global_currentmirror(tl0)
+  .I0(VCforce),
+  .I1(VCsinkCHARGE),
+  .CELG(CELG59462),
+  .ISET(net_71),
+  .SIMPV(SIMPV),
+  .CELSUB(CELSUB40948),
+  .ok_currentmirror(net_48),
+  .enable_currentmirror(net_72),
+  .global_currentmirror(tl0)
 );
 
 tie_ef1bc46b XU4 (
-.a1(net_68),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .a1(net_68),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU16 (
-.i(net_72),
-.o(ok_icharge),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_72),
+  .o(ok_icharge),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 gm_23e2aeba Xgm1 (
-.IP(IP_51d5b7db),
-.GMO(net_71),
-.INN(net_69),
-.INP(REF_CHARGE),
-.CELG(CELG59462),
-.INOR(net_70),
-.SIMPV(SIMPV),
-.ok_gm(net_73),
-.CELSUB(CELSUB40948),
-.enable_gm(enable_reference),
-.global_gm(tl0),
-.trim_gm_negative({a0,a0,a0,a0,a0,a0,a0}),
-.trim_gm_positive({a0,a0,a0,a0,a0,a0,a0})
+  .IP(IP_51d5b7db),
+  .GMO(net_71),
+  .INN(net_69),
+  .INP(REF_CHARGE),
+  .CELG(CELG59462),
+  .INOR(net_70),
+  .SIMPV(SIMPV),
+  .ok_gm(net_73),
+  .CELSUB(CELSUB40948),
+  .enable_gm(enable_reference),
+  .global_gm(tl0),
+  .trim_gm_negative({a0,a0,a0,a0,a0,a0,a0}),
+  .trim_gm_positive({a0,a0,a0,a0,a0,a0,a0})
 );
 
 STONEnoconn XNC48 (
-.noconn(net_48)
+  .noconn(net_48)
 );
 
 amux2_a0dc83ed Xamux1 (
-.O(net_70),
-.I0(SS),
-.I1(net_68),
-.CELG(CELG59462),
-.amux(disable_ss),
-.SIMPV(SIMPV),
-.CELSUB(CELSUB40948)
+  .O(net_70),
+  .I0(SS),
+  .I1(net_68),
+  .CELG(CELG59462),
+  .amux(disable_ss),
+  .SIMPV(SIMPV),
+  .CELSUB(CELSUB40948)
 );
 
 PEBBLEtielo XtieLo (
-.G(CELG59462),
-.V(CELV96848),
-.q(tl0),
-.SUB(CELSUB40948)
+  .G(CELG59462),
+  .V(CELV96848),
+  .q(tl0),
+  .SUB(CELSUB40948)
 );
 
 PEBBLEtielo XDRMNOTL (
-.G(CELG59462),
-.V(CELV96848),
-.q(a0),
-.SUB(CELSUB40948)
+  .G(CELG59462),
+  .V(CELV96848),
+  .q(a0),
+  .SUB(CELSUB40948)
 );
 
 switchgnd_d6772c2d Xswitch1 (
-.I(GMCHARGE),
-.O(net_69),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948),
-.enable_switch(enable_reference)
+  .I(GMCHARGE),
+  .O(net_69),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948),
+  .enable_switch(enable_reference)
 );
 
 endmodule

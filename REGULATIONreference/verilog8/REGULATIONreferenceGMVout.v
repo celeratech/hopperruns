@@ -139,89 +139,89 @@ wire [6:0] trim_gm_positive;
 
 // ------------------------ Networks ---------------------
 VESPAasmINPUT1 XU22 (
-.o(net_66),
-.i0(net_67),
-.Tstate(enable_stepup),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
+  .o(net_66),
+  .i0(net_67),
+  .Tstate(enable_stepup),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .CELSUB40948(CELSUB40948)
 );
 
 currentmirror2_cd45133e XU1 (
-.I0(VCforce),
-.I1(VCsinkOUT),
-.CELG(CELG59462),
-.ISET(net_65),
-.SIMPV(SIMPV),
-.CELSUB(CELSUB40948),
-.ok_currentmirror(net_42),
-.enable_currentmirror(net_66),
-.global_currentmirror(tl0)
+  .I0(VCforce),
+  .I1(VCsinkOUT),
+  .CELG(CELG59462),
+  .ISET(net_65),
+  .SIMPV(SIMPV),
+  .CELSUB(CELSUB40948),
+  .ok_currentmirror(net_42),
+  .enable_currentmirror(net_66),
+  .global_currentmirror(tl0)
 );
 
 dbuf_e926e395 XU16 (
-.i(net_66),
-.o(ok_out),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_66),
+  .o(ok_out),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 fet_2e311eb4 XU20 (
-.SUB(CELSUB40948),
-.GATE(net_40),
-.DRAIN(OUTFB),
-.SOURCE(net_63)
+  .SUB(CELSUB40948),
+  .GATE(net_40),
+  .DRAIN(OUTFB),
+  .SOURCE(net_63)
 );
 
 dbuf_e926e395 XU24 (
-.i(enable_stepup),
-.o(net_40),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(enable_stepup),
+  .o(net_40),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 gm_aa800260 Xgm1 (
-.IP(IP_9b35f469),
-.GMO(net_65),
-.INN(REF_OUT),
-.INP(net_64),
-.CELG(CELG59462),
-.SIMPV(SIMPV),
-.ok_gm(net_67),
-.CELSUB(CELSUB40948),
-.enable_gm(enable_stepup),
-.global_gm(tl0),
-.trim_gm_negative({a0,a0,a0,a0,a0,a0,a0}),
-.trim_gm_positive({a0,a0,a0,a0,a0,a0,a0})
+  .IP(IP_9b35f469),
+  .GMO(net_65),
+  .INN(REF_OUT),
+  .INP(net_64),
+  .CELG(CELG59462),
+  .SIMPV(SIMPV),
+  .ok_gm(net_67),
+  .CELSUB(CELSUB40948),
+  .enable_gm(enable_stepup),
+  .global_gm(tl0),
+  .trim_gm_negative({a0,a0,a0,a0,a0,a0,a0}),
+  .trim_gm_positive({a0,a0,a0,a0,a0,a0,a0})
 );
 
 STONEnoconn XNC42 (
-.noconn(net_42)
+  .noconn(net_42)
 );
 
 PEBBLEtielo XtieLo (
-.G(CELG59462),
-.V(CELV96848),
-.q(tl0),
-.SUB(CELSUB40948)
+  .G(CELG59462),
+  .V(CELV96848),
+  .q(tl0),
+  .SUB(CELSUB40948)
 );
 
 PEBBLEtielo XDRMNOTL (
-.G(CELG59462),
-.V(CELV96848),
-.q(a0),
-.SUB(CELSUB40948)
+  .G(CELG59462),
+  .V(CELV96848),
+  .q(a0),
+  .SUB(CELSUB40948)
 );
 
 switchgnd_d6772c2d Xswitch1 (
-.I(net_63),
-.O(net_64),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948),
-.enable_switch(enable_stepup)
+  .I(net_63),
+  .O(net_64),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948),
+  .enable_switch(enable_stepup)
 );
 
 endmodule
