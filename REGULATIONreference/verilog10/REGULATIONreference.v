@@ -23,7 +23,7 @@ module REGULATIONreferenceDEBUG (go,CELG59462,CELV96848,IINREFBUF,hijack_go,disa
   output  hijack_enable_reference;
 endmodule
 
-module REGULATIONreferenceMAIN (,SS,VC,go,IIN,CAPFB,OUTFB,SIMPV,TAEXT,REF_CAP,REF_IIN,REF_OUT,VCsense,GMCHARGE,CELG59462,CELV96848,IINREFBUF,VCsinkCAP,VCsinkIIN,VCsinkOUT,REF_CHARGE,disable_ss,CELSUB40948,IP_1748f38b,IP_51d5b7db,IP_52cba950,IP_5c9afec8,IP_9b35f469,IP_bd9fd3f3,IP_d273c85d,disable_cap,disable_iin,disable_out,VCsinkCHARGE,ok_reference,GNDregulation,enable_stepup,mode_stepdown,disable_charge,disable_source,freeze_charger,enable_stepdown,enable_reference,VCconfigurationUP_0,VCconfigurationUP_1,VCconfigurationUP_2,VCconfigurationDOWN_0,VCconfigurationDOWN_1,VCconfigurationDOWN_2);
+module REGULATIONreferenceMAIN (,SS,VC,go,IIN,CAPFB,OUTFB,SIMPV,TAEXT,REF_CAP,REF_IIN,REF_OUT,VCsense,GMCHARGE,CELG59462,CELV96848,IINREFBUF,VCsinkCAP,VCsinkIIN,VCsinkOUT,REF_CHARGE,disable_ss,CELSUB40948,IP_1748f38b,IP_51d5b7db,IP_52cba950,IP_5c9afec8,IP_9b35f469,IP_bd9fd3f3,IP_d273c85d,disable_cap,disable_iin,disable_out,VCsinkCHARGE,ok_reference,GNDregulation,enable_stepup,mode_stepdown,disable_charge,disable_source,freeze_charger,CELREF_e3b0c442,enable_stepdown,enable_reference,VCconfigurationUP_0,VCconfigurationUP_1,VCconfigurationUP_2,VCconfigurationDOWN_0,VCconfigurationDOWN_1,VCconfigurationDOWN_2);
   input  SS;
   inout  VC;
   input  go;
@@ -64,6 +64,7 @@ module REGULATIONreferenceMAIN (,SS,VC,go,IIN,CAPFB,OUTFB,SIMPV,TAEXT,REF_CAP,RE
   input  disable_charge;
   input  disable_source;
   input  freeze_charger;
+  input  CELREF_e3b0c442;
   output  enable_stepdown;
   input  enable_reference;
   input  VCconfigurationUP_0;
@@ -102,7 +103,7 @@ module REGULATIONreferenceSTATUS (SIMPV,chrg_ci,chrg_cv,mode_cv,CELG59462,CELV96
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONreference (SS, VC, go, IIN, CAPFB, OUTFB, SIMPV, TAEXT, REF_CAP, REF_IIN, REF_OUT, VCsense, chrg_ci, chrg_cv, mode_cv, GMCHARGE, CELG59462, CELV96848, REF_CHARGE, CELSUB40948, IP_1748f38b, IP_51d5b7db, IP_52cba950, IP_5c9afec8, IP_65be5a53, IP_7fd756e8, IP_9b35f469, IP_bd9fd3f3, IP_cb653629, IP_d273c85d, IP_e27f820d, IP_f387a76b, REF_CHARGER, ok_reference, GNDregulation, mode_stepdown, freeze_charger, chrg_input_ilim, clock_regulation, enable_reference, VCconfigurationUP_0, VCconfigurationUP_1, VCconfigurationUP_2, VCconfigurationDOWN_0, VCconfigurationDOWN_1, VCconfigurationDOWN_2);
+module REGULATIONreference (SS, VC, go, IIN, CAPFB, OUTFB, SIMPV, TAEXT, REF_CAP, REF_IIN, REF_OUT, VCsense, chrg_ci, chrg_cv, mode_cv, GMCHARGE, CELG59462, CELV96848, REF_CHARGE, CELSUB40948, IP_1748f38b, IP_51d5b7db, IP_52cba950, IP_5c9afec8, IP_65be5a53, IP_7fd756e8, IP_9b35f469, IP_bd9fd3f3, IP_cb653629, IP_d273c85d, IP_e27f820d, IP_f387a76b, REF_CHARGER, ok_reference, GNDregulation, mode_stepdown, freeze_charger, CELREF_e3b0c442, chrg_input_ilim, clock_regulation, enable_reference, VCconfigurationUP_0, VCconfigurationUP_1, VCconfigurationUP_2, VCconfigurationDOWN_0, VCconfigurationDOWN_1, VCconfigurationDOWN_2);
 input  SS;
 inout  VC;
 input  go;
@@ -140,6 +141,7 @@ output  ok_reference;
 inout  GNDregulation;
 input  mode_stepdown;
 input  freeze_charger;
+input  CELREF_e3b0c442;
 output  chrg_input_ilim;
   input  clock_regulation;
 input  enable_reference;
@@ -219,6 +221,7 @@ REGULATIONreferenceMAIN XMAIN (
 .disable_charge(net_186),
 .disable_source(net_183),
 .freeze_charger(net_177),
+.CELREF_e3b0c442(CELREF_e3b0c442),
 .enable_stepdown(net_180),
 .enable_reference(net_173),
 .VCconfigurationUP_0(VCconfigurationUP_0),

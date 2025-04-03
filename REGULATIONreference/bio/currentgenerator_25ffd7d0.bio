@@ -307,6 +307,48 @@ moveORIGIN y
 endlayoutbio
 //**********************************************
 //Project Parameters
+//Celera:REGULATIONreference Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,TBD
+#define,PROJECTsupply,5
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
@@ -410,10 +452,8 @@ esd,SIMPV,TBD
 pinname,CELG
 definition,CELG,power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,********************************
-
+absmax,CELG,0.3
+absmin,CELG,-0.3
 io,CELG,input
 mode,CELG,power
 router,CELG,TBD
@@ -423,8 +463,8 @@ esd,CELG,TBD
 pinname,CELSUB
 definition,CELSUB,power ground
 iq,CELSUB,SIMULATION
-absmax,CELSUB,
-absmin,CELSUB,
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
 io,CELSUB,input
 mode,CELSUB,power
 router,CELSUB,TBD
@@ -436,8 +476,7 @@ pinname,enable_currentgenerator
 definition,enable_currentgenerator,Enable Pin
 iq,enable_currentgenerator,SIMULATION
 absmax,enable_currentgenerator,6
-absmin,enable_currentgenerator,********************************
-
+absmin,enable_currentgenerator,-0.3
 io,enable_currentgenerator,input
 mode,enable_currentgenerator,digital
 router,enable_currentgenerator,TBD
@@ -448,8 +487,7 @@ pinname,IP
 definition,IP,500n Current Reference
 iq,IP,SIMULATION
 absmax,IP,6
-absmin,IP,********************************
-
+absmin,IP,-0.3
 io,IP,input
 mode,IP,analog
 router,IP,TBD
@@ -460,8 +498,7 @@ pinname,ok_currentgenerator
 definition,ok_currentgenerator,Current generator OK
 iq,ok_currentgenerator,SIMULATION
 absmax,ok_currentgenerator,6
-absmin,ok_currentgenerator,********************************
-
+absmin,ok_currentgenerator,-0.3
 io,ok_currentgenerator,output
 mode,ok_currentgenerator,digital
 router,ok_currentgenerator,TBD
@@ -472,8 +509,7 @@ pinname,I0
 definition,I0,Output0
 iq,I0,SIMULATION
 absmax,I0,6
-absmin,I0,********************************
-
+absmin,I0,-0.3
 io,I0,inout
 mode,I0,analog
 router,I0,TBD
@@ -491,8 +527,7 @@ pinname,trim_currentgenerator
 definition,trim_currentgenerator,trim input
 iq,trim_currentgenerator,SIMULATION
 absmax,trim_currentgenerator,6
-absmin,trim_currentgenerator,********************************
-
+absmin,trim_currentgenerator,-0.3
 io,trim_currentgenerator,input
 mode,trim_currentgenerator,digital
 router,trim_currentgenerator,TBD
@@ -503,8 +538,7 @@ pinname,global_currentgenerator
 definition,global_currentgenerator,Global Test Enable
 iq,global_currentgenerator,SIMULATION
 absmax,global_currentgenerator,6
-absmin,global_currentgenerator,********************************
-
+absmin,global_currentgenerator,-0.3
 io,global_currentgenerator,input
 mode,global_currentgenerator,digital
 router,global_currentgenerator,TBD
@@ -515,8 +549,7 @@ pinname,ten_currentgenerator
 definition,ten_currentgenerator,Test Enable
 iq,ten_currentgenerator,SIMULATION
 absmax,ten_currentgenerator,6
-absmin,ten_currentgenerator,********************************
-
+absmin,ten_currentgenerator,-0.3
 io,ten_currentgenerator,input
 mode,ten_currentgenerator,digital
 router,ten_currentgenerator,TBD
@@ -527,8 +560,7 @@ pinname,TAEXT
 definition,TAEXT,currentgenerator DFT input current 0.5uA
 iq,TAEXT,SIMULATION
 absmax,TAEXT,6
-absmin,TAEXT,********************************
-
+absmin,TAEXT,-0.3
 io,TAEXT,input
 mode,TAEXT,analog
 router,TAEXT,TBD
@@ -539,8 +571,7 @@ pinname,ten_taext_currentgenerator
 definition,ten_taext_currentgenerator,Test Enable
 iq,ten_taext_currentgenerator,SIMULATION
 absmax,ten_taext_currentgenerator,6
-absmin,ten_taext_currentgenerator,********************************
-
+absmin,ten_taext_currentgenerator,-0.3
 io,ten_taext_currentgenerator,input
 mode,ten_taext_currentgenerator,digital
 router,ten_taext_currentgenerator,TBD
@@ -551,8 +582,7 @@ pinname,tdi_ok_currentgenerator
 definition,tdi_ok_currentgenerator,Current generator OK
 iq,tdi_ok_currentgenerator,SIMULATION
 absmax,tdi_ok_currentgenerator,6
-absmin,tdi_ok_currentgenerator,********************************
-
+absmin,tdi_ok_currentgenerator,-0.3
 io,tdi_ok_currentgenerator,output
 mode,tdi_ok_currentgenerator,digital
 router,tdi_ok_currentgenerator,TBD
@@ -564,8 +594,7 @@ pinname,TAI_N500NREF
 definition,TAI_N500NREF,DFT N 500N Reference Output
 iq,TAI_N500NREF,SIMULATION
 absmax,TAI_N500NREF,6
-absmin,TAI_N500NREF,********************************
-
+absmin,TAI_N500NREF,-0.3
 io,TAI_N500NREF,output
 mode,TAI_N500NREF,analog
 router,TAI_N500NREF,TBD
@@ -576,8 +605,7 @@ pinname,TAI_N5UREF
 definition,TAI_N5UREF,DFT N 5U Reference Output
 iq,TAI_N5UREF,SIMULATION
 absmax,TAI_N5UREF,6
-absmin,TAI_N5UREF,********************************
-
+absmin,TAI_N5UREF,-0.3
 io,TAI_N5UREF,output
 mode,TAI_N5UREF,analog
 router,TAI_N5UREF,TBD
@@ -589,8 +617,7 @@ pinname,TAI_P50NREF
 definition,TAI_P50NREF,DFT P 50N Reference Output
 iq,TAI_P50NREF,SIMULATION
 absmax,TAI_P50NREF,6
-absmin,TAI_P50NREF,********************************
-
+absmin,TAI_P50NREF,-0.3
 io,TAI_P50NREF,output
 mode,TAI_P50NREF,analog
 router,TAI_P50NREF,TBD
@@ -601,8 +628,7 @@ pinname,TAI_P500NREF
 definition,TAI_P500NREF,DFT P 500N Reference Output
 iq,TAI_P500NREF,SIMULATION
 absmax,TAI_P500NREF,6
-absmin,TAI_P500NREF,********************************
-
+absmin,TAI_P500NREF,-0.3
 io,TAI_P500NREF,output
 mode,TAI_P500NREF,analog
 router,TAI_P500NREF,TBD
@@ -613,8 +639,7 @@ pinname,TAI_P5UREF
 definition,TAI_P5UREF,DFT P 5U Reference Output
 iq,TAI_P5UREF,SIMULATION
 absmax,TAI_P5UREF,6
-absmin,TAI_P5UREF,********************************
-
+absmin,TAI_P5UREF,-0.3
 io,TAI_P5UREF,output
 mode,TAI_P5UREF,analog
 router,TAI_P5UREF,TBD
@@ -627,8 +652,7 @@ pinname,ten_tai_n500nref
 definition,ten_tai_n500nref,Test Enable
 iq,ten_tai_n500nref,SIMULATION
 absmax,ten_tai_n500nref,6
-absmin,ten_tai_n500nref,********************************
-
+absmin,ten_tai_n500nref,-0.3
 io,ten_tai_n500nref,input
 mode,ten_tai_n500nref,digital
 router,ten_tai_n500nref,TBD
@@ -639,8 +663,7 @@ pinname,ten_tai_n5uref
 definition,ten_tai_n5uref,Test Enable
 iq,ten_tai_n5uref,SIMULATION
 absmax,ten_tai_n5uref,6
-absmin,ten_tai_n5uref,********************************
-
+absmin,ten_tai_n5uref,-0.3
 io,ten_tai_n5uref,input
 mode,ten_tai_n5uref,digital
 router,ten_tai_n5uref,TBD
@@ -652,8 +675,7 @@ pinname,ten_tai_p50nref
 definition,ten_tai_p50nref,Test Enable
 iq,ten_tai_p50nref,SIMULATION
 absmax,ten_tai_p50nref,6
-absmin,ten_tai_p50nref,********************************
-
+absmin,ten_tai_p50nref,-0.3
 io,ten_tai_p50nref,input
 mode,ten_tai_p50nref,digital
 router,ten_tai_p50nref,TBD
@@ -664,8 +686,7 @@ pinname,ten_tai_p500nref
 definition,ten_tai_p500nref,Test Enable
 iq,ten_tai_p500nref,SIMULATION
 absmax,ten_tai_p500nref,6
-absmin,ten_tai_p500nref,********************************
-
+absmin,ten_tai_p500nref,-0.3
 io,ten_tai_p500nref,input
 mode,ten_tai_p500nref,digital
 router,ten_tai_p500nref,TBD
@@ -676,8 +697,7 @@ pinname,ten_tai_p5uref
 definition,ten_tai_p5uref,Test Enable
 iq,ten_tai_p5uref,SIMULATION
 absmax,ten_tai_p5uref,6
-absmin,ten_tai_p5uref,********************************
-
+absmin,ten_tai_p5uref,-0.3
 io,ten_tai_p5uref,input
 mode,ten_tai_p5uref,digital
 router,ten_tai_p5uref,TBD
