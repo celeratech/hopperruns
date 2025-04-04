@@ -1,0 +1,68 @@
+* Z:\celera\projects\Simplis\playbrian\Verification\verif301d\verification\sim_NESTEDreference.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+ 
+*BrickToolsVersion:0.124  projname:NESTEDreference
+.node_map SIMPV 11
+.node_map OUT 14
+.node_map REF 12
+.node_map enable 13
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 100.0u  0
+.globalvar REF=1.0
+.globalvar TEMP=25
+.globalvar VIN=5
+.globalvar tdext_khz=1000
+.globalvar  celera_i2c_frequency_KHz=100
+
+X$bricktitleblock 10 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='text' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+
+X$NESTEDreference 11 12 13 14 NESTEDreference
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+** From Z:\celera\projects\Simplis\playbrian\Verification\verif301d\verification\FORCE_NESTEDreference.sxcmp
+
+
+** From Z:\celera\projects\Simplis\playbrian\Verification\verif301d\design\NESTEDreference.sxcmp
+.subckt NESTEDreference 37 38 39 40
+*#hierarchy
+.node_map SIMPV 37
+.node_map BUS1$10 31
+.node_map BUS1$11 32
+.node_map BUS1$12 33
+.node_map BUS1$13 34
+.node_map BUS1$14 35
+.node_map BUS1$15 36
+.node_map BUS1$0 21
+.node_map BUS1$1 22
+.node_map OUT 40
+.node_map BUS1$2 23
+.node_map BUS1$3 24
+.node_map BUS1$4 25
+.node_map BUS1$5 26
+.node_map BUS1$6 27
+.node_map BUS1$7 28
+.node_map BUS1$8 29
+.node_map BUS1$9 30
+.node_map REF 38
+.node_map enable 39
+X$dac1 37 17 16 21 22 23 24 25 26 27 28 29 30 31 32 40 39 18 39 celeradacladder vars: dac_type='ladder' dac_flash_fullscale='input' dac_tracking_fullscale='input' dac_dualslope_fullscale='input' dac_sigmadelta_fullscale='input' dac_control='pin' dac_control_por2='0' dac_control_por1='0' dac_control_por0='0' dac_name='text' dac_description='text' dac_units='text' dac_enable_control='pin' dac_strobe_control='pin' dac_buffer='no' dac_mode='unsigned' dac_lowpower='no' dac_ref='global' dac_fullscale='input' dac_gndsense='no' dac_accuracy='no' dac_trim_name='text' dac_trim_description='text' dac_dft='no' dac_ladder_impedance=200 dac_r2r_impedance=500 dac_flash_impedance=200 dac_tracking_impedance=200 dac_dualslope_frequency=1 dac_sigmadelta_impedance=200 dac_bits=6 dac_2=0 dac_offset=0 dac_lsb=0 dac_enable_por=0 dac_strobe_por=0 dac_filter=0 dac_1=0 dac_vmax=6
+X$datamap1 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 datamap0 vars: datamap_function='range' datamap_name='DACcode' datamap_description='DACcode' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='register' datamap_register_selfreset='no' datamap_mode='readwrite' datamap_address='NA' datamap_timeenable='yes' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='text' datamap_function0_off='text' datamap_function0_on='text' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='mV' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='8' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='8' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='8' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='8' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='8' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='8' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='8' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='8' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=6 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=15.625 datamap_timeenablecodes=1 datamap_enabletime1=11.0 datamap_enabletime2=11.0 datamap_enabletime3=11.0 datamap_enabletime4=11.0 datamap_enabletime5=11.0 datamap_enabletime6=11.0 datamap_enabletime7=11.0 datamap_enabletime8=11.0 datamap_vmax=6
+X$pinprobe1 38 pinprobe vars: pinprobe_description='SIMPV' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe2 40 pinprobe vars: pinprobe_description='SIMPV' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe3 39 pinprobe vars: pinprobe_description='enable' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 37 pinprobe vars: pinprobe_description='SIMPV' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$reference1 20 38 39 19 37 reference  vars: reference_accuracy='yes' reference_trim_name='REFERENCE' reference_trim_description='REFERENCE' reference_lowiq='na' reference_lowiq_name='text' reference_lowiq_description='text' reference_cc_trim='no' reference_factory_name='text' reference_factory_description='text' reference_bgout='no' reference_buffer='yes' reference_dft='no' reference_ref=1.1 reference_lowiq_por=0 reference_ccn_por=15 reference_ccp_por=15 reference_ifb=1 reference_vmax=6
+X$U1 20 celeranoconn vars: ='%'
+X$U2 18 celeranoconn vars: ='%'
+.ends NESTEDreference
+
+.end

@@ -1,0 +1,95 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x55e502e2bf60 .scope module, "sim_NESTEDreference_ROW1" "sim_NESTEDreference_ROW1" 2 41;
+ .timescale 0 0;
+o0x7f0c10075018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e502e7aa60_0 .net "CELG59462", 0 0, o0x7f0c10075018;  0 drivers
+o0x7f0c10075048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e502e7ab00_0 .net "CELREF_e3b0c442", 0 0, o0x7f0c10075048;  0 drivers
+o0x7f0c10075078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e502e7ac10_0 .net "CELSUB40948", 0 0, o0x7f0c10075078;  0 drivers
+o0x7f0c100750a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e502e7ad00_0 .net "CELV96848", 0 0, o0x7f0c100750a8;  0 drivers
+o0x7f0c100750d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e502e7adf0_0 .net "IP_a3661d83", 0 0, o0x7f0c100750d8;  0 drivers
+o0x7f0c10075108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e502e7af30_0 .net "OUT", 0 0, o0x7f0c10075108;  0 drivers
+o0x7f0c10075138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e502e7b020_0 .net "REF", 0 0, o0x7f0c10075138;  0 drivers
+o0x7f0c100753d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e502e7b110_0 .net "REF_e3b0c442", 0 0, o0x7f0c100753d8;  0 drivers
+o0x7f0c10075168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e502e7b1b0_0 .net "SIMPV", 0 0, o0x7f0c10075168;  0 drivers
+o0x7f0c10075408 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e502e7b250_0 .net "celkelvin_GNDref", 0 0, o0x7f0c10075408;  0 drivers
+o0x7f0c10075198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e502e7b340_0 .net "enable", 0 0, o0x7f0c10075198;  0 drivers
+o0x7f0c100751c8 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x55e502e7b430_0 .net "register_DACcode_0", 15 0, o0x7f0c100751c8;  0 drivers
+L_0x55e502e7b4d0 .part o0x7f0c100751c8, 0, 6;
+S_0x55e502e62f80 .scope module, "XFORCE_NESTEDreference1" "FORCE_NESTEDreference" 2 48, 2 2 0, S_0x55e502e2bf60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "OUT";
+    .port_info 1 /OUTPUT 1 "REF";
+    .port_info 2 /OUTPUT 1 "SIMPV";
+    .port_info 3 /OUTPUT 1 "enable";
+    .port_info 4 /OUTPUT 1 "CELG59462";
+    .port_info 5 /OUTPUT 1 "CELV96848";
+    .port_info 6 /OUTPUT 1 "CELSUB40948";
+    .port_info 7 /OUTPUT 1 "IP_a3661d83";
+    .port_info 8 /INPUT 1 "CELREF_e3b0c442";
+    .port_info 9 /OUTPUT 16 "register_DACcode_0";
+v0x55e502e2c0f0_0 .net "CELG59462", 0 0, o0x7f0c10075018;  alias, 0 drivers
+v0x55e502e2bec0_0 .net "CELREF_e3b0c442", 0 0, o0x7f0c10075048;  alias, 0 drivers
+v0x55e502e79200_0 .net "CELSUB40948", 0 0, o0x7f0c10075078;  alias, 0 drivers
+v0x55e502e792a0_0 .net "CELV96848", 0 0, o0x7f0c100750a8;  alias, 0 drivers
+v0x55e502e79360_0 .net "IP_a3661d83", 0 0, o0x7f0c100750d8;  alias, 0 drivers
+v0x55e502e79470_0 .net "OUT", 0 0, o0x7f0c10075108;  alias, 0 drivers
+v0x55e502e79530_0 .net "REF", 0 0, o0x7f0c10075138;  alias, 0 drivers
+v0x55e502e795f0_0 .net "SIMPV", 0 0, o0x7f0c10075168;  alias, 0 drivers
+v0x55e502e796b0_0 .net "enable", 0 0, o0x7f0c10075198;  alias, 0 drivers
+v0x55e502e79770_0 .net "register_DACcode_0", 15 0, o0x7f0c100751c8;  alias, 0 drivers
+S_0x55e502e79990 .scope module, "XNESTEDreference1" "NESTEDreference" 2 61, 2 15 0, S_0x55e502e2bf60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "OUT";
+    .port_info 1 /INPUT 1 "REF";
+    .port_info 2 /INPUT 1 "SIMPV";
+    .port_info 3 /INPUT 1 "enable";
+    .port_info 4 /INPUT 1 "CELG59462";
+    .port_info 5 /INPUT 1 "CELV96848";
+    .port_info 6 /INPUT 1 "CELSUB40948";
+    .port_info 7 /INPUT 1 "IP_a3661d83";
+    .port_info 8 /OUTPUT 1 "REF_e3b0c442";
+    .port_info 9 /INPUT 1 "CELREF_e3b0c442";
+    .port_info 10 /INPUT 1 "celkelvin_GNDref";
+    .port_info 11 /INPUT 6 "register_DACcode_0";
+v0x55e502e79c70_0 .net "CELG59462", 0 0, o0x7f0c10075018;  alias, 0 drivers
+v0x55e502e79d10_0 .net "CELREF_e3b0c442", 0 0, o0x7f0c10075048;  alias, 0 drivers
+v0x55e502e79de0_0 .net "CELSUB40948", 0 0, o0x7f0c10075078;  alias, 0 drivers
+v0x55e502e79ee0_0 .net "CELV96848", 0 0, o0x7f0c100750a8;  alias, 0 drivers
+v0x55e502e79fb0_0 .net "IP_a3661d83", 0 0, o0x7f0c100750d8;  alias, 0 drivers
+v0x55e502e7a0a0_0 .net "OUT", 0 0, o0x7f0c10075108;  alias, 0 drivers
+v0x55e502e7a170_0 .net "REF", 0 0, o0x7f0c10075138;  alias, 0 drivers
+v0x55e502e7a240_0 .net "REF_e3b0c442", 0 0, o0x7f0c100753d8;  alias, 0 drivers
+v0x55e502e7a2e0_0 .net "SIMPV", 0 0, o0x7f0c10075168;  alias, 0 drivers
+v0x55e502e7a3b0_0 .net "celkelvin_GNDref", 0 0, o0x7f0c10075408;  alias, 0 drivers
+v0x55e502e7a450_0 .net "enable", 0 0, o0x7f0c10075198;  alias, 0 drivers
+v0x55e502e7a520_0 .net "register_DACcode_0", 5 0, L_0x55e502e7b4d0;  1 drivers
+S_0x55e502e7a680 .scope module, "celkelvin_GNDref_WRAPPER" "WRAPPER1" 2 76, 2 33 0, S_0x55e502e2bf60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o";
+    .port_info 1 /INPUT 1 "i";
+v0x55e502e7a840_0 .net "i", 0 0, o0x7f0c10075408;  alias, 0 drivers
+v0x55e502e7a930_0 .net "o", 0 0, o0x7f0c10075018;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/celera/projects/Sunnyvale/software/NESTEDreference/verilog8/sim_NESTEDreference_ROW1.v";
