@@ -169,6 +169,11 @@ STONEnoconn XNCnoconn_TAI_REFBG2 (
   .noconn(noconn_TAI_REFBG2)
 );
 
+WRAPPER1 WRAPPER_CELREF_e3b0c442 (
+  .i(CELREF_e3b0c442),
+  .o(REF_e3b0c442)
+);
+
 WRAPPER1 XWRAPregister_DACcode_0_0 (
   .i(register_DACcode_0[0]),
   .o(net_26)
