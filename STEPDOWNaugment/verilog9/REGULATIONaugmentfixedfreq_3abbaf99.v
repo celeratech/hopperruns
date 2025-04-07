@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module MUDregulationFixedFreq_b68439d6 (VC,tmi,MUDV,SLOPE,REFINT,CELG59462,CELV96848,go_driver,SIMPV96848,CELREF84329,CELSUB40948,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,IP_33b75134_XU1,IP_3aeee219_XU3,IP_463a6784_XU9,IREF_REGULATION,IP_2fc28aa9_XU42,IP_78bfd2d8_XU21,IP_eba62906_XU15,clock_regulation,enable_regulation);
+module MUDregulationFixedFreq_b68439d6 (VC,tmi,MUDV,SLOPE,REFINT,CELG59462,CELV96848,go_driver,SIMPV96848,CELREF84329,CELSUB40948,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,IP_33b75134_XU1,IP_3aeee219_XU3,IP_463a6784_XU9,IREF_REGULATION,IP_2fc28aa9_XU42,IP_e3e1e6e8_XU13,IP_eba62906_XU15,clock_regulation,enable_regulation);
   inout  VC;
   inout [4:0] tmi;
   input  MUDV;
@@ -22,7 +22,7 @@ module MUDregulationFixedFreq_b68439d6 (VC,tmi,MUDV,SLOPE,REFINT,CELG59462,CELV9
   input  IP_463a6784_XU9;
   input  IREF_REGULATION;
   input  IP_2fc28aa9_XU42;
-  input  IP_78bfd2d8_XU21;
+  input  IP_e3e1e6e8_XU13;
   input  IP_eba62906_XU15;
   input  clock_regulation;
   input  enable_regulation;
@@ -47,7 +47,7 @@ module MUDregulationATEyes_8e84cd71 (VC,tmi,SLOPE,REFINT,CELG59462,CELV96848,go_
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONaugmentfixedfreq_3abbaf99 (tmi, MUDV, CELG59462, CELV96848, go_driver, SIMPV96848, CELREF84329, CELSUB40948, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, IP_33b75134_XU1, IP_3aeee219_XU3, IP_463a6784_XU9, IREF_REGULATION, IP_2fc28aa9_XU42, IP_78bfd2d8_XU21, IP_eba62906_XU15, clock_regulation, enable_regulation);
+module REGULATIONaugmentfixedfreq_3abbaf99 (tmi, MUDV, CELG59462, CELV96848, go_driver, SIMPV96848, CELREF84329, CELSUB40948, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, IP_33b75134_XU1, IP_3aeee219_XU3, IP_463a6784_XU9, IREF_REGULATION, IP_2fc28aa9_XU42, IP_e3e1e6e8_XU13, IP_eba62906_XU15, clock_regulation, enable_regulation);
 inout [4:0] tmi;
 input  MUDV;
 input  CELG59462;
@@ -67,7 +67,7 @@ input  IP_3aeee219_XU3;
 input  IP_463a6784_XU9;
 input  IREF_REGULATION;
 input  IP_2fc28aa9_XU42;
-input  IP_78bfd2d8_XU21;
+input  IP_e3e1e6e8_XU13;
 input  IP_eba62906_XU15;
   input  clock_regulation;
 input  enable_regulation;
@@ -100,7 +100,7 @@ MUDregulationFixedFreq_b68439d6 XU2 (
 .IP_463a6784_XU9(IP_463a6784_XU9),
 .IREF_REGULATION(IREF_REGULATION),
 .IP_2fc28aa9_XU42(IP_2fc28aa9_XU42),
-.IP_78bfd2d8_XU21(IP_78bfd2d8_XU21),
+.IP_e3e1e6e8_XU13(IP_e3e1e6e8_XU13),
 .IP_eba62906_XU15(IP_eba62906_XU15),
 .clock_regulation(net_60),
 .enable_regulation(net_59)

@@ -65,7 +65,7 @@ module FEEDBACKaugmentstepdown_254d912c (FBI,tmi,CELG59462,CELV96848,kelvin_OUT,
   input  enable_feedback;
 endmodule
 
-module REGULATIONaugmentfixedfreq_3abbaf99 (tmi,MUDV,CELG59462,CELV96848,go_driver,SIMPV96848,CELREF84329,CELSUB40948,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,IP_33b75134_XU1,IP_3aeee219_XU3,IP_463a6784_XU9,IREF_REGULATION,IP_2fc28aa9_XU42,IP_78bfd2d8_XU21,IP_eba62906_XU15,clock_regulation,enable_regulation);
+module REGULATIONaugmentfixedfreq_3abbaf99 (tmi,MUDV,CELG59462,CELV96848,go_driver,SIMPV96848,CELREF84329,CELSUB40948,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,IP_33b75134_XU1,IP_3aeee219_XU3,IP_463a6784_XU9,IREF_REGULATION,IP_2fc28aa9_XU42,IP_e3e1e6e8_XU13,IP_eba62906_XU15,clock_regulation,enable_regulation);
   inout [4:0] tmi;
   input  MUDV;
   input  CELG59462;
@@ -85,7 +85,7 @@ module REGULATIONaugmentfixedfreq_3abbaf99 (tmi,MUDV,CELG59462,CELV96848,go_driv
   input  IP_463a6784_XU9;
   input  IREF_REGULATION;
   input  IP_2fc28aa9_XU42;
-  input  IP_78bfd2d8_XU21;
+  input  IP_e3e1e6e8_XU13;
   input  IP_eba62906_XU15;
   input  clock_regulation;
   input  enable_regulation;
@@ -101,7 +101,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module STEPDOWNaugment (SW, tmi, MUDV, porb, CBOOT, PMUDG, PMUDV, clock, PMUDHV, CELG59462, CELV96848, SIMPV96848, kelvin_OUT, CELREF84329, CELSUB40948, enable_loop, kelvin_MUDG, REF_REGULATION, VSS_REGULATION, IP_33b75134_XU1, IP_3aeee219_XU3, IP_463a6784_XU9, IREF_REGULATION, IP_2fc28aa9_XU42, IP_78bfd2d8_XU21, IP_eba62906_XU15, IP_a05962c0_XBOTTOMIPEAK, IP_8c8c74a2_XBOTTOMZCROSS);
+module STEPDOWNaugment (SW, tmi, MUDV, porb, CBOOT, PMUDG, PMUDV, clock, PMUDHV, CELG59462, CELV96848, SIMPV96848, kelvin_OUT, CELREF84329, CELSUB40948, enable_loop, kelvin_MUDG, REF_REGULATION, VSS_REGULATION, IP_33b75134_XU1, IP_3aeee219_XU3, IP_463a6784_XU9, IREF_REGULATION, IP_2fc28aa9_XU42, IP_e3e1e6e8_XU13, IP_eba62906_XU15, IP_a05962c0_XBOTTOMIPEAK, IP_8c8c74a2_XBOTTOMZCROSS);
 inout  SW;
 inout [4:0] tmi;
 input  MUDV;
@@ -126,7 +126,7 @@ input  IP_3aeee219_XU3;
 input  IP_463a6784_XU9;
 input  IREF_REGULATION;
 input  IP_2fc28aa9_XU42;
-input  IP_78bfd2d8_XU21;
+input  IP_e3e1e6e8_XU13;
 input  IP_eba62906_XU15;
 input  IP_a05962c0_XBOTTOMIPEAK;
 input  IP_8c8c74a2_XBOTTOMZCROSS;
@@ -222,7 +222,7 @@ REGULATIONaugmentfixedfreq_3abbaf99 XREGULATION (
 .IP_463a6784_XU9(IP_463a6784_XU9),
 .IREF_REGULATION(IREF_REGULATION),
 .IP_2fc28aa9_XU42(IP_2fc28aa9_XU42),
-.IP_78bfd2d8_XU21(IP_78bfd2d8_XU21),
+.IP_e3e1e6e8_XU13(IP_e3e1e6e8_XU13),
 .IP_eba62906_XU15(IP_eba62906_XU15),
 .clock_regulation(net_87),
 .enable_regulation(enable_loop)

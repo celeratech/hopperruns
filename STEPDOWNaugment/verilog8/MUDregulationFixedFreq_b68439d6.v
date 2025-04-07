@@ -68,6 +68,20 @@ module resistordivider_fc5a94ab (TOP,TAP0,CELG,BOTTOM);
   inout  BOTTOM;
 endmodule
 
+module vbuffer_f6979412 (SIMPV,IN,IP,OUT,enable_vbuffer,ok_vbuffer,global_vbuffer,trim_vbuffer_positive,trim_vbuffer_negative,CELG,CELSUB);
+  input  IN;
+  input  IP;
+  output  OUT;
+  input  CELG;
+  input  SIMPV;
+  input  CELSUB;
+  output  ok_vbuffer;
+  input  enable_vbuffer;
+  input  global_vbuffer;
+  input [6:0] trim_vbuffer_negative;
+  input [6:0] trim_vbuffer_positive;
+endmodule
+
 module comparatornoctlpins_85de8a51 (enable_comparator,IP,out_comparator,INP_COMPARATOR,INN_COMPARATOR,SIMPV,global_comparator,ok_comparator,factory_hyst_comparator,CELG,CELSUB);
   input  IP;
   input  CELG;
@@ -88,20 +102,6 @@ module switchideal_c21fcc50 (CELV,O,enable_switchb,CELG,CELSUB);
   input  CELV;
   input  CELSUB;
   input  enable_switchb;
-endmodule
-
-module vbuffer_f6979412 (SIMPV,IN,IP,OUT,enable_vbuffer,ok_vbuffer,global_vbuffer,trim_vbuffer_positive,trim_vbuffer_negative,CELG,CELSUB);
-  input  IN;
-  input  IP;
-  output  OUT;
-  input  CELG;
-  input  SIMPV;
-  input  CELSUB;
-  output  ok_vbuffer;
-  input  enable_vbuffer;
-  input  global_vbuffer;
-  input [6:0] trim_vbuffer_negative;
-  input [6:0] trim_vbuffer_positive;
 endmodule
 
 module dbuf_e926e395 (CELV,CELG,i,o,SUB);
@@ -176,7 +176,7 @@ module resistor_6f317a25 (RP,CELG,RN);
   input  CELG;
 endmodule
 
-module currentmirror1_bad7dda9 (SIMPV,CELSUB,enable_currentmirror,ISET,ok_currentmirror,I0,global_currentmirror,CELG);
+module currentmirror1_e7f13955 (SIMPV,CELSUB,enable_currentmirror,ISET,ok_currentmirror,I0,global_currentmirror,CELG);
   inout  I0;
   input  CELG;
   input  ISET;
@@ -234,7 +234,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module MUDregulationFixedFreq_b68439d6 (VC, tmi, MUDV, SLOPE, REFINT, CELG59462, CELV96848, go_driver, SIMPV96848, CELREF84329, CELSUB40948, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, IP_33b75134_XU1, IP_3aeee219_XU3, IP_463a6784_XU9, IREF_REGULATION, IP_2fc28aa9_XU42, IP_78bfd2d8_XU21, IP_eba62906_XU15, clock_regulation, enable_regulation);
+module MUDregulationFixedFreq_b68439d6 (VC, tmi, MUDV, SLOPE, REFINT, CELG59462, CELV96848, go_driver, SIMPV96848, CELREF84329, CELSUB40948, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, IP_33b75134_XU1, IP_3aeee219_XU3, IP_463a6784_XU9, IREF_REGULATION, IP_2fc28aa9_XU42, IP_e3e1e6e8_XU13, IP_eba62906_XU15, clock_regulation, enable_regulation);
 inout  VC;
 inout [4:0] tmi;
 input  MUDV;
@@ -257,7 +257,7 @@ input  IP_3aeee219_XU3;
 input  IP_463a6784_XU9;
 input  IREF_REGULATION;
 input  IP_2fc28aa9_XU42;
-input  IP_78bfd2d8_XU21;
+input  IP_e3e1e6e8_XU13;
 input  IP_eba62906_XU15;
 input  clock_regulation;
 input  enable_regulation;
@@ -268,9 +268,9 @@ wire [4:0] tmi;
 wire [6:0] trim_gm_negative;
 wire [6:0] trim_gm_positive;
 wire [3:0] trim_slopecomp;
-wire [1:0] factory_hyst_comparator;
 wire [6:0] trim_vbuffer_negative;
 wire [6:0] trim_vbuffer_positive;
+wire [1:0] factory_hyst_comparator;
 wire [7:0] trim_clamp;
 wire [2:0] factory_capacitoradjust;
 wire [2:0] factory_adjust_resistor;
@@ -372,6 +372,20 @@ resistordivider_fc5a94ab XU12 (
 .BOTTOM(kelvin_MUDG)
 );
 
+vbuffer_f6979412 XU13 (
+.IN(REF_REGULATION),
+.IP(IP_e3e1e6e8_XU13),
+.OUT(REFINT),
+.CELG(CELG59462),
+.SIMPV(MUDV),
+.CELSUB(CELSUB40948),
+.ok_vbuffer(net_151),
+.enable_vbuffer(enable_regulation),
+.global_vbuffer(tl0),
+.trim_vbuffer_negative({XU13_trim_vbuffer_negative_6,XU13_trim_vbuffer_negative_5,XU13_trim_vbuffer_negative_4,XU13_trim_vbuffer_negative_3,XU13_trim_vbuffer_negative_2,XU13_trim_vbuffer_negative_1,XU13_trim_vbuffer_negative_0}),
+.trim_vbuffer_positive({XU13_trim_vbuffer_positive_6,XU13_trim_vbuffer_positive_5,XU13_trim_vbuffer_positive_4,XU13_trim_vbuffer_positive_3,XU13_trim_vbuffer_positive_2,XU13_trim_vbuffer_positive_1,XU13_trim_vbuffer_positive_0})
+);
+
 comparatornoctlpins_85de8a51 XU15 (
 .IP(IP_eba62906_XU15),
 .CELG(CELG59462),
@@ -400,20 +414,6 @@ switchideal_c21fcc50 XU18 (
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
 .enable_switchb(enable_regulation)
-);
-
-vbuffer_f6979412 XU21 (
-.IN(REF_REGULATION),
-.IP(IP_78bfd2d8_XU21),
-.OUT(REFINT),
-.CELG(CELG59462),
-.SIMPV(MUDV),
-.CELSUB(CELSUB40948),
-.ok_vbuffer(net_151),
-.enable_vbuffer(enable_regulation),
-.global_vbuffer(tl0),
-.trim_vbuffer_negative({XU21_trim_vbuffer_negative_6,XU21_trim_vbuffer_negative_5,XU21_trim_vbuffer_negative_4,XU21_trim_vbuffer_negative_3,XU21_trim_vbuffer_negative_2,XU21_trim_vbuffer_negative_1,XU21_trim_vbuffer_negative_0}),
-.trim_vbuffer_positive({XU21_trim_vbuffer_positive_6,XU21_trim_vbuffer_positive_5,XU21_trim_vbuffer_positive_4,XU21_trim_vbuffer_positive_3,XU21_trim_vbuffer_positive_2,XU21_trim_vbuffer_positive_1,XU21_trim_vbuffer_positive_0})
 );
 
 dbuf_e926e395 XU24 (
@@ -478,7 +478,7 @@ resistor_6f317a25 XRDCGAIN (
 .CELG(CELG59462)
 );
 
-currentmirror1_bad7dda9 XGMCURRENT (
+currentmirror1_e7f13955 XGMCURRENT (
 .I0(IREF_DRIVER),
 .CELG(CELG59462),
 .ISET(net_170),
@@ -515,8 +515,8 @@ drm48L drm_hex0x0C (
 .tmi(tmi[4:0]),
 .drm0({noconn_drm48L_drm0_7,XU1_trim_gm_negative_6,XU1_trim_gm_negative_5,XU1_trim_gm_negative_4,XU1_trim_gm_negative_3,XU1_trim_gm_negative_2,XU1_trim_gm_negative_1,XU1_trim_gm_negative_0}),
 .drm1({noconn_drm48L_drm1_7,XU1_trim_gm_positive_6,XU1_trim_gm_positive_5,XU1_trim_gm_positive_4,XU1_trim_gm_positive_3,XU1_trim_gm_positive_2,XU1_trim_gm_positive_1,XU1_trim_gm_positive_0}),
-.drm2({noconn_drm48L_drm2_7,XU21_trim_vbuffer_negative_6,XU21_trim_vbuffer_negative_5,XU21_trim_vbuffer_negative_4,XU21_trim_vbuffer_negative_3,XU21_trim_vbuffer_negative_2,XU21_trim_vbuffer_negative_1,XU21_trim_vbuffer_negative_0}),
-.drm3({noconn_drm48L_drm3_7,XU21_trim_vbuffer_positive_6,XU21_trim_vbuffer_positive_5,XU21_trim_vbuffer_positive_4,XU21_trim_vbuffer_positive_3,XU21_trim_vbuffer_positive_2,XU21_trim_vbuffer_positive_1,XU21_trim_vbuffer_positive_0}),
+.drm2({noconn_drm48L_drm2_7,XU13_trim_vbuffer_negative_6,XU13_trim_vbuffer_negative_5,XU13_trim_vbuffer_negative_4,XU13_trim_vbuffer_negative_3,XU13_trim_vbuffer_negative_2,XU13_trim_vbuffer_negative_1,XU13_trim_vbuffer_negative_0}),
+.drm3({noconn_drm48L_drm3_7,XU13_trim_vbuffer_positive_6,XU13_trim_vbuffer_positive_5,XU13_trim_vbuffer_positive_4,XU13_trim_vbuffer_positive_3,XU13_trim_vbuffer_positive_2,XU13_trim_vbuffer_positive_1,XU13_trim_vbuffer_positive_0}),
 .drm4({XU42_trim_clamp_7,XU42_trim_clamp_6,XU42_trim_clamp_5,XU42_trim_clamp_4,XU42_trim_clamp_3,XU42_trim_clamp_2,XU42_trim_clamp_1,XU42_trim_clamp_0}),
 .drm5({noconn_drm48L_drm5_7,noconn_drm48L_drm5_6,noconn_drm48L_drm5_5,noconn_drm48L_drm5_4,XU9_trim_slopecomp_3,XU9_trim_slopecomp_2,XU9_trim_slopecomp_1,XU9_trim_slopecomp_0}),
 .bypload(b0),
