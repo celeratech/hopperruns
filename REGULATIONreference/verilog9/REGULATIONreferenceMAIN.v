@@ -172,7 +172,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONreferenceMAIN (SS, VC, go, IIN, CAPFB, OUTFB, SIMPV, TAEXT, REF_CAP, REF_IIN, REF_OUT, VCsense, GMCHARGE, CELG59462, CELV96848, IINREFBUF, VCsinkCAP, VCsinkIIN, VCsinkOUT, REF_CHARGE, disable_ss, CELSUB40948, IP_1748f38b, IP_51d5b7db, IP_52cba950, IP_5c9afec8, IP_9b35f469, IP_bd9fd3f3, IP_d273c85d, disable_cap, disable_iin, disable_out, VCsinkCHARGE, ok_reference, GNDregulation, enable_stepup, mode_stepdown, disable_charge, disable_source, freeze_charger, CELREF_e3b0c442, enable_stepdown, enable_reference, VCconfigurationUP_0, VCconfigurationUP_1, VCconfigurationUP_2, VCconfigurationDOWN_0, VCconfigurationDOWN_1, VCconfigurationDOWN_2);
+module REGULATIONreferenceMAIN (SS, VC, go, IIN, CAPFB, OUTFB, SIMPV, TAEXT, REF_CAP, REF_IIN, REF_OUT, VCsense, GMCHARGE, CELG59462, CELV96848, IINREFBUF, VCsinkCAP, VCsinkIIN, VCsinkOUT, REF_CHARGE, disable_ss, CELSUB40948, IP_1748f38b, IP_51d5b7db, IP_52cba950, IP_5c9afec8, IP_9b35f469, IP_bd9fd3f3, IP_d273c85d, disable_cap, disable_iin, disable_out, VCsinkCHARGE, ok_reference, GNDregulation, enable_stepup, mode_stepdown, disable_charge, disable_source, freeze_charger, enable_stepdown, enable_reference, VCconfigurationUP_0, VCconfigurationUP_1, VCconfigurationUP_2, VCconfigurationDOWN_0, VCconfigurationDOWN_1, VCconfigurationDOWN_2);
 input  SS;
 inout  VC;
 input  go;
@@ -213,7 +213,6 @@ input  mode_stepdown;
 input  disable_charge;
 input  disable_source;
 input  freeze_charger;
-input  CELREF_e3b0c442;
 output  enable_stepdown;
 input  enable_reference;
 input  VCconfigurationUP_0;
