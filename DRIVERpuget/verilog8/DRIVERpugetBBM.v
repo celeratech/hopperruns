@@ -57,19 +57,10 @@ endmodule
 
 
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
+//Verilog HDL for "PEBBLES", "PEBBLEtiehi" "functional"
 
 
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
-//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
-
-
-module PEBBLEtielo ( q, G, SUB, V );
+module PEBBLEtiehi ( q, G, SUB, V );
 
   input V;
   output q;
@@ -278,14 +269,10 @@ inv_12e192f5 XU28 (
   .CELV(CELV96848)
 );
 
-STONEnoconn XNCa0 (
-  .noconn(a0)
-);
-
-PEBBLEtielo XDRMNOTL (
+PEBBLEtiehi XDRMNOTH (
   .G(CELG59462),
   .V(CELV96848),
-  .q(a0),
+  .q(a1),
   .SUB(CELSUB40948)
 );
 
