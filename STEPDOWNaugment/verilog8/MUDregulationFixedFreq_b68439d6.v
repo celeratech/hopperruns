@@ -176,7 +176,7 @@ module resistor_6f317a25 (RP,CELG,RN);
   input  CELG;
 endmodule
 
-module currentmirror1_e7f13955 (SIMPV,CELSUB,enable_currentmirror,ISET,ok_currentmirror,I0,global_currentmirror,CELG);
+module currentmirror1_bad7dda9 (SIMPV,CELSUB,enable_currentmirror,ISET,ok_currentmirror,I0,global_currentmirror,CELG);
   inout  I0;
   input  CELG;
   input  ISET;
@@ -478,7 +478,7 @@ resistor_6f317a25 XRDCGAIN (
 .CELG(CELG59462)
 );
 
-currentmirror1_e7f13955 XGMCURRENT (
+currentmirror1_bad7dda9 XGMCURRENT (
 .I0(IREF_DRIVER),
 .CELG(CELG59462),
 .ISET(net_170),
