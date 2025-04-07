@@ -119,7 +119,7 @@ drm8 drm_hex0x0A (
 .SUB(CELSUB40948),
 .tmi(tmi[4:0]),
 .drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,noconn_drm8_drm0_3,net_27,net_26,net_25}),
-.por0({a0,a0,a0,a0,a0,a1,a1,a0}),
+.por0({a0,a0,a0,a0,a0,a0,a0,a0}),
 .bypload(a0),
 .lastdrm(a0)
 );
