@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module REGULATIONclockMAIN (RT,SIMPV,clock_rt,ok_clock,CELG59462,CELV96848,PORB97836,dft_clock,ISLOPECOMP,CELSUB40948,IP_0a62f9b4,fault_clock,mode_stepup,enable_clock,clock_divideRT,CELREF_0a62f9b4,request_clockRT,CLOCKdutycycleUP_0,CLOCKdutycycleUP_1,CLOCKdutycycleUP_2,CLOCKdutycycleUP_3,CLOCKdutycycleDOWN_0,CLOCKdutycycleDOWN_1,CLOCKdutycycleDOWN_2,CLOCKdutycycleDOWN_3,celkelvin_GNDoscillator);
+module REGULATIONclockMAIN (RT,SIMPV,clock_rt,ok_clock,CELG59462,CELV96848,PORB97836,dft_clock,ISLOPECOMP,CELSENSE_RF,CELSUB40948,IP_0a62f9b4,fault_clock,mode_stepup,enable_clock,clock_divideRT,CELREF_0a62f9b4,request_clockRT,CLOCKdutycycleUP_0,CLOCKdutycycleUP_1,CLOCKdutycycleUP_2,CLOCKdutycycleUP_3,CLOCKdutycycleDOWN_0,CLOCKdutycycleDOWN_1,CLOCKdutycycleDOWN_2,CLOCKdutycycleDOWN_3,celkelvin_GNDoscillator);
   output  RT;
   input  SIMPV;
   output  clock_rt;
@@ -9,6 +9,7 @@ module REGULATIONclockMAIN (RT,SIMPV,clock_rt,ok_clock,CELG59462,CELV96848,PORB9
   input  PORB97836;
   output  dft_clock;
   inout  ISLOPECOMP;
+  input  CELSENSE_RF;
   input  CELSUB40948;
   input  IP_0a62f9b4;
   output  fault_clock;
@@ -60,7 +61,7 @@ module REGULATIONclockDEBUG (ok_clock,CELG59462,CELV96848,dft_clock,ISLOPECOMP,C
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONclock (RT, SIMPV, clock_rt, ok_clock, CELG59462, CELV96848, PORB97836, ISLOPECOMP, CELSUB40948, IP_0a62f9b4, fault_clock, mode_stepup, enable_clock, clock_divideRT, CELREF_0a62f9b4, request_clockRT, celkelvin_GNDoscillator);
+module REGULATIONclock (RT, SIMPV, clock_rt, ok_clock, CELG59462, CELV96848, PORB97836, ISLOPECOMP, CELSENSE_RF, CELSUB40948, IP_0a62f9b4, fault_clock, mode_stepup, enable_clock, clock_divideRT, CELREF_0a62f9b4, request_clockRT, celkelvin_GNDoscillator);
 output  RT;
 input  SIMPV;
 output  clock_rt;
@@ -69,6 +70,7 @@ input  CELG59462;
 input  CELV96848;
 input  PORB97836;
 inout  ISLOPECOMP;
+input  CELSENSE_RF;
 input  CELSUB40948;
 input  IP_0a62f9b4;
 output  fault_clock;
@@ -93,6 +95,7 @@ REGULATIONclockMAIN XCLOCK (
   .PORB97836(PORB97836),
   .dft_clock(net_65),
   .ISLOPECOMP(ISLOPECOMP),
+  .CELSENSE_RF(CELSENSE_RF),
   .CELSUB40948(CELSUB40948),
   .IP_0a62f9b4(IP_0a62f9b4),
   .fault_clock(fault_clock),

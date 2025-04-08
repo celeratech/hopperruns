@@ -221,7 +221,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONclockMAIN (RT, SIMPV, clock_rt, ok_clock, CELG59462, CELV96848, PORB97836, dft_clock, ISLOPECOMP, CELSUB40948, IP_0a62f9b4, fault_clock, mode_stepup, enable_clock, clock_divideRT, CELREF_0a62f9b4, request_clockRT, CLOCKdutycycleUP_0, CLOCKdutycycleUP_1, CLOCKdutycycleUP_2, CLOCKdutycycleUP_3, CLOCKdutycycleDOWN_0, CLOCKdutycycleDOWN_1, CLOCKdutycycleDOWN_2, CLOCKdutycycleDOWN_3, celkelvin_GNDoscillator);
+module REGULATIONclockMAIN (RT, SIMPV, clock_rt, ok_clock, CELG59462, CELV96848, PORB97836, dft_clock, ISLOPECOMP, CELSENSE_RF, CELSUB40948, IP_0a62f9b4, fault_clock, mode_stepup, enable_clock, clock_divideRT, CELREF_0a62f9b4, request_clockRT, CLOCKdutycycleUP_0, CLOCKdutycycleUP_1, CLOCKdutycycleUP_2, CLOCKdutycycleUP_3, CLOCKdutycycleDOWN_0, CLOCKdutycycleDOWN_1, CLOCKdutycycleDOWN_2, CLOCKdutycycleDOWN_3, celkelvin_GNDoscillator);
 output  RT;
 input  SIMPV;
 output  clock_rt;
@@ -231,6 +231,7 @@ output  ok_clock;
 input  PORB97836;
 output  dft_clock;
 inout  ISLOPECOMP;
+input  CELSENSE_RF;
   input  CELSUB40948;
 input  IP_0a62f9b4;
 output  fault_clock;
@@ -449,7 +450,7 @@ oscillator_cc7ec5f4 Xoscillator1 (
   .tdi_osc(noconn_tdi_osc1),
   .ten_osc(tl0),
   .CELFORCE_RF(RT),
-  .CELSENSE_RF(TBD_XREGULATIONclock1_XCLOCK_Xoscillator1_CELSENSE_RF),
+  .CELSENSE_RF(CELSENSE_RF),
   .ok_oscillator(net_185),
   .fault_oscillator(net_182),
   .enable_oscillator(enable_clock),

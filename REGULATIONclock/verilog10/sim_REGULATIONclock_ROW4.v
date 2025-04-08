@@ -14,7 +14,7 @@ module FORCE_REGULATIONclock (RT,GND,SIMPV,CELG59462,CELV96848,PORB97836,CELSUB4
   output  request_clockRT;
 endmodule
 
-module REGULATIONclock (RT,SIMPV,clock_rt,ok_clock,CELG59462,CELV96848,PORB97836,ISLOPECOMP,CELSUB40948,IP_0a62f9b4,fault_clock,mode_stepup,enable_clock,clock_divideRT,CELREF_0a62f9b4,request_clockRT,celkelvin_GNDoscillator);
+module REGULATIONclock (RT,SIMPV,clock_rt,ok_clock,CELG59462,CELV96848,PORB97836,ISLOPECOMP,CELSENSE_RF,CELSUB40948,IP_0a62f9b4,fault_clock,mode_stepup,enable_clock,clock_divideRT,CELREF_0a62f9b4,request_clockRT,celkelvin_GNDoscillator);
   output  RT;
   input  SIMPV;
   output  clock_rt;
@@ -23,6 +23,7 @@ module REGULATIONclock (RT,SIMPV,clock_rt,ok_clock,CELG59462,CELV96848,PORB97836
   input  CELV96848;
   input  PORB97836;
   inout  ISLOPECOMP;
+  input  CELSENSE_RF;
   input  CELSUB40948;
   input  IP_0a62f9b4;
   output  fault_clock;
@@ -75,6 +76,7 @@ REGULATIONclock XREGULATIONclock1 (
   .CELV96848(CELV96848),
   .PORB97836(PORB97836),
   .ISLOPECOMP(ISLOPECOMP),
+  .CELSENSE_RF(CELSENSE_RF),
   .CELSUB40948(CELSUB40948),
   .IP_0a62f9b4(IP_0a62f9b4),
   .fault_clock(fault_clock),
@@ -84,6 +86,11 @@ REGULATIONclock XREGULATIONclock1 (
   .CELREF_0a62f9b4(CELREF_0a62f9b4),
   .request_clockRT(request_clockRT),
   .celkelvin_GNDoscillator(celkelvin_GNDoscillator)
+);
+
+WRAPPER1 CELSENSE_RF_WRAPPER (
+  .i(CELSENSE_RF),
+  .o(RT)
 );
 
 WRAPPER1 celkelvin_GNDoscillator_WRAPPER (
