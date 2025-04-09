@@ -91,7 +91,7 @@ module VESPAasmINPUT4 (o,i0,i1,i2,i3,Tstate,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-module REGULATIONreferenceVC (VC,go,SIMPV,TAEXT,ok_vc,VCforce,VCsense,CELG59462,CELV96848,CELSUB40948,IP_bd9fd3f3,IP_d273c85d,GNDregulation,mode_stepdown,freeze_charger,CELREF_e3b0c442,enable_reference,VCconfigurationUP_0,VCconfigurationUP_1,VCconfigurationUP_2,VCconfigurationDOWN_0,VCconfigurationDOWN_1,VCconfigurationDOWN_2);
+module REGULATIONreferenceVC (VC,go,SIMPV,TAEXT,ok_vc,VCforce,VCsense,CELG59462,CELV96848,CELSUB40948,IP_bd9fd3f3,IP_d273c85d,GNDregulation,mode_stepdown,freeze_charger,CELREF_bd9fd3f3,enable_reference,VCconfigurationUP_0,VCconfigurationUP_1,VCconfigurationUP_2,VCconfigurationDOWN_0,VCconfigurationDOWN_1,VCconfigurationDOWN_2);
   inout  VC;
   input  go;
   input  SIMPV;
@@ -107,7 +107,7 @@ module REGULATIONreferenceVC (VC,go,SIMPV,TAEXT,ok_vc,VCforce,VCsense,CELG59462,
   inout  GNDregulation;
   input  mode_stepdown;
   input  freeze_charger;
-  input  CELREF_e3b0c442;
+  input  CELREF_bd9fd3f3;
   input  enable_reference;
   input  VCconfigurationUP_0;
   input  VCconfigurationUP_1;
@@ -172,7 +172,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONreferenceMAIN (SS, VC, go, IIN, CAPFB, OUTFB, SIMPV, TAEXT, REF_CAP, REF_IIN, REF_OUT, VCsense, GMCHARGE, CELG59462, CELV96848, IINREFBUF, VCsinkCAP, VCsinkIIN, VCsinkOUT, REF_CHARGE, disable_ss, CELSUB40948, IP_1748f38b, IP_51d5b7db, IP_52cba950, IP_5c9afec8, IP_9b35f469, IP_bd9fd3f3, IP_d273c85d, disable_cap, disable_iin, disable_out, VCsinkCHARGE, ok_reference, GNDregulation, enable_stepup, mode_stepdown, disable_charge, disable_source, freeze_charger, enable_stepdown, enable_reference, VCconfigurationUP_0, VCconfigurationUP_1, VCconfigurationUP_2, VCconfigurationDOWN_0, VCconfigurationDOWN_1, VCconfigurationDOWN_2);
+module REGULATIONreferenceMAIN (SS, VC, go, IIN, CAPFB, OUTFB, SIMPV, TAEXT, REF_CAP, REF_IIN, REF_OUT, VCsense, GMCHARGE, CELG59462, CELV96848, IINREFBUF, VCsinkCAP, VCsinkIIN, VCsinkOUT, REF_CHARGE, disable_ss, CELSUB40948, IP_1748f38b, IP_51d5b7db, IP_52cba950, IP_5c9afec8, IP_9b35f469, IP_bd9fd3f3, IP_d273c85d, disable_cap, disable_iin, disable_out, VCsinkCHARGE, ok_reference, GNDregulation, enable_stepup, mode_stepdown, disable_charge, disable_source, freeze_charger, CELREF_bd9fd3f3, enable_stepdown, enable_reference, VCconfigurationUP_0, VCconfigurationUP_1, VCconfigurationUP_2, VCconfigurationDOWN_0, VCconfigurationDOWN_1, VCconfigurationDOWN_2);
 input  SS;
 inout  VC;
 input  go;
@@ -213,6 +213,7 @@ input  mode_stepdown;
 input  disable_charge;
 input  disable_source;
 input  freeze_charger;
+input  CELREF_bd9fd3f3;
 output  enable_stepdown;
 input  enable_reference;
 input  VCconfigurationUP_0;
@@ -406,7 +407,7 @@ REGULATIONreferenceVC XVC (
   .GNDregulation(GNDregulation),
   .mode_stepdown(mode_stepdown),
   .freeze_charger(freeze_charger),
-  .CELREF_e3b0c442(CELREF_e3b0c442),
+  .CELREF_bd9fd3f3(CELREF_bd9fd3f3),
   .enable_reference(net_241),
   .VCconfigurationUP_0(VCconfigurationUP_0),
   .VCconfigurationUP_1(VCconfigurationUP_1),

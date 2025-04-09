@@ -61,7 +61,7 @@ input GND;
 endmodule 
 
 // ------------------------ Module Verilog ---------------
-module FORCE_REGULATIONreference (SS, VC, go, IIN, CAPFB, OUTFB, SIMPV, REF_CAP, REF_IIN, REF_OUT, VCsense, GMCHARGE, CELG59462, CELV96848, REF_CHARGE, CELSUB40948, IP_1748f38b, IP_51d5b7db, IP_52cba950, IP_5c9afec8, IP_65be5a53, IP_7fd756e8, IP_9b35f469, IP_bd9fd3f3, IP_cb653629, IP_d273c85d, IP_e27f820d, IP_f387a76b, REF_CHARGER, GNDregulation, mode_stepdown, freeze_charger, clock_regulation, enable_reference, VCconfigurationUP_0, VCconfigurationUP_1, VCconfigurationUP_2, kelvin_GNDregulation, VCconfigurationDOWN_0, VCconfigurationDOWN_1, VCconfigurationDOWN_2);
+module FORCE_REGULATIONreference (SS, VC, go, IIN, CAPFB, OUTFB, SIMPV, REF_CAP, REF_IIN, REF_OUT, VCsense, GMCHARGE, CELG59462, CELV96848, REF_CHARGE, CELSUB40948, IP_1748f38b, IP_51d5b7db, IP_52cba950, IP_5c9afec8, IP_65be5a53, IP_7fd756e8, IP_9b35f469, IP_bd9fd3f3, IP_cb653629, IP_d273c85d, IP_e27f820d, IP_f387a76b, REF_CHARGER, GNDregulation, mode_stepdown, freeze_charger, CELREF_bd9fd3f3, clock_regulation, enable_reference, VCconfigurationUP_0, VCconfigurationUP_1, VCconfigurationUP_2, kelvin_GNDregulation, VCconfigurationDOWN_0, VCconfigurationDOWN_1, VCconfigurationDOWN_2);
 output  SS;
 output  VC;
 inout  go;
@@ -94,6 +94,7 @@ output  REF_CHARGER;
 output  GNDregulation;
 inout  mode_stepdown;
 inout  freeze_charger;
+output  CELREF_bd9fd3f3;
 inout  clock_regulation;
 inout  enable_reference;
 inout  VCconfigurationUP_0;
@@ -155,6 +156,11 @@ vdc_0 VI__GND (
 vdc_0 VI__IIN (
   .PLUS(net_191),
   .MINUS(IIN)
+);
+
+vpwl_0x0_10d0ux0_11d0ux1d2 XCELREF (
+  .PLUS(CELREF_bd9fd3f3),
+  .MINUS(net_0)
 );
 
 vpwl_0x0 XCELSUB (
