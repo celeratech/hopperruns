@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module SOFTSTARTwaltzMAINcount (clock,count_0,count_1,count_2,count_3,count_4,count_5,count_6,count_7,halfway,CELG59462,CELV96848,done_count,half_count,CELSUB40948,enable_count);
+module SOFTSTARTwaltzMAINcount8 (clock,count_0,count_1,count_2,count_3,count_4,count_5,count_6,count_7,halfway,CELG59462,CELV96848,done_count,half_count,CELSUB40948,enable_count);
   input  clock;
   output  count_0;
   output  count_1;
@@ -51,22 +51,6 @@ input I0;
 input I1;
 input amux;
 input CELG;
-endmodule
-
-
-
-//Celera:dff_fc5ad7bd
-//Celera Confidential Symbol Generator
-//DFF latch
-module dff_fc5ad7bd (CELV,d,rb,ck,q,qb,CELG,CELSUB);
-input CELV;
-input d;
-input rb;
-input ck;
-output q;
-output qb;
-input CELG;
-input CELSUB;
 endmodule
 
 
@@ -163,6 +147,22 @@ endmodule
 
 
 
+//Celera:dff_e5264df5
+//Celera Confidential Symbol Generator
+//DFF latch
+module dff_e5264df5 (CELV,d,rb,ck,q,qb,CELG,CELSUB);
+input CELV;
+input d;
+input rb;
+input ck;
+output q;
+output qb;
+input CELG;
+input CELSUB;
+endmodule
+
+
+
 //Verilog HDL for "PEBBLES", "PEBBLEdbuf" "functional"
 
 
@@ -176,15 +176,18 @@ module PEBBLEdbuf ( o, G, SUB, V, i );
 endmodule
 
 
-//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+//Verilog HDL for "DFT", "DFTtm8t" "functional"
 
 
-module PEBBLEtielo ( q, G, SUB, V );
+module DFTtm8t ( a, ten, tmi, G, SUB, V, tma );
 
   input V;
-  output q;
+  input  [7:0] tma;
+  output  [7:0] ten;
+  output  [1:0] a;
   input G;
   input SUB;
+  inout  [4:0] tmi;
 endmodule
 
 
@@ -208,10 +211,20 @@ endmodule
 
 
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module SOFTSTARTwaltz8MAIN (SS, REF, MUDV, halfway, CELG59462, CELV96848, dft_clock, CELSUB40948, IP_4c0bef8e, enable_brick, softstart_1ms, done_softstart, SENSE_G_4c0bef8e, enable_softstart, kelvin_MUDGsoftstart);
+module SOFTSTARTwaltz8MAIN (SS, REF, tmi, MUDV, halfway, CELG59462, CELV96848, dft_clock, CELSUB40948, IP_4c0bef8e, enable_brick, softstart_1ms, done_softstart, SENSE_G_4c0bef8e, enable_softstart, kelvin_MUDGsoftstart);
 output  SS;
 input  REF;
+input [4:0] tmi;
 input  MUDV;
 input  halfway;
 input  CELG59462;
@@ -228,230 +241,261 @@ input  kelvin_MUDGsoftstart;
 
 
 // ------------------------ Wires ------------------------
+wire [4:0] tmi;
 wire [7:0] i;
+wire [1:0] a;
+wire [7:0] ten;
+wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
-SOFTSTARTwaltzMAINcount XCOUNT (
-.clock(net_126),
-.count_0(net_99),
-.count_1(net_100),
-.count_2(net_101),
-.count_3(net_102),
-.count_4(net_103),
-.count_5(net_104),
-.count_6(net_105),
-.count_7(net_106),
-.halfway(halfway),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.done_count(net_125),
-.half_count(net_127),
-.CELSUB40948(CELSUB40948),
-.enable_count(net_124)
+SOFTSTARTwaltzMAINcount8 XCOUNT (
+  .clock(net_126),
+  .count_0(net_99),
+  .count_1(net_100),
+  .count_2(net_101),
+  .count_3(net_102),
+  .count_4(net_103),
+  .count_5(net_104),
+  .count_6(net_105),
+  .count_7(net_106),
+  .halfway(halfway),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .done_count(net_125),
+  .half_count(net_127),
+  .CELSUB40948(CELSUB40948),
+  .enable_count(net_124)
 );
 
 VESPAasmINPUT1 XU15 (
-.o(net_126),
-.i0(net_136),
-.Tstate(net_131),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
+  .o(net_126),
+  .i0(net_136),
+  .Tstate(net_131),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU16 (
-.o(net_135),
-.i0(net_134),
-.Tstate(net_122),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
+  .o(net_135),
+  .i0(net_134),
+  .Tstate(net_122),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT2 XU8 (
-.o(net_124),
-.i0(net_128),
-.i1(net_123),
-.Tstate(enable_softstart),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
+  .o(net_124),
+  .i0(net_128),
+  .i1(net_123),
+  .Tstate(enable_softstart),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .CELSUB40948(CELSUB40948)
 );
 
 amux2_a0dc83ed XU3 (
-.O(SS),
-.I0(net_111),
-.I1(net_129),
-.CELG(CELG59462),
-.amux(net_130),
-.SIMPV(MUDV),
-.CELSUB(CELSUB40948)
-);
-
-dff_fc5ad7bd XU4 (
-.d(net_137),
-.q(net_138),
-.ck(net_135),
-.qb(net_137),
-.rb(net_123),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
+  .O(SS),
+  .I0(net_111),
+  .I1(net_129),
+  .CELG(CELG59462),
+  .amux(net_130),
+  .SIMPV(MUDV),
+  .CELSUB(CELSUB40948)
 );
 
 celeradacr2r_d4e46535 XU5 (
-.i({net_106,net_105,net_104,net_103,net_102,net_101,net_100,net_99}),
-.DAC(net_111),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948),
-.DACREF(REF),
-.ok_dac(net_128),
-.GNDSENSE(kelvin_MUDGsoftstart),
-.enable_dac(enable_softstart),
-.global_dac(tl0),
-.strobe_dac(net_124)
+  .i({net_106,net_105,net_104,net_103,net_102,net_101,net_100,net_99}),
+  .DAC(net_111),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948),
+  .DACREF(REF),
+  .ok_dac(net_128),
+  .GNDSENSE(kelvin_MUDGsoftstart),
+  .enable_dac(enable_softstart),
+  .global_dac(global_dac_0cc08401_XU5),
+  .strobe_dac(net_124)
 );
 
 inv_12e192f5 XU10 (
-.i(enable_brick),
-.o(net_98),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(enable_brick),
+  .o(net_98),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 inv_12e192f5 XU12 (
-.i(softstart_1ms),
-.o(net_134),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-dff_fc5ad7bd XU13 (
-.d(net_139),
-.q(net_133),
-.ck(net_138),
-.qb(net_139),
-.rb(net_123),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
+  .i(softstart_1ms),
+  .o(net_134),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 amux2_a0dc83ed XU14 (
-.O(net_136),
-.I0(net_133),
-.I1(XDBUF1_o),
-.CELG(CELG59462),
-.amux(softstart_1ms),
-.SIMPV(MUDV),
-.CELSUB(CELSUB40948)
+  .O(net_136),
+  .I0(net_133),
+  .I1(XDBUF1_o),
+  .CELG(CELG59462),
+  .amux(softstart_1ms),
+  .SIMPV(MUDV),
+  .CELSUB(CELSUB40948)
 );
 
 dbuf_e926e395 XU21 (
-.i(net_122),
-.o(dft_clock),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_122),
+  .o(dft_clock),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 oneshot_9251da09 XU22 (
-.i(enable_softstart),
-.o(net_140),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(enable_softstart),
+  .o(net_140),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 switchpullup_a01cd9ef XU23 (
-.O(net_129),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948),
-.enable_switch(net_130)
+  .O(net_129),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948),
+  .enable_switch(net_130)
 );
 
 inv_12e192f5 XU24 (
-.i(net_95),
-.o(net_96),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_95),
+  .o(net_96),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 nor2_ee112582 XU25 (
-.o(net_95),
-.i0(net_130),
-.i1(net_127),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-dff_fc5ad7bd XU26 (
-.d(enable_softstart),
-.q(net_130),
-.ck(net_125),
-.qb(net_131),
-.rb(net_132),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
+  .o(net_95),
+  .i0(net_130),
+  .i1(net_127),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU27 (
-.i(net_96),
-.o(done_softstart),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_96),
+  .o(done_softstart),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 oneshot_9251da09 XU29 (
-.i(net_98),
-.o(net_141),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_98),
+  .o(net_141),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 nor2_ee112582 XU30 (
-.o(net_132),
-.i0(net_140),
-.i1(net_141),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .o(net_132),
+  .i0(net_140),
+  .i1(net_141),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
+);
+
+dff_e5264df5 Xdff1 (
+  .d(net_139),
+  .q(net_133),
+  .ck(net_138),
+  .qb(net_139),
+  .rb(net_123),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948)
+);
+
+dff_e5264df5 Xdff2 (
+  .d(net_137),
+  .q(net_138),
+  .ck(net_135),
+  .qb(net_137),
+  .rb(net_123),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948)
+);
+
+dff_e5264df5 Xdff3 (
+  .d(enable_softstart),
+  .q(net_130),
+  .ck(net_125),
+  .qb(net_131),
+  .rb(net_132),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948)
 );
 
 PEBBLEdbuf XDBUF1 (
-.G(CELG59462),
-.V(CELV96848),
-.i(net_122),
-.o(XDBUF1_o),
-.SUB(CELSUB40948)
+  .G(CELG59462),
+  .V(CELV96848),
+  .i(net_122),
+  .o(XDBUF1_o),
+  .SUB(CELSUB40948)
 );
 
-PEBBLEtielo XtieLo (
-.G(CELG59462),
-.V(CELV96848),
-.q(tl0),
-.SUB(CELSUB40948)
+DFTtm8t dft_hex0x19 (
+  .G(CELG59462),
+  .V(CELV96848),
+  .a({a1,a0}),
+  .SUB(CELSUB40948),
+  .ten({noconn_dft_hex0x19_ten_7,noconn_dft_hex0x19_ten_6,noconn_dft_hex0x19_ten_5,noconn_dft_hex0x19_ten_4,noconn_dft_hex0x19_ten_3,noconn_dft_hex0x19_ten_2,global_oscillator_4c0bef8e_Xoscillator1,global_dac_0cc08401_XU5}),
+  .tma({a0,a0,a0,a1,a1,a0,a0,a1}),
+  .tmi(tmi[4:0])
 );
 
 oscillatorcrude_f6e6c185 Xoscillator1 (
-.IP(IP_4c0bef8e),
-.osc(net_122),
-.CELG(CELG59462),
-.SIMPV(MUDV),
-.CELSUB(CELSUB40948),
-.SENSE_G(SENSE_G_4c0bef8e),
-.ok_oscillator(net_123),
-.enable_oscillator(enable_softstart),
-.global_oscillator(tl0)
+  .IP(IP_4c0bef8e),
+  .osc(net_122),
+  .CELG(CELG59462),
+  .SIMPV(MUDV),
+  .CELSUB(CELSUB40948),
+  .SENSE_G(SENSE_G_4c0bef8e),
+  .ok_oscillator(net_123),
+  .enable_oscillator(enable_softstart),
+  .global_oscillator(global_oscillator_4c0bef8e_Xoscillator1)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x19_ten_2 (
+  .noconn(noconn_dft_hex0x19_ten_2)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x19_ten_3 (
+  .noconn(noconn_dft_hex0x19_ten_3)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x19_ten_4 (
+  .noconn(noconn_dft_hex0x19_ten_4)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x19_ten_5 (
+  .noconn(noconn_dft_hex0x19_ten_5)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x19_ten_6 (
+  .noconn(noconn_dft_hex0x19_ten_6)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x19_ten_7 (
+  .noconn(noconn_dft_hex0x19_ten_7)
 );
 
 endmodule

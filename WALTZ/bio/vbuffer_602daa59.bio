@@ -122,14 +122,14 @@ placeIFELSE cellNameContains inp$$rrr
 place Generate STONEvbufferinp 69.55 3.52 MY
 place Generate STONEvbufferinp_ext 69.55 3.52 MY
 place Generate STONEvbufferdft 0.05 99.49 MX
-placeALTVIEW Generate STONEvbufferinptrim layout1 108.52 41.14 MY
+place Generate STONEvbufferinptrim 108.08 41.14 MY
 placeINST Xrfbi -2.96 4.04 R90
 placeINST Xrfbo -2.96 4.04 R90
-placeDBLHVRING 87 2.5 118 74
+placeHVRING
 placeELSE
 placeEND
 
-//If finds a cell with inn and doesn't find a *rrr* cekk execute all lines between placeIFELSE and placeELSE statements
+//If finds a cell with inn and doesn't find a *rrr* cell execute all lines between placeIFELSE and placeELSE statements
 placeIFELSE cellNameContains inn$$rrr
 place Generate STONEvbufferinn 75.46 0 MY
 place Generate STONEvbufferinn_ext 75.46 0 MY
@@ -143,10 +143,10 @@ placeEND
 
 // if cell contains *rrr* and *trim* execute lines between placeIFELSE and placeELSE statements
 placeIFELSE cellNameContains rrr&&trim
-placeALTVIEW Generate STONEvbufferrr layout2 0 2.98 R0
+placeALTVIEW Generate STONEvbufferrr layout1 0 2.98 R0
 place Generate STONEvbufferdft 0.05 103.27 MX
 place Generate STONEvbufferinptrim -38.75 2.565 R0
-place Generate STONEvbufferinntrim -26.55 65.73 MXR90
+place Generate STONEvbufferinntrim -38.87 62.73 R0
 placeINST Xrfbi 47.89 1.41 MX 
 placeINST Xrfbo 47.89 1.41 MX 
 placeHVRING
@@ -163,7 +163,9 @@ placeHVRING
 placeELSE
 placeEND
 
-placeROUTE
+movePINS
+placeROUTEnopins
+//placeROUTE
 endlayoutbio
 
 

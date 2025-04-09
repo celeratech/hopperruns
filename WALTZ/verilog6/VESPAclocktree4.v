@@ -28,43 +28,43 @@ input  CELSUB40948;
 
 // ------------------------ Networks ---------------------
 dbuf_e926e395 XU3 (
-.i(clocki),
-.o(net_6),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(clocki),
+  .o(net_6),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU6 (
-.i(net_6),
-.o(clock0),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_6),
+  .o(clock0),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU22 (
-.i(net_6),
-.o(clock1),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_6),
+  .o(clock1),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU24 (
-.i(net_6),
-.o(clock2),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_6),
+  .o(clock2),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU26 (
-.i(net_6),
-.o(clock3),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_6),
+  .o(clock3),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 endmodule

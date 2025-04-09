@@ -48,7 +48,7 @@ user,Type,p
 description,FET type
 user,Usage,signal
 description,FET used as Signal
-user,Vds,6V 0p9x0p5um
+user,Vds,6V 1p5x0p5um
 description,FET Design rating
 user,NESTOrevison,0.5.0
 description,NESTO Generate code
@@ -142,6 +142,7 @@ revision,layout,0p1
 //Signal and Power FET layout bios
 
 //custom FET for 301
+placeNOLAYOUT
 
 endlayoutbio
 //**********************************************
@@ -191,8 +192,8 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,pch5i2_5t_0p9x0p5x1x1,16038
-generate_area,fet_delay_timingskew_b5de11eb_d1p0nsr_pout,16038
+sub_area,pch5i2_5t_1p5x0p5x1x1,16062
+generate_area,fet_delay_timingskew_b5de11eb_d1p0nsr_pout,16062
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.3

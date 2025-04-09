@@ -83,62 +83,62 @@ input  CELSUB40948;
 
 // ------------------------ Networks ---------------------
 inv_12e192f5 XU1 (
-.i(net_10),
-.o(net_11),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_10),
+  .o(net_11),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU3 (
-.i(din),
-.o(net_6),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(din),
+  .o(net_6),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 nand2_9125fe87 XU6 (
-.o(net_10),
-.i0(net_9),
-.i1(net_8),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .o(net_10),
+  .i0(net_9),
+  .i1(net_8),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU8 (
-.i(clock),
-.o(net_9),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(clock),
+  .o(net_9),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU10 (
-.i(state),
-.o(net_8),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(state),
+  .o(net_8),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 delayfixed_ddaa773b XU14 (
-.i(net_11),
-.o(net_7),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
+  .i(net_11),
+  .o(net_7),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948)
 );
 
 dff_9c8a87f3 Xdff1 (
-.d(net_6),
-.q(out),
-.ck(net_7),
-.rb(net_8),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
+  .d(net_6),
+  .q(out),
+  .ck(net_7),
+  .rb(net_8),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948)
 );
 
 endmodule

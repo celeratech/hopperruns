@@ -121,11 +121,11 @@ endlayoutbio
 revision,vis15cbdiesize,0p1
 sub_area,STONEtimingskewFRONTrise,9999
 sub_area,STONEtimingskewEND,9999
-sub_area,fet_delay_timingskew_d39a4f5a_d8p0nsr_pin,16062
+sub_area,fet_delay_timingskew_d39a4f5a_d8p0nsr_pin,16063
 sub_area,fet_delay_timingskew_d39a4f5a_d8p0nsr_nin,4021
 sub_area,fet_delay_timingskew_d39a4f5a_d8p0nsr_pout,16082
 sub_area,fet_delay_timingskew_d39a4f5a_d8p0nsr_nout,4046
-generate_area,delay_timingskew_d39a4f5a_d8p0nsr,60209
+generate_area,delay_timingskew_d39a4f5a_d8p0nsr,60210
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,2.0
@@ -166,13 +166,13 @@ generate_area,delay_timingskew_d39a4f5a_d8p0nsr,60209
 
 #define P1WdefaultR0p5,2.0
 #define P1LdefaultR0p5,0.5
-#define P1WdefaultF0p5,1.2
+#define P1WdefaultF0p5,2.0
 #define P1LdefaultF0p5,0.5
 
 #define N1WdefaultR0p5high,1.0
-#define N1LdefaultR0p5high,0.6
+#define N1LdefaultR0p5high,1.0
 #define N1WdefaultR0p5low,1.0
-#define N1LdefaultR0p5low,0.6
+#define N1LdefaultR0p5low,1.0
 
 #define N1WdefaultF0p5,1.0
 #define,N1LdefaultF0p5,1.0
@@ -239,29 +239,42 @@ generate_area,delay_timingskew_d39a4f5a_d8p0nsr,60209
 #define N1WdefaultF1,1.0
 #define N1LdefaultF1,4.3
 
-#define,AkR11low,-0.076
-#define,AkR12low,0.008
-#define,BkR11low,1.03
-#define,BkR12low,0.15
-#define,CkR11low,1.414
-#define,CkR12low,-0.715
+//#define,AkR11low,-0.062
+//#define,AkR12low,0.014
+//#define,BkR11low,0.733
+//#define,BkR12low,0.184
+//#define,CkR11low,1.163
+//#define,CkR12low,-0.76
+#define,AkR11low,0.333
+#define,AkR12low,0.181
+#define,BkR11low,1.369
+#define,BkR12low,0.274
+#define,CkR11low,1.459
+#define,CkR12low,-0.704
 
 #define,AkR11high,0.333
 #define,AkR12high,0.181
-#define,BkR11high,0.369
+#define,BkR11high,1.369
 #define,BkR12high,0.274
 #define,CkR11high,1.459
 #define,CkR12high,-0.704
 
-#define,1KRhigh,0.840
+#define,1KRhigh,0.837
 #define,1KRlow,0.837
 
-#define,AkF11low,-0.062
-#define,AkF12low,0.014
-#define,BkF11low,0.733
-#define,BkF12low,0.104
-#define,CkF11low,1.163
-#define,CkF12low,-0.76
+//#define,AkF11low,-0.062
+//#define,AkF12low,0.014
+//#define,BkF11low,0.733
+//#define,BkF12low,0.104
+//#define,CkF11low,1.163
+//#define,CkF12low,-0.76
+
+#define,AkF11low,0.068
+#define,AkF12low,0.168
+#define,BkF11low,0.891
+#define,BkF12low,0.219
+#define,CkF11low,1.249
+#define,CkF12low,-0.735
 
 #define,AkF11high,0.068
 #define,AkF12high,0.168
@@ -270,7 +283,8 @@ generate_area,delay_timingskew_d39a4f5a_d8p0nsr,60209
 #define,CkF11high,1.249
 #define,CkF12high,-0.735
 
-#define,1KFlow,0.840
+//#define,1KFlow,0.840
+#define,1KFlow,0.852
 #define,1KFhigh,0.852
 
 
@@ -297,12 +311,19 @@ generate_area,delay_timingskew_d39a4f5a_d8p0nsr,60209
 #define N1WdefaultF2,1.0
 #define N1LdefaultF2,9.2
 
-#define,AkR21low,-0.115
-#define,AkR22low,0.041
-#define,BkR21low,2.096
-#define,BkR22low,0.347
-#define,CkR21low,2.605
-#define,CkR22low,-1.552
+//#define,AkR21low,-0.115
+//#define,AkR22low,0.041
+//#define,BkR21low,2.096
+//#define,BkR22low,0.347
+//#define,CkR21low,2.605
+//#define,CkR22low,-1.552
+
+#define,AkR21low,0.418
+#define,AkR22low,0.341
+#define,BkR21low,2.402
+#define,BkR22low,0.498
+#define,CkR21low,2.601
+#define,CkR22low,-1.554
 
 #define,AkR21high,0.418
 #define,AkR22high,0.341
@@ -321,14 +342,22 @@ generate_area,delay_timingskew_d39a4f5a_d8p0nsr,60209
 #define,CkF21high,2.265
 #define,CkF22high,-1.429
 
-#define,AkF21low,-0.162
-#define,AkF22low,0.085
-#define,BkF21low,1.653
-#define,BkF22low,0.513
-#define,CkF21low,2.27
-#define,CkF22low,-1.426
+//#define,AkF21low,-0.162
+//#define,AkF22low,0.085
+//#define,BkF21low,1.653
+//#define,BkF22low,0.513
+//#define,CkF21low,2.27
+//#define,CkF22low,-1.426
 
-#define,2KFlow,0.888
+#define,AkF21low,-0.456
+#define,AkF22low,0.894
+#define,BkF21low,1.45
+#define,BkF22low,0.911
+#define,CkF21low,2.265
+#define,CkF22low,-1.429
+
+
+#define,2KFlow,0.889
 #define,2KFhigh,0.889
 #define,2KR,0.826
 
@@ -412,7 +441,7 @@ generate_area,delay_timingskew_d39a4f5a_d8p0nsr,60209
 #define,BkR81,13.763
 #define,BkR82,4.026
 #define,CkR81,9.957
-#define,CkR82,-5.5831
+#define,CkR82,-5.831
 
 #define,AkF81,2.196
 #define,AkF82,1.194
@@ -430,8 +459,9 @@ generate_area,delay_timingskew_d39a4f5a_d8p0nsr,60209
 *******************************************
 //timingskew
 revision,pinorder,0.2.0
+Key,301
+PinOrder code revision,0.3.0
 pinorder,in,s0,s1,s2,s3,s4,out
-
 endpinorder
 //**********************************************
 

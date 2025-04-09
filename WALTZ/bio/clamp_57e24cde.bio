@@ -160,7 +160,7 @@ layout,clamp
 //place Generate STONEhclamp500u 9.065 -36.665 R0
 //place Generate STONEhclamp5m 9.065 -60.47 R0
 place Generate STONEmainhclamp 71.73 70.665 R180
-place Generate STONEhclamp50u -11.05 0.37 R0
+place Generate STONEhclamp50u -11.05 0.92 R0
 place Generate STONEhclamp500u 9.53 -36.42 R0
 place Generate STONEhclamp5m 9.4 -60.58 R0
 
@@ -169,6 +169,9 @@ place Generate STONElclamp50u -10.57 31.035 MX
 place Generate STONElclamp500u 9.4 -36.665 R0
 place Generate STONElclamp5m 9.4 -60.73 R0
 place Generate STONEclampdft 70.07 19.245 MX
+
+//fbd added for PUGET no idea on regular placemnts in next chip
+placeINST XFDB 84.13 9.65 MY
 
 placeIFELSE cellNameContains trim
 place Generate STONEclamptrim 78.615 21.495 R0
@@ -193,6 +196,8 @@ placeIFELSE cellNameContains clamp50u&&trim
 placeRES -9.08 -1.68 0.8 0.8 R0 x -y 120
 placeELSE
 placeEND
+
+moveORIGIN x
 
 placeRESRING
 placeHVRING

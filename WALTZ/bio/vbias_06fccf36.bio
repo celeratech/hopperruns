@@ -212,47 +212,80 @@ celldft,end
 //Layout Parameters
 revision,layout,0p1
 layout,vbias
-placeIF cellNameContains comp5v
-place Generate STONEvbiasbgcomp5v 0 0 R0
-place Generate STONEvbiasbgcomp5vin2 0 0 R0
-place Generate STONEvbiasservice5v 435.15 3.195 R0
-placeSTEP Generate STONEvbias5vdep 489.385 218.25 x 56 R0
-place Generate STONEvbias15vdep 262.2 277.965 R0
-place Generate STONEvbiasldoin15pmos 593 2.4 R0
-place Generate STONEvbiasldoin15in25pmos 593 2.4 R0
-place Generate STONEvbiasdischarge 340.59 252.6 MY
-place Generate STONEvbiasdft1 475.37 138.35 R0
-place Generate STONEvbiasdft2 480.115 136.285 R0
-place Generate STONEvbiasinptrim 468.24 149 MY
-place Generate STONEvbias30vdep 337.275 294.67 MX
-placeTAP 615 165
-placeRES 608.81 161.69 .8 .8 R0 x y 160
-placeRES 354.81 264.69 .8 .8 R0 x y 400
+//made for PUGET
+placeIF cellNameContains 60pmos
+place Generate STONEvbiasinptrimNOME 25.39 662.71 MY
+place Generate STONEvbiasbgcomp60vACCURATE 35.935 382.3 R0
+placeALTVIEW Generate STONEvbiasateNOME layout1 -6.675 558.505 R0
+placeINST Xenable 128.03 557.17 R180
+placeINST Xstart 126.11 557.17 MX
+placeINST Xuvlo -11.44 557.17 MX
+place Generate STONEvbiasldoin160pmosNOME 348.14 345.27 R180
+place Generate STONEvbiasservice60vNOME 0.405 351.35 R0
+placeINST XRfeedback 130.055 502.615 R90
+placeINST XRuvlo 38.33 564.59 R90
 placeEND
-placeIFELSE cellNameContains 15&&230pmos
-placeRES 605.2 14 .8 .8 R0 x y 60
-place Generate STONEvbiasldoin15in230pmos 678.025 8.4 R0
-placeELSE
-placeEND
-placeIF cellNameContains comp30v
-placeSTEP Generate STONEvbias30vdep 446.16 275.405 y 41 MX
-place Generate STONEvbiasbgcomp30v 0 0 R0
-place Generate STONEvbiasservice30v 434.655 0 R0
-place Generate STONEvbiasbgcomp30vin2 0 0 R0
-place Generate STONEvbiasldoin130pmos 671 2.4 R0
-place Generate STONEvbiasldoin130in25pmos 671 2.4 R0
-place Generate STONEvbiasldoin130in230pmos 671 2.4 R0
-place Generate STONEvbiasdischarge 393.32 252.6 MY
-place Generate STONEvbiasdft1 478.79 146.67 R0
-place Generate STONEvbiasdft2 478.79 146.67 R0
-place Generate STONEvbiasinptrim 440.25 154 R0
-placeRES 597.2 221 .8 .8 R0 x -y 60
-placeEND
-placeRESRING
-placeHVRING
-placeROUTE
-endlayoutbio
+//pre 301b
+//WALTZ bio
+//placeIF cellNameContains comp60vin2ACCURATE
+//place Generate STONEvbiasbgcomp60vin2ACCURATE 251.555 113.895 R0
+//placeINST Xldo  411.77 8.03 MY
+//placeINST Xservice 412.79 5.145 R0
+//placeINST Xaccuracy 74.805 318.925 R180
+//placeALTVIEW Generate STONEvbiasENABLE30NOME layout3 41.745 351.945 R0
+//placeINST Xenable 42.345 368.475 R0
+//placeINST Xuvlo 181.815 368.475 MY
+//placeINST Xstart 179.895 368.475 R0
+//placeINST Xswitchover 41.745 351.945 MX
+//placeINST Xdft 152.28 492.13 R180
+////Xdft should be placed flat to save space example.Waltz3
+//placeRES 174.035 301.08 .8 .8 MYR90 x -y 60
+//placeEND
+//placeRESRING
+//placeHVRING
+//placeROUTE
 
+//placeIF cellNameContains comp5v
+//place Generate STONEvbiasbgcomp5v 0 0 R0
+//place Generate STONEvbiasbgcomp5vin2 0 0 R0
+//place Generate STONEvbiasservice5v 435.15 3.195 R0
+//placeSTEP Generate STONEvbias5vdep 489.385 218.25 x 56 R0
+//place Generate STONEvbias15vdep 262.2 277.965 R0
+//place Generate STONEvbiasldoin15pmos 593 2.4 R0
+//place Generate STONEvbiasldoin15in25pmos 593 2.4 R0
+//place Generate STONEvbiasdischarge 340.59 252.6 MY
+//place Generate STONEvbiasdft1 475.37 138.35 R0
+//place Generate STONEvbiasdft2 480.115 136.285 R0
+//place Generate STONEvbiasinptrim 468.24 149 MY
+//place Generate STONEvbias30vdep 337.275 294.67 MX
+//placeTAP 615 165
+//placeRES 608.81 161.69 .8 .8 R0 x y 160
+//placeRES 354.81 264.69 .8 .8 R0 x y 400
+//placeEND
+//placeIFELSE cellNameContains 15&&230pmos
+//placeRES 605.2 14 .8 .8 R0 x y 60
+//place Generate STONEvbiasldoin15in230pmos 678.025 8.4 R0
+//placeELSE
+//placeEND
+//placeIF cellNameContains comp30v
+//placeSTEP Generate STONEvbias30vdep 446.16 275.405 y 41 MX
+//place Generate STONEvbiasbgcomp30v 0 0 R0
+//place Generate STONEvbiasservice30v 434.655 0 R0
+//place Generate STONEvbiasbgcomp30vin2 0 0 R0
+//place Generate STONEvbiasldoin130pmos 671 2.4 R0
+//place Generate STONEvbiasldoin130in25pmos 671 2.4 R0
+//place Generate STONEvbiasldoin130in230pmos 671 2.4 R0
+//place Generate STONEvbiasdischarge 393.32 252.6 MY
+//place Generate STONEvbiasdft1 478.79 146.67 R0
+//place Generate STONEvbiasdft2 478.79 146.67 R0
+//place Generate STONEvbiasinptrim 440.25 154 R0
+//placeRES 597.2 221 .8 .8 R0 x -y 60
+//placeEND
+//placeRESRING
+//placeHVRING
+//placeROUTE
+//endlayoutbio
+//
 //**********************************************
 //Project Parameters
 //Celera:WALTZ Project Bio

@@ -40,20 +40,20 @@ input  CELSUB40948;
 
 // ------------------------ Networks ---------------------
 nand2_9125fe87 XU4 (
-.o(net_4),
-.i0(Tstate),
-.i1(i0),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .o(net_4),
+  .i0(Tstate),
+  .i1(i0),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 inv_12e192f5 XU5 (
-.i(net_4),
-.o(o),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_4),
+  .o(o),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 endmodule

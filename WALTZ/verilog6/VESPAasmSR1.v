@@ -25,11 +25,11 @@ input  CELSUB40948;
 
 // ------------------------ Networks ---------------------
 dbuf_e926e395 XU25 (
-.i(i0),
-.o(sr),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(i0),
+  .o(sr),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 endmodule

@@ -41,18 +41,18 @@ output  celkelvin_BIAS_bc3b7675;
 
 // ------------------------ Networks ---------------------
 STONEpad1 XPAD1 (
-.PAD(BIAS)
+  .PAD(BIAS)
 );
 
-ESDcore20 XESDcore20_7 (
-.PAD(BIAS),
-.GESD(GESD),
-.CELSUB(CELSUB40948)
+ESDcore20 XESDcore20_1 (
+  .PAD(BIAS),
+  .GESD(GESD),
+  .CELSUB(CELSUB40948)
 );
 
 WRAPPER1 XWRAP_celkelvin_BIAS_bc3b7675 (
-.i(BIAS),
-.o(celkelvin_BIAS_bc3b7675)
+  .i(BIAS),
+  .o(celkelvin_BIAS_bc3b7675)
 );
 
 endmodule

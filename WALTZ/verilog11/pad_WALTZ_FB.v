@@ -18,13 +18,13 @@ module ESDcore6 ( GESD, PAD );
 endmodule
 
 
-//Verilog HDL for "Generate", "WRAPPER1" "functional"
+//Verilog HDL for "PEBBLES", "PEBBLElinkKELVIN" "functional"
 
 
-module WRAPPER1 ( o, i );
+module PEBBLElinkKELVIN ( NEG, POS );
 
-  input i;
-  output o;
+  inout POS;
+  inout NEG;
 endmodule
 
 
@@ -39,17 +39,17 @@ inout  sense_FB;
 
 // ------------------------ Networks ---------------------
 STONEpad1 XPAD1 (
-.PAD(FB)
+  .PAD(FB)
 );
 
-ESDcore6 XESDcore6_8 (
-.PAD(FB),
-.GESD(GESD)
+ESDcore6 XESDcore6_1 (
+  .PAD(FB),
+  .GESD(GESD)
 );
 
-WRAPPER1 Xwrap_PAD1_SENSE0 (
-.i(FB),
-.o(sense_FB)
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE_SINGLE (
+  .NEG(sense_FB),
+  .POS(FB)
 );
 
 endmodule

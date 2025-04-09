@@ -7,293 +7,216 @@
 :vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
 :vpi_module "/usr/local/lib/ivl/va_math.vpi";
-S_0x55f3ca67ef60 .scope module, "DRIVERwaltz0TOPN" "DRIVERwaltz0TOPN" 2 187;
+S_0x564e5e247f60 .scope module, "SOFTSTARTwaltzDEBUG" "SOFTSTARTwaltzDEBUG" 2 90;
  .timescale 0 0;
-    .port_info 0 /INOUT 1 "SW";
-    .port_info 1 /INPUT 1 "BSTV";
-    .port_info 2 /INPUT 1 "MUDV";
-    .port_info 3 /INPUT 1 "MUDHV";
-    .port_info 4 /INPUT 1 "PMUDV";
-    .port_info 5 /INOUT 1 "PMUDHV";
-    .port_info 6 /INPUT 1 "enable";
-    .port_info 7 /INPUT 1 "topswon";
-    .port_info 8 /INPUT 1 "CELG59462";
-    .port_info 9 /INPUT 1 "CELV96848";
-    .port_info 10 /OUTPUT 1 "ok_driver";
-    .port_info 11 /OUTPUT 1 "topswipeak";
-    .port_info 12 /INPUT 1 "CELSUB40948";
-    .port_info 13 /INPUT 1 "IP_f4252e65";
-    .port_info 14 /INPUT 1 "IREF_DRIVER";
-    .port_info 15 /INPUT 1 "botswstatus";
-    .port_info 16 /OUTPUT 1 "topswstatus";
-    .port_info 17 /INPUT 1 "ISLOPE_DRIVER";
-o0x7f0595e43528 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6ee860_0 .net "BSTV", 0 0, o0x7f0595e43528;  0 drivers
-o0x7f0595e43018 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6ee920_0 .net "CELG59462", 0 0, o0x7f0595e43018;  0 drivers
-o0x7f0595e43048 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6ee9e0_0 .net "CELSUB40948", 0 0, o0x7f0595e43048;  0 drivers
-o0x7f0595e43078 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6eea80_0 .net "CELV96848", 0 0, o0x7f0595e43078;  0 drivers
-o0x7f0595e43d68 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6eec30_0 .net "IP_f4252e65", 0 0, o0x7f0595e43d68;  0 drivers
-o0x7f0595e438b8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6eecd0_0 .net "IREF_DRIVER", 0 0, o0x7f0595e438b8;  0 drivers
-o0x7f0595e43d38 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6eeda0_0 .net "ISLOPE_DRIVER", 0 0, o0x7f0595e43d38;  0 drivers
-o0x7f0595e43888 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6eee70_0 .net "MUDHV", 0 0, o0x7f0595e43888;  0 drivers
-o0x7f0595e43d98 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6eef40_0 .net "MUDV", 0 0, o0x7f0595e43d98;  0 drivers
-o0x7f0595e44218 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6ef010_0 .net "PMUDHV", 0 0, o0x7f0595e44218;  0 drivers
-o0x7f0595e43588 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6ef0e0_0 .net "PMUDV", 0 0, o0x7f0595e43588;  0 drivers
-o0x7f0595e43558 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6ef1b0_0 .net "SW", 0 0, o0x7f0595e43558;  0 drivers
-o0x7f0595e43198 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6ef250_0 .net "a0", 0 0, o0x7f0595e43198;  0 drivers
-o0x7f0595e430a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6ef2f0_0 .net "a1", 0 0, o0x7f0595e430a8;  0 drivers
-o0x7f0595e43648 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6ef390_0 .net "botswstatus", 0 0, o0x7f0595e43648;  0 drivers
-o0x7f0595e435b8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6ef460_0 .net "enable", 0 0, o0x7f0595e435b8;  0 drivers
-o0x7f0595e44248 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6ef500_0 .net "net_103", 0 0, o0x7f0595e44248;  0 drivers
-o0x7f0595e439a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6ef6b0_0 .net "net_104", 0 0, o0x7f0595e439a8;  0 drivers
-o0x7f0595e43618 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6ef7a0_0 .net "net_105", 0 0, o0x7f0595e43618;  0 drivers
-o0x7f0595e43df8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6ef890_0 .net "net_106", 0 0, o0x7f0595e43df8;  0 drivers
-o0x7f0595e433a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6ef980_0 .net "net_107", 0 0, o0x7f0595e433a8;  0 drivers
-o0x7f0595e433d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6efa70_0 .net "net_108", 0 0, o0x7f0595e433d8;  0 drivers
-o0x7f0595e43288 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6efb60_0 .net "net_75", 0 0, o0x7f0595e43288;  0 drivers
-o0x7f0595e43918 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6efc50_0 .net "net_92", 0 0, o0x7f0595e43918;  0 drivers
-o0x7f0595e438e8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6efd40_0 .net "net_95", 0 0, o0x7f0595e438e8;  0 drivers
-o0x7f0595e432e8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6efe30_0 .net "noconn_TAI_ISLOPECOMP6", 0 0, o0x7f0595e432e8;  0 drivers
-o0x7f0595e43348 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6eff20_0 .net "noconn_tdi_currentlimitlive5", 0 0, o0x7f0595e43348;  0 drivers
-o0x7f0595e440c8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6f0010_0 .net "ok_driver", 0 0, o0x7f0595e440c8;  0 drivers
-o0x7f0595e435e8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6f00b0_0 .net "tl0", 0 0, o0x7f0595e435e8;  0 drivers
-o0x7f0595e43948 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6f0150_0 .net "topswipeak", 0 0, o0x7f0595e43948;  0 drivers
-o0x7f0595e43dc8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6f01f0_0 .net "topswon", 0 0, o0x7f0595e43dc8;  0 drivers
-o0x7f0595e443c8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f3ca6f02e0_0 .net "topswstatus", 0 0, o0x7f0595e443c8;  0 drivers
-S_0x55f3ca6bf8f0 .scope module, "XDRMNOTH" "PEBBLEtiehi" 2 303, 2 150 0, S_0x55f3ca67ef60;
- .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "q";
-    .port_info 1 /INPUT 1 "G";
-    .port_info 2 /INPUT 1 "SUB";
-    .port_info 3 /INPUT 1 "V";
-v0x55f3ca6c08a0_0 .net "G", 0 0, o0x7f0595e43018;  alias, 0 drivers
-v0x55f3ca6e7d10_0 .net "SUB", 0 0, o0x7f0595e43048;  alias, 0 drivers
-v0x55f3ca6e7dd0_0 .net "V", 0 0, o0x7f0595e43078;  alias, 0 drivers
-v0x55f3ca6e7e70_0 .net "q", 0 0, o0x7f0595e430a8;  alias, 0 drivers
-S_0x55f3ca6e7fb0 .scope module, "XDRMNOTL" "PEBBLEtielo" 2 310, 2 138 0, S_0x55f3ca67ef60;
- .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "q";
-    .port_info 1 /INPUT 1 "G";
-    .port_info 2 /INPUT 1 "SUB";
-    .port_info 3 /INPUT 1 "V";
-v0x55f3ca6e81d0_0 .net "G", 0 0, o0x7f0595e43018;  alias, 0 drivers
-v0x55f3ca6e8270_0 .net "SUB", 0 0, o0x7f0595e43048;  alias, 0 drivers
-v0x55f3ca6e8310_0 .net "V", 0 0, o0x7f0595e43078;  alias, 0 drivers
-v0x55f3ca6e8410_0 .net "q", 0 0, o0x7f0595e43198;  alias, 0 drivers
-S_0x55f3ca6e8500 .scope module, "XNC75" "STONEnoconn" 2 292, 2 129 0, S_0x55f3ca67ef60;
- .timescale 0 0;
-    .port_info 0 /INPUT 1 "noconn";
-v0x55f3ca6e8700_0 .net "noconn", 0 0, o0x7f0595e43288;  alias, 0 drivers
-S_0x55f3ca6e8820 .scope module, "XNCnoconn_TAI_ISLOPECOMP6" "STONEnoconn" 2 331, 2 129 0, S_0x55f3ca67ef60;
- .timescale 0 0;
-    .port_info 0 /INPUT 1 "noconn";
-v0x55f3ca6e8a20_0 .net "noconn", 0 0, o0x7f0595e432e8;  alias, 0 drivers
-S_0x55f3ca6e8b40 .scope module, "XNCnoconn_tdi_currentlimitlive5" "STONEnoconn" 2 335, 2 129 0, S_0x55f3ca67ef60;
- .timescale 0 0;
-    .port_info 0 /INPUT 1 "noconn";
-v0x55f3ca6e8d90_0 .net "noconn", 0 0, o0x7f0595e43348;  alias, 0 drivers
-S_0x55f3ca6e8eb0 .scope module, "XU11" "switchtransmission_75e4adc9" 2 253, 2 68 0, S_0x55f3ca67ef60;
- .timescale 0 0;
-    .port_info 0 /INPUT 1 "CELV";
-    .port_info 1 /INOUT 1 "O";
-    .port_info 2 /INPUT 1 "I";
-    .port_info 3 /INPUT 1 "enable_switchb";
-    .port_info 4 /INPUT 1 "CELG";
-    .port_info 5 /INPUT 1 "CELSUB";
-v0x55f3ca6e9130_0 .net "CELG", 0 0, o0x7f0595e43018;  alias, 0 drivers
-v0x55f3ca6e9220_0 .net "CELSUB", 0 0, o0x7f0595e43048;  alias, 0 drivers
-v0x55f3ca6e9330_0 .net "CELV", 0 0, o0x7f0595e43078;  alias, 0 drivers
-v0x55f3ca6e9420_0 .net "I", 0 0, o0x7f0595e433a8;  alias, 0 drivers
-v0x55f3ca6e94c0_0 .net "O", 0 0, o0x7f0595e433d8;  alias, 0 drivers
-v0x55f3ca6e95b0_0 .net "enable_switchb", 0 0, o0x7f0595e43198;  alias, 0 drivers
-S_0x55f3ca6e96f0 .scope module, "XU17" "cboot_7dc01c49" 2 262, 2 84 0, S_0x55f3ca67ef60;
- .timescale 0 0;
-    .port_info 0 /INPUT 1 "CBOOT";
-    .port_info 1 /INPUT 1 "CELV";
-    .port_info 2 /INPUT 1 "CELPOS";
-    .port_info 3 /INPUT 1 "on_charge";
-    .port_info 4 /INPUT 1 "global_cboot";
-    .port_info 5 /INPUT 1 "enable_cboot";
-    .port_info 6 /OUTPUT 1 "ok_cboothv";
-    .port_info 7 /OUTPUT 1 "ok_cboot";
-    .port_info 8 /INPUT 1 "CELNEG";
-    .port_info 9 /INPUT 1 "CELG";
-    .port_info 10 /INPUT 1 "CELSUB";
-v0x55f3ca6e99e0_0 .net "CBOOT", 0 0, o0x7f0595e43528;  alias, 0 drivers
-v0x55f3ca6e9ac0_0 .net "CELG", 0 0, o0x7f0595e43018;  alias, 0 drivers
-v0x55f3ca6e9b80_0 .net "CELNEG", 0 0, o0x7f0595e43558;  alias, 0 drivers
-v0x55f3ca6e9c20_0 .net "CELPOS", 0 0, o0x7f0595e43588;  alias, 0 drivers
-v0x55f3ca6e9cc0_0 .net "CELSUB", 0 0, o0x7f0595e43048;  alias, 0 drivers
-v0x55f3ca6e9db0_0 .net "CELV", 0 0, o0x7f0595e43078;  alias, 0 drivers
-v0x55f3ca6e9e50_0 .net "enable_cboot", 0 0, o0x7f0595e435b8;  alias, 0 drivers
-v0x55f3ca6e9f10_0 .net "global_cboot", 0 0, o0x7f0595e435e8;  alias, 0 drivers
-v0x55f3ca6e9fd0_0 .net "ok_cboot", 0 0, o0x7f0595e43618;  alias, 0 drivers
-v0x55f3ca6ea090_0 .net "ok_cboothv", 0 0, o0x7f0595e43288;  alias, 0 drivers
-v0x55f3ca6ea130_0 .net "on_charge", 0 0, o0x7f0595e43648;  alias, 0 drivers
-S_0x55f3ca6ea330 .scope module, "XU2" "currentlimitfet_e27944c0" 2 223, 2 15 0, S_0x55f3ca67ef60;
- .timescale 0 0;
-    .port_info 0 /INPUT 1 "CELPOS";
-    .port_info 1 /INPUT 1 "CELSUB";
-    .port_info 2 /INPUT 1 "measure_currentlimit";
-    .port_info 3 /INPUT 1 "VSENSE";
-    .port_info 4 /INPUT 1 "IREPLICA";
-    .port_info 5 /INPUT 1 "enable_currentlimit";
-    .port_info 6 /INPUT 1 "CELV";
-    .port_info 7 /INPUT 8 "trim_currentlimit";
-    .port_info 8 /INPUT 5 "factory_currentlimit_blanking";
-    .port_info 9 /INPUT 1 "IREF";
-    .port_info 10 /INPUT 1 "CELNEG";
-    .port_info 11 /INPUT 1 "HVREF";
-    .port_info 12 /OUTPUT 1 "currentlimit_lv";
-    .port_info 13 /INPUT 1 "ten_measure_currentlimit";
-    .port_info 14 /OUTPUT 1 "tdi_currentlimitlive";
-    .port_info 15 /INPUT 1 "ISLOPECOMP";
-    .port_info 16 /INPUT 1 "CELG";
-v0x55f3ca6ea660_0 .net "CELG", 0 0, o0x7f0595e43018;  alias, 0 drivers
-v0x55f3ca6ea720_0 .net "CELNEG", 0 0, o0x7f0595e43558;  alias, 0 drivers
-v0x55f3ca6ea7e0_0 .net "CELPOS", 0 0, o0x7f0595e43528;  alias, 0 drivers
-v0x55f3ca6ea8b0_0 .net "CELSUB", 0 0, o0x7f0595e43048;  alias, 0 drivers
-v0x55f3ca6ea950_0 .net "CELV", 0 0, o0x7f0595e43078;  alias, 0 drivers
-v0x55f3ca6eaa80_0 .net "HVREF", 0 0, o0x7f0595e43888;  alias, 0 drivers
-v0x55f3ca6eab20_0 .net "IREF", 0 0, o0x7f0595e438b8;  alias, 0 drivers
-v0x55f3ca6eabc0_0 .net "IREPLICA", 0 0, o0x7f0595e438e8;  alias, 0 drivers
-v0x55f3ca6eac60_0 .net "ISLOPECOMP", 0 0, o0x7f0595e433d8;  alias, 0 drivers
-v0x55f3ca6ead90_0 .net "VSENSE", 0 0, o0x7f0595e43918;  alias, 0 drivers
-v0x55f3ca6eae30_0 .net "currentlimit_lv", 0 0, o0x7f0595e43948;  alias, 0 drivers
-v0x55f3ca6eaed0_0 .net "enable_currentlimit", 0 0, o0x7f0595e435b8;  alias, 0 drivers
-o0x7f0595e43978 .functor BUFZ 5, C4<zzzzz>; HiZ drive
-v0x55f3ca6eafa0_0 .net "factory_currentlimit_blanking", 4 0, o0x7f0595e43978;  0 drivers
-v0x55f3ca6eb060_0 .net "measure_currentlimit", 0 0, o0x7f0595e439a8;  alias, 0 drivers
-v0x55f3ca6eb120_0 .net "tdi_currentlimitlive", 0 0, o0x7f0595e43348;  alias, 0 drivers
-v0x55f3ca6eb1f0_0 .net "ten_measure_currentlimit", 0 0, o0x7f0595e435e8;  alias, 0 drivers
-L_0x7f0595dfa018 .functor BUFT 1, C4<zzzzzzzz>, C4<0>, C4<0>, C4<0>;
-v0x55f3ca6eb2c0_0 .net "trim_currentlimit", 7 0, L_0x7f0595dfa018;  1 drivers
-S_0x55f3ca6eb690 .scope module, "XU22" "slopecomp_00a4cb3c" 2 276, 2 104 0, S_0x55f3ca67ef60;
- .timescale 0 0;
-    .port_info 0 /INPUT 1 "SIMPV";
-    .port_info 1 /INPUT 1 "enable_slopecomp";
-    .port_info 2 /INPUT 1 "global_slopecomp";
-    .port_info 3 /INPUT 1 "IP";
-    .port_info 4 /INPUT 1 "clock";
-    .port_info 5 /INPUT 1 "IOSC";
-    .port_info 6 /OUTPUT 1 "ok_slopecomp";
-    .port_info 7 /OUTPUT 1 "ISLOPECOMP";
-    .port_info 8 /INPUT 1 "ten_taiislopecomp";
-    .port_info 9 /OUTPUT 1 "TAI_ISLOPECOMP";
-    .port_info 10 /INPUT 4 "trim_slopecomp";
-    .port_info 11 /INPUT 1 "CELG";
-    .port_info 12 /INPUT 1 "CELSUB";
-v0x55f3ca6eb9d0_0 .net "CELG", 0 0, o0x7f0595e43018;  alias, 0 drivers
-v0x55f3ca6eba90_0 .net "CELSUB", 0 0, o0x7f0595e43048;  alias, 0 drivers
-v0x55f3ca6ebb50_0 .net "IOSC", 0 0, o0x7f0595e43d38;  alias, 0 drivers
-v0x55f3ca6ebc20_0 .net "IP", 0 0, o0x7f0595e43d68;  alias, 0 drivers
-v0x55f3ca6ebcc0_0 .net "ISLOPECOMP", 0 0, o0x7f0595e433a8;  alias, 0 drivers
-v0x55f3ca6ebd60_0 .net "SIMPV", 0 0, o0x7f0595e43d98;  alias, 0 drivers
-v0x55f3ca6ebe00_0 .net "TAI_ISLOPECOMP", 0 0, o0x7f0595e432e8;  alias, 0 drivers
-v0x55f3ca6ebed0_0 .net "clock", 0 0, o0x7f0595e43dc8;  alias, 0 drivers
-v0x55f3ca6ebf70_0 .net "enable_slopecomp", 0 0, o0x7f0595e435b8;  alias, 0 drivers
-v0x55f3ca6ec0a0_0 .net "global_slopecomp", 0 0, o0x7f0595e435e8;  alias, 0 drivers
-v0x55f3ca6ec140_0 .net "ok_slopecomp", 0 0, o0x7f0595e43df8;  alias, 0 drivers
-v0x55f3ca6ec200_0 .net "ten_taiislopecomp", 0 0, o0x7f0595e435e8;  alias, 0 drivers
-o0x7f0595e43e28 .functor BUFZ 4, C4<zzzz>; HiZ drive
-v0x55f3ca6ec2a0_0 .net "trim_slopecomp", 3 0, o0x7f0595e43e28;  0 drivers
-S_0x55f3ca6ec590 .scope module, "XU32" "VESPAasmINPUT1" 2 214, 2 2 0, S_0x55f3ca67ef60;
+    .port_info 0 /INPUT 1 "SS";
+    .port_info 1 /INOUT 1 "TAO";
+    .port_info 2 /INOUT 1 "tdo";
+    .port_info 3 /INPUT 5 "tmi";
+    .port_info 4 /INPUT 1 "CELG59462";
+    .port_info 5 /INPUT 1 "CELV96848";
+    .port_info 6 /INPUT 1 "dft_clock";
+    .port_info 7 /INPUT 1 "CELSUB40948";
+    .port_info 8 /INPUT 1 "enable_brick";
+    .port_info 9 /INPUT 1 "done_softstart";
+    .port_info 10 /INPUT 1 "enable_softstart";
+    .port_info 11 /OUTPUT 1 "hijack_enable_brick";
+    .port_info 12 /OUTPUT 1 "hijack_enable_softstart";
+o0x7fdbf5ee7018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564e5e2ab4c0_0 .net "CELG59462", 0 0, o0x7fdbf5ee7018;  0 drivers
+o0x7fdbf5ee7048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564e5e2ab690_0 .net "CELSUB40948", 0 0, o0x7fdbf5ee7048;  0 drivers
+o0x7fdbf5ee7078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564e5e2ab860_0 .net "CELV96848", 0 0, o0x7fdbf5ee7078;  0 drivers
+o0x7fdbf5ee7b28 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564e5e2aba10_0 .net "SS", 0 0, o0x7fdbf5ee7b28;  0 drivers
+o0x7fdbf5ee7af8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564e5e2abab0_0 .net "TAI_81f80d4d_XU8", 0 0, o0x7fdbf5ee7af8;  0 drivers
+o0x7fdbf5ee7cd8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564e5e2abb50_0 .net "TAO", 0 0, o0x7fdbf5ee7cd8;  0 drivers
+v0x564e5e2abc20_0 .net "a0", 0 0, L_0x564e5e2acfa0;  1 drivers
+v0x564e5e2abcc0_0 .net "a1", 0 0, L_0x564e5e2acea0;  1 drivers
+o0x7fdbf5ee72b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564e5e2abd60_0 .net "dft_clock", 0 0, o0x7fdbf5ee72b8;  0 drivers
+o0x7fdbf5ee76a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564e5e2abe30_0 .net "done_softstart", 0 0, o0x7fdbf5ee76a8;  0 drivers
+o0x7fdbf5ee7468 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564e5e2abed0_0 .net "enable_brick", 0 0, o0x7fdbf5ee7468;  0 drivers
+o0x7fdbf5ee70a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564e5e2abf70_0 .net "enable_softstart", 0 0, o0x7fdbf5ee70a8;  0 drivers
+o0x7fdbf5ee7498 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564e5e2ac040_0 .net "hijack_enable_brick", 0 0, o0x7fdbf5ee7498;  0 drivers
+o0x7fdbf5ee70d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564e5e2ac110_0 .net "hijack_enable_softstart", 0 0, o0x7fdbf5ee70d8;  0 drivers
+o0x7fdbf5ee7678 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564e5e2ac200_0 .net "net_24", 0 0, o0x7fdbf5ee7678;  0 drivers
+o0x7fdbf5ee72e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564e5e2ac2f0_0 .net "tdi_528f048c_XU10", 0 0, o0x7fdbf5ee72e8;  0 drivers
+o0x7fdbf5ee77f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564e5e2ac390_0 .net "tdi_ed87e5db_XU5", 0 0, o0x7fdbf5ee77f8;  0 drivers
+o0x7fdbf5ee7978 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564e5e2ac540_0 .net "tdi_f665b623_XU6", 0 0, o0x7fdbf5ee7978;  0 drivers
+o0x7fdbf5ee7d68 .functor BUFZ 1, C4<z>; HiZ drive
+v0x564e5e2ac610_0 .net "tdo", 0 0, o0x7fdbf5ee7d68;  0 drivers
+v0x564e5e2ac6e0_0 .net "ten_528f048c_XU10", 0 0, L_0x564e5e2ad5e0;  1 drivers
+v0x564e5e2ac7b0_0 .net "ten_81f80d4d_XU8", 0 0, L_0x564e5e2ad0c0;  1 drivers
+v0x564e5e2ac880_0 .net "ten_ed87e5db_XU5", 0 0, L_0x564e5e2ad320;  1 drivers
+v0x564e5e2ac950_0 .net "ten_f665b623_XU6", 0 0, L_0x564e5e2ad1b0;  1 drivers
+v0x564e5e2aca20_0 .net "ten_hijack_297df8ef_XU1", 0 0, L_0x564e5e2ad810;  1 drivers
+v0x564e5e2acaf0_0 .net "ten_hijack_dcf795e2_XU14", 0 0, L_0x564e5e2ad540;  1 drivers
+v0x564e5e2acbc0_0 .net "ten_hijacki_297df8ef_XU1", 0 0, L_0x564e5e2ad720;  1 drivers
+v0x564e5e2acc90_0 .net "ten_hijacki_dcf795e2_XU14", 0 0, L_0x564e5e2ad410;  1 drivers
+o0x7fdbf5ee7df8 .functor BUFZ 5, C4<zzzzz>; HiZ drive
+v0x564e5e2acd60_0 .net "tmi", 4 0, o0x7fdbf5ee7df8;  0 drivers
+o0x7fdbf5ee7d08 .functor BUFZ 2, C4<zz>; HiZ drive
+L_0x564e5e2acea0 .part o0x7fdbf5ee7d08, 1, 1;
+L_0x564e5e2acfa0 .part o0x7fdbf5ee7d08, 0, 1;
+o0x7fdbf5ee7d98 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+L_0x564e5e2ad0c0 .part o0x7fdbf5ee7d98, 7, 1;
+L_0x564e5e2ad1b0 .part o0x7fdbf5ee7d98, 6, 1;
+L_0x564e5e2ad320 .part o0x7fdbf5ee7d98, 5, 1;
+L_0x564e5e2ad410 .part o0x7fdbf5ee7d98, 4, 1;
+L_0x564e5e2ad540 .part o0x7fdbf5ee7d98, 3, 1;
+L_0x564e5e2ad5e0 .part o0x7fdbf5ee7d98, 2, 1;
+L_0x564e5e2ad720 .part o0x7fdbf5ee7d98, 1, 1;
+L_0x564e5e2ad810 .part o0x7fdbf5ee7d98, 0, 1;
+LS_0x564e5e2ada70_0_0 .concat [ 1 1 1 1], o0x7fdbf5ee7af8, L_0x564e5e2acfa0, L_0x564e5e2acfa0, L_0x564e5e2acfa0;
+LS_0x564e5e2ada70_0_4 .concat [ 1 1 1 1], L_0x564e5e2acfa0, L_0x564e5e2acfa0, L_0x564e5e2acfa0, L_0x564e5e2acfa0;
+L_0x564e5e2ada70 .concat [ 4 4 0 0], LS_0x564e5e2ada70_0_0, LS_0x564e5e2ada70_0_4;
+LS_0x564e5e2adcc0_0_0 .concat [ 1 1 1 1], o0x7fdbf5ee72e8, o0x7fdbf5ee77f8, o0x7fdbf5ee7978, L_0x564e5e2acfa0;
+LS_0x564e5e2adcc0_0_4 .concat [ 1 1 1 1], L_0x564e5e2acfa0, L_0x564e5e2acfa0, L_0x564e5e2acfa0, L_0x564e5e2acfa0;
+L_0x564e5e2adcc0 .concat [ 4 4 0 0], LS_0x564e5e2adcc0_0_0, LS_0x564e5e2adcc0_0_4;
+LS_0x564e5e2adec0_0_0 .concat [ 1 1 1 1], L_0x564e5e2acfa0, L_0x564e5e2acfa0, L_0x564e5e2acfa0, L_0x564e5e2acea0;
+LS_0x564e5e2adec0_0_4 .concat [ 1 1 1 1], L_0x564e5e2acea0, L_0x564e5e2acfa0, L_0x564e5e2acfa0, L_0x564e5e2acfa0;
+L_0x564e5e2adec0 .concat [ 4 4 0 0], LS_0x564e5e2adec0_0_0, LS_0x564e5e2adec0_0_4;
+S_0x564e5e26dc20 .scope module, "XU1" "DFThijack" 2 124, 2 14 0, S_0x564e5e247f60;
  .timescale 0 0;
     .port_info 0 /OUTPUT 1 "o";
-    .port_info 1 /INPUT 1 "i0";
-    .port_info 2 /INPUT 1 "Tstate";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "CELSUB";
+    .port_info 4 /INPUT 1 "ten_hijack";
+    .port_info 5 /INPUT 1 "ten_hijacki";
+    .port_info 6 /INPUT 1 "i";
+v0x564e5e28c8e0_0 .net "CELG", 0 0, o0x7fdbf5ee7018;  alias, 0 drivers
+v0x564e5e28bfb0_0 .net "CELSUB", 0 0, o0x7fdbf5ee7048;  alias, 0 drivers
+v0x564e5e28d210_0 .net "CELV", 0 0, o0x7fdbf5ee7078;  alias, 0 drivers
+v0x564e5e2a74f0_0 .net "i", 0 0, o0x7fdbf5ee70a8;  alias, 0 drivers
+v0x564e5e2a75b0_0 .net "o", 0 0, o0x7fdbf5ee70d8;  alias, 0 drivers
+v0x564e5e2a7670_0 .net "ten_hijack", 0 0, L_0x564e5e2ad810;  alias, 1 drivers
+v0x564e5e2a7730_0 .net "ten_hijacki", 0 0, L_0x564e5e2ad720;  alias, 1 drivers
+S_0x564e5e26d280 .scope module, "XU10" "dftprobeModel0_5f99ceb4" 2 161, 2 59 0, S_0x564e5e247f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "i";
+    .port_info 1 /OUTPUT 1 "tdi";
+    .port_info 2 /INPUT 1 "ten";
+    .port_info 3 /INPUT 1 "CELG";
+    .port_info 4 /INPUT 1 "CELSUB";
+    .port_info 5 /INPUT 1 "CELV";
+v0x564e5e2a7990_0 .net "CELG", 0 0, o0x7fdbf5ee7018;  alias, 0 drivers
+v0x564e5e2a7a30_0 .net "CELSUB", 0 0, o0x7fdbf5ee7048;  alias, 0 drivers
+v0x564e5e2a7ad0_0 .net "CELV", 0 0, o0x7fdbf5ee7078;  alias, 0 drivers
+v0x564e5e2a7b70_0 .net "i", 0 0, o0x7fdbf5ee72b8;  alias, 0 drivers
+v0x564e5e2a7c10_0 .net "tdi", 0 0, o0x7fdbf5ee72e8;  alias, 0 drivers
+v0x564e5e2a7cb0_0 .net "ten", 0 0, L_0x564e5e2ad5e0;  alias, 1 drivers
+S_0x564e5e2a7df0 .scope module, "XU14" "DFThijack" 2 170, 2 14 0, S_0x564e5e247f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 1 "CELV";
+    .port_info 3 /INPUT 1 "CELSUB";
+    .port_info 4 /INPUT 1 "ten_hijack";
+    .port_info 5 /INPUT 1 "ten_hijacki";
+    .port_info 6 /INPUT 1 "i";
+v0x564e5e2a8080_0 .net "CELG", 0 0, o0x7fdbf5ee7018;  alias, 0 drivers
+v0x564e5e2a8170_0 .net "CELSUB", 0 0, o0x7fdbf5ee7048;  alias, 0 drivers
+v0x564e5e2a8280_0 .net "CELV", 0 0, o0x7fdbf5ee7078;  alias, 0 drivers
+v0x564e5e2a8370_0 .net "i", 0 0, o0x7fdbf5ee7468;  alias, 0 drivers
+v0x564e5e2a8410_0 .net "o", 0 0, o0x7fdbf5ee7498;  alias, 0 drivers
+v0x564e5e2a8500_0 .net "ten_hijack", 0 0, L_0x564e5e2ad540;  alias, 1 drivers
+v0x564e5e2a85c0_0 .net "ten_hijacki", 0 0, L_0x564e5e2ad410;  alias, 1 drivers
+S_0x564e5e2a8760 .scope module, "XU4" "VESPAdftpulse" 2 115, 2 2 0, S_0x564e5e247f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "stop";
+    .port_info 1 /OUTPUT 1 "pulse";
+    .port_info 2 /INPUT 1 "start";
     .port_info 3 /INPUT 1 "CELG59462";
     .port_info 4 /INPUT 1 "CELV96848";
     .port_info 5 /INPUT 1 "CELSUB40948";
-v0x55f3ca6ec7c0_0 .net "CELG59462", 0 0, o0x7f0595e43018;  alias, 0 drivers
-v0x55f3ca6ec880_0 .net "CELSUB40948", 0 0, o0x7f0595e43048;  alias, 0 drivers
-v0x55f3ca6ec940_0 .net "CELV96848", 0 0, o0x7f0595e43078;  alias, 0 drivers
-v0x55f3ca6ec9e0_0 .net "Tstate", 0 0, o0x7f0595e43df8;  alias, 0 drivers
-v0x55f3ca6eca80_0 .net "i0", 0 0, o0x7f0595e43618;  alias, 0 drivers
-v0x55f3ca6ecb70_0 .net "o", 0 0, o0x7f0595e440c8;  alias, 0 drivers
-S_0x55f3ca6ecc70 .scope module, "XU5" "fetdn_a0946f8e" 2 243, 2 53 0, S_0x55f3ca67ef60;
+v0x564e5e2a89e0_0 .net "CELG59462", 0 0, o0x7fdbf5ee7018;  alias, 0 drivers
+v0x564e5e2a8aa0_0 .net "CELSUB40948", 0 0, o0x7fdbf5ee7048;  alias, 0 drivers
+v0x564e5e2a8b60_0 .net "CELV96848", 0 0, o0x7fdbf5ee7078;  alias, 0 drivers
+v0x564e5e2a8c00_0 .net "pulse", 0 0, o0x7fdbf5ee7678;  alias, 0 drivers
+v0x564e5e2a8ca0_0 .net "start", 0 0, o0x7fdbf5ee70d8;  alias, 0 drivers
+v0x564e5e2a8d90_0 .net "stop", 0 0, o0x7fdbf5ee76a8;  alias, 0 drivers
+S_0x564e5e2a8ed0 .scope module, "XU5" "dftprobeModel0_f0ccd53b" 2 134, 2 26 0, S_0x564e5e247f60;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "GATE";
-    .port_info 1 /INOUT 1 "SOURCE";
-    .port_info 2 /INOUT 1 "DRAIN";
-    .port_info 3 /INOUT 1 "SOURCEk";
-    .port_info 4 /INOUT 1 "DRAINk";
-    .port_info 5 /INOUT 1 "IREPLICA";
+    .port_info 0 /INPUT 1 "i";
+    .port_info 1 /OUTPUT 1 "tdi";
+    .port_info 2 /INPUT 1 "ten";
+    .port_info 3 /INPUT 1 "CELG";
+    .port_info 4 /INPUT 1 "CELSUB";
+    .port_info 5 /INPUT 1 "CELV";
+v0x564e5e2a91a0_0 .net "CELG", 0 0, o0x7fdbf5ee7018;  alias, 0 drivers
+v0x564e5e2a92f0_0 .net "CELSUB", 0 0, o0x7fdbf5ee7048;  alias, 0 drivers
+v0x564e5e2a9440_0 .net "CELV", 0 0, o0x7fdbf5ee7078;  alias, 0 drivers
+v0x564e5e2a9570_0 .net "i", 0 0, o0x7fdbf5ee7678;  alias, 0 drivers
+v0x564e5e2a9610_0 .net "tdi", 0 0, o0x7fdbf5ee77f8;  alias, 0 drivers
+v0x564e5e2a96b0_0 .net "ten", 0 0, L_0x564e5e2ad320;  alias, 1 drivers
+S_0x564e5e2a97f0 .scope module, "XU6" "dftprobeModel0_8b1750b2" 2 143, 2 37 0, S_0x564e5e247f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "i";
+    .port_info 1 /OUTPUT 1 "tdi";
+    .port_info 2 /INPUT 1 "ten";
+    .port_info 3 /INPUT 1 "CELG";
+    .port_info 4 /INPUT 1 "CELSUB";
+    .port_info 5 /INPUT 1 "CELV";
+v0x564e5e2a9a20_0 .net "CELG", 0 0, o0x7fdbf5ee7018;  alias, 0 drivers
+v0x564e5e2a9ae0_0 .net "CELSUB", 0 0, o0x7fdbf5ee7048;  alias, 0 drivers
+v0x564e5e2a9ba0_0 .net "CELV", 0 0, o0x7fdbf5ee7078;  alias, 0 drivers
+v0x564e5e2a9c40_0 .net "i", 0 0, o0x7fdbf5ee76a8;  alias, 0 drivers
+v0x564e5e2a9ce0_0 .net "tdi", 0 0, o0x7fdbf5ee7978;  alias, 0 drivers
+v0x564e5e2a9d80_0 .net "ten", 0 0, L_0x564e5e2ad1b0;  alias, 1 drivers
+S_0x564e5e2a9f00 .scope module, "XU8" "dftprobeModel2_c0a4d92d" 2 152, 2 48 0, S_0x564e5e247f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "i";
+    .port_info 1 /OUTPUT 1 "TAI";
+    .port_info 2 /INPUT 1 "ten";
+    .port_info 3 /INPUT 1 "CELG";
+    .port_info 4 /INPUT 1 "CELSUB";
+    .port_info 5 /INPUT 1 "CELV";
+v0x564e5e2aa180_0 .net "CELG", 0 0, o0x7fdbf5ee7018;  alias, 0 drivers
+v0x564e5e2aa240_0 .net "CELSUB", 0 0, o0x7fdbf5ee7048;  alias, 0 drivers
+v0x564e5e2aa300_0 .net "CELV", 0 0, o0x7fdbf5ee7078;  alias, 0 drivers
+v0x564e5e2aa3a0_0 .net "TAI", 0 0, o0x7fdbf5ee7af8;  alias, 0 drivers
+v0x564e5e2aa440_0 .net "i", 0 0, o0x7fdbf5ee7b28;  alias, 0 drivers
+v0x564e5e2aa530_0 .net "ten", 0 0, L_0x564e5e2ad0c0;  alias, 1 drivers
+S_0x564e5e2aa6f0 .scope module, "dft_hex0x18" "DFTtm8" 2 180, 2 73 0, S_0x564e5e247f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 2 "a";
+    .port_info 1 /OUTPUT 8 "ten";
+    .port_info 2 /INOUT 1 "TAO";
+    .port_info 3 /INOUT 1 "tdo";
+    .port_info 4 /INOUT 5 "tmi";
+    .port_info 5 /INPUT 1 "G";
     .port_info 6 /INPUT 1 "SUB";
-v0x55f3ca6ece50_0 .net "DRAIN", 0 0, o0x7f0595e44218;  alias, 0 drivers
-v0x55f3ca6ecf30_0 .net "DRAINk", 0 0, o0x7f0595e43918;  alias, 0 drivers
-v0x55f3ca6ed020_0 .net "GATE", 0 0, o0x7f0595e44248;  alias, 0 drivers
-v0x55f3ca6ed0f0_0 .net "IREPLICA", 0 0, o0x7f0595e438e8;  alias, 0 drivers
-v0x55f3ca6ed1c0_0 .net "SOURCE", 0 0, o0x7f0595e43558;  alias, 0 drivers
-v0x55f3ca6ed300_0 .net "SOURCEk", 0 0, o0x7f0595e43558;  alias, 0 drivers
-v0x55f3ca6ed3a0_0 .net "SUB", 0 0, o0x7f0595e43048;  alias, 0 drivers
-S_0x55f3ca6ed4c0 .scope module, "Xfetdriver" "fetdriver_f3635860" 2 317, 2 165 0, S_0x55f3ca67ef60;
- .timescale 0 0;
-    .port_info 0 /INPUT 1 "HVPOS";
-    .port_info 1 /INPUT 1 "global_fetdriver";
-    .port_info 2 /INPUT 1 "fetin";
-    .port_info 3 /OUTPUT 1 "GATE";
-    .port_info 4 /OUTPUT 1 "gate_status";
-    .port_info 5 /OUTPUT 1 "gate_status_vin";
-    .port_info 6 /INPUT 1 "CELV";
-    .port_info 7 /INPUT 1 "CELG";
-    .port_info 8 /INPUT 1 "enable_fetdriver";
-    .port_info 9 /INPUT 1 "HVNEG";
-    .port_info 10 /INPUT 1 "CELSUB";
-v0x55f3ca6ed7b0_0 .net "CELG", 0 0, o0x7f0595e43018;  alias, 0 drivers
-v0x55f3ca6ed870_0 .net "CELSUB", 0 0, o0x7f0595e43048;  alias, 0 drivers
-v0x55f3ca6eda40_0 .net "CELV", 0 0, o0x7f0595e43078;  alias, 0 drivers
-v0x55f3ca6edae0_0 .net "GATE", 0 0, o0x7f0595e44248;  alias, 0 drivers
-v0x55f3ca6edb80_0 .net "HVNEG", 0 0, o0x7f0595e43558;  alias, 0 drivers
-v0x55f3ca6edc70_0 .net "HVPOS", 0 0, o0x7f0595e43528;  alias, 0 drivers
-v0x55f3ca6edd10_0 .net "enable_fetdriver", 0 0, o0x7f0595e435b8;  alias, 0 drivers
-v0x55f3ca6eddb0_0 .net "fetin", 0 0, o0x7f0595e43dc8;  alias, 0 drivers
-v0x55f3ca6ede50_0 .net "gate_status", 0 0, o0x7f0595e439a8;  alias, 0 drivers
-v0x55f3ca6edf80_0 .net "gate_status_vin", 0 0, o0x7f0595e443c8;  alias, 0 drivers
-v0x55f3ca6ee020_0 .net "global_fetdriver", 0 0, o0x7f0595e435e8;  alias, 0 drivers
-S_0x55f3ca6ee230 .scope module, "XtieLo" "PEBBLEtielo" 2 296, 2 138 0, S_0x55f3ca67ef60;
- .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "q";
-    .port_info 1 /INPUT 1 "G";
-    .port_info 2 /INPUT 1 "SUB";
-    .port_info 3 /INPUT 1 "V";
-v0x55f3ca6ee3f0_0 .net "G", 0 0, o0x7f0595e43018;  alias, 0 drivers
-v0x55f3ca6ee5c0_0 .net "SUB", 0 0, o0x7f0595e43048;  alias, 0 drivers
-v0x55f3ca6ee680_0 .net "V", 0 0, o0x7f0595e43078;  alias, 0 drivers
-v0x55f3ca6ee750_0 .net "q", 0 0, o0x7f0595e435e8;  alias, 0 drivers
+    .port_info 7 /INPUT 8 "TAI";
+    .port_info 8 /INPUT 1 "V";
+    .port_info 9 /INPUT 8 "tdi";
+    .port_info 10 /INPUT 8 "tma";
+v0x564e5e2aa9e0_0 .net "G", 0 0, o0x7fdbf5ee7018;  alias, 0 drivers
+v0x564e5e2aaaa0_0 .net "SUB", 0 0, o0x7fdbf5ee7048;  alias, 0 drivers
+v0x564e5e2aab60_0 .net "TAI", 7 0, L_0x564e5e2ada70;  1 drivers
+v0x564e5e2aac00_0 .net "TAO", 0 0, o0x7fdbf5ee7cd8;  alias, 0 drivers
+v0x564e5e2aacc0_0 .net "V", 0 0, o0x7fdbf5ee7078;  alias, 0 drivers
+v0x564e5e2aadb0_0 .net "a", 1 0, o0x7fdbf5ee7d08;  0 drivers
+v0x564e5e2aae90_0 .net "tdi", 7 0, L_0x564e5e2adcc0;  1 drivers
+v0x564e5e2aaf70_0 .net "tdo", 0 0, o0x7fdbf5ee7d68;  alias, 0 drivers
+v0x564e5e2ab030_0 .net "ten", 7 0, o0x7fdbf5ee7d98;  0 drivers
+v0x564e5e2ab1a0_0 .net "tma", 7 0, L_0x564e5e2adec0;  1 drivers
+v0x564e5e2ab280_0 .net "tmi", 4 0, o0x7fdbf5ee7df8;  alias, 0 drivers
 # The file index is used to find the file name in the following table.
 :file_names 3;
     "N/A";
     "<interactive>";
-    "/celera/projects/Sunnyvale/software/WALTZ/verilog10/DRIVERwaltz0TOPN.v";
+    "/celera/projects/Sunnyvale/software/WALTZ/verilog10/SOFTSTARTwaltzDEBUG.v";

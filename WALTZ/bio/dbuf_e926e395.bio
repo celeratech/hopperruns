@@ -79,8 +79,7 @@ factory,busname,na
 //Layout Parameters
 revision,layout,0p1
 laout,dbuf
-place PEBBLES PEBBLEdbuf 0 0 R0
-movePINS
+placeNOLAYOUT
 endlayoutbio
 
 //**********************************************
@@ -147,6 +146,8 @@ PinOrder code revision,0.3.0
 pinorder,o,i
 
 endpinorder
+//**********************************************
+
 //**********************************************
 //TRIM Parameters
 cell,dbuf

@@ -1,5 +1,8 @@
 // ------------------------ Module Definitions -----------
-module POWERGOODwaltDEBUG (CELG59462,CELV96848,dft_pgout,CELSUB40948,dft_pgDELAY,fault_short,dft_REFBUFFER,dft_pgSTARTUP,dft_pgDEGLITCH,dft_shortdelay,enable_powergood,hijack_risedelay,hijack_enable_powergood);
+module POWERGOODwaltDEBUG (TAO,tdo,tmi,CELG59462,CELV96848,dft_pgout,CELSUB40948,dft_pgDELAY,fault_short,dft_REFBUFFER,dft_pgSTARTUP,dft_pgDEGLITCH,dft_shortdelay,enable_powergood,hijack_risedelay,hijack_enable_powergood);
+  inout  TAO;
+  inout  tdo;
+  input [4:0] tmi;
   input  CELG59462;
   input  CELV96848;
   input  dft_pgout;
@@ -15,8 +18,10 @@ module POWERGOODwaltDEBUG (CELG59462,CELV96848,dft_pgout,CELSUB40948,dft_pgDELAY
   output  hijack_enable_powergood;
 endmodule
 
-module POWERGOODwaltzMAIN (POK,MUDV,clock,sense_FB,CELG59462,CELV96848,PORB97836,dft_pgout,CELSUB40948,IP_70e67769,IP_ddbf938d,IP_e96a4067,dft_pgDELAY,fault_short,REF_POWERGOOD,dft_REFBUFFER,dft_pgSTARTUP,dft_pgDEGLITCH,dft_shortdelay,enable_powergood,hijack_risedelay,kelvin_MUDGpowergood);
+module POWERGOODwaltzMAIN (POK,tdo,tmi,MUDV,clock,sense_FB,CELG59462,CELV96848,PORB97836,dft_pgout,CELSUB40948,IP_70e67769,IP_ddbf938d,IP_e96a4067,dft_pgDELAY,fault_short,REF_POWERGOOD,dft_REFBUFFER,dft_pgSTARTUP,dft_pgDEGLITCH,dft_shortdelay,enable_powergood,hijack_risedelay,kelvin_MUDGpowergood);
   inout  POK;
+  inout  tdo;
+  input [4:0] tmi;
   input  MUDV;
   input  clock;
   input  sense_FB;
@@ -41,8 +46,11 @@ module POWERGOODwaltzMAIN (POK,MUDV,clock,sense_FB,CELG59462,CELV96848,PORB97836
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module POWERGOODwaltz (POK, MUDV, clock, sense_FB, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_70e67769, IP_ddbf938d, IP_e96a4067, fault_short, REF_POWERGOOD, enable_powergood, kelvin_MUDGpowergood);
+module POWERGOODwaltz (POK, TAO, tdo, tmi, MUDV, clock, sense_FB, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_70e67769, IP_ddbf938d, IP_e96a4067, fault_short, REF_POWERGOOD, enable_powergood, kelvin_MUDGpowergood);
 inout  POK;
+inout  TAO;
+inout  tdo;
+input [4:0] tmi;
 input  MUDV;
 input  clock;
 input  sense_FB;
@@ -60,47 +68,53 @@ inout  kelvin_MUDGpowergood;
 
 
 // ------------------------ Wires ------------------------
+wire [4:0] tmi;
 
 // ------------------------ Networks ---------------------
 POWERGOODwaltDEBUG XDEBUG (
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.dft_pgout(net_54),
-.CELSUB40948(CELSUB40948),
-.dft_pgDELAY(net_55),
-.fault_short(fault_short),
-.dft_REFBUFFER(net_52),
-.dft_pgSTARTUP(net_57),
-.dft_pgDEGLITCH(net_56),
-.dft_shortdelay(net_58),
-.enable_powergood(enable_powergood),
-.hijack_risedelay(net_53),
-.hijack_enable_powergood(net_51)
+  .TAO(TAO),
+  .tdo(tdo),
+  .tmi(tmi[4:0]),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .dft_pgout(net_54),
+  .CELSUB40948(CELSUB40948),
+  .dft_pgDELAY(net_55),
+  .fault_short(fault_short),
+  .dft_REFBUFFER(net_52),
+  .dft_pgSTARTUP(net_57),
+  .dft_pgDEGLITCH(net_56),
+  .dft_shortdelay(net_58),
+  .enable_powergood(enable_powergood),
+  .hijack_risedelay(net_53),
+  .hijack_enable_powergood(net_51)
 );
 
 POWERGOODwaltzMAIN XMAIN (
-.POK(POK),
-.MUDV(MUDV),
-.clock(clock),
-.sense_FB(sense_FB),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.PORB97836(PORB97836),
-.dft_pgout(net_54),
-.CELSUB40948(CELSUB40948),
-.IP_70e67769(IP_70e67769),
-.IP_ddbf938d(IP_ddbf938d),
-.IP_e96a4067(IP_e96a4067),
-.dft_pgDELAY(net_55),
-.fault_short(fault_short),
-.REF_POWERGOOD(REF_POWERGOOD),
-.dft_REFBUFFER(net_52),
-.dft_pgSTARTUP(net_57),
-.dft_pgDEGLITCH(net_56),
-.dft_shortdelay(net_58),
-.enable_powergood(net_51),
-.hijack_risedelay(net_53),
-.kelvin_MUDGpowergood(kelvin_MUDGpowergood)
+  .POK(POK),
+  .tdo(tdo),
+  .tmi(tmi[4:0]),
+  .MUDV(MUDV),
+  .clock(clock),
+  .sense_FB(sense_FB),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .PORB97836(PORB97836),
+  .dft_pgout(net_54),
+  .CELSUB40948(CELSUB40948),
+  .IP_70e67769(IP_70e67769),
+  .IP_ddbf938d(IP_ddbf938d),
+  .IP_e96a4067(IP_e96a4067),
+  .dft_pgDELAY(net_55),
+  .fault_short(fault_short),
+  .REF_POWERGOOD(REF_POWERGOOD),
+  .dft_REFBUFFER(net_52),
+  .dft_pgSTARTUP(net_57),
+  .dft_pgDEGLITCH(net_56),
+  .dft_shortdelay(net_58),
+  .enable_powergood(net_51),
+  .hijack_risedelay(net_53),
+  .kelvin_MUDGpowergood(kelvin_MUDGpowergood)
 );
 
 endmodule

@@ -98,178 +98,178 @@ input  CELSUB40948;
 
 // ------------------------ Networks ---------------------
 srlatch_39d292e9 XU1 (
-.q(o0),
-.r(net_30),
-.s(i0),
-.qb(net_31),
-.rb(net_33),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .q(o0),
+  .r(net_30),
+  .s(i0),
+  .qb(net_31),
+  .rb(net_33),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 nor3_c2b5cbd2 XU4 (
-.o(net_38),
-.i0(o0),
-.i1(o2),
-.i2(o3),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .o(net_38),
+  .i0(o0),
+  .i1(o2),
+  .i2(o3),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 nand2_9125fe87 XU5 (
-.o(net_36),
-.i0(Tstate),
-.i1(net_38),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .o(net_36),
+  .i0(Tstate),
+  .i1(net_38),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 srlatch_39d292e9 XU7 (
-.q(o1),
-.r(net_30),
-.s(i1),
-.qb(net_35),
-.rb(net_37),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .q(o1),
+  .r(net_30),
+  .s(i1),
+  .qb(net_35),
+  .rb(net_37),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 tie_9e2c0894 XU8 (
-.a0(net_30),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .a0(net_30),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 inv_12e192f5 XU9 (
-.i(net_32),
-.o(net_33),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_32),
+  .o(net_33),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 srlatch_39d292e9 XU10 (
-.q(o3),
-.r(net_30),
-.s(i3),
-.qb(net_43),
-.rb(net_45),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .q(o3),
+  .r(net_30),
+  .s(i3),
+  .qb(net_43),
+  .rb(net_45),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 nor3_c2b5cbd2 XU11 (
-.o(net_34),
-.i0(o1),
-.i1(o2),
-.i2(o3),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .o(net_34),
+  .i0(o1),
+  .i1(o2),
+  .i2(o3),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 srlatch_39d292e9 XU13 (
-.q(o2),
-.r(net_30),
-.s(i2),
-.qb(net_39),
-.rb(net_41),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .q(o2),
+  .r(net_30),
+  .s(i2),
+  .qb(net_39),
+  .rb(net_41),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 inv_12e192f5 XU17 (
-.i(net_36),
-.o(net_37),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_36),
+  .o(net_37),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 nor3_c2b5cbd2 XU18 (
-.o(net_42),
-.i0(o0),
-.i1(o1),
-.i2(o3),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .o(net_42),
+  .i0(o0),
+  .i1(o1),
+  .i2(o3),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 nand2_9125fe87 XU19 (
-.o(net_44),
-.i0(Tstate),
-.i1(net_46),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .o(net_44),
+  .i0(Tstate),
+  .i1(net_46),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 inv_12e192f5 XU20 (
-.i(net_44),
-.o(net_45),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_44),
+  .o(net_45),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 nor3_c2b5cbd2 XU22 (
-.o(net_46),
-.i0(o0),
-.i1(o1),
-.i2(o2),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .o(net_46),
+  .i0(o0),
+  .i1(o1),
+  .i2(o2),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 nand2_9125fe87 XU23 (
-.o(net_40),
-.i0(Tstate),
-.i1(net_42),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .o(net_40),
+  .i0(Tstate),
+  .i1(net_42),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 inv_12e192f5 XU25 (
-.i(net_40),
-.o(net_41),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_40),
+  .o(net_41),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 nand2_9125fe87 XU27 (
-.o(net_32),
-.i0(Tstate),
-.i1(net_34),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .o(net_32),
+  .i0(Tstate),
+  .i1(net_34),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 STONEnoconn XNC31 (
-.noconn(net_31)
+  .noconn(net_31)
 );
 
 STONEnoconn XNC35 (
-.noconn(net_35)
+  .noconn(net_35)
 );
 
 STONEnoconn XNC39 (
-.noconn(net_39)
+  .noconn(net_39)
 );
 
 STONEnoconn XNC43 (
-.noconn(net_43)
+  .noconn(net_43)
 );
 
 endmodule

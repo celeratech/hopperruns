@@ -4,8 +4,7 @@
 //Output direction source with output current 15uA and DFT partial
 module slopecomp_00a4cb3c (SIMPV,enable_slopecomp,global_slopecomp,IP,clock,IOSC,
 ok_slopecomp,ISLOPECOMP,
-ten_taiislopecomp,
-TAI_ISLOPECOMP,
+ten_slopecompcap,CELREF_slopecomp,
 trim_slopecomp,CELG,CELSUB);
 input SIMPV;
 input enable_slopecomp;
@@ -14,10 +13,10 @@ input IP;
 input global_slopecomp;
 input IOSC;
 output ok_slopecomp;
-output ISLOPECOMP;
+inout ISLOPECOMP;
 input [3:0] trim_slopecomp;
-input ten_taiislopecomp;
-output TAI_ISLOPECOMP;
+input ten_slopecompcap;
+input CELREF_slopecomp;
 input CELG;
 input CELSUB;
 endmodule

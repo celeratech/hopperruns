@@ -35,13 +35,13 @@ IS, IDVREF, IDOUTS, SHUNTG, ten_enable_clamp );
 
   input enable_clamp;
   input CELV;
-  input IDOUTS;
+  inout IDOUTS;
   output OUT;
   input OUTS;
   input ten;
   input ten_enable_clamp;
-  output IS;
-  input IDVREF;
+  inout IS;
+  inout IDVREF;
   input IP;
   input VREF;
   input RTN;
