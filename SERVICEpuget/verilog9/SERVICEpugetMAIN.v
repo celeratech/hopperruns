@@ -398,7 +398,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SERVICEpugetMAIN (IN, REF, porb, TAEXT, INTVCC, VCC2P5, VOUTSN, CELG59462, CELV96848, PORB97836, chrg_uvlo, kelvin_IN, CELBG83021, GNDservice, ok_service, CELSUB40948, IP_051b7bcb, IP_30a0e5c5, IP_86807c55, IP_87250ba9, IP_9219bb98, IP_92c9b3c9, IP_de226f75, dft_over_in, kelvin_VCAP, sync_stepup, dft_ok_drvcc, kelvin_DRVCC, allow_charger, dft_ok_intvcc, dft_ok_vcc2p5, fault_service, kelvin_INTVCC, kelvin_VCC2P5, kelvin_VOUTSN, celkelvin_VBIAS, clock_sequencer, SENSE_G_344f8d94, kelvin_GNDservice, hijack_enable_service, SERVICEconfiguration_0, SERVICEconfiguration_1);
+module SERVICEpugetMAIN (IN, REF, porb, TAEXT, INTVCC, VCC2P5, VOUTSN, CELG59462, CELV96848, PORB97836, chrg_uvlo, kelvin_IN, CELBG83021, GNDservice, ok_service, CELSUB40948, IP_051b7bcb, IP_30a0e5c5, IP_86807c55, IP_87250ba9, IP_9219bb98, IP_92c9b3c9, IP_de226f75, dft_over_in, kelvin_VCAP, sync_stepup, dft_ok_drvcc, kelvin_DRVCC, allow_charger, dft_ok_intvcc, dft_ok_vcc2p5, fault_service, kelvin_INTVCC, kelvin_VCC2P5, kelvin_VOUTSN, celkelvin_VBIAS, clock_sequencer, SENSE_G_344f8d94, celkelvin_GNDref, kelvin_GNDservice, hijack_enable_service, SERVICEconfiguration_0, SERVICEconfiguration_1);
 inout  IN;
 output  REF;
 output  porb;
@@ -437,6 +437,7 @@ inout  kelvin_VOUTSN;
 input  celkelvin_VBIAS;
 output  clock_sequencer;
 input  SENSE_G_344f8d94;
+input  celkelvin_GNDref;
 inout  kelvin_GNDservice;
 input  hijack_enable_service;
 input  SERVICEconfiguration_0;
@@ -901,11 +902,6 @@ STONEnoconn XNCnoconn_TAI_REFBG10 (
 WRAPPER1 celkelvin_IN1_WRAPPER (
   .i(celkelvin_IN1),
   .o(net_250)
-);
-
-WRAPPER1 celkelvin_GNDref_WRAPPER (
-  .i(celkelvin_GNDref),
-  .o(na)
 );
 
 endmodule

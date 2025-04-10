@@ -26,7 +26,7 @@ module FORCE_SERVICEpuget (IN,GND,INTVCC,VCC2P5,VOUTSN,CELG59462,CELV96848,PORB9
   output  kelvin_GNDservice;
 endmodule
 
-module SERVICEpuget (,IN,porb,TAEXT,INTVCC,VCC2P5,VOUTSN,CELG59462,CELV96848,PORB97836,chrg_uvlo,kelvin_IN,GNDservice,ok_service,CELSUB40948,IP_051b7bcb,IP_30a0e5c5,IP_86807c55,IP_87250ba9,IP_9219bb98,IP_92c9b3c9,IP_de226f75,kelvin_VCAP,sync_stepup,kelvin_DRVCC,REF_SEQUENCER,allow_charger,fault_service,kelvin_INTVCC,kelvin_VCC2P5,kelvin_VOUTSN,celkelvin_VBIAS,clock_sequencer,SENSE_G_344f8d94,kelvin_GNDservice);
+module SERVICEpuget (,IN,porb,TAEXT,INTVCC,VCC2P5,VOUTSN,CELG59462,CELV96848,PORB97836,chrg_uvlo,kelvin_IN,GNDservice,ok_service,CELSUB40948,IP_051b7bcb,IP_30a0e5c5,IP_86807c55,IP_87250ba9,IP_9219bb98,IP_92c9b3c9,IP_de226f75,kelvin_VCAP,sync_stepup,kelvin_DRVCC,REF_SEQUENCER,allow_charger,fault_service,kelvin_INTVCC,kelvin_VCC2P5,kelvin_VOUTSN,celkelvin_VBIAS,clock_sequencer,SENSE_G_344f8d94,celkelvin_GNDref,kelvin_GNDservice);
   inout  IN;
   output  porb;
   input  TAEXT;
@@ -60,6 +60,7 @@ module SERVICEpuget (,IN,porb,TAEXT,INTVCC,VCC2P5,VOUTSN,CELG59462,CELV96848,POR
   input  celkelvin_VBIAS;
   output  clock_sequencer;
   input  SENSE_G_344f8d94;
+  input  celkelvin_GNDref;
   inout  kelvin_GNDservice;
 endmodule
 
@@ -141,6 +142,7 @@ SERVICEpuget XSERVICEpuget1 (
   .celkelvin_VBIAS(celkelvin_VBIAS),
   .clock_sequencer(clock_sequencer),
   .SENSE_G_344f8d94(SENSE_G_344f8d94),
+  .celkelvin_GNDref(celkelvin_GNDref),
   .kelvin_GNDservice(kelvin_GNDservice)
 );
 
