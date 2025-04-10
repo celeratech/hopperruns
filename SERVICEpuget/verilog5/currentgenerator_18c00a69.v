@@ -1,6 +1,6 @@
 //Celera Brick Generator Confidential
 //CORE:currentgenerator
-//NAME:currentgenerator_64710caa
+//NAME:currentgenerator_18c00a69
 //GENERATOR REVISION:0.4.1
 //NUMBER OF OUTPUTS:3
 //MAX VOUT:6V 
@@ -308,13 +308,13 @@ module STONEnoconn ( noconn );
   input noconn;
 endmodule
 
-//Celera Confidential Do Not Copy currentgenerator_64710caa
+//Celera Confidential Do Not Copy currentgenerator_18c00a69
 //Celera Confidential Symbol Generator
 //Number of outputs: 3, Max Vout: 6V, Accuracy: yes%, Temperature Coefficient: zero, Temperature Gain: 3, DFT: yes
 //POLARITY0:sink, OUTPUT0:3.35
 //POLARITY1:sink, OUTPUT1:0.05
 //POLARITY2:sink, OUTPUT2:3.4
-module currentgenerator_64710caa (SIMPV,CELSUB,enable_currentgenerator,global_currentgenerator,IP,ok_currentgenerator,
+module currentgenerator_18c00a69 (SIMPV,CELSUB,enable_currentgenerator,global_currentgenerator,IP,ok_currentgenerator,
 I0,I1,I2,
 trim_currentgenerator,
 ten_currentgenerator,TAEXT,ten_taext_currentgenerator,tdi_ok_currentgenerator,TAI_N500NREF,ten_tai_n500nref,

@@ -1,3 +1,4 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
@@ -62,8 +63,54 @@ description,NESTO revision generate
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
+//Celera Map Generator
+registermap,vbuffer
+register,instance,vbuffer_56e8bfbd
+register,source,cell
+
+///vbuffer
+register,name,na
+register,enable,no
+register,bits,0
+register,mode,readonly
+register,por,0
+register,userdescription,na
+register,description0,description0,not used
+register,description1,description1,not used
+register,description2,description2,not used
+register,description3,description3,not used
+register,description4,description4,not used
+register,description5,description5,not used
+register,description6,description6,not used
+register,description7,description7,not used
+//Netlister Information
+register,busname,na
+
 //**********************************************
 //FACTORY Parameters
+//Celera Map Generator
+factorymap,vbuffer
+factory,instance,vbuffer_56e8bfbd
+factory,source,cell
+
+///vbuffer
+factory,name,na
+factory,enable,no
+factory,bits,0
+factory,mode,readonly
+factory,por,0
+factory,userdescription,na
+factory,description0,description0,not used
+factory,description1,description1,not used
+factory,description2,description2,not used
+factory,description3,description3,not used
+factory,description4,description4,not used
+factory,description5,description5,not used
+factory,description6,description6,not used
+factory,description7,description7,not used
+//Netlister Information
+factory,busname,na
+
 //**********************************************
 //CELL DFT Parameters
 // *********************************************
@@ -134,7 +181,7 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,TBD
+#define,PROJECTreference,0.9
 #define,PROJECTsupply,5
 #define,TaRoom,25
 #define,ground,0.0
@@ -172,6 +219,14 @@ endlayoutbio
 
 // *********************************************
 //Die Size Estimate
+revision,vis15cbdiesize,0p1
+sub_area,STONEvbufferinptrim,800
+sub_area,STONEnoconn,0
+sub_area,STONEvbufferinp_ext,10000
+sub_area,resistordivider_vbuffer_56e8bfbd_Xrfb,15
+sub_area,WRAPPER7,7
+sub_area,WRAPPER7,7
+generate_area,vbuffer_56e8bfbd,10829
 // *********************************************
 //Calculator Parameters
 #define,SIMPVminimum,2.0
@@ -202,6 +257,104 @@ pinorder,SIMPV,ok_vbuffer,IN,OUT,enable_vbuffer,GNDSENSE
 endpinorder
 //**********************************************
 //TRIM Parameters
+cell,vbuffer
+trim,instance,vbuffer_56e8bfbd
+
+//Cell positive offset
+trim,name,na
+trim,enable,no
+trim,bits,TBD
+trim,por,0
+trim,testname,TBD
+trim,description,vbuffer input offset positive trim
+trim,pinname,trim_vbuffer_positive
+trim,target,na
+trim,units,TBD
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,mV
+trim,description0,TBD
+trim,description1,TBD
+trim,description2,TBD
+trim,description3,TBD
+trim,description4,TBD
+trim,description5,TBD
+trim,description6,TBD
+trim,description7,TBD
+
+//Cell Negative offset
+trim,name,na
+trim,enable,no
+trim,bits,TBD
+trim,por,0
+trim,testname,TBD
+trim,description,vbuffer input offset negative trim
+trim,pinname,trim_vbuffer_negative
+trim,target,na
+trim,units,TBD
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,mV
+trim,description0,TBD
+trim,description1,TBD
+trim,description2,TBD
+trim,description3,TBD
+trim,description4,TBD
+trim,description5,TBD
+trim,description6,TBD
+trim,description7,TBD
+
+//System Positive offset
+trim,name,VCC2P5accuracyPositive
+trim,enable,yes
+trim,bits,7
+trim,por,0
+trim,testname,VCC2P5accuracyPositive
+trim,description,VCC2P5 accuracy to 2p5V Positive trim
+trim,pinname,trim_vbuffer_positive
+trim,target,1500.0
+trim,units,mV
+trim,pretrim_low_limit,1465.000
+trim,pretrim_high_limit,1535.000
+trim,posttrim_low_limit,1497.000
+trim,posttrim_high_limit,1503.000
+trim,codeunits,mV
+trim,description0,code 0x01,+1mV
+trim,description1,code 0x02,+2mV
+trim,description2,code 0x04,+4mV
+trim,description3,code 0x08,+8mV
+trim,description4,code 0x10,+16mV
+trim,description5,code 0x20,+32mV
+trim,description6,code 0x40,+64mV
+trim,description7,not used
+
+//System Negative offset
+trim,name,VCC2P5accuracyNegative
+trim,enable,yes
+trim,bits,7
+trim,por,0
+trim,testname,VCC2P5accuracyNegative
+trim,description,VCC2P5 accuracy to 2p5V Negative trim
+trim,pinname,trim_vbuffer_negative
+trim,target,1500.0
+trim,units,mV
+trim,pretrim_low_limit,1465.000
+trim,pretrim_high_limit,1535.000
+trim,posttrim_low_limit,1497.000
+trim,posttrim_high_limit,1503.000
+trim,codeunits,mV
+trim,description0,code 0x01,-1mV
+trim,description1,code 0x02,-2mV
+trim,description2,code 0x04,-4mV
+trim,description3,code 0x08,-8mV
+trim,description4,code 0x10,-16mV
+trim,description5,code 0x20,-32mV
+trim,description6,code 0x40,-64mV
+trim,description7,not used
 //**********************************************
 //Cell PinDescriptions
 pinname,SIMPV
@@ -252,17 +405,6 @@ dftpriority,,global_vbuffer,1
 esd,,global_vbuffer,TBD
 layout,,global_vbuffer,na
 
-pinname,ten_vbuffer
-definition,ten_vbuffer,vbuffer DFT:Enable
-iq,ten_vbuffer,SIMULATION
-absmax,ten_vbuffer,6
-absmin,ten_vbuffer,-0.3
-io,ten_vbuffer,input
-mode,ten_vbuffer,digital
-router,ten_vbuffer,TBD
-dftpriority,ten_vbuffer,1
-esd,ten_vbuffer,TBD
-
 pinname,ok_vbuffer
 definition,ok_vbuffer,vbuffer output flag
 iq,ok_vbuffer,SIMULATION
@@ -309,116 +451,6 @@ mode,IP,analog
 router,IP,TBD
 dftpriority,IP,1
 esd,IP,TBD
-
-pinname,ten_vbuffer_taextin
-definition,ten_vbuffer_taextin,vbuffer DFT:enable taext
-iq,ten_vbuffer_taextin,SIMULATION
-absmax,ten_vbuffer_taextin,6
-absmin,ten_vbuffer_taextin,-0.3
-io,ten_vbuffer_taextin,input
-mode,ten_vbuffer_taextin,digital
-router,ten_vbuffer_taextin,TBD
-dftpriority,ten_vbuffer_taextin,1
-esd,ten_vbuffer_taextin,TBD
-
-pinname,TAEXT
-definition,TAEXT,vbuffer DFT:anlog input voltage
-iq,TAEXT,SIMULATION
-absmax,TAEXT,6
-absmin,TAEXT,-0.3
-io,TAEXT,input
-mode,TAEXT,analog
-router,TAEXT,TBD
-dftpriority,TAEXT,1
-esd,TAEXT,TBD
-
-pinname,ten_vbuffer_ok
-definition,ten_vbuffer_ok,vbuffer DFT:Enable vbuffer ok testmode
-iq,ten_vbuffer_ok,SIMULATION
-absmax,ten_vbuffer_ok,6
-absmin,ten_vbuffer_ok,-0.3
-io,ten_vbuffer_ok,input
-mode,ten_vbuffer_ok,digital
-router,ten_vbuffer_ok,TBD
-dftpriority,ten_vbuffer_ok,1
-esd,ten_vbuffer_ok,TBD
-
-pinname,ten_vbuffer_taiin
-definition,ten_vbuffer_taiin,vbuffer DFT:Measure IN testmode
-iq,ten_vbuffer_taiin,SIMULATION
-absmax,ten_vbuffer_taiin,6
-absmin,ten_vbuffer_taiin,-0.3
-io,ten_vbuffer_taiin,input
-mode,ten_vbuffer_taiin,digital
-router,ten_vbuffer_taiin,TBD
-dftpriority,ten_vbuffer_taiin,1
-esd,ten_vbuffer_taiin,TBD
-
-pinname,ten_vbuffer_taiout
-definition,ten_vbuffer_taiout,vbuffer DFT:Measure OUT testmode
-iq,ten_vbuffer_taiout,SIMULATION
-absmax,ten_vbuffer_taiout,6
-absmin,ten_vbuffer_taiout,-0.3
-io,ten_vbuffer_taiout,input
-mode,ten_vbuffer_taiout,digital
-router,ten_vbuffer_taiout,TBD
-dftpriority,ten_vbuffer_taiout,1
-esd,ten_vbuffer_taiout,TBD
-
-pinname,ten_vbuffer_taiouts
-definition,ten_vbuffer_taiouts,vbuffer DFT:Measure OUT sense testmode
-iq,ten_vbuffer_taiouts,SIMULATION
-absmax,ten_vbuffer_taiouts,6
-absmin,ten_vbuffer_taiouts,-0.3
-io,ten_vbuffer_taiouts,input
-mode,ten_vbuffer_taiouts,digital
-router,ten_vbuffer_taiouts,TBD
-dftpriority,ten_vbuffer_taiouts,1
-esd,ten_vbuffer_taiouts,TBD
-
-pinname,tdi_vbuffer_ok
-definition,tdi_vbuffer_ok,vbuffer DTF:Measure Ok_vbuffer
-iq,tdi_vbuffer_ok,SIMULATION
-absmax,tdi_vbuffer_ok,6
-absmin,tdi_vbuffer_ok,-0.3
-io,tdi_vbuffer_ok,output
-mode,tdi_vbuffer_ok,digital
-router,tdi_vbuffer_ok,TBD
-dftpriority,tdi_vbuffer_ok,1
-esd,tdi_vbuffer_ok,TBD
-
-pinname,TAI_VBUFFER_IN
-definition,TAI_VBUFFER_IN,vbuffer DTF:Measure IN voltage
-iq,TAI_VBUFFER_IN,SIMULATION
-absmax,TAI_VBUFFER_IN,6
-absmin,TAI_VBUFFER_IN,-0.3
-io,TAI_VBUFFER_IN,output
-mode,TAI_VBUFFER_IN,analog
-router,TAI_VBUFFER_IN,TBD
-dftpriority,TAI_VBUFFER_IN,1
-esd,TAI_VBUFFER_IN,TBD
-
-pinname,TAI_VBUFFER_OUT
-definition,TAI_VBUFFER_OUT,vbuffer DTF:Measure OUT voltage
-iq,TAI_VBUFFER_OUT,SIMULATION
-absmax,TAI_VBUFFER_OUT,6
-absmin,TAI_VBUFFER_OUT,-0.3
-io,TAI_VBUFFER_OUT,output
-mode,TAI_VBUFFER_OUT,analog
-router,TAI_VBUFFER_OUT,TBD
-dftpriority,TAI_VBUFFER_OUT,1
-esd,TAI_VBUFFER_OUT,TBD
-
-pinname,TAI_VBUFFER_OUTS
-definition,TAI_VBUFFER_OUTS,vbuffer DTF:Measure OUT sense voltage
-iq,TAI_VBUFFER_OUTS,SIMULATION
-absmax,TAI_VBUFFER_OUTS,6
-absmin,TAI_VBUFFER_OUTS,-0.3
-io,TAI_VBUFFER_OUTS,output
-mode,TAI_VBUFFER_OUTS,analog
-router,TAI_VBUFFER_OUTS,TBD
-dftpriority,TAI_VBUFFER_OUTS,1
-esd,TAI_VBUFFER_OUTS,TBD
 
 pinname,trim_vbuffer_positive
 definition,trim_vbuffer_positive,vbuffer input offset positive trim
@@ -1142,6 +1174,7 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+
 
 
 

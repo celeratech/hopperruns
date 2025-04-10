@@ -6,125 +6,89 @@
 
 //Celera Confidential BIO Data Generator
 //Cell Name
-cell,currentgenerator
-///**********************************************
+cell,fet
+//**********************************************
 //Generator Revision
-revision,generator,0.4.1
+revision,generator,0.4.2
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
+limit,fet_usage,choose0,signal,
+limit,fet_usage,choose1,power,
+limit,fet_ron_power,minimum,0.001,
+limit,fet_ron_power,maximum,60000,
+limit,fet_ron_signal,minimum,10,
+limit,fet_ron_signal,maximum,60000,
+limit,fet_type,choose0,n,
+limit,fet_type,choose1,p,
+limit,fet_vmax,choose0,2
+limit,fet_vmax,choose1,6
+limit,fet_maximumvds,choose0,2
+limit,fet_maximumvds,choose1,6
+limit,fet_maximumvds,choose2,12
+limit,fet_maximumvds,choose3,20
+limit,fet_maximumvds,choose4,24
+limit,fet_maximumvds,choose5,30
+limit,fet_maximumvds,choose6,36
+limit,fet_maximumvds,choose7,40
+limit,fet_maximumvds,choose8,45
+limit,fet_maximumvds,choose9,60
+limit,fet_diode,choose0,yes
+limit,fet_diode,choose1,no
+limit,fet_diodedrive,choose0,diode
+limit,fet_diodedrive,choose1,active
+limit,fet_replica,choose0,no
+limit,fet_replica,choose1,drain
+limit,fet_replica,choose2,source
+limit,fet_replica_gain,minimum,1,
+limit,fet_replica_gain,maximum,40,
+limit,fet_kelvin,choose0,no
+limit,fet_kelvin,choose1,yes
+limit,fet_layoutrotate,choose0,no
+limit,fet_layoutrotate,choose1,yes
+limit,fet_dft,choose0,no
+limit,fet_dft,choose1,yes
+limit,fet_calculator,choose0,typical
+limit,fet_calculator,choose1,maximum
 
-limit,currentgenerator_polarity0,choose0,sink
-limit,currentgenerator_polarity0,choose1,source
-limit,currentgenerator_output0,minimum,0.05
-limit,currentgenerator_output0,maximum,1000.0
-limit,currentgenerator_polarity1,choose0,sink
-limit,currentgenerator_polarity1,choose1,source
-limit,currentgenerator_output1,minimum,0.05
-limit,currentgenerator_output1,maximum,1000.0
-limit,currentgenerator_polarity2,choose0,sink
-limit,currentgenerator_polarity2,choose1,source
-limit,currentgenerator_output2,minimum,0.05
-limit,currentgenerator_output2,maximum,1000.0
-limit,currentgenerator_polarity3,choose0,sink
-limit,currentgenerator_polarity3,choose1,source
-limit,currentgenerator_output3,minimum,0.05
-limit,currentgenerator_output3,maximum,1000.0
-limit,currentgenerator_polarity4,choose0,sink
-limit,currentgenerator_polarity4,choose1,source
-limit,currentgenerator_output4,minimum,0.05
-limit,currentgenerator_output4,maximum,1000.0
-limit,currentgenerator_polarity5,choose0,sink
-limit,currentgenerator_polarity5,choose1,source
-limit,currentgenerator_output5,minimum,0.05
-limit,currentgenerator_output5,maximum,1000.0
-limit,currentgenerator_polarity6,choose0,sink
-limit,currentgenerator_polarity6,choose1,source
-limit,currentgenerator_output6,minimum,0.05
-limit,currentgenerator_output6,maximum,1000.0
-limit,currentgenerator_polarity7,choose0,sink
-limit,currentgenerator_polarity7,choose1,source
-limit,currentgenerator_output7,minimum,0.05
-limit,currentgenerator_output7,maximum,1000.0
-limit,currentgenerator_accuracy,choose0,no
-limit,currentgenerator_accuracy,choose1,yes
-limit,currentgenerator_number,minimum,1
-limit,currentgenerator_number,maximum,8
-limit,currentgenerator_tempco,choose0,positive
-limit,currentgenerator_tempco,choose1,negative
-limit,currentgenerator_tempco,choose2,zero
-limit,currentgenerator_tempco_gain,minimum,1.0
-limit,currentgenerator_tempco_gain,maximum,10.0
-limit,currentgenerator_vmax,choose0,2
-limit,currentgenerator_vmax,choose1,6
-limit,currentgenerator_vout,choose0,2
-limit,currentgenerator_vout,choose1,6
-limit,currentgenerator_vout,choose2,12
-limit,currentgenerator_vout,choose3,20
-limit,currentgenerator_vout,choose4,24
-limit,currentgenerator_vout,choose5,30
-limit,currentgenerator_vout,choose6,36
-limit,currentgenerator_vout,choose7,40
-limit,currentgenerator_vout,choose8,45
-limit,currentgenerator_vout,choose9,60
-limit,currentgenerator_dft,choose0,no
-limit,currentgenerator_dft,choose1,yes
-limit,currentgenerator_shutdown,choose0,float
-limit,currentgenerator_shutdown,choose1,high
-limit,currentgenerator_shutdown,choose2,low
-
-limit,currentgenerator_datasheet_accuracy_name,text
-limit,currentgenerator_datasheet_accuracy_description,text
-
-
+limit,fet_padopendrain,choose0,no
+limit,fet_padopendrain,choose1,yes
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,currentgenerator_number,3
-description,Number of outputs
-user,currentgenerator_vout,6
-description,Maximum Output Voltage
-user,currentgenerator_accuracy,yes
-description, Output0 is trimmed
-user,currentgenerator_polarity0,sink
-description,Generator Polarity
-user,currentgenerator_output0,3.35
-description,Generator Output
-user,currentgenerator_polarity1,sink
-description,Generator Polarity
-user,currentgenerator_output1,0.05
-description,Generator Output
-user,currentgenerator_polarity2,sink
-description,Generator Polarity
-user,currentgenerator_output2,3.4
-description,Generator Output
-user,NESTO,0.4.1
-description,NESTO generate revision
-//**********************************************
+user,Type,n
+description,FET type
+user,Ron,200 Ohm
+user,Ron_Design,83.333 Ohm
+description,FET on resistance
+user,Vds,6V
+description,FET Maximum Vds rating
+user,NESTO,0.4.2
+description,NESTO generate revision//**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,currentgenerator
-register,instance,currentgenerator_64710caa
+registermap,fetpower
+register,instance,fet_padopendrain_6c6ec5f0_Xnmos
 register,source,cell
 
 //No register Map Required
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,na
+register,mode,readwrite
 register,por,0
 register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
+register,description0,not used
+register,description1,not used
+register,description2,not used
+register,description3,not used
+register,description4,not used
+register,description5,not used
+register,description6,not used
+register,description7,not used
 register,description8,empty
 register,description9,empty
 register,description10,empty
@@ -136,183 +100,61 @@ register,busname,na
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,currentgenerator
-factory,instance,currentgenerator_64710caa
+factorymap,fetpower
+factory,instance,fet_padopendrain_6c6ec5f0_Xnmos
 factory,source,cell
 
 //No factory Map Required
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,na
-factory,por,0
+factory,mode,readonlyfactory,por,0
 factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
+factory,description0,not used
+factory,description1,not used
+factory,description2,not used
+factory,description3,not used
+factory,description4,not used
+factory,description5,not used
+factory,description6,not used
+factory,description7,not used
 //Netlister Information
 factory,busname,na
+
+//**********************************************
+//TRIM Parameters
+cell,fetpower
+trim,instance,fet_padopendrain_6c6ec5f0_Xnmos
+
+trim,name,na
+trim,enable,no
+trim,bits,TBD
+trim,por,0
+trim,pinname,TBD
+trim,testname,TBD
+trim,description,TBD
+trim,target,na
+trim,units,TBD
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,TBD
+trim,description0,empty
+trim,description1,empty
+trim,description2,empty
+trim,description3,empty
+trim,description4,empty
+trim,description5,empty
+trim,description6,empty
+trim,description7,empty
+
 //**********************************************
 //CELL DFT Parameters
-//Cell DFT Generator currentsenseamplifier 
-
-celldft,currentgenerator
-celldft,path,currentgenerator_64710caa
-celldft,instance,64710caa
-celldft,source,cell
-
-celldft,ten_currentgenerator
-celldft,ten_currentgenerator,testname,enablecurrentgenerator
-celldft,ten_currentgenerator,definition,Test Enable
-celldft,ten_currentgenerator,input,ten
-celldft,ten_currentgenerator,output,na
-celldft,ten_currentgenerator,partner,na
-celldft,ten_currentgenerator,end
-
-celldft,ten_taext_currentgenerator
-celldft,ten_taext_currentgenerator,testname,enablecurrentgeneratorinput
-celldft,ten_taext_currentgenerator,definition,Test Enable
-celldft,ten_taext_currentgenerator,input,ten
-celldft,ten_taext_currentgenerator,output,na
-celldft,ten_taext_currentgenerator,partner,na
-celldft,ten_taext_currentgenerator,end
-
-celldft,tdi_ok_currentgenerator
-celldft,tdi_ok_currentgenerator,testname,measure_ok
-celldft,tdi_ok_currentgenerator,definition,Measure OK Flag
-celldft,tdi_ok_currentgenerator,input,tdi
-celldft,tdi_ok_currentgenerator,output,tdi
-celldft,tdi_ok_currentgenerator,partner,ten_currentgenerator
-celldft,tdi_ok_currentgenerator,end
-
-celldft,TAI_N50NREF
-celldft,TAI_N50NREF,testname,measure50nsink
-celldft,TAI_N50NREF,definition,Measure 50nA sink
-celldft,TAI_N50NREF,input,na
-celldft,TAI_N50NREF,output,TAI
-celldft,TAI_N50NREF,partner,ten_tai_n50nref
-celldft,TAI_N50NREF,end
-
-celldft,TAI_N500NREF
-celldft,TAI_N500NREF,testname,measure500nsink
-celldft,TAI_N500NREF,definition,Measure 50nA sink
-celldft,TAI_N500NREF,input,na
-celldft,TAI_N500NREF,output,TAI
-celldft,TAI_N500NREF,partner,ten_tai_n500nref
-celldft,TAI_N500NREF,end
-
-celldft,TAI_N5UREF
-celldft,TAI_N5UREF,testname,measure5usink
-celldft,TAI_N5UREF,definition,Measure 5uA sink
-celldft,TAI_N5UREF,input,na
-celldft,TAI_N5UREF,output,TAI
-celldft,TAI_N5UREF,partner,ten_tai_n5uref
-celldft,TAI_N5UREF,end
-
-
-celldft,TAI_P50NREF
-celldft,TAI_P50NREF,testname,measure50nsource
-celldft,TAI_P50NREF,definition,Measure 50nA source
-celldft,TAI_P50NREF,input,na
-celldft,TAI_P50NREF,output,TAI
-celldft,TAI_P50NREF,partner,ten_tai_p50nref
-celldft,TAI_P50NREF,end
-
-celldft,TAI_P500NREF
-celldft,TAI_P500NREF,testname,measure500nsource
-celldft,TAI_P500NREF,definition,Enable measure 500nA source
-celldft,TAI_P500NREF,input,na
-celldft,TAI_P500NREF,output,TAI
-celldft,TAI_P500NREF,partner,ten_tai_p50nref
-celldft,TAI_P500NREF,end
-
-
-
-celldft,ten_tai_n50nref
-celldft,ten_tai_n50nref,testname,enable50nsink
-celldft,ten_tai_n50nref,definition,Enable measure 50nA sink
-celldft,ten_tai_n50nref,input,ten
-celldft,ten_tai_n50nref,output,na
-celldft,ten_tai_n50nref,partner,na
-celldft,ten_tai_n50nref,end
-
-celldft,ten_tai_n500nref
-celldft,ten_tai_n500nref,testname,enable500nsink
-celldft,ten_tai_n500nref,definition,Enable measure 500nA sink
-celldft,ten_tai_n500nref,input,ten
-celldft,ten_tai_n500nref,output,na
-celldft,ten_tai_n500nref,partner,na
-celldft,ten_tai_n500nref,end
-
-celldft,ten_tai_n5uref
-celldft,ten_tai_n5uref,testname,enable5usink
-celldft,ten_tai_n5uref,definition,Enable measure 5uA sink
-celldft,ten_tai_n5uref,input,ten
-celldft,ten_tai_n5uref,output,na
-celldft,ten_tai_n5uref,partner,na
-celldft,ten_tai_n5uref,end
-
-
-celldft,ten_tai_p50nref
-celldft,ten_tai_p50nref,testname,enable50nsource
-celldft,ten_tai_p50nref,definition,Enable measure 50nA source
-celldft,ten_tai_p50nref,input,ten
-celldft,ten_tai_p50nref,output,na
-celldft,ten_tai_p50nref,partner,na
-celldft,ten_tai_p50nref,end
-
-
-
-
-
-
-celldft,end
 // *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,currentgenerator
-
-place Generate STONEcurrentgeneratormain 0 0 R0
-place Generate STONEcurrentgeneratormaindft -29.12 -24.345 R0
-place CASCODES CASCODEanalogtrimn5uref 23.73 -23.845 R0
-place CASCODES CASCODEanalogtrimn50nref 23.73 -23.845 R0
-place CASCODES CASCODEanalogtrimn500nref 23.73 -23.845 R0
-place CASCODES CASCODEanalogtrimp500nref 24.36 -23.845 R0
-place CASCODES CASCODEanalogtrimp50nref 24.36 -23.845 R0
-place CASCODES CASCODEanalogtrimp5uref 24.36 -23.845 R0
-place Generate STONEcurrentgeneratorTRIMpassFETS 20 0 R0
-place Generate STONEcurrentgeneratorADJUSTcontrolNEW 30 0 R0
-place Generate STONEcurrentgeneratorADJUSTpassGETS 40 0 R0
-placeSTEP Generate STONEcurrentgeneratorRESISTORunit 20 50 x 12 R0
-placeSTEP Generate STONEcurrentgeneratorPMOS_W6L3 30 50 x 12 R0
-placeSTEP Generate STONEcurrentgeneratorPMOS_W4L5 40 50 x 12 R0
-placeSTEP Generate STONEcurrentgeneratorPMOS 50 50 x 12 R0
-placeSTEP Generate STONEcurrentgeneratorNMOS_W5L4 30 60 x 12 R0
-placeSTEP Generate STONEcurrentgeneratorNMOS_W3L6 30 70 x 12 R0
-placeSTEP Generate STONEcurrentgeneratorNMOS 30 70 x 12 R0
-placeSTEP Generate STONEcurrentgeneratorTESTcontrol 50 0 x 12 R0
-placeSTEP Generate STONEcurrentgeneratorTESTOUT 60 0 x 12 R0
-place Generate STONEcurrentgeneratorINPUT 90 0 R0
-place PEBBLES PEBBLEamux2 70 0 R0
-placeIF cellNameContains trimp
-placeSTEP PEBBLES PEBBLEswitchG10K 33.18 -23.845 x 4.41 R0
-placeEND
-placeIF cellNameContains trimn
-placeSTEP PEBBLES PEBBLEswitchG10K 36.96 -23.845 x 4.41 R0
-placeEND
-placeSTEP Generate STONEcurrentgeneratorNMOS 100 0 x 12 R0
-//placeTILE 0.66
-placeTILE 0.66 6.32 6.04
-moveORIGIN x
-moveORIGIN y
-//placeROUTE
-
-endlayoutbio
+placeFET 0 0 6.510 18.580 1 0 standardmetal
 //**********************************************
 //Project Parameters
 //Celera:SERVICEpuget Project Bio
@@ -321,7 +163,7 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,TBD
+#define,PROJECTreference,0.9
 #define,PROJECTsupply,5
 #define,TaRoom,25
 #define,ground,0.0
@@ -360,390 +202,239 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,STONEcurrentgeneratormain,5000
-sub_area,STONEcurrentgeneratormaindft,3000
-sub_area,CASCODEnmos500n,3800
-sub_area,PEBBLEswitchG10K,55
-sub_area,CASCODEnmos1u,14000
-sub_area,CASCODEnmos1u,14000
-sub_area,CASCODEnmos1u,14000
-sub_area,CASCODEnmos100n,14000
-sub_area,CASCODEnmos10n,14000
-sub_area,CASCODEnmos10n,14000
-sub_area,CASCODEnmos10n,14000
-sub_area,CASCODEnmos50n,14000
-sub_area,CASCODEnmos1u,14000
-sub_area,CASCODEnmos1u,14000
-sub_area,CASCODEnmos1u,14000
-sub_area,CASCODEnmos100n,14000
-sub_area,CASCODEnmos100n,14000
-sub_area,CASCODEnmos100n,14000
-sub_area,CASCODEnmos100n,14000
-sub_area,CASCODEpmos100n,14000
-sub_area,CASCODEpmos100n,14000
-sub_area,CASCODEpmos100n,14000
-sub_area,CASCODEpmos10n,14000
-sub_area,CASCODEpmos10n,14000
-sub_area,CASCODEpmos10n,14000
-sub_area,CASCODEpmos500nref,3800
-sub_area,CASCODEpmos500n,3800
-sub_area,PEBBLEswitchG10K,55
-sub_area,CASCODEnmos500n,3800
-sub_area,CASCODEpmos500n10x,14000
-sub_area,CASCODEnmos5uref,3800
-sub_area,CASCODEnmos5u,3800
-sub_area,PEBBLEswitchG10K,55
-sub_area,CASCODEpmos50nref,14000
-sub_area,CASCODEpmos50n,14000
-sub_area,PEBBLEswitchG10K,55
-sub_area,CASCODEnmos500n,3800
-sub_area,CASCODEnmos50nref,14000
-sub_area,CASCODEnmos50n,14000
-sub_area,PEBBLEswitchG10K,55
-sub_area,CASCODEpmos500n,3800
-sub_area,CASCODEtrimn50nref,14000
-generate_area,currentgenerator_64710caa,416675
+sub_area,an5g6dw1_10p2x0p2x2p0x1p0,42124
+generate_area,fet_padopendrain_6c6ec5f0_Xnmos,42124
 // *********************************************
 //Calculator Parameters
-#define,SIMPVminimum,2.1
-#define,HVPOSminimum,2.5
-#define,count_runitw,2.0
-#define,count_runitmaxl,50.0
-#define,count_runitminl,5.0
+#define,CELVminimum,1.3
+#define,NMOSaccuracy,5.0
+#define,NMOSPOWERaccuracy,2.0
+#define,NMOSsignalmetalAdder,2
+#define,NMOSpowermetalAdder,20
+#define,NMOSprocessAdder,100
+#define,NMOSsinglestep6,3.3
+#define,NMOSsinglestep12,4.1
+#define,NMOSsinglestep20,4.9
+#define,NMOSsinglestep24,5.9
+#define,NMOSsinglestep30,6.3
+#define,NMOSsinglestep40,8.0
+#define,NMOSsingleratio,0.75
 
-#define,CURRENTGENERATORpretrimhigh,30.0
-#define,CURRENTGENERATORpretrimlow,30.0
-#define,CURRENTGENERATORposttrimlsb,2.0
+//293 updates
+#define,NMOSsinglestep36,10.0
+#define,NMOSsinglestep45,10.0
+#define,NMOSsinglestep60,10.0
+
+#define,PMOSaccuracy,1.0
+#define,PMOSPOWERaccuracy,2.0
+#define,PMOSpowermetalAdder,30
+#define,PMOSsignalmetalAdder,2
+#define,PMOSprocessAdder,100
+#define,PMOSsinglestep6,3.96
+#define,PMOSsinglestep12,4.76
+#define,PMOSsinglestep20,5.96
+#define,PMOSsinglestep24,6.56
+#define,PMOSsinglestep30,7.96
+#define,PMOSsinglestep40,9.0
+#define,PMOSsingleratio,0.75
+
+//293 updates
+#define,PMOSsinglestep36,10.0
+#define,PMOSsinglestep45,10.0
+#define,PMOSsinglestep60,10.0
+
+//Define default calculators
+#define,CELV_TEMP,3.3
+#define,TEMPERATURE_TEMP,125
+//#define,VGS_TEMP,2.3
+#define,VGS_TEMP,5.0
+
+//Ddefine Signal Layout Guidelines
+#define,SIGNALmaximumwidth,200
+//Error Winodow of SIGNAL Ron Calculation
+#define,SIGNALaccuracy,10.0
+#define,POWERaccuracy,5.0
+//Define Power Layout Rules
+#define,POWERmaximumwidth,400
+//Limit the size of device X
+#define,POWERxlimit,100000
+
+//Power fet Calculations
+//RevA Mode1 - Power
+//#define,POWERx,2.33
+//#define,POWERy,8.38
+//#define,POWERk6,3.3
+//#define,POWERk12,4.1
+//#define,POWERk20,4.9
+//#define,POWERk24,5.3
+//#define,POWERk30,6.3
+//#define,POWERk40,7.9
+
+//RevB Model - Power
+#define,POWERxN,3.21
+#define,POWERxP,4.4
+#define,POWERy,8.38
+#define,POWERk6N,3.3
+#define,POWERk12N,4.1
+#define,POWERk20N,4.9
+#define,POWERk24N,5.3
+#define,POWERk30N,6.3
+#define,POWERk40N,7.9
+#define,POWERk6P,3.96
+#define,POWERk12P,4.76
+#define,POWERk20P,5.96
+#define,POWERk24P,6.56
+#define,POWERk30P,7.76
+#define,POWERk40P,7.86
+//293 Updates
+#define,POWERk40N,10.0
+#define,POWERk45N,10.0
+#define,POWERk60N,10.0
+
+#define,POWERk36P,10.0
+#define,POWERk45P,10.0
+#define,POWERk60P,10.0
+
+
+//Layout Rules
+#define,NMOSlayoutratio,0.75
+#define,PMOSlayoutratio,0.75
+
+//Limit how many columns/row are allowed
+#define,POWERcolumnstart,2
+//Limt the number of X  Fets placed
+#define,POWERFETmaximumX,2750
+//How accuracy the FTE ratio has to be with respect to 'layoutratio' <%>
+#define,POWERFETratioACCURACY,10.0
+//DeltaW sstep when search for final Width
+#define,POWERFETwidthSTEP,0.1
+
+//RevA Model - Signal
+#define,SIGNALk6N,0.44
+#define,SIGNALk12N,7.43
+#define,SIGNALk20N,7.63
+#define,SIGNALk24N,8.03
+#define,SIGNALk30N,9.63
+//293 updates
+#define,SIGNALk40N,10.0
+#define,SIGNALk45N,10.0
+#define,SIGNALk60N,10.0
+
+#define,SIGNALk6P,0.44
+#define,SIGNALk12P,5.86
+#define,SIGNALk20P,6.96
+#define,SIGNALk24P,7.76
+#define,SIGNALk30P,7.96
+//293 updates
+#define,SIGNALk40P,10.0
+#define,SIGNALk45P,10.0
+#define,SIGNALk60P,10.0
+
+#define,NMOSsignallayoutratio,0.75
+#define,PMOSsignallayoutratio,0.75
+
+//Replica
+#define,REPLICAserialmaximum,40
+#define,REPLICAaccuracyAREA,2.0
+#define,REPLICAaccuracyRON,20.0
+#define,nmos2fudge,100
+#define,nmos6fudge,100
+#define,nmos12fudge,100
+#define,nmos20fudge,100
+#define,nmos24fudge,100
+#define,nmos30fudge,80
+#define,nmos40fudge,100
+#define,nmos45fudge,100
+#define,nmos60fudge,100
+//PADopenDrain
+#define,PADopendrainWlimit,85.0
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//currentgenerator
+//fet
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,I0,I1,I2,net_skip,net_skip,net_skip,net_skip,net_skip,SIMPV,enable_currentgenerator,ok_currentgenerator,net_skip
-
+pinorder,SOURCE,DRAIN,GATE,net_skip,net_skip,net_skip
 endpinorder
 //**********************************************
-//TRIM Parameters
-cell,currentgenerator
-trim,instance,currentgenerator_64710caa
 
-trim,name,ALLOWCHARGERaccuracy
-trim,enable,yes
-trim,bits,6
-trim,por,0
-trim,pinname,trim_currentgenerator
-trim,testname,ALLOWCHARGERaccuracy
-trim,description,VOUTSN 200mV above VCAP
-trim,target,3.35
-trim,units,uA
-trim,pretrim_low_limit,2.345
-trim,pretrim_high_limit,4.355
-trim,posttrim_low_limit,3.249
-trim,posttrim_high_limit,3.451
-trim,codeunits,uA
-trim,description0,code 0x01.-0.2uA
-trim,description1,code 0x02.-0.4uA
-trim,description2,code 0x04.-0.8uA
-trim,description3,code 0x08.-1.6uA
-trim,description4,code 0x10.-3.2uA
-trim,description5,code 0x20.+6.4uA
-trim,description6,not used
-trim,description7,not used
 //**********************************************
-//Cell Pin Descriptions
-//**********************************************
-pinname,SIMPV
-definition,SIMPV,power supply
-iq,SIMPV,SIMULATION
-absmax,SIMPV,6
-absmin,SIMPV,2.1
-io,SIMPV,input
-mode,SIMPV,power
-router,SIMPV,TBD
-dftpriority,SIMPV,1
-esd,SIMPV,TBD
+//Cell Pin Descriptions	
+//**********************************************	
+pinname,GATE
+definition,GATE,FET gate 	
+iq,GATE,SIMULATION
+absmax,GATE,6
+absmin,GATE,0.0
+io,GATE,input
+mode,GATE,analog
+router,GATE,TBD
+dftpriority,GATE,1
+esd,GATE,TBD
 
-pinname,CELG
-definition,CELG,power ground
-iq,CELG,SIMULATION
-absmax,CELG,0.3
-absmin,CELG,-0.3
-io,CELG,input
-mode,CELG,power
-router,CELG,TBD
-dftpriority,CELG,1
-esd,CELG,TBD
+pinname,SOURCE
+definition,SOURCE,FET source
+iq,SOURCE,SIMULATION
+absmax,SOURCE,6
+absmin,SOURCE,-0.3
+io,SOURCE,inout
+mode,SOURCE,analog
+router,SOURCE,TBD
+dftpriority,SOURCE,1
+esd,SOURCE,TBD
 
-pinname,CELSUB
-definition,CELSUB,power ground
-iq,CELSUB,SIMULATION
-absmax,CELSUB,0.3
-absmin,CELSUB,-0.3
-io,CELSUB,input
-mode,CELSUB,power
-router,CELSUB,TBD
-dftpriority,CELSUB,1
-esd,CELSUB,TBD
+pinname,DRAIN
+definition,DRAIN,FET drain 
+iq,DRAIN,SIMULATION
+absmax,DRAIN,6
+absmin,DRAIN,-0.3
+io,DRAIN,inout
+mode,DRAIN,analog
+router,DRAIN,TBD
+dftpriority,DRAIN,1
+esd,DRAIN,TBD
 
 
-pinname,enable_currentgenerator
-definition,enable_currentgenerator,Enable Pin
-iq,enable_currentgenerator,SIMULATION
-absmax,enable_currentgenerator,6
-absmin,enable_currentgenerator,-0.3
-io,enable_currentgenerator,input
-mode,enable_currentgenerator,digital
-router,enable_currentgenerator,TBD
-dftpriority,enable_currentgenerator,1
-esd,enable_currentgenerator,TBD
 
-pinname,IP
-definition,IP,500n Current Reference
-iq,IP,SIMULATION
-absmax,IP,6
-absmin,IP,-0.3
-io,IP,input
-mode,IP,analog
-router,IP,TBD
-dftpriority,IP,1
-esd,IP,TBD
 
-pinname,ok_currentgenerator
-definition,ok_currentgenerator,Current generator OK
-iq,ok_currentgenerator,SIMULATION
-absmax,ok_currentgenerator,6
-absmin,ok_currentgenerator,-0.3
-io,ok_currentgenerator,output
-mode,ok_currentgenerator,digital
-router,ok_currentgenerator,TBD
-dftpriority,ok_currentgenerator,1
-esd,ok_currentgenerator,TBD
-
-pinname,I0
-definition,I0,Output0
-iq,I0,SIMULATION
-absmax,I0,6
-absmin,I0,-0.3
-io,I0,inout
-mode,I0,analog
-router,I0,TBD
-dftpriority,I0,1
-esd,I0,TBD
-
-pinname,I1
-definition,I1,Output 1
-iq,I1,SIMULATION
-absmax,I1,6
-absmin,I1,-0.3
-io,I1,inout
-mode,I1,analog
-router,I1,TBD
-dftpriority,I1,1
-esd,I1,TBD
-
-pinname,I2
-definition,I2,Output 2
-iq,I2,SIMULATION
-absmax,I2,6
-absmin,I2,-0.3
-io,I2,inout
-mode,I2,analog
-router,I2,TBD
-dftpriority,I2,1
-esd,I2,TBD
+pinname,NMOSiso6
+definition,NMOSiso6,6V NMOS ISO Connection 
+iq,NMOSiso6,SIMULATION
+absmax,NMOSiso6,6
+absmin,NMOSiso6,-0.3
+io,NMOSiso6,input
+mode,NMOSiso6,analog
+router,NMOSiso6,TBD
+dftpriority,NMOSiso6,1
+esd,NMOSiso6,TBD
 
 
 
 
 
 
-pinname,trim_currentgenerator
-definition,trim_currentgenerator,trim input
-iq,trim_currentgenerator,SIMULATION
-absmax,trim_currentgenerator,6
-absmin,trim_currentgenerator,-0.3
-io,trim_currentgenerator,input
-mode,trim_currentgenerator,digital
-router,trim_currentgenerator,TBD
-dftpriority,trim_currentgenerator,1
-esd,trim_currentgenerator,TBD
 
-pinname,global_currentgenerator
-definition,global_currentgenerator,Global Test Enable
-iq,global_currentgenerator,SIMULATION
-absmax,global_currentgenerator,6
-absmin,global_currentgenerator,-0.3
-io,global_currentgenerator,input
-mode,global_currentgenerator,digital
-router,global_currentgenerator,TBD
-dftpriority,global_currentgenerator,1
-esd,global_currentgenerator,TBD
-
-pinname,ten_currentgenerator
-definition,ten_currentgenerator,Test Enable
-iq,ten_currentgenerator,SIMULATION
-absmax,ten_currentgenerator,6
-absmin,ten_currentgenerator,-0.3
-io,ten_currentgenerator,input
-mode,ten_currentgenerator,digital
-router,ten_currentgenerator,TBD
-dftpriority,ten_currentgenerator,1
-esd,ten_currentgenerator,TBD
-
-pinname,TAEXT
-definition,TAEXT,currentgenerator DFT input current 0.5uA
-iq,TAEXT,SIMULATION
-absmax,TAEXT,6
-absmin,TAEXT,-0.3
-io,TAEXT,input
-mode,TAEXT,analog
-router,TAEXT,TBD
-dftpriority,TAEXT,1
-esd,TAEXT,TBD
-
-pinname,ten_taext_currentgenerator
-definition,ten_taext_currentgenerator,Test Enable
-iq,ten_taext_currentgenerator,SIMULATION
-absmax,ten_taext_currentgenerator,6
-absmin,ten_taext_currentgenerator,-0.3
-io,ten_taext_currentgenerator,input
-mode,ten_taext_currentgenerator,digital
-router,ten_taext_currentgenerator,TBD
-dftpriority,ten_taext_currentgenerator,1
-esd,ten_taext_currentgenerator,TBD
-
-pinname,tdi_ok_currentgenerator
-definition,tdi_ok_currentgenerator,Current generator OK
-iq,tdi_ok_currentgenerator,SIMULATION
-absmax,tdi_ok_currentgenerator,6
-absmin,tdi_ok_currentgenerator,-0.3
-io,tdi_ok_currentgenerator,output
-mode,tdi_ok_currentgenerator,digital
-router,tdi_ok_currentgenerator,TBD
-dftpriority,tdi_ok_currentgenerator,1
-esd,tdi_ok_currentgenerator,TBD
-
-pinname,TAI_N50NREF
-definition,TAI_N50NREF,DFT N 50N Reference Output
-iq,TAI_N50NREF,SIMULATION
-absmax,TAI_N50NREF,6
-absmin,TAI_N50NREF,-0.3
-io,TAI_N50NREF,output
-mode,TAI_N50NREF,analog
-router,TAI_N50NREF,TBD
-dftpriority,TAI_N50NREF,1
-esd,TAI_N50NREF,TBD
-
-pinname,TAI_N500NREF
-definition,TAI_N500NREF,DFT N 500N Reference Output
-iq,TAI_N500NREF,SIMULATION
-absmax,TAI_N500NREF,6
-absmin,TAI_N500NREF,-0.3
-io,TAI_N500NREF,output
-mode,TAI_N500NREF,analog
-router,TAI_N500NREF,TBD
-dftpriority,TAI_N500NREF,1
-esd,TAI_N500NREF,TBD
-
-pinname,TAI_N5UREF
-definition,TAI_N5UREF,DFT N 5U Reference Output
-iq,TAI_N5UREF,SIMULATION
-absmax,TAI_N5UREF,6
-absmin,TAI_N5UREF,-0.3
-io,TAI_N5UREF,output
-mode,TAI_N5UREF,analog
-router,TAI_N5UREF,TBD
-dftpriority,TAI_N5UREF,1
-esd,TAI_N5UREF,TBD
-
-
-pinname,TAI_P50NREF
-definition,TAI_P50NREF,DFT P 50N Reference Output
-iq,TAI_P50NREF,SIMULATION
-absmax,TAI_P50NREF,6
-absmin,TAI_P50NREF,-0.3
-io,TAI_P50NREF,output
-mode,TAI_P50NREF,analog
-router,TAI_P50NREF,TBD
-dftpriority,TAI_P50NREF,1
-esd,TAI_P50NREF,TBD
-
-pinname,TAI_P500NREF
-definition,TAI_P500NREF,DFT P 500N Reference Output
-iq,TAI_P500NREF,SIMULATION
-absmax,TAI_P500NREF,6
-absmin,TAI_P500NREF,-0.3
-io,TAI_P500NREF,output
-mode,TAI_P500NREF,analog
-router,TAI_P500NREF,TBD
-dftpriority,TAI_P500NREF,1
-esd,TAI_P500NREF,TBD
+pinname,SUB
+definition,SUB,FET substrate 
+iq,SUB,SIMULATION
+absmax,SUB,0.3
+absmin,SUB,-0.3
+io,SUB,input
+mode,SUB,analog
+router,SUB,TBD
+dftpriority,SUB,1
+esd,SUB,TBD
 
 
 
-pinname,ten_tai_n50nref
-definition,ten_tai_n50nref,Test Enable
-iq,ten_tai_n50nref,SIMULATION
-absmax,ten_tai_n50nref,6
-absmin,ten_tai_n50nref,-0.3
-io,ten_tai_n50nref,input
-mode,ten_tai_n50nref,digital
-router,ten_tai_n50nref,TBD
-dftpriority,ten_tai_n50nref,1
-esd,ten_tai_n50nref,TBD
-
-pinname,ten_tai_n500nref
-definition,ten_tai_n500nref,Test Enable
-iq,ten_tai_n500nref,SIMULATION
-absmax,ten_tai_n500nref,6
-absmin,ten_tai_n500nref,-0.3
-io,ten_tai_n500nref,input
-mode,ten_tai_n500nref,digital
-router,ten_tai_n500nref,TBD
-dftpriority,ten_tai_n500nref,1
-esd,ten_tai_n500nref,TBD
-
-pinname,ten_tai_n5uref
-definition,ten_tai_n5uref,Test Enable
-iq,ten_tai_n5uref,SIMULATION
-absmax,ten_tai_n5uref,6
-absmin,ten_tai_n5uref,-0.3
-io,ten_tai_n5uref,input
-mode,ten_tai_n5uref,digital
-router,ten_tai_n5uref,TBD
-dftpriority,ten_tai_n5uref,1
-esd,ten_tai_n5uref,TBD
-
-
-pinname,ten_tai_p50nref
-definition,ten_tai_p50nref,Test Enable
-iq,ten_tai_p50nref,SIMULATION
-absmax,ten_tai_p50nref,6
-absmin,ten_tai_p50nref,-0.3
-io,ten_tai_p50nref,input
-mode,ten_tai_p50nref,digital
-router,ten_tai_p50nref,TBD
-dftpriority,ten_tai_p50nref,1
-esd,ten_tai_p50nref,TBD
-
-pinname,ten_tai_p500nref
-definition,ten_tai_p500nref,Test Enable
-iq,ten_tai_p500nref,SIMULATION
-absmax,ten_tai_p500nref,6
-absmin,ten_tai_p500nref,-0.3
-io,ten_tai_p500nref,input
-mode,ten_tai_p500nref,digital
-router,ten_tai_p500nref,TBD
-dftpriority,ten_tai_p500nref,1
-esd,ten_tai_p500nref,TBD
 
 
 
-endbio
+
+
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -1422,17 +1113,4 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
-// *********************************************
-
-
-
-
-
-
-
-
-
-
-
-
 
