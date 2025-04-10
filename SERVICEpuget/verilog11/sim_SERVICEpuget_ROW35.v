@@ -151,11 +151,6 @@ WRAPPER1 TAEXT_WRAPPER (
   .o(CELG59462)
 );
 
-WRAPPER1 celkelvin_IN1_WRAPPER (
-  .i(celkelvin_IN1),
-  .o(net_250)
-);
-
 WRAPPER1 celkelvin_VBIAS_WRAPPER (
   .i(celkelvin_VBIAS),
   .o(INTVCC)
