@@ -1,4 +1,3 @@
-//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
@@ -51,106 +50,12 @@ limit,reference_factory_description,text
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,reference_ref,1.200V
-description,Reference output voltage
-user,reference_ifb,1.000uA
-description,Reference Feedback current
-user,reference_buffer,LowIQ
-description,Reference LowIQ Buffer enabled
-user,reference_cc_trim,yes POR Cold:0 POR Hot:0
-description,Reference curveatue trim
-user,BANDGAP:,SIM:1.15V BENCH:1.232V
-description,Reference Bandgap Design
-user,NESTOrevision,0.4.2
-description,Nesto Generate revision
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
-//Celera Map Generator
-registermap,reference
-register,instance,reference_9a781563
-register,source,cell
-
-//Reference Lowiq 
-register,name,na
-register,enable,no
-register,bits,0
-register,mode,readwriteregister,por,0
-register,userdescription,na
-register,description0,not used
-register,description1,not used
-register,description2,not used
-register,description3,not used
-register,description4,not used
-register,description5,not used
-register,description6,not used
-register,description7,not used
-//Netlister Information
-register,busname,na
 //**********************************************
 //FACTORY Parameters
-//Celera Map Generator
-factorymap,reference
-factory,instance,reference_9a781563
-factory,source,cell
-
-//Reference Positive Curveture Correction
-factory,name,REFCCacc_positive
-factory,enable,yes
-factory,bits,5
-factory,mode,readonly
-factory,por,0
-factory,userdescription,Curvature Correction Accuracy hot
-factory,description0,Bit0,Positive Curveture correction enable
-factory,description1,Bit[2:1] Temperature Enable
-factory,description2,00=90C,01=100C,10=110C,11=120C
-factory,description3,Bit[4:3] BG  Offset Current
-factory,description4,00=75nA,01=125nA,10=250nA,11=500nA
-factory,description5,not used
-factory,description6,not used
-factory,description7,not used
-//Netlister Information
-factory,busname,factory_refccp
-
-//Reference Negative Curveture Correction
-factory,name,REFCCacc_negative
-factory,enable,yes
-factory,bits,5
-factory,mode,readonly
-factory,por,0
-factory,userdescription,Curvature Correction Accuracy cold
-factory,description0,Bit0,Negative Curveture correction enable
-factory,description1,Bit[2:1] Temperature Enable
-factory,description2,00=0C,01=10C,10=-10C,11=-20C
-factory,description3,Bit[4:3] BG Offset Current
-factory,description4,00=75nA,01=125nA,10=250nA,11=500nA
-factory,description5,not used
-factory,description6,not used
-factory,description7,not used
-//Netlister Information
-factory,busname,factory_refccn
-
-//Reference Lowiq 
-factory,name,na
-factory,enable,no
-factory,bits,0
-factory,mode,readonly
-factory,por,0
-factory,userdescription,na
-factory,description0,not used
-factory,description1,not used
-factory,description2,not used
-factory,description3,not used
-factory,description4,not used
-factory,description5,not used
-factory,description6,not used
-factory,description7,not used
-//Netlister Information
-factory,busname,na
-
-
-
 //**********************************************
 //Layout Parameters
 revision,layout,0p1
@@ -224,7 +129,7 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,0.9
+#define,PROJECTreference,TBD
 #define,PROJECTsupply,5
 #define,TaRoom,25
 #define,ground,0.0
@@ -262,31 +167,6 @@ endlayoutbio
 
 // *********************************************
 //Die Size Estimate
-revision,vis15cbdiesize,0p1
-sub_area,STONEnoconn,0
-sub_area,STONEreferenceBUFFER,3035
-sub_area,STONEreferenceDFTBG,280
-sub_area,STONEreferenceENABLE,100
-sub_area,STONEreferenceDFTREF,310
-sub_area,STONEnoconn,0
-sub_area,STONEreferenceCCP,6770
-sub_area,STONEnoconn,0
-sub_area,STONEreferenceCCN,6770
-sub_area,STONEreferenceTRIM,220
-sub_area,STONEreferenceBGOK1,7460
-sub_area,PEBBLEconfigLINK,2
-sub_area,STONEnoconn,0
-sub_area,STONEreferenceBG1,9999999
-sub_area,rlpp3000rpo95p6u1p3u,891
-sub_area,rlpp3000rpo95p6u1p3u,891
-sub_area,rlpp3000rpo95p6u1p3u,1188
-sub_area,rlpp3000rpo0p9u0p4u,47
-sub_area,rlpp3000rpo0p9u0p4u,23
-sub_area,rlpp3000rpo0p9u0p4u,11
-sub_area,rlpp3000rpo0p9u0p4u,5
-sub_area,rlpp3000rpo0p9u0p4u,2
-sub_area,rlpp3000rpo0p9u0p4u,1
-generate_area,reference_9a781563,10028005
 // *********************************************
 //CELL DFT Parameters
 // *********************************************
@@ -298,7 +178,7 @@ generate_area,reference_9a781563,10028005
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,ok_reference,REF,enable_reference,net_skip,SIMPV
+pinorder,ok_ref,REF,enable_ref,lowiq,SIMPV
 endpinorder
 //**********************************************
 
@@ -337,66 +217,14 @@ endpinorder
 
 // *********************************************
 //TRIM Parameters
-cell,reference
-trim,instance,reference_9a781563
-
-trim,name,CELERAbandgap
-trim,enable,yes
-trim,bits,7
-trim,por,0
-trim,pinname,trim_refbg
-trim,testname,CELERAbandgap
-trim,description,Bandgap Output Voltage Accuracy
-trim,target,1232
-trim,units,mV
-trim,pretrim_low_limit,1212.000
-trim,pretrim_high_limit,1252.000
-trim,posttrim_low_limit,1231.250
-trim,posttrim_high_limit,1232.750
-trim,codeunits,mV
-trim,description0,code 0x00 1232
-trim,description1,+0.5%
-trim,description2,+1.0%
-trim,description3,+2.0%
-trim,description4,+4.0%
-trim,description5,+8.0%
-trim,description6,+16.0%
-trim,description7,-32.0%
-trim,description8,empty
-
-trim,name,REFERENCEaccuracy
-trim,enable,yes
-trim,bits,6
-trim,por,0
-trim,pinname,trim_ref
-trim,testname,REFERENCEaccuracy
-trim,description,Reference Accuracy to 1p2V
-
-trim,target,1200
-trim,units,mV
-trim,pretrim_low_limit,1190.000
-trim,pretrim_high_limit,1210.000
-trim,posttrim_low_limit,1199.250
-trim,posttrim_high_limit,1200.750
-trim,codeunits,mV
-trim,description0,code 0x001200
-trim,description1,code 0x01 +1.0
-trim,description2,code 0x02 +2.0
-trim,description3,code 0x04 +4.0
-trim,description4,code 0x08 +8.0
-trim,description5,code 0x10 +16.0
-trim,description6,code 0x20 -32.0
-trim,description7,not used
-trim,description8,empty
-
 //**********************************************
 //Cell Pin Descriptions
 // *********************************************
 pinname,SIMPV
 definition,SIMPV,Reference power supply
 iq,SIMPV,SIMULATION
-absmax,SIMPV,6
-absmin,SIMPV,2.0
+absmax,SIMPV,UPDATE
+absmin,SIMPV,UPDATE
 io,SIMPV,input
 mode,SIMPV,power
 router,SIMPV,TBD
@@ -406,8 +234,8 @@ esd,SIMPV,TBD
 pinname,CELG
 definition,CELG,Reference power ground
 iq,CELG,SIMULATION
-absmax,CELG,0.3
-absmin,CELG,-0.3
+absmax,CELG,UPDATE
+absmin,CELG,UPDATE
 io,CELG,input
 mode,CELG,power
 router,CELG,TBD
@@ -417,8 +245,8 @@ esd,CELG,TBD
 pinname,celkelvin_GNDref
 definition,celkelvin_GNDref,REFERENCE ground sense
 iq,celkelvin_GNDref,SIMULATION
-absmax,celkelvin_GNDref,6
-absmin,celkelvin_GNDref,-0.3
+absmax,celkelvin_GNDref,UPDATE
+absmin,celkelvin_GNDref,UPDATE
 io,celkelvin_GNDref,input
 mode,celkelvin_GNDref,analog
 router,celkelvin_GNDref,TBD
@@ -428,8 +256,8 @@ esd,celkelvin_GNDref,TBD
 pinname,REF
 definition,REF,Reference Output voltage
 iq,REF,SIMULATION
-absmax,REF,6
-absmin,REF,-0.3
+absmax,REF,UPDATE
+absmin,REF,UPDATE
 io,REF,output
 mode,REF,analog
 router,REF,TBD
@@ -439,8 +267,8 @@ esd,REF,TBD
 pinname,enable_reference
 definition,enable_reference,Reference enable
 iq,enable_reference,SIMULATION
-absmax,enable_reference,6
-absmin,enable_reference,-0.3
+absmax,enable_reference,UPDATE
+absmin,enable_reference,UPDATE
 io,enable_reference,input
 mode,enable_reference,digital
 router,enable_reference,TBD
@@ -450,8 +278,8 @@ esd,enable_reference,TBD
 pinname,global_reference
 definition,global_reference,Global enable
 iq,global_reference,SIMULATION
-absmax,global_reference,6
-absmin,global_reference,-0.3
+absmax,global_reference,UPDATE
+absmin,global_reference,UPDATE
 io,global_reference,input
 mode,global_reference,digital
 router,global_reference,TBD
@@ -461,8 +289,8 @@ esd,global_reference,TBD
 pinname,trim_ref
 definition,trim_ref,Trim REF output voltage
 iq,trim_ref,SIMULATION
-absmax,trim_ref,6
-absmin,trim_ref,-0.3
+absmax,trim_ref,UPDATE
+absmin,trim_ref,UPDATE
 io,trim_ref,input
 mode,trim_ref,digital
 router,trim_ref,TBD
@@ -472,8 +300,8 @@ esd,trim_ref,TBD
 pinname,trim_refbg
 definition,trim_refbg,Trim BG output Voltage
 iq,trim_refbg,SIMULATION
-absmax,trim_refbg,6
-absmin,trim_refbg,-0.3
+absmax,trim_refbg,UPDATE
+absmin,trim_refbg,UPDATE
 io,trim_refbg,input
 mode,trim_refbg,digital
 router,trim_refbg,TBD
@@ -483,8 +311,8 @@ esd,trim_refbg,TBD
 pinname,factory_refccp
 definition,factory_refccp,Testmode Input: Reference CCP trim
 iq,factory_refccp,SIMULATION
-absmax,factory_refccp,6
-absmin,factory_refccp,-0.3
+absmax,factory_refccp,UPDATE
+absmin,factory_refccp,UPDATE
 io,factory_refccp,input
 mode,,factory_refccp,digital
 router,factory_refccp,TBD
@@ -494,8 +322,8 @@ esd,factory_refccp,TBD
 pinname,factory_refccn
 definition,factory_refccn,Testmode Input:Reference CCN trim
 iq,factory_refccn,SIMULATION
-absmax,factory_refccn,6
-absmin,factory_refccn,-0.3
+absmax,factory_refccn,UPDATE
+absmin,factory_refccn,UPDATE
 io,factory_refccn,input
 mode,,factory_refccn,digital
 router,factory_refccn,TBD
@@ -505,8 +333,8 @@ esd,factory_refccn,TBD
 pinname,ten_refbg
 definition,ten_refbg,Testmode Input:Enable Measure CELBG
 iq,ten_refbg,SIMULATION
-absmax,ten_refbg,6
-absmin,ten_refbg,-0.3
+absmax,ten_refbg,UPDATE
+absmin,ten_refbg,UPDATE
 io,ten_refbg,input
 mode,ten_refbg,digital
 router,ten_refbg,TBD
@@ -516,30 +344,107 @@ esd,ten_refbg,TBD
 pinname,ten_ref
 definition,ten_ref,Testmode Input:Enable Measure REF
 iq,ten_ref,SIMULATION
-absmax,ten_ref,6
-absmin,ten_ref,-0.3
+absmax,ten_ref,UPDATE
+absmin,ten_ref,UPDATE
 io,ten_ref,input
 mode,ten_ref,digital
 router,ten_ref,TBD
 dftpriority,ten_ref,1
 esd,ten_ref,TBD
 
+pinname,ten_refccp
+definition,ten_refccp,Testmode Input:Enable Measure Reference CCP
+iq,ten_refccp,SIMULATION
+absmax,ten_refccp,UPDATE
+absmin,ten_refccp,UPDATE
+io,ten_refccp,input
+mode,ten_refccp,digital
+router,ten_refccp,TBD
+dftpriority,ten_refccp,1
+esd,ten_refccp,TBD
+
+pinname,ten_refccn
+definition,ten_refccn,Testmode Input:Enable Measure Reference CCN
+iq,ten_refccn,SIMULATION
+absmax,ten_refccn,UPDATE
+absmin,ten_refccn,UPDATE
+io,ten_refccn,input
+mode,ten_refccn,digital
+router,ten_refccn,TBD
+dftpriority,ten_refccn,1
+esd,ten_refccn,TBD
+
+pinname,ten_refext
+definition,ten_refext,Testmode Input:Enable Measure External Reference
+iq,ten_refext,SIMULATION
+absmax,ten_refext,UPDATE
+absmin,ten_refext,UPDATE
+io,ten_refext,input
+mode,ten_refext,digital
+router,ten_refext,TBD
+dftpriority,ten_refext,1
+esd,ten_refext,TBD
+
+pinname,ten_refbgext
+definition,ten_refbgext,Testmode Input:Enable Measure External BG
+iq,ten_refbgext,SIMULATION
+absmax,ten_refbgext,UPDATE
+absmin,ten_refbgext,UPDATE
+io,ten_refbgext,input
+mode,ten_refbgext,digital
+router,ten_refbgext,TBD
+dftpriority,ten_refbgext,1
+esd,ten_refbgext,TBD
+
 pinname,ok_reference
 definition,ok_reference,Reference ok flag
 iq,ok_reference,SIMULATION
-absmax,ok_reference,6
-absmin,ok_reference,-0.3
+absmax,ok_reference,UPDATE
+absmin,ok_reference,UPDATE
 io,ok_reference,output
 mode,ok_reference,digital
 router,ok_reference,TBD
 dftpriority,ok_reference,1
 esd,ok_reference,TBD
 
+pinname,lowiq
+definition,lowiq,reference lowiq enable
+iq,lowiq,SIMULATION
+absmax,lowiq,UPDATE
+absmin,lowiq,UPDATE
+io,lowiq,input
+mode,lowiq,digital
+router,lowiq,TBD
+dftpriority,lowiq,1
+esd,lowiq,TBD
+
+pinname,register_lowiq
+definition,register_lowiq,reference register lowiq enable
+iq,register_lowiq,SIMULATION
+absmax,register_lowiq,UPDATE
+absmin,register_lowiq,UPDATE
+io,register_lowiq,input
+mode,register_lowiq,digital
+router,register_lowiq,TBD
+dftpriority,register_lowiq,1
+esd,register_lowiq,TBD
+
+pinname,factory_lowiq
+definition,factory_lowiq,reference factory lowiq enable
+iq,factory_lowiq,SIMULATION
+absmax,factory_lowiq,UPDATE
+absmin,factory_lowiq,UPDATE
+io,factory_lowiq,input
+mode,factory_lowiq,digital
+router,factory_lowiq,TBD
+dftpriority,factory_lowiq,1
+esd,factory_lowiq,TBD
+
 pinname,TAI_REFBG
 definition,TAI_REFBG,Testmode Output:Measure CELBG
 iq,TAI_REFBG,SIMULATION
-absmax,TAI_REFBG,6
-absmin,TAI_REFBG,-0.3
+absmax,TAI_REFBG,UPDATE
+absmin,TAI_REFBG,UPDATE
 io,TAI_REFBG,output
 mode,TAI_REFBG,analog
 router,TAI_REFBG,TBD
@@ -549,19 +454,52 @@ esd,TAI_REFBG,TBD
 pinname,TAI_REF
 definition,TAI_REF,Testmode Output:Measure REFERENCE
 iq,TAI_REF,SIMULATION
-absmax,TAI_REF,6
-absmin,TAI_REF,-0.3
+absmax,TAI_REF,UPDATE
+absmin,TAI_REF,UPDATE
 io,TAI_REF,output
 mode,TAI_REF,analog
 router,TAI_REF,TBD
 dftpriority,TAI_REF,1
 esd,TAI_REF,TBD
 
+pinname,TAEXT
+definition,TAEXT,Testmode Input:External Test Input
+iq,TAEXT,SIMULATION
+absmax,TAEXT,UPDATE
+absmin,TAEXT,UPDATE
+io,TAEXT,input
+mode,TAEXT,analog
+router,TAEXT,TBD
+dftpriority,TAEXT,1
+esd,TAEXT,TBD
+
+pinname,TAI_REFCCN
+definition,TAI_REFCCN,Testmode Output:Measure CCN
+iq,TAI_REFCCN,SIMULATION
+absmax,TAI_REFCCN,UPDATE
+absmin,TAI_REFCCN,UPDATE
+io,TAI_REFCCN,output
+mode,TAI_REFCCN,analog
+router,TAI_REFCCN,TBD
+dftpriority,TAI_REFCCN,1
+esd,TAI_REFCCN,TBD
+
+pinname,TAI_REFCCP
+definition,TAI_REFCCP,Testmode Output:Measure CCP
+iq,TAI_REFCCP,SIMULATION
+absmax,TAI_REFCCP,UPDATE
+absmin,TAI_REFCCP,UPDATE
+io,TAI_REFCCP,output
+mode,TAI_REFCCP,analog
+router,TAI_REFCCP,TBD
+dftpriority,TAI_REFCCP,1
+esd,TAI_REFCCP,TBD
+
 pinname,CELBG
 definition,CELBG, IBIAS and THERMAL reference only
 iq,CELBG,SIMULATION
-absmax,CELBG,6
-absmin,CELBG,-0.3
+absmax,CELBG,UPDATE
+absmin,CELBG,UPDATE
 io,CELBG,output
 mode,CELBG,analog
 router,CELBG,CELBG
@@ -571,8 +509,8 @@ esd,CELBG,TBD
 pinname,CELSUB
 definition,CELSUB,Substrate
 iq,CELSUB,SIMULATION
-absmax,CELSUB,0.3
-absmin,CELSUB,-0.3
+absmax,CELSUB,UPDATE
+absmin,CELSUB,UPDATE
 io,CELSUB,input
 mode,CELSUB,power
 router,CELSUB,TBD
@@ -1262,4 +1200,3 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio// *********************************************
-

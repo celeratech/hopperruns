@@ -1,4 +1,3 @@
-//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
@@ -86,52 +85,8 @@ description,Nesto Revision
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
-//Celera Map Generator
-registermap,resistordivider
-register,instance,resistordivider_c075854d
-register,source,cell
-
-//resistordivider
-register,name,na
-register,enable,no
-register,bits,0
-register,mode,na
-register,por,0
-register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
-//Netlister Information
-register,busname,na
 //**********************************************
 //FACTORY Parameters
-//Celera Map Generator
-factorymap,resistordivider
-factory,instance,resistordivider_c075854d
-factory,source,cell
-
-//resistordivider
-factory,name,na
-factory,enable,no
-factory,bits,0
-factory,mode,na
-factory,por,0
-factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
-//Netlister Information
-factory,busname,na
 //**********************************************
 //CELL DFT Parameters
 // *********************************************
@@ -200,7 +155,7 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,0.9
+#define,PROJECTreference,TBD
 #define,PROJECTsupply,5
 #define,TaRoom,25
 #define,ground,0.0
@@ -238,14 +193,6 @@ endlayoutbio
 
 // *********************************************
 //Die Size Estimate
-revision,vis15cbdiesize,0p1
-sub_area,STONEnoconn,0
-sub_area,STONEresistordividermain,100
-sub_area,STONEresistordividersw5v10u,200
-sub_area,rlpp3000rpo9p5u0p4u,12
-sub_area,rlpp3000rpo25p9u0p4u,16
-sub_area,rlpp3000rpo2p6u0p4u,1
-generate_area,resistordivider_c075854d,329
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.2
@@ -331,37 +278,12 @@ generate_area,resistordivider_c075854d,329
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,TAP0,TAP1,net_skip,net_skip,net_skip,net_skip,net_skip,net_skip,TOP,BOTTOM,enable_resistordivider
+pinorder,TAP0,TAP1,TAP2,TAP3,TAP4,TAP5,TAP6,TAP7,TOP,BOTTOM,enable_resistordivider
 endpinorder
 //**********************************************
 
 //**********************************************
 //TRIM Parameters
-cell,resistordivider
-trim,instance,resistordivider_c075854d
-
-trim,name,na
-trim,enable,no
-trim,bits,TBD
-trim,por,0
-trim,pinname,TBD
-trim,testname,TBD
-trim,description,TBD
-trim,target,na
-trim,units,KHz
-trim,pretrim_low_limit,TBD
-trim,pretrim_high_limit,TBD
-trim,posttrim_low_limit,TBD
-trim,posttrim_high_limit,TBD
-trim,codeunits,%
-trim,description0,empty
-trim,description1,empty
-trim,description2,empty
-trim,description3,empty
-trim,description4,empty
-trim,description5,empty
-trim,description6,empty
-trim,description7,empty
 //**********************************************
 //Cell PinDescriptions
 pinname,CELV
@@ -408,6 +330,17 @@ router,global_resistordivider,TBD
 dftpriority,global_resistordivider,1
 esd,global_resistordivider,TBD
 
+pinname,ten_resistordivider
+definition,ten_resistordivider,Testmode Input:Enable Resistor Divider Disconnect
+iq,ten_resistordivider,SIMULATION
+absmax,ten_resistordivider,6
+absmin,ten_resistordivider,-0.3
+io,ten_resistordivider,input
+mode,ten_resistordivider,digital
+router,ten_resistordivider,TBD
+dftpriority,ten_resistordivider,1
+esd,ten_resistordivider,TBD
+
 pinname,enable_resistordivider
 definition,enable_resistordivider,resistor divider logic enable
 iq,enable_resistordivider,SIMULATION
@@ -451,6 +384,248 @@ mode,TAP1,analog
 router,TAP1,TBD
 dftpriority,TAP1,1
 esd,TAP1,TBD
+
+pinname,TAP2
+definition,TAP2,Resistor divider feedback voltage2
+iq,TAP2,0.01u
+absmax,TAP2,6
+absmin,TAP2,-0.3
+io,TAP2,output
+mode,TAP2,analog
+router,TAP2,TBD
+dftpriority,TAP2,1
+esd,TAP2,TBD
+
+pinname,TAP3
+definition,TAP3,Resistor divider feedback voltage3
+iq,TAP3,SIMULATION
+absmax,TAP3,6
+absmin,TAP3,-0.3
+io,TAP3,output
+mode,TAP3,analog
+router,TAP3,TBD
+dftpriority,TAP3,1
+esd,TAP3,TBD
+
+pinname,TAP4
+definition,TAP4,Resistor divider feedback voltage4
+iq,TAP4,SIMULATION
+absmax,TAP4,6
+absmin,TAP4,-0.3
+io,TAP4,output
+mode,TAP4,analog
+router,TAP4,TBD
+dftpriority,TAP4,1
+esd,TAP4,TBD
+
+pinname,TAP5
+definition,TAP5,Resistor divider feedback voltage5
+iq,TAP5,SIMULATION
+absmax,TAP5,6
+absmin,TAP5,-0.3
+io,TAP5,output
+mode,TAP5,analog
+router,TAP5,TBD
+dftpriority,TAP5,1
+esd,TAP5,TBD
+
+pinname,TAP6
+definition,TAP6,Resistor divider feedback voltage6
+iq,TAP6,SIMULATION
+absmax,TAP6,6
+absmin,TAP6,-0.3
+io,TAP6,output
+mode,TAP6,analog
+router,TAP6,TBD
+dftpriority,TAP6,1
+esd,TAP6,TBD
+
+pinname,TAP7
+definition,TAP7,Resistor divider feedback voltage7
+iq,TAP7,SIMULATION
+absmax,TAP7,6
+absmin,TAP7,-0.3
+io,TAP7,output
+mode,TAP7,analog
+router,TAP7,TBD
+dftpriority,TAP7,1
+esd,TAP7,TBD
+
+pinname,TAI_RESISTORDIVIDER_TAP0
+definition,TAI_RESISTORDIVIDER_TAP0,Testmode Output:Measure Resistor Divider Feedback Tap0
+iq,TAI_RESISTORDIVIDER_TAP0,SIMULATION
+absmax,TAI_RESISTORDIVIDER_TAP0,6
+absmin,TAI_RESISTORDIVIDER_TAP0,-0.3
+io,TAI_RESISTORDIVIDER_TAP0,output
+mode,TAI_RESISTORDIVIDER_TAP0,analog
+router,TAI_RESISTORDIVIDER_TAP0,TBD
+dftpriority,TAI_RESISTORDIVIDER_TAP0,1
+esd,TAI_RESISTORDIVIDER_TAP0,TBD
+
+pinname,TAI_RESISTORDIVIDER_TAP1
+definition,TAI_RESISTORDIVIDER_TAP1,Testmode Output:Measure Resistor Divider Feedback Tap1
+iq,TAI_RESISTORDIVIDER_TAP1,SIMULATION
+absmax,TAI_RESISTORDIVIDER_TAP1,6
+absmin,TAI_RESISTORDIVIDER_TAP1,-0.3
+io,TAI_RESISTORDIVIDER_TAP1,output
+mode,TAI_RESISTORDIVIDER_TAP1,analog
+router,TAI_RESISTORDIVIDER_TAP1,TBD
+dftpriority,TAI_RESISTORDIVIDER_TAP1,1
+esd,TAI_RESISTORDIVIDER_TAP1,TBD
+
+pinname,TAI_RESISTORDIVIDER_TAP2
+definition,TAI_RESISTORDIVIDER_TAP2,Testmode Output:Measure Resistor Divider Feedback Tap2
+iq,TAI_RESISTORDIVIDER_TAP2,SIMULATION
+absmax,TAI_RESISTORDIVIDER_TAP2,6
+absmin,TAI_RESISTORDIVIDER_TAP2,-0.3
+io,TAI_RESISTORDIVIDER_TAP2,output
+mode,TAI_RESISTORDIVIDER_TAP2,analog
+router,TAI_RESISTORDIVIDER_TAP2,TBD
+dftpriority,TAI_RESISTORDIVIDER_TAP2,1
+esd,TAI_RESISTORDIVIDER_TAP2,TBD
+
+pinname,TAI_RESISTORDIVIDER_TAP3
+definition,TAI_RESISTORDIVIDER_TAP3,Testmode Output:Measure Resistor Divider Feedback Tap3
+iq,TAI_RESISTORDIVIDER_TAP3,SIMULATION
+absmax,TAI_RESISTORDIVIDER_TAP3,6
+absmin,TAI_RESISTORDIVIDER_TAP3,-0.3
+io,TAI_RESISTORDIVIDER_TAP3,output
+mode,TAI_RESISTORDIVIDER_TAP3,analog
+router,TAI_RESISTORDIVIDER_TAP3,TBD
+dftpriority,TAI_RESISTORDIVIDER_TAP3,1
+esd,TAI_RESISTORDIVIDER_TAP3,TBD
+
+pinname,TAI_RESISTORDIVIDER_TAP4
+definition,TAI_RESISTORDIVIDER_TAP4,Testmode Output:Measure Resistor Divider Feedback Tap4
+iq,TAI_RESISTORDIVIDER_TAP4,SIMULATION
+absmax,TAI_RESISTORDIVIDER_TAP4,6
+absmin,TAI_RESISTORDIVIDER_TAP4,-0.3
+io,TAI_RESISTORDIVIDER_TAP4,output
+mode,TAI_RESISTORDIVIDER_TAP4,analog
+router,TAI_RESISTORDIVIDER_TAP4,TBD
+dftpriority,TAI_RESISTORDIVIDER_TAP4,1
+esd,TAI_RESISTORDIVIDER_TAP4,TBD
+
+pinname,TAI_RESISTORDIVIDER_TAP5
+definition,TAI_RESISTORDIVIDER_TAP5,Testmode Output:Measure Resistor Divider Feedback Tap5
+iq,TAI_RESISTORDIVIDER_TAP5,SIMULATION
+absmax,TAI_RESISTORDIVIDER_TAP5,6
+absmin,TAI_RESISTORDIVIDER_TAP5,-0.3
+io,TAI_RESISTORDIVIDER_TAP5,output
+mode,TAI_RESISTORDIVIDER_TAP5,analog
+router,TAI_RESISTORDIVIDER_TAP5,TBD
+dftpriority,TAI_RESISTORDIVIDER_TAP5,1
+esd,TAI_RESISTORDIVIDER_TAP5,TBD
+
+pinname,TAI_RESISTORDIVIDER_TAP6
+definition,TAI_RESISTORDIVIDER_TAP6,Testmode Output:Measure Resistor Divider Feedback Tap6
+iq,TAI_RESISTORDIVIDER_TAP6,SIMULATION
+absmax,TAI_RESISTORDIVIDER_TAP6,6
+absmin,TAI_RESISTORDIVIDER_TAP6,-0.3
+io,TAI_RESISTORDIVIDER_TAP6,output
+mode,TAI_RESISTORDIVIDER_TAP6,analog
+router,TAI_RESISTORDIVIDER_TAP6,TBD
+dftpriority,TAI_RESISTORDIVIDER_TAP6,1
+esd,TAI_RESISTORDIVIDER_TAP6,TBD
+
+pinname,TAI_RESISTORDIVIDER_TAP7
+definition,TAI_RESISTORDIVIDER_TAP7,Testmode Output:Measure Resistor Divider Feedback Tap7
+iq,TAI_RESISTORDIVIDER_TAP7,SIMULATION
+absmax,TAI_RESISTORDIVIDER_TAP7,6
+absmin,TAI_RESISTORDIVIDER_TAP7,-0.3
+io,TAI_RESISTORDIVIDER_TAP7,output
+mode,TAI_RESISTORDIVIDER_TAP7,analog
+router,TAI_RESISTORDIVIDER_TAP7,TBD
+dftpriority,TAI_RESISTORDIVIDER_TAP7,1
+esd,TAI_RESISTORDIVIDER_TAP7,TBD
+
+pinname,ten_resistordivider_tap0
+definition,ten_resistordivider_tap0,Testmode Input:Enable Measure RESISTERDIVIDER_TAP0
+iq,ten_resistordivider_tap0,SIMULATION
+absmax,ten_resistordivider_tap0,6
+absmin,ten_resistordivider_tap0,-0.3
+io,ten_resistordivider_tap0,input
+mode,ten_resistordivider_tap0,digital
+router,ten_resistordivider_tap0,TBD
+dftpriority,ten_resistordivider_tap0,1
+esd,ten_resistordivider_tap0,TBD
+
+pinname,ten_resistordivider_tap1
+definition,ten_resistordivider_tap1,Testmode Input:Enable Measure RESISTERDIVIDER_TAP1
+iq,ten_resistordivider_tap1,SIMULATION
+absmax,ten_resistordivider_tap1,6
+absmin,ten_resistordivider_tap1,-0.3
+io,ten_resistordivider_tap1,input
+mode,ten_resistordivider_tap1,digital
+router,ten_resistordivider_tap1,TBD
+dftpriority,ten_resistordivider_tap1,1
+esd,ten_resistordivider_tap1,TBD
+
+pinname,ten_resistordivider_tap2
+definition,ten_resistordivider_tap2,Testmode Input:Enable Measure RESISTERDIVIDER_TAP2
+iq,ten_resistordivider_tap2,SIMULATION
+absmax,ten_resistordivider_tap2,6
+absmin,ten_resistordivider_tap2,-0.3
+io,ten_resistordivider_tap2,input
+mode,ten_resistordivider_tap2,digital
+router,ten_resistordivider_tap2,TBD
+dftpriority,ten_resistordivider_tap2,1
+esd,ten_resistordivider_tap2,TBD
+
+pinname,ten_resistordivider_tap3
+definition,ten_resistordivider_tap3,Testmode Input:Enable Measure RESISTERDIVIDER_TAP3
+iq,ten_resistordivider_tap3,SIMULATION
+absmax,ten_resistordivider_tap3,6
+absmin,ten_resistordivider_tap3,-0.3
+io,ten_resistordivider_tap3,input
+mode,ten_resistordivider_tap3,digital
+router,ten_resistordivider_tap3,TBD
+dftpriority,ten_resistordivider_tap3,1
+esd,ten_resistordivider_tap3,TBD
+
+pinname,ten_resistordivider_tap4
+definition,ten_resistordivider_tap4,Testmode Input:Enable Measure RESISTERDIVIDER_TAP44
+iq,ten_resistordivider_tap4,SIMULATION
+absmax,ten_resistordivider_tap4,6
+absmin,ten_resistordivider_tap4,-0.3
+io,ten_resistordivider_tap4,input
+mode,ten_resistordivider_tap4,digital
+router,ten_resistordivider_tap4,TBD
+dftpriority,ten_resistordivider_tap4,1
+esd,ten_resistordivider_tap4,TBD
+
+pinname,ten_resistordivider_tap5
+definition,ten_resistordivider_tap5,Testmode Input:Enable Measure RESISTERDIVIDER_TAP5
+iq,ten_resistordivider_tap5,SIMULATION
+absmax,ten_resistordivider_tap5,6
+absmin,ten_resistordivider_tap5,-0.3
+io,ten_resistordivider_tap5,input
+mode,ten_resistordivider_tap5,digital
+router,ten_resistordivider_tap5,TBD
+dftpriority,ten_resistordivider_tap5,1
+esd,ten_resistordivider_tap5,TBD
+
+pinname,ten_resistordivider_tap6
+definition,ten_resistordivider_tap6,Testmode Input:Enable Measure RESISTERDIVIDER_TAP6
+iq,ten_resistordivider_tap6,SIMULATION
+absmax,ten_resistordivider_tap6,6
+absmin,ten_resistordivider_tap6,-0.3
+io,ten_resistordivider_tap6,input
+mode,ten_resistordivider_tap6,digital
+router,ten_resistordivider_tap6,TBD
+dftpriority,ten_resistordivider_tap6,1
+esd,ten_resistordivider_tap6,TBD
+
+pinname,ten_resistordivider_tap7
+definition,ten_resistordivider_tap7,Testmode Input:Enable Measure RESISTERDIVIDER_TAP7
+iq,ten_resistordivider_tap7,SIMULATION
+absmax,ten_resistordivider_tap7,6
+absmin,ten_resistordivider_tap7,-0.3
+io,ten_resistordivider_tap7,input
+mode,ten_resistordivider_tap7,digital
+router,ten_resistordivider_tap7,TBD
+dftpriority,ten_resistordivider_tap7,1
+esd,ten_resistordivider_tap7,TBD
 
 pinname,CELSUB
 definition,CELSUB,Substrate
@@ -1154,4 +1329,3 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
-

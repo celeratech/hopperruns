@@ -7,362 +7,727 @@
 :vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
 :vpi_module "/usr/local/lib/ivl/va_math.vpi";
-S_0x55f15e6faf60 .scope module, "FORCE_SERVICEpuget" "FORCE_SERVICEpuget" 2 95;
+S_0x55c7688bff60 .scope module, "resistorarray_b801fb63" "resistorarray_b801fb63" 2 26;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "IN";
-    .port_info 1 /INOUT 1 "GND";
-    .port_info 2 /INOUT 1 "INTVCC";
-    .port_info 3 /INOUT 1 "VCC2P5";
-    .port_info 4 /OUTPUT 1 "VOUTSN";
-    .port_info 5 /OUTPUT 1 "CELG59462";
-    .port_info 6 /OUTPUT 1 "CELV96848";
-    .port_info 7 /OUTPUT 1 "PORB97836";
-    .port_info 8 /OUTPUT 1 "kelvin_IN";
-    .port_info 9 /OUTPUT 1 "GNDservice";
-    .port_info 10 /OUTPUT 1 "CELSUB40948";
-    .port_info 11 /OUTPUT 1 "IP_051b7bcb";
-    .port_info 12 /OUTPUT 1 "IP_30a0e5c5";
-    .port_info 13 /OUTPUT 1 "IP_86807c55";
-    .port_info 14 /OUTPUT 1 "IP_87250ba9";
-    .port_info 15 /OUTPUT 1 "IP_9219bb98";
-    .port_info 16 /OUTPUT 1 "IP_92c9b3c9";
-    .port_info 17 /OUTPUT 1 "IP_de226f75";
-    .port_info 18 /OUTPUT 1 "kelvin_VCAP";
-    .port_info 19 /OUTPUT 1 "kelvin_DRVCC";
-    .port_info 20 /INOUT 1 "kelvin_INTVCC";
-    .port_info 21 /INOUT 1 "kelvin_VCC2P5";
-    .port_info 22 /OUTPUT 1 "kelvin_VOUTSN";
-    .port_info 23 /OUTPUT 1 "kelvin_GNDservice";
-o0x7ff0f07b8f78 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e7709e0_0 .net "CELG59462", 0 0, o0x7ff0f07b8f78;  0 drivers
-o0x7ff0f07b9008 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e770ab0_0 .net "CELSUB40948", 0 0, o0x7ff0f07b9008;  0 drivers
-o0x7ff0f07b9098 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e770b80_0 .net "CELV96848", 0 0, o0x7ff0f07b9098;  0 drivers
-o0x7ff0f07b8018 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e770c50_0 .net "GND", 0 0, o0x7ff0f07b8018;  0 drivers
-o0x7ff0f07b84c8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e770f00_0 .net "GNDservice", 0 0, o0x7ff0f07b84c8;  0 drivers
-o0x7ff0f07b8558 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e770ff0_0 .net "IN", 0 0, o0x7ff0f07b8558;  0 drivers
-o0x7ff0f07b8048 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e7710c0_0 .net "INTVCC", 0 0, o0x7ff0f07b8048;  0 drivers
-o0x7ff0f07b9158 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e771160_0 .net "IP_051b7bcb", 0 0, o0x7ff0f07b9158;  0 drivers
-o0x7ff0f07b9218 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e771230_0 .net "IP_30a0e5c5", 0 0, o0x7ff0f07b9218;  0 drivers
-o0x7ff0f07b92d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e771300_0 .net "IP_86807c55", 0 0, o0x7ff0f07b92d8;  0 drivers
-o0x7ff0f07b9398 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e7713d0_0 .net "IP_87250ba9", 0 0, o0x7ff0f07b9398;  0 drivers
-o0x7ff0f07b9458 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e7714a0_0 .net "IP_9219bb98", 0 0, o0x7ff0f07b9458;  0 drivers
-o0x7ff0f07b9518 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e771570_0 .net "IP_92c9b3c9", 0 0, o0x7ff0f07b9518;  0 drivers
-o0x7ff0f07b95d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e771640_0 .net "IP_de226f75", 0 0, o0x7ff0f07b95d8;  0 drivers
-o0x7ff0f07b96c8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e771710_0 .net "PORB97836", 0 0, o0x7ff0f07b96c8;  0 drivers
-o0x7ff0f07b80d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e7717e0_0 .net "VCC2P5", 0 0, o0x7ff0f07b80d8;  0 drivers
-o0x7ff0f07b86d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e771880_0 .net "VOUTSN", 0 0, o0x7ff0f07b86d8;  0 drivers
-o0x7ff0f07b8798 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e771950_0 .net "kelvin_DRVCC", 0 0, o0x7ff0f07b8798;  0 drivers
-o0x7ff0f07b8888 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e771a20_0 .net "kelvin_GNDservice", 0 0, o0x7ff0f07b8888;  0 drivers
-o0x7ff0f07b8918 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e771af0_0 .net "kelvin_IN", 0 0, o0x7ff0f07b8918;  0 drivers
-o0x7ff0f07b8378 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e771bc0_0 .net "kelvin_INTVCC", 0 0, o0x7ff0f07b8378;  0 drivers
-o0x7ff0f07b8a68 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e771c60_0 .net "kelvin_VCAP", 0 0, o0x7ff0f07b8a68;  0 drivers
-o0x7ff0f07b82e8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e771d00_0 .net "kelvin_VCC2P5", 0 0, o0x7ff0f07b82e8;  0 drivers
-o0x7ff0f07b8bb8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e771df0_0 .net "kelvin_VOUTSN", 0 0, o0x7ff0f07b8bb8;  0 drivers
-o0x7ff0f07b8168 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e771e90_0 .net "net_0", 0 0, o0x7ff0f07b8168;  0 drivers
-o0x7ff0f07b8a98 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e771f80_0 .net "net_106", 0 0, o0x7ff0f07b8a98;  0 drivers
-o0x7ff0f07b8498 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e772070_0 .net "net_107", 0 0, o0x7ff0f07b8498;  0 drivers
-o0x7ff0f07b8be8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e772160_0 .net "net_108", 0 0, o0x7ff0f07b8be8;  0 drivers
-o0x7ff0f07b8708 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e772250_0 .net "net_109", 0 0, o0x7ff0f07b8708;  0 drivers
-o0x7ff0f07b8b28 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e772340_0 .net "net_110", 0 0, o0x7ff0f07b8b28;  0 drivers
-o0x7ff0f07b89d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e7723e0_0 .net "net_111", 0 0, o0x7ff0f07b89d8;  0 drivers
-o0x7ff0f07b8588 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e772480_0 .net "net_112", 0 0, o0x7ff0f07b8588;  0 drivers
-o0x7ff0f07b8858 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e772570_0 .net "net_113", 0 0, o0x7ff0f07b8858;  0 drivers
-o0x7ff0f07b87c8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e772870_0 .net "net_114", 0 0, o0x7ff0f07b87c8;  0 drivers
-o0x7ff0f07b8948 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e772960_0 .net "net_115", 0 0, o0x7ff0f07b8948;  0 drivers
-o0x7ff0f07b81c8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e772a00_0 .net "net_116", 0 0, o0x7ff0f07b81c8;  0 drivers
-o0x7ff0f07b8258 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e772af0_0 .net "net_117", 0 0, o0x7ff0f07b8258;  0 drivers
-o0x7ff0f07b8408 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e772be0_0 .net "net_118", 0 0, o0x7ff0f07b8408;  0 drivers
-o0x7ff0f07b9128 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55f15e772cd0_0 .net "noconn_IN", 0 0, o0x7ff0f07b9128;  0 drivers
-S_0x55f15e737960 .scope module, "C5" "cap_1u" 2 129, 2 11 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP1";
+    .port_info 1 /INOUT 1 "RP2";
+    .port_info 2 /INOUT 1 "RN2";
+    .port_info 3 /INOUT 1 "RP3";
+    .port_info 4 /INOUT 1 "RN3";
+    .port_info 5 /INOUT 1 "RP4";
+    .port_info 6 /INOUT 1 "RN4";
+    .port_info 7 /INOUT 1 "RP5";
+    .port_info 8 /INOUT 1 "RN5";
+    .port_info 9 /INPUT 1 "CELG";
+    .port_info 10 /INOUT 1 "RN1";
+o0x7eff88ac6018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768963f40_0 .net "CELG", 0 0, o0x7eff88ac6018;  0 drivers
+o0x7eff88ac6fa8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768963fe0_0 .net "RN1", 0 0, o0x7eff88ac6fa8;  0 drivers
+o0x7eff88ac84d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689640d0_0 .net "RN2", 0 0, o0x7eff88ac84d8;  0 drivers
+o0x7eff88ac8aa8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689641d0_0 .net "RN3", 0 0, o0x7eff88ac8aa8;  0 drivers
+o0x7eff88ac9078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768964270_0 .net "RN4", 0 0, o0x7eff88ac9078;  0 drivers
+o0x7eff88ac9468 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768964310_0 .net "RN5", 0 0, o0x7eff88ac9468;  0 drivers
+o0x7eff88ac6078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689643e0_0 .net "RP1", 0 0, o0x7eff88ac6078;  0 drivers
+o0x7eff88ac75a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689644b0_0 .net "RP2", 0 0, o0x7eff88ac75a8;  0 drivers
+o0x7eff88ac8ad8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768964580_0 .net "RP3", 0 0, o0x7eff88ac8ad8;  0 drivers
+o0x7eff88ac8d78 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689646b0_0 .net "RP4", 0 0, o0x7eff88ac8d78;  0 drivers
+o0x7eff88ac9168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768964780_0 .net "RP5", 0 0, o0x7eff88ac9168;  0 drivers
+o0x7eff88ac6048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768964850_0 .net "RX1_0", 0 0, o0x7eff88ac6048;  0 drivers
+o0x7eff88ac6138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689648f0_0 .net "RX1_1", 0 0, o0x7eff88ac6138;  0 drivers
+o0x7eff88ac61f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768964990_0 .net "RX1_10", 0 0, o0x7eff88ac61f8;  0 drivers
+o0x7eff88ac62e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768964a80_0 .net "RX1_11", 0 0, o0x7eff88ac62e8;  0 drivers
+o0x7eff88ac63a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768964b70_0 .net "RX1_12", 0 0, o0x7eff88ac63a8;  0 drivers
+o0x7eff88ac6468 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768964c60_0 .net "RX1_13", 0 0, o0x7eff88ac6468;  0 drivers
+o0x7eff88ac6528 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768964d50_0 .net "RX1_14", 0 0, o0x7eff88ac6528;  0 drivers
+o0x7eff88ac65e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768964e40_0 .net "RX1_15", 0 0, o0x7eff88ac65e8;  0 drivers
+o0x7eff88ac66a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768964f30_0 .net "RX1_16", 0 0, o0x7eff88ac66a8;  0 drivers
+o0x7eff88ac6768 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768965020_0 .net "RX1_17", 0 0, o0x7eff88ac6768;  0 drivers
+o0x7eff88ac6828 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768965110_0 .net "RX1_18", 0 0, o0x7eff88ac6828;  0 drivers
+o0x7eff88ac68e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768965200_0 .net "RX1_19", 0 0, o0x7eff88ac68e8;  0 drivers
+o0x7eff88ac69a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689652f0_0 .net "RX1_2", 0 0, o0x7eff88ac69a8;  0 drivers
+o0x7eff88ac6a68 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689653e0_0 .net "RX1_20", 0 0, o0x7eff88ac6a68;  0 drivers
+o0x7eff88ac6b28 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689654d0_0 .net "RX1_21", 0 0, o0x7eff88ac6b28;  0 drivers
+o0x7eff88ac6be8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689655c0_0 .net "RX1_22", 0 0, o0x7eff88ac6be8;  0 drivers
+o0x7eff88ac6ca8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689656b0_0 .net "RX1_23", 0 0, o0x7eff88ac6ca8;  0 drivers
+o0x7eff88ac6d68 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689657a0_0 .net "RX1_24", 0 0, o0x7eff88ac6d68;  0 drivers
+o0x7eff88ac6e28 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768965890_0 .net "RX1_25", 0 0, o0x7eff88ac6e28;  0 drivers
+o0x7eff88ac6ee8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768965980_0 .net "RX1_26", 0 0, o0x7eff88ac6ee8;  0 drivers
+o0x7eff88ac7068 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768965a70_0 .net "RX1_3", 0 0, o0x7eff88ac7068;  0 drivers
+o0x7eff88ac7128 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768965b60_0 .net "RX1_4", 0 0, o0x7eff88ac7128;  0 drivers
+o0x7eff88ac71e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768965c50_0 .net "RX1_5", 0 0, o0x7eff88ac71e8;  0 drivers
+o0x7eff88ac72a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768965d40_0 .net "RX1_6", 0 0, o0x7eff88ac72a8;  0 drivers
+o0x7eff88ac7368 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768965e30_0 .net "RX1_7", 0 0, o0x7eff88ac7368;  0 drivers
+o0x7eff88ac7428 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768965f20_0 .net "RX1_8", 0 0, o0x7eff88ac7428;  0 drivers
+o0x7eff88ac6228 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768966010_0 .net "RX1_9", 0 0, o0x7eff88ac6228;  0 drivers
+o0x7eff88ac7578 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768966100_0 .net "RX2_0", 0 0, o0x7eff88ac7578;  0 drivers
+o0x7eff88ac7668 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689661f0_0 .net "RX2_1", 0 0, o0x7eff88ac7668;  0 drivers
+o0x7eff88ac7728 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689662e0_0 .net "RX2_10", 0 0, o0x7eff88ac7728;  0 drivers
+o0x7eff88ac7818 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689663d0_0 .net "RX2_11", 0 0, o0x7eff88ac7818;  0 drivers
+o0x7eff88ac78d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689664c0_0 .net "RX2_12", 0 0, o0x7eff88ac78d8;  0 drivers
+o0x7eff88ac7998 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689665b0_0 .net "RX2_13", 0 0, o0x7eff88ac7998;  0 drivers
+o0x7eff88ac7a58 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689666a0_0 .net "RX2_14", 0 0, o0x7eff88ac7a58;  0 drivers
+o0x7eff88ac7b18 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768966790_0 .net "RX2_15", 0 0, o0x7eff88ac7b18;  0 drivers
+o0x7eff88ac7bd8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768966880_0 .net "RX2_16", 0 0, o0x7eff88ac7bd8;  0 drivers
+o0x7eff88ac7c98 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768966970_0 .net "RX2_17", 0 0, o0x7eff88ac7c98;  0 drivers
+o0x7eff88ac7d58 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768966a60_0 .net "RX2_18", 0 0, o0x7eff88ac7d58;  0 drivers
+o0x7eff88ac7e18 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768966b50_0 .net "RX2_19", 0 0, o0x7eff88ac7e18;  0 drivers
+o0x7eff88ac7ed8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768966c40_0 .net "RX2_2", 0 0, o0x7eff88ac7ed8;  0 drivers
+o0x7eff88ac7f98 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768966d30_0 .net "RX2_20", 0 0, o0x7eff88ac7f98;  0 drivers
+o0x7eff88ac8058 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768966e20_0 .net "RX2_21", 0 0, o0x7eff88ac8058;  0 drivers
+o0x7eff88ac8118 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768966f10_0 .net "RX2_22", 0 0, o0x7eff88ac8118;  0 drivers
+o0x7eff88ac81d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768967000_0 .net "RX2_23", 0 0, o0x7eff88ac81d8;  0 drivers
+o0x7eff88ac8298 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689670f0_0 .net "RX2_24", 0 0, o0x7eff88ac8298;  0 drivers
+o0x7eff88ac8358 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689671e0_0 .net "RX2_25", 0 0, o0x7eff88ac8358;  0 drivers
+o0x7eff88ac8418 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689672d0_0 .net "RX2_26", 0 0, o0x7eff88ac8418;  0 drivers
+o0x7eff88ac8598 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689673c0_0 .net "RX2_3", 0 0, o0x7eff88ac8598;  0 drivers
+o0x7eff88ac8658 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689674b0_0 .net "RX2_4", 0 0, o0x7eff88ac8658;  0 drivers
+o0x7eff88ac8718 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689675a0_0 .net "RX2_5", 0 0, o0x7eff88ac8718;  0 drivers
+o0x7eff88ac87d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768967690_0 .net "RX2_6", 0 0, o0x7eff88ac87d8;  0 drivers
+o0x7eff88ac8898 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768967780_0 .net "RX2_7", 0 0, o0x7eff88ac8898;  0 drivers
+o0x7eff88ac8958 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768967870_0 .net "RX2_8", 0 0, o0x7eff88ac8958;  0 drivers
+o0x7eff88ac7758 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768967960_0 .net "RX2_9", 0 0, o0x7eff88ac7758;  0 drivers
+o0x7eff88ac8d48 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768967a50_0 .net "RX4_0", 0 0, o0x7eff88ac8d48;  0 drivers
+o0x7eff88ac8e38 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768967b40_0 .net "RX4_1", 0 0, o0x7eff88ac8e38;  0 drivers
+o0x7eff88ac8ef8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768967c30_0 .net "RX4_2", 0 0, o0x7eff88ac8ef8;  0 drivers
+o0x7eff88ac8fb8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768967d20_0 .net "RX4_3", 0 0, o0x7eff88ac8fb8;  0 drivers
+o0x7eff88ac9138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768967e10_0 .net "RX5_0", 0 0, o0x7eff88ac9138;  0 drivers
+o0x7eff88ac9228 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768967f00_0 .net "RX5_1", 0 0, o0x7eff88ac9228;  0 drivers
+o0x7eff88ac92e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c768967ff0_0 .net "RX5_2", 0 0, o0x7eff88ac92e8;  0 drivers
+o0x7eff88ac93a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c7689680e0_0 .net "RX5_3", 0 0, o0x7eff88ac93a8;  0 drivers
+S_0x55c7688bde60 .scope module, "XR1_0" "resistorunit_b801fb63" 2 46, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /INOUT 1 "PLUS";
-    .port_info 1 /INOUT 1 "MINUS";
-v0x55f15e6fa4b0_0 .net "MINUS", 0 0, o0x7ff0f07b8018;  alias, 0 drivers
-v0x55f15e6fb0f0_0 .net "PLUS", 0 0, o0x7ff0f07b8048;  alias, 0 drivers
-S_0x55f15e7666f0 .scope module, "C6" "cap_100n" 2 134, 2 16 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c7688bf4b0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c7688c00f0_0 .net "RN", 0 0, o0x7eff88ac6048;  alias, 0 drivers
+v0x55c7688bfec0_0 .net "RP", 0 0, o0x7eff88ac6078;  alias, 0 drivers
+S_0x55c76894d3c0 .scope module, "XR1_1" "resistorunit_b801fb63" 2 53, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /INOUT 1 "PLUS";
-    .port_info 1 /INOUT 1 "MINUS";
-v0x55f15e6faec0_0 .net "MINUS", 0 0, o0x7ff0f07b8018;  alias, 0 drivers
-v0x55f15e7668f0_0 .net "PLUS", 0 0, o0x7ff0f07b80d8;  alias, 0 drivers
-S_0x55f15e7669f0 .scope module, "G1" "alibgnd" 2 326, 2 90 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76894d5f0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76894d6e0_0 .net "RN", 0 0, o0x7eff88ac6138;  alias, 0 drivers
+v0x55c76894d780_0 .net "RP", 0 0, o0x7eff88ac6048;  alias, 0 drivers
+S_0x55c76894d8c0 .scope module, "XR1_10" "resistorunit_b801fb63" 2 116, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "GND";
-v0x55f15e766c00_0 .net "GND", 0 0, o0x7ff0f07b8168;  alias, 0 drivers
-S_0x55f15e766d20 .scope module, "I_INTVCCx" "ipwl_0x0_10d998ux0_11d0ux1d0n" 2 189, 2 58 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76894db20_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76894dc10_0 .net "RN", 0 0, o0x7eff88ac61f8;  alias, 0 drivers
+v0x55c76894dcd0_0 .net "RP", 0 0, o0x7eff88ac6228;  alias, 0 drivers
+S_0x55c76894ddf0 .scope module, "XR1_11" "resistorunit_b801fb63" 2 123, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e766f00_0 .net "MINUS", 0 0, o0x7ff0f07b8018;  alias, 0 drivers
-v0x55f15e767010_0 .net "PLUS", 0 0, o0x7ff0f07b81c8;  alias, 0 drivers
-S_0x55f15e767130 .scope module, "I_VCC2P5x" "ipwl_0x0_10d998ux0_11d0ux1d0n" 2 194, 2 58 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76894e020_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76894e0e0_0 .net "RN", 0 0, o0x7eff88ac62e8;  alias, 0 drivers
+v0x55c76894e1a0_0 .net "RP", 0 0, o0x7eff88ac61f8;  alias, 0 drivers
+S_0x55c76894e2e0 .scope module, "XR1_12" "resistorunit_b801fb63" 2 130, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e767360_0 .net "MINUS", 0 0, o0x7ff0f07b8018;  alias, 0 drivers
-v0x55f15e767420_0 .net "PLUS", 0 0, o0x7ff0f07b8258;  alias, 0 drivers
-S_0x55f15e767540 .scope module, "R3" "res_1" 2 139, 2 21 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76894e560_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76894e620_0 .net "RN", 0 0, o0x7eff88ac63a8;  alias, 0 drivers
+v0x55c76894e6e0_0 .net "RP", 0 0, o0x7eff88ac62e8;  alias, 0 drivers
+S_0x55c76894e7f0 .scope module, "XR1_13" "resistorunit_b801fb63" 2 137, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /INOUT 1 "PLUS";
-    .port_info 1 /INOUT 1 "MINUS";
-v0x55f15e767720_0 .net "MINUS", 0 0, o0x7ff0f07b80d8;  alias, 0 drivers
-v0x55f15e7677e0_0 .net "PLUS", 0 0, o0x7ff0f07b82e8;  alias, 0 drivers
-S_0x55f15e7678e0 .scope module, "R4" "res_1" 2 144, 2 21 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76894e9d0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76894ea90_0 .net "RN", 0 0, o0x7eff88ac6468;  alias, 0 drivers
+v0x55c76894eb50_0 .net "RP", 0 0, o0x7eff88ac63a8;  alias, 0 drivers
+S_0x55c76894ec90 .scope module, "XR1_14" "resistorunit_b801fb63" 2 144, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /INOUT 1 "PLUS";
-    .port_info 1 /INOUT 1 "MINUS";
-v0x55f15e767ac0_0 .net "MINUS", 0 0, o0x7ff0f07b8048;  alias, 0 drivers
-v0x55f15e767b80_0 .net "PLUS", 0 0, o0x7ff0f07b8378;  alias, 0 drivers
-S_0x55f15e767c80 .scope module, "VI__GND" "vdc_0" 2 179, 2 47 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76894eec0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76894ef80_0 .net "RN", 0 0, o0x7eff88ac6528;  alias, 0 drivers
+v0x55c76894f040_0 .net "RP", 0 0, o0x7eff88ac6468;  alias, 0 drivers
+S_0x55c76894f180 .scope module, "XR1_15" "resistorunit_b801fb63" 2 151, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e767ea0_0 .net "MINUS", 0 0, o0x7ff0f07b8408;  alias, 0 drivers
-v0x55f15e767f80_0 .net "PLUS", 0 0, o0x7ff0f07b8018;  alias, 0 drivers
-S_0x55f15e768080 .scope module, "VI__GNDservice" "vdc_0" 2 271, 2 47 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76894f3b0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76894f470_0 .net "RN", 0 0, o0x7eff88ac65e8;  alias, 0 drivers
+v0x55c76894f530_0 .net "RP", 0 0, o0x7eff88ac6528;  alias, 0 drivers
+S_0x55c76894f670 .scope module, "XR1_16" "resistorunit_b801fb63" 2 158, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e768250_0 .net "MINUS", 0 0, o0x7ff0f07b8498;  alias, 0 drivers
-v0x55f15e768330_0 .net "PLUS", 0 0, o0x7ff0f07b84c8;  alias, 0 drivers
-S_0x55f15e768450 .scope module, "VI__IN" "vdc_0" 2 169, 2 47 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76894f8e0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76894fab0_0 .net "RN", 0 0, o0x7eff88ac66a8;  alias, 0 drivers
+v0x55c76894fb70_0 .net "RP", 0 0, o0x7eff88ac65e8;  alias, 0 drivers
+S_0x55c76894fcb0 .scope module, "XR1_17" "resistorunit_b801fb63" 2 165, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e768620_0 .net "MINUS", 0 0, o0x7ff0f07b8558;  alias, 0 drivers
-v0x55f15e768700_0 .net "PLUS", 0 0, o0x7ff0f07b8588;  alias, 0 drivers
-S_0x55f15e768820 .scope module, "VI__INTVCC" "vdc_0" 2 204, 2 47 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76894fee0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76894ffa0_0 .net "RN", 0 0, o0x7eff88ac6768;  alias, 0 drivers
+v0x55c768950060_0 .net "RP", 0 0, o0x7eff88ac66a8;  alias, 0 drivers
+S_0x55c7689501a0 .scope module, "XR1_18" "resistorunit_b801fb63" 2 172, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e768a40_0 .net "MINUS", 0 0, o0x7ff0f07b8048;  alias, 0 drivers
-v0x55f15e768b50_0 .net "PLUS", 0 0, o0x7ff0f07b81c8;  alias, 0 drivers
-S_0x55f15e768c30 .scope module, "VI__VCC2P5" "vdc_0" 2 209, 2 47 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c7689503d0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768950490_0 .net "RN", 0 0, o0x7eff88ac6828;  alias, 0 drivers
+v0x55c768950550_0 .net "RP", 0 0, o0x7eff88ac6768;  alias, 0 drivers
+S_0x55c768950690 .scope module, "XR1_19" "resistorunit_b801fb63" 2 179, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e768e50_0 .net "MINUS", 0 0, o0x7ff0f07b80d8;  alias, 0 drivers
-v0x55f15e768f60_0 .net "PLUS", 0 0, o0x7ff0f07b8258;  alias, 0 drivers
-S_0x55f15e769040 .scope module, "VI__VOUTSN" "vdc_0" 2 214, 2 47 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c7689508c0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768950980_0 .net "RN", 0 0, o0x7eff88ac68e8;  alias, 0 drivers
+v0x55c768950a40_0 .net "RP", 0 0, o0x7eff88ac6828;  alias, 0 drivers
+S_0x55c768950b80 .scope module, "XR1_2" "resistorunit_b801fb63" 2 60, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e769260_0 .net "MINUS", 0 0, o0x7ff0f07b86d8;  alias, 0 drivers
-v0x55f15e769340_0 .net "PLUS", 0 0, o0x7ff0f07b8708;  alias, 0 drivers
-S_0x55f15e769460 .scope module, "VI__kelvin_DRVCC" "vdc_0" 2 291, 2 47 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768950db0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768950e70_0 .net "RN", 0 0, o0x7eff88ac69a8;  alias, 0 drivers
+v0x55c768950f30_0 .net "RP", 0 0, o0x7eff88ac6138;  alias, 0 drivers
+S_0x55c768951070 .scope module, "XR1_20" "resistorunit_b801fb63" 2 186, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e769680_0 .net "MINUS", 0 0, o0x7ff0f07b8798;  alias, 0 drivers
-v0x55f15e769760_0 .net "PLUS", 0 0, o0x7ff0f07b87c8;  alias, 0 drivers
-S_0x55f15e769880 .scope module, "VI__kelvin_GNDservice" "vdc_0" 2 321, 2 47 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c7689512a0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768951360_0 .net "RN", 0 0, o0x7eff88ac6a68;  alias, 0 drivers
+v0x55c768951420_0 .net "RP", 0 0, o0x7eff88ac68e8;  alias, 0 drivers
+S_0x55c768951560 .scope module, "XR1_21" "resistorunit_b801fb63" 2 193, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e769aa0_0 .net "MINUS", 0 0, o0x7ff0f07b8858;  alias, 0 drivers
-v0x55f15e769b80_0 .net "PLUS", 0 0, o0x7ff0f07b8888;  alias, 0 drivers
-S_0x55f15e769ca0 .scope module, "VI__kelvin_IN" "vdc_0" 2 261, 2 47 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768951790_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768951850_0 .net "RN", 0 0, o0x7eff88ac6b28;  alias, 0 drivers
+v0x55c768951910_0 .net "RP", 0 0, o0x7eff88ac6a68;  alias, 0 drivers
+S_0x55c768951a50 .scope module, "XR1_22" "resistorunit_b801fb63" 2 200, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e769ec0_0 .net "MINUS", 0 0, o0x7ff0f07b8918;  alias, 0 drivers
-v0x55f15e769fa0_0 .net "PLUS", 0 0, o0x7ff0f07b8948;  alias, 0 drivers
-S_0x55f15e76a0c0 .scope module, "VI__kelvin_INTVCC" "vdc_0" 2 301, 2 47 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768951c80_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768951d40_0 .net "RN", 0 0, o0x7eff88ac6be8;  alias, 0 drivers
+v0x55c768951e00_0 .net "RP", 0 0, o0x7eff88ac6b28;  alias, 0 drivers
+S_0x55c768951f40 .scope module, "XR1_23" "resistorunit_b801fb63" 2 207, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e76a3f0_0 .net "MINUS", 0 0, o0x7ff0f07b8378;  alias, 0 drivers
-v0x55f15e76a4e0_0 .net "PLUS", 0 0, o0x7ff0f07b89d8;  alias, 0 drivers
-S_0x55f15e76a5e0 .scope module, "VI__kelvin_VCAP" "vdc_0" 2 281, 2 47 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768952280_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768952550_0 .net "RN", 0 0, o0x7eff88ac6ca8;  alias, 0 drivers
+v0x55c768952610_0 .net "RP", 0 0, o0x7eff88ac6be8;  alias, 0 drivers
+S_0x55c768952750 .scope module, "XR1_24" "resistorunit_b801fb63" 2 214, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e76a800_0 .net "MINUS", 0 0, o0x7ff0f07b8a68;  alias, 0 drivers
-v0x55f15e76a8e0_0 .net "PLUS", 0 0, o0x7ff0f07b8a98;  alias, 0 drivers
-S_0x55f15e76aa00 .scope module, "VI__kelvin_VCC2P5" "vdc_0" 2 306, 2 47 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768952980_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768952a40_0 .net "RN", 0 0, o0x7eff88ac6d68;  alias, 0 drivers
+v0x55c768952b00_0 .net "RP", 0 0, o0x7eff88ac6ca8;  alias, 0 drivers
+S_0x55c768952c40 .scope module, "XR1_25" "resistorunit_b801fb63" 2 221, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e76ac20_0 .net "MINUS", 0 0, o0x7ff0f07b82e8;  alias, 0 drivers
-v0x55f15e76ad10_0 .net "PLUS", 0 0, o0x7ff0f07b8b28;  alias, 0 drivers
-S_0x55f15e76ae10 .scope module, "VI__kelvin_VOUTSN" "vdc_0" 2 311, 2 47 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768952e70_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768952f30_0 .net "RN", 0 0, o0x7eff88ac6e28;  alias, 0 drivers
+v0x55c768952ff0_0 .net "RP", 0 0, o0x7eff88ac6d68;  alias, 0 drivers
+S_0x55c768953130 .scope module, "XR1_26" "resistorunit_b801fb63" 2 228, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e76b030_0 .net "MINUS", 0 0, o0x7ff0f07b8bb8;  alias, 0 drivers
-v0x55f15e76b110_0 .net "PLUS", 0 0, o0x7ff0f07b8be8;  alias, 0 drivers
-S_0x55f15e76b230 .scope module, "V_GNDservicex" "vpwl_0x0_10d998ux0_11d0ux0" 2 266, 2 64 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768953360_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768953420_0 .net "RN", 0 0, o0x7eff88ac6ee8;  alias, 0 drivers
+v0x55c7689534e0_0 .net "RP", 0 0, o0x7eff88ac6e28;  alias, 0 drivers
+S_0x55c768953620 .scope module, "XR1_27" "resistorunit_b801fb63" 2 235, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e76b450_0 .net "MINUS", 0 0, o0x7ff0f07b8018;  alias, 0 drivers
-v0x55f15e76b510_0 .net "PLUS", 0 0, o0x7ff0f07b8498;  alias, 0 drivers
-S_0x55f15e76b620 .scope module, "V_GNDx" "vpwl_0x0_10ux0_11ux0" 2 174, 2 53 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768953850_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768953910_0 .net "RN", 0 0, o0x7eff88ac6fa8;  alias, 0 drivers
+v0x55c7689539d0_0 .net "RP", 0 0, o0x7eff88ac6ee8;  alias, 0 drivers
+S_0x55c768953b10 .scope module, "XR1_3" "resistorunit_b801fb63" 2 67, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e76b840_0 .net "MINUS", 0 0, o0x7ff0f07b8168;  alias, 0 drivers
-v0x55f15e76b930_0 .net "PLUS", 0 0, o0x7ff0f07b8408;  alias, 0 drivers
-S_0x55f15e76ba20 .scope module, "V_INx" "vpwl_0x0_10d998ux0_11d0ux12" 2 149, 2 26 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768953d40_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768953e00_0 .net "RN", 0 0, o0x7eff88ac7068;  alias, 0 drivers
+v0x55c768953ec0_0 .net "RP", 0 0, o0x7eff88ac69a8;  alias, 0 drivers
+S_0x55c768954000 .scope module, "XR1_4" "resistorunit_b801fb63" 2 74, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e76bc40_0 .net "MINUS", 0 0, o0x7ff0f07b8018;  alias, 0 drivers
-v0x55f15e76bd00_0 .net "PLUS", 0 0, o0x7ff0f07b8588;  alias, 0 drivers
-S_0x55f15e76be10 .scope module, "V_VOUTSNx" "vpwl_0x0_10d998ux0_11d0ux0" 2 199, 2 64 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768954230_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c7689542f0_0 .net "RN", 0 0, o0x7eff88ac7128;  alias, 0 drivers
+v0x55c7689543b0_0 .net "RP", 0 0, o0x7eff88ac7068;  alias, 0 drivers
+S_0x55c7689544f0 .scope module, "XR1_5" "resistorunit_b801fb63" 2 81, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e76c030_0 .net "MINUS", 0 0, o0x7ff0f07b8018;  alias, 0 drivers
-v0x55f15e76c0f0_0 .net "PLUS", 0 0, o0x7ff0f07b8708;  alias, 0 drivers
-S_0x55f15e76c200 .scope module, "V_kelvin_DRVCCx" "vpwl_0x0_10d0ux5_3d0mx5d1" 2 286, 2 85 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768954720_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c7689547e0_0 .net "RN", 0 0, o0x7eff88ac71e8;  alias, 0 drivers
+v0x55c7689548a0_0 .net "RP", 0 0, o0x7eff88ac7128;  alias, 0 drivers
+S_0x55c7689549e0 .scope module, "XR1_6" "resistorunit_b801fb63" 2 88, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e76c420_0 .net "MINUS", 0 0, o0x7ff0f07b8018;  alias, 0 drivers
-v0x55f15e76c5f0_0 .net "PLUS", 0 0, o0x7ff0f07b87c8;  alias, 0 drivers
-S_0x55f15e76c700 .scope module, "V_kelvin_GNDservicex" "vpwl_0x0_10d998ux0_11d0ux0" 2 316, 2 64 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768954c10_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768954cd0_0 .net "RN", 0 0, o0x7eff88ac72a8;  alias, 0 drivers
+v0x55c768954d90_0 .net "RP", 0 0, o0x7eff88ac71e8;  alias, 0 drivers
+S_0x55c768954ed0 .scope module, "XR1_7" "resistorunit_b801fb63" 2 95, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e76c920_0 .net "MINUS", 0 0, o0x7ff0f07b8018;  alias, 0 drivers
-v0x55f15e76c9e0_0 .net "PLUS", 0 0, o0x7ff0f07b8858;  alias, 0 drivers
-S_0x55f15e76caf0 .scope module, "V_kelvin_VCAPx" "vpwl_0x0_10d998ux0_11d0ux20" 2 276, 2 80 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768955100_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c7689551c0_0 .net "RN", 0 0, o0x7eff88ac7368;  alias, 0 drivers
+v0x55c768955280_0 .net "RP", 0 0, o0x7eff88ac72a8;  alias, 0 drivers
+S_0x55c7689553c0 .scope module, "XR1_8" "resistorunit_b801fb63" 2 102, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e76cd10_0 .net "MINUS", 0 0, o0x7ff0f07b8018;  alias, 0 drivers
-v0x55f15e76cdd0_0 .net "PLUS", 0 0, o0x7ff0f07b8a98;  alias, 0 drivers
-S_0x55f15e76cee0 .scope module, "V_kelvin_VOUTSNx" "vpwl_0x0_10d998ux0_11d0ux0" 2 296, 2 64 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c7689555f0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c7689556b0_0 .net "RN", 0 0, o0x7eff88ac7428;  alias, 0 drivers
+v0x55c768955770_0 .net "RP", 0 0, o0x7eff88ac7368;  alias, 0 drivers
+S_0x55c7689558b0 .scope module, "XR1_9" "resistorunit_b801fb63" 2 109, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e76d100_0 .net "MINUS", 0 0, o0x7ff0f07b8018;  alias, 0 drivers
-v0x55f15e76d1c0_0 .net "PLUS", 0 0, o0x7ff0f07b8be8;  alias, 0 drivers
-S_0x55f15e76d2d0 .scope module, "XCELG" "vpwl_0x0" 2 154, 2 32 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768955ae0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768955ba0_0 .net "RN", 0 0, o0x7eff88ac6228;  alias, 0 drivers
+v0x55c768955c90_0 .net "RP", 0 0, o0x7eff88ac7428;  alias, 0 drivers
+S_0x55c768955d90 .scope module, "XR2_0" "resistorunit_b801fb63" 2 242, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e76d4f0_0 .net "MINUS", 0 0, o0x7ff0f07b8018;  alias, 0 drivers
-v0x55f15e76d5b0_0 .net "PLUS", 0 0, o0x7ff0f07b8f78;  alias, 0 drivers
-S_0x55f15e76d6d0 .scope module, "XCELSUB" "vpwl_0x0" 2 184, 2 32 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768955fc0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768956080_0 .net "RN", 0 0, o0x7eff88ac7578;  alias, 0 drivers
+v0x55c768956140_0 .net "RP", 0 0, o0x7eff88ac75a8;  alias, 0 drivers
+S_0x55c768956290 .scope module, "XR2_1" "resistorunit_b801fb63" 2 249, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e76d8f0_0 .net "MINUS", 0 0, o0x7ff0f07b8018;  alias, 0 drivers
-v0x55f15e76d9b0_0 .net "PLUS", 0 0, o0x7ff0f07b9008;  alias, 0 drivers
-S_0x55f15e76dad0 .scope module, "XCELV" "vpwl_0x0_10d0ux0_11d0ux5" 2 159, 2 37 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c7689564c0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768956580_0 .net "RN", 0 0, o0x7eff88ac7668;  alias, 0 drivers
+v0x55c768956640_0 .net "RP", 0 0, o0x7eff88ac7578;  alias, 0 drivers
+S_0x55c768956780 .scope module, "XR2_10" "resistorunit_b801fb63" 2 312, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e76dcf0_0 .net "MINUS", 0 0, o0x7ff0f07b8018;  alias, 0 drivers
-v0x55f15e76ddb0_0 .net "PLUS", 0 0, o0x7ff0f07b9098;  alias, 0 drivers
-S_0x55f15e76ded0 .scope module, "XIP_051b7bcb" "SIMbias" 2 219, 2 72 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c7689569b0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768956a70_0 .net "RN", 0 0, o0x7eff88ac7728;  alias, 0 drivers
+v0x55c768956b30_0 .net "RP", 0 0, o0x7eff88ac7758;  alias, 0 drivers
+S_0x55c768956c80 .scope module, "XR2_11" "resistorunit_b801fb63" 2 319, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "V";
-    .port_info 1 /OUTPUT 1 "IP";
-    .port_info 2 /OUTPUT 1 "IN";
-v0x55f15e76e100_0 .net "IN", 0 0, o0x7ff0f07b9128;  alias, 0 drivers
-v0x55f15e76e1e0_0 .net "IP", 0 0, o0x7ff0f07b9158;  alias, 0 drivers
-v0x55f15e76e2a0_0 .net "V", 0 0, o0x7ff0f07b9098;  alias, 0 drivers
-S_0x55f15e76e3e0 .scope module, "XIP_30a0e5c5" "SIMbias" 2 225, 2 72 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768956eb0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768956f70_0 .net "RN", 0 0, o0x7eff88ac7818;  alias, 0 drivers
+v0x55c768957030_0 .net "RP", 0 0, o0x7eff88ac7728;  alias, 0 drivers
+S_0x55c768957170 .scope module, "XR2_12" "resistorunit_b801fb63" 2 326, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "V";
-    .port_info 1 /OUTPUT 1 "IP";
-    .port_info 2 /OUTPUT 1 "IN";
-v0x55f15e76e820_0 .net "IN", 0 0, o0x7ff0f07b9128;  alias, 0 drivers
-v0x55f15e76e910_0 .net "IP", 0 0, o0x7ff0f07b9218;  alias, 0 drivers
-v0x55f15e76e9b0_0 .net "V", 0 0, o0x7ff0f07b9098;  alias, 0 drivers
-S_0x55f15e76eb30 .scope module, "XIP_86807c55" "SIMbias" 2 231, 2 72 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c7689575b0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768957a80_0 .net "RN", 0 0, o0x7eff88ac78d8;  alias, 0 drivers
+v0x55c768957b40_0 .net "RP", 0 0, o0x7eff88ac7818;  alias, 0 drivers
+S_0x55c768957c80 .scope module, "XR2_13" "resistorunit_b801fb63" 2 333, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "V";
-    .port_info 1 /OUTPUT 1 "IP";
-    .port_info 2 /OUTPUT 1 "IN";
-v0x55f15e76ed60_0 .net "IN", 0 0, o0x7ff0f07b9128;  alias, 0 drivers
-v0x55f15e76ee70_0 .net "IP", 0 0, o0x7ff0f07b92d8;  alias, 0 drivers
-v0x55f15e76ef30_0 .net "V", 0 0, o0x7ff0f07b9098;  alias, 0 drivers
-S_0x55f15e76f030 .scope module, "XIP_87250ba9" "SIMbias" 2 237, 2 72 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768957eb0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768957f70_0 .net "RN", 0 0, o0x7eff88ac7998;  alias, 0 drivers
+v0x55c768958030_0 .net "RP", 0 0, o0x7eff88ac78d8;  alias, 0 drivers
+S_0x55c768958170 .scope module, "XR2_14" "resistorunit_b801fb63" 2 340, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "V";
-    .port_info 1 /OUTPUT 1 "IP";
-    .port_info 2 /OUTPUT 1 "IN";
-v0x55f15e76f260_0 .net "IN", 0 0, o0x7ff0f07b9128;  alias, 0 drivers
-v0x55f15e76f320_0 .net "IP", 0 0, o0x7ff0f07b9398;  alias, 0 drivers
-v0x55f15e76f3e0_0 .net "V", 0 0, o0x7ff0f07b9098;  alias, 0 drivers
-S_0x55f15e76f4e0 .scope module, "XIP_9219bb98" "SIMbias" 2 243, 2 72 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c7689583a0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768958460_0 .net "RN", 0 0, o0x7eff88ac7a58;  alias, 0 drivers
+v0x55c768958520_0 .net "RP", 0 0, o0x7eff88ac7998;  alias, 0 drivers
+S_0x55c768958660 .scope module, "XR2_15" "resistorunit_b801fb63" 2 347, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "V";
-    .port_info 1 /OUTPUT 1 "IP";
-    .port_info 2 /OUTPUT 1 "IN";
-v0x55f15e76f6c0_0 .net "IN", 0 0, o0x7ff0f07b9128;  alias, 0 drivers
-v0x55f15e76f780_0 .net "IP", 0 0, o0x7ff0f07b9458;  alias, 0 drivers
-v0x55f15e76f840_0 .net "V", 0 0, o0x7ff0f07b9098;  alias, 0 drivers
-S_0x55f15e76f970 .scope module, "XIP_92c9b3c9" "SIMbias" 2 249, 2 72 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768958890_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768958950_0 .net "RN", 0 0, o0x7eff88ac7b18;  alias, 0 drivers
+v0x55c768958a10_0 .net "RP", 0 0, o0x7eff88ac7a58;  alias, 0 drivers
+S_0x55c768958b50 .scope module, "XR2_16" "resistorunit_b801fb63" 2 354, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "V";
-    .port_info 1 /OUTPUT 1 "IP";
-    .port_info 2 /OUTPUT 1 "IN";
-v0x55f15e76fb50_0 .net "IN", 0 0, o0x7ff0f07b9128;  alias, 0 drivers
-v0x55f15e76fc10_0 .net "IP", 0 0, o0x7ff0f07b9518;  alias, 0 drivers
-v0x55f15e76fcd0_0 .net "V", 0 0, o0x7ff0f07b9098;  alias, 0 drivers
-S_0x55f15e76fe00 .scope module, "XIP_de226f75" "SIMbias" 2 255, 2 72 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768958d80_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768958e40_0 .net "RN", 0 0, o0x7eff88ac7bd8;  alias, 0 drivers
+v0x55c768958f00_0 .net "RP", 0 0, o0x7eff88ac7b18;  alias, 0 drivers
+S_0x55c768959040 .scope module, "XR2_17" "resistorunit_b801fb63" 2 361, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "V";
-    .port_info 1 /OUTPUT 1 "IP";
-    .port_info 2 /OUTPUT 1 "IN";
-v0x55f15e770030_0 .net "IN", 0 0, o0x7ff0f07b9128;  alias, 0 drivers
-v0x55f15e7700f0_0 .net "IP", 0 0, o0x7ff0f07b95d8;  alias, 0 drivers
-v0x55f15e7701b0_0 .net "V", 0 0, o0x7ff0f07b9098;  alias, 0 drivers
-S_0x55f15e7702e0 .scope module, "XNCip" "STONEnoconn" 2 125, 2 5 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768959270_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768959330_0 .net "RN", 0 0, o0x7eff88ac7c98;  alias, 0 drivers
+v0x55c7689593f0_0 .net "RP", 0 0, o0x7eff88ac7bd8;  alias, 0 drivers
+S_0x55c768959530 .scope module, "XR2_18" "resistorunit_b801fb63" 2 368, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "noconn";
-v0x55f15e7704e0_0 .net "noconn", 0 0, o0x7ff0f07b9128;  alias, 0 drivers
-S_0x55f15e7705e0 .scope module, "XPORB" "vpwl_0x0_11ux0_11d001ux5" 2 164, 2 42 0, S_0x55f15e6faf60;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768959760_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768959820_0 .net "RN", 0 0, o0x7eff88ac7d58;  alias, 0 drivers
+v0x55c7689598e0_0 .net "RP", 0 0, o0x7eff88ac7c98;  alias, 0 drivers
+S_0x55c768959a20 .scope module, "XR2_19" "resistorunit_b801fb63" 2 375, 2 14 0, S_0x55c7688bff60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "PLUS";
-    .port_info 1 /OUTPUT 1 "MINUS";
-v0x55f15e770800_0 .net "MINUS", 0 0, o0x7ff0f07b8018;  alias, 0 drivers
-v0x55f15e7708c0_0 .net "PLUS", 0 0, o0x7ff0f07b96c8;  alias, 0 drivers
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768959c50_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768959d10_0 .net "RN", 0 0, o0x7eff88ac7e18;  alias, 0 drivers
+v0x55c768959dd0_0 .net "RP", 0 0, o0x7eff88ac7d58;  alias, 0 drivers
+S_0x55c768959f10 .scope module, "XR2_2" "resistorunit_b801fb63" 2 256, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76895a140_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76895a200_0 .net "RN", 0 0, o0x7eff88ac7ed8;  alias, 0 drivers
+v0x55c76895a2c0_0 .net "RP", 0 0, o0x7eff88ac7668;  alias, 0 drivers
+S_0x55c76895a400 .scope module, "XR2_20" "resistorunit_b801fb63" 2 382, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76895a630_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76895a6f0_0 .net "RN", 0 0, o0x7eff88ac7f98;  alias, 0 drivers
+v0x55c76895a7b0_0 .net "RP", 0 0, o0x7eff88ac7e18;  alias, 0 drivers
+S_0x55c76895a8f0 .scope module, "XR2_21" "resistorunit_b801fb63" 2 389, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76895ab20_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76895abe0_0 .net "RN", 0 0, o0x7eff88ac8058;  alias, 0 drivers
+v0x55c76895aca0_0 .net "RP", 0 0, o0x7eff88ac7f98;  alias, 0 drivers
+S_0x55c76895ade0 .scope module, "XR2_22" "resistorunit_b801fb63" 2 396, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76895b010_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76895b0d0_0 .net "RN", 0 0, o0x7eff88ac8118;  alias, 0 drivers
+v0x55c76895b190_0 .net "RP", 0 0, o0x7eff88ac8058;  alias, 0 drivers
+S_0x55c76895b2d0 .scope module, "XR2_23" "resistorunit_b801fb63" 2 403, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76895b500_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76895b5c0_0 .net "RN", 0 0, o0x7eff88ac81d8;  alias, 0 drivers
+v0x55c76895b680_0 .net "RP", 0 0, o0x7eff88ac8118;  alias, 0 drivers
+S_0x55c76895b7c0 .scope module, "XR2_24" "resistorunit_b801fb63" 2 410, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76895b9f0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76895bab0_0 .net "RN", 0 0, o0x7eff88ac8298;  alias, 0 drivers
+v0x55c76895bb70_0 .net "RP", 0 0, o0x7eff88ac81d8;  alias, 0 drivers
+S_0x55c76895bcb0 .scope module, "XR2_25" "resistorunit_b801fb63" 2 417, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76895bee0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76895bfa0_0 .net "RN", 0 0, o0x7eff88ac8358;  alias, 0 drivers
+v0x55c76895c060_0 .net "RP", 0 0, o0x7eff88ac8298;  alias, 0 drivers
+S_0x55c76895c1a0 .scope module, "XR2_26" "resistorunit_b801fb63" 2 424, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76895c3d0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76895c490_0 .net "RN", 0 0, o0x7eff88ac8418;  alias, 0 drivers
+v0x55c76895c550_0 .net "RP", 0 0, o0x7eff88ac8358;  alias, 0 drivers
+S_0x55c76895c690 .scope module, "XR2_27" "resistorunit_b801fb63" 2 431, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76895c8c0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76895c980_0 .net "RN", 0 0, o0x7eff88ac84d8;  alias, 0 drivers
+v0x55c76895ca40_0 .net "RP", 0 0, o0x7eff88ac8418;  alias, 0 drivers
+S_0x55c76895cb80 .scope module, "XR2_3" "resistorunit_b801fb63" 2 263, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76895cdb0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76895ce70_0 .net "RN", 0 0, o0x7eff88ac8598;  alias, 0 drivers
+v0x55c76895cf30_0 .net "RP", 0 0, o0x7eff88ac7ed8;  alias, 0 drivers
+S_0x55c76895d070 .scope module, "XR2_4" "resistorunit_b801fb63" 2 270, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76895d2a0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76895d360_0 .net "RN", 0 0, o0x7eff88ac8658;  alias, 0 drivers
+v0x55c76895d420_0 .net "RP", 0 0, o0x7eff88ac8598;  alias, 0 drivers
+S_0x55c76895d560 .scope module, "XR2_5" "resistorunit_b801fb63" 2 277, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76895d790_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76895d850_0 .net "RN", 0 0, o0x7eff88ac8718;  alias, 0 drivers
+v0x55c76895d910_0 .net "RP", 0 0, o0x7eff88ac8658;  alias, 0 drivers
+S_0x55c76895da50 .scope module, "XR2_6" "resistorunit_b801fb63" 2 284, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76895dc80_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76895dd40_0 .net "RN", 0 0, o0x7eff88ac87d8;  alias, 0 drivers
+v0x55c76895de00_0 .net "RP", 0 0, o0x7eff88ac8718;  alias, 0 drivers
+S_0x55c76895df40 .scope module, "XR2_7" "resistorunit_b801fb63" 2 291, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76895e170_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76895e230_0 .net "RN", 0 0, o0x7eff88ac8898;  alias, 0 drivers
+v0x55c76895e2f0_0 .net "RP", 0 0, o0x7eff88ac87d8;  alias, 0 drivers
+S_0x55c76895e430 .scope module, "XR2_8" "resistorunit_b801fb63" 2 298, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76895e660_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76895e720_0 .net "RN", 0 0, o0x7eff88ac8958;  alias, 0 drivers
+v0x55c76895e7e0_0 .net "RP", 0 0, o0x7eff88ac8898;  alias, 0 drivers
+S_0x55c76895e920 .scope module, "XR2_9" "resistorunit_b801fb63" 2 305, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76895eb50_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76895ec10_0 .net "RN", 0 0, o0x7eff88ac7758;  alias, 0 drivers
+v0x55c76895ed00_0 .net "RP", 0 0, o0x7eff88ac8958;  alias, 0 drivers
+S_0x55c76895ee00 .scope module, "XR3_56" "resistorunit_b801fb63" 2 438, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76895f030_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76895f0f0_0 .net "RN", 0 0, o0x7eff88ac8aa8;  alias, 0 drivers
+v0x55c76895f1b0_0 .net "RP", 0 0, o0x7eff88ac8ad8;  alias, 0 drivers
+S_0x55c76895f300 .scope module, "XR3_57" "resistorunit_b801fb63" 2 445, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76895f530_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76895f5f0_0 .net "RN", 0 0, o0x7eff88ac8aa8;  alias, 0 drivers
+v0x55c76895f6e0_0 .net "RP", 0 0, o0x7eff88ac8ad8;  alias, 0 drivers
+S_0x55c76895f7e0 .scope module, "XR3_58" "resistorunit_b801fb63" 2 452, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76895fa10_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c76895fad0_0 .net "RN", 0 0, o0x7eff88ac8aa8;  alias, 0 drivers
+v0x55c76895fbe0_0 .net "RP", 0 0, o0x7eff88ac8ad8;  alias, 0 drivers
+S_0x55c76895fd10 .scope module, "XR3_59" "resistorunit_b801fb63" 2 459, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c76895ff40_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768960000_0 .net "RN", 0 0, o0x7eff88ac8aa8;  alias, 0 drivers
+v0x55c7689600c0_0 .net "RP", 0 0, o0x7eff88ac8ad8;  alias, 0 drivers
+S_0x55c7689601a0 .scope module, "XR4_0" "resistorunit_b801fb63" 2 466, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c7689603d0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768960490_0 .net "RN", 0 0, o0x7eff88ac8d48;  alias, 0 drivers
+v0x55c768960550_0 .net "RP", 0 0, o0x7eff88ac8d78;  alias, 0 drivers
+S_0x55c7689606a0 .scope module, "XR4_1" "resistorunit_b801fb63" 2 473, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c7689608d0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768960990_0 .net "RN", 0 0, o0x7eff88ac8e38;  alias, 0 drivers
+v0x55c768960a50_0 .net "RP", 0 0, o0x7eff88ac8d48;  alias, 0 drivers
+S_0x55c768960b90 .scope module, "XR4_2" "resistorunit_b801fb63" 2 480, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768960dc0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768960e80_0 .net "RN", 0 0, o0x7eff88ac8ef8;  alias, 0 drivers
+v0x55c768960f40_0 .net "RP", 0 0, o0x7eff88ac8e38;  alias, 0 drivers
+S_0x55c768961080 .scope module, "XR4_3" "resistorunit_b801fb63" 2 487, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c7689612b0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768961370_0 .net "RN", 0 0, o0x7eff88ac8fb8;  alias, 0 drivers
+v0x55c768961430_0 .net "RP", 0 0, o0x7eff88ac8ef8;  alias, 0 drivers
+S_0x55c768961570 .scope module, "XR4_4" "resistorunit_b801fb63" 2 494, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768961bb0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768962480_0 .net "RN", 0 0, o0x7eff88ac9078;  alias, 0 drivers
+v0x55c768962540_0 .net "RP", 0 0, o0x7eff88ac8fb8;  alias, 0 drivers
+S_0x55c768962680 .scope module, "XR5_0" "resistorunit_b801fb63" 2 501, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c7689628b0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768962970_0 .net "RN", 0 0, o0x7eff88ac9138;  alias, 0 drivers
+v0x55c768962a30_0 .net "RP", 0 0, o0x7eff88ac9168;  alias, 0 drivers
+S_0x55c768962b80 .scope module, "XR5_1" "resistorunit_b801fb63" 2 508, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768962db0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768962e70_0 .net "RN", 0 0, o0x7eff88ac9228;  alias, 0 drivers
+v0x55c768962f30_0 .net "RP", 0 0, o0x7eff88ac9138;  alias, 0 drivers
+S_0x55c768963070 .scope module, "XR5_2" "resistorunit_b801fb63" 2 515, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c7689632a0_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768963360_0 .net "RN", 0 0, o0x7eff88ac92e8;  alias, 0 drivers
+v0x55c768963420_0 .net "RP", 0 0, o0x7eff88ac9228;  alias, 0 drivers
+S_0x55c768963560 .scope module, "XR5_3" "resistorunit_b801fb63" 2 522, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768963790_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768963850_0 .net "RN", 0 0, o0x7eff88ac93a8;  alias, 0 drivers
+v0x55c768963910_0 .net "RP", 0 0, o0x7eff88ac92e8;  alias, 0 drivers
+S_0x55c768963a50 .scope module, "XR5_4" "resistorunit_b801fb63" 2 529, 2 14 0, S_0x55c7688bff60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INOUT 1 "RN";
+v0x55c768963c80_0 .net "CELG", 0 0, o0x7eff88ac6018;  alias, 0 drivers
+v0x55c768963d40_0 .net "RN", 0 0, o0x7eff88ac9468;  alias, 0 drivers
+v0x55c768963e00_0 .net "RP", 0 0, o0x7eff88ac93a8;  alias, 0 drivers
 # The file index is used to find the file name in the following table.
 :file_names 3;
     "N/A";
     "<interactive>";
-    "/celera/projects/Sunnyvale/software/SERVICEpuget/verilog10/FORCE_SERVICEpuget.v";
+    "/./celera//projects//Sunnyvale//software//SERVICEpuget//verilog5//resistorarray_b801fb63.v";

@@ -73,74 +73,12 @@ limit,resistor_array_r8_parallel,maximum,100
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,resistor_array_vmax,6V
-description,Resistor Maximum Voltage Rating
-user,resistor_array_imax,0.10000mA
-description,Resistor Maximum Current Density
-user,resistor5,175.00KOhm
-description,Resistor5
-user,resistor4,175.00KOhm
-description,Resistor4
-user,resistor3,8.75KOhm
-description,Resistor3
-user,resistor2,980.00KOhm
-description,Resistor2
-user,resistor1,980.00KOhm
-description,Resistor1
-user,NESTO,0.3.2
-description,Nesto Revision
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
-//Celera Map Generator
-registermap,resistorarray
-register,instance,resistorarray_b801fb63
-register,source,cell
-
-//No Register Requirements
-register,name,na
-register,enable,no
-register,bits,0
-register,mode,readwrite
-register,por,0
-register,userdescription,not used
-register,description0,not used
-register,description1,not used
-register,description2,not used
-register,description3,not used
-register,description4,not used
-register,description5,not used
-register,description6,not used
-register,description7,not used
-//Netlister Information
-register,busname,na
-
 //**********************************************
 //FACTORY Parameters
-//Celera Map Generator
-factorymap,resistorarray
-factory,instance,resistorarray_b801fb63
-factory,source,cell
-
-//No Factroy Requirements
-factory,name,na
-factory,enable,no
-factory,bits,0
-factory,mode,readonly
-factory,por,0
-factory,userdescription,not used
-factory,description0,not used
-factory,description1,not used
-factory,description2,not used
-factory,description3,not used
-factory,description4,not used
-factory,description5,not used
-factory,description6,not used
-factory,description7,not used
-//Netlister Information
-factory,busname,na
-
 //**********************************************
 //CELL DFT Parameters
 // *********************************************
@@ -159,7 +97,7 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,0.9
+#define,PROJECTreference,TBD
 #define,PROJECTsupply,5
 #define,TaRoom,25
 #define,ground,0.0
@@ -197,110 +135,8 @@ endlayoutbio
 
 // *********************************************
 //Die Size Estimate
-revision,vis15cbdiesize,0p1
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-sub_area,resistorunit_b801fb63,12
-generate_area,resistorarray_b801fb63,840
 // *********************************************
 //TRIM Parameters
-cell,resistorarray
-trim,instance,resistorarray_b801fb63
-
-trim,name,na
-
-trim,enable,no
-trim,bits,0
-trim,por,0
-trim,pinname,TBD
-trim,testname,na
-
-trim,description,na
-trim,target,na
-trim,units,Kohm
-trim,pretrim_low_limit,0.000
-trim,pretrim_high_limit,0.000
-trim,posttrim_low_limit,0.000
-trim,posttrim_high_limit,0.000
-trim,codeunits,TBD
-trim,description0,not used
-trim,description1,not used
-trim,description2,not used
-trim,description3,not used
-trim,description4,not used
-trim,description5,not used
-trim,description6,not used
-trim,description7,not used
-
-
-
 // *********************************************
 //Calculator Parameters
 
@@ -356,7 +192,7 @@ trim,description7,not used
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,RP1,RP2,RP3,RP4,RP5,net_skip,net_skip,net_skip,RN1,RN2,RN3,RN4,RN5,net_skip,net_skip,net_skip
+pinorder,RP1,RP2,RP3,RP4,RP5,RP6,RP7,RP8,RN1,RN2,RN3,RN4,RN5,RN6,RN7,RN8
 
 endpinorder
 //**********************************************

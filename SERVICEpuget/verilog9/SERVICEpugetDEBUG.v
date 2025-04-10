@@ -1,11 +1,8 @@
 // ------------------------ Module Definitions -----------
-module VESPAdftpulse (stop,pulse,start,CELG59462,CELV96848,CELSUB40948);
+module VESPAdftpulse (stop,pulse,start);
   input  stop;
-  output  pulse;
+  input  pulse;
   input  start;
-  input  CELG59462;
-  input  CELV96848;
-  input  CELSUB40948;
 endmodule
 
 //Celera:tie_ef1bc46b
@@ -40,18 +37,15 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SERVICEpugetDEBUG (CELG59462, CELV96848, ok_service, CELSUB40948, dft_over_in, dft_ok_drvcc, REF_SEQUENCER, allow_charger, dft_ok_intvcc, dft_ok_vcc2p5, fault_service, clock_sequencer, Hijack_enable_service);
-input  CELG59462;
-input  CELV96848;
-input  ok_service;
-input  CELSUB40948;
+module SERVICEpugetDEBUG (ok_service, dft_over_in, dft_ok_drvcc, REF_SEQUENCER, allow_charger, dft_ok_intvcc, dft_ok_vcc2p5, fault_service, clock_sequencer, Hijack_enable_service);
+  input  ok_service;
 input  dft_over_in;
 input  dft_ok_drvcc;
 input  REF_SEQUENCER;
 input  allow_charger;
 input  dft_ok_intvcc;
 input  dft_ok_vcc2p5;
-input  fault_service;
+  input  fault_service;
 input  clock_sequencer;
 output  Hijack_enable_service;
 
@@ -62,26 +56,17 @@ output  Hijack_enable_service;
 VESPAdftpulse XU2 (
   .stop(fault_service),
   .pulse(net_39),
-  .start(Hijack_enable_service),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+  .start(Hijack_enable_service)
 );
 
 VESPAdftpulse XU9 (
   .stop(ok_service),
   .pulse(net_38),
-  .start(Hijack_enable_service),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+  .start(Hijack_enable_service)
 );
 
 tie_ef1bc46b XU1 (
-  .a1(net_51),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+
 );
 
 STONEnoconn XNC38 (

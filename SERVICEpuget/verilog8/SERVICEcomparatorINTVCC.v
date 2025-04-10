@@ -1,12 +1,9 @@
 // ------------------------ Module Definitions -----------
-module VESPAasmINPUT2 (o,i0,i1,Tstate,CELG59462,CELV96848,CELSUB40948);
-  output  o;
+module VESPAasmINPUT2 (o,i0,i1,Tstate);
+  input  o;
   input  i0;
   input  i1;
   input  Tstate;
-  input  CELG59462;
-  input  CELV96848;
-  input  CELSUB40948;
 endmodule
 
 //Celera:dbuf_e926e395
@@ -20,18 +17,6 @@ input SUB;
 output o;
 endmodule
 
-
-
-//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
-
-
-module PEBBLEtielo ( q, G, SUB, V );
-
-  input V;
-  output q;
-  input G;
-  input SUB;
-endmodule
 
 
 //Celera:delayfixed_18fc5530
@@ -48,25 +33,8 @@ endmodule
 
 
 
-//Celera:resistordivider_4c4d0836
-//Celera Confidential Symbol Generator
-//VMAX:6V R:250.0KOhm 2Taps
-module resistordivider_4c4d0836 (TOP,
-enable_resistordivider,global_resistordivider,CELV,CELSUB,TAP0,
-TAP1,
-CELG, BOTTOM);
-inout TOP;
-input enable_resistordivider;
-input global_resistordivider;
-input CELV;
-input CELSUB;
-output TAP0;
-output TAP1;
-input CELG;
-inout BOTTOM;
+module resistordivider_4c4d0836 ();
 endmodule
-
-
 
 //Celera:comparatornoctlpins_09f5ab1b
 //Celera Confidential Symbol Generator
@@ -91,17 +59,13 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SERVICEcomparatorINTVCC (REF, SIMPV, CELG59462, CELV96848, kelvin_GND, CELSUB40948, IP_9219bb98, enable_comp, over_intvcc, kelvin_INTVCC);
-input  REF;
-input  SIMPV;
-  input  CELG59462;
-  input  CELV96848;
-inout  kelvin_GND;
-  input  CELSUB40948;
-input  IP_9219bb98;
-input  enable_comp;
-output  over_intvcc;
-inout  kelvin_INTVCC;
+module SERVICEcomparatorINTVCC (REF, SIMPV, kelvin_GND, enable_comp, over_intvcc, kelvin_INTVCC);
+  input  REF;
+  input  SIMPV;
+  input  kelvin_GND;
+  input  enable_comp;
+  input  over_intvcc;
+  input  kelvin_INTVCC;
 
 
 // ------------------------ Wires ------------------------
@@ -111,59 +75,23 @@ VESPAasmINPUT2 XU1 (
   .o(net_51),
   .i0(net_50),
   .i1(net_54),
-  .Tstate(enable_comp),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+  .Tstate(enable_comp)
 );
 
 dbuf_e926e395 XU2 (
-  .i(net_52),
-  .o(over_intvcc),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
-);
 
-PEBBLEtielo XtieLo (
-  .G(CELG59462),
-  .V(CELV96848),
-  .q(tl0),
-  .SUB(CELSUB40948)
 );
 
 delayfixed_18fc5530 Xdelay1 (
-  .i(net_51),
-  .o(net_52),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+
 );
 
 resistordivider_4c4d0836 Xrdivider1 (
-  .TOP(kelvin_INTVCC),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .TAP0(net_53),
-  .TAP1(net_49),
-  .BOTTOM(kelvin_GND),
-  .CELSUB(CELSUB40948),
-  .enable_resistordivider(enable_comp),
-  .global_resistordivider(tl0)
+
 );
 
 comparatornoctlpins_09f5ab1b Xcomparator1 (
-  .IP(IP_9219bb98),
-  .CELG(CELG59462),
-  .SIMPV(SIMPV),
-  .CELSUB(CELSUB40948),
-  .ok_comparator(net_54),
-  .EXT_COMPARATOR(net_53),
-  .INN_COMPARATOR(REF),
-  .INP_COMPARATOR(net_49),
-  .out_comparator(net_50),
-  .enable_comparator(enable_comp),
-  .global_comparator(tl0)
+
 );
 
 endmodule

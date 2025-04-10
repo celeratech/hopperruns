@@ -1,4 +1,3 @@
-//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
@@ -181,171 +180,8 @@ description,Oscillator Duty Cycle
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
-//Celera Map Generator
-registermap,oscillatorinternal
-register,instance,oscillator_242d2a21
-register,source,cell
-
-//Internal Register oscillator Enable
-register,name,na
-register,enable,no
-register,bits,0
-register,mode,readwrite
-register,por,0
-register,userdescription,na
-register,description0,not used
-register,description1,not used
-register,description2,not used
-register,description3,not used
-register,description4,not used
-register,description5,not used
-register,description6,not used
-register,description7,not used
-//Netlister Information
-register,busname,na
-
-
-//Internal Register oscillator lowiq
-register,name,na
-register,enable,no
-register,bits,0
-register,mode,readwrite
-register,por,0
-register,userdescription,na
-register,description0,not used
-register,description1,not used
-register,description2,not used
-register,description3,not used
-register,description4,not used
-register,description5,not used
-register,description6,not used
-register,description7,not used
-//Netlister Information
-register,busname,na
-
-
-//Internal Register oscillator SpreadSpectrum Configuration
-register,name,na
-register,enable,no
-register,bits,0
-register,mode,readwrite
-register,por,0
-register,userdescription,na
-register,description0,not used
-register,description1,not used
-register,description2,not used
-register,description3,not used
-register,description4,not used
-register,description5,not used
-register,description6,not used
-register,description7,not used
-register,description8,empty
-register,description9,empty
-register,description10,empty
-register,description11,empty
-register,description12,empty
-//Netlister Information
-register,busname,na
-
-
-//Internal Register oscillator Spreadspecrrum enable
-register,name,na
-register,enable,no
-register,bits,0
-register,mode,readwrite
-register,por,0
-register,userdescription,na
-register,description0,not used
-register,description1,not used
-register,description2,not used
-register,description3,not used
-register,description4,not used
-register,description5,not used
-register,description6,not used
-register,description7,not used
-//Netlister Information
-register,busname,na
 //**********************************************
 //FACTORY Parameters
-//Celera Map Generator
-factorymap,oscillatorinternal
-factory,instance,oscillator_242d2a21
-factory,source,cell
-
-//Internal Factory oscillator Enable
-factory,name,na
-factory,enable,no
-factory,bits,0
-factory,mode,readwrite
-factory,por,0
-factory,userdescription,na
-factory,description0,not used
-factory,description1,not used
-factory,description2,not used
-factory,description3,not used
-factory,description4,not used
-factory,description5,not used
-factory,description6,not used
-factory,description7,not used
-//Netlister Information
-factory,busname,na
-
-
-//Internal Factory oscillator lowiq
-factory,name,na
-factory,enable,no
-factory,bits,0
-factory,mode,readwrite
-factory,por,0
-factory,userdescription,na
-factory,description0,not used
-factory,description1,not used
-factory,description2,not used
-factory,description3,not used
-factory,description4,not used
-factory,description5,not used
-factory,description6,not used
-factory,description7,not used
-//Netlister Information
-factory,busname,na
-
-
-//Internal Factory SpreadSpectrum Configuration
-factory,name,na
-factory,enable,no
-factory,bits,0
-factory,mode,readwrite
-factory,por,0
-factory,userdescription,na
-factory,description0,not used
-factory,description1,not used
-factory,description2,not used
-factory,description3,not used
-factory,description4,not used
-factory,description5,not used
-factory,description6,not used
-factory,description7,not used
-//Netlister Information
-factory,busname,na
-
-
-//Internal Factory oscillator Spreadspecrrum enable
-factory,name,na
-factory,enable,no
-factory,bits,0
-factory,mode,readwrite
-factory,por,0
-factory,userdescription,na
-factory,description0,not used
-factory,description1,not used
-factory,description2,not used
-factory,description3,not used
-factory,description4,not used
-factory,description5,not used
-factory,description6,not used
-factory,description7,not used
-//Netlister Information
-factory,busname,na
 //**********************************************
 //CELL DFT Parameters
 // *********************************************
@@ -418,7 +254,7 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,0.9
+#define,PROJECTreference,TBD
 #define,PROJECTsupply,5
 #define,TaRoom,25
 #define,ground,0.0
@@ -456,16 +292,6 @@ endlayoutbio
 
 // *********************************************
 //Die Size Estimate
-revision,vis15cbdiesize,0p1
-sub_area,STONEoscillator1CONTROL,9400
-sub_area,STONEoscillator1TRIM,750
-sub_area,STONEoscillator1IGAIN1,5200
-sub_area,STONEnoconn,0
-sub_area,STONEnoconn,0
-sub_area,STONEnoconn,0
-sub_area,STONEnoconn,0
-sub_area,STONEoscillator1BIAS,11600
-generate_area,oscillator_242d2a21,26950
 // *********************************************
 //Calculator Parameters
 #define,OSCILLATORhflimit,900
@@ -523,36 +349,10 @@ generate_area,oscillator_242d2a21,26950
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,ok_oscillator,SIMPV,osc,net_skip,net_skip,net_skip,enable_oscillator,net_skip,net_skip
+pinorder,ok_oscillator,SIMPV,osc,fault_oscillator,IOSC,OSCILLATOR_RESISTOR,enable_oscillator,enable_spreadspectrum,standby_clock
 endpinorder
 //**********************************************
 //TRIM Parameters
-cell,oscillatorinternal
-trim,instance,oscillator_242d2a21
-
-trim,name,CLOCKaccuracy
-trim,enable,yes
-trim,bits,7
-trim,por,0
-trim,pinname,trim_oscillator
-trim,testname,CLOCKaccuracy
-trim,description,CLOKC Accuracy to 1MHz
-trim,target,1000
-trim,units,KHz
-trim,pretrim_low_limit,970.000
-trim,pretrim_high_limit,1030.000
-trim,posttrim_low_limit,998.500
-trim,posttrim_high_limit,1001.500
-trim,codeunits,%
-trim,description0,code 0x01.-10.0
-trim,description1,code 0x02.-20.0
-trim,description2,code 0x03.-30.0
-trim,description3,code 0x04.+25.0
-trim,description4,code 0x05.+15.0
-trim,description5,code 0x06.+5.0
-trim,description6,code 0x07.-5.0
-trim,description7,not used
-trim,description8,empty
 //**********************************************
 //Cell Pin Descriptions
 pinname,SIMPV
@@ -577,6 +377,17 @@ router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
+pinname,IP
+definition,IP,Oscillator 0.5uA PMOS reference current
+iq,IP,SIMULATION
+absmax,IP,6
+absmin,IP,-0.3
+io,IP,input
+mode,IP,analog
+router,IP,TBD
+dftpriority,IP,1
+esd,IP,TBD
+
 pinname,SENSE_G
 definition,SENSE_G,Oscilaltor ground sense
 iq,SENSE_G,SIMULATION
@@ -598,6 +409,116 @@ mode,enable_oscillator,digital
 router,enable_oscillator,TBD
 dftpriority,enable_oscillator,1
 esd,enable_oscillator,TBD
+
+pinname,register_oscillator_enable
+definition,register_oscillator_enable,Oscillator enable pin
+iq,register_oscillator_enable,SIMULATION
+absmax,register_oscillator_enable,6
+absmin,register_oscillator_enabler,-0.3
+io,register_oscillator_enable,input
+mode,register_oscillator_enable,digital
+router,register_oscillator_enable,TBD
+dftpriority,register_oscillator_enable,1
+esd,register_oscillator_enable,TBD
+
+pinname,factory_oscillator_enable
+definition,factory_oscillator_enable,Oscillator enable pin
+iq,factory_oscillator_enable,SIMULATION
+absmax,factory_oscillator_enable,6
+absmin,factory_oscillator_enable,-0.3
+io,factory_oscillator_enable,input
+mode,factory_oscillator_enable,digital
+router,factory_oscillator_enable,TBD
+dftpriority,factory_oscillator_enable,1
+esd,factory_oscillator_enable,TBD
+
+pinname,standby_clock
+definition,standby_clock,Oscillator into standby mode
+iq,standby_clock,SIMULATION
+absmax,standby_clock,6
+absmin,standby_clock,-0.3
+io,standby_clock,input
+mode,standby_clock,digital
+router,standby_clock,TBD
+dftpriority,standby_clock,1
+esd,standby_clock,TBD
+
+pinname,register_oscillator_standby
+definition,register_oscillator_standby,Oscillator into standby mode
+iq,register_oscillator_standby,SIMULATION
+absmax,register_oscillator_standby,6
+absmin,register_oscillator_standby,-0.3
+io,register_oscillator_standby,input
+mode,register_oscillator_standby,digital
+router,register_oscillator_standby,TBD
+dftpriority,register_oscillator_standby,1
+esd,register_oscillator_standby,TBD
+
+pinname,factory_oscillator_standby
+definition,factory_oscillator_standby,Oscillator into standby mode
+iq,factory_oscillator_standby,SIMULATION
+absmax,factory_oscillator_standby,6
+absmin,factory_oscillator_standby,-0.3
+io,factory_oscillator_standby,input
+mode,factory_oscillator_standby,digital
+router,factory_oscillator_standby,TBD
+dftpriority,factory_oscillator_standby,1
+esd,factory_oscillator_standby,TBD
+
+pinname,register_oscillator_enable_spreadspectrum
+definition,register_oscillator_enable_spreadspectrum,Enable Spread Sprectrum
+iq,register_oscillator_enable_spreadspectrum,SIMULATION
+absmax,register_oscillator_enable_spreadspectrum,6
+absmin,register_oscillator_enable_spreadspectrum,-0.3
+io,register_oscillator_enable_spreadspectrum,input
+mode,register_oscillator_enable_spreadspectrum,digital
+router,register_oscillator_enable_spreadspectrum,TBD
+dftpriority,register_oscillator_enable_spreadspectrum,1
+esd,register_oscillator_enable_spreadspectrum,TBD
+
+pinname,factory_oscillator_enable_spreadspectrum
+definitionfactory_oscillator_enable_spreadspectrum,Enable Spread Sprectrum
+iq,factory_oscillator_enable_spreadspectrum,SIMULATION
+absmax,factory_oscillator_enable_spreadspectrum,6
+absmin,factory_oscillator_enable_spreadspectrum,-0.3
+io,factory_oscillator_enable_spreadspectrum,input
+mode,factory_oscillator_enable_spreadspectrum,digital
+router,factory_oscillator_enable_spreadspectrum,TBD
+dftpriority,factory_oscillator_enable_spreadspectrum,1
+esd,factory_oscillator_enable_spreadspectrum,TBD
+
+pinname,enable_oscillator_spreadspectrum
+definition,enable_oscillator_spreadspectrum,Enable Spread Sprectrum
+iq,enable_oscillator_spreadspectrum,SIMULATION
+absmax,enable_oscillator_spreadspectrum,6
+absmin,enable_oscillator_spreadspectrum,-0.3
+io,enable_oscillator_spreadspectrum,input
+mode,enable_oscillator_spreadspectrum,digital
+router,enable_oscillator_spreadspectrum,TBD
+dftpriority,enable_oscillator_spreadspectrum,1
+esd,enable_oscillator_spreadspectrum,TBD
+
+pinname,register_oscillator_ssconfig
+definition,register_oscillator_ssconfig,Spread Spectrum Register Configuration
+iq,register_oscillator_ssconfig,SIMULATION
+absmax,register_oscillator_ssconfig,6
+absmin,register_oscillator_ssconfig,-0.3
+io,register_oscillator_ssconfig,input
+mode,register_oscillator_ssconfig,digital
+router,register_oscillator_ssconfig,TBD
+dftpriority,register_oscillator_ssconfig,1
+esd,register_oscillator_ssconfig,TBD
+
+pinname,factory_oscillator_ssconfig
+definition,factory_oscillator_ssconfig,Spread Spectrum Register Configuration
+iq,factory_oscillator_ssconfig,SIMULATION
+absmax,factory_oscillator_ssconfig,6
+absmin,factory_oscillator_ssconfig,-0.3
+io,factory_oscillator_ssconfig,input
+mode,factory_oscillator_ssconfig,digital
+router,factory_oscillator_ssconfig,TBD
+dftpriority,factory_oscillator_ssconfig,1
+esdfactory_oscillator_ssconfig,TBD
 
 pinname,ok_oscillator
 definition,ok_oscillator,Oscillator OK Flag
@@ -621,6 +542,28 @@ router,osc,TBD
 dftpriority,osc,1
 esd,osc,TBD
 
+pinname,IOSC
+definition,IOSC,Oscillator Replica output current source
+iq,IOSC,SIMULATION
+absmax,IOSC,6
+absmin,IOSC,-0.3
+io,IOSC,output
+mode,IOSC,analog
+router,IOSC,TBD
+dftpriority,IOSC,1
+esd,IOSC,TBD
+
+pinname,ten_oscillator
+definition,ten_oscillator,Testmode Input:Enable Measure OSC
+iq,ten_oscillator,SIMULATION
+absmax,ten_oscillator,6
+absmin,ten_oscillator,-0.3
+io,ten_oscillator,input
+mode,ten_oscillator,digital
+router,ten_oscillator,TBD
+dftpriority,ten_oscillator,1
+esd,ten_oscillator,TBD
+
 pinname,ten
 definition,ten,Global Testmode enable
 iq,ten,SIMULATION
@@ -631,6 +574,151 @@ mode,ten,digital
 router,ten,TBD
 dftpriority,ten,1
 esd,ten,TBD
+
+pinname,ten_oscillator_disable
+definition,,ten_oscillator_disable,Testmode Input:Disable Oscillator
+iq,ten_oscillator_disable,SIMULATION
+absmax,ten_oscillator_disable,6
+absmin,ten_oscillator_disable,-0.3
+io,,ten_oscillator_disable,input
+mode,,ten_oscillator_disable,digital
+router,ten_oscillator_disable,TBD
+dftpriority,ten_oscillator_disable,1
+esd,ten_oscillator_disable,TBD
+
+pinname,ten_oscillator_div8
+definition,,ten_oscillator_div8,Testmode Input:Measure OSC/8
+iq,ten_oscillator_div8,SIMULATION
+absmax,ten_oscillator_div8,6
+absmin,ten_oscillator_div8,-0.3
+io,ten_oscillator_div8,input
+mode,ten_oscillator_div8,digital
+router,ten_oscillator_div8,TBD
+dftpriority,ten_oscillator_div8,1
+esd,ten_oscillator_div8,TBD
+
+pinname,ten_oscillator_iosc
+definition,ten_oscillator_iosc,Testmode Input:Enable RP Bias Current Measure
+iq,ten_oscillator_iosc,SIMULATION
+absmax,ten_oscillator_iosc,6
+absmin,ten_oscillator_iosc,-0.3
+io,ten_oscillator_iosc,input
+mode,ten_oscillator_iosc,digital
+router,ten_oscillator_iosc,TBD
+dftpriority,ten_oscillator_iosc,1
+esd,ten_oscillator_iosc,TBD
+
+pinname,ten_oscillator_tdext
+definition,ten_oscillator_tdext,Testmode Input:Enable External oscillator
+iq,ten_oscillator_tdext,SIMULATION
+absmax,ten_oscillator_tdext,6
+absmin,ten_oscillator_tdext,-0.3
+io,ten_oscillator_tdext,input
+mode,ten_oscillator_tdext,digital
+router,ten_oscillator_tdext,TBD
+dftpriority,ten_oscillator_tdext,1
+esd,ten_oscillator_tdext,TBD
+
+pinname,tdext
+definition,tdext,Testmode Input:External Digitial control
+iq,tdext,SIMULATION
+absmax,tdext,6
+absmin,tdext,-0.3
+io,tdext,input
+mode,tdext,digital
+router,tdext,TBD
+dftpriority,tdext,1
+esd,tdext,TBD
+
+pinname,ten_oscillator_ss
+definition,ten_oscillator_ss,Testmode Input:Enable SpreadSpectrum testmode
+iq,ten_oscillator_ss,SIMULATION
+absmax,ten_oscillator_ss,6
+absmin,ten_oscillator_ss,-0.3
+io,ten_oscillator_ss,input
+mode,ten_oscillator_ss,digital
+router,ten_oscillator_ss,TBD
+dftpriority,ten_oscillator_ss,1
+esd,ten_oscillator_ss,TBD
+
+pinname,ten_oscillator_ireplica
+definition,ten_oscillator_ireplica,Testmode Input:Enable IOSC replica curernt
+iq,ten_oscillator_ireplica,SIMULATION
+absmax,ten_oscillator_ireplica,6
+absmin,ten_oscillator_ireplica,-0.3
+io,ten_oscillator_ireplica,input
+mode,ten_oscillator_ireplica,digital
+router,ten_oscillator_ireplica,TBD
+dftpriority,ten_oscillator_ireplica,1
+esd,ten_oscillator_ireplica,TBD
+
+pinname,ten_oscillator_ssclk
+definitionten_oscillator_ssclk,Testmode Input:SpreadSpectrum Input Clock
+iq,ten_oscillator_ssclk,SIMULATION
+absmax,ten_oscillator_ssclk,6
+absmin,ten_oscillator_ssclk,-0.3
+io,ten_oscillator_ssclk,input
+mode,ten_oscillator_ssclk,digital
+router,ten_oscillator_ssclk,TBD
+dftpriority,ten_oscillator_ssclk,1
+esd,ten_oscillator_ssclk,TBD
+
+pinname,ten_oscillator_sso
+definition,ten_oscillator_sso,Testmode Input:SpreadSpectrum testmode code
+iq,ten_oscillator_sso,SIMULATION
+absmax,ten_oscillator_sso,6
+absmin,ten_oscillator_sso,-0.3
+io,ten_oscillator_sso,input
+mode,ten_oscillator_sso,digital
+router,ten_oscillator_sso,TBD
+dftpriority,ten_oscillator_sso,1
+esd,ten_oscillator_sso,TBD
+
+pinname,tdi_oscillator
+definition,tdi_oscillator,Testmode Output:Measure OSC
+vq,tdi_oscillator,SIMULATION
+iq,tdi_oscillator,SIMULATION
+absmax,tdi_oscillator,6
+absmin,tdi_oscillator,-0.3
+io,tdi_oscillator,output
+mode,tdi_oscillator,digital
+routertdi_oscillator,TBD
+dftpriority,tdi_oscillator,1
+esd,tdi_oscillator,TBD
+
+pinname,tdi_oscillator_ssclk
+definition,tdi_oscillator_ssclk,Testmode Output:Measure SS source Clock
+vq,tdi_oscillator_ssclk,SIMULATION
+iq,tdi_oscillator_ssclk,SIMULATION
+absmax,tdi_oscillator_ssclk,6
+absmin,tdi_oscillator_ssclk,-0.3
+io,tdi_oscillator_ssclk,output
+mode,tdi_oscillator_ssclk,digital
+router,tdi_oscillator_ssclk,TBD
+dftpriority,tdi_oscillator_ssclk,1
+esd,tdi_oscillator_ssclk,TBD
+
+pinname,TAI_OSCILLATOR_OSCI
+definition,TAI_OSCILLATOR_OSCI,Testmode Output:Measure Oscillator Bias Current
+iq,TAI_OSCILLATOR_OSCI,SIMULATION
+absmax,TAI_OSCILLATOR_OSCI,6
+absmin,TAI_OSCILLATOR_OSCI,-0.3
+io,TAI_OSCILLATOR_OSCI,output
+mode,TAI_OSCILLATOR_OSCI,analog
+router,TAI_OSCILLATOR_OSCI,TBD
+dftpriority,TAI_OSCILLATOR_OSCI,1
+esd,TAI_OSCILLATOR_OSCI,TBD
+
+pinname,TAI_OSCILLATOR_IREPLICA
+definition,TAI_OSCILLATOR_IREPLICA,Testmode Output:Measure Oscillator Replica current  source
+iq,TAI_OSCILLATOR_IREPLICA,SIMULATION
+absmax,TAI_OSCILLATOR_IREPLICA,6
+absmin,TAI_OSCILLATOR_IREPLICA,-0.3
+io,TAI_OSCILLATOR_IREPLICA,output
+mode,TAI_OSCILLATOR_IREPLICA,digital
+router,TAI_OSCILLATOR_IREPLICA,TBD
+dftpriority,TAI_OSCILLATOR_IREPLICA,1
+esd,TAI_OSCILLATOR_IREPLICA,TBD
 
 pinname,trim_oscillator
 definition,trim_oscillator,Trim OSC output frequency
@@ -1332,4 +1420,3 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
-

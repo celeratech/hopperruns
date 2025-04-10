@@ -1,4 +1,3 @@
-//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
@@ -88,118 +87,10 @@ description,Nesto Revision
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
-//Celera Map Generator
-registermap,vbias
-register,instance,vbias_8430b59e
-register,source,cell
-
-//vbias
-register,name,na
-register,enable,no
-register,bits,0
-register,mode,readonly
-register,por,0
-register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
-//Netlister Information
-register,busname,na
 //**********************************************
 //FACTORY Parameters
-//Celera Map Generator
-factorymap,vbias
-factory,instance,vbias_8430b59e
-factory,source,cell
-
-//vbias
-factory,name,na
-factory,enable,no
-factory,bits,0
-factory,mode,readonly
-factory,por,0
-factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
-//Netlister Information
-factory,busname,na
 //**********************************************
 //CELL DFT Parameters
-//Cell DFT Generator vbias
-
-celldft,vbias
-celldft,path,vbias_8430b59e
-celldft,instance,8430b59e
-celldft,source,cell
-
-celldft,ten_enablevbias
-celldft,ten_enablevbias,testname,tenVBIASenable
-celldft,ten_enablevbias,definition,Enable Measure vbias
-celldft,ten_enablevbias,input,ten
-celldft,ten_enablevbias,output,na
-celldft,ten_enablevbias,partner,na
-celldft,ten_enablevbias,end
-
-celldft,ten_taifbvbias
-celldft,ten_taifbvbias,testname,VBIASfeedback
-celldft,ten_taifbvbias,definition,Measure feedabck on TAI
-celldft,ten_taifbvbias,input,ten
-celldft,ten_taifbvbias,output,na
-celldft,ten_taifbvbias,partner,TAI_VBIAS
-celldft,ten_taifbvbias,end
-
-celldft,ten_taiv2v5
-celldft,ten_taiv2v5,testname,VBIASv2v5
-celldft,ten_taiv2v5,definition,Measure V2V5 on TAI
-celldft,ten_taiv2v5,input,ten
-celldft,ten_taiv2v5,output,na
-celldft,ten_taiv2v5,partner,TAI_VBIAS
-celldft,ten_taiv2v5,end
-
-celldft,ten_taiv1v0f
-celldft,ten_taiv1v0f,testname,VBIASv10f
-celldft,ten_taiv1v0f,definition,Measure V1V0F on TAI
-celldft,ten_taiv1v0f,input,na
-celldft,ten_taiv1v0f,output,na
-celldft,ten_taiv1v0f,partner,TAI_VBIAS
-celldft,ten_taiv1v0f,end
-
-celldft,ten_tdiokvbias
-celldft,ten_tdiokvbias,testname,VBIASok
-celldft,ten_tdiokvbias,definition,Measure OK on tdi
-celldft,ten_tdiokvbias,input,ten
-celldft,ten_tdiokvbias,output,na
-celldft,ten_tdiokvbias,partner,tdi_vbias
-celldft,ten_tdiokvbias,end
-
-celldft,tdi_vbias
-celldft,tdi_vbias,testname,na
-celldft,tdi_vbias,definition,VBIAS digital output
-celldft,tdi_vbias,input,na
-celldft,tdi_vbias,output,tdi
-celldft,tdi_vbias,partner,na
-celldft,tdi_vbias,end
-
-celldft,TAI_VBIAS
-celldft,TAI_VBIAS,testname,na
-celldft,TAI_VBIAS,definition,VBIAS analog output
-celldft,TAI_VBIAS,input,na
-celldft,TAI_VBIAS,output,TAI
-celldft,TAI_VBIAS,partner,na
-celldft,TAI_VBIAS,end
-
-celldft,end
 // *********************************************
 //Layout Parameters
 revision,layout,0p1
@@ -286,7 +177,7 @@ placeEND
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,0.9
+#define,PROJECTreference,TBD
 #define,PROJECTsupply,5
 #define,TaRoom,25
 #define,ground,0.0
@@ -324,20 +215,6 @@ placeEND
 
 // *********************************************
 //Die Size Estimate
-revision,vis15cbdiesize,0p1
-sub_area,STONEnoconn,0
-sub_area,STONEvbiasbgcomp60vACCURATE,9999
-sub_area,STONEvbiasservice60vNOME,9999
-sub_area,STONEnoconn,0
-sub_area,STONEvbiasldoin160pmosNOME,9999
-sub_area,STONEvbiasENABLE60NOME,9999
-sub_area,STONEvbiasENABLE60NOME,9999
-sub_area,STONEvbiasateNOME,9999
-sub_area,STONEvbiasinptrimNOME,9999
-sub_area,resistordivider_vbias_8430b59e_XRfeedback,313
-sub_area,resistordivider_vbias_8430b59e_XRuvlo,250
-sub_area,STONEvbiasENABLE60NOME,9999
-generate_area,vbias_8430b59e,80555
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,2.0
@@ -379,86 +256,10 @@ generate_area,vbias_8430b59e,80555
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,VBIAS,net_skip,IN1,net_skip,net_skip,net_skip
+pinorder,VBIAS,IN2,IN1,ok_vbias,enable_vbias,reset_vbias
 endpinorder
 //**********************************************
 //TRIM Parameters
-cell,vbias
-trim,instance,vbias_8430b59e
-
-trim,name,INTVCCaccuracy_BG
-trim,enable,yes
-trim,bits,8
-trim,por,0
-trim,pinname,trim_vbiasref
-trim,testname,INTVCCaccuracy_BG
-trim,description,Internal VCC 5V Accuracy_Trim VBIAS Bandgap Voltage
-trim,target,1000.000
-trim,units,mV
-trim,pretrim_low_limit,1015.000
-trim,pretrim_high_limit,1015.000
-trim,posttrim_low_limit,999.250
-trim,posttrim_high_limit,1000.750
-trim,codeunits,mV
-trim,description0,code 0x01.+0.25
-trim,description1,code 0x02.+0.5
-trim,description2,code 0x04.+1.0
-trim,description3,code 0x08.+2.0
-trim,description4,code 0x10.+4.0
-trim,description5,code 0x20.+8.0
-trim,description6,code 0x40.+16.0
-trim,description7,not used
-trim,description8,empty
-
-trim,name,INTVCCaccuracy_positive
-trim,enable,yes
-trim,bits,8
-trim,por,0
-trim,pinname,trim_vbiaspos
-trim,testname,INTVCCaccuracy_positive
-trim,description,Internal VCC 5V Accuracy_VBIAS Output Voltage Positive Trim
-
-trim,target,5
-trim,units,mV
-trim,pretrim_low_limit,5.000
-trim,pretrim_high_limit,15.000
-trim,posttrim_low_limit,4.250
-trim,posttrim_high_limit,5.750
-trim,codeunits,mV
-trim,description0,code 0x01.+0.25
-trim,description1,code 0x02.+0.5
-trim,description2,code 0x04.+1.0
-trim,description3,code 0x08.+2.0
-trim,description4,code 0x10.+4.0
-trim,description5,code 0x20.+8.0
-trim,description6,code 0x40.+16.0
-trim,description7,not used
-trim,description8,empty
-
-trim,name,INTVCCaccuracy_negative
-trim,enable,yes
-trim,bits,8
-trim,por,0
-trim,pinname,trim_vbiasneg
-trim,testname,INTVCCaccuracy_negative
-trim,description,Internal VCC 5V Accuracy_VBIAS Output Voltage Negative Trim
-
-trim,target,5
-trim,units,mV
-trim,pretrim_low_limit,15.000
-trim,pretrim_high_limit,5.000
-trim,posttrim_low_limit,4.250
-trim,posttrim_high_limit,5.750
-trim,codeunits,mV
-trim,description0,code 0x01.-0.25
-trim,description1,code 0x02.-0.5
-trim,description2,code 0x04.-1.0
-trim,description3,code 0x08.-2.0
-trim,description4,code 0x10.-4.0
-trim,description5,code 0x20.-8.0
-trim,description6,code 0x40.-16.0
-trim,description7,not used
-trim,description8,empty
 //**********************************************
 //Cell Pin Descriptions
 //**********************************************
@@ -506,7 +307,27 @@ router,celkelvin_IN1,TBD
 dftpriority,celkelvin_IN1,1
 esd,celkelvin_IN1,TBD
 
+pinname,IN2
+definition,IN2,VBIAS Input2  Power Supply
+iq,IN2,SIMULATION
+absmax,IN2,24
+absmin,IN2,-0.3
+io,IN2,input
+mode,IN2,power
+router,IN2,TBD
+dftpriority,IN2,1
+esd,IN2,TBD
 
+pinname,celkelvin_IN2
+definition,celkelvin_IN2,VBIAS Input2 sense input
+iq,celkelvin_IN2,SIMULATION
+absmax,celkelvin_IN2,24
+absmin,celkelvin_IN2,-0.3
+io,celkelvin_IN2,input
+mode,celkelvin_IN2,analog
+router,celkelvin_IN2,TBD
+dftpriority,celkelvin_IN2,1
+esd,celkelvin_IN2,TBD
 
 pinname,VBIAS
 definition,VBIAS,Vbias output rail
@@ -530,9 +351,49 @@ router,celkelvin_VBIAS,TBD
 dftpriority,celkelvin_VBIAS,1
 esd,celkelvin_VBIAS,TBD
 
+pinname,enable_vbias
+definition,enable_vbias,Digital Input enable pin
+iq,enable_vbias,SIMULATION
+absmax,enable_vbias,6
+absmin,enable_vbias,-0.3
+io,enable_vbias,input
+mode,enable_vbias,digital
+router,enable_vbias,TBD
+dftpriority,enable_vbias,1
+esd,enable_vbias,TBD
 
+pinname,ENABLE_VBIASHV
+definition,ENABLE_VBIASHV,High Voltage Enable Input pin
+iq,ENABLE_VBIASHV,SIMULATION
+absmax,ENABLE_VBIASHV,40
+absmin,ENABLE_VBIASHV,-0.3
+io,ENABLE_VBIASHV,input
+mode,ENABLE_VBIASHV,analog
+router,ENABLE_VBIASHV,TBD
+dftpriority,ENABLE_VBIASHV,1
+esd,ENABLE_VBIASHV,TBD
 
+pinname,reset_vbias
+definition,reset_vbias,Reset Vbias digital input
+iq,reset_vbias,SIMULATION
+absmax,reset_vbias,6
+absmin,reset_vbias,-0.3
+io,reset_vbias,input
+mode,reset_vbias,digital
+router,reset_vbias,TBD
+dftpriority,reset_vbias,1
+esd,reset_vbias,TBD
 
+pinname,ok_vbias
+definition,ok_vbias,VBIAS Cell OK
+iq,ok_vbias,SIMULATION
+absmax,ok_vbias,6
+absmin,ok_vbias,-0.3
+io,ok_vbias,output
+mode,ok_vbias,digital
+router,ok_vbias,TBD
+dftpriority,ok_vbias,1
+esd,ok_vbias,TBD
 
 pinname,trim_vbiaspos
 definition,trim_vbiaspos,Vbias Output Voltage Positive Trim
@@ -1333,4 +1194,3 @@ revision,vis15cb,0p1
 // *********************************************
 endbio
 // *********************************************
-
