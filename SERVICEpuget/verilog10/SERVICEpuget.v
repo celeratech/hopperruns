@@ -23,7 +23,7 @@ module SERVICEpugetDEBUG (CELG59462,CELV96848,ok_service,CELSUB40948,dft_over_in
   output  Hijack_enable_service;
 endmodule
 
-module SERVICEpugetMAIN (,IN,REF,porb,TAEXT,INTVCC,VCC2P5,VOUTSN,CELG59462,CELV96848,PORB97836,chrg_uvlo,kelvin_IN,CELBG83021,GNDservice,ok_service,CELSUB40948,IP_051b7bcb,IP_30a0e5c5,IP_86807c55,IP_87250ba9,IP_9219bb98,IP_92c9b3c9,IP_de226f75,dft_over_in,kelvin_VCAP,sync_stepup,dft_ok_drvcc,kelvin_DRVCC,allow_charger,dft_ok_intvcc,dft_ok_vcc2p5,fault_service,kelvin_INTVCC,kelvin_VCC2P5,kelvin_VOUTSN,celkelvin_VBIAS,clock_sequencer,SENSE_G_344f8d94,celkelvin_GNDref,kelvin_GNDservice,hijack_enable_service,SERVICEconfiguration_0,SERVICEconfiguration_1);
+module SERVICEpugetMAIN (,IN,REF,porb,TAEXT,INTVCC,VCC2P5,VOUTSN,CELG59462,CELV96848,PORB97836,chrg_uvlo,kelvin_IN,CELBG83021,GNDservice,ok_service,CELSUB40948,IP_051b7bcb,IP_30a0e5c5,IP_86807c55,IP_87250ba9,IP_9219bb98,IP_92c9b3c9,IP_de226f75,dft_over_in,kelvin_VCAP,sync_stepup,dft_ok_drvcc,kelvin_DRVCC,allow_charger,dft_ok_intvcc,dft_ok_vcc2p5,fault_service,kelvin_INTVCC,kelvin_VCC2P5,kelvin_VOUTSN,celkelvin_VBIAS,clock_sequencer,SENSE_G_344f8d94,kelvin_GNDservice,hijack_enable_service,SERVICEconfiguration_0,SERVICEconfiguration_1);
   inout  IN;
   output  REF;
   output  porb;
@@ -62,7 +62,6 @@ module SERVICEpugetMAIN (,IN,REF,porb,TAEXT,INTVCC,VCC2P5,VOUTSN,CELG59462,CELV9
   input  celkelvin_VBIAS;
   output  clock_sequencer;
   input  SENSE_G_344f8d94;
-  input  celkelvin_GNDref;
   inout  kelvin_GNDservice;
   input  hijack_enable_service;
   input  SERVICEconfiguration_0;
@@ -70,7 +69,7 @@ module SERVICEpugetMAIN (,IN,REF,porb,TAEXT,INTVCC,VCC2P5,VOUTSN,CELG59462,CELV9
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module SERVICEpuget (IN, porb, TAEXT, INTVCC, VCC2P5, VOUTSN, CELG59462, CELV96848, PORB97836, chrg_uvlo, kelvin_IN, GNDservice, ok_service, CELSUB40948, IP_051b7bcb, IP_30a0e5c5, IP_86807c55, IP_87250ba9, IP_9219bb98, IP_92c9b3c9, IP_de226f75, kelvin_VCAP, sync_stepup, kelvin_DRVCC, REF_SEQUENCER, allow_charger, fault_service, kelvin_INTVCC, kelvin_VCC2P5, kelvin_VOUTSN, celkelvin_VBIAS, clock_sequencer, SENSE_G_344f8d94, celkelvin_GNDref, kelvin_GNDservice);
+module SERVICEpuget (IN, porb, TAEXT, INTVCC, VCC2P5, VOUTSN, CELG59462, CELV96848, PORB97836, chrg_uvlo, kelvin_IN, GNDservice, ok_service, CELSUB40948, IP_051b7bcb, IP_30a0e5c5, IP_86807c55, IP_87250ba9, IP_9219bb98, IP_92c9b3c9, IP_de226f75, kelvin_VCAP, sync_stepup, kelvin_DRVCC, REF_SEQUENCER, allow_charger, fault_service, kelvin_INTVCC, kelvin_VCC2P5, kelvin_VOUTSN, celkelvin_VBIAS, clock_sequencer, SENSE_G_344f8d94, kelvin_GNDservice);
 inout  IN;
 output  porb;
 input  TAEXT;
@@ -104,7 +103,6 @@ inout  kelvin_VOUTSN;
 input  celkelvin_VBIAS;
 output  clock_sequencer;
 input  SENSE_G_344f8d94;
-input  celkelvin_GNDref;
 inout  kelvin_GNDservice;
 
 
@@ -174,7 +172,6 @@ SERVICEpugetMAIN XMAIN (
   .celkelvin_VBIAS(celkelvin_VBIAS),
   .clock_sequencer(clock_sequencer),
   .SENSE_G_344f8d94(SENSE_G_344f8d94),
-  .celkelvin_GNDref(celkelvin_GNDref),
   .kelvin_GNDservice(kelvin_GNDservice),
   .hijack_enable_service(net_99),
   .SERVICEconfiguration_0(net_77),
