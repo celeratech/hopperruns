@@ -398,9 +398,9 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SERVICEpugetMAIN (IN, REF, porb, TAEXT, INTVCC, VCC2P5, VOUTSN, CELG59462, CELV96848, PORB97836, chrg_uvlo, kelvin_IN, CELBG83021, GNDservice, ok_service, CELSUB40948, IP_051b7bcb, IP_30a0e5c5, IP_86807c55, IP_87250ba9, IP_9219bb98, IP_92c9b3c9, IP_de226f75, dft_over_in, kelvin_VCAP, sync_stepup, REF_e3b0c442, dft_ok_drvcc, kelvin_DRVCC, allow_charger, dft_ok_intvcc, dft_ok_vcc2p5, fault_service, kelvin_INTVCC, kelvin_VCC2P5, kelvin_VOUTSN, celkelvin_VBIAS, clock_sequencer, SENSE_G_344f8d94, celkelvin_GNDref, kelvin_GNDservice, hijack_enable_service, SERVICEconfiguration_0, SERVICEconfiguration_1);
+module SERVICEpugetMAIN (IN, REF, porb, TAEXT, INTVCC, VCC2P5, VOUTSN, CELG59462, CELV96848, PORB97836, chrg_uvlo, kelvin_IN, CELBG83021, GNDservice, ok_service, CELSUB40948, IP_051b7bcb, IP_30a0e5c5, IP_86807c55, IP_87250ba9, IP_9219bb98, IP_92c9b3c9, IP_de226f75, dft_over_in, kelvin_VCAP, sync_stepup, dft_ok_drvcc, kelvin_DRVCC, allow_charger, dft_ok_intvcc, dft_ok_vcc2p5, fault_service, kelvin_INTVCC, kelvin_VCC2P5, kelvin_VOUTSN, celkelvin_VBIAS, clock_sequencer, SENSE_G_344f8d94, celkelvin_GNDref, kelvin_GNDservice, hijack_enable_service, SERVICEconfiguration_0, SERVICEconfiguration_1);
 inout  IN;
-input  REF;
+output  REF;
 output  porb;
 input  TAEXT;
 output  INTVCC;
@@ -425,7 +425,6 @@ input  IP_de226f75;
 output  dft_over_in;
 inout  kelvin_VCAP;
 output  sync_stepup;
-output  REF_e3b0c442;
 output  dft_ok_drvcc;
 inout  kelvin_DRVCC;
 output  allow_charger;
@@ -460,449 +459,449 @@ wire [6:0] trim_oscillator;
 
 // ------------------------ Networks ---------------------
 SERVICEcomparatorDRVCC XDRVCC (
-.REF(REF),
-.SIMPV(INTVCC),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.kelvin_GND(kelvin_GNDservice),
-.over_drvcc(net_261),
-.CELSUB40948(CELSUB40948),
-.IP_87250ba9(IP_87250ba9),
-.enable_comp(net_248),
-.kelvin_DRVCC(kelvin_DRVCC)
+  .REF(REF),
+  .SIMPV(INTVCC),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .kelvin_GND(kelvin_GNDservice),
+  .over_drvcc(net_261),
+  .CELSUB40948(CELSUB40948),
+  .IP_87250ba9(IP_87250ba9),
+  .enable_comp(net_248),
+  .kelvin_DRVCC(kelvin_DRVCC)
 );
 
 SERVICEcomparatorIN XIN (
-.REF(REF),
-.SIMPV(INTVCC),
-.over_in(net_262),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.kelvin_IN(kelvin_IN),
-.kelvin_GND(kelvin_GNDservice),
-.CELSUB40948(CELSUB40948),
-.IP_92c9b3c9(IP_92c9b3c9),
-.enable_comp(net_252)
+  .REF(REF),
+  .SIMPV(INTVCC),
+  .over_in(net_262),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .kelvin_IN(kelvin_IN),
+  .kelvin_GND(kelvin_GNDservice),
+  .CELSUB40948(CELSUB40948),
+  .IP_92c9b3c9(IP_92c9b3c9),
+  .enable_comp(net_252)
 );
 
 SERVICEcomparatorINTVCC XINTVCC (
-.REF(REF),
-.SIMPV(INTVCC),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.kelvin_GND(kelvin_GNDservice),
-.CELSUB40948(CELSUB40948),
-.IP_9219bb98(IP_9219bb98),
-.enable_comp(net_251),
-.over_intvcc(net_252),
-.kelvin_INTVCC(kelvin_INTVCC)
+  .REF(REF),
+  .SIMPV(INTVCC),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .kelvin_GND(kelvin_GNDservice),
+  .CELSUB40948(CELSUB40948),
+  .IP_9219bb98(IP_9219bb98),
+  .enable_comp(net_251),
+  .over_intvcc(net_252),
+  .kelvin_INTVCC(kelvin_INTVCC)
 );
 
 VESPAasmINPUT2 XU1 (
-.o(net_187),
-.i0(hijack_enable_service),
-.i1(net_256),
-.Tstate(porb),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
+  .o(net_187),
+  .i0(hijack_enable_service),
+  .i1(net_256),
+  .Tstate(porb),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT3 XU14 (
-.o(net_260),
-.i0(net_259),
-.i1(net_243),
-.i2(net_261),
-.Tstate(net_248),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
+  .o(net_260),
+  .i0(net_259),
+  .i1(net_243),
+  .i2(net_261),
+  .Tstate(net_248),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU20 (
-.o(net_257),
-.i0(net_253),
-.Tstate(net_260),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
+  .o(net_257),
+  .i0(net_253),
+  .Tstate(net_260),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT3 XU23 (
-.o(net_246),
-.i0(net_245),
-.i1(net_249),
-.i2(net_255),
-.Tstate(net_248),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
+  .o(net_246),
+  .i0(net_245),
+  .i1(net_249),
+  .i2(net_255),
+  .Tstate(net_248),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT2 XU27 (
-.o(net_265),
-.i0(net_263),
-.i1(net_249),
-.Tstate(net_252),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
+  .o(net_265),
+  .i0(net_263),
+  .i1(net_249),
+  .Tstate(net_252),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU28 (
-.o(net_269),
-.i0(net_268),
-.Tstate(net_247),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
+  .o(net_269),
+  .i0(net_268),
+  .Tstate(net_247),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU31 (
-.o(net_267),
-.i0(net_266),
-.Tstate(net_247),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
+  .o(net_267),
+  .i0(net_266),
+  .Tstate(net_247),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .CELSUB40948(CELSUB40948)
 );
 
 SERVICEcomparatorVCC2P5 XVCC25 (
-.REF(REF),
-.SIMPV(INTVCC),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.kelvin_GND(kelvin_GNDservice),
-.CELSUB40948(CELSUB40948),
-.IP_30a0e5c5(IP_30a0e5c5),
-.enable_comp(net_248),
-.over_vcc2p5(net_243),
-.kelvin_VCC2P5(kelvin_VCC2P5)
+  .REF(REF),
+  .SIMPV(INTVCC),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .kelvin_GND(kelvin_GNDservice),
+  .CELSUB40948(CELSUB40948),
+  .IP_30a0e5c5(IP_30a0e5c5),
+  .enable_comp(net_248),
+  .over_vcc2p5(net_243),
+  .kelvin_VCC2P5(kelvin_VCC2P5)
 );
 
 SERVICEcomparatorVOUTSN XVOUTSN (
-.ovlo(net_266),
-.SIMPV(INTVCC),
-.TAEXT(TAEXT),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.kelvin_GND(kelvin_GNDservice),
-.CELSUB40948(CELSUB40948),
-.IP_051b7bcb(IP_051b7bcb),
-.IP_de226f75(IP_de226f75),
-.enable_ovlo(net_260),
-.kelvin_VCAP(kelvin_VCAP),
-.kelvin_VOUTSN(kelvin_VOUTSN)
+  .ovlo(net_266),
+  .SIMPV(INTVCC),
+  .TAEXT(TAEXT),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .kelvin_GND(kelvin_GNDservice),
+  .CELSUB40948(CELSUB40948),
+  .IP_051b7bcb(IP_051b7bcb),
+  .IP_de226f75(IP_de226f75),
+  .enable_ovlo(net_260),
+  .kelvin_VCAP(kelvin_VCAP),
+  .kelvin_VOUTSN(kelvin_VOUTSN)
 );
 
 cdiode_a2942f6c XU2 (
-.ANODE(IN),
-.CELSUB(CELSUB40948),
-.CATHODE(net_250)
+  .ANODE(IN),
+  .CELSUB(CELSUB40948),
+  .CATHODE(net_250)
 );
 
 dbuf_e926e395 XU5 (
-.i(net_267),
-.o(sync_stepup),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_267),
+  .o(sync_stepup),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 porb_a5607837 XU7 (
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(INTVCC),
-.porb(porb),
-.SENSE_PORB(kelvin_INTVCC)
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(INTVCC),
+  .porb(porb),
+  .SENSE_PORB(kelvin_INTVCC)
 );
 
 inv_12e192f5 XU9 (
-.i(net_262),
-.o(net_263),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_262),
+  .o(net_263),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU10 (
-.i(net_267),
-.o(allow_charger),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_267),
+  .o(allow_charger),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 inv_12e192f5 XU11 (
-.i(net_243),
-.o(net_244),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_243),
+  .o(net_244),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 inv_12e192f5 XU12 (
-.i(net_261),
-.o(net_254),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_261),
+  .o(net_254),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 inv_12e192f5 XU13 (
-.i(net_182),
-.o(net_245),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_182),
+  .o(net_245),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU15 (
-.i(net_252),
-.o(dft_ok_intvcc),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_252),
+  .o(dft_ok_intvcc),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU16 (
-.i(net_258),
-.o(fault_service),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_258),
+  .o(fault_service),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU17 (
-.i(net_257),
-.o(clock_sequencer),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_257),
+  .o(clock_sequencer),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU21 (
-.i(net_247),
-.o(ok_service),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_247),
+  .o(ok_service),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 nor2_ee112582 XU22 (
-.o(net_182),
-.i0(net_244),
-.i1(net_254),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .o(net_182),
+  .i0(net_244),
+  .i1(net_254),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU24 (
-.i(net_243),
-.o(dft_ok_vcc2p5),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_243),
+  .o(dft_ok_vcc2p5),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU25 (
-.i(net_261),
-.o(dft_ok_drvcc),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_261),
+  .o(dft_ok_drvcc),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU26 (
-.i(net_262),
-.o(dft_over_in),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_262),
+  .o(dft_over_in),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU29 (
-.i(net_269),
-.o(chrg_uvlo),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_269),
+  .o(chrg_uvlo),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 inv_12e192f5 XU30 (
-.i(net_266),
-.o(net_268),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_266),
+  .o(net_268),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 cdiode_a2942f6c XU32 (
-.ANODE(VOUTSN),
-.CELSUB(CELSUB40948),
-.CATHODE(net_250)
+  .ANODE(VOUTSN),
+  .CELSUB(CELSUB40948),
+  .CATHODE(net_250)
 );
 
 dff_e5264df5 Xdff1 (
-.d(net_245),
-.q(net_258),
-.ck(net_264),
-.qb(net_259),
-.rb(net_248),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
+  .d(net_245),
+  .q(net_258),
+  .ck(net_264),
+  .qb(net_259),
+  .rb(net_248),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948)
 );
 
 PEBBLEtielo XtieLo (
-.G(CELG59462),
-.V(CELV96848),
-.q(tl0),
-.SUB(CELSUB40948)
+  .G(CELG59462),
+  .V(CELV96848),
+  .q(tl0),
+  .SUB(CELSUB40948)
 );
 
 delayfixed_d788d90f Xdelay1 (
-.i(net_187),
-.o(net_251),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
+  .i(net_187),
+  .o(net_251),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948)
 );
 
 delayclock_06a1b43d Xdelay2 (
-.in(net_246),
-.out(net_264),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.clock(net_253),
-.CELSUB(CELSUB40948),
-.celeraporb(PORB97836)
+  .in(net_246),
+  .out(net_264),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .clock(net_253),
+  .CELSUB(CELSUB40948),
+  .celeraporb(PORB97836)
 );
 
 delayclock_f08f1d60 Xdelay3 (
-.in(net_260),
-.out(net_247),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.clock(net_253),
-.CELSUB(CELSUB40948),
-.celeraporb(PORB97836)
+  .in(net_260),
+  .out(net_247),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .clock(net_253),
+  .CELSUB(CELSUB40948),
+  .celeraporb(PORB97836)
 );
 
 delayclock_ad3ca716 Xdelay4 (
-.in(net_265),
-.out(net_248),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.clock(net_253),
-.delay({SERVICEconfiguration_1,SERVICEconfiguration_0}),
-.CELSUB(CELSUB40948),
-.celeraporb(PORB97836)
+  .in(net_265),
+  .out(net_248),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .clock(net_253),
+  .delay({SERVICEconfiguration_1,SERVICEconfiguration_0}),
+  .CELSUB(CELSUB40948),
+  .celeraporb(PORB97836)
 );
 
 vbias_8430b59e Xvbias1 (
-.IN1(net_250),
-.CELG(CELG59462),
-.VBIAS(INTVCC),
-.CELSUB(CELSUB40948),
-.TAI_VBIAS(noconn_TAI_VBIAS7),
-.tdi_vbias(noconn_tdi_vbias8),
-.ten_taiv2v5(tl0),
-.global_vbias(tl0),
-.ten_taiv1v0f(tl0),
-.celkelvin_IN1(celkelvin_IN1),
-.trim_vbiasneg({a0,a0,a0,a0,a0,a0,a0,a0}),
-.trim_vbiaspos({a0,a0,a0,a0,a0,a0,a0,a0}),
-.trim_vbiasref({a0,a0,a0,a0,a0,a0,a0,a0}),
-.ten_taifbvbias(tl0),
-.ten_tdiokvbias(tl0),
-.celkelvin_VBIAS(celkelvin_VBIAS),
-.ten_enablevbias(tl0)
+  .IN1(net_250),
+  .CELG(CELG59462),
+  .VBIAS(INTVCC),
+  .CELSUB(CELSUB40948),
+  .TAI_VBIAS(noconn_TAI_VBIAS7),
+  .tdi_vbias(noconn_tdi_vbias8),
+  .ten_taiv2v5(tl0),
+  .global_vbias(tl0),
+  .ten_taiv1v0f(tl0),
+  .celkelvin_IN1(celkelvin_IN1),
+  .trim_vbiasneg({a0,a0,a0,a0,a0,a0,a0,a0}),
+  .trim_vbiaspos({a0,a0,a0,a0,a0,a0,a0,a0}),
+  .trim_vbiasref({a0,a0,a0,a0,a0,a0,a0,a0}),
+  .ten_taifbvbias(tl0),
+  .ten_tdiokvbias(tl0),
+  .celkelvin_VBIAS(celkelvin_VBIAS),
+  .ten_enablevbias(tl0)
 );
 
 PEBBLEtielo XDRMNOTL (
-.G(CELG59462),
-.V(CELV96848),
-.q(a0),
-.SUB(CELSUB40948)
+  .G(CELG59462),
+  .V(CELV96848),
+  .q(a0),
+  .SUB(CELSUB40948)
 );
 
 vbuffer_56e8bfbd Xvbuffer1 (
-.IN(REF),
-.IP(IP_86807c55),
-.OUT(VCC2P5),
-.CELG(CELG59462),
-.SIMPV(INTVCC),
-.CELSUB(CELSUB40948),
-.GNDSENSE(kelvin_GNDservice),
-.ok_vbuffer(net_255),
-.enable_vbuffer(net_248),
-.global_vbuffer(tl0),
-.trim_vbuffer_negative({a0,a0,a0,a0,a0,a0,a0}),
-.trim_vbuffer_positive({a0,a0,a0,a0,a0,a0,a0})
+  .IN(REF),
+  .IP(IP_86807c55),
+  .OUT(VCC2P5),
+  .CELG(CELG59462),
+  .SIMPV(INTVCC),
+  .CELSUB(CELSUB40948),
+  .GNDSENSE(kelvin_GNDservice),
+  .ok_vbuffer(net_255),
+  .enable_vbuffer(net_248),
+  .global_vbuffer(tl0),
+  .trim_vbuffer_negative({a0,a0,a0,a0,a0,a0,a0}),
+  .trim_vbuffer_positive({a0,a0,a0,a0,a0,a0,a0})
 );
 
 reference_9a781563 Xreference1 (
-.REF(REF_e3b0c442),
-.CELG(CELG59462),
-.CELBG(CELBG83021),
-.SIMPV(INTVCC),
-.CELSUB(CELSUB40948),
-.TAI_REF(noconn_TAI_REF9),
-.ten_ref(tl0),
-.trim_ref({a0,a0,a0,a0,a0,a0}),
-.TAI_REFBG(noconn_TAI_REFBG10),
-.ten_refbg(tl0),
-.trim_refbg({a0,a0,a0,a0,a0,a0,a0}),
-.ok_reference(net_256),
-.factory_refccn({a0,a0,a0,a0,a0}),
-.factory_refccp({a0,a0,a0,a0,a0}),
-.celkelvin_GNDref(celkelvin_GNDref),
-.enable_reference(porb),
-.global_reference(tl0)
+  .REF(REF),
+  .CELG(CELG59462),
+  .CELBG(CELBG83021),
+  .SIMPV(INTVCC),
+  .CELSUB(CELSUB40948),
+  .TAI_REF(noconn_TAI_REF9),
+  .ten_ref(tl0),
+  .trim_ref({a0,a0,a0,a0,a0,a0}),
+  .TAI_REFBG(noconn_TAI_REFBG10),
+  .ten_refbg(tl0),
+  .trim_refbg({a0,a0,a0,a0,a0,a0,a0}),
+  .ok_reference(net_256),
+  .factory_refccn({a0,a0,a0,a0,a0}),
+  .factory_refccp({a0,a0,a0,a0,a0}),
+  .celkelvin_GNDref(celkelvin_GNDref),
+  .enable_reference(porb),
+  .global_reference(tl0)
 );
 
 oscillator_242d2a21 Xoscillator1 (
-.osc(net_253),
-.ten(tl0),
-.CELG(CELG59462),
-.SIMPV(INTVCC),
-.CELSUB(CELSUB40948),
-.SENSE_G(SENSE_G_344f8d94),
-.ok_oscillator(net_249),
-.trim_oscillator({a0,a0,a0,a0,a0,a0,a0}),
-.enable_oscillator(net_252)
+  .osc(net_253),
+  .ten(tl0),
+  .CELG(CELG59462),
+  .SIMPV(INTVCC),
+  .CELSUB(CELSUB40948),
+  .SENSE_G(SENSE_G_344f8d94),
+  .ok_oscillator(net_249),
+  .trim_oscillator({a0,a0,a0,a0,a0,a0,a0}),
+  .enable_oscillator(net_252)
 );
 
 padopendrain_6c6ec5f0 Xpadopendrain1 (
-.PAD(VCC2P5),
-.RTN(GNDservice),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.input_padopendrain(net_248)
+  .PAD(VCC2P5),
+  .RTN(GNDservice),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .input_padopendrain(net_248)
 );
 
 STONEnoconn XNCnoconn_TAI_REF9 (
-.noconn(noconn_TAI_REF9)
+  .noconn(noconn_TAI_REF9)
 );
 
 STONEnoconn XNCnoconn_TAI_VBIAS7 (
-.noconn(noconn_TAI_VBIAS7)
+  .noconn(noconn_TAI_VBIAS7)
 );
 
 STONEnoconn XNCnoconn_tdi_vbias8 (
-.noconn(noconn_tdi_vbias8)
+  .noconn(noconn_tdi_vbias8)
 );
 
 STONEnoconn XNCnoconn_TAI_REFBG10 (
-.noconn(noconn_TAI_REFBG10)
+  .noconn(noconn_TAI_REFBG10)
 );
 
 WRAPPER1 celkelvin_IN1_WRAPPER (
-.i(celkelvin_IN1),
-.o(net_250)
+  .i(celkelvin_IN1),
+  .o(net_250)
 );
 
 endmodule

@@ -51,7 +51,7 @@ module SERVICEpuget (,IN,porb,TAEXT,INTVCC,VCC2P5,VOUTSN,CELG59462,CELV96848,POR
   inout  kelvin_VCAP;
   output  sync_stepup;
   inout  kelvin_DRVCC;
-  input  REF_SEQUENCER;
+  output  REF_SEQUENCER;
   output  allow_charger;
   output  fault_service;
   inout  kelvin_INTVCC;
@@ -82,83 +82,88 @@ module sim_SERVICEpuget_ROW35 ();
 
 // ------------------------ Networks ---------------------
 FORCE_SERVICEpuget XFORCE_SERVICEpuget1 (
-.IN(kelvin_IN),
-.GND(GND),
-.INTVCC(INTVCC),
-.VCC2P5(VCC2P5),
-.VOUTSN(VOUTSN),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.PORB97836(PORB97836),
-.kelvin_IN(kelvin_IN),
-.GNDservice(GNDservice),
-.CELSUB40948(CELSUB40948),
-.IP_051b7bcb(IP_051b7bcb),
-.IP_30a0e5c5(IP_30a0e5c5),
-.IP_86807c55(IP_86807c55),
-.IP_87250ba9(IP_87250ba9),
-.IP_9219bb98(IP_9219bb98),
-.IP_92c9b3c9(IP_92c9b3c9),
-.IP_de226f75(IP_de226f75),
-.kelvin_VCAP(kelvin_VCAP),
-.kelvin_DRVCC(kelvin_DRVCC),
-.kelvin_INTVCC(kelvin_INTVCC),
-.kelvin_VCC2P5(kelvin_VCC2P5),
-.kelvin_VOUTSN(kelvin_VOUTSN),
-.kelvin_GNDservice(kelvin_GNDservice)
+  .IN(kelvin_IN),
+  .GND(GND),
+  .INTVCC(INTVCC),
+  .VCC2P5(VCC2P5),
+  .VOUTSN(VOUTSN),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .PORB97836(PORB97836),
+  .kelvin_IN(kelvin_IN),
+  .GNDservice(GNDservice),
+  .CELSUB40948(CELSUB40948),
+  .IP_051b7bcb(IP_051b7bcb),
+  .IP_30a0e5c5(IP_30a0e5c5),
+  .IP_86807c55(IP_86807c55),
+  .IP_87250ba9(IP_87250ba9),
+  .IP_9219bb98(IP_9219bb98),
+  .IP_92c9b3c9(IP_92c9b3c9),
+  .IP_de226f75(IP_de226f75),
+  .kelvin_VCAP(kelvin_VCAP),
+  .kelvin_DRVCC(kelvin_DRVCC),
+  .kelvin_INTVCC(kelvin_INTVCC),
+  .kelvin_VCC2P5(kelvin_VCC2P5),
+  .kelvin_VOUTSN(kelvin_VOUTSN),
+  .kelvin_GNDservice(kelvin_GNDservice)
 );
 
 SERVICEpuget XSERVICEpuget1 (
-.IN(kelvin_IN),
-.porb(porb),
-.TAEXT(TAEXT),
-.INTVCC(INTVCC),
-.VCC2P5(VCC2P5),
-.VOUTSN(VOUTSN),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.PORB97836(PORB97836),
-.chrg_uvlo(chrg_uvlo),
-.kelvin_IN(kelvin_IN),
-.GNDservice(GNDservice),
-.ok_service(ok_service),
-.CELSUB40948(CELSUB40948),
-.IP_051b7bcb(IP_051b7bcb),
-.IP_30a0e5c5(IP_30a0e5c5),
-.IP_86807c55(IP_86807c55),
-.IP_87250ba9(IP_87250ba9),
-.IP_9219bb98(IP_9219bb98),
-.IP_92c9b3c9(IP_92c9b3c9),
-.IP_de226f75(IP_de226f75),
-.kelvin_VCAP(kelvin_VCAP),
-.sync_stepup(sync_stepup),
-.kelvin_DRVCC(kelvin_DRVCC),
-.REF_SEQUENCER(net_40),
-.allow_charger(allow_charger),
-.fault_service(fault_service),
-.kelvin_INTVCC(kelvin_INTVCC),
-.kelvin_VCC2P5(kelvin_VCC2P5),
-.kelvin_VOUTSN(kelvin_VOUTSN),
-.celkelvin_VBIAS(celkelvin_VBIAS),
-.clock_sequencer(clock_sequencer),
-.SENSE_G_344f8d94(SENSE_G_344f8d94),
-.celkelvin_GNDref(celkelvin_GNDref),
-.kelvin_GNDservice(kelvin_GNDservice)
+  .IN(kelvin_IN),
+  .porb(porb),
+  .TAEXT(TAEXT),
+  .INTVCC(INTVCC),
+  .VCC2P5(VCC2P5),
+  .VOUTSN(VOUTSN),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .PORB97836(PORB97836),
+  .chrg_uvlo(chrg_uvlo),
+  .kelvin_IN(kelvin_IN),
+  .GNDservice(GNDservice),
+  .ok_service(ok_service),
+  .CELSUB40948(CELSUB40948),
+  .IP_051b7bcb(IP_051b7bcb),
+  .IP_30a0e5c5(IP_30a0e5c5),
+  .IP_86807c55(IP_86807c55),
+  .IP_87250ba9(IP_87250ba9),
+  .IP_9219bb98(IP_9219bb98),
+  .IP_92c9b3c9(IP_92c9b3c9),
+  .IP_de226f75(IP_de226f75),
+  .kelvin_VCAP(kelvin_VCAP),
+  .sync_stepup(sync_stepup),
+  .kelvin_DRVCC(kelvin_DRVCC),
+  .REF_SEQUENCER(REF_SEQUENCER),
+  .allow_charger(allow_charger),
+  .fault_service(fault_service),
+  .kelvin_INTVCC(kelvin_INTVCC),
+  .kelvin_VCC2P5(kelvin_VCC2P5),
+  .kelvin_VOUTSN(kelvin_VOUTSN),
+  .celkelvin_VBIAS(celkelvin_VBIAS),
+  .clock_sequencer(clock_sequencer),
+  .SENSE_G_344f8d94(SENSE_G_344f8d94),
+  .celkelvin_GNDref(celkelvin_GNDref),
+  .kelvin_GNDservice(kelvin_GNDservice)
 );
 
 WRAPPER1 TAEXT_WRAPPER (
-.i(TAEXT),
-.o(CELG59462)
+  .i(TAEXT),
+  .o(CELG59462)
+);
+
+WRAPPER1 celkelvin_IN1_WRAPPER (
+  .i(celkelvin_IN1),
+  .o(net_250)
 );
 
 WRAPPER1 celkelvin_VBIAS_WRAPPER (
-.i(celkelvin_VBIAS),
-.o(INTVCC)
+  .i(celkelvin_VBIAS),
+  .o(INTVCC)
 );
 
 WRAPPER1 celkelvin_GNDref_WRAPPER (
-.i(celkelvin_GNDref),
-.o(CELG59462)
+  .i(celkelvin_GNDref),
+  .o(CELG59462)
 );
 
 endmodule

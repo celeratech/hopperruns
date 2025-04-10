@@ -70,38 +70,38 @@ input  CELSUB40948;
 
 // ------------------------ Networks ---------------------
 nand3_3e9b0d1d XU4 (
-.o(net_6),
-.i0(i0),
-.i1(i2),
-.i2(i1),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .o(net_6),
+  .i0(i0),
+  .i1(i2),
+  .i2(i1),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 inv_12e192f5 XU5 (
-.i(Tstate),
-.o(net_8),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(Tstate),
+  .o(net_8),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 nor2_ee112582 XU6 (
-.o(net_7),
-.i0(net_6),
-.i1(net_8),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .o(net_7),
+  .i0(net_6),
+  .i1(net_8),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU19 (
-.i(net_7),
-.o(o),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_7),
+  .o(o),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 endmodule

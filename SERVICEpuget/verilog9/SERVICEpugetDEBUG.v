@@ -60,69 +60,69 @@ output  Hijack_enable_service;
 
 // ------------------------ Networks ---------------------
 VESPAdftpulse XU2 (
-.stop(fault_service),
-.pulse(net_39),
-.start(Hijack_enable_service),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
+  .stop(fault_service),
+  .pulse(net_39),
+  .start(Hijack_enable_service),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .CELSUB40948(CELSUB40948)
 );
 
 VESPAdftpulse XU9 (
-.stop(ok_service),
-.pulse(net_38),
-.start(Hijack_enable_service),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
+  .stop(ok_service),
+  .pulse(net_38),
+  .start(Hijack_enable_service),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .CELSUB40948(CELSUB40948)
 );
 
 tie_ef1bc46b XU1 (
-.a1(net_51),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .a1(net_51),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 STONEnoconn XNC38 (
-.noconn(net_38)
+  .noconn(net_38)
 );
 
 STONEnoconn XNC39 (
-.noconn(net_39)
+  .noconn(net_39)
 );
 
 WRAPPER1 XWRAP_51_49 (
-.i(net_51),
-.o(Hijack_enable_service)
+  .i(net_51),
+  .o(Hijack_enable_service)
 );
 
 STONEnoconn XNCdft_over_in (
-.noconn(dft_over_in)
+  .noconn(dft_over_in)
 );
 
 STONEnoconn XNCdft_ok_drvcc (
-.noconn(dft_ok_drvcc)
+  .noconn(dft_ok_drvcc)
 );
 
 STONEnoconn XNCREF_SEQUENCER (
-.noconn(REF_SEQUENCER)
+  .noconn(REF_SEQUENCER)
 );
 
 STONEnoconn XNCallow_charger (
-.noconn(allow_charger)
+  .noconn(allow_charger)
 );
 
 STONEnoconn XNCdft_ok_intvcc (
-.noconn(dft_ok_intvcc)
+  .noconn(dft_ok_intvcc)
 );
 
 STONEnoconn XNCdft_ok_vcc2p5 (
-.noconn(dft_ok_vcc2p5)
+  .noconn(dft_ok_vcc2p5)
 );
 
 STONEnoconn XNCclock_sequencer (
-.noconn(clock_sequencer)
+  .noconn(clock_sequencer)
 );
 
 endmodule

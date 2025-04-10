@@ -201,146 +201,146 @@ wire [5:0] trim_currentgenerator;
 
 // ------------------------ Networks ---------------------
 VESPAasmINPUT3 XU2 (
-.o(net_86),
-.i0(net_85),
-.i1(net_84),
-.i2(net_88),
-.Tstate(enable_ovlo),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
+  .o(net_86),
+  .i0(net_85),
+  .i1(net_84),
+  .i2(net_88),
+  .Tstate(enable_ovlo),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .CELSUB40948(CELSUB40948)
 );
 
 fet_9ede87fc XU3 (
-.SUB(CELSUB40948),
-.GATE(SIMPV),
-.DRAIN(net_89),
-.SOURCE(net_82)
+  .SUB(CELSUB40948),
+  .GATE(SIMPV),
+  .DRAIN(net_89),
+  .SOURCE(net_82)
 );
 
 fet_9ede87fc XU4 (
-.SUB(CELSUB40948),
-.GATE(SIMPV),
-.DRAIN(net_89),
-.SOURCE(net_83)
+  .SUB(CELSUB40948),
+  .GATE(SIMPV),
+  .DRAIN(net_89),
+  .SOURCE(net_83)
 );
 
 dbuf_e926e395 XU5 (
-.i(net_90),
-.o(ovlo),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_90),
+  .o(ovlo),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 resistorarray_b801fb63 XU6 (
-.RN1(net_91),
-.RN2(kelvin_VCAP),
-.RN3(net_82),
-.RN4(kelvin_GND),
-.RN5(kelvin_GND),
-.RP1(kelvin_VOUTSN),
-.RP2(net_83),
-.RP3(net_91),
-.RP4(net_83),
-.RP5(net_91),
-.CELG(CELG59462)
+  .RN1(net_91),
+  .RN2(kelvin_VCAP),
+  .RN3(net_82),
+  .RN4(kelvin_GND),
+  .RN5(kelvin_GND),
+  .RP1(kelvin_VOUTSN),
+  .RP2(net_83),
+  .RP3(net_91),
+  .RP4(net_83),
+  .RP5(net_91),
+  .CELG(CELG59462)
 );
 
 PEBBLEtielo XtieLo (
-.G(CELG59462),
-.V(CELV96848),
-.q(tl0),
-.SUB(CELSUB40948)
+  .G(CELG59462),
+  .V(CELV96848),
+  .q(tl0),
+  .SUB(CELSUB40948)
 );
 
 delayfixed_18fc5530 Xdelay1 (
-.i(net_86),
-.o(net_90),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
+  .i(net_86),
+  .o(net_90),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948)
 );
 
 PEBBLEtielo XDRMNOTL (
-.G(CELG59462),
-.V(CELV96848),
-.q(a0),
-.SUB(CELSUB40948)
+  .G(CELG59462),
+  .V(CELV96848),
+  .q(a0),
+  .SUB(CELSUB40948)
 );
 
 switchgnd_44ae9b63 Xswitch1 (
-.I(net_82),
-.O(net_87),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948),
-.enable_switchb(net_85)
+  .I(net_82),
+  .O(net_87),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948),
+  .enable_switchb(net_85)
 );
 
 comparatornoctlpins_28712b5b Xcomparator1 (
-.IP(IP_de226f75),
-.CELG(CELG59462),
-.SIMPV(SIMPV),
-.CELSUB(CELSUB40948),
-.ok_comparator(net_88),
-.INN_COMPARATOR(net_83),
-.INP_COMPARATOR(net_82),
-.out_comparator(net_85),
-.enable_comparator(enable_ovlo),
-.global_comparator(tl0)
+  .IP(IP_de226f75),
+  .CELG(CELG59462),
+  .SIMPV(SIMPV),
+  .CELSUB(CELSUB40948),
+  .ok_comparator(net_88),
+  .INN_COMPARATOR(net_83),
+  .INP_COMPARATOR(net_82),
+  .out_comparator(net_85),
+  .enable_comparator(enable_ovlo),
+  .global_comparator(tl0)
 );
 
 currentgenerator_18c00a69 Xcurrentgenerator1 (
-.I0(net_82),
-.I1(net_87),
-.I2(net_83),
-.IP(IP_051b7bcb),
-.CELG(CELG59462),
-.SIMPV(SIMPV),
-.TAEXT(TAEXT),
-.CELSUB(CELSUB40948),
-.TAI_N5UREF(noconn_TAI_N5UREF1),
-.TAI_N50NREF(noconn_TAI_N50NREF2),
-.TAI_P50NREF(noconn_TAI_P50NREF3),
-.TAI_N500NREF(noconn_TAI_N500NREF4),
-.TAI_P500NREF(noconn_TAI_P500NREF5),
-.ten_tai_n5uref(tl0),
-.ten_tai_n50nref(tl0),
-.ten_tai_p50nref(tl0),
-.ten_tai_n500nref(tl0),
-.ten_tai_p500nref(tl0),
-.ok_currentgenerator(net_84),
-.ten_currentgenerator(tl0),
-.trim_currentgenerator({a0,a0,a0,a0,a0,a0}),
-.enable_currentgenerator(enable_ovlo),
-.global_currentgenerator(tl0),
-.tdi_ok_currentgenerator(noconn_tdi_ok_currentgenerator6),
-.ten_taext_currentgenerator(tl0)
+  .I0(net_82),
+  .I1(net_87),
+  .I2(net_83),
+  .IP(IP_051b7bcb),
+  .CELG(CELG59462),
+  .SIMPV(SIMPV),
+  .TAEXT(TAEXT),
+  .CELSUB(CELSUB40948),
+  .TAI_N5UREF(noconn_TAI_N5UREF1),
+  .TAI_N50NREF(noconn_TAI_N50NREF2),
+  .TAI_P50NREF(noconn_TAI_P50NREF3),
+  .TAI_N500NREF(noconn_TAI_N500NREF4),
+  .TAI_P500NREF(noconn_TAI_P500NREF5),
+  .ten_tai_n5uref(tl0),
+  .ten_tai_n50nref(tl0),
+  .ten_tai_p50nref(tl0),
+  .ten_tai_n500nref(tl0),
+  .ten_tai_p500nref(tl0),
+  .ok_currentgenerator(net_84),
+  .ten_currentgenerator(tl0),
+  .trim_currentgenerator({a0,a0,a0,a0,a0,a0}),
+  .enable_currentgenerator(enable_ovlo),
+  .global_currentgenerator(tl0),
+  .tdi_ok_currentgenerator(noconn_tdi_ok_currentgenerator6),
+  .ten_taext_currentgenerator(tl0)
 );
 
 STONEnoconn XNCnoconn_TAI_N5UREF1 (
-.noconn(noconn_TAI_N5UREF1)
+  .noconn(noconn_TAI_N5UREF1)
 );
 
 STONEnoconn XNCnoconn_TAI_N50NREF2 (
-.noconn(noconn_TAI_N50NREF2)
+  .noconn(noconn_TAI_N50NREF2)
 );
 
 STONEnoconn XNCnoconn_TAI_P50NREF3 (
-.noconn(noconn_TAI_P50NREF3)
+  .noconn(noconn_TAI_P50NREF3)
 );
 
 STONEnoconn XNCnoconn_TAI_N500NREF4 (
-.noconn(noconn_TAI_N500NREF4)
+  .noconn(noconn_TAI_N500NREF4)
 );
 
 STONEnoconn XNCnoconn_TAI_P500NREF5 (
-.noconn(noconn_TAI_P500NREF5)
+  .noconn(noconn_TAI_P500NREF5)
 );
 
 STONEnoconn XNCnoconn_tdi_ok_currentgenerator6 (
-.noconn(noconn_tdi_ok_currentgenerator6)
+  .noconn(noconn_tdi_ok_currentgenerator6)
 );
 
 endmodule

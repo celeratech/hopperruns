@@ -34,20 +34,20 @@ output  SERVICEconfiguration_1;
 
 // ------------------------ Networks ---------------------
 PEBBLEtiehi XDRMNOTH (
-.G(CELG59462),
-.V(CELV96848),
-.q(a1),
-.SUB(CELSUB40948)
+  .G(CELG59462),
+  .V(CELV96848),
+  .q(a1),
+  .SUB(CELSUB40948)
 );
 
 WRAPPER1 SERVICEconfiguration_0_WRAPPER (
-.i(a1),
-.o(SERVICEconfiguration_0)
+  .i(a1),
+  .o(SERVICEconfiguration_0)
 );
 
 WRAPPER1 SERVICEconfiguration_1_WRAPPER (
-.i(a1),
-.o(SERVICEconfiguration_1)
+  .i(a1),
+  .o(SERVICEconfiguration_1)
 );
 
 endmodule

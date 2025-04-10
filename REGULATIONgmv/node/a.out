@@ -1,0 +1,285 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x55875ce2df60 .scope module, "STONEnoconn" "STONEnoconn" 2 46;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+o0x7f3806af5018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55875ce6c3d0_0 .net "noconn", 0 0, o0x7f3806af5018;  0 drivers
+S_0x55875ce64490 .scope module, "resistor_3bdd3d4d" "resistor_3bdd3d4d" 2 108;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INPUT 1 "CELV";
+    .port_info 2 /INPUT 1 "CELG";
+    .port_info 3 /INPUT 1 "CELSUB";
+    .port_info 4 /INPUT 6 "trim_resistor";
+    .port_info 5 /INOUT 1 "RN";
+o0x7f3806af5078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55875ce99130_0 .net "CELG", 0 0, o0x7f3806af5078;  0 drivers
+o0x7f3806af5c48 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55875ce991f0_0 .net "CELSUB", 0 0, o0x7f3806af5c48;  0 drivers
+o0x7f3806af5c78 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55875ce992b0_0 .net "CELV", 0 0, o0x7f3806af5c78;  0 drivers
+o0x7f3806af5198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55875ce99350_0 .net "RN", 0 0, o0x7f3806af5198;  0 drivers
+o0x7f3806af50d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55875ce993f0_0 .net "RP", 0 0, o0x7f3806af50d8;  0 drivers
+o0x7f3806af51c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55875ce994e0_0 .net "RT0", 0 0, o0x7f3806af51c8;  0 drivers
+o0x7f3806af5558 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55875ce99580_0 .net "RT1", 0 0, o0x7f3806af5558;  0 drivers
+o0x7f3806af57c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55875ce99620_0 .net "RT2", 0 0, o0x7f3806af57c8;  0 drivers
+o0x7f3806af5a38 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55875ce996c0_0 .net "RT3", 0 0, o0x7f3806af5a38;  0 drivers
+o0x7f3806af5af8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55875ce99880_0 .net "RT4", 0 0, o0x7f3806af5af8;  0 drivers
+o0x7f3806af50a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55875ce999b0_0 .net "RT5", 0 0, o0x7f3806af50a8;  0 drivers
+o0x7f3806af6488 .functor BUFZ 6, C4<zzzzzz>; HiZ drive
+v0x55875ce99a50_0 .net "trim_resistor", 5 0, o0x7f3806af6488;  0 drivers
+L_0x55875ce99b90 .part o0x7f3806af6488, 5, 1;
+L_0x55875ce99c30 .part o0x7f3806af6488, 4, 1;
+L_0x55875ce99cd0 .part o0x7f3806af6488, 3, 1;
+L_0x55875ce99d70 .part o0x7f3806af6488, 2, 1;
+L_0x55875ce99ed0 .part o0x7f3806af6488, 1, 1;
+L_0x55875ce99f70 .part o0x7f3806af6488, 0, 1;
+S_0x55875ce90900 .scope module, "XR0_0" "rlpp3000rpo11p3u0p4u" 2 122, 2 54 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55875ce6d070_0 .net "ISO", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce6dd10_0 .net "RN", 0 0, o0x7f3806af50a8;  alias, 0 drivers
+v0x55875ce6e9b0_0 .net "RP", 0 0, o0x7f3806af50d8;  alias, 0 drivers
+S_0x55875ce90c30 .scope module, "XRT0_0" "rlpp3000rpo1p4u0p4u" 2 284, 2 99 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55875ce703b0_0 .net "ISO", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce90e80_0 .net "RN", 0 0, o0x7f3806af5198;  alias, 0 drivers
+v0x55875ce90f20_0 .net "RP", 0 0, o0x7f3806af51c8;  alias, 0 drivers
+S_0x55875ce91040 .scope module, "XRT0_1" "rlpp3000rpo1p4u0p4u" 2 289, 2 99 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55875ce91270_0 .net "ISO", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce91360_0 .net "RN", 0 0, o0x7f3806af5198;  alias, 0 drivers
+v0x55875ce91420_0 .net "RP", 0 0, o0x7f3806af51c8;  alias, 0 drivers
+S_0x55875ce914f0 .scope module, "XRT0_2" "rlpp3000rpo1p4u0p4u" 2 294, 2 99 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55875ce91720_0 .net "ISO", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce917e0_0 .net "RN", 0 0, o0x7f3806af5198;  alias, 0 drivers
+v0x55875ce918f0_0 .net "RP", 0 0, o0x7f3806af51c8;  alias, 0 drivers
+S_0x55875ce91a20 .scope module, "XRT0_3" "rlpp3000rpo1p4u0p4u" 2 299, 2 99 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55875ce91ca0_0 .net "ISO", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce91d60_0 .net "RN", 0 0, o0x7f3806af5198;  alias, 0 drivers
+v0x55875ce91e20_0 .net "RP", 0 0, o0x7f3806af51c8;  alias, 0 drivers
+S_0x55875ce91f00 .scope module, "XRT0_4" "rlpp3000rpo1p4u0p4u" 2 304, 2 99 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55875ce920e0_0 .net "ISO", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce921a0_0 .net "RN", 0 0, o0x7f3806af5198;  alias, 0 drivers
+v0x55875ce922f0_0 .net "RP", 0 0, o0x7f3806af51c8;  alias, 0 drivers
+S_0x55875ce92460 .scope module, "XRT0_5" "rlpp3000rpo1p4u0p4u" 2 309, 2 99 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55875ce925f0_0 .net "ISO", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce926b0_0 .net "RN", 0 0, o0x7f3806af5198;  alias, 0 drivers
+v0x55875ce92770_0 .net "RP", 0 0, o0x7f3806af51c8;  alias, 0 drivers
+S_0x55875ce92880 .scope module, "XRT1_0" "rlpp3000rpo1p8u0p4u" 2 247, 2 81 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55875ce92ab0_0 .net "ISO", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce92b70_0 .net "RN", 0 0, o0x7f3806af51c8;  alias, 0 drivers
+v0x55875ce92c30_0 .net "RP", 0 0, o0x7f3806af5558;  alias, 0 drivers
+S_0x55875ce92d60 .scope module, "XRT1_1" "rlpp3000rpo1p8u0p4u" 2 252, 2 81 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55875ce92fd0_0 .net "ISO", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce931a0_0 .net "RN", 0 0, o0x7f3806af51c8;  alias, 0 drivers
+v0x55875ce93260_0 .net "RP", 0 0, o0x7f3806af5558;  alias, 0 drivers
+S_0x55875ce93380 .scope module, "XRT1_2" "rlpp3000rpo1p8u0p4u" 2 257, 2 81 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55875ce935b0_0 .net "ISO", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce93670_0 .net "RN", 0 0, o0x7f3806af51c8;  alias, 0 drivers
+v0x55875ce93840_0 .net "RP", 0 0, o0x7f3806af5558;  alias, 0 drivers
+S_0x55875ce939a0 .scope module, "XRT1_3" "rlpp3000rpo1p8u0p4u" 2 262, 2 81 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55875ce93bd0_0 .net "ISO", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce93c90_0 .net "RN", 0 0, o0x7f3806af51c8;  alias, 0 drivers
+v0x55875ce93d50_0 .net "RP", 0 0, o0x7f3806af5558;  alias, 0 drivers
+S_0x55875ce93e30 .scope module, "XRT2_0" "rlpp3000rpo2p8u0p4u" 2 210, 2 90 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55875ce94060_0 .net "ISO", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce94120_0 .net "RN", 0 0, o0x7f3806af5558;  alias, 0 drivers
+v0x55875ce941e0_0 .net "RP", 0 0, o0x7f3806af57c8;  alias, 0 drivers
+S_0x55875ce94310 .scope module, "XRT2_1" "rlpp3000rpo2p8u0p4u" 2 215, 2 90 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55875ce944f0_0 .net "ISO", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce945b0_0 .net "RN", 0 0, o0x7f3806af5558;  alias, 0 drivers
+v0x55875ce94670_0 .net "RP", 0 0, o0x7f3806af57c8;  alias, 0 drivers
+S_0x55875ce94790 .scope module, "XRT2_2" "rlpp3000rpo2p8u0p4u" 2 220, 2 90 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55875ce949c0_0 .net "ISO", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce94a80_0 .net "RN", 0 0, o0x7f3806af5558;  alias, 0 drivers
+v0x55875ce94b40_0 .net "RP", 0 0, o0x7f3806af57c8;  alias, 0 drivers
+S_0x55875ce94ca0 .scope module, "XRT2_3" "rlpp3000rpo2p8u0p4u" 2 225, 2 90 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55875ce94ed0_0 .net "ISO", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce94f90_0 .net "RN", 0 0, o0x7f3806af5558;  alias, 0 drivers
+v0x55875ce95050_0 .net "RP", 0 0, o0x7f3806af57c8;  alias, 0 drivers
+S_0x55875ce95130 .scope module, "XRT3_0" "rlpp3000rpo1p8u0p4u" 2 188, 2 81 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55875ce95360_0 .net "ISO", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce95420_0 .net "RN", 0 0, o0x7f3806af57c8;  alias, 0 drivers
+v0x55875ce954e0_0 .net "RP", 0 0, o0x7f3806af5a38;  alias, 0 drivers
+S_0x55875ce95610 .scope module, "XRT4_0" "rlpp3000rpo3p7u0p4u" 2 166, 2 72 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55875ce95900_0 .net "ISO", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce95bd0_0 .net "RN", 0 0, o0x7f3806af5a38;  alias, 0 drivers
+v0x55875ce95cc0_0 .net "RP", 0 0, o0x7f3806af5af8;  alias, 0 drivers
+S_0x55875ce95dd0 .scope module, "XRT5_0" "rlpp3000rpo7p5u0p4u" 2 144, 2 63 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RP";
+    .port_info 1 /INOUT 1 "RN";
+    .port_info 2 /INPUT 1 "ISO";
+v0x55875ce96000_0 .net "ISO", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce960c0_0 .net "RN", 0 0, o0x7f3806af5af8;  alias, 0 drivers
+v0x55875ce961b0_0 .net "RP", 0 0, o0x7f3806af50a8;  alias, 0 drivers
+S_0x55875ce962b0 .scope module, "XtrimTswitch0" "STONEresistorswitchL" 2 274, 2 32 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RN";
+    .port_info 1 /INOUT 1 "RP";
+    .port_info 2 /INPUT 1 "G";
+    .port_info 3 /INPUT 1 "SUB";
+    .port_info 4 /INPUT 1 "V";
+    .port_info 5 /INPUT 1 "t";
+v0x55875ce96530_0 .net "G", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce965d0_0 .net "RN", 0 0, o0x7f3806af5198;  alias, 0 drivers
+v0x55875ce96690_0 .net "RP", 0 0, o0x7f3806af51c8;  alias, 0 drivers
+v0x55875ce96760_0 .net "SUB", 0 0, o0x7f3806af5c48;  alias, 0 drivers
+v0x55875ce96800_0 .net "V", 0 0, o0x7f3806af5c78;  alias, 0 drivers
+v0x55875ce968f0_0 .net "t", 0 0, L_0x55875ce99f70;  1 drivers
+S_0x55875ce96a70 .scope module, "XtrimTswitch1" "STONEresistorswitchL" 2 237, 2 32 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RN";
+    .port_info 1 /INOUT 1 "RP";
+    .port_info 2 /INPUT 1 "G";
+    .port_info 3 /INPUT 1 "SUB";
+    .port_info 4 /INPUT 1 "V";
+    .port_info 5 /INPUT 1 "t";
+v0x55875ce96cf0_0 .net "G", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce96db0_0 .net "RN", 0 0, o0x7f3806af51c8;  alias, 0 drivers
+v0x55875ce96e70_0 .net "RP", 0 0, o0x7f3806af5558;  alias, 0 drivers
+v0x55875ce96f10_0 .net "SUB", 0 0, o0x7f3806af5c48;  alias, 0 drivers
+v0x55875ce96fe0_0 .net "V", 0 0, o0x7f3806af5c78;  alias, 0 drivers
+v0x55875ce970d0_0 .net "t", 0 0, L_0x55875ce99ed0;  1 drivers
+S_0x55875ce971d0 .scope module, "XtrimTswitch2" "STONEresistorswitchL" 2 200, 2 32 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RN";
+    .port_info 1 /INOUT 1 "RP";
+    .port_info 2 /INPUT 1 "G";
+    .port_info 3 /INPUT 1 "SUB";
+    .port_info 4 /INPUT 1 "V";
+    .port_info 5 /INPUT 1 "t";
+v0x55875ce97450_0 .net "G", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce97510_0 .net "RN", 0 0, o0x7f3806af5558;  alias, 0 drivers
+v0x55875ce975d0_0 .net "RP", 0 0, o0x7f3806af57c8;  alias, 0 drivers
+v0x55875ce976a0_0 .net "SUB", 0 0, o0x7f3806af5c48;  alias, 0 drivers
+v0x55875ce97790_0 .net "V", 0 0, o0x7f3806af5c78;  alias, 0 drivers
+v0x55875ce978d0_0 .net "t", 0 0, L_0x55875ce99d70;  1 drivers
+S_0x55875ce97a10 .scope module, "XtrimTswitch3" "STONEresistorswitchL" 2 178, 2 32 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RN";
+    .port_info 1 /INOUT 1 "RP";
+    .port_info 2 /INPUT 1 "G";
+    .port_info 3 /INPUT 1 "SUB";
+    .port_info 4 /INPUT 1 "V";
+    .port_info 5 /INPUT 1 "t";
+v0x55875ce97c90_0 .net "G", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce97d50_0 .net "RN", 0 0, o0x7f3806af57c8;  alias, 0 drivers
+v0x55875ce97e10_0 .net "RP", 0 0, o0x7f3806af5a38;  alias, 0 drivers
+v0x55875ce97f00_0 .net "SUB", 0 0, o0x7f3806af5c48;  alias, 0 drivers
+v0x55875ce97fa0_0 .net "V", 0 0, o0x7f3806af5c78;  alias, 0 drivers
+v0x55875ce98090_0 .net "t", 0 0, L_0x55875ce99cd0;  1 drivers
+S_0x55875ce981d0 .scope module, "XtrimTswitch4" "STONEresistorswitchL" 2 156, 2 32 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RN";
+    .port_info 1 /INOUT 1 "RP";
+    .port_info 2 /INPUT 1 "G";
+    .port_info 3 /INPUT 1 "SUB";
+    .port_info 4 /INPUT 1 "V";
+    .port_info 5 /INPUT 1 "t";
+v0x55875ce98450_0 .net "G", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce98510_0 .net "RN", 0 0, o0x7f3806af5a38;  alias, 0 drivers
+v0x55875ce985d0_0 .net "RP", 0 0, o0x7f3806af5af8;  alias, 0 drivers
+v0x55875ce986c0_0 .net "SUB", 0 0, o0x7f3806af5c48;  alias, 0 drivers
+v0x55875ce98760_0 .net "V", 0 0, o0x7f3806af5c78;  alias, 0 drivers
+v0x55875ce98800_0 .net "t", 0 0, L_0x55875ce99c30;  1 drivers
+S_0x55875ce98980 .scope module, "XtrimTswitchB5" "STONEresistorswitchLB" 2 134, 2 18 0, S_0x55875ce64490;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "RN";
+    .port_info 1 /INOUT 1 "RP";
+    .port_info 2 /INPUT 1 "G";
+    .port_info 3 /INPUT 1 "SUB";
+    .port_info 4 /INPUT 1 "V";
+    .port_info 5 /INPUT 1 "tb";
+v0x55875ce98bb0_0 .net "G", 0 0, o0x7f3806af5078;  alias, 0 drivers
+v0x55875ce98c70_0 .net "RN", 0 0, o0x7f3806af5af8;  alias, 0 drivers
+v0x55875ce98d30_0 .net "RP", 0 0, o0x7f3806af50a8;  alias, 0 drivers
+v0x55875ce98e20_0 .net "SUB", 0 0, o0x7f3806af5c48;  alias, 0 drivers
+v0x55875ce98ec0_0 .net "V", 0 0, o0x7f3806af5c78;  alias, 0 drivers
+v0x55875ce98fb0_0 .net "tb", 0 0, L_0x55875ce99b90;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/./celera//projects//Sunnyvale//software//REGULATIONgmv//verilog5//resistor_3bdd3d4d.v";

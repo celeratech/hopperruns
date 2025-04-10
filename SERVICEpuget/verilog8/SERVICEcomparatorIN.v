@@ -107,60 +107,60 @@ input  enable_comp;
 
 // ------------------------ Networks ---------------------
 VESPAasmINPUT2 XU1 (
-.o(net_57),
-.i0(net_56),
-.i1(net_59),
-.Tstate(enable_comp),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
+  .o(net_57),
+  .i0(net_56),
+  .i1(net_59),
+  .Tstate(enable_comp),
+  .CELG59462(CELG59462),
+  .CELV96848(CELV96848),
+  .CELSUB40948(CELSUB40948)
 );
 
 dbuf_e926e395 XU2 (
-.i(net_58),
-.o(over_in),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_58),
+  .o(over_in),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 resistorarray_a512cebe XU4 (
-.RN1(net_54),
-.RN2(net_55),
-.RN3(kelvin_GND),
-.RP1(kelvin_IN),
-.RP2(net_54),
-.RP3(net_55),
-.CELG(CELG59462)
+  .RN1(net_54),
+  .RN2(net_55),
+  .RN3(kelvin_GND),
+  .RP1(kelvin_IN),
+  .RP2(net_54),
+  .RP3(net_55),
+  .CELG(CELG59462)
 );
 
 PEBBLEtielo XtieLo (
-.G(CELG59462),
-.V(CELV96848),
-.q(tl0),
-.SUB(CELSUB40948)
+  .G(CELG59462),
+  .V(CELV96848),
+  .q(tl0),
+  .SUB(CELSUB40948)
 );
 
 delayfixed_18fc5530 Xdelay1 (
-.i(net_57),
-.o(net_58),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
+  .i(net_57),
+  .o(net_58),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948)
 );
 
 comparatornoctlpins_09f5ab1b Xcomparator1 (
-.IP(IP_92c9b3c9),
-.CELG(CELG59462),
-.SIMPV(SIMPV),
-.CELSUB(CELSUB40948),
-.ok_comparator(net_59),
-.EXT_COMPARATOR(net_55),
-.INN_COMPARATOR(REF),
-.INP_COMPARATOR(net_54),
-.out_comparator(net_56),
-.enable_comparator(enable_comp),
-.global_comparator(tl0)
+  .IP(IP_92c9b3c9),
+  .CELG(CELG59462),
+  .SIMPV(SIMPV),
+  .CELSUB(CELSUB40948),
+  .ok_comparator(net_59),
+  .EXT_COMPARATOR(net_55),
+  .INN_COMPARATOR(REF),
+  .INP_COMPARATOR(net_54),
+  .out_comparator(net_56),
+  .enable_comparator(enable_comp),
+  .global_comparator(tl0)
 );
 
 endmodule
