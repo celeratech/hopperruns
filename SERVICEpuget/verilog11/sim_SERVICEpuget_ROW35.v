@@ -156,6 +156,11 @@ WRAPPER1 celkelvin_VBIAS_WRAPPER (
   .o(INTVCC)
 );
 
+WRAPPER1 SENSE_G_344f8d94_WRAPPER (
+  .i(SENSE_G_344f8d94),
+  .o(CELG59462)
+);
+
 WRAPPER1 celkelvin_GNDref_WRAPPER (
   .i(celkelvin_GNDref),
   .o(CELG59462)
