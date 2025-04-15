@@ -59,7 +59,7 @@ module vpwl_0x0_10d998ux0_11d0ux5d0 (PLUS,MINUS);
   input  MINUS;
 endmodule
 
-module vpwl_0x0_10d998ux0_11d0ux1d2 (PLUS,MINUS);
+module vpwl_0x0_10d998ux0_11d0ux1d0 (PLUS,MINUS);
   output  PLUS;
   input  MINUS;
 endmodule
@@ -284,7 +284,7 @@ vpwl_0x0_10d998ux0_11d0ux5d0 V_porbx (
   .MINUS(net_122)
 );
 
-vpwl_0x0_10d998ux0_11d0ux1d2 XCELREF (
+vpwl_0x0_10d998ux0_11d0ux1d0 XCELREF (
   .PLUS(CELREF_9a4148db),
   .MINUS(net_0)
 );
