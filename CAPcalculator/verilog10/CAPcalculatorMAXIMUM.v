@@ -1,13 +1,4 @@
 // ------------------------ Module Definitions -----------
-module VESPAasmINPUT1 (o,i0,Tstate,CELG59462,CELV96848,CELSUB40948);
-  output  o;
-  input  i0;
-  input  Tstate;
-  input  CELG59462;
-  input  CELV96848;
-  input  CELSUB40948;
-endmodule
-
 //Celera:dbuf_e926e395
 //Celera Confidential Symbol Generator
 //Digital Buffer
@@ -37,13 +28,15 @@ endmodule
 
 
 
-//Celera:tie_9e2c0894
+//Celera:decoder3_e112c4e8
 //Celera Confidential Symbol Generator
-//TIE
-module tie_9e2c0894 (CELV,CELG,a0,SUB);
+//DECODER
+module decoder3_e112c4e8 (CELV,i,o,
+CELG,SUB);
 input CELV;
+input [2:0] i;
+output [7:0] o;
 input CELG;
-output a0;
 input SUB;
 endmodule
 
@@ -58,34 +51,6 @@ input CELG;
 input i;
 input SUB;
 output o;
-endmodule
-
-
-
-//Celera:oneshot_13b6b269
-//Celera Confidential Symbol Generator
-//One Shot250ns OneShot - Bad Designer!!
-module oneshot_13b6b269 (CELV,CELG,i,o,SUB);
-input CELV;
-input CELG;
-input i;
-input SUB;
-output o;
-endmodule
-
-
-
-//Celera:delayclock_6140cdf5
-//TYPE:clock  EDGE:rise DFT:no ACC:no%
-module delayclock_6140cdf5 (in,CELV,out,clock,celeraporb,
-CELG,CELSUB);
-input CELV;
-input in;
-output out;
-input clock;
-input celeraporb;
-input CELSUB;
-input CELG;
 endmodule
 
 
@@ -117,6 +82,15 @@ input CELG;
 input CELSUB;
 endmodule
 
+
+
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
 
 
 //Celera:dmux2b_bdbf6db5
@@ -151,25 +125,24 @@ endmodule
 
 
 
-//Celera:delayclock_6d5744d6
-//TYPE:clock  EDGE:rise DFT:no ACC:no%
-module delayclock_6d5744d6 (in,CELV,out,clock,celeraporb,
+//Celera:delayfixed_cd8b6211
+//Celera Confidential Symbol Generator
+//TYPE:fixed Egde:rise
+module delayfixed_cd8b6211 (CELV,i,o,
 CELG,CELSUB);
 input CELV;
-input in;
-output out;
-input clock;
-input celeraporb;
-input CELSUB;
+input i;
+output o;
 input CELG;
+input CELSUB;
 endmodule
 
 
 
-//Celera:delayfixed_ebe8078c
+//Celera:delayfixed_c42638ff
 //Celera Confidential Symbol Generator
 //TYPE:fixed Egde:rise
-module delayfixed_ebe8078c (CELV,i,o,
+module delayfixed_c42638ff (CELV,i,o,
 CELG,CELSUB);
 input CELV;
 input i;
@@ -181,11 +154,10 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CAPcalculatorMAXIMUM (porb, CELG59462, CELV96848, PORB97836, maximum_0, maximum_1, maximum_2, maximum_3, maximum_4, maximum_5, maximum_6, maximum_7, maximum_8, maximum_9, maximum_10, maximum_11, maximum_12, maximum_13, maximum_14, maximum_15, ok_maximum, CELSUB40948, meas_vcap1_0, meas_vcap1_1, meas_vcap1_2, meas_vcap1_3, meas_vcap1_4, meas_vcap1_5, meas_vcap1_6, meas_vcap1_7, meas_vcap1_8, meas_vcap1_9, meas_vcap2_0, meas_vcap2_1, meas_vcap2_2, meas_vcap2_3, meas_vcap2_4, meas_vcap2_5, meas_vcap2_6, meas_vcap2_7, meas_vcap2_8, meas_vcap2_9, meas_vcap3_0, meas_vcap3_1, meas_vcap3_2, meas_vcap3_3, meas_vcap3_4, meas_vcap3_5, meas_vcap3_6, meas_vcap3_7, meas_vcap3_8, meas_vcap3_9, meas_vcap4_0, meas_vcap4_1, meas_vcap4_2, meas_vcap4_3, meas_vcap4_4, meas_vcap4_5, meas_vcap4_6, meas_vcap4_7, meas_vcap4_8, meas_vcap4_9, SELECTshunt_0, SELECTshunt_1, SELECTshunt_2, SELECTshunt_3, clock_maximum, meas_vcap1_10, meas_vcap1_11, meas_vcap1_12, meas_vcap1_13, meas_vcap1_14, meas_vcap1_15, meas_vcap2_10, meas_vcap2_11, meas_vcap2_12, meas_vcap2_13, meas_vcap2_14, meas_vcap2_15, meas_vcap3_10, meas_vcap3_11, meas_vcap3_12, meas_vcap3_13, meas_vcap3_14, meas_vcap3_15, meas_vcap4_10, meas_vcap4_11, meas_vcap4_12, meas_vcap4_13, meas_vcap4_14, meas_vcap4_15, MAXIMUMchannel_0, MAXIMUMchannel_1, calculate_shuntmaximum, calculate_balancerminmax);
+module CAPcalculatorMAXIMUM (porb, CELG59462, CELV96848, maximum_0, maximum_1, maximum_2, maximum_3, maximum_4, maximum_5, maximum_6, maximum_7, maximum_8, maximum_9, maximum_10, maximum_11, maximum_12, maximum_13, maximum_14, maximum_15, ok_maximum, CELSUB40948, meas_vcap1_0, meas_vcap1_1, meas_vcap1_2, meas_vcap1_3, meas_vcap1_4, meas_vcap1_5, meas_vcap1_6, meas_vcap1_7, meas_vcap1_8, meas_vcap1_9, meas_vcap2_0, meas_vcap2_1, meas_vcap2_2, meas_vcap2_3, meas_vcap2_4, meas_vcap2_5, meas_vcap2_6, meas_vcap2_7, meas_vcap2_8, meas_vcap2_9, meas_vcap3_0, meas_vcap3_1, meas_vcap3_2, meas_vcap3_3, meas_vcap3_4, meas_vcap3_5, meas_vcap3_6, meas_vcap3_7, meas_vcap3_8, meas_vcap3_9, meas_vcap4_0, meas_vcap4_1, meas_vcap4_2, meas_vcap4_3, meas_vcap4_4, meas_vcap4_5, meas_vcap4_6, meas_vcap4_7, meas_vcap4_8, meas_vcap4_9, meas_vcap1_10, meas_vcap1_11, meas_vcap1_12, meas_vcap1_13, meas_vcap1_14, meas_vcap1_15, meas_vcap2_10, meas_vcap2_11, meas_vcap2_12, meas_vcap2_13, meas_vcap2_14, meas_vcap2_15, meas_vcap3_10, meas_vcap3_11, meas_vcap3_12, meas_vcap3_13, meas_vcap3_14, meas_vcap3_15, meas_vcap4_10, meas_vcap4_11, meas_vcap4_12, meas_vcap4_13, meas_vcap4_14, meas_vcap4_15, override_maximum, MAXIMUMoverride_0, MAXIMUMoverride_1, MAXIMUMoverride_2, MAXIMUMoverride_3, MAXIMUMoverride_4, MAXIMUMoverride_5, MAXIMUMoverride_6, MAXIMUMoverride_7, MAXIMUMoverride_8, MAXIMUMoverride_9, calculate_maximum, MAXIMUMoverride_10, MAXIMUMoverride_11, MAXIMUMoverride_12, MAXIMUMoverride_13, MAXIMUMoverride_14, MAXIMUMoverride_15);
 input  porb;
 input  CELG59462;
 input  CELV96848;
-input  PORB97836;
 output  maximum_0;
 output  maximum_1;
 output  maximum_2;
@@ -244,11 +216,6 @@ input  meas_vcap4_6;
 input  meas_vcap4_7;
 input  meas_vcap4_8;
 input  meas_vcap4_9;
-input  SELECTshunt_0;
-input  SELECTshunt_1;
-input  SELECTshunt_2;
-input  SELECTshunt_3;
-input  clock_maximum;
 input  meas_vcap1_10;
 input  meas_vcap1_11;
 input  meas_vcap1_12;
@@ -273,422 +240,290 @@ input  meas_vcap4_12;
 input  meas_vcap4_13;
 input  meas_vcap4_14;
 input  meas_vcap4_15;
-output  MAXIMUMchannel_0;
-output  MAXIMUMchannel_1;
-input  calculate_shuntmaximum;
-input  calculate_balancerminmax;
+input  override_maximum;
+input  MAXIMUMoverride_0;
+input  MAXIMUMoverride_1;
+input  MAXIMUMoverride_2;
+input  MAXIMUMoverride_3;
+input  MAXIMUMoverride_4;
+input  MAXIMUMoverride_5;
+input  MAXIMUMoverride_6;
+input  MAXIMUMoverride_7;
+input  MAXIMUMoverride_8;
+input  MAXIMUMoverride_9;
+input  calculate_maximum;
+input  MAXIMUMoverride_10;
+input  MAXIMUMoverride_11;
+input  MAXIMUMoverride_12;
+input  MAXIMUMoverride_13;
+input  MAXIMUMoverride_14;
+input  MAXIMUMoverride_15;
 
 
 // ------------------------ Wires ------------------------
 wire [15:0] x;
 wire [15:0] y;
+wire [2:0] i;
+wire [15:0] o;
 wire [15:0] d;
 wire [1:0] q;
 wire [15:0] a;
 wire [15:0] b;
-wire [15:0] o;
 wire [15:0] c;
 wire [1:0] s;
 
 // ------------------------ Networks ---------------------
-VESPAasmINPUT1 XU11 (
-.o(net_399),
-.i0(net_398),
-.Tstate(net_401),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
-);
-
-VESPAasmINPUT1 XU12 (
-.o(net_404),
-.i0(net_407),
-.Tstate(net_409),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
-);
-
-VESPAasmINPUT1 XU13 (
-.o(net_403),
-.i0(net_408),
-.Tstate(net_409),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
-);
-
-VESPAasmINPUT1 XU14 (
-.o(net_414),
-.i0(clock_maximum),
-.Tstate(net_411),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
-);
-
-VESPAasmINPUT1 XU22 (
-.o(net_397),
-.i0(SELECTshunt_0),
-.Tstate(calculate_shuntmaximum),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
-);
-
-VESPAasmINPUT1 XU23 (
-.o(net_405),
-.i0(SELECTshunt_1),
-.Tstate(calculate_shuntmaximum),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
-);
-
-VESPAasmINPUT1 XU24 (
-.o(net_413),
-.i0(SELECTshunt_2),
-.Tstate(calculate_shuntmaximum),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
-);
-
-VESPAasmINPUT1 XU25 (
-.o(net_416),
-.i0(SELECTshunt_3),
-.Tstate(calculate_shuntmaximum),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
-);
-
 dbuf_e926e395 XU1 (
-.i(net_134),
-.o(ok_maximum),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_84),
+  .o(ok_maximum),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 digitalcomparator_45b4cf4d XU2 (
-.x({net_287,net_286,net_285,net_284,net_283,net_282,net_281,net_280,net_279,net_278,net_277,net_276,net_275,net_274,net_273,net_272}),
-.y({net_271,net_270,net_269,net_268,net_267,net_266,net_265,net_264,net_263,net_262,net_261,net_260,net_259,net_258,net_257,net_256}),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.xgteqy(net_398)
+  .x({meas_vcap1_15,meas_vcap1_14,meas_vcap1_13,meas_vcap1_12,meas_vcap1_11,meas_vcap1_10,meas_vcap1_9,meas_vcap1_8,meas_vcap1_7,meas_vcap1_6,meas_vcap1_5,meas_vcap1_4,meas_vcap1_3,meas_vcap1_2,meas_vcap1_1,meas_vcap1_0}),
+  .y({meas_vcap2_15,meas_vcap2_14,meas_vcap2_13,meas_vcap2_12,meas_vcap2_11,meas_vcap2_10,meas_vcap2_9,meas_vcap2_8,meas_vcap2_7,meas_vcap2_6,meas_vcap2_5,meas_vcap2_4,meas_vcap2_3,meas_vcap2_2,meas_vcap2_1,meas_vcap2_0}),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .xgteqy(net_262)
+);
+
+decoder3_e112c4e8 XU4 (
+  .i({net_264,net_263,net_262}),
+  .o({net_272,net_271,net_270,net_269,net_268,net_267,net_266,net_265}),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 digitalcomparator_45b4cf4d XU5 (
-.x({net_351,net_350,net_349,net_348,net_347,net_346,net_345,net_344,net_343,net_342,net_341,net_340,net_339,net_338,net_337,net_336}),
-.y({net_335,net_334,net_333,net_332,net_331,net_330,net_329,net_328,net_327,net_326,net_325,net_324,net_323,net_322,net_321,net_320}),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.xgteqy(net_408)
+  .x({meas_vcap3_15,meas_vcap3_14,meas_vcap3_13,meas_vcap3_12,meas_vcap3_11,meas_vcap3_10,meas_vcap3_9,meas_vcap3_8,meas_vcap3_7,meas_vcap3_6,meas_vcap3_5,meas_vcap3_4,meas_vcap3_3,meas_vcap3_2,meas_vcap3_1,meas_vcap3_0}),
+  .y({meas_vcap4_15,meas_vcap4_14,meas_vcap4_13,meas_vcap4_12,meas_vcap4_11,meas_vcap4_10,meas_vcap4_9,meas_vcap4_8,meas_vcap4_7,meas_vcap4_6,meas_vcap4_5,meas_vcap4_4,meas_vcap4_3,meas_vcap4_2,meas_vcap4_1,meas_vcap4_0}),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .xgteqy(net_263)
 );
 
 digitalcomparator_45b4cf4d XU6 (
-.x({net_367,net_366,net_365,net_364,net_363,net_362,net_361,net_360,net_359,net_358,net_357,net_356,net_355,net_354,net_353,net_352}),
-.y({net_319,net_318,net_317,net_316,net_315,net_314,net_313,net_312,net_311,net_310,net_309,net_308,net_307,net_306,net_305,net_304}),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.xgteqy(net_409)
+  .x({net_197,net_196,net_195,net_194,net_193,net_192,net_191,net_190,net_189,net_188,net_187,net_186,net_185,net_184,net_183,net_182}),
+  .y({net_245,net_244,net_243,net_242,net_241,net_240,net_239,net_238,net_237,net_236,net_235,net_234,net_233,net_232,net_231,net_230}),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .xgteqy(net_264)
 );
 
-tie_9e2c0894 XU7 (
-.a0(net_255),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+inv_12e192f5 XU7 (
+  .i(net_264),
+  .o(net_300),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 inv_12e192f5 XU8 (
-.i(net_408),
-.o(net_407),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_262),
+  .o(net_298),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
-oneshot_13b6b269 XU9 (
-.i(net_135),
-.o(net_417),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+nor2_ee112582 XU9 (
+  .o(net_71),
+  .i0(net_270),
+  .i1(net_272),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 inv_12e192f5 XU10 (
-.i(net_409),
-.o(net_401),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_263),
+  .o(net_299),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
-delayclock_6140cdf5 XU15 (
-.in(net_412),
-.out(net_134),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.clock(net_414),
-.CELSUB(CELSUB40948),
-.celeraporb(PORB97836)
+nor2_ee112582 XU11 (
+  .o(net_76),
+  .i0(net_269),
+  .i1(net_271),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
-oneshot_13b6b269 XU18 (
-.i(net_136),
-.o(net_418),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+nor2_ee112582 XU12 (
+  .o(net_81),
+  .i0(net_267),
+  .i1(net_268),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
+);
+
+nor2_ee112582 XU14 (
+  .o(net_82),
+  .i0(net_266),
+  .i1(net_265),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
+);
+
+inv_12e192f5 XU15 (
+  .i(net_71),
+  .o(net_293),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
+);
+
+inv_12e192f5 XU16 (
+  .i(net_76),
+  .o(net_295),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
+);
+
+inv_12e192f5 XU19 (
+  .i(net_81),
+  .o(net_296),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 inv_12e192f5 XU20 (
-.i(net_137),
-.o(net_400),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_82),
+  .o(net_297),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
-nor2_ee112582 XU21 (
-.o(net_137),
-.i0(calculate_balancerminmax),
-.i1(net_397),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+nor2_ee112582 XU24 (
+  .o(net_85),
+  .i0(net_295),
+  .i1(net_297),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
+);
+
+inv_12e192f5 XU25 (
+  .i(net_85),
+  .o(net_198),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 inv_12e192f5 XU26 (
-.i(net_138),
-.o(net_406),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_83),
+  .o(net_199),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 nor2_ee112582 XU27 (
-.o(net_138),
-.i0(calculate_balancerminmax),
-.i1(net_405),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-nor2_ee112582 XU28 (
-.o(net_122),
-.i0(net_399),
-.i1(net_403),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-inv_12e192f5 XU29 (
-.i(net_122),
-.o(net_288),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-nor2_ee112582 XU30 (
-.o(net_123),
-.i0(net_404),
-.i1(net_403),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-inv_12e192f5 XU31 (
-.i(net_123),
-.o(net_289),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-inv_12e192f5 XU32 (
-.i(net_140),
-.o(net_410),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-nor2_ee112582 XU33 (
-.o(net_140),
-.i0(calculate_balancerminmax),
-.i1(net_413),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-inv_12e192f5 XU34 (
-.i(net_141),
-.o(net_415),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-nor2_ee112582 XU35 (
-.o(net_141),
-.i0(calculate_balancerminmax),
-.i1(net_416),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-inv_12e192f5 XU39 (
-.i(net_139),
-.o(net_402),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-nor2_ee112582 XU40 (
-.o(net_139),
-.i0(net_417),
-.i1(net_418),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-inv_12e192f5 XU55 (
-.i(net_142),
-.o(net_411),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-nor2_ee112582 XU56 (
-.o(net_142),
-.i0(calculate_balancerminmax),
-.i1(calculate_shuntmaximum),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .o(net_83),
+  .i0(net_296),
+  .i1(net_297),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 dffb_931e17d4 Xdff1 (
-.d({net_289,net_288}),
-.q({MAXIMUMchannel_1,MAXIMUMchannel_0}),
-.ck(net_402),
-.rb(porb),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
+  .d({net_199,net_198}),
+  .q({net_215,net_214}),
+  .ck(net_294),
+  .rb(porb),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948)
 );
 
-dmux2b_bdbf6db5 Xdmux1 (
-.a({net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255}),
-.b({meas_vcap1_15,meas_vcap1_14,meas_vcap1_13,meas_vcap1_12,meas_vcap1_11,meas_vcap1_10,meas_vcap1_9,meas_vcap1_8,meas_vcap1_7,meas_vcap1_6,meas_vcap1_5,meas_vcap1_4,meas_vcap1_3,meas_vcap1_2,meas_vcap1_1,meas_vcap1_0}),
-.o({net_271,net_270,net_269,net_268,net_267,net_266,net_265,net_264,net_263,net_262,net_261,net_260,net_259,net_258,net_257,net_256}),
-.s(net_400),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
+STONEnoconn XNC293 (
+  .noconn(net_293)
 );
 
-dmux2b_bdbf6db5 Xdmux2 (
-.a({net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255}),
-.b({meas_vcap2_15,meas_vcap2_14,meas_vcap2_13,meas_vcap2_12,meas_vcap2_11,meas_vcap2_10,meas_vcap2_9,meas_vcap2_8,meas_vcap2_7,meas_vcap2_6,meas_vcap2_5,meas_vcap2_4,meas_vcap2_3,meas_vcap2_2,meas_vcap2_1,meas_vcap2_0}),
-.o({net_287,net_286,net_285,net_284,net_283,net_282,net_281,net_280,net_279,net_278,net_277,net_276,net_275,net_274,net_273,net_272}),
-.s(net_406),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
+STONEnoconn XNC298 (
+  .noconn(net_298)
 );
 
-dmux2b_bdbf6db5 Xdmux3 (
-.a({net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255}),
-.b({meas_vcap3_15,meas_vcap3_14,meas_vcap3_13,meas_vcap3_12,meas_vcap3_11,meas_vcap3_10,meas_vcap3_9,meas_vcap3_8,meas_vcap3_7,meas_vcap3_6,meas_vcap3_5,meas_vcap3_4,meas_vcap3_3,meas_vcap3_2,meas_vcap3_1,meas_vcap3_0}),
-.o({net_335,net_334,net_333,net_332,net_331,net_330,net_329,net_328,net_327,net_326,net_325,net_324,net_323,net_322,net_321,net_320}),
-.s(net_410),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
+STONEnoconn XNC299 (
+  .noconn(net_299)
 );
 
-dmux2b_bdbf6db5 Xdmux4 (
-.a({net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255,net_255}),
-.b({meas_vcap4_15,meas_vcap4_14,meas_vcap4_13,meas_vcap4_12,meas_vcap4_11,meas_vcap4_10,meas_vcap4_9,meas_vcap4_8,meas_vcap4_7,meas_vcap4_6,meas_vcap4_5,meas_vcap4_4,meas_vcap4_3,meas_vcap4_2,meas_vcap4_1,meas_vcap4_0}),
-.o({net_351,net_350,net_349,net_348,net_347,net_346,net_345,net_344,net_343,net_342,net_341,net_340,net_339,net_338,net_337,net_336}),
-.s(net_415),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
+STONEnoconn XNC300 (
+  .noconn(net_300)
 );
 
 dmux2b_bdbf6db5 Xdmux5 (
-.a({net_271,net_270,net_269,net_268,net_267,net_266,net_265,net_264,net_263,net_262,net_261,net_260,net_259,net_258,net_257,net_256}),
-.b({net_287,net_286,net_285,net_284,net_283,net_282,net_281,net_280,net_279,net_278,net_277,net_276,net_275,net_274,net_273,net_272}),
-.o({net_319,net_318,net_317,net_316,net_315,net_314,net_313,net_312,net_311,net_310,net_309,net_308,net_307,net_306,net_305,net_304}),
-.s(net_398),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
+  .a({meas_vcap2_15,meas_vcap2_14,meas_vcap2_13,meas_vcap2_12,meas_vcap2_11,meas_vcap2_10,meas_vcap2_9,meas_vcap2_8,meas_vcap2_7,meas_vcap2_6,meas_vcap2_5,meas_vcap2_4,meas_vcap2_3,meas_vcap2_2,meas_vcap2_1,meas_vcap2_0}),
+  .b({meas_vcap1_15,meas_vcap1_14,meas_vcap1_13,meas_vcap1_12,meas_vcap1_11,meas_vcap1_10,meas_vcap1_9,meas_vcap1_8,meas_vcap1_7,meas_vcap1_6,meas_vcap1_5,meas_vcap1_4,meas_vcap1_3,meas_vcap1_2,meas_vcap1_1,meas_vcap1_0}),
+  .o({net_197,net_196,net_195,net_194,net_193,net_192,net_191,net_190,net_189,net_188,net_187,net_186,net_185,net_184,net_183,net_182}),
+  .s(net_262),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948)
 );
 
 dmux2b_bdbf6db5 Xdmux6 (
-.a({net_335,net_334,net_333,net_332,net_331,net_330,net_329,net_328,net_327,net_326,net_325,net_324,net_323,net_322,net_321,net_320}),
-.b({net_351,net_350,net_349,net_348,net_347,net_346,net_345,net_344,net_343,net_342,net_341,net_340,net_339,net_338,net_337,net_336}),
-.o({net_367,net_366,net_365,net_364,net_363,net_362,net_361,net_360,net_359,net_358,net_357,net_356,net_355,net_354,net_353,net_352}),
-.s(net_408),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
+  .a({meas_vcap4_15,meas_vcap4_14,meas_vcap4_13,meas_vcap4_12,meas_vcap4_11,meas_vcap4_10,meas_vcap4_9,meas_vcap4_8,meas_vcap4_7,meas_vcap4_6,meas_vcap4_5,meas_vcap4_4,meas_vcap4_3,meas_vcap4_2,meas_vcap4_1,meas_vcap4_0}),
+  .b({meas_vcap3_15,meas_vcap3_14,meas_vcap3_13,meas_vcap3_12,meas_vcap3_11,meas_vcap3_10,meas_vcap3_9,meas_vcap3_8,meas_vcap3_7,meas_vcap3_6,meas_vcap3_5,meas_vcap3_4,meas_vcap3_3,meas_vcap3_2,meas_vcap3_1,meas_vcap3_0}),
+  .o({net_245,net_244,net_243,net_242,net_241,net_240,net_239,net_238,net_237,net_236,net_235,net_234,net_233,net_232,net_231,net_230}),
+  .s(net_263),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948)
 );
 
 dmux4b_1e2aca6a Xdmux7 (
-.a({meas_vcap1_15,meas_vcap1_14,meas_vcap1_13,meas_vcap1_12,meas_vcap1_11,meas_vcap1_10,meas_vcap1_9,meas_vcap1_8,meas_vcap1_7,meas_vcap1_6,meas_vcap1_5,meas_vcap1_4,meas_vcap1_3,meas_vcap1_2,meas_vcap1_1,meas_vcap1_0}),
-.b({meas_vcap2_15,meas_vcap2_14,meas_vcap2_13,meas_vcap2_12,meas_vcap2_11,meas_vcap2_10,meas_vcap2_9,meas_vcap2_8,meas_vcap2_7,meas_vcap2_6,meas_vcap2_5,meas_vcap2_4,meas_vcap2_3,meas_vcap2_2,meas_vcap2_1,meas_vcap2_0}),
-.c({meas_vcap3_15,meas_vcap3_14,meas_vcap3_13,meas_vcap3_12,meas_vcap3_11,meas_vcap3_10,meas_vcap3_9,meas_vcap3_8,meas_vcap3_7,meas_vcap3_6,meas_vcap3_5,meas_vcap3_4,meas_vcap3_3,meas_vcap3_2,meas_vcap3_1,meas_vcap3_0}),
-.d({meas_vcap4_15,meas_vcap4_14,meas_vcap4_13,meas_vcap4_12,meas_vcap4_11,meas_vcap4_10,meas_vcap4_9,meas_vcap4_8,meas_vcap4_7,meas_vcap4_6,meas_vcap4_5,meas_vcap4_4,meas_vcap4_3,meas_vcap4_2,meas_vcap4_1,meas_vcap4_0}),
-.o({maximum_15,maximum_14,maximum_13,maximum_12,maximum_11,maximum_10,maximum_9,maximum_8,maximum_7,maximum_6,maximum_5,maximum_4,maximum_3,maximum_2,maximum_1,maximum_0}),
-.s({MAXIMUMchannel_1,MAXIMUMchannel_0}),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
+  .a({meas_vcap1_15,meas_vcap1_14,meas_vcap1_13,meas_vcap1_12,meas_vcap1_11,meas_vcap1_10,meas_vcap1_9,meas_vcap1_8,meas_vcap1_7,meas_vcap1_6,meas_vcap1_5,meas_vcap1_4,meas_vcap1_3,meas_vcap1_2,meas_vcap1_1,meas_vcap1_0}),
+  .b({meas_vcap2_15,meas_vcap2_14,meas_vcap2_13,meas_vcap2_12,meas_vcap2_11,meas_vcap2_10,meas_vcap2_9,meas_vcap2_8,meas_vcap2_7,meas_vcap2_6,meas_vcap2_5,meas_vcap2_4,meas_vcap2_3,meas_vcap2_2,meas_vcap2_1,meas_vcap2_0}),
+  .c({meas_vcap3_15,meas_vcap3_14,meas_vcap3_13,meas_vcap3_12,meas_vcap3_11,meas_vcap3_10,meas_vcap3_9,meas_vcap3_8,meas_vcap3_7,meas_vcap3_6,meas_vcap3_5,meas_vcap3_4,meas_vcap3_3,meas_vcap3_2,meas_vcap3_1,meas_vcap3_0}),
+  .d({meas_vcap4_15,meas_vcap4_14,meas_vcap4_13,meas_vcap4_12,meas_vcap4_11,meas_vcap4_10,meas_vcap4_9,meas_vcap4_8,meas_vcap4_7,meas_vcap4_6,meas_vcap4_5,meas_vcap4_4,meas_vcap4_3,meas_vcap4_2,meas_vcap4_1,meas_vcap4_0}),
+  .o({net_261,net_260,net_259,net_258,net_257,net_256,net_255,net_254,net_253,net_252,net_251,net_250,net_249,net_248,net_247,net_246}),
+  .s({net_215,net_214}),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948)
 );
 
-delayclock_6d5744d6 Xdelay1 (
-.in(net_411),
-.out(net_412),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.clock(net_414),
-.CELSUB(CELSUB40948),
-.celeraporb(PORB97836)
+dmux2b_bdbf6db5 Xdmux8 (
+  .a({net_261,net_260,net_259,net_258,net_257,net_256,net_255,net_254,net_253,net_252,net_251,net_250,net_249,net_248,net_247,net_246}),
+  .b({MAXIMUMoverride_15,MAXIMUMoverride_14,MAXIMUMoverride_13,MAXIMUMoverride_12,MAXIMUMoverride_11,MAXIMUMoverride_10,MAXIMUMoverride_9,MAXIMUMoverride_8,MAXIMUMoverride_7,MAXIMUMoverride_6,MAXIMUMoverride_5,MAXIMUMoverride_4,MAXIMUMoverride_3,MAXIMUMoverride_2,MAXIMUMoverride_1,MAXIMUMoverride_0}),
+  .o({maximum_15,maximum_14,maximum_13,maximum_12,maximum_11,maximum_10,maximum_9,maximum_8,maximum_7,maximum_6,maximum_5,maximum_4,maximum_3,maximum_2,maximum_1,maximum_0}),
+  .s(override_maximum),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948)
 );
 
-delayfixed_ebe8078c Xdelay2 (
-.i(calculate_shuntmaximum),
-.o(net_135),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
+delayfixed_cd8b6211 Xdelay1 (
+  .i(net_294),
+  .o(net_84),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948)
 );
 
-delayfixed_ebe8078c Xdelay3 (
-.i(calculate_balancerminmax),
-.o(net_136),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
+delayfixed_c42638ff Xdelay3 (
+  .i(calculate_maximum),
+  .o(net_294),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948)
 );
 
 endmodule

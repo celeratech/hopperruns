@@ -6,68 +6,70 @@
 
 //Celera Confidential BIO Data Generator
 //Cell Name
-cell,delayclock
+cell,vbuffer
 //**********************************************
 //Generator Revision
-revision,generator,0.4.1
+revision,generator,0.3.7
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-limit,delay_type,choose0,clock
-limit,delay_edge,choose0,rise
-limit,delay_edge,choose1,fall
-limit,delay_dft,choose0,no
-limit,delay_dft,choose1,yes
-limit,delay_vmax,choose0,2
-limit,delay_vmax,choose1,6
-
-limit,delayclock_control,choose0,pin
-limit,delayclock_control,choose1,register
-limit,delayclock_control,choose2,factory
-limit,delayclock_options,minimum,1
-limit,delayclock_options,maximum,4
-limit,delayclock_por,minimum,0
-limit,delayclock_por,maximum,3
-limit,delayclock_datasheetname,text
-limit,delayclock_datasheetdescription,text
-limit,delayclock_count0,minimum,0
-limit,delayclock_count0,maximum,131072
-limit,delayclock_count1,minimum,0
-limit,delayclock_count1,maximum,131072
-limit,delayclock_count2,minimum,0
-limit,delayclock_count2,maximum,131072
-limit,delayclock_count3,minimum,0
-limit,delayclock_count3,maximum,131072
-limit,delayclock_accuracy,choose0,no
-limit,delayclock_accuracy,choose1,yes
-limit,delayclock_accuracyname,text
-limit,delayclock_accuracydescription,text
-limit,delayclock_freq,minimum,1
-limit,delayclock_freq,maximum,40000
-//************************************************************
+limit,vbuffer_accuracy,choose0,no
+limit,vbuffer_accuracy,choose1,cell
+limit,vbuffer_accuracy,choose1,system
+limit,vbuffer_gain,minimum,0.1
+limit,vbuffer_gain,maximum,20.0
+limit,vbuffer_type,choose0,p
+limit,vbuffer_type,choose1,n
+limit,vbuffer_type,choose2,np
+limit,vbuffer_drive,choose0,internal
+limit,vbuffer_drive,choose1,external
+limit,vbuffer_vmax,choose0,2
+limit,vbuffer_vmax,choose1,6
+limit,vbuffer_feedbackimpedance,minimum,10
+limit,vbuffer_feedbackimpedance,maximum,5000
+limit,vbuffer_dft,choose0,no
+limit,vbuffer_dft,choose1,yes
+limit,vbuffer_datasheet_name,text
+limit,vbuffer_datasheet_description,text
+//Rev0.3.1 Addition/////////////////////////////////////////////////////
+limit,vbuffer_gndsense,choose0,no
+limit,vbuffer_gndsense,choose0,yes
+///////////////////////////////////////////////////////////////////////////////////
+//Rev0.3.2 Addition/////////////////////////////////////////////////////
+limit,vbuffer_inputbuffer,choose0,no
+limit,vbuffer_inputbuffer,choose0,yes
+///////////////////////////////////////////////////////////////////////////////////
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,delay,1.0us_at_1000KHz
-description,delay Clock 1 input
-user,delayclock_datasheetdescription,rise
-description,delay Edge
+user,vbuffer_gain,1.0
+description,vbuffer voltage gain
+user,vbuffer_accuracy,no
+description,vbuffer Accuracy
+user,vbuffer_type,p
+description,vbuffer input stage
+user,vbuffer_drive,internal
+description,vbuffer drive
+user,vbuffer_vmax,6V
+description,vbuffer Absolute Maxium Voltage Rating
+user,NESTO,0.3.7
+description,NESTO revision generate
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,delayclock
-register,instance,delayclock_c100196b
+registermap,vbuffer
+register,instance,vbuffer_celeradacladder_415ee173_Xbufo
 register,source,cell
 
-//delay time 
+///vbuffer
 register,name,na
 register,enable,no
-register,bits,na
-register,mode,readwrite
-register,por,na
+register,bits,0
+register,mode,readonly
+register,por,0
 register,userdescription,na
 register,description0,description0,not used
 register,description1,description1,not used
@@ -83,16 +85,16 @@ register,busname,na
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,delayclock
-factory,instance,delayclock_c100196b
+factorymap,vbuffer
+factory,instance,vbuffer_celeradacladder_415ee173_Xbufo
 factory,source,cell
 
-//delay time 
+///vbuffer
 factory,name,na
 factory,enable,no
-factory,bits,na
+factory,bits,0
 factory,mode,readonly
-factory,por,na
+factory,por,0
 factory,userdescription,na
 factory,description0,description0,not used
 factory,description1,description1,not used
@@ -110,29 +112,62 @@ factory,busname,na
 // *********************************************
 //Layout Parameters
 revision,layout,0p1
-//Delay based on master clock
-layout,delayclock
-
-place Generate STONEdelayclockDFT 0 0 R0
-place Generate STONEdelayclockEDGE 0 0 R0
-place Generate STONEdelayclockSELECT25 0 0 R0
-place Generate STONEdelayclockSELECT29 0 0 R0
-place Generate STONEdelayclockSELECT45 0 0 R0
-place Generate STONEdelayclockSELECT49 0 0 R0
-placeALTVIEW Generate STONEdelayclockSELECT417 layout1 0 0 R0
-place Generate STONEdelayclockSELECT217 0 0 R0
-place Generate STONEdelayclockTIE 0 0 R0
+layout,vbuffer
 
 
-place Generate prog_delay_5bit 120 0 R90
-place Generate prog_delay_5bit_trim 120 0 R90
-place Generate prog_delay_9bit 120 0 R90
-place Generate prog_delay_9bit_trim 120 0 R90
-place Generate prog_delay_17bit 240 0 R90
-place Generate prog_delay_17bit_trim 240 0 R90
+//If finds a cell with *inp* and doesn't find a *rrr* cell execute all lines between placeIFELSE and the placeELSE statements
+placeIFELSE cellNameContains inp$$rrr
+place Generate STONEvbufferinp 69.55 3.52 MY
+place Generate STONEvbufferinp_ext 69.55 3.52 MY
+place Generate STONEvbufferdft 0.05 99.49 MX
+place Generate STONEvbufferinptrim 108.08 41.14 MY
+placeINST Xrfbi -2.96 4.04 R90
+placeINST Xrfbo -2.96 4.04 R90
+placeHVRING
+placeELSE
+placeEND
 
-placeROUTE24
+//If finds a cell with inn and doesn't find a *rrr* cell execute all lines between placeIFELSE and placeELSE statements
+placeIFELSE cellNameContains inn$$rrr
+place Generate STONEvbufferinn 75.46 0 MY
+place Generate STONEvbufferinn_ext 75.46 0 MY
+placeALTVIEW Generate STONEvbufferinntrim layout1 86.495 1.62 R90
+place Generate STONEvbufferdft 0.975 78.645 R0
+placeINST Xrfbi -2.96 1.38 R90
+placeINST Xrfbo -2.96 1.38 R90
+placeHVRING
+placeELSE
+placeEND
+
+// if cell contains *rrr* and *trim* execute lines between placeIFELSE and placeELSE statements
+placeIFELSE cellNameContains rrr&&trim
+placeALTVIEW Generate STONEvbufferrr layout1 0 2.98 R0
+place Generate STONEvbufferdft 0.05 103.27 MX
+place Generate STONEvbufferinptrim -38.75 2.565 R0
+place Generate STONEvbufferinntrim -38.87 62.73 R0
+placeINST Xrfbi 47.89 1.41 MX 
+placeINST Xrfbo 47.89 1.41 MX 
+placeHVRING
+placeELSE
+placeEND
+
+// if cell contains rrr and not trim
+placeIFELSE cellNameContains rrr$$trim
+place Generate STONEvbufferrr 103.42 2.98 MY
+place Generate STONEvbufferdft 0.05 103.27 MX
+placeINST Xrfbi -2.96 3.67 R90
+placeINST Xrfbo -2.96 3.67 R90
+placeHVRING
+placeELSE
+placeEND
+
+movePINS
+placeROUTEnopins
+//placeROUTE
 endlayoutbio
+
+
+
 
 //**********************************************
 //Project Parameters
@@ -142,7 +177,7 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,0.9
+#define,PROJECTreference,TBD
 #define,PROJECTsupply,5
 #define,TaRoom,25
 #define,ground,0.0
@@ -181,76 +216,156 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,prog_delay_5bit,99999
-generate_area,delayclock_c100196b,99999
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEnoconn,0
+sub_area,STONEvbufferinp,100
+generate_area,vbuffer_celeradacladder_415ee173_Xbufo,100
 // *********************************************
-#define,DELAYresistorISO,CELG
-#define,CELVminimum,1.8
-
 //Calculator Parameters
-#define,DELAYpretrimhigh,30.0
-#define,DELAYpretrimlow,30.0
+#define,SIMPVminimum,2.0
+#define,VBUFFERresistoriso,CELG
+//Resistor DividerCalculators
+#define,vbufferrwidth0,2.0
+#define,vbufferrwidth1,0.5
+#define,vbufferrlength,25.0
+#define,vbufferrpercenterror,0.25
+#define,vbufferrparallel,30
+
+#define,VBUFFERtrimTAEXT,1.5
+#define,VBUFFERpretrimcellhigh,10.0
+#define,VBUFFERpretrimcelllow,10.0
+#define,VBUFFERpretrimsystemhigh,35.0
+#define,VBUFFERpretrimsystemlow,35.0
+#define,VBUFFERposttrimlsb,2.0
 //**********************************************
 //Pinorder Parameters
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//delayclock
+//vbuffer
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,in,out,clock,net_skip,net_skip,net_skip
+pinorder,SIMPV,ok_vbuffer,IN,OUT,enable_vbuffer,net_skip
 endpinorder
 //**********************************************
-
-//**********************************************
 //TRIM Parameters
-cell,delayclock
-trim,instance,delayclock_c100196b
+cell,vbuffer
+trim,instance,vbuffer_celeradacladder_415ee173_Xbufo
 
+//Cell positive offset
 trim,name,na
 trim,enable,no
 trim,bits,TBD
 trim,por,0
-trim,pinname,trim_delay
 trim,testname,TBD
-trim,description,TBD
+trim,description,vbuffer input offset positive trim
+trim,pinname,trim_vbuffer_positive
 trim,target,na
-trim,units,ns
+trim,units,TBD
 trim,pretrim_low_limit,TBD
 trim,pretrim_high_limit,TBD
 trim,posttrim_low_limit,TBD
 trim,posttrim_high_limit,TBD
-trim,codeunits,%
-trim,description0,empty
-trim,description1,empty
-trim,description2,empty
-trim,description3,empty
-trim,description4,empty
-trim,description5,empty
-trim,description6,empty
-trim,description7,empty
-trim,description8,empty
+trim,codeunits,mV
+trim,description0,TBD
+trim,description1,TBD
+trim,description2,TBD
+trim,description3,TBD
+trim,description4,TBD
+trim,description5,TBD
+trim,description6,TBD
+trim,description7,TBD
 
+//Cell Negative offset
+trim,name,na
+trim,enable,no
+trim,bits,TBD
+trim,por,0
+trim,testname,TBD
+trim,description,vbuffer input offset negative trim
+trim,pinname,trim_vbuffer_negative
+trim,target,na
+trim,units,TBD
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,mV
+trim,description0,TBD
+trim,description1,TBD
+trim,description2,TBD
+trim,description3,TBD
+trim,description4,TBD
+trim,description5,TBD
+trim,description6,TBD
+trim,description7,TBD
 
+//System Positive offset
+trim,name,na
+trim,enable,no
+trim,bits,TBD
+trim,por,0
+trim,testname,TBD
+trim,description,vbuffer system positive trim
+trim,pinname,trim_vbuffer_positive
+trim,target,na
+trim,units,TBD
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,mV
+trim,description0,TBD
+trim,description1,TBD
+trim,description2,TBD
+trim,description3,TBD
+trim,description4,TBD
+trim,description5,TBD
+trim,description6,TBD
+trim,description7,TBD
 
-
+//System Negative offset
+trim,name,na
+trim,enable,no
+trim,bits,TBD
+trim,por,0
+trim,testname,TBD
+trim,description,vbuffer system trim
+trim,pinname,trim_vbuffer_negative
+trim,target,na
+trim,units,TBD
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,mV
+trim,description0,TBD
+trim,description1,TBD
+trim,description2,TBD
+trim,description3,TBD
+trim,description4,TBD
+trim,description5,TBD
+trim,description6,TBD
+trim,description7,TBD
 //**********************************************
-//Cell Pin Descriptions	
-//**********************************************
-pinname,CELV
-definition,CELV,cell power
-iq,CELV,SIMULATION
-absmax,CELV,6
-absmin,CELV,2.0
-io,CELV,input
-mode,CELV,power
-router,CELV,TBD
-dftpriority,CELV,1
-esd,CELV,TBD
+//Cell PinDescriptions
+pinname,SIMPV
+definition,SIMPV,vbuffer power
+iq,SIMPV,SIMULATION
+absmax,SIMPV,6
+absmin,SIMPV,2.0
+io,SIMPV,input
+mode,SIMPV,power
+router,SIMPV,TBD
+dftpriority,SIMPV,1
+esd,SIMPV,TBD
+layout,SIMPV,na
 
 pinname,CELG
-definition,CELG,cell power ground
+definition,CELG,vbuffer power ground
 iq,CELG,SIMULATION
 absmax,CELG,0.3
 absmin,CELG,-0.3
@@ -259,61 +374,90 @@ mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
+layout,CELG,na
 
-pinname,celeraporb
-definition,celeraporb.Global Power on reset
-iq,celeraporb,SIMULATION
-absmax,celeraporb,6
-absmin,celeraporb,-0.3
-io,celeraporb,input
-mode,celeraporb,digital
-router,celeraporb,TBD
-dftpriority,celeraporb,1
-esd,celeraporb,TBD
+pinname,IN
+definition,IN,vbuffer input voltage
+iq,IN,SIMULATION
+absmax,IN,6
+absmin,IN,-0.3
+io,IN,input
+mode,IN,analog
+router,IN,TBD
+dftpriority,IN,1
+esd,IN,TBD
+layout,IN,na
 
-pinname,in
-definition,in,delay input
-iq,in,SIMULATION
-absmax,in,6
-absmin,in,-0.3
-io,in,input
-mode,in,digital
-router,in,TBD
-dftpriority,in,1
-esd,in,TBD
+pinname,global_vbuffer
+definition,,global_vbuffer,Global DFT enable
+iq,,global_vbuffer,SIMULATION
+absmax,global_vbuffer,6
+absmin,global_vbuffer,-0.3
+io,,global_vbuffer,input
+mode,,global_vbuffer,digital
+router,,global_vbuffer,TBD
+dftpriority,,global_vbuffer,1
+esd,,global_vbuffer,TBD
+layout,,global_vbuffer,na
 
-pinname,out
-definition,out,delay output
-iq,out,SIMULATION
-absmax,out,6
-absmin,out,-0.3
-io,out,output
-mode,out,digital
-router,out,TBD
-dftpriority,out,1
-esd,out,TBD
+pinname,ok_vbuffer
+definition,ok_vbuffer,vbuffer output flag
+iq,ok_vbuffer,SIMULATION
+absmax,ok_vbuffer,6
+absmin,ok_vbuffer,-0.3
+io,ok_vbuffer,output
+mode,ok_vbuffer,digital
+router,ok_vbuffer,TBD
+dftpriority,ok_vbuffer,1
+esd,ok_vbuffer,TBD
+layout,ok_vbuffer,na
 
-pinname,clock
-definition,clock,delay input reference clock
-iq,clock,SIMULATION
-absmax,clock,6
-absmin,clock,-0.3
-io,clock,input
-mode,clock,digital
-router,clock,TBD
-dftpriority,clock,1
-esd,clock,TBD
+pinname,enable_vbuffer
+definition,enable_vbuffer,vbuffer logic enable
+iq,enable_vbuffer,SIMULATION
+absmax,enable_vbuffer,6
+absmin,enable_vbuffer,-0.3
+io,enable_vbuffer,input
+mode,enable_vbuffer,digital
+router,enable_vbuffer,TBD
+dftpriority,enable_vbuffer,1
+esd,enable_vbuffer,TBD
+layout,enable_vbuffer,na
+
+pinname,OUT
+definition,OUT,vbuffer output voltage 
+iq,OUT,SIMULATION
+absmax,OUT,6
+absmin,OUT,-0.3
+io,OUT,output
+mode,OUT,analog
+router,OUT,TBD
+dftpriority,OUT,1
+esd,OUT,TBD
+layout,OUT,10
+
+pinname,IP
+definition,IP,vbuffer 0.5uA reference current
+iq,IP,SIMULATION
+absmax,IP,6
+absmin,IP,-0.3
+io,IP,input
+mode,IP,analog
+router,IP,TBD
+dftpriority,IP,1
+esd,IP,TBD
 
 pinname,CELSUB
-definition,CELSUB,substrate
+definition,CELSUB,Substrate
 iq,CELSUB,SIMULATION
 absmax,CELSUB,0.3
 absmin,CELSUB,-0.3
-io,CELSUB,power
+io,CELSUB,input
 mode,CELSUB,analog
 router,CELSUB,TBD
 dftpriority,CELSUB,1
 esd,CELSUB,TBD
+endbio
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -992,4 +1136,16 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+
+
+
+
+
+
+
+
+
+
+
+
 

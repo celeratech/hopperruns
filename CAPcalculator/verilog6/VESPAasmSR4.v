@@ -57,30 +57,30 @@ input  CELSUB40948;
 
 // ------------------------ Networks ---------------------
 nor4_ff041824 XU2 (
-.o(net_6),
-.i0(i0),
-.i1(i1),
-.i2(i2),
-.i3(i3),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .o(net_6),
+  .i0(i0),
+  .i1(i1),
+  .i2(i2),
+  .i3(i3),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 inv_12e192f5 XU6 (
-.i(net_6),
-.o(net_7),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_6),
+  .o(net_7),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU25 (
-.i(net_7),
-.o(sr),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_7),
+  .o(sr),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 endmodule

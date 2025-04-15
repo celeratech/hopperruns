@@ -109,6 +109,7 @@ factory,busname,na
 //CELL DFT Parameters
 // *********************************************
 //Layout Parameters
+
 revision,layout,0p1
 //Delay based on master clock
 layout,delayclock
@@ -123,7 +124,6 @@ placeALTVIEW Generate STONEdelayclockSELECT417 layout1 0 0 R0
 place Generate STONEdelayclockSELECT217 0 0 R0
 place Generate STONEdelayclockTIE 0 0 R0
 
-
 place Generate prog_delay_5bit 120 0 R90
 place Generate prog_delay_5bit_trim 120 0 R90
 place Generate prog_delay_9bit 120 0 R90
@@ -131,7 +131,8 @@ place Generate prog_delay_9bit_trim 120 0 R90
 place Generate prog_delay_17bit 240 0 R90
 place Generate prog_delay_17bit_trim 240 0 R90
 
-placeROUTE24
+movePINS
+placeROUTE24nopins
 endlayoutbio
 
 //**********************************************
@@ -142,7 +143,7 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,0.9
+#define,PROJECTreference,TBD
 #define,PROJECTsupply,5
 #define,TaRoom,25
 #define,ground,0.0

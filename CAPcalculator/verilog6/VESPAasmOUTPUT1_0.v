@@ -39,19 +39,19 @@ input  CELSUB40948;
 
 // ------------------------ Networks ---------------------
 delayfixed_cf78160c XU3 (
-.i(tstate),
-.o(net_3),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
+  .i(tstate),
+  .o(net_3),
+  .CELG(CELG59462),
+  .CELV(CELV96848),
+  .CELSUB(CELSUB40948)
 );
 
 dbuf_e926e395 XU25 (
-.i(net_3),
-.o(o),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+  .i(net_3),
+  .o(o),
+  .SUB(CELSUB40948),
+  .CELG(CELG59462),
+  .CELV(CELV96848)
 );
 
 endmodule
