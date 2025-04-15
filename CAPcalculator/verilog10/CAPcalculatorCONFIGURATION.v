@@ -188,7 +188,7 @@ PEBBLEtielo XDRMNOTL (
 );
 
 WRAPPER16 b_WRAPPER (
-  .i({a0,a0,a0,a1,a0,a0,a0,a1,a0,a0,a0,a0,a0,a0,a0,a0}),
+  .i({a0,a0,a0,a0,a0,a0,a0,a0,a1,a0,a0,a0,a1,a0,a0,a0}),
   .o0(net_173),
   .o1(net_174),
   .o2(net_175),
