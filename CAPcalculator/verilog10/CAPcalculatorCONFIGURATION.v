@@ -23,13 +23,29 @@ module PEBBLEtielo ( q, G, SUB, V );
 endmodule
 
 
-//Verilog HDL for "Generate", "WRAPPER1" "functional"
+//Verilog HDL for "Generate", "WRAPPER16" "functional"
 
 
-module WRAPPER1 ( o, i );
+module WRAPPER16 ( i, o0, o1, o2, o3, o4, o5, o6, o7, o8, o9, o15, o14, o13,
+o12, o11, o10 );
 
-  input i;
-  output o;
+  inout o9;
+  inout o7;
+  inout o5;
+  inout o10;
+  inout o12;
+  inout o4;
+  inout o6;
+  inout o1;
+  inout o13;
+  inout o0;
+  inout o3;
+  inout  [15:0] i;
+  inout o11;
+  inout o15;
+  inout o14;
+  inout o8;
+  inout o2;
 endmodule
 
 
@@ -47,6 +63,16 @@ input CELG;
 input CELSUB;
 endmodule
 
+
+
+//Verilog HDL for "Generate", "WRAPPER1" "functional"
+
+
+module WRAPPER1 ( o, i );
+
+  input i;
+  output o;
+endmodule
 
 
 // ------------------------ Module Verilog ---------------
@@ -141,6 +167,7 @@ input  enable_capcalculate;
 
 // ------------------------ Wires ------------------------
 wire [15:0] register_vshunt_15;
+wire [15:0] i;
 wire [15:0] a;
 wire [15:0] b;
 wire [15:0] o;
@@ -160,9 +187,24 @@ PEBBLEtielo XDRMNOTL (
   .SUB(CELSUB40948)
 );
 
-WRAPPER1 b_WRAPPER (
-  .i(a0),
-  .o(net_188)
+WRAPPER16 b_WRAPPER (
+  .i({a0,a0,a0,a1,a0,a0,a0,a1,a0,a0,a0,a0,a0,a0,a0,a0}),
+  .o0(net_173),
+  .o1(net_174),
+  .o2(net_175),
+  .o3(net_176),
+  .o4(net_177),
+  .o5(net_178),
+  .o6(net_179),
+  .o7(net_180),
+  .o8(net_181),
+  .o9(net_182),
+  .o10(net_183),
+  .o11(net_184),
+  .o12(net_185),
+  .o13(net_186),
+  .o14(net_187),
+  .o15(net_188)
 );
 
 subtractor_89c1a36f Xsubtractor1 (
