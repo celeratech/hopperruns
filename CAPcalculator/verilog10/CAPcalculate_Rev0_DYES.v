@@ -184,27 +184,27 @@ PEBBLEtielo XDRMNOTL (
   .SUB(CELSUB40948)
 );
 
-WRAPPER1 enableFAULT_WRAPPER_4 (
+WRAPPER1 enableFAULT_net_82_WRAPPER (
   .i(a1),
   .o(net_82)
 );
 
-WRAPPER1 STATEcontrol0_WRAPPER_0 (
+WRAPPER1 STATEcontrol0_net_78_WRAPPER (
   .i(a0),
   .o(net_78)
 );
 
-WRAPPER1 STATEcontrol1_WRAPPER_1 (
+WRAPPER1 STATEcontrol1_net_79_WRAPPER (
   .i(a0),
   .o(net_79)
 );
 
-WRAPPER1 STATEcontrol2_WRAPPER_2 (
+WRAPPER1 STATEcontrol2_net_80_WRAPPER (
   .i(a0),
   .o(net_80)
 );
 
-WRAPPER1 STATEcontrol3_WRAPPER_3 (
+WRAPPER1 STATEcontrol3_net_81_WRAPPER (
   .i(a0),
   .o(net_81)
 );
