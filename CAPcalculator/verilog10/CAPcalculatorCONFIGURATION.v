@@ -23,29 +23,14 @@ module PEBBLEtielo ( q, G, SUB, V );
 endmodule
 
 
-//Verilog HDL for "Generate", "WRAPPER16" "functional"
+//Verilog HDL for "Generate", "WRAPPER2" "functional"
 
 
-module WRAPPER16 ( i, o0, o1, o2, o3, o4, o5, o6, o7, o8, o9, o15, o14, o13,
-o12, o11, o10 );
+module WRAPPER2 ( i, o0, o1 );
 
-  inout o9;
-  inout o7;
-  inout o5;
-  inout o10;
-  inout o12;
-  inout o4;
-  inout o6;
   inout o1;
-  inout o13;
   inout o0;
-  inout o3;
-  inout  [15:0] i;
-  inout o11;
-  inout o15;
-  inout o14;
-  inout o8;
-  inout o2;
+  inout  [1:0] i;
 endmodule
 
 
@@ -167,7 +152,7 @@ input  enable_capcalculate;
 
 // ------------------------ Wires ------------------------
 wire [15:0] register_vshunt_15;
-wire [15:0] i;
+wire [1:0] i;
 wire [15:0] a;
 wire [15:0] b;
 wire [15:0] o;
@@ -187,24 +172,52 @@ PEBBLEtielo XDRMNOTL (
   .SUB(CELSUB40948)
 );
 
-WRAPPER16 b_WRAPPER (
-  .i({a0,a0,a0,a0,a0,a0,a0,a0,a1,a0,a0,a0,a1,a0,a0,a0}),
+WRAPPER2 b_WRAPPER_0 (
+  .i({a0,a0}),
   .o0(net_173),
-  .o1(net_174),
-  .o2(net_175),
-  .o3(net_176),
-  .o4(net_177),
-  .o5(net_178),
-  .o6(net_179),
-  .o7(net_180),
-  .o8(net_181),
-  .o9(net_182),
-  .o10(net_183),
-  .o11(net_184),
-  .o12(net_185),
-  .o13(net_186),
-  .o14(net_187),
-  .o15(net_188)
+  .o1(net_181)
+);
+
+WRAPPER2 b_WRAPPER_1 (
+  .i({a0,a0}),
+  .o0(net_174),
+  .o1(net_182)
+);
+
+WRAPPER2 b_WRAPPER_2 (
+  .i({a0,a0}),
+  .o0(net_175),
+  .o1(net_183)
+);
+
+WRAPPER2 b_WRAPPER_3 (
+  .i({a0,a1}),
+  .o0(net_176),
+  .o1(net_184)
+);
+
+WRAPPER2 b_WRAPPER_4 (
+  .i({a0,a0}),
+  .o0(net_177),
+  .o1(net_185)
+);
+
+WRAPPER2 b_WRAPPER_5 (
+  .i({a0,a0}),
+  .o0(net_178),
+  .o1(net_186)
+);
+
+WRAPPER2 b_WRAPPER_6 (
+  .i({a0,a0}),
+  .o0(net_179),
+  .o1(net_187)
+);
+
+WRAPPER2 b_WRAPPER_7 (
+  .i({a0,a1}),
+  .o0(net_180),
+  .o1(net_188)
 );
 
 subtractor_89c1a36f Xsubtractor1 (
@@ -218,214 +231,124 @@ subtractor_89c1a36f Xsubtractor1 (
   .CELERAporb(PORB97836)
 );
 
-WRAPPER1 vbalancer_0_WRAPPER (
+WRAPPER1 vbalancer_0_WRAPPER_0 (
   .i(a0),
   .o(vbalancer_0)
 );
 
-WRAPPER1 vbalancer_1_WRAPPER (
+WRAPPER1 vbalancer_1_WRAPPER_1 (
   .i(a1),
   .o(vbalancer_1)
 );
 
-WRAPPER1 vbalancer_2_WRAPPER (
+WRAPPER1 vbalancer_2_WRAPPER_2 (
   .i(a1),
   .o(vbalancer_2)
 );
 
-WRAPPER1 vbalancer_3_WRAPPER (
+WRAPPER1 vbalancer_3_WRAPPER_3 (
   .i(a0),
   .o(vbalancer_3)
 );
 
-WRAPPER1 vbalancer_4_WRAPPER (
+WRAPPER1 vbalancer_4_WRAPPER_4 (
   .i(a1),
   .o(vbalancer_4)
 );
 
-WRAPPER1 vbalancer_5_WRAPPER (
+WRAPPER1 vbalancer_5_WRAPPER_5 (
   .i(a1),
   .o(vbalancer_5)
 );
 
-WRAPPER1 vbalancer_6_WRAPPER (
+WRAPPER1 vbalancer_6_WRAPPER_6 (
   .i(a0),
   .o(vbalancer_6)
 );
 
-WRAPPER1 vbalancer_7_WRAPPER (
+WRAPPER1 vbalancer_7_WRAPPER_7 (
   .i(a0),
   .o(vbalancer_7)
 );
 
-WRAPPER1 vshunt_hyst_0_WRAPPER (
+WRAPPER1 vshunt_hyst_0_WRAPPER_0 (
   .i(a0),
   .o(vshunt_hyst_0)
 );
 
-WRAPPER1 vshunt_hyst_1_WRAPPER (
+WRAPPER1 vshunt_hyst_1_WRAPPER_1 (
   .i(a0),
   .o(vshunt_hyst_1)
 );
 
-WRAPPER1 vshunt_hyst_2_WRAPPER (
+WRAPPER1 vshunt_hyst_2_WRAPPER_2 (
   .i(a1),
   .o(vshunt_hyst_2)
 );
 
-WRAPPER1 vshunt_hyst_3_WRAPPER (
+WRAPPER1 vshunt_hyst_3_WRAPPER_3 (
   .i(a1),
   .o(vshunt_hyst_3)
 );
 
-WRAPPER1 vshunt_hyst_4_WRAPPER (
+WRAPPER1 vshunt_hyst_4_WRAPPER_4 (
   .i(a0),
   .o(vshunt_hyst_4)
 );
 
-WRAPPER1 vshunt_hyst_5_WRAPPER (
+WRAPPER1 vshunt_hyst_5_WRAPPER_5 (
   .i(a1),
   .o(vshunt_hyst_5)
 );
 
-WRAPPER1 vshunt_hyst_6_WRAPPER (
+WRAPPER1 vshunt_hyst_6_WRAPPER_6 (
   .i(a1),
   .o(vshunt_hyst_6)
 );
 
-WRAPPER1 vshunt_hyst_7_WRAPPER (
+WRAPPER1 vshunt_hyst_7_WRAPPER_7 (
   .i(a0),
   .o(vshunt_hyst_7)
 );
 
-WRAPPER1 vshunt_hyst_8_WRAPPER (
+WRAPPER1 vshunt_hyst_8_WRAPPER_0 (
   .i(a0),
   .o(vshunt_hyst_8)
 );
 
-WRAPPER1 vshunt_hyst_9_WRAPPER (
+WRAPPER1 vshunt_hyst_9_WRAPPER_1 (
   .i(a0),
   .o(vshunt_hyst_9)
 );
 
-WRAPPER1 vshunt_hyst_10_WRAPPER (
+WRAPPER1 vshunt_hyst_10_WRAPPER_2 (
   .i(a0),
   .o(vshunt_hyst_10)
 );
 
-WRAPPER1 vshunt_hyst_11_WRAPPER (
+WRAPPER1 vshunt_hyst_11_WRAPPER_3 (
   .i(a0),
   .o(vshunt_hyst_11)
 );
 
-WRAPPER1 vshunt_hyst_12_WRAPPER (
+WRAPPER1 vshunt_hyst_12_WRAPPER_4 (
   .i(a0),
   .o(vshunt_hyst_12)
 );
 
-WRAPPER1 vshunt_hyst_13_WRAPPER (
+WRAPPER1 vshunt_hyst_13_WRAPPER_5 (
   .i(a0),
   .o(vshunt_hyst_13)
 );
 
-WRAPPER1 vshunt_hyst_14_WRAPPER (
+WRAPPER1 vshunt_hyst_14_WRAPPER_6 (
   .i(a0),
   .o(vshunt_hyst_14)
 );
 
-WRAPPER1 vshunt_hyst_15_WRAPPER (
+WRAPPER1 vshunt_hyst_15_WRAPPER_7 (
   .i(a0),
   .o(vshunt_hyst_15)
-);
-
-WRAPPER1 vbalancer_hyst_0_WRAPPER (
-  .i(a0),
-  .o(vbalancer_hyst_0)
-);
-
-WRAPPER1 vbalancer_hyst_1_WRAPPER (
-  .i(a0),
-  .o(vbalancer_hyst_1)
-);
-
-WRAPPER1 vbalancer_hyst_2_WRAPPER (
-  .i(a0),
-  .o(vbalancer_hyst_2)
-);
-
-WRAPPER1 vbalancer_hyst_3_WRAPPER (
-  .i(a0),
-  .o(vbalancer_hyst_3)
-);
-
-WRAPPER1 vbalancer_hyst_4_WRAPPER (
-  .i(a1),
-  .o(vbalancer_hyst_4)
-);
-
-WRAPPER1 vbalancer_hyst_5_WRAPPER (
-  .i(a1),
-  .o(vbalancer_hyst_5)
-);
-
-WRAPPER1 vbalancer_hyst_6_WRAPPER (
-  .i(a0),
-  .o(vbalancer_hyst_6)
-);
-
-WRAPPER1 vbalancer_hyst_7_WRAPPER (
-  .i(a0),
-  .o(vbalancer_hyst_7)
-);
-
-WRAPPER1 MAXIMUMoverride_0_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_0)
-);
-
-WRAPPER1 MAXIMUMoverride_1_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_1)
-);
-
-WRAPPER1 MAXIMUMoverride_2_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_2)
-);
-
-WRAPPER1 MAXIMUMoverride_3_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_3)
-);
-
-WRAPPER1 MAXIMUMoverride_4_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_4)
-);
-
-WRAPPER1 MAXIMUMoverride_5_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_5)
-);
-
-WRAPPER1 MAXIMUMoverride_6_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_6)
-);
-
-WRAPPER1 MAXIMUMoverride_7_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_7)
-);
-
-WRAPPER1 MAXIMUMoverride_8_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_8)
-);
-
-WRAPPER1 MAXIMUMoverride_9_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_9)
 );
 
 WRAPPER1 XWRAPregister_vshunt_15_0 (
@@ -478,36 +401,6 @@ WRAPPER1 XWRAPregister_vshunt_15_9 (
   .o(vshunt_6)
 );
 
-WRAPPER1 MAXIMUMoverride_10_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_10)
-);
-
-WRAPPER1 MAXIMUMoverride_11_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_11)
-);
-
-WRAPPER1 MAXIMUMoverride_12_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_12)
-);
-
-WRAPPER1 MAXIMUMoverride_13_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_13)
-);
-
-WRAPPER1 MAXIMUMoverride_14_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_14)
-);
-
-WRAPPER1 MAXIMUMoverride_15_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_15)
-);
-
 WRAPPER1 XWRAPregister_vshunt_15_10 (
   .i(register_vshunt_15[10]),
   .o(vshunt_5)
@@ -536,6 +429,126 @@ WRAPPER1 XWRAPregister_vshunt_15_14 (
 WRAPPER1 XWRAPregister_vshunt_15_15 (
   .i(register_vshunt_15[15]),
   .o(vshunt_0)
+);
+
+WRAPPER1 vbalancer_hyst_0_WRAPPER_0 (
+  .i(a0),
+  .o(vbalancer_hyst_0)
+);
+
+WRAPPER1 vbalancer_hyst_1_WRAPPER_1 (
+  .i(a0),
+  .o(vbalancer_hyst_1)
+);
+
+WRAPPER1 vbalancer_hyst_2_WRAPPER_2 (
+  .i(a0),
+  .o(vbalancer_hyst_2)
+);
+
+WRAPPER1 vbalancer_hyst_3_WRAPPER_3 (
+  .i(a0),
+  .o(vbalancer_hyst_3)
+);
+
+WRAPPER1 vbalancer_hyst_4_WRAPPER_4 (
+  .i(a1),
+  .o(vbalancer_hyst_4)
+);
+
+WRAPPER1 vbalancer_hyst_5_WRAPPER_5 (
+  .i(a1),
+  .o(vbalancer_hyst_5)
+);
+
+WRAPPER1 vbalancer_hyst_6_WRAPPER_6 (
+  .i(a0),
+  .o(vbalancer_hyst_6)
+);
+
+WRAPPER1 vbalancer_hyst_7_WRAPPER_7 (
+  .i(a0),
+  .o(vbalancer_hyst_7)
+);
+
+WRAPPER1 MAXIMUMoverride_0_WRAPPER_0 (
+  .i(a0),
+  .o(MAXIMUMoverride_0)
+);
+
+WRAPPER1 MAXIMUMoverride_1_WRAPPER_1 (
+  .i(a0),
+  .o(MAXIMUMoverride_1)
+);
+
+WRAPPER1 MAXIMUMoverride_2_WRAPPER_2 (
+  .i(a0),
+  .o(MAXIMUMoverride_2)
+);
+
+WRAPPER1 MAXIMUMoverride_3_WRAPPER_3 (
+  .i(a0),
+  .o(MAXIMUMoverride_3)
+);
+
+WRAPPER1 MAXIMUMoverride_4_WRAPPER_4 (
+  .i(a0),
+  .o(MAXIMUMoverride_4)
+);
+
+WRAPPER1 MAXIMUMoverride_5_WRAPPER_5 (
+  .i(a0),
+  .o(MAXIMUMoverride_5)
+);
+
+WRAPPER1 MAXIMUMoverride_6_WRAPPER_6 (
+  .i(a0),
+  .o(MAXIMUMoverride_6)
+);
+
+WRAPPER1 MAXIMUMoverride_7_WRAPPER_7 (
+  .i(a0),
+  .o(MAXIMUMoverride_7)
+);
+
+WRAPPER1 MAXIMUMoverride_8_WRAPPER_0 (
+  .i(a0),
+  .o(MAXIMUMoverride_8)
+);
+
+WRAPPER1 MAXIMUMoverride_9_WRAPPER_1 (
+  .i(a0),
+  .o(MAXIMUMoverride_9)
+);
+
+WRAPPER1 MAXIMUMoverride_10_WRAPPER_2 (
+  .i(a0),
+  .o(MAXIMUMoverride_10)
+);
+
+WRAPPER1 MAXIMUMoverride_11_WRAPPER_3 (
+  .i(a0),
+  .o(MAXIMUMoverride_11)
+);
+
+WRAPPER1 MAXIMUMoverride_12_WRAPPER_4 (
+  .i(a0),
+  .o(MAXIMUMoverride_12)
+);
+
+WRAPPER1 MAXIMUMoverride_13_WRAPPER_5 (
+  .i(a0),
+  .o(MAXIMUMoverride_13)
+);
+
+WRAPPER1 MAXIMUMoverride_14_WRAPPER_6 (
+  .i(a0),
+  .o(MAXIMUMoverride_14)
+);
+
+WRAPPER1 MAXIMUMoverride_15_WRAPPER_7 (
+  .i(a0),
+  .o(MAXIMUMoverride_15)
 );
 
 endmodule
