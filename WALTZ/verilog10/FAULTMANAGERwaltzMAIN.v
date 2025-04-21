@@ -1,4 +1,23 @@
 // ------------------------ Module Definitions -----------
+module THERMALwaltz (REF,MUDV,CELG59462,CELV96848,CELSUB40948,IP_a0f4802c,IP_b33985e2,fault_thermal,enable_thermal,celkelvin_GND_c2e1c592,ten_thermometer_Xthermometer1,global_comparator_Xcomparator1,global_thermometer_Xthermometer1,trim_thermometer_offset_a0f4802c,TAI_OUT_THERMOMETER_Xthermometer1,ten_out_thermometer_Xthermometer1);
+  input  REF;
+  input  MUDV;
+  input  CELG59462;
+  input  CELV96848;
+  input  CELSUB40948;
+  input  IP_a0f4802c;
+  input  IP_b33985e2;
+  output  fault_thermal;
+  input  enable_thermal;
+  input  celkelvin_GND_c2e1c592;
+  input  ten_thermometer_Xthermometer1;
+  input  global_comparator_Xcomparator1;
+  input  global_thermometer_Xthermometer1;
+  input [6:0] trim_thermometer_offset_a0f4802c;
+  output  TAI_OUT_THERMOMETER_Xthermometer1;
+  input  ten_out_thermometer_Xthermometer1;
+endmodule
+
 module VESPAfaultmanagerINTERNALdebug (enable,fault_in,CELG59462,CELV96848,fault_out,CELSUB40948,hijack_enable,hijack_status);
   input  enable;
   input  fault_in;
@@ -135,104 +154,93 @@ endmodule
 
 
 
-//Celera:nand2_9125fe87
-//Celera Confidential Symbol Generator
-//5V NAND2
-module nand2_9125fe87 (CELV,CELG,i0,i1,o,SUB);
-input CELV;
-input CELG;
-input i0;
-input i1;
-input SUB;
-output o;
-endmodule
-
-
-
-//Celera:thermal
-//Celera Confidential Symbol Generator
-//Thermal Protector:2 Output Options
-module thermal_b5a19f9f (SIMPV,CELBG,IP,enable_thermal,fault_thermal,ten,
-register_thermal,
-trim_thermal_accuracy,
-CELG,CELSUB);
-input SIMPV;
-input CELBG;
-input IP;
-input enable_thermal;
-output fault_thermal;
-input ten;
-input register_thermal;
-input [2:0] trim_thermal_accuracy;
-input CELG;
-input CELSUB;
-endmodule
-
-
-
 // ------------------------ Module Verilog ---------------
-module FAULTMANAGERwaltzMAIN (MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELBG83021, CELSUB40948, IP_201f84ba, blank_fault, fault_short, mode_hiccup, enable_fault, fault_freeze, hijack_delay, blank_thermal, dft_delaySHORT, hijack_short_status, hijack_thermal_status, ten_201f84ba_Xthermal1, hijack_faultmanager_status, trim_thermal_accuracy_201f84ba);
+module FAULTMANAGERwaltzMAIN (REF, MUDV, clock, CELG59462, CELV96848, PORB97836, fault_run, CELSUB40948, IP_a0f4802c, IP_b33985e2, blank_fault, fault_short, mode_hiccup, fault_freeze, hijack_delay, blank_thermal, dft_delaySHORT, enable_faultmanager, hijack_short_status, hijack_thermal_status, celkelvin_GND_c2e1c592, hijack_faultmanager_status, ten_thermometer_Xthermometer1, global_comparator_Xcomparator1, global_thermometer_Xthermometer1, trim_thermometer_offset_a0f4802c, TAI_OUT_THERMOMETER_Xthermometer1, ten_out_thermometer_Xthermometer1);
+input  REF;
 input  MUDV;
 input  clock;
 input  CELG59462;
 input  CELV96848;
 input  PORB97836;
 output  fault_run;
-input  CELBG83021;
 input  CELSUB40948;
-input  IP_201f84ba;
+input  IP_a0f4802c;
+input  IP_b33985e2;
 input  blank_fault;
 input  fault_short;
 input  mode_hiccup;
-input  enable_fault;
 output  fault_freeze;
 input  hijack_delay;
 input  blank_thermal;
 output  dft_delaySHORT;
+input  enable_faultmanager;
 input  hijack_short_status;
 input  hijack_thermal_status;
-input  ten_201f84ba_Xthermal1;
+input  celkelvin_GND_c2e1c592;
 input  hijack_faultmanager_status;
-input [2:0] trim_thermal_accuracy_201f84ba;
+input  ten_thermometer_Xthermometer1;
+input  global_comparator_Xcomparator1;
+input  global_thermometer_Xthermometer1;
+input [6:0] trim_thermometer_offset_a0f4802c;
+output  TAI_OUT_THERMOMETER_Xthermometer1;
+input  ten_out_thermometer_Xthermometer1;
 
 
 // ------------------------ Wires ------------------------
-wire [2:0] trim_thermal_accuracy_201f84ba;
-wire [2:0] trim_thermal_accuracy;
+wire [6:0] trim_thermometer_offset_a0f4802c;
 
 // ------------------------ Networks ---------------------
-VESPAfaultmanagerINTERNALdebug XU14 (
-.enable(enable_fault),
-.fault_in(net_94),
+THERMALwaltz XTHERMAL (
+.REF(REF),
+.MUDV(MUDV),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.fault_out(net_95),
+.CELSUB40948(CELSUB40948),
+.IP_a0f4802c(IP_a0f4802c),
+.IP_b33985e2(IP_b33985e2),
+.fault_thermal(net_107),
+.enable_thermal(net_108),
+.celkelvin_GND_c2e1c592(celkelvin_GND_c2e1c592),
+.ten_thermometer_Xthermometer1(ten_thermometer_a0f4802c_Xthermometer1),
+.global_comparator_Xcomparator1(global_comparator_b33985e2_Xcomparator1),
+.global_thermometer_Xthermometer1(global_thermometer_a0f4802c_Xthermometer1),
+.trim_thermometer_offset_a0f4802c(trim_thermometer_offset_a0f4802c[6:0]),
+.TAI_OUT_THERMOMETER_Xthermometer1(TAI_OUT_THERMOMETER_a0f4802c_Xthermometer1),
+.ten_out_thermometer_Xthermometer1(ten_out_thermometer_a0f4802c_Xthermometer1)
+);
+
+VESPAfaultmanagerINTERNALdebug XU14 (
+.enable(enable_faultmanager),
+.fault_in(net_107),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.fault_out(net_110),
 .CELSUB40948(CELSUB40948),
 .hijack_enable(hijack_faultmanager_status),
 .hijack_status(hijack_thermal_status)
 );
 
 VESPAasmINPUT1 XU16 (
-.o(net_108),
+.o(net_111),
 .i0(clock),
-.Tstate(net_110),
+.Tstate(net_112),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT2 XU18 (
-.o(net_110),
-.i0(net_104),
+.o(net_112),
+.i0(net_106),
 .i1(mode_hiccup),
-.Tstate(enable_fault),
+.Tstate(enable_faultmanager),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAdftpulse XU29 (
-.stop(net_112),
+.stop(net_117),
 .pulse(dft_delaySHORT),
 .start(fault_short),
 .CELG59462(CELG59462),
@@ -241,50 +249,59 @@ VESPAdftpulse XU29 (
 );
 
 VESPAasmINPUT1 XU34 (
-.o(net_98),
-.i0(net_117),
-.Tstate(enable_fault),
+.o(net_108),
+.i0(net_109),
+.Tstate(enable_faultmanager),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
 VESPAfaultmanagerDELAYdebug XU37 (
-.delayi(net_107),
-.delayo(net_111),
-.enable(net_110),
+.delayi(net_115),
+.delayo(net_116),
+.enable(net_112),
 .fault_in(fault_short),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
-.fault_out(net_101),
+.fault_out(net_113),
 .CELSUB40948(CELSUB40948),
 .hijack_enable(hijack_faultmanager_status),
 .hijack_status(hijack_short_status)
 );
 
+VESPAasmINPUT1 XU7 (
+.o(net_119),
+.i0(net_112),
+.Tstate(fault_short),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
+);
+
 delayclock_de2e40ea XU1 (
-.in(net_114),
-.out(net_112),
+.in(net_119),
+.out(net_117),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.clock(net_108),
+.clock(net_111),
 .delay(hijack_delay),
 .CELSUB(CELSUB40948),
 .celeraporb(PORB97836)
 );
 
 nor2_ee112582 XU2 (
-.o(net_82),
-.i0(net_95),
-.i1(net_101),
+.o(net_84),
+.i0(net_110),
+.i1(net_113),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 inv_12e192f5 XU5 (
-.i(net_95),
-.o(net_84),
+.i(net_110),
+.o(net_86),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
@@ -292,22 +309,22 @@ inv_12e192f5 XU5 (
 
 inv_12e192f5 XU17 (
 .i(blank_fault),
-.o(net_104),
+.o(net_106),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 inv_12e192f5 XU19 (
-.i(net_82),
-.o(net_83),
+.i(net_84),
+.o(net_85),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU22 (
-.i(net_83),
+.i(net_85),
 .o(fault_freeze),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -315,8 +332,8 @@ dbuf_e926e395 XU22 (
 );
 
 oneshot_b3f9fb06 XU24 (
-.i(net_112),
-.o(net_113),
+.i(net_117),
+.o(net_118),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
@@ -324,81 +341,51 @@ oneshot_b3f9fb06 XU24 (
 
 inv_12e192f5 XU27 (
 .i(blank_thermal),
-.o(net_117),
+.o(net_109),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 delayfixed_8edbcb06 XU33 (
-.i(net_107),
-.o(net_111),
+.i(net_115),
+.o(net_116),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
 );
 
-inv_12e192f5 XU38 (
-.i(net_87),
-.o(net_114),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
 nor2_ee112582 XU39 (
-.o(net_85),
-.i0(net_105),
-.i1(net_113),
+.o(net_87),
+.i0(net_114),
+.i1(net_118),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 inv_12e192f5 XU40 (
-.i(net_85),
-.o(net_86),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-nand2_9125fe87 XU41 (
-.o(net_87),
-.i0(net_110),
-.i1(fault_short),
+.i(net_87),
+.o(net_88),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 oneshot_b3f9fb06 XU43 (
-.i(net_84),
-.o(net_105),
+.i(net_86),
+.o(net_114),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU44 (
-.i(net_86),
+.i(net_88),
 .o(fault_run),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
-);
-
-thermal_b5a19f9f Xthermal1 (
-.IP(IP_201f84ba),
-.ten(ten_201f84ba_Xthermal1),
-.CELG(CELG59462),
-.CELBG(CELBG83021),
-.SIMPV(MUDV),
-.CELSUB(CELSUB40948),
-.fault_thermal(net_94),
-.enable_thermal(net_98),
-.register_thermal(net_80),
-.trim_thermal_accuracy({trim_thermal_accuracy_201f84ba[2],trim_thermal_accuracy_201f84ba[1],trim_thermal_accuracy_201f84ba[0]})
 );
 
 endmodule

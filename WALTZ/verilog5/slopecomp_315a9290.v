@@ -156,7 +156,7 @@ STONEslopecomp Xslopecomp(
 //,diesize,STONEslopecomp
 
 //Celera Confidential Do Not Copy STONEslopecomppmos
-STONEslopecomppmos Xpmos0(
+STONEslopecomppmos Xpmos1_0(
 .CELV (SIMPV),
 .CELSUB (CELSUB),
 .ISLOPECOMP (ISLOPECOMP),
@@ -164,7 +164,7 @@ STONEslopecomppmos Xpmos0(
 );
 //,diesize,STONEslopecomppmos
 //Celera Confidential Do Not Copy STONEslopecomppmos
-STONEslopecomppmos Xpmos1(
+STONEslopecomppmos Xpmos1_1(
 .CELV (SIMPV),
 .CELSUB (CELSUB),
 .ISLOPECOMP (ISLOPECOMP),
@@ -172,7 +172,7 @@ STONEslopecomppmos Xpmos1(
 );
 //,diesize,STONEslopecomppmos
 //Celera Confidential Do Not Copy STONEslopecomppmos
-STONEslopecomppmos Xpmos2(
+STONEslopecomppmos Xpmos1_2(
 .CELV (SIMPV),
 .CELSUB (CELSUB),
 .ISLOPECOMP (ISLOPECOMP),
@@ -180,7 +180,7 @@ STONEslopecomppmos Xpmos2(
 );
 //,diesize,STONEslopecomppmos
 //Celera Confidential Do Not Copy STONEslopecomppmos
-STONEslopecomppmos Xpmos3(
+STONEslopecomppmos Xpmos1_3(
 .CELV (SIMPV),
 .CELSUB (CELSUB),
 .ISLOPECOMP (ISLOPECOMP),
@@ -188,7 +188,7 @@ STONEslopecomppmos Xpmos3(
 );
 //,diesize,STONEslopecomppmos
 //Celera Confidential Do Not Copy STONEslopecomppmos
-STONEslopecomppmos Xpmos4(
+STONEslopecomppmos Xpmos1_4(
 .CELV (SIMPV),
 .CELSUB (CELSUB),
 .ISLOPECOMP (ISLOPECOMP),
@@ -196,7 +196,7 @@ STONEslopecomppmos Xpmos4(
 );
 //,diesize,STONEslopecomppmos
 //Celera Confidential Do Not Copy STONEslopecomppmos
-STONEslopecomppmos Xpmos5(
+STONEslopecomppmos Xpmos1_5(
 .CELV (SIMPV),
 .CELSUB (CELSUB),
 .ISLOPECOMP (ISLOPECOMP),
@@ -204,7 +204,7 @@ STONEslopecomppmos Xpmos5(
 );
 //,diesize,STONEslopecomppmos
 //Celera Confidential Do Not Copy STONEslopecomppmos
-STONEslopecomppmos Xpmos6(
+STONEslopecomppmos Xpmos1_6(
 .CELV (SIMPV),
 .CELSUB (CELSUB),
 .ISLOPECOMP (ISLOPECOMP),
@@ -212,7 +212,7 @@ STONEslopecomppmos Xpmos6(
 );
 //,diesize,STONEslopecomppmos
 //Celera Confidential Do Not Copy STONEslopecomppmos
-STONEslopecomppmos Xpmos7(
+STONEslopecomppmos Xpmos1_7(
 .CELV (SIMPV),
 .CELSUB (CELSUB),
 .ISLOPECOMP (ISLOPECOMP),
@@ -220,7 +220,7 @@ STONEslopecomppmos Xpmos7(
 );
 //,diesize,STONEslopecomppmos
 //Celera Confidential Do Not Copy STONEslopecomppmos
-STONEslopecomppmos Xpmos8(
+STONEslopecomppmos Xpmos1_8(
 .CELV (SIMPV),
 .CELSUB (CELSUB),
 .ISLOPECOMP (ISLOPECOMP),
@@ -228,7 +228,7 @@ STONEslopecomppmos Xpmos8(
 );
 //,diesize,STONEslopecomppmos
 //Celera Confidential Do Not Copy STONEslopecomppmos
-STONEslopecomppmos Xpmos9(
+STONEslopecomppmos Xpmos1_9(
 .CELV (SIMPV),
 .CELSUB (CELSUB),
 .ISLOPECOMP (ISLOPECOMP),
@@ -236,7 +236,7 @@ STONEslopecomppmos Xpmos9(
 );
 //,diesize,STONEslopecomppmos
 //Celera Confidential Do Not Copy STONEslopecomppmos
-STONEslopecomppmos Xpmos10(
+STONEslopecomppmos Xpmos1_10(
 .CELV (SIMPV),
 .CELSUB (CELSUB),
 .ISLOPECOMP (ISLOPECOMP),
@@ -244,7 +244,7 @@ STONEslopecomppmos Xpmos10(
 );
 //,diesize,STONEslopecomppmos
 //Celera Confidential Do Not Copy STONEslopecomppmos
-STONEslopecomppmos Xpmos11(
+STONEslopecomppmos Xpmos1_11(
 .CELV (SIMPV),
 .CELSUB (CELSUB),
 .ISLOPECOMP (ISLOPECOMP),
@@ -252,7 +252,7 @@ STONEslopecomppmos Xpmos11(
 );
 //,diesize,STONEslopecomppmos
 //Celera Confidential Do Not Copy STONEslopecomppmos
-STONEslopecomppmos Xpmos12(
+STONEslopecomppmos Xpmos1_12(
 .CELV (SIMPV),
 .CELSUB (CELSUB),
 .ISLOPECOMP (ISLOPECOMP),
@@ -260,7 +260,7 @@ STONEslopecomppmos Xpmos12(
 );
 //,diesize,STONEslopecomppmos
 //Celera Confidential Do Not Copy STONEslopecomppmos
-STONEslopecomppmos Xpmos13(
+STONEslopecomppmos Xpmos1_13(
 .CELV (SIMPV),
 .CELSUB (CELSUB),
 .ISLOPECOMP (ISLOPECOMP),
@@ -268,7 +268,7 @@ STONEslopecomppmos Xpmos13(
 );
 //,diesize,STONEslopecomppmos
 //Celera Confidential Do Not Copy STONEslopecomppmos
-STONEslopecomppmos Xpmos14(
+STONEslopecomppmos Xpmos1_14(
 .CELV (SIMPV),
 .CELSUB (CELSUB),
 .ISLOPECOMP (ISLOPECOMP),

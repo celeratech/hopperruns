@@ -23,17 +23,6 @@ module DFThijack ( o, CELG, CELV, CELSUB, ten_hijack, ten_hijacki, i );
 endmodule
 
 
-module dftprobeModel0_f0ccd53b (i,tdi,ten,CELG,CELSUB,CELV);
-input  i;
-output  tdi;
-input  ten;
-input  CELG;
-input  CELSUB;
-input  CELV;
-endmodule
-
-
-
 module dftprobeModel0_8b1750b2 (i,tdi,ten,CELG,CELSUB,CELV);
 input  i;
 output  tdi;
@@ -67,30 +56,41 @@ endmodule
 
 
 
+module dftprobeModel0_f0ccd53b (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+
+
+
 // ------------------------ Module Verilog ---------------
-module SOFTSTARTwaltzDEBUG (SS, CELG59462, CELV96848, dft_clock, CELSUB40948, enable_brick, done_softstart, TAI_81f80d4d_XU8, enable_softstart, tdi_ed87e5db_XU5, tdi_f665b623_XU6, ten_81f80d4d_XU8, ten_ed87e5db_XU5, ten_f665b623_XU6, tdi_528f048c_XU10, ten_528f048c_XU10, hijack_enable_brick, hijack_enable_softstart, ten_hijack_297df8ef_XU1, ten_hijack_dcf795e2_XU14, ten_hijacki_297df8ef_XU1, ten_hijacki_dcf795e2_XU14);
+module SOFTSTARTwaltzDEBUG (SS, TAI_XU8, tdi_XU6, ten_XU6, ten_XU8, tdi_XU10, ten_XU10, CELG59462, CELV96848, dft_clock, CELSUB40948, enable_brick, done_softstart, ten_hijack_XU1, ten_hijack_XU14, ten_hijacki_XU1, enable_softstart, ten_hijacki_XU14, hijack_enable_brick, tdi_XUSOFTSTARTtime, ten_XUSOFTSTARTtime, hijack_enable_softstart);
   input  SS;
+output  TAI_XU8;
+output  tdi_XU6;
+input  ten_XU6;
+input  ten_XU8;
+output  tdi_XU10;
+input  ten_XU10;
 input  CELG59462;
 input  CELV96848;
   input  dft_clock;
 input  CELSUB40948;
 input  enable_brick;
 input  done_softstart;
-output  TAI_81f80d4d_XU8;
+input  ten_hijack_XU1;
+input  ten_hijack_XU14;
+input  ten_hijacki_XU1;
 input  enable_softstart;
-output  tdi_ed87e5db_XU5;
-output  tdi_f665b623_XU6;
-input  ten_81f80d4d_XU8;
-input  ten_ed87e5db_XU5;
-input  ten_f665b623_XU6;
-output  tdi_528f048c_XU10;
-input  ten_528f048c_XU10;
+input  ten_hijacki_XU14;
 output  hijack_enable_brick;
+output  tdi_XUSOFTSTARTtime;
+input  ten_XUSOFTSTARTtime;
 output  hijack_enable_softstart;
-input  ten_hijack_297df8ef_XU1;
-input  ten_hijack_dcf795e2_XU14;
-input  ten_hijacki_297df8ef_XU1;
-input  ten_hijacki_dcf795e2_XU14;
 
 
 // ------------------------ Wires ------------------------
@@ -98,7 +98,7 @@ input  ten_hijacki_dcf795e2_XU14;
 // ------------------------ Networks ---------------------
 VESPAdftpulse XU4 (
 .stop(done_softstart),
-.pulse(net_24),
+.pulse(net_25),
 .start(hijack_enable_softstart),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -113,15 +113,6 @@ DFThijack XU1 (
 .CELSUB(CELSUB40948),
 .ten_hijack(ten_hijack_297df8ef_XU1),
 .ten_hijacki(ten_hijacki_297df8ef_XU1)
-);
-
-dftprobeModel0_f0ccd53b XU5 (
-.i(net_24),
-.tdi(tdi_ed87e5db_XU5),
-.ten(ten_ed87e5db_XU5),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
 );
 
 dftprobeModel0_8b1750b2 XU6 (
@@ -159,6 +150,15 @@ DFThijack XU14 (
 .CELSUB(CELSUB40948),
 .ten_hijack(ten_hijack_dcf795e2_XU14),
 .ten_hijacki(ten_hijacki_dcf795e2_XU14)
+);
+
+dftprobeModel0_f0ccd53b XUSOFTSTARTtime (
+.i(net_25),
+.tdi(tdi_fa4970e3_XUSOFTSTARTtime),
+.ten(ten_fa4970e3_XUSOFTSTARTtime),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 endmodule

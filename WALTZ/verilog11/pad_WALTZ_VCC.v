@@ -38,6 +38,16 @@ module ESDcore6 ( GESD, PAD );
 endmodule
 
 
+//Verilog HDL for "PEBBLES", "PEBBLElinkSTAR" "functional"
+
+
+module PEBBLElinkSTAR ( NEG, POS );
+
+  inout POS;
+  inout NEG;
+endmodule
+
+
 //Verilog HDL for "PEBBLES", "PEBBLElinkKELVIN" "functional"
 
 
@@ -49,15 +59,16 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_WALTZ_VCC (VCC, GESD, PVCC, VOTP, CELV96848, kelvin_VCC, celkelvin_VCC_9893c918, celkelvin_VCC_bc3b7675);
+module pad_WALTZ_VCC (VCC, GESD, PVCC, VOTP, CELV96848, kelvin_VCC, CELV_SERDES, celkelvin_VCC_9893c918, celkelvin_VCC_f6ed70de);
 inout  VCC;
 input  GESD;
 inout  PVCC;
 output  VOTP;
 output  CELV96848;
 inout  kelvin_VCC;
+output  CELV_SERDES;
 output  celkelvin_VCC_9893c918;
-output  celkelvin_VCC_bc3b7675;
+output  celkelvin_VCC_f6ed70de;
 
 
 // ------------------------ Wires ------------------------
@@ -86,6 +97,11 @@ ESDcore6 XESDcore6_1 (
 .GESD(GESD)
 );
 
+PEBBLElinkSTAR XwrapStarCelvSerdes (
+.NEG(CELV_SERDES),
+.POS(VCC)
+);
+
 PEBBLElinkKELVIN Xwrap_PAD1_SENSE_SINGLE (
 .NEG(kelvin_VCC),
 .POS(VCC)
@@ -96,9 +112,9 @@ WRAPPER1 XWRAP_celkelvin_VCC_9893c918 (
 .o(celkelvin_VCC_9893c918)
 );
 
-WRAPPER1 XWRAP_celkelvin_VCC_bc3b7675 (
+WRAPPER1 XWRAP_celkelvin_VCC_f6ed70de (
 .i(VCC),
-.o(celkelvin_VCC_bc3b7675)
+.o(celkelvin_VCC_f6ed70de)
 );
 
 endmodule

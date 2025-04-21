@@ -30,11 +30,12 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_WALTZ_IN (IN, GESD, CELSUB40948, celkelvin_IN_bc3b7675);
+module pad_WALTZ_IN (IN, PIN, GESD, CELSUB40948, celkelvin_IN_f6ed70de);
 inout  IN;
+inout  PIN;
 input  GESD;
 input  CELSUB40948;
-output  celkelvin_IN_bc3b7675;
+output  celkelvin_IN_f6ed70de;
 
 
 // ------------------------ Wires ------------------------
@@ -44,15 +45,19 @@ STONEpad1 XPAD1 (
 .PAD(IN)
 );
 
+STONEpad1 XPAD2 (
+.PAD(PIN)
+);
+
 ESDcore60 XESDcore60_1 (
-.PAD(IN),
+.PAD(PIN),
 .GESD(GESD),
 .CELSUB(CELSUB40948)
 );
 
-WRAPPER1 XWRAP_celkelvin_IN_bc3b7675 (
+WRAPPER1 XWRAP_celkelvin_IN_f6ed70de (
 .i(IN),
-.o(celkelvin_IN_bc3b7675)
+.o(celkelvin_IN_f6ed70de)
 );
 
 endmodule

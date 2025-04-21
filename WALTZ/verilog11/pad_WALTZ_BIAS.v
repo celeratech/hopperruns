@@ -30,11 +30,11 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module pad_WALTZ_BIAS (BIAS, GESD, CELSUB40948, celkelvin_BIAS_bc3b7675);
+module pad_WALTZ_BIAS (BIAS, GESD, CELSUB40948, celkelvin_BIAS_f6ed70de);
 inout  BIAS;
 input  GESD;
 input  CELSUB40948;
-output  celkelvin_BIAS_bc3b7675;
+output  celkelvin_BIAS_f6ed70de;
 
 
 // ------------------------ Wires ------------------------
@@ -50,9 +50,9 @@ ESDcore20 XESDcore20_1 (
 .CELSUB(CELSUB40948)
 );
 
-WRAPPER1 XWRAP_celkelvin_BIAS_bc3b7675 (
+WRAPPER1 XWRAP_celkelvin_BIAS_f6ed70de (
 .i(BIAS),
-.o(celkelvin_BIAS_bc3b7675)
+.o(celkelvin_BIAS_f6ed70de)
 );
 
 endmodule

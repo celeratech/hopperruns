@@ -55,25 +55,25 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SERVICEwaltz0DEBUG0 (porb, REF0V9, go_vcc, CELG59462, CELV96848, ok_service, CELSUB40948, ok_reference, TAI_a6a0ac97_XU3, tdi_1955111b_XU7, tdi_742857bf_XU2, tdi_ec5776d4_XU6, ten_1955111b_XU7, ten_742857bf_XU2, ten_a6a0ac97_XU3, ten_ec5776d4_XU6, tdi_cd882763_XU15, ten_cd882763_XU15);
+module SERVICEwaltz0DEBUG0 (porb, REF0V9, go_vcc, TAI_XU3, tdi_XU2, tdi_XU6, tdi_XU7, ten_XU2, ten_XU3, ten_XU6, ten_XU7, tdi_XU15, ten_XU15, CELG59462, CELV96848, ok_service, CELSUB40948, ok_reference);
   input  porb;
   input  REF0V9;
   input  go_vcc;
+output  TAI_XU3;
+output  tdi_XU2;
+output  tdi_XU6;
+output  tdi_XU7;
+input  ten_XU2;
+input  ten_XU3;
+input  ten_XU6;
+input  ten_XU7;
+output  tdi_XU15;
+input  ten_XU15;
 input  CELG59462;
 input  CELV96848;
   input  ok_service;
 input  CELSUB40948;
   input  ok_reference;
-output  TAI_a6a0ac97_XU3;
-output  tdi_1955111b_XU7;
-output  tdi_742857bf_XU2;
-output  tdi_ec5776d4_XU6;
-input  ten_1955111b_XU7;
-input  ten_742857bf_XU2;
-input  ten_a6a0ac97_XU3;
-input  ten_ec5776d4_XU6;
-output  tdi_cd882763_XU15;
-input  ten_cd882763_XU15;
 
 
 // ------------------------ Wires ------------------------

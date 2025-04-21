@@ -97,6 +97,42 @@ endmodule
 
 
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
+//Celera:fetdriver_f3635860
+//Celera Confidential Symbol Generator
+//FET DRIVER 'n' Type 10 Ron 5 Roff 
+//Input 60V Levelshifter
+//Gate Sense 60V Sense Levelshifterwith 0nsdelay
+//DFT no
+module fetdriver_f3635860 (HVPOS,global_fetdriver,fetin,GATE,gate_status,
+gate_status_vin,
+CELV,
+CELG,
+enable_fetdriver,
+HVNEG,CELSUB); 
+input HVPOS;
+input global_fetdriver;
+input fetin;
+output GATE;
+output gate_status;
+output gate_status_vin;
+input CELV;
+input CELG;
+input enable_fetdriver;
+input HVNEG;
+input CELSUB;
+endmodule
+
+
+
 //Celera:slopecomp_315a9290
 //Celera Confidential Symbol Generator
 //SLOPECOMPlinear with frequency of 400 KHz and oscillator current of 18.000uA
@@ -122,46 +158,10 @@ endmodule
 
 
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
-//Celera:fetdriver_3dacaa61
-//Celera Confidential Symbol Generator
-//FET DRIVER 'n' Type 10 Ron 5 Roff 
-//Input 60V Levelshifter
-//Gate Sense 60V Sense Levelshifterwith 0nsdelay
-//DFT no
-module fetdriver_3dacaa61 (HVPOS,global_fetdriver,fetin,GATE,gate_status,
-gate_status_vin,
-CELV,
-CELG,
-enable_fetdriver,
-HVNEG,CELSUB); 
-input HVPOS;
-input global_fetdriver;
-input fetin;
-output GATE;
-output gate_status;
-output gate_status_vin;
-input CELV;
-input CELG;
-input enable_fetdriver;
-input HVNEG;
-input CELSUB;
-endmodule
-
-
-
 // ------------------------ Module Verilog ---------------
-module DRIVERwaltz0TOPN0 (SW, BSTV, MUDV, MUDHV, PMUDV, PMUDHV, enable, topswon, CELG59462, CELV96848, ok_driver, topswipeak, CELREF84329, CELSUB40948, IP_f4252e65, IREF_DRIVER, botswstatus, topswstatus, ISLOPE_DRIVER, DISABLEslope_650ee20e, trim_slopecomp_f4252e65, global_cboot_35156756_XU17, trim_currentlimit_98fa5525, global_slopecomp_f4252e65_XU22, ten_slopecompcap_f4252e65_XU22, tdi_currentlimitlive_98fa5525_XU2, global_fetdriver_eef2a6e8_Xfetdriver1, ten_measure_currentlimit_98fa5525_XU2, factory_currentlimit_blanking_98fa5525);
+module DRIVERwaltz0TOPN0 (SW, BST, MUDV, MUDHV, PMUDV, PMUDHV, enable, topswon, CELG59462, CELV96848, ok_driver, topswipeak, CELREF84329, CELSUB40948, IP_9526878c, IREF_DRIVER, botswstatus, topswstatus, ISLOPE_DRIVER, global_cboot_XU17, slopecomp_disable, trim_slopecomp_9526878c, tdi_currentlimitlive_XU2, trim_currentlimit_98fa5525, global_fetdriver_Xfetdriver, global_slopecomp_Xslopecomp1, ten_measure_currentlimit_XU2, ten_slopecompcap_Xslopecomp1, factory_currentlimit_blanking_98fa5525);
 inout  SW;
-input  BSTV;
+input  BST;
 input  MUDV;
 input  MUDHV;
 input  PMUDV;
@@ -174,25 +174,25 @@ output  ok_driver;
 output  topswipeak;
 input  CELREF84329;
 input  CELSUB40948;
-input  IP_f4252e65;
+input  IP_9526878c;
 input  IREF_DRIVER;
 input  botswstatus;
 output  topswstatus;
 input  ISLOPE_DRIVER;
-input  DISABLEslope_650ee20e;
-input [3:0] trim_slopecomp_f4252e65;
-input  global_cboot_35156756_XU17;
+input  global_cboot_XU17;
+input  slopecomp_disable;
+input [3:0] trim_slopecomp_9526878c;
+output  tdi_currentlimitlive_XU2;
 input [7:0] trim_currentlimit_98fa5525;
-input  global_slopecomp_f4252e65_XU22;
-input  ten_slopecompcap_f4252e65_XU22;
-output  tdi_currentlimitlive_98fa5525_XU2;
-input  global_fetdriver_eef2a6e8_Xfetdriver1;
-input  ten_measure_currentlimit_98fa5525_XU2;
+input  global_fetdriver_Xfetdriver;
+input  global_slopecomp_Xslopecomp1;
+input  ten_measure_currentlimit_XU2;
+input  ten_slopecompcap_Xslopecomp1;
 input [4:0] factory_currentlimit_blanking_98fa5525;
 
 
 // ------------------------ Wires ------------------------
-wire [3:0] trim_slopecomp_f4252e65;
+wire [3:0] trim_slopecomp_9526878c;
 wire [7:0] trim_currentlimit_98fa5525;
 wire [4:0] factory_currentlimit_blanking_98fa5525;
 wire [7:0] trim_currentlimit;
@@ -202,8 +202,8 @@ wire [3:0] trim_slopecomp;
 // ------------------------ Networks ---------------------
 VESPAasmINPUT1 XU32 (
 .o(ok_driver),
-.i0(net_105),
-.Tstate(net_106),
+.i0(net_107),
+.Tstate(net_108),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
@@ -215,15 +215,15 @@ currentlimitfet_e27944c0 XU2 (
 .IREF(IREF_DRIVER),
 .HVREF(MUDHV),
 .CELNEG(SW),
-.CELPOS(BSTV),
+.CELPOS(BST),
 .CELSUB(CELSUB40948),
-.VSENSE(net_92),
-.IREPLICA(net_95),
-.ISLOPECOMP(net_108),
+.VSENSE(net_91),
+.IREPLICA(net_93),
+.ISLOPECOMP(net_110),
 .currentlimit_lv(topswipeak),
 .trim_currentlimit({trim_currentlimit_98fa5525[7],trim_currentlimit_98fa5525[6],trim_currentlimit_98fa5525[5],trim_currentlimit_98fa5525[4],trim_currentlimit_98fa5525[3],trim_currentlimit_98fa5525[2],trim_currentlimit_98fa5525[1],trim_currentlimit_98fa5525[0]}),
 .enable_currentlimit(enable),
-.measure_currentlimit(net_104),
+.measure_currentlimit(net_106),
 .tdi_currentlimitlive(tdi_currentlimitlive_98fa5525_XU2),
 .ten_measure_currentlimit(ten_measure_currentlimit_98fa5525_XU2),
 .factory_currentlimit_blanking({factory_currentlimit_blanking_98fa5525[4],factory_currentlimit_blanking_98fa5525[3],factory_currentlimit_blanking_98fa5525[2],factory_currentlimit_blanking_98fa5525[1],factory_currentlimit_blanking_98fa5525[0]})
@@ -231,69 +231,69 @@ currentlimitfet_e27944c0 XU2 (
 
 fetdn_a0946f8e XU5 (
 .SUB(CELSUB40948),
-.GATE(net_103),
+.GATE(net_105),
 .DRAIN(PMUDHV),
-.DRAINk(net_92),
+.DRAINk(net_91),
 .SOURCE(SW),
 .SOURCEk(SW),
-.IREPLICA(net_95)
+.IREPLICA(net_93)
 );
 
 switchtransmission_75e4adc9 XU11 (
-.I(net_107),
-.O(net_108),
+.I(net_109),
+.O(net_110),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948),
-.enable_switchb(DISABLEslope_650ee20e)
+.enable_switchb(slopecomp_disable)
 );
 
 cboot_7dc01c49 XU17 (
 .CELG(CELG59462),
 .CELV(CELV96848),
-.CBOOT(BSTV),
+.CBOOT(BST),
 .CELNEG(SW),
 .CELPOS(PMUDV),
 .CELSUB(CELSUB40948),
-.ok_cboot(net_105),
+.ok_cboot(net_107),
 .on_charge(botswstatus),
-.ok_cboothv(net_75),
+.ok_cboothv(net_77),
 .enable_cboot(enable),
 .global_cboot(global_cboot_35156756_XU17)
 );
 
-slopecomp_315a9290 XU22 (
-.IP(IP_f4252e65),
+STONEnoconn XNC77 (
+.noconn(net_77)
+);
+
+fetdriver_f3635860 Xfetdriver (
+.CELG(CELG59462),
+.CELV(CELV96848),
+.GATE(net_105),
+.HVNEG(SW),
+.HVPOS(BST),
+.fetin(topswon),
+.CELSUB(CELSUB40948),
+.gate_status(net_106),
+.gate_status_vin(topswstatus),
+.enable_fetdriver(enable),
+.global_fetdriver(global_fetdriver_8018c87b_Xfetdriver)
+);
+
+slopecomp_315a9290 Xslopecomp1 (
+.IP(IP_9526878c),
 .CELG(CELG59462),
 .IOSC(ISLOPE_DRIVER),
 .SIMPV(MUDV),
 .clock(topswon),
 .CELSUB(CELSUB40948),
-.ISLOPECOMP(net_107),
-.ok_slopecomp(net_106),
-.trim_slopecomp({trim_slopecomp_f4252e65[3],trim_slopecomp_f4252e65[2],trim_slopecomp_f4252e65[1],trim_slopecomp_f4252e65[0]}),
+.ISLOPECOMP(net_109),
+.ok_slopecomp(net_108),
+.trim_slopecomp({trim_slopecomp_9526878c[3],trim_slopecomp_9526878c[2],trim_slopecomp_9526878c[1],trim_slopecomp_9526878c[0]}),
 .CELREF_slopecomp(CELREF84329),
 .enable_slopecomp(enable),
-.global_slopecomp(global_slopecomp_f4252e65_XU22),
-.ten_slopecompcap(ten_slopecompcap_f4252e65_XU22)
-);
-
-STONEnoconn XNC75 (
-.noconn(net_75)
-);
-
-fetdriver_3dacaa61 Xfetdriver1 (
-.CELG(CELG59462),
-.CELV(CELV96848),
-.GATE(net_103),
-.HVNEG(SW),
-.HVPOS(BSTV),
-.fetin(topswon),
-.CELSUB(CELSUB40948),
-.gate_status(net_104),
-.gate_status_vin(topswstatus),
-.enable_fetdriver(enable),
-.global_fetdriver(global_fetdriver_eef2a6e8_Xfetdriver1)
+.global_slopecomp(global_slopecomp_9526878c_Xslopecomp1),
+.ten_slopecompcap(ten_slopecompcap_9526878c_Xslopecomp1)
 );
 
 endmodule
