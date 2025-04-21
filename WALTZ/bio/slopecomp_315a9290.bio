@@ -213,7 +213,6 @@ revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
 pinorder,clock,ISLOPECOMP,enable_slopecomp,IOSC,SIMPV,ok_slopecomp
-
 endpinorder
 //**********************************************
 
@@ -316,11 +315,11 @@ dftpriority,clock,1
 esd,clock,TBD
 
 pinname,ISLOPECOMP
-definition,ISLOPECOMP,Slopecomp current output
+definition,ISLOPECOMP,Slopecompensation output current source
 iq,ISLOPECOMP,SIMULATION
 absmax,ISLOPECOMP,6
 absmin,ISLOPECOMP,-0.3
-io,ISLOPECOMP,output
+io,ISLOPECOMP,inout
 mode,ISLOPECOMP,digital
 router,ISLOPECOMP,TBD
 dftpriority,ISLOPECOMP,1

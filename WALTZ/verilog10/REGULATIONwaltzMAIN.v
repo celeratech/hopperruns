@@ -175,21 +175,8 @@ endmodule
 
 
 
-//Verilog HDL for "Esd", "ESDminiClamp6" "functional"
-
-
-module ESDminiClamp6 ( O, G, I, SUB, V );
-
-  input V;
-  input I;
-  input G;
-  input SUB;
-  output O;
-endmodule
-
-
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltzMAIN (VC, MUDG, MUDV, REFINT, CZCOMP_0, CZCOMP_1, CZCOMP_2, RZCOMP_0, RZCOMP_1, RZCOMP_2, CELG59462, CELV96848, go_driver, GAINCOMP_0, GAINCOMP_1, CELREF84329, CELSUB40948, DCMRIPPLE_0, DCMRIPPLE_1, IP_4215aede, IP_866ca25c, IP_b8eb1a18, IP_e44d2b4d, IP_f7f74094, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, global_gm_Xgm1, global_clamp_XU7, enable_regulation, global_vbuffer_XU9, trim_clamp_b8eb1a18, trim_gm_negative_e44d2b4d, trim_gm_positive_e44d2b4d, global_voltage2current_XU3, global_comparator_Xcomparator1, trim_vbuffer_negative_866ca25c, trim_vbuffer_positive_866ca25c);
+module REGULATIONwaltzMAIN (VC, MUDG, MUDV, REFINT, CZCOMP_0, CZCOMP_1, CZCOMP_2, RZCOMP_0, RZCOMP_1, RZCOMP_2, CELG59462, CELV96848, go_driver, GAINCOMP_0, GAINCOMP_1, CELREF84329, CELSUB40948, DCMRIPPLE_0, DCMRIPPLE_1, IP_4215aede, IP_866ca25c, IP_b8eb1a18, IP_f7f74094, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, REF_REGULATION, VSS_REGULATION, global_gm_Xgm1, global_clamp_XU7, enable_regulation, global_vbuffer_XU9, trim_clamp_b8eb1a18, trim_gm_negative_e44d2b4d, trim_gm_positive_e44d2b4d, global_voltage2current_XU3, global_comparator_Xcomparator1, trim_vbuffer_negative_866ca25c, trim_vbuffer_positive_866ca25c);
 inout  VC;
 inout  MUDG;
 input  MUDV;
@@ -212,14 +199,13 @@ input  DCMRIPPLE_1;
 input  IP_4215aede;
 input  IP_866ca25c;
 input  IP_b8eb1a18;
-input  IP_e44d2b4d;
 input  IP_f7f74094;
 inout  IREF_DRIVER;
 inout  kelvin_MUDG;
-input  FB_REGULATION;
+  input  FB_REGULATION;
 output  ok_regulation;
 input  REF_REGULATION;
-input  VSS_REGULATION;
+  input  VSS_REGULATION;
 input  global_gm_Xgm1;
 input  global_clamp_XU7;
 input  enable_regulation;
@@ -334,16 +320,16 @@ resistor_c2797d46 XU34 (
 );
 
 gm_2062a8ef Xgm1 (
-.IP(IP_e44d2b4d),
-.GMO(VC),
-.INN(clamp_Xgm1_163),
-.INP(REFINT),
+.IP(TBD_XWALTZ_XceleraCORE_XREGULATION_XMAIN_Xgm1_IP),
+.GMO(TBD_XWALTZ_XceleraCORE_XREGULATION_XMAIN_Xgm1_GMO),
+.INN(TBD_XWALTZ_XceleraCORE_XREGULATION_XMAIN_Xgm1_INN),
+.INP(TBD_XWALTZ_XceleraCORE_XREGULATION_XMAIN_Xgm1_INP),
 .CELG(CELG59462),
-.INOR(VSS_REGULATION),
-.SIMPV(MUDV),
-.ok_gm(net_175),
+.INOR(TBD_XWALTZ_XceleraCORE_XREGULATION_XMAIN_Xgm1_INOR),
+.SIMPV(TBD_XWALTZ_XceleraCORE_XREGULATION_XMAIN_Xgm1_SIMPV),
+.ok_gm(TBD_XWALTZ_XceleraCORE_XREGULATION_XMAIN_Xgm1_ok_gm),
 .CELSUB(CELSUB40948),
-.enable_gm(enable_regulation),
+.enable_gm(TBD_XWALTZ_XceleraCORE_XREGULATION_XMAIN_Xgm1_enable_gm),
 .global_gm(global_gm_e44d2b4d_Xgm1),
 .trim_gm_negative({trim_gm_negative_e44d2b4d[6],trim_gm_negative_e44d2b4d[5],trim_gm_negative_e44d2b4d[4],trim_gm_negative_e44d2b4d[3],trim_gm_negative_e44d2b4d[2],trim_gm_negative_e44d2b4d[1],trim_gm_negative_e44d2b4d[0]}),
 .trim_gm_positive({trim_gm_positive_e44d2b4d[6],trim_gm_positive_e44d2b4d[5],trim_gm_positive_e44d2b4d[4],trim_gm_positive_e44d2b4d[3],trim_gm_positive_e44d2b4d[2],trim_gm_positive_e44d2b4d[1],trim_gm_positive_e44d2b4d[0]})
@@ -362,14 +348,6 @@ comparatorctlpins_8c4ef850 Xcomparator1 (
 .hyst_comparator1(DCMRIPPLE_1),
 .enable_comparator(net_174),
 .global_comparator(global_comparator_f7f74094_Xcomparator1)
-);
-
-ESDminiClamp6 XCLAMP_Xgm1_INN (
-.G(CELG59462),
-.I(FB_REGULATION),
-.O(clamp_Xgm1_163),
-.V(CELV96848),
-.SUB(CELSUB40948)
 );
 
 endmodule

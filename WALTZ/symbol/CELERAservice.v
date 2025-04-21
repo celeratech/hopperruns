@@ -1,6 +1,6 @@
 //Celera:CELERAservice
 //Celera Confidential Symbol Generator
-//IP: 19, REFERENCE: external
+//IP: 18, REFERENCE: external
 //Latch blanking: 
 module CELERAservice (celkelvin_GNDservice,enable_ibias,
 CELV,
@@ -14,7 +14,7 @@ input celkelvin_GNDservice;
 input enable_ibias;
 input CELV;
 output ok_ibias;
-output [18:0] IPO;
+output [17:0] IPO;
 input CELBG;
 inout TAO;
 inout [4:0] tmi;

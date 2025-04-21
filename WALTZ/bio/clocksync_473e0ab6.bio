@@ -124,48 +124,6 @@ endlayoutbio
 
 //**********************************************
 //Project Parameters
-//Celera:WALTZ Project Bio
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////   default.bio'  DO NOT USE  ///////////////////////////////////
-
-//Simplis Project Parameters /////////////////////////////////////////////
-#define,Project,TBD
-#define,PROJECTreference,0.9
-#define,PROJECTsupply,4.5
-#define,TaRoom,25
-#define,ground,0.0
-#define,leveloffset,5
-//////////////////////////////////////////////////////////////////////////////////////////
-
-//Porcess  Parameters ///////////////////////////////////////////////////////
-#define,PROJECTbg,1.232
-#define,REFERENCEccpcode,15
-#define,REFERENCEccncode,15
-#define,HVNPN2A_5vbe,0.55
-#define,HVNPN2A_5vbetc,-2.1
-#define,VTNnch5i,0.72
-//#define,FETNcalculator_option,typical
-#define,FETNcalculator,maximum
-//#define,FETPcalculator_option,typical
-#define,FETPcalculator,maximum
-////////////////////////////////////////////////////////////////////////////////////////
-
-//Global Parameters ///////////////////////////////////////////////////////
-#define,CELVminimum,2.0
-#define,CELGabsmax,0.3
-#define,CELGabsmin,-0.3
-#define,SUBabsmax,0.3
-#define,SUBabsmin,-0.3
-#define,CELSUBabsmax,0.3
-#define,CELSUBabsmin,-0.3
-/////////////////////////////////////////////////////////////////////////////////////////
-
-//layout Parameters //////////////////////////////////////////////////////////
-#define MODULEdiesizefill 10
-//Percentage of area added to module for routing
-////////////////////////////////////////////////////////////////////////////////////////
-
-
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
@@ -266,8 +224,8 @@ esd,CELV,TBD
 pinname,CELG
 definition,CELG,cell power ground
 iq,CELG,SIMULATION
-absmax,CELG,0.3
-absmin,CELG,-0.3
+absmax,CELG,
+absmin,CELG,
 io,CELG,input
 mode,CELG,power
 router,CELG,TBD
@@ -278,7 +236,7 @@ pinname,clocksync_in
 definition,clocksync_in,clcoksync sync clock input
 iq,clocksync_in,SIMULATION
 absmax,clocksync_in,6
-absmin,clocksync_in,-0.3
+absmin,clocksync_in,
 io,clocksync_in,input
 mode,clocksync_in,digital
 router,clocksync_in,TBD
@@ -289,7 +247,7 @@ pinname,clocksync_out
 definition,clocksync_out,clocksync output clock
 iq,clocksync_out,SIMULATION
 absmax,clocksync_out,6
-absmin,clocksync_out,-0.3
+absmin,clocksync_out,
 io,clocksync_out,output
 mode,clocksync_out,digital
 router,clocksync_out,TBD
@@ -300,7 +258,7 @@ pinname,clk
 definition,clk,clcoksync master inout clock
 iq,clk,SIMULATION
 absmax,clk,6
-absmin,clk,-0.3
+absmin,clk,
 io,clk,input
 mode,clk,digital
 router,clk,TBD
@@ -311,7 +269,7 @@ pinname,clocksync_high
 definition,clocksync_high,clocksync high output flag
 iq,clocksync_high,SIMULATION
 absmax,clocksync_high,6
-absmin,clocksync_high,-0.3
+absmin,clocksync_high,
 io,clocksync_high,output
 mode,clocksync_high,digital
 router,clocksync_high,TBD
@@ -322,7 +280,7 @@ pinname,clocksync_low
 definition,clocksync_low,clocksync low output flag
 iq,clocksync_low,SIMULATION
 absmax,clocksync_low,6
-absmin,clocksync_low,-0.3
+absmin,clocksync_low,
 io,clocksync_low,output
 mode,clocksync_low,digital
 router,clocksync_low,TBD
@@ -333,7 +291,7 @@ pinname,enable_clocksync
 definition,enable_clocksync,clocksync enable
 iq,enable_clocksync,SIMULATION
 absmax,enable_clocksync,6
-absmin,enable_clocksync,-0.3
+absmin,enable_clocksync,
 io,enable_clocksync,input
 mode,enable_clocksync,digital
 router,enable_clocksync,TBD
@@ -344,7 +302,7 @@ pinname,global_clocksync
 definition,global_clocksync,clocksync global enable
 iq,global_clocksync,SIMULATION
 absmax,global_clocksync,6
-absmin,global_clocksync,-0.3
+absmin,global_clocksync,
 io,global_clocksync,input
 mode,global_clocksync,digital
 router,global_clocksync,TBD
@@ -354,8 +312,8 @@ esd,global_clocksync,TBD
 pinname,CELSUB
 definition,CELSUB,substrate
 iq,CELSUB,SIMULATION
-absmax,CELSUB,0.3
-absmin,CELSUB,-0.3
+absmax,CELSUB,
+absmin,CELSUB,
 io,CELSUB,input
 mode,CELSUB,analog
 routerSUB,TBD

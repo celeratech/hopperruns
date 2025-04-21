@@ -161,22 +161,6 @@ pad_override, bypass_resistor );
 endmodule
 
 
-//Verilog HDL for "BYPASS", "BYPASSpadOVERRIDE" "functional"
-
-
-module BYPASSpadOVERRIDE ( pad_override, CELG, CELSUB, CELV, PAD, unlock, porb
-);
-
-  input PAD;
-  input CELV;
-  input porb;
-  input CELSUB;
-  output pad_override;
-  input unlock;
-  input CELG;
-endmodule
-
-
 //Verilog HDL for "BYPASS", "BYPASSoutputTXOdiode" "functional"
 
 
@@ -195,7 +179,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module WALTZceleraRING (EN, FB, IN, SW, BST, GND, PIN, POK, TAO, VCC, tdo, tmi, BIAS, FSET, GOTP, PGND, PVCC, SYNC, VOTP, DFTSCL, DFTSDA, unlock, sense_FB, CELG59462, CELV96848, POK_inout, PORB97836, FSET_inout, kelvin_VCC, CELSENSE_RF, CELSUB40948, CELV_SERDES, kelvin_GNDservice, kelvin_GNDpowergood, kelvin_GNDsoftstart, kelvin_GNDregulation, celkelvin_IN_f6ed70de, celkelvin_GND_73ebd82d, celkelvin_GND_b6a75424, celkelvin_GND_ba2e47c1, celkelvin_GND_c2e1c592, celkelvin_VCC_9893c918, celkelvin_VCC_f6ed70de, celkelvin_BIAS_f6ed70de);
+module WALTZceleraRING (EN, FB, IN, SW, BST, GND, PIN, POK, TAO, VCC, tdo, tmi, BIAS, FSET, GOTP, PGND, PVCC, SYNC, VOTP, DFTSCL, DFTSDA, sense_FB, CELG59462, CELV96848, POK_inout, FSET_inout, kelvin_VCC, CELSENSE_RF, CELSUB40948, CELV_SERDES, kelvin_GNDservice, kelvin_GNDpowergood, kelvin_GNDsoftstart, kelvin_GNDregulation, celkelvin_IN_f6ed70de, celkelvin_GND_73ebd82d, celkelvin_GND_b6a75424, celkelvin_GND_ba2e47c1, celkelvin_GND_c2e1c592, celkelvin_VCC_9893c918, celkelvin_VCC_f6ed70de, celkelvin_BIAS_f6ed70de);
 inout  EN;
 inout  FB;
 inout  IN;
@@ -217,12 +201,10 @@ inout  SYNC;
 output  VOTP;
 output  DFTSCL;
 output  DFTSDA;
-input  unlock;
 inout  sense_FB;
 output  CELG59462;
 output  CELV96848;
 input  POK_inout;
-input  PORB97836;
 output  FSET_inout;
 inout  kelvin_VCC;
 output  CELSENSE_RF;
@@ -399,16 +381,6 @@ BYPASSresistor XFSET_BYPASSresistor (
 .pad_override(pad_override),
 .bypass_resistor({PAD_resistor_XFSET_BYPASSresistor_1,PAD_resistor_XFSET_BYPASSresistor_0}),
 .celkelvin_GNDpad(celkelvin_GND_db749c23)
-);
-
-BYPASSpadOVERRIDE XFB_BYPASSpadOVERRIDE (
-.PAD(FB),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.porb(PORB97836),
-.CELSUB(CELSUB40948),
-.unlock(unlock),
-.pad_override(pad_override)
 );
 
 BYPASSoutputTXOdiode XPOK_BYPASSoutputTXOdiode (

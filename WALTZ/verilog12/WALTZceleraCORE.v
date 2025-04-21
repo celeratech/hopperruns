@@ -122,7 +122,7 @@ module POWERGOODwaltz (POK,tdo,tmi,MUDV,clock,sense_FB,CELG59462,CELV96848,PORB9
   inout  kelvin_MUDGpowergood;
 endmodule
 
-module REGULATIONwaltz (TAO,tdo,tmi,MUDG,MUDV,CELG59462,CELV96848,go_driver,CELREF84329,CELSUB40948,IP_4215aede,IP_866ca25c,IP_b8eb1a18,IP_e44d2b4d,IP_f7f74094,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,softstart_1ms,REF_REGULATION,VSS_REGULATION,enable_regulation);
+module REGULATIONwaltz (TAO,tdo,tmi,MUDG,MUDV,CELG59462,CELV96848,go_driver,CELREF84329,CELSUB40948,IP_4215aede,IP_866ca25c,IP_b8eb1a18,IP_f7f74094,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,softstart_1ms,REF_REGULATION,VSS_REGULATION,enable_regulation);
   inout  TAO;
   inout  tdo;
   inout [4:0] tmi;
@@ -136,7 +136,6 @@ module REGULATIONwaltz (TAO,tdo,tmi,MUDG,MUDV,CELG59462,CELV96848,go_driver,CELR
   input  IP_4215aede;
   input  IP_866ca25c;
   input  IP_b8eb1a18;
-  input  IP_e44d2b4d;
   input  IP_f7f74094;
   inout  IREF_DRIVER;
   inout  kelvin_MUDG;
@@ -231,7 +230,7 @@ endmodule
 
 //Celera:CELERAservice
 //Celera Confidential Symbol Generator
-//IP: 19, REFERENCE: external
+//IP: 18, REFERENCE: external
 //Latch blanking: 
 module CELERAservice (celkelvin_GNDservice,enable_ibias,
 CELV,
@@ -245,7 +244,7 @@ input celkelvin_GNDservice;
 input enable_ibias;
 input CELV;
 output ok_ibias;
-output [18:0] IPO;
+output [17:0] IPO;
 input CELBG;
 inout TAO;
 inout [4:0] tmi;
@@ -296,7 +295,7 @@ input  celkelvin_BIAS_f6ed70de;
 
 // ------------------------ Wires ------------------------
 wire [4:0] tmi;
-wire [18:0] IPO;
+wire [17:0] IPO;
 
 // ------------------------ Networks ---------------------
 CLOCKwaltz XCLOCK (
@@ -436,7 +435,6 @@ REGULATIONwaltz XREGULATION (
 .IP_4215aede(IP_4215aede),
 .IP_866ca25c(IP_866ca25c),
 .IP_b8eb1a18(IP_b8eb1a18),
-.IP_e44d2b4d(IP_e44d2b4d),
 .IP_f7f74094(IP_f7f74094),
 .IREF_DRIVER(net_208),
 .kelvin_MUDG(kelvin_GNDregulation),
@@ -525,7 +523,7 @@ STONEnoconn XNCok_ibias (
 );
 
 CELERAservice XceleraSERVICE (
-.IPO({IP_116e6b00,IP_14d08c8e,IP_1ec2dc90,IP_2d447a5c,IP_39ab5afe,IP_4215aede,IP_70e67769,IP_866ca25c,IP_9526878c,IP_a0afb596,IP_a0f4802c,IP_b33985e2,IP_b8eb1a18,IP_bca60d43,IP_cb11fafa,IP_ddbf938d,IP_e44d2b4d,IP_e96a4067,IP_f7f74094}),
+.IPO({IP_116e6b00,IP_14d08c8e,IP_1ec2dc90,IP_2d447a5c,IP_39ab5afe,IP_4215aede,IP_70e67769,IP_866ca25c,IP_9526878c,IP_a0afb596,IP_a0f4802c,IP_b33985e2,IP_b8eb1a18,IP_bca60d43,IP_cb11fafa,IP_ddbf938d,IP_e96a4067,IP_f7f74094}),
 .TAO(TAO),
 .tmi(tmi[4:0]),
 .CELG(CELG59462),

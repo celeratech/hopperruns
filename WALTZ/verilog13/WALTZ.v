@@ -37,7 +37,7 @@ module WALTZceleraCORE (EN,FB,IN,SW,BST,GND,PIN,POK,TAO,VCC,tdo,tmi,BIAS,FSET,PG
   input  celkelvin_BIAS_f6ed70de;
 endmodule
 
-module WALTZceleraRING (EN,FB,IN,SW,BST,GND,PIN,POK,TAO,VCC,tdo,tmi,BIAS,FSET,GOTP,PGND,PVCC,SYNC,VOTP,DFTSCL,DFTSDA,unlock,sense_FB,CELG59462,CELV96848,POK_inout,PORB97836,FSET_inout,kelvin_VCC,CELSENSE_RF,CELSUB40948,CELV_SERDES,kelvin_GNDservice,kelvin_GNDpowergood,kelvin_GNDsoftstart,kelvin_GNDregulation,celkelvin_IN_f6ed70de,celkelvin_GND_73ebd82d,celkelvin_GND_b6a75424,celkelvin_GND_ba2e47c1,celkelvin_GND_c2e1c592,celkelvin_VCC_9893c918,celkelvin_VCC_f6ed70de,celkelvin_BIAS_f6ed70de);
+module WALTZceleraRING (EN,FB,IN,SW,BST,GND,PIN,POK,TAO,VCC,tdo,tmi,BIAS,FSET,GOTP,PGND,PVCC,SYNC,VOTP,DFTSCL,DFTSDA,sense_FB,CELG59462,CELV96848,POK_inout,FSET_inout,kelvin_VCC,CELSENSE_RF,CELSUB40948,CELV_SERDES,kelvin_GNDservice,kelvin_GNDpowergood,kelvin_GNDsoftstart,kelvin_GNDregulation,celkelvin_IN_f6ed70de,celkelvin_GND_73ebd82d,celkelvin_GND_b6a75424,celkelvin_GND_ba2e47c1,celkelvin_GND_c2e1c592,celkelvin_VCC_9893c918,celkelvin_VCC_f6ed70de,celkelvin_BIAS_f6ed70de);
   inout  EN;
   inout  FB;
   inout  IN;
@@ -59,12 +59,10 @@ module WALTZceleraRING (EN,FB,IN,SW,BST,GND,PIN,POK,TAO,VCC,tdo,tmi,BIAS,FSET,GO
   output  VOTP;
   output  DFTSCL;
   output  DFTSDA;
-  input  unlock;
   inout  sense_FB;
   output  CELG59462;
   output  CELV96848;
   input  POK_inout;
-  input  PORB97836;
   output  FSET_inout;
   inout  kelvin_VCC;
   output  CELSENSE_RF;
@@ -191,12 +189,10 @@ WALTZceleraRING XceleraRING (
 .VOTP(VOTP),
 .DFTSCL(DFTSCL),
 .DFTSDA(DFTSDA),
-.unlock(unlock),
 .sense_FB(sense_FB),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .POK_inout(POK_inout),
-.PORB97836(PORB97836),
 .FSET_inout(FSET_inout),
 .kelvin_VCC(kelvin_VCC),
 .CELSENSE_RF(CELSENSE_RF),
@@ -230,6 +226,10 @@ WALTZceleraSERDES XceleraSERDES (
 .PORB97836(PORB97836),
 .CELSUB40948(CELSUB40948),
 .celkelvin_VCC_9893c918(celkelvin_VCC_9893c918)
+);
+
+STONEnoconn XNCunlock (
+.noconn(unlock)
 );
 
 STONEnoconn XNCotp_done (

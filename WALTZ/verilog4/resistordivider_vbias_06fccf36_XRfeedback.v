@@ -142,11 +142,6 @@ rlpp3000rpo15p9u0p4u XRTOP_18(
 );
 rlpp3000rpo15p9u0p4u XRTOP_19(
 .RP (TOPTAP0_19),
-.RN (TOPTAP0_20),
-.ISO (CELG)
-);
-rlpp3000rpo15p9u0p4u XRTOP_20(
-.RP (TOPTAP0_20),
 .RN (TAP0),
 .ISO (CELG)
 );
@@ -154,7 +149,7 @@ rlpp3000rpo15p9u0p4u XRTOP_20(
 //Celera Confidential Do Not Copy //DieSize,rlpp3000rpo15p9u0p4u
 
 //Die Size Calculator rlpp3000rpo15p9u0p4u
-//,diesize,rlpp3000rpo15p9u0p4u,21
+//,diesize,rlpp3000rpo15p9u0p4u,20
 
 //Celera Confidential Do Not Copy RTAP0
 rlpp3000rpo15p9u0p4u XRTAP0_0(
@@ -179,11 +174,6 @@ rlpp3000rpo15p9u0p4u XRTAP0_3(
 );
 rlpp3000rpo15p9u0p4u XRTAP0_4(
 .RP (TAP0BOTTOM_4),
-.RN (TAP0BOTTOM_5),
-.ISO (CELG)
-);
-rlpp3000rpo15p9u0p4u XRTAP0_5(
-.RP (TAP0BOTTOM_5),
 .RN (BOTTOM),
 .ISO (CELG)
 );
@@ -191,7 +181,7 @@ rlpp3000rpo15p9u0p4u XRTAP0_5(
 //Celera Confidential Do Not Copy //DieSize,rlpp3000rpo15p9u0p4u
 
 //Die Size Calculator rlpp3000rpo15p9u0p4u
-//,diesize,rlpp3000rpo15p9u0p4u,6
+//,diesize,rlpp3000rpo15p9u0p4u,5
 
 //Celera Confidential Do Not Copy Module End
 //Celera Schematic Generator

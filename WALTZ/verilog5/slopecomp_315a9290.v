@@ -113,7 +113,7 @@ input IP;
 input global_slopecomp;
 input IOSC;
 output ok_slopecomp;
-output ISLOPECOMP;
+inout ISLOPECOMP;
 input [3:0] trim_slopecomp;
 input ten_slopecompcap;
 input CELREF_slopecomp;

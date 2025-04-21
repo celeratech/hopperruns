@@ -30,7 +30,7 @@ module REGULATIONwaltzDEBUG (VC,REFINT,TAI_XU6,TAI_XU7,TAI_XU9,tdi_XU2,tdi_XU8,t
   output  hijack_enable_regulation;
 endmodule
 
-module REGULATIONwaltzMAIN (VC,MUDG,MUDV,REFINT,CZCOMP_0,CZCOMP_1,CZCOMP_2,RZCOMP_0,RZCOMP_1,RZCOMP_2,CELG59462,CELV96848,go_driver,GAINCOMP_0,GAINCOMP_1,CELREF84329,CELSUB40948,DCMRIPPLE_0,DCMRIPPLE_1,IP_4215aede,IP_866ca25c,IP_b8eb1a18,IP_e44d2b4d,IP_f7f74094,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,global_gm_Xgm1,global_clamp_XU7,enable_regulation,global_vbuffer_XU9,trim_clamp_b8eb1a18,trim_gm_negative_e44d2b4d,trim_gm_positive_e44d2b4d,global_voltage2current_XU3,global_comparator_Xcomparator1,trim_vbuffer_negative_866ca25c,trim_vbuffer_positive_866ca25c);
+module REGULATIONwaltzMAIN (VC,MUDG,MUDV,REFINT,CZCOMP_0,CZCOMP_1,CZCOMP_2,RZCOMP_0,RZCOMP_1,RZCOMP_2,CELG59462,CELV96848,go_driver,GAINCOMP_0,GAINCOMP_1,CELREF84329,CELSUB40948,DCMRIPPLE_0,DCMRIPPLE_1,IP_4215aede,IP_866ca25c,IP_b8eb1a18,IP_f7f74094,IREF_DRIVER,kelvin_MUDG,FB_REGULATION,ok_regulation,REF_REGULATION,VSS_REGULATION,global_gm_Xgm1,global_clamp_XU7,enable_regulation,global_vbuffer_XU9,trim_clamp_b8eb1a18,trim_gm_negative_e44d2b4d,trim_gm_positive_e44d2b4d,global_voltage2current_XU3,global_comparator_Xcomparator1,trim_vbuffer_negative_866ca25c,trim_vbuffer_positive_866ca25c);
   inout  VC;
   inout  MUDG;
   input  MUDV;
@@ -53,7 +53,6 @@ module REGULATIONwaltzMAIN (VC,MUDG,MUDV,REFINT,CZCOMP_0,CZCOMP_1,CZCOMP_2,RZCOM
   input  IP_4215aede;
   input  IP_866ca25c;
   input  IP_b8eb1a18;
-  input  IP_e44d2b4d;
   input  IP_f7f74094;
   inout  IREF_DRIVER;
   inout  kelvin_MUDG;
@@ -163,7 +162,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module REGULATIONwaltz (TAO, tdo, tmi, MUDG, MUDV, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IP_4215aede, IP_866ca25c, IP_b8eb1a18, IP_e44d2b4d, IP_f7f74094, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, softstart_1ms, REF_REGULATION, VSS_REGULATION, enable_regulation);
+module REGULATIONwaltz (TAO, tdo, tmi, MUDG, MUDV, CELG59462, CELV96848, go_driver, CELREF84329, CELSUB40948, IP_4215aede, IP_866ca25c, IP_b8eb1a18, IP_f7f74094, IREF_DRIVER, kelvin_MUDG, FB_REGULATION, ok_regulation, softstart_1ms, REF_REGULATION, VSS_REGULATION, enable_regulation);
 inout  TAO;
 inout  tdo;
 inout [4:0] tmi;
@@ -177,7 +176,6 @@ input  CELSUB40948;
 input  IP_4215aede;
 input  IP_866ca25c;
 input  IP_b8eb1a18;
-input  IP_e44d2b4d;
 input  IP_f7f74094;
 inout  IREF_DRIVER;
 inout  kelvin_MUDG;
@@ -272,7 +270,6 @@ REGULATIONwaltzMAIN XMAIN (
 .IP_4215aede(IP_4215aede),
 .IP_866ca25c(IP_866ca25c),
 .IP_b8eb1a18(IP_b8eb1a18),
-.IP_e44d2b4d(IP_e44d2b4d),
 .IP_f7f74094(IP_f7f74094),
 .IREF_DRIVER(IREF_DRIVER),
 .kelvin_MUDG(kelvin_MUDG),

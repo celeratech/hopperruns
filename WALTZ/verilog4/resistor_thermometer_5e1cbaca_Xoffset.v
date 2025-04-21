@@ -48,37 +48,55 @@ module STONEnoconn ( noconn );
   input noconn;
 endmodule
 
-//Celera Confidential Do Not Copy rlpp3000rpo1p7u0p4u
+//Celera Confidential Do Not Copy rlpp3000rpo10p4u2p0u
 //Celera Confidential Symbol Generator
 //poly 31.49Kohm Resistor
-module rlpp3000rpo1p7u0p4u (RP, RN, ISO);
+module rlpp3000rpo10p4u2p0u (RP, RN, ISO);
 inout RP;
 inout RN;
 input ISO;
 endmodule
 
-//Celera Confidential Do Not Copy rlpp3000rpo1p1u0p4u
+//Celera Confidential Do Not Copy rlpp3000rpo6p9u2p0u
 //Celera Confidential Symbol Generator
 //poly 31.49Kohm Resistor
-module rlpp3000rpo1p1u0p4u (RP, RN, ISO);
+module rlpp3000rpo6p9u2p0u (RP, RN, ISO);
 inout RP;
 inout RN;
 input ISO;
 endmodule
 
-//Celera Confidential Do Not Copy rlpp3000rpo1p4u0p4u
+//Celera Confidential Do Not Copy rlpp3000rpo8p7u2p0u
 //Celera Confidential Symbol Generator
 //poly 31.49Kohm Resistor
-module rlpp3000rpo1p4u0p4u (RP, RN, ISO);
+module rlpp3000rpo8p7u2p0u (RP, RN, ISO);
 inout RP;
 inout RN;
 input ISO;
 endmodule
 
-//Celera Confidential Do Not Copy rlpp3000rpo1p0u0p4u
+//Celera Confidential Do Not Copy rlpp3000rpo6p5u2p0u
 //Celera Confidential Symbol Generator
 //poly 31.49Kohm Resistor
-module rlpp3000rpo1p0u0p4u (RP, RN, ISO);
+module rlpp3000rpo6p5u2p0u (RP, RN, ISO);
+inout RP;
+inout RN;
+input ISO;
+endmodule
+
+//Celera Confidential Do Not Copy rlpp3000rpo6p3u2p0u
+//Celera Confidential Symbol Generator
+//poly 31.49Kohm Resistor
+module rlpp3000rpo6p3u2p0u (RP, RN, ISO);
+inout RP;
+inout RN;
+input ISO;
+endmodule
+
+//Celera Confidential Do Not Copy rlpp3000rpo6p1u2p0u
+//Celera Confidential Symbol Generator
+//poly 31.49Kohm Resistor
+module rlpp3000rpo6p1u2p0u (RP, RN, ISO);
 inout RP;
 inout RN;
 input ISO;
@@ -101,16 +119,16 @@ input CELSUB;
 input [6:0] trim_resistor;
 
 //Celera Confidential Do Not Copy R0
-rlpp3000rpo1p7u0p4u XR0_0(
+rlpp3000rpo10p4u2p0u XR0_0(
 .RP (RP),
 .RN (RT6),
 .ISO (CELG)
 );
 
-//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo1p7u0p4u
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo10p4u2p0u
 
-//Die Size Calculator rlpp3000rpo1p7u0p4u
-//,diesize,rlpp3000rpo1p7u0p4u,1
+//Die Size Calculator rlpp3000rpo10p4u2p0u
+//,diesize,rlpp3000rpo10p4u2p0u,1
 
 //Celera Confidential Do Not Copy STONEresistorswitchLB
 STONEresistorswitchLB XtrimTswitchB6(
@@ -123,16 +141,16 @@ STONEresistorswitchLB XtrimTswitchB6(
 );
 //,diesize,STONEresistorswitchLB
 //Celera Confidential Do Not Copy RT6
-rlpp3000rpo1p1u0p4u XRT6_0(
+rlpp3000rpo6p9u2p0u XRT6_0(
 .RP (RT6),
 .RN (RT5),
 .ISO (CELG)
 );
 
-//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo1p1u0p4u
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo6p9u2p0u
 
-//Die Size Calculator rlpp3000rpo1p1u0p4u
-//,diesize,rlpp3000rpo1p1u0p4u,1
+//Die Size Calculator rlpp3000rpo6p9u2p0u
+//,diesize,rlpp3000rpo6p9u2p0u,1
 
 //Celera Confidential Do Not Copy STONEresistorswitchL
 STONEresistorswitchL XtrimTswitch5(
@@ -145,31 +163,31 @@ STONEresistorswitchL XtrimTswitch5(
 );
 //,diesize,STONEresistorswitchL
 //Celera Confidential Do Not Copy RT5
-rlpp3000rpo1p7u0p4u XRT5_0(
+rlpp3000rpo10p4u2p0u XRT5_0(
 .RP (RT5),
 .RN (RT4),
 .ISO (CELG)
 );
-rlpp3000rpo1p7u0p4u XRT5_1(
+rlpp3000rpo10p4u2p0u XRT5_1(
 .RP (RT5),
 .RN (RT4),
 .ISO (CELG)
 );
-rlpp3000rpo1p7u0p4u XRT5_2(
+rlpp3000rpo10p4u2p0u XRT5_2(
 .RP (RT5),
 .RN (RT4),
 .ISO (CELG)
 );
-rlpp3000rpo1p7u0p4u XRT5_3(
+rlpp3000rpo10p4u2p0u XRT5_3(
 .RP (RT5),
 .RN (RT4),
 .ISO (CELG)
 );
 
-//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo1p7u0p4u
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo10p4u2p0u
 
-//Die Size Calculator rlpp3000rpo1p7u0p4u
-//,diesize,rlpp3000rpo1p7u0p4u,4
+//Die Size Calculator rlpp3000rpo10p4u2p0u
+//,diesize,rlpp3000rpo10p4u2p0u,4
 
 //Celera Confidential Do Not Copy STONEresistorswitchL
 STONEresistorswitchL XtrimTswitch4(
@@ -182,36 +200,36 @@ STONEresistorswitchL XtrimTswitch4(
 );
 //,diesize,STONEresistorswitchL
 //Celera Confidential Do Not Copy RT4
-rlpp3000rpo1p4u0p4u XRT4_0(
+rlpp3000rpo8p7u2p0u XRT4_0(
 .RP (RT4),
 .RN (RT3),
 .ISO (CELG)
 );
-rlpp3000rpo1p4u0p4u XRT4_1(
+rlpp3000rpo8p7u2p0u XRT4_1(
 .RP (RT4),
 .RN (RT3),
 .ISO (CELG)
 );
-rlpp3000rpo1p4u0p4u XRT4_2(
+rlpp3000rpo8p7u2p0u XRT4_2(
 .RP (RT4),
 .RN (RT3),
 .ISO (CELG)
 );
-rlpp3000rpo1p4u0p4u XRT4_3(
+rlpp3000rpo8p7u2p0u XRT4_3(
 .RP (RT4),
 .RN (RT3),
 .ISO (CELG)
 );
-rlpp3000rpo1p4u0p4u XRT4_4(
+rlpp3000rpo8p7u2p0u XRT4_4(
 .RP (RT4),
 .RN (RT3),
 .ISO (CELG)
 );
 
-//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo1p4u0p4u
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo8p7u2p0u
 
-//Die Size Calculator rlpp3000rpo1p4u0p4u
-//,diesize,rlpp3000rpo1p4u0p4u,5
+//Die Size Calculator rlpp3000rpo8p7u2p0u
+//,diesize,rlpp3000rpo8p7u2p0u,5
 
 //Celera Confidential Do Not Copy STONEresistorswitchL
 STONEresistorswitchL XtrimTswitch3(
@@ -224,51 +242,51 @@ STONEresistorswitchL XtrimTswitch3(
 );
 //,diesize,STONEresistorswitchL
 //Celera Confidential Do Not Copy RT3
-rlpp3000rpo1p1u0p4u XRT3_0(
+rlpp3000rpo6p9u2p0u XRT3_0(
 .RP (RT3),
 .RN (RT2),
 .ISO (CELG)
 );
-rlpp3000rpo1p1u0p4u XRT3_1(
+rlpp3000rpo6p9u2p0u XRT3_1(
 .RP (RT3),
 .RN (RT2),
 .ISO (CELG)
 );
-rlpp3000rpo1p1u0p4u XRT3_2(
+rlpp3000rpo6p9u2p0u XRT3_2(
 .RP (RT3),
 .RN (RT2),
 .ISO (CELG)
 );
-rlpp3000rpo1p1u0p4u XRT3_3(
+rlpp3000rpo6p9u2p0u XRT3_3(
 .RP (RT3),
 .RN (RT2),
 .ISO (CELG)
 );
-rlpp3000rpo1p1u0p4u XRT3_4(
+rlpp3000rpo6p9u2p0u XRT3_4(
 .RP (RT3),
 .RN (RT2),
 .ISO (CELG)
 );
-rlpp3000rpo1p1u0p4u XRT3_5(
+rlpp3000rpo6p9u2p0u XRT3_5(
 .RP (RT3),
 .RN (RT2),
 .ISO (CELG)
 );
-rlpp3000rpo1p1u0p4u XRT3_6(
+rlpp3000rpo6p9u2p0u XRT3_6(
 .RP (RT3),
 .RN (RT2),
 .ISO (CELG)
 );
-rlpp3000rpo1p1u0p4u XRT3_7(
+rlpp3000rpo6p9u2p0u XRT3_7(
 .RP (RT3),
 .RN (RT2),
 .ISO (CELG)
 );
 
-//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo1p1u0p4u
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo6p9u2p0u
 
-//Die Size Calculator rlpp3000rpo1p1u0p4u
-//,diesize,rlpp3000rpo1p1u0p4u,8
+//Die Size Calculator rlpp3000rpo6p9u2p0u
+//,diesize,rlpp3000rpo6p9u2p0u,8
 
 //Celera Confidential Do Not Copy STONEresistorswitchL
 STONEresistorswitchL XtrimTswitch2(
@@ -281,86 +299,86 @@ STONEresistorswitchL XtrimTswitch2(
 );
 //,diesize,STONEresistorswitchL
 //Celera Confidential Do Not Copy RT2
-rlpp3000rpo1p1u0p4u XRT2_0(
+rlpp3000rpo6p5u2p0u XRT2_0(
 .RP (RT2),
 .RN (RT1),
 .ISO (CELG)
 );
-rlpp3000rpo1p1u0p4u XRT2_1(
+rlpp3000rpo6p5u2p0u XRT2_1(
 .RP (RT2),
 .RN (RT1),
 .ISO (CELG)
 );
-rlpp3000rpo1p1u0p4u XRT2_2(
+rlpp3000rpo6p5u2p0u XRT2_2(
 .RP (RT2),
 .RN (RT1),
 .ISO (CELG)
 );
-rlpp3000rpo1p1u0p4u XRT2_3(
+rlpp3000rpo6p5u2p0u XRT2_3(
 .RP (RT2),
 .RN (RT1),
 .ISO (CELG)
 );
-rlpp3000rpo1p1u0p4u XRT2_4(
+rlpp3000rpo6p5u2p0u XRT2_4(
 .RP (RT2),
 .RN (RT1),
 .ISO (CELG)
 );
-rlpp3000rpo1p1u0p4u XRT2_5(
+rlpp3000rpo6p5u2p0u XRT2_5(
 .RP (RT2),
 .RN (RT1),
 .ISO (CELG)
 );
-rlpp3000rpo1p1u0p4u XRT2_6(
+rlpp3000rpo6p5u2p0u XRT2_6(
 .RP (RT2),
 .RN (RT1),
 .ISO (CELG)
 );
-rlpp3000rpo1p1u0p4u XRT2_7(
+rlpp3000rpo6p5u2p0u XRT2_7(
 .RP (RT2),
 .RN (RT1),
 .ISO (CELG)
 );
-rlpp3000rpo1p1u0p4u XRT2_8(
+rlpp3000rpo6p5u2p0u XRT2_8(
 .RP (RT2),
 .RN (RT1),
 .ISO (CELG)
 );
-rlpp3000rpo1p1u0p4u XRT2_9(
+rlpp3000rpo6p5u2p0u XRT2_9(
 .RP (RT2),
 .RN (RT1),
 .ISO (CELG)
 );
-rlpp3000rpo1p1u0p4u XRT2_10(
+rlpp3000rpo6p5u2p0u XRT2_10(
 .RP (RT2),
 .RN (RT1),
 .ISO (CELG)
 );
-rlpp3000rpo1p1u0p4u XRT2_11(
+rlpp3000rpo6p5u2p0u XRT2_11(
 .RP (RT2),
 .RN (RT1),
 .ISO (CELG)
 );
-rlpp3000rpo1p1u0p4u XRT2_12(
+rlpp3000rpo6p5u2p0u XRT2_12(
 .RP (RT2),
 .RN (RT1),
 .ISO (CELG)
 );
-rlpp3000rpo1p1u0p4u XRT2_13(
+rlpp3000rpo6p5u2p0u XRT2_13(
 .RP (RT2),
 .RN (RT1),
 .ISO (CELG)
 );
-rlpp3000rpo1p1u0p4u XRT2_14(
+rlpp3000rpo6p5u2p0u XRT2_14(
 .RP (RT2),
 .RN (RT1),
 .ISO (CELG)
 );
 
-//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo1p1u0p4u
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo6p5u2p0u
 
-//Die Size Calculator rlpp3000rpo1p1u0p4u
-//,diesize,rlpp3000rpo1p1u0p4u,15
+//Die Size Calculator rlpp3000rpo6p5u2p0u
+//,diesize,rlpp3000rpo6p5u2p0u,15
 
 //Celera Confidential Do Not Copy STONEresistorswitchL
 STONEresistorswitchL XtrimTswitch1(
@@ -373,156 +391,156 @@ STONEresistorswitchL XtrimTswitch1(
 );
 //,diesize,STONEresistorswitchL
 //Celera Confidential Do Not Copy RT1
-rlpp3000rpo1p0u0p4u XRT1_0(
+rlpp3000rpo6p3u2p0u XRT1_0(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_1(
+rlpp3000rpo6p3u2p0u XRT1_1(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_2(
+rlpp3000rpo6p3u2p0u XRT1_2(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_3(
+rlpp3000rpo6p3u2p0u XRT1_3(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_4(
+rlpp3000rpo6p3u2p0u XRT1_4(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_5(
+rlpp3000rpo6p3u2p0u XRT1_5(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_6(
+rlpp3000rpo6p3u2p0u XRT1_6(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_7(
+rlpp3000rpo6p3u2p0u XRT1_7(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_8(
+rlpp3000rpo6p3u2p0u XRT1_8(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_9(
+rlpp3000rpo6p3u2p0u XRT1_9(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_10(
+rlpp3000rpo6p3u2p0u XRT1_10(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_11(
+rlpp3000rpo6p3u2p0u XRT1_11(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_12(
+rlpp3000rpo6p3u2p0u XRT1_12(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_13(
+rlpp3000rpo6p3u2p0u XRT1_13(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_14(
+rlpp3000rpo6p3u2p0u XRT1_14(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_15(
+rlpp3000rpo6p3u2p0u XRT1_15(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_16(
+rlpp3000rpo6p3u2p0u XRT1_16(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_17(
+rlpp3000rpo6p3u2p0u XRT1_17(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_18(
+rlpp3000rpo6p3u2p0u XRT1_18(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_19(
+rlpp3000rpo6p3u2p0u XRT1_19(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_20(
+rlpp3000rpo6p3u2p0u XRT1_20(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_21(
+rlpp3000rpo6p3u2p0u XRT1_21(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_22(
+rlpp3000rpo6p3u2p0u XRT1_22(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_23(
+rlpp3000rpo6p3u2p0u XRT1_23(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_24(
+rlpp3000rpo6p3u2p0u XRT1_24(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_25(
+rlpp3000rpo6p3u2p0u XRT1_25(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_26(
+rlpp3000rpo6p3u2p0u XRT1_26(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_27(
+rlpp3000rpo6p3u2p0u XRT1_27(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT1_28(
+rlpp3000rpo6p3u2p0u XRT1_28(
 .RP (RT1),
 .RN (RT0),
 .ISO (CELG)
 );
 
-//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo1p0u0p4u
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo6p3u2p0u
 
-//Die Size Calculator rlpp3000rpo1p0u0p4u
-//,diesize,rlpp3000rpo1p0u0p4u,29
+//Die Size Calculator rlpp3000rpo6p3u2p0u
+//,diesize,rlpp3000rpo6p3u2p0u,29
 
 //Celera Confidential Do Not Copy STONEresistorswitchL
 STONEresistorswitchL XtrimTswitch0(
@@ -535,296 +553,296 @@ STONEresistorswitchL XtrimTswitch0(
 );
 //,diesize,STONEresistorswitchL
 //Celera Confidential Do Not Copy RT0
-rlpp3000rpo1p0u0p4u XRT0_0(
+rlpp3000rpo6p1u2p0u XRT0_0(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_1(
+rlpp3000rpo6p1u2p0u XRT0_1(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_2(
+rlpp3000rpo6p1u2p0u XRT0_2(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_3(
+rlpp3000rpo6p1u2p0u XRT0_3(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_4(
+rlpp3000rpo6p1u2p0u XRT0_4(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_5(
+rlpp3000rpo6p1u2p0u XRT0_5(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_6(
+rlpp3000rpo6p1u2p0u XRT0_6(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_7(
+rlpp3000rpo6p1u2p0u XRT0_7(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_8(
+rlpp3000rpo6p1u2p0u XRT0_8(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_9(
+rlpp3000rpo6p1u2p0u XRT0_9(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_10(
+rlpp3000rpo6p1u2p0u XRT0_10(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_11(
+rlpp3000rpo6p1u2p0u XRT0_11(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_12(
+rlpp3000rpo6p1u2p0u XRT0_12(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_13(
+rlpp3000rpo6p1u2p0u XRT0_13(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_14(
+rlpp3000rpo6p1u2p0u XRT0_14(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_15(
+rlpp3000rpo6p1u2p0u XRT0_15(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_16(
+rlpp3000rpo6p1u2p0u XRT0_16(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_17(
+rlpp3000rpo6p1u2p0u XRT0_17(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_18(
+rlpp3000rpo6p1u2p0u XRT0_18(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_19(
+rlpp3000rpo6p1u2p0u XRT0_19(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_20(
+rlpp3000rpo6p1u2p0u XRT0_20(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_21(
+rlpp3000rpo6p1u2p0u XRT0_21(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_22(
+rlpp3000rpo6p1u2p0u XRT0_22(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_23(
+rlpp3000rpo6p1u2p0u XRT0_23(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_24(
+rlpp3000rpo6p1u2p0u XRT0_24(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_25(
+rlpp3000rpo6p1u2p0u XRT0_25(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_26(
+rlpp3000rpo6p1u2p0u XRT0_26(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_27(
+rlpp3000rpo6p1u2p0u XRT0_27(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_28(
+rlpp3000rpo6p1u2p0u XRT0_28(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_29(
+rlpp3000rpo6p1u2p0u XRT0_29(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_30(
+rlpp3000rpo6p1u2p0u XRT0_30(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_31(
+rlpp3000rpo6p1u2p0u XRT0_31(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_32(
+rlpp3000rpo6p1u2p0u XRT0_32(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_33(
+rlpp3000rpo6p1u2p0u XRT0_33(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_34(
+rlpp3000rpo6p1u2p0u XRT0_34(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_35(
+rlpp3000rpo6p1u2p0u XRT0_35(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_36(
+rlpp3000rpo6p1u2p0u XRT0_36(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_37(
+rlpp3000rpo6p1u2p0u XRT0_37(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_38(
+rlpp3000rpo6p1u2p0u XRT0_38(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_39(
+rlpp3000rpo6p1u2p0u XRT0_39(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_40(
+rlpp3000rpo6p1u2p0u XRT0_40(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_41(
+rlpp3000rpo6p1u2p0u XRT0_41(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_42(
+rlpp3000rpo6p1u2p0u XRT0_42(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_43(
+rlpp3000rpo6p1u2p0u XRT0_43(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_44(
+rlpp3000rpo6p1u2p0u XRT0_44(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_45(
+rlpp3000rpo6p1u2p0u XRT0_45(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_46(
+rlpp3000rpo6p1u2p0u XRT0_46(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_47(
+rlpp3000rpo6p1u2p0u XRT0_47(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_48(
+rlpp3000rpo6p1u2p0u XRT0_48(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_49(
+rlpp3000rpo6p1u2p0u XRT0_49(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_50(
+rlpp3000rpo6p1u2p0u XRT0_50(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_51(
+rlpp3000rpo6p1u2p0u XRT0_51(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_52(
+rlpp3000rpo6p1u2p0u XRT0_52(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_53(
+rlpp3000rpo6p1u2p0u XRT0_53(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_54(
+rlpp3000rpo6p1u2p0u XRT0_54(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_55(
+rlpp3000rpo6p1u2p0u XRT0_55(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRT0_56(
+rlpp3000rpo6p1u2p0u XRT0_56(
 .RP (RT0),
 .RN (RN),
 .ISO (CELG)
 );
 
-//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo1p0u0p4u
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo6p1u2p0u
 
-//Die Size Calculator rlpp3000rpo1p0u0p4u
-//,diesize,rlpp3000rpo1p0u0p4u,57
+//Die Size Calculator rlpp3000rpo6p1u2p0u
+//,diesize,rlpp3000rpo6p1u2p0u,57
 
 //Celera Confidential Do Not Copy Module End
 //Celera Schematic Generator
