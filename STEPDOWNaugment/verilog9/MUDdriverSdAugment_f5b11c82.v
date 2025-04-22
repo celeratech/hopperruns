@@ -30,11 +30,10 @@ module MUDbbmAugment_d1b77b55 (tmi,botswon,topswon,botstate,topstate,CELG59462,C
   input  topswstatus;
 endmodule
 
-module MUDbotswnmosSdIlimAugment_51cfa4f0 (SW,tmi,MUDV,CBOOT,PMUDG,PMUDV,botswon,CELG59462,CELV96848,botswipeak,CELSUB40948,botswstatus,botswzcross,enable_driver,IP_a05962c0_XBOTTOMIPEAK,IP_8c8c74a2_XBOTTOMZCROSS);
+module MUDbotswnmosSdIlimAugment_51cfa4f0 (SW,tmi,MUDV,PMUDG,PMUDV,botswon,CELG59462,CELV96848,botswipeak,CELSUB40948,botswstatus,botswzcross,enable_driver,IP_a05962c0_XBOTTOMIPEAK,IP_8c8c74a2_XBOTTOMZCROSS);
   inout  SW;
   inout [4:0] tmi;
   input  MUDV;
-  input  CBOOT;
   inout  PMUDG;
   input  PMUDV;
   input  botswon;
@@ -132,7 +131,6 @@ MUDbotswnmosSdIlimAugment_51cfa4f0 XBOTDRIVER (
 .SW(SW),
 .tmi(tmi[4:0]),
 .MUDV(MUDV),
-.CBOOT(CBOOT),
 .PMUDG(PMUDG),
 .PMUDV(PMUDV),
 .botswon(net_91),
