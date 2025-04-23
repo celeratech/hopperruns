@@ -93,8 +93,18 @@ endmodule
 
 
 
+//Verilog HDL for "Generate", "WRAPPER1" "functional"
+
+
+module WRAPPER1 ( o, i );
+
+  input i;
+  output o;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module CHARGEPOWERPATHpugetMAIN (VCAP, OUTFB, SIMPV, OUTFET, VCAPP5, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_485eb9b0, IP_7bd8149d, GNDpowerpath, bypass_outfb, celkelvin_IN, ok_chargefet, on_chargefet, outfb_status, kelvin_VOUTSN, CELREF_485eb9b0, charge_startuptime, ok_powerpathcharge, on_powerpathcharge, clock_powerpathcharge, celkelvin_GNDpowerpath, enable_powerpathcharge);
+module CHARGEPOWERPATHpugetMAIN (VCAP, OUTFB, SIMPV, OUTFET, VCAPP5, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_485eb9b0, IP_7bd8149d, GNDpowerpath, bypass_outfb, celkelvin_IN, ok_chargefet, on_chargefet, outfb_status, kelvin_VOUTSN, CELREF_485eb9b0, charge_startuptime, ok_powerpathcharge, on_powerpathcharge, clock_powerpathcharge, enable_powerpathcharge);
 input  VCAP;
 input  OUTFB;
 inout  SIMPV;
@@ -118,7 +128,6 @@ input  charge_startuptime;
 output  ok_powerpathcharge;
 output  on_powerpathcharge;
 input  clock_powerpathcharge;
-input  celkelvin_GNDpowerpath;
 input  enable_powerpathcharge;
 
 
@@ -227,6 +236,11 @@ PEBBLEtielo XDRMNOTL (
 .V(CELV96848),
 .q(a0),
 .SUB(CELSUB40948)
+);
+
+WRAPPER1 celkelvin_GNDpowerpath_WRAPPER (
+.i(celkelvin_GNDpowerpath),
+.o(na)
 );
 
 endmodule

@@ -7,7 +7,7 @@
 :vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
 :vpi_module "/usr/local/lib/ivl/va_math.vpi";
-S_0x559cfc727f60 .scope module, "CHARGEPOWERPATHpuget" "CHARGEPOWERPATHpuget" 2 51;
+S_0x55890501d000 .scope module, "CHARGEPOWERPATHpuget" "CHARGEPOWERPATHpuget" 2 50;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "VCAP";
     .port_info 1 /INPUT 1 "OUTFB";
@@ -28,71 +28,68 @@ S_0x559cfc727f60 .scope module, "CHARGEPOWERPATHpuget" "CHARGEPOWERPATHpuget" 2 
     .port_info 16 /OUTPUT 1 "ok_powerpathcharge";
     .port_info 17 /OUTPUT 1 "on_powerpathcharge";
     .port_info 18 /INPUT 1 "clock_powerpathcharge";
-    .port_info 19 /INPUT 1 "celkelvin_GNDpowerpath";
-    .port_info 20 /INPUT 1 "enable_powerpathcharge";
-o0x7f377701e018 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc77f9c0_0 .net "CELG59462", 0 0, o0x7f377701e018;  0 drivers
-o0x7f377701e4c8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc77fa80_0 .net "CELREF_485eb9b0", 0 0, o0x7f377701e4c8;  0 drivers
-o0x7f377701e048 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc77fb70_0 .net "CELSUB40948", 0 0, o0x7f377701e048;  0 drivers
-o0x7f377701e078 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc77fc40_0 .net "CELV96848", 0 0, o0x7f377701e078;  0 drivers
-o0x7f377701e4f8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc77fce0_0 .net "GNDpowerpath", 0 0, o0x7f377701e4f8;  0 drivers
-o0x7f377701e528 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc77fd80_0 .net "IP_485eb9b0", 0 0, o0x7f377701e528;  0 drivers
-o0x7f377701e558 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc77fe50_0 .net "IP_7bd8149d", 0 0, o0x7f377701e558;  0 drivers
-o0x7f377701e588 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc77ff20_0 .net "OUTFB", 0 0, o0x7f377701e588;  0 drivers
-o0x7f377701e5b8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc77fff0_0 .net "OUTFET", 0 0, o0x7f377701e5b8;  0 drivers
-o0x7f377701e5e8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc7800c0_0 .net "PORB97836", 0 0, o0x7f377701e5e8;  0 drivers
-o0x7f377701e618 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc780190_0 .net "SIMPV", 0 0, o0x7f377701e618;  0 drivers
-o0x7f377701e648 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc780260_0 .net "VCAP", 0 0, o0x7f377701e648;  0 drivers
-o0x7f377701e678 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc780330_0 .net "VCAPP5", 0 0, o0x7f377701e678;  0 drivers
-o0x7f377701e6a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc780400_0 .net "celkelvin_GNDpowerpath", 0 0, o0x7f377701e6a8;  0 drivers
-o0x7f377701e6d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc7804d0_0 .net "celkelvin_IN", 0 0, o0x7f377701e6d8;  0 drivers
-o0x7f377701e708 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc7805a0_0 .net "clock_powerpathcharge", 0 0, o0x7f377701e708;  0 drivers
-o0x7f377701e198 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc780670_0 .net "enable_powerpathcharge", 0 0, o0x7f377701e198;  0 drivers
-o0x7f377701e738 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc780850_0 .net "kelvin_VOUTSN", 0 0, o0x7f377701e738;  0 drivers
-o0x7f377701e0a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc780920_0 .net "net_62", 0 0, o0x7f377701e0a8;  0 drivers
-o0x7f377701e228 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc7809c0_0 .net "net_63", 0 0, o0x7f377701e228;  0 drivers
-o0x7f377701e288 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc780ab0_0 .net "net_64", 0 0, o0x7f377701e288;  0 drivers
-o0x7f377701e1f8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc780ba0_0 .net "net_65", 0 0, o0x7f377701e1f8;  0 drivers
-o0x7f377701e1c8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc780c90_0 .net "net_66", 0 0, o0x7f377701e1c8;  0 drivers
-o0x7f377701e258 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc780d80_0 .net "ok_powerpathcharge", 0 0, o0x7f377701e258;  0 drivers
-o0x7f377701e768 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc780e70_0 .net "on_powerpathcharge", 0 0, o0x7f377701e768;  0 drivers
-o0x7f377701e2b8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x559cfc780f10_0 .net "outfb_status", 0 0, o0x7f377701e2b8;  0 drivers
-S_0x559cfc75e200 .scope module, "XCONFIGURATION" "POWERPATHCHARGEconfiguration" 2 78, 2 2 0, S_0x559cfc727f60;
+    .port_info 19 /INPUT 1 "enable_powerpathcharge";
+o0x7feb4273e018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503e020_0 .net "CELG59462", 0 0, o0x7feb4273e018;  0 drivers
+o0x7feb4273e4c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503e0e0_0 .net "CELREF_485eb9b0", 0 0, o0x7feb4273e4c8;  0 drivers
+o0x7feb4273e048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503e1d0_0 .net "CELSUB40948", 0 0, o0x7feb4273e048;  0 drivers
+o0x7feb4273e078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503e2a0_0 .net "CELV96848", 0 0, o0x7feb4273e078;  0 drivers
+o0x7feb4273e4f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503e340_0 .net "GNDpowerpath", 0 0, o0x7feb4273e4f8;  0 drivers
+o0x7feb4273e528 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503e3e0_0 .net "IP_485eb9b0", 0 0, o0x7feb4273e528;  0 drivers
+o0x7feb4273e558 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503e4b0_0 .net "IP_7bd8149d", 0 0, o0x7feb4273e558;  0 drivers
+o0x7feb4273e588 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503e580_0 .net "OUTFB", 0 0, o0x7feb4273e588;  0 drivers
+o0x7feb4273e5b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503e650_0 .net "OUTFET", 0 0, o0x7feb4273e5b8;  0 drivers
+o0x7feb4273e5e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503e720_0 .net "PORB97836", 0 0, o0x7feb4273e5e8;  0 drivers
+o0x7feb4273e618 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503e7f0_0 .net "SIMPV", 0 0, o0x7feb4273e618;  0 drivers
+o0x7feb4273e648 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503e8c0_0 .net "VCAP", 0 0, o0x7feb4273e648;  0 drivers
+o0x7feb4273e678 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503e990_0 .net "VCAPP5", 0 0, o0x7feb4273e678;  0 drivers
+o0x7feb4273e6a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503ea60_0 .net "celkelvin_IN", 0 0, o0x7feb4273e6a8;  0 drivers
+o0x7feb4273e6d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503eb30_0 .net "clock_powerpathcharge", 0 0, o0x7feb4273e6d8;  0 drivers
+o0x7feb4273e198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503ec00_0 .net "enable_powerpathcharge", 0 0, o0x7feb4273e198;  0 drivers
+o0x7feb4273e708 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503ecd0_0 .net "kelvin_VOUTSN", 0 0, o0x7feb4273e708;  0 drivers
+o0x7feb4273e0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503eeb0_0 .net "net_62", 0 0, o0x7feb4273e0a8;  0 drivers
+o0x7feb4273e228 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503ef50_0 .net "net_63", 0 0, o0x7feb4273e228;  0 drivers
+o0x7feb4273e288 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503f040_0 .net "net_64", 0 0, o0x7feb4273e288;  0 drivers
+o0x7feb4273e1f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503f130_0 .net "net_65", 0 0, o0x7feb4273e1f8;  0 drivers
+o0x7feb4273e1c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503f220_0 .net "net_66", 0 0, o0x7feb4273e1c8;  0 drivers
+o0x7feb4273e258 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503f310_0 .net "ok_powerpathcharge", 0 0, o0x7feb4273e258;  0 drivers
+o0x7feb4273e738 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503f400_0 .net "on_powerpathcharge", 0 0, o0x7feb4273e738;  0 drivers
+o0x7feb4273e2b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55890503f4a0_0 .net "outfb_status", 0 0, o0x7feb4273e2b8;  0 drivers
+S_0x55890501ecf0 .scope module, "XCONFIGURATION" "POWERPATHCHARGEconfiguration" 2 76, 2 2 0, S_0x55890501d000;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "CELG59462";
     .port_info 1 /INPUT 1 "CELV96848";
     .port_info 2 /INPUT 1 "CELSUB40948";
     .port_info 3 /OUTPUT 1 "charge_startuptime";
-v0x559cfc7274b0_0 .net "CELG59462", 0 0, o0x7f377701e018;  alias, 0 drivers
-v0x559cfc7280f0_0 .net "CELSUB40948", 0 0, o0x7f377701e048;  alias, 0 drivers
-v0x559cfc727ec0_0 .net "CELV96848", 0 0, o0x7f377701e078;  alias, 0 drivers
-v0x559cfc77d160_0 .net "charge_startuptime", 0 0, o0x7f377701e0a8;  alias, 0 drivers
-S_0x559cfc77d2d0 .scope module, "XDEBUG" "CHARGEPOWERPATHpugetDEBUG" 2 85, 2 9 0, S_0x559cfc727f60;
+v0x558904fe64b0_0 .net "CELG59462", 0 0, o0x7feb4273e018;  alias, 0 drivers
+v0x558904fe70f0_0 .net "CELSUB40948", 0 0, o0x7feb4273e048;  alias, 0 drivers
+v0x558904fe6ec0_0 .net "CELV96848", 0 0, o0x7feb4273e078;  alias, 0 drivers
+v0x55890503b8b0_0 .net "charge_startuptime", 0 0, o0x7feb4273e0a8;  alias, 0 drivers
+S_0x55890503ba20 .scope module, "XDEBUG" "CHARGEPOWERPATHpugetDEBUG" 2 83, 2 9 0, S_0x55890501d000;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "CELG59462";
     .port_info 1 /INPUT 1 "CELV96848";
@@ -104,17 +101,17 @@ S_0x559cfc77d2d0 .scope module, "XDEBUG" "CHARGEPOWERPATHpugetDEBUG" 2 85, 2 9 0
     .port_info 7 /OUTPUT 1 "hijack_bypass_outfb";
     .port_info 8 /INPUT 1 "enable_powerpathcharge";
     .port_info 9 /OUTPUT 1 "hijack_enable_powerpathcharge";
-v0x559cfc77d5d0_0 .net "CELG59462", 0 0, o0x7f377701e018;  alias, 0 drivers
-v0x559cfc77d670_0 .net "CELSUB40948", 0 0, o0x7f377701e048;  alias, 0 drivers
-v0x559cfc77d740_0 .net "CELV96848", 0 0, o0x7f377701e078;  alias, 0 drivers
-v0x559cfc77d840_0 .net "enable_powerpathcharge", 0 0, o0x7f377701e198;  alias, 0 drivers
-v0x559cfc77d8e0_0 .net "hijack_bypass_outfb", 0 0, o0x7f377701e1c8;  alias, 0 drivers
-v0x559cfc77d9d0_0 .net "hijack_enable_powerpathcharge", 0 0, o0x7f377701e1f8;  alias, 0 drivers
-v0x559cfc77da70_0 .net "ok_chargefet", 0 0, o0x7f377701e228;  alias, 0 drivers
-v0x559cfc77db10_0 .net "ok_powerpathcharge", 0 0, o0x7f377701e258;  alias, 0 drivers
-v0x559cfc77dbd0_0 .net "on_chargefet", 0 0, o0x7f377701e288;  alias, 0 drivers
-v0x559cfc77dc90_0 .net "outfb_status", 0 0, o0x7f377701e2b8;  alias, 0 drivers
-S_0x559cfc77de90 .scope module, "XMAIN" "CHARGEPOWERPATHpugetMAIN" 2 98, 2 22 0, S_0x559cfc727f60;
+v0x55890503bd20_0 .net "CELG59462", 0 0, o0x7feb4273e018;  alias, 0 drivers
+v0x55890503bdc0_0 .net "CELSUB40948", 0 0, o0x7feb4273e048;  alias, 0 drivers
+v0x55890503be90_0 .net "CELV96848", 0 0, o0x7feb4273e078;  alias, 0 drivers
+v0x55890503bf90_0 .net "enable_powerpathcharge", 0 0, o0x7feb4273e198;  alias, 0 drivers
+v0x55890503c030_0 .net "hijack_bypass_outfb", 0 0, o0x7feb4273e1c8;  alias, 0 drivers
+v0x55890503c120_0 .net "hijack_enable_powerpathcharge", 0 0, o0x7feb4273e1f8;  alias, 0 drivers
+v0x55890503c1c0_0 .net "ok_chargefet", 0 0, o0x7feb4273e228;  alias, 0 drivers
+v0x55890503c260_0 .net "ok_powerpathcharge", 0 0, o0x7feb4273e258;  alias, 0 drivers
+v0x55890503c320_0 .net "on_chargefet", 0 0, o0x7feb4273e288;  alias, 0 drivers
+v0x55890503c3e0_0 .net "outfb_status", 0 0, o0x7feb4273e2b8;  alias, 0 drivers
+S_0x55890503c5e0 .scope module, "XMAIN" "CHARGEPOWERPATHpugetMAIN" 2 96, 2 22 0, S_0x55890501d000;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "VCAP";
     .port_info 1 /INPUT 1 "OUTFB";
@@ -139,33 +136,31 @@ S_0x559cfc77de90 .scope module, "XMAIN" "CHARGEPOWERPATHpugetMAIN" 2 98, 2 22 0,
     .port_info 20 /OUTPUT 1 "ok_powerpathcharge";
     .port_info 21 /OUTPUT 1 "on_powerpathcharge";
     .port_info 22 /INPUT 1 "clock_powerpathcharge";
-    .port_info 23 /INPUT 1 "celkelvin_GNDpowerpath";
-    .port_info 24 /INPUT 1 "enable_powerpathcharge";
-v0x559cfc77e280_0 .net "CELG59462", 0 0, o0x7f377701e018;  alias, 0 drivers
-v0x559cfc77e370_0 .net "CELREF_485eb9b0", 0 0, o0x7f377701e4c8;  alias, 0 drivers
-v0x559cfc77e430_0 .net "CELSUB40948", 0 0, o0x7f377701e048;  alias, 0 drivers
-v0x559cfc77e520_0 .net "CELV96848", 0 0, o0x7f377701e078;  alias, 0 drivers
-v0x559cfc77e610_0 .net "GNDpowerpath", 0 0, o0x7f377701e4f8;  alias, 0 drivers
-v0x559cfc77e700_0 .net "IP_485eb9b0", 0 0, o0x7f377701e528;  alias, 0 drivers
-v0x559cfc77e7c0_0 .net "IP_7bd8149d", 0 0, o0x7f377701e558;  alias, 0 drivers
-v0x559cfc77e880_0 .net "OUTFB", 0 0, o0x7f377701e588;  alias, 0 drivers
-v0x559cfc77e940_0 .net "OUTFET", 0 0, o0x7f377701e5b8;  alias, 0 drivers
-v0x559cfc77ea90_0 .net "PORB97836", 0 0, o0x7f377701e5e8;  alias, 0 drivers
-v0x559cfc77eb50_0 .net "SIMPV", 0 0, o0x7f377701e618;  alias, 0 drivers
-v0x559cfc77ec10_0 .net "VCAP", 0 0, o0x7f377701e648;  alias, 0 drivers
-v0x559cfc77ecd0_0 .net "VCAPP5", 0 0, o0x7f377701e678;  alias, 0 drivers
-v0x559cfc77ed90_0 .net "bypass_outfb", 0 0, o0x7f377701e1c8;  alias, 0 drivers
-v0x559cfc77ee30_0 .net "celkelvin_GNDpowerpath", 0 0, o0x7f377701e6a8;  alias, 0 drivers
-v0x559cfc77eed0_0 .net "celkelvin_IN", 0 0, o0x7f377701e6d8;  alias, 0 drivers
-v0x559cfc77ef90_0 .net "charge_startuptime", 0 0, o0x7f377701e0a8;  alias, 0 drivers
-v0x559cfc77f140_0 .net "clock_powerpathcharge", 0 0, o0x7f377701e708;  alias, 0 drivers
-v0x559cfc77f1e0_0 .net "enable_powerpathcharge", 0 0, o0x7f377701e1f8;  alias, 0 drivers
-v0x559cfc77f280_0 .net "kelvin_VOUTSN", 0 0, o0x7f377701e738;  alias, 0 drivers
-v0x559cfc77f320_0 .net "ok_chargefet", 0 0, o0x7f377701e228;  alias, 0 drivers
-v0x559cfc77f3f0_0 .net "ok_powerpathcharge", 0 0, o0x7f377701e258;  alias, 0 drivers
-v0x559cfc77f4c0_0 .net "on_chargefet", 0 0, o0x7f377701e288;  alias, 0 drivers
-v0x559cfc77f590_0 .net "on_powerpathcharge", 0 0, o0x7f377701e768;  alias, 0 drivers
-v0x559cfc77f630_0 .net "outfb_status", 0 0, o0x7f377701e2b8;  alias, 0 drivers
+    .port_info 23 /INPUT 1 "enable_powerpathcharge";
+v0x55890503c9c0_0 .net "CELG59462", 0 0, o0x7feb4273e018;  alias, 0 drivers
+v0x55890503cab0_0 .net "CELREF_485eb9b0", 0 0, o0x7feb4273e4c8;  alias, 0 drivers
+v0x55890503cb70_0 .net "CELSUB40948", 0 0, o0x7feb4273e048;  alias, 0 drivers
+v0x55890503cc60_0 .net "CELV96848", 0 0, o0x7feb4273e078;  alias, 0 drivers
+v0x55890503cd50_0 .net "GNDpowerpath", 0 0, o0x7feb4273e4f8;  alias, 0 drivers
+v0x55890503ce40_0 .net "IP_485eb9b0", 0 0, o0x7feb4273e528;  alias, 0 drivers
+v0x55890503cf00_0 .net "IP_7bd8149d", 0 0, o0x7feb4273e558;  alias, 0 drivers
+v0x55890503cfc0_0 .net "OUTFB", 0 0, o0x7feb4273e588;  alias, 0 drivers
+v0x55890503d080_0 .net "OUTFET", 0 0, o0x7feb4273e5b8;  alias, 0 drivers
+v0x55890503d1d0_0 .net "PORB97836", 0 0, o0x7feb4273e5e8;  alias, 0 drivers
+v0x55890503d290_0 .net "SIMPV", 0 0, o0x7feb4273e618;  alias, 0 drivers
+v0x55890503d350_0 .net "VCAP", 0 0, o0x7feb4273e648;  alias, 0 drivers
+v0x55890503d410_0 .net "VCAPP5", 0 0, o0x7feb4273e678;  alias, 0 drivers
+v0x55890503d4d0_0 .net "bypass_outfb", 0 0, o0x7feb4273e1c8;  alias, 0 drivers
+v0x55890503d570_0 .net "celkelvin_IN", 0 0, o0x7feb4273e6a8;  alias, 0 drivers
+v0x55890503d610_0 .net "charge_startuptime", 0 0, o0x7feb4273e0a8;  alias, 0 drivers
+v0x55890503d6b0_0 .net "clock_powerpathcharge", 0 0, o0x7feb4273e6d8;  alias, 0 drivers
+v0x55890503d860_0 .net "enable_powerpathcharge", 0 0, o0x7feb4273e1f8;  alias, 0 drivers
+v0x55890503d900_0 .net "kelvin_VOUTSN", 0 0, o0x7feb4273e708;  alias, 0 drivers
+v0x55890503d9a0_0 .net "ok_chargefet", 0 0, o0x7feb4273e228;  alias, 0 drivers
+v0x55890503da70_0 .net "ok_powerpathcharge", 0 0, o0x7feb4273e258;  alias, 0 drivers
+v0x55890503db40_0 .net "on_chargefet", 0 0, o0x7feb4273e288;  alias, 0 drivers
+v0x55890503dc10_0 .net "on_powerpathcharge", 0 0, o0x7feb4273e738;  alias, 0 drivers
+v0x55890503dcb0_0 .net "outfb_status", 0 0, o0x7feb4273e2b8;  alias, 0 drivers
 # The file index is used to find the file name in the following table.
 :file_names 3;
     "N/A";
