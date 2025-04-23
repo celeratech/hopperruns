@@ -98,7 +98,7 @@ INPOWERPATHpuget XINPOWERPATHpuget1 (
 
 WRAPPER1 celkelvin_IN_WRAPPER (
 .i(celkelvin_IN),
-.o(IN)
+.o(INpowerpath)
 );
 
 WRAPPER1 celkelvin_GNDpowerpath_WRAPPER (
