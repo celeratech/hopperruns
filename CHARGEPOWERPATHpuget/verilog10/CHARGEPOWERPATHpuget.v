@@ -19,7 +19,7 @@ module CHARGEPOWERPATHpugetDEBUG (CELG59462,CELV96848,CELSUB40948,ok_chargefet,o
   output  hijack_enable_powerpathcharge;
 endmodule
 
-module CHARGEPOWERPATHpugetMAIN (VCAP,OUTFB,SIMPV,OUTFET,VCAPP5,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_485eb9b0,IP_7bd8149d,GNDpowerpath,bypass_outfb,celkelvin_IN,ok_chargefet,on_chargefet,outfb_status,kelvin_VOUTSN,CELREF_485eb9b0,charge_startuptime,ok_powerpathcharge,on_powerpathcharge,clock_powerpathcharge,enable_powerpathcharge);
+module CHARGEPOWERPATHpugetMAIN (VCAP,OUTFB,SIMPV,OUTFET,VCAPP5,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_485eb9b0,IP_7bd8149d,GNDpowerpath,bypass_outfb,celkelvin_IN,ok_chargefet,on_chargefet,outfb_status,kelvin_VOUTSN,CELREF_485eb9b0,charge_startuptime,ok_powerpathcharge,on_powerpathcharge,clock_powerpathcharge,celkelvin_GNDpowerpath,enable_powerpathcharge);
   input  VCAP;
   input  OUTFB;
   inout  SIMPV;
@@ -43,11 +43,12 @@ module CHARGEPOWERPATHpugetMAIN (VCAP,OUTFB,SIMPV,OUTFET,VCAPP5,CELG59462,CELV96
   output  ok_powerpathcharge;
   output  on_powerpathcharge;
   input  clock_powerpathcharge;
+  input  celkelvin_GNDpowerpath;
   input  enable_powerpathcharge;
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module CHARGEPOWERPATHpuget (VCAP, OUTFB, SIMPV, OUTFET, VCAPP5, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_485eb9b0, IP_7bd8149d, GNDpowerpath, celkelvin_IN, outfb_status, kelvin_VOUTSN, CELREF_485eb9b0, ok_powerpathcharge, on_powerpathcharge, clock_powerpathcharge, enable_powerpathcharge);
+module CHARGEPOWERPATHpuget (VCAP, OUTFB, SIMPV, OUTFET, VCAPP5, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_485eb9b0, IP_7bd8149d, GNDpowerpath, celkelvin_IN, outfb_status, kelvin_VOUTSN, CELREF_485eb9b0, ok_powerpathcharge, on_powerpathcharge, clock_powerpathcharge, celkelvin_GNDpowerpath, enable_powerpathcharge);
 input  VCAP;
 input  OUTFB;
 inout  SIMPV;
@@ -67,6 +68,7 @@ input  CELREF_485eb9b0;
 output  ok_powerpathcharge;
 output  on_powerpathcharge;
 input  clock_powerpathcharge;
+input  celkelvin_GNDpowerpath;
 input  enable_powerpathcharge;
 
 
@@ -117,6 +119,7 @@ CHARGEPOWERPATHpugetMAIN XMAIN (
 .ok_powerpathcharge(ok_powerpathcharge),
 .on_powerpathcharge(on_powerpathcharge),
 .clock_powerpathcharge(clock_powerpathcharge),
+.celkelvin_GNDpowerpath(celkelvin_GNDpowerpath),
 .enable_powerpathcharge(net_65)
 );
 
