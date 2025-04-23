@@ -91,10 +91,29 @@ module vsin_3d5x1d5x10kx0(PLUS, MINUS);
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module ALLforceexternals0EXTERNALS ();
+module ALLforceexternals0EXTERNALS (CAP, GND, IND, RES, IPUL, IPWL, ISIN, ISQR, ITRI, VPUL, VPWL, VSIN, VSQR, VTRI, DIODE, FORCEDATA, register_FDATA_0, register_FDATABUS_0);
+inout  CAP;
+inout  GND;
+inout  IND;
+inout  RES;
+output  IPUL;
+output  IPWL;
+output  ISIN;
+output  ISQR;
+output  ITRI;
+output  VPUL;
+output  VPWL;
+output  VSIN;
+output  VSQR;
+output  VTRI;
+inout  DIODE;
+output  FORCEDATA;
+input  register_FDATA_0;
+input [1:0] register_FDATABUS_0;
 
 
 // ------------------------ Wires ------------------------
+wire [1:0] register_FDATABUS_0;
 
 // ------------------------ Networks ---------------------
 STONEnoconn XNC48 (

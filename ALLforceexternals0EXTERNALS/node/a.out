@@ -1,0 +1,80 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x55e6333b7f60 .scope module, "sim_FORCEdutEXTERNALS" "sim_FORCEdutEXTERNALS" 2 24;
+ .timescale 0 0;
+o0x7fe34985c048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e6333b74b0_0 .net "DIODE", 0 0, o0x7fe34985c048;  0 drivers
+o0x7fe34985c078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e6334039f0_0 .net "FORCEDATA", 0 0, o0x7fe34985c078;  0 drivers
+o0x7fe34985c0d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e633403ab0_0 .net "IPUL", 0 0, o0x7fe34985c0d8;  0 drivers
+o0x7fe34985c108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e633403bd0_0 .net "IPWL", 0 0, o0x7fe34985c108;  0 drivers
+o0x7fe34985c0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e633403cc0_0 .net "ISIN", 0 0, o0x7fe34985c0a8;  0 drivers
+o0x7fe34985c018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e633403e00_0 .net "ISQR", 0 0, o0x7fe34985c018;  0 drivers
+o0x7fe34985c138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e633403ef0_0 .net "VPUL", 0 0, o0x7fe34985c138;  0 drivers
+o0x7fe34985c168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e633403f90_0 .net "VPWL", 0 0, o0x7fe34985c168;  0 drivers
+o0x7fe34985c198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e633404030_0 .net "VSIN", 0 0, o0x7fe34985c198;  0 drivers
+o0x7fe34985c1c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e6334040d0_0 .net "VSQR", 0 0, o0x7fe34985c1c8;  0 drivers
+o0x7fe34985c1f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e633404170_0 .net "VTRI", 0 0, o0x7fe34985c1f8;  0 drivers
+o0x7fe34985c228 .functor BUFZ 2, C4<zz>; HiZ drive
+v0x55e633404210_0 .net "register_FDATABUS_0", 1 0, o0x7fe34985c228;  0 drivers
+o0x7fe34985c258 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e6334042e0_0 .net "register_FDATA_0", 0 0, o0x7fe34985c258;  0 drivers
+S_0x55e6333f02d0 .scope module, "XEXTERNALS" "ALLforceexternals0EXTERNALS" 2 31, 2 2 0, S_0x55e6333b7f60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "CAP";
+    .port_info 1 /INOUT 1 "GND";
+    .port_info 2 /INOUT 1 "IND";
+    .port_info 3 /INOUT 1 "RES";
+    .port_info 4 /OUTPUT 1 "IPUL";
+    .port_info 5 /OUTPUT 1 "IPWL";
+    .port_info 6 /OUTPUT 1 "ISIN";
+    .port_info 7 /OUTPUT 1 "ISQR";
+    .port_info 8 /OUTPUT 1 "ITRI";
+    .port_info 9 /OUTPUT 1 "VPUL";
+    .port_info 10 /OUTPUT 1 "VPWL";
+    .port_info 11 /OUTPUT 1 "VSIN";
+    .port_info 12 /OUTPUT 1 "VSQR";
+    .port_info 13 /OUTPUT 1 "VTRI";
+    .port_info 14 /INOUT 1 "DIODE";
+    .port_info 15 /OUTPUT 1 "FORCEDATA";
+    .port_info 16 /INPUT 1 "register_FDATA_0";
+    .port_info 17 /INPUT 2 "register_FDATABUS_0";
+v0x55e6333b80f0_0 .net "CAP", 0 0, o0x7fe34985c018;  alias, 0 drivers
+v0x55e6333b7ec0_0 .net "DIODE", 0 0, o0x7fe34985c048;  alias, 0 drivers
+v0x55e633402a10_0 .net "FORCEDATA", 0 0, o0x7fe34985c078;  alias, 0 drivers
+v0x55e633402ab0_0 .net "GND", 0 0, o0x7fe34985c0a8;  alias, 0 drivers
+v0x55e633402b70_0 .net "IND", 0 0, o0x7fe34985c0d8;  alias, 0 drivers
+v0x55e633402c80_0 .net "IPUL", 0 0, o0x7fe34985c0d8;  alias, 0 drivers
+v0x55e633402d20_0 .net "IPWL", 0 0, o0x7fe34985c108;  alias, 0 drivers
+v0x55e633402dc0_0 .net "ISIN", 0 0, o0x7fe34985c0a8;  alias, 0 drivers
+v0x55e633402e90_0 .net "ISQR", 0 0, o0x7fe34985c018;  alias, 0 drivers
+v0x55e633402f60_0 .net "ITRI", 0 0, o0x7fe34985c048;  alias, 0 drivers
+v0x55e633403030_0 .net "RES", 0 0, o0x7fe34985c108;  alias, 0 drivers
+v0x55e633403100_0 .net "VPUL", 0 0, o0x7fe34985c138;  alias, 0 drivers
+v0x55e6334031a0_0 .net "VPWL", 0 0, o0x7fe34985c168;  alias, 0 drivers
+v0x55e633403240_0 .net "VSIN", 0 0, o0x7fe34985c198;  alias, 0 drivers
+v0x55e6334032e0_0 .net "VSQR", 0 0, o0x7fe34985c1c8;  alias, 0 drivers
+v0x55e633403380_0 .net "VTRI", 0 0, o0x7fe34985c1f8;  alias, 0 drivers
+v0x55e633403440_0 .net "register_FDATABUS_0", 1 0, o0x7fe34985c228;  alias, 0 drivers
+v0x55e633403630_0 .net "register_FDATA_0", 0 0, o0x7fe34985c258;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/celera/projects/Sunnyvale/software/ALLforceexternals0EXTERNALS/verilog8/sim_FORCEdutEXTERNALS.v";
