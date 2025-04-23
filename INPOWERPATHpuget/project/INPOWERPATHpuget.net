@@ -1,0 +1,182 @@
+* Z:\celera\projects\Simplis\playgrant\Puget\Puget0\301d\verification\sim_INPOWERPATHpuget.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+ 
+*BrickToolsVersion:0.124  projname:INPOWERPATHpuget
+.node_map SIMPV 25
+.node_map INFET 22
+.node_map INpowerpath 21
+.node_map clock_powerpathin 27
+.node_map VOUTM5 24
+.node_map GNDpowerpathin 28
+.node_map enable_powerpathin 26
+.node_map kelvin_VOUTSPpowerpathin 23
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 362.5u  0
+.globalvar REF=1.0
+.globalvar TEMP=25
+.globalvar VIN=5
+.globalvar tdext_khz=1000
+.globalvar  celera_i2c_frequency_KHz=100
+
+X$bricktitleblock 18 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='text' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+
+X$INPOWERPATHpuget 21 22 23 25 24 26 19 28 27 20 INPOWERPATHpuget
+X$noconn0 19 celeranoconn vars: ='%'
+X$noconn1 20 celeranoconn vars: ='%'
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+** From Z:\celera\projects\Simplis\playgrant\Puget\Puget0\301d\verification\FORCE_INPOWERPATHpuget.sxcmp
+
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301D\design\INPOWERPATHpuget.sxcmp
+.subckt INPOWERPATHpuget 42 45 43 44 47 46 49 50 48 51
+*#hierarchy
+.node_map SIMPV 44
+.node_map hijack_enable_powerpathin 53
+.node_map INFET 45
+.node_map on_infet 55
+.node_map INpowerpath 42
+.node_map in_startuptime 52
+.node_map on_powerpathin 51
+.node_map clock_powerpathin 48
+.node_map VOUTM5 47
+.node_map GNDpowerpathin 50
+.node_map ok_infet 54
+.node_map enable_powerpathin 46
+.node_map ok_powerpathin 49
+.node_map kelvin_VOUTSPpowerpathin 43
+X$CONFIGURATION 52 POWERPATHINconfiguration
+X$DEBUG 46 49 54 55 53 48 INPOWERPATHpugetDEBUG
+X$MAIN 42 45 43 44 47 53 54 50 55 49 48 51 52 INPOWERPATHpugetMAIN
+X$pinprobe1 45 pinprobe vars: pinprobe_description='IPOTTpowerpath40Vinternal_Powerpath_Fet_Gate' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe10 50 pinprobe vars: pinprobe_description='PowerPath_Ground' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 44 pinprobe vars: pinprobe_description='Low_voltage_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe12 51 pinprobe vars: pinprobe_description='Input_POWERPATH_enabled_and_on' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 42 pinprobe vars: pinprobe_description='High_Voltage_Supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe3 48 pinprobe vars: pinprobe_description='Master_sync_clock_32KHz' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 43 pinprobe vars: pinprobe_description='VOUT_sense_positive' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe5 49 pinprobe vars: pinprobe_description='Input_POWERPATH_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 46 pinprobe vars: pinprobe_description='Enable_IPOTTpowerpath40vinternal' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe8 47 pinprobe vars: pinprobe_description='VOUT_Minus_5V_Rail' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$U1 41 brick vars: ibias=1 drm=1 dft=1 global=0 brick=0 revision=0 description='IN_powerpath' description1='startup_delay_option_for_1ms_from_enable' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+.ends INPOWERPATHpuget
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301D\design\POWERPATHINconfiguration.sxcmp
+.subckt POWERPATHINconfiguration 5
+*#hierarchy
+.node_map in_startuptime 5
+X$datamap1 5 datamap1 vars: datamap_function='function' datamap_name='POWERPATHINconfiguration' datamap_description='POWERPATHIN_configuration_register' datamap_io='input' datamap_status_mode='live' datamap_status_readunits='us' datamap_status_resettimeunits='us' datamap_status_enable='no' datamap_type='factory' datamap_register_selfreset='no' datamap_mode='readwrite' datamap_address='17' datamap_timeenable='yes' datamap_por01='0' datamap_por00='0' datamap_por3='0' datamap_por2='0' datamap_por1='0' datamap_por0='0' datamap_function0='Startup_time_delay' datamap_function0_off='32us' datamap_function0_on='750us' datamap_function1='text' datamap_function1_off='text' datamap_function1_on='text' datamap_function2='text' datamap_function2_off='text' datamap_function2_on='text' datamap_function3='text' datamap_function3_off='text' datamap_function3_on='text' datamap_function4='text' datamap_function4_off='text' datamap_function4_on='text' datamap_function5='text' datamap_function5_off='text' datamap_function5_on='text' datamap_function6='text' datamap_function6_off='text' datamap_function6_on='text' datamap_function7='text' datamap_function7_off='text' datamap_function7_on='text' datamap_function8='text' datamap_function8_off='text' datamap_function8_on='text' datamap_function9='text' datamap_function9_off='text' datamap_function9_on='text' datamap_function10='text' datamap_function10_off='text' datamap_function10_on='text' datamap_function11='text' datamap_function11_off='text' datamap_function11_on='text' datamap_function12='text' datamap_function12_off='text' datamap_function12_on='text' datamap_function13='text' datamap_function13_off='text' datamap_function13_on='text' datamap_function14='text' datamap_function14_off='text' datamap_function14_on='text' datamap_function15='text' datamap_function15_off='text' datamap_function15_on='text' datamap_code0='text' datamap_code1='text' datamap_code2='text' datamap_code3='text' datamap_code4='text' datamap_code5='text' datamap_code6='text' datamap_code7='text' datamap_code8='text' datamap_code9='text' datamap_code10='text' datamap_code11='text' datamap_code12='text' datamap_code13='text' datamap_code14='text' datamap_code15='text' datamap_range_units='text' datamap_startcode3='0' datamap_startcode2='0' datamap_startcode1='0' datamap_startcode0='0' datamap_newcode13='0' datamap_newcode12='0' datamap_newcode11='0' datamap_newcode10='0' datamap_enabletimeunits1='us' datamap_newcode23='0' datamap_newcode22='0' datamap_newcode21='0' datamap_newcode20='0' datamap_enabletimeunits2='us' datamap_newcode33='0' datamap_newcode32='0' datamap_newcode31='0' datamap_newcode30='0' datamap_enabletimeunits3='us' datamap_newcode43='0' datamap_newcode42='0' datamap_newcode41='0' datamap_newcode40='0' datamap_enabletimeunits4='us' datamap_newcode53='0' datamap_newcode52='0' datamap_newcode51='0' datamap_newcode50='0' datamap_enabletimeunits5='us' datamap_newcode63='0' datamap_newcode62='0' datamap_newcode61='0' datamap_newcode60='0' datamap_enabletimeunits6='us' datamap_newcode73='0' datamap_newcode72='0' datamap_newcode71='0' datamap_newcode70='0' datamap_enabletimeunits7='us' datamap_newcode83='0' datamap_newcode82='0' datamap_newcode81='0' datamap_newcode80='0' datamap_enabletimeunits8='us' datamap_text0=0 datamap_status_read=10 datamap_status_resettime=10 datamap_bits=1 datamap_info=0 datamap_location=0 datamap_text1=0 datamap_text3=0 datamap_text2=0 datamap_range_start=0 datamap_range_lsb=1 datamap_timeenablecodes=1 datamap_enabletime1=11.0 datamap_enabletime2=11.0 datamap_enabletime3=11.0 datamap_enabletime4=11.0 datamap_enabletime5=11.0 datamap_enabletime6=11.0 datamap_enabletime7=11.0 datamap_enabletime8=11.0 datamap_vmax=6
+X$pinprobe1 5 pinprobe vars: pinprobe_description='Startup_time_delay' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$U1 4 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='text' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+.ends POWERPATHINconfiguration
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301D\design\INPOWERPATHpugetDEBUG.sxcmp
+.subckt INPOWERPATHpugetDEBUG 23 24 25 26 28 27
+*#hierarchy
+.node_map hijack_enable_powerpathin 28
+.node_map on_infet 26
+.node_map clock_powerpathin 27
+.node_map ok_infet 25
+.node_map enable_powerpathin 23
+.node_map ok_powerpathin 24
+X$dfthijack1 23 28 dfthijack vars: dfthijack_name='INPOWERPATHenable' dfthijack_description='Hijack_INPOWERPTAH_enable' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$pinprobe1 24 pinprobe vars: pinprobe_description='Input_POWERPATH_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 23 pinprobe vars: pinprobe_description='Enable_IPOTTpowerpath40vinternal' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe17 25 pinprobe vars: pinprobe_description='IPOTTpowerpath40Vinternal_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe19 26 pinprobe vars: pinprobe_description='Powerpath_Gate_ON_Status' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 27 pinprobe vars: pinprobe_description='Master_sync_clock_32KHz' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 28 pinprobe vars: pinprobe_description='Enable_IPOTTpowerpath40vinternal' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$U1 28 24 22 VESPAdftpulse
+X$U3 21 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='INPOWERPATHpuget' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$UINPOWERPATH_clock 27 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='INPOWERPATH_clock' dftprobe_description='Measure_INPOWERPATH_clock' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UINPOWERPATHok 24 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='INPOWERPATHok' dftprobe_description='Measure_INPOWERPATH_ok_ready' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UINPOWERPATHok_infet 25 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='INPOWERPATHok_infet' dftprobe_description='Measure_INPOWERPATH_ok_infet' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UINPOWERPATHon_infet 26 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='INPOWERPATHon_infet' dftprobe_description='Measure_INPOWERPATH_on_infet' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UINPOWERPATHstartup 22 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='INPOWERPATHstartup' dftprobe_description='Measure_INPOWERPATH_on_startup_time' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+.ends INPOWERPATHpugetDEBUG
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAdftpulse.sxcmp
+.subckt VESPAdftpulse 7 8 9
+*#hierarchy
+.node_map start 7
+.node_map stop 8
+.node_map pulse 9
+X$U11 7 pinprobe vars: pinprobe_description='DFT_timer_start_input'
+X$U15 8 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U17 8 pinprobe vars: pinprobe_description='DFT_timer_stop_input'
+X$U52 7 4 6 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U53 4 5 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U55 9 5 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U8 9 pinprobe vars: pinprobe_description='DFT_Timer_pulse'
+.ends VESPAdftpulse
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301D\design\INPOWERPATHpugetMAIN.sxcmp
+.subckt INPOWERPATHpugetMAIN 63 65 64 66 67 68 73 74 75 69 70 71 72
+*#hierarchy
+.node_map SIMPV 66
+.node_map okvoutm5 80
+.node_map BUS1$0 61
+.node_map BUS1$1 62
+.node_map okp 78
+.node_map INFET 65
+.node_map kelvin_VOUTSP 64
+.node_map on_infet 75
+.node_map in_startuptime 72
+.node_map clock 79
+.node_map on_powerpathin 71
+.node_map clock_powerpathin 70
+.node_map VOUTM5 67
+.node_map onp 77
+.node_map GNDpowerpathin 74
+.node_map ok_infet 73
+.node_map ok 76
+.node_map enable_powerpathin 68
+.node_map IN 63
+.node_map ok_powerpathin 69
+X$delay1 76 78 79 61 62 72 delayclock vars: delay_type='clock' delay_units='ns' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=50 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=2 delayclock_por=0 delayclock_count0=2 delayclock_count1=48 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=32
+X$pinprobe1 65 pinprobe vars: pinprobe_description='IPOTTpowerpath40Vinternal_Powerpath_Fet_Gate' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe10 74 pinprobe vars: pinprobe_description='PowerPath_Ground' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 66 pinprobe vars: pinprobe_description='Low_voltage_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe12 69 pinprobe vars: pinprobe_description='Input_POWERPATH_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe13 70 pinprobe vars: pinprobe_description='Master_sync_clock_32KHz' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe14 73 pinprobe vars: pinprobe_description='IPOTTpowerpath40Vinternal_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe15 72 pinprobe vars: pinprobe_description='Master_sync_clock_32KHz' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 63 pinprobe vars: pinprobe_description='High_Voltage_Supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe3 75 pinprobe vars: pinprobe_description='IPOTTpowerpath40Vinternal_fet_status' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 64 pinprobe vars: pinprobe_description='VOUT_sense_positive' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe5 71 pinprobe vars: pinprobe_description='Powerpath_Input_gate_status' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 68 pinprobe vars: pinprobe_description='Enable_IPOTTpowerpath40vinternal' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe8 67 pinprobe vars: pinprobe_description='VOUT_Minus_5V_Rail' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$U1 58 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='INPOWERPATHpuget' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U14 64 65 63 59 66 80 75 73 67 IPOTTpowerpath40Vinternal vars: powerpath_fettype='n' powerpath_source='in' powerpath_fet='external' powerpath_gatei='current' powerpath_reg='yes' powerpath_chargepump='internal' powerpath_ok='yes' powerpath_accuracy='yes' powerpath_accuracy_name='40V_Regulation_Trim' powerpath_accuracy_description='40V_Regulation_Trim' powerpath_dft='yes' powerpath_inputvmax=40 powerpath_ron=1 powerpath_gateron=10 powerpath_gateroff=100 powerpath_gatecurrent=20 powerpath_onthr=65 powerpath_offthr=30 powerpath_regv=30 powerpath_vmax=6
+X$U2 68 76 73 VESPAasmINPUT1
+X$U3 76 77 75 VESPAasmINPUT1
+X$U4 63 66 67 74 68 60 80 floatingreturn vars: floatingreturn_strength='strong' floatingreturn_accuracy='no' floatingreturn_trim_name='text' floatingreturn_trim_description='text' floatingreturn_quiet='no' floatingreturn_dft='no' floatingreturn_supply=40 floatingreturn_okdelay=100 floatingreturn_vmax=6
+X$U5 76 79 70 VESPAasmINPUT1
+X$U7 69 78 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U8 71 77 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+.ends INPOWERPATHpugetMAIN
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT1.sxcmp
+.subckt VESPAasmINPUT1 5 6 7
+*#hierarchy
+.node_map Tstate 5
+.node_map i0 7
+.node_map o 6
+X$U1 5 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 7 pinprobe vars: pinprobe_description='input1'
+X$U3 6 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 5 4 7 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U5 4 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+.ends VESPAasmINPUT1
+
+.end

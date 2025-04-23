@@ -1,0 +1,140 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x565442bc1f60 .scope module, "sim_INPOWERPATHpuget_ROW1" "sim_INPOWERPATHpuget_ROW1" 2 53;
+ .timescale 0 0;
+o0x7f33cde47018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565442c16ad0_0 .net "CELG59462", 0 0, o0x7f33cde47018;  0 drivers
+o0x7f33cde47048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565442c16b70_0 .net "CELREF_a263afb3", 0 0, o0x7f33cde47048;  0 drivers
+o0x7f33cde47078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565442c16c80_0 .net "CELSUB40948", 0 0, o0x7f33cde47078;  0 drivers
+o0x7f33cde470a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565442c16d70_0 .net "CELV96848", 0 0, o0x7f33cde470a8;  0 drivers
+o0x7f33cde470d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565442c16e60_0 .net "GNDpowerpathin", 0 0, o0x7f33cde470d8;  0 drivers
+o0x7f33cde47a68 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565442c16fa0_0 .net "IN", 0 0, o0x7f33cde47a68;  0 drivers
+o0x7f33cde47108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565442c17040_0 .net "INFET", 0 0, o0x7f33cde47108;  0 drivers
+o0x7f33cde47138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565442c17130_0 .net "INpowerpath", 0 0, o0x7f33cde47138;  0 drivers
+o0x7f33cde47168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565442c17220_0 .net "IP_444d0508", 0 0, o0x7f33cde47168;  0 drivers
+o0x7f33cde47198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565442c172c0_0 .net "IP_a263afb3", 0 0, o0x7f33cde47198;  0 drivers
+o0x7f33cde471c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565442c173b0_0 .net "PORB97836", 0 0, o0x7f33cde471c8;  0 drivers
+o0x7f33cde471f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565442c174a0_0 .net "SIMPV", 0 0, o0x7f33cde471f8;  0 drivers
+o0x7f33cde47228 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565442c17590_0 .net "VOUTM5", 0 0, o0x7f33cde47228;  0 drivers
+o0x7f33cde475b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565442c17680_0 .net "celkelvin_GNDpowerpath", 0 0, o0x7f33cde475b8;  0 drivers
+o0x7f33cde475e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565442c17770_0 .net "celkelvin_IN", 0 0, o0x7f33cde475e8;  0 drivers
+o0x7f33cde47258 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565442c17860_0 .net "clock_powerpathin", 0 0, o0x7f33cde47258;  0 drivers
+o0x7f33cde47288 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565442c17950_0 .net "enable_powerpathin", 0 0, o0x7f33cde47288;  0 drivers
+o0x7f33cde472b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565442c17b50_0 .net "kelvin_VOUTSPpowerpathin", 0 0, o0x7f33cde472b8;  0 drivers
+o0x7f33cde47618 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565442c17c40_0 .net "ok_powerpathin", 0 0, o0x7f33cde47618;  0 drivers
+o0x7f33cde47648 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565442c17ce0_0 .net "on_powerpathin", 0 0, o0x7f33cde47648;  0 drivers
+S_0x565442bf9a40 .scope module, "XFORCE_INPOWERPATHpuget1" "FORCE_INPOWERPATHpuget" 2 59, 2 2 0, S_0x565442bc1f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "INFET";
+    .port_info 1 /OUTPUT 1 "SIMPV";
+    .port_info 2 /OUTPUT 1 "VOUTM5";
+    .port_info 3 /OUTPUT 1 "CELG59462";
+    .port_info 4 /OUTPUT 1 "CELV96848";
+    .port_info 5 /OUTPUT 1 "PORB97836";
+    .port_info 6 /OUTPUT 1 "CELSUB40948";
+    .port_info 7 /OUTPUT 1 "INpowerpath";
+    .port_info 8 /OUTPUT 1 "IP_444d0508";
+    .port_info 9 /OUTPUT 1 "IP_a263afb3";
+    .port_info 10 /OUTPUT 1 "GNDpowerpathin";
+    .port_info 11 /OUTPUT 1 "CELREF_a263afb3";
+    .port_info 12 /OUTPUT 1 "clock_powerpathin";
+    .port_info 13 /OUTPUT 1 "enable_powerpathin";
+    .port_info 14 /OUTPUT 1 "kelvin_VOUTSPpowerpathin";
+v0x565442bc14b0_0 .net "CELG59462", 0 0, o0x7f33cde47018;  alias, 0 drivers
+v0x565442bc20f0_0 .net "CELREF_a263afb3", 0 0, o0x7f33cde47048;  alias, 0 drivers
+v0x565442bc1ec0_0 .net "CELSUB40948", 0 0, o0x7f33cde47078;  alias, 0 drivers
+v0x565442c142b0_0 .net "CELV96848", 0 0, o0x7f33cde470a8;  alias, 0 drivers
+v0x565442c14370_0 .net "GNDpowerpathin", 0 0, o0x7f33cde470d8;  alias, 0 drivers
+v0x565442c14480_0 .net "INFET", 0 0, o0x7f33cde47108;  alias, 0 drivers
+v0x565442c14540_0 .net "INpowerpath", 0 0, o0x7f33cde47138;  alias, 0 drivers
+v0x565442c14600_0 .net "IP_444d0508", 0 0, o0x7f33cde47168;  alias, 0 drivers
+v0x565442c146c0_0 .net "IP_a263afb3", 0 0, o0x7f33cde47198;  alias, 0 drivers
+v0x565442c14780_0 .net "PORB97836", 0 0, o0x7f33cde471c8;  alias, 0 drivers
+v0x565442c14840_0 .net "SIMPV", 0 0, o0x7f33cde471f8;  alias, 0 drivers
+v0x565442c14900_0 .net "VOUTM5", 0 0, o0x7f33cde47228;  alias, 0 drivers
+v0x565442c149c0_0 .net "clock_powerpathin", 0 0, o0x7f33cde47258;  alias, 0 drivers
+v0x565442c14a80_0 .net "enable_powerpathin", 0 0, o0x7f33cde47288;  alias, 0 drivers
+v0x565442c14b40_0 .net "kelvin_VOUTSPpowerpathin", 0 0, o0x7f33cde472b8;  alias, 0 drivers
+S_0x565442c14de0 .scope module, "XINPOWERPATHpuget1" "INPOWERPATHpuget" 2 77, 2 20 0, S_0x565442bc1f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "INFET";
+    .port_info 1 /INPUT 1 "SIMPV";
+    .port_info 2 /OUTPUT 1 "VOUTM5";
+    .port_info 3 /INPUT 1 "CELG59462";
+    .port_info 4 /INPUT 1 "CELV96848";
+    .port_info 5 /INPUT 1 "PORB97836";
+    .port_info 6 /INPUT 1 "CELSUB40948";
+    .port_info 7 /INPUT 1 "INpowerpath";
+    .port_info 8 /INPUT 1 "IP_444d0508";
+    .port_info 9 /INPUT 1 "IP_a263afb3";
+    .port_info 10 /INPUT 1 "celkelvin_IN";
+    .port_info 11 /INPUT 1 "GNDpowerpathin";
+    .port_info 12 /OUTPUT 1 "ok_powerpathin";
+    .port_info 13 /OUTPUT 1 "on_powerpathin";
+    .port_info 14 /INPUT 1 "CELREF_a263afb3";
+    .port_info 15 /INPUT 1 "clock_powerpathin";
+    .port_info 16 /INPUT 1 "enable_powerpathin";
+    .port_info 17 /INPUT 1 "celkelvin_GNDpowerpath";
+    .port_info 18 /INPUT 1 "kelvin_VOUTSPpowerpathin";
+v0x565442c15200_0 .net "CELG59462", 0 0, o0x7f33cde47018;  alias, 0 drivers
+v0x565442c152a0_0 .net "CELREF_a263afb3", 0 0, o0x7f33cde47048;  alias, 0 drivers
+v0x565442c15370_0 .net "CELSUB40948", 0 0, o0x7f33cde47078;  alias, 0 drivers
+v0x565442c15470_0 .net "CELV96848", 0 0, o0x7f33cde470a8;  alias, 0 drivers
+v0x565442c15540_0 .net "GNDpowerpathin", 0 0, o0x7f33cde470d8;  alias, 0 drivers
+v0x565442c15630_0 .net "INFET", 0 0, o0x7f33cde47108;  alias, 0 drivers
+v0x565442c15700_0 .net "INpowerpath", 0 0, o0x7f33cde47138;  alias, 0 drivers
+v0x565442c157d0_0 .net "IP_444d0508", 0 0, o0x7f33cde47168;  alias, 0 drivers
+v0x565442c158a0_0 .net "IP_a263afb3", 0 0, o0x7f33cde47198;  alias, 0 drivers
+v0x565442c15a00_0 .net "PORB97836", 0 0, o0x7f33cde471c8;  alias, 0 drivers
+v0x565442c15ad0_0 .net "SIMPV", 0 0, o0x7f33cde471f8;  alias, 0 drivers
+v0x565442c15ba0_0 .net "VOUTM5", 0 0, o0x7f33cde47228;  alias, 0 drivers
+v0x565442c15c70_0 .net "celkelvin_GNDpowerpath", 0 0, o0x7f33cde475b8;  alias, 0 drivers
+v0x565442c15d10_0 .net "celkelvin_IN", 0 0, o0x7f33cde475e8;  alias, 0 drivers
+v0x565442c15db0_0 .net "clock_powerpathin", 0 0, o0x7f33cde47258;  alias, 0 drivers
+v0x565442c15e80_0 .net "enable_powerpathin", 0 0, o0x7f33cde47288;  alias, 0 drivers
+v0x565442c15f50_0 .net "kelvin_VOUTSPpowerpathin", 0 0, o0x7f33cde472b8;  alias, 0 drivers
+v0x565442c16130_0 .net "ok_powerpathin", 0 0, o0x7f33cde47618;  alias, 0 drivers
+v0x565442c161d0_0 .net "on_powerpathin", 0 0, o0x7f33cde47648;  alias, 0 drivers
+S_0x565442c163f0 .scope module, "celkelvin_GNDpowerpath_WRAPPER" "WRAPPER1" 2 104, 2 45 0, S_0x565442bc1f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o";
+    .port_info 1 /INPUT 1 "i";
+v0x565442c14f90_0 .net "i", 0 0, o0x7f33cde475b8;  alias, 0 drivers
+v0x565442c16600_0 .net "o", 0 0, o0x7f33cde47018;  alias, 0 drivers
+S_0x565442c16730 .scope module, "celkelvin_IN_WRAPPER" "WRAPPER1" 2 99, 2 45 0, S_0x565442bc1f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o";
+    .port_info 1 /INPUT 1 "i";
+v0x565442c16910_0 .net "i", 0 0, o0x7f33cde475e8;  alias, 0 drivers
+v0x565442c169d0_0 .net "o", 0 0, o0x7f33cde47a68;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/celera/projects/Sunnyvale/software/INPOWERPATHpuget/verilog10/sim_INPOWERPATHpuget_ROW1.v";
