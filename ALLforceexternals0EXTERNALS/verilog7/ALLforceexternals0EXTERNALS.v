@@ -45,7 +45,7 @@ module vpwl_0x0_10ux0_10d001ux1_15ux1_15d001ux0_20ux0_20d001ux1(PLUS, MINUS);
 endmodule
 
 
-module diode (PLUS, MINUS);
+module diode_DFLS130L(PLUS, MINUS);
 inout PLUS;
 inout MINUS;
 endmodule
