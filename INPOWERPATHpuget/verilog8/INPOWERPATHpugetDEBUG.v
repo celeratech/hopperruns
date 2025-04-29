@@ -27,6 +27,21 @@ module WRAPPER1 ( o, i );
 endmodule
 
 
+module dftprobeModel0_3af41ba1 ();
+endmodule
+
+module dftprobeModel0_c5684c8e ();
+endmodule
+
+module dftprobeModel0_bf3e6d6b ();
+endmodule
+
+module dftprobeModel0_dc1b4ada ();
+endmodule
+
+module dftprobeModel0_c9b3912b ();
+endmodule
+
 // ------------------------ Module Verilog ---------------
 module INPOWERPATHpugetDEBUG (ok_infet, on_infet, CELG59462, CELV96848, CELSUB40948, ok_powerpathin, clock_powerpathin, enable_powerpathin, hijack_enable_powerpathin);
 input  ok_infet;
@@ -69,8 +84,28 @@ WRAPPER1 XWRAP_23_28 (
 .o(hijack_enable_powerpathin)
 );
 
+dftprobeModel0_3af41ba1 XUINPOWERPATHok (
+
+);
+
+dftprobeModel0_c5684c8e XUINPOWERPATH_clock (
+
+);
+
 STONEnoconn XNCclock_powerpathin (
 .noconn(clock_powerpathin)
+);
+
+dftprobeModel0_bf3e6d6b XUINPOWERPATHstartup (
+
+);
+
+dftprobeModel0_dc1b4ada XUINPOWERPATHok_infet (
+
+);
+
+dftprobeModel0_c9b3912b XUINPOWERPATHon_infet (
+
 );
 
 endmodule

@@ -1,13 +1,4 @@
 // ------------------------ Module Definitions -----------
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
 //Celera:dbuf_e926e395
 //Celera Confidential Symbol Generator
 //Digital Buffer
@@ -19,6 +10,15 @@ input SUB;
 output o;
 endmodule
 
+
+
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
 
 
 module vpwl_0x0(PLUS, MINUS);
@@ -112,10 +112,6 @@ output  kelvin_VOUTSPpowerpathin;
 // ------------------------ Wires ------------------------
 
 // ------------------------ Networks ---------------------
-STONEnoconn XNCip (
-.noconn(noconn_IN)
-);
-
 dbuf_e926e395 Xd_clock_powerpathin (
 .i(net_81),
 .o(clock_powerpathin),
@@ -130,6 +126,14 @@ dbuf_e926e395 Xd_enable_powerpathin (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
+);
+
+STONEnoconn XNCnoconn_IN_IP_444d0508 (
+.noconn(noconn_IN_IP_444d0508)
+);
+
+STONEnoconn XNCnoconn_IN_IP_a263afb3 (
+.noconn(noconn_IN_IP_a263afb3)
 );
 
 vpwl_0x0 XCELG (
@@ -159,13 +163,13 @@ vpwl_0x0 XCELSUB (
 
 SIMbias XIP_444d0508 (
 .V(SIMPV),
-.IN(noconn_IN),
+.IN(noconn_IN_IP_444d0508),
 .IP(IP_444d0508)
 );
 
 SIMbias XIP_a263afb3 (
 .V(SIMPV),
-.IN(noconn_IN),
+.IN(noconn_IN_IP_a263afb3),
 .IP(IP_a263afb3)
 );
 
