@@ -17,7 +17,9 @@ module FORCE_INPOWERPATHpuget (INFET,SIMPV,VOUTM5,CELG59462,CELV96848,PORB97836,
   output  kelvin_VOUTSPpowerpathin;
 endmodule
 
-module INPOWERPATHpuget (INFET,SIMPV,VOUTM5,CELG59462,CELV96848,PORB97836,CELSUB40948,INpowerpath,IP_444d0508,IP_a263afb3,celkelvin_IN,GNDpowerpathin,ok_powerpathin,on_powerpathin,CELREF_a263afb3,clock_powerpathin,enable_powerpathin,celkelvin_GNDpowerpath,kelvin_VOUTSPpowerpathin);
+module INPOWERPATHpuget (tdo,tmi,INFET,SIMPV,VOUTM5,CELG59462,CELV96848,PORB97836,CELSUB40948,INpowerpath,IP_444d0508,IP_a263afb3,celkelvin_IN,GNDpowerpathin,ok_powerpathin,on_powerpathin,CELREF_a263afb3,clock_powerpathin,enable_powerpathin,celkelvin_GNDpowerpath,kelvin_VOUTSPpowerpathin);
+  inout  tdo;
+  input [4:0] tmi;
   output  INFET;
   input  SIMPV;
   output  VOUTM5;
@@ -54,6 +56,7 @@ module sim_INPOWERPATHpuget_ROW1 ();
 
 
 // ------------------------ Wires ------------------------
+wire [4:0] tmi;
 
 // ------------------------ Networks ---------------------
 FORCE_INPOWERPATHpuget XFORCE_INPOWERPATHpuget1 (
@@ -75,6 +78,8 @@ FORCE_INPOWERPATHpuget XFORCE_INPOWERPATHpuget1 (
 );
 
 INPOWERPATHpuget XINPOWERPATHpuget1 (
+.tdo(tdo),
+.tmi(tmi[4:0]),
 .INFET(INFET),
 .SIMPV(SIMPV),
 .VOUTM5(VOUTM5),
