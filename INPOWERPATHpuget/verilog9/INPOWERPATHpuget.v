@@ -7,13 +7,13 @@ module POWERPATHINconfiguration (CELG59462,CELV96848,CELSUB40948,in_startuptime)
 endmodule
 
 module INPOWERPATHpugetDEBUG (ok_infet,on_infet,CELG59462,CELV96848,CELSUB40948,ok_powerpathin,clock_powerpathin,enable_powerpathin,dftprobeModel0_bf3e6d6b,dftprobeModel0_c5684c8e,dftprobeModel0_c9b3912b,dftprobeModel0_dc1b4ada,hijack_enable_powerpathin);
-  input  ok_infet;
-  input  on_infet;
+  output  ok_infet;
+  output  on_infet;
   input  CELG59462;
   input  CELV96848;
   input  CELSUB40948;
   input  ok_powerpathin;
-  input  clock_powerpathin;
+  output  clock_powerpathin;
   input  enable_powerpathin;
   output  dftprobeModel0_bf3e6d6b;
   output  dftprobeModel0_c5684c8e;
@@ -64,7 +64,7 @@ input  GNDpowerpathin;
 output  ok_powerpathin;
 output  on_powerpathin;
 input  CELREF_a263afb3;
-input  clock_powerpathin;
+output  clock_powerpathin;
 input  enable_powerpathin;
 input  celkelvin_GNDpowerpath;
 input  kelvin_VOUTSPpowerpathin;

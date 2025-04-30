@@ -33,7 +33,7 @@ module INPOWERPATHpuget (INFET,SIMPV,VOUTM5,CELG59462,CELV96848,PORB97836,CELSUB
   output  ok_powerpathin;
   output  on_powerpathin;
   input  CELREF_a263afb3;
-  input  clock_powerpathin;
+  output  clock_powerpathin;
   input  enable_powerpathin;
   input  celkelvin_GNDpowerpath;
   input  kelvin_VOUTSPpowerpathin;
