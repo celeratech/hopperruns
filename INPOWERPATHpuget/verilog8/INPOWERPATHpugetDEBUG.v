@@ -75,7 +75,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module INPOWERPATHpugetDEBUG (ok_infet, on_infet, CELG59462, CELV96848, CELSUB40948, ok_powerpathin, clock_powerpathin, enable_powerpathin, hijack_enable_powerpathin);
+module INPOWERPATHpugetDEBUG (ok_infet, on_infet, CELG59462, CELV96848, CELSUB40948, ok_powerpathin, clock_powerpathin, enable_powerpathin, hijack_enable_powerpathin, dtfprobe_XUINPOWERPATH_clock_a56d5880, dtfprobe_XUINPOWERPATHstartup_a56d5880, dtfprobe_XUINPOWERPATHok_infet_a56d5880, dtfprobe_XUINPOWERPATHon_infet_a56d5880);
 input  ok_infet;
 input  on_infet;
 input  CELG59462;
@@ -85,6 +85,10 @@ input  ok_powerpathin;
 input  clock_powerpathin;
 input  enable_powerpathin;
 output  hijack_enable_powerpathin;
+output  dtfprobe_XUINPOWERPATH_clock_a56d5880;
+output  dtfprobe_XUINPOWERPATHstartup_a56d5880;
+output  dtfprobe_XUINPOWERPATHok_infet_a56d5880;
+input  dtfprobe_XUINPOWERPATHon_infet_a56d5880;
 
 
 // ------------------------ Wires ------------------------
