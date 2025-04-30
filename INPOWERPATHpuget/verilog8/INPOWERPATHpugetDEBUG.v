@@ -131,7 +131,7 @@ dftprobeModel0_3af41ba1 XUINPOWERPATHok (
 dftprobeModel0_c5684c8e XUINPOWERPATH_clock (
 .i(clock_powerpathin),
 .tdi(noconn_tdi1),
-.ten(TBD_XINPOWERPATHpuget1_XDEBUG_XUINPOWERPATH_clock_ten),
+.ten(dtfprobe_XUINPOWERPATHon_infet_a56d5880),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -140,7 +140,7 @@ dftprobeModel0_c5684c8e XUINPOWERPATH_clock (
 dftprobeModel0_bf3e6d6b XUINPOWERPATHstartup (
 .i(dtfprobe_XUINPOWERPATHstartup_a56d5880),
 .tdi(noconn_tdi2),
-.ten(TBD_XINPOWERPATHpuget1_XDEBUG_XUINPOWERPATHstartup_ten),
+.ten(dtfprobe_XUINPOWERPATHon_infet_a56d5880),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -149,7 +149,7 @@ dftprobeModel0_bf3e6d6b XUINPOWERPATHstartup (
 dftprobeModel0_dc1b4ada XUINPOWERPATHok_infet (
 .i(ok_infet),
 .tdi(noconn_tdi3),
-.ten(TBD_XINPOWERPATHpuget1_XDEBUG_XUINPOWERPATHok_infet_ten),
+.ten(dtfprobe_XUINPOWERPATHon_infet_a56d5880),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -158,7 +158,7 @@ dftprobeModel0_dc1b4ada XUINPOWERPATHok_infet (
 dftprobeModel0_c9b3912b XUINPOWERPATHon_infet (
 .i(on_infet),
 .tdi(noconn_tdi4),
-.ten(TBD_XINPOWERPATHpuget1_XDEBUG_XUINPOWERPATHon_infet_ten),
+.ten(dtfprobe_XUINPOWERPATHon_infet_a56d5880),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
