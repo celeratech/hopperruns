@@ -6,7 +6,7 @@ module POWERPATHINconfiguration (CELG59462,CELV96848,CELSUB40948,in_startuptime)
   output  in_startuptime;
 endmodule
 
-module INPOWERPATHpugetDEBUG (ok_infet,on_infet,CELG59462,CELV96848,CELSUB40948,ok_powerpathin,clock_powerpathin,enable_powerpathin,dftprobeModel0_bf3e6d6b,dftprobeModel0_c5684c8e,dftprobeModel0_c9b3912b,dftprobeModel0_dc1b4ada,hijack_enable_powerpathin);
+module INPOWERPATHpugetDEBUG (ok_infet,on_infet,CELG59462,CELV96848,CELSUB40948,ok_powerpathin,clock_powerpathin,enable_powerpathin,hijack_enable_powerpathin,dftprobe_dftprobeModel0_bf3e6d6b_a56d5880,dftprobe_dftprobeModel0_c5684c8e_a56d5880,dftprobe_dftprobeModel0_c9b3912b_a56d5880,dftprobe_dftprobeModel0_dc1b4ada_a56d5880);
   output  ok_infet;
   output  on_infet;
   input  CELG59462;
@@ -15,11 +15,11 @@ module INPOWERPATHpugetDEBUG (ok_infet,on_infet,CELG59462,CELV96848,CELSUB40948,
   input  ok_powerpathin;
   output  clock_powerpathin;
   input  enable_powerpathin;
-  output  dftprobeModel0_bf3e6d6b;
-  output  dftprobeModel0_c5684c8e;
-  output  dftprobeModel0_c9b3912b;
-  output  dftprobeModel0_dc1b4ada;
   output  hijack_enable_powerpathin;
+  output  dftprobe_dftprobeModel0_bf3e6d6b_a56d5880;
+  output  dftprobe_dftprobeModel0_c5684c8e_a56d5880;
+  output  dftprobe_dftprobeModel0_c9b3912b_a56d5880;
+  output  dftprobe_dftprobeModel0_dc1b4ada_a56d5880;
 endmodule
 
 module INPOWERPATHpugetMAIN (IN,INFET,SIMPV,VOUTM5,ok_infet,on_infet,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_444d0508,IP_a263afb3,celkelvin_IN,kelvin_VOUTSP,GNDpowerpathin,in_startuptime,ok_powerpathin,on_powerpathin,CELREF_a263afb3,clock_powerpathin,enable_powerpathin,celkelvin_GNDpowerpath);
@@ -89,11 +89,11 @@ INPOWERPATHpugetDEBUG XDEBUG (
 .ok_powerpathin(ok_powerpathin),
 .clock_powerpathin(clock_powerpathin),
 .enable_powerpathin(enable_powerpathin),
-.dftprobeModel0_bf3e6d6b(dftprobeModel0_bf3e6d6b),
-.dftprobeModel0_c5684c8e(dftprobeModel0_c5684c8e),
-.dftprobeModel0_c9b3912b(dftprobeModel0_c9b3912b),
-.dftprobeModel0_dc1b4ada(dftprobeModel0_dc1b4ada),
-.hijack_enable_powerpathin(net_53)
+.hijack_enable_powerpathin(net_53),
+.dftprobe_dftprobeModel0_bf3e6d6b_a56d5880(dftprobe_dftprobeModel0_bf3e6d6b_a56d5880),
+.dftprobe_dftprobeModel0_c5684c8e_a56d5880(dftprobe_dftprobeModel0_c5684c8e_a56d5880),
+.dftprobe_dftprobeModel0_c9b3912b_a56d5880(dftprobe_dftprobeModel0_c9b3912b_a56d5880),
+.dftprobe_dftprobeModel0_dc1b4ada_a56d5880(dftprobe_dftprobeModel0_dc1b4ada_a56d5880)
 );
 
 INPOWERPATHpugetMAIN XMAIN (
