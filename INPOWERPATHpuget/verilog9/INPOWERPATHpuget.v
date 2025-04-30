@@ -16,9 +16,9 @@ module INPOWERPATHpugetDEBUG (ok_infet,on_infet,CELG59462,CELV96848,CELSUB40948,
   input  clock_powerpathin;
   input  enable_powerpathin;
   output  dftprobeModel0_bf3e6d6b;
-  output  dftprobeModel0_c5684c8e;
-  output  dftprobeModel0_c9b3912b;
-  output  dftprobeModel0_dc1b4ada;
+  input  dftprobeModel0_c5684c8e;
+  input  dftprobeModel0_c9b3912b;
+  input  dftprobeModel0_dc1b4ada;
   output  hijack_enable_powerpathin;
 endmodule
 
