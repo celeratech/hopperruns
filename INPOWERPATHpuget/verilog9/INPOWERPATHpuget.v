@@ -89,10 +89,10 @@ INPOWERPATHpugetDEBUG XDEBUG (
 .ok_powerpathin(ok_powerpathin),
 .clock_powerpathin(clock_powerpathin),
 .enable_powerpathin(enable_powerpathin),
-.dftprobeModel0_bf3e6d6b(pulse),
-.dftprobeModel0_c5684c8e(clock_powerpathin),
-.dftprobeModel0_c9b3912b(on_infet),
-.dftprobeModel0_dc1b4ada(ok_infet),
+.dftprobeModel0_bf3e6d6b(dftprobeModel0_bf3e6d6b),
+.dftprobeModel0_c5684c8e(dftprobeModel0_c5684c8e),
+.dftprobeModel0_c9b3912b(dftprobeModel0_c9b3912b),
+.dftprobeModel0_dc1b4ada(dftprobeModel0_dc1b4ada),
 .hijack_enable_powerpathin(net_53)
 );
 

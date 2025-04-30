@@ -21,20 +21,20 @@ endmodule
 module dftprobeModel0_3af41ba1 ();
 endmodule
 
-module dftprobeModel0_c5684c8e (clock_powerpathin);
-  output  clock_powerpathin;
+module dftprobeModel0_c5684c8e (dftprobeModel0_c5684c8e);
+  output  dftprobeModel0_c5684c8e;
 endmodule
 
-module dftprobeModel0_bf3e6d6b (pulse);
-  output  pulse;
+module dftprobeModel0_bf3e6d6b (dftprobeModel0_bf3e6d6b);
+  output  dftprobeModel0_bf3e6d6b;
 endmodule
 
-module dftprobeModel0_dc1b4ada (ok_infet);
-  output  ok_infet;
+module dftprobeModel0_dc1b4ada (dftprobeModel0_dc1b4ada);
+  output  dftprobeModel0_dc1b4ada;
 endmodule
 
-module dftprobeModel0_c9b3912b (on_infet);
-  output  on_infet;
+module dftprobeModel0_c9b3912b (dftprobeModel0_c9b3912b);
+  output  dftprobeModel0_c9b3912b;
 endmodule
 
 // ------------------------ Module Verilog ---------------
@@ -76,19 +76,19 @@ dftprobeModel0_3af41ba1 XUINPOWERPATHok (
 );
 
 dftprobeModel0_c5684c8e XUINPOWERPATH_clock (
-.clock_powerpathin(clock_powerpathin)
+.dftprobeModel0_c5684c8e(dftprobeModel0_c5684c8e)
 );
 
 dftprobeModel0_bf3e6d6b XUINPOWERPATHstartup (
-.pulse(pulse)
+.dftprobeModel0_bf3e6d6b(dftprobeModel0_bf3e6d6b)
 );
 
 dftprobeModel0_dc1b4ada XUINPOWERPATHok_infet (
-.ok_infet(ok_infet)
+.dftprobeModel0_dc1b4ada(dftprobeModel0_dc1b4ada)
 );
 
 dftprobeModel0_c9b3912b XUINPOWERPATHon_infet (
-.on_infet(on_infet)
+.dftprobeModel0_c9b3912b(dftprobeModel0_c9b3912b)
 );
 
 endmodule
