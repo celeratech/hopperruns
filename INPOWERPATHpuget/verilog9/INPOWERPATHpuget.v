@@ -6,9 +6,7 @@ module POWERPATHINconfiguration (CELG59462,CELV96848,CELSUB40948,in_startuptime)
   output  in_startuptime;
 endmodule
 
-module INPOWERPATHpugetDEBUG (tdo,tmi,ok_infet,on_infet,CELG59462,CELV96848,CELSUB40948,ok_powerpathin,clock_powerpathin,enable_powerpathin,hijack_enable_powerpathin);
-  inout  tdo;
-  input [4:0] tmi;
+module INPOWERPATHpugetDEBUG (ok_infet,on_infet,CELG59462,CELV96848,CELSUB40948,ok_powerpathin,clock_powerpathin,enable_powerpathin,hijack_enable_powerpathin,dtfprobe_XUINPOWERPATH_clock_a56d5880,dtfprobe_XUINPOWERPATHstartup_a56d5880,dtfprobe_XUINPOWERPATHok_infet_a56d5880,dtfprobe_XUINPOWERPATHon_infet_a56d5880);
   input  ok_infet;
   input  on_infet;
   input  CELG59462;
@@ -18,6 +16,10 @@ module INPOWERPATHpugetDEBUG (tdo,tmi,ok_infet,on_infet,CELG59462,CELV96848,CELS
   input  clock_powerpathin;
   input  enable_powerpathin;
   output  hijack_enable_powerpathin;
+  input  dtfprobe_XUINPOWERPATH_clock_a56d5880;
+  output  dtfprobe_XUINPOWERPATHstartup_a56d5880;
+  input  dtfprobe_XUINPOWERPATHok_infet_a56d5880;
+  input  dtfprobe_XUINPOWERPATHon_infet_a56d5880;
 endmodule
 
 module INPOWERPATHpugetMAIN (IN,INFET,SIMPV,VOUTM5,ok_infet,on_infet,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_444d0508,IP_a263afb3,celkelvin_IN,kelvin_VOUTSP,GNDpowerpathin,in_startuptime,ok_powerpathin,on_powerpathin,CELREF_a263afb3,clock_powerpathin,enable_powerpathin,celkelvin_GNDpowerpath);
@@ -46,9 +48,7 @@ module INPOWERPATHpugetMAIN (IN,INFET,SIMPV,VOUTM5,ok_infet,on_infet,CELG59462,C
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module INPOWERPATHpuget (tdo, tmi, INFET, SIMPV, VOUTM5, CELG59462, CELV96848, PORB97836, CELSUB40948, INpowerpath, IP_444d0508, IP_a263afb3, celkelvin_IN, GNDpowerpathin, ok_powerpathin, on_powerpathin, CELREF_a263afb3, clock_powerpathin, enable_powerpathin, celkelvin_GNDpowerpath, kelvin_VOUTSPpowerpathin);
-inout  tdo;
-input [4:0] tmi;
+module INPOWERPATHpuget (INFET, SIMPV, VOUTM5, CELG59462, CELV96848, PORB97836, CELSUB40948, INpowerpath, IP_444d0508, IP_a263afb3, celkelvin_IN, GNDpowerpathin, ok_powerpathin, on_powerpathin, CELREF_a263afb3, clock_powerpathin, enable_powerpathin, celkelvin_GNDpowerpath, kelvin_VOUTSPpowerpathin);
 output  INFET;
 input  SIMPV;
 output  VOUTM5;
@@ -71,7 +71,6 @@ input  kelvin_VOUTSPpowerpathin;
 
 
 // ------------------------ Wires ------------------------
-wire [4:0] tmi;
 
 // ------------------------ Networks ---------------------
 POWERPATHINconfiguration XCONFIGURATION (
@@ -82,8 +81,6 @@ POWERPATHINconfiguration XCONFIGURATION (
 );
 
 INPOWERPATHpugetDEBUG XDEBUG (
-.tdo(tdo),
-.tmi(tmi[4:0]),
 .ok_infet(net_54),
 .on_infet(net_55),
 .CELG59462(CELG59462),
@@ -92,7 +89,11 @@ INPOWERPATHpugetDEBUG XDEBUG (
 .ok_powerpathin(ok_powerpathin),
 .clock_powerpathin(clock_powerpathin),
 .enable_powerpathin(enable_powerpathin),
-.hijack_enable_powerpathin(net_53)
+.hijack_enable_powerpathin(net_53),
+.dtfprobe_XUINPOWERPATH_clock_a56d5880(dtfprobe_XUINPOWERPATH_clock_a56d5880),
+.dtfprobe_XUINPOWERPATHstartup_a56d5880(dtfprobe_XUINPOWERPATHstartup_a56d5880),
+.dtfprobe_XUINPOWERPATHok_infet_a56d5880(dtfprobe_XUINPOWERPATHok_infet_a56d5880),
+.dtfprobe_XUINPOWERPATHon_infet_a56d5880(dtfprobe_XUINPOWERPATHon_infet_a56d5880)
 );
 
 INPOWERPATHpugetMAIN XMAIN (
