@@ -75,7 +75,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module INPOWERPATHpugetDEBUG (ok_infet, on_infet, CELG59462, CELV96848, CELSUB40948, ok_powerpathin, clock_powerpathin, enable_powerpathin, hijack_enable_powerpathin, dtfprobe_XUINPOWERPATH_clock_a56d5880, dtfprobe_XUINPOWERPATHstartup_a56d5880, dtfprobe_XUINPOWERPATHok_infet_a56d5880, dtfprobe_XUINPOWERPATHon_infet_a56d5880);
+module INPOWERPATHpugetDEBUG (ok_infet, on_infet, CELG59462, CELV96848, CELSUB40948, ok_powerpathin, clock_powerpathin, enable_powerpathin, hijack_enable_powerpathin);
 input  ok_infet;
 input  on_infet;
 input  CELG59462;
@@ -85,10 +85,6 @@ input  ok_powerpathin;
 input  clock_powerpathin;
 input  enable_powerpathin;
 output  hijack_enable_powerpathin;
-input  dtfprobe_XUINPOWERPATH_clock_a56d5880;
-output  dtfprobe_XUINPOWERPATHstartup_a56d5880;
-input  dtfprobe_XUINPOWERPATHok_infet_a56d5880;
-input  dtfprobe_XUINPOWERPATHon_infet_a56d5880;
 
 
 // ------------------------ Wires ------------------------
@@ -96,7 +92,7 @@ input  dtfprobe_XUINPOWERPATHon_infet_a56d5880;
 // ------------------------ Networks ---------------------
 VESPAdftpulse XU1 (
 .stop(ok_powerpathin),
-.pulse(dtfprobe_XUINPOWERPATHstartup_a56d5880),
+.pulse(net_22),
 .start(hijack_enable_powerpathin),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -138,7 +134,7 @@ dftprobeModel0_c5684c8e XUINPOWERPATH_clock (
 );
 
 dftprobeModel0_bf3e6d6b XUINPOWERPATHstartup (
-.i(dtfprobe_XUINPOWERPATHstartup_a56d5880),
+.i(net_22),
 .tdi(noconn_tdi2),
 .ten(dtfprobe_XUINPOWERPATHon_infet_a56d5880),
 .CELG(CELG59462),
