@@ -21,31 +21,31 @@ endmodule
 module dftprobeModel0_3af41ba1 ();
 endmodule
 
-module dftprobeModel0_c5684c8e (dftprobeModel0_c5684c8e);
-  output  dftprobeModel0_c5684c8e;
+module dftprobeModel0_c5684c8e (clock_powerpathin);
+  output  clock_powerpathin;
 endmodule
 
-module dftprobeModel0_bf3e6d6b (dftprobeModel0_bf3e6d6b);
-  output  dftprobeModel0_bf3e6d6b;
+module dftprobeModel0_bf3e6d6b (pulse);
+  output  pulse;
 endmodule
 
-module dftprobeModel0_dc1b4ada (dftprobeModel0_dc1b4ada);
-  output  dftprobeModel0_dc1b4ada;
+module dftprobeModel0_dc1b4ada (ok_infet);
+  output  ok_infet;
 endmodule
 
-module dftprobeModel0_c9b3912b (dftprobeModel0_c9b3912b);
-  output  dftprobeModel0_c9b3912b;
+module dftprobeModel0_c9b3912b (on_infet);
+  output  on_infet;
 endmodule
 
 // ------------------------ Module Verilog ---------------
 module INPOWERPATHpugetDEBUG (ok_infet, on_infet, CELG59462, CELV96848, CELSUB40948, ok_powerpathin, clock_powerpathin, enable_powerpathin, dftprobeModel0_bf3e6d6b, dftprobeModel0_c5684c8e, dftprobeModel0_c9b3912b, dftprobeModel0_dc1b4ada, hijack_enable_powerpathin);
-output  ok_infet;
-output  on_infet;
+  input  ok_infet;
+  input  on_infet;
 input  CELG59462;
 input  CELV96848;
 input  CELSUB40948;
 input  ok_powerpathin;
-output  clock_powerpathin;
+  input  clock_powerpathin;
 input  enable_powerpathin;
 output  dftprobeModel0_bf3e6d6b;
 output  dftprobeModel0_c5684c8e;
@@ -59,7 +59,7 @@ output  hijack_enable_powerpathin;
 // ------------------------ Networks ---------------------
 VESPAdftpulse XU1 (
 .stop(ok_powerpathin),
-.pulse(dftprobeModel0_bf3e6d6b),
+.pulse(net_22),
 .start(hijack_enable_powerpathin),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -76,19 +76,19 @@ dftprobeModel0_3af41ba1 XUINPOWERPATHok (
 );
 
 dftprobeModel0_c5684c8e XUINPOWERPATH_clock (
-.dftprobeModel0_c5684c8e(clock_powerpathin)
+.clock_powerpathin(clock_powerpathin)
 );
 
 dftprobeModel0_bf3e6d6b XUINPOWERPATHstartup (
-.dftprobeModel0_bf3e6d6b(dftprobeModel0_bf3e6d6b)
+.pulse(pulse)
 );
 
 dftprobeModel0_dc1b4ada XUINPOWERPATHok_infet (
-.dftprobeModel0_dc1b4ada(ok_infet)
+.ok_infet(ok_infet)
 );
 
 dftprobeModel0_c9b3912b XUINPOWERPATHon_infet (
-.dftprobeModel0_c9b3912b(on_infet)
+.on_infet(on_infet)
 );
 
 endmodule
