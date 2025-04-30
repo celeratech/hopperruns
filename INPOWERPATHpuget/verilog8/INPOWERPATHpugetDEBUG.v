@@ -43,7 +43,7 @@ module dftprobeModel0_c9b3912b ();
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module INPOWERPATHpugetDEBUG (ok_infet, on_infet, CELG59462, CELV96848, CELSUB40948, ok_powerpathin, clock_powerpathin, enable_powerpathin, hijack_enable_powerpathin);
+module INPOWERPATHpugetDEBUG (ok_infet, on_infet, CELG59462, CELV96848, CELSUB40948, ok_powerpathin, clock_powerpathin, enable_powerpathin, dftprobeModel0_bf3e6d6b, dftprobeModel0_c5684c8e, dftprobeModel0_c9b3912b, dftprobeModel0_dc1b4ada, hijack_enable_powerpathin);
 input  ok_infet;
 input  on_infet;
 input  CELG59462;
@@ -52,6 +52,10 @@ input  CELSUB40948;
 input  ok_powerpathin;
 input  clock_powerpathin;
 input  enable_powerpathin;
+output  dftprobeModel0_bf3e6d6b;
+output  dftprobeModel0_c5684c8e;
+output  dftprobeModel0_c9b3912b;
+output  dftprobeModel0_dc1b4ada;
 output  hijack_enable_powerpathin;
 
 
@@ -60,7 +64,7 @@ output  hijack_enable_powerpathin;
 // ------------------------ Networks ---------------------
 VESPAdftpulse XU1 (
 .stop(ok_powerpathin),
-.pulse(net_22),
+.pulse(dftprobeModel0_bf3e6d6b),
 .start(hijack_enable_powerpathin),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -68,7 +72,7 @@ VESPAdftpulse XU1 (
 );
 
 STONEnoconn XNC22 (
-.noconn(net_22)
+.noconn(dftprobeModel0_bf3e6d6b)
 );
 
 STONEnoconn XNCok_infet (
