@@ -21,20 +21,16 @@ endmodule
 module dftprobeModel0_3af41ba1 ();
 endmodule
 
-module dftprobeModel0_c5684c8e (dftprobeModel0_c5684c8e);
-  output  dftprobeModel0_c5684c8e;
+module dftprobeModel0_c5684c8e ();
 endmodule
 
-module dftprobeModel0_bf3e6d6b (dftprobeModel0_bf3e6d6b);
-  output  dftprobeModel0_bf3e6d6b;
+module dftprobeModel0_bf3e6d6b ();
 endmodule
 
-module dftprobeModel0_dc1b4ada (dftprobeModel0_dc1b4ada);
-  output  dftprobeModel0_dc1b4ada;
+module dftprobeModel0_dc1b4ada ();
 endmodule
 
-module dftprobeModel0_c9b3912b (dftprobeModel0_c9b3912b);
-  output  dftprobeModel0_c9b3912b;
+module dftprobeModel0_c9b3912b ();
 endmodule
 
 // ------------------------ Module Verilog ---------------
@@ -59,7 +55,7 @@ output  hijack_enable_powerpathin;
 // ------------------------ Networks ---------------------
 VESPAdftpulse XU1 (
 .stop(ok_powerpathin),
-.pulse(net_22),
+.pulse(dftprobeModel0_bf3e6d6b),
 .start(hijack_enable_powerpathin),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -76,19 +72,19 @@ dftprobeModel0_3af41ba1 XUINPOWERPATHok (
 );
 
 dftprobeModel0_c5684c8e XUINPOWERPATH_clock (
-.dftprobeModel0_c5684c8e(dftprobeModel0_c5684c8e)
+
 );
 
 dftprobeModel0_bf3e6d6b XUINPOWERPATHstartup (
-.dftprobeModel0_bf3e6d6b(dftprobeModel0_bf3e6d6b)
+
 );
 
 dftprobeModel0_dc1b4ada XUINPOWERPATHok_infet (
-.dftprobeModel0_dc1b4ada(dftprobeModel0_dc1b4ada)
+
 );
 
 dftprobeModel0_c9b3912b XUINPOWERPATHon_infet (
-.dftprobeModel0_c9b3912b(dftprobeModel0_c9b3912b)
+
 );
 
 endmodule
