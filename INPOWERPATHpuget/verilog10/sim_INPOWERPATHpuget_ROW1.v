@@ -17,7 +17,7 @@ module FORCE_INPOWERPATHpuget (INFET,SIMPV,VOUTM5,CELG59462,CELV96848,PORB97836,
   output  kelvin_VOUTSPpowerpathin;
 endmodule
 
-module INPOWERPATHpuget (INFET,SIMPV,VOUTM5,CELG59462,CELV96848,PORB97836,CELSUB40948,INpowerpath,IP_444d0508,IP_a263afb3,celkelvin_IN,GNDpowerpathin,ok_powerpathin,on_powerpathin,CELREF_a263afb3,clock_powerpathin,enable_powerpathin,celkelvin_GNDpowerpath,kelvin_VOUTSPpowerpathin);
+module INPOWERPATHpuget (INFET,SIMPV,VOUTM5,CELG59462,CELV96848,PORB97836,CELSUB40948,INpowerpath,IP_444d0508,IP_a263afb3,celkelvin_IN,GNDpowerpathin,ok_powerpathin,on_powerpathin,CELREF_a263afb3,clock_powerpathin,enable_powerpathin,celkelvin_GNDpowerpath,kelvin_VOUTSPpowerpathin,dtfprobe_XUINPOWERPATH_clock_a56d5880,dtfprobe_XUINPOWERPATHstartup_a56d5880,dtfprobe_XUINPOWERPATHok_infet_a56d5880,dtfprobe_XUINPOWERPATHon_infet_a56d5880);
   output  INFET;
   input  SIMPV;
   output  VOUTM5;
@@ -37,6 +37,10 @@ module INPOWERPATHpuget (INFET,SIMPV,VOUTM5,CELG59462,CELV96848,PORB97836,CELSUB
   input  enable_powerpathin;
   input  celkelvin_GNDpowerpath;
   input  kelvin_VOUTSPpowerpathin;
+  input  dtfprobe_XUINPOWERPATH_clock_a56d5880;
+  output  dtfprobe_XUINPOWERPATHstartup_a56d5880;
+  input  dtfprobe_XUINPOWERPATHok_infet_a56d5880;
+  input  dtfprobe_XUINPOWERPATHon_infet_a56d5880;
 endmodule
 
 //Verilog HDL for "Generate", "WRAPPER1" "functional"
@@ -93,7 +97,11 @@ INPOWERPATHpuget XINPOWERPATHpuget1 (
 .clock_powerpathin(clock_powerpathin),
 .enable_powerpathin(enable_powerpathin),
 .celkelvin_GNDpowerpath(celkelvin_GNDpowerpath),
-.kelvin_VOUTSPpowerpathin(kelvin_VOUTSPpowerpathin)
+.kelvin_VOUTSPpowerpathin(kelvin_VOUTSPpowerpathin),
+.dtfprobe_XUINPOWERPATH_clock_a56d5880(dtfprobe_XUINPOWERPATH_clock_a56d5880),
+.dtfprobe_XUINPOWERPATHstartup_a56d5880(dtfprobe_XUINPOWERPATHstartup_a56d5880),
+.dtfprobe_XUINPOWERPATHok_infet_a56d5880(dtfprobe_XUINPOWERPATHok_infet_a56d5880),
+.dtfprobe_XUINPOWERPATHon_infet_a56d5880(dtfprobe_XUINPOWERPATHon_infet_a56d5880)
 );
 
 WRAPPER1 celkelvin_IN_WRAPPER (
