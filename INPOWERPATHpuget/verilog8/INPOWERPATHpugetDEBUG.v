@@ -33,15 +33,6 @@ endmodule
 module dftprobeModel0_c9b3912b ();
 endmodule
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
 // ------------------------ Module Verilog ---------------
 module INPOWERPATHpugetDEBUG (ok_infet, on_infet, CELG59462, CELV96848, CELSUB40948, ok_powerpathin, clock_powerpathin, enable_powerpathin, hijack_enable_powerpathin, dtfprobe_XUINPOWERPATH_clock_a56d5880, dtfprobe_XUINPOWERPATHstartup_a56d5880, dtfprobe_XUINPOWERPATHok_infet_a56d5880, dtfprobe_XUINPOWERPATHon_infet_a56d5880);
 input  ok_infet;
@@ -94,18 +85,6 @@ dftprobeModel0_dc1b4ada XUINPOWERPATHok_infet (
 
 dftprobeModel0_c9b3912b XUINPOWERPATHon_infet (
 
-);
-
-STONEnoconn XNCdtfprobe_XUINPOWERPATH_clock_a56d5880 (
-.noconn(dtfprobe_XUINPOWERPATH_clock_a56d5880)
-);
-
-STONEnoconn XNCdtfprobe_XUINPOWERPATHok_infet_a56d5880 (
-.noconn(dtfprobe_XUINPOWERPATHok_infet_a56d5880)
-);
-
-STONEnoconn XNCdtfprobe_XUINPOWERPATHon_infet_a56d5880 (
-.noconn(dtfprobe_XUINPOWERPATHon_infet_a56d5880)
 );
 
 WRAPPER1 XWRAP_ok_infet_dtfprobe_XUINPOWERPATHok_infet_a56d5880 (
