@@ -16,10 +16,10 @@ module INPOWERPATHpugetDEBUG (ok_infet,on_infet,CELG59462,CELV96848,CELSUB40948,
   input  clock_powerpathin;
   input  enable_powerpathin;
   output  hijack_enable_powerpathin;
-  input  dtfprobe_XUINPOWERPATH_clock_a56d5880;
+  output  dtfprobe_XUINPOWERPATH_clock_a56d5880;
   output  dtfprobe_XUINPOWERPATHstartup_a56d5880;
-  input  dtfprobe_XUINPOWERPATHok_infet_a56d5880;
-  input  dtfprobe_XUINPOWERPATHon_infet_a56d5880;
+  output  dtfprobe_XUINPOWERPATHok_infet_a56d5880;
+  output  dtfprobe_XUINPOWERPATHon_infet_a56d5880;
 endmodule
 
 module INPOWERPATHpugetMAIN (IN,INFET,SIMPV,VOUTM5,ok_infet,on_infet,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_444d0508,IP_a263afb3,celkelvin_IN,kelvin_VOUTSP,GNDpowerpathin,in_startuptime,ok_powerpathin,on_powerpathin,CELREF_a263afb3,clock_powerpathin,enable_powerpathin,celkelvin_GNDpowerpath);
@@ -68,10 +68,10 @@ input  clock_powerpathin;
 input  enable_powerpathin;
 input  celkelvin_GNDpowerpath;
 input  kelvin_VOUTSPpowerpathin;
-input  dtfprobe_XUINPOWERPATH_clock_a56d5880;
+output  dtfprobe_XUINPOWERPATH_clock_a56d5880;
 output  dtfprobe_XUINPOWERPATHstartup_a56d5880;
-input  dtfprobe_XUINPOWERPATHok_infet_a56d5880;
-input  dtfprobe_XUINPOWERPATHon_infet_a56d5880;
+output  dtfprobe_XUINPOWERPATHok_infet_a56d5880;
+output  dtfprobe_XUINPOWERPATHon_infet_a56d5880;
 
 
 // ------------------------ Wires ------------------------

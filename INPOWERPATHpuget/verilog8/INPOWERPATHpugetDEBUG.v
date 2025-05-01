@@ -44,10 +44,10 @@ input  ok_powerpathin;
 input  clock_powerpathin;
 input  enable_powerpathin;
 output  hijack_enable_powerpathin;
-input  dtfprobe_XUINPOWERPATH_clock_a56d5880;
+output  dtfprobe_XUINPOWERPATH_clock_a56d5880;
 output  dtfprobe_XUINPOWERPATHstartup_a56d5880;
-input  dtfprobe_XUINPOWERPATHok_infet_a56d5880;
-input  dtfprobe_XUINPOWERPATHon_infet_a56d5880;
+output  dtfprobe_XUINPOWERPATHok_infet_a56d5880;
+output  dtfprobe_XUINPOWERPATHon_infet_a56d5880;
 
 
 // ------------------------ Wires ------------------------

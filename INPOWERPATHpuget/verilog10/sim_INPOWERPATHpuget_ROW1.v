@@ -37,10 +37,10 @@ module INPOWERPATHpuget (INFET,SIMPV,VOUTM5,CELG59462,CELV96848,PORB97836,CELSUB
   input  enable_powerpathin;
   input  celkelvin_GNDpowerpath;
   input  kelvin_VOUTSPpowerpathin;
-  input  dtfprobe_XUINPOWERPATH_clock_a56d5880;
+  output  dtfprobe_XUINPOWERPATH_clock_a56d5880;
   output  dtfprobe_XUINPOWERPATHstartup_a56d5880;
-  input  dtfprobe_XUINPOWERPATHok_infet_a56d5880;
-  input  dtfprobe_XUINPOWERPATHon_infet_a56d5880;
+  output  dtfprobe_XUINPOWERPATHok_infet_a56d5880;
+  output  dtfprobe_XUINPOWERPATHon_infet_a56d5880;
 endmodule
 
 //Verilog HDL for "Generate", "WRAPPER1" "functional"
