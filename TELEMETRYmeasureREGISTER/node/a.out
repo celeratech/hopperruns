@@ -1,0 +1,924 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x5596a842ef60 .scope module, "overlay_TELEMETRYmeasureREGISTER" "overlay_TELEMETRYmeasureREGISTER" 2 248;
+ .timescale 0 0;
+o0x7f444d39a018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84e4860_0 .net "ADCdata_0", 0 0, o0x7f444d39a018;  0 drivers
+o0x7f444d39a048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84e4920_0 .net "ADCdata_1", 0 0, o0x7f444d39a048;  0 drivers
+o0x7f444d39a078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84e4a30_0 .net "ADCdata_10", 0 0, o0x7f444d39a078;  0 drivers
+o0x7f444d39a0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84e4b20_0 .net "ADCdata_11", 0 0, o0x7f444d39a0a8;  0 drivers
+o0x7f444d39a0d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84e4c10_0 .net "ADCdata_2", 0 0, o0x7f444d39a0d8;  0 drivers
+o0x7f444d39a108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84e4d50_0 .net "ADCdata_3", 0 0, o0x7f444d39a108;  0 drivers
+o0x7f444d39a138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84e4e40_0 .net "ADCdata_4", 0 0, o0x7f444d39a138;  0 drivers
+o0x7f444d39a168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f2d20_0 .net "ADCdata_5", 0 0, o0x7f444d39a168;  0 drivers
+o0x7f444d39a198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f2e10_0 .net "ADCdata_6", 0 0, o0x7f444d39a198;  0 drivers
+o0x7f444d39a1c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f2eb0_0 .net "ADCdata_7", 0 0, o0x7f444d39a1c8;  0 drivers
+o0x7f444d39a1f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f2fa0_0 .net "ADCdata_8", 0 0, o0x7f444d39a1f8;  0 drivers
+o0x7f444d39a228 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f3090_0 .net "ADCdata_9", 0 0, o0x7f444d39a228;  0 drivers
+o0x7f444d39a258 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f3180_0 .net "CELG59462", 0 0, o0x7f444d39a258;  0 drivers
+o0x7f444d39a288 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f3270_0 .net "CELSUB40948", 0 0, o0x7f444d39a288;  0 drivers
+o0x7f444d39a2b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f3360_0 .net "CELV96848", 0 0, o0x7f444d39a2b8;  0 drivers
+o0x7f444d39a2e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f3450_0 .net "CHANNELselect_0", 0 0, o0x7f444d39a2e8;  0 drivers
+o0x7f444d39a318 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f3540_0 .net "CHANNELselect_1", 0 0, o0x7f444d39a318;  0 drivers
+o0x7f444d39a348 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f3630_0 .net "CHANNELselect_2", 0 0, o0x7f444d39a348;  0 drivers
+o0x7f444d39a378 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f3720_0 .net "CHANNELselect_3", 0 0, o0x7f444d39a378;  0 drivers
+o0x7f444d39a3a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f3810_0 .net "PORB97836", 0 0, o0x7f444d39a3a8;  0 drivers
+o0x7f444d39a3d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f3900_0 .net "clock_telemetry", 0 0, o0x7f444d39a3d8;  0 drivers
+o0x7f444d39a408 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f39f0_0 .net "done_registerload", 0 0, o0x7f444d39a408;  0 drivers
+o0x7f444d39a438 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f3ae0_0 .net "enable_busy", 0 0, o0x7f444d39a438;  0 drivers
+o0x7f444d39a468 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f3bd0_0 .net "enable_register", 0 0, o0x7f444d39a468;  0 drivers
+o0x7f444d39a498 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f3cc0_0 .net "load_register", 0 0, o0x7f444d39a498;  0 drivers
+o0x7f444d39a9d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f3db0_0 .net "meas_dtemp_0", 0 0, o0x7f444d39a9d8;  0 drivers
+o0x7f444d39aa08 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f3e50_0 .net "meas_dtemp_1", 0 0, o0x7f444d39aa08;  0 drivers
+o0x7f444d39aa38 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f3ef0_0 .net "meas_dtemp_10", 0 0, o0x7f444d39aa38;  0 drivers
+o0x7f444d39aa68 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f3f90_0 .net "meas_dtemp_11", 0 0, o0x7f444d39aa68;  0 drivers
+o0x7f444d39aa98 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f4030_0 .net "meas_dtemp_12", 0 0, o0x7f444d39aa98;  0 drivers
+o0x7f444d39aac8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f40d0_0 .net "meas_dtemp_13", 0 0, o0x7f444d39aac8;  0 drivers
+o0x7f444d39aaf8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f4170_0 .net "meas_dtemp_14", 0 0, o0x7f444d39aaf8;  0 drivers
+o0x7f444d39ab28 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f4210_0 .net "meas_dtemp_15", 0 0, o0x7f444d39ab28;  0 drivers
+o0x7f444d39ab58 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f42b0_0 .net "meas_dtemp_2", 0 0, o0x7f444d39ab58;  0 drivers
+o0x7f444d39ab88 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f4350_0 .net "meas_dtemp_3", 0 0, o0x7f444d39ab88;  0 drivers
+o0x7f444d39abb8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f43f0_0 .net "meas_dtemp_4", 0 0, o0x7f444d39abb8;  0 drivers
+o0x7f444d39abe8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f4490_0 .net "meas_dtemp_5", 0 0, o0x7f444d39abe8;  0 drivers
+o0x7f444d39ac18 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f4530_0 .net "meas_dtemp_6", 0 0, o0x7f444d39ac18;  0 drivers
+o0x7f444d39ac48 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f45d0_0 .net "meas_dtemp_7", 0 0, o0x7f444d39ac48;  0 drivers
+o0x7f444d39ac78 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f4670_0 .net "meas_dtemp_8", 0 0, o0x7f444d39ac78;  0 drivers
+o0x7f444d39aca8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f4710_0 .net "meas_dtemp_9", 0 0, o0x7f444d39aca8;  0 drivers
+o0x7f444d39acd8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f47b0_0 .net "meas_gpi_0", 0 0, o0x7f444d39acd8;  0 drivers
+o0x7f444d39ad08 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f4850_0 .net "meas_gpi_1", 0 0, o0x7f444d39ad08;  0 drivers
+o0x7f444d39ad38 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f48f0_0 .net "meas_gpi_10", 0 0, o0x7f444d39ad38;  0 drivers
+o0x7f444d39ad68 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f4990_0 .net "meas_gpi_11", 0 0, o0x7f444d39ad68;  0 drivers
+o0x7f444d39ad98 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f4a30_0 .net "meas_gpi_12", 0 0, o0x7f444d39ad98;  0 drivers
+o0x7f444d39adc8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f4ad0_0 .net "meas_gpi_13", 0 0, o0x7f444d39adc8;  0 drivers
+o0x7f444d39adf8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f4b70_0 .net "meas_gpi_14", 0 0, o0x7f444d39adf8;  0 drivers
+o0x7f444d39ae28 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f4c10_0 .net "meas_gpi_15", 0 0, o0x7f444d39ae28;  0 drivers
+o0x7f444d39ae58 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f4cb0_0 .net "meas_gpi_2", 0 0, o0x7f444d39ae58;  0 drivers
+o0x7f444d39ae88 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f4d50_0 .net "meas_gpi_3", 0 0, o0x7f444d39ae88;  0 drivers
+o0x7f444d39aeb8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f4df0_0 .net "meas_gpi_4", 0 0, o0x7f444d39aeb8;  0 drivers
+o0x7f444d39aee8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f4ec0_0 .net "meas_gpi_5", 0 0, o0x7f444d39aee8;  0 drivers
+o0x7f444d39af18 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f4f90_0 .net "meas_gpi_6", 0 0, o0x7f444d39af18;  0 drivers
+o0x7f444d39af48 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f5060_0 .net "meas_gpi_7", 0 0, o0x7f444d39af48;  0 drivers
+o0x7f444d39af78 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f5130_0 .net "meas_gpi_8", 0 0, o0x7f444d39af78;  0 drivers
+o0x7f444d39afa8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f5200_0 .net "meas_gpi_9", 0 0, o0x7f444d39afa8;  0 drivers
+o0x7f444d39afd8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f52d0_0 .net "meas_ichrg_0", 0 0, o0x7f444d39afd8;  0 drivers
+o0x7f444d39b008 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f53a0_0 .net "meas_ichrg_1", 0 0, o0x7f444d39b008;  0 drivers
+o0x7f444d39b038 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f5470_0 .net "meas_ichrg_10", 0 0, o0x7f444d39b038;  0 drivers
+o0x7f444d39b068 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f5540_0 .net "meas_ichrg_11", 0 0, o0x7f444d39b068;  0 drivers
+o0x7f444d39b098 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f5610_0 .net "meas_ichrg_12", 0 0, o0x7f444d39b098;  0 drivers
+o0x7f444d39b0c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f56e0_0 .net "meas_ichrg_13", 0 0, o0x7f444d39b0c8;  0 drivers
+o0x7f444d39b0f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f57b0_0 .net "meas_ichrg_14", 0 0, o0x7f444d39b0f8;  0 drivers
+o0x7f444d39b128 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f5880_0 .net "meas_ichrg_15", 0 0, o0x7f444d39b128;  0 drivers
+o0x7f444d39b158 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f5950_0 .net "meas_ichrg_2", 0 0, o0x7f444d39b158;  0 drivers
+o0x7f444d39b188 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f5a20_0 .net "meas_ichrg_3", 0 0, o0x7f444d39b188;  0 drivers
+o0x7f444d39b1b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f5af0_0 .net "meas_ichrg_4", 0 0, o0x7f444d39b1b8;  0 drivers
+o0x7f444d39b1e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f5bc0_0 .net "meas_ichrg_5", 0 0, o0x7f444d39b1e8;  0 drivers
+o0x7f444d39b218 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f5c90_0 .net "meas_ichrg_6", 0 0, o0x7f444d39b218;  0 drivers
+o0x7f444d39b248 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f5d60_0 .net "meas_ichrg_7", 0 0, o0x7f444d39b248;  0 drivers
+o0x7f444d39b278 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f5e30_0 .net "meas_ichrg_8", 0 0, o0x7f444d39b278;  0 drivers
+o0x7f444d39b2a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f5f00_0 .net "meas_ichrg_9", 0 0, o0x7f444d39b2a8;  0 drivers
+o0x7f444d39b2d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f5fd0_0 .net "meas_iin_0", 0 0, o0x7f444d39b2d8;  0 drivers
+o0x7f444d39b308 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f60a0_0 .net "meas_iin_1", 0 0, o0x7f444d39b308;  0 drivers
+o0x7f444d39b338 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f6170_0 .net "meas_iin_10", 0 0, o0x7f444d39b338;  0 drivers
+o0x7f444d39b368 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f6240_0 .net "meas_iin_11", 0 0, o0x7f444d39b368;  0 drivers
+o0x7f444d39b398 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f6310_0 .net "meas_iin_12", 0 0, o0x7f444d39b398;  0 drivers
+o0x7f444d39b3c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f63e0_0 .net "meas_iin_13", 0 0, o0x7f444d39b3c8;  0 drivers
+o0x7f444d39b3f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f64b0_0 .net "meas_iin_14", 0 0, o0x7f444d39b3f8;  0 drivers
+o0x7f444d39b428 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f6580_0 .net "meas_iin_15", 0 0, o0x7f444d39b428;  0 drivers
+o0x7f444d39b458 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f6650_0 .net "meas_iin_2", 0 0, o0x7f444d39b458;  0 drivers
+o0x7f444d39b488 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f6720_0 .net "meas_iin_3", 0 0, o0x7f444d39b488;  0 drivers
+o0x7f444d39b4b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f67f0_0 .net "meas_iin_4", 0 0, o0x7f444d39b4b8;  0 drivers
+o0x7f444d39b4e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f68c0_0 .net "meas_iin_5", 0 0, o0x7f444d39b4e8;  0 drivers
+o0x7f444d39b518 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f6990_0 .net "meas_iin_6", 0 0, o0x7f444d39b518;  0 drivers
+o0x7f444d39b548 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f6a60_0 .net "meas_iin_7", 0 0, o0x7f444d39b548;  0 drivers
+o0x7f444d39b578 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f6b30_0 .net "meas_iin_8", 0 0, o0x7f444d39b578;  0 drivers
+o0x7f444d39b5a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f6c00_0 .net "meas_iin_9", 0 0, o0x7f444d39b5a8;  0 drivers
+o0x7f444d39b5d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f6cd0_0 .net "meas_vcap1_0", 0 0, o0x7f444d39b5d8;  0 drivers
+o0x7f444d39b608 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f6da0_0 .net "meas_vcap1_1", 0 0, o0x7f444d39b608;  0 drivers
+o0x7f444d39b638 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f6e70_0 .net "meas_vcap1_10", 0 0, o0x7f444d39b638;  0 drivers
+o0x7f444d39b668 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f6f40_0 .net "meas_vcap1_11", 0 0, o0x7f444d39b668;  0 drivers
+o0x7f444d39b698 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f7010_0 .net "meas_vcap1_12", 0 0, o0x7f444d39b698;  0 drivers
+o0x7f444d39b6c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f70e0_0 .net "meas_vcap1_13", 0 0, o0x7f444d39b6c8;  0 drivers
+o0x7f444d39b6f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f71b0_0 .net "meas_vcap1_14", 0 0, o0x7f444d39b6f8;  0 drivers
+o0x7f444d39b728 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f7280_0 .net "meas_vcap1_15", 0 0, o0x7f444d39b728;  0 drivers
+o0x7f444d39b758 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f7350_0 .net "meas_vcap1_2", 0 0, o0x7f444d39b758;  0 drivers
+o0x7f444d39b788 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f7420_0 .net "meas_vcap1_3", 0 0, o0x7f444d39b788;  0 drivers
+o0x7f444d39b7b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f74f0_0 .net "meas_vcap1_4", 0 0, o0x7f444d39b7b8;  0 drivers
+o0x7f444d39b7e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f75c0_0 .net "meas_vcap1_5", 0 0, o0x7f444d39b7e8;  0 drivers
+o0x7f444d39b818 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f7690_0 .net "meas_vcap1_6", 0 0, o0x7f444d39b818;  0 drivers
+o0x7f444d39b848 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f7760_0 .net "meas_vcap1_7", 0 0, o0x7f444d39b848;  0 drivers
+o0x7f444d39b878 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f7830_0 .net "meas_vcap1_8", 0 0, o0x7f444d39b878;  0 drivers
+o0x7f444d39b8a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f7900_0 .net "meas_vcap1_9", 0 0, o0x7f444d39b8a8;  0 drivers
+o0x7f444d39b8d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f79d0_0 .net "meas_vcap2_0", 0 0, o0x7f444d39b8d8;  0 drivers
+o0x7f444d39b908 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f7aa0_0 .net "meas_vcap2_1", 0 0, o0x7f444d39b908;  0 drivers
+o0x7f444d39b938 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f7b70_0 .net "meas_vcap2_10", 0 0, o0x7f444d39b938;  0 drivers
+o0x7f444d39b968 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f7c40_0 .net "meas_vcap2_11", 0 0, o0x7f444d39b968;  0 drivers
+o0x7f444d39b998 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f7d10_0 .net "meas_vcap2_12", 0 0, o0x7f444d39b998;  0 drivers
+o0x7f444d39b9c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f7de0_0 .net "meas_vcap2_13", 0 0, o0x7f444d39b9c8;  0 drivers
+o0x7f444d39b9f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f7eb0_0 .net "meas_vcap2_14", 0 0, o0x7f444d39b9f8;  0 drivers
+o0x7f444d39ba28 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f7f80_0 .net "meas_vcap2_15", 0 0, o0x7f444d39ba28;  0 drivers
+o0x7f444d39ba58 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f8050_0 .net "meas_vcap2_2", 0 0, o0x7f444d39ba58;  0 drivers
+o0x7f444d39ba88 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f8120_0 .net "meas_vcap2_3", 0 0, o0x7f444d39ba88;  0 drivers
+o0x7f444d39bab8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f81f0_0 .net "meas_vcap2_4", 0 0, o0x7f444d39bab8;  0 drivers
+o0x7f444d39bae8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f82c0_0 .net "meas_vcap2_5", 0 0, o0x7f444d39bae8;  0 drivers
+o0x7f444d39bb18 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f8390_0 .net "meas_vcap2_6", 0 0, o0x7f444d39bb18;  0 drivers
+o0x7f444d39bb48 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f8460_0 .net "meas_vcap2_7", 0 0, o0x7f444d39bb48;  0 drivers
+o0x7f444d39bb78 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f8530_0 .net "meas_vcap2_8", 0 0, o0x7f444d39bb78;  0 drivers
+o0x7f444d39bba8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f8600_0 .net "meas_vcap2_9", 0 0, o0x7f444d39bba8;  0 drivers
+o0x7f444d39bbd8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f86d0_0 .net "meas_vcap3_0", 0 0, o0x7f444d39bbd8;  0 drivers
+o0x7f444d39bc08 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f87a0_0 .net "meas_vcap3_1", 0 0, o0x7f444d39bc08;  0 drivers
+o0x7f444d39bc38 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f8870_0 .net "meas_vcap3_10", 0 0, o0x7f444d39bc38;  0 drivers
+o0x7f444d39bc68 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f8940_0 .net "meas_vcap3_11", 0 0, o0x7f444d39bc68;  0 drivers
+o0x7f444d39bc98 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f8a10_0 .net "meas_vcap3_12", 0 0, o0x7f444d39bc98;  0 drivers
+o0x7f444d39bcc8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f8ae0_0 .net "meas_vcap3_13", 0 0, o0x7f444d39bcc8;  0 drivers
+o0x7f444d39bcf8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f8bb0_0 .net "meas_vcap3_14", 0 0, o0x7f444d39bcf8;  0 drivers
+o0x7f444d39bd28 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f8c80_0 .net "meas_vcap3_15", 0 0, o0x7f444d39bd28;  0 drivers
+o0x7f444d39bd58 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f9560_0 .net "meas_vcap3_2", 0 0, o0x7f444d39bd58;  0 drivers
+o0x7f444d39bd88 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f9630_0 .net "meas_vcap3_3", 0 0, o0x7f444d39bd88;  0 drivers
+o0x7f444d39bdb8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f9700_0 .net "meas_vcap3_4", 0 0, o0x7f444d39bdb8;  0 drivers
+o0x7f444d39bde8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f97d0_0 .net "meas_vcap3_5", 0 0, o0x7f444d39bde8;  0 drivers
+o0x7f444d39be18 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f98a0_0 .net "meas_vcap3_6", 0 0, o0x7f444d39be18;  0 drivers
+o0x7f444d39be48 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f9970_0 .net "meas_vcap3_7", 0 0, o0x7f444d39be48;  0 drivers
+o0x7f444d39be78 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f9a40_0 .net "meas_vcap3_8", 0 0, o0x7f444d39be78;  0 drivers
+o0x7f444d39bea8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f9b10_0 .net "meas_vcap3_9", 0 0, o0x7f444d39bea8;  0 drivers
+o0x7f444d39bed8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f9be0_0 .net "meas_vcap4_0", 0 0, o0x7f444d39bed8;  0 drivers
+o0x7f444d39bf08 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f9cb0_0 .net "meas_vcap4_1", 0 0, o0x7f444d39bf08;  0 drivers
+o0x7f444d39bf38 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f9d80_0 .net "meas_vcap4_10", 0 0, o0x7f444d39bf38;  0 drivers
+o0x7f444d39bf68 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f9e50_0 .net "meas_vcap4_11", 0 0, o0x7f444d39bf68;  0 drivers
+o0x7f444d39bf98 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f9f20_0 .net "meas_vcap4_12", 0 0, o0x7f444d39bf98;  0 drivers
+o0x7f444d39bfc8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84f9ff0_0 .net "meas_vcap4_13", 0 0, o0x7f444d39bfc8;  0 drivers
+o0x7f444d39bff8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fa0c0_0 .net "meas_vcap4_14", 0 0, o0x7f444d39bff8;  0 drivers
+o0x7f444d39c028 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fa190_0 .net "meas_vcap4_15", 0 0, o0x7f444d39c028;  0 drivers
+o0x7f444d39c058 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fa260_0 .net "meas_vcap4_2", 0 0, o0x7f444d39c058;  0 drivers
+o0x7f444d39c088 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fa330_0 .net "meas_vcap4_3", 0 0, o0x7f444d39c088;  0 drivers
+o0x7f444d39c0b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fa400_0 .net "meas_vcap4_4", 0 0, o0x7f444d39c0b8;  0 drivers
+o0x7f444d39c0e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fa4d0_0 .net "meas_vcap4_5", 0 0, o0x7f444d39c0e8;  0 drivers
+o0x7f444d39c118 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fa5a0_0 .net "meas_vcap4_6", 0 0, o0x7f444d39c118;  0 drivers
+o0x7f444d39c148 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fa670_0 .net "meas_vcap4_7", 0 0, o0x7f444d39c148;  0 drivers
+o0x7f444d39c178 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fa740_0 .net "meas_vcap4_8", 0 0, o0x7f444d39c178;  0 drivers
+o0x7f444d39c1a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fa810_0 .net "meas_vcap4_9", 0 0, o0x7f444d39c1a8;  0 drivers
+o0x7f444d39c1d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fa8e0_0 .net "meas_vcap_0", 0 0, o0x7f444d39c1d8;  0 drivers
+o0x7f444d39c208 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fa9b0_0 .net "meas_vcap_1", 0 0, o0x7f444d39c208;  0 drivers
+o0x7f444d39c238 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84faa80_0 .net "meas_vcap_10", 0 0, o0x7f444d39c238;  0 drivers
+o0x7f444d39c268 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fab50_0 .net "meas_vcap_11", 0 0, o0x7f444d39c268;  0 drivers
+o0x7f444d39c298 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fac20_0 .net "meas_vcap_12", 0 0, o0x7f444d39c298;  0 drivers
+o0x7f444d39c2c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84facf0_0 .net "meas_vcap_13", 0 0, o0x7f444d39c2c8;  0 drivers
+o0x7f444d39c2f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fadc0_0 .net "meas_vcap_14", 0 0, o0x7f444d39c2f8;  0 drivers
+o0x7f444d39c328 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fae90_0 .net "meas_vcap_15", 0 0, o0x7f444d39c328;  0 drivers
+o0x7f444d39c358 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84faf60_0 .net "meas_vcap_2", 0 0, o0x7f444d39c358;  0 drivers
+o0x7f444d39c388 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fb030_0 .net "meas_vcap_3", 0 0, o0x7f444d39c388;  0 drivers
+o0x7f444d39c3b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fb100_0 .net "meas_vcap_4", 0 0, o0x7f444d39c3b8;  0 drivers
+o0x7f444d39c3e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fb1d0_0 .net "meas_vcap_5", 0 0, o0x7f444d39c3e8;  0 drivers
+o0x7f444d39c418 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fb2a0_0 .net "meas_vcap_6", 0 0, o0x7f444d39c418;  0 drivers
+o0x7f444d39c448 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fb370_0 .net "meas_vcap_7", 0 0, o0x7f444d39c448;  0 drivers
+o0x7f444d39c478 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fb440_0 .net "meas_vcap_8", 0 0, o0x7f444d39c478;  0 drivers
+o0x7f444d39c4a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fb510_0 .net "meas_vcap_9", 0 0, o0x7f444d39c4a8;  0 drivers
+o0x7f444d39c4d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fb5e0_0 .net "meas_vin_0", 0 0, o0x7f444d39c4d8;  0 drivers
+o0x7f444d39c508 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fb6b0_0 .net "meas_vin_1", 0 0, o0x7f444d39c508;  0 drivers
+o0x7f444d39c538 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fb780_0 .net "meas_vin_10", 0 0, o0x7f444d39c538;  0 drivers
+o0x7f444d39c568 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fb850_0 .net "meas_vin_11", 0 0, o0x7f444d39c568;  0 drivers
+o0x7f444d39c598 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fb920_0 .net "meas_vin_12", 0 0, o0x7f444d39c598;  0 drivers
+o0x7f444d39c5c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fb9f0_0 .net "meas_vin_13", 0 0, o0x7f444d39c5c8;  0 drivers
+o0x7f444d39c5f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fbac0_0 .net "meas_vin_14", 0 0, o0x7f444d39c5f8;  0 drivers
+o0x7f444d39c628 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fbb90_0 .net "meas_vin_15", 0 0, o0x7f444d39c628;  0 drivers
+o0x7f444d39c658 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fbc60_0 .net "meas_vin_2", 0 0, o0x7f444d39c658;  0 drivers
+o0x7f444d39c688 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fbd30_0 .net "meas_vin_3", 0 0, o0x7f444d39c688;  0 drivers
+o0x7f444d39c6b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fbe00_0 .net "meas_vin_4", 0 0, o0x7f444d39c6b8;  0 drivers
+o0x7f444d39c6e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fbed0_0 .net "meas_vin_5", 0 0, o0x7f444d39c6e8;  0 drivers
+o0x7f444d39c718 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fbfa0_0 .net "meas_vin_6", 0 0, o0x7f444d39c718;  0 drivers
+o0x7f444d39c748 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fc070_0 .net "meas_vin_7", 0 0, o0x7f444d39c748;  0 drivers
+o0x7f444d39c778 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fc140_0 .net "meas_vin_8", 0 0, o0x7f444d39c778;  0 drivers
+o0x7f444d39c7a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fc210_0 .net "meas_vin_9", 0 0, o0x7f444d39c7a8;  0 drivers
+o0x7f444d39c7d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fc2e0_0 .net "meas_vout_0", 0 0, o0x7f444d39c7d8;  0 drivers
+o0x7f444d39c808 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fc3b0_0 .net "meas_vout_1", 0 0, o0x7f444d39c808;  0 drivers
+o0x7f444d39c838 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fc480_0 .net "meas_vout_10", 0 0, o0x7f444d39c838;  0 drivers
+o0x7f444d39c868 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fc550_0 .net "meas_vout_11", 0 0, o0x7f444d39c868;  0 drivers
+o0x7f444d39c898 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fc620_0 .net "meas_vout_12", 0 0, o0x7f444d39c898;  0 drivers
+o0x7f444d39c8c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fc6f0_0 .net "meas_vout_13", 0 0, o0x7f444d39c8c8;  0 drivers
+o0x7f444d39c8f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fc7c0_0 .net "meas_vout_14", 0 0, o0x7f444d39c8f8;  0 drivers
+o0x7f444d39c928 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fc890_0 .net "meas_vout_15", 0 0, o0x7f444d39c928;  0 drivers
+o0x7f444d39c958 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fc960_0 .net "meas_vout_2", 0 0, o0x7f444d39c958;  0 drivers
+o0x7f444d39c988 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fca30_0 .net "meas_vout_3", 0 0, o0x7f444d39c988;  0 drivers
+o0x7f444d39c9b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fcb00_0 .net "meas_vout_4", 0 0, o0x7f444d39c9b8;  0 drivers
+o0x7f444d39c9e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fcbd0_0 .net "meas_vout_5", 0 0, o0x7f444d39c9e8;  0 drivers
+o0x7f444d39ca18 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fcca0_0 .net "meas_vout_6", 0 0, o0x7f444d39ca18;  0 drivers
+o0x7f444d39ca48 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fcd70_0 .net "meas_vout_7", 0 0, o0x7f444d39ca48;  0 drivers
+o0x7f444d39ca78 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fce40_0 .net "meas_vout_8", 0 0, o0x7f444d39ca78;  0 drivers
+o0x7f444d39caa8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fcf10_0 .net "meas_vout_9", 0 0, o0x7f444d39caa8;  0 drivers
+o0x7f444d39a4c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5596a84fcfe0_0 .net "porb", 0 0, o0x7f444d39a4c8;  0 drivers
+o0x7f444d39cad8 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x5596a84fd0d0_0 .net "status_meas_dtemp_15", 15 0, o0x7f444d39cad8;  0 drivers
+o0x7f444d39cb08 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x5596a84fd170_0 .net "status_meas_gpi_15", 15 0, o0x7f444d39cb08;  0 drivers
+o0x7f444d39cb38 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x5596a84fd240_0 .net "status_meas_ichrg_15", 15 0, o0x7f444d39cb38;  0 drivers
+o0x7f444d39cb68 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x5596a84fd310_0 .net "status_meas_iin_15", 15 0, o0x7f444d39cb68;  0 drivers
+o0x7f444d39cb98 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x5596a84fd3e0_0 .net "status_meas_vcap1_15", 15 0, o0x7f444d39cb98;  0 drivers
+o0x7f444d39cbc8 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x5596a84fd4b0_0 .net "status_meas_vcap2_15", 15 0, o0x7f444d39cbc8;  0 drivers
+o0x7f444d39cbf8 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x5596a84fd580_0 .net "status_meas_vcap3_15", 15 0, o0x7f444d39cbf8;  0 drivers
+o0x7f444d39cc28 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x5596a84fd650_0 .net "status_meas_vcap4_15", 15 0, o0x7f444d39cc28;  0 drivers
+o0x7f444d39cc58 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x5596a84fd720_0 .net "status_meas_vcap_15", 15 0, o0x7f444d39cc58;  0 drivers
+o0x7f444d39cc88 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x5596a84fd7f0_0 .net "status_meas_vin_15", 15 0, o0x7f444d39cc88;  0 drivers
+o0x7f444d39ccb8 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x5596a84fd8c0_0 .net "status_meas_vout_15", 15 0, o0x7f444d39ccb8;  0 drivers
+S_0x5596a8468500 .scope module, "XFORCE" "FORCEtelemetry_register" 2 265, 2 2 0, S_0x5596a842ef60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "porb";
+    .port_info 1 /OUTPUT 1 "ADCdata_0";
+    .port_info 2 /OUTPUT 1 "ADCdata_1";
+    .port_info 3 /OUTPUT 1 "ADCdata_2";
+    .port_info 4 /OUTPUT 1 "ADCdata_3";
+    .port_info 5 /OUTPUT 1 "ADCdata_4";
+    .port_info 6 /OUTPUT 1 "ADCdata_5";
+    .port_info 7 /OUTPUT 1 "ADCdata_6";
+    .port_info 8 /OUTPUT 1 "ADCdata_7";
+    .port_info 9 /OUTPUT 1 "ADCdata_8";
+    .port_info 10 /OUTPUT 1 "ADCdata_9";
+    .port_info 11 /OUTPUT 1 "CELG59462";
+    .port_info 12 /OUTPUT 1 "CELV96848";
+    .port_info 13 /OUTPUT 1 "PORB97836";
+    .port_info 14 /OUTPUT 1 "ADCdata_10";
+    .port_info 15 /OUTPUT 1 "ADCdata_11";
+    .port_info 16 /OUTPUT 1 "CELSUB40948";
+    .port_info 17 /OUTPUT 1 "enable_busy";
+    .port_info 18 /OUTPUT 1 "load_register";
+    .port_info 19 /OUTPUT 1 "CHANNELselect_0";
+    .port_info 20 /OUTPUT 1 "CHANNELselect_1";
+    .port_info 21 /OUTPUT 1 "CHANNELselect_2";
+    .port_info 22 /OUTPUT 1 "CHANNELselect_3";
+    .port_info 23 /OUTPUT 1 "clock_telemetry";
+    .port_info 24 /OUTPUT 1 "enable_register";
+    .port_info 25 /OUTPUT 1 "done_registerload";
+v0x5596a842e4b0_0 .net "ADCdata_0", 0 0, o0x7f444d39a018;  alias, 0 drivers
+v0x5596a842f0f0_0 .net "ADCdata_1", 0 0, o0x7f444d39a048;  alias, 0 drivers
+v0x5596a842eec0_0 .net "ADCdata_10", 0 0, o0x7f444d39a078;  alias, 0 drivers
+v0x5596a84e31e0_0 .net "ADCdata_11", 0 0, o0x7f444d39a0a8;  alias, 0 drivers
+v0x5596a84e32a0_0 .net "ADCdata_2", 0 0, o0x7f444d39a0d8;  alias, 0 drivers
+v0x5596a84e33b0_0 .net "ADCdata_3", 0 0, o0x7f444d39a108;  alias, 0 drivers
+v0x5596a84e3470_0 .net "ADCdata_4", 0 0, o0x7f444d39a138;  alias, 0 drivers
+v0x5596a84e3530_0 .net "ADCdata_5", 0 0, o0x7f444d39a168;  alias, 0 drivers
+v0x5596a84e35f0_0 .net "ADCdata_6", 0 0, o0x7f444d39a198;  alias, 0 drivers
+v0x5596a84e36b0_0 .net "ADCdata_7", 0 0, o0x7f444d39a1c8;  alias, 0 drivers
+v0x5596a84e3770_0 .net "ADCdata_8", 0 0, o0x7f444d39a1f8;  alias, 0 drivers
+v0x5596a84e3830_0 .net "ADCdata_9", 0 0, o0x7f444d39a228;  alias, 0 drivers
+v0x5596a84e38f0_0 .net "CELG59462", 0 0, o0x7f444d39a258;  alias, 0 drivers
+v0x5596a84e39b0_0 .net "CELSUB40948", 0 0, o0x7f444d39a288;  alias, 0 drivers
+v0x5596a84e3a70_0 .net "CELV96848", 0 0, o0x7f444d39a2b8;  alias, 0 drivers
+v0x5596a84e3b30_0 .net "CHANNELselect_0", 0 0, o0x7f444d39a2e8;  alias, 0 drivers
+v0x5596a84e3bf0_0 .net "CHANNELselect_1", 0 0, o0x7f444d39a318;  alias, 0 drivers
+v0x5596a84e3cb0_0 .net "CHANNELselect_2", 0 0, o0x7f444d39a348;  alias, 0 drivers
+v0x5596a84e3d70_0 .net "CHANNELselect_3", 0 0, o0x7f444d39a378;  alias, 0 drivers
+v0x5596a84e3e30_0 .net "PORB97836", 0 0, o0x7f444d39a3a8;  alias, 0 drivers
+v0x5596a84e3ef0_0 .net "clock_telemetry", 0 0, o0x7f444d39a3d8;  alias, 0 drivers
+v0x5596a84e3fb0_0 .net "done_registerload", 0 0, o0x7f444d39a408;  alias, 0 drivers
+v0x5596a84e4070_0 .net "enable_busy", 0 0, o0x7f444d39a438;  alias, 0 drivers
+v0x5596a84e4130_0 .net "enable_register", 0 0, o0x7f444d39a468;  alias, 0 drivers
+v0x5596a84e41f0_0 .net "load_register", 0 0, o0x7f444d39a498;  alias, 0 drivers
+v0x5596a84e42b0_0 .net "porb", 0 0, o0x7f444d39a4c8;  alias, 0 drivers
+S_0x5596a84e46b0 .scope module, "XREGISTER" "TELEMETRYmeasureREGISTER" 2 294, 2 31 0, S_0x5596a842ef60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "porb";
+    .port_info 1 /INPUT 1 "ADCdata_0";
+    .port_info 2 /INPUT 1 "ADCdata_1";
+    .port_info 3 /INPUT 1 "ADCdata_2";
+    .port_info 4 /INPUT 1 "ADCdata_3";
+    .port_info 5 /INPUT 1 "ADCdata_4";
+    .port_info 6 /INPUT 1 "ADCdata_5";
+    .port_info 7 /INPUT 1 "ADCdata_6";
+    .port_info 8 /INPUT 1 "ADCdata_7";
+    .port_info 9 /INPUT 1 "ADCdata_8";
+    .port_info 10 /INPUT 1 "ADCdata_9";
+    .port_info 11 /INPUT 1 "CELG59462";
+    .port_info 12 /INPUT 1 "CELV96848";
+    .port_info 13 /INPUT 1 "PORB97836";
+    .port_info 14 /INPUT 1 "ADCdata_10";
+    .port_info 15 /INPUT 1 "ADCdata_11";
+    .port_info 16 /OUTPUT 1 "meas_gpi_0";
+    .port_info 17 /OUTPUT 1 "meas_gpi_1";
+    .port_info 18 /OUTPUT 1 "meas_gpi_2";
+    .port_info 19 /OUTPUT 1 "meas_gpi_3";
+    .port_info 20 /OUTPUT 1 "meas_gpi_4";
+    .port_info 21 /OUTPUT 1 "meas_gpi_5";
+    .port_info 22 /OUTPUT 1 "meas_gpi_6";
+    .port_info 23 /OUTPUT 1 "meas_gpi_7";
+    .port_info 24 /OUTPUT 1 "meas_gpi_8";
+    .port_info 25 /OUTPUT 1 "meas_gpi_9";
+    .port_info 26 /OUTPUT 1 "meas_iin_0";
+    .port_info 27 /OUTPUT 1 "meas_iin_1";
+    .port_info 28 /OUTPUT 1 "meas_iin_2";
+    .port_info 29 /OUTPUT 1 "meas_iin_3";
+    .port_info 30 /OUTPUT 1 "meas_iin_4";
+    .port_info 31 /OUTPUT 1 "meas_iin_5";
+    .port_info 32 /OUTPUT 1 "meas_iin_6";
+    .port_info 33 /OUTPUT 1 "meas_iin_7";
+    .port_info 34 /OUTPUT 1 "meas_iin_8";
+    .port_info 35 /OUTPUT 1 "meas_iin_9";
+    .port_info 36 /OUTPUT 1 "meas_vin_0";
+    .port_info 37 /OUTPUT 1 "meas_vin_1";
+    .port_info 38 /OUTPUT 1 "meas_vin_2";
+    .port_info 39 /OUTPUT 1 "meas_vin_3";
+    .port_info 40 /OUTPUT 1 "meas_vin_4";
+    .port_info 41 /OUTPUT 1 "meas_vin_5";
+    .port_info 42 /OUTPUT 1 "meas_vin_6";
+    .port_info 43 /OUTPUT 1 "meas_vin_7";
+    .port_info 44 /OUTPUT 1 "meas_vin_8";
+    .port_info 45 /OUTPUT 1 "meas_vin_9";
+    .port_info 46 /INPUT 1 "CELSUB40948";
+    .port_info 47 /INPUT 1 "enable_busy";
+    .port_info 48 /OUTPUT 1 "meas_gpi_10";
+    .port_info 49 /OUTPUT 1 "meas_gpi_11";
+    .port_info 50 /OUTPUT 1 "meas_gpi_12";
+    .port_info 51 /OUTPUT 1 "meas_gpi_13";
+    .port_info 52 /OUTPUT 1 "meas_gpi_14";
+    .port_info 53 /OUTPUT 1 "meas_gpi_15";
+    .port_info 54 /OUTPUT 1 "meas_iin_10";
+    .port_info 55 /OUTPUT 1 "meas_iin_11";
+    .port_info 56 /OUTPUT 1 "meas_iin_12";
+    .port_info 57 /OUTPUT 1 "meas_iin_13";
+    .port_info 58 /OUTPUT 1 "meas_iin_14";
+    .port_info 59 /OUTPUT 1 "meas_iin_15";
+    .port_info 60 /OUTPUT 1 "meas_vcap_0";
+    .port_info 61 /OUTPUT 1 "meas_vcap_1";
+    .port_info 62 /OUTPUT 1 "meas_vcap_2";
+    .port_info 63 /OUTPUT 1 "meas_vcap_3";
+    .port_info 64 /OUTPUT 1 "meas_vcap_4";
+    .port_info 65 /OUTPUT 1 "meas_vcap_5";
+    .port_info 66 /OUTPUT 1 "meas_vcap_6";
+    .port_info 67 /OUTPUT 1 "meas_vcap_7";
+    .port_info 68 /OUTPUT 1 "meas_vcap_8";
+    .port_info 69 /OUTPUT 1 "meas_vcap_9";
+    .port_info 70 /OUTPUT 1 "meas_vin_10";
+    .port_info 71 /OUTPUT 1 "meas_vin_11";
+    .port_info 72 /OUTPUT 1 "meas_vin_12";
+    .port_info 73 /OUTPUT 1 "meas_vin_13";
+    .port_info 74 /OUTPUT 1 "meas_vin_14";
+    .port_info 75 /OUTPUT 1 "meas_vin_15";
+    .port_info 76 /OUTPUT 1 "meas_vout_0";
+    .port_info 77 /OUTPUT 1 "meas_vout_1";
+    .port_info 78 /OUTPUT 1 "meas_vout_2";
+    .port_info 79 /OUTPUT 1 "meas_vout_3";
+    .port_info 80 /OUTPUT 1 "meas_vout_4";
+    .port_info 81 /OUTPUT 1 "meas_vout_5";
+    .port_info 82 /OUTPUT 1 "meas_vout_6";
+    .port_info 83 /OUTPUT 1 "meas_vout_7";
+    .port_info 84 /OUTPUT 1 "meas_vout_8";
+    .port_info 85 /OUTPUT 1 "meas_vout_9";
+    .port_info 86 /OUTPUT 1 "meas_dtemp_0";
+    .port_info 87 /OUTPUT 1 "meas_dtemp_1";
+    .port_info 88 /OUTPUT 1 "meas_dtemp_2";
+    .port_info 89 /OUTPUT 1 "meas_dtemp_3";
+    .port_info 90 /OUTPUT 1 "meas_dtemp_4";
+    .port_info 91 /OUTPUT 1 "meas_dtemp_5";
+    .port_info 92 /OUTPUT 1 "meas_dtemp_6";
+    .port_info 93 /OUTPUT 1 "meas_dtemp_7";
+    .port_info 94 /OUTPUT 1 "meas_dtemp_8";
+    .port_info 95 /OUTPUT 1 "meas_dtemp_9";
+    .port_info 96 /OUTPUT 1 "meas_ichrg_0";
+    .port_info 97 /OUTPUT 1 "meas_ichrg_1";
+    .port_info 98 /OUTPUT 1 "meas_ichrg_2";
+    .port_info 99 /OUTPUT 1 "meas_ichrg_3";
+    .port_info 100 /OUTPUT 1 "meas_ichrg_4";
+    .port_info 101 /OUTPUT 1 "meas_ichrg_5";
+    .port_info 102 /OUTPUT 1 "meas_ichrg_6";
+    .port_info 103 /OUTPUT 1 "meas_ichrg_7";
+    .port_info 104 /OUTPUT 1 "meas_ichrg_8";
+    .port_info 105 /OUTPUT 1 "meas_ichrg_9";
+    .port_info 106 /OUTPUT 1 "meas_vcap1_0";
+    .port_info 107 /OUTPUT 1 "meas_vcap1_1";
+    .port_info 108 /OUTPUT 1 "meas_vcap1_2";
+    .port_info 109 /OUTPUT 1 "meas_vcap1_3";
+    .port_info 110 /OUTPUT 1 "meas_vcap1_4";
+    .port_info 111 /OUTPUT 1 "meas_vcap1_5";
+    .port_info 112 /OUTPUT 1 "meas_vcap1_6";
+    .port_info 113 /OUTPUT 1 "meas_vcap1_7";
+    .port_info 114 /OUTPUT 1 "meas_vcap1_8";
+    .port_info 115 /OUTPUT 1 "meas_vcap1_9";
+    .port_info 116 /OUTPUT 1 "meas_vcap2_0";
+    .port_info 117 /OUTPUT 1 "meas_vcap2_1";
+    .port_info 118 /OUTPUT 1 "meas_vcap2_2";
+    .port_info 119 /OUTPUT 1 "meas_vcap2_3";
+    .port_info 120 /OUTPUT 1 "meas_vcap2_4";
+    .port_info 121 /OUTPUT 1 "meas_vcap2_5";
+    .port_info 122 /OUTPUT 1 "meas_vcap2_6";
+    .port_info 123 /OUTPUT 1 "meas_vcap2_7";
+    .port_info 124 /OUTPUT 1 "meas_vcap2_8";
+    .port_info 125 /OUTPUT 1 "meas_vcap2_9";
+    .port_info 126 /OUTPUT 1 "meas_vcap3_0";
+    .port_info 127 /OUTPUT 1 "meas_vcap3_1";
+    .port_info 128 /OUTPUT 1 "meas_vcap3_2";
+    .port_info 129 /OUTPUT 1 "meas_vcap3_3";
+    .port_info 130 /OUTPUT 1 "meas_vcap3_4";
+    .port_info 131 /OUTPUT 1 "meas_vcap3_5";
+    .port_info 132 /OUTPUT 1 "meas_vcap3_6";
+    .port_info 133 /OUTPUT 1 "meas_vcap3_7";
+    .port_info 134 /OUTPUT 1 "meas_vcap3_8";
+    .port_info 135 /OUTPUT 1 "meas_vcap3_9";
+    .port_info 136 /OUTPUT 1 "meas_vcap4_0";
+    .port_info 137 /OUTPUT 1 "meas_vcap4_1";
+    .port_info 138 /OUTPUT 1 "meas_vcap4_2";
+    .port_info 139 /OUTPUT 1 "meas_vcap4_3";
+    .port_info 140 /OUTPUT 1 "meas_vcap4_4";
+    .port_info 141 /OUTPUT 1 "meas_vcap4_5";
+    .port_info 142 /OUTPUT 1 "meas_vcap4_6";
+    .port_info 143 /OUTPUT 1 "meas_vcap4_7";
+    .port_info 144 /OUTPUT 1 "meas_vcap4_8";
+    .port_info 145 /OUTPUT 1 "meas_vcap4_9";
+    .port_info 146 /OUTPUT 1 "meas_vcap_10";
+    .port_info 147 /OUTPUT 1 "meas_vcap_11";
+    .port_info 148 /OUTPUT 1 "meas_vcap_12";
+    .port_info 149 /OUTPUT 1 "meas_vcap_13";
+    .port_info 150 /OUTPUT 1 "meas_vcap_14";
+    .port_info 151 /OUTPUT 1 "meas_vcap_15";
+    .port_info 152 /OUTPUT 1 "meas_vout_10";
+    .port_info 153 /OUTPUT 1 "meas_vout_11";
+    .port_info 154 /OUTPUT 1 "meas_vout_12";
+    .port_info 155 /OUTPUT 1 "meas_vout_13";
+    .port_info 156 /OUTPUT 1 "meas_vout_14";
+    .port_info 157 /OUTPUT 1 "meas_vout_15";
+    .port_info 158 /INPUT 1 "load_register";
+    .port_info 159 /OUTPUT 1 "meas_dtemp_10";
+    .port_info 160 /OUTPUT 1 "meas_dtemp_11";
+    .port_info 161 /OUTPUT 1 "meas_dtemp_12";
+    .port_info 162 /OUTPUT 1 "meas_dtemp_13";
+    .port_info 163 /OUTPUT 1 "meas_dtemp_14";
+    .port_info 164 /OUTPUT 1 "meas_dtemp_15";
+    .port_info 165 /OUTPUT 1 "meas_ichrg_10";
+    .port_info 166 /OUTPUT 1 "meas_ichrg_11";
+    .port_info 167 /OUTPUT 1 "meas_ichrg_12";
+    .port_info 168 /OUTPUT 1 "meas_ichrg_13";
+    .port_info 169 /OUTPUT 1 "meas_ichrg_14";
+    .port_info 170 /OUTPUT 1 "meas_ichrg_15";
+    .port_info 171 /OUTPUT 1 "meas_vcap1_10";
+    .port_info 172 /OUTPUT 1 "meas_vcap1_11";
+    .port_info 173 /OUTPUT 1 "meas_vcap1_12";
+    .port_info 174 /OUTPUT 1 "meas_vcap1_13";
+    .port_info 175 /OUTPUT 1 "meas_vcap1_14";
+    .port_info 176 /OUTPUT 1 "meas_vcap1_15";
+    .port_info 177 /OUTPUT 1 "meas_vcap2_10";
+    .port_info 178 /OUTPUT 1 "meas_vcap2_11";
+    .port_info 179 /OUTPUT 1 "meas_vcap2_12";
+    .port_info 180 /OUTPUT 1 "meas_vcap2_13";
+    .port_info 181 /OUTPUT 1 "meas_vcap2_14";
+    .port_info 182 /OUTPUT 1 "meas_vcap2_15";
+    .port_info 183 /OUTPUT 1 "meas_vcap3_10";
+    .port_info 184 /OUTPUT 1 "meas_vcap3_11";
+    .port_info 185 /OUTPUT 1 "meas_vcap3_12";
+    .port_info 186 /OUTPUT 1 "meas_vcap3_13";
+    .port_info 187 /OUTPUT 1 "meas_vcap3_14";
+    .port_info 188 /OUTPUT 1 "meas_vcap3_15";
+    .port_info 189 /OUTPUT 1 "meas_vcap4_10";
+    .port_info 190 /OUTPUT 1 "meas_vcap4_11";
+    .port_info 191 /OUTPUT 1 "meas_vcap4_12";
+    .port_info 192 /OUTPUT 1 "meas_vcap4_13";
+    .port_info 193 /OUTPUT 1 "meas_vcap4_14";
+    .port_info 194 /OUTPUT 1 "meas_vcap4_15";
+    .port_info 195 /INPUT 1 "CHANNELselect_0";
+    .port_info 196 /INPUT 1 "CHANNELselect_1";
+    .port_info 197 /INPUT 1 "CHANNELselect_2";
+    .port_info 198 /INPUT 1 "CHANNELselect_3";
+    .port_info 199 /INPUT 1 "clock_telemetry";
+    .port_info 200 /INPUT 1 "enable_register";
+    .port_info 201 /OUTPUT 1 "done_registerload";
+    .port_info 202 /OUTPUT 16 "status_meas_gpi_15";
+    .port_info 203 /OUTPUT 16 "status_meas_iin_15";
+    .port_info 204 /OUTPUT 16 "status_meas_vin_15";
+    .port_info 205 /OUTPUT 16 "status_meas_vcap_15";
+    .port_info 206 /OUTPUT 16 "status_meas_vout_15";
+    .port_info 207 /OUTPUT 16 "status_meas_dtemp_15";
+    .port_info 208 /OUTPUT 16 "status_meas_ichrg_15";
+    .port_info 209 /OUTPUT 16 "status_meas_vcap1_15";
+    .port_info 210 /OUTPUT 16 "status_meas_vcap2_15";
+    .port_info 211 /OUTPUT 16 "status_meas_vcap3_15";
+    .port_info 212 /OUTPUT 16 "status_meas_vcap4_15";
+v0x5596a84e6310_0 .net "ADCdata_0", 0 0, o0x7f444d39a018;  alias, 0 drivers
+v0x5596a84e63b0_0 .net "ADCdata_1", 0 0, o0x7f444d39a048;  alias, 0 drivers
+v0x5596a84e6450_0 .net "ADCdata_10", 0 0, o0x7f444d39a078;  alias, 0 drivers
+v0x5596a84e6550_0 .net "ADCdata_11", 0 0, o0x7f444d39a0a8;  alias, 0 drivers
+v0x5596a84e6620_0 .net "ADCdata_2", 0 0, o0x7f444d39a0d8;  alias, 0 drivers
+v0x5596a84e6710_0 .net "ADCdata_3", 0 0, o0x7f444d39a108;  alias, 0 drivers
+v0x5596a84e67e0_0 .net "ADCdata_4", 0 0, o0x7f444d39a138;  alias, 0 drivers
+v0x5596a84e68b0_0 .net "ADCdata_5", 0 0, o0x7f444d39a168;  alias, 0 drivers
+v0x5596a84e6980_0 .net "ADCdata_6", 0 0, o0x7f444d39a198;  alias, 0 drivers
+v0x5596a84e6a50_0 .net "ADCdata_7", 0 0, o0x7f444d39a1c8;  alias, 0 drivers
+v0x5596a84e6b20_0 .net "ADCdata_8", 0 0, o0x7f444d39a1f8;  alias, 0 drivers
+v0x5596a84e6bf0_0 .net "ADCdata_9", 0 0, o0x7f444d39a228;  alias, 0 drivers
+v0x5596a84e6cc0_0 .net "CELG59462", 0 0, o0x7f444d39a258;  alias, 0 drivers
+v0x5596a84e6d90_0 .net "CELSUB40948", 0 0, o0x7f444d39a288;  alias, 0 drivers
+v0x5596a84e6e60_0 .net "CELV96848", 0 0, o0x7f444d39a2b8;  alias, 0 drivers
+v0x5596a84e6f30_0 .net "CHANNELselect_0", 0 0, o0x7f444d39a2e8;  alias, 0 drivers
+v0x5596a84e7000_0 .net "CHANNELselect_1", 0 0, o0x7f444d39a318;  alias, 0 drivers
+v0x5596a84e71e0_0 .net "CHANNELselect_2", 0 0, o0x7f444d39a348;  alias, 0 drivers
+v0x5596a84e72b0_0 .net "CHANNELselect_3", 0 0, o0x7f444d39a378;  alias, 0 drivers
+v0x5596a84e7380_0 .net "PORB97836", 0 0, o0x7f444d39a3a8;  alias, 0 drivers
+v0x5596a84e7450_0 .net "clock_telemetry", 0 0, o0x7f444d39a3d8;  alias, 0 drivers
+v0x5596a84e7520_0 .net "done_registerload", 0 0, o0x7f444d39a408;  alias, 0 drivers
+v0x5596a84e75f0_0 .net "enable_busy", 0 0, o0x7f444d39a438;  alias, 0 drivers
+v0x5596a84e76c0_0 .net "enable_register", 0 0, o0x7f444d39a468;  alias, 0 drivers
+v0x5596a84e7790_0 .net "load_register", 0 0, o0x7f444d39a498;  alias, 0 drivers
+v0x5596a84e7860_0 .net "meas_dtemp_0", 0 0, o0x7f444d39a9d8;  alias, 0 drivers
+v0x5596a84e7900_0 .net "meas_dtemp_1", 0 0, o0x7f444d39aa08;  alias, 0 drivers
+v0x5596a84e79a0_0 .net "meas_dtemp_10", 0 0, o0x7f444d39aa38;  alias, 0 drivers
+v0x5596a84e7a40_0 .net "meas_dtemp_11", 0 0, o0x7f444d39aa68;  alias, 0 drivers
+v0x5596a84e7ae0_0 .net "meas_dtemp_12", 0 0, o0x7f444d39aa98;  alias, 0 drivers
+v0x5596a84e7b80_0 .net "meas_dtemp_13", 0 0, o0x7f444d39aac8;  alias, 0 drivers
+v0x5596a84e7c20_0 .net "meas_dtemp_14", 0 0, o0x7f444d39aaf8;  alias, 0 drivers
+v0x5596a84e7cc0_0 .net "meas_dtemp_15", 0 0, o0x7f444d39ab28;  alias, 0 drivers
+v0x5596a84e7d60_0 .net "meas_dtemp_2", 0 0, o0x7f444d39ab58;  alias, 0 drivers
+v0x5596a84e7e00_0 .net "meas_dtemp_3", 0 0, o0x7f444d39ab88;  alias, 0 drivers
+v0x5596a84e7ea0_0 .net "meas_dtemp_4", 0 0, o0x7f444d39abb8;  alias, 0 drivers
+v0x5596a84e7f40_0 .net "meas_dtemp_5", 0 0, o0x7f444d39abe8;  alias, 0 drivers
+v0x5596a84e7fe0_0 .net "meas_dtemp_6", 0 0, o0x7f444d39ac18;  alias, 0 drivers
+v0x5596a84e8080_0 .net "meas_dtemp_7", 0 0, o0x7f444d39ac48;  alias, 0 drivers
+v0x5596a84e8120_0 .net "meas_dtemp_8", 0 0, o0x7f444d39ac78;  alias, 0 drivers
+v0x5596a84e81c0_0 .net "meas_dtemp_9", 0 0, o0x7f444d39aca8;  alias, 0 drivers
+v0x5596a84e8260_0 .net "meas_gpi_0", 0 0, o0x7f444d39acd8;  alias, 0 drivers
+v0x5596a84e8300_0 .net "meas_gpi_1", 0 0, o0x7f444d39ad08;  alias, 0 drivers
+v0x5596a84e83a0_0 .net "meas_gpi_10", 0 0, o0x7f444d39ad38;  alias, 0 drivers
+v0x5596a84e8440_0 .net "meas_gpi_11", 0 0, o0x7f444d39ad68;  alias, 0 drivers
+v0x5596a84e84e0_0 .net "meas_gpi_12", 0 0, o0x7f444d39ad98;  alias, 0 drivers
+v0x5596a84e8580_0 .net "meas_gpi_13", 0 0, o0x7f444d39adc8;  alias, 0 drivers
+v0x5596a84e8620_0 .net "meas_gpi_14", 0 0, o0x7f444d39adf8;  alias, 0 drivers
+v0x5596a84e86c0_0 .net "meas_gpi_15", 0 0, o0x7f444d39ae28;  alias, 0 drivers
+v0x5596a84e8760_0 .net "meas_gpi_2", 0 0, o0x7f444d39ae58;  alias, 0 drivers
+v0x5596a84e8800_0 .net "meas_gpi_3", 0 0, o0x7f444d39ae88;  alias, 0 drivers
+v0x5596a84e88a0_0 .net "meas_gpi_4", 0 0, o0x7f444d39aeb8;  alias, 0 drivers
+v0x5596a84e8960_0 .net "meas_gpi_5", 0 0, o0x7f444d39aee8;  alias, 0 drivers
+v0x5596a84e8a20_0 .net "meas_gpi_6", 0 0, o0x7f444d39af18;  alias, 0 drivers
+v0x5596a84e8ae0_0 .net "meas_gpi_7", 0 0, o0x7f444d39af48;  alias, 0 drivers
+v0x5596a84e8ba0_0 .net "meas_gpi_8", 0 0, o0x7f444d39af78;  alias, 0 drivers
+v0x5596a84e8c60_0 .net "meas_gpi_9", 0 0, o0x7f444d39afa8;  alias, 0 drivers
+v0x5596a84e8d20_0 .net "meas_ichrg_0", 0 0, o0x7f444d39afd8;  alias, 0 drivers
+v0x5596a84e8de0_0 .net "meas_ichrg_1", 0 0, o0x7f444d39b008;  alias, 0 drivers
+v0x5596a84e8ea0_0 .net "meas_ichrg_10", 0 0, o0x7f444d39b038;  alias, 0 drivers
+v0x5596a84e8f60_0 .net "meas_ichrg_11", 0 0, o0x7f444d39b068;  alias, 0 drivers
+v0x5596a84e9020_0 .net "meas_ichrg_12", 0 0, o0x7f444d39b098;  alias, 0 drivers
+v0x5596a84e90e0_0 .net "meas_ichrg_13", 0 0, o0x7f444d39b0c8;  alias, 0 drivers
+v0x5596a84e91a0_0 .net "meas_ichrg_14", 0 0, o0x7f444d39b0f8;  alias, 0 drivers
+v0x5596a84e9260_0 .net "meas_ichrg_15", 0 0, o0x7f444d39b128;  alias, 0 drivers
+v0x5596a84e9320_0 .net "meas_ichrg_2", 0 0, o0x7f444d39b158;  alias, 0 drivers
+v0x5596a84e93e0_0 .net "meas_ichrg_3", 0 0, o0x7f444d39b188;  alias, 0 drivers
+v0x5596a84e94a0_0 .net "meas_ichrg_4", 0 0, o0x7f444d39b1b8;  alias, 0 drivers
+v0x5596a84e9560_0 .net "meas_ichrg_5", 0 0, o0x7f444d39b1e8;  alias, 0 drivers
+v0x5596a84e9620_0 .net "meas_ichrg_6", 0 0, o0x7f444d39b218;  alias, 0 drivers
+v0x5596a84e96e0_0 .net "meas_ichrg_7", 0 0, o0x7f444d39b248;  alias, 0 drivers
+v0x5596a84e97a0_0 .net "meas_ichrg_8", 0 0, o0x7f444d39b278;  alias, 0 drivers
+v0x5596a84e9860_0 .net "meas_ichrg_9", 0 0, o0x7f444d39b2a8;  alias, 0 drivers
+v0x5596a84e9920_0 .net "meas_iin_0", 0 0, o0x7f444d39b2d8;  alias, 0 drivers
+v0x5596a84e99e0_0 .net "meas_iin_1", 0 0, o0x7f444d39b308;  alias, 0 drivers
+v0x5596a84e9aa0_0 .net "meas_iin_10", 0 0, o0x7f444d39b338;  alias, 0 drivers
+v0x5596a84e9b60_0 .net "meas_iin_11", 0 0, o0x7f444d39b368;  alias, 0 drivers
+v0x5596a84e9c20_0 .net "meas_iin_12", 0 0, o0x7f444d39b398;  alias, 0 drivers
+v0x5596a84e9ce0_0 .net "meas_iin_13", 0 0, o0x7f444d39b3c8;  alias, 0 drivers
+v0x5596a84e9da0_0 .net "meas_iin_14", 0 0, o0x7f444d39b3f8;  alias, 0 drivers
+v0x5596a84e9e60_0 .net "meas_iin_15", 0 0, o0x7f444d39b428;  alias, 0 drivers
+v0x5596a84e9f20_0 .net "meas_iin_2", 0 0, o0x7f444d39b458;  alias, 0 drivers
+v0x5596a84e9fe0_0 .net "meas_iin_3", 0 0, o0x7f444d39b488;  alias, 0 drivers
+v0x5596a84ea0a0_0 .net "meas_iin_4", 0 0, o0x7f444d39b4b8;  alias, 0 drivers
+v0x5596a84ea160_0 .net "meas_iin_5", 0 0, o0x7f444d39b4e8;  alias, 0 drivers
+v0x5596a84ea220_0 .net "meas_iin_6", 0 0, o0x7f444d39b518;  alias, 0 drivers
+v0x5596a84ea2e0_0 .net "meas_iin_7", 0 0, o0x7f444d39b548;  alias, 0 drivers
+v0x5596a84ea3a0_0 .net "meas_iin_8", 0 0, o0x7f444d39b578;  alias, 0 drivers
+v0x5596a84ea460_0 .net "meas_iin_9", 0 0, o0x7f444d39b5a8;  alias, 0 drivers
+v0x5596a84ea520_0 .net "meas_vcap1_0", 0 0, o0x7f444d39b5d8;  alias, 0 drivers
+v0x5596a84ea5e0_0 .net "meas_vcap1_1", 0 0, o0x7f444d39b608;  alias, 0 drivers
+v0x5596a84ea6a0_0 .net "meas_vcap1_10", 0 0, o0x7f444d39b638;  alias, 0 drivers
+v0x5596a84ea760_0 .net "meas_vcap1_11", 0 0, o0x7f444d39b668;  alias, 0 drivers
+v0x5596a84ea820_0 .net "meas_vcap1_12", 0 0, o0x7f444d39b698;  alias, 0 drivers
+v0x5596a84ea8e0_0 .net "meas_vcap1_13", 0 0, o0x7f444d39b6c8;  alias, 0 drivers
+v0x5596a84ea9a0_0 .net "meas_vcap1_14", 0 0, o0x7f444d39b6f8;  alias, 0 drivers
+v0x5596a84eaa60_0 .net "meas_vcap1_15", 0 0, o0x7f444d39b728;  alias, 0 drivers
+v0x5596a84eab20_0 .net "meas_vcap1_2", 0 0, o0x7f444d39b758;  alias, 0 drivers
+v0x5596a84eabe0_0 .net "meas_vcap1_3", 0 0, o0x7f444d39b788;  alias, 0 drivers
+v0x5596a84eaca0_0 .net "meas_vcap1_4", 0 0, o0x7f444d39b7b8;  alias, 0 drivers
+v0x5596a84ead60_0 .net "meas_vcap1_5", 0 0, o0x7f444d39b7e8;  alias, 0 drivers
+v0x5596a84eae20_0 .net "meas_vcap1_6", 0 0, o0x7f444d39b818;  alias, 0 drivers
+v0x5596a84eaee0_0 .net "meas_vcap1_7", 0 0, o0x7f444d39b848;  alias, 0 drivers
+v0x5596a84eafa0_0 .net "meas_vcap1_8", 0 0, o0x7f444d39b878;  alias, 0 drivers
+v0x5596a84eb060_0 .net "meas_vcap1_9", 0 0, o0x7f444d39b8a8;  alias, 0 drivers
+v0x5596a84eb120_0 .net "meas_vcap2_0", 0 0, o0x7f444d39b8d8;  alias, 0 drivers
+v0x5596a84eb1e0_0 .net "meas_vcap2_1", 0 0, o0x7f444d39b908;  alias, 0 drivers
+v0x5596a84eb2a0_0 .net "meas_vcap2_10", 0 0, o0x7f444d39b938;  alias, 0 drivers
+v0x5596a84eb360_0 .net "meas_vcap2_11", 0 0, o0x7f444d39b968;  alias, 0 drivers
+v0x5596a84eb420_0 .net "meas_vcap2_12", 0 0, o0x7f444d39b998;  alias, 0 drivers
+v0x5596a84eb4e0_0 .net "meas_vcap2_13", 0 0, o0x7f444d39b9c8;  alias, 0 drivers
+v0x5596a84eb5a0_0 .net "meas_vcap2_14", 0 0, o0x7f444d39b9f8;  alias, 0 drivers
+v0x5596a84eb660_0 .net "meas_vcap2_15", 0 0, o0x7f444d39ba28;  alias, 0 drivers
+v0x5596a84eb720_0 .net "meas_vcap2_2", 0 0, o0x7f444d39ba58;  alias, 0 drivers
+v0x5596a84eb7e0_0 .net "meas_vcap2_3", 0 0, o0x7f444d39ba88;  alias, 0 drivers
+v0x5596a84eb8a0_0 .net "meas_vcap2_4", 0 0, o0x7f444d39bab8;  alias, 0 drivers
+v0x5596a84eb960_0 .net "meas_vcap2_5", 0 0, o0x7f444d39bae8;  alias, 0 drivers
+v0x5596a84eba20_0 .net "meas_vcap2_6", 0 0, o0x7f444d39bb18;  alias, 0 drivers
+v0x5596a84ebae0_0 .net "meas_vcap2_7", 0 0, o0x7f444d39bb48;  alias, 0 drivers
+v0x5596a84ebba0_0 .net "meas_vcap2_8", 0 0, o0x7f444d39bb78;  alias, 0 drivers
+v0x5596a84ebc60_0 .net "meas_vcap2_9", 0 0, o0x7f444d39bba8;  alias, 0 drivers
+v0x5596a84ebd20_0 .net "meas_vcap3_0", 0 0, o0x7f444d39bbd8;  alias, 0 drivers
+v0x5596a84ebde0_0 .net "meas_vcap3_1", 0 0, o0x7f444d39bc08;  alias, 0 drivers
+v0x5596a84ebea0_0 .net "meas_vcap3_10", 0 0, o0x7f444d39bc38;  alias, 0 drivers
+v0x5596a84ebf60_0 .net "meas_vcap3_11", 0 0, o0x7f444d39bc68;  alias, 0 drivers
+v0x5596a84ec020_0 .net "meas_vcap3_12", 0 0, o0x7f444d39bc98;  alias, 0 drivers
+v0x5596a84ec0e0_0 .net "meas_vcap3_13", 0 0, o0x7f444d39bcc8;  alias, 0 drivers
+v0x5596a84ec1a0_0 .net "meas_vcap3_14", 0 0, o0x7f444d39bcf8;  alias, 0 drivers
+v0x5596a84ec260_0 .net "meas_vcap3_15", 0 0, o0x7f444d39bd28;  alias, 0 drivers
+v0x5596a84ecb30_0 .net "meas_vcap3_2", 0 0, o0x7f444d39bd58;  alias, 0 drivers
+v0x5596a84ecbf0_0 .net "meas_vcap3_3", 0 0, o0x7f444d39bd88;  alias, 0 drivers
+v0x5596a84eccb0_0 .net "meas_vcap3_4", 0 0, o0x7f444d39bdb8;  alias, 0 drivers
+v0x5596a84ecd70_0 .net "meas_vcap3_5", 0 0, o0x7f444d39bde8;  alias, 0 drivers
+v0x5596a84ece30_0 .net "meas_vcap3_6", 0 0, o0x7f444d39be18;  alias, 0 drivers
+v0x5596a84ecef0_0 .net "meas_vcap3_7", 0 0, o0x7f444d39be48;  alias, 0 drivers
+v0x5596a84ecfb0_0 .net "meas_vcap3_8", 0 0, o0x7f444d39be78;  alias, 0 drivers
+v0x5596a84ed070_0 .net "meas_vcap3_9", 0 0, o0x7f444d39bea8;  alias, 0 drivers
+v0x5596a84ed130_0 .net "meas_vcap4_0", 0 0, o0x7f444d39bed8;  alias, 0 drivers
+v0x5596a84ed1f0_0 .net "meas_vcap4_1", 0 0, o0x7f444d39bf08;  alias, 0 drivers
+v0x5596a84ed2b0_0 .net "meas_vcap4_10", 0 0, o0x7f444d39bf38;  alias, 0 drivers
+v0x5596a84ed370_0 .net "meas_vcap4_11", 0 0, o0x7f444d39bf68;  alias, 0 drivers
+v0x5596a84ed430_0 .net "meas_vcap4_12", 0 0, o0x7f444d39bf98;  alias, 0 drivers
+v0x5596a84ed4f0_0 .net "meas_vcap4_13", 0 0, o0x7f444d39bfc8;  alias, 0 drivers
+v0x5596a84ed5b0_0 .net "meas_vcap4_14", 0 0, o0x7f444d39bff8;  alias, 0 drivers
+v0x5596a84ed670_0 .net "meas_vcap4_15", 0 0, o0x7f444d39c028;  alias, 0 drivers
+v0x5596a84ed730_0 .net "meas_vcap4_2", 0 0, o0x7f444d39c058;  alias, 0 drivers
+v0x5596a84ed7f0_0 .net "meas_vcap4_3", 0 0, o0x7f444d39c088;  alias, 0 drivers
+v0x5596a84ed8b0_0 .net "meas_vcap4_4", 0 0, o0x7f444d39c0b8;  alias, 0 drivers
+v0x5596a84ed970_0 .net "meas_vcap4_5", 0 0, o0x7f444d39c0e8;  alias, 0 drivers
+v0x5596a84eda30_0 .net "meas_vcap4_6", 0 0, o0x7f444d39c118;  alias, 0 drivers
+v0x5596a84edaf0_0 .net "meas_vcap4_7", 0 0, o0x7f444d39c148;  alias, 0 drivers
+v0x5596a84edbb0_0 .net "meas_vcap4_8", 0 0, o0x7f444d39c178;  alias, 0 drivers
+v0x5596a84edc70_0 .net "meas_vcap4_9", 0 0, o0x7f444d39c1a8;  alias, 0 drivers
+v0x5596a84edd30_0 .net "meas_vcap_0", 0 0, o0x7f444d39c1d8;  alias, 0 drivers
+v0x5596a84eddf0_0 .net "meas_vcap_1", 0 0, o0x7f444d39c208;  alias, 0 drivers
+v0x5596a84edeb0_0 .net "meas_vcap_10", 0 0, o0x7f444d39c238;  alias, 0 drivers
+v0x5596a84edf70_0 .net "meas_vcap_11", 0 0, o0x7f444d39c268;  alias, 0 drivers
+v0x5596a84ee030_0 .net "meas_vcap_12", 0 0, o0x7f444d39c298;  alias, 0 drivers
+v0x5596a84ee0f0_0 .net "meas_vcap_13", 0 0, o0x7f444d39c2c8;  alias, 0 drivers
+v0x5596a84ee1b0_0 .net "meas_vcap_14", 0 0, o0x7f444d39c2f8;  alias, 0 drivers
+v0x5596a84ee270_0 .net "meas_vcap_15", 0 0, o0x7f444d39c328;  alias, 0 drivers
+v0x5596a84ee330_0 .net "meas_vcap_2", 0 0, o0x7f444d39c358;  alias, 0 drivers
+v0x5596a84ee3f0_0 .net "meas_vcap_3", 0 0, o0x7f444d39c388;  alias, 0 drivers
+v0x5596a84ee4b0_0 .net "meas_vcap_4", 0 0, o0x7f444d39c3b8;  alias, 0 drivers
+v0x5596a84ee570_0 .net "meas_vcap_5", 0 0, o0x7f444d39c3e8;  alias, 0 drivers
+v0x5596a84ee630_0 .net "meas_vcap_6", 0 0, o0x7f444d39c418;  alias, 0 drivers
+v0x5596a84ee6f0_0 .net "meas_vcap_7", 0 0, o0x7f444d39c448;  alias, 0 drivers
+v0x5596a84ee7b0_0 .net "meas_vcap_8", 0 0, o0x7f444d39c478;  alias, 0 drivers
+v0x5596a84ee870_0 .net "meas_vcap_9", 0 0, o0x7f444d39c4a8;  alias, 0 drivers
+v0x5596a84ee930_0 .net "meas_vin_0", 0 0, o0x7f444d39c4d8;  alias, 0 drivers
+v0x5596a84ee9f0_0 .net "meas_vin_1", 0 0, o0x7f444d39c508;  alias, 0 drivers
+v0x5596a84eeab0_0 .net "meas_vin_10", 0 0, o0x7f444d39c538;  alias, 0 drivers
+v0x5596a84eeb70_0 .net "meas_vin_11", 0 0, o0x7f444d39c568;  alias, 0 drivers
+v0x5596a84eec30_0 .net "meas_vin_12", 0 0, o0x7f444d39c598;  alias, 0 drivers
+v0x5596a84eecf0_0 .net "meas_vin_13", 0 0, o0x7f444d39c5c8;  alias, 0 drivers
+v0x5596a84eedb0_0 .net "meas_vin_14", 0 0, o0x7f444d39c5f8;  alias, 0 drivers
+v0x5596a84eee70_0 .net "meas_vin_15", 0 0, o0x7f444d39c628;  alias, 0 drivers
+v0x5596a84eef30_0 .net "meas_vin_2", 0 0, o0x7f444d39c658;  alias, 0 drivers
+v0x5596a84eeff0_0 .net "meas_vin_3", 0 0, o0x7f444d39c688;  alias, 0 drivers
+v0x5596a84ef0b0_0 .net "meas_vin_4", 0 0, o0x7f444d39c6b8;  alias, 0 drivers
+v0x5596a84ef170_0 .net "meas_vin_5", 0 0, o0x7f444d39c6e8;  alias, 0 drivers
+v0x5596a84ef230_0 .net "meas_vin_6", 0 0, o0x7f444d39c718;  alias, 0 drivers
+v0x5596a84ef2f0_0 .net "meas_vin_7", 0 0, o0x7f444d39c748;  alias, 0 drivers
+v0x5596a84ef3b0_0 .net "meas_vin_8", 0 0, o0x7f444d39c778;  alias, 0 drivers
+v0x5596a84ef470_0 .net "meas_vin_9", 0 0, o0x7f444d39c7a8;  alias, 0 drivers
+v0x5596a84ef530_0 .net "meas_vout_0", 0 0, o0x7f444d39c7d8;  alias, 0 drivers
+v0x5596a84ef5f0_0 .net "meas_vout_1", 0 0, o0x7f444d39c808;  alias, 0 drivers
+v0x5596a84ef6b0_0 .net "meas_vout_10", 0 0, o0x7f444d39c838;  alias, 0 drivers
+v0x5596a84ef770_0 .net "meas_vout_11", 0 0, o0x7f444d39c868;  alias, 0 drivers
+v0x5596a84ef830_0 .net "meas_vout_12", 0 0, o0x7f444d39c898;  alias, 0 drivers
+v0x5596a84ef8f0_0 .net "meas_vout_13", 0 0, o0x7f444d39c8c8;  alias, 0 drivers
+v0x5596a84ef9b0_0 .net "meas_vout_14", 0 0, o0x7f444d39c8f8;  alias, 0 drivers
+v0x5596a84efa70_0 .net "meas_vout_15", 0 0, o0x7f444d39c928;  alias, 0 drivers
+v0x5596a84efb30_0 .net "meas_vout_2", 0 0, o0x7f444d39c958;  alias, 0 drivers
+v0x5596a84efbf0_0 .net "meas_vout_3", 0 0, o0x7f444d39c988;  alias, 0 drivers
+v0x5596a84efcb0_0 .net "meas_vout_4", 0 0, o0x7f444d39c9b8;  alias, 0 drivers
+v0x5596a84efd70_0 .net "meas_vout_5", 0 0, o0x7f444d39c9e8;  alias, 0 drivers
+v0x5596a84efe30_0 .net "meas_vout_6", 0 0, o0x7f444d39ca18;  alias, 0 drivers
+v0x5596a84efef0_0 .net "meas_vout_7", 0 0, o0x7f444d39ca48;  alias, 0 drivers
+v0x5596a84effb0_0 .net "meas_vout_8", 0 0, o0x7f444d39ca78;  alias, 0 drivers
+v0x5596a84f0070_0 .net "meas_vout_9", 0 0, o0x7f444d39caa8;  alias, 0 drivers
+v0x5596a84f0130_0 .net "porb", 0 0, o0x7f444d39a4c8;  alias, 0 drivers
+v0x5596a84f0200_0 .net "status_meas_dtemp_15", 15 0, o0x7f444d39cad8;  alias, 0 drivers
+v0x5596a84f02c0_0 .net "status_meas_gpi_15", 15 0, o0x7f444d39cb08;  alias, 0 drivers
+v0x5596a84f03a0_0 .net "status_meas_ichrg_15", 15 0, o0x7f444d39cb38;  alias, 0 drivers
+v0x5596a84f0480_0 .net "status_meas_iin_15", 15 0, o0x7f444d39cb68;  alias, 0 drivers
+v0x5596a84f0560_0 .net "status_meas_vcap1_15", 15 0, o0x7f444d39cb98;  alias, 0 drivers
+v0x5596a84f0640_0 .net "status_meas_vcap2_15", 15 0, o0x7f444d39cbc8;  alias, 0 drivers
+v0x5596a84f0720_0 .net "status_meas_vcap3_15", 15 0, o0x7f444d39cbf8;  alias, 0 drivers
+v0x5596a84f0800_0 .net "status_meas_vcap4_15", 15 0, o0x7f444d39cc28;  alias, 0 drivers
+v0x5596a84f08e0_0 .net "status_meas_vcap_15", 15 0, o0x7f444d39cc58;  alias, 0 drivers
+v0x5596a84f09c0_0 .net "status_meas_vin_15", 15 0, o0x7f444d39cc88;  alias, 0 drivers
+v0x5596a84f0aa0_0 .net "status_meas_vout_15", 15 0, o0x7f444d39ccb8;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/celera/projects/Sunnyvale/software/TELEMETRYmeasureREGISTER/verilog10/overlay_TELEMETRYmeasureREGISTER.v";
