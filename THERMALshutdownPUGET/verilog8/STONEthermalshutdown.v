@@ -1,27 +1,18 @@
 // ------------------------ Module Definitions -----------
-module VESPAasmINPUT1 (i,o,i0,i1,SUB,CELG,CELV,Tstate,CELG59462,CELV96848,CELSUB40948);
-  input  i;
+module VESPAasmINPUT1 (o,i0,Tstate,CELG59462,CELV96848,CELSUB40948);
   output  o;
   input  i0;
-  input  i1;
-  input  SUB;
-  input  CELG;
-  input  CELV;
   input  Tstate;
   input  CELG59462;
   input  CELV96848;
   input  CELSUB40948;
 endmodule
 
-module VESPAasmINPUT3 (i,o,i0,i1,i2,SUB,CELG,CELV,Tstate,CELG59462,CELV96848,CELSUB40948);
-  input  i;
+module VESPAasmINPUT3 (o,i0,i1,i2,Tstate,CELG59462,CELV96848,CELSUB40948);
   output  o;
   input  i0;
   input  i1;
   input  i2;
-  input  SUB;
-  input  CELG;
-  input  CELV;
   input  Tstate;
   input  CELG59462;
   input  CELV96848;
@@ -141,30 +132,14 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module STONEthermalshutdown (I, O, d, i, o, q, ck, i0, i1, qb, rb, SUB, CELG, CELV, high, REFIN, CELSUB, enable, CELG59462, CELV96848, ok_buffer, CELSUB40948, enable_switch, ok_comparator, ok_thermometer, thermal_shutdown, ok_thermalshutdown, REF_THERMALSHUTDOWN, enable_thermalshutdown);
-input  I;
-inout  O;
-input  d;
-input  i;
-output  o;
-output  q;
-input  ck;
-input  i0;
-input  i1;
-output  qb;
-input  rb;
-input  SUB;
-input  CELG;
-input  CELV;
+module STONEthermalshutdown (high, REFIN, enable, CELG59462, CELV96848, ok_buffer, CELSUB40948, ok_comparator, ok_thermometer, thermal_shutdown, ok_thermalshutdown, REF_THERMALSHUTDOWN, enable_thermalshutdown);
 input  high;
 inout  REFIN;
-input  CELSUB;
 output  enable;
 input  CELG59462;
 input  CELV96848;
 input  ok_buffer;
 input  CELSUB40948;
-input  enable_switch;
 input  ok_comparator;
 input  ok_thermometer;
 output  thermal_shutdown;
@@ -177,13 +152,8 @@ input  enable_thermalshutdown;
 
 // ------------------------ Networks ---------------------
 VESPAasmINPUT1 XU12 (
-.i(i),
 .o(net_64),
 .i0(net_63),
-.i1(i1),
-.SUB(SUB),
-.CELG(CELG),
-.CELV(CELV),
 .Tstate(high),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -191,13 +161,8 @@ VESPAasmINPUT1 XU12 (
 );
 
 VESPAasmINPUT1 XU13 (
-.i(i),
 .o(net_67),
 .i0(net_69),
-.i1(i1),
-.SUB(SUB),
-.CELG(CELG),
-.CELV(CELV),
 .Tstate(net_71),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -205,14 +170,10 @@ VESPAasmINPUT1 XU13 (
 );
 
 VESPAasmINPUT3 XU2 (
-.i(i),
 .o(net_72),
 .i0(ok_thermometer),
 .i1(ok_comparator),
 .i2(ok_buffer),
-.SUB(SUB),
-.CELG(CELG),
-.CELV(CELV),
 .Tstate(enable),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -220,13 +181,8 @@ VESPAasmINPUT3 XU2 (
 );
 
 VESPAasmINPUT1 XU3 (
-.i(i),
 .o(net_70),
 .i0(net_74),
-.i1(i1),
-.SUB(SUB),
-.CELG(CELG),
-.CELV(CELV),
 .Tstate(net_73),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),

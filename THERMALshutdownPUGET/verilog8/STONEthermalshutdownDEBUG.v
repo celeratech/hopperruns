@@ -1,12 +1,5 @@
 // ------------------------ Module Definitions -----------
-module VESPAdftpulse (i,o,i0,i1,SUB,CELG,CELV,stop,pulse,start,CELG59462,CELV96848,CELSUB40948);
-  input  i;
-  output  o;
-  input  i0;
-  input  i1;
-  input  SUB;
-  input  CELG;
-  input  CELV;
+module VESPAdftpulse (stop,pulse,start,CELG59462,CELV96848,CELSUB40948);
   input  stop;
   output  pulse;
   input  start;
@@ -41,9 +34,7 @@ module dftprobeModel2_30e135e1 ();
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module STONEthermalshutdownDEBUG (i, o, TSD, high, REFIN, CELG59462, CELV96848, CELSUB40948, thermal_shutdown, ok_thermalshutdown, enable_thermalshutdown, hijack_enable_thermalshutdown, dtfprobe_XUTHERMALSHUTDOWNhigh_dadce042, dtfprobe_XUTHERMALSHUTDOWNflag1_dadce042, dtfprobe_XUTHERMALSHUTDOWNstartup_dadce042, dtfprobe_XUTHERMALSHUTDOWNreference_dadce042, dtfprobe_XUTHERMALSHUTDOWNtemperature_dadce042);
-input  i;
-output  o;
+module STONEthermalshutdownDEBUG (TSD, high, REFIN, CELG59462, CELV96848, CELSUB40948, thermal_shutdown, ok_thermalshutdown, enable_thermalshutdown, hijack_enable_thermalshutdown, dtfprobe_XUTHERMALSHUTDOWNhigh_dadce042, dtfprobe_XUTHERMALSHUTDOWNflag1_dadce042, dtfprobe_XUTHERMALSHUTDOWNstartup_dadce042, dtfprobe_XUTHERMALSHUTDOWNreference_dadce042, dtfprobe_XUTHERMALSHUTDOWNtemperature_dadce042);
 input  TSD;
 input  high;
 input  REFIN;
@@ -65,13 +56,6 @@ output  dtfprobe_XUTHERMALSHUTDOWNtemperature_dadce042;
 
 // ------------------------ Networks ---------------------
 VESPAdftpulse XU7 (
-.i(i),
-.o(o),
-.i0(i0),
-.i1(i1),
-.SUB(SUB),
-.CELG(CELG),
-.CELV(CELV),
 .stop(ok_thermalshutdown),
 .pulse(dtfprobe_XUTHERMALSHUTDOWNstartup_dadce042),
 .start(hijack_enable_thermalshutdown),

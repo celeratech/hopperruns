@@ -40,14 +40,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module VESPAdftpulse (i, o, i0, i1, SUB, CELG, CELV, stop, pulse, start, CELG59462, CELV96848, CELSUB40948);
-input  i;
-output  o;
-input  i0;
-input  i1;
-input  SUB;
-input  CELG;
-input  CELV;
+module VESPAdftpulse (stop, pulse, start, CELG59462, CELV96848, CELSUB40948);
 input  stop;
 output  pulse;
 input  start;
