@@ -229,7 +229,7 @@ thermometer_99d48abe Xthermometer1 (
 .TAI_OUT_THERMOMETER(noconn_TAI_OUT_THERMOMETER1),
 .ten_out_thermometer(tl0),
 .trim_thermometer_offset({a0,a0,a0,a0,a0,a0,a0}),
-.celkelvin_GNDthermometer(TBD_XTHERMAL_Xthermometer1_celkelvin_GNDthermometer)
+.celkelvin_GNDthermometer(celkelvin_GNDthermometer)
 );
 
 STONEnoconn XNCnoconn_TAI_OUT_THERMOMETER1 (
