@@ -1,5 +1,7 @@
 // ------------------------ Module Definitions -----------
-module STONEthermalshutdownDEBUG (TSD,high,REFIN,CELG59462,CELV96848,CELSUB40948,thermal_shutdown,ok_thermalshutdown,enable_thermalshutdown,hijack_enable_thermalshutdown,dtfprobe_XUTHERMALSHUTDOWNhigh_dadce042,dtfprobe_XUTHERMALSHUTDOWNflag1_dadce042,dtfprobe_XUTHERMALSHUTDOWNstartup_dadce042,dtfprobe_XUTHERMALSHUTDOWNreference_dadce042,dtfprobe_XUTHERMALSHUTDOWNtemperature_dadce042);
+module STONEthermalshutdownDEBUG (i,o,TSD,high,REFIN,CELG59462,CELV96848,CELSUB40948,thermal_shutdown,ok_thermalshutdown,enable_thermalshutdown,hijack_enable_thermalshutdown,dtfprobe_XUTHERMALSHUTDOWNhigh_dadce042,dtfprobe_XUTHERMALSHUTDOWNflag1_dadce042,dtfprobe_XUTHERMALSHUTDOWNstartup_dadce042,dtfprobe_XUTHERMALSHUTDOWNreference_dadce042,dtfprobe_XUTHERMALSHUTDOWNtemperature_dadce042);
+  input  i;
+  output  o;
   input  TSD;
   input  high;
   input  REFIN;
@@ -17,14 +19,30 @@ module STONEthermalshutdownDEBUG (TSD,high,REFIN,CELG59462,CELV96848,CELSUB40948
   output  dtfprobe_XUTHERMALSHUTDOWNtemperature_dadce042;
 endmodule
 
-module STONEthermalshutdown (high,REFIN,enable,CELG59462,CELV96848,ok_buffer,CELSUB40948,ok_comparator,ok_thermometer,thermal_shutdown,ok_thermalshutdown,REF_THERMALSHUTDOWN,enable_thermalshutdown);
+module STONEthermalshutdown (I,O,d,i,o,q,ck,i0,i1,qb,rb,SUB,CELG,CELV,high,REFIN,CELSUB,enable,CELG59462,CELV96848,ok_buffer,CELSUB40948,enable_switch,ok_comparator,ok_thermometer,thermal_shutdown,ok_thermalshutdown,REF_THERMALSHUTDOWN,enable_thermalshutdown);
+  input  I;
+  inout  O;
+  input  d;
+  input  i;
+  output  o;
+  output  q;
+  input  ck;
+  input  i0;
+  input  i1;
+  output  qb;
+  input  rb;
+  input  SUB;
+  input  CELG;
+  input  CELV;
   input  high;
   inout  REFIN;
+  input  CELSUB;
   output  enable;
   input  CELG59462;
   input  CELV96848;
   input  ok_buffer;
   input  CELSUB40948;
+  input  enable_switch;
   input  ok_comparator;
   input  ok_thermometer;
   output  thermal_shutdown;
@@ -119,28 +137,56 @@ module STONEnoconn ( noconn );
 endmodule
 
 
-//Verilog HDL for "Generate", "WRAPPER1" "functional"
-
-
-module WRAPPER1 ( o, i );
-
-  input i;
-  output o;
-endmodule
-
-
 // ------------------------ Module Verilog ---------------
-module THERMALshutdownPUGET (SIMPV, CELG59462, CELV96848, CELSUB40948, IP_20a660aa, IP_70661d02, IP_cd0a370d, thermal_shutdown, REF_THERMALSHUTDOWN, enable_thermalshutdown, celkelvin_GNDthermometer, dtfprobe_XUTHERMALSHUTDOWNhigh_dadce042, dtfprobe_XUTHERMALSHUTDOWNflag1_dadce042, dtfprobe_XUTHERMALSHUTDOWNstartup_dadce042, dtfprobe_XUTHERMALSHUTDOWNreference_dadce042, dtfprobe_XUTHERMALSHUTDOWNtemperature_dadce042);
+module THERMALshutdownPUGET (I, O, d, i, o, q, IN, IP, ck, i0, i1, i2, qb, rb, OUT, SUB, CELG, CELV, SIMPV, CELSUB, noconn, CELG59462, CELV96848, ok_vbuffer, CELSUB40948, IP_20a660aa, IP_70661d02, IP_cd0a370d, enable_switch, ok_comparator, INN_COMPARATOR, INP_COMPARATOR, enable_vbuffer, global_vbuffer, ok_thermometer, out_comparator, OUT_THERMOMETER, ten_thermometer, thermal_shutdown, enable_comparator, global_comparator, enable_thermometer, global_thermometer, REF_THERMALSHUTDOWN, TAI_OUT_THERMOMETER, ten_out_thermometer, enable_thermalshutdown, trim_thermometer_offset, celkelvin_GNDthermometer, dtfprobe_XUTHERMALSHUTDOWNhigh_dadce042, dtfprobe_XUTHERMALSHUTDOWNflag1_dadce042, dtfprobe_XUTHERMALSHUTDOWNstartup_dadce042, dtfprobe_XUTHERMALSHUTDOWNreference_dadce042, dtfprobe_XUTHERMALSHUTDOWNtemperature_dadce042);
+input  I;
+inout  O;
+input  d;
+input  i;
+output  o;
+output  q;
+input  IN;
+input  IP;
+input  ck;
+input  i0;
+input  i1;
+input  i2;
+output  qb;
+input  rb;
+output  OUT;
+input  SUB;
+input  CELG;
+input  CELV;
 input  SIMPV;
+input  CELSUB;
+input  noconn;
   input  CELG59462;
   input  CELV96848;
+output  ok_vbuffer;
   input  CELSUB40948;
 input  IP_20a660aa;
 input  IP_70661d02;
 input  IP_cd0a370d;
+input  enable_switch;
+output  ok_comparator;
+input  INN_COMPARATOR;
+input  INP_COMPARATOR;
+input  enable_vbuffer;
+input  global_vbuffer;
+output  ok_thermometer;
+output  out_comparator;
+output  OUT_THERMOMETER;
+input  ten_thermometer;
 output  thermal_shutdown;
+input  enable_comparator;
+input  global_comparator;
+input  enable_thermometer;
+input  global_thermometer;
 input  REF_THERMALSHUTDOWN;
+output  TAI_OUT_THERMOMETER;
+input  ten_out_thermometer;
 input  enable_thermalshutdown;
+input [6:0] trim_thermometer_offset;
 input  celkelvin_GNDthermometer;
 output  dtfprobe_XUTHERMALSHUTDOWNhigh_dadce042;
 output  dtfprobe_XUTHERMALSHUTDOWNflag1_dadce042;
@@ -154,6 +200,8 @@ wire [6:0] trim_thermometer_offset;
 
 // ------------------------ Networks ---------------------
 STONEthermalshutdownDEBUG XDEBUG (
+.i(i),
+.o(o),
 .TSD(net_53),
 .high(net_59),
 .REFIN(net_52),
@@ -172,13 +220,29 @@ STONEthermalshutdownDEBUG XDEBUG (
 );
 
 STONEthermalshutdown XTHERMAL (
+.I(I),
+.O(O),
+.d(d),
+.i(i),
+.o(o),
+.q(q),
+.ck(ck),
+.i0(i0),
+.i1(i1),
+.qb(qb),
+.rb(rb),
+.SUB(SUB),
+.CELG(CELG),
+.CELV(CELV),
 .high(net_59),
 .REFIN(net_52),
+.CELSUB(CELSUB),
 .enable(net_55),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .ok_buffer(net_58),
 .CELSUB40948(CELSUB40948),
+.enable_switch(enable_switch),
 .ok_comparator(net_56),
 .ok_thermometer(net_54),
 .thermal_shutdown(thermal_shutdown),
@@ -239,16 +303,11 @@ thermometer_99d48abe Xthermometer1 (
 .TAI_OUT_THERMOMETER(noconn_TAI_OUT_THERMOMETER1),
 .ten_out_thermometer(tl0),
 .trim_thermometer_offset({a0,a0,a0,a0,a0,a0,a0}),
-.celkelvin_GNDthermometer(celkelvin_GNDthermometer)
+.celkelvin_GNDthermometer(TBD_XTHERMAL_Xthermometer1_celkelvin_GNDthermometer)
 );
 
 STONEnoconn XNCnoconn_TAI_OUT_THERMOMETER1 (
 .noconn(noconn_TAI_OUT_THERMOMETER1)
-);
-
-WRAPPER1 celkelvin_GNDthermometer_WRAPPER (
-.i(celkelvin_GNDthermometer),
-.o(CELG59462)
 );
 
 endmodule

@@ -55,11 +55,15 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module VESPAasmINPUT3 (o, i0, i1, i2, Tstate, CELG59462, CELV96848, CELSUB40948);
+module VESPAasmINPUT3 (i, o, i0, i1, i2, SUB, CELG, CELV, Tstate, CELG59462, CELV96848, CELSUB40948);
+input  i;
 output  o;
 input  i0;
 input  i1;
 input  i2;
+input  SUB;
+input  CELG;
+input  CELV;
 input  Tstate;
 input  CELG59462;
 input  CELV96848;

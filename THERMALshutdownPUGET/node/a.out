@@ -7,107 +7,137 @@
 :vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
 :vpi_module "/usr/local/lib/ivl/va_math.vpi";
-S_0x5602bd702f60 .scope module, "STONEthermalshutdownDEBUG" "STONEthermalshutdownDEBUG" 2 37;
+S_0x556fb1d0ff60 .scope module, "STONEthermalshutdownDEBUG" "STONEthermalshutdownDEBUG" 2 44;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "TSD";
-    .port_info 1 /INPUT 1 "high";
-    .port_info 2 /INPUT 1 "REFIN";
-    .port_info 3 /INPUT 1 "CELG59462";
-    .port_info 4 /INPUT 1 "CELV96848";
-    .port_info 5 /INPUT 1 "CELSUB40948";
-    .port_info 6 /INPUT 1 "thermal_shutdown";
-    .port_info 7 /INPUT 1 "ok_thermalshutdown";
-    .port_info 8 /INPUT 1 "enable_thermalshutdown";
-    .port_info 9 /OUTPUT 1 "hijack_enable_thermalshutdown";
-    .port_info 10 /OUTPUT 1 "dtfprobe_XUTHERMALSHUTDOWNhigh_dadce042";
-    .port_info 11 /OUTPUT 1 "dtfprobe_XUTHERMALSHUTDOWNflag1_dadce042";
-    .port_info 12 /OUTPUT 1 "dtfprobe_XUTHERMALSHUTDOWNstartup_dadce042";
-    .port_info 13 /OUTPUT 1 "dtfprobe_XUTHERMALSHUTDOWNreference_dadce042";
-    .port_info 14 /OUTPUT 1 "dtfprobe_XUTHERMALSHUTDOWNtemperature_dadce042";
-o0x7f2b3d9c4018 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5602bd7527d0_0 .net "CELG59462", 0 0, o0x7f2b3d9c4018;  0 drivers
-o0x7f2b3d9c4048 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5602bd7528a0_0 .net "CELSUB40948", 0 0, o0x7f2b3d9c4048;  0 drivers
-o0x7f2b3d9c4078 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5602bd752970_0 .net "CELV96848", 0 0, o0x7f2b3d9c4078;  0 drivers
-o0x7f2b3d9c42e8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5602bd752a70_0 .net "REFIN", 0 0, o0x7f2b3d9c42e8;  0 drivers
-o0x7f2b3d9c43a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5602bd752b40_0 .net "TSD", 0 0, o0x7f2b3d9c43a8;  0 drivers
-o0x7f2b3d9c4558 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5602bd752c30_0 .net "dtfprobe_XUTHERMALSHUTDOWNflag1_dadce042", 0 0, o0x7f2b3d9c4558;  0 drivers
-o0x7f2b3d9c4498 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5602bd752d00_0 .net "dtfprobe_XUTHERMALSHUTDOWNhigh_dadce042", 0 0, o0x7f2b3d9c4498;  0 drivers
-o0x7f2b3d9c4318 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5602bd752dd0_0 .net "dtfprobe_XUTHERMALSHUTDOWNreference_dadce042", 0 0, o0x7f2b3d9c4318;  0 drivers
-o0x7f2b3d9c40a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5602bd752ea0_0 .net "dtfprobe_XUTHERMALSHUTDOWNstartup_dadce042", 0 0, o0x7f2b3d9c40a8;  0 drivers
-o0x7f2b3d9c43d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5602bd753000_0 .net "dtfprobe_XUTHERMALSHUTDOWNtemperature_dadce042", 0 0, o0x7f2b3d9c43d8;  0 drivers
-o0x7f2b3d9c4258 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5602bd7530d0_0 .net "enable_thermalshutdown", 0 0, o0x7f2b3d9c4258;  0 drivers
-o0x7f2b3d9c4468 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5602bd7531a0_0 .net "high", 0 0, o0x7f2b3d9c4468;  0 drivers
-o0x7f2b3d9c40d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5602bd753270_0 .net "hijack_enable_thermalshutdown", 0 0, o0x7f2b3d9c40d8;  0 drivers
-o0x7f2b3d9c4108 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5602bd753310_0 .net "ok_thermalshutdown", 0 0, o0x7f2b3d9c4108;  0 drivers
-o0x7f2b3d9c4528 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5602bd7533b0_0 .net "thermal_shutdown", 0 0, o0x7f2b3d9c4528;  0 drivers
-S_0x5602bd700ec0 .scope module, "XU7" "VESPAdftpulse" 2 58, 2 2 0, S_0x5602bd702f60;
+    .port_info 0 /INPUT 1 "i";
+    .port_info 1 /OUTPUT 1 "o";
+    .port_info 2 /INPUT 1 "TSD";
+    .port_info 3 /INPUT 1 "high";
+    .port_info 4 /INPUT 1 "REFIN";
+    .port_info 5 /INPUT 1 "CELG59462";
+    .port_info 6 /INPUT 1 "CELV96848";
+    .port_info 7 /INPUT 1 "CELSUB40948";
+    .port_info 8 /INPUT 1 "thermal_shutdown";
+    .port_info 9 /INPUT 1 "ok_thermalshutdown";
+    .port_info 10 /INPUT 1 "enable_thermalshutdown";
+    .port_info 11 /OUTPUT 1 "hijack_enable_thermalshutdown";
+    .port_info 12 /OUTPUT 1 "dtfprobe_XUTHERMALSHUTDOWNhigh_dadce042";
+    .port_info 13 /OUTPUT 1 "dtfprobe_XUTHERMALSHUTDOWNflag1_dadce042";
+    .port_info 14 /OUTPUT 1 "dtfprobe_XUTHERMALSHUTDOWNstartup_dadce042";
+    .port_info 15 /OUTPUT 1 "dtfprobe_XUTHERMALSHUTDOWNreference_dadce042";
+    .port_info 16 /OUTPUT 1 "dtfprobe_XUTHERMALSHUTDOWNtemperature_dadce042";
+o0x7f9a8e842018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d63760_0 .net "CELG", 0 0, o0x7f9a8e842018;  0 drivers
+o0x7f9a8e842048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d63830_0 .net "CELG59462", 0 0, o0x7f9a8e842048;  0 drivers
+o0x7f9a8e842078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d63900_0 .net "CELSUB40948", 0 0, o0x7f9a8e842078;  0 drivers
+o0x7f9a8e8420a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d63a00_0 .net "CELV", 0 0, o0x7f9a8e8420a8;  0 drivers
+o0x7f9a8e8420d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d63ad0_0 .net "CELV96848", 0 0, o0x7f9a8e8420d8;  0 drivers
+o0x7f9a8e842588 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d63bc0_0 .net "REFIN", 0 0, o0x7f9a8e842588;  0 drivers
+o0x7f9a8e842108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d63c90_0 .net "SUB", 0 0, o0x7f9a8e842108;  0 drivers
+o0x7f9a8e842648 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d63d60_0 .net "TSD", 0 0, o0x7f9a8e842648;  0 drivers
+o0x7f9a8e8427f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d63e30_0 .net "dtfprobe_XUTHERMALSHUTDOWNflag1_dadce042", 0 0, o0x7f9a8e8427f8;  0 drivers
+o0x7f9a8e842738 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d63f90_0 .net "dtfprobe_XUTHERMALSHUTDOWNhigh_dadce042", 0 0, o0x7f9a8e842738;  0 drivers
+o0x7f9a8e8425b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d64060_0 .net "dtfprobe_XUTHERMALSHUTDOWNreference_dadce042", 0 0, o0x7f9a8e8425b8;  0 drivers
+o0x7f9a8e8421f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d64130_0 .net "dtfprobe_XUTHERMALSHUTDOWNstartup_dadce042", 0 0, o0x7f9a8e8421f8;  0 drivers
+o0x7f9a8e842678 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d64200_0 .net "dtfprobe_XUTHERMALSHUTDOWNtemperature_dadce042", 0 0, o0x7f9a8e842678;  0 drivers
+o0x7f9a8e8424f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d642d0_0 .net "enable_thermalshutdown", 0 0, o0x7f9a8e8424f8;  0 drivers
+o0x7f9a8e842708 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d643a0_0 .net "high", 0 0, o0x7f9a8e842708;  0 drivers
+o0x7f9a8e842228 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d64470_0 .net "hijack_enable_thermalshutdown", 0 0, o0x7f9a8e842228;  0 drivers
+o0x7f9a8e842138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d64510_0 .net "i", 0 0, o0x7f9a8e842138;  0 drivers
+o0x7f9a8e842168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d646c0_0 .net "i0", 0 0, o0x7f9a8e842168;  0 drivers
+o0x7f9a8e842198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d64790_0 .net "i1", 0 0, o0x7f9a8e842198;  0 drivers
+o0x7f9a8e8421c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d64860_0 .net "o", 0 0, o0x7f9a8e8421c8;  0 drivers
+o0x7f9a8e842258 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d64930_0 .net "ok_thermalshutdown", 0 0, o0x7f9a8e842258;  0 drivers
+o0x7f9a8e8427c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556fb1d64a00_0 .net "thermal_shutdown", 0 0, o0x7f9a8e8427c8;  0 drivers
+S_0x556fb1d0def0 .scope module, "XU7" "VESPAdftpulse" 2 67, 2 2 0, S_0x556fb1d0ff60;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "stop";
-    .port_info 1 /OUTPUT 1 "pulse";
-    .port_info 2 /INPUT 1 "start";
-    .port_info 3 /INPUT 1 "CELG59462";
-    .port_info 4 /INPUT 1 "CELV96848";
-    .port_info 5 /INPUT 1 "CELSUB40948";
-v0x5602bd702ec0_0 .net "CELG59462", 0 0, o0x7f2b3d9c4018;  alias, 0 drivers
-v0x5602bd7506a0_0 .net "CELSUB40948", 0 0, o0x7f2b3d9c4048;  alias, 0 drivers
-v0x5602bd750760_0 .net "CELV96848", 0 0, o0x7f2b3d9c4078;  alias, 0 drivers
-v0x5602bd750800_0 .net "pulse", 0 0, o0x7f2b3d9c40a8;  alias, 0 drivers
-v0x5602bd7508c0_0 .net "start", 0 0, o0x7f2b3d9c40d8;  alias, 0 drivers
-v0x5602bd7509d0_0 .net "stop", 0 0, o0x7f2b3d9c4108;  alias, 0 drivers
-S_0x5602bd750b50 .scope module, "XUTHERMALSHUTDOWNflag1" "dftprobeModel0_c6ea612f" 2 76, 2 24 0, S_0x5602bd702f60;
+    .port_info 0 /INPUT 1 "i";
+    .port_info 1 /OUTPUT 1 "o";
+    .port_info 2 /INPUT 1 "i0";
+    .port_info 3 /INPUT 1 "i1";
+    .port_info 4 /INPUT 1 "SUB";
+    .port_info 5 /INPUT 1 "CELG";
+    .port_info 6 /INPUT 1 "CELV";
+    .port_info 7 /INPUT 1 "stop";
+    .port_info 8 /OUTPUT 1 "pulse";
+    .port_info 9 /INPUT 1 "start";
+    .port_info 10 /INPUT 1 "CELG59462";
+    .port_info 11 /INPUT 1 "CELV96848";
+    .port_info 12 /INPUT 1 "CELSUB40948";
+v0x556fb1d0f4b0_0 .net "CELG", 0 0, o0x7f9a8e842018;  alias, 0 drivers
+v0x556fb1d100f0_0 .net "CELG59462", 0 0, o0x7f9a8e842048;  alias, 0 drivers
+v0x556fb1d0fec0_0 .net "CELSUB40948", 0 0, o0x7f9a8e842078;  alias, 0 drivers
+v0x556fb1d610a0_0 .net "CELV", 0 0, o0x7f9a8e8420a8;  alias, 0 drivers
+v0x556fb1d61160_0 .net "CELV96848", 0 0, o0x7f9a8e8420d8;  alias, 0 drivers
+v0x556fb1d61270_0 .net "SUB", 0 0, o0x7f9a8e842108;  alias, 0 drivers
+v0x556fb1d61330_0 .net "i", 0 0, o0x7f9a8e842138;  alias, 0 drivers
+v0x556fb1d613f0_0 .net "i0", 0 0, o0x7f9a8e842168;  alias, 0 drivers
+v0x556fb1d614b0_0 .net "i1", 0 0, o0x7f9a8e842198;  alias, 0 drivers
+v0x556fb1d61600_0 .net "o", 0 0, o0x7f9a8e8421c8;  alias, 0 drivers
+v0x556fb1d616c0_0 .net "pulse", 0 0, o0x7f9a8e8421f8;  alias, 0 drivers
+v0x556fb1d61780_0 .net "start", 0 0, o0x7f9a8e842228;  alias, 0 drivers
+v0x556fb1d61840_0 .net "stop", 0 0, o0x7f9a8e842258;  alias, 0 drivers
+S_0x556fb1d61aa0 .scope module, "XUTHERMALSHUTDOWNflag1" "dftprobeModel0_c6ea612f" 2 92, 2 31 0, S_0x556fb1d0ff60;
  .timescale 0 0;
-S_0x5602bd750d50 .scope module, "XUTHERMALSHUTDOWNhigh" "dftprobeModel0_94cebfeb" 2 72, 2 21 0, S_0x5602bd702f60;
+S_0x556fb1d61c50 .scope module, "XUTHERMALSHUTDOWNhigh" "dftprobeModel0_94cebfeb" 2 88, 2 28 0, S_0x556fb1d0ff60;
  .timescale 0 0;
-S_0x5602bd750f30 .scope module, "XUTHERMALSHUTDOWNreference" "dftprobeModel2_988c2170" 2 84, 2 30 0, S_0x5602bd702f60;
+S_0x556fb1d61e30 .scope module, "XUTHERMALSHUTDOWNreference" "dftprobeModel2_988c2170" 2 100, 2 37 0, S_0x556fb1d0ff60;
  .timescale 0 0;
-S_0x5602bd751110 .scope module, "XUTHERMALSHUTDOWNstartup" "dftprobeModel0_f3829cdd" 2 80, 2 27 0, S_0x5602bd702f60;
+S_0x556fb1d62010 .scope module, "XUTHERMALSHUTDOWNstartup" "dftprobeModel0_f3829cdd" 2 96, 2 34 0, S_0x556fb1d0ff60;
  .timescale 0 0;
-S_0x5602bd751340 .scope module, "XUTHERMALSHUTDOWNtemperature" "dftprobeModel2_30e135e1" 2 88, 2 33 0, S_0x5602bd702f60;
+S_0x556fb1d62240 .scope module, "XUTHERMALSHUTDOWNtemperature" "dftprobeModel2_30e135e1" 2 104, 2 40 0, S_0x556fb1d0ff60;
  .timescale 0 0;
-S_0x5602bd751520 .scope module, "XWRAP_18_19" "WRAPPER1" 2 67, 2 14 0, S_0x5602bd702f60;
+S_0x556fb1d62420 .scope module, "XWRAP_18_19" "WRAPPER1" 2 83, 2 21 0, S_0x556fb1d0ff60;
  .timescale 0 0;
     .port_info 0 /OUTPUT 1 "o";
     .port_info 1 /INPUT 1 "i";
-v0x5602bd751700_0 .net "i", 0 0, o0x7f2b3d9c4258;  alias, 0 drivers
-v0x5602bd7517c0_0 .net "o", 0 0, o0x7f2b3d9c40d8;  alias, 0 drivers
-S_0x5602bd7518a0 .scope module, "XWRAP_REFIN_dtfprobe_XUTHERMALSHUTDOWNreference_dadce042" "WRAPPER1" 2 97, 2 14 0, S_0x5602bd702f60;
+v0x556fb1d62600_0 .net "i", 0 0, o0x7f9a8e8424f8;  alias, 0 drivers
+v0x556fb1d626c0_0 .net "o", 0 0, o0x7f9a8e842228;  alias, 0 drivers
+S_0x556fb1d627a0 .scope module, "XWRAP_REFIN_dtfprobe_XUTHERMALSHUTDOWNreference_dadce042" "WRAPPER1" 2 113, 2 21 0, S_0x556fb1d0ff60;
  .timescale 0 0;
     .port_info 0 /OUTPUT 1 "o";
     .port_info 1 /INPUT 1 "i";
-v0x5602bd751a80_0 .net "i", 0 0, o0x7f2b3d9c42e8;  alias, 0 drivers
-v0x5602bd751b60_0 .net "o", 0 0, o0x7f2b3d9c4318;  alias, 0 drivers
-S_0x5602bd751c80 .scope module, "XWRAP_TSD_dtfprobe_XUTHERMALSHUTDOWNtemperature_dadce042" "WRAPPER1" 2 102, 2 14 0, S_0x5602bd702f60;
+v0x556fb1d62980_0 .net "i", 0 0, o0x7f9a8e842588;  alias, 0 drivers
+v0x556fb1d62a60_0 .net "o", 0 0, o0x7f9a8e8425b8;  alias, 0 drivers
+S_0x556fb1d62b80 .scope module, "XWRAP_TSD_dtfprobe_XUTHERMALSHUTDOWNtemperature_dadce042" "WRAPPER1" 2 118, 2 21 0, S_0x556fb1d0ff60;
  .timescale 0 0;
     .port_info 0 /OUTPUT 1 "o";
     .port_info 1 /INPUT 1 "i";
-v0x5602bd751e60_0 .net "i", 0 0, o0x7f2b3d9c43a8;  alias, 0 drivers
-v0x5602bd751f40_0 .net "o", 0 0, o0x7f2b3d9c43d8;  alias, 0 drivers
-S_0x5602bd752060 .scope module, "XWRAP_high_dtfprobe_XUTHERMALSHUTDOWNhigh_dadce042" "WRAPPER1" 2 92, 2 14 0, S_0x5602bd702f60;
+v0x556fb1d62df0_0 .net "i", 0 0, o0x7f9a8e842648;  alias, 0 drivers
+v0x556fb1d62ed0_0 .net "o", 0 0, o0x7f9a8e842678;  alias, 0 drivers
+S_0x556fb1d62ff0 .scope module, "XWRAP_high_dtfprobe_XUTHERMALSHUTDOWNhigh_dadce042" "WRAPPER1" 2 108, 2 21 0, S_0x556fb1d0ff60;
  .timescale 0 0;
     .port_info 0 /OUTPUT 1 "o";
     .port_info 1 /INPUT 1 "i";
-v0x5602bd7521f0_0 .net "i", 0 0, o0x7f2b3d9c4468;  alias, 0 drivers
-v0x5602bd7522d0_0 .net "o", 0 0, o0x7f2b3d9c4498;  alias, 0 drivers
-S_0x5602bd7523f0 .scope module, "XWRAP_thermal_shutdown_dtfprobe_XUTHERMALSHUTDOWNflag1_dadce042" "WRAPPER1" 2 107, 2 14 0, S_0x5602bd702f60;
+v0x556fb1d63180_0 .net "i", 0 0, o0x7f9a8e842708;  alias, 0 drivers
+v0x556fb1d63260_0 .net "o", 0 0, o0x7f9a8e842738;  alias, 0 drivers
+S_0x556fb1d63380 .scope module, "XWRAP_thermal_shutdown_dtfprobe_XUTHERMALSHUTDOWNflag1_dadce042" "WRAPPER1" 2 123, 2 21 0, S_0x556fb1d0ff60;
  .timescale 0 0;
     .port_info 0 /OUTPUT 1 "o";
     .port_info 1 /INPUT 1 "i";
-v0x5602bd7525d0_0 .net "i", 0 0, o0x7f2b3d9c4528;  alias, 0 drivers
-v0x5602bd7526b0_0 .net "o", 0 0, o0x7f2b3d9c4558;  alias, 0 drivers
+v0x556fb1d63560_0 .net "i", 0 0, o0x7f9a8e8427c8;  alias, 0 drivers
+v0x556fb1d63640_0 .net "o", 0 0, o0x7f9a8e8427f8;  alias, 0 drivers
 # The file index is used to find the file name in the following table.
 :file_names 3;
     "N/A";
