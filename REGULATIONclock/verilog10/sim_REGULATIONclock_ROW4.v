@@ -1,7 +1,7 @@
 // ------------------------ Module Definitions -----------
 module FORCE_REGULATIONclock (RT,GND,SIMPV,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_0a62f9b4,mode_stepup,enable_clock,CELREF_0a62f9b4,request_clockRT);
-  inout  RT;
-  inout  GND;
+  output  RT;
+  output  GND;
   output  SIMPV;
   output  CELG59462;
   output  CELV96848;
@@ -14,7 +14,7 @@ module FORCE_REGULATIONclock (RT,GND,SIMPV,CELG59462,CELV96848,PORB97836,CELSUB4
   output  request_clockRT;
 endmodule
 
-module REGULATIONclock (RT,SIMPV,clock_rt,ok_clock,CELG59462,CELV96848,PORB97836,ISLOPECOMP,CELSENSE_RF,CELSUB40948,IP_0a62f9b4,fault_clock,mode_stepup,enable_clock,clock_divideRT,CELREF_0a62f9b4,request_clockRT,celkelvin_GNDoscillator);
+module REGULATIONclock (RT,SIMPV,clock_rt,ok_clock,CELG59462,CELV96848,PORB97836,ISLOPECOMP,CELSENSE_RF,CELSUB40948,IP_0a62f9b4,fault_clock,mode_stepup,enable_clock,clock_divideRT,CELREF_0a62f9b4,request_clockRT,celkelvin_GNDoscillator,dtfprobe_XUREGULATIONclockCLOCK_f849bfe4,dtfprobe_XUREGULATIONclockFAULT_f849bfe4,dtfprobe_XUREGULATIONclockCLOCKRT_f849bfe4,dtfprobe_XUREGULATIONclockSTARTUP_f849bfe4,dtfprobe_XUREGULATIONclockISLOPECOMP_f849bfe4);
   output  RT;
   input  SIMPV;
   output  clock_rt;
@@ -33,6 +33,11 @@ module REGULATIONclock (RT,SIMPV,clock_rt,ok_clock,CELG59462,CELV96848,PORB97836
   input  CELREF_0a62f9b4;
   input  request_clockRT;
   input  celkelvin_GNDoscillator;
+  output  dtfprobe_XUREGULATIONclockCLOCK_f849bfe4;
+  output  dtfprobe_XUREGULATIONclockFAULT_f849bfe4;
+  output  dtfprobe_XUREGULATIONclockCLOCKRT_f849bfe4;
+  output  dtfprobe_XUREGULATIONclockSTARTUP_f849bfe4;
+  output  dtfprobe_XUREGULATIONclockISLOPECOMP_f849bfe4;
 endmodule
 
 //Verilog HDL for "Generate", "WRAPPER1" "functional"
@@ -53,49 +58,54 @@ module sim_REGULATIONclock_ROW4 ();
 
 // ------------------------ Networks ---------------------
 FORCE_REGULATIONclock XFORCE_REGULATIONclock1 (
-  .RT(RT),
-  .GND(GND),
-  .SIMPV(SIMPV),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .PORB97836(PORB97836),
-  .CELSUB40948(CELSUB40948),
-  .IP_0a62f9b4(IP_0a62f9b4),
-  .mode_stepup(mode_stepup),
-  .enable_clock(enable_clock),
-  .CELREF_0a62f9b4(CELREF_0a62f9b4),
-  .request_clockRT(request_clockRT)
+.RT(RT),
+.GND(GND),
+.SIMPV(SIMPV),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.PORB97836(PORB97836),
+.CELSUB40948(CELSUB40948),
+.IP_0a62f9b4(IP_0a62f9b4),
+.mode_stepup(mode_stepup),
+.enable_clock(enable_clock),
+.CELREF_0a62f9b4(CELREF_0a62f9b4),
+.request_clockRT(request_clockRT)
 );
 
 REGULATIONclock XREGULATIONclock1 (
-  .RT(RT),
-  .SIMPV(SIMPV),
-  .clock_rt(clock_rt),
-  .ok_clock(ok_clock),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .PORB97836(PORB97836),
-  .ISLOPECOMP(ISLOPECOMP),
-  .CELSENSE_RF(CELSENSE_RF),
-  .CELSUB40948(CELSUB40948),
-  .IP_0a62f9b4(IP_0a62f9b4),
-  .fault_clock(fault_clock),
-  .mode_stepup(mode_stepup),
-  .enable_clock(enable_clock),
-  .clock_divideRT(clock_divideRT),
-  .CELREF_0a62f9b4(CELREF_0a62f9b4),
-  .request_clockRT(request_clockRT),
-  .celkelvin_GNDoscillator(celkelvin_GNDoscillator)
+.RT(RT),
+.SIMPV(SIMPV),
+.clock_rt(clock_rt),
+.ok_clock(ok_clock),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.PORB97836(PORB97836),
+.ISLOPECOMP(ISLOPECOMP),
+.CELSENSE_RF(CELSENSE_RF),
+.CELSUB40948(CELSUB40948),
+.IP_0a62f9b4(IP_0a62f9b4),
+.fault_clock(fault_clock),
+.mode_stepup(mode_stepup),
+.enable_clock(enable_clock),
+.clock_divideRT(clock_divideRT),
+.CELREF_0a62f9b4(CELREF_0a62f9b4),
+.request_clockRT(request_clockRT),
+.celkelvin_GNDoscillator(celkelvin_GNDoscillator),
+.dtfprobe_XUREGULATIONclockCLOCK_f849bfe4(dtfprobe_XUREGULATIONclockCLOCK_f849bfe4),
+.dtfprobe_XUREGULATIONclockFAULT_f849bfe4(dtfprobe_XUREGULATIONclockFAULT_f849bfe4),
+.dtfprobe_XUREGULATIONclockCLOCKRT_f849bfe4(dtfprobe_XUREGULATIONclockCLOCKRT_f849bfe4),
+.dtfprobe_XUREGULATIONclockSTARTUP_f849bfe4(dtfprobe_XUREGULATIONclockSTARTUP_f849bfe4),
+.dtfprobe_XUREGULATIONclockISLOPECOMP_f849bfe4(dtfprobe_XUREGULATIONclockISLOPECOMP_f849bfe4)
 );
 
 WRAPPER1 CELSENSE_RF_WRAPPER (
-  .i(CELSENSE_RF),
-  .o(RT)
+.i(CELSENSE_RF),
+.o(RT)
 );
 
 WRAPPER1 celkelvin_GNDoscillator_WRAPPER (
-  .i(celkelvin_GNDoscillator),
-  .o(CELG59462)
+.i(celkelvin_GNDoscillator),
+.o(CELG59462)
 );
 
 endmodule

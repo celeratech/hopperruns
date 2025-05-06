@@ -1,13 +1,4 @@
 // ------------------------ Module Definitions -----------
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
 //Celera:dbuf_e926e395
 //Celera Confidential Symbol Generator
 //Digital Buffer
@@ -21,41 +12,39 @@ endmodule
 
 
 
-module res_107k(PLUS, MINUS);
-inout PLUS;
-inout MINUS;
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
 endmodule
 
+
 module vpwl_0x0(PLUS, MINUS);
-output PLUS;
-output MINUS;
+	output PLUS;
+	input MINUS;
 endmodule
 
 
 module vpwl_0x0_10d998ux0_11d0ux5 (PLUS,MINUS);
   output  PLUS;
-  output  MINUS;
+  input  MINUS;
 endmodule
 
 module vpwl_0x0_12d0ux0_12d001ux5 (PLUS,MINUS);
   output  PLUS;
-  output  MINUS;
-endmodule
-
-module vdc_0(PLUS, MINUS);
-output PLUS;
-output MINUS;
-endmodule
-
-
-module vpwl_0x0_10ux0_11ux0 (PLUS,MINUS);
-  output  PLUS;
-  output  MINUS;
+  input  MINUS;
 endmodule
 
 module vpwl_0x0_10d998ux0_11d0ux1d2 (PLUS,MINUS);
   output  PLUS;
-  output  MINUS;
+  input  MINUS;
+endmodule
+
+module res_107k(PLUS, MINUS);
+inout PLUS;
+inout MINUS;
 endmodule
 
 //Verilog HDL for "TEST", "SIMbias" "functional"
@@ -69,14 +58,32 @@ module SIMbias ( V, IP, IN );
 endmodule
 
 
+module vdc_0(PLUS, MINUS);
+	input PLUS;
+	output MINUS;
+endmodule
+
+
+module vpwlgnd_0x0_10ux0_11ux0(PLUS, MINUS);
+	output PLUS;
+	output MINUS;
+endmodule
+
+
+module vdcgnd_0(PLUS, MINUS);
+	output PLUS;
+	input MINUS;
+endmodule
+
+
 module vpwl_0x0_10d998ux0_11d0ux0 (PLUS,MINUS);
   output  PLUS;
-  output  MINUS;
+  input  MINUS;
 endmodule
 
 module vpwl_0x0_10d998ux0_11d0ux5d0 (PLUS,MINUS);
   output  PLUS;
-  output  MINUS;
+  input  MINUS;
 endmodule
 
 module alibgnd (GND); 
@@ -85,8 +92,8 @@ endmodule
 
 // ------------------------ Module Verilog ---------------
 module FORCE_REGULATIONclock (RT, GND, SIMPV, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_0a62f9b4, mode_stepup, enable_clock, CELREF_0a62f9b4, request_clockRT);
-inout  RT;
-inout  GND;
+output  RT;
+output  GND;
 output  SIMPV;
 output  CELG59462;
 output  CELV96848;
@@ -102,105 +109,105 @@ output  request_clockRT;
 // ------------------------ Wires ------------------------
 
 // ------------------------ Networks ---------------------
-STONEnoconn XNCip (
-  .noconn(noconn_IN)
-);
-
 dbuf_e926e395 Xd_mode_stepup (
-  .i(net_190),
-  .o(mode_stepup),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_190),
+.o(mode_stepup),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 dbuf_e926e395 Xd_enable_clock (
-  .i(net_191),
-  .o(enable_clock),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_191),
+.o(enable_clock),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
-res_107k R1 (
-  .PLUS(RT),
-  .MINUS(GND)
+STONEnoconn XNCnoconn_IN_IP_0a62f9b4 (
+.noconn(noconn_IN_IP_0a62f9b4)
 );
 
 vpwl_0x0 XCELG (
-  .PLUS(CELG59462),
-  .MINUS(GND)
+.PLUS(CELG59462),
+.MINUS(GND)
 );
 
 vpwl_0x0_10d998ux0_11d0ux5 XCELV (
-  .PLUS(CELV96848),
-  .MINUS(GND)
+.PLUS(CELV96848),
+.MINUS(GND)
 );
 
 vpwl_0x0_12d0ux0_12d001ux5 XPORB (
-  .PLUS(PORB97836),
-  .MINUS(GND)
-);
-
-vdc_0 VI__RT (
-  .PLUS(net_45),
-  .MINUS(RT)
-);
-
-vpwl_0x0_10ux0_11ux0 V_GNDx (
-  .PLUS(net_47),
-  .MINUS(net_0)
-);
-
-vdc_0 VI__GND (
-  .PLUS(GND),
-  .MINUS(net_47)
+.PLUS(PORB97836),
+.MINUS(GND)
 );
 
 vpwl_0x0_10d998ux0_11d0ux1d2 XCELREF (
-  .PLUS(CELREF_0a62f9b4),
-  .MINUS(GND)
+.PLUS(CELREF_0a62f9b4),
+.MINUS(GND)
 );
 
 vpwl_0x0 XCELSUB (
-  .PLUS(CELSUB40948),
-  .MINUS(GND)
+.PLUS(CELSUB40948),
+.MINUS(GND)
 );
 
-vpwl_0x0_10d998ux0_11d0ux5 V_SIMPVx (
-  .PLUS(net_44),
-  .MINUS(GND)
-);
-
-vdc_0 VI__SIMPV (
-  .PLUS(net_44),
-  .MINUS(SIMPV)
+res_107k R1_3f23aacb (
+.PLUS(RT),
+.MINUS(GND)
 );
 
 SIMbias XIP_0a62f9b4 (
-  .V(SIMPV),
-  .IN(noconn_IN),
-  .IP(IP_0a62f9b4)
+.V(SIMPV),
+.IN(noconn_IN_IP_0a62f9b4),
+.IP(IP_0a62f9b4)
 );
 
-vpwl_0x0_10d998ux0_11d0ux0 V_mode_stepupx (
-  .PLUS(net_190),
-  .MINUS(GND)
+vdc_0 VI__RT_251be0b9 (
+.PLUS(net_45),
+.MINUS(RT)
 );
 
-vpwl_0x0_10d998ux0_11d0ux5d0 V_enable_clockx (
-  .PLUS(net_191),
-  .MINUS(GND)
+vpwlgnd_0x0_10ux0_11ux0 V_GNDx_7e00ad2f (
+.PLUS(net_47),
+.MINUS(net_0)
 );
 
-vpwl_0x0_10d998ux0_11d0ux0 V_request_clockRTx (
-  .PLUS(net_46),
-  .MINUS(GND)
+vdcgnd_0 VI__GND_520c3c11 (
+.PLUS(GND),
+.MINUS(net_47)
 );
 
-vdc_0 VI__request_clockRT (
-  .PLUS(net_46),
-  .MINUS(request_clockRT)
+vpwl_0x0_10d998ux0_11d0ux5 V_SIMPVx_d073c774 (
+.PLUS(net_44),
+.MINUS(GND)
+);
+
+vdc_0 VI__SIMPV_8996dd62 (
+.PLUS(net_44),
+.MINUS(SIMPV)
+);
+
+vpwl_0x0_10d998ux0_11d0ux0 V_mode_stepupx_802a3e64 (
+.PLUS(net_190),
+.MINUS(GND)
+);
+
+vpwl_0x0_10d998ux0_11d0ux5d0 V_enable_clockx_1d66f544 (
+.PLUS(net_191),
+.MINUS(GND)
+);
+
+vpwl_0x0_10d998ux0_11d0ux0 V_request_clockRTx_fc701522 (
+.PLUS(net_46),
+.MINUS(GND)
+);
+
+vdc_0 VI__request_clockRT_e0939ecc (
+.PLUS(net_46),
+.MINUS(request_clockRT)
 );
 
 alibgnd G1 ( 

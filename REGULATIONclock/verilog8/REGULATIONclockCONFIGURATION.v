@@ -52,57 +52,57 @@ output  CLOCKdutycycleDOWN_3;
 
 // ------------------------ Networks ---------------------
 PEBBLEtiehi XDRMNOTH (
-  .G(CELG59462),
-  .V(CELV96848),
-  .q(a1),
-  .SUB(CELSUB40948)
+.G(CELG59462),
+.V(CELV96848),
+.q(a1),
+.SUB(CELSUB40948)
 );
 
 PEBBLEtielo XDRMNOTL (
-  .G(CELG59462),
-  .V(CELV96848),
-  .q(a0),
-  .SUB(CELSUB40948)
+.G(CELG59462),
+.V(CELV96848),
+.q(a0),
+.SUB(CELSUB40948)
 );
 
-WRAPPER1 CLOCKdutycycleUP_0_WRAPPER (
-  .i(a1),
-  .o(CLOCKdutycycleUP_0)
+WRAPPER1 CLOCKdutycycleUP_0_net_20_WRAPPER (
+.i(a1),
+.o(CLOCKdutycycleUP_0)
 );
 
-WRAPPER1 CLOCKdutycycleUP_1_WRAPPER (
-  .i(a0),
-  .o(CLOCKdutycycleUP_1)
+WRAPPER1 CLOCKdutycycleUP_1_net_21_WRAPPER (
+.i(a0),
+.o(CLOCKdutycycleUP_1)
 );
 
-WRAPPER1 CLOCKdutycycleUP_2_WRAPPER (
-  .i(a1),
-  .o(CLOCKdutycycleUP_2)
+WRAPPER1 CLOCKdutycycleUP_2_net_22_WRAPPER (
+.i(a1),
+.o(CLOCKdutycycleUP_2)
 );
 
-WRAPPER1 CLOCKdutycycleUP_3_WRAPPER (
-  .i(a0),
-  .o(CLOCKdutycycleUP_3)
+WRAPPER1 CLOCKdutycycleUP_3_net_23_WRAPPER (
+.i(a0),
+.o(CLOCKdutycycleUP_3)
 );
 
-WRAPPER1 CLOCKdutycycleDOWN_0_WRAPPER (
-  .i(a1),
-  .o(CLOCKdutycycleDOWN_0)
+WRAPPER1 CLOCKdutycycleDOWN_0_net_4_WRAPPER (
+.i(a1),
+.o(CLOCKdutycycleDOWN_0)
 );
 
-WRAPPER1 CLOCKdutycycleDOWN_1_WRAPPER (
-  .i(a0),
-  .o(CLOCKdutycycleDOWN_1)
+WRAPPER1 CLOCKdutycycleDOWN_1_net_5_WRAPPER (
+.i(a0),
+.o(CLOCKdutycycleDOWN_1)
 );
 
-WRAPPER1 CLOCKdutycycleDOWN_2_WRAPPER (
-  .i(a1),
-  .o(CLOCKdutycycleDOWN_2)
+WRAPPER1 CLOCKdutycycleDOWN_2_net_6_WRAPPER (
+.i(a1),
+.o(CLOCKdutycycleDOWN_2)
 );
 
-WRAPPER1 CLOCKdutycycleDOWN_3_WRAPPER (
-  .i(a0),
-  .o(CLOCKdutycycleDOWN_3)
+WRAPPER1 CLOCKdutycycleDOWN_3_net_7_WRAPPER (
+.i(a0),
+.o(CLOCKdutycycleDOWN_3)
 );
 
 endmodule
