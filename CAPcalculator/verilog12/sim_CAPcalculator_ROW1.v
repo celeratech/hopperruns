@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module CAPcalculator (porb,SIMPV,mode_cv,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_9a4148db,REF_ICHARGER,enable_shunt,meas_vcap1_0,meas_vcap1_1,meas_vcap1_2,meas_vcap1_3,meas_vcap1_4,meas_vcap1_5,meas_vcap1_6,meas_vcap1_7,meas_vcap1_8,meas_vcap1_9,meas_vcap2_0,meas_vcap2_1,meas_vcap2_2,meas_vcap2_3,meas_vcap2_4,meas_vcap2_5,meas_vcap2_6,meas_vcap2_7,meas_vcap2_8,meas_vcap2_9,meas_vcap3_0,meas_vcap3_1,meas_vcap3_2,meas_vcap3_3,meas_vcap3_4,meas_vcap3_5,meas_vcap3_6,meas_vcap3_7,meas_vcap3_8,meas_vcap3_9,meas_vcap4_0,meas_vcap4_1,meas_vcap4_2,meas_vcap4_3,meas_vcap4_4,meas_vcap4_5,meas_vcap4_6,meas_vcap4_7,meas_vcap4_8,meas_vcap4_9,meas_vcap1_10,meas_vcap1_11,meas_vcap1_12,meas_vcap1_13,meas_vcap1_14,meas_vcap1_15,meas_vcap2_10,meas_vcap2_11,meas_vcap2_12,meas_vcap2_13,meas_vcap2_14,meas_vcap2_15,meas_vcap3_10,meas_vcap3_11,meas_vcap3_12,meas_vcap3_13,meas_vcap3_14,meas_vcap3_15,meas_vcap4_10,meas_vcap4_11,meas_vcap4_12,meas_vcap4_13,meas_vcap4_14,meas_vcap4_15,done_telemetry,CELREF_9a4148db,enable_balancer,ok_capcalculate,MAXIMUMchannel_0,MAXIMUMchannel_1,clock_calculator,done_capcalculate,fault_capcalculate,register_vshunt_15,enable_capcalculate,kelvin_GNDcalculator,dftprobe_XU59_8f49942e,dftprobe_XU60_8f49942e,dftprobe_XU61_8f49942e,dftprobe_XU62_8f49942e,dftprobe_XU63_8f49942e,dftprobe_XU64_8f49942e,dftprobe_XU65_8f49942e,dftprobe_XU66_8f49942e,enable_chargereference,dftstatus_SELECTshunt_0_7279984b,dftstatus_SELECTshunt_1_7279984b,dftstatus_SELECTshunt_2_7279984b,dftstatus_SELECTshunt_3_7279984b,dftstatus_MAXIMUMchannel_0_7279984b,dftstatus_MAXIMUMchannel_1_7279984b,dftprobe_XUCAPcalculateTIME_7279984b,dftprobe_XUCAPcalculateSHUNT_7279984b,dftprobe_XUCAPcalculateBALANCER_7279984b,dftprobe_XUCAPcalculateREFERENCE_7279984b,dftprobe_XUCAPcalculateSHUNTACTIVE_7279984b,dftprobe_XUCAPcalculateSHUNTstatus_7279984b,dftprobe_XUCAPcalculateBALANCERstatus_7279984b);
+module CAPcalculator (porb,SIMPV,mode_cv,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_9a4148db,REF_ICHARGER,enable_shunt,meas_vcap1_0,meas_vcap1_1,meas_vcap1_2,meas_vcap1_3,meas_vcap1_4,meas_vcap1_5,meas_vcap1_6,meas_vcap1_7,meas_vcap1_8,meas_vcap1_9,meas_vcap2_0,meas_vcap2_1,meas_vcap2_2,meas_vcap2_3,meas_vcap2_4,meas_vcap2_5,meas_vcap2_6,meas_vcap2_7,meas_vcap2_8,meas_vcap2_9,meas_vcap3_0,meas_vcap3_1,meas_vcap3_2,meas_vcap3_3,meas_vcap3_4,meas_vcap3_5,meas_vcap3_6,meas_vcap3_7,meas_vcap3_8,meas_vcap3_9,meas_vcap4_0,meas_vcap4_1,meas_vcap4_2,meas_vcap4_3,meas_vcap4_4,meas_vcap4_5,meas_vcap4_6,meas_vcap4_7,meas_vcap4_8,meas_vcap4_9,meas_vcap1_10,meas_vcap1_11,meas_vcap1_12,meas_vcap1_13,meas_vcap1_14,meas_vcap1_15,meas_vcap2_10,meas_vcap2_11,meas_vcap2_12,meas_vcap2_13,meas_vcap2_14,meas_vcap2_15,meas_vcap3_10,meas_vcap3_11,meas_vcap3_12,meas_vcap3_13,meas_vcap3_14,meas_vcap3_15,meas_vcap4_10,meas_vcap4_11,meas_vcap4_12,meas_vcap4_13,meas_vcap4_14,meas_vcap4_15,done_telemetry,CELREF_9a4148db,enable_balancer,ok_capcalculate,MAXIMUMchannel_0,MAXIMUMchannel_1,clock_calculator,done_capcalculate,fault_capcalculate,register_vshunt_15,enable_capcalculate,kelvin_GNDcalculator,enable_chargereference);
   input  porb;
   input  SIMPV;
   input  mode_cv;
@@ -86,28 +86,7 @@ module CAPcalculator (porb,SIMPV,mode_cv,CELG59462,CELV96848,PORB97836,CELSUB409
   input [15:0] register_vshunt_15;
   input  enable_capcalculate;
   input  kelvin_GNDcalculator;
-  output  dftprobe_XU59_8f49942e;
-  output  dftprobe_XU60_8f49942e;
-  output  dftprobe_XU61_8f49942e;
-  output  dftprobe_XU62_8f49942e;
-  output  dftprobe_XU63_8f49942e;
-  output  dftprobe_XU64_8f49942e;
-  output  dftprobe_XU65_8f49942e;
-  output  dftprobe_XU66_8f49942e;
   input  enable_chargereference;
-  output  dftstatus_SELECTshunt_0_7279984b;
-  output  dftstatus_SELECTshunt_1_7279984b;
-  output  dftstatus_SELECTshunt_2_7279984b;
-  output  dftstatus_SELECTshunt_3_7279984b;
-  output  dftstatus_MAXIMUMchannel_0_7279984b;
-  output  dftstatus_MAXIMUMchannel_1_7279984b;
-  output  dftprobe_XUCAPcalculateTIME_7279984b;
-  output  dftprobe_XUCAPcalculateSHUNT_7279984b;
-  output  dftprobe_XUCAPcalculateBALANCER_7279984b;
-  output  dftprobe_XUCAPcalculateREFERENCE_7279984b;
-  output  dftprobe_XUCAPcalculateSHUNTACTIVE_7279984b;
-  output  dftprobe_XUCAPcalculateSHUNTstatus_7279984b;
-  output  dftprobe_XUCAPcalculateBALANCERstatus_7279984b;
 endmodule
 
 module EXTERNALS_CAPcalculator (MAXIMUMchannel_0,MAXIMUMchannel_1);
@@ -292,28 +271,7 @@ CAPcalculator XCAPcalculator1 (
 .register_vshunt_15(register_vshunt_15[15:0]),
 .enable_capcalculate(enable_capcalculate),
 .kelvin_GNDcalculator(kelvin_GNDcalculator),
-.dftprobe_XU59_8f49942e(dftprobe_XU59_8f49942e),
-.dftprobe_XU60_8f49942e(dftprobe_XU60_8f49942e),
-.dftprobe_XU61_8f49942e(dftprobe_XU61_8f49942e),
-.dftprobe_XU62_8f49942e(dftprobe_XU62_8f49942e),
-.dftprobe_XU63_8f49942e(dftprobe_XU63_8f49942e),
-.dftprobe_XU64_8f49942e(dftprobe_XU64_8f49942e),
-.dftprobe_XU65_8f49942e(dftprobe_XU65_8f49942e),
-.dftprobe_XU66_8f49942e(dftprobe_XU66_8f49942e),
-.enable_chargereference(enable_chargereference),
-.dftstatus_SELECTshunt_0_7279984b(dftstatus_SELECTshunt_0_7279984b),
-.dftstatus_SELECTshunt_1_7279984b(dftstatus_SELECTshunt_1_7279984b),
-.dftstatus_SELECTshunt_2_7279984b(dftstatus_SELECTshunt_2_7279984b),
-.dftstatus_SELECTshunt_3_7279984b(dftstatus_SELECTshunt_3_7279984b),
-.dftstatus_MAXIMUMchannel_0_7279984b(dftstatus_MAXIMUMchannel_0_7279984b),
-.dftstatus_MAXIMUMchannel_1_7279984b(dftstatus_MAXIMUMchannel_1_7279984b),
-.dftprobe_XUCAPcalculateTIME_7279984b(dftprobe_XUCAPcalculateTIME_7279984b),
-.dftprobe_XUCAPcalculateSHUNT_7279984b(dftprobe_XUCAPcalculateSHUNT_7279984b),
-.dftprobe_XUCAPcalculateBALANCER_7279984b(dftprobe_XUCAPcalculateBALANCER_7279984b),
-.dftprobe_XUCAPcalculateREFERENCE_7279984b(dftprobe_XUCAPcalculateREFERENCE_7279984b),
-.dftprobe_XUCAPcalculateSHUNTACTIVE_7279984b(dftprobe_XUCAPcalculateSHUNTACTIVE_7279984b),
-.dftprobe_XUCAPcalculateSHUNTstatus_7279984b(dftprobe_XUCAPcalculateSHUNTstatus_7279984b),
-.dftprobe_XUCAPcalculateBALANCERstatus_7279984b(dftprobe_XUCAPcalculateBALANCERstatus_7279984b)
+.enable_chargereference(enable_chargereference)
 );
 
 EXTERNALS_CAPcalculator XEXTERNALS_CAPcalculator1 (

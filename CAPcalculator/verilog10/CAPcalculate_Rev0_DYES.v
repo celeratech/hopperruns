@@ -34,30 +34,6 @@ module CAPcalculate_Rev0_DYES_0 (OK,OFF,porb,BDONE,FAULT,SDONE,SHUNT,UNDEF6,mode
   input  shunt_registeractive;
 endmodule
 
-module dftprobeModel0_5182de75 ();
-endmodule
-
-module dftprobeModel0_cbc8e905 ();
-endmodule
-
-module dftprobeModel0_5984c066 ();
-endmodule
-
-module dftprobeModel0_a846aa5b ();
-endmodule
-
-module dftprobeModel0_da124394 ();
-endmodule
-
-module dftprobeModel0_ae004e3d ();
-endmodule
-
-module dftprobeModel0_2e38384a ();
-endmodule
-
-module dftprobeModel0_f666a52c ();
-endmodule
-
 module dftprobeModel0_0a33a560 ();
 endmodule
 
@@ -75,6 +51,15 @@ endmodule
 
 module dftprobeModel0_aa1824d6 ();
 endmodule
+
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
 
 //Verilog HDL for "PEBBLES", "PEBBLEtiehi" "functional"
 
@@ -111,7 +96,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CAPcalculate_Rev0_DYES (porb, mode_cv, on_shunt, CELG59462, CELV96848, PORB97836, CELSUB40948, on_balancer, shunt_status, balancer_status, calculate_shunt, done_capcalculate, ok_shuntalgorithm, calculate_balancer, clock_capcalculate, fault_capcalculate, enable_capcalculate, ok_balanceralgorithm, shunt_registeractive, dftprobe_XU59_8f49942e, dftprobe_XU60_8f49942e, dftprobe_XU61_8f49942e, dftprobe_XU62_8f49942e, dftprobe_XU63_8f49942e, dftprobe_XU64_8f49942e, dftprobe_XU65_8f49942e, dftprobe_XU66_8f49942e);
+module CAPcalculate_Rev0_DYES (porb, mode_cv, on_shunt, CELG59462, CELV96848, PORB97836, CELSUB40948, on_balancer, shunt_status, balancer_status, calculate_shunt, done_capcalculate, ok_shuntalgorithm, calculate_balancer, clock_capcalculate, fault_capcalculate, enable_capcalculate, ok_balanceralgorithm, shunt_registeractive);
 input  porb;
 input  mode_cv;
 input  on_shunt;
@@ -131,30 +116,22 @@ output  fault_capcalculate;
 input  enable_capcalculate;
 input  ok_balanceralgorithm;
 input  shunt_registeractive;
-output  dftprobe_XU59_8f49942e;
-output  dftprobe_XU60_8f49942e;
-output  dftprobe_XU61_8f49942e;
-output  dftprobe_XU62_8f49942e;
-output  dftprobe_XU63_8f49942e;
-output  dftprobe_XU64_8f49942e;
-output  dftprobe_XU65_8f49942e;
-output  dftprobe_XU66_8f49942e;
 
 
 // ------------------------ Wires ------------------------
 
 // ------------------------ Networks ---------------------
 CAPcalculate_Rev0_DYES_0 XMAIN (
-.OK(dftprobe_XU66_8f49942e),
-.OFF(dftprobe_XU59_8f49942e),
+.OK(net_116),
+.OFF(net_100),
 .porb(porb),
-.BDONE(dftprobe_XU62_8f49942e),
-.FAULT(dftprobe_XU63_8f49942e),
-.SDONE(dftprobe_XU64_8f49942e),
-.SHUNT(dftprobe_XU60_8f49942e),
-.UNDEF6(dftprobe_XU65_8f49942e),
+.BDONE(net_112),
+.FAULT(net_113),
+.SDONE(net_114),
+.SHUNT(net_105),
+.UNDEF6(net_115),
 .mode_cv(mode_cv),
-.BALANCER(dftprobe_XU61_8f49942e),
+.BALANCER(net_109),
 .on_shunt(on_shunt),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -179,38 +156,6 @@ CAPcalculate_Rev0_DYES_0 XMAIN (
 .shunt_registeractive(shunt_registeractive)
 );
 
-dftprobeModel0_5182de75 XU59 (
-
-);
-
-dftprobeModel0_cbc8e905 XU60 (
-
-);
-
-dftprobeModel0_5984c066 XU61 (
-
-);
-
-dftprobeModel0_a846aa5b XU62 (
-
-);
-
-dftprobeModel0_da124394 XU63 (
-
-);
-
-dftprobeModel0_ae004e3d XU64 (
-
-);
-
-dftprobeModel0_2e38384a XU65 (
-
-);
-
-dftprobeModel0_f666a52c XU66 (
-
-);
-
 dftprobeModel0_0a33a560 XU67 (
 
 );
@@ -233,6 +178,38 @@ dftprobeModel0_e55094c8 XU71 (
 
 dftprobeModel0_aa1824d6 XU72 (
 
+);
+
+STONEnoconn XNC100 (
+.noconn(net_100)
+);
+
+STONEnoconn XNC105 (
+.noconn(net_105)
+);
+
+STONEnoconn XNC109 (
+.noconn(net_109)
+);
+
+STONEnoconn XNC112 (
+.noconn(net_112)
+);
+
+STONEnoconn XNC113 (
+.noconn(net_113)
+);
+
+STONEnoconn XNC114 (
+.noconn(net_114)
+);
+
+STONEnoconn XNC115 (
+.noconn(net_115)
+);
+
+STONEnoconn XNC116 (
+.noconn(net_116)
 );
 
 PEBBLEtiehi XDRMNOTH (

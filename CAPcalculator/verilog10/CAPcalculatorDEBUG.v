@@ -20,6 +20,15 @@ endmodule
 
 
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 //Verilog HDL for "Generate", "WRAPPER1" "functional"
 
 
@@ -30,35 +39,8 @@ module WRAPPER1 ( o, i );
 endmodule
 
 
-module dftstatusModel0_02103832 ();
-endmodule
-
-module dftstatusModel0_8428d918 ();
-endmodule
-
-module dftprobeModel0_631c2ee1 ();
-endmodule
-
-module dftprobeModel0_df2c0a23 ();
-endmodule
-
-module dftprobeModel0_72d70429 ();
-endmodule
-
-module dftprobeModel2_7ad68977 ();
-endmodule
-
-module dftprobeModel0_2ab07ea6 ();
-endmodule
-
-module dftprobeModel0_fd152c03 ();
-endmodule
-
-module dftprobeModel0_8be1a01f ();
-endmodule
-
 // ------------------------ Module Verilog ---------------
-module CAPcalculatorDEBUG (mode_cv, CELG59462, CELV96848, CELSUB40948, REF_ICHARGER, enable_shunt, shunt_status, SELECTshunt_0, SELECTshunt_1, SELECTshunt_2, SELECTshunt_3, hijack_mode_cv, override_shunt, balancer_status, enable_balancer, MAXIMUMchannel_0, MAXIMUMchannel_1, override_maximum, done_capcalculate, override_balancer, enable_capcalculate, shunt_registeractive, enable_chargereference, hijack_enable_capcalculate, hijack_enable_chargereference, dftstatus_SELECTshunt_0_7279984b, dftstatus_SELECTshunt_1_7279984b, dftstatus_SELECTshunt_2_7279984b, dftstatus_SELECTshunt_3_7279984b, dftstatus_MAXIMUMchannel_0_7279984b, dftstatus_MAXIMUMchannel_1_7279984b, dftprobe_XUCAPcalculateTIME_7279984b, dftprobe_XUCAPcalculateSHUNT_7279984b, dftprobe_XUCAPcalculateBALANCER_7279984b, dftprobe_XUCAPcalculateREFERENCE_7279984b, dftprobe_XUCAPcalculateSHUNTACTIVE_7279984b, dftprobe_XUCAPcalculateSHUNTstatus_7279984b, dftprobe_XUCAPcalculateBALANCERstatus_7279984b);
+module CAPcalculatorDEBUG (mode_cv, CELG59462, CELV96848, CELSUB40948, REF_ICHARGER, enable_shunt, shunt_status, SELECTshunt_0, SELECTshunt_1, SELECTshunt_2, SELECTshunt_3, hijack_mode_cv, override_shunt, balancer_status, enable_balancer, MAXIMUMchannel_0, MAXIMUMchannel_1, override_maximum, done_capcalculate, override_balancer, enable_capcalculate, shunt_registeractive, enable_chargereference, hijack_enable_capcalculate, hijack_enable_chargereference);
 input  mode_cv;
 input  CELG59462;
 input  CELV96848;
@@ -84,19 +66,6 @@ input  shunt_registeractive;
 input  enable_chargereference;
 output  hijack_enable_capcalculate;
 output  hijack_enable_chargereference;
-output  dftstatus_SELECTshunt_0_7279984b;
-output  dftstatus_SELECTshunt_1_7279984b;
-output  dftstatus_SELECTshunt_2_7279984b;
-output  dftstatus_SELECTshunt_3_7279984b;
-output  dftstatus_MAXIMUMchannel_0_7279984b;
-output  dftstatus_MAXIMUMchannel_1_7279984b;
-output  dftprobe_XUCAPcalculateTIME_7279984b;
-output  dftprobe_XUCAPcalculateSHUNT_7279984b;
-output  dftprobe_XUCAPcalculateBALANCER_7279984b;
-output  dftprobe_XUCAPcalculateREFERENCE_7279984b;
-output  dftprobe_XUCAPcalculateSHUNTACTIVE_7279984b;
-output  dftprobe_XUCAPcalculateSHUNTstatus_7279984b;
-output  dftprobe_XUCAPcalculateBALANCERstatus_7279984b;
 
 
 // ------------------------ Wires ------------------------
@@ -104,7 +73,7 @@ output  dftprobe_XUCAPcalculateBALANCERstatus_7279984b;
 // ------------------------ Networks ---------------------
 VESPAdftpulse XU23 (
 .stop(done_capcalculate),
-.pulse(dftprobe_XUCAPcalculateTIME_7279984b),
+.pulse(net_57),
 .start(hijack_enable_capcalculate),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -118,6 +87,10 @@ tie_9e2c0894 XU4 (
 .CELV(CELV96848)
 );
 
+STONEnoconn XNC57 (
+.noconn(net_57)
+);
+
 WRAPPER1 XWRAP_90_97 (
 .i(enable_capcalculate),
 .o(hijack_enable_capcalculate)
@@ -126,14 +99,6 @@ WRAPPER1 XWRAP_90_97 (
 WRAPPER1 XWRAP_91_99 (
 .i(enable_chargereference),
 .o(hijack_enable_chargereference)
-);
-
-dftstatusModel0_02103832 Xdftstatus1 (
-
-);
-
-dftstatusModel0_8428d918 Xdftstatus3 (
-
 );
 
 WRAPPER1 XWRAP_92_101 (
@@ -156,92 +121,52 @@ WRAPPER1 XWRAP_106_105 (
 .o(override_balancer)
 );
 
-dftprobeModel0_631c2ee1 XUCAPcalculateTIME (
-
+STONEnoconn XNCREF_ICHARGER (
+.noconn(REF_ICHARGER)
 );
 
-dftprobeModel0_df2c0a23 XUCAPcalculateSHUNT (
-
+STONEnoconn XNCenable_shunt (
+.noconn(enable_shunt)
 );
 
-dftprobeModel0_72d70429 XUCAPcalculateBALANCER (
-
+STONEnoconn XNCshunt_status (
+.noconn(shunt_status)
 );
 
-dftprobeModel2_7ad68977 XUCAPcalculateREFERENCE (
-
+STONEnoconn XNCSELECTshunt_0 (
+.noconn(SELECTshunt_0)
 );
 
-dftprobeModel0_2ab07ea6 XUCAPcalculateSHUNTACTIVE (
-
+STONEnoconn XNCSELECTshunt_1 (
+.noconn(SELECTshunt_1)
 );
 
-dftprobeModel0_fd152c03 XUCAPcalculateSHUNTstatus (
-
+STONEnoconn XNCSELECTshunt_2 (
+.noconn(SELECTshunt_2)
 );
 
-dftprobeModel0_8be1a01f XUCAPcalculateBALANCERstatus (
-
+STONEnoconn XNCSELECTshunt_3 (
+.noconn(SELECTshunt_3)
 );
 
-WRAPPER1 XWRAP_SELECTshunt_0_dftstatus_SELECTshunt_0_7279984b (
-.i(SELECTshunt_0),
-.o(dftstatus_SELECTshunt_0_7279984b)
+STONEnoconn XNCbalancer_status (
+.noconn(balancer_status)
 );
 
-WRAPPER1 XWRAP_SELECTshunt_1_dftstatus_SELECTshunt_1_7279984b (
-.i(SELECTshunt_1),
-.o(dftstatus_SELECTshunt_1_7279984b)
+STONEnoconn XNCenable_balancer (
+.noconn(enable_balancer)
 );
 
-WRAPPER1 XWRAP_SELECTshunt_2_dftstatus_SELECTshunt_2_7279984b (
-.i(SELECTshunt_2),
-.o(dftstatus_SELECTshunt_2_7279984b)
+STONEnoconn XNCMAXIMUMchannel_0 (
+.noconn(MAXIMUMchannel_0)
 );
 
-WRAPPER1 XWRAP_SELECTshunt_3_dftstatus_SELECTshunt_3_7279984b (
-.i(SELECTshunt_3),
-.o(dftstatus_SELECTshunt_3_7279984b)
+STONEnoconn XNCMAXIMUMchannel_1 (
+.noconn(MAXIMUMchannel_1)
 );
 
-WRAPPER1 XWRAP_enable_shunt_dftprobe_XUCAPcalculateSHUNT_7279984b (
-.i(enable_shunt),
-.o(dftprobe_XUCAPcalculateSHUNT_7279984b)
-);
-
-WRAPPER1 XWRAP_MAXIMUMchannel_0_dftstatus_MAXIMUMchannel_0_7279984b (
-.i(MAXIMUMchannel_0),
-.o(dftstatus_MAXIMUMchannel_0_7279984b)
-);
-
-WRAPPER1 XWRAP_MAXIMUMchannel_1_dftstatus_MAXIMUMchannel_1_7279984b (
-.i(MAXIMUMchannel_1),
-.o(dftstatus_MAXIMUMchannel_1_7279984b)
-);
-
-WRAPPER1 XWRAP_REF_ICHARGER_dftprobe_XUCAPcalculateREFERENCE_7279984b (
-.i(REF_ICHARGER),
-.o(dftprobe_XUCAPcalculateREFERENCE_7279984b)
-);
-
-WRAPPER1 XWRAP_enable_balancer_dftprobe_XUCAPcalculateBALANCER_7279984b (
-.i(enable_balancer),
-.o(dftprobe_XUCAPcalculateBALANCER_7279984b)
-);
-
-WRAPPER1 XWRAP_shunt_status_dftprobe_XUCAPcalculateSHUNTstatus_7279984b (
-.i(shunt_status),
-.o(dftprobe_XUCAPcalculateSHUNTstatus_7279984b)
-);
-
-WRAPPER1 XWRAP_balancer_status_dftprobe_XUCAPcalculateBALANCERstatus_7279984b (
-.i(balancer_status),
-.o(dftprobe_XUCAPcalculateBALANCERstatus_7279984b)
-);
-
-WRAPPER1 XWRAP_shunt_registeractive_dftprobe_XUCAPcalculateSHUNTACTIVE_7279984b (
-.i(shunt_registeractive),
-.o(dftprobe_XUCAPcalculateSHUNTACTIVE_7279984b)
+STONEnoconn XNCshunt_registeractive (
+.noconn(shunt_registeractive)
 );
 
 endmodule
