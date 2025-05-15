@@ -31,7 +31,7 @@ module dftprobeModel0_b3fb32ff ();
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module ESRtestREFERENCEdebug (CELG59462, CELV96848, CELSUB40948, start_esrtest, dft_countclock, GMCHARGEselect_0, GMCHARGEselect_1, GMCHARGEselect_2, GMCHARGEselect_3, done_esrreference, dft_countdirection, update_esrreference, hijack_start_esrtest, hijack_update_esrreference, probe_XUESRtestREFERENCEstartup_1b63cc23, probe_XUESRtestREFERENCEcountclock_1b63cc23, probe_XUESRtestREFERENCEcountdirection_1b63cc23);
+module ESRtestREFERENCEdebug (CELG59462, CELV96848, CELSUB40948, start_esrtest, dft_countclock, GMCHARGEselect_0, GMCHARGEselect_1, GMCHARGEselect_2, GMCHARGEselect_3, done_esrreference, dft_countdirection, update_esrreference, hijack_start_esrtest, hijack_update_esrreference, dftprobe_XUESRtestREFERENCEstartup_1b63cc23, dftprobe_XUESRtestREFERENCEcountclock_1b63cc23, dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23);
 input  CELG59462;
 input  CELV96848;
 input  CELSUB40948;
@@ -46,9 +46,9 @@ input  dft_countdirection;
 input  update_esrreference;
 output  hijack_start_esrtest;
 output  hijack_update_esrreference;
-output  probe_XUESRtestREFERENCEstartup_1b63cc23;
-output  probe_XUESRtestREFERENCEcountclock_1b63cc23;
-output  probe_XUESRtestREFERENCEcountdirection_1b63cc23;
+output  dftprobe_XUESRtestREFERENCEstartup_1b63cc23;
+output  dftprobe_XUESRtestREFERENCEcountclock_1b63cc23;
+output  dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23;
 
 
 // ------------------------ Wires ------------------------
@@ -56,7 +56,7 @@ output  probe_XUESRtestREFERENCEcountdirection_1b63cc23;
 // ------------------------ Networks ---------------------
 VESPAdftpulse XU6 (
 .stop(done_esrreference),
-.pulse(probe_XUESRtestREFERENCEstartup_1b63cc23),
+.pulse(dftprobe_XUESRtestREFERENCEstartup_1b63cc23),
 .start(hijack_start_esrtest),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -89,14 +89,14 @@ dftprobeModel0_b3fb32ff XUESRtestREFERENCEcountdirection (
 
 );
 
-WRAPPER1 XWRAP_dft_countclock_probe_XUESRtestREFERENCEcountclock_1b63cc23 (
+WRAPPER1 XWRAP_dft_countclock_dftprobe_XUESRtestREFERENCEcountclock_1b63cc23 (
 .i(dft_countclock),
-.o(probe_XUESRtestREFERENCEcountclock_1b63cc23)
+.o(dftprobe_XUESRtestREFERENCEcountclock_1b63cc23)
 );
 
-WRAPPER1 XWRAP_dft_countdirection_probe_XUESRtestREFERENCEcountdirection_1b63cc23 (
+WRAPPER1 XWRAP_dft_countdirection_dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23 (
 .i(dft_countdirection),
-.o(probe_XUESRtestREFERENCEcountdirection_1b63cc23)
+.o(dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23)
 );
 
 endmodule
