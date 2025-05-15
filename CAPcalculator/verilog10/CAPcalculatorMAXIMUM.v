@@ -274,256 +274,256 @@ wire [1:0] s;
 
 // ------------------------ Networks ---------------------
 dbuf_e926e395 XU1 (
-  .i(net_84),
-  .o(ok_maximum),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_84),
+.o(ok_maximum),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 digitalcomparator_45b4cf4d XU2 (
-  .x({meas_vcap1_15,meas_vcap1_14,meas_vcap1_13,meas_vcap1_12,meas_vcap1_11,meas_vcap1_10,meas_vcap1_9,meas_vcap1_8,meas_vcap1_7,meas_vcap1_6,meas_vcap1_5,meas_vcap1_4,meas_vcap1_3,meas_vcap1_2,meas_vcap1_1,meas_vcap1_0}),
-  .y({meas_vcap2_15,meas_vcap2_14,meas_vcap2_13,meas_vcap2_12,meas_vcap2_11,meas_vcap2_10,meas_vcap2_9,meas_vcap2_8,meas_vcap2_7,meas_vcap2_6,meas_vcap2_5,meas_vcap2_4,meas_vcap2_3,meas_vcap2_2,meas_vcap2_1,meas_vcap2_0}),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .xgteqy(net_262)
+.x({meas_vcap1_15,meas_vcap1_14,meas_vcap1_13,meas_vcap1_12,meas_vcap1_11,meas_vcap1_10,meas_vcap1_9,meas_vcap1_8,meas_vcap1_7,meas_vcap1_6,meas_vcap1_5,meas_vcap1_4,meas_vcap1_3,meas_vcap1_2,meas_vcap1_1,meas_vcap1_0}),
+.y({meas_vcap2_15,meas_vcap2_14,meas_vcap2_13,meas_vcap2_12,meas_vcap2_11,meas_vcap2_10,meas_vcap2_9,meas_vcap2_8,meas_vcap2_7,meas_vcap2_6,meas_vcap2_5,meas_vcap2_4,meas_vcap2_3,meas_vcap2_2,meas_vcap2_1,meas_vcap2_0}),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.xgteqy(net_262)
 );
 
 decoder3_e112c4e8 XU4 (
-  .i({net_264,net_263,net_262}),
-  .o({net_272,net_271,net_270,net_269,net_268,net_267,net_266,net_265}),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i({net_264,net_263,net_262}),
+.o({net_272,net_271,net_270,net_269,net_268,net_267,net_266,net_265}),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 digitalcomparator_45b4cf4d XU5 (
-  .x({meas_vcap3_15,meas_vcap3_14,meas_vcap3_13,meas_vcap3_12,meas_vcap3_11,meas_vcap3_10,meas_vcap3_9,meas_vcap3_8,meas_vcap3_7,meas_vcap3_6,meas_vcap3_5,meas_vcap3_4,meas_vcap3_3,meas_vcap3_2,meas_vcap3_1,meas_vcap3_0}),
-  .y({meas_vcap4_15,meas_vcap4_14,meas_vcap4_13,meas_vcap4_12,meas_vcap4_11,meas_vcap4_10,meas_vcap4_9,meas_vcap4_8,meas_vcap4_7,meas_vcap4_6,meas_vcap4_5,meas_vcap4_4,meas_vcap4_3,meas_vcap4_2,meas_vcap4_1,meas_vcap4_0}),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .xgteqy(net_263)
+.x({meas_vcap3_15,meas_vcap3_14,meas_vcap3_13,meas_vcap3_12,meas_vcap3_11,meas_vcap3_10,meas_vcap3_9,meas_vcap3_8,meas_vcap3_7,meas_vcap3_6,meas_vcap3_5,meas_vcap3_4,meas_vcap3_3,meas_vcap3_2,meas_vcap3_1,meas_vcap3_0}),
+.y({meas_vcap4_15,meas_vcap4_14,meas_vcap4_13,meas_vcap4_12,meas_vcap4_11,meas_vcap4_10,meas_vcap4_9,meas_vcap4_8,meas_vcap4_7,meas_vcap4_6,meas_vcap4_5,meas_vcap4_4,meas_vcap4_3,meas_vcap4_2,meas_vcap4_1,meas_vcap4_0}),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.xgteqy(net_263)
 );
 
 digitalcomparator_45b4cf4d XU6 (
-  .x({net_197,net_196,net_195,net_194,net_193,net_192,net_191,net_190,net_189,net_188,net_187,net_186,net_185,net_184,net_183,net_182}),
-  .y({net_245,net_244,net_243,net_242,net_241,net_240,net_239,net_238,net_237,net_236,net_235,net_234,net_233,net_232,net_231,net_230}),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .xgteqy(net_264)
+.x({net_197,net_196,net_195,net_194,net_193,net_192,net_191,net_190,net_189,net_188,net_187,net_186,net_185,net_184,net_183,net_182}),
+.y({net_245,net_244,net_243,net_242,net_241,net_240,net_239,net_238,net_237,net_236,net_235,net_234,net_233,net_232,net_231,net_230}),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.xgteqy(net_264)
 );
 
 inv_12e192f5 XU7 (
-  .i(net_264),
-  .o(net_300),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_264),
+.o(net_300),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 inv_12e192f5 XU8 (
-  .i(net_262),
-  .o(net_298),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_262),
+.o(net_298),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 nor2_ee112582 XU9 (
-  .o(net_71),
-  .i0(net_270),
-  .i1(net_272),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.o(net_71),
+.i0(net_270),
+.i1(net_272),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 inv_12e192f5 XU10 (
-  .i(net_263),
-  .o(net_299),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_263),
+.o(net_299),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 nor2_ee112582 XU11 (
-  .o(net_76),
-  .i0(net_269),
-  .i1(net_271),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.o(net_76),
+.i0(net_269),
+.i1(net_271),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 nor2_ee112582 XU12 (
-  .o(net_81),
-  .i0(net_267),
-  .i1(net_268),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.o(net_81),
+.i0(net_267),
+.i1(net_268),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 nor2_ee112582 XU14 (
-  .o(net_82),
-  .i0(net_266),
-  .i1(net_265),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.o(net_82),
+.i0(net_266),
+.i1(net_265),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 inv_12e192f5 XU15 (
-  .i(net_71),
-  .o(net_293),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_71),
+.o(net_293),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 inv_12e192f5 XU16 (
-  .i(net_76),
-  .o(net_295),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_76),
+.o(net_295),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 inv_12e192f5 XU19 (
-  .i(net_81),
-  .o(net_296),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_81),
+.o(net_296),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 inv_12e192f5 XU20 (
-  .i(net_82),
-  .o(net_297),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_82),
+.o(net_297),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 nor2_ee112582 XU24 (
-  .o(net_85),
-  .i0(net_295),
-  .i1(net_297),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.o(net_85),
+.i0(net_295),
+.i1(net_297),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 inv_12e192f5 XU25 (
-  .i(net_85),
-  .o(net_198),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_85),
+.o(net_198),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 inv_12e192f5 XU26 (
-  .i(net_83),
-  .o(net_199),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_83),
+.o(net_199),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 nor2_ee112582 XU27 (
-  .o(net_83),
-  .i0(net_296),
-  .i1(net_297),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.o(net_83),
+.i0(net_296),
+.i1(net_297),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 dffb_931e17d4 Xdff1 (
-  .d({net_199,net_198}),
-  .q({net_215,net_214}),
-  .ck(net_294),
-  .rb(porb),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.d({net_199,net_198}),
+.q({net_215,net_214}),
+.ck(net_294),
+.rb(porb),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 STONEnoconn XNC293 (
-  .noconn(net_293)
+.noconn(net_293)
 );
 
 STONEnoconn XNC298 (
-  .noconn(net_298)
+.noconn(net_298)
 );
 
 STONEnoconn XNC299 (
-  .noconn(net_299)
+.noconn(net_299)
 );
 
 STONEnoconn XNC300 (
-  .noconn(net_300)
+.noconn(net_300)
 );
 
 dmux2b_bdbf6db5 Xdmux5 (
-  .a({meas_vcap2_15,meas_vcap2_14,meas_vcap2_13,meas_vcap2_12,meas_vcap2_11,meas_vcap2_10,meas_vcap2_9,meas_vcap2_8,meas_vcap2_7,meas_vcap2_6,meas_vcap2_5,meas_vcap2_4,meas_vcap2_3,meas_vcap2_2,meas_vcap2_1,meas_vcap2_0}),
-  .b({meas_vcap1_15,meas_vcap1_14,meas_vcap1_13,meas_vcap1_12,meas_vcap1_11,meas_vcap1_10,meas_vcap1_9,meas_vcap1_8,meas_vcap1_7,meas_vcap1_6,meas_vcap1_5,meas_vcap1_4,meas_vcap1_3,meas_vcap1_2,meas_vcap1_1,meas_vcap1_0}),
-  .o({net_197,net_196,net_195,net_194,net_193,net_192,net_191,net_190,net_189,net_188,net_187,net_186,net_185,net_184,net_183,net_182}),
-  .s(net_262),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.a({meas_vcap2_15,meas_vcap2_14,meas_vcap2_13,meas_vcap2_12,meas_vcap2_11,meas_vcap2_10,meas_vcap2_9,meas_vcap2_8,meas_vcap2_7,meas_vcap2_6,meas_vcap2_5,meas_vcap2_4,meas_vcap2_3,meas_vcap2_2,meas_vcap2_1,meas_vcap2_0}),
+.b({meas_vcap1_15,meas_vcap1_14,meas_vcap1_13,meas_vcap1_12,meas_vcap1_11,meas_vcap1_10,meas_vcap1_9,meas_vcap1_8,meas_vcap1_7,meas_vcap1_6,meas_vcap1_5,meas_vcap1_4,meas_vcap1_3,meas_vcap1_2,meas_vcap1_1,meas_vcap1_0}),
+.o({net_197,net_196,net_195,net_194,net_193,net_192,net_191,net_190,net_189,net_188,net_187,net_186,net_185,net_184,net_183,net_182}),
+.s(net_262),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 dmux2b_bdbf6db5 Xdmux6 (
-  .a({meas_vcap4_15,meas_vcap4_14,meas_vcap4_13,meas_vcap4_12,meas_vcap4_11,meas_vcap4_10,meas_vcap4_9,meas_vcap4_8,meas_vcap4_7,meas_vcap4_6,meas_vcap4_5,meas_vcap4_4,meas_vcap4_3,meas_vcap4_2,meas_vcap4_1,meas_vcap4_0}),
-  .b({meas_vcap3_15,meas_vcap3_14,meas_vcap3_13,meas_vcap3_12,meas_vcap3_11,meas_vcap3_10,meas_vcap3_9,meas_vcap3_8,meas_vcap3_7,meas_vcap3_6,meas_vcap3_5,meas_vcap3_4,meas_vcap3_3,meas_vcap3_2,meas_vcap3_1,meas_vcap3_0}),
-  .o({net_245,net_244,net_243,net_242,net_241,net_240,net_239,net_238,net_237,net_236,net_235,net_234,net_233,net_232,net_231,net_230}),
-  .s(net_263),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.a({meas_vcap4_15,meas_vcap4_14,meas_vcap4_13,meas_vcap4_12,meas_vcap4_11,meas_vcap4_10,meas_vcap4_9,meas_vcap4_8,meas_vcap4_7,meas_vcap4_6,meas_vcap4_5,meas_vcap4_4,meas_vcap4_3,meas_vcap4_2,meas_vcap4_1,meas_vcap4_0}),
+.b({meas_vcap3_15,meas_vcap3_14,meas_vcap3_13,meas_vcap3_12,meas_vcap3_11,meas_vcap3_10,meas_vcap3_9,meas_vcap3_8,meas_vcap3_7,meas_vcap3_6,meas_vcap3_5,meas_vcap3_4,meas_vcap3_3,meas_vcap3_2,meas_vcap3_1,meas_vcap3_0}),
+.o({net_245,net_244,net_243,net_242,net_241,net_240,net_239,net_238,net_237,net_236,net_235,net_234,net_233,net_232,net_231,net_230}),
+.s(net_263),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 dmux4b_1e2aca6a Xdmux7 (
-  .a({meas_vcap1_15,meas_vcap1_14,meas_vcap1_13,meas_vcap1_12,meas_vcap1_11,meas_vcap1_10,meas_vcap1_9,meas_vcap1_8,meas_vcap1_7,meas_vcap1_6,meas_vcap1_5,meas_vcap1_4,meas_vcap1_3,meas_vcap1_2,meas_vcap1_1,meas_vcap1_0}),
-  .b({meas_vcap2_15,meas_vcap2_14,meas_vcap2_13,meas_vcap2_12,meas_vcap2_11,meas_vcap2_10,meas_vcap2_9,meas_vcap2_8,meas_vcap2_7,meas_vcap2_6,meas_vcap2_5,meas_vcap2_4,meas_vcap2_3,meas_vcap2_2,meas_vcap2_1,meas_vcap2_0}),
-  .c({meas_vcap3_15,meas_vcap3_14,meas_vcap3_13,meas_vcap3_12,meas_vcap3_11,meas_vcap3_10,meas_vcap3_9,meas_vcap3_8,meas_vcap3_7,meas_vcap3_6,meas_vcap3_5,meas_vcap3_4,meas_vcap3_3,meas_vcap3_2,meas_vcap3_1,meas_vcap3_0}),
-  .d({meas_vcap4_15,meas_vcap4_14,meas_vcap4_13,meas_vcap4_12,meas_vcap4_11,meas_vcap4_10,meas_vcap4_9,meas_vcap4_8,meas_vcap4_7,meas_vcap4_6,meas_vcap4_5,meas_vcap4_4,meas_vcap4_3,meas_vcap4_2,meas_vcap4_1,meas_vcap4_0}),
-  .o({net_261,net_260,net_259,net_258,net_257,net_256,net_255,net_254,net_253,net_252,net_251,net_250,net_249,net_248,net_247,net_246}),
-  .s({net_215,net_214}),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.a({meas_vcap1_15,meas_vcap1_14,meas_vcap1_13,meas_vcap1_12,meas_vcap1_11,meas_vcap1_10,meas_vcap1_9,meas_vcap1_8,meas_vcap1_7,meas_vcap1_6,meas_vcap1_5,meas_vcap1_4,meas_vcap1_3,meas_vcap1_2,meas_vcap1_1,meas_vcap1_0}),
+.b({meas_vcap2_15,meas_vcap2_14,meas_vcap2_13,meas_vcap2_12,meas_vcap2_11,meas_vcap2_10,meas_vcap2_9,meas_vcap2_8,meas_vcap2_7,meas_vcap2_6,meas_vcap2_5,meas_vcap2_4,meas_vcap2_3,meas_vcap2_2,meas_vcap2_1,meas_vcap2_0}),
+.c({meas_vcap3_15,meas_vcap3_14,meas_vcap3_13,meas_vcap3_12,meas_vcap3_11,meas_vcap3_10,meas_vcap3_9,meas_vcap3_8,meas_vcap3_7,meas_vcap3_6,meas_vcap3_5,meas_vcap3_4,meas_vcap3_3,meas_vcap3_2,meas_vcap3_1,meas_vcap3_0}),
+.d({meas_vcap4_15,meas_vcap4_14,meas_vcap4_13,meas_vcap4_12,meas_vcap4_11,meas_vcap4_10,meas_vcap4_9,meas_vcap4_8,meas_vcap4_7,meas_vcap4_6,meas_vcap4_5,meas_vcap4_4,meas_vcap4_3,meas_vcap4_2,meas_vcap4_1,meas_vcap4_0}),
+.o({net_261,net_260,net_259,net_258,net_257,net_256,net_255,net_254,net_253,net_252,net_251,net_250,net_249,net_248,net_247,net_246}),
+.s({net_215,net_214}),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 dmux2b_bdbf6db5 Xdmux8 (
-  .a({net_261,net_260,net_259,net_258,net_257,net_256,net_255,net_254,net_253,net_252,net_251,net_250,net_249,net_248,net_247,net_246}),
-  .b({MAXIMUMoverride_15,MAXIMUMoverride_14,MAXIMUMoverride_13,MAXIMUMoverride_12,MAXIMUMoverride_11,MAXIMUMoverride_10,MAXIMUMoverride_9,MAXIMUMoverride_8,MAXIMUMoverride_7,MAXIMUMoverride_6,MAXIMUMoverride_5,MAXIMUMoverride_4,MAXIMUMoverride_3,MAXIMUMoverride_2,MAXIMUMoverride_1,MAXIMUMoverride_0}),
-  .o({maximum_15,maximum_14,maximum_13,maximum_12,maximum_11,maximum_10,maximum_9,maximum_8,maximum_7,maximum_6,maximum_5,maximum_4,maximum_3,maximum_2,maximum_1,maximum_0}),
-  .s(override_maximum),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.a({net_261,net_260,net_259,net_258,net_257,net_256,net_255,net_254,net_253,net_252,net_251,net_250,net_249,net_248,net_247,net_246}),
+.b({MAXIMUMoverride_15,MAXIMUMoverride_14,MAXIMUMoverride_13,MAXIMUMoverride_12,MAXIMUMoverride_11,MAXIMUMoverride_10,MAXIMUMoverride_9,MAXIMUMoverride_8,MAXIMUMoverride_7,MAXIMUMoverride_6,MAXIMUMoverride_5,MAXIMUMoverride_4,MAXIMUMoverride_3,MAXIMUMoverride_2,MAXIMUMoverride_1,MAXIMUMoverride_0}),
+.o({maximum_15,maximum_14,maximum_13,maximum_12,maximum_11,maximum_10,maximum_9,maximum_8,maximum_7,maximum_6,maximum_5,maximum_4,maximum_3,maximum_2,maximum_1,maximum_0}),
+.s(override_maximum),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 delayfixed_cd8b6211 Xdelay1 (
-  .i(net_294),
-  .o(net_84),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(net_294),
+.o(net_84),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 delayfixed_c42638ff Xdelay3 (
-  .i(calculate_maximum),
-  .o(net_294),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(calculate_maximum),
+.o(net_294),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 endmodule

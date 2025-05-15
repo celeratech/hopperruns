@@ -2,7 +2,7 @@
 // Celera Generator Confidential
 //CELL SOURCE:delayclock
 //NAME:delayclock_6140cdf5
-//DELAY GENERATOR REVISION:0.4.1
+//DELAY GENERATOR REVISION:0.4.2
 //TYPE:clock
 //EDGE:rise
 //DFT:no

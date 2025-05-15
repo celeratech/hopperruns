@@ -147,428 +147,428 @@ wire [15:0] o;
 
 // ------------------------ Networks ---------------------
 PEBBLEtiehi XDRMNOTH (
-  .G(CELG59462),
-  .V(CELV96848),
-  .q(a1),
-  .SUB(CELSUB40948)
+.G(CELG59462),
+.V(CELV96848),
+.q(a1),
+.SUB(CELSUB40948)
 );
 
 PEBBLEtielo XDRMNOTL (
-  .G(CELG59462),
-  .V(CELV96848),
-  .q(a0),
-  .SUB(CELSUB40948)
+.G(CELG59462),
+.V(CELV96848),
+.q(a0),
+.SUB(CELSUB40948)
 );
 
 subtractor_89c1a36f Xsubtractor1 (
-  .a({vshunt_15,vshunt_14,vshunt_13,vshunt_12,vshunt_11,vshunt_10,vshunt_9,vshunt_8,vshunt_7,vshunt_6,vshunt_5,vshunt_4,vshunt_3,vshunt_2,vshunt_1,vshunt_0}),
-  .b({net_188,net_187,net_186,net_185,net_184,net_183,net_182,net_181,net_180,net_179,net_178,net_177,net_176,net_175,net_174,net_173}),
-  .o({vshunt_trip_15,vshunt_trip_14,vshunt_trip_13,vshunt_trip_12,vshunt_trip_11,vshunt_trip_10,vshunt_trip_9,vshunt_trip_8,vshunt_trip_7,vshunt_trip_6,vshunt_trip_5,vshunt_trip_4,vshunt_trip_3,vshunt_trip_2,vshunt_trip_1,vshunt_trip_0}),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .load(enable_capcalculate),
-  .CELSUB(CELSUB40948),
-  .CELERAporb(PORB97836)
+.a({vshunt_15,vshunt_14,vshunt_13,vshunt_12,vshunt_11,vshunt_10,vshunt_9,vshunt_8,vshunt_7,vshunt_6,vshunt_5,vshunt_4,vshunt_3,vshunt_2,vshunt_1,vshunt_0}),
+.b({net_188,net_187,net_186,net_185,net_184,net_183,net_182,net_181,net_180,net_179,net_178,net_177,net_176,net_175,net_174,net_173}),
+.o({vshunt_trip_15,vshunt_trip_14,vshunt_trip_13,vshunt_trip_12,vshunt_trip_11,vshunt_trip_10,vshunt_trip_9,vshunt_trip_8,vshunt_trip_7,vshunt_trip_6,vshunt_trip_5,vshunt_trip_4,vshunt_trip_3,vshunt_trip_2,vshunt_trip_1,vshunt_trip_0}),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.load(enable_capcalculate),
+.CELSUB(CELSUB40948),
+.CELERAporb(PORB97836)
 );
 
 WRAPPER1 b_net_173_WRAPPER (
-  .i(a0),
-  .o(net_173)
+.i(a0),
+.o(net_173)
 );
 
 WRAPPER1 b_net_174_WRAPPER (
-  .i(a0),
-  .o(net_174)
+.i(a0),
+.o(net_174)
 );
 
 WRAPPER1 b_net_175_WRAPPER (
-  .i(a0),
-  .o(net_175)
+.i(a0),
+.o(net_175)
 );
 
 WRAPPER1 b_net_176_WRAPPER (
-  .i(a1),
-  .o(net_176)
+.i(a1),
+.o(net_176)
 );
 
 WRAPPER1 b_net_177_WRAPPER (
-  .i(a0),
-  .o(net_177)
+.i(a0),
+.o(net_177)
 );
 
 WRAPPER1 b_net_178_WRAPPER (
-  .i(a0),
-  .o(net_178)
+.i(a0),
+.o(net_178)
 );
 
 WRAPPER1 b_net_179_WRAPPER (
-  .i(a0),
-  .o(net_179)
+.i(a0),
+.o(net_179)
 );
 
 WRAPPER1 b_net_180_WRAPPER (
-  .i(a1),
-  .o(net_180)
+.i(a1),
+.o(net_180)
 );
 
 WRAPPER1 b_net_181_WRAPPER (
-  .i(a0),
-  .o(net_181)
+.i(a0),
+.o(net_181)
 );
 
 WRAPPER1 b_net_182_WRAPPER (
-  .i(a0),
-  .o(net_182)
+.i(a0),
+.o(net_182)
 );
 
 WRAPPER1 b_net_183_WRAPPER (
-  .i(a0),
-  .o(net_183)
+.i(a0),
+.o(net_183)
 );
 
 WRAPPER1 b_net_184_WRAPPER (
-  .i(a0),
-  .o(net_184)
+.i(a0),
+.o(net_184)
 );
 
 WRAPPER1 b_net_185_WRAPPER (
-  .i(a0),
-  .o(net_185)
+.i(a0),
+.o(net_185)
 );
 
 WRAPPER1 b_net_186_WRAPPER (
-  .i(a0),
-  .o(net_186)
+.i(a0),
+.o(net_186)
 );
 
 WRAPPER1 b_net_187_WRAPPER (
-  .i(a0),
-  .o(net_187)
+.i(a0),
+.o(net_187)
 );
 
 WRAPPER1 b_net_188_WRAPPER (
-  .i(a0),
-  .o(net_188)
+.i(a0),
+.o(net_188)
 );
 
 WRAPPER1 XWRAPregister_vshunt_15_0 (
-  .i(register_vshunt_15[0]),
-  .o(vshunt_15)
+.i(register_vshunt_15[0]),
+.o(vshunt_15)
 );
 
 WRAPPER1 XWRAPregister_vshunt_15_1 (
-  .i(register_vshunt_15[1]),
-  .o(vshunt_14)
+.i(register_vshunt_15[1]),
+.o(vshunt_14)
 );
 
 WRAPPER1 XWRAPregister_vshunt_15_2 (
-  .i(register_vshunt_15[2]),
-  .o(vshunt_13)
+.i(register_vshunt_15[2]),
+.o(vshunt_13)
 );
 
 WRAPPER1 XWRAPregister_vshunt_15_3 (
-  .i(register_vshunt_15[3]),
-  .o(vshunt_12)
+.i(register_vshunt_15[3]),
+.o(vshunt_12)
 );
 
 WRAPPER1 XWRAPregister_vshunt_15_4 (
-  .i(register_vshunt_15[4]),
-  .o(vshunt_11)
+.i(register_vshunt_15[4]),
+.o(vshunt_11)
 );
 
 WRAPPER1 XWRAPregister_vshunt_15_5 (
-  .i(register_vshunt_15[5]),
-  .o(vshunt_10)
+.i(register_vshunt_15[5]),
+.o(vshunt_10)
 );
 
 WRAPPER1 XWRAPregister_vshunt_15_6 (
-  .i(register_vshunt_15[6]),
-  .o(vshunt_9)
+.i(register_vshunt_15[6]),
+.o(vshunt_9)
 );
 
 WRAPPER1 XWRAPregister_vshunt_15_7 (
-  .i(register_vshunt_15[7]),
-  .o(vshunt_8)
+.i(register_vshunt_15[7]),
+.o(vshunt_8)
 );
 
 WRAPPER1 XWRAPregister_vshunt_15_8 (
-  .i(register_vshunt_15[8]),
-  .o(vshunt_7)
+.i(register_vshunt_15[8]),
+.o(vshunt_7)
 );
 
 WRAPPER1 XWRAPregister_vshunt_15_9 (
-  .i(register_vshunt_15[9]),
-  .o(vshunt_6)
+.i(register_vshunt_15[9]),
+.o(vshunt_6)
 );
 
 WRAPPER1 XWRAPregister_vshunt_15_10 (
-  .i(register_vshunt_15[10]),
-  .o(vshunt_5)
+.i(register_vshunt_15[10]),
+.o(vshunt_5)
 );
 
 WRAPPER1 XWRAPregister_vshunt_15_11 (
-  .i(register_vshunt_15[11]),
-  .o(vshunt_4)
+.i(register_vshunt_15[11]),
+.o(vshunt_4)
 );
 
 WRAPPER1 XWRAPregister_vshunt_15_12 (
-  .i(register_vshunt_15[12]),
-  .o(vshunt_3)
+.i(register_vshunt_15[12]),
+.o(vshunt_3)
 );
 
 WRAPPER1 XWRAPregister_vshunt_15_13 (
-  .i(register_vshunt_15[13]),
-  .o(vshunt_2)
+.i(register_vshunt_15[13]),
+.o(vshunt_2)
 );
 
 WRAPPER1 XWRAPregister_vshunt_15_14 (
-  .i(register_vshunt_15[14]),
-  .o(vshunt_1)
+.i(register_vshunt_15[14]),
+.o(vshunt_1)
 );
 
 WRAPPER1 XWRAPregister_vshunt_15_15 (
-  .i(register_vshunt_15[15]),
-  .o(vshunt_0)
+.i(register_vshunt_15[15]),
+.o(vshunt_0)
 );
 
 WRAPPER1 vbalancer_0_net_117_WRAPPER (
-  .i(a0),
-  .o(vbalancer_0)
+.i(a0),
+.o(vbalancer_0)
 );
 
 WRAPPER1 vbalancer_1_net_118_WRAPPER (
-  .i(a1),
-  .o(vbalancer_1)
+.i(a1),
+.o(vbalancer_1)
 );
 
 WRAPPER1 vbalancer_2_net_119_WRAPPER (
-  .i(a1),
-  .o(vbalancer_2)
+.i(a1),
+.o(vbalancer_2)
 );
 
 WRAPPER1 vbalancer_3_net_120_WRAPPER (
-  .i(a0),
-  .o(vbalancer_3)
+.i(a0),
+.o(vbalancer_3)
 );
 
 WRAPPER1 vbalancer_4_net_121_WRAPPER (
-  .i(a1),
-  .o(vbalancer_4)
+.i(a1),
+.o(vbalancer_4)
 );
 
 WRAPPER1 vbalancer_5_net_122_WRAPPER (
-  .i(a1),
-  .o(vbalancer_5)
+.i(a1),
+.o(vbalancer_5)
 );
 
 WRAPPER1 vbalancer_6_net_123_WRAPPER (
-  .i(a0),
-  .o(vbalancer_6)
+.i(a0),
+.o(vbalancer_6)
 );
 
 WRAPPER1 vbalancer_7_net_124_WRAPPER (
-  .i(a0),
-  .o(vbalancer_7)
+.i(a0),
+.o(vbalancer_7)
 );
 
 WRAPPER1 vshunt_hyst_0_net_101_WRAPPER (
-  .i(a0),
-  .o(vshunt_hyst_0)
+.i(a0),
+.o(vshunt_hyst_0)
 );
 
 WRAPPER1 vshunt_hyst_1_net_102_WRAPPER (
-  .i(a0),
-  .o(vshunt_hyst_1)
+.i(a0),
+.o(vshunt_hyst_1)
 );
 
 WRAPPER1 vshunt_hyst_2_net_103_WRAPPER (
-  .i(a1),
-  .o(vshunt_hyst_2)
+.i(a1),
+.o(vshunt_hyst_2)
 );
 
 WRAPPER1 vshunt_hyst_3_net_104_WRAPPER (
-  .i(a1),
-  .o(vshunt_hyst_3)
+.i(a1),
+.o(vshunt_hyst_3)
 );
 
 WRAPPER1 vshunt_hyst_4_net_105_WRAPPER (
-  .i(a0),
-  .o(vshunt_hyst_4)
+.i(a0),
+.o(vshunt_hyst_4)
 );
 
 WRAPPER1 vshunt_hyst_5_net_106_WRAPPER (
-  .i(a1),
-  .o(vshunt_hyst_5)
+.i(a1),
+.o(vshunt_hyst_5)
 );
 
 WRAPPER1 vshunt_hyst_6_net_107_WRAPPER (
-  .i(a1),
-  .o(vshunt_hyst_6)
+.i(a1),
+.o(vshunt_hyst_6)
 );
 
 WRAPPER1 vshunt_hyst_7_net_108_WRAPPER (
-  .i(a0),
-  .o(vshunt_hyst_7)
+.i(a0),
+.o(vshunt_hyst_7)
 );
 
 WRAPPER1 vshunt_hyst_8_net_109_WRAPPER (
-  .i(a0),
-  .o(vshunt_hyst_8)
+.i(a0),
+.o(vshunt_hyst_8)
 );
 
 WRAPPER1 vshunt_hyst_9_net_110_WRAPPER (
-  .i(a0),
-  .o(vshunt_hyst_9)
+.i(a0),
+.o(vshunt_hyst_9)
 );
 
 WRAPPER1 vshunt_hyst_10_net_111_WRAPPER (
-  .i(a0),
-  .o(vshunt_hyst_10)
+.i(a0),
+.o(vshunt_hyst_10)
 );
 
 WRAPPER1 vshunt_hyst_11_net_112_WRAPPER (
-  .i(a0),
-  .o(vshunt_hyst_11)
+.i(a0),
+.o(vshunt_hyst_11)
 );
 
 WRAPPER1 vshunt_hyst_12_net_113_WRAPPER (
-  .i(a0),
-  .o(vshunt_hyst_12)
+.i(a0),
+.o(vshunt_hyst_12)
 );
 
 WRAPPER1 vshunt_hyst_13_net_114_WRAPPER (
-  .i(a0),
-  .o(vshunt_hyst_13)
+.i(a0),
+.o(vshunt_hyst_13)
 );
 
 WRAPPER1 vshunt_hyst_14_net_115_WRAPPER (
-  .i(a0),
-  .o(vshunt_hyst_14)
+.i(a0),
+.o(vshunt_hyst_14)
 );
 
 WRAPPER1 vshunt_hyst_15_net_116_WRAPPER (
-  .i(a0),
-  .o(vshunt_hyst_15)
+.i(a0),
+.o(vshunt_hyst_15)
 );
 
 WRAPPER1 vbalancer_hyst_0_net_133_WRAPPER (
-  .i(a0),
-  .o(vbalancer_hyst_0)
+.i(a0),
+.o(vbalancer_hyst_0)
 );
 
 WRAPPER1 vbalancer_hyst_1_net_134_WRAPPER (
-  .i(a0),
-  .o(vbalancer_hyst_1)
+.i(a0),
+.o(vbalancer_hyst_1)
 );
 
 WRAPPER1 vbalancer_hyst_2_net_135_WRAPPER (
-  .i(a0),
-  .o(vbalancer_hyst_2)
+.i(a0),
+.o(vbalancer_hyst_2)
 );
 
 WRAPPER1 vbalancer_hyst_3_net_136_WRAPPER (
-  .i(a0),
-  .o(vbalancer_hyst_3)
+.i(a0),
+.o(vbalancer_hyst_3)
 );
 
 WRAPPER1 vbalancer_hyst_4_net_137_WRAPPER (
-  .i(a1),
-  .o(vbalancer_hyst_4)
+.i(a1),
+.o(vbalancer_hyst_4)
 );
 
 WRAPPER1 vbalancer_hyst_5_net_138_WRAPPER (
-  .i(a1),
-  .o(vbalancer_hyst_5)
+.i(a1),
+.o(vbalancer_hyst_5)
 );
 
 WRAPPER1 vbalancer_hyst_6_net_139_WRAPPER (
-  .i(a0),
-  .o(vbalancer_hyst_6)
+.i(a0),
+.o(vbalancer_hyst_6)
 );
 
 WRAPPER1 vbalancer_hyst_7_net_140_WRAPPER (
-  .i(a0),
-  .o(vbalancer_hyst_7)
+.i(a0),
+.o(vbalancer_hyst_7)
 );
 
 WRAPPER1 MAXIMUMoverride_0_net_149_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_0)
+.i(a0),
+.o(MAXIMUMoverride_0)
 );
 
 WRAPPER1 MAXIMUMoverride_1_net_150_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_1)
+.i(a0),
+.o(MAXIMUMoverride_1)
 );
 
 WRAPPER1 MAXIMUMoverride_2_net_151_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_2)
+.i(a0),
+.o(MAXIMUMoverride_2)
 );
 
 WRAPPER1 MAXIMUMoverride_3_net_152_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_3)
+.i(a0),
+.o(MAXIMUMoverride_3)
 );
 
 WRAPPER1 MAXIMUMoverride_4_net_153_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_4)
+.i(a0),
+.o(MAXIMUMoverride_4)
 );
 
 WRAPPER1 MAXIMUMoverride_5_net_154_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_5)
+.i(a0),
+.o(MAXIMUMoverride_5)
 );
 
 WRAPPER1 MAXIMUMoverride_6_net_155_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_6)
+.i(a0),
+.o(MAXIMUMoverride_6)
 );
 
 WRAPPER1 MAXIMUMoverride_7_net_156_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_7)
+.i(a0),
+.o(MAXIMUMoverride_7)
 );
 
 WRAPPER1 MAXIMUMoverride_8_net_157_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_8)
+.i(a0),
+.o(MAXIMUMoverride_8)
 );
 
 WRAPPER1 MAXIMUMoverride_9_net_158_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_9)
+.i(a0),
+.o(MAXIMUMoverride_9)
 );
 
 WRAPPER1 MAXIMUMoverride_10_net_159_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_10)
+.i(a0),
+.o(MAXIMUMoverride_10)
 );
 
 WRAPPER1 MAXIMUMoverride_11_net_160_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_11)
+.i(a0),
+.o(MAXIMUMoverride_11)
 );
 
 WRAPPER1 MAXIMUMoverride_12_net_161_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_12)
+.i(a0),
+.o(MAXIMUMoverride_12)
 );
 
 WRAPPER1 MAXIMUMoverride_13_net_162_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_13)
+.i(a0),
+.o(MAXIMUMoverride_13)
 );
 
 WRAPPER1 MAXIMUMoverride_14_net_163_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_14)
+.i(a0),
+.o(MAXIMUMoverride_14)
 );
 
 WRAPPER1 MAXIMUMoverride_15_net_164_WRAPPER (
-  .i(a0),
-  .o(MAXIMUMoverride_15)
+.i(a0),
+.o(MAXIMUMoverride_15)
 );
 
 endmodule

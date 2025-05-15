@@ -72,66 +72,66 @@ output  shunt_registeractive;
 
 // ------------------------ Networks ---------------------
 nand4_1bed7879 XU1 (
-  .o(net_46),
-  .i0(net_52),
-  .i1(net_54),
-  .i2(net_57),
-  .i3(net_59),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.o(net_46),
+.i0(net_52),
+.i1(net_54),
+.i2(net_57),
+.i3(net_59),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 nor4_ff041824 XU5 (
-  .o(net_52),
-  .i0(vshunt_0),
-  .i1(vshunt_1),
-  .i2(vshunt_2),
-  .i3(vshunt_3),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.o(net_52),
+.i0(vshunt_0),
+.i1(vshunt_1),
+.i2(vshunt_2),
+.i3(vshunt_3),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 nor4_ff041824 XU6 (
-  .o(net_54),
-  .i0(vshunt_4),
-  .i1(vshunt_5),
-  .i2(vshunt_6),
-  .i3(vshunt_7),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.o(net_54),
+.i0(vshunt_4),
+.i1(vshunt_5),
+.i2(vshunt_6),
+.i3(vshunt_7),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 nor4_ff041824 XU8 (
-  .o(net_57),
-  .i0(vshunt_8),
-  .i1(vshunt_9),
-  .i2(vshunt_10),
-  .i3(vshunt_11),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.o(net_57),
+.i0(vshunt_8),
+.i1(vshunt_9),
+.i2(vshunt_10),
+.i3(vshunt_11),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 nor4_ff041824 XU10 (
-  .o(net_59),
-  .i0(vshunt_12),
-  .i1(vshunt_13),
-  .i2(vshunt_14),
-  .i3(vshunt_15),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.o(net_59),
+.i0(vshunt_12),
+.i1(vshunt_13),
+.i2(vshunt_14),
+.i3(vshunt_15),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 dbuf_e926e395 XU15 (
-  .i(net_46),
-  .o(shunt_registeractive),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_46),
+.o(shunt_registeractive),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 endmodule

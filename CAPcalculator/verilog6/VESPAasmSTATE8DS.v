@@ -100,120 +100,120 @@ wire [7:0] o;
 
 // ------------------------ Networks ---------------------
 VESPAasmHIJACK3 XU2 (
-  .qi0(net_17),
-  .qi1(net_20),
-  .qi2(net_22),
-  .hj_0(hjconfig_0),
-  .hj_1(hjconfig_1),
-  .hj_2(hjconfig_2),
-  .hj_3(hjconfig_3),
-  .qo_0(net_33),
-  .qo_1(net_34),
-  .qo_2(net_35),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.qi0(net_17),
+.qi1(net_20),
+.qi2(net_22),
+.hj_0(hjconfig_0),
+.hj_1(hjconfig_1),
+.hj_2(hjconfig_2),
+.hj_3(hjconfig_3),
+.qo_0(net_33),
+.qo_1(net_34),
+.qo_2(net_35),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 delayfixed_4d66ebbf XU5 (
-  .i(s0),
-  .o(net_16),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(s0),
+.o(net_16),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 delayfixed_4d66ebbf XU6 (
-  .i(r0),
-  .o(net_18),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(r0),
+.o(net_18),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 delayfixed_4d66ebbf XU7 (
-  .i(s1),
-  .o(net_23),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(s1),
+.o(net_23),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 delayfixed_4d66ebbf XU8 (
-  .i(r1),
-  .o(net_24),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(r1),
+.o(net_24),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 delayfixed_4d66ebbf XU9 (
-  .i(s2),
-  .o(net_26),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(s2),
+.o(net_26),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 srlatch_39d292e9 XU10 (
-  .q(net_17),
-  .r(net_18),
-  .s(net_16),
-  .qb(net_19),
-  .rb(porb),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.q(net_17),
+.r(net_18),
+.s(net_16),
+.qb(net_19),
+.rb(porb),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 srlatch_39d292e9 XU11 (
-  .q(net_20),
-  .r(net_24),
-  .s(net_23),
-  .qb(net_25),
-  .rb(porb),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.q(net_20),
+.r(net_24),
+.s(net_23),
+.qb(net_25),
+.rb(porb),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 srlatch_39d292e9 XU12 (
-  .q(net_22),
-  .r(net_27),
-  .s(net_26),
-  .qb(net_28),
-  .rb(porb),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.q(net_22),
+.r(net_27),
+.s(net_26),
+.qb(net_28),
+.rb(porb),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 decoder3_0389bc20 XU13 (
-  .i({net_35,net_34,net_33}),
-  .o({state7,state6,state5,state4,state3,state2,state1,state0}),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i({net_35,net_34,net_33}),
+.o({state7,state6,state5,state4,state3,state2,state1,state0}),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 delayfixed_4d66ebbf XU14 (
-  .i(r2),
-  .o(net_27),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(r2),
+.o(net_27),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 STONEnoconn XNC19 (
-  .noconn(net_19)
+.noconn(net_19)
 );
 
 STONEnoconn XNC25 (
-  .noconn(net_25)
+.noconn(net_25)
 );
 
 STONEnoconn XNC28 (
-  .noconn(net_28)
+.noconn(net_28)
 );
 
 endmodule

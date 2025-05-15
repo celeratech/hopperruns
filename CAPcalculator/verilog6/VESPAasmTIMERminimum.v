@@ -54,36 +54,36 @@ input  tmin_delayoutput;
 
 // ------------------------ Networks ---------------------
 nand2_9125fe87 XU3 (
-  .o(net_5),
-  .i0(state),
-  .i1(tmin_delayoutput),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.o(net_5),
+.i0(state),
+.i1(tmin_delayoutput),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 dbuf_e926e395 XU6 (
-  .i(net_6),
-  .o(Tstate),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_6),
+.o(Tstate),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 dbuf_e926e395 XU25 (
-  .i(state),
-  .o(tmin_delayinput),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(state),
+.o(tmin_delayinput),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 inv_12e192f5 XU42 (
-  .i(net_5),
-  .o(net_6),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_5),
+.o(net_6),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 endmodule
