@@ -31,21 +31,22 @@ module dftprobeModel0_b3fb32ff ();
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module ESRtestREFERENCEdebug (CELG59462, CELV96848, CELSUB40948, start_esrtest, dft_countclock, GMCHARGEselect_0, GMCHARGEselect_1, GMCHARGEselect_2, GMCHARGEselect_3, done_esrreference, dft_countdirection, update_esrreference, hijack_start_esrtest, hijack_update_esrreference, dftprobe_XUESRtestREFERENCEstartup_1b63cc23, dftprobe_XUESRtestREFERENCEcountclock_1b63cc23, dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23);
+module ESRtestREFERENCEdebug (CELG59462, CELV96848, CELSUB40948, start_esrtest, dft_countclock, GMCHARGEselect_0, GMCHARGEselect_1, GMCHARGEselect_2, GMCHARGEselect_3, done_esrreference, dft_countdirection, update_esrreference, hijack_start_esrtest, hijack_update_esrreference, dftstatus_Xdftstatus1_1b63cc23, dftprobe_XUESRtestREFERENCEstartup_1b63cc23, dftprobe_XUESRtestREFERENCEcountclock_1b63cc23, dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23);
 input  CELG59462;
 input  CELV96848;
 input  CELSUB40948;
 input  start_esrtest;
-input  dft_countclock;
-  input  GMCHARGEselect_0;
-  input  GMCHARGEselect_1;
-  input  GMCHARGEselect_2;
-  input  GMCHARGEselect_3;
+  input  dft_countclock;
+input  GMCHARGEselect_0;
+input  GMCHARGEselect_1;
+input  GMCHARGEselect_2;
+input  GMCHARGEselect_3;
 input  done_esrreference;
-input  dft_countdirection;
+  input  dft_countdirection;
 input  update_esrreference;
 output  hijack_start_esrtest;
 output  hijack_update_esrreference;
+output  dftstatus_Xdftstatus1_1b63cc23;
 output  dftprobe_XUESRtestREFERENCEstartup_1b63cc23;
 output  dftprobe_XUESRtestREFERENCEcountclock_1b63cc23;
 output  dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23;
@@ -56,7 +57,7 @@ output  dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23;
 // ------------------------ Networks ---------------------
 VESPAdftpulse XU6 (
 .stop(done_esrreference),
-.pulse(dftprobe_XUESRtestREFERENCEstartup_1b63cc23),
+.pulse(net_24),
 .start(hijack_start_esrtest),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -89,13 +90,83 @@ dftprobeModel0_b3fb32ff XUESRtestREFERENCEcountdirection (
 
 );
 
-WRAPPER1 XWRAP_dft_countclock_dftprobe_XUESRtestREFERENCEcountclock_1b63cc23 (
-.i(dft_countclock),
+WRAPPER1 XWRAP_GMCHARGEselect_0_dftstatus_Xdftstatus1_1b63cc23 (
+.i(GMCHARGEselect_0),
+.o(dftstatus_Xdftstatus1_1b63cc23)
+);
+
+WRAPPER1 XWRAP_GMCHARGEselect_1_dftstatus_Xdftstatus1_1b63cc23 (
+.i(GMCHARGEselect_1),
+.o(dftstatus_Xdftstatus1_1b63cc23)
+);
+
+WRAPPER1 XWRAP_GMCHARGEselect_2_dftstatus_Xdftstatus1_1b63cc23 (
+.i(GMCHARGEselect_2),
+.o(dftstatus_Xdftstatus1_1b63cc23)
+);
+
+WRAPPER1 XWRAP_GMCHARGEselect_3_dftstatus_Xdftstatus1_1b63cc23 (
+.i(GMCHARGEselect_3),
+.o(dftstatus_Xdftstatus1_1b63cc23)
+);
+
+WRAPPER1 XWRAP_GMCHARGEselect_0_dftprobe_XUESRtestREFERENCEstartup_1b63cc23 (
+.i(GMCHARGEselect_0),
+.o(dftprobe_XUESRtestREFERENCEstartup_1b63cc23)
+);
+
+WRAPPER1 XWRAP_GMCHARGEselect_1_dftprobe_XUESRtestREFERENCEstartup_1b63cc23 (
+.i(GMCHARGEselect_1),
+.o(dftprobe_XUESRtestREFERENCEstartup_1b63cc23)
+);
+
+WRAPPER1 XWRAP_GMCHARGEselect_2_dftprobe_XUESRtestREFERENCEstartup_1b63cc23 (
+.i(GMCHARGEselect_2),
+.o(dftprobe_XUESRtestREFERENCEstartup_1b63cc23)
+);
+
+WRAPPER1 XWRAP_GMCHARGEselect_3_dftprobe_XUESRtestREFERENCEstartup_1b63cc23 (
+.i(GMCHARGEselect_3),
+.o(dftprobe_XUESRtestREFERENCEstartup_1b63cc23)
+);
+
+WRAPPER1 XWRAP_GMCHARGEselect_0_dftprobe_XUESRtestREFERENCEcountclock_1b63cc23 (
+.i(GMCHARGEselect_0),
 .o(dftprobe_XUESRtestREFERENCEcountclock_1b63cc23)
 );
 
-WRAPPER1 XWRAP_dft_countdirection_dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23 (
-.i(dft_countdirection),
+WRAPPER1 XWRAP_GMCHARGEselect_1_dftprobe_XUESRtestREFERENCEcountclock_1b63cc23 (
+.i(GMCHARGEselect_1),
+.o(dftprobe_XUESRtestREFERENCEcountclock_1b63cc23)
+);
+
+WRAPPER1 XWRAP_GMCHARGEselect_2_dftprobe_XUESRtestREFERENCEcountclock_1b63cc23 (
+.i(GMCHARGEselect_2),
+.o(dftprobe_XUESRtestREFERENCEcountclock_1b63cc23)
+);
+
+WRAPPER1 XWRAP_GMCHARGEselect_3_dftprobe_XUESRtestREFERENCEcountclock_1b63cc23 (
+.i(GMCHARGEselect_3),
+.o(dftprobe_XUESRtestREFERENCEcountclock_1b63cc23)
+);
+
+WRAPPER1 XWRAP_GMCHARGEselect_0_dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23 (
+.i(GMCHARGEselect_0),
+.o(dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23)
+);
+
+WRAPPER1 XWRAP_GMCHARGEselect_1_dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23 (
+.i(GMCHARGEselect_1),
+.o(dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23)
+);
+
+WRAPPER1 XWRAP_GMCHARGEselect_2_dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23 (
+.i(GMCHARGEselect_2),
+.o(dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23)
+);
+
+WRAPPER1 XWRAP_GMCHARGEselect_3_dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23 (
+.i(GMCHARGEselect_3),
 .o(dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23)
 );
 
