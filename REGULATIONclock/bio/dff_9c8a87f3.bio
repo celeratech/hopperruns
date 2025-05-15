@@ -34,53 +34,8 @@ user,NESTOrevision,0.5.0
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
-//Celera Map Generator
-registermap,dff
-register,instance,dff_9c8a87f3
-register,source,cell
-
-//Logic dff
-register,name,na
-register,enable,no
-register,bits,0
-register,mode,readonly
-register,por,0
-register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
-//Netlister Information
-register,busname,na
-
 //**********************************************
 //FACTORY Parameters
-//Celera Map Generator
-factorymap,dff
-factory,instance,dff_9c8a87f3
-factory,source,cell
-
-//LOGIC CELLS dff
-factory,name,na
-factory,enable,no
-factory,bits,0
-factory,mode,readonly
-factory,por,0
-factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
-//Netlister Information
-factory,busname,na
 //**********************************************
 //Layout Parameters
 revision,layout,0p1
@@ -137,10 +92,6 @@ endlayoutbio
 
 // *********************************************
 //Die Size Estimate
-revision,vis15cbdiesize,0p1
-sub_area,STONEnoconn,0
-sub_area,PEBBLEdffR,195
-generate_area,dff_9c8a87f3,195
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.4
@@ -153,38 +104,12 @@ generate_area,dff_9c8a87f3,195
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,d,ck,q,net_skip,rb
+pinorder,d,ck,q,qb,rb
 endpinorder
 //**********************************************
 
 //**********************************************
 //TRIM Parameters
-cell,dff
-trim,instance,dff_9c8a87f3
-
-trim,name,na
-trim,enable,no
-trim,bits,TBD
-trim,por,0
-trim,pinname,TBD
-trim,testname,TBD
-trim,description,TBD
-trim,target,na
-trim,units,TBD
-trim,pretrim_low_limit,TBD
-trim,pretrim_high_limit,TBD
-trim,posttrim_low_limit,TBD
-trim,posttrim_high_limit,TBD
-trim,codeunits,%
-trim,description0,empty
-trim,description1,empty
-trim,description2,empty
-trim,description3,empty
-trim,description4,empty
-trim,description5,empty
-trim,description6,empty
-trim,description7,empty
-
 //**********************************************
 //Cell Pin Descriptions	
 //**********************************************

@@ -38,7 +38,7 @@ endmodule
 //VMAX:6V R:1000.0KOhm 1Taps
 module resistordivider_fe713eb7 (TOP,
 TAP0,
-CELG, BOTTOM);
+CELG,BOTTOM);
 inout TOP;
 output TAP0;
 input CELG;
@@ -77,11 +77,6 @@ rlpp3000rpo10p6u0p4u XRTOP_5(
 );
 rlpp3000rpo10p6u0p4u XRTOP_6(
 .RP (TOPTAP0_6),
-.RN (TOPTAP0_7),
-.ISO (CELG)
-);
-rlpp3000rpo10p6u0p4u XRTOP_7(
-.RP (TOPTAP0_7),
 .RN (TAP0),
 .ISO (CELG)
 );
@@ -89,7 +84,7 @@ rlpp3000rpo10p6u0p4u XRTOP_7(
 //Celera Confidential Do Not Copy //DieSize,rlpp3000rpo10p6u0p4u
 
 //Die Size Calculator rlpp3000rpo10p6u0p4u
-//,diesize,rlpp3000rpo10p6u0p4u,8
+//,diesize,rlpp3000rpo10p6u0p4u,7
 
 //Celera Confidential Do Not Copy RTAP0
 rlpp3000rpo10p6u0p4u XRTAP0_0(

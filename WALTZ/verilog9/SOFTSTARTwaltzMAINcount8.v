@@ -36,22 +36,6 @@ endmodule
 
 
 
-//Celera:dff_fc5ad7bd
-//Celera Confidential Symbol Generator
-//DFF latch
-module dff_fc5ad7bd (CELV,d,rb,ck,q,qb,CELG,CELSUB);
-input CELV;
-input d;
-input rb;
-input ck;
-output q;
-output qb;
-input CELG;
-input CELSUB;
-endmodule
-
-
-
 //Celera:nor3_c2b5cbd2
 //Celera Confidential Symbol Generator
 //NOR3
@@ -76,6 +60,22 @@ input CELG;
 input i;
 input SUB;
 output o;
+endmodule
+
+
+
+//Celera:dff_e5264df5
+//Celera Confidential Symbol Generator
+//DFF latch
+module dff_e5264df5 (CELV,d,rb,ck,q,qb,CELG,CELSUB);
+input CELV;
+input d;
+input rb;
+input ck;
+output q;
+output qb;
+input CELG;
+input CELSUB;
 endmodule
 
 
@@ -130,17 +130,6 @@ nand3_3e9b0d1d XU4 (
 .CELV(CELV96848)
 );
 
-dff_fc5ad7bd XU8 (
-.d(halfway),
-.q(half_count),
-.ck(net_122),
-.qb(net_116),
-.rb(enable_count),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
-);
-
 nand3_3e9b0d1d XU12 (
 .o(net_93),
 .i0(count_3),
@@ -151,72 +140,6 @@ nand3_3e9b0d1d XU12 (
 .CELV(CELV96848)
 );
 
-dff_fc5ad7bd XU13 (
-.d(net_111),
-.q(count_0),
-.ck(net_112),
-.qb(net_111),
-.rb(enable_count),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
-);
-
-dff_fc5ad7bd XU14 (
-.d(net_113),
-.q(count_1),
-.ck(net_111),
-.qb(net_113),
-.rb(enable_count),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
-);
-
-dff_fc5ad7bd XU15 (
-.d(net_115),
-.q(count_3),
-.ck(net_114),
-.qb(net_115),
-.rb(enable_count),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
-);
-
-dff_fc5ad7bd XU16 (
-.d(net_114),
-.q(count_2),
-.ck(net_113),
-.qb(net_114),
-.rb(enable_count),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
-);
-
-dff_fc5ad7bd XU17 (
-.d(net_118),
-.q(count_4),
-.ck(net_115),
-.qb(net_118),
-.rb(enable_count),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
-);
-
-dff_fc5ad7bd XU18 (
-.d(net_119),
-.q(count_5),
-.ck(net_118),
-.qb(net_119),
-.rb(enable_count),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
-);
-
 nor3_c2b5cbd2 XU19 (
 .o(net_94),
 .i0(net_91),
@@ -225,28 +148,6 @@ nor3_c2b5cbd2 XU19 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
-);
-
-dff_fc5ad7bd XU20 (
-.d(net_120),
-.q(count_6),
-.ck(net_119),
-.qb(net_120),
-.rb(enable_count),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
-);
-
-dff_fc5ad7bd XU21 (
-.d(net_121),
-.q(count_7),
-.ck(net_120),
-.qb(net_121),
-.rb(enable_count),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
 );
 
 nand3_3e9b0d1d XU22 (
@@ -305,6 +206,105 @@ nand3_3e9b0d1d XU28 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
+);
+
+dff_e5264df5 Xdff1 (
+.d(net_111),
+.q(count_0),
+.ck(net_112),
+.qb(net_111),
+.rb(enable_count),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+dff_e5264df5 Xdff2 (
+.d(net_118),
+.q(count_4),
+.ck(net_115),
+.qb(net_118),
+.rb(enable_count),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+dff_e5264df5 Xdff3 (
+.d(halfway),
+.q(half_count),
+.ck(net_122),
+.qb(net_116),
+.rb(enable_count),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+dff_e5264df5 Xdff4 (
+.d(net_113),
+.q(count_1),
+.ck(net_111),
+.qb(net_113),
+.rb(enable_count),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+dff_e5264df5 Xdff5 (
+.d(net_119),
+.q(count_5),
+.ck(net_118),
+.qb(net_119),
+.rb(enable_count),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+dff_e5264df5 Xdff6 (
+.d(net_114),
+.q(count_2),
+.ck(net_113),
+.qb(net_114),
+.rb(enable_count),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+dff_e5264df5 Xdff7 (
+.d(net_120),
+.q(count_6),
+.ck(net_119),
+.qb(net_120),
+.rb(enable_count),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+dff_e5264df5 Xdff8 (
+.d(net_115),
+.q(count_3),
+.ck(net_114),
+.qb(net_115),
+.rb(enable_count),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+dff_e5264df5 Xdff9 (
+.d(net_121),
+.q(count_7),
+.ck(net_120),
+.qb(net_121),
+.rb(enable_count),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 endmodule

@@ -32,7 +32,7 @@ endmodule
 module pad_WALTZ_FB (FB, GESD, sense_FB);
 inout  FB;
 input  GESD;
-inout  sense_FB;
+output  sense_FB;
 
 
 // ------------------------ Wires ------------------------
@@ -42,12 +42,12 @@ STONEpad1 XPAD1 (
 .PAD(FB)
 );
 
-ESDcore6 XESDcore6_1 (
+ESDcore6 XESDcore6_max_1 (
 .PAD(FB),
 .GESD(GESD)
 );
 
-PEBBLElinkKELVIN Xwrap_PAD1_SENSE0 (
+PEBBLElinkKELVIN Xwrap_PAD1_SENSE_SINGLE (
 .NEG(sense_FB),
 .POS(FB)
 );

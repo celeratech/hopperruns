@@ -47,13 +47,13 @@ endmodule
 
 
 
-//Verilog HDL for "DFT", "SERDESdftYesYes" "functional"
+//Verilog HDL for "DFT", "SERDESdftYesNo" "functional"
 
 
-module SERDESdftYesYes ( tdext, tdo, ten_oscillator_div8, ten_oscillator_external,
+module SERDESdftYesNo ( tdext, tdo, ten_oscillator_div8, ten_oscillator_external,
 ten_oscillator_off, ten_oscillator_on, ten_serdes, tmi, CELG, CELSUB, CELV,
-otp_programdone, otp_bistok, otp_clock, otp_clock_enable, otp_loadok, otpdone,
-tdi_clock, tma, unlock );
+enable_hardware, otp_clock, otp_clock_enable, otp_loadok, otp_nr, otpdone, tdi_clock,
+tma, unlock );
 
   input CELV;
   output ten_oscillator_on;
@@ -64,26 +64,26 @@ tdi_clock, tma, unlock );
   input otpdone;
   input CELSUB;
   output ten_oscillator_div8;
+  input otp_nr;
   input otp_loadok;
   input otp_clock;
   output ten_serdes;
   input unlock;
   output tdo;
   output tdext;
-  input otp_programdone;
+  input enable_hardware;
   output ten_oscillator_off;
-  input otp_bistok;
   input CELG;
   inout  [4:0] tmi;
 endmodule
 
 
-//Verilog HDL for "DFT", "SERDEScontrolDRMautoYes" "functional"
+//Verilog HDL for "DFT", "SERDEScontrolDRMautoNo" "functional"
 
 
-module SERDEScontrolDRMautoYes ( a0, a1, otp_bistok, otp_clock_enable, otp_done,
-otp_loadok, otp_nr, otp_pgrnb, otp_program_done, otp_strobe, otp_we, porb, sdao,
-unlock, tmi, CELG, CELSUB, CELV, enable_hardware, i2caddress, i2cpassword, celkelvin_CELV,
+module SERDEScontrolDRMautoNo ( a0, a1, otp_clock_enable, otp_done, otp_loadok,
+otp_nr, otp_pgrnb, otp_program_done, otp_strobe, otp_we, porb, sdao, unlock,
+tmi, CELG, CELSUB, CELV, enable_hardware, i2caddress, i2cpassword, celkelvin_CELV,
 otp_clock, otp_id, otp_q, pd, scl_serdes, sda_serdes );
 
   output porb;
@@ -113,7 +113,6 @@ otp_clock, otp_id, otp_q, pd, scl_serdes, sda_serdes );
   output sdao;
   output unlock;
   input enable_hardware;
-  output otp_bistok;
 endmodule
 
 
@@ -136,20 +135,20 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module WALTZceleraSERDES (tdo, tmi, GOTP, VOTP, DFTSCL, DFTSDA, unlock, otp_done, CELG59462, CELV96848, PORB97836, CELSUB40948, celkelvin_VCC_fc9a589a);
-inout  tdo;
+module WALTZceleraSERDES (tdo, tmi, GOTP, VOTP, DFTSCL, DFTSDA, unlock, otp_done, CELG59462, CELV96848, PORB97836, CELSUB40948, celkelvin_VCC_9893c918);
+output  tdo;
 inout [5:0] tmi;
 input  GOTP;
 input  VOTP;
-inout  DFTSCL;
-inout  DFTSDA;
+input  DFTSCL;
+input  DFTSDA;
 output  unlock;
 output  otp_done;
 input  CELG59462;
-  input  CELV96848;
+input  CELV96848;
 output  PORB97836;
 input  CELSUB40948;
-input  celkelvin_VCC_fc9a589a;
+input  celkelvin_VCC_9893c918;
 
 
 // ------------------------ Wires ------------------------
@@ -197,7 +196,7 @@ oscillator_XWALTZ_XceleraSERDES_Xoscillator Xoscillator (
 .ten_oscillator_external(ten_oscillator_external)
 );
 
-SERDESdftYesYes XSERDESdftYesYes (
+SERDESdftYesNo XSERDESdftYesNo (
 .tdo(tdo),
 .tma({a1,a1,a1,a1,a1,a1,a0,a0}),
 .tmi(tmi[4:0]),
@@ -205,14 +204,14 @@ SERDESdftYesYes XSERDESdftYesYes (
 .CELV(CELV96848),
 .tdext(tdext),
 .CELSUB(CELSUB40948),
+.otp_nr(otp_nr),
 .unlock(unlock),
-.otpdone(otp_done),
+.otpdone(otp_program_done),
 .otp_clock(otp_clock),
 .tdi_clock(tdi_clock),
-.otp_bistok(otp_bistok),
 .otp_loadok(otp_loadok),
 .ten_serdes(ten_serdes),
-.otp_programdone(otp_program_done),
+.enable_hardware(a1),
 .otp_clock_enable(otp_clock_enable),
 .ten_oscillator_on(ten_oscillator_on),
 .ten_oscillator_off(ten_oscillator_off),
@@ -220,7 +219,7 @@ SERDESdftYesYes XSERDESdftYesYes (
 .ten_oscillator_external(ten_oscillator_external)
 );
 
-SERDEScontrolDRMautoYes XSERDEScontrolDRMautoYes (
+SERDEScontrolDRMautoNo XSERDEScontrolDRMautoNo (
 .a0(a0),
 .a1(a1),
 .pd({a0,a0,a0,a0,a0,a0,a0,a0}),
@@ -238,14 +237,13 @@ SERDEScontrolDRMautoYes XSERDEScontrolDRMautoYes (
 .otp_done(otp_done),
 .otp_clock(otp_clock),
 .otp_pgrnb(otp_pgrnb),
-.i2caddress({a0,a1}),
-.otp_bistok(otp_bistok),
+.i2caddress({a0,a0}),
 .otp_loadok(otp_loadok),
 .otp_strobe(otp_strobe[7:0]),
 .scl_serdes(scl_serdes),
 .sda_serdes(sda_serdes),
-.i2cpassword({a1,a0}),
-.celkelvin_CELV(celkelvin_VCC_fc9a589a),
+.i2cpassword({a1,a1}),
+.celkelvin_CELV(celkelvin_VCC_9893c918),
 .enable_hardware(a1),
 .otp_clock_enable(otp_clock_enable),
 .otp_program_done(otp_program_done)

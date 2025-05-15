@@ -28,53 +28,8 @@ user,Type,dbuf
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
-//Celera Map Generator
-registermap,dbuf
-register,instance,dbuf_e926e395
-register,source,cell
-
-//Logic dbuf
-register,name,na
-register,enable,no
-register,bits,0
-register,mode,na
-register,por,0
-register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
-//Netlister Information
-register,busname,na
-
 //**********************************************
 //FACTORY Parameters
-//Celera Map Generator
-factorymap,dbuf
-factory,instance,dbuf_e926e395
-factory,source,cell
-
-//LOGIC CELLS dbuf
-factory,name,na
-factory,enable,no
-factory,bits,0
-factory,mode,na
-factory,por,0
-factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
-//Netlister Information
-factory,busname,na
 //**********************************************
 //Layout Parameters
 revision,layout,0p1
@@ -128,9 +83,6 @@ endlayoutbio
 
 // *********************************************
 //Die Size Estimate
-revision,vis15cbdiesize,0p1
-sub_area,PEBBLEdbuf,80
-generate_area,dbuf_e926e395,80
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.4
@@ -150,32 +102,6 @@ endpinorder
 
 //**********************************************
 //TRIM Parameters
-cell,dbuf
-trim,instance,dbuf_e926e395
-
-trim,name,na
-trim,enable,no
-trim,bits,TBD
-trim,por,0
-trim,pinname,TBD
-trim,testname,TBD
-trim,description,TBD
-trim,target,na
-trim,units,TBD
-trim,pretrim_low_limit,TBD
-trim,pretrim_high_limit,TBD
-trim,posttrim_low_limit,TBD
-trim,posttrim_high_limit,TBD
-trim,codeunits,%
-trim,description0,empty
-trim,description1,empty
-trim,description2,empty
-trim,description3,empty
-trim,description4,empty
-trim,description5,empty
-trim,description6,empty
-trim,description7,empty
-
 //**********************************************
 //Cell Pin Descriptions
 //**********************************************

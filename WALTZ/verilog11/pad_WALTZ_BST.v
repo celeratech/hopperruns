@@ -31,7 +31,7 @@ STONEpad1 XPAD1 (
 .PAD(BST)
 );
 
-ESDdiode Xesd_XPAD1 (
+ESDdiode Xesd_min_XPAD1 (
 .N(BST),
 .P(GESD)
 );

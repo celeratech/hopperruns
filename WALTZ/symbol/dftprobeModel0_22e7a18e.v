@@ -1,0 +1,9 @@
+module dftprobeModel0_22e7a18e (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+

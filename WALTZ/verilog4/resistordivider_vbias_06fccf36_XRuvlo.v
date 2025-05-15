@@ -38,7 +38,7 @@ endmodule
 //VMAX:6V R:6000.0KOhm 1Taps
 module resistordivider_vbias_06fccf36_XRuvlo (TOP,
 TAP0,
-CELG, BOTTOM);
+CELG,BOTTOM);
 inout TOP;
 output TAP0;
 input CELG;
@@ -1197,6 +1197,11 @@ rlpp3000rpo1p8u0p4u XRTOP_229(
 );
 rlpp3000rpo1p8u0p4u XRTOP_230(
 .RP (TOPTAP0_230),
+.RN (TOPTAP0_231),
+.ISO (CELG)
+);
+rlpp3000rpo1p8u0p4u XRTOP_231(
+.RP (TOPTAP0_231),
 .RN (TAP0),
 .ISO (CELG)
 );
@@ -1204,7 +1209,7 @@ rlpp3000rpo1p8u0p4u XRTOP_230(
 //Celera Confidential Do Not Copy //DieSize,rlpp3000rpo1p8u0p4u
 
 //Die Size Calculator rlpp3000rpo1p8u0p4u
-//,diesize,rlpp3000rpo1p8u0p4u,231
+//,diesize,rlpp3000rpo1p8u0p4u,232
 
 //Celera Confidential Do Not Copy RTAP0
 rlpp3000rpo1p8u0p4u XRTAP0_0(
@@ -1619,6 +1624,101 @@ rlpp3000rpo1p8u0p4u XRTAP0_81(
 );
 rlpp3000rpo1p8u0p4u XRTAP0_82(
 .RP (TAP0BOTTOM_82),
+.RN (TAP0BOTTOM_A),
+.ISO (CELG)
+);
+rlpp3000rpo1p8u0p4u XRTAP0_83(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo1p8u0p4u XRTAP0_84(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo1p8u0p4u XRTAP0_85(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo1p8u0p4u XRTAP0_86(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo1p8u0p4u XRTAP0_87(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo1p8u0p4u XRTAP0_88(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo1p8u0p4u XRTAP0_89(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo1p8u0p4u XRTAP0_90(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo1p8u0p4u XRTAP0_91(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo1p8u0p4u XRTAP0_92(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo1p8u0p4u XRTAP0_93(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo1p8u0p4u XRTAP0_94(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo1p8u0p4u XRTAP0_95(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo1p8u0p4u XRTAP0_96(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo1p8u0p4u XRTAP0_97(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo1p8u0p4u XRTAP0_98(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo1p8u0p4u XRTAP0_99(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo1p8u0p4u XRTAP0_100(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo1p8u0p4u XRTAP0_101(
+.RP (TAP0BOTTOM_A),
 .RN (BOTTOM),
 .ISO (CELG)
 );
@@ -1626,7 +1726,7 @@ rlpp3000rpo1p8u0p4u XRTAP0_82(
 //Celera Confidential Do Not Copy //DieSize,rlpp3000rpo1p8u0p4u
 
 //Die Size Calculator rlpp3000rpo1p8u0p4u
-//,diesize,rlpp3000rpo1p8u0p4u,83
+//,diesize,rlpp3000rpo1p8u0p4u,102
 
 //Celera Confidential Do Not Copy Module End
 //Celera Schematic Generator

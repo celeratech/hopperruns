@@ -356,28 +356,24 @@ layout,oscillatorexternal
 placeINST Xcomparator -24.33 -84.22 R0
 place Generate STONEoscillatorRFpad 0 0 R0
 place Generate STONEoscillatorRFcontrol2 1.52 17.79 R0
-placeSTEP Generate STONEoscillatorRFbufferGAIN 91.48 149.105 x 9.32 R0
-placeIF cellNameConatains *ibias3
-placeSTEP Generate STONEoscillatorRFiosc 132 14.7 y 13.05 R0
-placeSTEP Generate STONEoscillatorRFioscDFT -35.345 86.89 y 13.05 R0
-placeEND
-placeIF cellNameConatains *ibias4
+placeSTEP Generate STONEoscillatorRFbufferGAIN 47.545 107.79 x 9.32 R0
+
+placeIFELSE cellNameConatains *ibias5
 placeCELL Generate STONEoscillatorRFioscGUTSbtm -35.875 87.885 R0
 placeSTEP Generate STONEoscillatorRFiosc 132 14.7 y 13.05 R0
+placeSTEP Generate STONEoscillatorRFioscDFT -35.345 86.89 y 13.05 R0
+placeELSE
+placeCELL Generate STONEoscillatorRFioscGUTSbtm -35.875 87.885 R0
+placeSTEP Generate STONEoscillatorRFiosc -17.05 87.885 y 13.05 R0
 placeSTEPcell Generate STONEoscillatorRFioscGUTStop R0
 //placeSTEP Generate STONEoscillatorRFioscDFT -35.345 86.89 y 13.05 R0
 placeEND
-placeIF cellNameConatains *ibias5
-placeSTEP Generate STONEoscillatorRFiosc 132 14.7 y 13.05 R0
-placeSTEP Generate STONEoscillatorRFioscDFT -35.345 86.89 y 13.05 R0
-placeEND
-place Generate STONEoscillatorRFibias3 -36.865 1.05 R0
-place Generate STONEoscillatorRFibias4 -36.865 1.05 R0
-place Generate STONEoscillatorRFibias5 -36.865 1.05 R0
+
+placeINST Xibias -36.865 1.05 R0
 place Generate STONEoscillatorRFcomparator 0.49 -47.925 R0
-placeINST XdutyA 0.4 180.925 R0
-placeINST XdutyB 0.4 238.265 MX
-place Generate STONEoscillatorRFic -0.93 88.47 MY
+placeINST XdutyA 46.63 180.025 R0
+placeINST XdutyB 50.63 180.025 MY
+place Generate STONEoscillatorRFic -0.995 208.385 MY
 placeINST XCOSC0|C0 -13.97 -16.49 R0
 placeIF cellNameContains RFgainINTp
 placeSTEP Generate STONEoscillatorRFgainINTp 104.915 -97.465 x 6.32 R0
@@ -385,18 +381,17 @@ placeSTEPcell Generate oscillatorextINTpRING R0
 placeEND
 place Generate STONEoscillatorRFgainINT 10.44 -98.395 R0
 place Generate STONEoscillatorRFicss 149.55 0 R0
-place Generate STONEoscillatorRFtrim 146.165 -75.68 R0
+place Generate STONEoscillatorRFtrim 75.05 285.235 R180
 place Generate STONEoscillatorRFdft 126.525 136.78 R180
 place Generate STONEoscillatorRFctrim 90.54 93.24 MX
 place Generate ss_top 281.48 -80.28 R90
 placeCAP 3.55 141.25 3 R0 55
 
-placeIF cellNameContains *bd3f*
-placeINST Xcomparator -59.645 -22.73 MX
+placeINST Xcomparator 226.51 196.86 MY
 placeEND
 
-placeHVRING
-placeROUTE
+//placeHVRING
+//placeROUTE
 endlayoutbio
 //**********************************************
 //Project Parameters

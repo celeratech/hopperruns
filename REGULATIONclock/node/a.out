@@ -7,144 +7,46 @@
 :vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
 :vpi_module "/usr/local/lib/ivl/va_math.vpi";
-S_0x5614fb50bf60 .scope module, "sim_REGULATIONclock_ROW4" "sim_REGULATIONclock_ROW4" 2 54;
+S_0x555ac0a29f60 .scope module, "dmux2_ac802145" "dmux2_ac802145" 2 28;
  .timescale 0 0;
-o0x7f487e9880d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb561e60_0 .net "CELG59462", 0 0, o0x7f487e9880d8;  0 drivers
-o0x7f487e988108 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb561f00_0 .net "CELREF_0a62f9b4", 0 0, o0x7f487e988108;  0 drivers
-o0x7f487e988018 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb562010_0 .net "CELSENSE_RF", 0 0, o0x7f487e988018;  0 drivers
-o0x7f487e988138 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb562100_0 .net "CELSUB40948", 0 0, o0x7f487e988138;  0 drivers
-o0x7f487e988168 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb5621f0_0 .net "CELV96848", 0 0, o0x7f487e988168;  0 drivers
-o0x7f487e988198 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb562330_0 .net "GND", 0 0, o0x7f487e988198;  0 drivers
-o0x7f487e9881c8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb5623d0_0 .net "IP_0a62f9b4", 0 0, o0x7f487e9881c8;  0 drivers
-o0x7f487e988528 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb5624c0_0 .net "ISLOPECOMP", 0 0, o0x7f487e988528;  0 drivers
-o0x7f487e9881f8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb562560_0 .net "PORB97836", 0 0, o0x7f487e9881f8;  0 drivers
-o0x7f487e988048 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb562600_0 .net "RT", 0 0, o0x7f487e988048;  0 drivers
-o0x7f487e988228 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb5626a0_0 .net "SIMPV", 0 0, o0x7f487e988228;  0 drivers
-o0x7f487e988558 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb562790_0 .net "celkelvin_GNDoscillator", 0 0, o0x7f487e988558;  0 drivers
-o0x7f487e988588 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb562880_0 .net "clock_divideRT", 0 0, o0x7f487e988588;  0 drivers
-o0x7f487e9885b8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb562920_0 .net "clock_rt", 0 0, o0x7f487e9885b8;  0 drivers
-o0x7f487e9885e8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb5629c0_0 .net "dtfprobe_XUREGULATIONclockCLOCKRT_f849bfe4", 0 0, o0x7f487e9885e8;  0 drivers
-o0x7f487e988618 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb562a60_0 .net "dtfprobe_XUREGULATIONclockCLOCK_f849bfe4", 0 0, o0x7f487e988618;  0 drivers
-o0x7f487e988648 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb562b00_0 .net "dtfprobe_XUREGULATIONclockFAULT_f849bfe4", 0 0, o0x7f487e988648;  0 drivers
-o0x7f487e988678 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb562cb0_0 .net "dtfprobe_XUREGULATIONclockISLOPECOMP_f849bfe4", 0 0, o0x7f487e988678;  0 drivers
-o0x7f487e9886a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb562d50_0 .net "dtfprobe_XUREGULATIONclockSTARTUP_f849bfe4", 0 0, o0x7f487e9886a8;  0 drivers
-o0x7f487e988258 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb562df0_0 .net "enable_clock", 0 0, o0x7f487e988258;  0 drivers
-o0x7f487e9886d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb562ee0_0 .net "fault_clock", 0 0, o0x7f487e9886d8;  0 drivers
-o0x7f487e988288 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb562f80_0 .net "mode_stepup", 0 0, o0x7f487e988288;  0 drivers
-o0x7f487e988708 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb563070_0 .net "ok_clock", 0 0, o0x7f487e988708;  0 drivers
-o0x7f487e9882b8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5614fb563110_0 .net "request_clockRT", 0 0, o0x7f487e9882b8;  0 drivers
-S_0x5614fb5432a0 .scope module, "CELSENSE_RF_WRAPPER" "WRAPPER1" 2 101, 2 46 0, S_0x5614fb50bf60;
+    .port_info 0 /INPUT 1 "CELV";
+    .port_info 1 /INPUT 1 "CELG";
+    .port_info 2 /INPUT 2 "i";
+    .port_info 3 /INPUT 1 "s";
+    .port_info 4 /OUTPUT 1 "o";
+    .port_info 5 /INPUT 1 "CELSUB";
+o0x7f1882a69018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555ac0a70f40_0 .net "CELG", 0 0, o0x7f1882a69018;  0 drivers
+o0x7f1882a69108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555ac0a71000_0 .net "CELSUB", 0 0, o0x7f1882a69108;  0 drivers
+o0x7f1882a69138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555ac0a710d0_0 .net "CELV", 0 0, o0x7f1882a69138;  0 drivers
+o0x7f1882a692b8 .functor BUFZ 2, C4<zz>; HiZ drive
+v0x555ac0a711d0_0 .net "i", 1 0, o0x7f1882a692b8;  0 drivers
+o0x7f1882a690a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555ac0a71270_0 .net "o", 0 0, o0x7f1882a690a8;  0 drivers
+o0x7f1882a690d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555ac0a71360_0 .net "s", 0 0, o0x7f1882a690d8;  0 drivers
+L_0x555ac0a71470 .part o0x7f1882a692b8, 0, 1;
+L_0x555ac0a71570 .part o0x7f1882a692b8, 1, 1;
+S_0x555ac0a607b0 .scope module, "Xdmux2" "PEBBLEdmux2" 2 37, 2 14 0, S_0x555ac0a29f60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "o";
-    .port_info 1 /INPUT 1 "i";
-v0x5614fb50b4b0_0 .net "i", 0 0, o0x7f487e988018;  alias, 0 drivers
-v0x5614fb50c0f0_0 .net "o", 0 0, o0x7f487e988048;  alias, 0 drivers
-S_0x5614fb55f480 .scope module, "XFORCE_REGULATIONclock1" "FORCE_REGULATIONclock" 2 60, 2 2 0, S_0x5614fb50bf60;
- .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "RT";
-    .port_info 1 /OUTPUT 1 "GND";
-    .port_info 2 /OUTPUT 1 "SIMPV";
-    .port_info 3 /OUTPUT 1 "CELG59462";
-    .port_info 4 /OUTPUT 1 "CELV96848";
-    .port_info 5 /OUTPUT 1 "PORB97836";
-    .port_info 6 /OUTPUT 1 "CELSUB40948";
-    .port_info 7 /OUTPUT 1 "IP_0a62f9b4";
-    .port_info 8 /OUTPUT 1 "mode_stepup";
-    .port_info 9 /OUTPUT 1 "enable_clock";
-    .port_info 10 /OUTPUT 1 "CELREF_0a62f9b4";
-    .port_info 11 /OUTPUT 1 "request_clockRT";
-v0x5614fb50bec0_0 .net "CELG59462", 0 0, o0x7f487e9880d8;  alias, 0 drivers
-v0x5614fb55f7b0_0 .net "CELREF_0a62f9b4", 0 0, o0x7f487e988108;  alias, 0 drivers
-v0x5614fb55f870_0 .net "CELSUB40948", 0 0, o0x7f487e988138;  alias, 0 drivers
-v0x5614fb55f910_0 .net "CELV96848", 0 0, o0x7f487e988168;  alias, 0 drivers
-v0x5614fb55f9d0_0 .net "GND", 0 0, o0x7f487e988198;  alias, 0 drivers
-v0x5614fb55fae0_0 .net "IP_0a62f9b4", 0 0, o0x7f487e9881c8;  alias, 0 drivers
-v0x5614fb55fba0_0 .net "PORB97836", 0 0, o0x7f487e9881f8;  alias, 0 drivers
-v0x5614fb55fc60_0 .net "RT", 0 0, o0x7f487e988048;  alias, 0 drivers
-v0x5614fb55fd00_0 .net "SIMPV", 0 0, o0x7f487e988228;  alias, 0 drivers
-v0x5614fb55fda0_0 .net "enable_clock", 0 0, o0x7f487e988258;  alias, 0 drivers
-v0x5614fb55fe60_0 .net "mode_stepup", 0 0, o0x7f487e988288;  alias, 0 drivers
-v0x5614fb55ff20_0 .net "request_clockRT", 0 0, o0x7f487e9882b8;  alias, 0 drivers
-S_0x5614fb560160 .scope module, "XREGULATIONclock1" "REGULATIONclock" 2 75, 2 17 0, S_0x5614fb50bf60;
- .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "RT";
-    .port_info 1 /INPUT 1 "SIMPV";
-    .port_info 2 /OUTPUT 1 "clock_rt";
-    .port_info 3 /OUTPUT 1 "ok_clock";
-    .port_info 4 /INPUT 1 "CELG59462";
-    .port_info 5 /INPUT 1 "CELV96848";
-    .port_info 6 /INPUT 1 "PORB97836";
-    .port_info 7 /INOUT 1 "ISLOPECOMP";
-    .port_info 8 /INPUT 1 "CELSENSE_RF";
-    .port_info 9 /INPUT 1 "CELSUB40948";
-    .port_info 10 /INPUT 1 "IP_0a62f9b4";
-    .port_info 11 /OUTPUT 1 "fault_clock";
-    .port_info 12 /INPUT 1 "mode_stepup";
-    .port_info 13 /INPUT 1 "enable_clock";
-    .port_info 14 /OUTPUT 1 "clock_divideRT";
-    .port_info 15 /INPUT 1 "CELREF_0a62f9b4";
-    .port_info 16 /INPUT 1 "request_clockRT";
-    .port_info 17 /INPUT 1 "celkelvin_GNDoscillator";
-    .port_info 18 /OUTPUT 1 "dtfprobe_XUREGULATIONclockCLOCK_f849bfe4";
-    .port_info 19 /OUTPUT 1 "dtfprobe_XUREGULATIONclockFAULT_f849bfe4";
-    .port_info 20 /OUTPUT 1 "dtfprobe_XUREGULATIONclockCLOCKRT_f849bfe4";
-    .port_info 21 /OUTPUT 1 "dtfprobe_XUREGULATIONclockSTARTUP_f849bfe4";
-    .port_info 22 /OUTPUT 1 "dtfprobe_XUREGULATIONclockISLOPECOMP_f849bfe4";
-v0x5614fb560550_0 .net "CELG59462", 0 0, o0x7f487e9880d8;  alias, 0 drivers
-v0x5614fb560620_0 .net "CELREF_0a62f9b4", 0 0, o0x7f487e988108;  alias, 0 drivers
-v0x5614fb5606f0_0 .net "CELSENSE_RF", 0 0, o0x7f487e988018;  alias, 0 drivers
-v0x5614fb5607f0_0 .net "CELSUB40948", 0 0, o0x7f487e988138;  alias, 0 drivers
-v0x5614fb5608c0_0 .net "CELV96848", 0 0, o0x7f487e988168;  alias, 0 drivers
-v0x5614fb5609b0_0 .net "IP_0a62f9b4", 0 0, o0x7f487e9881c8;  alias, 0 drivers
-v0x5614fb560a80_0 .net "ISLOPECOMP", 0 0, o0x7f487e988528;  alias, 0 drivers
-v0x5614fb560b20_0 .net "PORB97836", 0 0, o0x7f487e9881f8;  alias, 0 drivers
-v0x5614fb560bf0_0 .net "RT", 0 0, o0x7f487e988048;  alias, 0 drivers
-v0x5614fb560d20_0 .net "SIMPV", 0 0, o0x7f487e988228;  alias, 0 drivers
-v0x5614fb560dc0_0 .net "celkelvin_GNDoscillator", 0 0, o0x7f487e988558;  alias, 0 drivers
-v0x5614fb560e60_0 .net "clock_divideRT", 0 0, o0x7f487e988588;  alias, 0 drivers
-v0x5614fb560f00_0 .net "clock_rt", 0 0, o0x7f487e9885b8;  alias, 0 drivers
-v0x5614fb560fa0_0 .net "dtfprobe_XUREGULATIONclockCLOCKRT_f849bfe4", 0 0, o0x7f487e9885e8;  alias, 0 drivers
-v0x5614fb561040_0 .net "dtfprobe_XUREGULATIONclockCLOCK_f849bfe4", 0 0, o0x7f487e988618;  alias, 0 drivers
-v0x5614fb5610e0_0 .net "dtfprobe_XUREGULATIONclockFAULT_f849bfe4", 0 0, o0x7f487e988648;  alias, 0 drivers
-v0x5614fb561180_0 .net "dtfprobe_XUREGULATIONclockISLOPECOMP_f849bfe4", 0 0, o0x7f487e988678;  alias, 0 drivers
-v0x5614fb561330_0 .net "dtfprobe_XUREGULATIONclockSTARTUP_f849bfe4", 0 0, o0x7f487e9886a8;  alias, 0 drivers
-v0x5614fb5613d0_0 .net "enable_clock", 0 0, o0x7f487e988258;  alias, 0 drivers
-v0x5614fb5614a0_0 .net "fault_clock", 0 0, o0x7f487e9886d8;  alias, 0 drivers
-v0x5614fb561540_0 .net "mode_stepup", 0 0, o0x7f487e988288;  alias, 0 drivers
-v0x5614fb561610_0 .net "ok_clock", 0 0, o0x7f487e988708;  alias, 0 drivers
-v0x5614fb5616b0_0 .net "request_clockRT", 0 0, o0x7f487e9882b8;  alias, 0 drivers
-S_0x5614fb561a40 .scope module, "celkelvin_GNDoscillator_WRAPPER" "WRAPPER1" 2 106, 2 46 0, S_0x5614fb50bf60;
- .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "o";
-    .port_info 1 /INPUT 1 "i";
-v0x5614fb561c40_0 .net "i", 0 0, o0x7f487e988558;  alias, 0 drivers
-v0x5614fb561d30_0 .net "o", 0 0, o0x7f487e9880d8;  alias, 0 drivers
+    .port_info 0 /OUTPUT 1 "O";
+    .port_info 1 /INPUT 1 "G";
+    .port_info 2 /INPUT 1 "I0";
+    .port_info 3 /INPUT 1 "I1";
+    .port_info 4 /INPUT 1 "S";
+    .port_info 5 /INPUT 1 "SUB";
+    .port_info 6 /INPUT 1 "V";
+v0x555ac0a60a40_0 .net "G", 0 0, o0x7f1882a69018;  alias, 0 drivers
+v0x555ac0a709b0_0 .net "I0", 0 0, L_0x555ac0a71470;  1 drivers
+v0x555ac0a70a70_0 .net "I1", 0 0, L_0x555ac0a71570;  1 drivers
+v0x555ac0a70b10_0 .net "O", 0 0, o0x7f1882a690a8;  alias, 0 drivers
+v0x555ac0a70bd0_0 .net "S", 0 0, o0x7f1882a690d8;  alias, 0 drivers
+v0x555ac0a70ce0_0 .net "SUB", 0 0, o0x7f1882a69108;  alias, 0 drivers
+v0x555ac0a70da0_0 .net "V", 0 0, o0x7f1882a69138;  alias, 0 drivers
 # The file index is used to find the file name in the following table.
 :file_names 3;
     "N/A";
     "<interactive>";
-    "/celera/projects/Sunnyvale/software/REGULATIONclock/verilog10/sim_REGULATIONclock_ROW4.v";
+    "/./celera//projects//Sunnyvale//software//REGULATIONclock//verilog5//dmux2_ac802145.v";

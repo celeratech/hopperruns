@@ -1,0 +1,456 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x55b012219f60 .scope module, "sim_ESRtestREFERENCE_ROW3" "sim_ESRtestREFERENCE_ROW3" 2 155;
+ .timescale 0 0;
+o0x7f53d8cd1018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229e520_0 .net "CELG59462", 0 0, o0x7f53d8cd1018;  0 drivers
+o0x7f53d8cd1048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229e5e0_0 .net "CELSUB40948", 0 0, o0x7f53d8cd1048;  0 drivers
+o0x7f53d8cd1078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229e6f0_0 .net "CELV96848", 0 0, o0x7f53d8cd1078;  0 drivers
+o0x7f53d8cd10a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229e7e0_0 .net "ESRcalculate_0", 0 0, o0x7f53d8cd10a8;  0 drivers
+o0x7f53d8cd10d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229e8d0_0 .net "ESRcalculate_1", 0 0, o0x7f53d8cd10d8;  0 drivers
+o0x7f53d8cd1108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229ea10_0 .net "ESRcalculate_10", 0 0, o0x7f53d8cd1108;  0 drivers
+o0x7f53d8cd1138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229eb00_0 .net "ESRcalculate_11", 0 0, o0x7f53d8cd1138;  0 drivers
+o0x7f53d8cd1168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229ebf0_0 .net "ESRcalculate_12", 0 0, o0x7f53d8cd1168;  0 drivers
+o0x7f53d8cd1198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229ece0_0 .net "ESRcalculate_13", 0 0, o0x7f53d8cd1198;  0 drivers
+o0x7f53d8cd11c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229ed80_0 .net "ESRcalculate_14", 0 0, o0x7f53d8cd11c8;  0 drivers
+o0x7f53d8cd11f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229ee70_0 .net "ESRcalculate_15", 0 0, o0x7f53d8cd11f8;  0 drivers
+o0x7f53d8cd1228 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229ef60_0 .net "ESRcalculate_2", 0 0, o0x7f53d8cd1228;  0 drivers
+o0x7f53d8cd1258 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229f050_0 .net "ESRcalculate_3", 0 0, o0x7f53d8cd1258;  0 drivers
+o0x7f53d8cd1288 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229f140_0 .net "ESRcalculate_4", 0 0, o0x7f53d8cd1288;  0 drivers
+o0x7f53d8cd12b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229f230_0 .net "ESRcalculate_5", 0 0, o0x7f53d8cd12b8;  0 drivers
+o0x7f53d8cd12e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229f320_0 .net "ESRcalculate_6", 0 0, o0x7f53d8cd12e8;  0 drivers
+o0x7f53d8cd1318 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229f410_0 .net "ESRcalculate_7", 0 0, o0x7f53d8cd1318;  0 drivers
+o0x7f53d8cd1348 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229f500_0 .net "ESRcalculate_8", 0 0, o0x7f53d8cd1348;  0 drivers
+o0x7f53d8cd1378 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229f5f0_0 .net "ESRcalculate_9", 0 0, o0x7f53d8cd1378;  0 drivers
+o0x7f53d8cd13a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229f6e0_0 .net "ESRtargetMAX_0", 0 0, o0x7f53d8cd13a8;  0 drivers
+o0x7f53d8cd13d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229f7d0_0 .net "ESRtargetMAX_1", 0 0, o0x7f53d8cd13d8;  0 drivers
+o0x7f53d8cd1408 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229f8c0_0 .net "ESRtargetMAX_10", 0 0, o0x7f53d8cd1408;  0 drivers
+o0x7f53d8cd1438 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229f9b0_0 .net "ESRtargetMAX_11", 0 0, o0x7f53d8cd1438;  0 drivers
+o0x7f53d8cd1468 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229faa0_0 .net "ESRtargetMAX_12", 0 0, o0x7f53d8cd1468;  0 drivers
+o0x7f53d8cd1498 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229fb90_0 .net "ESRtargetMAX_13", 0 0, o0x7f53d8cd1498;  0 drivers
+o0x7f53d8cd14c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229fc80_0 .net "ESRtargetMAX_14", 0 0, o0x7f53d8cd14c8;  0 drivers
+o0x7f53d8cd14f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229fd70_0 .net "ESRtargetMAX_15", 0 0, o0x7f53d8cd14f8;  0 drivers
+o0x7f53d8cd1528 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229fe60_0 .net "ESRtargetMAX_2", 0 0, o0x7f53d8cd1528;  0 drivers
+o0x7f53d8cd1558 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b01229ff50_0 .net "ESRtargetMAX_3", 0 0, o0x7f53d8cd1558;  0 drivers
+o0x7f53d8cd1588 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a0040_0 .net "ESRtargetMAX_4", 0 0, o0x7f53d8cd1588;  0 drivers
+o0x7f53d8cd15b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a0130_0 .net "ESRtargetMAX_5", 0 0, o0x7f53d8cd15b8;  0 drivers
+o0x7f53d8cd15e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a0220_0 .net "ESRtargetMAX_6", 0 0, o0x7f53d8cd15e8;  0 drivers
+o0x7f53d8cd1618 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a0310_0 .net "ESRtargetMAX_7", 0 0, o0x7f53d8cd1618;  0 drivers
+o0x7f53d8cd1648 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a0400_0 .net "ESRtargetMAX_8", 0 0, o0x7f53d8cd1648;  0 drivers
+o0x7f53d8cd1678 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a04f0_0 .net "ESRtargetMAX_9", 0 0, o0x7f53d8cd1678;  0 drivers
+o0x7f53d8cd16a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a05e0_0 .net "ESRtargetMIN_0", 0 0, o0x7f53d8cd16a8;  0 drivers
+o0x7f53d8cd16d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a06d0_0 .net "ESRtargetMIN_1", 0 0, o0x7f53d8cd16d8;  0 drivers
+o0x7f53d8cd1708 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a07c0_0 .net "ESRtargetMIN_10", 0 0, o0x7f53d8cd1708;  0 drivers
+o0x7f53d8cd1738 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a08b0_0 .net "ESRtargetMIN_11", 0 0, o0x7f53d8cd1738;  0 drivers
+o0x7f53d8cd1768 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a09a0_0 .net "ESRtargetMIN_12", 0 0, o0x7f53d8cd1768;  0 drivers
+o0x7f53d8cd1798 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a0a90_0 .net "ESRtargetMIN_13", 0 0, o0x7f53d8cd1798;  0 drivers
+o0x7f53d8cd17c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a0b80_0 .net "ESRtargetMIN_14", 0 0, o0x7f53d8cd17c8;  0 drivers
+o0x7f53d8cd17f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a0c70_0 .net "ESRtargetMIN_15", 0 0, o0x7f53d8cd17f8;  0 drivers
+o0x7f53d8cd1828 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a0d60_0 .net "ESRtargetMIN_2", 0 0, o0x7f53d8cd1828;  0 drivers
+o0x7f53d8cd1858 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a0e50_0 .net "ESRtargetMIN_3", 0 0, o0x7f53d8cd1858;  0 drivers
+o0x7f53d8cd1888 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a0f40_0 .net "ESRtargetMIN_4", 0 0, o0x7f53d8cd1888;  0 drivers
+o0x7f53d8cd18b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a1030_0 .net "ESRtargetMIN_5", 0 0, o0x7f53d8cd18b8;  0 drivers
+o0x7f53d8cd18e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a1120_0 .net "ESRtargetMIN_6", 0 0, o0x7f53d8cd18e8;  0 drivers
+o0x7f53d8cd1918 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a1210_0 .net "ESRtargetMIN_7", 0 0, o0x7f53d8cd1918;  0 drivers
+o0x7f53d8cd1948 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a1300_0 .net "ESRtargetMIN_8", 0 0, o0x7f53d8cd1948;  0 drivers
+o0x7f53d8cd1978 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a13f0_0 .net "ESRtargetMIN_9", 0 0, o0x7f53d8cd1978;  0 drivers
+o0x7f53d8cd19a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a14e0_0 .net "GMCHARGEnominal_0", 0 0, o0x7f53d8cd19a8;  0 drivers
+o0x7f53d8cd19d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a15d0_0 .net "GMCHARGEnominal_1", 0 0, o0x7f53d8cd19d8;  0 drivers
+o0x7f53d8cd1a08 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a16c0_0 .net "GMCHARGEnominal_2", 0 0, o0x7f53d8cd1a08;  0 drivers
+o0x7f53d8cd1a38 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a17b0_0 .net "GMCHARGEnominal_3", 0 0, o0x7f53d8cd1a38;  0 drivers
+o0x7f53d8cd1a68 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a18a0_0 .net "GMCHARGEselect_0", 0 0, o0x7f53d8cd1a68;  0 drivers
+o0x7f53d8cd1a98 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a1990_0 .net "GMCHARGEselect_1", 0 0, o0x7f53d8cd1a98;  0 drivers
+o0x7f53d8cd1ac8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a1a80_0 .net "GMCHARGEselect_2", 0 0, o0x7f53d8cd1ac8;  0 drivers
+o0x7f53d8cd1af8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a1b70_0 .net "GMCHARGEselect_3", 0 0, o0x7f53d8cd1af8;  0 drivers
+o0x7f53d8cd1b28 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a1c60_0 .net "GMCHARGEstart_0", 0 0, o0x7f53d8cd1b28;  0 drivers
+o0x7f53d8cd1b58 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a1d50_0 .net "GMCHARGEstart_1", 0 0, o0x7f53d8cd1b58;  0 drivers
+o0x7f53d8cd1b88 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a1e40_0 .net "GMcount_0", 0 0, o0x7f53d8cd1b88;  0 drivers
+o0x7f53d8cd1bb8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a1f30_0 .net "GMcount_1", 0 0, o0x7f53d8cd1bb8;  0 drivers
+o0x7f53d8cd2c98 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a2020_0 .net "GND", 0 0, o0x7f53d8cd2c98;  0 drivers
+o0x7f53d8cd1be8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a20c0_0 .net "PORB97836", 0 0, o0x7f53d8cd1be8;  0 drivers
+o0x7f53d8cd1c18 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a2570_0 .net "clock_esrtest", 0 0, o0x7f53d8cd1c18;  0 drivers
+o0x7f53d8cd1c48 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a2660_0 .net "done_esrreference", 0 0, o0x7f53d8cd1c48;  0 drivers
+o0x7f53d8cd1c78 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a2700_0 .net "dtfprobe_XUESRtestREFERENCEcountclock_1b63cc23", 0 0, o0x7f53d8cd1c78;  0 drivers
+o0x7f53d8cd1ca8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a27a0_0 .net "dtfprobe_XUESRtestREFERENCEcountdirection_1b63cc23", 0 0, o0x7f53d8cd1ca8;  0 drivers
+o0x7f53d8cd1cd8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a2840_0 .net "dtfprobe_XUESRtestREFERENCEstartup_1b63cc23", 0 0, o0x7f53d8cd1cd8;  0 drivers
+o0x7f53d8cd1d08 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a28e0_0 .net "esr_algorithm", 0 0, o0x7f53d8cd1d08;  0 drivers
+o0x7f53d8cd1d38 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a29d0_0 .net "porb", 0 0, o0x7f53d8cd1d38;  0 drivers
+o0x7f53d8cd1d68 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a2ac0_0 .net "start_esrtest", 0 0, o0x7f53d8cd1d68;  0 drivers
+o0x7f53d8cd1d98 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55b0122a2bb0_0 .net "update_esrreference", 0 0, o0x7f53d8cd1d98;  0 drivers
+S_0x55b01225a900 .scope module, "XESRtestREFERENCE1" "ESRtestREFERENCE" 2 161, 2 2 0, S_0x55b012219f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "porb";
+    .port_info 1 /INPUT 1 "CELG59462";
+    .port_info 2 /INPUT 1 "CELV96848";
+    .port_info 3 /OUTPUT 1 "GMcount_0";
+    .port_info 4 /OUTPUT 1 "GMcount_1";
+    .port_info 5 /INPUT 1 "PORB97836";
+    .port_info 6 /INPUT 1 "CELSUB40948";
+    .port_info 7 /INPUT 1 "clock_esrtest";
+    .port_info 8 /INPUT 1 "esr_algorithm";
+    .port_info 9 /INPUT 1 "start_esrtest";
+    .port_info 10 /INPUT 1 "ESRcalculate_0";
+    .port_info 11 /INPUT 1 "ESRcalculate_1";
+    .port_info 12 /INPUT 1 "ESRcalculate_2";
+    .port_info 13 /INPUT 1 "ESRcalculate_3";
+    .port_info 14 /INPUT 1 "ESRcalculate_4";
+    .port_info 15 /INPUT 1 "ESRcalculate_5";
+    .port_info 16 /INPUT 1 "ESRcalculate_6";
+    .port_info 17 /INPUT 1 "ESRcalculate_7";
+    .port_info 18 /INPUT 1 "ESRcalculate_8";
+    .port_info 19 /INPUT 1 "ESRcalculate_9";
+    .port_info 20 /INPUT 1 "ESRtargetMAX_0";
+    .port_info 21 /INPUT 1 "ESRtargetMAX_1";
+    .port_info 22 /INPUT 1 "ESRtargetMAX_2";
+    .port_info 23 /INPUT 1 "ESRtargetMAX_3";
+    .port_info 24 /INPUT 1 "ESRtargetMAX_4";
+    .port_info 25 /INPUT 1 "ESRtargetMAX_5";
+    .port_info 26 /INPUT 1 "ESRtargetMAX_6";
+    .port_info 27 /INPUT 1 "ESRtargetMAX_7";
+    .port_info 28 /INPUT 1 "ESRtargetMAX_8";
+    .port_info 29 /INPUT 1 "ESRtargetMAX_9";
+    .port_info 30 /INPUT 1 "ESRtargetMIN_0";
+    .port_info 31 /INPUT 1 "ESRtargetMIN_1";
+    .port_info 32 /INPUT 1 "ESRtargetMIN_2";
+    .port_info 33 /INPUT 1 "ESRtargetMIN_3";
+    .port_info 34 /INPUT 1 "ESRtargetMIN_4";
+    .port_info 35 /INPUT 1 "ESRtargetMIN_5";
+    .port_info 36 /INPUT 1 "ESRtargetMIN_6";
+    .port_info 37 /INPUT 1 "ESRtargetMIN_7";
+    .port_info 38 /INPUT 1 "ESRtargetMIN_8";
+    .port_info 39 /INPUT 1 "ESRtargetMIN_9";
+    .port_info 40 /INPUT 1 "ESRcalculate_10";
+    .port_info 41 /INPUT 1 "ESRcalculate_11";
+    .port_info 42 /INPUT 1 "ESRcalculate_12";
+    .port_info 43 /INPUT 1 "ESRcalculate_13";
+    .port_info 44 /INPUT 1 "ESRcalculate_14";
+    .port_info 45 /INPUT 1 "ESRcalculate_15";
+    .port_info 46 /INPUT 1 "ESRtargetMAX_10";
+    .port_info 47 /INPUT 1 "ESRtargetMAX_11";
+    .port_info 48 /INPUT 1 "ESRtargetMAX_12";
+    .port_info 49 /INPUT 1 "ESRtargetMAX_13";
+    .port_info 50 /INPUT 1 "ESRtargetMAX_14";
+    .port_info 51 /INPUT 1 "ESRtargetMAX_15";
+    .port_info 52 /INPUT 1 "ESRtargetMIN_10";
+    .port_info 53 /INPUT 1 "ESRtargetMIN_11";
+    .port_info 54 /INPUT 1 "ESRtargetMIN_12";
+    .port_info 55 /INPUT 1 "ESRtargetMIN_13";
+    .port_info 56 /INPUT 1 "ESRtargetMIN_14";
+    .port_info 57 /INPUT 1 "ESRtargetMIN_15";
+    .port_info 58 /INPUT 1 "GMCHARGEstart_0";
+    .port_info 59 /INPUT 1 "GMCHARGEstart_1";
+    .port_info 60 /OUTPUT 1 "GMCHARGEselect_0";
+    .port_info 61 /OUTPUT 1 "GMCHARGEselect_1";
+    .port_info 62 /OUTPUT 1 "GMCHARGEselect_2";
+    .port_info 63 /OUTPUT 1 "GMCHARGEselect_3";
+    .port_info 64 /INPUT 1 "GMCHARGEnominal_0";
+    .port_info 65 /INPUT 1 "GMCHARGEnominal_1";
+    .port_info 66 /INPUT 1 "GMCHARGEnominal_2";
+    .port_info 67 /INPUT 1 "GMCHARGEnominal_3";
+    .port_info 68 /OUTPUT 1 "done_esrreference";
+    .port_info 69 /INPUT 1 "update_esrreference";
+    .port_info 70 /OUTPUT 1 "dtfprobe_XUESRtestREFERENCEstartup_1b63cc23";
+    .port_info 71 /OUTPUT 1 "dtfprobe_XUESRtestREFERENCEcountclock_1b63cc23";
+    .port_info 72 /OUTPUT 1 "dtfprobe_XUESRtestREFERENCEcountdirection_1b63cc23";
+v0x55b01221a0f0_0 .net "CELG59462", 0 0, o0x7f53d8cd1018;  alias, 0 drivers
+v0x55b012219ec0_0 .net "CELSUB40948", 0 0, o0x7f53d8cd1048;  alias, 0 drivers
+v0x55b012295ce0_0 .net "CELV96848", 0 0, o0x7f53d8cd1078;  alias, 0 drivers
+v0x55b012295d80_0 .net "ESRcalculate_0", 0 0, o0x7f53d8cd10a8;  alias, 0 drivers
+v0x55b012295e40_0 .net "ESRcalculate_1", 0 0, o0x7f53d8cd10d8;  alias, 0 drivers
+v0x55b012295f50_0 .net "ESRcalculate_10", 0 0, o0x7f53d8cd1108;  alias, 0 drivers
+v0x55b012296010_0 .net "ESRcalculate_11", 0 0, o0x7f53d8cd1138;  alias, 0 drivers
+v0x55b0122960d0_0 .net "ESRcalculate_12", 0 0, o0x7f53d8cd1168;  alias, 0 drivers
+v0x55b012296190_0 .net "ESRcalculate_13", 0 0, o0x7f53d8cd1198;  alias, 0 drivers
+v0x55b012296250_0 .net "ESRcalculate_14", 0 0, o0x7f53d8cd11c8;  alias, 0 drivers
+v0x55b012296310_0 .net "ESRcalculate_15", 0 0, o0x7f53d8cd11f8;  alias, 0 drivers
+v0x55b0122963d0_0 .net "ESRcalculate_2", 0 0, o0x7f53d8cd1228;  alias, 0 drivers
+v0x55b012296490_0 .net "ESRcalculate_3", 0 0, o0x7f53d8cd1258;  alias, 0 drivers
+v0x55b012296550_0 .net "ESRcalculate_4", 0 0, o0x7f53d8cd1288;  alias, 0 drivers
+v0x55b012296610_0 .net "ESRcalculate_5", 0 0, o0x7f53d8cd12b8;  alias, 0 drivers
+v0x55b0122966d0_0 .net "ESRcalculate_6", 0 0, o0x7f53d8cd12e8;  alias, 0 drivers
+v0x55b012296790_0 .net "ESRcalculate_7", 0 0, o0x7f53d8cd1318;  alias, 0 drivers
+v0x55b012296850_0 .net "ESRcalculate_8", 0 0, o0x7f53d8cd1348;  alias, 0 drivers
+v0x55b012296910_0 .net "ESRcalculate_9", 0 0, o0x7f53d8cd1378;  alias, 0 drivers
+v0x55b0122969d0_0 .net "ESRtargetMAX_0", 0 0, o0x7f53d8cd13a8;  alias, 0 drivers
+v0x55b012296a90_0 .net "ESRtargetMAX_1", 0 0, o0x7f53d8cd13d8;  alias, 0 drivers
+v0x55b012296b50_0 .net "ESRtargetMAX_10", 0 0, o0x7f53d8cd1408;  alias, 0 drivers
+v0x55b012296c10_0 .net "ESRtargetMAX_11", 0 0, o0x7f53d8cd1438;  alias, 0 drivers
+v0x55b012296cd0_0 .net "ESRtargetMAX_12", 0 0, o0x7f53d8cd1468;  alias, 0 drivers
+v0x55b012296d90_0 .net "ESRtargetMAX_13", 0 0, o0x7f53d8cd1498;  alias, 0 drivers
+v0x55b012296e50_0 .net "ESRtargetMAX_14", 0 0, o0x7f53d8cd14c8;  alias, 0 drivers
+v0x55b012296f10_0 .net "ESRtargetMAX_15", 0 0, o0x7f53d8cd14f8;  alias, 0 drivers
+v0x55b012296fd0_0 .net "ESRtargetMAX_2", 0 0, o0x7f53d8cd1528;  alias, 0 drivers
+v0x55b012297090_0 .net "ESRtargetMAX_3", 0 0, o0x7f53d8cd1558;  alias, 0 drivers
+v0x55b012297150_0 .net "ESRtargetMAX_4", 0 0, o0x7f53d8cd1588;  alias, 0 drivers
+v0x55b012297210_0 .net "ESRtargetMAX_5", 0 0, o0x7f53d8cd15b8;  alias, 0 drivers
+v0x55b0122972d0_0 .net "ESRtargetMAX_6", 0 0, o0x7f53d8cd15e8;  alias, 0 drivers
+v0x55b012297390_0 .net "ESRtargetMAX_7", 0 0, o0x7f53d8cd1618;  alias, 0 drivers
+v0x55b012297450_0 .net "ESRtargetMAX_8", 0 0, o0x7f53d8cd1648;  alias, 0 drivers
+v0x55b012297510_0 .net "ESRtargetMAX_9", 0 0, o0x7f53d8cd1678;  alias, 0 drivers
+v0x55b0122975d0_0 .net "ESRtargetMIN_0", 0 0, o0x7f53d8cd16a8;  alias, 0 drivers
+v0x55b012297690_0 .net "ESRtargetMIN_1", 0 0, o0x7f53d8cd16d8;  alias, 0 drivers
+v0x55b012297750_0 .net "ESRtargetMIN_10", 0 0, o0x7f53d8cd1708;  alias, 0 drivers
+v0x55b012297810_0 .net "ESRtargetMIN_11", 0 0, o0x7f53d8cd1738;  alias, 0 drivers
+v0x55b0122978d0_0 .net "ESRtargetMIN_12", 0 0, o0x7f53d8cd1768;  alias, 0 drivers
+v0x55b012297990_0 .net "ESRtargetMIN_13", 0 0, o0x7f53d8cd1798;  alias, 0 drivers
+v0x55b012297a50_0 .net "ESRtargetMIN_14", 0 0, o0x7f53d8cd17c8;  alias, 0 drivers
+v0x55b012297b10_0 .net "ESRtargetMIN_15", 0 0, o0x7f53d8cd17f8;  alias, 0 drivers
+v0x55b012297bd0_0 .net "ESRtargetMIN_2", 0 0, o0x7f53d8cd1828;  alias, 0 drivers
+v0x55b012297c90_0 .net "ESRtargetMIN_3", 0 0, o0x7f53d8cd1858;  alias, 0 drivers
+v0x55b012297d50_0 .net "ESRtargetMIN_4", 0 0, o0x7f53d8cd1888;  alias, 0 drivers
+v0x55b012297e10_0 .net "ESRtargetMIN_5", 0 0, o0x7f53d8cd18b8;  alias, 0 drivers
+v0x55b012297ed0_0 .net "ESRtargetMIN_6", 0 0, o0x7f53d8cd18e8;  alias, 0 drivers
+v0x55b012297f90_0 .net "ESRtargetMIN_7", 0 0, o0x7f53d8cd1918;  alias, 0 drivers
+v0x55b012298050_0 .net "ESRtargetMIN_8", 0 0, o0x7f53d8cd1948;  alias, 0 drivers
+v0x55b012298110_0 .net "ESRtargetMIN_9", 0 0, o0x7f53d8cd1978;  alias, 0 drivers
+v0x55b0122981d0_0 .net "GMCHARGEnominal_0", 0 0, o0x7f53d8cd19a8;  alias, 0 drivers
+v0x55b012298290_0 .net "GMCHARGEnominal_1", 0 0, o0x7f53d8cd19d8;  alias, 0 drivers
+v0x55b012298350_0 .net "GMCHARGEnominal_2", 0 0, o0x7f53d8cd1a08;  alias, 0 drivers
+v0x55b012298410_0 .net "GMCHARGEnominal_3", 0 0, o0x7f53d8cd1a38;  alias, 0 drivers
+v0x55b0122984d0_0 .net "GMCHARGEselect_0", 0 0, o0x7f53d8cd1a68;  alias, 0 drivers
+v0x55b012298590_0 .net "GMCHARGEselect_1", 0 0, o0x7f53d8cd1a98;  alias, 0 drivers
+v0x55b012298650_0 .net "GMCHARGEselect_2", 0 0, o0x7f53d8cd1ac8;  alias, 0 drivers
+v0x55b012298710_0 .net "GMCHARGEselect_3", 0 0, o0x7f53d8cd1af8;  alias, 0 drivers
+v0x55b0122987d0_0 .net "GMCHARGEstart_0", 0 0, o0x7f53d8cd1b28;  alias, 0 drivers
+v0x55b012298890_0 .net "GMCHARGEstart_1", 0 0, o0x7f53d8cd1b58;  alias, 0 drivers
+v0x55b012298950_0 .net "GMcount_0", 0 0, o0x7f53d8cd1b88;  alias, 0 drivers
+v0x55b012298a10_0 .net "GMcount_1", 0 0, o0x7f53d8cd1bb8;  alias, 0 drivers
+v0x55b012298ad0_0 .net "PORB97836", 0 0, o0x7f53d8cd1be8;  alias, 0 drivers
+v0x55b012298b90_0 .net "clock_esrtest", 0 0, o0x7f53d8cd1c18;  alias, 0 drivers
+v0x55b012299060_0 .net "done_esrreference", 0 0, o0x7f53d8cd1c48;  alias, 0 drivers
+v0x55b012299120_0 .net "dtfprobe_XUESRtestREFERENCEcountclock_1b63cc23", 0 0, o0x7f53d8cd1c78;  alias, 0 drivers
+v0x55b0122991e0_0 .net "dtfprobe_XUESRtestREFERENCEcountdirection_1b63cc23", 0 0, o0x7f53d8cd1ca8;  alias, 0 drivers
+v0x55b0122992a0_0 .net "dtfprobe_XUESRtestREFERENCEstartup_1b63cc23", 0 0, o0x7f53d8cd1cd8;  alias, 0 drivers
+v0x55b012299360_0 .net "esr_algorithm", 0 0, o0x7f53d8cd1d08;  alias, 0 drivers
+v0x55b012299420_0 .net "porb", 0 0, o0x7f53d8cd1d38;  alias, 0 drivers
+v0x55b0122994e0_0 .net "start_esrtest", 0 0, o0x7f53d8cd1d68;  alias, 0 drivers
+v0x55b0122995a0_0 .net "update_esrreference", 0 0, o0x7f53d8cd1d98;  alias, 0 drivers
+S_0x55b012299f80 .scope module, "XEXTERNALS_ESRtestREFERENCE1" "EXTERNALS_ESRtestREFERENCE" 2 237, 2 78 0, S_0x55b012219f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GMcount_0";
+    .port_info 1 /INPUT 1 "GMcount_1";
+    .port_info 2 /INPUT 1 "GMCHARGEselect_0";
+    .port_info 3 /INPUT 1 "GMCHARGEselect_1";
+    .port_info 4 /INPUT 1 "GMCHARGEselect_2";
+    .port_info 5 /INPUT 1 "GMCHARGEselect_3";
+v0x55b01229a1d0_0 .net "GMCHARGEselect_0", 0 0, o0x7f53d8cd1a68;  alias, 0 drivers
+v0x55b01229a270_0 .net "GMCHARGEselect_1", 0 0, o0x7f53d8cd1a98;  alias, 0 drivers
+v0x55b01229a340_0 .net "GMCHARGEselect_2", 0 0, o0x7f53d8cd1ac8;  alias, 0 drivers
+v0x55b01229a440_0 .net "GMCHARGEselect_3", 0 0, o0x7f53d8cd1af8;  alias, 0 drivers
+v0x55b01229a510_0 .net "GMcount_0", 0 0, o0x7f53d8cd1b88;  alias, 0 drivers
+v0x55b01229a600_0 .net "GMcount_1", 0 0, o0x7f53d8cd1bb8;  alias, 0 drivers
+S_0x55b01229a6d0 .scope module, "XFORCE_ESRtestREFERENCE1" "FORCE_ESRtestREFERENCE" 2 246, 2 87 0, S_0x55b012219f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "GND";
+    .port_info 1 /OUTPUT 1 "porb";
+    .port_info 2 /OUTPUT 1 "CELG59462";
+    .port_info 3 /OUTPUT 1 "CELV96848";
+    .port_info 4 /OUTPUT 1 "PORB97836";
+    .port_info 5 /OUTPUT 1 "CELSUB40948";
+    .port_info 6 /OUTPUT 1 "clock_esrtest";
+    .port_info 7 /OUTPUT 1 "esr_algorithm";
+    .port_info 8 /OUTPUT 1 "start_esrtest";
+    .port_info 9 /OUTPUT 1 "ESRcalculate_0";
+    .port_info 10 /OUTPUT 1 "ESRcalculate_1";
+    .port_info 11 /OUTPUT 1 "ESRcalculate_2";
+    .port_info 12 /OUTPUT 1 "ESRcalculate_3";
+    .port_info 13 /OUTPUT 1 "ESRcalculate_4";
+    .port_info 14 /OUTPUT 1 "ESRcalculate_5";
+    .port_info 15 /OUTPUT 1 "ESRcalculate_6";
+    .port_info 16 /OUTPUT 1 "ESRcalculate_7";
+    .port_info 17 /OUTPUT 1 "ESRcalculate_8";
+    .port_info 18 /OUTPUT 1 "ESRcalculate_9";
+    .port_info 19 /OUTPUT 1 "ESRtargetMAX_0";
+    .port_info 20 /OUTPUT 1 "ESRtargetMAX_1";
+    .port_info 21 /OUTPUT 1 "ESRtargetMAX_2";
+    .port_info 22 /OUTPUT 1 "ESRtargetMAX_3";
+    .port_info 23 /OUTPUT 1 "ESRtargetMAX_4";
+    .port_info 24 /OUTPUT 1 "ESRtargetMAX_5";
+    .port_info 25 /OUTPUT 1 "ESRtargetMAX_6";
+    .port_info 26 /OUTPUT 1 "ESRtargetMAX_7";
+    .port_info 27 /OUTPUT 1 "ESRtargetMAX_8";
+    .port_info 28 /OUTPUT 1 "ESRtargetMAX_9";
+    .port_info 29 /OUTPUT 1 "ESRtargetMIN_0";
+    .port_info 30 /OUTPUT 1 "ESRtargetMIN_1";
+    .port_info 31 /OUTPUT 1 "ESRtargetMIN_2";
+    .port_info 32 /OUTPUT 1 "ESRtargetMIN_3";
+    .port_info 33 /OUTPUT 1 "ESRtargetMIN_4";
+    .port_info 34 /OUTPUT 1 "ESRtargetMIN_5";
+    .port_info 35 /OUTPUT 1 "ESRtargetMIN_6";
+    .port_info 36 /OUTPUT 1 "ESRtargetMIN_7";
+    .port_info 37 /OUTPUT 1 "ESRtargetMIN_8";
+    .port_info 38 /OUTPUT 1 "ESRtargetMIN_9";
+    .port_info 39 /OUTPUT 1 "ESRcalculate_10";
+    .port_info 40 /OUTPUT 1 "ESRcalculate_11";
+    .port_info 41 /OUTPUT 1 "ESRcalculate_12";
+    .port_info 42 /OUTPUT 1 "ESRcalculate_13";
+    .port_info 43 /OUTPUT 1 "ESRcalculate_14";
+    .port_info 44 /OUTPUT 1 "ESRcalculate_15";
+    .port_info 45 /OUTPUT 1 "ESRtargetMAX_10";
+    .port_info 46 /OUTPUT 1 "ESRtargetMAX_11";
+    .port_info 47 /OUTPUT 1 "ESRtargetMAX_12";
+    .port_info 48 /OUTPUT 1 "ESRtargetMAX_13";
+    .port_info 49 /OUTPUT 1 "ESRtargetMAX_14";
+    .port_info 50 /OUTPUT 1 "ESRtargetMAX_15";
+    .port_info 51 /OUTPUT 1 "ESRtargetMIN_10";
+    .port_info 52 /OUTPUT 1 "ESRtargetMIN_11";
+    .port_info 53 /OUTPUT 1 "ESRtargetMIN_12";
+    .port_info 54 /OUTPUT 1 "ESRtargetMIN_13";
+    .port_info 55 /OUTPUT 1 "ESRtargetMIN_14";
+    .port_info 56 /OUTPUT 1 "ESRtargetMIN_15";
+    .port_info 57 /OUTPUT 1 "GMCHARGEstart_0";
+    .port_info 58 /OUTPUT 1 "GMCHARGEstart_1";
+    .port_info 59 /OUTPUT 1 "GMCHARGEnominal_0";
+    .port_info 60 /OUTPUT 1 "GMCHARGEnominal_1";
+    .port_info 61 /OUTPUT 1 "GMCHARGEnominal_2";
+    .port_info 62 /OUTPUT 1 "GMCHARGEnominal_3";
+    .port_info 63 /OUTPUT 1 "update_esrreference";
+v0x55b01229aef0_0 .net "CELG59462", 0 0, o0x7f53d8cd1018;  alias, 0 drivers
+v0x55b01229afc0_0 .net "CELSUB40948", 0 0, o0x7f53d8cd1048;  alias, 0 drivers
+v0x55b01229b090_0 .net "CELV96848", 0 0, o0x7f53d8cd1078;  alias, 0 drivers
+v0x55b01229b190_0 .net "ESRcalculate_0", 0 0, o0x7f53d8cd10a8;  alias, 0 drivers
+v0x55b01229b260_0 .net "ESRcalculate_1", 0 0, o0x7f53d8cd10d8;  alias, 0 drivers
+v0x55b01229b350_0 .net "ESRcalculate_10", 0 0, o0x7f53d8cd1108;  alias, 0 drivers
+v0x55b01229b420_0 .net "ESRcalculate_11", 0 0, o0x7f53d8cd1138;  alias, 0 drivers
+v0x55b01229b4f0_0 .net "ESRcalculate_12", 0 0, o0x7f53d8cd1168;  alias, 0 drivers
+v0x55b01229b5c0_0 .net "ESRcalculate_13", 0 0, o0x7f53d8cd1198;  alias, 0 drivers
+v0x55b01229b690_0 .net "ESRcalculate_14", 0 0, o0x7f53d8cd11c8;  alias, 0 drivers
+v0x55b01229b760_0 .net "ESRcalculate_15", 0 0, o0x7f53d8cd11f8;  alias, 0 drivers
+v0x55b01229b830_0 .net "ESRcalculate_2", 0 0, o0x7f53d8cd1228;  alias, 0 drivers
+v0x55b01229b900_0 .net "ESRcalculate_3", 0 0, o0x7f53d8cd1258;  alias, 0 drivers
+v0x55b01229b9d0_0 .net "ESRcalculate_4", 0 0, o0x7f53d8cd1288;  alias, 0 drivers
+v0x55b01229baa0_0 .net "ESRcalculate_5", 0 0, o0x7f53d8cd12b8;  alias, 0 drivers
+v0x55b01229bb70_0 .net "ESRcalculate_6", 0 0, o0x7f53d8cd12e8;  alias, 0 drivers
+v0x55b01229bc40_0 .net "ESRcalculate_7", 0 0, o0x7f53d8cd1318;  alias, 0 drivers
+v0x55b01229bd10_0 .net "ESRcalculate_8", 0 0, o0x7f53d8cd1348;  alias, 0 drivers
+v0x55b01229bde0_0 .net "ESRcalculate_9", 0 0, o0x7f53d8cd1378;  alias, 0 drivers
+v0x55b01229beb0_0 .net "ESRtargetMAX_0", 0 0, o0x7f53d8cd13a8;  alias, 0 drivers
+v0x55b01229bf80_0 .net "ESRtargetMAX_1", 0 0, o0x7f53d8cd13d8;  alias, 0 drivers
+v0x55b01229c050_0 .net "ESRtargetMAX_10", 0 0, o0x7f53d8cd1408;  alias, 0 drivers
+v0x55b01229c120_0 .net "ESRtargetMAX_11", 0 0, o0x7f53d8cd1438;  alias, 0 drivers
+v0x55b01229c1f0_0 .net "ESRtargetMAX_12", 0 0, o0x7f53d8cd1468;  alias, 0 drivers
+v0x55b01229c2c0_0 .net "ESRtargetMAX_13", 0 0, o0x7f53d8cd1498;  alias, 0 drivers
+v0x55b01229c390_0 .net "ESRtargetMAX_14", 0 0, o0x7f53d8cd14c8;  alias, 0 drivers
+v0x55b01229c460_0 .net "ESRtargetMAX_15", 0 0, o0x7f53d8cd14f8;  alias, 0 drivers
+v0x55b01229c530_0 .net "ESRtargetMAX_2", 0 0, o0x7f53d8cd1528;  alias, 0 drivers
+v0x55b01229c600_0 .net "ESRtargetMAX_3", 0 0, o0x7f53d8cd1558;  alias, 0 drivers
+v0x55b01229c6d0_0 .net "ESRtargetMAX_4", 0 0, o0x7f53d8cd1588;  alias, 0 drivers
+v0x55b01229c7a0_0 .net "ESRtargetMAX_5", 0 0, o0x7f53d8cd15b8;  alias, 0 drivers
+v0x55b01229c870_0 .net "ESRtargetMAX_6", 0 0, o0x7f53d8cd15e8;  alias, 0 drivers
+v0x55b01229c940_0 .net "ESRtargetMAX_7", 0 0, o0x7f53d8cd1618;  alias, 0 drivers
+v0x55b01229ca10_0 .net "ESRtargetMAX_8", 0 0, o0x7f53d8cd1648;  alias, 0 drivers
+v0x55b01229cae0_0 .net "ESRtargetMAX_9", 0 0, o0x7f53d8cd1678;  alias, 0 drivers
+v0x55b01229cbb0_0 .net "ESRtargetMIN_0", 0 0, o0x7f53d8cd16a8;  alias, 0 drivers
+v0x55b01229cc80_0 .net "ESRtargetMIN_1", 0 0, o0x7f53d8cd16d8;  alias, 0 drivers
+v0x55b01229cd50_0 .net "ESRtargetMIN_10", 0 0, o0x7f53d8cd1708;  alias, 0 drivers
+v0x55b01229ce20_0 .net "ESRtargetMIN_11", 0 0, o0x7f53d8cd1738;  alias, 0 drivers
+v0x55b01229cef0_0 .net "ESRtargetMIN_12", 0 0, o0x7f53d8cd1768;  alias, 0 drivers
+v0x55b01229cfc0_0 .net "ESRtargetMIN_13", 0 0, o0x7f53d8cd1798;  alias, 0 drivers
+v0x55b01229d090_0 .net "ESRtargetMIN_14", 0 0, o0x7f53d8cd17c8;  alias, 0 drivers
+v0x55b01229d160_0 .net "ESRtargetMIN_15", 0 0, o0x7f53d8cd17f8;  alias, 0 drivers
+v0x55b01229d230_0 .net "ESRtargetMIN_2", 0 0, o0x7f53d8cd1828;  alias, 0 drivers
+v0x55b01229d300_0 .net "ESRtargetMIN_3", 0 0, o0x7f53d8cd1858;  alias, 0 drivers
+v0x55b01229d3d0_0 .net "ESRtargetMIN_4", 0 0, o0x7f53d8cd1888;  alias, 0 drivers
+v0x55b01229d4a0_0 .net "ESRtargetMIN_5", 0 0, o0x7f53d8cd18b8;  alias, 0 drivers
+v0x55b01229d570_0 .net "ESRtargetMIN_6", 0 0, o0x7f53d8cd18e8;  alias, 0 drivers
+v0x55b01229d640_0 .net "ESRtargetMIN_7", 0 0, o0x7f53d8cd1918;  alias, 0 drivers
+v0x55b01229d710_0 .net "ESRtargetMIN_8", 0 0, o0x7f53d8cd1948;  alias, 0 drivers
+v0x55b01229d7e0_0 .net "ESRtargetMIN_9", 0 0, o0x7f53d8cd1978;  alias, 0 drivers
+v0x55b01229d8b0_0 .net "GMCHARGEnominal_0", 0 0, o0x7f53d8cd19a8;  alias, 0 drivers
+v0x55b01229d980_0 .net "GMCHARGEnominal_1", 0 0, o0x7f53d8cd19d8;  alias, 0 drivers
+v0x55b01229da50_0 .net "GMCHARGEnominal_2", 0 0, o0x7f53d8cd1a08;  alias, 0 drivers
+v0x55b01229db20_0 .net "GMCHARGEnominal_3", 0 0, o0x7f53d8cd1a38;  alias, 0 drivers
+v0x55b01229dbf0_0 .net "GMCHARGEstart_0", 0 0, o0x7f53d8cd1b28;  alias, 0 drivers
+v0x55b01229dcc0_0 .net "GMCHARGEstart_1", 0 0, o0x7f53d8cd1b58;  alias, 0 drivers
+v0x55b01229dd90_0 .net "GND", 0 0, o0x7f53d8cd2c98;  alias, 0 drivers
+v0x55b01229de30_0 .net "PORB97836", 0 0, o0x7f53d8cd1be8;  alias, 0 drivers
+v0x55b01229df00_0 .net "clock_esrtest", 0 0, o0x7f53d8cd1c18;  alias, 0 drivers
+v0x55b01229dfd0_0 .net "esr_algorithm", 0 0, o0x7f53d8cd1d08;  alias, 0 drivers
+v0x55b01229e0a0_0 .net "porb", 0 0, o0x7f53d8cd1d38;  alias, 0 drivers
+v0x55b01229e170_0 .net "start_esrtest", 0 0, o0x7f53d8cd1d68;  alias, 0 drivers
+v0x55b01229e240_0 .net "update_esrreference", 0 0, o0x7f53d8cd1d98;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/celera/projects/Sunnyvale/software/ESRtestREFERENCE/verilog10/sim_ESRtestREFERENCE_ROW3.v";

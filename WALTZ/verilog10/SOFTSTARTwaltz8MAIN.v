@@ -37,11 +37,11 @@ module VESPAasmINPUT2 (o,i0,i1,Tstate,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
-//Celera:amux2_2a6e42d8
+//Celera:amux2_a0dc83ed
 //Celera Confidential Symbol Generator
 //Inputs: 2, Switch On Resistance: 1K
 //Type of Control:pin, T-Switch: no
-module amux2_2a6e42d8 (SIMPV,CELSUB,O,I0,I1,
+module amux2_a0dc83ed (SIMPV,CELSUB,O,I0,I1,
 amux,
 CELG);
 input SIMPV;
@@ -51,22 +51,6 @@ input I0;
 input I1;
 input amux;
 input CELG;
-endmodule
-
-
-
-//Celera:dff_fc5ad7bd
-//Celera Confidential Symbol Generator
-//DFF latch
-module dff_fc5ad7bd (CELV,d,rb,ck,q,qb,CELG,CELSUB);
-input CELV;
-input d;
-input rb;
-input ck;
-output q;
-output qb;
-input CELG;
-input CELSUB;
 endmodule
 
 
@@ -163,6 +147,22 @@ endmodule
 
 
 
+//Celera:dff_e5264df5
+//Celera Confidential Symbol Generator
+//DFF latch
+module dff_e5264df5 (CELV,d,rb,ck,q,qb,CELG,CELSUB);
+input CELV;
+input d;
+input rb;
+input ck;
+output q;
+output qb;
+input CELG;
+input CELSUB;
+endmodule
+
+
+
 //Verilog HDL for "PEBBLES", "PEBBLEdbuf" "functional"
 
 
@@ -172,6 +172,18 @@ module PEBBLEdbuf ( o, G, SUB, V, i );
   input i;
   input G;
   output o;
+  input SUB;
+endmodule
+
+
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
   input SUB;
 endmodule
 
@@ -197,7 +209,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module SOFTSTARTwaltz8MAIN (SS, REF, MUDV, halfway, CELG59462, CELV96848, dft_clock, CELSUB40948, IP_4c0bef8e, enable_brick, softstart_1ms, done_softstart, SENSE_G_4c0bef8e, enable_softstart, kelvin_MUDGsoftstart, global_dac_0cc08401_XU5, global_oscillator_4c0bef8e_Xoscillator1);
+module SOFTSTARTwaltz8MAIN (SS, REF, MUDV, halfway, CELG59462, CELV96848, dft_clock, CELSUB40948, IP_4c0bef8e, enable_brick, softstart_1ms, done_softstart, SENSE_G_4c0bef8e, enable_softstart, kelvin_MUDGsoftstart);
 output  SS;
 input  REF;
 input  MUDV;
@@ -213,8 +225,6 @@ output  done_softstart;
 input  SENSE_G_4c0bef8e;
 input  enable_softstart;
 input  kelvin_MUDGsoftstart;
-input  global_dac_0cc08401_XU5;
-input  global_oscillator_4c0bef8e_Xoscillator1;
 
 
 // ------------------------ Wires ------------------------
@@ -268,24 +278,13 @@ VESPAasmINPUT2 XU8 (
 .CELSUB40948(CELSUB40948)
 );
 
-amux2_2a6e42d8 XU3 (
+amux2_a0dc83ed XU3 (
 .O(SS),
 .I0(net_111),
 .I1(net_129),
 .CELG(CELG59462),
 .amux(net_130),
 .SIMPV(MUDV),
-.CELSUB(CELSUB40948)
-);
-
-dff_fc5ad7bd XU4 (
-.d(net_137),
-.q(net_138),
-.ck(net_135),
-.qb(net_137),
-.rb(net_123),
-.CELG(CELG59462),
-.CELV(CELV96848),
 .CELSUB(CELSUB40948)
 );
 
@@ -299,7 +298,7 @@ celeradacr2r_d4e46535 XU5 (
 .ok_dac(net_128),
 .GNDSENSE(kelvin_MUDGsoftstart),
 .enable_dac(enable_softstart),
-.global_dac(global_dac_0cc08401_XU5),
+.global_dac(tl0),
 .strobe_dac(net_124)
 );
 
@@ -319,18 +318,7 @@ inv_12e192f5 XU12 (
 .CELV(CELV96848)
 );
 
-dff_fc5ad7bd XU13 (
-.d(net_139),
-.q(net_133),
-.ck(net_138),
-.qb(net_139),
-.rb(net_123),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
-);
-
-amux2_2a6e42d8 XU14 (
+amux2_a0dc83ed XU14 (
 .O(net_136),
 .I0(net_133),
 .I1(XDBUF1_o),
@@ -381,17 +369,6 @@ nor2_ee112582 XU25 (
 .CELV(CELV96848)
 );
 
-dff_fc5ad7bd XU26 (
-.d(enable_softstart),
-.q(net_130),
-.ck(net_125),
-.qb(net_131),
-.rb(net_132),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.CELSUB(CELSUB40948)
-);
-
 dbuf_e926e395 XU27 (
 .i(net_96),
 .o(done_softstart),
@@ -417,11 +394,51 @@ nor2_ee112582 XU30 (
 .CELV(CELV96848)
 );
 
+dff_e5264df5 Xdff1 (
+.d(net_139),
+.q(net_133),
+.ck(net_138),
+.qb(net_139),
+.rb(net_123),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+dff_e5264df5 Xdff2 (
+.d(net_137),
+.q(net_138),
+.ck(net_135),
+.qb(net_137),
+.rb(net_123),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+dff_e5264df5 Xdff3 (
+.d(enable_softstart),
+.q(net_130),
+.ck(net_125),
+.qb(net_131),
+.rb(net_132),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
 PEBBLEdbuf XDBUF1 (
 .G(CELG59462),
 .V(CELV96848),
 .i(net_122),
 .o(XDBUF1_o),
+.SUB(CELSUB40948)
+);
+
+PEBBLEtielo XtieLo (
+.G(CELG59462),
+.V(CELV96848),
+.q(tl0),
 .SUB(CELSUB40948)
 );
 
@@ -434,7 +451,7 @@ oscillatorcrude_f6e6c185 Xoscillator1 (
 .SENSE_G(SENSE_G_4c0bef8e),
 .ok_oscillator(net_123),
 .enable_oscillator(enable_softstart),
-.global_oscillator(global_oscillator_4c0bef8e_Xoscillator1)
+.global_oscillator(tl0)
 );
 
 endmodule

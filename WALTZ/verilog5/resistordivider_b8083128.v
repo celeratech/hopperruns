@@ -72,14 +72,14 @@ inout RN;
 endmodule
 
 //Celera Confidential Do Not Copy Resistor Divider
-module rlpp3000rpo0p9u0p4u (ISO,RP,RN);
+module rlpp3000rpo1p1u0p4u (ISO,RP,RN);
 input ISO;
 inout RP;
 inout RN;
 endmodule
 
 //Celera Confidential Do Not Copy Resistor Divider
-module rlpp3000rpo1p0u0p4u (ISO,RP,RN);
+module rlpp3000rpo1p4u0p4u (ISO,RP,RN);
 input ISO;
 inout RP;
 inout RN;
@@ -89,18 +89,18 @@ endmodule
 //Celera Confidential Symbol Generator
 //VMAX:6V R:100.0KOhm 3Taps
 module resistordivider_b8083128 (TOP,
-enable_resistordivider,global_resistordivider,CELV,CELSUB,TAP0,
+enable_resistordivider,global_resistordivider,TAP0,
 TAP1,
 TAP2,
-CELG, BOTTOM);
+CELV,CELSUB,CELG,BOTTOM);
 inout TOP;
 input enable_resistordivider;
 input global_resistordivider;
-input CELV;
-input CELSUB;
 output TAP0;
 output TAP1;
 output TAP2;
+input CELV;
+input CELSUB;
 input CELG;
 inout BOTTOM;
 
@@ -136,43 +136,53 @@ STONEresistordividersw5v10u X5v10uSW(
 );
 //,diesize,STONEresistordividersw5v10u
 //Celera Confidential Do Not Copy RTOP
-rlpp3000rpo1p0u0p4u XRTOP_0(
+rlpp3000rpo1p4u0p4u XRTOP_0(
 .RP (disconnect),
 .RN (TAP2),
 .ISO (CELG)
 );
-rlpp3000rpo1p0u0p4u XRTOP_1(
+rlpp3000rpo1p4u0p4u XRTOP_1(
+.RP (disconnect),
+.RN (TAP2),
+.ISO (CELG)
+);
+rlpp3000rpo1p4u0p4u XRTOP_2(
 .RP (disconnect),
 .RN (TAP2),
 .ISO (CELG)
 );
 
-//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo1p0u0p4u
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo1p4u0p4u
 
-//Die Size Calculator rlpp3000rpo1p0u0p4u
-//,diesize,rlpp3000rpo1p0u0p4u,2
+//Die Size Calculator rlpp3000rpo1p4u0p4u
+//,diesize,rlpp3000rpo1p4u0p4u,3
 
 //Celera Confidential Do Not Copy RTAP2
-rlpp3000rpo0p9u0p4u XRTAP2_0(
+rlpp3000rpo1p1u0p4u XRTAP2_0(
 .RP (TAP2),
 .RN (TAP1),
 .ISO (CELG)
 );
-rlpp3000rpo0p9u0p4u XRTAP2_1(
+rlpp3000rpo1p1u0p4u XRTAP2_1(
 .RP (TAP2),
 .RN (TAP1),
 .ISO (CELG)
 );
-rlpp3000rpo0p9u0p4u XRTAP2_2(
+rlpp3000rpo1p1u0p4u XRTAP2_2(
+.RP (TAP2),
+.RN (TAP1),
+.ISO (CELG)
+);
+rlpp3000rpo1p1u0p4u XRTAP2_3(
 .RP (TAP2),
 .RN (TAP1),
 .ISO (CELG)
 );
 
-//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo0p9u0p4u
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo1p1u0p4u
 
-//Die Size Calculator rlpp3000rpo0p9u0p4u
-//,diesize,rlpp3000rpo0p9u0p4u,3
+//Die Size Calculator rlpp3000rpo1p1u0p4u
+//,diesize,rlpp3000rpo1p1u0p4u,4
 
 //Celera Confidential Do Not Copy RTAP1
 rlpp3000rpo3p1u0p4u XRTAP1_0(

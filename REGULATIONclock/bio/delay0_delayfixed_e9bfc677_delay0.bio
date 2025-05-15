@@ -1,4 +1,3 @@
-//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
@@ -12,113 +11,16 @@ cell,delayfast0
 revision,generator,0.3.0
 //**********************************************
 //Simplis Limits
-revision,limit,0p1
-
-limit,delay_type,choose0,control
-limit,delay_type,choose1,fixed
-limit,delay_control_type,choose0,pin
-limit,delay_control_type,choose1,register
-limit,delay_control_type,choose2,factory
-limit,delay_edge,choose0,rise
-limit,delay_edge,choose1,fall
-limit,delay_edge,choose2,both
-limit,delay_vmax,choose0,2
-limit,delay_vmax,choose1,6
-limit,delay_register_outputs,choose0,2
-limit,delay_register_outputs,choose1,3
-limit,delay_register_outputs,choose2,4
-limit,delay_register_outputs,choose3,5
-limit,delay_register_outputs,choose4,6
-limit,delay_register_outputs,choose5,7
-limit,delay_register_outputs,choose6,8
-limit,delay_time,minimum,1.0
-limit,delay_time,maximum,999.0
-limit,delay_register_time0,minimum,1.0
-limit,delay_register_time0,maximum,999.0
-limit,delay_register_time1,minimum,1.0
-limit,delay_register_time1,maximum,999.0
-limit,delay_register_time2,minimum,1.0
-limit,delay_register_time2,maximum,999.0
-limit,delay_register_time3,minimum,1.0
-limit,delay_register_time3,maximum,999.0
-limit,delay_register_time4,minimum,1.0
-limit,delay_register_time4,maximum,999.0
-limit,delay_register_time5,minimum,1.0
-limit,delay_register_time5,maximum,999.0
-limit,delay_register_time6,minimum,1.0
-limit,delay_register_time6,maximum,999.0
-limit,delay_register_time7,minimum,1.0
-limit,delay_register_time7,maximum,999.0
-limit,delay_register_por,minimum,0
-limit,delay_register_por,maximum,7
-limit,delay_units,choose0,ns
-limit,delay_units,choose1,us
-limit,delay_units,choose2,ms
-limit,delay_dft,choose0,no
-limit,delay_dft,choose1,yes
-limit,delay_accuracy,choose0,no
-limit,delay_accuracy,choose1,yes
-limit,delay_trim_name,text
-limit,delay_trim_description,text
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,delay_time,115ns
-user,delay_edge,rise
-user,delay_vmax,6
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
-//Celera Map Generator
-registermap,delayfast
-register,instance,delay0_delayfixed_e9bfc677_delay0
-register,source,cell
-
-//delay fast 
-register,name,na
-register,enable,no
-register,bits,0
-register,mode,readonly
-register,por,0
-register,userdescription,na
-register,description0,description0,not used
-register,description1,description1,not used
-register,description2,description2,not used
-register,description3,description3,not used
-register,description4,description4,not used
-register,description5,description5,not used
-register,description6,description6,not used
-register,description7,description7,not used
-//Netlister Information
-register,busname,na
-
 //**********************************************
 //FACTORY Parameters
-//Celera Map Generator
-factorymap,delayfast
-factory,instance,delay0_delayfixed_e9bfc677_delay0
-factory,source,cell
-
-//delay fast 
-factory,name,na
-factory,enable,no
-factory,bits,0
-factory,mode,readonly
-factory,por,0
-factory,userdescription,na
-factory,description0,description0,not used
-factory,description1,description1,not used
-factory,description2,description2,not used
-factory,description3,description3,not used
-factory,description4,description4,not used
-factory,description5,description5,not used
-factory,description6,description6,not used
-factory,description7,description7,not used
-//Netlister Information
-factory,busname,na
-
 //**********************************************
 //CELL DFT Parameters
 // *********************************************
@@ -136,55 +38,8 @@ placeDIG
 
 //**********************************************
 //Project Parameters
-//Celera:REGULATIONclock Project Bio
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////   default.bio'  DO NOT USE  ///////////////////////////////////
-
-//Simplis Project Parameters /////////////////////////////////////////////
-#define,Project,TBD
-#define,PROJECTreference,1.2
-#define,PROJECTsupply,5
-#define,TaRoom,25
-#define,ground,0.0
-#define,leveloffset,5
-//////////////////////////////////////////////////////////////////////////////////////////
-
-//Porcess  Parameters ///////////////////////////////////////////////////////
-#define,PROJECTbg,1.232
-#define,REFERENCEccpcode,15
-#define,REFERENCEccncode,15
-#define,HVNPN2A_5vbe,0.55
-#define,HVNPN2A_5vbetc,-2.1
-#define,VTNnch5i,0.72
-//#define,FETNcalculator_option,typical
-#define,FETNcalculator,maximum
-//#define,FETPcalculator_option,typical
-#define,FETPcalculator,maximum
-////////////////////////////////////////////////////////////////////////////////////////
-
-//Global Parameters ///////////////////////////////////////////////////////
-#define,CELVminimum,2.0
-#define,CELGabsmax,0.3
-#define,CELGabsmin,-0.3
-#define,SUBabsmax,0.3
-#define,SUBabsmin,-0.3
-#define,CELSUBabsmax,0.3
-#define,CELSUBabsmin,-0.3
-/////////////////////////////////////////////////////////////////////////////////////////
-
-//layout Parameters //////////////////////////////////////////////////////////
-#define MODULEdiesizefill 10
-//Percentage of area added to module for routing
-////////////////////////////////////////////////////////////////////////////////////////
-
-
 // *********************************************
 //Die Size Estimate
-revision,vis15cbdiesize,0p1
-sub_area,PEBBLEdelay100nR,520
-sub_area,PEBBLEdelay10nR,160
-sub_area,PEBBLEdelay5nR,150
-generate_area,delay0_delayfixed_e9bfc677_delay0,830
 // *********************************************
 //Calculator Default Parameters
 #define,rounddelaytime,0
@@ -194,52 +49,16 @@ generate_area,delay0_delayfixed_e9bfc677_delay0,830
 #define,delaytimethreshold,150
 //**********************************************
 //Pinorder Parameters
-*******************************************
-** Celera Library Pin Order Generator    **
-*******************************************
-//delayfixed
-revision,pinorder,0.2.0
-Key,301
-PinOrder code revision,0.3.0
-pinorder,i,o
-
-endpinorder
 //**********************************************
 //TRIM Parameters
-cell,delayfast
-trim,instance,delay0_delayfixed_e9bfc677_delay0
-
-trim,name,na
-trim,enable,no
-trim,bits,TBD
-trim,por,0
-trim,pinname,TBD
-trim,testname,TBD
-trim,description,TBD
-trim,target,na
-trim,units,TBD
-trim,pretrim_low_limit,TBD
-trim,pretrim_high_limit,TBD
-trim,posttrim_low_limit,TBD
-trim,posttrim_high_limit,TBD
-trim,codeunits,%
-trim,description0,empty
-trim,description1,empty
-trim,description2,empty
-trim,description3,empty
-trim,description4,empty
-trim,description5,empty
-trim,description6,empty
-trim,description7,empty
-
 //**********************************************
 //Cell Pin Descriptions
 //**********************************************
 pinname,CELV
 definition,CELV,cell power
 iq,CELV,SIMULATION
-absmax,CELV,6
-absmin,CELV,2.0
+absmax,CELV,UPDATE
+absmin,CELV,UPDATE
 io,CELV,input
 mode,CELV,power
 router,CELV,TBD
@@ -249,8 +68,8 @@ esd,CELV,TBD
 pinname,CELG
 definition,CELG,cell power ground
 iq,CELG,SIMULATION
-absmax,CELG,0.3
-absmin,CELG,-0.3
+absmax,CELG,UPDATE
+absmin,CELG,UPDATE
 io,CELG,input
 mode,CELG,power
 router,CELG,TBD
@@ -260,8 +79,8 @@ esd,CELG,TBD
 pinname,i
 definition,i,delay input
 iq,i,SIMULATION
-absmax,i,6
-absmin,i,-0.3
+absmax,i,UPDATE
+absmin,i,UPDATE
 io,i,input
 mode,i,digital
 router,i,TBD
@@ -271,19 +90,96 @@ esd,i,TBD
 pinname,o
 definition,o,delay output
 iq,o,SIMULATION
-absmax,o,6
-absmin,o,-0.3
+absmax,o,UPDATE
+absmin,o,UPDATE
 io,o,output
 mode,o,digital
 router,o,TBD
 dftpriority,o,1
 esd,o,TBD
 
+pinname,register_delay
+definition,register_delay,register delay control
+iq,register_delay,SIMULATION
+absmax,register_delay,UPDATE
+absmin,register_delay,UPDATE
+io,register_delay,input
+mode,register_delay,digital
+router,register_delay,TBD
+dftpriority,register_delay,1
+esd,register_delay,TBD
+
+pinname,factory_delay
+definition,factory_delay,factory delay control
+iq,factory_delay,SIMULATION
+absmax,factory_delay,UPDATE
+absmin,factory_delay,UPDATE
+io,factory_delay,input
+mode,factory_delay,digital
+router,factory_delay,TBD
+dftpriority,factory_delay,1
+esd,factory_delay,TBD
+
+pinname,delay
+definition,delay,delay control
+iq,delay,SIMULATION
+absmax,delay,UPDATE
+absmin,delay,UPDATE
+io,delay,input
+mode,delay,digital
+router,delay,TBD
+dftpriority,delay,1
+esd,delay,TBD
+
+pinname,ten_delay
+definition,ten_delay,Testmode Enable delay
+iq,ten_delay,SIMULATION
+absmax,ten_delay,UPDATE
+absmin,ten_delay,UPDATE
+io,ten_delay,input
+mode,ten_delay,digital
+router,ten_delay,TBD
+dftpriority,ten_delay,1
+esd,ten_delay,TBD
+
+pinname,ten_delay_enable
+definition,ten_delay_enable,Testmode Enable delay
+iq,ten_delay_enable,SIMULATION
+absmax,ten_delay_enable,UPDATE
+absmin,ten_delay_enable,UPDATE
+io,ten_delay_enable,input
+mode,ten_delay_enable,digital
+router,ten_delay_enable,TBD
+dftpriority,ten_delay_enable,1
+esd,ten_delay_enable,TBD
+
+pinname,tdi_delay
+definition,tdi_delay,Testmode delay output
+iq,tdi_delay,SIMULATION
+absmax,tdi_delay,UPDATE
+absmin,tdi_delay,UPDATE
+io,tdi_delay,output
+mode,tdi_delay,digital
+router,tdi_delay,TBD
+dftpriority,tdi_delay,1
+esd,tdi_delay,TBD
+
+pinname,CELERAporb
+definition,CELERAporb,pulse stretcher power on reset
+iq,CELERAporb,SIMULATION
+absmax,CELERAporb,UPDATE
+absmin,CELERAporb,UPDATE
+io,CELERAporb,input
+mode,CELERAporb,digital
+router,CELERAporb,TBD
+dftpriority,CELERAporb,1
+esd,CELERAporb,TBD
+
 pinname,CELSUB
 definition,CELSUB,substrate
 iq,CELSUB,SIMULATION
-absmax,CELSUB,0.3
-absmin,CELSUB,-0.3
+absmax,CELSUB,UPDATE
+absmin,CELSUB,UPDATE
 io,CELSUB,power
 mode,CELSUB,analog
 router,CELSUB,TBD
@@ -967,4 +863,3 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
-

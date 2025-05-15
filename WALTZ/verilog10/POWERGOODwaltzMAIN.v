@@ -59,13 +59,13 @@ endmodule
 
 
 
-//Celera:padopendrain_ff7ffa6a
+//Celera:padopendrain_2c62cb95
 //Celera Confidential Symbol Generator
-//Open Drain output PAD with 6V, Ron 50 Ohms
+//Open Drain output PAD with 6V, Ron 100 Ohms
 //No Glitch filter
 //ON Logic:invert polarity
 //DFT:yes TESTMODE:no RETURN PIN:no
-module padopendrain_ff7ffa6a (CELV, input_padopendrain, PAD, 
+module padopendrain_2c62cb95 (CELV, input_padopendrain, PAD, 
 ten_padopendrain, tdi_padopendrain,
 CELG, SUB ); 
 input CELV;
@@ -127,11 +127,11 @@ endmodule
 
 
 
-//Celera:amux2_cb0e5ecf
+//Celera:amux2_a6effade
 //Celera Confidential Symbol Generator
 //Inputs: 2, Switch On Resistance: 10K
 //Type of Control:pin, T-Switch: no
-module amux2_cb0e5ecf (SIMPV,CELSUB,O,I0,I1,
+module amux2_a6effade (SIMPV,CELSUB,O,I0,I1,
 amux,
 CELG);
 input SIMPV;
@@ -149,29 +149,29 @@ endmodule
 //Celera Confidential Symbol Generator
 //VMAX:6V R:100.0KOhm 3Taps
 module resistordivider_b8083128 (TOP,
-enable_resistordivider,global_resistordivider,CELV,CELSUB,TAP0,
+enable_resistordivider,global_resistordivider,TAP0,
 TAP1,
 TAP2,
-CELG, BOTTOM);
+CELV,CELSUB,CELG,BOTTOM);
 inout TOP;
 input enable_resistordivider;
 input global_resistordivider;
-input CELV;
-input CELSUB;
 output TAP0;
 output TAP1;
 output TAP2;
+input CELV;
+input CELSUB;
 input CELG;
 inout BOTTOM;
 endmodule
 
 
 
-//Celera:capacitorfixed_1d2fd0e3
+//Celera:capacitorfixed_3f66c9af
 //Celera Confidential Symbol Generator
 //CAPACITOR CONTROL:capacitor
 //VALUE: 5.00pF TYPE:mim
-module capacitorfixed_1d2fd0e3 (CP,
+module capacitorfixed_3f66c9af (CP,
 CN);
 inout CP;
 inout CN;
@@ -227,6 +227,35 @@ endmodule
 
 
 
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
+//Verilog HDL for "DFT", "DFTtm8d" "functional"
+
+
+module DFTtm8d ( a, ten, tdo, tmi, G, SUB, V, tdi, tma );
+
+  input V;
+  input  [7:0] tma;
+  output  [7:0] ten;
+  output  [1:0] a;
+  inout tdo;
+  input  [7:0] tdi;
+  input G;
+  input SUB;
+  inout  [4:0] tmi;
+endmodule
+
+
 //Verilog HDL for "Esd", "ESDminiClamp6" "functional"
 
 
@@ -240,9 +269,20 @@ module ESDminiClamp6 ( O, G, I, SUB, V );
 endmodule
 
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module POWERGOODwaltzMAIN (POK, MUDV, clock, sense_FB, CELG59462, CELV96848, PORB97836, dft_pgout, CELSUB40948, IP_70e67769, IP_ddbf938d, IP_e96a4067, dft_pgDELAY, fault_short, REF_POWERGOOD, dft_REFBUFFER, dft_pgSTARTUP, dft_pgDEGLITCH, dft_shortdelay, enable_powergood, hijack_risedelay, kelvin_MUDGpowergood, global_vbuffer_e96a4067_XU8, tdi_padopendrain_54c5b105_XU4, ten_padopendrain_54c5b105_XU4, global_comparator_70e67769_XU3, global_comparator_ddbf938d_XU22, global_resistordivider_37d49b79_XU17);
+module POWERGOODwaltzMAIN (POK, tdo, tmi, MUDV, clock, sense_FB, CELG59462, CELV96848, PORB97836, dft_pgout, CELSUB40948, IP_70e67769, IP_ddbf938d, IP_e96a4067, dft_pgDELAY, fault_short, REF_POWERGOOD, dft_REFBUFFER, dft_pgSTARTUP, dft_pgDEGLITCH, dft_shortdelay, enable_powergood, hijack_risedelay, kelvin_MUDGpowergood);
 inout  POK;
+inout  tdo;
+input [4:0] tmi;
 input  MUDV;
 input  clock;
 input  sense_FB;
@@ -264,15 +304,14 @@ output  dft_shortdelay;
 input  enable_powergood;
 input  hijack_risedelay;
 inout  kelvin_MUDGpowergood;
-input  global_vbuffer_e96a4067_XU8;
-output  tdi_padopendrain_54c5b105_XU4;
-input  ten_padopendrain_54c5b105_XU4;
-input  global_comparator_70e67769_XU3;
-input  global_comparator_ddbf938d_XU22;
-input  global_resistordivider_37d49b79_XU17;
 
 
 // ------------------------ Wires ------------------------
+wire [4:0] tmi;
+wire [1:0] a;
+wire [7:0] tdi;
+wire [7:0] ten;
+wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
 VESPAasmINPUT1 XU20 (
@@ -360,10 +399,10 @@ comparatornoctlpins_94b63eab XU3 (
 .INP_COMPARATOR(clamp_XU3_137),
 .out_comparator(net_153),
 .enable_comparator(enable_powergood),
-.global_comparator(global_comparator_70e67769_XU3)
+.global_comparator(tl0)
 );
 
-padopendrain_ff7ffa6a XU4 (
+padopendrain_2c62cb95 XU4 (
 .PAD(POK),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -393,7 +432,7 @@ vbuffer_8cf47f40 XU8 (
 .CELSUB(CELSUB40948),
 .ok_vbuffer(net_151),
 .enable_vbuffer(enable_powergood),
-.global_vbuffer(global_vbuffer_e96a4067_XU8)
+.global_vbuffer(tl0)
 );
 
 inv_12e192f5 XU13 (
@@ -412,7 +451,7 @@ inv_12e192f5 XU14 (
 .CELV(CELV96848)
 );
 
-amux2_cb0e5ecf XU15 (
+amux2_a6effade XU15 (
 .O(net_154),
 .I0(net_156),
 .I1(net_157),
@@ -432,10 +471,10 @@ resistordivider_b8083128 XU17 (
 .BOTTOM(kelvin_MUDGpowergood),
 .CELSUB(CELSUB40948),
 .enable_resistordivider(enable_powergood),
-.global_resistordivider(global_resistordivider_37d49b79_XU17)
+.global_resistordivider(tl0)
 );
 
-capacitorfixed_1d2fd0e3 XU19 (
+capacitorfixed_3f66c9af XU19 (
 .CN(kelvin_MUDGpowergood),
 .CP(net_154)
 );
@@ -458,7 +497,7 @@ comparatornoctlpins_370523ee XU22 (
 .INP_COMPARATOR(net_158),
 .out_comparator(net_159),
 .enable_comparator(enable_powergood),
-.global_comparator(global_comparator_ddbf938d_XU22)
+.global_comparator(tl0)
 );
 
 delayclock_ab9af190 XU23 (
@@ -480,6 +519,25 @@ dbuf_e926e395 XU26 (
 .CELV(CELV96848)
 );
 
+PEBBLEtielo XtieLo (
+.G(CELG59462),
+.V(CELV96848),
+.q(tl0),
+.SUB(CELSUB40948)
+);
+
+DFTtm8d dft_hex0x10 (
+.G(CELG59462),
+.V(CELV96848),
+.a({a1,a0}),
+.SUB(CELSUB40948),
+.tdi({a0,a0,a0,a0,a0,a0,a0,tdi_padopendrain_54c5b105_XU4}),
+.tdo(tdo),
+.ten({noconn_dft_hex0x10_ten_7,noconn_dft_hex0x10_ten_6,noconn_dft_hex0x10_ten_5,noconn_dft_hex0x10_ten_4,noconn_dft_hex0x10_ten_3,noconn_dft_hex0x10_ten_2,noconn_dft_hex0x10_ten_1,ten_padopendrain_54c5b105_XU4}),
+.tma({a0,a0,a0,a1,a0,a0,a0,a0}),
+.tmi(tmi[4:0])
+);
+
 ESDminiClamp6 XCLAMP_XU3_INP_COMPARATOR (
 .G(CELG59462),
 .I(sense_FB),
@@ -494,6 +552,34 @@ ESDminiClamp6 XCLAMP_XU22_INN_COMPARATOR (
 .O(clamp_XU22_137),
 .V(CELV96848),
 .SUB(CELSUB40948)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x10_ten_1 (
+.noconn(noconn_dft_hex0x10_ten_1)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x10_ten_2 (
+.noconn(noconn_dft_hex0x10_ten_2)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x10_ten_3 (
+.noconn(noconn_dft_hex0x10_ten_3)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x10_ten_4 (
+.noconn(noconn_dft_hex0x10_ten_4)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x10_ten_5 (
+.noconn(noconn_dft_hex0x10_ten_5)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x10_ten_6 (
+.noconn(noconn_dft_hex0x10_ten_6)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x10_ten_7 (
+.noconn(noconn_dft_hex0x10_ten_7)
 );
 
 endmodule

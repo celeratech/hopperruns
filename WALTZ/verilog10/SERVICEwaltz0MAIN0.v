@@ -104,13 +104,25 @@ endmodule
 //VMAX:6V R:100.0KOhm 1Taps
 module resistordivider_2efba0dc (TOP,
 TAP0,
-CELG, BOTTOM);
+CELG,BOTTOM);
 inout TOP;
 output TAP0;
 input CELG;
 inout BOTTOM;
 endmodule
 
+
+
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
 
 
 //Celera:vbias_06fccf36
@@ -166,14 +178,87 @@ module WRAPPER1 ( o, i );
 endmodule
 
 
+//Verilog HDL for "DFT", "DFTtm8" "functional"
+
+
+module DFTtm8 ( a, ten, TAO, tdo, tmi, G, SUB, TAI, V, tdi, tma );
+
+  input V;
+  input  [7:0] tma;
+  input  [7:0] TAI;
+  output  [7:0] ten;
+  output  [1:0] a;
+  inout tdo;
+  inout TAO;
+  input  [7:0] tdi;
+  input G;
+  input SUB;
+  inout  [4:0] tmi;
+endmodule
+
+
+//Verilog HDL for "DRM", "drm56" "functional"
+
+
+module drm56 ( V, G, SUB, tmi, bypload, lastdrm, id, por0, por1, por2, por3,
+por4, por5, por6, drm0, drm1, drm2, drm3, drm4, drm5, drm6, d1, d0 );
+
+  output  [7:0] drm4;
+  input  [7:0] por6;
+  input lastdrm;
+  input V;
+  output d1;
+  input  [7:0] por3;
+  output  [7:0] drm3;
+  input  [7:0] por5;
+  input  [7:0] id;
+  output d0;
+  output  [7:0] drm5;
+  output  [7:0] drm2;
+  input  [7:0] por2;
+  input  [7:0] por1;
+  input  [7:0] por4;
+  input bypload;
+  output  [7:0] drm6;
+  output  [7:0] drm0;
+  input  [7:0] por0;
+  input G;
+  output  [7:0] drm1;
+  inout  [4:0] tmi;
+  input SUB;
+endmodule
+
+
+//Verilog HDL for "PEBBLES", "PEBBLEconfigLINK" "functional"
+
+
+module PEBBLEconfigLINK ( NEG, POS );
+
+  inout POS;
+  inout NEG;
+endmodule
+
+
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 // ------------------------ Module Verilog ---------------
-module SERVICEwaltz0MAIN0 (EN, IN, VCC, BIAS, porb, REF0V9, go_vcc, CELG59462, CELV96848, CELBG83021, OKREF03249, kelvin_VCC, ok_service, CELREF84329, CELSUB40948, IP_75c89176, ok_reference, kelvin_GNDservice, trim_ref_553d3e5b, trim_refbg_553d3e5b, TAI_REF_553d3e5b_XU4, ten_ref_553d3e5b_XU4, celkelvin_IN_bc3b7675, TAI_REFBG_553d3e5b_XU4, celkelvin_GND_d75c3f7f, celkelvin_VCC_bc3b7675, ten_refbg_553d3e5b_XU4, trim_vbiasneg_23bb219c, trim_vbiaspos_23bb219c, trim_vbiasref_23bb219c, celkelvin_BIAS_bc3b7675, factory_refccn_553d3e5b, factory_refccp_553d3e5b, TAI_VBIAS_23bb219c_Xvbias1, tdi_vbias_23bb219c_Xvbias1, ten_taiv2v5_23bb219c_Xvbias1, global_reference_553d3e5b_XU4, global_vbias_23bb219c_Xvbias1, ten_taiv1v0f_23bb219c_Xvbias1, global_comparator_75c89176_XU16, ten_taifbvbias_23bb219c_Xvbias1, ten_tdiokvbias_23bb219c_Xvbias1, ten_enablevbias_23bb219c_Xvbias1);
+module SERVICEwaltz0MAIN0 (EN, IN, TAO, VCC, tdo, tmi, BIAS, porb, REF0V9, go_vcc, CELG59462, CELV96848, CELBG83021, OKREF03249, kelvin_VCC, ok_service, CELREF84329, CELSUB40948, IP_75c89176, ok_reference, kelvin_GNDservice, celkelvin_IN_bc3b7675, celkelvin_GND_d75c3f7f, celkelvin_VCC_bc3b7675, celkelvin_BIAS_bc3b7675);
 input  EN;
 input  IN;
+inout  TAO;
 output  VCC;
+inout  tdo;
+inout [4:0] tmi;
 input  BIAS;
 output  porb;
-output  REF0V9;
+inout  REF0V9;
 output  go_vcc;
 input  CELG59462;
 input  CELV96848;
@@ -181,46 +266,19 @@ output  CELBG83021;
 output  OKREF03249;
 inout  kelvin_VCC;
 output  ok_service;
-output  CELREF84329;
+inout  CELREF84329;
 input  CELSUB40948;
 input  IP_75c89176;
 output  ok_reference;
 inout  kelvin_GNDservice;
-input [5:0] trim_ref_553d3e5b;
-input [6:0] trim_refbg_553d3e5b;
-output  TAI_REF_553d3e5b_XU4;
-input  ten_ref_553d3e5b_XU4;
 input  celkelvin_IN_bc3b7675;
-output  TAI_REFBG_553d3e5b_XU4;
 input  celkelvin_GND_d75c3f7f;
 input  celkelvin_VCC_bc3b7675;
-input  ten_refbg_553d3e5b_XU4;
-input [7:0] trim_vbiasneg_23bb219c;
-input [7:0] trim_vbiaspos_23bb219c;
-input [7:0] trim_vbiasref_23bb219c;
 input  celkelvin_BIAS_bc3b7675;
-input [4:0] factory_refccn_553d3e5b;
-input [4:0] factory_refccp_553d3e5b;
-output  TAI_VBIAS_23bb219c_Xvbias1;
-output  tdi_vbias_23bb219c_Xvbias1;
-input  ten_taiv2v5_23bb219c_Xvbias1;
-input  global_reference_553d3e5b_XU4;
-input  global_vbias_23bb219c_Xvbias1;
-input  ten_taiv1v0f_23bb219c_Xvbias1;
-input  global_comparator_75c89176_XU16;
-input  ten_taifbvbias_23bb219c_Xvbias1;
-input  ten_tdiokvbias_23bb219c_Xvbias1;
-input  ten_enablevbias_23bb219c_Xvbias1;
 
 
 // ------------------------ Wires ------------------------
-wire [5:0] trim_ref_553d3e5b;
-wire [6:0] trim_refbg_553d3e5b;
-wire [7:0] trim_vbiasneg_23bb219c;
-wire [7:0] trim_vbiaspos_23bb219c;
-wire [7:0] trim_vbiasref_23bb219c;
-wire [4:0] factory_refccn_553d3e5b;
-wire [4:0] factory_refccp_553d3e5b;
+wire [4:0] tmi;
 wire [5:0] trim_ref;
 wire [6:0] trim_refbg;
 wire [4:0] factory_refccn;
@@ -228,6 +286,26 @@ wire [4:0] factory_refccp;
 wire [7:0] trim_vbiasneg;
 wire [7:0] trim_vbiaspos;
 wire [7:0] trim_vbiasref;
+wire [1:0] a;
+wire [7:0] TAI;
+wire [7:0] tdi;
+wire [7:0] ten;
+wire [7:0] tma;
+wire [7:0] id;
+wire [7:0] drm0;
+wire [7:0] drm1;
+wire [7:0] drm2;
+wire [7:0] drm3;
+wire [7:0] drm4;
+wire [7:0] drm5;
+wire [7:0] drm6;
+wire [7:0] por0;
+wire [7:0] por1;
+wire [7:0] por2;
+wire [7:0] por3;
+wire [7:0] por4;
+wire [7:0] por5;
+wire [7:0] por6;
 
 // ------------------------ Networks ---------------------
 SERVICEwaltzOK XOK (
@@ -259,23 +337,23 @@ delayfixed_43e73311 XU2 (
 );
 
 reference_4fa591be XU4 (
-.REF(REF0V9),
+.REF(CELREF84329),
 .CELG(CELG59462),
 .CELBG(CELBG83021),
 .SIMPV(VCC),
 .CELSUB(CELSUB40948),
 .TAI_REF(TAI_REF_553d3e5b_XU4),
 .ten_ref(ten_ref_553d3e5b_XU4),
-.trim_ref({trim_ref_553d3e5b[5],trim_ref_553d3e5b[4],trim_ref_553d3e5b[3],trim_ref_553d3e5b[2],trim_ref_553d3e5b[1],trim_ref_553d3e5b[0]}),
+.trim_ref({trim_ref_553d3e5b_5,trim_ref_553d3e5b_4,trim_ref_553d3e5b_3,trim_ref_553d3e5b_2,trim_ref_553d3e5b_1,trim_ref_553d3e5b_0}),
 .TAI_REFBG(TAI_REFBG_553d3e5b_XU4),
 .ten_refbg(ten_refbg_553d3e5b_XU4),
-.trim_refbg({trim_refbg_553d3e5b[6],trim_refbg_553d3e5b[5],trim_refbg_553d3e5b[4],trim_refbg_553d3e5b[3],trim_refbg_553d3e5b[2],trim_refbg_553d3e5b[1],trim_refbg_553d3e5b[0]}),
+.trim_refbg({trim_refbg_553d3e5b_6,trim_refbg_553d3e5b_5,trim_refbg_553d3e5b_4,trim_refbg_553d3e5b_3,trim_refbg_553d3e5b_2,trim_refbg_553d3e5b_1,trim_refbg_553d3e5b_0}),
 .ok_reference(ok_reference),
-.factory_refccn({factory_refccn_553d3e5b[4],factory_refccn_553d3e5b[3],factory_refccn_553d3e5b[2],factory_refccn_553d3e5b[1],factory_refccn_553d3e5b[0]}),
-.factory_refccp({factory_refccp_553d3e5b[4],factory_refccp_553d3e5b[3],factory_refccp_553d3e5b[2],factory_refccp_553d3e5b[1],factory_refccp_553d3e5b[0]}),
+.factory_refccn({factory_refccn_553d3e5b_4,factory_refccn_553d3e5b_3,factory_refccn_553d3e5b_2,factory_refccn_553d3e5b_1,factory_refccn_553d3e5b_0}),
+.factory_refccp({factory_refccp_553d3e5b_4,factory_refccp_553d3e5b_3,factory_refccp_553d3e5b_2,factory_refccp_553d3e5b_1,factory_refccp_553d3e5b_0}),
 .celkelvin_GNDref(celkelvin_GND_d75c3f7f),
 .enable_reference(porb),
-.global_reference(global_reference_553d3e5b_XU4)
+.global_reference(tl0)
 );
 
 porb_a5607837 XU7 (
@@ -296,7 +374,7 @@ comparatornoctlpins_0d29f302 XU16 (
 .INP_COMPARATOR(net_85),
 .out_comparator(go_vcc),
 .enable_comparator(ok_reference),
-.global_comparator(global_comparator_75c89176_XU16)
+.global_comparator(tl0)
 );
 
 resistordivider_2efba0dc XU20 (
@@ -304,6 +382,13 @@ resistordivider_2efba0dc XU20 (
 .CELG(CELG59462),
 .TAP0(net_85),
 .BOTTOM(kelvin_GNDservice)
+);
+
+PEBBLEtielo XtieLo (
+.G(CELG59462),
+.V(CELV96848),
+.q(tl0),
+.SUB(CELSUB40948)
 );
 
 vbias_06fccf36 Xvbias1 (
@@ -316,13 +401,13 @@ vbias_06fccf36 Xvbias1 (
 .TAI_VBIAS(TAI_VBIAS_23bb219c_Xvbias1),
 .tdi_vbias(tdi_vbias_23bb219c_Xvbias1),
 .ten_taiv2v5(ten_taiv2v5_23bb219c_Xvbias1),
-.global_vbias(global_vbias_23bb219c_Xvbias1),
+.global_vbias(tl0),
 .ten_taiv1v0f(ten_taiv1v0f_23bb219c_Xvbias1),
 .celkelvin_IN1(celkelvin_IN_bc3b7675),
 .celkelvin_IN2(celkelvin_BIAS_bc3b7675),
-.trim_vbiasneg({trim_vbiasneg_23bb219c[7],trim_vbiasneg_23bb219c[6],trim_vbiasneg_23bb219c[5],trim_vbiasneg_23bb219c[4],trim_vbiasneg_23bb219c[3],trim_vbiasneg_23bb219c[2],trim_vbiasneg_23bb219c[1],trim_vbiasneg_23bb219c[0]}),
-.trim_vbiaspos({trim_vbiaspos_23bb219c[7],trim_vbiaspos_23bb219c[6],trim_vbiaspos_23bb219c[5],trim_vbiaspos_23bb219c[4],trim_vbiaspos_23bb219c[3],trim_vbiaspos_23bb219c[2],trim_vbiaspos_23bb219c[1],trim_vbiaspos_23bb219c[0]}),
-.trim_vbiasref({trim_vbiasref_23bb219c[7],trim_vbiasref_23bb219c[6],trim_vbiasref_23bb219c[5],trim_vbiasref_23bb219c[4],trim_vbiasref_23bb219c[3],trim_vbiasref_23bb219c[2],trim_vbiasref_23bb219c[1],trim_vbiasref_23bb219c[0]}),
+.trim_vbiasneg({trim_vbiasneg_23bb219c_7,trim_vbiasneg_23bb219c_6,trim_vbiasneg_23bb219c_5,trim_vbiasneg_23bb219c_4,trim_vbiasneg_23bb219c_3,trim_vbiasneg_23bb219c_2,trim_vbiasneg_23bb219c_1,trim_vbiasneg_23bb219c_0}),
+.trim_vbiaspos({trim_vbiaspos_23bb219c_7,trim_vbiaspos_23bb219c_6,trim_vbiaspos_23bb219c_5,trim_vbiaspos_23bb219c_4,trim_vbiaspos_23bb219c_3,trim_vbiaspos_23bb219c_2,trim_vbiaspos_23bb219c_1,trim_vbiaspos_23bb219c_0}),
+.trim_vbiasref({trim_vbiasref_23bb219c_7,trim_vbiasref_23bb219c_6,trim_vbiasref_23bb219c_5,trim_vbiasref_23bb219c_4,trim_vbiasref_23bb219c_3,trim_vbiasref_23bb219c_2,trim_vbiasref_23bb219c_1,trim_vbiasref_23bb219c_0}),
 .ENABLE_VBIASHV(EN),
 .ten_taifbvbias(ten_taifbvbias_23bb219c_Xvbias1),
 .ten_tdiokvbias(ten_tdiokvbias_23bb219c_Xvbias1),
@@ -335,9 +420,89 @@ WRAPPER1 XWRAP_OKREF (
 .o(OKREF03249)
 );
 
-WRAPPER1 XWRAP_CELREF (
-.i(REF0V9),
-.o(CELREF84329)
+DFTtm8 dft_hex0x15 (
+.G(CELG59462),
+.V(CELV96848),
+.a({a1,a0}),
+.SUB(CELSUB40948),
+.TAI({a0,a0,a0,a0,a0,TAI_VBIAS_23bb219c_Xvbias1,TAI_REFBG_553d3e5b_XU4,TAI_REF_553d3e5b_XU4}),
+.TAO(TAO),
+.tdi({a0,a0,a0,a0,a0,a0,a0,tdi_vbias_23bb219c_Xvbias1}),
+.tdo(tdo),
+.ten({noconn_dft_hex0x15_ten_7,ten_enablevbias_23bb219c_Xvbias1,ten_tdiokvbias_23bb219c_Xvbias1,ten_taifbvbias_23bb219c_Xvbias1,ten_taiv1v0f_23bb219c_Xvbias1,ten_taiv2v5_23bb219c_Xvbias1,ten_refbg_553d3e5b_XU4,ten_ref_553d3e5b_XU4}),
+.tma({a0,a0,a0,a1,a0,a1,a0,a1}),
+.tmi(tmi[4:0])
+);
+
+drm56 drm_hex0x0E (
+.G(CELG59462),
+.V(CELV96848),
+.d0(c0),
+.d1(c1),
+.id({c0,c0,c0,c0,c1,c1,c1,c0}),
+.SUB(CELSUB40948),
+.tmi(tmi[4:0]),
+.drm0({noconn_drm_hex0x0E_drm0_7,noconn_drm_hex0x0E_drm0_6,trim_ref_553d3e5b_5,trim_ref_553d3e5b_4,trim_ref_553d3e5b_3,trim_ref_553d3e5b_2,trim_ref_553d3e5b_1,trim_ref_553d3e5b_0}),
+.drm1({noconn_drm_hex0x0E_drm1_7,trim_refbg_553d3e5b_6,trim_refbg_553d3e5b_5,trim_refbg_553d3e5b_4,trim_refbg_553d3e5b_3,trim_refbg_553d3e5b_2,trim_refbg_553d3e5b_1,trim_refbg_553d3e5b_0}),
+.drm2({noconn_drm_hex0x0E_drm2_7,noconn_drm_hex0x0E_drm2_6,noconn_drm_hex0x0E_drm2_5,factory_refccn_553d3e5b_4,factory_refccn_553d3e5b_3,factory_refccn_553d3e5b_2,factory_refccn_553d3e5b_1,factory_refccn_553d3e5b_0}),
+.drm3({noconn_drm_hex0x0E_drm3_7,noconn_drm_hex0x0E_drm3_6,noconn_drm_hex0x0E_drm3_5,factory_refccp_553d3e5b_4,factory_refccp_553d3e5b_3,factory_refccp_553d3e5b_2,factory_refccp_553d3e5b_1,factory_refccp_553d3e5b_0}),
+.drm4({trim_vbiasneg_23bb219c_7,trim_vbiasneg_23bb219c_6,trim_vbiasneg_23bb219c_5,trim_vbiasneg_23bb219c_4,trim_vbiasneg_23bb219c_3,trim_vbiasneg_23bb219c_2,trim_vbiasneg_23bb219c_1,trim_vbiasneg_23bb219c_0}),
+.drm5({trim_vbiaspos_23bb219c_7,trim_vbiaspos_23bb219c_6,trim_vbiaspos_23bb219c_5,trim_vbiaspos_23bb219c_4,trim_vbiaspos_23bb219c_3,trim_vbiaspos_23bb219c_2,trim_vbiaspos_23bb219c_1,trim_vbiaspos_23bb219c_0}),
+.drm6({trim_vbiasref_23bb219c_7,trim_vbiasref_23bb219c_6,trim_vbiasref_23bb219c_5,trim_vbiasref_23bb219c_4,trim_vbiasref_23bb219c_3,trim_vbiasref_23bb219c_2,trim_vbiasref_23bb219c_1,trim_vbiasref_23bb219c_0}),
+.por0({c0,c0,c0,c0,c0,c0,c0,c0}),
+.por1({c0,c0,c0,c0,c0,c0,c0,c0}),
+.por2({c0,c0,c0,c0,c0,c0,c0,c0}),
+.por3({c0,c0,c0,c0,c0,c0,c0,c0}),
+.por4({c0,c0,c0,c0,c0,c0,c0,c0}),
+.por5({c0,c0,c0,c0,c0,c0,c0,c0}),
+.por6({c0,c0,c0,c0,c0,c0,c0,c0}),
+.bypload(c0),
+.lastdrm(c0)
+);
+
+PEBBLEconfigLINK XWRAP_CELREF (
+.NEG(REF0V9),
+.POS(CELREF84329)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x15_ten_7 (
+.noconn(noconn_dft_hex0x15_ten_7)
+);
+
+STONEnoconn XNCnoconn_drm_hex0x0E_drm0_6 (
+.noconn(noconn_drm_hex0x0E_drm0_6)
+);
+
+STONEnoconn XNCnoconn_drm_hex0x0E_drm0_7 (
+.noconn(noconn_drm_hex0x0E_drm0_7)
+);
+
+STONEnoconn XNCnoconn_drm_hex0x0E_drm1_7 (
+.noconn(noconn_drm_hex0x0E_drm1_7)
+);
+
+STONEnoconn XNCnoconn_drm_hex0x0E_drm2_5 (
+.noconn(noconn_drm_hex0x0E_drm2_5)
+);
+
+STONEnoconn XNCnoconn_drm_hex0x0E_drm2_6 (
+.noconn(noconn_drm_hex0x0E_drm2_6)
+);
+
+STONEnoconn XNCnoconn_drm_hex0x0E_drm2_7 (
+.noconn(noconn_drm_hex0x0E_drm2_7)
+);
+
+STONEnoconn XNCnoconn_drm_hex0x0E_drm3_5 (
+.noconn(noconn_drm_hex0x0E_drm3_5)
+);
+
+STONEnoconn XNCnoconn_drm_hex0x0E_drm3_6 (
+.noconn(noconn_drm_hex0x0E_drm3_6)
+);
+
+STONEnoconn XNCnoconn_drm_hex0x0E_drm3_7 (
+.noconn(noconn_drm_hex0x0E_drm3_7)
 );
 
 endmodule
