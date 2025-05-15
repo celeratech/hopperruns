@@ -8,6 +8,15 @@ module VESPAdftpulse (stop,pulse,start,CELG59462,CELV96848,CELSUB40948);
   input  CELSUB40948;
 endmodule
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+
 //Verilog HDL for "Generate", "WRAPPER1" "functional"
 
 
@@ -18,20 +27,8 @@ module WRAPPER1 ( o, i );
 endmodule
 
 
-module dftstatusModel0_97be4571 ();
-endmodule
-
-module dftprobeModel1_7cafd460 ();
-endmodule
-
-module dftprobeModel0_b36eb09b ();
-endmodule
-
-module dftprobeModel0_b3fb32ff ();
-endmodule
-
 // ------------------------ Module Verilog ---------------
-module ESRtestREFERENCEdebug (CELG59462, CELV96848, CELSUB40948, start_esrtest, dft_countclock, GMCHARGEselect_0, GMCHARGEselect_1, GMCHARGEselect_2, GMCHARGEselect_3, done_esrreference, dft_countdirection, update_esrreference, hijack_start_esrtest, hijack_update_esrreference, dftstatus_GMCHARGEselect_0_1b63cc23, dftstatus_GMCHARGEselect_1_1b63cc23, dftstatus_GMCHARGEselect_2_1b63cc23, dftstatus_GMCHARGEselect_3_1b63cc23, dftprobe_XUESRtestREFERENCEstartup_1b63cc23, dftprobe_XUESRtestREFERENCEcountclock_1b63cc23, dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23);
+module ESRtestREFERENCEdebug (CELG59462, CELV96848, CELSUB40948, start_esrtest, dft_countclock, GMCHARGEselect_0, GMCHARGEselect_1, GMCHARGEselect_2, GMCHARGEselect_3, done_esrreference, dft_countdirection, update_esrreference, hijack_start_esrtest, hijack_update_esrreference);
 input  CELG59462;
 input  CELV96848;
 input  CELSUB40948;
@@ -46,13 +43,6 @@ input  dft_countdirection;
 input  update_esrreference;
 output  hijack_start_esrtest;
 output  hijack_update_esrreference;
-output  dftstatus_GMCHARGEselect_0_1b63cc23;
-output  dftstatus_GMCHARGEselect_1_1b63cc23;
-output  dftstatus_GMCHARGEselect_2_1b63cc23;
-output  dftstatus_GMCHARGEselect_3_1b63cc23;
-output  dftprobe_XUESRtestREFERENCEstartup_1b63cc23;
-output  dftprobe_XUESRtestREFERENCEcountclock_1b63cc23;
-output  dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23;
 
 
 // ------------------------ Wires ------------------------
@@ -60,11 +50,15 @@ output  dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23;
 // ------------------------ Networks ---------------------
 VESPAdftpulse XU6 (
 .stop(done_esrreference),
-.pulse(dftprobe_XUESRtestREFERENCEstartup_1b63cc23),
+.pulse(net_24),
 .start(hijack_start_esrtest),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
+);
+
+STONEnoconn XNC24 (
+.noconn(net_24)
 );
 
 WRAPPER1 XWRAP_41_42 (
@@ -77,50 +71,28 @@ WRAPPER1 XWRAP_43_44 (
 .o(hijack_update_esrreference)
 );
 
-dftstatusModel0_97be4571 Xdftstatus1 (
-
+STONEnoconn XNCdft_countclock (
+.noconn(dft_countclock)
 );
 
-dftprobeModel1_7cafd460 XUESRtestREFERENCEstartup (
-
+STONEnoconn XNCGMCHARGEselect_0 (
+.noconn(GMCHARGEselect_0)
 );
 
-dftprobeModel0_b36eb09b XUESRtestREFERENCEcountclock (
-
+STONEnoconn XNCGMCHARGEselect_1 (
+.noconn(GMCHARGEselect_1)
 );
 
-dftprobeModel0_b3fb32ff XUESRtestREFERENCEcountdirection (
-
+STONEnoconn XNCGMCHARGEselect_2 (
+.noconn(GMCHARGEselect_2)
 );
 
-WRAPPER1 XWRAP_GMCHARGEselect_0_dftstatus_GMCHARGEselect_0_1b63cc23 (
-.i(GMCHARGEselect_0),
-.o(dftstatus_GMCHARGEselect_0_1b63cc23)
+STONEnoconn XNCGMCHARGEselect_3 (
+.noconn(GMCHARGEselect_3)
 );
 
-WRAPPER1 XWRAP_GMCHARGEselect_1_dftstatus_GMCHARGEselect_1_1b63cc23 (
-.i(GMCHARGEselect_1),
-.o(dftstatus_GMCHARGEselect_1_1b63cc23)
-);
-
-WRAPPER1 XWRAP_GMCHARGEselect_2_dftstatus_GMCHARGEselect_2_1b63cc23 (
-.i(GMCHARGEselect_2),
-.o(dftstatus_GMCHARGEselect_2_1b63cc23)
-);
-
-WRAPPER1 XWRAP_GMCHARGEselect_3_dftstatus_GMCHARGEselect_3_1b63cc23 (
-.i(GMCHARGEselect_3),
-.o(dftstatus_GMCHARGEselect_3_1b63cc23)
-);
-
-WRAPPER1 XWRAP_dft_countclock_dftprobe_XUESRtestREFERENCEcountclock_1b63cc23 (
-.i(dft_countclock),
-.o(dftprobe_XUESRtestREFERENCEcountclock_1b63cc23)
-);
-
-WRAPPER1 XWRAP_dft_countdirection_dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23 (
-.i(dft_countdirection),
-.o(dftprobe_XUESRtestREFERENCEcountdirection_1b63cc23)
+STONEnoconn XNCdft_countdirection (
+.noconn(dft_countdirection)
 );
 
 endmodule
