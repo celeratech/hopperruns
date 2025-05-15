@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module ESRtestREFERENCEdebug (CELG59462,CELV96848,CELSUB40948,start_esrtest,dft_countclock,GMCHARGEselect_0,GMCHARGEselect_1,GMCHARGEselect_2,GMCHARGEselect_3,done_esrreference,dft_countdirection,update_esrreference,hijack_start_esrtest,hijack_update_esrreference,dtfprobe_XUESRtestREFERENCEstartup_1b63cc23,dtfprobe_XUESRtestREFERENCEcountclock_1b63cc23,dtfprobe_XUESRtestREFERENCEcountdirection_1b63cc23);
+module ESRtestREFERENCEdebug (CELG59462,CELV96848,CELSUB40948,start_esrtest,dft_countclock,GMCHARGEselect_0,GMCHARGEselect_1,GMCHARGEselect_2,GMCHARGEselect_3,done_esrreference,dft_countdirection,update_esrreference,hijack_start_esrtest,hijack_update_esrreference,probe_XUESRtestREFERENCEstartup_1b63cc23,probe_XUESRtestREFERENCEcountclock_1b63cc23,probe_XUESRtestREFERENCEcountdirection_1b63cc23);
   input  CELG59462;
   input  CELV96848;
   input  CELSUB40948;
@@ -14,9 +14,9 @@ module ESRtestREFERENCEdebug (CELG59462,CELV96848,CELSUB40948,start_esrtest,dft_
   input  update_esrreference;
   output  hijack_start_esrtest;
   output  hijack_update_esrreference;
-  output  dtfprobe_XUESRtestREFERENCEstartup_1b63cc23;
-  output  dtfprobe_XUESRtestREFERENCEcountclock_1b63cc23;
-  output  dtfprobe_XUESRtestREFERENCEcountdirection_1b63cc23;
+  output  probe_XUESRtestREFERENCEstartup_1b63cc23;
+  output  probe_XUESRtestREFERENCEcountclock_1b63cc23;
+  output  probe_XUESRtestREFERENCEcountdirection_1b63cc23;
 endmodule
 
 module ESRtestREFERENCEmain (porb,CELG59462,CELV96848,GMcount_0,GMcount_1,PORB97836,CELSUB40948,clock_esrtest,esr_algorithm,start_esrtest,ESRcalculate_0,ESRcalculate_1,ESRcalculate_2,ESRcalculate_3,ESRcalculate_4,ESRcalculate_5,ESRcalculate_6,ESRcalculate_7,ESRcalculate_8,ESRcalculate_9,ESRtargetMAX_0,ESRtargetMAX_1,ESRtargetMAX_2,ESRtargetMAX_3,ESRtargetMAX_4,ESRtargetMAX_5,ESRtargetMAX_6,ESRtargetMAX_7,ESRtargetMAX_8,ESRtargetMAX_9,ESRtargetMIN_0,ESRtargetMIN_1,ESRtargetMIN_2,ESRtargetMIN_3,ESRtargetMIN_4,ESRtargetMIN_5,ESRtargetMIN_6,ESRtargetMIN_7,ESRtargetMIN_8,ESRtargetMIN_9,dft_countclock,ESRcalculate_10,ESRcalculate_11,ESRcalculate_12,ESRcalculate_13,ESRcalculate_14,ESRcalculate_15,ESRtargetMAX_10,ESRtargetMAX_11,ESRtargetMAX_12,ESRtargetMAX_13,ESRtargetMAX_14,ESRtargetMAX_15,ESRtargetMIN_10,ESRtargetMIN_11,ESRtargetMIN_12,ESRtargetMIN_13,ESRtargetMIN_14,ESRtargetMIN_15,GMCHARGEstart_0,GMCHARGEstart_1,GMCHARGEselect_0,GMCHARGEselect_1,GMCHARGEselect_2,GMCHARGEselect_3,GMCHARGEnominal_0,GMCHARGEnominal_1,GMCHARGEnominal_2,GMCHARGEnominal_3,done_esrreference,dft_countdirection,update_esrreference);
@@ -95,7 +95,7 @@ module ESRtestREFERENCEmain (porb,CELG59462,CELV96848,GMcount_0,GMcount_1,PORB97
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module ESRtestREFERENCE (porb, CELG59462, CELV96848, GMcount_0, GMcount_1, PORB97836, CELSUB40948, clock_esrtest, esr_algorithm, start_esrtest, ESRcalculate_0, ESRcalculate_1, ESRcalculate_2, ESRcalculate_3, ESRcalculate_4, ESRcalculate_5, ESRcalculate_6, ESRcalculate_7, ESRcalculate_8, ESRcalculate_9, ESRtargetMAX_0, ESRtargetMAX_1, ESRtargetMAX_2, ESRtargetMAX_3, ESRtargetMAX_4, ESRtargetMAX_5, ESRtargetMAX_6, ESRtargetMAX_7, ESRtargetMAX_8, ESRtargetMAX_9, ESRtargetMIN_0, ESRtargetMIN_1, ESRtargetMIN_2, ESRtargetMIN_3, ESRtargetMIN_4, ESRtargetMIN_5, ESRtargetMIN_6, ESRtargetMIN_7, ESRtargetMIN_8, ESRtargetMIN_9, ESRcalculate_10, ESRcalculate_11, ESRcalculate_12, ESRcalculate_13, ESRcalculate_14, ESRcalculate_15, ESRtargetMAX_10, ESRtargetMAX_11, ESRtargetMAX_12, ESRtargetMAX_13, ESRtargetMAX_14, ESRtargetMAX_15, ESRtargetMIN_10, ESRtargetMIN_11, ESRtargetMIN_12, ESRtargetMIN_13, ESRtargetMIN_14, ESRtargetMIN_15, GMCHARGEstart_0, GMCHARGEstart_1, GMCHARGEselect_0, GMCHARGEselect_1, GMCHARGEselect_2, GMCHARGEselect_3, GMCHARGEnominal_0, GMCHARGEnominal_1, GMCHARGEnominal_2, GMCHARGEnominal_3, done_esrreference, update_esrreference, dtfprobe_XUESRtestREFERENCEstartup_1b63cc23, dtfprobe_XUESRtestREFERENCEcountclock_1b63cc23, dtfprobe_XUESRtestREFERENCEcountdirection_1b63cc23);
+module ESRtestREFERENCE (porb, CELG59462, CELV96848, GMcount_0, GMcount_1, PORB97836, CELSUB40948, clock_esrtest, esr_algorithm, start_esrtest, ESRcalculate_0, ESRcalculate_1, ESRcalculate_2, ESRcalculate_3, ESRcalculate_4, ESRcalculate_5, ESRcalculate_6, ESRcalculate_7, ESRcalculate_8, ESRcalculate_9, ESRtargetMAX_0, ESRtargetMAX_1, ESRtargetMAX_2, ESRtargetMAX_3, ESRtargetMAX_4, ESRtargetMAX_5, ESRtargetMAX_6, ESRtargetMAX_7, ESRtargetMAX_8, ESRtargetMAX_9, ESRtargetMIN_0, ESRtargetMIN_1, ESRtargetMIN_2, ESRtargetMIN_3, ESRtargetMIN_4, ESRtargetMIN_5, ESRtargetMIN_6, ESRtargetMIN_7, ESRtargetMIN_8, ESRtargetMIN_9, ESRcalculate_10, ESRcalculate_11, ESRcalculate_12, ESRcalculate_13, ESRcalculate_14, ESRcalculate_15, ESRtargetMAX_10, ESRtargetMAX_11, ESRtargetMAX_12, ESRtargetMAX_13, ESRtargetMAX_14, ESRtargetMAX_15, ESRtargetMIN_10, ESRtargetMIN_11, ESRtargetMIN_12, ESRtargetMIN_13, ESRtargetMIN_14, ESRtargetMIN_15, GMCHARGEstart_0, GMCHARGEstart_1, GMCHARGEselect_0, GMCHARGEselect_1, GMCHARGEselect_2, GMCHARGEselect_3, GMCHARGEnominal_0, GMCHARGEnominal_1, GMCHARGEnominal_2, GMCHARGEnominal_3, done_esrreference, update_esrreference, probe_XUESRtestREFERENCEstartup_1b63cc23, probe_XUESRtestREFERENCEcountclock_1b63cc23, probe_XUESRtestREFERENCEcountdirection_1b63cc23);
 input  porb;
 input  CELG59462;
 input  CELV96848;
@@ -166,9 +166,9 @@ input  GMCHARGEnominal_2;
 input  GMCHARGEnominal_3;
 output  done_esrreference;
 input  update_esrreference;
-output  dtfprobe_XUESRtestREFERENCEstartup_1b63cc23;
-output  dtfprobe_XUESRtestREFERENCEcountclock_1b63cc23;
-output  dtfprobe_XUESRtestREFERENCEcountdirection_1b63cc23;
+output  probe_XUESRtestREFERENCEstartup_1b63cc23;
+output  probe_XUESRtestREFERENCEcountclock_1b63cc23;
+output  probe_XUESRtestREFERENCEcountdirection_1b63cc23;
 
 
 // ------------------------ Wires ------------------------
@@ -189,9 +189,9 @@ ESRtestREFERENCEdebug XDEBUG (
 .update_esrreference(update_esrreference),
 .hijack_start_esrtest(net_154),
 .hijack_update_esrreference(net_155),
-.dtfprobe_XUESRtestREFERENCEstartup_1b63cc23(dtfprobe_XUESRtestREFERENCEstartup_1b63cc23),
-.dtfprobe_XUESRtestREFERENCEcountclock_1b63cc23(dtfprobe_XUESRtestREFERENCEcountclock_1b63cc23),
-.dtfprobe_XUESRtestREFERENCEcountdirection_1b63cc23(dtfprobe_XUESRtestREFERENCEcountdirection_1b63cc23)
+.probe_XUESRtestREFERENCEstartup_1b63cc23(probe_XUESRtestREFERENCEstartup_1b63cc23),
+.probe_XUESRtestREFERENCEcountclock_1b63cc23(probe_XUESRtestREFERENCEcountclock_1b63cc23),
+.probe_XUESRtestREFERENCEcountdirection_1b63cc23(probe_XUESRtestREFERENCEcountdirection_1b63cc23)
 );
 
 ESRtestREFERENCEmain XMAIN (
