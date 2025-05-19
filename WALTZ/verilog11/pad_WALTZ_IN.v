@@ -19,16 +19,6 @@ module ESDcore60 ( GESD, PAD, CELSUB );
 endmodule
 
 
-//Verilog HDL for "Generate", "WRAPPER1" "functional"
-
-
-module WRAPPER1 ( o, i );
-
-  input i;
-  output o;
-endmodule
-
-
 // ------------------------ Module Verilog ---------------
 module pad_WALTZ_IN (IN, GESD, CELSUB40948, celkelvin_IN_bc3b7675);
 inout  IN;
@@ -41,18 +31,18 @@ output  celkelvin_IN_bc3b7675;
 
 // ------------------------ Networks ---------------------
 STONEpad1 XPAD1 (
-  .PAD(IN)
+.PAD(IN)
 );
 
-ESDcore60 XESDcore60_1 (
-  .PAD(IN),
-  .GESD(GESD),
-  .CELSUB(CELSUB40948)
+ESDcore60 XESDcore60_max_1 (
+.PAD(IN),
+.GESD(GESD),
+.CELSUB(CELSUB40948)
 );
 
-WRAPPER1 XWRAP_celkelvin_IN_bc3b7675 (
-  .i(IN),
-  .o(celkelvin_IN_bc3b7675)
+PEBBLElinkWRAP XWRAP_celkelvin_IN_bc3b7675 (
+.i(IN),
+.o(celkelvin_IN_bc3b7675)
 );
 
 endmodule

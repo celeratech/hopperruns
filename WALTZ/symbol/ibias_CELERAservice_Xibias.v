@@ -1,6 +1,6 @@
 //Celera:ibias_CELERAservice_Xibias
 //Celera Confidential Symbol Generator
-//OUTPUTS:16 VMAX:6V DFT:yes ACCURACY:yes
+//OUTPUTS:15 VMAX:6V DFT:yes ACCURACY:yes
 module ibias_CELERAservice_Xibias (CELV,enable_ibias,global_celeraibias,SENSE_G,ok_ibias,IPO,
 ten_ibias,TAI_IBIAS,trim_ibias,CELBG,CELG,CELSUB);
 input CELV;
@@ -9,7 +9,7 @@ input global_celeraibias;
 output ok_ibias;
 input SENSE_G;
 input CELBG;
-output [15:0] IPO;
+output [14:0] IPO;
 input ten_ibias;
 output TAI_IBIAS;
 input [4:0] trim_ibias;

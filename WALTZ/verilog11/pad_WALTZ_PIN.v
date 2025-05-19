@@ -17,7 +17,7 @@ inout  PIN;
 
 // ------------------------ Networks ---------------------
 STONEpad2 XPAD1 (
-  .PAD(PIN)
+.PAD(PIN)
 );
 
 endmodule

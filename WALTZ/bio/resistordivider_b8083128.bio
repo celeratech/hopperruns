@@ -141,7 +141,7 @@ factory,busname,na
 //Layout Parameters
 revision,layout,0p1
 layout,resistordivider
-
+/Need a verticle version of the STONEs to go inside vbuffers.  bios were good but some STONES have been rotated so needs review.  when good placeent the cells have reverse metal.
 placeIFELSE cellNameNOTContains sw
 placeRES 0.26 -2.21 0.8 0.8 R0 x y 70
 placeRESRING
@@ -244,11 +244,11 @@ revision,vis15cbdiesize,0p1
 sub_area,STONEnoconn,0
 sub_area,STONEresistordividermain,100
 sub_area,STONEresistordividersw5v10u,200
-sub_area,rlpp3000rpo1p0u0p4u,1
-sub_area,rlpp3000rpo0p9u0p4u,2
+sub_area,rlpp3000rpo1p4u0p4u,3
+sub_area,rlpp3000rpo1p1u0p4u,3
 sub_area,rlpp3000rpo3p1u0p4u,2
 sub_area,rlpp3000rpo5p7u0p4u,3
-generate_area,resistordivider_b8083128,308
+generate_area,resistordivider_b8083128,311
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.2

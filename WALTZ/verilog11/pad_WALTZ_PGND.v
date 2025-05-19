@@ -28,12 +28,12 @@ inout  PGND;
 
 // ------------------------ Networks ---------------------
 STONEpad3 XPAD1 (
-  .PAD(PGND)
+.PAD(PGND)
 );
 
 ESDdiodeB2B Xesdb2b_XPAD1 (
-  .G1(PGND),
-  .G2(GESD)
+.G1(PGND),
+.G2(GESD)
 );
 
 endmodule

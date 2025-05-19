@@ -28,12 +28,12 @@ input  GESD;
 
 // ------------------------ Networks ---------------------
 STONEpad1 XPAD1 (
-  .PAD(BST)
+.PAD(BST)
 );
 
-ESDdiode Xesd_XPAD1 (
-  .N(BST),
-  .P(GESD)
+ESDdiode Xesd_min_XPAD1 (
+.N(BST),
+.P(GESD)
 );
 
 endmodule

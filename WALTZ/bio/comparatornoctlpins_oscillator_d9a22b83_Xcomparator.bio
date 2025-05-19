@@ -167,6 +167,11 @@ place Generate STONEcomparatorinpfastNOME 0 0 R0
 place Generate STONEcomparatorinphysterisisfastNOME 30.53 1.735 MX
 place Generate STONEcomparatorexthysterisis 128.285 -7.88 R0
 
+placeIF cellNameContains *osc*
+placeALTVIEW Generate STONEcomparatorinpfastNOME layout1 0 0 MX
+placeALTVIEW Generate STONEcomparatorinphysterisisfastNOME layout2 12.425 9.26 MX
+placeEND
+
 placeSTEP PEBBLES PEBBLEswG 98.91 1.735 x 12.6 MX
 placeSTEPcontinue PEBBLES PEBBLEamux2 x 10.08 MX
 placeINST Xdfthystedge 100.17 -15.005 R0

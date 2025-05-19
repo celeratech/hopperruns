@@ -293,483 +293,483 @@ input  REGULATIONmaxdelayo;
 
 // ------------------------ Networks ---------------------
 VESPAasmTIMERminimum XU11 (
-  .state(FAULT),
-  .Tstate(net_306),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948),
-  .tmin_delayinput(net_309),
-  .tmin_delayoutput(net_308)
+.state(FAULT),
+.Tstate(net_306),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948),
+.tmin_delayinput(net_309),
+.tmin_delayoutput(net_308)
 );
 
 VESPAasmTIMERminimum XU13 (
-  .state(SOFTSTART),
-  .Tstate(net_311),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948),
-  .tmin_delayinput(net_313),
-  .tmin_delayoutput(net_312)
+.state(SOFTSTART),
+.Tstate(net_311),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948),
+.tmin_delayinput(net_313),
+.tmin_delayoutput(net_312)
 );
 
 VESPAasmTIMERminmax XU15 (
-  .state(UNDEF4),
-  .Tstate(net_318),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948),
-  .STATEtimeout(net_320),
-  .t_delayinput(net_322),
-  .tmax_delayoutput(net_321),
-  .tmin_delayoutput(net_319)
+.state(UNDEF4),
+.Tstate(net_318),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948),
+.STATEtimeout(net_320),
+.t_delayinput(net_322),
+.tmax_delayoutput(net_321),
+.tmin_delayoutput(net_319)
 );
 
 VESPAasmTIMERminmax XU18 (
-  .state(UNDEF5),
-  .Tstate(net_325),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948),
-  .STATEtimeout(net_327),
-  .t_delayinput(net_329),
-  .tmax_delayoutput(net_328),
-  .tmin_delayoutput(net_326)
+.state(UNDEF5),
+.Tstate(net_325),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948),
+.STATEtimeout(net_327),
+.t_delayinput(net_329),
+.tmax_delayoutput(net_328),
+.tmin_delayoutput(net_326)
 );
 
 VESPAasmSTATE8DF XU2 (
-  .r0(net_264),
-  .r1(net_289),
-  .r2(net_296),
-  .s0(net_273),
-  .s1(net_285),
-  .s2(net_294),
-  .porb(porb),
-  .state0(OFF),
-  .state1(ENABLE),
-  .state2(FAULT),
-  .state3(SOFTSTART),
-  .state4(UNDEF4),
-  .state5(UNDEF5),
-  .state6(REGULATION),
-  .state7(RUN),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .hjconfig_0(STATEcontrol0),
-  .hjconfig_1(STATEcontrol1),
-  .hjconfig_2(STATEcontrol2),
-  .hjconfig_3(STATEcontrol3),
-  .CELSUB40948(CELSUB40948)
+.r0(net_264),
+.r1(net_289),
+.r2(net_296),
+.s0(net_273),
+.s1(net_285),
+.s2(net_294),
+.porb(porb),
+.state0(OFF),
+.state1(ENABLE),
+.state2(FAULT),
+.state3(SOFTSTART),
+.state4(UNDEF4),
+.state5(UNDEF5),
+.state6(REGULATION),
+.state7(RUN),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.hjconfig_0(STATEcontrol0),
+.hjconfig_1(STATEcontrol1),
+.hjconfig_2(STATEcontrol2),
+.hjconfig_3(STATEcontrol3),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmTIMERminmax XU21 (
-  .state(REGULATION),
-  .Tstate(net_330),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948),
-  .STATEtimeout(net_332),
-  .t_delayinput(REGULATIONdelayi),
-  .tmax_delayoutput(REGULATIONmaxdelayo),
-  .tmin_delayoutput(net_331)
+.state(REGULATION),
+.Tstate(net_330),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948),
+.STATEtimeout(net_332),
+.t_delayinput(REGULATIONdelayi),
+.tmax_delayoutput(REGULATIONmaxdelayo),
+.tmin_delayoutput(net_331)
 );
 
 VESPAasmTIMERminimum XU24 (
-  .state(RUN),
-  .Tstate(net_333),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948),
-  .tmin_delayinput(net_336),
-  .tmin_delayoutput(net_335)
+.state(RUN),
+.Tstate(net_333),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948),
+.tmin_delayinput(net_336),
+.tmin_delayoutput(net_335)
 );
 
 VESPAasmPRIORITY4 XU26 (
-  .i0(net_267),
-  .i1(net_277),
-  .i2(net_280),
-  .i3(net_287),
-  .o0(net_268),
-  .o1(net_263),
-  .o2(net_269),
-  .o3(net_278),
-  .Tstate(net_260),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.i0(net_267),
+.i1(net_277),
+.i2(net_280),
+.i3(net_287),
+.o0(net_268),
+.o1(net_263),
+.o2(net_269),
+.o3(net_278),
+.Tstate(net_260),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmPRIORITY2 XU27 (
-  .i0(net_314),
-  .i1(net_317),
-  .o0(net_315),
-  .o1(net_281),
-  .Tstate(net_311),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.i0(net_314),
+.i1(net_317),
+.o0(net_315),
+.o1(net_281),
+.Tstate(net_311),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmPRIORITY3 XU28 (
-  .i0(net_334),
-  .i1(net_337),
-  .i2(net_339),
-  .o0(net_291),
-  .o1(net_295),
-  .o2(net_299),
-  .Tstate(net_333),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.i0(net_334),
+.i1(net_337),
+.i2(net_339),
+.o0(net_291),
+.o1(net_295),
+.o2(net_299),
+.Tstate(net_333),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU29 (
-  .o(net_262),
-  .i0(ok_service),
-  .Tstate(net_266),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(net_262),
+.i0(ok_service),
+.Tstate(net_266),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT3 XU30 (
-  .o(net_267),
-  .i0(ok_clock),
-  .i1(ok_driver),
-  .i2(ok_regulation),
-  .Tstate(net_260),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(net_267),
+.i0(ok_clock),
+.i1(ok_driver),
+.i2(ok_regulation),
+.Tstate(net_260),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU31 (
-  .o(net_277),
-  .i0(net_272),
-  .Tstate(net_260),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(net_277),
+.i0(net_272),
+.Tstate(net_260),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU32 (
-  .o(net_280),
-  .i0(net_302),
-  .Tstate(net_260),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(net_280),
+.i0(net_302),
+.Tstate(net_260),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU33 (
-  .o(net_287),
-  .i0(fault_clock),
-  .Tstate(net_260),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(net_287),
+.i0(fault_clock),
+.Tstate(net_260),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU34 (
-  .o(net_316),
-  .i0(net_272),
-  .Tstate(net_306),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(net_316),
+.i0(net_272),
+.Tstate(net_306),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU35 (
-  .o(net_314),
-  .i0(done_softstart),
-  .Tstate(net_311),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(net_314),
+.i0(done_softstart),
+.Tstate(net_311),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU36 (
-  .o(net_317),
-  .i0(net_272),
-  .Tstate(net_311),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(net_317),
+.i0(net_272),
+.Tstate(net_311),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU37 (
-  .o(net_338),
-  .i0(net_320),
-  .Tstate(net_318),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(net_338),
+.i0(net_320),
+.Tstate(net_318),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU38 (
-  .o(net_288),
-  .i0(net_327),
-  .Tstate(net_325),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(net_288),
+.i0(net_327),
+.Tstate(net_325),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU39 (
-  .o(net_340),
-  .i0(net_332),
-  .Tstate(net_330),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(net_340),
+.i0(net_332),
+.Tstate(net_330),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU40 (
-  .o(net_334),
-  .i0(net_272),
-  .Tstate(net_333),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(net_334),
+.i0(net_272),
+.Tstate(net_333),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU41 (
-  .o(net_337),
-  .i0(fault_shutdown),
-  .Tstate(net_333),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(net_337),
+.i0(fault_shutdown),
+.Tstate(net_333),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU42 (
-  .o(net_339),
-  .i0(fault_run),
-  .Tstate(net_333),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(net_339),
+.i0(fault_run),
+.Tstate(net_333),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmSR8 XU43 (
-  .i0(net_263),
-  .i1(net_269),
-  .i2(net_278),
-  .i3(net_281),
-  .i4(net_288),
-  .i5(net_291),
-  .i6(net_295),
-  .i7(net_299),
-  .sr(net_264),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.i0(net_263),
+.i1(net_269),
+.i2(net_278),
+.i3(net_281),
+.i4(net_288),
+.i5(net_291),
+.i6(net_295),
+.i7(net_299),
+.sr(net_264),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmSR3 XU44 (
-  .i0(net_316),
-  .i1(net_281),
-  .i2(net_291),
-  .sr(net_289),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.i0(net_316),
+.i1(net_281),
+.i2(net_291),
+.sr(net_289),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmSR5 XU45 (
-  .i0(net_338),
-  .i1(net_288),
-  .i2(net_340),
-  .i3(net_291),
-  .i4(net_295),
-  .sr(net_296),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.i0(net_338),
+.i1(net_288),
+.i2(net_340),
+.i3(net_291),
+.i4(net_295),
+.sr(net_296),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmSR2 XU46 (
-  .i0(net_262),
-  .i1(net_340),
-  .sr(net_273),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.i0(net_262),
+.i1(net_340),
+.sr(net_273),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmSR5 XU47 (
-  .i0(net_268),
-  .i1(net_269),
-  .i2(net_278),
-  .i3(net_338),
-  .i4(net_288),
-  .sr(net_285),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.i0(net_268),
+.i1(net_269),
+.i2(net_278),
+.i3(net_338),
+.i4(net_288),
+.sr(net_285),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmSR1 XU48 (
-  .i0(net_315),
-  .sr(net_294),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.i0(net_315),
+.sr(net_294),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmOUTPUT4_0 XU49 (
-  .o(enable_waltz),
-  .tstate0(ENABLE),
-  .tstate1(SOFTSTART),
-  .tstate2(REGULATION),
-  .tstate3(RUN),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(enable_waltz),
+.tstate0(ENABLE),
+.tstate1(SOFTSTART),
+.tstate2(REGULATION),
+.tstate3(RUN),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmOUTPUT1_0 XU50 (
-  .o(enable_softstart),
-  .tstate(SOFTSTART),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(enable_softstart),
+.tstate(SOFTSTART),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmOUTPUT3_0 XU51 (
-  .o(enable_regulation),
-  .tstate0(ENABLE),
-  .tstate1(SOFTSTART),
-  .tstate2(RUN),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(enable_regulation),
+.tstate0(ENABLE),
+.tstate1(SOFTSTART),
+.tstate2(RUN),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmOUTPUT1_0 XU52 (
-  .o(blank_fault),
-  .tstate(SOFTSTART),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(blank_fault),
+.tstate(SOFTSTART),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmOUTPUT2_0 XU53 (
-  .o(switch_control),
-  .tstate0(SOFTSTART),
-  .tstate1(RUN),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(switch_control),
+.tstate0(SOFTSTART),
+.tstate1(RUN),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmTIMERminimum XU6 (
-  .state(OFF),
-  .Tstate(net_266),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948),
-  .tmin_delayinput(net_276),
-  .tmin_delayoutput(net_275)
+.state(OFF),
+.Tstate(net_266),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948),
+.tmin_delayinput(net_276),
+.tmin_delayoutput(net_275)
 );
 
 VESPAasmTIMERminmax XU8 (
-  .state(ENABLE),
-  .Tstate(net_260),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948),
-  .STATEtimeout(net_302),
-  .t_delayinput(ENABLEdelayi),
-  .tmax_delayoutput(ENABLEmaxdelayo),
-  .tmin_delayoutput(net_298)
+.state(ENABLE),
+.Tstate(net_260),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948),
+.STATEtimeout(net_302),
+.t_delayinput(ENABLEdelayi),
+.tmax_delayoutput(ENABLEmaxdelayo),
+.tmin_delayoutput(net_298)
 );
 
 inv_12e192f5 XU1 (
-  .i(ok_service),
-  .o(net_272),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(ok_service),
+.o(net_272),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 delayfixed_2f9b06c1 XU7 (
-  .i(net_276),
-  .o(net_275),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(net_276),
+.o(net_275),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 delayfixed_2f9b06c1 XU9 (
-  .i(ENABLEdelayi),
-  .o(net_298),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(ENABLEdelayi),
+.o(net_298),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 delayfixed_4c9b837a XU12 (
-  .i(net_309),
-  .o(net_308),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(net_309),
+.o(net_308),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 delayfixed_285c0416 XU14 (
-  .i(net_313),
-  .o(net_312),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(net_313),
+.o(net_312),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 delayfixed_4c9b837a XU16 (
-  .i(net_322),
-  .o(net_319),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(net_322),
+.o(net_319),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 delayfixed_2f9b06c1 XU17 (
-  .i(net_322),
-  .o(net_321),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(net_322),
+.o(net_321),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 delayfixed_4c9b837a XU19 (
-  .i(net_329),
-  .o(net_326),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(net_329),
+.o(net_326),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 delayfixed_2f9b06c1 XU20 (
-  .i(net_329),
-  .o(net_328),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(net_329),
+.o(net_328),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 delayfixed_2f9b06c1 XU22 (
-  .i(REGULATIONdelayi),
-  .o(net_331),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(REGULATIONdelayi),
+.o(net_331),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 delayfixed_2f9b06c1 XU25 (
-  .i(net_336),
-  .o(net_335),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(net_336),
+.o(net_335),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 endmodule

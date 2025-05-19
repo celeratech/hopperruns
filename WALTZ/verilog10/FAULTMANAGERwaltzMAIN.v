@@ -248,274 +248,274 @@ wire [7:0] drm0;
 
 // ------------------------ Networks ---------------------
 VESPAfaultmanagerINTERNALdebug XU14 (
-  .enable(enable_fault),
-  .fault_in(net_94),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .fault_out(net_95),
-  .CELSUB40948(CELSUB40948),
-  .hijack_enable(hijack_faultmanager_status),
-  .hijack_status(hijack_thermal_status)
+.enable(enable_fault),
+.fault_in(net_94),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.fault_out(net_95),
+.CELSUB40948(CELSUB40948),
+.hijack_enable(hijack_faultmanager_status),
+.hijack_status(hijack_thermal_status)
 );
 
 VESPAasmINPUT1 XU16 (
-  .o(net_108),
-  .i0(clock),
-  .Tstate(net_110),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(net_108),
+.i0(clock),
+.Tstate(net_110),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT2 XU18 (
-  .o(net_110),
-  .i0(net_104),
-  .i1(mode_hiccup),
-  .Tstate(enable_fault),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(net_110),
+.i0(net_104),
+.i1(mode_hiccup),
+.Tstate(enable_fault),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAdftpulse XU29 (
-  .stop(net_112),
-  .pulse(dft_delaySHORT),
-  .start(fault_short),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.stop(net_112),
+.pulse(dft_delaySHORT),
+.start(fault_short),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU34 (
-  .o(net_98),
-  .i0(net_117),
-  .Tstate(enable_fault),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(net_98),
+.i0(net_117),
+.Tstate(enable_fault),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAfaultmanagerDELAYdebug XU37 (
-  .delayi(net_107),
-  .delayo(net_111),
-  .enable(net_110),
-  .fault_in(fault_short),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .fault_out(net_101),
-  .CELSUB40948(CELSUB40948),
-  .hijack_enable(hijack_faultmanager_status),
-  .hijack_status(hijack_short_status)
+.delayi(net_107),
+.delayo(net_111),
+.enable(net_110),
+.fault_in(fault_short),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.fault_out(net_101),
+.CELSUB40948(CELSUB40948),
+.hijack_enable(hijack_faultmanager_status),
+.hijack_status(hijack_short_status)
 );
 
 delayclock_de2e40ea XU1 (
-  .in(net_114),
-  .out(net_112),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .clock(net_108),
-  .delay(hijack_delay),
-  .CELSUB(CELSUB40948),
-  .celeraporb(PORB97836)
+.in(net_114),
+.out(net_112),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.clock(net_108),
+.delay(hijack_delay),
+.CELSUB(CELSUB40948),
+.celeraporb(PORB97836)
 );
 
 nor2_ee112582 XU2 (
-  .o(net_82),
-  .i0(net_95),
-  .i1(net_101),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.o(net_82),
+.i0(net_95),
+.i1(net_101),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 inv_12e192f5 XU5 (
-  .i(net_95),
-  .o(net_84),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_95),
+.o(net_84),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 inv_12e192f5 XU17 (
-  .i(blank_fault),
-  .o(net_104),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(blank_fault),
+.o(net_104),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 inv_12e192f5 XU19 (
-  .i(net_82),
-  .o(net_83),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_82),
+.o(net_83),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 dbuf_e926e395 XU22 (
-  .i(net_83),
-  .o(fault_freeze),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_83),
+.o(fault_freeze),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 oneshot_b3f9fb06 XU24 (
-  .i(net_112),
-  .o(net_113),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_112),
+.o(net_113),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 inv_12e192f5 XU27 (
-  .i(blank_thermal),
-  .o(net_117),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(blank_thermal),
+.o(net_117),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 delayfixed_8edbcb06 XU33 (
-  .i(net_107),
-  .o(net_111),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(net_107),
+.o(net_111),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 inv_12e192f5 XU38 (
-  .i(net_87),
-  .o(net_114),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_87),
+.o(net_114),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 nor2_ee112582 XU39 (
-  .o(net_85),
-  .i0(net_105),
-  .i1(net_113),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.o(net_85),
+.i0(net_105),
+.i1(net_113),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 inv_12e192f5 XU40 (
-  .i(net_85),
-  .o(net_86),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_85),
+.o(net_86),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 nand2_9125fe87 XU41 (
-  .o(net_87),
-  .i0(net_110),
-  .i1(fault_short),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.o(net_87),
+.i0(net_110),
+.i1(fault_short),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 oneshot_b3f9fb06 XU43 (
-  .i(net_84),
-  .o(net_105),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_84),
+.o(net_105),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 dbuf_e926e395 XU44 (
-  .i(net_86),
-  .o(fault_run),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_86),
+.o(fault_run),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 thermal_b5a19f9f Xthermal1 (
-  .IP(IP_201f84ba),
-  .ten(ten_201f84ba_Xthermal1),
-  .CELG(CELG59462),
-  .CELBG(CELBG83021),
-  .SIMPV(MUDV),
-  .CELSUB(CELSUB40948),
-  .fault_thermal(net_94),
-  .enable_thermal(net_98),
-  .register_thermal(net_80),
-  .trim_thermal_accuracy({trim_thermal_accuracy_201f84ba_2,trim_thermal_accuracy_201f84ba_1,trim_thermal_accuracy_201f84ba_0})
+.IP(IP_201f84ba),
+.ten(ten_Xthermal1),
+.CELG(CELG59462),
+.CELBG(CELBG83021),
+.SIMPV(MUDV),
+.CELSUB(CELSUB40948),
+.fault_thermal(net_94),
+.enable_thermal(net_98),
+.register_thermal(net_80),
+.trim_thermal_accuracy({trim_thermal_accuracy_201f84ba_2,trim_thermal_accuracy_201f84ba_1,trim_thermal_accuracy_201f84ba_0})
 );
 
 DFTtm8t dft_hex0x0D (
-  .G(CELG59462),
-  .V(CELV96848),
-  .a({a1,a0}),
-  .SUB(CELSUB40948),
-  .ten({noconn_dft_hex0x0D_ten_7,noconn_dft_hex0x0D_ten_6,noconn_dft_hex0x0D_ten_5,noconn_dft_hex0x0D_ten_4,noconn_dft_hex0x0D_ten_3,noconn_dft_hex0x0D_ten_2,noconn_dft_hex0x0D_ten_1,ten_201f84ba_Xthermal1}),
-  .tma({a0,a0,a0,a0,a1,a1,a0,a1}),
-  .tmi(tmi[4:0])
+.G(CELG59462),
+.V(CELV96848),
+.a({a1,a0}),
+.SUB(CELSUB40948),
+.ten({noconn_dft_hex0x0D_ten_7,noconn_dft_hex0x0D_ten_6,noconn_dft_hex0x0D_ten_5,noconn_dft_hex0x0D_ten_4,noconn_dft_hex0x0D_ten_3,noconn_dft_hex0x0D_ten_2,noconn_dft_hex0x0D_ten_1,ten_Xthermal1}),
+.tma({a0,a0,a0,a0,a1,a1,a0,a1}),
+.tmi(tmi[4:0])
 );
 
 drm8L drm_hex0x08 (
-  .G(CELG59462),
-  .V(CELV96848),
-  .d0(c0),
-  .d1(c1),
-  .id({c0,c0,c0,c0,c1,c0,c0,c0}),
-  .SUB(CELSUB40948),
-  .tmi(tmi[4:0]),
-  .drm0({noconn_drm8L_drm0_7,noconn_drm8L_drm0_6,noconn_drm8L_drm0_5,noconn_drm8L_drm0_4,noconn_drm8L_drm0_3,trim_thermal_accuracy_201f84ba_2,trim_thermal_accuracy_201f84ba_1,trim_thermal_accuracy_201f84ba_0}),
-  .bypload(c0),
-  .lastdrm(c0)
-);
-
-STONEnoconn XNCnoconn_drm8L_drm0_3 (
-  .noconn(noconn_drm8L_drm0_3)
-);
-
-STONEnoconn XNCnoconn_drm8L_drm0_4 (
-  .noconn(noconn_drm8L_drm0_4)
-);
-
-STONEnoconn XNCnoconn_drm8L_drm0_5 (
-  .noconn(noconn_drm8L_drm0_5)
-);
-
-STONEnoconn XNCnoconn_drm8L_drm0_6 (
-  .noconn(noconn_drm8L_drm0_6)
-);
-
-STONEnoconn XNCnoconn_drm8L_drm0_7 (
-  .noconn(noconn_drm8L_drm0_7)
+.G(CELG59462),
+.V(CELV96848),
+.d0(c0),
+.d1(c1),
+.id({c0,c0,c0,c0,c1,c0,c0,c0}),
+.SUB(CELSUB40948),
+.tmi(tmi[4:0]),
+.drm0({noconn_drm_hex0x08_drm0_7,noconn_drm_hex0x08_drm0_6,noconn_drm_hex0x08_drm0_5,noconn_drm_hex0x08_drm0_4,noconn_drm_hex0x08_drm0_3,trim_thermal_accuracy_201f84ba_2,trim_thermal_accuracy_201f84ba_1,trim_thermal_accuracy_201f84ba_0}),
+.bypload(c0),
+.lastdrm(c0)
 );
 
 STONEnoconn XNCnoconn_dft_hex0x0D_ten_1 (
-  .noconn(noconn_dft_hex0x0D_ten_1)
+.noconn(noconn_dft_hex0x0D_ten_1)
 );
 
 STONEnoconn XNCnoconn_dft_hex0x0D_ten_2 (
-  .noconn(noconn_dft_hex0x0D_ten_2)
+.noconn(noconn_dft_hex0x0D_ten_2)
 );
 
 STONEnoconn XNCnoconn_dft_hex0x0D_ten_3 (
-  .noconn(noconn_dft_hex0x0D_ten_3)
+.noconn(noconn_dft_hex0x0D_ten_3)
 );
 
 STONEnoconn XNCnoconn_dft_hex0x0D_ten_4 (
-  .noconn(noconn_dft_hex0x0D_ten_4)
+.noconn(noconn_dft_hex0x0D_ten_4)
 );
 
 STONEnoconn XNCnoconn_dft_hex0x0D_ten_5 (
-  .noconn(noconn_dft_hex0x0D_ten_5)
+.noconn(noconn_dft_hex0x0D_ten_5)
 );
 
 STONEnoconn XNCnoconn_dft_hex0x0D_ten_6 (
-  .noconn(noconn_dft_hex0x0D_ten_6)
+.noconn(noconn_dft_hex0x0D_ten_6)
 );
 
 STONEnoconn XNCnoconn_dft_hex0x0D_ten_7 (
-  .noconn(noconn_dft_hex0x0D_ten_7)
+.noconn(noconn_dft_hex0x0D_ten_7)
+);
+
+STONEnoconn XNCnoconn_drm_hex0x08_drm0_3 (
+.noconn(noconn_drm_hex0x08_drm0_3)
+);
+
+STONEnoconn XNCnoconn_drm_hex0x08_drm0_4 (
+.noconn(noconn_drm_hex0x08_drm0_4)
+);
+
+STONEnoconn XNCnoconn_drm_hex0x08_drm0_5 (
+.noconn(noconn_drm_hex0x08_drm0_5)
+);
+
+STONEnoconn XNCnoconn_drm_hex0x08_drm0_6 (
+.noconn(noconn_drm_hex0x08_drm0_6)
+);
+
+STONEnoconn XNCnoconn_drm_hex0x08_drm0_7 (
+.noconn(noconn_drm_hex0x08_drm0_7)
 );
 
 endmodule

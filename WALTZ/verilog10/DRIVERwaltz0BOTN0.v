@@ -146,6 +146,18 @@ module STONEnoconn ( noconn );
 endmodule
 
 
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 //Celera:fetdriver_86624a28
 //Celera Confidential Symbol Generator
 //FET DRIVER 'n' Type 8 Ron 4 Roff 
@@ -247,142 +259,165 @@ wire [7:0] drm2;
 
 // ------------------------ Networks ---------------------
 fetdn_d04087c0 XU5 (
-  .SUB(CELSUB40948),
-  .GATE(net_114),
-  .DRAIN(SW),
-  .DRAINk(net_67),
-  .SOURCE(PMUDG),
-  .SOURCEk(net_106),
-  .IREPLICA(net_101)
+.SUB(CELSUB40948),
+.GATE(net_114),
+.DRAIN(SW),
+.DRAINk(net_67),
+.SOURCE(PMUDG),
+.SOURCEk(net_106),
+.IREPLICA(net_101)
 );
 
 currentlimitfet_3d88f657 XU8 (
-  .IP(IP_945fe712),
-  .CELG(CELG59462),
-  .CELPOS(MUDV),
-  .CELSUB(CELSUB40948),
-  .VSENSE(net_105),
-  .IREPLICA(net_100),
-  .currentlimit_lv(botswzcross),
-  .trim_currentlimit({trim_currentlimit_945fe712_7,trim_currentlimit_945fe712_6,trim_currentlimit_945fe712_5,trim_currentlimit_945fe712_4,trim_currentlimit_945fe712_3,trim_currentlimit_945fe712_2,trim_currentlimit_945fe712_1,trim_currentlimit_945fe712_0}),
-  .enable_currentlimit(enable_driver),
-  .global_currentlimit(global_currentlimit_945fe712_XU8),
-  .measure_currentlimit(botswstatus),
-  .tdi_currentlimitlive(tdi_currentlimitlive_945fe712_XU8),
-  .ten_measure_currentlimit(ten_measure_currentlimit_945fe712_XU8)
+.IP(IP_945fe712),
+.CELG(CELG59462),
+.CELPOS(MUDV),
+.CELSUB(CELSUB40948),
+.VSENSE(net_105),
+.IREPLICA(net_100),
+.currentlimit_lv(botswzcross),
+.trim_currentlimit({trim_currentlimit_945fe712_7,trim_currentlimit_945fe712_6,trim_currentlimit_945fe712_5,trim_currentlimit_945fe712_4,trim_currentlimit_945fe712_3,trim_currentlimit_945fe712_2,trim_currentlimit_945fe712_1,trim_currentlimit_945fe712_0}),
+.enable_currentlimit(enable_driver),
+.global_currentlimit(tl0),
+.measure_currentlimit(botswstatus),
+.tdi_currentlimitlive(tdi_currentlimitlive_XU8),
+.ten_measure_currentlimit(ten_measure_currentlimit_XU8)
 );
 
 currentlimitfet_2899e616 XU9 (
-  .IP(IP_a0afb596),
-  .CELG(CELG59462),
-  .CELPOS(MUDV),
-  .CELSUB(CELSUB40948),
-  .VSENSE(net_106),
-  .IREPLICA(net_101),
-  .currentlimit_lv(botswipeak),
-  .trim_currentlimit({trim_currentlimit_a0afb596_7,trim_currentlimit_a0afb596_6,trim_currentlimit_a0afb596_5,trim_currentlimit_a0afb596_4,trim_currentlimit_a0afb596_3,trim_currentlimit_a0afb596_2,trim_currentlimit_a0afb596_1,trim_currentlimit_a0afb596_0}),
-  .enable_currentlimit(enable_driver),
-  .global_currentlimit(global_currentlimit_a0afb596_XU9),
-  .measure_currentlimit(botswstatus),
-  .tdi_currentlimitlive(tdi_currentlimitlive_a0afb596_XU9),
-  .ten_measure_currentlimit(ten_measure_currentlimit_a0afb596_XU9)
+.IP(IP_a0afb596),
+.CELG(CELG59462),
+.CELPOS(MUDV),
+.CELSUB(CELSUB40948),
+.VSENSE(net_106),
+.IREPLICA(net_101),
+.currentlimit_lv(botswipeak),
+.trim_currentlimit({trim_currentlimit_a0afb596_7,trim_currentlimit_a0afb596_6,trim_currentlimit_a0afb596_5,trim_currentlimit_a0afb596_4,trim_currentlimit_a0afb596_3,trim_currentlimit_a0afb596_2,trim_currentlimit_a0afb596_1,trim_currentlimit_a0afb596_0}),
+.enable_currentlimit(enable_driver),
+.global_currentlimit(tl0),
+.measure_currentlimit(botswstatus),
+.tdi_currentlimitlive(tdi_currentlimitlive_XU9),
+.ten_measure_currentlimit(ten_measure_currentlimit_XU9)
 );
 
 fetdn_359003a8 XU14 (
-  .SUB(CELSUB40948),
-  .GATE(net_114),
-  .DRAIN(SW),
-  .DRAINk(net_66),
-  .SOURCE(PMUDG),
-  .SOURCEk(net_105),
-  .IREPLICA(net_100)
+.SUB(CELSUB40948),
+.GATE(net_114),
+.DRAIN(SW),
+.DRAINk(net_66),
+.SOURCE(PMUDG),
+.SOURCEk(net_105),
+.IREPLICA(net_100)
 );
 
 fetdn_9694dc46 XU16 (
-  .SUB(CELSUB40948),
-  .GATE(net_114),
-  .DRAIN(SW),
-  .DRAINk(net_107),
-  .SOURCE(PMUDG),
-  .SOURCEk(net_72),
-  .IREPLICA(net_102)
+.SUB(CELSUB40948),
+.GATE(net_114),
+.DRAIN(SW),
+.DRAINk(net_107),
+.SOURCE(PMUDG),
+.SOURCEk(net_72),
+.IREPLICA(net_102)
 );
 
 currentlimitfet_282c42a8 XU17 (
-  .IP(IP_2d447a5c),
-  .CELG(CELG59462),
-  .CELPOS(MUDV),
-  .CELSUB(CELSUB40948),
-  .VSENSE(net_107),
-  .IREPLICA(net_102),
-  .currentlimit_lv(botswineg),
-  .trim_currentlimit({trim_currentlimit_2d447a5c_7,trim_currentlimit_2d447a5c_6,trim_currentlimit_2d447a5c_5,trim_currentlimit_2d447a5c_4,trim_currentlimit_2d447a5c_3,trim_currentlimit_2d447a5c_2,trim_currentlimit_2d447a5c_1,trim_currentlimit_2d447a5c_0}),
-  .enable_currentlimit(enable_driver),
-  .global_currentlimit(global_currentlimit_2d447a5c_XU17),
-  .measure_currentlimit(botswstatus),
-  .tdi_currentlimitlive(tdi_currentlimitlive_2d447a5c_XU17),
-  .ten_measure_currentlimit(ten_measure_currentlimit_2d447a5c_XU17)
+.IP(IP_2d447a5c),
+.CELG(CELG59462),
+.CELPOS(MUDV),
+.CELSUB(CELSUB40948),
+.VSENSE(net_107),
+.IREPLICA(net_102),
+.currentlimit_lv(botswineg),
+.trim_currentlimit({trim_currentlimit_2d447a5c_7,trim_currentlimit_2d447a5c_6,trim_currentlimit_2d447a5c_5,trim_currentlimit_2d447a5c_4,trim_currentlimit_2d447a5c_3,trim_currentlimit_2d447a5c_2,trim_currentlimit_2d447a5c_1,trim_currentlimit_2d447a5c_0}),
+.enable_currentlimit(enable_driver),
+.global_currentlimit(tl0),
+.measure_currentlimit(botswstatus),
+.tdi_currentlimitlive(tdi_currentlimitlive_XU17),
+.ten_measure_currentlimit(ten_measure_currentlimit_XU17)
 );
 
 STONEnoconn XNC66 (
-  .noconn(net_66)
+.noconn(net_66)
 );
 
 STONEnoconn XNC67 (
-  .noconn(net_67)
+.noconn(net_67)
 );
 
 STONEnoconn XNC71 (
-  .noconn(net_71)
+.noconn(net_71)
 );
 
 STONEnoconn XNC72 (
-  .noconn(net_72)
+.noconn(net_72)
+);
+
+PEBBLEtielo XtieLo (
+.G(CELG59462),
+.V(CELV96848),
+.q(tl0),
+.SUB(CELSUB40948)
 );
 
 fetdriver_86624a28 Xfetdriver1 (
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .GATE(net_114),
-  .HVNEG(PMUDG),
-  .HVPOS(PMUDV),
-  .fetin(botswon),
-  .CELSUB(CELSUB40948),
-  .gate_status(net_71),
-  .gate_status_vin(botswstatus),
-  .enable_fetdriver(enable_driver),
-  .global_fetdriver(global_fetdriver_bd0adf3c_Xfetdriver1)
+.CELG(CELG59462),
+.CELV(CELV96848),
+.GATE(net_114),
+.HVNEG(PMUDG),
+.HVPOS(PMUDV),
+.fetin(botswon),
+.CELSUB(CELSUB40948),
+.gate_status(net_71),
+.gate_status_vin(botswstatus),
+.enable_fetdriver(enable_driver),
+.global_fetdriver(tl0)
 );
 
 DFTtm8d dft_hex0x06 (
-  .G(CELG59462),
-  .V(CELV96848),
-  .a({a1,a0}),
-  .SUB(CELSUB40948),
-  .tdi({a0,a0,a0,a0,a0,tdi_currentlimitlive_a0afb596_XU9,tdi_currentlimitlive_945fe712_XU8,tdi_currentlimitlive_2d447a5c_XU17}),
-  .tdo(tdo),
-  .ten({noconn_dft_hex0x06_ten_7,global_fetdriver_bd0adf3c_Xfetdriver1,ten_measure_currentlimit_a0afb596_XU9,global_currentlimit_a0afb596_XU9,ten_measure_currentlimit_945fe712_XU8,global_currentlimit_945fe712_XU8,ten_measure_currentlimit_2d447a5c_XU17,global_currentlimit_2d447a5c_XU17}),
-  .tma({a0,a0,a0,a0,a0,a1,a1,a0}),
-  .tmi(tmi[4:0])
+.G(CELG59462),
+.V(CELV96848),
+.a({a1,a0}),
+.SUB(CELSUB40948),
+.tdi({a0,a0,a0,a0,a0,tdi_currentlimitlive_XU9,tdi_currentlimitlive_XU8,tdi_currentlimitlive_XU17}),
+.tdo(tdo),
+.ten({noconn_dft_hex0x06_ten_7,noconn_dft_hex0x06_ten_6,noconn_dft_hex0x06_ten_5,noconn_dft_hex0x06_ten_4,noconn_dft_hex0x06_ten_3,ten_measure_currentlimit_XU9,ten_measure_currentlimit_XU8,ten_measure_currentlimit_XU17}),
+.tma({a0,a0,a0,a0,a0,a1,a1,a0}),
+.tmi(tmi[4:0])
 );
 
 drm24L drm_hex0x06 (
-  .G(CELG59462),
-  .V(CELV96848),
-  .d0(c0),
-  .d1(c1),
-  .id({c0,c0,c0,c0,c0,c1,c1,c0}),
-  .SUB(CELSUB40948),
-  .tmi(tmi[4:0]),
-  .drm0({trim_currentlimit_945fe712_7,trim_currentlimit_945fe712_6,trim_currentlimit_945fe712_5,trim_currentlimit_945fe712_4,trim_currentlimit_945fe712_3,trim_currentlimit_945fe712_2,trim_currentlimit_945fe712_1,trim_currentlimit_945fe712_0}),
-  .drm1({trim_currentlimit_a0afb596_7,trim_currentlimit_a0afb596_6,trim_currentlimit_a0afb596_5,trim_currentlimit_a0afb596_4,trim_currentlimit_a0afb596_3,trim_currentlimit_a0afb596_2,trim_currentlimit_a0afb596_1,trim_currentlimit_a0afb596_0}),
-  .drm2({trim_currentlimit_2d447a5c_7,trim_currentlimit_2d447a5c_6,trim_currentlimit_2d447a5c_5,trim_currentlimit_2d447a5c_4,trim_currentlimit_2d447a5c_3,trim_currentlimit_2d447a5c_2,trim_currentlimit_2d447a5c_1,trim_currentlimit_2d447a5c_0}),
-  .bypload(c0),
-  .lastdrm(c0)
+.G(CELG59462),
+.V(CELV96848),
+.d0(c0),
+.d1(c1),
+.id({c0,c0,c0,c0,c0,c1,c1,c0}),
+.SUB(CELSUB40948),
+.tmi(tmi[4:0]),
+.drm0({trim_currentlimit_945fe712_7,trim_currentlimit_945fe712_6,trim_currentlimit_945fe712_5,trim_currentlimit_945fe712_4,trim_currentlimit_945fe712_3,trim_currentlimit_945fe712_2,trim_currentlimit_945fe712_1,trim_currentlimit_945fe712_0}),
+.drm1({trim_currentlimit_a0afb596_7,trim_currentlimit_a0afb596_6,trim_currentlimit_a0afb596_5,trim_currentlimit_a0afb596_4,trim_currentlimit_a0afb596_3,trim_currentlimit_a0afb596_2,trim_currentlimit_a0afb596_1,trim_currentlimit_a0afb596_0}),
+.drm2({trim_currentlimit_2d447a5c_7,trim_currentlimit_2d447a5c_6,trim_currentlimit_2d447a5c_5,trim_currentlimit_2d447a5c_4,trim_currentlimit_2d447a5c_3,trim_currentlimit_2d447a5c_2,trim_currentlimit_2d447a5c_1,trim_currentlimit_2d447a5c_0}),
+.bypload(c0),
+.lastdrm(c0)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x06_ten_3 (
+.noconn(noconn_dft_hex0x06_ten_3)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x06_ten_4 (
+.noconn(noconn_dft_hex0x06_ten_4)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x06_ten_5 (
+.noconn(noconn_dft_hex0x06_ten_5)
+);
+
+STONEnoconn XNCnoconn_dft_hex0x06_ten_6 (
+.noconn(noconn_dft_hex0x06_ten_6)
 );
 
 STONEnoconn XNCnoconn_dft_hex0x06_ten_7 (
-  .noconn(noconn_dft_hex0x06_ten_7)
+.noconn(noconn_dft_hex0x06_ten_7)
 );
 
 endmodule

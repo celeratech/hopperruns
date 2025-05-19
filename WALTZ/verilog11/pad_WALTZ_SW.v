@@ -17,7 +17,7 @@ inout  SW;
 
 // ------------------------ Networks ---------------------
 STONEpad3 XPAD1 (
-  .PAD(SW)
+.PAD(SW)
 );
 
 endmodule

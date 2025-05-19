@@ -131,6 +131,18 @@ module STONEnoconn ( noconn );
 endmodule
 
 
+//Verilog HDL for "PEBBLES", "PEBBLEtielo" "functional"
+
+
+module PEBBLEtielo ( q, G, SUB, V );
+
+  input V;
+  output q;
+  input G;
+  input SUB;
+endmodule
+
+
 //Celera:fetdriver_3dacaa61
 //Celera Confidential Symbol Generator
 //FET DRIVER 'n' Type 10 Ron 5 Roff 
@@ -243,165 +255,184 @@ wire [7:0] por2;
 
 // ------------------------ Networks ---------------------
 VESPAasmINPUT1 XU32 (
-  .o(ok_driver),
-  .i0(net_105),
-  .Tstate(net_106),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(ok_driver),
+.i0(net_105),
+.Tstate(net_106),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 currentlimitfet_e27944c0 XU2 (
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .IREF(IREF_DRIVER),
-  .HVREF(MUDHV),
-  .CELNEG(SW),
-  .CELPOS(BSTV),
-  .CELSUB(CELSUB40948),
-  .VSENSE(net_92),
-  .IREPLICA(net_95),
-  .ISLOPECOMP(net_108),
-  .currentlimit_lv(topswipeak),
-  .trim_currentlimit({trim_currentlimit_98fa5525_7,trim_currentlimit_98fa5525_6,trim_currentlimit_98fa5525_5,trim_currentlimit_98fa5525_4,trim_currentlimit_98fa5525_3,trim_currentlimit_98fa5525_2,trim_currentlimit_98fa5525_1,trim_currentlimit_98fa5525_0}),
-  .enable_currentlimit(enable),
-  .measure_currentlimit(net_104),
-  .tdi_currentlimitlive(tdi_currentlimitlive_98fa5525_XU2),
-  .ten_measure_currentlimit(ten_measure_currentlimit_98fa5525_XU2),
-  .factory_currentlimit_blanking({factory_currentlimit_blanking_98fa5525_4,factory_currentlimit_blanking_98fa5525_3,factory_currentlimit_blanking_98fa5525_2,factory_currentlimit_blanking_98fa5525_1,factory_currentlimit_blanking_98fa5525_0})
+.CELG(CELG59462),
+.CELV(CELV96848),
+.IREF(IREF_DRIVER),
+.HVREF(MUDHV),
+.CELNEG(SW),
+.CELPOS(BSTV),
+.CELSUB(CELSUB40948),
+.VSENSE(net_92),
+.IREPLICA(net_95),
+.ISLOPECOMP(net_108),
+.currentlimit_lv(topswipeak),
+.trim_currentlimit({trim_currentlimit_98fa5525_7,trim_currentlimit_98fa5525_6,trim_currentlimit_98fa5525_5,trim_currentlimit_98fa5525_4,trim_currentlimit_98fa5525_3,trim_currentlimit_98fa5525_2,trim_currentlimit_98fa5525_1,trim_currentlimit_98fa5525_0}),
+.enable_currentlimit(enable),
+.measure_currentlimit(net_104),
+.tdi_currentlimitlive(tdi_currentlimitlive_XU2),
+.ten_measure_currentlimit(ten_measure_currentlimit_XU2),
+.factory_currentlimit_blanking({factory_currentlimit_blanking_98fa5525_4,factory_currentlimit_blanking_98fa5525_3,factory_currentlimit_blanking_98fa5525_2,factory_currentlimit_blanking_98fa5525_1,factory_currentlimit_blanking_98fa5525_0})
 );
 
 fetdn_a0946f8e XU5 (
-  .SUB(CELSUB40948),
-  .GATE(net_103),
-  .DRAIN(PMUDHV),
-  .DRAINk(net_92),
-  .SOURCE(SW),
-  .SOURCEk(SW),
-  .IREPLICA(net_95)
+.SUB(CELSUB40948),
+.GATE(net_103),
+.DRAIN(PMUDHV),
+.DRAINk(net_92),
+.SOURCE(SW),
+.SOURCEk(SW),
+.IREPLICA(net_95)
 );
 
 switchtransmission_75e4adc9 XU11 (
-  .I(net_107),
-  .O(net_108),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948),
-  .enable_switchb(DISABLEslope_650ee20e)
+.I(net_107),
+.O(net_108),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948),
+.enable_switchb(DISABLEslope_650ee20e)
 );
 
 cboot_7dc01c49 XU17 (
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CBOOT(BSTV),
-  .CELNEG(SW),
-  .CELPOS(PMUDV),
-  .CELSUB(CELSUB40948),
-  .ok_cboot(net_105),
-  .on_charge(botswstatus),
-  .ok_cboothv(net_75),
-  .enable_cboot(enable),
-  .global_cboot(global_cboot_35156756_XU17)
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CBOOT(BSTV),
+.CELNEG(SW),
+.CELPOS(PMUDV),
+.CELSUB(CELSUB40948),
+.ok_cboot(net_105),
+.on_charge(botswstatus),
+.ok_cboothv(net_75),
+.enable_cboot(enable),
+.global_cboot(tl0)
 );
 
 slopecomp_00a4cb3c XU22 (
-  .IP(IP_f4252e65),
-  .CELG(CELG59462),
-  .IOSC(ISLOPE_DRIVER),
-  .SIMPV(MUDV),
-  .clock(topswon),
-  .CELSUB(CELSUB40948),
-  .ISLOPECOMP(net_107),
-  .ok_slopecomp(net_106),
-  .trim_slopecomp({trim_slopecomp_f4252e65_3,trim_slopecomp_f4252e65_2,trim_slopecomp_f4252e65_1,trim_slopecomp_f4252e65_0}),
-  .CELREF_slopecomp(CELREF84329),
-  .enable_slopecomp(enable),
-  .global_slopecomp(global_slopecomp_f4252e65_XU22),
-  .ten_slopecompcap(ten_slopecompcap_f4252e65_XU22)
+.IP(IP_f4252e65),
+.CELG(CELG59462),
+.IOSC(ISLOPE_DRIVER),
+.SIMPV(MUDV),
+.clock(topswon),
+.CELSUB(CELSUB40948),
+.ISLOPECOMP(net_107),
+.ok_slopecomp(net_106),
+.trim_slopecomp({trim_slopecomp_f4252e65_3,trim_slopecomp_f4252e65_2,trim_slopecomp_f4252e65_1,trim_slopecomp_f4252e65_0}),
+.CELREF_slopecomp(CELREF84329),
+.enable_slopecomp(enable),
+.global_slopecomp(tl0),
+.ten_slopecompcap(ten_slopecompcap_XU22)
 );
 
 STONEnoconn XNC75 (
-  .noconn(net_75)
+.noconn(net_75)
+);
+
+PEBBLEtielo XtieLo (
+.G(CELG59462),
+.V(CELV96848),
+.q(tl0),
+.SUB(CELSUB40948)
 );
 
 fetdriver_3dacaa61 Xfetdriver1 (
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .GATE(net_103),
-  .HVNEG(SW),
-  .HVPOS(BSTV),
-  .fetin(topswon),
-  .CELSUB(CELSUB40948),
-  .gate_status(net_104),
-  .gate_status_vin(topswstatus),
-  .enable_fetdriver(enable),
-  .global_fetdriver(global_fetdriver_eef2a6e8_Xfetdriver1)
+.CELG(CELG59462),
+.CELV(CELV96848),
+.GATE(net_103),
+.HVNEG(SW),
+.HVPOS(BSTV),
+.fetin(topswon),
+.CELSUB(CELSUB40948),
+.gate_status(net_104),
+.gate_status_vin(topswstatus),
+.enable_fetdriver(enable),
+.global_fetdriver(tl0)
 );
 
 DFTtm8d dft_hex0x09 (
-  .G(CELG59462),
-  .V(CELV96848),
-  .a({a1,a0}),
-  .SUB(CELSUB40948),
-  .tdi({a0,a0,a0,a0,a0,a0,a0,tdi_currentlimitlive_98fa5525_XU2}),
-  .tdo(tdo),
-  .ten({noconn_dft_hex0x09_ten_7,noconn_dft_hex0x09_ten_6,noconn_dft_hex0x09_ten_5,global_fetdriver_eef2a6e8_Xfetdriver1,ten_slopecompcap_f4252e65_XU22,global_slopecomp_f4252e65_XU22,ten_measure_currentlimit_98fa5525_XU2,global_cboot_35156756_XU17}),
-  .tma({a0,a0,a0,a0,a1,a0,a0,a1}),
-  .tmi(tmi[4:0])
+.G(CELG59462),
+.V(CELV96848),
+.a({a1,a0}),
+.SUB(CELSUB40948),
+.tdi({a0,a0,a0,a0,a0,a0,a0,tdi_currentlimitlive_XU2}),
+.tdo(tdo),
+.ten({noconn_dft_hex0x09_ten_7,noconn_dft_hex0x09_ten_6,noconn_dft_hex0x09_ten_5,noconn_dft_hex0x09_ten_4,noconn_dft_hex0x09_ten_3,noconn_dft_hex0x09_ten_2,ten_measure_currentlimit_XU2,ten_slopecompcap_XU22}),
+.tma({a0,a0,a0,a0,a1,a0,a0,a1}),
+.tmi(tmi[4:0])
 );
 
 drm24 drm_hex0x07 (
-  .G(CELG59462),
-  .V(CELV96848),
-  .d0(c0),
-  .d1(c1),
-  .id({c0,c0,c0,c0,c0,c1,c1,c1}),
-  .SUB(CELSUB40948),
-  .tmi(tmi[4:0]),
-  .drm0({trim_currentlimit_98fa5525_7,trim_currentlimit_98fa5525_6,trim_currentlimit_98fa5525_5,trim_currentlimit_98fa5525_4,trim_currentlimit_98fa5525_3,trim_currentlimit_98fa5525_2,trim_currentlimit_98fa5525_1,trim_currentlimit_98fa5525_0}),
-  .drm1({noconn_drm24_drm1_7,noconn_drm24_drm1_6,DISABLEslope_650ee20e,factory_currentlimit_blanking_98fa5525_4,factory_currentlimit_blanking_98fa5525_3,factory_currentlimit_blanking_98fa5525_2,factory_currentlimit_blanking_98fa5525_1,factory_currentlimit_blanking_98fa5525_0}),
-  .drm2({noconn_drm24_drm2_7,noconn_drm24_drm2_6,noconn_drm24_drm2_5,noconn_drm24_drm2_4,trim_slopecomp_f4252e65_3,trim_slopecomp_f4252e65_2,trim_slopecomp_f4252e65_1,trim_slopecomp_f4252e65_0}),
-  .por0({c0,c0,c0,c0,c0,c0,c0,c0}),
-  .por1({c0,c0,c0,c1,c0,c0,c0,c0}),
-  .por2({c0,c0,c0,c0,c0,c0,c0,c0}),
-  .bypload(c0),
-  .lastdrm(c0)
+.G(CELG59462),
+.V(CELV96848),
+.d0(c0),
+.d1(c1),
+.id({c0,c0,c0,c0,c0,c1,c1,c1}),
+.SUB(CELSUB40948),
+.tmi(tmi[4:0]),
+.drm0({trim_currentlimit_98fa5525_7,trim_currentlimit_98fa5525_6,trim_currentlimit_98fa5525_5,trim_currentlimit_98fa5525_4,trim_currentlimit_98fa5525_3,trim_currentlimit_98fa5525_2,trim_currentlimit_98fa5525_1,trim_currentlimit_98fa5525_0}),
+.drm1({noconn_drm_hex0x07_drm1_7,noconn_drm_hex0x07_drm1_6,DISABLEslope_650ee20e,factory_currentlimit_blanking_98fa5525_4,factory_currentlimit_blanking_98fa5525_3,factory_currentlimit_blanking_98fa5525_2,factory_currentlimit_blanking_98fa5525_1,factory_currentlimit_blanking_98fa5525_0}),
+.drm2({noconn_drm_hex0x07_drm2_7,noconn_drm_hex0x07_drm2_6,noconn_drm_hex0x07_drm2_5,noconn_drm_hex0x07_drm2_4,trim_slopecomp_f4252e65_3,trim_slopecomp_f4252e65_2,trim_slopecomp_f4252e65_1,trim_slopecomp_f4252e65_0}),
+.por0({c0,c0,c0,c0,c0,c0,c0,c0}),
+.por1({c0,c0,c0,c1,c0,c0,c0,c0}),
+.por2({c0,c0,c0,c0,c0,c0,c0,c0}),
+.bypload(c0),
+.lastdrm(c0)
 );
 
-STONEnoconn XNCnoconn_drm24_drm1_6 (
-  .noconn(noconn_drm24_drm1_6)
+STONEnoconn XNCnoconn_dft_hex0x09_ten_2 (
+.noconn(noconn_dft_hex0x09_ten_2)
 );
 
-STONEnoconn XNCnoconn_drm24_drm1_7 (
-  .noconn(noconn_drm24_drm1_7)
+STONEnoconn XNCnoconn_dft_hex0x09_ten_3 (
+.noconn(noconn_dft_hex0x09_ten_3)
 );
 
-STONEnoconn XNCnoconn_drm24_drm2_4 (
-  .noconn(noconn_drm24_drm2_4)
-);
-
-STONEnoconn XNCnoconn_drm24_drm2_5 (
-  .noconn(noconn_drm24_drm2_5)
-);
-
-STONEnoconn XNCnoconn_drm24_drm2_6 (
-  .noconn(noconn_drm24_drm2_6)
-);
-
-STONEnoconn XNCnoconn_drm24_drm2_7 (
-  .noconn(noconn_drm24_drm2_7)
+STONEnoconn XNCnoconn_dft_hex0x09_ten_4 (
+.noconn(noconn_dft_hex0x09_ten_4)
 );
 
 STONEnoconn XNCnoconn_dft_hex0x09_ten_5 (
-  .noconn(noconn_dft_hex0x09_ten_5)
+.noconn(noconn_dft_hex0x09_ten_5)
 );
 
 STONEnoconn XNCnoconn_dft_hex0x09_ten_6 (
-  .noconn(noconn_dft_hex0x09_ten_6)
+.noconn(noconn_dft_hex0x09_ten_6)
 );
 
 STONEnoconn XNCnoconn_dft_hex0x09_ten_7 (
-  .noconn(noconn_dft_hex0x09_ten_7)
+.noconn(noconn_dft_hex0x09_ten_7)
+);
+
+STONEnoconn XNCnoconn_drm_hex0x07_drm1_6 (
+.noconn(noconn_drm_hex0x07_drm1_6)
+);
+
+STONEnoconn XNCnoconn_drm_hex0x07_drm1_7 (
+.noconn(noconn_drm_hex0x07_drm1_7)
+);
+
+STONEnoconn XNCnoconn_drm_hex0x07_drm2_4 (
+.noconn(noconn_drm_hex0x07_drm2_4)
+);
+
+STONEnoconn XNCnoconn_drm_hex0x07_drm2_5 (
+.noconn(noconn_drm_hex0x07_drm2_5)
+);
+
+STONEnoconn XNCnoconn_drm_hex0x07_drm2_6 (
+.noconn(noconn_drm_hex0x07_drm2_6)
+);
+
+STONEnoconn XNCnoconn_drm_hex0x07_drm2_7 (
+.noconn(noconn_drm_hex0x07_drm2_7)
 );
 
 endmodule

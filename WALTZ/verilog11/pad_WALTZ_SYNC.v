@@ -28,12 +28,12 @@ inout  SYNC;
 
 // ------------------------ Networks ---------------------
 STONEpad1 XPAD1 (
-  .PAD(SYNC)
+.PAD(SYNC)
 );
 
-ESDcore6 XESDcore6_1 (
-  .PAD(SYNC),
-  .GESD(GESD)
+ESDcore6 XESDcore6_max_1 (
+.PAD(SYNC),
+.GESD(GESD)
 );
 
 endmodule

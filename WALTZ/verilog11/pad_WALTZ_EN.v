@@ -30,13 +30,13 @@ input  CELSUB40948;
 
 // ------------------------ Networks ---------------------
 STONEpad1 XPAD1 (
-  .PAD(EN)
+.PAD(EN)
 );
 
-ESDcore60 XESDcore60_1 (
-  .PAD(EN),
-  .GESD(GESD),
-  .CELSUB(CELSUB40948)
+ESDcore60 XESDcore60_max_1 (
+.PAD(EN),
+.GESD(GESD),
+.CELSUB(CELSUB40948)
 );
 
 endmodule

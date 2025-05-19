@@ -3,7 +3,7 @@
 //VMAX:6V R:1000.0KOhm 1Taps
 module resistordivider_fe713eb7 (TOP,
 TAP0,
-CELG, BOTTOM);
+CELG,BOTTOM);
 inout TOP;
 output TAP0;
 input CELG;

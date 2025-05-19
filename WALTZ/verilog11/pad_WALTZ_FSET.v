@@ -28,12 +28,12 @@ input  GESD;
 
 // ------------------------ Networks ---------------------
 STONEpad1 XPAD1 (
-  .PAD(FSET)
+.PAD(FSET)
 );
 
-ESDcore6 XESDcore6_1 (
-  .PAD(FSET),
-  .GESD(GESD)
+ESDcore6 XESDcore6_max_1 (
+.PAD(FSET),
+.GESD(GESD)
 );
 
 endmodule

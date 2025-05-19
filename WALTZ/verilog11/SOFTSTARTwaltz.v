@@ -15,10 +15,9 @@ module SOFTSTARTwaltzDEBUG (SS,TAO,tdo,tmi,CELG59462,CELV96848,dft_clock,CELSUB4
   output  hijack_enable_softstart;
 endmodule
 
-module SOFTSTARTwaltz8MAIN (SS,REF,tmi,MUDV,halfway,CELG59462,CELV96848,dft_clock,CELSUB40948,IP_4c0bef8e,enable_brick,softstart_1ms,done_softstart,SENSE_G_4c0bef8e,enable_softstart,kelvin_MUDGsoftstart);
+module SOFTSTARTwaltz8MAIN (SS,REF,MUDV,halfway,CELG59462,CELV96848,dft_clock,CELSUB40948,IP_4c0bef8e,enable_brick,softstart_1ms,done_softstart,SENSE_G_4c0bef8e,enable_softstart,kelvin_MUDGsoftstart);
   output  SS;
   input  REF;
-  input [4:0] tmi;
   input  MUDV;
   input  halfway;
   input  CELG59462;
@@ -89,76 +88,75 @@ wire [7:0] por0;
 
 // ------------------------ Networks ---------------------
 SOFTSTARTwaltzDEBUG XDEBUG (
-  .SS(SS),
-  .TAO(TAO),
-  .tdo(tdo),
-  .tmi(tmi[4:0]),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .dft_clock(net_60),
-  .CELSUB40948(CELSUB40948),
-  .enable_brick(enable_brick),
-  .done_softstart(done_softstart),
-  .enable_softstart(enable_softstart),
-  .hijack_enable_brick(net_58),
-  .hijack_enable_softstart(net_59)
+.SS(SS),
+.TAO(TAO),
+.tdo(tdo),
+.tmi(tmi[4:0]),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.dft_clock(net_60),
+.CELSUB40948(CELSUB40948),
+.enable_brick(enable_brick),
+.done_softstart(done_softstart),
+.enable_softstart(enable_softstart),
+.hijack_enable_brick(net_58),
+.hijack_enable_softstart(net_59)
 );
 
 SOFTSTARTwaltz8MAIN XMAIN8 (
-  .SS(SS),
-  .REF(REF),
-  .tmi(tmi[4:0]),
-  .MUDV(MUDV),
-  .halfway(SOFTSTARTconfiguration_a2482902_1),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .dft_clock(net_60),
-  .CELSUB40948(CELSUB40948),
-  .IP_4c0bef8e(IP_4c0bef8e),
-  .enable_brick(net_58),
-  .softstart_1ms(SOFTSTARTconfiguration_a2482902_0),
-  .done_softstart(done_softstart),
-  .SENSE_G_4c0bef8e(SENSE_G_4c0bef8e),
-  .enable_softstart(net_59),
-  .kelvin_MUDGsoftstart(kelvin_MUDGsoftstart)
+.SS(SS),
+.REF(REF),
+.MUDV(MUDV),
+.halfway(SOFTSTARTconfiguration_a2482902_1),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.dft_clock(net_60),
+.CELSUB40948(CELSUB40948),
+.IP_4c0bef8e(IP_4c0bef8e),
+.enable_brick(net_58),
+.softstart_1ms(SOFTSTARTconfiguration_a2482902_0),
+.done_softstart(done_softstart),
+.SENSE_G_4c0bef8e(SENSE_G_4c0bef8e),
+.enable_softstart(net_59),
+.kelvin_MUDGsoftstart(kelvin_MUDGsoftstart)
 );
 
 drm8 drm_hex0x0F (
-  .G(CELG59462),
-  .V(CELV96848),
-  .d0(a0),
-  .d1(a1),
-  .id({a0,a0,a0,a0,a1,a1,a1,a1}),
-  .SUB(CELSUB40948),
-  .tmi(tmi[4:0]),
-  .drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,noconn_drm8_drm0_3,noconn_drm8_drm0_2,SOFTSTARTconfiguration_a2482902_1,SOFTSTARTconfiguration_a2482902_0}),
-  .por0({a0,a0,a0,a0,a0,a0,a0,a0}),
-  .bypload(a0),
-  .lastdrm(a1)
+.G(CELG59462),
+.V(CELV96848),
+.d0(a0),
+.d1(a1),
+.id({a0,a0,a0,a0,a1,a1,a1,a1}),
+.SUB(CELSUB40948),
+.tmi(tmi[4:0]),
+.drm0({noconn_drm_hex0x0F_drm0_7,noconn_drm_hex0x0F_drm0_6,noconn_drm_hex0x0F_drm0_5,noconn_drm_hex0x0F_drm0_4,noconn_drm_hex0x0F_drm0_3,noconn_drm_hex0x0F_drm0_2,SOFTSTARTconfiguration_a2482902_1,SOFTSTARTconfiguration_a2482902_0}),
+.por0({a0,a0,a0,a0,a0,a0,a0,a0}),
+.bypload(a0),
+.lastdrm(a1)
 );
 
-STONEnoconn XNCnoconn_drm8_drm0_2 (
-  .noconn(noconn_drm8_drm0_2)
+STONEnoconn XNCnoconn_drm_hex0x0F_drm0_2 (
+.noconn(noconn_drm_hex0x0F_drm0_2)
 );
 
-STONEnoconn XNCnoconn_drm8_drm0_3 (
-  .noconn(noconn_drm8_drm0_3)
+STONEnoconn XNCnoconn_drm_hex0x0F_drm0_3 (
+.noconn(noconn_drm_hex0x0F_drm0_3)
 );
 
-STONEnoconn XNCnoconn_drm8_drm0_4 (
-  .noconn(noconn_drm8_drm0_4)
+STONEnoconn XNCnoconn_drm_hex0x0F_drm0_4 (
+.noconn(noconn_drm_hex0x0F_drm0_4)
 );
 
-STONEnoconn XNCnoconn_drm8_drm0_5 (
-  .noconn(noconn_drm8_drm0_5)
+STONEnoconn XNCnoconn_drm_hex0x0F_drm0_5 (
+.noconn(noconn_drm_hex0x0F_drm0_5)
 );
 
-STONEnoconn XNCnoconn_drm8_drm0_6 (
-  .noconn(noconn_drm8_drm0_6)
+STONEnoconn XNCnoconn_drm_hex0x0F_drm0_6 (
+.noconn(noconn_drm_hex0x0F_drm0_6)
 );
 
-STONEnoconn XNCnoconn_drm8_drm0_7 (
-  .noconn(noconn_drm8_drm0_7)
+STONEnoconn XNCnoconn_drm_hex0x0F_drm0_7 (
+.noconn(noconn_drm_hex0x0F_drm0_7)
 );
 
 endmodule

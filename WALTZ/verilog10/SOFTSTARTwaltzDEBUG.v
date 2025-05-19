@@ -113,82 +113,82 @@ wire [7:0] tma;
 
 // ------------------------ Networks ---------------------
 VESPAdftpulse XU4 (
-  .stop(done_softstart),
-  .pulse(net_24),
-  .start(hijack_enable_softstart),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.stop(done_softstart),
+.pulse(net_24),
+.start(hijack_enable_softstart),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 DFThijack XU1 (
-  .i(enable_softstart),
-  .o(hijack_enable_softstart),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948),
-  .ten_hijack(ten_hijack_297df8ef_XU1),
-  .ten_hijacki(ten_hijacki_297df8ef_XU1)
+.i(enable_softstart),
+.o(hijack_enable_softstart),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948),
+.ten_hijack(ten_hijack_XU1),
+.ten_hijacki(ten_hijacki_XU1)
 );
 
 dftprobeModel0_f0ccd53b XU5 (
-  .i(net_24),
-  .tdi(tdi_ed87e5db_XU5),
-  .ten(ten_ed87e5db_XU5),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(net_24),
+.tdi(tdi_XU5),
+.ten(ten_XU5),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 dftprobeModel0_8b1750b2 XU6 (
-  .i(done_softstart),
-  .tdi(tdi_f665b623_XU6),
-  .ten(ten_f665b623_XU6),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(done_softstart),
+.tdi(tdi_XU6),
+.ten(ten_XU6),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 dftprobeModel2_c0a4d92d XU8 (
-  .i(SS),
-  .TAI(TAI_81f80d4d_XU8),
-  .ten(ten_81f80d4d_XU8),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(SS),
+.TAI(TAI_XU8),
+.ten(ten_XU8),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 dftprobeModel0_5f99ceb4 XU10 (
-  .i(dft_clock),
-  .tdi(tdi_528f048c_XU10),
-  .ten(ten_528f048c_XU10),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948)
+.i(dft_clock),
+.tdi(tdi_XU10),
+.ten(ten_XU10),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
 );
 
 DFThijack XU14 (
-  .i(enable_brick),
-  .o(hijack_enable_brick),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948),
-  .ten_hijack(ten_hijack_dcf795e2_XU14),
-  .ten_hijacki(ten_hijacki_dcf795e2_XU14)
+.i(enable_brick),
+.o(hijack_enable_brick),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948),
+.ten_hijack(ten_hijack_XU14),
+.ten_hijacki(ten_hijacki_XU14)
 );
 
-DFTtm8 dft_hex0x18 (
-  .G(CELG59462),
-  .V(CELV96848),
-  .a({a1,a0}),
-  .SUB(CELSUB40948),
-  .TAI({a0,a0,a0,a0,a0,a0,a0,TAI_81f80d4d_XU8}),
-  .TAO(TAO),
-  .tdi({a0,a0,a0,a0,a0,tdi_f665b623_XU6,tdi_ed87e5db_XU5,tdi_528f048c_XU10}),
-  .tdo(tdo),
-  .ten({ten_81f80d4d_XU8,ten_f665b623_XU6,ten_ed87e5db_XU5,ten_hijacki_dcf795e2_XU14,ten_hijack_dcf795e2_XU14,ten_528f048c_XU10,ten_hijacki_297df8ef_XU1,ten_hijack_297df8ef_XU1}),
-  .tma({a0,a0,a0,a1,a1,a0,a0,a0}),
-  .tmi(tmi[4:0])
+DFTtm8 dft_hex0x16 (
+.G(CELG59462),
+.V(CELV96848),
+.a({a1,a0}),
+.SUB(CELSUB40948),
+.TAI({a0,a0,a0,a0,a0,a0,a0,TAI_XU8}),
+.TAO(TAO),
+.tdi({a0,a0,a0,a0,a0,tdi_XU6,tdi_XU5,tdi_XU10}),
+.tdo(tdo),
+.ten({ten_XU8,ten_XU6,ten_XU5,ten_XU10,ten_hijacki_XU1,ten_hijack_XU1,ten_hijacki_XU14,ten_hijack_XU14}),
+.tma({a0,a0,a0,a1,a0,a1,a1,a0}),
+.tmi(tmi[4:0])
 );
 
 endmodule

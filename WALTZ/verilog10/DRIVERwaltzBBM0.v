@@ -136,137 +136,137 @@ wire [4:0] factory_timingskew;
 
 // ------------------------ Networks ---------------------
 VESPAasmINPUT1 XU15 (
-  .o(net_35),
-  .i0(net_72),
-  .Tstate(net_73),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(net_35),
+.i0(net_72),
+.Tstate(net_73),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 VESPAasmINPUT1 XU23 (
-  .o(net_37),
-  .i0(net_75),
-  .Tstate(net_76),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .CELSUB40948(CELSUB40948)
+.o(net_37),
+.i0(net_75),
+.Tstate(net_76),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 inv_12e192f5 XU8 (
-  .i(bottomstatus),
-  .o(net_71),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(bottomstatus),
+.o(net_71),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 inv_12e192f5 XU9 (
-  .i(topstatus),
-  .o(net_74),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(topstatus),
+.o(net_74),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 dbuf_e926e395 XU12 (
-  .i(net_37),
-  .o(bottomon),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_37),
+.o(bottomon),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 inv_12e192f5 XU13 (
-  .i(net_38),
-  .o(net_75),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_38),
+.o(net_75),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 dbuf_e926e395 XU16 (
-  .i(net_35),
-  .o(topon),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_35),
+.o(topon),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 nor2_ee112582 XU21 (
-  .o(net_36),
-  .i0(BBMstatus_5ecfcf89_1),
-  .i1(net_71),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.o(net_36),
+.i0(BBMstatus_5ecfcf89_1),
+.i1(net_71),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 nor2_ee112582 XU22 (
-  .o(net_38),
-  .i0(BBMstatus_5ecfcf89_0),
-  .i1(net_74),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.o(net_38),
+.i0(BBMstatus_5ecfcf89_0),
+.i1(net_74),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 inv_12e192f5 XU28 (
-  .i(net_36),
-  .o(net_72),
-  .SUB(CELSUB40948),
-  .CELG(CELG59462),
-  .CELV(CELV96848)
+.i(net_36),
+.o(net_72),
+.SUB(CELSUB40948),
+.CELG(CELG59462),
+.CELV(CELV96848)
 );
 
 drm16 drm_hex0x05 (
-  .G(CELG59462),
-  .V(CELV96848),
-  .d0(a0),
-  .d1(a1),
-  .id({a0,a0,a0,a0,a0,a1,a0,a1}),
-  .SUB(CELSUB40948),
-  .tmi(tmi[4:0]),
-  .drm0({noconn_drm16_drm0_7,factory_timingskew_4b0da531_4,factory_timingskew_4b0da531_3,factory_timingskew_4b0da531_2,factory_timingskew_4b0da531_1,factory_timingskew_4b0da531_0,BBMstatus_5ecfcf89_1,BBMstatus_5ecfcf89_0}),
-  .drm1({noconn_drm16_drm1_7,noconn_drm16_drm1_6,noconn_drm16_drm1_5,factory_timingskew_f36c7113_4,factory_timingskew_f36c7113_3,factory_timingskew_f36c7113_2,factory_timingskew_f36c7113_1,factory_timingskew_f36c7113_0}),
-  .por0({a0,a1,a0,a0,a1,a0,a1,a1}),
-  .por1({a0,a0,a0,a1,a0,a0,a1,a0}),
-  .bypload(a0),
-  .lastdrm(a0)
+.G(CELG59462),
+.V(CELV96848),
+.d0(a0),
+.d1(a1),
+.id({a0,a0,a0,a0,a0,a1,a0,a1}),
+.SUB(CELSUB40948),
+.tmi(tmi[4:0]),
+.drm0({noconn_drm_hex0x05_drm0_7,factory_timingskew_4b0da531_4,factory_timingskew_4b0da531_3,factory_timingskew_4b0da531_2,factory_timingskew_4b0da531_1,factory_timingskew_4b0da531_0,BBMstatus_5ecfcf89_1,BBMstatus_5ecfcf89_0}),
+.drm1({noconn_drm_hex0x05_drm1_7,noconn_drm_hex0x05_drm1_6,noconn_drm_hex0x05_drm1_5,factory_timingskew_f36c7113_4,factory_timingskew_f36c7113_3,factory_timingskew_f36c7113_2,factory_timingskew_f36c7113_1,factory_timingskew_f36c7113_0}),
+.por0({a0,a1,a0,a0,a1,a0,a1,a1}),
+.por1({a0,a0,a0,a1,a0,a0,a1,a0}),
+.bypload(a0),
+.lastdrm(a0)
 );
 
 timingskew_d7d32aa0 Xtimingskew1 (
-  .in(topstate),
-  .out(net_73),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948),
-  .factory_timingskew({factory_timingskew_4b0da531_4,factory_timingskew_4b0da531_3,factory_timingskew_4b0da531_2,factory_timingskew_4b0da531_1,factory_timingskew_4b0da531_0})
+.in(topstate),
+.out(net_73),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948),
+.factory_timingskew({factory_timingskew_4b0da531_4,factory_timingskew_4b0da531_3,factory_timingskew_4b0da531_2,factory_timingskew_4b0da531_1,factory_timingskew_4b0da531_0})
 );
 
 timingskew_b5de11eb Xtimingskew2 (
-  .in(bottomstate),
-  .out(net_76),
-  .CELG(CELG59462),
-  .CELV(CELV96848),
-  .CELSUB(CELSUB40948),
-  .factory_timingskew({factory_timingskew_f36c7113_4,factory_timingskew_f36c7113_3,factory_timingskew_f36c7113_2,factory_timingskew_f36c7113_1,factory_timingskew_f36c7113_0})
+.in(bottomstate),
+.out(net_76),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948),
+.factory_timingskew({factory_timingskew_f36c7113_4,factory_timingskew_f36c7113_3,factory_timingskew_f36c7113_2,factory_timingskew_f36c7113_1,factory_timingskew_f36c7113_0})
 );
 
-STONEnoconn XNCnoconn_drm16_drm0_7 (
-  .noconn(noconn_drm16_drm0_7)
+STONEnoconn XNCnoconn_drm_hex0x05_drm0_7 (
+.noconn(noconn_drm_hex0x05_drm0_7)
 );
 
-STONEnoconn XNCnoconn_drm16_drm1_5 (
-  .noconn(noconn_drm16_drm1_5)
+STONEnoconn XNCnoconn_drm_hex0x05_drm1_5 (
+.noconn(noconn_drm_hex0x05_drm1_5)
 );
 
-STONEnoconn XNCnoconn_drm16_drm1_6 (
-  .noconn(noconn_drm16_drm1_6)
+STONEnoconn XNCnoconn_drm_hex0x05_drm1_6 (
+.noconn(noconn_drm_hex0x05_drm1_6)
 );
 
-STONEnoconn XNCnoconn_drm16_drm1_7 (
-  .noconn(noconn_drm16_drm1_7)
+STONEnoconn XNCnoconn_drm_hex0x05_drm1_7 (
+.noconn(noconn_drm_hex0x05_drm1_7)
 );
 
 endmodule

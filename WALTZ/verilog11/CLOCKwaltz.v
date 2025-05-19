@@ -108,84 +108,84 @@ wire [7:0] por0;
 
 // ------------------------ Networks ---------------------
 CLOCKwaltzDEBUG XDEBUG (
-  .TAO(TAO),
-  .tdo(tdo),
-  .tmi(tmi[4:0]),
-  .dft_sync(net_75),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .dft_clock(net_69),
-  .ISLOPECOMP(ISLOPECOMP),
-  .CELSUB40948(CELSUB40948),
-  .dft_synclow(net_70),
-  .fault_clock(fault_clock),
-  .dft_synchigh(net_71),
-  .enable_clock(enable_clock),
-  .dft_clocksync(net_74),
-  .dft_clockstartup(net_72),
-  .dft_clockinternal(net_73),
-  .hijack_enable_clock(net_68)
+.TAO(TAO),
+.tdo(tdo),
+.tmi(tmi[4:0]),
+.dft_sync(net_75),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.dft_clock(net_69),
+.ISLOPECOMP(ISLOPECOMP),
+.CELSUB40948(CELSUB40948),
+.dft_synclow(net_70),
+.fault_clock(fault_clock),
+.dft_synchigh(net_71),
+.enable_clock(enable_clock),
+.dft_clocksync(net_74),
+.dft_clockstartup(net_72),
+.dft_clockinternal(net_73),
+.hijack_enable_clock(net_68)
 );
 
 CLOCKwaltzMAIN XMAIN (
-  .tdo(tdo),
-  .tmi(tmi[4:0]),
-  .FSET(FSET),
-  .MUDV(MUDV),
-  .SYNC(SYNC),
-  .clock(clock),
-  .dft_sync(net_75),
-  .ok_clock(ok_clock),
-  .CELG59462(CELG59462),
-  .CELV96848(CELV96848),
-  .dft_clock(net_69),
-  .ISLOPECOMP(ISLOPECOMP),
-  .CELREF84329(CELREF84329),
-  .CELSENSE_RF(CELSENSE_RF),
-  .CELSUB40948(CELSUB40948),
-  .IP_90c263a6(IP_90c263a6),
-  .dft_synclow(net_70),
-  .fault_clock(fault_clock),
-  .dft_synchigh(net_71),
-  .enable_clock(net_68),
-  .dft_clocksync(net_74),
-  .CLOCKofftime_0(CLOCKofftime_0bca02f8_0),
-  .CLOCKofftime_1(CLOCKofftime_0bca02f8_1),
-  .CLOCKofftime_2(CLOCKofftime_0bca02f8_2),
-  .CLOCKofftime_3(CLOCKofftime_0bca02f8_3),
-  .dft_clockstartup(net_72),
-  .dft_clockinternal(net_73),
-  .celkelvin_GND_bb7e77f4(celkelvin_GND_bb7e77f4)
+.tdo(tdo),
+.tmi(tmi[4:0]),
+.FSET(FSET),
+.MUDV(MUDV),
+.SYNC(SYNC),
+.clock(clock),
+.dft_sync(net_75),
+.ok_clock(ok_clock),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.dft_clock(net_69),
+.ISLOPECOMP(ISLOPECOMP),
+.CELREF84329(CELREF84329),
+.CELSENSE_RF(CELSENSE_RF),
+.CELSUB40948(CELSUB40948),
+.IP_90c263a6(IP_90c263a6),
+.dft_synclow(net_70),
+.fault_clock(fault_clock),
+.dft_synchigh(net_71),
+.enable_clock(net_68),
+.dft_clocksync(net_74),
+.CLOCKofftime_0(CLOCKofftime_0bca02f8_0),
+.CLOCKofftime_1(CLOCKofftime_0bca02f8_1),
+.CLOCKofftime_2(CLOCKofftime_0bca02f8_2),
+.CLOCKofftime_3(CLOCKofftime_0bca02f8_3),
+.dft_clockstartup(net_72),
+.dft_clockinternal(net_73),
+.celkelvin_GND_bb7e77f4(celkelvin_GND_bb7e77f4)
 );
 
 drm8 drm_hex0x02 (
-  .G(CELG59462),
-  .V(CELV96848),
-  .d0(a0),
-  .d1(a1),
-  .id({a0,a0,a0,a0,a0,a0,a1,a0}),
-  .SUB(CELSUB40948),
-  .tmi(tmi[4:0]),
-  .drm0({noconn_drm8_drm0_7,noconn_drm8_drm0_6,noconn_drm8_drm0_5,noconn_drm8_drm0_4,CLOCKofftime_0bca02f8_3,CLOCKofftime_0bca02f8_2,CLOCKofftime_0bca02f8_1,CLOCKofftime_0bca02f8_0}),
-  .por0({a0,a0,a0,a0,a1,a0,a0,a1}),
-  .bypload(a0),
-  .lastdrm(a0)
+.G(CELG59462),
+.V(CELV96848),
+.d0(a0),
+.d1(a1),
+.id({a0,a0,a0,a0,a0,a0,a1,a0}),
+.SUB(CELSUB40948),
+.tmi(tmi[4:0]),
+.drm0({noconn_drm_hex0x02_drm0_7,noconn_drm_hex0x02_drm0_6,noconn_drm_hex0x02_drm0_5,noconn_drm_hex0x02_drm0_4,CLOCKofftime_0bca02f8_3,CLOCKofftime_0bca02f8_2,CLOCKofftime_0bca02f8_1,CLOCKofftime_0bca02f8_0}),
+.por0({a0,a0,a0,a0,a1,a0,a0,a1}),
+.bypload(a0),
+.lastdrm(a0)
 );
 
-STONEnoconn XNCnoconn_drm8_drm0_4 (
-  .noconn(noconn_drm8_drm0_4)
+STONEnoconn XNCnoconn_drm_hex0x02_drm0_4 (
+.noconn(noconn_drm_hex0x02_drm0_4)
 );
 
-STONEnoconn XNCnoconn_drm8_drm0_5 (
-  .noconn(noconn_drm8_drm0_5)
+STONEnoconn XNCnoconn_drm_hex0x02_drm0_5 (
+.noconn(noconn_drm_hex0x02_drm0_5)
 );
 
-STONEnoconn XNCnoconn_drm8_drm0_6 (
-  .noconn(noconn_drm8_drm0_6)
+STONEnoconn XNCnoconn_drm_hex0x02_drm0_6 (
+.noconn(noconn_drm_hex0x02_drm0_6)
 );
 
-STONEnoconn XNCnoconn_drm8_drm0_7 (
-  .noconn(noconn_drm8_drm0_7)
+STONEnoconn XNCnoconn_drm_hex0x02_drm0_7 (
+.noconn(noconn_drm_hex0x02_drm0_7)
 );
 
 endmodule
