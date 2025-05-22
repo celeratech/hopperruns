@@ -1,0 +1,150 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x555555847f60 .scope module, "sim_CAPbalancer_ROW4" "sim_CAPbalancer_ROW4" 2 51;
+ .timescale 0 0;
+o0x7fffff25f018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589cdf0_0 .net "CAP1", 0 0, o0x7fffff25f018;  0 drivers
+o0x7fffff25f048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589e1a0_0 .net "CAP2", 0 0, o0x7fffff25f048;  0 drivers
+o0x7fffff25f078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589e2b0_0 .net "CAP3", 0 0, o0x7fffff25f078;  0 drivers
+o0x7fffff25f0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589e3a0_0 .net "CAP4", 0 0, o0x7fffff25f0a8;  0 drivers
+o0x7fffff25f0d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589e490_0 .net "CAPRTN", 0 0, o0x7fffff25f0d8;  0 drivers
+o0x7fffff25f108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589e5d0_0 .net "CELG59462", 0 0, o0x7fffff25f108;  0 drivers
+o0x7fffff25f138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589e6c0_0 .net "CELSUB40948", 0 0, o0x7fffff25f138;  0 drivers
+o0x7fffff25f168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589e7b0_0 .net "CELV96848", 0 0, o0x7fffff25f168;  0 drivers
+o0x7fffff25f198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589e8a0_0 .net "IN", 0 0, o0x7fffff25f198;  0 drivers
+o0x7fffff25f1c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589e940_0 .net "IP_5675ec5f", 0 0, o0x7fffff25f1c8;  0 drivers
+o0x7fffff25f1f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589ea30_0 .net "IP_5772eb80", 0 0, o0x7fffff25f1f8;  0 drivers
+o0x7fffff25f228 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589eb20_0 .net "IP_89711b11", 0 0, o0x7fffff25f228;  0 drivers
+o0x7fffff25f258 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589ec10_0 .net "IP_90e1c2cb", 0 0, o0x7fffff25f258;  0 drivers
+o0x7fffff25f288 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589ed00_0 .net "MAXIMUMchannel_0", 0 0, o0x7fffff25f288;  0 drivers
+o0x7fffff25f2b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589edf0_0 .net "MAXIMUMchannel_1", 0 0, o0x7fffff25f2b8;  0 drivers
+o0x7fffff25f2e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589eee0_0 .net "PORB97836", 0 0, o0x7fffff25f2e8;  0 drivers
+o0x7fffff25f318 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589efd0_0 .net "SIMPV", 0 0, o0x7fffff25f318;  0 drivers
+o0x7fffff25f348 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589f1d0_0 .net "active_balancer", 0 0, o0x7fffff25f348;  0 drivers
+o0x7fffff25f378 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589f270_0 .net "clock_balancer", 0 0, o0x7fffff25f378;  0 drivers
+o0x7fffff25f3a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589f360_0 .net "dtfprobe_XUCAPBALANCERactive_355bbf53", 0 0, o0x7fffff25f3a8;  0 drivers
+o0x7fffff25f3d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589f400_0 .net "dtfprobe_XUCAPBALANCERgate1_355bbf53", 0 0, o0x7fffff25f3d8;  0 drivers
+o0x7fffff25f408 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589f4a0_0 .net "dtfprobe_XUCAPBALANCERstartup_355bbf53", 0 0, o0x7fffff25f408;  0 drivers
+o0x7fffff25f438 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589f540_0 .net "enable_balancer", 0 0, o0x7fffff25f438;  0 drivers
+S_0x555555880de0 .scope module, "XCAPbalancer1" "CAPbalancer" 2 57, 2 2 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "IN";
+    .port_info 1 /INOUT 1 "CAP1";
+    .port_info 2 /INOUT 1 "CAP2";
+    .port_info 3 /INOUT 1 "CAP3";
+    .port_info 4 /INOUT 1 "CAP4";
+    .port_info 5 /INPUT 1 "SIMPV";
+    .port_info 6 /INOUT 1 "CAPRTN";
+    .port_info 7 /INPUT 1 "CELG59462";
+    .port_info 8 /INPUT 1 "CELV96848";
+    .port_info 9 /INPUT 1 "PORB97836";
+    .port_info 10 /INPUT 1 "CELSUB40948";
+    .port_info 11 /INPUT 1 "IP_5675ec5f";
+    .port_info 12 /INPUT 1 "IP_5772eb80";
+    .port_info 13 /INPUT 1 "IP_89711b11";
+    .port_info 14 /INPUT 1 "IP_90e1c2cb";
+    .port_info 15 /INPUT 1 "clock_balancer";
+    .port_info 16 /OUTPUT 1 "active_balancer";
+    .port_info 17 /INPUT 1 "enable_balancer";
+    .port_info 18 /INPUT 1 "MAXIMUMchannel_0";
+    .port_info 19 /INPUT 1 "MAXIMUMchannel_1";
+    .port_info 20 /OUTPUT 1 "dtfprobe_XUCAPBALANCERgate1_355bbf53";
+    .port_info 21 /OUTPUT 1 "dtfprobe_XUCAPBALANCERactive_355bbf53";
+    .port_info 22 /OUTPUT 1 "dtfprobe_XUCAPBALANCERstartup_355bbf53";
+v0x5555558474b0_0 .net "CAP1", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x5555558480f0_0 .net "CAP2", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x555555847ec0_0 .net "CAP3", 0 0, o0x7fffff25f078;  alias, 0 drivers
+v0x55555589b900_0 .net "CAP4", 0 0, o0x7fffff25f0a8;  alias, 0 drivers
+v0x55555589b9c0_0 .net "CAPRTN", 0 0, o0x7fffff25f0d8;  alias, 0 drivers
+v0x55555589bad0_0 .net "CELG59462", 0 0, o0x7fffff25f108;  alias, 0 drivers
+v0x55555589bb90_0 .net "CELSUB40948", 0 0, o0x7fffff25f138;  alias, 0 drivers
+v0x55555589bc50_0 .net "CELV96848", 0 0, o0x7fffff25f168;  alias, 0 drivers
+v0x55555589bd10_0 .net "IN", 0 0, o0x7fffff25f198;  alias, 0 drivers
+v0x55555589bdd0_0 .net "IP_5675ec5f", 0 0, o0x7fffff25f1c8;  alias, 0 drivers
+v0x55555589be90_0 .net "IP_5772eb80", 0 0, o0x7fffff25f1f8;  alias, 0 drivers
+v0x55555589bf50_0 .net "IP_89711b11", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x55555589c010_0 .net "IP_90e1c2cb", 0 0, o0x7fffff25f258;  alias, 0 drivers
+v0x55555589c0d0_0 .net "MAXIMUMchannel_0", 0 0, o0x7fffff25f288;  alias, 0 drivers
+v0x55555589c190_0 .net "MAXIMUMchannel_1", 0 0, o0x7fffff25f2b8;  alias, 0 drivers
+v0x55555589c250_0 .net "PORB97836", 0 0, o0x7fffff25f2e8;  alias, 0 drivers
+v0x55555589c310_0 .net "SIMPV", 0 0, o0x7fffff25f318;  alias, 0 drivers
+v0x55555589c4e0_0 .net "active_balancer", 0 0, o0x7fffff25f348;  alias, 0 drivers
+v0x55555589c5a0_0 .net "clock_balancer", 0 0, o0x7fffff25f378;  alias, 0 drivers
+v0x55555589c660_0 .net "dtfprobe_XUCAPBALANCERactive_355bbf53", 0 0, o0x7fffff25f3a8;  alias, 0 drivers
+v0x55555589c720_0 .net "dtfprobe_XUCAPBALANCERgate1_355bbf53", 0 0, o0x7fffff25f3d8;  alias, 0 drivers
+v0x55555589c7e0_0 .net "dtfprobe_XUCAPBALANCERstartup_355bbf53", 0 0, o0x7fffff25f408;  alias, 0 drivers
+v0x55555589c8a0_0 .net "enable_balancer", 0 0, o0x7fffff25f438;  alias, 0 drivers
+S_0x55555589cc40 .scope module, "XFORCE_CAPbalancer1" "FORCE_CAPbalancer" 2 83, 2 28 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "IN";
+    .port_info 1 /OUTPUT 1 "CAP1";
+    .port_info 2 /OUTPUT 1 "CAP2";
+    .port_info 3 /OUTPUT 1 "CAP3";
+    .port_info 4 /OUTPUT 1 "CAP4";
+    .port_info 5 /OUTPUT 1 "SIMPV";
+    .port_info 6 /OUTPUT 1 "CAPRTN";
+    .port_info 7 /OUTPUT 1 "CELG59462";
+    .port_info 8 /OUTPUT 1 "CELV96848";
+    .port_info 9 /OUTPUT 1 "PORB97836";
+    .port_info 10 /OUTPUT 1 "CELSUB40948";
+    .port_info 11 /OUTPUT 1 "IP_5675ec5f";
+    .port_info 12 /OUTPUT 1 "IP_5772eb80";
+    .port_info 13 /OUTPUT 1 "IP_89711b11";
+    .port_info 14 /OUTPUT 1 "IP_90e1c2cb";
+    .port_info 15 /OUTPUT 1 "clock_balancer";
+    .port_info 16 /OUTPUT 1 "enable_balancer";
+    .port_info 17 /OUTPUT 1 "MAXIMUMchannel_0";
+    .port_info 18 /OUTPUT 1 "MAXIMUMchannel_1";
+v0x55555589d060_0 .net "CAP1", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x55555589d100_0 .net "CAP2", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x55555589d1d0_0 .net "CAP3", 0 0, o0x7fffff25f078;  alias, 0 drivers
+v0x55555589d2d0_0 .net "CAP4", 0 0, o0x7fffff25f0a8;  alias, 0 drivers
+v0x55555589d3a0_0 .net "CAPRTN", 0 0, o0x7fffff25f0d8;  alias, 0 drivers
+v0x55555589d490_0 .net "CELG59462", 0 0, o0x7fffff25f108;  alias, 0 drivers
+v0x55555589d560_0 .net "CELSUB40948", 0 0, o0x7fffff25f138;  alias, 0 drivers
+v0x55555589d630_0 .net "CELV96848", 0 0, o0x7fffff25f168;  alias, 0 drivers
+v0x55555589d700_0 .net "IN", 0 0, o0x7fffff25f198;  alias, 0 drivers
+v0x55555589d7d0_0 .net "IP_5675ec5f", 0 0, o0x7fffff25f1c8;  alias, 0 drivers
+v0x55555589d8a0_0 .net "IP_5772eb80", 0 0, o0x7fffff25f1f8;  alias, 0 drivers
+v0x55555589d970_0 .net "IP_89711b11", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x55555589da40_0 .net "IP_90e1c2cb", 0 0, o0x7fffff25f258;  alias, 0 drivers
+v0x55555589db10_0 .net "MAXIMUMchannel_0", 0 0, o0x7fffff25f288;  alias, 0 drivers
+v0x55555589dbe0_0 .net "MAXIMUMchannel_1", 0 0, o0x7fffff25f2b8;  alias, 0 drivers
+v0x55555589dcb0_0 .net "PORB97836", 0 0, o0x7fffff25f2e8;  alias, 0 drivers
+v0x55555589dd80_0 .net "SIMPV", 0 0, o0x7fffff25f318;  alias, 0 drivers
+v0x55555589df60_0 .net "clock_balancer", 0 0, o0x7fffff25f378;  alias, 0 drivers
+v0x55555589e030_0 .net "enable_balancer", 0 0, o0x7fffff25f438;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/celera/projects/Sunnyvale/software/CAPbalancer/verilog10/sim_CAPbalancer_ROW4.v";

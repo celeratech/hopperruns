@@ -1,0 +1,219 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x555555845d50 .scope module, "CAPdecode" "CAPdecode" 2 63;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "porb";
+    .port_info 1 /INPUT 1 "SIMPV";
+    .port_info 2 /INOUT 1 "VCC2P5";
+    .port_info 3 /INPUT 1 "CAPSLCT0";
+    .port_info 4 /INPUT 1 "CAPSLCT1";
+    .port_info 5 /INPUT 1 "CELG59462";
+    .port_info 6 /INPUT 1 "CELV96848";
+    .port_info 7 /OUTPUT 1 "CAPcount_0";
+    .port_info 8 /OUTPUT 1 "CAPcount_1";
+    .port_info 9 /INPUT 1 "CELSUB40948";
+    .port_info 10 /INPUT 1 "IP_cc6aff98";
+    .port_info 11 /INPUT 1 "IP_ddbf19a4";
+    .port_info 12 /OUTPUT 1 "done_capdecode";
+    .port_info 13 /INPUT 1 "enable_capdecode";
+    .port_info 14 /OUTPUT 2 "status_num_caps_1";
+    .port_info 15 /INOUT 1 "kelvin_GNDcapdecode";
+    .port_info 16 /OUTPUT 1 "dtfprobe_XUCAPACITORDECODEok_40f96053";
+    .port_info 17 /OUTPUT 1 "dtfprobe_XUCAPACITORDECODEsample_40f96053";
+    .port_info 18 /OUTPUT 1 "dtfprobe_XUCAPACITORDECODEstartup_40f96053";
+    .port_info 19 /OUTPUT 1 "dtfprobe_XUCAPACITORDECODEcapslct0_40f96053";
+    .port_info 20 /OUTPUT 1 "dtfprobe_XUCAPACITORDECODEcapslct1_40f96053";
+    .port_info 21 /OUTPUT 1 "dtfprobe_XUCAPACITORDECODEcap2active_40f96053";
+    .port_info 22 /OUTPUT 1 "dtfprobe_XUCAPACITORDECODEcap3active_40f96053";
+    .port_info 23 /OUTPUT 1 "dtfprobe_XUCAPACITORDECODEcap4active_40f96053";
+    .port_info 24 /OUTPUT 1 "dtfprobe_XUCAPACITORDECODEsampleDELAY_40f96053";
+o0x7fffff25fa38 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a65c0_0 .net "CAPSLCT0", 0 0, o0x7fffff25fa38;  0 drivers
+o0x7fffff25fa68 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a66b0_0 .net "CAPSLCT1", 0 0, o0x7fffff25fa68;  0 drivers
+o0x7fffff25f018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a6780_0 .net "CAPcount_0", 0 0, o0x7fffff25f018;  0 drivers
+o0x7fffff25f048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a6850_0 .net "CAPcount_1", 0 0, o0x7fffff25f048;  0 drivers
+o0x7fffff25f138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a6940_0 .net "CELG59462", 0 0, o0x7fffff25f138;  0 drivers
+o0x7fffff25f168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a6a80_0 .net "CELSUB40948", 0 0, o0x7fffff25f168;  0 drivers
+o0x7fffff25f198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a6b70_0 .net "CELV96848", 0 0, o0x7fffff25f198;  0 drivers
+o0x7fffff25fa98 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a6c60_0 .net "IP_cc6aff98", 0 0, o0x7fffff25fa98;  0 drivers
+o0x7fffff25fac8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a6d00_0 .net "IP_ddbf19a4", 0 0, o0x7fffff25fac8;  0 drivers
+o0x7fffff25faf8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a6da0_0 .net "SIMPV", 0 0, o0x7fffff25faf8;  0 drivers
+o0x7fffff25fb28 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a6e40_0 .net "VCC2P5", 0 0, o0x7fffff25fb28;  0 drivers
+o0x7fffff25f588 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a6ee0_0 .net "done_capdecode", 0 0, o0x7fffff25f588;  0 drivers
+o0x7fffff25f348 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a6f80_0 .net "dtfprobe_XUCAPACITORDECODEcap2active_40f96053", 0 0, o0x7fffff25f348;  0 drivers
+o0x7fffff25f378 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7020_0 .net "dtfprobe_XUCAPACITORDECODEcap3active_40f96053", 0 0, o0x7fffff25f378;  0 drivers
+o0x7fffff25f3a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a70c0_0 .net "dtfprobe_XUCAPACITORDECODEcap4active_40f96053", 0 0, o0x7fffff25f3a8;  0 drivers
+o0x7fffff25f3d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7160_0 .net "dtfprobe_XUCAPACITORDECODEcapslct0_40f96053", 0 0, o0x7fffff25f3d8;  0 drivers
+o0x7fffff25f408 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7230_0 .net "dtfprobe_XUCAPACITORDECODEcapslct1_40f96053", 0 0, o0x7fffff25f408;  0 drivers
+o0x7fffff25f438 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7410_0 .net "dtfprobe_XUCAPACITORDECODEok_40f96053", 0 0, o0x7fffff25f438;  0 drivers
+o0x7fffff25f468 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a74e0_0 .net "dtfprobe_XUCAPACITORDECODEsampleDELAY_40f96053", 0 0, o0x7fffff25f468;  0 drivers
+o0x7fffff25f498 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a75b0_0 .net "dtfprobe_XUCAPACITORDECODEsample_40f96053", 0 0, o0x7fffff25f498;  0 drivers
+o0x7fffff25f4c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7680_0 .net "dtfprobe_XUCAPACITORDECODEstartup_40f96053", 0 0, o0x7fffff25f4c8;  0 drivers
+o0x7fffff25f4f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7750_0 .net "enable_capdecode", 0 0, o0x7fffff25f4f8;  0 drivers
+o0x7fffff25fb58 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7820_0 .net "kelvin_GNDcapdecode", 0 0, o0x7fffff25fb58;  0 drivers
+o0x7fffff25f1c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a78f0_0 .net "net_72", 0 0, o0x7fffff25f1c8;  0 drivers
+o0x7fffff25f1f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a79e0_0 .net "net_73", 0 0, o0x7fffff25f1f8;  0 drivers
+o0x7fffff25f228 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7ad0_0 .net "net_74", 0 0, o0x7fffff25f228;  0 drivers
+o0x7fffff25f528 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7bc0_0 .net "net_75", 0 0, o0x7fffff25f528;  0 drivers
+o0x7fffff25f318 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7cb0_0 .net "net_76", 0 0, o0x7fffff25f318;  0 drivers
+o0x7fffff25f558 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7da0_0 .net "net_77", 0 0, o0x7fffff25f558;  0 drivers
+o0x7fffff25f2b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7e90_0 .net "net_78", 0 0, o0x7fffff25f2b8;  0 drivers
+o0x7fffff25f2e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7f80_0 .net "net_79", 0 0, o0x7fffff25f2e8;  0 drivers
+o0x7fffff25f258 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a8070_0 .net "net_80", 0 0, o0x7fffff25f258;  0 drivers
+o0x7fffff25f288 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a8160_0 .net "net_81", 0 0, o0x7fffff25f288;  0 drivers
+o0x7fffff25fb88 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a8460_0 .net "porb", 0 0, o0x7fffff25fb88;  0 drivers
+o0x7fffff25f078 .functor BUFZ 2, C4<zz>; HiZ drive
+v0x5555558a8500_0 .net "status_num_caps_1", 1 0, o0x7fffff25f078;  0 drivers
+S_0x55555587df10 .scope module, "XCONFIGURATION" "CAPdecodeCONFIGURATION" 2 95, 2 2 0, S_0x555555845d50;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "CAPcount_0";
+    .port_info 1 /INPUT 1 "CAPcount_1";
+    .port_info 2 /OUTPUT 2 "status_num_caps_1";
+v0x5555558474b0_0 .net "CAPcount_0", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x5555558480f0_0 .net "CAPcount_1", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x555555847ec0_0 .net "status_num_caps_1", 1 0, o0x7fffff25f078;  alias, 0 drivers
+S_0x5555558a3200 .scope module, "XDEBUG" "CAPdecodeDEBUG" 2 101, 2 8 0, S_0x555555845d50;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "CELG59462";
+    .port_info 1 /INPUT 1 "CELV96848";
+    .port_info 2 /INPUT 1 "dft_sample";
+    .port_info 3 /INPUT 1 "CELSUB40948";
+    .port_info 4 /INPUT 1 "cap2_active";
+    .port_info 5 /INPUT 1 "cap3_active";
+    .port_info 6 /INPUT 1 "cap4_active";
+    .port_info 7 /INPUT 1 "dft_select0";
+    .port_info 8 /INPUT 1 "dft_select1";
+    .port_info 9 /INPUT 1 "dft_startup";
+    .port_info 10 /OUTPUT 1 "hijack_measure";
+    .port_info 11 /INPUT 1 "dft_sampleDELAY";
+    .port_info 12 /INPUT 1 "ok_capacitordecode";
+    .port_info 13 /INPUT 1 "enable_capcitrodecode";
+    .port_info 14 /OUTPUT 1 "hijack_enable_capcitrodecode";
+    .port_info 15 /OUTPUT 1 "dtfprobe_XUCAPACITORDECODEok_40f96053";
+    .port_info 16 /OUTPUT 1 "dtfprobe_XUCAPACITORDECODEsample_40f96053";
+    .port_info 17 /OUTPUT 1 "dtfprobe_XUCAPACITORDECODEstartup_40f96053";
+    .port_info 18 /OUTPUT 1 "dtfprobe_XUCAPACITORDECODEcapslct0_40f96053";
+    .port_info 19 /OUTPUT 1 "dtfprobe_XUCAPACITORDECODEcapslct1_40f96053";
+    .port_info 20 /OUTPUT 1 "dtfprobe_XUCAPACITORDECODEcap2active_40f96053";
+    .port_info 21 /OUTPUT 1 "dtfprobe_XUCAPACITORDECODEcap3active_40f96053";
+    .port_info 22 /OUTPUT 1 "dtfprobe_XUCAPACITORDECODEcap4active_40f96053";
+    .port_info 23 /OUTPUT 1 "dtfprobe_XUCAPACITORDECODEsampleDELAY_40f96053";
+v0x5555558a3630_0 .net "CELG59462", 0 0, o0x7fffff25f138;  alias, 0 drivers
+v0x5555558a36f0_0 .net "CELSUB40948", 0 0, o0x7fffff25f168;  alias, 0 drivers
+v0x5555558a37b0_0 .net "CELV96848", 0 0, o0x7fffff25f198;  alias, 0 drivers
+v0x5555558a3880_0 .net "cap2_active", 0 0, o0x7fffff25f1c8;  alias, 0 drivers
+v0x5555558a3940_0 .net "cap3_active", 0 0, o0x7fffff25f1f8;  alias, 0 drivers
+v0x5555558a3a50_0 .net "cap4_active", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558a3b10_0 .net "dft_sample", 0 0, o0x7fffff25f258;  alias, 0 drivers
+v0x5555558a3bd0_0 .net "dft_sampleDELAY", 0 0, o0x7fffff25f288;  alias, 0 drivers
+v0x5555558a3c90_0 .net "dft_select0", 0 0, o0x7fffff25f2b8;  alias, 0 drivers
+v0x5555558a3d50_0 .net "dft_select1", 0 0, o0x7fffff25f2e8;  alias, 0 drivers
+v0x5555558a3e10_0 .net "dft_startup", 0 0, o0x7fffff25f318;  alias, 0 drivers
+v0x5555558a3ed0_0 .net "dtfprobe_XUCAPACITORDECODEcap2active_40f96053", 0 0, o0x7fffff25f348;  alias, 0 drivers
+v0x5555558a3f90_0 .net "dtfprobe_XUCAPACITORDECODEcap3active_40f96053", 0 0, o0x7fffff25f378;  alias, 0 drivers
+v0x5555558a4050_0 .net "dtfprobe_XUCAPACITORDECODEcap4active_40f96053", 0 0, o0x7fffff25f3a8;  alias, 0 drivers
+v0x5555558a4110_0 .net "dtfprobe_XUCAPACITORDECODEcapslct0_40f96053", 0 0, o0x7fffff25f3d8;  alias, 0 drivers
+v0x5555558a41d0_0 .net "dtfprobe_XUCAPACITORDECODEcapslct1_40f96053", 0 0, o0x7fffff25f408;  alias, 0 drivers
+v0x5555558a4290_0 .net "dtfprobe_XUCAPACITORDECODEok_40f96053", 0 0, o0x7fffff25f438;  alias, 0 drivers
+v0x5555558a4460_0 .net "dtfprobe_XUCAPACITORDECODEsampleDELAY_40f96053", 0 0, o0x7fffff25f468;  alias, 0 drivers
+v0x5555558a4520_0 .net "dtfprobe_XUCAPACITORDECODEsample_40f96053", 0 0, o0x7fffff25f498;  alias, 0 drivers
+v0x5555558a45e0_0 .net "dtfprobe_XUCAPACITORDECODEstartup_40f96053", 0 0, o0x7fffff25f4c8;  alias, 0 drivers
+v0x5555558a46a0_0 .net "enable_capcitrodecode", 0 0, o0x7fffff25f4f8;  alias, 0 drivers
+v0x5555558a4760_0 .net "hijack_enable_capcitrodecode", 0 0, o0x7fffff25f528;  alias, 0 drivers
+v0x5555558a4820_0 .net "hijack_measure", 0 0, o0x7fffff25f558;  alias, 0 drivers
+v0x5555558a48e0_0 .net "ok_capacitordecode", 0 0, o0x7fffff25f588;  alias, 0 drivers
+S_0x5555558a4ca0 .scope module, "XMAIN" "CAPdecodeMAIN" 2 128, 2 35 0, S_0x555555845d50;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "porb";
+    .port_info 1 /INPUT 1 "SIMPV";
+    .port_info 2 /INOUT 1 "VCC2P5";
+    .port_info 3 /INPUT 1 "CAPSLCT0";
+    .port_info 4 /INPUT 1 "CAPSLCT1";
+    .port_info 5 /INPUT 1 "CELG59462";
+    .port_info 6 /INPUT 1 "CELV96848";
+    .port_info 7 /OUTPUT 1 "CAPcount_0";
+    .port_info 8 /OUTPUT 1 "CAPcount_1";
+    .port_info 9 /OUTPUT 1 "dft_sample";
+    .port_info 10 /INPUT 1 "CELSUB40948";
+    .port_info 11 /INPUT 1 "IP_cc6aff98";
+    .port_info 12 /INPUT 1 "IP_ddbf19a4";
+    .port_info 13 /OUTPUT 1 "cap2_active";
+    .port_info 14 /OUTPUT 1 "cap3_active";
+    .port_info 15 /OUTPUT 1 "cap4_active";
+    .port_info 16 /OUTPUT 1 "dft_select0";
+    .port_info 17 /OUTPUT 1 "dft_select1";
+    .port_info 18 /OUTPUT 1 "dft_startup";
+    .port_info 19 /OUTPUT 1 "done_capdecode";
+    .port_info 20 /INPUT 1 "hijack_measure";
+    .port_info 21 /OUTPUT 1 "dft_sampleDELAY";
+    .port_info 22 /INOUT 1 "kelvin_GNDcapdecode";
+    .port_info 23 /INPUT 1 "enable_capcitordecode";
+v0x5555558a5080_0 .net "CAPSLCT0", 0 0, o0x7fffff25fa38;  alias, 0 drivers
+v0x5555558a5140_0 .net "CAPSLCT1", 0 0, o0x7fffff25fa68;  alias, 0 drivers
+v0x5555558a5200_0 .net "CAPcount_0", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x5555558a5300_0 .net "CAPcount_1", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x5555558a53d0_0 .net "CELG59462", 0 0, o0x7fffff25f138;  alias, 0 drivers
+v0x5555558a54c0_0 .net "CELSUB40948", 0 0, o0x7fffff25f168;  alias, 0 drivers
+v0x5555558a5590_0 .net "CELV96848", 0 0, o0x7fffff25f198;  alias, 0 drivers
+v0x5555558a5660_0 .net "IP_cc6aff98", 0 0, o0x7fffff25fa98;  alias, 0 drivers
+v0x5555558a5700_0 .net "IP_ddbf19a4", 0 0, o0x7fffff25fac8;  alias, 0 drivers
+v0x5555558a57a0_0 .net "SIMPV", 0 0, o0x7fffff25faf8;  alias, 0 drivers
+v0x5555558a5840_0 .net "VCC2P5", 0 0, o0x7fffff25fb28;  alias, 0 drivers
+v0x5555558a58e0_0 .net "cap2_active", 0 0, o0x7fffff25f1c8;  alias, 0 drivers
+v0x5555558a59b0_0 .net "cap3_active", 0 0, o0x7fffff25f1f8;  alias, 0 drivers
+v0x5555558a5a80_0 .net "cap4_active", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558a5b50_0 .net "dft_sample", 0 0, o0x7fffff25f258;  alias, 0 drivers
+v0x5555558a5c20_0 .net "dft_sampleDELAY", 0 0, o0x7fffff25f288;  alias, 0 drivers
+v0x5555558a5cf0_0 .net "dft_select0", 0 0, o0x7fffff25f2b8;  alias, 0 drivers
+v0x5555558a5ed0_0 .net "dft_select1", 0 0, o0x7fffff25f2e8;  alias, 0 drivers
+v0x5555558a5fa0_0 .net "dft_startup", 0 0, o0x7fffff25f318;  alias, 0 drivers
+v0x5555558a6070_0 .net "done_capdecode", 0 0, o0x7fffff25f588;  alias, 0 drivers
+v0x5555558a6140_0 .net "enable_capcitordecode", 0 0, o0x7fffff25f528;  alias, 0 drivers
+v0x5555558a6210_0 .net "hijack_measure", 0 0, o0x7fffff25f558;  alias, 0 drivers
+v0x5555558a62e0_0 .net "kelvin_GNDcapdecode", 0 0, o0x7fffff25fb58;  alias, 0 drivers
+v0x5555558a6380_0 .net "porb", 0 0, o0x7fffff25fb88;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/celera/projects/Sunnyvale/software/CAPdecode/verilog10/CAPdecode.v";

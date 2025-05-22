@@ -1,0 +1,125 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x555555845d50 .scope module, "CAPtestSINK" "CAPtestSINK" 2 34;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "CAP4";
+    .port_info 1 /INOUT 1 "ITST";
+    .port_info 2 /INOUT 1 "SIMPV";
+    .port_info 3 /INPUT 1 "CELG59462";
+    .port_info 4 /INPUT 1 "CELV96848";
+    .port_info 5 /INPUT 1 "PORB97836";
+    .port_info 6 /INOUT 1 "GNDcaptest";
+    .port_info 7 /INPUT 1 "sense_ITST";
+    .port_info 8 /INPUT 1 "CELSUB40948";
+    .port_info 9 /INPUT 1 "IP_dc9fa791";
+    .port_info 10 /INOUT 1 "kelvin_SIMPV";
+    .port_info 11 /INPUT 1 "clock_captest";
+    .port_info 12 /OUTPUT 1 "ok_captestsink";
+    .port_info 13 /INOUT 1 "kelvin_GNDcaptest";
+    .port_info 14 /INPUT 1 "enable_captestsink";
+    .port_info 15 /OUTPUT 1 "dtfprobe_XUCAPtestREF_f9cb43a4";
+    .port_info 16 /OUTPUT 1 "dtfprobe_XUCAPtestSTARTUP_f9cb43a4";
+o0x7fffff25f378 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555898950_0 .net "CAP4", 0 0, o0x7fffff25f378;  0 drivers
+o0x7fffff25f018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555898a40_0 .net "CELG59462", 0 0, o0x7fffff25f018;  0 drivers
+o0x7fffff25f048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555898ae0_0 .net "CELSUB40948", 0 0, o0x7fffff25f048;  0 drivers
+o0x7fffff25f078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555898bd0_0 .net "CELV96848", 0 0, o0x7fffff25f078;  0 drivers
+o0x7fffff25f3a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555898cc0_0 .net "GNDcaptest", 0 0, o0x7fffff25f3a8;  0 drivers
+o0x7fffff25f3d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555898db0_0 .net "IP_dc9fa791", 0 0, o0x7fffff25f3d8;  0 drivers
+o0x7fffff25f408 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555898e50_0 .net "ITST", 0 0, o0x7fffff25f408;  0 drivers
+o0x7fffff25f438 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555898ef0_0 .net "PORB97836", 0 0, o0x7fffff25f438;  0 drivers
+o0x7fffff25f468 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555898fc0_0 .net "SIMPV", 0 0, o0x7fffff25f468;  0 drivers
+o0x7fffff25f498 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899090_0 .net "clock_captest", 0 0, o0x7fffff25f498;  0 drivers
+o0x7fffff25f0d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899160_0 .net "dtfprobe_XUCAPtestREF_f9cb43a4", 0 0, o0x7fffff25f0d8;  0 drivers
+o0x7fffff25f108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899230_0 .net "dtfprobe_XUCAPtestSTARTUP_f9cb43a4", 0 0, o0x7fffff25f108;  0 drivers
+o0x7fffff25f138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899300_0 .net "enable_captestsink", 0 0, o0x7fffff25f138;  0 drivers
+o0x7fffff25f4c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558993d0_0 .net "kelvin_GNDcaptest", 0 0, o0x7fffff25f4c8;  0 drivers
+o0x7fffff25f4f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558994a0_0 .net "kelvin_SIMPV", 0 0, o0x7fffff25f4f8;  0 drivers
+o0x7fffff25f0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899570_0 .net "net_49", 0 0, o0x7fffff25f0a8;  0 drivers
+o0x7fffff25f168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899610_0 .net "net_50", 0 0, o0x7fffff25f168;  0 drivers
+o0x7fffff25f198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899810_0 .net "ok_captestsink", 0 0, o0x7fffff25f198;  0 drivers
+o0x7fffff25f528 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899900_0 .net "sense_ITST", 0 0, o0x7fffff25f528;  0 drivers
+S_0x55555587eba0 .scope module, "XDEBUG" "CAPtestSINKdebug" 2 57, 2 2 0, S_0x555555845d50;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "dft_REF";
+    .port_info 1 /INPUT 1 "CELG59462";
+    .port_info 2 /INPUT 1 "CELV96848";
+    .port_info 3 /INPUT 1 "CELSUB40948";
+    .port_info 4 /INPUT 1 "ok_captestsink";
+    .port_info 5 /INPUT 1 "enable_captestsink";
+    .port_info 6 /OUTPUT 1 "hijack_enable_captestsink";
+    .port_info 7 /OUTPUT 1 "dtfprobe_XUCAPtestREF_f9cb43a4";
+    .port_info 8 /OUTPUT 1 "dtfprobe_XUCAPtestSTARTUP_f9cb43a4";
+v0x5555558480f0_0 .net "CELG59462", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x555555847ec0_0 .net "CELSUB40948", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x5555558970c0_0 .net "CELV96848", 0 0, o0x7fffff25f078;  alias, 0 drivers
+v0x555555897160_0 .net "dft_REF", 0 0, o0x7fffff25f0a8;  alias, 0 drivers
+v0x555555897220_0 .net "dtfprobe_XUCAPtestREF_f9cb43a4", 0 0, o0x7fffff25f0d8;  alias, 0 drivers
+v0x555555897330_0 .net "dtfprobe_XUCAPtestSTARTUP_f9cb43a4", 0 0, o0x7fffff25f108;  alias, 0 drivers
+v0x5555558973f0_0 .net "enable_captestsink", 0 0, o0x7fffff25f138;  alias, 0 drivers
+v0x5555558974b0_0 .net "hijack_enable_captestsink", 0 0, o0x7fffff25f168;  alias, 0 drivers
+v0x555555897570_0 .net "ok_captestsink", 0 0, o0x7fffff25f198;  alias, 0 drivers
+S_0x555555897750 .scope module, "XMAIN" "CAPtestSINKmain" 2 69, 2 14 0, S_0x555555845d50;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "CAP4";
+    .port_info 1 /INOUT 1 "ITST";
+    .port_info 2 /INOUT 1 "SIMPV";
+    .port_info 3 /OUTPUT 1 "dft_REF";
+    .port_info 4 /INPUT 1 "CELG59462";
+    .port_info 5 /INPUT 1 "CELV96848";
+    .port_info 6 /INPUT 1 "PORB97836";
+    .port_info 7 /INOUT 1 "GNDcaptest";
+    .port_info 8 /INPUT 1 "sense_ITST";
+    .port_info 9 /INPUT 1 "CELSUB40948";
+    .port_info 10 /INPUT 1 "IP_dc9fa791";
+    .port_info 11 /INOUT 1 "kelvin_SIMPV";
+    .port_info 12 /INPUT 1 "clock_captest";
+    .port_info 13 /OUTPUT 1 "ok_captestsink";
+    .port_info 14 /INOUT 1 "kelvin_GNDcaptest";
+    .port_info 15 /INPUT 1 "enable_captestsink";
+v0x555555897a90_0 .net "CAP4", 0 0, o0x7fffff25f378;  alias, 0 drivers
+v0x555555897b50_0 .net "CELG59462", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x555555897c10_0 .net "CELSUB40948", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x555555897d10_0 .net "CELV96848", 0 0, o0x7fffff25f078;  alias, 0 drivers
+v0x555555897de0_0 .net "GNDcaptest", 0 0, o0x7fffff25f3a8;  alias, 0 drivers
+v0x555555897ed0_0 .net "IP_dc9fa791", 0 0, o0x7fffff25f3d8;  alias, 0 drivers
+v0x555555897f70_0 .net "ITST", 0 0, o0x7fffff25f408;  alias, 0 drivers
+v0x555555898010_0 .net "PORB97836", 0 0, o0x7fffff25f438;  alias, 0 drivers
+v0x5555558980b0_0 .net "SIMPV", 0 0, o0x7fffff25f468;  alias, 0 drivers
+v0x5555558981e0_0 .net "clock_captest", 0 0, o0x7fffff25f498;  alias, 0 drivers
+v0x5555558982a0_0 .net "dft_REF", 0 0, o0x7fffff25f0a8;  alias, 0 drivers
+v0x555555898340_0 .net "enable_captestsink", 0 0, o0x7fffff25f168;  alias, 0 drivers
+v0x555555898410_0 .net "kelvin_GNDcaptest", 0 0, o0x7fffff25f4c8;  alias, 0 drivers
+v0x5555558984b0_0 .net "kelvin_SIMPV", 0 0, o0x7fffff25f4f8;  alias, 0 drivers
+v0x555555898550_0 .net "ok_captestsink", 0 0, o0x7fffff25f198;  alias, 0 drivers
+v0x555555898620_0 .net "sense_ITST", 0 0, o0x7fffff25f528;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/celera/projects/Sunnyvale/software/CAPtest/verilog10/CAPtestSINK.v";
