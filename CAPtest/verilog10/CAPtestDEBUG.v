@@ -43,7 +43,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CAPtestDEBUG (CELG59462, CELV96848, dft_count, equal_test, CELSUB40948, done_captest, ok_captestsink, done_loadcapstart, done_loadregister, enable_captestsink, overflow_testcount, dtfprobe_XUCAPtestTIME_78627259, dtfprobe_XUCAPtestCOUNT_78627259, dtfprobe_XUCAPtestEQUAL_78627259, dtfprobe_XUCAPtestSTART_78627259, dtfprobe_XUCAPtestOKSINK_78627259, dtfprobe_XUCAPtestOVERFLOW_78627259, dtfprobe_XUCAPtestLOADREGISTER_78627259);
+module CAPtestDEBUG (CELG59462, CELV96848, dft_count, equal_test, CELSUB40948, done_captest, ok_captestsink, done_loadcapstart, done_loadregister, enable_captestsink, overflow_testcount, dftprobe_XUCAPtestTIME_78627259, dftprobe_XUCAPtestCOUNT_78627259, dftprobe_XUCAPtestEQUAL_78627259, dftprobe_XUCAPtestSTART_78627259, dftprobe_XUCAPtestOKSINK_78627259, dftprobe_XUCAPtestOVERFLOW_78627259, dftprobe_XUCAPtestLOADREGISTER_78627259);
 input  CELG59462;
 input  CELV96848;
 input  dft_count;
@@ -55,13 +55,13 @@ input  done_loadcapstart;
 input  done_loadregister;
 input  enable_captestsink;
 input  overflow_testcount;
-output  dtfprobe_XUCAPtestTIME_78627259;
-output  dtfprobe_XUCAPtestCOUNT_78627259;
-output  dtfprobe_XUCAPtestEQUAL_78627259;
-output  dtfprobe_XUCAPtestSTART_78627259;
-output  dtfprobe_XUCAPtestOKSINK_78627259;
-output  dtfprobe_XUCAPtestOVERFLOW_78627259;
-output  dtfprobe_XUCAPtestLOADREGISTER_78627259;
+output  dftprobe_XUCAPtestTIME_78627259;
+output  dftprobe_XUCAPtestCOUNT_78627259;
+output  dftprobe_XUCAPtestEQUAL_78627259;
+output  dftprobe_XUCAPtestSTART_78627259;
+output  dftprobe_XUCAPtestOKSINK_78627259;
+output  dftprobe_XUCAPtestOVERFLOW_78627259;
+output  dftprobe_XUCAPtestLOADREGISTER_78627259;
 
 
 // ------------------------ Wires ------------------------
@@ -69,7 +69,7 @@ output  dtfprobe_XUCAPtestLOADREGISTER_78627259;
 // ------------------------ Networks ---------------------
 VESPAdftpulse XU1 (
 .stop(done_captest),
-.pulse(dtfprobe_XUCAPtestTIME_78627259),
+.pulse(dftprobe_XUCAPtestTIME_78627259),
 .start(enable_captestsink),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -108,34 +108,34 @@ dftprobeModel0_ff1808b2 XUCAPtestLOADREGISTER (
 
 );
 
-WRAPPER1 XWRAP_dft_count_dtfprobe_XUCAPtestCOUNT_78627259 (
+WRAPPER1 XWRAP_dft_count_dftprobe_XUCAPtestCOUNT_78627259 (
 .i(dft_count),
-.o(dtfprobe_XUCAPtestCOUNT_78627259)
+.o(dftprobe_XUCAPtestCOUNT_78627259)
 );
 
-WRAPPER1 XWRAP_equal_test_dtfprobe_XUCAPtestEQUAL_78627259 (
+WRAPPER1 XWRAP_equal_test_dftprobe_XUCAPtestEQUAL_78627259 (
 .i(equal_test),
-.o(dtfprobe_XUCAPtestEQUAL_78627259)
+.o(dftprobe_XUCAPtestEQUAL_78627259)
 );
 
-WRAPPER1 XWRAP_ok_captestsink_dtfprobe_XUCAPtestOKSINK_78627259 (
+WRAPPER1 XWRAP_ok_captestsink_dftprobe_XUCAPtestOKSINK_78627259 (
 .i(ok_captestsink),
-.o(dtfprobe_XUCAPtestOKSINK_78627259)
+.o(dftprobe_XUCAPtestOKSINK_78627259)
 );
 
-WRAPPER1 XWRAP_done_loadcapstart_dtfprobe_XUCAPtestSTART_78627259 (
+WRAPPER1 XWRAP_done_loadcapstart_dftprobe_XUCAPtestSTART_78627259 (
 .i(done_loadcapstart),
-.o(dtfprobe_XUCAPtestSTART_78627259)
+.o(dftprobe_XUCAPtestSTART_78627259)
 );
 
-WRAPPER1 XWRAP_overflow_testcount_dtfprobe_XUCAPtestOVERFLOW_78627259 (
+WRAPPER1 XWRAP_overflow_testcount_dftprobe_XUCAPtestOVERFLOW_78627259 (
 .i(overflow_testcount),
-.o(dtfprobe_XUCAPtestOVERFLOW_78627259)
+.o(dftprobe_XUCAPtestOVERFLOW_78627259)
 );
 
-WRAPPER1 XWRAP_done_loadregister_dtfprobe_XUCAPtestLOADREGISTER_78627259 (
+WRAPPER1 XWRAP_done_loadregister_dftprobe_XUCAPtestLOADREGISTER_78627259 (
 .i(done_loadregister),
-.o(dtfprobe_XUCAPtestLOADREGISTER_78627259)
+.o(dftprobe_XUCAPtestLOADREGISTER_78627259)
 );
 
 endmodule

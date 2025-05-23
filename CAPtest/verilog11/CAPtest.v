@@ -154,7 +154,7 @@ module CAPtestCOUNT (CELG59462,CELV96848,PORB97836,dft_count,CELSUB40948,TESTcou
   output  overflow_testcount;
 endmodule
 
-module CAPtestDEBUG (CELG59462,CELV96848,dft_count,equal_test,CELSUB40948,done_captest,ok_captestsink,done_loadcapstart,done_loadregister,enable_captestsink,overflow_testcount,dtfprobe_XUCAPtestTIME_78627259,dtfprobe_XUCAPtestCOUNT_78627259,dtfprobe_XUCAPtestEQUAL_78627259,dtfprobe_XUCAPtestSTART_78627259,dtfprobe_XUCAPtestOKSINK_78627259,dtfprobe_XUCAPtestOVERFLOW_78627259,dtfprobe_XUCAPtestLOADREGISTER_78627259);
+module CAPtestDEBUG (CELG59462,CELV96848,dft_count,equal_test,CELSUB40948,done_captest,ok_captestsink,done_loadcapstart,done_loadregister,enable_captestsink,overflow_testcount,dftprobe_XUCAPtestTIME_78627259,dftprobe_XUCAPtestCOUNT_78627259,dftprobe_XUCAPtestEQUAL_78627259,dftprobe_XUCAPtestSTART_78627259,dftprobe_XUCAPtestOKSINK_78627259,dftprobe_XUCAPtestOVERFLOW_78627259,dftprobe_XUCAPtestLOADREGISTER_78627259);
   input  CELG59462;
   input  CELV96848;
   input  dft_count;
@@ -166,13 +166,13 @@ module CAPtestDEBUG (CELG59462,CELV96848,dft_count,equal_test,CELSUB40948,done_c
   input  done_loadregister;
   input  enable_captestsink;
   input  overflow_testcount;
-  output  dtfprobe_XUCAPtestTIME_78627259;
-  output  dtfprobe_XUCAPtestCOUNT_78627259;
-  output  dtfprobe_XUCAPtestEQUAL_78627259;
-  output  dtfprobe_XUCAPtestSTART_78627259;
-  output  dtfprobe_XUCAPtestOKSINK_78627259;
-  output  dtfprobe_XUCAPtestOVERFLOW_78627259;
-  output  dtfprobe_XUCAPtestLOADREGISTER_78627259;
+  output  dftprobe_XUCAPtestTIME_78627259;
+  output  dftprobe_XUCAPtestCOUNT_78627259;
+  output  dftprobe_XUCAPtestEQUAL_78627259;
+  output  dftprobe_XUCAPtestSTART_78627259;
+  output  dftprobe_XUCAPtestOKSINK_78627259;
+  output  dftprobe_XUCAPtestOVERFLOW_78627259;
+  output  dftprobe_XUCAPtestLOADREGISTER_78627259;
 endmodule
 
 module CAPtestREGISTER (porb,CELG59462,CELV96848,PORB97836,meas_cap_0,meas_cap_1,meas_cap_2,meas_cap_3,meas_cap_4,meas_cap_5,meas_cap_6,meas_cap_7,meas_cap_8,meas_cap_9,CELSUB40948,TESTcount_0,TESTcount_1,TESTcount_2,TESTcount_3,TESTcount_4,TESTcount_5,TESTcount_6,TESTcount_7,TESTcount_8,TESTcount_9,enable_busy,meas_cap_10,meas_cap_11,meas_cap_12,meas_cap_13,meas_cap_14,meas_cap_15,TESTcount_10,TESTcount_11,TESTcount_12,TESTcount_13,TESTcount_14,TESTcount_15,clock_register,enable_captest,done_loadregister,load_captestregister);
@@ -220,7 +220,7 @@ module CAPtestREGISTER (porb,CELG59462,CELV96848,PORB97836,meas_cap_0,meas_cap_1
   input  load_captestregister;
 endmodule
 
-module CAPtestSEQUENCER_Rev3_DYES (porb,CELG59462,CELV96848,PORB97836,equal_test,state_test,CELSUB40948,state_count,done_captest,clock_captest,fault_captest,start_captest,state_measure,enable_captest,fault_overflow,ok_captestsink,done_loadcapstart,done_loadregister,enable_captestsink,overflow_testcount,load_captestregister,dtfprobe_XU57_fd942e00,dtfprobe_XU58_fd942e00,dtfprobe_XU59_fd942e00,dtfprobe_XU60_fd942e00,dtfprobe_XU61_fd942e00,dtfprobe_XU62_fd942e00,dtfprobe_XU63_fd942e00,dtfprobe_XU64_fd942e00);
+module CAPtestSEQUENCER_Rev3_DYES (porb,CELG59462,CELV96848,PORB97836,equal_test,state_test,CELSUB40948,state_count,done_captest,clock_captest,fault_captest,start_captest,state_measure,enable_captest,fault_overflow,ok_captestsink,done_loadcapstart,done_loadregister,enable_captestsink,overflow_testcount,load_captestregister,dftprobe_XU57_fd942e00,dftprobe_XU58_fd942e00,dftprobe_XU59_fd942e00,dftprobe_XU60_fd942e00,dftprobe_XU61_fd942e00,dftprobe_XU62_fd942e00,dftprobe_XU63_fd942e00,dftprobe_XU64_fd942e00);
   input  porb;
   input  CELG59462;
   input  CELV96848;
@@ -242,17 +242,17 @@ module CAPtestSEQUENCER_Rev3_DYES (porb,CELG59462,CELV96848,PORB97836,equal_test
   output  enable_captestsink;
   input  overflow_testcount;
   output  load_captestregister;
-  output  dtfprobe_XU57_fd942e00;
-  output  dtfprobe_XU58_fd942e00;
-  output  dtfprobe_XU59_fd942e00;
-  output  dtfprobe_XU60_fd942e00;
-  output  dtfprobe_XU61_fd942e00;
-  output  dtfprobe_XU62_fd942e00;
-  output  dtfprobe_XU63_fd942e00;
-  output  dtfprobe_XU64_fd942e00;
+  output  dftprobe_XU57_fd942e00;
+  output  dftprobe_XU58_fd942e00;
+  output  dftprobe_XU59_fd942e00;
+  output  dftprobe_XU60_fd942e00;
+  output  dftprobe_XU61_fd942e00;
+  output  dftprobe_XU62_fd942e00;
+  output  dftprobe_XU63_fd942e00;
+  output  dftprobe_XU64_fd942e00;
 endmodule
 
-module CAPtestSINK (CAP4,ITST,SIMPV,CELG59462,CELV96848,PORB97836,GNDcaptest,sense_ITST,CELSUB40948,IP_dc9fa791,kelvin_SIMPV,clock_captest,ok_captestsink,kelvin_GNDcaptest,enable_captestsink,dtfprobe_XUCAPtestREF_f9cb43a4,dtfprobe_XUCAPtestSTARTUP_f9cb43a4);
+module CAPtestSINK (CAP4,ITST,SIMPV,CELG59462,CELV96848,PORB97836,GNDcaptest,sense_ITST,CELSUB40948,IP_dc9fa791,kelvin_SIMPV,clock_captest,ok_captestsink,kelvin_GNDcaptest,enable_captestsink,dftprobe_XUCAPtestREF_f9cb43a4,dftprobe_XUCAPtestSTARTUP_f9cb43a4);
   inout  CAP4;
   inout  ITST;
   inout  SIMPV;
@@ -268,12 +268,12 @@ module CAPtestSINK (CAP4,ITST,SIMPV,CELG59462,CELV96848,PORB97836,GNDcaptest,sen
   output  ok_captestsink;
   inout  kelvin_GNDcaptest;
   input  enable_captestsink;
-  output  dtfprobe_XUCAPtestREF_f9cb43a4;
-  output  dtfprobe_XUCAPtestSTARTUP_f9cb43a4;
+  output  dftprobe_XUCAPtestREF_f9cb43a4;
+  output  dftprobe_XUCAPtestSTARTUP_f9cb43a4;
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module CAPtest (CAP4, ITST, porb, SIMPV, CELG59462, CELV96848, PORB97836, CAPcount_0, CAPcount_1, GNDcaptest, go_captest, meas_cap_0, meas_cap_1, meas_cap_2, meas_cap_3, meas_cap_4, meas_cap_5, meas_cap_6, meas_cap_7, meas_cap_8, meas_cap_9, sense_ITST, CELSUB40948, IP_dc9fa791, meas_cap_10, meas_cap_11, meas_cap_12, meas_cap_13, meas_cap_14, meas_cap_15, done_captest, kelvin_SIMPV, meas_vcap1_0, meas_vcap1_1, meas_vcap1_2, meas_vcap1_3, meas_vcap1_4, meas_vcap1_5, meas_vcap1_6, meas_vcap1_7, meas_vcap1_8, meas_vcap1_9, meas_vcap2_0, meas_vcap2_1, meas_vcap2_2, meas_vcap2_3, meas_vcap2_4, meas_vcap2_5, meas_vcap2_6, meas_vcap2_7, meas_vcap2_8, meas_vcap2_9, meas_vcap3_0, meas_vcap3_1, meas_vcap3_2, meas_vcap3_3, meas_vcap3_4, meas_vcap3_5, meas_vcap3_6, meas_vcap3_7, meas_vcap3_8, meas_vcap3_9, meas_vcap4_0, meas_vcap4_1, meas_vcap4_2, meas_vcap4_3, meas_vcap4_4, meas_vcap4_5, meas_vcap4_6, meas_vcap4_7, meas_vcap4_8, meas_vcap4_9, mon_cap_done, clock_captest, ctl_cap_scale, fault_captest, meas_vcap1_10, meas_vcap1_11, meas_vcap1_12, meas_vcap1_13, meas_vcap1_14, meas_vcap1_15, meas_vcap2_10, meas_vcap2_11, meas_vcap2_12, meas_vcap2_13, meas_vcap2_14, meas_vcap2_15, meas_vcap3_10, meas_vcap3_11, meas_vcap3_12, meas_vcap3_13, meas_vcap3_14, meas_vcap3_15, meas_vcap4_10, meas_vcap4_11, meas_vcap4_12, meas_vcap4_13, meas_vcap4_14, meas_vcap4_15, clock_divideRT, enable_captest, fault_overflow, request_clockRT, done_capcalculate, kelvin_GNDcaptest, dtfprobe_XU57_fd942e00, dtfprobe_XU58_fd942e00, dtfprobe_XU59_fd942e00, dtfprobe_XU60_fd942e00, dtfprobe_XU61_fd942e00, dtfprobe_XU62_fd942e00, dtfprobe_XU63_fd942e00, dtfprobe_XU64_fd942e00, dtfprobe_XUCAPtestREF_f9cb43a4, dtfprobe_XUCAPtestTIME_78627259, dtfprobe_XUCAPtestCOUNT_78627259, dtfprobe_XUCAPtestEQUAL_78627259, dtfprobe_XUCAPtestSTART_78627259, dtfprobe_XUCAPtestOKSINK_78627259, dtfprobe_XUCAPtestSTARTUP_f9cb43a4, dtfprobe_XUCAPtestOVERFLOW_78627259, dtfprobe_XUCAPtestLOADREGISTER_78627259);
+module CAPtest (CAP4, ITST, porb, SIMPV, CELG59462, CELV96848, PORB97836, CAPcount_0, CAPcount_1, GNDcaptest, go_captest, meas_cap_0, meas_cap_1, meas_cap_2, meas_cap_3, meas_cap_4, meas_cap_5, meas_cap_6, meas_cap_7, meas_cap_8, meas_cap_9, sense_ITST, CELSUB40948, IP_dc9fa791, meas_cap_10, meas_cap_11, meas_cap_12, meas_cap_13, meas_cap_14, meas_cap_15, done_captest, kelvin_SIMPV, meas_vcap1_0, meas_vcap1_1, meas_vcap1_2, meas_vcap1_3, meas_vcap1_4, meas_vcap1_5, meas_vcap1_6, meas_vcap1_7, meas_vcap1_8, meas_vcap1_9, meas_vcap2_0, meas_vcap2_1, meas_vcap2_2, meas_vcap2_3, meas_vcap2_4, meas_vcap2_5, meas_vcap2_6, meas_vcap2_7, meas_vcap2_8, meas_vcap2_9, meas_vcap3_0, meas_vcap3_1, meas_vcap3_2, meas_vcap3_3, meas_vcap3_4, meas_vcap3_5, meas_vcap3_6, meas_vcap3_7, meas_vcap3_8, meas_vcap3_9, meas_vcap4_0, meas_vcap4_1, meas_vcap4_2, meas_vcap4_3, meas_vcap4_4, meas_vcap4_5, meas_vcap4_6, meas_vcap4_7, meas_vcap4_8, meas_vcap4_9, mon_cap_done, clock_captest, ctl_cap_scale, fault_captest, meas_vcap1_10, meas_vcap1_11, meas_vcap1_12, meas_vcap1_13, meas_vcap1_14, meas_vcap1_15, meas_vcap2_10, meas_vcap2_11, meas_vcap2_12, meas_vcap2_13, meas_vcap2_14, meas_vcap2_15, meas_vcap3_10, meas_vcap3_11, meas_vcap3_12, meas_vcap3_13, meas_vcap3_14, meas_vcap3_15, meas_vcap4_10, meas_vcap4_11, meas_vcap4_12, meas_vcap4_13, meas_vcap4_14, meas_vcap4_15, clock_divideRT, enable_captest, fault_overflow, request_clockRT, done_capcalculate, kelvin_GNDcaptest, dftprobe_XU57_fd942e00, dftprobe_XU58_fd942e00, dftprobe_XU59_fd942e00, dftprobe_XU60_fd942e00, dftprobe_XU61_fd942e00, dftprobe_XU62_fd942e00, dftprobe_XU63_fd942e00, dftprobe_XU64_fd942e00, dftprobe_XUCAPtestREF_f9cb43a4, dftprobe_XUCAPtestTIME_78627259, dftprobe_XUCAPtestCOUNT_78627259, dftprobe_XUCAPtestEQUAL_78627259, dftprobe_XUCAPtestSTART_78627259, dftprobe_XUCAPtestOKSINK_78627259, dftprobe_XUCAPtestSTARTUP_f9cb43a4, dftprobe_XUCAPtestOVERFLOW_78627259, dftprobe_XUCAPtestLOADREGISTER_78627259);
 inout  CAP4;
 inout  ITST;
 input  porb;
@@ -380,23 +380,23 @@ output  fault_overflow;
 input  request_clockRT;
 input  done_capcalculate;
 inout  kelvin_GNDcaptest;
-output  dtfprobe_XU57_fd942e00;
-output  dtfprobe_XU58_fd942e00;
-output  dtfprobe_XU59_fd942e00;
-output  dtfprobe_XU60_fd942e00;
-output  dtfprobe_XU61_fd942e00;
-output  dtfprobe_XU62_fd942e00;
-output  dtfprobe_XU63_fd942e00;
-output  dtfprobe_XU64_fd942e00;
-output  dtfprobe_XUCAPtestREF_f9cb43a4;
-output  dtfprobe_XUCAPtestTIME_78627259;
-output  dtfprobe_XUCAPtestCOUNT_78627259;
-output  dtfprobe_XUCAPtestEQUAL_78627259;
-output  dtfprobe_XUCAPtestSTART_78627259;
-output  dtfprobe_XUCAPtestOKSINK_78627259;
-output  dtfprobe_XUCAPtestSTARTUP_f9cb43a4;
-output  dtfprobe_XUCAPtestOVERFLOW_78627259;
-output  dtfprobe_XUCAPtestLOADREGISTER_78627259;
+output  dftprobe_XU57_fd942e00;
+output  dftprobe_XU58_fd942e00;
+output  dftprobe_XU59_fd942e00;
+output  dftprobe_XU60_fd942e00;
+output  dftprobe_XU61_fd942e00;
+output  dftprobe_XU62_fd942e00;
+output  dftprobe_XU63_fd942e00;
+output  dftprobe_XU64_fd942e00;
+output  dftprobe_XUCAPtestREF_f9cb43a4;
+output  dftprobe_XUCAPtestTIME_78627259;
+output  dftprobe_XUCAPtestCOUNT_78627259;
+output  dftprobe_XUCAPtestEQUAL_78627259;
+output  dftprobe_XUCAPtestSTART_78627259;
+output  dftprobe_XUCAPtestOKSINK_78627259;
+output  dftprobe_XUCAPtestSTARTUP_f9cb43a4;
+output  dftprobe_XUCAPtestOVERFLOW_78627259;
+output  dftprobe_XUCAPtestLOADREGISTER_78627259;
 
 
 // ------------------------ Wires ------------------------
@@ -569,13 +569,13 @@ CAPtestDEBUG XDEBUG (
 .done_loadregister(net_253),
 .enable_captestsink(net_256),
 .overflow_testcount(net_259),
-.dtfprobe_XUCAPtestTIME_78627259(dtfprobe_XUCAPtestTIME_78627259),
-.dtfprobe_XUCAPtestCOUNT_78627259(dtfprobe_XUCAPtestCOUNT_78627259),
-.dtfprobe_XUCAPtestEQUAL_78627259(dtfprobe_XUCAPtestEQUAL_78627259),
-.dtfprobe_XUCAPtestSTART_78627259(dtfprobe_XUCAPtestSTART_78627259),
-.dtfprobe_XUCAPtestOKSINK_78627259(dtfprobe_XUCAPtestOKSINK_78627259),
-.dtfprobe_XUCAPtestOVERFLOW_78627259(dtfprobe_XUCAPtestOVERFLOW_78627259),
-.dtfprobe_XUCAPtestLOADREGISTER_78627259(dtfprobe_XUCAPtestLOADREGISTER_78627259)
+.dftprobe_XUCAPtestTIME_78627259(dftprobe_XUCAPtestTIME_78627259),
+.dftprobe_XUCAPtestCOUNT_78627259(dftprobe_XUCAPtestCOUNT_78627259),
+.dftprobe_XUCAPtestEQUAL_78627259(dftprobe_XUCAPtestEQUAL_78627259),
+.dftprobe_XUCAPtestSTART_78627259(dftprobe_XUCAPtestSTART_78627259),
+.dftprobe_XUCAPtestOKSINK_78627259(dftprobe_XUCAPtestOKSINK_78627259),
+.dftprobe_XUCAPtestOVERFLOW_78627259(dftprobe_XUCAPtestOVERFLOW_78627259),
+.dftprobe_XUCAPtestLOADREGISTER_78627259(dftprobe_XUCAPtestLOADREGISTER_78627259)
 );
 
 CAPtestREGISTER XREGISTER (
@@ -645,14 +645,14 @@ CAPtestSEQUENCER_Rev3_DYES XSEQUENCER (
 .enable_captestsink(net_256),
 .overflow_testcount(net_259),
 .load_captestregister(net_255),
-.dtfprobe_XU57_fd942e00(dtfprobe_XU57_fd942e00),
-.dtfprobe_XU58_fd942e00(dtfprobe_XU58_fd942e00),
-.dtfprobe_XU59_fd942e00(dtfprobe_XU59_fd942e00),
-.dtfprobe_XU60_fd942e00(dtfprobe_XU60_fd942e00),
-.dtfprobe_XU61_fd942e00(dtfprobe_XU61_fd942e00),
-.dtfprobe_XU62_fd942e00(dtfprobe_XU62_fd942e00),
-.dtfprobe_XU63_fd942e00(dtfprobe_XU63_fd942e00),
-.dtfprobe_XU64_fd942e00(dtfprobe_XU64_fd942e00)
+.dftprobe_XU57_fd942e00(dftprobe_XU57_fd942e00),
+.dftprobe_XU58_fd942e00(dftprobe_XU58_fd942e00),
+.dftprobe_XU59_fd942e00(dftprobe_XU59_fd942e00),
+.dftprobe_XU60_fd942e00(dftprobe_XU60_fd942e00),
+.dftprobe_XU61_fd942e00(dftprobe_XU61_fd942e00),
+.dftprobe_XU62_fd942e00(dftprobe_XU62_fd942e00),
+.dftprobe_XU63_fd942e00(dftprobe_XU63_fd942e00),
+.dftprobe_XU64_fd942e00(dftprobe_XU64_fd942e00)
 );
 
 CAPtestSINK XSINK (
@@ -671,8 +671,8 @@ CAPtestSINK XSINK (
 .ok_captestsink(net_260),
 .kelvin_GNDcaptest(kelvin_GNDcaptest),
 .enable_captestsink(net_256),
-.dtfprobe_XUCAPtestREF_f9cb43a4(dtfprobe_XUCAPtestREF_f9cb43a4),
-.dtfprobe_XUCAPtestSTARTUP_f9cb43a4(dtfprobe_XUCAPtestSTARTUP_f9cb43a4)
+.dftprobe_XUCAPtestREF_f9cb43a4(dftprobe_XUCAPtestREF_f9cb43a4),
+.dftprobe_XUCAPtestSTARTUP_f9cb43a4(dftprobe_XUCAPtestSTARTUP_f9cb43a4)
 );
 
 endmodule

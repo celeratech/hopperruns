@@ -28,7 +28,7 @@ module dftprobeModel0_948a78a0 ();
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module CAPtestSINKdebug (dft_REF, CELG59462, CELV96848, CELSUB40948, ok_captestsink, enable_captestsink, hijack_enable_captestsink, dtfprobe_XUCAPtestREF_f9cb43a4, dtfprobe_XUCAPtestSTARTUP_f9cb43a4);
+module CAPtestSINKdebug (dft_REF, CELG59462, CELV96848, CELSUB40948, ok_captestsink, enable_captestsink, hijack_enable_captestsink, dftprobe_XUCAPtestREF_f9cb43a4, dftprobe_XUCAPtestSTARTUP_f9cb43a4);
 input  dft_REF;
 input  CELG59462;
 input  CELV96848;
@@ -36,8 +36,8 @@ input  CELSUB40948;
 input  ok_captestsink;
 input  enable_captestsink;
 output  hijack_enable_captestsink;
-output  dtfprobe_XUCAPtestREF_f9cb43a4;
-output  dtfprobe_XUCAPtestSTARTUP_f9cb43a4;
+output  dftprobe_XUCAPtestREF_f9cb43a4;
+output  dftprobe_XUCAPtestSTARTUP_f9cb43a4;
 
 
 // ------------------------ Wires ------------------------
@@ -45,7 +45,7 @@ output  dtfprobe_XUCAPtestSTARTUP_f9cb43a4;
 // ------------------------ Networks ---------------------
 VESPAdftpulse XU15 (
 .stop(ok_captestsink),
-.pulse(dtfprobe_XUCAPtestSTARTUP_f9cb43a4),
+.pulse(dftprobe_XUCAPtestSTARTUP_f9cb43a4),
 .start(hijack_enable_captestsink),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
@@ -69,9 +69,9 @@ dftprobeModel0_948a78a0 XUCAPtestSTARTUP (
 
 );
 
-WRAPPER1 XWRAP_dft_REF_dtfprobe_XUCAPtestREF_f9cb43a4 (
+WRAPPER1 XWRAP_dft_REF_dftprobe_XUCAPtestREF_f9cb43a4 (
 .i(dft_REF),
-.o(dtfprobe_XUCAPtestREF_f9cb43a4)
+.o(dftprobe_XUCAPtestREF_f9cb43a4)
 );
 
 endmodule

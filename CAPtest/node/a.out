@@ -24,8 +24,8 @@ S_0x555555845d50 .scope module, "CAPtestSINK" "CAPtestSINK" 2 34;
     .port_info 12 /OUTPUT 1 "ok_captestsink";
     .port_info 13 /INOUT 1 "kelvin_GNDcaptest";
     .port_info 14 /INPUT 1 "enable_captestsink";
-    .port_info 15 /OUTPUT 1 "dtfprobe_XUCAPtestREF_f9cb43a4";
-    .port_info 16 /OUTPUT 1 "dtfprobe_XUCAPtestSTARTUP_f9cb43a4";
+    .port_info 15 /OUTPUT 1 "dftprobe_XUCAPtestREF_f9cb43a4";
+    .port_info 16 /OUTPUT 1 "dftprobe_XUCAPtestSTARTUP_f9cb43a4";
 o0x7fffff25f378 .functor BUFZ 1, C4<z>; HiZ drive
 v0x555555898950_0 .net "CAP4", 0 0, o0x7fffff25f378;  0 drivers
 o0x7fffff25f018 .functor BUFZ 1, C4<z>; HiZ drive
@@ -47,9 +47,9 @@ v0x555555898fc0_0 .net "SIMPV", 0 0, o0x7fffff25f468;  0 drivers
 o0x7fffff25f498 .functor BUFZ 1, C4<z>; HiZ drive
 v0x555555899090_0 .net "clock_captest", 0 0, o0x7fffff25f498;  0 drivers
 o0x7fffff25f0d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x555555899160_0 .net "dtfprobe_XUCAPtestREF_f9cb43a4", 0 0, o0x7fffff25f0d8;  0 drivers
+v0x555555899160_0 .net "dftprobe_XUCAPtestREF_f9cb43a4", 0 0, o0x7fffff25f0d8;  0 drivers
 o0x7fffff25f108 .functor BUFZ 1, C4<z>; HiZ drive
-v0x555555899230_0 .net "dtfprobe_XUCAPtestSTARTUP_f9cb43a4", 0 0, o0x7fffff25f108;  0 drivers
+v0x555555899230_0 .net "dftprobe_XUCAPtestSTARTUP_f9cb43a4", 0 0, o0x7fffff25f108;  0 drivers
 o0x7fffff25f138 .functor BUFZ 1, C4<z>; HiZ drive
 v0x555555899300_0 .net "enable_captestsink", 0 0, o0x7fffff25f138;  0 drivers
 o0x7fffff25f4c8 .functor BUFZ 1, C4<z>; HiZ drive
@@ -73,14 +73,14 @@ S_0x55555587eba0 .scope module, "XDEBUG" "CAPtestSINKdebug" 2 57, 2 2 0, S_0x555
     .port_info 4 /INPUT 1 "ok_captestsink";
     .port_info 5 /INPUT 1 "enable_captestsink";
     .port_info 6 /OUTPUT 1 "hijack_enable_captestsink";
-    .port_info 7 /OUTPUT 1 "dtfprobe_XUCAPtestREF_f9cb43a4";
-    .port_info 8 /OUTPUT 1 "dtfprobe_XUCAPtestSTARTUP_f9cb43a4";
+    .port_info 7 /OUTPUT 1 "dftprobe_XUCAPtestREF_f9cb43a4";
+    .port_info 8 /OUTPUT 1 "dftprobe_XUCAPtestSTARTUP_f9cb43a4";
 v0x5555558480f0_0 .net "CELG59462", 0 0, o0x7fffff25f018;  alias, 0 drivers
 v0x555555847ec0_0 .net "CELSUB40948", 0 0, o0x7fffff25f048;  alias, 0 drivers
 v0x5555558970c0_0 .net "CELV96848", 0 0, o0x7fffff25f078;  alias, 0 drivers
 v0x555555897160_0 .net "dft_REF", 0 0, o0x7fffff25f0a8;  alias, 0 drivers
-v0x555555897220_0 .net "dtfprobe_XUCAPtestREF_f9cb43a4", 0 0, o0x7fffff25f0d8;  alias, 0 drivers
-v0x555555897330_0 .net "dtfprobe_XUCAPtestSTARTUP_f9cb43a4", 0 0, o0x7fffff25f108;  alias, 0 drivers
+v0x555555897220_0 .net "dftprobe_XUCAPtestREF_f9cb43a4", 0 0, o0x7fffff25f0d8;  alias, 0 drivers
+v0x555555897330_0 .net "dftprobe_XUCAPtestSTARTUP_f9cb43a4", 0 0, o0x7fffff25f108;  alias, 0 drivers
 v0x5555558973f0_0 .net "enable_captestsink", 0 0, o0x7fffff25f138;  alias, 0 drivers
 v0x5555558974b0_0 .net "hijack_enable_captestsink", 0 0, o0x7fffff25f168;  alias, 0 drivers
 v0x555555897570_0 .net "ok_captestsink", 0 0, o0x7fffff25f198;  alias, 0 drivers

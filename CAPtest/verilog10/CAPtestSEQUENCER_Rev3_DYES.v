@@ -119,7 +119,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module CAPtestSEQUENCER_Rev3_DYES (porb, CELG59462, CELV96848, PORB97836, equal_test, state_test, CELSUB40948, state_count, done_captest, clock_captest, fault_captest, start_captest, state_measure, enable_captest, fault_overflow, ok_captestsink, done_loadcapstart, done_loadregister, enable_captestsink, overflow_testcount, load_captestregister, dtfprobe_XU57_fd942e00, dtfprobe_XU58_fd942e00, dtfprobe_XU59_fd942e00, dtfprobe_XU60_fd942e00, dtfprobe_XU61_fd942e00, dtfprobe_XU62_fd942e00, dtfprobe_XU63_fd942e00, dtfprobe_XU64_fd942e00);
+module CAPtestSEQUENCER_Rev3_DYES (porb, CELG59462, CELV96848, PORB97836, equal_test, state_test, CELSUB40948, state_count, done_captest, clock_captest, fault_captest, start_captest, state_measure, enable_captest, fault_overflow, ok_captestsink, done_loadcapstart, done_loadregister, enable_captestsink, overflow_testcount, load_captestregister, dftprobe_XU57_fd942e00, dftprobe_XU58_fd942e00, dftprobe_XU59_fd942e00, dftprobe_XU60_fd942e00, dftprobe_XU61_fd942e00, dftprobe_XU62_fd942e00, dftprobe_XU63_fd942e00, dftprobe_XU64_fd942e00);
 input  porb;
   input  CELG59462;
   input  CELV96848;
@@ -141,29 +141,29 @@ input  done_loadregister;
 output  enable_captestsink;
 input  overflow_testcount;
 output  load_captestregister;
-output  dtfprobe_XU57_fd942e00;
-output  dtfprobe_XU58_fd942e00;
-output  dtfprobe_XU59_fd942e00;
-output  dtfprobe_XU60_fd942e00;
-output  dtfprobe_XU61_fd942e00;
-output  dtfprobe_XU62_fd942e00;
-output  dtfprobe_XU63_fd942e00;
-output  dtfprobe_XU64_fd942e00;
+output  dftprobe_XU57_fd942e00;
+output  dftprobe_XU58_fd942e00;
+output  dftprobe_XU59_fd942e00;
+output  dftprobe_XU60_fd942e00;
+output  dftprobe_XU61_fd942e00;
+output  dftprobe_XU62_fd942e00;
+output  dftprobe_XU63_fd942e00;
+output  dftprobe_XU64_fd942e00;
 
 
 // ------------------------ Wires ------------------------
 
 // ------------------------ Networks ---------------------
 CAPtestSEQUENCER_Rev3_DYES_0 XMAIN (
-.OFF(dtfprobe_XU57_fd942e00),
-.DONE(dtfprobe_XU62_fd942e00),
-.LOAD(dtfprobe_XU64_fd942e00),
-.SINK(dtfprobe_XU59_fd942e00),
-.TEST(dtfprobe_XU60_fd942e00),
+.OFF(dftprobe_XU57_fd942e00),
+.DONE(dftprobe_XU62_fd942e00),
+.LOAD(dftprobe_XU64_fd942e00),
+.SINK(dftprobe_XU59_fd942e00),
+.TEST(dftprobe_XU60_fd942e00),
 .porb(porb),
-.FAULT(dtfprobe_XU61_fd942e00),
-.MEASURE(dtfprobe_XU58_fd942e00),
-.OVERFLOW(dtfprobe_XU63_fd942e00),
+.FAULT(dftprobe_XU61_fd942e00),
+.MEASURE(dftprobe_XU58_fd942e00),
+.OVERFLOW(dftprobe_XU63_fd942e00),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
