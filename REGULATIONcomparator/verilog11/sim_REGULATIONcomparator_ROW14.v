@@ -64,7 +64,7 @@ module REGULATIONcomparator (go,SIMPV,ICHARGE,VCsense,vc_comp,csi_comp,CELG59462
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module sim_REGULATIONcomparator_ROW6 ();
+module sim_REGULATIONcomparator_ROW14 ();
 
 
 // ------------------------ Wires ------------------------

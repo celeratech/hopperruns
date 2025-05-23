@@ -45,7 +45,7 @@ user,slopecomp_iosc,18.000
 description,Slopecomp Oscillator Current
 user,slopecomp_outputcurrent,0uA
 description,Slopecomp Output Current
-user,slopecomp_output,source
+user,slopecomp_output,sink
 description,Slopecomp Output Direction
 user,NESTO,0.3.9
 description,NESTO generate code
@@ -55,7 +55,7 @@ description,NESTO generate code
 //REGISTER Parameters
 //Celera Map Generator
 registermap,slopecomp
-register,instance,slopecomp_66dbd18b
+register,instance,slopecomp_2b490639
 register,source,cell
 
 register,name,na
@@ -79,7 +79,7 @@ register,busname,na
 //FACTORY Parameters
 //Celera Map Generator
 factorymap,slopecomp
-factory,instance,slopecomp_66dbd18b
+factory,instance,slopecomp_2b490639
 factory,source,cell
 
 factory,name,na
@@ -172,14 +172,11 @@ endlayoutbio
 revision,vis15cbdiesize,0p1
 sub_area,STONEnoconn,0
 sub_area,STONEslopecomp,10000
-sub_area,STONEslopecomppmos,10000
-sub_area,STONEslopecomppmos,10000
-sub_area,STONEslopecomppmos,10000
-sub_area,STONEslopecomppmos,10000
-sub_area,STONEslopecomppmos,10000
-sub_area,STONEslopecomppmos,10000
-sub_area,capacitorfixed_slopecomp_66dbd18b_Xslc,26485
-generate_area,slopecomp_66dbd18b,96485
+sub_area,STONEslopecompnmos,10000
+sub_area,STONEslopecompnmos,10000
+sub_area,STONEslopecompnmos0p5,10000
+sub_area,capacitorfixed_slopecomp_2b490639_Xslc,26485
+generate_area,slopecomp_2b490639,66485
 // *********************************************
 //Calculator Parameters
 #define,SIMPVminimum,2.5
@@ -208,7 +205,7 @@ endpinorder
 //**********************************************
 //TRIM Parameters
 cell,slopecomp
-trim,instance,slopecomp_66dbd18b
+trim,instance,slopecomp_2b490639
 
 trim,name,na
 trim,enable,no

@@ -1,6 +1,6 @@
 //Celera Brick Generator Confidential
 //CORE:slopecomp
-//NAME:slopecomp_66dbd18b
+//NAME:slopecomp_2b490639
 //GENERATOR REVISION:0.3.9
 //TYPE:linear
 //FREQUENCY:400KHz
@@ -8,15 +8,15 @@
 //DFT:no
 //VMAX:6V
 //ACCURACY:no
-//OUTPUT DIRECTION:source
-//OUTPUT CURRENT:6uA
+//OUTPUT DIRECTION:sink
+//OUTPUT CURRENT:2.5uA
 
-//Celera Confidential Do Not Copy capacitorfixed_slopecomp_66dbd18b_Xslc.v
-//Celera:capacitorfixed_slopecomp_66dbd18b_Xslc
+//Celera Confidential Do Not Copy capacitorfixed_slopecomp_2b490639_Xslc.v
+//Celera:capacitorfixed_slopecomp_2b490639_Xslc
 //Celera Confidential Symbol Generator
 //CAPACITOR CONTROL:capacitor
 //VALUE: 45.00pF TYPE:mim
-module capacitorfixed_slopecomp_66dbd18b_Xslc (CP,
+module capacitorfixed_slopecomp_2b490639_Xslc (CP,
 CN);
 inout CP;
 inout CN;
@@ -48,16 +48,30 @@ ten, ten_slopecomp, ok_slopecomp, a0, PGATE, clock, slopecompcap, NGATE, IOSC
   input CELG;
 endmodule
 
-//Celera Confidential Do Not Copy STONEslopecomppmos
-//Verilog HDL for "Generate", "STONEslopecomppmos" "functional"
+//Celera Confidential Do Not Copy STONEslopecompnmos
+//Verilog HDL for "Generate", "STONEslopecompnmos" "functional"
 
 
-module STONEslopecomppmos ( CELV, PGATE, CELSUB, ISLOPECOMP );
+module STONEslopecompnmos ( CELV, NGATE, CELSUB, ISLOPECOMP, CELG );
 
   input CELV;
   input CELSUB;
   inout ISLOPECOMP;
-  input PGATE;
+  input CELG;
+  input NGATE;
+endmodule
+
+//Celera Confidential Do Not Copy STONEslopecompnmos0p5
+//Verilog HDL for "Generate", "STONEslopecompnmos0p5" "functional"
+
+
+module STONEslopecompnmos0p5 ( ISLOPECOMP, CELG, CELSUB, CELV, NGATE );
+
+  input CELV;
+  input CELSUB;
+  inout ISLOPECOMP;
+  input NGATE;
+  input CELG;
 endmodule
 
 //Celera Confidential Do Not Copy STONEnoconn
@@ -69,11 +83,11 @@ module STONEnoconn ( noconn );
   input noconn;
 endmodule
 
-//Celera Confidential Do Not Copy slopecomp_66dbd18b
+//Celera Confidential Do Not Copy slopecomp_2b490639
 //Celera Confidential Symbol Generator
 //SLOPECOMPlinear with frequency of 400 KHz and oscillator current of 18.000uA
-//Output direction source with output current 6uA and DFT no
-module slopecomp_66dbd18b (SIMPV,enable_slopecomp,global_slopecomp,IP,clock,IOSC,
+//Output direction sink with output current 2.5uA and DFT no
+module slopecomp_2b490639 (SIMPV,enable_slopecomp,global_slopecomp,IP,clock,IOSC,
 ok_slopecomp,ISLOPECOMP,
 CELG,CELSUB);
 input SIMPV;
@@ -93,7 +107,7 @@ wire[3:0] slopecomptrim;
 //Celera Confidential Do Not Copy STONEnoconn
 STONEnoconn Xnoconn0(
 .noconn (
-NOCONN_NGATE)
+NOCONN_PGATE)
 );
 //,diesize,STONEnoconn
 //Celera Confidential Do Not Copy STONEslopecomp
@@ -109,67 +123,46 @@ STONEslopecomp Xslopecomp(
 .IOSC (IOSC),
 .clock (clock),
 .IP (IP),
-.PGATE (PGATE),
+.PGATE (NOCONN_PGATE),
 .ten_slopecomp (a0),
 .CELG (CELG),
-.NGATE (NOCONN_NGATE)
+.NGATE (NGATE)
 );
 //,diesize,STONEslopecomp
 
-//Celera Confidential Do Not Copy STONEslopecomppmos
-STONEslopecomppmos Xpmos1_0(
+//Celera Confidential Do Not Copy STONEslopecompnmos
+STONEslopecompnmos Xnmos1_0(
 .CELV (SIMPV),
 .CELSUB (CELSUB),
 .ISLOPECOMP (ISLOPECOMP),
-.PGATE (PGATE)
+.NGATE (NGATE),
+.CELG (CELG)
 );
-//,diesize,STONEslopecomppmos
-//Celera Confidential Do Not Copy STONEslopecomppmos
-STONEslopecomppmos Xpmos1_1(
+//,diesize,STONEslopecompnmos
+//Celera Confidential Do Not Copy STONEslopecompnmos
+STONEslopecompnmos Xnmos1_1(
 .CELV (SIMPV),
 .CELSUB (CELSUB),
 .ISLOPECOMP (ISLOPECOMP),
-.PGATE (PGATE)
+.NGATE (NGATE),
+.CELG (CELG)
 );
-//,diesize,STONEslopecomppmos
-//Celera Confidential Do Not Copy STONEslopecomppmos
-STONEslopecomppmos Xpmos1_2(
+//,diesize,STONEslopecompnmos
+//Celera Confidential Do Not Copy STONEslopecompnmos0p5
+STONEslopecompnmos0p5 Xnmos0p5_0(
 .CELV (SIMPV),
 .CELSUB (CELSUB),
 .ISLOPECOMP (ISLOPECOMP),
-.PGATE (PGATE)
+.NGATE (NGATE),
+.CELG (CELG)
 );
-//,diesize,STONEslopecomppmos
-//Celera Confidential Do Not Copy STONEslopecomppmos
-STONEslopecomppmos Xpmos1_3(
-.CELV (SIMPV),
-.CELSUB (CELSUB),
-.ISLOPECOMP (ISLOPECOMP),
-.PGATE (PGATE)
-);
-//,diesize,STONEslopecomppmos
-//Celera Confidential Do Not Copy STONEslopecomppmos
-STONEslopecomppmos Xpmos1_4(
-.CELV (SIMPV),
-.CELSUB (CELSUB),
-.ISLOPECOMP (ISLOPECOMP),
-.PGATE (PGATE)
-);
-//,diesize,STONEslopecomppmos
-//Celera Confidential Do Not Copy STONEslopecomppmos
-STONEslopecomppmos Xpmos1_5(
-.CELV (SIMPV),
-.CELSUB (CELSUB),
-.ISLOPECOMP (ISLOPECOMP),
-.PGATE (PGATE)
-);
-//,diesize,STONEslopecomppmos
-//Celera Confidential Do Not Copy capacitorfixed_slopecomp_66dbd18b_Xslc
-capacitorfixed_slopecomp_66dbd18b_Xslc Xslc0(
+//,diesize,STONEslopecompnmos0p5
+//Celera Confidential Do Not Copy capacitorfixed_slopecomp_2b490639_Xslc
+capacitorfixed_slopecomp_2b490639_Xslc Xslc0(
 .CP (slopecompcap),
 .CN (CELG)
 );
-//,diesize,capacitorfixed_slopecomp_66dbd18b_Xslc
+//,diesize,capacitorfixed_slopecomp_2b490639_Xslc
 
 //Celera Confidential Do Not Copy Module End
 //Celera Schematic Generator

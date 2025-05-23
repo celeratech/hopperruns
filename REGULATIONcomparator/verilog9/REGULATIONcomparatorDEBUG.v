@@ -18,22 +18,22 @@ module WRAPPER1 ( o, i );
 endmodule
 
 
-module dftprobeModel1_c3324d70 ();
+module dftprobeModel0_9d59defd ();
 endmodule
 
-module dftprobeModel1_6f8879f6 ();
+module dftprobeModel0_115b5b7d ();
 endmodule
 
-module dftprobeModel1_d6c9fea5 ();
+module dftprobeModel0_90f6e641 ();
 endmodule
 
-module dftprobeModel1_a9705d83 ();
+module dftprobeModel0_244016ff ();
 endmodule
 
 module dftprobeModel1_59401bc5 ();
 endmodule
 
-module dftprobeModel1_04510cb0 ();
+module dftprobeModel0_a5554419 ();
 endmodule
 
 // ------------------------ Module Verilog ---------------
@@ -72,19 +72,19 @@ WRAPPER1 XWRAP_31_32 (
 .o(hijack_enable_regulation)
 );
 
-dftprobeModel1_c3324d70 XUREGULATIONcomparatorOK (
+dftprobeModel0_9d59defd XUREGULATIONcomparatorOK (
 
 );
 
-dftprobeModel1_6f8879f6 XUREGULATIONcomparatorVC (
+dftprobeModel0_115b5b7d XUREGULATIONcomparatorVC (
 
 );
 
-dftprobeModel1_d6c9fea5 XUREGULATIONcomparatorCSI (
+dftprobeModel0_90f6e641 XUREGULATIONcomparatorCSI (
 
 );
 
-dftprobeModel1_a9705d83 XUREGULATIONcomparatorMAXIMUM (
+dftprobeModel0_244016ff XUREGULATIONcomparatorMAXIMUM (
 
 );
 
@@ -92,7 +92,7 @@ dftprobeModel1_59401bc5 XUREGULATIONcomparatorMINIMUM (
 
 );
 
-dftprobeModel1_04510cb0 XUREGULATIONcomparatorSTARTUP (
+dftprobeModel0_a5554419 XUREGULATIONcomparatorSTARTUP (
 
 );
 

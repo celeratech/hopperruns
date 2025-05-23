@@ -81,7 +81,7 @@ module vdc_0(PLUS, MINUS);
 endmodule
 
 
-module vpwl_e7eed145_0x0_11d0ux0_11d002ux0d528 (PLUS,MINUS);
+module vpwl_ec6da2cf_0x0_9d998ux0_10d0ux250m_500d0ux50m (PLUS,MINUS);
   output  PLUS;
   input  MINUS;
 endmodule
@@ -304,12 +304,12 @@ SIMbias XIP_e5165d59 (
 
 vpulse_0x5d0x2d0ux10ux1nx1nx1d0u XV2_6a9b28f9 (
 .PLUS(net_146),
-.MINUS(net_0)
+.MINUS(net_102)
 );
 
 vpwl_98268c1a_0x0_11d0ux0_11d002ux5d0 V_gox_b1e78810 (
 .PLUS(net_149),
-.MINUS(net_0)
+.MINUS(net_102)
 );
 
 vpwlgnd_d65ae13a_0x0_10ux0_11ux0 V_GNDx_7e00ad2f (
@@ -332,7 +332,7 @@ vdc_0 VI__SIMPV_8996dd62 (
 .MINUS(SIMPV)
 );
 
-vpwl_e7eed145_0x0_11d0ux0_11d002ux0d528 V_ICHARGEx_04393163 (
+vpwl_ec6da2cf_0x0_9d998ux0_10d0ux250m_500d0ux50m V_ICHARGEx_bef3772f (
 .PLUS(net_98),
 .MINUS(net_102)
 );
@@ -384,17 +384,17 @@ vdc_0 VI__REF_CHARGER_9ad96194 (
 
 vpwl_8e00d9ba_0x0_11d0ux0_11d002ux5d0 V_mode_stepdownx_5f13b6fd (
 .PLUS(net_147),
-.MINUS(net_0)
+.MINUS(net_102)
 );
 
 vpwl_5461efdf_0x0_11d0ux0_11d002ux0 V_disable_slopecompx_8e87e609 (
 .PLUS(net_148),
-.MINUS(net_0)
+.MINUS(net_102)
 );
 
 vpwl_78776767_0x0_11d0ux0_11d002ux5d0 V_enable_regulationx_3f3e03b0 (
 .PLUS(net_150),
-.MINUS(net_0)
+.MINUS(net_102)
 );
 
 vpwl_fe22e2b6_0x0_11d0ux0_11d002ux0 V_kelvin_GNDregulationx_06e1eae6 (

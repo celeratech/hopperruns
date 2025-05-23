@@ -1,6 +1,6 @@
 // Celera Brick Generator Confidential
 //CORE:capacitorfixed
-//NAME:capacitorfixed_slopecomp_66dbd18b_Xslc
+//NAME:capacitorfixed_slopecomp_2b490639_Xslc
 //GENERATOR REVISION:0.3.4
 //VALUE:45.00Kohms
 //Initial Voltage:1V
@@ -17,11 +17,11 @@ inout CP;
 inout CN;
 endmodule
 
-//Celera Confidential Do Not Copy capacitorfixed_slopecomp_66dbd18b_Xslc
+//Celera Confidential Do Not Copy capacitorfixed_slopecomp_2b490639_Xslc
 //Celera Confidential Symbol Generator
 //CAPACITOR CONTROL:capacitor
 //VALUE: 45.00pF TYPE:mim
-module capacitorfixed_slopecomp_66dbd18b_Xslc (CP,
+module capacitorfixed_slopecomp_2b490639_Xslc (CP,
 CN);
 inout CP;
 inout CN;

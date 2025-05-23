@@ -2,7 +2,7 @@
 *#SIMETRIX
 X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
  
-*BrickToolsVersion:0.136  projname:REGULATIONcomparator
+*BrickToolsVersion:0.129  projname:REGULATIONcomparator
 .node_map SIMPV 32
 .node_map ICHARGEmin$0 30
 .node_map ICHARGEmin$1 31
@@ -26,7 +26,7 @@ X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
 + MIN_AVG_TOPOLOGY_DUR=1a
 + AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
 *.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
-.tran 100.0u  0
+.tran 0.55m  0
 .globalvar REF=1.2
 .globalvar TEMP=25
 .globalvar VIN=5
@@ -131,12 +131,12 @@ X$pinprobe6 30 pinprobe vars: pinprobe_description='Regulation_comparator_enable
 X$pinprobe7 31 pinprobe vars: pinprobe_description='Regulation_comparator_enable' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
 X$U1 32 30 25 VESPAdftpulse
 X$U2 24 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='text' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
-X$UREGULATIONcomparatorCSI 27 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONcomparatorCSI' dftprobe_description='Measure_CSI_comparator' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
-X$UREGULATIONcomparatorMAXIMUM 29 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONcomparatorMAXIMUM' dftprobe_description='Measure_ICHARGE_maximum_comparator' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UREGULATIONcomparatorCSI 27 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONcomparatorCSI' dftprobe_description='Measure_CSI_comparator' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UREGULATIONcomparatorMAXIMUM 29 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONcomparatorMAXIMUM' dftprobe_description='Measure_ICHARGE_maximum_comparator' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
 X$UREGULATIONcomparatorMINIMUM 28 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONcomparatorMINIMUM' dftprobe_description='Measure_ICHARGE_minimum_comparator' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
-X$UREGULATIONcomparatorOK 30 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONcomparatorOK' dftprobe_description='Measure_Comparator_ok' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
-X$UREGULATIONcomparatorSTARTUP 25 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONcomparatorSTARTUP' dftprobe_description='Measure_Comparator_startup_time' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
-X$UREGULATIONcomparatorVC 26 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONcomparatorVC' dftprobe_description='Measure_VC_minimum_comparator' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UREGULATIONcomparatorOK 30 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONcomparatorOK' dftprobe_description='Measure_Comparator_ok' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UREGULATIONcomparatorSTARTUP 25 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONcomparatorSTARTUP' dftprobe_description='Measure_Comparator_startup_time' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
+X$UREGULATIONcomparatorVC 26 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='REGULATIONcomparatorVC' dftprobe_description='Measure_VC_minimum_comparator' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
 .ends REGULATIONcomparatorDEBUG
 
 ** From Z:\celera\simplis\LIB\VESPA\VESPAdftpulse.sxcmp
@@ -222,12 +222,6 @@ X$pinprobe6 123 pinprobe vars: pinprobe_description='Regulation_comparator_enabl
 X$pinprobe7 126 pinprobe vars: pinprobe_description='CLOCK_reference_current' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
 X$pinprobe8 129 pinprobe vars: pinprobe_description='REGULATION_kelvin_ground' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd' pinprobe_bits=1
 X$pinprobe9 118 pinprobe vars: pinprobe_description='REGULATION_enabled_and_ready' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
-.PRINT I(X$CURRENT#SIMPV)
-.GRAPH CURRENT#SIMPV curveLabel="I(CURRENT-SIMPV)" nowarn=true complete=true analysis=tran|pop disabled=false 
-.PRINT I(X$MINIMUM#SIMPV)
-.GRAPH MINIMUM#SIMPV curveLabel="I(MINIMUM-SIMPV)" nowarn=true complete=true analysis=tran|pop disabled=false 
-.PRINT I(X$MAXIMUM#SIMPV)
-.GRAPH MAXIMUM#SIMPV curveLabel="I(MAXIMUM-SIMPV)" nowarn=true complete=true analysis=tran|pop disabled=false 
 X$switch1 116 131 117 switchgnd vars: switch_type='gnd' switch_polarity='noninvert' switch_model='celera' switch_ron=500 switch_pulldownvmax=6 switch_vmax=6
 X$U1 115 pinprobe vars: pinprobe_description='Low_voltage_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
 X$U10 125 138 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
@@ -284,7 +278,7 @@ X$pinprobe7 85 pinprobe vars: pinprobe_description='CLOCK_reference_current' pin
 X$pinprobe8 87 pinprobe vars: pinprobe_description='REGULATION_kelvin_ground' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd' pinprobe_bits=1
 X$pinprobe9 80 pinprobe vars: pinprobe_description='REGULATION_enabled_and_ready' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
 X$resistor1 87 89 71 72 73 75 76 77 resistor vars: resistor_control='resistor' resistor_datasheet_accuracy_name='text' resistor_datasheet_accuracy_description='text' resistor_adjust_control='factory' resistor_datasheet_adjust_name='text' resistor_datasheet_adjust_description='text' resistor_kelvin='no' resistor_type='tbd' resistor_dft='no' resistor_value=95 resistor_accurate_value=10 resistor_accurate_lsb=1 resistor_adjust0=0 resistor_adjust1=0 resistor_adjust2=0 resistor_adjust3=0 resistor_adjust4=0 resistor_adjust5=0 resistor_adjust6=0 resistor_adjust7=0 resistor_adjust_por=0 resistor_1=0 resistor_0=0 resistor_vmax=6 resistor_maximumvoltage=6 resistor_imax=1m
-X$slopecomp1 82 89 98 85 78 96 slopecomp vars: slopecomp_type='linear' slopecomp_output='source' slopecomp_accuracy='no' slopecomp_trim_name='text' slopecomp_trim_description='text' slopecomp_dft='no' slopecomp_freq=400 slopecomp_iosc=18 slopecomp_outputcurrent=6 slopecomp_vmax=6
+X$slopecomp1 82 89 98 85 78 96 slopecomp vars: slopecomp_type='linear' slopecomp_output='sink' slopecomp_accuracy='no' slopecomp_trim_name='text' slopecomp_trim_description='text' slopecomp_dft='no' slopecomp_freq=400 slopecomp_iosc=18 slopecomp_outputcurrent=2.5 slopecomp_vmax=6
 X$switch1 74 89 82 switchpulldown vars: switch_type='pulldown' switch_polarity='invert' switch_model='celera' switch_ron=1K switch_pulldownvmax=6 switch_vmax=6
 X$U1 78 pinprobe vars: pinprobe_description='Low_voltage_input_supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
 X$U10 98 94 97 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
@@ -296,7 +290,7 @@ X$U4 88 95 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
 X$U5 91 95 92 VESPAasmINPUT1
 X$U6 79 pinprobe vars: pinprobe_description='enable_charge_clock' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd'
 X$U7 99 98 79 VESPAasmINPUT1
-X$U8 90 93 91 94 79 VESPAasmINPUT3
+X$U8 90 93 91 94 80 VESPAasmINPUT3
 X$U9 96 97 inv vars: logicgate_type='inv' logicgate_vmax=6
 X$v2i1 84 79 89 78 93 voltage2current vars: voltage2current_direction='source' voltage2current_iout_clamp='no' voltage2current_dft='no' voltage2current_accuracy='no' voltage2current_trim_name='text' voltage2current_trim_description='text' voltage2current_gain='24' voltage2current_iout=200 voltage2current_vmax=6
 .ends REGULATIONcomparatorCURRENT

@@ -116,11 +116,11 @@ endmodule
 
 
 
-//Celera:slopecomp_66dbd18b
+//Celera:slopecomp_2b490639
 //Celera Confidential Symbol Generator
 //SLOPECOMPlinear with frequency of 400 KHz and oscillator current of 18.000uA
-//Output direction source with output current 6uA and DFT no
-module slopecomp_66dbd18b (SIMPV,enable_slopecomp,global_slopecomp,IP,clock,IOSC,
+//Output direction sink with output current 2.5uA and DFT no
+module slopecomp_2b490639 (SIMPV,enable_slopecomp,global_slopecomp,IP,clock,IOSC,
 ok_slopecomp,ISLOPECOMP,
 CELG,CELSUB);
 input SIMPV;
@@ -163,7 +163,7 @@ module REGULATIONcomparatorCURRENT (SIMPV, ICHARGE, VCsense, goDELAY, csi_comp, 
 input  SIMPV;
 input  ICHARGE;
 input  VCsense;
-  input  goDELAY;
+input  goDELAY;
 output  csi_comp;
   input  CELG59462;
   input  CELV96848;
@@ -205,7 +205,7 @@ VESPAasmINPUT3 XU8 (
 .i0(net_90),
 .i1(net_93),
 .i2(net_94),
-.Tstate(enable_regulation),
+.Tstate(goDELAY),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
@@ -285,7 +285,7 @@ resistor_6fc4456b Xresistor1 (
 .CELG(CELG59462)
 );
 
-slopecomp_66dbd18b Xslopecomp1 (
+slopecomp_2b490639 Xslopecomp1 (
 .IP(IP_2699b594),
 .CELG(CELG59462),
 .IOSC(ISLOPECOMP),
