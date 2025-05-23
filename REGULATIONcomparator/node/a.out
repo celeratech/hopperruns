@@ -1,0 +1,212 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x555555847f60 .scope module, "REGULATIONcomparator" "REGULATIONcomparator" 2 53;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "go";
+    .port_info 1 /INPUT 1 "SIMPV";
+    .port_info 2 /INPUT 1 "ICHARGE";
+    .port_info 3 /INPUT 1 "VCsense";
+    .port_info 4 /OUTPUT 1 "vc_comp";
+    .port_info 5 /OUTPUT 1 "csi_comp";
+    .port_info 6 /INPUT 1 "CELG59462";
+    .port_info 7 /INPUT 1 "CELV96848";
+    .port_info 8 /INPUT 1 "on_status";
+    .port_info 9 /INPUT 1 "ISLOPECOMP";
+    .port_info 10 /INPUT 1 "CELSUB40948";
+    .port_info 11 /INPUT 1 "IP_055890c2";
+    .port_info 12 /INPUT 1 "IP_2699b594";
+    .port_info 13 /INPUT 1 "IP_3cdc2f93";
+    .port_info 14 /INPUT 1 "IP_4acf71b9";
+    .port_info 15 /INPUT 1 "IP_80eb90bd";
+    .port_info 16 /INPUT 1 "IP_91b63f69";
+    .port_info 17 /INPUT 1 "IP_a077fd8e";
+    .port_info 18 /INPUT 1 "IP_e5165d59";
+    .port_info 19 /INPUT 1 "REF_CHARGER";
+    .port_info 20 /OUTPUT 1 "csi_maximum";
+    .port_info 21 /OUTPUT 1 "csi_minimum";
+    .port_info 22 /INPUT 1 "ICHARGEmin_0";
+    .port_info 23 /INPUT 1 "ICHARGEmin_1";
+    .port_info 24 /INPUT 1 "mode_stepdown";
+    .port_info 25 /OUTPUT 1 "ok_comparator";
+    .port_info 26 /INPUT 1 "disable_slopecomp";
+    .port_info 27 /INPUT 1 "enable_regulation";
+    .port_info 28 /INOUT 1 "kelvin_GNDregulation";
+    .port_info 29 /OUTPUT 1 "dftprobe_XUREGULATIONcomparatorVC_fc622aa9";
+    .port_info 30 /OUTPUT 1 "dftprobe_XUREGULATIONcomparatorCSI_fc622aa9";
+    .port_info 31 /OUTPUT 1 "dftprobe_XUREGULATIONcomparatorMAXIMUM_fc622aa9";
+    .port_info 32 /OUTPUT 1 "dftprobe_XUREGULATIONcomparatorMINIMUM_fc622aa9";
+    .port_info 33 /OUTPUT 1 "dftprobe_XUREGULATIONcomparatorSTARTUP_fc622aa9";
+o0x7fffff25f018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a38c0_0 .net "CELG59462", 0 0, o0x7fffff25f018;  0 drivers
+o0x7fffff25f048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a3980_0 .net "CELSUB40948", 0 0, o0x7fffff25f048;  0 drivers
+o0x7fffff25f078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a3a90_0 .net "CELV96848", 0 0, o0x7fffff25f078;  0 drivers
+o0x7fffff25f5b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a3b80_0 .net "ICHARGE", 0 0, o0x7fffff25f5b8;  0 drivers
+o0x7fffff25f5e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a3c20_0 .net "ICHARGEmin_0", 0 0, o0x7fffff25f5e8;  0 drivers
+o0x7fffff25f618 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a3d10_0 .net "ICHARGEmin_1", 0 0, o0x7fffff25f618;  0 drivers
+o0x7fffff25f648 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a3db0_0 .net "IP_055890c2", 0 0, o0x7fffff25f648;  0 drivers
+o0x7fffff25f678 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a3e80_0 .net "IP_2699b594", 0 0, o0x7fffff25f678;  0 drivers
+o0x7fffff25f6a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a3f50_0 .net "IP_3cdc2f93", 0 0, o0x7fffff25f6a8;  0 drivers
+o0x7fffff25f6d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a4020_0 .net "IP_4acf71b9", 0 0, o0x7fffff25f6d8;  0 drivers
+o0x7fffff25f708 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a40f0_0 .net "IP_80eb90bd", 0 0, o0x7fffff25f708;  0 drivers
+o0x7fffff25f738 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a41c0_0 .net "IP_91b63f69", 0 0, o0x7fffff25f738;  0 drivers
+o0x7fffff25f768 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a4290_0 .net "IP_a077fd8e", 0 0, o0x7fffff25f768;  0 drivers
+o0x7fffff25f798 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a4360_0 .net "IP_e5165d59", 0 0, o0x7fffff25f798;  0 drivers
+o0x7fffff25f7c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a4430_0 .net "ISLOPECOMP", 0 0, o0x7fffff25f7c8;  0 drivers
+o0x7fffff25f7f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a4500_0 .net "REF_CHARGER", 0 0, o0x7fffff25f7f8;  0 drivers
+o0x7fffff25f828 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a45d0_0 .net "SIMPV", 0 0, o0x7fffff25f828;  0 drivers
+o0x7fffff25f858 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a47b0_0 .net "VCsense", 0 0, o0x7fffff25f858;  0 drivers
+o0x7fffff25f0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a4880_0 .net "csi_comp", 0 0, o0x7fffff25f0a8;  0 drivers
+o0x7fffff25f0d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a4920_0 .net "csi_maximum", 0 0, o0x7fffff25f0d8;  0 drivers
+o0x7fffff25f108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a4a10_0 .net "csi_minimum", 0 0, o0x7fffff25f108;  0 drivers
+o0x7fffff25f138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a4b00_0 .net "dftprobe_XUREGULATIONcomparatorCSI_fc622aa9", 0 0, o0x7fffff25f138;  0 drivers
+o0x7fffff25f168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a4ba0_0 .net "dftprobe_XUREGULATIONcomparatorMAXIMUM_fc622aa9", 0 0, o0x7fffff25f168;  0 drivers
+o0x7fffff25f198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a4c40_0 .net "dftprobe_XUREGULATIONcomparatorMINIMUM_fc622aa9", 0 0, o0x7fffff25f198;  0 drivers
+o0x7fffff25f1c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a4ce0_0 .net "dftprobe_XUREGULATIONcomparatorSTARTUP_fc622aa9", 0 0, o0x7fffff25f1c8;  0 drivers
+o0x7fffff25f1f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a4db0_0 .net "dftprobe_XUREGULATIONcomparatorVC_fc622aa9", 0 0, o0x7fffff25f1f8;  0 drivers
+o0x7fffff25f888 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a4e80_0 .net "disable_slopecomp", 0 0, o0x7fffff25f888;  0 drivers
+o0x7fffff25f228 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a4f50_0 .net "enable_regulation", 0 0, o0x7fffff25f228;  0 drivers
+o0x7fffff25f8b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a5020_0 .net "go", 0 0, o0x7fffff25f8b8;  0 drivers
+o0x7fffff25f8e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a50f0_0 .net "kelvin_GNDregulation", 0 0, o0x7fffff25f8e8;  0 drivers
+o0x7fffff25f918 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a51c0_0 .net "mode_stepdown", 0 0, o0x7fffff25f918;  0 drivers
+o0x7fffff25f258 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a5290_0 .net "net_90", 0 0, o0x7fffff25f258;  0 drivers
+o0x7fffff25f288 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a5380_0 .net "ok_comparator", 0 0, o0x7fffff25f288;  0 drivers
+o0x7fffff25f948 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a5680_0 .net "on_status", 0 0, o0x7fffff25f948;  0 drivers
+o0x7fffff25f2b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a5720_0 .net "vc_comp", 0 0, o0x7fffff25f2b8;  0 drivers
+S_0x55555587f9f0 .scope module, "XDEBUG" "REGULATIONcomparatorDEBUG" 2 93, 2 2 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "vc_comp";
+    .port_info 1 /INPUT 1 "csi_comp";
+    .port_info 2 /INPUT 1 "CELG59462";
+    .port_info 3 /INPUT 1 "CELV96848";
+    .port_info 4 /INPUT 1 "CELSUB40948";
+    .port_info 5 /INPUT 1 "csi_maximum";
+    .port_info 6 /INPUT 1 "csi_minimum";
+    .port_info 7 /INPUT 1 "ok_comparator";
+    .port_info 8 /INPUT 1 "enable_regulation";
+    .port_info 9 /OUTPUT 1 "hijack_enable_regulation";
+    .port_info 10 /OUTPUT 1 "dftprobe_XUREGULATIONcomparatorVC_fc622aa9";
+    .port_info 11 /OUTPUT 1 "dftprobe_XUREGULATIONcomparatorCSI_fc622aa9";
+    .port_info 12 /OUTPUT 1 "dftprobe_XUREGULATIONcomparatorMAXIMUM_fc622aa9";
+    .port_info 13 /OUTPUT 1 "dftprobe_XUREGULATIONcomparatorMINIMUM_fc622aa9";
+    .port_info 14 /OUTPUT 1 "dftprobe_XUREGULATIONcomparatorSTARTUP_fc622aa9";
+v0x5555558474b0_0 .net "CELG59462", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x5555558480f0_0 .net "CELSUB40948", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x555555847ec0_0 .net "CELV96848", 0 0, o0x7fffff25f078;  alias, 0 drivers
+v0x5555558a0eb0_0 .net "csi_comp", 0 0, o0x7fffff25f0a8;  alias, 0 drivers
+v0x5555558a0f70_0 .net "csi_maximum", 0 0, o0x7fffff25f0d8;  alias, 0 drivers
+v0x5555558a1080_0 .net "csi_minimum", 0 0, o0x7fffff25f108;  alias, 0 drivers
+v0x5555558a1140_0 .net "dftprobe_XUREGULATIONcomparatorCSI_fc622aa9", 0 0, o0x7fffff25f138;  alias, 0 drivers
+v0x5555558a1200_0 .net "dftprobe_XUREGULATIONcomparatorMAXIMUM_fc622aa9", 0 0, o0x7fffff25f168;  alias, 0 drivers
+v0x5555558a12c0_0 .net "dftprobe_XUREGULATIONcomparatorMINIMUM_fc622aa9", 0 0, o0x7fffff25f198;  alias, 0 drivers
+v0x5555558a1380_0 .net "dftprobe_XUREGULATIONcomparatorSTARTUP_fc622aa9", 0 0, o0x7fffff25f1c8;  alias, 0 drivers
+v0x5555558a1440_0 .net "dftprobe_XUREGULATIONcomparatorVC_fc622aa9", 0 0, o0x7fffff25f1f8;  alias, 0 drivers
+v0x5555558a1500_0 .net "enable_regulation", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558a15c0_0 .net "hijack_enable_regulation", 0 0, o0x7fffff25f258;  alias, 0 drivers
+v0x5555558a1680_0 .net "ok_comparator", 0 0, o0x7fffff25f288;  alias, 0 drivers
+v0x5555558a1740_0 .net "vc_comp", 0 0, o0x7fffff25f2b8;  alias, 0 drivers
+S_0x5555558a19e0 .scope module, "XMAIN" "REGULATIONcomparatorMAIN" 2 111, 2 20 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "go";
+    .port_info 1 /INPUT 1 "SIMPV";
+    .port_info 2 /INPUT 1 "ICHARGE";
+    .port_info 3 /INPUT 1 "VCsense";
+    .port_info 4 /OUTPUT 1 "vc_comp";
+    .port_info 5 /OUTPUT 1 "csi_comp";
+    .port_info 6 /INPUT 1 "CELG59462";
+    .port_info 7 /INPUT 1 "CELV96848";
+    .port_info 8 /INPUT 1 "on_status";
+    .port_info 9 /INPUT 1 "ISLOPECOMP";
+    .port_info 10 /INPUT 1 "CELSUB40948";
+    .port_info 11 /INPUT 1 "IP_055890c2";
+    .port_info 12 /INPUT 1 "IP_2699b594";
+    .port_info 13 /INPUT 1 "IP_3cdc2f93";
+    .port_info 14 /INPUT 1 "IP_4acf71b9";
+    .port_info 15 /INPUT 1 "IP_80eb90bd";
+    .port_info 16 /INPUT 1 "IP_91b63f69";
+    .port_info 17 /INPUT 1 "IP_a077fd8e";
+    .port_info 18 /INPUT 1 "IP_e5165d59";
+    .port_info 19 /INPUT 1 "REF_CHARGER";
+    .port_info 20 /OUTPUT 1 "csi_maximum";
+    .port_info 21 /OUTPUT 1 "csi_minimum";
+    .port_info 22 /INPUT 1 "ICHARGEmin_0";
+    .port_info 23 /INPUT 1 "ICHARGEmin_1";
+    .port_info 24 /INPUT 1 "mode_stepdown";
+    .port_info 25 /OUTPUT 1 "ok_comparator";
+    .port_info 26 /INPUT 1 "disable_slopecomp";
+    .port_info 27 /INPUT 1 "enable_regulation";
+    .port_info 28 /INOUT 1 "kelvin_GNDregulation";
+v0x5555558a1e50_0 .net "CELG59462", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x5555558a1ef0_0 .net "CELSUB40948", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x5555558a1fc0_0 .net "CELV96848", 0 0, o0x7fffff25f078;  alias, 0 drivers
+v0x5555558a20c0_0 .net "ICHARGE", 0 0, o0x7fffff25f5b8;  alias, 0 drivers
+v0x5555558a2160_0 .net "ICHARGEmin_0", 0 0, o0x7fffff25f5e8;  alias, 0 drivers
+v0x5555558a2250_0 .net "ICHARGEmin_1", 0 0, o0x7fffff25f618;  alias, 0 drivers
+v0x5555558a22f0_0 .net "IP_055890c2", 0 0, o0x7fffff25f648;  alias, 0 drivers
+v0x5555558a2390_0 .net "IP_2699b594", 0 0, o0x7fffff25f678;  alias, 0 drivers
+v0x5555558a2450_0 .net "IP_3cdc2f93", 0 0, o0x7fffff25f6a8;  alias, 0 drivers
+v0x5555558a25a0_0 .net "IP_4acf71b9", 0 0, o0x7fffff25f6d8;  alias, 0 drivers
+v0x5555558a2660_0 .net "IP_80eb90bd", 0 0, o0x7fffff25f708;  alias, 0 drivers
+v0x5555558a2720_0 .net "IP_91b63f69", 0 0, o0x7fffff25f738;  alias, 0 drivers
+v0x5555558a27e0_0 .net "IP_a077fd8e", 0 0, o0x7fffff25f768;  alias, 0 drivers
+v0x5555558a28a0_0 .net "IP_e5165d59", 0 0, o0x7fffff25f798;  alias, 0 drivers
+v0x5555558a2960_0 .net "ISLOPECOMP", 0 0, o0x7fffff25f7c8;  alias, 0 drivers
+v0x5555558a2a20_0 .net "REF_CHARGER", 0 0, o0x7fffff25f7f8;  alias, 0 drivers
+v0x5555558a2ae0_0 .net "SIMPV", 0 0, o0x7fffff25f828;  alias, 0 drivers
+v0x5555558a2cb0_0 .net "VCsense", 0 0, o0x7fffff25f858;  alias, 0 drivers
+v0x5555558a2d70_0 .net "csi_comp", 0 0, o0x7fffff25f0a8;  alias, 0 drivers
+v0x5555558a2e10_0 .net "csi_maximum", 0 0, o0x7fffff25f0d8;  alias, 0 drivers
+v0x5555558a2ee0_0 .net "csi_minimum", 0 0, o0x7fffff25f108;  alias, 0 drivers
+v0x5555558a2fb0_0 .net "disable_slopecomp", 0 0, o0x7fffff25f888;  alias, 0 drivers
+v0x5555558a3050_0 .net "enable_regulation", 0 0, o0x7fffff25f258;  alias, 0 drivers
+v0x5555558a3120_0 .net "go", 0 0, o0x7fffff25f8b8;  alias, 0 drivers
+v0x5555558a31c0_0 .net "kelvin_GNDregulation", 0 0, o0x7fffff25f8e8;  alias, 0 drivers
+v0x5555558a3260_0 .net "mode_stepdown", 0 0, o0x7fffff25f918;  alias, 0 drivers
+v0x5555558a3300_0 .net "ok_comparator", 0 0, o0x7fffff25f288;  alias, 0 drivers
+v0x5555558a33d0_0 .net "on_status", 0 0, o0x7fffff25f948;  alias, 0 drivers
+v0x5555558a3470_0 .net "vc_comp", 0 0, o0x7fffff25f2b8;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/celera/projects/Sunnyvale/software/REGULATIONcomparator/verilog10/REGULATIONcomparator.v";
