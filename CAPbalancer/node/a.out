@@ -48,11 +48,11 @@ v0x55555589f1d0_0 .net "active_balancer", 0 0, o0x7fffff25f348;  0 drivers
 o0x7fffff25f378 .functor BUFZ 1, C4<z>; HiZ drive
 v0x55555589f270_0 .net "clock_balancer", 0 0, o0x7fffff25f378;  0 drivers
 o0x7fffff25f3a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589f360_0 .net "dtfprobe_XUCAPBALANCERactive_355bbf53", 0 0, o0x7fffff25f3a8;  0 drivers
+v0x55555589f360_0 .net "dftprobe_XUCAPBALANCERactive_355bbf53", 0 0, o0x7fffff25f3a8;  0 drivers
 o0x7fffff25f3d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589f400_0 .net "dtfprobe_XUCAPBALANCERgate1_355bbf53", 0 0, o0x7fffff25f3d8;  0 drivers
+v0x55555589f400_0 .net "dftprobe_XUCAPBALANCERgate1_355bbf53", 0 0, o0x7fffff25f3d8;  0 drivers
 o0x7fffff25f408 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589f4a0_0 .net "dtfprobe_XUCAPBALANCERstartup_355bbf53", 0 0, o0x7fffff25f408;  0 drivers
+v0x55555589f4a0_0 .net "dftprobe_XUCAPBALANCERstartup_355bbf53", 0 0, o0x7fffff25f408;  0 drivers
 o0x7fffff25f438 .functor BUFZ 1, C4<z>; HiZ drive
 v0x55555589f540_0 .net "enable_balancer", 0 0, o0x7fffff25f438;  0 drivers
 S_0x555555880de0 .scope module, "XCAPbalancer1" "CAPbalancer" 2 57, 2 2 0, S_0x555555847f60;
@@ -77,9 +77,9 @@ S_0x555555880de0 .scope module, "XCAPbalancer1" "CAPbalancer" 2 57, 2 2 0, S_0x5
     .port_info 17 /INPUT 1 "enable_balancer";
     .port_info 18 /INPUT 1 "MAXIMUMchannel_0";
     .port_info 19 /INPUT 1 "MAXIMUMchannel_1";
-    .port_info 20 /OUTPUT 1 "dtfprobe_XUCAPBALANCERgate1_355bbf53";
-    .port_info 21 /OUTPUT 1 "dtfprobe_XUCAPBALANCERactive_355bbf53";
-    .port_info 22 /OUTPUT 1 "dtfprobe_XUCAPBALANCERstartup_355bbf53";
+    .port_info 20 /OUTPUT 1 "dftprobe_XUCAPBALANCERgate1_355bbf53";
+    .port_info 21 /OUTPUT 1 "dftprobe_XUCAPBALANCERactive_355bbf53";
+    .port_info 22 /OUTPUT 1 "dftprobe_XUCAPBALANCERstartup_355bbf53";
 v0x5555558474b0_0 .net "CAP1", 0 0, o0x7fffff25f018;  alias, 0 drivers
 v0x5555558480f0_0 .net "CAP2", 0 0, o0x7fffff25f048;  alias, 0 drivers
 v0x555555847ec0_0 .net "CAP3", 0 0, o0x7fffff25f078;  alias, 0 drivers
@@ -99,9 +99,9 @@ v0x55555589c250_0 .net "PORB97836", 0 0, o0x7fffff25f2e8;  alias, 0 drivers
 v0x55555589c310_0 .net "SIMPV", 0 0, o0x7fffff25f318;  alias, 0 drivers
 v0x55555589c4e0_0 .net "active_balancer", 0 0, o0x7fffff25f348;  alias, 0 drivers
 v0x55555589c5a0_0 .net "clock_balancer", 0 0, o0x7fffff25f378;  alias, 0 drivers
-v0x55555589c660_0 .net "dtfprobe_XUCAPBALANCERactive_355bbf53", 0 0, o0x7fffff25f3a8;  alias, 0 drivers
-v0x55555589c720_0 .net "dtfprobe_XUCAPBALANCERgate1_355bbf53", 0 0, o0x7fffff25f3d8;  alias, 0 drivers
-v0x55555589c7e0_0 .net "dtfprobe_XUCAPBALANCERstartup_355bbf53", 0 0, o0x7fffff25f408;  alias, 0 drivers
+v0x55555589c660_0 .net "dftprobe_XUCAPBALANCERactive_355bbf53", 0 0, o0x7fffff25f3a8;  alias, 0 drivers
+v0x55555589c720_0 .net "dftprobe_XUCAPBALANCERgate1_355bbf53", 0 0, o0x7fffff25f3d8;  alias, 0 drivers
+v0x55555589c7e0_0 .net "dftprobe_XUCAPBALANCERstartup_355bbf53", 0 0, o0x7fffff25f408;  alias, 0 drivers
 v0x55555589c8a0_0 .net "enable_balancer", 0 0, o0x7fffff25f438;  alias, 0 drivers
 S_0x55555589cc40 .scope module, "XFORCE_CAPbalancer1" "FORCE_CAPbalancer" 2 83, 2 28 0, S_0x555555847f60;
  .timescale 0 0;

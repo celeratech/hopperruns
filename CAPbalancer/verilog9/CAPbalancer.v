@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module CAPbalancerDRIVERdebug (dft_gate1,dft_startup,active_balancer,enable_balancer,MAXIMUMchannel_0,MAXIMUMchannel_1,Hijack_enable_balancer,hijack_MAXIMUMchannel_0,hijack_MAXIMUMchannel_1,dtfprobe_XUCAPBALANCERgate1_355bbf53,dtfprobe_XUCAPBALANCERactive_355bbf53,dtfprobe_XUCAPBALANCERstartup_355bbf53);
+module CAPbalancerDRIVERdebug (dft_gate1,dft_startup,active_balancer,enable_balancer,MAXIMUMchannel_0,MAXIMUMchannel_1,Hijack_enable_balancer,hijack_MAXIMUMchannel_0,hijack_MAXIMUMchannel_1,dftprobe_XUCAPBALANCERgate1_355bbf53,dftprobe_XUCAPBALANCERactive_355bbf53,dftprobe_XUCAPBALANCERstartup_355bbf53);
   input  dft_gate1;
   input  dft_startup;
   input  active_balancer;
@@ -9,9 +9,9 @@ module CAPbalancerDRIVERdebug (dft_gate1,dft_startup,active_balancer,enable_bala
   output  Hijack_enable_balancer;
   output  hijack_MAXIMUMchannel_0;
   output  hijack_MAXIMUMchannel_1;
-  output  dtfprobe_XUCAPBALANCERgate1_355bbf53;
-  output  dtfprobe_XUCAPBALANCERactive_355bbf53;
-  output  dtfprobe_XUCAPBALANCERstartup_355bbf53;
+  output  dftprobe_XUCAPBALANCERgate1_355bbf53;
+  output  dftprobe_XUCAPBALANCERactive_355bbf53;
+  output  dftprobe_XUCAPBALANCERstartup_355bbf53;
 endmodule
 
 module CAPbalancerDRIVERmain (IN,CAP1,CAP2,CAP3,CAP4,SIMPV,CAPRTN,CELG59462,CELV96848,PORB97836,dft_gate1,CELSUB40948,IP_5675ec5f,IP_5772eb80,IP_89711b11,IP_90e1c2cb,dft_startup,clock_balancer,active_balancer,enable_balancer,MAXIMUMchannel_0,MAXIMUMchannel_1);
@@ -40,7 +40,7 @@ module CAPbalancerDRIVERmain (IN,CAP1,CAP2,CAP3,CAP4,SIMPV,CAPRTN,CELG59462,CELV
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module CAPbalancer (IN, CAP1, CAP2, CAP3, CAP4, SIMPV, CAPRTN, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_5675ec5f, IP_5772eb80, IP_89711b11, IP_90e1c2cb, clock_balancer, active_balancer, enable_balancer, MAXIMUMchannel_0, MAXIMUMchannel_1, dtfprobe_XUCAPBALANCERgate1_355bbf53, dtfprobe_XUCAPBALANCERactive_355bbf53, dtfprobe_XUCAPBALANCERstartup_355bbf53);
+module CAPbalancer (IN, CAP1, CAP2, CAP3, CAP4, SIMPV, CAPRTN, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_5675ec5f, IP_5772eb80, IP_89711b11, IP_90e1c2cb, clock_balancer, active_balancer, enable_balancer, MAXIMUMchannel_0, MAXIMUMchannel_1, dftprobe_XUCAPBALANCERgate1_355bbf53, dftprobe_XUCAPBALANCERactive_355bbf53, dftprobe_XUCAPBALANCERstartup_355bbf53);
 input  IN;
 inout  CAP1;
 inout  CAP2;
@@ -61,9 +61,9 @@ output  active_balancer;
 input  enable_balancer;
 input  MAXIMUMchannel_0;
 input  MAXIMUMchannel_1;
-output  dtfprobe_XUCAPBALANCERgate1_355bbf53;
-output  dtfprobe_XUCAPBALANCERactive_355bbf53;
-output  dtfprobe_XUCAPBALANCERstartup_355bbf53;
+output  dftprobe_XUCAPBALANCERgate1_355bbf53;
+output  dftprobe_XUCAPBALANCERactive_355bbf53;
+output  dftprobe_XUCAPBALANCERstartup_355bbf53;
 
 
 // ------------------------ Wires ------------------------
@@ -79,9 +79,9 @@ CAPbalancerDRIVERdebug XDEBUG (
 .Hijack_enable_balancer(net_70),
 .hijack_MAXIMUMchannel_0(net_56),
 .hijack_MAXIMUMchannel_1(net_57),
-.dtfprobe_XUCAPBALANCERgate1_355bbf53(dtfprobe_XUCAPBALANCERgate1_355bbf53),
-.dtfprobe_XUCAPBALANCERactive_355bbf53(dtfprobe_XUCAPBALANCERactive_355bbf53),
-.dtfprobe_XUCAPBALANCERstartup_355bbf53(dtfprobe_XUCAPBALANCERstartup_355bbf53)
+.dftprobe_XUCAPBALANCERgate1_355bbf53(dftprobe_XUCAPBALANCERgate1_355bbf53),
+.dftprobe_XUCAPBALANCERactive_355bbf53(dftprobe_XUCAPBALANCERactive_355bbf53),
+.dftprobe_XUCAPBALANCERstartup_355bbf53(dftprobe_XUCAPBALANCERstartup_355bbf53)
 );
 
 CAPbalancerDRIVERmain XMAIN (

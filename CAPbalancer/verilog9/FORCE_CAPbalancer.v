@@ -21,23 +21,18 @@ endmodule
 
 
 
-module vpwl_3578e779_0x0(PLUS, MINUS);
+module vpwl_0x0(PLUS, MINUS);
 	output PLUS;
 	input MINUS;
 endmodule
 
 
-module vpwl_a40171cc_0x0_10d998ux0_11d0ux5 (PLUS,MINUS);
+module vpwl_0x0_10d998ux0_11d0ux5 (PLUS,MINUS);
   output  PLUS;
   input  MINUS;
 endmodule
 
-module vpwl_c7ce784d_0x0_12d0ux0_12d001ux5 (PLUS,MINUS);
-  output  PLUS;
-  input  MINUS;
-endmodule
-
-module vpwl_97ff8a3b_0x0 (PLUS,MINUS);
+module vpwl_0x0_12d0ux0_12d001ux5 (PLUS,MINUS);
   output  PLUS;
   input  MINUS;
 endmodule
@@ -58,7 +53,7 @@ module vpulse_0x5d0x1d0ux10ux1nx1nx500d0n(PLUS, MINUS);
 	input MINUS;
 endmodule
 
-module vpwl_c4c443ea_0x0_10d998ux0_11d0ux12 (PLUS,MINUS);
+module vpwl_0x0_10d998ux0_11d0ux12 (PLUS,MINUS);
   output  PLUS;
   input  MINUS;
 endmodule
@@ -69,7 +64,7 @@ module vdc_0(PLUS, MINUS);
 endmodule
 
 
-module vpwlgnd_d65ae13a_0x0_10ux0_11ux0(PLUS, MINUS);
+module vpwlgnd_0x0_10ux0_11ux0(PLUS, MINUS);
 	output PLUS;
 	output MINUS;
 endmodule
@@ -81,47 +76,22 @@ module vdcgnd_0(PLUS, MINUS);
 endmodule
 
 
-module vpwl_50949ea3_0x0_10d998ux0_11d0ux0 (PLUS,MINUS);
+module vpwl_0x0_10d998ux0_11d0ux0 (PLUS,MINUS);
   output  PLUS;
   input  MINUS;
 endmodule
 
-module vpwl_5e54d547_0x0_10d998ux0_11d0ux0 (PLUS,MINUS);
+module vpwl_0x0_10d999ux0_11d0ux5 (PLUS,MINUS);
   output  PLUS;
   input  MINUS;
 endmodule
 
-module vpwl_5536fe81_0x0_10d998ux0_11d0ux0 (PLUS,MINUS);
+module vpwl_0x0_11d0ux0 (PLUS,MINUS);
   output  PLUS;
   input  MINUS;
 endmodule
 
-module vpwl_bd00f0ea_0x0_10d998ux0_11d0ux0 (PLUS,MINUS);
-  output  PLUS;
-  input  MINUS;
-endmodule
-
-module vpwl_a3eebcd7_0x0_10d998ux0_11d0ux5 (PLUS,MINUS);
-  output  PLUS;
-  input  MINUS;
-endmodule
-
-module vpwl_8c51d9bf_0x0_10d998ux0_11d0ux0 (PLUS,MINUS);
-  output  PLUS;
-  input  MINUS;
-endmodule
-
-module vpwl_85ac3f49_0x0_10d999ux0_11d0ux5 (PLUS,MINUS);
-  output  PLUS;
-  input  MINUS;
-endmodule
-
-module vpwl_7d56ade3_0x0_11d0ux0 (PLUS,MINUS);
-  output  PLUS;
-  input  MINUS;
-endmodule
-
-module vpwl_f829f2c8_0x0_10d998ux0_11d0ux5d0 (PLUS,MINUS);
+module vpwl_0x0_10d998ux0_11d0ux5d0 (PLUS,MINUS);
   output  PLUS;
   input  MINUS;
 endmodule
@@ -188,22 +158,22 @@ dbuf_e926e395 Xd_enable_balancer (
 .CELV(CELV96848)
 );
 
-vpwl_3578e779_0x0 XCELG (
+vpwl_0x0 XCELG (
 .PLUS(CELG59462),
 .MINUS(net_0)
 );
 
-vpwl_a40171cc_0x0_10d998ux0_11d0ux5 XCELV (
+vpwl_0x0_10d998ux0_11d0ux5 XCELV (
 .PLUS(CELV96848),
 .MINUS(net_0)
 );
 
-vpwl_c7ce784d_0x0_12d0ux0_12d001ux5 XPORB (
+vpwl_0x0_12d0ux0_12d001ux5 XPORB (
 .PLUS(PORB97836),
 .MINUS(net_0)
 );
 
-vpwl_97ff8a3b_0x0 XCELSUB (
+vpwl_0x0 XCELSUB (
 .PLUS(CELSUB40948),
 .MINUS(net_0)
 );
@@ -237,7 +207,7 @@ vpulse_0x5d0x1d0ux10ux1nx1nx500d0n XV2_418e9610 (
 .MINUS(net_91)
 );
 
-vpwl_c4c443ea_0x0_10d998ux0_11d0ux12 V_INx_23400797 (
+vpwl_0x0_10d998ux0_11d0ux12 V_INx_23400797 (
 .PLUS(net_97),
 .MINUS(net_91)
 );
@@ -247,7 +217,7 @@ vdc_0 VI__IN_f3c21858 (
 .MINUS(IN)
 );
 
-vpwlgnd_d65ae13a_0x0_10ux0_11ux0 V_GNDx_7e00ad2f (
+vpwlgnd_0x0_10ux0_11ux0 V_GNDx_7e00ad2f (
 .PLUS(net_99),
 .MINUS(net_0)
 );
@@ -257,22 +227,22 @@ vdcgnd_0 VI__GND_520c3c11 (
 .MINUS(net_99)
 );
 
-vpwl_50949ea3_0x0_10d998ux0_11d0ux0 V_CAP1x_cef08bfe (
+vpwl_0x0_10d998ux0_11d0ux0 V_CAP1x_cef08bfe (
 .PLUS(net_96),
 .MINUS(net_91)
 );
 
-vpwl_5e54d547_0x0_10d998ux0_11d0ux0 V_CAP2x_87b5a10b (
+vpwl_0x0_10d998ux0_11d0ux0 V_CAP2x_87b5a10b (
 .PLUS(net_94),
 .MINUS(net_91)
 );
 
-vpwl_5536fe81_0x0_10d998ux0_11d0ux0 V_CAP3x_b831b1a4 (
+vpwl_0x0_10d998ux0_11d0ux0 V_CAP3x_b831b1a4 (
 .PLUS(net_92),
 .MINUS(net_91)
 );
 
-vpwl_bd00f0ea_0x0_10d998ux0_11d0ux0 V_CAP4x_3255b126 (
+vpwl_0x0_10d998ux0_11d0ux0 V_CAP4x_3255b126 (
 .PLUS(net_95),
 .MINUS(net_91)
 );
@@ -297,7 +267,7 @@ vdc_0 VI__CAP4_dd3557de (
 .MINUS(CAP4)
 );
 
-vpwl_a3eebcd7_0x0_10d998ux0_11d0ux5 V_SIMPVx_d073c774 (
+vpwl_0x0_10d998ux0_11d0ux5 V_SIMPVx_d073c774 (
 .PLUS(net_98),
 .MINUS(net_91)
 );
@@ -307,7 +277,7 @@ vdc_0 VI__SIMPV_8996dd62 (
 .MINUS(SIMPV)
 );
 
-vpwl_8c51d9bf_0x0_10d998ux0_11d0ux0 V_CAPRTNx_ab7495ac (
+vpwl_0x0_10d998ux0_11d0ux0 V_CAPRTNx_ab7495ac (
 .PLUS(net_93),
 .MINUS(net_91)
 );
@@ -317,17 +287,17 @@ vdc_0 VI__CAPRTN_dc143b70 (
 .MINUS(CAPRTN)
 );
 
-vpwl_85ac3f49_0x0_10d999ux0_11d0ux5 Xd_MAXIMUMchannel_pwl_bit0 (
+vpwl_0x0_10d999ux0_11d0ux5 Xd_MAXIMUMchannel_pwl_bit0 (
 .PLUS(MAXIMUMchannel_0),
 .MINUS(net_0)
 );
 
-vpwl_7d56ade3_0x0_11d0ux0 Xd_MAXIMUMchannel_pwl_bit1 (
+vpwl_0x0_11d0ux0 Xd_MAXIMUMchannel_pwl_bit1 (
 .PLUS(MAXIMUMchannel_1),
 .MINUS(net_0)
 );
 
-vpwl_f829f2c8_0x0_10d998ux0_11d0ux5d0 V_enable_balancerx_5c72eb0b (
+vpwl_0x0_10d998ux0_11d0ux5d0 V_enable_balancerx_5c72eb0b (
 .PLUS(net_230),
 .MINUS(net_91)
 );

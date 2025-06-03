@@ -1,5 +1,5 @@
 // ------------------------ Module Definitions -----------
-module CAPbalancer (IN,CAP1,CAP2,CAP3,CAP4,SIMPV,CAPRTN,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_5675ec5f,IP_5772eb80,IP_89711b11,IP_90e1c2cb,clock_balancer,active_balancer,enable_balancer,MAXIMUMchannel_0,MAXIMUMchannel_1,dtfprobe_XUCAPBALANCERgate1_355bbf53,dtfprobe_XUCAPBALANCERactive_355bbf53,dtfprobe_XUCAPBALANCERstartup_355bbf53);
+module CAPbalancer (IN,CAP1,CAP2,CAP3,CAP4,SIMPV,CAPRTN,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_5675ec5f,IP_5772eb80,IP_89711b11,IP_90e1c2cb,clock_balancer,active_balancer,enable_balancer,MAXIMUMchannel_0,MAXIMUMchannel_1,dftprobe_XUCAPBALANCERgate1_355bbf53,dftprobe_XUCAPBALANCERactive_355bbf53,dftprobe_XUCAPBALANCERstartup_355bbf53);
   input  IN;
   inout  CAP1;
   inout  CAP2;
@@ -20,9 +20,9 @@ module CAPbalancer (IN,CAP1,CAP2,CAP3,CAP4,SIMPV,CAPRTN,CELG59462,CELV96848,PORB
   input  enable_balancer;
   input  MAXIMUMchannel_0;
   input  MAXIMUMchannel_1;
-  output  dtfprobe_XUCAPBALANCERgate1_355bbf53;
-  output  dtfprobe_XUCAPBALANCERactive_355bbf53;
-  output  dtfprobe_XUCAPBALANCERstartup_355bbf53;
+  output  dftprobe_XUCAPBALANCERgate1_355bbf53;
+  output  dftprobe_XUCAPBALANCERactive_355bbf53;
+  output  dftprobe_XUCAPBALANCERstartup_355bbf53;
 endmodule
 
 module FORCE_CAPbalancer (IN,CAP1,CAP2,CAP3,CAP4,SIMPV,CAPRTN,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_5675ec5f,IP_5772eb80,IP_89711b11,IP_90e1c2cb,clock_balancer,enable_balancer,MAXIMUMchannel_0,MAXIMUMchannel_1);
@@ -75,9 +75,9 @@ CAPbalancer XCAPbalancer1 (
 .enable_balancer(enable_balancer),
 .MAXIMUMchannel_0(MAXIMUMchannel_0),
 .MAXIMUMchannel_1(MAXIMUMchannel_1),
-.dtfprobe_XUCAPBALANCERgate1_355bbf53(dtfprobe_XUCAPBALANCERgate1_355bbf53),
-.dtfprobe_XUCAPBALANCERactive_355bbf53(dtfprobe_XUCAPBALANCERactive_355bbf53),
-.dtfprobe_XUCAPBALANCERstartup_355bbf53(dtfprobe_XUCAPBALANCERstartup_355bbf53)
+.dftprobe_XUCAPBALANCERgate1_355bbf53(dftprobe_XUCAPBALANCERgate1_355bbf53),
+.dftprobe_XUCAPBALANCERactive_355bbf53(dftprobe_XUCAPBALANCERactive_355bbf53),
+.dftprobe_XUCAPBALANCERstartup_355bbf53(dftprobe_XUCAPBALANCERstartup_355bbf53)
 );
 
 FORCE_CAPbalancer XFORCE_CAPbalancer1 (
