@@ -74,7 +74,7 @@ module vpulse_0x5d0x1d0ux5ux1nx1nx499n(PLUS, MINUS);
 endmodule
 
 module alibgnd (GND); 
-input GND; 
+output GND; 
 endmodule 
 
 // ------------------------ Module Verilog ---------------
