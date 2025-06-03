@@ -1,0 +1,303 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x555555847f60 .scope module, "TELEMETRYmeasureCOUNT_Rev1_DYES" "TELEMETRYmeasureCOUNT_Rev1_DYES" 2 146;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "porb";
+    .port_info 1 /OUTPUT 1 "enable";
+    .port_info 2 /INPUT 1 "end_off";
+    .port_info 3 /INPUT 1 "done_adc";
+    .port_info 4 /INPUT 1 "CELG59462";
+    .port_info 5 /INPUT 1 "CELV96848";
+    .port_info 6 /INPUT 1 "PORB97836";
+    .port_info 7 /OUTPUT 1 "count_next";
+    .port_info 8 /INPUT 1 "done_count";
+    .port_info 9 /OUTPUT 1 "enable_off";
+    .port_info 10 /INPUT 1 "CELSUB40948";
+    .port_info 11 /OUTPUT 1 "convert_adc";
+    .port_info 12 /OUTPUT 1 "enable_count";
+    .port_info 13 /INPUT 1 "freeze_count";
+    .port_info 14 /OUTPUT 1 "ok_telemetry";
+    .port_info 15 /INPUT 1 "ready_control";
+    .port_info 16 /OUTPUT 1 "done_telemetry";
+    .port_info 17 /OUTPUT 1 "enable_control";
+    .port_info 18 /INPUT 1 "clock_telemetry";
+    .port_info 19 /INPUT 1 "enable_telemetry";
+    .port_info 20 /INPUT 1 "ready_controlmeasure";
+    .port_info 21 /OUTPUT 1 "request_capcalculate";
+    .port_info 22 /OUTPUT 1 "dftprobe_XU64_cd7933b8";
+    .port_info 23 /OUTPUT 1 "dftprobe_XU65_cd7933b8";
+    .port_info 24 /OUTPUT 1 "dftprobe_XU66_cd7933b8";
+    .port_info 25 /OUTPUT 1 "dftprobe_XU67_cd7933b8";
+    .port_info 26 /OUTPUT 1 "dftprobe_XU68_cd7933b8";
+    .port_info 27 /OUTPUT 1 "dftprobe_XU69_cd7933b8";
+    .port_info 28 /OUTPUT 1 "dftprobe_XU70_cd7933b8";
+    .port_info 29 /OUTPUT 1 "dftprobe_XU71_cd7933b8";
+    .port_info 30 /OUTPUT 1 "fault_telemetrymeasure";
+o0x7fffff25f288 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b4d30_0 .net "CELG59462", 0 0, o0x7fffff25f288;  0 drivers
+o0x7fffff25f2b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b4dd0_0 .net "CELSUB40948", 0 0, o0x7fffff25f2b8;  0 drivers
+o0x7fffff25f2e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b4f20_0 .net "CELV96848", 0 0, o0x7fffff25f2e8;  0 drivers
+o0x7fffff25f678 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b5080_0 .net "PORB97836", 0 0, o0x7fffff25f678;  0 drivers
+o0x7fffff25f018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b5150_0 .net "a0", 0 0, o0x7fffff25f018;  0 drivers
+o0x7fffff25f318 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b51f0_0 .net "a1", 0 0, o0x7fffff25f318;  0 drivers
+o0x7fffff25f6d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b5290_0 .net "clock_telemetry", 0 0, o0x7fffff25f6d8;  0 drivers
+o0x7fffff25f708 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b5330_0 .net "convert_adc", 0 0, o0x7fffff25f708;  0 drivers
+o0x7fffff25f738 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b53d0_0 .net "count_next", 0 0, o0x7fffff25f738;  0 drivers
+o0x7fffff25f648 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b5530_0 .net "dftprobe_XU64_cd7933b8", 0 0, o0x7fffff25f648;  0 drivers
+o0x7fffff25f6a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b5600_0 .net "dftprobe_XU65_cd7933b8", 0 0, o0x7fffff25f6a8;  0 drivers
+o0x7fffff25f528 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b56d0_0 .net "dftprobe_XU66_cd7933b8", 0 0, o0x7fffff25f528;  0 drivers
+o0x7fffff25f4f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b57a0_0 .net "dftprobe_XU67_cd7933b8", 0 0, o0x7fffff25f4f8;  0 drivers
+o0x7fffff25f5b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b5870_0 .net "dftprobe_XU68_cd7933b8", 0 0, o0x7fffff25f5b8;  0 drivers
+o0x7fffff25f5e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b5940_0 .net "dftprobe_XU69_cd7933b8", 0 0, o0x7fffff25f5e8;  0 drivers
+o0x7fffff25f618 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b5a10_0 .net "dftprobe_XU70_cd7933b8", 0 0, o0x7fffff25f618;  0 drivers
+o0x7fffff25f4c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b5ae0_0 .net "dftprobe_XU71_cd7933b8", 0 0, o0x7fffff25f4c8;  0 drivers
+o0x7fffff25f768 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b5cc0_0 .net "done_adc", 0 0, o0x7fffff25f768;  0 drivers
+o0x7fffff25f798 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b5d90_0 .net "done_count", 0 0, o0x7fffff25f798;  0 drivers
+o0x7fffff25f7c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b5e60_0 .net "done_telemetry", 0 0, o0x7fffff25f7c8;  0 drivers
+o0x7fffff25f7f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b5f30_0 .net "enable", 0 0, o0x7fffff25f7f8;  0 drivers
+o0x7fffff25f858 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b6000_0 .net "enable_control", 0 0, o0x7fffff25f858;  0 drivers
+o0x7fffff25f888 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b60d0_0 .net "enable_count", 0 0, o0x7fffff25f888;  0 drivers
+o0x7fffff25f8b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b61a0_0 .net "enable_off", 0 0, o0x7fffff25f8b8;  0 drivers
+o0x7fffff25f8e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b6270_0 .net "enable_telemetry", 0 0, o0x7fffff25f8e8;  0 drivers
+o0x7fffff25f918 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b6340_0 .net "end_off", 0 0, o0x7fffff25f918;  0 drivers
+o0x7fffff25f948 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b6410_0 .net "fault_telemetrymeasure", 0 0, o0x7fffff25f948;  0 drivers
+o0x7fffff25f978 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b64e0_0 .net "freeze_count", 0 0, o0x7fffff25f978;  0 drivers
+o0x7fffff25f168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b65b0_0 .net "net_100", 0 0, o0x7fffff25f168;  0 drivers
+o0x7fffff25f1f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b6650_0 .net "net_101", 0 0, o0x7fffff25f1f8;  0 drivers
+o0x7fffff25f828 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b66f0_0 .net "net_102", 0 0, o0x7fffff25f828;  0 drivers
+o0x7fffff25f588 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b67e0_0 .net "net_139", 0 0, o0x7fffff25f588;  0 drivers
+o0x7fffff25f558 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b68d0_0 .net "net_142", 0 0, o0x7fffff25f558;  0 drivers
+o0x7fffff25f048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b6bd0_0 .net "net_98", 0 0, o0x7fffff25f048;  0 drivers
+o0x7fffff25f0d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b6cc0_0 .net "net_99", 0 0, o0x7fffff25f0d8;  0 drivers
+o0x7fffff25f9a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b6db0_0 .net "ok_telemetry", 0 0, o0x7fffff25f9a8;  0 drivers
+o0x7fffff25f9d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b6e50_0 .net "porb", 0 0, o0x7fffff25f9d8;  0 drivers
+o0x7fffff25fa08 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b6ef0_0 .net "ready_control", 0 0, o0x7fffff25fa08;  0 drivers
+o0x7fffff25fa38 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b6f90_0 .net "ready_controlmeasure", 0 0, o0x7fffff25fa38;  0 drivers
+o0x7fffff25fa68 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558b7030_0 .net "request_capcalculate", 0 0, o0x7fffff25fa68;  0 drivers
+S_0x55555588a2c0 .scope module, "STATEcontrol0_net_98_WRAPPER" "PEBBLElinkWRAP" 2 323, 2 138 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "o";
+    .port_info 1 /INOUT 1 "i";
+v0x5555558474b0_0 .net "i", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x5555558480f0_0 .net "o", 0 0, o0x7fffff25f048;  alias, 0 drivers
+S_0x5555558ae2c0 .scope module, "STATEcontrol1_net_99_WRAPPER" "PEBBLElinkWRAP" 2 328, 2 138 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "o";
+    .port_info 1 /INOUT 1 "i";
+v0x555555847ec0_0 .net "i", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x5555558ae4c0_0 .net "o", 0 0, o0x7fffff25f0d8;  alias, 0 drivers
+S_0x5555558ae5c0 .scope module, "STATEcontrol2_net_100_WRAPPER" "PEBBLElinkWRAP" 2 333, 2 138 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "o";
+    .port_info 1 /INOUT 1 "i";
+v0x5555558ae7a0_0 .net "i", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x5555558ae890_0 .net "o", 0 0, o0x7fffff25f168;  alias, 0 drivers
+S_0x5555558ae9b0 .scope module, "STATEcontrol3_net_101_WRAPPER" "PEBBLElinkWRAP" 2 338, 2 138 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "o";
+    .port_info 1 /INOUT 1 "i";
+v0x5555558aeb90_0 .net "i", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x5555558aec50_0 .net "o", 0 0, o0x7fffff25f1f8;  alias, 0 drivers
+S_0x5555558aed70 .scope module, "XDRMNOTH" "PEBBLEtiehi" 2 304, 2 114 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "q";
+    .port_info 1 /INPUT 1 "G";
+    .port_info 2 /INPUT 1 "SUB";
+    .port_info 3 /INPUT 1 "V";
+v0x5555558aefa0_0 .net "G", 0 0, o0x7fffff25f288;  alias, 0 drivers
+v0x5555558af060_0 .net "SUB", 0 0, o0x7fffff25f2b8;  alias, 0 drivers
+v0x5555558af120_0 .net "V", 0 0, o0x7fffff25f2e8;  alias, 0 drivers
+v0x5555558af1c0_0 .net "q", 0 0, o0x7fffff25f318;  alias, 0 drivers
+S_0x5555558af330 .scope module, "XDRMNOTL" "PEBBLEtielo" 2 311, 2 126 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "q";
+    .port_info 1 /INPUT 1 "G";
+    .port_info 2 /INPUT 1 "SUB";
+    .port_info 3 /INPUT 1 "V";
+v0x5555558af580_0 .net "G", 0 0, o0x7fffff25f288;  alias, 0 drivers
+v0x5555558af670_0 .net "SUB", 0 0, o0x7fffff25f2b8;  alias, 0 drivers
+v0x5555558af740_0 .net "V", 0 0, o0x7fffff25f2e8;  alias, 0 drivers
+v0x5555558af840_0 .net "q", 0 0, o0x7fffff25f018;  alias, 0 drivers
+S_0x5555558af910 .scope module, "XMAIN" "TELEMETRYmeasureCOUNT_Rev1_DYES_0" 2 183, 2 2 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "OFF";
+    .port_info 1 /OUTPUT 1 "HOLD";
+    .port_info 2 /OUTPUT 1 "NEXT";
+    .port_info 3 /INPUT 1 "porb";
+    .port_info 4 /OUTPUT 1 "COUNT";
+    .port_info 5 /OUTPUT 1 "FAULT";
+    .port_info 6 /OUTPUT 1 "SETUP";
+    .port_info 7 /OUTPUT 1 "enable";
+    .port_info 8 /OUTPUT 1 "CONVERT";
+    .port_info 9 /INPUT 1 "end_off";
+    .port_info 10 /INPUT 1 "done_adc";
+    .port_info 11 /OUTPUT 1 "CALCULATE";
+    .port_info 12 /INPUT 1 "CELG59462";
+    .port_info 13 /INPUT 1 "CELV96848";
+    .port_info 14 /INPUT 1 "PORB97836";
+    .port_info 15 /OUTPUT 1 "count_next";
+    .port_info 16 /INPUT 1 "done_count";
+    .port_info 17 /OUTPUT 1 "enable_off";
+    .port_info 18 /INPUT 1 "CELSUB40948";
+    .port_info 19 /OUTPUT 1 "COUNTdelayi";
+    .port_info 20 /OUTPUT 1 "convert_adc";
+    .port_info 21 /INPUT 1 "enableFAULT";
+    .port_info 22 /OUTPUT 1 "enable_count";
+    .port_info 23 /INPUT 1 "freeze_count";
+    .port_info 24 /OUTPUT 1 "ok_telemetry";
+    .port_info 25 /INPUT 1 "STATEcontrol0";
+    .port_info 26 /INPUT 1 "STATEcontrol1";
+    .port_info 27 /INPUT 1 "STATEcontrol2";
+    .port_info 28 /INPUT 1 "STATEcontrol3";
+    .port_info 29 /INPUT 1 "ready_control";
+    .port_info 30 /INPUT 1 "COUNTmaxdelayo";
+    .port_info 31 /OUTPUT 1 "done_telemetry";
+    .port_info 32 /OUTPUT 1 "enable_control";
+    .port_info 33 /INPUT 1 "clock_telemetry";
+    .port_info 34 /INPUT 1 "enable_telemetry";
+    .port_info 35 /INPUT 1 "ready_controlmeasure";
+    .port_info 36 /OUTPUT 1 "request_capcalculate";
+    .port_info 37 /OUTPUT 1 "fault_telemetrymeasure";
+v0x5555558afe40_0 .net "CALCULATE", 0 0, o0x7fffff25f4c8;  alias, 0 drivers
+v0x5555558aff20_0 .net "CELG59462", 0 0, o0x7fffff25f288;  alias, 0 drivers
+v0x5555558b0030_0 .net "CELSUB40948", 0 0, o0x7fffff25f2b8;  alias, 0 drivers
+v0x5555558b0120_0 .net "CELV96848", 0 0, o0x7fffff25f2e8;  alias, 0 drivers
+v0x5555558b0210_0 .net "CONVERT", 0 0, o0x7fffff25f4f8;  alias, 0 drivers
+v0x5555558b0300_0 .net "COUNT", 0 0, o0x7fffff25f528;  alias, 0 drivers
+v0x5555558b03a0_0 .net "COUNTdelayi", 0 0, o0x7fffff25f558;  alias, 0 drivers
+v0x5555558b0460_0 .net "COUNTmaxdelayo", 0 0, o0x7fffff25f588;  alias, 0 drivers
+v0x5555558b0520_0 .net "FAULT", 0 0, o0x7fffff25f5b8;  alias, 0 drivers
+v0x5555558b05e0_0 .net "HOLD", 0 0, o0x7fffff25f5e8;  alias, 0 drivers
+v0x5555558b06a0_0 .net "NEXT", 0 0, o0x7fffff25f618;  alias, 0 drivers
+v0x5555558b0760_0 .net "OFF", 0 0, o0x7fffff25f648;  alias, 0 drivers
+v0x5555558b0820_0 .net "PORB97836", 0 0, o0x7fffff25f678;  alias, 0 drivers
+v0x5555558b08e0_0 .net "SETUP", 0 0, o0x7fffff25f6a8;  alias, 0 drivers
+v0x5555558b09a0_0 .net "STATEcontrol0", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x5555558b0a40_0 .net "STATEcontrol1", 0 0, o0x7fffff25f0d8;  alias, 0 drivers
+v0x5555558b0ae0_0 .net "STATEcontrol2", 0 0, o0x7fffff25f168;  alias, 0 drivers
+v0x5555558b0b80_0 .net "STATEcontrol3", 0 0, o0x7fffff25f1f8;  alias, 0 drivers
+v0x5555558b0c20_0 .net "clock_telemetry", 0 0, o0x7fffff25f6d8;  alias, 0 drivers
+v0x5555558b0cc0_0 .net "convert_adc", 0 0, o0x7fffff25f708;  alias, 0 drivers
+v0x5555558b0d60_0 .net "count_next", 0 0, o0x7fffff25f738;  alias, 0 drivers
+v0x5555558b0e00_0 .net "done_adc", 0 0, o0x7fffff25f768;  alias, 0 drivers
+v0x5555558b0ea0_0 .net "done_count", 0 0, o0x7fffff25f798;  alias, 0 drivers
+v0x5555558b0f60_0 .net "done_telemetry", 0 0, o0x7fffff25f7c8;  alias, 0 drivers
+v0x5555558b1020_0 .net "enable", 0 0, o0x7fffff25f7f8;  alias, 0 drivers
+v0x5555558b10e0_0 .net "enableFAULT", 0 0, o0x7fffff25f828;  alias, 0 drivers
+v0x5555558b11a0_0 .net "enable_control", 0 0, o0x7fffff25f858;  alias, 0 drivers
+v0x5555558b1260_0 .net "enable_count", 0 0, o0x7fffff25f888;  alias, 0 drivers
+v0x5555558b1320_0 .net "enable_off", 0 0, o0x7fffff25f8b8;  alias, 0 drivers
+v0x5555558b13e0_0 .net "enable_telemetry", 0 0, o0x7fffff25f8e8;  alias, 0 drivers
+v0x5555558b14a0_0 .net "end_off", 0 0, o0x7fffff25f918;  alias, 0 drivers
+v0x5555558b1560_0 .net "fault_telemetrymeasure", 0 0, o0x7fffff25f948;  alias, 0 drivers
+v0x5555558b1620_0 .net "freeze_count", 0 0, o0x7fffff25f978;  alias, 0 drivers
+v0x5555558b18f0_0 .net "ok_telemetry", 0 0, o0x7fffff25f9a8;  alias, 0 drivers
+v0x5555558b19b0_0 .net "porb", 0 0, o0x7fffff25f9d8;  alias, 0 drivers
+v0x5555558b1a70_0 .net "ready_control", 0 0, o0x7fffff25fa08;  alias, 0 drivers
+v0x5555558b1b30_0 .net "ready_controlmeasure", 0 0, o0x7fffff25fa38;  alias, 0 drivers
+v0x5555558b1bf0_0 .net "request_capcalculate", 0 0, o0x7fffff25fa68;  alias, 0 drivers
+S_0x5555558b2170 .scope module, "XU16" "delayfixed_bb4ad10c" 2 224, 2 46 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "CELV";
+    .port_info 1 /INPUT 1 "i";
+    .port_info 2 /OUTPUT 1 "o";
+    .port_info 3 /INPUT 1 "CELG";
+    .port_info 4 /INPUT 1 "CELSUB";
+v0x5555558b23b0_0 .net "CELG", 0 0, o0x7fffff25f288;  alias, 0 drivers
+v0x5555558b2470_0 .net "CELSUB", 0 0, o0x7fffff25f2b8;  alias, 0 drivers
+v0x5555558b2530_0 .net "CELV", 0 0, o0x7fffff25f2e8;  alias, 0 drivers
+v0x5555558b2600_0 .net "i", 0 0, o0x7fffff25f558;  alias, 0 drivers
+v0x5555558b26d0_0 .net "o", 0 0, o0x7fffff25f588;  alias, 0 drivers
+S_0x5555558b2810 .scope module, "XU64" "dftprobeModel0_3e8ff123" 2 232, 2 57 0, S_0x555555847f60;
+ .timescale 0 0;
+S_0x5555558b29f0 .scope module, "XU65" "dftprobeModel0_ddb621a1" 2 236, 2 60 0, S_0x555555847f60;
+ .timescale 0 0;
+S_0x5555558b2b80 .scope module, "XU66" "dftprobeModel0_138d9dc3" 2 240, 2 63 0, S_0x555555847f60;
+ .timescale 0 0;
+S_0x5555558b2d60 .scope module, "XU67" "dftprobeModel0_99d38303" 2 244, 2 66 0, S_0x555555847f60;
+ .timescale 0 0;
+S_0x5555558b2f40 .scope module, "XU68" "dftprobeModel0_5f31f0a5" 2 248, 2 69 0, S_0x555555847f60;
+ .timescale 0 0;
+S_0x5555558b3120 .scope module, "XU69" "dftprobeModel0_28f06ffb" 2 252, 2 72 0, S_0x555555847f60;
+ .timescale 0 0;
+S_0x5555558b3300 .scope module, "XU70" "dftprobeModel0_9c082d32" 2 256, 2 75 0, S_0x555555847f60;
+ .timescale 0 0;
+S_0x5555558b34e0 .scope module, "XU71" "dftprobeModel0_414947cc" 2 260, 2 78 0, S_0x555555847f60;
+ .timescale 0 0;
+S_0x5555558b36c0 .scope module, "XU72" "dftprobeModel0_2d0be67e" 2 264, 2 81 0, S_0x555555847f60;
+ .timescale 0 0;
+S_0x5555558b38a0 .scope module, "XU73" "dftprobeModel0_7badaa04" 2 268, 2 84 0, S_0x555555847f60;
+ .timescale 0 0;
+S_0x5555558b3a80 .scope module, "XU74" "dftprobeModel0_35078249" 2 272, 2 87 0, S_0x555555847f60;
+ .timescale 0 0;
+S_0x5555558b3c60 .scope module, "XU75" "dftprobeModel0_33297e2a" 2 276, 2 90 0, S_0x555555847f60;
+ .timescale 0 0;
+S_0x5555558b3e40 .scope module, "XU76" "dftprobeModel0_486908f4" 2 280, 2 93 0, S_0x555555847f60;
+ .timescale 0 0;
+S_0x5555558b4020 .scope module, "XU77" "dftprobeModel0_1b3ff4d9" 2 284, 2 96 0, S_0x555555847f60;
+ .timescale 0 0;
+S_0x5555558b4200 .scope module, "XU78" "dftprobeModel0_b33e8733" 2 288, 2 99 0, S_0x555555847f60;
+ .timescale 0 0;
+S_0x5555558b43e0 .scope module, "XU79" "dftprobeModel0_5fc3d434" 2 292, 2 102 0, S_0x555555847f60;
+ .timescale 0 0;
+S_0x5555558b45c0 .scope module, "XU80" "dftprobeModel0_c88b339e" 2 296, 2 105 0, S_0x555555847f60;
+ .timescale 0 0;
+S_0x5555558b47a0 .scope module, "XU81" "dftprobeModel0_0d4593f9" 2 300, 2 108 0, S_0x555555847f60;
+ .timescale 0 0;
+S_0x5555558b4980 .scope module, "enableFAULT_net_102_WRAPPER" "PEBBLElinkWRAP" 2 318, 2 138 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "o";
+    .port_info 1 /INOUT 1 "i";
+v0x5555558b4b80_0 .net "i", 0 0, o0x7fffff25f318;  alias, 0 drivers
+v0x5555558b4c40_0 .net "o", 0 0, o0x7fffff25f828;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/celera/projects/Sunnyvale/software/TELEMETRYmeasureCOUNT_Rev1_DYES/verilog10/TELEMETRYmeasureCOUNT_Rev1_DYES.v";
