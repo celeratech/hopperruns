@@ -1,0 +1,1423 @@
+//Celera Brick Generator Confidential
+//CORE:resistordivider
+//NAME:resistordivider_vbuffer_428dc963_Xrfb
+//GENERATOR REVISION:0.4.9
+//VMAX:6V
+//VTOP:6V
+//TOTAL:5000.0
+//DISCONNECT:no
+//DISCONNECT TAP:top
+//OUTPUTS:1
+//TAP0:50.0%
+//TAP1:99%
+//TAP2:99%
+//TAP3:99%
+//TAP4:99%
+//TAP5:99%
+//TAP6:99%
+//TAP7:99%
+
+//Celera Confidential Do Not Copy STONEnoconn
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
+
+//Celera Confidential Do Not Copy Resistor Divider
+module rlpp3000rpo47p8u1p0u (ISO,RP,RN);
+input ISO;
+inout RP;
+inout RN;
+endmodule
+
+//Celera Confidential Do Not Copy resistordivider_vbuffer_428dc963_Xrfb
+//Celera Confidential Symbol Generator
+//VMAX:6V R:5000.0KOhm 1Taps
+module resistordivider_vbuffer_428dc963_Xrfb (TOP,
+TAP0,
+CELG,BOTTOM);
+inout TOP;
+output TAP0;
+input CELG;
+inout BOTTOM;
+
+//Celera Confidential Do Not Copy RTOP
+rlpp3000rpo47p8u1p0u XRTOP_0(
+.RP (TOP),
+.RN (TOPTAP0_1),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_1(
+.RP (TOPTAP0_1),
+.RN (TOPTAP0_2),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_2(
+.RP (TOPTAP0_2),
+.RN (TOPTAP0_3),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_3(
+.RP (TOPTAP0_3),
+.RN (TOPTAP0_4),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_4(
+.RP (TOPTAP0_4),
+.RN (TOPTAP0_5),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_5(
+.RP (TOPTAP0_5),
+.RN (TOPTAP0_6),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_6(
+.RP (TOPTAP0_6),
+.RN (TOPTAP0_7),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_7(
+.RP (TOPTAP0_7),
+.RN (TOPTAP0_8),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_8(
+.RP (TOPTAP0_8),
+.RN (TOPTAP0_9),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_9(
+.RP (TOPTAP0_9),
+.RN (TOPTAP0_10),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_10(
+.RP (TOPTAP0_10),
+.RN (TOPTAP0_11),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_11(
+.RP (TOPTAP0_11),
+.RN (TOPTAP0_12),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_12(
+.RP (TOPTAP0_12),
+.RN (TOPTAP0_13),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_13(
+.RP (TOPTAP0_13),
+.RN (TOPTAP0_A),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_14(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_15(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_16(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_17(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_18(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_19(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_20(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_21(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_22(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_23(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_24(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_25(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_26(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_27(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_28(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_29(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_30(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_31(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_32(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_33(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_34(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_35(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_36(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_37(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_38(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_39(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_40(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_41(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_42(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_43(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_44(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_45(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_46(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_47(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_48(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_49(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_50(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_51(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_52(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_53(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_54(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_55(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_56(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_57(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_58(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_59(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_60(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_61(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_62(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_63(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_64(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_65(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_66(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_67(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_68(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_69(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_70(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_71(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_72(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_73(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_74(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_75(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_76(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_77(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_78(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_79(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_80(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_81(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_82(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_83(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_84(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_85(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_86(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_87(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_88(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_89(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_90(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_91(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_92(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_93(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_94(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_95(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_96(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_97(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_98(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_99(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_100(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_101(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_102(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_103(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_104(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_105(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_106(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_107(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_108(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_109(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_110(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_111(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_112(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_113(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_114(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_115(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_116(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_117(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_118(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_119(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_120(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_121(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_122(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_123(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_124(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_125(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_126(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_127(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_128(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_129(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_130(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_131(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_132(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_133(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_134(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTOP_135(
+.RP (TOPTAP0_A),
+.RN (TAP0),
+.ISO (CELG)
+);
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo47p8u1p0u
+
+//Die Size Calculator rlpp3000rpo47p8u1p0u
+//,diesize,rlpp3000rpo47p8u1p0u,136
+
+//Celera Confidential Do Not Copy RTAP0
+rlpp3000rpo47p8u1p0u XRTAP0_0(
+.RP (TAP0),
+.RN (TAP0BOTTOM_1),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_1(
+.RP (TAP0BOTTOM_1),
+.RN (TAP0BOTTOM_2),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_2(
+.RP (TAP0BOTTOM_2),
+.RN (TAP0BOTTOM_3),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_3(
+.RP (TAP0BOTTOM_3),
+.RN (TAP0BOTTOM_4),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_4(
+.RP (TAP0BOTTOM_4),
+.RN (TAP0BOTTOM_5),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_5(
+.RP (TAP0BOTTOM_5),
+.RN (TAP0BOTTOM_6),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_6(
+.RP (TAP0BOTTOM_6),
+.RN (TAP0BOTTOM_7),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_7(
+.RP (TAP0BOTTOM_7),
+.RN (TAP0BOTTOM_8),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_8(
+.RP (TAP0BOTTOM_8),
+.RN (TAP0BOTTOM_9),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_9(
+.RP (TAP0BOTTOM_9),
+.RN (TAP0BOTTOM_10),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_10(
+.RP (TAP0BOTTOM_10),
+.RN (TAP0BOTTOM_11),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_11(
+.RP (TAP0BOTTOM_11),
+.RN (TAP0BOTTOM_12),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_12(
+.RP (TAP0BOTTOM_12),
+.RN (TAP0BOTTOM_13),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_13(
+.RP (TAP0BOTTOM_13),
+.RN (TAP0BOTTOM_A),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_14(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_15(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_16(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_17(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_18(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_19(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_20(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_21(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_22(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_23(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_24(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_25(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_26(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_27(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_28(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_29(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_30(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_31(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_32(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_33(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_34(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_35(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_36(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_37(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_38(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_39(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_40(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_41(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_42(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_43(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_44(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_45(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_46(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_47(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_48(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_49(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_50(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_51(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_52(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_53(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_54(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_55(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_56(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_57(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_58(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_59(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_60(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_61(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_62(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_63(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_64(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_65(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_66(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_67(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_68(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_69(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_70(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_71(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_72(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_73(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_74(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_75(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_76(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_77(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_78(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_79(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_80(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_81(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_82(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_83(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_84(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_85(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_86(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_87(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_88(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_89(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_90(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_91(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_92(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_93(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_94(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_95(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_96(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_97(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_98(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_99(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_100(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_101(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_102(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_103(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_104(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_105(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_106(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_107(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_108(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_109(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_110(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_111(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_112(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_113(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_114(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_115(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_116(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_117(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_118(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_119(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_120(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_121(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_122(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_123(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_124(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_125(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_126(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_127(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_128(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_129(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_130(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_131(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_132(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_133(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_134(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+rlpp3000rpo47p8u1p0u XRTAP0_135(
+.RP (TAP0BOTTOM_A),
+.RN (BOTTOM),
+.ISO (CELG)
+);
+
+//Celera Confidential Do Not Copy //DieSize,rlpp3000rpo47p8u1p0u
+
+//Die Size Calculator rlpp3000rpo47p8u1p0u
+//,diesize,rlpp3000rpo47p8u1p0u,136
+
+//Celera Confidential Do Not Copy Module End
+//Celera Schematic Generator
+endmodule
