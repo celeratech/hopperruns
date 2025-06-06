@@ -1,11 +1,11 @@
 // ------------------------ Module Definitions -----------
-//Verilog HDL for "Generate", "WRAPPER1" "functional"
+//Verilog HDL for "PEBBLES", "PEBBLElinkWRAP" "functional"
 
 
-module WRAPPER1 ( o, i );
+module PEBBLElinkWRAP ( o, i );
 
-  input i;
-  output o;
+  inout i;
+  inout o;
 endmodule
 
 
@@ -34,82 +34,82 @@ output [15:0] status_alarm_reg_15;
 wire [15:0] status_alarm_reg_15;
 
 // ------------------------ Networks ---------------------
-WRAPPER1 XWRAPstatus_alarm_reg_15_0 (
+PEBBLElinkWRAP XWRAPstatus_alarm_reg_15_0 (
 .i(alarm_reg_0),
 .o(status_alarm_reg_15[0])
 );
 
-WRAPPER1 XWRAPstatus_alarm_reg_15_1 (
+PEBBLElinkWRAP XWRAPstatus_alarm_reg_15_1 (
 .i(alarm_reg_1),
 .o(status_alarm_reg_15[1])
 );
 
-WRAPPER1 XWRAPstatus_alarm_reg_15_2 (
+PEBBLElinkWRAP XWRAPstatus_alarm_reg_15_2 (
 .i(alarm_reg_2),
 .o(status_alarm_reg_15[2])
 );
 
-WRAPPER1 XWRAPstatus_alarm_reg_15_3 (
+PEBBLElinkWRAP XWRAPstatus_alarm_reg_15_3 (
 .i(alarm_reg_3),
 .o(status_alarm_reg_15[3])
 );
 
-WRAPPER1 XWRAPstatus_alarm_reg_15_4 (
+PEBBLElinkWRAP XWRAPstatus_alarm_reg_15_4 (
 .i(alarm_reg_4),
 .o(status_alarm_reg_15[4])
 );
 
-WRAPPER1 XWRAPstatus_alarm_reg_15_5 (
+PEBBLElinkWRAP XWRAPstatus_alarm_reg_15_5 (
 .i(alarm_reg_5),
 .o(status_alarm_reg_15[5])
 );
 
-WRAPPER1 XWRAPstatus_alarm_reg_15_6 (
+PEBBLElinkWRAP XWRAPstatus_alarm_reg_15_6 (
 .i(alarm_reg_6),
 .o(status_alarm_reg_15[6])
 );
 
-WRAPPER1 XWRAPstatus_alarm_reg_15_7 (
+PEBBLElinkWRAP XWRAPstatus_alarm_reg_15_7 (
 .i(alarm_reg_7),
 .o(status_alarm_reg_15[7])
 );
 
-WRAPPER1 XWRAPstatus_alarm_reg_15_8 (
+PEBBLElinkWRAP XWRAPstatus_alarm_reg_15_8 (
 .i(alarm_reg_8),
 .o(status_alarm_reg_15[8])
 );
 
-WRAPPER1 XWRAPstatus_alarm_reg_15_9 (
+PEBBLElinkWRAP XWRAPstatus_alarm_reg_15_9 (
 .i(alarm_reg_9),
 .o(status_alarm_reg_15[9])
 );
 
-WRAPPER1 XWRAPstatus_alarm_reg_15_10 (
+PEBBLElinkWRAP XWRAPstatus_alarm_reg_15_10 (
 .i(alarm_reg_10),
 .o(status_alarm_reg_15[10])
 );
 
-WRAPPER1 XWRAPstatus_alarm_reg_15_11 (
+PEBBLElinkWRAP XWRAPstatus_alarm_reg_15_11 (
 .i(alarm_reg_11),
 .o(status_alarm_reg_15[11])
 );
 
-WRAPPER1 XWRAPstatus_alarm_reg_15_12 (
+PEBBLElinkWRAP XWRAPstatus_alarm_reg_15_12 (
 .i(alarm_reg_12),
 .o(status_alarm_reg_15[12])
 );
 
-WRAPPER1 XWRAPstatus_alarm_reg_15_13 (
+PEBBLElinkWRAP XWRAPstatus_alarm_reg_15_13 (
 .i(alarm_reg_13),
 .o(status_alarm_reg_15[13])
 );
 
-WRAPPER1 XWRAPstatus_alarm_reg_15_14 (
+PEBBLElinkWRAP XWRAPstatus_alarm_reg_15_14 (
 .i(alarm_reg_14),
 .o(status_alarm_reg_15[14])
 );
 
-WRAPPER1 XWRAPstatus_alarm_reg_15_15 (
+PEBBLElinkWRAP XWRAPstatus_alarm_reg_15_15 (
 .i(alarm_reg_15),
 .o(status_alarm_reg_15[15])
 );

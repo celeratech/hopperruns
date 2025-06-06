@@ -1,7 +1,8 @@
 // ------------------------ Module Definitions -----------
-module VESPAasmINPUT1 (o,i0,Tstate,CELG59462,CELV96848,CELSUB40948);
+module VESPAasmINPUT2 (o,i0,i1,Tstate,CELG59462,CELV96848,CELSUB40948);
   output  o;
   input  i0;
+  input  i1;
   input  Tstate;
   input  CELG59462;
   input  CELV96848;
@@ -108,25 +109,23 @@ endmodule
 
 
 
-//Celera:delayclock_fbb599f3
-//TYPE:clock  EDGE:rise DFT:no ACC:no%
-module delayclock_fbb599f3 (in,CELV,out,clock,celeraporb,
+//Celera:delayfixed_0cee3f8f
+//Celera Confidential Symbol Generator
+//TYPE:fixed Egde:rise
+module delayfixed_0cee3f8f (CELV,i,o,
 CELG,CELSUB);
 input CELV;
-input in;
-output out;
-input clock;
-input celeraporb;
-input CELSUB;
+input i;
+output o;
 input CELG;
+input CELSUB;
 endmodule
 
 
 
 // ------------------------ Module Verilog ---------------
-module LIMITERuvov_95433cc0 (porb, clock, data_0, data_1, data_2, data_3, data_4, data_5, data_6, data_7, data_8, data_9, enable, data_10, data_11, data_12, data_13, data_14, data_15, latched, mask_ov, mask_uv, clear_ov, clear_uv, CELG59462, CELV96848, PORB97836, fault_over, ov_limit_0, ov_limit_1, ov_limit_2, ov_limit_3, ov_limit_4, ov_limit_5, ov_limit_6, ov_limit_7, ov_limit_8, ov_limit_9, uv_limit_0, uv_limit_1, uv_limit_2, uv_limit_3, uv_limit_4, uv_limit_5, uv_limit_6, uv_limit_7, uv_limit_8, uv_limit_9, CELSUB40948, fault_under, ov_limit_10, ov_limit_11, ov_limit_12, ov_limit_13, ov_limit_14, ov_limit_15, uv_limit_10, uv_limit_11, uv_limit_12, uv_limit_13, uv_limit_14, uv_limit_15);
+module LIMITERuvov_b40d3171 (porb, data_0, data_1, data_2, data_3, data_4, data_5, data_6, data_7, data_8, data_9, enable, data_10, data_11, data_12, data_13, data_14, data_15, latched, mask_ov, mask_uv, clear_ov, clear_uv, CELG59462, CELV96848, fault_over, ov_limit_0, ov_limit_1, ov_limit_2, ov_limit_3, ov_limit_4, ov_limit_5, ov_limit_6, ov_limit_7, ov_limit_8, ov_limit_9, uv_limit_0, uv_limit_1, uv_limit_2, uv_limit_3, uv_limit_4, uv_limit_5, uv_limit_6, uv_limit_7, uv_limit_8, uv_limit_9, CELSUB40948, fault_under, ov_limit_10, ov_limit_11, ov_limit_12, ov_limit_13, ov_limit_14, ov_limit_15, uv_limit_10, uv_limit_11, uv_limit_12, uv_limit_13, uv_limit_14, uv_limit_15);
   input  porb;
-  input  clock;
 input  data_0;
 input  data_1;
 input  data_2;
@@ -151,7 +150,6 @@ input  clear_ov;
 input  clear_uv;
 input  CELG59462;
 input  CELV96848;
-input  PORB97836;
 output  fault_over;
 input  ov_limit_0;
 input  ov_limit_1;
@@ -195,46 +193,41 @@ wire [15:0] y;
 wire [1:0] i;
 
 // ------------------------ Networks ---------------------
-VESPAasmINPUT1 XU11 (
-.o(net_157),
+VESPAasmINPUT2 XU11 (
+.o(net_151),
 .i0(porb),
-.Tstate(net_163),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
-);
-
-VESPAasmINPUT1 XU15 (
-.o(net_162),
-.i0(porb),
-.Tstate(net_164),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
-);
-
-VESPAasmINPUT1 XU3 (
-.o(net_154),
-.i0(clock),
+.i1(net_153),
 .Tstate(enable),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
-VESPAasmINPUT1 XU5 (
-.o(net_155),
+VESPAasmINPUT2 XU3 (
+.o(net_145),
 .i0(mask_uv),
-.Tstate(net_156),
+.i1(net_146),
+.Tstate(enable),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
-VESPAasmINPUT1 XU6 (
-.o(net_159),
+VESPAasmINPUT2 XU5 (
+.o(net_149),
 .i0(mask_ov),
-.Tstate(net_160),
+.i1(net_150),
+.Tstate(enable),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
+);
+
+VESPAasmINPUT2 XU6 (
+.o(net_147),
+.i0(porb),
+.i1(net_152),
+.Tstate(enable),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
@@ -246,7 +239,7 @@ digitalcomparator_42ffc1b4 XU1 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.xlty(net_156)
+.xlty(net_146)
 );
 
 digitalcomparator_4a0dc4ca XU2 (
@@ -255,35 +248,35 @@ digitalcomparator_4a0dc4ca XU2 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.xgty(net_160)
+.xgty(net_150)
 );
 
 dbuf_e926e395 XU7 (
 .i(clear_uv),
-.o(net_158),
+.o(net_144),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 oneshot_13b6b269 XU8 (
-.i(net_158),
-.o(net_85),
+.i(net_144),
+.o(net_80),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 inv_12e192f5 XU9 (
-.i(net_85),
-.o(net_163),
+.i(net_80),
+.o(net_152),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU10 (
-.i(net_84),
+.i(net_79),
 .o(fault_over),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -292,30 +285,30 @@ dbuf_e926e395 XU10 (
 
 dbuf_e926e395 XU12 (
 .i(clear_ov),
-.o(net_161),
+.o(net_148),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 oneshot_13b6b269 XU13 (
-.i(net_161),
-.o(net_87),
+.i(net_148),
+.o(net_82),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 inv_12e192f5 XU14 (
-.i(net_87),
-.o(net_164),
+.i(net_82),
+.o(net_153),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 dbuf_e926e395 XU16 (
-.i(net_86),
+.i(net_81),
 .o(fault_under),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -324,9 +317,9 @@ dbuf_e926e395 XU16 (
 
 dff_9c8a87f3 Xdff1 (
 .d(enable),
-.q(net_143),
-.ck(net_142),
-.rb(net_157),
+.q(net_134),
+.ck(net_133),
+.rb(net_147),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
@@ -334,17 +327,17 @@ dff_9c8a87f3 Xdff1 (
 
 dff_9c8a87f3 Xdff2 (
 .d(enable),
-.q(net_141),
-.ck(net_140),
-.rb(net_162),
+.q(net_132),
+.ck(net_131),
+.rb(net_151),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
 );
 
 dmux2_ac802145 Xdmux1 (
-.i({net_141,net_140}),
-.o(net_84),
+.i({net_132,net_131}),
+.o(net_79),
 .s(latched),
 .CELG(CELG59462),
 .CELV(CELV96848),
@@ -352,32 +345,28 @@ dmux2_ac802145 Xdmux1 (
 );
 
 dmux2_ac802145 Xdmux2 (
-.i({net_143,net_142}),
-.o(net_86),
+.i({net_134,net_133}),
+.o(net_81),
 .s(latched),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
 );
 
-delayclock_fbb599f3 Xdelay1 (
-.in(net_155),
-.out(net_142),
+delayfixed_0cee3f8f Xdelay1 (
+.i(net_145),
+.o(net_133),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.clock(net_154),
-.CELSUB(CELSUB40948),
-.celeraporb(PORB97836)
+.CELSUB(CELSUB40948)
 );
 
-delayclock_fbb599f3 Xdelay2 (
-.in(net_159),
-.out(net_140),
+delayfixed_0cee3f8f Xdelay2 (
+.i(net_149),
+.o(net_131),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.clock(net_154),
-.CELSUB(CELSUB40948),
-.celeraporb(PORB97836)
+.CELSUB(CELSUB40948)
 );
 
 endmodule

@@ -1,90 +1,68 @@
 // ------------------------ Module Definitions -----------
-//Celera:tie_9e2c0894
-//Celera Confidential Symbol Generator
-//TIE
-module tie_9e2c0894 (CELV,CELG,a0,SUB);
-input CELV;
-input CELG;
-output a0;
-input SUB;
+//Verilog HDL for "PEBBLES", "PEBBLElinkWRAP" "functional"
+
+
+module PEBBLElinkWRAP ( o, i );
+
+  inout i;
+  inout o;
 endmodule
 
 
-
-//Verilog HDL for "Generate", "WRAPPER1" "functional"
-
-
-module WRAPPER1 ( o, i );
-
-  input i;
-  output o;
+module dftprobeModel0_ccb255e9 ();
 endmodule
 
-
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
+module dftprobeModel0_bdcfab3b ();
 endmodule
 
+module dftprobeModel0_5a83299d ();
+endmodule
 
 // ------------------------ Module Verilog ---------------
-module LIMITERpugetDEBUG (CELG59462, CELV96848, dft_alert, CELSUB40948, alert_clear, fault_over1, fault_under1, enable_limiter, dft_alertlimiter, hijack_alert_set, hijack_alert_clear, hijack_enable_limiter);
-input  CELG59462;
-input  CELV96848;
-input  dft_alert;
-input  CELSUB40948;
-input  alert_clear;
+module LIMITERpugetDEBUG (fault_over1, fault_under1, enable_limiter, dft_alertlimiter, hijack_enable_limiter, dftprobe_XULIMITERalert_bd40360a, dftprobe_XULIMITERcap1OVER_bd40360a, dftprobe_XULIMITERcap1UNDER_bd40360a);
 input  fault_over1;
 input  fault_under1;
 input  enable_limiter;
 input  dft_alertlimiter;
-output  hijack_alert_set;
-output  hijack_alert_clear;
 output  hijack_enable_limiter;
+output  dftprobe_XULIMITERalert_bd40360a;
+output  dftprobe_XULIMITERcap1OVER_bd40360a;
+output  dftprobe_XULIMITERcap1UNDER_bd40360a;
 
 
 // ------------------------ Wires ------------------------
 
 // ------------------------ Networks ---------------------
-tie_9e2c0894 XU1 (
-.a0(net_39),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
-);
-
-WRAPPER1 XWRAP_30_33 (
+PEBBLElinkWRAP XWRAP_17_21 (
 .i(enable_limiter),
 .o(hijack_enable_limiter)
 );
 
-WRAPPER1 XWRAP_31_35 (
-.i(alert_clear),
-.o(hijack_alert_clear)
+dftprobeModel0_ccb255e9 XULIMITERalert (
+
 );
 
-WRAPPER1 XWRAP_39_37 (
-.i(net_39),
-.o(hijack_alert_set)
+dftprobeModel0_bdcfab3b XULIMITERcap1OVER (
+
 );
 
-STONEnoconn XNCdft_alert (
-.noconn(dft_alert)
+dftprobeModel0_5a83299d XULIMITERcap1UNDER (
+
 );
 
-STONEnoconn XNCfault_over1 (
-.noconn(fault_over1)
+PEBBLElinkWRAP XWRAP_fault_over1_dftprobe_XULIMITERcap1OVER_bd40360a (
+.i(fault_over1),
+.o(dftprobe_XULIMITERcap1OVER_bd40360a)
 );
 
-STONEnoconn XNCfault_under1 (
-.noconn(fault_under1)
+PEBBLElinkWRAP XWRAP_dft_alertlimiter_dftprobe_XULIMITERalert_bd40360a (
+.i(dft_alertlimiter),
+.o(dftprobe_XULIMITERalert_bd40360a)
 );
 
-STONEnoconn XNCdft_alertlimiter (
-.noconn(dft_alertlimiter)
+PEBBLElinkWRAP XWRAP_fault_under1_dftprobe_XULIMITERcap1UNDER_bd40360a (
+.i(fault_under1),
+.o(dftprobe_XULIMITERcap1UNDER_bd40360a)
 );
 
 endmodule

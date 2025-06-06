@@ -11,21 +11,21 @@ module PEBBLEtiehi ( q, G, SUB, V );
 endmodule
 
 
-//Verilog HDL for "Generate", "WRAPPER1" "functional"
+//Verilog HDL for "PEBBLES", "PEBBLElinkWRAP" "functional"
 
 
-module WRAPPER1 ( o, i );
+module PEBBLElinkWRAP ( o, i );
 
-  input i;
-  output o;
+  inout i;
+  inout o;
 endmodule
 
 
 // ------------------------ Module Verilog ---------------
 module LIMITERconfiguration (CELG59462, CELV96848, CELSUB40948, alarm_latched);
-input  CELG59462;
-input  CELV96848;
-input  CELSUB40948;
+  input  CELG59462;
+  input  CELV96848;
+  input  CELSUB40948;
 output  alarm_latched;
 
 
@@ -39,7 +39,7 @@ PEBBLEtiehi XDRMNOTH (
 .SUB(CELSUB40948)
 );
 
-WRAPPER1 alarm_latched_WRAPPER (
+PEBBLElinkWRAP alarm_latched_net_5_WRAPPER (
 .i(a1),
 .o(alarm_latched)
 );

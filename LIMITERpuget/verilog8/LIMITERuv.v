@@ -1,7 +1,8 @@
 // ------------------------ Module Definitions -----------
-module VESPAasmINPUT1 (o,i0,Tstate,CELG59462,CELV96848,CELSUB40948);
+module VESPAasmINPUT2 (o,i0,i1,Tstate,CELG59462,CELV96848,CELSUB40948);
   output  o;
   input  i0;
+  input  i1;
   input  Tstate;
   input  CELG59462;
   input  CELV96848;
@@ -92,25 +93,23 @@ endmodule
 
 
 
-//Celera:delayclock_fbb599f3
-//TYPE:clock  EDGE:rise DFT:no ACC:no%
-module delayclock_fbb599f3 (in,CELV,out,clock,celeraporb,
+//Celera:delayfixed_0cee3f8f
+//Celera Confidential Symbol Generator
+//TYPE:fixed Egde:rise
+module delayfixed_0cee3f8f (CELV,i,o,
 CELG,CELSUB);
 input CELV;
-input in;
-output out;
-input clock;
-input celeraporb;
-input CELSUB;
+input i;
+output o;
 input CELG;
+input CELSUB;
 endmodule
 
 
 
 // ------------------------ Module Verilog ---------------
-module LIMITERuv (porb, clock, data_0, data_1, data_2, data_3, data_4, data_5, data_6, data_7, data_8, data_9, enable, data_10, data_11, data_12, data_13, data_14, data_15, latched, mask_uv, clear_uv, CELG59462, CELV96848, PORB97836, uv_limit_0, uv_limit_1, uv_limit_2, uv_limit_3, uv_limit_4, uv_limit_5, uv_limit_6, uv_limit_7, uv_limit_8, uv_limit_9, CELSUB40948, fault_under, uv_limit_10, uv_limit_11, uv_limit_12, uv_limit_13, uv_limit_14, uv_limit_15);
+module LIMITERuv (porb, data_0, data_1, data_2, data_3, data_4, data_5, data_6, data_7, data_8, data_9, enable, data_10, data_11, data_12, data_13, data_14, data_15, latched, mask_uv, clear_uv, CELG59462, CELV96848, uv_limit_0, uv_limit_1, uv_limit_2, uv_limit_3, uv_limit_4, uv_limit_5, uv_limit_6, uv_limit_7, uv_limit_8, uv_limit_9, CELSUB40948, fault_under, uv_limit_10, uv_limit_11, uv_limit_12, uv_limit_13, uv_limit_14, uv_limit_15);
   input  porb;
-  input  clock;
 input  data_0;
 input  data_1;
 input  data_2;
@@ -133,7 +132,6 @@ input  latched;
 input  clear_uv;
 input  CELG59462;
 input  CELV96848;
-input  PORB97836;
 input  uv_limit_0;
 input  uv_limit_1;
 input  uv_limit_2;
@@ -160,28 +158,21 @@ wire [15:0] y;
 wire [1:0] i;
 
 // ------------------------ Networks ---------------------
-VESPAasmINPUT1 XU11 (
-.o(net_95),
-.i0(porb),
-.Tstate(net_97),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
-);
-
-VESPAasmINPUT1 XU3 (
-.o(net_92),
-.i0(clock),
+VESPAasmINPUT2 XU3 (
+.o(net_85),
+.i0(mask_uv),
+.i1(net_86),
 .Tstate(enable),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
 );
 
-VESPAasmINPUT1 XU5 (
-.o(net_93),
-.i0(mask_uv),
-.Tstate(net_94),
+VESPAasmINPUT2 XU4 (
+.o(net_87),
+.i0(porb),
+.i1(net_89),
+.Tstate(enable),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .CELSUB40948(CELSUB40948)
@@ -193,20 +184,20 @@ digitalcomparator_42ffc1b4 XU1 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.xlty(net_94)
+.xlty(net_86)
 );
 
 oneshot_13b6b269 XU8 (
-.i(net_96),
-.o(net_48),
+.i(net_88),
+.o(net_44),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
 );
 
 inv_12e192f5 XU9 (
-.i(net_48),
-.o(net_97),
+.i(net_44),
+.o(net_89),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
@@ -214,7 +205,7 @@ inv_12e192f5 XU9 (
 
 dbuf_e926e395 XU13 (
 .i(clear_uv),
-.o(net_96),
+.o(net_88),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
@@ -222,16 +213,16 @@ dbuf_e926e395 XU13 (
 
 dff_9c8a87f3 Xdff1 (
 .d(enable),
-.q(net_84),
-.ck(net_83),
-.rb(net_95),
+.q(net_78),
+.ck(net_77),
+.rb(net_87),
 .CELG(CELG59462),
 .CELV(CELV96848),
 .CELSUB(CELSUB40948)
 );
 
 dmux2_ac802145 Xdmux1 (
-.i({net_84,net_83}),
+.i({net_78,net_77}),
 .o(fault_under),
 .s(latched),
 .CELG(CELG59462),
@@ -239,14 +230,12 @@ dmux2_ac802145 Xdmux1 (
 .CELSUB(CELSUB40948)
 );
 
-delayclock_fbb599f3 Xdelay1 (
-.in(net_93),
-.out(net_83),
+delayfixed_0cee3f8f Xdelay1 (
+.i(net_85),
+.o(net_77),
 .CELG(CELG59462),
 .CELV(CELV96848),
-.clock(net_92),
-.CELSUB(CELSUB40948),
-.celeraporb(PORB97836)
+.CELSUB(CELSUB40948)
 );
 
 endmodule
