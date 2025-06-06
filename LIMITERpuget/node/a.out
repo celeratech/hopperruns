@@ -1,0 +1,118 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x555555847f60 .scope module, "digitalcomparator_42ffc1b4" "digitalcomparator_42ffc1b4" 2 62;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "CELV";
+    .port_info 1 /INPUT 1 "SUB";
+    .port_info 2 /INPUT 16 "x";
+    .port_info 3 /INPUT 16 "y";
+    .port_info 4 /OUTPUT 1 "xlty";
+    .port_info 5 /INPUT 1 "CELG";
+o0x7fffff25f018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899de0_0 .net "CELG", 0 0, o0x7fffff25f018;  0 drivers
+o0x7fffff25f048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899ed0_0 .net "CELV", 0 0, o0x7fffff25f048;  0 drivers
+o0x7fffff25f078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899fe0_0 .net "SUB", 0 0, o0x7fffff25f078;  0 drivers
+o0x7fffff25f0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589a0d0_0 .net "intxeqy", 0 0, o0x7fffff25f0a8;  0 drivers
+o0x7fffff25f0d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589a1c0_0 .net "intxgteqy", 0 0, o0x7fffff25f0d8;  0 drivers
+o0x7fffff25f108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589a300_0 .net "intxgty", 0 0, o0x7fffff25f108;  0 drivers
+o0x7fffff25f138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589a3f0_0 .net "intxlteqy", 0 0, o0x7fffff25f138;  0 drivers
+o0x7fffff25f168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589a4e0_0 .net "intxlty", 0 0, o0x7fffff25f168;  0 drivers
+o0x7fffff25f438 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589a5d0_0 .net "nocon_xgty", 0 0, o0x7fffff25f438;  0 drivers
+o0x7fffff25f408 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589a670_0 .net "noconn_xgteqy", 0 0, o0x7fffff25f408;  0 drivers
+o0x7fffff25f468 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589a760_0 .net "noconn_xlteqy", 0 0, o0x7fffff25f468;  0 drivers
+o0x7fffff25f3d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589a850_0 .net "nocoon_xeqy", 0 0, o0x7fffff25f3d8;  0 drivers
+o0x7fffff25f198 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x55555589a940_0 .net "x", 15 0, o0x7fffff25f198;  0 drivers
+o0x7fffff25f498 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55555589a9e0_0 .net "xlty", 0 0, o0x7fffff25f498;  0 drivers
+o0x7fffff25f1c8 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x55555589aa80_0 .net "y", 15 0, o0x7fffff25f1c8;  0 drivers
+S_0x555555845cf0 .scope module, "Xdigitalcomparator16" "STONE16bitcomparator" 2 119, 2 34 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "intxeqy";
+    .port_info 1 /OUTPUT 1 "intxgteqy";
+    .port_info 2 /OUTPUT 1 "intxgty";
+    .port_info 3 /OUTPUT 1 "intxlteqy";
+    .port_info 4 /OUTPUT 1 "intxlty";
+    .port_info 5 /INPUT 1 "CELG";
+    .port_info 6 /INPUT 1 "CELV";
+    .port_info 7 /INPUT 1 "SUB";
+    .port_info 8 /INPUT 16 "x";
+    .port_info 9 /INPUT 16 "y";
+v0x555555847ec0_0 .net "CELG", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x555555897b60_0 .net "CELV", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x555555897c20_0 .net "SUB", 0 0, o0x7fffff25f078;  alias, 0 drivers
+v0x555555897cc0_0 .net "intxeqy", 0 0, o0x7fffff25f0a8;  alias, 0 drivers
+v0x555555897d80_0 .net "intxgteqy", 0 0, o0x7fffff25f0d8;  alias, 0 drivers
+v0x555555897e90_0 .net "intxgty", 0 0, o0x7fffff25f108;  alias, 0 drivers
+v0x555555897f50_0 .net "intxlteqy", 0 0, o0x7fffff25f138;  alias, 0 drivers
+v0x555555898010_0 .net "intxlty", 0 0, o0x7fffff25f168;  alias, 0 drivers
+v0x5555558980d0_0 .net "x", 15 0, o0x7fffff25f198;  alias, 0 drivers
+v0x5555558981b0_0 .net "y", 15 0, o0x7fffff25f1c8;  alias, 0 drivers
+S_0x5555558983d0 .scope module, "XdigitalcomparatorDG" "STONEdigitalcomparatordeglitch" 2 102, 2 12 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "xeqy";
+    .port_info 1 /OUTPUT 1 "xgteqy";
+    .port_info 2 /OUTPUT 1 "xgty";
+    .port_info 3 /OUTPUT 1 "xlteqy";
+    .port_info 4 /OUTPUT 1 "xlty";
+    .port_info 5 /INPUT 1 "CELG";
+    .port_info 6 /INPUT 1 "CELV";
+    .port_info 7 /INPUT 1 "SUB";
+    .port_info 8 /INPUT 1 "intxeqy";
+    .port_info 9 /INPUT 1 "intxgteqy";
+    .port_info 10 /INPUT 1 "intxgty";
+    .port_info 11 /INPUT 1 "intxlteqy";
+    .port_info 12 /INPUT 1 "intxlty";
+v0x5555558986c0_0 .net "CELG", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x555555898760_0 .net "CELV", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x555555898830_0 .net "SUB", 0 0, o0x7fffff25f078;  alias, 0 drivers
+v0x555555898930_0 .net "intxeqy", 0 0, o0x7fffff25f0a8;  alias, 0 drivers
+v0x555555898a00_0 .net "intxgteqy", 0 0, o0x7fffff25f0d8;  alias, 0 drivers
+v0x555555898af0_0 .net "intxgty", 0 0, o0x7fffff25f108;  alias, 0 drivers
+v0x555555898bc0_0 .net "intxlteqy", 0 0, o0x7fffff25f138;  alias, 0 drivers
+v0x555555898c90_0 .net "intxlty", 0 0, o0x7fffff25f168;  alias, 0 drivers
+v0x555555898d60_0 .net "xeqy", 0 0, o0x7fffff25f3d8;  alias, 0 drivers
+v0x555555898e00_0 .net "xgteqy", 0 0, o0x7fffff25f408;  alias, 0 drivers
+v0x555555898ea0_0 .net "xgty", 0 0, o0x7fffff25f438;  alias, 0 drivers
+v0x555555898f40_0 .net "xlteqy", 0 0, o0x7fffff25f468;  alias, 0 drivers
+v0x555555898fe0_0 .net "xlty", 0 0, o0x7fffff25f498;  alias, 0 drivers
+S_0x5555558991a0 .scope module, "Xnoconn3" "STONEnoconn" 2 78, 2 53 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x555555899380_0 .net "noconn", 0 0, o0x7fffff25f468;  alias, 0 drivers
+S_0x555555899490 .scope module, "Xnoconn4" "STONEnoconn" 2 84, 2 53 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x555555899690_0 .net "noconn", 0 0, o0x7fffff25f438;  alias, 0 drivers
+S_0x5555558997a0 .scope module, "Xnoconn5" "STONEnoconn" 2 90, 2 53 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x5555558999f0_0 .net "noconn", 0 0, o0x7fffff25f408;  alias, 0 drivers
+S_0x555555899ad0 .scope module, "Xnoconn6" "STONEnoconn" 2 96, 2 53 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x555555899cd0_0 .net "noconn", 0 0, o0x7fffff25f3d8;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/./celera//projects//Sunnyvale//software//LIMITERpuget//verilog5//digitalcomparator_42ffc1b4.v";
