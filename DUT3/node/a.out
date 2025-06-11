@@ -1,0 +1,208 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x555555847f60 .scope module, "sim_DUT3" "sim_DUT3" 2 73;
+ .timescale 0 0;
+o0x7fffff25f018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7080_0 .net "BSO_0", 0 0, o0x7fffff25f018;  0 drivers
+o0x7fffff25f048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7190_0 .net "BSO_1", 0 0, o0x7fffff25f048;  0 drivers
+o0x7fffff25f078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a72a0_0 .net "BSO_2", 0 0, o0x7fffff25f078;  0 drivers
+o0x7fffff25f0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7390_0 .net "BSO_3", 0 0, o0x7fffff25f0a8;  0 drivers
+o0x7fffff25f0d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7480_0 .net "BS_0", 0 0, o0x7fffff25f0d8;  0 drivers
+o0x7fffff25f108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a75c0_0 .net "BS_1", 0 0, o0x7fffff25f108;  0 drivers
+o0x7fffff25f138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a76b0_0 .net "BS_2", 0 0, o0x7fffff25f138;  0 drivers
+o0x7fffff25f168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a77a0_0 .net "BS_3", 0 0, o0x7fffff25f168;  0 drivers
+o0x7fffff25f198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7890_0 .net "CELG59462", 0 0, o0x7fffff25f198;  0 drivers
+o0x7fffff25f1c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7930_0 .net "CELSUB40948", 0 0, o0x7fffff25f1c8;  0 drivers
+o0x7fffff25f1f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7a20_0 .net "CELV96848", 0 0, o0x7fffff25f1f8;  0 drivers
+o0x7fffff25f228 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7b10_0 .net "COMPOUT", 0 0, o0x7fffff25f228;  0 drivers
+o0x7fffff25f858 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7c00_0 .net "GND", 0 0, o0x7fffff25f858;  0 drivers
+o0x7fffff25f888 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7cf0_0 .net "IPUL", 0 0, o0x7fffff25f888;  0 drivers
+o0x7fffff25f8b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7de0_0 .net "IPWL", 0 0, o0x7fffff25f8b8;  0 drivers
+o0x7fffff25f258 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7ed0_0 .net "IP_e0043be6", 0 0, o0x7fffff25f258;  0 drivers
+o0x7fffff25f288 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a7fc0_0 .net "ISIN", 0 0, o0x7fffff25f288;  0 drivers
+o0x7fffff25f8e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a8170_0 .net "ISQR", 0 0, o0x7fffff25f8e8;  0 drivers
+o0x7fffff25f2b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a8260_0 .net "ITRI", 0 0, o0x7fffff25f2b8;  0 drivers
+o0x7fffff25f2e8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a8300_0 .net "PORB97836", 0 0, o0x7fffff25f2e8;  0 drivers
+o0x7fffff25f918 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a83f0_0 .net "VPUL", 0 0, o0x7fffff25f918;  0 drivers
+o0x7fffff25f318 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a84e0_0 .net "VPWL", 0 0, o0x7fffff25f318;  0 drivers
+o0x7fffff25f948 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a85d0_0 .net "VSIN", 0 0, o0x7fffff25f948;  0 drivers
+o0x7fffff25f348 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a86c0_0 .net "VSQR", 0 0, o0x7fffff25f348;  0 drivers
+o0x7fffff25f378 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a8760_0 .net "VTRI", 0 0, o0x7fffff25f378;  0 drivers
+o0x7fffff25f978 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a8800_0 .net "dftprobe_XUPDbs0_824b23d9", 0 0, o0x7fffff25f978;  0 drivers
+o0x7fffff25f9a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a88a0_0 .net "dftprobe_XUPDbs1_824b23d9", 0 0, o0x7fffff25f9a8;  0 drivers
+o0x7fffff25f9d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a8940_0 .net "dftprobe_XUPDbs2_824b23d9", 0 0, o0x7fffff25f9d8;  0 drivers
+o0x7fffff25fa08 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a89e0_0 .net "dftprobe_XUPDbs3_824b23d9", 0 0, o0x7fffff25fa08;  0 drivers
+o0x7fffff25f3a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a8a80_0 .net "dftprobe_XUPDclock_c668c3f7", 0 0, o0x7fffff25f3a8;  0 drivers
+o0x7fffff25f3d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a8b20_0 .net "dftprobe_XUPDokcomp_c668c3f7", 0 0, o0x7fffff25f3d8;  0 drivers
+o0x7fffff25f408 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558a8bc0_0 .net "dftprobe_XUPDsquare_c668c3f7", 0 0, o0x7fffff25f408;  0 drivers
+S_0x555555880b90 .scope module, "XDUT3" "DUT3" 2 79, 2 2 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "BS_0";
+    .port_info 1 /INPUT 1 "BS_1";
+    .port_info 2 /INPUT 1 "BS_2";
+    .port_info 3 /INPUT 1 "BS_3";
+    .port_info 4 /INPUT 1 "ISIN";
+    .port_info 5 /INPUT 1 "ITRI";
+    .port_info 6 /INPUT 1 "VPWL";
+    .port_info 7 /INPUT 1 "VSQR";
+    .port_info 8 /INPUT 1 "VTRI";
+    .port_info 9 /OUTPUT 1 "BSO_0";
+    .port_info 10 /OUTPUT 1 "BSO_1";
+    .port_info 11 /OUTPUT 1 "BSO_2";
+    .port_info 12 /OUTPUT 1 "BSO_3";
+    .port_info 13 /OUTPUT 1 "COMPOUT";
+    .port_info 14 /INPUT 1 "CELG59462";
+    .port_info 15 /INPUT 1 "CELV96848";
+    .port_info 16 /INPUT 1 "PORB97836";
+    .port_info 17 /INPUT 1 "CELSUB40948";
+    .port_info 18 /INPUT 1 "IP_e0043be6";
+    .port_info 19 /OUTPUT 1 "dftprobe_XUPDclock_c668c3f7";
+    .port_info 20 /OUTPUT 1 "dftprobe_XUPDokcomp_c668c3f7";
+    .port_info 21 /OUTPUT 1 "dftprobe_XUPDsquare_c668c3f7";
+v0x5555558474b0_0 .net "BSO_0", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x5555558480f0_0 .net "BSO_1", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x555555847ec0_0 .net "BSO_2", 0 0, o0x7fffff25f078;  alias, 0 drivers
+v0x5555558a3360_0 .net "BSO_3", 0 0, o0x7fffff25f0a8;  alias, 0 drivers
+v0x5555558a3420_0 .net "BS_0", 0 0, o0x7fffff25f0d8;  alias, 0 drivers
+v0x5555558a3530_0 .net "BS_1", 0 0, o0x7fffff25f108;  alias, 0 drivers
+v0x5555558a35f0_0 .net "BS_2", 0 0, o0x7fffff25f138;  alias, 0 drivers
+v0x5555558a36b0_0 .net "BS_3", 0 0, o0x7fffff25f168;  alias, 0 drivers
+v0x5555558a3770_0 .net "CELG59462", 0 0, o0x7fffff25f198;  alias, 0 drivers
+v0x5555558a3830_0 .net "CELSUB40948", 0 0, o0x7fffff25f1c8;  alias, 0 drivers
+v0x5555558a38f0_0 .net "CELV96848", 0 0, o0x7fffff25f1f8;  alias, 0 drivers
+v0x5555558a39b0_0 .net "COMPOUT", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558a3a70_0 .net "IP_e0043be6", 0 0, o0x7fffff25f258;  alias, 0 drivers
+v0x5555558a3b30_0 .net "ISIN", 0 0, o0x7fffff25f288;  alias, 0 drivers
+v0x5555558a3bf0_0 .net "ITRI", 0 0, o0x7fffff25f2b8;  alias, 0 drivers
+v0x5555558a3cb0_0 .net "PORB97836", 0 0, o0x7fffff25f2e8;  alias, 0 drivers
+v0x5555558a3d70_0 .net "VPWL", 0 0, o0x7fffff25f318;  alias, 0 drivers
+v0x5555558a3f40_0 .net "VSQR", 0 0, o0x7fffff25f348;  alias, 0 drivers
+v0x5555558a4000_0 .net "VTRI", 0 0, o0x7fffff25f378;  alias, 0 drivers
+v0x5555558a40c0_0 .net "dftprobe_XUPDclock_c668c3f7", 0 0, o0x7fffff25f3a8;  alias, 0 drivers
+v0x5555558a4180_0 .net "dftprobe_XUPDokcomp_c668c3f7", 0 0, o0x7fffff25f3d8;  alias, 0 drivers
+v0x5555558a4240_0 .net "dftprobe_XUPDsquare_c668c3f7", 0 0, o0x7fffff25f408;  alias, 0 drivers
+S_0x5555558a45c0 .scope module, "XEXTERNALDUT3" "EXTERNALDUT3" 2 104, 2 27 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "GND";
+    .port_info 1 /INPUT 1 "IPUL";
+    .port_info 2 /INPUT 1 "IPWL";
+    .port_info 3 /INPUT 1 "ISIN";
+    .port_info 4 /INPUT 1 "ISQR";
+    .port_info 5 /INPUT 1 "ITRI";
+    .port_info 6 /INPUT 1 "VPUL";
+    .port_info 7 /INPUT 1 "VSIN";
+    .port_info 8 /INPUT 1 "VSQR";
+    .port_info 9 /INPUT 1 "VTRI";
+    .port_info 10 /INPUT 1 "BSO_0";
+    .port_info 11 /INPUT 1 "BSO_1";
+    .port_info 12 /INPUT 1 "BSO_2";
+    .port_info 13 /INPUT 1 "BSO_3";
+    .port_info 14 /INPUT 1 "COMPOUT";
+    .port_info 15 /OUTPUT 1 "dftprobe_XUPDbs0_824b23d9";
+    .port_info 16 /OUTPUT 1 "dftprobe_XUPDbs1_824b23d9";
+    .port_info 17 /OUTPUT 1 "dftprobe_XUPDbs2_824b23d9";
+    .port_info 18 /OUTPUT 1 "dftprobe_XUPDbs3_824b23d9";
+v0x5555558a49e0_0 .net "BSO_0", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x5555558a4a80_0 .net "BSO_1", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x5555558a4b50_0 .net "BSO_2", 0 0, o0x7fffff25f078;  alias, 0 drivers
+v0x5555558a4c50_0 .net "BSO_3", 0 0, o0x7fffff25f0a8;  alias, 0 drivers
+v0x5555558a4d20_0 .net "COMPOUT", 0 0, o0x7fffff25f228;  alias, 0 drivers
+v0x5555558a4e10_0 .net "GND", 0 0, o0x7fffff25f858;  alias, 0 drivers
+v0x5555558a4eb0_0 .net "IPUL", 0 0, o0x7fffff25f888;  alias, 0 drivers
+v0x5555558a4f50_0 .net "IPWL", 0 0, o0x7fffff25f8b8;  alias, 0 drivers
+v0x5555558a4ff0_0 .net "ISIN", 0 0, o0x7fffff25f288;  alias, 0 drivers
+v0x5555558a50c0_0 .net "ISQR", 0 0, o0x7fffff25f8e8;  alias, 0 drivers
+v0x5555558a5160_0 .net "ITRI", 0 0, o0x7fffff25f2b8;  alias, 0 drivers
+v0x5555558a5230_0 .net "VPUL", 0 0, o0x7fffff25f918;  alias, 0 drivers
+v0x5555558a52d0_0 .net "VSIN", 0 0, o0x7fffff25f948;  alias, 0 drivers
+v0x5555558a5370_0 .net "VSQR", 0 0, o0x7fffff25f348;  alias, 0 drivers
+v0x5555558a5440_0 .net "VTRI", 0 0, o0x7fffff25f378;  alias, 0 drivers
+v0x5555558a5510_0 .net "dftprobe_XUPDbs0_824b23d9", 0 0, o0x7fffff25f978;  alias, 0 drivers
+v0x5555558a55b0_0 .net "dftprobe_XUPDbs1_824b23d9", 0 0, o0x7fffff25f9a8;  alias, 0 drivers
+v0x5555558a5760_0 .net "dftprobe_XUPDbs2_824b23d9", 0 0, o0x7fffff25f9d8;  alias, 0 drivers
+v0x5555558a5800_0 .net "dftprobe_XUPDbs3_824b23d9", 0 0, o0x7fffff25fa08;  alias, 0 drivers
+S_0x5555558a5ba0 .scope module, "XFORCEDUT3" "FORCEDUT3" 2 126, 2 49 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "GND";
+    .port_info 1 /OUTPUT 1 "BS_0";
+    .port_info 2 /OUTPUT 1 "BS_1";
+    .port_info 3 /OUTPUT 1 "BS_2";
+    .port_info 4 /OUTPUT 1 "BS_3";
+    .port_info 5 /OUTPUT 1 "IPUL";
+    .port_info 6 /OUTPUT 1 "IPWL";
+    .port_info 7 /OUTPUT 1 "ISIN";
+    .port_info 8 /OUTPUT 1 "ISQR";
+    .port_info 9 /OUTPUT 1 "ITRI";
+    .port_info 10 /OUTPUT 1 "VPUL";
+    .port_info 11 /OUTPUT 1 "VPWL";
+    .port_info 12 /OUTPUT 1 "VSIN";
+    .port_info 13 /OUTPUT 1 "VSQR";
+    .port_info 14 /OUTPUT 1 "VTRI";
+    .port_info 15 /OUTPUT 1 "CELG59462";
+    .port_info 16 /OUTPUT 1 "CELV96848";
+    .port_info 17 /OUTPUT 1 "PORB97836";
+    .port_info 18 /OUTPUT 1 "CELSUB40948";
+    .port_info 19 /OUTPUT 1 "IP_e0043be6";
+v0x5555558a4770_0 .net "BS_0", 0 0, o0x7fffff25f0d8;  alias, 0 drivers
+v0x5555558a5f80_0 .net "BS_1", 0 0, o0x7fffff25f108;  alias, 0 drivers
+v0x5555558a6050_0 .net "BS_2", 0 0, o0x7fffff25f138;  alias, 0 drivers
+v0x5555558a6150_0 .net "BS_3", 0 0, o0x7fffff25f168;  alias, 0 drivers
+v0x5555558a6220_0 .net "CELG59462", 0 0, o0x7fffff25f198;  alias, 0 drivers
+v0x5555558a6310_0 .net "CELSUB40948", 0 0, o0x7fffff25f1c8;  alias, 0 drivers
+v0x5555558a63e0_0 .net "CELV96848", 0 0, o0x7fffff25f1f8;  alias, 0 drivers
+v0x5555558a64b0_0 .net "GND", 0 0, o0x7fffff25f858;  alias, 0 drivers
+v0x5555558a6580_0 .net "IPUL", 0 0, o0x7fffff25f888;  alias, 0 drivers
+v0x5555558a6650_0 .net "IPWL", 0 0, o0x7fffff25f8b8;  alias, 0 drivers
+v0x5555558a6720_0 .net "IP_e0043be6", 0 0, o0x7fffff25f258;  alias, 0 drivers
+v0x5555558a67f0_0 .net "ISIN", 0 0, o0x7fffff25f288;  alias, 0 drivers
+v0x5555558a6890_0 .net "ISQR", 0 0, o0x7fffff25f8e8;  alias, 0 drivers
+v0x5555558a6930_0 .net "ITRI", 0 0, o0x7fffff25f2b8;  alias, 0 drivers
+v0x5555558a6a20_0 .net "PORB97836", 0 0, o0x7fffff25f2e8;  alias, 0 drivers
+v0x5555558a6ac0_0 .net "VPUL", 0 0, o0x7fffff25f918;  alias, 0 drivers
+v0x5555558a6b90_0 .net "VPWL", 0 0, o0x7fffff25f318;  alias, 0 drivers
+v0x5555558a6d70_0 .net "VSIN", 0 0, o0x7fffff25f948;  alias, 0 drivers
+v0x5555558a6e40_0 .net "VSQR", 0 0, o0x7fffff25f348;  alias, 0 drivers
+v0x5555558a6f30_0 .net "VTRI", 0 0, o0x7fffff25f378;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/celera/projects/Sunnyvale/software/DUT3/verilog8/sim_DUT3.v";
