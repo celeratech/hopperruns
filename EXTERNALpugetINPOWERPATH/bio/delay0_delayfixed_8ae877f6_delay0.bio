@@ -150,6 +150,48 @@ placeROUTEnopins
 endlayoutbio
 //**********************************************
 //Project Parameters
+//Celera:EXTERNALpugetINPOWERPATH Project Bio
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////   default.bio'  DO NOT USE  ///////////////////////////////////
+
+//Simplis Project Parameters /////////////////////////////////////////////
+#define,Project,TBD
+#define,PROJECTreference,1.2
+#define,PROJECTsupply,5.0
+#define,TaRoom,25
+#define,ground,0.0
+#define,leveloffset,5
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Porcess  Parameters ///////////////////////////////////////////////////////
+#define,PROJECTbg,1.232
+#define,REFERENCEccpcode,15
+#define,REFERENCEccncode,15
+#define,HVNPN2A_5vbe,0.55
+#define,HVNPN2A_5vbetc,-2.1
+#define,VTNnch5i,0.72
+//#define,FETNcalculator_option,typical
+#define,FETNcalculator,maximum
+//#define,FETPcalculator_option,typical
+#define,FETPcalculator,maximum
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Global Parameters ///////////////////////////////////////////////////////
+#define,CELVminimum,2.0
+#define,CELGabsmax,0.3
+#define,CELGabsmin,-0.3
+#define,SUBabsmax,0.3
+#define,SUBabsmin,-0.3
+#define,CELSUBabsmax,0.3
+#define,CELSUBabsmin,-0.3
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//layout Parameters //////////////////////////////////////////////////////////
+#define MODULEdiesizefill 10
+//Percentage of area added to module for routing
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 // *********************************************
 //Die Size Estimate
 // *********************************************
@@ -210,7 +252,7 @@ pinname,CELV
 definition,CELV,cell power
 iq,CELV,SIMULATION
 absmax,CELV,6
-absmin,CELV,1.8
+absmin,CELV,2.0
 io,CELV,input
 mode,CELV,power
 router,CELV,TBD
@@ -220,10 +262,8 @@ esd,CELV,TBD
 pinname,CELG
 definition,CELG,cell power ground
 iq,CELG,SIMULATION
-absmax,CELG,
-
-absmin,CELG,****************
-
+absmax,CELG,0.3
+absmin,CELG,-0.3
 io,CELG,input
 mode,CELG,power
 router,CELG,TBD
@@ -234,8 +274,7 @@ pinname,i
 definition,i,delay input
 iq,i,SIMULATION
 absmax,i,6
-absmin,i,****************
-
+absmin,i,-0.3
 io,i,input
 mode,i,digital
 router,i,TBD
@@ -246,8 +285,7 @@ pinname,o
 definition,o,delay output
 iq,o,SIMULATION
 absmax,o,6
-absmin,o,****************
-
+absmin,o,-0.3
 io,o,output
 mode,o,digital
 router,o,TBD
@@ -258,8 +296,7 @@ pinname,register_delay
 definition,register_delay,register delay control
 iq,register_delay,SIMULATION
 absmax,register_delay,6
-absmin,register_delay,****************
-
+absmin,register_delay,-0.3
 io,register_delay,input
 mode,register_delay,digital
 router,register_delay,TBD
@@ -270,8 +307,7 @@ pinname,factory_delay
 definition,factory_delay,factory delay control
 iq,factory_delay,SIMULATION
 absmax,factory_delay,6
-absmin,factory_delay,****************
-
+absmin,factory_delay,-0.3
 io,factory_delay,input
 mode,factory_delay,digital
 router,factory_delay,TBD
@@ -282,8 +318,7 @@ pinname,delay
 definition,delay,delay control
 iq,delay,SIMULATION
 absmax,delay,6
-absmin,delay,****************
-
+absmin,delay,-0.3
 io,delay,input
 mode,delay,digital
 router,delay,TBD
@@ -294,8 +329,7 @@ pinname,trim_delay
 definition,trim_delay,trim delay accuracy
 iq,trim_delay,SIMULATION
 absmax,trim_delay,6
-absmin,trim_delay,****************
-
+absmin,trim_delay,-0.3
 io,trim_delay,input
 mode,trim_delay,digital
 router,trim_delay,TBD
@@ -306,8 +340,7 @@ pinname,ten_delay
 definition,ten_delay,Testmode delay input
 iq,ten_delay,SIMULATION
 absmax,ten_delay,6
-absmin,ten_delay,****************
-
+absmin,ten_delay,-0.3
 io,ten_delay,input
 mode,ten_delay,digital
 router,ten_delay,TBD
@@ -318,8 +351,7 @@ pinname,ten_delay_enable
 definition,ten_delay_enable,Testmode Enable delay
 iq,ten_delay_enable,SIMULATION
 absmax,ten_delay_enable,6
-absmin,ten_delay_enable,****************
-
+absmin,ten_delay_enable,-0.3
 io,ten_delay_enable,input
 mode,ten_delay_enable,digital
 router,ten_delay_enable,TBD
@@ -330,8 +362,7 @@ pinname,tdi_delay
 definition,tdi_delay,Testmode delay output
 iq,tdi_delay,SIMULATION
 absmax,tdi_delay,6
-absmin,tdi_delay,****************
-
+absmin,tdi_delay,-0.3
 io,tdi_delay,output
 mode,tdi_delay,digital
 router,tdi_delay,TBD
@@ -342,8 +373,7 @@ pinname,CELERAporb
 definition,CELERAporb,pulse stretcher power on reset
 iq,CELERAporb,SIMULATION
 absmax,CELERAporb,6
-absmin,CELERAporb,****************
-
+absmin,CELERAporb,-0.3
 io,CELERAporb,input
 mode,CELERAporb,digital
 router,CELERAporb,TBD
@@ -354,8 +384,7 @@ pinname,CELSUB
 definition,CELSUB,substrate
 iq,CELSUB,SIMULATION
 absmax,CELSUB,6
-absmin,CELSUB,****************
-
+absmin,CELSUB,-0.3
 io,CELSUB,power
 mode,CELSUB,analog
 router,CELSUB,TBD
