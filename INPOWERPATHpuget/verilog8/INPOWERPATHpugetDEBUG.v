@@ -1,8 +1,11 @@
 // ------------------------ Module Definitions -----------
-module VESPAdftpulse (stop,pulse,start);
+module VESPAdftpulse (stop,pulse,start,CELG59462,CELV96848,CELSUB40948);
   input  stop;
-  input  pulse;
+  output  pulse;
   input  start;
+  input  CELG59462;
+  input  CELV96848;
+  input  CELSUB40948;
 endmodule
 
 //Verilog HDL for "PEBBLES", "PEBBLElinkWRAP" "functional"
@@ -34,10 +37,13 @@ module dftprobeModel0_c9b3912b ();
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module INPOWERPATHpugetDEBUG (ok_infet, on_infet, ok_powerpathin, on_powerpathin, clock_powerpathin, enable_powerpathin, hijack_enable_powerpathin, dftprobe_XUINPOWERPATHon_5d6b441a, dftprobe_XUINPOWERPATH_clock_5d6b441a, dftprobe_XUINPOWERPATHstartup_5d6b441a, dftprobe_XUINPOWERPATHok_infet_5d6b441a, dftprobe_XUINPOWERPATHon_infet_5d6b441a);
+module INPOWERPATHpugetDEBUG (ok_infet, on_infet, CELG59462, CELV96848, CELSUB40948, ok_powerpathin, on_powerpathin, clock_powerpathin, enable_powerpathin, hijack_enable_powerpathin, dftprobe_XUINPOWERPATHon_5d6b441a, dftprobe_XUINPOWERPATH_clock_5d6b441a, dftprobe_XUINPOWERPATHstartup_5d6b441a, dftprobe_XUINPOWERPATHok_infet_5d6b441a, dftprobe_XUINPOWERPATHon_infet_5d6b441a);
 input  ok_infet;
 input  on_infet;
-  input  ok_powerpathin;
+input  CELG59462;
+input  CELV96848;
+input  CELSUB40948;
+input  ok_powerpathin;
 input  on_powerpathin;
 input  clock_powerpathin;
 input  enable_powerpathin;
@@ -55,7 +61,10 @@ output  dftprobe_XUINPOWERPATHon_infet_5d6b441a;
 VESPAdftpulse XU1 (
 .stop(ok_powerpathin),
 .pulse(dftprobe_XUINPOWERPATHstartup_5d6b441a),
-.start(hijack_enable_powerpathin)
+.start(hijack_enable_powerpathin),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
 );
 
 PEBBLElinkWRAP XWRAP_26_32 (

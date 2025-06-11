@@ -1,17 +1,17 @@
-* Z:\celera\projects\Simplis\playbrian\Puget\Puget0\301e\overlay\OVERLAYpugetINPOWERPATHreg.sxsch
+* Z:\celera\projects\Simplis\playbrian\Puget\Puget0\301e\overlay\OVERLAYpugetINPOWERPATHreg_noext.sxsch
 *#SIMETRIX
 X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
 
-.node_map SIMPV 24
-.node_map INFET 27
-.node_map VOUTSPpowerpath 29
-.node_map INpowerpath 23
-.node_map on_powerpathin 32
-.node_map clock_powerpathin 26
-.node_map VOUTM5 28
-.node_map GNDpowerpathin 30
-.node_map enable_powerpathin 25
-.node_map ok_powerpathin 31
+.node_map SIMPV 21
+.node_map INFET 24
+.node_map VOUTSPpowerpath 25
+.node_map INpowerpath 20
+.node_map on_powerpathin 29
+.node_map clock_powerpathin 23
+.node_map VOUTM5 27
+.node_map GNDpowerpathin 26
+.node_map enable_powerpathin 22
+.node_map ok_powerpathin 28
 .options
 + PSP_NPT=5001
 + POP_ITRMAX=20
@@ -32,9 +32,8 @@ X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
 .globalvar VIN = 5.0
 .globalvar REF = 1.2
 
-X$EXTERNAL 27 23 28 EXTERNALpugetINPOWERPATH
 
-X$INPP 23 27 29 24 28 25 31 30 26 32 23 INPOWERPATHpuget
+X$INPP 20 24 25 21 27 22 28 26 23 29 20 INPOWERPATHpuget
 .PRINT V(#INpowerpath)
 .GRAPH :#INpowerpath curveLabel= INpowerpath nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe1  
 .PRINT I(X$INPP#INpowerpath)
@@ -64,16 +63,6 @@ X$INPP 23 27 29 24 28 25 31 30 26 32 23 INPOWERPATHpuget
 .PRINT V(#on_powerpathin)
 .GRAPH :#on_powerpathin curveLabel= on_powerpathin nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe9  
 X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
-** From Z:\celera\projects\Simplis\playrich\Puget\Puget0\301E\external\EXTERNALpugetINPOWERPATH.sxcmp
-.subckt EXTERNALpugetINPOWERPATH 8 9 10
-*#hierarchy
-.node_map INFET 8
-.node_map VOUTM5 10
-.node_map IN 9
-C1 8 9 3.3n IC=0
-C2 9 10 1u IC=0
-.ends EXTERNALpugetINPOWERPATH
-
 ** From Z:\celera\projects\Simplis\playrich\Puget\Puget0\301E\force\FORCEpugetINPOWERPATHreg.sxcmp
 
 
