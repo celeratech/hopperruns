@@ -7,152 +7,110 @@
 :vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
 :vpi_module "/usr/local/lib/ivl/va_math.vpi";
-S_0x555555847f60 .scope module, "OVERLAYpugetINPOWERPATHreg_noext" "OVERLAYpugetINPOWERPATHreg_noext" 2 58;
+S_0x555555847f60 .scope module, "OVERLAYpugetINPOWERPATHreg" "OVERLAYpugetINPOWERPATHreg" 2 41;
  .timescale 0 0;
-o0x7fffff25f018 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589f580_0 .net "CELG59462", 0 0, o0x7fffff25f018;  0 drivers
-o0x7fffff25f048 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589f620_0 .net "CELREF_a961400b", 0 0, o0x7fffff25f048;  0 drivers
-o0x7fffff25f078 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589f730_0 .net "CELSUB40948", 0 0, o0x7fffff25f078;  0 drivers
-o0x7fffff25f0a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589f820_0 .net "CELV96848", 0 0, o0x7fffff25f0a8;  0 drivers
-o0x7fffff25f0d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589f910_0 .net "GNDpowerpathin", 0 0, o0x7fffff25f0d8;  0 drivers
-o0x7fffff25f108 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589fa50_0 .net "INFET", 0 0, o0x7fffff25f108;  0 drivers
+o0x7fffff25f378 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555897a60_0 .net "CELG59462", 0 0, o0x7fffff25f378;  0 drivers
+o0x7fffff25f3a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555898f20_0 .net "CELSUB40948", 0 0, o0x7fffff25f3a8;  0 drivers
+o0x7fffff25f3d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555898ff0_0 .net "CELV96848", 0 0, o0x7fffff25f3d8;  0 drivers
 o0x7fffff25f138 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589fb40_0 .net "INpowerpath", 0 0, o0x7fffff25f138;  0 drivers
+v0x5555558990f0_0 .net "GNDpowerpathin", 0 0, o0x7fffff25f138;  0 drivers
+o0x7fffff25f048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899190_0 .net "INFET", 0 0, o0x7fffff25f048;  0 drivers
 o0x7fffff25f168 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589fbe0_0 .net "IP_00aa5598", 0 0, o0x7fffff25f168;  0 drivers
-o0x7fffff25f198 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589fc80_0 .net "IP_a961400b", 0 0, o0x7fffff25f198;  0 drivers
+v0x555555899280_0 .net "SIMPV", 0 0, o0x7fffff25f168;  0 drivers
+o0x7fffff25f078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899370_0 .net "VOUTM5", 0 0, o0x7fffff25f078;  0 drivers
+o0x7fffff25f018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899460_0 .net "VOUTSPpowerpath", 0 0, o0x7fffff25f018;  0 drivers
 o0x7fffff25f1c8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589fdb0_0 .net "PORB97836", 0 0, o0x7fffff25f1c8;  0 drivers
+v0x555555899500_0 .net "clock_powerpathin", 0 0, o0x7fffff25f1c8;  0 drivers
+o0x7fffff25f408 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558995a0_0 .net "dftprobe_XUINPOWERPATH_clock_5d6b441a", 0 0, o0x7fffff25f408;  0 drivers
+o0x7fffff25f438 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899640_0 .net "dftprobe_XUINPOWERPATHok_infet_5d6b441a", 0 0, o0x7fffff25f438;  0 drivers
+o0x7fffff25f468 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5555558996e0_0 .net "dftprobe_XUINPOWERPATHon_5d6b441a", 0 0, o0x7fffff25f468;  0 drivers
+o0x7fffff25f498 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899780_0 .net "dftprobe_XUINPOWERPATHon_infet_5d6b441a", 0 0, o0x7fffff25f498;  0 drivers
+o0x7fffff25f4c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899820_0 .net "dftprobe_XUINPOWERPATHstartup_5d6b441a", 0 0, o0x7fffff25f4c8;  0 drivers
 o0x7fffff25f1f8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589fea0_0 .net "SIMPV", 0 0, o0x7fffff25f1f8;  0 drivers
-o0x7fffff25f558 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55555589ff90_0 .net "VOUTM5", 0 0, o0x7fffff25f558;  0 drivers
-o0x7fffff25f228 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5555558a0030_0 .net "VOUTSPpowerpath", 0 0, o0x7fffff25f228;  0 drivers
-o0x7fffff25f588 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5555558a0120_0 .net "celkelvin_GNDpowerpath", 0 0, o0x7fffff25f588;  0 drivers
-o0x7fffff25f5b8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5555558a0210_0 .net "celkelvin_IN", 0 0, o0x7fffff25f5b8;  0 drivers
-o0x7fffff25f258 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5555558a0300_0 .net "clock_powerpathin", 0 0, o0x7fffff25f258;  0 drivers
-o0x7fffff25f5e8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5555558a03f0_0 .net "dftprobe_XUINPOWERPATH_clock_5d6b441a", 0 0, o0x7fffff25f5e8;  0 drivers
-o0x7fffff25f618 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5555558a05a0_0 .net "dftprobe_XUINPOWERPATHok_infet_5d6b441a", 0 0, o0x7fffff25f618;  0 drivers
-o0x7fffff25f648 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5555558a0640_0 .net "dftprobe_XUINPOWERPATHon_5d6b441a", 0 0, o0x7fffff25f648;  0 drivers
-o0x7fffff25f678 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5555558a06e0_0 .net "dftprobe_XUINPOWERPATHon_infet_5d6b441a", 0 0, o0x7fffff25f678;  0 drivers
-o0x7fffff25f6a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5555558a0780_0 .net "dftprobe_XUINPOWERPATHstartup_5d6b441a", 0 0, o0x7fffff25f6a8;  0 drivers
-o0x7fffff25f288 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5555558a0820_0 .net "enable_powerpathin", 0 0, o0x7fffff25f288;  0 drivers
-o0x7fffff25f6d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5555558a0910_0 .net "ok_powerpathin", 0 0, o0x7fffff25f6d8;  0 drivers
-o0x7fffff25f708 .functor BUFZ 1, C4<z>; HiZ drive
-v0x5555558a09b0_0 .net "on_powerpathin", 0 0, o0x7fffff25f708;  0 drivers
-S_0x55555587f7e0 .scope module, "XFORCE1" "FORCEpugetINPOWERPATHreg" 2 64, 2 2 0, S_0x555555847f60;
+v0x5555558998c0_0 .net "enable_powerpathin", 0 0, o0x7fffff25f1f8;  0 drivers
+o0x7fffff25f198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899960_0 .net "kelvin_VOUTSPpowerpathin", 0 0, o0x7fffff25f198;  0 drivers
+o0x7fffff25f528 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899a50_0 .net "net_32", 0 0, o0x7fffff25f528;  0 drivers
+o0x7fffff25f4f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x555555899c00_0 .net "ok_powerpathin", 0 0, o0x7fffff25f4f8;  0 drivers
+S_0x55555587df70 .scope module, "XEXTERNAL" "EXTERNALpugetINPOWERPATH" 2 47, 2 2 0, S_0x555555847f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "IN";
+    .port_info 1 /INPUT 1 "INFET";
+    .port_info 2 /INPUT 1 "VOUTM5";
+v0x5555558474b0_0 .net "IN", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x5555558480f0_0 .net "INFET", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x555555847ec0_0 .net "VOUTM5", 0 0, o0x7fffff25f078;  alias, 0 drivers
+S_0x555555896f90 .scope module, "XFORCE1" "FORCEpugetINPOWERPATHreg" 2 53, 2 8 0, S_0x555555847f60;
  .timescale 0 0;
     .port_info 0 /OUTPUT 1 "INFET";
     .port_info 1 /OUTPUT 1 "SIMPV";
-    .port_info 2 /OUTPUT 1 "CELG59462";
-    .port_info 3 /OUTPUT 1 "CELV96848";
-    .port_info 4 /OUTPUT 1 "PORB97836";
-    .port_info 5 /OUTPUT 1 "CELSUB40948";
-    .port_info 6 /OUTPUT 1 "INpowerpath";
-    .port_info 7 /OUTPUT 1 "IP_00aa5598";
-    .port_info 8 /OUTPUT 1 "IP_a961400b";
-    .port_info 9 /OUTPUT 1 "GNDpowerpathin";
-    .port_info 10 /OUTPUT 1 "CELREF_a961400b";
-    .port_info 11 /OUTPUT 1 "VOUTSPpowerpath";
-    .port_info 12 /OUTPUT 1 "clock_powerpathin";
-    .port_info 13 /OUTPUT 1 "enable_powerpathin";
-v0x5555558474b0_0 .net "CELG59462", 0 0, o0x7fffff25f018;  alias, 0 drivers
-v0x5555558480f0_0 .net "CELREF_a961400b", 0 0, o0x7fffff25f048;  alias, 0 drivers
-v0x555555847ec0_0 .net "CELSUB40948", 0 0, o0x7fffff25f078;  alias, 0 drivers
-v0x55555589c920_0 .net "CELV96848", 0 0, o0x7fffff25f0a8;  alias, 0 drivers
-v0x55555589c9e0_0 .net "GNDpowerpathin", 0 0, o0x7fffff25f0d8;  alias, 0 drivers
-v0x55555589caf0_0 .net "INFET", 0 0, o0x7fffff25f108;  alias, 0 drivers
-v0x55555589cbb0_0 .net "INpowerpath", 0 0, o0x7fffff25f138;  alias, 0 drivers
-v0x55555589cc70_0 .net "IP_00aa5598", 0 0, o0x7fffff25f168;  alias, 0 drivers
-v0x55555589cd30_0 .net "IP_a961400b", 0 0, o0x7fffff25f198;  alias, 0 drivers
-v0x55555589cdf0_0 .net "PORB97836", 0 0, o0x7fffff25f1c8;  alias, 0 drivers
-v0x55555589ceb0_0 .net "SIMPV", 0 0, o0x7fffff25f1f8;  alias, 0 drivers
-v0x55555589cf70_0 .net "VOUTSPpowerpath", 0 0, o0x7fffff25f228;  alias, 0 drivers
-v0x55555589d030_0 .net "clock_powerpathin", 0 0, o0x7fffff25f258;  alias, 0 drivers
-v0x55555589d0f0_0 .net "enable_powerpathin", 0 0, o0x7fffff25f288;  alias, 0 drivers
-S_0x55555589d370 .scope module, "XINPP" "INPOWERPATHpuget" 2 81, 2 19 0, S_0x555555847f60;
+    .port_info 2 /OUTPUT 1 "INpowerpath";
+    .port_info 3 /OUTPUT 1 "GNDpowerpathin";
+    .port_info 4 /OUTPUT 1 "VOUTSPpowerpath";
+    .port_info 5 /OUTPUT 1 "clock_powerpathin";
+    .port_info 6 /OUTPUT 1 "enable_powerpathin";
+v0x555555897220_0 .net "GNDpowerpathin", 0 0, o0x7fffff25f138;  alias, 0 drivers
+v0x5555558972e0_0 .net "INFET", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x5555558973d0_0 .net "INpowerpath", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x5555558974d0_0 .net "SIMPV", 0 0, o0x7fffff25f168;  alias, 0 drivers
+v0x555555897570_0 .net "VOUTSPpowerpath", 0 0, o0x7fffff25f198;  alias, 0 drivers
+v0x555555897660_0 .net "clock_powerpathin", 0 0, o0x7fffff25f1c8;  alias, 0 drivers
+v0x555555897700_0 .net "enable_powerpathin", 0 0, o0x7fffff25f1f8;  alias, 0 drivers
+S_0x555555897880 .scope module, "XINPP" "INPOWERPATHpuget" 2 63, 2 18 0, S_0x555555847f60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "INFET";
+    .port_info 0 /INPUT 1 "INFET";
     .port_info 1 /INPUT 1 "SIMPV";
-    .port_info 2 /OUTPUT 1 "VOUTM5";
+    .port_info 2 /INPUT 1 "VOUTM5";
     .port_info 3 /INPUT 1 "CELG59462";
     .port_info 4 /INPUT 1 "CELV96848";
-    .port_info 5 /INPUT 1 "PORB97836";
-    .port_info 6 /INPUT 1 "CELSUB40948";
-    .port_info 7 /INPUT 1 "INpowerpath";
-    .port_info 8 /INPUT 1 "IP_00aa5598";
-    .port_info 9 /INPUT 1 "IP_a961400b";
-    .port_info 10 /INPUT 1 "celkelvin_IN";
-    .port_info 11 /INPUT 1 "GNDpowerpathin";
-    .port_info 12 /OUTPUT 1 "ok_powerpathin";
-    .port_info 13 /OUTPUT 1 "on_powerpathin";
-    .port_info 14 /INPUT 1 "CELREF_a961400b";
-    .port_info 15 /INPUT 1 "VOUTSPpowerpath";
-    .port_info 16 /INPUT 1 "clock_powerpathin";
-    .port_info 17 /INPUT 1 "enable_powerpathin";
-    .port_info 18 /INPUT 1 "celkelvin_GNDpowerpath";
-    .port_info 19 /INPUT 1 "kelvin_VOUTSPpowerpathin";
-    .port_info 20 /OUTPUT 1 "dftprobe_XUINPOWERPATHon_5d6b441a";
-    .port_info 21 /OUTPUT 1 "dftprobe_XUINPOWERPATH_clock_5d6b441a";
-    .port_info 22 /OUTPUT 1 "dftprobe_XUINPOWERPATHstartup_5d6b441a";
-    .port_info 23 /OUTPUT 1 "dftprobe_XUINPOWERPATHok_infet_5d6b441a";
-    .port_info 24 /OUTPUT 1 "dftprobe_XUINPOWERPATHon_infet_5d6b441a";
-v0x55555589d780_0 .net "CELG59462", 0 0, o0x7fffff25f018;  alias, 0 drivers
-v0x55555589d820_0 .net "CELREF_a961400b", 0 0, o0x7fffff25f048;  alias, 0 drivers
-v0x55555589d8f0_0 .net "CELSUB40948", 0 0, o0x7fffff25f078;  alias, 0 drivers
-v0x55555589d9f0_0 .net "CELV96848", 0 0, o0x7fffff25f0a8;  alias, 0 drivers
-v0x55555589dac0_0 .net "GNDpowerpathin", 0 0, o0x7fffff25f0d8;  alias, 0 drivers
-v0x55555589dbb0_0 .net "INFET", 0 0, o0x7fffff25f108;  alias, 0 drivers
-v0x55555589dc80_0 .net "INpowerpath", 0 0, o0x7fffff25f138;  alias, 0 drivers
-v0x55555589dd50_0 .net "IP_00aa5598", 0 0, o0x7fffff25f168;  alias, 0 drivers
-v0x55555589de20_0 .net "IP_a961400b", 0 0, o0x7fffff25f198;  alias, 0 drivers
-v0x55555589df80_0 .net "PORB97836", 0 0, o0x7fffff25f1c8;  alias, 0 drivers
-v0x55555589e050_0 .net "SIMPV", 0 0, o0x7fffff25f1f8;  alias, 0 drivers
-v0x55555589e120_0 .net "VOUTM5", 0 0, o0x7fffff25f558;  alias, 0 drivers
-v0x55555589e1c0_0 .net "VOUTSPpowerpath", 0 0, o0x7fffff25f138;  alias, 0 drivers
-v0x55555589e260_0 .net "celkelvin_GNDpowerpath", 0 0, o0x7fffff25f588;  alias, 0 drivers
-v0x55555589e300_0 .net "celkelvin_IN", 0 0, o0x7fffff25f5b8;  alias, 0 drivers
-v0x55555589e3a0_0 .net "clock_powerpathin", 0 0, o0x7fffff25f258;  alias, 0 drivers
-v0x55555589e440_0 .net "dftprobe_XUINPOWERPATH_clock_5d6b441a", 0 0, o0x7fffff25f5e8;  alias, 0 drivers
-v0x55555589e5f0_0 .net "dftprobe_XUINPOWERPATHok_infet_5d6b441a", 0 0, o0x7fffff25f618;  alias, 0 drivers
-v0x55555589e690_0 .net "dftprobe_XUINPOWERPATHon_5d6b441a", 0 0, o0x7fffff25f648;  alias, 0 drivers
-v0x55555589e730_0 .net "dftprobe_XUINPOWERPATHon_infet_5d6b441a", 0 0, o0x7fffff25f678;  alias, 0 drivers
-v0x55555589e7d0_0 .net "dftprobe_XUINPOWERPATHstartup_5d6b441a", 0 0, o0x7fffff25f6a8;  alias, 0 drivers
-v0x55555589e870_0 .net "enable_powerpathin", 0 0, o0x7fffff25f288;  alias, 0 drivers
-v0x55555589e940_0 .net "kelvin_VOUTSPpowerpathin", 0 0, o0x7fffff25f228;  alias, 0 drivers
-v0x55555589ea10_0 .net "ok_powerpathin", 0 0, o0x7fffff25f6d8;  alias, 0 drivers
-v0x55555589eab0_0 .net "on_powerpathin", 0 0, o0x7fffff25f708;  alias, 0 drivers
-S_0x55555589edd0 .scope module, "celkelvin_GNDpowerpath_WRAPPER" "PEBBLElinkWRAP" 2 114, 2 50 0, S_0x555555847f60;
- .timescale 0 0;
-    .port_info 0 /INOUT 1 "o";
-    .port_info 1 /INOUT 1 "i";
-v0x55555589efe0_0 .net "i", 0 0, o0x7fffff25f588;  alias, 0 drivers
-v0x55555589f0d0_0 .net "o", 0 0, o0x7fffff25f018;  alias, 0 drivers
-S_0x55555589f200 .scope module, "celkelvin_IN_WRAPPER" "PEBBLElinkWRAP" 2 109, 2 50 0, S_0x555555847f60;
- .timescale 0 0;
-    .port_info 0 /INOUT 1 "o";
-    .port_info 1 /INOUT 1 "i";
-v0x55555589f3e0_0 .net "i", 0 0, o0x7fffff25f5b8;  alias, 0 drivers
-v0x55555589f4a0_0 .net "o", 0 0, o0x7fffff25f138;  alias, 0 drivers
+    .port_info 5 /INPUT 1 "CELSUB40948";
+    .port_info 6 /INPUT 1 "INpowerpath";
+    .port_info 7 /INPUT 1 "GNDpowerpathin";
+    .port_info 8 /INPUT 1 "ok_powerpathin";
+    .port_info 9 /INPUT 1 "on_powerpathin";
+    .port_info 10 /INPUT 1 "VOUTSPpowerpath";
+    .port_info 11 /INPUT 1 "clock_powerpathin";
+    .port_info 12 /INPUT 1 "enable_powerpathin";
+    .port_info 13 /INPUT 1 "kelvin_VOUTSPpowerpathin";
+    .port_info 14 /OUTPUT 1 "dftprobe_XUINPOWERPATHon_5d6b441a";
+    .port_info 15 /OUTPUT 1 "dftprobe_XUINPOWERPATH_clock_5d6b441a";
+    .port_info 16 /OUTPUT 1 "dftprobe_XUINPOWERPATHstartup_5d6b441a";
+    .port_info 17 /OUTPUT 1 "dftprobe_XUINPOWERPATHok_infet_5d6b441a";
+    .port_info 18 /OUTPUT 1 "dftprobe_XUINPOWERPATHon_infet_5d6b441a";
+v0x555555897cd0_0 .net "CELG59462", 0 0, o0x7fffff25f378;  alias, 0 drivers
+v0x555555897d90_0 .net "CELSUB40948", 0 0, o0x7fffff25f3a8;  alias, 0 drivers
+v0x555555897e50_0 .net "CELV96848", 0 0, o0x7fffff25f3d8;  alias, 0 drivers
+v0x555555897f20_0 .net "GNDpowerpathin", 0 0, o0x7fffff25f138;  alias, 0 drivers
+v0x555555897ff0_0 .net "INFET", 0 0, o0x7fffff25f048;  alias, 0 drivers
+v0x555555898130_0 .net "INpowerpath", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x555555898220_0 .net "SIMPV", 0 0, o0x7fffff25f168;  alias, 0 drivers
+v0x5555558982c0_0 .net "VOUTM5", 0 0, o0x7fffff25f078;  alias, 0 drivers
+v0x555555898360_0 .net "VOUTSPpowerpath", 0 0, o0x7fffff25f018;  alias, 0 drivers
+v0x555555898400_0 .net "clock_powerpathin", 0 0, o0x7fffff25f1c8;  alias, 0 drivers
+v0x5555558984a0_0 .net "dftprobe_XUINPOWERPATH_clock_5d6b441a", 0 0, o0x7fffff25f408;  alias, 0 drivers
+v0x555555898540_0 .net "dftprobe_XUINPOWERPATHok_infet_5d6b441a", 0 0, o0x7fffff25f438;  alias, 0 drivers
+v0x5555558985e0_0 .net "dftprobe_XUINPOWERPATHon_5d6b441a", 0 0, o0x7fffff25f468;  alias, 0 drivers
+v0x555555898680_0 .net "dftprobe_XUINPOWERPATHon_infet_5d6b441a", 0 0, o0x7fffff25f498;  alias, 0 drivers
+v0x555555898720_0 .net "dftprobe_XUINPOWERPATHstartup_5d6b441a", 0 0, o0x7fffff25f4c8;  alias, 0 drivers
+v0x5555558987e0_0 .net "enable_powerpathin", 0 0, o0x7fffff25f1f8;  alias, 0 drivers
+v0x5555558988b0_0 .net "kelvin_VOUTSPpowerpathin", 0 0, o0x7fffff25f198;  alias, 0 drivers
+v0x555555898a90_0 .net "ok_powerpathin", 0 0, o0x7fffff25f4f8;  alias, 0 drivers
+v0x555555898b30_0 .net "on_powerpathin", 0 0, o0x7fffff25f528;  alias, 0 drivers
 # The file index is used to find the file name in the following table.
 :file_names 3;
     "N/A";
     "<interactive>";
-    "/celera/projects/Sunnyvale/software/INPOWERPATHpuget/verilog10/OVERLAYpugetINPOWERPATHreg_noext.v";
+    "/celera/projects/Sunnyvale/software/INPOWERPATHpuget/verilog10/OVERLAYpugetINPOWERPATHreg.v";
