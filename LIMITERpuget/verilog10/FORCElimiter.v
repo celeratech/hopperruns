@@ -1429,1287 +1429,1442 @@ vpwl_0x0 Xdatamap13_pwl_bit15 (
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap1_register_pwl_bit0 (
+vpwl_0x0_10ux0 Xdatamap1_LIMITERmaskalarm_register_pwl_bit0 (
 .PLUS(register_msk_alarms_15[0]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap1_register_pwl_bit1 (
+vpwl_0x0_10ux0 Xdatamap1_LIMITERmaskalarm_register_pwl_bit1 (
 .PLUS(register_msk_alarms_15[1]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap1_register_pwl_bit2 (
+vpwl_0x0_10ux0 Xdatamap1_LIMITERmaskalarm_register_pwl_bit2 (
 .PLUS(register_msk_alarms_15[2]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap1_register_pwl_bit3 (
+vpwl_0x0_10ux0 Xdatamap1_LIMITERmaskalarm_register_pwl_bit3 (
 .PLUS(register_msk_alarms_15[3]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap1_register_pwl_bit4 (
+vpwl_0x0_10ux0 Xdatamap1_LIMITERmaskalarm_register_pwl_bit4 (
 .PLUS(register_msk_alarms_15[4]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap1_register_pwl_bit5 (
+vpwl_0x0_10ux0 Xdatamap1_LIMITERmaskalarm_register_pwl_bit5 (
 .PLUS(register_msk_alarms_15[5]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap1_register_pwl_bit6 (
+vpwl_0x0_10ux0 Xdatamap1_LIMITERmaskalarm_register_pwl_bit6 (
 .PLUS(register_msk_alarms_15[6]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap1_register_pwl_bit7 (
+vpwl_0x0_10ux0 Xdatamap1_LIMITERmaskalarm_register_pwl_bit7 (
 .PLUS(register_msk_alarms_15[7]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap1_register_pwl_bit8 (
+vpwl_0x0_10ux0 Xdatamap1_LIMITERmaskalarm_register_pwl_bit8 (
 .PLUS(register_msk_alarms_15[8]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap1_register_pwl_bit9 (
+vpwl_0x0_10ux0 Xdatamap1_LIMITERmaskalarm_register_pwl_bit9 (
 .PLUS(register_msk_alarms_15[9]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap2_register_pwl_bit0 (
+vpwl_0x0 Xdatamap1_LIMITERpugetMAIN_register_pwl_bit0 (
+.PLUS(register_cap_uv_lvl_15[0]),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap1_LIMITERpugetMAIN_register_pwl_bit1 (
+.PLUS(register_cap_uv_lvl_15[1]),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap1_LIMITERpugetMAIN_register_pwl_bit2 (
+.PLUS(register_cap_uv_lvl_15[2]),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap1_LIMITERpugetMAIN_register_pwl_bit3 (
+.PLUS(register_cap_uv_lvl_15[3]),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap1_LIMITERpugetMAIN_register_pwl_bit4 (
+.PLUS(register_cap_uv_lvl_15[4]),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap1_LIMITERpugetMAIN_register_pwl_bit5 (
+.PLUS(register_cap_uv_lvl_15[5]),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap1_LIMITERpugetMAIN_register_pwl_bit6 (
+.PLUS(register_cap_uv_lvl_15[6]),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap1_LIMITERpugetMAIN_register_pwl_bit7 (
+.PLUS(register_cap_uv_lvl_15[7]),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap1_LIMITERpugetMAIN_register_pwl_bit8 (
+.PLUS(register_cap_uv_lvl_15[8]),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap1_LIMITERpugetMAIN_register_pwl_bit9 (
+.PLUS(register_cap_uv_lvl_15[9]),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap2_LIMITERpugetMAIN_register_pwl_bit0 (
 .PLUS(register_cap_ov_lvl_15[0]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap2_register_pwl_bit1 (
+vpwl_0x0 Xdatamap2_LIMITERpugetMAIN_register_pwl_bit1 (
 .PLUS(register_cap_ov_lvl_15[1]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap2_register_pwl_bit2 (
+vpwl_0x0 Xdatamap2_LIMITERpugetMAIN_register_pwl_bit2 (
 .PLUS(register_cap_ov_lvl_15[2]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap2_register_pwl_bit3 (
+vpwl_0x0 Xdatamap2_LIMITERpugetMAIN_register_pwl_bit3 (
 .PLUS(register_cap_ov_lvl_15[3]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap2_register_pwl_bit4 (
+vpwl_0x0 Xdatamap2_LIMITERpugetMAIN_register_pwl_bit4 (
 .PLUS(register_cap_ov_lvl_15[4]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap2_register_pwl_bit5 (
+vpwl_0x0 Xdatamap2_LIMITERpugetMAIN_register_pwl_bit5 (
 .PLUS(register_cap_ov_lvl_15[5]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap2_register_pwl_bit6 (
+vpwl_0x0 Xdatamap2_LIMITERpugetMAIN_register_pwl_bit6 (
 .PLUS(register_cap_ov_lvl_15[6]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap2_register_pwl_bit7 (
+vpwl_0x0 Xdatamap2_LIMITERpugetMAIN_register_pwl_bit7 (
 .PLUS(register_cap_ov_lvl_15[7]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap2_register_pwl_bit8 (
+vpwl_0x0 Xdatamap2_LIMITERpugetMAIN_register_pwl_bit8 (
 .PLUS(register_cap_ov_lvl_15[8]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap2_register_pwl_bit9 (
+vpwl_0x0 Xdatamap2_LIMITERpugetMAIN_register_pwl_bit9 (
 .PLUS(register_cap_ov_lvl_15[9]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap3_register_pwl_bit0 (
+vpwl_0x0 Xdatamap3_LIMITERpugetMAIN_register_pwl_bit0 (
 .PLUS(register_esr_hi_lvl_15[0]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap3_register_pwl_bit1 (
+vpwl_0x0 Xdatamap3_LIMITERpugetMAIN_register_pwl_bit1 (
 .PLUS(register_esr_hi_lvl_15[1]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap3_register_pwl_bit2 (
+vpwl_0x0 Xdatamap3_LIMITERpugetMAIN_register_pwl_bit2 (
 .PLUS(register_esr_hi_lvl_15[2]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap3_register_pwl_bit3 (
+vpwl_0x0 Xdatamap3_LIMITERpugetMAIN_register_pwl_bit3 (
 .PLUS(register_esr_hi_lvl_15[3]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap3_register_pwl_bit4 (
+vpwl_0x0 Xdatamap3_LIMITERpugetMAIN_register_pwl_bit4 (
 .PLUS(register_esr_hi_lvl_15[4]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap3_register_pwl_bit5 (
+vpwl_0x0 Xdatamap3_LIMITERpugetMAIN_register_pwl_bit5 (
 .PLUS(register_esr_hi_lvl_15[5]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap3_register_pwl_bit6 (
+vpwl_0x0 Xdatamap3_LIMITERpugetMAIN_register_pwl_bit6 (
 .PLUS(register_esr_hi_lvl_15[6]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap3_register_pwl_bit7 (
+vpwl_0x0 Xdatamap3_LIMITERpugetMAIN_register_pwl_bit7 (
 .PLUS(register_esr_hi_lvl_15[7]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap3_register_pwl_bit8 (
+vpwl_0x0 Xdatamap3_LIMITERpugetMAIN_register_pwl_bit8 (
 .PLUS(register_esr_hi_lvl_15[8]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap3_register_pwl_bit9 (
+vpwl_0x0 Xdatamap3_LIMITERpugetMAIN_register_pwl_bit9 (
 .PLUS(register_esr_hi_lvl_15[9]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap4_register_pwl_bit0 (
+vpwl_0x0 Xdatamap4_LIMITERpugetMAIN_register_pwl_bit0 (
 .PLUS(register_dtemp_cold_lvl_15[0]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap4_register_pwl_bit1 (
+vpwl_0x0 Xdatamap4_LIMITERpugetMAIN_register_pwl_bit1 (
 .PLUS(register_dtemp_cold_lvl_15[1]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap4_register_pwl_bit2 (
+vpwl_0x0 Xdatamap4_LIMITERpugetMAIN_register_pwl_bit2 (
 .PLUS(register_dtemp_cold_lvl_15[2]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap4_register_pwl_bit3 (
+vpwl_0x0 Xdatamap4_LIMITERpugetMAIN_register_pwl_bit3 (
 .PLUS(register_dtemp_cold_lvl_15[3]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap4_register_pwl_bit4 (
+vpwl_0x0 Xdatamap4_LIMITERpugetMAIN_register_pwl_bit4 (
 .PLUS(register_dtemp_cold_lvl_15[4]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap4_register_pwl_bit5 (
+vpwl_0x0 Xdatamap4_LIMITERpugetMAIN_register_pwl_bit5 (
 .PLUS(register_dtemp_cold_lvl_15[5]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap4_register_pwl_bit6 (
+vpwl_0x0 Xdatamap4_LIMITERpugetMAIN_register_pwl_bit6 (
 .PLUS(register_dtemp_cold_lvl_15[6]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap4_register_pwl_bit7 (
+vpwl_0x0 Xdatamap4_LIMITERpugetMAIN_register_pwl_bit7 (
 .PLUS(register_dtemp_cold_lvl_15[7]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap4_register_pwl_bit8 (
+vpwl_0x0 Xdatamap4_LIMITERpugetMAIN_register_pwl_bit8 (
 .PLUS(register_dtemp_cold_lvl_15[8]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap4_register_pwl_bit9 (
+vpwl_0x0 Xdatamap4_LIMITERpugetMAIN_register_pwl_bit9 (
 .PLUS(register_dtemp_cold_lvl_15[9]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap5_register_pwl_bit0 (
+vpwl_0x0 Xdatamap5_LIMITERpugetMAIN_register_pwl_bit0 (
 .PLUS(register_gpi_ov_lvl_15[0]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap5_register_pwl_bit1 (
+vpwl_0x0 Xdatamap5_LIMITERpugetMAIN_register_pwl_bit1 (
 .PLUS(register_gpi_ov_lvl_15[1]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap5_register_pwl_bit2 (
+vpwl_0x0 Xdatamap5_LIMITERpugetMAIN_register_pwl_bit2 (
 .PLUS(register_gpi_ov_lvl_15[2]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap5_register_pwl_bit3 (
+vpwl_0x0 Xdatamap5_LIMITERpugetMAIN_register_pwl_bit3 (
 .PLUS(register_gpi_ov_lvl_15[3]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap5_register_pwl_bit4 (
+vpwl_0x0 Xdatamap5_LIMITERpugetMAIN_register_pwl_bit4 (
 .PLUS(register_gpi_ov_lvl_15[4]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap5_register_pwl_bit5 (
+vpwl_0x0 Xdatamap5_LIMITERpugetMAIN_register_pwl_bit5 (
 .PLUS(register_gpi_ov_lvl_15[5]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap5_register_pwl_bit6 (
+vpwl_0x0 Xdatamap5_LIMITERpugetMAIN_register_pwl_bit6 (
 .PLUS(register_gpi_ov_lvl_15[6]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap5_register_pwl_bit7 (
+vpwl_0x0 Xdatamap5_LIMITERpugetMAIN_register_pwl_bit7 (
 .PLUS(register_gpi_ov_lvl_15[7]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap5_register_pwl_bit8 (
+vpwl_0x0 Xdatamap5_LIMITERpugetMAIN_register_pwl_bit8 (
 .PLUS(register_gpi_ov_lvl_15[8]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap5_register_pwl_bit9 (
+vpwl_0x0 Xdatamap5_LIMITERpugetMAIN_register_pwl_bit9 (
 .PLUS(register_gpi_ov_lvl_15[9]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap6_register_pwl_bit0 (
+vpwl_0x0 Xdatamap6_LIMITERpugetMAIN_register_pwl_bit0 (
 .PLUS(register_gpi_uv_lvl_15[0]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap6_register_pwl_bit1 (
+vpwl_0x0 Xdatamap6_LIMITERpugetMAIN_register_pwl_bit1 (
 .PLUS(register_gpi_uv_lvl_15[1]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap6_register_pwl_bit2 (
+vpwl_0x0 Xdatamap6_LIMITERpugetMAIN_register_pwl_bit2 (
 .PLUS(register_gpi_uv_lvl_15[2]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap6_register_pwl_bit3 (
+vpwl_0x0 Xdatamap6_LIMITERpugetMAIN_register_pwl_bit3 (
 .PLUS(register_gpi_uv_lvl_15[3]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap6_register_pwl_bit4 (
+vpwl_0x0 Xdatamap6_LIMITERpugetMAIN_register_pwl_bit4 (
 .PLUS(register_gpi_uv_lvl_15[4]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap6_register_pwl_bit5 (
+vpwl_0x0 Xdatamap6_LIMITERpugetMAIN_register_pwl_bit5 (
 .PLUS(register_gpi_uv_lvl_15[5]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap6_register_pwl_bit6 (
+vpwl_0x0 Xdatamap6_LIMITERpugetMAIN_register_pwl_bit6 (
 .PLUS(register_gpi_uv_lvl_15[6]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap6_register_pwl_bit7 (
+vpwl_0x0 Xdatamap6_LIMITERpugetMAIN_register_pwl_bit7 (
 .PLUS(register_gpi_uv_lvl_15[7]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap6_register_pwl_bit8 (
+vpwl_0x0 Xdatamap6_LIMITERpugetMAIN_register_pwl_bit8 (
 .PLUS(register_gpi_uv_lvl_15[8]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap6_register_pwl_bit9 (
+vpwl_0x0 Xdatamap6_LIMITERpugetMAIN_register_pwl_bit9 (
 .PLUS(register_gpi_uv_lvl_15[9]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap7_register_pwl_bit0 (
+vpwl_0x0 Xdatamap7_LIMITERpugetMAIN_register_pwl_bit0 (
 .PLUS(register_vin_uv_lvl_15[0]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap7_register_pwl_bit1 (
+vpwl_0x0 Xdatamap7_LIMITERpugetMAIN_register_pwl_bit1 (
 .PLUS(register_vin_uv_lvl_15[1]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap7_register_pwl_bit2 (
+vpwl_0x0 Xdatamap7_LIMITERpugetMAIN_register_pwl_bit2 (
 .PLUS(register_vin_uv_lvl_15[2]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap7_register_pwl_bit3 (
+vpwl_0x0 Xdatamap7_LIMITERpugetMAIN_register_pwl_bit3 (
 .PLUS(register_vin_uv_lvl_15[3]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap7_register_pwl_bit4 (
+vpwl_0x0 Xdatamap7_LIMITERpugetMAIN_register_pwl_bit4 (
 .PLUS(register_vin_uv_lvl_15[4]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap7_register_pwl_bit5 (
+vpwl_0x0 Xdatamap7_LIMITERpugetMAIN_register_pwl_bit5 (
 .PLUS(register_vin_uv_lvl_15[5]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap7_register_pwl_bit6 (
+vpwl_0x0 Xdatamap7_LIMITERpugetMAIN_register_pwl_bit6 (
 .PLUS(register_vin_uv_lvl_15[6]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap7_register_pwl_bit7 (
+vpwl_0x0 Xdatamap7_LIMITERpugetMAIN_register_pwl_bit7 (
 .PLUS(register_vin_uv_lvl_15[7]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap7_register_pwl_bit8 (
+vpwl_0x0 Xdatamap7_LIMITERpugetMAIN_register_pwl_bit8 (
 .PLUS(register_vin_uv_lvl_15[8]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap7_register_pwl_bit9 (
+vpwl_0x0 Xdatamap7_LIMITERpugetMAIN_register_pwl_bit9 (
 .PLUS(register_vin_uv_lvl_15[9]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap8_register_pwl_bit0 (
+vpwl_0x0 Xdatamap8_LIMITERpugetMAIN_register_pwl_bit0 (
 .PLUS(register_vin_ov_lvl_15[0]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap8_register_pwl_bit1 (
+vpwl_0x0 Xdatamap8_LIMITERpugetMAIN_register_pwl_bit1 (
 .PLUS(register_vin_ov_lvl_15[1]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap8_register_pwl_bit2 (
+vpwl_0x0 Xdatamap8_LIMITERpugetMAIN_register_pwl_bit2 (
 .PLUS(register_vin_ov_lvl_15[2]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap8_register_pwl_bit3 (
+vpwl_0x0 Xdatamap8_LIMITERpugetMAIN_register_pwl_bit3 (
 .PLUS(register_vin_ov_lvl_15[3]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap8_register_pwl_bit4 (
+vpwl_0x0 Xdatamap8_LIMITERpugetMAIN_register_pwl_bit4 (
 .PLUS(register_vin_ov_lvl_15[4]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap8_register_pwl_bit5 (
+vpwl_0x0 Xdatamap8_LIMITERpugetMAIN_register_pwl_bit5 (
 .PLUS(register_vin_ov_lvl_15[5]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap8_register_pwl_bit6 (
+vpwl_0x0 Xdatamap8_LIMITERpugetMAIN_register_pwl_bit6 (
 .PLUS(register_vin_ov_lvl_15[6]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap8_register_pwl_bit7 (
+vpwl_0x0 Xdatamap8_LIMITERpugetMAIN_register_pwl_bit7 (
 .PLUS(register_vin_ov_lvl_15[7]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap8_register_pwl_bit8 (
+vpwl_0x0 Xdatamap8_LIMITERpugetMAIN_register_pwl_bit8 (
 .PLUS(register_vin_ov_lvl_15[8]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap8_register_pwl_bit9 (
+vpwl_0x0 Xdatamap8_LIMITERpugetMAIN_register_pwl_bit9 (
 .PLUS(register_vin_ov_lvl_15[9]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap9_register_pwl_bit0 (
+vpwl_0x0 Xdatamap9_LIMITERpugetMAIN_register_pwl_bit0 (
 .PLUS(register_vcap_ov_lvl_15[0]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap9_register_pwl_bit1 (
+vpwl_0x0 Xdatamap9_LIMITERpugetMAIN_register_pwl_bit1 (
 .PLUS(register_vcap_ov_lvl_15[1]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap9_register_pwl_bit2 (
+vpwl_0x0 Xdatamap9_LIMITERpugetMAIN_register_pwl_bit2 (
 .PLUS(register_vcap_ov_lvl_15[2]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap9_register_pwl_bit3 (
+vpwl_0x0 Xdatamap9_LIMITERpugetMAIN_register_pwl_bit3 (
 .PLUS(register_vcap_ov_lvl_15[3]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap9_register_pwl_bit4 (
+vpwl_0x0 Xdatamap9_LIMITERpugetMAIN_register_pwl_bit4 (
 .PLUS(register_vcap_ov_lvl_15[4]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap9_register_pwl_bit5 (
+vpwl_0x0 Xdatamap9_LIMITERpugetMAIN_register_pwl_bit5 (
 .PLUS(register_vcap_ov_lvl_15[5]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap9_register_pwl_bit6 (
+vpwl_0x0 Xdatamap9_LIMITERpugetMAIN_register_pwl_bit6 (
 .PLUS(register_vcap_ov_lvl_15[6]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap9_register_pwl_bit7 (
+vpwl_0x0 Xdatamap9_LIMITERpugetMAIN_register_pwl_bit7 (
 .PLUS(register_vcap_ov_lvl_15[7]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap9_register_pwl_bit8 (
+vpwl_0x0 Xdatamap9_LIMITERpugetMAIN_register_pwl_bit8 (
 .PLUS(register_vcap_ov_lvl_15[8]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap9_register_pwl_bit9 (
+vpwl_0x0 Xdatamap9_LIMITERpugetMAIN_register_pwl_bit9 (
 .PLUS(register_vcap_ov_lvl_15[9]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap10_register_pwl_bit0 (
+vpwl_0x0 Xdatamap10_LIMITERpugetMAIN_register_pwl_bit0 (
 .PLUS(register_vcap_uv_lvl_15[0]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap10_register_pwl_bit1 (
+vpwl_0x0 Xdatamap10_LIMITERpugetMAIN_register_pwl_bit1 (
 .PLUS(register_vcap_uv_lvl_15[1]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap10_register_pwl_bit2 (
+vpwl_0x0 Xdatamap10_LIMITERpugetMAIN_register_pwl_bit2 (
 .PLUS(register_vcap_uv_lvl_15[2]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap10_register_pwl_bit3 (
+vpwl_0x0 Xdatamap10_LIMITERpugetMAIN_register_pwl_bit3 (
 .PLUS(register_vcap_uv_lvl_15[3]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap10_register_pwl_bit4 (
+vpwl_0x0 Xdatamap10_LIMITERpugetMAIN_register_pwl_bit4 (
 .PLUS(register_vcap_uv_lvl_15[4]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap10_register_pwl_bit5 (
+vpwl_0x0 Xdatamap10_LIMITERpugetMAIN_register_pwl_bit5 (
 .PLUS(register_vcap_uv_lvl_15[5]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap10_register_pwl_bit6 (
+vpwl_0x0 Xdatamap10_LIMITERpugetMAIN_register_pwl_bit6 (
 .PLUS(register_vcap_uv_lvl_15[6]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap10_register_pwl_bit7 (
+vpwl_0x0 Xdatamap10_LIMITERpugetMAIN_register_pwl_bit7 (
 .PLUS(register_vcap_uv_lvl_15[7]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap10_register_pwl_bit8 (
+vpwl_0x0 Xdatamap10_LIMITERpugetMAIN_register_pwl_bit8 (
 .PLUS(register_vcap_uv_lvl_15[8]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap10_register_pwl_bit9 (
+vpwl_0x0 Xdatamap10_LIMITERpugetMAIN_register_pwl_bit9 (
 .PLUS(register_vcap_uv_lvl_15[9]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap11_register_pwl_bit0 (
+vpwl_0x0 Xdatamap11_LIMITERpugetMAIN_register_pwl_bit0 (
 .PLUS(register_vout_ov_lvl_15[0]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap11_register_pwl_bit1 (
+vpwl_0x0 Xdatamap11_LIMITERpugetMAIN_register_pwl_bit1 (
 .PLUS(register_vout_ov_lvl_15[1]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap11_register_pwl_bit2 (
+vpwl_0x0 Xdatamap11_LIMITERpugetMAIN_register_pwl_bit2 (
 .PLUS(register_vout_ov_lvl_15[2]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap11_register_pwl_bit3 (
+vpwl_0x0 Xdatamap11_LIMITERpugetMAIN_register_pwl_bit3 (
 .PLUS(register_vout_ov_lvl_15[3]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap11_register_pwl_bit4 (
+vpwl_0x0 Xdatamap11_LIMITERpugetMAIN_register_pwl_bit4 (
 .PLUS(register_vout_ov_lvl_15[4]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap11_register_pwl_bit5 (
+vpwl_0x0 Xdatamap11_LIMITERpugetMAIN_register_pwl_bit5 (
 .PLUS(register_vout_ov_lvl_15[5]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap11_register_pwl_bit6 (
+vpwl_0x0 Xdatamap11_LIMITERpugetMAIN_register_pwl_bit6 (
 .PLUS(register_vout_ov_lvl_15[6]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap11_register_pwl_bit7 (
+vpwl_0x0 Xdatamap11_LIMITERpugetMAIN_register_pwl_bit7 (
 .PLUS(register_vout_ov_lvl_15[7]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap11_register_pwl_bit8 (
+vpwl_0x0 Xdatamap11_LIMITERpugetMAIN_register_pwl_bit8 (
 .PLUS(register_vout_ov_lvl_15[8]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap11_register_pwl_bit9 (
+vpwl_0x0 Xdatamap11_LIMITERpugetMAIN_register_pwl_bit9 (
 .PLUS(register_vout_ov_lvl_15[9]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap12_register_pwl_bit0 (
+vpwl_0x0 Xdatamap12_LIMITERpugetMAIN_register_pwl_bit0 (
 .PLUS(register_vout_uv_lvl_15[0]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap12_register_pwl_bit1 (
+vpwl_0x0 Xdatamap12_LIMITERpugetMAIN_register_pwl_bit1 (
 .PLUS(register_vout_uv_lvl_15[1]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap12_register_pwl_bit2 (
+vpwl_0x0 Xdatamap12_LIMITERpugetMAIN_register_pwl_bit2 (
 .PLUS(register_vout_uv_lvl_15[2]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap12_register_pwl_bit3 (
+vpwl_0x0 Xdatamap12_LIMITERpugetMAIN_register_pwl_bit3 (
 .PLUS(register_vout_uv_lvl_15[3]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap12_register_pwl_bit4 (
+vpwl_0x0 Xdatamap12_LIMITERpugetMAIN_register_pwl_bit4 (
 .PLUS(register_vout_uv_lvl_15[4]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap12_register_pwl_bit5 (
+vpwl_0x0 Xdatamap12_LIMITERpugetMAIN_register_pwl_bit5 (
 .PLUS(register_vout_uv_lvl_15[5]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap12_register_pwl_bit6 (
+vpwl_0x0 Xdatamap12_LIMITERpugetMAIN_register_pwl_bit6 (
 .PLUS(register_vout_uv_lvl_15[6]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap12_register_pwl_bit7 (
+vpwl_0x0 Xdatamap12_LIMITERpugetMAIN_register_pwl_bit7 (
 .PLUS(register_vout_uv_lvl_15[7]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap12_register_pwl_bit8 (
+vpwl_0x0 Xdatamap12_LIMITERpugetMAIN_register_pwl_bit8 (
 .PLUS(register_vout_uv_lvl_15[8]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap12_register_pwl_bit9 (
+vpwl_0x0 Xdatamap12_LIMITERpugetMAIN_register_pwl_bit9 (
 .PLUS(register_vout_uv_lvl_15[9]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap13_register_pwl_bit0 (
+vpwl_0x0 Xdatamap13_LIMITERpugetMAIN_register_pwl_bit0 (
 .PLUS(register_iin_oc_lvl_15[0]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap13_register_pwl_bit1 (
+vpwl_0x0 Xdatamap13_LIMITERpugetMAIN_register_pwl_bit1 (
 .PLUS(register_iin_oc_lvl_15[1]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap13_register_pwl_bit2 (
+vpwl_0x0 Xdatamap13_LIMITERpugetMAIN_register_pwl_bit2 (
 .PLUS(register_iin_oc_lvl_15[2]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap13_register_pwl_bit3 (
+vpwl_0x0 Xdatamap13_LIMITERpugetMAIN_register_pwl_bit3 (
 .PLUS(register_iin_oc_lvl_15[3]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap13_register_pwl_bit4 (
+vpwl_0x0 Xdatamap13_LIMITERpugetMAIN_register_pwl_bit4 (
 .PLUS(register_iin_oc_lvl_15[4]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap13_register_pwl_bit5 (
+vpwl_0x0 Xdatamap13_LIMITERpugetMAIN_register_pwl_bit5 (
 .PLUS(register_iin_oc_lvl_15[5]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap13_register_pwl_bit6 (
+vpwl_0x0 Xdatamap13_LIMITERpugetMAIN_register_pwl_bit6 (
 .PLUS(register_iin_oc_lvl_15[6]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap13_register_pwl_bit7 (
+vpwl_0x0 Xdatamap13_LIMITERpugetMAIN_register_pwl_bit7 (
 .PLUS(register_iin_oc_lvl_15[7]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap13_register_pwl_bit8 (
+vpwl_0x0 Xdatamap13_LIMITERpugetMAIN_register_pwl_bit8 (
 .PLUS(register_iin_oc_lvl_15[8]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap13_register_pwl_bit9 (
+vpwl_0x0 Xdatamap13_LIMITERpugetMAIN_register_pwl_bit9 (
 .PLUS(register_iin_oc_lvl_15[9]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap14_register_pwl_bit0 (
+vpwl_0x0 Xdatamap14_LIMITERpugetMAIN_register_pwl_bit0 (
 .PLUS(register_ichg_uc_lvl_15[0]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap14_register_pwl_bit1 (
+vpwl_0x0 Xdatamap14_LIMITERpugetMAIN_register_pwl_bit1 (
 .PLUS(register_ichg_uc_lvl_15[1]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap14_register_pwl_bit2 (
+vpwl_0x0 Xdatamap14_LIMITERpugetMAIN_register_pwl_bit2 (
 .PLUS(register_ichg_uc_lvl_15[2]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap14_register_pwl_bit3 (
+vpwl_0x0 Xdatamap14_LIMITERpugetMAIN_register_pwl_bit3 (
 .PLUS(register_ichg_uc_lvl_15[3]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap14_register_pwl_bit4 (
+vpwl_0x0 Xdatamap14_LIMITERpugetMAIN_register_pwl_bit4 (
 .PLUS(register_ichg_uc_lvl_15[4]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap14_register_pwl_bit5 (
+vpwl_0x0 Xdatamap14_LIMITERpugetMAIN_register_pwl_bit5 (
 .PLUS(register_ichg_uc_lvl_15[5]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap14_register_pwl_bit6 (
+vpwl_0x0 Xdatamap14_LIMITERpugetMAIN_register_pwl_bit6 (
 .PLUS(register_ichg_uc_lvl_15[6]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap14_register_pwl_bit7 (
+vpwl_0x0 Xdatamap14_LIMITERpugetMAIN_register_pwl_bit7 (
 .PLUS(register_ichg_uc_lvl_15[7]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap14_register_pwl_bit8 (
+vpwl_0x0 Xdatamap14_LIMITERpugetMAIN_register_pwl_bit8 (
 .PLUS(register_ichg_uc_lvl_15[8]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap14_register_pwl_bit9 (
+vpwl_0x0 Xdatamap14_LIMITERpugetMAIN_register_pwl_bit9 (
 .PLUS(register_ichg_uc_lvl_15[9]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_9d999ux0_10ux5d0 Xdatamap15_register_pwl_bit0 (
+vpwl_0x0_9d999ux0_10ux5d0 Xdatamap15_LIMITERpugetMAIN_register_pwl_bit0 (
 .PLUS(register_dtemp_hot_lvl_15[0]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap15_register_pwl_bit1 (
+vpwl_0x0_10ux0 Xdatamap15_LIMITERpugetMAIN_register_pwl_bit1 (
 .PLUS(register_dtemp_hot_lvl_15[1]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap15_register_pwl_bit2 (
+vpwl_0x0_10ux0 Xdatamap15_LIMITERpugetMAIN_register_pwl_bit2 (
 .PLUS(register_dtemp_hot_lvl_15[2]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap15_register_pwl_bit3 (
+vpwl_0x0_10ux0 Xdatamap15_LIMITERpugetMAIN_register_pwl_bit3 (
 .PLUS(register_dtemp_hot_lvl_15[3]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap15_register_pwl_bit4 (
+vpwl_0x0_10ux0 Xdatamap15_LIMITERpugetMAIN_register_pwl_bit4 (
 .PLUS(register_dtemp_hot_lvl_15[4]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap15_register_pwl_bit5 (
+vpwl_0x0_10ux0 Xdatamap15_LIMITERpugetMAIN_register_pwl_bit5 (
 .PLUS(register_dtemp_hot_lvl_15[5]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap15_register_pwl_bit6 (
+vpwl_0x0_10ux0 Xdatamap15_LIMITERpugetMAIN_register_pwl_bit6 (
 .PLUS(register_dtemp_hot_lvl_15[6]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap15_register_pwl_bit7 (
+vpwl_0x0_10ux0 Xdatamap15_LIMITERpugetMAIN_register_pwl_bit7 (
 .PLUS(register_dtemp_hot_lvl_15[7]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_9d999ux0_10ux5d0 Xdatamap15_register_pwl_bit8 (
+vpwl_0x0_9d999ux0_10ux5d0 Xdatamap15_LIMITERpugetMAIN_register_pwl_bit8 (
 .PLUS(register_dtemp_hot_lvl_15[8]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap15_register_pwl_bit9 (
+vpwl_0x0_10ux0 Xdatamap15_LIMITERpugetMAIN_register_pwl_bit9 (
 .PLUS(register_dtemp_hot_lvl_15[9]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap16_register_pwl_bit0 (
-.PLUS(register_clr_alarms_15),
-.MINUS(net_0)
-);
-
-vpwl_0x0 Xdatamap18_register_pwl_bit0 (
+vpwl_0x0 Xdatamap18_LIMITERpugetMAIN_register_pwl_bit0 (
 .PLUS(register_cap_lo_lvl_15[0]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap18_register_pwl_bit1 (
+vpwl_0x0 Xdatamap18_LIMITERpugetMAIN_register_pwl_bit1 (
 .PLUS(register_cap_lo_lvl_15[1]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap18_register_pwl_bit2 (
+vpwl_0x0 Xdatamap18_LIMITERpugetMAIN_register_pwl_bit2 (
 .PLUS(register_cap_lo_lvl_15[2]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap18_register_pwl_bit3 (
+vpwl_0x0 Xdatamap18_LIMITERpugetMAIN_register_pwl_bit3 (
 .PLUS(register_cap_lo_lvl_15[3]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap18_register_pwl_bit4 (
+vpwl_0x0 Xdatamap18_LIMITERpugetMAIN_register_pwl_bit4 (
 .PLUS(register_cap_lo_lvl_15[4]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap18_register_pwl_bit5 (
+vpwl_0x0 Xdatamap18_LIMITERpugetMAIN_register_pwl_bit5 (
 .PLUS(register_cap_lo_lvl_15[5]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap18_register_pwl_bit6 (
+vpwl_0x0 Xdatamap18_LIMITERpugetMAIN_register_pwl_bit6 (
 .PLUS(register_cap_lo_lvl_15[6]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap18_register_pwl_bit7 (
+vpwl_0x0 Xdatamap18_LIMITERpugetMAIN_register_pwl_bit7 (
 .PLUS(register_cap_lo_lvl_15[7]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap18_register_pwl_bit8 (
+vpwl_0x0 Xdatamap18_LIMITERpugetMAIN_register_pwl_bit8 (
 .PLUS(register_cap_lo_lvl_15[8]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap18_register_pwl_bit9 (
+vpwl_0x0 Xdatamap18_LIMITERpugetMAIN_register_pwl_bit9 (
 .PLUS(register_cap_lo_lvl_15[9]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap1_register_pwl_bit10 (
+vpwl_0x0 Xdatamap1_LIMITERclearalarm_register_pwl_bit0 (
+.PLUS(register_clr_alarms_1),
+.MINUS(net_0)
+);
+
+vpwl_0x0_10ux0 Xdatamap1_LIMITERmaskalarm_register_pwl_bit10 (
 .PLUS(register_msk_alarms_15[10]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap1_register_pwl_bit11 (
+vpwl_0x0_10ux0 Xdatamap1_LIMITERmaskalarm_register_pwl_bit11 (
 .PLUS(register_msk_alarms_15[11]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_9d999ux0_10ux5d0 Xdatamap1_register_pwl_bit12 (
+vpwl_0x0_9d999ux0_10ux5d0 Xdatamap1_LIMITERmaskalarm_register_pwl_bit12 (
 .PLUS(register_msk_alarms_15[12]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_9d999ux0_10ux5d0 Xdatamap1_register_pwl_bit13 (
+vpwl_0x0_9d999ux0_10ux5d0 Xdatamap1_LIMITERmaskalarm_register_pwl_bit13 (
 .PLUS(register_msk_alarms_15[13]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap1_register_pwl_bit14 (
+vpwl_0x0_10ux0 Xdatamap1_LIMITERmaskalarm_register_pwl_bit14 (
 .PLUS(register_msk_alarms_15[14]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap1_register_pwl_bit15 (
+vpwl_0x0_10ux0 Xdatamap1_LIMITERmaskalarm_register_pwl_bit15 (
 .PLUS(register_msk_alarms_15[15]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap2_register_pwl_bit10 (
+vpwl_0x0 Xdatamap1_LIMITERpugetMAIN_register_pwl_bit10 (
+.PLUS(register_cap_uv_lvl_15[10]),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap1_LIMITERpugetMAIN_register_pwl_bit11 (
+.PLUS(register_cap_uv_lvl_15[11]),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap1_LIMITERpugetMAIN_register_pwl_bit12 (
+.PLUS(register_cap_uv_lvl_15[12]),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap1_LIMITERpugetMAIN_register_pwl_bit13 (
+.PLUS(register_cap_uv_lvl_15[13]),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap1_LIMITERpugetMAIN_register_pwl_bit14 (
+.PLUS(register_cap_uv_lvl_15[14]),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap1_LIMITERpugetMAIN_register_pwl_bit15 (
+.PLUS(register_cap_uv_lvl_15[15]),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap2_LIMITERclearalarm_register_pwl_bit0 (
+.PLUS(register_clr_alarms_6),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap2_LIMITERpugetMAIN_register_pwl_bit10 (
 .PLUS(register_cap_ov_lvl_15[10]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap2_register_pwl_bit11 (
+vpwl_0x0 Xdatamap2_LIMITERpugetMAIN_register_pwl_bit11 (
 .PLUS(register_cap_ov_lvl_15[11]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap2_register_pwl_bit12 (
+vpwl_0x0 Xdatamap2_LIMITERpugetMAIN_register_pwl_bit12 (
 .PLUS(register_cap_ov_lvl_15[12]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap2_register_pwl_bit13 (
+vpwl_0x0 Xdatamap2_LIMITERpugetMAIN_register_pwl_bit13 (
 .PLUS(register_cap_ov_lvl_15[13]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap2_register_pwl_bit14 (
+vpwl_0x0 Xdatamap2_LIMITERpugetMAIN_register_pwl_bit14 (
 .PLUS(register_cap_ov_lvl_15[14]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap2_register_pwl_bit15 (
+vpwl_0x0 Xdatamap2_LIMITERpugetMAIN_register_pwl_bit15 (
 .PLUS(register_cap_ov_lvl_15[15]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap3_register_pwl_bit10 (
+vpwl_0x0 Xdatamap3_LIMITERclearalarm_register_pwl_bit0 (
+.PLUS(register_clr_alarms_0),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap3_LIMITERpugetMAIN_register_pwl_bit10 (
 .PLUS(register_esr_hi_lvl_15[10]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap3_register_pwl_bit11 (
+vpwl_0x0 Xdatamap3_LIMITERpugetMAIN_register_pwl_bit11 (
 .PLUS(register_esr_hi_lvl_15[11]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap3_register_pwl_bit12 (
+vpwl_0x0 Xdatamap3_LIMITERpugetMAIN_register_pwl_bit12 (
 .PLUS(register_esr_hi_lvl_15[12]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap3_register_pwl_bit13 (
+vpwl_0x0 Xdatamap3_LIMITERpugetMAIN_register_pwl_bit13 (
 .PLUS(register_esr_hi_lvl_15[13]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap3_register_pwl_bit14 (
+vpwl_0x0 Xdatamap3_LIMITERpugetMAIN_register_pwl_bit14 (
 .PLUS(register_esr_hi_lvl_15[14]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap3_register_pwl_bit15 (
+vpwl_0x0 Xdatamap3_LIMITERpugetMAIN_register_pwl_bit15 (
 .PLUS(register_esr_hi_lvl_15[15]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap4_register_pwl_bit10 (
+vpwl_0x0 Xdatamap4_LIMITERclearalarm_register_pwl_bit0 (
+.PLUS(register_clr_alarms_2),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap4_LIMITERpugetMAIN_register_pwl_bit10 (
 .PLUS(register_dtemp_cold_lvl_15[10]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap4_register_pwl_bit11 (
+vpwl_0x0 Xdatamap4_LIMITERpugetMAIN_register_pwl_bit11 (
 .PLUS(register_dtemp_cold_lvl_15[11]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap4_register_pwl_bit12 (
+vpwl_0x0 Xdatamap4_LIMITERpugetMAIN_register_pwl_bit12 (
 .PLUS(register_dtemp_cold_lvl_15[12]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap4_register_pwl_bit13 (
+vpwl_0x0 Xdatamap4_LIMITERpugetMAIN_register_pwl_bit13 (
 .PLUS(register_dtemp_cold_lvl_15[13]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap4_register_pwl_bit14 (
+vpwl_0x0 Xdatamap4_LIMITERpugetMAIN_register_pwl_bit14 (
 .PLUS(register_dtemp_cold_lvl_15[14]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap4_register_pwl_bit15 (
+vpwl_0x0 Xdatamap4_LIMITERpugetMAIN_register_pwl_bit15 (
 .PLUS(register_dtemp_cold_lvl_15[15]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap5_register_pwl_bit10 (
+vpwl_0x0 Xdatamap5_LIMITERclearalarm_register_pwl_bit0 (
+.PLUS(register_clr_alarms_3),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap5_LIMITERpugetMAIN_register_pwl_bit10 (
 .PLUS(register_gpi_ov_lvl_15[10]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap5_register_pwl_bit11 (
+vpwl_0x0 Xdatamap5_LIMITERpugetMAIN_register_pwl_bit11 (
 .PLUS(register_gpi_ov_lvl_15[11]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap5_register_pwl_bit12 (
+vpwl_0x0 Xdatamap5_LIMITERpugetMAIN_register_pwl_bit12 (
 .PLUS(register_gpi_ov_lvl_15[12]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap5_register_pwl_bit13 (
+vpwl_0x0 Xdatamap5_LIMITERpugetMAIN_register_pwl_bit13 (
 .PLUS(register_gpi_ov_lvl_15[13]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap5_register_pwl_bit14 (
+vpwl_0x0 Xdatamap5_LIMITERpugetMAIN_register_pwl_bit14 (
 .PLUS(register_gpi_ov_lvl_15[14]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap5_register_pwl_bit15 (
+vpwl_0x0 Xdatamap5_LIMITERpugetMAIN_register_pwl_bit15 (
 .PLUS(register_gpi_ov_lvl_15[15]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap6_register_pwl_bit10 (
+vpwl_0x0 Xdatamap6_LIMITERclearalarm_register_pwl_bit0 (
+.PLUS(register_clr_alarms_4),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap6_LIMITERpugetMAIN_register_pwl_bit10 (
 .PLUS(register_gpi_uv_lvl_15[10]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap6_register_pwl_bit11 (
+vpwl_0x0 Xdatamap6_LIMITERpugetMAIN_register_pwl_bit11 (
 .PLUS(register_gpi_uv_lvl_15[11]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap6_register_pwl_bit12 (
+vpwl_0x0 Xdatamap6_LIMITERpugetMAIN_register_pwl_bit12 (
 .PLUS(register_gpi_uv_lvl_15[12]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap6_register_pwl_bit13 (
+vpwl_0x0 Xdatamap6_LIMITERpugetMAIN_register_pwl_bit13 (
 .PLUS(register_gpi_uv_lvl_15[13]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap6_register_pwl_bit14 (
+vpwl_0x0 Xdatamap6_LIMITERpugetMAIN_register_pwl_bit14 (
 .PLUS(register_gpi_uv_lvl_15[14]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap6_register_pwl_bit15 (
+vpwl_0x0 Xdatamap6_LIMITERpugetMAIN_register_pwl_bit15 (
 .PLUS(register_gpi_uv_lvl_15[15]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap7_register_pwl_bit10 (
+vpwl_0x0 Xdatamap7_LIMITERclearalarm_register_pwl_bit0 (
+.PLUS(register_clr_alarms_5),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap7_LIMITERpugetMAIN_register_pwl_bit10 (
 .PLUS(register_vin_uv_lvl_15[10]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap7_register_pwl_bit11 (
+vpwl_0x0 Xdatamap7_LIMITERpugetMAIN_register_pwl_bit11 (
 .PLUS(register_vin_uv_lvl_15[11]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap7_register_pwl_bit12 (
+vpwl_0x0 Xdatamap7_LIMITERpugetMAIN_register_pwl_bit12 (
 .PLUS(register_vin_uv_lvl_15[12]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap7_register_pwl_bit13 (
+vpwl_0x0 Xdatamap7_LIMITERpugetMAIN_register_pwl_bit13 (
 .PLUS(register_vin_uv_lvl_15[13]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap7_register_pwl_bit14 (
+vpwl_0x0 Xdatamap7_LIMITERpugetMAIN_register_pwl_bit14 (
 .PLUS(register_vin_uv_lvl_15[14]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap7_register_pwl_bit15 (
+vpwl_0x0 Xdatamap7_LIMITERpugetMAIN_register_pwl_bit15 (
 .PLUS(register_vin_uv_lvl_15[15]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap8_register_pwl_bit10 (
+vpwl_0x0 Xdatamap8_LIMITERclearalarm_register_pwl_bit0 (
+.PLUS(register_clr_alarms_7),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap8_LIMITERpugetMAIN_register_pwl_bit10 (
 .PLUS(register_vin_ov_lvl_15[10]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap8_register_pwl_bit11 (
+vpwl_0x0 Xdatamap8_LIMITERpugetMAIN_register_pwl_bit11 (
 .PLUS(register_vin_ov_lvl_15[11]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap8_register_pwl_bit12 (
+vpwl_0x0 Xdatamap8_LIMITERpugetMAIN_register_pwl_bit12 (
 .PLUS(register_vin_ov_lvl_15[12]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap8_register_pwl_bit13 (
+vpwl_0x0 Xdatamap8_LIMITERpugetMAIN_register_pwl_bit13 (
 .PLUS(register_vin_ov_lvl_15[13]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap8_register_pwl_bit14 (
+vpwl_0x0 Xdatamap8_LIMITERpugetMAIN_register_pwl_bit14 (
 .PLUS(register_vin_ov_lvl_15[14]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap8_register_pwl_bit15 (
+vpwl_0x0 Xdatamap8_LIMITERpugetMAIN_register_pwl_bit15 (
 .PLUS(register_vin_ov_lvl_15[15]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap9_register_pwl_bit10 (
+vpwl_0x0 Xdatamap9_LIMITERclearalarm_register_pwl_bit0 (
+.PLUS(register_clr_alarms_8),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap9_LIMITERpugetMAIN_register_pwl_bit10 (
 .PLUS(register_vcap_ov_lvl_15[10]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap9_register_pwl_bit11 (
+vpwl_0x0 Xdatamap9_LIMITERpugetMAIN_register_pwl_bit11 (
 .PLUS(register_vcap_ov_lvl_15[11]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap9_register_pwl_bit12 (
+vpwl_0x0 Xdatamap9_LIMITERpugetMAIN_register_pwl_bit12 (
 .PLUS(register_vcap_ov_lvl_15[12]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap9_register_pwl_bit13 (
+vpwl_0x0 Xdatamap9_LIMITERpugetMAIN_register_pwl_bit13 (
 .PLUS(register_vcap_ov_lvl_15[13]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap9_register_pwl_bit14 (
+vpwl_0x0 Xdatamap9_LIMITERpugetMAIN_register_pwl_bit14 (
 .PLUS(register_vcap_ov_lvl_15[14]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap9_register_pwl_bit15 (
+vpwl_0x0 Xdatamap9_LIMITERpugetMAIN_register_pwl_bit15 (
 .PLUS(register_vcap_ov_lvl_15[15]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap10_register_pwl_bit10 (
+vpwl_0x0 Xdatamap10_LIMITERclearalarm_register_pwl_bit0 (
+.PLUS(register_clr_alarms_9),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap10_LIMITERpugetMAIN_register_pwl_bit10 (
 .PLUS(register_vcap_uv_lvl_15[10]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap10_register_pwl_bit11 (
+vpwl_0x0 Xdatamap10_LIMITERpugetMAIN_register_pwl_bit11 (
 .PLUS(register_vcap_uv_lvl_15[11]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap10_register_pwl_bit12 (
+vpwl_0x0 Xdatamap10_LIMITERpugetMAIN_register_pwl_bit12 (
 .PLUS(register_vcap_uv_lvl_15[12]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap10_register_pwl_bit13 (
+vpwl_0x0 Xdatamap10_LIMITERpugetMAIN_register_pwl_bit13 (
 .PLUS(register_vcap_uv_lvl_15[13]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap10_register_pwl_bit14 (
+vpwl_0x0 Xdatamap10_LIMITERpugetMAIN_register_pwl_bit14 (
 .PLUS(register_vcap_uv_lvl_15[14]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap10_register_pwl_bit15 (
+vpwl_0x0 Xdatamap10_LIMITERpugetMAIN_register_pwl_bit15 (
 .PLUS(register_vcap_uv_lvl_15[15]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap11_register_pwl_bit10 (
+vpwl_0x0 Xdatamap11_LIMITERclearalarm_register_pwl_bit0 (
+.PLUS(register_clr_alarms_10),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap11_LIMITERpugetMAIN_register_pwl_bit10 (
 .PLUS(register_vout_ov_lvl_15[10]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap11_register_pwl_bit11 (
+vpwl_0x0 Xdatamap11_LIMITERpugetMAIN_register_pwl_bit11 (
 .PLUS(register_vout_ov_lvl_15[11]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap11_register_pwl_bit12 (
+vpwl_0x0 Xdatamap11_LIMITERpugetMAIN_register_pwl_bit12 (
 .PLUS(register_vout_ov_lvl_15[12]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap11_register_pwl_bit13 (
+vpwl_0x0 Xdatamap11_LIMITERpugetMAIN_register_pwl_bit13 (
 .PLUS(register_vout_ov_lvl_15[13]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap11_register_pwl_bit14 (
+vpwl_0x0 Xdatamap11_LIMITERpugetMAIN_register_pwl_bit14 (
 .PLUS(register_vout_ov_lvl_15[14]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap11_register_pwl_bit15 (
+vpwl_0x0 Xdatamap11_LIMITERpugetMAIN_register_pwl_bit15 (
 .PLUS(register_vout_ov_lvl_15[15]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap12_register_pwl_bit10 (
+vpwl_0x0 Xdatamap12_LIMITERclearalarm_register_pwl_bit0 (
+.PLUS(register_clr_alarms_11),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap12_LIMITERpugetMAIN_register_pwl_bit10 (
 .PLUS(register_vout_uv_lvl_15[10]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap12_register_pwl_bit11 (
+vpwl_0x0 Xdatamap12_LIMITERpugetMAIN_register_pwl_bit11 (
 .PLUS(register_vout_uv_lvl_15[11]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap12_register_pwl_bit12 (
+vpwl_0x0 Xdatamap12_LIMITERpugetMAIN_register_pwl_bit12 (
 .PLUS(register_vout_uv_lvl_15[12]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap12_register_pwl_bit13 (
+vpwl_0x0 Xdatamap12_LIMITERpugetMAIN_register_pwl_bit13 (
 .PLUS(register_vout_uv_lvl_15[13]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap12_register_pwl_bit14 (
+vpwl_0x0 Xdatamap12_LIMITERpugetMAIN_register_pwl_bit14 (
 .PLUS(register_vout_uv_lvl_15[14]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap12_register_pwl_bit15 (
+vpwl_0x0 Xdatamap12_LIMITERpugetMAIN_register_pwl_bit15 (
 .PLUS(register_vout_uv_lvl_15[15]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap13_register_pwl_bit10 (
+vpwl_0x0 Xdatamap13_LIMITERclearalarm_register_pwl_bit0 (
+.PLUS(register_clr_alarms_12),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap13_LIMITERpugetMAIN_register_pwl_bit10 (
 .PLUS(register_iin_oc_lvl_15[10]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap13_register_pwl_bit11 (
+vpwl_0x0 Xdatamap13_LIMITERpugetMAIN_register_pwl_bit11 (
 .PLUS(register_iin_oc_lvl_15[11]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap13_register_pwl_bit12 (
+vpwl_0x0 Xdatamap13_LIMITERpugetMAIN_register_pwl_bit12 (
 .PLUS(register_iin_oc_lvl_15[12]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap13_register_pwl_bit13 (
+vpwl_0x0 Xdatamap13_LIMITERpugetMAIN_register_pwl_bit13 (
 .PLUS(register_iin_oc_lvl_15[13]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap13_register_pwl_bit14 (
+vpwl_0x0 Xdatamap13_LIMITERpugetMAIN_register_pwl_bit14 (
 .PLUS(register_iin_oc_lvl_15[14]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap13_register_pwl_bit15 (
+vpwl_0x0 Xdatamap13_LIMITERpugetMAIN_register_pwl_bit15 (
 .PLUS(register_iin_oc_lvl_15[15]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap14_register_pwl_bit10 (
+vpwl_0x0 Xdatamap14_LIMITERclearalarm_register_pwl_bit0 (
+.PLUS(register_clr_alarms_13),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap14_LIMITERpugetMAIN_register_pwl_bit10 (
 .PLUS(register_ichg_uc_lvl_15[10]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap14_register_pwl_bit11 (
+vpwl_0x0 Xdatamap14_LIMITERpugetMAIN_register_pwl_bit11 (
 .PLUS(register_ichg_uc_lvl_15[11]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap14_register_pwl_bit12 (
+vpwl_0x0 Xdatamap14_LIMITERpugetMAIN_register_pwl_bit12 (
 .PLUS(register_ichg_uc_lvl_15[12]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap14_register_pwl_bit13 (
+vpwl_0x0 Xdatamap14_LIMITERpugetMAIN_register_pwl_bit13 (
 .PLUS(register_ichg_uc_lvl_15[13]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap14_register_pwl_bit14 (
+vpwl_0x0 Xdatamap14_LIMITERpugetMAIN_register_pwl_bit14 (
 .PLUS(register_ichg_uc_lvl_15[14]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap14_register_pwl_bit15 (
+vpwl_0x0 Xdatamap14_LIMITERpugetMAIN_register_pwl_bit15 (
 .PLUS(register_ichg_uc_lvl_15[15]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_9d999ux0_10ux5d0 Xdatamap15_register_pwl_bit10 (
+vpwl_0x0 Xdatamap15_LIMITERclearalarm_register_pwl_bit0 (
+.PLUS(register_clr_alarms_14),
+.MINUS(net_0)
+);
+
+vpwl_0x0_9d999ux0_10ux5d0 Xdatamap15_LIMITERpugetMAIN_register_pwl_bit10 (
 .PLUS(register_dtemp_hot_lvl_15[10]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap15_register_pwl_bit11 (
+vpwl_0x0_10ux0 Xdatamap15_LIMITERpugetMAIN_register_pwl_bit11 (
 .PLUS(register_dtemp_hot_lvl_15[11]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_9d999ux0_10ux5d0 Xdatamap15_register_pwl_bit12 (
+vpwl_0x0_9d999ux0_10ux5d0 Xdatamap15_LIMITERpugetMAIN_register_pwl_bit12 (
 .PLUS(register_dtemp_hot_lvl_15[12]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap15_register_pwl_bit13 (
+vpwl_0x0_10ux0 Xdatamap15_LIMITERpugetMAIN_register_pwl_bit13 (
 .PLUS(register_dtemp_hot_lvl_15[13]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap15_register_pwl_bit14 (
+vpwl_0x0_10ux0 Xdatamap15_LIMITERpugetMAIN_register_pwl_bit14 (
 .PLUS(register_dtemp_hot_lvl_15[14]),
 .MINUS(net_0)
 );
 
-vpwl_0x0_10ux0 Xdatamap15_register_pwl_bit15 (
+vpwl_0x0_10ux0 Xdatamap15_LIMITERpugetMAIN_register_pwl_bit15 (
 .PLUS(register_dtemp_hot_lvl_15[15]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap18_register_pwl_bit10 (
+vpwl_0x0 Xdatamap16_LIMITERclearalarm_register_pwl_bit0 (
+.PLUS(register_clr_alarms_15),
+.MINUS(net_0)
+);
+
+vpwl_0x0 Xdatamap18_LIMITERpugetMAIN_register_pwl_bit10 (
 .PLUS(register_cap_lo_lvl_15[10]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap18_register_pwl_bit11 (
+vpwl_0x0 Xdatamap18_LIMITERpugetMAIN_register_pwl_bit11 (
 .PLUS(register_cap_lo_lvl_15[11]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap18_register_pwl_bit12 (
+vpwl_0x0 Xdatamap18_LIMITERpugetMAIN_register_pwl_bit12 (
 .PLUS(register_cap_lo_lvl_15[12]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap18_register_pwl_bit13 (
+vpwl_0x0 Xdatamap18_LIMITERpugetMAIN_register_pwl_bit13 (
 .PLUS(register_cap_lo_lvl_15[13]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap18_register_pwl_bit14 (
+vpwl_0x0 Xdatamap18_LIMITERpugetMAIN_register_pwl_bit14 (
 .PLUS(register_cap_lo_lvl_15[14]),
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap18_register_pwl_bit15 (
+vpwl_0x0 Xdatamap18_LIMITERpugetMAIN_register_pwl_bit15 (
 .PLUS(register_cap_lo_lvl_15[15]),
 .MINUS(net_0)
 );
