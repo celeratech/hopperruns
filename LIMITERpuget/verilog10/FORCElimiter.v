@@ -69,7 +69,7 @@ module vpwl_0x0_9d999ux0_10ux5d0 (PLUS,MINUS);
 endmodule
 
 module alibgnd (GND); 
-output GND; 
+inout GND; 
 endmodule 
 
 // ------------------------ Module Verilog ---------------
