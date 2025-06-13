@@ -130,12 +130,17 @@ module vpwl_0x5_0d999ux5_1ux0_1d999ux0_2ux5 (PLUS,MINUS);
   input  MINUS;
 endmodule
 
+module vpwl_0x0_10ux1_1010d0ux1_1010d0ux0_20ux0_1020d0ux0_1020d0ux0_30ux1_1030d0ux1_1030d0ux0_40ux1_1040d0ux1_1040d0ux0_50ux1_1050d0ux1_1050d0ux0_60ux1_1060d0ux1_1060d0ux0_70ux1_1070d0ux1_1070d0ux0_80ux1_1080d0ux1_1080d0ux0 (PLUS,MINUS);
+  output  PLUS;
+  input  MINUS;
+endmodule
+
 module alibgnd (GND); 
-output GND; 
+inout GND; 
 endmodule 
 
 // ------------------------ Module Verilog ---------------
-module FORCEDUT3 (GND, BS_0, BS_1, BS_2, BS_3, IPUL, IPWL, ISIN, ISQR, ITRI, VPUL, VPWL, VSIN, VSQR, VTRI, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_e0043be6);
+module FORCEDUT4 (GND, BS_0, BS_1, BS_2, BS_3, IPUL, IPWL, ISIN, ISQR, ITRI, VPUL, VPWL, VSIN, VSQR, VTRI, CELG59462, CELV96848, PORB97836, selfreset, CELSUB40948, IP_e0043be6);
 output  GND;
 output  BS_0;
 output  BS_1;
@@ -154,6 +159,7 @@ output  VTRI;
 output  CELG59462;
 output  CELV96848;
 output  PORB97836;
+output  selfreset;
 output  CELSUB40948;
 output  IP_e0043be6;
 
@@ -162,7 +168,7 @@ output  IP_e0043be6;
 
 // ------------------------ Networks ---------------------
 dbuf_e926e395 XU1 (
-.i(net_35),
+.i(net_37),
 .o(VPUL),
 .SUB(CELSUB40948),
 .CELG(CELG59462),
@@ -199,7 +205,7 @@ ipwl_0x0_10ux0_20ux10u I1_cf229af7 (
 );
 
 vpwl_0x0_10ux0_20ux5 V1_243a4842 (
-.PLUS(net_36),
+.PLUS(net_38),
 .MINUS(GND)
 );
 
@@ -240,7 +246,7 @@ vpulse_0x2d6x100d0ux0x10nx10nx49d99u XV2_b1e246ae (
 );
 
 vpulse_0x4x100d0ux50ux100nx100nx20u XV3_3e3ff829 (
-.PLUS(net_35),
+.PLUS(net_37),
 .MINUS(GND)
 );
 
@@ -256,7 +262,7 @@ vsin_3d5x1d5x10kx0 XV5_408ebcc4 (
 
 vdc_0 VIPROBE1_66597409 (
 .PLUS(VPWL),
-.MINUS(net_36)
+.MINUS(net_38)
 );
 
 vpwl_0x0_0d999ux0_1ux5_1d999ux5_2ux0 Xdatamap1_pwl_bit0 (
@@ -276,6 +282,11 @@ vpwl_0x0_1ux0_1d999ux0_2ux5 Xdatamap1_pwl_bit2 (
 
 vpwl_0x5_0d999ux5_1ux0_1d999ux0_2ux5 Xdatamap1_pwl_bit3 (
 .PLUS(BS_3),
+.MINUS(GND)
+);
+
+vpwl_0x0_10ux1_1010d0ux1_1010d0ux0_20ux0_1020d0ux0_1020d0ux0_30ux1_1030d0ux1_1030d0ux0_40ux1_1040d0ux1_1040d0ux0_50ux1_1050d0ux1_1050d0ux0_60ux1_1060d0ux1_1060d0ux0_70ux1_1070d0ux1_1070d0ux0_80ux1_1080d0ux1_1080d0ux0 Xdatamap2_pwl_bit0 (
+.PLUS(selfreset),
 .MINUS(GND)
 );
 

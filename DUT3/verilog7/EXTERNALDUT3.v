@@ -103,7 +103,7 @@ inout MINUS;
 endmodule
 
 module alibgnd (GND); 
-output GND; 
+inout GND; 
 endmodule 
 
 // ------------------------ Module Verilog ---------------

@@ -46,7 +46,7 @@ module EXTERNALDUT3 (GND,IPUL,IPWL,ISIN,ISQR,ITRI,VPUL,VSIN,VSQR,VTRI,BSO_0,BSO_
   output  dftprobe_XUPDbs3_824b23d9;
 endmodule
 
-module FORCEDUT3 (GND,BS_0,BS_1,BS_2,BS_3,IPUL,IPWL,ISIN,ISQR,ITRI,VPUL,VPWL,VSIN,VSQR,VTRI,CELG59462,CELV96848,PORB97836,CELSUB40948,IP_e0043be6);
+module FORCEDUT4 (GND,BS_0,BS_1,BS_2,BS_3,IPUL,IPWL,ISIN,ISQR,ITRI,VPUL,VPWL,VSIN,VSQR,VTRI,CELG59462,CELV96848,PORB97836,selfreset,CELSUB40948,IP_e0043be6);
   output  GND;
   output  BS_0;
   output  BS_1;
@@ -65,12 +65,13 @@ module FORCEDUT3 (GND,BS_0,BS_1,BS_2,BS_3,IPUL,IPWL,ISIN,ISQR,ITRI,VPUL,VPWL,VSI
   output  CELG59462;
   output  CELV96848;
   output  PORB97836;
+  output  selfreset;
   output  CELSUB40948;
   output  IP_e0043be6;
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module sim_DUT3 ();
+module sim_DUT4 ();
 
 
 // ------------------------ Wires ------------------------
@@ -123,7 +124,7 @@ EXTERNALDUT3 XEXTERNALDUT3 (
 .dftprobe_XUPDbs3_824b23d9(dftprobe_XUPDbs3_824b23d9)
 );
 
-FORCEDUT3 XFORCEDUT3 (
+FORCEDUT4 XFORCEDUT3 (
 .GND(GND),
 .BS_0(BS_0),
 .BS_1(BS_1),
@@ -142,6 +143,7 @@ FORCEDUT3 XFORCEDUT3 (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
+.selfreset(selfreset),
 .CELSUB40948(CELSUB40948),
 .IP_e0043be6(IP_e0043be6)
 );

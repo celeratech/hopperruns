@@ -1,27 +1,28 @@
-* Z:\celera\projects\Simplis\playrich\ForceExternals\ForceExternals0\300\verification\sim_DUT3.sxsch
+* Z:\celera\projects\Simplis\playrich\ForceExternals\ForceExternals0\301E\verification\sim_DUT4.sxsch
 *#SIMETRIX
 X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
 
-.node_map VSIN 43
-.node_map VSQR 41
-.node_map ISQR 47
-.node_map ISIN 45
-.node_map BS$0 30
-.node_map BS$1 31
-.node_map BS$2 32
-.node_map BS$3 33
-.node_map BSO$0 34
-.node_map BSO$1 35
-.node_map COMPOUT 39
-.node_map BSO$2 36
-.node_map BSO$3 37
-.node_map VTRI 42
-.node_map ITRI 44
-.node_map VPWL 38
-.node_map IPWL 46
-.node_map VPUL 40
-.node_map IPUL 48
-.node_map GND 49
+.node_map selfreset 50
+.node_map VSIN 44
+.node_map VSQR 42
+.node_map ISQR 48
+.node_map ISIN 46
+.node_map BS$0 31
+.node_map BS$1 32
+.node_map BS$2 33
+.node_map BS$3 34
+.node_map BSO$0 35
+.node_map BSO$1 36
+.node_map COMPOUT 40
+.node_map BSO$2 37
+.node_map BSO$3 38
+.node_map VTRI 43
+.node_map ITRI 45
+.node_map VPWL 39
+.node_map IPWL 47
+.node_map VPUL 41
+.node_map IPUL 49
+.node_map GND 51
 .options
 + PSP_NPT=10001
 + POP_ITRMAX=20
@@ -35,28 +36,31 @@ X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
 .globalvar REF=0.9
 .globalvar tdext_khz=1000
 .globalvar VIN=5
+.globalvar celera_i2c_frequency_KHz=1000
 
-X$DUT3 39 38 41 45 44 42 30 31 32 33 34 35 36 37 DUT3
-X$EXTERNALDUT3 49 40 43 47 45 44 48 46 42 39 34 35 36 37 41 EXTERNALDUT3
+X$DUT3 40 39 42 46 45 43 31 32 33 34 35 36 37 38 DUT3
+X$EXTERNALDUT3 51 41 44 48 46 45 49 47 43 40 35 36 37 38 42 EXTERNALDUT3
 
 .PRINT V(#VPWL)
 .GRAPH :#VPWL curveLabel= VPWL nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe1  
 .PRINT V(#VSIN)
 .GRAPH :#VSIN curveLabel= VSIN nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe2  
+.PRINT V(#selfreset)
+.GRAPH :#selfreset curveLabel= selfreset nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe3  
 .PRINT V(#VTRI)
 .GRAPH :#VTRI curveLabel= VTRI nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe4  
 X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
-** From Z:\celera\projects\Simplis\playrich\ForceExternals\ForceExternals0\300\design\DUT3.sxcmp
+** From Z:\celera\projects\Simplis\playrich\ForceExternals\ForceExternals0\301E\design\DUT3.sxcmp
 .subckt DUT3 50 45 47 49 48 46 51 53 55 57 52 54 56 58
 *#hierarchy
 .node_map VSQR 47
 .node_map ISIN 49
+.node_map BUS1$0 43
+.node_map BUS1$1 44
 .node_map BS$0 51
 .node_map BS$1 53
 .node_map BS$2 55
-.node_map BUS3$0 43
 .node_map BS$3 57
-.node_map BUS3$1 44
 .node_map BSO$0 52
 .node_map BSO$1 54
 .node_map BSO$2 56
@@ -85,7 +89,7 @@ X$UPDokcomp 34 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Us
 X$UPDsquare 27 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='PDsquare' dftprobe_description='clock' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
 .ends DUT3
 
-** From Z:\celera\projects\Simplis\playrich\ForceExternals\ForceExternals0\300\design\EXTERNALDUT3.sxcmp
+** From Z:\celera\projects\Simplis\playrich\ForceExternals\ForceExternals0\301E\external\EXTERNALDUT3.sxcmp
 .subckt EXTERNALDUT3 74 70 73 78 81 80 79 76 68 82 83 84 85 86 72
 *#hierarchy
 .node_map IND 71
@@ -149,7 +153,7 @@ X$UPDbs2 85 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_F
 X$UPDbs3 86 dftprobeModel0 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='PDbs3' dftprobe_description='Datamap3' dftprobe_highvoltage=6 dftprobe_enable=0 dftprobe_vmax=6
 .ends EXTERNALDUT3
 
-** From Z:\celera\projects\Simplis\playrich\ForceExternals\ForceExternals0\300\design\FORCEDUT3.sxcmp
+** From Z:\celera\projects\Simplis\playrich\ForceExternals\ForceExternals0\301E\force\FORCEDUT4.sxcmp
 
 
 .end

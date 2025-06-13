@@ -1,3 +1,4 @@
+//Celera BIO Generator...Updated BIO Pin List
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// COPYRIGHTS (c) Celera Technologies, Inc. 2020 All Rights Reserved /////////////
 /////////////////// Celera Technologies, Inc. Confidential and Proprietary //////////////////////////////
@@ -5,39 +6,44 @@
 
 //Celera Confidential BIO Data Generator
 //Cell Name
-cell,dbuf
+cell,dff
 //**********************************************
 //Generator Revision
-revision,generator,0.3.0
+revision,generator,0.5.0
 //**********************************************
 //Simplis Limits
 revision,limit,0p1
-//dbuf
 
-limit,logicgate_vmax,choose0,2
-limit,logicgate_vmax,choose1,6
-limit,logicgate_type,choose0,dbuf
+limit,dff_edge,choose0,rise
+limit,dff_edge,choose1,fall
+limit,dff_outputs,choose0,q
+limit,dff_outputs,choose1,qb
+limit,dff_outputs,choose2,both
+limit,dff_bits,minimum,1
+limit,dff_bits,maximum,16
+limit,dff_vmax,choose0,2
+limit,dff_vmax,choose1,6
+
 //**********************************************
 //PAD Parameters
 //**********************************************
 //USER Parameters
-user,VMAX,6V
-user,Type,dbuf
-
+user,dff_edge,rise
+user,NESTOrevision,0.5.0
 //**********************************************
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
 //Celera Map Generator
-registermap,dbuf
-register,instance,dbuf_e926e395
+registermap,dff
+register,instance,dff_9c8a87f3
 register,source,cell
 
-//Logic dbuf
+//Logic dff
 register,name,na
 register,enable,no
 register,bits,0
-register,mode,na
+register,mode,readonly
 register,por,0
 register,userdescription,na
 register,description0,description0,not used
@@ -54,15 +60,15 @@ register,busname,na
 //**********************************************
 //FACTORY Parameters
 //Celera Map Generator
-factorymap,dbuf
-factory,instance,dbuf_e926e395
+factorymap,dff
+factory,instance,dff_9c8a87f3
 factory,source,cell
 
-//LOGIC CELLS dbuf
+//LOGIC CELLS dff
 factory,name,na
 factory,enable,no
 factory,bits,0
-factory,mode,na
+factory,mode,readonly
 factory,por,0
 factory,userdescription,na
 factory,description0,description0,not used
@@ -78,20 +84,23 @@ factory,busname,na
 //**********************************************
 //Layout Parameters
 revision,layout,0p1
-laout,dbuf
-placeNOLAYOUT
+layout,dff
+place PEBBLES PEBBLEdffR 0 0 R0
+place PEBBLES PEBBLEdffF 0 0 R0
+movePINS
 endlayoutbio
+
 
 //**********************************************
 //Project Parameters
-//Celera:DUT3 Project Bio
+//Celera:LIMITERpuget Project Bio
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////   default.bio'  DO NOT USE  ///////////////////////////////////
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,TBD
-#define,PROJECTsupply,5
+#define,PROJECTreference,1.2
+#define,PROJECTsupply,5.0
 #define,TaRoom,25
 #define,ground,0.0
 #define,leveloffset,5
@@ -129,8 +138,9 @@ endlayoutbio
 // *********************************************
 //Die Size Estimate
 revision,vis15cbdiesize,0p1
-sub_area,PEBBLEdbuf,80
-generate_area,dbuf_e926e395,80
+sub_area,STONEnoconn,0
+sub_area,PEBBLEdffR,195
+generate_area,dff_9c8a87f3,195
 // *********************************************
 //Calculator Parameters
 #define,CELVminimum,1.4
@@ -139,19 +149,18 @@ generate_area,dbuf_e926e395,80
 *******************************************
 ** Celera Library Pin Order Generator    **
 *******************************************
-//dbuf
+//dff
 revision,pinorder,0.2.0
 Key,301
 PinOrder code revision,0.3.0
-pinorder,o,i
-
+pinorder,d,ck,q,net_skip,rb
 endpinorder
 //**********************************************
 
 //**********************************************
 //TRIM Parameters
-cell,dbuf
-trim,instance,dbuf_e926e395
+cell,dff
+trim,instance,dff_9c8a87f3
 
 trim,name,na
 trim,enable,no
@@ -177,15 +186,14 @@ trim,description6,empty
 trim,description7,empty
 
 //**********************************************
-//Cell Pin Descriptions
+//Cell Pin Descriptions	
 //**********************************************
-//Cell Pin Descriptions
 pinname,CELV
-definition,CELV,power supply
+definition,CELV,power
 iq,CELV,SIMULATION
 absmax,CELV,6
 absmin,CELV,2.0
-io,CELV,input
+io,CELV,power
 mode,CELV,power
 router,CELV,TBD
 dftpriority,CELV,1
@@ -196,44 +204,67 @@ definition,CELG,power ground
 iq,CELG,SIMULATION
 absmax,CELG,0.3
 absmin,CELG,-0.3
-io,CELG,input
+io,CELG,power
 mode,CELG,power
 router,CELG,TBD
 dftpriority,CELG,1
 esd,CELG,TBD
 
-pinname,i
-definition,i,digital buffer input 
-iq,i,SIMULATION
-absmax,i,6
-absmin,i,-0.3
-io,i,input
-mode,i,digital
-router,i,TBD
-dftpriority,i,1
-esd,i,TBD
+pinname,d
+definition,d,dff d input 
+iq,d,SIMULATION
+absmax,d,6
+absmin,d,-0.3
+io,d,input
+mode,d,digital
+router,d,TBD
+dftpriority,d,1
+esd,d,TBD
 
-pinname,o
-definition,o,digital buffer output 
-iq,o,SIMULATION
-absmax,o,6
-absmin,o,-0.3
-io,o,output
-mode,o,digital
-router,o,TBD
-dftpriority,o,1
-esd,o,TBD
+pinname,rb
+definition,rb,dff reset 
+iq,rb,SIMULATION
+absmax,rb,6
+absmin,rb,-0.3
+io,rb,input
+mode,rb,digital
+router,rb,TBD
+dftpriority,rb,1
+esd,rb,TBD
 
-pinname,SUB
-definition,SUB,substrate
-iq,SUB,SIMULATION
-absmax,SUB,0.3
-absmin,SUB,-0.3
-io,SUB,input
-mode,SUB,power
-router,SUB,TBD
-dftpriority,SUB,1
-esd,SUB,TBD
+pinname,ck
+definition,ck,dff clock input
+iq,ck,SIMULATION
+absmax,ck,6
+absmin,ck,-0.3
+io,ck,input
+mode,ck,digital
+router,ck,TBD
+dftpriority,ck,1
+esd,ck,TBD
+
+pinname,q
+definition,q,dff output 
+iq,q,SIMULATION
+absmax,q,6
+absmin,q,-0.3
+io,q,output
+mode,q,digital
+router,q,TBD
+dftpriority,q,1
+esd,q,TBD
+
+pinname,CELSUB
+definition,CELSUB,DFF Substrate power
+iq,CELSUB,SIMULATION
+absmax,CELSUB,0.3
+absmin,CELSUB,-0.3
+io,CELSUB,input
+mode,CELSUB,power
+router,CELSUB,TBD
+dftpriority,CELSUB,1
+esd,CELSUB,TBD
+
 //**********************************************
 //Process Parameters
 revision,vis15cb,0p1
@@ -912,3 +943,4 @@ revision,vis15cb,0p1
 ////////////////////////////////////////////////////////////////////////
 // *********************************************
 endbio
+
