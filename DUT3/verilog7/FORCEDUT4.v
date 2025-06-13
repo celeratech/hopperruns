@@ -130,7 +130,7 @@ module vpwl_0x5_0d999ux5_1ux0_1d999ux0_2ux5 (PLUS,MINUS);
   input  MINUS;
 endmodule
 
-module vpwl_0x0_10ux1_1010d0ux1_1010d0ux0_20ux0_1020d0ux0_1020d0ux0_30ux1_1030d0ux1_1030d0ux0_40ux1_1040d0ux1_1040d0ux0_50ux1_1050d0ux1_1050d0ux0_60ux1_1060d0ux1_1060d0ux0_70ux1_1070d0ux1_1070d0ux0_80ux1_1080d0ux1_1080d0ux0 (PLUS,MINUS);
+module vpwl_0x0_10ux1_10d000001ux1_10d000001ux0_20ux0_20d000001ux0_20d000001ux0_30ux1_30d000001ux1_30d000001ux0_40ux1_40d000001ux1_40d000001ux0 (PLUS,MINUS);
   output  PLUS;
   input  MINUS;
 endmodule
@@ -285,7 +285,7 @@ vpwl_0x5_0d999ux5_1ux0_1d999ux0_2ux5 Xdatamap1_pwl_bit3 (
 .MINUS(GND)
 );
 
-vpwl_0x0_10ux1_1010d0ux1_1010d0ux0_20ux0_1020d0ux0_1020d0ux0_30ux1_1030d0ux1_1030d0ux0_40ux1_1040d0ux1_1040d0ux0_50ux1_1050d0ux1_1050d0ux0_60ux1_1060d0ux1_1060d0ux0_70ux1_1070d0ux1_1070d0ux0_80ux1_1080d0ux1_1080d0ux0 Xdatamap2_pwl_bit0 (
+vpwl_0x0_10ux1_10d000001ux1_10d000001ux0_20ux0_20d000001ux0_20d000001ux0_30ux1_30d000001ux1_30d000001ux0_40ux1_40d000001ux1_40d000001ux0 Xdatamap2_pwl_bit0 (
 .PLUS(selfreset),
 .MINUS(GND)
 );
