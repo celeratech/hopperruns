@@ -1,0 +1,147 @@
+* Z:\celera\projects\Simplis\playrich\ForceExternals\ForceExternals0\300\verification\sim_DUT.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map VSIN 34
+.node_map VSQR 32
+.node_map ISQR 38
+.node_map ISIN 36
+.node_map COMPOUT 30
+.node_map VTRI 33
+.node_map ITRI 35
+.node_map VPWL 29
+.node_map IPWL 37
+.node_map VPUL 31
+.node_map IPUL 39
+.node_map GND 40
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+.tran 500u 0
+
+.globalvar REF=0.9
+.globalvar tdext_khz=1000
+.globalvar VIN=5
+
+X$DUT 30 29 32 36 35 33 DUT
+X$EXTERNALDUT 40 31 34 38 36 35 39 37 33 30 EXTERNALDUT
+
+.PRINT V(#VPWL)
+.GRAPH :#VPWL curveLabel= VPWL nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe1  
+.PRINT V(#ISIN)
+.GRAPH :#ISIN curveLabel= ISIN nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe10  
+.PRINT I(
+.GRAPH FORCEDUT#IPWL curveLabel="I(FORCEDUT-IPWL)" nowarn=true complete=true analysis=tran|pop disabled=false 
+.PRINT I(
+.GRAPH FORCEDUT#ISQR curveLabel="I(FORCEDUT-ISQR)" nowarn=true complete=true analysis=tran|pop disabled=false 
+.PRINT I(
+.GRAPH FORCEDUT#IPUL curveLabel="I(FORCEDUT-IPUL)" nowarn=true complete=true analysis=tran|pop disabled=false 
+.PRINT I(
+.GRAPH FORCEDUT#ITRI curveLabel="I(FORCEDUT-ITRI)" nowarn=true complete=true analysis=tran|pop disabled=false 
+.PRINT I(
+.GRAPH FORCEDUT#ISIN curveLabel="I(FORCEDUT-ISIN)" nowarn=true complete=true analysis=tran|pop disabled=false 
+.PRINT V(#VSQR)
+.GRAPH :#VSQR curveLabel= VSQR nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe2  
+.PRINT V(#VPUL)
+.GRAPH :#VPUL curveLabel= VPUL nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe3  
+.PRINT V(#VTRI)
+.GRAPH :#VTRI curveLabel= VTRI nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe4  
+.PRINT V(#VSIN)
+.GRAPH :#VSIN curveLabel= VSIN nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe5  
+.PRINT V(#IPWL)
+.GRAPH :#IPWL curveLabel= IPWL nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe6  
+.PRINT V(#ISQR)
+.GRAPH :#ISQR curveLabel= ISQR nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe7  
+.PRINT V(#IPUL)
+.GRAPH :#IPUL curveLabel= IPUL nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe8  
+.PRINT V(#ITRI)
+.GRAPH :#ITRI curveLabel= ITRI nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe9  
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+** From Z:\celera\projects\Simplis\playrich\ForceExternals\ForceExternals0\300\design\DUT.sxcmp
+.subckt DUT 42 37 39 41 40 38
+*#hierarchy
+.node_map VSQR 39
+.node_map ISIN 41
+.node_map COMPOUT 42
+.node_map VTRI 38
+.node_map ITRI 40
+.node_map VPWL 37
+X$comparator1 36 37 37 42 40 33 41 34 35 32 comparatornoctlpins vars: comparator_model='comparator' comparator_hysteresismode='fixed' comparator_edge='falling' comparator_speed='fast' comparator_type='p' comparator_deglitch='no' comparator_lowiq='no' comparator_datasheet_name='text' comparator_datasheet_description='text' bgcomp_accuracy='no' bgcomp_outputanalog='supply' bgcomp_note1='Usage' bgcomp_outputdigital='no' bgcomp_trim_name='text' bgcomp_trim_description='text' bgcomp_enable='yes' comparator_dft='no' comparatorsupply_reference='ground' comparatorsupply_threshold='50' comparatorsupply_edge='falling' comparatorsupply_output='analog' comparatorsupply_enable='analog' comparator_hysteresis=20 comparator_lowiqpor=0 bgcomp_threshold=1.2 bgcomp_maxcelpos=6 bgcomp_maxvin=6 comparator_vmax=6
+X$oscillator1 30 37 27 25 23 22 37 24 26 oscillator vars: osc_type='internal' osc_accuracy='no' osc_datasheet_accuracy_name='text' osc_datasheet_accuracy_description='text' osc_enable='pin' osc_enable_por='disable' osc_datasheet_enable_name='text' osc_datasheet_enable_description='text' osc_ss='no' osc_standbyclock='no' osc_standbyclockpor='disable' osc_ext_freq_default='no' osc_crystalbias='3.3' osc_crystalglobalref='yes' osc_ss_configuration='fixed' osc_ss_enable_control='fixed' osc_ss_mode_por='sweep' osc_ss_enable_por='enable' osc_ss_clock_sync='synchronized' osc_ss_datasheetname='text' osc_dft='no' osc_ibias='global' osc_int_freq=1k osc_int_duty=50 osc_int_ireplica_gain=0 osc_int_1=0 osc_ext_freq=1k osc_ext_resistor=50 osc_ext_duty=50 osc_ext_replicagain=0 osc_ext_comment=0 osc_crude_freq=1 osc_crude_generatesupply=3.3 osc_crude_duty=50 osc_crystalfreq=1 osc_crystalreflocal=1 osc_crystalcleancountpor=32 osc_ringfreq=20 osc_ss_range_por=5 osc_ss_clock_independent=50 osc_ss_clock_divide=64 osc_vmax=6
+X$pinprobe13 40 pinprobe vars: pinprobe_description='External_Vbias_Supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 37 pinprobe vars: pinprobe_description='External_Vbias_Supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 39 pinprobe vars: pinprobe_description='External_Vbias_Supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$U13 41 pinprobe vars: pinprobe_description='External_Vbias_Supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U16 39 31 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U25 27 28 38 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U26 28 29 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$UPAvpwl 37 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='PAvpwl' dftprobe_description='vpwl' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UPAvsqr 39 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='PAvsqr' dftprobe_description='vsqr' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UPDclock 29 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='PDclock' dftprobe_description='clock' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UPDokcomp 36 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='PDokcomp' dftprobe_description='ok_comparator' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UPDokosc 30 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='PDokosc' dftprobe_description='ok_oscillator' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UPDsquare 31 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='PDsquare' dftprobe_description='clock' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+.ends DUT
+
+** From Z:\celera\projects\Simplis\playrich\ForceExternals\ForceExternals0\300\design\EXTERNALDUT.sxcmp
+.subckt EXTERNALDUT 62 58 61 66 69 68 67 64 60 70
+*#hierarchy
+.node_map IND 59
+.node_map VSIN 61
+.node_map ISIN 69
+.node_map ISQR 66
+.node_map CAP 57
+.node_map COMPOUT 70
+.node_map RES 63
+.node_map VTRI 60
+.node_map ITRI 68
+.node_map DIODE 65
+.node_map IPWL 64
+.node_map VPUL 58
+.node_map IPUL 67
+.node_map GND 62
+C1 57 62 100u IC=0
+X$D1 65 62 DFLS130L vars: Package='PowerDI123' Partnumber='DFLS130L-7'
+L1 59 62 1u
+X$pinprobe10 64 pinprobe vars: pinprobe_description='External_Vbias_Supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 66 pinprobe vars: pinprobe_description='External_Vbias_Supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe12 67 pinprobe vars: pinprobe_description='External_Vbias_Supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe13 68 pinprobe vars: pinprobe_description='External_Vbias_Supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe7 58 pinprobe vars: pinprobe_description='External_Vbias_Supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe8 60 pinprobe vars: pinprobe_description='External_Vbias_Supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe9 61 pinprobe vars: pinprobe_description='External_Vbias_Supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+R1 63 62 50k
+R2 58 62 1k
+R3 61 62 1k
+R4 70 62 100k
+R5 64 63 1
+R6 66 65 1
+R7 67 59 1
+R8 68 57 1
+R9 69 62 1
+X$U13 69 pinprobe vars: pinprobe_description='External_Vbias_Supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$U2 62 pinprobe vars: pinprobe_description='External_Vbias_Supply' pinprobe_mode='input' pinprobe_input='pad' pinprobe_output='tbd'
+X$UPAcap 57 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='PAcap' dftprobe_description='cap' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UPAcompout 70 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='PAcompout' dftprobe_description='compout' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UPAdiode 65 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='PAdiode' dftprobe_description='diode' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UPAind 59 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='PAind' dftprobe_description='ind' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UPAipul 67 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='PAipul' dftprobe_description='ipul' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UPAipwl 64 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='PAipwl' dftprobe_description='ipwl' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UPAisin 69 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='PAisin' dftprobe_description='isin' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UPAisqr 66 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='PAisqr' dftprobe_description='isqr' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UPAitri 68 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='PAitri' dftprobe_description='itri' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UPAres 63 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='PAres' dftprobe_description='res' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UPAvpul 58 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='PAvpul' dftprobe_description='vpul' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UPAvsin 61 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='PAvsin' dftprobe_description='sin' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UPAvtri 60 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='PAvtri' dftprobe_description='vtri' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+.ends EXTERNALDUT
+
+** From Z:\celera\projects\Simplis\playrich\ForceExternals\ForceExternals0\300\design\FORCEDUT.sxcmp
+
+
+.end
