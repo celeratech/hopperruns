@@ -1,0 +1,195 @@
+// ------------------------ Module Definitions -----------
+module VESPAdftpulse (stop,pulse,start,CELG59462,CELV96848,CELSUB40948);
+  input  stop;
+  output  pulse;
+  input  start;
+  input  CELG59462;
+  input  CELV96848;
+  input  CELSUB40948;
+endmodule
+
+//Verilog HDL for "DFT", "DFThijack" "functional"
+
+
+module DFThijack ( o, CELG, CELV, CELSUB, ten_hijack, ten_hijacki, i );
+
+  input CELV;
+  input ten_hijack;
+  input CELSUB;
+  input ten_hijacki;
+  input i;
+  output o;
+  input CELG;
+endmodule
+
+
+module dftprobeModel0_8b1750b2 (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+
+
+
+module dftprobeModel2_c0a4d92d (i,TAI,ten,CELG,CELSUB,CELV);
+input  i;
+output  TAI;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+
+
+
+module dftprobeModel0_5f99ceb4 (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+
+
+
+//Verilog HDL for "DFT", "DFTtm8" "functional"
+
+
+module DFTtm8 ( a, ten, TAO, tdo, tmi, G, SUB, TAI, V, tdi, tma );
+
+  input V;
+  input  [7:0] tma;
+  input  [7:0] TAI;
+  output  [7:0] ten;
+  output  [1:0] a;
+  inout tdo;
+  inout TAO;
+  input  [7:0] tdi;
+  input G;
+  input SUB;
+  inout  [4:0] tmi;
+endmodule
+
+
+module dftprobeModel0_f0ccd53b (i,tdi,ten,CELG,CELSUB,CELV);
+input  i;
+output  tdi;
+input  ten;
+input  CELG;
+input  CELSUB;
+input  CELV;
+endmodule
+
+
+
+// ------------------------ Module Verilog ---------------
+module SOFTSTARTwaltzDEBUG (SS, TAO, tdo, tmi, CELG59462, CELV96848, dft_clock, CELSUB40948, enable_brick, done_softstart, enable_softstart, hijack_enable_brick, hijack_enable_softstart);
+  input  SS;
+inout  TAO;
+inout  tdo;
+input [4:0] tmi;
+input  CELG59462;
+input  CELV96848;
+  input  dft_clock;
+input  CELSUB40948;
+input  enable_brick;
+input  done_softstart;
+input  enable_softstart;
+output  hijack_enable_brick;
+output  hijack_enable_softstart;
+
+
+// ------------------------ Wires ------------------------
+wire [4:0] tmi;
+wire [1:0] a;
+wire [7:0] TAI;
+wire [7:0] tdi;
+wire [7:0] ten;
+wire [7:0] tma;
+
+// ------------------------ Networks ---------------------
+VESPAdftpulse XU4 (
+.stop(done_softstart),
+.pulse(net_25),
+.start(hijack_enable_softstart),
+.CELG59462(CELG59462),
+.CELV96848(CELV96848),
+.CELSUB40948(CELSUB40948)
+);
+
+DFThijack XU1 (
+.i(enable_softstart),
+.o(hijack_enable_softstart),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948),
+.ten_hijack(ten_hijack_297df8ef_XU1),
+.ten_hijacki(ten_hijacki_297df8ef_XU1)
+);
+
+dftprobeModel0_8b1750b2 XU6 (
+.i(done_softstart),
+.tdi(tdi_f665b623_XU6),
+.ten(ten_f665b623_XU6),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+dftprobeModel2_c0a4d92d XU8 (
+.i(SS),
+.TAI(TAI_81f80d4d_XU8),
+.ten(ten_81f80d4d_XU8),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+dftprobeModel0_5f99ceb4 XU10 (
+.i(dft_clock),
+.tdi(tdi_528f048c_XU10),
+.ten(ten_528f048c_XU10),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+DFThijack XU14 (
+.i(enable_brick),
+.o(hijack_enable_brick),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948),
+.ten_hijack(ten_hijack_dcf795e2_XU14),
+.ten_hijacki(ten_hijacki_dcf795e2_XU14)
+);
+
+DFTtm8 dft_hex0x13 (
+.G(CELG59462),
+.V(CELV96848),
+.a({a1,a0}),
+.SUB(CELSUB40948),
+.TAI({a0,a0,a0,a0,a0,a0,a0,TAI_81f80d4d_XU8}),
+.TAO(TAO),
+.tdi({a0,a0,a0,a0,a0,tdi_fa4970e3_XUSOFTSTARTtime,tdi_f665b623_XU6,tdi_528f048c_XU10}),
+.tdo(tdo),
+.ten({ten_fa4970e3_XUSOFTSTARTtime,ten_81f80d4d_XU8,ten_f665b623_XU6,ten_hijacki_dcf795e2_XU14,ten_hijack_dcf795e2_XU14,ten_528f048c_XU10,ten_hijacki_297df8ef_XU1,ten_hijack_297df8ef_XU1}),
+.tma({a0,a0,a0,a1,a0,a0,a1,a1}),
+.tmi(tmi[4:0])
+);
+
+dftprobeModel0_f0ccd53b XUSOFTSTARTtime (
+.i(net_25),
+.tdi(tdi_fa4970e3_XUSOFTSTARTtime),
+.ten(ten_fa4970e3_XUSOFTSTARTtime),
+.CELG(CELG59462),
+.CELV(CELV96848),
+.CELSUB(CELSUB40948)
+);
+
+endmodule
+
