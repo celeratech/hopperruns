@@ -68,6 +68,16 @@ module vpwl_0x0_9d999ux0_10ux5d0 (PLUS,MINUS);
   input  MINUS;
 endmodule
 
+module vpwl_0x0_300ux0_300d00001ux5d0_301d0ux5d0_301d00001ux0 (PLUS,MINUS);
+  output  PLUS;
+  input  MINUS;
+endmodule
+
+module vpwl_0x0_1ux0_1d00001ux5d0_2d0ux5d0_2d00001ux0 (PLUS,MINUS);
+  output  PLUS;
+  input  MINUS;
+endmodule
+
 module alibgnd (GND); 
 inout GND; 
 endmodule 
@@ -2279,7 +2289,7 @@ vpwl_0x0 Xdatamap18_LIMITERpugetMAIN_register_pwl_bit9 (
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap1_LIMITERclearalarm_register_pwl_bit0 (
+vpwl_0x0_300ux0_300d00001ux5d0_301d0ux5d0_301d00001ux0 Xdatamap1_LIMITERclearalarm_register_pwl_bit0 (
 .PLUS(register_clr_alarms_1),
 .MINUS(net_0)
 );
@@ -2344,7 +2354,7 @@ vpwl_0x0 Xdatamap1_LIMITERpugetMAIN_register_pwl_bit15 (
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap2_LIMITERclearalarm_register_pwl_bit0 (
+vpwl_0x0_1ux0_1d00001ux5d0_2d0ux5d0_2d00001ux0 Xdatamap2_LIMITERclearalarm_register_pwl_bit0 (
 .PLUS(register_clr_alarms_6),
 .MINUS(net_0)
 );
@@ -2379,7 +2389,7 @@ vpwl_0x0 Xdatamap2_LIMITERpugetMAIN_register_pwl_bit15 (
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap3_LIMITERclearalarm_register_pwl_bit0 (
+vpwl_0x0_300ux0_300d00001ux5d0_301d0ux5d0_301d00001ux0 Xdatamap3_LIMITERclearalarm_register_pwl_bit0 (
 .PLUS(register_clr_alarms_0),
 .MINUS(net_0)
 );
@@ -2414,7 +2424,7 @@ vpwl_0x0 Xdatamap3_LIMITERpugetMAIN_register_pwl_bit15 (
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap4_LIMITERclearalarm_register_pwl_bit0 (
+vpwl_0x0_1ux0_1d00001ux5d0_2d0ux5d0_2d00001ux0 Xdatamap4_LIMITERclearalarm_register_pwl_bit0 (
 .PLUS(register_clr_alarms_2),
 .MINUS(net_0)
 );
@@ -2449,7 +2459,7 @@ vpwl_0x0 Xdatamap4_LIMITERpugetMAIN_register_pwl_bit15 (
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap5_LIMITERclearalarm_register_pwl_bit0 (
+vpwl_0x0_1ux0_1d00001ux5d0_2d0ux5d0_2d00001ux0 Xdatamap5_LIMITERclearalarm_register_pwl_bit0 (
 .PLUS(register_clr_alarms_3),
 .MINUS(net_0)
 );
@@ -2484,7 +2494,7 @@ vpwl_0x0 Xdatamap5_LIMITERpugetMAIN_register_pwl_bit15 (
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap6_LIMITERclearalarm_register_pwl_bit0 (
+vpwl_0x0_1ux0_1d00001ux5d0_2d0ux5d0_2d00001ux0 Xdatamap6_LIMITERclearalarm_register_pwl_bit0 (
 .PLUS(register_clr_alarms_4),
 .MINUS(net_0)
 );
@@ -2519,7 +2529,7 @@ vpwl_0x0 Xdatamap6_LIMITERpugetMAIN_register_pwl_bit15 (
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap7_LIMITERclearalarm_register_pwl_bit0 (
+vpwl_0x0_1ux0_1d00001ux5d0_2d0ux5d0_2d00001ux0 Xdatamap7_LIMITERclearalarm_register_pwl_bit0 (
 .PLUS(register_clr_alarms_5),
 .MINUS(net_0)
 );
@@ -2554,7 +2564,7 @@ vpwl_0x0 Xdatamap7_LIMITERpugetMAIN_register_pwl_bit15 (
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap8_LIMITERclearalarm_register_pwl_bit0 (
+vpwl_0x0_1ux0_1d00001ux5d0_2d0ux5d0_2d00001ux0 Xdatamap8_LIMITERclearalarm_register_pwl_bit0 (
 .PLUS(register_clr_alarms_7),
 .MINUS(net_0)
 );
@@ -2589,7 +2599,7 @@ vpwl_0x0 Xdatamap8_LIMITERpugetMAIN_register_pwl_bit15 (
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap9_LIMITERclearalarm_register_pwl_bit0 (
+vpwl_0x0_1ux0_1d00001ux5d0_2d0ux5d0_2d00001ux0 Xdatamap9_LIMITERclearalarm_register_pwl_bit0 (
 .PLUS(register_clr_alarms_8),
 .MINUS(net_0)
 );
@@ -2624,7 +2634,7 @@ vpwl_0x0 Xdatamap9_LIMITERpugetMAIN_register_pwl_bit15 (
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap10_LIMITERclearalarm_register_pwl_bit0 (
+vpwl_0x0_1ux0_1d00001ux5d0_2d0ux5d0_2d00001ux0 Xdatamap10_LIMITERclearalarm_register_pwl_bit0 (
 .PLUS(register_clr_alarms_9),
 .MINUS(net_0)
 );
@@ -2659,7 +2669,7 @@ vpwl_0x0 Xdatamap10_LIMITERpugetMAIN_register_pwl_bit15 (
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap11_LIMITERclearalarm_register_pwl_bit0 (
+vpwl_0x0_1ux0_1d00001ux5d0_2d0ux5d0_2d00001ux0 Xdatamap11_LIMITERclearalarm_register_pwl_bit0 (
 .PLUS(register_clr_alarms_10),
 .MINUS(net_0)
 );
@@ -2694,7 +2704,7 @@ vpwl_0x0 Xdatamap11_LIMITERpugetMAIN_register_pwl_bit15 (
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap12_LIMITERclearalarm_register_pwl_bit0 (
+vpwl_0x0_1ux0_1d00001ux5d0_2d0ux5d0_2d00001ux0 Xdatamap12_LIMITERclearalarm_register_pwl_bit0 (
 .PLUS(register_clr_alarms_11),
 .MINUS(net_0)
 );
@@ -2729,7 +2739,7 @@ vpwl_0x0 Xdatamap12_LIMITERpugetMAIN_register_pwl_bit15 (
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap13_LIMITERclearalarm_register_pwl_bit0 (
+vpwl_0x0_1ux0_1d00001ux5d0_2d0ux5d0_2d00001ux0 Xdatamap13_LIMITERclearalarm_register_pwl_bit0 (
 .PLUS(register_clr_alarms_12),
 .MINUS(net_0)
 );
@@ -2764,7 +2774,7 @@ vpwl_0x0 Xdatamap13_LIMITERpugetMAIN_register_pwl_bit15 (
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap14_LIMITERclearalarm_register_pwl_bit0 (
+vpwl_0x0_1ux0_1d00001ux5d0_2d0ux5d0_2d00001ux0 Xdatamap14_LIMITERclearalarm_register_pwl_bit0 (
 .PLUS(register_clr_alarms_13),
 .MINUS(net_0)
 );
@@ -2799,7 +2809,7 @@ vpwl_0x0 Xdatamap14_LIMITERpugetMAIN_register_pwl_bit15 (
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap15_LIMITERclearalarm_register_pwl_bit0 (
+vpwl_0x0_1ux0_1d00001ux5d0_2d0ux5d0_2d00001ux0 Xdatamap15_LIMITERclearalarm_register_pwl_bit0 (
 .PLUS(register_clr_alarms_14),
 .MINUS(net_0)
 );
@@ -2834,7 +2844,7 @@ vpwl_0x0_10ux0 Xdatamap15_LIMITERpugetMAIN_register_pwl_bit15 (
 .MINUS(net_0)
 );
 
-vpwl_0x0 Xdatamap16_LIMITERclearalarm_register_pwl_bit0 (
+vpwl_0x0_1ux0_1d00001ux5d0_2d0ux5d0_2d00001ux0 Xdatamap16_LIMITERclearalarm_register_pwl_bit0 (
 .PLUS(register_clr_alarms_15),
 .MINUS(net_0)
 );
