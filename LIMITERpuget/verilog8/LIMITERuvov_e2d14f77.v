@@ -1,12 +1,9 @@
 // ------------------------ Module Definitions -----------
-module VESPAasmINPUT2 (o,i0,i1,Tstate,CELG59462,CELV96848,CELSUB40948);
-  output  o;
+module VESPAasmINPUT2 (o,i0,i1,Tstate);
+  input  o;
   input  i0;
   input  i1;
   input  Tstate;
-  input  CELG59462;
-  input  CELV96848;
-  input  CELSUB40948;
 endmodule
 
 //Celera:digitalcomparator_42ffc1b4
@@ -67,17 +64,16 @@ endmodule
 
 
 
-//Celera:inv_12e192f5
-//Celera Confidential Symbol Generator
-//5V Inverter
-module inv_12e192f5 (CELV,CELG,i,o,SUB);
-input CELV;
-input CELG;
-input i;
-input SUB;
-output o;
+module inv_12e192f5 ();
 endmodule
 
+//Verilog HDL for "Generate", "STONEnoconn" "functional"
+
+
+module STONEnoconn ( noconn );
+
+  input noconn;
+endmodule
 
 
 //Celera:dff_9c8a87f3
@@ -197,40 +193,28 @@ VESPAasmINPUT2 XU11 (
 .o(net_151),
 .i0(porb),
 .i1(net_153),
-.Tstate(enable),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
+.Tstate(enable)
 );
 
 VESPAasmINPUT2 XU3 (
 .o(net_145),
 .i0(mask_uv),
 .i1(net_146),
-.Tstate(enable),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
+.Tstate(enable)
 );
 
 VESPAasmINPUT2 XU5 (
 .o(net_149),
 .i0(mask_ov),
 .i1(net_150),
-.Tstate(enable),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
+.Tstate(enable)
 );
 
 VESPAasmINPUT2 XU6 (
 .o(net_147),
 .i0(porb),
 .i1(net_152),
-.Tstate(enable),
-.CELG59462(CELG59462),
-.CELV96848(CELV96848),
-.CELSUB40948(CELSUB40948)
+.Tstate(enable)
 );
 
 digitalcomparator_42ffc1b4 XU1 (
@@ -268,11 +252,7 @@ oneshot_13b6b269 XU8 (
 );
 
 inv_12e192f5 XU9 (
-.i(net_80),
-.o(net_152),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+
 );
 
 dbuf_e926e395 XU10 (
@@ -300,11 +280,7 @@ oneshot_13b6b269 XU13 (
 );
 
 inv_12e192f5 XU14 (
-.i(net_82),
-.o(net_153),
-.SUB(CELSUB40948),
-.CELG(CELG59462),
-.CELV(CELV96848)
+
 );
 
 dbuf_e926e395 XU16 (
@@ -313,6 +289,14 @@ dbuf_e926e395 XU16 (
 .SUB(CELSUB40948),
 .CELG(CELG59462),
 .CELV(CELV96848)
+);
+
+STONEnoconn XNC80 (
+.noconn(net_80)
+);
+
+STONEnoconn XNC82 (
+.noconn(net_82)
 );
 
 dff_9c8a87f3 Xdff1 (

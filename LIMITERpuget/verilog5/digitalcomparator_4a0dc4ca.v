@@ -68,10 +68,12 @@ output xgty;
 input [15:0] x;
 input [15:0] y;
 
-//Celera Confidential Do Not Copy y
+//Celera Confidential Do Not Copy Pin y
 wire[15:0] y;
-//Celera Confidential Do Not Copy x
+
+//Celera Confidential Do Not Copy Pin x
 wire[15:0] x;
+
 //Celera Confidential Do Not Copy STONEnoconn
 STONEnoconn Xnoconn2(
 .noconn (

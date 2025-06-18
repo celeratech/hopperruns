@@ -79,11 +79,57 @@ description,DIGITALCOMPARATOR Absoulte maximum voltage rating
 //POR Parameters
 //**********************************************
 //REGISTER Parameters
+//Celera Map Generator
+registermap,digitalcomparator
+register,instance,digitalcomparator_4a0dc4ca
+register,source,cell
+
+//digitalcomparator
+register,name,na
+register,enable,no
+register,bits,0
+register,mode,readonly
+register,por,0
+register,userdescription,na
+register,description0,description0,not used
+register,description1,description1,not used
+register,description2,description2,not used
+register,description3,description3,not used
+register,description4,description4,not used
+register,description5,description5,not used
+register,description6,description6,not used
+register,description7,description7,not used
+//Netlister Information
+register,busname,na
 //**********************************************
 //FACTORY Parameters
+//Celera Map Generator
+factorymap,digitalcomparator
+factory,instance,digitalcomparator_4a0dc4ca
+factory,source,cell
+
+//digitalcomparator
+factory,name,na
+factory,enable,no
+factory,bits,0
+factory,mode,readonly
+factory,por,0
+factory,userdescription,na
+factory,description0,description0,not used
+factory,description1,description1,not used
+factory,description2,description2,not used
+factory,description3,description3,not used
+factory,description4,description4,not used
+factory,description5,description5,not used
+factory,description6,description6,not used
+factory,description7,description7,not used
+//Netlister Information
+factory,busname,na
 //**********************************************
 //CELL DFT Parameters
 // *********************************************
+//Layout Parameters
+
 //Layout Parameters
 revision,layout,0p1
 layout,digitalcomparator
@@ -100,9 +146,11 @@ place Generate STONE16bitcomparator 0 0 R0
 //alternate views needed for 2nd one in a grouped cell for V G lineup
 //place Generate STONEdigitalcomparatordeglitch 0 -41.85 R0
 //placeALTVIEW Generate STONE16bitcomparator layout1 0 0 R0
+noROUTElist CELV,CELG,CELSUB
 movePINS
 placeROUTEnopins
 endlayoutbio
+
 //**********************************************
 //Project Parameters
 //Celera:LIMITERpuget Project Bio
@@ -111,8 +159,8 @@ endlayoutbio
 
 //Simplis Project Parameters /////////////////////////////////////////////
 #define,Project,TBD
-#define,PROJECTreference,TBD
-#define,PROJECTsupply,5
+#define,PROJECTreference,1.2
+#define,PROJECTsupply,5.0
 #define,TaRoom,25
 #define,ground,0.0
 #define,leveloffset,5
@@ -171,6 +219,8 @@ pinorder,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,net_skip,net_skip
 
 
 endpinorder
+//**********************************************
+
 // *********************************************
 //Calculator Parameters
 #define,count_runitw,2.0
@@ -179,6 +229,31 @@ endpinorder
 #define,CELVminimum,1.5
 //**********************************************	
 //TRIM Parameters
+cell,digitalcomparator
+trim,instance,digitalcomparator_4a0dc4ca
+
+trim,name,na
+trim,enable,no
+trim,bits,TBD
+trim,por,0
+trim,pinname,TBD
+trim,testname,TBD
+trim,description,TBD
+trim,target,na
+trim,units,KHz
+trim,pretrim_low_limit,TBD
+trim,pretrim_high_limit,TBD
+trim,posttrim_low_limit,TBD
+trim,posttrim_high_limit,TBD
+trim,codeunits,%
+trim,description0,empty
+trim,description1,empty
+trim,description2,empty
+trim,description3,empty
+trim,description4,empty
+trim,description5,empty
+trim,description6,empty
+trim,description7,empty
 //**********************************************
 //Cell Pin Descriptions
 // *********************************************
