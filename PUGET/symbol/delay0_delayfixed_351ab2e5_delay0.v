@@ -1,0 +1,11 @@
+//Celera:delay0_delayfixed_351ab2e5_delay0
+//TYPE:fixed 1us EDGE:fall DFT:no ACC:no
+module delay0_delayfixed_351ab2e5_delay0 (i,CELV,o,
+CELG,CELSUB);
+input CELV;
+input i;
+output o;
+input CELSUB;
+input CELG;
+endmodule
+
