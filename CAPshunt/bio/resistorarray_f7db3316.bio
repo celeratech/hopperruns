@@ -146,8 +146,9 @@ factory,busname,na
 // *********************************************
 //Layout Parameters
 revision,layout,0p1
-layout,resistorarray
-//auto generated in cell
+layout,resistorarray_dummy
+
+placeRES 0 0 0.8 0.8 R0 x y 0.66a
 endlayoutbio
 
 //**********************************************
@@ -304,6 +305,8 @@ trim,description7,not used
 *******************************************
 //resistorarray
 revision,pinorder,0.2.0
+Key,301
+PinOrder code revision,0.3.0
 pinorder,RP1,RP2,RP3,RP4,RP5,net_skip,net_skip,net_skip,RN1,RN2,RN3,RN4,RN5,net_skip,net_skip,net_skip
 
 endpinorder

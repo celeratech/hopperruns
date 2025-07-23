@@ -2,7 +2,7 @@
 // Celera Generator Confidential
 //CELL SOURCE:delayclock
 //NAME:delayclock_cc902317
-//DELAY GENERATOR REVISION:0.4.0
+//DELAY GENERATOR REVISION:0.4.2
 //TYPE:clock
 //EDGE:rise
 //DFT:no
@@ -48,8 +48,9 @@ input celeraporb;
 input CELSUB;
 input CELG;
 
-//Celera Confidential Do Not Copy del
+//Celera Confidential Do Not Copy Pin del
 //wire[4:0] del;
+
 //Celera Confidential Do Not Copy prog_delay_5bit
 prog_delay_5bit Xdelay5(
 .V (CELV),
@@ -57,9 +58,9 @@ prog_delay_5bit Xdelay5(
 .clk (clock),
 .in (in),
 .out (out),
+.del ({d1,do,d1,do,d1}),
 .d0 (do),
 .d1 (d1),
-.del ({d1,do,d1,do,d1}),
 .G (CELG),
 .SUB (CELSUB)
 );

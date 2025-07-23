@@ -1,0 +1,89 @@
+* Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301E\verification\sim_OSCILLATORexternal.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+
+.node_map SIMPV 20
+.node_map fault_oscillator 27
+.node_map ok_oscillator 25
+.node_map clock0 21
+.node_map clock1 23
+.node_map enable_oscillator 22
+.node_map REXT0 24
+.node_map REXT1 26
+.options
++ PSP_NPT=50001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+.tran 100u 0
+
+.globalvar TEMP=25
+.globalvar VIN = 5.0
+.globalvar REF = 1.2
+.globalvar tdext_khz=10
+.globalvar CAP1=3.2
+.globalvar CAP2=3.3
+.globalvar CAP3=3.4
+.globalvar CAP4=3.5
+
+
+X$OSCILLATOR 20 21 22 23 24 25 26 27 OSCILLATORexternal
+.PRINT V(#clock0)
+.GRAPH :#clock0 curveLabel= clock0 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe1  
+.PRINT V(#clock1)
+.GRAPH :#clock1 curveLabel= clock1 nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe2  
+.PRINT V(#ok_oscillator)
+.GRAPH :#ok_oscillator curveLabel= ok_oscillator nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe3  
+.PRINT V(#fault_oscillator)
+.GRAPH :#fault_oscillator curveLabel= fault_oscillator nowarn=true ylog=auto xlog=auto analysis=tran|pop disabled=false PROBEREF=Probe4  
+R1 24 0 53.6k
+R2 26 0 53.6k
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301E\Force\FORCEoscillatorexternal.sxcmp
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301E\design\OSCILLATORexternal.sxcmp
+.subckt OSCILLATORexternal 41 42 43 44 45 46 47 48
+*#hierarchy
+.node_map SIMPV 41
+.node_map fault_oscillator 48
+.node_map ok_oscillator 46
+.node_map fault_oscillator0 49
+.node_map fault_oscillator1 52
+.node_map ok_oscillator0 50
+.node_map ok_oscillator1 51
+.node_map clock0 42
+.node_map clock1 44
+.node_map enable_oscillator 43
+.node_map REXT0 45
+.node_map REXT1 47
+X$oscillator1 50 41 42 49 35 45 43 36 37 oscillator vars: osc_type='external' osc_accuracy='no' osc_datasheet_accuracy_name='text' osc_datasheet_accuracy_description='text' osc_enable='pin' osc_enable_por='disable' osc_datasheet_enable_name='text' osc_datasheet_enable_description='text' osc_ss='no' osc_standbyclock='no' osc_standbyclockpor='disable' osc_ext_freq_default='no' osc_crystalbias='3.3' osc_crystalglobalref='yes' osc_ss_configuration='fixed' osc_ss_enable_control='fixed' osc_ss_mode_por='sweep' osc_ss_enable_por='enable' osc_ss_clock_sync='synchronized' osc_ss_datasheetname='text' osc_dft='no' osc_ibias='global' osc_int_freq=1k osc_int_duty=50 osc_int_ireplica_gain=10 osc_int_1=0 osc_ext_freq=1k osc_ext_resistor=53.6 osc_ext_duty=50 osc_ext_replicagain=0 osc_ext_comment=0 osc_crude_freq=1 osc_crude_generatesupply=3.3 osc_crude_duty=50 osc_crystalfreq=1 osc_crystalreflocal=1 osc_crystalcleancountpor=32 osc_ringfreq=20 osc_ss_range_por=5 osc_ss_clock_independent=50 osc_ss_clock_divide=64 osc_vmax=6
+X$oscillator2 51 41 44 52 38 47 43 39 40 oscillator vars: osc_type='external' osc_accuracy='yes' osc_datasheet_accuracy_name='AAA' osc_datasheet_accuracy_description='AAA' osc_enable='pin' osc_enable_por='disable' osc_datasheet_enable_name='text' osc_datasheet_enable_description='text' osc_ss='no' osc_standbyclock='no' osc_standbyclockpor='disable' osc_ext_freq_default='no' osc_crystalbias='3.3' osc_crystalglobalref='yes' osc_ss_configuration='fixed' osc_ss_enable_control='fixed' osc_ss_mode_por='sweep' osc_ss_enable_por='enable' osc_ss_clock_sync='synchronized' osc_ss_datasheetname='text' osc_dft='no' osc_ibias='global' osc_int_freq=1k osc_int_duty=50 osc_int_ireplica_gain=10 osc_int_1=0 osc_ext_freq=1k osc_ext_resistor=53.6 osc_ext_duty=50 osc_ext_replicagain=0 osc_ext_comment=0 osc_crude_freq=1 osc_crude_generatesupply=3.3 osc_crude_duty=50 osc_crystalfreq=1 osc_crystalreflocal=1 osc_crystalcleancountpor=32 osc_ringfreq=20 osc_ss_range_por=5 osc_ss_clock_independent=50 osc_ss_clock_divide=64 osc_vmax=6
+X$pinprobe1 46 pinprobe vars: pinprobe_description='RGMI_reference_adjustment_complete' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe11 43 pinprobe vars: pinprobe_description='enable_esrtest' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 48 pinprobe vars: pinprobe_description='RGMI_reference_adjustment_complete' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 45 pinprobe vars: pinprobe_description='start_esrtest' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 44 pinprobe vars: pinprobe_description='RGMI_reference_adjustment_complete' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 47 pinprobe vars: pinprobe_description='start_esrtest' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 41 pinprobe vars: pinprobe_description='Power_on_reset' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe7 42 pinprobe vars: pinprobe_description='RGMI_reference_adjustment_complete' pinprobe_mode='output' pinprobe_input='pad' pinprobe_output='tbd' pinprobe_bits=1
+X$U1 51 46 50 VESPAasmINPUT1
+X$U2 52 48 49 VESPAasmINPUT1
+.ends OSCILLATORexternal
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAasmINPUT1.sxcmp
+.subckt VESPAasmINPUT1 5 6 7
+*#hierarchy
+.node_map Tstate 5
+.node_map i0 7
+.node_map o 6
+X$U1 5 pinprobe vars: pinprobe_description='state_blank_time'
+X$U2 7 pinprobe vars: pinprobe_description='input1'
+X$U3 6 pinprobe vars: pinprobe_description='INPUT1_output'
+X$U4 5 4 7 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U5 4 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+.ends VESPAasmINPUT1
+
+.end

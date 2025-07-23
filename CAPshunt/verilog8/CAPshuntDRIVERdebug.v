@@ -1,64 +1,82 @@
 // ------------------------ Module Definitions -----------
-//Verilog HDL for "Generate", "WRAPPER1" "functional"
+//Verilog HDL for "PEBBLES", "PEBBLElinkWRAP" "functional"
 
 
-module WRAPPER1 ( o, i );
+module PEBBLElinkWRAP ( o, i );
 
-  input i;
-  output o;
+  inout i;
+  inout o;
 endmodule
 
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
+module dftprobeModel2_cd1a1e71 ();
 endmodule
 
+module dftprobeModel0_0fc3b9c0 ();
+endmodule
+
+module dftprobeModel0_1a76b798 ();
+endmodule
 
 // ------------------------ Module Verilog ---------------
-module CAPshuntDRIVERdebug (dft_gate1, dft_startup, active_shunt, enable_shunt, maximum_channel_0, maximum_channel_1, hijack_enable_shunt, hijack_maximum_channel_0, hijack_maximum_channel_1);
-  input  dft_gate1;
-  input  dft_startup;
-  input  active_shunt;
+module CAPshuntDRIVERdebug (dft_gate1, dft_startup, active_shunt, enable_shunt, MAXIMUMchannel_0, MAXIMUMchannel_1, hijack_enable_shunt, hijack_MAXIMUMchannel_0, hijack_MAXIMUMchannel_1, dftprobe_XUCAPshuntGATE1_83c5e47a, dftprobe_XUCAPshuntACTIVE_83c5e47a, dftprobe_XUCAPshuntSTARTUP_83c5e47a);
+input  dft_gate1;
+input  dft_startup;
+input  active_shunt;
 input  enable_shunt;
-input  maximum_channel_0;
-input  maximum_channel_1;
+input  MAXIMUMchannel_0;
+input  MAXIMUMchannel_1;
 output  hijack_enable_shunt;
-output  hijack_maximum_channel_0;
-output  hijack_maximum_channel_1;
+output  hijack_MAXIMUMchannel_0;
+output  hijack_MAXIMUMchannel_1;
+output  dftprobe_XUCAPshuntGATE1_83c5e47a;
+output  dftprobe_XUCAPshuntACTIVE_83c5e47a;
+output  dftprobe_XUCAPshuntSTARTUP_83c5e47a;
 
 
 // ------------------------ Wires ------------------------
 
 // ------------------------ Networks ---------------------
-WRAPPER1 XWRAP_28_29 (
+PEBBLElinkWRAP XWRAP_28_44 (
+.i(MAXIMUMchannel_0),
+.o(hijack_MAXIMUMchannel_0)
+);
+
+PEBBLElinkWRAP XWRAP_29_45 (
+.i(MAXIMUMchannel_1),
+.o(hijack_MAXIMUMchannel_1)
+);
+
+PEBBLElinkWRAP XWRAP_60_61 (
 .i(enable_shunt),
 .o(hijack_enable_shunt)
 );
 
-WRAPPER1 XWRAP_33_36 (
-.i(maximum_channel_0),
-.o(hijack_maximum_channel_1)
+dftprobeModel2_cd1a1e71 XUCAPshuntGATE1 (
+
 );
 
-WRAPPER1 XWRAP_35_34 (
-.i(maximum_channel_1),
-.o(hijack_maximum_channel_0)
+dftprobeModel0_0fc3b9c0 XUCAPshuntACTIVE (
+
 );
 
-STONEnoconn XNCdft_gate1 (
-.noconn(dft_gate1)
+dftprobeModel0_1a76b798 XUCAPshuntSTARTUP (
+
 );
 
-STONEnoconn XNCdft_startup (
-.noconn(dft_startup)
+PEBBLElinkWRAP XWRAP_dft_gate1_dftprobe_XUCAPshuntGATE1_83c5e47a (
+.i(dft_gate1),
+.o(dftprobe_XUCAPshuntGATE1_83c5e47a)
 );
 
-STONEnoconn XNCactive_shunt (
-.noconn(active_shunt)
+PEBBLElinkWRAP XWRAP_active_shunt_dftprobe_XUCAPshuntACTIVE_83c5e47a (
+.i(active_shunt),
+.o(dftprobe_XUCAPshuntACTIVE_83c5e47a)
+);
+
+PEBBLElinkWRAP XWRAP_dft_startup_dftprobe_XUCAPshuntSTARTUP_83c5e47a (
+.i(dft_startup),
+.o(dftprobe_XUCAPshuntSTARTUP_83c5e47a)
 );
 
 endmodule

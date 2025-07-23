@@ -1,17 +1,20 @@
 // ------------------------ Module Definitions -----------
-module CAPshuntDRIVERdebug (dft_gate1,dft_startup,active_shunt,enable_shunt,maximum_channel_0,maximum_channel_1,hijack_enable_shunt,hijack_maximum_channel_0,hijack_maximum_channel_1);
+module CAPshuntDRIVERdebug (dft_gate1,dft_startup,active_shunt,enable_shunt,MAXIMUMchannel_0,MAXIMUMchannel_1,hijack_enable_shunt,hijack_MAXIMUMchannel_0,hijack_MAXIMUMchannel_1,dftprobe_XUCAPshuntGATE1_83c5e47a,dftprobe_XUCAPshuntACTIVE_83c5e47a,dftprobe_XUCAPshuntSTARTUP_83c5e47a);
   input  dft_gate1;
   input  dft_startup;
   input  active_shunt;
   input  enable_shunt;
-  input  maximum_channel_0;
-  input  maximum_channel_1;
+  input  MAXIMUMchannel_0;
+  input  MAXIMUMchannel_1;
   output  hijack_enable_shunt;
-  output  hijack_maximum_channel_0;
-  output  hijack_maximum_channel_1;
+  output  hijack_MAXIMUMchannel_0;
+  output  hijack_MAXIMUMchannel_1;
+  output  dftprobe_XUCAPshuntGATE1_83c5e47a;
+  output  dftprobe_XUCAPshuntACTIVE_83c5e47a;
+  output  dftprobe_XUCAPshuntSTARTUP_83c5e47a;
 endmodule
 
-module CAPshuntDRIVERmain (,IN,CAP1,CAP2,CAP3,CAP4,SIMPV,CAPRTN,CELG59462,CELV96848,PORB97836,dft_gate1,CELSUB40948,clock_shunt,dft_startup,active_shunt,enable_shunt,IP_7854e25e_XU7,IP_254d312a_XU12,IP_82a8351a_XU11,IP_ecd399a0_XU13,maximum_channel_0,maximum_channel_1);
+module CAPshuntDRIVERmain (IN,CAP1,CAP2,CAP3,CAP4,SIMPV,CAPRTN,CELG59462,CELV96848,PORB97836,dft_gate1,CELSUB40948,IP_254d312a,IP_6e983355,IP_7854e25e,IP_82a8351a,clock_shunt,dft_startup,active_shunt,enable_shunt,MAXIMUMchannel_0,MAXIMUMchannel_1);
   input  IN;
   inout  CAP1;
   inout  CAP2;
@@ -24,42 +27,20 @@ module CAPshuntDRIVERmain (,IN,CAP1,CAP2,CAP3,CAP4,SIMPV,CAPRTN,CELG59462,CELV96
   input  PORB97836;
   inout  dft_gate1;
   input  CELSUB40948;
+  input  IP_254d312a;
+  input  IP_6e983355;
+  input  IP_7854e25e;
+  input  IP_82a8351a;
   input  clock_shunt;
   output  dft_startup;
   output  active_shunt;
   input  enable_shunt;
-  input  IP_7854e25e_XU7;
-  input  IP_254d312a_XU12;
-  input  IP_82a8351a_XU11;
-  input  IP_ecd399a0_XU13;
-  input  maximum_channel_0;
-  input  maximum_channel_1;
-endmodule
-
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
-module currentmirror_f5b9334a (I0,I1,I2,I3,CELG,CELV,ISET,CELSUB,ok_currentmirror,enable_currentmirror);
-  inout  I0;
-  inout  I1;
-  inout  I2;
-  inout  I3;
-  input  CELG;
-  input  CELV;
-  input  ISET;
-  input  CELSUB;
-  output  ok_currentmirror;
-  input  enable_currentmirror;
+  input  MAXIMUMchannel_0;
+  input  MAXIMUMchannel_1;
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module CAPshunt (IN, CAP1, CAP2, CAP3, CAP4, SIMPV, CAPRTN, CELG59462, CELV96848, PORB97836, CELSUB40948, clock_shunt, IP_CAPshunt1, active_shunt, enable_shunt, maximum_channel_0, maximum_channel_1);
+module CAPshunt (IN, CAP1, CAP2, CAP3, CAP4, SIMPV, CAPRTN, CELG59462, CELV96848, PORB97836, CELSUB40948, IP_254d312a, IP_6e983355, IP_7854e25e, IP_82a8351a, clock_shunt, active_shunt, enable_shunt, MAXIMUMchannel_0, MAXIMUMchannel_1, dftprobe_XUCAPshuntGATE1_83c5e47a, dftprobe_XUCAPshuntACTIVE_83c5e47a, dftprobe_XUCAPshuntSTARTUP_83c5e47a);
 input  IN;
 inout  CAP1;
 inout  CAP2;
@@ -71,27 +52,36 @@ input  CELG59462;
 input  CELV96848;
 input  PORB97836;
 input  CELSUB40948;
+input  IP_254d312a;
+input  IP_6e983355;
+input  IP_7854e25e;
+input  IP_82a8351a;
 input  clock_shunt;
-input  IP_CAPshunt1;
 output  active_shunt;
 input  enable_shunt;
-input  maximum_channel_0;
-input  maximum_channel_1;
+input  MAXIMUMchannel_0;
+input  MAXIMUMchannel_1;
+output  dftprobe_XUCAPshuntGATE1_83c5e47a;
+output  dftprobe_XUCAPshuntACTIVE_83c5e47a;
+output  dftprobe_XUCAPshuntSTARTUP_83c5e47a;
 
 
 // ------------------------ Wires ------------------------
 
 // ------------------------ Networks ---------------------
 CAPshuntDRIVERdebug XDEBUG (
-.dft_gate1(net_54),
-.dft_startup(net_53),
+.dft_gate1(net_69),
+.dft_startup(net_68),
 .active_shunt(active_shunt),
 .enable_shunt(enable_shunt),
-.maximum_channel_0(maximum_channel_0),
-.maximum_channel_1(maximum_channel_1),
-.hijack_enable_shunt(net_55),
-.hijack_maximum_channel_0(net_39),
-.hijack_maximum_channel_1(net_40)
+.MAXIMUMchannel_0(MAXIMUMchannel_0),
+.MAXIMUMchannel_1(MAXIMUMchannel_1),
+.hijack_enable_shunt(net_70),
+.hijack_MAXIMUMchannel_0(net_56),
+.hijack_MAXIMUMchannel_1(net_57),
+.dftprobe_XUCAPshuntGATE1_83c5e47a(dftprobe_XUCAPshuntGATE1_83c5e47a),
+.dftprobe_XUCAPshuntACTIVE_83c5e47a(dftprobe_XUCAPshuntACTIVE_83c5e47a),
+.dftprobe_XUCAPshuntSTARTUP_83c5e47a(dftprobe_XUCAPshuntSTARTUP_83c5e47a)
 );
 
 CAPshuntDRIVERmain XMAIN (
@@ -105,35 +95,18 @@ CAPshuntDRIVERmain XMAIN (
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
 .PORB97836(PORB97836),
-.dft_gate1(net_54),
+.dft_gate1(net_69),
 .CELSUB40948(CELSUB40948),
+.IP_254d312a(IP_254d312a),
+.IP_6e983355(IP_6e983355),
+.IP_7854e25e(IP_7854e25e),
+.IP_82a8351a(IP_82a8351a),
 .clock_shunt(clock_shunt),
-.dft_startup(net_53),
+.dft_startup(net_68),
 .active_shunt(active_shunt),
-.enable_shunt(net_55),
-.IP_7854e25e_XU7(IP_7854e25e_XU7),
-.IP_254d312a_XU12(IP_254d312a_XU12),
-.IP_82a8351a_XU11(IP_82a8351a_XU11),
-.IP_ecd399a0_XU13(IP_ecd399a0_XU13),
-.maximum_channel_0(net_39),
-.maximum_channel_1(net_40)
-);
-
-STONEnoconn XNCnoconn (
-.noconn(noconn)
-);
-
-currentmirror_f5b9334a XCurrentMirror1 (
-.I0(IP_7854e25e_XU7),
-.I1(IP_254d312a_XU12),
-.I2(IP_82a8351a_XU11),
-.I3(IP_ecd399a0_XU13),
-.CELG(CELG59462),
-.CELV(CELV96848),
-.ISET(IP_CAPshunt1),
-.CELSUB(CELSUB40948),
-.ok_currentmirror(noconn),
-.enable_currentmirror(enable_shunt)
+.enable_shunt(net_70),
+.MAXIMUMchannel_0(net_56),
+.MAXIMUMchannel_1(net_57)
 );
 
 endmodule

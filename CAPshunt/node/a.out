@@ -7,65 +7,86 @@
 :vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
 :vpi_module "/usr/local/lib/ivl/va_math.vpi";
-S_0x561f626c8f60 .scope module, "CAPshuntDRIVERdebug" "CAPshuntDRIVERdebug" 2 22;
+S_0x55c2c65aef60 .scope module, "CAPshuntDRIVERdebug" "CAPshuntDRIVERdebug" 2 22;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "dft_gate1";
     .port_info 1 /INPUT 1 "dft_startup";
     .port_info 2 /INPUT 1 "active_shunt";
     .port_info 3 /INPUT 1 "enable_shunt";
-    .port_info 4 /INPUT 1 "maximum_channel_0";
-    .port_info 5 /INPUT 1 "maximum_channel_1";
+    .port_info 4 /INPUT 1 "MAXIMUMchannel_0";
+    .port_info 5 /INPUT 1 "MAXIMUMchannel_1";
     .port_info 6 /OUTPUT 1 "hijack_enable_shunt";
-    .port_info 7 /OUTPUT 1 "hijack_maximum_channel_0";
-    .port_info 8 /OUTPUT 1 "hijack_maximum_channel_1";
-o0x7f7347308018 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561f62712850_0 .net "active_shunt", 0 0, o0x7f7347308018;  0 drivers
-o0x7f7347308078 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561f627128f0_0 .net "dft_gate1", 0 0, o0x7f7347308078;  0 drivers
-o0x7f73473080d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561f627129c0_0 .net "dft_startup", 0 0, o0x7f73473080d8;  0 drivers
-o0x7f7347308138 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561f62712ac0_0 .net "enable_shunt", 0 0, o0x7f7347308138;  0 drivers
-o0x7f7347308168 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561f62712b90_0 .net "hijack_enable_shunt", 0 0, o0x7f7347308168;  0 drivers
-o0x7f73473082e8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561f62712c80_0 .net "hijack_maximum_channel_0", 0 0, o0x7f73473082e8;  0 drivers
-o0x7f7347308228 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561f62712d50_0 .net "hijack_maximum_channel_1", 0 0, o0x7f7347308228;  0 drivers
-o0x7f73473081f8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561f62712e20_0 .net "maximum_channel_0", 0 0, o0x7f73473081f8;  0 drivers
-o0x7f73473082b8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x561f62712ef0_0 .net "maximum_channel_1", 0 0, o0x7f73473082b8;  0 drivers
-S_0x561f626c6e30 .scope module, "XNCactive_shunt" "STONEnoconn" 2 60, 2 15 0, S_0x561f626c8f60;
+    .port_info 7 /OUTPUT 1 "hijack_MAXIMUMchannel_0";
+    .port_info 8 /OUTPUT 1 "hijack_MAXIMUMchannel_1";
+    .port_info 9 /OUTPUT 1 "dftprobe_XUCAPshuntGATE1_83c5e47a";
+    .port_info 10 /OUTPUT 1 "dftprobe_XUCAPshuntACTIVE_83c5e47a";
+    .port_info 11 /OUTPUT 1 "dftprobe_XUCAPshuntSTARTUP_83c5e47a";
+o0x7ff71c148018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c2c65fb2a0_0 .net "MAXIMUMchannel_0", 0 0, o0x7ff71c148018;  0 drivers
+o0x7ff71c1480d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c2c65fb340_0 .net "MAXIMUMchannel_1", 0 0, o0x7ff71c1480d8;  0 drivers
+o0x7ff71c148258 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c2c65fb410_0 .net "active_shunt", 0 0, o0x7ff71c148258;  0 drivers
+o0x7ff71c148318 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c2c65fb510_0 .net "dft_gate1", 0 0, o0x7ff71c148318;  0 drivers
+o0x7ff71c1483d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c2c65fb5e0_0 .net "dft_startup", 0 0, o0x7ff71c1483d8;  0 drivers
+o0x7ff71c148288 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c2c65fb680_0 .net "dftprobe_XUCAPshuntACTIVE_83c5e47a", 0 0, o0x7ff71c148288;  0 drivers
+o0x7ff71c148348 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c2c65fb750_0 .net "dftprobe_XUCAPshuntGATE1_83c5e47a", 0 0, o0x7ff71c148348;  0 drivers
+o0x7ff71c148408 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c2c65fb820_0 .net "dftprobe_XUCAPshuntSTARTUP_83c5e47a", 0 0, o0x7ff71c148408;  0 drivers
+o0x7ff71c148198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c2c65fb8f0_0 .net "enable_shunt", 0 0, o0x7ff71c148198;  0 drivers
+o0x7ff71c148048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c2c65fba50_0 .net "hijack_MAXIMUMchannel_0", 0 0, o0x7ff71c148048;  0 drivers
+o0x7ff71c148108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c2c65fbb20_0 .net "hijack_MAXIMUMchannel_1", 0 0, o0x7ff71c148108;  0 drivers
+o0x7ff71c1481c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55c2c65fbbf0_0 .net "hijack_enable_shunt", 0 0, o0x7ff71c1481c8;  0 drivers
+S_0x55c2c65ace80 .scope module, "XUCAPshuntACTIVE" "dftprobeModel0_0fc3b9c0" 2 59, 2 15 0, S_0x55c2c65aef60;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "noconn";
-v0x561f626c84b0_0 .net "noconn", 0 0, o0x7f7347308018;  alias, 0 drivers
-S_0x561f62711780 .scope module, "XNCdft_gate1" "STONEnoconn" 2 52, 2 15 0, S_0x561f626c8f60;
+S_0x55c2c65e53e0 .scope module, "XUCAPshuntGATE1" "dftprobeModel2_cd1a1e71" 2 55, 2 12 0, S_0x55c2c65aef60;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "noconn";
-v0x561f626c90f0_0 .net "noconn", 0 0, o0x7f7347308078;  alias, 0 drivers
-S_0x561f62711a00 .scope module, "XNCdft_startup" "STONEnoconn" 2 56, 2 15 0, S_0x561f626c8f60;
+S_0x55c2c65e55c0 .scope module, "XUCAPshuntSTARTUP" "dftprobeModel0_1a76b798" 2 63, 2 18 0, S_0x55c2c65aef60;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "noconn";
-v0x561f626c8ec0_0 .net "noconn", 0 0, o0x7f73473080d8;  alias, 0 drivers
-S_0x561f62711c60 .scope module, "XWRAP_28_29" "WRAPPER1" 2 37, 2 5 0, S_0x561f626c8f60;
+S_0x55c2c65e57a0 .scope module, "XWRAP_28_44" "PEBBLElinkWRAP" 2 40, 2 5 0, S_0x55c2c65aef60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "o";
-    .port_info 1 /INPUT 1 "i";
-v0x561f62711e40_0 .net "i", 0 0, o0x7f7347308138;  alias, 0 drivers
-v0x561f62711f20_0 .net "o", 0 0, o0x7f7347308168;  alias, 0 drivers
-S_0x561f62712040 .scope module, "XWRAP_33_36" "WRAPPER1" 2 42, 2 5 0, S_0x561f626c8f60;
+    .port_info 0 /INOUT 1 "o";
+    .port_info 1 /INOUT 1 "i";
+v0x55c2c65ae4b0_0 .net "i", 0 0, o0x7ff71c148018;  alias, 0 drivers
+v0x55c2c65af0f0_0 .net "o", 0 0, o0x7ff71c148048;  alias, 0 drivers
+S_0x55c2c65f9f90 .scope module, "XWRAP_29_45" "PEBBLElinkWRAP" 2 45, 2 5 0, S_0x55c2c65aef60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "o";
-    .port_info 1 /INPUT 1 "i";
-v0x561f62712270_0 .net "i", 0 0, o0x7f73473081f8;  alias, 0 drivers
-v0x561f62712350_0 .net "o", 0 0, o0x7f7347308228;  alias, 0 drivers
-S_0x561f62712470 .scope module, "XWRAP_35_34" "WRAPPER1" 2 47, 2 5 0, S_0x561f626c8f60;
+    .port_info 0 /INOUT 1 "o";
+    .port_info 1 /INOUT 1 "i";
+v0x55c2c65aeec0_0 .net "i", 0 0, o0x7ff71c1480d8;  alias, 0 drivers
+v0x55c2c65fa200_0 .net "o", 0 0, o0x7ff71c148108;  alias, 0 drivers
+S_0x55c2c65fa320 .scope module, "XWRAP_60_61" "PEBBLElinkWRAP" 2 50, 2 5 0, S_0x55c2c65aef60;
  .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "o";
-    .port_info 1 /INPUT 1 "i";
-v0x561f62712650_0 .net "i", 0 0, o0x7f73473082b8;  alias, 0 drivers
-v0x561f62712730_0 .net "o", 0 0, o0x7f73473082e8;  alias, 0 drivers
+    .port_info 0 /INOUT 1 "o";
+    .port_info 1 /INOUT 1 "i";
+v0x55c2c65fa500_0 .net "i", 0 0, o0x7ff71c148198;  alias, 0 drivers
+v0x55c2c65fa5e0_0 .net "o", 0 0, o0x7ff71c1481c8;  alias, 0 drivers
+S_0x55c2c65fa700 .scope module, "XWRAP_active_shunt_dftprobe_XUCAPshuntACTIVE_83c5e47a" "PEBBLElinkWRAP" 2 72, 2 5 0, S_0x55c2c65aef60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "o";
+    .port_info 1 /INOUT 1 "i";
+v0x55c2c65fa8e0_0 .net "i", 0 0, o0x7ff71c148258;  alias, 0 drivers
+v0x55c2c65fa9c0_0 .net "o", 0 0, o0x7ff71c148288;  alias, 0 drivers
+S_0x55c2c65faae0 .scope module, "XWRAP_dft_gate1_dftprobe_XUCAPshuntGATE1_83c5e47a" "PEBBLElinkWRAP" 2 67, 2 5 0, S_0x55c2c65aef60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "o";
+    .port_info 1 /INOUT 1 "i";
+v0x55c2c65facc0_0 .net "i", 0 0, o0x7ff71c148318;  alias, 0 drivers
+v0x55c2c65fada0_0 .net "o", 0 0, o0x7ff71c148348;  alias, 0 drivers
+S_0x55c2c65faec0 .scope module, "XWRAP_dft_startup_dftprobe_XUCAPshuntSTARTUP_83c5e47a" "PEBBLElinkWRAP" 2 77, 2 5 0, S_0x55c2c65aef60;
+ .timescale 0 0;
+    .port_info 0 /INOUT 1 "o";
+    .port_info 1 /INOUT 1 "i";
+v0x55c2c65fb0a0_0 .net "i", 0 0, o0x7ff71c1483d8;  alias, 0 drivers
+v0x55c2c65fb180_0 .net "o", 0 0, o0x7ff71c148408;  alias, 0 drivers
 # The file index is used to find the file name in the following table.
 :file_names 3;
     "N/A";
