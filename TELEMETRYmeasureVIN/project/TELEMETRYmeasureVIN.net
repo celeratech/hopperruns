@@ -1,0 +1,114 @@
+* Z:\celera\projects\Simplis\playjoseph\PUGET0\301e\verification\sim_TELEMETRYmeasureVIN.sxsch
+*#SIMETRIX
+X$CV 12 celera vars: simulation_module='name' status='dev' simulation='typical'
+ 
+*BrickToolsVersion:0.136  projname:TELEMETRYmeasureVIN
+.node_map kelvin_IN 12
+.node_map TIN 13
+.node_map enable_vin 14
+.node_map kelvin_GNDtelemetry 15
+.options
++ PSP_NPT=10001
++ POP_ITRMAX=20
++ POP_OUTPUT_CYCLES=5
++ POP_SHOWDATA
++ SNAPSHOT_INTVL=0
++ SNAPSHOT_NPT=11
++ MIN_AVG_TOPOLOGY_DUR=1a
++ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128
+*.pop TRIG_GATE={{TRIG_GATE}} TRIG_COND=0_TO_1 MAX_PERIOD=1u CONVERGENCE=1p CYCLES_BEFORE_LAUNCH=5 TD_RUN_AFTER_POP_FAILS=-1
+.tran 0.55m  0
+.globalvar REF=1.2
+.globalvar TEMP=25
+.globalvar VIN=5
+.globalvar tdext_khz=1000
+.globalvar  celera_i2c_frequency_KHz=100
+.globalvar ARA_reset0=100u
+.globalvar ARA_reset1=200u
+.globalvar ARA_reset2=300u
+.globalvar ARA_reset3=400u
+.globalvar ARA_reset4=500u
+.globalvar ARA_reset5=600u
+.globalvar ARA_reset6=700u
+.globalvar ARA_reset7=800u
+
+X$bricktitleblock 10 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='text' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+
+X$noconn0 11 celeranoconn vars: ='%'
+X$TELEMETRYmeasureVIN 12 13 14 11 15 TELEMETRYmeasureVIN
+X$U1 0 celera vars: simulation_module='name' status='dev' simulation='typical'
+** From Z:\celera\projects\Simplis\playjoseph\PUGET0\301e\verification\FORCE_TELEMETRYmeasureVIN.sxcmp
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301E\design\TELEMETRYmeasureVIN.sxcmp
+.subckt TELEMETRYmeasureVIN 21 23 22 25 24
+*#hierarchy
+.node_map hijack_enable_vin 26
+.node_map kelvin_IN 21
+.node_map TIN 23
+.node_map enable_vin 22
+.node_map kelvin_GNDtelemetry 24
+.node_map ok_vin 25
+X$DEBUG 22 26 23 25 TELEMETRYmeasureVINdebug
+X$pinprobe1 21 pinprobe vars: pinprobe_description='Input_IN_Voltage_Supply' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 23 pinprobe vars: pinprobe_description='Telemetry_IN_anlogue_output' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='pad' pinprobe_bits=1
+X$pinprobe3 25 pinprobe vars: pinprobe_description='IN_measure_enabled_and_ready' pinprobe_mode='output' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 22 pinprobe vars: pinprobe_description='Enable_TELEMETRY_IN_brick' pinprobe_mode='input' pinprobe_input='ebrick' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 24 pinprobe vars: pinprobe_description='Master_clock_sync' pinprobe_mode='input' pinprobe_input='kelvin' pinprobe_output='tbd' pinprobe_bits=1
+X$TELEMETRYin 21 23 26 25 24 TELEMETRYmeasureVINmain
+X$U1 20 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='IN_Telemetry_measurement' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+.ends TELEMETRYmeasureVIN
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301E\design\TELEMETRYmeasureVINdebug.sxcmp
+.subckt TELEMETRYmeasureVINdebug 16 19 17 18
+*#hierarchy
+.node_map hijack_enable_vin 19
+.node_map TIN 17
+.node_map enable_vin 16
+.node_map ok_vin 18
+X$dfthijack1 16 19 dfthijack vars: dfthijack_name='VINenable' dfthijack_description='Hijack_GPI_enable' dfthijack_enable='bypass' dfthijack_enabletimeunits1='us' dfthijack_enabletimeunits2='us' dfthijack_enabletimeunits3='us' dfthijack_enabletimeunits4='us' dfthijack_enabletimeunits5='us' dfthijack_enabletimeunits6='us' dfthijack_enabletimeunits7='us' dfthijack_enabletimeunits8='us' dfthijack_state='logic' dfthijack_output='0' dfthijack_timeenablecodes=1 dfthijack_startcode=0 dfthijack_newcode1=1 dfthijack_enabletime1=1 dfthijack_newcode2=1 dfthijack_enabletime2=1 dfthijack_newcode3=1 dfthijack_enabletime3=1 dfthijack_newcode4=1 dfthijack_enabletime4=1 dfthijack_newcode5=1 dfthijack_enabletime5=1 dfthijack_newcode6=1 dfthijack_enabletime6=1 dfthijack_newcode7=1 dfthijack_enabletime7=1 dfthijack_newcode8=1 dfthijack_enabletime8=1 dfthijack_vmax=6 dfthijack_comment=1
+X$pinprobe1 17 pinprobe vars: pinprobe_description='Telemetry_IN_input_sense' pinprobe_mode='input' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe3 19 pinprobe vars: pinprobe_description='Hijack_IN_measure_brick_enable' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 18 pinprobe vars: pinprobe_description='IN_measure_enabled_and_ready' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe8 16 pinprobe vars: pinprobe_description='Enable_TELEMETRY_IN_brick' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$U1 19 18 15 VESPAdftpulse
+X$U2 14 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='text' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$UINstartup 15 dftprobeModel1 vars: dftprobe_mode='digital' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='INstartup' dftprobe_description='Measure_IN_startup_time' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+X$UTIN 17 dftprobeModel3 vars: dftprobe_mode='analog' digitalinfo='Only_Use_For_Digital' analoginfo='Only_use_for_Analog' dftprobe_note='Probe_Analog_Signal_less_than_VIN_and_when_disabled_is_rated_to_StandOff_Voltage' dftprobe_name='TIN' dftprobe_description='Measure_Telemetry_IN_divided_input' dftprobe_highvoltage=6 dftprobe_enable=1 dftprobe_vmax=6
+.ends TELEMETRYmeasureVINdebug
+
+** From Z:\celera\simplis\LIB\VESPA\VESPAdftpulse.sxcmp
+.subckt VESPAdftpulse 7 8 9
+*#hierarchy
+.node_map start 7
+.node_map stop 8
+.node_map pulse 9
+X$U11 7 pinprobe vars: pinprobe_description='DFT_timer_start_input'
+X$U15 8 6 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U17 8 pinprobe vars: pinprobe_description='DFT_timer_stop_input'
+X$U52 7 4 6 nand2 vars: logicgate_type='nand2' logicgate_vmax=6
+X$U53 4 5 inv vars: logicgate_type='inv' logicgate_vmax=6
+X$U55 9 5 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+X$U8 9 pinprobe vars: pinprobe_description='DFT_Timer_pulse'
+.ends VESPAdftpulse
+
+** From Z:\celera\projects\Simplis\playcalum\Puget\Puget0\301E\design\TELEMETRYmeasureVINmain.sxcmp
+.subckt TELEMETRYmeasureVINmain 27 29 28 31 30
+*#hierarchy
+.node_map kelvin_IN 27
+.node_map TIN 29
+.node_map enable_vin 28
+.node_map okDELAY 32
+.node_map kelvin_GNDtelemetry 30
+.node_map ok_vin 31
+X$delay1 28 32 delayfixed vars: delay_type='fixed' delay_units='us' delay_accuracy='no' delay_accuracy_name='text' delay_accuracy_description='text' delay_edge='rise' delay_dft='no' delaycontrol_type='register' delaycontrol_name='text' delaycontrol_description='text' delaycontrol_units0='ns' delaycontrol_units1='ns' delaycontrol_units2='ns' delaycontrol_units3='ns' delaycontrol_units4='ns' delaycontrol_units5='ns' delaycontrol_units6='ns' delaycontrol_units7='ns' delayclock_control='pin' delayclock_datasheetname='text' delayclock_datasheetdescription='text' delayclock_accuracy='no' delayclock_accuracyname='text' delayclock_accuracydescription='text' delay_time=10 delay_0=0 delay_vmax=6 delaycontrol_outputs=2 delaycontrol_por=0 delaycontrol_time0=5 delaycontrol_time1=10 delaycontrol_time2=25 delaycontrol_time3=50 delaycontrol_time4=100 delaycontrol_time5=250 delaycontrol_time6=500 delaycontrol_time7=999 delayclock_options=1 delayclock_por=0 delayclock_count0=21 delayclock_count1=4 delayclock_count2=8 delayclock_count3=16 delayclock_0=0 delayclock_freq=1k
+X$pinprobe1 28 pinprobe vars: pinprobe_description='Enable_TELEMETRY_IN_brick' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe2 29 pinprobe vars: pinprobe_description='Telemetry_IN_voltage_divided_down' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe4 31 pinprobe vars: pinprobe_description='IN_measurement_enabled_and_ready' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe5 30 pinprobe vars: pinprobe_description='Master_clock_sync' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$pinprobe6 27 pinprobe vars: pinprobe_description='Input_IN_Voltage_Supply' pinprobe_mode='tbd' pinprobe_input='tbd' pinprobe_output='tbd' pinprobe_bits=1
+X$rdivider1 29 26 25 24 23 22 21 20 27 30 28 resistordividerHV vars: resistordivider_disconnect='yes' resistordivider_disconnect_tap='top' resistordivider_dft='no' resistordivider_rtotal=1k resistordivider_vresistortop=40 resistordivider_vmax=6 resistordivider_outputs=1 resistordivider_tap0=4.15 resistordivider_tap1=20 resistordivider_tap2=30 resistordivider_tap3=40 resistordivider_tap4=50 resistordivider_tap5=60 resistordivider_tap6=70 resistordivider_tap7=80
+X$U1 19 brick vars: ibias=0 drm=0 dft=0 global=0 brick=0 revision=0 description='IN_measurement_to_telemetry' description1='text' description2='text' description3='text' description4='text' description5='text' description6='text' description7='text' description8='text' description9='text' description10='text'
+X$U2 31 32 dbuf vars: logicgate_type='dbuf' logicgate_vmax=6
+.ends TELEMETRYmeasureVINmain
+
+.end
