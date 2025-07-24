@@ -61,8 +61,8 @@ TELEMETRYmeasureVIN XTELEMETRYmeasureVIN1 (
 .dftprobe_XUINstartup_5be9f382(dftprobe_XUINstartup_5be9f382)
 );
 
-STONEnoconn XNC11 (
-.noconn(net_11)
+STONEnoconn XNCok_vin (
+.noconn(ok_vin)
 );
 
 endmodule
