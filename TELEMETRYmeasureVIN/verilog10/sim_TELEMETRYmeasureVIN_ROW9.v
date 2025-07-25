@@ -22,15 +22,6 @@ module TELEMETRYmeasureVIN (TIN,ok_vin,CELG59462,CELV96848,kelvin_IN,enable_vin,
   output  dftprobe_XUINstartup_5be9f382;
 endmodule
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
 // ------------------------ Module Verilog ---------------
 module sim_TELEMETRYmeasureVIN_ROW9 ();
 
@@ -59,10 +50,6 @@ TELEMETRYmeasureVIN XTELEMETRYmeasureVIN1 (
 .kelvin_GNDtelemetry(kelvin_GNDtelemetry),
 .dftprobe_XUTIN_5be9f382(dftprobe_XUTIN_5be9f382),
 .dftprobe_XUINstartup_5be9f382(dftprobe_XUINstartup_5be9f382)
-);
-
-STONEnoconn XNCok_vin (
-.noconn(ok_vin)
 );
 
 endmodule
