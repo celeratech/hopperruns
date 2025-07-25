@@ -24,15 +24,6 @@ module PEBBLElinkWRAP ( o, i );
 endmodule
 
 
-//Verilog HDL for "Generate", "STONEnoconn" "functional"
-
-
-module STONEnoconn ( noconn );
-
-  input noconn;
-endmodule
-
-
 // ------------------------ Module Verilog ---------------
 module TELEMETRYmeasureVINdebug (TIN, ok_vin, CELG59462, CELV96848, enable_vin, CELSUB40948, hijack_enable_vin, dftprobe_XUTIN_5be9f382, dftprobe_XUINstartup_5be9f382);
 input  TIN;
@@ -69,14 +60,6 @@ dftprobeModel1_073d55ef XUINstartup (
 PEBBLElinkWRAP XWRAP_16_19 (
 .i(enable_vin),
 .o(hijack_enable_vin)
-);
-
-STONEnoconn XNCdftprobe_XUTIN_5be9f382 (
-.noconn(dftprobe_XUTIN_5be9f382)
-);
-
-STONEnoconn XNCdftprobe_XUINstartup_5be9f382 (
-.noconn(dftprobe_XUINstartup_5be9f382)
 );
 
 PEBBLElinkWRAP XWRAP_TIN_dftprobe_XUTIN_5be9f382 (
