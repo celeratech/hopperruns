@@ -66,7 +66,7 @@ module PEBBLEtielo ( q, G, SUB, V );
 endmodule
 
 
-module fet_1d3eef4e (GATE,SOURCE,DRAIN,SOURCEk,DRAINk,IREPLICA,SUB);
+module fet_adeea9c6 (GATE,SOURCE,DRAIN,NMOSiso6,SOURCEk,DRAINk,IREPLICA,SUB);
   input  SUB;
   input  GATE;
   inout  DRAIN;
@@ -74,9 +74,10 @@ module fet_1d3eef4e (GATE,SOURCE,DRAIN,SOURCEk,DRAINk,IREPLICA,SUB);
   inout  SOURCE;
   inout  SOURCEk;
   inout  IREPLICA;
+  input  NMOSiso6;
 endmodule
 
-module fet_5e81270d (GATE,SOURCE,DRAIN,SOURCEk,DRAINk,IREPLICA,SUB);
+module fet_010fcdce (GATE,SOURCE,DRAIN,NMOSiso6,SOURCEk,DRAINk,IREPLICA,SUB);
   input  SUB;
   input  GATE;
   inout  DRAIN;
@@ -84,6 +85,7 @@ module fet_5e81270d (GATE,SOURCE,DRAIN,SOURCEk,DRAINk,IREPLICA,SUB);
   inout  SOURCE;
   inout  SOURCEk;
   inout  IREPLICA;
+  input  NMOSiso6;
 endmodule
 
 //Verilog HDL for "DRM", "drm32" "functional"
@@ -131,7 +133,7 @@ module drm16L ( V, G, SUB, tmi, bypload, lastdrm, id, drm0, drm1, d1, d0 );
 endmodule
 
 
-module fetdriver_f8989c96 (HVPOS,global_fetdriver,fetin,GATE,gate_status,gate_status_vin,CELV,CELG,enable_fetdriver,HVNEG,CELSUB);
+module fetdriver_1fc0ad21 (HVPOS,global_fetdriver,fetin,GATE,gate_status,gate_status_vin,CELV,CELG,enable_fetdriver,HVNEG,CELSUB);
   input  CELG;
   input  CELV;
   output  GATE;
@@ -145,7 +147,7 @@ module fetdriver_f8989c96 (HVPOS,global_fetdriver,fetin,GATE,gate_status,gate_st
   input  global_fetdriver;
 endmodule
 
-module currentlimitfet_c66b603c (CELPOS,CELSUB,measure_currentlimit,VSENSE,IREPLICA,enable_currentlimit,CELV,trim_currentlimit,factory_currentlimit_blanking,IP,global_currentlimit,currentlimit_lv,ten_measure_currentlimit,tdi_currentlimitlive,CELG);
+module currentlimitfet_a4d740b4 (CELPOS,CELSUB,measure_currentlimit,VSENSE,IREPLICA,enable_currentlimit,CELV,trim_currentlimit,factory_currentlimit_blanking,IP,global_currentlimit,currentlimit_lv,ten_measure_currentlimit,tdi_currentlimitlive,CELG);
   input  IP;
   input  CELG;
   input  CELV;
@@ -182,10 +184,11 @@ module currentlimitfet_53443d91 (CELPOS,CELSUB,measure_currentlimit,VSENSE,IREPL
 endmodule
 
 // ------------------------ Module Verilog ---------------
-module MUDbotswnmosSdIlimAugment_51cfa4f0 (SW, tmi, MUDV, PMUDG, PMUDV, botswon, CELG59462, CELV96848, botswipeak, CELSUB40948, botswstatus, botswzcross, enable_driver, IP_a05962c0_XBOTTOMIPEAK, IP_8c8c74a2_XBOTTOMZCROSS);
+module MUDbotswnmosSdIlimAugment_51cfa4f0 (SW, tmi, MUDV, CBOOT, PMUDG, PMUDV, botswon, CELG59462, CELV96848, botswipeak, CELSUB40948, botswstatus, botswzcross, enable_driver, IP_a05962c0_XBOTTOMIPEAK, IP_8c8c74a2_XBOTTOMZCROSS);
 inout  SW;
 inout [4:0] tmi;
 input  MUDV;
+input  CBOOT;
 inout  PMUDG;
 input  PMUDV;
 input  botswon;
@@ -285,24 +288,26 @@ PEBBLEtielo XtieLo (
 .SUB(CELSUB40948)
 );
 
-fet_1d3eef4e XBOTSWIREP (
+fet_adeea9c6 XBOTSWIREP (
 .SUB(CELSUB40948),
 .GATE(net_107),
 .DRAIN(SW),
 .DRAINk(net_67),
 .SOURCE(PMUDG),
 .SOURCEk(net_110),
-.IREPLICA(net_109)
+.IREPLICA(net_109),
+.NMOSiso6(CBOOT)
 );
 
-fet_5e81270d XBOTSWZREP (
+fet_010fcdce XBOTSWZREP (
 .SUB(CELSUB40948),
 .GATE(net_107),
 .DRAIN(SW),
 .DRAINk(net_66),
 .SOURCE(PMUDG),
 .SOURCEk(net_104),
-.IREPLICA(net_105)
+.IREPLICA(net_105),
+.NMOSiso6(CBOOT)
 );
 
 drm32 drm_hex0x05 (
@@ -339,7 +344,7 @@ drm16L drm_hex0x06 (
 .lastdrm(b0)
 );
 
-fetdriver_f8989c96 XBOTSWDRIVER (
+fetdriver_1fc0ad21 XBOTSWDRIVER (
 .CELG(CELG59462),
 .CELV(CELV96848),
 .GATE(net_107),
@@ -353,7 +358,7 @@ fetdriver_f8989c96 XBOTSWDRIVER (
 .global_fetdriver(tl0)
 );
 
-currentlimitfet_c66b603c XBOTTOMIPEAK (
+currentlimitfet_a4d740b4 XBOTTOMIPEAK (
 .IP(IP_a05962c0_XBOTTOMIPEAK),
 .CELG(CELG59462),
 .CELV(CELV96848),
