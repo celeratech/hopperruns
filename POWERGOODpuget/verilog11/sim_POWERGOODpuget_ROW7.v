@@ -93,6 +93,14 @@ POWERGOODpuget XPOWERGOODpuget1 (
 .dftprobe_XUPOWERGOODthreshold_14092520(dftprobe_XUPOWERGOODthreshold_14092520)
 );
 
+STONEnoconn XNCpower_fail (
+.noconn(power_fail)
+);
+
+STONEnoconn XNCpower_good (
+.noconn(power_good)
+);
+
 STONEnoconn XNCok_powergood (
 .noconn(ok_powergood)
 );
