@@ -7,29 +7,29 @@
 :vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
 :vpi_module "/usr/local/lib/ivl/va_math.vpi";
-S_0x55fcaea92f60 .scope module, "sim_TELEMETRYmeasureVIN_ROW9" "sim_TELEMETRYmeasureVIN_ROW9" 2 35;
+S_0x56505f8d9f60 .scope module, "sim_TELEMETRYmeasureVIN_ROW9" "sim_TELEMETRYmeasureVIN_ROW9" 2 35;
  .timescale 0 0;
-o0x7f44c59b4018 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fcaeadf350_0 .net "CELG59462", 0 0, o0x7f44c59b4018;  0 drivers
-o0x7f44c59b4048 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fcaeadf410_0 .net "CELSUB40948", 0 0, o0x7f44c59b4048;  0 drivers
-o0x7f44c59b4078 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fcaeadf520_0 .net "CELV96848", 0 0, o0x7f44c59b4078;  0 drivers
-o0x7f44c59b40a8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fcaeadf610_0 .net "TIN", 0 0, o0x7f44c59b40a8;  0 drivers
-o0x7f44c59b42b8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fcaeadf700_0 .net "dftprobe_XUINstartup_5be9f382", 0 0, o0x7f44c59b42b8;  0 drivers
-o0x7f44c59b4318 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fcaeadf840_0 .net "dftprobe_XUTIN_5be9f382", 0 0, o0x7f44c59b4318;  0 drivers
-o0x7f44c59b40d8 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fcaeadf930_0 .net "enable_vin", 0 0, o0x7f44c59b40d8;  0 drivers
-o0x7f44c59b4108 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fcaeadfa20_0 .net "kelvin_GNDtelemetry", 0 0, o0x7f44c59b4108;  0 drivers
-o0x7f44c59b4138 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fcaeadfb10_0 .net "kelvin_IN", 0 0, o0x7f44c59b4138;  0 drivers
-o0x7f44c59b4378 .functor BUFZ 1, C4<z>; HiZ drive
-v0x55fcaeadfc40_0 .net "ok_vin", 0 0, o0x7f44c59b4378;  0 drivers
-S_0x55fcaeacb450 .scope module, "XFORCE_TELEMETRYmeasureVIN1" "FORCE_TELEMETRYmeasureVIN" 2 41, 2 2 0, S_0x55fcaea92f60;
+o0x7f105d28e018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56505f926eb0_0 .net "CELG59462", 0 0, o0x7f105d28e018;  0 drivers
+o0x7f105d28e048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56505f926f50_0 .net "CELSUB40948", 0 0, o0x7f105d28e048;  0 drivers
+o0x7f105d28e078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56505f927060_0 .net "CELV96848", 0 0, o0x7f105d28e078;  0 drivers
+o0x7f105d28e0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56505f927150_0 .net "TIN", 0 0, o0x7f105d28e0a8;  0 drivers
+o0x7f105d28e2b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56505f927240_0 .net "dftprobe_XUINstartup_5be9f382", 0 0, o0x7f105d28e2b8;  0 drivers
+o0x7f105d28e318 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56505f927380_0 .net "dftprobe_XUTIN_5be9f382", 0 0, o0x7f105d28e318;  0 drivers
+o0x7f105d28e0d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56505f927470_0 .net "enable_vin", 0 0, o0x7f105d28e0d8;  0 drivers
+o0x7f105d28e108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56505f927560_0 .net "kelvin_GNDtelemetry", 0 0, o0x7f105d28e108;  0 drivers
+o0x7f105d28e138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56505f927650_0 .net "kelvin_IN", 0 0, o0x7f105d28e138;  0 drivers
+o0x7f105d28e378 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56505f927780_0 .net "ok_vin", 0 0, o0x7f105d28e378;  0 drivers
+S_0x56505f912450 .scope module, "XFORCE_TELEMETRYmeasureVIN1" "FORCE_TELEMETRYmeasureVIN" 2 41, 2 2 0, S_0x56505f8d9f60;
  .timescale 0 0;
     .port_info 0 /OUTPUT 1 "TIN";
     .port_info 1 /OUTPUT 1 "CELG59462";
@@ -38,22 +38,26 @@ S_0x55fcaeacb450 .scope module, "XFORCE_TELEMETRYmeasureVIN1" "FORCE_TELEMETRYme
     .port_info 4 /OUTPUT 1 "enable_vin";
     .port_info 5 /OUTPUT 1 "CELSUB40948";
     .port_info 6 /INPUT 1 "kelvin_GNDtelemetry";
-v0x55fcaea924b0_0 .net "CELG59462", 0 0, o0x7f44c59b4018;  alias, 0 drivers
-v0x55fcaea930f0_0 .net "CELSUB40948", 0 0, o0x7f44c59b4048;  alias, 0 drivers
-v0x55fcaea92ec0_0 .net "CELV96848", 0 0, o0x7f44c59b4078;  alias, 0 drivers
-v0x55fcaeaddda0_0 .net "TIN", 0 0, o0x7f44c59b40a8;  alias, 0 drivers
-v0x55fcaeadde60_0 .net "enable_vin", 0 0, o0x7f44c59b40d8;  alias, 0 drivers
-v0x55fcaeaddf70_0 .net "kelvin_GNDtelemetry", 0 0, o0x7f44c59b4108;  alias, 0 drivers
-v0x55fcaeade030_0 .net "kelvin_IN", 0 0, o0x7f44c59b4138;  alias, 0 drivers
-S_0x55fcaeade1d0 .scope module, "XNCdftprobe_XUINstartup_5be9f382" "STONEnoconn" 2 68, 2 28 0, S_0x55fcaea92f60;
+v0x56505f8d94b0_0 .net "CELG59462", 0 0, o0x7f105d28e018;  alias, 0 drivers
+v0x56505f8da0f0_0 .net "CELSUB40948", 0 0, o0x7f105d28e048;  alias, 0 drivers
+v0x56505f8d9ec0_0 .net "CELV96848", 0 0, o0x7f105d28e078;  alias, 0 drivers
+v0x56505f9255b0_0 .net "TIN", 0 0, o0x7f105d28e0a8;  alias, 0 drivers
+v0x56505f925670_0 .net "enable_vin", 0 0, o0x7f105d28e0d8;  alias, 0 drivers
+v0x56505f925780_0 .net "kelvin_GNDtelemetry", 0 0, o0x7f105d28e108;  alias, 0 drivers
+v0x56505f925840_0 .net "kelvin_IN", 0 0, o0x7f105d28e138;  alias, 0 drivers
+S_0x56505f9259e0 .scope module, "XNCdftprobe_XUINstartup_5be9f382" "STONEnoconn" 2 72, 2 28 0, S_0x56505f8d9f60;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "noconn";
-v0x55fcaeade3f0_0 .net "noconn", 0 0, o0x7f44c59b42b8;  alias, 0 drivers
-S_0x55fcaeade510 .scope module, "XNCdftprobe_XUTIN_5be9f382" "STONEnoconn" 2 64, 2 28 0, S_0x55fcaea92f60;
+v0x56505f925c00_0 .net "noconn", 0 0, o0x7f105d28e2b8;  alias, 0 drivers
+S_0x56505f925d20 .scope module, "XNCdftprobe_XUTIN_5be9f382" "STONEnoconn" 2 68, 2 28 0, S_0x56505f8d9f60;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "noconn";
-v0x55fcaeade6f0_0 .net "noconn", 0 0, o0x7f44c59b4318;  alias, 0 drivers
-S_0x55fcaeade810 .scope module, "XTELEMETRYmeasureVIN1" "TELEMETRYmeasureVIN" 2 51, 2 12 0, S_0x55fcaea92f60;
+v0x56505f925f00_0 .net "noconn", 0 0, o0x7f105d28e318;  alias, 0 drivers
+S_0x56505f926020 .scope module, "XNCok_vin" "STONEnoconn" 2 64, 2 28 0, S_0x56505f8d9f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "noconn";
+v0x56505f926220_0 .net "noconn", 0 0, o0x7f105d28e378;  alias, 0 drivers
+S_0x56505f926340 .scope module, "XTELEMETRYmeasureVIN1" "TELEMETRYmeasureVIN" 2 51, 2 12 0, S_0x56505f8d9f60;
  .timescale 0 0;
     .port_info 0 /OUTPUT 1 "TIN";
     .port_info 1 /OUTPUT 1 "ok_vin";
@@ -65,16 +69,16 @@ S_0x55fcaeade810 .scope module, "XTELEMETRYmeasureVIN1" "TELEMETRYmeasureVIN" 2 
     .port_info 7 /INOUT 1 "kelvin_GNDtelemetry";
     .port_info 8 /OUTPUT 1 "dftprobe_XUTIN_5be9f382";
     .port_info 9 /OUTPUT 1 "dftprobe_XUINstartup_5be9f382";
-v0x55fcaeadeaf0_0 .net "CELG59462", 0 0, o0x7f44c59b4018;  alias, 0 drivers
-v0x55fcaeadebc0_0 .net "CELSUB40948", 0 0, o0x7f44c59b4048;  alias, 0 drivers
-v0x55fcaeadec90_0 .net "CELV96848", 0 0, o0x7f44c59b4078;  alias, 0 drivers
-v0x55fcaeaded90_0 .net "TIN", 0 0, o0x7f44c59b40a8;  alias, 0 drivers
-v0x55fcaeadee60_0 .net "dftprobe_XUINstartup_5be9f382", 0 0, o0x7f44c59b42b8;  alias, 0 drivers
-v0x55fcaeadef50_0 .net "dftprobe_XUTIN_5be9f382", 0 0, o0x7f44c59b4318;  alias, 0 drivers
-v0x55fcaeadf020_0 .net "enable_vin", 0 0, o0x7f44c59b40d8;  alias, 0 drivers
-v0x55fcaeadf0f0_0 .net "kelvin_GNDtelemetry", 0 0, o0x7f44c59b4108;  alias, 0 drivers
-v0x55fcaeadf1c0_0 .net "kelvin_IN", 0 0, o0x7f44c59b4138;  alias, 0 drivers
-v0x55fcaeadf290_0 .net "ok_vin", 0 0, o0x7f44c59b4378;  alias, 0 drivers
+v0x56505f926670_0 .net "CELG59462", 0 0, o0x7f105d28e018;  alias, 0 drivers
+v0x56505f926710_0 .net "CELSUB40948", 0 0, o0x7f105d28e048;  alias, 0 drivers
+v0x56505f9267e0_0 .net "CELV96848", 0 0, o0x7f105d28e078;  alias, 0 drivers
+v0x56505f9268e0_0 .net "TIN", 0 0, o0x7f105d28e0a8;  alias, 0 drivers
+v0x56505f9269b0_0 .net "dftprobe_XUINstartup_5be9f382", 0 0, o0x7f105d28e2b8;  alias, 0 drivers
+v0x56505f926aa0_0 .net "dftprobe_XUTIN_5be9f382", 0 0, o0x7f105d28e318;  alias, 0 drivers
+v0x56505f926b70_0 .net "enable_vin", 0 0, o0x7f105d28e0d8;  alias, 0 drivers
+v0x56505f926c40_0 .net "kelvin_GNDtelemetry", 0 0, o0x7f105d28e108;  alias, 0 drivers
+v0x56505f926d10_0 .net "kelvin_IN", 0 0, o0x7f105d28e138;  alias, 0 drivers
+v0x56505f926de0_0 .net "ok_vin", 0 0, o0x7f105d28e378;  alias, 0 drivers
 # The file index is used to find the file name in the following table.
 :file_names 3;
     "N/A";
