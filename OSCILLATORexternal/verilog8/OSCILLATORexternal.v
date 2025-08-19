@@ -85,7 +85,7 @@ endmodule
 
 
 // ------------------------ Module Verilog ---------------
-module OSCILLATORexternal (REXT0, REXT1, SIMPV, clock0, clock1, CELG59462, CELV96848, CELSENSE_RF, CELSUB40948, IP_51e668ed, IP_b836e44c, ok_oscillator, CELREF_51e668ed, CELREF_b836e44c, fault_oscillator, enable_oscillator, celkelvin_GNDoscillator);
+module OSCILLATORexternal (REXT0, REXT1, SIMPV, clock0, clock1, CELG59462, CELV96848, CELFORCE_RF, CELSENSE_RF, CELSUB40948, IP_51e668ed, IP_b836e44c, ok_oscillator, CELREF_51e668ed, CELREF_b836e44c, fault_oscillator, enable_oscillator, celkelvin_GNDoscillator);
 output  REXT0;
 output  REXT1;
 input  SIMPV;
@@ -93,6 +93,7 @@ output  clock0;
 output  clock1;
   input  CELG59462;
   input  CELV96848;
+output  CELFORCE_RF;
 input  CELSENSE_RF;
   input  CELSUB40948;
 input  IP_51e668ed;
@@ -150,12 +151,12 @@ oscillator_1fbb166e Xoscillator1 (
 .CELREF(CELREF_b836e44c),
 .CELSUB(CELSUB40948),
 .CELFORCE_RF(REXT0),
-.CELSENSE_RF(CELSENSE_RF),
+.CELSENSE_RF(net_0),
 .ok_oscillator(net_50),
 .fault_oscillator(net_49),
 .enable_oscillator(enable_oscillator),
 .global_oscillator(tl0),
-.celkelvin_GNDoscillator(celkelvin_GNDoscillator)
+.celkelvin_GNDoscillator(TBD_XOSCILLATOR_Xoscillator1_celkelvin_GNDoscillator)
 );
 
 oscillator_0cadd404 Xoscillator2 (
@@ -168,12 +169,12 @@ oscillator_0cadd404 Xoscillator2 (
 .tdi_osc(noconn_tdi_osc1),
 .ten_osc(tl0),
 .CELFORCE_RF(REXT1),
-.CELSENSE_RF(CELSENSE_RF),
+.CELSENSE_RF(net_1),
 .ok_oscillator(net_51),
 .fault_oscillator(net_52),
 .enable_oscillator(enable_oscillator),
 .global_oscillator(tl0),
-.celkelvin_GNDoscillator(celkelvin_GNDoscillator),
+.celkelvin_GNDoscillator(TBD_XOSCILLATOR_Xoscillator2_celkelvin_GNDoscillator),
 .trim_oscillator_ext_fine({a0,a0,a0,a0,a0}),
 .trim_oscillator_ext_coarse({a0,a0,a0})
 );

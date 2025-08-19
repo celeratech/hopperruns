@@ -11,7 +11,7 @@ module FORCEoscillatorexternal (SIMPV,CELG59462,CELV96848,CELSUB40948,IP_51e668e
   output  enable_oscillator;
 endmodule
 
-module OSCILLATORexternal (REXT0,REXT1,SIMPV,clock0,clock1,CELG59462,CELV96848,CELSENSE_RF,CELSUB40948,IP_51e668ed,IP_b836e44c,ok_oscillator,CELREF_51e668ed,CELREF_b836e44c,fault_oscillator,enable_oscillator,celkelvin_GNDoscillator);
+module OSCILLATORexternal (REXT0,REXT1,SIMPV,clock0,clock1,CELG59462,CELV96848,CELFORCE_RF,CELSENSE_RF,CELSUB40948,IP_51e668ed,IP_b836e44c,ok_oscillator,CELREF_51e668ed,CELREF_b836e44c,fault_oscillator,enable_oscillator,celkelvin_GNDoscillator);
   output  REXT0;
   output  REXT1;
   input  SIMPV;
@@ -19,6 +19,7 @@ module OSCILLATORexternal (REXT0,REXT1,SIMPV,clock0,clock1,CELG59462,CELV96848,C
   output  clock1;
   input  CELG59462;
   input  CELV96848;
+  output  CELFORCE_RF;
   input  CELSENSE_RF;
   input  CELSUB40948;
   input  IP_51e668ed;
@@ -68,6 +69,7 @@ OSCILLATORexternal XOSCILLATOR (
 .clock1(clock1),
 .CELG59462(CELG59462),
 .CELV96848(CELV96848),
+.CELFORCE_RF(CELFORCE_RF),
 .CELSENSE_RF(CELSENSE_RF),
 .CELSUB40948(CELSUB40948),
 .IP_51e668ed(IP_51e668ed),
@@ -80,9 +82,14 @@ OSCILLATORexternal XOSCILLATOR (
 .celkelvin_GNDoscillator(celkelvin_GNDoscillator)
 );
 
-PEBBLElinkWRAP CELSENSE_RF_WRAPPER (
-.i(CELSENSE_RF),
-.o(net_26)
+PEBBLElinkWRAP CELSENSE_RF_REXT0_WRAPPER (
+.i(CELSENSE_RF_REXT0),
+.o(REXT0)
+);
+
+PEBBLElinkWRAP CELSENSE_RF_REXT1_WRAPPER (
+.i(CELSENSE_RF_REXT1),
+.o(REXT1)
 );
 
 PEBBLElinkWRAP celkelvin_GNDoscillator_WRAPPER (
